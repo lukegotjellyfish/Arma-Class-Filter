@@ -1,3 +1,5 @@
+import mysql.connector
+
 classList     = []
 startBrace    = []
 attributeList = []
@@ -29,13 +31,13 @@ with open("text.txt","r", encoding="UTF-8") as f:
 
 		#Found multi-line attribute
 		elif lineStripped.replace(" ","").endswith("=\n"):
-			construct = [[]]
+			construct = []
 			i = 0
 			while True:
 				if (lines[index+i].replace("	","") == "};\n"):
-					construct[0].append(index+i)
+					construct.append(index+i)
 					break
-				construct[0].append(index+i)
+				construct.append(index+i)
 				i += 1
 			toSkip = i
 			print("Attrib: [" + str(index) + "-" + str(index+i) + "] " + line.replace("\n",""))
@@ -61,11 +63,12 @@ with open("text.txt","r", encoding="UTF-8") as f:
 #print("endBrace list:\n" + str(endBrace))
 
 
+
 #Display all classes:
-x = 1
-for item in classList:
-	print("Class [" + "{:04d}".format(x) + "] " + lines[item].replace("\n",""))
-	x += 1
+#x = 1
+#for item in classList:
+#	print("Class [" + "{:04d}".format(x) + "] " + lines[item].replace("\n",""))
+#	x += 1
 
 #index = 0
 #for item in classList:
