@@ -73,3 +73,17 @@ with open("text.txt","r", encoding="UTF-8") as f:
 #index = 0
 #for item in classList:
 #	print(item + )
+
+
+mydb = mysql.connector.connect(
+	host="localhost",
+	user="root",
+	password="rootpass",
+	database="Mods"
+)
+
+mycursor = mydb.cursor()
+mycursor.execute("SHOW DATABASES")
+
+for x in mycursor:
+  print(x)
