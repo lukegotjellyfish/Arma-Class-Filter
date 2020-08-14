@@ -16,17 +16,16 @@ with open("text.txt","r", encoding="UTF-8") as f:
 			index += 1
 			continue
 
-		countTab = line.count("	")
 		lineStripped = line.replace("	","")
 
 		#Found class line
 		if lineStripped.startswith("class"):
-			print(" CLASS: [" + str(index) + "|" + str(countTab) + "] " + line.replace("\n",""))
-			classList.append([index, countTab])
+			print(" CLASS: [" + str(index) + "] " + line.replace("\n",""))
+			classList.append(index)
 
 		if (lineStripped.endswith(";\n") and lineStripped.startswith("}") == False):
-			print("Attrib: [" + str(index) + "|" + str(countTab) + "] " + line.replace("\n",""))
-			attributeList.append([index, countTab])
+			print("Attrib: [" + str(index) + "] " + line.replace("\n",""))
+			attributeList.append(index)
 
 		#Found multi-line attribute
 		elif lineStripped.replace(" ","").endswith("=\n"):
@@ -39,18 +38,18 @@ with open("text.txt","r", encoding="UTF-8") as f:
 				construct[0].append(index+i)
 				i += 1
 			toSkip = i
-			print("Attrib: [" + str(index) + "-" + str(index+i) + "|" + str(countTab) + "] " + line.replace("\n",""))
+			print("Attrib: [" + str(index) + "-" + str(index+i) + "] " + line.replace("\n",""))
 			attributeList.append(construct)
 
 		#Found start to class/attribute list
 		elif lineStripped.startswith("{"):
-			print("sBRACE: [" + str(index) + "|" + str(countTab) + "] " + line.replace("\n",""))
-			startBrace.append([index, countTab])
+			print("sBRACE: [" + str(index) + "] " + line.replace("\n",""))
+			startBrace.append(index)
 
 		#Found end to class/attribute list
 		elif lineStripped.startswith("}"):
-			print("eBRACE: [" + str(index) + "|" + str(countTab) + "] " + line.replace("\n",""))
-			endBrace.append([index, countTab])
+			print("eBRACE: [" + str(index) + "] " + line.replace("\n",""))
+			endBrace.append(index)
 
 		index += 1
 
@@ -65,7 +64,7 @@ with open("text.txt","r", encoding="UTF-8") as f:
 #Display all classes:
 x = 1
 for item in classList:
-	print("Class [" + "{:04d}".format(x) + "] " + lines[item[0]].replace("\n",""))
+	print("Class [" + "{:04d}".format(x) + "] " + lines[item].replace("\n",""))
 	x += 1
 
 #index = 0
