@@ -1,3 +1,7 @@
+import os
+import re
+
+
 #\n^\s*$
 attributeSkip = ["author","url","requiredVersion", "onLoad","dlc","category","editorSubcategory",
 "vehicleClass","insideSoundCoef","unitInfoType","model","Icon","mapSize","transportMaxBackpacks","transportSoldier",
@@ -17,12 +21,17 @@ classSkip = ["class CfgMovesBasic", "class RscInGameUI","class CfgMovesMaleSdr: 
 "class RHS_Engine_Fire: RHS_Engine_Smoke","class RHS_Engine_Sparks: RHS_Engine_Smoke", "class RHS_Engine_Sounds: RHS_Engine_Smoke",
 "class RHS_Engine_Smoke_small1: RHS_Engine_Smoke","class RHS_Engine_Smoke_small2: RHS_Engine_Smoke_small1", "class Reflectors", "class RenderTargets",
 "class RHSUSF_EventHandlers","class TransportBackpacks","class TransportMagazines","class TransportItems","class TransportWeapons",
-"class rhsusf_CGRCAT1A2_usmc_d: rhsusf_Cougar_base"]
+"class rhsusf_CGRCAT1A2_usmc_d: rhsusf_Cougar_base", "class DestructionEffects"]
 
-def newFile(filePath):
-	with open(filePath, "r", encoding="UTF-8") as f:
+def newFile(root, file):
+	with open(root + "\\\\" + file, "r", encoding="UTF-8") as f:
 		lines = f.readlines()
 
+	modDir = 
+	folder = re.sub("addons\\\\(.*)", "\g<1>", root)
+	print("Folder: " + folder)
+	input("halt")
+	with open(folder + "\export.txt", "w") as writeToThisFile:
 		index = 0
 		toSkip = 0
 		for line in lines:
@@ -85,8 +94,13 @@ def newFile(filePath):
 
 			index += 1
 
-newFile("S:\\Steam\\steamapps\\common\\Arma 3\\!Workshop\\@RHSUSAF\\addons\\rhsusf_c_cougar\\config.cpp")
-newFile("S:\\Steam\\steamapps\\common\\Arma 3\\!Workshop\\@RHSUSAF\\addons\\rhsusf_c_cougar\\physx_config.hpp")
+
+for root, dirs, files in os.walk("S:\\Steam\\steamapps\\common\\Arma 3\\!Workshop\\@RHSUSAF"):
+	for file in files:
+		if file == 'config.cpp' or file == "physx_config.hpp":
+			newFile(root, file)
+#newFile("S:\\Steam\\steamapps\\common\\Arma 3\\!Workshop\\@RHSUSAF\\addons\\rhsusf_c_cougar\\config.cpp")
+#newFile("S:\\Steam\\steamapps\\common\\Arma 3\\!Workshop\\@RHSUSAF\\addons\\rhsusf_c_cougar\\physx_config.hpp")
 
 
 #\n^\s*$  blanknewline
