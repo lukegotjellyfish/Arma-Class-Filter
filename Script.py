@@ -27,11 +27,12 @@ def newFile(root, file):
 	with open(root + "\\\\" + file, "r", encoding="UTF-8") as f:
 		lines = f.readlines()
 
-	modDir = 
+	modDir = re.sub("!Workshop\\\\(@[^\]*)", "\g<1>, root")
 	folder = re.sub("addons\\\\(.*)", "\g<1>", root)
+	print("Mod: " + modDir)
 	print("Folder: " + folder)
 	input("halt")
-	with open(folder + "\export.txt", "w") as writeToThisFile:
+	with open(modDir + "\\" + folder + "\\export.txt", "w") as writeToThisFile:
 		index = 0
 		toSkip = 0
 		for line in lines:
