@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 import os
 import re
 import errno
@@ -10,7 +13,7 @@ attributeSkip = ["author","url","requiredVersion", "onLoad","dlc","category","ed
 "selectionBrakeLights","selectionBackLights","driverAction","driverInAction","driverLeftHandAnimName","driverRightHandAnimName","cargoProxyIndexes",
 "getInProxyOrder","getInAction","getOutAction","driverDoor","viewDriverInExternal","forceHideDriver","factions","textureList","cargoCompartments",
 "visual","ammoExplosionEffect","boneName","center","boundary","suspForceAppPointOffset","tireForceAppPointOffset","tex", "picture","editorPreview",
-"displayName","scope", "faction", "showNVGGunner","gunnerLeftHandAnimName","gunnerRightHandAnimName","body","gun","animationSourceBody","animationSourceGun",
+"scope", "faction", "showNVGGunner","gunnerLeftHandAnimName","gunnerRightHandAnimName","body","gun","animationSourceBody","animationSourceGun",
 "turretInfoType","discreteDistance","discreteDistanceInitIndex","gunnerForceOptics","gunnerOutOpticsShowCursor","gunnerAction","gunnerInAction",
 "lodTurnedIn","lodTurnedOut","lodOpticsOut","canhideGunner","inGunnerMayFire","outGunnerMayFire","viewGunnerInExternal","gunnerGetInAction",
 "gunnerGetOutAction","gunnerDoor","gunnerCompartments","castGunnerShadow","gunBeg","gunEnd","memoryPointGunnerOptics","memoryPointGunnerOutOptics",
@@ -29,11 +32,11 @@ def newFile(root, file):
 		lines = f.readlines()
 
 	modDir = re.search("@[^\\\\]*", root).group(0)
-	print(root)
-	folder = re.search("addons\\\\.*", root).group(0).replace("addons\\","")
+	#print(root, file)
+	folder = re.search("addons\\\\[^\\\\]*", root).group(0).replace("addons\\","")
 	#print("Mod: " + modDir)
-	#print("Folder: " + folder)
-
+	print("On: " + folder)
+	#input("Halt")
 	pathToCreate = "Mods\\" + modDir + "\\" + folder + "\\"
 	fileToCreate = pathToCreate + "\\" + file
 	if not os.path.exists(os.path.dirname(pathToCreate)):
@@ -46,7 +49,7 @@ def newFile(root, file):
 	#print(fileToCreate)
 	#input("Halt")
 
-	with open(fileToCreate, "w") as writeToThisFile:
+	with open(fileToCreate, "w", encoding="UTF-8") as writeToThisFile:
 		index = 0
 		toSkip = 0
 		for line in lines:
@@ -110,10 +113,16 @@ def newFile(root, file):
 			index += 1
 
 
-for root, dirs, files in os.walk("S:\\Steam\\steamapps\\common\\Arma 3\\!Workshop\\@RHSAFRF"):
-	for file in files:
-		if file == 'config.cpp' or file == "physx_config.hpp":
-			newFile(root, file)
+mods = ["S:\\Steam\\steamapps\\common\\Arma 3\\!Workshop\\@RHSAFRF",
+		"S:\\Steam\\steamapps\\common\\Arma 3\\!Workshop\\@RHSUSAF",
+		"S:\\Steam\\steamapps\\common\\Arma 3\\!Workshop\\@RHSGREF",
+		"S:\\Steam\\steamapps\\common\\Arma 3\\!Workshop\\@RHSSAF"]
+
+for x in mods:
+	for root, dirs, files in os.walk(x):
+		for file in files:
+			if file == 'config.cpp' or file == "physx_config.hpp":
+				newFile(root, file)
 
 
 #\n^\s*$  blanknewline
