@@ -1,5 +1,6 @@
 import os
 import re
+import errno
 
 
 #\n^\s*$
@@ -27,12 +28,25 @@ def newFile(root, file):
 	with open(root + "\\\\" + file, "r", encoding="UTF-8") as f:
 		lines = f.readlines()
 
-	modDir = re.sub("!Workshop\\\\(@[^\]*)", "\g<1>, root")
-	folder = re.sub("addons\\\\(.*)", "\g<1>", root)
-	print("Mod: " + modDir)
-	print("Folder: " + folder)
-	input("halt")
-	with open(modDir + "\\" + folder + "\\export.txt", "w") as writeToThisFile:
+	modDir = re.search("@[^\\\\]*", root).group(0)
+	print(root)
+	folder = re.search("addons\\\\.*", root).group(0).replace("addons\\","")
+	#print("Mod: " + modDir)
+	#print("Folder: " + folder)
+
+	pathToCreate = "Mods\\" + modDir + "\\" + folder + "\\"
+	fileToCreate = pathToCreate + "\\" + file
+	if not os.path.exists(os.path.dirname(pathToCreate)):
+		try:
+			os.makedirs(os.path.dirname(pathToCreate))
+		except OSError as exc: # Guard against race condition
+			if exc.errno != errno.EEXIST:
+				raise
+
+	#print(fileToCreate)
+	#input("Halt")
+
+	with open(fileToCreate, "w") as writeToThisFile:
 		index = 0
 		toSkip = 0
 		for line in lines:
@@ -61,7 +75,7 @@ def newFile(root, file):
 				if i > 0:
 					index += 1
 					continue
-				print(line.replace("\n",""))
+				writeToThisFile.write(line)
 
 			#Found single-line attribute
 			elif (lineStripped.endswith(";\n") and lineStripped.startswith("}") == False):
@@ -72,7 +86,7 @@ def newFile(root, file):
 				if cont == True:
 					index += 1
 					continue
-				print(line.replace("\n",""))
+				writeToThisFile.write(line)
 
 			#Found multi-line attribute
 			elif lineStripped.endswith("=\n"):
@@ -88,20 +102,18 @@ def newFile(root, file):
 				if i > 0:
 					index += 1
 					continue
-				print(line.replace("\n",""))
+				writeToThisFile.write(line)
 
 			else:
-				print(line.replace("\n",""))
+				writeToThisFile.write(line)
 
 			index += 1
 
 
-for root, dirs, files in os.walk("S:\\Steam\\steamapps\\common\\Arma 3\\!Workshop\\@RHSUSAF"):
+for root, dirs, files in os.walk("S:\\Steam\\steamapps\\common\\Arma 3\\!Workshop\\@RHSAFRF"):
 	for file in files:
 		if file == 'config.cpp' or file == "physx_config.hpp":
 			newFile(root, file)
-#newFile("S:\\Steam\\steamapps\\common\\Arma 3\\!Workshop\\@RHSUSAF\\addons\\rhsusf_c_cougar\\config.cpp")
-#newFile("S:\\Steam\\steamapps\\common\\Arma 3\\!Workshop\\@RHSUSAF\\addons\\rhsusf_c_cougar\\physx_config.hpp")
 
 
 #\n^\s*$  blanknewline
