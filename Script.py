@@ -1,16 +1,23 @@
+#\n^\s*$
 attributeSkip = ["author","url","requiredVersion", "onLoad","dlc","category","editorSubcategory",
 "vehicleClass","insideSoundCoef","unitInfoType","model","Icon","mapSize","transportMaxBackpacks","transportSoldier",
 "destrType","crewExplosionProtection","camShakeCoef","dustFrontLeftPos","dustFrontRightPos","dustBackLeftPos","dustBackRightPos","tf_hasLRradio_api",
 "selectionBrakeLights","selectionBackLights","driverAction","driverInAction","driverLeftHandAnimName","driverRightHandAnimName","cargoProxyIndexes",
 "getInProxyOrder","getInAction","getOutAction","driverDoor","viewDriverInExternal","forceHideDriver","factions","textureList","cargoCompartments",
-"visual","ammoExplosionEffect","boneName","center","boundary","suspForceAppPointOffset","tireForceAppPointOffset","tex","","",""]
+"visual","ammoExplosionEffect","boneName","center","boundary","suspForceAppPointOffset","tireForceAppPointOffset","tex", "picture","editorPreview",
+"displayName","scope", "faction", "showNVGGunner","gunnerLeftHandAnimName","gunnerRightHandAnimName","body","gun","animationSourceBody","animationSourceGun",
+"turretInfoType","discreteDistance","discreteDistanceInitIndex","gunnerForceOptics","gunnerOutOpticsShowCursor","gunnerAction","gunnerInAction",
+"lodTurnedIn","lodTurnedOut","lodOpticsOut","canhideGunner","inGunnerMayFire","outGunnerMayFire","viewGunnerInExternal","gunnerGetInAction",
+"gunnerGetOutAction","gunnerDoor","gunnerCompartments","castGunnerShadow","gunBeg","gunEnd","memoryPointGunnerOptics","memoryPointGunnerOutOptics",
+"gunnerOpticsModel","gunnerOutOpticsModel","optics","disableSoundAttenuation","memoryPointsGetInGunner","memoryPointsGetInGunnerDir","crew"]
 multiAttributeSkip = ["requiredAddons[]", "controls[]","cargoAction[]","memoryPointsGetInCargo[]","memoryPointsGetInCargoDir[]","cargoDoors[]","textures[]",
 "aggregateReflectors[]","mat[]","HiddenSelectionsTextures[]","magazines[]","soundServo[]"]
 classSkip = ["class CfgMovesBasic", "class RscInGameUI","class CfgMovesMaleSdr: CfgMovesBasic", "class ObjectTexture", "class DoorB", "class DoorL: DoorB",
 "class DoorR: DoorB", "class TurnIn", "class CargoTurret_01: CargoTurret", "class AnimationSources", "class UserActions","class RHS_Engine_Smoke",
 "class RHS_Engine_Fire: RHS_Engine_Smoke","class RHS_Engine_Sparks: RHS_Engine_Smoke", "class RHS_Engine_Sounds: RHS_Engine_Smoke",
 "class RHS_Engine_Smoke_small1: RHS_Engine_Smoke","class RHS_Engine_Smoke_small2: RHS_Engine_Smoke_small1", "class Reflectors", "class RenderTargets",
-"class RHSUSF_EventHandlers","class TransportBackpacks","class TransportMagazines","class TransportItems","class TransportWeapons"]
+"class RHSUSF_EventHandlers","class TransportBackpacks","class TransportMagazines","class TransportItems","class TransportWeapons",
+"class rhsusf_CGRCAT1A2_usmc_d: rhsusf_Cougar_base"]
 
 def newFile(filePath):
 	with open(filePath, "r", encoding="UTF-8") as f:
