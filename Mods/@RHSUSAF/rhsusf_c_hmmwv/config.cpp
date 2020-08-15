@@ -927,6 +927,7 @@ class CfgVehicles
 		{
 			class rhs_decalMask
 			{
+				displayName="Define 1st decal";
 				tooltip="Define decal located on mask & rear of vehicle";
 				property="rhs_decalMask";
 				control="Combo";
@@ -990,6 +991,7 @@ class CfgVehicles
 			};
 			class rhs_decalDoors: rhs_decalMask
 			{
+				displayName="Define 2nd decal";
 				tooltip="Define decals located on doors & vehicle rear";
 				property="rhs_decalDoors";
 				expression="if(_value != 'NoChange')then{ [_this,'unitdecals_2',_value] call rhs_fnc_hmmwv_setDecal}";
@@ -1064,6 +1066,7 @@ class CfgVehicles
 			};
 			class rhs_hideCIP
 			{
+				displayName="Hide CIP";
 				property="rhs_hideCIP";
 				control="CheckboxNumber";
 				expression="_this animate ['hide_CIP',_value,true]";
@@ -1071,39 +1074,47 @@ class CfgVehicles
 			};
 			class rhs_hideBFT: rhs_hideCIP
 			{
+				displayName="Hide BFT";
 				property="rhs_hideBFT";
 				expression="_this animate ['hide_BFT',_value,true]";
 			};
 			class rhs_hideAntennas: rhs_hideCIP
 			{
+				displayName="Hide antennas";
 				property="rhs_hideBFT";
 				expression="_this animate ['hide_Antenna',_value,true]";
 			};
 			class rhs_hideA2Parts: rhs_hideCIP
 			{
+				displayName="Hide A2 parts";
 				property="rhs_hideA2Parts";
 				expression="_this animate ['hide_A2_Parts',_value,true]";
 			};
 			class rhs_HideA2Bumper: rhs_hideCIP
 			{
+				displayName="switch to old bumper";
 				property="rhs_HideA2Bumper";
 				expression="_this animateSource ['Hide_A2Bumper',_value,true]";
 			};
 			class Door_LF: rhs_hideCIP
 			{
+				displayName="Open front left door";
 				property="Door_LF";
 				expression="_this animateDoor ['%s',_value,true]";
 			};
 			class Door_RF: Door_LF
 			{
+				displayName="Open front right door";
 				property="Door_RF";
 			};
 			class Door_LB: Door_LF
 			{
+				displayName="Open back left door";
 				property="Door_LB";
 			};
 			class Door_RB: Door_LF
 			{
+				displayName="Open back right door";
 				property="Door_RB";
 			};
 		};
@@ -1347,6 +1358,7 @@ class CfgVehicles
 		{
 			class standard
 			{
+				displayName="Woodland";
 				factions[]=
 				{
 					"rhs_faction_usarmy_wd"
@@ -1354,6 +1366,7 @@ class CfgVehicles
 			};
 			class Desert
 			{
+				displayName="Desert";
 				factions[]=
 				{
 					"rhs_faction_usarmy_d"
@@ -1361,6 +1374,7 @@ class CfgVehicles
 			};
 			class Olive
 			{
+				displayName="Olive";
 				factions[]=
 				{
 					"rhs_faction_usarmy_wd"
@@ -1616,6 +1630,7 @@ class CfgVehicles
 		{
 			class standard
 			{
+				displayName="Woodland";
 				factions[]=
 				{
 					"rhs_faction_usarmy_wd"
@@ -1623,6 +1638,7 @@ class CfgVehicles
 			};
 			class Desert
 			{
+				displayName="Desert";
 				factions[]=
 				{
 					"rhs_faction_usarmy_d"
@@ -1630,6 +1646,7 @@ class CfgVehicles
 			};
 			class Olive
 			{
+				displayName="Olive";
 				factions[]=
 				{
 					"rhs_faction_usarmy_wd"
@@ -2017,6 +2034,7 @@ class CfgVehicles
 		{
 			class standard
 			{
+				displayName="Woodland";
 				factions[]=
 				{
 					"rhs_faction_usarmy_wd"
@@ -2024,6 +2042,7 @@ class CfgVehicles
 			};
 			class Desert
 			{
+				displayName="Desert";
 				factions[]=
 				{
 					"rhs_faction_usarmy_d"
@@ -2031,6 +2050,7 @@ class CfgVehicles
 			};
 			class Olive
 			{
+				displayName="Olive";
 				factions[]=
 				{
 					"rhs_faction_usarmy_wd"
@@ -2112,6 +2132,7 @@ class CfgVehicles
 			};
 			class ani_window_1: Door_LF
 			{
+				displayName="Open front left window";
 				property="ani_window_1";
 			};
 			class Door_RF: Door_RF
@@ -2119,6 +2140,7 @@ class CfgVehicles
 			};
 			class ani_window_2: Door_LF
 			{
+				displayName="Open front right window";
 				property="ani_window_2";
 			};
 			class Door_LB: Door_LB
@@ -2126,6 +2148,7 @@ class CfgVehicles
 			};
 			class ani_window_3: Door_LF
 			{
+				displayName="Open back left window";
 				property="ani_window_3";
 			};
 			class Door_RB: Door_RB
@@ -2133,10 +2156,12 @@ class CfgVehicles
 			};
 			class ani_window_4: Door_LF
 			{
+				displayName="Open back right window";
 				property="ani_window_4";
 			};
 			class ani_trunk_1: Door_LF
 			{
+				displayName="Open trunk";
 				property="ani_trunk_1";
 				expression="_this animate ['%s',_value,true]";
 				control="Slider";
@@ -2245,6 +2270,7 @@ class CfgVehicles
 		{
 			class standard
 			{
+				displayName="Woodland";
 				factions[]=
 				{
 					"rhs_faction_usarmy_wd"
@@ -2252,6 +2278,7 @@ class CfgVehicles
 			};
 			class Desert
 			{
+				displayName="Desert";
 				factions[]=
 				{
 					"rhs_faction_usarmy_wd"
@@ -2259,6 +2286,7 @@ class CfgVehicles
 			};
 			class Olive
 			{
+				displayName="Olive";
 				factions[]=
 				{
 					"rhs_faction_usarmy_wd"
@@ -2457,6 +2485,7 @@ class CfgVehicles
 		{
 			class standard
 			{
+				displayName="Woodland";
 				factions[]=
 				{
 					"rhs_faction_usarmy_wd"
@@ -2464,6 +2493,7 @@ class CfgVehicles
 			};
 			class Desert
 			{
+				displayName="Desert";
 				factions[]=
 				{
 					"rhs_faction_usarmy_wd"
@@ -2471,6 +2501,7 @@ class CfgVehicles
 			};
 			class Olive
 			{
+				displayName="Olive";
 				factions[]=
 				{
 					"rhs_faction_usarmy_wd"
@@ -2645,6 +2676,7 @@ class CfgVehicles
 		{
 			class standard
 			{
+				displayName="Woodland";
 				factions[]=
 				{
 					"rhs_faction_usarmy_wd"
@@ -2652,6 +2684,7 @@ class CfgVehicles
 			};
 			class Desert
 			{
+				displayName="Desert";
 				factions[]=
 				{
 					"rhs_faction_usarmy_d"
@@ -2659,6 +2692,7 @@ class CfgVehicles
 			};
 			class Olive
 			{
+				displayName="Olive";
 				factions[]=
 				{
 					"rhs_faction_usarmy_wd"
@@ -2694,6 +2728,7 @@ class CfgVehicles
 		{
 			class standard
 			{
+				displayName="Woodland";
 				factions[]=
 				{
 					"rhs_faction_usarmy_wd"
@@ -2701,6 +2736,7 @@ class CfgVehicles
 			};
 			class Desert
 			{
+				displayName="Desert";
 				factions[]=
 				{
 					"rhs_faction_usarmy_wd"
@@ -2708,6 +2744,7 @@ class CfgVehicles
 			};
 			class Olive
 			{
+				displayName="Olive";
 				factions[]=
 				{
 					"rhs_faction_usarmy_wd"
@@ -2743,6 +2780,7 @@ class CfgVehicles
 		{
 			class standard
 			{
+				displayName="Woodland";
 				factions[]=
 				{
 					"rhs_faction_usarmy_wd"
@@ -2750,6 +2788,7 @@ class CfgVehicles
 			};
 			class Desert
 			{
+				displayName="Desert";
 				factions[]=
 				{
 					"rhs_faction_usarmy_wd"
@@ -2757,6 +2796,7 @@ class CfgVehicles
 			};
 			class Olive
 			{
+				displayName="Olive";
 				factions[]=
 				{
 					"rhs_faction_usarmy_wd"
@@ -2792,6 +2832,7 @@ class CfgVehicles
 		{
 			class standard
 			{
+				displayName="Woodland";
 				factions[]=
 				{
 					"rhs_faction_usarmy_wd"
@@ -2799,6 +2840,7 @@ class CfgVehicles
 			};
 			class Desert
 			{
+				displayName="Desert";
 				factions[]=
 				{
 					"rhs_faction_usarmy_wd"
@@ -2806,6 +2848,7 @@ class CfgVehicles
 			};
 			class Olive
 			{
+				displayName="Olive";
 				factions[]=
 				{
 					"rhs_faction_usarmy_wd"

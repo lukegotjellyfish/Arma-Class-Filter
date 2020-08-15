@@ -51,14 +51,18 @@ class CfgVehicles
 	};
 	class 81mm_mortar_case_single: ammocase_Base
 	{
+		displayName="Mortar Ammo Case";
 	};
 	class 81mm_mortar_case_quad: ammocase_Base
 	{
+		displayName="Mortar Ammo Case";
 	};
 	class rhs_mortar_M67: Arty_Optic_Base
 	{
+		displayName="M67 Mortar Sight";
 	};
 	class rhs_mortar_M821_inv: ammocase_Base
 	{
+		displayName="M821 Mortar Round";
 	};
 };

@@ -75,6 +75,7 @@ class CfgVehicles
 	class rhsusf_HEMTT_A4_base: Truck_01_base_F
 	{
 		side=1;
+		displayName="M977A4";
 		class Turrets
 		{
 		};
@@ -313,6 +314,7 @@ class CfgVehicles
 	};
 	class rhsusf_M977A4_usarmy_wd: rhsusf_HEMTT_A4_base
 	{
+		displayName="$STR_RHS_HEMTTA4_977A4_NAME";
 		accuracy=0.5;
 		hiddenSelections[]=
 		{
@@ -324,14 +326,17 @@ class CfgVehicles
 		{
 			class rhs_woodland
 			{
+				displayName="Woodland";
 			};
 			class rhs_desert: rhs_woodland
 			{
+				displayName="Desert";
 			};
 		};
 	};
 	class rhsusf_M977A4_BKIT_usarmy_wd: rhsusf_M977A4_usarmy_wd
 	{
+		displayName="$STR_RHS_HEMTTA4_977A4_BKIT_NAME";
 		hiddenSelections[]=
 		{
 			"Camo",
@@ -351,6 +356,7 @@ class CfgVehicles
 	};
 	class rhsusf_M977A4_BKIT_M2_usarmy_wd: rhsusf_M977A4_usarmy_wd
 	{
+		displayName="$STR_RHS_HEMTTA4_977A4_BKIT_M2_NAME";
 		accuracy=0.5;
 		maxFordingDepth=0;
 		hiddenSelections[]=
@@ -452,6 +458,7 @@ class CfgVehicles
 	};
 	class rhsusf_M977A4_AMMO_BKIT_M2_usarmy_wd: rhsusf_M977A4_BKIT_M2_usarmy_wd
 	{
+		displayName="$STR_RHS_HEMTTA4_AMMO_BKIT_M2_977A4_NAME";
 		transportAmmo=300000;
 		supplyRadius=10;
 		class VehicleTransport
@@ -471,6 +478,7 @@ class CfgVehicles
 	};
 	class rhsusf_M977A4_AMMO_usarmy_wd: rhsusf_M977A4_usarmy_wd
 	{
+		displayName="$STR_RHS_HEMTTA4_AMMO_977A4_NAME";
 		transportAmmo=300000;
 		supplyRadius=10;
 		class VehicleTransport
@@ -490,6 +498,7 @@ class CfgVehicles
 	};
 	class rhsusf_M977A4_AMMO_BKIT_usarmy_wd: rhsusf_M977A4_BKIT_usarmy_wd
 	{
+		displayName="$STR_RHS_HEMTTA4_AMMO_BKIT_977A4_NAME";
 		transportAmmo=300000;
 		supplyRadius=10;
 		class VehicleTransport
@@ -509,6 +518,7 @@ class CfgVehicles
 	};
 	class rhsusf_M977A4_REPAIR_usarmy_wd: rhsusf_M977A4_usarmy_wd
 	{
+		displayName="$STR_RHS_HEMTTA4_REPAIR_977A4_NAME";
 		memoryPointSupply="doplnovani";
 		transportRepair=200000000;
 		supplyRadius=12;
@@ -529,6 +539,7 @@ class CfgVehicles
 	};
 	class rhsusf_M977A4_REPAIR_BKIT_usarmy_wd: rhsusf_M977A4_BKIT_usarmy_wd
 	{
+		displayName="$STR_RHS_HEMTTA4_REPAIR_BKIT_977A4_NAME";
 		memoryPointSupply="doplnovani";
 		transportRepair=200000000;
 		supplyRadius=12;
@@ -549,6 +560,7 @@ class CfgVehicles
 	};
 	class rhsusf_M977A4_REPAIR_BKIT_M2_usarmy_wd: rhsusf_M977A4_BKIT_M2_usarmy_wd
 	{
+		displayName="$STR_RHS_HEMTTA4_REPAIR_BKIT_M2_977A4_NAME";
 		memoryPointSupply="doplnovani";
 		transportRepair=200000000;
 		supplyRadius=12;
@@ -569,6 +581,7 @@ class CfgVehicles
 	};
 	class rhsusf_M978A4_usarmy_wd: rhsusf_M977A4_usarmy_wd
 	{
+		displayName="$STR_RHS_HEMTTA4_978A4_NAME";
 		transportFuel=300000;
 		supplyRadius=10;
 		fuelExplosionPower=10;
@@ -604,6 +617,7 @@ class CfgVehicles
 	};
 	class rhsusf_M978A4_BKIT_usarmy_wd: rhsusf_M977A4_usarmy_wd
 	{
+		displayName="$STR_RHS_HEMTTA4_BKIT_978A4_NAME";
 		transportFuel=300000;
 		supplyRadius=10;
 		fuelExplosionPower=10;

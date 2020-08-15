@@ -1379,7 +1379,9 @@ class CfgMagazines
 	class 24Rnd_PG_missiles;
 	class rhs_mag_Sidewinder: VehicleMagazine
 	{
+		displayName="AIM-9X";
 		displaynameshort="IR";
+		displayNameMFDFormat="%1 AIM-9X";
 		descriptionShort="Sidewinder, IR-homing";
 		ammo="rhs_ammo_Sidewinder_AA";
 		count=1;
@@ -1840,6 +1842,8 @@ class CfgMagazines
 	};
 	class rhs_mag_aim9m: rhs_mag_Sidewinder
 	{
+		displayName="AIM-9M";
+		displayNameMFDFormat="%1 AIM-9M";
 		ammo="rhs_ammo_aim9m";
 		pylonWeapon="rhs_weap_aim9m";
 	};
@@ -1852,13 +1856,16 @@ class CfgMagazines
 	};
 	class rhs_mag_aim9m_int: rhs_mag_Sidewinder_int
 	{
+		displayName="AIM-9M";
+		displayNameMFDFormat="%1 AIM-9M";
 		ammo="rhs_ammo_aim9m";
 		pylonWeapon="rhs_weap_aim9m";
 	};
 	class rhs_mag_Sidewinder_2: rhs_mag_Sidewinder
 	{
 		count=2;
-		descriptionShort="×2 Sidewinder, IR-homing";
+		displayName="AIM-9X (LAU-114/A)";
+		descriptionShort="Ã—2 Sidewinder, IR-homing";
 		hardpoints[]=
 		{
 			"RHS_HP_AIM9_2x"
@@ -2045,9 +2052,12 @@ class CfgMagazines
 				};
 			};
 		};
+		displayNameMFDFormat="AIM\%1";
 	};
 	class rhs_mag_aim9m_2: rhs_mag_Sidewinder_2
 	{
+		displayName="AIM-9M (LAU-114/A)";
+		displayNameMFDFormat="%1 AIM-9M";
 		ammo="rhs_ammo_aim9m";
 		pylonWeapon="rhs_weap_aim9m";
 	};
@@ -2058,10 +2068,14 @@ class CfgMagazines
 		{
 			"RHS_HP_AIM9_HELI_ARMY"
 		};
+		displayName="AIM-9M";
 		displaynameshort="IR";
+		displayNameMFDFormat="%1 AIM-9M";
 	};
 	class rhs_mag_Sidewinder_heli_2: rhs_mag_Sidewinder_heli
 	{
+		displayName="AIM-9M";
+		displayNameMFDFormat="%1 AIM-9M";
 		ammo="rhs_ammo_aim9m";
 		pylonWeapon="rhs_weap_aim9m";
 		hardpoints[]=
@@ -2071,7 +2085,9 @@ class CfgMagazines
 	};
 	class rhs_mag_ATAS_2: VehicleMagazine
 	{
-		descriptionShort="×2 Stinger, IR-homing";
+		displayName="ATAS";
+		displayNameMFDFormat="%1 AIM-92";
+		descriptionShort="Ã—2 Stinger, IR-homing";
 		ammo="rhs_ammo_fim92_missile";
 		count=2;
 		initSpeed=40;
@@ -2544,7 +2560,9 @@ class CfgMagazines
 		{
 			"RHS_HP_AIM120"
 		};
+		displayName="AIM-120";
 		displaynameshort="Radar";
+		displayNameMFDFormat="%1 AIM-120";
 		descriptionShort="Radar-homing, BVRAAM";
 		ammo="rhs_ammo_aim120";
 		count=1;
@@ -2844,6 +2862,8 @@ class CfgMagazines
 	};
 	class rhs_mag_aim120d: rhs_mag_aim120
 	{
+		displayName="AIM-120D";
+		displayNameMFDFormat="%1 AIM-120D";
 		ammo="rhs_ammo_aim120d";
 		pylonWeapon="rhs_weap_AIM120D";
 	};
@@ -3147,6 +3167,7 @@ class CfgMagazines
 	};
 	class rhs_mag_aim120d_2_F22_l: rhs_mag_aim120d_int
 	{
+		displayName="AIM-120D (Ã—2)";
 		count=2;
 		hardpoints[]=
 		{
@@ -3749,7 +3770,9 @@ class CfgMagazines
 	{
 		count=4;
 		ammo="RHS_Ammo_DAGR";
-		descriptionShort="×4 Laser-homing 70mm rockets";
+		displayName="DAGR";
+		displayNameShort="SALH";
+		descriptionShort="Ã—4 Laser-homing 70mm rockets";
 		weight=32;
 		hardpoints[]=
 		{
@@ -4366,7 +4389,8 @@ class CfgMagazines
 	class rhs_mag_DAGR_8: rhs_mag_DAGR_4
 	{
 		count=8;
-		descriptionShort="×8 Laser-homing 70mm rockets";
+		displayName="DAGR (M310)";
+		descriptionShort="Ã—8 Laser-homing 70mm rockets";
 		weight=64;
 		hardpoints[]=
 		{
@@ -4379,7 +4403,8 @@ class CfgMagazines
 	class rhs_mag_DAGR_16: rhs_mag_DAGR_8
 	{
 		count=16;
-		descriptionShort="×16 Laser-homing 70mm rockets";
+		displayName="DAGR (M299)";
+		descriptionShort="Ã—16 Laser-homing 70mm rockets";
 		weight=128;
 		hardpoints[]=
 		{
@@ -4390,6 +4415,7 @@ class CfgMagazines
 	};
 	class rhs_mag_Hellfire_base: VehicleMagazine
 	{
+		displayName="AGM-114L Hellfire II";
 		ammo="rhs_ammo_Hellfire_AT";
 		count=8;
 		nameSound="missiles";
@@ -4864,6 +4890,7 @@ class CfgMagazines
 	class rhs_mag_AGM114L: rhs_mag_Hellfire_base
 	{
 		ammo="rhs_ammo_AGM_114L";
+		displayName="AGM-114L";
 		displaynameshort="Radar";
 		descriptionShort="Longbow Hellfire, Radar-homing";
 		hardpoints[]=
@@ -5100,7 +5127,8 @@ class CfgMagazines
 	class rhs_mag_AGM114L_2: rhs_mag_AGM114L
 	{
 		count=2;
-		descriptionShort="×2 Longbow Hellfire, Radar-homing";
+		displayName="AGM-114L (M310)";
+		descriptionShort="Ã—2 Longbow Hellfire, Radar-homing";
 		weight=90;
 		hardpoints[]=
 		{
@@ -5111,7 +5139,8 @@ class CfgMagazines
 	class rhs_mag_AGM114L_4: rhs_mag_AGM114L_2
 	{
 		count=4;
-		descriptionShort="×4 Longbow Hellfire, Radar-homing";
+		displayName="AGM-114L (M299)";
+		descriptionShort="Ã—4 Longbow Hellfire, Radar-homing";
 		weight=180;
 		hardpoints[]=
 		{
@@ -5770,6 +5799,7 @@ class CfgMagazines
 	};
 	class rhs_mag_AGM114K: rhs_mag_Hellfire_base
 	{
+		displayName="AGM-114K";
 		displaynameshort="LG";
 		descriptionShort="Hellfire, Laser-homing ";
 		ammo="RHS_ammo_AGM_114K";
@@ -5786,7 +5816,8 @@ class CfgMagazines
 	class rhs_mag_AGM114K_2: rhs_mag_AGM114K
 	{
 		count=2;
-		descriptionShort="×2 Hellfire, Laser-homing ";
+		displayName="AGM-114K (M310)";
+		descriptionShort="Ã—2 Hellfire, Laser-homing ";
 		weight=90;
 		hardpoints[]=
 		{
@@ -6205,7 +6236,8 @@ class CfgMagazines
 	class rhs_mag_AGM114K_4: rhs_mag_AGM114K_2
 	{
 		count=4;
-		descriptionShort="×4 Hellfire, Laser-homing ";
+		displayName="AGM-114K (M299)";
+		descriptionShort="Ã—4 Hellfire, Laser-homing ";
 		weight=180;
 		hardpoints[]=
 		{
@@ -6865,6 +6897,7 @@ class CfgMagazines
 	};
 	class rhs_mag_AGM114M: rhs_mag_AGM114K
 	{
+		displayName="AGM-114M";
 		displaynameshort="LG HE";
 		descriptionShort="HE/FRAG Hellfire, Laser-homing";
 		ammo="RHS_ammo_AGM_114M";
@@ -7118,7 +7151,8 @@ class CfgMagazines
 	class rhs_mag_AGM114M_2: rhs_mag_AGM114M
 	{
 		count=2;
-		descriptionShort="×2 HE/FRAG Hellfire, Laser-homing";
+		displayName="AGM-114M (M310)";
+		descriptionShort="Ã—2 HE/FRAG Hellfire, Laser-homing";
 		weight=90;
 		hardpoints[]=
 		{
@@ -7131,7 +7165,8 @@ class CfgMagazines
 	class rhs_mag_AGM114M_4: rhs_mag_AGM114M_2
 	{
 		count=4;
-		descriptionShort="×4 HE/FRAG Hellfire, Laser-homing";
+		displayName="AGM-114M (M299)";
+		descriptionShort="Ã—4 HE/FRAG Hellfire, Laser-homing";
 		weight=180;
 		hardpoints[]=
 		{
@@ -7142,6 +7177,7 @@ class CfgMagazines
 	};
 	class rhs_mag_AGM114N: rhs_mag_AGM114K
 	{
+		displayName="AGM-114N";
 		displaynameshort="LG TB";
 		descriptionShort="Thermobaric Hellfire, Laser-homing";
 		ammo="RHS_ammo_AGM_114N";
@@ -7395,7 +7431,8 @@ class CfgMagazines
 	class rhs_mag_AGM114N_2: rhs_mag_AGM114N
 	{
 		count=2;
-		descriptionShort="×2 Thermobaric Hellfire, Laser-homing";
+		displayName="AGM-114N (M310)";
+		descriptionShort="Ã—2 Thermobaric Hellfire, Laser-homing";
 		weight=90;
 		hardpoints[]=
 		{
@@ -7408,7 +7445,8 @@ class CfgMagazines
 	class rhs_mag_AGM114N_4: rhs_mag_AGM114N_2
 	{
 		count=4;
-		descriptionShort="×4 Thermobaric Hellfire, Laser-homing";
+		displayName="AGM-114N (M299)";
+		descriptionShort="Ã—4 Thermobaric Hellfire, Laser-homing";
 		weight=180;
 		hardpoints[]=
 		{
@@ -7497,6 +7535,8 @@ class CfgMagazines
 	};
 	class rhs_mag_agm65: rhs_mag_Hellfire_base
 	{
+		displayName="AGM-65";
+		displayNameShort="AGM-65";
 		ammo="rhs_ammo_agm65";
 		initSpeed=0;
 		maxLeadSpeed=220;
@@ -7661,10 +7701,12 @@ class CfgMagazines
 				};
 			};
 		};
+		displayNameMFDFormat="\%1";
 	};
 	class rhs_mag_agm65_x3: rhs_mag_agm65
 	{
 		count=3;
+		displayName="AGM-65 x3";
 		mirrorMissilesIndexes[]={2,1,3};
 		class mfdElements: mfdElements
 		{
@@ -7851,6 +7893,8 @@ class CfgMagazines
 	};
 	class rhs_mag_agm65b: rhs_mag_agm65
 	{
+		displayName="AGM-65B";
+		displayNameShort="TV";
 		descriptionShort="TV-guided Maverick";
 		ammo="rhs_ammo_agm65b";
 		hardpoints[]=
@@ -7862,7 +7906,9 @@ class CfgMagazines
 	};
 	class rhs_mag_agm65b_3: rhs_mag_agm65_x3
 	{
-		descriptionShort="×3 TV-guided Maverick";
+		displayName="AGM-65B (LAU-88/A)";
+		descriptionShort="Ã—3 TV-guided Maverick";
+		displayNameShort="TV";
 		ammo="rhs_ammo_agm65b";
 		hardpoints[]=
 		{
@@ -7872,6 +7918,8 @@ class CfgMagazines
 	};
 	class rhs_mag_agm65d: rhs_mag_agm65
 	{
+		displayName="AGM-65D";
+		displayNameShort="IR";
 		ammo="rhs_ammo_agm65d";
 		descriptionShort="IR-guided Maverick";
 		hardpoints[]=
@@ -7883,7 +7931,9 @@ class CfgMagazines
 	};
 	class rhs_mag_agm65d_3: rhs_mag_agm65_x3
 	{
-		descriptionShort="×3 IR-guided Maverick";
+		displayName="AGM-65D (LAU-88/A)";
+		displayNameShort="IR";
+		descriptionShort="Ã—3 IR-guided Maverick";
 		ammo="rhs_ammo_agm65d";
 		hardpoints[]=
 		{
@@ -7893,6 +7943,8 @@ class CfgMagazines
 	};
 	class rhs_mag_agm65e: rhs_mag_agm65
 	{
+		displayName="AGM-65E";
+		displayNameShort="LASER";
 		descriptionShort="Laser-guided Maverick";
 		ammo="rhs_ammo_agm65e";
 		hardpoints[]=
@@ -7904,7 +7956,9 @@ class CfgMagazines
 	};
 	class rhs_mag_agm65e_3: rhs_mag_agm65_x3
 	{
-		descriptionShort="×3 Laser-guided Maverick";
+		displayName="AGM-65E (LAU-88/A)";
+		displayNameShort="LASER";
+		descriptionShort="Ã—3 Laser-guided Maverick";
 		ammo="rhs_ammo_agm65e";
 		hardpoints[]=
 		{
@@ -7914,6 +7968,8 @@ class CfgMagazines
 	};
 	class rhs_mag_agm65f: rhs_mag_agm65
 	{
+		displayName="AGM-65F";
+		displayNameShort="IR";
 		descriptionShort="IR-guided Anti-Ship Maverick";
 		ammo="rhs_ammo_agm65f";
 		hardpoints[]=
@@ -7925,7 +7981,9 @@ class CfgMagazines
 	};
 	class rhs_mag_agm65f_3: rhs_mag_agm65_x3
 	{
-		descriptionShort="×3 IR-guided Anti-Ship Maverick";
+		displayName="AGM-65F (LAU-88/A)";
+		displayNameShort="IR";
+		descriptionShort="Ã—3 IR-guided Anti-Ship Maverick";
 		ammo="rhs_ammo_agm65f";
 		hardpoints[]=
 		{
@@ -7935,6 +7993,8 @@ class CfgMagazines
 	};
 	class rhs_mag_agm65h: rhs_mag_agm65
 	{
+		displayName="AGM-65H";
+		displayNameShort="CCD";
 		descriptionShort="Improved TV-guided Maverick";
 		ammo="rhs_ammo_agm65h";
 		hardpoints[]=
@@ -7946,7 +8006,9 @@ class CfgMagazines
 	};
 	class rhs_mag_agm65h_3: rhs_mag_agm65_x3
 	{
-		descriptionShort="×3 Improved TV-guided Maverick";
+		displayName="AGM-65H (LAU-88/A)";
+		displayNameShort="CCD";
+		descriptionShort="Ã—3 Improved TV-guided Maverick";
 		ammo="rhs_ammo_agm65h";
 		hardpoints[]=
 		{
@@ -7963,13 +8025,15 @@ class CfgMagazines
 		weight=48;
 		ammo="rhs_ammo_Hydra_M151";
 		displayname="M151 Hydra (M260)";
-		descriptionShort="×7 10lb HE Hydra";
+		displayNameShort="HE";
+		descriptionShort="Ã—7 10lb HE Hydra";
 		hardpoints[]=
 		{
 			"RHS_HP_FFAR_ARMY",
 			"RHS_HP_MELB"
 		};
 		pylonWeapon="rhs_weap_FFARLauncher";
+		displayNameMFDFormat="RKT\%2\%1";
 		class mfdElements
 		{
 			class rhs_a10a_ammoname
@@ -8199,7 +8263,7 @@ class CfgMagazines
 		count=19;
 		weight=131;
 		displayname="M151 Hydra (M261)";
-		descriptionShort="×19 10lb HE Hydra";
+		descriptionShort="Ã—19 10lb HE Hydra";
 		class mfdElements: mfdElements
 		{
 			class RHS_AH64_Weap_MFD
@@ -9007,7 +9071,7 @@ class CfgMagazines
 	{
 		ammo="rhs_ammo_Hydra_M229";
 		displayname="M229 Hydra (M260)";
-		descriptionShort="×7 17lb HE Hydra";
+		descriptionShort="Ã—7 17lb HE Hydra";
 		pylonWeapon="rhs_weap_FFARLauncher_M229";
 		class mfdElements
 		{
@@ -9624,7 +9688,7 @@ class CfgMagazines
 	{
 		ammo="rhs_ammo_Hydra_M229";
 		displayname="M229 Hydra (M261)";
-		descriptionShort="×19 17lb HE Hydra";
+		descriptionShort="Ã—19 17lb HE Hydra";
 		pylonWeapon="rhs_weap_FFARLauncher_M229";
 		class mfdElements: mfdElements
 		{
@@ -10042,7 +10106,8 @@ class CfgMagazines
 	{
 		ammo="rhs_ammo_Hydra_M257";
 		displayname="M257 Hydra (M260)";
-		descriptionShort="×7 ILLUM Hydra";
+		displayNameShort="ILLUM";
+		descriptionShort="Ã—7 ILLUM Hydra";
 		pylonWeapon="rhs_weap_FFARLauncher_M257";
 		class mfdElements
 		{
@@ -10653,13 +10718,15 @@ class CfgMagazines
 	{
 		ammo="rhs_ammo_Hydra_M257";
 		displayname="M257 Hydra (LAU-68)";
-		descriptionShort="×7 ILLUM Hydra";
+		displayNameShort="ILLUM";
+		descriptionShort="Ã—7 ILLUM Hydra";
 		pylonWeapon="rhs_weap_FFARLauncher_M257";
 	};
 	class rhs_mag_FFAR_7_USAF: VehicleMagazine
 	{
 		displayname="M151 FFAR (LAU-68)";
-		descriptionShort="×7 10lb HE FFAR";
+		displayNameShort="HE";
+		descriptionShort="Ã—7 10lb HE FFAR";
 		ammo="rhs_ammo_FFAR_M151";
 		count=7;
 		initSpeed=44;
@@ -10671,6 +10738,7 @@ class CfgMagazines
 			"RHS_HP_FFAR_USAF_green"
 		};
 		pylonWeapon="rhs_weap_FFARLauncher";
+		displayNameMFDFormat="RKT\%2\%1";
 		class mfdElements
 		{
 			class rhs_a10a_ammoname
@@ -11247,7 +11315,8 @@ class CfgMagazines
 	{
 		count=21;
 		weight=200;
-		descriptionShort="×21 10lb HEDP FFAR";
+		displayName="M151 FFAR (BRU-42 + LAU-68)";
+		descriptionShort="Ã—21 10lb HEDP FFAR";
 		hardpoints[]=
 		{
 			"RHS_HP_FFAR_USAF_3x"
@@ -11257,7 +11326,8 @@ class CfgMagazines
 	{
 		count=19;
 		weight=131;
-		descriptionShort="×19 10lb HE FFAR";
+		displayName="M151 FFAR (LAU-61)";
+		descriptionShort="Ã—19 10lb HE FFAR";
 		hardpoints[]=
 		{
 			"RHS_HP_FFAR_HEAVY_USAF"
@@ -11267,7 +11337,8 @@ class CfgMagazines
 	{
 		count=57;
 		weight=450;
-		descriptionShort="×57 10lb HE FFAR";
+		displayName="M151 FFAR (BRU-42 + LAU-61)";
+		descriptionShort="Ã—57 10lb HE FFAR";
 		hardpoints[]=
 		{
 			"RHS_HP_FFAR_HEAVY_USAF_3x"
@@ -11276,7 +11347,7 @@ class CfgMagazines
 	class rhs_mag_M151_7_USAF_LAU131: rhs_mag_FFAR_7_USAF
 	{
 		displayname="M151 Hydra (LAU-131)";
-		descriptionShort="×7 10lb HE Hydra";
+		descriptionShort="Ã—7 10lb HE Hydra";
 		ammo="rhs_ammo_Hydra_M151";
 		hardpoints[]=
 		{
@@ -11287,7 +11358,8 @@ class CfgMagazines
 	{
 		count=21;
 		weight=200;
-		descriptionShort="×21 10lb HE Hydra";
+		displayName="M151 Hydra (BRU-42 + LAU-131)";
+		descriptionShort="Ã—21 10lb HE Hydra";
 		hardpoints[]=
 		{
 			"RHS_HP_Hydra_USAF_3x"
@@ -11296,7 +11368,8 @@ class CfgMagazines
 	class rhs_mag_M257_7_USAF_LAU131: rhs_mag_M151_7_USAF_LAU131
 	{
 		displayname="M257 Hydra (LAU-131)";
-		descriptionShort="×7 ILLUM Hydra";
+		displayNameShort="ILLUM";
+		descriptionShort="Ã—7 ILLUM Hydra";
 		pylonWeapon="rhs_weap_FFARLauncher_M257";
 		ammo="rhs_ammo_Hydra_M257";
 	};
@@ -11305,6 +11378,7 @@ class CfgMagazines
 	class rhs_mag_mk82: 2Rnd_Mk82
 	{
 		count=1;
+		displayName="Mk82";
 		descriptionShort="500lb bomb";
 		ammo="rhs_ammo_mk82";
 		hardpoints[]=
@@ -11314,6 +11388,7 @@ class CfgMagazines
 			"RHS_HP_JDAM_500"
 		};
 		pylonWeapon="rhs_weap_mk82";
+		displayNameMFDFormat="MK82\%1";
 		class mfdElements
 		{
 			class rhs_a10a_ammoname
@@ -11815,7 +11890,8 @@ class CfgMagazines
 	class rhs_mag_mk82_3: rhs_mag_mk82
 	{
 		count=3;
-		descriptionShort="×3 500lb bomb";
+		displayName="Mk82 (BRU-42)";
+		descriptionShort="Ã—3 500lb bomb";
 		hardpoints[]=
 		{
 			"RHS_HP_BOMB_500_3x",
@@ -12347,6 +12423,7 @@ class CfgMagazines
 	class rhs_mag_gbu12: 4Rnd_Bomb_04_F
 	{
 		count=1;
+		displayName="GBU-12";
 		descriptionShort="500lb Paveway II";
 		ammo="rhs_ammo_gbu12";
 		hardpoints[]=
@@ -12354,6 +12431,7 @@ class CfgMagazines
 			"RHS_HP_LGB_500"
 		};
 		pylonWeapon="rhs_weap_gbu12";
+		displayNameMFDFormat="GBU12\%1";
 		class mfdElements
 		{
 			class rhs_a10a_ammoname
@@ -12854,6 +12932,7 @@ class CfgMagazines
 	class rhs_mag_gbu32: 4Rnd_Bomb_04_F
 	{
 		count=1;
+		displayName="GBU-32";
 		descriptionShort="1000lb JDAM";
 		ammo="rhs_ammo_gbu32";
 		hardpoints[]=
@@ -12861,6 +12940,7 @@ class CfgMagazines
 			"RHS_HP_JDAM_1000"
 		};
 		pylonWeapon="rhs_weap_gbu32";
+		displayNameMFDFormat="GBU32\%1";
 		mass=459;
 		class mfdElements
 		{
@@ -13649,13 +13729,15 @@ class CfgMagazines
 	{
 		ammo="rhs_ammo_cbu87";
 		displayname="CBU-87";
-		descriptionShort="SUU-65/B Dispenser (×101 BLU-97B/B CEM)";
+		displayNameShort="Cluster CEM";
+		descriptionShort="SUU-65/B Dispenser (Ã—101 BLU-97B/B CEM)";
 		hardpoints[]=
 		{
 			"RHS_HP_BOMB_1000",
 			"RHS_HP_LGB_1000"
 		};
 		pylonWeapon="rhs_weap_cbu87";
+		displayNameMFDFormat="CBU87\%1";
 		class mfdElements
 		{
 			class rhs_a10a_ammoname
@@ -14158,13 +14240,15 @@ class CfgMagazines
 	{
 		ammo="rhs_ammo_cbu87";
 		displayname="CBU-87 (BRU-42)";
-		descriptionShort="×3 SUU-65/B Dispenser (×101 BLU-97B/B CEM)";
+		displayNameShort="Cluster CEM";
+		descriptionShort="Ã—3 SUU-65/B Dispenser (Ã—101 BLU-97B/B CEM)";
 		hardpoints[]=
 		{
 			"RHS_HP_BOMB_1000_3x",
 			"RHS_HP_LGB_1000_3x"
 		};
 		pylonWeapon="rhs_weap_cbu87";
+		displayNameMFDFormat="CBU87\%1";
 		class mfdElements
 		{
 			class rhs_a10a_ammoname
@@ -14667,22 +14751,28 @@ class CfgMagazines
 	{
 		ammo="rhs_ammo_cbu89";
 		displayname="CBU-89";
-		descriptionShort="SUU-64/B Dispenser (×71 BLU-91/B AT & ×22 BLU-92/B APERS mines)";
+		displayNameShort="Cluster Mine";
+		descriptionShort="SUU-64/B Dispenser (Ã—71 BLU-91/B AT & Ã—22 BLU-92/B APERS mines)";
 		pylonWeapon="rhs_weap_cbu89";
+		displayNameMFDFormat="CBU89\%1";
 	};
 	class rhs_mag_cbu89_3: rhs_mag_cbu87_3
 	{
 		ammo="rhs_ammo_cbu89";
 		displayname="CBU-89 (BRU-42)";
-		descriptionShort="×3 SUU-64/B Dispenser (×71 BLU-91/B AT & ×22 BLU-92/B APERS mines)";
+		displayNameShort="Cluster Mine";
+		descriptionShort="Ã—3 SUU-64/B Dispenser (Ã—71 BLU-91/B AT & Ã—22 BLU-92/B APERS mines)";
 		pylonWeapon="rhs_weap_cbu89";
+		displayNameMFDFormat="CBU89\%1";
 	};
 	class rhs_mag_cbu100: rhs_mag_mk82
 	{
 		ammo="rhs_ammo_cbu100";
 		displayname="CBU-100";
-		descriptionShort="SUU-76/B Dispenser (×123 Mk 118 HEAT)";
+		displayNameShort="Cluster HEAT";
+		descriptionShort="SUU-76/B Dispenser (Ã—123 Mk 118 HEAT)";
 		pylonWeapon="rhs_weap_cbu100";
+		displayNameMFDFormat="CBU100\%1";
 		hardpoints[]=
 		{
 			"RHS_HP_BOMB_500",
@@ -15190,8 +15280,10 @@ class CfgMagazines
 	{
 		ammo="rhs_ammo_cbu100";
 		displayname="CBU-100 (BRU-42)";
-		descriptionShort="×3 SUU-76/B Dispenser (×123 Mk 118 HEAT)";
+		displayNameShort="Cluster HEAT";
+		descriptionShort="Ã—3 SUU-76/B Dispenser (Ã—123 Mk 118 HEAT)";
 		pylonWeapon="rhs_weap_cbu100";
+		displayNameMFDFormat="CBU100\%1";
 		hardpoints[]=
 		{
 			"RHS_HP_BOMB_500_3x",
@@ -15698,6 +15790,7 @@ class CfgMagazines
 	class rhs_mag_ANALQ131: VehicleMagazine
 	{
 		ammo="rhs_ammo_ANALQ131";
+		displayName="AN/ALQ-131(V)";
 		descriptionShort="Electronic Countermeasures (ECM) Pod";
 		count=1;
 		initSpeed=0;
@@ -15872,6 +15965,7 @@ class CfgMagazines
 	class rhs_mag_fueltank_UH60: VehicleMagazine
 	{
 		ammo="rhs_ammo_ANALQ131";
+		displayName="Fuel Tank (empty)";
 		count=1;
 		initSpeed=0;
 		sound[]={};
@@ -15889,9 +15983,12 @@ class CfgMagazines
 		{
 			"RHS_HP_Fuel_ARMY_MEV"
 		};
+		displayName="Fuel Tank (MEV)";
 	};
 	class rhsusf_20mm_M61A2: VehicleMagazine
 	{
+		displayName="M61A2";
+		displayNameMFDFormat="M61A2: %1";
 		ammo="rhsusf_ammo_M61A2";
 		count=480;
 		initSpeed=1080;
@@ -15901,7 +15998,8 @@ class CfgMagazines
 		ammo="rhs_ammo_127x99_SLAP_Tracer_Red";
 		count=1300;
 		displayname="GAU-19/A";
-		descriptionShort="×1300 12.7×99mm M962 (SLAP-T)";
+		displayNameShort="12.7x99mm";
+		descriptionShort="Ã—1300 12.7Ã—99mm M962 (SLAP-T)";
 		initspeed=1210;
 		maxleadspeed=200;
 		pylonWeapon="RHS_weap_gau19";
@@ -15929,6 +16027,7 @@ class CfgMagazines
 	{
 		ammo="rhs_ammo_762x51_M61_AP";
 		displayname="M134";
+		displayNameShort="7.62x51 mm";
 		initspeed=910;
 		pylonWeapon="RHS_weap_m134_pylon";
 		muzzlePos="muzzlePos";
@@ -15940,7 +16039,7 @@ class CfgMagazines
 	};
 	class rhs_mag_m134_pylon_3000: rhs_mag_m134_pylon_base
 	{
-		descriptionShort="×3000 7.62×51mm M61/M62 (AP/T)";
+		descriptionShort="Ã—3000 7.62Ã—51mm M61/M62 (AP/T)";
 		hardpoints[]=
 		{
 			"RHS_HP_MELB_M134"
@@ -15962,6 +16061,8 @@ class CfgWeapons
 	};
 	class rhs_weap_SidewinderLauncher: MissileLauncher
 	{
+		displayName="AIM-9X";
+		displayNameMagazine="AIM-9X";
 		shortNameMagazine="AIM-9X";
 		minRange=300;
 		minRangeProbab=0.25;
@@ -16016,10 +16117,14 @@ class CfgWeapons
 	};
 	class rhs_weap_AIM9M: rhs_weap_SidewinderLauncher
 	{
+		displayName="AIM-9M";
+		displayNameMagazine="AIM-9M";
 		shortNameMagazine="AIM-9M";
 	};
 	class rhs_weap_AIM120: rhs_weap_SidewinderLauncher
 	{
+		displayName="AIM-120";
+		displayNameMagazine="AIM-120";
 		shortNameMagazine="AIM-120";
 		magazineReloadTime=0.1;
 		weaponLockSystem=8;
@@ -16032,12 +16137,15 @@ class CfgWeapons
 	};
 	class rhs_weap_AIM120D: rhs_weap_AIM120
 	{
+		displayName="AIM-120D";
+		displayNameMagazine="AIM-120D";
 		shortNameMagazine="AIM-120D";
 		magazineReloadTime=0.1;
 		maxRange=28000;
 	};
 	class rhs_weap_FFARLauncher: RocketPods
 	{
+		displayName="Hydra (M151 HE)";
 		modes[]=
 		{
 			"Far_AI",
@@ -16054,6 +16162,7 @@ class CfgWeapons
 		cursorSize=0;
 		class Far_AI: RocketPods
 		{
+			displayName="Hydra";
 			burst=1;
 			reloadTime=0.079999998;
 			autoFire=0;
@@ -16089,6 +16198,7 @@ class CfgWeapons
 		};
 		class Burst: RocketPods
 		{
+			displayName="ALL";
 			burst=1;
 			salvo=2;
 			reloadTime=0.079999998;
@@ -16127,37 +16237,45 @@ class CfgWeapons
 		};
 		class Single: Burst
 		{
+			displayName="1";
 			autoFire=0;
 			salvo=1;
 		};
 		class Two: Single
 		{
+			displayName="2";
 			salvo=2;
 			burst=1;
 		};
 		class Four: Single
 		{
+			displayName="4";
 			salvo=2;
 			burst=2;
 		};
 		class Eight: Four
 		{
+			displayName="8";
 			burst=8;
 		};
 		class Twelve: Four
 		{
+			displayName="12";
 			burst=12;
 		};
 		class TwentyFour: Four
 		{
+			displayName="24";
 			burst=24;
 		};
 	};
 	class rhs_weap_FFARLauncher_M229: rhs_weap_FFARLauncher
 	{
+		displayName="Hydra (M229 HEPD)";
 	};
 	class rhs_weap_FFARLauncher_M257: rhs_weap_FFARLauncher
 	{
+		displayName="Hydra (M257 ILLUM)";
 		modes[]=
 		{
 			"Far_AI",
@@ -16177,6 +16295,7 @@ class CfgWeapons
 	class rhs_weap_HellfireLauncher: Missile_AGM_02_Plane_CAS_01_F
 	{
 		autoFire=0;
+		displayName="AGM-114L Hellfire II";
 		cursorSize=0;
 		cursor="missile";
 		cursorAim="EmptyCursor";
@@ -16199,6 +16318,7 @@ class CfgWeapons
 		};
 		class TopDown: Mode_SemiAuto
 		{
+			displayName="LOBL";
 			aiRateOfFire=5;
 			aiRateOfFireDistance=1000;
 			maxrange=8000;
@@ -16210,16 +16330,20 @@ class CfgWeapons
 		};
 		class LoalDistance: TopDown
 		{
+			displayName="LOAL-DIR";
 		};
 		class Cruise: TopDown
 		{
+			displayName="LOAL-HI";
 		};
 	};
 	class rhs_weap_AGM114L_Launcher: rhs_weap_HellfireLauncher
 	{
+		displayName="AGM-114L Hellfire II";
 	};
 	class rhs_weap_AGM114K_base_Launcher: rhs_weap_HellfireLauncher
 	{
+		displayName="AGM-114K Hellfire II";
 		class EventHandlers
 		{
 			fired="_this call rhs_fnc_LOALGuide";
@@ -16249,6 +16373,7 @@ class CfgWeapons
 			};
 			class LoalDistance: TopDown
 			{
+				displayName="LOAL-LO";
 			};
 			class EventHandlers
 			{
@@ -16263,6 +16388,7 @@ class CfgWeapons
 			};
 			class LoalDistance: TopDown
 			{
+				displayName="LOAL-HI";
 			};
 			class EventHandlers
 			{
@@ -16272,6 +16398,7 @@ class CfgWeapons
 	};
 	class rhs_weap_AGM114M_base_Launcher: rhs_weap_HellfireLauncher
 	{
+		displayName="AGM-114M Hellfire II";
 	};
 	class rhs_weap_AGM114M_Launcher: rhs_weap_AGM114M_base_Launcher
 	{
@@ -16289,6 +16416,7 @@ class CfgWeapons
 			};
 			class LoalDistance: TopDown
 			{
+				displayName="LOAL-LO";
 			};
 			class EventHandlers
 			{
@@ -16303,6 +16431,7 @@ class CfgWeapons
 			};
 			class LoalDistance: TopDown
 			{
+				displayName="LOAL-HI";
 			};
 			class EventHandlers
 			{
@@ -16312,6 +16441,7 @@ class CfgWeapons
 	};
 	class RHS_weap_AGM114N_base_Launcher: rhs_weap_HellfireLauncher
 	{
+		displayName="AGM-114N Hellfire II";
 	};
 	class RHS_weap_AGM114N_Launcher: RHS_weap_AGM114N_base_Launcher
 	{
@@ -16329,6 +16459,7 @@ class CfgWeapons
 			};
 			class LoalDistance: TopDown
 			{
+				displayName="LOAL-LO";
 			};
 			class EventHandlers
 			{
@@ -16343,6 +16474,7 @@ class CfgWeapons
 			};
 			class LoalDistance: TopDown
 			{
+				displayName="LOAL-HI";
 			};
 			class EventHandlers
 			{
@@ -16354,6 +16486,7 @@ class CfgWeapons
 	{
 		autoFire=0;
 		CanLock=2;
+		displayName="DAGR";
 		weight=40;
 		nameSound="MissileLauncher";
 		lockingTargetSound[]=
@@ -16376,6 +16509,7 @@ class CfgWeapons
 		showAimCursorInternal=0;
 		class Direct: TopDown
 		{
+			displayName="LOBL";
 			aiRateOfFire=5;
 			aiRateOfFireDistance=4000;
 			minRange=600;
@@ -16415,6 +16549,7 @@ class CfgWeapons
 		};
 		class LoalDistance: TopDown
 		{
+			displayName="LOAL-DIR";
 			sounds[]=
 			{
 				"StandardSound"
@@ -16452,6 +16587,8 @@ class CfgWeapons
 	};
 	class rhs_weap_agm65: rhs_weap_HellfireLauncher
 	{
+		displayName="AGM-65 Maverick";
+		displayNameMagazine="AGM-65 Maverick";
 		shortNameMagazine="AGM-65";
 		missileLockCone=65;
 		reloadTime=0.1;
@@ -16490,6 +16627,7 @@ class CfgWeapons
 	class rhs_weap_TOW_Launcher;
 	class rhs_weap_stinger_Launcher: rhs_weap_TOW_Launcher
 	{
+		displayName="FIM-92F Stinger";
 		reloadTime=4;
 		magazineReloadTime=5;
 		canLock=2;
@@ -16510,6 +16648,7 @@ class CfgWeapons
 	};
 	class rhs_weap_ATAS_launcher: rhs_weap_TOW_Launcher
 	{
+		displayName="ATAS";
 		reloadTime=4;
 		magazineReloadTime=0;
 		canLock=2;
@@ -16528,6 +16667,7 @@ class CfgWeapons
 	class Mk82BombLauncher;
 	class rhs_weap_gbu12: Bomb_04_Plane_CAS_01_F
 	{
+		displayName="GBU-12";
 		cursorSize=0;
 		cursor="bomb";
 		cursorAim="EmptyCursor";
@@ -16540,6 +16680,7 @@ class CfgWeapons
 	};
 	class rhs_weap_gbu32: Bomb_04_Plane_CAS_01_F
 	{
+		displayName="GBU-32";
 		cursorSize=0;
 		cursor="bomb";
 		cursorAim="EmptyCursor";
@@ -16552,6 +16693,7 @@ class CfgWeapons
 	};
 	class rhs_weap_mk82: Mk82BombLauncher
 	{
+		displayName="Mk 82";
 		cursorSize=0;
 		cursor="bomb";
 		cursorAim="EmptyCursor";
@@ -16566,12 +16708,15 @@ class CfgWeapons
 	};
 	class rhs_weap_cbu100: rhs_weap_mk82
 	{
+		displayName="CBU-100";
 	};
 	class rhs_weap_cbu87: rhs_weap_mk82
 	{
+		displayName="CBU-87";
 	};
 	class rhs_weap_cbu89: rhs_weap_cbu87
 	{
+		displayName="CBU-89";
 	};
 	class CannonCore;
 	class weapon_Fighter_Gun20mm_AA: CannonCore
@@ -16580,10 +16725,13 @@ class CfgWeapons
 	};
 	class rhsusf_M61A2: weapon_Fighter_Gun20mm_AA
 	{
+		displayName="M61A2";
+		displayNameMagazine="M61A2";
 		shortNameMagazine="20mm";
 		class manual: manual
 		{
 			reloadTime=0.0099999998;
+			displayName="M61A2";
 		};
 		cursorAim="EmptyCursor";
 		holdsterAnimValue=1.5;
@@ -16599,6 +16747,7 @@ class cfgVehicles
 	class rhsusf_mine_blu91: MineBase
 	{
 		ammo="rhs_ammo_blu91";
+		displayName="BLU-91/B";
 		icon="iconExplosiveAT";
 		descriptionShort="$STR_A3_cfgMagazines_ClassicMineRangeMagazine1";
 		class Library
@@ -16609,6 +16758,7 @@ class cfgVehicles
 	class rhsusf_mine_blu92: MineBase
 	{
 		ammo="rhs_ammo_blu92";
+		displayName="BLU-92/B";
 		icon="iconExplosiveAP";
 		descriptionShort="$STR_A3_cfgMagazines_ClassicMineRangeMagazine1";
 		class Library
@@ -16619,6 +16769,7 @@ class cfgVehicles
 	class rhsusf_uxo_blu97: MineBase
 	{
 		ammo="rhs_ammo_uxo_blu97";
+		displayName="$STR_RHSUSF_UXO_BLU97";
 		icon="iconExplosiveUXO";
 		descriptionShort="$STR_A3_cfgMagazines_ClassicMineRangeMagazine1";
 		class Library
@@ -16629,14 +16780,17 @@ class cfgVehicles
 	class ModuleMine_APERSMine_F;
 	class rhsusf_mine_blu91_module: ModuleMine_APERSMine_F
 	{
+		displayName="BLU-91/B";
 		explosive="rhs_ammo_blu91";
 	};
 	class rhsusf_mine_blu92_module: ModuleMine_APERSMine_F
 	{
+		displayName="BLU-92/B";
 		explosive="rhs_ammo_blu92";
 	};
 	class rhsusf_uxo_blu97_module: ModuleMine_APERSMine_F
 	{
+		displayName="$STR_RHSUSF_UXO_BLU97";
 		explosive="rhs_ammo_uxo_blu97";
 	};
 	class Site_F;

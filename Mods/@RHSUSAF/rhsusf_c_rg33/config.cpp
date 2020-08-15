@@ -61,6 +61,7 @@ class CfgVehicles
 	class rhsusf_RG33_base: MRAP_01_base_F
 	{
 		side=1;
+		displayName="RG33 4X4 SOCOM";
 		weapons[]=
 		{
 			"TruckHorn2",
@@ -86,9 +87,11 @@ class CfgVehicles
 		{
 			class rhs_desert
 			{
+				displayName="Desert";
 			};
 			class rhs_woodland
 			{
+				displayName="Woodland";
 			};
 		};
 		class Attributes
@@ -97,6 +100,7 @@ class CfgVehicles
 			{
 				control="CheckboxNumber";
 				defaultValue="0";
+				displayName="Lower Rhino";
 				property="Rhino_down";
 				expression="_this animateDoor ['%s',_value,true]";
 			};
@@ -339,6 +343,7 @@ class CfgVehicles
 	};
 	class rhsusf_RG33_CROWS_base: rhsusf_RG33_base
 	{
+		displayName="$STR_RHS_M1238A1_M153_M2_NAME";
 		threat[]={0.89999998,0.30000001,0.1};
 		class MFD
 		{
@@ -1269,6 +1274,7 @@ class CfgVehicles
 	};
 	class rhsusf_RG33_CROWSMK19_base: rhsusf_RG33_CROWS_base
 	{
+		displayName="$STR_RHS_M1238A1_M153_MK19_NAME";
 		class Turrets: Turrets
 		{
 			class CROWS_Turret: CROWS_Turret
@@ -1285,14 +1291,17 @@ class CfgVehicles
 	};
 	class rhsusf_M1238A1_socom_d: rhsusf_RG33_base
 	{
+		displayName="$STR_RHS_M1238A1_NAME";
 		accuracy=0.5;
 	};
 	class rhsusf_M1238A1_M2_socom_d: rhsusf_RG33_CROWS_base
 	{
+		displayName="$STR_RHS_M1238A1_M153_M2_NAME";
 		accuracy=0.5;
 	};
 	class rhsusf_M1238A1_Mk19_socom_d: rhsusf_RG33_CROWSMK19_base
 	{
+		displayName="$STR_RHS_M1238A1_M153_MK19_NAME";
 		accuracy=0.5;
 	};
 	class rhsusf_M1238A1_socom_wd: rhsusf_M1238A1_socom_d
@@ -1305,10 +1314,12 @@ class CfgVehicles
 	};
 	class rhsusf_M1238A1_Mk19_socom_wd: rhsusf_RG33_CROWSMK19_base
 	{
+		displayName="$STR_RHS_M1238A1_M153_MK19_NAME";
 		accuracy=0.5;
 	};
 	class rhsusf_rg33_d: rhsusf_RG33_base
 	{
+		displayName="$STR_RG33_Name";
 	};
 	class rhsusf_rg33_wd: rhsusf_rg33_d
 	{
@@ -1321,6 +1332,7 @@ class CfgVehicles
 	};
 	class rhsusf_rg33_m2_d: rhsusf_RG33_CROWS_base
 	{
+		displayName="$STR_RG33_M2_Name";
 	};
 	class rhsusf_rg33_m2_wd: rhsusf_rg33_m2_d
 	{

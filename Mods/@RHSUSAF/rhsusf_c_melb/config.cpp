@@ -56,6 +56,7 @@ class cfgMagazines
 	{
 		count=0;
 		displaynameshort="-";
+		displayName="-";
 		descriptionShort="-";
 		tracersEvery=0;
 		weight=0;
@@ -67,6 +68,7 @@ class cfgWeapons
 	class Laserdesignator_mounted;
 	class RHS_Laserdesignator_MELB: Laserdesignator_mounted
 	{
+		displayName="Laser Designator";
 		cursor="EmptyCursor";
 		cursorAim="EmptyCursor";
 		nameSound="laserdesignator";
@@ -1570,6 +1572,7 @@ class CfgVehicles
 		{
 			class rhs_MELB_TailNumber
 			{
+				displayName="Define Tail Number";
 				tooltip="Select tail number specific to this helicopter.";
 				property="rhs_MELB_TailNumber";
 				control="Combo";
@@ -1712,6 +1715,7 @@ class CfgVehicles
 			};
 			class rhs_MELB_NoFear
 			{
+				displayName="No Fear";
 				property="MELB_NoFear";
 				control="CheckboxNumber";
 				expression="_this animate ['hide_NoFear',_value,true]";
@@ -1719,21 +1723,25 @@ class CfgVehicles
 			};
 			class rhs_MELB_SGDM: rhs_MELB_NoFear
 			{
+				displayName="Six Guns";
 				property="MELB_SGDM";
 				expression="_this animate ['hide_SGDM',_value,true]";
 			};
 			class rhs_MELB_SN_Nose: rhs_MELB_NoFear
 			{
+				displayName="Tail Number";
 				property="MELB_SN_Nose";
 				expression="_this animate ['hide_SN_nose',_value,true]";
 			};
 			class rhs_MELB_clan: rhs_MELB_NoFear
 			{
+				displayName="Squad XML";
 				property="MELB_clan";
 				expression="_this animate ['hide_clan',_value,true]";
 			};
 			class MELB_ToggleBoy: rhs_MELB_NoFear
 			{
+				displayName="Bobblehead";
 				property="MELB_ToggleBoy";
 				expression="_this animate ['AddBobhead',_value,true]";
 			};
@@ -1905,6 +1913,7 @@ class CfgVehicles
 	};
 	class RHS_MELB_H6M: RHS_MELB_base
 	{
+		displayName="OH-6M";
 		availableForSupportTypes[]=
 		{
 			"Drop",
@@ -1946,6 +1955,7 @@ class CfgVehicles
 	{
 		forceInGarage=1;
 		icon="rhsusf\addons\rhsusf_melb\Data\ui\map_melb_ah_6m_l_ca.paa";
+		displayName="AH-6M Little Bird";
 		slingLoadMaxCargoMass=0;
 		fuelCapacity=436;
 		fuelConsumptionRate=0.079999998;
@@ -1996,6 +2006,7 @@ class CfgVehicles
 			};
 			class rhs_ExtLongL
 			{
+				displayName="Extend left pylon";
 				tooltip="Extended weapon pylon on the port side \nSome clipping occurs with GAU-19";
 				property="ExtLongL";
 				control="CheckboxNumber";
@@ -2004,6 +2015,7 @@ class CfgVehicles
 			};
 			class rhs_ExtLongR
 			{
+				displayName="Extend right pylon";
 				tooltip="Extended weapon pylon on the starboard side";
 				property="ExtLongR";
 				control="CheckboxNumber";
@@ -2107,6 +2119,7 @@ class CfgVehicles
 	};
 	class RHS_MELB_AH6M_L: RHS_MELB_AH6M
 	{
+		displayName="AH-6M-L Little Bird";
 		class components: Components
 		{
 			class TransportPylonsComponent: TransportPylonsComponent
@@ -2135,6 +2148,7 @@ class CfgVehicles
 	};
 	class RHS_MELB_AH6M_M: RHS_MELB_AH6M
 	{
+		displayName="AH-6M-M Little Bird";
 		class components: Components
 		{
 			class TransportPylonsComponent: TransportPylonsComponent
@@ -2163,6 +2177,7 @@ class CfgVehicles
 	};
 	class RHS_MELB_AH6M_H: RHS_MELB_AH6M
 	{
+		displayName="AH-6M-H Little Bird";
 		class components: Components
 		{
 			class TransportPylonsComponent: TransportPylonsComponent
@@ -2194,6 +2209,7 @@ class CfgVehicles
 	{
 		forceInGarage=1;
 		icon="rhsusf\addons\rhsusf_melb\Data\ui\map_melb_mh_6m_ca.paa";
+		displayName="MH-6M Little Bird";
 		fuelCapacity=436;
 		fuelConsumptionRate=0.079999998;
 		ejectDeadCargo=0;

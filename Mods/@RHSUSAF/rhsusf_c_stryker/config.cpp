@@ -1172,6 +1172,7 @@ class CfgVehicles
 	};
 	class rhsusf_stryker_m1126_base: rhsusf_stryker_base
 	{
+		displayName="M1126";
 		defaultUserMFDvalues[]={1000};
 		class MFD
 		{
@@ -13163,9 +13164,11 @@ class CfgVehicles
 		{
 			class Olive
 			{
+				displayName="Olive";
 			};
 			class Tan
 			{
+				displayName="Tan";
 			};
 		};
 		class HitPoints: HitPoints
@@ -13487,6 +13490,7 @@ class CfgVehicles
 	};
 	class rhsusf_stryker_m1126_m2_base: rhsusf_stryker_m1126_base
 	{
+		displayName="M1126 (M2)";
 		class Turrets: Turrets
 		{
 			class MainTurret: MainTurret
@@ -13507,6 +13511,7 @@ class CfgVehicles
 	};
 	class rhsusf_stryker_m1126_mk19_base: rhsusf_stryker_m1126_base
 	{
+		displayName="M1126 (Mk19)";
 		class Turrets: Turrets
 		{
 			class MainTurret: MainTurret
@@ -13543,6 +13548,7 @@ class CfgVehicles
 	};
 	class rhsusf_stryker_m1127_base: rhsusf_stryker_m1126_base
 	{
+		displayName="M1127";
 		defaultUserMFDvalues[]={1000,4};
 		class MFD
 		{
@@ -26403,9 +26409,11 @@ class CfgVehicles
 		{
 			class Olive
 			{
+				displayName="Olive";
 			};
 			class Tan
 			{
+				displayName="Tan";
 			};
 		};
 		class Turrets: Turrets
@@ -26668,6 +26676,7 @@ class CfgVehicles
 	};
 	class rhsusf_stryker_m1127_m2_base: rhsusf_stryker_m1127_base
 	{
+		displayName="M1127 (M2/LRAS3)";
 		class Turrets: Turrets
 		{
 			class MainTurret: MainTurret
@@ -26697,6 +26706,7 @@ class CfgVehicles
 	};
 	class rhsusf_stryker_m1132_m2_base: rhsusf_stryker_m1126_m2_base
 	{
+		displayName="M1132 (M2)";
 		class Damage
 		{
 		};
@@ -26724,9 +26734,11 @@ class CfgVehicles
 		{
 			class Olive
 			{
+				displayName="Olive";
 			};
 			class Tan
 			{
+				displayName="Tan";
 			};
 		};
 		class Hitpoints: HitPoints
@@ -26833,6 +26845,7 @@ class CfgVehicles
 	};
 	class rhsusf_stryker_m1134_base: rhsusf_stryker_m1126_m2_base
 	{
+		displayName="M1134";
 		defaultUserMFDvalues[]={1000,1};
 		class MFD
 		{
@@ -39578,9 +39591,11 @@ class CfgVehicles
 		{
 			class Olive
 			{
+				displayName="Olive";
 			};
 			class Tan
 			{
+				displayName="Tan";
 			};
 		};
 		class Turrets: Turrets

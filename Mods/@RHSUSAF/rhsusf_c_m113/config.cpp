@@ -112,6 +112,7 @@ class CfgVehicles
 			};
 		};
 		nameSound="veh_vehicle_APC_s";
+		displayName="$STR_M113A3WD_Name";
 		accuracy=0.30000001;
 		typicalCargo[]={};
 		side=1;
@@ -591,6 +592,7 @@ class CfgVehicles
 		{
 			class standard
 			{
+				displayName="Woodland";
 				factions[]=
 				{
 					"rhs_faction_usarmy_wd"
@@ -598,6 +600,7 @@ class CfgVehicles
 			};
 			class Desert
 			{
+				displayName="Desert";
 				factions[]=
 				{
 					"rhs_faction_usarmy_d"
@@ -605,6 +608,7 @@ class CfgVehicles
 			};
 			class Olive
 			{
+				displayName="Olive";
 				factions[]=
 				{
 					"rhs_faction_usarmy_wd"
@@ -627,6 +631,7 @@ class CfgVehicles
 		{
 			class rhs_hideIFFPanel
 			{
+				displayName="Hide IFF Panel";
 				property="rhs_hideIFFPanel";
 				control="CheckboxNumber";
 				expression="_this animate ['IFF_Panels_Hide',_value,true]";
@@ -634,6 +639,7 @@ class CfgVehicles
 			};
 			class rhs_openRamp
 			{
+				displayName="Open rear ramp";
 				property="rhs_openRamp";
 				control="CheckboxNumber";
 				expression="_this animateDoor ['ramp',_value,true]";
@@ -643,9 +649,11 @@ class CfgVehicles
 	};
 	class rhsusf_m113_usarmy: rhsusf_m113tank_base
 	{
+		displayName="$STR_M113A3WD_Name";
 	};
 	class rhsusf_m113_usarmy_supply: rhsusf_m113_usarmy
 	{
+		displayName="$STR_M113A3_AMMO";
 		hiddenSelections[]=
 		{
 			"camo1",
@@ -667,6 +675,7 @@ class CfgVehicles
 		{
 			class standard
 			{
+				displayName="Woodland";
 				factions[]=
 				{
 					"rhs_faction_usarmy_wd"
@@ -674,6 +683,7 @@ class CfgVehicles
 			};
 			class Olive
 			{
+				displayName="Olive";
 				factions[]=
 				{
 					"rhs_faction_usarmy_wd"
@@ -681,6 +691,7 @@ class CfgVehicles
 			};
 			class Desert
 			{
+				displayName="Desert";
 				factions[]=
 				{
 					"rhs_faction_usarmy_d"
@@ -757,6 +768,7 @@ class CfgVehicles
 			{
 			};
 		};
+		displayName="$STR_M113A3_UN";
 		hiddenSelectionsTextures[]=
 		{
 			"rhsusf\addons\rhsusf_m113\data_new\m113a3_01_wd_l_co.paa",
@@ -779,6 +791,7 @@ class CfgVehicles
 	};
 	class rhsusf_m113_usarmy_medical: rhsusf_m113_usarmy_unarmed
 	{
+		displayName="$STR_M113A3_MED";
 		hiddenSelectionsTextures[]=
 		{
 			"rhsusf\addons\rhsusf_m113\data_new\m113a3_01_wd_med_co.paa",
@@ -818,6 +831,7 @@ class CfgVehicles
 			{
 			};
 		};
+		displayName="$STR_M113A3_M240";
 		hiddenSelectionsTextures[]=
 		{
 			"rhsusf\addons\rhsusf_m113\data_new\m113a3_01_wd_l_co.paa",
@@ -855,6 +869,7 @@ class CfgVehicles
 			{
 			};
 		};
+		displayName="$STR_M113A3_MK19";
 		hiddenSelectionsTextures[]=
 		{
 			"rhsusf\addons\rhsusf_m113\data_new\m113a3_01_wd_l_co.paa",
@@ -943,6 +958,7 @@ class CfgVehicles
 	};
 	class rhsusf_m113_usarmy_M2_90: rhsusf_m113_usarmy_supply
 	{
+		displayName="M113A3 (M2/Early)";
 		hiddenSelections[]=
 		{
 			"camo1",
@@ -964,18 +980,23 @@ class CfgVehicles
 		{
 			class standard
 			{
+				displayName="Woodland";
 			};
 			class Olive
 			{
+				displayName="Olive";
 			};
 			class Desert
 			{
+				displayName="Desert";
 			};
 			class MERDC_SV
 			{
+				displayName="MERDC (Summer Verdant)";
 			};
 			class MERDC_WV
 			{
+				displayName="MERDC (Winter Verdant)";
 			};
 		};
 		transportAmmo=0;
@@ -983,6 +1004,7 @@ class CfgVehicles
 	};
 	class rhsusf_m113_usarmy_MK19_90: rhsusf_m113_usarmy_MK19
 	{
+		displayName="M113A3 (Mk19/Early)";
 		hiddenSelections[]=
 		{
 			"camo1",
@@ -1004,18 +1026,23 @@ class CfgVehicles
 		{
 			class standard
 			{
+				displayName="Woodland";
 			};
 			class Olive
 			{
+				displayName="Olive";
 			};
 			class Desert
 			{
+				displayName="Desert";
 			};
 			class MERDC_SV
 			{
+				displayName="MERDC (Summer Verdant)";
 			};
 			class MERDC_WV
 			{
+				displayName="MERDC (Winter Verdant)";
 			};
 		};
 	};

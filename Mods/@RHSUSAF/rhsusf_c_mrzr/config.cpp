@@ -112,6 +112,7 @@ class CfgVehicles
 				parachuteHeightLimitDefault=5;
 			};
 		};
+		displayName="MRZR 4";
 		hiddenSelections[]=
 		{
 			"camo",
@@ -864,6 +865,7 @@ class CfgVehicles
 		{
 			class standard
 			{
+				displayName="Tan";
 				materials[]=
 				{
 					"\rhsusf\addons\rhsusf_mrzr\data\rhsusf_mrzr_blue.rvmat",
@@ -878,6 +880,7 @@ class CfgVehicles
 			};
 			class mud
 			{
+				displayName="Tan (Muddy)";
 				materials[]=
 				{
 					"\rhsusf\addons\rhsusf_mrzr\data\rhsusf_mrzr_blue_mud.rvmat",
@@ -892,6 +895,7 @@ class CfgVehicles
 			};
 			class paint1: standard
 			{
+				displayName="Painted (Woodland)";
 				factions[]=
 				{
 					"rhs_faction_socom"
@@ -899,6 +903,7 @@ class CfgVehicles
 			};
 			class mud_pnt1: mud
 			{
+				displayName="Painted (Woodland, Muddy)";
 				factions[]=
 				{
 					"rhs_faction_socom"
@@ -906,6 +911,7 @@ class CfgVehicles
 			};
 			class olive: standard
 			{
+				displayName="Olive";
 				factions[]=
 				{
 					"rhs_faction_socom"
@@ -913,6 +919,7 @@ class CfgVehicles
 			};
 			class mud_olive: mud
 			{
+				displayName="Olive (Muddy)";
 				factions[]=
 				{
 					"rhs_faction_socom"
@@ -924,6 +931,7 @@ class CfgVehicles
 			class rhs_define_mainset
 			{
 				control="Combo";
+				displayName="Define Main Set";
 				tooltip="Define Main Set";
 				property="rhs_define_mainset";
 				expression="_this setVariable ['%s', _value];";
@@ -941,6 +949,7 @@ class CfgVehicles
 			};
 			class rhs_hood_main
 			{
+				displayName="Define Main Hood Decal";
 				tooltip="Define Main Hood Decal.  Type 8 to show decal, type 0 to clear that place.";
 				property="rhs_hood_main";
 				control="Edit";
@@ -951,6 +960,7 @@ class CfgVehicles
 			};
 			class rhs_hood_first
 			{
+				displayName="Define Battalion Hood Decal";
 				tooltip="Define Battalion Hood Decal. Type 3 to show decal, type 0 to clear that place.";
 				property="rhs_hood_first";
 				control="Edit";
@@ -961,6 +971,7 @@ class CfgVehicles
 			};
 			class rhs_hood_battalion
 			{
+				displayName="Define Battalion Hood Decal";
 				tooltip="Define Battalion Hood Decal. Available numbers from 1 to 4, type 0 to clear that place.";
 				property="rhs_hood_battalion";
 				control="Edit";
@@ -971,6 +982,7 @@ class CfgVehicles
 			};
 			class rhs_hood_company
 			{
+				displayName="Define Company Hood Decal";
 				tooltip="Define Company Hood Decal. Available numbers from 1 to 3, type 0 to clear that place.";
 				property="rhs_hood_company";
 				control="Edit";
@@ -981,6 +993,7 @@ class CfgVehicles
 			};
 			class rhs_hood_team
 			{
+				displayName="Define Team Hood Decal";
 				tooltip="Define Team Hood Decal. Available numbers from 1 to 6, type 0 to clear that place.";
 				property="rhs_hood_team";
 				control="Edit";
@@ -991,6 +1004,7 @@ class CfgVehicles
 			};
 			class rhs_bumerstickers
 			{
+				displayName="Show Bumperstickers";
 				tooltip="Show a random bumpersticker.";
 				property="rhs_bumerstickers";
 				control="CheckboxNumber";
@@ -1001,6 +1015,7 @@ class CfgVehicles
 	};
 	class rhsusf_mrzr4_d: rhsusf_mrzr_base
 	{
+		displayName="MRZR 4";
 		icon="\rhsusf\addons\rhsusf_mrzr\icons\rhs_mrzr4_unarmed_icon_ca.paa";
 		hiddenSelectionsTextures[]=
 		{
@@ -1013,6 +1028,7 @@ class CfgVehicles
 	};
 	class rhsusf_mrzr4_d_mud: rhsusf_mrzr4_d
 	{
+		displayName="MRZR 4 (mud)";
 		hiddenSelectionsTextures[]=
 		{
 			"\rhsusf\addons\rhsusf_mrzr\data\blue_tan_mud_co.paa",
@@ -1031,6 +1047,7 @@ class CfgVehicles
 	};
 	class rhsusf_mrzr4_w: rhsusf_mrzr4_d
 	{
+		displayName="MRZR 4 (W)";
 		hiddenSelectionsTextures[]=
 		{
 			"\rhsusf\addons\rhsusf_mrzr\data\blue_tan_pnt1_co.paa",
@@ -1042,6 +1059,7 @@ class CfgVehicles
 	};
 	class rhsusf_mrzr4_w_mud: rhsusf_mrzr4_d_mud
 	{
+		displayName="MRZR 4 (W, mud)";
 		hiddenSelectionsTextures[]=
 		{
 			"\rhsusf\addons\rhsusf_mrzr\data\blue_tan_pnt1_mud_co.paa",
@@ -1059,6 +1077,7 @@ class CfgWeapons
 	{
 		cursor="";
 		cursorAim="";
+		displayName="$STR_A3_cfgWeapons_CarHorn0";
 		reloadTime=0;
 		drySound[]=
 		{

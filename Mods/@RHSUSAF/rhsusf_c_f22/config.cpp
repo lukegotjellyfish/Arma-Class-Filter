@@ -49,6 +49,7 @@ class CfgVehicles
 		class EjectionSystem
 		{
 		};
+		displayName="F-22A";
 		driverLeftLegAnimName="pedal_L";
 		driverRightLegAnimName="pedal_R";
 		driverCanEject=1;
@@ -36913,6 +36914,7 @@ class CfgVehicles
 		{
 			class standard
 			{
+				displayName="Standard";
 				factions[]=
 				{
 					"rhs_faction_usaf"
@@ -36972,6 +36974,7 @@ class CfgVehicles
 	{
 		hasdriver=0;
 		armor=100;
+		displayName="F-22 Canopy";
 		editorCategory="EdCat_Things";
 		hiddenSelections[]={};
 		epeImpulseDamageCoef=10;

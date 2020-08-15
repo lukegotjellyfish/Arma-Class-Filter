@@ -57,6 +57,7 @@ class CfgVehicles
 	class rhsusf_himars_base: Truck_01_base_F
 	{
 		side=1;
+		displayName="M142 HIMARS";
 		headAimDown=5;
 		driverRightLegAnimName="pedal_r";
 		supplyRadius=4.5;
@@ -170,12 +171,15 @@ class CfgVehicles
 		{
 			class rhs_desert
 			{
+				displayName="Desert";
 			};
 			class rhs_woodland
 			{
+				displayName="Woodland";
 			};
 			class rhs_usmc_woodland
 			{
+				displayName="USMC Woodland";
 			};
 		};
 		class HitPoints: HitPoints
