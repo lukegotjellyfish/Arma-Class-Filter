@@ -1,9 +1,18 @@
-def newFile(filePath):
-	classList     = []
-	startBrace    = []
-	attributeList = []
-	endBrace      = []
+attributeSkip = ["author","url","requiredVersion", "onLoad","dlc","category","editorSubcategory",
+"vehicleClass","insideSoundCoef","unitInfoType","model","Icon","mapSize","transportMaxBackpacks","transportSoldier",
+"destrType","crewExplosionProtection","camShakeCoef","dustFrontLeftPos","dustFrontRightPos","dustBackLeftPos","dustBackRightPos","tf_hasLRradio_api",
+"selectionBrakeLights","selectionBackLights","driverAction","driverInAction","driverLeftHandAnimName","driverRightHandAnimName","cargoProxyIndexes",
+"getInProxyOrder","getInAction","getOutAction","driverDoor","viewDriverInExternal","forceHideDriver","factions","textureList","cargoCompartments",
+"visual","ammoExplosionEffect","boneName","center","boundary","suspForceAppPointOffset","tireForceAppPointOffset","tex","","",""]
+multiAttributeSkip = ["requiredAddons[]", "controls[]","cargoAction[]","memoryPointsGetInCargo[]","memoryPointsGetInCargoDir[]","cargoDoors[]","textures[]",
+"aggregateReflectors[]","mat[]","HiddenSelectionsTextures[]","magazines[]","soundServo[]"]
+classSkip = ["class CfgMovesBasic", "class RscInGameUI","class CfgMovesMaleSdr: CfgMovesBasic", "class ObjectTexture", "class DoorB", "class DoorL: DoorB",
+"class DoorR: DoorB", "class TurnIn", "class CargoTurret_01: CargoTurret", "class AnimationSources", "class UserActions","class RHS_Engine_Smoke",
+"class RHS_Engine_Fire: RHS_Engine_Smoke","class RHS_Engine_Sparks: RHS_Engine_Smoke", "class RHS_Engine_Sounds: RHS_Engine_Smoke",
+"class RHS_Engine_Smoke_small1: RHS_Engine_Smoke","class RHS_Engine_Smoke_small2: RHS_Engine_Smoke_small1", "class Reflectors", "class RenderTargets",
+"class RHSUSF_EventHandlers","class TransportBackpacks","class TransportMagazines","class TransportItems","class TransportWeapons"]
 
+def newFile(filePath):
 	with open(filePath, "r", encoding="UTF-8") as f:
 		lines = f.readlines()
 
@@ -11,7 +20,7 @@ def newFile(filePath):
 		toSkip = 0
 		for line in lines:
 			if toSkip > 0:
-				print("Skipped on line [" + str(index) + "]")
+				#print("Skipped [" + line.replace("\n","") + "]")
 				toSkip -= 1
 				index += 1
 				continue
@@ -19,42 +28,61 @@ def newFile(filePath):
 
 			#Found class line
 			if lineStripped.startswith("class"):
-				print(" CLASS: [" + str(index) + "] " + line.replace("\n",""))
-				classList.append(index)
+				tabCount = line.count("	")
+				i = 0
+				for x in classSkip:
+					if lineStripped.startswith(x):
+						tabCount = line.count("	")
+						while True:
+							if line[-2] != ";":
+								i += 1
+								if (lines[index+i] == tabCount * "	" + "};\n"):
+									break
+							else:
+								break
+				toSkip = i
+				if i > 0:
+					index += 1
+					continue
+				print(line.replace("\n",""))
 
 			#Found single-line attribute
 			elif (lineStripped.endswith(";\n") and lineStripped.startswith("}") == False):
-				print("Attrib: [" + str(index) + "] " + line.replace("\n",""))
-				attributeList.append(index)
+				cont = False
+				for x in attributeSkip:
+					if lineStripped.startswith(x):
+						cont = True
+				if cont == True:
+					index += 1
+					continue
+				print(line.replace("\n",""))
 
 			#Found multi-line attribute
-			elif lineStripped.replace(" ","").endswith("=\n"):
-				construct = [-1]
+			elif lineStripped.endswith("=\n"):
+				tabCount = line.count("	")
 				i = 0
-				while True:
-					if (lines[index+i].replace("	","") == "};\n"):
-						construct.append(index+i)
-						break
-					construct.append(index+i)
-					i += 1
-				toSkip = i
-				print("Attrib: [" + str(index) + "-" + str(index+i) + "] " + line.replace("\n",""))
-				attributeList.append(construct)
+				for x in multiAttributeSkip:
+					if lineStripped.startswith(x):
+						while True:
+							if (lines[index+i] == tabCount * "	" + "};\n"):
+								break
+							i += 1
+						toSkip = i
+				if i > 0:
+					index += 1
+					continue
+				print(line.replace("\n",""))
 
-			#Found start to class/attribute list
-			elif lineStripped.startswith("{"):
-				print("sBRACE: [" + str(index) + "] " + line.replace("\n",""))
-				startBrace.append(index)
+			else:
+				print(line.replace("\n",""))
 
-			#Found end to class/attribute list
-			elif lineStripped.startswith("}"):
-				print("eBRACE: [" + str(index) + "] " + line.replace("\n",""))
-				endBrace.append(index)
 			index += 1
 
 newFile("S:\\Steam\\steamapps\\common\\Arma 3\\!Workshop\\@RHSUSAF\\addons\\rhsusf_c_cougar\\config.cpp")
 newFile("S:\\Steam\\steamapps\\common\\Arma 3\\!Workshop\\@RHSUSAF\\addons\\rhsusf_c_cougar\\physx_config.hpp")
 
+
+#\n^\s*$  blanknewline
 
 
 
