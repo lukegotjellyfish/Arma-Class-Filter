@@ -156,9 +156,6 @@ class CfgVehicles
 		{
 			class MainTurret: NewTurret
 			{
-				class ViewOptics;
-			};
-		};
 		class HitPoints
 		{
 			class HitLFWheel;
@@ -168,12 +165,6 @@ class CfgVehicles
 			class HitGlass1;
 			class HitGlass2;
 			class HitGlass3;
-			class HitGlass4;
-			class HitGlass5;
-		};
-		class EventHandlers;
-		class AnimationSources;
-	};
 	class MRAP_02_base_F: Car_F
 	{
 		class HitPoints: HitPoints
@@ -188,9 +179,6 @@ class CfgVehicles
 			class HitGlass4;
 			class HitGlass5;
 			class HitBody;
-			class HitFuel;
-			class HitEngine;
-		};
 		class EventHandlers;
 	};
 	class rhs_tigr_base: MRAP_02_base_F
@@ -214,10 +202,6 @@ class CfgVehicles
 		};
 		cargoIsCoDriver[]={0,0};
 		castDriverShadow=1;
-		class Library
-		{
-			libTextDesc="You can write something in here.";
-		};
 		rhs_decalParameters[]=
 		{
 			"['Number', cDecalsTigr4NumberPlaces, 'LicensePlate']",
@@ -484,43 +468,10 @@ class CfgVehicles
 		damageResistance=0.00562;
 		secondaryExplosion=-1;
 		fuelExplosionPower=0.1;
-		hiddenSelections[]=
-		{
-			"camo1",
-			"camo2",
-			"camo3",
-			"camo4",
-			"camo5",
-			"n1",
-			"n2",
-			"n3",
-			"n4",
-			"i1",
-			"i2",
-			"i3",
-			"i4"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"rhsafrf\addons\rhs_tigr\data\rhs_tigr_co.paa",
-			"rhsafrf\addons\rhs_tigr\data\rhs_tigr_int_01_co.paa",
-			"rhsafrf\addons\rhs_tigr\data\rhs_tigr_int_02_co.paa",
-			"rhsafrf\addons\rhs_tigr\sts_proxies\data\tigr_ext_ads_co.paa",
-			"rhsafrf\addons\rhs_tigr\m_proxies\data\tigr_m_adds_co.paa",
-			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
-			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
-			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
-			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
-			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
-			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
-			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
-			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa"
-		};
 		class textureSources
 		{
 			class standard
 			{
-				displayName="Standard";
 				factions[]=
 				{
 					"rhs_faction_vmf",
@@ -529,22 +480,16 @@ class CfgVehicles
 					"rhs_faction_vv"
 				};
 			};
-			class Camo: standard
-			{
-				displayName="Camo";
-			};
 		};
 		class Attributes
 		{
 			class rhs_decalNumber_type
 			{
-				displayName="Define font type of plate number";
 				tooltip="Define kind of font that will be drawn on vehicle.";
 				property="rhs_decalNumber_type";
 				control="Combo";
 				expression="_this setVariable ['%s', _value];[_this,[['Number', cDecalsTigr4NumberPlaces, _value]]] call rhs_fnc_decalsInit";
 				defaultValue=0;
-				typeName="STRING";
 				class values
 				{
 					class Default
@@ -593,24 +538,20 @@ class CfgVehicles
 			class rhs_decalNumber
 			{
 				collapsed=1;
-				displayName="Set plate number";
 				tooltip="Set plate number. 4 numbers are required. If 0, random number will be generated";
 				property="rhs_decalNumber";
 				control="Edit";
 				validate="Number";
-				typeName="Number";
 				defaultValue="-1";
 				expression="if( _value >= 0)then{[_this,[['Number', cDecalsTigr4NumberPlaces, _this getVariable ['rhs_decalNumber_type','LicensePlate'], _value]]] call rhs_fnc_decalsInit};";
 			};
 			class rhs_decalArmy_type
 			{
-				displayName="Define large door roundel type";
 				tooltip="Decal type";
 				property="rhs_decalArmy_type";
 				control="Combo";
 				expression="_this setVariable ['%s', _value];";
 				defaultValue="0";
-				typeName="STRING";
 				class values
 				{
 					class Army
@@ -648,7 +589,6 @@ class CfgVehicles
 			};
 			class rhs_decalArmy
 			{
-				displayName="Set large door roundel symbol";
 				tooltip="Set large door roundel located on both sides. Usually used for army symbols. -1 leaves current symbol & 0 clears decal.";
 				property="rhs_decalArmy";
 				control="Edit";
@@ -658,21 +598,18 @@ class CfgVehicles
 			};
 			class rhs_decalPlatoon_type: rhs_decalArmy_type
 			{
-				displayName="Define small door roundel type";
 				property="rhs_decalPlatoon_type";
 				expression="_this setVariable ['%s', _value];";
 				defaultValue="0";
 			};
 			class rhs_decalPlatoon: rhs_decalArmy
 			{
-				displayName="Set small door roundel symbol";
 				tooltip="Define small door roundel located on both sides. Usually used for platoon symbols. -1 leaves current symbol & 0 clears decal.";
 				property="rhs_decalPlatoon";
 				expression="if(parseNumber _value >= 0)then{ [_this, [ [ 'Label', cDecalsTigrRightPlatoonPlaces,  _this getVariable ['rhs_decalPlatoon_type','Army'],call compile _value] ] ] call rhs_fnc_decalsInit};";
 			};
 			class rhs_hidespare
 			{
-				displayName="Remove spare wheel";
 				property="rhs_hidespare";
 				control="CheckboxNumber";
 				expression="_this animate ['spare_hide',_value,true]";
@@ -680,22 +617,18 @@ class CfgVehicles
 			};
 			class Door_LF: rhs_hidespare
 			{
-				displayName="Open front left door";
 				property="Door_LF";
 				expression="_this animateDoor ['%s',_value,true]";
 			};
 			class Door_RF: Door_LF
 			{
-				displayName="Open front right door";
 				property="Door_RF";
 			};
 			class Door_Rear: Door_LF
 			{
-				displayName="Open rear doors";
 				property="Door_Rear";
 			};
 		};
-		displayName="$STR_RHS_GAZ233011";
 		hideProxyInCombat=1;
 		driverIsCommander=1;
 		enableGPS=0;
@@ -716,9 +649,6 @@ class CfgVehicles
 			"",
 			5.6234101e-005,
 			1
-		};
-		class Damage
-		{
 		};
 		class HitPoints: HitPoints
 		{
@@ -846,9 +776,6 @@ class CfgVehicles
 			};
 		};
 	};
-	class rhs_tigr_vdv: rhs_tigr_base
-	{
-	};
 	class rhs_tigr_vmf: rhs_tigr_vdv
 	{
 		rhs_decalParameters[]=
@@ -871,17 +798,6 @@ class CfgVehicles
 		{
 			"['Number', cDecalsTigr4NumberPlaces, 'LicensePlate']",
 			"['Label', cDecalsTigrRightArmyPlaces, 'Army', [6,1]]"
-		};
-	};
-	class rhs_tigr_3camo_vdv: rhs_tigr_base
-	{
-		displayName="$STR_RHS_GAZ233011_3CAMO";
-		hiddenSelectionsTextures[]=
-		{
-			"rhsafrf\addons\rhs_tigr\data\rhs_tigr_co_camo.paa",
-			"rhsafrf\addons\rhs_tigr\data\rhs_tigr_int_01_co.paa",
-			"rhsafrf\addons\rhs_tigr\data\rhs_tigr_int_02_co.paa",
-			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa"
 		};
 	};
 	class rhs_tigr_3camo_vmf: rhs_tigr_3camo_vdv
@@ -910,7 +826,6 @@ class CfgVehicles
 	};
 	class rhs_tigr_ffv_vdv: rhs_tigr_vdv
 	{
-		displayName="$STR_RHS_GAZ233011_HATCH";
 		class Turrets: Turrets
 		{
 			class CargoTurret_02: CargoTurret_02
@@ -943,17 +858,6 @@ class CfgVehicles
 			"['Label', cDecalsTigrRightArmyPlaces, 'Army', [6,1]]"
 		};
 	};
-	class rhs_tigr_ffv_3camo_vdv: rhs_tigr_ffv_vdv
-	{
-		displayName="$STR_RHS_GAZ233011_HATCH_3CAMO";
-		hiddenSelectionsTextures[]=
-		{
-			"rhsafrf\addons\rhs_tigr\data\rhs_tigr_co_camo.paa",
-			"rhsafrf\addons\rhs_tigr\data\rhs_tigr_int_01_co.paa",
-			"rhsafrf\addons\rhs_tigr\data\rhs_tigr_int_02_co.paa",
-			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa"
-		};
-	};
 	class rhs_tigr_ffv_3camo_vmf: rhs_tigr_ffv_3camo_vdv
 	{
 		rhs_decalParameters[]=
@@ -980,7 +884,6 @@ class CfgVehicles
 	};
 	class rhs_tigr_sts_vdv: rhs_tigr_vdv
 	{
-		displayName="$STR_RHS_GAZ233014";
 		hideProxyInCombat=0;
 		class Turrets: Turrets
 		{
@@ -1117,9 +1020,6 @@ class CfgVehicles
 				containerClosed="_this call rhs_fnc_tigr_sts_inventory_eh;";
 				reloaded="_this call rhs_fnc_tigr_sts_reloaded_eh";
 			};
-			class RHS_TigrHandler
-			{
-			};
 		};
 	};
 	class rhs_tigr_sts_vmf: rhs_tigr_sts_vdv
@@ -1131,12 +1031,6 @@ class CfgVehicles
 		};
 		class Turrets: Turrets
 		{
-			class MainTurret: MainTurret
-			{
-			};
-			class AGS_Turret: AGS_Turret
-			{
-			};
 		};
 	};
 	class rhs_tigr_sts_msv: rhs_tigr_sts_vdv
@@ -1148,12 +1042,6 @@ class CfgVehicles
 		};
 		class Turrets: Turrets
 		{
-			class MainTurret: MainTurret
-			{
-			};
-			class AGS_Turret: AGS_Turret
-			{
-			};
 		};
 	};
 	class rhs_tigr_sts_vv: rhs_tigr_sts_vdv
@@ -1165,25 +1053,6 @@ class CfgVehicles
 		};
 		class Turrets: Turrets
 		{
-			class MainTurret: MainTurret
-			{
-			};
-			class AGS_Turret: AGS_Turret
-			{
-			};
-		};
-	};
-	class rhs_tigr_sts_3camo_vdv: rhs_tigr_sts_vdv
-	{
-		displayName="$STR_RHS_GAZ233014_3CAMO";
-		hiddenSelectionsTextures[]=
-		{
-			"rhsafrf\addons\rhs_tigr\data\rhs_tigr_co_camo.paa",
-			"rhsafrf\addons\rhs_tigr\data\rhs_tigr_int_01_co.paa",
-			"rhsafrf\addons\rhs_tigr\data\rhs_tigr_int_02_co.paa",
-			"rhsafrf\addons\rhs_tigr\sts_proxies\data\tigr_ext_ads_co.paa",
-			"rhsafrf\addons\rhs_tigr\m_proxies\data\tigr_m_adds_co.paa",
-			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa"
 		};
 	};
 	class rhs_tigr_sts_3camo_vmf: rhs_tigr_sts_3camo_vdv
@@ -1195,12 +1064,6 @@ class CfgVehicles
 		};
 		class Turrets: Turrets
 		{
-			class MainTurret: MainTurret
-			{
-			};
-			class AGS_Turret: AGS_Turret
-			{
-			};
 		};
 	};
 	class rhs_tigr_sts_3camo_msv: rhs_tigr_sts_3camo_vdv
@@ -1212,12 +1075,6 @@ class CfgVehicles
 		};
 		class Turrets: Turrets
 		{
-			class MainTurret: MainTurret
-			{
-			};
-			class AGS_Turret: AGS_Turret
-			{
-			};
 		};
 	};
 	class rhs_tigr_sts_3camo_vv: rhs_tigr_sts_3camo_vdv
@@ -1229,12 +1086,6 @@ class CfgVehicles
 		};
 		class Turrets: Turrets
 		{
-			class MainTurret: MainTurret
-			{
-			};
-			class AGS_Turret: AGS_Turret
-			{
-			};
 		};
 	};
 	class rhs_tigr_m_vdv: rhs_tigr_vdv
@@ -1373,7 +1224,6 @@ class CfgVehicles
 				maxHandBrakeTorque=20000;
 			};
 		};
-		displayName="$STR_RHS_GAZ233114";
 		weapons[]=
 		{
 			"TruckHorn",
@@ -1381,9 +1231,6 @@ class CfgVehicles
 		};
 		hideProxyInCombat=0;
 		enableManualFire=0;
-		class Turrets: Turrets
-		{
-		};
 		class EventHandlers: EventHandlers
 		{
 			class RHS_EventHandlers: RHS_EventHandlers
@@ -1391,9 +1238,6 @@ class CfgVehicles
 				init="_this call rhs_fnc_tigr_init;(_this select 0) animateDoor ['hatch_gunner_h',1]";
 				getIn="_this call rhs_fnc_tigrm_turret_getin_eh";
 				seatSwitched="_this call rhs_fnc_tigrm_turret_seat_eh";
-			};
-			class RHS_TigrHandler
-			{
 			};
 		};
 	};
@@ -1404,9 +1248,6 @@ class CfgVehicles
 			"['Number', cDecalsTigr4NumberPlaces, 'LicensePlate']",
 			"['Label', cDecalsTigrRightArmyPlaces, 'Army', [3,1]]"
 		};
-		class Turrets: Turrets
-		{
-		};
 	};
 	class rhs_tigr_m_msv: rhs_tigr_m_vdv
 	{
@@ -1414,9 +1255,6 @@ class CfgVehicles
 		{
 			"['Number', cDecalsTigr4NumberPlaces, 'LicensePlate']",
 			"['Label', cDecalsTigrRightArmyPlaces, 'Platoon', 12]"
-		};
-		class Turrets: Turrets
-		{
 		};
 	};
 	class rhs_tigr_m_vv: rhs_tigr_m_vdv
@@ -1426,22 +1264,6 @@ class CfgVehicles
 			"['Number', cDecalsTigr4NumberPlaces, 'LicensePlate']",
 			"['Label', cDecalsTigrRightArmyPlaces, 'Army', [6,1]]"
 		};
-		class Turrets: Turrets
-		{
-		};
-	};
-	class rhs_tigr_m_3camo_vdv: rhs_tigr_m_vdv
-	{
-		displayName="$STR_RHS_GAZ233114_3CAMO";
-		hiddenSelectionsTextures[]=
-		{
-			"rhsafrf\addons\rhs_tigr\data\rhs_tigr_co_camo.paa",
-			"rhsafrf\addons\rhs_tigr\data\rhs_tigr_int_01_co.paa",
-			"rhsafrf\addons\rhs_tigr\data\rhs_tigr_int_02_co.paa",
-			"rhsafrf\addons\rhs_tigr\sts_proxies\data\tigr_ext_ads_co.paa",
-			"rhsafrf\addons\rhs_tigr\m_proxies\data\tigr_m_adds_co.paa",
-			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa"
-		};
 	};
 	class rhs_tigr_m_3camo_vmf: rhs_tigr_m_3camo_vdv
 	{
@@ -1449,9 +1271,6 @@ class CfgVehicles
 		{
 			"['Number', cDecalsTigr4NumberPlaces, 'LicensePlate']",
 			"['Label', cDecalsTigrRightArmyPlaces, 'Army', [3,1]]"
-		};
-		class Turrets: Turrets
-		{
 		};
 	};
 	class rhs_tigr_m_3camo_msv: rhs_tigr_m_3camo_vdv
@@ -1461,9 +1280,6 @@ class CfgVehicles
 			"['Number', cDecalsTigr4NumberPlaces, 'LicensePlate']",
 			"['Label', cDecalsTigrRightArmyPlaces, 'Platoon', 12]"
 		};
-		class Turrets: Turrets
-		{
-		};
 	};
 	class rhs_tigr_m_3camo_vv: rhs_tigr_m_3camo_vdv
 	{
@@ -1471,9 +1287,6 @@ class CfgVehicles
 		{
 			"['Number', cDecalsTigr4NumberPlaces, 'LicensePlate']",
 			"['Label', cDecalsTigrRightArmyPlaces, 'Army', [6,1]]"
-		};
-		class Turrets: Turrets
-		{
 		};
 	};
 };

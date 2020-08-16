@@ -32,9 +32,6 @@ class CfgVehicles
 	class Plane_Base_F;
 	class Plane_Fighter_03_base_F: Plane_Base_F
 	{
-		class EventHandlers;
-		class Components;
-	};
 	class rhsusf_f22: Plane_Fighter_03_base_F
 	{
 		rhs_gearAnim="fold_gear_F";
@@ -43,13 +40,6 @@ class CfgVehicles
 		{
 			"rhsusf_airforce_jetpilot"
 		};
-		class pilotCamera
-		{
-		};
-		class EjectionSystem
-		{
-		};
-		displayName="F-22A";
 		driverLeftLegAnimName="pedal_L";
 		driverRightLegAnimName="pedal_R";
 		driverCanEject=1;
@@ -84,7 +74,6 @@ class CfgVehicles
 						{
 							"RHS_HP_AIM9_int"
 						};
-						priority=2;
 						attachment="rhs_mag_Sidewinder_int";
 						maxweight=1200;
 						UIposition[]={0.36000001,0.40000001};
@@ -96,7 +85,6 @@ class CfgVehicles
 						{
 							"RHS_HP_aim120_int"
 						};
-						priority=1;
 						attachment="rhs_mag_aim120d_int";
 						maxweight=1200;
 						UIposition[]={0.36000001,0.34999999};
@@ -137,9 +125,6 @@ class CfgVehicles
 						UIposition[]={0.36000001,0.2};
 						mirroredMissilePos=2;
 					};
-					class pylonBayRight1: pylonBayLeft1
-					{
-						UIposition[]={0.36000001,0.15000001};
 						mirroredMissilePos=1;
 						bay=4;
 					};
@@ -152,7 +137,6 @@ class CfgVehicles
 							"RHSUSF_cm_ANALE52_x4",
 							"RHSUSF_cm_ANALE52_x6"
 						};
-						priority=1;
 						attachment="rhsusf_ANALE52_CMFlare_Chaff_Magazine_x4";
 						maxweight=800;
 						UIposition[]={0.625,0.27500001};
@@ -172,12 +156,6 @@ class CfgVehicles
 						openBayWhenWeaponSelected=0;
 						autoCloseWhenEmptyDelay=4.5;
 					};
-					class BayCenter2: BayCenter1
-					{
-					};
-					class BayRight1: BayLeft1
-					{
-					};
 				};
 			};
 			class SensorsManagerComponent
@@ -188,15 +166,11 @@ class CfgVehicles
 					{
 						class AirTarget
 						{
-							minRange=18000;
-							maxRange=18000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
 						class GroundTarget
 						{
-							minRange=18000;
-							maxRange=18000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
@@ -205,15 +179,11 @@ class CfgVehicles
 					{
 						class AirTarget
 						{
-							minRange=35000;
-							maxRange=35000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
 						class GroundTarget
 						{
-							minRange=10000;
-							maxRange=10000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
@@ -223,7 +193,6 @@ class CfgVehicles
 						maxSpeedThreshold=0;
 						angleRangeHorizontal=60;
 						angleRangeVertical=60;
-						typeRecognitionDistance=20000;
 						maxFogSeeThrough=1;
 						maxTrackableSpeed=830;
 					};
@@ -231,15 +200,11 @@ class CfgVehicles
 					{
 						class AirTarget
 						{
-							minRange=10000;
-							maxRange=10000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
 						class GroundTarget
 						{
-							minRange=10000;
-							maxRange=10000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
@@ -249,12 +214,8 @@ class CfgVehicles
 						maxSpeedThreshold=0;
 						angleRangeHorizontal=110;
 						angleRangeVertical=110;
-						typeRecognitionDistance=10000;
 						maxFogSeeThrough=1;
 						maxTrackableSpeed=830;
-					};
-					class DataLinkSensorComponent: SensorTemplateDataLink
-					{
 					};
 				};
 			};
@@ -316,30 +277,6 @@ class CfgVehicles
 			"rhs_weap_MASTERSAFE_Holdster15",
 			"rhsusf_M61A2"
 		};
-		hiddenSelections[]=
-		{
-			"tex1",
-			"tex2",
-			"tex3",
-			"tex4",
-			"tex5",
-			"tex6",
-			"tex7",
-			"tex8",
-			"tex9"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"\rhsusf\addons\rhsusf_f22\data\f22_b1.paa",
-			"\rhsusf\addons\rhsusf_f22\data\f22_wing_spads.paa",
-			"\rhsusf\addons\rhsusf_f22\data\1stfw.paa",
-			"\rhsusf\addons\rhsusf_f22\data\94fs.paa",
-			"\rhsusf\addons\rhsusf_f22\data\acc.paa",
-			"\rhsusf\addons\rhsusf_f22\data\af04-066.paa",
-			"\rhsusf\addons\rhsusf_f22\data\ff.paa",
-			"\rhsusf\addons\rhsusf_f22\data\marking1.paa",
-			"\rhsusf\addons\rhsusf_f22\data\star1.paa"
-		};
 		camouflage=18;
 		audible=6;
 		accuracy=0.2;
@@ -357,7 +294,6 @@ class CfgVehicles
 		extCameraPosition[]={0,3.8,-23};
 		minFireTime=30;
 		cost=80000000;
-		type=2;
 		threat[]={1,1,0.69999999};
 		driveOnComponent[]={};
 		armor=80;
@@ -651,9 +587,6 @@ class CfgVehicles
 		};
 		class MarkerLights
 		{
-			class PositionLeft
-			{
-				color[]={0,0.80000001,0};
 				ambient[]={0,0.079999998,0};
 				intensity=750;
 				name="PositionLight_Left_1_pos";
@@ -678,9 +611,6 @@ class CfgVehicles
 			{
 				name="PositionLight_Right_1_pos";
 			};
-			class CollisionLeft: PositionLeft
-			{
-				color[]={0.89999998,0.15000001,0.1};
 				ambient[]={0.090000004,0.015,0.0099999998};
 				intensity=2750;
 				blinking=1;
@@ -719,15 +649,10 @@ class CfgVehicles
 				font="rhsusf_digital_font_usa";
 				class Bones
 				{
-					class PlaneW
-					{
-						type="fixed";
-						pos[]={0.495,0.53600001};
 						pos10[]={1.1026,1.0785};
 					};
 					class PlaneOrientation
 					{
-						type="vector";
 						source="forward";
 						pos[]={0.495,0.546};
 						pos0[]={0.495,0.53600001};
@@ -735,34 +660,29 @@ class CfgVehicles
 					};
 					class Velocity
 					{
-						type="vector";
 						source="velocity";
 						pos0[]={0.495,0.53600001};
 						pos10[]={1.1026,1.0785};
 					};
 					class WeaponAim
 					{
-						type="vector";
 						source="weapon";
 						pos0[]={0.495,0.53600001};
 						pos10[]={1.1026,1.0785};
 					};
 					class ImpactPoint
 					{
-						type="vector";
 						source="ImpactPointWeaponRelative";
 						pos0[]={0.5,0.53600001};
 						pos10[]={1.1076,1.0785};
 					};
 					class NormalizeBombCircle
 					{
-						type="normalizedorsmaller";
 						limit=0.079999998;
 						aspectRatio=0.89285702;
 					};
 					class ImpactPointRelative
 					{
-						type="vector";
 						source="impactpointweaponRelative";
 						pos0[]={0.5,0.53600001};
 						pos10[]={1.1076,1.0785};
@@ -770,44 +690,31 @@ class CfgVehicles
 					class Target
 					{
 						source="target";
-						type="vector";
 						pos0[]={0.495,0.53600001};
 						pos10[]={1.1026,1.0785};
 					};
 					class TargetingPodDir
 					{
 						source="pilotcamera";
-						type="vector";
 						pos0[]={0.495,0.53600001};
 						pos10[]={1.1026,1.0785};
 					};
 					class TargetingPodTarget
 					{
 						source="pilotcameratarget";
-						type="vector";
 						pos0[]={0.495,0.53600001};
 						pos10[]={1.1026,1.0785};
 					};
-					class Limit0109
-					{
-						type="limit";
-						limits[]={0.1,0.1,0.89999998,0.89999998};
 					};
-					class LimitWaypoint
-					{
-						type="limit";
-						limits[]={0.33000001,0.1,0.67000002,0.1};
 					};
 					class WPPoint
 					{
-						type="vector";
 						source="WPPoint";
 						pos0[]={0.495,0.53600001};
 						pos10[]={1.1076,1.0785};
 					};
 					class ASL_Instrument
 					{
-						type="rotational";
 						source="altitudeASL";
 						min=0;
 						max=20000;
@@ -823,7 +730,6 @@ class CfgVehicles
 					};
 					class Airport1
 					{
-						type="vector";
 						source="airportCorner1";
 						pos0[]={0.5,0.53600001};
 						pos10[]={1.1076,1.0785};
@@ -840,19 +746,11 @@ class CfgVehicles
 					{
 						source="airportCorner4";
 					};
-					class ILS_H
-					{
-						type="ils";
-						pos0[]={0.5,0.53600001};
 						pos3[]={0.68228,0.53600001};
 					};
-					class ILS_W: ILS_H
-					{
-						pos3[]={0.5,0.69875002};
 					};
 					class HorizonBankRot
 					{
-						type="rotational";
 						source="horizonBank";
 						min="-rad(45)";
 						max="rad(45)";
@@ -868,11 +766,7 @@ class CfgVehicles
 						maxAngle=180;
 						aspectRatio=1;
 					};
-					class Level0
-					{
-						pos0[]={0.495,0.546};
 						pos10[]={1.263,1.306};
-						type="horizon";
 						angle=0;
 					};
 					class LevelP5: Level0
@@ -989,7 +883,6 @@ class CfgVehicles
 					};
 					class MissileFlightTimeRot1
 					{
-						type="rotational";
 						source="MissileFlightTime";
 						sourceScale=1;
 						min=0;
@@ -1095,7 +988,6 @@ class CfgVehicles
 					};
 					class LarAmmoMax
 					{
-						type="linear";
 						source="LarAmmoMax";
 						sourceScale=1;
 						min=0;
@@ -1113,7 +1005,6 @@ class CfgVehicles
 					};
 					class LarAmmoMGunMax
 					{
-						type="rotational";
 						source="LarAmmoMax";
 						sourceScale=1;
 						min=0;
@@ -1127,14 +1018,10 @@ class CfgVehicles
 						source="LarAmmoMin";
 					};
 				};
-				class Draw
-				{
-					color[]={0.15000001,1,0.15000001};
 					alpha=1;
 					condition="on";
 					class PlaneW
 					{
-						type="line";
 						width=3;
 						points[]=
 						{
@@ -1497,7 +1384,6 @@ class CfgVehicles
 					};
 					class Static_Bold
 					{
-						type="line";
 						width=5;
 						points[]=
 						{
@@ -1974,7 +1860,6 @@ class CfgVehicles
 						condition="throttle >=1";
 						class PlaneW
 						{
-							type="line";
 							width=3;
 							points[]=
 							{
@@ -2012,15 +1897,11 @@ class CfgVehicles
 							};
 						};
 					};
-					class Horizont
-					{
-						clipTL[]={0.1,0.15000001};
 						clipBR[]={0.85000002,0.99000001};
 						class Dimmed
 						{
 							class Level0
 							{
-								type="line";
 								width=3;
 								points[]=
 								{
@@ -2054,13 +1935,11 @@ class CfgVehicles
 						};
 						class Level0
 						{
-							type="line";
 							width=2;
 							points[]={};
 						};
 						class LevelM5: Level0
 						{
-							type="line";
 							points[]=
 							{
 								
@@ -2282,7 +2161,6 @@ class CfgVehicles
 						};
 						class VALM_1_5
 						{
-							type="text";
 							source="static";
 							align="left";
 							scale=1;
@@ -2308,7 +2186,6 @@ class CfgVehicles
 						};
 						class VALM_1_5_R
 						{
-							type="text";
 							source="static";
 							align="right";
 							scale=1;
@@ -2334,7 +2211,6 @@ class CfgVehicles
 						};
 						class LevelP5: Level0
 						{
-							type="line";
 							points[]=
 							{
 								
@@ -2402,7 +2278,6 @@ class CfgVehicles
 						};
 						class VALP_1_5
 						{
-							type="text";
 							source="static";
 							align="left";
 							scale=1;
@@ -2428,7 +2303,6 @@ class CfgVehicles
 						};
 						class VALP_1_5_R
 						{
-							type="text";
 							source="static";
 							align="right";
 							scale=1;
@@ -2454,7 +2328,6 @@ class CfgVehicles
 						};
 						class LevelM10: Level0
 						{
-							type="line";
 							points[]=
 							{
 								
@@ -2676,7 +2549,6 @@ class CfgVehicles
 						};
 						class VALM_1_10
 						{
-							type="text";
 							source="static";
 							align="left";
 							scale=1;
@@ -2702,7 +2574,6 @@ class CfgVehicles
 						};
 						class VALM_1_10_R
 						{
-							type="text";
 							source="static";
 							align="right";
 							scale=1;
@@ -2728,7 +2599,6 @@ class CfgVehicles
 						};
 						class LevelP10: Level0
 						{
-							type="line";
 							points[]=
 							{
 								
@@ -2796,7 +2666,6 @@ class CfgVehicles
 						};
 						class VALP_1_10
 						{
-							type="text";
 							source="static";
 							align="left";
 							scale=1;
@@ -2822,7 +2691,6 @@ class CfgVehicles
 						};
 						class VALP_1_10_R
 						{
-							type="text";
 							source="static";
 							align="right";
 							scale=1;
@@ -2848,7 +2716,6 @@ class CfgVehicles
 						};
 						class LevelM15: Level0
 						{
-							type="line";
 							points[]=
 							{
 								
@@ -3070,7 +2937,6 @@ class CfgVehicles
 						};
 						class VALM_1_15
 						{
-							type="text";
 							source="static";
 							align="left";
 							scale=1;
@@ -3096,7 +2962,6 @@ class CfgVehicles
 						};
 						class VALM_1_15_R
 						{
-							type="text";
 							source="static";
 							align="right";
 							scale=1;
@@ -3122,7 +2987,6 @@ class CfgVehicles
 						};
 						class LevelP15: Level0
 						{
-							type="line";
 							points[]=
 							{
 								
@@ -3190,7 +3054,6 @@ class CfgVehicles
 						};
 						class VALP_1_15
 						{
-							type="text";
 							source="static";
 							align="left";
 							scale=1;
@@ -3216,7 +3079,6 @@ class CfgVehicles
 						};
 						class VALP_1_15_R
 						{
-							type="text";
 							source="static";
 							align="right";
 							scale=1;
@@ -3242,7 +3104,6 @@ class CfgVehicles
 						};
 						class LevelM20: Level0
 						{
-							type="line";
 							points[]=
 							{
 								
@@ -3464,7 +3325,6 @@ class CfgVehicles
 						};
 						class VALM_1_20
 						{
-							type="text";
 							source="static";
 							align="left";
 							scale=1;
@@ -3490,7 +3350,6 @@ class CfgVehicles
 						};
 						class VALM_1_20_R
 						{
-							type="text";
 							source="static";
 							align="right";
 							scale=1;
@@ -3516,7 +3375,6 @@ class CfgVehicles
 						};
 						class LevelP20: Level0
 						{
-							type="line";
 							points[]=
 							{
 								
@@ -3584,7 +3442,6 @@ class CfgVehicles
 						};
 						class VALP_1_20
 						{
-							type="text";
 							source="static";
 							align="left";
 							scale=1;
@@ -3610,7 +3467,6 @@ class CfgVehicles
 						};
 						class VALP_1_20_R
 						{
-							type="text";
 							source="static";
 							align="right";
 							scale=1;
@@ -3636,7 +3492,6 @@ class CfgVehicles
 						};
 						class LevelM25: Level0
 						{
-							type="line";
 							points[]=
 							{
 								
@@ -3858,7 +3713,6 @@ class CfgVehicles
 						};
 						class VALM_1_25
 						{
-							type="text";
 							source="static";
 							align="left";
 							scale=1;
@@ -3884,7 +3738,6 @@ class CfgVehicles
 						};
 						class VALM_1_25_R
 						{
-							type="text";
 							source="static";
 							align="right";
 							scale=1;
@@ -3910,7 +3763,6 @@ class CfgVehicles
 						};
 						class LevelP25: Level0
 						{
-							type="line";
 							points[]=
 							{
 								
@@ -3978,7 +3830,6 @@ class CfgVehicles
 						};
 						class VALP_1_25
 						{
-							type="text";
 							source="static";
 							align="left";
 							scale=1;
@@ -4004,7 +3855,6 @@ class CfgVehicles
 						};
 						class VALP_1_25_R
 						{
-							type="text";
 							source="static";
 							align="right";
 							scale=1;
@@ -4030,7 +3880,6 @@ class CfgVehicles
 						};
 						class LevelM30: Level0
 						{
-							type="line";
 							points[]=
 							{
 								
@@ -4252,7 +4101,6 @@ class CfgVehicles
 						};
 						class VALM_1_30
 						{
-							type="text";
 							source="static";
 							align="left";
 							scale=1;
@@ -4278,7 +4126,6 @@ class CfgVehicles
 						};
 						class VALM_1_30_R
 						{
-							type="text";
 							source="static";
 							align="right";
 							scale=1;
@@ -4304,7 +4151,6 @@ class CfgVehicles
 						};
 						class LevelP30: Level0
 						{
-							type="line";
 							points[]=
 							{
 								
@@ -4372,7 +4218,6 @@ class CfgVehicles
 						};
 						class VALP_1_30
 						{
-							type="text";
 							source="static";
 							align="left";
 							scale=1;
@@ -4398,7 +4243,6 @@ class CfgVehicles
 						};
 						class VALP_1_30_R
 						{
-							type="text";
 							source="static";
 							align="right";
 							scale=1;
@@ -4424,7 +4268,6 @@ class CfgVehicles
 						};
 						class LevelM35: Level0
 						{
-							type="line";
 							points[]=
 							{
 								
@@ -4646,7 +4489,6 @@ class CfgVehicles
 						};
 						class VALM_1_35
 						{
-							type="text";
 							source="static";
 							align="left";
 							scale=1;
@@ -4672,7 +4514,6 @@ class CfgVehicles
 						};
 						class VALM_1_35_R
 						{
-							type="text";
 							source="static";
 							align="right";
 							scale=1;
@@ -4698,7 +4539,6 @@ class CfgVehicles
 						};
 						class LevelP35: Level0
 						{
-							type="line";
 							points[]=
 							{
 								
@@ -4766,7 +4606,6 @@ class CfgVehicles
 						};
 						class VALP_1_35
 						{
-							type="text";
 							source="static";
 							align="left";
 							scale=1;
@@ -4792,7 +4631,6 @@ class CfgVehicles
 						};
 						class VALP_1_35_R
 						{
-							type="text";
 							source="static";
 							align="right";
 							scale=1;
@@ -4818,7 +4656,6 @@ class CfgVehicles
 						};
 						class LevelM40: Level0
 						{
-							type="line";
 							points[]=
 							{
 								
@@ -5040,7 +4877,6 @@ class CfgVehicles
 						};
 						class VALM_1_40
 						{
-							type="text";
 							source="static";
 							align="left";
 							scale=1;
@@ -5066,7 +4902,6 @@ class CfgVehicles
 						};
 						class VALM_1_40_R
 						{
-							type="text";
 							source="static";
 							align="right";
 							scale=1;
@@ -5092,7 +4927,6 @@ class CfgVehicles
 						};
 						class LevelP40: Level0
 						{
-							type="line";
 							points[]=
 							{
 								
@@ -5160,7 +4994,6 @@ class CfgVehicles
 						};
 						class VALP_1_40
 						{
-							type="text";
 							source="static";
 							align="left";
 							scale=1;
@@ -5186,7 +5019,6 @@ class CfgVehicles
 						};
 						class VALP_1_40_R
 						{
-							type="text";
 							source="static";
 							align="right";
 							scale=1;
@@ -5212,7 +5044,6 @@ class CfgVehicles
 						};
 						class LevelM45: Level0
 						{
-							type="line";
 							points[]=
 							{
 								
@@ -5434,7 +5265,6 @@ class CfgVehicles
 						};
 						class VALM_1_45
 						{
-							type="text";
 							source="static";
 							align="left";
 							scale=1;
@@ -5460,7 +5290,6 @@ class CfgVehicles
 						};
 						class VALM_1_45_R
 						{
-							type="text";
 							source="static";
 							align="right";
 							scale=1;
@@ -5486,7 +5315,6 @@ class CfgVehicles
 						};
 						class LevelP45: Level0
 						{
-							type="line";
 							points[]=
 							{
 								
@@ -5554,7 +5382,6 @@ class CfgVehicles
 						};
 						class VALP_1_45
 						{
-							type="text";
 							source="static";
 							align="left";
 							scale=1;
@@ -5580,7 +5407,6 @@ class CfgVehicles
 						};
 						class VALP_1_45_R
 						{
-							type="text";
 							source="static";
 							align="right";
 							scale=1;
@@ -5606,7 +5432,6 @@ class CfgVehicles
 						};
 						class LevelM50: Level0
 						{
-							type="line";
 							points[]=
 							{
 								
@@ -5828,7 +5653,6 @@ class CfgVehicles
 						};
 						class VALM_1_50
 						{
-							type="text";
 							source="static";
 							align="left";
 							scale=1;
@@ -5854,7 +5678,6 @@ class CfgVehicles
 						};
 						class VALM_1_50_R
 						{
-							type="text";
 							source="static";
 							align="right";
 							scale=1;
@@ -5880,7 +5703,6 @@ class CfgVehicles
 						};
 						class LevelP50: Level0
 						{
-							type="line";
 							points[]=
 							{
 								
@@ -5948,7 +5770,6 @@ class CfgVehicles
 						};
 						class VALP_1_50
 						{
-							type="text";
 							source="static";
 							align="left";
 							scale=1;
@@ -5974,7 +5795,6 @@ class CfgVehicles
 						};
 						class VALP_1_50_R
 						{
-							type="text";
 							source="static";
 							align="right";
 							scale=1;
@@ -6000,7 +5820,6 @@ class CfgVehicles
 						};
 						class LevelM60: Level0
 						{
-							type="line";
 							points[]=
 							{
 								
@@ -6222,7 +6041,6 @@ class CfgVehicles
 						};
 						class VALM_1_60
 						{
-							type="text";
 							source="static";
 							align="left";
 							scale=1;
@@ -6248,7 +6066,6 @@ class CfgVehicles
 						};
 						class VALM_1_60_R
 						{
-							type="text";
 							source="static";
 							align="right";
 							scale=1;
@@ -6274,7 +6091,6 @@ class CfgVehicles
 						};
 						class LevelP60: Level0
 						{
-							type="line";
 							points[]=
 							{
 								
@@ -6342,7 +6158,6 @@ class CfgVehicles
 						};
 						class VALP_1_60
 						{
-							type="text";
 							source="static";
 							align="left";
 							scale=1;
@@ -6368,7 +6183,6 @@ class CfgVehicles
 						};
 						class VALP_1_60_R
 						{
-							type="text";
 							source="static";
 							align="right";
 							scale=1;
@@ -6394,7 +6208,6 @@ class CfgVehicles
 						};
 						class LevelM70: Level0
 						{
-							type="line";
 							points[]=
 							{
 								
@@ -6616,7 +6429,6 @@ class CfgVehicles
 						};
 						class VALM_1_70
 						{
-							type="text";
 							source="static";
 							align="left";
 							scale=1;
@@ -6642,7 +6454,6 @@ class CfgVehicles
 						};
 						class VALM_1_70_R
 						{
-							type="text";
 							source="static";
 							align="right";
 							scale=1;
@@ -6668,7 +6479,6 @@ class CfgVehicles
 						};
 						class LevelP70: Level0
 						{
-							type="line";
 							points[]=
 							{
 								
@@ -6736,7 +6546,6 @@ class CfgVehicles
 						};
 						class VALP_1_70
 						{
-							type="text";
 							source="static";
 							align="left";
 							scale=1;
@@ -6762,7 +6571,6 @@ class CfgVehicles
 						};
 						class VALP_1_70_R
 						{
-							type="text";
 							source="static";
 							align="right";
 							scale=1;
@@ -6788,7 +6596,6 @@ class CfgVehicles
 						};
 						class LevelM80: Level0
 						{
-							type="line";
 							points[]=
 							{
 								
@@ -7010,7 +6817,6 @@ class CfgVehicles
 						};
 						class VALM_1_80
 						{
-							type="text";
 							source="static";
 							align="left";
 							scale=1;
@@ -7036,7 +6842,6 @@ class CfgVehicles
 						};
 						class VALM_1_80_R
 						{
-							type="text";
 							source="static";
 							align="right";
 							scale=1;
@@ -7062,7 +6867,6 @@ class CfgVehicles
 						};
 						class LevelP80: Level0
 						{
-							type="line";
 							points[]=
 							{
 								
@@ -7130,7 +6934,6 @@ class CfgVehicles
 						};
 						class VALP_1_80
 						{
-							type="text";
 							source="static";
 							align="left";
 							scale=1;
@@ -7156,7 +6959,6 @@ class CfgVehicles
 						};
 						class VALP_1_80_R
 						{
-							type="text";
 							source="static";
 							align="right";
 							scale=1;
@@ -7182,7 +6984,6 @@ class CfgVehicles
 						};
 						class LevelM90: Level0
 						{
-							type="line";
 							points[]=
 							{
 								
@@ -7404,7 +7205,6 @@ class CfgVehicles
 						};
 						class VALM_1_90
 						{
-							type="text";
 							source="static";
 							align="left";
 							scale=1;
@@ -7430,7 +7230,6 @@ class CfgVehicles
 						};
 						class VALM_1_90_R
 						{
-							type="text";
 							source="static";
 							align="right";
 							scale=1;
@@ -7456,7 +7255,6 @@ class CfgVehicles
 						};
 						class LevelP90: Level0
 						{
-							type="line";
 							points[]=
 							{
 								
@@ -7524,7 +7322,6 @@ class CfgVehicles
 						};
 						class VALP_1_90
 						{
-							type="text";
 							source="static";
 							align="left";
 							scale=1;
@@ -7550,7 +7347,6 @@ class CfgVehicles
 						};
 						class VALP_1_90_R
 						{
-							type="text";
 							source="static";
 							align="right";
 							scale=1;
@@ -7577,7 +7373,6 @@ class CfgVehicles
 					};
 					class SpeedNumber
 					{
-						type="text";
 						source="speed";
 						sourceScale=3.5999999;
 						align="center";
@@ -7620,7 +7415,6 @@ class CfgVehicles
 					};
 					class MachText
 					{
-						type="text";
 						source="static";
 						align="left";
 						scale=1;
@@ -7642,7 +7436,6 @@ class CfgVehicles
 					};
 					class MachNumber
 					{
-						type="text";
 						source="speed";
 						sourceScale=0.002939;
 						sourcePrecision=2;
@@ -7666,7 +7459,6 @@ class CfgVehicles
 					};
 					class GmeterText
 					{
-						type="text";
 						source="static";
 						align="left";
 						scale=1;
@@ -7688,7 +7480,6 @@ class CfgVehicles
 					};
 					class GmeterNumber
 					{
-						type="text";
 						source="gmeter";
 						sourceScale=0.30000001;
 						sourcePrecision=1;
@@ -7713,7 +7504,6 @@ class CfgVehicles
 					};
 					class PitchNumber
 					{
-						type="text";
 						source="aoa";
 						sourceScale=57.295799;
 						sourcePrecision=1;
@@ -7738,7 +7528,6 @@ class CfgVehicles
 					};
 					class RadarATLText
 					{
-						type="text";
 						source="static";
 						align="left";
 						scale=1;
@@ -7760,7 +7549,6 @@ class CfgVehicles
 					};
 					class RadarATLNumber
 					{
-						type="text";
 						source="altitudeAGL";
 						sourceScale=1;
 						sourceLength=4;
@@ -7787,7 +7575,6 @@ class CfgVehicles
 					};
 					class HeadingNumber
 					{
-						type="text";
 						source="heading";
 						sourceScale=1;
 						align="center";
@@ -7810,7 +7597,6 @@ class CfgVehicles
 					};
 					class HeadingArrows
 					{
-						type="line";
 						width=3;
 						points[]=
 						{
@@ -7881,7 +7667,6 @@ class CfgVehicles
 					};
 					class HeadingScale
 					{
-						type="scale";
 						horizontal=1;
 						source="heading";
 						sourceScale=0.1;
@@ -7903,9 +7688,6 @@ class CfgVehicles
 						right[]={0.33500001,0.16500001};
 						down[]={0.29499999,0.205};
 					};
-					class HeadingScale_Left
-					{
-						clipTL[]={0,0};
 						clipBR[]={0.44999999,1};
 						class HeadingScale: HeadingScale
 						{
@@ -7916,9 +7698,6 @@ class CfgVehicles
 							numberEach=2;
 						};
 					};
-					class HeadingScale_Right
-					{
-						clipTL[]={0.55000001,0};
 						clipBR[]={1,1};
 						class HeadingScale: HeadingScale
 						{
@@ -7931,7 +7710,6 @@ class CfgVehicles
 					};
 					class ThrustNumber
 					{
-						type="text";
 						source="throttle";
 						sourceScale=100;
 						sourceLength=3;
@@ -7961,7 +7739,6 @@ class CfgVehicles
 						condition="1-(AAmissile+mgun+bomb)";
 						class ModeText
 						{
-							type="text";
 							source="static";
 							align="left";
 							scale=1;
@@ -7986,7 +7763,6 @@ class CfgVehicles
 							condition="wpvalid";
 							class WPdist
 							{
-								type="text";
 								source="wpdist";
 								sourceScale=0.001;
 								sourcePrecision=1;
@@ -8010,7 +7786,6 @@ class CfgVehicles
 							};
 							class WPIndex
 							{
-								type="text";
 								source="wpIndex";
 								sourceScale=1;
 								sourceLength=2;
@@ -8034,7 +7809,6 @@ class CfgVehicles
 							};
 							class WPstatic
 							{
-								type="text";
 								source="static";
 								scale=1;
 								sourceScale=1;
@@ -8057,7 +7831,6 @@ class CfgVehicles
 							};
 							class WPTime
 							{
-								type="text";
 								source="static";
 								scale=1;
 								sourceScale=1;
@@ -8101,7 +7874,6 @@ class CfgVehicles
 							class WP
 							{
 								width=1;
-								type="line";
 								points[]=
 								{
 									
@@ -8213,11 +7985,9 @@ class CfgVehicles
 					};
 					class AAMissileCrosshairGroup
 					{
-						type="group";
 						condition="AAmissile";
 						class ModeText
 						{
-							type="text";
 							source="static";
 							align="left";
 							scale=1;
@@ -8239,7 +8009,6 @@ class CfgVehicles
 						};
 						class AAMissileCrosshair
 						{
-							type="line";
 							width=4;
 							points[]=
 							{
@@ -8478,7 +8247,6 @@ class CfgVehicles
 						};
 						class AmmoCount
 						{
-							type="text";
 							source="ammoFormat";
 							sourceScale=1;
 							align="right";
@@ -8501,7 +8269,6 @@ class CfgVehicles
 						};
 						class Lines
 						{
-							type="line";
 							width=4;
 							points[]=
 							{
@@ -8585,7 +8352,6 @@ class CfgVehicles
 						};
 						class Poly
 						{
-							type="polygon";
 							points[]=
 							{
 								
@@ -8623,7 +8389,6 @@ class CfgVehicles
 						};
 						class TopText
 						{
-							type="text";
 							source="LarTop";
 							sourceScale=0.001;
 							scale=1;
@@ -8695,12 +8460,10 @@ class CfgVehicles
 					};
 					class BombCrosshairGroup
 					{
-						type="group";
 						condition="bomb";
 						class BombCrosshair
 						{
 							width=4;
-							type="line";
 							points[]=
 							{
 								
@@ -9018,7 +8781,6 @@ class CfgVehicles
 						};
 						class Circle
 						{
-							type="line";
 							width=6;
 							points[]=
 							{
@@ -9206,7 +8968,6 @@ class CfgVehicles
 						};
 						class Distance
 						{
-							type="text";
 							source="ImpactDistance";
 							sourceScale=0.001;
 							sourcePrecision=1;
@@ -9238,7 +8999,6 @@ class CfgVehicles
 						condition="(mgun+rocket)";
 						class ModeText
 						{
-							type="text";
 							source="static";
 							align="left";
 							scale=1;
@@ -9260,7 +9020,6 @@ class CfgVehicles
 						};
 						class AmmoCounter
 						{
-							type="text";
 							source="ammo";
 							sourceScale=1;
 							align="right";
@@ -9287,7 +9046,6 @@ class CfgVehicles
 						condition="-1+(mgun+rocket)*impactDistance";
 						class Cross
 						{
-							type="line";
 							width=3;
 							points[]=
 							{
@@ -9373,7 +9131,6 @@ class CfgVehicles
 						};
 						class Circle
 						{
-							type="line";
 							width=6;
 							points[]=
 							{
@@ -9561,7 +9318,6 @@ class CfgVehicles
 						};
 						class Circle_LAR
 						{
-							type="line";
 							width=5;
 							points[]=
 							{
@@ -9619,7 +9375,6 @@ class CfgVehicles
 						};
 						class Distance
 						{
-							type="text";
 							source="ImpactDistance";
 							sourceScale=0.001;
 							sourcePrecision=1;
@@ -9651,7 +9406,6 @@ class CfgVehicles
 						condition="targetDist";
 						class TargetDist
 						{
-							type="text";
 							source="targetDist";
 							sourceScale=1;
 							align="right";
@@ -9674,7 +9428,6 @@ class CfgVehicles
 						};
 						class TargetHeight
 						{
-							type="text";
 							source="targetHeight";
 							sourceScale=1;
 							align="right";
@@ -9703,7 +9456,6 @@ class CfgVehicles
 						blinkingStartsOn=1;
 						class StallText
 						{
-							type="text";
 							source="static";
 							align="center";
 							scale=1;
@@ -9731,7 +9483,6 @@ class CfgVehicles
 						blinkingStartsOn=1;
 						class Text
 						{
-							type="text";
 							source="static";
 							align="center";
 							scale=1;
@@ -9757,7 +9508,6 @@ class CfgVehicles
 						condition="missilelocked";
 						class Text
 						{
-							type="text";
 							source="static";
 							align="center";
 							scale=1;
@@ -9785,7 +9535,6 @@ class CfgVehicles
 						blinkingStartsOn=1;
 						class Text
 						{
-							type="text";
 							source="static";
 							align="center";
 							scale=1;
@@ -9811,7 +9560,6 @@ class CfgVehicles
 						condition="activeSensorsOn";
 						class Text
 						{
-							type="text";
 							source="static";
 							align="left";
 							scale=1;
@@ -9837,7 +9585,6 @@ class CfgVehicles
 						condition="flaps";
 						class GearText
 						{
-							type="text";
 							source="static";
 							align="left";
 							scale=1;
@@ -9863,7 +9610,6 @@ class CfgVehicles
 						condition="ils";
 						class GearText
 						{
-							type="text";
 							source="static";
 							align="left";
 							scale=1;
@@ -9883,13 +9629,9 @@ class CfgVehicles
 								1
 							};
 						};
-						class Glideslope
-						{
-							clipTL[]={0,0};
 							clipBR[]={1,1};
 							class ILS
 							{
-								type="line";
 								width=2;
 								points[]=
 								{
@@ -10052,7 +9794,6 @@ class CfgVehicles
 							};
 							class airport
 							{
-								type="line";
 								points[]=
 								{
 									
@@ -10084,17 +9825,12 @@ class CfgVehicles
 							};
 						};
 					};
-					class RadarBoxes
-					{
-						type="radar";
-						pos0[]={0.495,0.53600001};
 						pos10[]={1.1026,1.0785};
 						width=4;
 						class points
 						{
 							class Draw
 							{
-								type="line";
 								width=4;
 								lineType=2;
 								points[]=
@@ -10292,7 +10028,6 @@ class CfgVehicles
 						{
 							class Draw: Draw
 							{
-								type="polygon";
 								points[]=
 								{
 									
@@ -10323,27 +10058,17 @@ class CfgVehicles
 						};
 						class pointsUnknownEnemy: pointsUnknown
 						{
-							class Draw: Draw
-							{
-							};
 						};
 						class pointsUnknownFriend: pointsUnknown
 						{
-							class Draw: Draw
-							{
-							};
 						};
 						class pointsUnknownCiv: pointsUnknown
 						{
-							class Draw: Draw
-							{
-							};
 						};
 						class pointsCar: points
 						{
 							class Draw: Draw
 							{
-								type="polygon";
 								points[]=
 								{
 									
@@ -10765,63 +10490,35 @@ class CfgVehicles
 						};
 						class pointsCarEnemy: pointsCar
 						{
-							class Draw: Draw
-							{
-							};
 						};
 						class pointsCarFriend: pointsCar
 						{
-							class Draw: Draw
-							{
-							};
 						};
 						class pointsCarCiv: pointsCar
 						{
-							class Draw: Draw
-							{
-							};
 						};
 						class pointsCarNeutral: pointsCar
 						{
-							class Draw: Draw
-							{
-							};
 						};
 						class pointsTank: points
 						{
-							class Draw: Draw
-							{
-							};
 						};
 						class pointsTankEnemy: pointsTank
 						{
-							class Draw: Draw
-							{
-							};
 						};
 						class pointsTankFriend: pointsTank
 						{
-							class Draw: Draw
-							{
-							};
 						};
 						class pointsTankCiv: pointsTank
 						{
-							class Draw: Draw
-							{
-							};
 						};
 						class pointsTankNeutral: pointsTank
 						{
-							class Draw: Draw
-							{
-							};
 						};
 						class pointsAirplane
 						{
 							class Draw
 							{
-								type="line";
 								width=4;
 								lineType=2;
 								points[]=
@@ -11019,7 +10716,6 @@ class CfgVehicles
 						{
 							class Draw
 							{
-								type="line";
 								width=4;
 								points[]=
 								{
@@ -11055,7 +10751,6 @@ class CfgVehicles
 						{
 							class Draw
 							{
-								type="line";
 								width=4;
 								points[]=
 								{
@@ -11274,7 +10969,6 @@ class CfgVehicles
 						{
 							class Draw
 							{
-								type="line";
 								width=2;
 								points[]=
 								{
@@ -11316,7 +11010,6 @@ class CfgVehicles
 						{
 							class Draw
 							{
-								type="polygon";
 								points[]=
 								{
 									
@@ -11362,7 +11055,6 @@ class CfgVehicles
 						{
 							class Draw
 							{
-								type="polygon";
 								points[]=
 								{
 									
@@ -11405,13 +11097,11 @@ class CfgVehicles
 							};
 							class DrawLine
 							{
-								type="line";
 								width=4;
 								points[]={};
 							};
 							class IFF_Text
 							{
-								type="text";
 								source="static";
 								scale=1;
 								sourceScale=1;
@@ -11437,7 +11127,6 @@ class CfgVehicles
 						{
 							class Draw
 							{
-								type="line";
 								width=4;
 								points[]=
 								{
@@ -11488,14 +11177,10 @@ class CfgVehicles
 								};
 							};
 						};
-						class pointsNVG: pointsLaser
-						{
-						};
 						class pointsStatic
 						{
 							class Draw
 							{
-								type="polygon";
 								width=4;
 								points[]=
 								{
@@ -11520,24 +11205,11 @@ class CfgVehicles
 								};
 							};
 						};
-						class pointsStaticEnemy: pointsStatic
-						{
-						};
-						class pointsStaticFriend: pointsStatic
-						{
-						};
-						class pointsStaticCiv: pointsStatic
-						{
-						};
-						class pointsStaticNeutral: pointsStatic
-						{
-						};
 					};
 					class TargetDiamond
 					{
 						class shape
 						{
-							type="line";
 							width=4;
 							points[]=
 							{
@@ -11644,21 +11316,14 @@ class CfgVehicles
 				color[]={0.15000001,1,0.15000001,1};
 				enableParallax=0;
 				font="rhsusf_digital_font_var";
-				class material
-				{
-					ambient[]={3,3,3,1};
 					diffuse[]={10,10,10,1};
 					emissive[]={400,200,200,1};
-				};
-				class Bones
-				{
 				};
 				class Draw
 				{
 					condition="on";
 					class UHF1_Text
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -11681,7 +11346,6 @@ class CfgVehicles
 					};
 					class UHF1_Text2
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -11704,7 +11368,6 @@ class CfgVehicles
 					};
 					class UHF1_Value
 					{
-						type="text";
 						source="userText";
 						sourceScale=1;
 						sourceIndex=0;
@@ -11728,7 +11391,6 @@ class CfgVehicles
 					};
 					class VHF1_Text
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -11751,7 +11413,6 @@ class CfgVehicles
 					};
 					class VHF1_Text2
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -11774,7 +11435,6 @@ class CfgVehicles
 					};
 					class VHF1_Value
 					{
-						type="text";
 						source="userText";
 						sourceScale=1;
 						sourceIndex=1;
@@ -11798,7 +11458,6 @@ class CfgVehicles
 					};
 					class TCN_Text
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -11824,7 +11483,6 @@ class CfgVehicles
 						condition="1-ils";
 						class ILS_Text
 						{
-							type="text";
 							source="static";
 							scale=1;
 							sourceScale=1;
@@ -11851,7 +11509,6 @@ class CfgVehicles
 						condition="ils";
 						class ILS_Text
 						{
-							type="text";
 							source="static";
 							scale=1;
 							sourceScale=1;
@@ -11875,7 +11532,6 @@ class CfgVehicles
 					};
 					class STPT_Text
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -11898,7 +11554,6 @@ class CfgVehicles
 					};
 					class IFF_Text
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -11921,7 +11576,6 @@ class CfgVehicles
 					};
 					class IFF_Text2
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -11944,7 +11598,6 @@ class CfgVehicles
 					};
 					class IDK_Text
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -11967,7 +11620,6 @@ class CfgVehicles
 					};
 					class STR_Text
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -11990,7 +11642,6 @@ class CfgVehicles
 					};
 					class AP_Text
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -12013,7 +11664,6 @@ class CfgVehicles
 					};
 					class CurrentTime
 					{
-						type="text";
 						source="time";
 						align="left";
 						scale=1;
@@ -12043,7 +11693,6 @@ class CfgVehicles
 					};
 					class ING_Text
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -12066,7 +11715,6 @@ class CfgVehicles
 					};
 					class UHF_Text
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -12089,7 +11737,6 @@ class CfgVehicles
 					};
 					class VHF_Text
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -12112,7 +11759,6 @@ class CfgVehicles
 					};
 					class TIME_Text
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -12147,18 +11793,11 @@ class CfgVehicles
 				color[]={1,1,1,1};
 				enableParallax=0;
 				font="rhsusf_digital_font_var";
-				class material
-				{
-					ambient[]={3,3,3,1};
 					diffuse[]={10,10,10,1};
 					emissive[]={400,200,200,1};
 				};
 				class Bones
 				{
-					class Center
-					{
-						type="fixed";
-						pos[]={0.34999999,0.47499999};
 					};
 					class Level0
 					{
@@ -12168,12 +11807,8 @@ class CfgVehicles
 							0.47
 						};
 						pos10[]={0.838,0.91500002};
-						type="horizon";
 						angle=0;
 					};
-					class Level0_Background: Level0
-					{
-						pos0[]={0,0};
 						pos10[]={0.68000001,0.88999999};
 					};
 					class LevelP5: Level0
@@ -12292,15 +11927,11 @@ class CfgVehicles
 				class Draw
 				{
 					condition="on";
-					class HorizontBackground
-					{
-						color[]={0.1,0.30000001,0.69999999};
 						alpha=0.80000001;
 						clipTL[]={0.017999999,0.085000001};
 						clipBR[]={0.69,0.88};
 						class Static
 						{
-							type="polygon";
 							points[]=
 							{
 								
@@ -12332,13 +11963,9 @@ class CfgVehicles
 								}
 							};
 						};
-						class StaticBlack
-						{
-							color[]={0,0,0};
 							alpha=1;
 							class Static
 							{
-								type="polygon";
 								points[]=
 								{
 									
@@ -12371,15 +11998,11 @@ class CfgVehicles
 								};
 							};
 						};
-						class HorizontWhite
-						{
-							color[]={0,0,0};
 							alpha=0.89999998;
 							class Dimmed
 							{
 								class Level0
 								{
-									type="line";
 									width=7;
 									points[]=
 									{
@@ -12413,13 +12036,11 @@ class CfgVehicles
 							};
 							class Level0
 							{
-								type="line";
 								width=16;
 								points[]={};
 							};
 							class LevelP5: Level0
 							{
-								type="line";
 								points[]=
 								{
 									
@@ -12487,7 +12108,6 @@ class CfgVehicles
 							};
 							class VALP_1_5
 							{
-								type="text";
 								source="static";
 								align="left";
 								scale=1;
@@ -12513,7 +12133,6 @@ class CfgVehicles
 							};
 							class VALP_1_5_R
 							{
-								type="text";
 								source="static";
 								align="right";
 								scale=1;
@@ -12539,7 +12158,6 @@ class CfgVehicles
 							};
 							class LevelP10: Level0
 							{
-								type="line";
 								points[]=
 								{
 									
@@ -12607,7 +12225,6 @@ class CfgVehicles
 							};
 							class VALP_1_10
 							{
-								type="text";
 								source="static";
 								align="left";
 								scale=1;
@@ -12633,7 +12250,6 @@ class CfgVehicles
 							};
 							class VALP_1_10_R
 							{
-								type="text";
 								source="static";
 								align="right";
 								scale=1;
@@ -12659,7 +12275,6 @@ class CfgVehicles
 							};
 							class LevelP15: Level0
 							{
-								type="line";
 								points[]=
 								{
 									
@@ -12727,7 +12342,6 @@ class CfgVehicles
 							};
 							class VALP_1_15
 							{
-								type="text";
 								source="static";
 								align="left";
 								scale=1;
@@ -12753,7 +12367,6 @@ class CfgVehicles
 							};
 							class VALP_1_15_R
 							{
-								type="text";
 								source="static";
 								align="right";
 								scale=1;
@@ -12779,7 +12392,6 @@ class CfgVehicles
 							};
 							class LevelP20: Level0
 							{
-								type="line";
 								points[]=
 								{
 									
@@ -12847,7 +12459,6 @@ class CfgVehicles
 							};
 							class VALP_1_20
 							{
-								type="text";
 								source="static";
 								align="left";
 								scale=1;
@@ -12873,7 +12484,6 @@ class CfgVehicles
 							};
 							class VALP_1_20_R
 							{
-								type="text";
 								source="static";
 								align="right";
 								scale=1;
@@ -12899,7 +12509,6 @@ class CfgVehicles
 							};
 							class LevelP25: Level0
 							{
-								type="line";
 								points[]=
 								{
 									
@@ -12967,7 +12576,6 @@ class CfgVehicles
 							};
 							class VALP_1_25
 							{
-								type="text";
 								source="static";
 								align="left";
 								scale=1;
@@ -12993,7 +12601,6 @@ class CfgVehicles
 							};
 							class VALP_1_25_R
 							{
-								type="text";
 								source="static";
 								align="right";
 								scale=1;
@@ -13019,7 +12626,6 @@ class CfgVehicles
 							};
 							class LevelP30: Level0
 							{
-								type="line";
 								points[]=
 								{
 									
@@ -13087,7 +12693,6 @@ class CfgVehicles
 							};
 							class VALP_1_30
 							{
-								type="text";
 								source="static";
 								align="left";
 								scale=1;
@@ -13113,7 +12718,6 @@ class CfgVehicles
 							};
 							class VALP_1_30_R
 							{
-								type="text";
 								source="static";
 								align="right";
 								scale=1;
@@ -13139,7 +12743,6 @@ class CfgVehicles
 							};
 							class LevelP35: Level0
 							{
-								type="line";
 								points[]=
 								{
 									
@@ -13207,7 +12810,6 @@ class CfgVehicles
 							};
 							class VALP_1_35
 							{
-								type="text";
 								source="static";
 								align="left";
 								scale=1;
@@ -13233,7 +12835,6 @@ class CfgVehicles
 							};
 							class VALP_1_35_R
 							{
-								type="text";
 								source="static";
 								align="right";
 								scale=1;
@@ -13259,7 +12860,6 @@ class CfgVehicles
 							};
 							class LevelP40: Level0
 							{
-								type="line";
 								points[]=
 								{
 									
@@ -13327,7 +12927,6 @@ class CfgVehicles
 							};
 							class VALP_1_40
 							{
-								type="text";
 								source="static";
 								align="left";
 								scale=1;
@@ -13353,7 +12952,6 @@ class CfgVehicles
 							};
 							class VALP_1_40_R
 							{
-								type="text";
 								source="static";
 								align="right";
 								scale=1;
@@ -13379,7 +12977,6 @@ class CfgVehicles
 							};
 							class LevelP45: Level0
 							{
-								type="line";
 								points[]=
 								{
 									
@@ -13447,7 +13044,6 @@ class CfgVehicles
 							};
 							class VALP_1_45
 							{
-								type="text";
 								source="static";
 								align="left";
 								scale=1;
@@ -13473,7 +13069,6 @@ class CfgVehicles
 							};
 							class VALP_1_45_R
 							{
-								type="text";
 								source="static";
 								align="right";
 								scale=1;
@@ -13499,7 +13094,6 @@ class CfgVehicles
 							};
 							class LevelP50: Level0
 							{
-								type="line";
 								points[]=
 								{
 									
@@ -13567,7 +13161,6 @@ class CfgVehicles
 							};
 							class VALP_1_50
 							{
-								type="text";
 								source="static";
 								align="left";
 								scale=1;
@@ -13593,7 +13186,6 @@ class CfgVehicles
 							};
 							class VALP_1_50_R
 							{
-								type="text";
 								source="static";
 								align="right";
 								scale=1;
@@ -13619,7 +13211,6 @@ class CfgVehicles
 							};
 							class LevelP60: Level0
 							{
-								type="line";
 								points[]=
 								{
 									
@@ -13687,7 +13278,6 @@ class CfgVehicles
 							};
 							class VALP_1_60
 							{
-								type="text";
 								source="static";
 								align="left";
 								scale=1;
@@ -13713,7 +13303,6 @@ class CfgVehicles
 							};
 							class VALP_1_60_R
 							{
-								type="text";
 								source="static";
 								align="right";
 								scale=1;
@@ -13739,7 +13328,6 @@ class CfgVehicles
 							};
 							class LevelP70: Level0
 							{
-								type="line";
 								points[]=
 								{
 									
@@ -13807,7 +13395,6 @@ class CfgVehicles
 							};
 							class VALP_1_70
 							{
-								type="text";
 								source="static";
 								align="left";
 								scale=1;
@@ -13833,7 +13420,6 @@ class CfgVehicles
 							};
 							class VALP_1_70_R
 							{
-								type="text";
 								source="static";
 								align="right";
 								scale=1;
@@ -13859,7 +13445,6 @@ class CfgVehicles
 							};
 							class LevelP80: Level0
 							{
-								type="line";
 								points[]=
 								{
 									
@@ -13927,7 +13512,6 @@ class CfgVehicles
 							};
 							class VALP_1_80
 							{
-								type="text";
 								source="static";
 								align="left";
 								scale=1;
@@ -13953,7 +13537,6 @@ class CfgVehicles
 							};
 							class VALP_1_80_R
 							{
-								type="text";
 								source="static";
 								align="right";
 								scale=1;
@@ -13979,7 +13562,6 @@ class CfgVehicles
 							};
 							class LevelP90: Level0
 							{
-								type="line";
 								points[]=
 								{
 									
@@ -14047,7 +13629,6 @@ class CfgVehicles
 							};
 							class VALP_1_90
 							{
-								type="text";
 								source="static";
 								align="left";
 								scale=1;
@@ -14073,7 +13654,6 @@ class CfgVehicles
 							};
 							class VALP_1_90_R
 							{
-								type="text";
 								source="static";
 								align="right";
 								scale=1;
@@ -14098,19 +13678,14 @@ class CfgVehicles
 								};
 							};
 						};
-						class HorizontBlack
-						{
-							color[]={1,1,1};
 							alpha=0.89999998;
 							class Level0
 							{
-								type="line";
 								width=7;
 								points[]={};
 							};
 							class LevelM5: Level0
 							{
-								type="line";
 								points[]=
 								{
 									
@@ -14332,7 +13907,6 @@ class CfgVehicles
 							};
 							class VALM_1_5
 							{
-								type="text";
 								source="static";
 								align="left";
 								scale=1;
@@ -14358,7 +13932,6 @@ class CfgVehicles
 							};
 							class VALM_1_5_R
 							{
-								type="text";
 								source="static";
 								align="right";
 								scale=1;
@@ -14384,7 +13957,6 @@ class CfgVehicles
 							};
 							class LevelM10: Level0
 							{
-								type="line";
 								points[]=
 								{
 									
@@ -14606,7 +14178,6 @@ class CfgVehicles
 							};
 							class VALM_1_10
 							{
-								type="text";
 								source="static";
 								align="left";
 								scale=1;
@@ -14632,7 +14203,6 @@ class CfgVehicles
 							};
 							class VALM_1_10_R
 							{
-								type="text";
 								source="static";
 								align="right";
 								scale=1;
@@ -14658,7 +14228,6 @@ class CfgVehicles
 							};
 							class LevelM15: Level0
 							{
-								type="line";
 								points[]=
 								{
 									
@@ -14880,7 +14449,6 @@ class CfgVehicles
 							};
 							class VALM_1_15
 							{
-								type="text";
 								source="static";
 								align="left";
 								scale=1;
@@ -14906,7 +14474,6 @@ class CfgVehicles
 							};
 							class VALM_1_15_R
 							{
-								type="text";
 								source="static";
 								align="right";
 								scale=1;
@@ -14932,7 +14499,6 @@ class CfgVehicles
 							};
 							class LevelM20: Level0
 							{
-								type="line";
 								points[]=
 								{
 									
@@ -15154,7 +14720,6 @@ class CfgVehicles
 							};
 							class VALM_1_20
 							{
-								type="text";
 								source="static";
 								align="left";
 								scale=1;
@@ -15180,7 +14745,6 @@ class CfgVehicles
 							};
 							class VALM_1_20_R
 							{
-								type="text";
 								source="static";
 								align="right";
 								scale=1;
@@ -15206,7 +14770,6 @@ class CfgVehicles
 							};
 							class LevelM25: Level0
 							{
-								type="line";
 								points[]=
 								{
 									
@@ -15428,7 +14991,6 @@ class CfgVehicles
 							};
 							class VALM_1_25
 							{
-								type="text";
 								source="static";
 								align="left";
 								scale=1;
@@ -15454,7 +15016,6 @@ class CfgVehicles
 							};
 							class VALM_1_25_R
 							{
-								type="text";
 								source="static";
 								align="right";
 								scale=1;
@@ -15480,7 +15041,6 @@ class CfgVehicles
 							};
 							class LevelM30: Level0
 							{
-								type="line";
 								points[]=
 								{
 									
@@ -15702,7 +15262,6 @@ class CfgVehicles
 							};
 							class VALM_1_30
 							{
-								type="text";
 								source="static";
 								align="left";
 								scale=1;
@@ -15728,7 +15287,6 @@ class CfgVehicles
 							};
 							class VALM_1_30_R
 							{
-								type="text";
 								source="static";
 								align="right";
 								scale=1;
@@ -15754,7 +15312,6 @@ class CfgVehicles
 							};
 							class LevelM35: Level0
 							{
-								type="line";
 								points[]=
 								{
 									
@@ -15976,7 +15533,6 @@ class CfgVehicles
 							};
 							class VALM_1_35
 							{
-								type="text";
 								source="static";
 								align="left";
 								scale=1;
@@ -16002,7 +15558,6 @@ class CfgVehicles
 							};
 							class VALM_1_35_R
 							{
-								type="text";
 								source="static";
 								align="right";
 								scale=1;
@@ -16028,7 +15583,6 @@ class CfgVehicles
 							};
 							class LevelM40: Level0
 							{
-								type="line";
 								points[]=
 								{
 									
@@ -16250,7 +15804,6 @@ class CfgVehicles
 							};
 							class VALM_1_40
 							{
-								type="text";
 								source="static";
 								align="left";
 								scale=1;
@@ -16276,7 +15829,6 @@ class CfgVehicles
 							};
 							class VALM_1_40_R
 							{
-								type="text";
 								source="static";
 								align="right";
 								scale=1;
@@ -16302,7 +15854,6 @@ class CfgVehicles
 							};
 							class LevelM45: Level0
 							{
-								type="line";
 								points[]=
 								{
 									
@@ -16524,7 +16075,6 @@ class CfgVehicles
 							};
 							class VALM_1_45
 							{
-								type="text";
 								source="static";
 								align="left";
 								scale=1;
@@ -16550,7 +16100,6 @@ class CfgVehicles
 							};
 							class VALM_1_45_R
 							{
-								type="text";
 								source="static";
 								align="right";
 								scale=1;
@@ -16576,7 +16125,6 @@ class CfgVehicles
 							};
 							class LevelM50: Level0
 							{
-								type="line";
 								points[]=
 								{
 									
@@ -16798,7 +16346,6 @@ class CfgVehicles
 							};
 							class VALM_1_50
 							{
-								type="text";
 								source="static";
 								align="left";
 								scale=1;
@@ -16824,7 +16371,6 @@ class CfgVehicles
 							};
 							class VALM_1_50_R
 							{
-								type="text";
 								source="static";
 								align="right";
 								scale=1;
@@ -16850,7 +16396,6 @@ class CfgVehicles
 							};
 							class LevelM60: Level0
 							{
-								type="line";
 								points[]=
 								{
 									
@@ -17072,7 +16617,6 @@ class CfgVehicles
 							};
 							class VALM_1_60
 							{
-								type="text";
 								source="static";
 								align="left";
 								scale=1;
@@ -17098,7 +16642,6 @@ class CfgVehicles
 							};
 							class VALM_1_60_R
 							{
-								type="text";
 								source="static";
 								align="right";
 								scale=1;
@@ -17124,7 +16667,6 @@ class CfgVehicles
 							};
 							class LevelM70: Level0
 							{
-								type="line";
 								points[]=
 								{
 									
@@ -17346,7 +16888,6 @@ class CfgVehicles
 							};
 							class VALM_1_70
 							{
-								type="text";
 								source="static";
 								align="left";
 								scale=1;
@@ -17372,7 +16913,6 @@ class CfgVehicles
 							};
 							class VALM_1_70_R
 							{
-								type="text";
 								source="static";
 								align="right";
 								scale=1;
@@ -17398,7 +16938,6 @@ class CfgVehicles
 							};
 							class LevelM80: Level0
 							{
-								type="line";
 								points[]=
 								{
 									
@@ -17620,7 +17159,6 @@ class CfgVehicles
 							};
 							class VALM_1_80
 							{
-								type="text";
 								source="static";
 								align="left";
 								scale=1;
@@ -17646,7 +17184,6 @@ class CfgVehicles
 							};
 							class VALM_1_80_R
 							{
-								type="text";
 								source="static";
 								align="right";
 								scale=1;
@@ -17672,7 +17209,6 @@ class CfgVehicles
 							};
 							class LevelM90: Level0
 							{
-								type="line";
 								points[]=
 								{
 									
@@ -17894,7 +17430,6 @@ class CfgVehicles
 							};
 							class VALM_1_90
 							{
-								type="text";
 								source="static";
 								align="left";
 								scale=1;
@@ -17920,7 +17455,6 @@ class CfgVehicles
 							};
 							class VALM_1_90_R
 							{
-								type="text";
 								source="static";
 								align="right";
 								scale=1;
@@ -17946,12 +17480,8 @@ class CfgVehicles
 							};
 						};
 					};
-					class BlackBackground
-					{
-						color[]={0,0,0};
 						class Static
 						{
-							type="polygon";
 							points[]=
 							{
 								
@@ -18097,7 +17627,6 @@ class CfgVehicles
 					};
 					class HeadingText
 					{
-						type="text";
 						source="heading";
 						sourceScale=1;
 						sourceLength=3;
@@ -18120,12 +17649,8 @@ class CfgVehicles
 							1
 						};
 					};
-					class Green
-					{
-						color[]={0.15000001,1,0.15000001,1};
 						class Throttle1
 						{
-							type="text";
 							source="throttle";
 							sourceScale=100;
 							sourceLength=1;
@@ -18150,7 +17675,6 @@ class CfgVehicles
 						};
 						class Throttle1Static_Text
 						{
-							type="text";
 							source="static";
 							scale=1;
 							sourceScale=1;
@@ -18173,7 +17697,6 @@ class CfgVehicles
 						};
 						class Throttle2
 						{
-							type="text";
 							source="throttle";
 							sourceScale=100;
 							sourceLength=1;
@@ -18198,7 +17721,6 @@ class CfgVehicles
 						};
 						class Throttle2Static_Text
 						{
-							type="text";
 							source="static";
 							scale=1;
 							sourceScale=1;
@@ -18221,7 +17743,6 @@ class CfgVehicles
 						};
 						class temp1
 						{
-							type="text";
 							source="rpm";
 							sourceScale=645;
 							sourceLength=1;
@@ -18246,7 +17767,6 @@ class CfgVehicles
 						};
 						class temp1Static_Text
 						{
-							type="text";
 							source="static";
 							scale=1;
 							sourceScale=1;
@@ -18269,7 +17789,6 @@ class CfgVehicles
 						};
 						class temp2
 						{
-							type="text";
 							source="rpm";
 							sourceScale=673;
 							sourceLength=1;
@@ -18294,7 +17813,6 @@ class CfgVehicles
 						};
 						class temp2Static_Text
 						{
-							type="text";
 							source="static";
 							scale=1;
 							sourceScale=1;
@@ -18317,7 +17835,6 @@ class CfgVehicles
 						};
 						class BaroStatic_Text
 						{
-							type="text";
 							source="static";
 							scale=1;
 							sourceScale=1;
@@ -18340,7 +17857,6 @@ class CfgVehicles
 						};
 						class BaroSource_Text
 						{
-							type="text";
 							source="altitudeAGL";
 							sourceScale=1;
 							sourcePrecision=1;
@@ -18367,7 +17883,6 @@ class CfgVehicles
 						};
 						class Cord_Text
 						{
-							type="text";
 							source="static";
 							scale=1;
 							sourceScale=1;
@@ -18390,7 +17905,6 @@ class CfgVehicles
 						};
 						class CordX
 						{
-							type="text";
 							source="coordinateX";
 							sourceScale=0.0099999998;
 							sourceLength=3;
@@ -18442,7 +17956,6 @@ class CfgVehicles
 						};
 						class FuelRemaining_Text
 						{
-							type="text";
 							source="static";
 							scale=1;
 							sourceScale=1;
@@ -18465,7 +17978,6 @@ class CfgVehicles
 						};
 						class FuelRemaining_Source
 						{
-							type="text";
 							source="fuel";
 							sourceScale=20;
 							sourcePrecision=1;
@@ -18489,7 +18001,6 @@ class CfgVehicles
 						};
 						class TimeRemaining_Text
 						{
-							type="text";
 							source="static";
 							scale=1;
 							sourceScale=1;
@@ -18512,7 +18023,6 @@ class CfgVehicles
 						};
 						class TimeRemaining_Source
 						{
-							type="text";
 							source="fuel";
 							sourceScale=2.4000001;
 							sourcePrecision=2;
@@ -18536,7 +18046,6 @@ class CfgVehicles
 						};
 						class FuelSt20_Text
 						{
-							type="text";
 							source="static";
 							scale=1;
 							sourceScale=1;
@@ -18559,7 +18068,6 @@ class CfgVehicles
 						};
 						class FuelSt10_Text
 						{
-							type="text";
 							source="static";
 							scale=1;
 							sourceScale=1;
@@ -18582,7 +18090,6 @@ class CfgVehicles
 						};
 						class FuelSt8_Text
 						{
-							type="text";
 							source="static";
 							scale=1;
 							sourceScale=1;
@@ -18605,7 +18112,6 @@ class CfgVehicles
 						};
 						class FuelSt6_Text
 						{
-							type="text";
 							source="static";
 							scale=1;
 							sourceScale=1;
@@ -18628,7 +18134,6 @@ class CfgVehicles
 						};
 						class FuelSt4_Text
 						{
-							type="text";
 							source="static";
 							scale=1;
 							sourceScale=1;
@@ -18651,7 +18156,6 @@ class CfgVehicles
 						};
 						class FuelSt2_Text
 						{
-							type="text";
 							source="static";
 							scale=1;
 							sourceScale=1;
@@ -18675,7 +18179,6 @@ class CfgVehicles
 					};
 					class SpeedSource
 					{
-						type="text";
 						source="speed";
 						sourceScale=3.5999999;
 						sourceLength=3;
@@ -18700,7 +18203,6 @@ class CfgVehicles
 					};
 					class RadarHeightSource
 					{
-						type="text";
 						source="speed";
 						sourceScale=1;
 						sourceLength=5;
@@ -18725,7 +18227,6 @@ class CfgVehicles
 					};
 					class ClimbSource
 					{
-						type="text";
 						source="vspeed";
 						sourceScale=1;
 						sourceLength=3;
@@ -18750,7 +18251,6 @@ class CfgVehicles
 					};
 					class StaticDraw
 					{
-						type="line";
 						width=10;
 						points[]=
 						{
@@ -18992,21 +18492,14 @@ class CfgVehicles
 				color[]={0.15000001,1,0.15000001,1};
 				enableParallax=0;
 				font="LucidaConsoleB";
-				class material
-				{
-					ambient[]={3,3,3,1};
 					diffuse[]={10,10,10,1};
 					emissive[]={400,200,200,1};
-				};
-				class Bones
-				{
 				};
 				class Draw
 				{
 					condition="on";
 					class Rpm1Source
 					{
-						type="text";
 						source="rpm";
 						sourceScale=100;
 						align="left";
@@ -19047,7 +18540,6 @@ class CfgVehicles
 					};
 					class EGT1Source
 					{
-						type="text";
 						source="rpm";
 						sourceScale=380;
 						align="left";
@@ -19088,7 +18580,6 @@ class CfgVehicles
 					};
 					class noz1Source
 					{
-						type="text";
 						source="throttle";
 						sourceScale=100;
 						align="center";
@@ -19129,7 +18620,6 @@ class CfgVehicles
 					};
 					class oil1Source
 					{
-						type="text";
 						source="rpm";
 						sourceScale=235;
 						align="left";
@@ -19170,7 +18660,6 @@ class CfgVehicles
 					};
 					class hyd1Source
 					{
-						type="text";
 						source="rpm";
 						sourceScale=210;
 						align="left";
@@ -19211,7 +18700,6 @@ class CfgVehicles
 					};
 					class FuelLeftSource
 					{
-						type="text";
 						source="fuel";
 						sourceScale=2000;
 						align="left";
@@ -19246,33 +18734,15 @@ class CfgVehicles
 				color[]={0.15000001,1,0.15000001,1};
 				enableParallax=0;
 				font="LucidaConsoleB";
-				class material
-				{
-					ambient[]={3,3,3,1};
 					diffuse[]={10,10,10,1};
 					emissive[]={400,200,200,1};
 				};
 				class Bones
 				{
-					class Sensor_Offset
-					{
-						type="fixed";
-						pos[]={0,0.33000001};
 					};
-					class Static_Offset
-					{
-						type="fixed";
-						pos[]={0.5,0.85000002};
 					};
-					class Static_Offset2: Static_Offset
-					{
-						pos[]={0.5,0.82999998};
 					};
-					class Rotation_0
-					{
-						pos0[]={0,0};
 						pos10[]={0,0};
-						type="rotational";
 						source="heading";
 						min=0;
 						max=360;
@@ -19519,7 +18989,6 @@ class CfgVehicles
 					};
 					class MovementY
 					{
-						type="linear";
 						source="user";
 						sourceIndex=5;
 						refreshRate=0.1;
@@ -19537,7 +19006,6 @@ class CfgVehicles
 					};
 					class PlaneDirection
 					{
-						type="rotational";
 						source="heading";
 						sourceScale=1;
 						min=0;
@@ -19634,7 +19102,6 @@ class CfgVehicles
 					color[]={0,0.029999999,0.17};
 					class Draw_Static
 					{
-						type="line";
 						width=10;
 						points[]=
 						{
@@ -21032,7 +20499,6 @@ class CfgVehicles
 					};
 					class Rotation_0_Text
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -21076,7 +20542,6 @@ class CfgVehicles
 					};
 					class Rotation_30_Text
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -21120,7 +20585,6 @@ class CfgVehicles
 					};
 					class Rotation_60_Text
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -21164,7 +20628,6 @@ class CfgVehicles
 					};
 					class Rotation_90_Text
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -21208,7 +20671,6 @@ class CfgVehicles
 					};
 					class Rotation_120_Text
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -21252,7 +20714,6 @@ class CfgVehicles
 					};
 					class Rotation_150_Text
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -21296,7 +20757,6 @@ class CfgVehicles
 					};
 					class Rotation_180_Text
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -21340,7 +20800,6 @@ class CfgVehicles
 					};
 					class Rotation_210_Text
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -21384,7 +20843,6 @@ class CfgVehicles
 					};
 					class Rotation_240_Text
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -21428,7 +20886,6 @@ class CfgVehicles
 					};
 					class Rotation_270_Text
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -21472,7 +20929,6 @@ class CfgVehicles
 					};
 					class Rotation_300_Text
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -21516,7 +20972,6 @@ class CfgVehicles
 					};
 					class Rotation_330_Text
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -21558,13 +21013,9 @@ class CfgVehicles
 							1
 						};
 					};
-					class BackgroundBlack
-					{
-						color[]={0,0,0};
 						alpha=1;
 						class Static
 						{
-							type="polygon";
 							points[]=
 							{
 								
@@ -21616,12 +21067,8 @@ class CfgVehicles
 							};
 						};
 					};
-					class Draw_White
-					{
-						color[]={1,1,1};
 						class HeadingText
 						{
-							type="text";
 							source="heading";
 							sourceScale=1;
 							sourceLength=3;
@@ -21646,7 +21093,6 @@ class CfgVehicles
 						};
 						class Range_Text
 						{
-							type="text";
 							source="static";
 							scale=1;
 							sourceScale=1;
@@ -21669,7 +21115,6 @@ class CfgVehicles
 						};
 						class MFlare_Text
 						{
-							type="text";
 							source="static";
 							scale=1;
 							sourceScale=1;
@@ -21692,7 +21137,6 @@ class CfgVehicles
 						};
 						class RangesData1_Text
 						{
-							type="text";
 							source="static";
 							scale=1;
 							sourceScale=1;
@@ -21715,7 +21159,6 @@ class CfgVehicles
 						};
 						class Pos_Text
 						{
-							type="text";
 							source="static";
 							scale=1;
 							sourceScale=1;
@@ -21738,7 +21181,6 @@ class CfgVehicles
 						};
 						class CordX
 						{
-							type="text";
 							source="coordinateX";
 							sourceScale=0.0099999998;
 							sourceLength=3;
@@ -21793,7 +21235,6 @@ class CfgVehicles
 							condition="wpvalid";
 							class WPdist
 							{
-								type="text";
 								source="wpdist";
 								sourceScale=0.001;
 								sourcePrecision=1;
@@ -21825,7 +21266,6 @@ class CfgVehicles
 							};
 							class WPIndex
 							{
-								type="text";
 								source="wpIndex";
 								sourceScale=1;
 								sourceLength=2;
@@ -21849,7 +21289,6 @@ class CfgVehicles
 							};
 							class WPstatic
 							{
-								type="text";
 								source="static";
 								scale=1;
 								sourceScale=1;
@@ -21872,7 +21311,6 @@ class CfgVehicles
 							};
 							class WPAuto
 							{
-								type="text";
 								source="static";
 								scale=1;
 								sourceScale=1;
@@ -21903,7 +21341,6 @@ class CfgVehicles
 							};
 							class WPKM
 							{
-								type="text";
 								source="static";
 								scale=1;
 								sourceScale=1;
@@ -21934,7 +21371,6 @@ class CfgVehicles
 							};
 							class WPTime
 							{
-								type="text";
 								source="static";
 								scale=1;
 								sourceScale=1;
@@ -21966,14 +21402,10 @@ class CfgVehicles
 							class WP1
 							{
 								condition="user6>=0";
-								class CurrentWaypoint
-								{
-									color[]={0.89999998,0,0};
 									condition="1-WPIndex";
 									class WaypointShape
 									{
 										width=22;
-										type="line";
 										points[]=
 										{
 											
@@ -22464,7 +21896,6 @@ class CfgVehicles
 								class WaypointShape
 								{
 									width=6;
-									type="line";
 									points[]=
 									{
 										
@@ -22955,14 +22386,10 @@ class CfgVehicles
 							class WP2
 							{
 								condition="user8>=0";
-								class CurrentWaypoint
-								{
-									color[]={0.89999998,0,0};
 									condition="(WPIndex>=1)*(WPIndex<=1)";
 									class WaypointShape
 									{
 										width=22;
-										type="line";
 										points[]=
 										{
 											
@@ -23453,7 +22880,6 @@ class CfgVehicles
 								class WaypointShape
 								{
 									width=6;
-									type="line";
 									points[]=
 									{
 										
@@ -23972,14 +23398,10 @@ class CfgVehicles
 							class WP3
 							{
 								condition="user10>=0";
-								class CurrentWaypoint
-								{
-									color[]={0.89999998,0,0};
 									condition="(WPIndex>=2)*(WPIndex<=2)";
 									class WaypointShape
 									{
 										width=22;
-										type="line";
 										points[]=
 										{
 											
@@ -24470,7 +23892,6 @@ class CfgVehicles
 								class WaypointShape
 								{
 									width=6;
-									type="line";
 									points[]=
 									{
 										
@@ -24989,14 +24410,10 @@ class CfgVehicles
 							class WP4
 							{
 								condition="user12>=0";
-								class CurrentWaypoint
-								{
-									color[]={0.89999998,0,0};
 									condition="(WPIndex>=3)*(WPIndex<=3)";
 									class WaypointShape
 									{
 										width=22;
-										type="line";
 										points[]=
 										{
 											
@@ -25487,7 +24904,6 @@ class CfgVehicles
 								class WaypointShape
 								{
 									width=6;
-									type="line";
 									points[]=
 									{
 										
@@ -26006,14 +25422,10 @@ class CfgVehicles
 							class WP5
 							{
 								condition="user14>=0";
-								class CurrentWaypoint
-								{
-									color[]={0.89999998,0,0};
 									condition="(WPIndex>=4)*(WPIndex<=4)";
 									class WaypointShape
 									{
 										width=22;
-										type="line";
 										points[]=
 										{
 											
@@ -26504,7 +25916,6 @@ class CfgVehicles
 								class WaypointShape
 								{
 									width=6;
-									type="line";
 									points[]=
 									{
 										
@@ -27023,14 +26434,10 @@ class CfgVehicles
 							class WP6
 							{
 								condition="user16>=0";
-								class CurrentWaypoint
-								{
-									color[]={0.89999998,0,0};
 									condition="(WPIndex>=5)*(WPIndex<=5)";
 									class WaypointShape
 									{
 										width=22;
-										type="line";
 										points[]=
 										{
 											
@@ -27521,7 +26928,6 @@ class CfgVehicles
 								class WaypointShape
 								{
 									width=6;
-									type="line";
 									points[]=
 									{
 										
@@ -28040,14 +27446,10 @@ class CfgVehicles
 							class WP7
 							{
 								condition="user18>=0";
-								class CurrentWaypoint
-								{
-									color[]={0.89999998,0,0};
 									condition="(WPIndex>=6)*(WPIndex<=6)";
 									class WaypointShape
 									{
 										width=22;
-										type="line";
 										points[]=
 										{
 											
@@ -28538,7 +27940,6 @@ class CfgVehicles
 								class WaypointShape
 								{
 									width=6;
-									type="line";
 									points[]=
 									{
 										
@@ -29057,14 +28458,10 @@ class CfgVehicles
 							class WP8
 							{
 								condition="user20>=0";
-								class CurrentWaypoint
-								{
-									color[]={0.89999998,0,0};
 									condition="(WPIndex>=7)*(WPIndex<=7)";
 									class WaypointShape
 									{
 										width=22;
-										type="line";
 										points[]=
 										{
 											
@@ -29555,7 +28952,6 @@ class CfgVehicles
 								class WaypointShape
 								{
 									width=6;
-									type="line";
 									points[]=
 									{
 										
@@ -30074,14 +29470,10 @@ class CfgVehicles
 							class WP9
 							{
 								condition="user22>=0";
-								class CurrentWaypoint
-								{
-									color[]={0.89999998,0,0};
 									condition="(WPIndex>=8)*(WPIndex<=8)";
 									class WaypointShape
 									{
 										width=22;
-										type="line";
 										points[]=
 										{
 											
@@ -30572,7 +29964,6 @@ class CfgVehicles
 								class WaypointShape
 								{
 									width=6;
-									type="line";
 									points[]=
 									{
 										
@@ -31091,14 +30482,10 @@ class CfgVehicles
 							class WP10
 							{
 								condition="user24>=0";
-								class CurrentWaypoint
-								{
-									color[]={0.89999998,0,0};
 									condition="(WPIndex>=9)*(WPIndex<=9)";
 									class WaypointShape
 									{
 										width=22;
-										type="line";
 										points[]=
 										{
 											
@@ -31589,7 +30976,6 @@ class CfgVehicles
 								class WaypointShape
 								{
 									width=6;
-									type="line";
 									points[]=
 									{
 										
@@ -32107,12 +31493,8 @@ class CfgVehicles
 							};
 						};
 					};
-					class Draw_Purple
-					{
-						color[]={0.67000002,0.059999999,0.31999999};
 						class RangesData1_Text
 						{
-							type="text";
 							source="static";
 							scale=1;
 							sourceScale=1;
@@ -32134,15 +31516,11 @@ class CfgVehicles
 							};
 						};
 					};
-					class Draw_Yellow
-					{
-						color[]={0.99000001,0.86000001,0.14};
 						class NoTarget
 						{
 							condition="targetDist<=0";
 							class Target_Text
 							{
-								type="text";
 								source="static";
 								scale=1;
 								sourceScale=1;
@@ -32169,7 +31547,6 @@ class CfgVehicles
 							condition="targetDist>=1";
 							class Dist_Text
 							{
-								type="text";
 								source="static";
 								scale=1;
 								sourceScale=1;
@@ -32192,7 +31569,6 @@ class CfgVehicles
 							};
 							class CordX
 							{
-								type="text";
 								source="targetDist";
 								sourceScale=0.001;
 								sourcePrecision=1;
@@ -32217,7 +31593,6 @@ class CfgVehicles
 							};
 							class SPD_Text
 							{
-								type="text";
 								source="static";
 								scale=1;
 								sourceScale=1;
@@ -32240,7 +31615,6 @@ class CfgVehicles
 							};
 							class SpeedSource
 							{
-								type="text";
 								source="LarTargetSpeed";
 								sourceScale=1;
 								sourcePrecision=0;
@@ -32265,7 +31639,6 @@ class CfgVehicles
 							};
 							class ATL_Text
 							{
-								type="text";
 								source="static";
 								scale=1;
 								sourceScale=1;
@@ -32288,7 +31661,6 @@ class CfgVehicles
 							};
 							class HeightSource
 							{
-								type="text";
 								source="targetHeight";
 								sourceScale=1;
 								sourcePrecision=0;
@@ -32315,7 +31687,6 @@ class CfgVehicles
 					};
 					class Range_Text
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -32342,7 +31713,6 @@ class CfgVehicles
 						color[]={1,1,1};
 						class Draw_Static
 						{
-							type="line";
 							width=6;
 							points[]=
 							{
@@ -32536,13 +31906,9 @@ class CfgVehicles
 							};
 						};
 					};
-					class SensorGroup
-					{
-						color[]={1,1,1};
 						alpha=1;
 						class Sensor
 						{
-							type="sensor";
 							pos[]=
 							{
 								"Sensor_Offset",
@@ -32570,12 +31936,8 @@ class CfgVehicles
 							targetLineWidth=-0.00192;
 							targetLineLength=0.02;
 							range=36000;
-							class MissileThreat
-							{
-								color[]={1,0,0};
 								class TargetLines
 								{
-									type="line";
 									width=2;
 									points[]=
 									{
@@ -32768,7 +32130,6 @@ class CfgVehicles
 								};
 								class TextM
 								{
-									type="text";
 									source="static";
 									align="center";
 									scale=1;
@@ -32789,12 +32150,8 @@ class CfgVehicles
 									};
 								};
 							};
-							class lockingThreat
-							{
-								color[]={1,0.30000001,0};
 								class TargetLines
 								{
-									type="line";
 									points[]=
 									{
 										
@@ -32827,15 +32184,11 @@ class CfgVehicles
 							};
 							class markingThreat: lockingThreat
 							{
-								class TargetLines: TargetLines
-								{
-								};
 							};
 							class rwr
 							{
 								class TargetLines
 								{
-									type="line";
 									width=2;
 									points[]=
 									{
@@ -32867,36 +32220,11 @@ class CfgVehicles
 									};
 								};
 							};
-							class rwrFriendly: rwr
-							{
-								color[]={0,1,0};
-								class TargetLines: TargetLines
-								{
-								};
 							};
-							class rwrEnemy: rwr
-							{
-								color[]={1,0,0};
-								class TargetLines: TargetLines
-								{
-								};
 							};
-							class rwrGroup: rwr
-							{
-								color[]={1,0,0};
-								class TargetLines: TargetLines
-								{
-								};
 							};
-							class rwrDestroyed
-							{
-							};
-							class markedTarget
-							{
-								color[]={1,0.30000001,0};
 								class TargetLines
 								{
-									type="line";
 									width=3;
 									points[]=
 									{
@@ -32991,19 +32319,9 @@ class CfgVehicles
 									};
 								};
 							};
-							class assignedTarget: markedTarget
-							{
-								color[]={1,0,0};
-								class TargetLines: TargetLines
-								{
-								};
 							};
-							class target
-							{
-								color[]={1,1,1};
 								class TargetLines
 								{
-									type="line";
 									width=2;
 									points[]=
 									{
@@ -33196,7 +32514,6 @@ class CfgVehicles
 								};
 								class TextA
 								{
-									type="text";
 									source="static";
 									align="center";
 									scale=1;
@@ -33217,15 +32534,8 @@ class CfgVehicles
 									};
 								};
 							};
-							class targetFriendly: target
-							{
-								color[]={0,1,0};
-								class TargetLines: TargetLines
-								{
-								};
 								class TextA
 								{
-									type="text";
 									source="static";
 									align="center";
 									scale=1;
@@ -33246,79 +32556,18 @@ class CfgVehicles
 									};
 								};
 							};
-							class targetEnemy: target
-							{
-								color[]={1,0,0};
-								class TargetLines: TargetLines
-								{
-								};
-								class TextA: TextA
-								{
-								};
 							};
-							class targetGroup: target
-							{
-								color[]={1,0,0};
-								class TargetLines: TargetLines
-								{
-								};
-								class TextA: TextA
-								{
-								};
-							};
-							class targetDestroyed
-							{
 							};
 							class targetGround: target
 							{
-								class TargetLines: TargetLines
-								{
-								};
-								class TextA: TextA
-								{
-								};
 							};
-							class targetGroundFriendly: targetGround
-							{
-								color[]={0,1,0};
-								class TargetLines: TargetLines
-								{
-								};
-								class TextA: TextA
-								{
-								};
 							};
-							class targetGroundEnemy: targetGround
-							{
-								color[]={1,0,0};
-								class TargetLines: TargetLines
-								{
-								};
-								class TextA: TextA
-								{
-								};
 							};
-							class targetGroundGroup: targetGround
-							{
-								color[]={1,0,0};
-								class TargetLines: TargetLines
-								{
-								};
-								class TextA: TextA
-								{
-								};
-							};
-							class targetGroundDestroyed
-							{
 							};
 							class targetGroundRemote: target
 							{
-								class TargetLines: TargetLines
-								{
-								};
 								class TextA
 								{
-									type="text";
 									source="static";
 									align="center";
 									scale=1;
@@ -33339,201 +32588,35 @@ class CfgVehicles
 									};
 								};
 							};
-							class targetGroundRemoteFriendly: targetGroundRemote
-							{
-								color[]={0,1,0};
-								class TargetLines: TargetLines
-								{
-								};
-								class TextA: TextA
-								{
-								};
 							};
-							class targetGroundRemoteEnemy: targetGroundRemote
-							{
-								color[]={1,0,0};
-								class TargetLines: TargetLines
-								{
-								};
-								class TextA: TextA
-								{
-								};
 							};
-							class targetGroundRemoteGroup: targetGroundRemote
-							{
-								color[]={1,0,0};
-								class TargetLines: TargetLines
-								{
-								};
-								class TextA: TextA
-								{
-								};
-							};
-							class targetGroundRemoteDestroyed
-							{
 							};
 							class targetLaser: target
 							{
-								class TargetLines: TargetLines
-								{
-								};
-								class TextA: TextA
-								{
-								};
 							};
-							class targetLaserFriendly: targetLaser
-							{
-								color[]={0,1,0};
-								class TargetLines: TargetLines
-								{
-								};
-								class TextA: TextA
-								{
-								};
 							};
-							class targetLaserEnemy: targetLaser
-							{
-								color[]={1,0,0};
-								class TargetLines: TargetLines
-								{
-								};
-								class TextA: TextA
-								{
-								};
 							};
-							class targetLaserGroup: targetLaser
-							{
-								color[]={1,0,0};
-								class TargetLines: TargetLines
-								{
-								};
-								class TextA: TextA
-								{
-								};
 							};
 							class targetNVG: target
 							{
-								class TargetLines: TargetLines
-								{
-								};
-								class TextA: TextA
-								{
-								};
 							};
-							class targetNVGFriendly: targetNVG
-							{
-								color[]={0,1,0};
-								class TargetLines: TargetLines
-								{
-								};
-								class TextA: TextA
-								{
-								};
 							};
-							class targetNVGEnemy: targetNVG
-							{
-								color[]={1,0,0};
-								class TargetLines: TargetLines
-								{
-								};
-								class TextA: TextA
-								{
-								};
 							};
-							class targetNVGGroup: targetNVG
-							{
-								color[]={1,0,0};
-								class TargetLines: TargetLines
-								{
-								};
-								class TextA: TextA
-								{
-								};
 							};
 							class targetMan: target
 							{
-								class TargetLines: TargetLines
-								{
-								};
-								class TextA: TextA
-								{
-								};
 							};
-							class targetManFriendly: targetMan
-							{
-								color[]={0,1,0};
-								class TargetLines: TargetLines
-								{
-								};
-								class TextA: TextA
-								{
-								};
 							};
-							class targetManEnemy: targetMan
-							{
-								color[]={1,0,0};
-								class TargetLines: TargetLines
-								{
-								};
-								class TextA: TextA
-								{
-								};
 							};
-							class targetManGroup: targetMan
-							{
-								color[]={1,0,0};
-								class TargetLines: TargetLines
-								{
-								};
-								class TextA: TextA
-								{
-								};
 							};
 							class targetManRemote: target
 							{
-								class TargetLines: TargetLines
-								{
-								};
-								class TextA: TextA
-								{
-								};
 							};
-							class targetManRemoteFriendly: targetManRemote
-							{
-								color[]={0,1,0};
-								class TargetLines: TargetLines
-								{
-								};
-								class TextA: TextA
-								{
-								};
 							};
-							class targetManRemoteEnemy: targetManRemote
-							{
-								color[]={1,0,0};
-								class TargetLines: TargetLines
-								{
-								};
-								class TextA: TextA
-								{
-								};
 							};
-							class targetManRemoteGroup: targetManRemote
-							{
-								color[]={1,0,0};
-								class TargetLines: TargetLines
-								{
-								};
-								class TextA: TextA
-								{
-								};
 							};
-							class targetAir
-							{
-								color[]={1,1,1};
 								class TargetLines
 								{
-									type="line";
 									width=2;
 									points[]=
 									{
@@ -33726,7 +32809,6 @@ class CfgVehicles
 								};
 								class TextA
 								{
-									type="text";
 									source="static";
 									align="center";
 									scale=1;
@@ -33747,48 +32829,11 @@ class CfgVehicles
 									};
 								};
 							};
-							class targetAirFriendly: targetAir
-							{
-								color[]={0,1,0};
-								class TargetLines: TargetLines
-								{
-								};
-								class TextA: TextA
-								{
-								};
 							};
-							class targetAirEnemy: targetAir
-							{
-								color[]={1,0,0};
-								class TargetLines: TargetLines
-								{
-								};
-								class TextA: TextA
-								{
-								};
 							};
-							class targetAirGroup: targetAir
-							{
-								color[]={1,0,0};
-								class TargetLines: TargetLines
-								{
-								};
-								class TextA: TextA
-								{
-								};
 							};
-							class targetAirDestroyed
-							{
-							};
-							class targetAirRemote: targetAir
-							{
-								color[]={1,1,1};
-								class TargetLines: TargetLines
-								{
-								};
 								class TextA
 								{
-									type="text";
 									source="static";
 									align="center";
 									scale=1;
@@ -33809,38 +32854,8 @@ class CfgVehicles
 									};
 								};
 							};
-							class targetAirRemoteFriendly: targetAirRemote
-							{
-								color[]={0,1,0};
-								class TargetLines: TargetLines
-								{
-								};
-								class TextA: TextA
-								{
-								};
 							};
-							class targetAirRemoteEnemy: targetAirRemote
-							{
-								color[]={1,0,0};
-								class TargetLines: TargetLines
-								{
-								};
-								class TextA: TextA
-								{
-								};
 							};
-							class targetAirRemoteGroup: targetAirRemote
-							{
-								color[]={1,0,0};
-								class TargetLines: TargetLines
-								{
-								};
-								class TextA: TextA
-								{
-								};
-							};
-							class targetAirRemoteDestroyed
-							{
 							};
 						};
 					};
@@ -33858,29 +32873,14 @@ class CfgVehicles
 				color[]={0.15000001,1,0.15000001,1};
 				enableParallax=0;
 				font="LucidaConsoleB";
-				class material
-				{
-					ambient[]={3,3,3,1};
 					diffuse[]={10,10,10,1};
 					emissive[]={400,200,200,1};
 				};
 				class Bones
 				{
-					class Sensor_Offset
-					{
-						type="fixed";
-						pos[]={0,0.029999999};
 					};
-					class Static_Offset
-					{
-						type="fixed";
-						pos[]={0.5,0.52999997};
 					};
-					class Rotation_0
-					{
-						pos0[]={0,0};
 						pos10[]={0,0};
-						type="rotational";
 						source="heading";
 						min=0;
 						max=360;
@@ -33971,12 +32971,8 @@ class CfgVehicles
 					condition="on";
 					alpha=0.5;
 					color[]={1,1,1};
-					class Draw_Blue
-					{
-						color[]={0,0.029999999,0.17};
 						class Draw_Static
 						{
-							type="line";
 							width=10;
 							points[]=
 							{
@@ -34774,7 +33770,6 @@ class CfgVehicles
 						};
 						class Rotation_0_Text
 						{
-							type="text";
 							source="static";
 							scale=1;
 							sourceScale=1;
@@ -34818,7 +33813,6 @@ class CfgVehicles
 						};
 						class Rotation_90_Text
 						{
-							type="text";
 							source="static";
 							scale=1;
 							sourceScale=1;
@@ -34862,7 +33856,6 @@ class CfgVehicles
 						};
 						class Rotation_180_Text
 						{
-							type="text";
 							source="static";
 							scale=1;
 							sourceScale=1;
@@ -34906,7 +33899,6 @@ class CfgVehicles
 						};
 						class Rotation_270_Text
 						{
-							type="text";
 							source="static";
 							scale=1;
 							sourceScale=1;
@@ -34949,13 +33941,9 @@ class CfgVehicles
 							};
 						};
 					};
-					class BackgroundBlack
-					{
-						color[]={0,0,0};
 						alpha=1;
 						class Static
 						{
-							type="polygon";
 							points[]=
 							{
 								
@@ -35009,7 +33997,6 @@ class CfgVehicles
 					};
 					class HeadingText
 					{
-						type="text";
 						source="heading";
 						sourceScale=1;
 						sourceLength=3;
@@ -35034,7 +34021,6 @@ class CfgVehicles
 					};
 					class Range_Text
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -35057,7 +34043,6 @@ class CfgVehicles
 					};
 					class MFD1_Text
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -35078,12 +34063,8 @@ class CfgVehicles
 							1
 						};
 					};
-					class Draw_Blue2
-					{
-						color[]={0,0.029999999,0.17};
 						class Range_Text
 						{
-							type="text";
 							source="static";
 							scale=1;
 							sourceScale=1;
@@ -35107,7 +34088,6 @@ class CfgVehicles
 					};
 					class RWR
 					{
-						type="sensor";
 						pos[]=
 						{
 							"Sensor_Offset",
@@ -35135,12 +34115,8 @@ class CfgVehicles
 						targetLineWidth=-0.0016;
 						targetLineLength=0.02;
 						range=36000;
-						class MissileThreat
-						{
-							color[]={1,0,0};
 							class TargetLines
 							{
-								type="line";
 								width=2;
 								points[]=
 								{
@@ -35333,7 +34309,6 @@ class CfgVehicles
 							};
 							class TextM
 							{
-								type="text";
 								source="static";
 								align="center";
 								scale=1;
@@ -35354,12 +34329,8 @@ class CfgVehicles
 								};
 							};
 						};
-						class lockingThreat
-						{
-							color[]={1,0.30000001,0};
 							class TargetLines
 							{
-								type="line";
 								width=2;
 								points[]=
 								{
@@ -35395,7 +34366,6 @@ class CfgVehicles
 						{
 							class TargetLines
 							{
-								type="line";
 								width=2;
 								points[]=
 								{
@@ -35428,7 +34398,6 @@ class CfgVehicles
 							};
 							class TextA
 							{
-								type="text";
 								source="static";
 								align="center";
 								scale=1;
@@ -35449,32 +34418,10 @@ class CfgVehicles
 								};
 							};
 						};
-						class rwrFriendly: rwr
-						{
-							color[]={0,1,0};
-							class TargetLines: TargetLines
-							{
-							};
-							class TextA: TextA
-							{
-							};
 						};
-						class rwrEnemy: rwr
-						{
-							color[]={1,0,0};
-							class TargetLines: TargetLines
-							{
-							};
-							class TextA: TextA
-							{
-							};
 						};
-						class markedTarget
-						{
-							color[]={1,0.30000001,0};
 							class TargetLines
 							{
-								type="line";
 								width=3;
 								points[]=
 								{
@@ -35569,12 +34516,8 @@ class CfgVehicles
 								};
 							};
 						};
-						class assignedTarget
-						{
-							color[]={1,0.30000001,0};
 							class TargetLines
 							{
-								type="line";
 								width=7;
 								points[]=
 								{
@@ -35770,7 +34713,6 @@ class CfgVehicles
 						{
 							class TargetLines
 							{
-								type="line";
 								width=2;
 								points[]=
 								{
@@ -35803,7 +34745,6 @@ class CfgVehicles
 							};
 							class TextA
 							{
-								type="text";
 								source="static";
 								align="center";
 								scale=1;
@@ -35824,34 +34765,12 @@ class CfgVehicles
 								};
 							};
 						};
-						class targetFriendly: target
-						{
-							color[]={0,1,0};
-							class TargetLines: TargetLines
-							{
-							};
-							class TextA: TextA
-							{
-							};
 						};
-						class targetEnemy: target
-						{
-							color[]={1,0,0};
-							class TargetLines: TargetLines
-							{
-							};
-							class TextA: TextA
-							{
-							};
 						};
 						class targetGround: target
 						{
-							class TargetLines: TargetLines
-							{
-							};
 							class TextA
 							{
-								type="text";
 								source="static";
 								align="center";
 								scale=1;
@@ -35872,34 +34791,12 @@ class CfgVehicles
 								};
 							};
 						};
-						class targetGroundFriendly: targetGround
-						{
-							color[]={0,1,0};
-							class TargetLines: TargetLines
-							{
-							};
-							class TextA: TextA
-							{
-							};
 						};
-						class targetGroundEnemy: targetGround
-						{
-							color[]={1,0,0};
-							class TargetLines: TargetLines
-							{
-							};
-							class TextA: TextA
-							{
-							};
 						};
 						class targetGroundRemote: target
 						{
-							class TargetLines: TargetLines
-							{
-							};
 							class TextA
 							{
-								type="text";
 								source="static";
 								align="center";
 								scale=1;
@@ -35920,32 +34817,10 @@ class CfgVehicles
 								};
 							};
 						};
-						class targetGroundRemoteFriendly: targetGroundRemote
-						{
-							color[]={0,1,0};
-							class TargetLines: TargetLines
-							{
-							};
-							class TextA: TextA
-							{
-							};
 						};
-						class targetGroundRemoteEnemy: targetGroundRemote
-						{
-							color[]={1,0,0};
-							class TargetLines: TargetLines
-							{
-							};
-							class TextA: TextA
-							{
-							};
 						};
-						class targetAir
-						{
-							color[]={1,1,1};
 							class TargetLines
 							{
-								type="line";
 								width=2;
 								points[]=
 								{
@@ -36138,7 +35013,6 @@ class CfgVehicles
 							};
 							class TextA
 							{
-								type="text";
 								source="static";
 								align="center";
 								scale=1;
@@ -36159,35 +35033,10 @@ class CfgVehicles
 								};
 							};
 						};
-						class targetAirFriendly: targetAir
-						{
-							color[]={0,1,0};
-							class TargetLines: TargetLines
-							{
-							};
-							class TextA: TextA
-							{
-							};
 						};
-						class targetAirEnemy: targetAir
-						{
-							color[]={1,0,0};
-							class TargetLines: TargetLines
-							{
-							};
-							class TextA: TextA
-							{
-							};
 						};
-						class targetAirRemote: targetAir
-						{
-							color[]={1,1,1};
-							class TargetLines: TargetLines
-							{
-							};
 							class TextA
 							{
-								type="text";
 								source="static";
 								align="center";
 								scale=1;
@@ -36208,30 +35057,11 @@ class CfgVehicles
 								};
 							};
 						};
-						class targetAirRemoteFriendly: targetAirRemote
-						{
-							color[]={0,1,0};
-							class TargetLines: TargetLines
-							{
-							};
-							class TextA: TextA
-							{
-							};
 						};
-						class targetAirRemoteEnemy: targetAirRemote
-						{
-							color[]={1,0,0};
-							class TargetLines: TargetLines
-							{
-							};
-							class TextA: TextA
-							{
-							};
 						};
 					};
 					class MChaff_Text
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -36254,7 +35084,6 @@ class CfgVehicles
 					};
 					class MFlare_Text
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -36277,7 +35106,6 @@ class CfgVehicles
 					};
 					class Prog_Text
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -36300,7 +35128,6 @@ class CfgVehicles
 					};
 					class ChaffSource
 					{
-						type="text";
 						source="cmammo";
 						sourceScale=1;
 						align="right";
@@ -36341,7 +35168,6 @@ class CfgVehicles
 					};
 					class ProgS_Text
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -36376,14 +35202,8 @@ class CfgVehicles
 				color[]={0.15000001,1,0.15000001,1};
 				enableParallax=0;
 				font="LucidaConsoleB";
-				class material
-				{
-					ambient[]={3,3,3,1};
 					diffuse[]={10,10,10,1};
 					emissive[]={400,200,200,1};
-				};
-				class Bones
-				{
 				};
 				class Draw
 				{
@@ -36391,7 +35211,6 @@ class CfgVehicles
 					color[]={0.15000001,1,0.15000001};
 					class CurrentWeapon
 					{
-						type="text";
 						source="ammoFormat";
 						sourceScale=1;
 						align="center";
@@ -36414,7 +35233,6 @@ class CfgVehicles
 					};
 					class MGAmmo
 					{
-						type="text";
 						source="ammo";
 						sourceIndex=1;
 						sourceScale=1;
@@ -36438,7 +35256,6 @@ class CfgVehicles
 					};
 					class MGAmmo_Text
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -36461,7 +35278,6 @@ class CfgVehicles
 					};
 					class thrust1Source
 					{
-						type="text";
 						source="throttle";
 						sourceScale=100;
 						align="center";
@@ -36500,12 +35316,8 @@ class CfgVehicles
 							1
 						};
 					};
-					class White
-					{
-						color[]={1,1,15};
 						class ChaffSource
 						{
-							type="text";
 							source="cmammo";
 							sourceScale=1;
 							align="right";
@@ -36547,7 +35359,6 @@ class CfgVehicles
 					};
 					class Pylon1
 					{
-						type="pylonicon";
 						pos[]=
 						{
 							{0.34999999,0.47999999},
@@ -36615,14 +35426,8 @@ class CfgVehicles
 				color[]={0.15000001,1,0.15000001,1};
 				enableParallax=0;
 				font="rhsusf_digital_font_var";
-				class material
-				{
-					ambient[]={3,3,3,1};
 					diffuse[]={10,10,10,1};
 					emissive[]={400,200,200,1};
-				};
-				class Bones
-				{
 				};
 				class Draw
 				{
@@ -36631,7 +35436,6 @@ class CfgVehicles
 					alpha=0.5;
 					class C1_Text
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -36654,7 +35458,6 @@ class CfgVehicles
 					};
 					class C1_Value
 					{
-						type="text";
 						source="userText";
 						sourceScale=1;
 						sourceIndex=0;
@@ -36678,7 +35481,6 @@ class CfgVehicles
 					};
 					class COM1_Text1
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -36701,7 +35503,6 @@ class CfgVehicles
 					};
 					class COM1_Text2
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -36724,7 +35525,6 @@ class CfgVehicles
 					};
 					class Vol_Text
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -36747,7 +35547,6 @@ class CfgVehicles
 					};
 					class VolAdj_Text
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -36770,7 +35569,6 @@ class CfgVehicles
 					};
 					class Em_Text
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -36793,7 +35591,6 @@ class CfgVehicles
 					};
 					class FreqAdj_Text
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -36889,9 +35686,6 @@ class CfgVehicles
 					{1,1}
 				};
 			};
-			class Wheel_1_fake: Wheel_1
-			{
-			};
 			class Wheel_2: Wheel_1
 			{
 				steering=0;
@@ -36907,14 +35701,10 @@ class CfgVehicles
 				side="right";
 			};
 		};
-		class Damage
-		{
-		};
 		class textureSources
 		{
 			class standard
 			{
-				displayName="Standard";
 				factions[]=
 				{
 					"rhs_faction_usaf"
@@ -36930,9 +35720,6 @@ class CfgVehicles
 		{
 			class Comp1
 			{
-				class Light_General
-				{
-					color[]={20,30,30};
 					ambient[]={0,0,0};
 					intensity=3.05;
 					size=0;
@@ -36974,7 +35761,6 @@ class CfgVehicles
 	{
 		hasdriver=0;
 		armor=100;
-		displayName="F-22 Canopy";
 		editorCategory="EdCat_Things";
 		hiddenSelections[]={};
 		epeImpulseDamageCoef=10;

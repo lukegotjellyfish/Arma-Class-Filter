@@ -1,8 +1,5 @@
 class CfgPatches
 {
-	class rhs_c_identity
-	{
-		units[]={};
 		weapons[]={};
 	};
 };
@@ -527,7 +524,4 @@ class CfgFaces
 class CfgHeads
 {
 	class Default_A3;
-	class RHS_EmptyHead: Default_A3
-	{
-	};
 };

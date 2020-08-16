@@ -97,9 +97,6 @@ class CfgVehicles
 	{
 		class NewTurret;
 		class Sounds;
-		class HitPoints;
-		class CommanderOptics;
-	};
 	class Tank_F: Tank
 	{
 		class Turrets
@@ -108,9 +105,6 @@ class CfgVehicles
 			{
 				class Turrets
 				{
-					class CommanderOptics;
-				};
-			};
 		};
 		class AnimationSources;
 		class ViewPilot;
@@ -121,18 +115,9 @@ class CfgVehicles
 		{
 			class HitHull;
 			class HitEngine;
-			class HitLTrack;
-			class HitRTrack;
-		};
 		class Sounds: Sounds
 		{
-			class Engine;
-			class Movement;
-		};
 		class EventHandlers;
-	};
-	class APC_Tracked_03_base_F: Tank_F
-	{
 	};
 	class RHS_M2A2_Base: APC_Tracked_03_base_F
 	{
@@ -922,9 +907,6 @@ class CfgVehicles
 		};
 		class Wheels
 		{
-			class L2
-			{
-				suspTravelDirection[]={-0.125,-1,0};
 				side="left";
 				steering=0;
 				width=0.40000001;
@@ -950,21 +932,6 @@ class CfgVehicles
 					{0.60000002,0.86000001}
 				};
 			};
-			class L3: L2
-			{
-			};
-			class L4: L2
-			{
-			};
-			class L5: L2
-			{
-			};
-			class L6: L2
-			{
-			};
-			class L7: L2
-			{
-			};
 			class L9: L2
 			{
 				maxDroop=0;
@@ -975,25 +942,7 @@ class CfgVehicles
 				maxDroop=0;
 				maxCompression=0;
 			};
-			class R2: L2
-			{
-				suspTravelDirection[]={0.125,-1,0};
 				side="right";
-			};
-			class R3: R2
-			{
-			};
-			class R4: R2
-			{
-			};
-			class R5: R2
-			{
-			};
-			class R6: R2
-			{
-			};
-			class R7: R2
-			{
 			};
 			class R9: R2
 			{
@@ -1051,27 +1000,10 @@ class CfgVehicles
 		viewCargoShadowDiff=0.050000001;
 		viewCargoShadowAmb=0.5;
 		headGforceLeaningFactor[]={0.015,0.011,0.015};
-		hiddenSelections[]=
-		{
-			"camo1",
-			"camo2",
-			"camo3",
-			"selection_stinger",
-			"selection_tow"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"\rhsusf\addons\rhsusf_a2port_armor\m2a2_bradley\data\base_co.paa",
-			"\rhsusf\addons\rhsusf_a2port_armor\m2a2_bradley\data\a3_co.paa",
-			"\rhsusf\addons\rhsusf_a2port_armor\m2a2_bradley\data\ultralp_co.paa",
-			"\rhsusf\addons\rhsusf_a2port_armor\m2a2_bradley\data\base_co.paa",
-			"\rhsusf\addons\rhsusf_a2port_armor\m2a2_bradley\data\base_co.paa"
-		};
 		class textureSources
 		{
 			class standard
 			{
-				displayName="Woodland";
 				factions[]=
 				{
 					"rhs_faction_usarmy_wd"
@@ -1079,7 +1011,6 @@ class CfgVehicles
 			};
 			class Desert
 			{
-				displayName="Desert";
 				factions[]=
 				{
 					"rhs_faction_usarmy_d"
@@ -1087,7 +1018,6 @@ class CfgVehicles
 			};
 			class Olive
 			{
-				displayName="Olive";
 				factions[]=
 				{
 					"rhs_faction_usarmy_wd"
@@ -1414,15 +1344,11 @@ class CfgVehicles
 				hitpoint="Hit_Optics_Dvr_Peri";
 			};
 		};
-		class EventHandlers: EventHandlers
-		{
-		};
 		armorLights=0.1;
 		class Attributes
 		{
 			class rhs_hideIFFPanel
 			{
-				displayName="Hide IFF Panel";
 				property="rhs_hideIFFPanel";
 				control="CheckboxNumber";
 				expression="_this animate ['IFF_Panels_Hide',_value,true]";
@@ -1432,7 +1358,6 @@ class CfgVehicles
 			{
 				control="CheckboxNumber";
 				defaultValue="0";
-				displayName="Open rear ramp";
 				property="OpenRamp";
 				expression="_this animateDoor ['ramp', _value,true];_this setVariable ['ramp_handler',_value,true]";
 			};
@@ -1440,20 +1365,11 @@ class CfgVehicles
 	};
 	class RHS_M2A2: RHS_M2A2_Base
 	{
-		displayName="M2A2ODS";
 		side=1;
-		class Library
-		{
-			libTextDesc="The M2 Bradley IFV (Infantry Fighting Vehicle) is an US infantry fighting vehicle. It is designed to transport infantry with armor protection while providing covering fire to suppressing enemy troops and armored vehicles.<br/>The A2 variant features improvements based on lessons learned during Gulf War in 1991.";
-		};
 		damageResistance=0.01189;
-		class Damage
-		{
-		};
 	};
 	class RHS_M2A2_early: RHS_M2A2
 	{
-		displayName="M2A2";
 		class Turrets: Turrets
 		{
 			class MainTurret: MainTurret
@@ -1466,38 +1382,17 @@ class CfgVehicles
 				};
 				class Turrets: Turrets
 				{
-					class CommanderOptics: CommanderOptics
-					{
-					};
 				};
 			};
 		};
 	};
 	class RHS_M2A2_BUSKI: RHS_M2A2
 	{
-		displayName="M2A2ODS (BUSK I)";
 		damageResistance=0.01101;
-		hiddenSelections[]=
-		{
-			"camo1",
-			"camo2",
-			"camo3",
-			"selection_stinger",
-			"selection_tow"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"\rhsusf\addons\rhsusf_a2port_armor\m2a2_bradley\data\base_co.paa",
-			"\rhsusf\addons\rhsusf_a2port_armor\m2a2_bradley\data\a3_buski_co.paa",
-			"\rhsusf\addons\rhsusf_a2port_armor\m2a2_bradley\data\ultralp_co.paa",
-			"\rhsusf\addons\rhsusf_a2port_armor\m2a2_bradley\data\base_co.paa",
-			"\rhsusf\addons\rhsusf_a2port_armor\m2a2_bradley\data\base_co.paa"
-		};
 		class textureSources
 		{
 			class standard
 			{
-				displayName="Woodland";
 				factions[]=
 				{
 					"rhs_faction_usarmy_wd"
@@ -1505,7 +1400,6 @@ class CfgVehicles
 			};
 			class Desert
 			{
-				displayName="Desert";
 				factions[]=
 				{
 					"rhs_faction_usarmy_d"
@@ -1513,7 +1407,6 @@ class CfgVehicles
 			};
 			class Olive
 			{
-				displayName="Olive";
 				factions[]=
 				{
 					"rhs_faction_usarmy_wd"
@@ -2066,25 +1959,11 @@ class CfgVehicles
 	};
 	class RHS_M2A3: RHS_M2A2
 	{
-		displayName="M2A3";
 		damageResistance=0.01189;
-		hiddenSelections[]=
-		{
-			"camo1",
-			"camo2",
-			"camo3"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"\rhsusf\addons\rhsusf_a2port_armor\m2a2_bradley\data\base_co.paa",
-			"\rhsusf\addons\rhsusf_a2port_armor\m2a2_bradley\data\a3_co.paa",
-			"\rhsusf\addons\rhsusf_a2port_armor\m2a2_bradley\data\ultralp_co.paa"
-		};
 		class textureSources
 		{
 			class standard
 			{
-				displayName="Woodland";
 				factions[]=
 				{
 					"rhs_faction_usarmy_wd"
@@ -2092,7 +1971,6 @@ class CfgVehicles
 			};
 			class Desert
 			{
-				displayName="Desert";
 				factions[]=
 				{
 					"rhs_faction_usarmy_d"
@@ -2100,7 +1978,6 @@ class CfgVehicles
 			};
 			class Olive
 			{
-				displayName="Olive";
 				factions[]=
 				{
 					"rhs_faction_usarmy_wd"
@@ -2288,27 +2165,11 @@ class CfgVehicles
 	class RHS_M2A3_BUSKI: RHS_M2A3
 	{
 		rhs_duke_type="rhsusf_duke_m1a2";
-		displayName="M2A3 (BUSK I)";
 		damageResistance=0.01189;
-		hiddenSelections[]=
-		{
-			"camo1",
-			"camo2",
-			"camo3",
-			"duke_tex"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"\rhsusf\addons\rhsusf_a2port_armor\m2a2_bradley\data\base_co.paa",
-			"\rhsusf\addons\rhsusf_a2port_armor\m2a2_bradley\data\a3_buski_co.paa",
-			"\rhsusf\addons\rhsusf_a2port_armor\m2a2_bradley\data\ultralp_co.paa",
-			"rhsusf\addons\rhsusf_m1a1\duke\data\duke_antennae_d_co.paa"
-		};
 		class textureSources
 		{
 			class standard
 			{
-				displayName="Woodland";
 				factions[]=
 				{
 					"rhs_faction_usarmy_wd"
@@ -2316,7 +2177,6 @@ class CfgVehicles
 			};
 			class Desert
 			{
-				displayName="Desert";
 				factions[]=
 				{
 					"rhs_faction_usarmy_d"
@@ -2324,7 +2184,6 @@ class CfgVehicles
 			};
 			class Olive
 			{
-				displayName="Olive";
 				factions[]=
 				{
 					"rhs_faction_usarmy_wd"
@@ -2908,17 +2767,10 @@ class CfgVehicles
 		};
 		class Attributes: Attributes
 		{
-			class rhs_hideIFFPanel: rhs_hideIFFPanel
-			{
-			};
 			class rhs_hideDUKE: rhs_hideIFFPanel
 			{
-				displayName="hide DUKE antennas";
 				property="rhs_hideDUKE";
 				expression="_this animate ['DUKE_Hide',_value,true];if(_value isEqualTo 1)then{_this removeWeaponTurret ['rhsusf_weap_duke',[0,0]]};";
-			};
-			class OpenRamp: OpenRamp
-			{
 			};
 		};
 		class EventHandlers: EventHandlers
@@ -2932,28 +2784,10 @@ class CfgVehicles
 	class RHS_M2A3_BUSKIII: RHS_M2A3_BUSKI
 	{
 		rhs_duke_type="rhsusf_duke";
-		displayName="M2A3 (BUSK III)";
-		hiddenSelections[]=
-		{
-			"camo1",
-			"camo2",
-			"camo3",
-			"camo4",
-			"duke_tex"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"\rhsusf\addons\rhsusf_a2port_armor\m2a2_bradley\data\buskiii\base_co.paa",
-			"\rhsusf\addons\rhsusf_a2port_armor\m2a2_bradley\data\buskiii\a3_co.paa",
-			"\rhsusf\addons\rhsusf_a2port_armor\m2a2_bradley\data\ultralp_co.paa",
-			"\rhsusf\addons\rhsusf_a2port_armor\m2a2_bradley\data\buskiii_co.paa",
-			"\rhsusf\addons\rhsusf_m1a1\duke\data\duke_antennae_d_co.paa"
-		};
 		class textureSources
 		{
 			class standard
 			{
-				displayName="Woodland";
 				factions[]=
 				{
 					"rhs_faction_usarmy_wd"
@@ -2961,7 +2795,6 @@ class CfgVehicles
 			};
 			class Desert
 			{
-				displayName="Desert";
 				factions[]=
 				{
 					"rhs_faction_usarmy_d"
@@ -2969,7 +2802,6 @@ class CfgVehicles
 			};
 			class Olive
 			{
-				displayName="Olive";
 				factions[]=
 				{
 					"rhs_faction_usarmy_wd"
@@ -3148,24 +2980,9 @@ class CfgVehicles
 				radius=0.16;
 			};
 		};
-		class Damage
-		{
-		};
-	};
-	class RHS_M2A3_BUSKIII_wd: RHS_M2A3_BUSKIII
-	{
-		hiddenSelectionsTextures[]=
-		{
-			"\rhsusf\addons\rhsusf_a2port_armor\M2A2_Bradley\data\woodland\base_buskiii_co.paa",
-			"\rhsusf\addons\rhsusf_a2port_armor\M2A2_Bradley\data\woodland\a3_buskiii_co.paa",
-			"\rhsusf\addons\rhsusf_a2port_armor\m2a2_bradley\data\woodland\ultralp_co.paa",
-			"\rhsusf\addons\rhsusf_a2port_armor\m2a2_bradley\data\woodland\BUSKIII_co.paa",
-			"\rhsusf\addons\rhsusf_m1a1\duke\data\duke_antennae_wd_co.paa"
-		};
 	};
 	class RHS_M6: RHS_M2A2_Base
 	{
-		displayName="M6A2";
 		side=1;
 		damageResistance=0.01101;
 		class Turrets: Turrets
@@ -3181,111 +2998,6 @@ class CfgVehicles
 				};
 			};
 		};
-		class Library
-		{
-			libTextDesc="The M6 Linebacker is an air-defense variant of the M2A2 Bradley. It features two four-tube Stinger missile pods. The Linebacker is due to be retired from U.S. service.";
-		};
-		class Damage
-		{
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"\rhsusf\addons\rhsusf_a2port_armor\m2a2_bradley\data\base_co.paa",
-			"\rhsusf\addons\rhsusf_a2port_armor\m2a2_bradley\data\a3_co.paa",
-			"\rhsusf\addons\rhsusf_a2port_armor\m2a2_bradley\data\ultralp_co.paa",
-			"\rhsusf\addons\rhsusf_a2port_armor\m2a2_bradley\data\base_co.paa",
-			""
-		};
 		threat[]={0.89999998,0.30000001,1};
-	};
-	class RHS_M2A2_wd: RHS_M2A2
-	{
-		hiddenSelections[]=
-		{
-			"camo1",
-			"camo2",
-			"camo3",
-			"selection_stinger",
-			"selection_tow"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"\rhsusf\addons\rhsusf_a2port_armor\m2a2_bradley\data\woodland\base_co.paa",
-			"\rhsusf\addons\rhsusf_a2port_armor\m2a2_bradley\data\woodland\a3_co.paa",
-			"\rhsusf\addons\rhsusf_a2port_armor\m2a2_bradley\data\woodland\ultralp_co.paa",
-			"\rhsusf\addons\rhsusf_a2port_armor\m2a2_bradley\data\woodland\base_co.paa",
-			"\rhsusf\addons\rhsusf_a2port_armor\m2a2_bradley\data\woodland\base_co.paa"
-		};
-	};
-	class RHS_M2A2_BUSKI_WD: RHS_M2A2_BUSKI
-	{
-		hiddenSelections[]=
-		{
-			"camo1",
-			"camo2",
-			"camo3",
-			"selection_stinger",
-			"selection_tow"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"\rhsusf\addons\rhsusf_a2port_armor\m2a2_bradley\data\woodland\base_co.paa",
-			"\rhsusf\addons\rhsusf_a2port_armor\m2a2_bradley\data\woodland\a3_buski_co.paa",
-			"\rhsusf\addons\rhsusf_a2port_armor\m2a2_bradley\data\woodland\ultralp_co.paa",
-			"\rhsusf\addons\rhsusf_a2port_armor\m2a2_bradley\data\woodland\base_co.paa",
-			"\rhsusf\addons\rhsusf_a2port_armor\m2a2_bradley\data\woodland\base_co.paa"
-		};
-	};
-	class RHS_M2A3_BUSKI_wd: RHS_M2A3_BUSKI
-	{
-		hiddenSelections[]=
-		{
-			"camo1",
-			"camo2",
-			"camo3",
-			"duke_tex"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"\rhsusf\addons\rhsusf_a2port_armor\m2a2_bradley\data\woodland\base_co.paa",
-			"\rhsusf\addons\rhsusf_a2port_armor\m2a2_bradley\data\woodland\a3_buski_co.paa",
-			"\rhsusf\addons\rhsusf_a2port_armor\m2a2_bradley\data\woodland\ultralp_co.paa",
-			"\rhsusf\addons\rhsusf_m1a1\duke\data\duke_antennae_wd_co.paa"
-		};
-	};
-	class RHS_M2A3_wd: RHS_M2A3
-	{
-		hiddenSelections[]=
-		{
-			"camo1",
-			"camo2",
-			"camo3"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"\rhsusf\addons\rhsusf_a2port_armor\m2a2_bradley\data\woodland\base_co.paa",
-			"\rhsusf\addons\rhsusf_a2port_armor\m2a2_bradley\data\woodland\a3_co.paa",
-			"\rhsusf\addons\rhsusf_a2port_armor\m2a2_bradley\data\woodland\ultralp_co.paa"
-		};
-	};
-	class RHS_M6_wd: RHS_M6
-	{
-		displayName="M6A2";
-		hiddenSelections[]=
-		{
-			"camo1",
-			"camo2",
-			"camo3",
-			"selection_stinger",
-			"selection_tow"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"\rhsusf\addons\rhsusf_a2port_armor\m2a2_bradley\data\woodland\m6_base_co.paa",
-			"\rhsusf\addons\rhsusf_a2port_armor\m2a2_bradley\data\woodland\m6_a3_co.paa",
-			"\rhsusf\addons\rhsusf_a2port_armor\m2a2_bradley\data\woodland\ultralp_co.paa",
-			"\rhsusf\addons\rhsusf_a2port_armor\m2a2_bradley\data\woodland\m6_base_co.paa",
-			""
-		};
 	};
 };

@@ -43,9 +43,6 @@ antiRollbarForceCoef = 24;
 antiRollbarForceLimit = 42;
 antiRollbarSpeedMin = 30;
 antiRollbarSpeedMax = 75;
-class complexGearbox {
-	GearboxRatios[] = {"R1",-2.0,"N",0,"D1",1.0};
-	TransmissionRatios[] = {"High",7.85};
 	gearBoxMode        = "auto";
 	moveOffGear        = 3;
 	driveString        = "D";
@@ -112,9 +109,6 @@ class Wheels
 		maxCompression = 0;
 	};
 
-	class R2: L2 {
-		side = "right";
-	};
 	class R3: R2 {
 	};
 	class R4: R2 {

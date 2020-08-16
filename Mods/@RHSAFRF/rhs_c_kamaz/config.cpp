@@ -67,18 +67,12 @@ class CfgVehicles
 	class LandVehicle;
 	class Car: LandVehicle
 	{
-		class HitPoints;
-		class NewTurret;
-	};
 	class Car_F: Car
 	{
 		class Turrets
 		{
 			class MainTurret: NewTurret
 			{
-				class ViewOptics;
-			};
-		};
 		class HitPoints
 		{
 			class HitLFWheel;
@@ -90,12 +84,6 @@ class CfgVehicles
 			class HitGlass2;
 			class HitGlass3;
 			class HitGlass4;
-			class HitGlass5;
-			class HitGlass6;
-		};
-		class EventHandlers;
-		class AnimationSources;
-	};
 	class Truck_F: Car_F
 	{
 		class ViewPilot;
@@ -107,33 +95,23 @@ class CfgVehicles
 			class HitLF2Wheel;
 			class HitRFWheel;
 			class HitRBWheel;
-			class HitRMWheel;
-			class HitRF2Wheel;
-		};
 		class AnimationSources;
 	};
 	class Truck_02_base_F: Truck_F
 	{
 		class HitPoints: HitPoints
 		{
-			class HitFuel;
-			class HitEngine;
-		};
 	};
 	class O_Truck_02_covered_F: Truck_02_base_F
 	{
 		class CargoTurret;
 		class Turrets: Turrets
 		{
-			class CargoTurret_02: CargoTurret_01
-			{
-			};
 		};
 		class EventHandlers;
 	};
 	class rhs_kamaz5350: O_Truck_02_covered_F
 	{
-		displayName="KamAZ-5350";
 		normalSpeedForwardCoef=0.75;
 		slowSpeedForwardCoef=0.44999999;
 		terrainCoef=1.2;
@@ -300,35 +278,10 @@ class CfgVehicles
 		{
 			"['Number', [5,6,7,8], 'Default']"
 		};
-		hiddenSelections[]=
-		{
-			"camo1",
-			"camo2",
-			"camo3",
-			"camo4",
-			"",
-			"n1",
-			"n2",
-			"n3",
-			"n4",
-			"i2",
-			"i4"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"\rhsafrf\addons\rhs_kamaz\data\Kamaz5350_cabin_co.paa",
-			"\rhsafrf\addons\rhs_kamaz\data\Kamaz5350_cargo_co.paa",
-			"\rhsafrf\addons\rhs_kamaz\data\kamaz5350_base_co.paa",
-			"\rhsafrf\addons\rhs_kamaz\data\bed\rhs_kamaz_bed_co.paa",
-			"\rhsafrf\addons\rhs_kamaz\data\bed\rhs_kamaz_cover_co.paa"
-		};
 		hideProxyInCombat=1;
 		canHideDriver=0;
 		driverLeftLegAnimName="pedalL";
 		driverRightLegAnimName="pedalR";
-		class Damage
-		{
-		};
 		armorLights=0.0099999998;
 		class HitPoints: HitPoints
 		{
@@ -476,7 +429,6 @@ class CfgVehicles
 		{
 			class standard
 			{
-				displayName="Standard";
 				factions[]=
 				{
 					"rhs_faction_vmf",
@@ -490,13 +442,11 @@ class CfgVehicles
 		{
 			class rhs_decalNumber_type
 			{
-				displayName="Define font type of plate number";
 				tooltip="Define kind of font that will be drawn on vehicle.";
 				property="rhs_decalNumber_type";
 				control="Combo";
 				expression="_this setVariable ['%s', _value];[_this,[['Number', [5,6,7,8], _value]]] call rhs_fnc_decalsInit";
 				defaultValue=0;
-				typeName="STRING";
 				class values
 				{
 					class Default
@@ -545,24 +495,20 @@ class CfgVehicles
 			class rhs_decalNumber
 			{
 				collapsed=1;
-				displayName="Set plate number";
 				tooltip="Set plate number. 4 numbers are required. If 0, random number will be generated";
 				property="rhs_decalNumber";
 				control="Edit";
 				validate="Number";
-				typeName="Number";
 				defaultValue="-1";
 				expression="if(_value >= 0)then{[_this,[['Number', [5,6,7,8], _this getVariable ['rhs_decalNumber_type','Default'], _value]]] call rhs_fnc_decalsInit};";
 			};
 			class rhs_decalArmy_type
 			{
-				displayName="Define large door roundel type";
 				tooltip="Decal type";
 				property="rhs_decalArmy_type";
 				control="Combo";
 				expression="_this setVariable ['%s', _value];";
 				defaultValue="0";
-				typeName="STRING";
 				class values
 				{
 					class Army
@@ -600,7 +546,6 @@ class CfgVehicles
 			};
 			class rhs_decalArmy
 			{
-				displayName="Set large door roundel symbol";
 				tooltip="Set large door roundel located on both sides. Usually used for army symbols. -1 leaves current symbol & 0 clears decal.";
 				property="rhs_decalArmy";
 				control="Edit";
@@ -610,21 +555,18 @@ class CfgVehicles
 			};
 			class rhs_decalPlatoon_type: rhs_decalArmy_type
 			{
-				displayName="Define small door roundel type";
 				property="rhs_decalPlatoon_type";
 				expression="_this setVariable ['%s', _value];";
 				defaultValue="0";
 			};
 			class rhs_decalPlatoon: rhs_decalArmy
 			{
-				displayName="Set small door roundel symbol";
 				tooltip="Define small door roundel located on both sides. Usually used for platoon symbols. -1 leaves current symbol & 0 clears decal.";
 				property="rhs_decalPlatoon";
 				expression="if(parseNumber _value >= 0)then{ [_this, [ [ 'Label', [10],  _this getVariable ['rhs_decalPlatoon_type','Army'],call compile _value] ] ] call rhs_fnc_decalsInit};";
 			};
 			class rhs_hidespare
 			{
-				displayName="Remove spare wheel";
 				property="rhs_hidespare";
 				control="CheckboxNumber";
 				expression="_this animate ['spare_hide',_value,true]";
@@ -632,24 +574,20 @@ class CfgVehicles
 			};
 			class rhs_hidebench: rhs_hidespare
 			{
-				displayName="Remove cargo bench";
 				property="rhs_hidebench";
 				expression="_this animateSource ['bench_hide',_value,true];";
 			};
 			class Door_LF: rhs_hidespare
 			{
-				displayName="Open front left door";
 				property="Door_LF";
 				expression="_this animateDoor ['%s',_value,true]";
 			};
 			class Door_RF: Door_LF
 			{
-				displayName="Open front right door";
 				property="Door_RF";
 			};
 			class back_door: Door_LF
 			{
-				displayName="Open back door";
 				property="back_door";
 			};
 		};
@@ -688,9 +626,6 @@ class CfgVehicles
 				enabledByAnimationSource="cover_end_hide";
 				forceHideGunner=1;
 				commanding=-2;
-				class Hitpoints
-				{
-				};
 			};
 			class CargoTurret_03: CargoTurret_01
 			{
@@ -740,16 +675,9 @@ class CfgVehicles
 	};
 	class rhs_kamaz5350_open: rhs_kamaz5350
 	{
-		displayName="KamAZ-5350 (Open)";
 		hideProxyInCombat=1;
 		class Turrets: Turrets
 		{
-			class CargoTurret_02: CargoTurret_02
-			{
-			};
-			class CargoTurret_03: CargoTurret_03
-			{
-			};
 			class CargoTurret_04: CargoTurret_02
 			{
 				animationSourceHatch="turnout1";
@@ -853,12 +781,8 @@ class CfgVehicles
 	};
 	class rhs_kamaz5350_flatbed: rhs_kamaz5350_open
 	{
-		displayName="KamAZ-5350 (Open/Flatbed)";
 		class Turrets: Turrets
 		{
-			class CargoTurret_03: CargoTurret_03
-			{
-			};
 		};
 		class VehicleTransport
 		{
@@ -935,12 +859,8 @@ class CfgVehicles
 	};
 	class rhs_kamaz5350_flatbed_cover: rhs_kamaz5350_flatbed
 	{
-		displayName="KamAZ-5350 (Flatbed)";
 		class VehicleTransport: VehicleTransport
 		{
-			class Cargo: Cargo
-			{
-			};
 			class Carrier: Carrier
 			{
 				disableHeightLimit=0;

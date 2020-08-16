@@ -1,8 +1,5 @@
 class CfgPatches
 {
-	class rhsusf_optics
-	{
-		units[]={};
 		weapons[]={};
 	};
 };
@@ -81,7 +78,6 @@ class RscControlsGroup;
 class rhs_1v528_Button
 {
 	access=0;
-	type=1;
 	colorText[]={1,1,1,1};
 	colorDisabled[]={1,1,1,0};
 	colorBackground[]={0,0,0,0};
@@ -424,9 +420,6 @@ class CfgInGameUI
 					"(profilenamespace getvariable ['IGUI_TEXT_RGB_B',1])",
 					"(profilenamespace getvariable ['IGUI_TEXT_RGB_A',0.8])+(profilenamespace getvariable ['RHS_UI_Targeting',0])"
 				};
-			};
-			class HitConfirm: Seeker
-			{
 			};
 			class KnownTarget: Seeker
 			{

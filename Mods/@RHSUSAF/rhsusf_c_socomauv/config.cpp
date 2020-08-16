@@ -36,9 +36,6 @@ class CfgVehicles
 		{
 			class MainTurret: NewTurret
 			{
-				class ViewOptics;
-			};
-		};
 		class HitPoints
 		{
 			class HitFuel;
@@ -52,12 +49,6 @@ class CfgVehicles
 			class HitGlass2;
 			class HitGlass3;
 			class HitGlass4;
-			class HitGlass5;
-			class HitGlass6;
-		};
-		class EventHandlers;
-		class ViewOptics;
-	};
 	class MRAP_01_base_F: Car_F
 	{
 		class EventHandlers;
@@ -65,26 +56,12 @@ class CfgVehicles
 	class rhsusf_M1239_base: MRAP_01_base_F
 	{
 		side=1;
-		displayName="SOCOM AUV";
 		weapons[]=
 		{
 			"TruckHorn2",
 			"rhsusf_weap_duke"
 		};
-		hiddenSelections[]=
-		{
-			"camo",
-			"camo1",
-			"camo2",
-			"camo3",
-			"camo4",
-			"camo5",
-			"camo6"
-		};
 		class CargoTurret;
-		class Turrets: Turrets
-		{
-		};
 		class DriverOpticsIn
 		{
 			class DVE_Wide: ViewOptics
@@ -112,14 +89,6 @@ class CfgVehicles
 		};
 		class textureSources
 		{
-			class rhs_desert
-			{
-				displayName="Desert";
-			};
-			class rhs_woodland
-			{
-				displayName="Woodland";
-			};
 		};
 		class Attributes
 		{
@@ -127,18 +96,15 @@ class CfgVehicles
 			{
 				control="CheckboxNumber";
 				defaultValue="0";
-				displayName="Open left rear door";
 				property="Door_L2";
 				expression="_this animateDoor ['%s',_value,true]";
 			};
 			class DoorL: DoorL2
 			{
-				displayName="Open left door";
 				property="Door_L";
 			};
 			class DoorR: DoorL2
 			{
-				displayName="Open right door";
 				property="Door_R";
 			};
 		};
@@ -179,9 +145,6 @@ class CfgVehicles
 				MinimalHit=0.050000001;
 				explosionShielding=0.0099999998;
 				radius=0.15000001;
-			};
-			class HitDuke2: HitDuke1
-			{
 			};
 			class HitGlass7: HitGlass1
 			{
@@ -334,12 +297,6 @@ class CfgVehicles
 				maxHandBrakeTorque=300000;
 			};
 		};
-		class Damage
-		{
-		};
-		class EventHandlers: EventHandlers
-		{
-		};
 		class VehicleTransport
 		{
 			class Cargo
@@ -380,10 +337,6 @@ class CfgVehicles
 			};
 		};
 	};
-	class rhsusf_M1239_CROWS_base: rhsusf_M1239_base
-	{
-		displayName="SOCOM AUV (CROWS)";
-		threat[]={0.89999998,0.30000001,0.1};
 		class MFD
 		{
 			class MFD_CROWS
@@ -399,27 +352,15 @@ class CfgVehicles
 				alpha=1;
 				enableParallax=0;
 				font="RobotoCondensedLight";
-				class material
-				{
-					ambient[]={3,3,3,1};
 					diffuse[]={10,10,10,1};
 					emissive[]={400,200,200,1};
 				};
 				class Bones
 				{
-					class Static_Offset
-					{
-						type="fixed";
-						pos[]={0.079999998,0.89999998};
 					};
-					class Cross
-					{
-						type="fixed";
-						pos[]={0,-0.145};
 					};
 					class TurretRotation
 					{
-						type="rotational";
 						source="weaponHeading";
 						sourceIndex=0;
 						min=-180;
@@ -430,13 +371,9 @@ class CfgVehicles
 						aspectRatio=1.29101;
 					};
 				};
-				class Draw
-				{
-					color[]={1,0,0,1};
 					alpha=1;
 					class StaticDraw
 					{
-						type="line";
 						width=3;
 						points[]=
 						{
@@ -874,7 +811,6 @@ class CfgVehicles
 					};
 					class StaticDrawBold
 					{
-						type="line";
 						width=8;
 						points[]=
 						{
@@ -934,7 +870,6 @@ class CfgVehicles
 					};
 					class Range_Text
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -957,7 +892,6 @@ class CfgVehicles
 					};
 					class Range_Value
 					{
-						type="text";
 						source="laserDist";
 						sourceScale=1;
 						sourceLength=3;
@@ -990,7 +924,6 @@ class CfgVehicles
 					};
 					class Ballistic_Text
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -1013,7 +946,6 @@ class CfgVehicles
 					};
 					class Ballistic_Value
 					{
-						type="text";
 						source="laserDist";
 						sourceScale=1;
 						sourceLength=3;
@@ -1046,7 +978,6 @@ class CfgVehicles
 					};
 					class Mode_Text
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -1069,7 +1000,6 @@ class CfgVehicles
 					};
 					class Mode_Value
 					{
-						type="text";
 						source="static";
 						sourceScale=1;
 						sourceLength=3;
@@ -1102,7 +1032,6 @@ class CfgVehicles
 					};
 					class Elev_Text
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -1125,7 +1054,6 @@ class CfgVehicles
 					};
 					class Elev_Value
 					{
-						type="text";
 						source="[y]turretworld";
 						sourceScale=1;
 						sourcePrecision=1;
@@ -1306,7 +1234,6 @@ class CfgVehicles
 	};
 	class rhsusf_M1239_CROWSMK19_base: rhsusf_M1239_CROWS_base
 	{
-		displayName="SOCOM AUV (CROWS)";
 		class Turrets: Turrets
 		{
 			class CROWS_Turret: CROWS_Turret
@@ -1320,7 +1247,6 @@ class CfgVehicles
 	};
 	class rhsusf_M1239_Deploy_base: rhsusf_M1239_CROWS_base
 	{
-		displayName="SOCOM AUV (Deployed)";
 		transportAmmo=450000;
 		transportFuel=450000;
 		transportRepair=100000000;
@@ -1342,7 +1268,6 @@ class CfgVehicles
 	};
 	class rhsusf_M1239_DeployMK19_base: rhsusf_M1239_CROWSMK19_base
 	{
-		displayName="SOCOM AUV (Deployed)";
 		transportAmmo=450000;
 		transportFuel=450000;
 		transportRepair=100000000;
@@ -1364,7 +1289,6 @@ class CfgVehicles
 	};
 	class rhsusf_M1239_socom_d: rhsusf_M1239_base
 	{
-		displayName="$STR_RHS_M1239_NAME";
 		accuracy=0.5;
 	};
 	class rhsusf_M1239_socom_wd: rhsusf_M1239_socom_d
@@ -1373,7 +1297,6 @@ class CfgVehicles
 	};
 	class rhsusf_M1239_M2_socom_d: rhsusf_M1239_CROWS_base
 	{
-		displayName="$STR_RHS_M1239_M153_M2_NAME";
 		accuracy=0.5;
 	};
 	class rhsusf_M1239_M2_socom_wd: rhsusf_M1239_M2_socom_d
@@ -1382,7 +1305,6 @@ class CfgVehicles
 	};
 	class rhsusf_M1239_MK19_socom_d: rhsusf_M1239_CROWSMK19_base
 	{
-		displayName="$STR_RHS_M1239_M153_MK19_NAME";
 		accuracy=0.5;
 	};
 	class rhsusf_M1239_MK19_socom_wd: rhsusf_M1239_MK19_socom_d
@@ -1391,7 +1313,6 @@ class CfgVehicles
 	};
 	class rhsusf_M1239_M2_Deploy_socom_d: rhsusf_M1239_Deploy_base
 	{
-		displayName="$STR_RHS_M1239_M153_M2_DEPLOY_NAME";
 		accuracy=0.5;
 	};
 	class rhsusf_M1239_M2_Deploy_socom_wd: rhsusf_M1239_M2_Deploy_socom_d
@@ -1400,7 +1321,6 @@ class CfgVehicles
 	};
 	class rhsusf_M1239_MK19_Deploy_socom_d: rhsusf_M1239_DeployMK19_base
 	{
-		displayName="$STR_RHS_M1239_M153_MK19_DEPLOY_NAME";
 		accuracy=0.5;
 	};
 	class rhsusf_M1239_MK19_Deploy_socom_wd: rhsusf_M1239_MK19_Deploy_socom_d

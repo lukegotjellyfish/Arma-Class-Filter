@@ -78,9 +78,6 @@ class CfgVehicles
 		{
 			class MainTurret: NewTurret
 			{
-				class ViewGunner;
-				class ViewOptics;
-			};
 		};
 		class HitPoints
 		{
@@ -94,18 +91,9 @@ class CfgVehicles
 			class HitGlass2;
 			class HitGlass3;
 			class HitGlass4;
-			class HitGlass5;
-			class HitGlass6;
-		};
 		class ViewPilot;
-		class ViewOptics;
-		class AnimationSources;
-	};
 	class Wheeled_APC_F: Car_F
 	{
-		class EventHandlers;
-		class CommanderOptics;
-	};
 	class rhsusf_M1117_base: Wheeled_APC_F
 	{
 		rhs_duke_type="rhsusf_duke";
@@ -124,7 +112,6 @@ class CfgVehicles
 			};
 		};
 		nameSound="veh_vehicle_MRAP_s";
-		displayName="M1117 ASV";
 		radarType=8;
 		driverCanSee="2+4+16";
 		commanderCanSee="2+4+16";
@@ -285,10 +272,6 @@ class CfgVehicles
 		predictTurnSimul=4.4000001;
 		predictTurnPlan=0.5;
 		precision=15;
-		class Library
-		{
-			libTextDesc="M1117_Guardian ASV";
-		};
 		armor=150;
 		armorStructural=8;
 		weapons[]=
@@ -299,9 +282,6 @@ class CfgVehicles
 		damageResistance=0.030990001;
 		selectionDamage="zbytek";
 		enableGPS=1;
-		class Damage
-		{
-		};
 		hideProxyInCombat=0;
 		driverCompartments="Compartment1";
 		cargoCompartments[]=
@@ -531,9 +511,6 @@ class CfgVehicles
 							minFov=0.2;
 							maxFov=0.40000001;
 						};
-						class HitPoints
-						{
-						};
 						class OpticsIn
 						{
 							class Wide: ViewOptics
@@ -570,7 +547,6 @@ class CfgVehicles
 		{
 			class rhs_hideDUKE
 			{
-				displayName="hide DUKE antennas";
 				property="rhs_hideDUKE";
 				expression="_this animate ['DUKE_Hide',_value,true]";
 				control="CheckboxNumber";
@@ -578,7 +554,6 @@ class CfgVehicles
 			};
 			class door_l
 			{
-				displayName="Open left door";
 				property="door_l";
 				control="CheckboxNumber";
 				defaultValue="0";
@@ -586,27 +561,22 @@ class CfgVehicles
 			};
 			class door_r: door_l
 			{
-				displayName="Open right door";
 				property="door_r";
 			};
 			class door_b: door_l
 			{
-				displayName="Open back doors";
 				property="door_b";
 			};
 			class hatch_commander: door_l
 			{
-				displayName="Open commander hatch";
 				property="hatch_commander";
 			};
 			class hatch_driver: door_l
 			{
-				displayName="Open driver hatch";
 				property="hatch_driver";
 			};
 			class hatch_gunner: door_l
 			{
-				displayName="Open gunner hatch";
 				property="hatch_gunner";
 			};
 		};
@@ -1675,24 +1645,11 @@ class CfgVehicles
 		{
 			class standard
 			{
-				displayName="Woodland";
 				factions[]=
 				{
 					"rhs_faction_usarmy_wd",
 					"rhs_faction_usarmy_d"
 				};
-			};
-			class desert: standard
-			{
-				displayName="Desert";
-			};
-			class olive: standard
-			{
-				displayName="OD";
-			};
-			class un: standard
-			{
-				displayName="UN";
 			};
 		};
 		class PlayerSteeringCoefficients
@@ -1723,82 +1680,10 @@ class CfgVehicles
 		{
 			"rhsusf_army_ucp_rifleman_m4"
 		};
-		hiddenSelections[]=
-		{
-			"camo1",
-			"camo2",
-			"camo3",
-			"camo4",
-			"camo5",
-			"camo6"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"rhsusf\addons\rhsusf_m1117\data\m1117_tex1_co.paa",
-			"rhsusf\addons\rhsusf_m1117\data\m1117_armour_co.paa",
-			"rhsusf\addons\rhsusf_m1117\data\m1117_turret_co.paa",
-			"rhsusf\addons\rhsusf_m1117\data\m1117_wheel_co.paa",
-			"rhsusf\addons\rhsusf_hmmwv\textures\A2_parts_D_co.paa",
-			"rhsusf\addons\rhsusf_m1a1\duke\data\duke_antennae_d_co.paa"
-		};
-	};
-	class rhsusf_M1117_W: rhsusf_M1117_D
-	{
-		hiddenSelectionsTextures[]=
-		{
-			"rhsusf\addons\rhsusf_m1117\data\m1117_tex1_green_co.paa",
-			"rhsusf\addons\rhsusf_m1117\data\m1117_armour_green_co.paa",
-			"rhsusf\addons\rhsusf_m1117\data\m1117_turret_green_co.paa",
-			"rhsusf\addons\rhsusf_m1117\data\m1117_wheel_green_co.paa",
-			"rhsusf\addons\rhsusf_hmmwv\textures\A2_parts_g_co.paa",
-			"rhsusf\addons\rhsusf_m1a1\duke\data\duke_antennae_wd_co.paa"
-		};
-	};
-	class rhsusf_M1117_O: rhsusf_M1117_W
-	{
-		displayName="M1117 ASV (OD)";
-		hiddenSelectionsTextures[]=
-		{
-			"rhsusf\addons\rhsusf_m1117\data\M1117_tex1_OD_co.paa",
-			"rhsusf\addons\rhsusf_m1117\data\M1117_armour_od_co.paa",
-			"rhsusf\addons\rhsusf_m1117\data\M1117_turret_od_co.paa",
-			"rhsusf\addons\rhsusf_m1117\data\m1117_wheel_green_co.paa",
-			"rhsusf\addons\rhsusf_hmmwv\textures\A2_parts_g_co.paa",
-			"rhsusf\addons\rhsusf_m1a1\duke\data\duke_antennae_wd_co.paa"
-		};
 	};
 	class ThingX;
 	class rhsusf_duke_d: ThingX
 	{
-		displayName="Broken DUKE antenna";
 		editorCategory="EdCat_Things";
-		hiddenSelections[]=
-		{
-			"camo"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"rhsusf\addons\rhsusf_m1a1\duke\data\duke_antennae_d_co.paa"
-		};
-	};
-	class rhsusf_duke_wd: rhsusf_duke_d
-	{
-		displayName="Broken DUKE antenna (wd)";
-		hiddenSelectionsTextures[]=
-		{
-			"rhsusf\addons\rhsusf_m1a1\duke\data\duke_antennae_wd_co.paa"
-		};
-	};
-	class rhsusf_duke_m1a2_d: rhsusf_duke_d
-	{
-		displayName="Broken DUKE antenna (long/d)";
-	};
-	class rhsusf_duke_m1a2_wd: rhsusf_duke_m1a2_d
-	{
-		displayName="Broken DUKE antenna (long/wd)";
-		hiddenSelectionsTextures[]=
-		{
-			"rhsusf\addons\rhsusf_m1a1\duke\data\duke_antennae_wd_co.paa"
-		};
 	};
 };

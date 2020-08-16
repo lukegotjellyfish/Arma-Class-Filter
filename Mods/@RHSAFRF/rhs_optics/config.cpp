@@ -1,8 +1,5 @@
 class CfgPatches
 {
-	class rhs_optics
-	{
-		units[]={};
 		weapons[]={};
 		version="0.1.1.1";
 	};
@@ -53,7 +50,6 @@ class RscControlsGroupNoScrollbars;
 class rhs_1v528_Button
 {
 	access=0;
-	type=1;
 	colorText[]={1,1,1,1};
 	colorDisabled[]={1,1,1,0};
 	colorBackground[]={0,0,0,0};
@@ -659,9 +655,6 @@ class CfgInGameUI
 					"(profilenamespace getvariable ['IGUI_TEXT_RGB_A',0.8])+(profilenamespace getvariable ['RHS_UI_Targeting',0])"
 				};
 			};
-			class HitConfirm: Seeker
-			{
-			};
 			class KnownTarget: Seeker
 			{
 				color[]=
@@ -926,9 +919,6 @@ class RHS_P37_Radar
 		icon345="A3\Ui_f\data\IGUI\RscCustomInfo\Sensors\Sectors\sector345_ca.paa";
 		icon360="A3\Ui_f\data\IGUI\RscCustomInfo\Sensors\Sectors\sector360_ca.paa";
 	};
-	class targets
-	{
-		colorGroup[]={0.69999999,1,0.40000001,1};
 		colorAssigned[]={1,0,0,1};
 		colorMarked[]={1,1,1,1};
 		iconLaserTarget="A3\Ui_f\data\IGUI\RscCustomInfo\Sensors\Targets\LaserTarget_ca.paa";
@@ -958,9 +948,6 @@ class RHS_P37_Radar
 		iconEnemyMan="A3\Ui_f\data\IGUI\RscCustomInfo\Sensors\Targets\EnemyMan_ca.paa";
 		iconEnemyManRemote="A3\Ui_f\data\IGUI\RscCustomInfo\Sensors\Targets\EnemyManRemote_ca.paa";
 	};
-	class threats
-	{
-		colorMarking[]={1,1,0,1};
 		colorLocking[]={1,0.5,0,1};
 		colorMissile[]={1,0,0,1};
 		iconmissile="A3\Ui_f\data\IGUI\RscCustomInfo\Sensors\Threats\missile_ca.paa";

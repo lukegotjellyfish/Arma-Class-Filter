@@ -133,23 +133,14 @@ class CfgAmmo
 		submunitionAmmo="";
 		triggerTime=0.001;
 		timeToLive=0.1;
-		class HitEffects
-		{
-		};
 	};
 	class Default;
 	class BulletCore;
 	class BulletBase;
 	class ShellBase;
-	class MissileCore: Default
-	{
-	};
 	class MissileBase: MissileCore
 	{
 		class EventHandlers;
-	};
-	class rhs_ammo_902a: SmokeLauncherAmmo
-	{
 	};
 	class rhs_ammo_3d17: SmokeLauncherAmmo
 	{
@@ -353,9 +344,6 @@ class CfgAmmo
 		typicalSpeed=895;
 		cost=500;
 		deflecting=15;
-	};
-	class rhs_ammo_br412: rhs_ammo_br_base
-	{
 	};
 	class rhs_ammo_bm_base: Sh_125mm_APFSDS
 	{
@@ -1000,9 +988,6 @@ class CfgAmmo
 		CraterEffects="ArtyShellCrater";
 		ExplosionEffects="ArtyShellExplosion";
 	};
-	class rhs_ammo_of412: rhs_ammo_of_base
-	{
-	};
 	class rhs_ammo_of11: rhs_ammo_of_base
 	{
 		hit=170;
@@ -1259,9 +1244,6 @@ class CfgAmmo
 		CraterEffects="ExploAmmoCrater";
 	};
 	class Sh_155mm_AMOS_LG;
-	class rhs_ammo_3WOF93: Sh_155mm_AMOS_LG
-	{
-	};
 	class Flare_82mm_AMOS_White;
 	class rhs_ammo_3WS23: Flare_82mm_AMOS_White
 	{
@@ -1334,9 +1316,6 @@ class CfgAmmo
 		hit=160;
 		indirectHit=50;
 		indirectHitRange=30;
-	};
-	class rhs_ammo_3of69m: Sh_155mm_AMOS_LG
-	{
 	};
 	class rhs_ammo_s463: Flare_82mm_AMOS_White
 	{
@@ -1454,15 +1433,11 @@ class CfgAmmo
 					{
 						class AirTarget
 						{
-							minRange=500;
-							maxRange=5000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=1;
 						};
 						class GroundTarget
 						{
-							minRange=500;
-							maxRange=5000;
 							objectDistanceLimitCoef=1;
 							viewDistanceLimitCoef=1;
 						};
@@ -1523,15 +1498,11 @@ class CfgAmmo
 					{
 						class AirTarget
 						{
-							minRange=500;
-							maxRange=5000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=1;
 						};
 						class GroundTarget
 						{
-							minRange=500;
-							maxRange=5000;
 							objectDistanceLimitCoef=1;
 							viewDistanceLimitCoef=1;
 						};
@@ -2698,7 +2669,6 @@ class CfgAmmo
 	class rhs_ammo_3ubr6: rhs_ammo_30x165mm_base
 	{
 		hit=60;
-		displayName="$STR_RHS_AMMO_3UBR6";
 		caliber=3.7800701;
 		typicalspeed=1120;
 		airfriction=-0.00056000001;
@@ -2812,7 +2782,6 @@ class CfgAmmo
 		airfriction=-0.00019999999;
 		caliber=1.39;
 		timeToLive=15;
-		displayName="$STR_RHS_AMMO_3UOR6";
 		tracerScale=2;
 		tracerStartTime=0.1;
 		tracerEndTime=10;
@@ -2852,7 +2821,6 @@ class CfgAmmo
 	{
 		hit=50;
 		indirectHit=33;
-		displayName="$STR_RHS_AMMO_3UOF8";
 	};
 	class B_127x108_Ball;
 	class rhs_ammo_127x107mm: B_127x108_Ball
@@ -2860,12 +2828,6 @@ class CfgAmmo
 		hit=25;
 		timeToLive=25;
 		tracerEndTime=3;
-	};
-	class rhs_ammo_127x108mm: rhs_ammo_127x107mm
-	{
-	};
-	class rhs_ammo_127x108mm_notracer: rhs_ammo_127x108mm
-	{
 	};
 	class rhs_ammo_127x108mm_x5: SubmunitionBase
 	{
@@ -2992,9 +2954,6 @@ class CfgAmmo
 		simulation="shotSubmunitions";
 		triggerTime=0.0099999998;
 	};
-	class rhs_ammo_ofz_23x115mm: RHS_ammo_23mm_AA
-	{
-	};
 	class rhs_ammo_ofzt_23x115mm: rhs_ammo_ofz_23x115mm
 	{
 		indirectHit=30;
@@ -3042,8 +3001,6 @@ class CfgMagazines
 	class rhs_mag_902a: SmokeLauncherMag
 	{
 		count=1;
-		displayName="$STR_RHS_MAG_902A";
-		displayNameShort="$STR_RHS_MAG_SH_902A";
 		ammo="rhs_ammo_902a";
 	};
 	class rhs_mag_3d17: SmokeLauncherMag
@@ -3051,8 +3008,6 @@ class CfgMagazines
 		count=8;
 		initSpeed=50;
 		ammo="rhs_ammo_3d17";
-		displayName="$STR_RHS_MAG_3D17";
-		displayNameShort="$STR_RHS_MAG_SH_3D17";
 	};
 	class rhs_mag_3d17_4: rhs_mag_3d17
 	{
@@ -3071,8 +3026,6 @@ class CfgMagazines
 	{
 		count=999;
 		ammo="rhs_ammo_smokegen";
-		displayName="$STR_RHS_MAG_SMOKEGEN";
-		displayNameShort="$STR_RHS_MAG_SH_SMOKEGEN";
 	};
 	class rhs_mag_dazzler: rhs_mag_smokegen
 	{
@@ -3284,8 +3237,6 @@ class CfgMagazines
 	};
 	class rhs_mag_br412_14: rhs_mag_bm_base
 	{
-		displayName="$STR_RHS_MAG_BR412";
-		displayNameShort="$STR_RHS_MAG_SH_BR412";
 		ammo="rhs_ammo_br412";
 		initSpeed=1450;
 	};
@@ -3295,30 +3246,22 @@ class CfgMagazines
 	};
 	class rhs_mag_bm25_14: rhs_mag_bm_base
 	{
-		displayName="$STR_RHS_MAG_3UBM11";
-		displayNameShort="$STR_RHS_MAG_SH_3UBM11";
 		ammo="rhs_ammo_bm25";
 		initSpeed=1430;
 	};
 	class rhs_mag_bm8_14: rhs_mag_bm_base
 	{
-		displayName="$STR_RHS_MAG_3UBM6";
-		displayNameShort="$STR_RHS_MAG_SH_3UBM6";
 		ammo="rhs_ammo_bm8";
 		initSpeed=1415;
 	};
 	class rhs_mag_bm4_15: rhs_mag_bm_base
 	{
-		displayName="$STR_RHS_MAG_3UBM4";
-		displayNameShort="$STR_RHS_MAG_SH_3UBM4";
 		ammo="rhs_ammo_bm4";
 		count=15;
 		initSpeed=1411;
 	};
 	class rhs_mag_bm23_15: rhs_mag_bm_base
 	{
-		displayName="$STR_RHS_MAG_3UBM13";
-		displayNameShort="$STR_RHS_MAG_SH_3UBM13";
 		ammo="rhs_ammo_bm23";
 		initSpeed=1450;
 		count=15;
@@ -3337,8 +3280,6 @@ class CfgMagazines
 	};
 	class rhs_mag_3bm9_10: rhs_mag_3bm_base
 	{
-		displayName="$STR_RHS_MAG_3BM9";
-		displayNameShort="$STR_RHS_MAG_SH_3BM9";
 		ammo="rhs_ammo_3bm9";
 		initSpeed=1800;
 	};
@@ -3348,8 +3289,6 @@ class CfgMagazines
 	};
 	class rhs_mag_3bm12_10: rhs_mag_3bm_base
 	{
-		displayName="$STR_RHS_MAG_3BM12";
-		displayNameShort="$STR_RHS_MAG_SH_3BM12";
 		ammo="rhs_ammo_3bm12";
 		initSpeed=1800;
 	};
@@ -3359,8 +3298,6 @@ class CfgMagazines
 	};
 	class rhs_mag_3bm15_10: rhs_mag_3bm_base
 	{
-		displayName="$STR_RHS_MAG_3BM15";
-		displayNameShort="$STR_RHS_MAG_SH_3BM15";
 		ammo="rhs_ammo_3bm15";
 		initSpeed=1785;
 	};
@@ -3370,8 +3307,6 @@ class CfgMagazines
 	};
 	class rhs_mag_3bm17_10: rhs_mag_3bm_base
 	{
-		displayName="$STR_RHS_MAG_3BM17";
-		displayNameShort="$STR_RHS_MAG_SH_3BM17";
 		ammo="rhs_ammo_3bm17";
 		initSpeed=1760;
 	};
@@ -3385,8 +3320,6 @@ class CfgMagazines
 	};
 	class rhs_mag_3bm22_10: rhs_mag_3bm_base
 	{
-		displayName="$STR_RHS_MAG_3BM22";
-		displayNameShort="$STR_RHS_MAG_SH_3BM22";
 		ammo="rhs_ammo_3bm22";
 		initSpeed=1760;
 	};
@@ -3404,8 +3337,6 @@ class CfgMagazines
 	};
 	class rhs_mag_3bm26_10: rhs_mag_3bm_base
 	{
-		displayName="$STR_RHS_MAG_3BM26";
-		displayNameShort="$STR_RHS_MAG_SH_3BM26";
 		ammo="rhs_ammo_3bm26";
 		initSpeed=1720;
 	};
@@ -3419,8 +3350,6 @@ class CfgMagazines
 	};
 	class rhs_mag_3bm29_10: rhs_mag_3bm_base
 	{
-		displayName="$STR_RHS_MAG_3BM29";
-		displayNameShort="$STR_RHS_MAG_SH_3BM29";
 		ammo="rhs_ammo_3bm29";
 		initSpeed=1660;
 	};
@@ -3434,8 +3363,6 @@ class CfgMagazines
 	};
 	class rhs_mag_3bm32_10: rhs_mag_3bm_base
 	{
-		displayName="$STR_RHS_MAG_3BM32";
-		displayNameShort="$STR_RHS_MAG_SH_3BM32";
 		ammo="rhs_ammo_3bm32";
 		initSpeed=1700;
 	};
@@ -3449,8 +3376,6 @@ class CfgMagazines
 	};
 	class rhs_mag_3bm42_10: rhs_mag_3bm_base
 	{
-		displayName="$STR_RHS_MAG_3BM42";
-		displayNameShort="$STR_RHS_MAG_SH_3BM42";
 		ammo="rhs_ammo_3bm42";
 		initSpeed=1700;
 	};
@@ -3464,8 +3389,6 @@ class CfgMagazines
 	};
 	class rhs_mag_3bm42m_10: rhs_mag_3bm_base
 	{
-		displayName="$STR_RHS_MAG_3BM42M";
-		displayNameShort="$STR_RHS_MAG_SH_3BM42M";
 		ammo="rhs_ammo_3bm42m";
 		initSpeed=1750;
 	};
@@ -3475,8 +3398,6 @@ class CfgMagazines
 	};
 	class rhs_mag_3bm46_10: rhs_mag_3bm_base
 	{
-		displayName="$STR_RHS_MAG_3BM46";
-		displayNameShort="$STR_RHS_MAG_SH_3BM46";
 		ammo="rhs_ammo_3bm46";
 		initSpeed=1700;
 	};
@@ -3490,8 +3411,6 @@ class CfgMagazines
 	};
 	class rhs_mag_3bm59_10: rhs_mag_3bm_base
 	{
-		displayName="$STR_RHS_MAG_3BM59";
-		displayNameShort="$STR_RHS_MAG_SH_3BM59";
 		ammo="rhs_ammo_3bm59";
 		initSpeed=1700;
 	};
@@ -3501,8 +3420,6 @@ class CfgMagazines
 	};
 	class rhs_mag_3bm60_10: rhs_mag_3bm_base
 	{
-		displayName="$STR_RHS_MAG_3BM60";
-		displayNameShort="$STR_RHS_MAG_SH_3BM60";
 		ammo="rhs_ammo_3bm60";
 		initSpeed=1700;
 	};
@@ -3512,8 +3429,6 @@ class CfgMagazines
 	};
 	class rhs_mag_3bm69_10: rhs_mag_3bm_base
 	{
-		displayName="$STR_RHS_MAG_3BM59";
-		displayNameShort="$STR_RHS_MAG_SH_3BM59";
 		ammo="rhs_ammo_3bm69";
 		initSpeed=2050;
 	};
@@ -3527,8 +3442,6 @@ class CfgMagazines
 	};
 	class rhs_mag_3bm70_10: rhs_mag_3bm_base
 	{
-		displayName="$STR_RHS_MAG_3BM70";
-		displayNameShort="$STR_RHS_MAG_SH_3BM70";
 		ammo="rhs_ammo_3bm70";
 		initSpeed=2050;
 	};
@@ -3548,23 +3461,17 @@ class CfgMagazines
 	};
 	class rhs_mag_bk4_5: rhs_mag_bk_base
 	{
-		displayName="$STR_RHS_MAG_3UBK3";
-		displayNameShort="$STR_RHS_MAG_SH_3UBK3";
 		ammo="rhs_ammo_bk4";
 		count=5;
 		initSpeed=1750;
 	};
 	class rhs_mag_bk5_8: rhs_mag_bk_base
 	{
-		displayName="$STR_RHS_MAG_3UBK4";
-		displayNameShort="$STR_RHS_MAG_SH_3UBK4";
 		ammo="rhs_ammo_bk5";
 		initSpeed=900;
 	};
 	class rhs_mag_bk6m: rhs_mag_bk_base
 	{
-		displayName="$STR_RHS_MAG_bk6m";
-		displayNameShort="$STR_RHS_MAG_SH_bk6m";
 		ammo="rhs_ammo_bk6m";
 		initSpeed=740;
 		count=1;
@@ -3579,8 +3486,6 @@ class CfgMagazines
 	};
 	class rhs_mag_bk13: rhs_mag_bk_base
 	{
-		displayName="$STR_RHS_MAG_bk13";
-		displayNameShort="$STR_RHS_MAG_SH_bk13";
 		ammo="rhs_ammo_bk13";
 		initSpeed=726;
 		count=1;
@@ -3595,16 +3500,12 @@ class CfgMagazines
 	};
 	class rhs_mag_bk15_5: rhs_mag_bk_base
 	{
-		displayName="$STR_RHS_MAG_3UBK7";
-		displayNameShort="$STR_RHS_MAG_SH_3UBK7";
 		ammo="rhs_ammo_bk15";
 		count=5;
 		initSpeed=1750;
 	};
 	class rhs_mag_bk17_8: rhs_mag_bk_base
 	{
-		displayName="$STR_RHS_MAG_3UBK9";
-		displayNameShort="$STR_RHS_MAG_SH_3UBK9";
 		ammo="rhs_ammo_bk17";
 		initSpeed=850;
 	};
@@ -3622,8 +3523,6 @@ class CfgMagazines
 	};
 	class rhs_mag_3bk12_8: rhs_mag_3bk_base
 	{
-		displayName="$STR_RHS_MAG_3BK12";
-		displayNameShort="$STR_RHS_MAG_SH_3BK12";
 		ammo="rhs_ammo_3bk12";
 		initSpeed=905;
 	};
@@ -3633,8 +3532,6 @@ class CfgMagazines
 	};
 	class rhs_mag_3bk14_8: rhs_mag_3bk_base
 	{
-		displayName="$STR_RHS_MAG_3BK14";
-		displayNameShort="$STR_RHS_MAG_SH_3BK14";
 		ammo="rhs_ammo_3bk14";
 		initSpeed=905;
 	};
@@ -3648,8 +3545,6 @@ class CfgMagazines
 	};
 	class rhs_mag_3bk18_8: rhs_mag_3bk_base
 	{
-		displayName="$STR_RHS_MAG_3BK18";
-		displayNameShort="$STR_RHS_MAG_SH_3BK18";
 		ammo="rhs_ammo_3bk18";
 		initSpeed=905;
 	};
@@ -3663,8 +3558,6 @@ class CfgMagazines
 	};
 	class rhs_mag_3bk18m_8: rhs_mag_3bk_base
 	{
-		displayName="$STR_RHS_MAG_3BK18M";
-		displayNameShort="$STR_RHS_MAG_SH_3BK18M";
 		ammo="rhs_ammo_3bk18M";
 		initSpeed=905;
 	};
@@ -3678,8 +3571,6 @@ class CfgMagazines
 	};
 	class rhs_mag_3bk21_8: rhs_mag_3bk_base
 	{
-		displayName="$STR_RHS_MAG_3BK21";
-		displayNameShort="$STR_RHS_MAG_SH_3BK21";
 		ammo="rhs_ammo_3bk21";
 		initSpeed=905;
 	};
@@ -3689,8 +3580,6 @@ class CfgMagazines
 	};
 	class rhs_mag_3bk29_8: rhs_mag_3bk_base
 	{
-		displayName="$STR_RHS_MAG_3BK29";
-		displayNameShort="$STR_RHS_MAG_SH_3BK29";
 		ammo="rhs_ammo_3bk29";
 		initSpeed=905;
 	};
@@ -3700,8 +3589,6 @@ class CfgMagazines
 	};
 	class rhs_mag_3bk31_8: rhs_mag_3bk_base
 	{
-		displayName="$STR_RHS_MAG_3BK31";
-		displayNameShort="$STR_RHS_MAG_SH_3BK31";
 		ammo="rhs_ammo_3bk31";
 		initSpeed=905;
 	};
@@ -3729,8 +3616,6 @@ class CfgMagazines
 	};
 	class rhs_mag_of412_17: rhs_mag_of_base
 	{
-		displayName="$STR_RHS_MAG_OF412";
-		displayNameShort="$STR_RHS_MAG_SH_OF412";
 		ammo="rhs_ammo_of412";
 	};
 	class rhs_mag_of412_21: rhs_mag_of412_17
@@ -3743,16 +3628,12 @@ class CfgMagazines
 	};
 	class rhs_mag_of11_20: rhs_mag_of_base
 	{
-		displayName="$STR_RHS_MAG_3UOF11";
-		displayNameShort="$STR_RHS_MAG_SH_3UOF11";
 		ammo="rhs_ammo_of11";
 		count=20;
 		muzzleImpulseFactor[]={1,0.1};
 	};
 	class rhs_mag_of28_20: rhs_mag_of_base
 	{
-		displayName="$STR_RHS_MAG_3UOF37";
-		displayNameShort="$STR_RHS_MAG_SH_3UOF37";
 		ammo="rhs_ammo_of28";
 		count=20;
 		muzzleImpulseFactor[]={1,0.1};
@@ -3771,8 +3652,6 @@ class CfgMagazines
 	};
 	class rhs_mag_3of11_6: rhs_mag_3of_base
 	{
-		displayName="$STR_RHS_MAG_3OF11";
-		displayNameShort="$STR_RHS_MAG_SH_3OF11";
 		ammo="rhs_ammo_3of11";
 	};
 	class rhs_mag_3of11: rhs_mag_3of11_6
@@ -3781,8 +3660,6 @@ class CfgMagazines
 	};
 	class rhs_mag_3of26_6: rhs_mag_3of_base
 	{
-		displayName="$STR_RHS_MAG_3OF26";
-		displayNameShort="$STR_RHS_MAG_SH_3OF26";
 		ammo="rhs_ammo_3of26";
 		initSpeed=850;
 		tracersEvery=0;
@@ -3801,8 +3678,6 @@ class CfgMagazines
 	};
 	class rhs_mag_3UOF17_22: VehicleMagazine
 	{
-		displayName="$STR_RHS_MAG_3UOF17";
-		displayNameShort="$STR_RHS_MAG_SH_3UOF17";
 		ammo="rhs_ammo_3UOF17";
 		count=22;
 		initSpeed=250;
@@ -3813,8 +3688,6 @@ class CfgMagazines
 	};
 	class rhs_mag_3UOF19_22: VehicleMagazine
 	{
-		displayName="$STR_RHS_MAG_3UOF19";
-		displayNameShort="$STR_RHS_MAG_SH_3UOF19";
 		ammo="rhs_ammo_3UOF19";
 		count=22;
 		initSpeed=355;
@@ -3825,14 +3698,10 @@ class CfgMagazines
 	};
 	class rhs_mag_3UOF191_22: rhs_mag_3UOF19_22
 	{
-		displayName="3UOF191";
-		displayNameShort="3UOF191";
 		ammo="rhs_ammo_3UOF191";
 	};
 	class rhs_mag_9m41_20: VehicleMagazine
 	{
-		displayName="$STR_RHS_9m41_NAME";
-		displayNameShort="$STR_RHS_9m41_NAME";
 		ammo="Flare_82mm_AMOS_White";
 		count=20;
 		initSpeed=200;
@@ -3840,11 +3709,9 @@ class CfgMagazines
 	class 32Rnd_155mm_Mo_shells;
 	class rhs_mag_HE_2a33: 32Rnd_155mm_Mo_shells
 	{
-		displayName="$STR_RHS_53WOF27_NAME";
 		ammo="rhs_ammo_3WOF27";
 		count=26;
 		nameSound="heat";
-		displayNameShort="$STR_RHS_53WOF27_NAME";
 	};
 	class rhs_mag_HE_2a33_26: 32Rnd_155mm_Mo_shells
 	{
@@ -3852,8 +3719,6 @@ class CfgMagazines
 	};
 	class rhs_mag_WP_2a33: rhs_mag_HE_2a33
 	{
-		displayName="$STR_RHS_53OCH540_NAME";
-		displayNameShort="$STR_RHS_53OCH540_NAME";
 		count=5;
 		ammo="rhs_ammo_152_WP";
 	};
@@ -3863,8 +3728,6 @@ class CfgMagazines
 	};
 	class rhs_mag_Atomic_2a33: rhs_mag_HE_2a33
 	{
-		displayName="$STR_RHS_3WB3_NAME";
-		displayNameShort="$STR_RHS_3WB3_NAME";
 		ammo="rhs_ammo_3WB3";
 	};
 	class rhs_mag_Atomic_2a33_26: rhs_mag_Atomic_2a33
@@ -3873,8 +3736,6 @@ class CfgMagazines
 	};
 	class rhs_mag_LASER_2a33: rhs_mag_HE_2a33
 	{
-		displayName="$STR_RHS_3WOF93_NAME";
-		displayNameShort="$STR_RHS_3WOF93_NAME";
 		count=5;
 		ammo="rhs_ammo_3WOF93";
 	};
@@ -3884,8 +3745,6 @@ class CfgMagazines
 	};
 	class rhs_mag_SMOKE_2a33: rhs_mag_HE_2a33
 	{
-		displayName="$STR_RHS_53WD546_NAME";
-		displayNameShort="$STR_RHS_53WD546_NAME";
 		count=5;
 		ammo="rhs_ammo_53WD546U";
 	};
@@ -3895,8 +3754,6 @@ class CfgMagazines
 	};
 	class rhs_mag_ILLUM_2a33: rhs_mag_HE_2a33
 	{
-		displayName="$STR_RHS_3WS23_NAME";
-		displayNameShort="$STR_RHS_3WS23_NAME";
 		count=5;
 		ammo="rhs_ammo_3WS23";
 	};
@@ -3906,8 +3763,6 @@ class CfgMagazines
 	};
 	class rhs_mag_of462: 32Rnd_155mm_Mo_shells
 	{
-		displayName="$STR_RHS_MAG_of462";
-		displayNameShort="$STR_RHS_MAG_SH_of462";
 		ammo="rhs_ammo_of462";
 		count=1;
 		nameSound="heat";
@@ -3920,8 +3775,6 @@ class CfgMagazines
 	};
 	class rhs_mag_3of56: rhs_mag_of462
 	{
-		displayName="$STR_RHS_MAG_3of56";
-		displayNameShort="$STR_RHS_MAG_SH_3of56";
 		ammo="rhs_ammo_3of56";
 	};
 	class rhs_mag_3of56_10: rhs_mag_3of56
@@ -3934,8 +3787,6 @@ class CfgMagazines
 	};
 	class rhs_mag_d462: rhs_mag_of462
 	{
-		displayName="$STR_RHS_MAG_d462";
-		displayNameShort="$STR_RHS_MAG_SH_d462";
 		ammo="rhs_ammo_d462";
 		rhs_magazineIndex=-1;
 	};
@@ -3945,8 +3796,6 @@ class CfgMagazines
 	};
 	class rhs_mag_s463: rhs_mag_of462
 	{
-		displayName="$STR_RHS_MAG_s463";
-		displayNameShort="$STR_RHS_MAG_SH_s463";
 		ammo="rhs_ammo_s463";
 		rhs_magazineIndex=-1;
 	};
@@ -3956,8 +3805,6 @@ class CfgMagazines
 	};
 	class rhs_mag_3of69m: rhs_mag_of462
 	{
-		displayName="$STR_RHS_MAG_3of69m";
-		displayNameShort="$STR_RHS_MAG_SH_3of69m";
 		ammo="rhs_ammo_3of69m";
 		rhs_magazineIndex=-1;
 	};
@@ -3967,34 +3814,24 @@ class CfgMagazines
 	};
 	class rhs_mag_3vo18_10: 32Rnd_155mm_Mo_shells
 	{
-		displayName="$STR_RHS_MAG_3vo18";
-		displayNameShort="$STR_RHS_MAG_SH_3vo18";
 		ammo="rhs_ammo_3vo18";
 		count=10;
 		initSpeed=211;
 	};
 	class rhs_mag_3vs25m_10: rhs_mag_3vo18_10
 	{
-		displayName="$STR_RHS_MAG_3vs25m";
-		displayNameShort="$STR_RHS_MAG_SH_3vs25m";
 		ammo="rhs_ammo_3vs25m";
 	};
 	class rhs_mag_53_va_832a_10: rhs_mag_3vo18_10
 	{
-		displayName="$STR_RHS_MAG_va_832a";
-		displayNameShort="$STR_RHS_MAG_SH_va_832a";
 		ammo="rhs_ammo_3vs25m";
 	};
 	class rhs_mag_d832du_10: rhs_mag_3vo18_10
 	{
-		displayName="$STR_RHS_MAG_d832du";
-		displayNameShort="$STR_RHS_MAG_SH_d832du";
 		ammo="rhs_ammo_d832du";
 	};
 	class rhs_mag_9m14m: VehicleMagazine
 	{
-		displayName="$STR_RHS_MAG_9M14M";
-		displayNameShort="$STR_RHS_MAG_SH_9M14M";
 		ammo="rhs_ammo_9m14m";
 		count=1;
 		initSpeed=80;
@@ -4017,14 +3854,10 @@ class CfgMagazines
 	};
 	class rhs_mag_9m14: rhs_mag_9m14m
 	{
-		displayName="$STR_RHS_MAG_9M14";
-		displayNameShort="$STR_RHS_MAG_SH_9M14";
 		ammo="rhs_ammo_9m14";
 	};
 	class rhs_mag_9m17: VehicleMagazine
 	{
-		displayName="$STR_RHS_MAG_9M17";
-		displayNameShort="$STR_RHS_MAG_SH_9M17";
 		ammo="rhs_ammo_9m17";
 		count=1;
 		initSpeed=80;
@@ -4033,8 +3866,6 @@ class CfgMagazines
 	};
 	class rhs_mag_9m17p: rhs_mag_9m17
 	{
-		displayName="$STR_RHS_MAG_9M17P";
-		displayNameShort="$STR_RHS_MAG_SH_9M17P";
 		ammo="rhs_ammo_9m17p";
 	};
 	class rhs_mag_9M17_Mi24_2x: rhs_mag_9m17
@@ -4050,14 +3881,10 @@ class CfgMagazines
 	};
 	class rhs_mag_9M17p_Mi24_2x: rhs_mag_9M17_Mi24_2x
 	{
-		displayName="$STR_RHS_MAG_9M17P";
-		displayNameShort="$STR_RHS_MAG_SH_9M17P";
 		ammo="rhs_ammo_9m17p";
 	};
 	class rhs_mag_9m112_6: VehicleMagazine
 	{
-		displayName="$STR_RHS_MAG_9M112";
-		displayNameShort="$STR_RHS_MAG_SH_9M112";
 		reloadTime=30;
 		magazineReloadTime=30;
 		ammo="rhs_ammo_9m112";
@@ -4069,8 +3896,6 @@ class CfgMagazines
 	};
 	class rhs_mag_9m112m_6: rhs_mag_9m112_6
 	{
-		displayName="$STR_RHS_MAG_9M112M";
-		displayNameShort="$STR_RHS_MAG_SH_9M112M";
 		ammo="rhs_ammo_9m112m";
 	};
 	class rhs_mag_9m112m_4: rhs_mag_9m112m_6
@@ -4079,28 +3904,20 @@ class CfgMagazines
 	};
 	class rhs_mag_9m112m2_6: rhs_mag_9m112_6
 	{
-		displayName="$STR_RHS_MAG_9M112M2";
-		displayNameShort="$STR_RHS_MAG_SH_9M112M2";
 		ammo="rhs_ammo_9m112m2";
 	};
 	class rhs_mag_9m124_6: rhs_mag_9m112_6
 	{
-		displayName="$STR_RHS_MAG_9M124";
-		displayNameShort="$STR_RHS_MAG_SH_9M124";
 		ammo="rhs_ammo_9m124";
 	};
 	class rhs_mag_9m128_6: rhs_mag_9m112_6
 	{
 		canLock=0;
-		displayName="$STR_RHS_MAG_9M128";
-		displayNameShort="$STR_RHS_MAG_SH_9M128";
 		ammo="rhs_ammo_9m128";
 		count=6;
 	};
 	class rhs_mag_9m113: VehicleMagazine
 	{
-		displayName="$STR_RHS_MAG_9M113";
-		displayNameShort="$STR_RHS_MAG_SH_9M113";
 		ammo="rhs_ammo_9m113";
 		count=1;
 		initSpeed=80;
@@ -4122,8 +3939,6 @@ class CfgMagazines
 	};
 	class rhs_mag_9m113M: rhs_mag_9m113
 	{
-		displayName="$STR_RHS_MAG_9M113M";
-		displayNameShort="$STR_RHS_MAG_SH_9M113M";
 		ammo="rhs_ammo_9m113M";
 	};
 	class rhs_mag_9m113M_3: rhs_mag_9m113M
@@ -4140,8 +3955,6 @@ class CfgMagazines
 	};
 	class rhs_mag_9m111: rhs_mag_9m113
 	{
-		displayName="$STR_RHS_MAG_9M111";
-		displayNameShort="$STR_RHS_MAG_SH_9M111";
 		ammo="rhs_ammo_9m111";
 	};
 	class rhs_mag_9m111_3: rhs_mag_9m111
@@ -4158,8 +3971,6 @@ class CfgMagazines
 	};
 	class rhs_mag_9m111M: rhs_mag_9m111
 	{
-		displayName="$STR_RHS_MAG_9M111M";
-		displayNameShort="$STR_RHS_MAG_SH_9M111M";
 		ammo="rhs_ammo_9m111M";
 	};
 	class rhs_mag_9m111M_3: rhs_mag_9m111M
@@ -4176,8 +3987,6 @@ class CfgMagazines
 	};
 	class rhs_mag_9m117_3: VehicleMagazine
 	{
-		displayName="$STR_RHS_MAG_3UBK101";
-		displayNameShort="$STR_RHS_MAG_SH_3UBK101";
 		ammo="rhs_ammo_9m117";
 		reloadTime=12;
 		magazineReloadTime=12;
@@ -4193,8 +4002,6 @@ class CfgMagazines
 	};
 	class rhs_mag_9m117m_3: rhs_mag_9m117_3
 	{
-		displayName="$STR_RHS_MAG_3UBK10M";
-		displayNameShort="$STR_RHS_MAG_SH_3UBK10M";
 		ammo="rhs_ammo_9m117m";
 		count=3;
 	};
@@ -4204,8 +4011,6 @@ class CfgMagazines
 	};
 	class rhs_mag_9m117m1_3: rhs_mag_9m117_3
 	{
-		displayName="$STR_RHS_MAG_3UBK23";
-		displayNameShort="$STR_RHS_MAG_SH_3UBK23";
 		ammo="rhs_ammo_9m117m";
 		count=3;
 	};
@@ -4215,8 +4020,6 @@ class CfgMagazines
 	};
 	class rhs_mag_9m118_3: rhs_mag_9m117_3
 	{
-		displayName="$STR_RHS_MAG_3UBK102";
-		displayNameShort="$STR_RHS_MAG_SH_3UBK102";
 		canlock=1;
 		ammo="rhs_ammo_9m118";
 		count=3;
@@ -4225,8 +4028,6 @@ class CfgMagazines
 	class rhs_mag_9m119_6: rhs_mag_9m112_6
 	{
 		canLock=0;
-		displayName="$STR_RHS_MAG_9M119";
-		displayNameShort="$STR_RHS_MAG_SH_9M119";
 		ammo="rhs_ammo_9m119";
 		count=6;
 	};
@@ -4236,8 +4037,6 @@ class CfgMagazines
 	};
 	class rhs_mag_9m119rx_6: rhs_mag_9m119_6
 	{
-		displayName="$STR_RHS_MAG_9M119RX";
-		displayNameShort="$STR_RHS_MAG_SH_9M119RX";
 		canLock=0;
 		reloadTime=8;
 		magazineReloadTime=8;
@@ -4250,8 +4049,6 @@ class CfgMagazines
 	class rhs_mag_9m119m_6: rhs_mag_9m112_6
 	{
 		canLock=0;
-		displayName="$STR_RHS_MAG_9M119M";
-		displayNameShort="$STR_RHS_MAG_SH_9M119M";
 		ammo="rhs_ammo_9m119m";
 		count=6;
 	};
@@ -4261,14 +4058,10 @@ class CfgMagazines
 	};
 	class rhs_mag_9m119f_6: rhs_mag_9m112_6
 	{
-		displayName="$STR_RHS_MAG_9M119F";
-		displayNameShort="$STR_RHS_MAG_SH_9M119F";
 		ammo="rhs_ammo_9m119f";
 	};
 	class rhs_mag_9m133_2: VehicleMagazine
 	{
-		displayName="$STR_RHS_MAG_9M133";
-		displayNameShort="$STR_RHS_MAG_SH_9M133";
 		canLock=1;
 		reloadTime=8;
 		magazineReloadTime=8;
@@ -4286,8 +4079,6 @@ class CfgMagazines
 	};
 	class rhs_mag_9m133f_2: rhs_mag_9m133_2
 	{
-		displayName="$STR_RHS_MAG_9M133F";
-		displayNameShort="$STR_RHS_MAG_SH_9M133F";
 		ammo="rhs_ammo_9m133f";
 	};
 	class rhs_mag_9m133f: rhs_mag_9m133f_2
@@ -4297,8 +4088,6 @@ class CfgMagazines
 	};
 	class rhs_mag_9m1331_2: rhs_mag_9m133_2
 	{
-		displayName="$STR_RHS_MAG_9M1331";
-		displayNameShort="$STR_RHS_MAG_SH_9M1331";
 		ammo="rhs_ammo_9m1331";
 	};
 	class rhs_mag_9m1331: rhs_mag_9m1331_2
@@ -4308,8 +4097,6 @@ class CfgMagazines
 	};
 	class rhs_mag_9m133m2_2: rhs_mag_9m133_2
 	{
-		displayName="$STR_RHS_MAG_9M133M2";
-		displayNameShort="$STR_RHS_MAG_SH_9M133M2";
 		ammo="rhs_ammo_9m133m2";
 	};
 	class rhs_mag_9m133m2: rhs_mag_9m133m2_2
@@ -4319,7 +4106,6 @@ class CfgMagazines
 	};
 	class rhs_mag_3m7_12: VehicleMagazine
 	{
-		displayName="3M7";
 		canLock=1;
 		reloadTime=10;
 		magazineReloadTime=8.5;
@@ -4335,7 +4121,6 @@ class CfgMagazines
 		displayname="9K32";
 		descriptionshort="Range: 800-4200 m <br/>Type: ground-air <br/>Used in: 9K32";
 		ammo="rhs_ammo_9k38";
-		type="6 * 		256";
 		count=2;
 		initspeed=40;
 		maxleadspeed=320;
@@ -4343,8 +4128,6 @@ class CfgMagazines
 	};
 	class rhs_mag_9M115: VehicleMagazine
 	{
-		displayName="$STR_RHS_MAG_9M115";
-		displayNameShort="$STR_RHS_MAG_SH_9M115";
 		canLock=0;
 		reloadTime=8;
 		magazineReloadTime=8;
@@ -4357,20 +4140,14 @@ class CfgMagazines
 	};
 	class rhs_mag_9M131: rhs_mag_9M115
 	{
-		displayName="$STR_RHS_MAG_9M131";
-		displayNameShort="$STR_RHS_MAG_SH_9M131";
 		ammo="rhs_ammo_9m131";
 	};
 	class rhs_mag_9M131M: rhs_mag_9M115
 	{
-		displayName="$STR_RHS_MAG_9M131m";
-		displayNameShort="$STR_RHS_MAG_SH_9M131m";
 		ammo="rhs_ammo_9m131m";
 	};
 	class rhs_mag_9M131F: rhs_mag_9M115
 	{
-		displayName="$STR_RHS_MAG_9M131f";
-		displayNameShort="$STR_RHS_MAG_SH_9M131f";
 		ammo="rhs_ammo_9m131f";
 	};
 	class rhs_mag_9M114: VehicleMagazine
@@ -4570,7 +4347,6 @@ class CfgMagazines
 	class rhs_mag_mi24_empty: VehicleMagazine
 	{
 		ammo="rhs_ammo_ptb1500";
-		displayName="Empty Shelf";
 		count=1;
 		mass=8.5;
 		weight=8.5;
@@ -4656,7 +4432,6 @@ class CfgMagazines
 		ammo="rhs_ammo_m21OF_HE";
 		displayname="M-21OF";
 		displaynameShort="HE";
-		descriptionShort="High explosive 18,4kg warhead. 20km range";
 		hardpoints[]=
 		{
 			"RHS_HP_BM21"
@@ -4667,7 +4442,6 @@ class CfgMagazines
 		ammo="rhs_ammo_9m28f";
 		displayname="9M28F";
 		displaynameShort="HE FRAG";
-		descriptionShort="High explosive fragmentation 21kg warhead. 15km range";
 		pylonWeapon="rhs_weap_bm21_9m28f";
 	};
 	class rhs_mag_9m28k_1: rhs_mag_m21of_1
@@ -4675,7 +4449,6 @@ class CfgMagazines
 		ammo="rhs_ammo_9m28k";
 		displayname="9M28K";
 		displaynameShort="Cluster AT Mine";
-		descriptionShort="Cluster AT mine munition. Deploys 3 PTM-3 mines. 13km range";
 		pylonWeapon="rhs_weap_bm21_9m28k";
 	};
 	class rhs_mag_9m218_1: rhs_mag_m21of_1
@@ -4683,7 +4456,6 @@ class CfgMagazines
 		ammo="rhs_ammo_9m218";
 		displayname="9M218";
 		displaynameShort="Cluster HEAT";
-		descriptionShort="Cluster HEAT munition. Deploys 45 HEAT elements with penetration ability up to 160mm. 30km range";
 		pylonWeapon="rhs_weap_bm21_9m218";
 	};
 	class rhs_mag_9m521_1: rhs_mag_m21of_1
@@ -4692,20 +4464,16 @@ class CfgMagazines
 		displayname="9M521";
 		displaynameShort="HE";
 		pylonWeapon="rhs_weap_bm21_9m521";
-		descriptionShort="High explosive extended range 21kg warhead. 40km range";
 	};
 	class rhs_mag_9m522_1: rhs_mag_m21of_1
 	{
 		ammo="rhs_ammo_9m522";
 		displayname="9M522";
 		displaynameShort="HE FRAG";
-		descriptionShort="High explosive fragmentation extended range 25kg warhead. 37km range";
 		pylonWeapon="rhs_weap_bm21_9m522";
 	};
 	class rhs_mag_pg15v_24: VehicleMagazine
 	{
-		displayName="$STR_RHS_MAG_PG15V";
-		displayNameShort="$STR_RHS_MAG_SH_PG15V";
 		ammo="rhs_ammo_pg15v";
 		count=24;
 		initSpeed=690;
@@ -4720,8 +4488,6 @@ class CfgMagazines
 	};
 	class rhs_mag_og15v_16: VehicleMagazine
 	{
-		displayName="$STR_RHS_MAG_OG15V";
-		displayNameShort="$STR_RHS_MAG_SH_OG15V";
 		ammo="rhs_ammo_og15v";
 		count=16;
 		initSpeed=290;
@@ -4736,44 +4502,32 @@ class CfgMagazines
 	};
 	class rhs_mag_pg9v: rhs_mag_pg15v_24
 	{
-		displayName="$STR_RHS_MAG_PG9V";
-		displayNameShort="$STR_RHS_MAG_SH_PG9V";
 		ammo="rhs_ammo_pg9v";
 		count=1;
 		initSpeed=435;
 	};
 	class rhs_mag_pg9n: rhs_mag_pg9v
 	{
-		displayName="$STR_RHS_MAG_PG9N";
-		displayNameShort="$STR_RHS_MAG_SH_PG9N";
 		ammo="rhs_ammo_pg9n";
 	};
 	class rhs_mag_pg9vnt: rhs_mag_pg9v
 	{
-		displayName="$STR_RHS_MAG_PG9VNT";
-		displayNameShort="$STR_RHS_MAG_SH_PG9VNT";
 		ammo="rhs_ammo_pg9vnt";
 		initSpeed=400;
 	};
 	class rhs_mag_og9v: rhs_mag_og15v_16
 	{
-		displayName="$STR_RHS_MAG_OG9V";
-		displayNameShort="$STR_RHS_MAG_SH_OG9V";
 		ammo="rhs_ammo_og9v";
 		count=1;
 		initSpeed=316;
 	};
 	class rhs_mag_og9vm: rhs_mag_og9v
 	{
-		displayName="$STR_RHS_MAG_OG9VM";
-		displayNameShort="$STR_RHS_MAG_SH_OG9VM";
 		ammo="rhs_ammo_og9vm";
 	};
 	class 450Rnd_127x108_Ball;
 	class rhs_mag_3uor6_230: 450Rnd_127x108_Ball
 	{
-		displayName="$STR_RHS_MAG_3UOR6";
-		displayNameShort="$STR_RHS_MAG_SH_3UOR6";
 		nameSound="heat";
 		ammo="rhs_ammo_3uor6";
 		count=230;
@@ -4825,8 +4579,6 @@ class CfgMagazines
 	};
 	class rhs_mag_3uof8_230: rhs_mag_3uor6_230
 	{
-		displayName="$STR_RHS_MAG_3UOF8";
-		displayNameShort="$STR_RHS_MAG_SH_3UOF8";
 		ammo="rhs_ammo_3uof8";
 		initSpeed=960;
 		weight=89.470001;
@@ -4873,8 +4625,6 @@ class CfgMagazines
 	};
 	class rhs_mag_3ubr6_230: rhs_mag_3uor6_230
 	{
-		displayName="$STR_RHS_MAG_3UBR6";
-		displayNameShort="$STR_RHS_MAG_SH_3UBR6";
 		ammo="rhs_ammo_3ubr6";
 		nameSound="sabot";
 		weight=92;
@@ -4923,8 +4673,6 @@ class CfgMagazines
 	};
 	class rhs_mag_3ubr8_230: rhs_mag_3ubr6_230
 	{
-		displayName="$STR_RHS_MAG_3UBR8";
-		displayNameShort="$STR_RHS_MAG_SH_3UBR8";
 		ammo="rhs_ammo_3ubr8";
 		weight=69;
 	};
@@ -4970,8 +4718,6 @@ class CfgMagazines
 	};
 	class rhs_mag_3ubr11_230: rhs_mag_3ubr6_230
 	{
-		displayName="$STR_RHS_MAG_3UBR11";
-		displayNameShort="$STR_RHS_MAG_SH_3UBR11";
 		ammo="rhs_ammo_3ubr11";
 		weight=69;
 	};
@@ -5017,7 +4763,6 @@ class CfgMagazines
 	};
 	class rhs_mag_AZP23_250: VehicleMagazine
 	{
-		displayName="$STR_RHS_AZP23_NAME";
 		ammo="RHS_ammo_23mm_AA";
 		count=250;
 		initSpeed=980;
@@ -5056,8 +4801,6 @@ class CfgMagazines
 	};
 	class rhs_mag_gsh30_ofzt_750: rhs_mag_3ubr6_230
 	{
-		displayName="$STR_RHS_MAG_OFZT30GSH";
-		displayNameShort="$STR_RHS_MAG_SH_OFZT30GSH";
 		ammo="rhs_ammo_3uof8";
 		count=750;
 		tracersEvery=1;
@@ -5067,8 +4810,6 @@ class CfgMagazines
 	};
 	class rhs_mag_gsh30_bt_750: rhs_mag_3uor6_230
 	{
-		displayName="$STR_RHS_MAG_BT30GSH";
-		displayNameShort="$STR_RHS_MAG_SH_BT30GSH";
 		ammo="rhs_ammo_gsh30_bt";
 		count=750;
 		weight="0.390*750";
@@ -5097,8 +4838,6 @@ class CfgMagazines
 	};
 	class rhs_mag_762x54mm_100: VehicleMagazine
 	{
-		displayName="$STR_RHS_MAG_762X54MM";
-		displayNameShort="$STR_RHS_MAG_SH_762X54MM";
 		count=100;
 		ammo="rhs_B_762x54_Ball";
 		initSpeed=855;
@@ -5124,8 +4863,6 @@ class CfgMagazines
 	};
 	class rhs_mag_127x108mm_50: VehicleMagazine
 	{
-		displayName="$STR_RHS_MAG_127X108MM";
-		displayNameShort="$STR_RHS_MAG_SH_127X108MM";
 		count=50;
 		ammo="rhs_ammo_127x108mm";
 		initSpeed=817;
@@ -5159,16 +4896,12 @@ class CfgMagazines
 	class rhs_mag_127x108mm_1slt_1470: rhs_mag_127x108mm_1470
 	{
 		ammo="rhs_ammo_127x108mm_1SLT";
-		displayName="$STR_RHS_MAG_127X108MM_1SLT";
-		displayNameShort="$STR_RHS_MAG_SH_127X108MM_1SLT";
 		tracersEvery=1;
 		weight=208.74001;
 		initSpeed=735;
 	};
 	class rhs_mag_145x115mm_50: VehicleMagazine
 	{
-		displayName="$STR_RHS_MAG_145X115MM";
-		displayNameShort="$STR_RHS_MAG_SH_145X115MM";
 		count=50;
 		ammo="rhs_ammo_145x115mm";
 		initSpeed=988;
@@ -5177,8 +4910,6 @@ class CfgMagazines
 	};
 	class RHS_mag_VOG30_30: VehicleMagazine
 	{
-		displayName="$STR_RHS_MAG_VOG30";
-		displayNameShort="$STR_RHS_MAG_SH_VOG30";
 		count=30;
 		ammo="rhs_ammo_VOG30";
 		initSpeed=185;
@@ -5186,14 +4917,10 @@ class CfgMagazines
 	};
 	class RHS_mag_GPD30_30: RHS_mag_VOG30_30
 	{
-		displayName="$STR_RHS_MAG_GPD30";
-		displayNameShort="$STR_RHS_MAG_SH_GPD30";
 		ammo="rhs_ammo_GPD30";
 	};
 	class RHS_mag_VOG17m_30: RHS_mag_VOG30_30
 	{
-		displayName="$STR_RHS_MAG_VOG17m";
-		displayNameShort="$STR_RHS_MAG_SH_VOG17m";
 		ammo="rhs_ammo_VOG17m";
 	};
 };
@@ -5203,22 +4930,6 @@ class CfgWeapons
 	class Default;
 	class SmokeLauncher;
 	class MGun;
-	class rhs_weap_MASTERSAFE: Default
-	{
-		displayName="MASTERSAFE";
-		descriptionShort="MASTERSAFE";
-		showToPlayer=0;
-		modes[]=
-		{
-			"this"
-		};
-		magazines[]={};
-		minRange=0;
-		minRangeProbab=0.001;
-		midRange=0.001;
-		midRangeProbab=0.001;
-		maxRange=0.001;
-		maxRangeProbab=0.001;
 	};
 	class rhs_weap_MASTERSAFE_Holdster15: rhs_weap_MASTERSAFE
 	{
@@ -5226,265 +4937,91 @@ class CfgWeapons
 	};
 	class rhs_weap_902a: SmokeLauncher
 	{
-		displayName="$STR_RHS_WEAP_902A";
 		reloadTime=0.098999999;
-		showToPlayer=1;
 		autoFire=1;
-		minRange=0;
-		maxRange=10000;
 	};
 	class rhs_weap_902b: rhs_weap_902a
 	{
-		displayName="$STR_RHS_WEAP_902B";
-		modes[]=
-		{
-			"Double",
-			"Volley",
-			"AIDouble",
-			"AIVolley"
-		};
 		class Double: rhs_weap_902a
 		{
 			reloadTime=0.098999999;
 			burst=2;
-			showToPlayer=1;
 			multiplier=1;
-			minRange=0;
-			maxRange=10000;
-			soundBurst=0;
 			autoFire=1;
-			displayName="$STR_RHS_WEAP_902B";
 		};
 		class Volley: Double
 		{
 			burst=6;
 			autoFire=1;
-			displayName="$STR_RHS_WEAP_902B_BURST";
-		};
-		class AIDouble: Double
-		{
-			showToPlayer=0;
-		};
-		class AIVolley: Volley
-		{
-			showToPlayer=0;
 		};
 	};
 	class rhs_weap_smokegen: Default
 	{
 		reloadTime=8;
 		simulation="cmlauncher";
-		modes[]=
-		{
-			"Single",
-			"Continuos"
-		};
 		class Single: Mode_SemiAuto
 		{
 			cursor="EmptyCursor";
-			displayName="$STR_RHS_WEAP_SMOKEGEN";
-			showToPlayer=1;
 			autoFire=1;
 			burst=1;
 			reloadTime=8;
-			minRange=0;
-			maxRange=1000;
-			sounds[]=
-			{
-				"StandardSound"
-			};
-			class StandardSound
-			{
-				begin1[]={};
-				soundBegin[]={};
-				weaponSoundEffect="";
-			};
 		};
 		class Continuos: Single
 		{
-			displayName="Smokegen (cont)";
 			burst=999;
 			reloadTime=8;
 		};
 	};
 	class rhs_weap_dazzler: rhs_weap_smokegen
 	{
-		displayName="Dazzler";
 		reloadTime=20;
 	};
 	class CMFlareLauncher: SmokeLauncher
 	{
-		class Single;
-		class Burst;
-	};
 	class rhs_weap_CMFlareLauncher: CMFlareLauncher
 	{
-		modes[]=
-		{
-			"Burst",
-			"AIBurst",
-			"Timed",
-			"AITimed",
-			"LongTimed"
-		};
 		class Timed: Single
 		{
-			displayName="Timed";
 			burst=8;
 			reloadTime=1.3;
 		};
-		class AITimed: Timed
-		{
-			showToPlayer=0;
-			minRange=0;
-			maxRange=3000;
-		};
 		class LongTimed: Single
 		{
-			displayName="Timed 16f/4s";
 			burst=8;
 			reloadTime=4;
 		};
 	};
-	class rhs_weap_CMDispenser_ASO2: rhs_weap_CMFlareLauncher
-	{
-	};
-	class rhs_weap_CMDispenser_BVP3026: rhs_weap_CMFlareLauncher
-	{
-	};
-	class rhs_weap_CMDispenser_UV26: rhs_weap_CMFlareLauncher
-	{
-	};
 	class rhs_weap_DIRCM_Vitebsk: MGun
 	{
-		displayName="Vitebsk DIRCM";
 		magazineReloadTime=60;
 		simulation="cmlauncher";
-		modes[]=
-		{
-			"Burst1"
-		};
-		reloadMagazineSound[]=
-		{
-			"A3\sounds_f\dummysound",
-			2,
-			1,
-			5
-		};
 		class Burst1: Mode_Burst
 		{
-			displayName="DIRCM";
 			reloadTime=0.5;
 			burst=120;
-			sounds[]=
-			{
-				"StandardSound"
-			};
-			class StandardSound
-			{
-				begin1[]=
-				{
-					"rhsafrf\addons\rhs_c_heavyweapons\Sounds\ircm_on1",
-					2,
-					1,
-					5
-				};
-				begin2[]=
-				{
-					"rhsafrf\addons\rhs_c_heavyweapons\Sounds\ircm_on2",
-					2,
-					1,
-					5
-				};
-				soundBegin[]=
-				{
-					"begin1",
-					0.5,
-					"begin2",
-					0.5
-				};
-				weaponSoundEffect="";
-			};
-			showToPlayer=1;
 			multiplier=1;
-			minRange=0;
-			maxRange=200;
 			soundContinuos=0;
 		};
 	};
 	class rhs_weap_DIRCM_Lipa: rhs_weap_DIRCM_Vitebsk
 	{
-		displayName="Lipa DIRCM";
 		class Burst1: Mode_Burst
 		{
-			displayName="DIRCM";
 			reloadTime=1;
 			burst=80;
-			sounds[]=
-			{
-				"StandardSound"
-			};
-			class StandardSound
-			{
-				begin1[]=
-				{
-					"rhsafrf\addons\rhs_c_heavyweapons\Sounds\ircm_on1",
-					2,
-					1,
-					5
-				};
-				begin2[]=
-				{
-					"rhsafrf\addons\rhs_c_heavyweapons\Sounds\ircm_on2",
-					2,
-					1,
-					5
-				};
-				soundBegin[]=
-				{
-					"begin1",
-					0.5,
-					"begin2",
-					0.5
-				};
-				weaponSoundEffect="";
-			};
-			showToPlayer=1;
 			multiplier=1;
-			minRange=0;
-			maxRange=200;
 			soundContinuos=0;
 		};
 	};
 	class rhs_weap_afganit_base: MGun
 	{
-		showToPlayer=0;
-		modes[]=
-		{
-			"Single"
-		};
 		autReload=0;
 		class Single: Mode_SemiAuto
 		{
 			cursor="EmptyCursor";
-			showToPlayer=1;
 			autoFire=1;
 			burst=1;
 			reloadTime=8;
-			minRange=0;
-			maxRange=1000;
-			sounds[]=
-			{
-				"StandardSound"
-			};
-			class StandardSound
-			{
-				soundSetShot[]=
-				{
-					"rhs_afganitAPS_soundset",
-					"Launcher_Firefist_Tail_SoundSet"
-				};
-			};
 		};
 		class EventHandlers
 		{
@@ -5494,203 +5031,48 @@ class CfgWeapons
 			};
 		};
 	};
-	class rhs_weap_afganit_1: rhs_weap_afganit_base
-	{
-	};
-	class rhs_weap_afganit_2: rhs_weap_afganit_base
-	{
-	};
-	class rhs_weap_afganit_3: rhs_weap_afganit_base
-	{
-	};
-	class rhs_weap_afganit_4: rhs_weap_afganit_base
-	{
-	};
-	class rhs_weap_afganit_5: rhs_weap_afganit_base
-	{
-	};
-	class rhs_weap_afganit_6: rhs_weap_afganit_base
-	{
-	};
-	class rhs_weap_afganit_7: rhs_weap_afganit_base
-	{
-	};
-	class rhs_weap_afganit_8: rhs_weap_afganit_base
-	{
-	};
-	class rhs_weap_afganit_9: rhs_weap_afganit_base
-	{
-	};
-	class rhs_weap_afganit_10: rhs_weap_afganit_base
-	{
-	};
 	class rhs_weap_afganit_smoke: rhs_weap_902a
 	{
-		displayName="Smoke Launcher";
-		modes[]=
-		{
-			"Double",
-			"Volley",
-			"AIDouble",
-			"AIVolley"
-		};
 		class Double: rhs_weap_902a
 		{
 			reloadTime=0.098999999;
 			burst=2;
-			showToPlayer=1;
 			multiplier=1;
-			minRange=0;
-			maxRange=10000;
-			soundBurst=0;
 			autoFire=1;
-			displayName="Smoke (Single)";
 		};
 		class Volley: Double
 		{
 			burst=6;
 			autoFire=1;
-			displayName="Smoke (Burst)";
-		};
-		class AIDouble: Double
-		{
-			showToPlayer=0;
-		};
-		class AIVolley: Volley
-		{
-			showToPlayer=0;
 		};
 	};
 	class PKT: MGun
 	{
 		reloadTime=0.075000003;
 		autoFire=1;
-		soundContinuous=0;
 		dispersion=0.003;
-		minRange=2;
-		minRangeProbab=0.1;
-		midRange=200;
-		midRangeProbab=0.69999999;
-		maxRange=600;
-		maxRangeProbab=0.0099999998;
-		aiDispersionCoefY=7;
-		aiDispersionCoefX=7;
 		magazineReloadTime=7;
 		maxLeadSpeed=600;
 		canLock=0;
 	};
 	class rhs_weap_pkt: PKT
 	{
-		type=1;
 		showAimCursorInternal=1;
-		displayName="$STR_RHS_WEAP_PKT";
-		aiDispersionCoefY=10;
-		aiDispersionCoefX=8;
 		initSpeed=0;
-		modes[]=
-		{
-			"manual",
-			"close",
-			"short",
-			"medium",
-			"far"
-		};
 		class manual: MGun
 		{
-			displayName="$STR_RHS_WEAP_PKT";
 			autoFire=1;
 			reloadTime=0.075000003;
 			dispersion=0.00125;
-			showToPlayer=1;
-			soundContinuous=0;
 			burst=1;
 			aiBurstTerminable=1;
-			aiRateOfFire=0.5;
-			aiRateOfFireDistance=50;
-			minRange=1;
-			minRangeProbab=0.0099999998;
-			midRange=2;
-			midRangeProbab=0.0099999998;
-			maxRange=3;
-			maxRangeProbab=0.0099999998;
-		};
-		class close: manual
-		{
-			showToPlayer=0;
-			soundBurst=0;
-			burst=12;
-			aiRateOfFire=1;
-			aiRateOfFireDistance=50;
-			aiRateOfFireDispersion=4;
-			minRange=0;
-			minRangeProbab=0.050000001;
-			midRange=20;
-			midRangeProbab=0.69999999;
-			maxRange=50;
-			maxRangeProbab=0.039999999;
-		};
-		class short: close
-		{
-			burst=10;
-			aiRateOfFire=2;
-			aiRateOfFireDistance=300;
-			aiRateOfFireDispersion=4;
-			minRange=50;
-			minRangeProbab=0.050000001;
-			midRange=200;
-			midRangeProbab=0.69999999;
-			maxRange=300;
-			maxRangeProbab=0.1;
-		};
-		class medium: close
-		{
-			burst=7;
-			aiRateOfFire=4;
-			aiRateOfFireDistance=600;
-			aiRateOfFireDispersion=3;
-			minRange=200;
-			minRangeProbab=0.050000001;
-			midRange=500;
-			midRangeProbab=0.69999999;
-			maxRange=600;
-			maxRangeProbab=0.1;
 		};
 		class far: close
 		{
 			burst=6;
-			aiRateOfFire=5;
-			aiRateOfFireDistance=1000;
-			aiRateOfFireDispersion=3;
-			minRange=400;
-			minRangeProbab=0.050000001;
-			midRange=850;
-			midRangeProbab=0.40000001;
-			maxRange=1100;
-			maxRangeProbab=0.0099999998;
 		};
 	};
 	class rhs_weap_pktm: rhs_weap_pkt
-	{
-		displayName="$STR_RHS_WEAP_PKTM";
-		class manual: manual
-		{
-			displayName="$STR_RHS_WEAP_PKTM";
-		};
-		reloadMagazineSound[]=
-		{
-			"a3\Sounds_F\arsenal\weapons_static\Static_HMG\reload_static_HMG",
-			1,
-			1,
-			10
-		};
-	};
-	class rhs_weap_pkt_v1: rhs_weap_pkt
-	{
-	};
-	class rhs_weap_pkt_v2: rhs_weap_pkt
-	{
-	};
-	class rhs_weap_pkt_v3: rhs_weap_pkt
 	{
 	};
 	class rhs_weap_pkt_bmd_coax: rhs_weap_pkt
@@ -5783,135 +5165,28 @@ class CfgWeapons
 	{
 		ballisticsComputer="2 + 16";
 	};
-	class LMG_RCWS: MGun
-	{
-	};
 	class rhs_weap_DSHKM: LMG_RCWS
 	{
-		type=1;
 		initSpeed=0;
-		class GunParticles
-		{
-			class effect1
-			{
-				positionName="usti hlavne";
-				directionName="konec hlavne";
-				effectName="MachineGunCloud";
-			};
-			class effect2
-			{
-				positionName="machinegun_eject_pos";
-				directionName="machinegun_eject_dir";
-				effectName="MachineGunCartridge2";
-			};
-		};
-		reloadMagazineSound[]=
-		{
-			"a3\Sounds_F\arsenal\weapons_static\Static_HMG\reload_static_HMG",
-			1,
-			1,
-			10
-		};
 		autoFire=1;
-		displayName="$STR_RHS_WEAP_DSHKM";
 		ballisticscomputer=2;
 		magazineReloadTime=12;
 		reloadTime=0.1;
 		dispersion=0.0020000001;
-		minRange=1;
-		minRangeProbab=0.1;
-		midRange=400;
-		midRangeProbab=0.69999999;
-		maxRange=1200;
-		maxRangeProbab=0.039999999;
-		aiDispersionCoefY=7;
-		aiDispersionCoefX=7;
-		aiRateOfFire=0.30000001;
-		aiRateOfFireDistance=1500;
 		maxLeadSpeed=600;
 		canLock=0;
-		modes[]=
-		{
-			"manual",
-			"close",
-			"short",
-			"medium",
-			"far"
-		};
 		class manual: MGun
 		{
-			displayName="$STR_RHS_WEAP_NSVT";
 			autoFire=1;
 			reloadTime=0.1;
 			dispersion=0.0020000001;
-			showToPlayer=1;
 			burst=1;
 			aiBurstTerminable=1;
-			aiRateOfFire=0.5;
-			aiRateOfFireDistance=50;
-			minRange=1;
-			minRangeProbab=0.0099999998;
-			midRange=2;
-			midRangeProbab=0.0099999998;
-			maxRange=3;
-			maxRangeProbab=0.0099999998;
-		};
-		class close: manual
-		{
-			showToPlayer=0;
-			soundBurst=0;
-			burst=10;
-			burstRangeMax=15;
-			aiRateOfFire=0.5;
-			aiRateOfFireDistance=50;
-			minRange=0;
-			minRangeProbab=0.050000001;
-			midRange=20;
-			midRangeProbab=0.57999998;
-			maxRange=100;
-			maxRangeProbab=0.039999999;
-		};
-		class short: close
-		{
-			burst=9;
-			burstRangeMax=15;
-			aiRateOfFire=2;
-			aiRateOfFireDistance=300;
-			aiRateOfFireDispersion=5;
-			minRange=50;
-			minRangeProbab=0.050000001;
-			midRange=150;
-			midRangeProbab=0.57999998;
-			maxRange=300;
-			maxRangeProbab=0.039999999;
-		};
-		class medium: close
-		{
-			burst=6;
-			burstRangeMax=10;
-			aiRateOfFire=4;
-			aiRateOfFireDistance=600;
-			aiRateOfFireDispersion=3;
-			minRange=200;
-			minRangeProbab=0.050000001;
-			midRange=500;
-			midRangeProbab=0.57999998;
-			maxRange=800;
-			maxRangeProbab=0.039999999;
 		};
 		class far: close
 		{
 			burst=5;
 			burstRangeMax=9;
-			aiRateOfFire=5;
-			aiRateOfFireDistance=1000;
-			aiRateOfFireDispersion=4;
-			minRange=400;
-			minRangeProbab=0.050000001;
-			midRange=800;
-			midRangeProbab=0.40000001;
-			maxRange=1100;
-			maxRangeProbab=0.0099999998;
 		};
 	};
 	class rhs_weap_dshkm_slow: rhs_weap_DSHKM
@@ -5920,158 +5195,27 @@ class CfgWeapons
 	};
 	class rhs_weap_nsvt: rhs_weap_DSHKM
 	{
-		displayName="$STR_RHS_WEAP_NSVT";
 		reloadTime=0.1;
 		magazineReloadTime=10;
 		flash="gunfire";
 		flashSize=0.60000002;
 		dispersion=0.0020000001;
-		aiDispersionCoefY=7;
-		aiDispersionCoefX=7;
-		aiRateOfFire=0.30000001;
-		aiRateOfFireDistance=1500;
 		class manual: MGun
 		{
-			displayName="$STR_RHS_WEAP_NSVT";
 			autoFire=1;
 			reloadTime=0.086000003;
 			dispersion=0.0020000001;
-			showToPlayer=1;
 			burst=1;
-			aiRateOfFire=0.5;
-			aiRateOfFireDistance=50;
-			minRange=1;
-			minRangeProbab=0.0099999998;
-			midRange=2;
-			midRangeProbab=0.0099999998;
-			maxRange=3;
-			maxRangeProbab=0.0099999998;
-		};
-		class close: manual
-		{
-			showToPlayer=0;
-			soundBurst=0;
-			burst=10;
-			burstRangeMax=15;
-			aiRateOfFire=0.5;
-			aiRateOfFireDistance=50;
-			minRange=0;
-			minRangeProbab=0.050000001;
-			midRange=20;
-			midRangeProbab=0.57999998;
-			maxRange=100;
-			maxRangeProbab=0.039999999;
-		};
-		class short: close
-		{
-			burst=9;
-			burstRangeMax=15;
-			aiRateOfFire=2;
-			aiRateOfFireDistance=300;
-			aiRateOfFireDispersion=5;
-			minRange=50;
-			minRangeProbab=0.050000001;
-			midRange=150;
-			midRangeProbab=0.57999998;
-			maxRange=300;
-			maxRangeProbab=0.039999999;
-		};
-		class medium: close
-		{
-			burst=8;
-			burstRangeMax=12;
-			aiRateOfFire=4;
-			aiRateOfFireDistance=600;
-			aiRateOfFireDispersion=3;
-			minRange=200;
-			minRangeProbab=0.050000001;
-			midRange=500;
-			midRangeProbab=0.57999998;
-			maxRange=800;
-			maxRangeProbab=0.039999999;
 		};
 		class far: close
 		{
 			burst=5;
 			burstRangeMax=8;
-			aiRateOfFire=5;
-			aiRateOfFireDistance=1000;
-			aiRateOfFireDispersion=4;
-			minRange=400;
-			minRangeProbab=0.050000001;
-			midRange=800;
-			midRangeProbab=0.40000001;
-			maxRange=1100;
-			maxRangeProbab=0.0099999998;
-		};
-		class GunParticles
-		{
-		};
-	};
-	class rhs_weap_nsvt_effects: rhs_weap_nsvt
-	{
-		class GunParticles
-		{
-			class effect1a
-			{
-				effectname="MachineGunCloud";
-				positionname="Usti hlavne";
-				directionname="Konec hlavne";
-			};
-			class effect1
-			{
-				positionname="nabojnicestart";
-				directionname="nabojniceend";
-				effectname="MachineGunEject";
-			};
-			class effect2
-			{
-				positionName="machinegun_eject_pos";
-				directionName="machinegun_eject_dir";
-				effectName="MachineGunCartridge2";
-			};
-		};
-	};
-	class rhs_weap_nsvt_t72_var1: rhs_weap_nsvt_effects
-	{
-	};
-	class rhs_weap_nsvt_t72: rhs_weap_nsvt_effects
-	{
-		type=1;
-		class GunParticles: GunParticles
-		{
-			class effect1a
-			{
-				effectname="MachineGunCloud";
-				positionname="mg_end";
-				directionname="mg_start";
-			};
 		};
 	};
 	class rhs_weap_nsvt_obj681: rhs_weap_nsvt_effects
 	{
-		class GunParticles
-		{
-			class effect1a
-			{
-				effectname="MachineGunCloud";
-				positionname="nsvt_start";
-				directionname="nsvt_end";
-			};
-		};
 		holdsterAnimValue=1;
-	};
-	class rhs_weap_nsvt_t80: rhs_weap_nsvt_effects
-	{
-		class GunParticles: GunParticles
-		{
-			class effect1a
-			{
-				effectname="MachineGunCloud";
-				positionname="Mgun_end";
-				directionname="Mgun_start";
-			};
-		};
 	};
 	class rhs_weap_nsvt_t90m_RWS: rhs_weap_nsvt_t72
 	{
@@ -6079,82 +5223,19 @@ class CfgWeapons
 	};
 	class rhs_weap_kord: rhs_weap_nsvt_effects
 	{
-		displayName="$STR_RHS_DN_KORD";
 		class manual: manual
 		{
-			displayName="$STR_RHS_DN_KORD";
 			reloadTime=0.094999999;
 			dispersion=0.0020000001;
-			aiRateOfFire=0.5;
-			aiRateOfFireDistance=50;
-			minRange=1;
-			minRangeProbab=0.0099999998;
-			midRange=2;
-			midRangeProbab=0.0099999998;
-			maxRange=3;
-			maxRangeProbab=0.0099999998;
-		};
-		class close: manual
-		{
-			showToPlayer=0;
-			soundBurst=0;
-			burst=10;
-			burstRangeMax=16;
-			aiRateOfFire=0.5;
-			aiRateOfFireDistance=50;
-			minRange=0;
-			minRangeProbab=0.050000001;
-			midRange=20;
-			midRangeProbab=0.57999998;
-			maxRange=100;
-			maxRangeProbab=0.039999999;
-		};
-		class short: close
-		{
-			burst=9;
-			burstRangeMax=14;
-			aiRateOfFire=2;
-			aiRateOfFireDistance=300;
-			aiRateOfFireDispersion=2;
-			minRange=50;
-			minRangeProbab=0.050000001;
-			midRange=150;
-			midRangeProbab=0.57999998;
-			maxRange=300;
-			maxRangeProbab=0.039999999;
-		};
-		class medium: close
-		{
-			burst=8;
-			burstRangeMax=12;
-			aiRateOfFire=4;
-			aiRateOfFireDistance=600;
-			aiRateOfFireDispersion=3;
-			minRange=200;
-			minRangeProbab=0.050000001;
-			midRange=500;
-			midRangeProbab=0.57999998;
-			maxRange=800;
-			maxRangeProbab=0.039999999;
 		};
 		class far: close
 		{
 			burst=5;
 			burstRangeMax=10;
-			aiRateOfFire=5;
-			aiRateOfFireDistance=1000;
-			aiRateOfFireDispersion=4;
-			minRange=400;
-			minRangeProbab=0.050000001;
-			midRange=800;
-			midRangeProbab=0.40000001;
-			maxRange=1100;
-			maxRangeProbab=0.0099999998;
 		};
 	};
 	class rhs_weap_kpvt: MGun
 	{
-		type=1;
 		autoFire=1;
 		reloadTime=0.1;
 		magazineReloadTime=12;
@@ -6176,99 +5257,19 @@ class CfgWeapons
 				directionname="machinegun_eject_dir";
 			};
 		};
-		displayName="$STR_RHS_WEAP_KPVT";
-		aiDispersionCoefY=10;
-		aiDispersionCoefX=8;
 		selectionFireAnim="zasleh3";
-		reloadMagazineSound[]=
-		{
-			"a3\Sounds_F\arsenal\weapons_static\Static_HMG\reload_static_HMG",
-			1,
-			1,
-			10
-		};
-		modes[]=
-		{
-			"manual",
-			"close",
-			"short",
-			"medium",
-			"far"
-		};
 		class manual: MGun
 		{
-			displayName="$STR_RHS_WEAP_KPVT";
 			autoFire=1;
 			reloadTime=0.1;
 			dispersion=0.00069999998;
-			showToPlayer=1;
 			burst=1;
 			aiBurstTerminable=1;
-			aiRateOfFire=0.5;
-			aiRateOfFireDistance=50;
-			minRange=1;
-			minRangeProbab=0.0099999998;
-			midRange=2;
-			midRangeProbab=0.0099999998;
-			maxRange=3;
-			maxRangeProbab=0.0099999998;
-		};
-		class close: manual
-		{
-			showToPlayer=0;
-			soundBurst=0;
-			burst=8;
-			burstRangeMax=15;
-			aiRateOfFire=0.5;
-			aiRateOfFireDistance=50;
-			minRange=0;
-			minRangeProbab=0.050000001;
-			midRange=100;
-			midRangeProbab=0.57999998;
-			maxRange=300;
-			maxRangeProbab=0.039999999;
-		};
-		class short: close
-		{
-			burst=6;
-			burstRangeMax=14;
-			aiRateOfFire=2;
-			aiRateOfFireDistance=300;
-			aiRateOfFireDispersion=2;
-			minRange=200;
-			minRangeProbab=0.050000001;
-			midRange=600;
-			midRangeProbab=0.57999998;
-			maxRange=1000;
-			maxRangeProbab=0.039999999;
-		};
-		class medium: close
-		{
-			burst=4;
-			burstRangeMax=9;
-			aiRateOfFire=3;
-			aiRateOfFireDistance=600;
-			aiRateOfFireDispersion=3;
-			minRange=800;
-			minRangeProbab=0.050000001;
-			midRange=1000;
-			midRangeProbab=0.57999998;
-			maxRange=1200;
-			maxRangeProbab=0.039999999;
 		};
 		class far: close
 		{
 			burst=5;
 			burstRangeMax=9;
-			aiRateOfFire=5;
-			aiRateOfFireDistance=1000;
-			aiRateOfFireDispersion=4;
-			minRange=1000;
-			minRangeProbab=0.050000001;
-			midRange=1200;
-			midRangeProbab=0.40000001;
-			maxRange=1500;
-			maxRangeProbab=0.0099999998;
 		};
 	};
 	class gatling_30mm;
@@ -6284,18 +5285,6 @@ class CfgWeapons
 		firespreadangle="0.5f";
 		flash="gunfire";
 		flashsize=0.1;
-		muzzles[]=
-		{
-			"this"
-		};
-		modes[]=
-		{
-			"manual",
-			"close",
-			"short",
-			"medium",
-			"far"
-		};
 		recoil="Empty";
 		showaimcursorinternal=1;
 		soundcontinuous=0;
@@ -6334,53 +5323,9 @@ class CfgWeapons
 			soundburst=0;
 			soundcontinuous=1;
 		};
-		class close: manual
-		{
-			airateoffire=1;
-			aiRateOfFireDispersion=0;
-			airateoffiredistance=50;
-			burst=10;
-			burstRangeMax=19;
-			maxrange=500;
-			maxrangeprobab=0.039999999;
-			midrange=200;
-			midrangeprobab=0.88;
-			minrange=0;
-			minrangeprobab=0.050000001;
-			showtoplayer=0;
-		};
-		class short: close
-		{
-			airateoffire=1.2;
-			aiRateOfFireDispersion=1;
-			airateoffiredistance=300;
-			burst=14;
-			burstRangeMax=20;
-			maxrange=800;
-			maxrangeprobab=0.039999999;
-			midrange=500;
-			midrangeprobab=0.88;
-			minrange=200;
-			minrangeprobab=0.050000001;
-		};
-		class medium: close
-		{
-			airateoffire=2.3;
-			aiRateOfFireDispersion=1;
-			airateoffiredistance=300;
-			burst=14;
-			burstRangeMax=18;
-			maxrange=1000;
-			maxrangeprobab=0.039999999;
-			midrange=800;
-			midrangeprobab=0.68000001;
-			minrange=600;
-			minrangeprobab=0.050000001;
-		};
 		class far: close
 		{
 			airateoffire=4;
-			aiRateOfFireDispersion=1;
 			airateoffiredistance=800;
 			burst=12;
 			burstRangeMax=16;
@@ -6396,246 +5341,40 @@ class CfgWeapons
 	class GMG_20mm;
 	class RHS_weap_Ags30: GMG_20mm
 	{
-		type=1;
 		ballisticsComputer=2;
-		displayName="AGS-30";
-		class GunParticles
-		{
-			class effect1
-			{
-				positionName="usti hlavne";
-				directionName="konec hlavne";
-				effectName="GrenadeLauncherCloud";
-			};
-		};
 		autoreload=1;
 		canlock=0;
 		dispersion=0.0060000001;
-		aiDispersionCoefY=7;
-		aiDispersionCoefX=6;
 		magazinereloadtime=6;
 		reloadtime=0.15000001;
-		modes[]=
-		{
-			"manual",
-			"close",
-			"short",
-			"medium",
-			"far"
-		};
 		class manual: GMG_F
 		{
 			displayname="AGS-30 Grenade Launcher";
-			sounds[]=
-			{
-				"StandardSound"
-			};
-			class StandardSound
-			{
-				soundSetShot[]=
-				{
-					"GMG20mm_Shot_SoundSet",
-					"GMG20mm_Tail_SoundSet"
-				};
-			};
-			soundBurst=0;
 			aiBurstTerminable=1;
-			minRange=1;
-			minRangeProbab=0.0099999998;
-			midRange=2;
-			midRangeProbab=0.0099999998;
-			maxRange=3;
-			maxRangeProbab=0.0099999998;
 			reloadtime=0.15000001;
-		};
-		class close: manual
-		{
-			burst=3;
-			burstRangeMax=8;
-			aiRateOfFire=1;
-			aiRateOfFireDispersion=1;
-			aiRateOfFireDistance=50;
-			minRange=8;
-			minRangeProbab=0.050000001;
-			midRange=20;
-			midRangeProbab=0.69999999;
-			maxRange=50;
-			maxRangeProbab=0.1;
-			showToPlayer=0;
-		};
-		class short: close
-		{
-			burst=4;
-			burstRangeMax=8;
-			aiRateOfFire=1;
-			aiRateOfFireDispersion=2;
-			aiRateOfFireDistance=300;
-			minRange=50;
-			minRangeProbab=0.050000001;
-			midRange=150;
-			midRangeProbab=0.69999999;
-			maxRange=300;
-			maxRangeProbab=0.1;
-		};
-		class medium: close
-		{
-			burst=2;
-			burstRangeMax=6;
-			aiRateOfFire=2;
-			aiRateOfFireDispersion=2;
-			aiRateOfFireDistance=600;
-			minRange=200;
-			minRangeProbab=0.050000001;
-			midRange=400;
-			midRangeProbab=0.69999999;
-			maxRange=600;
-			maxRangeProbab=0.1;
 		};
 		class far: close
 		{
 			burst=2;
 			burstRangeMax=6;
-			aiRateOfFire=2;
-			aiRateOfFireDispersion=3;
-			aiRateOfFireDistance=1000;
-			minRange=400;
-			minRangeProbab=0.050000001;
-			midRange=750;
-			midRangeProbab=0.40000001;
-			maxRange=1000;
-			maxRangeProbab=0.0099999998;
 		};
 	};
 	class rhs_weap_pkm_tigr: rhs_weap_pkt
 	{
 		ballisticscomputer=2;
 		magazineReloadTime=5;
-		displayName="$STR_RHS_WEAP_PKM";
-		class GunParticles
-		{
-			class effect1
-			{
-				positionName="weapon_pkm_end";
-				directionName="weapon_pkm_start";
-				effectName="MachineGunCloud";
-			};
-			class effect2
-			{
-				positionName="weapon_pkm_eject_pos";
-				directionName="weapon_pkm_eject_dir";
-				effectName="MachineGunCartridge2";
-			};
-			class SecondEffect
-			{
-				positionName="weapon_pkm_eject_pos";
-				directionName="weapon_pkm_eject_dir";
-				effectName="RifleAssaultCloud";
-			};
-			class RHS_BarrelRefract
-			{
-				positionName="weapon_pkm_end";
-				directionName="weapon_pkm_end_up";
-				effectName="RHS_BarrelRefract";
-			};
-		};
-		aiDispersionCoefY=14;
-		aiDispersionCoefX=8;
-		modes[]=
-		{
-			"manual",
-			"close",
-			"short",
-			"medium",
-			"far"
-		};
 		class manual: manual
 		{
-			displayName="$STR_RHS_WEAP_PKM";
 			autoFire=1;
 			reloadTime=0.075000003;
 			dispersion=0.00125;
-			showToPlayer=1;
-			soundContinuous=0;
 			burst=1;
 			aiBurstTerminable=1;
-			aiRateOfFire=0.5;
-			aiRateOfFireDistance=50;
-			minRange=1;
-			minRangeProbab=0.0099999998;
-			midRange=2;
-			midRangeProbab=0.0099999998;
-			maxRange=3;
-			maxRangeProbab=0.0099999998;
-		};
-		class close: manual
-		{
-			showToPlayer=0;
-			soundBurst=0;
-			burst=12;
-			burstRangeMax=16;
-			aiRateOfFire=1;
-			aiRateOfFireDistance=50;
-			aiRateOfFireDispersion=4;
-			minRange=0;
-			minRangeProbab=0.050000001;
-			midRange=20;
-			midRangeProbab=0.69999999;
-			maxRange=50;
-			maxRangeProbab=0.039999999;
-		};
-		class short: close
-		{
-			burst=10;
-			burstRangeMax=14;
-			aiRateOfFire=2;
-			aiRateOfFireDistance=300;
-			aiRateOfFireDispersion=4;
-			minRange=50;
-			minRangeProbab=0.050000001;
-			midRange=200;
-			midRangeProbab=0.69999999;
-			maxRange=300;
-			maxRangeProbab=0.1;
-		};
-		class medium: close
-		{
-			burst=7;
-			burstRangeMax=11;
-			aiRateOfFire=4;
-			aiRateOfFireDistance=600;
-			aiRateOfFireDispersion=3;
-			minRange=200;
-			minRangeProbab=0.050000001;
-			midRange=500;
-			midRangeProbab=0.69999999;
-			maxRange=600;
-			maxRangeProbab=0.1;
 		};
 		class far: close
 		{
 			burst=6;
 			burstRangeMax=10;
-			aiRateOfFire=5;
-			aiRateOfFireDistance=1000;
-			aiRateOfFireDispersion=3;
-			minRange=400;
-			minRangeProbab=0.050000001;
-			midRange=850;
-			midRangeProbab=0.40000001;
-			maxRange=1100;
-			maxRangeProbab=0.0099999998;
-		};
-	};
-	class RHS_weap_Ags30_tigr: RHS_weap_Ags30
-	{
-		class GunParticles
-		{
-			class effect1
-			{
-				positionName="weapon_ags_end";
-				directionName="weapon_ags_start";
-				effectName="GrenadeLauncherCloud";
-			};
 		};
 	};
 	class CannonCore;
@@ -6644,30 +5383,11 @@ class CfgWeapons
 		class player;
 		class close;
 		class short;
-		class medium;
-		class far;
-	};
 	class rhs_weap_fcs: cannon_120mm
 	{
 		displayname="";
-		minRange=1;
-		minRangeProbab=1;
-		midRange=2000;
-		midRangeProbab=1;
-		maxRange=5000;
-		maxRangeProbab=1;
-		aiRateOfFire=0.60000002;
-		aiRateOfFireDistance=5000;
-		modes[]=
-		{
-			"this"
-		};
-		showToPlayer=0;
 		reloadTime=2;
 		magazineReloadTime=2;
-		class gunParticles
-		{
-		};
 		class Eventhandlers
 		{
 			fired="[_this select 0,_this select 1,true] call rhs_fnc_firedFCS";
@@ -6703,12 +5423,6 @@ class CfgWeapons
 	};
 	class rhs_weap_fcs_su25: rhs_weap_fcs
 	{
-		minRange=500;
-		minRangeProbab=1;
-		midRange=4000;
-		midRangeProbab=1;
-		maxRange=8000;
-		maxRangeProbab=1;
 		reloadTime=6;
 		class Eventhandlers
 		{
@@ -6722,12 +5436,6 @@ class CfgWeapons
 		cursoraim="EmptyCursor";
 		cursoraimon="EmptyCursor";
 		displayname="$STR_RHS_FIRECONTROLSYSTEM_NAME";
-		minRange=1;
-		minRangeProbab=0.059999999;
-		midRange=2;
-		midRangeProbab=0.059999999;
-		maxRange=3;
-		maxRangeProbab=0.0040000002;
 	};
 	class rhs_weap_PL1: RHS_T72_FCS
 	{
@@ -6755,85 +5463,37 @@ class CfgWeapons
 			1,
 			200
 		};
-		reloadMagazineSound[]=
-		{
-			"",
-			1,
-			1,
-			200
-		};
 		ballisticsComputer=0;
 		flash="gunfire";
 		flashSize=10;
-		minRange=1;
-		minRangeProbab=0.1;
-		midRange=1200;
-		midRangeProbab=0.69999999;
-		maxRange=2500;
-		maxRangeProbab=0.1;
 		maxLeadSpeed=100;
 		reloadTime=6.5;
-		aiRateOfFire=6.5999999;
-		aiRateOfFireDistance=10;
 		magazineReloadTime=6.5;
 		autoReload=0;
 		magazineWell[]=
 		{
 			"RHS_Cannon_125mm_D81"
 		};
-		modes[]=
-		{
-			"player",
-			"close",
-			"short",
-			"medium",
-			"far"
-		};
 		class player: player
 		{
-			aiRateOfFireDistance=10;
-			aiRateOfFire=6.5999999;
 			autoReload=0;
-		};
-		class close: close
-		{
-			aiRateOfFireDistance=10;
-			aiRateOfFire=6.5999999;
-		};
-		class short: short
-		{
-			aiRateOfFireDistance=10;
-			aiRateOfFire=6.5999999;
-		};
-		class medium: medium
-		{
-			aiRateOfFireDistance=10;
-			aiRateOfFire=6.5999999;
-		};
-		class far: far
-		{
-			aiRateOfFireDistance=10;
-			aiRateOfFire=6.5999999;
 		};
 	};
 	class rhs_weap_2a26: rhs_weap_d81
 	{
 		aiDispersioncoefX=5;
 		aiDispersioncoefY=9;
-		displayName="$STR_RHS_WEAP_2A26";
 		magazineWell[]={};
 	};
 	class rhs_weap_2a46_2: rhs_weap_d81
 	{
 		aiDispersioncoefX=3.5;
 		aiDispersioncoefY=6.5;
-		displayName="$STR_RHS_WEAP_2A462";
 	};
 	class rhs_weap_2a46m_2: rhs_weap_d81
 	{
 		aiDispersioncoefX=3.5;
 		aiDispersioncoefY=5;
-		displayName="$STR_RHS_WEAP_2A46M2";
 		magazineWell[]=
 		{
 			"RHS_Cannon_125mm_D81",
@@ -6844,19 +5504,16 @@ class CfgWeapons
 	{
 		aiDispersioncoefX=4;
 		aiDispersioncoefY=7;
-		displayName="$STR_RHS_WEAP_2A46M";
 	};
 	class rhs_weap_2a46m_4: rhs_weap_2a46m_2
 	{
 		aiDispersioncoefX=3.5;
 		aiDispersioncoefY=5;
-		displayName="$STR_RHS_WEAP_2A46M4";
 	};
 	class rhs_weap_2a46m_5: rhs_weap_2a46m_2
 	{
 		aiDispersioncoefX=3;
 		aiDispersioncoefY=5;
-		displayName="$STR_RHS_WEAP_2A46M5";
 		magazineWell[]=
 		{
 			"RHS_Cannon_125mm_D81",
@@ -6866,32 +5523,10 @@ class CfgWeapons
 		class player: player
 		{
 			reloadtime=6;
-			aiRateOfFireDistance=10;
-			aiRateOfFire=5;
-		};
-		class close: close
-		{
-			reloadtime=6;
-			aiRateOfFireDistance=10;
-			aiRateOfFire=5;
-		};
-		class short: short
-		{
-			reloadtime=6;
-			aiRateOfFireDistance=10;
-			aiRateOfFire=5;
-		};
-		class medium: medium
-		{
-			reloadtime=6;
-			aiRateOfFireDistance=10;
-			aiRateOfFire=5;
 		};
 		class far: far
 		{
 			reloadtime=6;
-			aiRateOfFireDistance=10;
-			aiRateOfFire=5;
 		};
 		magazineReloadTime=6;
 	};
@@ -6899,7 +5534,6 @@ class CfgWeapons
 	{
 		aiDispersioncoefX=2.5;
 		aiDispersioncoefY=4;
-		displayName="$STR_RHS_WEAP_2A82";
 		magazineWell[]=
 		{
 			"RHS_Cannon_125mm_D81",
@@ -6912,58 +5546,22 @@ class CfgWeapons
 	{
 		aiDispersioncoefX=2.5;
 		aiDispersioncoefY=3;
-		displayName="$STR_RHS_WEAP_2A82_1M";
 		magazineReloadTime=5.5;
 		class player: player
 		{
 			reloadtime=5.5;
-			aiRateOfFireDistance=10;
-			aiRateOfFire=5;
-		};
-		class close: close
-		{
-			reloadtime=5.5;
-			aiRateOfFireDistance=10;
-			aiRateOfFire=5;
-		};
-		class short: short
-		{
-			reloadtime=5.5;
-			aiRateOfFireDistance=10;
-			aiRateOfFire=5;
-		};
-		class medium: medium
-		{
-			reloadtime=5.5;
-			aiRateOfFireDistance=10;
-			aiRateOfFire=5;
 		};
 		class far: far
 		{
 			reloadtime=5.5;
-			aiRateOfFireDistance=10;
-			aiRateOfFire=5;
 		};
 		ballisticsComputer="2 + 16";
 	};
-	class rhs_weap_d10t2s_2: rhs_weap_d81
-	{
-		displayName="$STR_RHS_WEAP_D10T2S";
-		magazineWell[]={};
 		reloadTime=12;
 		magazineReloadTime=6.5;
 	};
-	class rhs_weap_d10tg: rhs_weap_d10t2s_2
-	{
-		displayName="$STR_RHS_WEAP_D10TG";
-	};
-	class rhs_weap_d10t2s: rhs_weap_d10t2s_2
-	{
-		displayName="$STR_RHS_WEAP_D10T2S";
-	};
 	class rhs_weap_u5ts: rhs_weap_d81
 	{
-		displayName="$STR_RHS_WEAP_2A20";
 		sound[]=
 		{
 			"\rhsafrf\addons\rhs_c_heavyweapons\sounds\rhs_s_u5ts.ogg",
@@ -6997,7 +5595,6 @@ class CfgWeapons
 		aiDispersioncoefY=3;
 		airateoffire=1;
 		airateoffiredistance=1000;
-		displayName="$STR_RHS_WEAP_2A42";
 		nameSound="cannon";
 		reloadTime=0.02;
 		magazinereloadtime=0.2;
@@ -7008,15 +5605,6 @@ class CfgWeapons
 		{
 			"RHS_AutoCannon_30mm_2A42_AP",
 			"RHS_AutoCannon_30mm_2A42_HE"
-		};
-		modes[]=
-		{
-			"LowROFBMD2",
-			"HighROFBMD2",
-			"closeBMD2",
-			"shortBMD2",
-			"mediumBMD2",
-			"farBMD2"
 		};
 		cursor="EmptyCursor";
 		cursorAim="mg";
@@ -7051,123 +5639,35 @@ class CfgWeapons
 		};
 		class LowROFBMD2: Mode_FullAuto
 		{
-			displayName="$STR_RHS_WEAP_MODE_300";
-			displayNameShort="$STR_RHS_WEAP_MODE_300";
 			reloadTime=0.2;
-			soundContinuous=0;
 			flash="gunfire";
 			flashSize=0.1;
 			aiBurstTerminable=1;
-			minRange=1;
-			minRangeProbab=0.059999999;
-			midRange=2;
-			midRangeProbab=0.059999999;
-			maxRange=3;
-			maxRangeProbab=0.0040000002;
 			dispersion=0.00093749998;
 		};
 		class HighROFBMD2: LowROFBMD2
 		{
-			displayName="$STR_RHS_WEAP_MODE_600";
-			displayNameShort="$STR_RHS_WEAP_MODE_600";
 			reloadTime=0.1;
-			soundContinuous=0;
-			minRange=1;
-			minRangeProbab=0.079999998;
-			midRange=2;
-			midRangeProbab=0.057999998;
-			maxRange=3;
-			maxRangeProbab=0.0040000002;
 			dispersion=0.0032500001;
-		};
-		class closeBMD2: HighROFBMD2
-		{
-			showToPlayer=0;
-			soundBurst=0;
-			burst=10;
-			burstRangeMax=15;
-			aiRateOfFire=0.5;
-			aiRateOfFireDistance=50;
-			minRange=0;
-			minRangeProbab=0.050000001;
-			midRange=150;
-			midRangeProbab=0.57999998;
-			maxRange=300;
-			maxRangeProbab=0.039999999;
-		};
-		class shortBMD2: closeBMD2
-		{
-			burst=6;
-			burstRangeMax=14;
-			aiRateOfFire=4;
-			aiRateOfFireDistance=300;
-			aiRateOfFireDispersion=2;
-			minRange=50;
-			minRangeProbab=0.050000001;
-			midRange=400;
-			midRangeProbab=0.57999998;
-			maxRange=600;
-			maxRangeProbab=0.039999999;
-		};
-		class mediumBMD2: LowROFBMD2
-		{
-			showToPlayer=0;
-			soundBurst=0;
-			burst=5;
-			burstRangeMax=12;
-			aiRateOfFire=4;
-			aiRateOfFireDistance=600;
-			aiRateOfFireDispersion=3;
-			minRange=600;
-			minRangeProbab=0.050000001;
-			midRange=1500;
-			midRangeProbab=0.57999998;
-			maxRange=2000;
-			maxRangeProbab=0.039999999;
 		};
 		class farBMD2: mediumBMD2
 		{
 			burst=4;
 			burstRangeMax=9;
-			aiRateOfFire=6;
-			aiRateOfFireDistance=1000;
-			aiRateOfFireDispersion=3;
-			minRange=2000;
-			minRangeProbab=0.050000001;
-			midRange=2500;
-			midRangeProbab=0.40000001;
-			maxRange=3000;
-			maxRangeProbab=0.0099999998;
 		};
 	};
 	class rhs_weap_2a42: rhs_weap_2a42_base
 	{
-		muzzles[]=
-		{
-			"HE",
-			"AP"
-		};
-		class HE: rhs_weap_2a42_base
-		{
-		};
 		class AP: rhs_weap_2a42_base
 		{
 			magazineWell[]=
 			{
 				"RHS_AutoCannon_30mm_2A42_HE"
 			};
-			modes[]=
-			{
-				"closeBMD2",
-				"shortBMD2",
-				"mediumBMD2",
-				"farBMD2"
-			};
 		};
 	};
 	class rhs_weap_2a72_base: rhs_weap_2a42
 	{
-		displayName="$STR_RHS_WEAP_2A72";
 		class gunParticles
 		{
 			class Shell
@@ -7189,113 +5689,31 @@ class CfgWeapons
 		ballisticsComputer=0;
 		class LowROFBMD2: LowROFBMD2
 		{
-			displayName="$STR_RHS_WEAP_MODE_SINGLE";
-			displayNameShort="$STR_RHS_WEAP_MODE_SINGLE";
 			reloadTime=0.2;
 			autofire=0;
-			soundContinuous=0;
 			flash="gunfire";
 			flashSize=0.1;
 			recoil="Empty";
-			minRange=1;
-			minRangeProbab=0.059999999;
-			midRange=2;
-			midRangeProbab=0.059999999;
-			maxRange=3;
-			maxRangeProbab=0.0040000002;
 			dispersion=0.000714286;
 		};
 		class HighROFBMD2: LowROFBMD2
 		{
-			displayName="$STR_RHS_WEAP_MODE_330";
-			displayNameShort="$STR_RHS_WEAP_MODE_330";
 			reloadTime=0.18181799;
 			autofire=1;
-			soundContinuous=0;
-			minRange=1;
-			minRangeProbab=0.079999998;
-			midRange=2;
-			midRangeProbab=0.057999998;
-			maxRange=3;
-			maxRangeProbab=0.0040000002;
-		};
-		class closeBMD2: HighROFBMD2
-		{
-			showToPlayer=0;
-			soundBurst=0;
-			burst=10;
-			burstRangeMax=15;
-			aiRateOfFire=0.5;
-			aiRateOfFireDistance=50;
-			minRange=0;
-			minRangeProbab=0.050000001;
-			midRange=150;
-			midRangeProbab=0.57999998;
-			maxRange=300;
-			maxRangeProbab=0.039999999;
-		};
-		class shortBMD2: closeBMD2
-		{
-			burst=6;
-			burstRangeMax=14;
-			aiRateOfFire=4;
-			aiRateOfFireDistance=300;
-			aiRateOfFireDispersion=2;
-			minRange=50;
-			minRangeProbab=0.050000001;
-			midRange=400;
-			midRangeProbab=0.57999998;
-			maxRange=600;
-			maxRangeProbab=0.039999999;
-		};
-		class mediumBMD2: LowROFBMD2
-		{
-			showToPlayer=0;
-			soundBurst=0;
-			burst=5;
-			burstRangeMax=12;
-			aiRateOfFire=4;
-			aiRateOfFireDistance=600;
-			aiRateOfFireDispersion=3;
-			minRange=600;
-			minRangeProbab=0.050000001;
-			midRange=1500;
-			midRangeProbab=0.57999998;
-			maxRange=2000;
-			maxRangeProbab=0.039999999;
 		};
 		class farBMD2: mediumBMD2
 		{
 			burst=4;
 			burstRangeMax=9;
-			aiRateOfFire=6;
-			aiRateOfFireDistance=1000;
-			aiRateOfFireDispersion=3;
-			minRange=2000;
-			minRangeProbab=0.050000001;
-			midRange=2500;
-			midRangeProbab=0.40000001;
-			maxRange=3000;
-			maxRangeProbab=0.0099999998;
 		};
 	};
 	class rhs_weap_2a72: rhs_weap_2a72_base
 	{
-		class HE: rhs_weap_2a72_base
-		{
-		};
 		class AP: rhs_weap_2a72_base
 		{
 			magazineWell[]=
 			{
 				"RHS_AutoCannon_30mm_2A42_HE"
-			};
-			modes[]=
-			{
-				"closeBMD2",
-				"shortBMD2",
-				"mediumBMD2",
-				"farBMD2"
 			};
 		};
 	};
@@ -7326,31 +5744,17 @@ class CfgWeapons
 			{
 				"RHS_AutoCannon_30mm_2A42_AP"
 			};
-			modes[]=
-			{
-				"closeBMD2",
-				"shortBMD2",
-				"mediumBMD2",
-				"farBMD2"
-			};
 		};
 	};
 	class rhs_weap_2a70: rhs_weap_d81
 	{
 		aiDispersioncoefX=2;
 		aiDispersioncoefY=4;
-		displayName="$STR_RHS_WEAP_2A70";
 		magazineReloadTime=5.5;
 		magazineWell[]=
 		{
 			"RHS_Cannon_100mm_2A70"
 		};
-		minRange=5;
-		minRangeProbab=0.69999999;
-		midRange=1200;
-		midRangeProbab=0.69999999;
-		maxRange=2500;
-		maxRangeProbab=0.1;
 		reloadSound[]=
 		{
 			"\rhsafrf\addons\rhs_c_heavyweapons\sounds\autoloader",
@@ -7372,21 +5776,6 @@ class CfgWeapons
 			reloadTime=5.5;
 			dispersion=0.00275;
 		};
-		class close: close
-		{
-			reloadTime=5.5;
-			dispersion=0.00275;
-		};
-		class short: short
-		{
-			reloadTime=5.5;
-			dispersion=0.00275;
-		};
-		class medium: medium
-		{
-			reloadTime=5.5;
-			dispersion=0.00275;
-		};
 		class far: far
 		{
 			reloadTime=5.5;
@@ -7397,24 +5786,8 @@ class CfgWeapons
 	{
 		aiDispersioncoefX=3;
 		aiDispersioncoefY=4;
-		displayName="$STR_RHS_WEAP_2A75";
 		magazineReloadTime=7.5;
 		class player: player
-		{
-			reloadTime=7.5;
-			dispersion="0.00025*2.6";
-		};
-		class close: close
-		{
-			reloadTime=7.5;
-			dispersion="0.00025*2.6";
-		};
-		class short: short
-		{
-			reloadTime=7.5;
-			dispersion="0.00025*2.6";
-		};
-		class medium: medium
 		{
 			reloadTime=7.5;
 			dispersion="0.00025*2.6";
@@ -7432,7 +5805,6 @@ class CfgWeapons
 		canLock=0;
 		ballisticsComputer=0;
 		cursor="EmptyCursor";
-		displayName="$STR_RHS_WEAP_2A28";
 		reloadSound[]=
 		{
 			"A3\sounds_f\vehicles\armor\noises\reload_tank_cannon_3",
@@ -7440,16 +5812,8 @@ class CfgWeapons
 			1,
 			10
 		};
-		minRange=1;
-		minRangeProbab=0.1;
-		midRange=765;
-		midRangeProbab=1;
-		maxRange=1300;
-		maxRangeProbab=0.1;
 		reloadTime=7;
 		magazineReloadTime=5.5;
-		aiRateOfFire=6;
-		aiRateOfFireDistance=1000;
 		maxLeadSpeed=100;
 		class gunParticles
 		{
@@ -7464,18 +5828,6 @@ class CfgWeapons
 		{
 			dispersion="0.00025*15";
 		};
-		class close: close
-		{
-			dispersion="0.00025*15";
-		};
-		class short: short
-		{
-			dispersion="0.00025*15";
-		};
-		class medium: medium
-		{
-			dispersion="0.00025*15";
-		};
 		class far: far
 		{
 			dispersion="0.00025*15";
@@ -7483,41 +5835,10 @@ class CfgWeapons
 	};
 	class rhs_weap_2a28: rhs_weap_2a28_base
 	{
-		muzzles[]=
-		{
-			"HE",
-			"AP"
-		};
-		class AP: rhs_weap_2a28_base
-		{
-		};
-		class HE: rhs_weap_2a28_base
-		{
-			modes[]=
-			{
-				"close",
-				"short",
-				"medium",
-				"far"
-			};
-		};
 	};
 	class rhs_weap_2a41_base: rhs_weap_2a28_base
 	{
-		displayName="$STR_RHS_WEAP_2A41";
 		class player: player
-		{
-			dispersion="0.00025*10";
-		};
-		class close: close
-		{
-			dispersion="0.00025*10";
-		};
-		class short: short
-		{
-			dispersion="0.00025*10";
-		};
-		class medium: medium
 		{
 			dispersion="0.00025*10";
 		};
@@ -7528,83 +5849,14 @@ class CfgWeapons
 	};
 	class rhs_weap_2a41: rhs_weap_2a41_base
 	{
-		muzzles[]=
-		{
-			"AP",
-			"HE"
-		};
-		class AP: rhs_weap_2a41_base
-		{
-		};
-		class HE: rhs_weap_2a41_base
-		{
-			modes[]=
-			{
-				"close",
-				"short",
-				"medium",
-				"far"
-			};
-		};
 	};
 	class mortar_155mm_AMOS;
 	class rhs_weap_2a33: mortar_155mm_AMOS
 	{
 		displayname="2A33";
 		magazinereloadtime=6;
-		class GunParticles
-		{
-			class Effect1
-			{
-				directionname="Konec hlavne";
-				effectname="ArtilleryFired1";
-				positionname="Usti hlavne";
-			};
-			class Effect2
-			{
-				directionname="Usti hlavne b";
-				effectname="ArtilleryFiredL";
-				positionname="Usti hlavne";
-			};
-			class Effect3
-			{
-				directionname="Usti hlavne b";
-				effectname="ArtilleryFiredR";
-				positionname="Usti hlavne";
-			};
-		};
-		modes[]=
-		{
-			"Single1",
-			"Single2",
-			"Single3",
-			"Burst1",
-			"Burst2",
-			"Burst3"
-		};
 		class Single1: Mode_SemiAuto
 		{
-			displayName="Semi (close)";
-			sounds[]=
-			{
-				"StandardSound"
-			};
-			class StandardSound
-			{
-				weaponSoundEffect="DefaultRifle";
-				begin1[]=
-				{
-					"A3\Sounds_F\weapons\Cannons\cannon_2",
-					2.5118899,
-					1,
-					1500
-				};
-				soundBegin[]=
-				{
-					"begin1",
-					1
-				};
-			};
 			reloadSound[]=
 			{
 				"A3\sounds_f\dummysound",
@@ -7614,47 +5866,20 @@ class CfgWeapons
 			};
 			weaponSoundEffect="DefaultRifle";
 			reloadTime=8;
-			minRange=0;
-			midRange=0;
-			maxRange=0;
 			artilleryDispersion=7.1999998;
 			artilleryCharge=0.19;
 		};
 		class Single2: Single1
 		{
-			displayName="Semi (medium)";
 			artilleryCharge=0.30000001;
 		};
 		class Single3: Single1
 		{
-			displayName="Semi (far)";
 			artilleryCharge=0.47999999;
 		};
 		class Burst1: Mode_Burst
 		{
-			showToPlayer=0;
-			displayName="Burst (close)";
 			burst=6;
-			sounds[]=
-			{
-				"StandardSound"
-			};
-			class StandardSound
-			{
-				weaponSoundEffect="DefaultRifle";
-				begin1[]=
-				{
-					"A3\Sounds_F\weapons\Cannons\cannon_2",
-					2.5118899,
-					1,
-					1500
-				};
-				soundBegin[]=
-				{
-					"begin1",
-					1
-				};
-			};
 			reloadSound[]=
 			{
 				"A3\sounds_f\dummysound",
@@ -7663,39 +5888,16 @@ class CfgWeapons
 				20
 			};
 			weaponSoundEffect="DefaultRifle";
-			soundBurst=0;
 			reloadTime=6;
-			minRange=800;
-			minRangeProbab=0.5;
-			midRange=1500;
-			midRangeProbab=0.69999999;
-			maxRange=2000;
-			maxRangeProbab=0.5;
 			artilleryDispersion=5.3000002;
 			artilleryCharge=0.19;
 		};
 		class Burst2: Burst1
 		{
-			showToPlayer=0;
-			displayName="Burst (medium)";
-			minRange=2000;
-			minRangeProbab=0.40000001;
-			midRange=3000;
-			midRangeProbab=0.60000002;
-			maxRange=5200;
-			maxRangeProbab=0.40000001;
 			artilleryCharge=0.30000001;
 		};
 		class Burst3: Burst1
 		{
-			showToPlayer=0;
-			displayName="Burst (far)";
-			minRange=5200;
-			minRangeProbab=0.30000001;
-			midRange=8000;
-			midRangeProbab=0.40000001;
-			maxRange=13300;
-			maxRangeProbab=0.30000001;
 			artilleryCharge=0.47999999;
 		};
 	};
@@ -7706,39 +5908,10 @@ class CfgWeapons
 	};
 	class rhs_weap_d30: mortar_155mm_AMOS
 	{
-		displayName="$STR_RHS_DN_D30";
 		ballisticscomputer=2;
 		reloadTime=6;
 		magazineReloadTime=6;
-		class GunParticles
-		{
-			class Effect1
-			{
-				directionname="Konec hlavne";
-				positionname="Usti hlavne";
-				effectname="ArtilleryFired1";
-			};
-			class Effec2
-			{
-				directionname="ejector_pos";
-				positionname="ejector_dir";
-				effectname="RHS_D30_Fired";
-			};
-		};
-		modes[]=
-		{
-			"Single1",
-			"Single2",
-			"Single3",
-			"Burst1",
-			"Burst2",
-			"Burst3"
-		};
 	};
-	class rhs_weap_d30_at: rhs_weap_d81
-	{
-		displayName="$STR_RHS_DN_D30";
-		magazineWell[]={};
 		reloadTime=6;
 		magazineReloadTime=6;
 		autoReload=1;
@@ -7749,21 +5922,6 @@ class CfgWeapons
 			1,
 			200
 		};
-		class GunParticles
-		{
-			class Effect1
-			{
-				directionname="Konec hlavne";
-				effectname="ArtilleryFired1";
-				positionname="Usti hlavne";
-			};
-			class Effec2
-			{
-				directionname="ejector_pos";
-				positionname="ejector_dir";
-				effectname="RHS_D30_Fired";
-			};
-		};
 	};
 	class rhs_weap_gsh30: gatling_30mm
 	{
@@ -7771,10 +5929,6 @@ class CfgWeapons
 		cursor="mg";
 		cursoraim="EmptyCursor";
 		cursorsize=0;
-		muzzles[]=
-		{
-			"this"
-		};
 		displayname="$STR_RHS_GSH302K_NAME";
 		initspeed=940;
 		shotFromTurret=0;
@@ -7798,15 +5952,6 @@ class CfgWeapons
 		soundcontinuous=1;
 		flash="gunfire";
 		flashSize=0.5;
-		modes[]=
-		{
-			"manual",
-			"manual_low",
-			"close",
-			"short",
-			"medium",
-			"far"
-		};
 		class manual: Mode_FullAuto
 		{
 			airateoffire=0.5;
@@ -7840,51 +5985,10 @@ class CfgWeapons
 			reloadtime=0.2;
 			burst=0;
 		};
-		class close: manual
-		{
-			airateoffire=0.001;
-			airateoffiredistance=50;
-			aiRateOfFireDispersion=3;
-			burst=1;
-			maxrange=300;
-			maxrangeprobab=0.039999999;
-			midrange=100;
-			midrangeprobab=0.88;
-			minrange=0;
-			minrangeprobab=0.5;
-			showtoplayer=0;
-			soundburst=0;
-		};
-		class short: close
-		{
-			aiRateOfFire=0.25;
-			airateoffiredistance=300;
-			aiRateOfFireDispersion=3;
-			burst=10;
-			burstRangeMax=15;
-			maxrange=800;
-			midrange=500;
-			minrange=200;
-		};
-		class medium: manual_low
-		{
-			airateoffire=3;
-			airateoffiredistance=600;
-			burst=7;
-			burstRangeMax=12;
-			maxrangeprobab=0.039999999;
-			midrangeprobab=0.88;
-			minrangeprobab=0.5;
-			maxrange=1000;
-			midrange=800;
-			minrange=600;
-			showtoplayer=0;
-		};
 		class far: medium
 		{
 			airateoffire=4;
 			airateoffiredistance=1000;
-			aiRateOfFireDispersion=3;
 			burst=4;
 			burstRangeMax=9;
 			maxrange=1250;
@@ -7899,43 +6003,16 @@ class CfgWeapons
 	{
 		initspeed=870;
 		displayname="$STR_RHS_GSH302_NAME";
-		modes[]=
-		{
-			"manual",
-			"close",
-			"short",
-			"medium",
-			"far"
-		};
 		class manual: manual
 		{
 			displayname="$STR_RHS_GSH302_NAME";
 			reloadtime=0.02;
 			dispersion=0.003;
 		};
-		class close: close
-		{
-			reloadtime=0.02;
-		};
-		class short: short
-		{
-			reloadtime=0.02;
-		};
-		class medium: close
-		{
-			airateoffire=3;
-			airateoffiredistance=600;
-			burst=7;
-			burstRangeMax=12;
-			maxrange=1000;
-			midrange=800;
-			minrange=600;
-		};
 		class far: close
 		{
 			airateoffire=4;
 			airateoffiredistance=1000;
-			aiRateOfFireDispersion=3;
 			burst=4;
 			burstRangeMax=9;
 			maxrange=1250;
@@ -7961,26 +6038,8 @@ class CfgWeapons
 				effectname="AutoCannonFired";
 			};
 		};
-		modes[]=
-		{
-			"manual",
-			"close",
-			"short",
-			"medium",
-			"far"
-		};
-		muzzles[]=
-		{
-			"this",
-			"rhs_burst_safe"
-		};
 		class rhs_burst_safe: rhs_weap_gsh30
 		{
-			displayName="Burst Lock - GSh-30-1";
-			modes[]=
-			{
-				"manual"
-			};
 			class manual: manual
 			{
 				showtoplayer=0;
@@ -8001,29 +6060,10 @@ class CfgWeapons
 			dispersion=0.003;
 			burst=1;
 		};
-		class close: close
-		{
-			reloadtime=0.039999999;
-		};
-		class short: short
-		{
-			reloadtime=0.039999999;
-		};
-		class medium: close
-		{
-			airateoffire=3;
-			airateoffiredistance=600;
-			burst=7;
-			burstRangeMax=12;
-			maxrange=1000;
-			midrange=800;
-			minrange=600;
-		};
 		class far: close
 		{
 			airateoffire=4;
 			airateoffiredistance=1000;
-			aiRateOfFireDispersion=3;
 			burst=4;
 			burstRangeMax=9;
 			maxrange=1250;
@@ -8041,14 +6081,6 @@ class CfgWeapons
 		namesound="cannon";
 		shotFromTurret=0;
 		soundcontinuous=1;
-		modes[]=
-		{
-			"manual",
-			"close",
-			"short",
-			"medium",
-			"far"
-		};
 		class manual: manual
 		{
 			airateoffire=0.5;
@@ -8065,46 +6097,10 @@ class CfgWeapons
 			multiplier=1;
 			reloadtime=0.018750001;
 		};
-		class close: manual
-		{
-			airateoffire=0.001;
-			airateoffiredistance=50;
-			burst=1;
-			maxrange=300;
-			maxrangeprobab=0.039999999;
-			midrange=100;
-			midrangeprobab=0.57999998;
-			minrange=0;
-			minrangeprobab=0.5;
-			showtoplayer=0;
-		};
-		class short: close
-		{
-			airateoffire="2 + random 2";
-			airateoffiredistance=300;
-			aiRateOfFireDispersion=3;
-			burst=10;
-			burstRangeMax=15;
-			maxrange=800;
-			midrange=500;
-			minrange=200;
-		};
-		class medium: close
-		{
-			airateoffire=3;
-			airateoffiredistance=600;
-			aiRateOfFireDispersion=3;
-			burst=7;
-			burstRangeMax=11;
-			maxrange=1000;
-			midrange=800;
-			minrange=600;
-		};
 		class far: close
 		{
 			airateoffire=4;
 			airateoffiredistance=1000;
-			aiRateOfFireDispersion=3;
 			burst=4;
 			burstRangeMax=9;
 			maxrange=1250;
@@ -8148,18 +6144,6 @@ class CfgWeapons
 		{
 			reloadtime=0.0093750004;
 		};
-		class close: close
-		{
-			reloadtime=0.0093750004;
-		};
-		class short: short
-		{
-			reloadtime=0.0093750004;
-		};
-		class medium: medium
-		{
-			reloadtime=0.0093750004;
-		};
 		class far: far
 		{
 			reloadtime=0.0093750004;
@@ -8168,7 +6152,6 @@ class CfgWeapons
 	class rhs_weap_azp23: CannonCore
 	{
 		ballisticsComputer=4;
-		displayName="$STR_RHS_AZP23_NAME";
 		nameSound="cannon";
 		cartridgePos="eject1";
 		cartridgeVel="eject1dir";
@@ -8232,99 +6215,25 @@ class CfgWeapons
 			};
 		};
 		magazineReloadTime=14;
-		modes[]=
-		{
-			"manual",
-			"close",
-			"short",
-			"medium",
-			"far"
-		};
 		class manual: CannonCore
 		{
-			displayName="$STR_RHS_AZP23_NAME";
 			autoFire=1;
 			reloadTime=0.024;
 			dispersion=0.0049999999;
 			multiplier=2;
-			soundContinuous=0;
-			showToPlayer=1;
 			burst=1;
-			aiRateOfFire=0.5;
-			aiRateOfFireDistance=50;
-			minRange=1;
-			minRangeProbab=0.0099999998;
-			midRange=2;
-			midRangeProbab=0.0099999998;
-			maxRange=3;
-			maxRangeProbab=0.0099999998;
-		};
-		class close: manual
-		{
-			showToPlayer=0;
-			soundBurst=0;
-			burst=10;
-			burstRangeMax=15;
-			aiRateOfFire=2;
-			aiRateOfFireDistance=1000;
-			aiRateOfFireDispersion=2;
-			minRange=0;
-			minRangeProbab=0.050000001;
-			midRange=1000;
-			midRangeProbab=0.57999998;
-			maxRange=1600;
-			maxRangeProbab=0.30000001;
-		};
-		class short: close
-		{
-			burst=10;
-			burstRangeMax=16;
-			aiRateOfFire=4;
-			aiRateOfFireDistance=1600;
-			aiRateOfFireDispersion=3;
-			minRange=1000;
-			minRangeProbab=0.30000001;
-			midRange=1600;
-			midRangeProbab=0.57999998;
-			maxRange=2200;
-			maxRangeProbab=0.30000001;
-		};
-		class medium: close
-		{
-			burst=15;
-			burstRangeMax=25;
-			aiRateOfFire=4;
-			aiRateOfFireDistance=2200;
-			aiRateOfFireDispersion=3;
-			minRange=1600;
-			minRangeProbab=0.30000001;
-			midRange=2000;
-			midRangeProbab=0.57999998;
-			maxRange=2800;
-			maxRangeProbab=0.30000001;
 		};
 		class far: close
 		{
 			burst=9;
 			burstRangeMax=18;
-			aiRateOfFire=5;
-			aiRateOfFireDistance=3000;
-			aiRateOfFireDispersion=4;
-			minRange=1600;
-			minRangeProbab=0.30000001;
-			midRange=2200;
-			midRangeProbab=0.40000001;
-			maxRange=8500;
-			maxRangeProbab=0.0099999998;
 		};
 	};
 	class rhs_weap_2a14: rhs_weap_azp23
 	{
-		type=1;
 		ballisticsComputer=2;
 		canLock=0;
 		weaponLockSystem=1;
-		displayName="2A14";
 		class gunParticles
 		{
 			class effect1
@@ -8337,7 +6246,6 @@ class CfgWeapons
 		magazineReloadTime=9;
 		class manual: manual
 		{
-			displayName="2A14";
 			reloadTime=0.029999999;
 		};
 	};
@@ -8347,21 +6255,8 @@ class CfgWeapons
 		class Burst2;
 		class Burst3;
 		class Single1;
-		class Single2;
-		class Single3;
-	};
 	class rhs_weap_2p130: mortar_82mm
 	{
-		displayName="$STR_RHS_2P130_NAME";
-		class GunParticles
-		{
-			class FirstEffect
-			{
-				effectName="MortarFired";
-				positionName="2p130_start";
-				directionName="2p130_end";
-			};
-		};
 		class Burst1: Burst1
 		{
 			reloadTime=5.8000002;
@@ -8387,43 +6282,11 @@ class CfgWeapons
 			reloadTime=5.8000002;
 		};
 	};
-	class rhs_weap_2b14: mortar_82mm
-	{
-		displayName="$STR_RHS_2b14_NAME";
-	};
 	class MissileLauncher;
 	class rhs_weap_9k11: MissileLauncher
 	{
-		displayName="$STR_RHS_WEAP_9K11";
-		minRange=300;
-		minRangeProbab=0.1;
-		midRange=1000;
-		midRangeProbab=0.69999999;
-		maxRange=2000;
-		maxRangeProbab=0.001;
-		sounds[]=
-		{
-			"StandardSound"
-		};
-		class StandardSound
-		{
-			weaponSoundEffect="DefaultRifle";
-			begin1[]=
-			{
-				"\rhsafrf\addons\rhs_c_heavyweapons\sounds\rhs_s_atgm.ogg",
-				2.5118864,
-				1200
-			};
-			soundBegin[]=
-			{
-				"begin1",
-				1
-			};
-		};
 		reloadTime=3;
 		magazineReloadTime=30;
-		aiRateOfFire=5;
-		aiRateOfFireDistance=500;
 		autoreload=0;
 	};
 	class missiles_Zephyr;
@@ -8431,49 +6294,14 @@ class CfgWeapons
 	class rhs_weap_9m111: MissileLauncher
 	{
 		canLock=1;
-		minRange=10;
-		minRangeProbab=0.5;
-		midRange=1450;
-		midRangeProbab=1;
-		maxRange=2550;
-		maxRangeProbab=0.60000002;
-		aiRateOfFireDistance=500;
 		reloadTime=30;
 		magazineReloadTime=30;
-		displayName="$STR_RHS_WEAP_9M111";
-		sounds[]=
-		{
-			"StandardSound"
-		};
-		class StandardSound
-		{
-			weaponSoundEffect="DefaultRifle";
-			begin1[]=
-			{
-				"\rhsafrf\addons\rhs_c_heavyweapons\sounds\rhs_s_atgm.ogg",
-				2.5118864,
-				1200
-			};
-			soundBegin[]=
-			{
-				"begin1",
-				1
-			};
-		};
-		aiRateOfFire=5;
 		autoreload=0;
 		holdsterAnimValue=1;
 	};
 	class rhs_weap_9m113: rhs_weap_9m111
 	{
 		autoreload=0;
-		minRange=10;
-		minRangeProbab=0.5;
-		midRange=1450;
-		midRangeProbab=1;
-		maxRange=3750;
-		maxRangeProbab=0.60000002;
-		displayName="$STR_RHS_WEAP_9M113";
 	};
 	class rhs_weap_9P148: rhs_weap_9m111
 	{
@@ -8497,57 +6325,13 @@ class CfgWeapons
 	};
 	class rhs_weap_9m119: rhs_weap_9m111
 	{
-		minRange=10;
-		midRange=2450;
-		maxRange=5000;
 		reloadTime=30;
 		magazineReloadTime=30;
-		displayName="$STR_RHS_WEAP_9M111";
-		sounds[]=
-		{
-			"StandardSound"
-		};
-		class StandardSound
-		{
-			weaponSoundEffect="DefaultRifle";
-			begin1[]=
-			{
-				"\rhsafrf\addons\rhs_c_heavyweapons\sounds\rhs_s_atgm.ogg",
-				2.5118864,
-				1200
-			};
-			soundBegin[]=
-			{
-				"begin1",
-				1
-			};
-		};
-		aiRateOfFire=5;
 	};
 	class rhs_weap_2k4: rhs_weap_9m111
 	{
 		reloadTime=10;
 		magazineReloadTime=8.5;
-		displayName="2K4";
-		sounds[]=
-		{
-			"StandardSound"
-		};
-		class StandardSound
-		{
-			weaponSoundEffect="DefaultRifle";
-			begin1[]=
-			{
-				"\rhsafrf\addons\rhs_c_heavyweapons\sounds\rhs_s_atgm.ogg",
-				2.5118864,
-				1200
-			};
-			soundBegin[]=
-			{
-				"begin1",
-				1
-			};
-		};
 		reloadSound[]=
 		{
 			"\rhsafrf\addons\rhs_c_heavyweapons\sounds\rhs_s_2a37_reload.ogg",
@@ -8557,78 +6341,15 @@ class CfgWeapons
 	};
 	class rhs_weap_9k133: rhs_weap_9m111
 	{
-		displayName="$STR_RHS_WEAP_9K133";
-		sounds[]=
-		{
-			"StandardSound"
-		};
-		class StandardSound
-		{
-			weaponSoundEffect="DefaultRifle";
-			begin1[]=
-			{
-				"\rhsafrf\addons\rhs_c_heavyweapons\sounds\rhs_s_atgm.ogg",
-				2.5118864,
-				1200
-			};
-			soundBegin[]=
-			{
-				"begin1",
-				1
-			};
-		};
 		reloadTime=0.1;
 	};
 	class RocketPods;
 	class rhs_weap_SPG9: RocketPods
 	{
 		canlock=0;
-		displayName="$STR_RHS_DN_SPG9";
-		type=65536;
 		reloadTime=3;
 		magazineReloadTime=10;
-		sounds[]=
-		{
-			"StandardSound"
-		};
-		class StandardSound
-		{
-			weaponSoundEffect="DefaultRifle";
-			begin1[]=
-			{
-				"rhsafrf\addons\rhs_sounds\rpg\rpg_1",
-				2.3499999,
-				1,
-				1100
-			};
-			begin2[]=
-			{
-				"rhsafrf\addons\rhs_sounds\rpg\rpg_2",
-				2.3499999,
-				1,
-				1100
-			};
-			soundBegin[]=
-			{
-				"begin1",
-				0.5,
-				"begin2",
-				0.5
-			};
-		};
-		reloadMagazineSound[]=
-		{
-			"\rhsafrf\addons\rhs_c_heavyweapons\sounds\flare_reload",
-			0.00031622773,
-			1,
-			20
-		};
 		recoil="launcherBase";
-		aiRateOfFire=10;
-		aiRateOfFireDistance=450;
-		minRange=50;
-		midRange=450;
-		maxRange=800;
 		cursor="Rocket";
 		cursorSize=1;
 	};
@@ -8724,42 +6445,6 @@ class CfgWeapons
 	class missiles_titan_static;
 	class rhs_weap_Igla_twice: missiles_titan_static
 	{
-		displayName="$STR_RHS_DN_IGLA_TWICE";
-		minRange=500;
-		minRangeProbab=0.30000001;
-		midRange=3100;
-		midRangeProbab=0.80000001;
-		maxRange=5200;
-		maxRangeProbab=0.1;
-		aiRateOfFire=5;
-		aiRateOfFireDistance=2100;
-		reloadMagazineSound[]=
-		{
-			"A3\Sounds_F\weapons\Reloads\reload_magazine_MissileLauncher",
-			0.89125103,
-			1,
-			10
-		};
-		sounds[]=
-		{
-			"StandardSound"
-		};
-		class StandardSound
-		{
-			begin1[]=
-			{
-				"A3\Sounds_F\weapons\Rockets\titan_4",
-				1.41254,
-				1,
-				1100
-			};
-			soundBegin[]=
-			{
-				"begin1",
-				1
-			};
-			weaponSoundEffect="DefaultRifle";
-		};
 		reloadTime=4;
 		magazineReloadTime=20;
 		weaponLockSystem=2;
@@ -8768,15 +6453,6 @@ class CfgWeapons
 	class rhs_weap_grad: rockets_230mm_GAT
 	{
 		displayname="$STR_RHS_122MMGRAD_NAME";
-		modes[]=
-		{
-			"Mode_1",
-			"Mode_2",
-			"Mode_3",
-			"Mode_4",
-			"Mode_5",
-			"Mode_6"
-		};
 		magazineReloadTime=0.15000001;
 		class Close: RocketPods
 		{
@@ -8793,85 +6469,30 @@ class CfgWeapons
 			minrange=800;
 			minrangeprobab=0.15000001;
 			reloadtime=0.2;
-			soundBurst=0;
-			sounds[]=
-			{
-				"StandardSound"
-			};
-			class StandardSound
-			{
-				soundSetShot[]=
-				{
-					"Launcher_Titan_Shot_SoundSet",
-					"Launcher_Titan_Tail_SoundSet"
-				};
-			};
 		};
 		class Mode_1: Close
 		{
-			displayName="5000m-6500m";
 			artilleryCharge=0.36500001;
-			minRange=5000;
-			minRangeProbab=0.15000001;
-			midRange=5750;
-			midRangeProbab=0.64999998;
-			maxRange=6500;
-			maxRangeProbab=0.050000001;
 		};
 		class Mode_2: Close
 		{
-			displayName="6500m-8300m";
 			artilleryCharge=0.41499999;
-			minRange=6500;
-			minRangeProbab=0.15000001;
-			midRange=7400;
-			midRangeProbab=0.64999998;
-			maxRange=8300;
-			maxRangeProbab=0.050000001;
 		};
 		class Mode_3: Close
 		{
-			displayName="8300m-10000m";
 			artilleryCharge=0.47;
-			minRange=8300;
-			minRangeProbab=0.15000001;
-			midRange=9150;
-			midRangeProbab=0.64999998;
-			maxRange=10000;
-			maxRangeProbab=0.050000001;
 		};
 		class Mode_4: Close
 		{
-			displayName="10000m-13000m";
 			artilleryCharge=0.51800001;
-			minRange=10000;
-			minRangeProbab=0.15000001;
-			midRange=11500;
-			midRangeProbab=0.64999998;
-			maxRange=13000;
-			maxRangeProbab=0.050000001;
 		};
 		class Mode_5: Close
 		{
-			displayName="13000m-16000m";
 			artilleryCharge=0.57999998;
-			minRange=13000;
-			minRangeProbab=0.15000001;
-			midRange=14500;
-			midRangeProbab=0.64999998;
-			maxRange=16000;
-			maxRangeProbab=0.050000001;
 		};
 		class Mode_6: Close
 		{
-			displayName="16000m-20000m";
 			artilleryCharge=0.64999998;
-			minRange=16000;
-			minRangeProbab=0.15000001;
-			midRange=18000;
-			midRangeProbab=0.64999998;
-			maxRange=20000;
-			maxRangeProbab=0.050000001;
 		};
 		class EventHandlers
 		{
@@ -8881,588 +6502,203 @@ class CfgWeapons
 			};
 		};
 	};
-	class rhs_weap_bm21: rhs_weap_grad
-	{
-	};
 	class rhs_weap_bm21_9m28f: rhs_weap_grad
 	{
-		modes[]=
-		{
-			"Mode_1",
-			"Mode_2",
-			"Mode_3",
-			"Mode_4",
-			"Mode_5",
-			"Mode_6",
-			"Mode_7",
-			"Mode_8",
-			"Mode_9",
-			"Mode_10"
-		};
 		class Mode_1: Close
 		{
-			displayName="1500m-1900m";
 			artilleryCharge=0.2;
-			minRange=1500;
-			minRangeProbab=0.15000001;
-			midRange=1700;
-			midRangeProbab=0.64999998;
-			maxRange=1900;
-			maxRangeProbab=0.050000001;
 		};
 		class Mode_2: Close
 		{
-			displayName="1900m-2400m";
 			artilleryCharge=0.226;
-			minRange=1900;
-			minRangeProbab=0.15000001;
-			midRange=2150;
-			midRangeProbab=0.64999998;
-			maxRange=2400;
-			maxRangeProbab=0.050000001;
 		};
 		class Mode_3: Close
 		{
-			displayName="2400m-3100m";
 			artilleryCharge=0.255;
-			minRange=2400;
-			minRangeProbab=0.15000001;
-			midRange=2750;
-			midRangeProbab=0.64999998;
-			maxRange=3100;
-			maxRangeProbab=0.050000001;
 		};
 		class Mode_4: Close
 		{
-			displayName="3100m-4000m";
 			artilleryCharge=0.28799999;
-			minRange=3100;
-			minRangeProbab=0.15000001;
-			midRange=3550;
-			midRangeProbab=0.64999998;
-			maxRange=4000;
-			maxRangeProbab=0.050000001;
 		};
 		class Mode_5: Close
 		{
-			displayName="4000m-3100m";
 			artilleryCharge=0.33000001;
-			minRange=4000;
-			minRangeProbab=0.15000001;
-			midRange=3550;
-			midRangeProbab=0.64999998;
-			maxRange=3100;
-			maxRangeProbab=0.050000001;
 		};
 		class Mode_6: Close
 		{
-			displayName="5000m-6500m";
 			artilleryCharge=0.36500001;
-			minRange=5000;
-			minRangeProbab=0.15000001;
-			midRange=5750;
-			midRangeProbab=0.64999998;
-			maxRange=6500;
-			maxRangeProbab=0.050000001;
 		};
 		class Mode_7: Close
 		{
-			displayName="6500m-8300m";
 			artilleryCharge=0.41499999;
-			minRange=6500;
-			minRangeProbab=0.15000001;
-			midRange=7400;
-			midRangeProbab=0.64999998;
-			maxRange=8300;
-			maxRangeProbab=0.050000001;
 		};
 		class Mode_8: Close
 		{
-			displayName="8300m-10000m";
 			artilleryCharge=0.47;
-			minRange=8300;
-			minRangeProbab=0.15000001;
-			midRange=9150;
-			midRangeProbab=0.64999998;
-			maxRange=10000;
-			maxRangeProbab=0.050000001;
 		};
 		class Mode_9: Close
 		{
-			displayName="10000m-13000m";
 			artilleryCharge=0.51800001;
-			minRange=10000;
-			minRangeProbab=0.15000001;
-			midRange=11500;
-			midRangeProbab=0.64999998;
-			maxRange=13000;
-			maxRangeProbab=0.050000001;
 		};
 		class Mode_10: Close
 		{
-			displayName="13000m-15000m";
 			artilleryCharge=0.56;
-			minRange=13000;
-			minRangeProbab=0.15000001;
-			midRange=14000;
-			midRangeProbab=0.64999998;
-			maxRange=15000;
-			maxRangeProbab=0.050000001;
 		};
 	};
 	class rhs_weap_bm21_9m28k: rhs_weap_grad
 	{
-		modes[]=
-		{
-			"Mode_1",
-			"Mode_2",
-			"Mode_3",
-			"Mode_4",
-			"Mode_5",
-			"Mode_6",
-			"Mode_7",
-			"Mode_8",
-			"Mode_9"
-		};
 		class Mode_1: Close
 		{
-			displayName="1500m-1900m";
 			artilleryCharge=0.2;
-			minRange=1500;
-			minRangeProbab=0.15000001;
-			midRange=1700;
-			midRangeProbab=0.64999998;
-			maxRange=1900;
-			maxRangeProbab=0.050000001;
 		};
 		class Mode_2: Close
 		{
-			displayName="1900m-2400m";
 			artilleryCharge=0.226;
-			minRange=1900;
-			minRangeProbab=0.15000001;
-			midRange=2150;
-			midRangeProbab=0.64999998;
-			maxRange=2400;
-			maxRangeProbab=0.050000001;
 		};
 		class Mode_3: Close
 		{
-			displayName="2400m-3100m";
 			artilleryCharge=0.255;
-			minRange=2400;
-			minRangeProbab=0.15000001;
-			midRange=2750;
-			midRangeProbab=0.64999998;
-			maxRange=3100;
-			maxRangeProbab=0.050000001;
 		};
 		class Mode_4: Close
 		{
-			displayName="3100m-4000m";
 			artilleryCharge=0.28799999;
-			minRange=3100;
-			minRangeProbab=0.15000001;
-			midRange=3550;
-			midRangeProbab=0.64999998;
-			maxRange=4000;
-			maxRangeProbab=0.050000001;
 		};
 		class Mode_5: Close
 		{
-			displayName="4000m-3100m";
 			artilleryCharge=0.33000001;
-			minRange=4000;
-			minRangeProbab=0.15000001;
-			midRange=3550;
-			midRangeProbab=0.64999998;
-			maxRange=3100;
-			maxRangeProbab=0.050000001;
 		};
 		class Mode_6: Close
 		{
-			displayName="5000m-6500m";
 			artilleryCharge=0.36500001;
-			minRange=5000;
-			minRangeProbab=0.15000001;
-			midRange=5750;
-			midRangeProbab=0.64999998;
-			maxRange=6500;
-			maxRangeProbab=0.050000001;
 		};
 		class Mode_7: Close
 		{
-			displayName="6500m-8300m";
 			artilleryCharge=0.41499999;
-			minRange=6500;
-			minRangeProbab=0.15000001;
-			midRange=7400;
-			midRangeProbab=0.64999998;
-			maxRange=8300;
-			maxRangeProbab=0.050000001;
 		};
 		class Mode_8: Close
 		{
-			displayName="8300m-10000m";
 			artilleryCharge=0.47;
-			minRange=8300;
-			minRangeProbab=0.15000001;
-			midRange=9150;
-			midRangeProbab=0.64999998;
-			maxRange=10000;
-			maxRangeProbab=0.050000001;
 		};
 		class Mode_9: Close
 		{
-			displayName="10000m-13000m";
 			artilleryCharge=0.51800001;
-			minRange=10000;
-			minRangeProbab=0.15000001;
-			midRange=11500;
-			midRangeProbab=0.64999998;
-			maxRange=13000;
-			maxRangeProbab=0.050000001;
 		};
 	};
 	class rhs_weap_bm21_9m218: rhs_weap_grad
 	{
-		modes[]=
-		{
-			"Mode_1",
-			"Mode_2",
-			"Mode_3",
-			"Mode_4",
-			"Mode_5",
-			"Mode_6",
-			"Mode_7",
-			"Mode_8"
-		};
 		class Mode_1: Close
 		{
-			displayName="5000m-6500m";
 			artilleryCharge=0.36500001;
-			minRange=5000;
-			minRangeProbab=0.15000001;
-			midRange=5750;
-			midRangeProbab=0.64999998;
-			maxRange=6500;
-			maxRangeProbab=0.050000001;
 		};
 		class Mode_2: Close
 		{
-			displayName="6500m-8300m";
 			artilleryCharge=0.41499999;
-			minRange=6500;
-			minRangeProbab=0.15000001;
-			midRange=7400;
-			midRangeProbab=0.64999998;
-			maxRange=8300;
-			maxRangeProbab=0.050000001;
 		};
 		class Mode_3: Close
 		{
-			displayName="8300m-10000m";
 			artilleryCharge=0.47;
-			minRange=8300;
-			minRangeProbab=0.15000001;
-			midRange=9150;
-			midRangeProbab=0.64999998;
-			maxRange=10000;
-			maxRangeProbab=0.050000001;
 		};
 		class Mode_4: Close
 		{
-			displayName="10000m-13000m";
 			artilleryCharge=0.51800001;
-			minRange=10000;
-			minRangeProbab=0.15000001;
-			midRange=11500;
-			midRangeProbab=0.64999998;
-			maxRange=13000;
-			maxRangeProbab=0.050000001;
 		};
 		class Mode_5: Close
 		{
-			displayName="13000m-16000m";
 			artilleryCharge=0.57999998;
-			minRange=13000;
-			minRangeProbab=0.15000001;
-			midRange=14500;
-			midRangeProbab=0.64999998;
-			maxRange=16000;
-			maxRangeProbab=0.050000001;
 		};
 		class Mode_6: Close
 		{
-			displayName="16000m-20000m";
 			artilleryCharge=0.64999998;
-			minRange=16000;
-			minRangeProbab=0.15000001;
-			midRange=18000;
-			midRangeProbab=0.64999998;
-			maxRange=20000;
-			maxRangeProbab=0.050000001;
 		};
 		class Mode_7: Close
 		{
-			displayName="20000m-25000m";
 			artilleryCharge=0.72000003;
-			minRange=20000;
-			minRangeProbab=0.15000001;
-			midRange=22500;
-			midRangeProbab=0.64999998;
-			maxRange=25000;
-			maxRangeProbab=0.050000001;
 		};
 		class Mode_8: Close
 		{
-			displayName="25000m-30000m";
 			artilleryCharge=0.79000002;
-			minRange=25000;
-			minRangeProbab=0.15000001;
-			midRange=27500;
-			midRangeProbab=0.64999998;
-			maxRange=30000;
-			maxRangeProbab=0.050000001;
 		};
 	};
 	class rhs_weap_bm21_9m521: rhs_weap_grad
 	{
-		modes[]=
-		{
-			"Mode_1",
-			"Mode_2",
-			"Mode_3",
-			"Mode_4",
-			"Mode_5",
-			"Mode_6",
-			"Mode_7",
-			"Mode_9",
-			"Mode_10"
-		};
 		class Mode_1: Close
 		{
-			displayName="5000m-6500m";
 			artilleryCharge=0.36500001;
-			minRange=5000;
-			minRangeProbab=0.15000001;
-			midRange=5750;
-			midRangeProbab=0.64999998;
-			maxRange=6500;
-			maxRangeProbab=0.050000001;
 		};
 		class Mode_2: Close
 		{
-			displayName="6500m-8300m";
 			artilleryCharge=0.41499999;
-			minRange=6500;
-			minRangeProbab=0.15000001;
-			midRange=7400;
-			midRangeProbab=0.64999998;
-			maxRange=8300;
-			maxRangeProbab=0.050000001;
 		};
 		class Mode_3: Close
 		{
-			displayName="8300m-10000m";
 			artilleryCharge=0.47;
-			minRange=8300;
-			minRangeProbab=0.15000001;
-			midRange=9150;
-			midRangeProbab=0.64999998;
-			maxRange=10000;
-			maxRangeProbab=0.050000001;
 		};
 		class Mode_4: Close
 		{
-			displayName="10000m-13000m";
 			artilleryCharge=0.51800001;
-			minRange=10000;
-			minRangeProbab=0.15000001;
-			midRange=11500;
-			midRangeProbab=0.64999998;
-			maxRange=13000;
-			maxRangeProbab=0.050000001;
 		};
 		class Mode_5: Close
 		{
-			displayName="13000m-16000m";
 			artilleryCharge=0.57999998;
-			minRange=13000;
-			minRangeProbab=0.15000001;
-			midRange=14500;
-			midRangeProbab=0.64999998;
-			maxRange=16000;
-			maxRangeProbab=0.050000001;
 		};
 		class Mode_6: Close
 		{
-			displayName="16000m-20000m";
 			artilleryCharge=0.64999998;
-			minRange=16000;
-			minRangeProbab=0.15000001;
-			midRange=18000;
-			midRangeProbab=0.64999998;
-			maxRange=20000;
-			maxRangeProbab=0.050000001;
 		};
 		class Mode_7: Close
 		{
-			displayName="20000m-25000m";
 			artilleryCharge=0.72000003;
-			minRange=20000;
-			minRangeProbab=0.15000001;
-			midRange=22500;
-			midRangeProbab=0.64999998;
-			maxRange=25000;
-			maxRangeProbab=0.050000001;
 		};
 		class Mode_8: Close
 		{
-			displayName="25000m-30000m";
 			artilleryCharge=0.79000002;
-			minRange=25000;
-			minRangeProbab=0.15000001;
-			midRange=27500;
-			midRangeProbab=0.64999998;
-			maxRange=30000;
-			maxRangeProbab=0.050000001;
 		};
 		class Mode_9: Close
 		{
-			displayName="30000m-35000m";
 			artilleryCharge=0.85000002;
-			minRange=30000;
-			minRangeProbab=0.15000001;
-			midRange=32500;
-			midRangeProbab=0.64999998;
-			maxRange=35000;
-			maxRangeProbab=0.050000001;
 		};
 		class Mode_10: Close
 		{
-			displayName="35000m-40000m";
 			artilleryCharge=0.91000003;
-			minRange=35000;
-			minRangeProbab=0.15000001;
-			midRange=37500;
-			midRangeProbab=0.64999998;
-			maxRange=40000;
-			maxRangeProbab=0.050000001;
 		};
 	};
 	class rhs_weap_bm21_9m522: rhs_weap_grad
 	{
-		modes[]=
-		{
-			"Mode_1",
-			"Mode_2",
-			"Mode_3",
-			"Mode_4",
-			"Mode_5",
-			"Mode_6",
-			"Mode_7",
-			"Mode_8",
-			"Mode_9"
-		};
 		class Mode_1: Close
 		{
-			displayName="5000m-6500m";
 			artilleryCharge=0.36500001;
-			minRange=5000;
-			minRangeProbab=0.15000001;
-			midRange=5750;
-			midRangeProbab=0.64999998;
-			maxRange=6500;
-			maxRangeProbab=0.050000001;
 		};
 		class Mode_2: Close
 		{
-			displayName="6500m-8300m";
 			artilleryCharge=0.41499999;
-			minRange=6500;
-			minRangeProbab=0.15000001;
-			midRange=7400;
-			midRangeProbab=0.64999998;
-			maxRange=8300;
-			maxRangeProbab=0.050000001;
 		};
 		class Mode_3: Close
 		{
-			displayName="8300m-10000m";
 			artilleryCharge=0.47;
-			minRange=8300;
-			minRangeProbab=0.15000001;
-			midRange=9150;
-			midRangeProbab=0.64999998;
-			maxRange=10000;
-			maxRangeProbab=0.050000001;
 		};
 		class Mode_4: Close
 		{
-			displayName="10000m-13000m";
 			artilleryCharge=0.51800001;
-			minRange=10000;
-			minRangeProbab=0.15000001;
-			midRange=11500;
-			midRangeProbab=0.64999998;
-			maxRange=13000;
-			maxRangeProbab=0.050000001;
 		};
 		class Mode_5: Close
 		{
-			displayName="13000m-16000m";
 			artilleryCharge=0.57999998;
-			minRange=13000;
-			minRangeProbab=0.15000001;
-			midRange=14500;
-			midRangeProbab=0.64999998;
-			maxRange=16000;
-			maxRangeProbab=0.050000001;
 		};
 		class Mode_6: Close
 		{
-			displayName="16000m-20000m";
 			artilleryCharge=0.64999998;
-			minRange=16000;
-			minRangeProbab=0.15000001;
-			midRange=18000;
-			midRangeProbab=0.64999998;
-			maxRange=20000;
-			maxRangeProbab=0.050000001;
 		};
 		class Mode_7: Close
 		{
-			displayName="20000m-25000m";
 			artilleryCharge=0.72000003;
-			minRange=20000;
-			minRangeProbab=0.15000001;
-			midRange=22500;
-			midRangeProbab=0.64999998;
-			maxRange=25000;
-			maxRangeProbab=0.050000001;
 		};
 		class Mode_8: Close
 		{
-			displayName="25000m-30000m";
 			artilleryCharge=0.79000002;
-			minRange=25000;
-			minRangeProbab=0.15000001;
-			midRange=27500;
-			midRangeProbab=0.64999998;
-			maxRange=30000;
-			maxRangeProbab=0.050000001;
 		};
 		class Mode_9: Close
 		{
-			displayName="30000m-37500m";
 			artilleryCharge=0.87900001;
-			minRange=30000;
-			minRangeProbab=0.15000001;
-			midRange=33750;
-			midRangeProbab=0.64999998;
-			maxRange=37500;
-			maxRangeProbab=0.050000001;
 		};
 	};
 };
@@ -9618,10 +6854,6 @@ class cfgSFX
 			10,
 			10,
 			10
-		};
-		sounds[]=
-		{
-			"sound0"
 		};
 		titles[]={};
 		empty[]=
@@ -10558,9 +7790,6 @@ class CfgCloudlets
 		size[]={3,5.25,9.75};
 		interval=0.125;
 	};
-	class RHS_3D17ExplosionCloud: RHS_3D17TrailEffect
-	{
-		moveVelocity[]={0,0,0.1};
 		size[]={2.8125,5.625,7.875};
 		weight=1.277;
 		volume="1.25 + randomValue / 30";
@@ -11063,9 +8292,6 @@ class CfgCloudlets
 };
 class CfgLights
 {
-	class RHS_LightNuke
-	{
-		diffuse[]={0.40000001,0.28,0.15000001};
 		color[]={1500,1200,1000};
 		ambient[]={1500,1200,1000};
 		brightness=10000000;
@@ -11085,9 +8311,6 @@ class CfgLights
 		};
 		position[]={0,0,0};
 	};
-	class RHS_KPVT_Light
-	{
-		diffuse[]={0.40000001,0.28,0.15000001};
 		color[]={1,0.5,0.2};
 		ambient[]={0.80000001,0.60000002,0.2};
 		brightness=0.02;
@@ -11106,9 +8329,6 @@ class CfgLights
 		};
 		position[]={0,0,0};
 	};
-	class RHS_3D17SparksLight
-	{
-		diffuse[]={0.93699998,0.80000001,0.69999999};
 		color[]={0.93699998,0.80000001,0.69999999};
 		ambient[]={0.93699998,0.80000001,0.69999999};
 		brightness="10 + random 40";
@@ -11155,7 +8375,6 @@ class RHS_KPVT_Effect
 	class Light1
 	{
 		simulation="light";
-		type="FiredLightSmall";
 		position[]={0,0,0};
 		intensity=0;
 		interval=1;
@@ -11164,7 +8383,6 @@ class RHS_KPVT_Effect
 	class RHS_KPVT_Flash
 	{
 		simulation="particles";
-		type="RHS_KPVT_Flash";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
@@ -11173,7 +8391,6 @@ class RHS_KPVT_Effect
 	class MachineGunCloud1
 	{
 		simulation="particles";
-		type="MachineGunCloud1";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
@@ -11182,7 +8399,6 @@ class RHS_KPVT_Effect
 	class MachineGunDust1
 	{
 		simulation="particles";
-		type="MachineGunDust1";
 		position[]={0,0,0};
 		enabled="(humidity interpolate [0.2,0.20001,1,0]) * isWaterSurface";
 		intensity=1;
@@ -11195,7 +8411,6 @@ class RHS_Tank_Catridge
 	class RHS_Tank_Catridge
 	{
 		simulation="particles";
-		type="RHS_Tank_Catridge";
 		position[]={0,0,0};
 		intensity=1;
 		interval=5;
@@ -11205,7 +8420,6 @@ class RHS_Tank_Catridge
 	class RHS_Tank_CatridgeMed
 	{
 		simulation="particles";
-		type="RHS_Tank_Catridge";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
@@ -11218,7 +8432,6 @@ class RHS_30mm_Catridge
 	class RHS_30mm_Catridge
 	{
 		simulation="particles";
-		type="RHS_30mm_Catridge";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
@@ -11228,7 +8441,6 @@ class RHS_30mm_Catridge
 	class RHS_30mm_CatridgeMed
 	{
 		simulation="particles";
-		type="RHS_30mm_Catridge";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
@@ -11241,7 +8453,6 @@ class RHS_30mm_Catridge_Simulated
 	class RHS_30mm_Catridge
 	{
 		simulation="epeparticles";
-		type="RHS_30mm_Catridge";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
@@ -11253,7 +8464,6 @@ class RHS_145mm_Catridge
 	class RHS_30mm_Catridge
 	{
 		simulation="particles";
-		type="RHS_145mm_Catridge";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
@@ -11263,7 +8473,6 @@ class RHS_145mm_Catridge
 	class RHS_30mm_CatridgeMed
 	{
 		simulation="particles";
-		type="RHS_145mm_Catridge";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
@@ -11276,7 +8485,6 @@ class RHS_ATGM_Cap
 	class RHS_30mm_Catridge
 	{
 		simulation="particles";
-		type="RHS_ATGM_Cap";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
@@ -11286,7 +8494,6 @@ class RHS_ATGM_Cap
 	class RHS_30mm_CatridgeMed
 	{
 		simulation="particles";
-		type="RHS_ATGM_Cap";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
@@ -11299,7 +8506,6 @@ class RHS_ATGM_Cap_x2
 	class RHS_30mm_Catridge
 	{
 		simulation="particles";
-		type="RHS_ATGM_Cap_x2";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
@@ -11309,7 +8515,6 @@ class RHS_ATGM_Cap_x2
 	class RHS_30mm_CatridgeMed
 	{
 		simulation="particles";
-		type="RHS_ATGM_Cap_x2";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
@@ -11322,7 +8527,6 @@ class RHS_NukeExplosion5
 	class Cone
 	{
 		simulation="particles";
-		type="RHS_NukeConeFire";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
@@ -11331,7 +8535,6 @@ class RHS_NukeExplosion5
 	class SmokeBottom
 	{
 		simulation="particles";
-		type="RHS_NukeConeSmokeBottom";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
@@ -11340,7 +8543,6 @@ class RHS_NukeExplosion5
 	class SmokeTop
 	{
 		simulation="particles";
-		type="RHS_NukeConeSmokeTop";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
@@ -11349,7 +8551,6 @@ class RHS_NukeExplosion5
 	class Smoke
 	{
 		simulation="particles";
-		type="RHS_NukeSmokeChimney";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
@@ -11358,7 +8559,6 @@ class RHS_NukeExplosion5
 	class Light
 	{
 		simulation="light";
-		type="RHS_LightNuke";
 		position[]={0,0,0};
 		intensity=0.1;
 		interval=1;
@@ -11370,35 +8570,29 @@ class RHS_ExhaustEffectTankGasBack
 	class ExhaustsEffect01
 	{
 		simulation="particles";
-		type="ExhaustSmoke1HeliBig";
 	};
 	class ExhaustsEffectRefract01
 	{
 		simulation="particles";
-		type="ExhaustSmokeRefractGasTurbine";
 	};
 	class ExhaustsEffectWater01
 	{
 		simulation="particles";
-		type="ExhaustSmokeBigWater1";
 		qualityLevel=2;
 	};
 	class ExhaustsEffectWater01Med
 	{
 		simulation="particles";
-		type="ExhaustSmokeBigWater1";
 		qualityLevel=1;
 	};
 	class ExhaustsEffectWater02
 	{
 		simulation="particles";
-		type="ExhaustSmokeBigWater2";
 		qualityLevel=2;
 	};
 	class ExhaustsEffectWater02Med
 	{
 		simulation="particles";
-		type="ExhaustSmokeBigWater2";
 		qualityLevel=1;
 	};
 };
@@ -11407,7 +8601,6 @@ class RHS_FAE_Explosion
 	class Light1
 	{
 		simulation="light";
-		type="GrenadeExploLight";
 		position[]={0,0,0};
 		intensity=0.0099999998;
 		interval=1;
@@ -11416,7 +8609,6 @@ class RHS_FAE_Explosion
 	class MortarExp1
 	{
 		simulation="particles";
-		type="MortarExp";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
@@ -11425,7 +8617,6 @@ class RHS_FAE_Explosion
 	class MortarSmoke1
 	{
 		simulation="particles";
-		type="CloudSmallLight";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
@@ -11437,7 +8628,6 @@ class RHS_3D17ParticleTail
 	class RHS_3D17TrailEffect
 	{
 		simulation="particles";
-		type="RHS_3D17TrailEffect";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
@@ -11446,18 +8636,15 @@ class RHS_3D17ParticleTail
 	};
 	class RHS_3D17TrailEffect1: RHS_3D17TrailEffect
 	{
-		type="RHS_3D17TrailEffect1";
 		qualityLevel=1;
 	};
 	class RHS_3D17TrailEffect2: RHS_3D17TrailEffect
 	{
-		type="RHS_3D17TrailEffect2";
 		qualityLevel=2;
 	};
 	class RHS_3D17TrailEffectLong
 	{
 		simulation="particles";
-		type="RHS_3D17TrailEffectLong";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
@@ -11466,18 +8653,15 @@ class RHS_3D17ParticleTail
 	};
 	class RHS_3D17TrailEffectLong1: RHS_3D17TrailEffectLong
 	{
-		type="RHS_3D17TrailEffectLong1";
 		qualityLevel=1;
 	};
 	class RHS_3D17TrailEffectLong2: RHS_3D17TrailEffectLong
 	{
-		type="RHS_3D17TrailEffectLong2";
 		qualityLevel=2;
 	};
 	class RHS_3D17SparksLight
 	{
 		simulation="light";
-		type="RHS_3D17SparksLight";
 		position[]={0,0,0};
 		intensity=0.001;
 		interval=1;
@@ -11494,7 +8678,6 @@ class RHS_3D17ParticleTail_902B: RHS_3D17ParticleTail
 	class RHS_3D17TrailEffect
 	{
 		simulation="particles";
-		type="RHS_3D17TrailEffect";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
@@ -11503,18 +8686,15 @@ class RHS_3D17ParticleTail_902B: RHS_3D17ParticleTail
 	};
 	class RHS_3D17TrailEffect1: RHS_3D17TrailEffect
 	{
-		type="RHS_3D17TrailEffect1";
 		qualityLevel=1;
 	};
 	class RHS_3D17TrailEffect2: RHS_3D17TrailEffect
 	{
-		type="RHS_3D17TrailEffect2";
 		qualityLevel=2;
 	};
 	class RHS_3D17TrailEffectLong
 	{
 		simulation="particles";
-		type="RHS_3D17TrailEffectLong";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
@@ -11523,18 +8703,15 @@ class RHS_3D17ParticleTail_902B: RHS_3D17ParticleTail
 	};
 	class RHS_3D17TrailEffectLong1: RHS_3D17TrailEffectLong
 	{
-		type="RHS_3D17TrailEffectLong1";
 		qualityLevel=1;
 	};
 	class RHS_3D17TrailEffectLong2: RHS_3D17TrailEffectLong
 	{
-		type="RHS_3D17TrailEffectLong2";
 		qualityLevel=2;
 	};
 	class RHS_3D17SparksLight
 	{
 		simulation="light";
-		type="RHS_3D17SparksLight";
 		position[]={0,0,0};
 		intensity=0.001;
 		interval=1;
@@ -11547,7 +8724,6 @@ class RHS_3D17ParticleLight
 	class RHS_3D17SparksLight
 	{
 		simulation="light";
-		type="RHS_3D17SparksLight";
 		position[]={0,0,0};
 		intensity=0.001;
 		interval=1;
@@ -11559,7 +8735,6 @@ class RHS_3D17Effect
 	class ExplosionLight
 	{
 		simulation="light";
-		type="RHS_3D17ExplosionLight";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
@@ -11568,7 +8743,6 @@ class RHS_3D17Effect
 	class ExplosionSparksBig
 	{
 		simulation="particles";
-		type="RHS_3D17SparksBig";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
@@ -11578,7 +8752,6 @@ class RHS_3D17Effect
 	class ExplosionSparksSlow
 	{
 		simulation="particles";
-		type="RHS_3D17SparksSlow";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
@@ -11588,7 +8761,6 @@ class RHS_3D17Effect
 	class ExplosionSparksTail
 	{
 		simulation="particles";
-		type="RHS_3D17SparksTail";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
@@ -11597,7 +8769,6 @@ class RHS_3D17Effect
 	class ExplosionSparksSmall
 	{
 		simulation="particles";
-		type="RHS_3D17SparksSmall";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
@@ -11617,7 +8788,6 @@ class RHS_3D17Effect
 	class ExplosionSparksBack
 	{
 		simulation="particles";
-		type="RHS_3D17SparksBack";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
@@ -11626,7 +8796,6 @@ class RHS_3D17Effect
 	class ExplosionCloud
 	{
 		simulation="particles";
-		type="RHS_3D17ExplosionCloud";
 		position[]={0,0,0.5};
 		intensity=1;
 		interval=1;
@@ -11635,7 +8804,6 @@ class RHS_3D17Effect
 	class GrenadeExp1
 	{
 		simulation="particles";
-		type="GrenadeExp";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
@@ -11647,7 +8815,6 @@ class RHS_3D17Effect_902B
 	class ExplosionLight
 	{
 		simulation="light";
-		type="RHS_3D17ExplosionLight";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
@@ -11656,7 +8823,6 @@ class RHS_3D17Effect_902B
 	class ExplosionSparksBig
 	{
 		simulation="particles";
-		type="RHS_3D17SparksBig";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
@@ -11666,7 +8832,6 @@ class RHS_3D17Effect_902B
 	class ExplosionSparksSlow
 	{
 		simulation="particles";
-		type="RHS_3D17SparksSlow";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
@@ -11676,7 +8841,6 @@ class RHS_3D17Effect_902B
 	class ExplosionSparksTail
 	{
 		simulation="particles";
-		type="RHS_3D17SparksTail_902B";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
@@ -11685,7 +8849,6 @@ class RHS_3D17Effect_902B
 	class ExplosionSparksSmall
 	{
 		simulation="particles";
-		type="RHS_3D17SparksSmall";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
@@ -11695,7 +8858,6 @@ class RHS_3D17Effect_902B
 	class ExplosionSparksBack
 	{
 		simulation="particles";
-		type="RHS_3D17SparksBack";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
@@ -11714,7 +8876,6 @@ class RHS_3D17Effect_902B
 	class ExplosionCloud
 	{
 		simulation="particles";
-		type="RHS_3D17ExplosionCloud";
 		position[]={0,0,0.5};
 		intensity=1;
 		interval=1;
@@ -11723,7 +8884,6 @@ class RHS_3D17Effect_902B
 	class GrenadeExp1
 	{
 		simulation="particles";
-		type="GrenadeExp";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
@@ -11735,7 +8895,6 @@ class RHS_Airburst_Explosion
 	class LightExp
 	{
 		simulation="light";
-		type="ExploLight";
 		position[]={0,1.5,0};
 		intensity=0.001;
 		interval=1;
@@ -11744,7 +8903,6 @@ class RHS_Airburst_Explosion
 	class Explosion1
 	{
 		simulation="particles";
-		type="VehExplosionParticles";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
@@ -11753,7 +8911,6 @@ class RHS_Airburst_Explosion
 	class Explosion2
 	{
 		simulation="particles";
-		type="FireBallBright";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
@@ -11762,7 +8919,6 @@ class RHS_Airburst_Explosion
 	class Smoke1
 	{
 		simulation="particles";
-		type="VehExpSmoke";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
@@ -11771,7 +8927,6 @@ class RHS_Airburst_Explosion
 	class SmallSmoke1
 	{
 		simulation="particles";
-		type="VehExpSmoke2";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
@@ -11783,7 +8938,6 @@ class RHS_D30_Fired
 	class CannonFired3
 	{
 		simulation="particles";
-		type="CannonFired3";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
@@ -11793,7 +8947,6 @@ class RHS_D30_Fired
 	class CannonFired3Med
 	{
 		simulation="particles";
-		type="CannonFired3";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
@@ -11803,7 +8956,6 @@ class RHS_D30_Fired
 	class CannonFiredDust1
 	{
 		simulation="particles";
-		type="CircleDustTankBig";
 		enabled="(distToSurface interpolate [10.099,10.1,1,-1])";
 		position[]={0,0,0};
 		intensity=1;
@@ -11813,7 +8965,6 @@ class RHS_D30_Fired
 	class CannonFiredDust2
 	{
 		simulation="particles";
-		type="CircleDustTankSmall";
 		enabled="(distToSurface interpolate [10.099,10.1,1,-1])";
 		position[]={0,0,0};
 		intensity=1;
@@ -11823,7 +8974,6 @@ class RHS_D30_Fired
 	class CannonFiredDust3
 	{
 		simulation="particles";
-		type="CircleDustTankLong";
 		enabled="(distToSurface interpolate [10.099,10.1,1,-1])";
 		position[]={0,0,0};
 		intensity=1;
@@ -11836,7 +8986,6 @@ class RHS_AutoCannonFired
 	class MachineGun2
 	{
 		simulation="particles";
-		type="RHS_MachineGun2";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
@@ -11845,7 +8994,6 @@ class RHS_AutoCannonFired
 	class Light1
 	{
 		simulation="light";
-		type="FiredLightSmall";
 		position[]={0,0,0};
 		intensity=0;
 		interval=1;
@@ -11854,7 +9002,6 @@ class RHS_AutoCannonFired
 	class AutoCannonFired
 	{
 		simulation="particles";
-		type="RHS_AutoCannon_Fired";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
@@ -11866,7 +9013,6 @@ class RHS_2A42_Fired
 	class Light1
 	{
 		simulation="light";
-		type="FiredLightSmall";
 		position[]={0,0,0};
 		intensity=0;
 		interval=1;
@@ -11875,7 +9021,6 @@ class RHS_2A42_Fired
 	class AutoCannonFired
 	{
 		simulation="particles";
-		type="RHS_2A42_Fired";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
@@ -11887,7 +9032,6 @@ class RHS_YakB_Catridge
 	class MachineGunCartridge1
 	{
 		simulation="particles";
-		type="RHS_YakB_Catridge";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
@@ -11897,7 +9041,6 @@ class RHS_YakB_Catridge
 	class MachineGunCartridge1Med
 	{
 		simulation="particles";
-		type="RHS_YakB_Catridge";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
@@ -11910,7 +9053,6 @@ class RHS_HeavyBombCrater
 	class BombSmk1
 	{
 		simulation="particles";
-		type="RHS_HeavyBombSmk1";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
@@ -11919,7 +9061,6 @@ class RHS_HeavyBombCrater
 	class BombSmk2
 	{
 		simulation="particles";
-		type="RHS_HeavyBombSmk2";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
@@ -11928,7 +9069,6 @@ class RHS_HeavyBombCrater
 	class BombSmk3
 	{
 		simulation="particles";
-		type="RHS_HeavyBombSmk3";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
@@ -11937,7 +9077,6 @@ class RHS_HeavyBombCrater
 	class BombDust
 	{
 		simulation="particles";
-		type="BombDust";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
@@ -11949,7 +9088,6 @@ class RHS_HeavyBombExplosion
 	class ExpSparksBig
 	{
 		simulation="particles";
-		type="ExpSparks";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
@@ -11958,7 +9096,6 @@ class RHS_HeavyBombExplosion
 	class ShardsBig
 	{
 		simulation="particles";
-		type="ObjectDestructionShards";
 		position="";
 		intensity=1;
 		interval=1;
@@ -11967,7 +9104,6 @@ class RHS_HeavyBombExplosion
 	class ShardsBig1
 	{
 		simulation="particles";
-		type="ObjectDestructionShards1";
 		position="";
 		intensity=1;
 		interval=1;
@@ -11976,7 +9112,6 @@ class RHS_HeavyBombExplosion
 	class ShardsBig2
 	{
 		simulation="particles";
-		type="ObjectDestructionShards2";
 		position="";
 		intensity=1;
 		interval=1;
@@ -11985,7 +9120,6 @@ class RHS_HeavyBombExplosion
 	class ShardsBig3
 	{
 		simulation="particles";
-		type="ObjectDestructionShards3";
 		position="";
 		intensity=1;
 		interval=1;
@@ -11994,7 +9128,6 @@ class RHS_HeavyBombExplosion
 	class ShardsBigBurn
 	{
 		simulation="particles";
-		type="ObjectDestructionShardsBurning";
 		position="";
 		intensity=1;
 		interval=1;
@@ -12003,7 +9136,6 @@ class RHS_HeavyBombExplosion
 	class ShardsBigBurn1
 	{
 		simulation="particles";
-		type="ObjectDestructionShardsBurning1";
 		position="";
 		intensity=1;
 		interval=1;
@@ -12012,7 +9144,6 @@ class RHS_HeavyBombExplosion
 	class ShardsBigBurn2
 	{
 		simulation="particles";
-		type="ObjectDestructionShardsBurning2";
 		position="";
 		intensity=1;
 		interval=1;
@@ -12021,7 +9152,6 @@ class RHS_HeavyBombExplosion
 	class ShardsBigBurn3
 	{
 		simulation="particles";
-		type="ObjectDestructionShardsBurning3";
 		position="";
 		intensity=1;
 		interval=1;
@@ -12030,7 +9160,6 @@ class RHS_HeavyBombExplosion
 	class LightExpBig
 	{
 		simulation="light";
-		type="ExploLight";
 		position[]={0,1.5,0};
 		intensity=0.001;
 		interval=1;
@@ -12039,7 +9168,6 @@ class RHS_HeavyBombExplosion
 	class Explosion1Big
 	{
 		simulation="particles";
-		type="VehExplosionParticles";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
@@ -12048,7 +9176,6 @@ class RHS_HeavyBombExplosion
 	class BombExp1
 	{
 		simulation="particles";
-		type="RHS_BombExp1";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
@@ -12057,7 +9184,6 @@ class RHS_HeavyBombExplosion
 	class Smoke1Big
 	{
 		simulation="particles";
-		type="VehExpSmoke";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
@@ -12066,7 +9192,6 @@ class RHS_HeavyBombExplosion
 	class SmallSmoke1Big
 	{
 		simulation="particles";
-		type="VehExpSmoke2";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
@@ -12078,7 +9203,6 @@ class RHS_MissileExplosion
 	class ExpSparksBig
 	{
 		simulation="particles";
-		type="ExpSparks";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
@@ -12087,7 +9211,6 @@ class RHS_MissileExplosion
 	class ShardsBig
 	{
 		simulation="particles";
-		type="ObjectDestructionShards";
 		position="";
 		intensity=1;
 		interval=1;
@@ -12096,7 +9219,6 @@ class RHS_MissileExplosion
 	class ShardsBig1
 	{
 		simulation="particles";
-		type="ObjectDestructionShards1";
 		position="";
 		intensity=1;
 		interval=1;
@@ -12105,7 +9227,6 @@ class RHS_MissileExplosion
 	class ShardsBig2
 	{
 		simulation="particles";
-		type="ObjectDestructionShards2";
 		position="";
 		intensity=1;
 		interval=1;
@@ -12114,7 +9235,6 @@ class RHS_MissileExplosion
 	class ShardsBig3
 	{
 		simulation="particles";
-		type="ObjectDestructionShards3";
 		position="";
 		intensity=1;
 		interval=1;
@@ -12123,7 +9243,6 @@ class RHS_MissileExplosion
 	class ShardsBigBurn
 	{
 		simulation="particles";
-		type="ObjectDestructionShardsBurning";
 		position="";
 		intensity=1;
 		interval=1;
@@ -12132,7 +9251,6 @@ class RHS_MissileExplosion
 	class ShardsBigBurn1
 	{
 		simulation="particles";
-		type="ObjectDestructionShardsBurning1";
 		position="";
 		intensity=1;
 		interval=1;
@@ -12141,7 +9259,6 @@ class RHS_MissileExplosion
 	class ShardsBigBurn2
 	{
 		simulation="particles";
-		type="ObjectDestructionShardsBurning2";
 		position="";
 		intensity=1;
 		interval=1;
@@ -12150,7 +9267,6 @@ class RHS_MissileExplosion
 	class ShardsBigBurn3
 	{
 		simulation="particles";
-		type="ObjectDestructionShardsBurning3";
 		position="";
 		intensity=1;
 		interval=1;
@@ -12159,7 +9275,6 @@ class RHS_MissileExplosion
 	class LightExpBig
 	{
 		simulation="light";
-		type="ExploLight";
 		position[]={0,1.5,0};
 		intensity=0.001;
 		interval=1;
@@ -12168,7 +9283,6 @@ class RHS_MissileExplosion
 	class Explosion1Big
 	{
 		simulation="particles";
-		type="VehExplosionParticles";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
@@ -12177,7 +9291,6 @@ class RHS_MissileExplosion
 	class Explosion2Big
 	{
 		simulation="particles";
-		type="FireBallBright";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
@@ -12186,7 +9299,6 @@ class RHS_MissileExplosion
 	class BombExp1
 	{
 		simulation="particles";
-		type="RHS_BombExp1";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
@@ -12195,7 +9307,6 @@ class RHS_MissileExplosion
 	class Smoke1Big
 	{
 		simulation="particles";
-		type="VehExpSmoke";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
@@ -12204,7 +9315,6 @@ class RHS_MissileExplosion
 	class SmallSmoke1Big
 	{
 		simulation="particles";
-		type="VehExpSmoke2";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
@@ -12216,7 +9326,6 @@ class RHS_CounterMeasureFlare
 	class Cmeasures1
 	{
 		simulation="particles";
-		type="Cmeasures1";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
@@ -12226,7 +9335,6 @@ class RHS_CounterMeasureFlare
 	class Cmeasures1M
 	{
 		simulation="particles";
-		type="Cmeasures1M";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
@@ -12236,7 +9344,6 @@ class RHS_CounterMeasureFlare
 	class Cmeasures1L
 	{
 		simulation="particles";
-		type="Cmeasures1L";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
@@ -12246,7 +9353,6 @@ class RHS_CounterMeasureFlare
 	class Cmeasures2
 	{
 		simulation="particles";
-		type="Cmeasures2";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
@@ -12255,7 +9361,6 @@ class RHS_CounterMeasureFlare
 	class Light1
 	{
 		simulation="light";
-		type="CmeasuresLight";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
@@ -12267,7 +9372,6 @@ class RHS_Incendiary_Bomb
 	class Flare1
 	{
 		simulation="particles";
-		type="Flare1";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
@@ -12275,7 +9379,6 @@ class RHS_Incendiary_Bomb
 	class SmokeShell
 	{
 		simulation="particles";
-		type="SmokeShellWhite";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
@@ -12283,7 +9386,6 @@ class RHS_Incendiary_Bomb
 	class Fire
 	{
 		simulation="particles";
-		type="RHS_Incendiary_Fire";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
@@ -12291,7 +9393,6 @@ class RHS_Incendiary_Bomb
 	class FireSparks
 	{
 		simulation="particles";
-		type="RHS_Incendiary_FireSparks";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
@@ -12302,7 +9403,6 @@ class RHS_Rocket_Fired
 	class Light1
 	{
 		simulation="light";
-		type="RocketLight";
 		position[]={0,0,0};
 		intensity=0.0099999998;
 		interval=1;
@@ -12311,7 +9411,6 @@ class RHS_Rocket_Fired
 	class Missile
 	{
 		simulation="particles";
-		type="RHS_Rocket_Fired";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
@@ -12323,13 +9422,11 @@ class RHS_Rocket_Init
 	class RocketBackfire1
 	{
 		simulation="particles";
-		type="RHS_Rocket_Init_Fire";
 		start=1;
 	};
 	class MissileDARSmoke: RocketBackfire1
 	{
 		simulation="particles";
-		type="RHS_Rocket_Init_Smoke";
 	};
 };
 class RHS_ExhaustsEffectPlaneHP
@@ -12337,12 +9434,10 @@ class RHS_ExhaustsEffectPlaneHP
 	class ExhaustsEffect01
 	{
 		simulation="particles";
-		type="RHS_ExhaustSmoke1PlaneHP";
 	};
 	class ExhaustsEffectRefract01
 	{
 		simulation="particles";
-		type="ExhaustSmokeRefractPlane";
 	};
 };
 class RHS_ATGM_Pusher_Eject
@@ -12350,7 +9445,6 @@ class RHS_ATGM_Pusher_Eject
 	class ATGM_Pusher
 	{
 		simulation="particles";
-		type="RHS_ATGM_Pusher_Eject";
 		start=1;
 	};
 };
@@ -12359,20 +9453,11 @@ class RHS_125mm_Sabot_Eject
 	class FX_1
 	{
 		simulation="particles";
-		type="RHS_125mm_Sabot_1_Eject";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
 		lifeTime=1;
 		enabled="flyTime interpolate [0,0.2,1,-1]";
-	};
-	class FX_2: FX_1
-	{
-		type="RHS_125mm_Sabot_2_Eject";
-	};
-	class FX_3: FX_1
-	{
-		type="RHS_125mm_Sabot_3_Eject";
 	};
 };
 class CfgMagazineWells
@@ -12596,31 +9681,13 @@ class CfgVehicles
 	class ThingX;
 	class rhs_casing_30mm: House
 	{
-		displayName="Cartridge";
 		nameSound="";
 		accuracy=0.2;
 		armor=5;
 	};
 	class rhs_casing_122mm: ThingX
 	{
-		displayName="122mm Artilery Casing";
 		editorCategory="EdCat_Things";
-	};
-	class rhs_weap_9m113_used: rhs_casing_122mm
-	{
-		displayName="9M113 Used Tube";
-	};
-	class rhs_weap_9m111_used: rhs_weap_9m113_used
-	{
-		displayName="9M111 Used Tube";
-	};
-	class rhs_weap_9K115_launcher_used: rhs_weap_9m111_used
-	{
-		displayName="9K115 Used Tube";
-	};
-	class rhs_weap_9K133_launcher_used: rhs_weap_9m111_used
-	{
-		displayName="9K133 Used Tube";
 	};
 	class LandVehicle;
 	class StaticWeapon: LandVehicle
@@ -12644,15 +9711,6 @@ class CfgVehicles
 			};
 		};
 	};
-	class StaticMGWeapon: StaticWeapon
-	{
-	};
-	class StaticATWeapon: StaticWeapon
-	{
-	};
-	class StaticAAWeapon: StaticWeapon
-	{
-	};
 	class StaticCannon: StaticWeapon
 	{
 		class ViewOptics;
@@ -12661,31 +9719,14 @@ class CfgVehicles
 	{
 		class ViewOptics;
 	};
-	class StaticMortar: StaticWeapon
-	{
-	};
 	class RHS_ZU23_base: StaticCannon
 	{
 		displayname="ZU-23-2";
-		class Library
-		{
-			libTextDesc="ZU-23-2";
-		};
 		icon="\rhsafrf\addons\rhs_heavyweapons\data\mapico\icomap_zu23_CA.paa";
 		memoryPointsGetInCargo="pos_cargo_dir";
 		memoryPointsGetInCargoDir="pos_cargo";
 		memoryPointsGetInDriver="pos_driver_dir";
 		memoryPointsGetInDriverDir="pos_driver";
-		hiddenSelections[]=
-		{
-			"camo1",
-			"camo2"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"rhsafrf\addons\rhs_heavyweapons\zu23\data\zu23_base_co.paa",
-			"rhsafrf\addons\rhs_heavyweapons\zu23\data\zu23_co.paa"
-		};
 		class Hitpoints
 		{
 			class HitHull
@@ -12766,9 +9807,6 @@ class CfgVehicles
 				};
 			};
 		};
-		class Damage
-		{
-		};
 	};
 	class RHS_ZU23_MSV: RHS_ZU23_base
 	{
@@ -12779,9 +9817,6 @@ class CfgVehicles
 		};
 		class Turrets: Turrets
 		{
-			class MainTurret: MainTurret
-			{
-			};
 		};
 	};
 	class RHS_ZU23_VDV: RHS_ZU23_base
@@ -12793,9 +9828,6 @@ class CfgVehicles
 		};
 		class Turrets: Turrets
 		{
-			class MainTurret: MainTurret
-			{
-			};
 		};
 	};
 	class RHS_ZU23_VMF: RHS_ZU23_base
@@ -12807,18 +9839,11 @@ class CfgVehicles
 		};
 		class Turrets: Turrets
 		{
-			class MainTurret: MainTurret
-			{
-			};
 		};
-	};
-	class AT_01_base_F: StaticMGWeapon
-	{
 	};
 	class rhs_nsv_tripod_base: StaticMGWeapon
 	{
 		icon="\rhsafrf\addons\rhs_heavyweapons\mg\bis_kord\icomap_kord_CA.paa";
-		displayName="NSV (6T7)";
 		sensorPosition="gunnerView";
 		class Hitpoints
 		{
@@ -12847,9 +9872,6 @@ class CfgVehicles
 			minMoveZ=-0.075000003;
 			maxMoveZ=0.1;
 		};
-		class Damage
-		{
-		};
 		class Turrets: Turrets
 		{
 			class MainTurret: MainTurret
@@ -12876,7 +9898,6 @@ class CfgVehicles
 				"RHS_NSV_Gun_Bag",
 				"RHS_NSV_Tripod_Bag"
 			};
-			displayName="";
 		};
 	};
 	class RHS_NSV_TriPod_MSV: rhs_nsv_tripod_base
@@ -12914,10 +9935,6 @@ class CfgVehicles
 	class RHS_KORD_Base: rhs_nsv_tripod_base
 	{
 		icon="rhsafrf\addons\rhs_heavyweapons\data\mapico\icomap_kord_CA.paa";
-		displayName="$STR_RHS_DN_KORD_LOW";
-		class Damage
-		{
-		};
 		class ViewPilot: ViewPilot
 		{
 			initAngleX=-0;
@@ -12965,10 +9982,6 @@ class CfgVehicles
 			};
 		};
 		armorStructural=10;
-		class Library
-		{
-			libTextDesc="$STR_rhs_LIB_KORD";
-		};
 		class assembleInfo
 		{
 			primary=0;
@@ -12979,7 +9992,6 @@ class CfgVehicles
 				"rhs_Kord_Gun_Bag",
 				"rhs_Kord_Tripod_Bag"
 			};
-			displayName="";
 		};
 	};
 	class rhs_KORD_MSV: RHS_KORD_Base
@@ -13016,7 +10028,6 @@ class CfgVehicles
 	};
 	class RHS_KORD_high_base: RHS_KORD_Base
 	{
-		displayName="$STR_rhs_DN_KORD";
 		icon="rhsafrf\addons\rhs_heavyweapons\data\mapico\icomap_kord6u16sp_CA.paa";
 		class Turrets: Turrets
 		{
@@ -13065,7 +10076,6 @@ class CfgVehicles
 	class rhs_DSHKM_base: StaticMGWeapon
 	{
 		icon="\rhsafrf\addons\rhs_heavyweapons\data\mapico\icomap_DShKM_CA.paa";
-		displayName="$STR_rhs_DN_DSHKM";
 		sensorPosition="gunnerView";
 		class Hitpoints
 		{
@@ -13075,9 +10085,6 @@ class CfgVehicles
 				passThrough=1;
 				name="telo";
 			};
-		};
-		class Damage
-		{
 		};
 		class ViewPilot: ViewPilot
 		{
@@ -13124,10 +10131,6 @@ class CfgVehicles
 				};
 			};
 		};
-		class Library
-		{
-			libTextDesc="$STR_rhs_LIB_DSHKM";
-		};
 		class assembleInfo
 		{
 			primary=0;
@@ -13138,7 +10141,6 @@ class CfgVehicles
 				"rhs_DShkM_Gun_Bag",
 				"rhs_DShkM_TripodHigh_Bag"
 			};
-			displayName="";
 		};
 	};
 	class rhs_DSHKM_ins: rhs_DSHKM_base
@@ -13174,7 +10176,6 @@ class CfgVehicles
 				"rhs_DShkM_Gun_Bag",
 				"rhs_DShkM_TripodLow_Bag"
 			};
-			displayName="";
 		};
 	};
 	class rhs_DSHKM_Mini_TriPod_ins: rhs_DSHkM_Mini_TriPod_base
@@ -13187,7 +10188,6 @@ class CfgVehicles
 	};
 	class RHS_AGS30_TriPod_base: StaticGrenadeLauncher
 	{
-		displayName="AGS-30 (6P17)";
 		icon="rhsafrf\addons\rhs_heavyweapons\data\mapico\icomap_ags_CA.paa";
 		sensorPosition="gunnerView";
 		class Hitpoints
@@ -13216,9 +10216,6 @@ class CfgVehicles
 			maxMoveY=0.075000003;
 			minMoveZ=-0.075000003;
 			maxMoveZ=0.1;
-		};
-		class Damage
-		{
 		};
 		class Turrets: Turrets
 		{
@@ -13264,7 +10261,6 @@ class CfgVehicles
 				"RHS_AGS30_Gun_Bag",
 				"RHS_AGS30_Tripod_Bag"
 			};
-			displayName="";
 		};
 	};
 	class RHS_AGS30_TriPod_MSV: RHS_AGS30_TriPod_base
@@ -13284,9 +10280,6 @@ class CfgVehicles
 		};
 		class Turrets: Turrets
 		{
-			class MainTurret: MainTurret
-			{
-			};
 		};
 	};
 	class RHS_AGS30_TriPod_VMF: RHS_AGS30_TriPod_base
@@ -13306,14 +10299,10 @@ class CfgVehicles
 		};
 		class Turrets: Turrets
 		{
-			class MainTurret: MainTurret
-			{
-			};
 		};
 	};
 	class rhs_SPG9_base: AT_01_base_F
 	{
-		displayName="$STR_rhs_DN_SPG9";
 		icon="rhsafrf\addons\rhs_heavyweapons\data\mapico\icon_spg9_CA.paa";
 		nameSound="cannon";
 		sensorPosition="gunnerView";
@@ -13345,9 +10334,6 @@ class CfgVehicles
 			maxMoveZ=0.1;
 		};
 		hiddenSelections[]={};
-		class Damage
-		{
-		};
 		class Turrets: Turrets
 		{
 			class MainTurret: MainTurret
@@ -13395,10 +10381,6 @@ class CfgVehicles
 				};
 			};
 		};
-		class Library
-		{
-			libTextDesc="$STR_rhs_LIB_SPG9";
-		};
 		class assembleInfo
 		{
 			primary=0;
@@ -13409,24 +10391,16 @@ class CfgVehicles
 				"rhs_SPG9_Gun_Bag",
 				"rhs_SPG9_Tripod_Bag"
 			};
-			displayName="";
 		};
 	};
 	class rhs_SPG9M_base: rhs_SPG9_base
 	{
-		displayName="$STR_rhs_DN_SPG9M";
 		class Turrets: Turrets
 		{
 			class MainTurret: MainTurret
 			{
 				class OpticsIn
 				{
-					class HEAT: ViewOptics
-					{
-					};
-					class HE: ViewOptics
-					{
-					};
 				};
 			};
 		};
@@ -13465,7 +10439,6 @@ class CfgVehicles
 	};
 	class rhs_Igla_AA_pod_Base: StaticAAWeapon
 	{
-		displayName="$STR_rhs_DN_IGLA_AA_POD_EAST";
 		mapsize=2.8;
 		icon="rhsafrf\addons\rhs_heavyweapons\data\mapico\icomap_igla_aa_pod_CA.paa";
 		class Hitpoints
@@ -13494,9 +10467,6 @@ class CfgVehicles
 			maxMoveY=0.075000003;
 			minMoveZ=-0.075000003;
 			maxMoveZ=0.1;
-		};
-		class Damage
-		{
 		};
 		memoryPointMissile[]=
 		{
@@ -13588,19 +10558,7 @@ class CfgVehicles
 			"Artillery"
 		};
 		displayname="$STR_rhs_DN_2B14";
-		class Library
-		{
-			libTextDesc="$STR_rhs_LIB_2B14";
-		};
 		icon="rhsafrf\addons\rhs_heavyweapons\data\mapico\icomap_podnos_2b14_CA.paa";
-		hiddenSelections[]=
-		{
-			"camo"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"rhsafrf\addons\rhs_heavyweapons\podnos_2b14_82mm\data\podnos_2b14_82mm_co.paa"
-		};
 		class Hitpoints
 		{
 			class HitHull
@@ -13628,9 +10586,6 @@ class CfgVehicles
 			minMoveZ=-0.075000003;
 			maxMoveZ=0.1;
 		};
-		class Damage
-		{
-		};
 		class Turrets: Turrets
 		{
 			class MainTurret: MainTurret
@@ -13640,7 +10595,6 @@ class CfgVehicles
 				{
 					"rhs_weap_2b14"
 				};
-				cameraDir="usti hlavne";
 				elevationMode=1;
 				initCamElev=0;
 				minCamElev=-15;
@@ -13671,19 +10625,16 @@ class CfgVehicles
 				"rhs_Podnos_Gun_Bag",
 				"rhs_Podnos_Bipod_Bag"
 			};
-			displayName="";
 		};
 		class Attributes
 		{
 			class rhs_ammoslot_1_type
 			{
-				displayName="Ammo slot #1 type";
 				tooltip="Define type of shell for #1 slot [HE rounds]";
 				property="rhs_ammoslot_1_type";
 				control="Combo";
 				expression="_this setVariable ['%s', _value];";
 				defaultValue=0;
-				typeName="STRING";
 				class values
 				{
 					class rhs_mag_3vo18_10
@@ -13696,18 +10647,15 @@ class CfgVehicles
 			};
 			class rhs_ammoslot_1
 			{
-				displayName="Ammo slot #1 count";
 				tooltip="Define number of rounds stored inside of type #1. Max 40. Leave -1 for default loadout";
 				property="rhs_ammoslot_1";
 				control="Edit";
 				expression="if(_value >= 0)then{ [_this,_value,'%s',40,['rhs_ammoslot_1','rhs_ammoslot_2','rhs_ammoslot_3']] spawn rhs_fnc_Eden_DefineLoadout};";
 				defaultValue="-1";
 				validate="NUMBER";
-				typeName="NUMBER";
 			};
 			class rhs_ammoslot_2_type: rhs_ammoslot_1_type
 			{
-				displayName="Ammo slot #2 type";
 				tooltip="Define type of shell for #2 slot [Illumination rounds]";
 				property="rhs_ammoslot_2_type";
 				class values
@@ -13722,13 +10670,11 @@ class CfgVehicles
 			};
 			class rhs_ammoslot_2: rhs_ammoslot_1
 			{
-				displayName="Ammo slot #2 count";
 				tooltip="Define number of rounds stored inside of type #2. Max 40. Leave -1 for default loadout";
 				property="rhs_ammoslot_2";
 			};
 			class rhs_ammoslot_3_type: rhs_ammoslot_1_type
 			{
-				displayName="Ammo slot #3 type";
 				tooltip="Define type of shell for #3 slot [Smoke rounds]";
 				property="rhs_ammoslot_3_type";
 				class values
@@ -13743,7 +10689,6 @@ class CfgVehicles
 			};
 			class rhs_ammoslot_3: rhs_ammoslot_1
 			{
-				displayName="Ammo slot #3 count";
 				tooltip="Define number of rounds stored inside of type #3. Max 40. Leave -1 for default loadout";
 				property="rhs_ammoslot_3";
 			};
@@ -13793,13 +10738,8 @@ class CfgVehicles
 				"rhs_Metis_Gun_Bag",
 				"rhs_Metis_Tripod_Bag"
 			};
-			displayName="";
 		};
 		displayname="$STR_rhs_DN_AT13M";
-		class Library
-		{
-			libTextDesc="$STR_rhs_LIB_AT13";
-		};
 		icon="rhsafrf\addons\rhs_heavyweapons\data\mapico\icomap_metis_at13_CA.paa";
 		hiddenSelections[]={};
 		class Hitpoints
@@ -13828,9 +10768,6 @@ class CfgVehicles
 			maxMoveY=0.075000003;
 			minMoveZ=-0.075000003;
 			maxMoveZ=0.1;
-		};
-		class Damage
-		{
 		};
 		class Turrets: Turrets
 		{
@@ -13966,7 +10903,6 @@ class CfgVehicles
 			"Artillery"
 		};
 		artilleryScanner=1;
-		displayName="$STR_rhs_DN_D30";
 		icon="rhsafrf\addons\rhs_heavyweapons\data\mapico\icomap_d30_CA.paa";
 		typicalCargo[]={};
 		driveOnComponent[]=
@@ -13976,14 +10912,6 @@ class CfgVehicles
 		};
 		memoryPointsGetInCargo="pos_cargo_dir";
 		memoryPointsGetInCargoDir="pos_cargo";
-		hiddenSelections[]=
-		{
-			"camo"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"rhsafrf\addons\rhs_heavyweapons\d30\data\d30_co.paa"
-		};
 		class Hitpoints
 		{
 			class HitHull
@@ -14021,13 +10949,6 @@ class CfgVehicles
 				};
 			};
 		};
-		class Damage
-		{
-		};
-		class Library
-		{
-			libTextDesc="$STR_rhs_LIB_D30";
-		};
 		htMin=1;
 		htMax=480;
 		afMax=0;
@@ -14045,24 +10966,20 @@ class CfgVehicles
 		{
 			class rhs_caseDeleteTime
 			{
-				displayName="Spent case liftime";
 				tooltip="Define how long spent caseses are rendred in game. Type -1 for infinitve time";
 				property="rhs_caseDeleteTime";
 				control="Edit";
 				validate="Number";
-				typeName="Number";
 				defaultValue="120";
 				expression="_this setVariable ['rhs_caseDeleteTime',_value]";
 			};
 			class rhs_ammoslot_1_type
 			{
-				displayName="Ammo slot #1 type";
 				tooltip="Define type of shell for #1 slot [HE rounds]";
 				property="rhs_ammoslot_1_type";
 				control="Combo";
 				expression="_this setVariable ['%s', _value];";
 				defaultValue=0;
-				typeName="STRING";
 				class values
 				{
 					class rhs_mag_3of56_10
@@ -14081,18 +10998,15 @@ class CfgVehicles
 			};
 			class rhs_ammoslot_1
 			{
-				displayName="Ammo slot #1 count";
 				tooltip="Define number of rounds stored inside of type #1. Max 40. Leave -1 for default loadout";
 				property="rhs_ammoslot_1";
 				control="Edit";
 				expression="if(_value >= 0)then{ [_this,_value,'%s',40,['rhs_ammoslot_1','rhs_ammoslot_2','rhs_ammoslot_3','rhs_ammoslot_4']] spawn rhs_fnc_Eden_DefineLoadout};";
 				defaultValue="-1";
 				validate="NUMBER";
-				typeName="NUMBER";
 			};
 			class rhs_ammoslot_2_type: rhs_ammoslot_1_type
 			{
-				displayName="Ammo slot #2 type";
 				tooltip="Define type of shell for #2 slot [Smoke rounds]";
 				property="rhs_ammoslot_2_type";
 				class values
@@ -14107,13 +11021,11 @@ class CfgVehicles
 			};
 			class rhs_ammoslot_2: rhs_ammoslot_1
 			{
-				displayName="Ammo slot #2 count";
 				tooltip="Define number of rounds stored inside of type #2. Max 40. Leave -1 for default loadout";
 				property="rhs_ammoslot_2";
 			};
 			class rhs_ammoslot_3_type: rhs_ammoslot_1_type
 			{
-				displayName="Ammo slot #3 type";
 				tooltip="Define type of shell for #3 slot [Illumination rounds]";
 				property="rhs_ammoslot_3_type";
 				class values
@@ -14128,13 +11040,11 @@ class CfgVehicles
 			};
 			class rhs_ammoslot_3: rhs_ammoslot_1
 			{
-				displayName="Ammo slot #3 count";
 				tooltip="Define number of rounds stored inside of type #3. Max 40. Leave -1 for default loadout";
 				property="rhs_ammoslot_3";
 			};
 			class rhs_ammoslot_4_type: rhs_ammoslot_1_type
 			{
-				displayName="Ammo slot #4 type";
 				tooltip="Define type of shell for #4 slot [Laser guided rounds]";
 				property="rhs_ammoslot_4_type";
 				class values
@@ -14149,7 +11059,6 @@ class CfgVehicles
 			};
 			class rhs_ammoslot_4: rhs_ammoslot_1
 			{
-				displayName="Ammo slot #4 count";
 				tooltip="Define number of rounds stored inside of type #4. Max 40. Leave -1 for default loadout";
 				property="rhs_ammoslot_4";
 			};
@@ -14195,15 +11104,8 @@ class CfgVehicles
 		};
 		class Turrets: Turrets
 		{
-			class MainTurret: MainTurret
-			{
-			};
 		};
 	};
-	class rhs_D30_AT_base: rhs_D30_base
-	{
-		displayName="$STR_rhs_DN_d30_AT";
-		availableForSupportTypes[]={};
 		artilleryScanner=0;
 		sensorPosition="gunnerView";
 		class Turrets: Turrets
@@ -14221,18 +11123,13 @@ class CfgVehicles
 		};
 		class Attributes: Attributes
 		{
-			class rhs_caseDeleteTime: rhs_caseDeleteTime
-			{
-			};
 			class rhs_ammoslot_1_type
 			{
-				displayName="Ammo slot #1 type";
 				tooltip="Define type of shell for #1 slot [HE rounds]";
 				property="rhs_ammoslot_1_type";
 				control="Combo";
 				expression="_this setVariable ['%s', _value];";
 				defaultValue=0;
-				typeName="STRING";
 				class values
 				{
 					class rhs_mag_3of56_10
@@ -14251,18 +11148,15 @@ class CfgVehicles
 			};
 			class rhs_ammoslot_1
 			{
-				displayName="Ammo slot #1 count";
 				tooltip="Define number of rounds stored inside of type #1. Max 40. Leave -1 for default loadout";
 				property="rhs_ammoslot_1";
 				control="Edit";
 				expression="if(_value >= 0)then{ [_this,_value,'%s',40,['rhs_ammoslot_1','rhs_ammoslot_2','rhs_ammoslot_3','rhs_ammoslot_4','rhs_ammoslot_5']] spawn rhs_fnc_Eden_DefineLoadout};";
 				defaultValue="-1";
 				validate="NUMBER";
-				typeName="NUMBER";
 			};
 			class rhs_ammoslot_2_type: rhs_ammoslot_1_type
 			{
-				displayName="Ammo slot #2 type";
 				tooltip="Define type of shell for #2 slot [Smoke rounds]";
 				property="rhs_ammoslot_2_type";
 				class values
@@ -14277,13 +11171,11 @@ class CfgVehicles
 			};
 			class rhs_ammoslot_2: rhs_ammoslot_1
 			{
-				displayName="Ammo slot #2 count";
 				tooltip="Define number of rounds stored inside of type #2. Max 40. Leave -1 for default loadout";
 				property="rhs_ammoslot_2";
 			};
 			class rhs_ammoslot_3_type: rhs_ammoslot_1_type
 			{
-				displayName="Ammo slot #3 type";
 				tooltip="Define type of shell for #3 slot [Illumination rounds]";
 				property="rhs_ammoslot_3_type";
 				class values
@@ -14298,13 +11190,11 @@ class CfgVehicles
 			};
 			class rhs_ammoslot_3: rhs_ammoslot_1
 			{
-				displayName="Ammo slot #3 count";
 				tooltip="Define number of rounds stored inside of type #3. Max 40. Leave -1 for default loadout";
 				property="rhs_ammoslot_3";
 			};
 			class rhs_ammoslot_4_type: rhs_ammoslot_1_type
 			{
-				displayName="Ammo slot #4 type";
 				tooltip="Define type of shell for #4 slot [Laser guided rounds]";
 				property="rhs_ammoslot_4_type";
 				class values
@@ -14319,13 +11209,11 @@ class CfgVehicles
 			};
 			class rhs_ammoslot_4: rhs_ammoslot_1
 			{
-				displayName="Ammo slot #4 count";
 				tooltip="Define number of rounds stored inside of type #4. Max 40. Leave -1 for default loadout";
 				property="rhs_ammoslot_4";
 			};
 			class rhs_ammoslot_5_type: rhs_ammoslot_1_type
 			{
-				displayName="Ammo slot #5 type";
 				tooltip="Define type of shell for #5 slot [HEAT rounds]";
 				property="rhs_ammoslot_5_type";
 				class values
@@ -14346,7 +11234,6 @@ class CfgVehicles
 			};
 			class rhs_ammoslot_5: rhs_ammoslot_1
 			{
-				displayName="Ammo slot #5 count";
 				tooltip="Define number of rounds stored inside of type #5. Max 40. Leave -1 for default loadout";
 				property="rhs_ammoslot_5";
 			};
@@ -14392,9 +11279,6 @@ class CfgVehicles
 		};
 		class Turrets: Turrets
 		{
-			class MainTurret: MainTurret
-			{
-			};
 		};
 	};
 	class rhs_Kornet_Base: AT_01_base_F
@@ -14409,13 +11293,8 @@ class CfgVehicles
 				"rhs_Kornet_Gun_Bag",
 				"rhs_Kornet_Tripod_Bag"
 			};
-			displayName="";
 		};
 		displayname="$STR_rhs_DN_kornet";
-		class Library
-		{
-			libTextDesc="$STR_rhs_LIB_AT13";
-		};
 		icon="rhsafrf\addons\rhs_heavyweapons\data\mapico\icomap_metis_at13_CA.paa";
 		sensorPosition="gunnerView";
 		class Hitpoints
@@ -14501,9 +11380,6 @@ class CfgVehicles
 				};
 				class OpticsIn
 				{
-					class Wide: ViewOptics
-					{
-					};
 					class Medium: Wide
 					{
 						initFov=0.029200001;
@@ -14519,9 +11395,6 @@ class CfgVehicles
 				};
 				class OpticsOut
 				{
-					class ViewGunner: ViewGunner
-					{
-					};
 				};
 			};
 		};
@@ -14590,7 +11463,6 @@ class CfgVehicles
 	};
 	class RHS_NSV_Gun_Bag: Weapon_Bag_Base
 	{
-		displayName="NSV Gun Bag";
 		mass=382;
 		icon="\rhsafrf\addons\rhs_heavyweapons\bags\mapIcon_backpack_CA.paa";
 		class assembleInfo
@@ -14599,17 +11471,14 @@ class CfgVehicles
 			base="";
 			assembleTo="";
 			dissasembleTo[]={};
-			displayName="";
 		};
 	};
 	class RHS_NSV_Tripod_Bag: Weapon_Bag_Base
 	{
 		mass=250;
-		displayName="NSV 6T7 Tripod Bag";
 		icon="\rhsafrf\addons\rhs_heavyweapons\bags\mapIcon_backpack_CA.paa";
 		class assembleInfo: assembleInfo
 		{
-			displayName="$STR_A3_CfgVehicles_B_HMG_01_Wpn_assembleInfo0";
 			assembleTo="RHS_NSV_TriPod_MSV";
 			base[]=
 			{
@@ -14619,7 +11488,6 @@ class CfgVehicles
 	};
 	class RHS_DShkM_Gun_Bag: RHS_NSV_Gun_Bag
 	{
-		displayName="DShkM Gun Bag";
 		mass=380;
 		class assembleInfo
 		{
@@ -14627,16 +11495,13 @@ class CfgVehicles
 			base="";
 			assembleTo="";
 			dissasembleTo[]={};
-			displayName="";
 		};
 	};
 	class RHS_DShkM_TripodHigh_Bag: RHS_NSV_Tripod_Bag
 	{
 		mass=420;
-		displayName="DShkM High Tripod Bag";
 		class assembleInfo: assembleInfo
 		{
-			displayName="$STR_A3_CfgVehicles_B_HMG_01_Wpn_assembleInfo0";
 			assembleTo="RHS_DSHKM_INS";
 			base[]=
 			{
@@ -14647,7 +11512,6 @@ class CfgVehicles
 	class RHS_DShkM_TripodLow_Bag: RHS_DShkM_TripodHigh_Bag
 	{
 		mass=300;
-		displayName="DShkM Low Tripod Bag";
 		class assembleInfo: assembleInfo
 		{
 			assembleTo="rhs_DSHKM_Mini_TriPod_ins";
@@ -14655,13 +11519,11 @@ class CfgVehicles
 	};
 	class RHS_Kord_Gun_Bag: RHS_DShkM_Gun_Bag
 	{
-		displayName="KORD Gun Bag";
 		mass=250;
 	};
 	class RHS_Kord_Tripod_Bag: RHS_DShkM_TripodHigh_Bag
 	{
 		mass=450;
-		displayName="KORD 6T7 Tripod Bag";
 		class assembleInfo: assembleInfo
 		{
 			assembleTo="RHS_Kord_MSV";
@@ -14673,16 +11535,13 @@ class CfgVehicles
 	};
 	class RHS_Metis_Gun_Bag: RHS_DShkM_Gun_Bag
 	{
-		displayName="9K115-2 'Metis-M' Gun Bag";
 		mass=80;
 	};
 	class RHS_Metis_Tripod_Bag: RHS_DShkM_TripodHigh_Bag
 	{
 		mass=70;
-		displayName="9K115-2 'Metis-M' Tripod Bag";
 		class assembleInfo: assembleInfo
 		{
-			displayName="$STR_A3_CfgVehicles_B_AT_01_Wpn_assembleInfo0";
 			assembleTo="rhs_Metis_9k115_2_msv";
 			base[]=
 			{
@@ -14692,7 +11551,6 @@ class CfgVehicles
 	};
 	class RHS_Kornet_Gun_Bag: RHS_NSV_Gun_Bag
 	{
-		displayName="9K133 'Kornet' Gun Bag";
 		mass=80;
 		hiddenselections[]=
 		{
@@ -14706,10 +11564,8 @@ class CfgVehicles
 	class RHS_Kornet_Tripod_Bag: RHS_NSV_Tripod_Bag
 	{
 		mass=70;
-		displayName="9K133 'Kornet' Tripod Bag";
 		class assembleInfo: assembleInfo
 		{
-			displayName="$STR_A3_CfgVehicles_B_AT_01_Wpn_assembleInfo0";
 			assembleTo="rhs_Kornet_9M133_2_msv";
 			base[]=
 			{
@@ -14719,16 +11575,13 @@ class CfgVehicles
 	};
 	class RHS_AGS30_Gun_Bag: RHS_DShkM_Gun_Bag
 	{
-		displayName="AGS-30 Gun Bag";
 		mass=100;
 	};
 	class RHS_AGS30_Tripod_Bag: RHS_DShkM_TripodHigh_Bag
 	{
 		mass=60;
-		displayName="AGS-30 6P17 Tripod Bag";
 		class assembleInfo: assembleInfo
 		{
-			displayName="$STR_A3_CfgVehicles_B_gmg_01_Wpn_assembleInfo0";
 			assembleTo="RHS_AGS30_TriPod_MSV";
 			base[]=
 			{
@@ -14738,16 +11591,13 @@ class CfgVehicles
 	};
 	class RHS_SPG9_Gun_Bag: RHS_DShkM_Gun_Bag
 	{
-		displayName="SPG-9 Gun Bag";
 		mass=470;
 	};
 	class RHS_SPG9_Tripod_Bag: RHS_DShkM_TripodHigh_Bag
 	{
 		mass=110;
-		displayName="SPG-9 Tripod Bag";
 		class assembleInfo: assembleInfo
 		{
-			displayName="$STR_A3_CfgVehicles_B_AT_01_Wpn_assembleInfo0";
 			assembleTo="rhs_SPG9_INS";
 			base[]=
 			{
@@ -14757,16 +11607,13 @@ class CfgVehicles
 	};
 	class RHS_Podnos_Gun_Bag: RHS_DShkM_Gun_Bag
 	{
-		displayName="2B14-1 'Podnos' Gun Bag";
 		mass=162;
 	};
 	class RHS_Podnos_Bipod_Bag: RHS_DShkM_TripodHigh_Bag
 	{
 		mass=139;
-		displayName="2B14-1 'Podnos' Bipod Bag";
 		class assembleInfo: assembleInfo
 		{
-			displayName="$STR_A3_CfgVehicles_B_Mortar_01_Wpn_assembleInfo0";
 			assembleTo="rhs_2b14_82mm_msv";
 			base[]=
 			{

@@ -1,8 +1,5 @@
 class CfgPatches
 {
-	class RHSUSF_c_vehicleSounds
-	{
-		units[]={};
 		weapons[]={};
 		version="0.1";
 	};
@@ -11,27 +8,23 @@ class cfgSound3DProcessors
 {
 	class RHSUSF_armor_ext_base_3DProcessingType
 	{
-		type="emitter";
 		innerRange=4;
 		range=10;
 		radius=4;
 	};
 	class RHSUSF_heavyBoat_water_base_3DProcessingType
 	{
-		type="panner";
 		innerRange=20;
 		range=40;
 	};
 	class RHSUSF_Abrams_ext_3DProcessingType
 	{
-		type="emitter";
 		innerRange=4;
 		range=30;
 		radius=4;
 	};
 	class RHSUSF_Abrams_exhaust_ext_3DProcessingType
 	{
-		type="panner";
 		innerRange=4;
 		range=15;
 		rangeCurve="InverseSquare2Curve";
@@ -1328,15 +1321,6 @@ class cfgSoundSets
 class cfgVehicles
 {
 	class LandVehicle;
-	class Tank: LandVehicle
-	{
-	};
-	class Tank_F: Tank
-	{
-	};
-	class MBT_01_base_F: Tank_F
-	{
-	};
 	class rhsusf_m1a1tank_base: MBT_01_base_F
 	{
 		class Sounds

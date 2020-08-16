@@ -1,8 +1,5 @@
 class CfgPatches
 {
-	class RHS_Missions_Pack
-	{
-		units[]={};
 		weapons[]={};
 	};
 };

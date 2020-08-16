@@ -42,9 +42,6 @@ class CfgVehicles
 	class Tank: LandVehicle
 	{
 		class NewTurret;
-		class Sounds;
-		class HitPoints;
-	};
 	class Tank_F: Tank
 	{
 		class Turrets
@@ -53,9 +50,6 @@ class CfgVehicles
 			{
 				class Turrets
 				{
-					class CommanderOptics;
-				};
-			};
 		};
 		class CommanderOptics;
 		class AnimationSources;
@@ -67,20 +61,11 @@ class CfgVehicles
 		{
 			class HitHull;
 			class HitEngine;
-			class HitLTrack;
-			class HitRTrack;
-		};
 		class Sounds: Sounds
 		{
-			class Engine;
-			class Movement;
-		};
 	};
 	class APC_Tracked_02_base_F: Tank_F
 	{
-		class EventHandlers;
-		class Components;
-	};
 	class rhs_pts_base: APC_Tracked_02_base_F
 	{
 		rhs_decalParameters[]=
@@ -93,7 +78,6 @@ class CfgVehicles
 		weapons[]={};
 		magazines[]={};
 		rhs_maxCargoMassCoeff=5.0000001e-008;
-		displayName="$STR_RHSAFRF_PTSM";
 		accuracy=0.30000001;
 		side=0;
 		driverOpticsModel="";
@@ -222,9 +206,6 @@ class CfgVehicles
 		};
 		class Wheels
 		{
-			class L2
-			{
-				suspTravelDirection[]={-0.125,-1,0};
 				side="left";
 				width=0.2;
 				steering=0;
@@ -250,21 +231,6 @@ class CfgVehicles
 					{0.64999998,0.69999999}
 				};
 			};
-			class L3: L2
-			{
-			};
-			class L4: L2
-			{
-			};
-			class L5: L2
-			{
-			};
-			class L6: L2
-			{
-			};
-			class L7: L2
-			{
-			};
 			class L9: L2
 			{
 				maxDroop=0;
@@ -275,25 +241,7 @@ class CfgVehicles
 				maxDroop=0;
 				maxCompression=0;
 			};
-			class R2: L2
-			{
-				suspTravelDirection[]={0.125,-1,0};
 				side="right";
-			};
-			class R3: R2
-			{
-			};
-			class R4: R2
-			{
-			};
-			class R5: R2
-			{
-			};
-			class R6: R2
-			{
-			};
-			class R7: R2
-			{
 			};
 			class R9: R2
 			{
@@ -1118,32 +1066,15 @@ class CfgVehicles
 				radius=0.30000001;
 			};
 		};
-		class Turrets: Turrets
-		{
-		};
-		hiddenSelections[]=
-		{
-			"n1",
-			"n2",
-			"n3"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
-			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
-			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa"
-		};
 		class Attributes
 		{
 			class rhs_decalNumber_type
 			{
-				displayName="Define font type of plate number";
 				tooltip="Define kind of font that will be drawn on vehicle.";
 				property="rhs_decalNumber_type";
 				control="Combo";
 				expression="_this setVariable ['%s', _value];[_this,[['Number', cRHSPTSNumberPlaces, _value]]] call rhs_fnc_decalsInit";
 				defaultValue=0;
-				typeName="STRING";
 				class values
 				{
 					class Default
@@ -1192,18 +1123,15 @@ class CfgVehicles
 			class rhs_decalNumber
 			{
 				collapsed=1;
-				displayName="Set side number";
 				tooltip="Set side number. 3 numbers are required. Type 0 to hide numbers complety & leave at -1 to get random number";
 				property="rhs_decalNumber";
 				control="Edit";
 				validate="Number";
-				typeName="Number";
 				defaultValue="-1";
 				expression="if( _value >= 0)then{if( _value == 0)then{{[_this setobjectTexture [_x,'a3\data_f\clear_empty.paa']]}foreach cRHSPTSNumberPlaces}else{[_this, [['Number', cRHSPTSNumberPlaces, _this getVariable ['rhs_decalNumber_type','Default'], _value] ] ] call rhs_fnc_decalsInit}};";
 			};
 			class rhs_openramp
 			{
-				displayName="Open ramp";
 				property="rhs_opendoors";
 				control="CheckboxNumber";
 				expression="_this animateDoor ['ramp',_value];";
@@ -1211,14 +1139,10 @@ class CfgVehicles
 			};
 			class rhs_attachCargo: rhs_openramp
 			{
-				displayName="Attach cargo";
 				tooltip="Attaching cargo (using attachTo command) just like when you use ramp action";
 				property="rhs_attachCargo";
 				expression="if(_value == 1)then{[_this] spawn rhs_fnc_pts_cargoAttach}else{[_this] call rhs_fnc_pts_cargoDetach};";
 			};
-		};
-		class Damage
-		{
 		};
 		class Exhausts
 		{
@@ -1322,8 +1246,5 @@ class CfgVehicles
 				};
 			};
 		};
-	};
-	class rhs_pts_vmf: rhs_pts_base
-	{
 	};
 };

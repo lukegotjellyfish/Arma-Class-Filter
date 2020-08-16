@@ -1,8 +1,5 @@
 class CfgPatches
 {
-	class rhsusf_weapon_sounds
-	{
-		units[]={};
 		weapons[]={};
 		version="0.1";
 		name="USF Sounds";
@@ -15,28 +12,24 @@ class CfgSound3DProcessors
 {
 	class RHSUSF_Default_3DProcessingType
 	{
-		type="panner";
 		innerRange=10;
 		rangeCurve="LinearCurve";
 		range=1800;
 	};
 	class RHSUSF_Shot_light_3DProcessingType
 	{
-		type="panner";
 		innerRange=0;
 		range=5;
 		rangeCurve="Smooth1Curve";
 	};
 	class RHSUSF_Shot_medium_3DProcessingType
 	{
-		type="panner";
 		innerRange=0;
 		range=5;
 		rangeCurve="LinearCurve";
 	};
 	class RHSUSF_Tail_3DProcessingType
 	{
-		type="panner";
 		innerRange=5;
 		range=190;
 		rangeCurve="InverseSquare2Curve";
@@ -84,7 +77,6 @@ class cfgDistanceFilters
 {
 	class RHSUSF_defaultDistanceFilter
 	{
-		type="lowPassFilter";
 		minCutoffFrequency=150;
 		qFactor=1.3;
 		innerRange=400;
@@ -93,7 +85,6 @@ class cfgDistanceFilters
 	};
 	class RHSUSF_rifleShotDistanceFilter
 	{
-		type="lowPassFilter";
 		minCutoffFrequency=250;
 		qFactor=1.3;
 		innerRange=150;
@@ -102,7 +93,6 @@ class cfgDistanceFilters
 	};
 	class RHSUSF_vehicletDistanceFilter
 	{
-		type="lowPassFilter";
 		minCutoffFrequency=550;
 		qFactor=1;
 		innerRange=0;
@@ -9844,47 +9834,18 @@ class CfgWeapons
 		class Eventhandlers;
 	};
 	class Pistol_Base_F;
-	class arifle_MX_Base_F: Rifle_Base_F
-	{
-	};
-	class Rifle_Short_Base_F: Rifle_Base_F
-	{
-	};
-	class Rifle_Long_Base_F: Rifle_Base_F
-	{
-	};
 	class UGL_F;
 	class srifle_EBR_F;
-	class LMG_Mk200_F: Rifle_Long_Base_F
-	{
-	};
 	class MGun;
-	class LMG_RCWS: MGun
-	{
-	};
 	class SMG_02_base_F: Rifle_Short_Base_F
 	{
 		class Single;
-		class FullAuto;
-		class WeaponSlotsInfo;
-	};
 	class Launcher;
-	class Launcher_Base_F: Launcher
-	{
-	};
 	class launch_O_Titan_F;
 	class rhsusf_weap_MP7A1_base_f: SMG_02_base_F
 	{
 		class Single: Single
 		{
-			class StandardSound
-			{
-				soundSetShot[]=
-				{
-					"RHSUSF_MP7_Shot_SoundSet",
-					"RHSUSF_pistol1_Tail_SoundSet"
-				};
-			};
 			class SilencedSound
 			{
 				soundSetShot[]=
@@ -9897,14 +9858,6 @@ class CfgWeapons
 		};
 		class FullAuto: FullAuto
 		{
-			class StandardSound
-			{
-				soundSetShot[]=
-				{
-					"RHSUSF_MP7_Shot_SoundSet",
-					"RHSUSF_pistol1_Tail_SoundSet"
-				};
-			};
 			class SilencedSound
 			{
 				soundSetShot[]=
@@ -9918,57 +9871,14 @@ class CfgWeapons
 	};
 	class rhs_weap_M590_5RD: Rifle_Base_F
 	{
-		class Single: Mode_SemiAuto
-		{
-			sounds[]=
-			{
-				"StandardSound"
-			};
-			class StandardSound
-			{
-				soundSetShot[]=
-				{
-					"RHSUSF_m590_Shot_SoundSet",
-					"RHSUSF_MMG1_Tail_SoundSet"
-				};
-			};
-		};
 	};
 	class rhs_weap_M590_8RD: rhs_weap_M590_5RD
 	{
-		class Single: Single
-		{
-			sounds[]=
-			{
-				"StandardSound"
-			};
-			class StandardSound
-			{
-				soundSetShot[]=
-				{
-					"RHSUSF_m590_Shot_SoundSet",
-					"RHSUSF_MMG1_Tail_SoundSet"
-				};
-			};
-		};
 	};
 	class rhs_weap_XM2010_Base_F: Rifle_Base_F
 	{
 		class Single: Mode_SemiAuto
 		{
-			sounds[]=
-			{
-				"StandardSound",
-				"SilencedSound"
-			};
-			class StandardSound
-			{
-				soundSetShot[]=
-				{
-					"RHSUSF_xm2010_Shot_SoundSet",
-					"RHSUSF_rifle2_Tail_SoundSet"
-				};
-			};
 			class SilencedSound
 			{
 				soundSetShot[]=
@@ -9983,14 +9893,6 @@ class CfgWeapons
 	{
 		class Single: Single
 		{
-			class StandardSound
-			{
-				soundSetShot[]=
-				{
-					"RHSUSF_m24_Shot_SoundSet",
-					"RHSUSF_rifle2_Tail_SoundSet"
-				};
-			};
 			class SilencedSound
 			{
 				soundSetShot[]=
@@ -10005,14 +9907,6 @@ class CfgWeapons
 	{
 		class Single: Single
 		{
-			class StandardSound
-			{
-				soundSetShot[]=
-				{
-					"RHSUSF_m24_Shot_SoundSet",
-					"RHSUSF_rifle2_Tail_SoundSet"
-				};
-			};
 			class SilencedSound
 			{
 				soundSetShot[]=
@@ -10025,26 +9919,10 @@ class CfgWeapons
 	};
 	class rhs_weap_SCAR_Base: arifle_MX_Base_F
 	{
-		class Single;
-		class FullAuto;
-	};
 	class rhs_weap_SCAR_L_Base: rhs_weap_SCAR_Base
 	{
 		class Single: Single
 		{
-			sounds[]=
-			{
-				"Standardsound",
-				"SilencedSound"
-			};
-			class StandardSound
-			{
-				soundSetShot[]=
-				{
-					"RHSUSF_M4_Shot_SoundSet",
-					"RHSUSF_Rifle1_Tail_SoundSet"
-				};
-			};
 			class SilencedSound
 			{
 				soundSetShot[]=
@@ -10056,19 +9934,6 @@ class CfgWeapons
 		};
 		class FullAuto: FullAuto
 		{
-			sounds[]=
-			{
-				"Standardsound",
-				"SilencedSound"
-			};
-			class StandardSound
-			{
-				soundSetShot[]=
-				{
-					"RHSUSF_M4_Shot_SoundSet",
-					"RHSUSF_Rifle1_Tail_SoundSet"
-				};
-			};
 			class SilencedSound
 			{
 				soundSetShot[]=
@@ -10083,19 +9948,6 @@ class CfgWeapons
 	{
 		class Single: Single
 		{
-			sounds[]=
-			{
-				"Standardsound",
-				"SilencedSound"
-			};
-			class StandardSound
-			{
-				soundSetShot[]=
-				{
-					"RHSUSF_SCARH_Shot_SoundSet",
-					"RHSUSF_rifle2_Tail_SoundSet"
-				};
-			};
 			class SilencedSound
 			{
 				soundSetShot[]=
@@ -10107,19 +9959,6 @@ class CfgWeapons
 		};
 		class FullAuto: FullAuto
 		{
-			sounds[]=
-			{
-				"Standardsound",
-				"SilencedSound"
-			};
-			class StandardSound
-			{
-				soundSetShot[]=
-				{
-					"RHSUSF_SCARH_Shot_SoundSet",
-					"RHSUSF_rifle2_Tail_SoundSet"
-				};
-			};
 			class SilencedSound
 			{
 				soundSetShot[]=
@@ -10132,27 +9971,11 @@ class CfgWeapons
 	};
 	class rhs_weap_M249_base: LMG_Mk200_F
 	{
-		class Eventhandlers: Eventhandlers
-		{
-		};
 	};
 	class rhs_weap_m240_base: rhs_weap_M249_base
 	{
 		class manual: Mode_FullAuto
 		{
-			sounds[]=
-			{
-				"StandardSound",
-				"SilencedSound"
-			};
-			class StandardSound
-			{
-				soundSetShot[]=
-				{
-					"RHSUSF_M240_Shot_SoundSet",
-					"RHSUSF_MMG1_Tail_SoundSet"
-				};
-			};
 			class SilencedSound
 			{
 				soundSetShot[]=
@@ -10175,76 +9998,7 @@ class CfgWeapons
 		class manual;
 		class close;
 		class short;
-		class medium;
-		class far;
-	};
 	class rhs_weap_m240veh: LMG_M200
-	{
-		class manual: manual
-		{
-			class StandardSound
-			{
-				soundSetShot[]=
-				{
-					"RHSUSF_veh_M240_Shot_SoundSet",
-					"RHSUSF_veh_M240_int_Shot_SoundSet",
-					"RHSUSF_VEH_MMG1_Tail_SoundSet"
-				};
-			};
-		};
-		class close: close
-		{
-			class StandardSound
-			{
-				soundSetShot[]=
-				{
-					"RHSUSF_veh_M240_Shot_SoundSet",
-					"RHSUSF_veh_M240_int_Shot_SoundSet",
-					"RHSUSF_VEH_MMG1_Tail_SoundSet"
-				};
-			};
-		};
-		class short: short
-		{
-			class StandardSound
-			{
-				soundSetShot[]=
-				{
-					"RHSUSF_veh_M240_Shot_SoundSet",
-					"RHSUSF_veh_M240_int_Shot_SoundSet",
-					"RHSUSF_VEH_MMG1_Tail_SoundSet"
-				};
-			};
-		};
-		class medium: medium
-		{
-			class StandardSound
-			{
-				soundSetShot[]=
-				{
-					"RHSUSF_veh_M240_Shot_SoundSet",
-					"RHSUSF_veh_M240_int_Shot_SoundSet",
-					"RHSUSF_VEH_MMG1_Tail_SoundSet"
-				};
-			};
-		};
-		class far: far
-		{
-			class StandardSound
-			{
-				soundSetShot[]=
-				{
-					"RHSUSF_veh_M240_Shot_SoundSet",
-					"RHSUSF_veh_M240_int_Shot_SoundSet",
-					"RHSUSF_VEH_MMG1_Tail_SoundSet"
-				};
-			};
-		};
-	};
-	class HMG_127: LMG_RCWS
-	{
-	};
-	class HMG_01: HMG_127
 	{
 	};
 	class HMG_M2: HMG_01
@@ -10252,197 +10006,14 @@ class CfgWeapons
 		class manual;
 		class close;
 		class short;
-		class medium;
-		class far;
-	};
 	class RHS_M2_Abrams_Commander: HMG_M2
 	{
-		class manual: manual
-		{
-			class StandardSound
-			{
-				soundSetShot[]=
-				{
-					"RHSUSF_veh_m2_Shot_SoundSet",
-					"RHSUSF_veh_m2_int_Shot_SoundSet",
-					"RHSUSF_veh_rifle2_Tail_SoundSet"
-				};
-			};
-		};
-		class close: close
-		{
-			class StandardSound
-			{
-				soundSetShot[]=
-				{
-					"RHSUSF_veh_m2_Shot_SoundSet",
-					"RHSUSF_veh_m2_int_Shot_SoundSet",
-					"RHSUSF_veh_rifle2_Tail_SoundSet"
-				};
-			};
-		};
-		class short: short
-		{
-			class StandardSound
-			{
-				soundSetShot[]=
-				{
-					"RHSUSF_veh_m2_Shot_SoundSet",
-					"RHSUSF_veh_m2_int_Shot_SoundSet",
-					"RHSUSF_veh_rifle2_Tail_SoundSet"
-				};
-			};
-		};
-		class medium: medium
-		{
-			class StandardSound
-			{
-				soundSetShot[]=
-				{
-					"RHSUSF_veh_m2_Shot_SoundSet",
-					"RHSUSF_veh_m2_int_Shot_SoundSet",
-					"RHSUSF_veh_rifle2_Tail_SoundSet"
-				};
-			};
-		};
-		class far: far
-		{
-			class StandardSound
-			{
-				soundSetShot[]=
-				{
-					"RHSUSF_veh_m2_Shot_SoundSet",
-					"RHSUSF_veh_m2_int_Shot_SoundSet",
-					"RHSUSF_veh_rifle2_Tail_SoundSet"
-				};
-			};
-		};
 	};
 	class RHS_M2_Abrams_Gunner: HMG_M2
 	{
-		class manual: manual
-		{
-			class StandardSound
-			{
-				soundSetShot[]=
-				{
-					"RHSUSF_veh_m2_Shot_SoundSet",
-					"RHSUSF_veh_m2_int_Shot_SoundSet",
-					"RHSUSF_veh_rifle2_Tail_SoundSet"
-				};
-			};
-		};
-		class close: close
-		{
-			class StandardSound
-			{
-				soundSetShot[]=
-				{
-					"RHSUSF_veh_m2_Shot_SoundSet",
-					"RHSUSF_veh_m2_int_Shot_SoundSet",
-					"RHSUSF_veh_rifle2_Tail_SoundSet"
-				};
-			};
-		};
-		class short: short
-		{
-			class StandardSound
-			{
-				soundSetShot[]=
-				{
-					"RHSUSF_veh_m2_Shot_SoundSet",
-					"RHSUSF_veh_m2_int_Shot_SoundSet",
-					"RHSUSF_veh_rifle2_Tail_SoundSet"
-				};
-			};
-		};
-		class medium: medium
-		{
-			class StandardSound
-			{
-				soundSetShot[]=
-				{
-					"RHSUSF_veh_m2_Shot_SoundSet",
-					"RHSUSF_veh_m2_int_Shot_SoundSet",
-					"RHSUSF_veh_rifle2_Tail_SoundSet"
-				};
-			};
-		};
-		class far: far
-		{
-			class StandardSound
-			{
-				soundSetShot[]=
-				{
-					"RHSUSF_veh_m2_Shot_SoundSet",
-					"RHSUSF_veh_m2_int_Shot_SoundSet",
-					"RHSUSF_veh_rifle2_Tail_SoundSet"
-				};
-			};
-		};
 	};
 	class RHS_M2: HMG_M2
 	{
-		class manual: manual
-		{
-			class StandardSound
-			{
-				soundSetShot[]=
-				{
-					"RHSUSF_veh_m2_Shot_SoundSet",
-					"RHSUSF_veh_m2_int_Shot_SoundSet",
-					"RHSUSF_veh_rifle2_Tail_SoundSet"
-				};
-			};
-		};
-		class close: close
-		{
-			class StandardSound
-			{
-				soundSetShot[]=
-				{
-					"RHSUSF_veh_m2_Shot_SoundSet",
-					"RHSUSF_veh_m2_int_Shot_SoundSet",
-					"RHSUSF_veh_rifle2_Tail_SoundSet"
-				};
-			};
-		};
-		class short: short
-		{
-			class StandardSound
-			{
-				soundSetShot[]=
-				{
-					"RHSUSF_veh_m2_Shot_SoundSet",
-					"RHSUSF_veh_m2_int_Shot_SoundSet",
-					"RHSUSF_veh_rifle2_Tail_SoundSet"
-				};
-			};
-		};
-		class medium: medium
-		{
-			class StandardSound
-			{
-				soundSetShot[]=
-				{
-					"RHSUSF_veh_m2_Shot_SoundSet",
-					"RHSUSF_veh_m2_int_Shot_SoundSet",
-					"RHSUSF_veh_rifle2_Tail_SoundSet"
-				};
-			};
-		};
-		class far: far
-		{
-			class StandardSound
-			{
-				soundSetShot[]=
-				{
-					"RHSUSF_veh_m2_Shot_SoundSet",
-					"RHSUSF_veh_m2_int_Shot_SoundSet",
-					"RHSUSF_veh_rifle2_Tail_SoundSet"
-				};
-			};
-		};
 	};
 	class autocannon_Base_F;
 	class autocannon_30mm_CTWS: autocannon_Base_F
@@ -10452,151 +10023,22 @@ class CfgWeapons
 			class player;
 			class close;
 			class short;
-			class medium;
-			class far;
-		};
 		class AP: autocannon_Base_F
 		{
 			class player;
 			class close;
 			class short;
-			class medium;
-			class far;
-		};
 	};
 	class RHS_weap_M242BC: autocannon_30mm_CTWS
 	{
 		class HE: HE
 		{
-			class player: player
-			{
-				class StandardSound
-				{
-					soundSetShot[]=
-					{
-						"RHSUSF_veh_m242_Shot_SoundSet",
-						"RHSUSF_veh_m242_int_Shot_SoundSet",
-						"RHSUSF_VEH_autocannon_Tail_SoundSet"
-					};
-				};
-			};
-			class close: close
-			{
-				class StandardSound
-				{
-					soundSetShot[]=
-					{
-						"RHSUSF_veh_m242_Shot_SoundSet",
-						"RHSUSF_veh_m242_int_Shot_SoundSet",
-						"RHSUSF_VEH_autocannon_Tail_SoundSet"
-					};
-				};
-			};
-			class short: short
-			{
-				class StandardSound
-				{
-					soundSetShot[]=
-					{
-						"RHSUSF_veh_m242_Shot_SoundSet",
-						"RHSUSF_veh_m242_int_Shot_SoundSet",
-						"RHSUSF_VEH_autocannon_Tail_SoundSet"
-					};
-				};
-			};
-			class medium: medium
-			{
-				class StandardSound
-				{
-					soundSetShot[]=
-					{
-						"RHSUSF_veh_m242_Shot_SoundSet",
-						"RHSUSF_veh_m242_int_Shot_SoundSet",
-						"RHSUSF_VEH_autocannon_Tail_SoundSet"
-					};
-				};
-			};
-			class far: far
-			{
-				class StandardSound
-				{
-					soundSetShot[]=
-					{
-						"RHSUSF_veh_m242_Shot_SoundSet",
-						"RHSUSF_veh_m242_int_Shot_SoundSet",
-						"RHSUSF_VEH_autocannon_Tail_SoundSet"
-					};
-				};
-			};
 		};
 		class AP: AP
 		{
-			class player: player
-			{
-				class StandardSound
-				{
-					soundSetShot[]=
-					{
-						"RHSUSF_veh_m242_Shot_SoundSet",
-						"RHSUSF_veh_m242_int_Shot_SoundSet",
-						"RHSUSF_VEH_autocannon_Tail_SoundSet"
-					};
-				};
-			};
-			class close: close
-			{
-				class StandardSound
-				{
-					soundSetShot[]=
-					{
-						"RHSUSF_veh_m242_Shot_SoundSet",
-						"RHSUSF_veh_m242_int_Shot_SoundSet",
-						"RHSUSF_VEH_autocannon_Tail_SoundSet"
-					};
-				};
-			};
-			class short: short
-			{
-				class StandardSound
-				{
-					soundSetShot[]=
-					{
-						"RHSUSF_veh_m242_Shot_SoundSet",
-						"RHSUSF_veh_m242_int_Shot_SoundSet",
-						"RHSUSF_VEH_autocannon_Tail_SoundSet"
-					};
-				};
-			};
-			class medium: medium
-			{
-				class StandardSound
-				{
-					soundSetShot[]=
-					{
-						"RHSUSF_veh_m242_Shot_SoundSet",
-						"RHSUSF_veh_m242_int_Shot_SoundSet",
-						"RHSUSF_VEH_autocannon_Tail_SoundSet"
-					};
-				};
-			};
-			class far: far
-			{
-				class StandardSound
-				{
-					soundSetShot[]=
-					{
-						"RHSUSF_veh_m242_Shot_SoundSet",
-						"RHSUSF_veh_m242_int_Shot_SoundSet",
-						"RHSUSF_VEH_autocannon_Tail_SoundSet"
-					};
-				};
-			};
 		};
 	};
 };
-class CfgSounds
-{
-	sounds[]={};
 	class rhsusf_beltIntake_m249
 	{
 		name="rhsusf_beltIntake_m249";

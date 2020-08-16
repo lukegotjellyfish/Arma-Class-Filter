@@ -1,8 +1,5 @@
 class CfgPatches
 {
-	class rhsusf_vehicles
-	{
-		units[]={};
 		weapons[]={};
 		requiredAddons[]={};
 	};
@@ -126,9 +123,6 @@ class CfgVehicles
 		{
 			class MainTurret: NewTurret
 			{
-				class ViewOptics;
-			};
-		};
 		class HitPoints
 		{
 			class HitLFWheel;
@@ -139,16 +133,10 @@ class CfgVehicles
 			class HitGlass2;
 			class HitGlass3;
 			class HitGlass4;
-			class HitGlass5;
-			class HitGlass6;
-		};
 	};
 	class MRAP_01_base_F: Car_F
 	{
 		class Sounds;
-		class EventHandlers;
-		class Components;
-	};
 	class rhsusf_hmmwe_base: MRAP_01_base_F
 	{
 		class Sounds
@@ -896,9 +884,6 @@ class CfgVehicles
 		};
 		class Components: Components
 		{
-			class AICarSteeringComponent
-			{
-				steeringPIDWeights[]={3.0999999,0.1,0.40000001};
 				speedPIDWeights[]={0.69999999,0.2,0};
 				convoyPIDWeights[]={1,0.0099999998,0.0099999998};
 				doRemapSpeed=1;
@@ -927,13 +912,11 @@ class CfgVehicles
 		{
 			class rhs_decalMask
 			{
-				displayName="Define 1st decal";
 				tooltip="Define decal located on mask & rear of vehicle";
 				property="rhs_decalMask";
 				control="Combo";
 				expression="if(_value != 'NoChange')then{ [_this,'unitdecals_1',_value] call rhs_fnc_hmmwv_setDecal}";
 				defaultValue=0;
-				typeName="STRING";
 				class values
 				{
 					class NoChange
@@ -991,7 +974,6 @@ class CfgVehicles
 			};
 			class rhs_decalDoors: rhs_decalMask
 			{
-				displayName="Define 2nd decal";
 				tooltip="Define decals located on doors & vehicle rear";
 				property="rhs_decalDoors";
 				expression="if(_value != 'NoChange')then{ [_this,'unitdecals_2',_value] call rhs_fnc_hmmwv_setDecal}";
@@ -1066,7 +1048,6 @@ class CfgVehicles
 			};
 			class rhs_hideCIP
 			{
-				displayName="Hide CIP";
 				property="rhs_hideCIP";
 				control="CheckboxNumber";
 				expression="_this animate ['hide_CIP',_value,true]";
@@ -1074,47 +1055,39 @@ class CfgVehicles
 			};
 			class rhs_hideBFT: rhs_hideCIP
 			{
-				displayName="Hide BFT";
 				property="rhs_hideBFT";
 				expression="_this animate ['hide_BFT',_value,true]";
 			};
 			class rhs_hideAntennas: rhs_hideCIP
 			{
-				displayName="Hide antennas";
 				property="rhs_hideBFT";
 				expression="_this animate ['hide_Antenna',_value,true]";
 			};
 			class rhs_hideA2Parts: rhs_hideCIP
 			{
-				displayName="Hide A2 parts";
 				property="rhs_hideA2Parts";
 				expression="_this animate ['hide_A2_Parts',_value,true]";
 			};
 			class rhs_HideA2Bumper: rhs_hideCIP
 			{
-				displayName="switch to old bumper";
 				property="rhs_HideA2Bumper";
 				expression="_this animateSource ['Hide_A2Bumper',_value,true]";
 			};
 			class Door_LF: rhs_hideCIP
 			{
-				displayName="Open front left door";
 				property="Door_LF";
 				expression="_this animateDoor ['%s',_value,true]";
 			};
 			class Door_RF: Door_LF
 			{
-				displayName="Open front right door";
 				property="Door_RF";
 			};
 			class Door_LB: Door_LF
 			{
-				displayName="Open back left door";
 				property="Door_LB";
 			};
 			class Door_RB: Door_LF
 			{
-				displayName="Open back right door";
 				property="Door_RB";
 			};
 		};
@@ -1264,30 +1237,9 @@ class CfgVehicles
 		soundAttenuationCargo[]={0};
 		displayname="M1097A2 (2D/Open)";
 		Picture="\rhsusf\addons\rhsusf_hmmwv\pictures\rhsusf_m998_2dr_ca.paa";
-		class Library
-		{
-			libTextDesc="M998, 1-1/4 ton, cargo carrier, wood (open)";
-		};
 		damperSize=0.15000001;
 		damperForce=1;
 		damperDamping=1;
-		hiddenSelections[]=
-		{
-			"exterior",
-			"interior",
-			"A2",
-			"wheels",
-			"mainbody",
-			"hood gratting",
-			"interior_wood",
-			"2drcargocomplete",
-			"camo1",
-			"unitdecals_1",
-			"unitdecals_2",
-			"ind_wait",
-			"ind_brake",
-			"ind_highbeam"
-		};
 		cargoDoors[]={};
 		memoryPointsGetInCoDriver="pos_codriver";
 		memoryPointsGetInCoDriverDir="pos_codriver_dir";
@@ -1313,35 +1265,8 @@ class CfgVehicles
 				minTurn=-95;
 			};
 		};
-		class Damage
-		{
-		};
 		class Attributes: Attributes
 		{
-			class rhs_decalMask: rhs_decalMask
-			{
-			};
-			class rhs_decalDoors: rhs_decalDoors
-			{
-			};
-			class rhs_hideCIP: rhs_hideCIP
-			{
-			};
-			class rhs_hideBFT: rhs_hideBFT
-			{
-			};
-			class rhs_hideAntennas: rhs_hideAntennas
-			{
-			};
-			class rhs_hideA2Parts: rhs_hideA2Parts
-			{
-			};
-			class Door_LF: Door_LF
-			{
-			};
-			class Door_RF: Door_RF
-			{
-			};
 		};
 		class NVGMarkers
 		{
@@ -1358,7 +1283,6 @@ class CfgVehicles
 		{
 			class standard
 			{
-				displayName="Woodland";
 				factions[]=
 				{
 					"rhs_faction_usarmy_wd"
@@ -1366,7 +1290,6 @@ class CfgVehicles
 			};
 			class Desert
 			{
-				displayName="Desert";
 				factions[]=
 				{
 					"rhs_faction_usarmy_d"
@@ -1374,29 +1297,11 @@ class CfgVehicles
 			};
 			class Olive
 			{
-				displayName="Olive";
 				factions[]=
 				{
 					"rhs_faction_usarmy_wd"
 				};
 			};
-		};
-	};
-	class rhsusf_m998_d_2dr: rhsusf_m998_w_2dr
-	{
-		hiddenSelectionsTextures[]=
-		{
-			"rhsusf\addons\rhsusf_hmmwv\textures\m998_exterior_d_co.paa",
-			"rhsusf\addons\rhsusf_hmmwv\textures\m998_interior_d_co.paa",
-			"rhsusf\addons\rhsusf_hmmwv\textures\A2_parts_D_co.paa",
-			"rhsusf\addons\rhsusf_hmmwv\textures\wheel_wranglermt_d_co.paa",
-			"rhsusf\addons\rhsusf_hmmwv\textures\m998_mainbody_d_co.paa",
-			"rhsusf\addons\rhsusf_hmmwv\textures\gratting_d_co.paa",
-			"rhsusf\addons\rhsusf_hmmwv\textures\m998_interior_wood_d_co.paa",
-			"rhsusf\addons\rhsusf_hmmwv\textures\m998_2drcargo_d_co.paa",
-			"rhsusf\addons\rhsusf_hmmwv\textures\tile_exmetal_d_co.paa",
-			"rhsusf\addons\rhsusf_hmmwv\unitdecals\101stab_502reg_2ndbn_a12_d_co.paa",
-			"rhsusf\addons\rhsusf_hmmwv\unitdecals\a12^_co.paa"
 		};
 	};
 	class rhsusf_m998_w_s_2dr: rhsusf_m998_w_2dr
@@ -1412,20 +1317,6 @@ class CfgVehicles
 		};
 		maxFordingDepth=0.75;
 		displayname="M1123 (2D/Open/Snorkel)";
-		hiddenSelectionsTextures[]=
-		{
-			"rhsusf\addons\rhsusf_hmmwv\textures\m998_exterior_w_co.paa",
-			"rhsusf\addons\rhsusf_hmmwv\textures\m998_interior_w_co.paa",
-			"rhsusf\addons\rhsusf_hmmwv\textures\A2_parts_WD_co.paa",
-			"rhsusf\addons\rhsusf_hmmwv\textures\wheel_wranglermt_b_co.paa",
-			"rhsusf\addons\rhsusf_hmmwv\textures\m998_mainbody_co.paa",
-			"rhsusf\addons\rhsusf_hmmwv\textures\gratting_w_co.paa",
-			"rhsusf\addons\rhsusf_hmmwv\textures\m998_interior_wood_w_co.paa",
-			"rhsusf\addons\rhsusf_hmmwv\textures\m998_2drcargo_w_co.paa",
-			"rhsusf\addons\rhsusf_hmmwv\textures\tile_exmetal_co.paa",
-			"rhsusf\addons\rhsusf_hmmwv\unitdecals\usmc_210321_ca.paa",
-			""
-		};
 	};
 	class rhsusf_m998_d_s_2dr: rhsusf_m998_w_s_2dr
 	{
@@ -1439,20 +1330,6 @@ class CfgVehicles
 			};
 		};
 		maxFordingDepth=0.75;
-		hiddenSelectionsTextures[]=
-		{
-			"rhsusf\addons\rhsusf_hmmwv\textures\m998_exterior_d_co.paa",
-			"rhsusf\addons\rhsusf_hmmwv\textures\m998_interior_d_co.paa",
-			"rhsusf\addons\rhsusf_hmmwv\textures\A2_parts_D_co.paa",
-			"rhsusf\addons\rhsusf_hmmwv\textures\wheel_wranglermt_d_co.paa",
-			"rhsusf\addons\rhsusf_hmmwv\textures\m998_mainbody_d_co.paa",
-			"rhsusf\addons\rhsusf_hmmwv\textures\gratting_d_co.paa",
-			"rhsusf\addons\rhsusf_hmmwv\textures\m998_interior_wood_d_co.paa",
-			"rhsusf\addons\rhsusf_hmmwv\textures\m998_2drcargo_d_co.paa",
-			"rhsusf\addons\rhsusf_hmmwv\textures\tile_exmetal_d_co.paa",
-			"rhsusf\addons\rhsusf_hmmwv\unitdecals\usmc_210321_ca.paa",
-			""
-		};
 	};
 	class rhsusf_m998_w_2dr_halftop: rhsusf_m998_w_2dr
 	{
@@ -1460,26 +1337,6 @@ class CfgVehicles
 		soundAttenuationCargo[]={1,0};
 		class Turrets: Turrets
 		{
-			class CargoTurret_02: CargoTurret_02
-			{
-			};
-		};
-	};
-	class rhsusf_m998_d_2dr_halftop: rhsusf_m998_w_2dr_halftop
-	{
-		hiddenSelectionsTextures[]=
-		{
-			"rhsusf\addons\rhsusf_hmmwv\textures\m998_exterior_d_co.paa",
-			"rhsusf\addons\rhsusf_hmmwv\textures\m998_interior_d_co.paa",
-			"rhsusf\addons\rhsusf_hmmwv\textures\A2_parts_D_co.paa",
-			"rhsusf\addons\rhsusf_hmmwv\textures\wheel_wranglermt_d_co.paa",
-			"rhsusf\addons\rhsusf_hmmwv\textures\m998_mainbody_d_co.paa",
-			"rhsusf\addons\rhsusf_hmmwv\textures\gratting_d_co.paa",
-			"rhsusf\addons\rhsusf_hmmwv\textures\m998_interior_wood_d_co.paa",
-			"rhsusf\addons\rhsusf_hmmwv\textures\m998_2drcargo_d_co.paa",
-			"rhsusf\addons\rhsusf_hmmwv\textures\tile_exmetal_d_co.paa",
-			"rhsusf\addons\rhsusf_hmmwv\unitdecals\101stab_502reg_2ndbn_a12_d_co.paa",
-			"rhsusf\addons\rhsusf_hmmwv\unitdecals\a12^_co.paa"
 		};
 	};
 	class rhsusf_m998_w_s_2dr_halftop: rhsusf_m998_w_2dr_halftop
@@ -1495,20 +1352,6 @@ class CfgVehicles
 		};
 		maxFordingDepth=0.75;
 		displayname="M1123 (2D/Half/Snorkel)";
-		hiddenSelectionsTextures[]=
-		{
-			"rhsusf\addons\rhsusf_hmmwv\textures\m998_exterior_w_co.paa",
-			"rhsusf\addons\rhsusf_hmmwv\textures\m998_interior_w_co.paa",
-			"rhsusf\addons\rhsusf_hmmwv\textures\A2_parts_WD_co.paa",
-			"rhsusf\addons\rhsusf_hmmwv\textures\wheel_wranglermt_b_co.paa",
-			"rhsusf\addons\rhsusf_hmmwv\textures\m998_mainbody_co.paa",
-			"rhsusf\addons\rhsusf_hmmwv\textures\gratting_w_co.paa",
-			"rhsusf\addons\rhsusf_hmmwv\textures\m998_interior_wood_w_co.paa",
-			"rhsusf\addons\rhsusf_hmmwv\textures\m998_2drcargo_w_co.paa",
-			"rhsusf\addons\rhsusf_hmmwv\textures\tile_exmetal_co.paa",
-			"rhsusf\addons\rhsusf_hmmwv\unitdecals\usmc_210321_ca.paa",
-			""
-		};
 	};
 	class rhsusf_m998_d_s_2dr_halftop: rhsusf_m998_w_s_2dr_halftop
 	{
@@ -1522,20 +1365,6 @@ class CfgVehicles
 			};
 		};
 		maxFordingDepth=0.75;
-		hiddenSelectionsTextures[]=
-		{
-			"rhsusf\addons\rhsusf_hmmwv\textures\m998_exterior_d_co.paa",
-			"rhsusf\addons\rhsusf_hmmwv\textures\m998_interior_d_co.paa",
-			"rhsusf\addons\rhsusf_hmmwv\textures\A2_parts_D_co.paa",
-			"rhsusf\addons\rhsusf_hmmwv\textures\wheel_wranglermt_d_co.paa",
-			"rhsusf\addons\rhsusf_hmmwv\textures\m998_mainbody_d_co.paa",
-			"rhsusf\addons\rhsusf_hmmwv\textures\gratting_d_co.paa",
-			"rhsusf\addons\rhsusf_hmmwv\textures\m998_interior_wood_d_co.paa",
-			"rhsusf\addons\rhsusf_hmmwv\textures\m998_2drcargo_d_co.paa",
-			"rhsusf\addons\rhsusf_hmmwv\textures\tile_exmetal_d_co.paa",
-			"rhsusf\addons\rhsusf_hmmwv\unitdecals\usmc_210321_ca.paa",
-			""
-		};
 	};
 	class rhsusf_m998_w_2dr_fulltop: rhsusf_m998_w_2dr_halftop
 	{
@@ -1575,9 +1404,6 @@ class CfgVehicles
 			};
 		};
 	};
-	class rhsusf_m998_d_2dr_fulltop: rhsusf_m998_w_2dr_fulltop
-	{
-	};
 	class rhsusf_m998_w_s_2dr_fulltop: rhsusf_m998_w_2dr_fulltop
 	{
 		class Exhausts
@@ -1609,28 +1435,10 @@ class CfgVehicles
 	{
 		displayname="M1097A2 (4D/Open)";
 		Picture="\rhsusf\addons\rhsusf_hmmwv\pictures\rhsusf_m998_4dr_ca.paa";
-		hiddenSelections[]=
-		{
-			"exterior",
-			"interior",
-			"A2",
-			"wheels",
-			"mainbody",
-			"hood gratting",
-			"interior_wood",
-			"4drcargocomplete",
-			"camo1",
-			"unitdecals_1",
-			"unitdecals_2",
-			"ind_wait",
-			"ind_brake",
-			"ind_highbeam"
-		};
 		class textureSources
 		{
 			class standard
 			{
-				displayName="Woodland";
 				factions[]=
 				{
 					"rhs_faction_usarmy_wd"
@@ -1638,7 +1446,6 @@ class CfgVehicles
 			};
 			class Desert
 			{
-				displayName="Desert";
 				factions[]=
 				{
 					"rhs_faction_usarmy_d"
@@ -1646,7 +1453,6 @@ class CfgVehicles
 			};
 			class Olive
 			{
-				displayName="Olive";
 				factions[]=
 				{
 					"rhs_faction_usarmy_wd"
@@ -1662,9 +1468,6 @@ class CfgVehicles
 				maxTurn=105;
 				minTurn=-80;
 				minElev=-45;
-				class dynamicViewLimits
-				{
-					CargoTurret_01[]={20,105};
 				};
 			};
 			class CargoTurret_03: CargoTurret_01
@@ -1672,9 +1475,6 @@ class CfgVehicles
 				proxyIndex=1;
 				maxTurn=-34;
 				minTurn=-95;
-				class dynamicViewLimits
-				{
-				};
 			};
 			class CargoTurret_04: CargoTurret_03
 			{
@@ -1691,40 +1491,7 @@ class CfgVehicles
 		};
 		class Attributes: Attributes
 		{
-			class rhs_decalMask: rhs_decalMask
-			{
-			};
-			class rhs_decalDoors: rhs_decalDoors
-			{
-			};
-			class rhs_hideCIP: rhs_hideCIP
-			{
-			};
-			class rhs_hideBFT: rhs_hideBFT
-			{
-			};
-			class rhs_hideAntennas: rhs_hideAntennas
-			{
-			};
-			class rhs_hideA2Parts: rhs_hideA2Parts
-			{
-			};
-			class Door_LF: Door_LF
-			{
-			};
-			class Door_RF: Door_RF
-			{
-			};
-			class Door_LB: Door_LB
-			{
-			};
-			class Door_RB: Door_RB
-			{
-			};
 		};
-	};
-	class rhsusf_m998_d_4dr: rhsusf_m998_w_4dr
-	{
 	};
 	class rhsusf_m998_w_s_4dr: rhsusf_m998_w_4dr
 	{
@@ -1739,23 +1506,6 @@ class CfgVehicles
 		};
 		maxFordingDepth=0.75;
 		displayname="M1123 (4D/Open/Snorkel)";
-		hiddenSelections[]=
-		{
-			"exterior",
-			"interior",
-			"A2",
-			"wheels",
-			"mainbody",
-			"hood gratting",
-			"interior_wood",
-			"4drcargocomplete",
-			"camo1",
-			"unitdecals_1",
-			"unitdecals_2",
-			"ind_wait",
-			"ind_brake",
-			"ind_highbeam"
-		};
 	};
 	class rhsusf_m998_d_s_4dr: rhsusf_m998_w_s_4dr
 	{
@@ -1777,13 +1527,7 @@ class CfgVehicles
 		class CargoTurret;
 		class Turrets: Turrets
 		{
-			class CargoTurret_02: CargoTurret_02
-			{
-			};
 		};
-	};
-	class rhsusf_m998_d_4dr_halftop: rhsusf_m998_w_4dr_halftop
-	{
 	};
 	class rhsusf_m998_w_s_4dr_halftop: rhsusf_m998_w_4dr_halftop
 	{
@@ -1843,12 +1587,6 @@ class CfgVehicles
 			};
 		};
 		class CargoTurret;
-		class Turrets: Turrets
-		{
-		};
-	};
-	class rhsusf_m998_d_4dr_fulltop: rhsusf_m998_w_4dr_fulltop
-	{
 	};
 	class rhsusf_m998_w_s_4dr_fulltop: rhsusf_m998_d_4dr_fulltop
 	{
@@ -2014,27 +1752,10 @@ class CfgVehicles
 		};
 		Picture="\rhsusf\addons\rhsusf_hmmwv\pictures\rhsusf_m1025_ca.paa";
 		displayname="M1025A2 (Unarmed)";
-		hiddenSelections[]=
-		{
-			"exterior",
-			"interior",
-			"A2",
-			"wheels",
-			"mainbody",
-			"hood gratting",
-			"camo1",
-			"camo2",
-			"unitdecals_1",
-			"unitdecals_2",
-			"ind_wait",
-			"ind_brake",
-			"ind_highbeam"
-		};
 		class textureSources
 		{
 			class standard
 			{
-				displayName="Woodland";
 				factions[]=
 				{
 					"rhs_faction_usarmy_wd"
@@ -2042,7 +1763,6 @@ class CfgVehicles
 			};
 			class Desert
 			{
-				displayName="Desert";
 				factions[]=
 				{
 					"rhs_faction_usarmy_d"
@@ -2050,7 +1770,6 @@ class CfgVehicles
 			};
 			class Olive
 			{
-				displayName="Olive";
 				factions[]=
 				{
 					"rhs_faction_usarmy_wd"
@@ -2109,59 +1828,24 @@ class CfgVehicles
 		};
 		class Attributes: Attributes
 		{
-			class rhs_decalMask: rhs_decalMask
-			{
-			};
-			class rhs_decalDoors: rhs_decalDoors
-			{
-			};
-			class rhs_hideCIP: rhs_hideCIP
-			{
-			};
-			class rhs_hideBFT: rhs_hideBFT
-			{
-			};
-			class rhs_hideAntennas: rhs_hideAntennas
-			{
-			};
-			class rhs_hideA2Parts: rhs_hideA2Parts
-			{
-			};
-			class Door_LF: Door_LF
-			{
-			};
 			class ani_window_1: Door_LF
 			{
-				displayName="Open front left window";
 				property="ani_window_1";
-			};
-			class Door_RF: Door_RF
-			{
 			};
 			class ani_window_2: Door_LF
 			{
-				displayName="Open front right window";
 				property="ani_window_2";
-			};
-			class Door_LB: Door_LB
-			{
 			};
 			class ani_window_3: Door_LF
 			{
-				displayName="Open back left window";
 				property="ani_window_3";
-			};
-			class Door_RB: Door_RB
-			{
 			};
 			class ani_window_4: Door_LF
 			{
-				displayName="Open back right window";
 				property="ani_window_4";
 			};
 			class ani_trunk_1: Door_LF
 			{
-				displayName="Open trunk";
 				property="ani_trunk_1";
 				expression="_this animate ['%s',_value,true]";
 				control="Slider";
@@ -2174,9 +1858,6 @@ class CfgVehicles
 				getOut="_this call rhs_fnc_m1025_doorHandler";
 			};
 		};
-	};
-	class rhsusf_m1025_d: rhsusf_m1025_w
-	{
 	};
 	class rhsusf_m1025_w_s: rhsusf_m1025_w
 	{
@@ -2191,9 +1872,6 @@ class CfgVehicles
 		};
 		maxFordingDepth=0.75;
 		displayname="M1025A2 (Unarmed/Snorkel)";
-	};
-	class rhsusf_m1025_d_s: rhsusf_m1025_w_s
-	{
 	};
 	class rhsusf_m1025_w_m2: rhsusf_m1025_w
 	{
@@ -2215,9 +1893,6 @@ class CfgVehicles
 			};
 		};
 		nameSound="veh_vehicle_armedcar_s";
-		class HitPoints: HitPoints
-		{
-		};
 		threat[]={0.89999998,0.30000001,0.1};
 		class Turrets: Turrets
 		{
@@ -2238,39 +1913,12 @@ class CfgVehicles
 					minFov=0.25;
 					maxFov=1.1;
 				};
-				class ViewGunner: ViewOptics
-				{
-				};
 			};
-			class CargoTurret_02: CargoTurret_02
-			{
-			};
-			class CargoTurret_03: CargoTurret_03
-			{
-			};
-		};
-		hiddenSelections[]=
-		{
-			"exterior",
-			"interior",
-			"A2",
-			"wheels",
-			"mainbody",
-			"hood gratting",
-			"camo1",
-			"camo2",
-			"camo3",
-			"unitdecals_1",
-			"unitdecals_2",
-			"ind_wait",
-			"ind_brake",
-			"ind_highbeam"
 		};
 		class textureSources
 		{
 			class standard
 			{
-				displayName="Woodland";
 				factions[]=
 				{
 					"rhs_faction_usarmy_wd"
@@ -2278,7 +1926,6 @@ class CfgVehicles
 			};
 			class Desert
 			{
-				displayName="Desert";
 				factions[]=
 				{
 					"rhs_faction_usarmy_wd"
@@ -2286,16 +1933,12 @@ class CfgVehicles
 			};
 			class Olive
 			{
-				displayName="Olive";
 				factions[]=
 				{
 					"rhs_faction_usarmy_wd"
 				};
 			};
 		};
-	};
-	class rhsusf_m1025_d_m2: rhsusf_m1025_w_m2
-	{
 	};
 	class rhsusf_m1025_w_s_m2: rhsusf_m1025_w_m2
 	{
@@ -2311,9 +1954,6 @@ class CfgVehicles
 		maxFordingDepth=0.75;
 		displayname="M1025A2 (M2/Snorkel)";
 	};
-	class rhsusf_m1025_d_s_m2: rhsusf_m1025_w_s_m2
-	{
-	};
 	class rhsusf_m1025_w_mk19: rhsusf_m1025_w_m2
 	{
 		Picture="\rhsusf\addons\rhsusf_hmmwv\pictures\rhsusf_m1025_mk19_ca.paa";
@@ -2327,16 +1967,7 @@ class CfgVehicles
 					"RHS_MK19"
 				};
 			};
-			class CargoTurret_02: CargoTurret_02
-			{
-			};
-			class CargoTurret_03: CargoTurret_03
-			{
-			};
 		};
-	};
-	class rhsusf_m1025_d_Mk19: rhsusf_m1025_w_mk19
-	{
 	};
 	class rhsusf_m1025_w_s_Mk19: rhsusf_m1025_w_mk19
 	{
@@ -2351,9 +1982,6 @@ class CfgVehicles
 		};
 		maxFordingDepth=0.75;
 		displayname="M1025A2 (Mk19/Snorkel)";
-	};
-	class rhsusf_m1025_d_s_Mk19: rhsusf_m1025_w_s_Mk19
-	{
 	};
 	class rhsusf_m966_w: rhsusf_m1025_w
 	{
@@ -2375,9 +2003,6 @@ class CfgVehicles
 			};
 		};
 		nameSound="veh_vehicle_armedcar_s";
-		class HitPoints: HitPoints
-		{
-		};
 		threat[]={0.89999998,0.30000001,0.1};
 		class Turrets: Turrets
 		{
@@ -2457,35 +2082,11 @@ class CfgVehicles
 					};
 				};
 			};
-			class CargoTurret_02: CargoTurret_02
-			{
-			};
-			class CargoTurret_03: CargoTurret_03
-			{
-			};
-		};
-		hiddenSelections[]=
-		{
-			"exterior",
-			"interior",
-			"A2",
-			"wheels",
-			"mainbody",
-			"hood gratting",
-			"camo1",
-			"camo2",
-			"camo3",
-			"unitdecals_1",
-			"unitdecals_2",
-			"ind_wait",
-			"ind_brake",
-			"ind_highbeam"
 		};
 		class textureSources
 		{
 			class standard
 			{
-				displayName="Woodland";
 				factions[]=
 				{
 					"rhs_faction_usarmy_wd"
@@ -2493,7 +2094,6 @@ class CfgVehicles
 			};
 			class Desert
 			{
-				displayName="Desert";
 				factions[]=
 				{
 					"rhs_faction_usarmy_wd"
@@ -2501,7 +2101,6 @@ class CfgVehicles
 			};
 			class Olive
 			{
-				displayName="Olive";
 				factions[]=
 				{
 					"rhs_faction_usarmy_wd"
@@ -2515,9 +2114,6 @@ class CfgVehicles
 			"Hide_Brushguard",
 			0.5
 		};
-	};
-	class rhsusf_m966_d: rhsusf_m966_w
-	{
 	};
 	class rhsusf_m1043_w: rhsusf_m1025_w
 	{
@@ -2656,27 +2252,10 @@ class CfgVehicles
 		};
 		Picture="\rhsusf\addons\rhsusf_hmmwv\pictures\rhsusf_m1043_ca.paa";
 		displayname="M1043A2 (Unarmed)";
-		hiddenSelections[]=
-		{
-			"exterior",
-			"interior",
-			"A2",
-			"wheels",
-			"mainbody",
-			"hood gratting",
-			"camo1",
-			"camo2",
-			"unitdecals_1",
-			"unitdecals_2",
-			"ind_wait",
-			"ind_brake",
-			"ind_highbeam"
-		};
 		class textureSources
 		{
 			class standard
 			{
-				displayName="Woodland";
 				factions[]=
 				{
 					"rhs_faction_usarmy_wd"
@@ -2684,7 +2263,6 @@ class CfgVehicles
 			};
 			class Desert
 			{
-				displayName="Desert";
 				factions[]=
 				{
 					"rhs_faction_usarmy_d"
@@ -2692,16 +2270,12 @@ class CfgVehicles
 			};
 			class Olive
 			{
-				displayName="Olive";
 				factions[]=
 				{
 					"rhs_faction_usarmy_wd"
 				};
 			};
 		};
-	};
-	class rhsusf_m1043_d: rhsusf_m1043_w
-	{
 	};
 	class rhsusf_m1043_w_s: rhsusf_m1043_w
 	{
@@ -2717,9 +2291,6 @@ class CfgVehicles
 		maxFordingDepth=0.75;
 		displayname="M1043A2 (Unarmed/Snorkel)";
 	};
-	class rhsusf_m1043_d_s: rhsusf_m1043_w_s
-	{
-	};
 	class rhsusf_m1043_w_m2: rhsusf_m1025_w_m2
 	{
 		displayname="M1043A2 (M2)";
@@ -2728,7 +2299,6 @@ class CfgVehicles
 		{
 			class standard
 			{
-				displayName="Woodland";
 				factions[]=
 				{
 					"rhs_faction_usarmy_wd"
@@ -2736,7 +2306,6 @@ class CfgVehicles
 			};
 			class Desert
 			{
-				displayName="Desert";
 				factions[]=
 				{
 					"rhs_faction_usarmy_wd"
@@ -2744,16 +2313,12 @@ class CfgVehicles
 			};
 			class Olive
 			{
-				displayName="Olive";
 				factions[]=
 				{
 					"rhs_faction_usarmy_wd"
 				};
 			};
 		};
-	};
-	class rhsusf_m1043_d_m2: rhsusf_m1043_w_m2
-	{
 	};
 	class rhsusf_m1043_w_s_m2: rhsusf_m1043_w_m2
 	{
@@ -2769,9 +2334,6 @@ class CfgVehicles
 		maxFordingDepth=0.75;
 		displayname="M1043A2 (M2/Snorkel)";
 	};
-	class rhsusf_m1043_d_s_m2: rhsusf_m1043_w_s_m2
-	{
-	};
 	class rhsusf_m1043_w_mk19: rhsusf_m1025_w_mk19
 	{
 		displayname="M1043A2 (Mk19)";
@@ -2780,7 +2342,6 @@ class CfgVehicles
 		{
 			class standard
 			{
-				displayName="Woodland";
 				factions[]=
 				{
 					"rhs_faction_usarmy_wd"
@@ -2788,7 +2349,6 @@ class CfgVehicles
 			};
 			class Desert
 			{
-				displayName="Desert";
 				factions[]=
 				{
 					"rhs_faction_usarmy_wd"
@@ -2796,16 +2356,12 @@ class CfgVehicles
 			};
 			class Olive
 			{
-				displayName="Olive";
 				factions[]=
 				{
 					"rhs_faction_usarmy_wd"
 				};
 			};
 		};
-	};
-	class rhsusf_m1043_d_mk19: rhsusf_m1043_w_mk19
-	{
 	};
 	class rhsusf_m1043_w_s_mk19: rhsusf_m1043_w_mk19
 	{
@@ -2821,9 +2377,6 @@ class CfgVehicles
 		maxFordingDepth=0.75;
 		displayname="M1043A2 (Mk19/Snorkel)";
 	};
-	class rhsusf_m1043_d_s_mk19: rhsusf_m1043_w_s_mk19
-	{
-	};
 	class rhsusf_m1045_w: rhsusf_m966_w
 	{
 		displayname="M1045A2 (M220A2)";
@@ -2832,7 +2385,6 @@ class CfgVehicles
 		{
 			class standard
 			{
-				displayName="Woodland";
 				factions[]=
 				{
 					"rhs_faction_usarmy_wd"
@@ -2840,7 +2392,6 @@ class CfgVehicles
 			};
 			class Desert
 			{
-				displayName="Desert";
 				factions[]=
 				{
 					"rhs_faction_usarmy_wd"
@@ -2848,7 +2399,6 @@ class CfgVehicles
 			};
 			class Olive
 			{
-				displayName="Olive";
 				factions[]=
 				{
 					"rhs_faction_usarmy_wd"
@@ -2856,9 +2406,6 @@ class CfgVehicles
 			};
 		};
 		animationList[]={};
-	};
-	class rhsusf_m1045_d: rhsusf_m1045_w
-	{
 	};
 	class rhsusf_m1045_w_s: rhsusf_m1045_w
 	{
@@ -2873,8 +2420,5 @@ class CfgVehicles
 		};
 		maxFordingDepth=0.75;
 		displayname="M1045A2 (M220A2/Snorkel)";
-	};
-	class rhsusf_m1045_d_s: rhsusf_m1045_w_s
-	{
 	};
 };

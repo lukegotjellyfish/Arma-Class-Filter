@@ -1,8 +1,5 @@
 class CfgPatches
 {
-	class RHS_c_radio
-	{
-		units[]={};
 		weapons[]={};
 	};
 };
@@ -17,9 +14,6 @@ class CfgVoice
 		"RHS_Male05RUS"
 	};
 	class Base;
-	class RHS_BaseRUS: Base
-	{
-		variants[]={0.94999999,1,1.05};
 		voiceType="";
 		directories[]=
 		{
@@ -39,7 +33,6 @@ class CfgVoice
 	};
 	class RHS_Male01RUS: RHS_RUS
 	{
-		displayName="Russian Voice 01";
 		directories[]=
 		{
 			"\rhsafrf\addons\rhs_s_radio\radio\Male01\",
@@ -48,7 +41,6 @@ class CfgVoice
 	};
 	class RHS_Male02RUS: RHS_RUS
 	{
-		displayName="Russian Voice 02";
 		directories[]=
 		{
 			"\rhsafrf\addons\rhs_s_radio\radio\Male02\",
@@ -57,7 +49,6 @@ class CfgVoice
 	};
 	class RHS_Male03RUS: RHS_RUS
 	{
-		displayName="Russian Voice 03";
 		directories[]=
 		{
 			"\rhsafrf\addons\rhs_s_radio\radio\Male03\",
@@ -66,7 +57,6 @@ class CfgVoice
 	};
 	class RHS_Male04RUS: RHS_RUS
 	{
-		displayName="Russian Voice 04";
 		directories[]=
 		{
 			"\rhsafrf\addons\rhs_s_radio\radio\Male04\",
@@ -75,7 +65,6 @@ class CfgVoice
 	};
 	class RHS_Male05RUS: RHS_RUS
 	{
-		displayName="Russian Voice 05";
 		directories[]=
 		{
 			"\rhsafrf\addons\rhs_s_radio\radio\Male02\",
@@ -172,9 +161,6 @@ class CfgVoiceTypes
 };
 class RadioProtocolBase
 {
-	class Words;
-	class Arguments;
-};
 class RHS_RadioProtocolBaseRUS: RadioProtocolBase
 {
 	class Default;
@@ -435,15 +421,9 @@ class RHS_RadioProtocolBaseRUS: RadioProtocolBase
 	class Arguments: Arguments
 	{
 		class Direction;
-		class Distance1;
-		class AggrTargets;
-	};
 };
 class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 {
-	class Words: Words
-	{
-		NO_SPEECH[]={};
 		micOut1[]=
 		{
 			"\rhsafrf\addons\rhs_s_radio\radio\static\micIn.wss"
@@ -8722,9 +8702,6 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 			gesture="";
 		};
 	};
-	class SentNotifySuppress: NormalCommand
-	{
-		versions[]={};
 	};
 	class SentSupportRequestRGCASHelicopter: NormalCommand
 	{
@@ -10706,9 +10683,6 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 			"Version1",
 			1
 		};
-		class Version1
-		{
-			speech[]={};
 		};
 	};
 	class SentBehaviourSafe: SentBehaviourSafe
@@ -11929,9 +11903,6 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 			"Version1",
 			1
 		};
-		class Version1
-		{
-			speech[]={};
 		};
 	};
 	class SentCmdActionNear: SentCmdActionNear
@@ -11941,9 +11912,6 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 			"Version1",
 			1
 		};
-		class Version1
-		{
-			speech[]={};
 		};
 	};
 	class SentCmdActionFar: SentCmdActionFar
@@ -11953,9 +11921,6 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 			"Version1",
 			1
 		};
-		class Version1
-		{
-			speech[]={};
 		};
 	};
 	class SentCmdActionAt: SentCmdActionAt
@@ -11965,9 +11930,6 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 			"Version1",
 			1
 		};
-		class Version1
-		{
-			speech[]={};
 		};
 	};
 	class SentCmdTakeFlag: SentCmdTakeFlag
@@ -12638,9 +12600,6 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 			"Version1",
 			1
 		};
-		class Version1
-		{
-			speech[]={};
 		};
 	};
 	class SentCmdSwitchToGunner: SentCmdSwitchToGunner
@@ -12650,9 +12609,6 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 			"Version1",
 			1
 		};
-		class Version1
-		{
-			speech[]={};
 		};
 	};
 	class SentCmdSwitchToCommander: SentCmdSwitchToCommander
@@ -12662,9 +12618,6 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 			"Version1",
 			1
 		};
-		class Version1
-		{
-			speech[]={};
 		};
 	};
 	class SentCmdSwitchToCargo: SentCmdSwitchToCargo
@@ -12674,9 +12627,6 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 			"Version1",
 			1
 		};
-		class Version1
-		{
-			speech[]={};
 		};
 	};
 	class SentCmdGetOut: SentCmdGetOut
@@ -12805,9 +12755,6 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 			"Version1",
 			1
 		};
-		class Version1
-		{
-			speech[]={};
 		};
 	};
 	class SentNotifyAttack: SentNotifyAttack

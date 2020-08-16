@@ -101,17 +101,14 @@ class cfgWaypoints
 {
 	class RHS
 	{
-		displayName="RHS Special Waypoints";
 		class wpTochkaDeploy
 		{
-			displayName="Tochka-U - Deploy";
 			tooltip="Deploys Tochka-U to ready to fire state";
 			file="\rhsafrf\addons\rhs_c_rva\scripts\WP_TochkaDeploy.sqf";
 			icon="\a3\3DEN\Data\CfgWaypoints\TransportUnload_ca.paa";
 		};
 		class wpTochkaFire: wpTochkaDeploy
 		{
-			displayName="Tochka-U - Fire";
 			tooltip="Tochka-U will fire missile at waypoint position";
 			file="\rhsafrf\addons\rhs_c_rva\scripts\WP_TochkaFire.sqf";
 			icon="\a3\3DEN\Data\CfgWaypoints\Destroy_ca.paa";
@@ -192,28 +189,6 @@ class cfgWeapons
 	class RocketPods;
 	class RHS_9M79_1Launcher: RocketPods
 	{
-		displayName="$STR_RHS_ss21_9M79_1Launcher";
-		type=65536;
-		sounds[]=
-		{
-			"StandardSound"
-		};
-		class StandardSound
-		{
-			weaponSoundEffect="DefaultRifle";
-			begin1[]=
-			{
-				"\rhsafrf\addons\rhs_ss21\sound\launchA",
-				3.4125376,
-				1,
-				1200
-			};
-			soundBegin[]=
-			{
-				"begin1",
-				1
-			};
-		};
 		sound[]=
 		{
 			"\rhsafrf\addons\rhs_ss21\sound\launchA",
@@ -222,21 +197,11 @@ class cfgWeapons
 			1100
 		};
 		recoil="launcherBase";
-		soundContinuous=0;
-		soundBurst=0;
 		reloadTime=14;
-		aiRateOfFire=10;
-		aiRateOfFireDistance=450;
-		minRange=1950;
-		midRange=3000;
-		maxRange=15600;
 		cursor="Rocket";
 		cursorSize=1;
 		initSpeed=50;
 	};
-	class RHS_ss21_dummy_launcher: RHS_9M79_1Launcher
-	{
-		magazines[]={};
 	};
 };
 class CfgMagazines
@@ -244,7 +209,6 @@ class CfgMagazines
 	class rhs_mag_40Rnd_122mm_rockets;
 	class 1_Rnd_RHS_9M79_1_F: rhs_mag_40Rnd_122mm_rockets
 	{
-		displayName="$STR_RHS_ss21_1_Rnd_RHS_9M79_1_F";
 		ammo="RHS_9M79_1_F";
 		count=1;
 		initSpeed=44;
@@ -252,13 +216,11 @@ class CfgMagazines
 	};
 	class 1_Rnd_RHS_9M79_1_K: 1_Rnd_RHS_9M79_1_F
 	{
-		displayName="$STR_RHS_ss21_1_Rnd_RHS_9M79_1_K";
 		ammo="RHS_9M79_1_K";
 		count=1;
 	};
 	class 1_Rnd_RHS_9M79B: 1_Rnd_RHS_9M79_1_F
 	{
-		displayName="$STR_RHS_ss21_1_Rnd_RHS_9M79B";
 		ammo="RHS_9M79B";
 		count=1;
 	};
@@ -268,18 +230,12 @@ class CfgVehicles
 	class LandVehicle;
 	class Car: LandVehicle
 	{
-		class HitPoints;
-		class NewTurret;
-	};
 	class Car_F: Car
 	{
 		class Turrets
 		{
 			class MainTurret: NewTurret
 			{
-				class ViewOptics;
-			};
-		};
 		class HitPoints
 		{
 			class HitLFWheel;
@@ -291,12 +247,6 @@ class CfgVehicles
 			class HitGlass2;
 			class HitGlass3;
 			class HitGlass4;
-			class HitGlass5;
-			class HitGlass6;
-		};
-		class EventHandlers;
-		class AnimationSources;
-	};
 	class Truck_F: Car_F
 	{
 		class ViewPilot;
@@ -308,9 +258,6 @@ class CfgVehicles
 			class HitLF2Wheel;
 			class HitRFWheel;
 			class HitRBWheel;
-			class HitRMWheel;
-			class HitRF2Wheel;
-		};
 		class AnimationSources;
 	};
 	class OTR21_Base: Truck_F
@@ -451,9 +398,6 @@ class CfgVehicles
 				steering=0;
 				maxHandBrakeTorque=20000;
 			};
-			class LR2: LR
-			{
-			};
 			class RF: LF
 			{
 				side="right";
@@ -475,7 +419,6 @@ class CfgVehicles
 		mfMax=100;
 		mFact=0;
 		tBody=0;
-		displayName="$STR_RHS_ss21";
 		hiddenselections[]=
 		{
 			"camo1",
@@ -485,38 +428,25 @@ class CfgVehicles
 			"num2",
 			"num3"
 		};
-		hiddenSelectionsTextures[]=
-		{
-			"rhsafrf\addons\rhs_ss21\data\veh\tochka_body_co.paa",
-			"rhsafrf\addons\rhs_ss21\data\veh\tochka_misc_co.paa",
-			"rhsafrf\addons\rhs_ss21\data\veh\tochka_bottom_co.paa"
-		};
 		class textureSources
 		{
 			class standard
 			{
-				displayName="Standard";
 				factions[]=
 				{
 					"rhs_faction_rva"
 				};
-			};
-			class camo: standard
-			{
-				displayName="Camo";
 			};
 		};
 		class Attributes
 		{
 			class rhs_decalNumber_type
 			{
-				displayName="Define font type of plate number";
 				tooltip="Define kind of font that will be drawn on vehicle.";
 				property="rhs_decalNumber_type";
 				control="Combo";
 				expression="_this setVariable ['%s', _value];[_this,[['Number', SS21NumberPlaces, _value]]] call rhs_fnc_decalsInit";
 				defaultValue=0;
-				typeName="STRING";
 				class values
 				{
 					class Default
@@ -565,18 +495,15 @@ class CfgVehicles
 			class rhs_decalNumber
 			{
 				collapsed=1;
-				displayName="Set side number";
 				tooltip="Set side number. 3 numbers are required. Type 0 to hide numbers complety & leave at -1 to get random number";
 				property="rhs_decalNumber";
 				control="Edit";
 				validate="Number";
-				typeName="Number";
 				defaultValue="-1";
 				expression="if( _value >= 0)then{if( _value == 0)then{{[_this setobjectTexture [_x,'a3\data_f\clear_empty.paa']]}foreach SS21NumberPlaces}else{[_this, [['Number', SS21NumberPlaces, _this getVariable ['rhs_decalNumber_type','Default'], _value] ] ] call rhs_fnc_decalsInit}};";
 			};
 			class rhs_deploy
 			{
-				displayName="Deploy Tochka";
 				tooltip="Deploys Tochka in ready to launch state. In order to fire Tochka use following command Tochka doTarget enemyTarget (may be laser target or vehicle).";
 				property="rhs_deploy";
 				control="Checkbox";
@@ -622,9 +549,6 @@ class CfgVehicles
 				direction="vyfuk konec";
 				effect="ExhaustsEffectBig";
 			};
-		};
-		class Damage
-		{
 		};
 		class Turrets: Turrets
 		{
@@ -682,9 +606,6 @@ class CfgVehicles
 					maxMoveY=0;
 					minMoveZ=0;
 					maxMoveZ=0;
-				};
-				class ViewGunner: ViewCargo
-				{
 				};
 			};
 		};
@@ -799,32 +720,17 @@ class CfgVehicles
 				init="[_this select 0] execVM 'rhsafrf\addons\rhs_c_rva\scripts\init.sqf';(_this select 0) addeventhandler ['HandleDamage',{[_this,0.5,0.025,0.8,0.2] spawn rhs_fnc_activeTirePressure; _this select 2;}];";
 			};
 		};
-		class Library
-		{
-			libTextDesc="$STR_RHS_ss21_lib";
-		};
-	};
-	class rhs_9k79: OTR21_Base
-	{
 	};
 	class rhs_9k79_K: rhs_9k79
 	{
-		displayName="$STR_RHS_ss21K";
 		class Turrets: Turrets
 		{
-			class MainTurret: MainTurret
-			{
-			};
 		};
 	};
 	class rhs_9k79_B: rhs_9k79
 	{
-		displayName="$STR_RHS_ss21B";
 		class Turrets: Turrets
 		{
-			class MainTurret: MainTurret
-			{
-			};
 		};
 	};
 };
@@ -919,24 +825,14 @@ class ss21_main_dialog
 	class RHS_ss21_control_group
 	{
 		idc=-1;
-		type=15;
 		style=0;
-		class VScrollbar
-		{
-			color[]={1,1,1,1};
 			width=0.021;
 			autoScrollSpeed=-1;
 			autoScrollDelay=5;
 			autoScrollRewind=0;
 		};
-		class HScrollbar
-		{
-			color[]={1,1,1,1};
 			height=0.028000001;
 		};
-		class ScrollBar
-		{
-			color[]={1,1,1,0.60000002};
 			colorActive[]={1,1,1,1};
 			colorDisabled[]={1,1,1,0.30000001};
 			arrowEmpty="\A3\ui_f\data\gui\cfg\slider\arrowEmpty_ca.paa";
@@ -952,7 +848,6 @@ class ss21_main_dialog
 	class RHS_ss21_text: RscText
 	{
 		idc=-1;
-		type=0;
 		style=0;
 		x=0;
 		w=0.30000001;
@@ -966,7 +861,6 @@ class ss21_main_dialog
 	class RHS_ss21_text_border: RscPicture
 	{
 		idc=-1;
-		type=0;
 		style=0;
 		x=0;
 		w=0.30000001;
@@ -979,7 +873,6 @@ class ss21_main_dialog
 	};
 	class RHS_ss21_edit: RscEdit
 	{
-		type=2;
 		style="0x00+16";
 		idc=-1;
 		font="PuristaMedium";
@@ -996,7 +889,6 @@ class ss21_main_dialog
 	class RHS_ss21_image: RscPicture
 	{
 		idc=-1;
-		type=0;
 		style="48+0x800";
 		x=0.25;
 		w=0.1;
@@ -1010,7 +902,6 @@ class ss21_main_dialog
 	class RHS_ss21_btn: RscShortcutButton
 	{
 		idc=-1;
-		type=16;
 		style=0;
 		action="";
 		x=0;
@@ -1096,7 +987,6 @@ class ss21_main_dialog
 	};
 	class RHS_ss21_list: RscListBox
 	{
-		type=5;
 		style=16;
 		idc=-1;
 		w=0.27500001;
@@ -1137,9 +1027,6 @@ class ss21_main_dialog
 		autoScrollSpeed=-1;
 		autoScrollDelay=5;
 		autoScrollRewind=0;
-		class ScrollBar
-		{
-			color[]={1,1,1,1};
 			colorActive[]={1,1,1,1};
 			colorDisabled[]={1,1,1,1};
 			thumb="\A3\ui_f\data\gui\cfg\scrollbar\thumb_ca.paa";
@@ -1151,7 +1038,6 @@ class ss21_main_dialog
 	class RHS_ss21_map: RscMapControl
 	{
 		idc=-1;
-		type=101;
 		style=48;
 		x=0;
 		y=0;
@@ -1231,9 +1117,6 @@ class ss21_main_dialog
 		scaleDefault=0.1;
 		onMouseButtonClick="";
 		onMouseButtonDblClick="";
-		class Legend
-		{
-			colorBackground[]={1,1,1,0.5};
 			color[]={0,0,0,1};
 			x="SafeZoneX + 					(			((safezoneW / safezoneH) min 1.2) / 40)";
 			y="SafeZoneY + safezoneH - 4.5 * 					(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
@@ -1242,23 +1125,14 @@ class ss21_main_dialog
 			font="PuristaMedium";
 			sizeEx="(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.8)";
 		};
-		class ActiveMarker
-		{
-			color[]={0.30000001,0.1,0.89999998,1};
 			size=50;
 		};
-		class Command
-		{
-			color[]={1,1,1,1};
 			icon="\A3\ui_f\data\map\mapcontrol\waypoint_ca.paa";
 			size=18;
 			importance=1;
 			coefMin=1;
 			coefMax=1;
 		};
-		class Task
-		{
-			colorCreated[]={1,1,1,1};
 			colorCanceled[]={0.69999999,0.69999999,0.69999999,1};
 			colorDone[]={0.69999999,1,0.30000001,1};
 			colorFailed[]={1,0.30000001,0.2,1};
@@ -1279,216 +1153,144 @@ class ss21_main_dialog
 			coefMin=1;
 			coefMax=1;
 		};
-		class CustomMark
-		{
-			color[]={0,0,0,1};
 			icon="\A3\ui_f\data\map\mapcontrol\custommark_ca.paa";
 			size=24;
 			importance=1;
 			coefMin=1;
 			coefMax=1;
 		};
-		class Tree
-		{
-			color[]={0.44999999,0.63999999,0.33000001,0.40000001};
 			icon="\A3\ui_f\data\map\mapcontrol\bush_ca.paa";
 			size=12;
 			importance="0.9 * 16 * 0.05";
 			coefMin=0.25;
 			coefMax=4;
 		};
-		class SmallTree
-		{
-			color[]={0.44999999,0.63999999,0.33000001,0.40000001};
 			icon="\A3\ui_f\data\map\mapcontrol\bush_ca.paa";
 			size=12;
 			importance="0.6 * 12 * 0.05";
 			coefMin=0.25;
 			coefMax=4;
 		};
-		class Bush
-		{
-			color[]={0.44999999,0.63999999,0.33000001,0.40000001};
 			icon="\A3\ui_f\data\map\mapcontrol\bush_ca.paa";
 			size="14/2";
 			importance="0.2 * 14 * 0.05 * 0.05";
 			coefMin=0.25;
 			coefMax=4;
 		};
-		class Church
-		{
-			color[]={1,1,1,1};
 			icon="\A3\ui_f\data\map\mapcontrol\church_CA.paa";
 			size=24;
 			importance=1;
 			coefMin=0.85000002;
 			coefMax=1;
 		};
-		class Chapel
-		{
-			color[]={0,0,0,1};
 			icon="\A3\ui_f\data\map\mapcontrol\Chapel_CA.paa";
 			size=24;
 			importance=1;
 			coefMin=0.85000002;
 			coefMax=1;
 		};
-		class Cross
-		{
-			color[]={0,0,0,1};
 			icon="\A3\ui_f\data\map\mapcontrol\Cross_CA.paa";
 			size=24;
 			importance=1;
 			coefMin=0.85000002;
 			coefMax=1;
 		};
-		class Rock
-		{
-			color[]={0.1,0.1,0.1,0.80000001};
 			icon="\A3\ui_f\data\map\mapcontrol\rock_ca.paa";
 			size=12;
 			importance="0.5 * 12 * 0.05";
 			coefMin=0.25;
 			coefMax=4;
 		};
-		class Bunker
-		{
-			color[]={0,0,0,1};
 			icon="\A3\ui_f\data\map\mapcontrol\bunker_ca.paa";
 			size=14;
 			importance="1.5 * 14 * 0.05";
 			coefMin=0.25;
 			coefMax=4;
 		};
-		class Fortress
-		{
-			color[]={0,0,0,1};
 			icon="\A3\ui_f\data\map\mapcontrol\bunker_ca.paa";
 			size=16;
 			importance="2 * 16 * 0.05";
 			coefMin=0.25;
 			coefMax=4;
 		};
-		class Fountain
-		{
-			color[]={0,0,0,1};
 			icon="\A3\ui_f\data\map\mapcontrol\fountain_ca.paa";
 			size=11;
 			importance="1 * 12 * 0.05";
 			coefMin=0.25;
 			coefMax=4;
 		};
-		class ViewTower
-		{
-			color[]={0,0,0,1};
 			icon="\A3\ui_f\data\map\mapcontrol\viewtower_ca.paa";
 			size=16;
 			importance="2.5 * 16 * 0.05";
 			coefMin=0.5;
 			coefMax=4;
 		};
-		class Lighthouse
-		{
-			color[]={1,1,1,1};
 			icon="\A3\ui_f\data\map\mapcontrol\lighthouse_CA.paa";
 			size=24;
 			importance=1;
 			coefMin=0.85000002;
 			coefMax=1;
 		};
-		class Quay
-		{
-			color[]={1,1,1,1};
 			icon="\A3\ui_f\data\map\mapcontrol\quay_CA.paa";
 			size=24;
 			importance=1;
 			coefMin=0.85000002;
 			coefMax=1;
 		};
-		class Fuelstation
-		{
-			color[]={1,1,1,1};
 			icon="\A3\ui_f\data\map\mapcontrol\fuelstation_CA.paa";
 			size=24;
 			importance=1;
 			coefMin=0.85000002;
 			coefMax=1;
 		};
-		class Hospital
-		{
-			color[]={1,1,1,1};
 			icon="\A3\ui_f\data\map\mapcontrol\hospital_CA.paa";
 			size=24;
 			importance=1;
 			coefMin=0.85000002;
 			coefMax=1;
 		};
-		class BusStop
-		{
-			color[]={1,1,1,1};
 			icon="\A3\ui_f\data\map\mapcontrol\busstop_CA.paa";
 			size=24;
 			importance=1;
 			coefMin=0.85000002;
 			coefMax=1;
 		};
-		class Transmitter
-		{
-			color[]={1,1,1,1};
 			icon="\A3\ui_f\data\map\mapcontrol\transmitter_CA.paa";
 			size=24;
 			importance=1;
 			coefMin=0.85000002;
 			coefMax=1;
 		};
-		class Stack
-		{
-			color[]={0,0,0,1};
 			icon="\A3\ui_f\data\map\mapcontrol\stack_ca.paa";
 			size=20;
 			importance="2 * 16 * 0.05";
 			coefMin=0.89999998;
 			coefMax=4;
 		};
-		class Ruin
-		{
-			color[]={0,0,0,1};
 			icon="\A3\ui_f\data\map\mapcontrol\ruin_ca.paa";
 			size=16;
 			importance="1.2 * 16 * 0.05";
 			coefMin=1;
 			coefMax=4;
 		};
-		class Tourism
-		{
-			color[]={0,0,0,1};
 			icon="\A3\ui_f\data\map\mapcontrol\tourism_ca.paa";
 			size=16;
 			importance="1 * 16 * 0.05";
 			coefMin=0.69999999;
 			coefMax=4;
 		};
-		class Watertower
-		{
-			color[]={1,1,1,1};
 			icon="\A3\ui_f\data\map\mapcontrol\watertower_CA.paa";
 			size=24;
 			importance=1;
 			coefMin=0.85000002;
 			coefMax=1;
 		};
-		class Waypoint
-		{
-			color[]={0,0,0,1};
 			size=24;
 			importance=1;
 			coefMin=1;
 			coefMax=1;
 			icon="\A3\ui_f\data\map\mapcontrol\waypoint_ca.paa";
 		};
-		class WaypointCompleted
-		{
-			color[]={0,0,0,1};
 			size=24;
 			importance=1;
 			coefMin=1;
@@ -1552,7 +1354,6 @@ class ss21_main_dialog
 	class ss21_background
 	{
 		idc=-1;
-		type=0;
 		style=48;
 		x="0.1-0.03";
 		w="0.3*3 + 0.03*4";

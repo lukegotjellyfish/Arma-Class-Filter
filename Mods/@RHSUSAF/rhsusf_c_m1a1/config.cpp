@@ -23,9 +23,6 @@ class Optics_Armored;
 class Optics_Commander_01: Optics_Armored
 {
 	class Wide;
-	class Medium;
-	class Narrow;
-};
 class RscOpticsText;
 class RscOpticsValue;
 class RscText;
@@ -249,9 +246,6 @@ class CfgVehicles
 	class Tank: LandVehicle
 	{
 		class NewTurret;
-		class Sounds;
-		class HitPoints;
-	};
 	class Tank_F: Tank
 	{
 		class Turrets
@@ -260,9 +254,6 @@ class CfgVehicles
 			{
 				class Turrets
 				{
-					class CommanderOptics;
-				};
-			};
 		};
 		class AnimationSources;
 		class ViewPilot;
@@ -273,14 +264,8 @@ class CfgVehicles
 		{
 			class HitHull;
 			class HitEngine;
-			class HitLTrack;
-			class HitRTrack;
-		};
 		class Sounds: Sounds
 		{
-			class Engine;
-			class Movement;
-		};
 	};
 	class MBT_01_base_F: Tank_F
 	{
@@ -293,7 +278,6 @@ class CfgVehicles
 			"['Label', cM1PlnSymPlaces, 'ArmyPlt_Abrams_D']",
 			"['Label', cM1BarrelSymPlaces, 'BarrelArt_Abrams_WD']"
 		};
-		displayName="$STR_M1A1SAwd_Name";
 		accuracy=0.30000001;
 		typicalCargo[]={};
 		side=1;
@@ -382,9 +366,6 @@ class CfgVehicles
 		};
 		class Wheels
 		{
-			class L2
-			{
-				suspTravelDirection[]={-0.125,-1,0};
 				side="left";
 				steering=0;
 				width=0.477;
@@ -410,24 +391,6 @@ class CfgVehicles
 					{0.69999999,0.5}
 				};
 			};
-			class L3: L2
-			{
-			};
-			class L4: L2
-			{
-			};
-			class L5: L2
-			{
-			};
-			class L6: L2
-			{
-			};
-			class L7: L2
-			{
-			};
-			class L8: L2
-			{
-			};
 			class L9: L2
 			{
 				maxDroop=0;
@@ -438,28 +401,7 @@ class CfgVehicles
 				maxDroop=0;
 				maxCompression=0;
 			};
-			class R2: L2
-			{
-				suspTravelDirection[]={0.125,-1,0};
 				side="right";
-			};
-			class R3: R2
-			{
-			};
-			class R4: R2
-			{
-			};
-			class R5: R2
-			{
-			};
-			class R6: R2
-			{
-			};
-			class R7: R2
-			{
-			};
-			class R8: R2
-			{
 			};
 			class R9: R2
 			{
@@ -1352,41 +1294,7 @@ class CfgVehicles
 				};
 			};
 		};
-		hiddenSelections[]=
-		{
-			"camo1",
-			"camo2",
-			"camo3",
-			"camo4",
-			"",
-			"",
-			"",
-			"n1",
-			"n2",
-			"n3",
-			"i1",
-			"i2",
-			"i3"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"rhsusf\addons\rhsusf_m1a1\data\rhsusf_m1a1aim_01_co.paa",
-			"rhsusf\addons\rhsusf_m1a1\data\rhsusf_m1a1aim_02_co.paa",
-			"rhsusf\addons\rhsusf_m1a1\data\rhsusf_m1a1aim_03_co.paa",
-			"rhsusf\addons\rhsusf_m1a1\loaderspintle\data\loaderspintle_wd_co.paa"
-		};
 		class textureSources
-		{
-			class woodland
-			{
-				displayName="Woodland";
-			};
-			class desert: woodland
-			{
-				displayName="Desert";
-			};
-		};
-		class Damage
 		{
 		};
 		class ViewOptics: ViewOptics
@@ -1462,7 +1370,6 @@ class CfgVehicles
 		{
 			class rhs_hideIFFPanel
 			{
-				displayName="Hide IFF Panel";
 				property="rhs_hideIFFPanel";
 				control="CheckboxNumber";
 				expression="_this animate ['IFF_Panels_Hide',_value,true]";
@@ -1470,7 +1377,6 @@ class CfgVehicles
 			};
 			class rhs_hideMiles
 			{
-				displayName="Hide Miles Panel";
 				property="rhs_hideMiles";
 				control="CheckboxNumber";
 				expression="_this animate ['Miles_Hide',_value,true]";
@@ -1478,13 +1384,11 @@ class CfgVehicles
 			};
 			class rhs_decalBarrel_type
 			{
-				displayName="Define type of barrel art";
 				tooltip="Define type of barrel art. You can choose between desert & Woodland variants";
 				property="rhs_decalBarrel_type";
 				control="Combo";
 				expression="_this setVariable ['%s', _value];";
 				defaultValue=0;
-				typeName="STRING";
 				class values
 				{
 					class BarrelArt_Abrams_D
@@ -1502,24 +1406,20 @@ class CfgVehicles
 			};
 			class rhs_decalBarrel
 			{
-				displayName="Define barrel art";
 				tooltip="Define barrel art. Available numbers from 0 to 55, type number above 55 to clear that place";
 				property="rhs_decalBarrel";
 				control="Edit";
 				expression="if(_value >= 0)then{ [_this, [ [ 'Label', cM1BarrelSymPlaces,  _this getVariable ['rhs_decalBarrel_type','BarrelArt_Abrams_WD'],_value] ] ] call rhsusf_fnc_decalsInit;};";
 				defaultValue="-1";
 				validate="NUMBER";
-				typeName="NUMBER";
 			};
 			class rhs_decalPlatoon_type
 			{
-				displayName="Define type of platoon symbol";
 				tooltip="Define type of platoon symbol. You can choose between desert & Woodland variants";
 				property="rhs_decalPlatoon_type";
 				control="Combo";
 				expression="_this setVariable ['%s', _value];";
 				defaultValue=0;
-				typeName="STRING";
 				class values
 				{
 					class ArmyPlt_Abrams_D
@@ -1537,13 +1437,11 @@ class CfgVehicles
 			};
 			class rhs_decalPlatoon
 			{
-				displayName="Define platoon symbol";
 				tooltip="Define platoon symbol";
 				property="rhs_decalPlatoon";
 				control="Combo";
 				expression="if(_value >= 0)then{ [_this, [ [ 'Label', cM1PlnSymPlaces,  _this getVariable ['rhs_decalPlatoon_type','ArmyPlt_Abrams_D'],_value] ] ] call rhsusf_fnc_decalsInit};";
 				defaultValue="-1";
-				typeName="Number";
 				class values
 				{
 					class Random
@@ -1634,13 +1532,11 @@ class CfgVehicles
 			};
 			class rhs_ammoslot_1_type
 			{
-				displayName="Ammo slot #1 type";
 				tooltip="Define type of shell for #1 slot";
 				property="rhs_ammoslot_1_type";
 				control="Combo";
 				expression="_this setVariable ['%s', _value];";
 				defaultValue=0;
-				typeName="STRING";
 				class values
 				{
 					class rhs_mag_M829A3
@@ -1688,43 +1584,34 @@ class CfgVehicles
 			};
 			class rhs_ammoslot_1
 			{
-				displayName="Ammo slot #1 count";
 				tooltip="Define number of rounds stored inside of type #1. Max 36. Leave -1 for default loadout";
 				property="rhs_ammoslot_1";
 				control="Edit";
 				expression="if(_value >= 0)then{ [_this,_value,'%s'] spawn rhs_fnc_m1_defineLoadout};";
 				defaultValue="-1";
 				validate="NUMBER";
-				typeName="NUMBER";
 			};
 			class rhs_ammoslot_2_type: rhs_ammoslot_1_type
 			{
-				displayName="Ammo slot #2 type";
 				tooltip="Define type of shell for #2 slot";
 				property="rhs_ammoslot_2_type";
 				defaultValue="0";
 			};
 			class rhs_ammoslot_2: rhs_ammoslot_1
 			{
-				displayName="Ammo slot #2 count";
 				tooltip="Define number of rounds stored inside of type #2. Max 36. Leave -1 for default loadout";
 				property="rhs_ammoslot_2";
 			};
 			class rhs_ammoslot_3_type: rhs_ammoslot_1_type
 			{
-				displayName="Ammo slot #3 type";
 				tooltip="Define type of shell for #3 slot";
 				property="rhs_ammoslot_3_type";
 			};
 			class rhs_ammoslot_3: rhs_ammoslot_1
 			{
-				displayName="Ammo slot #3 count";
 				tooltip="Define number of rounds stored inside of type #3. Max 36. Leave -1 for default loadout";
 				property="rhs_ammoslot_3";
 			};
-		};
-		class EventHandlers: EventHandlers
-		{
 		};
 	};
 	class rhsusf_m1a1aimwd_usarmy: rhsusf_m1a1tank_base
@@ -1734,11 +1621,9 @@ class CfgVehicles
 			"['Label', cM1PlnSymPlaces, 'ArmyPlt_Abrams_WD']",
 			"['Label', cM1BarrelSymPlaces, 'BarrelArt_Abrams_WD']"
 		};
-		displayName="$STR_M1A1SAwd_Name";
 	};
 	class rhsusf_m1a1aimd_usarmy: rhsusf_m1a1tank_base
 	{
-		displayName="$STR_M1A1SAwd_Name";
 		rhs_decalParameters[]=
 		{
 			"['Label', cM1PlnSymPlaces, 'ArmyPlt_Abrams_D']",
@@ -1754,47 +1639,13 @@ class CfgVehicles
 	};
 	class rhsusf_m1a1aim_tuski_wd: rhsusf_m1a1tank_base
 	{
-		displayName="$STR_M1A1SATUSKIwd_Name";
 		rhs_decalParameters[]=
 		{
 			"['Label', cM1PlnSymPlaces, 'ArmyPlt_Abrams_WD']",
 			"['Label', cM1BarrelSymPlaces, 'BarrelArt_Abrams_WD']"
 		};
-		hiddenSelections[]=
-		{
-			"camo1",
-			"camo2",
-			"camo3",
-			"camo4",
-			"camo5",
-			"camo6",
-			"",
-			"n1",
-			"n2",
-			"n3",
-			"i1",
-			"i2",
-			"i3"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"rhsusf\addons\rhsusf_m1a1\data\rhsusf_m1a1aimtusk_wd_01_co.paa",
-			"rhsusf\addons\rhsusf_m1a1\data\rhsusf_m1a1aimtusk_wd_02_co.paa",
-			"rhsusf\addons\rhsusf_m1a1\data\rhsusf_m1a1aim_03_co.paa",
-			"rhsusf\addons\rhsusf_m1a1\loaderspintle\data\loaderspintle_tuski_wd_co.paa",
-			"rhsusf\addons\rhsusf_m1a1\data\rhsusf_tuski_wd_co.paa",
-			"rhsusf\addons\rhsusf_m1a2\data\rhsusf_m1slat_wd_co.paa"
-		};
 		class textureSources
 		{
-			class woodland
-			{
-				displayName="Woodland";
-			};
-			class desert: woodland
-			{
-				displayName="Desert";
-			};
 		};
 		class Turrets: Turrets
 		{
@@ -2312,46 +2163,19 @@ class CfgVehicles
 	};
 	class rhsusf_m1a1aim_tuski_d: rhsusf_m1a1aim_tuski_wd
 	{
-		displayName="$STR_M1A1SATUSKIwd_Name";
 		rhs_decalParameters[]=
 		{
 			"['Label', cM1PlnSymPlaces, 'ArmyPlt_Abrams_D']",
 			"['Label', cM1BarrelSymPlaces, 'BarrelArt_Abrams_D']"
 		};
-		hiddenSelectionsTextures[]=
-		{
-			"rhsusf\addons\rhsusf_m1a1\data\rhsusf_m1a1aimtusk_d_01_co.paa",
-			"rhsusf\addons\rhsusf_m1a1\data\rhsusf_m1a1aimtusk_d_02_co.paa",
-			"rhsusf\addons\rhsusf_m1a1\data\rhsusf_m1a1aim_d_03_co.paa",
-			"rhsusf\addons\rhsusf_m1a1\loaderspintle\data\loaderspintle_tuski_d_co.paa",
-			"rhsusf\addons\rhsusf_m1a1\data\rhsusf_tuski_d_co.paa",
-			"rhsusf\addons\rhsusf_m1a2\data\rhsusf_m1slat_d_co.paa"
-		};
 	};
 	class rhsusf_m1a1fep_d: rhsusf_m1a1tank_base
 	{
-		displayName="$STR_M1A1FEPd_Name";
 		rhs_duke_type="rhsusf_duke_m1a2";
 		rhs_decalParameters[]=
 		{
 			"['Label', cM1PlnSymPlaces, 'ArmyPlt_Abrams_D']",
 			"['Label', cM1BarrelSymPlaces, 'BarrelArt_Abrams_D']"
-		};
-		hiddenSelections[]=
-		{
-			"camo1",
-			"camo2",
-			"camo3",
-			"camo4",
-			"duke_tex",
-			"",
-			"",
-			"n1",
-			"n2",
-			"n3",
-			"i1",
-			"i2",
-			"i3"
 		};
 		hiddenSelectionstextures[]=
 		{
@@ -2363,18 +2187,6 @@ class CfgVehicles
 		};
 		class textureSources
 		{
-			class woodland
-			{
-				displayName="Woodland";
-			};
-			class desert: woodland
-			{
-				displayName="Desert";
-			};
-			class OD: woodland
-			{
-				displayName="Olive Drab";
-			};
 		};
 		class Turrets: Turrets
 		{
@@ -2460,14 +2272,8 @@ class CfgVehicles
 							};
 						};
 					};
-					class Loader: Loader
-					{
-					};
 				};
 			};
-		};
-		class Damage
-		{
 		};
 		class HitPoints: HitPoints
 		{
@@ -2488,44 +2294,10 @@ class CfgVehicles
 		};
 		class Attributes: Attributes
 		{
-			class rhs_hideIFFPanel: rhs_hideIFFPanel
-			{
-			};
 			class rhs_hideDUKE: rhs_hideMiles
 			{
-				displayName="hide DUKE antennas";
 				property="rhs_hideDUKE";
 				expression="_this animate ['DUKE_Hide',_value,true];if(_value isEqualTo 1)then{_this removeWeaponTurret ['rhsusf_weap_duke',[0,0]]}";
-			};
-			class rhs_decalBarrel_type: rhs_decalBarrel_type
-			{
-			};
-			class rhs_decalBarrel: rhs_decalBarrel
-			{
-			};
-			class rhs_decalPlatoon_type: rhs_decalPlatoon_type
-			{
-			};
-			class rhs_decalPlatoon: rhs_decalPlatoon
-			{
-			};
-			class rhs_ammoslot_1_type: rhs_ammoslot_1_type
-			{
-			};
-			class rhs_ammoslot_1: rhs_ammoslot_1
-			{
-			};
-			class rhs_ammoslot_2_type: rhs_ammoslot_2_type
-			{
-			};
-			class rhs_ammoslot_2: rhs_ammoslot_2
-			{
-			};
-			class rhs_ammoslot_3_type: rhs_ammoslot_3_type
-			{
-			};
-			class rhs_ammoslot_3: rhs_ammoslot_3
-			{
 			};
 		};
 		class EventHandlers: EventHandlers
@@ -2538,58 +2310,16 @@ class CfgVehicles
 	};
 	class rhsusf_m1a1fep_wd: rhsusf_m1a1fep_d
 	{
-		displayName="$STR_M1A1FEPd_Name";
 		rhs_decalParameters[]=
 		{
 			"['Label', cM1PlnSymPlaces, 'ArmyPlt_Abrams_WD']",
 			"['Label', cM1BarrelSymPlaces, 'BarrelArt_Abrams_WD']"
 		};
-		hiddenSelectionsTextures[]=
-		{
-			"rhsusf\addons\rhsusf_m1a1\data\rhsusf_m1a1aim_01_co.paa",
-			"rhsusf\addons\rhsusf_m1a1\data\rhsusf_m1a1aim_02_co.paa",
-			"rhsusf\addons\rhsusf_m1a1\data\rhsusf_m1a1aim_03_co.paa",
-			"rhsusf\addons\rhsusf_m1a1\loaderspintle\data\loaderspintle_wd_co.paa",
-			"rhsusf\addons\rhsusf_m1a1\duke\data\duke_antennae_wd_co.paa"
-		};
 		class Attributes: Attributes
 		{
-			class rhs_hideIFFPanel: rhs_hideIFFPanel
-			{
-			};
 			class rhs_hideDUKE: rhs_hideDUKE
 			{
 				defaultValue=1;
-			};
-			class rhs_decalBarrel_type: rhs_decalBarrel_type
-			{
-			};
-			class rhs_decalBarrel: rhs_decalBarrel
-			{
-			};
-			class rhs_decalPlatoon_type: rhs_decalPlatoon_type
-			{
-			};
-			class rhs_decalPlatoon: rhs_decalPlatoon
-			{
-			};
-			class rhs_ammoslot_1_type: rhs_ammoslot_1_type
-			{
-			};
-			class rhs_ammoslot_1: rhs_ammoslot_1
-			{
-			};
-			class rhs_ammoslot_2_type: rhs_ammoslot_2_type
-			{
-			};
-			class rhs_ammoslot_2: rhs_ammoslot_2
-			{
-			};
-			class rhs_ammoslot_3_type: rhs_ammoslot_3_type
-			{
-			};
-			class rhs_ammoslot_3: rhs_ammoslot_3
-			{
 			};
 		};
 	};
@@ -2600,15 +2330,6 @@ class CfgVehicles
 			"['Label', cM1PlnSymPlaces, 'ArmyPlt_Abrams_WD']",
 			"['Label', cM1BarrelSymPlaces, 'BarrelArt_Abrams_WD']"
 		};
-		displayName="$STR_M1A1FEPod_Name";
-		hiddenSelectionsTextures[]=
-		{
-			"rhsusf\addons\rhsusf_m1a1\data\rhsusf_m1a1fep_od_01_co.paa",
-			"rhsusf\addons\rhsusf_m1a1\data\rhsusf_m1a1fep_od_02_co.paa",
-			"rhsusf\addons\rhsusf_m1a1\data\rhsusf_m1a1aim_03_co.paa",
-			"rhsusf\addons\rhsusf_m1a1\loaderspintle\data\loaderspintle_wd_co.paa",
-			"rhsusf\addons\rhsusf_m1a1\duke\data\duke_antennae_wd_co.paa"
-		};
 	};
 	class rhsusf_m1a1hc_wd: rhsusf_m1a1tank_base
 	{
@@ -2617,44 +2338,8 @@ class CfgVehicles
 			"['Label', cM1PlnSymPlaces, 'ArmyPlt_Abrams_WD']",
 			"['Label', cM1BarrelSymPlaces, 'BarrelArt_Abrams_WD']"
 		};
-		displayName="$STR_M1A1hcd_Name";
-		hiddenSelections[]=
-		{
-			"camo1",
-			"camo2",
-			"camo3",
-			"camo4",
-			"",
-			"",
-			"",
-			"n1",
-			"n2",
-			"n3",
-			"i1",
-			"i2",
-			"i3"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"rhsusf\addons\rhsusf_m1a1\data\rhsusf_m1a1fep_od_01_co.paa",
-			"rhsusf\addons\rhsusf_m1a1\data\rhsusf_m1a1fep_od_02_co.paa",
-			"rhsusf\addons\rhsusf_m1a1\data\rhsusf_m1a1aim_03_co.paa",
-			"rhsusf\addons\rhsusf_m1a1\loaderspintle\data\loaderspintle_wd_co.paa"
-		};
 		class textureSources
 		{
-			class woodland
-			{
-				displayName="Woodland";
-			};
-			class desert: woodland
-			{
-				displayName="Desert";
-			};
-			class OD: woodland
-			{
-				displayName="Olive Drab";
-			};
 		};
 		class Turrets: Turrets
 		{
@@ -2704,9 +2389,6 @@ class CfgVehicles
 							"rhsusf_weap_M257"
 						};
 					};
-					class Loader: Loader
-					{
-					};
 				};
 			};
 		};
@@ -2721,14 +2403,8 @@ class CfgVehicles
 				hitpoint="Hit_Optic_Driver";
 			};
 		};
-		class Damage
-		{
-		};
 		class EventHandlers: EventHandlers
 		{
-			class rhs_duke
-			{
-			};
 		};
 	};
 };

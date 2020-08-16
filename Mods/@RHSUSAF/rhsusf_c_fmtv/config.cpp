@@ -85,9 +85,6 @@ class CfgVehicles
 	class Car_F: Car
 	{
 		class AnimationSources;
-		class HitPoints;
-		class EventHandlers;
-	};
 	class Truck_F: Car_F
 	{
 		class ViewPilot;
@@ -107,55 +104,17 @@ class CfgVehicles
 			class HitGlass2;
 			class HitGlass3;
 			class HitGlass4;
-			class HitGlass5;
-			class HitGlass6;
-		};
 		class AnimationSources;
-	};
-	class Truck_01_base_F: Truck_F
-	{
 	};
 	class rhsusf_fmtv_base: Truck_01_base_F
 	{
 		side=1;
-		displayName="FMTV";
 		headAimDown=5;
 		driverRightLegAnimName="pedal_r";
 		supplyRadius=4.5;
 		extCameraPosition[]={0.5,2,-8};
-		hiddenSelections[]=
-		{
-			"camo",
-			"camo1",
-			"camo2",
-			"camo3",
-			"camo4",
-			"camo5",
-			"camo6",
-			"camo7",
-			"camo8",
-			"camo9",
-			"camo10",
-			"camo11",
-			"camo12",
-			"camo13",
-			"camo14",
-			"camo15",
-			"camo16",
-			"camo17",
-			"camo18",
-			"camo19"
-		};
 		class textureSources
 		{
-			class rhs_desert
-			{
-				displayName="Desert";
-			};
-			class rhs_woodland
-			{
-				displayName="Woodland";
-			};
 		};
 		class HitPoints: HitPoints
 		{
@@ -310,9 +269,6 @@ class CfgVehicles
 				steering=0;
 				maxHandBrakeTorque=36000;
 			};
-			class R1: L1
-			{
-				suspTravelDirection[]={0.125,-1,0};
 				steering=1;
 				side="right";
 			};
@@ -330,9 +286,6 @@ class CfgVehicles
 				direction="vyfuk konec";
 				effect="ExhaustEffectHEMTT";
 			};
-		};
-		class Damage
-		{
 		};
 		class CargoTurret;
 		class Turrets
@@ -359,19 +312,10 @@ class CfgVehicles
 			"SlingLoadCargo3",
 			"SlingLoadCargo4"
 		};
-		displayName="$STR_M1078A1P2_Name";
 		accuracy=0.5;
-	};
-	class rhsusf_M1078A1P2_open_fmtv_usarmy: rhsusf_M1078A1P2_fmtv_usarmy
-	{
-		displayName="$STR_M1078A1P2Open_Name";
 	};
 	class rhsusf_M1078A1P2_flatbed_fmtv_usarmy: rhsusf_M1078A1P2_fmtv_usarmy
 	{
-		displayName="$STR_M1078A1P2Flat_Name";
-		class Turrets: Turrets
-		{
-		};
 		class VehicleTransport
 		{
 			class Cargo
@@ -414,7 +358,6 @@ class CfgVehicles
 	};
 	class rhsusf_M1078A1P2_B_fmtv_usarmy: rhsusf_M1078A1P2_fmtv_usarmy
 	{
-		displayName="$STR_M1078A1P2B_Name";
 		accuracy=0.5;
 		slingLoadCargoMemoryPoints[]=
 		{
@@ -424,16 +367,8 @@ class CfgVehicles
 			"SlingLoadCargo4"
 		};
 	};
-	class rhsusf_M1078A1P2_B_open_fmtv_usarmy: rhsusf_M1078A1P2_B_fmtv_usarmy
-	{
-		displayName="$STR_M1078A1P2BOpen_Name";
-	};
 	class rhsusf_M1078A1P2_B_flatbed_fmtv_usarmy: rhsusf_M1078A1P2_B_fmtv_usarmy
 	{
-		displayName="$STR_M1078A1P2BFlat_Name";
-		class Turrets: Turrets
-		{
-		};
 		class VehicleTransport
 		{
 			class Cargo
@@ -476,7 +411,6 @@ class CfgVehicles
 	};
 	class rhsusf_M1078A1P2_B_M2_fmtv_usarmy: rhsusf_M1078A1P2_B_fmtv_usarmy
 	{
-		displayName="$STR_M1078A1P2B_M2_Name";
 		maxFordingDepth=0;
 		accuracy=0.5;
 		animationList[]=
@@ -552,27 +486,13 @@ class CfgVehicles
 					minFov=0.25;
 					maxFov=1.1;
 				};
-				class ViewGunner: ViewOptics
-				{
-				};
-			};
-			class CargoTurret_02: CargoTurret_02
-			{
 			};
 		};
 	};
-	class rhsusf_M1078A1P2_B_M2_open_fmtv_usarmy: rhsusf_M1078A1P2_B_M2_fmtv_usarmy
-	{
-		displayName="$STR_M1078A1P2BOPEN_M2_Name";
-	};
 	class rhsusf_M1078A1P2_B_M2_flatbed_fmtv_usarmy: rhsusf_M1078A1P2_B_M2_fmtv_usarmy
 	{
-		displayName="$STR_M1078A1P2BFlat_M2_Name";
 		class Turrets: Turrets
 		{
-			class M2_Turret: M2_Turret
-			{
-			};
 		};
 		class VehicleTransport
 		{
@@ -616,7 +536,6 @@ class CfgVehicles
 	};
 	class rhsusf_M1083A1P2_fmtv_usarmy: rhsusf_M1078A1P2_fmtv_usarmy
 	{
-		displayName="$STR_M1083A1P2_Name";
 		accuracy=0.5;
 		extCameraPosition[]={0.5,2,-9};
 		class Wheels: Wheels
@@ -640,9 +559,6 @@ class CfgVehicles
 				steering=0;
 				maxHandBrakeTorque=36000;
 			};
-			class R1: L1
-			{
-				suspTravelDirection[]={0.125,-1,0};
 				steering=1;
 				side="right";
 			};
@@ -660,7 +576,6 @@ class CfgVehicles
 	};
 	class rhsusf_M1083A1P2_B_fmtv_usarmy: rhsusf_M1083A1P2_fmtv_usarmy
 	{
-		displayName="$STR_M1083A1P2B_Name";
 		accuracy=0.5;
 		class Wheels: Wheels
 		{
@@ -683,9 +598,6 @@ class CfgVehicles
 				steering=0;
 				maxHandBrakeTorque=36000;
 			};
-			class R1: L1
-			{
-				suspTravelDirection[]={0.125,-1,0};
 				steering=1;
 				side="right";
 			};
@@ -703,7 +615,6 @@ class CfgVehicles
 	};
 	class rhsusf_M1083A1P2_B_M2_fmtv_usarmy: rhsusf_M1083A1P2_B_fmtv_usarmy
 	{
-		displayName="$STR_M1083A1P2B_M2_Name";
 		maxFordingDepth=0;
 		accuracy=0.5;
 		animationList[]=
@@ -779,25 +690,11 @@ class CfgVehicles
 					minFov=0.25;
 					maxFov=1.1;
 				};
-				class ViewGunner: ViewOptics
-				{
-				};
-			};
-			class CargoTurret_02: CargoTurret_02
-			{
 			};
 		};
-	};
-	class rhsusf_M1083A1P2_open_fmtv_usarmy: rhsusf_M1083A1P2_fmtv_usarmy
-	{
-		displayName="$STR_M1083A1P2Open_Name";
 	};
 	class rhsusf_M1083A1P2_flatbed_fmtv_usarmy: rhsusf_M1083A1P2_fmtv_usarmy
 	{
-		displayName="$STR_M1083A1P2Flat_Name";
-		class Turrets: Turrets
-		{
-		};
 		class VehicleTransport
 		{
 			class Cargo
@@ -837,17 +734,9 @@ class CfgVehicles
 				parachuteHeightLimitDefault=5;
 			};
 		};
-	};
-	class rhsusf_M1083A1P2_B_open_fmtv_usarmy: rhsusf_M1083A1P2_B_fmtv_usarmy
-	{
-		displayName="$STR_M1083A1P2BOpen_Name";
 	};
 	class rhsusf_M1083A1P2_B_flatbed_fmtv_usarmy: rhsusf_M1083A1P2_B_fmtv_usarmy
 	{
-		displayName="$STR_M1083A1P2BFlat_Name";
-		class Turrets: Turrets
-		{
-		};
 		class VehicleTransport
 		{
 			class Cargo
@@ -888,18 +777,10 @@ class CfgVehicles
 			};
 		};
 	};
-	class rhsusf_M1083A1P2_B_M2_open_fmtv_usarmy: rhsusf_M1083A1P2_B_M2_fmtv_usarmy
-	{
-		displayName="$STR_M1083A1P2BOpen_M2_Name";
-	};
 	class rhsusf_M1083A1P2_B_M2_flatbed_fmtv_usarmy: rhsusf_M1083A1P2_B_M2_fmtv_usarmy
 	{
-		displayName="$STR_M1083A1P2BFlat_M2_Name";
 		class Turrets: Turrets
 		{
-			class M2_Turret: M2_Turret
-			{
-			};
 		};
 		class VehicleTransport
 		{
@@ -943,7 +824,6 @@ class CfgVehicles
 	};
 	class rhsusf_M1084A1P2_fmtv_usarmy: rhsusf_M1083A1P2_fmtv_usarmy
 	{
-		displayName="$STR_M1084A1P2_Name";
 		maxFordingDepth=0.69999999;
 		class VehicleTransport
 		{
@@ -984,23 +864,12 @@ class CfgVehicles
 				parachuteHeightLimitDefault=5;
 			};
 		};
-		class Turrets: Turrets
-		{
-		};
-	};
-	class rhsusf_M1084A1P2_B_fmtv_usarmy: rhsusf_M1084A1P2_fmtv_usarmy
-	{
-		displayName="$STR_M1084A1P2B_Name";
 	};
 	class rhsusf_M1084A1P2_B_M2_fmtv_usarmy: rhsusf_M1083A1P2_B_M2_fmtv_usarmy
 	{
-		displayName="$STR_M1084A1P2B_M2_Name";
 		maxFordingDepth=0;
 		class Turrets: Turrets
 		{
-			class M2_Turret: M2_Turret
-			{
-			};
 		};
 		class VehicleTransport
 		{
@@ -1044,7 +913,6 @@ class CfgVehicles
 	};
 	class rhsusf_M1078A1P2_B_CP_fmtv_usarmy: rhsusf_M1078A1P2_B_fmtv_usarmy
 	{
-		displayName="$STR_M1078A1P2BCP_Name";
 		accuracy=0.5;
 		slingLoadCargoMemoryPoints[]=
 		{
@@ -1059,18 +927,13 @@ class CfgVehicles
 			{
 				control="CheckboxNumber";
 				defaultValue="0";
-				displayName="Lower Stairs";
 				property="rhs_hide_steps";
 				expression="[_this,'hide_steps',1] spawn rhs_fnc_fmtv_Deploy";
 			};
 		};
-		class Turrets: Turrets
-		{
-		};
 	};
 	class rhsusf_M1085A1P2_B_Medical_fmtv_usarmy: rhsusf_M1083A1P2_B_fmtv_usarmy
 	{
-		displayName="$STR_M1085A1P2B_MHQ_Name";
 		accuracy=0.5;
 		slingLoadCargoMemoryPoints[]=
 		{
@@ -1096,9 +959,6 @@ class CfgVehicles
 				steering=0;
 				maxHandBrakeTorque=36000;
 			};
-			class R1: L1
-			{
-				suspTravelDirection[]={0.125,-1,0};
 				steering=1;
 				side="right";
 			};
@@ -1119,13 +979,9 @@ class CfgVehicles
 			{
 				control="CheckboxNumber";
 				defaultValue="0";
-				displayName="Deploy CBPS";
 				property="rhs_deploy_cbps";
 				expression="[_this,'deploy_platform',1,true] spawn rhs_fnc_fmtv_Deploy; _this animateSource ['deploy_tent',1,true]";
 			};
-		};
-		class Turrets: Turrets
-		{
 		};
 		class VehicleTransport
 		{
@@ -1142,193 +998,8 @@ class CfgVehicles
 			};
 		};
 	};
-	class rhsusf_M1078A1P2_B_M2_WD_fmtv_usarmy: rhsusf_M1078A1P2_B_M2_fmtv_usarmy
-	{
-		displayName="$STR_M1078A1P2B_M2_Name";
-	};
-	class rhsusf_M1078A1P2_B_WD_fmtv_usarmy: rhsusf_M1078A1P2_B_fmtv_usarmy
-	{
-		displayName="$STR_M1078A1P2B_Name";
-	};
-	class rhsusf_M1078A1P2_WD_fmtv_usarmy: rhsusf_M1078A1P2_fmtv_usarmy
-	{
-		displayName="$STR_M1078A1P2_Name";
-	};
-	class rhsusf_M1078A1P2_B_WD_CP_fmtv_usarmy: rhsusf_M1078A1P2_B_CP_fmtv_usarmy
-	{
-		displayName="$STR_M1078A1P2BCP_Name";
-	};
-	class rhsusf_M1078A1P2_B_M2_WD_open_fmtv_usarmy: rhsusf_M1078A1P2_B_M2_open_fmtv_usarmy
-	{
-		displayName="$STR_M1078A1P2BOPEN_M2_Name";
-	};
-	class rhsusf_M1078A1P2_B_WD_open_fmtv_usarmy: rhsusf_M1078A1P2_B_open_fmtv_usarmy
-	{
-		displayName="$STR_M1078A1P2BOpen_Name";
-	};
-	class rhsusf_M1078A1P2_WD_open_fmtv_usarmy: rhsusf_M1078A1P2_open_fmtv_usarmy
-	{
-		displayName="$STR_M1078A1P2Open_Name";
-	};
-	class rhsusf_M1078A1P2_B_M2_WD_flatbed_fmtv_usarmy: rhsusf_M1078A1P2_B_M2_flatbed_fmtv_usarmy
-	{
-		displayName="$STR_M1078A1P2BFlat_M2_Name";
-	};
-	class rhsusf_M1078A1P2_B_WD_flatbed_fmtv_usarmy: rhsusf_M1078A1P2_B_flatbed_fmtv_usarmy
-	{
-		displayName="$STR_M1078A1P2BFlat_Name";
-	};
-	class rhsusf_M1078A1P2_WD_flatbed_fmtv_usarmy: rhsusf_M1078A1P2_flatbed_fmtv_usarmy
-	{
-		displayName="$STR_M1078A1P2Flat_Name";
-	};
-	class rhsusf_M1083A1P2_B_WD_fmtv_usarmy: rhsusf_M1083A1P2_B_fmtv_usarmy
-	{
-		displayName="$STR_M1083A1P2B_Name";
-	};
-	class rhsusf_M1083A1P2_B_M2_WD_fmtv_usarmy: rhsusf_M1083A1P2_B_M2_fmtv_usarmy
-	{
-		displayName="$STR_M1083A1P2B_M2_Name";
-	};
-	class rhsusf_M1083A1P2_WD_fmtv_usarmy: rhsusf_M1083A1P2_fmtv_usarmy
-	{
-		displayName="$STR_M1083A1P2_Name";
-	};
-	class rhsusf_M1083A1P2_B_WD_open_fmtv_usarmy: rhsusf_M1083A1P2_B_open_fmtv_usarmy
-	{
-		displayName="$STR_M1083A1P2BOpen_Name";
-	};
-	class rhsusf_M1083A1P2_B_M2_WD_open_fmtv_usarmy: rhsusf_M1083A1P2_B_M2_open_fmtv_usarmy
-	{
-		displayName="$STR_M1083A1P2BOpen_M2_Name";
-	};
-	class rhsusf_M1083A1P2_WD_open_fmtv_usarmy: rhsusf_M1083A1P2_open_fmtv_usarmy
-	{
-		displayName="$STR_M1083A1P2Open_Name";
-	};
-	class rhsusf_M1083A1P2_B_WD_flatbed_fmtv_usarmy: rhsusf_M1083A1P2_B_flatbed_fmtv_usarmy
-	{
-		displayName="$STR_M1083A1P2BFlat_Name";
-	};
-	class rhsusf_M1083A1P2_B_M2_WD_flatbed_fmtv_usarmy: rhsusf_M1083A1P2_B_M2_flatbed_fmtv_usarmy
-	{
-		displayName="$STR_M1083A1P2BFlat_M2_Name";
-	};
-	class rhsusf_M1083A1P2_WD_flatbed_fmtv_usarmy: rhsusf_M1083A1P2_flatbed_fmtv_usarmy
-	{
-		displayName="$STR_M1083A1P2Flat_Name";
-	};
-	class rhsusf_M1084A1P2_WD_fmtv_usarmy: rhsusf_M1084A1P2_fmtv_usarmy
-	{
-		displayName="$STR_M1084A1P2_Name";
-	};
-	class rhsusf_M1084A1P2_B_M2_WD_fmtv_usarmy: rhsusf_M1084A1P2_B_M2_fmtv_usarmy
-	{
-		displayName="$STR_M1084A1P2B_M2_Name";
-	};
-	class rhsusf_M1084A1P2_B_WD_fmtv_usarmy: rhsusf_M1084A1P2_B_fmtv_usarmy
-	{
-		displayName="$STR_M1084A1P2B_Name";
-	};
-	class rhsusf_M1085A1P2_B_WD_Medical_fmtv_usarmy: rhsusf_M1085A1P2_B_Medical_fmtv_usarmy
-	{
-		displayName="$STR_M1085A1P2B_MHQ_Name";
-	};
-	class rhsusf_M1078A1P2_B_M2_D_fmtv_usarmy: rhsusf_M1078A1P2_B_M2_fmtv_usarmy
-	{
-		displayName="$STR_M1078A1P2B_M2_Name";
-	};
-	class rhsusf_M1078A1P2_B_D_fmtv_usarmy: rhsusf_M1078A1P2_B_fmtv_usarmy
-	{
-		displayName="$STR_M1078A1P2B_Name";
-	};
-	class rhsusf_M1078A1P2_D_fmtv_usarmy: rhsusf_M1078A1P2_fmtv_usarmy
-	{
-		displayName="$STR_M1078A1P2_Name";
-	};
-	class rhsusf_M1078A1P2_B_D_CP_fmtv_usarmy: rhsusf_M1078A1P2_B_CP_fmtv_usarmy
-	{
-		displayName="$STR_M1078A1P2BCP_Name";
-	};
-	class rhsusf_M1078A1P2_B_M2_D_open_fmtv_usarmy: rhsusf_M1078A1P2_B_M2_open_fmtv_usarmy
-	{
-		displayName="$STR_M1078A1P2BOPEN_M2_Name";
-	};
-	class rhsusf_M1078A1P2_B_D_open_fmtv_usarmy: rhsusf_M1078A1P2_B_open_fmtv_usarmy
-	{
-		displayName="$STR_M1078A1P2BOpen_Name";
-	};
-	class rhsusf_M1078A1P2_D_open_fmtv_usarmy: rhsusf_M1078A1P2_open_fmtv_usarmy
-	{
-		displayName="$STR_M1078A1P2Open_Name";
-	};
-	class rhsusf_M1078A1P2_B_M2_D_flatbed_fmtv_usarmy: rhsusf_M1078A1P2_B_M2_flatbed_fmtv_usarmy
-	{
-		displayName="$STR_M1078A1P2BFlat_M2_Name";
-	};
-	class rhsusf_M1078A1P2_B_D_flatbed_fmtv_usarmy: rhsusf_M1078A1P2_B_flatbed_fmtv_usarmy
-	{
-		displayName="$STR_M1078A1P2BFlat_Name";
-	};
-	class rhsusf_M1078A1P2_D_flatbed_fmtv_usarmy: rhsusf_M1078A1P2_flatbed_fmtv_usarmy
-	{
-		displayName="$STR_M1078A1P2Flat_Name";
-	};
-	class rhsusf_M1083A1P2_B_D_fmtv_usarmy: rhsusf_M1083A1P2_B_fmtv_usarmy
-	{
-		displayName="$STR_M1083A1P2B_Name";
-	};
-	class rhsusf_M1083A1P2_B_M2_D_fmtv_usarmy: rhsusf_M1083A1P2_B_M2_fmtv_usarmy
-	{
-		displayName="$STR_M1083A1P2B_M2_Name";
-	};
-	class rhsusf_M1083A1P2_D_fmtv_usarmy: rhsusf_M1083A1P2_fmtv_usarmy
-	{
-		displayName="$STR_M1083A1P2_Name";
-	};
-	class rhsusf_M1083A1P2_B_D_open_fmtv_usarmy: rhsusf_M1083A1P2_B_open_fmtv_usarmy
-	{
-		displayName="$STR_M1083A1P2BOpen_Name";
-	};
-	class rhsusf_M1083A1P2_B_M2_D_open_fmtv_usarmy: rhsusf_M1083A1P2_B_M2_open_fmtv_usarmy
-	{
-		displayName="$STR_M1083A1P2BOpen_M2_Name";
-	};
-	class rhsusf_M1083A1P2_D_open_fmtv_usarmy: rhsusf_M1083A1P2_open_fmtv_usarmy
-	{
-		displayName="$STR_M1083A1P2Open_Name";
-	};
-	class rhsusf_M1083A1P2_B_D_flatbed_fmtv_usarmy: rhsusf_M1083A1P2_B_flatbed_fmtv_usarmy
-	{
-		displayName="$STR_M1083A1P2BFlat_Name";
-	};
-	class rhsusf_M1083A1P2_B_M2_D_flatbed_fmtv_usarmy: rhsusf_M1083A1P2_B_M2_flatbed_fmtv_usarmy
-	{
-		displayName="$STR_M1083A1P2BFlat_M2_Name";
-	};
-	class rhsusf_M1083A1P2_D_flatbed_fmtv_usarmy: rhsusf_M1083A1P2_flatbed_fmtv_usarmy
-	{
-		displayName="$STR_M1083A1P2Flat_Name";
-	};
-	class rhsusf_M1084A1P2_D_fmtv_usarmy: rhsusf_M1084A1P2_fmtv_usarmy
-	{
-		displayName="$STR_M1084A1P2_Name";
-	};
-	class rhsusf_M1084A1P2_B_M2_D_fmtv_usarmy: rhsusf_M1084A1P2_B_M2_fmtv_usarmy
-	{
-		displayName="$STR_M1084A1P2B_M2_Name";
-	};
-	class rhsusf_M1084A1P2_B_D_fmtv_usarmy: rhsusf_M1084A1P2_B_fmtv_usarmy
-	{
-		displayName="$STR_M1084A1P2B_Name";
-	};
-	class rhsusf_M1085A1P2_B_D_Medical_fmtv_usarmy: rhsusf_M1085A1P2_B_Medical_fmtv_usarmy
-	{
-		displayName="$STR_M1085A1P2B_MHQ_Name";
-	};
 	class rhsusf_M1078A1R_SOV_M2_D_fmtv_socom: rhsusf_M1078A1P2_B_M2_fmtv_usarmy
 	{
-		displayName="$STR_M1078A1R_SOV_M2_Name";
 		accuracy=0.5;
 		slingLoadCargoMemoryPoints[]=
 		{
@@ -1362,16 +1033,12 @@ class CfgVehicles
 					minFov=0.25;
 					maxFov=1.1;
 				};
-				class ViewGunner: ViewOptics
-				{
-				};
 			};
 		};
 		animationList[]={};
 	};
 	class rhsusf_M1084A1R_SOV_M2_D_fmtv_socom: rhsusf_M1084A1P2_B_M2_fmtv_usarmy
 	{
-		displayName="$STR_M1084A1R_SOV_M2_Name";
 		accuracy=0.5;
 		slingLoadCargoMemoryPoints[]=
 		{
@@ -1407,31 +1074,8 @@ class CfgVehicles
 					minFov=0.25;
 					maxFov=1.1;
 				};
-				class ViewGunner: ViewOptics
-				{
-				};
 			};
 		};
 		animationList[]={};
-	};
-	class rhsusf_M1084A1R_SOV_M2_WD_fmtv_socom: rhsusf_M1084A1R_SOV_M2_D_fmtv_socom
-	{
-		displayName="$STR_M1084A1R_SOV_M2_Name";
-	};
-	class rhsusf_M1078A1R_SOV_M2_WD_fmtv_socom: rhsusf_M1078A1R_SOV_M2_D_fmtv_socom
-	{
-		displayName="$STR_M1078A1R_SOV_M2_Name";
-	};
-	class rhsusf_M1083A1P2_B_M2_wd_MHQ_fmtv_usarmy: rhsusf_M1078A1P2_B_WD_CP_fmtv_usarmy
-	{
-	};
-	class rhsusf_M1083A1P2_B_M2_wd_Medical_fmtv_usarmy: rhsusf_M1085A1P2_B_WD_Medical_fmtv_usarmy
-	{
-	};
-	class rhsusf_M1083A1P2_B_M2_d_MHQ_fmtv_usarmy: rhsusf_M1078A1P2_B_D_CP_fmtv_usarmy
-	{
-	};
-	class rhsusf_M1083A1P2_B_M2_d_Medical_fmtv_usarmy: rhsusf_M1085A1P2_B_D_Medical_fmtv_usarmy
-	{
 	};
 };

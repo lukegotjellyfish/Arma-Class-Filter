@@ -35,19 +35,12 @@ class CfgVehicles
 	class Truck_03_base_F;
 	class O_Truck_03_repair_F: Truck_03_base_F
 	{
-		class textureSources;
-		class EventHandlers;
-	};
 	class Heli_Light_02_unarmed_base_F;
 	class O_Heli_Light_02_unarmed_F: Heli_Light_02_unarmed_base_F
 	{
 		class textureSources;
-		class EventHandlers;
-		class Components;
-	};
 	class rhs_typhoon_base: O_Truck_03_repair_F
 	{
-		displayName="$STR_RHS_KAMAZ63968_NAME";
 		terrainCoef=1.8;
 		wheelCircumference=3.776;
 		turnCoef=3.7;
@@ -191,7 +184,6 @@ class CfgVehicles
 		{
 			class rhs_green
 			{
-				displayName="Green";
 				factions[]=
 				{
 					"rhs_faction_vmf",
@@ -203,21 +195,6 @@ class CfgVehicles
 		};
 		class EventHandlers: EventHandlers
 		{
-			class RHS_EventHandlers
-			{
-			};
-		};
-		hiddenSelections[]=
-		{
-			"Camo1",
-			"Camo2",
-			"Camo3"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"\rhsafrf\addons\rhs_a3retex\Data\truck_03_ext01_co.paa",
-			"\rhsafrf\addons\rhs_a3retex\Data\truck_03_ext02_co.paa",
-			"\rhsafrf\addons\rhs_a3retex\Data\truck_03_ammo_co.paa"
 		};
 	};
 	class rhs_typhoon_vdv: rhs_typhoon_base
@@ -231,15 +208,11 @@ class CfgVehicles
 		LESH_AxisOffsetTarget[]={0,-8,-0.74000001};
 		LESH_WheelOffset[]={0,3};
 		armorStructural=2;
-		displayName="Ka-60";
 		typicalCargo[]=
 		{
 			"rhs_pilot_combat_heli"
 		};
 		side=0;
-		class MFD
-		{
-		};
 		class Components: Components
 		{
 			class SensorsManagerComponent
@@ -250,56 +223,40 @@ class CfgVehicles
 					{
 						class AirTarget
 						{
-							minRange=9000;
-							maxRange=9000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
 						class GroundTarget
 						{
-							minRange=9000;
-							maxRange=9000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
 						angleRangeHorizontal=75;
 						angleRangeVertical=75;
-						typeRecognitionDistance=-1;
 						maxGroundNoiseDistance=0;
 						maxFogSeeThrough=0.30000001;
 						animDirection="mainGun";
-					};
-					class PassiveRadarSensorComponent: SensorTemplatePassiveRadar
-					{
 					};
 					class ActiveRadarSensorComponent: SensorTemplateActiveRadar
 					{
 						class AirTarget
 						{
-							minRange=11000;
-							maxRange=11000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
 						class GroundTarget
 						{
-							minRange=11000;
-							maxRange=11000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
 						angleRangeHorizontal=120;
 						angleRangeVertical=100;
-						typeRecognitionDistance=4000;
 						maxFogSeeThrough=1;
 						groundNoiseDistanceCoef=-1;
 						maxGroundNoiseDistance=-1;
 						minSpeedThreshold=0;
 						maxSpeedThreshold=0;
 						maxTrackableSpeed=125;
-					};
-					class DataLinkSensorComponent: SensorTemplateDataLink
-					{
 					};
 				};
 			};
@@ -373,39 +330,19 @@ class CfgVehicles
 		{
 			class vvs_grey
 			{
-				displayName="VVS - Grey";
 				factions[]=
 				{
 					"rhs_faction_vvs",
 					"rhs_faction_vvs_c"
 				};
 			};
-			class vvs_camo: vvs_grey
-			{
-				displayName="VVS - Camo";
-			};
-		};
-		hiddenSelections[]=
-		{
-			"Camo1"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"\rhsafrf\addons\rhs_a3retex\Data\heli_light_02_ext_co.paa"
 		};
 		class EventHandlers: EventHandlers
 		{
-			class RHS_EventHandlers
-			{
-			};
 		};
 	};
 	class rhs_ka60_c: rhs_ka60_grey
 	{
 		forceInGarage=0;
-		hiddenSelectionsTextures[]=
-		{
-			"\rhsafrf\addons\rhs_a3retex\Data\heli_light_02_ext_c_co.paa"
-		};
 	};
 };

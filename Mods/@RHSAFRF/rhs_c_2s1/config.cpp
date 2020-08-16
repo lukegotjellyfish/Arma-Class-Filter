@@ -37,9 +37,6 @@ class CfgVehicles
 	class Tank: LandVehicle
 	{
 		class NewTurret;
-		class Sounds;
-		class HitPoints;
-	};
 	class Tank_F: Tank
 	{
 		class Turrets
@@ -48,9 +45,6 @@ class CfgVehicles
 			{
 				class Turrets
 				{
-					class CommanderOptics;
-				};
-			};
 		};
 		class AnimationSources;
 		class ViewPilot;
@@ -61,17 +55,8 @@ class CfgVehicles
 		{
 			class HitHull;
 			class HitEngine;
-			class HitLTrack;
-			class HitRTrack;
-		};
 		class Sounds: Sounds
 		{
-			class Engine;
-			class Movement;
-		};
-		class EventHandlers;
-		class Components;
-	};
 	class rhs_2s1tank_base: Tank_F
 	{
 		rhs_decalParameters[]=
@@ -90,7 +75,6 @@ class CfgVehicles
 			"Track_R",
 			"Slide"
 		};
-		displayName="$STR_2S1_Name";
 		accuracy=0.30000001;
 		typicalCargo[]={};
 		side=0;
@@ -194,9 +178,6 @@ class CfgVehicles
 		};
 		class Wheels
 		{
-			class L2
-			{
-				suspTravelDirection[]={-0.125,-1,0};
 				side="left";
 				width=0.33000001;
 				steering=0;
@@ -222,24 +203,6 @@ class CfgVehicles
 					{0.69999999,0.64999998}
 				};
 			};
-			class L3: L2
-			{
-			};
-			class L4: L2
-			{
-			};
-			class L5: L2
-			{
-			};
-			class L6: L2
-			{
-			};
-			class L7: L2
-			{
-			};
-			class L8: L2
-			{
-			};
 			class L9: L2
 			{
 				maxDroop=0;
@@ -250,28 +213,7 @@ class CfgVehicles
 				maxDroop=0;
 				maxCompression=0;
 			};
-			class R2: L2
-			{
-				suspTravelDirection[]={0.125,-1,0};
 				side="right";
-			};
-			class R3: R2
-			{
-			};
-			class R4: R2
-			{
-			};
-			class R5: R2
-			{
-			};
-			class R6: R2
-			{
-			};
-			class R7: R2
-			{
-			};
-			class R8: R2
-			{
 			};
 			class R9: R2
 			{
@@ -1333,88 +1275,6 @@ class CfgVehicles
 				};
 			};
 		};
-		hiddenSelections[]=
-		{
-			"camo1",
-			"camo2",
-			"camo_sprocket",
-			"camo_idler",
-			"camo_wheel1",
-			"camo_wheel2",
-			"camo_wheel3",
-			"camo_wheel4",
-			"camo_wheel5",
-			"camo_wheel6",
-			"camo_wheel7",
-			"n1",
-			"n2",
-			"n3",
-			"n4",
-			"n5",
-			"n6",
-			"n7",
-			"n8",
-			"n9",
-			"n10",
-			"n11",
-			"n12",
-			"n13",
-			"n14",
-			"n15",
-			"n16",
-			"n17",
-			"n18",
-			"n19",
-			"n20",
-			"i1",
-			"i2",
-			"i3",
-			"i4",
-			"i5",
-			"i6",
-			"i7"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"rhsafrf\addons\rhs_2s1\data\rhs_2s1_hull_co.paa",
-			"rhsafrf\addons\rhs_2s1\data\rhs_2s1_turret_co.paa",
-			"rhsafrf\addons\rhs_2s1\data\rhs_2s1_suspension_co.paa",
-			"rhsafrf\addons\rhs_2s1\data\rhs_2s1_suspension_co.paa",
-			"rhsafrf\addons\rhs_2s1\data\rhs_2s1_suspension_co.paa",
-			"rhsafrf\addons\rhs_2s1\data\rhs_2s1_suspension_co.paa",
-			"rhsafrf\addons\rhs_2s1\data\rhs_2s1_suspension_co.paa",
-			"rhsafrf\addons\rhs_2s1\data\rhs_2s1_suspension_co.paa",
-			"rhsafrf\addons\rhs_2s1\data\rhs_2s1_suspension_co.paa",
-			"rhsafrf\addons\rhs_2s1\data\rhs_2s1_suspension_co.paa",
-			"rhsafrf\addons\rhs_2s1\data\rhs_2s1_suspension_co.paa",
-			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
-			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
-			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
-			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
-			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
-			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
-			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
-			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
-			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
-			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
-			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
-			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
-			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
-			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
-			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
-			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
-			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
-			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
-			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
-			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
-			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
-			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
-			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
-			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
-			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
-			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
-			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa"
-		};
 		hiddenSelectionsMaterials[]=
 		{
 			"rhsafrf\addons\rhs_2s1\data\rhs_2s1_hull.rvmat",
@@ -1460,7 +1320,6 @@ class CfgVehicles
 		{
 			class standard
 			{
-				displayName="Standard";
 				materials[]=
 				{
 					"rhsafrf\addons\rhs_2s1\data\rhs_2s1_hull.rvmat",
@@ -1483,7 +1342,6 @@ class CfgVehicles
 			};
 			class light
 			{
-				displayName="Light Green";
 				materials[]=
 				{
 					"rhsafrf\addons\rhs_2s1\data\rhs_2s1_hull.rvmat",
@@ -1506,7 +1364,6 @@ class CfgVehicles
 			};
 			class sand
 			{
-				displayName="Sand";
 				materials[]=
 				{
 					"rhsafrf\addons\rhs_2s1\data\rhs_2s1_hull.rvmat",
@@ -1529,7 +1386,6 @@ class CfgVehicles
 			};
 			class standard_dirty
 			{
-				displayName="Green Weathered 1";
 				materials[]=
 				{
 					"rhsafrf\addons\rhs_2s1\data\rhs_2s1_dirty_hull.rvmat",
@@ -1552,7 +1408,6 @@ class CfgVehicles
 			};
 			class light_dirty
 			{
-				displayName="Green Weathered 2";
 				materials[]=
 				{
 					"rhsafrf\addons\rhs_2s1\data\rhs_2s1_light_dirty_hull.rvmat",
@@ -1589,13 +1444,11 @@ class CfgVehicles
 		{
 			class rhs_decalNumber_type
 			{
-				displayName="Define font type of side hull number (3 digits)";
 				tooltip="Define kind of font that will be drawn on vehicle. 3 digits";
 				property="rhs_decalNumber_type";
 				control="Combo";
 				expression="if(_value != 'NoChange')then{ _this setVariable ['%s', _value];[_this,[['Number', cRHS2S1NumberPlaces, _value]]] call rhs_fnc_decalsInit}";
 				defaultValue=0;
-				typeName="STRING";
 				class values
 				{
 					class NoChange
@@ -1649,94 +1502,80 @@ class CfgVehicles
 			class rhs_decalNumber
 			{
 				collapsed=1;
-				displayName="Set side hull number (3 digits)";
 				tooltip="Set side number. 3 numbers are required. Type 0 to hide numbers complety & leave at -1 to get random number";
 				property="rhs_decalNumber";
 				control="Edit";
 				validate="Number";
-				typeName="Number";
 				defaultValue="0";
 				expression="if( _value >= 0)then{if( _value == 0)then{{[_this setobjectTexture [_x,'a3\data_f\clear_empty.paa']]}foreach cRHS2S1NumberPlaces}else{[_this, [['Number', cRHS2S1NumberPlaces, _this getVariable ['rhs_decalNumber_type','Default'], _value] ] ] call rhs_fnc_decalsInit}};";
 			};
 			class rhs_decalNumber_type2: rhs_decalNumber_type
 			{
-				displayName="Define font type of back small numbers (3 digits)";
 				tooltip="Define kind of font that will be drawn on vehicle. 3 digits";
 				property="rhs_decalNumber_type2";
 				expression="if(_value != 'NoChange')then{ _this setVariable ['%s', _value];[_this,[['Number', cRHS2S1BackSmallNumberPlaces, _value]]] call rhs_fnc_decalsInit}";
 			};
 			class rhs_decalNumber2: rhs_decalNumber
 			{
-				displayName="Set back small number (3 digits)";
 				tooltip="Set back small number. 3 numbers are required. Hides on 0";
 				property="rhs_decalNumber2";
 				expression="if( _value >= 0)then{if( _value == 0)then{{[_this setobjectTexture [_x,'a3\data_f\clear_empty.paa']]}foreach cRHS2S1BackSmallNumberPlaces}else{[_this, [['Number', cRHS2S1BackSmallNumberPlaces, _this getVariable ['rhs_decalNumber_type2','Default'], _value] ] ] call rhs_fnc_decalsInit}};";
 			};
 			class rhs_decalNumber_type3: rhs_decalNumber_type
 			{
-				displayName="Define font type of back large numbers (3 digits)";
 				tooltip="Define kind of font that will be drawn on vehicle. 3 digits";
 				property="rhs_decalNumber_type3";
 				expression="if(_value != 'NoChange')then{ _this setVariable ['%s', _value];[_this,[['Number', cRHS2S1BackLargeNumberPlaces, _value]]] call rhs_fnc_decalsInit}";
 			};
 			class rhs_decalNumber3: rhs_decalNumber
 			{
-				displayName="Set back large number (3 digits)";
 				tooltip="Set back large number. 3 numbers are required. Hides on 0";
 				property="rhs_decalNumber3";
 				expression="if( _value >= 0)then{if( _value == 0)then{{[_this setobjectTexture [_x,'a3\data_f\clear_empty.paa']]}foreach cRHS2S1BackLargeNumberPlaces}else{[_this, [['Number', cRHS2S1BackLargeNumberPlaces, _this getVariable ['rhs_decalNumber_type3','Default'], _value] ] ] call rhs_fnc_decalsInit}};";
 			};
 			class rhs_decalNumber_type4: rhs_decalNumber_type
 			{
-				displayName="Define font type of back turret number (3 digits)";
 				tooltip="Define kind of font that will be drawn on vehicle. 3 digits";
 				property="rhs_decalNumber_type4";
 				expression="if(_value != 'NoChange')then{ _this setVariable ['%s', _value];[_this,[['Number', cRHS2S1BackTurretNumberPlaces, _value]]] call rhs_fnc_decalsInit}";
 			};
 			class rhs_decalNumber4: rhs_decalNumber
 			{
-				displayName="Set back turret number (3 digits)";
 				tooltip="Set back turret number. 3 numbers are required. Hides on 0";
 				property="rhs_decalNumber4";
 				expression="if( _value >= 0)then{if( _value == 0)then{{[_this setobjectTexture [_x,'a3\data_f\clear_empty.paa']]}foreach cRHS2S1BackTurretNumberPlaces}else{[_this, [['Number', cRHS2S1BackTurretNumberPlaces, _this getVariable ['rhs_decalNumber_type4','Default'], _value] ] ] call rhs_fnc_decalsInit}};";
 			};
 			class rhs_decalNumber_type5: rhs_decalNumber_type
 			{
-				displayName="Define font type of front turret number (3 digits)";
 				tooltip="Define kind of font that will be drawn on vehicle. 3 digits";
 				property="rhs_decalNumber_type5";
 				expression="if(_value != 'NoChange')then{ _this setVariable ['%s', _value];[_this,[['Number', cRHS2S1FrontTurretNumberPlaces, _value]]] call rhs_fnc_decalsInit}";
 			};
 			class rhs_decalNumber5: rhs_decalNumber
 			{
-				displayName="Set front turret number (3 digits)";
 				tooltip="Set front turret number. 3 numbers are required. Hides on 0";
 				property="rhs_decalNumber5";
 				expression="if( _value >= 0)then{if( _value == 0)then{{[_this setobjectTexture [_x,'a3\data_f\clear_empty.paa']]}foreach cRHS2S1FrontTurretNumberPlaces}else{[_this, [['Number', cRHS2S1FrontTurretNumberPlaces, _this getVariable ['rhs_decalNumber_type5','Default'], _value] ] ] call rhs_fnc_decalsInit}};";
 			};
 			class rhs_decalNumber_type6: rhs_decalNumber_type
 			{
-				displayName="Define font type of front turret number (5 digits)";
 				tooltip="Define kind of font that will be drawn on vehicle. 5 digits";
 				property="rhs_decalNumber_type6";
 				expression="if(_value != 'NoChange')then{ _this setVariable ['%s', _value];[_this,[['Number', cRHS2S1SerbianNumberPlaces, _value]]] call rhs_fnc_decalsInit}";
 			};
 			class rhs_decalNumber6: rhs_decalNumber
 			{
-				displayName="Set front turret number (5 digits, Serbian)";
 				tooltip="Set front turret number. 5 numbers are required. Hides on 0";
 				property="rhs_decalNumber6";
 				expression="if( _value >= 0)then{if( _value == 0)then{{[_this setobjectTexture [_x,'a3\data_f\clear_empty.paa']]}foreach cRHS2S1SerbianNumberPlaces}else{[_this, [['Number', cRHS2S1SerbianNumberPlaces, _this getVariable ['rhs_decalNumber_type6','CDF'], _value] ] ] call rhs_fnc_decalsInit}};";
 			};
 			class rhs_decalPlatoonBack_type
 			{
-				displayName="Define back door platoon symbol type";
 				tooltip="Decal type";
 				property="rhs_decalPlatoonBack_type";
 				control="Combo";
 				expression="_this setVariable ['%s', _value];";
 				defaultValue="0";
-				typeName="STRING";
 				class values
 				{
 					class Platoon
@@ -1775,7 +1614,6 @@ class CfgVehicles
 			};
 			class rhs_decalPlatoonBack
 			{
-				displayName="Set platoon symbol";
 				tooltip="Set platoon symbol located on the back of the vehicle. Usually used for platoon symbols. -1 leaves current symbol & 0 clears decal.";
 				property="rhs_decalPlatoon";
 				control="Edit";
@@ -1785,211 +1623,89 @@ class CfgVehicles
 			};
 			class rhs_decalPlatoonTurretBackRight_type: rhs_decalPlatoonBack_type
 			{
-				displayName="Define back turret right symbol type";
 				property="rhs_decalPlatoonTurretBackRight_type";
 				class values: values
 				{
-					class Platoon: Platoon
-					{
-					};
-					class PlatoonGDR: PlatoonGDR
-					{
-					};
-					class PlatoonVDV: PlatoonVDV
-					{
-					};
-					class Army: Army
-					{
-					};
-					class Honor: Honor
-					{
-					};
-					class HonorGDR: HonorGDR
-					{
-					};
 				};
 			};
 			class rhs_decalPlatoonTurretBackRight: rhs_decalPlatoonBack
 			{
-				displayName="Set back turret right symbol";
 				tooltip="Define symbol located on right back side of vehicle turret. Usually used for platoon symbols. -1 leaves current symbol & 0 clears decal.";
 				property="rhs_decalPlatoonTurretBackRight";
 				expression="if(parseNumber _value >= 0)then{ [_this, [ [ 'Label', [cRHS2S1TurretBackRightSymbol],  _this getVariable ['rhs_decalPlatoonTurretBackRight_type','Platoon'],call compile _value] ] ] call rhs_fnc_decalsInit};";
 			};
 			class rhs_decalPlatoonTurretBackLeft_type: rhs_decalPlatoonBack_type
 			{
-				displayName="Define back turret left symbol type";
 				property="rhs_decalPlatoonTurretBackLeft_type";
 				class values: values
 				{
-					class Platoon: Platoon
-					{
-					};
-					class PlatoonGDR: PlatoonGDR
-					{
-					};
-					class PlatoonVDV: PlatoonVDV
-					{
-					};
-					class Army: Army
-					{
-					};
-					class Honor: Honor
-					{
-					};
-					class HonorGDR: HonorGDR
-					{
-					};
 				};
 			};
 			class rhs_decalPlatoonTurretBackLeft: rhs_decalPlatoonBack
 			{
-				displayName="Set back turret left symbol";
 				tooltip="Define symbol located on left back side of vehicle turret. Usually used for platoon symbols. -1 leaves current symbol & 0 clears decal.";
 				property="rhs_decalPlatoonTurretBackLeft";
 				expression="if(parseNumber _value >= 0)then{ [_this, [ [ 'Label', [cRHS2S1TurretBackLeftSymbol],  _this getVariable ['rhs_decalPlatoonTurretBackLeft_type','Platoon'],call compile _value] ] ] call rhs_fnc_decalsInit};";
 			};
 			class rhs_decalPlatoonTurretFrontRight_type: rhs_decalPlatoonBack_type
 			{
-				displayName="Define front turret right symbol type";
 				property="rhs_decalPlatoonTurretFrontRight_type";
 				class values: values
 				{
-					class Platoon: Platoon
-					{
-					};
-					class PlatoonGDR: PlatoonGDR
-					{
-					};
-					class PlatoonVDV: PlatoonVDV
-					{
-					};
-					class Army: Army
-					{
-					};
-					class Honor: Honor
-					{
-					};
-					class HonorGDR: HonorGDR
-					{
-					};
 				};
 			};
 			class rhs_decalPlatoonTurretFrontRight: rhs_decalPlatoonBack
 			{
-				displayName="Set front turret right symbol";
 				tooltip="Define symbol located on right front side of vehicle turret. Usually used for platoon symbols. -1 leaves current symbol & 0 clears decal.";
 				property="rhs_decalPlatoonTurretFrontRight";
 				expression="if(parseNumber _value >= 0)then{ [_this, [ [ 'Label', [cRHS2S1TurretFrontRightSymbol],  _this getVariable ['rhs_decalPlatoonTurretFrontRight_type','Platoon'],call compile _value] ] ] call rhs_fnc_decalsInit};";
 			};
 			class rhs_decalPlatoonTurretFrontLeft_type: rhs_decalPlatoonBack_type
 			{
-				displayName="Define front turret left symbol type";
 				property="rhs_decalPlatoonTurretFrontLeft_type";
 				class values: values
 				{
-					class Platoon: Platoon
-					{
-					};
-					class PlatoonGDR: PlatoonGDR
-					{
-					};
-					class PlatoonVDV: PlatoonVDV
-					{
-					};
-					class Army: Army
-					{
-					};
-					class Honor: Honor
-					{
-					};
-					class HonorGDR: HonorGDR
-					{
-					};
 				};
 			};
 			class rhs_decalPlatoonTurretFrontLeft: rhs_decalPlatoonBack
 			{
-				displayName="Set front turret left symbol";
 				tooltip="Define symbol located on left front side of vehicle turret. Usually used for platoon symbols. -1 leaves current symbol & 0 clears decal.";
 				property="rhs_decalPlatoonTurretFrontLeft";
 				expression="if(parseNumber _value >= 0)then{ [_this, [ [ 'Label', [cRHS2S1TurretFrontLeftSymbol],  _this getVariable ['rhs_decalPlatoonTurretFrontLeft_type','Platoon'],call compile _value] ] ] call rhs_fnc_decalsInit};";
 			};
 			class rhs_decalPlatoonHullLeft_type: rhs_decalPlatoonBack_type
 			{
-				displayName="Define hull left symbol type";
 				property="rhs_decalPlatoonHullLeft_type";
 				class values: values
 				{
-					class Platoon: Platoon
-					{
-					};
-					class PlatoonGDR: PlatoonGDR
-					{
-					};
-					class PlatoonVDV: PlatoonVDV
-					{
-					};
-					class Army: Army
-					{
-					};
-					class Honor: Honor
-					{
-					};
-					class HonorGDR: HonorGDR
-					{
-					};
 				};
 			};
 			class rhs_decalPlatoonHullLeft: rhs_decalPlatoonBack
 			{
-				displayName="Set hull left symbol";
 				tooltip="Define symbol located on left side of vehicle hull. Usually used for platoon symbols. -1 leaves current symbol & 0 clears decal.";
 				property="rhs_decalPlatoonHullLeft";
 				expression="if(parseNumber _value >= 0)then{ [_this, [ [ 'Label', [cRHS2S1HullLeftSymbol],  _this getVariable ['rhs_decalPlatoonHullLeft_type','Platoon'],call compile _value] ] ] call rhs_fnc_decalsInit};";
 			};
 			class rhs_decalPlatoonHullRight_type: rhs_decalPlatoonBack_type
 			{
-				displayName="Define hull right symbol type";
 				property="rhs_decalPlatoonHullRight_type";
 				class values: values
 				{
-					class Platoon: Platoon
-					{
-					};
-					class PlatoonGDR: PlatoonGDR
-					{
-					};
-					class PlatoonVDV: PlatoonVDV
-					{
-					};
-					class Army: Army
-					{
-					};
-					class Honor: Honor
-					{
-					};
-					class HonorGDR: HonorGDR
-					{
-					};
 				};
 			};
 			class rhs_decalPlatoonHullRight: rhs_decalPlatoonBack
 			{
-				displayName="Set hull right symbol";
 				tooltip="Define symbol located on right side of vehicle hull. Usually used for platoon symbols. -1 leaves current symbol & 0 clears decal.";
 				property="rhs_decalPlatoonHullRight";
 				expression="if(parseNumber _value >= 0)then{ [_this, [ [ 'Label', [cRHS2S1HullRightSymbol],  _this getVariable ['rhs_decalPlatoonHullRight_type','Platoon'],call compile _value] ] ] call rhs_fnc_decalsInit};";
 			};
 			class rhs_ammoslot_1_type
 			{
-				displayName="Ammo slot #1 type";
 				tooltip="Define type of shell for #1 slot [HE rounds]";
 				property="rhs_ammoslot_1_type";
 				control="Combo";
 				expression="_this setVariable ['%s', _value];";
 				defaultValue=0;
-				typeName="STRING";
 				class values
 				{
 					class rhs_mag_of462
@@ -2008,18 +1724,15 @@ class CfgVehicles
 			};
 			class rhs_ammoslot_1
 			{
-				displayName="Ammo slot #1 count";
 				tooltip="Define number of rounds stored inside of type #1. Max 40. Leave -1 for default loadout";
 				property="rhs_ammoslot_1";
 				control="Edit";
 				expression="if(_value >= 0)then{ [_this,_value,'%s',40,['rhs_ammoslot_1','rhs_ammoslot_2','rhs_ammoslot_3','rhs_ammoslot_4','rhs_ammoslot_5']] spawn rhs_fnc_Eden_DefineLoadout};";
 				defaultValue="-1";
 				validate="NUMBER";
-				typeName="NUMBER";
 			};
 			class rhs_ammoslot_2_type: rhs_ammoslot_1_type
 			{
-				displayName="Ammo slot #2 type";
 				tooltip="Define type of shell for #2 slot [Smoke rounds]";
 				property="rhs_ammoslot_2_type";
 				class values
@@ -2034,13 +1747,11 @@ class CfgVehicles
 			};
 			class rhs_ammoslot_2: rhs_ammoslot_1
 			{
-				displayName="Ammo slot #2 count";
 				tooltip="Define number of rounds stored inside of type #2. Max 40. Leave -1 for default loadout";
 				property="rhs_ammoslot_2";
 			};
 			class rhs_ammoslot_3_type: rhs_ammoslot_1_type
 			{
-				displayName="Ammo slot #3 type";
 				tooltip="Define type of shell for #3 slot [Illumination rounds]";
 				property="rhs_ammoslot_3_type";
 				class values
@@ -2055,13 +1766,11 @@ class CfgVehicles
 			};
 			class rhs_ammoslot_3: rhs_ammoslot_1
 			{
-				displayName="Ammo slot #3 count";
 				tooltip="Define number of rounds stored inside of type #3. Max 40. Leave -1 for default loadout";
 				property="rhs_ammoslot_3";
 			};
 			class rhs_ammoslot_4_type: rhs_ammoslot_1_type
 			{
-				displayName="Ammo slot #4 type";
 				tooltip="Define type of shell for #4 slot [HEAT rounds]";
 				property="rhs_ammoslot_4_type";
 				class values
@@ -2082,7 +1791,6 @@ class CfgVehicles
 			};
 			class rhs_ammoslot_4: rhs_ammoslot_1
 			{
-				displayName="Ammo slot #4 count";
 				tooltip="Define number of rounds stored inside of type #4. Max 40. Leave -1 for default loadout";
 				property="rhs_ammoslot_4";
 			};
@@ -2117,8 +1825,6 @@ class CfgVehicles
 			initAngleY=0;
 			minAngleY=-110;
 			maxAngleY=110;
-			distanceZoomMin=20;
-			distanceZoomMax=2000;
 		};
 		animationList[]=
 		{
@@ -2128,9 +1834,6 @@ class CfgVehicles
 			0.40000001,
 			"hide_shields_turret",
 			0.2
-		};
-		class Damage
-		{
 		};
 		class Exhausts
 		{
@@ -2207,7 +1910,6 @@ class CfgVehicles
 			"light_dirty",
 			0.2
 		};
-		displayName="$STR_2S1_Name";
 	};
 	class rhs_2s1_vmf: rhs_2s1_tv
 	{
@@ -2221,7 +1923,6 @@ class CfgVehicles
 	class rhs_Wreck_2s1_turret_F: ThingX
 	{
 		reversed=1;
-		displayName="2S1 Wreck (Turret)";
 		icon="iconObject_1x2";
 	};
 };

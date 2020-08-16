@@ -97,15 +97,6 @@ class CfgVehicles
 			};
 		};
 	};
-	class StaticMGWeapon: StaticWeapon
-	{
-	};
-	class StaticATWeapon: StaticWeapon
-	{
-	};
-	class StaticAAWeapon: StaticWeapon
-	{
-	};
 	class StaticCannon: StaticWeapon
 	{
 		class ViewOptics;
@@ -113,9 +104,6 @@ class CfgVehicles
 	class StaticGrenadeLauncher: StaticWeapon
 	{
 		class ViewOptics;
-	};
-	class StaticMortar: StaticWeapon
-	{
 	};
 	class rhs_m2staticmg_base: StaticMGWeapon
 	{
@@ -130,10 +118,6 @@ class CfgVehicles
 				name="telo";
 			};
 		};
-		class Damage
-		{
-		};
-		displayName="M2HB (M3 AA)";
 		class ViewPilot: ViewPilot
 		{
 			initAngleX=-0;
@@ -179,12 +163,10 @@ class CfgVehicles
 				"RHS_M2_Gun_Bag",
 				"RHS_M2_Tripod_Bag"
 			};
-			displayName="";
 		};
 	};
 	class RHS_M2StaticMG_MiniTripod_base: rhs_m2staticmg_base
 	{
-		displayName="M2HB (M3)";
 		class Turrets: Turrets
 		{
 			class MainTurret: MainTurret
@@ -204,7 +186,6 @@ class CfgVehicles
 				"RHS_M2_Gun_Bag",
 				"RHS_M2_MiniTripod_Bag"
 			};
-			displayName="";
 		};
 	};
 	class RHS_M2StaticMG_D: rhs_m2staticmg_base
@@ -273,7 +254,6 @@ class CfgVehicles
 	};
 	class RHS_MK19_TriPod_base: StaticGrenadeLauncher
 	{
-		displayName="Mk. 19 (M3)";
 		icon="\rhsusf\addons\rhsusf_heavyweapons\data\map_ico\icomap_mk19_stat_CA.paa";
 		sensorPosition="gunnerView";
 		class Hitpoints
@@ -284,9 +264,6 @@ class CfgVehicles
 				passThrough=1;
 				name="telo";
 			};
-		};
-		class Damage
-		{
 		};
 		class ViewPilot: ViewPilot
 		{
@@ -330,7 +307,6 @@ class CfgVehicles
 				"RHS_Mk19_Gun_Bag",
 				"RHS_Mk19_Tripod_Bag"
 			};
-			displayName="";
 		};
 	};
 	class RHS_MK19_TriPod_D: RHS_MK19_TriPod_base
@@ -396,9 +372,6 @@ class CfgVehicles
 			maxMoveY=0.075000003;
 			minMoveZ=-0.075000003;
 			maxMoveZ=0.1;
-		};
-		class Damage
-		{
 		};
 		class Turrets: Turrets
 		{
@@ -480,7 +453,6 @@ class CfgVehicles
 				"RHS_Tow_Gun_Bag",
 				"RHS_Tow_Tripod_Bag"
 			};
-			displayName="";
 		};
 	};
 	class RHS_TOW_TriPod_D: RHS_TOW_TriPod_base
@@ -515,10 +487,6 @@ class CfgVehicles
 			"rhsusf_usmc_marpat_wd_rifleman"
 		};
 	};
-	class RHS_Stinger_AA_pod_Base: StaticAAWeapon
-	{
-		displayName="FIM-92F (DMS)";
-		threat[]={0.30000001,0.30000001,1};
 		mapsize=2.8;
 		icon="\rhsusf\addons\rhsusf_heavyweapons\Data\map_ico\icomap_FIM92_static_CA.paa";
 		memoryPointMissile[]=
@@ -539,9 +507,6 @@ class CfgVehicles
 				passThrough=1;
 				name="telo";
 			};
-		};
-		class Damage
-		{
 		};
 		class ViewPilot: ViewPilot
 		{
@@ -594,9 +559,6 @@ class CfgVehicles
 				};
 			};
 		};
-		class EventHandlers: EventHandlers
-		{
-		};
 	};
 	class RHS_Stinger_AA_pod_D: RHS_Stinger_AA_pod_Base
 	{
@@ -637,10 +599,6 @@ class CfgVehicles
 			"Artillery"
 		};
 		displayname="$STR_RHS_DN_m252";
-		class Library
-		{
-			libTextDesc="$STR_RHS_LIB_m252";
-		};
 		icon="\rhsusf\addons\rhsusf_heavyweapons\data\map_ico\icomap_mortar_m251_CA.paa";
 		class Hitpoints
 		{
@@ -663,7 +621,6 @@ class CfgVehicles
 				{
 					"rhs_mortar_81mm"
 				};
-				cameraDir="look";
 				elevationMode=3;
 				initCamElev=0;
 				minCamElev=-35;
@@ -675,13 +632,7 @@ class CfgVehicles
 				minTurn=-180;
 				maxTurn=180;
 				usePiP=2;
-				class Hitpoints
-				{
-				};
 			};
-		};
-		class Damage
-		{
 		};
 		htMin=1;
 		htMax=480;
@@ -700,19 +651,16 @@ class CfgVehicles
 				"RHS_M252_Gun_Bag",
 				"RHS_M252_Bipod_Bag"
 			};
-			displayName="";
 		};
 		class Attributes
 		{
 			class rhs_ammoslot_1_type
 			{
-				displayName="Ammo slot #1 type";
 				tooltip="Define type of shell for #1 slot [HE rounds]";
 				property="rhs_ammoslot_1_type";
 				control="Combo";
 				expression="_this setVariable ['%s', _value];";
 				defaultValue=0;
-				typeName="STRING";
 				class values
 				{
 					class rhs_1Rnd_m821_HE
@@ -725,18 +673,15 @@ class CfgVehicles
 			};
 			class rhs_ammoslot_1
 			{
-				displayName="Ammo slot #1 count";
 				tooltip="Define number of rounds stored inside of type #1. Max 40. Leave -1 for default loadout";
 				property="rhs_ammoslot_1";
 				control="Edit";
 				expression="if(_value >= 0)then{ [_this,_value,'%s',40,['rhs_ammoslot_1','rhs_ammoslot_2','rhs_ammoslot_3']] spawn rhsusf_fnc_Eden_DefineLoadout};";
 				defaultValue="-1";
 				validate="NUMBER";
-				typeName="NUMBER";
 			};
 			class rhs_ammoslot_2_type: rhs_ammoslot_1_type
 			{
-				displayName="Ammo slot #2 type";
 				tooltip="Define type of shell for #2 slot [Smoke rounds]";
 				property="rhs_ammoslot_2_type";
 				class values
@@ -751,13 +696,11 @@ class CfgVehicles
 			};
 			class rhs_ammoslot_2: rhs_ammoslot_1
 			{
-				displayName="Ammo slot #2 count";
 				tooltip="Define number of rounds stored inside of type #2. Max 40. Leave -1 for default loadout";
 				property="rhs_ammoslot_2";
 			};
 			class rhs_ammoslot_3_type: rhs_ammoslot_1_type
 			{
-				displayName="Ammo slot #3 type";
 				tooltip="Define type of shell for #3 slot [Illumination rounds]";
 				property="rhs_ammoslot_3_type";
 				class values
@@ -772,7 +715,6 @@ class CfgVehicles
 			};
 			class rhs_ammoslot_3: rhs_ammoslot_1
 			{
-				displayName="Ammo slot #3 count";
 				tooltip="Define number of rounds stored inside of type #3. Max 40. Leave -1 for default loadout";
 				property="rhs_ammoslot_3";
 			};
@@ -825,7 +767,6 @@ class CfgVehicles
 			"SlingLoadCargo2",
 			"SlingLoadCargo3"
 		};
-		displayName="$STR_RHS_DN_M119";
 		icon="\rhsusf\addons\rhsusf_heavyweapons\data\map_ico\icomap_m119_CA.paa";
 		driveOnComponent[]=
 		{
@@ -848,9 +789,6 @@ class CfgVehicles
 				passThrough=1;
 				name="telo";
 			};
-		};
-		class Damage
-		{
 		};
 		class Turrets: Turrets
 		{
@@ -880,41 +818,30 @@ class CfgVehicles
 				};
 			};
 		};
-		class Library
-		{
-			libTextDesc="$STR_RHS_LIB_M119";
-		};
 		htMin=1;
 		htMax=480;
 		afMax=0;
 		mfMax=0;
 		mFact=1;
 		tBody=450;
-		class EventHandlers: EventHandlers
-		{
-		};
 		class Attributes
 		{
 			class rhs_caseDeleteTime
 			{
-				displayName="Spent case liftime";
 				tooltip="Define how long spent caseses are rendred in game. Type -1 for infinitve time";
 				property="rhs_caseDeleteTime";
 				control="Edit";
 				validate="Number";
-				typeName="Number";
 				defaultValue="120";
 				expression="_this setVariable ['rhs_caseDeleteTime',_value]";
 			};
 			class rhs_ammoslot_1_type
 			{
-				displayName="Ammo slot #1 type";
 				tooltip="Define type of shell for #1 slot [HE rounds]";
 				property="rhs_ammoslot_1_type";
 				control="Combo";
 				expression="_this setVariable ['%s', _value];";
 				defaultValue=0;
-				typeName="STRING";
 				class values
 				{
 					class RHS_mag_m1_he_12
@@ -927,18 +854,15 @@ class CfgVehicles
 			};
 			class rhs_ammoslot_1
 			{
-				displayName="Ammo slot #1 count";
 				tooltip="Define number of rounds stored inside of type #1. Max 40. Leave -1 for default loadout";
 				property="rhs_ammoslot_1";
 				control="Edit";
 				expression="if(_value >= 0)then{ [_this,_value,'%s',40,['rhs_ammoslot_1','rhs_ammoslot_2','rhs_ammoslot_3']] spawn rhsusf_fnc_Eden_DefineLoadout};";
 				defaultValue="-1";
 				validate="NUMBER";
-				typeName="NUMBER";
 			};
 			class rhs_ammoslot_2_type: rhs_ammoslot_1_type
 			{
-				displayName="Ammo slot #2 type";
 				tooltip="Define type of shell for #2 slot [Smoke rounds]";
 				property="rhs_ammoslot_2_type";
 				class values
@@ -953,13 +877,11 @@ class CfgVehicles
 			};
 			class rhs_ammoslot_2: rhs_ammoslot_1
 			{
-				displayName="Ammo slot #2 count";
 				tooltip="Define number of rounds stored inside of type #2. Max 40. Leave -1 for default loadout";
 				property="rhs_ammoslot_2";
 			};
 			class rhs_ammoslot_3_type: rhs_ammoslot_1_type
 			{
-				displayName="Ammo slot #3 type";
 				tooltip="Define type of shell for #3 slot [Illumination rounds]";
 				property="rhs_ammoslot_3_type";
 				class values
@@ -974,7 +896,6 @@ class CfgVehicles
 			};
 			class rhs_ammoslot_3: rhs_ammoslot_1
 			{
-				displayName="Ammo slot #3 count";
 				tooltip="Define number of rounds stored inside of type #3. Max 40. Leave -1 for default loadout";
 				property="rhs_ammoslot_3";
 			};
@@ -1003,7 +924,6 @@ class CfgVehicles
 	};
 	class RHS_M2_Gun_Bag: Weapon_Bag_Base
 	{
-		displayName="M2 Gun Bag";
 		mass=382;
 		icon="\rhsusf\addons\rhsusf_heavyweapons\bags\mapIcon_backpack_CA.paa";
 		class assembleInfo
@@ -1012,17 +932,14 @@ class CfgVehicles
 			base="";
 			assembleTo="";
 			dissasembleTo[]={};
-			displayName="";
 		};
 	};
 	class RHS_M2_Tripod_Bag: Weapon_Bag_Base
 	{
 		mass=250;
-		displayName="M2 Tripod Bag";
 		icon="\rhsusf\addons\rhsusf_heavyweapons\bags\mapIcon_backpack_CA.paa";
 		class assembleInfo: assembleInfo
 		{
-			displayName="$STR_A3_CfgVehicles_B_HMG_01_Wpn_assembleInfo0";
 			assembleTo="RHS_M2StaticMG_D";
 			base[]=
 			{
@@ -1033,10 +950,8 @@ class CfgVehicles
 	class RHS_M2_MiniTripod_Bag: RHS_M2_Tripod_Bag
 	{
 		mass=200;
-		displayName="M3 Minitripod Bag";
 		class assembleInfo: assembleInfo
 		{
-			displayName="$STR_A3_CfgVehicles_B_HMG_01_Wpn_assembleInfo0";
 			assembleTo="RHS_M2StaticMG_MiniTripod_D";
 			base[]=
 			{
@@ -1046,16 +961,13 @@ class CfgVehicles
 	};
 	class RHS_Mk19_Gun_Bag: RHS_M2_Gun_Bag
 	{
-		displayName="Mk19 Gun Bag";
 		mass=302;
 	};
 	class RHS_Mk19_Tripod_Bag: RHS_M2_Tripod_Bag
 	{
 		mass=139;
-		displayName="Mk19 Tripod Bag";
 		class assembleInfo: assembleInfo
 		{
-			displayName="$STR_A3_CfgVehicles_B_gmg_01_Wpn_assembleInfo0";
 			assembleTo="RHS_MK19_TriPod_D";
 			base[]=
 			{
@@ -1065,16 +977,13 @@ class CfgVehicles
 	};
 	class rhs_Tow_Gun_Bag: RHS_M2_Gun_Bag
 	{
-		displayName="TOW Gun Bag";
 		mass=302;
 	};
 	class rhs_TOW_Tripod_Bag: RHS_M2_Tripod_Bag
 	{
 		mass=139;
-		displayName="TOW Tripod Bag";
 		class assembleInfo: assembleInfo
 		{
-			displayName="$STR_A3_CfgVehicles_B_AT_01_Wpn_assembleInfo0";
 			assembleTo="RHS_TOW_TriPod_WD";
 			base[]=
 			{
@@ -1084,16 +993,13 @@ class CfgVehicles
 	};
 	class rhs_M252_Gun_Bag: RHS_M2_Gun_Bag
 	{
-		displayName="M252 Gun Bag";
 		mass=162;
 	};
 	class rhs_M252_Bipod_Bag: RHS_M2_Tripod_Bag
 	{
 		mass=339;
-		displayName="M252 Tripod Bag";
 		class assembleInfo: assembleInfo
 		{
-			displayName="$STR_A3_CfgVehicles_B_Mortar_01_Wpn_assembleInfo0";
 			assembleTo="RHS_M252_WD";
 			base[]=
 			{

@@ -1,8 +1,5 @@
 class CfgPatches
 {
-	class rhsusf_c_ch53
-	{
-		weapons[]={};
 		units[]=
 		{
 			"rhsusf_CH53E_USMC",
@@ -151,12 +148,6 @@ class CfgVehicles
 			class HitEngine;
 			class HitAvionics;
 			class HitVRotor;
-			class HitHRotor;
-			class HitFuel;
-		};
-		class Eventhandlers;
-		class Components;
-	};
 	class Helicopter_Base_H: Helicopter_Base_F
 	{
 		class RotorLibHelicopterProperties;
@@ -165,9 +156,6 @@ class CfgVehicles
 		{
 			class MainTurret;
 		};
-		class AnimationSources;
-		class Components;
-	};
 	class rhsusf_CH53E_USMC: Helicopter_Base_H
 	{
 		rhs_decalParameters[]=
@@ -180,7 +168,6 @@ class CfgVehicles
 		rhs_gearAnim="Gear_Nose_1";
 		rhs_paraScript="rhs_fnc_vehPara";
 		rhs_hasNoRadar=1;
-		displayName="CH-53E";
 		expansion=3;
 		Picture="\rhsusf\addons\rhsusf_ch53\data\ui\ch53_picture_ca.paa";
 		irTarget=1;
@@ -298,23 +285,10 @@ class CfgVehicles
 		};
 		gearUpTime=3;
 		gearDownTime=3;
-		hiddenSelections[]=
-		{
-			"camo",
-			"n1",
-			"n2"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"rhsusf\addons\rhsusf_ch53\data\ch53_1_co.paa",
-			"rhsusf\addons\rhsusf_decals\Data\Numbers\USMCBlackShadow\5_ca.paa",
-			"rhsusf\addons\rhsusf_decals\Data\Numbers\USMCBlackShadow\5_ca.paa"
-		};
 		class textureSources
 		{
 			class standard
 			{
-				displayName="Standard";
 				factions[]=
 				{
 					"rhs_faction_usmc_wd",
@@ -1033,9 +1007,6 @@ class CfgVehicles
 		};
 		class SoundsExt
 		{
-			class SoundEvents
-			{
-			};
 			class Sounds
 			{
 				class EngineExt
@@ -1485,9 +1456,6 @@ class CfgVehicles
 				name="glass17";
 			};
 		};
-		class Damage
-		{
-		};
 		class MFD
 		{
 			class rhsusf_CH53_HUD_1
@@ -1505,21 +1473,18 @@ class CfgVehicles
 				{
 					class Velocity
 					{
-						type="vector";
 						source="velocity";
 						pos0[]={0.5,0.5};
 						pos10[]={0.64999998,0.64999998};
 					};
 					class Velocity_slip
 					{
-						type="vector";
 						source="velocity";
 						pos0[]={0.5,0.84500003};
 						pos10[]={0.52999997,0.84500003};
 					};
 					class VspeedBone
 					{
-						type="linear";
 						source="vspeed";
 						sourceScale=1;
 						min=-10;
@@ -1529,7 +1494,6 @@ class CfgVehicles
 					};
 					class RadarAltitudeBone
 					{
-						type="linear";
 						source="altitudeAGL";
 						sourceScale=1;
 						min=0;
@@ -1539,7 +1503,6 @@ class CfgVehicles
 					};
 					class HorizonBankRot
 					{
-						type="rotational";
 						source="horizonBank";
 						min=-3.1415999;
 						max=3.1415999;
@@ -1549,15 +1512,10 @@ class CfgVehicles
 					};
 					class ForwardVec
 					{
-						type="vector";
 						source="forward";
 						pos0[]={0,0};
 						pos10[]={0.25,0.25};
 					};
-					class Level0
-					{
-						type="horizon";
-						pos0[]={0.5,0.5};
 						pos10[]={0.77999997,0.77999997};
 						angle=0;
 					};
@@ -1706,20 +1664,13 @@ class CfgVehicles
 						angle=-90;
 					};
 				};
-				class Draw
-				{
-					color[]={0.18000001,1,0.18000001};
 					alpha=1;
 					condition="on";
-					class Horizont
-					{
-						clipTL[]={0.15000001,0.15000001};
 						clipBR[]={0.85000002,0.85000002};
 						class Dimmed
 						{
 							class Level0
 							{
-								type="line";
 								points[]=
 								{
 									
@@ -1752,7 +1703,6 @@ class CfgVehicles
 							};
 							class LevelM10: Level0
 							{
-								type="line";
 								width=3;
 								points[]=
 								{
@@ -1823,7 +1773,6 @@ class CfgVehicles
 							};
 							class VALM_1_10
 							{
-								type="text";
 								source="static";
 								align="left";
 								scale=1;
@@ -1871,7 +1820,6 @@ class CfgVehicles
 							};
 							class LevelP10: Level0
 							{
-								type="line";
 								width=3;
 								points[]=
 								{
@@ -1916,7 +1864,6 @@ class CfgVehicles
 							};
 							class VALP_1_10
 							{
-								type="text";
 								source="static";
 								align="left";
 								scale=1;
@@ -1964,7 +1911,6 @@ class CfgVehicles
 							};
 							class LevelM20: Level0
 							{
-								type="line";
 								width=3;
 								points[]=
 								{
@@ -2035,7 +1981,6 @@ class CfgVehicles
 							};
 							class VALM_1_20
 							{
-								type="text";
 								source="static";
 								align="left";
 								scale=1;
@@ -2083,7 +2028,6 @@ class CfgVehicles
 							};
 							class LevelP20: Level0
 							{
-								type="line";
 								width=3;
 								points[]=
 								{
@@ -2128,7 +2072,6 @@ class CfgVehicles
 							};
 							class VALP_1_20
 							{
-								type="text";
 								source="static";
 								align="left";
 								scale=1;
@@ -2176,7 +2119,6 @@ class CfgVehicles
 							};
 							class LevelM30: Level0
 							{
-								type="line";
 								width=3;
 								points[]=
 								{
@@ -2247,7 +2189,6 @@ class CfgVehicles
 							};
 							class VALM_1_30
 							{
-								type="text";
 								source="static";
 								align="left";
 								scale=1;
@@ -2295,7 +2236,6 @@ class CfgVehicles
 							};
 							class LevelP30: Level0
 							{
-								type="line";
 								width=3;
 								points[]=
 								{
@@ -2340,7 +2280,6 @@ class CfgVehicles
 							};
 							class VALP_1_30
 							{
-								type="text";
 								source="static";
 								align="left";
 								scale=1;
@@ -2388,7 +2327,6 @@ class CfgVehicles
 							};
 							class LevelM40: Level0
 							{
-								type="line";
 								width=3;
 								points[]=
 								{
@@ -2459,7 +2397,6 @@ class CfgVehicles
 							};
 							class VALM_1_40
 							{
-								type="text";
 								source="static";
 								align="left";
 								scale=1;
@@ -2507,7 +2444,6 @@ class CfgVehicles
 							};
 							class LevelP40: Level0
 							{
-								type="line";
 								width=3;
 								points[]=
 								{
@@ -2552,7 +2488,6 @@ class CfgVehicles
 							};
 							class VALP_1_40
 							{
-								type="text";
 								source="static";
 								align="left";
 								scale=1;
@@ -2600,7 +2535,6 @@ class CfgVehicles
 							};
 							class LevelM50: Level0
 							{
-								type="line";
 								width=3;
 								points[]=
 								{
@@ -2671,7 +2605,6 @@ class CfgVehicles
 							};
 							class VALM_1_50
 							{
-								type="text";
 								source="static";
 								align="left";
 								scale=1;
@@ -2719,7 +2652,6 @@ class CfgVehicles
 							};
 							class LevelP50: Level0
 							{
-								type="line";
 								width=3;
 								points[]=
 								{
@@ -2764,7 +2696,6 @@ class CfgVehicles
 							};
 							class VALP_1_50
 							{
-								type="text";
 								source="static";
 								align="left";
 								scale=1;
@@ -2814,7 +2745,6 @@ class CfgVehicles
 					};
 					class StaticBank
 					{
-						type="line";
 						width=3;
 						points[]=
 						{
@@ -3080,7 +3010,6 @@ class CfgVehicles
 					};
 					class HorizonBankRot
 					{
-						type="line";
 						width=3;
 						points[]=
 						{
@@ -3112,7 +3041,6 @@ class CfgVehicles
 					};
 					class Waterline
 					{
-						type="line";
 						width=7;
 						points[]=
 						{
@@ -3157,7 +3085,6 @@ class CfgVehicles
 					{
 						class Slip_bars
 						{
-							type="line";
 							width=4;
 							points[]=
 							{
@@ -3221,7 +3148,6 @@ class CfgVehicles
 						};
 						class Slip_ball
 						{
-							type="line";
 							width=6;
 							points[]=
 							{
@@ -4237,11 +4163,9 @@ class CfgVehicles
 					};
 					class LightsGroup
 					{
-						type="group";
 						condition="lights";
 						class LightsText
 						{
-							type="text";
 							source="static";
 							align="right";
 							scale=1;
@@ -4276,11 +4200,9 @@ class CfgVehicles
 					};
 					class CollisionLightsGroup
 					{
-						type="group";
 						condition="collisionlights";
 						class CollisionLightsText
 						{
-							type="text";
 							source="static";
 							align="right";
 							scale=1;
@@ -4315,11 +4237,9 @@ class CfgVehicles
 					};
 					class GearGroup
 					{
-						type="group";
 						condition="ils";
 						class GearText
 						{
-							type="text";
 							source="static";
 							align="right";
 							scale=1;
@@ -4354,7 +4274,6 @@ class CfgVehicles
 					};
 					class SpeedNumber
 					{
-						type="text";
 						align="right";
 						scale=1;
 						source="speed";
@@ -4380,7 +4299,6 @@ class CfgVehicles
 						condition="simulRTD";
 						class Torque_number
 						{
-							type="text";
 							align="left";
 							scale=1;
 							source="rtdRotorTorque";
@@ -4403,7 +4321,6 @@ class CfgVehicles
 						};
 						class Torquetext
 						{
-							type="text";
 							source="static";
 							align="right";
 							scale=1;
@@ -4447,7 +4364,6 @@ class CfgVehicles
 					};
 					class ASLNumber
 					{
-						type="text";
 						source="altitudeASL";
 						sourceScale=1;
 						align="right";
@@ -4470,7 +4386,6 @@ class CfgVehicles
 					};
 					class VspeedScalePosta
 					{
-						type="line";
 						width=5;
 						points[]=
 						{
@@ -4718,13 +4633,9 @@ class CfgVehicles
 							{}
 						};
 					};
-					class RadarAltitudeBand
-					{
-						clipTL[]={0,0.2};
 						clipBR[]={1,0.80000001};
 						class radarbanda
 						{
-							type="line";
 							width=17;
 							points[]=
 							{
@@ -4745,7 +4656,6 @@ class CfgVehicles
 					};
 					class VspeedBand
 					{
-						type="line";
 						width=3;
 						points[]=
 						{
@@ -4803,7 +4713,6 @@ class CfgVehicles
 					};
 					class Center_box
 					{
-						type="line";
 						width=1.5;
 						points[]=
 						{
@@ -4856,7 +4765,6 @@ class CfgVehicles
 					};
 					class HeadingArrow
 					{
-						type="line";
 						width=7;
 						points[]=
 						{
@@ -4876,13 +4784,9 @@ class CfgVehicles
 							}
 						};
 					};
-					class HeadingScale_LEFT
-					{
-						clipTL[]={0,0};
 						clipBR[]={0.44999999,1};
 						class Heading_group
 						{
-							type="scale";
 							horizontal=1;
 							source="heading";
 							sourceScale=1;
@@ -4916,13 +4820,9 @@ class CfgVehicles
 							};
 						};
 					};
-					class HeadingScale_RIGHT
-					{
-						clipTL[]={0.55000001,0};
 						clipBR[]={1,1};
 						class Heading_group
 						{
-							type="scale";
 							horizontal=1;
 							source="heading";
 							sourceScale=1;
@@ -4970,7 +4870,6 @@ class CfgVehicles
 						};
 						class Heading_group
 						{
-							type="scale";
 							horizontal=1;
 							source="heading";
 							sourceScale=1;
@@ -5006,7 +4905,6 @@ class CfgVehicles
 					};
 					class Fuel_Text
 					{
-						type="text";
 						source="static";
 						align="right";
 						scale=1;
@@ -5028,7 +4926,6 @@ class CfgVehicles
 					};
 					class Fuel_Number
 					{
-						type="text";
 						source="fuel";
 						sourceScale=100;
 						align="right";
@@ -5070,34 +4967,27 @@ class CfgVehicles
 				{
 					class Velocity
 					{
-						type="vector";
 						source="velocity";
 						pos0[]={0.5,0.5};
 						pos10[]={0.75,0.75};
 					};
 					class ForwardVec1
 					{
-						type="vector";
 						source="forward";
 						pos0[]={0,0};
 						pos10[]={0.25,0.25};
 					};
 					class ForwardVec
 					{
-						type="vector";
 						source="forward";
 						pos0[]={0,0};
 						pos10[]={0.25299999,0.25299999};
 					};
 				};
-				class Draw
-				{
-					color[]={0.18000001,1,0.18000001};
 					alpha=1;
 					condition="on";
 					class PlaneMovementCrosshair
 					{
-						type="line";
 						width=7;
 						points[]=
 						{
@@ -5279,11 +5169,9 @@ class CfgVehicles
 					};
 					class AC_Centerline
 					{
-						type="group";
 						condition="on";
 						class AC_Cross
 						{
-							type="line";
 							width=4;
 							points[]=
 							{
@@ -5380,9 +5268,6 @@ class CfgVehicles
 			maxMainRotorStress=570000;
 			maxTailRotorStress=120000;
 		};
-		class Eventhandlers: Eventhandlers
-		{
-		};
 		weapons[]=
 		{
 			"rhsusf_weap_ANAAQ24"
@@ -5402,7 +5287,6 @@ class CfgVehicles
 							"RHSUSF_cm_ANALE39",
 							"RHSUSF_cm_ANALE39_x2"
 						};
-						priority=1;
 						attachment="rhsusf_ANALE39_CMFlare_Chaff_Magazine_x2";
 						maxweight=800;
 						UIposition[]={0.33000001,0};
@@ -5417,22 +5301,17 @@ class CfgVehicles
 					{
 						class AirTarget
 						{
-							minRange=500;
-							maxRange=7000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=1;
 						};
 						class GroundTarget
 						{
-							minRange=500;
-							maxRange=7000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=1;
 						};
 						animDirection="ObsGun";
 						angleRangeHorizontal=98;
 						angleRangeVertical=72;
-						typeRecognitionDistance=-1;
 						minSpeedThreshold=0;
 						maxSpeedThreshold=0;
 						maxFogSeeThrough=0.94999999;
@@ -5443,15 +5322,11 @@ class CfgVehicles
 					{
 						class AirTarget
 						{
-							minRange=500;
-							maxRange=4000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=1;
 						};
 						class GroundTarget
 						{
-							minRange=500;
-							maxRange=4000;
 							objectDistanceLimitCoef=1;
 							viewDistanceLimitCoef=1;
 						};
@@ -5459,12 +5334,6 @@ class CfgVehicles
 						animDirection="ObsGun";
 						angleRangeHorizontal=98;
 						angleRangeVertical=72;
-					};
-					class LaserSensorComponent: SensorTemplateLaser
-					{
-					};
-					class PassiveRadarSensorComponent: SensorTemplatePassiveRadar
-					{
 					};
 				};
 			};
@@ -5530,9 +5399,6 @@ class CfgVehicles
 						range[]={3000,8000,16000,35000};
 					};
 				};
-			};
-			class TransportCountermeasuresComponent
-			{
 			};
 		};
 		class CargoTurret;
@@ -5771,9 +5637,6 @@ class CfgVehicles
 		slingLoadMaxCargoMass=14000;
 		class MarkerLights
 		{
-			class PositionRed
-			{
-				color[]={0.80000001,0,0};
 				ambient[]={0.079999998,0,0};
 				intensity=75;
 				name="PositionLight_red_1_pos";
@@ -5794,22 +5657,13 @@ class CfgVehicles
 					hardLimitEnd=1;
 				};
 			};
-			class PositionGreen: PositionRed
-			{
-				color[]={0,0.80000001,0};
 				ambient[]={0,0.079999998,0};
 				name="PositionLight_green_1_pos";
 			};
-			class PositionWhite: PositionRed
-			{
-				color[]={1,1,1};
 				ambient[]={0.1,0.1,0.1};
 				name="PositionLight_white_1_pos";
 				drawLightSize=0.2;
 			};
-			class CollisionRed: PositionRed
-			{
-				color[]={0.89999998,0.15000001,0.1};
 				ambient[]={0.090000004,0.015,0.0099999998};
 				name="CollisionLight_red_1_pos";
 				blinking=1;
@@ -5818,9 +5672,6 @@ class CfgVehicles
 				drawLightSize=0.25;
 				drawLightCenterSize=0.079999998;
 			};
-			class CollisionWhite: PositionRed
-			{
-				color[]={1,1,1};
 				ambient[]={0.1,0.1,0.1};
 				name="CollisionLight_white_1_pos";
 				blinking=1;
@@ -5855,13 +5706,11 @@ class CfgVehicles
 		{
 			class rhs_decalNumber_type
 			{
-				displayName="Define font type of side number";
 				tooltip="Define kind of font that will be drawn on vehicle";
 				property="rhs_decalNumber_type";
 				control="Combo";
 				expression="_this setVariable ['%s', _value];[_this,[['Number', cCH53NumberPlaces, _value]]] call rhsusf_fnc_decalsInit";
 				defaultValue=0;
-				typeName="STRING";
 				class values
 				{
 					class USMCGrey
@@ -5879,18 +5728,15 @@ class CfgVehicles
 			};
 			class rhs_decalNumber
 			{
-				displayName="Set side number";
 				tooltip="Set side number. 2 numbers are required. If 0, random number will be generated";
 				property="rhs_decalNumber";
 				control="Edit";
 				validate="Number";
-				typeName="Number";
 				defaultValue="-1";
 				expression="if( _value >= 0)then{[_this, [['Number', cCH53NumberPlaces, _this getVariable ['rhs_decalNumber_type','USMCGrey'], _value] ] ] call rhsusf_fnc_decalsInit};";
 			};
 			class rhs_openRamp
 			{
-				displayName="Open rear ramp";
 				property="rhs_openRamp";
 				control="slider";
 				expression="_this animate ['ramp_bottom',_value];_this animate ['ramp_top',_value];";
@@ -5900,20 +5746,17 @@ class CfgVehicles
 			{
 				control="CheckboxNumber";
 				defaultValue="0";
-				displayName="Fold helicopter rotors";
 				property="FoldHeli";
 				expression="[_this,_value,true] call rhsusf_fnc_ch53_fold";
 			};
 			class hide_cargo: rhs_openRamp
 			{
-				displayName="Hide cargo benches";
 				property="hide_cargo";
 				control="CheckboxNumber";
 				expression="_this animate ['%s',_value,true];_this lockCargo (_value == 1)";
 			};
 			class rhs_attachCargo: FoldHeli
 			{
-				displayName="Attach cargo";
 				tooltip="Attaching cargo (using attachTo command) just like when you use ramp action";
 				property="rhs_attachCargo";
 				expression="if(_value == 1)then{[_this] spawn rhs_fnc_cargoAttach}else{{if(not(_x isKindOf 'Man'))then{detach _x}}foreach attachedObjects _this};";
@@ -5950,12 +5793,8 @@ class CfgVehicles
 	};
 	class rhsusf_CH53E_USMC_GAU21: rhsusf_CH53E_USMC
 	{
-		displayName="CH-53E (GAU-21)";
 		class Turrets: Turrets
 		{
-			class CopilotTurret: CopilotTurret
-			{
-			};
 			class GAU21: MainTurret
 			{
 				usePiP=0;
@@ -6010,9 +5849,6 @@ class CfgVehicles
 				};
 				class OpticsIn
 				{
-					class ViewOptics: ViewGunner
-					{
-					};
 				};
 				memoryPointGun="muzzle_1";
 				soundAttenuationTurret="HeliAttenuationGunner";
@@ -6050,16 +5886,12 @@ class CfgVehicles
 						};
 					};
 				};
-				class Hitpoints
-				{
-				};
 			};
 		};
 		class UVAnimations
 		{
 			class hmg_ammo_1
 			{
-				type="translation";
 				source="reload_hmg_1";
 				sourceAddress="loop";
 				section="hmg_ammo_1";
@@ -6073,13 +5905,11 @@ class CfgVehicles
 		{
 			class rhs_decalNumber_type
 			{
-				displayName="Define font type of side number";
 				tooltip="Define kind of font that will be drawn on vehicle";
 				property="rhs_decalNumber_type";
 				control="Combo";
 				expression="_this setVariable ['%s', _value];[_this,[['Number', cCH53NumberPlaces, _value]]] call rhsusf_fnc_decalsInit";
 				defaultValue=0;
-				typeName="STRING";
 				class values
 				{
 					class USMCGrey
@@ -6097,18 +5927,15 @@ class CfgVehicles
 			};
 			class rhs_decalNumber
 			{
-				displayName="Set side number";
 				tooltip="Set side number. 2 numbers are required. If 0, random number will be generated";
 				property="rhs_decalNumber";
 				control="Edit";
 				validate="Number";
-				typeName="Number";
 				defaultValue="-1";
 				expression="if( _value >= 0)then{[_this, [['Number', cCH53NumberPlaces, _this getVariable ['rhs_decalNumber_type','USMCGrey'], _value] ] ] call rhsusf_fnc_decalsInit};";
 			};
 			class rhs_openRamp
 			{
-				displayName="Open rear ramp";
 				property="rhs_openRamp";
 				control="slider";
 				expression="_this animate ['ramp_bottom',_value];";
@@ -6118,7 +5945,6 @@ class CfgVehicles
 			{
 				control="CheckboxNumber";
 				defaultValue="0";
-				displayName="Fold helicopter rotors";
 				property="FoldHeli";
 				expression="[_this,_value,true] call rhsusf_fnc_ch53_fold";
 			};
@@ -6139,22 +5965,12 @@ class CfgVehicles
 		};
 		class Turrets: Turrets
 		{
-			class CopilotTurret: CopilotTurret
-			{
-			};
-			class GAU21: GAU21
-			{
-			};
 		};
 	};
 	class rhsusf_CH53e_USMC_cargo: rhsusf_CH53E_USMC
 	{
-		displayName="CH-53E (Cargo)";
 		class Turrets: Turrets
 		{
-			class CopilotTurret: CopilotTurret
-			{
-			};
 		};
 		class VehicleTransport: VehicleTransport
 		{
@@ -6170,12 +5986,8 @@ class CfgVehicles
 	};
 	class rhsusf_CH53e_USMC_D_cargo: rhsusf_CH53E_USMC_D
 	{
-		displayName="CH-53E (Cargo)";
 		class Turrets: Turrets
 		{
-			class CopilotTurret: CopilotTurret
-			{
-			};
 		};
 		class VehicleTransport: VehicleTransport
 		{

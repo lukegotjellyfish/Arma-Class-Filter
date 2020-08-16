@@ -423,12 +423,6 @@ class CfgCloudlets
 	class RocketBackfireRPGNT;
 	class RocketBacksmokeRPGNT;
 	class RocketFrontsmokeRPGNT;
-	class RHS_RocketBackfireRPGNT: RocketBackfireRPGNT
-	{
-	};
-	class RHS_RocketBacksmokeRPGNT: RocketBacksmokeRPGNT
-	{
-	};
 	class RHS_backblast: RHS_RocketBackfireRPGNT
 	{
 		interval=0.26499999;
@@ -463,9 +457,6 @@ class CfgCloudlets
 		};
 	};
 	class ExploAmmoFlash;
-	class RHS_Thermobaric_Explosion: ExploAmmoFlash
-	{
-		animationspeed[]={0,0,2,1,2};
 		color[]=
 		{
 			{1,1,1,0},
@@ -485,9 +476,6 @@ class CfgCloudlets
 		volume=10;
 		weight=10;
 	};
-	class RHS_Thermobaric_Cloud: RHS_Thermobaric_Explosion
-	{
-		animationspeed[]={1};
 		color[]=
 		{
 			{1,1,1,1},
@@ -502,9 +490,6 @@ class CfgCloudlets
 		volume=8;
 		weight=8;
 	};
-	class RHS_Thermobaric_Smoke: RHS_Thermobaric_Cloud
-	{
-		animationspeed[]={0,2.8,1.9,1.2,1.05,0.69999999,0.34999999,0.175};
 		color[]=
 		{
 			{1,1,1,0},
@@ -928,9 +913,6 @@ class CfgCloudlets
 		size[]={2.8125,5.625,7.875};
 		interval=0.125;
 	};
-	class RHS_GDM40ExplosionCloud: RHS_GDM40TrailEffect
-	{
-		moveVelocity[]={0,0,0.1};
 		size[]={2.8125,5.625,7.875};
 		weight=1.277;
 		volume="1.25 + randomValue / 30";
@@ -1130,9 +1112,6 @@ class CfgCloudlets
 };
 class CfgLights
 {
-	class RHS_FlareLight_yellow
-	{
-		color[]={1,0.60000002,0,1};
 		diffuse[]={1,0.60000002,0};
 		ambient[]={0,0,0,0};
 		brightness=1.5;
@@ -1169,9 +1148,6 @@ class CfgLights
 			1
 		};
 	};
-	class RHS_flashbang_light
-	{
-		color[]={11,11,9};
 		ambient[]={0.40000001,0.44999999,0.44999999};
 		brightness=1;
 		intensity=1090;
@@ -1187,9 +1163,6 @@ class CfgLights
 			hardLimitEnd=4;
 		};
 	};
-	class RHS_GDM40SparksLight
-	{
-		diffuse[]={0.93699998,0.80000001,0.69999999};
 		color[]={0.93699998,0.80000001,0.69999999};
 		ambient[]={0.93699998,0.80000001,0.69999999};
 		brightness="10 + random 40";
@@ -1236,7 +1209,6 @@ class RHS_GDM40ParticleTrail
 	class RHS_GDM40TrailEffect
 	{
 		simulation="particles";
-		type="RHS_GDM40TrailEffect";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
@@ -1245,18 +1217,15 @@ class RHS_GDM40ParticleTrail
 	};
 	class RHS_GDM40TrailEffect1: RHS_GDM40TrailEffect
 	{
-		type="RHS_GDM40TrailEffect1";
 		qualityLevel=1;
 	};
 	class RHS_GDM40TrailEffect2: RHS_GDM40TrailEffect
 	{
-		type="RHS_GDM40TrailEffect2";
 		qualityLevel=2;
 	};
 	class RHS_GDM40TrailEffectLong
 	{
 		simulation="particles";
-		type="RHS_GDM40TrailEffectLong";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
@@ -1265,12 +1234,10 @@ class RHS_GDM40ParticleTrail
 	};
 	class RHS_GDM40TrailEffectLong1: RHS_GDM40TrailEffectLong
 	{
-		type="RHS_GDM40TrailEffectLong1";
 		qualityLevel=1;
 	};
 	class RHS_GDM40TrailEffectLong2: RHS_GDM40TrailEffectLong
 	{
-		type="RHS_GDM40TrailEffectLong2";
 		qualityLevel=2;
 	};
 };
@@ -1279,7 +1246,6 @@ class RHS_GDM40ParticleTrailLight: RHS_GDM40ParticleTrail
 	class RHS_GDM40SparksLight
 	{
 		simulation="light";
-		type="RHS_GDM40SparksLight";
 		position[]={0,0,0};
 		intensity=0.001;
 		interval=1;
@@ -1296,7 +1262,6 @@ class RHS_GDM40ParticleLight
 	class RHS_GDM40SparksLight
 	{
 		simulation="light";
-		type="RHS_GDM40SparksLight";
 		position[]={0,0,0};
 		intensity=0.001;
 		interval=1;
@@ -1308,7 +1273,6 @@ class RHS_GDM40Effect
 	class ExplosionLight
 	{
 		simulation="light";
-		type="RHS_GDM40ExplosionLight";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
@@ -1317,7 +1281,6 @@ class RHS_GDM40Effect
 	class ExplosionSparks
 	{
 		simulation="particles";
-		type="RHS_GDM40Sparks";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
@@ -1326,7 +1289,6 @@ class RHS_GDM40Effect
 	class ExplosionSparksTail
 	{
 		simulation="particles";
-		type="RHS_GDM40SparksTrail";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
@@ -1335,7 +1297,6 @@ class RHS_GDM40Effect
 	class ExplosionSparksTailLight
 	{
 		simulation="particles";
-		type="RHS_GDM40SparksTrailLight";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
@@ -1344,7 +1305,6 @@ class RHS_GDM40Effect
 	class ExplosionCloud
 	{
 		simulation="particles";
-		type="RHS_GDM40ExplosionCloud";
 		position[]={0,0,0.5};
 		intensity=1;
 		interval=1;
@@ -1353,7 +1313,6 @@ class RHS_GDM40Effect
 	class GrenadeExp1
 	{
 		simulation="particles";
-		type="GrenadeExp";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
@@ -1365,7 +1324,6 @@ class RHS_RGNO_Impact
 	class Effect
 	{
 		simulation="particles";
-		type="RHS_RGNO_Effect";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
@@ -1376,7 +1334,6 @@ class RHS_BarrelRefract
 	class RHS_HeatHaze
 	{
 		simulation="particles";
-		type="RHS_HeatHaze";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
@@ -1389,7 +1346,6 @@ class RHS_BarrelRefractHeavy
 	class RHS_HeatHaze1
 	{
 		simulation="particles";
-		type="RHS_HeatHaze1";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
@@ -1399,11 +1355,7 @@ class RHS_BarrelRefractHeavy
 };
 class RHS_flashbang_Crater
 {
-	class Smoke1
-	{
-		position[]={0,0,0};
 		simulation="particles";
-		type="RHS_flashbang_smoke";
 		intensity=0.5;
 		interval=1;
 		lifeTime=8;
@@ -1411,29 +1363,17 @@ class RHS_flashbang_Crater
 };
 class RHS_flashbang_10
 {
-	class Smoke1
-	{
-		position[]={0,0,0};
 		simulation="particles";
-		type="RHS_flashbang_10";
 		intensity=0.5;
 		interval=1;
 		lifeTime=1;
 	};
-	class Smoke2: Smoke1
-	{
-		position[]={0,0,0};
 		simulation="particles";
-		type="RHS_flashbang_smoke";
 		intensity=0.5;
 		interval=1;
 		lifeTime=3;
 	};
-	class Light
-	{
-		position[]={0,0,0};
 		simulation="light";
-		type="RHS_flashbang_light";
 		intensity=1;
 		interval=1;
 		lifeTime=1;
@@ -1441,24 +1381,12 @@ class RHS_flashbang_10
 };
 class RHS_flashbang_15: RHS_flashbang_10
 {
-	class Smoke1: Smoke1
-	{
-		type="RHS_flashbang_15";
-	};
 };
 class RHS_flashbang_20: RHS_flashbang_10
 {
-	class Smoke1: Smoke1
-	{
-		type="RHS_flashbang_20";
-	};
 };
 class RHS_vog25p_hit
 {
-	class Handler
-	{
-		type="RHS_vog25p_effect";
-		position[]={0,0,0};
 		simulation="particles";
 		intensity=0.5;
 		interval=1;
@@ -1474,7 +1402,6 @@ class RHS_Thermobaric_Explosion
 		lifetime=0.40000001;
 		position[]={0,0,0};
 		simulation="particles";
-		type="RHS_Thermobaric_Cloud";
 	};
 	class Explosion
 	{
@@ -1483,10 +1410,6 @@ class RHS_Thermobaric_Explosion
 		lifetime=0.40000001;
 		position[]={0,0,0};
 		simulation="particles";
-		type="RHS_Thermobaric_Explosion";
-	};
-	class Explosion2: Explosion
-	{
 	};
 	class Smoke
 	{
@@ -1495,7 +1418,6 @@ class RHS_Thermobaric_Explosion
 		lifetime=0.95999998;
 		position[]={0,0,0};
 		simulation="particles";
-		type="RHS_Thermobaric_Smoke";
 	};
 	class Light
 	{
@@ -1504,7 +1426,6 @@ class RHS_Thermobaric_Explosion
 		lifetime=0.2;
 		position[]={0,0,0};
 		simulation="light";
-		type="ExploLight";
 	};
 };
 class RHS_Thermobaric_Crater
@@ -1516,10 +1437,6 @@ class RHS_Thermobaric_Crater
 		lifetime=0.30000001;
 		position[]={0,0,0};
 		simulation="particles";
-		type="CircleDustSmall";
-	};
-	class DustCircle2: DustCircle
-	{
 	};
 };
 class RHS_Thermobaric_Crater_Small
@@ -1531,7 +1448,6 @@ class RHS_Thermobaric_Crater_Small
 		lifetime=0.30000001;
 		position[]={0,0,0};
 		simulation="particles";
-		type="CircleDustSmall";
 	};
 };
 class RHS_BackEffectsRPG
@@ -1539,7 +1455,6 @@ class RHS_BackEffectsRPG
 	class RocketBackfire1
 	{
 		simulation="particles";
-		type="RHS_RocketBackfireRPGNT";
 		intensity=1;
 		interval=0.1;
 		lifeTime=0.029999999;
@@ -1547,7 +1462,6 @@ class RHS_BackEffectsRPG
 	class RocketBacksmoke2
 	{
 		simulation="particles";
-		type="RHS_RocketBacksmokeRPGNT";
 		intensity=1;
 		interval=0.1;
 		lifeTime=0.1;
@@ -1555,7 +1469,6 @@ class RHS_BackEffectsRPG
 	class RocketFrontsmoke
 	{
 		simulation="particles";
-		type="RocketFrontsmokeRPGNT";
 		intensity=1;
 		interval=0.1;
 		lifeTime=0.2;
@@ -1566,7 +1479,6 @@ class RHS_SmokeShell
 	class SmokeShellWhite
 	{
 		simulation="particles";
-		type="SmokeShellWhiteSmall";
 		position[]={0,0,0};
 		intensity=3;
 		interval=1;
@@ -1574,7 +1486,6 @@ class RHS_SmokeShell
 	class SmokeShellWhite2
 	{
 		simulation="particles";
-		type="SmokeShellWhite2";
 		position[]={0,0,0};
 		intensity=3;
 		interval=1;
@@ -1582,7 +1493,6 @@ class RHS_SmokeShell
 	class SmokeShellWhiteUW
 	{
 		simulation="particles";
-		type="SmokeShellWhiteUW";
 		position[]={0,0,0};
 		intensity=3;
 		interval=1;
@@ -1590,7 +1500,6 @@ class RHS_SmokeShell
 	class SmokeShellWhite2UW
 	{
 		simulation="particles";
-		type="SmokeShellWhite2UW";
 		position[]={0,0,0};
 		intensity=3;
 		interval=1;
@@ -1601,7 +1510,6 @@ class RHS_SmokeShellLight_yellow
 	class SmokeShellWhite
 	{
 		simulation="particles";
-		type="SmokeShellWhite";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
@@ -1609,7 +1517,6 @@ class RHS_SmokeShellLight_yellow
 	class SmokeShellWhite2
 	{
 		simulation="particles";
-		type="SmokeShellWhite2";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
@@ -1617,7 +1524,6 @@ class RHS_SmokeShellLight_yellow
 	class SmokeShellWhiteUW
 	{
 		simulation="particles";
-		type="SmokeShellWhiteUW";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
@@ -1625,7 +1531,6 @@ class RHS_SmokeShellLight_yellow
 	class SmokeShellWhite2UW
 	{
 		simulation="particles";
-		type="SmokeShellWhite2UW";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
@@ -1633,7 +1538,6 @@ class RHS_SmokeShellLight_yellow
 	class Light1
 	{
 		simulation="light";
-		type="RHS_FlareLight_yellow";
 	};
 };
 class RHS_SmokeShellLight_green
@@ -1641,7 +1545,6 @@ class RHS_SmokeShellLight_green
 	class SmokeShellWhite
 	{
 		simulation="particles";
-		type="SmokeShellWhite";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
@@ -1649,7 +1552,6 @@ class RHS_SmokeShellLight_green
 	class SmokeShellWhite2
 	{
 		simulation="particles";
-		type="SmokeShellWhite2";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
@@ -1657,7 +1559,6 @@ class RHS_SmokeShellLight_green
 	class SmokeShellWhiteUW
 	{
 		simulation="particles";
-		type="SmokeShellWhiteUW";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
@@ -1665,7 +1566,6 @@ class RHS_SmokeShellLight_green
 	class SmokeShellWhite2UW
 	{
 		simulation="particles";
-		type="SmokeShellWhite2UW";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
@@ -1673,7 +1573,6 @@ class RHS_SmokeShellLight_green
 	class Light1
 	{
 		simulation="light";
-		type="RHS_FlareLight_green";
 	};
 };
 class RHS_SmokeShellLight_red
@@ -1681,7 +1580,6 @@ class RHS_SmokeShellLight_red
 	class SmokeShellWhite
 	{
 		simulation="particles";
-		type="SmokeShellWhite";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
@@ -1689,7 +1587,6 @@ class RHS_SmokeShellLight_red
 	class SmokeShellWhite2
 	{
 		simulation="particles";
-		type="SmokeShellWhite2";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
@@ -1697,7 +1594,6 @@ class RHS_SmokeShellLight_red
 	class SmokeShellWhiteUW
 	{
 		simulation="particles";
-		type="SmokeShellWhiteUW";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
@@ -1705,7 +1601,6 @@ class RHS_SmokeShellLight_red
 	class SmokeShellWhite2UW
 	{
 		simulation="particles";
-		type="SmokeShellWhite2UW";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
@@ -1713,7 +1608,6 @@ class RHS_SmokeShellLight_red
 	class Light1
 	{
 		simulation="light";
-		type="RHS_FlareLight_red";
 	};
 };
 class RHS_9k32_Fired
@@ -1721,7 +1615,6 @@ class RHS_9k32_Fired
 	class Light1
 	{
 		simulation="light";
-		type="RocketLight";
 		position[]={0,0,0};
 		intensity=0.0099999998;
 		interval=1;
@@ -1730,7 +1623,6 @@ class RHS_9k32_Fired
 	class Missile
 	{
 		simulation="particles";
-		type="RHS_9k32_Fired";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
@@ -1742,7 +1634,6 @@ class RHS_9k32_Backfire
 	class RocketBackfire1
 	{
 		simulation="particles";
-		type="rhs_9k32_backfire";
 		intensity=1;
 		interval=0.1;
 		lifeTime=0.029999999;
@@ -1750,7 +1641,6 @@ class RHS_9k32_Backfire
 	class RocketBacksmoke2
 	{
 		simulation="particles";
-		type="rhs_9k32_smoke_front";
 		intensity=1;
 		interval=0.1;
 		lifeTime=0.1;
@@ -1758,21 +1648,16 @@ class RHS_9k32_Backfire
 	class RocketFrontsmoke
 	{
 		simulation="particles";
-		type="rhs_9k32_smoke_back";
 		intensity=1;
 		interval=0.1;
 		lifeTime=0.2;
 	};
-};
-class rhs_msk40p_effect
-{
 };
 class rhs_msk40p_flare_effect
 {
 	class Smoke
 	{
 		simulation="particles";
-		type="rhs_msk40p_flare_smoke";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
@@ -1780,7 +1665,6 @@ class rhs_msk40p_flare_effect
 	class Glow
 	{
 		simulation="particles";
-		type="rhs_msk40p_flare_glow";
 		position[]={0,0,0};
 		intensity=1;
 		interval=1;
@@ -1885,9 +1769,6 @@ class CfgFunctions
 			{
 				file="\rhsafrf\addons\rhs_c_weapons\scripts\rhs_fold.sqf";
 				description="Fold/unfold Primary Weapon";
-			};
-			class fold_ak: fold_weapon
-			{
 			};
 			class fold_PP
 			{
@@ -2525,132 +2406,55 @@ class CfgGesturesMale
 class CfgRecoils
 {
 	class recoil_default;
-	class rhs_recoil_ak74m: recoil_default
-	{
-		muzzleOuter[]={0.30000001,1,0.30000001,0.30000001};
 		kickBack[]={0.02,0.039999999};
 		temporary=0.0099999998;
 	};
-	class rhs_recoil_ak74m_folded: recoil_default
-	{
-		muzzleOuter[]={0.60000002,1.5,0.80000001,0.30000001};
 		kickBack[]={0.02,0.079999998};
 		permanent=0.1;
 		temporary=0.050000001;
 	};
-	class rhs_recoil_akm: recoil_default
-	{
-		muzzleOuter[]={0.30000001,1.2,0.30000001,0.30000001};
 		kickBack[]={0.029999999,0.059999999};
 		temporary=0.015;
 	};
-	class rhs_recoil_akms: recoil_default
-	{
-		muzzleOuter[]={0.30000001,1.2,0.40000001,0.30000001};
 		kickBack[]={0.029999999,0.059999999};
 		temporary=0.015;
 	};
-	class rhs_recoil_akms_folded: recoil_default
-	{
-		muzzleOuter[]={0.60000002,1.5,0.80000001,0.30000001};
 		kickBack[]={0.02,0.079999998};
 		permanent=0.1;
 		temporary=0.050000001;
 	};
-	class rhs_recoil_gp25: recoil_default
-	{
-		muzzleOuter[]={0.40000001,1.5,0.60000002,0.40000001};
 		kickBack[]={0.039999999,0.07};
 		temporary=0.0099999998;
 	};
-	class rhs_recoil_asval: recoil_default
-	{
-		muzzleOuter[]={0.1,0.40000001,0.30000001,0.2};
 		kickBack[]={0.0099999998,0.029999999};
 		temporary=0.015;
 	};
-	class rhs_recoil_asval_folded: recoil_default
-	{
-		muzzleOuter[]={0.40000001,0.60000002,0.60000002,0.2};
 		kickBack[]={0.029999999,0.059999999};
 		permanent=0.1;
 		temporary=0.050000001;
 	};
-	class rhs_recoil_svd: recoil_default
-	{
-		muzzleOuter[]={0.5,2,0.5,0.5};
 		kickBack[]={0.029999999,0.079999998};
 		temporary=0.015;
 	};
-	class rhs_recoil_orsis: recoil_default
-	{
-		muzzleOuter[]={1.4,3.5,0.69999999,0.80000001};
 		kickBack[]={0.1,0.12};
 		temporary=0.025;
 	};
-	class rhs_recoil_pp2000: recoil_default
-	{
-		muzzleOuter[]={0.1,0.40000001,0.2,0.2};
 		kickBack[]={0.0099999998,0.02};
 		temporary=0.0099999998;
 	};
-	class rhs_recoil_pp2000_folded: recoil_default
-	{
-		muzzleOuter[]={0.40000001,1.5,0.60000002,0.40000001};
 		kickBack[]={0.039999999,0.07};
 		temporary=0.0099999998;
 	};
 };
 class CfgOpticsEffect
 {
-	class rhs_NSPU_Abera
-	{
-		type="chromaberration";
-		priority=650;
-		params[]={0.039999999,0.039999999,1};
 	};
-	class rhs_NSPU_Blur
-	{
-		type="dynamicblur";
-		priority=450;
-		params[]={1.2};
 	};
-	class rhs_NSPU_RadialBlur
-	{
-		type="radialblur";
-		priority=700;
-		params[]={0.001,0,0,0};
 	};
-	class rhs_NSPU_FilmGrain
-	{
-		type="FilmGrain";
-		priority=2050;
-		params[]={0.15000001,0.40000001,1.5700001,0.5,0.5,1};
 	};
-	class rhs_1P78_Blur
-	{
-		type="radialblur";
-		priority=100;
-		params[]={0.0024999999,0,0,0};
 	};
-	class rhs_1P29_Blur
-	{
-		type="radialblur";
-		priority=100;
-		params[]={0.001,0,0,0};
 	};
-	class rhs_pso1_Blur
-	{
-		type="radialblur";
-		priority=100;
-		params[]={0.0015,0,0,0};
 	};
-};
-class asdg_SlotInfo
-{
-};
-class asdg_OpticRail: asdg_SlotInfo
-{
 };
 class asdg_OpticSideMount: asdg_OpticRail
 {
@@ -2802,47 +2606,25 @@ class asdg_UnderSlot: asdg_SlotInfo
 		rhs_acc_harris_swivel=1;
 	};
 };
-class asdg_OpticRail1913_long: asdg_OpticRail1913
-{
-};
-class rhs_western_rifle_scopes_slot_long: asdg_OpticRail1913_long
-{
-};
-class rhs_picattinny_russian_rifle_scopes_slot: asdg_OpticRail1913
-{
-	iconPosition[]={0,0};
 	iconScale=1;
 	iconPicture="\A3\Weapons_F\Data\clear_empty.paa";
 	iconPinPoint="Left";
 	linkProxy="\A3\data_f\proxies\weapon_slots\TOP";
-	displayName="$STR_A3_CowsSlot0";
 };
-class rhs_picattinny_russian_rifle_scopes_slot_short: asdg_OpticRail1913_short
-{
-	iconPosition[]={0,0};
 	iconScale=1;
 	iconPicture="\A3\Weapons_F\Data\clear_empty.paa";
 	iconPinPoint="Left";
 	linkProxy="\A3\data_f\proxies\weapon_slots\TOP";
-	displayName="$STR_A3_CowsSlot0";
 };
-class rhs_picattinny_russian_rifle_scopes_slot_long: rhs_western_rifle_scopes_slot_long
-{
-	iconPosition[]={0,0};
 	iconScale=1;
 	iconPicture="\A3\Weapons_F\Data\clear_empty.paa";
 	iconPinPoint="Left";
 	linkProxy="\A3\data_f\proxies\weapon_slots\TOP";
-	displayName="$STR_A3_CowsSlot0";
 };
-class rhs_russian_rifle_scopes_slot: asdg_OpticSideMount
-{
-	iconPosition[]={0,0};
 	iconScale=1;
 	iconPicture="\A3\Weapons_F\Data\clear_empty.paa";
 	iconPinPoint="Left";
 	linkProxy="\A3\data_f\proxies\weapon_slots\TOP";
-	displayName="$STR_A3_CowsSlot0";
 };
 class rhs_russian_rifle_scopes_slot_npz: rhs_russian_rifle_scopes_slot
 {
@@ -2851,14 +2633,10 @@ class rhs_russian_rifle_scopes_slot_npz: rhs_russian_rifle_scopes_slot
 		rhs_acc_npz=1;
 	};
 };
-class rhs_russian_svd_scopes_slot: SlotInfo
-{
-	iconPosition[]={0,0};
 	iconScale=1;
 	iconPicture="\A3\Weapons_F\Data\clear_empty.paa";
 	iconPinPoint="Left";
 	linkProxy="\A3\data_f\proxies\weapon_slots\TOP";
-	displayName="$STR_A3_CowsSlot0";
 	class compatibleItems
 	{
 		rhs_acc_pso1m2=1;
@@ -2885,14 +2663,10 @@ class rhs_russian_svd_scopes_slot: SlotInfo
 		rhs_acc_1pn34=1;
 	};
 };
-class rhs_russian_ak_barrel_slot: SlotInfo
-{
-	iconPosition[]={0,0};
 	iconScale=1;
 	iconPicture="\A3\Weapons_F\Data\clear_empty.paa";
 	iconPinPoint="Left";
 	linkProxy="\A3\data_f\proxies\weapon_slots\SIDE";
-	displayName="$STR_A3_PointerSlot0";
 	class compatibleItems
 	{
 		rhs_acc_2dpZenit=1;
@@ -2903,13 +2677,9 @@ class rhs_russian_aux_barrel_slot: rhs_russian_ak_barrel_slot
 {
 	linkProxy="rhsafrf\addons\rhs_weapons\rhs_barrel_proxy";
 };
-class rhs_rifle_gripod_slot: UnderBarrelSlot
-{
-	iconPosition[]={0,0};
 	iconScale=1;
 	iconPicture="\A3\Weapons_F\Data\clear_empty.paa";
 	iconPinPoint="Left";
-	displayName="Gripod slot";
 	class compatibleItems
 	{
 		rhs_acc_grip_rk2=1;
@@ -2920,14 +2690,10 @@ class rhs_rifle_gripod_slot: UnderBarrelSlot
 class rhs_russian_rifle_gripod_slot: rhs_rifle_gripod_slot
 {
 	linkProxy="rhsafrf\addons\rhs_weapons\rhs_grip_proxy";
-	class compatibleItems: compatibleItems
-	{
-	};
 };
 class asdg_FrontSideRail: asdg_SlotInfo
 {
 	linkProxy="\a3\data_f\proxies\weapon_slots\side";
-	displayName="$STR_A3_PointerSlot0";
 	class compatibleItems
 	{
 		acc_flashlight=1;
@@ -2937,23 +2703,16 @@ class asdg_FrontSideRail: asdg_SlotInfo
 		rhs_acc_perst3=1;
 	};
 };
-class rhs_russian_ris_side_slot: SlotInfo
-{
-	iconPosition[]={0,0};
 	iconScale=1;
 	iconPicture="\A3\Weapons_F\Data\clear_empty.paa";
 	iconPinPoint="Left";
 	linkProxy="\A3\data_f\proxies\weapon_slots\SIDE";
-	displayName="$STR_A3_PointerSlot0";
 	class compatibleItems
 	{
 		rhs_acc_2dpZenit_ris=1;
 		rhs_acc_perst1ik_ris=1;
 	};
 };
-class rhs_russian_ris_handguard_slot: asdg_FrontSideRail
-{
-	iconPosition[]={0,0};
 	iconScale=1;
 	iconPicture="\A3\Weapons_F\Data\clear_empty.paa";
 	iconPinPoint="Left";
@@ -2967,9 +2726,6 @@ class rhs_russian_ris_handguard_slot: asdg_FrontSideRail
 		rhs_acc_perst3_2dp_light_h=1;
 	};
 };
-class rhs_russian_ris_half_handguard_slot: rhs_russian_ris_handguard_slot
-{
-	iconPosition[]={0,0};
 	iconScale=1;
 	iconPicture="\A3\Weapons_F\Data\clear_empty.paa";
 	iconPinPoint="Left";
@@ -2992,7 +2748,6 @@ class rhs_russian_ris_half_handguard_slot: rhs_russian_ris_handguard_slot
 class rhs_russian_rpg7_scopes_slot: SlotInfo
 {
 	linkProxy="\A3\data_f\proxies\weapon_slots\TOP";
-	displayName="$STR_A3_CowsSlot0";
 	iconPosition[]={0,0};
 	iconScale=1;
 	iconPicture="\A3\Weapons_F\Data\clear_empty.paa";
@@ -3018,7 +2773,6 @@ class rhs_russian_rpg7_scopes_slot: SlotInfo
 class asdg_MuzzleSlot: asdg_SlotInfo
 {
 	linkProxy="\a3\data_f\proxies\weapon_slots\MUZZLE";
-	displayName="$str_a3_cfgweapons_abr_base_f_weaponslotsinfo_muzzleslot0";
 	iconPicture="\a3\weapons_f\Data\ui\attachment_muzzle";
 };
 class asdg_MuzzleSlot_545R: asdg_MuzzleSlot
@@ -3036,19 +2790,10 @@ class asdg_MuzzleSlot_545R: asdg_MuzzleSlot
 		rhs_acc_tgpa=1;
 	};
 };
-class rhs_russian_ak74_muzzle_slot: asdg_MuzzleSlot_545R
-{
-	iconPosition[]={0,0};
 	iconScale=1;
 	iconPicture="\A3\Weapons_F\Data\clear_empty.paa";
 	iconPinPoint="Left";
-	class compatibleItems: compatibleItems
-	{
-	};
 };
-class rhs_russian_aks74u_muzzle_slot: asdg_MuzzleSlot_545R
-{
-	iconPosition[]={0,0};
 	iconScale=1;
 	iconPicture="\A3\Weapons_F\Data\clear_empty.paa";
 	iconPinPoint="Left";
@@ -3059,9 +2804,6 @@ class rhs_russian_aks74u_muzzle_slot: asdg_MuzzleSlot_545R
 		rhs_acc_pbs4=1;
 	};
 };
-class rhs_russian_ak105_muzzle_slot: asdg_MuzzleSlot_545R
-{
-	iconPosition[]={0,0};
 	iconScale=1;
 	iconPicture="\A3\Weapons_F\Data\clear_empty.paa";
 	iconPinPoint="Left";
@@ -3077,9 +2819,6 @@ class asdg_MuzzleSlot_762R: asdg_MuzzleSlot
 		rhs_acc_pbs1=1;
 	};
 };
-class rhs_russian_akm_muzzle_slot: asdg_MuzzleSlot_762R
-{
-	iconPosition[]={0,0};
 	iconScale=1;
 	iconPicture="\A3\Weapons_F\Data\clear_empty.paa";
 	iconPinPoint="Left";
@@ -3089,9 +2828,6 @@ class rhs_russian_akm_muzzle_slot: asdg_MuzzleSlot_762R
 		rhs_acc_dtkakm=1;
 	};
 };
-class rhs_russian_ak103_muzzle_slot: asdg_MuzzleSlot_762R
-{
-	iconPosition[]={0,0};
 	iconScale=1;
 	iconPicture="\A3\Weapons_F\Data\clear_empty.paa";
 	iconPinPoint="Left";
@@ -3106,9 +2842,6 @@ class rhs_russian_ak103_muzzle_slot: asdg_MuzzleSlot_762R
 		rhs_acc_ak5=1;
 	};
 };
-class rhs_russian_ak104_muzzle_slot: rhs_russian_ak103_muzzle_slot
-{
-	iconPosition[]={0,0};
 	iconScale=1;
 	iconPicture="\A3\Weapons_F\Data\clear_empty.paa";
 	iconPinPoint="Left";
@@ -3117,9 +2850,6 @@ class rhs_russian_ak104_muzzle_slot: rhs_russian_ak103_muzzle_slot
 		rhs_acc_pgs64=1;
 	};
 };
-class rhs_russian_svd_muzzle_slot: asdg_MuzzleSlot
-{
-	iconPosition[]={0,0};
 	iconScale=1;
 	iconPicture="\A3\Weapons_F\Data\clear_empty.paa";
 	iconPinPoint="Left";
@@ -3129,15 +2859,9 @@ class rhs_russian_svd_muzzle_slot: asdg_MuzzleSlot
 		rhs_acc_tgpv2=1;
 	};
 };
-class rhs_russian_rifle_underbarrel_slot: asdg_UnderSlot
-{
-	iconPosition[]={0,0};
 	iconScale=1;
 	iconPicture="\A3\Weapons_F\Data\clear_empty.paa";
 	iconPinPoint="Left";
-	class compatibleItems: compatibleItems
-	{
-	};
 };
 class rhs_optics_debug: rhs_rifle_gripod_slot
 {
@@ -3640,14 +3364,8 @@ class CfgAmmo
 		effectsSmoke="SmokeShellWhiteEffect";
 		whistleDist=0;
 	};
-	class rhs_g_vg40md_green: rhs_g_vg40md_white
-	{
-		smokeColor[]={0.21250001,0.62580001,0.48909998,1};
 		effectsSmoke="SmokeShellGreenEffect";
 	};
-	class rhs_g_vg40md_red: rhs_g_vg40md_white
-	{
-		smokeColor[]={0.84380001,0.1383,0.1353,1};
 		effectsSmoke="SmokeShellRedEffect";
 	};
 	class MineCore;
@@ -3657,9 +3375,6 @@ class CfgAmmo
 	};
 	class PipeBombBase;
 	class DirectionalBombBase;
-	class APERSMine_Range_Ammo: MineBase
-	{
-	};
 	class rhs_mine_pmn2_ammo: MineBase
 	{
 		AIAmmoUsageFlags="16";
@@ -3854,30 +3569,15 @@ class CfgAmmo
 		flareAirFriction=-0.050000001;
 		intensity=50000;
 	};
-	class rhs_mine_msk40p_red_flare: rhs_mine_msk40p_white_flare
-	{
-		lightColor[]={0.5,0.25,0.25,0};
 	};
-	class rhs_mine_msk40p_green_flare: rhs_mine_msk40p_white_flare
-	{
-		lightColor[]={0.25,0.5,0.25,0};
 	};
-	class rhs_mine_msk40p_blue_flare: rhs_mine_msk40p_white_flare
-	{
-		lightColor[]={0.1183,0.1867,1,0};
 	};
 	class rhs_mine_sm320_white_flare: rhs_mine_msk40p_white_flare
 	{
 		timeToLive=3;
 		flareAirFriction=-0.25;
 	};
-	class rhs_mine_sm320_red_flare: rhs_mine_sm320_white_flare
-	{
-		lightColor[]={0.5,0.25,0.25,0};
 	};
-	class rhs_mine_sm320_green_flare: rhs_mine_sm320_white_flare
-	{
-		lightColor[]={0.25,0.5,0.25,0};
 	};
 	class rhs_mine_ozm72_a_ammo: APERSMine_Range_Ammo
 	{
@@ -4024,9 +3724,6 @@ class CfgAmmo
 		defaultMagazine="rhs_ec400_sand_mag";
 	};
 	class RocketBase;
-	class R_PG32V_F: RocketBase
-	{
-	};
 	class rhs_rpg26_rocket: R_PG32V_F
 	{
 		AIAmmoUsageFlags="128+256+512";
@@ -4469,19 +4166,14 @@ class CfgAmmo
 					{
 						class AirTarget
 						{
-							minRange=500;
-							maxRange=4000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=1;
 						};
 						class GroundTarget
 						{
-							minRange=500;
-							maxRange=1000;
 							objectDistanceLimitCoef=1;
 							viewDistanceLimitCoef=1;
 						};
-						typeRecognitionDistance=-1;
 						angleRangeHorizontal=35;
 						angleRangeVertical=35;
 						groundNoiseDistanceCoef=0.029999999;
@@ -4522,19 +4214,14 @@ class CfgAmmo
 					{
 						class AirTarget
 						{
-							minRange=500;
-							maxRange=4800;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=1;
 						};
 						class GroundTarget
 						{
-							minRange=500;
-							maxRange=1000;
 							objectDistanceLimitCoef=1;
 							viewDistanceLimitCoef=1;
 						};
-						typeRecognitionDistance=-1;
 						angleRangeHorizontal=35;
 						angleRangeVertical=35;
 						groundNoiseDistanceCoef=0.02;
@@ -4669,9 +4356,6 @@ class CfgAmmo
 	{
 		effectsSmoke="RHS_SmokeShell";
 	};
-	class rhs_ammo_rdg2_black: rhs_ammo_rdg2_white
-	{
-		smokeColor[]={0,0,0,1};
 		effectsSmoke="RHS_SmokeShell";
 	};
 	class rhs_ammo_nspn_yellow: rhs_ammo_rdg2_white
@@ -4692,19 +4376,10 @@ class CfgAmmo
 		triggerSpeedCoef=1;
 		simulation="shotIlluminating";
 	};
-	class rhs_ammo_nspn_red: rhs_ammo_nspn_yellow
-	{
-		smokeColor[]={0.84380001,0.1383,0.1353,1};
 		lightColor[]={0.5,0.25,0.25,0};
 	};
-	class rhs_ammo_nspn_green: rhs_ammo_nspn_yellow
-	{
-		smokeColor[]={0.21250001,0.62580001,0.48910001,1};
 		lightColor[]={0.25,0.5,0.25,0};
 	};
-	class rhs_ammo_nspd: rhs_ammo_rdg2_white
-	{
-		smokeColor[]={0.66970003,0.22750001,0.10053,1};
 		timeToLive=35;
 	};
 	class rhs_ammo_fakel: GrenadeHand
@@ -4746,9 +4421,6 @@ class CfgMagazines
 	};
 	class rhs_30Rnd_545x39_AK: CA_Magazine
 	{
-		displayName="$STR_RHS_CFGMAGAZINES_30RND_545X39_7N6_BAKELITE";
-		descriptionShort="$STR_RHS_CFGMAGAZINES_30RND_545X39_MAG_Desc_0";
-		displayNameShort="7N6";
 		ammo="rhs_B_545x39_Ball";
 		count=30;
 		mass=9.0900002;
@@ -4756,257 +4428,70 @@ class CfgMagazines
 		tracersEvery=0;
 		lastRoundsTracer=0;
 	};
-	class rhs_30Rnd_545x39_7N6_AK: rhs_30Rnd_545x39_AK
-	{
-	};
-	class rhs_30Rnd_545x39_7N6_green_AK: rhs_30Rnd_545x39_7N6_AK
-	{
-		displayName="$STR_RHS_CFGMAGAZINES_30RND_545X39_7N6_GREEN_BAKELITE";
-		hiddenSelections[]=
-		{
-			"camo"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"rhsafrf\addons\rhs_weapons3\aks74\data\rhs_aks74mag3_co.paa"
-		};
-	};
 	class rhs_30Rnd_545x39_AK_no_tracers: rhs_30Rnd_545x39_7N6_AK
 	{
-		descriptionShort="$STR_RHS_CFGMAGAZINES_30RND_545X39_MAG_Desc_0";
-		displayName="$STR_RHS_CFGMAGAZINES_30RND_545X39_MAG_NO_TRACERS";
 		ammo="rhs_B_545x39_Ball_Tracer_Green";
 		initSpeed=883;
 		lastRoundsTracer=0;
 	};
 	class rhs_30Rnd_545x39_AK_green: rhs_30Rnd_545x39_7N6_AK
 	{
-		descriptionShort="$STR_RHS_CFGMAGAZINES_30RND_545X39_MAG_GREEN_Desc_0";
-		displayName="$STR_RHS_CFGMAGAZINES_30RND_545X39_MAG_GREEN0_BAKELITE";
-		displayNameShort="7T3M Tracer";
 		ammo="rhs_B_545x39_Ball_Tracer_Green";
 		initSpeed=883;
 		tracersEvery=1;
 	};
-	class rhs_30Rnd_545x39_AK_plum_green: rhs_30Rnd_545x39_AK_green
-	{
-		displayName="$STR_RHS_CFGMAGAZINES_30RND_545X39_MAG_GREEN0_PLUM";
-		hiddenSelections[]=
-		{
-			"camo"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"rhsafrf\addons\rhs_weapons\texture\rhs_ak74_new_co.paa"
-		};
-	};
 	class rhs_30Rnd_545x39_7N6M_AK: rhs_30Rnd_545x39_7N6_AK
 	{
-		displayName="$STR_RHS_CFGMAGAZINES_30RND_545X39_7N6M_BAKELITE";
-		displayNameShort="7N6M";
 		ammo="rhs_B_545x39_7N6_Ball";
 		initSpeed=880;
 	};
-	class rhs_30Rnd_545x39_7N6M_green_AK: rhs_30Rnd_545x39_7N6M_AK
-	{
-		displayName="$STR_RHS_CFGMAGAZINES_30RND_545X39_7N6M_GREEN_BAKELITE";
-		hiddenSelections[]=
-		{
-			"camo"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"rhsafrf\addons\rhs_weapons3\aks74\data\rhs_aks74mag3_co.paa"
-		};
-	};
-	class rhs_30Rnd_545x39_7N6M_plum_AK: rhs_30Rnd_545x39_7N6M_AK
-	{
-		displayName="$STR_RHS_CFGMAGAZINES_30RND_545X39_7N6M_PLUM";
-		hiddenSelections[]=
-		{
-			"camo"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"rhsafrf\addons\rhs_weapons\texture\rhs_ak74_new_co.paa"
-		};
-	};
 	class rhs_30Rnd_545x39_7N10_AK: rhs_30Rnd_545x39_7N6_AK
 	{
-		displayName="$STR_RHS_CFGMAGAZINES_30RND_545X39_MAG1";
-		displayNameShort="7N10";
 		ammo="rhs_B_545x39_7N10_Ball";
 		initSpeed=880;
 	};
-	class rhs_30Rnd_545x39_7N10_plum_AK: rhs_30Rnd_545x39_7N10_AK
-	{
-		displayName="$STR_RHS_CFGMAGAZINES_30RND_545X39_MAG1_PLUM";
-		hiddenSelections[]=
-		{
-			"camo"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"rhsafrf\addons\rhs_weapons\texture\rhs_ak74_new_co.paa"
-		};
-	};
-	class rhs_30Rnd_545x39_7N10_desert_AK: rhs_30Rnd_545x39_7N10_AK
-	{
-		displayName="$STR_RHS_CFGMAGAZINES_30RND_545X39_MAG1_DESERT";
-		hiddenSelections[]=
-		{
-			"camo"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"rhsafrf\addons\rhs_weapons\texture\AK74MPaint_co.paa"
-		};
-	};
-	class rhs_30Rnd_545x39_7N10_camo_AK: rhs_30Rnd_545x39_7N10_AK
-	{
-		displayName="$STR_RHS_CFGMAGAZINES_30RND_545X39_MAG1_CAMO";
-		hiddenSelections[]=
-		{
-			"camo"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"rhsafrf\addons\rhs_weapons\texture\AK74MCamo_co.paa"
-		};
-	};
 	class rhs_30Rnd_545x39_7N22_AK: rhs_30Rnd_545x39_7N10_AK
 	{
-		displayName="$STR_RHS_CFGMAGAZINES_30RND_545X39_MAG2";
-		descriptionShort="$STR_RHS_CFGMAGAZINES_30RND_545X39_MAG_Desc_1";
-		displayNameShort="7N22 - AP";
 		ammo="rhs_B_545x39_7N22_Ball";
 		initSpeed=890;
 	};
-	class rhs_30Rnd_545x39_7N22_plum_AK: rhs_30Rnd_545x39_7N22_AK
-	{
-		displayName="$STR_RHS_CFGMAGAZINES_30RND_545X39_MAG2_PLUM";
-		hiddenSelections[]=
-		{
-			"camo"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"rhsafrf\addons\rhs_weapons\texture\rhs_ak74_new_co.paa"
-		};
-	};
-	class rhs_30Rnd_545x39_7N22_desert_AK: rhs_30Rnd_545x39_7N22_AK
-	{
-		displayName="$STR_RHS_CFGMAGAZINES_30RND_545X39_MAG2_DESERT";
-		hiddenSelections[]=
-		{
-			"camo"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"rhsafrf\addons\rhs_weapons\texture\AK74MPaint_co.paa"
-		};
-	};
-	class rhs_30Rnd_545x39_7N22_camo_AK: rhs_30Rnd_545x39_7N22_AK
-	{
-		displayName="$STR_RHS_CFGMAGAZINES_30RND_545X39_MAG2_CAMO";
-		hiddenSelections[]=
-		{
-			"camo"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"rhsafrf\addons\rhs_weapons\texture\AK74MCamo_co.paa"
-		};
-	};
 	class rhs_30Rnd_545x39_7U1_AK: rhs_30Rnd_545x39_7N10_AK
 	{
-		displayName="$STR_RHS_CFGMAGAZINES_30RND_545X39_MAG3";
-		displayNameShort="7U1 Subsonic";
-		descriptionShort="$STR_RHS_CFGMAGAZINES_30RND_545X39_MAG_Desc_2";
 		ammo="rhs_B_545x39_7U1_Ball";
 		initSpeed=303;
 		lastRoundsTracer=0;
 	};
 	class rhs_30Rnd_545x39_7N10_2mag_AK: rhs_30Rnd_545x39_7N10_AK
 	{
-		displayName="$STR_RHS_CFGMAGAZINES_30RND_545X39_2MAG";
 		mass=13.09;
-	};
-	class rhs_30Rnd_545x39_7N10_2mag_plum_AK: rhs_30Rnd_545x39_7N10_2mag_AK
-	{
-		displayName="$STR_RHS_CFGMAGAZINES_30RND_545X39_2MAG_PLUM";
-		hiddenSelections[]=
-		{
-			"camo"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"rhsafrf\addons\rhs_weapons\texture\rhs_ak74_new_co.paa"
-		};
-	};
-	class rhs_30Rnd_545x39_7N10_2mag_desert_AK: rhs_30Rnd_545x39_7N10_2mag_AK
-	{
-		displayName="$STR_RHS_CFGMAGAZINES_30RND_545X39_2MAG_DESERT";
-		hiddenSelections[]=
-		{
-			"camo"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"rhsafrf\addons\rhs_weapons\texture\AK74MPaint_co.paa"
-		};
-	};
-	class rhs_30Rnd_545x39_7N10_2mag_camo_AK: rhs_30Rnd_545x39_7N10_2mag_AK
-	{
-		displayName="$STR_RHS_CFGMAGAZINES_30RND_545X39_2MAG_CAMO";
-		hiddenSelections[]=
-		{
-			"camo"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"rhsafrf\addons\rhs_weapons\texture\AK74MCamo_co.paa"
-		};
 	};
 	class rhs_45Rnd_545X39_7N22_AK: rhs_30Rnd_545x39_7N22_AK
 	{
-		displayName="$STR_RHS_CFGMAGAZINES_45RND_545X39_Mag2";
-		descriptionShort="$STR_RHS_CFGMAGAZINES_45RND_545X39_MAG_Desc_1";
 		mass=13.64;
 		count=45;
 	};
 	class rhs_45Rnd_545X39_7N10_AK: rhs_30Rnd_545x39_7N10_AK
 	{
-		displayName="$STR_RHS_CFGMAGAZINES_45RND_545X39_Mag1";
-		descriptionShort="$STR_RHS_CFGMAGAZINES_45RND_545X39_MAG_Desc_1";
 		mass=13.64;
 		count=45;
 	};
 	class rhs_45Rnd_545X39_7N6_AK: rhs_30Rnd_545x39_7N6_AK
 	{
-		displayName="$STR_RHS_CFGMAGAZINES_45RND_545X39_7N6M";
-		descriptionShort="$STR_RHS_CFGMAGAZINES_45RND_545X39_MAG_Desc_0";
 		mass=13.64;
 		count=45;
 	};
 	class rhs_45Rnd_545X39_AK_Green: rhs_30Rnd_545x39_AK_green
 	{
-		displayName="$STR_RHS_CFGMAGAZINES_45RND_545X39_MAG_GREEN0";
-		descriptionShort="$STR_RHS_CFGMAGAZINES_45RND_545X39_MAG_Desc_0";
 		mass=13.64;
 		count=45;
 	};
 	class rhs_45Rnd_545X39_AK: rhs_30Rnd_545x39_AK
 	{
-		displayName="$STR_RHS_CFGMAGAZINES_45RND_545X39_Mag0";
-		descriptionShort="$STR_RHS_CFGMAGAZINES_45RND_545X39_MAG_GREEN_Desc_0";
 		mass=13.64;
 		count=45;
 	};
 	class rhs_45Rnd_545X39_7U1_AK: rhs_30Rnd_545x39_7U1_AK
 	{
-		displayName="$STR_RHS_CFGMAGAZINES_45RND_545X39_Mag3";
-		descriptionShort="$STR_RHS_CFGMAGAZINES_45RND_545X39_MAG_Desc_2";
 		mass=13.64;
 		count=45;
 	};
@@ -5014,7 +4499,6 @@ class CfgMagazines
 	class rhs_VOG25: 1Rnd_HE_Grenade_shell
 	{
 		descriptionshort="$STR_RHS_VOG25_DES";
-		displayName="$STR_RHS_VOG25_NAME";
 		displaynameshort="HE Grenade";
 		ammo="rhs_g_vog25";
 		count=1;
@@ -5023,7 +4507,6 @@ class CfgMagazines
 	};
 	class rhs_VOG25P: rhs_VOG25
 	{
-		displayName="$STR_RHS_VOG25P_NAME";
 		descriptionshort="$STR_RHS_VOG25P_DES";
 		displaynameshort="HE-T Grenade";
 		ammo="rhs_g_vog25p";
@@ -5031,7 +4514,6 @@ class CfgMagazines
 	};
 	class rhs_VG40TB: rhs_VOG25
 	{
-		displayName="$STR_RHS_VG40TB_NAME";
 		displaynameshort="Thermobaric";
 		descriptionshort="$STR_RHS_VG40TB_DES";
 		ammo="rhs_g_vg40tb";
@@ -5039,7 +4521,6 @@ class CfgMagazines
 	};
 	class rhs_VG40SZ: rhs_VOG25
 	{
-		displayName="$STR_RHS_VG40SZ_NAME";
 		displaynameshort="Stun Grenade";
 		descriptionshort="$STR_RHS_VG40SZ_DES";
 		ammo="rhs_g_vg40sz";
@@ -5047,7 +4528,6 @@ class CfgMagazines
 	};
 	class rhs_VG40OP_white: rhs_VOG25
 	{
-		displayName="$STR_RHS_VG40OP_NAME";
 		displaynameshort="White Flare";
 		descriptionshort="$STR_RHS_VG40OP_DES";
 		ammo="rhs_40mm_white";
@@ -5055,14 +4535,12 @@ class CfgMagazines
 	};
 	class rhs_VG40OP_green: rhs_VG40OP_white
 	{
-		displayName="$STR_RHS_VG40OPGREEN_NAME";
 		displaynameshort="Green Flare";
 		ammo="rhs_40mm_green";
 		initspeed=70;
 	};
 	class rhs_VG40OP_red: rhs_VG40OP_white
 	{
-		displayName="$STR_RHS_VG40OPRED_NAME";
 		displaynameshort="Red Flare";
 		ammo="rhs_40mm_red";
 		initspeed=70;
@@ -5070,7 +4548,6 @@ class CfgMagazines
 	class rhs_GRD40_White: rhs_VOG25
 	{
 		displaynameshort="White Smoke";
-		displayName="$STR_RHS_GRD40WHITE_NAME";
 		descriptionshort="$STR_RHS_GRD40_DES";
 		nameSoundWeapon="smokeshell";
 		nameSound="smokeshell";
@@ -5079,50 +4556,28 @@ class CfgMagazines
 	class rhs_GRD40_Green: rhs_GRD40_White
 	{
 		displaynameshort="Green Smoke";
-		displayName="$STR_RHS_GRD40GREEN_NAME";
-		descriptionShort="Type: Smoke Grenade - Green<br />Caliber: 40 mm<br />Rounds: 1<br />Used in: GP-25";
 		ammo="rhs_g_vg40md_green";
 		initspeed=70;
 	};
 	class rhs_GRD40_Red: rhs_GRD40_White
 	{
 		displaynameshort="Red Smoke";
-		displayName="$STR_RHS_GRD40RED_NAME";
-		descriptionShort="Type: Smoke Grenade - Red<br />Caliber: 40 mm<br />Rounds: 1<br />Used in: GP-25";
 		ammo="rhs_g_vg40md_red";
 	};
 	class rhs_VG40MD: rhs_GRD40_White
 	{
 		ammo="rhs_g_vg40md";
-		displayName="VG-40MD";
 		displaynameshort="Impact Smoke";
 		initspeed=76.5;
 	};
-	class rhs_VG40MD_White: rhs_GRD40_White
-	{
-		displayName="$STR_RHS_VG40MDWHITE_NAME";
-	};
-	class rhs_VG40MD_Green: rhs_GRD40_Green
-	{
-		displayName="$STR_RHS_VG40MDGREEN_NAME";
-	};
-	class rhs_VG40MD_Red: rhs_GRD40_Red
-	{
-		displayName="$STR_RHS_VG40MDRED_NAME";
-	};
 	class rhs_GDM40: rhs_GRD40_White
 	{
-		displayName="$STR_RHS_GDM40_NAME";
-		descriptionShort="$STR_RHS_GDM40_DES";
 		displaynameshort="Fast Smoke";
 		ammo="rhs_g_gdm40";
 		initspeed=55;
 	};
 	class rhs_100Rnd_762x54mmR: rhs_30Rnd_545x39_7N6_AK
 	{
-		displayName="$STR_RHS_CFGMAGAZINES_100RND_762X51_MAG0";
-		descriptionShort="$STR_RHS_CFGMAGAZINES_100RND_762X51_MAG_Desc_0";
-		displayNameShort="57-N-323S";
 		ammo="rhs_B_762x54_Ball";
 		count=100;
 		mass=64.349998;
@@ -5131,41 +4586,26 @@ class CfgMagazines
 	};
 	class rhs_100Rnd_762x54mmR_green: rhs_100Rnd_762x54mmR
 	{
-		displayName="$STR_RHS_CFGMAGAZINES_100RND_762X51_MAG0_GREEN";
-		descriptionShort="$STR_RHS_CFGMAGAZINES_100RND_762X51_MAG_Desc_2";
-		displayNameShort="57-N-323S Tracer";
 		ammo="rhs_B_762x54_Ball_Tracer_Green";
 		initSpeed=798;
 		tracersevery=1;
 	};
 	class rhs_100Rnd_762x54mmR_7N13: rhs_100Rnd_762x54mmR
 	{
-		displayName="$STR_RHS_CFGMAGAZINES_100RND_762X51_MAG1";
-		descriptionShort="$STR_RHS_CFGMAGAZINES_100RND_762X51_MAG_Desc_1";
-		displayNameShort="7N13 AP";
 		ammo="rhs_B_762x54_7N13_Ball";
 	};
 	class rhs_100Rnd_762x54mmR_7N26: rhs_100Rnd_762x54mmR
 	{
-		displayName="$STR_RHS_CFGMAGAZINES_100RND_762X51_MAG2";
-		descriptionShort="$STR_RHS_CFGMAGAZINES_100RND_762X51_MAG_Desc_1";
-		displayNameShort="7N26 AP-I";
 		ammo="rhs_B_762x54_7N26_Ball";
 		initSpeed=835;
 	};
 	class rhs_100Rnd_762x54mmR_7BZ3: rhs_100Rnd_762x54mmR_7N13
 	{
-		displayName="$STR_RHS_CFGMAGAZINES_100RND_762X51_MAG3";
-		descriptionShort="$STR_RHS_CFGMAGAZINES_100RND_762X51_MAG_Desc_3";
-		displayNameShort="7BZ3 AP";
 		ammo="rhs_B_762x54_7BZ3_Ball";
 		initSpeed=808;
 	};
 	class rhs_10Rnd_762x54mmR_7N1: rhs_30Rnd_545x39_7N6_AK
 	{
-		displayName="$STR_RHS_CFGMAGAZINES_10RND_762X54R_NAME";
-		descriptionShort="$STR_RHS_CFGMAGAZINES_10RND_762X51R_MAG_Desc_0";
-		displayNameShort="7N1";
 		ammo="rhs_B_762x54_7N1_Ball";
 		initSpeed=823;
 		count=10;
@@ -5174,17 +4614,11 @@ class CfgMagazines
 	};
 	class rhs_10Rnd_762x54mmR_7N14: rhs_10Rnd_762x54mmR_7N1
 	{
-		displayName="$STR_RHS_CFGMAGAZINES_10RND_762X54R_7N14_NAME";
-		descriptionShort="7N14 10rnd SVD Mag";
-		displayNameShort="7N14 AP";
 		ammo="rhs_B_762x54_7N14_Ball";
 		mass=5.9400001;
 	};
 	class rhs_30Rnd_762x39mm: rhs_30Rnd_545x39_7N6_AK
 	{
-		displayName="$STR_RHS_CFGMAGAZINES_30RND_545X39_MAG4";
-		descriptionShort="$STR_RHS_CFGMAGAZINES_30RND_762X39_MAG_Desc_0";
-		displayNameShort="57-N-231";
 		ammo="rhs_B_762x39_Ball";
 		count=30;
 		initSpeed=718;
@@ -5194,103 +4628,49 @@ class CfgMagazines
 	{
 		tracersEvery=1;
 		ammo="rhs_B_762x39_Tracer";
-		displayName="$STR_RHS_CFGMAGAZINES_30RND_545X39_MAG5";
-		displayNameShort="57-N-231P Tracer";
-		descriptionShort="$STR_RHS_CFGMAGAZINES_30RND_762X39_MAG_Desc_2";
 	};
 	class rhs_30Rnd_762x39mm_89: rhs_30Rnd_762x39mm
 	{
-		displayName="$STR_RHS_CFGMAGAZINES_30RND_545X39_MAG6";
-		displayNameShort="57-N-231(89)";
 		ammo="rhs_B_762x39_Ball_89";
 	};
 	class rhs_30Rnd_762x39mm_U: rhs_30Rnd_762x39mm
 	{
-		displayName="$STR_RHS_CFGMAGAZINES_30RND_545X39_MAG7";
-		displayNameShort="57-N-231U Subsonic";
-		descriptionShort="$STR_RHS_CFGMAGAZINES_30RND_762X39_MAG_Desc_3";
 		ammo="rhs_B_762x39_U_Ball";
 		initSpeed=295;
 		lastRoundsTracer=0;
 	};
-	class rhs_30Rnd_762x39mm_bakelite: rhs_30Rnd_762x39mm
-	{
-		displayName="$STR_RHS_CFGMAGAZINES_30RND_545X39_MAG4_BAKELITE";
-	};
-	class rhs_30Rnd_762x39mm_bakelite_tracer: rhs_30Rnd_762x39mm_tracer
-	{
-		displayName="$STR_RHS_CFGMAGAZINES_30RND_545X39_MAG5_BAKELITE";
-	};
-	class rhs_30Rnd_762x39mm_bakelite_89: rhs_30Rnd_762x39mm_89
-	{
-		displayName="$STR_RHS_CFGMAGAZINES_30RND_545X39_MAG6_BAKELITE";
-	};
-	class rhs_30Rnd_762x39mm_bakelite_U: rhs_30Rnd_762x39mm_U
-	{
-		displayName="$STR_RHS_CFGMAGAZINES_30RND_545X39_MAG7_BAKELITE";
-	};
-	class rhs_30Rnd_762x39mm_polymer: rhs_30Rnd_762x39mm
-	{
-		displayName="$STR_RHS_CFGMAGAZINES_30RND_545X39_MAG4_POLYMER";
-	};
-	class rhs_30Rnd_762x39mm_polymer_tracer: rhs_30Rnd_762x39mm_tracer
-	{
-		displayName="$STR_RHS_CFGMAGAZINES_30RND_545X39_MAG5_POLYMER";
-	};
-	class rhs_30Rnd_762x39mm_polymer_89: rhs_30Rnd_762x39mm_89
-	{
-		displayName="$STR_RHS_CFGMAGAZINES_30RND_545X39_MAG6_POLYMER";
-	};
-	class rhs_30Rnd_762x39mm_polymer_U: rhs_30Rnd_762x39mm_U
-	{
-		displayName="$STR_RHS_CFGMAGAZINES_30RND_545X39_MAG7_POLYMER";
-	};
 	class rhs_10Rnd_762x39mm: rhs_30Rnd_762x39mm
 	{
-		displayName="$STR_RHS_CFGMAGAZINES_10RND_545X39_MAG4";
-		descriptionShort="$STR_RHS_CFGMAGAZINES_30RND_762X39_MAG_Desc_0";
 		count=10;
 		mass=5.5300002;
 	};
 	class rhs_10Rnd_762x39mm_tracer: rhs_30Rnd_762x39mm_tracer
 	{
-		displayName="$STR_RHS_CFGMAGAZINES_10RND_545X39_MAG5";
-		descriptionShort="$STR_RHS_CFGMAGAZINES_30RND_762X39_MAG_Desc_0";
 		count=10;
 		mass=5.5300002;
 	};
 	class rhs_10Rnd_762x39mm_89: rhs_30Rnd_762x39mm_89
 	{
-		displayName="$STR_RHS_CFGMAGAZINES_10RND_545X39_MAG6";
-		descriptionShort="$STR_RHS_CFGMAGAZINES_30RND_762X39_MAG_Desc_0";
 		count=10;
 		mass=5.5300002;
 	};
 	class rhs_10Rnd_762x39mm_U: rhs_30Rnd_762x39mm_U
 	{
-		displayName="$STR_RHS_CFGMAGAZINES_10RND_545X39_MAG7";
-		descriptionShort="$STR_RHS_CFGMAGAZINES_30RND_762X39_MAG_Desc_0";
 		count=10;
 		mass=5.5300002;
 	};
 	class rhs_75Rnd_762x39mm: rhs_30Rnd_762x39mm
 	{
-		displayName="$STR_RHS_CFGMAGAZINES_75RND_762X39_MAG4";
-		descriptionShort="$STR_RHS_CFGMAGAZINES_30RND_762X39_MAG_Desc_0";
 		count=75;
 		mass=33.68;
 	};
 	class rhs_75Rnd_762x39mm_tracer: rhs_30Rnd_762x39mm_tracer
 	{
-		displayName="$STR_RHS_CFGMAGAZINES_75RND_762X39_MAG5";
-		descriptionShort="$STR_RHS_CFGMAGAZINES_30RND_762X39_MAG_Desc_0";
 		count=75;
 		mass=33.68;
 	};
 	class rhs_75Rnd_762x39mm_89: rhs_30Rnd_762x39mm_89
 	{
-		displayName="$STR_RHS_CFGMAGAZINES_75RND_762X39_MAG6";
-		descriptionShort="$STR_RHS_CFGMAGAZINES_75RND_762X39_MAG_Desc_0";
 		count=75;
 		mass=33.68;
 	};
@@ -5301,36 +4681,22 @@ class CfgMagazines
 		initSpeed=280;
 		lastRoundsTracer=0;
 		mass=8.0900002;
-		displayName="$STR_RHS_CFGMAGAZINES_20RND_9X39_MAG_SP5";
-		descriptionShort="$STR_RHS_CFGMAGAZINES_20RND_9X39_MAG_Desc_0";
-		displayNameShort="SP-5";
 	};
 	class rhs_20rnd_9x39mm_SP6: rhs_20rnd_9x39mm_SP5
 	{
 		ammo="rhs_B_9x39_SP6";
-		displayName="$STR_RHS_CFGMAGAZINES_20RND_9X39_MAG_SP6";
-		descriptionShort="$STR_RHS_CFGMAGAZINES_20RND_9X39_MAG_Desc_1";
-		displayNameShort="SP-6";
 	};
 	class rhs_10rnd_9x39mm_SP5: rhs_20rnd_9x39mm_SP5
 	{
 		count=10;
 		mass=5.4499998;
-		displayName="$STR_RHS_CFGMAGAZINES_10RND_9X39_MAG_SP5";
-		descriptionShort="$STR_RHS_CFGMAGAZINES_10RND_9X39_MAG_Desc_0";
 	};
 	class rhs_10rnd_9x39mm_SP6: rhs_10rnd_9x39mm_SP5
 	{
 		ammo="rhs_B_9x39_SP6";
-		displayName="$STR_RHS_CFGMAGAZINES_10RND_9X39_MAG_SP6";
-		descriptionShort="$STR_RHS_CFGMAGAZINES_10RND_9X39_MAG_Desc_1";
-		displayNameShort="SP-6";
 	};
 	class rhs_5Rnd_338lapua_t5000: rhs_30Rnd_762x39mm
 	{
-		displayName="$STR_RHS_CFGMAGAZINES_5RND_338LAPUA_T5000";
-		descriptionShort="$STR_RHS_CFGMAGAZINES_5RND_338LAPUA_T5000_Desc_0";
-		displayNameShort=".338 Lapua";
 		ammo="B_338_Ball";
 		count=5;
 		initSpeed=925;
@@ -5342,108 +4708,62 @@ class CfgMagazines
 	{
 		mass=9.2399998;
 		ammo="rhs_mine_pmn2_ammo";
-		displayName="$STR_RHS_CFGMAGAZINES_PMN20";
-		descriptionShort="$STR_RHS_CFGMAGAZINES_PMN21";
-		class Library
-		{
-			libTextDesc="$STR_A3_cfgMagazines_ClassicMineRangeMagazine_Library0";
-		};
 		descriptionUse="$STR_A3_use_mine";
-		allowedSlots[]={901};
 	};
 	class rhs_mine_tm62m_mag: ATMine_Range_Mag
 	{
 		mass=104.5;
 		ammo="rhs_mine_tm62m_ammo";
-		displayName="$STR_RHS_CFGMAGAZINES_TM62M0";
-		descriptionShort="$STR_RHS_CFGMAGAZINES_TM62M1";
-		class Library
-		{
-			libTextDesc="$STR_A3_cfgMagazines_ClassicMineRangeMagazine_Library0";
-		};
 		descriptionUse="$STR_A3_use_mine";
-		allowedSlots[]={901};
 	};
 	class rhs_mine_msk40p_white_mag: ATMine_Range_Mag
 	{
 		mass=20;
 		ammo="rhs_mine_msk40p_white_ammo";
-		displayName="$STR_RHS_MINE_MSK40P_W_MAG_DISPLAYNAME";
-		descriptionShort="$STR_RHS_MINE_MSK40P_MAG_DESCRIPTIONSHORT";
-		class Library
-		{
-			libTextDesc="$STR_A3_cfgMagazines_ClassicMineWireMagazine_Library0";
-		};
 		descriptionUse="$STR_A3_use_mine";
-		allowedSlots[]={901,701};
 	};
 	class rhs_mine_msk40p_red_mag: rhs_mine_msk40p_white_mag
 	{
 		ammo="rhs_mine_msk40p_red_ammo";
-		displayName="$STR_RHS_MINE_MSK40P_R_MAG_DISPLAYNAME";
 	};
 	class rhs_mine_msk40p_green_mag: rhs_mine_msk40p_white_mag
 	{
 		ammo="rhs_mine_msk40p_green_ammo";
-		displayName="$STR_RHS_MINE_MSK40P_G_MAG_DISPLAYNAME";
 	};
 	class rhs_mine_msk40p_blue_mag: rhs_mine_msk40p_white_mag
 	{
 		ammo="rhs_mine_msk40p_blue_ammo";
-		displayName="$STR_RHS_MINE_MSK40P_B_MAG_DISPLAYNAME";
 	};
 	class rhs_mine_sm320_white_mag: rhs_mine_msk40p_white_mag
 	{
 		mass=14;
 		ammo="rhs_mine_sm320_white_ammo";
-		displayName="$STR_RHS_MINE_SM320_W_MAG_DISPLAYNAME";
 	};
 	class rhs_mine_sm320_red_mag: rhs_mine_sm320_white_mag
 	{
 		ammo="rhs_mine_sm320_red_ammo";
-		displayName="$STR_RHS_MINE_SM320_R_MAG_DISPLAYNAME";
 	};
 	class rhs_mine_sm320_green_mag: rhs_mine_sm320_white_mag
 	{
 		ammo="rhs_mine_sm320_green_ammo";
-		displayName="$STR_RHS_MINE_SM320_G_MAG_DISPLAYNAME";
 	};
 	class rhs_mine_ozm72_a_mag: ATMine_Range_Mag
 	{
 		mass=55;
 		ammo="rhs_mine_ozm72_a_ammo";
-		displayName="$STR_RHS_CFGMAGAZINES_OZM72A";
-		descriptionShort="$STR_RHS_CFGMAGAZINES_OZM72_DESCRIPTIONSHORT";
-		class Library
-		{
-			libTextDesc="$STR_A3_cfgMagazines_ClassicMineRangeMagazine_Library0";
-		};
 		descriptionUse="$STR_A3_use_mine";
-		allowedSlots[]={901};
 	};
 	class rhs_mine_ozm72_b_mag: rhs_mine_ozm72_a_mag
 	{
 		ammo="rhs_mine_ozm72_b_ammo";
-		displayName="$STR_RHS_CFGMAGAZINES_OZM72B";
-		descriptionShort="$STR_RHS_CFGMAGAZINES_OZM72_DESCRIPTIONSHORT";
 	};
 	class rhs_mine_ozm72_c_mag: rhs_mine_ozm72_a_mag
 	{
 		ammo="rhs_mine_ozm72_c_ammo";
-		displayName="$STR_RHS_CFGMAGAZINES_OZM72C";
-		descriptionShort="$STR_RHS_CFGMAGAZINES_OZM72_DESCRIPTIONSHORT";
 	};
 	class rhs_ec75_mag: ATMine_Range_Mag
 	{
-		displayName="$STR_RHS_CFGMAGAZINES_EC75";
-		descriptionShort="$STR_A3_cfgMagazines_DemoCharge1";
-		class Library
-		{
-			libTextDesc="$STR_A3_cfgMagazines_DemoCharge_Library0";
-		};
 		descriptionUse="$STR_A3_use_charge";
-		type="2*		256";
-		allowedSlots[]={901,701};
 		value=5;
 		ammo="rhs_ec75_ammo";
 		mass=10.45;
@@ -5465,58 +4785,42 @@ class CfgMagazines
 	};
 	class rhs_ec75_sand_mag: rhs_ec75_mag
 	{
-		displayName="$STR_RHS_CFGMAGAZINES_EC75_SAND";
 		ammo="rhs_ec75_sand_ammo";
 	};
 	class rhs_ec200_mag: rhs_ec75_mag
 	{
 		mass=13.2;
-		displayName="$STR_RHS_CFGMAGAZINES_EC200";
 		ammo="rhs_ec200_ammo";
 	};
 	class rhs_ec200_sand_mag: rhs_ec200_mag
 	{
-		displayName="$STR_RHS_CFGMAGAZINES_EC200_SAND";
 		ammo="rhs_ec200_sand_ammo";
 	};
 	class rhs_ec400_mag: rhs_ec75_mag
 	{
 		mass=17.6;
-		displayName="$STR_RHS_CFGMAGAZINES_EC400";
 		ammo="rhs_ec400_ammo";
-		allowedSlots[]={901};
 	};
 	class rhs_ec400_sand_mag: rhs_ec400_mag
 	{
-		displayName="$STR_RHS_CFGMAGAZINES_EC400_SAND";
 		ammo="rhs_ec400_sand_ammo";
 	};
 	class CA_LauncherMagazine;
 	class FakeMagazine;
 	class rhs_rpg26_mag: FakeMagazine
 	{
-		allowedSlots[]={701,901};
-		displayName="$STR_RHS_RPG26_NAME";
-		displayNameShort="AT";
-		descriptionShort="$STR_RHS_RPG26_DES";
 		ammo="rhs_rpg26_rocket";
-		type="6 * 		256";
 		initSpeed=149;
 		mass=7;
 	};
 	class rhs_rshg2_mag: rhs_rpg26_mag
 	{
-		displayName="$STR_RHS_RSHG2_NAME";
-		displayNameShort="HE";
-		descriptionShort="$STR_RHS_RSHG2_DES";
 		ammo="rhs_rshg2_rocket";
-		type="6 * 		256";
 		initSpeed=149;
 		mass=7;
 	};
 	class rhs_rpg18_mag: rhs_rpg26_mag
 	{
-		displayName="$STR_RHS_RPG18_NAME";
 		ammo="rhs_rpg18_rocket";
 		initSpeed=115;
 		mass=7;
@@ -5527,70 +4831,48 @@ class CfgMagazines
 	};
 	class rhs_rpg7_PG7VL_mag: CA_LauncherMagazine
 	{
-		displayName="$STR_RHS_PG7VL_NAME";
-		displayNameShort="PG-7VL - AT";
-		descriptionShort="$STR_RHS_PG7VL_DES";
 		ammo="rhs_rpg7v2_pg7vl";
-		type="6 * 		256";
 		initSpeed=112;
 		mass=37.18;
 	};
 	class rhs_rpg7_PG7V_mag: rhs_rpg7_PG7VL_mag
 	{
-		displayName="$STR_RHS_PG7V_NAME";
-		displayNameShort="PG-7V - AT";
 		ammo="rhs_rpg7v2_pg7v";
 		initSpeed=114;
 		mass=31.459999;
 	};
 	class rhs_rpg7_PG7VM_mag: rhs_rpg7_PG7V_mag
 	{
-		displayName="$STR_RHS_PG7VM_NAME";
-		displayNameShort="PG-7VM - AT";
 		ammo="rhs_rpg7v2_pg7vm";
 		initSpeed=134;
 		mass=31.459999;
 	};
 	class rhs_rpg7_PG7VS_mag: rhs_rpg7_PG7V_mag
 	{
-		displayName="$STR_RHS_PG7VS_NAME";
-		displayNameShort="PG-7VS - AT";
 		ammo="rhs_rpg7v2_pg7vs";
 		initSpeed=134;
 		mass=28.6;
 	};
 	class rhs_rpg7_PG7VR_mag: rhs_rpg7_PG7VL_mag
 	{
-		displayName="$STR_RHS_PG7VR_NAME";
-		displayNameShort="PG-7VR - AT";
-		descriptionShort="$STR_RHS_PG7VR_DES";
 		ammo="rhs_rpg7v2_pg7vr";
 		initSpeed=66;
 		mass=64.349998;
 	};
 	class rhs_rpg7_TBG7V_mag: rhs_rpg7_PG7VL_mag
 	{
-		displayName="$STR_RHS_TBG7V_NAME";
-		displayNameShort="TBG-7V - HE";
-		descriptionShort="$STR_RHS_TBG7V_DES";
 		ammo="rhs_rpg7v2_tbg7v";
 		initSpeed=66;
 		mass=64.349998;
 	};
 	class rhs_rpg7_OG7V_mag: rhs_rpg7_PG7VL_mag
 	{
-		displayName="$STR_RHS_OG7V_NAME";
-		displayNameShort="OG-7V - HE";
-		descriptionShort="$STR_RHS_OG7V_DES";
 		ammo="rhs_rpg7v2_og7v";
 		initSpeed=152;
 		mass=28.6;
 	};
 	class rhs_rpg7_type69_airburst_mag: rhs_rpg7_PG7VL_mag
 	{
-		displayName="$STR_RHS_TYPE69_AIRBURST_NAME";
-		displayNameShort="AIRBURST";
-		descriptionShort="$STR_RHS_TYPE69_DES";
 		ammo="rhs_rpg7v2_type63_airburst";
 		initSpeed=134;
 		mass=28.6;
@@ -5604,7 +4886,6 @@ class CfgMagazines
 		initspeed=17;
 		maxleadspeed=320;
 		nameSound="missiles";
-		type="6 * 		256";
 	};
 	class rhs_mag_9k38_rocket: rhs_mag_9k32_rocket
 	{
@@ -5614,9 +4895,6 @@ class CfgMagazines
 	};
 	class rhs_mag_9x19_17: CA_Magazine
 	{
-		type=16;
-		displayName="$STR_RHS_MAG_9X19_17_PY";
-		descriptionShort="$STR_RHS_MAG_9X19_17_PY_DESC";
 		ammo="rhs_B_9x19_7N21";
 		count=17;
 		initSpeed=460;
@@ -5624,35 +4902,27 @@ class CfgMagazines
 	};
 	class rhs_mag_9x19mm_7n21_20: rhs_mag_9x19_17
 	{
-		displayName="$STR_RHS_CFGMAGAZINES_20RND_9X19_MAG_7N21";
-		descriptionShort="$STR_RHS_CFGMAGAZINES_20RND_9X19_MAG_Desc_1";
 		mass=8.4899998;
 		count=20;
 		lastRoundsTracer=0;
 	};
 	class rhs_mag_9x19mm_7n31_20: rhs_mag_9x19mm_7n21_20
 	{
-		displayName="$STR_RHS_CFGMAGAZINES_20RND_9X19_MAG_7N31";
 		ammo="rhs_B_9x19_7N31";
 		initSpeed=600;
 	};
 	class rhs_mag_9x19mm_7n21_44: rhs_mag_9x19mm_7n21_20
 	{
-		displayName="$STR_RHS_CFGMAGAZINES_44RND_9X19_MAG_7N21";
-		descriptionShort="$STR_RHS_CFGMAGAZINES_44RND_9X19_MAG_Desc_0";
 		count=44;
 		mass=10.49;
 	};
 	class rhs_mag_9x19mm_7n31_44: rhs_mag_9x19mm_7n21_44
 	{
-		displayName="$STR_RHS_CFGMAGAZINES_44RND_9X19_MAG_7N31";
 		ammo="rhs_B_9x19_7N31";
 		initSpeed=600;
 	};
 	class rhs_mag_9x18_12_57N181S: rhs_mag_9x19_17
 	{
-		displayName="$STR_RHS_CFGMAGAZINES_12RND_9X18_MAG0";
-		descriptionShort="$STR_RHS_MAG_9X18_12_PMM_DESC";
 		ammo="rhs_B_9x18_57N181S";
 		count=12;
 		initSpeed=420;
@@ -5660,17 +4930,12 @@ class CfgMagazines
 	};
 	class rhs_mag_9x18_8_57N181S: rhs_mag_9x18_12_57N181S
 	{
-		displayName="$STR_RHS_CFGMAGAZINES_8RND_9X18_MAG0";
-		descriptionShort="$STR_RHS_MAG_9X18_8_PM_DESC";
 		count=8;
 		initSpeed=319;
 	};
 	class rhs_18rnd_9x21mm_7N28: rhs_mag_9x19_17
 	{
 		ammo="rhs_B_9x21_7N28";
-		displayName="$STR_RHS_CFGMAGAZINES_18RND_9X21_MAG0";
-		descriptionShort="$STR_RHS_CFGMAGAZINES_30RND_545X39_MAG1";
-		displayNameShort="7N28";
 		initSpeed=460;
 		count=18;
 		mass=7.4899998;
@@ -5678,9 +4943,6 @@ class CfgMagazines
 	class rhs_18rnd_9x21mm_7N29: rhs_18rnd_9x21mm_7N28
 	{
 		ammo="rhs_B_9x21_7N29";
-		displayName="$STR_RHS_CFGMAGAZINES_18RND_9X21_MAG1";
-		descriptionShort="$STR_RHS_CFGMAGAZINES_30RND_545X39_MAG1";
-		displayNameShort="7N29";
 		initSpeed=460;
 		count=18;
 		mass=7.4899998;
@@ -5688,9 +4950,6 @@ class CfgMagazines
 	class rhs_18rnd_9x21mm_7BT3: rhs_18rnd_9x21mm_7N28
 	{
 		ammo="rhs_B_9x21_7BT3";
-		displayName="$STR_RHS_CFGMAGAZINES_18RND_9X21_MAG2";
-		descriptionShort="$STR_RHS_CFGMAGAZINES_30RND_545X39_MAG1";
-		displayNameShort="7BT3 Tracer";
 		initSpeed=460;
 		count=18;
 		mass=7.4899998;
@@ -5702,46 +4961,35 @@ class CfgMagazines
 	class UGL_FlareGreen_F;
 	class rhs_mag_rsp30_red: UGL_FlareRed_F
 	{
-		allowedSlots[]={};
 		ammo="rhs_40mm_red";
 	};
 	class rhs_mag_rsp30_green: UGL_FlareGreen_F
 	{
-		allowedSlots[]={};
 		ammo="rhs_40mm_green";
 	};
 	class rhs_mag_rsp30_white: UGL_FlareWhite_F
 	{
-		allowedSlots[]={};
 		ammo="rhs_40mm_white";
 	};
 	class rhs_mag_rgd5: HandGrenade
 	{
 		ammo="rhs_ammo_rgd5";
-		displayName="$STR_RHS_RGD5_NAME";
-		displayNameShort="HE Grenade";
 		descriptionshort="$STR_RHS_RGD5_DES";
 		mass=6.8200002;
 	};
 	class rhs_mag_rgn: rhs_mag_rgd5
 	{
 		ammo="rhs_ammo_rgn";
-		displayName="$STR_RHS_RGN_NAME";
-		displayNameShort="RGN Impact";
 		descriptionshort="Type: Offensive Fragmentation Impact Grenade<br />Rounds: 1<br />Used in: Hand";
 	};
 	class rhs_mag_rgo: rhs_mag_rgd5
 	{
 		ammo="rhs_ammo_rgo";
-		displayName="$STR_RHS_RGO_NAME";
-		displayNameShort="RGO Impact";
 		descriptionshort="Type: Defensive Fragmentation Impact Grenade<br />Rounds: 1<br />Used in: Hand";
 	};
 	class rhs_mag_rdg2_white: HandGrenade
 	{
 		ammo="rhs_ammo_rdg2_white";
-		displayName="$STR_RHS_RDG2WHITE_NAME";
-		displayNameShort="White Smoke";
 		descriptionshort="$STR_RHS_RDG2_DES";
 		nameSoundWeapon="smokeshell";
 		nameSound="smokeshell";
@@ -5749,14 +4997,10 @@ class CfgMagazines
 	class rhs_mag_rdg2_black: rhs_mag_rdg2_white
 	{
 		ammo="rhs_ammo_rdg2_black";
-		displayName="$STR_RHS_RDG2BLACK_NAME";
-		displayNameShort="Black Smoke";
 	};
 	class rhs_mag_nspn_yellow: HandGrenade
 	{
 		ammo="rhs_ammo_nspn_yellow";
-		displayName="$STR_RHS_NSPNYELLOW_NAME";
-		displayNameShort="Yellow Flare";
 		descriptionshort="$STR_RHS_NSPN_DES";
 		nameSoundWeapon="smokeshell";
 		nameSound="smokeshell";
@@ -5764,20 +5008,14 @@ class CfgMagazines
 	class rhs_mag_nspn_red: rhs_mag_nspn_yellow
 	{
 		ammo="rhs_ammo_nspn_red";
-		displayName="$STR_RHS_NSPNRED_NAME";
-		displayNameShort="Red Flare";
 	};
 	class rhs_mag_nspn_green: rhs_mag_nspn_yellow
 	{
 		ammo="rhs_ammo_nspn_green";
-		displayName="$STR_RHS_NSPNGREEN_NAME";
-		displayNameShort="Green Flare";
 	};
 	class rhs_mag_nspd: HandGrenade
 	{
 		ammo="rhs_ammo_nspd";
-		displayName="$STR_RHS_NSPD_NAME";
-		displayNameShort="Orange Smoke";
 		descriptionshort="$STR_RHS_NSPD_DES";
 		nameSoundWeapon="smokeshell";
 		nameSound="smokeshell";
@@ -5785,29 +5023,23 @@ class CfgMagazines
 	class rhs_mag_fakel: HandGrenade
 	{
 		ammo="rhs_ammo_fakel";
-		displayName="$STR_RHS_FAKEL_NAME";
-		displayNameShort="Flashbang";
 		descriptionshort="$STR_RHS_FAKEL_DES";
 		mass=4.1999998;
 	};
 	class rhs_mag_fakels: HandGrenade
 	{
 		ammo="rhs_ammo_fakels";
-		displayName="$STR_RHS_FAKELS_NAME";
-		displayNameShort="Flashbang";
 		descriptionshort="$STR_RHS_FAKEL_DES";
 		mass=2.2;
 	};
 	class rhs_mag_zarya2: rhs_mag_fakels
 	{
 		ammo="rhs_ammo_zarya2";
-		displayName="$STR_RHS_ZARYA2_NAME";
 		mass=3.8499999;
 	};
 	class rhs_mag_plamyam: rhs_mag_fakels
 	{
 		ammo="rhs_ammo_plamyam";
-		displayName="$STR_RHS_PLAMYAM_NAME";
 		mass=4.1999998;
 	};
 };
@@ -5818,138 +5050,30 @@ class CfgWeapons
 	class Rifle_Base_F: Rifle
 	{
 		class WeaponSlotsInfo;
-		class GunParticles;
-		class Eventhandlers;
-	};
 	class UGL_F;
-	class RHS_SAFE_BASE: Rifle_Base_F
-	{
-		showToPlayer=0;
-		magazines[]={};
-		displayName="SAFE";
-		descriptionShort="SAFE";
-		modes[]=
-		{
-			"Safe"
-		};
-		drySound[]=
-		{
-			"A3\Sounds_F\arsenal\weapons\Rifles\MX\dry_Mx",
-			0.56234097,
-			1,
-			10
-		};
-		changeFiremodeSound[]=
-		{
-			"A3\sounds_f\weapons\closure\firemode_changer_2",
-			0.55118901,
-			1,
-			5
-		};
-		class Safe: Mode_SemiAuto
-		{
-			sounds[]={};
-			displayName="SAFE";
-			descriptionShort="SAFE";
-			showToPlayer=0;
-			minRange=0;
-			minRangeProbab=0.001;
-			midRange=0.001;
-			midRangeProbab=0.001;
-			maxRange=0.001;
-			maxRangeProbab=0.001;
 		};
 	};
 	class RHS_FOLD_BASE: Rifle_Base_F
 	{
-		showToPlayer=0;
-		displayName="Action in progress...";
-		descriptionShort="Action in progress...";
-		modes[]=
-		{
-			"Safe"
-		};
-		drySound[]=
-		{
-			"A3\Sounds_F\arsenal\weapons\Rifles\MX\dry_Mx",
-			0.56234097,
-			1,
-			10
-		};
-		changeFiremodeSound[]=
-		{
-			"A3\sounds_f\weapons\closure\firemode_changer_2",
-			0.55118901,
-			1,
-			5
-		};
 		reloadTime=2.5;
 		magazineReloadTime=2.5;
 		class Safe: Mode_SemiAuto
 		{
 			reloadTime=2.5;
 			sounds[]={};
-			displayName="FOLDING STOCK";
-			descriptionShort="FOLDING STOCK";
-			showToPlayer=0;
-			minRange=0;
-			minRangeProbab=0.001;
-			midRange=0.001;
-			midRangeProbab=0.001;
-			maxRange=0.001;
-			maxRangeProbab=0.001;
 		};
 	};
 	class GP25_Base: UGL_F
 	{
-		displayName="$STR_RHS_GP25_NAME";
-		descriptionShort="Grenade launcher<br/>Caliber: 40mm";
 		useModelOptics=0;
 		useExternalOptic=0;
 		reloadaction="RHS_GestureReloadGP30";
-		reloadMagazineSound[]=
-		{
-			"A3\Sounds_F\arsenal\weapons\Rifles\MX\Mx_UGL_reload",
-			1,
-			1,
-			10
-		};
 		magazineWell[]=
 		{
 			"VOG_40mm",
 			"CBA_40mm_GP"
 		};
-		modes[]=
-		{
-			"Single"
-		};
 		recoil="rhs_recoil_gp25";
-		class Single: Mode_SemiAuto
-		{
-			sounds[]=
-			{
-				"StandardSound"
-			};
-			minRange=30;
-			minRangeProbab=0.1;
-			midRange=200;
-			midRangeProbab=0.69999999;
-			maxRange=400;
-			maxRangeProbab=0.050000001;
-		};
-		cameraDir="OP_look";
-		discreteDistanceCameraPoint[]=
-		{
-			"OP_eye",
-			"OP_eye1",
-			"OP_eye2",
-			"OP_eye3",
-			"OP_eye4",
-			"OP_eye5",
-			"OP_eye6",
-			"OP_eye7"
-		};
-		magazineReloadSwitchPhase=0.36000001;
 	};
 	class rhs_weap_ak74m_Base_F: Rifle_Base_F
 	{
@@ -5959,39 +5083,9 @@ class CfgWeapons
 			"CBA_545x39_AK",
 			"CBA_545x39_RPK"
 		};
-		class Library
-		{
-			libTextDesc="";
-		};
-		reloadAction="RHS_GestureReloadAK_1hand";
-		magazineReloadSwitchPhase=0.30000001;
-		maxRecoilSway=0.0125;
-		swayDecaySpeed=1.25;
 		recoil="rhs_recoil_ak74m";
-		class GunParticles: GunParticles
-		{
-			class SecondEffect
-			{
-				positionName="Nabojnicestart";
-				directionName="Nabojniceend";
-				effectName="CaselessAmmoCloud";
-			};
-			class RHS_BarrelRefract
-			{
-				positionName="usti hlavne";
-				directionName="usti hlavne up";
-				effectName="RHS_BarrelRefract";
-			};
-		};
-		weaponInfoType="RscWeaponZeroing";
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
-			class MuzzleSlot: rhs_russian_ak74_muzzle_slot
-			{
-			};
-			class CowsSlot: rhs_russian_rifle_scopes_slot
-			{
-			};
 			class rhs_npz_slot: SlotInfo
 			{
 				compatibleItems[]=
@@ -5999,292 +5093,31 @@ class CfgWeapons
 					"rhs_acc_npz"
 				};
 			};
-			class PointerSlot: rhs_russian_ak_barrel_slot
-			{
-			};
-		};
-		distanceZoomMin=300;
-		distanceZoomMax=300;
-		descriptionShort="$STR_A3_CfgWeapons_XM_base_F0";
-		handAnim[]=
-		{
-			"OFP2_ManSkeleton",
-			"\A3\Weapons_F\Rifles\MX\data\Anim\mx.rtm"
-		};
-		dexterity=1.8;
-		class SAFE: RHS_SAFE_BASE
-		{
-		};
-		class FOLD: RHS_FOLD_BASE
-		{
-		};
-		muzzles[]=
-		{
-			"this",
-			"SAFE",
-			"FOLD"
-		};
-		modes[]=
-		{
-			"Single",
-			"Single_AI",
-			"FullAuto",
-			"single_medium_optics1",
-			"single_far_optics2",
-			"fullauto_medium"
-		};
-		bullet1[]=
-		{
-			"A3\sounds_f\weapons\shells\7_62\metal_762_01",
-			0.63095701,
-			1,
-			15
-		};
-		bullet2[]=
-		{
-			"A3\sounds_f\weapons\shells\7_62\metal_762_02",
-			0.63095701,
-			1,
-			15
-		};
-		bullet3[]=
-		{
-			"A3\sounds_f\weapons\shells\7_62\metal_762_03",
-			0.63095701,
-			1,
-			15
-		};
-		bullet4[]=
-		{
-			"A3\sounds_f\weapons\shells\7_62\metal_762_04",
-			0.63095701,
-			1,
-			15
-		};
-		bullet5[]=
-		{
-			"A3\sounds_f\weapons\shells\7_62\dirt_762_01",
-			0.63095701,
-			1,
-			15
-		};
-		bullet6[]=
-		{
-			"A3\sounds_f\weapons\shells\7_62\dirt_762_02",
-			0.63095701,
-			1,
-			15
-		};
-		bullet7[]=
-		{
-			"A3\sounds_f\weapons\shells\7_62\dirt_762_03",
-			0.63095701,
-			1,
-			15
-		};
-		bullet8[]=
-		{
-			"A3\sounds_f\weapons\shells\7_62\dirt_762_04",
-			0.63095701,
-			1,
-			15
-		};
-		bullet9[]=
-		{
-			"A3\sounds_f\weapons\shells\7_62\grass_762_01",
-			0.63095701,
-			1,
-			15
-		};
-		bullet10[]=
-		{
-			"A3\sounds_f\weapons\shells\7_62\grass_762_02",
-			0.63095701,
-			1,
-			15
-		};
-		bullet11[]=
-		{
-			"A3\sounds_f\weapons\shells\7_62\grass_762_03",
-			0.63095701,
-			1,
-			15
-		};
-		bullet12[]=
-		{
-			"A3\sounds_f\weapons\shells\7_62\grass_762_04",
-			0.63095701,
-			1,
-			15
-		};
-		soundBullet[]=
-		{
-			"bullet1",
-			0.082999997,
-			"bullet2",
-			0.082999997,
-			"bullet3",
-			0.082999997,
-			"bullet4",
-			0.082999997,
-			"bullet5",
-			0.082999997,
-			"bullet6",
-			0.082999997,
-			"bullet7",
-			0.082999997,
-			"bullet8",
-			0.082999997,
-			"bullet9",
-			0.082999997,
-			"bullet10",
-			0.082999997,
-			"bullet11",
-			0.082999997,
-			"bullet12",
-			0.082999997
-		};
-		changeFiremodeSound[]=
-		{
-			"A3\sounds_f\weapons\closure\firemode_changer_2",
-			0.56234133,
-			1,
-			20
 		};
 		class Single: Mode_SemiAuto
 		{
 			aiBurstTerminable=1;
 			reloadTime=0.092299998;
 			dispersion=0.00092999998;
-			minRange=2;
-			minRangeProbab=0.30000001;
-			midRange=100;
-			midRangeProbab=0.69999999;
-			maxRange=250;
-			maxRangeProbab=0.039999999;
 		};
 		class Single_AI: Single
 		{
-			showToPlayer=0;
 			burstRangeMax=3;
-			minRange=200;
-			minRangeProbab=0.5;
-			midRange=300;
-			midRangeProbab=0.69999999;
-			maxRange=400;
-			maxRangeProbab=0.30000001;
-			aiRateOfFire=1;
-			aiRateOfFireDispersion=2;
 		};
 		class FullAuto: Mode_FullAuto
 		{
 			aiBurstTerminable=1;
 			reloadTime=0.092299998;
 			dispersion=0.00092999998;
-			minRange=0;
-			minRangeProbab=0.89999998;
-			midRange=15;
-			midRangeProbab=0.69999999;
-			maxRange=30;
-			maxRangeProbab=0.1;
-			aiRateOfFire=1e-006;
-		};
-		class single_medium_optics1: Single
-		{
-			requiredOpticType=1;
-			showToPlayer=0;
-			minRange=2;
-			minRangeProbab=0.2;
-			midRange=550;
-			midRangeProbab=0.69999999;
-			maxRange=700;
-			maxRangeProbab=0.1;
-			aiRateOfFire=3;
-			aiRateOfFireDistance=600;
-			aiRateOfFireDispersion=3;
-		};
-		class single_far_optics2: single_medium_optics1
-		{
-			requiredOpticType=2;
 		};
 		class fullauto_medium: FullAuto
 		{
-			showToPlayer=0;
 			burst=2;
 			burstRangeMax=5;
-			minRange=2;
-			minRangeProbab=0.5;
-			midRange=75;
-			midRangeProbab=0.69999999;
-			maxRange=150;
-			maxRangeProbab=0.050000001;
-			aiRateOfFire=1;
-			aiRateOfFireDispersion=2;
-		};
-		class GP25Muzzle: GP25_Base
-		{
-		};
-		aiDispersionCoefY=10;
-		aiDispersionCoefX=8;
-		drySound[]=
-		{
-			"A3\sounds_f\weapons\Other\dry_1",
-			0.56234097,
-			1,
-			10
-		};
-		reloadMagazineSound[]=
-		{
-			"A3\Sounds_F\weapons\Khaybar\reload_khaibar",
-			1,
-			1,
-			10
-		};
-		hiddenSelections[]=
-		{
-			"body",
-			"newfront",
-			"zenit1",
-			"zenit2",
-			"zenit3"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"rhsafrf\addons\rhs_weapons\texture\ak74m_co.paa",
-			"rhsafrf\addons\rhs_weapons\texture\ak105_barrel_co.paa",
-			"rhsafrf\addons\rhs_weapons3\zenitco\data\rhs_zenitko_01_co.paa",
-			"rhsafrf\addons\rhs_weapons3\zenitco\data\rhs_zenitko_02_co.paa",
-			"rhsafrf\addons\rhs_weapons3\zenitco\data\rhs_b33_co.paa"
 		};
 	};
 	class rhs_weap_ak74m: rhs_weap_ak74m_Base_F
 	{
-		baseWeapon="rhs_weap_ak74m";
-		dexterity=1.6;
-		discreteDistanceCameraPoint[]=
-		{
-			"eye",
-			"eye_100",
-			"eye_200",
-			"eye_300",
-			"eye_400",
-			"eye_500",
-			"eye_600",
-			"eye_700",
-			"eye_800",
-			"eye_900",
-			"eye_1000"
-		};
-		cameraDir="eye_look";
-		weaponInfoType="rhs_rscOptics_ak74m";
-		displayName="$STR_RHS_CFGWEAPONS_RIFLE_AK74M0";
-		descriptionShort="$STR_RHS_CFGWEAPONS_RIFLE_AK74M1";
-		UiPicture="\A3\weapons_f\data\UI\icon_regular_CA.paa";
-		handAnim[]=
-		{
-			"OFP2_ManSkeleton",
-			"\rhsafrf\addons\rhs_c_weapons\anims\rhs_hand_ak_stock.rtm"
-		};
 		rhs_pkas_type="rhs_acc_pkas";
 		rhs_1p29_type="rhs_acc_1p29";
 		rhs_pso1m2_type="rhs_acc_pso1m2_ak";
@@ -6306,663 +5139,192 @@ class CfgWeapons
 		{
 			mass=74.800003;
 		};
-		class ItemInfo
-		{
-			priority=1;
-			RMBhint="AK-74M";
-			onHoverText="AK-74M";
-		};
-		class LinkedItems
-		{
-			class LinkedItemsMuzzle
-			{
-				slot="MuzzleSlot";
-				item="rhs_acc_dtk";
-			};
-		};
 	};
 	class rhs_weap_ak74m_camo: rhs_weap_ak74m
 	{
-		hiddenSelectionsTextures[]=
-		{
-			"rhsafrf\addons\rhs_weapons\texture\AK74MCamo_co.paa"
-		};
-		weaponInfoType="rhs_rscOptics_ak74m_camo";
-		displayName="$STR_RHS_CFGWEAPONS_RIFLE_AK74M_CAMO0";
 		rhs_fold="rhs_weap_ak74m_camo_folded";
 		rhs_npz="rhs_weap_ak74m_camo_npz";
-		baseWeapon="rhs_weap_ak74m_camo";
 	};
 	class rhs_weap_ak74m_npz: rhs_weap_ak74m
 	{
-		displayName="$STR_RHS_CFGWEAPONS_RIFLE_AK74M_NPZ0";
-		descriptionShort="$STR_RHS_CFGWEAPONS_RIFLE_AK74M1";
-		baseWeapon="rhs_weap_ak74m_npz";
-		weaponInfoType="rhs_rscOptics_ak74m_npz";
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
-			class MuzzleSlot: MuzzleSlot
-			{
-			};
-			class CowsSlot: rhs_picattinny_russian_rifle_scopes_slot
-			{
-			};
-			class PointerSlot: rhs_russian_ak_barrel_slot
-			{
-			};
-			class rhs_npz_slot
-			{
-			};
 		};
 		rhs_npz="rhs_weap_ak74m";
 	};
 	class rhs_weap_ak74m_desert_npz: rhs_weap_ak74m_npz
 	{
-		hiddenSelectionsTextures[]=
-		{
-			"rhsafrf\addons\rhs_weapons\texture\AK74MPaint_co.paa"
-		};
-		displayName="$STR_RHS_CFGWEAPONS_RIFLE_AK74M_DESERT0_NPZ0";
 		rhs_npz="rhs_weap_ak74m_desert";
-		weaponInfoType="rhs_rscOptics_ak74m_desert_npz";
-		baseWeapon="rhs_weap_ak74m_desert_npz";
 	};
 	class rhs_weap_ak74m_camo_npz: rhs_weap_ak74m_npz
 	{
-		hiddenSelectionsTextures[]=
-		{
-			"rhsafrf\addons\rhs_weapons\texture\AK74MCamo_co.paa"
-		};
-		displayName="$STR_RHS_CFGWEAPONS_RIFLE_AK74M_CAMO0_NPZ0";
 		rhs_npz="rhs_weap_ak74m_camo";
-		weaponInfoType="rhs_rscOptics_ak74m_camo_npz";
 	};
 	class rhs_weap_ak74m_folded: rhs_weap_ak74m
 	{
-		displayName="$STR_RHS_CFGWEAPONS_RIFLE_AK74M_FOLD0";
-		handAnim[]=
-		{
-			"OFP2_ManSkeleton",
-			"\rhsafrf\addons\rhs_c_weapons\anims\rhs_hand_ak_stock_fold.rtm"
-		};
 		recoil="rhs_recoil_ak74m_folded";
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=56.099998;
-			class MuzzleSlot: MuzzleSlot
-			{
-			};
-			class CowsSlot
-			{
-			};
-			class PointerSlot: rhs_russian_ak_barrel_slot
-			{
-			};
-			class rhs_npz_slot
-			{
-			};
 		};
-		inertia=0.69999999;
 		rhs_fold="rhs_weap_ak74m";
 		rhs_fold_anim="RHS_GestureUnfoldAK74M";
-		baseWeapon="rhs_weap_ak74m_folded";
 	};
 	class rhs_weap_ak74m_camo_folded: rhs_weap_ak74m_folded
 	{
-		hiddenSelectionsTextures[]=
-		{
-			"rhsafrf\addons\rhs_weapons\texture\AK74MCamo_co.paa"
-		};
-		weaponInfoType="rhs_rscOptics_ak74m_camo";
-		displayName="$STR_RHS_CFGWEAPONS_RIFLE_AK74M_FOLD0";
 		rhs_fold="rhs_weap_ak74m_camo";
-		baseWeapon="rhs_weap_ak74m_camo_folded";
 	};
 	class rhs_weap_ak74m_desert_folded: rhs_weap_ak74m_folded
 	{
-		hiddenSelectionsTextures[]=
-		{
-			"rhsafrf\addons\rhs_weapons\texture\AK74MPaint_co.paa"
-		};
-		weaponInfoType="rhs_rscOptics_ak74m_desert";
-		displayName="$STR_RHS_CFGWEAPONS_RIFLE_AK74M_FOLD0";
 		rhs_fold="rhs_weap_ak74m_desert";
-		baseWeapon="rhs_weap_ak74m_desert_folded";
 	};
 	class rhs_weap_ak74m_plummag_folded: rhs_weap_ak74m_folded
 	{
-		weaponInfoType="rhs_rscOptics_ak74m_plummag";
-		displayName="$STR_RHS_CFGWEAPONS_RIFLE_AK74M_FOLD0";
-		hiddenSelectionsTextures[]=
-		{
-			"rhsafrf\addons\rhs_weapons\texture\ak74m_plum_co.paa"
-		};
 		rhs_fold="rhs_weap_ak74m_plummag";
-		baseWeapon="rhs_weap_ak74m_folded";
 	};
 	class rhs_weap_ak74m_gp25_folded: rhs_weap_ak74m_folded
 	{
-		displayName="$STR_RHS_CFGWEAPONS_RIFLE_AK74M_GP250";
-		handAnim[]=
-		{
-			"OFP2_ManSkeleton",
-			"\rhsafrf\addons\rhs_c_weapons\anims\rhs_hand_ak_gp.rtm"
-		};
-		muzzles[]=
-		{
-			"this",
-			"GP25Muzzle",
-			"SAFE"
-		};
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=103;
-			class PointerSlot
-			{
-			};
 		};
 	};
 	class rhs_weap_ak74m_2mag: rhs_weap_ak74m
 	{
-		weaponInfoType="rhs_rscOptics_ak74m_2mag";
-		displayName="$STR_RHS_CFGWEAPONS_RIFLE_AK74M_2MAG0";
-		handAnim[]=
-		{
-			"OFP2_ManSkeleton",
-			"\rhsafrf\addons\rhs_c_weapons\anims\rhs_hand_ak_stock.rtm"
-		};
 		rhs_npz="rhs_weap_ak74m_2mag_npz";
-		baseWeapon="rhs_weap_ak74m_2mag";
 	};
 	class rhs_weap_ak74m_2mag_npz: rhs_weap_ak74m_2mag
 	{
-		displayName="$STR_RHS_CFGWEAPONS_RIFLE_AK74M_2MAG0_NPZ0";
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
-			class MuzzleSlot: MuzzleSlot
-			{
-			};
-			class CowsSlot: rhs_picattinny_russian_rifle_scopes_slot
-			{
-			};
-			class PointerSlot: rhs_russian_ak_barrel_slot
-			{
-			};
-			class rhs_npz_slot
-			{
-			};
 		};
 		rhs_npz="rhs_weap_ak74m_2mag";
-		weaponInfoType="rhs_rscOptics_ak74m_2mag_npz";
-		baseWeapon="rhs_weap_ak74m_2mag_npz";
 	};
 	class rhs_weap_ak74m_2mag_camo_npz: rhs_weap_ak74m_2mag_npz
 	{
-		displayName="$STR_RHS_CFGWEAPONS_RIFLE_AK74M_2MAG0_CAMO0_NPZ0";
 		rhs_npz="rhs_weap_ak74m_2mag_camo";
-		weaponInfoType="rhs_rscOptics_ak74m_2mag_camo_npz";
-		hiddenSelectionsTextures[]=
-		{
-			"rhsafrf\addons\rhs_weapons\texture\AK74MCamo_co.paa"
-		};
 	};
 	class rhs_weap_ak74m_2mag_camo: rhs_weap_ak74m_2mag
 	{
-		displayName="$STR_RHS_WEAP_AK74M_2MAGCAMO";
-		hiddenSelectionsTextures[]=
-		{
-			"rhsafrf\addons\rhs_weapons\texture\AK74MCamo_co.paa"
-		};
 		rhs_npz="rhs_weap_ak74m_2mag_camo_npz";
-		baseWeapon="rhs_weap_ak74m_2mag_camo";
 	};
 	class rhs_weap_ak74m_desert: rhs_weap_ak74m
 	{
-		hiddenSelectionsTextures[]=
-		{
-			"rhsafrf\addons\rhs_weapons\texture\AK74MPaint_co.paa"
-		};
-		weaponInfoType="rhs_rscOptics_ak74m_desert";
-		displayName="$STR_RHS_CFGWEAPONS_RIFLE_AK74M_DESERT0";
 		rhs_fold="rhs_weap_ak74m_desert_folded";
 		rhs_npz="rhs_weap_ak74m_desert_npz";
-		baseWeapon="rhs_weap_ak74m_desert";
 	};
 	class rhs_weap_ak74m_plummag: rhs_weap_ak74m
 	{
-		weaponInfoType="rhs_rscOptics_ak74m_plummag";
-		displayName="$STR_RHS_CFGWEAPONS_RIFLE_AK74M_PMAG0";
-		hiddenSelectionsTextures[]=
-		{
-			"rhsafrf\addons\rhs_weapons\texture\ak74m_plum_co.paa"
-		};
 		rhs_fold="rhs_weap_ak74m_plummag_folded";
 		rhs_npz="rhs_weap_ak74m_plummag_npz";
-		baseWeapon="rhs_weap_ak74m";
 	};
 	class rhs_weap_ak74m_plummag_npz: rhs_weap_ak74m_npz
 	{
-		displayName="$STR_RHS_CFGWEAPONS_RIFLE_AK74M_PMAG0_NPZ0";
-		hiddenSelectionsTextures[]=
-		{
-			"rhsafrf\addons\rhs_weapons\texture\ak74m_plum_co.paa"
-		};
-		weaponInfoType="rhs_rscOptics_ak74m_plummag_npz";
 		rhs_npz="rhs_weap_ak74m_plummag";
-		baseWeapon="rhs_weap_ak74m_npz";
 	};
 	class rhs_weap_ak74m_gp25: rhs_weap_ak74m
 	{
-		weaponInfoType="rhs_rscOptics_ak74m_gp25";
-		displayName="$STR_RHS_CFGWEAPONS_RIFLE_AK74M_GP250";
-		handAnim[]=
-		{
-			"OFP2_ManSkeleton",
-			"\rhsafrf\addons\rhs_c_weapons\anims\rhs_hand_ak_gp.rtm"
-		};
-		muzzles[]=
-		{
-			"this",
-			"GP25Muzzle",
-			"SAFE"
-		};
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=107.8;
-			class PointerSlot
-			{
-			};
 		};
-		inertia=0.60000002;
-		dexterity=1.4;
-		baseWeapon="rhs_weap_ak74m_gp25";
 		rhs_npz="rhs_weap_ak74m_gp25_npz";
 	};
 	class rhs_weap_ak74m_gp25_npz: rhs_weap_ak74m_gp25
 	{
-		displayName="$STR_RHS_CFGWEAPONS_RIFLE_AK74M_GP250_NPZ0";
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=107.8;
-			class MuzzleSlot: MuzzleSlot
-			{
-			};
-			class CowsSlot: rhs_picattinny_russian_rifle_scopes_slot
-			{
-			};
-			class PointerSlot
-			{
-			};
-			class rhs_npz_slot
-			{
-			};
 		};
 		rhs_npz="rhs_weap_ak74m_gp25";
-		weaponInfoType="rhs_rscOptics_ak74m_gp25_npz";
-		baseWeapon="rhs_weap_ak74m_gp25_npz";
 	};
 	class rhs_weap_ak74m_fullplum: rhs_weap_ak74m
 	{
-		hiddenSelectionsTextures[]=
-		{
-			"rhsafrf\addons\rhs_weapons\texture\rhs_ak74_new_co.paa"
-		};
-		displayName="$STR_RHS_CFGWEAPONS_RIFLE_AK74M0_PLUM0";
 		rhs_fold="rhs_weap_ak74m_fullplum_folded";
 		rhs_npz="rhs_weap_ak74m_fullplum_npz";
-		baseWeapon="rhs_weap_ak74m_fullplum";
 	};
 	class rhs_weap_ak74m_fullplum_npz: rhs_weap_ak74m_npz
 	{
-		hiddenSelectionsTextures[]=
-		{
-			"rhsafrf\addons\rhs_weapons\texture\rhs_ak74_new_co.paa"
-		};
-		displayName="$STR_RHS_CFGWEAPONS_RIFLE_AK74M_PLUM_NPZ0";
 		rhs_npz="rhs_weap_ak74m_fullplum";
-		baseWeapon="rhs_weap_ak74m_fullplum_npz";
 	};
 	class rhs_weap_ak74m_fullplum_folded: rhs_weap_ak74m_folded
 	{
-		hiddenSelectionsTextures[]=
-		{
-			"rhsafrf\addons\rhs_weapons\texture\rhs_ak74_new_co.paa"
-		};
-		displayName="$STR_RHS_CFGWEAPONS_RIFLE_AK74M_FOLD0";
 		rhs_fold="rhs_weap_ak74m_fullplum";
 		rhs_fold_anim="RHS_GestureUnfoldAK74M";
-		baseWeapon="rhs_weap_ak74m_fullplums_folded";
 	};
 	class rhs_weap_ak74m_fullplum_gp25: rhs_weap_ak74m_gp25
 	{
-		hiddenSelectionsTextures[]=
-		{
-			"rhsafrf\addons\rhs_weapons\texture\rhs_ak74_new_co.paa"
-		};
-		displayName="$STR_RHS_WEAP_AK74M_PLUM0_GP25";
-		baseWeapon="rhs_weap_ak74m_fullplum_gp25";
 		rhs_npz="rhs_weap_ak74m_fullplum_gp25_npz";
 		rhs_fold="rhs_weap_ak74m_fullplum_gp25_folded";
 	};
 	class rhs_weap_ak74m_fullplum_gp25_npz: rhs_weap_ak74m_gp25_npz
 	{
-		hiddenSelectionsTextures[]=
-		{
-			"rhsafrf\addons\rhs_weapons\texture\rhs_ak74_new_co.paa"
-		};
-		displayName="$STR_RHS_WEAP_AK74M_PLUM0_GP25_NPZ0";
 		rhs_npz="rhs_weap_ak74m_fullplum_gp25";
-		baseWeapon="rhs_weap_ak74m_fullplum_gp25_npz";
 	};
 	class rhs_weap_ak74m_fullplum_gp25_folded: rhs_weap_ak74m_gp25_folded
 	{
-		hiddenSelectionsTextures[]=
-		{
-			"rhsafrf\addons\rhs_weapons\texture\rhs_ak74_new_co.paa"
-		};
-		displayName="$STR_RHS_CFGWEAPONS_RIFLE_AK74M_GP250";
 		rhs_fold="rhs_weap_ak74m_fullplum_gp25";
 	};
 	class rhs_weap_ak74m_zenitco01: rhs_weap_ak74m
 	{
-		displayName="$STR_RHS_WEAP_AK74M_ZENIT";
-		handAnim[]=
-		{
-			"OFP2_ManSkeleton",
-			"\rhsafrf\addons\rhs_c_weapons\anims\rhs_hand_akmr.rtm"
-		};
-		weaponInfoType="rhs_rscOptics_ak74m_zenitco01";
 		class WeaponSlotsInfo
 		{
 			mass=74.800003;
-			allowedSlots[]={901};
-			class MuzzleSlot: rhs_russian_ak74_muzzle_slot
-			{
-			};
-			class CowsSlot: rhs_russian_rifle_scopes_slot_npz
-			{
-			};
-			class GripodSlot: rhs_russian_rifle_gripod_slot
-			{
-			};
-			class PointerSlot: rhs_russian_ris_handguard_slot
-			{
-			};
-			class AuxPointerSlot: rhs_russian_aux_barrel_slot
-			{
-			};
 		};
 		rhs_fold="";
 		rhs_npz="rhs_weap_ak74m_zenitco01_npz";
-		rhs_grip1_change="rhs_weap_ak74m_zenitco01_grip1";
-		rhs_grip2_change="rhs_weap_ak74m_zenitco01_afg";
-		rhs_grip3_change="rhs_weap_ak74m_zenitco01_grip1";
 		rhsusf_acc_anpeq15=1;
 		rhsusf_acc_t1=1;
-		baseWeapon="rhs_weap_ak74m_zenitco01";
-	};
-	class rhs_weap_ak74m_zenitco01_grip1: rhs_weap_ak74m_zenitco01
-	{
-		handAnim[]=
-		{
-			"OFP2_ManSkeleton",
-			"\rhsafrf\addons\rhs_c_weapons\anims\rhs_hand_akmr_grip.rtm"
-		};
-	};
-	class rhs_weap_ak74m_zenitco01_afg: rhs_weap_ak74m_zenitco01
-	{
-		handAnim[]=
-		{
-			"OFP2_ManSkeleton",
-			"\rhsafrf\addons\rhs_c_weapons\anims\rhs_hand_akmr_afg.rtm"
-		};
 	};
 	class rhs_weap_ak74m_zenitco01_npz: rhs_weap_ak74m_zenitco01
 	{
-		displayName="$STR_RHS_WEAP_AK74M_ZENIT_NPZ";
-		class WeaponSlotsInfo: WeaponSlotsInfo
-		{
-			class CowsSlot: rhs_picattinny_russian_rifle_scopes_slot
-			{
-			};
-		};
 		rhs_npz="rhs_weap_ak74m_zenitco01";
-		weaponInfoType="rhs_rscOptics_ak74m_zenitco01_npz";
-		baseWeapon="rhs_weap_ak74m_zenitco01_npz";
-		rhs_grip1_change="rhs_weap_ak74m_zenitco01_npz_grip1";
-		rhs_grip2_change="rhs_weap_ak74m_zenitco01_npz_afg";
-		rhs_grip3_change="rhs_weap_ak74m_zenitco01_npz_grip1";
 		rhsusf_acc_anpeq15=1;
-	};
-	class rhs_weap_ak74m_zenitco01_npz_grip1: rhs_weap_ak74m_zenitco01_npz
-	{
-		handAnim[]=
-		{
-			"OFP2_ManSkeleton",
-			"\rhsafrf\addons\rhs_c_weapons\anims\rhs_hand_akmr_grip.rtm"
-		};
-	};
-	class rhs_weap_ak74m_zenitco01_npz_afg: rhs_weap_ak74m_zenitco01_npz
-	{
-		handAnim[]=
-		{
-			"OFP2_ManSkeleton",
-			"\rhsafrf\addons\rhs_c_weapons\anims\rhs_hand_akmr_afg.rtm"
-		};
 	};
 	class rhs_weap_ak74m_zenitco01_b33: rhs_weap_ak74m_zenitco01
 	{
-		displayName="$STR_RHS_WEAP_AK74M_ZENIT_B33";
 		class WeaponSlotsInfo
 		{
 			mass=74.800003;
-			allowedSlots[]={901};
-			class MuzzleSlot: rhs_russian_ak74_muzzle_slot
-			{
-			};
-			class CowsSlot: rhs_picattinny_russian_rifle_scopes_slot_long
-			{
-			};
-			class GripodSlot: rhs_russian_rifle_gripod_slot
-			{
-			};
-			class PointerSlot: rhs_russian_ris_handguard_slot
-			{
-			};
-			class AuxPointerSlot: rhs_russian_aux_barrel_slot
-			{
-			};
 		};
 		rhs_npz="";
-		weaponInfoType="rhs_rscOptics_ak74m_zenitco01_b33";
-		baseWeapon="rhs_weap_ak74m_zenitco01_b33";
-		rhs_grip1_change="rhs_weap_ak74m_zenitco01_b33_grip1";
-		rhs_grip2_change="rhs_weap_ak74m_zenitco01_b33_afg";
-		rhs_grip3_change="rhs_weap_ak74m_zenitco01_b33_grip1";
 		rhsusf_acc_anpeq15=1;
 		rhsusf_acc_t1=0;
 	};
-	class rhs_weap_ak74m_zenitco01_b33_grip1: rhs_weap_ak74m_zenitco01_b33
-	{
-		handAnim[]=
-		{
-			"OFP2_ManSkeleton",
-			"\rhsafrf\addons\rhs_c_weapons\anims\rhs_hand_akmr_grip.rtm"
-		};
-	};
-	class rhs_weap_ak74m_zenitco01_b33_afg: rhs_weap_ak74m_zenitco01_b33
-	{
-		handAnim[]=
-		{
-			"OFP2_ManSkeleton",
-			"\rhsafrf\addons\rhs_c_weapons\anims\rhs_hand_akmr_afg.rtm"
-		};
-	};
 	class rhs_weap_ak74mr: rhs_weap_ak74m
 	{
-		displayName="$STR_RHS_CFGWEAPONS_RIFLE_AK74MR";
-		handAnim[]=
-		{
-			"OFP2_ManSkeleton",
-			"\rhsafrf\addons\rhs_c_weapons\anims\rhs_hand_akmr.rtm"
-		};
-		weaponInfoType="rhs_rscOptics_ak74mr";
-		discreteDistanceCameraPoint[]=
-		{
-			"eye_100",
-			"eye_500"
-		};
-		cameraDir="eye_look";
 		class WeaponSlotsInfo
 		{
 			mass=74.800003;
-			allowedSlots[]={901};
-			class MuzzleSlot: rhs_russian_ak74_muzzle_slot
-			{
-			};
-			class CowsSlot: rhs_picattinny_russian_rifle_scopes_slot_long
-			{
-			};
-			class GripodSlot: rhs_russian_rifle_gripod_slot
-			{
-			};
-			class PointerSlot: rhs_russian_ris_handguard_slot
-			{
-			};
-			class AuxPointerSlot: rhs_russian_aux_barrel_slot
-			{
-			};
-		};
-		class LinkedItems
-		{
-			class LinkedItemsMuzzle
-			{
-				slot="MuzzleSlot";
-				item="rhs_acc_uuk";
-			};
 		};
 		rhs_fold="rhs_weap_ak74mr_folded";
 		rhs_fold_checkOptic=0;
 		rhs_npz="";
-		rhs_grip1_change="rhs_weap_ak74mr_grip1";
-		rhs_grip2_change="rhs_weap_ak74mr_afg";
-		rhs_grip3_change="rhs_weap_ak74mr_grip1";
 		rhsusf_acc_anpeq15=0;
 		rhsusf_acc_t1=0;
-		baseWeapon="rhs_weap_ak74mr";
-	};
-	class rhs_weap_ak74mr_grip1: rhs_weap_ak74mr
-	{
-		handAnim[]=
-		{
-			"OFP2_ManSkeleton",
-			"\rhsafrf\addons\rhs_c_weapons\anims\rhs_hand_akmr_grip.rtm"
-		};
-	};
-	class rhs_weap_ak74mr_afg: rhs_weap_ak74mr
-	{
-		handAnim[]=
-		{
-			"OFP2_ManSkeleton",
-			"\rhsafrf\addons\rhs_c_weapons\anims\rhs_hand_akmr_afg.rtm"
-		};
 	};
 	class rhs_weap_ak74mr_folded: rhs_weap_ak74mr
 	{
-		displayName="$STR_RHS_CFGWEAPONS_RIFLE_AK74MR_FOLD";
-		handAnim[]=
-		{
-			"OFP2_ManSkeleton",
-			"\rhsafrf\addons\rhs_c_weapons\anims\rhs_hand_akmr_stock.rtm"
-		};
 		recoil="rhs_recoil_ak74m_folded";
-		inertia=0.69999999;
 		rhs_fold="rhs_weap_ak74mr";
-		rhs_grip1_change="rhs_weap_ak74mr_folded_grip1";
-		rhs_grip2_change="rhs_weap_ak74mr_folded_afg";
-		rhs_grip3_change="rhs_weap_ak74mr_folded_grip1";
 		rhsusf_acc_anpeq15=0;
-		baseWeapon="rhs_weap_ak74mr_folded";
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=56.099998;
 		};
 	};
-	class rhs_weap_ak74mr_folded_grip1: rhs_weap_ak74mr_folded
-	{
-		handAnim[]=
-		{
-			"OFP2_ManSkeleton",
-			"\rhsafrf\addons\rhs_c_weapons\anims\rhs_hand_akmr_grip.rtm"
-		};
-	};
-	class rhs_weap_ak74mr_folded_afg: rhs_weap_ak74mr_folded
-	{
-		handAnim[]=
-		{
-			"OFP2_ManSkeleton",
-			"\rhsafrf\addons\rhs_c_weapons\anims\rhs_hand_akmr_afg.rtm"
-		};
-	};
 	class rhs_weap_ak74mr_gp25: rhs_weap_ak74mr
 	{
-		weaponInfoType="rhs_rscOptics_ak74mr_gp25";
-		displayName="$STR_RHS_CFGWEAPONS_RIFLE_AK74MR_GP250";
-		handAnim[]=
-		{
-			"OFP2_ManSkeleton",
-			"\rhsafrf\addons\rhs_c_weapons\anims\rhs_hand_akmr_gp.rtm"
-		};
-		muzzles[]=
-		{
-			"this",
-			"GP25Muzzle",
-			"SAFE"
-		};
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=107.8;
-			class PointerSlot: rhs_russian_ris_handguard_slot
-			{
-				class compatibleItems: compatibleItems
-				{
-					rhs_acc_perst3_2dp=0;
-					rhs_acc_perst3_2dp_h=0;
-					rhs_acc_perst3_2dp_light=0;
-					rhs_acc_perst3_2dp_light_h=0;
-				};
-			};
-			class GripodSlot
-			{
-			};
-			class AuxPointerSlot
-			{
-			};
 		};
-		inertia=0.60000002;
-		dexterity=1.4;
-		baseWeapon="rhs_weap_ak74mr_gp25";
 	};
 	class rhs_weap_ak105: rhs_weap_ak74m
 	{
-		displayName="$STR_RHS_WEAP_AK105";
-		hiddenSelectionsTextures[]=
-		{
-			"rhsafrf\addons\rhs_weapons\texture\AK105_co.paa",
-			"rhsafrf\addons\rhs_weapons\texture\ak105_barrel_co.paa",
-			"rhsafrf\addons\rhs_weapons3\zenitco\data\rhs_zenitko_01_co.paa",
-			"rhsafrf\addons\rhs_weapons3\zenitco\data\rhs_zenitko_02_co.paa",
-			"rhsafrf\addons\rhs_weapons3\zenitco\data\rhs_b33_co.paa"
-		};
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=66;
-			class MuzzleSlot: rhs_russian_ak105_muzzle_slot
-			{
-			};
-			class CowsSlot: rhs_russian_rifle_scopes_slot
-			{
-			};
 			class rhs_npz_slot: SlotInfo
 			{
 				compatibleItems[]=
@@ -6970,275 +5332,64 @@ class CfgWeapons
 					"rhs_acc_npz"
 				};
 			};
-			class PointerSlot: rhs_russian_ak_barrel_slot
-			{
-			};
-		};
-		class LinkedItems
-		{
-			class LinkedItemsMuzzle
-			{
-				slot="MuzzleSlot";
-				item="rhs_acc_pgs64";
-			};
 		};
 		initSpeed=-0.954;
 		rhs_fold="rhs_weap_ak105_folded";
 		rhs_npz="rhs_weap_ak105_npz";
-		baseWeapon="rhs_weap_ak105";
 	};
 	class rhs_weap_ak105_zenitco01: rhs_weap_ak105
 	{
-		displayName="$STR_RHS_WEAP_AK105_ZENIT";
-		handAnim[]=
-		{
-			"OFP2_ManSkeleton",
-			"\rhsafrf\addons\rhs_c_weapons\anims\rhs_hand_ak.rtm"
-		};
-		weaponInfoType="rhs_rscOptics_ak105_zenitco01";
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=66;
-			class MuzzleSlot: MuzzleSlot
-			{
-			};
-			class CowsSlot: rhs_russian_rifle_scopes_slot_npz
-			{
-			};
-			class GripodSlot: rhs_russian_rifle_gripod_slot
-			{
-			};
-			class PointerSlot: rhs_russian_ris_handguard_slot
-			{
-			};
 		};
 		rhs_fold="";
 		rhs_npz="rhs_weap_ak105_zenitco01_npz";
-		rhs_grip1_change="rhs_weap_ak105_zenitco01_grip1";
-		rhs_grip2_change="rhs_weap_ak105_zenitco01_afg";
-		rhs_grip3_change="rhs_weap_ak105_zenitco01_grip1";
 		rhsusf_acc_anpeq15=1;
 		rhsusf_acc_t1=1;
-		baseWeapon="rhs_weap_ak105_zenitco01";
-	};
-	class rhs_weap_ak105_zenitco01_grip1: rhs_weap_ak105_zenitco01
-	{
-		handAnim[]=
-		{
-			"OFP2_ManSkeleton",
-			"\rhsafrf\addons\rhs_c_weapons\anims\rhs_hand_akmr_grip.rtm"
-		};
-	};
-	class rhs_weap_ak105_zenitco01_afg: rhs_weap_ak105_zenitco01
-	{
-		handAnim[]=
-		{
-			"OFP2_ManSkeleton",
-			"\rhsafrf\addons\rhs_c_weapons\anims\rhs_hand_akmr_afg.rtm"
-		};
 	};
 	class rhs_weap_ak105_zenitco01_npz: rhs_weap_ak105_zenitco01
 	{
-		displayName="$STR_RHS_WEAP_AK105_NPZ0_ZENIT";
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=66;
-			class MuzzleSlot: MuzzleSlot
-			{
-			};
-			class CowsSlot: rhs_picattinny_russian_rifle_scopes_slot
-			{
-			};
-			class PointerSlot: rhs_russian_ris_handguard_slot
-			{
-			};
-			class rhs_npz_slot
-			{
-			};
 		};
 		rhs_npz="rhs_weap_ak105_zenitco01";
-		weaponInfoType="rhs_rscOptics_ak105_zenitco01_npz";
-		baseWeapon="rhs_weap_ak105_zenitco01_npz";
-		rhs_grip1_change="rhs_weap_ak105_zenitco01_npz_grip1";
-		rhs_grip2_change="rhs_weap_ak105_zenitco01_npz_afg";
-		rhs_grip3_change="rhs_weap_ak105_zenitco01_npz_grip1";
 		rhsusf_acc_anpeq15=1;
-	};
-	class rhs_weap_ak105_zenitco01_npz_grip1: rhs_weap_ak105_zenitco01_npz
-	{
-		handAnim[]=
-		{
-			"OFP2_ManSkeleton",
-			"\rhsafrf\addons\rhs_c_weapons\anims\rhs_hand_akmr_grip.rtm"
-		};
-	};
-	class rhs_weap_ak105_zenitco01_npz_afg: rhs_weap_ak105_zenitco01_npz
-	{
-		handAnim[]=
-		{
-			"OFP2_ManSkeleton",
-			"\rhsafrf\addons\rhs_c_weapons\anims\rhs_hand_akmr_afg.rtm"
-		};
 	};
 	class rhs_weap_ak105_npz: rhs_weap_ak105
 	{
-		displayName="$STR_RHS_WEAP_AK105_NPZ0";
-		muzzles[]=
-		{
-			"this",
-			"SAFE"
-		};
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=66;
-			class MuzzleSlot: MuzzleSlot
-			{
-			};
-			class CowsSlot: rhs_picattinny_russian_rifle_scopes_slot
-			{
-			};
-			class PointerSlot: rhs_russian_ak_barrel_slot
-			{
-			};
-			class rhs_npz_slot
-			{
-			};
 		};
 		rhs_npz="rhs_weap_ak105";
-		weaponInfoType="rhs_rscOptics_ak105_npz";
-		baseWeapon="rhs_weap_ak105_npz";
 	};
 	class rhs_weap_ak105_folded: rhs_weap_ak105
 	{
-		displayName="$STR_RHS_CFGWEAPONS_RIFLE_AK105_FOLD0";
-		handAnim[]=
-		{
-			"OFP2_ManSkeleton",
-			"\rhsafrf\addons\rhs_c_weapons\anims\rhs_hand_ak_stock_fold.rtm"
-		};
 		recoil="rhs_recoil_ak74m_folded";
-		inertia=0.69999999;
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=49.5;
-			class MuzzleSlot: MuzzleSlot
-			{
-			};
-			class CowsSlot
-			{
-			};
-			class PointerSlot: rhs_russian_ak_barrel_slot
-			{
-			};
-			class rhs_npz_slot
-			{
-			};
 		};
 		rhs_fold="rhs_weap_ak105";
-		baseWeapon="rhs_weap_ak105_folded";
 	};
 	class rhs_weap_ak105_zenitco01_b33: rhs_weap_ak105_zenitco01
 	{
-		displayName="$STR_RHS_WEAP_AK105_ZENIT_B33";
 		class WeaponSlotsInfo
 		{
 			mass=74.800003;
-			allowedSlots[]={901};
-			class MuzzleSlot: rhs_russian_ak105_muzzle_slot
-			{
-			};
-			class CowsSlot: rhs_picattinny_russian_rifle_scopes_slot_long
-			{
-			};
-			class GripodSlot: rhs_russian_rifle_gripod_slot
-			{
-			};
-			class PointerSlot: rhs_russian_ris_handguard_slot
-			{
-			};
 		};
 		rhs_npz="";
-		weaponInfoType="rhs_rscOptics_ak105_zenitco01_b33";
-		baseWeapon="rhs_weap_ak105_zenitco01_b33";
-		rhs_grip1_change="rhs_weap_ak105_zenitco01_b33_grip1";
-		rhs_grip2_change="rhs_weap_ak105_zenitco01_b33_afg";
-		rhs_grip3_change="rhs_weap_ak105_zenitco01_b33_grip1";
 		rhsusf_acc_anpeq15=1;
 		rhsusf_acc_t1=0;
 	};
-	class rhs_weap_ak105_zenitco01_b33_grip1: rhs_weap_ak105_zenitco01_b33
-	{
-		handAnim[]=
-		{
-			"OFP2_ManSkeleton",
-			"\rhsafrf\addons\rhs_c_weapons\anims\rhs_hand_akmr_grip.rtm"
-		};
-	};
-	class rhs_weap_ak105_zenitco01_b33_afg: rhs_weap_ak105_zenitco01_b33
-	{
-		handAnim[]=
-		{
-			"OFP2_ManSkeleton",
-			"\rhsafrf\addons\rhs_c_weapons\anims\rhs_hand_akmr_afg.rtm"
-		};
-	};
 	class rhs_weap_akm: rhs_weap_ak74m
 	{
-		discreteDistanceCameraPoint[]=
-		{
-			"eye",
-			"eye_100",
-			"eye_200",
-			"eye_300",
-			"eye_400",
-			"eye_500",
-			"eye_600",
-			"eye_700",
-			"eye_800",
-			"eye_900",
-			"eye_1000"
-		};
-		cameraDir="eye_look";
-		displayName="$STR_RHS_WEAP_AKM";
-		descriptionShort="$STR_RHS_WEAP_AK_DESC";
-		hiddenSelections[]=
-		{
-			"body",
-			"acc"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"rhsafrf\addons\rhs_weapons\akm\data\rhs_akm_prm_co.paa",
-			"rhsafrf\addons\rhs_weapons\akm\data\rhs_akm_acc_co.paa"
-		};
-		dexterity=1.8099999;
-		maxRecoilSway=0.0125;
-		swayDecaySpeed=1.25;
 		recoil="rhs_recoil_akm";
-		reloadAction="RHS_GestureReloadAK762";
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=69.080002;
-			class CowsSlot
-			{
-			};
-			class MuzzleSlot: rhs_russian_akm_muzzle_slot
-			{
-			};
-			class rhs_npz_slot
-			{
-			};
-			class PointerSlot: rhs_russian_ak_barrel_slot
-			{
-			};
-		};
-		class LinkedItems
-		{
-			class LinkedItemsMuzzle
-			{
-				slot="MuzzleSlot";
-				item="rhs_acc_dtkakm";
-			};
 		};
 		magazineWell[]=
 		{
@@ -7246,155 +5397,45 @@ class CfgWeapons
 			"CBA_762x39_AK",
 			"CBA_762x39_RPK"
 		};
-		muzzles[]=
-		{
-			"this",
-			"SAFE"
-		};
-		modes[]=
-		{
-			"Single",
-			"Single_AI",
-			"FullAuto",
-			"single_medium_optics1",
-			"single_far_optics2",
-			"fullauto_medium"
-		};
 		class Single: Mode_SemiAuto
 		{
 			aiBurstTerminable=0;
 			reloadTime=0.1;
 			dispersion=0.0020999999;
-			minRange=2;
-			minRangeProbab=0.5;
-			midRange=100;
-			midRangeProbab=0.69999999;
-			maxRange=200;
-			maxRangeProbab=0.30000001;
 		};
 		class Single_AI: Single
 		{
 			aiBurstTerminable=1;
-			showToPlayer=0;
 			burstRangeMax=3;
-			minRange=200;
-			minRangeProbab=0.5;
-			midRange=300;
-			midRangeProbab=0.69999999;
-			maxRange=400;
-			maxRangeProbab=0.30000001;
-			aiRateOfFire=1;
-			aiRateOfFireDispersion=2;
 		};
 		class FullAuto: Mode_FullAuto
 		{
 			reloadTime=0.1;
 			dispersion=0.0020999999;
-			minRange=0;
-			minRangeProbab=0.89999998;
-			midRange=15;
-			midRangeProbab=0.69999999;
-			maxRange=30;
-			maxRangeProbab=0.1;
-			aiRateOfFire=1e-006;
 		};
 		class fullauto_medium: FullAuto
 		{
 			aiBurstTerminable=1;
-			showToPlayer=0;
 			burst=2;
 			burstRangeMax=6;
-			minRange=2;
-			minRangeProbab=0.5;
-			midRange=75;
-			midRangeProbab=0.69999999;
-			maxRange=150;
-			maxRangeProbab=0.050000001;
-			aiRateOfFire=1;
-			aiRateOfFireDistance=200;
-			aiRateOfFireDispersion=2;
 		};
 		class single_medium_optics1: Single
 		{
 			burstRangeMax=3;
-			requiredOpticType=1;
-			showToPlayer=0;
-			minRange=2;
-			minRangeProbab=0.2;
-			midRange=450;
-			midRangeProbab=0.69999999;
-			maxRange=600;
-			maxRangeProbab=0.2;
-			aiRateOfFire=4;
-			aiRateOfFireDistance=600;
-			aiRateOfFireDispersion=2;
 		};
-		class single_far_optics2: single_medium_optics1
-		{
-			requiredOpticType=2;
-			minRange=100;
-			minRangeProbab=0.1;
-			midRange=450;
-			midRangeProbab=0.60000002;
-			maxRange=800;
-			maxRangeProbab=0.050000001;
-			aiRateOfFire=5;
-			aiRateOfFireDistance=800;
-			aiRateOfFireDispersion=3;
-		};
-		class GP25Muzzle: GP25_Base
-		{
-		};
-		baseWeapon="rhs_weap_akm";
-		weaponInfoType="rhs_rscOptics_akm";
 	};
 	class rhs_weap_akm_gp25: rhs_weap_akm
 	{
-		displayName="$STR_RHS_WEAP_AKM_GP25";
-		handAnim[]=
-		{
-			"OFP2_ManSkeleton",
-			"\rhsafrf\addons\rhs_c_weapons\anims\rhs_hand_ak_gp.rtm"
-		};
-		muzzles[]=
-		{
-			"this",
-			"GP25Muzzle",
-			"SAFE"
-		};
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=102.08;
-			class CowsSlot
-			{
-				iconPosition[]={0,0};
-				iconScale=0;
-			};
-			class MuzzleSlot: MuzzleSlot
-			{
-			};
-			class rhs_npz_slot
-			{
-			};
-			class PointerSlot
-			{
-			};
 		};
-		weaponInfoType="rhs_rscOptics_akm_gp25";
-		baseWeapon="rhs_weap_akm_gp25";
 	};
 	class rhs_weap_akmn: rhs_weap_akm
 	{
-		displayName="$STR_RHS_WEAP_AKMN";
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=71.080002;
-			class CowsSlot: rhs_russian_rifle_scopes_slot
-			{
-			};
-			class MuzzleSlot: MuzzleSlot
-			{
-			};
 			class rhs_npz_slot: SlotInfo
 			{
 				compatibleItems[]=
@@ -7402,127 +5443,44 @@ class CfgWeapons
 					"rhs_acc_npz"
 				};
 			};
-			class PointerSlot
-			{
-			};
 		};
 		rhs_npz="rhs_weap_akmn_npz";
-		weaponInfoType="rhs_rscOptics_akmn";
-		baseWeapon="rhs_weap_akmn";
 	};
 	class rhs_weap_akmn_gp25: rhs_weap_akmn
 	{
-		displayName="$STR_RHS_WEAP_AKMN_GP25";
-		handAnim[]=
-		{
-			"OFP2_ManSkeleton",
-			"\rhsafrf\addons\rhs_c_weapons\anims\rhs_hand_ak_gp.rtm"
-		};
-		muzzles[]=
-		{
-			"this",
-			"GP25Muzzle",
-			"SAFE"
-		};
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=103.08;
 		};
 		rhs_npz="rhs_weap_akmn_gp25_npz";
-		weaponInfoType="rhs_rscOptics_akmn_gp25";
-		baseWeapon="rhs_weap_akmn_gp25";
 	};
 	class rhs_weap_akmn_npz: rhs_weap_akmn
 	{
-		displayName="$STR_RHS_WEAP_AKMN_NPZ";
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=78.080002;
-			class CowsSlot: rhs_picattinny_russian_rifle_scopes_slot
-			{
-			};
-			class rhs_npz_slot
-			{
-			};
 		};
 		rhs_npz="rhs_weap_akmn";
-		weaponInfoType="rhs_rscOptics_akmn_npz";
-		baseWeapon="rhs_weap_akmn_npz";
 	};
 	class rhs_weap_akmn_gp25_npz: rhs_weap_akmn_gp25
 	{
-		displayName="$STR_RHS_WEAP_AKMN_GP25_NPZ";
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=111.08;
-			class CowsSlot: rhs_picattinny_russian_rifle_scopes_slot
-			{
-			};
-			class rhs_npz_slot
-			{
-			};
 		};
 		rhs_npz="rhs_weap_akmn_gp25";
-		weaponInfoType="rhs_rscOptics_akmn_gp25_npz";
-		baseWeapon="rhs_weap_akmn_gp25_npz";
 	};
 	class rhs_weap_akm_zenitco01_b33: rhs_weap_akmn
 	{
-		displayName="$STR_RHS_WEAP_AKM_ZENIT_B33";
-		handAnim[]=
-		{
-			"OFP2_ManSkeleton",
-			"\rhsafrf\addons\rhs_c_weapons\anims\rhs_hand_ak.rtm"
-		};
 		class WeaponSlotsInfo
 		{
 			mass=74.800003;
-			class MuzzleSlot: rhs_russian_akm_muzzle_slot
-			{
-			};
-			class CowsSlot: rhs_picattinny_russian_rifle_scopes_slot
-			{
-			};
-			class GripodSlot: rhs_russian_rifle_gripod_slot
-			{
-			};
-			class PointerSlot: rhs_russian_ris_half_handguard_slot
-			{
-			};
 		};
-		weaponInfoType="rhs_rscOptics_akm_zenitco01_b33";
-		baseWeapon="rhs_weap_akm_zenitco01_b33";
 		rhs_npz="";
-		rhs_grip1_change="rhs_weap_akm_zenitco01_b33_grip1";
-		rhs_grip2_change="rhs_weap_akm_zenitco01_b33_afg";
-		rhs_grip3_change="rhs_weap_akm_zenitco01_b33_grip1";
 		rhsusf_acc_anpeq15=1;
-	};
-	class rhs_weap_akm_zenitco01_b33_grip1: rhs_weap_akm_zenitco01_b33
-	{
-		handAnim[]=
-		{
-			"OFP2_ManSkeleton",
-			"\rhsafrf\addons\rhs_c_weapons\anims\rhs_hand_akmr_grip.rtm"
-		};
-	};
-	class rhs_weap_akm_zenitco01_b33_afg: rhs_weap_akm_zenitco01_b33
-	{
-		handAnim[]=
-		{
-			"OFP2_ManSkeleton",
-			"\rhsafrf\addons\rhs_c_weapons\anims\rhs_hand_akmr_afg.rtm"
-		};
 	};
 	class rhs_weap_akms: rhs_weap_akm
 	{
-		displayName="$STR_RHS_WEAP_AKMS";
-		muzzles[]=
-		{
-			"this",
-			"SAFE",
-			"FOLD"
-		};
 		recoil="rhs_recoil_akms";
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
@@ -7530,112 +5488,33 @@ class CfgWeapons
 		};
 		rhs_fold="rhs_weap_akms_folded";
 		rhs_fold_anim="RHS_GestureFoldAKMS";
-		weaponInfoType="rhs_rscOptics_akms";
-		baseWeapon="rhs_weap_akms";
 	};
 	class rhs_weap_akms_folded: rhs_weap_akms
 	{
-		displayName="$STR_RHS_WEAP_AKMS_FOLDED";
-		handAnim[]=
-		{
-			"OFP2_ManSkeleton",
-			"\rhsafrf\addons\rhs_c_weapons\anims\rhs_hand_ak_stock_fold.rtm"
-		};
-		reloadAction="RHS_GestureReloadAKSU";
-		class WeaponSlotsInfo: WeaponSlotsInfo
-		{
-			allowedSlots[]={901};
-		};
 		recoil="rhs_recoil_akms_folded";
 		rhs_fold="rhs_weap_akms";
 		rhs_fold_anim="RHS_GestureUnfoldAKMS";
-		baseWeapon="rhs_weap_akms_folded";
 	};
 	class rhs_weap_akms_gp25: rhs_weap_akm
 	{
-		weaponInfoType="rhs_rscOptics_akms_gp25";
-		displayName="$STR_RHS_WEAP_AKMS_GP25";
-		handAnim[]=
-		{
-			"OFP2_ManSkeleton",
-			"\rhsafrf\addons\rhs_c_weapons\anims\rhs_hand_ak_gp.rtm"
-		};
-		muzzles[]=
-		{
-			"this",
-			"GP25Muzzle",
-			"SAFE"
-		};
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=105.6;
-			class CowsSlot
-			{
-			};
-			class MuzzleSlot: MuzzleSlot
-			{
-			};
-			class rhs_npz_slot
-			{
-			};
-			class PointerSlot
-			{
-			};
 		};
-		baseWeapon="rhs_weap_akms_gp25";
 	};
 	class rhs_weap_pm63: rhs_weap_akm
 	{
-		displayName="$STR_RHS_WEAP_PM63";
-		handAnim[]=
-		{
-			"OFP2_ManSkeleton",
-			"\rhsafrf\addons\rhs_c_weapons\anims\rhs_hand_pm63.rtm"
-		};
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=82.080002;
 		};
-		baseWeapon="rhs_weap_pm63";
 	};
 	class rhs_weap_ak103_base: rhs_weap_akm
 	{
 		recoil="recoil_sdar";
-		weaponInfoType="rhs_rscOptics_ak103";
-		hiddenSelections[]=
-		{
-			"body",
-			"newfront",
-			"zenit1",
-			"zenit2",
-			"zenit3"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"rhsafrf\addons\rhs_weapons\texture\AK103_co.paa",
-			"rhsafrf\addons\rhs_weapons\texture\ak105_barrel_co.paa",
-			"rhsafrf\addons\rhs_weapons3\zenitco\data\rhs_zenitko_01_co.paa",
-			"rhsafrf\addons\rhs_weapons3\zenitco\data\rhs_zenitko_02_co.paa",
-			"rhsafrf\addons\rhs_weapons3\zenitco\data\rhs_b33_co.paa"
-		};
-		reloadAction="RHS_GestureReloadAK762_1hand";
-		modes[]=
-		{
-			"Single",
-			"FullAuto",
-			"single_medium_optics1",
-			"single_far_optics2",
-			"fullauto_medium"
-		};
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=74.800003;
-			class CowsSlot: rhs_russian_rifle_scopes_slot
-			{
-			};
-			class MuzzleSlot: rhs_russian_ak103_muzzle_slot
-			{
-			};
 			class rhs_npz_slot: SlotInfo
 			{
 				compatibleItems[]=
@@ -7643,124 +5522,39 @@ class CfgWeapons
 					"rhs_acc_npz"
 				};
 			};
-			class PointerSlot: rhs_russian_ak_barrel_slot
-			{
-			};
 		};
 		class Single: Single
 		{
 			reloadTime=0.1;
 			dispersion=0.0020999999;
-			minRange=2;
-			minRangeProbab=0.5;
-			midRange=200;
-			midRangeProbab=0.69999999;
-			maxRange=400;
-			maxRangeProbab=0.30000001;
 		};
 		class Burst: Mode_Burst
 		{
 			aiBurstTerminable=0;
 			reloadTime=0.1;
 			dispersion=0.0020999999;
-			minRange=2;
-			minRangeProbab=0.5;
-			midRange=200;
-			midRangeProbab=0.69999999;
-			maxRange=400;
-			maxRangeProbab=0.30000001;
 		};
 		class FullAuto: FullAuto
 		{
 			reloadTime=0.1;
 			dispersion=0.0020999999;
-			minRange=0;
-			minRangeProbab=0.89999998;
-			midRange=15;
-			midRangeProbab=0.69999999;
-			maxRange=30;
-			maxRangeProbab=0.1;
-			aiRateOfFire=1e-006;
 		};
 		class fullauto_medium: FullAuto
 		{
-			showToPlayer=0;
 			burst=2;
 			burstRangeMax=5;
-			minRange=2;
-			minRangeProbab=0.5;
-			midRange=75;
-			midRangeProbab=0.69999999;
-			maxRange=150;
-			maxRangeProbab=0.050000001;
-			aiRateOfFire=2;
-			aiRateOfFireDistance=200;
-		};
-		class single_medium_optics1: Single
-		{
-			requiredOpticType=1;
-			showToPlayer=0;
-			minRange=2;
-			minRangeProbab=0.2;
-			midRange=450;
-			midRangeProbab=0.69999999;
-			maxRange=600;
-			maxRangeProbab=0.2;
-			aiRateOfFire=6;
-			aiRateOfFireDistance=600;
-		};
-		class single_far_optics2: single_medium_optics1
-		{
-			requiredOpticType=2;
-			minRange=100;
-			minRangeProbab=0.1;
-			midRange=450;
-			midRangeProbab=0.60000002;
-			maxRange=800;
-			maxRangeProbab=0.050000001;
-			aiRateOfFire=8;
-			aiRateOfFireDistance=800;
-		};
-		class GP25Muzzle: GP25_Base
-		{
 		};
 	};
 	class rhs_weap_ak103: rhs_weap_ak103_base
 	{
-		displayName="$STR_RHS_WEAP_AK103";
 		rhs_npz="rhs_weap_ak103_npz";
 		rhs_fold="rhs_weap_ak103_folded";
-		baseWeapon="rhs_weap_ak103";
-		class LinkedItems
-		{
-			class LinkedItemsMuzzle
-			{
-				slot="MuzzleSlot";
-				item="rhs_acc_dtk";
-			};
-		};
 	};
 	class rhs_weap_ak104: rhs_weap_ak103_base
 	{
-		displayName="$STR_RHS_WEAP_AK104";
-		weaponInfoType="rhs_rscOptics_ak104";
-		hiddenSelectionsTextures[]=
-		{
-			"rhsafrf\addons\rhs_weapons\texture\AK104_co.paa",
-			"rhsafrf\addons\rhs_weapons\texture\ak105_barrel_co.paa",
-			"rhsafrf\addons\rhs_weapons3\zenitco\data\rhs_zenitko_01_co.paa",
-			"rhsafrf\addons\rhs_weapons3\zenitco\data\rhs_zenitko_02_co.paa",
-			"rhsafrf\addons\rhs_weapons3\zenitco\data\rhs_b33_co.paa"
-		};
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=66;
-			class MuzzleSlot: rhs_russian_ak104_muzzle_slot
-			{
-			};
-			class CowsSlot: rhs_russian_rifle_scopes_slot
-			{
-			};
 			class rhs_npz_slot: SlotInfo
 			{
 				compatibleItems[]=
@@ -7768,866 +5562,205 @@ class CfgWeapons
 					"rhs_acc_npz"
 				};
 			};
-			class PointerSlot: rhs_russian_ak_barrel_slot
-			{
-			};
-		};
-		class LinkedItems
-		{
-			class LinkedItemsMuzzle
-			{
-				slot="MuzzleSlot";
-				item="rhs_acc_pgs64";
-			};
 		};
 		initSpeed=-0.89136398;
 		rhs_npz="rhs_weap_ak104_npz";
 		rhs_fold="rhs_weap_ak104_folded";
-		baseWeapon="rhs_weap_ak104";
 	};
 	class rhs_weap_ak104_npz: rhs_weap_ak104
 	{
-		displayName="$STR_RHS_WEAP_AK104_NPZ0";
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
-			class MuzzleSlot: MuzzleSlot
-			{
-			};
-			class CowsSlot: rhs_picattinny_russian_rifle_scopes_slot
-			{
-			};
-			class PointerSlot: rhs_russian_ak_barrel_slot
-			{
-			};
-			class rhs_npz_slot
-			{
-			};
 		};
 		rhs_npz="rhs_weap_ak104";
-		weaponInfoType="rhs_rscOptics_ak104_npz";
-		baseWeapon="rhs_weap_ak104_npz";
 	};
 	class rhs_weap_ak104_zenitco01: rhs_weap_ak104
 	{
-		displayName="$STR_RHS_WEAP_AK104_ZENIT";
-		handAnim[]=
-		{
-			"OFP2_ManSkeleton",
-			"\rhsafrf\addons\rhs_c_weapons\anims\rhs_hand_ak.rtm"
-		};
-		weaponInfoType="rhs_rscOptics_ak104_zenitco01";
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
-			class MuzzleSlot: MuzzleSlot
-			{
-			};
-			class CowsSlot: rhs_russian_rifle_scopes_slot_npz
-			{
-			};
-			class GripodSlot: rhs_russian_rifle_gripod_slot
-			{
-			};
-			class PointerSlot: rhs_russian_ris_handguard_slot
-			{
-			};
 		};
 		rhs_fold="";
 		rhs_npz="rhs_weap_ak104_zenitco01_npz";
-		rhs_grip1_change="rhs_weap_ak104_zenitco01_grip1";
-		rhs_grip2_change="rhs_weap_ak104_zenitco01_afg";
-		rhs_grip3_change="rhs_weap_ak104_zenitco01_grip1";
 		rhsusf_acc_anpeq15=1;
 		rhsusf_acc_t1=1;
-		baseWeapon="rhs_weap_ak104_zenitco01";
-	};
-	class rhs_weap_ak104_zenitco01_grip1: rhs_weap_ak104_zenitco01
-	{
-		handAnim[]=
-		{
-			"OFP2_ManSkeleton",
-			"\rhsafrf\addons\rhs_c_weapons\anims\rhs_hand_akmr_grip.rtm"
-		};
-	};
-	class rhs_weap_ak104_zenitco01_afg: rhs_weap_ak104_zenitco01
-	{
-		handAnim[]=
-		{
-			"OFP2_ManSkeleton",
-			"\rhsafrf\addons\rhs_c_weapons\anims\rhs_hand_akmr_afg.rtm"
-		};
 	};
 	class rhs_weap_ak104_zenitco01_npz: rhs_weap_ak104_zenitco01
 	{
-		displayName="$STR_RHS_WEAP_AK104_NPZ0_ZENIT";
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
-			class MuzzleSlot: MuzzleSlot
-			{
-			};
-			class CowsSlot: rhs_picattinny_russian_rifle_scopes_slot
-			{
-			};
-			class PointerSlot: rhs_russian_ris_handguard_slot
-			{
-			};
-			class rhs_npz_slot
-			{
-			};
 		};
 		rhs_npz="rhs_weap_ak104_zenitco01";
-		weaponInfoType="rhs_rscOptics_ak104_zenitco01_npz";
-		baseWeapon="rhs_weap_ak104_zenitco01_npz";
-		rhs_grip1_change="rhs_weap_ak104_zenitco01_npz_grip1";
-		rhs_grip2_change="rhs_weap_ak104_zenitco01_npz_afg";
-		rhs_grip3_change="rhs_weap_ak104_zenitco01_npz_grip1";
 		rhsusf_acc_anpeq15=1;
-	};
-	class rhs_weap_ak104_zenitco01_npz_grip1: rhs_weap_ak104_zenitco01_npz
-	{
-		handAnim[]=
-		{
-			"OFP2_ManSkeleton",
-			"\rhsafrf\addons\rhs_c_weapons\anims\rhs_hand_akmr_grip.rtm"
-		};
-	};
-	class rhs_weap_ak104_zenitco01_npz_afg: rhs_weap_ak104_zenitco01_npz
-	{
-		handAnim[]=
-		{
-			"OFP2_ManSkeleton",
-			"\rhsafrf\addons\rhs_c_weapons\anims\rhs_hand_akmr_afg.rtm"
-		};
 	};
 	class rhs_weap_ak104_zenitco01_b33: rhs_weap_ak104_zenitco01
 	{
-		displayName="$STR_RHS_WEAP_AK104_ZENIT_B33";
 		class WeaponSlotsInfo
 		{
 			mass=74.800003;
-			allowedSlots[]={901};
-			class MuzzleSlot: rhs_russian_ak104_muzzle_slot
-			{
-			};
-			class CowsSlot: rhs_picattinny_russian_rifle_scopes_slot_long
-			{
-			};
-			class GripodSlot: rhs_russian_rifle_gripod_slot
-			{
-			};
-			class PointerSlot: rhs_russian_ris_handguard_slot
-			{
-			};
 		};
 		rhs_npz="";
-		weaponInfoType="rhs_rscOptics_ak104_zenitco01_b33";
-		baseWeapon="rhs_weap_ak104_zenitco01_b33";
-		rhs_grip1_change="rhs_weap_ak104_zenitco01_b33_grip1";
-		rhs_grip2_change="rhs_weap_ak104_zenitco01_b33_afg";
-		rhs_grip3_change="rhs_weap_ak104_zenitco01_b33_grip1";
 		rhsusf_acc_anpeq15=1;
 		rhsusf_acc_t1=0;
-	};
-	class rhs_weap_ak104_zenitco01_b33_grip1: rhs_weap_ak104_zenitco01_b33
-	{
-		handAnim[]=
-		{
-			"OFP2_ManSkeleton",
-			"\rhsafrf\addons\rhs_c_weapons\anims\rhs_hand_akmr_grip.rtm"
-		};
-	};
-	class rhs_weap_ak104_zenitco01_b33_afg: rhs_weap_ak104_zenitco01_b33
-	{
-		handAnim[]=
-		{
-			"OFP2_ManSkeleton",
-			"\rhsafrf\addons\rhs_c_weapons\anims\rhs_hand_akmr_afg.rtm"
-		};
 	};
 	class rhs_weap_ak104_folded: rhs_weap_ak104
 	{
-		displayName="$STR_RHS_CFGWEAPONS_RIFLE_AK104_FOLD0";
-		handAnim[]=
-		{
-			"OFP2_ManSkeleton",
-			"\rhsafrf\addons\rhs_c_weapons\anims\rhs_hand_ak_stock_fold.rtm"
-		};
 		recoil="rhs_recoil_ak74m_folded";
-		inertia=0.69999999;
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=49.5;
-			class MuzzleSlot: MuzzleSlot
-			{
-			};
-			class CowsSlot
-			{
-			};
-			class PointerSlot: rhs_russian_ak_barrel_slot
-			{
-			};
-			class rhs_npz_slot
-			{
-			};
 		};
 		rhs_fold="rhs_weap_ak104";
-		baseWeapon="rhs_weap_ak104_folded";
 	};
 	class rhs_weap_ak103_npz: rhs_weap_ak103
 	{
-		displayName="$STR_RHS_WEAP_AK103_NPZ0";
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
-			class MuzzleSlot: MuzzleSlot
-			{
-			};
-			class CowsSlot: rhs_picattinny_russian_rifle_scopes_slot
-			{
-			};
-			class PointerSlot: rhs_russian_ak_barrel_slot
-			{
-			};
-			class rhs_npz_slot
-			{
-			};
 		};
 		rhs_npz="rhs_weap_ak103";
-		weaponInfoType="rhs_rscOptics_ak103_npz";
-		baseWeapon="rhs_weap_ak103_npz";
 	};
 	class rhs_weap_ak103_folded: rhs_weap_ak103
 	{
-		displayName="$STR_RHS_CFGWEAPONS_RIFLE_AK103_FOLD0";
-		handAnim[]=
-		{
-			"OFP2_ManSkeleton",
-			"\rhsafrf\addons\rhs_c_weapons\anims\rhs_hand_ak_stock_fold.rtm"
-		};
 		recoil="rhs_recoil_ak74m_folded";
-		inertia=0.69999999;
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=56.099998;
-			class MuzzleSlot: MuzzleSlot
-			{
-			};
-			class CowsSlot
-			{
-			};
-			class PointerSlot: rhs_russian_ak_barrel_slot
-			{
-			};
-			class rhs_npz_slot
-			{
-			};
 		};
 		rhs_fold="rhs_weap_ak103";
-		baseWeapon="rhs_weap_ak103_folded";
 	};
 	class rhs_weap_ak103_zenitco01: rhs_weap_ak103
 	{
-		displayName="$STR_RHS_WEAP_AK103_ZENIT";
-		handAnim[]=
-		{
-			"OFP2_ManSkeleton",
-			"\rhsafrf\addons\rhs_c_weapons\anims\rhs_hand_ak.rtm"
-		};
 		class WeaponSlotsInfo
 		{
 			mass=74.5;
-			allowedSlots[]={901};
-			class MuzzleSlot: rhs_russian_ak103_muzzle_slot
-			{
-			};
-			class CowsSlot: rhs_russian_rifle_scopes_slot_npz
-			{
-			};
-			class GripodSlot: rhs_russian_rifle_gripod_slot
-			{
-			};
-			class PointerSlot: rhs_russian_ris_handguard_slot
-			{
-			};
-			class AuxPointerSlot: rhs_russian_aux_barrel_slot
-			{
-			};
 		};
-		weaponInfoType="rhs_rscOptics_ak103_zenitco01";
 		rhs_fold="rhs_weap_ak103_zenitco01_folded";
 		rhs_npz="rhs_weap_ak103_zenitco01_npz";
-		rhs_grip1_change="rhs_weap_ak103_zenitco01_grip1";
-		rhs_grip2_change="rhs_weap_ak103_zenitco01_afg";
-		rhs_grip3_change="rhs_weap_ak103_zenitco01_grip1";
 		rhsusf_acc_anpeq15=1;
 		rhsusf_acc_t1=1;
-		baseWeapon="rhs_weap_ak103_zenitco01";
 	};
 	class rhs_weap_ak103_zenitco01_folded: rhs_weap_ak103_zenitco01
 	{
-		displayName="$STR_RHS_CFGWEAPONS_RIFLE_AK103_FOLD0";
-		handAnim[]=
-		{
-			"OFP2_ManSkeleton",
-			"\rhsafrf\addons\rhs_c_weapons\anims\rhs_hand_ak_stock_fold.rtm"
-		};
 		recoil="rhs_recoil_ak74m_folded";
-		inertia=0.69999999;
-		class WeaponSlotsInfo: WeaponSlotsInfo
-		{
-			class CowsSlot: rhs_russian_rifle_scopes_slot
-			{
-			};
-		};
 		rhs_fold="rhs_weap_ak103_zenitco01";
-		baseWeapon="rhs_weap_ak103_zenitco01_folded";
-		rhs_grip1_change="rhs_weap_ak103_zenitco01_folded_grip1";
-		rhs_grip2_change="rhs_weap_ak103_zenitco01_folded_afg";
-		rhs_grip3_change="rhs_weap_ak103_zenitco01_folded_grip1";
 		rhsusf_acc_anpeq15=1;
 		rhsusf_acc_t1=1;
 	};
-	class rhs_weap_ak103_zenitco01_grip1: rhs_weap_ak103_zenitco01
-	{
-		handAnim[]=
-		{
-			"OFP2_ManSkeleton",
-			"\rhsafrf\addons\rhs_c_weapons\anims\rhs_hand_akmr_grip.rtm"
-		};
-	};
-	class rhs_weap_ak103_zenitco01_afg: rhs_weap_ak103_zenitco01
-	{
-		handAnim[]=
-		{
-			"OFP2_ManSkeleton",
-			"\rhsafrf\addons\rhs_c_weapons\anims\rhs_hand_akmr_afg.rtm"
-		};
-	};
-	class rhs_weap_ak103_zenitco01_folded_grip1: rhs_weap_ak103_zenitco01
-	{
-		handAnim[]=
-		{
-			"OFP2_ManSkeleton",
-			"\rhsafrf\addons\rhs_c_weapons\anims\rhs_hand_akmr_grip.rtm"
-		};
-	};
-	class rhs_weap_ak103_zenitco01_folded_afg: rhs_weap_ak103_zenitco01
-	{
-		handAnim[]=
-		{
-			"OFP2_ManSkeleton",
-			"\rhsafrf\addons\rhs_c_weapons\anims\rhs_hand_akmr_afg.rtm"
-		};
-	};
 	class rhs_weap_ak103_zenitco01_npz: rhs_weap_ak103_zenitco01
 	{
-		displayName="$STR_RHS_WEAP_AK103_NPZ0_ZENIT";
-		class WeaponSlotsInfo: WeaponSlotsInfo
-		{
-			class CowsSlot: rhs_picattinny_russian_rifle_scopes_slot
-			{
-			};
-		};
 		rhs_npz="rhs_weap_ak103_zenitco01";
-		weaponInfoType="rhs_rscOptics_ak103_zenitco01_npz";
-		baseWeapon="rhs_weap_ak103_zenitco01_npz";
-		rhs_grip1_change="rhs_weap_ak103_zenitco01_npz_grip1";
-		rhs_grip2_change="rhs_weap_ak103_zenitco01_npz_afg";
-		rhs_grip3_change="rhs_weap_ak103_zenitco01_npz_grip1";
 		rhsusf_acc_anpeq15=1;
-	};
-	class rhs_weap_ak103_zenitco01_npz_grip1: rhs_weap_ak103_zenitco01_npz
-	{
-		handAnim[]=
-		{
-			"OFP2_ManSkeleton",
-			"\rhsafrf\addons\rhs_c_weapons\anims\rhs_hand_akmr_grip.rtm"
-		};
-	};
-	class rhs_weap_ak103_zenitco01_npz_afg: rhs_weap_ak103_zenitco01_npz
-	{
-		handAnim[]=
-		{
-			"OFP2_ManSkeleton",
-			"\rhsafrf\addons\rhs_c_weapons\anims\rhs_hand_akmr_afg.rtm"
-		};
 	};
 	class rhs_weap_ak103_zenitco01_b33: rhs_weap_ak103_zenitco01
 	{
-		displayName="$STR_RHS_WEAP_AK103_ZENIT_B33";
 		class WeaponSlotsInfo
 		{
 			mass=74.800003;
-			allowedSlots[]={901};
-			class MuzzleSlot: rhs_russian_ak103_muzzle_slot
-			{
-			};
-			class CowsSlot: rhs_picattinny_russian_rifle_scopes_slot_long
-			{
-			};
-			class GripodSlot: rhs_russian_rifle_gripod_slot
-			{
-			};
-			class PointerSlot: rhs_russian_ris_handguard_slot
-			{
-			};
-			class AuxPointerSlot: rhs_russian_aux_barrel_slot
-			{
-			};
 		};
 		rhs_npz="";
-		weaponInfoType="rhs_rscOptics_ak103_zenitco01_b33";
-		baseWeapon="rhs_weap_ak103_zenitco01_b33";
-		rhs_grip1_change="rhs_weap_ak103_zenitco01_b33_grip1";
-		rhs_grip2_change="rhs_weap_ak103_zenitco01_b33_afg";
-		rhs_grip3_change="rhs_weap_ak103_zenitco01_b33_grip1";
 		rhsusf_acc_anpeq15=1;
 		rhsusf_acc_t1=0;
 	};
-	class rhs_weap_ak103_zenitco01_b33_grip1: rhs_weap_ak103_zenitco01_b33
-	{
-		handAnim[]=
-		{
-			"OFP2_ManSkeleton",
-			"\rhsafrf\addons\rhs_c_weapons\anims\rhs_hand_akmr_grip.rtm"
-		};
-	};
-	class rhs_weap_ak103_zenitco01_b33_afg: rhs_weap_ak103_zenitco01_b33
-	{
-		handAnim[]=
-		{
-			"OFP2_ManSkeleton",
-			"\rhsafrf\addons\rhs_c_weapons\anims\rhs_hand_akmr_afg.rtm"
-		};
-	};
 	class rhs_weap_ak103_1: rhs_weap_ak103_base
 	{
-		displayName="$STR_RHS_WEAP_AK1031";
-		modes[]=
-		{
-			"Single",
-			"single_medium_optics1",
-			"single_far_optics2"
-		};
-		weaponInfoType="rhs_rscOptics_ak103_1";
-		baseWeapon="rhs_weap_ak103_1";
 		rhs_fold="rhs_weap_ak103_1_folded";
 		rhs_npz="rhs_weap_ak103_1_npz";
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=74.800003;
-			class CowsSlot: rhs_russian_rifle_scopes_slot
-			{
-			};
-			class MuzzleSlot: MuzzleSlot
-			{
-			};
-			class PointerSlot: rhs_russian_ak_barrel_slot
-			{
-			};
 		};
 		class Single: Single
 		{
 			reloadTime=0.1;
 			dispersion=0.0020999999;
-			minRange=2;
-			minRangeProbab=0.5;
-			midRange=200;
-			midRangeProbab=0.69999999;
-			maxRange=400;
-			maxRangeProbab=0.30000001;
-		};
-		class single_medium_optics1: Single
-		{
-			requiredOpticType=1;
-			showToPlayer=0;
-			minRange=2;
-			minRangeProbab=0.2;
-			midRange=450;
-			midRangeProbab=0.69999999;
-			maxRange=600;
-			maxRangeProbab=0.2;
-			aiRateOfFire=6;
-			aiRateOfFireDistance=600;
-		};
-		class single_far_optics2: single_medium_optics1
-		{
-			requiredOpticType=2;
-			minRange=100;
-			minRangeProbab=0.1;
-			midRange=450;
-			midRangeProbab=0.60000002;
-			maxRange=800;
-			maxRangeProbab=0.050000001;
-			aiRateOfFire=8;
-			aiRateOfFireDistance=800;
-		};
-		class LinkedItems
-		{
-			class LinkedItemsMuzzle
-			{
-				slot="MuzzleSlot";
-				item="rhs_acc_dtk";
-			};
-		};
-		class GP25Muzzle: GP25_Base
-		{
 		};
 	};
 	class rhs_weap_ak103_1_npz: rhs_weap_ak103_1
 	{
-		displayName="$STR_RHS_WEAP_AK1031_NPZ0";
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
-			class MuzzleSlot: MuzzleSlot
-			{
-			};
-			class CowsSlot: rhs_picattinny_russian_rifle_scopes_slot
-			{
-			};
-			class PointerSlot: rhs_russian_ak_barrel_slot
-			{
-			};
-			class rhs_npz_slot
-			{
-			};
 		};
 		rhs_npz="rhs_weap_ak103_1";
-		weaponInfoType="rhs_rscOptics_ak103_npz";
-		baseWeapon="rhs_weap_ak103_1_npz";
 	};
 	class rhs_weap_ak103_1_folded: rhs_weap_ak103_1
 	{
-		displayName="$STR_RHS_CFGWEAPONS_RIFLE_AK103_1_FOLD0";
-		handAnim[]=
-		{
-			"OFP2_ManSkeleton",
-			"\rhsafrf\addons\rhs_c_weapons\anims\rhs_hand_ak_stock_fold.rtm"
-		};
 		recoil="rhs_recoil_ak74m_folded";
-		inertia=0.69999999;
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=56.099998;
-			class MuzzleSlot: MuzzleSlot
-			{
-			};
-			class CowsSlot
-			{
-			};
-			class PointerSlot: rhs_russian_ak_barrel_slot
-			{
-			};
-			class rhs_npz_slot
-			{
-			};
 		};
 		rhs_fold="rhs_weap_ak103_1";
-		baseWeapon="rhs_weap_ak103_1_folded";
 	};
 	class rhs_weap_ak103_2: rhs_weap_ak103_base
 	{
-		displayName="$STR_RHS_WEAP_AK1032";
-		weaponInfoType="rhs_rscOptics_ak103_2";
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=74.800003;
-			class CowsSlot: rhs_russian_rifle_scopes_slot
-			{
-			};
-			class MuzzleSlot: MuzzleSlot
-			{
-			};
-			class PointerSlot: rhs_russian_ak_barrel_slot
-			{
-			};
-		};
-		class LinkedItems
-		{
-			class LinkedItemsMuzzle
-			{
-				slot="MuzzleSlot";
-				item="rhs_acc_dtk";
-			};
-		};
-		modes[]=
-		{
-			"Single",
-			"Burst",
-			"single_medium_optics1",
-			"single_far_optics2"
 		};
 		class Single: Single
 		{
 			reloadTime=0.1;
 			dispersion=0.0020999999;
-			minRange=2;
-			minRangeProbab=0.5;
-			midRange=200;
-			midRangeProbab=0.69999999;
-			maxRange=400;
-			maxRangeProbab=0.30000001;
 		};
 		class Burst: Burst
 		{
 			aiBurstTerminable=0;
 			reloadTime=0.1;
 			dispersion=0.0020999999;
-			minRange=2;
-			minRangeProbab=0.5;
-			midRange=200;
-			midRangeProbab=0.69999999;
-			maxRange=400;
-			maxRangeProbab=0.30000001;
 		};
-		class single_medium_optics1: Single
-		{
-			requiredOpticType=1;
-			showToPlayer=0;
-			minRange=2;
-			minRangeProbab=0.2;
-			midRange=450;
-			midRangeProbab=0.69999999;
-			maxRange=600;
-			maxRangeProbab=0.2;
-			aiRateOfFire=6;
-			aiRateOfFireDistance=600;
-		};
-		class single_far_optics2: single_medium_optics1
-		{
-			requiredOpticType=2;
-			minRange=100;
-			minRangeProbab=0.1;
-			midRange=450;
-			midRangeProbab=0.60000002;
-			maxRange=800;
-			maxRangeProbab=0.050000001;
-			aiRateOfFire=8;
-			aiRateOfFireDistance=800;
-		};
-		class GP25Muzzle: GP25_Base
-		{
-		};
-		baseWeapon="rhs_weap_ak103_2";
 		rhs_fold="rhs_weap_ak103_2_folded";
 		rhs_npz="rhs_weap_ak103_2_npz";
 	};
 	class rhs_weap_ak103_2_npz: rhs_weap_ak103_2
 	{
-		displayName="$STR_RHS_WEAP_AK1032_NPZ0";
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
-			class MuzzleSlot: MuzzleSlot
-			{
-			};
-			class CowsSlot: rhs_picattinny_russian_rifle_scopes_slot
-			{
-			};
-			class PointerSlot: rhs_russian_ak_barrel_slot
-			{
-			};
-			class rhs_npz_slot
-			{
-			};
 		};
 		rhs_npz="rhs_weap_ak103_2";
-		weaponInfoType="rhs_rscOptics_ak103_npz";
-		baseWeapon="rhs_weap_ak103_2_npz";
 	};
 	class rhs_weap_ak103_2_folded: rhs_weap_ak103_2
 	{
-		displayName="$STR_RHS_CFGWEAPONS_RIFLE_AK103_2_FOLD0";
-		handAnim[]=
-		{
-			"OFP2_ManSkeleton",
-			"\rhsafrf\addons\rhs_c_weapons\anims\rhs_hand_ak_stock_fold.rtm"
-		};
 		recoil="recoil_mmg_01";
-		inertia=0.69999999;
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=56.099998;
-			class MuzzleSlot: MuzzleSlot
-			{
-			};
-			class CowsSlot
-			{
-			};
-			class PointerSlot: rhs_russian_ak_barrel_slot
-			{
-			};
-			class rhs_npz_slot
-			{
-			};
 		};
 		rhs_fold="rhs_weap_ak103_2";
-		baseWeapon="rhs_weap_ak103_2_folded";
 	};
 	class rhs_weap_ak103_gp25: rhs_weap_ak103_base
 	{
-		weaponInfoType="rhs_rscOptics_ak103_gp25";
-		displayName="$STR_RHS_WEAP_AK103_GP25";
-		handAnim[]=
-		{
-			"OFP2_ManSkeleton",
-			"\rhsafrf\addons\rhs_c_weapons\anims\rhs_hand_ak_gp.rtm"
-		};
-		muzzles[]=
-		{
-			"this",
-			"GP25Muzzle",
-			"SAFE"
-		};
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=107.8;
-			class PointerSlot
-			{
-			};
 		};
-		class LinkedItems
-		{
-			class LinkedItemsMuzzle
-			{
-				slot="MuzzleSlot";
-				item="rhs_acc_dtk";
-			};
-		};
-		baseWeapon="rhs_weap_ak103_gp25";
 		rhs_npz="rhs_weap_ak103_gp25_npz";
 	};
 	class rhs_weap_ak103_gp25_npz: rhs_weap_ak103_base
 	{
-		displayName="$STR_RHS_WEAP_AK103_GP25_NPZ";
-		weaponInfoType="rhs_rscOptics_ak103_gp25_npz";
-		handAnim[]=
-		{
-			"OFP2_ManSkeleton",
-			"\rhsafrf\addons\rhs_c_weapons\anims\rhs_hand_ak_gp.rtm"
-		};
-		muzzles[]=
-		{
-			"this",
-			"GP25Muzzle",
-			"SAFE"
-		};
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=107.8;
-			class MuzzleSlot: MuzzleSlot
-			{
-			};
-			class CowsSlot: rhs_picattinny_russian_rifle_scopes_slot
-			{
-			};
-			class PointerSlot
-			{
-			};
-			class rhs_npz_slot
-			{
-			};
 		};
-		class LinkedItems
-		{
-			class LinkedItemsMuzzle
-			{
-				slot="MuzzleSlot";
-				item="rhs_acc_dtk";
-			};
-		};
-		baseWeapon="rhs_weap_ak103_gp25_npz";
 		rhs_npz="rhs_weap_ak103_gp25";
 	};
 	class rhs_weap_ak74: rhs_weap_ak74m
 	{
-		displayName="$STR_RHS_WEAP_AK74";
-		weaponInfoType="rhs_rscOptics_ak74";
-		inertia=0.5;
-		dexterity=1.75;
-		handAnim[]=
-		{
-			"OFP2_ManSkeleton",
-			"\rhsafrf\addons\rhs_c_weapons\anims\rhs_hand_ak74.rtm"
-		};
-		reloadAction="RHS_GestureReloadAK74";
-		hiddenSelections[]=
-		{
-			"body"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"rhsafrf\addons\rhs_weapons3\aks74\data\rhs_ak74_co.paa"
-		};
-		muzzles[]=
-		{
-			"this",
-			"SAFE"
-		};
-		class ItemInfo
-		{
-			priority=1;
-			RMBhint="AK-74";
-			onHoverText="AK-74";
-		};
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=81.400002;
-			class CowsSlot
-			{
-			};
-			class rhs_npz_slot
-			{
-			};
-		};
-		class LinkedItems
-		{
-			class LinkedItemsMuzzle
-			{
-				slot="MuzzleSlot";
-				item="rhs_acc_dtk1983";
-			};
 		};
 		rhs_fold="";
-		baseWeapon="rhs_weap_ak74";
 	};
 	class rhs_weap_ak74_gp25: rhs_weap_ak74
 	{
-		weaponInfoType="rhs_rscOptics_ak74_gp25";
-		dexterity=1.8;
-		inertia=0.68000001;
-		displayName="$STR_RHS_WEAP_AK74_GP25";
-		handAnim[]=
-		{
-			"OFP2_ManSkeleton",
-			"\rhsafrf\addons\rhs_c_weapons\anims\rhs_hand_ak74_gp.rtm"
-		};
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=114.4;
-			class CowsSlot
-			{
-			};
-			class PointerSlot
-			{
-			};
 		};
-		muzzles[]=
-		{
-			"this",
-			"GP25Muzzle",
-			"SAFE"
-		};
-		baseWeapon="rhs_weap_ak74_gp25";
 	};
 	class rhs_weap_ak74n: rhs_weap_ak74
 	{
-		displayName="$STR_RHS_WEAP_AK74N";
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
-			class CowsSlot: rhs_russian_rifle_scopes_slot
-			{
-			};
-			class rhs_picattinny_russian_rifle_bis_scopes_slot
-			{
-			};
 			class rhs_npz_slot: SlotInfo
 			{
 				compatibleItems[]=
@@ -8636,21 +5769,12 @@ class CfgWeapons
 				};
 			};
 		};
-		baseWeapon="rhs_weap_ak74n";
 		rhs_npz="rhs_weap_ak74n_npz";
 	};
 	class rhs_weap_ak74n_gp25: rhs_weap_ak74_gp25
 	{
-		weaponInfoType="rhs_rscOptics_ak74n_gp25";
-		displayName="$STR_RHS_WEAP_AK74N_GP25";
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
-			class CowsSlot: rhs_russian_rifle_scopes_slot
-			{
-			};
-			class PointerSlot
-			{
-			};
 			class rhs_npz_slot: SlotInfo
 			{
 				compatibleItems[]=
@@ -8659,93 +5783,36 @@ class CfgWeapons
 				};
 			};
 		};
-		baseWeapon="rhs_weap_ak74n_gp25";
 		rhs_npz="rhs_weap_ak74n_gp25_npz";
 	};
 	class rhs_weap_ak74n_npz: rhs_weap_ak74
 	{
-		displayName="$STR_RHS_WEAP_AK74N_NPZ";
-		weaponInfoType="rhs_rscOptics_ak74n_npz";
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=90.199997;
-			class MuzzleSlot: MuzzleSlot
-			{
-			};
-			class CowsSlot: rhs_picattinny_russian_rifle_scopes_slot
-			{
-			};
-			class PointerSlot: rhs_russian_ak_barrel_slot
-			{
-			};
-			class rhs_npz_slot
-			{
-			};
 		};
 		rhs_npz="rhs_weap_ak74n";
-		baseWeapon="rhs_weap_ak74n_npz";
 	};
 	class rhs_weap_ak74n_gp25_npz: rhs_weap_ak74_gp25
 	{
-		weaponInfoType="rhs_rscOptics_ak74n_gp25_npz";
-		displayName="$STR_RHS_WEAP_AK74N_GP25_NPZ";
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=123.2;
-			class MuzzleSlot: MuzzleSlot
-			{
-			};
-			class CowsSlot: rhs_picattinny_russian_rifle_scopes_slot
-			{
-			};
-			class PointerSlot
-			{
-			};
-			class rhs_npz_slot
-			{
-			};
 		};
-		baseWeapon="rhs_weap_ak74n_gp25_npz";
 		rhs_npz="rhs_weap_ak74n_gp25";
 	};
 	class rhs_weap_ak74_2: rhs_weap_ak74
 	{
-		displayName="$STR_RHS_WEAP_AK74_2";
-		hiddenSelections[]=
-		{
-			"body"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"rhsafrf\addons\rhs_weapons3\aks74\data\rhs_ak74_2_co.paa"
-		};
-		class ItemInfo
-		{
-			priority=1;
-			RMBhint="AK-74";
-			onHoverText="AK-74";
-		};
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=72;
-			class CowsSlot
-			{
-			};
 		};
 		rhs_fold="";
-		baseWeapon="rhs_weap_ak74_2";
 	};
 	class rhs_weap_ak74n_2: rhs_weap_ak74
 	{
-		displayName="$STR_RHS_WEAP_AK74N_2";
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
-			class CowsSlot: rhs_russian_rifle_scopes_slot
-			{
-			};
-			class rhs_picattinny_russian_rifle_bis_scopes_slot
-			{
-			};
 			class rhs_npz_slot: SlotInfo
 			{
 				compatibleItems[]=
@@ -8754,46 +5821,20 @@ class CfgWeapons
 				};
 			};
 		};
-		baseWeapon="rhs_weap_ak74n_2";
 		rhs_npz="rhs_weap_ak74n_2_npz";
 	};
 	class rhs_weap_ak74n_2_npz: rhs_weap_ak74
 	{
-		displayName="$STR_RHS_WEAP_AK74N_2_NPZ";
-		weaponInfoType="rhs_rscOptics_ak74n_npz";
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=90.199997;
-			class MuzzleSlot: MuzzleSlot
-			{
-			};
-			class CowsSlot: rhs_picattinny_russian_rifle_scopes_slot
-			{
-			};
-			class PointerSlot: rhs_russian_ak_barrel_slot
-			{
-			};
-			class rhs_npz_slot
-			{
-			};
 		};
-		baseWeapon="rhs_weap_ak74n_2_npz";
 		rhs_npz="rhs_weap_ak74n_2";
 	};
 	class rhs_weap_ak74n_2_gp25: rhs_weap_ak74_gp25
 	{
-		displayName="$STR_RHS_WEAP_AK74N_2_GP25";
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
-			class CowsSlot: rhs_russian_rifle_scopes_slot
-			{
-			};
-			class rhs_picattinny_russian_rifle_bis_scopes_slot
-			{
-			};
-			class PointerSlot
-			{
-			};
 			class rhs_npz_slot: SlotInfo
 			{
 				compatibleItems[]=
@@ -8802,198 +5843,68 @@ class CfgWeapons
 				};
 			};
 		};
-		baseWeapon="rhs_weap_ak74n_2_gp25";
 		rhs_npz="rhs_weap_ak74n_2_gp25_npz";
 	};
 	class rhs_weap_ak74n_2_gp25_npz: rhs_weap_ak74_gp25
 	{
-		displayName="$STR_RHS_WEAP_AK74N_2_GP25_NPZ";
-		weaponInfoType="rhs_rscOptics_ak74n_gp25_npz";
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=123.2;
-			class MuzzleSlot: MuzzleSlot
-			{
-			};
-			class CowsSlot: rhs_picattinny_russian_rifle_scopes_slot
-			{
-			};
-			class PointerSlot
-			{
-			};
-			class rhs_npz_slot
-			{
-			};
 		};
-		baseWeapon="rhs_weap_ak74n_2_gp25_npz";
 		rhs_npz="rhs_weap_ak74n_2_gp25";
 	};
 	class rhs_weap_ak74_3: rhs_weap_ak74
 	{
-		displayName="$STR_RHS_WEAP_AK74_3";
-		hiddenSelections[]=
-		{
-			"body"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"rhsafrf\addons\rhs_weapons3\aks74\data\rhs_ak74_3_co.paa"
-		};
-		class ItemInfo
-		{
-			priority=1;
-			RMBhint="AK-74";
-			onHoverText="AK-74";
-		};
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=72;
-			class CowsSlot
-			{
-			};
 		};
 		rhs_fold="";
-		baseWeapon="rhs_weap_ak74_3";
 	};
 	class rhs_weap_aks74: rhs_weap_ak74
 	{
-		weaponInfoType="rhs_rscOptics_aks74";
-		inertia=0.51999998;
-		dexterity=1.58;
-		displayName="$STR_RHS_WEAP_AKS74";
-		descriptionShort="$STR_RHS_CFGWEAPONS_RIFLE_AK74M1";
-		handAnim[]=
-		{
-			"OFP2_ManSkeleton",
-			"\rhsafrf\addons\rhs_c_weapons\anims\rhs_hand_aks74.rtm"
-		};
-		muzzles[]=
-		{
-			"this",
-			"SAFE",
-			"FOLD"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"rhsafrf\addons\rhs_weapons3\aks74\data\rhs_aks74_co.paa"
-		};
-		reloadAction="RHS_GestureReloadAKS";
-		class ItemInfo
-		{
-			priority=1;
-			RMBhint="AKS-74";
-			onHoverText="AKS-74";
-		};
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=65;
-			class CowsSlot
-			{
-			};
-		};
-		class LinkedItems
-		{
-			class LinkedItemsMuzzle
-			{
-				slot="MuzzleSlot";
-				item="rhs_acc_dtk1983";
-			};
 		};
 		rhs_fold="rhs_weap_aks74_folded";
 		rhs_npz="";
-		baseWeapon="rhs_weap_aks74";
 	};
 	class rhs_weap_aks74_folded: rhs_weap_aks74
 	{
-		inertia=0.55000001;
-		dexterity=1.58;
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=45;
-			class CowsSlot
-			{
-			};
 		};
 		recoil="rhs_recoil_ak74m_folded";
-		displayName="$STR_RHS_WEAP_AKS74_FOLD";
-		class ItemInfo
-		{
-			priority=1;
-			RMBhint="AKS-74 (Folded)";
-			onHoverText="AKS-74 (Folded)";
-		};
 		rhs_fold="rhs_weap_aks74";
 		rhs_fold_anim="RHS_GestureUnfoldAK74M";
 		rhs_npz="";
-		baseWeapon="rhs_weap_aks74_folded";
 	};
 	class rhs_weap_aks74_2: rhs_weap_aks74
 	{
-		displayName="$STR_RHS_WEAP_AKS74_2";
-		class ItemInfo
-		{
-			priority=1;
-			RMBhint="AKS-74 (Folded)";
-			onHoverText="AKS-74 (Folded)";
-		};
 		rhs_fold="rhs_weap_aks74_2_folded";
 		rhs_npz="";
-		baseWeapon="rhs_weap_aks74_2";
 	};
 	class rhs_weap_aks74_2_folded: rhs_weap_aks74_folded
 	{
-		displayName="$STR_RHS_WEAP_AKS74_2_FOLD";
-		class ItemInfo
-		{
-			priority=1;
-			RMBhint="AKS-74 (Folded)";
-			onHoverText="AKS-74 (Folded)";
-		};
 		rhs_fold="rhs_weap_aks74_2";
 		rhs_fold_anim="RHS_GestureUnfoldAK74M";
 		rhs_npz="";
-		baseWeapon="rhs_weap_aks74_2_folded";
 	};
 	class rhs_weap_aks74_gp25: rhs_weap_aks74
 	{
-		weaponInfoType="rhs_rscOptics_aks74_gp25";
-		dexterity=1.8;
-		inertia=0.67000002;
-		displayName="$STR_RHS_WEAP_AKS74_GP25";
 		rhs_fold="";
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=94;
-			class CowsSlot
-			{
-			};
-			class PointerSlot
-			{
-			};
 		};
-		handAnim[]=
-		{
-			"OFP2_ManSkeleton",
-			"\rhsafrf\addons\rhs_c_weapons\anims\rhs_hand_ak_gp.rtm"
-		};
-		muzzles[]=
-		{
-			"this",
-			"GP25Muzzle",
-			"SAFE"
-		};
-		baseWeapon="rhs_weap_aks74_gp25";
 	};
 	class rhs_weap_aks74n: rhs_weap_aks74
 	{
-		weaponInfoType="rhs_rscOptics_aks74n";
-		displayName="$STR_RHS_WEAP_AKS74N";
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=66;
-			class CowsSlot: rhs_russian_rifle_scopes_slot
-			{
-			};
 			class rhs_npz_slot: SlotInfo
 			{
 				compatibleItems[]=
@@ -9004,113 +5915,53 @@ class CfgWeapons
 		};
 		rhs_fold="rhs_weap_aks74n_folded";
 		rhs_npz="rhs_weap_aks74n_npz";
-		baseWeapon="rhs_weap_aks74n";
 	};
 	class rhs_weap_aks74n_npz: rhs_weap_aks74n
 	{
-		displayName="$STR_RHS_WEAP_AKS74N_NPZ";
-		weaponInfoType="rhs_rscOptics_aks74n_npz";
-		muzzles[]=
-		{
-			"this",
-			"SAFE"
-		};
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=107.8;
-			class MuzzleSlot: MuzzleSlot
-			{
-			};
-			class CowsSlot: rhs_picattinny_russian_rifle_scopes_slot
-			{
-			};
-			class PointerSlot: rhs_russian_ak_barrel_slot
-			{
-			};
-			class rhs_npz_slot
-			{
-			};
 		};
 		rhs_npz="rhs_weap_aks74n";
-		baseWeapon="rhs_weap_aks74n_npz";
 	};
 	class rhs_weap_aks74n_2: rhs_weap_aks74n
 	{
-		displayName="$STR_RHS_WEAP_AKS74N_2";
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=67.800003;
 		};
 		rhs_fold="rhs_weap_aks74n_2_folded";
 		rhs_npz="rhs_weap_aks74n_2_npz";
-		baseWeapon="rhs_weap_aks74n_2";
 	};
 	class rhs_weap_aks74n_2_npz: rhs_weap_aks74n
 	{
-		displayName="$STR_RHS_WEAP_AKS74N_2_NPZ";
-		muzzles[]=
-		{
-			"this",
-			"SAFE"
-		};
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=105.8;
-			class MuzzleSlot: MuzzleSlot
-			{
-			};
-			class CowsSlot: rhs_picattinny_russian_rifle_scopes_slot
-			{
-			};
-			class PointerSlot: rhs_russian_ak_barrel_slot
-			{
-			};
-			class rhs_npz_slot
-			{
-			};
 		};
-		weaponInfoType="rhs_rscOptics_ak74n_npz";
 		rhs_fold="rhs_weap_aks74n_2_folded";
 		rhs_npz="rhs_weap_aks74n_2";
-		baseWeapon="rhs_weap_aks74n_2_npz";
 	};
 	class rhs_weap_aks74n_folded: rhs_weap_aks74
 	{
-		inertia=0.55000001;
-		weaponInfoType="rhs_rscOptics_aks74n";
-		displayName="$STR_RHS_WEAP_AKS74N_FOLD";
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=46;
-			class CowsSlot
-			{
-			};
 		};
 		rhs_fold="rhs_weap_aks74n";
 		rhs_fold_anim="RHS_GestureUnfoldAK74M";
 		rhs_npz="rhs_weap_aks74n_npz";
-		baseWeapon="rhs_weap_aks74n_folded";
 	};
 	class rhs_weap_aks74n_2_folded: rhs_weap_aks74n_folded
 	{
-		displayName="$STR_RHS_WEAP_AKS74N_2_FOLD";
 		rhs_fold="rhs_weap_aks74n_2";
 		rhs_npz="";
-		baseWeapon="rhs_weap_aks74n_2_folded";
 	};
 	class rhs_weap_aks74n_gp25: rhs_weap_aks74_gp25
 	{
-		weaponInfoType="rhs_rscOptics_ak74n_gp25";
-		displayName="$STR_RHS_WEAP_AKS74N_GP25";
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=99;
-			class CowsSlot: rhs_russian_rifle_scopes_slot
-			{
-			};
-			class PointerSlot
-			{
-			};
 			class rhs_npz_slot: SlotInfo
 			{
 				compatibleItems[]=
@@ -9119,382 +5970,98 @@ class CfgWeapons
 				};
 			};
 		};
-		baseWeapon="rhs_weap_aks74n_gp25";
 		rhs_npz="rhs_weap_aks74n_gp25_npz";
 	};
 	class rhs_weap_aks74n_gp25_npz: rhs_weap_aks74n_gp25
 	{
-		displayName="$STR_RHS_WEAP_AKS74N_GP25_NPZ";
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=107.8;
-			class MuzzleSlot: MuzzleSlot
-			{
-			};
-			class CowsSlot: rhs_picattinny_russian_rifle_scopes_slot
-			{
-			};
-			class PointerSlot
-			{
-			};
-			class rhs_npz_slot
-			{
-			};
 		};
 		rhs_npz="rhs_weap_aks74n_gp25";
-		weaponInfoType="rhs_rscOptics_ak74m_gp25_npz";
-		baseWeapon="rhs_weap_aks74n_gp25_npz";
 	};
 	class rhs_weap_aks74u: rhs_weap_aks74
 	{
-		displayName="$STR_RHS_WEAP_AKS74U";
-		handAnim[]=
-		{
-			"OFP2_ManSkeleton",
-			"\rhsafrf\addons\rhs_c_weapons\anims\rhs_hand_aks74u.rtm"
-		};
-		hiddenSelections[]=
-		{
-			"camo"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"rhsafrf\addons\rhs_weapons2\aks74u\data\rhs_aks74u_co.paa"
-		};
-		dexterity=1.6;
-		inertia=0.33000001;
-		weaponInfoType="rhs_rscOptics_aks74u";
-		reloadAction="RHS_GestureReloadAKSU";
 		recoil="recoil_ktb";
 		initSpeed=-0.83499998;
-		discreteDistanceCameraPoint[]=
-		{
-			"eye",
-			"eye_500"
-		};
-		modes[]=
-		{
-			"FullAuto",
-			"Single",
-			"single_medium_optics1",
-			"single_far_optics2",
-			"fullauto_medium"
-		};
 		class Single: Single
 		{
 			reloadTime=0.092299998;
 			dispersion=0.0019499999;
-			minRange=2;
-			minRangeProbab=0.30000001;
-			midRange=200;
-			midRangeProbab=0.69999999;
-			maxRange=400;
-			maxRangeProbab=0.039999999;
 		};
 		class FullAuto: FullAuto
 		{
 			reloadTime=0.092299998;
 			dispersion=0.0019499999;
-			minRange=0;
-			minRangeProbab=0.89999998;
-			midRange=15;
-			midRangeProbab=0.69999999;
-			maxRange=30;
-			maxRangeProbab=0.1;
-			aiRateOfFire=1e-006;
-		};
-		class single_medium_optics1: Single
-		{
-			requiredOpticType=1;
-			showToPlayer=0;
-			minRange=2;
-			minRangeProbab=0.2;
-			midRange=350;
-			midRangeProbab=0.69999999;
-			maxRange=550;
-			maxRangeProbab=0.1;
-			aiRateOfFire=6;
-			aiRateOfFireDistance=600;
-		};
-		class single_far_optics2: single_medium_optics1
-		{
-			requiredOpticType=2;
 		};
 		class fullauto_medium: FullAuto
 		{
-			showToPlayer=0;
 			burst=2;
 			burstRangeMax=5;
-			minRange=2;
-			minRangeProbab=0.5;
-			midRange=75;
-			midRangeProbab=0.69999999;
-			maxRange=150;
-			maxRangeProbab=0.050000001;
-			aiRateOfFire=2;
 		};
-		aiDispersionCoefY=10;
-		aiDispersionCoefX=8;
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=59.619999;
-			class MuzzleSlot: rhs_russian_aks74u_muzzle_slot
-			{
-			};
-			class CowsSlot
-			{
-			};
-			class rhs_npz_slot
-			{
-			};
-			class PointerSlot
-			{
-			};
-		};
-		class LinkedItems
-		{
-			class LinkedItemsMuzzle
-			{
-				slot="MuzzleSlot";
-				item="rhs_acc_pgs64_74u";
-			};
 		};
 		rhs_fold="rhs_weap_aks74u_folded";
-		baseWeapon="rhs_weap_aks74u";
 	};
 	class rhs_weap_aks74u_folded: rhs_weap_aks74u
 	{
-		displayName="$STR_RHS_WEAP_AKS74U_FOLD";
-		handAnim[]=
-		{
-			"OFP2_ManSkeleton",
-			"\rhsafrf\addons\rhs_c_weapons\anims\rhs_hand_aks74u.rtm"
-		};
 		recoil="recoil_mmg_01";
-		inertia=0.28;
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=44.720001;
-			class MuzzleSlot: MuzzleSlot
-			{
-			};
-			class CowsSlot
-			{
-			};
-			class PointerSlot
-			{
-			};
-			class rhs_npz_slot
-			{
-			};
 		};
 		rhs_fold="rhs_weap_aks74u";
 		rhs_fold_anim="RHS_GestureUnfoldAK74M";
-		baseWeapon="rhs_weap_aks74u_folded";
 	};
 	class rhs_weap_aks74un: rhs_weap_aks74u
 	{
-		displayName="$STR_RHS_WEAP_AKS74UN";
-		hiddenSelections[]=
-		{
-			"camo1",
-			"camo2"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"rhsafrf\addons\rhs_weapons2\aks74u\data\rhs_aks74u_plum_co.paa",
-			"rhsafrf\addons\rhs_weapons2\aks74u\data\rhs_aks74u_plum_co.paa"
-		};
-		weaponInfoType="rhs_rscOptics_aks74un";
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=59.619999;
-			class MuzzleSlot: MuzzleSlot
-			{
-			};
-			class CowsSlot: rhs_russian_rifle_scopes_slot
-			{
-			};
-			class rhs_npz_slot
-			{
-			};
-			class PointerSlot
-			{
-			};
-		};
-		class LinkedItems
-		{
-			class LinkedItemsMuzzle
-			{
-				slot="MuzzleSlot";
-				item="rhs_acc_pgs64_74un";
-			};
 		};
 		rhs_fold="rhs_weap_aks74un_folded";
-		baseWeapon="rhs_weap_aks74un";
 	};
 	class rhs_weap_aks74un_folded: rhs_weap_aks74un
 	{
-		displayName="$STR_RHS_WEAP_AKS74UN_FOLD";
-		handAnim[]=
-		{
-			"OFP2_ManSkeleton",
-			"\rhsafrf\addons\rhs_c_weapons\anims\rhs_hand_aks74u.rtm"
-		};
 		recoil="recoil_mmg_01";
-		inertia=0.28;
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=44.720001;
-			class MuzzleSlot: MuzzleSlot
-			{
-			};
-			class CowsSlot
-			{
-			};
-			class PointerSlot
-			{
-			};
-			class rhs_npz_slot
-			{
-			};
 		};
 		rhs_fold="rhs_weap_aks74un";
 		rhs_fold_anim="RHS_GestureUnfoldAK74M";
-		baseWeapon="rhs_weap_aks74un_folded";
 	};
 	class rhs_weap_asval: rhs_weap_ak74m
 	{
-		displayName="$STR_RHS_WEAP_ASVAL";
-		descriptionShort="$STR_RHS_WEAP_ASVAL_DESC";
 		recoil="rhs_recoil_asval";
-		aiDispersionCoefX=2;
-		aiDispersionCoefY=3;
 		magazineWell[]=
 		{
 			"CBA_9x39_VSS"
 		};
-		discreteDistanceCameraPoint[]=
-		{
-			"eye",
-			"eye_150",
-			"eye_200",
-			"eye_220",
-			"eye_250",
-			"eye_270",
-			"eye_300",
-			"eye_320",
-			"eye_350",
-			"eye_370",
-			"eye_400",
-			"eye_420"
-		};
-		cameraDir="eye_look";
 		maxZeroing=420;
-		weaponInfoType="rhs_rscOptics_asval";
-		hiddenSelections[]=
-		{
-			"camo1",
-			"camo2"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"rhsafrf\addons\rhs_weapons2\asval\data\asval_co.paa",
-			"rhsafrf\addons\rhs_weapons2\asval\data\mag_co.paa"
-		};
-		handAnim[]=
-		{
-			"OFP2_ManSkeleton",
-			"\rhsafrf\addons\rhs_c_weapons\anims\rhs_hand_asval.rtm"
-		};
 		fireLightDuration=0;
 		fireLightIntensity=0;
 		initSpeed=-1.0535001;
-		dexterity=1.7;
-		inertia=0.44999999;
-		modes[]=
-		{
-			"Single",
-			"FullAuto",
-			"single_medium_optics1",
-			"single_far_optics2",
-			"fullauto_medium"
-		};
 		class Single: Single
 		{
-			aiDispersionCoefX=1.2;
-			aiDispersionCoefY=1.4;
 			reloadTime=0.066699997;
-			minRange=2;
-			minRangeProbab=0.30000001;
-			midRange=100;
-			midRangeProbab=0.69999999;
-			maxRange=420;
-			maxRangeProbab=0.44999999;
-			aiRateOfFire=3;
-			aiRateOfFireDistance=400;
 			dispersion=0.00163;
 		};
 		class FullAuto: FullAuto
 		{
-			aiDispersionCoefX=1.4;
-			aiDispersionCoefY=1.7;
 			reloadTime=0.066699997;
-			minRange=0;
-			minRangeProbab=0.89999998;
-			midRange=20;
-			midRangeProbab=0.69999999;
-			maxRange=35;
-			maxRangeProbab=0.1;
 			dispersion=0.00163;
-		};
-		class single_medium_optics1: Single
-		{
-			showToPlayer=0;
-			requiredOpticType=1;
-			midRange=125;
-		};
-		class single_far_optics2: Single
-		{
-			showToPlayer=0;
-			requiredOpticType=2;
-			minRange=2;
-			minRangeProbab=0.1;
-			midRange=200;
-			midRangeProbab=0.69999999;
-			maxRange=420;
-			maxRangeProbab=0.050000001;
-			aiRateOfFire=3.5;
-			aiRateOfFireDistance=400;
 		};
 		class fullauto_medium: FullAuto
 		{
-			showToPlayer=0;
 			burst=2;
 			burstRangeMax=5;
-			minRange=2;
-			minRangeProbab=0.5;
-			midRange=50;
-			midRangeProbab=0.69999999;
-			maxRange=75;
-			maxRangeProbab=0.050000001;
-			aiRateOfFire=2;
-			aiRateOfFireDistance=75;
 		};
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=65.120003;
-			class MuzzleSlot
-			{
-			};
-			class CowsSlot: rhs_russian_rifle_scopes_slot
-			{
-				class compatibleItems: compatibleItems
-				{
-					rhs_acc_pso1m2=1;
-					rhs_acc_pso1m21=1;
-				};
-			};
 			class rhs_npz_slot: SlotInfo
 			{
 				compatibleItems[]=
@@ -9502,16 +6069,9 @@ class CfgWeapons
 					"rhs_acc_npz"
 				};
 			};
-			class PointerSlot
-			{
-			};
-		};
-		class LinkedItems
-		{
 		};
 		rhs_npz="rhs_weap_asval_npz";
 		rhs_fold="rhs_weap_asval_folded";
-		baseWeapon="rhs_weap_asval";
 		rhs_pkas_type="rhs_acc_pkas_asval";
 		rhs_1p29_type="rhs_acc_1p29_asval";
 		rhs_pso1m2_type="rhs_acc_pso1m2_asval";
@@ -9527,49 +6087,14 @@ class CfgWeapons
 		rhs_fold_anim="RHS_GestureUnfoldAK74M";
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
-			class CowsSlot
-			{
-			};
-			class rhs_npz_slot
-			{
-			};
 		};
-		inertia=0.64999998;
 		recoil="rhs_recoil_asval_folded";
 	};
 	class rhs_weap_asval_grip: rhs_weap_asval
 	{
-		displayName="$STR_RHS_WEAP_ASVAL_GRIP";
-		weaponInfoType="rhs_rscOptics_asval_grip";
-		hiddenSelections[]=
-		{
-			"camo1",
-			"camo2",
-			"camo3"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"rhsafrf\addons\rhs_weapons2\asval\data\asval_co.paa",
-			"rhsafrf\addons\rhs_weapons2\asval\data\mag_co.paa",
-			"rhsafrf\addons\rhs_weapons2\asval\data\grip_co.paa"
-		};
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=65.120003;
-			class MuzzleSlot
-			{
-			};
-			class CowsSlot: rhs_russian_rifle_scopes_slot
-			{
-				class compatibleItems: compatibleItems
-				{
-					rhs_acc_pso1m2=1;
-					rhs_acc_pso1m21=1;
-				};
-			};
-			class GripodSlot: rhs_russian_rifle_gripod_slot
-			{
-			};
 			class rhs_npz_slot: SlotInfo
 			{
 				compatibleItems[]=
@@ -9577,167 +6102,56 @@ class CfgWeapons
 					"rhs_acc_npz"
 				};
 			};
-			class PointerSlot: rhs_russian_ris_side_slot
-			{
-			};
 		};
 		rhs_npz="rhs_weap_asval_grip_npz";
 		rhs_fold="rhs_weap_asval_grip_folded";
-		rhs_grip1_change="rhs_weap_asval_grip1";
-		rhs_grip2_change="rhs_weap_asval_afg";
-		rhs_grip3_change="rhs_weap_asval_grip1";
-		baseWeapon="rhs_weap_asval_grip";
 	};
 	class rhs_weap_asval_grip1: rhs_weap_asval_grip
 	{
-		handAnim[]=
-		{
-			"OFP2_ManSkeleton",
-			"\rhsafrf\addons\rhs_c_weapons\anims\rhs_hand_asval_grip.rtm"
-		};
 		rhs_fold="rhs_weap_asval_folded_grip1";
 	};
 	class rhs_weap_asval_afg: rhs_weap_asval_grip
 	{
-		handAnim[]=
-		{
-			"OFP2_ManSkeleton",
-			"\rhsafrf\addons\rhs_c_weapons\anims\rhs_hand_asval_afg.rtm"
-		};
 		rhs_fold="rhs_weap_asval_folded_afg";
 	};
 	class rhs_weap_asval_grip_folded: rhs_weap_asval_grip
 	{
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
-			class CowsSlot
-			{
-			};
-			class rhs_npz_slot
-			{
-			};
 		};
-		inertia=0.64999998;
 		recoil="rhs_recoil_asval_folded";
 		rhs_fold="rhs_weap_asval_grip";
 		rhs_fold_anim="RHS_GestureUnfoldAK74M";
-		rhs_grip1_change="rhs_weap_asval_folded_grip1";
-		rhs_grip2_change="rhs_weap_asval_folded_afg";
-		rhs_grip3_change="rhs_weap_asval_folded_grip1";
 		baseweapon="rhs_weap_asval_grip_folded";
 	};
 	class rhs_weap_asval_folded_grip1: rhs_weap_asval_grip_folded
 	{
-		handAnim[]=
-		{
-			"OFP2_ManSkeleton",
-			"\rhsafrf\addons\rhs_c_weapons\anims\rhs_hand_asval_grip.rtm"
-		};
 		rhs_fold="rhs_weap_asval_grip1";
 	};
 	class rhs_weap_asval_folded_afg: rhs_weap_asval_grip_folded
 	{
-		handAnim[]=
-		{
-			"OFP2_ManSkeleton",
-			"\rhsafrf\addons\rhs_c_weapons\anims\rhs_hand_asval_afg.rtm"
-		};
 		rhs_fold="rhs_weap_asval_afg";
 	};
 	class rhs_weap_asval_npz: rhs_weap_asval
 	{
-		displayName="$STR_RHS_WEAP_ASVAL_NPZ";
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
-			class MuzzleSlot
-			{
-			};
-			class CowsSlot: rhs_picattinny_russian_rifle_scopes_slot
-			{
-			};
-			class PointerSlot
-			{
-			};
-			class rhs_npz_slot
-			{
-			};
 		};
 		rhs_fold="";
 		rhs_npz="rhs_weap_asval";
-		weaponInfoType="rhs_rscOptics_ak74m_npz";
-		baseWeapon="rhs_weap_asval_npz";
 	};
 	class rhs_weap_asval_grip_npz: rhs_weap_asval_grip
 	{
-		displayName="$STR_RHS_WEAP_ASVAL_GRIP_NPZ";
-		weaponInfoType="rhs_rscOptics_ak74m_npz";
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
-			class MuzzleSlot
-			{
-			};
-			class CowsSlot: rhs_picattinny_russian_rifle_scopes_slot
-			{
-			};
-			class PointerSlot: rhs_russian_ris_side_slot
-			{
-			};
-			class GripodSlot: rhs_russian_rifle_gripod_slot
-			{
-			};
-			class rhs_npz_slot
-			{
-			};
 		};
 		rhs_npz="rhs_weap_asval_grip";
-		rhs_grip1_change="rhs_weap_asval_npz_grip1";
-		rhs_grip2_change="rhs_weap_asval_npz_afg";
-		rhs_grip3_change="rhs_weap_asval_npz_grip1";
-		baseWeapon="rhs_weap_asval_grip_npz";
-	};
-	class rhs_weap_asval_npz_grip1: rhs_weap_asval_grip_npz
-	{
-		handAnim[]=
-		{
-			"OFP2_ManSkeleton",
-			"\rhsafrf\addons\rhs_c_weapons\anims\rhs_hand_asval_grip.rtm"
-		};
-	};
-	class rhs_weap_asval_npz_afg: rhs_weap_asval_grip_npz
-	{
-		handAnim[]=
-		{
-			"OFP2_ManSkeleton",
-			"\rhsafrf\addons\rhs_c_weapons\anims\rhs_hand_asval_afg.rtm"
-		};
 	};
 	class rhs_weap_vss: rhs_weap_asval
 	{
-		displayName="$STR_RHS_WEAP_VSS";
-		descriptionShort="$STR_RHS_WEAP_VSS_DESC";
 		fireLightDuration=0;
 		fireLightIntensity=0;
 		initSpeed=-1.0535001;
-		dexterity=1.7;
-		inertia=0.44999999;
-		weaponInfoType="rhs_rscOptics_vss";
-		hiddenSelections[]=
-		{
-			"camo1",
-			"camo2",
-			"camo3"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"rhsafrf\addons\rhs_weapons2\asval\data\asval_co.paa",
-			"rhsafrf\addons\rhs_weapons2\asval\data\mag_co.paa",
-			"rhsafrf\addons\rhs_weapons2\vss\data\vss_stock_co.paa"
-		};
-		muzzles[]=
-		{
-			"this",
-			"SAFE"
-		};
 		class Single: Single
 		{
 			reloadTime=0.1;
@@ -9751,61 +6165,22 @@ class CfgWeapons
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=57.200001;
-			class MuzzleSlot
-			{
-			};
-			class CowsSlot: rhs_russian_rifle_scopes_slot
-			{
-				class compatibleItems: compatibleItems
-				{
-					rhs_acc_pso1m2=1;
-					rhs_acc_pso1m21=1;
-				};
-			};
 			class rhs_npz_slot: SlotInfo
 			{
 				compatibleItems[]=
 				{
 					"rhs_acc_npz"
 				};
-			};
-			class PointerSlot
-			{
 			};
 		};
 		rhs_fold="";
 		rhs_npz="rhs_weap_vss_npz";
-		baseWeapon="rhs_weap_vss";
 	};
 	class rhs_weap_vss_grip: rhs_weap_vss
 	{
-		displayName="$STR_RHS_WEAP_VSS_GRIP";
-		hiddenSelections[]=
-		{
-			"camo1",
-			"camo2",
-			"camo3"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"rhsafrf\addons\rhs_weapons2\asval\data\asval_co.paa",
-			"rhsafrf\addons\rhs_weapons2\asval\data\mag_co.paa",
-			"rhsafrf\addons\rhs_weapons2\vss\data\vss_stock_co.paa"
-		};
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=57.200001;
-			class MuzzleSlot
-			{
-			};
-			class CowsSlot: rhs_russian_rifle_scopes_slot
-			{
-				class compatibleItems: compatibleItems
-				{
-					rhs_acc_pso1m2=1;
-					rhs_acc_pso1m21=1;
-				};
-			};
 			class rhs_npz_slot: SlotInfo
 			{
 				compatibleItems[]=
@@ -9813,412 +6188,93 @@ class CfgWeapons
 					"rhs_acc_npz"
 				};
 			};
-			class GripodSlot: rhs_russian_rifle_gripod_slot
-			{
-			};
-			class PointerSlot: rhs_russian_ris_side_slot
-			{
-			};
 		};
 		rhs_npz="rhs_weap_vss_grip_npz";
-		rhs_grip1_change="rhs_weap_vss_grip1";
-		rhs_grip2_change="rhs_weap_vss_afg";
-		rhs_grip3_change="rhs_weap_vss_grip1";
-		baseWeapon="rhs_weap_vss_grip";
-	};
-	class rhs_weap_vss_grip1: rhs_weap_vss_grip
-	{
-		handAnim[]=
-		{
-			"OFP2_ManSkeleton",
-			"\rhsafrf\addons\rhs_c_weapons\anims\rhs_hand_asval_grip.rtm"
-		};
-	};
-	class rhs_weap_vss_afg: rhs_weap_vss_grip
-	{
-		handAnim[]=
-		{
-			"OFP2_ManSkeleton",
-			"\rhsafrf\addons\rhs_c_weapons\anims\rhs_hand_asval_afg.rtm"
-		};
 	};
 	class rhs_weap_vss_npz: rhs_weap_vss
 	{
-		displayName="$STR_RHS_WEAP_VSS_NPZ";
-		hiddenSelections[]=
-		{
-			"camo1",
-			"camo2",
-			"camo3",
-			"camo4"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"rhsafrf\addons\rhs_weapons2\asval\data\asval_co.paa",
-			"rhsafrf\addons\rhs_weapons2\asval\data\mag_co.paa",
-			"rhsafrf\addons\rhs_weapons2\vss\data\vss_stock_co.paa",
-			"rhsafrf\addons\rhs_weapons2\asval\data\grip_co.paa"
-		};
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
-			class MuzzleSlot
-			{
-			};
-			class CowsSlot: rhs_picattinny_russian_rifle_scopes_slot
-			{
-			};
-			class PointerSlot
-			{
-			};
-			class rhs_npz_slot
-			{
-			};
 		};
 		rhs_npz="rhs_weap_vss";
-		weaponInfoType="rhs_rscOptics_ak74m_npz";
-		baseWeapon="rhs_weap_vss_npz";
 	};
 	class rhs_weap_vss_grip_npz: rhs_weap_vss
 	{
-		displayName="$STR_RHS_WEAP_VSS_GRIP_NPZ";
-		weaponInfoType="rhs_rscOptics_ak74m_npz";
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
-			class MuzzleSlot
-			{
-			};
-			class CowsSlot: rhs_picattinny_russian_rifle_scopes_slot
-			{
-			};
-			class PointerSlot: rhs_russian_ris_side_slot
-			{
-			};
-			class GripodSlot: rhs_russian_rifle_gripod_slot
-			{
-			};
-			class rhs_npz_slot
-			{
-			};
 		};
 		rhs_npz="rhs_weap_vss_grip";
-		rhs_grip1_change="rhs_weap_vss_npz_grip1";
-		rhs_grip2_change="rhs_weap_vss_npz_afg";
-		rhs_grip3_change="rhs_weap_vss_npz_grip1";
-		baseWeapon="rhs_weap_vss_grip_npz";
-	};
-	class rhs_weap_vss_npz_grip1: rhs_weap_vss_grip_npz
-	{
-		handAnim[]=
-		{
-			"OFP2_ManSkeleton",
-			"\rhsafrf\addons\rhs_c_weapons\anims\rhs_hand_asval_grip.rtm"
-		};
-	};
-	class rhs_weap_vss_npz_afg: rhs_weap_vss_grip_npz
-	{
-		handAnim[]=
-		{
-			"OFP2_ManSkeleton",
-			"\rhsafrf\addons\rhs_c_weapons\anims\rhs_hand_asval_afg.rtm"
-		};
 	};
 	class rhs_weap_svd: rhs_weap_ak74m
 	{
-		baseWeapon="rhs_weap_svd";
-		weaponInfoType="rhs_rscOptics_svd";
 		displayname="$STR_RHS_SVD_NAME";
-		descriptionShort="$STR_RHS_SVD_DESC";
 		recoil="rhs_recoil_svd";
-		aimTransitionSpeed=0.75;
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=77;
-			class MuzzleSlot: rhs_russian_svd_muzzle_slot
-			{
-			};
-			class CowsSlot: rhs_russian_svd_scopes_slot
-			{
-			};
-			class PointerSlot
-			{
-			};
 		};
 		maxZeroing=1200;
-		reloadAction="RHS_GestureReloadSVDS";
-		handAnim[]=
-		{
-			"OFP2_ManSkeleton",
-			"\rhsafrf\addons\rhs_c_weapons\anims\rhs_hand_svd_mag.rtm"
-		};
 		magazineWell[]=
 		{
 			"CBA_762x54R_SVD"
-		};
-		muzzles[]=
-		{
-			"this",
-			"SAFE"
-		};
-		modes[]=
-		{
-			"Single",
-			"single_close_optics1",
-			"single_medium_optics1",
-			"single_far_optics1"
 		};
 		class Single: Mode_SemiAuto
 		{
 			reloadTime=0.085000001;
 			dispersion=0.00069999998;
-			minRange=2;
-			minRangeProbab=0.30000001;
-			midRange=350;
-			midRangeProbab=0.69999999;
-			maxRange=500;
-			maxRangeProbab=0.050000001;
-		};
-		class single_close_optics1: Single
-		{
-			requiredOpticType=1;
-			showToPlayer=0;
-			minRange=2;
-			minRangeProbab=0.050000001;
-			midRange=300;
-			midRangeProbab=0.80000001;
-			maxRange=500;
-			maxRangeProbab=0.0098999999;
-			aiRateOfFire=1;
-			aiRateOfFireDistance=300;
-			aiRateOfFireDispersion=2;
-		};
-		class single_medium_optics1: single_close_optics1
-		{
-			minRange=300;
-			minRangeProbab=0.050000001;
-			midRange=500;
-			midRangeProbab=0.69999999;
-			maxRange=700;
-			maxRangeProbab=0.050000001;
-			aiRateOfFire=1;
-			aiRateOfFireDistance=500;
-			aiRateOfFireDispersion=2;
-		};
-		class single_far_optics1: single_medium_optics1
-		{
-			requiredOpticType=2;
-			minRange=300;
-			minRangeProbab=0.050000001;
-			midRange=600;
-			midRangeProbab=0.40000001;
-			maxRange=900;
-			maxRangeProbab=0.050000001;
-			aiRateOfFire=2;
-			aiRateOfFireDistance=600;
-			aiRateOfFireDispersion=2;
-		};
-		class LinkedItems
-		{
-		};
-		reloadMagazineSound[]=
-		{
-			"A3\sounds_f\weapons\reloads\new_ebr",
-			0.63095701,
-			1,
-			35
 		};
 		hiddenSelections[]={};
 		hiddenSelectionsTextures[]={};
-		inertia=0.64999998;
-		dexterity=1.4;
 		rhs_pso1m2_type="rhs_acc_pso1m2";
 		rhs_pso1m21_type="rhs_acc_pso1m21_svd";
 	};
 	class rhs_weap_svdp: rhs_weap_svd
 	{
 		displayname="$STR_RHS_WEAP_SVDM";
-		discreteDistanceCameraPoint[]=
-		{
-			"eye",
-			"eye_100",
-			"eye_200",
-			"eye_300",
-			"eye_400",
-			"eye_500",
-			"eye_600",
-			"eye_700",
-			"eye_800",
-			"eye_900",
-			"eye_1000",
-			"eye_1100",
-			"eye_1200"
-		};
-		modes[]=
-		{
-			"Single",
-			"single_close_optics1",
-			"single_medium_optics1",
-			"single_far_optics1"
-		};
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=116.6;
-			class MuzzleSlot: rhs_russian_svd_muzzle_slot
-			{
-			};
-			class CowsSlot: rhs_russian_svd_scopes_slot
-			{
-			};
-			class PointerSlot
-			{
-				iconPosition[]={0,0};
-				iconScale=1;
-				iconPicture="\A3\Weapons_F\Data\clear_empty.paa";
-				iconPinPoint="Left";
-			};
 		};
 		class Single: Mode_SemiAuto
 		{
 			reloadTime=0.085000001;
 			dispersion=0.00069999998;
-			minRange=2;
-			minRangeProbab=0.30000001;
-			midRange=350;
-			midRangeProbab=0.69999999;
-			maxRange=500;
-			maxRangeProbab=0.050000001;
-		};
-		class single_close_optics1: Single
-		{
-			requiredOpticType=1;
-			showToPlayer=0;
-			minRange=2;
-			minRangeProbab=0.050000001;
-			midRange=300;
-			midRangeProbab=0.80000001;
-			maxRange=500;
-			maxRangeProbab=0.0098999999;
-			aiRateOfFire=1;
-			aiRateOfFireDistance=300;
-			aiRateOfFireDispersion=2;
-		};
-		class single_medium_optics1: single_close_optics1
-		{
-			minRange=300;
-			minRangeProbab=0.050000001;
-			midRange=500;
-			midRangeProbab=0.69999999;
-			maxRange=700;
-			maxRangeProbab=0.050000001;
-			aiRateOfFire=1;
-			aiRateOfFireDistance=500;
-			aiRateOfFireDispersion=2;
-		};
-		class single_far_optics1: single_medium_optics1
-		{
-			requiredOpticType=2;
-			minRange=300;
-			minRangeProbab=0.050000001;
-			midRange=600;
-			midRangeProbab=0.40000001;
-			maxRange=900;
-			maxRangeProbab=0.050000001;
-			aiRateOfFire=2;
-			aiRateOfFireDistance=600;
-			aiRateOfFireDispersion=2;
-		};
-		hiddenSelections[]=
-		{
-			"Camo1",
-			"Camo2"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"rhsafrf\addons\rhs_weapons\svd\data\svdp_co.paa",
-			"rhsafrf\addons\rhs_weapons\svd\data\svds_co.paa"
 		};
 		rhs_npz="rhs_weap_svdp_npz";
-		baseWeapon="rhs_weap_svdp";
 	};
 	class rhs_weap_svdp_npz: rhs_weap_svdp
 	{
-		displayName="$STR_RHS_WEAP_SVDM_NPZ0";
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=116.6;
-			class MuzzleSlot: MuzzleSlot
-			{
-			};
-			class CowsSlot: rhs_picattinny_russian_rifle_scopes_slot
-			{
-			};
-			class PointerSlot
-			{
-			};
-			class rhs_npz_slot
-			{
-			};
 		};
 		rhs_npz="rhs_weap_svdp";
-		weaponInfoType="rhs_rscOptics_svdp_npz";
-		baseWeapon="rhs_weap_svdp_npz";
 	};
 	class rhs_weap_svdp_wd: rhs_weap_svdp
 	{
 		displayname="$STR_RHS_WEAP_SVDM_CAMO";
 		rhs_npz="rhs_weap_svdp_wd_npz";
-		baseWeapon="rhs_weap_svdp_wd";
 	};
 	class rhs_weap_svdp_wd_npz: rhs_weap_svdp_wd
 	{
-		displayName="$STR_RHS_WEAP_SVDM_CAMO_NPZ0";
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=116.6;
-			class MuzzleSlot: MuzzleSlot
-			{
-			};
-			class CowsSlot: rhs_picattinny_russian_rifle_scopes_slot
-			{
-			};
-			class PointerSlot
-			{
-			};
-			class rhs_npz_slot
-			{
-			};
 		};
 		rhs_npz="rhs_weap_svdp_wd";
-		weaponInfoType="rhs_rscOptics_svdp_wd_npz";
-		baseWeapon="rhs_weap_svdp_wd_npz";
 	};
 	class rhs_weap_svds: rhs_weap_svdp
 	{
 		displayname="$STR_RHS_WEAP_SVDS";
 		rhs_npz="rhs_weap_svds_npz";
 		initSpeed=-0.97590357;
-		baseWeapon="rhs_weap_svds";
 	};
 	class rhs_weap_svds_npz: rhs_weap_svds
 	{
-		displayName="$STR_RHS_WEAP_SVDS_NPZ0";
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
-			class MuzzleSlot: MuzzleSlot
-			{
-			};
-			class CowsSlot: rhs_picattinny_russian_rifle_scopes_slot
-			{
-			};
-			class PointerSlot
-			{
-			};
-			class rhs_npz_slot
-			{
-			};
 		};
 		rhs_npz="rhs_weap_svds";
-		weaponInfoType="rhs_rscOptics_svds_npz";
-		baseWeapon="rhs_weap_svds_npz";
 	};
 	class rhs_weap_orsis_Base_F: Rifle_Base_F
 	{
@@ -10226,152 +6282,12 @@ class CfgWeapons
 		{
 			"CBA_338LM_T5000"
 		};
-		class Library
-		{
-			libTextDesc="";
-		};
-		reloadAction="RHS_GestureReloadOrsis";
-		handAnim[]=
-		{
-			"OFP2_ManSkeleton",
-			"\rhsafrf\addons\rhs_c_weapons\anims\rhs_hand_orsis.rtm"
-		};
-		maxRecoilSway=0.0125;
-		swayDecaySpeed=1.25;
 		recoil="rhs_recoil_orsis";
-		class GunParticles: GunParticles
-		{
-			class SecondEffect
-			{
-				positionName="Nabojnicestart";
-				directionName="Nabojniceend";
-				effectName="RifleAssaultCloud";
-			};
-			class RHS_BarrelRefract
-			{
-				positionName="usti hlavne";
-				directionName="usti hlavne up";
-				effectName="RHS_BarrelRefract";
-			};
-		};
-		weaponInfoType="RscWeaponZeroing";
 		maxZeroing=1800;
-		class WeaponSlotsInfo: WeaponSlotsInfo
-		{
-			class CowsSlot: rhs_picattinny_russian_rifle_scopes_slot
-			{
-			};
-			class PointerSlot
-			{
-			};
-			class UnderBarrelSlot: rhs_russian_rifle_underbarrel_slot
-			{
-			};
-		};
-		distanceZoomMin=300;
-		distanceZoomMax=300;
-		descriptionShort="Sniper Rifle<br />Caliber: .338 Lapua";
-		inertia=0.64999998;
-		dexterity=1.8;
-		aimTransitionSpeed=0.5;
-		caseless[]=
-		{
-			"",
-			1,
-			1,
-			1
-		};
-		soundBullet[]=
-		{
-			"caseless",
-			1
-		};
-		modes[]=
-		{
-			"Single",
-			"far_optic1",
-			"medium_optic2",
-			"far_optic2"
-		};
 		class Single: Mode_SemiAuto
 		{
 			reloadTime=1.6;
 			dispersion=0.0002909;
-			minRange=2;
-			minRangeProbab=0.30000001;
-			midRange=250;
-			midRangeProbab=0.69999999;
-			maxRange=400;
-			maxRangeProbab=0.039999999;
-		};
-		class far_optic1: Single
-		{
-			showToPlayer=0;
-			minRange=150;
-			minRangeProbab=0.1;
-			midRange=500;
-			midRangeProbab=0.69999999;
-			maxRange=1000;
-			maxRangeProbab=0.30000001;
-			aiRateOfFire=5;
-			aiRateOfFireDistance=700;
-			requiredOpticType=1;
-		};
-		class medium_optic2: Single
-		{
-			showToPlayer=0;
-			minRange=250;
-			minRangeProbab=0.1;
-			midRange=750;
-			midRangeProbab=0.69999999;
-			maxRange=1000;
-			maxRangeProbab=0.30000001;
-			aiRateOfFire=6;
-			aiRateOfFireDistance=1000;
-			requiredOpticType=2;
-		};
-		class far_optic2: far_optic1
-		{
-			minRange=500;
-			minRangeProbab=0.1;
-			midRange=1050;
-			midRangeProbab=0.69999999;
-			maxRange=2000;
-			maxRangeProbab=0.30000001;
-			aiRateOfFire=8;
-			aiRateOfFireDistance=2000;
-			requiredOpticType=2;
-		};
-		aiDispersionCoefY=10;
-		aiDispersionCoefX=8;
-		drySound[]=
-		{
-			"A3\sounds_f\weapons\Other\dry_1",
-			0.0099999998,
-			1
-		};
-		reloadMagazineSound[]=
-		{
-			"A3\sounds_f\weapons\M320\M320_reload",
-			0.1,
-			1,
-			30
-		};
-		hiddenSelections[]=
-		{
-			"Camo"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"\rhsafrf\addons\rhs_weapons3\orsis\data\t5000_co.paa"
-		};
-		muzzles[]=
-		{
-			"this",
-			"SAFE"
-		};
-		class SAFE: RHS_SAFE_BASE
-		{
 		};
 		class Eventhandlers: Eventhandlers
 		{
@@ -10391,126 +6307,40 @@ class CfgWeapons
 	};
 	class rhs_weap_t5000: rhs_weap_orsis_Base_F
 	{
-		displayName="$STR_RHS_WEAP_T5000";
-		descriptionShort="$STR_RHS_WEAP_T5000";
-		UiPicture="\A3\weapons_f\data\UI\icon_regular_CA.paa";
-		handAnim[]=
-		{
-			"OFP2_ManSkeleton",
-			"\rhsafrf\addons\rhs_c_weapons\anims\rhs_hand_orsis.rtm"
-		};
-		weaponInfoType="rhs_orsis_handler";
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=132.2;
 		};
-		class ItemInfo
-		{
-			priority=1;
-			RMBhint="T-5000";
-			onHoverText="T-5000 .338 sniper rifle";
-		};
-		baseWeapon="rhs_weap_t5000";
 	};
 	class pdw2000_base_F;
 	class hgun_PDW2000_F: pdw2000_base_F
 	{
 		class Single;
-		class FullAuto;
-		class WeaponSlotsInfo;
-	};
 	class rhs_weap_pp2000: hgun_PDW2000_F
 	{
-		displayName="PP-2000";
-		descriptionShort="PP-2000";
-		weaponInfoType="rhs_rscOptics_pp2000";
-		magazineReloadSwitchPhase=0.30000001;
 		initSpeed=-0.97825998;
 		recoil="rhs_recoil_pp2000";
-		handAnim[]=
-		{
-			"OFP2_ManSkeleton",
-			"\rhsafrf\addons\rhs_c_weapons\anims\rhs_hand_pp2000_weapon.rtm"
-		};
-		class SAFE: RHS_SAFE_BASE
-		{
-		};
-		muzzles[]=
-		{
-			"this",
-			"SAFE"
-		};
 		magazineWell[]=
 		{
 			"CBA_9x19_PP2000"
-		};
-		modes[]=
-		{
-			"Single",
-			"FullAuto"
 		};
 		class Single: Single
 		{
 			reloadTime=0.075000003;
 			dispersion=0.0020300001;
-			minRange=2;
-			minRangeProbab=0.30000001;
-			midRange=200;
-			midRangeProbab=0.69999999;
-			maxRange=350;
-			maxRangeProbab=0.050000001;
-			aiRateOfFire=2;
-			aiRateOfFireDistance=500;
 		};
 		class FullAuto: FullAuto
 		{
 			reloadTime=0.075000003;
 			dispersion=0.0020300001;
-			minRange=0;
-			minRangeProbab=0.1;
-			midRange=25;
-			midRangeProbab=0.69999999;
-			maxRange=70;
-			maxRangeProbab=0.050000001;
-			aiRateOfFire=0.2;
-			aiRateOfFireDistance=50;
-		};
-		class WeaponSlotsInfo: WeaponSlotsInfo
-		{
-			holsterScale=0;
-			class MuzzleSlot
-			{
-			};
-			class CowsSlot: rhs_picattinny_russian_rifle_scopes_slot_short
-			{
-			};
 		};
 		rhs_fold="rhs_weap_pp2000_folded";
-		baseWeapon="rhs_weap_pp2000";
 	};
 	class rhs_weap_pp2000_folded: rhs_weap_pp2000
 	{
-		type=2;
 		mass=30.799999;
 		recoil="rhs_recoil_pp2000_folded";
-		reloadAction="GestureReloadPistol";
-		handAnim[]=
-		{
-			"OFP2_ManSkeleton",
-			"\rhsafrf\addons\rhs_c_weapons\anims\rhs_hand_pp2000_pistol.rtm"
-		};
-		class SAFE_PISTOL: RHS_SAFE_BASE
-		{
-		};
-		muzzles[]=
-		{
-			"this",
-			"SAFE_PISTOL"
-		};
-		displayName="PP-2000 (Folded)";
-		descriptionShort="PP-2000 (Folded)";
 		rhs_fold="rhs_weap_pp2000";
-		baseWeapon="rhs_weap_pp2000_folded";
 	};
 	class rhs_weap_rifle_empty: rhs_weap_ak74m_Base_F
 	{
@@ -10553,24 +6383,9 @@ class CfgWeapons
 			};
 		};
 	};
-	class rhs_weap_rifle_empty_front: rhs_weap_rifle_empty
-	{
-	};
-	class rhs_weap_rifle_empty_m249: rhs_weap_rifle_empty
-	{
-	};
 	class hgun_Rook40_F;
 	class rhs_weap_pya: hgun_Rook40_F
 	{
-		minRange=0;
-		minRangeProbab=0.1;
-		midRange=30;
-		midRangeProbab=0.30000001;
-		maxRange=50;
-		maxRangeProbab=0.039999999;
-		distanceZoomMin=50;
-		distanceZoomMax=50;
-		displayName="$STR_RHS_WEAP_PYA";
 		begin1[]=
 		{
 			"rhsafrf\addons\rhs_weapons\sounds\pya_2",
@@ -10583,26 +6398,9 @@ class CfgWeapons
 			"begin1",
 			1
 		};
-		weaponInfoType="rhs_rscOptics_pistol";
-		class SAFE_PISTOL: RHS_SAFE_BASE
-		{
-		};
-		muzzles[]=
-		{
-			"this",
-			"SAFE_PISTOL"
-		};
 		class WeaponSlotsInfo
 		{
 			mass=18.860001;
-			holsterScale=1;
-			class CowsSlot
-			{
-				iconPosition[]={0,0};
-				iconScale=1;
-				iconPicture="\A3\Weapons_F\Data\clear_empty.paa";
-				iconPinPoint="Left";
-			};
 		};
 		magazineWell[]=
 		{
@@ -10610,14 +6408,6 @@ class CfgWeapons
 		};
 		dispersion=0.02;
 		ffCount=1;
-		aiRateOfFire=0.5;
-		aiRateOfFireDistance=50;
-		class Library
-		{
-			libTextDesc="$STR_RHS_WEAP_PYA";
-		};
-		descriptionShort="Pistol<br/>Caliber: 9x19mm";
-		baseWeapon="rhs_weap_pya";
 	};
 	class Pistol;
 	class Pistol_Base_F: Pistol
@@ -10626,31 +6416,12 @@ class CfgWeapons
 	};
 	class rhs_weap_rsp30_white: Pistol_Base_F
 	{
-		weaponInfoType="rhs_rscOptics_rsp30";
 		displayname="$STR_RHS_RSP30_WHITE_NAME";
 		displaynameShort="$STR_RHS_RSP30_SHORT";
-		descriptionShort="$STR_RHS_RSP30_WHITE_DESC";
-		handAnim[]=
-		{
-			"OFP2_ManSkeleton",
-			"\rhsafrf\addons\rhs_c_weapons\anims\rsp30.rtm"
-		};
 		recoil="recoil_pistol";
-		hiddenSelections[]=
-		{
-			"camo1"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"rhsafrf\addons\rhs_weapons\rsp30\rhs_rsp30_white_co.paa"
-		};
 		hiddenSelectionsMaterials[]=
 		{
 			"rhsafrf\addons\rhs_weapons\rsp30\rhs_rsp30_white.rvmat"
-		};
-		sounds[]=
-		{
-			"StandardSound"
 		};
 		class BaseSoundModeType
 		{
@@ -10677,59 +6448,10 @@ class CfgWeapons
 				0.5
 			};
 		};
-		class StandardSound: BaseSoundModeType
-		{
-			begin1[]=
-			{
-				"A3\Sounds_F_Kart\Weapons\starting_pistol_1",
-				1,
-				1,
-				700
-			};
-			begin2[]=
-			{
-				"A3\Sounds_F_Kart\Weapons\starting_pistol_2",
-				1,
-				1,
-				700
-			};
-			begin3[]=
-			{
-				"A3\Sounds_F_Kart\Weapons\starting_pistol_3",
-				1,
-				1,
-				700
-			};
-			soundBegin[]=
-			{
-				"begin1",
-				0.33000001,
-				"begin2",
-				0.33000001,
-				"begin3",
-				0.34
-			};
-		};
-		class GunParticles
-		{
-			class Effect1
-			{
-				effectName="StarterPistolCloud1";
-				positionName="usti hlavne";
-				directionName="konec hlavne";
-			};
-			class Effect2
-			{
-				effectName="StarterPistolCloud2";
-				positionName="konec hlavne";
-				directionName="usti hlavne";
-			};
-		};
 		muzzleEffect="BIS_fnc_effectFiredFlares";
 		class WeaponSlotsInfo
 		{
 			mass=10;
-			holsterScale=0;
 		};
 		class Eventhandlers: Eventhandlers
 		{
@@ -10738,84 +6460,29 @@ class CfgWeapons
 				fired="_this call rhs_fnc_disposable;";
 			};
 		};
-		baseWeapon="rhs_weap_rsp30_white";
 	};
-	class rhs_weap_rsp30_white_used: rhs_weap_rsp30_white
-	{
-		magazines[]={};
 	};
 	class rhs_weap_rsp30_red: rhs_weap_rsp30_white
 	{
 		displayname="$STR_RHS_RSP30_RED_NAME";
-		descriptionShort="$STR_RHS_RSP30_RED_DESC";
-		hiddenSelectionsTextures[]=
-		{
-			"rhsafrf\addons\rhs_weapons\rsp30\rhs_rsp30_red_co.paa"
-		};
 		hiddenSelectionsMaterials[]=
 		{
 			"rhsafrf\addons\rhs_weapons\rsp30\rhs_rsp30_red.rvmat"
 		};
-		baseWeapon="rhs_weap_rsp30_red";
 	};
-	class rhs_weap_rsp30_red_used: rhs_weap_rsp30_red
-	{
-		magazines[]={};
 	};
 	class rhs_weap_rsp30_green: rhs_weap_rsp30_white
 	{
 		displayname="$STR_RHS_RSP30_GREEN_NAME";
-		descriptionShort="$STR_RHS_RSP30_GREEN_DESC";
-		hiddenSelectionsTextures[]=
-		{
-			"rhsafrf\addons\rhs_weapons\rsp30\rhs_rsp30_green_co.paa"
-		};
 		hiddenSelectionsMaterials[]=
 		{
 			"rhsafrf\addons\rhs_weapons\rsp30\rhs_rsp30_green.rvmat"
 		};
-		baseWeapon="rhs_weap_rsp30_green";
 	};
-	class rhs_weap_rsp30_green_used: rhs_weap_rsp30_green
-	{
-		magazines[]={};
 	};
-	class rhs_weap_tr8: Pistol_Base_F
-	{
-		magazines[]={};
-		class Library
-		{
-			libTextDesc="";
-		};
-		weaponInfoType="RscWeaponZeroing";
-		displayName="$STR_RHS_MSIC_TR8";
-		descriptionShort="$STR_A3_cfgWeapons_Default_Binocular1";
-		UiPicture="\A3\weapons_f\data\UI\icon_regular_CA.paa";
-		class OpticsModes
-		{
-			class periscope
-			{
-				opticsPPEffects[]=
-				{
-					"OpticsCHAbera1",
-					"OpticsBlur1"
-				};
-				useModelOptics=1;
-				visionMode="";
-				memoryPointCamera="eye";
-				cameraDir="eye_dir";
-				distanceZoomMin=300;
-				distanceZoomMax=300;
-			};
-		};
 		class WeaponSlotsInfo
 		{
 			mass=19.360001;
-			holsterScale=0;
-		};
-		sounds[]=
-		{
-			"StandardSound"
 		};
 		class BaseSoundModeType
 		{
@@ -10842,48 +6509,12 @@ class CfgWeapons
 				0.5
 			};
 		};
-		class StandardSound: BaseSoundModeType
-		{
-		};
-		handAnim[]=
-		{
-			"OFP2_ManSkeleton",
-			"\rhsafrf\addons\rhs_c_weapons\anims\tr8_holdinganim.rtm"
-		};
-		dexterity=1.8;
-		baseWeapon="rhs_weap_tr8";
 	};
 	class rhs_weap_makarov_pm: rhs_weap_pya
 	{
-		displayName="$STR_RHS_WEAP_PM";
-		descriptionShort="Pistol<br/>Caliber: 9x18mm";
-		class SAFE_PISTOL: RHS_SAFE_BASE
-		{
-		};
-		muzzles[]=
-		{
-			"this",
-			"SAFE_PISTOL"
-		};
-		weaponInfoType="rhs_rscOptics_pistol";
 		class WeaponSlotsInfo
 		{
 			mass=16.719999;
-			class CowsSlot
-			{
-				iconPosition[]={0,0};
-				iconScale=1;
-				iconPicture="\A3\Weapons_F\Data\clear_empty.paa";
-				iconPinPoint="Left";
-			};
-			class MuzzleSlot
-			{
-			};
-			class PointerSlot
-			{
-			};
-			holsterOffset="holster";
-			holsterScale=0.94999999;
 		};
 		magazineWell[]=
 		{
@@ -10891,52 +6522,19 @@ class CfgWeapons
 		};
 		dispersion=0.02;
 		ffCount=1;
-		aiRateOfFire=0.5;
-		aiRateOfFireDistance=50;
-		baseWeapon="rhs_weap_makarov_pm";
 	};
 	class rhs_weap_makarov_pmm: rhs_weap_makarov_pm
 	{
-		displayName="$STR_RHS_WEAP_PMM";
 		magazineWell[]=
 		{
 			"CBA_9x18_PMM"
 		};
-		baseWeapon="rhs_weap_makarov_pmm";
 	};
 	class rhs_weap_pb_6p9: rhs_weap_makarov_pm
 	{
-		displayName="$STR_RHS_WEAP_PB";
-		baseWeapon="rhs_weap_pb_6p9";
-		class WeaponSlotsInfo: WeaponSlotsInfo
-		{
-			holsterScale=0.94;
-			class MuzzleSlot: SlotInfo
-			{
-				iconPosition[]={0,0};
-				iconScale=1;
-				iconPicture="\A3\Weapons_F\Data\clear_empty.paa";
-				iconPinPoint="Left";
-				linkProxy="\A3\data_f\proxies\weapon_slots\MUZZLE";
-				compatibleItems[]=
-				{
-					"rhs_acc_6p9_suppressor"
-				};
-			};
-		};
-		class LinkedItems
-		{
-			class LinkedItemsMuzzle
-			{
-				slot="MuzzleSlot";
-				item="rhs_acc_6p9_suppressor";
-			};
-		};
 	};
 	class rhs_weap_6p53: rhs_weap_makarov_pm
 	{
-		displayName="$STR_RHS_WEAP_6P53";
-		baseWeapon="rhs_weap_6p53";
 		magazineWell[]=
 		{
 			"CBA_9x21_SR1M"
@@ -10948,205 +6546,27 @@ class CfgWeapons
 	};
 	class rhs_pkp_base: Rifle_Long_Base_F
 	{
-		UiPicture="\A3\weapons_f\data\UI\icon_mg_CA.paa";
 		magazineWell[]=
 		{
 			"PK_762x54R"
 		};
-		reloadAction="GestureReloadM200";
 		cursor="mg";
 		cursorAim="EmptyCursor";
 		nameSound="Mgun";
-		hasBipod=1;
-		maxRecoilSway=0.015;
-		swayDecaySpeed=1.25;
-		distanceZoomMin=300;
-		distanceZoomMax=300;
-		dexterity=2.8;
-		aimTransitionSpeed=0.5;
-		descriptionShort="Machine Gun<br/>Caliber: 7.62x54mmR";
 		recoil="recoil_zafir";
-		class ItemInfo
-		{
-			priority=1;
-			RMBhint="PKP";
-			onHoverText="TODO PKP DSS";
-		};
-		class WeaponSlotsInfo: WeaponSlotsInfo
-		{
-			class MuzzleSlot
-			{
-			};
-			class CowsSlot: rhs_russian_rifle_scopes_slot
-			{
-			};
-			class PointerSlot
-			{
-			};
-		};
-		class GunParticles: GunParticles
-		{
-			class SecondEffect
-			{
-				positionName="Nabojnicestart";
-				directionName="Nabojniceend";
-				effectName="CaselessAmmoCloud";
-			};
-			class RHS_BarrelRefract
-			{
-				positionName="usti hlavne";
-				directionName="usti hlavne up";
-				effectName="RHS_BarrelRefract";
-			};
-		};
-		changeFiremodeSound[]=
-		{
-			"A3\sounds_f\weapons\closure\firemode_changer_2",
-			0.56234133,
-			1,
-			20
-		};
-		class SAFE: RHS_SAFE_BASE
-		{
-		};
-		muzzles[]=
-		{
-			"this",
-			"SAFE"
-		};
-		modes[]=
-		{
-			"FullAuto",
-			"Single",
-			"close",
-			"short",
-			"medium",
-			"far_optic1",
-			"far_optic2"
-		};
-		discreteDistanceCameraPoint[]=
-		{
-			"eye",
-			"eye_100",
-			"eye_200",
-			"eye_300",
-			"eye_400",
-			"eye_500",
-			"eye_600",
-			"eye_700",
-			"eye_800",
-			"eye_900",
-			"eye_1000",
-			"eye_1100",
-			"eye_1200",
-			"eye_1300",
-			"eye_1400",
-			"eye_1500"
-		};
-		cameraDir="eye_look";
 		maxZeroing=1500;
 		class FullAuto: Mode_FullAuto
 		{
 			reloadTime=0.092;
 			dispersion=0.00101;
-			soundContinuous=0;
-			soundBurst=0;
-			minRange=0;
-			minRangeProbab=0.89999998;
-			midRange=15;
-			midRangeProbab=0.69999999;
-			maxRange=30;
-			maxRangeProbab=0.1;
 			aiBurstTerminable=1;
-			aiRateOfFire=1e-006;
-			showToPlayer=1;
 		};
 		class Single: Mode_SemiAuto
 		{
 			reloadTime=0.092;
 			dispersion=0.00101;
 			autoFire=0;
-			soundContinuous=0;
-			soundBurst=0;
-			minRange=2;
-			minRangeProbab=0.0099999998;
-			midRange=200;
-			midRangeProbab=0.0099999998;
-			maxRange=400;
-			maxRangeProbab=0.0099999998;
-			showToPlayer=0;
 		};
-		class close: FullAuto
-		{
-			burst=6;
-			burstRangeMax=12;
-			aiRateOfFire=0.5;
-			aiRateOfFireDistance=50;
-			minRange=0;
-			minRangeProbab=0.050000001;
-			midRange=30;
-			midRangeProbab=0.69999999;
-			maxRange=50;
-			maxRangeProbab=0.039999999;
-			showToPlayer=0;
-		};
-		class short: close
-		{
-			burst=5;
-			burstRangeMax=10;
-			aiRateOfFire=2;
-			aiRateOfFireDistance=300;
-			minRange=50;
-			minRangeProbab=0.050000001;
-			midRange=150;
-			midRangeProbab=0.69999999;
-			maxRange=300;
-			maxRangeProbab=0.039999999;
-		};
-		class medium: close
-		{
-			burst=4;
-			burstRangeMax=8;
-			aiRateOfFire=4;
-			aiRateOfFireDistance=600;
-			minRange=200;
-			minRangeProbab=0.050000001;
-			midRange=400;
-			midRangeProbab=0.60000002;
-			maxRange=600;
-			maxRangeProbab=0.1;
-		};
-		class far_optic1: close
-		{
-			requiredOpticType=1;
-			showToPlayer=0;
-			burst=3;
-			burstRangeMax=6;
-			aiRateOfFire=9;
-			aiRateOfFireDistance=900;
-			minRange=350;
-			minRangeProbab=0.039999999;
-			midRange=550;
-			midRangeProbab=0.5;
-			maxRange=700;
-			maxRangeProbab=0.0099999998;
-		};
-		class far_optic2: far_optic1
-		{
-			requiredOpticType=2;
-			autoFire=0;
-			burst=2;
-			burstRangeMax=3;
-			minRange=400;
-			minRangeProbab=0.050000001;
-			midRange=800;
-			midRangeProbab=0.5;
-			maxRange=1000;
-			maxRangeProbab=0.0099999998;
-		};
-		aiDispersionCoefY=14;
-		aiDispersionCoefX=8;
-		magazineReloadSwitchPhase=0.46000001;
 		rhs_pkas_type="rhs_acc_pkas_pkp";
 		rhs_pso1m2_type="rhs_acc_pso1m2_pkp";
 		rhs_pso1m21_type="rhs_acc_pso1m21_pkp";
@@ -11157,222 +6577,37 @@ class CfgWeapons
 	};
 	class rhs_weap_pkp: rhs_pkp_base
 	{
-		baseWeapon="rhs_weap_pkp";
-		inertia=0.80000001;
-		dexterity=1.2;
-		displayName="$STR_RHS_PKP_NAME";
-		hiddenSelections[]=
-		{
-			"camo"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"rhsafrf\addons\rhs_weapons\pkp_bis\data\pecheneg_co.paa"
-		};
-		handAnim[]=
-		{
-			"OFP2_ManSkeleton",
-			"\rhsafrf\addons\rhs_c_weapons\anims\pkp.rtm"
-		};
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=191.39999;
 		};
-		weaponInfoType="rhs_rscOptics_pkp";
 	};
 	class rhs_weap_pkm: rhs_weap_pkp
 	{
-		baseWeapon="rhs_weap_pkm";
-		inertia=0.85000002;
-		dexterity=1;
-		displayName="$STR_RHS_WEAP_PKM";
-		weaponInfoType="rhs_rscOptics_pkm";
 		recoil="recoil_zafir";
-		hiddenSelectionsTextures[]=
-		{
-			"rhsafrf\addons\rhs_weapons\pkm\pkm_co.paa"
-		};
-		handAnim[]=
-		{
-			"OFP2_ManSkeleton",
-			"\rhsafrf\addons\rhs_c_weapons\anims\pkm.rtm"
-		};
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=165;
-			class MuzzleSlot
-			{
-				iconPosition[]={0,0};
-				iconScale=1;
-				iconPicture="\A3\Weapons_F\Data\clear_empty.paa";
-				iconPinPoint="Left";
-			};
-			class CowsSlot
-			{
-				iconPosition[]={0,0};
-				iconScale=1;
-				iconPicture="\A3\Weapons_F\Data\clear_empty.paa";
-				iconPinPoint="Left";
-			};
-			class PointerSlot
-			{
-				iconPosition[]={0,0};
-				iconScale=1;
-				iconPicture="\A3\Weapons_F\Data\clear_empty.paa";
-				iconPinPoint="Left";
-			};
-		};
-		modes[]=
-		{
-			"manual",
-			"close",
-			"short",
-			"medium",
-			"far_optic1",
-			"far_optic2"
 		};
 		class manual: FullAuto
 		{
 			reloadTime=0.092;
 			dispersion=0.00092999998;
-			soundContinuous=0;
-			soundBurst=0;
 			aiBurstTerminable=1;
-			minRange=0;
-			minRangeProbab=0.30000001;
-			midRange=5;
-			midRangeProbab=0.69999999;
-			maxRange=10;
-			maxRangeProbab=0.039999999;
-			showToPlayer=1;
-		};
-		class close: manual
-		{
-			burst=6;
-			burstRangeMax=12;
-			aiRateOfFire=0.5;
-			aiRateOfFireDistance=50;
-			minRange=10;
-			minRangeProbab=0.050000001;
-			midRange=20;
-			midRangeProbab=0.69999999;
-			maxRange=50;
-			maxRangeProbab=0.039999999;
-			showToPlayer=0;
-		};
-		class short: close
-		{
-			burst=6;
-			burstRangeMax=10;
-			aiRateOfFire=2;
-			aiRateOfFireDistance=300;
-			minRange=50;
-			minRangeProbab=0.050000001;
-			midRange=150;
-			midRangeProbab=0.69999999;
-			maxRange=300;
-			maxRangeProbab=0.039999999;
-		};
-		class medium: close
-		{
-			burst=5;
-			burstRangeMax=9;
-			aiRateOfFire=4;
-			aiRateOfFireDistance=600;
-			minRange=200;
-			minRangeProbab=0.050000001;
-			midRange=300;
-			midRangeProbab=0.69999999;
-			maxRange=500;
-			maxRangeProbab=0.1;
-		};
-		class far_optic1: medium
-		{
-			requiredOpticType=1;
-			showToPlayer=0;
-			burst=3;
-			burstRangeMax=6;
-			aiRateOfFire=10;
-			aiRateOfFireDistance=1000;
-			minRange=300;
-			minRangeProbab=0.050000001;
-			midRange=500;
-			midRangeProbab=0.40000001;
-			maxRange=650;
-			maxRangeProbab=0.0089999996;
-		};
-		class far_optic2: far_optic1
-		{
-			burst=3;
-			burstRangeMax=6;
-			requiredOpticType=2;
-			minRange=400;
-			minRangeProbab=0.050000001;
-			midRange=750;
-			midRangeProbab=0.69999999;
-			maxRange=900;
-			maxRangeProbab=0.0089999996;
-			aiRateOfFire=10;
-			aiRateOfFireDistance=900;
 		};
 	};
 	class rhs_weap_rpk74: rhs_weap_pkp
 	{
-		baseWeapon="rhs_weap_rpk74";
-		weaponInfoType="RscWeaponZeroing";
-		inertia=0.69999999;
-		dexterity=1.25;
-		displayName="$STR_RHS_WEAP_RPK74M";
-		discreteDistanceCameraPoint[]=
-		{
-			"eye"
-		};
-		hiddenSelections[]=
-		{
-			""
-		};
-		reloadAction="RHS_GestureReloadRPK";
 		recoil="recoil_mk20";
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=103.4;
-			class MuzzleSlot
-			{
-				iconPosition[]={0,0};
-				iconScale=1;
-				iconPicture="\A3\Weapons_F\Data\clear_empty.paa";
-				iconPinPoint="Left";
-			};
-			class CowsSlot
-			{
-				iconPosition[]={0,0};
-				iconScale=1;
-				iconPicture="\A3\Weapons_F\Data\clear_empty.paa";
-				iconPinPoint="Left";
-			};
-			class PointerSlot
-			{
-				iconPosition[]={0,0};
-				iconScale=1;
-				iconPicture="\A3\Weapons_F\Data\clear_empty.paa";
-				iconPinPoint="Left";
-			};
 		};
 		magazineWell[]=
 		{
 			"AK_545x39",
 			"CBA_545x39_AK",
 			"CBA_545x39_RPK"
-		};
-		modes[]=
-		{
-			"single",
-			"manual",
-			"close",
-			"short",
-			"medium",
-			"far_optic1",
-			"far_optic2"
 		};
 		aidispersioncoefx=15;
 		aidispersioncoefy=16;
@@ -11381,187 +6616,30 @@ class CfgWeapons
 			reloadTime=0.092;
 			dispersion=0.0012300001;
 			autoFire=0;
-			soundContinuous=0;
-			soundBurst=0;
-			minRange=0;
-			minRangeProbab=0.0099999998;
-			midRange=0;
-			midRangeProbab=0.0099999998;
-			maxRange=0;
-			maxRangeProbab=0.0099999998;
-			showToPlayer=1;
 		};
 		class Manual: Mode_FullAuto
 		{
 			reloadTime=0.092;
 			dispersion=0.0012300001;
 			aiBurstTerminable=1;
-			soundContinuous=0;
-			soundBurst=0;
-			minRange=0;
-			minRangeProbab=0.30000001;
-			midRange=5;
-			midRangeProbab=0.69999999;
-			maxRange=10;
-			maxRangeProbab=0.039999999;
-			showToPlayer=1;
-		};
-		class close: Manual
-		{
-			burst=6;
-			burstRangeMax=12;
-			aiRateOfFire=0.5;
-			aiRateOfFireDistance=50;
-			minRange=10;
-			minRangeProbab=0.050000001;
-			midRange=20;
-			midRangeProbab=0.69999999;
-			maxRange=50;
-			maxRangeProbab=0.039999999;
-			showToPlayer=0;
-		};
-		class short: close
-		{
-			burst=5;
-			burstRangeMax=10;
-			aiRateOfFire=2;
-			aiRateOfFireDistance=300;
-			minRange=50;
-			minRangeProbab=0.050000001;
-			midRange=150;
-			midRangeProbab=0.69999999;
-			maxRange=300;
-			maxRangeProbab=0.039999999;
-		};
-		class medium: close
-		{
-			burst=5;
-			burstRangeMax=8;
-			aiRateOfFire=4;
-			aiRateOfFireDistance=600;
-			minRange=200;
-			minRangeProbab=0.050000001;
-			midRange=300;
-			midRangeProbab=0.69999999;
-			maxRange=500;
-			maxRangeProbab=0.1;
-		};
-		class far_optic1: medium
-		{
-			requiredOpticType=1;
-			showToPlayer=0;
-			burst=3;
-			burstRangeMax=6;
-			aiRateOfFire=10;
-			aiRateOfFireDistance=1000;
-			minRange=300;
-			minRangeProbab=0.050000001;
-			midRange=500;
-			midRangeProbab=0.40000001;
-			maxRange=650;
-			maxRangeProbab=0.0089999996;
-		};
-		class far_optic2: far_optic1
-		{
-			burst=3;
-			burstRangeMax=6;
-			requiredOpticType=2;
-			minRange=400;
-			minRangeProbab=0.050000001;
-			midRange=750;
-			midRangeProbab=0.69999999;
-			maxRange=900;
-			maxRangeProbab=0.0089999996;
-			aiRateOfFire=10;
-			aiRateOfFireDistance=900;
 		};
 	};
 	class rhs_weap_rpk74m: rhs_weap_rpk74
 	{
-		baseWeapon="rhs_weap_rpk74m";
-		dexterity=1.3;
-		displayName="$STR_RHS_WEAP_RPK74";
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=50;
-			class MuzzleSlot
-			{
-			};
-			class CowsSlot: rhs_russian_rifle_scopes_slot
-			{
-			};
-			class PointerSlot
-			{
-			};
 		};
 	};
 	class Launcher;
 	class Launcher_Base_F: Launcher
 	{
-		class WeaponSlotsInfo;
-		class EventHandlers;
-	};
-	class launch_RPG32_F: Launcher_Base_F
-	{
-	};
 	class rhs_weap_rpg26: Launcher_Base_F
 	{
-		displayName="$STR_RHS_RPG26_NAME";
-		descriptionShort="Rocket launcher<br/>Caliber: 72.5mm<br/>Type: Single-shot Anti-tank";
 		rhs_disposable=1;
 		reloadTime=1;
 		magazineReloadTime=1;
-		aimTransitionSpeed=0.75;
 		recoil="recoil_single_law";
-		class GunParticles
-		{
-			class effect1
-			{
-				positionName="konec hlavne";
-				directionName="usti hlavne";
-				effectName="RocketBackEffectsRPGNT";
-			};
-		};
-		reloadAction="ReloadRPG";
-		handAnim[]=
-		{
-			"OFP2_ManSkeleton",
-			"\rhsafrf\addons\rhs_c_weapons\anims\RPG26.rtm"
-		};
-		sounds[]=
-		{
-			"StandardSound"
-		};
-		class StandardSound
-		{
-			weaponSoundEffect="DefaultRifle";
-			begin1[]=
-			{
-				"A3\Sounds_F\weapons\Launcher\rpg32",
-				1.99526,
-				1,
-				900
-			};
-			soundBegin[]=
-			{
-				"begin1",
-				1
-			};
-		};
-		drySound[]=
-		{
-			"A3\sounds_f\weapons\other\dry6",
-			0.031622801,
-			1,
-			10
-		};
-		reloadMagazineSound[]=
-		{
-			"A3\sounds_f\weapons\rockets\titan_reload_final",
-			0.56234097,
-			1,
-			50
-		};
 		soundFly[]=
 		{
 			"A3\sounds_f\weapons\rockets\rocket_fly_1",
@@ -11569,64 +6647,10 @@ class CfgWeapons
 			1.5,
 			700
 		};
-		showToPlayer=1;
-		minRange=10;
-		minRangeProbab=0.89999998;
-		midRange=200;
-		midRangeProbab=0.69999999;
-		maxRange=350;
-		maxRangeProbab=0.1;
-		aiRateOfFire=7;
-		aiRateOfFireDistance=300;
 		dispersion=0.18000001;
-		weaponInfoType="rhs_rscOptics_disposable";
-		class OpticsModes
-		{
-			class ironsight
-			{
-				opticsPPEffects[]=
-				{
-					"OpticsCHAbera1",
-					"OpticsBlur1"
-				};
-				useModelOptics=0;
-				visionMode="";
-				cameraDir="op_look2";
-				discreteDistanceCameraPoint[]=
-				{
-					"eye_ironsight",
-					"eye_rangefinder"
-				};
-				distanceZoomMin=100;
-				distanceZoomMax=100;
-			};
-			class ironsight2: ironsight
-			{
-				discreteDistanceCameraPoint[]=
-				{
-					"eye",
-					"OP_eye1",
-					"OP_eye2"
-				};
-				cameraDir="op_look";
-				distanceZoomMin=50;
-				distanceZoomMax=250;
-			};
-		};
-		class Library
-		{
-			libTextDesc="The RPG-26 Aglen is a disposable anti-tank rocket launcher developed by the Soviet Union.";
-		};
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
-			allowedSlots[]={901};
 			mass=63.799999;
-		};
-		class ItemInfo
-		{
-			priority=3;
-			RMBhint="$STR_RHS_RPG26_NAME";
-			onHoverText="$STR_RHS_RPG26_NAME";
 		};
 		class Eventhandlers: EventHandlers
 		{
@@ -11638,176 +6662,45 @@ class CfgWeapons
 	};
 	class rhs_weap_rpg26_used: rhs_weap_rpg26
 	{
-		descriptionShort="Used rocket launcher<br/>Caliber: 72.5mm<br/>Type: Used launcher tube";
 		displayname="$STR_RHS_RPG26USED_NAME";
-		weaponInfoType="RscWeaponZeroing";
 	};
 	class rhs_weap_rpg18: rhs_weap_rpg26
 	{
-		displayName="$STR_RHS_RPG18_NAME";
-		descriptionShort="64mm, single-shot weapon.";
-		discreteDistanceCameraPoint[]=
-		{
-			"eye",
-			"OP_eye1",
-			"OP_eye2",
-			"OP_eye3"
-		};
 		dispersion=0.2;
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
-			allowedSlots[]={901};
 			mass=57.200001;
-		};
-		class GunParticles
-		{
-			class effect1
-			{
-				positionName="konec hlavne";
-				directionName="usti hlavne";
-				effectName="RocketBackEffectsRPGNT";
-			};
 		};
 	};
 	class rhs_weap_rpg18_used: rhs_weap_rpg18
 	{
 		descriptionshort="Used launcher tube";
 		displayname="$STR_RHS_RPG18USED_NAME";
-		weaponInfoType="RscWeaponZeroing";
 	};
 	class rhs_weap_rshg2: rhs_weap_rpg26
 	{
-		displayName="$STR_RHS_RSHG2_NAME";
-		descriptionShort="Rocket launcher<br/>Caliber: 72.5mm<br/>Type: Single-shot Assault-weapon";
 		dispersion=0.18000001;
-		class OpticsModes: OpticsModes
-		{
-			class ironsight: ironsight
-			{
-			};
-			class ironsight2: ironsight2
-			{
-				discreteDistanceCameraPoint[]=
-				{
-					"eye",
-					"OP_eye1",
-					"OP_eye2",
-					"OP_eye3",
-					"OP_eye4",
-					"OP_eye5",
-					"OP_eye6"
-				};
-				cameraDir="op_look";
-				distanceZoomMin=50;
-				distanceZoomMax=350;
-			};
-		};
-		class GunParticles
-		{
-			class effect1
-			{
-				positionName="konec hlavne";
-				directionName="usti hlavne";
-				effectName="RocketBackEffectsRPGNT";
-			};
-		};
-		class Library
-		{
-			libTextDesc="The RShG-2 is a disposable thermobaric rocket launcher derived from the RPG-26.";
-		};
-		class ItemInfo
-		{
-			priority=3;
-			RMBhint="$STR_RHS_RSHG2_NAME";
-			onHoverText="$STR_RHS_RSHG2_NAME";
-		};
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
-			allowedSlots[]={901};
 			mass=83.599998;
 		};
 	};
 	class rhs_weap_rshg2_used: rhs_weap_rshg2
 	{
-		descriptionShort="Used rocket launcher<br/>Caliber: 72.5mm<br/>Type: Used launcher tube";
 		displayname="$STR_RHS_RSHG2USED_NAME";
-		weaponInfoType="RscWeaponZeroing";
 	};
 	class rhs_weap_rpg7: Launcher_Base_F
 	{
-		displayName="$STR_RHS_RPG7V2_NAME";
-		descriptionShort="Rocket launcher<br/>Caliber: 70mm<br/>Type: Rocket-propelled grenade launcher";
-		reloadAction="RHS_GestureReloadRPG7";
-		handAnim[]=
-		{
-			"OFP2_ManSkeleton",
-			"\rhsafrf\addons\rhs_c_weapons\anims\RPG7gripPrevraceny.rtm"
-		};
-		class GunParticles
-		{
-			class effect1
-			{
-				positionName="konec hlavne";
-				directionName="usti hlavne";
-				effectName="RocketBackEffectsRPGNT";
-			};
-		};
-		magazineReloadSwitchPhase=0.30000001;
 		magazineWell[]=
 		{
 			"RPG7",
 			"CBA_RPG7"
 		};
-		modes[]=
-		{
-			"single",
-			"single_optics1",
-			"single_optics2"
-		};
 		class single: Mode_SemiAuto
 		{
 			reloadTime=0.1;
-			minRange=10;
-			minRangeProbab=0.5;
-			midRange=100;
-			midRangeProbab=0.69999999;
-			maxRange=200;
-			maxRangeProbab=0.30000001;
-			aiRateOfFire=6;
-			aiRateOfFireDistance=300;
-			aiRateOfFireDispersion=6;
 			dispersion=0.013;
 		};
-		class single_optics1: single
-		{
-			requiredOpticType=1;
-			showToPlayer=0;
-			minRange=10;
-			minRangeProbab=0.40000001;
-			midRange=250;
-			midRangeProbab=0.69999999;
-			maxRange=400;
-			maxRangeProbab=0.2;
-		};
-		class single_optics2: single_optics1
-		{
-			requiredOpticType=2;
-			minRange=10;
-			midRange=300;
-			maxRange=400;
-		};
-		weaponInfoType="rhs_rscOptics_RPG7";
-		discreteDistanceCameraPoint[]=
-		{
-			"eye_100",
-			"eye_150",
-			"eye_200",
-			"eye_300"
-		};
-		cameraDir="eye_look";
-		inertia=0.80000001;
-		dexterity=1.2;
-		aimTransitionSpeed=0.5;
 		maxZeroing=500;
 		recoil="recoil_rpg";
 		sound[]=
@@ -11817,66 +6710,13 @@ class CfgWeapons
 			1,
 			800
 		};
-		drySound[]=
-		{
-			"A3\sounds_f\weapons\other\dry6",
-			0.031622801,
-			1,
-			10
-		};
-		reloadMagazineSound[]=
-		{
-			"A3\sounds_f\weapons\rockets\titan_reload_final",
-			0.56234097,
-			1,
-			50
-		};
-		class Library
-		{
-			libTextDesc="The RPG-7V2 is a portable, unguided, shoulder-launched, anti-tank rocket-propelled grenade launcher.";
-		};
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=126.7;
-			class CowsSlot: rhs_russian_rpg7_scopes_slot
-			{
-			};
-			class PointerSlot
-			{
-			};
 		};
-		class ItemInfo
-		{
-			priority=3;
-			RMBhint="$STR_RHS_RPG7V2_NAME";
-			onHoverText="$STR_RHS_RPG7V2_NAME";
-		};
-		baseWeapon="rhs_weap_rpg7";
 		rhs_pgo7v_type="rhs_acc_pgo7v";
 		rhs_pgo7v2_type="rhs_acc_pgo7v2";
 		rhs_pgo7v3_type="rhs_acc_pgo7v3";
-	};
-	class rhs_weap_rpg7_pgo: rhs_weap_rpg7
-	{
-		class LinkedItems
-		{
-			class LinkedItemsOptic
-			{
-				slot="CowsSlot";
-				item="rhs_acc_pgo7v3";
-			};
-		};
-	};
-	class rhs_weap_rpg7_1pn93: rhs_weap_rpg7
-	{
-		class LinkedItems
-		{
-			class LinkedItemsOptic
-			{
-				slot="CowsSlot";
-				item="rhs_acc_1pn93_1";
-			};
-		};
 	};
 	class launch_O_Titan_F;
 	class rhs_weap_strela: launch_O_Titan_F
@@ -11903,27 +6743,6 @@ class CfgWeapons
 		{
 			mass=114.4;
 		};
-		class OpticsModes
-		{
-			class StepScope
-			{
-				useModelOptics=1;
-				opticsPPEffects[]=
-				{
-					"OpticsCHAbera1",
-					"OpticsBlur1"
-				};
-				distanceZoomMin=300;
-				distanceZoomMax=300;
-				memoryPointCamera="eye";
-				cameraDir="look";
-				visionMode[]=
-				{
-					"Normal"
-				};
-				thermalMode[]={};
-			};
-		};
 		maxrange=4200;
 		maxrangeprobab=0.1;
 		midrange=2350;
@@ -11932,54 +6751,10 @@ class CfgWeapons
 		minrangeprobab=0.30000001;
 		airateoffire=5;
 		airateoffiredistance=2350;
-		weaponInfoType="RscWeaponZeroing";
-		sounds[]=
-		{
-			"StandardSound"
-		};
-		class StandardSound
-		{
-			weaponSoundEffect="DefaultRifle";
-			begin1[]=
-			{
-				"rhsafrf\addons\rhs_sounds\rpg\rpg_1",
-				2.3499999,
-				1,
-				900
-			};
-			begin2[]=
-			{
-				"rhsafrf\addons\rhs_sounds\rpg\rpg_2",
-				2.3499999,
-				1,
-				900
-			};
-			soundBegin[]=
-			{
-				"begin1",
-				0.5,
-				"begin2",
-				0.5
-			};
-		};
-		class GunParticles
-		{
-			class effect1
-			{
-				positionName="missile_start";
-				directionName="missile_end";
-				effectName="RHS_9k32_Backfire";
-			};
-		};
-		class Library
-		{
-			libtextdesc="$STR_RHS_CFGMAGAZINES_9K32_LIB";
-		};
 	};
 	class rhs_weap_igla: rhs_weap_strela
 	{
 		displayname="$STR_RHS_CFGMAGAZINES_9K38_IGLA_NAME";
-		descriptionShort="Missile launcher<br/>Caliber: 72mm<br/>Type: Surface-to-air";
 		handanim[]=
 		{
 			"OFP2_ManSkeleton",
@@ -11989,86 +6764,23 @@ class CfgWeapons
 		airateoffire=5;
 		airateoffiredistance=3100;
 		maxleadspeed=320;
-		dexterity=0.5;
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=156.2;
-		};
-		reloadMagazineSound[]=
-		{
-			"A3\Sounds_F\weapons\Reloads\reload_magazine_MissileLauncher",
-			0.89125103,
-			1,
-			10
-		};
-		sounds[]=
-		{
-			"StandardSound"
-		};
-		class StandardSound
-		{
-			begin1[]=
-			{
-				"A3\Sounds_F\weapons\Rockets\titan_4",
-				1.41254,
-				1,
-				1100
-			};
-			soundBegin[]=
-			{
-				"begin1",
-				1
-			};
-			weaponSoundEffect="DefaultRifle";
 		};
 	};
 	class Binocular;
 	class rhs_tr8_periscope: Binocular
 	{
-		displayName="$STR_RHS_MSIC_TR8";
 		descriptionUse="$STR_A3_cfgWeapons_Default_Binocular1";
-		class OpticsModes
-		{
-			class periscope
-			{
-				opticsPPEffects[]=
-				{
-					"OpticsCHAbera1",
-					"OpticsBlur1"
-				};
-				useModelOptics=1;
-				visionMode="";
-				memoryPointCamera="eye";
-				cameraDir="eye_dir";
-				distanceZoomMin=300;
-				distanceZoomMax=300;
-			};
-		};
-		class Library
-		{
-			libTextDesc="$STR_LIB_BINOCULAR";
-		};
-		descriptionShort="$STR_DSS_BINOCULAR";
 		class WeaponSlotsInfo
 		{
 			mass=19.360001;
 		};
 	};
-	class rhs_tr8_periscope_pip: rhs_tr8_periscope
-	{
-		displayName="$STR_RHS_MSIC_TR8_PIP";
-		weaponInfoType="rhs_tr8_pip_handler";
-	};
 	class Rangefinder;
 	class rhs_pdu4: Rangefinder
 	{
-		displayName="$STR_RHS_PDU4";
-		class Library
-		{
-			libTextDesc="$STR_A3_cfgWeapons_Rangefinder_Library0";
-		};
-		descriptionShort="$STR_RHS_PDU4";
-		weaponInfoType="rhs_gui_optic_pdu4_rangefinder";
 		visionMode[]=
 		{
 			"Normal",
@@ -12087,51 +6799,16 @@ class CfgWeapons
 	{
 		class ItemInfo: InventoryFlashLightItem_Base_F
 		{
-			class FlashLight;
-		};
-	};
 	class rhs_acc_harris_swivel: acc_pointer_IR
 	{
-		displayName="Harris Bipod";
-		descriptionShort="Harris Bipod.";
 		class ItemInfo
 		{
-			deployedPivot="bipod";
-			hasBipod=1;
 			mass=10;
-			type=302;
 		};
-		inertia=0.2;
-		type=131072;
-	};
-	class rhs_muzzleFlash_dtk: ItemCore
-	{
-	};
-	class rhs_muzzleFlash_dtk1: rhs_muzzleFlash_dtk
-	{
-	};
-	class rhs_muzzleFlash_dtk2: rhs_muzzleFlash_dtk
-	{
-	};
-	class rhs_muzzleFlash_dtk3: rhs_muzzleFlash_dtk
-	{
-	};
-	class rhs_muzzleFlash_ak5: rhs_muzzleFlash_dtk
-	{
-	};
-	class rhs_muzzleFlash_uuk: rhs_muzzleFlash_dtk
-	{
-	};
-	class rhs_muzzleflash_pgs64: rhs_muzzleFlash_dtk
-	{
-	};
-	class rhs_muzzleflash_dtkakm: rhs_muzzleFlash_dtk
-	{
 	};
 	class muzzle_snds_H;
 	class rhs_silencer_base: muzzle_snds_H
 	{
-		displayName="$STR_RHS_ACC_TGPA";
 		class ItemInfo: InventoryMuzzleItem_Base_F
 		{
 			mass=7;
@@ -12157,63 +6834,14 @@ class CfgWeapons
 				fireLightCoef="0.1f";
 				recoilCoef="1.0f";
 				recoilProneCoef="1.0f";
-				minRangeCoef="1.0f";
-				minRangeProbabCoef="1.0f";
-				midRangeCoef="1.0f";
-				midRangeProbabCoef="1.0f";
-				maxRangeCoef="1.0f";
-				maxRangeProbabCoef="1.0f";
 			};
 			muzzleEnd="zaslehPoint";
 			alternativeFire="Zasleh2";
 			soundTypeIndex=1;
-			inertia=0.2;
 		};
-	};
-	class rhs_acc_tgpa: rhs_silencer_base
-	{
-	};
-	class rhs_acc_pbs1: rhs_silencer_base
-	{
-		displayName="$STR_RHS_ACC_PBS1";
-		inertia=0.1;
-	};
-	class rhs_acc_tgpv: rhs_silencer_base
-	{
-		displayName="$STR_RHS_ACC_TGPV";
-	};
-	class rhs_acc_tgpv2: rhs_acc_tgpv
-	{
-		displayName="$STR_RHS_ACC_TGPV2";
-	};
-	class rhs_acc_dtk4short: rhs_silencer_base
-	{
-		displayName="$STR_RHS_ACC_DTK4SHORT";
-		inertia=0.1;
-	};
-	class rhs_acc_dtk4long: rhs_silencer_base
-	{
-		displayName="$STR_RHS_ACC_DTK4LONG";
-		inertia=0.2;
-	};
-	class rhs_acc_dtk4screws: rhs_silencer_base
-	{
-		displayName="$STR_RHS_ACC_DTK4SCREWS";
-		inertia=0.1;
-	};
-	class rhs_acc_pbs4: rhs_silencer_base
-	{
-		displayName="$STR_RHS_ACC_PBS4";
-		inertia=0.23;
-	};
-	class rhs_acc_6p9_suppressor: rhs_silencer_base
-	{
-		displayName="$STR_RHS_ACC_PB_SUP";
-		inertia=0.1;
 	};
 	class rhs_acc_dtk3: rhs_silencer_base
 	{
-		displayName="$STR_RHS_ACC_DTK3";
 		class ItemInfo: ItemInfo
 		{
 			mass=5;
@@ -12242,11 +6870,9 @@ class CfgWeapons
 			};
 			alternativeFire="rhs_muzzleFlash_dtk3";
 		};
-		inertia=0;
 	};
 	class rhs_acc_dtk: rhs_acc_dtk3
 	{
-		displayName="$STR_RHS_ACC_DTK";
 		class ItemInfo: ItemInfo
 		{
 			class AmmoCoef: AmmoCoef
@@ -12266,7 +6892,6 @@ class CfgWeapons
 	};
 	class rhs_acc_dtkakm: rhs_acc_dtk3
 	{
-		displayName="$STR_RHS_ACC_DTK";
 		class ItemInfo: ItemInfo
 		{
 			class AmmoCoef: AmmoCoef
@@ -12286,7 +6911,6 @@ class CfgWeapons
 	};
 	class rhs_acc_dtk1983: rhs_acc_dtk
 	{
-		displayName="$STR_RHS_ACC_DTK1983";
 		class ItemInfo: ItemInfo
 		{
 			class AmmoCoef: AmmoCoef
@@ -12306,7 +6930,6 @@ class CfgWeapons
 	};
 	class rhs_acc_dtk1: rhs_acc_dtk3
 	{
-		displayName="$STR_RHS_ACC_DTK1";
 		class ItemInfo: ItemInfo
 		{
 			class MuzzleCoef: MuzzleCoef
@@ -12321,7 +6944,6 @@ class CfgWeapons
 	};
 	class rhs_acc_dtk1l: rhs_acc_dtk1
 	{
-		displayName="$STR_RHS_ACC_DTK1L";
 		class ItemInfo: ItemInfo
 		{
 			class MuzzleCoef: MuzzleCoef
@@ -12335,7 +6957,6 @@ class CfgWeapons
 	};
 	class rhs_acc_dtk1p: rhs_acc_dtk1
 	{
-		displayName="$STR_RHS_ACC_DTK1P";
 		class ItemInfo: ItemInfo
 		{
 			class MuzzleCoef: MuzzleCoef
@@ -12349,7 +6970,6 @@ class CfgWeapons
 	};
 	class rhs_acc_dtk2: rhs_acc_dtk3
 	{
-		displayName="$STR_RHS_ACC_DTK2";
 		class ItemInfo: ItemInfo
 		{
 			class AmmoCoef: AmmoCoef
@@ -12369,7 +6989,6 @@ class CfgWeapons
 	};
 	class rhs_acc_uuk: rhs_acc_dtk3
 	{
-		displayName="$STR_RHS_ACC_UUK";
 		class ItemInfo: ItemInfo
 		{
 			alternativeFire="rhs_muzzleflash_uuk";
@@ -12389,7 +7008,6 @@ class CfgWeapons
 	};
 	class rhs_acc_ak5: rhs_acc_dtk3
 	{
-		displayName="$STR_RHS_ACC_AK5";
 		class ItemInfo: ItemInfo
 		{
 			alternativeFire="rhs_muzzleFlash_ak5";
@@ -12409,7 +7027,6 @@ class CfgWeapons
 	};
 	class rhs_acc_pgs64: rhs_acc_dtk
 	{
-		displayName="$STR_RHS_ACC_PGS64";
 		class ItemInfo: ItemInfo
 		{
 			alternativeFire="rhs_muzzleflash_pgs64";
@@ -12427,448 +7044,75 @@ class CfgWeapons
 			};
 		};
 	};
-	class rhs_acc_pgs64_74u: rhs_acc_pgs64
-	{
-	};
-	class rhs_acc_pgs64_74un: rhs_acc_pgs64_74u
-	{
-	};
 	class rhs_acc_sniper_base: ItemCore
 	{
-		displayName="$STR_RHS_ACC_PSO1M2";
-		descriptionShort="$STR_RHS_ACC_PSO1M2_SD";
-		weaponInfoType="RscWeaponZeroing";
 		class ItemInfo: InventoryOpticsItem_Base_F
 		{
 			opticType=2;
 			mass=13.64;
-			RMBhint="Optical Sniper Sight";
-			class OpticsModes
-			{
-				class pso1_scope
-				{
-					useModelOptics=1;
-					opticsPPEffects[]=
-					{
-						"OpticsCHAbera2",
-						"OpticsBlur2",
-						"rhs_pso1_Blur"
-					};
-					memoryPointCamera="opticView";
-					visionMode[]=
-					{
-						"Normal"
-					};
-					distanceZoomMin=200;
-					distanceZoomMax=1000;
-					cameraDir="";
-				};
-				class rhs_1p29_iron
-				{
-					useModelOptics=0;
-					opticsPPEffects[]=
-					{
-						""
-					};
-					memoryPointCamera="eye_svd";
-					visionMode[]={};
-					distanceZoomMin=300;
-					distanceZoomMax=300;
-					cameraDir="";
-				};
-			};
 		};
-		inertia=0.2;
 	};
 	class rhs_acc_1p29: rhs_acc_sniper_base
 	{
-		displayName="$STR_RHS_ACC_1P29";
-		descriptionShort="$STR_RHS_ACC_1P29_SD";
-		weaponInfoType="rhs_rscOptics_acc_1p29";
 		class ItemInfo: InventoryOpticsItem_Base_F
 		{
 			opticType=2;
 			mass=17.6;
-			RMBhint="Optical Sight";
-			class OpticsModes
-			{
-				class rhs_1p29_scope
-				{
-					useModelOptics=1;
-					opticsPPEffects[]=
-					{
-						"OpticsCHAbera1",
-						"OpticsBlur1",
-						"rhs_1P29_Blur"
-					};
-					memoryPointCamera="opticView";
-					visionMode[]=
-					{
-						"Normal"
-					};
-					distanceZoomMin=200;
-					distanceZoomMax=1000;
-					cameraDir="";
-				};
-				class rhs_1p29_iron
-				{
-					useModelOptics=0;
-					opticsPPEffects[]=
-					{
-						""
-					};
-					memoryPointCamera="eye";
-					visionMode[]={};
-					distanceZoomMin=300;
-					distanceZoomMax=300;
-					cameraDir="";
-				};
-			};
 		};
-		inertia=0.1;
 		rhs_optic_base="rhs_acc_1p29";
 	};
 	class rhs_acc_1p29_pkp: rhs_acc_1p29
 	{
-		class ItemInfo: ItemInfo
-		{
-			class OpticsModes: OpticsModes
-			{
-				class rhs_1p29_scope: rhs_1p29_scope
-				{
-				};
-				class rhs_1p29_iron: rhs_1p29_iron
-				{
-					memoryPointCamera="eye3";
-					distanceZoomMax=100;
-				};
-			};
-		};
 	};
 	class rhs_acc_1p29_asval: rhs_acc_1p29
 	{
-		class ItemInfo: ItemInfo
-		{
-			class OpticsModes: OpticsModes
-			{
-				class rhs_1p29_scope: rhs_1p29_scope
-				{
-				};
-				class rhs_1p29_iron: rhs_1p29_iron
-				{
-					discreteDistanceCameraPoint[]=
-					{
-						"eye_val",
-						"eye_val_150",
-						"eye_val_200",
-						"eye_val_220",
-						"eye_val_250",
-						"eye_val_270",
-						"eye_val_300",
-						"eye_val_320",
-						"eye_val_350",
-						"eye_val_370",
-						"eye_val_400",
-						"eye_val_420"
-					};
-					cameraDir="eye_val_look";
-					distanceZoomMax=420;
-				};
-			};
-		};
 	};
 	class rhs_acc_1p29_3d: rhs_acc_1p29
 	{
-		weaponInfoType="rhs_rscOptics_acc_1p29_3d";
-		class ItemInfo: ItemInfo
-		{
-			class OpticsModes: OpticsModes
-			{
-				class rhs_1p29_scope: rhs_1p29_scope
-				{
-					useModelOptics=0;
-					memoryPointCamera="opticView_3d";
-				};
-				class rhs_1p29_iron: rhs_1p29_iron
-				{
-				};
-			};
-		};
 	};
 	class rhs_acc_1p29_pkp_3d: rhs_acc_1p29_3d
 	{
-		class ItemInfo: ItemInfo
-		{
-			class OpticsModes: OpticsModes
-			{
-				class rhs_1p29_scope: rhs_1p29_scope
-				{
-				};
-				class rhs_1p29_iron: rhs_1p29_iron
-				{
-					memoryPointCamera="eye3";
-					distanceZoomMax=100;
-				};
-			};
-		};
 	};
 	class rhs_acc_1p29_asval_3d: rhs_acc_1p29_3d
 	{
-		class ItemInfo: ItemInfo
-		{
-			class OpticsModes: OpticsModes
-			{
-				class rhs_1p29_scope: rhs_1p29_scope
-				{
-				};
-				class rhs_1p29_iron: rhs_1p29_iron
-				{
-					discreteDistanceCameraPoint[]=
-					{
-						"eye_val",
-						"eye_val_150",
-						"eye_val_200",
-						"eye_val_220",
-						"eye_val_250",
-						"eye_val_270",
-						"eye_val_300",
-						"eye_val_320",
-						"eye_val_350",
-						"eye_val_370",
-						"eye_val_400",
-						"eye_val_420"
-					};
-					cameraDir="eye_val_look";
-					distanceZoomMax=420;
-				};
-			};
-		};
 	};
 	class rhs_acc_1p78: rhs_acc_1p29
 	{
-		displayName="$STR_RHS_ACC_1P78";
-		descriptionShort="$STR_RHS_ACC_1P78_SD";
-		weaponInfoType="rhs_rscOptics_acc_1p78";
 		class ItemInfo: InventoryOpticsItem_Base_F
 		{
 			opticType=1;
 			mass=17.6;
-			RMBhint="Optical Sight";
-			class OpticsModes
-			{
-				class rhs_1p29_scope
-				{
-					useModelOptics=1;
-					opticsPPEffects[]=
-					{
-						"OpticsCHAbera1",
-						"OpticsBlur3",
-						"rhs_1P78_Blur"
-					};
-					memoryPointCamera="opticView";
-					visionMode[]=
-					{
-						"Normal"
-					};
-					distanceZoomMin=200;
-					distanceZoomMax=1000;
-					cameraDir="";
-				};
-				class rhs_above_sight
-				{
-					useModelOptics=0;
-					opticsPPEffects[]=
-					{
-						"Default"
-					};
-					memoryPointCamera="eye";
-					visionMode[]={};
-					distanceZoomMin=100;
-					distanceZoomMax=100;
-					cameraDir="";
-				};
-			};
 		};
 		rhs_optic_base="rhs_acc_1p78";
 	};
 	class rhs_acc_1p78_3d: rhs_acc_1p78
 	{
-		weaponInfoType="rhs_rscOptics_acc_1p78_3d";
-		class ItemInfo: ItemInfo
-		{
-			class OpticsModes: OpticsModes
-			{
-				class rhs_1p29_scope: rhs_1p29_scope
-				{
-					useModelOptics=0;
-					memoryPointCamera="opticView_3d";
-				};
-				class rhs_above_sight: rhs_above_sight
-				{
-				};
-			};
-		};
 	};
 	class rhs_acc_pkas: rhs_acc_sniper_base
 	{
-		displayName="$STR_RHS_ACC_PKAS";
-		descriptionShort="$STR_RHS_ACC_PKAS_SD";
-		weaponInfoType="rhs_rscOptics_acc_pkas";
 		class ItemInfo: InventoryOpticsItem_Base_F
 		{
 			opticType=1;
 			mass=8.8000002;
-			RMBhint="Optical Sight";
-			class OpticsModes
-			{
-				class ACO
-				{
-					useModelOptics=0;
-					memoryPointCamera="opticview";
-					distanceZoomMin=100;
-					distanceZoomMax=100;
-					cameraDir="";
-					visionMode[]={};
-					opticsPPEffects[]=
-					{
-						"OpticsBlur1"
-					};
-				};
-				class rhs_1p29_iron
-				{
-					useModelOptics=0;
-					opticsPPEffects[]=
-					{
-						""
-					};
-					discreteDistanceCameraPoint[]=
-					{
-						"eye_ak",
-						"eye_ak_100",
-						"eye_ak_200",
-						"eye_ak_300",
-						"eye_ak_400",
-						"eye_ak_500",
-						"eye_ak_600",
-						"eye_ak_700",
-						"eye_ak_800",
-						"eye_ak_900",
-						"eye_ak_1000"
-					};
-					cameraDir="eye_ak_look";
-					visionMode[]={};
-					distanceZoomMin=300;
-					distanceZoomMax=300;
-				};
-			};
 		};
-		inertia=0.1;
 	};
 	class rhs_acc_pkas_asval: rhs_acc_pkas
 	{
-		class ItemInfo: ItemInfo
-		{
-			class OpticsModes: OpticsModes
-			{
-				class ACO: ACO
-				{
-				};
-				class rhs_1p29_iron: rhs_1p29_iron
-				{
-					discreteDistanceCameraPoint[]=
-					{
-						"eye_val",
-						"eye_val_150",
-						"eye_val_200",
-						"eye_val_220",
-						"eye_val_250",
-						"eye_val_270",
-						"eye_val_300",
-						"eye_val_320",
-						"eye_val_350",
-						"eye_val_370",
-						"eye_val_400",
-						"eye_val_420"
-					};
-					cameraDir="eye_val_look";
-					distanceZoomMax=420;
-				};
-			};
-		};
 	};
 	class rhs_acc_pkas_pkp: rhs_acc_pkas
 	{
-		class ItemInfo: ItemInfo
-		{
-			class OpticsModes: OpticsModes
-			{
-				class ACO: ACO
-				{
-				};
-				class rhs_1p29_iron: rhs_1p29_iron
-				{
-					memoryPointCamera="eye_pkp";
-					discreteDistanceCameraPoint[]=
-					{
-						"eye_pkp",
-						"eye_pkp_100",
-						"eye_pkp_200",
-						"eye_pkp_300",
-						"eye_pkp_400",
-						"eye_pkp_500",
-						"eye_pkp_600",
-						"eye_pkp_700",
-						"eye_pkp_800",
-						"eye_pkp_900",
-						"eye_pkp_1000",
-						"eye_pkp_1100",
-						"eye_pkp_1200",
-						"eye_pkp_1300",
-						"eye_pkp_1400",
-						"eye_pkp_1500"
-					};
-					distanceZoomMin=100;
-					distanceZoomMax=1500;
-					cameraDir="eye_pkp_look";
-				};
-			};
-		};
 	};
 	class rhs_acc_1p63: rhs_acc_pkas
 	{
-		displayName="$STR_RHS_ACC_1P63";
-		descriptionShort="$STR_RHS_ACC_1P63_SD";
-		weaponInfoType="RscWeaponZeroing";
 		class ItemInfo: InventoryOpticsItem_Base_F
 		{
 			opticType=1;
 			mass=8.8000002;
-			RMBhint="Optical Sight";
-			class OpticsModes
-			{
-				class ACO
-				{
-					useModelOptics=0;
-					memoryPointCamera="opticview";
-					distanceZoomMin=100;
-					distanceZoomMax=100;
-					cameraDir="";
-					visionMode[]={};
-					opticsPPEffects[]=
-					{
-						"OpticsBlur1"
-					};
-				};
-			};
 		};
 	};
 	class rhs_acc_ekp1: rhs_acc_1p63
 	{
-		displayName="$STR_RHS_ACC_EKP1";
-		descriptionShort="$STR_RHS_ACC_EKP1_SD";
-		weaponInfoType="RHS_RscOptics_Kobra";
 		rhs_accessory_next="rhs_acc_ekp1b";
-		inertia=0;
 	};
 	class rhs_acc_ekp1b: rhs_acc_ekp1
 	{
@@ -12884,10 +7128,7 @@ class CfgWeapons
 	};
 	class rhs_acc_ekp8_02: rhs_acc_ekp1
 	{
-		displayName="$STR_RHS_ACC_EKP8_02";
-		descriptionShort="$STR_RHS_ACC_EKP1_SD";
 		rhs_accessory_next="rhs_acc_ekp8_02b";
-		inertia=0;
 	};
 	class rhs_acc_ekp8_02b: rhs_acc_ekp8_02
 	{
@@ -12903,9 +7144,6 @@ class CfgWeapons
 	};
 	class rhs_acc_ekp8_18: rhs_acc_ekp8_02
 	{
-		displayName="$STR_RHS_ACC_EKP8_18";
-		descriptionShort="$STR_RHS_ACC_EKP1_SD";
-		inertia=0;
 		rhs_accessory_next="rhs_acc_ekp8_18b";
 	};
 	class rhs_acc_ekp8_18b: rhs_acc_ekp8_18
@@ -12920,888 +7158,161 @@ class CfgWeapons
 	{
 		rhs_accessory_next="rhs_acc_ekp8_18";
 	};
-	class rhs_acc_1p87: rhs_acc_1p63
-	{
-		displayName="$STR_RHS_ACC_1P87";
-		descriptionShort="$STR_RHS_ACC_EKP1_SD";
-		inertia=0.02;
-	};
 	class rhs_acc_okp7_base: rhs_acc_1p63
 	{
-		descriptionShort="Collimated";
-		weaponInfoType="RscWeaponZeroing";
-		class ItemInfo: ItemInfo
-		{
-			class OpticsModes: OpticsModes
-			{
-				class ACO: ACO
-				{
-					cameraDir="";
-				};
-			};
-		};
 	};
 	class rhs_acc_okp7_dovetail: rhs_acc_okp7_base
 	{
-		displayName="$STR_RHS_ACC_OKP7";
-		inertia=0;
-		class ItemInfo: ItemInfo
-		{
-			class OpticsModes: OpticsModes
-			{
-				class ACO: ACO
-				{
-				};
-				class cowitness: ACO
-				{
-					memoryPointCamera="cowitness_ak74";
-				};
-			};
-		};
-	};
-	class rhs_acc_okp7_picatinny: rhs_acc_okp7_base
-	{
-		displayName="$STR_RHS_ACC_OKP7_PICATINNY";
 	};
 	class rhs_acc_pso1m2: rhs_acc_sniper_base
 	{
-		weaponInfoType="rhs_rscOptics_acc_pso1";
-		class ItemInfo: ItemInfo
-		{
-			class OpticsModes: OpticsModes
-			{
-				class pso1_scope: pso1_scope
-				{
-				};
-				class rhs_1p29_iron: rhs_1p29_iron
-				{
-				};
-			};
-		};
-		inertia=0.2;
 		rhs_optic_ads="rhs_acc_pso1m2_ads";
 		rhs_optic_ads_night="rhs_acc_pso1m2_ads_night";
 		rhs_optic_ads_base="rhs_acc_pso1m2";
 	};
 	class rhs_acc_pso1m2_ironsight: rhs_acc_pso1m2
 	{
-		class ItemInfo: ItemInfo
-		{
-			class OpticsModes: OpticsModes
-			{
-				class rhs_1p29_iron: rhs_1p29_iron
-				{
-				};
-				class pso1_scope: pso1_scope
-				{
-				};
-			};
-		};
 	};
 	class rhs_acc_pso1m2_ads: rhs_acc_pso1m2
-	{
-		class ItemInfo: ItemInfo
-		{
-			class OpticsModes: OpticsModes
-			{
-				class pso1_scope: pso1_scope
-				{
-					useModelOptics=0;
-				};
-				class rhs_1p29_iron: rhs_1p29_iron
-				{
-				};
-			};
-		};
-	};
-	class rhs_acc_pso1m2_ads_night: rhs_acc_pso1m2_ads
 	{
 	};
 	class rhs_acc_pso1m2_ak: rhs_acc_pso1m2
 	{
-		class ItemInfo: ItemInfo
-		{
-			class OpticsModes: OpticsModes
-			{
-				class pso1_scope: pso1_scope
-				{
-				};
-				class rhs_1p29_iron: rhs_1p29_iron
-				{
-					discreteDistanceCameraPoint[]=
-					{
-						"eye_ak",
-						"eye_ak_100",
-						"eye_ak_200",
-						"eye_ak_300",
-						"eye_ak_400",
-						"eye_ak_500"
-					};
-					cameraDir="eye_ak_look";
-				};
-			};
-		};
 	};
 	class rhs_acc_pso1m2_ak_ironsight: rhs_acc_pso1m2_ak
 	{
-		class ItemInfo: ItemInfo
-		{
-			class OpticsModes: OpticsModes
-			{
-				class rhs_1p29_iron: rhs_1p29_iron
-				{
-				};
-				class pso1_scope: pso1_scope
-				{
-				};
-			};
-		};
 	};
 	class rhs_acc_pso1m2_pkp: rhs_acc_pso1m2
 	{
-		class ItemInfo: ItemInfo
-		{
-			class OpticsModes: OpticsModes
-			{
-				class pso1_scope: pso1_scope
-				{
-				};
-				class rhs_1p29_iron
-				{
-					useModelOptics=0;
-					opticsPPEffects[]=
-					{
-						""
-					};
-					memoryPointCamera="eye3";
-					visionMode[]={};
-					distanceZoomMin=300;
-					distanceZoomMax=300;
-					cameraDir="";
-				};
-			};
-		};
 	};
 	class rhs_acc_pso1m2_pkp_ironsight: rhs_acc_pso1m2_pkp
 	{
-		class ItemInfo: ItemInfo
-		{
-			class OpticsModes: OpticsModes
-			{
-				class rhs_1p29_iron: rhs_1p29_iron
-				{
-				};
-				class pso1_scope: pso1_scope
-				{
-				};
-			};
-		};
 	};
 	class rhs_acc_pso1m2_asval: rhs_acc_pso1m2
 	{
-		class ItemInfo: ItemInfo
-		{
-			class OpticsModes: OpticsModes
-			{
-				class pso1_scope: pso1_scope
-				{
-				};
-				class rhs_1p29_iron: rhs_1p29_iron
-				{
-					discreteDistanceCameraPoint[]=
-					{
-						"eye_val",
-						"eye_val_150",
-						"eye_val_200",
-						"eye_val_220",
-						"eye_val_250",
-						"eye_val_270",
-						"eye_val_300",
-						"eye_val_320",
-						"eye_val_350"
-					};
-					cameraDir="eye_val_look";
-					distanceZoomMax=420;
-				};
-			};
-		};
 	};
 	class rhs_acc_pso1m2_asval_ironsight: rhs_acc_pso1m2_asval
 	{
-		class ItemInfo: ItemInfo
-		{
-			class OpticsModes: OpticsModes
-			{
-				class rhs_1p29_iron: rhs_1p29_iron
-				{
-				};
-				class pso1_scope: pso1_scope
-				{
-				};
-			};
-		};
 	};
 	class rhs_acc_pso1m21: rhs_acc_pso1m2
 	{
-		displayName="$STR_RHS_ACC_PSO1M21";
-		weaponInfoType="rhs_rscOptics_acc_pso11";
-		class ItemInfo: ItemInfo
-		{
-			class OpticsModes: OpticsModes
-			{
-				class pso1_scope: pso1_scope
-				{
-					distanceZoomMin=50;
-					distanceZoomMax=400;
-				};
-				class rhs_1p29_iron: rhs_1p29_iron
-				{
-					discreteDistanceCameraPoint[]=
-					{
-						"eye_val",
-						"eye_val_150",
-						"eye_val_200",
-						"eye_val_220",
-						"eye_val_250",
-						"eye_val_270",
-						"eye_val_300",
-						"eye_val_320",
-						"eye_val_350"
-					};
-					cameraDir="eye_val_look";
-					distanceZoomMax=420;
-				};
-			};
-		};
-		inertia=0.2;
 		rhs_optic_ads="rhs_acc_pso1m21_ads";
 		rhs_optic_ads_night="rhs_acc_pso1m21_ads_night";
 		rhs_optic_ads_base="rhs_acc_pso1m21";
 	};
 	class rhs_acc_pso1m21_ironsight: rhs_acc_pso1m21
 	{
-		class ItemInfo: ItemInfo
-		{
-			class OpticsModes: OpticsModes
-			{
-				class rhs_1p29_iron: rhs_1p29_iron
-				{
-				};
-				class pso1_scope: pso1_scope
-				{
-				};
-			};
-		};
 	};
 	class rhs_acc_pso1m21_ads: rhs_acc_pso1m21
-	{
-		class ItemInfo: ItemInfo
-		{
-			class OpticsModes: OpticsModes
-			{
-				class pso1_scope: pso1_scope
-				{
-					useModelOptics=0;
-				};
-				class rhs_1p29_iron: rhs_1p29_iron
-				{
-				};
-			};
-		};
-	};
-	class rhs_acc_pso1m21_ads_night: rhs_acc_pso1m21_ads
 	{
 	};
 	class rhs_acc_pso1m21_ak: rhs_acc_pso1m21
 	{
-		class ItemInfo: ItemInfo
-		{
-			class OpticsModes: OpticsModes
-			{
-				class pso1_scope: pso1_scope
-				{
-				};
-				class rhs_1p29_iron: rhs_1p29_iron
-				{
-					discreteDistanceCameraPoint[]=
-					{
-						"eye_ak",
-						"eye_ak_100",
-						"eye_ak_200",
-						"eye_ak_300",
-						"eye_ak_400",
-						"eye_ak_500"
-					};
-					cameraDir="eye_ak_look";
-				};
-			};
-		};
 	};
 	class rhs_acc_pso1m21_svd: rhs_acc_pso1m21
 	{
-		class ItemInfo: ItemInfo
-		{
-			class OpticsModes: OpticsModes
-			{
-				class pso1_scope: pso1_scope
-				{
-				};
-				class rhs_1p29_iron: rhs_1p29_iron
-				{
-					memoryPointCamera="eye_svd";
-					discreteDistanceCameraPoint[]=
-					{
-						"eye_svd"
-					};
-					cameraDir="eye_svd_look";
-					distanceZoomMin=100;
-					distanceZoomMax=100;
-				};
-			};
-		};
 	};
 	class rhs_acc_pso1m21_pkp: rhs_acc_pso1m21
 	{
-		class ItemInfo: ItemInfo
-		{
-			class OpticsModes: OpticsModes
-			{
-				class pso1_scope: pso1_scope
-				{
-				};
-				class rhs_1p29_iron
-				{
-					useModelOptics=0;
-					opticsPPEffects[]=
-					{
-						""
-					};
-					memoryPointCamera="eye3";
-					visionMode[]={};
-					distanceZoomMin=300;
-					distanceZoomMax=300;
-					cameraDir="";
-				};
-			};
-		};
 	};
 	class rhs_acc_pso1m21_ak_ironsight: rhs_acc_pso1m21_ak
 	{
-		class ItemInfo: ItemInfo
-		{
-			class OpticsModes: OpticsModes
-			{
-				class rhs_1p29_iron: rhs_1p29_iron
-				{
-				};
-				class pso1_scope: pso1_scope
-				{
-				};
-			};
-		};
 	};
 	class rhs_acc_pso1m21_svd_ironsight: rhs_acc_pso1m21_svd
 	{
-		class ItemInfo: ItemInfo
-		{
-			class OpticsModes: OpticsModes
-			{
-				class rhs_1p29_iron: rhs_1p29_iron
-				{
-				};
-				class pso1_scope: pso1_scope
-				{
-				};
-			};
-		};
 	};
 	class rhs_acc_pso1m21_pkp_ironsight: rhs_acc_pso1m21_pkp
 	{
-		class ItemInfo: ItemInfo
-		{
-			class OpticsModes: OpticsModes
-			{
-				class rhs_1p29_iron: rhs_1p29_iron
-				{
-				};
-				class pso1_scope: pso1_scope
-				{
-				};
-			};
-		};
 	};
 	class rhs_acc_nita: rhs_acc_pkas
 	{
-		displayName="$STR_RHS_ACC_NITA";
-		descriptionShort="$STR_RHS_ACC_NITA";
-		weaponInfoType="rhs_rscOptics_acc_nita";
 		class ItemInfo: InventoryOpticsItem_Base_F
 		{
 			opticType=1;
 			mass=11.64;
-			RMBhint="Collimated Optic";
-			class OpticsModes
-			{
-				class rhs_nita_scope
-				{
-					useModelOptics=1;
-					opticsPPEffects[]=
-					{
-						"OpticsCHAbera1",
-						"OpticsBlur1"
-					};
-					memoryPointCamera="opticview";
-					visionMode[]=
-					{
-						"Normal"
-					};
-					distanceZoomMin=200;
-					distanceZoomMax=1000;
-					cameraDir="";
-				};
-				class rhs_nita_iron
-				{
-					useModelOptics=0;
-					opticsPPEffects[]=
-					{
-						""
-					};
-					memoryPointCamera="eye";
-					visionMode[]={};
-					distanceZoomMin=300;
-					distanceZoomMax=300;
-					cameraDir="";
-				};
-			};
 		};
 		rhs_optic_base="rhs_acc_nita";
 	};
 	class rhs_acc_nita_3d: rhs_acc_nita
 	{
-		class ItemInfo: ItemInfo
-		{
-			class OpticsModes: OpticsModes
-			{
-				class rhs_nita_scope: rhs_nita_scope
-				{
-					useModelOptics=0;
-					memoryPointCamera="opticview_3d";
-				};
-				class rhs_nita_iron: rhs_nita_iron
-				{
-				};
-			};
-		};
-	};
-	class rhs_acc_npz: rhs_acc_ekp1
-	{
-		weaponInfoType="rhs_rscOptics_acc_npz";
-		displayName="Rail Adapter";
-		inertia=0;
 	};
 	class rhs_acc_pgo7v: rhs_acc_sniper_base
 	{
-		displayName="$STR_RHS_ACC_PGO7V";
-		descriptionShort="$STR_RHS_ACC_PGO7V_SD";
-		weaponInfoType="rhs_rscOptics_acc_pgo7";
 		class ItemInfo: InventoryOpticsItem_Base_F
 		{
 			opticType=2;
 			mass=13.64;
-			RMBhint="Optical Sight";
-			class OpticsModes
-			{
-				class rhs_pgo7v_scope
-				{
-					useModelOptics=1;
-					opticsPPEffects[]=
-					{
-						"OpticsCHAbera1",
-						"OpticsBlur1"
-					};
-					memoryPointCamera="opticView";
-					visionMode[]=
-					{
-						"Normal"
-					};
-					distanceZoomMin=200;
-					distanceZoomMax=1000;
-					cameraDir="direction";
-				};
-				class rhs_pgo7v_iron
-				{
-					useModelOptics=0;
-					opticsPPEffects[]=
-					{
-						""
-					};
-					discreteDistanceCameraPoint[]=
-					{
-						"eye_100",
-						"eye_150",
-						"eye_200",
-						"eye_300"
-					};
-					cameraDir="eye_look";
-					visionMode[]={};
-					distanceZoomMin=100;
-					distanceZoomMax=300;
-				};
-			};
 		};
-		inertia=0.1;
 	};
 	class rhs_acc_pgo7v2: rhs_acc_pgo7v
 	{
-		displayName="$STR_RHS_ACC_PGO7V2";
-		weaponInfoType="rhs_rscOptics_acc_pgo7v2";
-		class ItemInfo: ItemInfo
-		{
-		};
 	};
 	class rhs_acc_pgo7v3: rhs_acc_pgo7v
 	{
-		displayName="$STR_RHS_ACC_PGO7V3";
-		weaponInfoType="rhs_rscOptics_acc_pgo7v3";
-		class ItemInfo: ItemInfo
-		{
-		};
 	};
 	class rhs_acc_pgo7v_ak: rhs_acc_pgo7v
 	{
-		class ItemInfo: ItemInfo
-		{
-			class OpticsModes: OpticsModes
-			{
-				class rhs_pgo7v_scope: rhs_pgo7v_scope
-				{
-				};
-				class rhs_pgo7v_iron
-				{
-					useModelOptics=0;
-					opticsPPEffects[]=
-					{
-						""
-					};
-					discreteDistanceCameraPoint[]=
-					{
-						"eye_ak",
-						"eye_ak_100",
-						"eye_ak_200",
-						"eye_ak_300",
-						"eye_ak_400",
-						"eye_ak_500",
-						"eye_ak_600",
-						"eye_ak_700",
-						"eye_ak_800",
-						"eye_ak_900",
-						"eye_ak_1000"
-					};
-					cameraDir="eye_ak_look";
-					visionMode[]={};
-					distanceZoomMin=300;
-					distanceZoomMax=300;
-				};
-			};
-		};
 	};
 	class rhs_acc_pgo7v2_ak: rhs_acc_pgo7v_ak
 	{
-		displayName="$STR_RHS_ACC_PGO7V2";
-		weaponInfoType="rhs_rscOptics_acc_pgo7v2";
-		class ItemInfo: ItemInfo
-		{
-		};
 	};
 	class rhs_acc_pgo7v3_ak: rhs_acc_pgo7v_ak
 	{
-		displayName="$STR_RHS_ACC_PGO7V3";
-		weaponInfoType="rhs_rscOptics_acc_pgo7v3";
-		class ItemInfo: ItemInfo
-		{
-		};
 	};
 	class rhs_acc_pgo7v_asval: rhs_acc_pgo7v_ak
 	{
-		class ItemInfo: ItemInfo
-		{
-			class OpticsModes: OpticsModes
-			{
-				class rhs_pgo7v_scope: rhs_pgo7v_scope
-				{
-				};
-				class rhs_pgo7v_iron: rhs_pgo7v_iron
-				{
-					discreteDistanceCameraPoint[]=
-					{
-						"eye_val",
-						"eye_val_150",
-						"eye_val_200",
-						"eye_val_220",
-						"eye_val_250",
-						"eye_val_270",
-						"eye_val_300",
-						"eye_val_320",
-						"eye_val_350",
-						"eye_val_370",
-						"eye_val_400",
-						"eye_val_420"
-					};
-					cameraDir="eye_val_look";
-					distanceZoomMax=420;
-				};
-			};
-		};
 	};
 	class rhs_acc_pgo7v2_asval: rhs_acc_pgo7v_asval
 	{
-		displayName="$STR_RHS_ACC_PGO7V2";
-		weaponInfoType="rhs_rscOptics_acc_pgo7v2";
-		class ItemInfo: ItemInfo
-		{
-		};
 	};
 	class rhs_acc_pgo7v3_asval: rhs_acc_pgo7v_asval
 	{
-		displayName="$STR_RHS_ACC_PGO7V3";
-		weaponInfoType="rhs_rscOptics_acc_pgo7v3";
-		class ItemInfo: ItemInfo
-		{
-		};
 	};
 	class rhs_acc_pgo7v_pkp: rhs_acc_pgo7v_ak
 	{
-		class ItemInfo: ItemInfo
-		{
-			class OpticsModes: OpticsModes
-			{
-				class rhs_pgo7v_scope: rhs_pgo7v_scope
-				{
-				};
-				class rhs_pgo7v_iron: rhs_pgo7v_iron
-				{
-					memoryPointCamera="eye_pkp";
-					discreteDistanceCameraPoint[]=
-					{
-						"eye_pkp",
-						"eye_pkp_100",
-						"eye_pkp_200",
-						"eye_pkp_300",
-						"eye_pkp_400",
-						"eye_pkp_500",
-						"eye_pkp_600",
-						"eye_pkp_700",
-						"eye_pkp_800",
-						"eye_pkp_900",
-						"eye_pkp_1000",
-						"eye_pkp_1100",
-						"eye_pkp_1200",
-						"eye_pkp_1300",
-						"eye_pkp_1400",
-						"eye_pkp_1500"
-					};
-					distanceZoomMin=100;
-					distanceZoomMax=1500;
-					cameraDir="eye_pkp_look";
-				};
-			};
-		};
 	};
 	class rhs_acc_pgo7v2_pkp: rhs_acc_pgo7v_pkp
 	{
-		displayName="$STR_RHS_ACC_PGO7V2";
-		weaponInfoType="rhs_rscOptics_acc_pgo7v2";
-		class ItemInfo: ItemInfo
-		{
-		};
 	};
 	class rhs_acc_pgo7v3_pkp: rhs_acc_pgo7v_pkp
 	{
-		displayName="$STR_RHS_ACC_PGO7V2";
-		weaponInfoType="rhs_rscOptics_acc_pgo7v3";
-		class ItemInfo: ItemInfo
-		{
-		};
 	};
 	class rhs_acc_1pn93_base: rhs_acc_sniper_base
 	{
-		displayName="$STR_RHS_ACC_1PN931";
-		descriptionShort="$STR_RHS_ACC_1PN931_SD";
 		class ItemInfo: InventoryOpticsItem_Base_F
 		{
 			opticType=2;
 			mass=14;
-			RMBhint="Optical Sniper Night Sight";
-			class OpticsModes
-			{
-				class 1pn93_scope
-				{
-					useModelOptics=1;
-					opticsPPEffects[]=
-					{
-						"OpticsCHAbera1",
-						"OpticsBlur1",
-						"TankCommanderOptics1"
-					};
-					memoryPointCamera="opticView";
-					visionMode[]=
-					{
-						"NVG"
-					};
-					distanceZoomMin=200;
-					distanceZoomMax=1000;
-					cameraDir="";
-				};
-				class rhs_1p29_iron
-				{
-					useModelOptics=0;
-					opticsPPEffects[]=
-					{
-						""
-					};
-					memoryPointCamera="eye";
-					visionMode[]=
-					{
-						"Normal"
-					};
-					distanceZoomMin=300;
-					distanceZoomMax=300;
-					cameraDir="";
-				};
-			};
 		};
-		inertia=0.2;
-	};
-	class rhs_acc_1pn93_1: rhs_acc_1pn93_base
-	{
 	};
 	class rhs_acc_1pn93_2: rhs_acc_pgo7v
 	{
-		displayName="$STR_RHS_ACC_1PN932";
-		descriptionShort="$STR_RHS_ACC_1PN932_SD";
-		weaponInfoType="RscWeaponZeroing";
 		class ItemInfo: InventoryOpticsItem_Base_F
 		{
 			opticType=2;
 			mass=13.64;
-			RMBhint="Optical Sight";
-			class OpticsModes
-			{
-				class rhs_pgo7v_scope
-				{
-					useModelOptics=1;
-					opticsPPEffects[]=
-					{
-						"OpticsCHAbera1",
-						"OpticsBlur1"
-					};
-					memoryPointCamera="opticView";
-					visionMode[]=
-					{
-						"NVG"
-					};
-					distanceZoomMin=200;
-					distanceZoomMax=1000;
-					cameraDir="direction";
-				};
-			};
 		};
-		inertia=0.2;
 	};
 	class rhs_acc_1pn34: rhs_acc_1pn93_base
 	{
-		displayName="$STR_RHS_ACC_1PN34";
-		descriptionShort="";
 		class ItemInfo: ItemInfo
 		{
 			mass=18;
-			class OpticsModes
-			{
-				class 1pn34_scope
-				{
-					useModelOptics=1;
-					opticsPPEffects[]=
-					{
-						"rhs_NSPU_Abera",
-						"rhs_NSPU_Blur",
-						"rhs_NSPU_RadialBlur",
-						"rhs_NSPU_FilmGrain"
-					};
-					memoryPointCamera="opticView";
-					visionMode[]=
-					{
-						"NVG"
-					};
-					distanceZoomMin=200;
-					distanceZoomMax=1000;
-					cameraDir="";
-				};
-				class rhs_1pn34_iron
-				{
-					useModelOptics=0;
-					opticsPPEffects[]=
-					{
-						""
-					};
-					memoryPointCamera="eye_svd";
-					visionMode[]=
-					{
-						"Normal"
-					};
-					distanceZoomMin=300;
-					distanceZoomMax=300;
-					cameraDir="eye_svd_look";
-				};
-			};
 		};
-		inertia=0.34999999;
 	};
 	class rhs_acc_dh520x56: ItemCore
 	{
-		displayName="DH 5-20x56";
-		descriptionShort="Russian sniper scope<br />Magnification: 5-20x";
-		inertia=0.2;
-		weaponInfoType="RscWeaponZeroing";
 		class ItemInfo: InventoryOpticsItem_Base_F
 		{
 			opticType=2;
 			mass=13.64;
-			RMBhint="Optical Sight";
-			class OpticsModes
-			{
-				class dedal_520
-				{
-					useModelOptics=1;
-					opticsPPEffects[]=
-					{
-						"OpticsCHAbera1",
-						"OpticsBlur1"
-					};
-					memoryPointCamera="opticView";
-					visionMode[]=
-					{
-						"Normal"
-					};
-					distanceZoomMin=200;
-					distanceZoomMax=1000;
-					cameraDir="";
-				};
-			};
 		};
 	};
 	class rhs_acc_2dpZenit: acc_flashlight
 	{
-		displayName="$STR_RHS_ACC_2DPZENIT";
-		descriptionShort="$STR_RHS_ACC_2DPZENIT_SD";
 		class ItemInfo: ItemInfo
 		{
 			mass=2;
-			class Pointer
-			{
-			};
-			class FlashLight: FlashLight
-			{
-				color[]={25,22,20};
 				ambient[]={0.001,0.001,0.001};
 				size=1;
 				innerAngle=50;
@@ -13824,18 +7335,11 @@ class CfgWeapons
 				scale[]={0};
 			};
 		};
-		inertia=0.1;
-	};
-	class rhs_acc_2dpZenit_ris: rhs_acc_2dpZenit
-	{
-		displayName="$STR_RHS_ACC_2DPZENIT_RIS";
 	};
 	class rhs_acc_perst1ik: acc_pointer_IR
 	{
-		displayName="$STR_RHS_ACC_PERST1IK";
 		class ItemInfo: InventoryFlashLightItem_Base_F
 		{
-			RMBhint="IR Laser";
 			mass=8;
 			class Pointer
 			{
@@ -13843,54 +7347,26 @@ class CfgWeapons
 				irLaserEnd="laser dir";
 				irDistance=5;
 			};
-			class FlashLight
-			{
-			};
 		};
-		inertia=0.2;
-	};
-	class rhs_acc_perst1ik_ris: rhs_acc_perst1ik
-	{
-		displayName="$STR_RHS_ACC_PERST1IK_RIS";
-	};
-	class rhs_acc_perst3: rhs_acc_perst1ik
-	{
-		displayName="$STR_RHS_ACC_PERST3";
 	};
 	class rhs_acc_perst3_top: rhs_acc_perst3
 	{
-		displayName="$STR_RHS_ACC_PERST3_TOP";
-		weaponInfoType="RHS_LaserTopRU1";
 		rhs_anpeq15_base="rhs_acc_perst3_top";
-	};
-	class rhs_acc_perst3_top_h: rhs_acc_perst3_top
-	{
-		displayName="$STR_RHS_ACC_PERST3_TOP";
 	};
 	class rhs_acc_perst3_2dp: rhs_acc_perst3
 	{
-		displayName="$STR_RHS_ACC_PERST3_2DP_SIDE";
-		weaponInfoType="RHS_FlashlightRU";
 		rhs_anpeq15_base="rhs_acc_perst3_2dp";
 		rhs_acc_combo="rhs_acc_perst3_2dp_light";
 		rhs_acc_combo_text="Switched to Flashlight";
 	};
 	class rhs_acc_perst3_2dp_light: rhs_acc_perst3_2dp
 	{
-		displayName="$STR_RHS_ACC_PERST3_2DP_SIDE_LIGHT";
 		rhs_anpeq15_base="rhs_acc_perst3_2dp_light";
 		rhs_acc_combo="rhs_acc_perst3_2dp";
 		rhs_acc_combo_text="Switched to Laser";
 		class ItemInfo: ItemInfo
 		{
-			RMBhint="Flashlight";
 			mass=8;
-			class Pointer
-			{
-			};
-			class FlashLight
-			{
-				color[]={25,22,20};
 				ambient[]={0.001,0.001,0.001};
 				position="flashdir";
 				direction="flash";
@@ -13926,939 +7402,35 @@ class CfgWeapons
 	};
 	class rhs_acc_rakursPM: rhs_acc_1p63
 	{
-		displayName="$STR_RHS_ACC_RakursPM";
-		descriptionShort="$STR_RHS_ACC_RakursPM_SD";
-		weaponInfoType="RscWeaponZeroing";
-		inertia=0.1;
 		class ItemInfo: InventoryOpticsItem_Base_F
 		{
 			opticType=1;
 			mass=4;
-			RMBhint="Optical Sight";
-			class OpticsModes
-			{
-				class rhs_rakurs_collimator
-				{
-					useModelOptics=0;
-					memoryPointCamera="opticview";
-					distanceZoomMin=100;
-					distanceZoomMax=100;
-					cameraDir="";
-					visionMode[]={};
-					opticsPPEffects[]=
-					{
-						"OpticsCHAbera5",
-						"OpticsBlur5"
-					};
-				};
-			};
 		};
 	};
 	class rhs_acc_grip_rk2: acc_pointer_IR
 	{
-		displayName="RK-2";
-		descriptionShort="Zenitco RK-2 grip";
-		weaponInfoType="RHS_Grip_RK2";
 		class ItemInfo
 		{
-			deployedPivot="bipod";
-			hasBipod=0;
 			mass=10;
-			type=302;
 		};
-		inertia=-0.2;
-		type=131072;
 		rhs_grip_type="rhs_grip1_change";
 	};
 	class rhs_acc_grip_rk6: rhs_acc_grip_rk2
 	{
-		displayName="RK-6";
-		descriptionShort="Zenitco RK-6 hand-stop";
-		weaponInfoType="RHS_Grip_RK6";
-		class ItemInfo: ItemInfo
-		{
-			hasBipod=0;
-		};
-		inertia=-0.2;
 		rhs_grip_type="rhs_grip1_change";
 	};
 	class rhs_acc_grip_ffg2: rhs_acc_grip_rk6
 	{
-		displayName="FFG-2";
-		descriptionShort="Folding vertical grip";
-		weaponInfoType="RHS_Grip_FFG2";
-		inertia=-0.2;
 		rhs_grip_type="rhs_grip3_change";
-	};
-	class rhs_weap_ak74m_dtk: rhs_weap_ak74m
-	{
-		class LinkedItems
-		{
-			class LinkedItemsMuzzle
-			{
-				slot="MuzzleSlot";
-				item="rhs_acc_dtk";
-			};
-		};
-	};
-	class rhs_weap_ak74m_pkas: rhs_weap_ak74m
-	{
-		class LinkedItems
-		{
-			class LinkedItemsOptic
-			{
-				slot="CowsSlot";
-				item="rhs_acc_pkas";
-			};
-			class LinkedItemsMuzzle
-			{
-				slot="MuzzleSlot";
-				item="rhs_acc_dtk";
-			};
-		};
-	};
-	class rhs_weap_ak74m_1p63: rhs_weap_ak74m
-	{
-		class LinkedItems
-		{
-			class LinkedItemsOptic
-			{
-				slot="CowsSlot";
-				item="rhs_acc_1p63";
-			};
-			class LinkedItemsMuzzle
-			{
-				slot="MuzzleSlot";
-				item="rhs_acc_dtk";
-			};
-		};
-	};
-	class rhs_weap_ak74m_pso1m2: rhs_weap_ak74m
-	{
-		class LinkedItems
-		{
-			class LinkedItemsOptic
-			{
-				slot="CowsSlot";
-				item="rhs_acc_pso1m2";
-			};
-			class LinkedItemsMuzzle
-			{
-				slot="MuzzleSlot";
-				item="rhs_acc_dtk";
-			};
-		};
-	};
-	class rhs_weap_ak74m_1p29: rhs_weap_ak74m
-	{
-		class LinkedItems
-		{
-			class LinkedItemsOptic
-			{
-				slot="CowsSlot";
-				item="rhs_acc_1p29";
-			};
-			class LinkedItemsMuzzle
-			{
-				slot="MuzzleSlot";
-				item="rhs_acc_dtk";
-			};
-		};
-	};
-	class rhs_weap_ak74m_npz_dtk: rhs_weap_ak74m_npz
-	{
-		class LinkedItems
-		{
-			class LinkedItemsMuzzle
-			{
-				slot="MuzzleSlot";
-				item="rhs_acc_dtk";
-			};
-		};
-	};
-	class rhs_weap_ak74m_camo_dtk: rhs_weap_ak74m_camo
-	{
-		class LinkedItems
-		{
-			class LinkedItemsMuzzle
-			{
-				slot="MuzzleSlot";
-				item="rhs_acc_dtk";
-			};
-		};
-	};
-	class rhs_weap_ak74m_folded_dtk: rhs_weap_ak74m_folded
-	{
-		class LinkedItems
-		{
-			class LinkedItemsMuzzle
-			{
-				slot="MuzzleSlot";
-				item="rhs_acc_dtk";
-			};
-		};
-	};
-	class rhs_weap_ak74m_2mag_dtk: rhs_weap_ak74m_2mag
-	{
-		class LinkedItems
-		{
-			class LinkedItemsMuzzle
-			{
-				slot="MuzzleSlot";
-				item="rhs_acc_dtk";
-			};
-		};
-	};
-	class rhs_weap_ak74m_2mag_npz_dtk: rhs_weap_ak74m_2mag_npz
-	{
-		class LinkedItems
-		{
-			class LinkedItemsMuzzle
-			{
-				slot="MuzzleSlot";
-				item="rhs_acc_dtk";
-			};
-		};
-	};
-	class rhs_weap_ak74m_2mag_camo_dtk: rhs_weap_ak74m_2mag_camo
-	{
-		class LinkedItems
-		{
-			class LinkedItemsMuzzle
-			{
-				slot="MuzzleSlot";
-				item="rhs_acc_dtk";
-			};
-		};
-	};
-	class rhs_weap_ak74m_camo_pkas: rhs_weap_ak74m_camo
-	{
-		class LinkedItems
-		{
-			class LinkedItemsOptic
-			{
-				slot="CowsSlot";
-				item="rhs_acc_pkas";
-			};
-			class LinkedItemsMuzzle
-			{
-				slot="MuzzleSlot";
-				item="rhs_acc_dtk";
-			};
-		};
-	};
-	class rhs_weap_ak74m_camo_1p63: rhs_weap_ak74m_camo
-	{
-		class LinkedItems
-		{
-			class LinkedItemsOptic
-			{
-				slot="CowsSlot";
-				item="rhs_acc_1p63";
-			};
-			class LinkedItemsMuzzle
-			{
-				slot="MuzzleSlot";
-				item="rhs_acc_dtk";
-			};
-		};
-	};
-	class rhs_weap_ak74m_camo_pso1m2: rhs_weap_ak74m_camo
-	{
-		class LinkedItems
-		{
-			class LinkedItemsOptic
-			{
-				slot="CowsSlot";
-				item="rhs_acc_pso1m2";
-			};
-			class LinkedItemsMuzzle
-			{
-				slot="MuzzleSlot";
-				item="rhs_acc_dtk";
-			};
-		};
-	};
-	class rhs_weap_ak74m_camo_1p29: rhs_weap_ak74m_camo
-	{
-		class LinkedItems
-		{
-			class LinkedItemsOptic
-			{
-				slot="CowsSlot";
-				item="rhs_acc_1p29";
-			};
-			class LinkedItemsMuzzle
-			{
-				slot="MuzzleSlot";
-				item="rhs_acc_dtk";
-			};
-		};
-	};
-	class rhs_weap_ak74m_desert_dtk: rhs_weap_ak74m_desert
-	{
-		class LinkedItems
-		{
-			class LinkedItemsMuzzle
-			{
-				slot="MuzzleSlot";
-				item="rhs_acc_dtk";
-			};
-		};
-	};
-	class rhs_weap_ak74m_fullplum_dtk: rhs_weap_ak74m_fullplum
-	{
-		class LinkedItems
-		{
-			class LinkedItemsMuzzle
-			{
-				slot="MuzzleSlot";
-				item="rhs_acc_dtk";
-			};
-		};
-	};
-	class rhs_weap_ak74m_fullplum_npz_dtk: rhs_weap_ak74m_fullplum_npz
-	{
-		class LinkedItems
-		{
-			class LinkedItemsMuzzle
-			{
-				slot="MuzzleSlot";
-				item="rhs_acc_dtk";
-			};
-		};
-	};
-	class rhs_weap_ak74m_fullplum_folded_dtk: rhs_weap_ak74m_fullplum_folded
-	{
-		class LinkedItems
-		{
-			class LinkedItemsMuzzle
-			{
-				slot="MuzzleSlot";
-				item="rhs_acc_dtk";
-			};
-		};
-	};
-	class rhs_weap_ak74m_fullplum_gp25_dtk: rhs_weap_ak74m_fullplum_gp25
-	{
-		class LinkedItems
-		{
-			class LinkedItemsMuzzle
-			{
-				slot="MuzzleSlot";
-				item="rhs_acc_dtk";
-			};
-		};
-	};
-	class rhs_weap_ak74m_fullplum_gp25_npz_dtk: rhs_weap_ak74m_fullplum_gp25_npz
-	{
-		class LinkedItems
-		{
-			class LinkedItemsMuzzle
-			{
-				slot="MuzzleSlot";
-				item="rhs_acc_dtk";
-			};
-		};
-	};
-	class rhs_weap_ak74m_fullplum_gp25_folded_dtk: rhs_weap_ak74m_fullplum_gp25_folded
-	{
-		class LinkedItems
-		{
-			class LinkedItemsMuzzle
-			{
-				slot="MuzzleSlot";
-				item="rhs_acc_dtk";
-			};
-		};
-	};
-	class rhs_weap_ak74m_plummag_dtk: rhs_weap_ak74m_plummag
-	{
-		class LinkedItems
-		{
-			class LinkedItemsMuzzle
-			{
-				slot="MuzzleSlot";
-				item="rhs_acc_dtk";
-			};
-		};
-	};
-	class rhs_weap_ak74m_gp25_dtk: rhs_weap_ak74m_gp25
-	{
-		class LinkedItems
-		{
-			class LinkedItemsMuzzle
-			{
-				slot="MuzzleSlot";
-				item="rhs_acc_dtk";
-			};
-		};
-	};
-	class rhs_weap_ak74m_gp25_npz_dtk: rhs_weap_ak74m_gp25_npz
-	{
-		class LinkedItems
-		{
-			class LinkedItemsMuzzle
-			{
-				slot="MuzzleSlot";
-				item="rhs_acc_dtk";
-			};
-		};
-	};
-	class rhs_weap_ak74m_gp25_pkas: rhs_weap_ak74m_gp25
-	{
-		class LinkedItems
-		{
-			class LinkedItemsOptic
-			{
-				slot="CowsSlot";
-				item="rhs_acc_pkas";
-			};
-			class LinkedItemsMuzzle
-			{
-				slot="MuzzleSlot";
-				item="rhs_acc_dtk";
-			};
-		};
-	};
-	class rhs_weap_ak74m_gp25_1p63: rhs_weap_ak74m_gp25
-	{
-		class LinkedItems
-		{
-			class LinkedItemsOptic
-			{
-				slot="CowsSlot";
-				item="rhs_acc_1p63";
-			};
-			class LinkedItemsMuzzle
-			{
-				slot="MuzzleSlot";
-				item="rhs_acc_dtk";
-			};
-		};
-	};
-	class rhs_weap_ak74m_gp25_pso1m2: rhs_weap_ak74m_gp25
-	{
-		class LinkedItems
-		{
-			class LinkedItemsOptic
-			{
-				slot="CowsSlot";
-				item="rhs_acc_pso1m2";
-			};
-			class LinkedItemsMuzzle
-			{
-				slot="MuzzleSlot";
-				item="rhs_acc_dtk";
-			};
-		};
-	};
-	class rhs_weap_ak74m_gp25_1p29: rhs_weap_ak74m_gp25
-	{
-		class LinkedItems
-		{
-			class LinkedItemsOptic
-			{
-				slot="CowsSlot";
-				item="rhs_acc_1p29";
-			};
-			class LinkedItemsMuzzle
-			{
-				slot="MuzzleSlot";
-				item="rhs_acc_dtk";
-			};
-		};
-	};
-	class rhs_weap_ak74mr_rakursPM: rhs_weap_ak74mr
-	{
-		class LinkedItems
-		{
-			class LinkedItemsOptic
-			{
-				slot="CowsSlot";
-				item="rhs_acc_rakursPM";
-			};
-			class LinkedItemsMuzzle
-			{
-				slot="MuzzleSlot";
-				item="rhs_acc_uuk";
-			};
-		};
-	};
-	class rhs_weap_ak74mr_gp25_rakursPM: rhs_weap_ak74mr_gp25
-	{
-		class LinkedItems
-		{
-			class LinkedItemsOptic
-			{
-				slot="CowsSlot";
-				item="rhs_acc_rakursPM";
-			};
-			class LinkedItemsMuzzle
-			{
-				slot="MuzzleSlot";
-				item="rhs_acc_uuk";
-			};
-		};
-	};
-	class rhs_weap_ak74mr_1p87: rhs_weap_ak74mr
-	{
-		class LinkedItems
-		{
-			class LinkedItemsOptic
-			{
-				slot="CowsSlot";
-				item="rhs_acc_1p87";
-			};
-			class LinkedItemsMuzzle
-			{
-				slot="MuzzleSlot";
-				item="rhs_acc_uuk";
-			};
-		};
-	};
-	class rhs_weap_ak74mr_gp25_1p87: rhs_weap_ak74mr_gp25
-	{
-		class LinkedItems
-		{
-			class LinkedItemsOptic
-			{
-				slot="CowsSlot";
-				item="rhs_acc_1p87";
-			};
-			class LinkedItemsMuzzle
-			{
-				slot="MuzzleSlot";
-				item="rhs_acc_uuk";
-			};
-		};
-	};
-	class rhs_weap_aks74u_sup: rhs_weap_aks74u
-	{
-		class LinkedItems
-		{
-			class LinkedItemsMuzzle
-			{
-				slot="MuzzleSlot";
-				item="rhs_acc_dtk4short";
-			};
-		};
-	};
-	class rhs_weap_aks74un_sup: rhs_weap_aks74un
-	{
-		class LinkedItems
-		{
-			class LinkedItemsMuzzle
-			{
-				slot="MuzzleSlot";
-				item="rhs_acc_pbs4";
-			};
-		};
-	};
-	class rhs_weap_ak103_dtk: rhs_weap_ak103
-	{
-		class LinkedItems
-		{
-			class LinkedItemsMuzzle
-			{
-				slot="MuzzleSlot";
-				item="rhs_acc_dtk";
-			};
-		};
-	};
-	class rhs_weap_ak103_npz_dtk: rhs_weap_ak103_npz
-	{
-		class LinkedItems
-		{
-			class LinkedItemsMuzzle
-			{
-				slot="MuzzleSlot";
-				item="rhs_acc_dtk";
-			};
-		};
-	};
-	class rhs_weap_ak103_1_dtk: rhs_weap_ak103_1
-	{
-		class LinkedItems
-		{
-			class LinkedItemsMuzzle
-			{
-				slot="MuzzleSlot";
-				item="rhs_acc_dtk";
-			};
-		};
-	};
-	class rhs_weap_ak103_2_dtk: rhs_weap_ak103_2
-	{
-		class LinkedItems
-		{
-			class LinkedItemsMuzzle
-			{
-				slot="MuzzleSlot";
-				item="rhs_acc_dtk";
-			};
-		};
-	};
-	class rhs_weap_ak104_pgs64: rhs_weap_ak104
-	{
-		class LinkedItems
-		{
-			class LinkedItemsMuzzle
-			{
-				slot="MuzzleSlot";
-				item="rhs_acc_pgs64";
-			};
-		};
-	};
-	class rhs_weap_ak104_npz_pgs64: rhs_weap_ak104_npz
-	{
-		class LinkedItems
-		{
-			class LinkedItemsMuzzle
-			{
-				slot="MuzzleSlot";
-				item="rhs_acc_pgs64";
-			};
-		};
-	};
-	class rhs_weap_ak105_pgs64: rhs_weap_ak105
-	{
-		class LinkedItems
-		{
-			class LinkedItemsMuzzle
-			{
-				slot="MuzzleSlot";
-				item="rhs_acc_pgs64";
-			};
-		};
-	};
-	class rhs_weap_ak105_npz_pgs64: rhs_weap_ak105_npz
-	{
-		class LinkedItems
-		{
-			class LinkedItemsMuzzle
-			{
-				slot="MuzzleSlot";
-				item="rhs_acc_pgs64";
-			};
-		};
-	};
-	class rhs_weap_svd_pso1: rhs_weap_svd
-	{
-		class LinkedItems
-		{
-			class LinkedItemsOptic
-			{
-				slot="CowsSlot";
-				item="rhs_acc_pso1m2";
-			};
-		};
-	};
-	class rhs_weap_svdp_pso1: rhs_weap_svdp
-	{
-		class LinkedItems
-		{
-			class LinkedItemsOptic
-			{
-				slot="CowsSlot";
-				item="rhs_acc_pso1m2";
-			};
-		};
-	};
-	class rhs_weap_svds_pso1: rhs_weap_svds
-	{
-		class LinkedItems
-		{
-			class LinkedItemsOptic
-			{
-				slot="CowsSlot";
-				item="rhs_acc_pso1m2";
-			};
-		};
-	};
-	class rhs_asval_pso1: rhs_weap_asval
-	{
-		class LinkedItems
-		{
-			class LinkedItemsOptic
-			{
-				slot="CowsSlot";
-				item="rhs_acc_pso1m21";
-			};
-		};
-	};
-	class rhs_weap_45th_ak74m: rhs_weap_ak74m
-	{
-		class LinkedItems
-		{
-			class LinkedItemsMuzzle
-			{
-				slot="MuzzleSlot";
-				item="rhs_acc_dtk1";
-			};
-		};
-	};
-	class rhs_weap_45th_ak74m_camo: rhs_weap_ak74m_camo_npz
-	{
-		class LinkedItems
-		{
-			class LinkedItemsAcc
-			{
-				slot="PointerSlot";
-				item="rhs_acc_2dpZenit";
-			};
-			class LinkedItemsMuzzle
-			{
-				slot="MuzzleSlot";
-				item="rhs_acc_dtk1";
-			};
-		};
-	};
-	class rhs_weap_45th_ak74m_gp25: rhs_weap_ak74m_gp25
-	{
-		class LinkedItems
-		{
-			class LinkedItemsOptic
-			{
-				slot="CowsSlot";
-				item="rhs_acc_1p63";
-			};
-			class LinkedItemsMuzzle
-			{
-				slot="MuzzleSlot";
-				item="rhs_acc_dtk1";
-			};
-		};
-	};
-	class rhs_weap_45th_ak74_ekp1: rhs_weap_ak74m
-	{
-		class LinkedItems
-		{
-			class LinkedItemsOptic
-			{
-				slot="CowsSlot";
-				item="rhs_acc_ekp1";
-			};
-			class LinkedItemsMuzzle
-			{
-				slot="MuzzleSlot";
-				item="rhs_acc_dtk1";
-			};
-		};
-	};
-	class rhs_weap_45th_ak74m_pkas: rhs_weap_ak74m_2mag
-	{
-		class LinkedItems
-		{
-			class LinkedItemsOptic
-			{
-				slot="CowsSlot";
-				item="rhs_acc_pkas";
-			};
-			class LinkedItemsMuzzle
-			{
-				slot="MuzzleSlot";
-				item="rhs_acc_dtk1";
-			};
-		};
-	};
-	class rhs_weap_45th_ak74m_sup: rhs_weap_ak74m
-	{
-		class LinkedItems
-		{
-			class LinkedItemsOptic
-			{
-				slot="CowsSlot";
-				item="rhs_acc_ekp1";
-			};
-			class LinkedItemsMuzzle
-			{
-				slot="MuzzleSlot";
-				item="rhs_acc_dtk4short";
-			};
-		};
-	};
-	class rhs_weap_45th_akm: rhs_weap_akm
-	{
-		class LinkedItems
-		{
-			class LinkedItemsMuzzle
-			{
-				slot="MuzzleSlot";
-				item="rhs_acc_pbs1";
-			};
-		};
-	};
-	class rhs_weap_45th_akm_gp25: rhs_weap_akm_gp25
-	{
-		class LinkedItems
-		{
-			class LinkedItemsMuzzle
-			{
-				slot="MuzzleSlot";
-				item="rhs_acc_pbs1";
-			};
-		};
-	};
-	class rhs_weap_45th_akms: rhs_weap_akms
-	{
-		class LinkedItems
-		{
-			class LinkedItemsMuzzle
-			{
-				slot="MuzzleSlot";
-				item="rhs_acc_pbs1";
-			};
-		};
-	};
-	class rhs_weap_45th_ak103: rhs_weap_ak103
-	{
-		class LinkedItems
-		{
-			class LinkedItemsMuzzle
-			{
-				slot="MuzzleSlot";
-				item="rhs_acc_dtk3";
-			};
-		};
-	};
-	class rhs_weap_45th_svds: rhs_weap_svds
-	{
-		class LinkedItems
-		{
-			class LinkedItemsOptic
-			{
-				slot="CowsSlot";
-				item="rhs_acc_pso1m2";
-			};
-		};
-	};
-	class rhs_weap_45th_asval: rhs_weap_asval
-	{
-		class LinkedItems
-		{
-			class LinkedItemsOptic
-			{
-				slot="CowsSlot";
-				item="rhs_acc_1p63";
-			};
-		};
-	};
-	class rhs_weap_45th_vss: rhs_weap_vss
-	{
-		class LinkedItems
-		{
-			class LinkedItemsOptic
-			{
-				slot="CowsSlot";
-				item="rhs_acc_pso1m21";
-			};
-		};
-	};
-	class rhs_weap_vmf_asval: rhs_weap_asval_grip
-	{
-		class LinkedItems
-		{
-			class LinkedItemsOptic
-			{
-				slot="CowsSlot";
-				item="rhs_acc_1p63";
-			};
-			class LinkedItemsAcc
-			{
-				slot="PointerSlot";
-				item="rhs_acc_perst1ik_ris";
-			};
-		};
-	};
-	class rhs_weap_vmf_vss: rhs_weap_vss_grip
-	{
-		class LinkedItems
-		{
-			class LinkedItemsOptic
-			{
-				slot="CowsSlot";
-				item="rhs_acc_pso1m21";
-			};
-			class LinkedItemsAcc
-			{
-				slot="PointerSlot";
-				item="rhs_acc_perst1ik_ris";
-			};
-		};
-	};
-	class rhs_weap_pkp_pkas: rhs_weap_pkp
-	{
-		class LinkedItems
-		{
-			class LinkedItemsOptic
-			{
-				slot="CowsSlot";
-				item="rhs_acc_pkas";
-			};
-		};
-	};
-	class rhs_weap_pkp_1p63: rhs_weap_pkp
-	{
-		class LinkedItems
-		{
-			class LinkedItemsOptic
-			{
-				slot="CowsSlot";
-				item="rhs_acc_1p63";
-			};
-		};
-	};
-	class rhs_weap_pkp_1p29: rhs_weap_pkp
-	{
-		class LinkedItems
-		{
-			class LinkedItemsOptic
-			{
-				slot="CowsSlot";
-				item="rhs_acc_1p29";
-			};
-		};
 	};
 	class Default;
 	class Put: Default
 	{
-		muzzles[]+=
-		{
-			"Rhs_Mine_Muzzle"
-		};
-		class PutMuzzle: Default
-		{
-		};
-		class Rhs_Mine_Muzzle: PutMuzzle
-		{
-		};
 	};
 	class GrenadeLauncher;
 	class Throw: GrenadeLauncher
 	{
-		muzzles[]+=
-		{
-			"Rhs_Throw_Grenade",
-			"Rhs_Throw_RgnGrenade",
-			"Rhs_Throw_RgoGrenade",
-			"Rhs_Throw_Smoke",
-			"Rhs_Throw_Smoke_black",
-			"Rhs_Throw_Smoke_nspd",
-			"Rhs_Throw_Flare_yellow",
-			"Rhs_Throw_Flare_green",
-			"Rhs_Throw_Flare_red",
-			"Rhs_Throw_Flash_fakel",
-			"Rhs_Throw_Flash_fakels",
-			"Rhs_Throw_Flash_zarya2",
-			"Rhs_Throw_Flash_plamyam"
-		};
-		class ThrowMuzzle: GrenadeLauncher
-		{
-		};
-		class Rhs_Throw_Grenade: ThrowMuzzle
-		{
-		};
 		class Rhs_Throw_RgnGrenade: ThrowMuzzle
 		{
 			class Eventhandlers
@@ -14878,36 +7450,6 @@ class CfgWeapons
 					fired="[_this select 0, _this select 6] call RHS_FNC_RGNO_IMPACT;";
 				};
 			};
-		};
-		class Rhs_Throw_Smoke: ThrowMuzzle
-		{
-		};
-		class Rhs_Throw_Smoke_black: ThrowMuzzle
-		{
-		};
-		class Rhs_Throw_Smoke_nspd: ThrowMuzzle
-		{
-		};
-		class Rhs_Throw_Flare_yellow: ThrowMuzzle
-		{
-		};
-		class Rhs_Throw_Flare_red: ThrowMuzzle
-		{
-		};
-		class Rhs_Throw_Flare_green: ThrowMuzzle
-		{
-		};
-		class Rhs_Throw_Flash_fakel: ThrowMuzzle
-		{
-		};
-		class Rhs_Throw_Flash_fakels: ThrowMuzzle
-		{
-		};
-		class Rhs_Throw_Flash_zarya2: ThrowMuzzle
-		{
-		};
-		class Rhs_Throw_Flash_plamyam: ThrowMuzzle
-		{
 		};
 	};
 };
@@ -14964,15 +7506,6 @@ class CfgMineTriggers
 class CfgVehicles
 {
 	class FxCartridge;
-	class RHS_Cartridge_545x39: FxCartridge
-	{
-	};
-	class RHS_Cartridge_762x39: RHS_Cartridge_545x39
-	{
-	};
-	class RHS_Cartridge_762x54R: RHS_Cartridge_545x39
-	{
-	};
 	class Thing;
 	class ThingX;
 	class rhs_collider: Thing
@@ -14980,9 +7513,6 @@ class CfgVehicles
 		accuracy=1000;
 		animated=0;
 		countsForScoreboard=0;
-	};
-	class rhs_collider_simple: rhs_collider
-	{
 	};
 	class House;
 	class rhs_vehcollider: House
@@ -14996,269 +7526,157 @@ class CfgVehicles
 	class rhs_mine_pmn2: MineBase
 	{
 		ammo="rhs_mine_pmn2_ammo";
-		displayName="$STR_RHS_CFGMAGAZINES_PMN20";
 		icon="iconExplosiveAP";
-		descriptionShort="$STR_A3_cfgMagazines_ClassicMineRangeMagazine1";
-		class Library
-		{
-			libTextDesc="";
-		};
 	};
 	class rhs_mine_pmn2_module: ModuleMine_APERSMine_F
 	{
-		displayName="$STR_RHS_CFGMAGAZINES_PMN20";
 		explosive="rhs_mine_pmn2_ammo";
 	};
 	class rhs_mine_tm62m: MineBase
 	{
 		ammo="rhs_mine_tm62m_ammo";
-		displayName="$STR_RHS_CFGMAGAZINES_TM62M0";
 		icon="iconExplosiveAT";
-		descriptionShort="$STR_A3_cfgMagazines_ClassicMineRangeMagazine1";
-		class Library
-		{
-			libTextDesc="";
-		};
 	};
 	class rhs_mine_tm62m_module: ModuleMine_APERSMine_F
 	{
-		displayName="$STR_RHS_CFGMAGAZINES_TM62M0";
 		explosive="rhs_mine_tm62m_ammo";
 	};
 	class rhs_mine_msk40p_white: MineBase
 	{
 		ammo="rhs_mine_msk40p_white_ammo";
-		displayName="$STR_RHS_MINE_MSK40P_W_MAG_DISPLAYNAME";
 		icon="iconExplosiveAP";
-		descriptionShort="$STR_A3_cfgMagazines_ClassicMineWireMagazine1";
-		class Library
-		{
-			libTextDesc="";
-		};
 	};
 	class rhs_mine_msk40p_red: rhs_mine_msk40p_white
 	{
-		displayName="$STR_RHS_MINE_MSK40P_R_MAG_DISPLAYNAME";
 		ammo="rhs_mine_msk40p_red_ammo";
 	};
 	class rhs_mine_msk40p_green: rhs_mine_msk40p_white
 	{
-		displayName="$STR_RHS_MINE_MSK40P_G_MAG_DISPLAYNAME";
 		ammo="rhs_mine_msk40p_green_ammo";
 	};
 	class rhs_mine_msk40p_blue: rhs_mine_msk40p_white
 	{
-		displayName="$STR_RHS_MINE_MSK40P_B_MAG_DISPLAYNAME";
 		ammo="rhs_mine_msk40p_blue_ammo";
 	};
 	class rhs_mine_sm320_white: rhs_mine_msk40p_white
 	{
-		displayName="$STR_RHS_MINE_SM320_W_MAG_DISPLAYNAME";
 		ammo="rhs_mine_sm320_white_ammo";
 	};
 	class rhs_mine_sm320_red: rhs_mine_sm320_white
 	{
-		displayName="$STR_RHS_MINE_SM320_R_MAG_DISPLAYNAME";
 		ammo="rhs_mine_sm320_red_ammo";
 	};
 	class rhs_mine_sm320_green: rhs_mine_sm320_white
 	{
-		displayName="$STR_RHS_MINE_SM320_G_MAG_DISPLAYNAME";
 		ammo="rhs_mine_sm320_green_ammo";
 	};
 	class rhs_mine_msk40p_white_module: ModuleMine_APERSMine_F
 	{
-		displayName="$STR_RHS_MINE_MSK40P_W_MAG_DISPLAYNAME";
 		explosive="rhs_mine_msk40p_white_ammo";
 	};
 	class rhs_mine_msk40p_red_module: ModuleMine_APERSMine_F
 	{
-		displayName="$STR_RHS_MINE_MSK40P_R_MAG_DISPLAYNAME";
 		explosive="rhs_mine_msk40p_red_ammo";
 	};
 	class rhs_mine_msk40p_green_module: ModuleMine_APERSMine_F
 	{
-		displayName="$STR_RHS_MINE_MSK40P_G_MAG_DISPLAYNAME";
 		explosive="rhs_mine_msk40p_green_ammo";
 	};
 	class rhs_mine_msk40p_blue_module: ModuleMine_APERSMine_F
 	{
-		displayName="$STR_RHS_MINE_MSK40P_B_MAG_DISPLAYNAME";
 		explosive="rhs_mine_msk40p_blue_ammo";
 	};
 	class rhs_mine_sm320_white_module: ModuleMine_APERSMine_F
 	{
-		displayName="$STR_RHS_MINE_SM320_W_MAG_DISPLAYNAME";
 		explosive="rhs_mine_sm320_white_ammo";
 	};
 	class rhs_mine_sm320_red_module: ModuleMine_APERSMine_F
 	{
-		displayName="$STR_RHS_MINE_SM320_R_MAG_DISPLAYNAME";
 		explosive="rhs_mine_sm320_red_ammo";
 	};
 	class rhs_mine_sm320_green_module: ModuleMine_APERSMine_F
 	{
-		displayName="$STR_RHS_MINE_SM320_G_MAG_DISPLAYNAME";
 		explosive="rhs_mine_sm320_green_ammo";
 	};
 	class rhs_mine_msk40p_white_used: ThingX
 	{
 		reversed=1;
-		displayName="MSK-40P (Used)";
 		editorCategory="EdCat_Weapons";
-		hiddenSelections[]=
-		{
-			"camo1"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"rhsafrf\addons\rhs_weapons\mines\data\rhsafrf_msk40p_white_co.paa"
-		};
-	};
-	class rhs_mine_msk40p_red_used: rhs_mine_msk40p_white_used
-	{
-		hiddenSelectionsTextures[]=
-		{
-			"rhsafrf\addons\rhs_weapons\mines\data\rhsafrf_msk40p_red_co.paa"
-		};
-	};
-	class rhs_mine_msk40p_green_used: rhs_mine_msk40p_white_used
-	{
-		hiddenSelectionsTextures[]=
-		{
-			"rhsafrf\addons\rhs_weapons\mines\data\rhsafrf_msk40p_green_co.paa"
-		};
-	};
-	class rhs_mine_msk40p_blue_used: rhs_mine_msk40p_white_used
-	{
-		hiddenSelectionsTextures[]=
-		{
-			"rhsafrf\addons\rhs_weapons\mines\data\rhsafrf_msk40p_blue_co.paa"
-		};
-	};
-	class rhs_mine_sm320_white_used: rhs_mine_msk40p_white_used
-	{
-		hiddenSelectionsTextures[]=
-		{
-			"rhsafrf\addons\rhs_weapons\mines\data\rhsafrf_sm320_white_co.paa"
-		};
-	};
-	class rhs_mine_sm320_red_used: rhs_mine_sm320_white_used
-	{
-		hiddenSelectionsTextures[]=
-		{
-			"rhsafrf\addons\rhs_weapons\mines\data\rhsafrf_sm320_red_co.paa"
-		};
-	};
-	class rhs_mine_sm320_green_used: rhs_mine_sm320_white_used
-	{
-		hiddenSelectionsTextures[]=
-		{
-			"rhsafrf\addons\rhs_weapons\mines\data\rhsafrf_sm320_green_co.paa"
-		};
 	};
 	class rhs_mine_ozm72_a: MineBase
 	{
 		ammo="rhs_mine_ozm72_a_ammo";
-		displayName="$STR_RHS_CFGMAGAZINES_OZM72A";
 		icon="iconExplosiveAP";
-		descriptionShort="$STR_RHS_CFGMAGAZINES_OZM72A_DESCRIPTIONSHORT";
-		class Library
-		{
-			libTextDesc="";
-		};
 	};
 	class rhs_mine_ozm72_b: rhs_mine_ozm72_a
 	{
 		ammo="rhs_mine_ozm72_b_ammo";
-		displayName="$STR_RHS_CFGMAGAZINES_OZM72B";
-		descriptionShort="$STR_RHS_CFGMAGAZINES_OZM72B_DESCRIPTIONSHORT";
 	};
 	class rhs_mine_ozm72_c: rhs_mine_ozm72_a
 	{
 		ammo="rhs_mine_ozm72_c_ammo";
-		displayName="$STR_RHS_CFGMAGAZINES_OZM72C";
 		icon="iconExplosiveAPDirectional";
-		descriptionShort="$STR_RHS_CFGMAGAZINES_OZM72C_DESCRIPTIONSHORT";
 	};
 	class rhs_ec75: MineBase
 	{
 		ammo="rhs_ec75_ammo";
-		displayName="$STR_RHS_CFGMAGAZINES_EC75";
 		icon="iconExplosiveGP";
-		descriptionShort="$STR_A3_cfgMagazines_ClassicMineRangeMagazine1";
-		class Library
-		{
-			libTextDesc="";
-		};
 	};
 	class rhs_ec75_sand: rhs_ec75
 	{
 		ammo="rhs_ec75_sand_ammo";
-		displayName="$STR_RHS_CFGMAGAZINES_EC75_SAND";
 	};
 	class rhs_ec200: rhs_ec75
 	{
 		ammo="rhs_ec200_ammo";
-		displayName="$STR_RHS_CFGMAGAZINES_EC200";
 		icon="iconExplosiveGP";
 	};
 	class rhs_ec200_sand: rhs_ec200
 	{
 		ammo="rhs_ec200_sand_ammo";
-		displayName="$STR_RHS_CFGMAGAZINES_EC200_SAND";
 	};
 	class rhs_ec400: rhs_ec75
 	{
 		ammo="rhs_ec400_ammo";
-		displayName="$STR_RHS_CFGMAGAZINES_EC400";
 		icon="iconExplosiveGP";
 	};
 	class rhs_ec400_sand: rhs_ec400
 	{
 		ammo="rhs_ec400_sand_ammo";
-		displayName="$STR_RHS_CFGMAGAZINES_EC400_SAND";
 	};
 	class EAST_Box_Base;
 	class rhs_weapon_crate: EAST_Box_Base
 	{
-		displayName="$STR_RHSAFRF_RHSWEAPONSCRATE_NAME";
 		icon="iconCrateLarge";
 		transportMaxWeapons=200;
 		transportMaxMagazines=1000;
 	};
 	class rhs_launcher_crate: EAST_Box_Base
 	{
-		displayName="$STR_RHS_RHSLAUNCHERSCRATE_NAME";
 		icon="iconCrateLarge";
 		transportMaxWeapons=200;
 		transportMaxMagazines=1000;
 	};
 	class rhs_spec_weapons_crate: EAST_Box_Base
 	{
-		displayName="$STR_RHS_RHSSPECIALWEAPONSCRATE_NAME";
 		icon="iconCrateLarge";
 		transportMaxWeapons=200;
 		transportMaxMagazines=1000;
 	};
 	class rhs_gear_crate: EAST_Box_Base
 	{
-		displayName="$STR_RHSAFRF_RHSEQUIPMENTCRATE_NAME";
 		icon="iconCrateLarge";
 		transportMaxWeapons=200;
 		transportMaxMagazines=1000;
 	};
 	class rhs_mags_crate: EAST_Box_Base
 	{
-		displayName="$STR_RHS_RHSAFRFAMMOCRATE_NAME";
 		icon="iconCrateLarge";
 		transportMaxWeapons=200;
 		transportMaxMagazines=1000;
 	};
 	class rhs_weapons_crate_ak: EAST_Box_Base
 	{
-		displayName="$STR_RHS_RHSWEAPONSCRATEVIRTUAL_NAME";
-		type=0;
 		icon="iconCrateLarge";
 		transportMaxWeapons=70;
 		transportMaxMagazines=40;
@@ -15268,13 +7686,8 @@ class CfgVehicles
 		};
 		SLX_XEH_DISABLED=1;
 	};
-	class rhs_weapons_crate_ak_standard: rhs_weapons_crate_ak
-	{
-		displayName="$STR_RHS_RHSWEAPONSCRATEVIRTUAL_NAME";
-	};
 	class rhs_weapons_crate_ak_ammo_545x39: EAST_Box_Base
 	{
-		displayName="$STR_RHS_RHSAMMOCRATEVIRTUAL_NAME";
 		icon="iconCrateLarge";
 		transportMaxWeapons=0;
 		transportMaxMagazines=500;
@@ -15284,19 +7697,13 @@ class CfgVehicles
 		};
 		SLX_XEH_DISABLED=1;
 	};
-	class rhs_weapons_crate_ak_ammo_545x39_standard: rhs_weapons_crate_ak_ammo_545x39
-	{
-		displayName="$STR_RHS_RHSAMMOCRATEVIRTUAL_NAME";
-	};
 	class rhs_7ya37_1_single: EAST_Box_Base
 	{
-		displayName="7Ya37-1 Crate";
 		transportMaxWeapons=10;
 		transportMaxMagazines=30;
 	};
 	class rhs_3Ya40_1_single: rhs_7ya37_1_single
 	{
-		displayName="3Ya40-1 Crate";
 		transportMaxWeapons=0;
 		transportMaxMagazines=40;
 	};
@@ -15305,826 +7712,10 @@ class CfgVehicles
 	{
 		editorCategory="EdCat_Weapons";
 	};
-	class rhs_weapon_ak74m: rhs_weapon_base
-	{
-		displayName="$STR_RHS_CFGWEAPONS_RIFLE_AK74M0";
-	};
-	class rhs_weapon_ak74m_npz: rhs_weapon_ak74m
-	{
-		displayName="$STR_RHS_CFGWEAPONS_RIFLE_AK74M_NPZ0";
-	};
-	class rhs_weapon_ak74m_camo: rhs_weapon_ak74m
-	{
-		displayName="$STR_RHS_CFGWEAPONS_RIFLE_AK74M_CAMO0";
-	};
-	class rhs_weapon_ak74m_camo_npz: rhs_weapon_ak74m
-	{
-		displayName="$STR_RHS_CFGWEAPONS_RIFLE_AK74M_CAMO0_NPZ0";
-	};
-	class rhs_weapon_ak74m_gp25: rhs_weapon_ak74m
-	{
-		displayName="$STR_RHS_CFGWEAPONS_RIFLE_AK74M_GP250";
-	};
-	class rhs_weapon_ak74m_gp25_npz: rhs_weapon_ak74m
-	{
-		displayName="$STR_RHS_CFGWEAPONS_RIFLE_AK74M_GP250_NPZ0";
-	};
-	class rhs_weapon_ak74m_desert: rhs_weapon_ak74m
-	{
-		displayName="$STR_RHS_CFGWEAPONS_RIFLE_AK74M_DESERT0";
-	};
-	class rhs_weapon_ak74m_desert_npz: rhs_weapon_ak74m
-	{
-		displayName="$STR_RHS_CFGWEAPONS_RIFLE_AK74M_DESERT0_NPZ0";
-	};
-	class rhs_weapon_ak74m_plummag: rhs_weapon_ak74m
-	{
-		displayName="$STR_RHS_CFGWEAPONS_RIFLE_AK74M_PMAG0";
-	};
-	class rhs_weapon_ak74m_plummag_npz: rhs_weapon_ak74m
-	{
-		displayName="$STR_RHS_CFGWEAPONS_RIFLE_AK74M_PMAG0_NPZ0";
-	};
-	class rhs_weapon_ak74m_fullplum: rhs_weapon_ak74m
-	{
-		displayName="$STR_RHS_CFGWEAPONS_RIFLE_AK74M0_PLUM0";
-	};
-	class rhs_weapon_ak74m_fullplum_npz: rhs_weapon_ak74m
-	{
-		displayName="$STR_RHS_CFGWEAPONS_RIFLE_AK74M_PLUM_NPZ0";
-	};
-	class rhs_weapon_ak74m_fullplum_folded: rhs_weapon_ak74m
-	{
-		displayName="$STR_RHS_CFGWEAPONS_RIFLE_AK74M0_PLUM0";
-	};
-	class rhs_weapon_ak74m_fullplum_gp25: rhs_weapon_ak74m
-	{
-		displayName="$STR_RHS_WEAP_AK74M_PLUM0_GP25";
-	};
-	class rhs_weapon_ak74m_fullplum_gp25_npz: rhs_weapon_ak74m
-	{
-		displayName="$STR_RHS_WEAP_AK74M_PLUM0_GP25_NPZ0";
-	};
-	class rhs_weapon_ak74m_fullplum_gp25_folded: rhs_weapon_ak74m
-	{
-		displayName="$STR_RHS_WEAP_AK74M_PLUM0_GP25";
-	};
-	class rhs_weapon_ak74m_2mag: rhs_weapon_ak74m
-	{
-		displayName="$STR_RHS_CFGWEAPONS_RIFLE_AK74M_2MAG0";
-	};
-	class rhs_weapon_ak74m_2mag_npz: rhs_weapon_ak74m
-	{
-		displayName="$STR_RHS_CFGWEAPONS_RIFLE_AK74M_2MAG0_NPZ0";
-	};
-	class rhs_weapon_ak74m_2mag_camo: rhs_weapon_ak74m
-	{
-		displayName="$STR_RHS_WEAP_AK74M_2MAGCAMO";
-	};
-	class rhs_weapon_ak74m_2mag_camo_npz: rhs_weapon_ak74m
-	{
-		displayName="$STR_RHS_CFGWEAPONS_RIFLE_AK74M_2MAG0_CAMO0_NPZ0";
-	};
-	class rhs_weapon_aks74u: rhs_weapon_ak74m
-	{
-		displayName="$STR_RHS_WEAP_AKS74U";
-	};
-	class rhs_weapon_aks74un: rhs_weapon_ak74m
-	{
-		displayName="$STR_RHS_WEAP_AKS74UN";
-	};
-	class rhs_weapon_aks74: rhs_weapon_ak74m
-	{
-		displayName="$STR_RHS_WEAP_AKS74";
-	};
-	class rhs_weapon_aks74_folded: rhs_weapon_ak74m
-	{
-		displayName="$STR_RHS_WEAP_AKS74_FOLD";
-	};
-	class rhs_weapon_aks74_2: rhs_weapon_ak74m
-	{
-		displayName="$STR_RHS_WEAP_AKS74_2";
-	};
-	class rhs_weapon_aks74_2_folded: rhs_weapon_ak74m
-	{
-		displayName="$STR_RHS_WEAP_AKS74_2_FOLD";
-	};
-	class rhs_weapon_aks74_gp25: rhs_weapon_ak74m
-	{
-		displayName="$STR_RHS_WEAP_AKS74_GP25";
-	};
-	class rhs_weapon_aks74n: rhs_weapon_ak74m
-	{
-		displayName="$STR_RHS_WEAP_AKS74N";
-	};
-	class rhs_weapon_aks74n_folded: rhs_weapon_ak74m
-	{
-		displayName="$STR_RHS_WEAP_AKS74N_FOLD";
-	};
-	class rhs_weapon_aks74n_gp25: rhs_weapon_ak74m
-	{
-		displayName="$STR_RHS_WEAP_AKS74N_GP25";
-	};
-	class rhs_weapon_aks74n_npz: rhs_weapon_ak74m
-	{
-		displayName="$STR_RHS_WEAP_AKS74N_NPZ";
-	};
-	class rhs_weapon_aks74n_2: rhs_weapon_ak74m
-	{
-		displayName="$STR_RHS_WEAP_AKS74N_2";
-	};
-	class rhs_weapon_aks74n_2_npz: rhs_weapon_ak74m
-	{
-		displayName="$STR_RHS_WEAP_AKS74N_2_NPZ";
-	};
-	class rhs_weapon_ak74: rhs_weapon_ak74m
-	{
-		displayName="$STR_RHS_WEAP_AK74";
-	};
-	class rhs_weapon_ak74n: rhs_weapon_ak74m
-	{
-		displayName="$STR_RHS_WEAP_AK74N";
-	};
-	class rhs_weapon_ak74n_gp25: rhs_weapon_ak74m
-	{
-		displayName="$STR_RHS_WEAP_AK74N_GP25";
-	};
-	class rhs_weapon_ak74_gp25: rhs_weapon_ak74m
-	{
-		displayName="$STR_RHS_WEAP_AK74_GP25";
-	};
-	class rhs_weapon_ak74n_npz: rhs_weapon_ak74m
-	{
-		displayName="$STR_RHS_WEAP_AK74N_NPZ";
-	};
-	class rhs_weapon_ak74_2: rhs_weapon_ak74m
-	{
-		displayName="$STR_RHS_WEAP_AK74_2";
-	};
-	class rhs_weapon_ak74n_2: rhs_weapon_ak74m
-	{
-		displayName="$STR_RHS_WEAP_AK74N_2";
-	};
-	class rhs_weapon_ak74n_2_npz: rhs_weapon_ak74m
-	{
-		displayName="$STR_RHS_WEAP_AK74N_2_NPZ";
-	};
-	class rhs_weapon_ak74_3: rhs_weapon_ak74m
-	{
-		displayName="$STR_RHS_WEAP_AK74_3";
-	};
-	class rhs_weapon_akm: rhs_weapon_base
-	{
-		displayName="$STR_RHS_WEAP_AKM";
-	};
-	class rhs_weapon_akmn: rhs_weapon_akm
-	{
-		displayName="$STR_RHS_WEAP_AKMN";
-	};
-	class rhs_weapon_akmn_npz: rhs_weapon_akm
-	{
-		displayName="$STR_RHS_WEAP_AKMN_NPZ";
-	};
-	class rhs_weapon_akm_zenitco01_b33: rhs_weapon_akm
-	{
-		displayName="$STR_RHS_WEAP_AKM_ZENIT_B33";
-	};
-	class rhs_weapon_akm_gp25: rhs_weapon_akm
-	{
-		displayName="$STR_RHS_WEAP_AKM_GP25";
-	};
-	class rhs_weapon_akmn_gp25: rhs_weapon_akm
-	{
-		displayName="$STR_RHS_WEAP_AKMN_GP25";
-	};
-	class rhs_weapon_akms: rhs_weapon_akm
-	{
-		displayName="$STR_RHS_WEAP_AKMS";
-	};
-	class rhs_weapon_akms_folded: rhs_weapon_akm
-	{
-		displayName="$STR_RHS_WEAP_AKMS_FOLDED";
-	};
-	class rhs_weapon_akms_gp25: rhs_weapon_akms
-	{
-		displayName="$STR_RHS_WEAP_AKMS_GP25";
-	};
-	class rhs_weapon_pm63: rhs_weapon_akm
-	{
-		displayName="$STR_RHS_WEAP_PM63";
-	};
-	class rhs_weapon_ak103: rhs_weapon_akm
-	{
-		displayName="$STR_RHS_WEAP_AK103";
-	};
-	class rhs_weapon_ak103_npz: rhs_weapon_ak103
-	{
-		displayName="$STR_RHS_WEAP_AK103_NPZ0";
-	};
-	class rhs_weapon_ak103_1: rhs_weapon_akm
-	{
-		displayName="$STR_RHS_WEAP_AK1031";
-	};
-	class rhs_weapon_ak103_2: rhs_weapon_akm
-	{
-		displayName="$STR_RHS_WEAP_AK1032";
-	};
-	class rhs_weapon_ak104: rhs_weapon_akm
-	{
-		displayName="$STR_RHS_WEAP_AK104";
-	};
-	class rhs_weapon_ak104_npz: rhs_weapon_ak104
-	{
-		displayName="$STR_RHS_WEAP_AK104_NPZ0";
-	};
-	class rhs_weapon_ak105: rhs_weapon_ak74m
-	{
-		displayName="$STR_RHS_WEAP_AK105";
-	};
-	class rhs_weapon_ak105_npz: rhs_weapon_ak105
-	{
-		displayName="$STR_RHS_WEAP_AK105_NPZ0";
-	};
-	class rhs_weapon_svd: rhs_weapon_base
-	{
-		displayName="$STR_RHS_SVD_NAME";
-	};
-	class rhs_weapon_svdp: rhs_weapon_svd
-	{
-		displayName="$STR_RHS_WEAP_SVDM";
-	};
-	class rhs_weapon_svdp_npz: rhs_weapon_svd
-	{
-		displayName="$STR_RHS_WEAP_SVDM_NPZ0";
-	};
-	class rhs_weapon_svdp_wd: rhs_weapon_svd
-	{
-		displayName="$STR_RHS_WEAP_SVDM_CAMO";
-	};
-	class rhs_weapon_svdp_wd_npz: rhs_weapon_svd
-	{
-		displayName="$STR_RHS_WEAP_SVDM_CAMO_NPZ0";
-	};
-	class rhs_weapon_svds: rhs_weapon_svd
-	{
-		displayName="$STR_RHS_WEAP_SVDS";
-	};
-	class rhs_weapon_svds_npz: rhs_weapon_svd
-	{
-		displayName="$STR_RHS_WEAP_SVDS_NPZ0";
-	};
-	class rhs_weapon_asval: rhs_weapon_base
-	{
-		displayName="$STR_RHS_WEAP_ASVAL";
-	};
-	class rhs_weapon_asval_grip: rhs_weapon_asval
-	{
-		displayName="$STR_RHS_WEAP_ASVAL_GRIP";
-	};
-	class rhs_weapon_asval_npz: rhs_weapon_asval
-	{
-		displayName="$STR_RHS_WEAP_ASVAL_NPZ";
-	};
-	class rhs_weapon_vvs: rhs_weapon_asval
-	{
-		displayName="$STR_RHS_WEAP_VSS";
-	};
-	class rhs_weapon_vvs_grip: rhs_weapon_vvs
-	{
-		displayName="$STR_RHS_WEAP_VSS_GRIP";
-	};
-	class rhs_weapon_vvs_npz: rhs_weapon_vvs
-	{
-		displayName="$STR_RHS_WEAP_VSS_NPz";
-	};
-	class rhs_weapon_pp2000: rhs_weapon_akm
-	{
-		displayName="PP-2000";
-	};
-	class rhs_weapon_pkp: rhs_weapon_base
-	{
-		displayName="$STR_RHS_PKP_NAME";
-	};
-	class rhs_weapon_pkm: rhs_weapon_pkp
-	{
-		displayName="$STR_RHS_WEAP_PKM";
-	};
-	class rhs_weapon_rpg7: rhs_weapon_base
-	{
-		displayName="$STR_RHS_RPG7V2_NAME";
-	};
-	class rhs_weapon_rshg2: rhs_weapon_rpg7
-	{
-		displayName="$STR_RHS_RSHG2_NAME";
-	};
-	class rhs_weapon_rpg26: rhs_weapon_rpg7
-	{
-		displayName="$STR_RHS_RPG26_NAME";
-	};
-	class rhs_weapon_igla: rhs_weapon_rpg7
-	{
-		displayName="9K38";
-	};
-	class rhs_weapon_rsp30_white: rhs_weapon_base
-	{
-		displayName="RSP-30 Flare White";
-	};
-	class rhs_weapon_rsp30_red: rhs_weapon_rsp30_white
-	{
-		displayName="RSP-30 Flare Red";
-	};
-	class rhs_weapon_rsp30_green: rhs_weapon_rsp30_white
-	{
-		displayName="RSP-30 Flare Green";
-	};
-	class rhs_weapon_makarov_pmm: rhs_weapon_rsp30_white
-	{
-		displayName="$STR_RHS_WEAP_PMM";
-	};
-	class rhs_weapon_pb_6p9: rhs_weapon_makarov_pmm
-	{
-		displayName="$STR_RHS_WEAP_PB";
-	};
-	class rhs_weapon_makarov_pm: rhs_weapon_rsp30_white
-	{
-		displayName="$STR_RHS_WEAP_PM";
-	};
-	class rhs_weapon_pya: rhs_weapon_rsp30_white
-	{
-		displayName="$STR_RHS_WEAP_PYA";
-	};
-	class rhs_weapon_pp2000_folded: rhs_weapon_rsp30_white
-	{
-		displayName="PP-2000 (Folded)";
-	};
 	class WeaponHolder_Single_limited_item_F;
 	class rhs_magazine_base: WeaponHolder_Single_limited_item_F
 	{
 		editorCategory="EdCat_Weapons";
-	};
-	class rhs_magazine_rhs_30Rnd_545x39_AK: rhs_magazine_base
-	{
-		displayName="$STR_RHS_CFGMAGAZINES_30RND_545X39_7N6_BAKELITE";
-	};
-	class rhs_magazine_rhs_30Rnd_545x39_7N6_green_AK: rhs_magazine_base
-	{
-		displayName="$STR_RHS_CFGMAGAZINES_30RND_545X39_7N6_GREEN_BAKELITE";
-	};
-	class rhs_magazine_rhs_30Rnd_545x39_AK_green: rhs_magazine_base
-	{
-		displayName="$STR_RHS_CFGMAGAZINES_30RND_545X39_MAG_GREEN0_BAKELITE";
-	};
-	class rhs_magazine_rhs_30Rnd_545x39_7N6_AK: rhs_magazine_base
-	{
-		displayName="$STR_RHS_CFGMAGAZINES_30RND_545X39_7N6M";
-	};
-	class rhs_magazine_rhs_30Rnd_545x39_7N6M_plum_AK: rhs_magazine_base
-	{
-		displayName="$STR_RHS_CFGMAGAZINES_30RND_545X39_7N6M_PLUM";
-	};
-	class rhs_magazine_rhs_30Rnd_545x39_7N10_AK: rhs_magazine_base
-	{
-		displayName="$STR_RHS_CFGMAGAZINES_30RND_545X39_MAG1";
-	};
-	class rhs_magazine_rhs_30Rnd_545x39_7N10_plum_AK: rhs_magazine_base
-	{
-		displayName="$STR_RHS_CFGMAGAZINES_30RND_545X39_MAG1_PLUM";
-	};
-	class rhs_magazine_rhs_30Rnd_545x39_7N10_desert_AK: rhs_magazine_base
-	{
-		displayName="$STR_RHS_CFGMAGAZINES_30RND_545X39_MAG1_DESERT";
-	};
-	class rhs_magazine_rhs_30Rnd_545x39_7N10_camo_AK: rhs_magazine_base
-	{
-		displayName="$STR_RHS_CFGMAGAZINES_30RND_545X39_MAG1_CAMO";
-	};
-	class rhs_magazine_rhs_30Rnd_545x39_7N22_AK: rhs_magazine_base
-	{
-		displayName="$STR_RHS_CFGMAGAZINES_30RND_545X39_MAG2";
-	};
-	class rhs_magazine_rhs_30Rnd_545x39_7N22_plum_AK: rhs_magazine_base
-	{
-		displayName="$STR_RHS_CFGMAGAZINES_30RND_545X39_MAG2_PLUM";
-	};
-	class rhs_magazine_rhs_30Rnd_545x39_7N22_desert_AK: rhs_magazine_base
-	{
-		displayName="$STR_RHS_CFGMAGAZINES_30RND_545X39_MAG2_DESERT";
-	};
-	class rhs_magazine_rhs_30Rnd_545x39_7N22_camo_AK: rhs_magazine_base
-	{
-		displayName="$STR_RHS_CFGMAGAZINES_30RND_545X39_MAG2_CAMO";
-	};
-	class rhs_magazine_rhs_30Rnd_545x39_7U1_AK: rhs_magazine_base
-	{
-		displayName="$STR_RHS_CFGMAGAZINES_30RND_545X39_MAG3";
-	};
-	class rhs_magazine_rhs_30Rnd_545x39_7N10_2mag_AK: rhs_magazine_base
-	{
-		displayName="$STR_RHS_CFGMAGAZINES_30RND_545X39_2MAG";
-	};
-	class rhs_magazine_rhs_30Rnd_545x39_7N10_2mag_plum_AK: rhs_magazine_base
-	{
-		displayName="$STR_RHS_CFGMAGAZINES_30RND_545X39_2MAG_PLUM";
-	};
-	class rhs_magazine_rhs_30Rnd_545x39_7N10_2mag_desert_AK: rhs_magazine_base
-	{
-		displayName="$STR_RHS_CFGMAGAZINES_30RND_545X39_2MAG_DESERT";
-	};
-	class rhs_magazine_rhs_30Rnd_545x39_7N10_2mag_camo_AK: rhs_magazine_base
-	{
-		displayName="$STR_RHS_CFGMAGAZINES_30RND_545X39_2MAG_CAMO";
-	};
-	class rhs_magazine_rhs_45Rnd_545x39_7N22_AK: rhs_magazine_base
-	{
-		displayName="$STR_RHS_CFGMAGAZINES_45RND_545X39_MAG2";
-	};
-	class rhs_magazine_rhs_45Rnd_545x39_7N10_AK: rhs_magazine_base
-	{
-		displayName="$STR_RHS_CFGMAGAZINES_45RND_545X39_MAG1";
-	};
-	class rhs_magazine_rhs_45Rnd_545x39_7N6_AK: rhs_magazine_base
-	{
-		displayName="$STR_RHS_CFGMAGAZINES_45RND_545X39_7N6M";
-	};
-	class rhs_magazine_rhs_45Rnd_545x39_AK_green: rhs_magazine_base
-	{
-		displayName="$STR_RHS_CFGMAGAZINES_45RND_545X39_MAG_GREEN0";
-	};
-	class rhs_magazine_rhs_45Rnd_545x39_AK: rhs_magazine_base
-	{
-		displayName="45rnd RPK-74 7N6";
-	};
-	class rhs_magazine_rhs_45Rnd_545x39_7U1_AK: rhs_magazine_base
-	{
-		displayName="45rnd RPK-74 7U1 (Subsonic)";
-	};
-	class rhs_magazine_rhs_VOG25: rhs_magazine_base
-	{
-		displayName="$STR_RHS_VOG25_NAME";
-	};
-	class rhs_magazine_rhs_VOG25p: rhs_magazine_base
-	{
-		displayName="$STR_RHS_VOG25P_NAME";
-	};
-	class rhs_magazine_rhs_vg40tb: rhs_magazine_base
-	{
-		displayName="$STR_RHS_VG40TB_NAME";
-	};
-	class rhs_magazine_rhs_vg40sz: rhs_magazine_base
-	{
-		displayName="$STR_RHS_VG40SZ_NAME";
-	};
-	class rhs_magazine_rhs_vg40op_white: rhs_magazine_base
-	{
-		displayName="$STR_RHS_VG40OP_NAME";
-	};
-	class rhs_magazine_rhs_vg40op_green: rhs_magazine_base
-	{
-		displayName="$STR_RHS_VG40OPGREEN_NAME";
-	};
-	class rhs_magazine_rhs_vg40op_red: rhs_magazine_base
-	{
-		displayName="$STR_RHS_VG40OPRED_NAME";
-	};
-	class rhs_magazine_rhs_GRD40_white: rhs_magazine_base
-	{
-		displayName="$STR_RHS_GRD40WHITE_NAME";
-	};
-	class rhs_magazine_rhs_GRD40_green: rhs_magazine_base
-	{
-		displayName="$STR_RHS_GRD40GREEN_NAME";
-	};
-	class rhs_magazine_rhs_GRD40_red: rhs_magazine_base
-	{
-		displayName="$STR_RHS_GRD40RED_NAME";
-	};
-	class rhs_magazine_rhs_VG40MD_White: rhs_magazine_base
-	{
-		displayName="$STR_RHS_VG40MDWHITE_NAME";
-	};
-	class rhs_magazine_rhs_VG40MD_Green: rhs_magazine_base
-	{
-		displayName="$STR_RHS_VG40MDGREEN_NAME";
-	};
-	class rhs_magazine_rhs_VG40MD_Red: rhs_magazine_base
-	{
-		displayName="$STR_RHS_VG40MDRED_NAME";
-	};
-	class rhs_magazine_rhs_GDM40: rhs_magazine_base
-	{
-		displayName="$STR_RHS_GDM40_NAME";
-	};
-	class rhs_magazine_rhs_100Rnd_762x54mmR: rhs_magazine_base
-	{
-		displayName="$STR_RHS_CFGMAGAZINES_100RND_762X51_MAG0";
-	};
-	class rhs_magazine_rhs_100Rnd_762x54mmR_green: rhs_magazine_base
-	{
-		displayName="$STR_RHS_CFGMAGAZINES_100RND_762X51_MAG0_GREEN";
-	};
-	class rhs_magazine_rhs_100Rnd_762x54mmR_7n13: rhs_magazine_base
-	{
-		displayName="$STR_RHS_CFGMAGAZINES_100RND_762X51_MAG1";
-	};
-	class rhs_magazine_rhs_100Rnd_762x54mmR_7n26: rhs_magazine_base
-	{
-		displayName="$STR_RHS_CFGMAGAZINES_100RND_762X51_MAG2";
-	};
-	class rhs_magazine_rhs_100Rnd_762x54mmR_7bz3: rhs_magazine_base
-	{
-		displayName="$STR_RHS_CFGMAGAZINES_100RND_762X51_MAG3";
-	};
-	class rhs_magazine_rhs_10Rnd_762x54mmR_7N1: rhs_magazine_base
-	{
-		displayName="$STR_RHS_CFGMAGAZINES_10RND_762X54R_NAME";
-	};
-	class rhs_magazine_rhs_10Rnd_762x54mmR_7N14: rhs_magazine_base
-	{
-		displayName="$STR_RHS_CFGMAGAZINES_10RND_762X54R_7N14_NAME";
-	};
-	class rhs_magazine_rhs_30Rnd_762x39mm: rhs_magazine_base
-	{
-		displayName="$STR_RHS_CFGMAGAZINES_30RND_545X39_MAG4";
-	};
-	class rhs_magazine_rhs_30Rnd_762x39mm_tracer: rhs_magazine_base
-	{
-		displayName="$STR_RHS_CFGMAGAZINES_30RND_545X39_MAG5";
-	};
-	class rhs_magazine_rhs_30Rnd_762x39mm_89: rhs_magazine_base
-	{
-		displayName="$STR_RHS_CFGMAGAZINES_30RND_545X39_MAG6";
-	};
-	class rhs_magazine_rhs_30Rnd_762x39mm_U: rhs_magazine_base
-	{
-		displayName="$STR_RHS_CFGMAGAZINES_30RND_545X39_MAG7";
-	};
-	class rhs_magazine_rhs_30Rnd_762x39mm_bakelite: rhs_magazine_base
-	{
-		displayName="$STR_RHS_CFGMAGAZINES_30RND_545X39_MAG4_BAKELITE";
-	};
-	class rhs_magazine_rhs_30Rnd_762x39mm_bakelite_tracer: rhs_magazine_base
-	{
-		displayName="$STR_RHS_CFGMAGAZINES_30RND_545X39_MAG5_BAKELITE";
-	};
-	class rhs_magazine_rhs_30Rnd_762x39mm_bakelite_89: rhs_magazine_base
-	{
-		displayName="$STR_RHS_CFGMAGAZINES_30RND_545X39_MAG6_BAKELITE";
-	};
-	class rhs_magazine_rhs_30Rnd_762x39mm_bakelite_U: rhs_magazine_base
-	{
-		displayName="$STR_RHS_CFGMAGAZINES_30RND_545X39_MAG7_BAKELITE";
-	};
-	class rhs_magazine_rhs_30Rnd_762x39mm_polymer: rhs_magazine_base
-	{
-		displayName="$STR_RHS_CFGMAGAZINES_30RND_545X39_MAG4_POLYMER";
-	};
-	class rhs_magazine_rhs_30Rnd_762x39mm_polymer_tracer: rhs_magazine_base
-	{
-		displayName="$STR_RHS_CFGMAGAZINES_30RND_545X39_MAG5_POLYMER";
-	};
-	class rhs_magazine_rhs_30Rnd_762x39mm_polymer_89: rhs_magazine_base
-	{
-		displayName="$STR_RHS_CFGMAGAZINES_30RND_545X39_MAG6_POLYMER";
-	};
-	class rhs_magazine_rhs_30Rnd_762x39mm_polymer_U: rhs_magazine_base
-	{
-		displayName="$STR_RHS_CFGMAGAZINES_30RND_545X39_MAG7_POLYMER";
-	};
-	class rhs_magazine_rhs_10Rnd_762x39mm: rhs_magazine_base
-	{
-		displayName="$STR_RHS_CFGMAGAZINES_10RND_545X39_MAG4";
-	};
-	class rhs_magazine_rhs_10Rnd_762x39mm_tracer: rhs_magazine_base
-	{
-		displayName="$STR_RHS_CFGMAGAZINES_10RND_545X39_MAG5";
-	};
-	class rhs_magazine_rhs_10Rnd_762x39mm_89: rhs_magazine_base
-	{
-		displayName="$STR_RHS_CFGMAGAZINES_10RND_545X39_MAG6";
-	};
-	class rhs_magazine_rhs_10Rnd_762x39mm_U: rhs_magazine_base
-	{
-		displayName="$STR_RHS_CFGMAGAZINES_10RND_545X39_MAG7";
-	};
-	class rhs_magazine_rhs_75Rnd_762x39mm: rhs_magazine_base
-	{
-		displayName="$STR_RHS_CFGMAGAZINES_75RND_762X39_MAG4";
-	};
-	class rhs_magazine_rhs_75Rnd_762x39mm_tracer: rhs_magazine_base
-	{
-		displayName="$STR_RHS_CFGMAGAZINES_75RND_762X39_MAG5";
-	};
-	class rhs_magazine_rhs_75Rnd_762x39mm_89: rhs_magazine_base
-	{
-		displayName="$STR_RHS_CFGMAGAZINES_75RND_762X39_MAG6";
-	};
-	class rhs_magazine_rhs_20rnd_9x39mm_SP5: rhs_magazine_base
-	{
-		displayName="$STR_RHS_CFGMAGAZINES_20RND_9X39_MAG_SP5";
-	};
-	class rhs_magazine_rhs_20rnd_9x39mm_SP6: rhs_magazine_base
-	{
-		displayName="$STR_RHS_CFGMAGAZINES_20RND_9X39_MAG_SP6";
-	};
-	class rhs_magazine_rhs_10rnd_9x39mm_SP5: rhs_magazine_base
-	{
-		displayName="$STR_RHS_CFGMAGAZINES_10RND_9X39_MAG_SP5";
-	};
-	class rhs_magazine_rhs_10rnd_9x39mm_SP6: rhs_magazine_base
-	{
-		displayName="$STR_RHS_CFGMAGAZINES_10RND_9X39_MAG_SP6";
-	};
-	class rhs_magazine_rhs_5Rnd_338lapua_t5000: rhs_magazine_base
-	{
-		displayName="$STR_RHS_CFGMAGAZINES_5RND_338LAPUA_T5000";
-	};
-	class rhs_magazine_rhs_mine_pmn2_mag: rhs_magazine_base
-	{
-		displayName="$STR_RHS_CFGMAGAZINES_PMN20";
-	};
-	class rhs_magazine_rhs_mine_tm62m_mag: rhs_magazine_base
-	{
-		displayName="$STR_RHS_CFGMAGAZINES_TM62M0";
-	};
-	class rhs_magazine_rhs_mine_msk40p_white_mag: rhs_magazine_base
-	{
-		displayName="$STR_RHS_MINE_MSK40P_W_MAG_DISPLAYNAME";
-	};
-	class rhs_magazine_rhs_mine_msk40p_red_mag: rhs_magazine_base
-	{
-		displayName="$STR_RHS_MINE_MSK40P_R_MAG_DISPLAYNAME";
-	};
-	class rhs_magazine_rhs_mine_msk40p_green_mag: rhs_magazine_base
-	{
-		displayName="$STR_RHS_MINE_MSK40P_G_MAG_DISPLAYNAME";
-	};
-	class rhs_magazine_rhs_mine_msk40p_blue_mag: rhs_magazine_base
-	{
-		displayName="$STR_RHS_MINE_MSK40P_B_MAG_DISPLAYNAME";
-	};
-	class rhs_magazine_rhs_mine_sm320_white_mag: rhs_magazine_base
-	{
-		displayName="$STR_RHS_MINE_SM320_W_MAG_DISPLAYNAME";
-	};
-	class rhs_magazine_rhs_mine_sm320_red_mag: rhs_magazine_base
-	{
-		displayName="$STR_RHS_MINE_SM320_R_MAG_DISPLAYNAME";
-	};
-	class rhs_magazine_rhs_mine_sm320_green_mag: rhs_magazine_base
-	{
-		displayName="$STR_RHS_MINE_SM320_G_MAG_DISPLAYNAME";
-	};
-	class rhs_magazine_rhs_mine_ozm72_a_mag: rhs_magazine_base
-	{
-		displayName="$STR_RHS_CFGMAGAZINES_OZM72A";
-	};
-	class rhs_magazine_rhs_mine_ozm72_b_mag: rhs_magazine_base
-	{
-		displayName="$STR_RHS_CFGMAGAZINES_OZM72B";
-	};
-	class rhs_magazine_rhs_mine_ozm72_c_mag: rhs_magazine_base
-	{
-		displayName="$STR_RHS_CFGMAGAZINES_OZM72C";
-	};
-	class rhs_magazine_rhs_ec75_mag: rhs_magazine_base
-	{
-		displayName="$STR_RHS_CFGMAGAZINES_EC75";
-	};
-	class rhs_magazine_rhs_ec200_mag: rhs_magazine_base
-	{
-		displayName="$STR_RHS_CFGMAGAZINES_EC200";
-	};
-	class rhs_magazine_rhs_ec400_mag: rhs_magazine_base
-	{
-		displayName="$STR_RHS_CFGMAGAZINES_EC400";
-	};
-	class rhs_magazine_rhs_ec75_sand_mag: rhs_magazine_base
-	{
-		displayName="$STR_RHS_CFGMAGAZINES_EC75_SAND";
-	};
-	class rhs_magazine_rhs_ec200_sand_mag: rhs_magazine_base
-	{
-		displayName="$STR_RHS_CFGMAGAZINES_EC200_SAND";
-	};
-	class rhs_magazine_rhs_ec400_sand_mag: rhs_magazine_base
-	{
-		displayName="$STR_RHS_CFGMAGAZINES_EC400_SAND";
-	};
-	class rhs_magazine_rhs_rpg7_PG7VL_mag: rhs_magazine_base
-	{
-		displayName="$STR_RHS_PG7VL_NAME";
-	};
-	class rhs_magazine_rhs_rpg7_PG7V_mag: rhs_magazine_base
-	{
-		displayName="$STR_RHS_PG7V_NAME";
-	};
-	class rhs_magazine_rhs_rpg7_PG7VM_mag: rhs_magazine_base
-	{
-		displayName="$STR_RHS_PG7VM_NAME";
-	};
-	class rhs_magazine_rhs_rpg7_PG7VS_mag: rhs_magazine_base
-	{
-		displayName="$STR_RHS_PG7VS_NAME";
-	};
-	class rhs_magazine_rhs_rpg7_PG7VR_mag: rhs_magazine_base
-	{
-		displayName="$STR_RHS_PG7VR_NAME";
-	};
-	class rhs_magazine_rhs_rpg7_TBG7V_mag: rhs_magazine_base
-	{
-		displayName="$STR_RHS_TBG7V_NAME";
-	};
-	class rhs_magazine_rhs_rpg7_OG7V_mag: rhs_magazine_base
-	{
-		displayName="$STR_RHS_OG7V_NAME";
-	};
-	class rhs_magazine_rhs_rpg7_type69_airburst_mag: rhs_magazine_base
-	{
-		displayName="$STR_RHS_TYPE69_AIRBURST_NAME";
-	};
-	class rhs_magazine_rhs_mag_9k38_rocket: rhs_magazine_base
-	{
-		displayName="$STR_RHS_CFGMAGAZINES_9K38_NAME";
-	};
-	class rhs_magazine_rhs_mag_rgd5: rhs_magazine_base
-	{
-		displayName="$STR_RHS_RGD5_NAME";
-	};
-	class rhs_magazine_rhs_mag_rgn: rhs_magazine_base
-	{
-		displayName="$STR_RHS_RGN_NAME";
-	};
-	class rhs_magazine_rhs_mag_rgo: rhs_magazine_base
-	{
-		displayName="$STR_RHS_RGO_NAME";
-	};
-	class rhs_magazine_rhs_mag_rdg2_white: rhs_magazine_base
-	{
-		displayName="$STR_RHS_RDG2WHITE_NAME";
-	};
-	class rhs_magazine_rhs_mag_rdg2_black: rhs_magazine_base
-	{
-		displayName="$STR_RHS_RDG2BLACK_NAME";
-	};
-	class rhs_magazine_rhs_mag_nspn_yellow: rhs_magazine_base
-	{
-		displayName="$STR_RHS_NSPNYELLOW_NAME";
-	};
-	class rhs_magazine_rhs_mag_nspn_red: rhs_magazine_base
-	{
-		displayName="$STR_RHS_NSPNRED_NAME";
-	};
-	class rhs_magazine_rhs_mag_nspn_green: rhs_magazine_base
-	{
-		displayName="$STR_RHS_NSPNGREEN_NAME";
-	};
-	class rhs_magazine_rhs_mag_nspd: rhs_magazine_base
-	{
-		displayName="$STR_RHS_NSPD_NAME";
-	};
-	class rhs_magazine_rhs_mag_fakel: rhs_magazine_base
-	{
-		displayName="$STR_RHS_FAKEL_NAME";
-	};
-	class rhs_magazine_rhs_mag_fakels: rhs_magazine_base
-	{
-		displayName="$STR_RHS_FAKELS_NAME";
-	};
-	class rhs_magazine_rhs_mag_zarya2: rhs_magazine_base
-	{
-		displayName="$STR_RHS_ZARYA2_NAME";
-	};
-	class rhs_magazine_rhs_mag_plamyam: rhs_magazine_base
-	{
-		displayName="$STR_RHS_PLAMYAM_NAME";
-	};
-	class rhs_magazine_rhs_mag_9x19_17: rhs_magazine_base
-	{
-		displayName="$STR_RHS_MAG_9X19_17_PY";
-	};
-	class rhs_magazine_rhs_mag_9x19mm_7n21_20: rhs_magazine_base
-	{
-		displayName="$STR_RHS_CFGMAGAZINES_20RND_9X19_MAG_7N21";
-	};
-	class rhs_magazine_rhs_mag_9x19mm_7n31_20: rhs_magazine_base
-	{
-		displayName="$STR_RHS_CFGMAGAZINES_20RND_9X19_MAG_7N31";
-	};
-	class rhs_magazine_rhs_mag_9x19mm_7n21_44: rhs_magazine_base
-	{
-		displayName="$STR_RHS_CFGMAGAZINES_44RND_9X19_MAG_7N21";
-	};
-	class rhs_magazine_rhs_mag_9x19mm_7n31_44: rhs_magazine_base
-	{
-		displayName="$STR_RHS_CFGMAGAZINES_44RND_9X19_MAG_7N31";
-	};
-	class rhs_magazine_rhs_mag_9x18_12_57N181S: rhs_magazine_base
-	{
-		displayName="$STR_RHS_CFGMAGAZINES_12RND_9X18_MAG0";
-	};
-	class rhs_magazine_rhs_mag_9x18_8_57N181S: rhs_magazine_base
-	{
-		displayName="$STR_RHS_CFGMAGAZINES_8RND_9X18_MAG0";
 	};
 	class Site_F;
 	class Site_Minefield: Site_F
@@ -16435,9 +8026,6 @@ class CfgMagazineWells
 			"rhs_GDM40"
 		};
 	};
-	class CBA_40mm_GP
-	{
-	};
 	class RPG7
 	{
 		RHS_Magazines[]=
@@ -16449,9 +8037,6 @@ class CfgMagazineWells
 			"rhs_rpg7_TBG7V_mag",
 			"rhs_rpg7_TYPE69_airburst_mag"
 		};
-	};
-	class CBA_RPG7
-	{
 	};
 };
 class CfgNonAIVehicles

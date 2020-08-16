@@ -90,18 +90,12 @@ class CfgVehicles
 	class LandVehicle;
 	class Car: LandVehicle
 	{
-		class HitPoints;
-		class NewTurret;
-	};
 	class Car_F: Car
 	{
 		class Turrets
 		{
 			class MainTurret: NewTurret
 			{
-				class ViewOptics;
-			};
-		};
 		class HitPoints
 		{
 			class HitLFWheel;
@@ -113,12 +107,6 @@ class CfgVehicles
 			class HitEngine;
 			class HitGlass1;
 			class HitGlass2;
-			class HitGlass3;
-			class HitGlass4;
-		};
-		class EventHandlers;
-		class ViewPilot;
-	};
 	class Truck_F: Car_F
 	{
 		class AnimationSources;
@@ -126,7 +114,6 @@ class CfgVehicles
 	class rhs_truck: Truck_F
 	{
 		icon="\rhsafrf\addons\rhs_gaz66\data\ico\icomap_GAZ66_CA.paa";
-		displayName="$STR_RHS_GAZ66";
 		side=0;
 		rhs_decalParameters[]=
 		{
@@ -948,53 +935,8 @@ class CfgVehicles
 			"SlingLoadCargo3_dir",
 			"SlingLoadCargo4_dir"
 		};
-		hiddenSelections[]=
-		{
-			"camo1",
-			"camo2",
-			"camo3",
-			"camo4",
-			"camo5",
-			"n1",
-			"n2",
-			"n3",
-			"n4",
-			"i1",
-			"i2",
-			"i3",
-			"i4"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"\rhsafrf\addons\rhs_gaz66\data\gaz66_co.paa",
-			"\rhsafrf\addons\rhs_gaz66\data\tent_co.paa",
-			"\rhsafrf\addons\rhs_gaz66\data\rhs_gaz66_kung_co.paa",
-			"\rhsafrf\addons\rhs_gaz66\data\rhs_gaz66_ap2kung_co.paa",
-			"\rhsafrf\addons\rhs_gaz66\data\rhs_gaz66_repkung_co.paa",
-			"rhsafrf\addons\RHS_Decals\Data\Labels\Misc\no_ca.paa"
-		};
 		class textureSources
 		{
-			class standard
-			{
-				displayName="Standard";
-			};
-			class camo: standard
-			{
-				displayName="3-Color Camo";
-			};
-			class cdf: standard
-			{
-				displayName="CDF";
-			};
-			class chdkz: standard
-			{
-				displayName="ChDKZ";
-			};
-			class rhs_sand: standard
-			{
-				displayName="Sand";
-			};
 		};
 		class HitPoints: HitPoints
 		{
@@ -1073,9 +1015,6 @@ class CfgVehicles
 			minAngleY=-150;
 			maxAngleY=150;
 		};
-		class Damage
-		{
-		};
 		class Exhausts
 		{
 			class Exhaust1
@@ -1089,13 +1028,11 @@ class CfgVehicles
 		{
 			class rhs_decalNumber_type
 			{
-				displayName="Define font type of plate number";
 				tooltip="Define kind of font that will be drawn on vehicle.";
 				property="rhs_decalNumber_type";
 				control="Combo";
 				expression="_this setVariable ['%s', _value];[_this,[['Number', cTrucksGaz4NumberPlaces, _value]]] call rhs_fnc_decalsInit";
 				defaultValue=0;
-				typeName="STRING";
 				class values
 				{
 					class Default
@@ -1144,24 +1081,20 @@ class CfgVehicles
 			class rhs_decalNumber
 			{
 				collapsed=1;
-				displayName="Set plate number";
 				tooltip="Set plate number. 4 numbers are required. If 0, random number will be generated";
 				property="rhs_decalNumber";
 				control="Edit";
 				validate="Number";
-				typeName="Number";
 				defaultValue="-1";
 				expression="if( _value >= 0)then{[_this,[['Number', cTrucksGaz4NumberPlaces, _this getVariable ['rhs_decalNumber_type','Default'], _value]]] call rhs_fnc_decalsInit};";
 			};
 			class rhs_decalArmy_type
 			{
-				displayName="Define large door roundel type";
 				tooltip="Decal type";
 				property="rhs_decalArmy_type";
 				control="Combo";
 				expression="_this setVariable ['%s', _value];";
 				defaultValue="0";
-				typeName="STRING";
 				class values
 				{
 					class Army
@@ -1199,7 +1132,6 @@ class CfgVehicles
 			};
 			class rhs_decalArmy
 			{
-				displayName="Set large door roundel symbol";
 				tooltip="Set large door roundel located on both sides. Usually used for army symbols. -1 leaves current symbol & 0 clears decal.";
 				property="rhs_decalArmy";
 				control="Edit";
@@ -1209,21 +1141,18 @@ class CfgVehicles
 			};
 			class rhs_decalPlatoon_type: rhs_decalArmy_type
 			{
-				displayName="Define small door roundel type";
 				property="rhs_decalPlatoon_type";
 				expression="_this setVariable ['%s', _value];";
 				defaultValue="0";
 			};
 			class rhs_decalPlatoon: rhs_decalArmy
 			{
-				displayName="Set small door roundel symbol";
 				tooltip="Define small door roundel located on both sides. Usually used for platoon symbols. -1 leaves current symbol & 0 clears decal.";
 				property="rhs_decalPlatoon";
 				expression="if(parseNumber _value >= 0)then{ [_this, [ [ 'Label', cTrucksGazRightPlatoonPlaces,  _this getVariable ['rhs_decalPlatoon_type','Army'],call compile _value] ] ] call rhs_fnc_decalsInit};";
 			};
 			class rhs_hideLightCover
 			{
-				displayName="Hide light covers";
 				property="rhs_hideLightCover";
 				control="CheckboxNumber";
 				expression="_this animate ['light_hide',_value,true]";
@@ -1231,7 +1160,6 @@ class CfgVehicles
 			};
 			class rhs_hidespare: rhs_hideLightCover
 			{
-				displayName="Remove spare wheel";
 				property="rhs_hidespare";
 				expression="_this animate ['spare_hide',_value,true]";
 			};
@@ -1255,9 +1183,6 @@ class CfgVehicles
 				dammaged="_this call rhs_fnc_wheelDamaged";
 			};
 		};
-	};
-	class rhs_gaz66_vmf: rhs_truck
-	{
 	};
 	class rhs_gaz66_vdv: rhs_gaz66_vmf
 	{
@@ -1286,10 +1211,6 @@ class CfgVehicles
 	};
 	class rhs_gaz66_flat_vmf: rhs_gaz66_vmf
 	{
-		displayName="$STR_RHS_GAZ66FLAT";
-		class Turrets
-		{
-		};
 		class VehicleTransport
 		{
 			class Cargo
@@ -1355,15 +1276,8 @@ class CfgVehicles
 			"['Label', cTrucksGazRightArmyPlaces, 'Platoon', 12]"
 		};
 	};
-	class rhs_gaz66o_vmf: rhs_gaz66_vmf
-	{
-		displayName="$STR_RHS_GAZ66OPEN";
-		soundAttenuationCargo[]={1,0};
 		class Turrets: Turrets
 		{
-			class CargoTurret_02: CargoTurret_02
-			{
-			};
 			class CargoTurret_03: CargoTurret_02
 			{
 				animationSourceHatch="turnout1";
@@ -1455,10 +1369,6 @@ class CfgVehicles
 	};
 	class rhs_gaz66o_flat_vmf: rhs_gaz66o_vmf
 	{
-		displayName="GAZ-66 (Open/Flatbed)";
-		class Turrets
-		{
-		};
 		class VehicleTransport
 		{
 			class Cargo
@@ -1526,55 +1436,20 @@ class CfgVehicles
 	};
 	class rhs_gaz66_r142_base: rhs_gaz66_vmf
 	{
-		displayName="$STR_RHS_GAZ66R";
 		icon="\rhsafrf\addons\rhs_gaz66\data\ico\icomap_GAZ66_radio_CA.paa";
 		maxFordingDepth=1.2;
 		tf_range=10000;
-		class Damage
-		{
-		};
-		class Turrets
-		{
-		};
 		class Attributes: Attributes
 		{
 			class rhs_radioDeploy
 			{
-				displayName="Deploy Mast";
 				tooltip="Deploys R-142N radio mast";
 				property="rhs_radioDeploy";
 				control="CheckboxNumber";
 				expression="[_this,_value,true] call rhs_fnc_gaz66_radioDeploy";
 				defaultValue="0";
 			};
-			class rhs_decalNumber_type: rhs_decalNumber_type
-			{
-			};
-			class rhs_decalNumber: rhs_decalNumber
-			{
-			};
-			class rhs_decalArmy_type: rhs_decalArmy_type
-			{
-			};
-			class rhs_decalArmy: rhs_decalArmy
-			{
-			};
-			class rhs_decalPlatoon_type: rhs_decalPlatoon_type
-			{
-			};
-			class rhs_decalPlatoon: rhs_decalPlatoon
-			{
-			};
-			class rhs_hideLightCover: rhs_hideLightCover
-			{
-			};
-			class rhs_hidespare: rhs_hidespare
-			{
-			};
 		};
-	};
-	class rhs_gaz66_r142_vmf: rhs_gaz66_r142_base
-	{
 	};
 	class rhs_gaz66_r142_vdv: rhs_gaz66_r142_base
 	{
@@ -1605,18 +1480,8 @@ class CfgVehicles
 	{
 		icon="\rhsafrf\addons\rhs_gaz66\data\ico\icomap_GAZ66_repair_CA.paa";
 		memoryPointSupply="doplnovani";
-		displayName="$STR_RHS_GAZ66REP";
 		transportRepair=2000000000;
 		supplyRadius=6.8000002;
-		class Damage
-		{
-		};
-		class Turrets
-		{
-		};
-	};
-	class rhs_gaz66_repair_vmf: rhs_gaz66_repair_base
-	{
 	};
 	class rhs_gaz66_repair_vdv: rhs_gaz66_repair_base
 	{
@@ -1645,20 +1510,10 @@ class CfgVehicles
 	};
 	class rhs_gaz66_ap2_base: rhs_gaz66_vmf
 	{
-		displayName="$STR_RHS_GAZ66AP2";
 		icon="\rhsafrf\addons\rhs_gaz66\data\ico\icomap_GAZ66_med_CA.paa";
 		attendant=1;
 		memoryPointSupply="doplnovani";
 		supplyRadius=4.5;
-		class Damage
-		{
-		};
-		class Turrets
-		{
-		};
-	};
-	class rhs_gaz66_ap2_vmf: rhs_gaz66_ap2_base
-	{
 	};
 	class rhs_gaz66_ap2_vdv: rhs_gaz66_ap2_base
 	{
@@ -1687,20 +1542,10 @@ class CfgVehicles
 	};
 	class rhs_gaz66_ammo_base: rhs_gaz66_vmf
 	{
-		displayName="$STR_RHS_GAZ66AMMO";
 		transportAmmo=30000;
 		supplyRadius=9.5;
 		memoryPointSupply="doplnovani";
 		icon="\rhsafrf\addons\rhs_gaz66\data\ico\icomap_GAZ66_ammo_CA.paa";
-		class Damage
-		{
-		};
-		class Turrets
-		{
-		};
-	};
-	class rhs_gaz66_ammo_vmf: rhs_gaz66_ammo_base
-	{
 	};
 	class rhs_gaz66_ammo_vdv: rhs_gaz66_ammo_base
 	{
@@ -1729,11 +1574,7 @@ class CfgVehicles
 	};
 	class rhs_gaz66_zu23_base: rhs_gaz66_vmf
 	{
-		displayName="$STR_RHS_GAZ66_ZU23";
 		icon="\rhsafrf\addons\rhs_gaz66\data\ico\icomap_GAZ66_ammo_CA.paa";
-		class Damage
-		{
-		};
 		threat[]={0.60000002,0.1,0.60000002};
 		class Turrets: Turrets
 		{
@@ -1876,12 +1717,6 @@ class CfgVehicles
 	{
 		class Turrets: Turrets
 		{
-			class MainTurret: MainTurret
-			{
-			};
-			class CargoTurret_02: CargoTurret_02
-			{
-			};
 		};
 	};
 	class rhs_gaz66_zu23_vdv: rhs_gaz66_zu23_base
@@ -1894,12 +1729,6 @@ class CfgVehicles
 		};
 		class Turrets: Turrets
 		{
-			class MainTurret: MainTurret
-			{
-			};
-			class CargoTurret_02: CargoTurret_02
-			{
-			};
 		};
 	};
 	class rhs_gaz66_zu23_vv: rhs_gaz66_zu23_base
@@ -1911,12 +1740,6 @@ class CfgVehicles
 		};
 		class Turrets: Turrets
 		{
-			class MainTurret: MainTurret
-			{
-			};
-			class CargoTurret_02: CargoTurret_02
-			{
-			};
 		};
 	};
 	class rhs_gaz66_zu23_msv: rhs_gaz66_zu23_base
@@ -1928,12 +1751,6 @@ class CfgVehicles
 		};
 		class Turrets: Turrets
 		{
-			class MainTurret: MainTurret
-			{
-			};
-			class CargoTurret_02: CargoTurret_02
-			{
-			};
 		};
 	};
 };

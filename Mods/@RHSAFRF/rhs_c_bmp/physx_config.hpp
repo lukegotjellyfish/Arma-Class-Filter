@@ -23,9 +23,6 @@ engineLosses = 50; // power losses on the engine's crank-shaft (before the gearb
 transmissionLosses = 25; // power losses on wheel axis (in/after the gearbox) in Nm. (Constant)
 
 changeGearMinEffectivity[] = {0.5,0.15,0.95,0.95,0.95,0.95};
-class complexGearbox
-{
-	GearboxRatios[] = {"R2",-2.235,"N",0,"D1",2.59,"D2",1.79,"D3",1.23,"D4",0.85};
 	TransmissionRatios[] = {"High",5.5};
 	gearBoxMode = "auto";
 	moveOffGear = 1;
@@ -91,9 +88,6 @@ class Wheels {
 		maxCompression = 0;
 	};
 
-	class R2: L2 {
-		side = "right";
-	};
 	class R3: R2 {
 	};
 	class R4: R2 {

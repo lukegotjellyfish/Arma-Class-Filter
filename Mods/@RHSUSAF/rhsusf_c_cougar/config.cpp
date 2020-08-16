@@ -31,9 +31,6 @@ class CfgVehicles
 		{
 			class MainTurret: NewTurret
 			{
-				class ViewOptics;
-			};
-		};
 		class HitPoints
 		{
 			class HitFuel;
@@ -47,9 +44,6 @@ class CfgVehicles
 			class HitGlass2;
 			class HitGlass3;
 			class HitGlass4;
-			class HitGlass5;
-			class HitGlass6;
-		};
 		class EventHandlers;
 	};
 	class MRAP_01_base_F: Car_F
@@ -59,29 +53,13 @@ class CfgVehicles
 	class rhsusf_Cougar_base: MRAP_01_base_F
 	{
 		side=1;
-		displayName="Cougar";
 		weapons[]=
 		{
 			"TruckHorn2",
 			"rhsusf_weap_duke"
 		};
-		hiddenSelections[]=
-		{
-			"camo",
-			"camo1",
-			"camo2",
-			"pintle"
-		};
 		class textureSources
 		{
-			class rhs_desert
-			{
-				displayName="Desert";
-			};
-			class rhs_woodland
-			{
-				displayName="Woodland";
-			};
 		};
 		class Attributes
 		{
@@ -89,15 +67,11 @@ class CfgVehicles
 			{
 				control="CheckboxNumber";
 				defaultValue="0";
-				displayName="hide DUKE antennas";
 				property="rhs_hideDUKE";
 				expression="_this animate ['DUKE_Hide',_value,true];if(_value isEqualTo 1)then{_this removeWeaponTurret ['rhsusf_weap_duke',[-1]]};";
 			};
 		};
 		class CargoTurret;
-		class Turrets: Turrets
-		{
-		};
 		hullDamageCauseExplosion=1;
 		armorStructural=8;
 		class HitPoints: HitPoints
@@ -359,12 +333,6 @@ class CfgVehicles
 				steering=0;
 			};
 		};
-		class Damage
-		{
-		};
-		class EventHandlers: EventHandlers
-		{
-		};
 	};
 	class rhsusf_cougar_GPK_base: rhsusf_Cougar_base
 	{
@@ -434,7 +402,6 @@ class CfgVehicles
 	};
 	class rhsusf_CGRCAT1A2_M2_usmc_d: rhsusf_cougar_GPK_base
 	{
-		displayName="$STR_RHS_CGR_M2_NAME";
 		accuracy=0.5;
 		threat[]={0.89999998,0.30000001,0.1};
 		class Turrets: Turrets
@@ -455,15 +422,11 @@ class CfgVehicles
 					minFov=0.25;
 					maxFov=1.1;
 				};
-				class ViewGunner: ViewOptics
-				{
-				};
 			};
 		};
 	};
 	class rhsusf_CGRCAT1A2_Mk19_usmc_d: rhsusf_CGRCAT1A2_M2_usmc_d
 	{
-		displayName="$STR_RHS_CGR_MK19_NAME";
 		accuracy=0.5;
 		threat[]={0.89999998,0.30000001,0.1};
 		class Turrets: Turrets
@@ -476,17 +439,5 @@ class CfgVehicles
 				};
 			};
 		};
-	};
-	class rhsusf_CGRCAT1A2_usmc_wd: rhsusf_CGRCAT1A2_usmc_d
-	{
-		displayName="$STR_RHS_CGR_NAME";
-	};
-	class rhsusf_CGRCAT1A2_M2_usmc_wd: rhsusf_CGRCAT1A2_M2_usmc_d
-	{
-		displayName="$STR_RHS_CGR_M2_NAME";
-	};
-	class rhsusf_CGRCAT1A2_Mk19_usmc_wd: rhsusf_CGRCAT1A2_Mk19_usmc_d
-	{
-		displayName="$STR_RHS_CGR_MK19_NAME";
 	};
 };

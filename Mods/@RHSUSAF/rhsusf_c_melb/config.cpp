@@ -15,9 +15,6 @@ class CfgPatches
 		magazines[]={};
 		name="MELB";
 	};
-	class MELB_UI
-	{
-		units[]={};
 		weapons[]={};
 		requiredAddons[]={};
 	};
@@ -56,8 +53,6 @@ class cfgMagazines
 	{
 		count=0;
 		displaynameshort="-";
-		displayName="-";
-		descriptionShort="-";
 		tracersEvery=0;
 		weight=0;
 	};
@@ -68,16 +63,9 @@ class cfgWeapons
 	class Laserdesignator_mounted;
 	class RHS_Laserdesignator_MELB: Laserdesignator_mounted
 	{
-		displayName="Laser Designator";
 		cursor="EmptyCursor";
 		cursorAim="EmptyCursor";
 		nameSound="laserdesignator";
-		minRange=1;
-		minRangeProbab=0.0099999998;
-		midRange=2;
-		midRangeProbab=0.0099999998;
-		maxRange=3;
-		maxRangeProbab=0.0099999998;
 	};
 };
 class CfgFunctions
@@ -114,9 +102,6 @@ class CfgFunctions
 };
 class RscControlsGroup;
 class RscText;
-class RangeText: RscText
-{
-};
 class RscPicture;
 class RscOpticsText;
 class RscIGProgress;
@@ -133,9 +118,6 @@ class CfgVehicles
 	class Helicopter;
 	class Helicopter_Base_F: Helicopter
 	{
-		class Turrets;
-		class HitPoints;
-	};
 	class Helicopter_Base_H: Helicopter_Base_F
 	{
 		class EventHandlers;
@@ -155,15 +137,9 @@ class CfgVehicles
 			class HitGlass2;
 			class HitGlass3;
 			class HitGlass4;
-			class HitGlass5;
-			class HitGlass6;
-		};
 		class CargoTurret;
 		class AnimationSources;
 		class ViewOptics;
-		class RotorLibHelicopterProperties;
-		class Components;
-	};
 	class RHS_MELB_base: Helicopter_Base_H
 	{
 		side=1;
@@ -212,19 +188,6 @@ class CfgVehicles
 		weapons[]=
 		{
 			"rhsusf_weap_LWIRCM"
-		};
-		hiddenSelections[]=
-		{
-			"camo1",
-			"d_SN"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"rhsusf\addons\rhsusf_melb\data\melb_ext_co.paa",
-			"rhsusf\addons\rhsusf_melb\data\decals\SN\blank_ca.paa"
-		};
-		class MFD
-		{
 		};
 		class ViewOptics: ViewOptics
 		{
@@ -1023,9 +986,6 @@ class CfgVehicles
 		};
 		class SoundsExt
 		{
-			class SoundEvents
-			{
-			};
 			class Sounds
 			{
 				class EngineExt
@@ -1435,9 +1395,6 @@ class CfgVehicles
 				};
 			};
 		};
-		class pilotCamera
-		{
-		};
 		class Exhausts
 		{
 			class Exhaust01
@@ -1446,10 +1403,6 @@ class CfgVehicles
 				direction="exhaust1_dir";
 				effect="ExhaustEffectHeli";
 			};
-		};
-		class Library
-		{
-			libTextDesc="Syko's Little Birds";
 		};
 		armor=35;
 		armorStructural=5;
@@ -1565,20 +1518,15 @@ class CfgVehicles
 				radius=0.69999999;
 			};
 		};
-		class Damage
-		{
-		};
 		class Attributes
 		{
 			class rhs_MELB_TailNumber
 			{
-				displayName="Define Tail Number";
 				tooltip="Select tail number specific to this helicopter.";
 				property="rhs_MELB_TailNumber";
 				control="Combo";
 				expression="if(_value != 'NoChange')then{ [_this,'d_SN',_value] call RHS_MELB_fnc_tailNumber}";
 				defaultValue=0;
-				typeName="STRING";
 				class values
 				{
 					class NoChange
@@ -1715,7 +1663,6 @@ class CfgVehicles
 			};
 			class rhs_MELB_NoFear
 			{
-				displayName="No Fear";
 				property="MELB_NoFear";
 				control="CheckboxNumber";
 				expression="_this animate ['hide_NoFear',_value,true]";
@@ -1723,34 +1670,27 @@ class CfgVehicles
 			};
 			class rhs_MELB_SGDM: rhs_MELB_NoFear
 			{
-				displayName="Six Guns";
 				property="MELB_SGDM";
 				expression="_this animate ['hide_SGDM',_value,true]";
 			};
 			class rhs_MELB_SN_Nose: rhs_MELB_NoFear
 			{
-				displayName="Tail Number";
 				property="MELB_SN_Nose";
 				expression="_this animate ['hide_SN_nose',_value,true]";
 			};
 			class rhs_MELB_clan: rhs_MELB_NoFear
 			{
-				displayName="Squad XML";
 				property="MELB_clan";
 				expression="_this animate ['hide_clan',_value,true]";
 			};
 			class MELB_ToggleBoy: rhs_MELB_NoFear
 			{
-				displayName="Bobblehead";
 				property="MELB_ToggleBoy";
 				expression="_this animate ['AddBobhead',_value,true]";
 			};
 		};
 		class NVGMarkers
 		{
-			class IR_Position
-			{
-				color[]={0.1,0.1,0.1};
 				ambient[]={0.0099999998,0.0099999998,0.0099999998};
 				brightness=0.15000001;
 				name="IR_Position";
@@ -1867,15 +1807,6 @@ class CfgVehicles
 				};
 				class Components
 				{
-					class VehicleSystemsDisplayManagerComponentLeft: VehicleSystemsTemplateLeftPilot
-					{
-					};
-					class VehicleSystemsDisplayManagerComponentRight: VehicleSystemsTemplateRightPilot
-					{
-					};
-				};
-				class Hitpoints
-				{
 				};
 			};
 		};
@@ -1892,28 +1823,12 @@ class CfgVehicles
 			{
 				class Components
 				{
-					class DataLinkSensorComponent: SensorTemplateDataLink
-					{
-					};
-					class PassiveRadarSensorComponent: SensorTemplatePassiveRadar
-					{
-					};
-					class LaserSensorComponent: SensorTemplateLaser
-					{
-					};
 				};
-			};
-			class VehicleSystemsDisplayManagerComponentLeft: VehicleSystemsTemplateLeftPilot
-			{
-			};
-			class VehicleSystemsDisplayManagerComponentRight: VehicleSystemsTemplateRightPilot
-			{
 			};
 		};
 	};
 	class RHS_MELB_H6M: RHS_MELB_base
 	{
-		displayName="OH-6M";
 		availableForSupportTypes[]=
 		{
 			"Drop",
@@ -1922,9 +1837,6 @@ class CfgVehicles
 		threat[]={0.60000002,0.40000001,0.1};
 		class Turrets: Turrets
 		{
-			class CopilotTurret: CopilotTurret
-			{
-			};
 			class CargoTurret_02: CargoTurret_01
 			{
 				proxyIndex=2;
@@ -1934,28 +1846,12 @@ class CfgVehicles
 		};
 		class Attributes: Attributes
 		{
-			class rhs_MELB_TailNumber: rhs_MELB_TailNumber
-			{
-			};
-			class rhs_MELB_NoFear: rhs_MELB_NoFear
-			{
-			};
-			class rhs_MELB_SN_Nose: rhs_MELB_SN_Nose
-			{
-			};
-			class rhs_MELB_clan: rhs_MELB_clan
-			{
-			};
-			class MELB_ToggleBoy: MELB_ToggleBoy
-			{
-			};
 		};
 	};
 	class RHS_MELB_AH6M: RHS_MELB_base
 	{
 		forceInGarage=1;
 		icon="rhsusf\addons\rhsusf_melb\Data\ui\map_melb_ah_6m_l_ca.paa";
-		displayName="AH-6M Little Bird";
 		slingLoadMaxCargoMass=0;
 		fuelCapacity=436;
 		fuelConsumptionRate=0.079999998;
@@ -1983,30 +1879,11 @@ class CfgVehicles
 		cost=1000000;
 		class Turrets: Turrets
 		{
-			class CopilotTurret: CopilotTurret
-			{
-			};
 		};
 		class Attributes: Attributes
 		{
-			class rhs_MELB_TailNumber: rhs_MELB_TailNumber
-			{
-			};
-			class rhs_MELB_SGDM: rhs_MELB_SGDM
-			{
-			};
-			class rhs_MELB_SN_Nose: rhs_MELB_SN_Nose
-			{
-			};
-			class rhs_MELB_clan: rhs_MELB_clan
-			{
-			};
-			class MELB_ToggleBoy: MELB_ToggleBoy
-			{
-			};
 			class rhs_ExtLongL
 			{
-				displayName="Extend left pylon";
 				tooltip="Extended weapon pylon on the port side \nSome clipping occurs with GAU-19";
 				property="ExtLongL";
 				control="CheckboxNumber";
@@ -2015,7 +1892,6 @@ class CfgVehicles
 			};
 			class rhs_ExtLongR
 			{
-				displayName="Extend right pylon";
 				tooltip="Extended weapon pylon on the starboard side";
 				property="ExtLongR";
 				control="CheckboxNumber";
@@ -2037,7 +1913,6 @@ class CfgVehicles
 							"RHS_HP_MELB",
 							"RHS_HP_MELB_L"
 						};
-						priority=2;
 						attachment="rhs_mag_M151_7";
 						maxweight=1200;
 						UIposition[]={0.625,0.2};
@@ -2052,14 +1927,10 @@ class CfgVehicles
 							"RHS_HP_MELB_M134"
 						};
 						UIposition[]={0.56199998,0.30000001};
-						priority=1;
 						attachment="rhs_mag_m134_pylon_3000";
 						turret[]={};
 						hitpoint="HitPylon2";
 					};
-					class pylon3: pylon2
-					{
-						UIposition[]={0.103,0.30000001};
 						mirroredMissilePos=2;
 						attachment="rhs_mag_m134_pylon_3000";
 						turret[]={};
@@ -2119,7 +1990,6 @@ class CfgVehicles
 	};
 	class RHS_MELB_AH6M_L: RHS_MELB_AH6M
 	{
-		displayName="AH-6M-L Little Bird";
 		class components: Components
 		{
 			class TransportPylonsComponent: TransportPylonsComponent
@@ -2148,7 +2018,6 @@ class CfgVehicles
 	};
 	class RHS_MELB_AH6M_M: RHS_MELB_AH6M
 	{
-		displayName="AH-6M-M Little Bird";
 		class components: Components
 		{
 			class TransportPylonsComponent: TransportPylonsComponent
@@ -2177,7 +2046,6 @@ class CfgVehicles
 	};
 	class RHS_MELB_AH6M_H: RHS_MELB_AH6M
 	{
-		displayName="AH-6M-H Little Bird";
 		class components: Components
 		{
 			class TransportPylonsComponent: TransportPylonsComponent
@@ -2209,7 +2077,6 @@ class CfgVehicles
 	{
 		forceInGarage=1;
 		icon="rhsusf\addons\rhsusf_melb\Data\ui\map_melb_mh_6m_ca.paa";
-		displayName="MH-6M Little Bird";
 		fuelCapacity=436;
 		fuelConsumptionRate=0.079999998;
 		ejectDeadCargo=0;
@@ -2223,9 +2090,6 @@ class CfgVehicles
 		};
 		class Turrets: Turrets
 		{
-			class CopilotTurret: CopilotTurret
-			{
-			};
 			class CargoTurret_03: CargoTurret
 			{
 				proxyIndex=3;
@@ -2237,9 +2101,6 @@ class CfgVehicles
 				ejectDeadGunner=0;
 				playerPosition=4;
 				soundAttenuationTurret="";
-				class Hitpoints
-				{
-				};
 			};
 			class CargoTurret_04: CargoTurret_03
 			{
@@ -2254,55 +2115,28 @@ class CfgVehicles
 				minElev=-45;
 				maxTurn=95;
 				minTurn=-95;
-				class dynamicViewLimits
-				{
-					CargoTurret_03[]={-30,95};
 					CargoTurret_07[]={-95,50};
 				};
 			};
 			class CargoTurret_06: CargoTurret_05
 			{
 				proxyIndex=6;
-				class dynamicViewLimits
-				{
-					CargoTurret_04[]={-95,30};
 					CargoTurret_08[]={-50,95};
 				};
 			};
 			class CargoTurret_07: CargoTurret_06
 			{
 				proxyIndex=7;
-				class dynamicViewLimits
-				{
-					CargoTurret_05[]={-50,95};
 				};
 			};
 			class CargoTurret_08: CargoTurret_07
 			{
 				proxyIndex=8;
-				class dynamicViewLimits
-				{
-					CargoTurret_06[]={-95,50};
 				};
 			};
 		};
 		class Attributes: Attributes
 		{
-			class rhs_MELB_TailNumber: rhs_MELB_TailNumber
-			{
-			};
-			class rhs_MELB_NoFear: rhs_MELB_NoFear
-			{
-			};
-			class rhs_MELB_SN_Nose: rhs_MELB_SN_Nose
-			{
-			};
-			class rhs_MELB_clan: rhs_MELB_clan
-			{
-			};
-			class MELB_ToggleBoy: MELB_ToggleBoy
-			{
-			};
 		};
 	};
 };

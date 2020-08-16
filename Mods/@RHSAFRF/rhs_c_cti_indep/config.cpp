@@ -46,15 +46,6 @@ class cfgWeapons
 	class U_I_OfficerUniform;
 	class rhs_chdkz_uniform_1: U_I_OfficerUniform
 	{
-		displayName="Guerilla Uniform (Les)";
-		hiddenSelections[]=
-		{
-			"camo"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"\A3\Characters_F\Common\Suitpacks\data\suitpack_soldier_indep_co.paa"
-		};
 		class ItemInfo: UniformItem
 		{
 			uniformModel="-";
@@ -65,15 +56,6 @@ class cfgWeapons
 	};
 	class rhs_chdkz_uniform_2: U_I_OfficerUniform
 	{
-		displayName="Guerilla Uniform (Half-Les)";
-		hiddenSelections[]=
-		{
-			"camo"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"\A3\Characters_F\Common\Suitpacks\data\suitpack_soldier_indep_co.paa"
-		};
 		class ItemInfo: UniformItem
 		{
 			uniformModel="-";
@@ -84,15 +66,6 @@ class cfgWeapons
 	};
 	class rhs_chdkz_uniform_3: U_I_OfficerUniform
 	{
-		displayName="Guerilla Uniform (Half-Kamysh)";
-		hiddenSelections[]=
-		{
-			"camo"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"\A3\Characters_F\Common\Suitpacks\data\suitpack_soldier_indep_co.paa"
-		};
 		class ItemInfo: UniformItem
 		{
 			uniformModel="-";
@@ -103,15 +76,6 @@ class cfgWeapons
 	};
 	class rhs_chdkz_uniform_4: U_I_OfficerUniform
 	{
-		displayName="Guerilla Uniform (Half-Flora)";
-		hiddenSelections[]=
-		{
-			"camo"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"\A3\Characters_F\Common\Suitpacks\data\suitpack_soldier_indep_co.paa"
-		};
 		class ItemInfo: UniformItem
 		{
 			uniformModel="-";
@@ -122,15 +86,6 @@ class cfgWeapons
 	};
 	class rhs_chdkz_uniform_5: U_I_OfficerUniform
 	{
-		displayName="Guerilla Uniform (Flora-Les)";
-		hiddenSelections[]=
-		{
-			"camo"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"\A3\Characters_F\Common\Suitpacks\data\suitpack_soldier_indep_co.paa"
-		};
 		class ItemInfo: UniformItem
 		{
 			uniformModel="-";
@@ -139,21 +94,6 @@ class cfgWeapons
 			mass=40;
 		};
 	};
-	class rhs_insurgent_uniform_1: rhs_chdkz_uniform_1
-	{
-	};
-	class rhs_insurgent_uniform_2: rhs_chdkz_uniform_2
-	{
-	};
-	class rhs_insurgent_uniform_3: rhs_chdkz_uniform_3
-	{
-	};
-	class rhs_insurgent_uniform_4: rhs_chdkz_uniform_4
-	{
-	};
-	class rhs_insurgent_uniform_5: rhs_chdkz_uniform_5
-	{
-	};
 };
 class UniformSlotInfo;
 class CfgVehicles
@@ -161,7 +101,6 @@ class CfgVehicles
 	class FlagCarrierCore;
 	class rhs_FlagCarrier: FlagCarrierCore
 	{
-		displayName="";
 		icon="iconObject_circle";
 		cost=1000;
 		keepHorizontalPlacement=1;
@@ -169,14 +108,6 @@ class CfgVehicles
 		animated=0;
 		nameSound="obj_flag";
 		supplyRadius=2;
-		hiddenSelections[]=
-		{
-			"vlajka"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"\A3\Structures_F\Mil\Flags\Data\Mast_civ_CO.paa"
-		};
 		hiddenSelectionsMaterials[]=
 		{
 			"\A3\Structures_F\Mil\Flags\Data\Mast_civ.rvmat"
@@ -184,7 +115,6 @@ class CfgVehicles
 	};
 	class rhs_Flag_chdkz: rhs_FlagCarrier
 	{
-		displayName="CHDKZ Small Flag";
 		class EventHandlers
 		{
 			class RHS_EventHandlers
@@ -195,7 +125,6 @@ class CfgVehicles
 	};
 	class rhs_Flag_Insurgents: rhs_FlagCarrier
 	{
-		displayName="Insurgents Small Flag";
 		class EventHandlers
 		{
 			class RHS_EventHandlers
@@ -208,22 +137,6 @@ class CfgVehicles
 	class B_FieldPack_cbr;
 	class B_TacticalPack_blk;
 	class B_Carryall_cbr;
-	class rhs_ins_pack: B_FieldPack_khk
-	{
-		displayName="Backpack (Ammo)";
-	};
-	class rhs_ins_pack_GR: B_FieldPack_cbr
-	{
-		displayName="Backpack (Ammo)";
-	};
-	class rhs_ins_packMG: B_TacticalPack_blk
-	{
-		displayName="Backpack (MG)";
-	};
-	class rhs_ins_demo: B_Carryall_cbr
-	{
-		displayName="$STR_RHS_UMBTSBACKPACKDEMOLITIONS_NAME";
-		hiddenSelectionsTextures[]={};
 	};
 	class I_G_Soldier_base_F;
 	class I_G_Soldier_F: I_G_Soldier_base_F
@@ -232,7 +145,6 @@ class CfgVehicles
 	};
 	class rhs_ins_base: I_G_Soldier_F
 	{
-		displayName="$STR_RHS_INF_RIFLEMAN";
 		identityTypes[]=
 		{
 			"LanguageRUS_F",
@@ -326,13 +238,9 @@ class CfgVehicles
 		{
 			"\rhsafrf\addons\rhs_c_cti_indep\data\infantry\rvmats\clothing.rvmat"
 		};
-		class Wounds
-		{
-		};
 	};
 	class rhs_g_Soldier_F: rhs_ins_base
 	{
-		displayName="$STR_RHS_INF_RIFLEMAN_AKM";
 		uniformClass="rhs_chdkz_uniform_4";
 		linkedItems[]=
 		{
@@ -355,7 +263,6 @@ class CfgVehicles
 	};
 	class rhs_g_Soldier_lite_F: rhs_ins_base
 	{
-		displayName="$STR_RHS_INF_RIFLEMAN_L";
 		uniformClass="rhs_chdkz_uniform_5";
 		headgearProbability=0;
 		linkedItems[]=
@@ -391,7 +298,6 @@ class CfgVehicles
 	};
 	class rhs_g_Soldier_F2: rhs_ins_base
 	{
-		displayName="$STR_RHS_INF_RIFLEMAN_AK103";
 		uniformClass="rhs_chdkz_uniform_2";
 		linkedItems[]=
 		{
@@ -428,7 +334,6 @@ class CfgVehicles
 	};
 	class rhs_g_Soldier_F3: rhs_ins_base
 	{
-		displayName="Rifleman (AK74M)";
 		uniformClass="rhs_chdkz_uniform_3";
 		linkedItems[]=
 		{
@@ -476,7 +381,6 @@ class CfgVehicles
 	};
 	class rhs_g_Soldier_AT_F: rhs_ins_base
 	{
-		displayName="$STR_RHS_INF_LAT";
 		uniformClass="rhs_chdkz_uniform_2";
 		headgearProbability=0;
 		linkedItems[]=
@@ -528,7 +432,6 @@ class CfgVehicles
 	};
 	class rhs_g_Soldier_GL_F: rhs_ins_base
 	{
-		displayName="$STR_RHS_INF_GRENADIER";
 		uniformClass="rhs_chdkz_uniform_2";
 		linkedItems[]=
 		{
@@ -584,7 +487,6 @@ class CfgVehicles
 	};
 	class rhs_g_Soldier_TL_F: rhs_g_Soldier_GL_F
 	{
-		displayName="$STR_RHSUSF_INF_SCOUT_GR";
 		uniformClass="rhs_chdkz_uniform_4";
 		headgearProbability=0;
 		linkedItems[]=
@@ -622,7 +524,6 @@ class CfgVehicles
 	};
 	class rhs_g_Soldier_M_F: rhs_ins_base
 	{
-		displayName="$STR_RHS_INF_MARKSMAN";
 		uniformClass="rhs_chdkz_uniform_5";
 		headgearProbability=0;
 		linkedItems[]=
@@ -668,7 +569,6 @@ class CfgVehicles
 	};
 	class rhs_g_Soldier_AR_F: rhs_ins_base
 	{
-		displayName="$STR_RHS_INF_MACHINEGUNNER";
 		uniformClass="rhs_chdkz_uniform_4";
 		headgearProbability=0;
 		linkedItems[]=
@@ -712,7 +612,6 @@ class CfgVehicles
 	};
 	class rhs_g_Soldier_AAR_F: rhs_ins_base
 	{
-		displayName="$STR_RHS_INF_MACHINEGUNNER_ASSISTANT";
 		uniformClass="rhs_chdkz_uniform_1";
 		linkedItems[]=
 		{
@@ -736,7 +635,6 @@ class CfgVehicles
 	};
 	class rhs_g_Soldier_LAT_F: rhs_ins_base
 	{
-		displayName="$STR_RHS_INF_GRENADIER_RPG";
 		uniformClass="rhs_chdkz_uniform_4";
 		weapons[]=
 		{
@@ -756,7 +654,6 @@ class CfgVehicles
 	};
 	class rhs_g_Soldier_AAT_F: rhs_ins_base
 	{
-		displayName="$STR_RHS_INF_GRENADIER_RPG_ASSISTANT";
 		uniformClass="rhs_chdkz_uniform_2";
 		headgearProbability=0;
 		linkedItems[]=
@@ -782,7 +679,6 @@ class CfgVehicles
 	};
 	class rhs_g_Soldier_SL_F: rhs_ins_base
 	{
-		displayName="$STR_RHS_INF_SERGEANT";
 		uniformClass="rhs_chdkz_uniform_3";
 		headgearProbability=0;
 		linkedItems[]=
@@ -834,7 +730,6 @@ class CfgVehicles
 	};
 	class rhs_g_engineer_F: rhs_ins_base
 	{
-		displayName="$STR_RHS_INF_ENGINEER";
 		uniformClass="rhs_chdkz_uniform_2";
 		cost=220000;
 		camouflage=1.6;
@@ -879,7 +774,6 @@ class CfgVehicles
 	};
 	class rhs_g_Soldier_exp_F: rhs_ins_base
 	{
-		displayName="Bomber";
 		uniformClass="rhs_chdkz_uniform_4";
 		headgearProbability=0;
 		linkedItems[]=
@@ -910,7 +804,6 @@ class CfgVehicles
 	};
 	class rhs_g_Soldier_AA_F: rhs_ins_base
 	{
-		displayName="$STR_RHS_INF_AA";
 		uniformClass="rhs_chdkz_uniform_5";
 		headgearProbability=0;
 		linkedItems[]=
@@ -960,7 +853,6 @@ class CfgVehicles
 	};
 	class rhs_g_medic_F: rhs_ins_base
 	{
-		displayName="$STR_RHS_INF_MEDIC";
 		uniformClass="rhs_chdkz_uniform_3";
 		attendant=1;
 		icon="iconManMedic";
@@ -1002,7 +894,6 @@ class CfgVehicles
 	};
 	class rhs_g_Crew_F: rhs_ins_base
 	{
-		displayName="$STR_RHS_INF_CREW";
 		uniformClass="rhs_chdkz_uniform_1";
 		headgearProbability=0;
 		linkedItems[]=
@@ -1056,15 +947,11 @@ class CfgVehicles
 			class HitChest;
 			class HitBody;
 			class HitArms;
-			class HitHands;
-			class HitLegs;
-		};
 	};
 	class rhs_g_uniform1_base: SoldierGB
 	{
 		expansion=1;
 		side=2;
-		displayName="$STR_DN_RIFLEMAN";
 		identityTypes[]=
 		{
 			"LanguageRUS_F",
@@ -1083,30 +970,12 @@ class CfgVehicles
 		canCarryBackPack=1;
 		nakedUniform="U_BasicBody";
 		uniformClass="rhs_chdkz_uniform_1";
-		class Wounds
-		{
-		};
 		class HitPoints: HitPoints
 		{
-			class HitFace: HitFace
-			{
-			};
-			class HitNeck: HitNeck
-			{
-			};
 			class HitPelvis: HitPelvis
 			{
 				armor=1;
 				passThrough=0.60000002;
-			};
-			class HitAbdomen: HitAbdomen
-			{
-			};
-			class HitDiaphragm: HitDiaphragm
-			{
-			};
-			class HitChest: HitChest
-			{
 			};
 			class HitArms: HitArms
 			{
@@ -1116,9 +985,6 @@ class CfgVehicles
 			class HitHead: HitHead
 			{
 				armor=1;
-			};
-			class HitBody: HitBody
-			{
 			};
 			class HitHands: HitHands
 			{
@@ -1212,16 +1078,6 @@ class CfgVehicles
 			"ItemWatch",
 			"ItemRadio"
 		};
-		hiddenSelections[]=
-		{
-			"Camo1",
-			"Camo2",
-			"insignia"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"\rhsafrf\addons\rhs_c_cti_indep\data\infantry\clothing01_co.paa"
-		};
 		hiddenSelectionsMaterials[]=
 		{
 			"\rhsafrf\addons\rhs_c_cti_indep\data\infantry\rvmats\clothing.rvmat"
@@ -1231,85 +1087,33 @@ class CfgVehicles
 	class rhs_g_uniform2_base: rhs_g_uniform1_base
 	{
 		uniformClass="rhs_chdkz_uniform_2";
-		hiddenSelections[]=
-		{
-			"Camo1",
-			"Camo2",
-			"insignia"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"\rhsafrf\addons\rhs_c_cti_indep\data\infantry\clothing02_co.paa"
-		};
 		hiddenSelectionsMaterials[]=
 		{
 			"\rhsafrf\addons\rhs_c_cti_indep\data\infantry\rvmats\clothing.rvmat"
-		};
-		class Wounds
-		{
 		};
 	};
 	class rhs_g_uniform3_base: rhs_g_uniform1_base
 	{
 		uniformClass="rhs_chdkz_uniform_3";
-		hiddenSelections[]=
-		{
-			"Camo1",
-			"Camo2",
-			"insignia"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"\rhsafrf\addons\rhs_c_cti_indep\data\infantry\clothing03_co.paa"
-		};
 		hiddenSelectionsMaterials[]=
 		{
 			"\rhsafrf\addons\rhs_c_cti_indep\data\infantry\rvmats\clothing.rvmat"
-		};
-		class Wounds
-		{
 		};
 	};
 	class rhs_g_uniform4_base: rhs_g_uniform1_base
 	{
 		uniformClass="rhs_chdkz_uniform_4";
-		hiddenSelections[]=
-		{
-			"Camo1",
-			"Camo2",
-			"insignia"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"\rhsafrf\addons\rhs_c_cti_indep\data\infantry\clothing04_co.paa"
-		};
 		hiddenSelectionsMaterials[]=
 		{
 			"\rhsafrf\addons\rhs_c_cti_indep\data\infantry\rvmats\clothing.rvmat"
-		};
-		class Wounds
-		{
 		};
 	};
 	class rhs_g_uniform5_base: rhs_g_uniform1_base
 	{
 		uniformClass="rhs_chdkz_uniform_5";
-		hiddenSelections[]=
-		{
-			"Camo1",
-			"Camo2",
-			"insignia"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"\rhsafrf\addons\rhs_c_cti_indep\data\infantry\clothing05_co.paa"
-		};
 		hiddenSelectionsMaterials[]=
 		{
 			"\rhsafrf\addons\rhs_c_cti_indep\data\infantry\rvmats\clothing.rvmat"
-		};
-		class Wounds
-		{
 		};
 	};
 };
@@ -1317,8 +1121,6 @@ class CfgFactionClasses
 {
 	class rhs_faction_insurgents
 	{
-		displayName="Eastern Militia";
-		priority=-9;
 		side=2;
 		icon="\rhsafrf\addons\rhs_c_cti_indep\data\insurgents_faction_icon.paa";
 		flag="\rhsafrf\addons\rhs_c_cti_indep\data\map_flag_insurgents_co.paa";

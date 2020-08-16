@@ -21,9 +21,6 @@
 		waterLeakiness = 250.0;
 
 		//----- Gearbox Parameters -----//
-		class complexGearbox
-		{
-			GearboxRatios[] = {"R1",-5.03,"N",0,"D1",3.49,"D2",1.86,"D3",1.41,"D4",1.0,"D5",0.75,"D6",0.55};
 			TransmissionRatios[] = {"High",8.2};
 			gearBoxMode = "auto";
 			moveOffGear = 1;

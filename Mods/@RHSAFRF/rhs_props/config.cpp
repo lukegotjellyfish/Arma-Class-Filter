@@ -12,8 +12,4 @@ class CfgPatches
 class CfgVehicles
 {
 	class House_F;
-	class rhs_logo: House_F
-	{
-		displayName="RHS Logo";
-	};
 };

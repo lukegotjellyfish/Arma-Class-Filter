@@ -59,9 +59,6 @@ class CfgVehicles
 	class Tank: LandVehicle
 	{
 		class NewTurret;
-		class Sounds;
-		class HitPoints;
-	};
 	class Tank_F: Tank
 	{
 		class Turrets
@@ -70,9 +67,6 @@ class CfgVehicles
 			{
 				class Turrets
 				{
-					class CommanderOptics;
-				};
-			};
 		};
 		class AnimationSources;
 		class ViewPilot;
@@ -83,17 +77,8 @@ class CfgVehicles
 		{
 			class HitHull;
 			class HitEngine;
-			class HitLTrack;
-			class HitRTrack;
-		};
 		class Sounds: Sounds
 		{
-			class Engine;
-			class Movement;
-		};
-		class EventHandlers;
-		class Components;
-	};
 	class rhs_bmd_base: Tank_F
 	{
 		rhs_habarType=2;
@@ -116,7 +101,6 @@ class CfgVehicles
 			"Track_R",
 			"Slide"
 		};
-		displayName="$STR_BMD2_Name";
 		side=0;
 		icon="\rhsafrf\addons\rhs_bmd\rhs_bmd2_icon.paa";
 		class SpeechVariants
@@ -262,18 +246,6 @@ class CfgVehicles
 					{1,1}
 				};
 			};
-			class L3: L2
-			{
-			};
-			class L4: L2
-			{
-			};
-			class L5: L2
-			{
-			};
-			class L6: L2
-			{
-			};
 			class L9: L2
 			{
 				maxDroop=0;
@@ -288,18 +260,6 @@ class CfgVehicles
 			{
 				side="right";
 				suspTravelDirection[]={0.125,-1,0};
-			};
-			class R3: R2
-			{
-			};
-			class R4: R2
-			{
-			};
-			class R5: R2
-			{
-			};
-			class R6: R2
-			{
 			};
 			class R9: R2
 			{
@@ -1121,35 +1081,15 @@ class CfgVehicles
 		incomingMissileDetectionSystem=0;
 		cost=3000000;
 		camouflage=5;
-		hiddenSelections[]=
-		{
-			"body1",
-			"body2",
-			"body3",
-			"n1",
-			"n2",
-			"n3",
-			"i1",
-			"i2"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"rhsafrf\addons\rhs_bmd\data\sa_bmd2_01_co.paa",
-			"rhsafrf\addons\rhs_bmd\data\sa_bmd2_02_co.paa",
-			"rhsafrf\addons\rhs_bmd\data\sa_bmd2_03_co.paa",
-			"rhsafrf\addons\RHS_Decals\Data\Labels\Misc\no_ca.paa"
-		};
 		class Attributes
 		{
 			class rhs_decalNumber_type
 			{
-				displayName="Define font type of plate number";
 				tooltip="Define kind of font that will be drawn on vehicle.";
 				property="rhs_decalNumber_type";
 				control="Combo";
 				expression="_this setVariable ['%s', _value];[_this,[['Number', cBMD3NumberPlaces, _value]]] call rhs_fnc_decalsInit";
 				defaultValue=0;
-				typeName="STRING";
 				class values
 				{
 					class Default
@@ -1198,24 +1138,20 @@ class CfgVehicles
 			class rhs_decalNumber
 			{
 				collapsed=1;
-				displayName="Set side number";
 				tooltip="Set side number. 4 numbers are required. Type 0 to hide numbers complety & leave at -1 to get random number";
 				property="rhs_decalNumber";
 				control="Edit";
 				validate="Number";
-				typeName="Number";
 				defaultValue="-1";
 				expression="if( _value >= 0)then{if( _value == 0)then{{[_this setobjectTexture [_x,'a3\data_f\clear_empty.paa']]}foreach cBMD3NumberPlaces}else{[_this, [['Number', cBMD3NumberPlaces, _this getVariable ['rhs_decalNumber_type','Default'], _value] ] ] call rhs_fnc_decalsInit}};";
 			};
 			class rhs_decalPlatoon_type
 			{
-				displayName="Define platoon symbol type";
 				tooltip="Decal type";
 				property="rhs_decalPlatoon_type";
 				control="Combo";
 				expression="_this setVariable ['%s', _value];";
 				defaultValue="0";
-				typeName="STRING";
 				class values
 				{
 					class Platoon
@@ -1254,7 +1190,6 @@ class CfgVehicles
 			};
 			class rhs_decalPlatoon
 			{
-				displayName="Set platoon symbol";
 				tooltip="Set platoon symbol located on right & rear of vehicles. Usually used for platoon symbols. -1 leaves current symbol & 0 clears decal.";
 				property="rhs_decalPlatoon";
 				control="Edit";
@@ -1264,41 +1199,20 @@ class CfgVehicles
 			};
 			class rhs_decalArmy_type: rhs_decalPlatoon_type
 			{
-				displayName="Define army symbol type";
 				property="rhs_decalArmy_type";
 				expression="_this setVariable ['%s', _value];";
 				class values: values
 				{
-					class Army: Army
-					{
-					};
-					class Honor: Honor
-					{
-					};
-					class HonorGDR: HonorGDR
-					{
-					};
-					class Platoon: Platoon
-					{
-					};
-					class PlatoonGDR: PlatoonGDR
-					{
-					};
-					class PlatoonVDV: PlatoonVDV
-					{
-					};
 				};
 			};
 			class rhs_decalArmy: rhs_decalPlatoon
 			{
-				displayName="Set army symbol";
 				tooltip="Define symbol located on left side of vehicle. Usually used for army symbols. -1 leaves current symbol & 0 clears decal.";
 				property="rhs_decalArmy";
 				expression="if(parseNumber _value >= 0)then{ [_this, [ [ 'Label', cBMDArmySymPlaces,  _this getVariable ['rhs_decalArmy_type','Army'],call compile _value] ] ] call rhs_fnc_decalsInit};";
 			};
 			class crate_l1_unhide
 			{
-				displayName="hide l1 crate";
 				property="crate_l1_unhide";
 				control="CheckboxNumber";
 				expression="[_this,_value,'%s'] call rhs_fnc_setHabarEden";
@@ -1306,42 +1220,34 @@ class CfgVehicles
 			};
 			class crate_l2_unhide: crate_l1_unhide
 			{
-				displayName="hide l2 crate";
 				property="crate_l2_unhide";
 			};
 			class crate_l3_unhide: crate_l1_unhide
 			{
-				displayName="hide l3 crate";
 				property="crate_l3_unhide";
 			};
 			class crate_r1_unhide: crate_l1_unhide
 			{
-				displayName="hide r1 crate";
 				property="crate_r1_unhide";
 			};
 			class crate_r2_unhide: crate_l1_unhide
 			{
-				displayName="hide r2 crate";
 				property="crate_r2_unhide";
 			};
 			class crate_r3_unhide: crate_l1_unhide
 			{
-				displayName="hide r3 crate";
 				property="crate_r3_unhide";
 			};
 			class wood_1_unhide: crate_l1_unhide
 			{
-				displayName="hide wood log 1";
 				property="wood_1_unhide";
 			};
 			class wood_2_unhide: crate_l1_unhide
 			{
-				displayName="hide wood log 2";
 				property="wood_2_unhide";
 			};
 			class rhs_disableHabar: crate_l1_unhide
 			{
-				displayName="Disable habar";
 				property="rhs_disableHabar";
 				expression="[_this,_value,'%s',_value] call rhs_fnc_setHabarEden";
 				defaultValue="0";
@@ -1363,9 +1269,6 @@ class CfgVehicles
 		animationSourceHatch="hatchDriver";
 		transportMaxMagazines=160;
 		transportMaxWeapons=10;
-		class Damage
-		{
-		};
 		damageResistance=0.017960001;
 		secondaryExplosion=-1;
 		armor=260;
@@ -1469,12 +1372,6 @@ class CfgVehicles
 			initAngleY=0;
 			minAngleY=-110;
 			maxAngleY=110;
-			distanceZoomMin=20;
-			distanceZoomMax=2000;
-		};
-		class Library
-		{
-			libTextDesc="$STR_BMD2_LibDesc,";
 		};
 		class CargoTurret;
 		class Turrets: Turrets
@@ -1513,8 +1410,6 @@ class CfgVehicles
 					initAngleY=0;
 					minAngleY=-100;
 					maxAngleY=100;
-					distanceZoomMin=100;
-					distanceZoomMax=2000;
 					initFov=0.14;
 					minFov=0.14;
 					maxFov=0.14;
@@ -1550,9 +1445,6 @@ class CfgVehicles
 							resource="RscCustomInfoCrew";
 						};
 					};
-				};
-				class Hitpoints
-				{
 				};
 			};
 			class MainTurret: MainTurret
@@ -1591,9 +1483,6 @@ class CfgVehicles
 				{
 					"Spice rakety"
 				};
-				class Turrets
-				{
-				};
 				class HitPoints
 				{
 					class HitTurret
@@ -1628,8 +1517,6 @@ class CfgVehicles
 						initAngleY=0;
 						minAngleY=-110;
 						maxAngleY=110;
-						distanceZoomMin=200;
-						distanceZoomMax=2000;
 						initFov=0.125;
 						minFov=0.125;
 						maxFov=0.125;
@@ -1652,8 +1539,6 @@ class CfgVehicles
 						initAngleY=0;
 						minAngleY=-110;
 						maxAngleY=110;
-						distanceZoomMin=200;
-						distanceZoomMax=2000;
 						initFov=0.14;
 						minFov=0.14;
 						maxFov=0.14;
@@ -1676,8 +1561,6 @@ class CfgVehicles
 						initAngleY=0;
 						minAngleY=-110;
 						maxAngleY=110;
-						distanceZoomMin=200;
-						distanceZoomMax=2000;
 						initFov=0.25;
 						minFov=0.25;
 						maxFov=0.25;
@@ -1746,17 +1629,11 @@ class CfgVehicles
 					"rhs_weap_pkt_bmd_bow1"
 				};
 				ejectDeadGunner=0;
-				class CargoLight
-				{
-					ambient[]={0.60000002,0,0.15000001,1};
 					brightness=0.0070000002;
 					color[]={0,0,0,0};
 				};
 				memoryPointGun="memoryPointGun2";
 				startEngine=0;
-				class Turrets
-				{
-				};
 				gunnerOpticsEffect[]=
 				{
 					"TankGunnerOptics1",
@@ -1771,14 +1648,9 @@ class CfgVehicles
 					initAngleY=0;
 					minAngleY=-100;
 					maxAngleY=100;
-					distanceZoomMin=200;
-					distanceZoomMax=2000;
 					initFov=0.166666;
 					minFov=0.166666;
 					maxFov=0.166666;
-				};
-				class HitPoints
-				{
 				};
 			};
 			class LeftBack: NewTurret
@@ -1814,14 +1686,9 @@ class CfgVehicles
 					initAngleY=0;
 					minAngleY=-110;
 					maxAngleY=110;
-					distanceZoomMin=20;
-					distanceZoomMax=2000;
 					initFov=0.69999999;
 					minFov=0.69999999;
 					maxFov=0.69999999;
-				};
-				class HitPoints
-				{
 				};
 			};
 			class RightBack: LeftBack
@@ -2037,18 +1904,6 @@ class CfgVehicles
 					{1,1}
 				};
 			};
-			class L3: L2
-			{
-			};
-			class L4: L2
-			{
-			};
-			class L5: L2
-			{
-			};
-			class L6: L2
-			{
-			};
 			class L9: L2
 			{
 				maxDroop=0;
@@ -2063,18 +1918,6 @@ class CfgVehicles
 			{
 				side="right";
 				suspTravelDirection[]={0.125,-1,0};
-			};
-			class R3: R2
-			{
-			};
-			class R4: R2
-			{
-			};
-			class R5: R2
-			{
-			};
-			class R6: R2
-			{
 			};
 			class R9: R2
 			{
@@ -2093,7 +1936,6 @@ class CfgVehicles
 		{
 			class standard
 			{
-				displayName="Standard";
 				factions[]=
 				{
 					"rhs_faction_vmf",
@@ -2101,10 +1943,6 @@ class CfgVehicles
 					"rhs_faction_vdv",
 					"rhs_faction_vv"
 				};
-			};
-			class Camo: standard
-			{
-				displayName="Chedaki";
 			};
 		};
 		class Turrets: Turrets
@@ -2244,36 +2082,6 @@ class CfgVehicles
 					};
 				};
 			};
-			class CommanderOptics1: CommanderOptics
-			{
-			};
-			class GPMGTurretBMD1: GPMGTurret1
-			{
-			};
-			class LeftBack1: LeftBack
-			{
-			};
-			class RightBack1: RightBack
-			{
-			};
-			class MainBack1: MainBack
-			{
-			};
-			class CargoTurret_02: CargoTurret_02
-			{
-			};
-			class CargoTurret_03: CargoTurret_03
-			{
-			};
-			class CargoTurret_04: CargoTurret_04
-			{
-			};
-			class CargoTurret_05: CargoTurret_05
-			{
-			};
-			class CargoTurret_06: CargoTurret_06
-			{
-			};
 		};
 		class EventHandlers: EventHandlers
 		{
@@ -2285,23 +2093,11 @@ class CfgVehicles
 	};
 	class rhs_bmd1_base: rhs_bmd_base
 	{
-		displayName="$STR_BMD1_Name";
 		icon="\rhsafrf\addons\rhs_bmd\rhs_bmd1_icon.paa";
-		class Damage
-		{
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"\rhsafrf\addons\rhs_bmd\data\sa_bmd2_01_co.paa",
-			"\rhsafrf\addons\rhs_bmd\data\sa_bmd1_02_co.paa",
-			"\rhsafrf\addons\rhs_bmd\data\sa_bmd2_03_co.paa",
-			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa"
-		};
 		class textureSources
 		{
 			class standard
 			{
-				displayName="Standard";
 				factions[]=
 				{
 					"rhs_faction_vmf",
@@ -2309,10 +2105,6 @@ class CfgVehicles
 					"rhs_faction_vdv",
 					"rhs_faction_vv"
 				};
-			};
-			class Camo: standard
-			{
-				displayName="Chedaki";
 			};
 		};
 		class Turrets: Turrets
@@ -2345,8 +2137,6 @@ class CfgVehicles
 						initAngleY=0;
 						minAngleY=-110;
 						maxAngleY=110;
-						distanceZoomMin=200;
-						distanceZoomMax=2000;
 						initFov=0.14;
 						minFov=0.14;
 						maxFov=0.14;
@@ -2369,8 +2159,6 @@ class CfgVehicles
 						initAngleY=0;
 						minAngleY=-110;
 						maxAngleY=110;
-						distanceZoomMin=200;
-						distanceZoomMax=2000;
 						initFov=0.14;
 						minFov=0.14;
 						maxFov=0.14;
@@ -2424,39 +2212,10 @@ class CfgVehicles
 					initAngleY=0;
 					minAngleY=-100;
 					maxAngleY=100;
-					distanceZoomMin=200;
-					distanceZoomMax=2000;
 					initFov=0.166666;
 					minFov=0.166666;
 					maxFov=0.166666;
 				};
-			};
-			class GPMGTurretBMD1: GPMGTurret1
-			{
-			};
-			class LeftBack1: LeftBack
-			{
-			};
-			class RightBack1: RightBack
-			{
-			};
-			class MainBack1: MainBack
-			{
-			};
-			class CargoTurret_02: CargoTurret_02
-			{
-			};
-			class CargoTurret_03: CargoTurret_03
-			{
-			};
-			class CargoTurret_04: CargoTurret_04
-			{
-			};
-			class CargoTurret_05: CargoTurret_05
-			{
-			};
-			class CargoTurret_06: CargoTurret_06
-			{
 			};
 		};
 	};
@@ -2472,7 +2231,6 @@ class CfgVehicles
 	};
 	class rhs_bmd1k: rhs_bmd1_base
 	{
-		displayName="$STR_BMD1K_Name";
 		tf_range_api=17000;
 		class Turrets: Turrets
 		{
@@ -2484,26 +2242,10 @@ class CfgVehicles
 					"rhs_weap_pkt"
 				};
 			};
-			class CommanderOptics1: CommanderOptics1
-			{
-			};
-			class GPMGTurretBMD1: GPMGTurret1
-			{
-			};
-			class LeftBack1: LeftBack
-			{
-			};
-			class RightBack1: RightBack
-			{
-			};
-			class MainBack1: MainBack
-			{
-			};
 		};
 	};
 	class rhs_bmd1p: rhs_bmd1_base
 	{
-		displayName="$STR_BMD1P_Name";
 		class Turrets: Turrets
 		{
 			class MainTurret: MainTurret
@@ -2644,36 +2386,6 @@ class CfgVehicles
 					};
 				};
 			};
-			class CommanderOptics1: CommanderOptics1
-			{
-			};
-			class GPMGTurretBMD1: GPMGTurret1
-			{
-			};
-			class LeftBack1: LeftBack
-			{
-			};
-			class RightBack1: RightBack
-			{
-			};
-			class MainBack1: MainBack
-			{
-			};
-			class CargoTurret_02: CargoTurret_02
-			{
-			};
-			class CargoTurret_03: CargoTurret_03
-			{
-			};
-			class CargoTurret_04: CargoTurret_04
-			{
-			};
-			class CargoTurret_05: CargoTurret_05
-			{
-			};
-			class CargoTurret_06: CargoTurret_06
-			{
-			};
 		};
 		class EventHandlers: EventHandlers
 		{
@@ -2691,7 +2403,6 @@ class CfgVehicles
 	};
 	class rhs_bmd1pk: rhs_bmd1_base
 	{
-		displayName="$STR_BMD1PK_Name";
 		class Turrets: Turrets
 		{
 			class MainTurret: MainTurret
@@ -2734,8 +2445,6 @@ class CfgVehicles
 					initAngleY=0;
 					minAngleY=-100;
 					maxAngleY=100;
-					distanceZoomMin=100;
-					distanceZoomMax=2000;
 					initFov=0.14;
 					minFov=0.14;
 					maxFov=0.14;
@@ -2746,41 +2455,10 @@ class CfgVehicles
 					};
 				};
 			};
-			class GPMGTurretBMD1: GPMGTurret1
-			{
-			};
-			class LeftBack1: LeftBack
-			{
-			};
-			class RightBack1: RightBack
-			{
-			};
-			class MainBack1: MainBack
-			{
-			};
-			class CargoTurret_02: CargoTurret_02
-			{
-			};
-			class CargoTurret_03: CargoTurret_03
-			{
-			};
-			class CargoTurret_04: CargoTurret_04
-			{
-			};
-			class CargoTurret_05: CargoTurret_05
-			{
-			};
-			class CargoTurret_06: CargoTurret_06
-			{
-			};
 		};
 	};
 	class rhs_bmd1r: rhs_bmd1_base
 	{
-		displayName="$STR_BMD1R_Name";
-		class Damage
-		{
-		};
 		class Turrets: Turrets
 		{
 			class MainTurret: MainTurret
@@ -2790,36 +2468,6 @@ class CfgVehicles
 				{
 					"rhs_weap_s8"
 				};
-			};
-			class CommanderOptics1: CommanderOptics1
-			{
-			};
-			class GPMGTurretBMD1: GPMGTurret1
-			{
-			};
-			class LeftBack1: LeftBack
-			{
-			};
-			class RightBack1: RightBack
-			{
-			};
-			class MainBack1: MainBack
-			{
-			};
-			class CargoTurret_02: CargoTurret_02
-			{
-			};
-			class CargoTurret_03: CargoTurret_03
-			{
-			};
-			class CargoTurret_04: CargoTurret_04
-			{
-			};
-			class CargoTurret_05: CargoTurret_05
-			{
-			};
-			class CargoTurret_06: CargoTurret_06
-			{
 			};
 		};
 		class EventHandlers: EventHandlers
@@ -2848,7 +2496,6 @@ class CfgVehicles
 	};
 	class rhs_bmd2m: rhs_bmd2
 	{
-		displayName="$STR_BMD2M_Name";
 		enableGPS=1;
 		class Turrets: Turrets
 		{
@@ -2898,37 +2545,10 @@ class CfgVehicles
 						directionStabilized=1;
 					};
 				};
-				class Turrets
-				{
-				};
-			};
-			class CommanderOptics2: CommanderOptics1
-			{
 			};
 			class GPMGTurretBMD2: GPMGTurretBMD1
 			{
 				forceHideGunner=1;
-			};
-			class LeftBack2: LeftBack1
-			{
-			};
-			class RightBack2: RightBack1
-			{
-			};
-			class MainBack2: MainBack1
-			{
-			};
-			class CargoTurret_02: CargoTurret_02
-			{
-			};
-			class CargoTurret_04: CargoTurret_04
-			{
-			};
-			class CargoTurret_05: CargoTurret_05
-			{
-			};
-			class CargoTurret_06: CargoTurret_06
-			{
 			};
 		};
 		rhs_topPositions[]={1,2,3,4,6};
@@ -2939,13 +2559,6 @@ class CfgVehicles
 				reloaded="_this call rhs_fnc_bmd_at14_reload";
 				fired="_this call rhs_fnc_at14_fired;";
 			};
-			class RHS_BMD2
-			{
-			};
 		};
-	};
-	class rhs_bmd2k: rhs_bmd2
-	{
-		displayName="$STR_BMD2K_Name";
 	};
 };

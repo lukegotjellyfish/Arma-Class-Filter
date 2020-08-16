@@ -1,8 +1,5 @@
 class CfgPatches
 {
-	class rhs_vehicle_sounds
-	{
-		units[]={};
 		weapons[]={};
 		version="0.1";
 	};
@@ -11,42 +8,36 @@ class CfgSound3DProcessors
 {
 	class RHS_vehicleRain_3DProcessingType
 	{
-		type="panner";
 		innerRange=3;
 		range=10;
 		rangeCurve="InverseSquare2Curve";
 	};
 	class RHS_PlaneExt_3DProcessingType
 	{
-		type="emitter";
 		innerRange=13;
 		range=25;
 		radius=7;
 	};
 	class RHS_HeliExt_3DProcessingType
 	{
-		type="panner";
 		innerRange=10;
 		range=25;
 		rangeCurve="InverseSquare3Curve";
 	};
 	class RHS_HeliReverb_3DProcessingType
 	{
-		type="panner";
 		innerRange=400;
 		range=700;
 		rangeCurve="InverseSquare2Curve";
 	};
 	class RHS_PlaneExt_Middle_3DProcessingType
 	{
-		type="panner";
 		innerRange=0;
 		range=350;
 		rangeCurve="InverseSquare2Curve";
 	};
 	class RHS_PlaneExt_Distant_3DProcessingType
 	{
-		type="panner";
 		innerRange=0;
 		range=1400;
 		rangeCurve="InverseSquare3Curve";
@@ -56,7 +47,6 @@ class CfgSoundShapes
 {
 	class RHS_turbine_rearSemispace_Hind
 	{
-		type="cone";
 		innerVolume=1;
 		outerVolume=0.60000002;
 		innerAngle=140;
@@ -66,7 +56,6 @@ class CfgSoundShapes
 	};
 	class RHS_flyAwaySemispace
 	{
-		type="cone";
 		innerVolume=1;
 		outerVolume=0.15000001;
 		innerAngle=140;
@@ -76,7 +65,6 @@ class CfgSoundShapes
 	};
 	class RHS_flyTowardsSemispace
 	{
-		type="cone";
 		innerVolume=0.2;
 		outerVolume=1;
 		innerAngle=60;
@@ -86,7 +74,6 @@ class CfgSoundShapes
 	};
 	class RHS_Heli_bassRearSemispace_Hind
 	{
-		type="cone";
 		innerVolume=0.55000001;
 		outerVolume=1;
 		innerAngle=135;
@@ -96,7 +83,6 @@ class CfgSoundShapes
 	};
 	class RHS_Heli_rotorBassTopSemiSpace
 	{
-		type="cone";
 		innerVolume=0.34999999;
 		outerVolume=1;
 		innerAngle=80;
@@ -106,7 +92,6 @@ class CfgSoundShapes
 	};
 	class RHS_Heli_rotorScrewTopSemiSpace
 	{
-		type="cone";
 		innerVolume=1;
 		outerVolume=0.050000001;
 		innerAngle=165;
@@ -116,7 +101,6 @@ class CfgSoundShapes
 	};
 	class RHS_Heli_reverbSemiSpace
 	{
-		type="cone";
 		innerVolume=0;
 		outerVolume=1;
 		innerAngle=90;
@@ -126,7 +110,6 @@ class CfgSoundShapes
 	};
 	class RHS_Heli_rotorTopSemiSpace
 	{
-		type="cone";
 		innerVolume=0.050000001;
 		outerVolume=1;
 		innerAngle=80;
@@ -136,7 +119,6 @@ class CfgSoundShapes
 	};
 	class RHS_Heli_baseTopSemiSpace
 	{
-		type="cone";
 		innerVolume=0.80000001;
 		outerVolume=1;
 		innerAngle=75;
@@ -146,7 +128,6 @@ class CfgSoundShapes
 	};
 	class RHS_Heli_rotorSwiftTopSemiSpace
 	{
-		type="cone";
 		innerVolume=0;
 		outerVolume=1;
 		innerAngle=95;
@@ -1470,15 +1451,6 @@ class CfgSoundSets
 class cfgVehicles
 {
 	class Helicopter;
-	class Helicopter_Base_F: Helicopter
-	{
-	};
-	class Heli_Attack_02_base_F: Helicopter_Base_F
-	{
-	};
-	class Heli_Light_03_base_F: Helicopter_Base_F
-	{
-	};
 	class RHS_Mi24_base: Heli_Attack_02_base_F
 	{
 		class Sounds

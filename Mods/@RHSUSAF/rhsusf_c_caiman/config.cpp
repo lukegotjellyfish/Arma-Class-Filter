@@ -33,15 +33,9 @@ class CfgVehicles
 	class LandVehicle;
 	class Car: LandVehicle
 	{
-		class NewTurret;
-		class ViewOptics;
-	};
 	class Car_F: Car
 	{
 		class AnimationSources;
-		class HitPoints;
-		class EventHandlers;
-	};
 	class Truck_F: Car_F
 	{
 		class ViewPilot;
@@ -60,18 +54,11 @@ class CfgVehicles
 			class HitGlass2;
 			class HitGlass3;
 			class HitGlass4;
-			class HitGlass5;
-			class HitGlass6;
-		};
 		class AnimationSources;
-	};
-	class Truck_01_base_F: Truck_F
-	{
 	};
 	class rhsusf_caiman_base: Truck_01_base_F
 	{
 		side=1;
-		displayName="Caiman";
 		weapons[]=
 		{
 			"TruckHorn2",
@@ -79,29 +66,8 @@ class CfgVehicles
 		};
 		extCameraPosition[]={0.5,2,-9};
 		driverRightLegAnimName="pedal_r";
-		hiddenSelections[]=
-		{
-			"camo",
-			"camo1",
-			"camo2",
-			"camo3",
-			"camo4",
-			"camo5",
-			"camo6",
-			"camo7",
-			"camo8",
-			"camo9"
-		};
 		class textureSources
 		{
-			class rhs_desert
-			{
-				displayName="Desert";
-			};
-			class rhs_woodland
-			{
-				displayName="Woodland";
-			};
 		};
 		class Attributes
 		{
@@ -109,13 +75,9 @@ class CfgVehicles
 			{
 				control="CheckboxNumber";
 				defaultValue="0";
-				displayName="hide DUKE antennas";
 				property="rhs_hideDUKE";
 				expression="_this animate ['DUKE_Hide',_value,true];if(_value isEqualTo 1)then{_this removeWeaponTurret ['rhsusf_weap_duke',[-1]]};";
 			};
-		};
-		class Turrets
-		{
 		};
 		hullDamageCauseExplosion=1;
 		armorStructural=8;
@@ -366,9 +328,6 @@ class CfgVehicles
 				maxHandBrakeTorque=300000;
 			};
 		};
-		class Damage
-		{
-		};
 		class EventHandlers: EventHandlers
 		{
 			init="if (local (_this select 0)) then {[(_this select 0), """", [], false] call bis_fnc_initVehicle;};";
@@ -376,12 +335,8 @@ class CfgVehicles
 	};
 	class rhsusf_M1220_usarmy_d: rhsusf_caiman_base
 	{
-		displayName="$STR_RHS_M1220_NAME";
 		accuracy=0.5;
 	};
-	class rhsusf_caiman_GPK_base: rhsusf_caiman_base
-	{
-		threat[]={0.89999998,0.30000001,0.1};
 		animationList[]=
 		{
 			"hide_ogpkover",
@@ -394,7 +349,6 @@ class CfgVehicles
 	};
 	class rhsusf_M1220_M2_usarmy_d: rhsusf_caiman_GPK_base
 	{
-		displayName="$STR_RHS_M1220_M2_NAME";
 		accuracy=0.5;
 		class Turrets: Turrets
 		{
@@ -415,15 +369,11 @@ class CfgVehicles
 					minFov=0.25;
 					maxFov=1.1;
 				};
-				class ViewGunner: ViewOptics
-				{
-				};
 			};
 		};
 	};
 	class rhsusf_M1220_MK19_usarmy_d: rhsusf_M1220_M2_usarmy_d
 	{
-		displayName="$STR_RHS_M1220_MK19_NAME";
 		accuracy=0.5;
 		class Turrets: Turrets
 		{
@@ -438,7 +388,6 @@ class CfgVehicles
 	};
 	class rhsusf_M1220_M153_M2_usarmy_d: rhsusf_M1220_M2_usarmy_d
 	{
-		displayName="$STR_RHS_M1220_M153_M2_NAME";
 		accuracy=0.5;
 		threat[]={0.89999998,0.30000001,0.1};
 		animationList[]={};
@@ -457,27 +406,15 @@ class CfgVehicles
 				alpha=1;
 				enableParallax=0;
 				font="RobotoCondensedLight";
-				class material
-				{
-					ambient[]={3,3,3,1};
 					diffuse[]={10,10,10,1};
 					emissive[]={400,200,200,1};
 				};
 				class Bones
 				{
-					class Static_Offset
-					{
-						type="fixed";
-						pos[]={0.079999998,0.89999998};
 					};
-					class Cross
-					{
-						type="fixed";
-						pos[]={0,-0.145};
 					};
 					class TurretRotation
 					{
-						type="rotational";
 						source="weaponHeading";
 						sourceIndex=0;
 						min=-180;
@@ -488,13 +425,9 @@ class CfgVehicles
 						aspectRatio=1.29101;
 					};
 				};
-				class Draw
-				{
-					color[]={1,0,0,1};
 					alpha=1;
 					class StaticDraw
 					{
-						type="line";
 						width=3;
 						points[]=
 						{
@@ -932,7 +865,6 @@ class CfgVehicles
 					};
 					class StaticDrawBold
 					{
-						type="line";
 						width=8;
 						points[]=
 						{
@@ -992,7 +924,6 @@ class CfgVehicles
 					};
 					class Range_Text
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -1015,7 +946,6 @@ class CfgVehicles
 					};
 					class Range_Value
 					{
-						type="text";
 						source="laserDist";
 						sourceScale=1;
 						sourceLength=3;
@@ -1048,7 +978,6 @@ class CfgVehicles
 					};
 					class Ballistic_Text
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -1071,7 +1000,6 @@ class CfgVehicles
 					};
 					class Ballistic_Value
 					{
-						type="text";
 						source="laserDist";
 						sourceScale=1;
 						sourceLength=3;
@@ -1104,7 +1032,6 @@ class CfgVehicles
 					};
 					class Mode_Text
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -1127,7 +1054,6 @@ class CfgVehicles
 					};
 					class Mode_Value
 					{
-						type="text";
 						source="static";
 						sourceScale=1;
 						sourceLength=3;
@@ -1160,7 +1086,6 @@ class CfgVehicles
 					};
 					class Elev_Text
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -1183,7 +1108,6 @@ class CfgVehicles
 					};
 					class Elev_Value
 					{
-						type="text";
 						source="[y]turretworld";
 						sourceScale=1;
 						sourcePrecision=1;
@@ -1364,7 +1288,6 @@ class CfgVehicles
 	};
 	class rhsusf_M1220_M153_MK19_usarmy_d: rhsusf_M1220_M153_M2_usarmy_d
 	{
-		displayName="$STR_RHS_M1220_M153_MK19_NAME";
 		class Turrets: Turrets
 		{
 			class CROWS_Turret: CROWS_Turret
@@ -1378,7 +1301,6 @@ class CfgVehicles
 	};
 	class rhsusf_M1230_M2_usarmy_d: rhsusf_caiman_GPK_base
 	{
-		displayName="$STR_RHS_M1230_M2_NAME";
 		accuracy=0.5;
 		class Hitpoints: HitPoints
 		{
@@ -1395,20 +1317,10 @@ class CfgVehicles
 		};
 		class Attributes: Attributes
 		{
-			class rhs_hideDUKE: rhs_hideDUKE
-			{
-			};
-			class DoorL: DoorL
-			{
-			};
-			class DoorR: DoorR
-			{
-			};
 			class rhino
 			{
 				control="CheckboxNumber";
 				defaultValue="0";
-				displayName="Lower Rhino";
 				property="Rhino_down";
 				expression="_this animateDoor ['%s',_value,true]";
 			};
@@ -1416,7 +1328,6 @@ class CfgVehicles
 			{
 				control="CheckboxNumber";
 				defaultValue="0";
-				displayName="hide Low Wire Protection Kit";
 				property="rhs_hideLWPK";
 				expression="_this animate ['LWPK_hide',_value,true]";
 			};
@@ -1441,15 +1352,11 @@ class CfgVehicles
 					minFov=0.25;
 					maxFov=1.1;
 				};
-				class ViewGunner: ViewOptics
-				{
-				};
 			};
 		};
 	};
 	class rhsusf_M1230_MK19_usarmy_d: rhsusf_M1230_M2_usarmy_d
 	{
-		displayName="$STR_RHS_M1230_MK19_NAME";
 		accuracy=0.5;
 		threat[]={0.89999998,0.30000001,0.1};
 		class Turrets: Turrets
@@ -1465,48 +1372,39 @@ class CfgVehicles
 	};
 	class rhsusf_M1230a1_usarmy_d: rhsusf_M1220_usarmy_d
 	{
-		displayName="$STR_RHS_M1230A1_NAME";
 		accuracy=0.5;
 		attendant=1;
 	};
 	class rhsusf_M1220_usarmy_wd: rhsusf_M1220_usarmy_d
 	{
-		displayName="$STR_RHS_M1220_NAME";
 		accuracy=0.5;
 	};
 	class rhsusf_M1220_M2_usarmy_wd: rhsusf_M1220_M2_usarmy_d
 	{
-		displayName="$STR_RHS_M1220_M2_NAME";
 		accuracy=0.5;
 	};
 	class rhsusf_M1220_MK19_usarmy_wd: rhsusf_M1220_MK19_usarmy_d
 	{
-		displayName="$STR_RHS_M1220_MK19_NAME";
 		accuracy=0.5;
 	};
 	class rhsusf_M1230_M2_usarmy_wd: rhsusf_M1230_M2_usarmy_d
 	{
-		displayName="$STR_RHS_M1230_M2_NAME";
 		accuracy=0.5;
 	};
 	class rhsusf_M1230_MK19_usarmy_wd: rhsusf_M1230_MK19_usarmy_d
 	{
-		displayName="$STR_RHS_M1230_MK19_NAME";
 		accuracy=0.5;
 	};
 	class rhsusf_M1220_M153_M2_usarmy_wd: rhsusf_M1220_M153_M2_usarmy_d
 	{
-		displayName="$STR_RHS_M1220_M153_M2_NAME";
 		accuracy=0.5;
 	};
 	class rhsusf_M1220_M153_MK19_usarmy_wd: rhsusf_M1220_M153_MK19_usarmy_d
 	{
-		displayName="$STR_RHS_M1220_M153_MK19_NAME";
 		accuracy=0.5;
 	};
 	class rhsusf_M1230a1_usarmy_wd: rhsusf_M1230a1_usarmy_d
 	{
-		displayName="$STR_RHS_M1230A1_NAME";
 		accuracy=0.5;
 	};
 };

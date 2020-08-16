@@ -9,16 +9,12 @@ class CfgPatches
 		};
 		weapons[]={};
 	};
-	class rhs_c_bkm_t: rhs_c_bmk_t
-	{
-	};
 };
 class CfgVehicles
 {
 	class Ship_F;
 	class rhs_bmk_t_base: Ship_F
 	{
-		displayName="BMK Tug";
 		editorSubCategory="rhs_EdSubcat_boat";
 		cargoGetInAction[]=
 		{
@@ -75,9 +71,6 @@ class CfgVehicles
 		rudderForceCoefAtMaxSpeed=0.30000001;
 		hideProxyInCombat=1;
 		class CargoTurret;
-		class Turrets
-		{
-		};
 		slingLoadCargoMemoryPoints[]=
 		{
 			"SlingLoadCargo1",
@@ -405,15 +398,9 @@ class CfgVehicles
 				volume="(1-camPos)*(rain - rotorSpeed/2)*2";
 			};
 		};
-		class Damage
-		{
-		};
 	};
 	class rhs_bmk_t: rhs_bmk_t_base
 	{
 		side=0;
-	};
-	class rhs_bkm_t: rhs_bmk_t
-	{
 	};
 };

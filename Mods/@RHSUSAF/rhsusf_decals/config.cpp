@@ -1,8 +1,5 @@
 class CfgPatches
 {
-	class rhsusf_decals
-	{
-		units[]={};
 		weapons[]={};
 	};
 };

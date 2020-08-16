@@ -176,9 +176,6 @@ class CfgVehicles
 	{
 		class NewTurret;
 		class Sounds;
-		class HitPoints;
-		class CommanderOptics;
-	};
 	class Tank_F: Tank
 	{
 		class Turrets
@@ -189,9 +186,6 @@ class CfgVehicles
 				{
 					class CommanderOptics;
 				};
-				class ViewGunner;
-			};
-		};
 		class AnimationSources;
 		class ViewPilot;
 		class ViewOptics;
@@ -201,17 +195,8 @@ class CfgVehicles
 		{
 			class HitHull;
 			class HitEngine;
-			class HitLTrack;
-			class HitRTrack;
-		};
 		class Sounds: Sounds
 		{
-			class Engine;
-			class Movement;
-		};
-		class EventHandlers;
-		class Components;
-	};
 	class rhs_bmp1tank_base: Tank_F
 	{
 		rhs_habarType=2;
@@ -232,7 +217,6 @@ class CfgVehicles
 		{
 			"rhs_weap_smokegen"
 		};
-		displayName="$STR_BMP1_Name";
 		accuracy=0.30000001;
 		viewCargoShadow=1;
 		tf_range_api=17000;
@@ -394,9 +378,6 @@ class CfgVehicles
 		};
 		class Wheels
 		{
-			class L2
-			{
-				suspTravelDirection[]={-0.125,-1,0};
 				steering=0;
 				width=0.28799999;
 				mass=120;
@@ -421,21 +402,6 @@ class CfgVehicles
 					{0.69999999,0.64999998}
 				};
 			};
-			class L3: L2
-			{
-			};
-			class L4: L2
-			{
-			};
-			class L5: L2
-			{
-			};
-			class L6: L2
-			{
-			};
-			class L7: L2
-			{
-			};
 			class L9: L2
 			{
 				maxDroop=0;
@@ -446,25 +412,7 @@ class CfgVehicles
 				maxDroop=0;
 				maxCompression=0;
 			};
-			class R2: L2
-			{
-				suspTravelDirection[]={0.125,-1,0};
 				side="right";
-			};
-			class R3: R2
-			{
-			};
-			class R4: R2
-			{
-			};
-			class R5: R2
-			{
-			};
-			class R6: R2
-			{
-			};
-			class R7: R2
-			{
 			};
 			class R9: R2
 			{
@@ -1611,9 +1559,6 @@ class CfgVehicles
 						radius=0.15000001;
 					};
 				};
-				class Turrets
-				{
-				};
 				class OpticsIn
 				{
 					class Periscope
@@ -1626,8 +1571,6 @@ class CfgVehicles
 						initAngleY=0;
 						minAngleY=-110;
 						maxAngleY=110;
-						distanceZoomMin=200;
-						distanceZoomMax=2000;
 						initFov=0.47;
 						minFov=0.47;
 						maxFov=0.47;
@@ -1646,8 +1589,6 @@ class CfgVehicles
 						initAngleY=0;
 						minAngleY=-110;
 						maxAngleY=110;
-						distanceZoomMin=200;
-						distanceZoomMax=2000;
 						initFov=0.14;
 						minFov=0.14;
 						maxFov=0.14;
@@ -1666,8 +1607,6 @@ class CfgVehicles
 						initAngleY=0;
 						minAngleY=-110;
 						maxAngleY=110;
-						distanceZoomMin=200;
-						distanceZoomMax=2000;
 						initFov=0.14;
 						minFov=0.14;
 						maxFov=0.14;
@@ -1793,9 +1732,6 @@ class CfgVehicles
 						};
 					};
 				};
-				class Hitpoints
-				{
-				};
 			};
 			class CargoTurret_02: CargoTurret_01
 			{
@@ -1845,45 +1781,10 @@ class CfgVehicles
 			};
 		};
 		rhs_topPositions[]={9,10,11,12,13,14,15,16,17,18};
-		hiddenSelections[]=
-		{
-			"camo1",
-			"camo2",
-			"camo3",
-			"camo4",
-			"camo5",
-			"camo6",
-			"n1",
-			"n2",
-			"n3",
-			"i1",
-			"i2",
-			"i3",
-			"i4",
-			"i5"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"rhsafrf\addons\rhs_bmp\textures\bmp_1_co.paa",
-			"rhsafrf\addons\rhs_bmp\textures\bmp_2_co.paa",
-			"rhsafrf\addons\rhs_bmp\textures\bmp_3_co.paa",
-			"rhsafrf\addons\rhs_bmp\textures\bmp_4_co.paa",
-			"rhsafrf\addons\rhs_bmp\textures\bmp_5_co.paa",
-			"rhsafrf\addons\rhs_bmp\textures\bmp_6_co.paa",
-			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
-			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
-			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
-			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
-			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
-			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
-			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
-			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa"
-		};
 		class textureSources
 		{
 			class standard
 			{
-				displayName="Standard";
 				factions[]=
 				{
 					"rhs_faction_vmf",
@@ -1895,28 +1796,21 @@ class CfgVehicles
 			};
 			class chedaki
 			{
-				displayName="Chedaki";
 				factions[]=
 				{
 					"rhs_faction_insurgents"
 				};
-			};
-			class rhs_sand
-			{
-				displayName="Sand";
 			};
 		};
 		class Attributes
 		{
 			class rhs_decalNumber_type
 			{
-				displayName="Define font type of plate number";
 				tooltip="Define kind of font that will be drawn on vehicle.";
 				property="rhs_decalNumber_type";
 				control="Combo";
 				expression="_this setVariable ['%s', _value];[_this,[['Number', cBMP3NumberPlaces, _value]]] call rhs_fnc_decalsInit";
 				defaultValue=0;
-				typeName="STRING";
 				class values
 				{
 					class Default
@@ -1965,24 +1859,20 @@ class CfgVehicles
 			class rhs_decalNumber
 			{
 				collapsed=1;
-				displayName="Set side number";
 				tooltip="Set side number. 4 numbers are required. Type 0 to hide numbers complety & leave at -1 to get random number";
 				property="rhs_decalNumber";
 				control="Edit";
 				validate="Number";
-				typeName="Number";
 				defaultValue="-1";
 				expression="if( _value >= 0)then{if( _value == 0)then{{[_this setobjectTexture [_x,'a3\data_f\clear_empty.paa']]}foreach cBMP3NumberPlaces}else{[_this, [['Number', cBMP3NumberPlaces, _this getVariable ['rhs_decalNumber_type','Default'], _value] ] ] call rhs_fnc_decalsInit}};";
 			};
 			class rhs_decalPlatoon_type
 			{
-				displayName="Define platoon symbol type";
 				tooltip="Decal type";
 				property="rhs_decalPlatoon_type";
 				control="Combo";
 				expression="_this setVariable ['%s', _value];";
 				defaultValue="0";
-				typeName="STRING";
 				class values
 				{
 					class Platoon
@@ -2021,7 +1911,6 @@ class CfgVehicles
 			};
 			class rhs_decalPlatoon
 			{
-				displayName="Set platoon symbol";
 				tooltip="Set platoon symbol located on right & rear of vehicles. Usually used for platoon symbols. -1 leaves current symbol & 0 clears decal.";
 				property="rhs_decalPlatoon";
 				control="Edit";
@@ -2031,76 +1920,49 @@ class CfgVehicles
 			};
 			class rhs_decalArmy_type: rhs_decalPlatoon_type
 			{
-				displayName="Define left back symbol type";
 				property="rhs_decalArmy_type";
 				class values: values
 				{
-					class Army: Army
-					{
-					};
-					class Honor: Honor
-					{
-					};
-					class HonorGDR: HonorGDR
-					{
-					};
-					class Platoon: Platoon
-					{
-					};
-					class PlatoonGDR: PlatoonGDR
-					{
-					};
-					class PlatoonVDV: PlatoonVDV
-					{
-					};
 				};
 			};
 			class rhs_decalArmy: rhs_decalPlatoon
 			{
-				displayName="Set left back symbol";
 				tooltip="Define symbol located on left back side of vehicle. Usually used for army symbols. -1 leaves current symbol & 0 clears decal.";
 				property="rhs_decalArmy";
 				expression="if(parseNumber _value >= 0)then{ [_this, [ [ 'Label', cBMPLeftBack,  _this getVariable ['rhs_decalArmy_type','Army'],call compile _value] ] ] call rhs_fnc_decalsInit};";
 			};
 			class rhs_decalRightTurret_type: rhs_decalArmy_type
 			{
-				displayName="Define right turret symbol type";
 				property="rhs_decalRightTurret_type";
 			};
 			class rhs_decalRightTurret: rhs_decalPlatoon
 			{
-				displayName="Set right turret symbol";
 				tooltip="Define symbol located on right side of vehicle turret. Usually used for army symbols. -1 leaves current symbol & 0 clears decal.";
 				property="rhs_decalRightTurret";
 				expression="if(parseNumber _value >= 0)then{ [_this, [ [ 'Label', cBMPRightTurret,  _this getVariable ['rhs_decalRightTurret_type','Army'],call compile _value] ] ] call rhs_fnc_decalsInit};";
 			};
 			class rhs_decalLeftTurret_type: rhs_decalArmy_type
 			{
-				displayName="Define left turret symbol type";
 				property="rhs_decalLeftTurret_type";
 			};
 			class rhs_decalLeftTurret: rhs_decalPlatoon
 			{
-				displayName="Set left turret symbol";
 				tooltip="Define symbol located on left side of vehicle turret. Usually used for army symbols. -1 leaves current symbol & 0 clears decal.";
 				property="rhs_decalLeftTurret";
 				expression="if(parseNumber _value >= 0)then{ [_this, [ [ 'Label', cBMPLeftTurret,  _this getVariable ['rhs_decalLeftTurret_type','Army'],call compile _value] ] ] call rhs_fnc_decalsInit};";
 			};
 			class rhs_decalFront_type: rhs_decalArmy_type
 			{
-				displayName="Define front symbol type";
 				property="rhs_decalFront_type";
 			};
 			class rhs_decalFront: rhs_decalPlatoon
 			{
-				displayName="Set front symbol";
 				tooltip="Define symbol located on front of vehicle hull. Usually used for army symbols. -1 leaves current symbol & 0 clears decal.";
 				property="rhs_decalFront";
 				expression="if(parseNumber _value >= 0)then{ [_this, [ [ 'Label', cBMPFront,  _this getVariable ['rhs_decalFront_type','Army'],call compile _value] ] ] call rhs_fnc_decalsInit};";
 			};
 			class crate_l1_unhide
 			{
-				displayName="hide l1 crate";
 				property="crate_l1_unhide";
 				control="CheckboxNumber";
 				expression="[_this,_value,'%s'] call rhs_fnc_setHabarEden";
@@ -2108,55 +1970,45 @@ class CfgVehicles
 			};
 			class crate_l2_unhide: crate_l1_unhide
 			{
-				displayName="Hide l2 crate";
 				property="crate_l2_unhide";
 			};
 			class crate_l3_unhide: crate_l1_unhide
 			{
-				displayName="Hide l3 crate";
 				property="crate_l3_unhide";
 			};
 			class crate_r1_unhide: crate_l1_unhide
 			{
-				displayName="Hide r1 crate";
 				property="crate_r1_unhide";
 			};
 			class crate_r2_unhide: crate_l1_unhide
 			{
-				displayName="Hide r2 crate";
 				property="crate_r2_unhide";
 			};
 			class crate_r3_unhide: crate_l1_unhide
 			{
-				displayName="Hide r3 crate";
 				property="crate_r3_unhide";
 			};
 			class wood_1_unhide: crate_l1_unhide
 			{
-				displayName="Hide wood log 1";
 				property="wood_1_unhide";
 			};
 			class wood_2_unhide: crate_l1_unhide
 			{
-				displayName="Hide wood log 2";
 				property="wood_2_unhide";
 			};
 			class rhs_disableHabar: crate_l1_unhide
 			{
-				displayName="Disable habar";
 				property="rhs_disableHabar";
 				expression="[_this,_value,'%s',_value] call rhs_fnc_setHabarEden";
 				defaultValue="0";
 			};
 			class rhs_snorkel: rhs_disableHabar
 			{
-				displayName="Rise Snorkel";
 				property="rhs_snorkel";
 				expression="_this animateSource ['Snorkel',_value,true]";
 			};
 			class rhs_externalMount: rhs_disableHabar
 			{
-				displayName="Disable external mount";
 				property="rhs_externalMount";
 				control="Checkbox";
 				expression="[_this,_value] call rhs_fnc_lockTop";
@@ -2172,9 +2024,6 @@ class CfgVehicles
 			"crate_r3_unhide",
 			"wood_1_unhide",
 			"wood_2_unhide"
-		};
-		class Damage
-		{
 		};
 		class ViewOptics: ViewOptics
 		{
@@ -2236,9 +2085,6 @@ class CfgVehicles
 			};
 		};
 	};
-	class rhs_bmp_base: rhs_bmp1tank_base
-	{
-	};
 	class rhs_bmp1_vdv: rhs_bmp_base
 	{
 		mapsize=6.6999998;
@@ -2280,7 +2126,6 @@ class CfgVehicles
 	};
 	class rhs_bmp1p_vdv: rhs_bmp1_vdv
 	{
-		displayName="$STR_BMP1P_Name";
 		forceIngarage=0;
 		class Turrets: Turrets
 		{
@@ -2399,36 +2244,6 @@ class CfgVehicles
 					};
 				};
 			};
-			class Com_BMP1: Com_BMP1
-			{
-			};
-			class CargoTurret_02: CargoTurret_02
-			{
-			};
-			class CargoTurret_03: CargoTurret_03
-			{
-			};
-			class CargoTurret_04: CargoTurret_04
-			{
-			};
-			class CargoTurret_05: CargoTurret_05
-			{
-			};
-			class CargoTurret_06: CargoTurret_06
-			{
-			};
-			class CargoTurret_07: CargoTurret_07
-			{
-			};
-			class CargoTurret_08: CargoTurret_08
-			{
-			};
-			class CargoTurret_09: CargoTurret_09
-			{
-			};
-			class CargoTurret_10: CargoTurret_10
-			{
-			};
 		};
 		class HitPoints: HitPoints
 		{
@@ -2436,13 +2251,6 @@ class CfgVehicles
 			{
 				name="atgmSight";
 			};
-		};
-		class Damage
-		{
-		};
-		class Library
-		{
-			libTextDesc="Improved variant of the BMP-1. Weight: 13,4t Engine: UTD-20 V6-cylinder 4-stroke one-chamber 15.8 liter water-cooled diesel, 300hp, ~1000Nm torque. Speed: 65 km/h (road) 45 km/h (cross country) Fuel capacity: 462l Range: 600 km Armour: Turret: 23mm front, 26-33mm mantlet, 19mm sides, 13mm rear Hull:  7-19mm front, 16-18mm sides, 16mm rear Primary armament: 73 mm 2A28 Grom low-pressure smoothbore gun  (40 rounds) penetration:	PG-15V HEAT	350mm RHA, 9M113 Konkurs ATGM  600mm RHA, Secondary armament: 7.62 mm PKT coaxial general purpose machine gun (2000 rounds)";
 		};
 		class EventHandlers: EventHandlers
 		{
@@ -2495,7 +2303,6 @@ class CfgVehicles
 	};
 	class rhs_bmp1k_vdv: rhs_bmp1_vdv
 	{
-		displayName="$STR_BMP1K_Name";
 		transportsoldier=3;
 		tf_range_api=35000;
 		typicalCargo[]=
@@ -2503,10 +2310,6 @@ class CfgVehicles
 			"rhs_msv_armoredcrew",
 			"rhs_msv_armoredcrew",
 			"rhs_msv_armoredcrew"
-		};
-		class Library
-		{
-			libTextDesc="Command variant of the BMP-1. Weight: 13,2t Engine: UTD-20 V6-cylinder 4-stroke one-chamber 15.8 liter water-cooled diesel, 300hp, ~1000Nm torque. Speed: 65 km/h (road) 45 km/h (cross country) Fuel capacity: 462l Range: 600 km Armour: Turret: 23mm front, 26-33mm mantlet, 19mm sides, 13mm rear Hull:  7-19mm front, 16-18mm sides, 16mm rear Primary armament: 73 mm 2A28 Grom low-pressure smoothbore gun  (40 rounds) penetration:	PG-15V HEAT	350mm RHA, 9M14M Maljutka-M ATGM  400mm RHA, Secondary armament: 7.62 mm PKT coaxial general purpose machine gun (2000 rounds)";
 		};
 	};
 	class rhs_bmp1k_tv: rhs_bmp1k_vdv
@@ -2546,13 +2349,8 @@ class CfgVehicles
 	};
 	class rhs_bmp1d_vdv: rhs_bmp1_vdv
 	{
-		displayName="$STR_BMP1D_Name";
 		armor=300;
 		canFloat=0;
-		class Library
-		{
-			libTextDesc="Uparmored variant of the BMP-1. Weight: 13,5t Engine: UTD-20 V6-cylinder 4-stroke one-chamber 15.8 liter water-cooled diesel, 300hp, ~1000Nm torque. Speed: 65 km/h (road) 45 km/h (cross country) Fuel capacity: 462l Range: 600 km Armour: Turret: 23mm front, 26-33mm mantlet, 19mm sides, 13mm rear Hull:  7-19mm front, 16-18+10mm sides, 16mm rear Primary armament: 73 mm 2A28 Grom low-pressure smoothbore gun  (40 rounds) penetration:	PG-15V HEAT	350mm RHA, 9M14M Maljutka-M ATGM  400mm RHA, Secondary armament: 7.62 mm PKT coaxial general purpose machine gun (2000 rounds)";
-		};
 	};
 	class rhs_bmp1d_tv: rhs_bmp1d_vdv
 	{
@@ -2598,21 +2396,6 @@ class CfgVehicles
 				dampingRate=328;
 				dampingRateInAir=328;
 			};
-			class L3: L2
-			{
-			};
-			class L4: L2
-			{
-			};
-			class L5: L2
-			{
-			};
-			class L6: L2
-			{
-			};
-			class L7: L2
-			{
-			};
 			class L9: L2
 			{
 				maxDroop=0;
@@ -2627,21 +2410,6 @@ class CfgVehicles
 			{
 				side="right";
 			};
-			class R3: R2
-			{
-			};
-			class R4: R2
-			{
-			};
-			class R5: R2
-			{
-			};
-			class R6: R2
-			{
-			};
-			class R7: R2
-			{
-			};
 			class R9: R2
 			{
 				maxDroop=0;
@@ -2653,7 +2421,6 @@ class CfgVehicles
 				maxCompression=0;
 			};
 		};
-		displayName="$STR_PRP3_Name";
 		typicalCargo[]=
 		{
 			"rhs_msv_armoredcrew",
@@ -2663,10 +2430,6 @@ class CfgVehicles
 			"rhs_msv_armoredcrew"
 		};
 		animationSourceHatch="Hatchdriver";
-		class Library
-		{
-			libTextDesc="Artillery reconnaissance vehicle. Equipment consists of an 1RL126 counterbattery/surveillance radar, 1V44/1G13M/1G25-1 navigational systems, a 1D6M1 laser rangefinder, a 1PN29 night vision device and a 90 mm 2P130-1 launcher with 20 9M41 illumination missiles.  Weight: 13,2t Engine: UTD-20 V6-cylinder 4-stroke one-chamber 15.8 liter water-cooled diesel, 300hp, ~1000Nm torque. Speed: 65 km/h (road) 45 km/h (cross country) Fuel capacity: 462l Range: 600 km Armour: Turret: 33mm front, 19mm sides, 13mm rear Hull:  7-19mm front, 16-18mm sides, 16mm rear Primary armament: 7.62 mm PKT coaxial general purpose machine gun (1000 rounds)";
-		};
 		artilleryScanner=1;
 		class Turrets: Turrets
 		{
@@ -2703,8 +2466,6 @@ class CfgVehicles
 						initAngleY=0;
 						minAngleY=-110;
 						maxAngleY=110;
-						distanceZoomMin=200;
-						distanceZoomMax=2000;
 						initFov=0.14;
 						minFov=0.14;
 						maxFov=0.14;
@@ -2727,8 +2488,6 @@ class CfgVehicles
 						initAngleY=0;
 						minAngleY=-110;
 						maxAngleY=110;
-						distanceZoomMin=200;
-						distanceZoomMax=2000;
 						initFov=0.14;
 						minFov=0.14;
 						maxFov=0.14;
@@ -2746,9 +2505,6 @@ class CfgVehicles
 				};
 				class Turrets: Turrets
 				{
-					class CommanderOptics: NewTurret
-					{
-						weapons[]={};
 						magazines[]={};
 						animationSourceHatch="hatch_commander_prp";
 						nightVision=1;
@@ -2768,9 +2524,6 @@ class CfgVehicles
 						initTurn=0;
 						soundServo[]={};
 						startEngine=0;
-						class Hitpoints
-						{
-						};
 					};
 				};
 			};
@@ -2783,9 +2536,6 @@ class CfgVehicles
 				hasGunner=1;
 				commanding=5;
 				animationSourceHatch="hatch_calc_prp";
-				class Hitpoints
-				{
-				};
 			};
 			class radioOperatorTurret: NewTurret
 			{
@@ -2808,8 +2558,6 @@ class CfgVehicles
 					initAngleY=0;
 					minAngleY=-110;
 					maxAngleY=110;
-					distanceZoomMin=20;
-					distanceZoomMax=2000;
 					initFov=0.69999999;
 					minFov=0.69999999;
 					maxFov=0.69999999;
@@ -2821,7 +2569,6 @@ class CfgVehicles
 					"rhs_weap_2p130"
 				};
 				lockWhenVehicleSpeed=1;
-				cameraDir="lseat_view_dir";
 				elevationMode=1;
 				initCamElev=0;
 				minCamElev=0;
@@ -2832,9 +2579,6 @@ class CfgVehicles
 				maxElev=80;
 				minTurn=-180;
 				maxTurn=180;
-				class Hitpoints
-				{
-				};
 			};
 		};
 		class EventHandlers: EventHandlers
@@ -2891,21 +2635,6 @@ class CfgVehicles
 				dampingRate=328;
 				dampingRateInAir=328;
 			};
-			class L3: L2
-			{
-			};
-			class L4: L2
-			{
-			};
-			class L5: L2
-			{
-			};
-			class L6: L2
-			{
-			};
-			class L7: L2
-			{
-			};
 			class L9: L2
 			{
 				maxDroop=0;
@@ -2920,21 +2649,6 @@ class CfgVehicles
 			{
 				side="right";
 			};
-			class R3: R2
-			{
-			};
-			class R4: R2
-			{
-			};
-			class R5: R2
-			{
-			};
-			class R6: R2
-			{
-			};
-			class R7: R2
-			{
-			};
 			class R9: R2
 			{
 				maxDroop=0;
@@ -2946,7 +2660,6 @@ class CfgVehicles
 				maxCompression=0;
 			};
 		};
-		displayName="$STR_BMP2e_Name";
 		weaponsGroup1=128;
 		weaponsGroup4=64;
 		driverCanSee="2+4+8";
@@ -2992,10 +2705,6 @@ class CfgVehicles
 				armorComponent="HitAASight";
 			};
 		};
-		class Library
-		{
-			libTextDesc="The BMP-2 is a second-generation, amphibious infantry fighting vehicle introduced in the 1980s in the Soviet Union, following the BMP-1 of the 1960s. Weight: 14,3t Engine: UTD-20 V6-cylinder 4-stroke one-chamber 15.8 liter water-cooled diesel, 300hp, ~1000Nm torque. Speed: 65 km/h (road) 45 km/h (cross country) Fuel capacity: 462l Range: 600 km Armour: Turret: 33mm front, 19mm sides, 13mm rear Hull:  7-19mm front, 16-18mm sides, 16mm rear Primary armament: 30 mm Shipunov 2A42 Autocannon (500 rounds) penetration:	3UBR6 APBC	18mm RHA @60 degrees @1500m, 3UBR8 APDS	25mm RHA @60 degrees @1500m, 9M113 Konkurs ATGM  600mm RHA, Secondary armament: 7.62 mm PKT coaxial general purpose machine gun (2000 rounds)";
-		};
 		class Turrets: Turrets
 		{
 			class MainTurret: MainTurret
@@ -3039,8 +2748,6 @@ class CfgVehicles
 						initAngleY=0;
 						minAngleY=-110;
 						maxAngleY=110;
-						distanceZoomMin=200;
-						distanceZoomMax=2000;
 						initFov=0.125;
 						minFov=0.125;
 						maxFov=0.125;
@@ -3071,8 +2778,6 @@ class CfgVehicles
 						initAngleY=0;
 						minAngleY=-110;
 						maxAngleY=110;
-						distanceZoomMin=200;
-						distanceZoomMax=2000;
 						initFov=0.14;
 						minFov=0.14;
 						maxFov=0.14;
@@ -3122,8 +2827,6 @@ class CfgVehicles
 								initAngleY=0;
 								minAngleY=-110;
 								maxAngleY=110;
-								distanceZoomMin=200;
-								distanceZoomMax=2000;
 								initFov=0.58333302;
 								minFov=0.58333302;
 								maxFov=0.58333302;
@@ -3148,8 +2851,6 @@ class CfgVehicles
 								initAngleY=0;
 								minAngleY=-110;
 								maxAngleY=110;
-								distanceZoomMin=200;
-								distanceZoomMax=2000;
 								initFov=0.14;
 								minFov=0.14;
 								maxFov=0.14;
@@ -3173,9 +2874,6 @@ class CfgVehicles
 						startEngine=0;
 						canUseScanners=0;
 						allowTabLock=0;
-						class Hitpoints
-						{
-						};
 					};
 				};
 			};
@@ -3273,39 +2971,8 @@ class CfgVehicles
 	};
 	class rhs_bmp2_vdv: rhs_bmp2e_vdv
 	{
-		displayName="$STR_BMP2_Name";
 		class Turrets: Turrets
 		{
-			class MainTurret: MainTurret
-			{
-			};
-			class CargoTurret_02: CargoTurret_02
-			{
-			};
-			class CargoTurret_03: CargoTurret_03
-			{
-			};
-			class CargoTurret_04: CargoTurret_04
-			{
-			};
-			class CargoTurret_05: CargoTurret_05
-			{
-			};
-			class CargoTurret_06: CargoTurret_06
-			{
-			};
-			class CargoTurret_07: CargoTurret_07
-			{
-			};
-			class CargoTurret_08: CargoTurret_08
-			{
-			};
-			class CargoTurret_09: CargoTurret_09
-			{
-			};
-			class CargoTurret_10: CargoTurret_10
-			{
-			};
 		};
 	};
 	class rhs_bmp2_tv: rhs_bmp2_vdv
@@ -3345,7 +3012,6 @@ class CfgVehicles
 	};
 	class rhs_bmp2k_vdv: rhs_bmp2_vdv
 	{
-		displayName="$STR_BMP2K_Name";
 		transportsoldier=3;
 		typicalCargo[]=
 		{
@@ -3354,10 +3020,6 @@ class CfgVehicles
 			"rhs_msv_armoredcrew"
 		};
 		tf_range_api=35000;
-		class Library
-		{
-			libTextDesc="Command variant of the BMP-2. Weight: 14,3t Engine: UTD-20 V6-cylinder 4-stroke one-chamber 15.8 liter water-cooled diesel, 300hp, ~1000Nm torque. Speed: 65 km/h (road) 45 km/h (cross country) Fuel capacity: 462l Range: 600 km Armour: Turret: 33mm front, 19mm sides, 13mm rear Hull:  7-19mm front, 16-18mm sides, 16mm rear Primary armament: 30 mm Shipunov 2A42 Autocannon (500 rounds) penetration:	3UBR6 APBC	18mm RHA @60 degrees @1500m, 3UBR8 APDS	25mm RHA @60 degrees @1500m, 9M113 Konkurs ATGM  600mm RHA, Secondary armament: 7.62 mm PKT coaxial general purpose machine gun (2000 rounds)";
-		};
 		class Turrets: Turrets
 		{
 			class MainTurret: MainTurret
@@ -3371,49 +3033,11 @@ class CfgVehicles
 					};
 				};
 			};
-			class CargoTurret_02: CargoTurret_02
-			{
-			};
-			class CargoTurret_03: CargoTurret_03
-			{
-			};
-			class CargoTurret_04: CargoTurret_04
-			{
-			};
-			class CargoTurret_05: CargoTurret_05
-			{
-			};
-			class CargoTurret_06: CargoTurret_06
-			{
-			};
-			class CargoTurret_07: CargoTurret_07
-			{
-			};
-			class CargoTurret_08: CargoTurret_08
-			{
-			};
-			class CargoTurret_09: CargoTurret_09
-			{
-			};
-			class CargoTurret_10: CargoTurret_10
-			{
-			};
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"rhsafrf\addons\rhs_bmp\textures\bmp_1k_co.paa",
-			"rhsafrf\addons\rhs_bmp\textures\bmp_2_co.paa",
-			"rhsafrf\addons\rhs_bmp\textures\bmp_3_co.paa",
-			"rhsafrf\addons\rhs_bmp\textures\bmp_4k_co.paa",
-			"rhsafrf\addons\rhs_bmp\textures\bmp_5_co.paa",
-			"rhsafrf\addons\rhs_bmp\textures\bmp_6_co.paa",
-			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa"
 		};
 		class textureSources
 		{
 			class standard
 			{
-				displayName="Standard";
 				factions[]=
 				{
 					"rhs_faction_vmf",
@@ -3474,7 +3098,6 @@ class CfgVehicles
 	};
 	class rhs_bmp2d_vdv: rhs_bmp2_vdv
 	{
-		displayName="$STR_BMP2D_Name";
 		rhs_decalParameters[]=
 		{
 			"['Number', cBMP3NumberPlaces, 'Default']",
@@ -3483,10 +3106,6 @@ class CfgVehicles
 		};
 		armor=300;
 		canFloat=0;
-		class Library
-		{
-			libTextDesc="Uparmored variant of the BMP-2. Weight: 14,5t Engine: UTD-20 V6-cylinder 4-stroke one-chamber 15.8 liter water-cooled diesel, 300hp, ~1000Nm torque. Speed: 65 km/h (road) 45 km/h (cross country) Fuel capacity: 462l Range: 600 km Armour: Turret: 33mm front, 19mm sides, 13+10mm rear Hull:  7-19mm front, 16-18+10mm sides, 16mm rear Primary armament: 30 mm Shipunov 2A42 Autocannon (500 rounds) penetration:	3UBR6 APBC	18mm RHA @60 degrees @1500m, 3UBR8 APDS	25mm RHA @60 degrees @1500m, 9M113 Konkurs ATGM  600mm RHA, Secondary armament: 7.62 mm PKT coaxial general purpose machine gun (2000 rounds)";
-		};
 	};
 	class rhs_bmp2d_tv: rhs_bmp2d_vdv
 	{
@@ -3525,7 +3144,6 @@ class CfgVehicles
 	};
 	class rhs_Ob_681_2: rhs_bmp2e_msv
 	{
-		displayName="Obyekt-681-2";
 		class Turrets: Turrets
 		{
 			class MainTurret: MainTurret
@@ -3560,8 +3178,6 @@ class CfgVehicles
 						initAngleY=0;
 						minAngleY=-110;
 						maxAngleY=110;
-						distanceZoomMin=200;
-						distanceZoomMax=2000;
 						initFov=0.14;
 						minFov=0.14;
 						maxFov=0.14;
@@ -3609,8 +3225,6 @@ class CfgVehicles
 								initAngleY=0;
 								minAngleY=-110;
 								maxAngleY=110;
-								distanceZoomMin=200;
-								distanceZoomMax=2000;
 								initFov=0.14;
 								minFov=0.14;
 								maxFov=0.14;
@@ -3633,48 +3247,12 @@ class CfgVehicles
 					};
 				};
 			};
-			class CargoTurret_02: CargoTurret_02
-			{
-			};
-			class CargoTurret_03: CargoTurret_03
-			{
-			};
-			class CargoTurret_04: CargoTurret_04
-			{
-			};
-			class CargoTurret_05: CargoTurret_05
-			{
-			};
-			class CargoTurret_06: CargoTurret_06
-			{
-			};
-			class CargoTurret_07: CargoTurret_07
-			{
-			};
-			class CargoTurret_08: CargoTurret_08
-			{
-			};
-			class CargoTurret_09: CargoTurret_09
-			{
-			};
-			class CargoTurret_10: CargoTurret_10
-			{
-			};
-		};
-		class Library
-		{
-			libTextDesc="Experimental IFV. Weight: 13,6t Engine: UTD-20 V6-cylinder 4-stroke one-chamber 15.8 liter water-cooled diesel, 300hp, ~1000Nm torque. Speed: 65 km/h (road) 45 km/h (cross country) Fuel capacity: 462l Range: 600 km Armour: Turret: 33mm front, 19mm sides, 13mm rear Hull:  7-19mm front, 16-18mm sides, 16mm rear Primary armament: 73 mm Zarnitsa low-pressure smoothbore gun (40 rounds) penetration:	PG-15V HEAT	350mm RHA, 9M113 Konkurs ATGM  600mm RHA, Secondary armament: 12.7mm NSVT coaxial heavy machine gun (500 rounds), 7.62 mm PKT coaxial general purpose machine gun (2000 rounds)";
 		};
 	};
 	class rhs_brm1k_base: rhs_bmp2e_vdv
 	{
-		displayName="$STR_BRM1K_Name";
 		armor=160;
 		cost=10000;
-		class Library
-		{
-			libTextDesc="Reconnaissance vehicle, based on BMP-1. Weight: 13,3t Engine: UTD-20 V6-cylinder 4-stroke one-chamber 15.8 liter water-cooled diesel, 300hp, ~1000Nm torque. Speed: 65 km/h (road) 45 km/h (cross country) Fuel capacity: 462l Range: 600 km Armour: Turret: 23mm front, 26-33mm mantlet, 19mm sides, 13mm rear Hull:  7-19mm front, 16-18mm sides, 16mm rear Primary armament: 73 mm 2A28 Grom low-pressure smoothbore gun  (20 rounds) penetration:	PG-15V HEAT	350mm RHA, Secondary armament: 7.62 mm PKT coaxial general purpose machine gun (2000 rounds)";
-		};
 		class Components: Components
 		{
 			class SensorsManagerComponent
@@ -3685,15 +3263,11 @@ class CfgVehicles
 					{
 						class AirTarget
 						{
-							minRange=7000;
-							maxRange=7000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
 						class GroundTarget
 						{
-							minRange=7000;
-							maxRange=7000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
@@ -3702,7 +3276,6 @@ class CfgVehicles
 						maxGroundNoiseDistance=-1;
 						angleRangeHorizontal=60;
 						angleRangeVertical=50;
-						typeRecognitionDistance=500;
 						maxFogSeeThrough=1;
 						maxTrackableATL=100;
 						minTrackableSpeed=2;
@@ -3712,15 +3285,11 @@ class CfgVehicles
 					{
 						class AirTarget
 						{
-							minRange=2000;
-							maxRange=2000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
 						class GroundTarget
 						{
-							minRange=2000;
-							maxRange=2000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
@@ -3729,7 +3298,6 @@ class CfgVehicles
 						maxGroundNoiseDistance=-1;
 						angleRangeHorizontal=60;
 						angleRangeVertical=50;
-						typeRecognitionDistance=1;
 						maxFogSeeThrough=1;
 						maxTrackableATL=100;
 						minTrackableSpeed=1;
@@ -3789,8 +3357,6 @@ class CfgVehicles
 						initAngleY=0;
 						minAngleY=-110;
 						maxAngleY=110;
-						distanceZoomMin=200;
-						distanceZoomMax=2000;
 						initFov=0.14;
 						minFov=0.14;
 						maxFov=0.14;
@@ -3809,9 +3375,6 @@ class CfgVehicles
 				};
 				class Turrets: Turrets
 				{
-					class CommanderOptics: CommanderOptics
-					{
-						weapons[]={};
 						magazines[]={};
 						animationSourceHatch="HatchCommander_BMP2";
 						nightVision=1;
@@ -3841,8 +3404,6 @@ class CfgVehicles
 								initAngleY=0;
 								minAngleY=-110;
 								maxAngleY=110;
-								distanceZoomMin=200;
-								distanceZoomMax=2000;
 								initFov=0.14;
 								minFov=0.14;
 								maxFov=0.14;
@@ -3909,17 +3470,11 @@ class CfgVehicles
 								};
 							};
 						};
-						class Hitpoints
-						{
-						};
 					};
 				};
 			};
 			class NavTurret: NewTurret
 			{
-				class ViewGunner;
-				weapons[]={};
-				magazines[]={};
 				animationSourceHatch="Hatch_nav";
 				nightVision=1;
 				proxyType="CPGunner";
@@ -3949,8 +3504,6 @@ class CfgVehicles
 					initAngleY=0;
 					minAngleY=-100;
 					maxAngleY=100;
-					distanceZoomMin=200;
-					distanceZoomMax=2000;
 					initFov=0.166666;
 					minFov=0.166666;
 					maxFov=0.166666;
@@ -3965,8 +3518,6 @@ class CfgVehicles
 						initAngleY=0;
 						minAngleY=-110;
 						maxAngleY=110;
-						distanceZoomMin=200;
-						distanceZoomMax=2000;
 						initFov="0.7/1";
 						minFov="0.7/1";
 						maxFov="0.7/1";
@@ -3984,9 +3535,6 @@ class CfgVehicles
 				};
 				soundServo[]={};
 				startEngine=0;
-				class Hitpoints
-				{
-				};
 			};
 			class LeftBack: NewTurret
 			{
@@ -4016,14 +3564,9 @@ class CfgVehicles
 					initAngleY=0;
 					minAngleY=-110;
 					maxAngleY=110;
-					distanceZoomMin=20;
-					distanceZoomMax=2000;
 					initFov=0.69999999;
 					minFov=0.69999999;
 					maxFov=0.69999999;
-				};
-				class Hitpoints
-				{
 				};
 			};
 			class RightBack: LeftBack
@@ -4044,9 +3587,6 @@ class CfgVehicles
 				reloaded="";
 			};
 		};
-	};
-	class rhs_brm1k_vdv: rhs_brm1k_base
-	{
 	};
 	class rhs_brm1k_tv: rhs_brm1k_vdv
 	{

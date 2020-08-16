@@ -31,18 +31,12 @@ class CfgVehicles
 	class LandVehicle;
 	class Car: LandVehicle
 	{
-		class HitPoints;
-		class NewTurret;
-	};
 	class Car_F: Car
 	{
 		class Turrets
 		{
 			class MainTurret: NewTurret
 			{
-				class ViewOptics;
-			};
-		};
 		class HitPoints
 		{
 			class HitLFWheel;
@@ -54,12 +48,6 @@ class CfgVehicles
 			class HitGlass2;
 			class HitGlass3;
 			class HitGlass4;
-			class HitGlass5;
-			class HitGlass6;
-		};
-		class EventHandlers;
-		class AnimationSources;
-	};
 	class Truck_F: Car_F
 	{
 		class ViewPilot;
@@ -71,14 +59,10 @@ class CfgVehicles
 			class HitLF2Wheel;
 			class HitRFWheel;
 			class HitRBWheel;
-			class HitRMWheel;
-			class HitRF2Wheel;
-		};
 		class AnimationSources;
 	};
 	class rhs_zil131_base: Truck_F
 	{
-		displayName="ZiL-131";
 		icon="\rhsafrf\addons\rhs_a2port_car\data\mapico\icomap_ural_ca.paa";
 		normalSpeedForwardCoef=0.75;
 		slowSpeedForwardCoef=0.44999999;
@@ -875,30 +859,6 @@ class CfgVehicles
 		{
 			"['Number', [5,6,7,8], 'Default']"
 		};
-		hiddenSelections[]=
-		{
-			"camo1",
-			"camo2",
-			"camo3",
-			"camo4",
-			"camo5",
-			"n1",
-			"n2",
-			"n3",
-			"n4",
-			"i1",
-			"i2",
-			"i3",
-			"i4"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"\rhsafrf\addons\rhs_zil131\data\rhs_zil131_cargo_co.paa",
-			"\rhsafrf\addons\rhs_zil131\data\rhs_zil131_cabin_co.paa",
-			"\rhsafrf\addons\rhs_zil131\data\rhs_zil131_interior_co.paa",
-			"\rhsafrf\addons\rhs_zil131\data\rhs_zil131_wheels_co.paa",
-			"\rhsafrf\addons\rhs_zil131\data\rhs_zil131_base_co.paa"
-		};
 		viewCargoShadow=1;
 		viewDriverShadow=1;
 		viewGunnerShadow=1;
@@ -936,9 +896,6 @@ class CfgVehicles
 				direction="Exhaust_dir";
 				effect="ExhaustEffectHTruck";
 			};
-		};
-		class Damage
-		{
 		};
 		armorLights=0.0099999998;
 		class HitPoints: HitPoints
@@ -1118,7 +1075,6 @@ class CfgVehicles
 		{
 			class standard
 			{
-				displayName="Standard";
 				factions[]=
 				{
 					"rhs_faction_vmf",
@@ -1132,13 +1088,11 @@ class CfgVehicles
 		{
 			class rhs_decalNumber_type
 			{
-				displayName="Define font type of plate number";
 				tooltip="Define kind of font that will be drawn on vehicle.";
 				property="rhs_decalNumber_type";
 				control="Combo";
 				expression="_this setVariable ['%s', _value];[_this,[['Number', [5,6,7,8], _value]]] call rhs_fnc_decalsInit";
 				defaultValue=0;
-				typeName="STRING";
 				class values
 				{
 					class Default
@@ -1187,24 +1141,20 @@ class CfgVehicles
 			class rhs_decalNumber
 			{
 				collapsed=1;
-				displayName="Set plate number";
 				tooltip="Set plate number. 4 numbers are required. If 0, random number will be generated";
 				property="rhs_decalNumber";
 				control="Edit";
 				validate="Number";
-				typeName="Number";
 				defaultValue="-1";
 				expression="if(_value >= 0)then{[_this,[['Number', [5,6,7,8], _this getVariable ['rhs_decalNumber_type','Default'], _value]]] call rhs_fnc_decalsInit};";
 			};
 			class rhs_decalArmy_type
 			{
-				displayName="Define large door roundel type";
 				tooltip="Decal type";
 				property="rhs_decalArmy_type";
 				control="Combo";
 				expression="_this setVariable ['%s', _value];";
 				defaultValue="0";
-				typeName="STRING";
 				class values
 				{
 					class Army
@@ -1242,7 +1192,6 @@ class CfgVehicles
 			};
 			class rhs_decalArmy
 			{
-				displayName="Set large door roundel symbol";
 				tooltip="Set large door roundel located on both sides. Usually used for army symbols. -1 leaves current symbol & 0 clears decal.";
 				property="rhs_decalArmy";
 				control="Edit";
@@ -1252,21 +1201,18 @@ class CfgVehicles
 			};
 			class rhs_decalPlatoon_type: rhs_decalArmy_type
 			{
-				displayName="Define small door roundel type";
 				property="rhs_decalPlatoon_type";
 				expression="_this setVariable ['%s', _value];";
 				defaultValue="0";
 			};
 			class rhs_decalPlatoon: rhs_decalArmy
 			{
-				displayName="Set small door roundel symbol";
 				tooltip="Define small door roundel located on both sides. Usually used for platoon symbols. -1 leaves current symbol & 0 clears decal.";
 				property="rhs_decalPlatoon";
 				expression="if(parseNumber _value >= 0)then{ [_this, [ [ 'Label', [11,12],  _this getVariable ['rhs_decalPlatoon_type','Army'],call compile _value] ] ] call rhs_fnc_decalsInit};";
 			};
 			class rhs_hidespare
 			{
-				displayName="Remove spare wheel";
 				property="rhs_hidespare";
 				control="CheckboxNumber";
 				expression="_this animate ['spare_hide',_value,true]";
@@ -1274,24 +1220,20 @@ class CfgVehicles
 			};
 			class rhs_hidebench: rhs_hidespare
 			{
-				displayName="Remove cargo bench";
 				property="rhs_hidebench";
 				expression="_this animateSource ['bench_hide',_value,true];";
 			};
 			class Door_LF: rhs_hidespare
 			{
-				displayName="Open front left door";
 				property="Door_LF";
 				expression="_this animateDoor ['%s',_value,true]";
 			};
 			class Door_RF: Door_LF
 			{
-				displayName="Open front right door";
 				property="Door_RF";
 			};
 			class back_door: Door_LF
 			{
-				displayName="Open back door";
 				property="back_door";
 			};
 		};
@@ -1423,7 +1365,6 @@ class CfgVehicles
 	};
 	class rhs_zil131_open_base: rhs_zil131_base
 	{
-		displayName="ZiL-131 (Open)";
 		animationList[]=
 		{
 			"cover_hide",
@@ -1469,10 +1410,6 @@ class CfgVehicles
 	};
 	class rhs_zil131_flatbed_base: rhs_zil131_open_base
 	{
-		displayName="ZiL-131 (Open/Flatbed)";
-		class Turrets
-		{
-		};
 		animationList[]=
 		{
 			"cover_hide",
@@ -1559,7 +1496,6 @@ class CfgVehicles
 	};
 	class rhs_zil131_flatbed_cover_base: rhs_zil131_flatbed_base
 	{
-		displayName="ZiL-131 (Flatbed)";
 		animationList[]=
 		{
 			"bench_hide",
@@ -1567,9 +1503,6 @@ class CfgVehicles
 		};
 		class VehicleTransport: VehicleTransport
 		{
-			class Cargo: Cargo
-			{
-			};
 			class Carrier: Carrier
 			{
 				disableHeightLimit=0;

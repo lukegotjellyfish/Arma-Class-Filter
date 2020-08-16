@@ -81,9 +81,6 @@ class CfgVehicles
 	class Tank: LandVehicle
 	{
 		class NewTurret;
-		class Sounds;
-		class HitPoints;
-	};
 	class Tank_F: Tank
 	{
 		class Turrets
@@ -92,9 +89,6 @@ class CfgVehicles
 			{
 				class Turrets
 				{
-					class CommanderOptics;
-				};
-			};
 		};
 		class AnimationSources;
 		class ViewPilot;
@@ -105,17 +99,8 @@ class CfgVehicles
 		{
 			class HitHull;
 			class HitEngine;
-			class HitLTrack;
-			class HitRTrack;
-		};
 		class Sounds: Sounds
 		{
-			class Engine;
-			class Movement;
-		};
-		class EventHandlers;
-		class Components;
-	};
 	class rhs_a3t72tank_base: Tank_F
 	{
 		rhs_decalParameters[]=
@@ -130,7 +115,6 @@ class CfgVehicles
 			"Track_R",
 			"Slide"
 		};
-		displayName="$STR_T72BA_Name";
 		accuracy=0.30000001;
 		supplyRadius=1;
 		memoryPointSupply="pos driver";
@@ -1037,21 +1021,6 @@ class CfgVehicles
 					{0.69999999,0.75}
 				};
 			};
-			class L3: L2
-			{
-			};
-			class L4: L2
-			{
-			};
-			class L5: L2
-			{
-			};
-			class L6: L2
-			{
-			};
-			class L7: L2
-			{
-			};
 			class L9: L2
 			{
 				maxDroop=0;
@@ -1062,25 +1031,7 @@ class CfgVehicles
 				maxDroop=0;
 				maxCompression=0;
 			};
-			class R2: L2
-			{
-				suspTravelDirection[]={0.125,-1,0};
 				side="right";
-			};
-			class R3: R2
-			{
-			};
-			class R4: R2
-			{
-			};
-			class R5: R2
-			{
-			};
-			class R6: R2
-			{
-			};
-			class R7: R2
-			{
 			};
 			class R9: R2
 			{
@@ -1710,81 +1661,18 @@ class CfgVehicles
 				};
 			};
 		};
-		hiddenSelections[]=
-		{
-			"camo1",
-			"camo2",
-			"camo3",
-			"camo4",
-			"camo5",
-			"camo6",
-			"camo7",
-			"camo8",
-			"camo9",
-			"camo10",
-			"camo11",
-			"n1",
-			"n2",
-			"n3",
-			"i1",
-			"i2",
-			""
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"rhsafrf\addons\rhs_t72\data\rhs_t72b_01a_co.paa",
-			"rhsafrf\addons\rhs_t72\data\rhs_t72b_02a_co.paa",
-			"rhsafrf\addons\rhs_t72\data\rhs_t72b_03_co.paa",
-			"rhsafrf\addons\rhs_t72\data\rhs_t72b_04_co.paa",
-			"rhsafrf\addons\rhs_t72\data\rhs_t72b_05_co.paa",
-			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa"
-		};
 		class textureSources
 		{
-			class standard
-			{
-				displayName="Standard";
-			};
-			class rhs_Sand: standard
-			{
-				displayName="Sand";
-			};
-			class rhs_chdkz: rhs_Sand
-			{
-				displayName="CHDKZ";
-			};
-			class r1: standard
-			{
-				displayName="#1";
-			};
-			class r2: standard
-			{
-				displayName="#2";
-			};
-			class r3: standard
-			{
-				displayName="#3";
-			};
-			class r4: standard
-			{
-				displayName="#4";
-			};
-			class r5: standard
-			{
-				displayName="#5";
-			};
 		};
 		class Attributes
 		{
 			class rhs_decalNumber_type
 			{
-				displayName="Define font type of plate number";
 				tooltip="Define kind of font that will be drawn on vehicle.";
 				property="rhs_decalNumber_type";
 				control="Combo";
 				expression="_this setVariable ['%s', _value];[_this,[['Number', cRHST72NumberPlaces, _value]]] call rhs_fnc_decalsInit";
 				defaultValue=0;
-				typeName="STRING";
 				class values
 				{
 					class Default
@@ -1833,24 +1721,20 @@ class CfgVehicles
 			class rhs_decalNumber
 			{
 				collapsed=1;
-				displayName="Set side number";
 				tooltip="Set side number. 3 numbers are required. Type 0 to hide numbers complety & leave at -1 to get random number";
 				property="rhs_decalNumber";
 				control="Edit";
 				validate="Number";
-				typeName="Number";
 				defaultValue="-1";
 				expression="if( _value >= 0)then{if( _value == 0)then{{[_this setobjectTexture [_x,'a3\data_f\clear_empty.paa']]}foreach cRHST72NumberPlaces}else{[_this, [['Number', cRHST72NumberPlaces, _this getVariable ['rhs_decalNumber_type','Default'], _value] ] ] call rhs_fnc_decalsInit}};";
 			};
 			class rhs_decalPlatoon_type
 			{
-				displayName="Define platoon symbol type";
 				tooltip="Decal type";
 				property="rhs_decalPlatoon_type";
 				control="Combo";
 				expression="_this setVariable ['%s', _value];";
 				defaultValue="0";
-				typeName="STRING";
 				class values
 				{
 					class Platoon
@@ -1889,7 +1773,6 @@ class CfgVehicles
 			};
 			class rhs_decalPlatoon
 			{
-				displayName="Set platoon symbol";
 				tooltip="Set platoon symbol located on turret. Usually used for platoon symbols. -1 leaves current symbol & 0 clears decal.";
 				property="rhs_decalPlatoon";
 				control="Edit";
@@ -1899,46 +1782,24 @@ class CfgVehicles
 			};
 			class rhs_decalHonor_type: rhs_decalPlatoon_type
 			{
-				displayName="Define honor symbol type";
 				property="rhs_decalHonor_type";
 				class values: values
 				{
-					class Honor: Honor
-					{
-					};
-					class HonorGDR: HonorGDR
-					{
-					};
-					class Platoon: Platoon
-					{
-					};
-					class PlatoonGDR: PlatoonGDR
-					{
-					};
-					class PlatoonVDV: PlatoonVDV
-					{
-					};
-					class Army: Army
-					{
-					};
 				};
 			};
 			class rhs_decalHonor: rhs_decalPlatoon
 			{
-				displayName="Set honor symbol";
 				tooltip="Define symbol located on IR Lamp ('84-'89 type tanks only). Usually used for honor symbols. -1 leaves current symbol & 0 clears decal.";
 				property="rhs_decalHonor";
 				expression="if(parseNumber _value >= 0)then{ [_this, [ [ 'Label', cRHST72HnrSymPlaces,  _this getVariable ['rhs_decalHonor_type','Honor'],call compile _value] ] ] call rhs_fnc_decalsInit};";
 			};
 			class rhs_ammoslot_1_type
 			{
-				displayName="Ammo slot #1 type";
 				tooltip="Define type of shell for #1 slot [AP rounds]";
 				property="rhs_ammoslot_1_type";
 				control="Combo";
 				expression="_this setVariable ['%s', _value];";
 				defaultValue=0;
-				typeName="STRING";
 				class values
 				{
 					class rhs_mag_3bm42_10
@@ -2011,18 +1872,15 @@ class CfgVehicles
 			};
 			class rhs_ammoslot_1
 			{
-				displayName="Ammo slot #1 count";
 				tooltip="Define number of rounds stored inside of type #1. Max 22. Leave -1 for default loadout";
 				property="rhs_ammoslot_1";
 				control="Edit";
 				expression="if(_value >= 0)then{ [_this,_value,'%s',22] spawn rhs_fnc_TTanks_DefineLoadout};";
 				defaultValue="-1";
 				validate="NUMBER";
-				typeName="NUMBER";
 			};
 			class rhs_ammoslot_2_type: rhs_ammoslot_1_type
 			{
-				displayName="Ammo slot #2 type";
 				tooltip="Define type of shell for #2 slot [HEAT rounds]";
 				property="rhs_ammoslot_2_type";
 				class values
@@ -2073,13 +1931,11 @@ class CfgVehicles
 			};
 			class rhs_ammoslot_2: rhs_ammoslot_1
 			{
-				displayName="Ammo slot #2 count";
 				tooltip="Define number of rounds stored inside of type #2. Max 22. Leave -1 for default loadout";
 				property="rhs_ammoslot_2";
 			};
 			class rhs_ammoslot_3_type: rhs_ammoslot_1_type
 			{
-				displayName="Ammo slot #3 type";
 				tooltip="Define type of shell for #3 slot [HE rounds]";
 				property="rhs_ammoslot_3_type";
 				class values
@@ -2100,13 +1956,11 @@ class CfgVehicles
 			};
 			class rhs_ammoslot_3: rhs_ammoslot_1
 			{
-				displayName="Ammo slot #3 count";
 				tooltip="Define number of rounds stored inside of type #3. Max 22. Leave -1 for default loadout";
 				property="rhs_ammoslot_3";
 			};
 			class rhs_ammoslot_4_type: rhs_ammoslot_1_type
 			{
-				displayName="Ammo slot #4 type";
 				tooltip="Define type of shell for #4 slot [ATGM rounds]";
 				property="rhs_ammoslot4_type";
 				class values
@@ -2133,21 +1987,16 @@ class CfgVehicles
 			};
 			class rhs_ammoslot_4: rhs_ammoslot_1
 			{
-				displayName="Ammo slot #4 count";
 				tooltip="Define number of rounds stored inside of type #4. Max 22. Leave -1 for default loadout";
 				property="rhs_ammoslot_4";
 			};
 			class rhs_hide_com_shield
 			{
-				displayName="Remove commander shield";
 				property="rhs_hide_com_shield";
 				control="CheckboxNumber";
 				expression="_this animate ['hide_com_shield',_value,true]";
 				defaultValue="0";
 			};
-		};
-		class Damage
-		{
 		};
 		class ViewOptics: ViewOptics
 		{
@@ -2216,34 +2065,10 @@ class CfgVehicles
 			};
 		};
 	};
-	class rhs_t72ba_tv: rhs_a3t72tank_base
-	{
-		displayName="$STR_T72BA_Name";
-	};
 	class rhs_t72bb_tv: rhs_a3t72tank_base
 	{
-		displayName="$STR_T72BB_Name";
-		hiddenSelectionsTextures[]=
-		{
-			"rhsafrf\addons\rhs_t72\data\rhs_t72b_01b_co.paa",
-			"rhsafrf\addons\rhs_t72\data\rhs_t72b_02b_co.paa",
-			"rhsafrf\addons\rhs_t72\data\rhs_t72b_03_co.paa",
-			"rhsafrf\addons\rhs_t72\data\rhs_t72b_04_co.paa",
-			"rhsafrf\addons\rhs_t72\data\rhs_t72b_05b_co.paa",
-			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa"
-		};
 		class textureSources: textureSources
 		{
-			class standard: standard
-			{
-			};
-			class rhs_Sand: rhs_Sand
-			{
-			};
-			class rhs_chdkz: rhs_Sand
-			{
-				displayName="CHDKZ";
-			};
 		};
 		class HitPoints: HitPoints
 		{
@@ -2743,28 +2568,8 @@ class CfgVehicles
 	};
 	class rhs_t72bc_tv: rhs_a3t72tank_base
 	{
-		displayName="$STR_T72BC_Name";
-		hiddenSelectionsTextures[]=
-		{
-			"rhsafrf\addons\rhs_t72\data\rhs_t72b_01_co.paa",
-			"rhsafrf\addons\rhs_t72\data\rhs_t72b_02_co.paa",
-			"rhsafrf\addons\rhs_t72\data\rhs_t72b_03_co.paa",
-			"rhsafrf\addons\rhs_t72\data\rhs_t72b_04_co.paa",
-			"rhsafrf\addons\rhs_t72\data\rhs_t72b_05_co.paa",
-			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa"
-		};
 		class textureSources: textureSources
 		{
-			class standard: standard
-			{
-			};
-			class rhs_Sand: rhs_Sand
-			{
-			};
-			class rhs_chdkz: rhs_chdkz
-			{
-				displayName="";
-			};
 		};
 		class HitPoints: HitPoints
 		{
@@ -3204,7 +3009,6 @@ class CfgVehicles
 	};
 	class rhs_t72bd_tv: rhs_a3t72tank_base
 	{
-		displayName="$STR_T72BD_Name";
 		normalSpeedForwardCoef=0.75;
 		slowSpeedForwardCoef=0.25;
 		fuelCapacity=29.5;
@@ -3275,21 +3079,6 @@ class CfgVehicles
 				dampingRate=3143;
 				dampingRateInAir=3143;
 			};
-			class L3: L2
-			{
-			};
-			class L4: L2
-			{
-			};
-			class L5: L2
-			{
-			};
-			class L6: L2
-			{
-			};
-			class L7: L2
-			{
-			};
 			class L9: L2
 			{
 				maxDroop=0;
@@ -3303,21 +3092,6 @@ class CfgVehicles
 			class R2: L2
 			{
 				side="right";
-			};
-			class R3: R2
-			{
-			};
-			class R4: R2
-			{
-			};
-			class R5: R2
-			{
-			};
-			class R6: R2
-			{
-			};
-			class R7: R2
-			{
 			};
 			class R9: R2
 			{
@@ -3334,30 +3108,7 @@ class CfgVehicles
 		receiveRemoteTargets=1;
 		reportRemoteTargets=1;
 		reportOwnPosition=1;
-		hiddenSelectionsTextures[]=
-		{
-			"rhsafrf\addons\rhs_t72\data\rhs_t72b3_01_co.paa",
-			"rhsafrf\addons\rhs_t72\data\rhs_t72b3_02_co.paa",
-			"rhsafrf\addons\rhs_t72\data\rhs_t72b_03_co.paa",
-			"rhsafrf\addons\rhs_t72\data\rhs_t72b_04_co.paa",
-			"rhsafrf\addons\rhs_t72\data\rhs_t72b_05_co.paa",
-			"rhsafrf\addons\rhs_t72\data\rhs_t72b3_turret_co.paa",
-			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa"
-		};
 		class textureSources: textureSources
-		{
-			class standard: standard
-			{
-			};
-			class rhs_Sand: rhs_Sand
-			{
-			};
-			class rhs_chdkz: rhs_chdkz
-			{
-				displayName="";
-			};
-		};
-		class Damage
 		{
 		};
 		class HitPoints: HitPoints
@@ -3803,9 +3554,6 @@ class CfgVehicles
 							};
 						};
 					};
-					class CommanderMG: CommanderMG
-					{
-					};
 				};
 				maxHorizontalRotSpeed=0.88;
 				weapons[]=
@@ -3852,18 +3600,6 @@ class CfgVehicles
 		};
 		class Attributes: Attributes
 		{
-			class rhs_decalNumber_type: rhs_decalNumber_type
-			{
-			};
-			class rhs_decalNumber: rhs_decalNumber
-			{
-			};
-			class rhs_decalPlatoon_type: rhs_decalPlatoon_type
-			{
-			};
-			class rhs_decalPlatoon: rhs_decalPlatoon
-			{
-			};
 			class rhs_ammoslot_1_type: rhs_ammoslot_1_type
 			{
 				class values
@@ -3936,9 +3672,6 @@ class CfgVehicles
 					};
 				};
 			};
-			class rhs_ammoslot_1: rhs_ammoslot_1
-			{
-			};
 			class rhs_ammoslot_2_type: rhs_ammoslot_2_type
 			{
 				class values
@@ -3987,9 +3720,6 @@ class CfgVehicles
 					};
 				};
 			};
-			class rhs_ammoslot_2: rhs_ammoslot_2
-			{
-			};
 			class rhs_ammoslot_3_type: rhs_ammoslot_3_type
 			{
 				class values
@@ -4007,9 +3737,6 @@ class CfgVehicles
 						defaultValue="rhs_mag_3of11";
 					};
 				};
-			};
-			class rhs_ammoslot_3: rhs_ammoslot_3
-			{
 			};
 			class rhs_ammoslot_4_type: rhs_ammoslot_4_type
 			{
@@ -4035,14 +3762,10 @@ class CfgVehicles
 					};
 				};
 			};
-			class rhs_ammoslot_4: rhs_ammoslot_4
-			{
-			};
 		};
 	};
 	class rhs_t72be_tv: rhs_t72bd_tv
 	{
-		displayName="$STR_T72BE_Name";
 		normalSpeedForwardCoef=0.75;
 		slowSpeedForwardCoef=0.25;
 		fuelCapacity=29.5;
@@ -4113,21 +3836,6 @@ class CfgVehicles
 				dampingRate=3143;
 				dampingRateInAir=3143;
 			};
-			class L3: L2
-			{
-			};
-			class L4: L2
-			{
-			};
-			class L5: L2
-			{
-			};
-			class L6: L2
-			{
-			};
-			class L7: L2
-			{
-			};
 			class L9: L2
 			{
 				maxDroop=0;
@@ -4141,21 +3849,6 @@ class CfgVehicles
 			class R2: L2
 			{
 				side="right";
-			};
-			class R3: R2
-			{
-			};
-			class R4: R2
-			{
-			};
-			class R5: R2
-			{
-			};
-			class R6: R2
-			{
-			};
-			class R7: R2
-			{
 			};
 			class R9: R2
 			{
@@ -4186,29 +3879,7 @@ class CfgVehicles
 				OpticsModel="\rhsafrf\addons\rhs_optics\vehicles\rhs_sosnau_dcam";
 			};
 		};
-		hiddenSelectionsTextures[]=
-		{
-			"rhsafrf\addons\rhs_t72\data\rhs_t72b3_01_co.paa",
-			"rhsafrf\addons\rhs_t72\data\rhs_t72b3_02_co.paa",
-			"rhsafrf\addons\rhs_t72\data\rhs_t72b_03_co.paa",
-			"rhsafrf\addons\rhs_t72\data\rhs_t72b_04_co.paa",
-			"rhsafrf\addons\rhs_t72\data\rhs_t72b_05_co.paa",
-			"rhsafrf\addons\rhs_t72\data\rhs_t72b3_turret_co.paa",
-			"rhsafrf\addons\rhs_t72\data\rhs_t72b3_e_01_co.paa",
-			"rhsafrf\addons\rhs_t72\data\rhs_t72b3_e_02_co.paa",
-			"rhsafrf\addons\rhs_t72\data\rhs_t72b3_e_03_co.paa",
-			"rhsafrf\addons\rhs_t72\data\rhs_t90parts_co.paa"
-		};
 		class textureSources: textureSources
-		{
-			class standard: standard
-			{
-			};
-			class rhs_Sand: rhs_Sand
-			{
-			};
-		};
-		class Damage
 		{
 		};
 		animationList[]=
@@ -5064,7 +4735,6 @@ class CfgVehicles
 	};
 	class rhs_t90_tv: rhs_t72bd_tv
 	{
-		displayName="$STR_T90_Name";
 		simulation="tankX";
 		normalSpeedForwardCoef=0.75;
 		slowSpeedForwardCoef=0.25;
@@ -5178,21 +4848,6 @@ class CfgVehicles
 					{0.69999999,0.75}
 				};
 			};
-			class L3: L2
-			{
-			};
-			class L4: L2
-			{
-			};
-			class L5: L2
-			{
-			};
-			class L6: L2
-			{
-			};
-			class L7: L2
-			{
-			};
 			class L9: L2
 			{
 				maxDroop=0;
@@ -5203,25 +4858,7 @@ class CfgVehicles
 				maxDroop=0;
 				maxCompression=0;
 			};
-			class R2: L2
-			{
-				suspTravelDirection[]={0.125,-1,0};
 				side="right";
-			};
-			class R3: R2
-			{
-			};
-			class R4: R2
-			{
-			};
-			class R5: R2
-			{
-			};
-			class R6: R2
-			{
-			};
-			class R7: R2
-			{
 			};
 			class R9: R2
 			{
@@ -5235,51 +4872,8 @@ class CfgVehicles
 			};
 		};
 		enableGPS=1;
-		hiddenSelections[]=
-		{
-			"camo1",
-			"camo2",
-			"camo3",
-			"camo4",
-			"camo5",
-			"camo6",
-			"camo7",
-			"camo8",
-			"dazzler",
-			"dazzlerlight",
-			"camo11",
-			"n1",
-			"n2",
-			"n3",
-			"i1",
-			"dazzlerglass"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"rhsafrf\addons\rhs_t72\data\rhs_t72b3_01_co.paa",
-			"rhsafrf\addons\rhs_t72\data\rhs_t72b_02d_co.paa",
-			"rhsafrf\addons\rhs_t72\data\rhs_t72b_03_co.paa",
-			"rhsafrf\addons\rhs_t72\data\rhs_t72b_04_co.paa",
-			"rhsafrf\addons\rhs_t72\data\rhs_t72b_05_co.paa",
-			"rhsafrf\addons\rhs_t72\data\rhs_t90parts_co.paa",
-			"rhsafrf\addons\rhs_t72\data\rhs_t72b3_02_co.paa",
-			"",
-			"rhsafrf\addons\rhs_t72\data\rhs_dazzler_co.paa",
-			"rhsafrf\addons\rhs_t72\data\rhs_dazzler_co.paa",
-			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa"
-		};
 		class textureSources: textureSources
 		{
-			class standard: standard
-			{
-			};
-			class rhs_Sand: rhs_Sand
-			{
-			};
-			class RHS_CDF
-			{
-				displayName="";
-			};
 		};
 		rhs_aps_shtora=1;
 		class EventHandlers: EventHandlers
@@ -5635,13 +5229,9 @@ class CfgVehicles
 				};
 			};
 		};
-		class Damage
-		{
-		};
 	};
 	class rhs_t90a_tv: rhs_t90_tv
 	{
-		displayName="$STR_T90A_Name";
 		normalSpeedForwardCoef=0.75;
 		slowSpeedForwardCoef=0.25;
 		fuelCapacity=29.5;
@@ -5712,21 +5302,6 @@ class CfgVehicles
 				dampingRate=3143;
 				dampingRateInAir=3143;
 			};
-			class L3: L2
-			{
-			};
-			class L4: L2
-			{
-			};
-			class L5: L2
-			{
-			};
-			class L6: L2
-			{
-			};
-			class L7: L2
-			{
-			};
 			class L9: L2
 			{
 				maxDroop=0;
@@ -5741,21 +5316,6 @@ class CfgVehicles
 			{
 				side="right";
 			};
-			class R3: R2
-			{
-			};
-			class R4: R2
-			{
-			};
-			class R5: R2
-			{
-			};
-			class R6: R2
-			{
-			};
-			class R7: R2
-			{
-			};
 			class R9: R2
 			{
 				maxDroop=0;
@@ -5767,28 +5327,8 @@ class CfgVehicles
 				maxCompression=0;
 			};
 		};
-		hiddenSelectionsTextures[]=
-		{
-			"rhsafrf\addons\rhs_t72\data\rhs_t72b3_01_co.paa",
-			"rhsafrf\addons\rhs_t72\data\rhs_t72b3_02_co.paa",
-			"rhsafrf\addons\rhs_t72\data\rhs_t72b_03_co.paa",
-			"rhsafrf\addons\rhs_t72\data\rhs_t72b_04_co.paa",
-			"rhsafrf\addons\rhs_t72\data\rhs_t72b_05_co.paa",
-			"rhsafrf\addons\rhs_t72\data\rhs_t90parts_co.paa",
-			"rhsafrf\addons\rhs_t72\data\rhs_t90a_02_co.paa",
-			"",
-			"rhsafrf\addons\rhs_t72\data\rhs_dazzler_co.paa",
-			"rhsafrf\addons\rhs_t72\data\rhs_dazzler_co.paa",
-			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa"
-		};
 		class textureSources: textureSources
 		{
-			class standard: standard
-			{
-			};
-			class rhs_Sand: rhs_Sand
-			{
-			};
 		};
 		receiveRemoteTargets=1;
 		reportRemoteTargets=1;
@@ -5934,27 +5474,8 @@ class CfgVehicles
 	};
 	class rhs_t90saa_tv: rhs_t90a_tv
 	{
-		displayName="$STR_T90SAA_Name";
-		hiddenSelectionsTextures[]=
-		{
-			"rhsafrf\addons\rhs_t72\data\rhs_t72b3_01_co.paa",
-			"rhsafrf\addons\rhs_t72\data\rhs_t72b3_02_co.paa",
-			"rhsafrf\addons\rhs_t72\data\rhs_t72b_03_co.paa",
-			"rhsafrf\addons\rhs_t72\data\rhs_t72b_04_co.paa",
-			"rhsafrf\addons\rhs_t72\data\rhs_t72b_05_co.paa",
-			"rhsafrf\addons\rhs_t72\data\rhs_t90parts_co.paa",
-			"rhsafrf\addons\rhs_t72\data\rhs_t90a_02_co.paa",
-			"rhsafrf\addons\rhs_t72\data\rhs_t90sa_co.paa",
-			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa"
-		};
 		class textureSources: textureSources
 		{
-			class standard: standard
-			{
-			};
-			class rhs_Sand: rhs_Sand
-			{
-			};
 		};
 		class HitPoints: Hitpoints
 		{
@@ -6343,58 +5864,10 @@ class CfgVehicles
 				radius=0.16;
 			};
 		};
-		class Damage
-		{
-		};
 	};
 	class rhs_t90sab_tv: rhs_t90a_tv
 	{
-		displayName="$STR_T90SAB_Name";
-		hiddenSelections[]=
-		{
-			"camo1",
-			"camo2",
-			"camo3",
-			"camo4",
-			"camo5",
-			"camo6",
-			"camo7",
-			"camo8",
-			"camo9",
-			"camo10",
-			"camo11",
-			"n1",
-			"n2",
-			"n3",
-			"i1",
-			"i2",
-			""
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"rhsafrf\addons\rhs_t72\data\rhs_t72b3_01_co.paa",
-			"rhsafrf\addons\rhs_t72\data\rhs_t72b3_02_co.paa",
-			"rhsafrf\addons\rhs_t72\data\rhs_t72b_03_co.paa",
-			"rhsafrf\addons\rhs_t72\data\rhs_t72b_04_co.paa",
-			"rhsafrf\addons\rhs_t72\data\rhs_t72b_05_co.paa",
-			"rhsafrf\addons\rhs_t72\data\rhs_t90parts_co.paa",
-			"rhsafrf\addons\rhs_t72\data\rhs_t90a_02_co.paa",
-			"rhsafrf\addons\rhs_t72\data\rhs_t72b3_e_01_co.paa",
-			"rhsafrf\addons\rhs_t72\data\rhs_t72b3_e_02_co.paa",
-			"rhsafrf\addons\rhs_t72\data\rhs_t90sa_co.paa",
-			"rhsafrf\addons\rhs_t72\data\rhs_t90am_02_co.paa",
-			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa"
-		};
 		class textureSources: textureSources
-		{
-			class standard: standard
-			{
-			};
-			class rhs_Sand: rhs_Sand
-			{
-			};
-		};
-		class Damage
 		{
 		};
 		class DriverOpticsIn
@@ -7069,7 +6542,6 @@ class CfgVehicles
 	};
 	class rhs_t90am_tv: rhs_t90_tv
 	{
-		displayName="$STR_T90AM_Name";
 		normalSpeedForwardCoef=0.75;
 		slowSpeedForwardCoef=0.25;
 		fuelCapacity=29.5;
@@ -7140,21 +6612,6 @@ class CfgVehicles
 				dampingRate=3143;
 				dampingRateInAir=3143;
 			};
-			class L3: L2
-			{
-			};
-			class L4: L2
-			{
-			};
-			class L5: L2
-			{
-			};
-			class L6: L2
-			{
-			};
-			class L7: L2
-			{
-			};
 			class L9: L2
 			{
 				maxDroop=0;
@@ -7169,21 +6626,6 @@ class CfgVehicles
 			{
 				side="right";
 			};
-			class R3: R2
-			{
-			};
-			class R4: R2
-			{
-			};
-			class R5: R2
-			{
-			};
-			class R6: R2
-			{
-			};
-			class R7: R2
-			{
-			};
 			class R9: R2
 			{
 				maxDroop=0;
@@ -7195,50 +6637,7 @@ class CfgVehicles
 				maxCompression=0;
 			};
 		};
-		hiddenSelections[]=
-		{
-			"camo1",
-			"camo2",
-			"camo3",
-			"camo4",
-			"camo5",
-			"camo6",
-			"camo7",
-			"camo8",
-			"camo9",
-			"camo10",
-			"camo11",
-			"n1",
-			"n2",
-			"n3",
-			"i1",
-			"i2",
-			""
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"rhsafrf\addons\rhs_t72\data\rhs_t72b3_01_co.paa",
-			"rhsafrf\addons\rhs_t72\data\rhs_t72b3_02_co.paa",
-			"rhsafrf\addons\rhs_t72\data\rhs_t72b_03_co.paa",
-			"rhsafrf\addons\rhs_t72\data\rhs_t72b_04_co.paa",
-			"rhsafrf\addons\rhs_t72\data\rhs_t90am_01_co.paa",
-			"rhsafrf\addons\rhs_t72\data\rhs_t90am_02_co.paa",
-			"rhsafrf\addons\rhs_t72\data\rhs_t72b3_e_01_co.paa",
-			"rhsafrf\addons\rhs_t72\data\rhs_t72b3_e_02_co.paa",
-			"rhsafrf\addons\rhs_t72\data\rhs_t90parts_co.paa",
-			"rhsafrf\addons\rhs_t72\data\rhs_t90a_02_co.paa",
-			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa"
-		};
 		class textureSources: textureSources
-		{
-			class standard: standard
-			{
-			};
-			class rhs_Sand: rhs_Sand
-			{
-			};
-		};
-		class Damage
 		{
 		};
 		rhs_aps_shtora=1;
@@ -8146,52 +7545,7 @@ class CfgVehicles
 	};
 	class rhs_t90sm_tv: rhs_t90am_tv
 	{
-		displayName="$STR_T90SM_Name";
-		hiddenSelections[]=
-		{
-			"camo1",
-			"camo2",
-			"camo3",
-			"camo4",
-			"camo5",
-			"camo6",
-			"camo7",
-			"camo8",
-			"camo9",
-			"camo10",
-			"camo11",
-			"n1",
-			"n2",
-			"n3",
-			"i1",
-			"i2",
-			""
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"rhsafrf\addons\rhs_t72\data\rhs_t72b3_01_co.paa",
-			"rhsafrf\addons\rhs_t72\data\rhs_t72b3_02_co.paa",
-			"rhsafrf\addons\rhs_t72\data\rhs_t72b_03_co.paa",
-			"rhsafrf\addons\rhs_t72\data\rhs_t72b_04_co.paa",
-			"rhsafrf\addons\rhs_t72\data\rhs_t90am_01_co.paa",
-			"rhsafrf\addons\rhs_t72\data\rhs_t90am_02_co.paa",
-			"rhsafrf\addons\rhs_t72\data\rhs_t72b3_e_01_co.paa",
-			"rhsafrf\addons\rhs_t72\data\rhs_t72b3_e_02_co.paa",
-			"rhsafrf\addons\rhs_t72\data\rhs_t90parts_co.paa",
-			"rhsafrf\addons\rhs_t72\data\rhs_t90a_02_co.paa",
-			"rhsafrf\addons\rhs_t72\data\rhs_t90sm_co.paa",
-			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa"
-		};
 		class textureSources: textureSources
-		{
-			class standard: standard
-			{
-			};
-			class rhs_Sand: rhs_Sand
-			{
-			};
-		};
-		class Damage
 		{
 		};
 		class DriverOpticsIn
@@ -8986,104 +8340,10 @@ class CfgVehicles
 	class rhs_Wreck_T72_turret_F: ThingX
 	{
 		reversed=1;
-		displayName="T-72B Wreck (Turret)";
 		icon="iconObject_1x2";
-	};
-	class rhs_Wreck_T90a_turret_F: rhs_Wreck_T72_turret_F
-	{
-		displayName="T-90A Wreck (Turret)";
-	};
-	class rhs_Wreck_T90am_turret_F: rhs_Wreck_T72_turret_F
-	{
-		displayName="T-90A Wreck (Turret)";
 	};
 };
 class CfgNonAIVehicles
 {
 	class ProxyRetex;
-	class Proxyrhs_t72b_hull_extra: ProxyRetex
-	{
-		hiddenSelections[]=
-		{
-			"camo1",
-			"camo2",
-			"camo3",
-			"camo4",
-			"camo5",
-			"camo6",
-			"camo7"
-		};
-	};
-	class Proxyrhs_t72b_hull2_extra: Proxyrhs_t72b_hull_extra
-	{
-	};
-	class Proxyrhs_t72b3_hull: Proxyrhs_t72b_hull_extra
-	{
-	};
-	class Proxyrhs_t72b_drivl: Proxyrhs_t72b_hull_extra
-	{
-	};
-	class Proxyrhs_t72b_drivr: Proxyrhs_t72b_hull_extra
-	{
-	};
-	class Proxyrhs_t72b_retl: Proxyrhs_t72b_hull_extra
-	{
-	};
-	class Proxyrhs_t72b_retr: Proxyrhs_t72b_hull_extra
-	{
-	};
-	class Proxyrhs_t72b_gun_extra: Proxyrhs_t72b_hull_extra
-	{
-	};
-	class Proxyrhs_t72b_comcop_extra: Proxyrhs_t72b_hull_extra
-	{
-	};
-	class Proxyrhs_t72b_turret_extra: Proxyrhs_t72b_hull_extra
-	{
-	};
-	class Proxyrhs_t72b_turret2_extra: Proxyrhs_t72b_hull_extra
-	{
-	};
-	class Proxyrhs_B3gun_extra: Proxyrhs_t72b_hull_extra
-	{
-	};
-	class Proxyrhs_B3comcop_extra: Proxyrhs_t72b_hull_extra
-	{
-	};
-	class Proxyrhs_B3turretextra: Proxyrhs_t72b_hull_extra
-	{
-	};
-	class Proxyrhs_t72b_latefront: Proxyrhs_t72b_hull_extra
-	{
-	};
-	class Proxyrhs_t72b_veryearly: Proxyrhs_t72b_hull_extra
-	{
-	};
-	class Proxyrhs_t72b_andbfront: Proxyrhs_t72b_hull_extra
-	{
-	};
-	class Proxyrhs_t90a_turretextra: Proxyrhs_t72b_hull_extra
-	{
-	};
-	class Proxyrhs_t90_comm: Proxyrhs_t72b_hull_extra
-	{
-	};
-	class Proxyturret_extra_t90: Proxyrhs_t72b_hull_extra
-	{
-	};
-	class Proxyrhs_nsvt_handle_extra: Proxyrhs_t72b_hull_extra
-	{
-	};
-	class Proxyrhs_nsvt_gunmount_extra: Proxyrhs_t72b_hull_extra
-	{
-	};
-	class Proxyrhs_nsvt_extra: Proxyrhs_t72b_hull_extra
-	{
-	};
-	class Proxyrhs_t72b_e_hull: Proxyrhs_t72b_hull_extra
-	{
-	};
-	class Proxyrhs_t72b_e_turretextra: Proxyrhs_t72b_hull_extra
-	{
-	};
 };

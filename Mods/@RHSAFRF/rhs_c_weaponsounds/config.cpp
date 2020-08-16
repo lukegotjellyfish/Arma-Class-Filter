@@ -1,8 +1,5 @@
 class CfgPatches
 {
-	class rhs_c_weaponsounds
-	{
-		units[]={};
 		weapons[]={};
 		authors[]=
 		{
@@ -14,63 +11,54 @@ class CfgSound3DProcessors
 {
 	class RHS_Default_3DProcessingType
 	{
-		type="panner";
 		innerRange=10;
 		rangeCurve="LinearCurve";
 		range=1800;
 	};
 	class RHS_Shot_light_3DProcessingType
 	{
-		type="panner";
 		innerRange=1;
 		range=25;
 		rangeCurve="InverseSquare2Curve";
 	};
 	class RHS_Shot_medium_3DProcessingType
 	{
-		type="panner";
 		innerRange=1;
 		range=32;
 		rangeCurve="InverseSquare2Curve";
 	};
 	class RHS_rifleBulletCrack_3DProcessingType
 	{
-		type="panner";
 		innerRange=1;
 		range=7;
 		rangeCurve="LinearCurve";
 	};
 	class RHS_Shot_internalMG_3DProcessingType
 	{
-		type="panner";
 		innerRange=2;
 		range=26;
 		rangeCurve="InverseSquare2Curve";
 	};
 	class RHS_Shot_internalCannon_3DProcessingType
 	{
-		type="panner";
 		innerRange=5;
 		range=50;
 		rangeCurve="InverseSquare2Curve";
 	};
 	class RHS_Tail_3DProcessingType
 	{
-		type="panner";
 		innerRange=10;
 		range=990;
 		rangeCurve="InverseSquare3Curve";
 	};
 	class RHS_cannonTail_3DProcessingType
 	{
-		type="panner";
 		innerRange=20;
 		range=1290;
 		rangeCurve="InverseSquare3Curve";
 	};
 	class RHS_katyusha_3DProcessingType
 	{
-		type="panner";
 		innerRange=20;
 		range=400;
 		rangeCurve="InverseSquare3Curve";
@@ -174,7 +162,6 @@ class cfgDistanceFilters
 {
 	class RHS_defaultDistanceFilter
 	{
-		type="lowPassFilter";
 		minCutoffFrequency=150;
 		qFactor=1.3;
 		innerRange=10;
@@ -183,7 +170,6 @@ class cfgDistanceFilters
 	};
 	class RHS_rifleShotDistanceFilter
 	{
-		type="lowPassFilter";
 		minCutoffFrequency=200;
 		qFactor=1.3;
 		innerRange=10;
@@ -3389,9 +3375,6 @@ class CfgSoundSets
 		loop=0;
 	};
 };
-class CfgSounds
-{
-	sounds[]={};
 	class RHS_boltSnap_pk
 	{
 		name="RHS_boltSnap_pk";
@@ -3513,90 +3496,24 @@ class CfgWeapons
 	{
 		class Eventhandlers;
 	};
-	class Rifle_Short_Base_F: Rifle_Base_F
-	{
-	};
 	class Pistol;
-	class Pistol_Base_F: Pistol
-	{
-	};
-	class Rifle_Long_Base_F: Rifle_Base_F
-	{
-	};
 	class UGL_F;
 	class EBR_base_F;
-	class srifle_EBR_F: EBR_base_F
-	{
-	};
 	class Launcher;
-	class Launcher_Base_F: Launcher
-	{
-	};
-	class LMG_Mk200_F: Rifle_Long_Base_F
-	{
-	};
-	class arifle_MX_Base_F: Rifle_Base_F
-	{
-	};
 	class SMG_02_base_F: Rifle_Short_Base_F
 	{
 		class Single;
 		class FullAuto;
-		class WeaponSlotsInfo;
-		class GunParticles;
-	};
 	class pdw2000_base_F;
 	class hgun_PDW2000_F: pdw2000_base_F
 	{
-		class Single;
-		class FullAuto;
-	};
 	class rhs_weap_pp2000: hgun_PDW2000_F
 	{
-		class Single: Single
-		{
-			sounds[]=
-			{
-				"StandardSound"
-			};
-			class StandardSound
-			{
-				soundSetShot[]=
-				{
-					"RHS_pp2000_Shot_SoundSet",
-					"RHS_rifle_small_Tail_SoundSet"
-				};
-			};
-		};
-		class FullAuto: FullAuto
-		{
-			class StandardSound
-			{
-				soundSetShot[]=
-				{
-					"RHS_pp2000_Shot_SoundSet",
-					"RHS_rifle_small_Tail_SoundSet"
-				};
-			};
-		};
 	};
 	class rhs_weap_ak74m_Base_F: Rifle_Base_F
 	{
 		class Single: Mode_SemiAuto
 		{
-			sounds[]=
-			{
-				"Standardsound",
-				"SilencedSound"
-			};
-			class StandardSound
-			{
-				soundSetShot[]=
-				{
-					"RHS_ak74_Shot_SoundSet",
-					"RHS_rifle_small_Tail_SoundSet"
-				};
-			};
 			class SilencedSound
 			{
 				soundSetShot[]=
@@ -3608,19 +3525,6 @@ class CfgWeapons
 		};
 		class FullAuto: Mode_FullAuto
 		{
-			sounds[]=
-			{
-				"Standardsound",
-				"SilencedSound"
-			};
-			class StandardSound
-			{
-				soundSetShot[]=
-				{
-					"RHS_ak74_Shot_SoundSet",
-					"RHS_rifle_small_Tail_SoundSet"
-				};
-			};
 			class SilencedSound
 			{
 				soundSetShot[]=
@@ -3631,26 +3535,10 @@ class CfgWeapons
 			};
 		};
 	};
-	class rhs_weap_ak74m: rhs_weap_ak74m_Base_F
-	{
-	};
 	class rhs_weap_akm: rhs_weap_ak74m
 	{
 		class Single: Mode_SemiAuto
 		{
-			sounds[]=
-			{
-				"StandardSound",
-				"SilencedSound"
-			};
-			class StandardSound
-			{
-				soundSetShot[]=
-				{
-					"RHS_ak47_Shot_SoundSet",
-					"RHS_rifle_med_Tail_SoundSet"
-				};
-			};
 			class SilencedSound
 			{
 				soundSetShot[]=
@@ -3662,19 +3550,6 @@ class CfgWeapons
 		};
 		class FullAuto: Mode_FullAuto
 		{
-			sounds[]=
-			{
-				"StandardSound",
-				"SilencedSound"
-			};
-			class StandardSound
-			{
-				soundSetShot[]=
-				{
-					"RHS_ak47_Shot_SoundSet",
-					"RHS_rifle_med_Tail_SoundSet"
-				};
-			};
 			class SilencedSound
 			{
 				soundSetShot[]=
@@ -3689,19 +3564,6 @@ class CfgWeapons
 	{
 		class Burst: Mode_Burst
 		{
-			sounds[]=
-			{
-				"StandardSound",
-				"SilencedSound"
-			};
-			class StandardSound
-			{
-				soundSetShot[]=
-				{
-					"RHS_ak47_Shot_SoundSet",
-					"RHS_rifle_med_Tail_SoundSet"
-				};
-			};
 			class SilencedSound
 			{
 				soundSetShot[]=
@@ -3716,19 +3578,6 @@ class CfgWeapons
 	{
 		class Single: Mode_SemiAuto
 		{
-			sounds[]=
-			{
-				"StandardSound",
-				"SilencedSound"
-			};
-			class StandardSound
-			{
-				soundSetShot[]=
-				{
-					"RHS_dragunov_Shot_SoundSet",
-					"RHS_rifle2_Tail_SoundSet"
-				};
-			};
 			class SilencedSound
 			{
 				soundSetShot[]=
@@ -3743,19 +3592,6 @@ class CfgWeapons
 	{
 		class Single: Mode_SemiAuto
 		{
-			sounds[]=
-			{
-				"StandardSound",
-				"SilencedSound"
-			};
-			class StandardSound
-			{
-				soundSetShot[]=
-				{
-					"RHS_dragunov_Shot_SoundSet",
-					"RHS_rifle2_Tail_SoundSet"
-				};
-			};
 			class SilencedSound
 			{
 				soundSetShot[]=
@@ -3770,21 +3606,6 @@ class CfgWeapons
 	{
 		WW2_boltSnapSound="RHS_boltSnap_pk";
 		WW2_boltSnapDelay=0.1;
-		class FullAuto: Mode_FullAuto
-		{
-			sounds[]=
-			{
-				"StandardSound"
-			};
-			class StandardSound
-			{
-				soundSetShot[]=
-				{
-					"RHS_pk_Shot_SoundSet",
-					"RHS_rifle_med_Tail_SoundSet"
-				};
-			};
-		};
 		class Eventhandlers: Eventhandlers
 		{
 			class RHS_pk_firedSoundHandler

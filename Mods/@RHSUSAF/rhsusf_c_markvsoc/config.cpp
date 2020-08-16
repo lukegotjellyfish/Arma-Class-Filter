@@ -14,9 +14,6 @@ class CfgPatches
 class CfgMovesWomen: CfgMovesBasic
 {
 	class DefaultDie;
-	class ManActions
-	{
-	};
 };
 class CfgFunctions
 {
@@ -88,7 +85,6 @@ class RscControlsGroupNoScrollbars;
 class rhs_markv_button_base
 {
 	access=0;
-	type=1;
 	colorText[]={1,1,1,1};
 	colorDisabled[]={1,1,1,0};
 	colorBackground[]={0,0,0,0};
@@ -493,18 +489,9 @@ class CfgVehicles
 	};
 	class Ship: AllVehicles
 	{
-		class MarkerLights;
-		class ViewPilot;
-	};
-	class Ship_F: Ship
-	{
-	};
 	class RHS_Ship: Ship_F
 	{
 		class NewTurret;
-		class Turrets
-		{
-		};
 		class CargoTurret;
 		memoryPointsLeftEngineEffect="EngineEffectL";
 		memoryPointsRightEngineEffect="EngineEffectR";
@@ -512,11 +499,9 @@ class CfgVehicles
 	};
 	class rhsusf_mkvsoc: RHS_Ship
 	{
-		displayName="Mk.V SOC";
 		side=1;
 		nameSound="veh_ship_attackBoat_s";
 		canFloat=0;
-		type=1;
 		armor=600;
 		canBeShot=1;
 		enableManualFire=0;
@@ -605,15 +590,11 @@ class CfgVehicles
 					{
 						class AirTarget
 						{
-							minRange=11000;
-							maxRange=11000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
 						class GroundTarget
 						{
-							minRange=11000;
-							maxRange=11000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
@@ -621,7 +602,6 @@ class CfgVehicles
 						maxGroundNoiseDistance=-1;
 						angleRangeHorizontal=360;
 						angleRangeVertical=20;
-						typeRecognitionDistance=4000;
 						maxFogSeeThrough=1;
 						maxTrackableATL=100;
 						maxTrackableSpeed=75;
@@ -766,14 +746,8 @@ class CfgVehicles
 		memoryPointExhaustDir="eng_1_exh_dir";
 		memoryPointsLeftWaterEffect="waterEffectLeft";
 		memoryPointsRightWaterEffect="waterEffectRight";
-		class Damage
-		{
-		};
 		class EventHandlers: DefaultEventhandlers
 		{
-			class rhs_markvsoc_eh
-			{
-			};
 		};
 		class Exhausts
 		{
@@ -790,15 +764,8 @@ class CfgVehicles
 				effect="ExhaustsEffectBig";
 			};
 		};
-		class Library
-		{
-			libTextDesc="MKVLIB";
-		};
 		class MarkerLights
 		{
-			class mL_pos_port
-			{
-				color[]={0.80000001,0,0};
 				ambient[]={0.079999998,0,0};
 				intensity=100;
 				name="mL_pos_port";
@@ -810,15 +777,9 @@ class CfgVehicles
 				dayLight=0;
 				useFlare=0;
 			};
-			class mL_pos_stbd: mL_pos_port
-			{
-				color[]={0,0.80000001,0};
 				ambient[]={0,0.079999998,0};
 				name="mL_pos_stbd";
 			};
-			class mL_pos_aft
-			{
-				color[]={0.80000001,0.80000001,0.80000001};
 				ambient[]={0.079999998,0.079999998,0.079999998};
 				intensity=100;
 				name="mL_pos_aft";
@@ -1105,9 +1066,6 @@ class CfgVehicles
 				frequency=1;
 				volume="(scrubLand factor[0.01, 0.20])";
 			};
-		};
-		class SoundEvents
-		{
 		};
 		class SpeechVariants
 		{
@@ -1397,9 +1355,6 @@ class CfgVehicles
 				};
 				maxHorizontalRotSpeed=1.8;
 				maxVerticalRotSpeed=1.2;
-				class HitPoints
-				{
-				};
 			};
 			class rem_spotL_gunTurret: MainTurret
 			{
@@ -1450,9 +1405,6 @@ class CfgVehicles
 				};
 				maxHorizontalRotSpeed=1.8;
 				maxVerticalRotSpeed=1.2;
-				class HitPoints
-				{
-				};
 			};
 		};
 		class Attributes
@@ -1461,15 +1413,10 @@ class CfgVehicles
 			{
 				control="CheckboxNumber";
 				defaultValue="0";
-				displayName="Attach cargo";
 				tooltip="Attaching cargo (using attachTo command) just like when you use ramp action";
 				property="rhs_attachCargo";
 				expression="if(_value == 1)then{[_this] spawn rhsusf_fnc_markvsoc_attachBoats};";
 			};
-		};
-		hiddenSelections[]=
-		{
-			"camo1"
 		};
 		hiddenselectionstextures[]=
 		{
@@ -1477,17 +1424,12 @@ class CfgVehicles
 		};
 		class textureSources
 		{
-			class marsoc
-			{
-				displayName="US";
-			};
 		};
 	};
 	class House_F;
 	class Land_PierLadder_F;
 	class Land_MkV_Ladder: Land_PierLadder_F
 	{
-		displayName="Ladder (MkV)";
 		icon="";
 		armor=150;
 		ladders[]=
@@ -1501,7 +1443,6 @@ class CfgVehicles
 	};
 	class Land_MkV_Roadway: House_F
 	{
-		displayName="Roadway (MkV)";
 		icon="";
 		armor=150;
 	};

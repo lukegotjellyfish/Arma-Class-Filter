@@ -37,24 +37,15 @@ class Optics_Armored;
 class Optics_Commander_02: Optics_Armored
 {
 	class Wide;
-	class Medium;
-	class Narrow;
-};
 class Optics_Gunner_MBT_02: Optics_Armored
 {
 	class Wide;
-	class Medium;
-	class Narrow;
-};
 class CfgVehicles
 {
 	class LandVehicle;
 	class Tank: LandVehicle
 	{
 		class NewTurret;
-		class Sounds;
-		class HitPoints;
-	};
 	class Tank_F: Tank
 	{
 		class Turrets
@@ -63,9 +54,6 @@ class CfgVehicles
 			{
 				class Turrets
 				{
-					class CommanderOptics;
-				};
-			};
 		};
 		class AnimationSources;
 		class ViewPilot;
@@ -76,19 +64,12 @@ class CfgVehicles
 		{
 			class HitHull;
 			class HitEngine;
-			class HitLTrack;
-			class HitRTrack;
-		};
 		class Sounds: Sounds
 		{
-			class Engine;
-			class Movement;
-		};
 		class EventHandlers;
 	};
 	class rhs_t14_base: Tank_F
 	{
-		displayName="T-14";
 		rhs_decalParameters[]=
 		{
 			"['Number',cRHST14NumberPlaces,'Default']"
@@ -107,32 +88,6 @@ class CfgVehicles
 		maxFordingDepth=0;
 		waterResistance=0;
 		waterDamageEngine=0.2;
-		hiddenSelections[]=
-		{
-			"camo1",
-			"camo2",
-			"camo3",
-			"camo4",
-			"camo5",
-			"camo6",
-			"camo7",
-			"n1",
-			"n2",
-			"n3"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"rhsafrf\addons\rhs_t14\data\rhs_t14_green_hull1_co.paa",
-			"rhsafrf\addons\rhs_t14\data\rhs_t14_green_hull2_co.paa",
-			"rhsafrf\addons\rhs_t14\data\rhs_t14_green_turret_co.paa",
-			"rhsafrf\addons\rhs_t14\data\rhs_t14_green_wheels_co.paa",
-			"rhsafrf\addons\rhs_t14\data\rhs_t14_green_basket_co.paa",
-			"rhsafrf\addons\rhs_t14\data\rhs_t14_green_armor_co.paa",
-			"rhsafrf\addons\rhs_t14\data\rhs_t14_green_grill_co.paa",
-			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
-			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
-			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa"
-		};
 		class ViewOptics: ViewOptics
 		{
 			visionMode[]=
@@ -506,24 +461,6 @@ class CfgVehicles
 					{0.60000002,0.89999998}
 				};
 			};
-			class L3: L2
-			{
-			};
-			class L4: L2
-			{
-			};
-			class L5: L4
-			{
-			};
-			class L6: L4
-			{
-			};
-			class L7: L2
-			{
-			};
-			class L8: L2
-			{
-			};
 			class L9: L2
 			{
 				maxDroop=0.0099999998;
@@ -538,24 +475,6 @@ class CfgVehicles
 			{
 				side="right";
 				suspTravelDirection[]={0.125,-1,0};
-			};
-			class R3: R2
-			{
-			};
-			class R4: R2
-			{
-			};
-			class R5: R2
-			{
-			};
-			class R6: R2
-			{
-			};
-			class R7: R2
-			{
-			};
-			class R8: R2
-			{
 			};
 			class R9: R2
 			{
@@ -1207,15 +1126,6 @@ class CfgVehicles
 						};
 						class OpticsIn: Optics_Commander_02
 						{
-							class Wide: Wide
-							{
-							};
-							class Medium: Medium
-							{
-							};
-							class Narrow: Narrow
-							{
-							};
 						};
 						startEngine=0;
 						class HitPoints
@@ -1262,15 +1172,6 @@ class CfgVehicles
 				lockWhenDriverOut=1;
 				class OpticsIn: Optics_Gunner_MBT_02
 				{
-					class Wide: Wide
-					{
-					};
-					class Medium: Medium
-					{
-					};
-					class Narrow: Narrow
-					{
-					};
 				};
 				class HitPoints
 				{
@@ -1303,13 +1204,11 @@ class CfgVehicles
 		{
 			class rhs_decalNumber_type
 			{
-				displayName="Define font type of plate number";
 				tooltip="Define kind of font that will be drawn on vehicle.";
 				property="rhs_decalNumber_type";
 				control="Combo";
 				expression="_this setVariable ['%s', _value];[_this,[['Number', cRHST14NumberPlaces, _value]]] call rhs_fnc_decalsInit";
 				defaultValue=0;
-				typeName="STRING";
 				class values
 				{
 					class Default
@@ -1358,18 +1257,13 @@ class CfgVehicles
 			class rhs_decalNumber
 			{
 				collapsed=1;
-				displayName="Set side number";
 				tooltip="Set side number. 4 numbers are required. Type 0 to hide numbers complety & leave at -1 to get random number";
 				property="rhs_decalNumber";
 				control="Edit";
 				validate="Number";
-				typeName="Number";
 				defaultValue="-1";
 				expression="if( _value >= 0)then{if( _value == 0)then{{[_this setobjectTexture [_x,'a3\data_f\clear_empty.paa']]}foreach cRHST14NumberPlaces}else{[_this, [['Number', cRHST14NumberPlaces, _this getVariable ['rhs_decalNumber_type','Default'], _value] ] ] call rhs_fnc_decalsInit}};";
 			};
-		};
-		class Damage
-		{
 		};
 		class EventHandlers: EventHandlers
 		{

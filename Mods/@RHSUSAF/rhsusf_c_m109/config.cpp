@@ -19,9 +19,6 @@ class CfgVehicles
 	class Tank: LandVehicle
 	{
 		class NewTurret;
-		class Sounds;
-		class HitPoints;
-	};
 	class Tank_F: Tank
 	{
 		class Turrets
@@ -30,9 +27,6 @@ class CfgVehicles
 			{
 				class Turrets
 				{
-					class CommanderOptics;
-				};
-			};
 		};
 		class ViewPilot;
 		class ViewOptics;
@@ -42,17 +36,8 @@ class CfgVehicles
 		{
 			class HitHull;
 			class HitEngine;
-			class HitLTrack;
-			class HitRTrack;
-		};
 		class Sounds: Sounds
 		{
-			class Engine;
-			class Movement;
-		};
-	};
-	class MBT_01_base_F: Tank_F
-	{
 	};
 	class MBT_01_arty_base_F: MBT_01_base_F
 	{
@@ -62,22 +47,15 @@ class CfgVehicles
 			{
 				class Turrets: Turrets
 				{
-					class CommanderOptics: CommanderOptics
-					{
-					};
 				};
 			};
 		};
-		class AnimationSources;
-		class EventHandlers;
-	};
 	class rhsusf_m109tank_base: MBT_01_arty_base_F
 	{
 		driveOnComponent[]=
 		{
 			"slide"
 		};
-		displayName="$STR_M109A6WD_Name";
 		accuracy=0.30000001;
 		icon="\rhsusf\addons\rhsusf_m109\data\sa_m109a6_icon_ca.paa";
 		typicalCargo[]={};
@@ -191,24 +169,6 @@ class CfgVehicles
 					{0.69999999,0.75}
 				};
 			};
-			class L3: L2
-			{
-			};
-			class L4: L2
-			{
-			};
-			class L5: L2
-			{
-			};
-			class L6: L2
-			{
-			};
-			class L7: L2
-			{
-			};
-			class L8: L2
-			{
-			};
 			class L9: L2
 			{
 				maxDroop=0;
@@ -222,24 +182,6 @@ class CfgVehicles
 			class R2: L2
 			{
 				side="right";
-			};
-			class R3: R2
-			{
-			};
-			class R4: R2
-			{
-			};
-			class R5: R2
-			{
-			};
-			class R6: R2
-			{
-			};
-			class R7: R2
-			{
-			};
-			class R8: R2
-			{
 			};
 			class R9: R2
 			{
@@ -447,19 +389,10 @@ class CfgVehicles
 				};
 			};
 		};
-		hiddenSelections[]=
-		{
-			"camo1",
-			"camo2",
-			"camo3",
-			"camo4",
-			"camo5"
-		};
 		class textureSources
 		{
 			class standard
 			{
-				displayName="Woodland";
 				factions[]=
 				{
 					"rhs_faction_usarmy_wd"
@@ -467,7 +400,6 @@ class CfgVehicles
 			};
 			class Desert
 			{
-				displayName="Desert";
 				factions[]=
 				{
 					"rhs_faction_usarmy_d"
@@ -477,9 +409,6 @@ class CfgVehicles
 		availableForSupportTypes[]=
 		{
 			"Artillery"
-		};
-		class Damage
-		{
 		};
 		class ViewOptics: ViewOptics
 		{
@@ -506,7 +435,6 @@ class CfgVehicles
 		{
 			class rhs_hideIFFPanel
 			{
-				displayName="Hide IFF Panel";
 				property="rhs_hideIFFPanel";
 				control="CheckboxNumber";
 				expression="_this animate ['IFF_Panels_Hide',_value,true]";
@@ -514,13 +442,11 @@ class CfgVehicles
 			};
 			class rhs_ammoslot_1_type
 			{
-				displayName="Ammo slot #1 type";
 				tooltip="Define type of shell for #1 slot [HE rounds]";
 				property="rhs_ammoslot_1_type";
 				control="Combo";
 				expression="_this setVariable ['%s', _value];";
 				defaultValue=0;
-				typeName="STRING";
 				class values
 				{
 					class rhs_mag_155mm_m795_28
@@ -533,18 +459,15 @@ class CfgVehicles
 			};
 			class rhs_ammoslot_1
 			{
-				displayName="Ammo slot #1 count";
 				tooltip="Define number of rounds stored inside of type #1. Max 46. Leave -1 for default loadout";
 				property="rhs_ammoslot_1";
 				control="Edit";
 				expression="if(_value >= 0)then{ [_this,_value,'%s',46,['rhs_ammoslot_1','rhs_ammoslot_2','rhs_ammoslot_3','rhs_ammoslot_4','rhs_ammoslot_5']] spawn rhs_fnc_Eden_DefineLoadout};";
 				defaultValue="-1";
 				validate="NUMBER";
-				typeName="NUMBER";
 			};
 			class rhs_ammoslot_2_type: rhs_ammoslot_1_type
 			{
-				displayName="Ammo slot #2 type";
 				tooltip="Define type of shell for #2 slot [Smoke rounds]";
 				property="rhs_ammoslot_2_type";
 				class values
@@ -559,13 +482,11 @@ class CfgVehicles
 			};
 			class rhs_ammoslot_2: rhs_ammoslot_1
 			{
-				displayName="Ammo slot #2 count";
 				tooltip="Define number of rounds stored inside of type #2. Max 46. Leave -1 for default loadout";
 				property="rhs_ammoslot_2";
 			};
 			class rhs_ammoslot_3_type: rhs_ammoslot_1_type
 			{
-				displayName="Ammo slot #3 type";
 				tooltip="Define type of shell for #3 slot [Cluster rounds]";
 				property="rhs_ammoslot_3_type";
 				class values
@@ -580,13 +501,11 @@ class CfgVehicles
 			};
 			class rhs_ammoslot_3: rhs_ammoslot_1
 			{
-				displayName="Ammo slot #3 count";
 				tooltip="Define number of rounds stored inside of type #3. Max 46. Leave -1 for default loadout";
 				property="rhs_ammoslot_3";
 			};
 			class rhs_ammoslot_4_type: rhs_ammoslot_1_type
 			{
-				displayName="Ammo slot #4 type";
 				tooltip="Define type of shell for #4 slot [Laser guided rounds]";
 				property="rhs_ammoslot_4_type";
 				class values
@@ -601,13 +520,11 @@ class CfgVehicles
 			};
 			class rhs_ammoslot_4: rhs_ammoslot_1
 			{
-				displayName="Ammo slot #4 count";
 				tooltip="Define number of rounds stored inside of type #4. Max 46. Leave -1 for default loadout";
 				property="rhs_ammoslot_4";
 			};
 			class rhs_ammoslot_5_type: rhs_ammoslot_1_type
 			{
-				displayName="Ammo slot #5 type";
 				tooltip="Define type of shell for #5 slot [Special rounds]";
 				property="rhs_ammoslot_5_type";
 				class values
@@ -628,48 +545,13 @@ class CfgVehicles
 			};
 			class rhs_ammoslot_5: rhs_ammoslot_1
 			{
-				displayName="Ammo slot #5 count";
 				tooltip="Define number of rounds stored inside of type #5. Max 40. Leave -1 for default loadout";
 				property="rhs_ammoslot_5";
 			};
-		};
-		class EventHandlers: EventHandlers
-		{
-		};
-	};
-	class rhsusf_m109_usarmy: rhsusf_m109tank_base
-	{
-		displayName="$STR_M109A6WD_Name";
-		hiddenSelectionsTextures[]=
-		{
-			"rhsusf\addons\rhsusf_m109\data\rhsusf_m109a6_01_wd_co.paa",
-			"rhsusf\addons\rhsusf_m109\data\rhsusf_m109a6_02_wd_co.paa",
-			"rhsusf\addons\rhsusf_m109\data\rhsusf_m109a6_03_wd_co.paa",
-			"rhsusf\addons\rhsusf_m109\data\rhsusf_m109a6_mesh_wd_ca.paa",
-			"rhsusf\addons\rhsusf_m109\data\rhsusf_m109a6_wheels_wd_co.paa"
-		};
-	};
-	class rhsusf_m109d_usarmy: rhsusf_m109_usarmy
-	{
-		displayName="$STR_M109A6D_Name";
-		hiddenSelectionsTextures[]=
-		{
-			"rhsusf\addons\rhsusf_m109\data\rhsusf_m109a6_01_d_co.paa",
-			"rhsusf\addons\rhsusf_m109\data\rhsusf_m109a6_02_d_co.paa",
-			"rhsusf\addons\rhsusf_m109\data\rhsusf_m109a6_03_d_co.paa",
-			"rhsusf\addons\rhsusf_m109\data\rhsusf_m109a6_mesh_d_ca.paa",
-			"rhsusf\addons\rhsusf_m109\data\rhsusf_m109a6_wheels_d_co.paa"
 		};
 	};
 };
 class CfgNonAIVehicles
 {
 	class ProxyRetex;
-	class Proxyrhsusf_m109a6_hull: ProxyRetex
-	{
-		hiddenSelections[]=
-		{
-			"camo1"
-		};
-	};
 };

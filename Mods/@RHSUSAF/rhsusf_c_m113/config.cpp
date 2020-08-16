@@ -57,9 +57,6 @@ class CfgVehicles
 	class Tank: LandVehicle
 	{
 		class NewTurret;
-		class Sounds;
-		class HitPoints;
-	};
 	class Tank_F: Tank
 	{
 		class Turrets
@@ -68,9 +65,6 @@ class CfgVehicles
 			{
 				class Turrets
 				{
-					class CommanderOptics;
-				};
-			};
 		};
 		class CommanderOptics;
 		class AnimationSources;
@@ -82,14 +76,8 @@ class CfgVehicles
 		{
 			class HitHull;
 			class HitEngine;
-			class HitLTrack;
-			class HitRTrack;
-		};
 		class Sounds: Sounds
 		{
-			class Engine;
-			class Movement;
-		};
 	};
 	class APC_Tracked_02_base_F: Tank_F
 	{
@@ -112,7 +100,6 @@ class CfgVehicles
 			};
 		};
 		nameSound="veh_vehicle_APC_s";
-		displayName="$STR_M113A3WD_Name";
 		accuracy=0.30000001;
 		typicalCargo[]={};
 		side=1;
@@ -233,9 +220,6 @@ class CfgVehicles
 		};
 		class Wheels
 		{
-			class L2
-			{
-				suspTravelDirection[]={-0.125,-1,0};
 				side="left";
 				width=0.36000001;
 				steering=0;
@@ -261,18 +245,6 @@ class CfgVehicles
 					{0.69999999,0.75}
 				};
 			};
-			class L3: L2
-			{
-			};
-			class L4: L2
-			{
-			};
-			class L5: L2
-			{
-			};
-			class L6: L2
-			{
-			};
 			class L9: L2
 			{
 				maxDroop=0;
@@ -283,22 +255,7 @@ class CfgVehicles
 				maxDroop=0;
 				maxCompression=0;
 			};
-			class R2: L2
-			{
-				suspTravelDirection[]={0.125,-1,0};
 				side="right";
-			};
-			class R3: R2
-			{
-			};
-			class R4: R2
-			{
-			};
-			class R5: R2
-			{
-			};
-			class R6: R2
-			{
 			};
 			class R9: R2
 			{
@@ -394,9 +351,6 @@ class CfgVehicles
 		{
 			class MainTurret: MainTurret
 			{
-				class Turrets
-				{
-				};
 				animationsourcehatch="";
 				memoryPointGun[]=
 				{
@@ -451,9 +405,6 @@ class CfgVehicles
 				};
 				class OpticsIn
 				{
-					class ViewOptics: ViewGunner
-					{
-					};
 				};
 				class HitPoints
 				{
@@ -477,9 +428,6 @@ class CfgVehicles
 						explosionShielding=0.001;
 						radius=0.25;
 					};
-				};
-				class CommanderOptics
-				{
 				};
 			};
 			class CargoTurret_02: CargoTurret_01
@@ -548,9 +496,6 @@ class CfgVehicles
 				};
 			};
 		};
-		class Damage
-		{
-		};
 		smokeLauncherGrenadeCount=4;
 		smokeLauncherVelocity=14;
 		smokeLauncherOnTurret=0;
@@ -567,32 +512,10 @@ class CfgVehicles
 			maxFov=0.69999999;
 		};
 		armorLights=0.1;
-		class EventHandlers: EventHandlers
-		{
-		};
-		hiddenSelections[]=
-		{
-			"camo1",
-			"camo2",
-			"camo3",
-			"camo4",
-			"camo5",
-			"camo6"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"rhsusf\addons\rhsusf_m113\data_new\m113a3_01_wd_h_co.paa",
-			"rhsusf\addons\rhsusf_m113\data_new\m113a3_02_wd_h_co.paa",
-			"rhsusf\addons\rhsusf_m113\data_new\m113a3_03_wd_co.paa",
-			"rhsusf\addons\rhsusf_m113\data_new\m113a3_int03_wd_co.paa",
-			"rhsusf\addons\rhsusf_m113\data_new\m23_pintle_wd_co.paa",
-			"rhsusf\addons\rhsusf_m113\data_new\m113a3_shield_wd_co.paa"
-		};
 		class textureSources
 		{
 			class standard
 			{
-				displayName="Woodland";
 				factions[]=
 				{
 					"rhs_faction_usarmy_wd"
@@ -600,7 +523,6 @@ class CfgVehicles
 			};
 			class Desert
 			{
-				displayName="Desert";
 				factions[]=
 				{
 					"rhs_faction_usarmy_d"
@@ -608,7 +530,6 @@ class CfgVehicles
 			};
 			class Olive
 			{
-				displayName="Olive";
 				factions[]=
 				{
 					"rhs_faction_usarmy_wd"
@@ -631,7 +552,6 @@ class CfgVehicles
 		{
 			class rhs_hideIFFPanel
 			{
-				displayName="Hide IFF Panel";
 				property="rhs_hideIFFPanel";
 				control="CheckboxNumber";
 				expression="_this animate ['IFF_Panels_Hide',_value,true]";
@@ -639,7 +559,6 @@ class CfgVehicles
 			};
 			class rhs_openRamp
 			{
-				displayName="Open rear ramp";
 				property="rhs_openRamp";
 				control="CheckboxNumber";
 				expression="_this animateDoor ['ramp',_value,true]";
@@ -647,35 +566,12 @@ class CfgVehicles
 			};
 		};
 	};
-	class rhsusf_m113_usarmy: rhsusf_m113tank_base
-	{
-		displayName="$STR_M113A3WD_Name";
-	};
 	class rhsusf_m113_usarmy_supply: rhsusf_m113_usarmy
 	{
-		displayName="$STR_M113A3_AMMO";
-		hiddenSelections[]=
-		{
-			"camo1",
-			"camo2",
-			"camo3",
-			"camo4",
-			"camo5",
-			"camo6"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"rhsusf\addons\rhsusf_m113\data_new\m113a3_01_sup_wd_co.paa",
-			"rhsusf\addons\rhsusf_m113\data_new\m113a3_02_sup_wd_co.paa",
-			"rhsusf\addons\rhsusf_m113\data_new\m113a3_03_wd_co.paa",
-			"rhsusf\addons\rhsusf_m113\data_new\m113a3_int03_wd_co.paa",
-			"rhsusf\addons\rhsusf_m113\data_new\m23_pintle_wd_co.paa"
-		};
 		class textureSources
 		{
 			class standard
 			{
-				displayName="Woodland";
 				factions[]=
 				{
 					"rhs_faction_usarmy_wd"
@@ -683,7 +579,6 @@ class CfgVehicles
 			};
 			class Olive
 			{
-				displayName="Olive";
 				factions[]=
 				{
 					"rhs_faction_usarmy_wd"
@@ -691,7 +586,6 @@ class CfgVehicles
 			};
 			class Desert
 			{
-				displayName="Desert";
 				factions[]=
 				{
 					"rhs_faction_usarmy_d"
@@ -703,12 +597,6 @@ class CfgVehicles
 		supplyRadius=9.5;
 		class Turrets: Turrets
 		{
-			class MainTurret: MainTurret
-			{
-			};
-			class CargoTurret_02: CargoTurret_02
-			{
-			};
 		};
 	};
 	class rhsusf_m113_usarmy_unarmed: rhsusf_m113tank_base
@@ -717,9 +605,6 @@ class CfgVehicles
 		{
 			class MainTurret: MainTurret
 			{
-				class Turrets
-				{
-				};
 				weapons[]=
 				{
 					"rhsusf_weap_M259"
@@ -764,52 +649,15 @@ class CfgVehicles
 				maxHorizontalRotSpeed=1.8;
 				maxVerticalRotSpeed=1.8;
 			};
-			class CargoTurret_02: CargoTurret_02
-			{
-			};
-		};
-		displayName="$STR_M113A3_UN";
-		hiddenSelectionsTextures[]=
-		{
-			"rhsusf\addons\rhsusf_m113\data_new\m113a3_01_wd_l_co.paa",
-			"rhsusf\addons\rhsusf_m113\data_new\m113a3_02_wd_l_co.paa",
-			"rhsusf\addons\rhsusf_m113\data_new\m113a3_03_wd_co.paa",
-			"rhsusf\addons\rhsusf_m113\data_new\m113a3_int03_wd_co.paa"
 		};
 		class textureSources: textureSources
 		{
-			class standard: standard
-			{
-			};
-			class Desert: Desert
-			{
-			};
-			class Olive: Olive
-			{
-			};
 		};
 	};
 	class rhsusf_m113_usarmy_medical: rhsusf_m113_usarmy_unarmed
 	{
-		displayName="$STR_M113A3_MED";
-		hiddenSelectionsTextures[]=
-		{
-			"rhsusf\addons\rhsusf_m113\data_new\m113a3_01_wd_med_co.paa",
-			"rhsusf\addons\rhsusf_m113\data_new\m113a3_02_wd_l_co.paa",
-			"rhsusf\addons\rhsusf_m113\data_new\m113a3_03_wd_co.paa",
-			"rhsusf\addons\rhsusf_m113\data_new\m113a3_int03_wd_co.paa"
-		};
 		class textureSources: textureSources
 		{
-			class standard: standard
-			{
-			};
-			class Desert: Desert
-			{
-			};
-			class Olive: Olive
-			{
-			};
 		};
 		attendant=1;
 		memoryPointSupply="doplnovani";
@@ -827,30 +675,9 @@ class CfgVehicles
 					"rhsusf_weap_M259"
 				};
 			};
-			class CargoTurret_02: CargoTurret_02
-			{
-			};
-		};
-		displayName="$STR_M113A3_M240";
-		hiddenSelectionsTextures[]=
-		{
-			"rhsusf\addons\rhsusf_m113\data_new\m113a3_01_wd_l_co.paa",
-			"rhsusf\addons\rhsusf_m113\data_new\m113a3_02_wd_l_co.paa",
-			"rhsusf\addons\rhsusf_m113\data_new\m113a3_03_wd_co.paa",
-			"rhsusf\addons\rhsusf_m113\data_new\m113a3_int03_wd_co.paa",
-			"rhsusf\addons\rhsusf_m113\data_new\m23_pintle_wd_co.paa"
 		};
 		class textureSources: textureSources
 		{
-			class standard: standard
-			{
-			};
-			class Desert: Desert
-			{
-			};
-			class Olive: Olive
-			{
-			};
 		};
 	};
 	class rhsusf_m113_usarmy_MK19: rhsusf_m113tank_base
@@ -865,203 +692,27 @@ class CfgVehicles
 					"rhsusf_weap_M259"
 				};
 			};
-			class CargoTurret_02: CargoTurret_02
-			{
-			};
-		};
-		displayName="$STR_M113A3_MK19";
-		hiddenSelectionsTextures[]=
-		{
-			"rhsusf\addons\rhsusf_m113\data_new\m113a3_01_wd_l_co.paa",
-			"rhsusf\addons\rhsusf_m113\data_new\m113a3_02_wd_l_co.paa",
-			"rhsusf\addons\rhsusf_m113\data_new\m113a3_03_wd_co.paa",
-			"rhsusf\addons\rhsusf_m113\data_new\m113a3_int03_wd_co.paa",
-			"rhsusf\addons\rhsusf_hmmwv\textures\mk64mount_w_co.paa"
 		};
 		class textureSources: textureSources
 		{
-			class standard: standard
-			{
-			};
-			class Desert: Desert
-			{
-			};
-			class Olive: Olive
-			{
-			};
-		};
-	};
-	class rhsusf_m113d_usarmy: rhsusf_m113_usarmy
-	{
-		hiddenSelectionsTextures[]=
-		{
-			"rhsusf\addons\rhsusf_m113\data_new\m113a3_01_d_h_co.paa",
-			"rhsusf\addons\rhsusf_m113\data_new\m113a3_02_d_h_co.paa",
-			"rhsusf\addons\rhsusf_m113\data_new\m113a3_03_d_co.paa",
-			"rhsusf\addons\rhsusf_m113\data_new\m113a3_int03_d_co.paa",
-			"rhsusf\addons\rhsusf_m113\data_new\m23_pintle_d_co.paa",
-			"rhsusf\addons\rhsusf_m113\data_new\m113a3_shield_d_co.paa"
-		};
-	};
-	class rhsusf_m113d_usarmy_supply: rhsusf_m113_usarmy_supply
-	{
-		hiddenSelectionsTextures[]=
-		{
-			"rhsusf\addons\rhsusf_m113\data_new\m113a3_01_d_h_co.paa",
-			"rhsusf\addons\rhsusf_m113\data_new\m113a3_02_sup_d_co.paa",
-			"rhsusf\addons\rhsusf_m113\data_new\m113a3_03_d_co.paa",
-			"rhsusf\addons\rhsusf_m113\data_new\m113a3_int03_d_co.paa",
-			"rhsusf\addons\rhsusf_m113\data_new\m23_pintle_d_co.paa"
-		};
-	};
-	class rhsusf_m113d_usarmy_unarmed: rhsusf_m113_usarmy_unarmed
-	{
-		hiddenSelectionsTextures[]=
-		{
-			"rhsusf\addons\rhsusf_m113\data_new\m113a3_01_d_l_co.paa",
-			"rhsusf\addons\rhsusf_m113\data_new\m113a3_02_d_l_co.paa",
-			"rhsusf\addons\rhsusf_m113\data_new\m113a3_03_d_co.paa",
-			"rhsusf\addons\rhsusf_m113\data_new\m113a3_int03_d_co.paa"
-		};
-	};
-	class rhsusf_m113d_usarmy_medical: rhsusf_m113_usarmy_medical
-	{
-		hiddenSelectionsTextures[]=
-		{
-			"rhsusf\addons\rhsusf_m113\data_new\m113a3_01_d_med_co.paa",
-			"rhsusf\addons\rhsusf_m113\data_new\m113a3_02_d_l_co.paa",
-			"rhsusf\addons\rhsusf_m113\data_new\m113a3_03_d_co.paa",
-			"rhsusf\addons\rhsusf_m113\data_new\m113a3_int03_d_co.paa"
-		};
-	};
-	class rhsusf_m113d_usarmy_M240: rhsusf_m113_usarmy_M240
-	{
-		hiddenSelectionsTextures[]=
-		{
-			"rhsusf\addons\rhsusf_m113\data_new\m113a3_01_d_l_co.paa",
-			"rhsusf\addons\rhsusf_m113\data_new\m113a3_02_d_l_co.paa",
-			"rhsusf\addons\rhsusf_m113\data_new\m113a3_03_d_co.paa",
-			"rhsusf\addons\rhsusf_m113\data_new\m113a3_int03_d_co.paa",
-			"rhsusf\addons\rhsusf_m113\data_new\m23_pintle_d_co.paa"
-		};
-	};
-	class rhsusf_m113d_usarmy_MK19: rhsusf_m113_usarmy_MK19
-	{
-		hiddenSelectionsTextures[]=
-		{
-			"rhsusf\addons\rhsusf_m113\data_new\m113a3_01_d_l_co.paa",
-			"rhsusf\addons\rhsusf_m113\data_new\m113a3_02_d_l_co.paa",
-			"rhsusf\addons\rhsusf_m113\data_new\m113a3_03_d_co.paa",
-			"rhsusf\addons\rhsusf_m113\data_new\m113a3_int03_d_co.paa",
-			"rhsusf\addons\rhsusf_hmmwv\textures\mk64mount_d_co.paa"
 		};
 	};
 	class rhsusf_m113_usarmy_M2_90: rhsusf_m113_usarmy_supply
 	{
-		displayName="M113A3 (M2/Early)";
-		hiddenSelections[]=
-		{
-			"camo1",
-			"camo2",
-			"camo3",
-			"camo4",
-			"camo5",
-			"camo6"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"rhsusf\addons\rhsusf_m113\data_90s\m113a3_01_wd_h_90s_co.paa",
-			"rhsusf\addons\rhsusf_m113\data_90s\m113a3_02_wd_h_90s_co.paa",
-			"rhsusf\addons\rhsusf_m113\data_new\m113a3_03_wd_co.paa",
-			"rhsusf\addons\rhsusf_m113\data_new\m113a3_int03_wd_co.paa",
-			"rhsusf\addons\rhsusf_m113\data_new\m23_pintle_wd_co.paa"
-		};
 		class textureSources
 		{
-			class standard
-			{
-				displayName="Woodland";
-			};
-			class Olive
-			{
-				displayName="Olive";
-			};
-			class Desert
-			{
-				displayName="Desert";
-			};
-			class MERDC_SV
-			{
-				displayName="MERDC (Summer Verdant)";
-			};
-			class MERDC_WV
-			{
-				displayName="MERDC (Winter Verdant)";
-			};
 		};
 		transportAmmo=0;
 		supplyRadius=0;
 	};
 	class rhsusf_m113_usarmy_MK19_90: rhsusf_m113_usarmy_MK19
 	{
-		displayName="M113A3 (Mk19/Early)";
-		hiddenSelections[]=
-		{
-			"camo1",
-			"camo2",
-			"camo3",
-			"camo4",
-			"camo5",
-			"camo6"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"rhsusf\addons\rhsusf_m113\data_90s\m113a3_01_wd_h_90s_co.paa",
-			"rhsusf\addons\rhsusf_m113\data_90s\m113a3_02_wd_h_90s_co.paa",
-			"rhsusf\addons\rhsusf_m113\data_new\m113a3_03_wd_co.paa",
-			"rhsusf\addons\rhsusf_m113\data_new\m113a3_int03_wd_co.paa",
-			"rhsusf\addons\rhsusf_hmmwv\textures\mk64mount_w_co.paa"
-		};
 		class textureSources
 		{
-			class standard
-			{
-				displayName="Woodland";
-			};
-			class Olive
-			{
-				displayName="Olive";
-			};
-			class Desert
-			{
-				displayName="Desert";
-			};
-			class MERDC_SV
-			{
-				displayName="MERDC (Summer Verdant)";
-			};
-			class MERDC_WV
-			{
-				displayName="MERDC (Winter Verdant)";
-			};
 		};
 	};
 };
 class CfgNonAIVehicles
 {
 	class ProxyRetex;
-	class ProxyRHS_M113_HULL: ProxyRetex
-	{
-		hiddenSelections[]=
-		{
-			"camo1",
-			"camo2"
-		};
-	};
-	class ProxyRHS_M113_HULL_H: ProxyRHS_M113_HULL
-	{
-	};
-	class ProxyRHS_M113_HULL_H_90s: ProxyRHS_M113_HULL
-	{
-	};
 };

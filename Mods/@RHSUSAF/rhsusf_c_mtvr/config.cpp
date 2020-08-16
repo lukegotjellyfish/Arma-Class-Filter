@@ -16,15 +16,9 @@ class CfgVehicles
 	class LandVehicle;
 	class Car: LandVehicle
 	{
-		class NewTurret;
-		class ViewOptics;
-	};
 	class Car_F: Car
 	{
 		class AnimationSources;
-		class HitPoints;
-		class EventHandlers;
-	};
 	class Truck_F: Car_F
 	{
 		class ViewPilot;
@@ -43,18 +37,11 @@ class CfgVehicles
 			class HitGlass2;
 			class HitGlass3;
 			class HitGlass4;
-			class HitGlass5;
-			class HitGlass6;
-		};
 		class AnimationSources;
-	};
-	class Truck_01_base_F: Truck_F
-	{
 	};
 	class rhsusf_mtvr_base: Truck_01_base_F
 	{
 		side=1;
-		displayName="MTVR";
 		supplyRadius=4.5;
 		class HitPoints: HitPoints
 		{
@@ -263,15 +250,9 @@ class CfgVehicles
 				effect="ExhaustEffectHEMTT";
 			};
 		};
-		class Damage
-		{
-			mat[]={};
 		};
 		hiddenSelections[]={};
 		hiddenSelectionsTextures[]={};
-		class EventHandlers: EventHandlers
-		{
-		};
 		slingLoadCargoMemoryPoints[]=
 		{
 			"SlingLoadCargo1",
@@ -282,7 +263,6 @@ class CfgVehicles
 	};
 	class rhsusf_mtvr_mk23_wd: rhsusf_mtvr_base
 	{
-		displayName="Mk23 MTVR";
 		accuracy=0.5;
 	};
 };

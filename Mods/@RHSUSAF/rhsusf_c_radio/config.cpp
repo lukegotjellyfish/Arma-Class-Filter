@@ -1,8 +1,5 @@
 class CfgPatches
 {
-	class rhsusf_c_radio
-	{
-		units[]={};
 		weapons[]={};
 	};
 };
@@ -13,9 +10,6 @@ class CfgVoice
 		"RHS_Female01eng"
 	};
 	class Base;
-	class RHS_BaseENGF: Base
-	{
-		variants[]={0.94999999,1,1.05};
 		voiceType="";
 		directories[]=
 		{
@@ -58,9 +52,6 @@ class CfgVoiceTypes
 };
 class RadioProtocolBase
 {
-	class Words;
-	class Arguments;
-};
 class RadioProtocolBaseFemale: RadioProtocolBase
 {
 	class Default;
@@ -321,15 +312,9 @@ class RadioProtocolBaseFemale: RadioProtocolBase
 	class Arguments: Arguments
 	{
 		class Direction;
-		class Distance1;
-		class AggrTargets;
-	};
 };
 class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 {
-	class Words: Words
-	{
-		NO_SPEECH[]={};
 		micOut1[]=
 		{
 			"\A3\Dubbing_Radio_F\Data\static\in2a.ogg"
@@ -18597,9 +18582,6 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 			"SentCmdDismiss_1",
 			1
 		};
-		class SentCmdDismiss_1
-		{
-			speech[]={};
 		};
 	};
 	class SentCmdDismissStealth
@@ -20699,9 +20681,6 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 			speech[]={};
 		};
 	};
-	class SentSuppressingStealth
-	{
-		versions[]={};
 	};
 	class SentCovering
 	{
@@ -20790,9 +20769,6 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 			gesture="GestureCover";
 			speech[]={};
 		};
-		class SentCovering_9
-		{
-			speech[]={};
 		};
 	};
 	class SentCoveringStealth
@@ -20876,9 +20852,6 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 			gesture="GestureCover";
 			speech[]={};
 		};
-		class sentCoverMe_6
-		{
-			speech[]={};
 		};
 	};
 	class sentCoverMeStealth
@@ -53741,9 +53714,6 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 			"Default",
 			1
 		};
-		class Default
-		{
-			speech[]={};
 			gesture="gestureAttack";
 		};
 	};
@@ -53754,9 +53724,6 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 			"Default",
 			1
 		};
-		class Default
-		{
-			speech[]={};
 			gesture="gestureGo";
 		};
 	};
@@ -53767,9 +53734,6 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 			"Default",
 			1
 		};
-		class Default
-		{
-			speech[]={};
 			gesture="gestureGoB";
 		};
 	};
@@ -53780,9 +53744,6 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 			"Default",
 			1
 		};
-		class Default
-		{
-			speech[]={};
 			gesture="gestureFreeze";
 		};
 	};
@@ -53793,9 +53754,6 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 			"Default",
 			1
 		};
-		class Default
-		{
-			speech[]={};
 			gesture="gesturePoint";
 		};
 	};
@@ -53806,9 +53764,6 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 			"Default",
 			1
 		};
-		class Default
-		{
-			speech[]={};
 			gesture="gestureCeaseFire";
 		};
 	};
@@ -53819,9 +53774,6 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 			"Default",
 			1
 		};
-		class Default
-		{
-			speech[]={};
 			gesture="gestureCover";
 		};
 	};
@@ -53832,9 +53784,6 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 			"Default",
 			1
 		};
-		class Default
-		{
-			speech[]={};
 			gesture="gestureUp";
 		};
 	};
@@ -53845,9 +53794,6 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 			"Default",
 			1
 		};
-		class Default
-		{
-			speech[]={};
 			gesture="gestureNo";
 		};
 	};
@@ -53858,9 +53804,6 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 			"Default",
 			1
 		};
-		class Default
-		{
-			speech[]={};
 			gesture="gestureYes";
 		};
 	};
@@ -53871,9 +53814,6 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 			"Default",
 			1
 		};
-		class Default
-		{
-			speech[]={};
 			gesture="gestureFollow";
 		};
 	};
@@ -53884,9 +53824,6 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 			"Default",
 			1
 		};
-		class Default
-		{
-			speech[]={};
 			gesture="gestureAdvance";
 		};
 	};
@@ -53897,9 +53834,6 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 			"Default",
 			1
 		};
-		class Default
-		{
-			speech[]={};
 			gesture="gestureHi";
 		};
 	};
@@ -53910,9 +53844,6 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 			"Default",
 			1
 		};
-		class Default
-		{
-			speech[]={};
 			gesture="gestureHiB";
 		};
 	};
@@ -53923,9 +53854,6 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 			"Default",
 			1
 		};
-		class Default
-		{
-			speech[]={};
 			gesture="gestureHiC";
 		};
 	};
@@ -53936,9 +53864,6 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 			"Default",
 			1
 		};
-		class Default
-		{
-			speech[]={};
 			gesture="gestureNod";
 		};
 	};
@@ -53949,9 +53874,6 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 			"Default",
 			1
 		};
-		class Default
-		{
-			speech[]={};
 			gesture="GestureSpasm0";
 		};
 	};
@@ -53962,9 +53884,6 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 			"Default",
 			1
 		};
-		class Default
-		{
-			speech[]={};
 			gesture="GestureSpasm1";
 		};
 	};
@@ -53975,9 +53894,6 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 			"Default",
 			1
 		};
-		class Default
-		{
-			speech[]={};
 			gesture="GestureSpasm2";
 		};
 	};
@@ -53988,9 +53904,6 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 			"Default",
 			1
 		};
-		class Default
-		{
-			speech[]={};
 			gesture="GestureSpasm3";
 		};
 	};
@@ -54001,9 +53914,6 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 			"Default",
 			1
 		};
-		class Default
-		{
-			speech[]={};
 			gesture="GestureSpasm4";
 		};
 	};
@@ -54014,9 +53924,6 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 			"Default",
 			1
 		};
-		class Default
-		{
-			speech[]={};
 			gesture="GestureSpasm5";
 		};
 	};
@@ -54027,9 +53934,6 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 			"Default",
 			1
 		};
-		class Default
-		{
-			speech[]={};
 			gesture="GestureSpasm6";
 		};
 	};
@@ -54040,9 +53944,6 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 			"Default",
 			1
 		};
-		class Default
-		{
-			speech[]={};
 			gesture="GestureSpasm0weak";
 		};
 	};
@@ -54053,9 +53954,6 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 			"Default",
 			1
 		};
-		class Default
-		{
-			speech[]={};
 			gesture="GestureSpasm1weak";
 		};
 	};
@@ -54066,9 +53964,6 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 			"Default",
 			1
 		};
-		class Default
-		{
-			speech[]={};
 			gesture="GestureSpasm2weak";
 		};
 	};
@@ -54079,9 +53974,6 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 			"Default",
 			1
 		};
-		class Default
-		{
-			speech[]={};
 			gesture="GestureSpasm3weak";
 		};
 	};
@@ -54092,9 +53984,6 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 			"Default",
 			1
 		};
-		class Default
-		{
-			speech[]={};
 			gesture="GestureSpasm4weak";
 		};
 	};
@@ -54105,9 +53994,6 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 			"Default",
 			1
 		};
-		class Default
-		{
-			speech[]={};
 			gesture="GestureSpasm5weak";
 		};
 	};
@@ -54118,9 +54004,6 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 			"Default",
 			1
 		};
-		class Default
-		{
-			speech[]={};
 			gesture="GestureSpasm6weak";
 		};
 	};

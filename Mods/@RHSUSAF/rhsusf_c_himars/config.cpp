@@ -23,9 +23,6 @@ class CfgVehicles
 	class Car_F: Car
 	{
 		class AnimationSources;
-		class HitPoints;
-		class EventHandlers;
-	};
 	class Truck_F: Car_F
 	{
 		class ViewPilot;
@@ -45,9 +42,6 @@ class CfgVehicles
 			class HitGlass2;
 			class HitGlass3;
 			class HitGlass4;
-			class HitGlass5;
-			class HitGlass6;
-		};
 		class AnimationSources;
 	};
 	class Truck_01_base_F: Truck_F
@@ -57,7 +51,6 @@ class CfgVehicles
 	class rhsusf_himars_base: Truck_01_base_F
 	{
 		side=1;
-		displayName="M142 HIMARS";
 		headAimDown=5;
 		driverRightLegAnimName="pedal_r";
 		supplyRadius=4.5;
@@ -129,9 +122,6 @@ class CfgVehicles
 				lockWhenVehicleSpeed=1;
 				elevationMode=3;
 				forceHideGunner=1;
-				class Turrets
-				{
-				};
 				class Hitpoints
 				{
 					class HitLauncher
@@ -159,28 +149,8 @@ class CfgVehicles
 				};
 			};
 		};
-		hiddenSelections[]=
-		{
-			"camo",
-			"camo1",
-			"camo2",
-			"camo3",
-			"camo4"
-		};
 		class textureSources
 		{
-			class rhs_desert
-			{
-				displayName="Desert";
-			};
-			class rhs_woodland
-			{
-				displayName="Woodland";
-			};
-			class rhs_usmc_woodland
-			{
-				displayName="USMC Woodland";
-			};
 		};
 		class HitPoints: HitPoints
 		{
@@ -365,12 +335,6 @@ class CfgVehicles
 				effect="ExhaustEffectHEMTT";
 			};
 		};
-		class Damage
-		{
-		};
-		class EventHandlers: EventHandlers
-		{
-		};
 		class Components: Components
 		{
 			class TransportPylonsComponent
@@ -386,7 +350,6 @@ class CfgVehicles
 							"RHS_HP_GMLRS",
 							"RHS_HP_ATACMS"
 						};
-						priority=1;
 						maxweight=2000;
 						UIposition[]={0.44999999,0.27500001};
 						bay=-1;

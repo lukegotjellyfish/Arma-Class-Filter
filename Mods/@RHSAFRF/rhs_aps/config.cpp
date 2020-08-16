@@ -1,8 +1,5 @@
 class CfgPatches
 {
-	class rhs_aps
-	{
-		units[]={};
 		weapons[]={};
 		versionDesc="RHS";
 	};
@@ -12,14 +9,10 @@ class CfgVehicles
 	class Lamps_base_F;
 	class RHS_Dazzler: Lamps_base_F
 	{
-		displayName="Shtora Dazzler";
 		timeToLive=30;
 		gravityFactor=0;
 		armor=5000;
 		armorLights=0.050000001;
-	};
-	class All
-	{
 	};
 	class LaserTarget: All
 	{
@@ -37,9 +30,6 @@ class CfgFunctions
 	class RHS
 	{
 		tag="RHS";
-		class SHTORA
-		{
-		};
 		class Afganit
 		{
 			class aps_missileFired
@@ -55,9 +45,6 @@ class CfgAmmo
 	{
 		class EventHandlers;
 	};
-	class MissileCore: Default
-	{
-	};
 	class MissileBase: MissileCore
 	{
 		class EventHandlers: EventHandlers
@@ -67,9 +54,6 @@ class CfgAmmo
 				fired="_this spawn rhs_fnc_aps_missileFired";
 			};
 		};
-	};
-	class RocketCore: Default
-	{
 	};
 	class RocketBase: RocketCore
 	{

@@ -41,9 +41,6 @@ class CfgVehicles
 	class Tank: LandVehicle
 	{
 		class NewTurret;
-		class Sounds;
-		class HitPoints;
-	};
 	class Tank_F: Tank
 	{
 		class Turrets
@@ -52,9 +49,6 @@ class CfgVehicles
 			{
 				class Turrets
 				{
-					class CommanderOptics;
-				};
-			};
 		};
 		class AnimationSources;
 		class ViewPilot;
@@ -65,17 +59,8 @@ class CfgVehicles
 		{
 			class HitHull;
 			class HitEngine;
-			class HitLTrack;
-			class HitRTrack;
-		};
 		class Sounds: Sounds
 		{
-			class Engine;
-			class Movement;
-		};
-		class EventHandlers;
-		class Components;
-	};
 	class rhs_bmp3tank_base: Tank_F
 	{
 		rhs_decalParameters[]=
@@ -87,7 +72,6 @@ class CfgVehicles
 		{
 			"rhs_weap_smokegen"
 		};
-		displayName="$STR_BMP3_Name";
 		accuracy=0.30000001;
 		side=0;
 		class MFD
@@ -105,17 +89,10 @@ class CfgVehicles
 				alpha=0.5;
 				enableParallax=0;
 				font="rhs_digital_font_var";
-				class Bones
-				{
-				};
-				class Draw
-				{
-					color[]={0.07,0.14,0.07};
 					alpha=0.12;
 					condition="on";
 					class FuelNumber
 					{
-						type="text";
 						source="fuel";
 						sourceScale=677;
 						scale=1;
@@ -151,17 +128,10 @@ class CfgVehicles
 				alpha=0.5;
 				enableParallax=0;
 				font="rhs_digital_font_var";
-				class Bones
-				{
-				};
-				class Draw
-				{
-					color[]={0.07,0.14,0.07};
 					alpha=0.12;
 					condition="on";
 					class rpmNumber
 					{
-						type="text";
 						source="rpm";
 						sourceScale=1;
 						scale=1;
@@ -185,7 +155,6 @@ class CfgVehicles
 					};
 					class SpeedNumber
 					{
-						type="text";
 						source="speed";
 						sourceScale=3.5999999;
 						scale=1;
@@ -341,9 +310,6 @@ class CfgVehicles
 		};
 		class Wheels
 		{
-			class L2
-			{
-				suspTravelDirection[]={-0.125,-1,0};
 				side="left";
 				steering=0;
 				width=0.315;
@@ -369,21 +335,6 @@ class CfgVehicles
 					{0.69999999,0.94999999}
 				};
 			};
-			class L3: L2
-			{
-			};
-			class L4: L2
-			{
-			};
-			class L5: L2
-			{
-			};
-			class L6: L2
-			{
-			};
-			class L7: L2
-			{
-			};
 			class L9: L2
 			{
 				maxDroop=0;
@@ -394,25 +345,7 @@ class CfgVehicles
 				maxDroop=0;
 				maxCompression=0;
 			};
-			class R2: L2
-			{
-				suspTravelDirection[]={0.125,-1,0};
 				side="right";
-			};
-			class R3: R2
-			{
-			};
-			class R4: R2
-			{
-			};
-			class R5: R2
-			{
-			};
-			class R6: R2
-			{
-			};
-			class R7: R2
-			{
 			};
 			class R9: R2
 			{
@@ -1603,9 +1536,6 @@ class CfgVehicles
 				usePreciseGetInAction=0;
 				preciseGetInOut=0;
 				startEngine=0;
-				class Turrets
-				{
-				};
 				gunnerOpticsEffect[]=
 				{
 					"TankGunnerOptics1",
@@ -1620,8 +1550,6 @@ class CfgVehicles
 					initAngleY=0;
 					minAngleY=-100;
 					maxAngleY=100;
-					distanceZoomMin=200;
-					distanceZoomMax=2000;
 					initFov=0.166666;
 					minFov=0.166666;
 					maxFov=0.166666;
@@ -1731,56 +1659,18 @@ class CfgVehicles
 				};
 			};
 		};
-		hiddenSelections[]=
-		{
-			"camo1",
-			"camo2",
-			"camo3",
-			"camo4",
-			"camo5",
-			"n1",
-			"n2",
-			"n3",
-			"i1",
-			"f1",
-			"f2",
-			"f3",
-			"f4",
-			"f5",
-			"f6",
-			"f7",
-			"f8",
-			"f9"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"rhsafrf\addons\rhs_bmp3\data\rhs_bmp3_01_co.paa",
-			"rhsafrf\addons\rhs_bmp3\data\rhs_bmp3_02_co.paa",
-			"rhsafrf\addons\rhs_bmp3\data\rhs_bmp3_03_co.paa",
-			"rhsafrf\addons\rhs_bmp3\data\rhs_bmp3_04_co.paa"
-		};
 		class textureSources
 		{
-			class standard
-			{
-				displayName="Standard";
-			};
-			class rhs_sand: standard
-			{
-				displayName="Sand";
-			};
 		};
 		class Attributes
 		{
 			class rhs_decalNumber_type
 			{
-				displayName="Define font type of plate number";
 				tooltip="Define kind of font that will be drawn on vehicle.";
 				property="rhs_decalNumber_type";
 				control="Combo";
 				expression="_this setVariable ['%s', _value];[_this,[['Number', cRHSBMP3NumberPlaces, _value]]] call rhs_fnc_decalsInit";
 				defaultValue=0;
-				typeName="STRING";
 				class values
 				{
 					class DefaultRed
@@ -1829,24 +1719,20 @@ class CfgVehicles
 			class rhs_decalNumber
 			{
 				collapsed=1;
-				displayName="Set side number";
 				tooltip="Set side number. 4 numbers are required. Type 0 to hide numbers complety & leave at -1 to get random number";
 				property="rhs_decalNumber";
 				control="Edit";
 				validate="Number";
-				typeName="Number";
 				defaultValue="-1";
 				expression="if( _value >= 0)then{if( _value == 0)then{{[_this setobjectTexture [_x,'a3\data_f\clear_empty.paa']]}foreach cRHSBMP3NumberPlaces}else{[_this, [['Number', cRHSBMP3NumberPlaces, _this getVariable ['rhs_decalNumber_type','DefaultRed'], _value] ] ] call rhs_fnc_decalsInit}};";
 			};
 			class rhs_decalPlatoon_type
 			{
-				displayName="Define platoon symbol type";
 				tooltip="Decal type";
 				property="rhs_decalPlatoon_type";
 				control="Combo";
 				expression="_this setVariable ['%s', _value];";
 				defaultValue="0";
-				typeName="STRING";
 				class values
 				{
 					class Platoon
@@ -1884,7 +1770,6 @@ class CfgVehicles
 			};
 			class rhs_decalPlatoon
 			{
-				displayName="Set platoon symbol";
 				tooltip="Set platoon symbol located on both sides. Usually used for platoon symbols. -1 leaves current symbol & 0 clears decal.";
 				property="rhs_decalPlatoon";
 				control="Edit";
@@ -1892,9 +1777,6 @@ class CfgVehicles
 				defaultValue="-1";
 				expression="if(parseNumber _value >= 0)then{ [_this, [ [ 'Label', cRHSBMP3PlnSymPlaces,  _this getVariable ['rhs_decalPlatoon_type','Platoon'],call compile _value] ] ] call rhs_fnc_decalsInit};";
 			};
-		};
-		class Damage
-		{
 		};
 		class ViewOptics: ViewOptics
 		{
@@ -1962,28 +1844,10 @@ class CfgVehicles
 			};
 		};
 	};
-	class rhs_bmp3_msv: rhs_bmp3tank_base
-	{
-		displayName="$STR_BMP3_Name";
-	};
 	class rhs_bmp3_late_msv: rhs_bmp3tank_base
 	{
-		displayName="$STR_BMP3_Late_Name";
-		hiddenSelectionsTextures[]=
-		{
-			"rhsafrf\addons\rhs_bmp3\data\rhs_bmp3_01_co.paa",
-			"rhsafrf\addons\rhs_bmp3\data\rhs_bmp3_02_co.paa",
-			"rhsafrf\addons\rhs_bmp3\data\rhs_bmp3_03_mod_co.paa",
-			"rhsafrf\addons\rhs_bmp3\data\rhs_bmp3_04_co.paa"
-		};
 		class textureSources: textureSources
 		{
-			class standard: standard
-			{
-			};
-			class rhs_sand: rhs_sand
-			{
-			};
 		};
 		class Turrets: Turrets
 		{
@@ -1991,22 +1855,12 @@ class CfgVehicles
 			{
 				class Turrets: Turrets
 				{
-					class CommanderOptics: CommanderOptics
-					{
-					};
 				};
-			};
-			class GPMGTurret1: GPMGTurret1
-			{
-			};
-			class GPMGTurret2: GPMGTurret2
-			{
 			};
 		};
 	};
 	class rhs_bmp3m_msv: rhs_bmp3tank_base
 	{
-		displayName="$STR_BMP3M_Name";
 		enableGPS=1;
 		reportOwnPosition=1;
 		enginePower=478;
@@ -2029,21 +1883,6 @@ class CfgVehicles
 				dampingRate=1034;
 				dampingRateInAir=1034;
 			};
-			class L3: L2
-			{
-			};
-			class L4: L2
-			{
-			};
-			class L5: L2
-			{
-			};
-			class L6: L2
-			{
-			};
-			class L7: L2
-			{
-			};
 			class L9: L2
 			{
 				maxDroop=0;
@@ -2058,21 +1897,6 @@ class CfgVehicles
 			{
 				side="right";
 			};
-			class R3: R2
-			{
-			};
-			class R4: R2
-			{
-			};
-			class R5: R2
-			{
-			};
-			class R6: R2
-			{
-			};
-			class R7: R2
-			{
-			};
 			class R9: R2
 			{
 				maxDroop=0;
@@ -2084,21 +1908,8 @@ class CfgVehicles
 				maxCompression=0;
 			};
 		};
-		hiddenSelectionsTextures[]=
-		{
-			"rhsafrf\addons\rhs_bmp3\data\rhs_bmp3_01_3m_co.paa",
-			"rhsafrf\addons\rhs_bmp3\data\rhs_bmp3_02_co.paa",
-			"rhsafrf\addons\rhs_bmp3\data\rhs_bmp3_03_3m_co.paa",
-			"rhsafrf\addons\rhs_bmp3\data\rhs_bmp3_04_co.paa"
-		};
 		class textureSources: textureSources
 		{
-			class standard: standard
-			{
-			};
-			class rhs_sand: rhs_sand
-			{
-			};
 		};
 		class Turrets: Turrets
 		{
@@ -2222,17 +2033,10 @@ class CfgVehicles
 					};
 				};
 			};
-			class GPMGTurret1: GPMGTurret1
-			{
-			};
-			class GPMGTurret2: GPMGTurret2
-			{
-			};
 		};
 	};
 	class rhs_bmp3mera_msv: rhs_bmp3m_msv
 	{
-		displayName="$STR_BMP3MERA_Name";
 		class HitPoints: HitPoints
 		{
 			class Armor_Composite_50
@@ -2248,43 +2052,8 @@ class CfgVehicles
 				radius=0.001;
 			};
 		};
-		hiddenSelections[]=
-		{
-			"camo1",
-			"camo2",
-			"camo3",
-			"camo4",
-			"camo5",
-			"n1",
-			"n2",
-			"n3",
-			"i1",
-			"f1",
-			"f2",
-			"f3",
-			"f4",
-			"f5",
-			"f6",
-			"f7",
-			"f8",
-			"f9"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"rhsafrf\addons\rhs_bmp3\data\rhs_bmp3_01_3mera_co.paa",
-			"rhsafrf\addons\rhs_bmp3\data\rhs_bmp3_02_3mera_co.paa",
-			"rhsafrf\addons\rhs_bmp3\data\rhs_bmp3_03_3m_co.paa",
-			"rhsafrf\addons\rhs_bmp3\data\rhs_bmp3_04_co.paa",
-			"rhsafrf\addons\rhs_bmp3\data\3m_era_co.paa"
-		};
 		class textureSources: textureSources
 		{
-			class standard: standard
-			{
-			};
-			class rhs_sand: rhs_sand
-			{
-			};
 		};
 	};
 };

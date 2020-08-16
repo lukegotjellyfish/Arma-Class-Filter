@@ -12,10 +12,6 @@ class CfgPatches
 };
 class CfgVehicleClasses
 {
-	class CNR
-	{
-		displayName="Combat Net Radio";
-	};
 };
 class CfgVehicles
 {
@@ -26,9 +22,5 @@ class CfgVehicles
 		accuracy=0.30000001;
 		simulation="thingX";
 		nameSound="";
-		displayName="AN/PRC-152";
 		armor=450;
 		cost=0;
-		class EventHandlers;
-	};
-};

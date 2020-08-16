@@ -348,12 +348,6 @@ class CfgAmmo
 		};
 		caliber=11.4667;
 	};
-	class rhs_ammo_s5_ub16: rhs_ammo_s5
-	{
-	};
-	class rhs_ammo_s5_ub32: rhs_ammo_s5_ub16
-	{
-	};
 	class rhs_ammo_s24_base: rhs_ammo_s13b
 	{
 		proxyShape="\rhsafrf\addons\rhs_airweapons\rhs_m_s24";
@@ -402,9 +396,6 @@ class CfgAmmo
 	class rhs_ammo_s24: rhs_ammo_s24_base
 	{
 		effectsMissile="RHS_Rocket_Fired";
-	};
-	class rhs_ammo_s24b: rhs_ammo_s24_base
-	{
 	};
 	class rhs_ammo_s25_base: rhs_ammo_s24_base
 	{
@@ -469,15 +460,11 @@ class CfgAmmo
 					{
 						class AirTarget
 						{
-							minRange=7000;
-							maxRange=7000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
 						class GroundTarget
 						{
-							minRange=7000;
-							maxRange=7000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
@@ -503,15 +490,11 @@ class CfgAmmo
 					{
 						class AirTarget
 						{
-							minRange=10000;
-							maxRange=10000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
 						class GroundTarget
 						{
-							minRange=10000;
-							maxRange=10000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
@@ -565,9 +548,6 @@ class CfgAmmo
 	{
 		hit=300;
 		caliber=37.333302;
-	};
-	class rhs_ammo_9m114m: rhs_ammo_9m114
-	{
 	};
 	class rhs_ammo_9m114f: rhs_ammo_9m114
 	{
@@ -708,9 +688,6 @@ class CfgAmmo
 		};
 		submunitionConeAngle=360;
 	};
-	class rhs_ammo_9m127: rhs_ammo_9m120
-	{
-	};
 	class rhs_ammo_9m127m: rhs_ammo_9m127
 	{
 		indirecthit=86;
@@ -776,19 +753,14 @@ class CfgAmmo
 					{
 						class AirTarget
 						{
-							minRange=16000;
-							maxRange=16000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
 						class GroundTarget
 						{
-							minRange=14000;
-							maxRange=14000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
-						typeRecognitionDistance=-1;
 						angleRangeHorizontal=45;
 						angleRangeVertical=45;
 						groundNoiseDistanceCoef=0.1;
@@ -815,19 +787,14 @@ class CfgAmmo
 					{
 						class AirTarget
 						{
-							minRange=20000;
-							maxRange=20000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
 						class GroundTarget
 						{
-							minRange=14000;
-							maxRange=14000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
-						typeRecognitionDistance=-1;
 						angleRangeHorizontal=45;
 						angleRangeVertical=45;
 						groundNoiseDistanceCoef=0.1;
@@ -856,9 +823,6 @@ class CfgAmmo
 			"Direct",
 			"LoalDistance"
 		};
-		class Direct
-		{
-		};
 		class LoalDistance
 		{
 			lockSeekDistanceFromParent=2000;
@@ -873,19 +837,14 @@ class CfgAmmo
 					{
 						class AirTarget
 						{
-							minRange=500;
-							maxRange=4000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=1;
 						};
 						class GroundTarget
 						{
-							minRange=500;
-							maxRange=3500;
 							objectDistanceLimitCoef=1;
 							viewDistanceLimitCoef=1;
 						};
-						typeRecognitionDistance=-1;
 						angleRangeHorizontal=15;
 						angleRangeVertical=15;
 						maxTrackableSpeed=1200;
@@ -947,15 +906,11 @@ class CfgAmmo
 					{
 						class AirTarget
 						{
-							minRange=500;
-							maxRange=5000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=1;
 						};
 						class GroundTarget
 						{
-							minRange=500;
-							maxRange=4500;
 							objectDistanceLimitCoef=1;
 							viewDistanceLimitCoef=1;
 						};
@@ -987,15 +942,11 @@ class CfgAmmo
 					{
 						class AirTarget
 						{
-							minRange=500;
-							maxRange=8000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=1;
 						};
 						class GroundTarget
 						{
-							minRange=500;
-							maxRange=8500;
 							objectDistanceLimitCoef=1;
 							viewDistanceLimitCoef=1;
 						};
@@ -1064,15 +1015,11 @@ class CfgAmmo
 					{
 						class AirTarget
 						{
-							minRange=500;
-							maxRange=8000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=1;
 						};
 						class GroundTarget
 						{
-							minRange=500;
-							maxRange=4500;
 							objectDistanceLimitCoef=1;
 							viewDistanceLimitCoef=1;
 						};
@@ -1145,19 +1092,14 @@ class CfgAmmo
 					{
 						class AirTarget
 						{
-							minRange=25000;
-							maxRange=25000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
 						class GroundTarget
 						{
-							minRange=25000;
-							maxRange=25000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
-						typeRecognitionDistance=-1;
 						angleRangeHorizontal=45;
 						angleRangeVertical=45;
 						groundNoiseDistanceCoef=0.1;
@@ -1233,15 +1175,11 @@ class CfgAmmo
 					{
 						class AirTarget
 						{
-							minRange=7000;
-							maxRange=7000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
 						class GroundTarget
 						{
-							minRange=7000;
-							maxRange=7000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
@@ -1266,15 +1204,11 @@ class CfgAmmo
 					{
 						class AirTarget
 						{
-							minRange=500;
-							maxRange=10000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=1;
 						};
 						class GroundTarget
 						{
-							minRange=500;
-							maxRange=10000;
 							objectDistanceLimitCoef=1;
 							viewDistanceLimitCoef=1;
 						};
@@ -1286,15 +1220,11 @@ class CfgAmmo
 					{
 						class AirTarget
 						{
-							minRange=8000;
-							maxRange=8000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
 						class GroundTarget
 						{
-							minRange=8000;
-							maxRange=8000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
@@ -1319,15 +1249,11 @@ class CfgAmmo
 					{
 						class AirTarget
 						{
-							minRange=10000;
-							maxRange=10000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
 						class GroundTarget
 						{
-							minRange=5000;
-							maxRange=5000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
@@ -1367,15 +1293,11 @@ class CfgAmmo
 					{
 						class AirTarget
 						{
-							minRange=500;
-							maxRange=8000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=1;
 						};
 						class GroundTarget
 						{
-							minRange=500;
-							maxRange=8000;
 							objectDistanceLimitCoef=1;
 							viewDistanceLimitCoef=1;
 						};
@@ -1403,15 +1325,11 @@ class CfgAmmo
 					{
 						class AirTarget
 						{
-							minRange=500;
-							maxRange=9000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=1;
 						};
 						class GroundTarget
 						{
-							minRange=500;
-							maxRange=9000;
 							objectDistanceLimitCoef=1;
 							viewDistanceLimitCoef=1;
 						};
@@ -1437,15 +1355,11 @@ class CfgAmmo
 					{
 						class AirTarget
 						{
-							minRange=500;
-							maxRange=10000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=1;
 						};
 						class GroundTarget
 						{
-							minRange=500;
-							maxRange=10000;
 							objectDistanceLimitCoef=1;
 							viewDistanceLimitCoef=1;
 						};
@@ -1536,15 +1450,11 @@ class CfgAmmo
 					{
 						class AirTarget
 						{
-							minRange=10000;
-							maxRange=10000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
 						class GroundTarget
 						{
-							minRange=10000;
-							maxRange=10000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
@@ -1568,15 +1478,11 @@ class CfgAmmo
 					{
 						class AirTarget
 						{
-							minRange=500;
-							maxRange=8000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=1;
 						};
 						class GroundTarget
 						{
-							minRange=500;
-							maxRange=8000;
 							objectDistanceLimitCoef=1;
 							viewDistanceLimitCoef=1;
 						};
@@ -1588,15 +1494,11 @@ class CfgAmmo
 					{
 						class AirTarget
 						{
-							minRange=10000;
-							maxRange=10000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
 						class GroundTarget
 						{
-							minRange=10000;
-							maxRange=10000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
@@ -1627,15 +1529,11 @@ class CfgAmmo
 					{
 						class AirTarget
 						{
-							minRange=500;
-							maxRange=9000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=1;
 						};
 						class GroundTarget
 						{
-							minRange=500;
-							maxRange=9000;
 							objectDistanceLimitCoef=1;
 							viewDistanceLimitCoef=1;
 						};
@@ -1664,15 +1562,11 @@ class CfgAmmo
 					{
 						class AirTarget
 						{
-							minRange=10000;
-							maxRange=10000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
 						class GroundTarget
 						{
-							minRange=5000;
-							maxRange=5000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
@@ -1697,15 +1591,11 @@ class CfgAmmo
 					{
 						class AirTarget
 						{
-							minRange=500;
-							maxRange=9000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=1;
 						};
 						class GroundTarget
 						{
-							minRange=500;
-							maxRange=9000;
 							objectDistanceLimitCoef=1;
 							viewDistanceLimitCoef=1;
 						};
@@ -1765,15 +1655,11 @@ class CfgAmmo
 					{
 						class AirTarget
 						{
-							minRange=500;
-							maxRange=8000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=1;
 						};
 						class GroundTarget
 						{
-							minRange=500;
-							maxRange=8000;
 							objectDistanceLimitCoef=1;
 							viewDistanceLimitCoef=1;
 						};
@@ -1785,15 +1671,11 @@ class CfgAmmo
 					{
 						class AirTarget
 						{
-							minRange=8000;
-							maxRange=8000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
 						class GroundTarget
 						{
-							minRange=8000;
-							maxRange=8000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
@@ -1823,15 +1705,11 @@ class CfgAmmo
 					{
 						class AirTarget
 						{
-							minRange=10000;
-							maxRange=10000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
 						class GroundTarget
 						{
-							minRange=5000;
-							maxRange=5000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
@@ -1869,15 +1747,11 @@ class CfgAmmo
 					{
 						class AirTarget
 						{
-							minRange=500;
-							maxRange=6000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=1;
 						};
 						class GroundTarget
 						{
-							minRange=500;
-							maxRange=6000;
 							objectDistanceLimitCoef=1;
 							viewDistanceLimitCoef=1;
 						};
@@ -1982,9 +1856,6 @@ class CfgAmmo
 		{
 			"Direct"
 		};
-		class Direct
-		{
-		};
 		hit=1500;
 		indirectHit=650;
 		indirectHitRange=13;
@@ -2041,9 +1912,6 @@ class CfgAmmo
 		{
 			class SensorsManagerComponent
 			{
-				class Components
-				{
-				};
 			};
 		};
 	};
@@ -2070,9 +1938,6 @@ class CfgAmmo
 		flightProfiles[]=
 		{
 			"LoalAltitude"
-		};
-		class Direct
-		{
 		};
 		class LoalAltitude
 		{
@@ -2113,9 +1978,6 @@ class CfgAmmo
 		{
 			class SensorsManagerComponent
 			{
-				class Components
-				{
-				};
 			};
 		};
 	};
@@ -2466,15 +2328,11 @@ class CfgAmmo
 					{
 						class AirTarget
 						{
-							minRange=500;
-							maxRange=11000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=1;
 						};
 						class GroundTarget
 						{
-							minRange=500;
-							maxRange=11000;
 							objectDistanceLimitCoef=1;
 							viewDistanceLimitCoef=1;
 						};
@@ -2614,15 +2472,11 @@ class CfgAmmo
 					{
 						class AirTarget
 						{
-							minRange=500;
-							maxRange=2000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=1;
 						};
 						class GroundTarget
 						{
-							minRange=500;
-							maxRange=2000;
 							objectDistanceLimitCoef=1;
 							viewDistanceLimitCoef=1;
 						};
@@ -2635,15 +2489,11 @@ class CfgAmmo
 					{
 						class AirTarget
 						{
-							minRange=500;
-							maxRange=500;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=1;
 						};
 						class GroundTarget
 						{
-							minRange=500;
-							maxRange=500;
 							objectDistanceLimitCoef=1;
 							viewDistanceLimitCoef=1;
 						};
@@ -2856,12 +2706,6 @@ class CfgAmmo
 		laserLock=0;
 		irLock=0;
 		initTime=0;
-		minRange=0;
-		minRangeProbab=0;
-		midRange=0;
-		midRangeProbab=0;
-		maxRange=0;
-		maxRangeProbab=0;
 		sideAirFriction=0;
 	};
 };
@@ -2871,9 +2715,6 @@ class CfgMagazines
 	class VehicleMagazine;
 	class rhs_mag_s5_32: VehicleMagazine
 	{
-		displayName="$STR_RHS_MAG_S5";
-		displayNameShort="$STR_RHS_MAG_SH_S5";
-		descriptionShort="General purpose";
 		ammo="rhs_ammo_s5";
 		count=64;
 		maxleadspeed=200;
@@ -2884,9 +2725,6 @@ class CfgMagazines
 		{
 			class rhs_rus_ammoname
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -2894,7 +2732,6 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -2919,9 +2756,6 @@ class CfgMagazines
 			};
 			class rhs_rus_ammoname_right
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -2929,7 +2763,6 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -2954,9 +2787,6 @@ class CfgMagazines
 			};
 			class rhs_su25_box
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="1-pylonMagazineEmpty";
@@ -2964,7 +2794,6 @@ class CfgMagazines
 					alpha=0.22;
 					class Shape
 					{
-						type="polygon";
 						width=4;
 						points[]=
 						{
@@ -3000,7 +2829,6 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
-							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -3036,15 +2864,8 @@ class CfgMagazines
 			{
 				class Bones
 				{
-					class Center
-					{
-						type="fixed";
-						pos[]={0,0};
 					};
 				};
-				class Draw
-				{
-					color[]={0.15000001,1,0.15000001,1};
 					alpha=0.22;
 					class Default
 					{
@@ -3052,7 +2873,6 @@ class CfgMagazines
 						color[]={1,1,1};
 						class PylonValue1
 						{
-							type="text";
 							source="pylonAmmo";
 							scale=1;
 							sourceScale=1;
@@ -3075,7 +2895,6 @@ class CfgMagazines
 						};
 						class PylonText1
 						{
-							type="text";
 							source="static";
 							scale=1;
 							sourceScale=1;
@@ -3098,7 +2917,6 @@ class CfgMagazines
 						};
 						class Shape
 						{
-							type="line";
 							width=4;
 							points[]=
 							{
@@ -3345,29 +3163,11 @@ class CfgMagazines
 						condition="PylonSelected*(PylonAmmoRelative>=0.001)";
 						color[]={0.15000001,1,0.15000001,1};
 						alpha=0.22;
-						class PylonText1: PylonText1
-						{
-						};
-						class PylonValue1: PylonValue1
-						{
-						};
-						class Shape: Shape
-						{
-						};
 					};
 					class Empty: Selected
 					{
 						condition="pylonMagazineEmpty";
 						color[]={1,0,0,1};
-						class PylonText1: PylonText1
-						{
-						};
-						class PylonValue1: PylonValue1
-						{
-						};
-						class Shape: Shape
-						{
-						};
 					};
 				};
 			};
@@ -3395,9 +3195,6 @@ class CfgMagazines
 	};
 	class rhs_mag_s5_m1_32: rhs_mag_s5_32
 	{
-		displayName="$STR_RHS_MAG_s5m1";
-		displayNameShort="$STR_RHS_MAG_SH_s5m1";
-		descriptionShort="HE-FRAG";
 		ammo="rhs_ammo_s5m1";
 		count=64;
 		weight=247.03999;
@@ -3405,9 +3202,6 @@ class CfgMagazines
 		{
 			class rhs_rus_ammoname
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -3415,7 +3209,6 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -3440,9 +3233,6 @@ class CfgMagazines
 			};
 			class rhs_rus_ammoname_right
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -3450,7 +3240,6 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -3475,9 +3264,6 @@ class CfgMagazines
 			};
 			class rhs_su25_box
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="1-pylonMagazineEmpty";
@@ -3485,7 +3271,6 @@ class CfgMagazines
 					alpha=0.22;
 					class Shape
 					{
-						type="polygon";
 						width=4;
 						points[]=
 						{
@@ -3521,7 +3306,6 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
-							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -3557,15 +3341,8 @@ class CfgMagazines
 			{
 				class Bones
 				{
-					class Center
-					{
-						type="fixed";
-						pos[]={0,0};
 					};
 				};
-				class Draw
-				{
-					color[]={0.15000001,1,0.15000001,1};
 					alpha=0.22;
 					class Default
 					{
@@ -3573,7 +3350,6 @@ class CfgMagazines
 						color[]={1,1,1};
 						class PylonValue1
 						{
-							type="text";
 							source="pylonAmmo";
 							scale=1;
 							sourceScale=1;
@@ -3596,7 +3372,6 @@ class CfgMagazines
 						};
 						class PylonText1
 						{
-							type="text";
 							source="static";
 							scale=1;
 							sourceScale=1;
@@ -3619,7 +3394,6 @@ class CfgMagazines
 						};
 						class Shape
 						{
-							type="line";
 							width=4;
 							points[]=
 							{
@@ -3866,29 +3640,11 @@ class CfgMagazines
 						condition="PylonSelected*(PylonAmmoRelative>=0.001)";
 						color[]={0.15000001,1,0.15000001,1};
 						alpha=0.22;
-						class PylonText1: PylonText1
-						{
-						};
-						class PylonValue1: PylonValue1
-						{
-						};
-						class Shape: Shape
-						{
-						};
 					};
 					class Empty: Selected
 					{
 						condition="pylonMagazineEmpty";
 						color[]={1,0,0,1};
-						class PylonText1: PylonText1
-						{
-						};
-						class PylonValue1: PylonValue1
-						{
-						};
-						class Shape: Shape
-						{
-						};
 					};
 				};
 			};
@@ -3916,9 +3672,6 @@ class CfgMagazines
 	};
 	class rhs_mag_s5_k1_32: rhs_mag_s5_32
 	{
-		displayName="$STR_RHS_MAG_s5k1";
-		displayNameShort="$STR_RHS_MAG_SH_s5k1";
-		descriptionShort="HEAT (Penetration: 130mm RHA)";
 		ammo="rhs_ammo_s5k1";
 		count=64;
 		weight=232.96001;
@@ -3926,9 +3679,6 @@ class CfgMagazines
 		{
 			class rhs_rus_ammoname
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -3936,7 +3686,6 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -3961,9 +3710,6 @@ class CfgMagazines
 			};
 			class rhs_rus_ammoname_right
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -3971,7 +3717,6 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -3996,9 +3741,6 @@ class CfgMagazines
 			};
 			class rhs_su25_box
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="1-pylonMagazineEmpty";
@@ -4006,7 +3748,6 @@ class CfgMagazines
 					alpha=0.22;
 					class Shape
 					{
-						type="polygon";
 						width=4;
 						points[]=
 						{
@@ -4042,7 +3783,6 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
-							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -4078,15 +3818,8 @@ class CfgMagazines
 			{
 				class Bones
 				{
-					class Center
-					{
-						type="fixed";
-						pos[]={0,0};
 					};
 				};
-				class Draw
-				{
-					color[]={0.15000001,1,0.15000001,1};
 					alpha=0.22;
 					class Default
 					{
@@ -4094,7 +3827,6 @@ class CfgMagazines
 						color[]={1,1,1};
 						class PylonValue1
 						{
-							type="text";
 							source="pylonAmmo";
 							scale=1;
 							sourceScale=1;
@@ -4117,7 +3849,6 @@ class CfgMagazines
 						};
 						class PylonText1
 						{
-							type="text";
 							source="static";
 							scale=1;
 							sourceScale=1;
@@ -4140,7 +3871,6 @@ class CfgMagazines
 						};
 						class Shape
 						{
-							type="line";
 							width=4;
 							points[]=
 							{
@@ -4387,29 +4117,11 @@ class CfgMagazines
 						condition="PylonSelected*(PylonAmmoRelative>=0.001)";
 						color[]={0.15000001,1,0.15000001,1};
 						alpha=0.22;
-						class PylonText1: PylonText1
-						{
-						};
-						class PylonValue1: PylonValue1
-						{
-						};
-						class Shape: Shape
-						{
-						};
 					};
 					class Empty: Selected
 					{
 						condition="pylonMagazineEmpty";
 						color[]={1,0,0,1};
-						class PylonText1: PylonText1
-						{
-						};
-						class PylonValue1: PylonValue1
-						{
-						};
-						class Shape: Shape
-						{
-						};
 					};
 				};
 			};
@@ -4437,9 +4149,6 @@ class CfgMagazines
 	};
 	class rhs_mag_s5_ko_32: rhs_mag_s5_32
 	{
-		displayName="$STR_RHS_MAG_s5ko";
-		displayNameShort="$STR_RHS_MAG_SH_s5ko";
-		descriptionShort="HEAT-FRAG (Penetration: 130mm RHA)";
 		ammo="rhs_ammo_s5ko";
 		count=64;
 		weight=283.51999;
@@ -4447,9 +4156,6 @@ class CfgMagazines
 		{
 			class rhs_rus_ammoname
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -4457,7 +4163,6 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -4482,9 +4187,6 @@ class CfgMagazines
 			};
 			class rhs_rus_ammoname_right
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -4492,7 +4194,6 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -4517,9 +4218,6 @@ class CfgMagazines
 			};
 			class rhs_su25_box
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="1-pylonMagazineEmpty";
@@ -4527,7 +4225,6 @@ class CfgMagazines
 					alpha=0.22;
 					class Shape
 					{
-						type="polygon";
 						width=4;
 						points[]=
 						{
@@ -4563,7 +4260,6 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
-							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -4599,15 +4295,8 @@ class CfgMagazines
 			{
 				class Bones
 				{
-					class Center
-					{
-						type="fixed";
-						pos[]={0,0};
 					};
 				};
-				class Draw
-				{
-					color[]={0.15000001,1,0.15000001,1};
 					alpha=0.22;
 					class Default
 					{
@@ -4615,7 +4304,6 @@ class CfgMagazines
 						color[]={1,1,1};
 						class PylonValue1
 						{
-							type="text";
 							source="pylonAmmo";
 							scale=1;
 							sourceScale=1;
@@ -4638,7 +4326,6 @@ class CfgMagazines
 						};
 						class PylonText1
 						{
-							type="text";
 							source="static";
 							scale=1;
 							sourceScale=1;
@@ -4661,7 +4348,6 @@ class CfgMagazines
 						};
 						class Shape
 						{
-							type="line";
 							width=4;
 							points[]=
 							{
@@ -4908,29 +4594,11 @@ class CfgMagazines
 						condition="PylonSelected*(PylonAmmoRelative>=0.001)";
 						color[]={0.15000001,1,0.15000001,1};
 						alpha=0.22;
-						class PylonText1: PylonText1
-						{
-						};
-						class PylonValue1: PylonValue1
-						{
-						};
-						class Shape: Shape
-						{
-						};
 					};
 					class Empty: Selected
 					{
 						condition="pylonMagazineEmpty";
 						color[]={1,0,0,1};
-						class PylonText1: PylonText1
-						{
-						};
-						class PylonValue1: PylonValue1
-						{
-						};
-						class Shape: Shape
-						{
-						};
 					};
 				};
 			};
@@ -4958,9 +4626,6 @@ class CfgMagazines
 	};
 	class rhs_mag_s8_12: VehicleMagazine
 	{
-		displayName="$STR_RHS_MAG_S8KOM";
-		displayNameShort="$STR_RHS_MAG_SH_S8KOM";
-		descriptionShort="HEAT (Penetration: 350mm RHA)";
 		ammo="rhs_ammo_s8";
 		count=12;
 		initSpeed=44;
@@ -4992,17 +4657,11 @@ class CfgMagazines
 	{
 		count=20;
 		weight=268;
-		displayName="$STR_RHS_MAG_S8DF";
-		displayNameShort="$STR_RHS_MAG_SH_S8DF";
-		descriptionShort="Thermobaric";
 		ammo="rhs_ammo_s8df";
 		class mfdElements
 		{
 			class rhs_rus_ammoname
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -5010,7 +4669,6 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -5035,9 +4693,6 @@ class CfgMagazines
 			};
 			class rhs_rus_ammoname_right
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -5045,7 +4700,6 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -5070,9 +4724,6 @@ class CfgMagazines
 			};
 			class rhs_su25_box
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="1-pylonMagazineEmpty";
@@ -5080,7 +4731,6 @@ class CfgMagazines
 					alpha=0.22;
 					class Shape
 					{
-						type="polygon";
 						width=4;
 						points[]=
 						{
@@ -5116,7 +4766,6 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
-							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -5152,15 +4801,8 @@ class CfgMagazines
 			{
 				class Bones
 				{
-					class Center
-					{
-						type="fixed";
-						pos[]={0,0};
 					};
 				};
-				class Draw
-				{
-					color[]={0.15000001,1,0.15000001,1};
 					alpha=0.22;
 					class Default
 					{
@@ -5168,7 +4810,6 @@ class CfgMagazines
 						color[]={1,1,1};
 						class PylonValue1
 						{
-							type="text";
 							source="pylonAmmo";
 							scale=1;
 							sourceScale=1;
@@ -5191,7 +4832,6 @@ class CfgMagazines
 						};
 						class PylonText1
 						{
-							type="text";
 							source="static";
 							scale=1;
 							sourceScale=1;
@@ -5214,7 +4854,6 @@ class CfgMagazines
 						};
 						class Shape
 						{
-							type="line";
 							width=4;
 							points[]=
 							{
@@ -5461,29 +5100,11 @@ class CfgMagazines
 						condition="PylonSelected*(PylonAmmoRelative>=0.001)";
 						color[]={0.15000001,1,0.15000001,1};
 						alpha=0.22;
-						class PylonText1: PylonText1
-						{
-						};
-						class PylonValue1: PylonValue1
-						{
-						};
-						class Shape: Shape
-						{
-						};
 					};
 					class Empty: Selected
 					{
 						condition="pylonMagazineEmpty";
 						color[]={1,0,0,1};
-						class PylonText1: PylonText1
-						{
-						};
-						class PylonValue1: PylonValue1
-						{
-						};
-						class Shape: Shape
-						{
-						};
 					};
 				};
 			};
@@ -5503,17 +5124,11 @@ class CfgMagazines
 	{
 		count=20;
 		weight=320;
-		displayName="$STR_RHS_MAG_S8T";
-		displayNameShort="$STR_RHS_MAG_SH_S8T";
-		descriptionShort="Tandem HEAT (Penetration: 440mm RHA)";
 		ammo="rhs_ammo_s8t";
 		class mfdElements
 		{
 			class rhs_rus_ammoname
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -5521,7 +5136,6 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -5546,9 +5160,6 @@ class CfgMagazines
 			};
 			class rhs_rus_ammoname_right
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -5556,7 +5167,6 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -5581,9 +5191,6 @@ class CfgMagazines
 			};
 			class rhs_su25_box
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="1-pylonMagazineEmpty";
@@ -5591,7 +5198,6 @@ class CfgMagazines
 					alpha=0.22;
 					class Shape
 					{
-						type="polygon";
 						width=4;
 						points[]=
 						{
@@ -5627,7 +5233,6 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
-							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -5663,15 +5268,8 @@ class CfgMagazines
 			{
 				class Bones
 				{
-					class Center
-					{
-						type="fixed";
-						pos[]={0,0};
 					};
 				};
-				class Draw
-				{
-					color[]={0.15000001,1,0.15000001,1};
 					alpha=0.22;
 					class Default
 					{
@@ -5679,7 +5277,6 @@ class CfgMagazines
 						color[]={1,1,1};
 						class PylonValue1
 						{
-							type="text";
 							source="pylonAmmo";
 							scale=1;
 							sourceScale=1;
@@ -5702,7 +5299,6 @@ class CfgMagazines
 						};
 						class PylonText1
 						{
-							type="text";
 							source="static";
 							scale=1;
 							sourceScale=1;
@@ -5725,7 +5321,6 @@ class CfgMagazines
 						};
 						class Shape
 						{
-							type="line";
 							width=4;
 							points[]=
 							{
@@ -5972,29 +5567,11 @@ class CfgMagazines
 						condition="PylonSelected*(PylonAmmoRelative>=0.001)";
 						color[]={0.15000001,1,0.15000001,1};
 						alpha=0.22;
-						class PylonText1: PylonText1
-						{
-						};
-						class PylonValue1: PylonValue1
-						{
-						};
-						class Shape: Shape
-						{
-						};
 					};
 					class Empty: Selected
 					{
 						condition="pylonMagazineEmpty";
 						color[]={1,0,0,1};
-						class PylonText1: PylonText1
-						{
-						};
-						class PylonValue1: PylonValue1
-						{
-						};
-						class Shape: Shape
-						{
-						};
 					};
 				};
 			};
@@ -6012,9 +5589,6 @@ class CfgMagazines
 	};
 	class rhs_mag_s13b_10: VehicleMagazine
 	{
-		displayName="$STR_RHS_MAG_S13B";
-		displayNameShort="$STR_RHS_MAG_SH_S13B";
-		descriptionShort="Obstacle penetration/HE";
 		ammo="rhs_ammo_s13b";
 		count=10;
 		maxleadspeed=200;
@@ -6024,33 +5598,21 @@ class CfgMagazines
 	};
 	class rhs_mag_s13d_10: rhs_mag_s13b_10
 	{
-		displayName="$STR_RHS_MAG_S13D";
-		displayNameShort="$STR_RHS_MAG_SH_S13D";
-		descriptionShort="Thermobaric (35-40kg TNT equivalent). Introduced in 1995";
 		ammo="rhs_ammo_s13d";
 		weight=680;
 	};
 	class rhs_mag_s13df_10: rhs_mag_s13b_10
 	{
-		displayName="$STR_RHS_MAG_S13DF";
-		displayNameShort="$STR_RHS_MAG_SH_S13DF";
-		descriptionShort="Thermobaric (35-40kg TNT equivalent). Introduced in 2018";
 		ammo="rhs_ammo_s13df";
 		weight=680;
 	};
 	class rhs_mag_s13t_10: rhs_mag_s13b_10
 	{
-		displayName="$STR_RHS_MAG_S13T";
-		displayNameShort="$STR_RHS_MAG_SH_S13T";
-		descriptionShort="Tandem HEAT (Penetration: 600mm RHA)";
 		ammo="rhs_ammo_s13t";
 		weight=750;
 	};
 	class rhs_mag_s13of_10: rhs_mag_s13b_10
 	{
-		displayName="$STR_RHS_MAG_S13OF";
-		displayNameShort="$STR_RHS_MAG_SH_S13OF";
-		descriptionShort="HE-FRAG. Introduced in 1993";
 		ammo="rhs_ammo_s13of";
 		weight=690;
 	};
@@ -6068,8 +5630,6 @@ class CfgMagazines
 	};
 	class rhs_mag_ub16_s5m1: rhs_mag_ub16_s5
 	{
-		displayName="$STR_RHS_MAG_s5m1";
-		displayNameShort="$STR_RHS_MAG_SH_s5m1";
 		ammo="rhs_ammo_s5m1";
 		mass=115.76;
 		weight=115.76;
@@ -6077,8 +5637,6 @@ class CfgMagazines
 	};
 	class rhs_mag_ub16_s5k1: rhs_mag_ub16_s5
 	{
-		displayName="$STR_RHS_MAG_s5k1";
-		displayNameShort="$STR_RHS_MAG_SH_s5k1";
 		ammo="rhs_ammo_s5k1";
 		mass=112.24;
 		weight=112.24;
@@ -6086,8 +5644,6 @@ class CfgMagazines
 	};
 	class rhs_mag_ub16_s5ko: rhs_mag_ub16_s5
 	{
-		displayName="$STR_RHS_MAG_s5ko";
-		displayNameShort="$STR_RHS_MAG_SH_s5ko";
 		ammo="rhs_ammo_s5ko";
 		mass=124.88;
 		weight=124.88;
@@ -6102,8 +5658,6 @@ class CfgMagazines
 	};
 	class rhs_mag_ub16_ka52_s5m1: rhs_mag_ub16_ka52_s5
 	{
-		displayName="$STR_RHS_MAG_s5m1";
-		displayNameShort="$STR_RHS_MAG_SH_s5m1";
 		ammo="rhs_ammo_s5m1";
 		mass=115.76;
 		weight=115.76;
@@ -6111,8 +5665,6 @@ class CfgMagazines
 	};
 	class rhs_mag_ub16_ka52_s5k1: rhs_mag_ub16_ka52_s5
 	{
-		displayName="$STR_RHS_MAG_s5k1";
-		displayNameShort="$STR_RHS_MAG_SH_s5k1";
 		ammo="rhs_ammo_s5k1";
 		mass=112.24;
 		weight=112.24;
@@ -6120,8 +5672,6 @@ class CfgMagazines
 	};
 	class rhs_mag_ub16_ka52_s5ko: rhs_mag_ub16_ka52_s5
 	{
-		displayName="$STR_RHS_MAG_s5ko";
-		displayNameShort="$STR_RHS_MAG_SH_s5ko";
 		ammo="rhs_ammo_s5ko";
 		mass=124.88;
 		weight=124.88;
@@ -6136,8 +5686,6 @@ class CfgMagazines
 	};
 	class rhs_mag_ub16_bd3_umk2a_s5m1: rhs_mag_ub16_bd3_umk2a_s5
 	{
-		displayName="$STR_RHS_MAG_s5m1";
-		displayNameShort="$STR_RHS_MAG_SH_s5m1";
 		ammo="rhs_ammo_s5m1";
 		mass=115.76;
 		weight=115.76;
@@ -6145,8 +5693,6 @@ class CfgMagazines
 	};
 	class rhs_mag_ub16_bd3_umk2a_s5k1: rhs_mag_ub16_bd3_umk2a_s5
 	{
-		displayName="$STR_RHS_MAG_s5k1";
-		displayNameShort="$STR_RHS_MAG_SH_s5k1";
 		ammo="rhs_ammo_s5k1";
 		mass=112.24;
 		weight=112.24;
@@ -6154,8 +5700,6 @@ class CfgMagazines
 	};
 	class rhs_mag_ub16_bd3_umk2a_s5ko: rhs_mag_ub16_bd3_umk2a_s5
 	{
-		displayName="$STR_RHS_MAG_s5ko";
-		displayNameShort="$STR_RHS_MAG_SH_s5ko";
 		ammo="rhs_ammo_s5ko";
 		mass=124.88;
 		weight=124.88;
@@ -6175,8 +5719,6 @@ class CfgMagazines
 	};
 	class rhs_mag_ub32_s5m1: rhs_mag_ub32_s5
 	{
-		displayName="$STR_RHS_MAG_s5m1";
-		displayNameShort="$STR_RHS_MAG_SH_s5m1";
 		ammo="rhs_ammo_s5m1";
 		mass=232.52;
 		weight=232.52;
@@ -6184,8 +5726,6 @@ class CfgMagazines
 	};
 	class rhs_mag_ub32_s5k1: rhs_mag_ub32_s5
 	{
-		displayName="$STR_RHS_MAG_s5k1";
-		displayNameShort="$STR_RHS_MAG_SH_s5k1";
 		ammo="rhs_ammo_s5k1";
 		mass=225.48;
 		weight=225.48;
@@ -6193,8 +5733,6 @@ class CfgMagazines
 	};
 	class rhs_mag_ub32_s5ko: rhs_mag_ub32_s5
 	{
-		displayName="$STR_RHS_MAG_s5ko";
-		displayNameShort="$STR_RHS_MAG_SH_s5ko";
 		ammo="rhs_ammo_s5ko";
 		mass=250.75999;
 		weight=250.75999;
@@ -6209,8 +5747,6 @@ class CfgMagazines
 	};
 	class rhs_mag_ub32_ka52_s5m1: rhs_mag_ub32_ka52_s5
 	{
-		displayName="$STR_RHS_MAG_s5m1";
-		displayNameShort="$STR_RHS_MAG_SH_s5m1";
 		ammo="rhs_ammo_s5m1";
 		mass=232.52;
 		weight=232.52;
@@ -6218,8 +5754,6 @@ class CfgMagazines
 	};
 	class rhs_mag_ub32_ka52_s5k1: rhs_mag_ub32_ka52_s5
 	{
-		displayName="$STR_RHS_MAG_s5k1";
-		displayNameShort="$STR_RHS_MAG_SH_s5k1";
 		ammo="rhs_ammo_s5k1";
 		mass=225.48;
 		weight=225.48;
@@ -6227,8 +5761,6 @@ class CfgMagazines
 	};
 	class rhs_mag_ub32_ka52_s5ko: rhs_mag_ub32_ka52_s5
 	{
-		displayName="$STR_RHS_MAG_s5ko";
-		displayNameShort="$STR_RHS_MAG_SH_s5ko";
 		ammo="rhs_ammo_s5ko";
 		mass=250.75999;
 		weight=250.75999;
@@ -6243,8 +5775,6 @@ class CfgMagazines
 	};
 	class rhs_mag_ub32_bd3_umk2a_s5m1: rhs_mag_ub32_bd3_umk2a_s5
 	{
-		displayName="$STR_RHS_MAG_s5m1";
-		displayNameShort="$STR_RHS_MAG_SH_s5m1";
 		ammo="rhs_ammo_s5m1";
 		mass=115.76;
 		weight=115.76;
@@ -6252,8 +5782,6 @@ class CfgMagazines
 	};
 	class rhs_mag_ub32_bd3_umk2a_s5k1: rhs_mag_ub32_bd3_umk2a_s5
 	{
-		displayName="$STR_RHS_MAG_s5k1";
-		displayNameShort="$STR_RHS_MAG_SH_s5k1";
 		ammo="rhs_ammo_s5k1";
 		mass=112.24;
 		weight=112.24;
@@ -6261,8 +5789,6 @@ class CfgMagazines
 	};
 	class rhs_mag_ub32_bd3_umk2a_s5ko: rhs_mag_ub32_bd3_umk2a_s5
 	{
-		displayName="$STR_RHS_MAG_s5ko";
-		displayNameShort="$STR_RHS_MAG_SH_s5ko";
 		ammo="rhs_ammo_s5ko";
 		mass=124.88;
 		weight=124.88;
@@ -6283,9 +5809,6 @@ class CfgMagazines
 		{
 			class rhs_rus_ammoname
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -6293,7 +5816,6 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -6318,9 +5840,6 @@ class CfgMagazines
 			};
 			class rhs_rus_ammoname_right
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -6328,7 +5847,6 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -6353,9 +5871,6 @@ class CfgMagazines
 			};
 			class rhs_su25_box
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="1-pylonMagazineEmpty";
@@ -6363,7 +5878,6 @@ class CfgMagazines
 					alpha=0.22;
 					class Shape
 					{
-						type="polygon";
 						width=4;
 						points[]=
 						{
@@ -6399,7 +5913,6 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
-							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -6435,15 +5948,8 @@ class CfgMagazines
 			{
 				class Bones
 				{
-					class Center
-					{
-						type="fixed";
-						pos[]={0,0};
 					};
 				};
-				class Draw
-				{
-					color[]={0.15000001,1,0.15000001,1};
 					alpha=0.22;
 					class Default
 					{
@@ -6451,7 +5957,6 @@ class CfgMagazines
 						color[]={1,1,1};
 						class PylonValue1
 						{
-							type="text";
 							source="pylonAmmo";
 							scale=1;
 							sourceScale=1;
@@ -6474,7 +5979,6 @@ class CfgMagazines
 						};
 						class PylonText1
 						{
-							type="text";
 							source="static";
 							scale=1;
 							sourceScale=1;
@@ -6497,7 +6001,6 @@ class CfgMagazines
 						};
 						class Shape
 						{
-							type="line";
 							width=4;
 							points[]=
 							{
@@ -6744,29 +6247,11 @@ class CfgMagazines
 						condition="PylonSelected*(PylonAmmoRelative>=0.001)";
 						color[]={0.15000001,1,0.15000001,1};
 						alpha=0.22;
-						class PylonText1: PylonText1
-						{
-						};
-						class PylonValue1: PylonValue1
-						{
-						};
-						class Shape: Shape
-						{
-						};
 					};
 					class Empty: Selected
 					{
 						condition="pylonMagazineEmpty";
 						color[]={1,0,0,1};
-						class PylonText1: PylonText1
-						{
-						};
-						class PylonValue1: PylonValue1
-						{
-						};
-						class Shape: Shape
-						{
-						};
 					};
 				};
 			};
@@ -6774,8 +6259,6 @@ class CfgMagazines
 	};
 	class rhs_mag_b8m1_s8df: rhs_mag_b8m1_s8kom
 	{
-		displayName="$STR_RHS_MAG_s8df";
-		displayNameShort="$STR_RHS_MAG_SH_s8df";
 		ammo="rhs_ammo_s8df";
 		mass=418;
 		weight=418;
@@ -6783,8 +6266,6 @@ class CfgMagazines
 	};
 	class rhs_mag_b8m1_s8t: rhs_mag_b8m1_s8kom
 	{
-		displayName="$STR_RHS_MAG_s8t";
-		displayNameShort="$STR_RHS_MAG_SH_s8t";
 		ammo="rhs_ammo_s8t";
 		mass=450;
 		weight=450;
@@ -6799,8 +6280,6 @@ class CfgMagazines
 	};
 	class rhs_mag_b8m1_bd3_umk2a_s8df: rhs_mag_b8m1_bd3_umk2a_s8kom
 	{
-		displayName="$STR_RHS_MAG_s8df";
-		displayNameShort="$STR_RHS_MAG_SH_s8df";
 		ammo="rhs_ammo_s8df";
 		mass=391;
 		weight=391;
@@ -6808,8 +6287,6 @@ class CfgMagazines
 	};
 	class rhs_mag_b8m1_bd3_umk2a_s8t: rhs_mag_b8m1_bd3_umk2a_s8kom
 	{
-		displayName="$STR_RHS_MAG_s8t";
-		displayNameShort="$STR_RHS_MAG_SH_s8t";
 		ammo="rhs_ammo_s8t";
 		mass=423;
 		weight=423;
@@ -6829,8 +6306,6 @@ class CfgMagazines
 	};
 	class rhs_mag_b8v20a_s8df: rhs_mag_b8v20a_s8kom
 	{
-		displayName="$STR_RHS_MAG_s8df";
-		displayNameShort="$STR_RHS_MAG_SH_s8df";
 		ammo="rhs_ammo_s8df";
 		mass=391;
 		weight=391;
@@ -6838,8 +6313,6 @@ class CfgMagazines
 	};
 	class rhs_mag_b8v20a_s8t: rhs_mag_b8v20a_s8kom
 	{
-		displayName="$STR_RHS_MAG_s8t";
-		displayNameShort="$STR_RHS_MAG_SH_s8t";
 		ammo="rhs_ammo_s8t";
 		mass=423;
 		weight=423;
@@ -6854,8 +6327,6 @@ class CfgMagazines
 	};
 	class rhs_mag_b8v20a_ka52_s8df: rhs_mag_b8v20a_ka52_s8kom
 	{
-		displayName="$STR_RHS_MAG_s8df";
-		displayNameShort="$STR_RHS_MAG_SH_s8df";
 		ammo="rhs_ammo_s8df";
 		mass=391;
 		weight=391;
@@ -6863,8 +6334,6 @@ class CfgMagazines
 	};
 	class rhs_mag_b8v20a_ka52_s8t: rhs_mag_b8v20a_ka52_s8kom
 	{
-		displayName="$STR_RHS_MAG_s8t";
-		displayNameShort="$STR_RHS_MAG_SH_s8t";
 		ammo="rhs_ammo_s8t";
 		mass=423;
 		weight=423;
@@ -6885,9 +6354,6 @@ class CfgMagazines
 		{
 			class rhs_rus_ammoname
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -6895,7 +6361,6 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -6920,9 +6385,6 @@ class CfgMagazines
 			};
 			class rhs_rus_ammoname_right
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -6930,7 +6392,6 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -6955,9 +6416,6 @@ class CfgMagazines
 			};
 			class rhs_su25_box
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="1-pylonMagazineEmpty";
@@ -6965,7 +6423,6 @@ class CfgMagazines
 					alpha=0.22;
 					class Shape
 					{
-						type="polygon";
 						width=4;
 						points[]=
 						{
@@ -7001,7 +6458,6 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
-							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -7037,15 +6493,8 @@ class CfgMagazines
 			{
 				class Bones
 				{
-					class Center
-					{
-						type="fixed";
-						pos[]={0,0};
 					};
 				};
-				class Draw
-				{
-					color[]={0.15000001,1,0.15000001,1};
 					alpha=0.22;
 					class Default
 					{
@@ -7053,7 +6502,6 @@ class CfgMagazines
 						color[]={1,1,1};
 						class PylonValue1
 						{
-							type="text";
 							source="pylonAmmo";
 							scale=1;
 							sourceScale=1;
@@ -7076,7 +6524,6 @@ class CfgMagazines
 						};
 						class PylonText1
 						{
-							type="text";
 							source="static";
 							scale=1;
 							sourceScale=1;
@@ -7099,7 +6546,6 @@ class CfgMagazines
 						};
 						class Shape
 						{
-							type="line";
 							width=4;
 							points[]=
 							{
@@ -7346,29 +6792,11 @@ class CfgMagazines
 						condition="PylonSelected*(PylonAmmoRelative>=0.001)";
 						color[]={0.15000001,1,0.15000001,1};
 						alpha=0.22;
-						class PylonText1: PylonText1
-						{
-						};
-						class PylonValue1: PylonValue1
-						{
-						};
-						class Shape: Shape
-						{
-						};
 					};
 					class Empty: Selected
 					{
 						condition="pylonMagazineEmpty";
 						color[]={1,0,0,1};
-						class PylonText1: PylonText1
-						{
-						};
-						class PylonValue1: PylonValue1
-						{
-						};
-						class Shape: Shape
-						{
-						};
 					};
 				};
 			};
@@ -7376,8 +6804,6 @@ class CfgMagazines
 	};
 	class rhs_mag_b13l_s13d: rhs_mag_b13l_s13b
 	{
-		displayName="$STR_RHS_MAG_s13d";
-		displayNameShort="$STR_RHS_MAG_SH_s13d";
 		ammo="rhs_ammo_s13d";
 		mass=500;
 		weight=500;
@@ -7385,8 +6811,6 @@ class CfgMagazines
 	};
 	class rhs_mag_b13l_s13df: rhs_mag_b13l_s13b
 	{
-		displayName="$STR_RHS_MAG_s13df";
-		displayNameShort="$STR_RHS_MAG_SH_s13df";
 		ammo="rhs_ammo_s13df";
 		mass=500;
 		weight=500;
@@ -7394,8 +6818,6 @@ class CfgMagazines
 	};
 	class rhs_mag_b13l_s13t: rhs_mag_b13l_s13b
 	{
-		displayName="$STR_RHS_MAG_s13t";
-		displayNameShort="$STR_RHS_MAG_SH_s13t";
 		ammo="rhs_ammo_s13t";
 		mass=535;
 		weight=535;
@@ -7403,8 +6825,6 @@ class CfgMagazines
 	};
 	class rhs_mag_b13l_s13of: rhs_mag_b13l_s13b
 	{
-		displayName="$STR_RHS_MAG_s13of";
-		displayNameShort="$STR_RHS_MAG_SH_s13of";
 		ammo="rhs_ammo_s13of";
 		mass=505;
 		weight=505;
@@ -7419,8 +6839,6 @@ class CfgMagazines
 	};
 	class rhs_mag_b13l_bd3_umk2a_s13d: rhs_mag_b13l_bd3_umk2a_s13b
 	{
-		displayName="$STR_RHS_MAG_s13d";
-		displayNameShort="$STR_RHS_MAG_SH_s13d";
 		ammo="rhs_ammo_s13d";
 		mass=480;
 		weight=480;
@@ -7428,8 +6846,6 @@ class CfgMagazines
 	};
 	class rhs_mag_b13l_bd3_umk2a_s13df: rhs_mag_b13l_bd3_umk2a_s13b
 	{
-		displayName="$STR_RHS_MAG_s13df";
-		displayNameShort="$STR_RHS_MAG_SH_s13df";
 		ammo="rhs_ammo_s13df";
 		mass=480;
 		weight=480;
@@ -7437,8 +6853,6 @@ class CfgMagazines
 	};
 	class rhs_mag_b13l_bd3_umk2a_s13t: rhs_mag_b13l_bd3_umk2a_s13b
 	{
-		displayName="$STR_RHS_MAG_s13t";
-		displayNameShort="$STR_RHS_MAG_SH_s13t";
 		ammo="rhs_ammo_s13t";
 		mass=515;
 		weight=515;
@@ -7446,8 +6860,6 @@ class CfgMagazines
 	};
 	class rhs_mag_b13l_bd3_umk2a_s13of: rhs_mag_b13l_bd3_umk2a_s13b
 	{
-		displayName="$STR_RHS_MAG_s13of";
-		displayNameShort="$STR_RHS_MAG_SH_s13of";
 		ammo="rhs_ammo_s13of";
 		mass=485;
 		weight=485;
@@ -7467,8 +6879,6 @@ class CfgMagazines
 	};
 	class rhs_mag_b13l1_s13d: rhs_mag_b13l1_s13b
 	{
-		displayName="$STR_RHS_MAG_s13d";
-		displayNameShort="$STR_RHS_MAG_SH_s13d";
 		ammo="rhs_ammo_s13d";
 		mass=480;
 		weight=480;
@@ -7476,8 +6886,6 @@ class CfgMagazines
 	};
 	class rhs_mag_b13l1_s13df: rhs_mag_b13l1_s13b
 	{
-		displayName="$STR_RHS_MAG_s13df";
-		displayNameShort="$STR_RHS_MAG_SH_s13df";
 		ammo="rhs_ammo_s13df";
 		mass=480;
 		weight=480;
@@ -7485,8 +6893,6 @@ class CfgMagazines
 	};
 	class rhs_mag_b13l1_s13t: rhs_mag_b13l1_s13b
 	{
-		displayName="$STR_RHS_MAG_s13t";
-		displayNameShort="$STR_RHS_MAG_SH_s13t";
 		ammo="rhs_ammo_s13t";
 		mass=515;
 		weight=515;
@@ -7494,8 +6900,6 @@ class CfgMagazines
 	};
 	class rhs_mag_b13l1_s13of: rhs_mag_b13l1_s13b
 	{
-		displayName="$STR_RHS_MAG_s13of";
-		displayNameShort="$STR_RHS_MAG_SH_s13of";
 		ammo="rhs_ammo_s13of";
 		mass=485;
 		weight=485;
@@ -7510,8 +6914,6 @@ class CfgMagazines
 	};
 	class rhs_mag_b13l1_ka52_s13d: rhs_mag_b13l1_ka52_s13b
 	{
-		displayName="$STR_RHS_MAG_s13d";
-		displayNameShort="$STR_RHS_MAG_SH_s13d";
 		ammo="rhs_ammo_s13d";
 		mass=480;
 		weight=480;
@@ -7519,8 +6921,6 @@ class CfgMagazines
 	};
 	class rhs_mag_b13l1_ka52_s13df: rhs_mag_b13l1_ka52_s13b
 	{
-		displayName="$STR_RHS_MAG_s13df";
-		displayNameShort="$STR_RHS_MAG_SH_s13df";
 		ammo="rhs_ammo_s13df";
 		mass=480;
 		weight=480;
@@ -7528,8 +6928,6 @@ class CfgMagazines
 	};
 	class rhs_mag_b13l1_ka52_s13t: rhs_mag_b13l1_ka52_s13b
 	{
-		displayName="$STR_RHS_MAG_s13t";
-		displayNameShort="$STR_RHS_MAG_SH_s13t";
 		ammo="rhs_ammo_s13t";
 		mass=515;
 		weight=515;
@@ -7537,8 +6935,6 @@ class CfgMagazines
 	};
 	class rhs_mag_b13l1_ka52_s13of: rhs_mag_b13l1_ka52_s13b
 	{
-		displayName="$STR_RHS_MAG_s13of";
-		displayNameShort="$STR_RHS_MAG_SH_s13of";
 		ammo="rhs_ammo_s13of";
 		mass=485;
 		weight=485;
@@ -7546,8 +6942,6 @@ class CfgMagazines
 	};
 	class rhs_mag_apu68m3_s24: rhs_mag_s13b_10
 	{
-		displayName="$STR_RHS_MAG_S24";
-		displayNameShort="$STR_RHS_MAG_SH_S24";
 		ammo="rhs_ammo_s24";
 		count=1;
 		mass=280;
@@ -7561,9 +6955,6 @@ class CfgMagazines
 		{
 			class rhs_rus_ammoname
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -7571,7 +6962,6 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -7596,9 +6986,6 @@ class CfgMagazines
 			};
 			class rhs_rus_ammoname_right
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -7606,7 +6993,6 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -7631,9 +7017,6 @@ class CfgMagazines
 			};
 			class rhs_su25_box
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="1-pylonMagazineEmpty";
@@ -7641,7 +7024,6 @@ class CfgMagazines
 					alpha=0.22;
 					class Shape
 					{
-						type="polygon";
 						width=4;
 						points[]=
 						{
@@ -7677,7 +7059,6 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
-							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -7713,15 +7094,8 @@ class CfgMagazines
 			{
 				class Bones
 				{
-					class Center
-					{
-						type="fixed";
-						pos[]={0,0};
 					};
 				};
-				class Draw
-				{
-					color[]={0.15000001,1,0.15000001,1};
 					alpha=0.22;
 					class Default
 					{
@@ -7729,7 +7103,6 @@ class CfgMagazines
 						color[]={1,1,1};
 						class PylonText1
 						{
-							type="text";
 							source="static";
 							scale=1;
 							sourceScale=1;
@@ -7752,7 +7125,6 @@ class CfgMagazines
 						};
 						class Shape
 						{
-							type="line";
 							width=4;
 							points[]=
 							{
@@ -7895,15 +7267,8 @@ class CfgMagazines
 						condition="PylonSelected*(PylonAmmoRelative>=0.001)";
 						color[]={0.15000001,1,0.15000001,1};
 						alpha=0.22;
-						class PylonText1: PylonText1
-						{
-						};
-						class Shape: Shape
-						{
-						};
 						class Polygon
 						{
-							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -8026,15 +7391,6 @@ class CfgMagazines
 					{
 						condition="pylonMagazineEmpty";
 						color[]={1,0,0,1};
-						class PylonText1: PylonText1
-						{
-						};
-						class Shape: Shape
-						{
-						};
-						class Polygon: Polygon
-						{
-						};
 					};
 				};
 			};
@@ -8042,8 +7398,6 @@ class CfgMagazines
 	};
 	class rhs_mag_apu68m3_s24b: rhs_mag_apu68m3_s24
 	{
-		displayName="$STR_RHS_MAG_s24b";
-		displayNameShort="$STR_RHS_MAG_SH_s24b";
 		ammo="rhs_ammo_s24b";
 		mass=280;
 		weight=280;
@@ -8058,8 +7412,6 @@ class CfgMagazines
 	};
 	class rhs_mag_apu68_bd3_umk2a_s24b: rhs_mag_apu68_bd3_umk2a_s24
 	{
-		displayName="$STR_RHS_MAG_s24b";
-		displayNameShort="$STR_RHS_MAG_SH_s24b";
 		ammo="rhs_ammo_s24b";
 		mass=280;
 		weight=280;
@@ -8067,8 +7419,6 @@ class CfgMagazines
 	};
 	class rhs_mag_o25l_s25o: rhs_mag_apu68m3_s24
 	{
-		displayName="$STR_RHS_MAG_S25O";
-		displayNameShort="$STR_RHS_MAG_SH_S25O";
 		ammo="rhs_ammo_s25o";
 		count=1;
 		mass=290;
@@ -8082,9 +7432,6 @@ class CfgMagazines
 		{
 			class rhs_rus_ammoname
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -8092,7 +7439,6 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -8117,9 +7463,6 @@ class CfgMagazines
 			};
 			class rhs_rus_ammoname_right
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -8127,7 +7470,6 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -8152,9 +7494,6 @@ class CfgMagazines
 			};
 			class rhs_su25_box
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="1-pylonMagazineEmpty";
@@ -8162,7 +7501,6 @@ class CfgMagazines
 					alpha=0.22;
 					class Shape
 					{
-						type="polygon";
 						width=4;
 						points[]=
 						{
@@ -8198,7 +7536,6 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
-							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -8234,15 +7571,8 @@ class CfgMagazines
 			{
 				class Bones
 				{
-					class Center
-					{
-						type="fixed";
-						pos[]={0,0};
 					};
 				};
-				class Draw
-				{
-					color[]={0.15000001,1,0.15000001,1};
 					alpha=0.22;
 					class Default
 					{
@@ -8250,7 +7580,6 @@ class CfgMagazines
 						color[]={1,1,1};
 						class PylonText1
 						{
-							type="text";
 							source="static";
 							scale=1;
 							sourceScale=1;
@@ -8273,7 +7602,6 @@ class CfgMagazines
 						};
 						class Shape
 						{
-							type="line";
 							width=4;
 							points[]=
 							{
@@ -8416,15 +7744,8 @@ class CfgMagazines
 						condition="PylonSelected*(PylonAmmoRelative>=0.001)";
 						color[]={0.15000001,1,0.15000001,1};
 						alpha=0.22;
-						class PylonText1: PylonText1
-						{
-						};
-						class Shape: Shape
-						{
-						};
 						class Polygon
 						{
-							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -8547,15 +7868,6 @@ class CfgMagazines
 					{
 						condition="pylonMagazineEmpty";
 						color[]={1,0,0,1};
-						class PylonText1: PylonText1
-						{
-						};
-						class Shape: Shape
-						{
-						};
-						class Polygon: Polygon
-						{
-						};
 					};
 				};
 			};
@@ -8563,8 +7875,6 @@ class CfgMagazines
 	};
 	class rhs_mag_o25l_s25of: rhs_mag_o25l_s25o
 	{
-		displayName="$STR_RHS_MAG_s25of";
-		displayNameShort="$STR_RHS_MAG_SH_s25of";
 		ammo="rhs_ammo_s25of";
 		mass=290;
 		weight=290;
@@ -8572,8 +7882,6 @@ class CfgMagazines
 	};
 	class rhs_mag_o25l_s25l: rhs_mag_o25l_s25o
 	{
-		displayName="$STR_RHS_MAG_s25l";
-		displayNameShort="$STR_RHS_MAG_SH_s25l";
 		ammo="rhs_ammo_s25l";
 		mass=290;
 		weight=290;
@@ -8581,8 +7889,6 @@ class CfgMagazines
 	};
 	class rhs_mag_o25l_s25ld: rhs_mag_o25l_s25o
 	{
-		displayName="$STR_RHS_MAG_s25ld";
-		displayNameShort="$STR_RHS_MAG_SH_s25ld";
 		ammo="rhs_ammo_s25ld";
 		mass=290;
 		weight=290;
@@ -8599,8 +7905,6 @@ class CfgMagazines
 	};
 	class rhs_mag_bd3_usk_a_o25l_s25of: rhs_mag_bd3_usk_a_o25l_s25o
 	{
-		displayName="$STR_RHS_MAG_s25of";
-		displayNameShort="$STR_RHS_MAG_SH_s25of";
 		ammo="rhs_ammo_s25of";
 		mass=310;
 		weight=310;
@@ -8608,8 +7912,6 @@ class CfgMagazines
 	};
 	class rhs_mag_bd3_usk_a_o25l_s25l: rhs_mag_bd3_usk_a_o25l_s25o
 	{
-		displayName="$STR_RHS_MAG_s25l";
-		displayNameShort="$STR_RHS_MAG_SH_s25l";
 		ammo="rhs_ammo_s25l";
 		mass=310;
 		weight=310;
@@ -8617,8 +7919,6 @@ class CfgMagazines
 	};
 	class rhs_mag_bd3_usk_a_o25l_s25ld: rhs_mag_bd3_usk_a_o25l_s25o
 	{
-		displayName="$STR_RHS_MAG_s25ld";
-		displayNameShort="$STR_RHS_MAG_SH_s25ld";
 		ammo="rhs_ammo_s25ld";
 		mass=310;
 		weight=310;
@@ -8635,8 +7935,6 @@ class CfgMagazines
 	};
 	class rhs_mag_bd3_umk2a_o25l_s25of: rhs_mag_bd3_umk2a_o25l_s25o
 	{
-		displayName="$STR_RHS_MAG_s25of";
-		displayNameShort="$STR_RHS_MAG_SH_s25of";
 		ammo="rhs_ammo_s25of";
 		mass=310;
 		weight=310;
@@ -8644,8 +7942,6 @@ class CfgMagazines
 	};
 	class rhs_mag_bd3_umk2a_o25l_s25l: rhs_mag_bd3_umk2a_o25l_s25o
 	{
-		displayName="$STR_RHS_MAG_s25l";
-		displayNameShort="$STR_RHS_MAG_SH_s25l";
 		ammo="rhs_ammo_s25l";
 		mass=310;
 		weight=310;
@@ -8653,8 +7949,6 @@ class CfgMagazines
 	};
 	class rhs_mag_bd3_umk2a_o25l_s25ld: rhs_mag_bd3_umk2a_o25l_s25o
 	{
-		displayName="$STR_RHS_MAG_s25ld";
-		displayNameShort="$STR_RHS_MAG_SH_s25ld";
 		ammo="rhs_ammo_s25ld";
 		mass=310;
 		weight=310;
@@ -8668,7 +7962,6 @@ class CfgMagazines
 		namesound="missiles";
 		ammo="rhs_ammo_r27r";
 		displayname="$STR_RHS_R27R_NAME";
-		descriptionShort="Active radar homing. Range: 2km-16km";
 		displaynameshort="ARH";
 		mass=44;
 		hardpoints[]=
@@ -8680,9 +7973,6 @@ class CfgMagazines
 		{
 			class rhs_rus_ammoname
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -8690,7 +7980,6 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -8715,9 +8004,6 @@ class CfgMagazines
 			};
 			class rhs_rus_ammoname_right
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -8725,7 +8011,6 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -8750,9 +8035,6 @@ class CfgMagazines
 			};
 			class rhs_su25_box
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="1-pylonMagazineEmpty";
@@ -8760,7 +8042,6 @@ class CfgMagazines
 					alpha=0.22;
 					class Shape
 					{
-						type="polygon";
 						width=4;
 						points[]=
 						{
@@ -8796,7 +8077,6 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
-							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -8832,15 +8112,8 @@ class CfgMagazines
 			{
 				class Bones
 				{
-					class Center
-					{
-						type="fixed";
-						pos[]={0,0};
 					};
 				};
-				class Draw
-				{
-					color[]={0.15000001,1,0.15000001,1};
 					alpha=0.22;
 					class Default
 					{
@@ -8848,7 +8121,6 @@ class CfgMagazines
 						color[]={1,1,1};
 						class PylonText1
 						{
-							type="text";
 							source="static";
 							scale=1;
 							sourceScale=1;
@@ -8871,7 +8143,6 @@ class CfgMagazines
 						};
 						class Shape
 						{
-							type="line";
 							width=4;
 							points[]=
 							{
@@ -9014,15 +8285,8 @@ class CfgMagazines
 						condition="PylonSelected*(PylonAmmoRelative>=0.001)";
 						color[]={0.15000001,1,0.15000001,1};
 						alpha=0.22;
-						class PylonText1: PylonText1
-						{
-						};
-						class Shape: Shape
-						{
-						};
 						class Polygon
 						{
-							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -9145,15 +8409,6 @@ class CfgMagazines
 					{
 						condition="pylonMagazineEmpty";
 						color[]={1,0,0,1};
-						class PylonText1: PylonText1
-						{
-						};
-						class Shape: Shape
-						{
-						};
-						class Polygon: Polygon
-						{
-						};
 					};
 				};
 			};
@@ -9169,15 +8424,11 @@ class CfgMagazines
 	class rhs_mag_R27ER: rhs_mag_R27R
 	{
 		displayname="$STR_RHS_R27ER_NAME";
-		descriptionShort="Active radar homing. Range: 2km-20km";
 		ammo="rhs_ammo_r27er";
 		class mfdElements
 		{
 			class rhs_rus_ammoname
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -9185,7 +8436,6 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -9210,9 +8460,6 @@ class CfgMagazines
 			};
 			class rhs_rus_ammoname_right
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -9220,7 +8467,6 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -9245,9 +8491,6 @@ class CfgMagazines
 			};
 			class rhs_su25_box
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="1-pylonMagazineEmpty";
@@ -9255,7 +8498,6 @@ class CfgMagazines
 					alpha=0.22;
 					class Shape
 					{
-						type="polygon";
 						width=4;
 						points[]=
 						{
@@ -9291,7 +8533,6 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
-							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -9327,15 +8568,8 @@ class CfgMagazines
 			{
 				class Bones
 				{
-					class Center
-					{
-						type="fixed";
-						pos[]={0,0};
 					};
 				};
-				class Draw
-				{
-					color[]={0.15000001,1,0.15000001,1};
 					alpha=0.22;
 					class Default
 					{
@@ -9343,7 +8577,6 @@ class CfgMagazines
 						color[]={1,1,1};
 						class PylonText1
 						{
-							type="text";
 							source="static";
 							scale=1;
 							sourceScale=1;
@@ -9366,7 +8599,6 @@ class CfgMagazines
 						};
 						class Shape
 						{
-							type="line";
 							width=4;
 							points[]=
 							{
@@ -9509,15 +8741,8 @@ class CfgMagazines
 						condition="PylonSelected*(PylonAmmoRelative>=0.001)";
 						color[]={0.15000001,1,0.15000001,1};
 						alpha=0.22;
-						class PylonText1: PylonText1
-						{
-						};
-						class Shape: Shape
-						{
-						};
 						class Polygon
 						{
-							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -9640,15 +8865,6 @@ class CfgMagazines
 					{
 						condition="pylonMagazineEmpty";
 						color[]={1,0,0,1};
-						class PylonText1: PylonText1
-						{
-						};
-						class Shape: Shape
-						{
-						};
-						class Polygon: Polygon
-						{
-						};
 					};
 				};
 			};
@@ -9665,16 +8881,12 @@ class CfgMagazines
 	{
 		displayname="$STR_RHS_R27T_NAME";
 		displaynameshort="IR";
-		descriptionShort="Infrared homing. Locking radius: ±7.5° off-boresight. Range: 1.7km-22km";
 		ammo="rhs_ammo_r27t";
 		pylonWeapon="rhs_weap_r27t_Launcher";
 		class mfdElements
 		{
 			class rhs_rus_ammoname
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -9682,7 +8894,6 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -9707,9 +8918,6 @@ class CfgMagazines
 			};
 			class rhs_rus_ammoname_right
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -9717,7 +8925,6 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -9742,9 +8949,6 @@ class CfgMagazines
 			};
 			class rhs_su25_box
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="1-pylonMagazineEmpty";
@@ -9752,7 +8956,6 @@ class CfgMagazines
 					alpha=0.22;
 					class Shape
 					{
-						type="polygon";
 						width=4;
 						points[]=
 						{
@@ -9788,7 +8991,6 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
-							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -9824,15 +9026,8 @@ class CfgMagazines
 			{
 				class Bones
 				{
-					class Center
-					{
-						type="fixed";
-						pos[]={0,0};
 					};
 				};
-				class Draw
-				{
-					color[]={0.15000001,1,0.15000001,1};
 					alpha=0.22;
 					class Default
 					{
@@ -9840,7 +9035,6 @@ class CfgMagazines
 						color[]={1,1,1};
 						class PylonText1
 						{
-							type="text";
 							source="static";
 							scale=1;
 							sourceScale=1;
@@ -9863,7 +9057,6 @@ class CfgMagazines
 						};
 						class Shape
 						{
-							type="line";
 							width=4;
 							points[]=
 							{
@@ -10006,15 +9199,8 @@ class CfgMagazines
 						condition="PylonSelected*(PylonAmmoRelative>=0.001)";
 						color[]={0.15000001,1,0.15000001,1};
 						alpha=0.22;
-						class PylonText1: PylonText1
-						{
-						};
-						class Shape: Shape
-						{
-						};
 						class Polygon
 						{
-							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -10137,15 +9323,6 @@ class CfgMagazines
 					{
 						condition="pylonMagazineEmpty";
 						color[]={1,0,0,1};
-						class PylonText1: PylonText1
-						{
-						};
-						class Shape: Shape
-						{
-						};
-						class Polygon: Polygon
-						{
-						};
 					};
 				};
 			};
@@ -10161,15 +9338,11 @@ class CfgMagazines
 	class rhs_mag_R27ET: rhs_mag_R27T
 	{
 		displayname="$STR_RHS_R27ET_NAME";
-		descriptionShort="Infrared homing. Locking radius: ±7.5° off-boresight. Range: 1.7km-26km";
 		ammo="rhs_ammo_r27et";
 		class mfdElements
 		{
 			class rhs_rus_ammoname
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -10177,7 +9350,6 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -10202,9 +9374,6 @@ class CfgMagazines
 			};
 			class rhs_rus_ammoname_right
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -10212,7 +9381,6 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -10237,9 +9405,6 @@ class CfgMagazines
 			};
 			class rhs_su25_box
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="1-pylonMagazineEmpty";
@@ -10247,7 +9412,6 @@ class CfgMagazines
 					alpha=0.22;
 					class Shape
 					{
-						type="polygon";
 						width=4;
 						points[]=
 						{
@@ -10283,7 +9447,6 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
-							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -10319,15 +9482,8 @@ class CfgMagazines
 			{
 				class Bones
 				{
-					class Center
-					{
-						type="fixed";
-						pos[]={0,0};
 					};
 				};
-				class Draw
-				{
-					color[]={0.15000001,1,0.15000001,1};
 					alpha=0.22;
 					class Default
 					{
@@ -10335,7 +9491,6 @@ class CfgMagazines
 						color[]={1,1,1};
 						class PylonText1
 						{
-							type="text";
 							source="static";
 							scale=1;
 							sourceScale=1;
@@ -10358,7 +9513,6 @@ class CfgMagazines
 						};
 						class Shape
 						{
-							type="line";
 							width=4;
 							points[]=
 							{
@@ -10501,15 +9655,8 @@ class CfgMagazines
 						condition="PylonSelected*(PylonAmmoRelative>=0.001)";
 						color[]={0.15000001,1,0.15000001,1};
 						alpha=0.22;
-						class PylonText1: PylonText1
-						{
-						};
-						class Shape: Shape
-						{
-						};
 						class Polygon
 						{
-							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -10632,15 +9779,6 @@ class CfgMagazines
 					{
 						condition="pylonMagazineEmpty";
 						color[]={1,0,0,1};
-						class PylonText1: PylonText1
-						{
-						};
-						class Shape: Shape
-						{
-						};
-						class Polygon: Polygon
-						{
-						};
 					};
 				};
 			};
@@ -10662,7 +9800,6 @@ class CfgMagazines
 		ammo="rhs_ammo_r60";
 		displayname="$STR_RHS_R60_NAME";
 		displaynameshort="IR";
-		descriptionShort="Infrared homing. Locking radius: ±12° off-boresight. Range: 0.3km-5km";
 		mass=44;
 		hardpoints[]=
 		{
@@ -10673,9 +9810,6 @@ class CfgMagazines
 		{
 			class rhs_rus_ammoname
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -10683,7 +9817,6 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -10708,9 +9841,6 @@ class CfgMagazines
 			};
 			class rhs_rus_ammoname_right
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -10718,7 +9848,6 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -10743,9 +9872,6 @@ class CfgMagazines
 			};
 			class rhs_su25_box
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="1-pylonMagazineEmpty";
@@ -10753,7 +9879,6 @@ class CfgMagazines
 					alpha=0.22;
 					class Shape
 					{
-						type="polygon";
 						width=4;
 						points[]=
 						{
@@ -10789,7 +9914,6 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
-							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -10825,15 +9949,8 @@ class CfgMagazines
 			{
 				class Bones
 				{
-					class Center
-					{
-						type="fixed";
-						pos[]={0,0};
 					};
 				};
-				class Draw
-				{
-					color[]={0.15000001,1,0.15000001,1};
 					alpha=0.22;
 					class Default
 					{
@@ -10841,7 +9958,6 @@ class CfgMagazines
 						color[]={1,1,1};
 						class PylonText1
 						{
-							type="text";
 							source="static";
 							scale=1;
 							sourceScale=1;
@@ -10864,7 +9980,6 @@ class CfgMagazines
 						};
 						class Shape
 						{
-							type="line";
 							width=4;
 							points[]=
 							{
@@ -11007,15 +10122,8 @@ class CfgMagazines
 						condition="PylonSelected*(PylonAmmoRelative>=0.001)";
 						color[]={0.15000001,1,0.15000001,1};
 						alpha=0.22;
-						class PylonText1: PylonText1
-						{
-						};
-						class Shape: Shape
-						{
-						};
 						class Polygon
 						{
-							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -11138,15 +10246,6 @@ class CfgMagazines
 					{
 						condition="pylonMagazineEmpty";
 						color[]={1,0,0,1};
-						class PylonText1: PylonText1
-						{
-						};
-						class Shape: Shape
-						{
-						};
-						class Polygon: Polygon
-						{
-						};
 					};
 				};
 			};
@@ -11163,14 +10262,10 @@ class CfgMagazines
 	{
 		ammo="rhs_ammo_r60m";
 		displayname="$STR_RHS_R60M_NAME";
-		descriptionShort="Infrared homing. Locking radius: ±17° off-boresight. Range: 0.3km-8km";
 		class mfdElements
 		{
 			class rhs_rus_ammoname
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -11178,7 +10273,6 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -11203,9 +10297,6 @@ class CfgMagazines
 			};
 			class rhs_rus_ammoname_right
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -11213,7 +10304,6 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -11238,9 +10328,6 @@ class CfgMagazines
 			};
 			class rhs_su25_box
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="1-pylonMagazineEmpty";
@@ -11248,7 +10335,6 @@ class CfgMagazines
 					alpha=0.22;
 					class Shape
 					{
-						type="polygon";
 						width=4;
 						points[]=
 						{
@@ -11284,7 +10370,6 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
-							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -11320,15 +10405,8 @@ class CfgMagazines
 			{
 				class Bones
 				{
-					class Center
-					{
-						type="fixed";
-						pos[]={0,0};
 					};
 				};
-				class Draw
-				{
-					color[]={0.15000001,1,0.15000001,1};
 					alpha=0.22;
 					class Default
 					{
@@ -11336,7 +10414,6 @@ class CfgMagazines
 						color[]={1,1,1};
 						class PylonText1
 						{
-							type="text";
 							source="static";
 							scale=1;
 							sourceScale=1;
@@ -11359,7 +10436,6 @@ class CfgMagazines
 						};
 						class Shape
 						{
-							type="line";
 							width=4;
 							points[]=
 							{
@@ -11502,15 +10578,8 @@ class CfgMagazines
 						condition="PylonSelected*(PylonAmmoRelative>=0.001)";
 						color[]={0.15000001,1,0.15000001,1};
 						alpha=0.22;
-						class PylonText1: PylonText1
-						{
-						};
-						class Shape: Shape
-						{
-						};
 						class Polygon
 						{
-							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -11633,15 +10702,6 @@ class CfgMagazines
 					{
 						condition="pylonMagazineEmpty";
 						color[]={1,0,0,1};
-						class PylonText1: PylonText1
-						{
-						};
-						class Shape: Shape
-						{
-						};
-						class Polygon: Polygon
-						{
-						};
 					};
 				};
 			};
@@ -11662,7 +10722,6 @@ class CfgMagazines
 		namesound="missiles";
 		ammo="rhs_ammo_r73";
 		displayname="$STR_RHS_R73_NAME";
-		descriptionShort="Infrared homing. Locking radius: ±25° off-boresight. Range: 0.3km-8km";
 		displaynameshort="IR";
 		mass=105;
 		hardpoints[]=
@@ -11674,9 +10733,6 @@ class CfgMagazines
 		{
 			class rhs_rus_ammoname
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -11684,7 +10740,6 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -11709,9 +10764,6 @@ class CfgMagazines
 			};
 			class rhs_rus_ammoname_right
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -11719,7 +10771,6 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -11744,9 +10795,6 @@ class CfgMagazines
 			};
 			class rhs_su25_box
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="1-pylonMagazineEmpty";
@@ -11754,7 +10802,6 @@ class CfgMagazines
 					alpha=0.22;
 					class Shape
 					{
-						type="polygon";
 						width=4;
 						points[]=
 						{
@@ -11790,7 +10837,6 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
-							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -11826,15 +10872,8 @@ class CfgMagazines
 			{
 				class Bones
 				{
-					class Center
-					{
-						type="fixed";
-						pos[]={0,0};
 					};
 				};
-				class Draw
-				{
-					color[]={0.15000001,1,0.15000001,1};
 					alpha=0.22;
 					class Default
 					{
@@ -11842,7 +10881,6 @@ class CfgMagazines
 						color[]={1,1,1};
 						class PylonText1
 						{
-							type="text";
 							source="static";
 							scale=1;
 							sourceScale=1;
@@ -11865,7 +10903,6 @@ class CfgMagazines
 						};
 						class Shape
 						{
-							type="line";
 							width=4;
 							points[]=
 							{
@@ -12008,15 +11045,8 @@ class CfgMagazines
 						condition="PylonSelected*(PylonAmmoRelative>=0.001)";
 						color[]={0.15000001,1,0.15000001,1};
 						alpha=0.22;
-						class PylonText1: PylonText1
-						{
-						};
-						class Shape: Shape
-						{
-						};
 						class Polygon
 						{
-							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -12139,15 +11169,6 @@ class CfgMagazines
 					{
 						condition="pylonMagazineEmpty";
 						color[]={1,0,0,1};
-						class PylonText1: PylonText1
-						{
-						};
-						class Shape: Shape
-						{
-						};
-						class Polygon: Polygon
-						{
-						};
 					};
 				};
 			};
@@ -12164,14 +11185,10 @@ class CfgMagazines
 	{
 		ammo="rhs_ammo_r73m";
 		displayname="$STR_RHS_R73M_NAME";
-		descriptionShort="Infrared homing. Locking radius: ±60° off-boresight. Range: 0.15km-8km";
 		class mfdElements
 		{
 			class rhs_rus_ammoname
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -12179,7 +11196,6 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -12204,9 +11220,6 @@ class CfgMagazines
 			};
 			class rhs_rus_ammoname_right
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -12214,7 +11227,6 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -12239,9 +11251,6 @@ class CfgMagazines
 			};
 			class rhs_su25_box
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="1-pylonMagazineEmpty";
@@ -12249,7 +11258,6 @@ class CfgMagazines
 					alpha=0.22;
 					class Shape
 					{
-						type="polygon";
 						width=4;
 						points[]=
 						{
@@ -12285,7 +11293,6 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
-							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -12321,15 +11328,8 @@ class CfgMagazines
 			{
 				class Bones
 				{
-					class Center
-					{
-						type="fixed";
-						pos[]={0,0};
 					};
 				};
-				class Draw
-				{
-					color[]={0.15000001,1,0.15000001,1};
 					alpha=0.22;
 					class Default
 					{
@@ -12337,7 +11337,6 @@ class CfgMagazines
 						color[]={1,1,1};
 						class PylonText1
 						{
-							type="text";
 							source="static";
 							scale=1;
 							sourceScale=1;
@@ -12360,7 +11359,6 @@ class CfgMagazines
 						};
 						class Shape
 						{
-							type="line";
 							width=4;
 							points[]=
 							{
@@ -12503,15 +11501,8 @@ class CfgMagazines
 						condition="PylonSelected*(PylonAmmoRelative>=0.001)";
 						color[]={0.15000001,1,0.15000001,1};
 						alpha=0.22;
-						class PylonText1: PylonText1
-						{
-						};
-						class Shape: Shape
-						{
-						};
 						class Polygon
 						{
-							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -12634,15 +11625,6 @@ class CfgMagazines
 					{
 						condition="pylonMagazineEmpty";
 						color[]={1,0,0,1};
-						class PylonText1: PylonText1
-						{
-						};
-						class Shape: Shape
-						{
-						};
-						class Polygon: Polygon
-						{
-						};
 					};
 				};
 			};
@@ -12660,14 +11642,10 @@ class CfgMagazines
 	{
 		ammo="rhs_ammo_r74";
 		displayname="$STR_RHS_R74_NAME";
-		descriptionShort="Infrared homing missile with improved CM resistance. Locking radius: ±60° off-boresight. Range: 0.15km-8km";
 		class mfdElements
 		{
 			class rhs_rus_ammoname
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -12675,7 +11653,6 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -12700,9 +11677,6 @@ class CfgMagazines
 			};
 			class rhs_rus_ammoname_right
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -12710,7 +11684,6 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -12735,9 +11708,6 @@ class CfgMagazines
 			};
 			class rhs_su25_box
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="1-pylonMagazineEmpty";
@@ -12745,7 +11715,6 @@ class CfgMagazines
 					alpha=0.22;
 					class Shape
 					{
-						type="polygon";
 						width=4;
 						points[]=
 						{
@@ -12781,7 +11750,6 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
-							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -12817,15 +11785,8 @@ class CfgMagazines
 			{
 				class Bones
 				{
-					class Center
-					{
-						type="fixed";
-						pos[]={0,0};
 					};
 				};
-				class Draw
-				{
-					color[]={0.15000001,1,0.15000001,1};
 					alpha=0.22;
 					class Default
 					{
@@ -12833,7 +11794,6 @@ class CfgMagazines
 						color[]={1,1,1};
 						class PylonText1
 						{
-							type="text";
 							source="static";
 							scale=1;
 							sourceScale=1;
@@ -12856,7 +11816,6 @@ class CfgMagazines
 						};
 						class Shape
 						{
-							type="line";
 							width=4;
 							points[]=
 							{
@@ -12999,15 +11958,8 @@ class CfgMagazines
 						condition="PylonSelected*(PylonAmmoRelative>=0.001)";
 						color[]={0.15000001,1,0.15000001,1};
 						alpha=0.22;
-						class PylonText1: PylonText1
-						{
-						};
-						class Shape: Shape
-						{
-						};
 						class Polygon
 						{
-							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -13130,15 +12082,6 @@ class CfgMagazines
 					{
 						condition="pylonMagazineEmpty";
 						color[]={1,0,0,1};
-						class PylonText1: PylonText1
-						{
-						};
-						class Shape: Shape
-						{
-						};
-						class Polygon: Polygon
-						{
-						};
 					};
 				};
 			};
@@ -13162,7 +12105,6 @@ class CfgMagazines
 		ammo="rhs_ammo_r74m2";
 		displayname="$STR_RHS_R74M2_NAME";
 		displaynameshort="IR";
-		descriptionShort="Infrared homing. Locking radius: ±75° off-boresight. Range: 0.15km-8km";
 		initspeed=0;
 		hardpoints[]=
 		{
@@ -13187,7 +12129,6 @@ class CfgMagazines
 		ammo="rhs_ammo_r77";
 		displayname="$STR_RHS_R77_NAME";
 		displaynameshort="ARH";
-		descriptionShort="Active radar homing. Range: 2km-25km";
 		hardpoints[]=
 		{
 			"RHS_HP_R77"
@@ -13202,9 +12143,6 @@ class CfgMagazines
 		{
 			class rhs_rus_ammoname
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -13212,7 +12150,6 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -13237,9 +12174,6 @@ class CfgMagazines
 			};
 			class rhs_rus_ammoname_right
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -13247,7 +12181,6 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -13272,9 +12205,6 @@ class CfgMagazines
 			};
 			class rhs_su25_box
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="1-pylonMagazineEmpty";
@@ -13282,7 +12212,6 @@ class CfgMagazines
 					alpha=0.22;
 					class Shape
 					{
-						type="polygon";
 						width=4;
 						points[]=
 						{
@@ -13318,7 +12247,6 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
-							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -13354,15 +12282,8 @@ class CfgMagazines
 			{
 				class Bones
 				{
-					class Center
-					{
-						type="fixed";
-						pos[]={0,0};
 					};
 				};
-				class Draw
-				{
-					color[]={0.15000001,1,0.15000001,1};
 					alpha=0.22;
 					class Default
 					{
@@ -13370,7 +12291,6 @@ class CfgMagazines
 						color[]={1,1,1};
 						class PylonText1
 						{
-							type="text";
 							source="static";
 							scale=1;
 							sourceScale=1;
@@ -13393,7 +12313,6 @@ class CfgMagazines
 						};
 						class Shape
 						{
-							type="line";
 							width=4;
 							points[]=
 							{
@@ -13536,15 +12455,8 @@ class CfgMagazines
 						condition="PylonSelected*(PylonAmmoRelative>=0.001)";
 						color[]={0.15000001,1,0.15000001,1};
 						alpha=0.22;
-						class PylonText1: PylonText1
-						{
-						};
-						class Shape: Shape
-						{
-						};
 						class Polygon
 						{
-							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -13667,15 +12579,6 @@ class CfgMagazines
 					{
 						condition="pylonMagazineEmpty";
 						color[]={1,0,0,1};
-						class PylonText1: PylonText1
-						{
-						};
-						class Shape: Shape
-						{
-						};
-						class Polygon: Polygon
-						{
-						};
 					};
 				};
 			};
@@ -13701,7 +12604,6 @@ class CfgMagazines
 		ammo="rhs_ammo_r77m";
 		displayname="$STR_RHS_R77M_NAME";
 		displaynameshort="ARH";
-		descriptionShort="Active radar homing missile with improved CM resistance. Range: 2km-25km";
 		hardpoints[]=
 		{
 			"RHS_HP_R77M"
@@ -13716,9 +12618,6 @@ class CfgMagazines
 		{
 			class rhs_rus_ammoname
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -13726,7 +12625,6 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -13751,9 +12649,6 @@ class CfgMagazines
 			};
 			class rhs_rus_ammoname_right
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -13761,7 +12656,6 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -13786,9 +12680,6 @@ class CfgMagazines
 			};
 			class rhs_su25_box
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="1-pylonMagazineEmpty";
@@ -13796,7 +12687,6 @@ class CfgMagazines
 					alpha=0.22;
 					class Shape
 					{
-						type="polygon";
 						width=4;
 						points[]=
 						{
@@ -13832,7 +12722,6 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
-							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -13868,15 +12757,8 @@ class CfgMagazines
 			{
 				class Bones
 				{
-					class Center
-					{
-						type="fixed";
-						pos[]={0,0};
 					};
 				};
-				class Draw
-				{
-					color[]={0.15000001,1,0.15000001,1};
 					alpha=0.22;
 					class Default
 					{
@@ -13884,7 +12766,6 @@ class CfgMagazines
 						color[]={1,1,1};
 						class PylonText1
 						{
-							type="text";
 							source="static";
 							scale=1;
 							sourceScale=1;
@@ -13907,7 +12788,6 @@ class CfgMagazines
 						};
 						class Shape
 						{
-							type="line";
 							width=4;
 							points[]=
 							{
@@ -14050,15 +12930,8 @@ class CfgMagazines
 						condition="PylonSelected*(PylonAmmoRelative>=0.001)";
 						color[]={0.15000001,1,0.15000001,1};
 						alpha=0.22;
-						class PylonText1: PylonText1
-						{
-						};
-						class Shape: Shape
-						{
-						};
 						class Polygon
 						{
-							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -14181,15 +13054,6 @@ class CfgMagazines
 					{
 						condition="pylonMagazineEmpty";
 						color[]={1,0,0,1};
-						class PylonText1: PylonText1
-						{
-						};
-						class Shape: Shape
-						{
-						};
-						class Polygon: Polygon
-						{
-						};
 					};
 				};
 			};
@@ -14213,7 +13077,6 @@ class CfgMagazines
 	{
 		ammo="rhs_ammo_kh25";
 		displayname="$STR_RHS_KH25_NAME";
-		descriptionShort="Semi-active laser seeker. Range: 2km-10km";
 		displaynameshort="LG";
 		namesound="missiles";
 		count=1;
@@ -14228,9 +13091,6 @@ class CfgMagazines
 		{
 			class rhs_rus_ammoname
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -14238,7 +13098,6 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -14263,9 +13122,6 @@ class CfgMagazines
 			};
 			class rhs_rus_ammoname_right
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -14273,7 +13129,6 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -14298,9 +13153,6 @@ class CfgMagazines
 			};
 			class rhs_su25_box
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="1-pylonMagazineEmpty";
@@ -14308,7 +13160,6 @@ class CfgMagazines
 					alpha=0.22;
 					class Shape
 					{
-						type="polygon";
 						width=4;
 						points[]=
 						{
@@ -14344,7 +13195,6 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
-							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -14380,15 +13230,8 @@ class CfgMagazines
 			{
 				class Bones
 				{
-					class Center
-					{
-						type="fixed";
-						pos[]={0,0};
 					};
 				};
-				class Draw
-				{
-					color[]={0.15000001,1,0.15000001,1};
 					alpha=0.22;
 					class Default
 					{
@@ -14396,7 +13239,6 @@ class CfgMagazines
 						color[]={1,1,1};
 						class PylonText1
 						{
-							type="text";
 							source="static";
 							scale=1;
 							sourceScale=1;
@@ -14419,7 +13261,6 @@ class CfgMagazines
 						};
 						class Shape
 						{
-							type="line";
 							width=4;
 							points[]=
 							{
@@ -14562,15 +13403,8 @@ class CfgMagazines
 						condition="PylonSelected*(PylonAmmoRelative>=0.001)";
 						color[]={0.15000001,1,0.15000001,1};
 						alpha=0.22;
-						class PylonText1: PylonText1
-						{
-						};
-						class Shape: Shape
-						{
-						};
 						class Polygon
 						{
-							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -14693,15 +13527,6 @@ class CfgMagazines
 					{
 						condition="pylonMagazineEmpty";
 						color[]={1,0,0,1};
-						class PylonText1: PylonText1
-						{
-						};
-						class Shape: Shape
-						{
-						};
-						class Polygon: Polygon
-						{
-						};
 					};
 				};
 			};
@@ -14711,7 +13536,6 @@ class CfgMagazines
 	{
 		ammo="rhs_ammo_kh25ML";
 		displayname="$STR_RHS_KH25ML_NAME";
-		descriptionShort="Semi-active laser seeker. Range: 2km-10km";
 		mass=308;
 		pylonWeapon="rhs_weap_kh25ml_Launcher";
 	};
@@ -14720,7 +13544,6 @@ class CfgMagazines
 		ammo="rhs_ammo_kh25MA";
 		displayname="$STR_RHS_KH25MA_NAME";
 		displaynameshort="AGM";
-		descriptionShort="Active radar homing. Requires radar. Range: 1.5km-10km";
 		mass=308;
 		pylonWeapon="rhs_weap_kh25ma_Launcher";
 	};
@@ -14729,7 +13552,6 @@ class CfgMagazines
 		ammo="rhs_ammo_kh25MT";
 		displayname="$STR_RHS_KH25MT_NAME";
 		displaynameshort="TV";
-		descriptionShort="TV-guided version which is fitted with automatic optical homing to a distinguishable object indicated by the pilot in the cockpit. Range: 1.5km-8km";
 		pylonWeapon="rhs_weap_kh25mt_Launcher";
 	};
 	class rhs_mag_kh25MTP: rhs_mag_kh25
@@ -14737,7 +13559,6 @@ class CfgMagazines
 		ammo="rhs_ammo_kh25MTP";
 		displayname="$STR_RHS_KH25MTP_NAME";
 		displaynameshort="IR";
-		descriptionShort="IR-guided version which is fitted with automatic optical homing to a distinguishable object indicated by the pilot in the cockpit. Range: 1.5km-9km";
 		pylonWeapon="rhs_weap_kh25mtp_Launcher";
 	};
 	class rhs_mag_kh25MP: rhs_mag_kh25
@@ -14745,7 +13566,6 @@ class CfgMagazines
 		ammo="rhs_ammo_kh25MP";
 		displayname="$STR_RHS_KH25MP_NAME";
 		displaynameshort="Anti-Radar";
-		descriptionShort="Anti radiation missile. Range: 1.5km-10km";
 		mass=323;
 		pylonWeapon="rhs_weap_kh25mp_Launcher";
 	};
@@ -14769,7 +13589,6 @@ class CfgMagazines
 		ammo="rhs_ammo_kh25MT";
 		displayname="$STR_RHS_KH25MT_NAME";
 		displaynameshort="TV";
-		descriptionShort="TV-guided version which is fitted with automatic optical homing to a distinguishable object indicated by the pilot in the cockpit. Range: 1.5km-8km";
 		pylonWeapon="rhs_weap_kh25mt_Launcher";
 	};
 	class rhs_mag_kh25MTP_apu68_mig29: rhs_mag_kh25_apu68_mig29
@@ -14777,7 +13596,6 @@ class CfgMagazines
 		ammo="rhs_ammo_kh25MTP";
 		displayname="$STR_RHS_KH25MTP_NAME";
 		displaynameshort="IR";
-		descriptionShort="IR-guided version which is fitted with automatic optical homing to a distinguishable object indicated by the pilot in the cockpit. Range: 1.5km-9km";
 		pylonWeapon="rhs_weap_kh25mtp_Launcher";
 	};
 	class rhs_mag_kh25MP_apu68_mig29: rhs_mag_kh25_apu68_mig29
@@ -14785,7 +13603,6 @@ class CfgMagazines
 		ammo="rhs_ammo_kh25MP";
 		displayname="$STR_RHS_KH25MP_NAME";
 		displaynameshort="Anti-Radar";
-		descriptionShort="Anti radiation missile. Range: 1.5km-10km";
 		mass=323;
 		pylonWeapon="rhs_weap_kh25mp_Launcher";
 	};
@@ -14794,7 +13611,6 @@ class CfgMagazines
 		ammo="rhs_ammo_kh29l";
 		displayname="$STR_RHS_KH29L_NAME";
 		displaynameshort="LG";
-		descriptionShort="Semi-active laser seeker. Range: 1.5km-10km";
 		namesound="missiles";
 		count=1;
 		initspeed=0;
@@ -14808,9 +13624,6 @@ class CfgMagazines
 		{
 			class rhs_rus_ammoname
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -14818,7 +13631,6 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -14843,9 +13655,6 @@ class CfgMagazines
 			};
 			class rhs_rus_ammoname_right
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -14853,7 +13662,6 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -14878,9 +13686,6 @@ class CfgMagazines
 			};
 			class rhs_su25_box
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="1-pylonMagazineEmpty";
@@ -14888,7 +13693,6 @@ class CfgMagazines
 					alpha=0.22;
 					class Shape
 					{
-						type="polygon";
 						width=4;
 						points[]=
 						{
@@ -14924,7 +13728,6 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
-							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -14960,15 +13763,8 @@ class CfgMagazines
 			{
 				class Bones
 				{
-					class Center
-					{
-						type="fixed";
-						pos[]={0,0};
 					};
 				};
-				class Draw
-				{
-					color[]={0.15000001,1,0.15000001,1};
 					alpha=0.22;
 					class Default
 					{
@@ -14976,7 +13772,6 @@ class CfgMagazines
 						color[]={1,1,1};
 						class PylonText1
 						{
-							type="text";
 							source="static";
 							scale=1;
 							sourceScale=1;
@@ -14999,7 +13794,6 @@ class CfgMagazines
 						};
 						class Shape
 						{
-							type="line";
 							width=4;
 							points[]=
 							{
@@ -15142,15 +13936,8 @@ class CfgMagazines
 						condition="PylonSelected*(PylonAmmoRelative>=0.001)";
 						color[]={0.15000001,1,0.15000001,1};
 						alpha=0.22;
-						class PylonText1: PylonText1
-						{
-						};
-						class Shape: Shape
-						{
-						};
 						class Polygon
 						{
-							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -15273,15 +14060,6 @@ class CfgMagazines
 					{
 						condition="pylonMagazineEmpty";
 						color[]={1,0,0,1};
-						class PylonText1: PylonText1
-						{
-						};
-						class Shape: Shape
-						{
-						};
-						class Polygon: Polygon
-						{
-						};
 					};
 				};
 			};
@@ -15292,7 +14070,6 @@ class CfgMagazines
 		ammo="rhs_ammo_kh29ML";
 		displayname="$STR_RHS_KH29ML_NAME";
 		displaynameshort="LG";
-		descriptionShort="Semi-active laser seeker. Range: 1.5km-10km";
 		pylonWeapon="rhs_weap_kh29ml_Launcher";
 	};
 	class rhs_mag_kh29T: rhs_mag_kh29l
@@ -15300,16 +14077,12 @@ class CfgMagazines
 		ammo="rhs_ammo_kh29T";
 		displayname="$STR_RHS_KH29T_NAME";
 		displaynameshort="TV";
-		descriptionShort="TV-guided version which is fitted with automatic optical homing to a distinguishable object indicated by the pilot in the cockpit. Range: 1.5km-9km";
 		mass=680;
 		pylonWeapon="rhs_weap_kh29t_Launcher";
 		class mfdElements
 		{
 			class rhs_rus_ammoname
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -15317,7 +14090,6 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -15342,9 +14114,6 @@ class CfgMagazines
 			};
 			class rhs_rus_ammoname_right
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -15352,7 +14121,6 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -15377,9 +14145,6 @@ class CfgMagazines
 			};
 			class rhs_su25_box
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="1-pylonMagazineEmpty";
@@ -15387,7 +14152,6 @@ class CfgMagazines
 					alpha=0.22;
 					class Shape
 					{
-						type="polygon";
 						width=4;
 						points[]=
 						{
@@ -15423,7 +14187,6 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
-							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -15459,15 +14222,8 @@ class CfgMagazines
 			{
 				class Bones
 				{
-					class Center
-					{
-						type="fixed";
-						pos[]={0,0};
 					};
 				};
-				class Draw
-				{
-					color[]={0.15000001,1,0.15000001,1};
 					alpha=0.22;
 					class Default
 					{
@@ -15475,7 +14231,6 @@ class CfgMagazines
 						color[]={1,1,1};
 						class PylonText1
 						{
-							type="text";
 							source="static";
 							scale=1;
 							sourceScale=1;
@@ -15498,7 +14253,6 @@ class CfgMagazines
 						};
 						class Shape
 						{
-							type="line";
 							width=4;
 							points[]=
 							{
@@ -15641,15 +14395,8 @@ class CfgMagazines
 						condition="PylonSelected*(PylonAmmoRelative>=0.001)";
 						color[]={0.15000001,1,0.15000001,1};
 						alpha=0.22;
-						class PylonText1: PylonText1
-						{
-						};
-						class Shape: Shape
-						{
-						};
 						class Polygon
 						{
-							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -15772,15 +14519,6 @@ class CfgMagazines
 					{
 						condition="pylonMagazineEmpty";
 						color[]={1,0,0,1};
-						class PylonText1: PylonText1
-						{
-						};
-						class Shape: Shape
-						{
-						};
-						class Polygon: Polygon
-						{
-						};
 					};
 				};
 			};
@@ -15791,15 +14529,11 @@ class CfgMagazines
 		ammo="rhs_ammo_kh29D";
 		displayname="$STR_RHS_KH29D_NAME";
 		displaynameshort="IR";
-		descriptionShort="IR-guided version which is fitted with automatic optical homing to a distinguishable object indicated by the pilot in the cockpit. Range: 1.5km-9km";
 		pylonWeapon="rhs_weap_kh29d_Launcher";
 		class mfdElements
 		{
 			class rhs_rus_ammoname
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -15807,7 +14541,6 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -15832,9 +14565,6 @@ class CfgMagazines
 			};
 			class rhs_rus_ammoname_right
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -15842,7 +14572,6 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -15867,9 +14596,6 @@ class CfgMagazines
 			};
 			class rhs_su25_box
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="1-pylonMagazineEmpty";
@@ -15877,7 +14603,6 @@ class CfgMagazines
 					alpha=0.22;
 					class Shape
 					{
-						type="polygon";
 						width=4;
 						points[]=
 						{
@@ -15913,7 +14638,6 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
-							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -15949,15 +14673,8 @@ class CfgMagazines
 			{
 				class Bones
 				{
-					class Center
-					{
-						type="fixed";
-						pos[]={0,0};
 					};
 				};
-				class Draw
-				{
-					color[]={0.15000001,1,0.15000001,1};
 					alpha=0.22;
 					class Default
 					{
@@ -15965,7 +14682,6 @@ class CfgMagazines
 						color[]={1,1,1};
 						class PylonText1
 						{
-							type="text";
 							source="static";
 							scale=1;
 							sourceScale=1;
@@ -15988,7 +14704,6 @@ class CfgMagazines
 						};
 						class Shape
 						{
-							type="line";
 							width=4;
 							points[]=
 							{
@@ -16131,15 +14846,8 @@ class CfgMagazines
 						condition="PylonSelected*(PylonAmmoRelative>=0.001)";
 						color[]={0.15000001,1,0.15000001,1};
 						alpha=0.22;
-						class PylonText1: PylonText1
-						{
-						};
-						class Shape: Shape
-						{
-						};
 						class Polygon
 						{
-							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -16262,15 +14970,6 @@ class CfgMagazines
 					{
 						condition="pylonMagazineEmpty";
 						color[]={1,0,0,1};
-						class PylonText1: PylonText1
-						{
-						};
-						class Shape: Shape
-						{
-						};
-						class Polygon: Polygon
-						{
-						};
 					};
 				};
 			};
@@ -16281,15 +14980,11 @@ class CfgMagazines
 		ammo="rhs_ammo_kh29MP";
 		displayname="$STR_RHS_KH29MP_NAME";
 		displaynameshort="AGM";
-		descriptionShort="Active radar homing. Requires radar. Range: 1.5km-9km";
 		pylonWeapon="rhs_weap_kh29mp_Launcher";
 		class mfdElements
 		{
 			class rhs_rus_ammoname
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -16297,7 +14992,6 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -16322,9 +15016,6 @@ class CfgMagazines
 			};
 			class rhs_rus_ammoname_right
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -16332,7 +15023,6 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -16357,9 +15047,6 @@ class CfgMagazines
 			};
 			class rhs_su25_box
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="1-pylonMagazineEmpty";
@@ -16367,7 +15054,6 @@ class CfgMagazines
 					alpha=0.22;
 					class Shape
 					{
-						type="polygon";
 						width=4;
 						points[]=
 						{
@@ -16403,7 +15089,6 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
-							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -16439,15 +15124,8 @@ class CfgMagazines
 			{
 				class Bones
 				{
-					class Center
-					{
-						type="fixed";
-						pos[]={0,0};
 					};
 				};
-				class Draw
-				{
-					color[]={0.15000001,1,0.15000001,1};
 					alpha=0.22;
 					class Default
 					{
@@ -16455,7 +15133,6 @@ class CfgMagazines
 						color[]={1,1,1};
 						class PylonText1
 						{
-							type="text";
 							source="static";
 							scale=1;
 							sourceScale=1;
@@ -16478,7 +15155,6 @@ class CfgMagazines
 						};
 						class Shape
 						{
-							type="line";
 							width=4;
 							points[]=
 							{
@@ -16621,15 +15297,8 @@ class CfgMagazines
 						condition="PylonSelected*(PylonAmmoRelative>=0.001)";
 						color[]={0.15000001,1,0.15000001,1};
 						alpha=0.22;
-						class PylonText1: PylonText1
-						{
-						};
-						class Shape: Shape
-						{
-						};
 						class Polygon
 						{
-							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -16752,15 +15421,6 @@ class CfgMagazines
 					{
 						condition="pylonMagazineEmpty";
 						color[]={1,0,0,1};
-						class PylonText1: PylonText1
-						{
-						};
-						class Shape: Shape
-						{
-						};
-						class Polygon: Polygon
-						{
-						};
 					};
 				};
 			};
@@ -16779,7 +15439,6 @@ class CfgMagazines
 		ammo="rhs_ammo_kh29ML";
 		displayname="$STR_RHS_KH29ML_NAME";
 		displaynameshort="LG";
-		descriptionShort="Semi-active laser seeker. Range: 1.5km-10km";
 		pylonWeapon="rhs_weap_kh29ml_mig29_Launcher";
 	};
 	class rhs_mag_kh29T_aku58_mig29: rhs_mag_kh29l_aku58_mig29
@@ -16787,16 +15446,12 @@ class CfgMagazines
 		ammo="rhs_ammo_kh29T";
 		displayname="$STR_RHS_KH29T_NAME";
 		displaynameshort="TV";
-		descriptionShort="TV-guided version which is fitted with automatic optical homing to a distinguishable object indicated by the pilot in the cockpit. Range: 1.5km-9km";
 		mass=680;
 		pylonWeapon="rhs_weap_kh29t_Launcher";
 		class mfdElements
 		{
 			class rhs_rus_ammoname
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -16804,7 +15459,6 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -16829,9 +15483,6 @@ class CfgMagazines
 			};
 			class rhs_rus_ammoname_right
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -16839,7 +15490,6 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -16864,9 +15514,6 @@ class CfgMagazines
 			};
 			class rhs_su25_box
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="1-pylonMagazineEmpty";
@@ -16874,7 +15521,6 @@ class CfgMagazines
 					alpha=0.22;
 					class Shape
 					{
-						type="polygon";
 						width=4;
 						points[]=
 						{
@@ -16910,7 +15556,6 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
-							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -16946,15 +15591,8 @@ class CfgMagazines
 			{
 				class Bones
 				{
-					class Center
-					{
-						type="fixed";
-						pos[]={0,0};
 					};
 				};
-				class Draw
-				{
-					color[]={0.15000001,1,0.15000001,1};
 					alpha=0.22;
 					class Default
 					{
@@ -16962,7 +15600,6 @@ class CfgMagazines
 						color[]={1,1,1};
 						class PylonText1
 						{
-							type="text";
 							source="static";
 							scale=1;
 							sourceScale=1;
@@ -16985,7 +15622,6 @@ class CfgMagazines
 						};
 						class Shape
 						{
-							type="line";
 							width=4;
 							points[]=
 							{
@@ -17128,15 +15764,8 @@ class CfgMagazines
 						condition="PylonSelected*(PylonAmmoRelative>=0.001)";
 						color[]={0.15000001,1,0.15000001,1};
 						alpha=0.22;
-						class PylonText1: PylonText1
-						{
-						};
-						class Shape: Shape
-						{
-						};
 						class Polygon
 						{
-							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -17259,15 +15888,6 @@ class CfgMagazines
 					{
 						condition="pylonMagazineEmpty";
 						color[]={1,0,0,1};
-						class PylonText1: PylonText1
-						{
-						};
-						class Shape: Shape
-						{
-						};
-						class Polygon: Polygon
-						{
-						};
 					};
 				};
 			};
@@ -17283,9 +15903,6 @@ class CfgMagazines
 		{
 			class rhs_rus_ammoname
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -17293,7 +15910,6 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -17318,9 +15934,6 @@ class CfgMagazines
 			};
 			class rhs_rus_ammoname_right
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -17328,7 +15941,6 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -17353,9 +15965,6 @@ class CfgMagazines
 			};
 			class rhs_su25_box
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="1-pylonMagazineEmpty";
@@ -17363,7 +15972,6 @@ class CfgMagazines
 					alpha=0.22;
 					class Shape
 					{
-						type="polygon";
 						width=4;
 						points[]=
 						{
@@ -17399,7 +16007,6 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
-							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -17435,15 +16042,8 @@ class CfgMagazines
 			{
 				class Bones
 				{
-					class Center
-					{
-						type="fixed";
-						pos[]={0,0};
 					};
 				};
-				class Draw
-				{
-					color[]={0.15000001,1,0.15000001,1};
 					alpha=0.22;
 					class Default
 					{
@@ -17451,7 +16051,6 @@ class CfgMagazines
 						color[]={1,1,1};
 						class PylonText1
 						{
-							type="text";
 							source="static";
 							scale=1;
 							sourceScale=1;
@@ -17474,7 +16073,6 @@ class CfgMagazines
 						};
 						class Shape
 						{
-							type="line";
 							width=4;
 							points[]=
 							{
@@ -17617,15 +16215,8 @@ class CfgMagazines
 						condition="PylonSelected*(PylonAmmoRelative>=0.001)";
 						color[]={0.15000001,1,0.15000001,1};
 						alpha=0.22;
-						class PylonText1: PylonText1
-						{
-						};
-						class Shape: Shape
-						{
-						};
 						class Polygon
 						{
-							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -17748,15 +16339,6 @@ class CfgMagazines
 					{
 						condition="pylonMagazineEmpty";
 						color[]={1,0,0,1};
-						class PylonText1: PylonText1
-						{
-						};
-						class Shape: Shape
-						{
-						};
-						class Polygon: Polygon
-						{
-						};
 					};
 				};
 			};
@@ -17767,7 +16349,6 @@ class CfgMagazines
 		ammo="rhs_ammo_Kh38MLE_ext";
 		displayname="$STR_RHS_KH38MLE_NAME";
 		displaynameshort="LG";
-		descriptionShort="Laser guided. Range: 1km-8km.";
 		namesound="missiles";
 		count=1;
 		initspeed=0;
@@ -17781,9 +16362,6 @@ class CfgMagazines
 		{
 			class rhs_rus_ammoname
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -17791,7 +16369,6 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -17816,9 +16393,6 @@ class CfgMagazines
 			};
 			class rhs_rus_ammoname_right
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -17826,7 +16400,6 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -17851,9 +16424,6 @@ class CfgMagazines
 			};
 			class rhs_su25_box
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="1-pylonMagazineEmpty";
@@ -17861,7 +16431,6 @@ class CfgMagazines
 					alpha=0.22;
 					class Shape
 					{
-						type="polygon";
 						width=4;
 						points[]=
 						{
@@ -17897,7 +16466,6 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
-							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -17933,15 +16501,8 @@ class CfgMagazines
 			{
 				class Bones
 				{
-					class Center
-					{
-						type="fixed";
-						pos[]={0,0};
 					};
 				};
-				class Draw
-				{
-					color[]={0.15000001,1,0.15000001,1};
 					alpha=0.22;
 					class Default
 					{
@@ -17949,7 +16510,6 @@ class CfgMagazines
 						color[]={1,1,1};
 						class PylonText1
 						{
-							type="text";
 							source="static";
 							scale=1;
 							sourceScale=1;
@@ -17972,7 +16532,6 @@ class CfgMagazines
 						};
 						class Shape
 						{
-							type="line";
 							width=4;
 							points[]=
 							{
@@ -18115,15 +16674,8 @@ class CfgMagazines
 						condition="PylonSelected*(PylonAmmoRelative>=0.001)";
 						color[]={0.15000001,1,0.15000001,1};
 						alpha=0.22;
-						class PylonText1: PylonText1
-						{
-						};
-						class Shape: Shape
-						{
-						};
 						class Polygon
 						{
-							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -18246,15 +16798,6 @@ class CfgMagazines
 					{
 						condition="pylonMagazineEmpty";
 						color[]={1,0,0,1};
-						class PylonText1: PylonText1
-						{
-						};
-						class Shape: Shape
-						{
-						};
-						class Polygon: Polygon
-						{
-						};
 					};
 				};
 			};
@@ -18277,7 +16820,6 @@ class CfgMagazines
 		ammo="rhs_ammo_Kh38mae_ext";
 		displayname="$STR_RHS_KH38MAE_NAME";
 		displaynameshort="ARH";
-		descriptionShort="Active radar homing. Range: 1km-10km.";
 		pylonWeapon="rhs_weap_kh38mae_Launcher";
 	};
 	class rhs_mag_Kh38mae_int: rhs_mag_Kh38mae
@@ -18297,7 +16839,6 @@ class CfgMagazines
 		ammo="rhs_ammo_Kh38MTE_ext";
 		displayname="$STR_RHS_KH38MTE_NAME";
 		displaynameshort="IR";
-		descriptionShort="IR guided. Range: 1km-10km.";
 		pylonWeapon="rhs_weap_kh38mte_Launcher";
 	};
 	class rhs_mag_Kh38mte_int: rhs_mag_Kh38mte
@@ -18318,7 +16859,6 @@ class CfgMagazines
 		count=1;
 		displayname="$STR_RHS_MAG_KH55SM_CAMO";
 		displaynameshort="Kh-55SM";
-		descriptionShort="Tactical nuke";
 		initspeed=0;
 		namesound="missiles";
 		mass=1700;
@@ -18348,7 +16888,6 @@ class CfgMagazines
 	{
 		displayname="Kh-55Sh HE (camo)";
 		displaynameshort="$STR_RHS_MAG_KH55SH_CAMO";
-		descriptionShort="High explosive";
 		ammo="rhs_ammo_kh55sh";
 	};
 	class rhs_mag_kh55sh_6: rhs_mag_kh55sh
@@ -18397,7 +16936,6 @@ class CfgMagazines
 		namesound="";
 		ammo="rhs_ammo_fab100";
 		displayname="$STR_RHS_MAG_FAB100";
-		displayNameShort="HE";
 		hardpoints[]=
 		{
 			"RHS_HP_FAB100"
@@ -18409,9 +16947,6 @@ class CfgMagazines
 		{
 			class rhs_rus_ammoname
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -18419,7 +16954,6 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -18444,9 +16978,6 @@ class CfgMagazines
 			};
 			class rhs_rus_ammoname_right
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -18454,7 +16985,6 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -18479,9 +17009,6 @@ class CfgMagazines
 			};
 			class rhs_su25_box
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="1-pylonMagazineEmpty";
@@ -18489,7 +17016,6 @@ class CfgMagazines
 					alpha=0.22;
 					class Shape
 					{
-						type="polygon";
 						width=4;
 						points[]=
 						{
@@ -18525,7 +17051,6 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
-							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -18561,15 +17086,8 @@ class CfgMagazines
 			{
 				class Bones
 				{
-					class Center
-					{
-						type="fixed";
-						pos[]={0,0};
 					};
 				};
-				class Draw
-				{
-					color[]={0.15000001,1,0.15000001,1};
 					alpha=0.22;
 					class Default
 					{
@@ -18577,7 +17095,6 @@ class CfgMagazines
 						color[]={1,1,1};
 						class PylonText1
 						{
-							type="text";
 							source="static";
 							scale=1;
 							sourceScale=1;
@@ -18600,7 +17117,6 @@ class CfgMagazines
 						};
 						class Shape
 						{
-							type="line";
 							width=4;
 							points[]=
 							{
@@ -18743,15 +17259,8 @@ class CfgMagazines
 						condition="PylonSelected*(PylonAmmoRelative>=0.001)";
 						color[]={0.15000001,1,0.15000001,1};
 						alpha=0.22;
-						class PylonText1: PylonText1
-						{
-						};
-						class Shape: Shape
-						{
-						};
 						class Polygon
 						{
-							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -18874,15 +17383,6 @@ class CfgMagazines
 					{
 						condition="pylonMagazineEmpty";
 						color[]={1,0,0,1};
-						class PylonText1: PylonText1
-						{
-						};
-						class Shape: Shape
-						{
-						};
-						class Polygon: Polygon
-						{
-						};
 					};
 				};
 			};
@@ -18933,7 +17433,6 @@ class CfgMagazines
 		ammo="rhs_ammo_fab250";
 		count=1;
 		displayname="$STR_RHS_FAB250_NAME";
-		displayNameShort="HE";
 		initspeed=0;
 		maxleadspeed=5;
 		namesound="";
@@ -18948,9 +17447,6 @@ class CfgMagazines
 		{
 			class rhs_rus_ammoname
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -18958,7 +17454,6 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -18983,9 +17478,6 @@ class CfgMagazines
 			};
 			class rhs_rus_ammoname_right
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -18993,7 +17485,6 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -19018,9 +17509,6 @@ class CfgMagazines
 			};
 			class rhs_su25_box
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="1-pylonMagazineEmpty";
@@ -19028,7 +17516,6 @@ class CfgMagazines
 					alpha=0.22;
 					class Shape
 					{
-						type="polygon";
 						width=4;
 						points[]=
 						{
@@ -19064,7 +17551,6 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
-							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -19100,15 +17586,8 @@ class CfgMagazines
 			{
 				class Bones
 				{
-					class Center
-					{
-						type="fixed";
-						pos[]={0,0};
 					};
 				};
-				class Draw
-				{
-					color[]={0.15000001,1,0.15000001,1};
 					alpha=0.22;
 					class Default
 					{
@@ -19116,7 +17595,6 @@ class CfgMagazines
 						color[]={1,1,1};
 						class PylonText1
 						{
-							type="text";
 							source="static";
 							scale=1;
 							sourceScale=1;
@@ -19139,7 +17617,6 @@ class CfgMagazines
 						};
 						class Shape
 						{
-							type="line";
 							width=4;
 							points[]=
 							{
@@ -19282,15 +17759,8 @@ class CfgMagazines
 						condition="PylonSelected*(PylonAmmoRelative>=0.001)";
 						color[]={0.15000001,1,0.15000001,1};
 						alpha=0.22;
-						class PylonText1: PylonText1
-						{
-						};
-						class Shape: Shape
-						{
-						};
 						class Polygon
 						{
-							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -19413,15 +17883,6 @@ class CfgMagazines
 					{
 						condition="pylonMagazineEmpty";
 						color[]={1,0,0,1};
-						class PylonText1: PylonText1
-						{
-						};
-						class Shape: Shape
-						{
-						};
-						class Polygon: Polygon
-						{
-						};
 					};
 				};
 			};
@@ -19485,7 +17946,6 @@ class CfgMagazines
 	{
 		ammo="rhs_ammo_ofab250";
 		displayname="$STR_RHS_OFAB250_NAME";
-		displayNameShort="HE-FRAG";
 		pylonWeapon="rhs_weap_ofab250";
 	};
 	class rhs_mag_ofab250_ka52: rhs_mag_ofab250
@@ -19506,7 +17966,6 @@ class CfgMagazines
 	{
 		ammo="rhs_ammo_kab250";
 		displayname="$STR_RHS_KAB250_NAME";
-		displayNameShort="LGB";
 		pylonWeapon="rhs_weap_kab250";
 		hardpoints[]=
 		{
@@ -19516,9 +17975,6 @@ class CfgMagazines
 		{
 			class rhs_rus_ammoname
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -19526,7 +17982,6 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -19551,9 +18006,6 @@ class CfgMagazines
 			};
 			class rhs_rus_ammoname_right
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -19561,7 +18013,6 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -19586,9 +18037,6 @@ class CfgMagazines
 			};
 			class rhs_su25_box
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="1-pylonMagazineEmpty";
@@ -19596,7 +18044,6 @@ class CfgMagazines
 					alpha=0.22;
 					class Shape
 					{
-						type="polygon";
 						width=4;
 						points[]=
 						{
@@ -19632,7 +18079,6 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
-							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -19668,15 +18114,8 @@ class CfgMagazines
 			{
 				class Bones
 				{
-					class Center
-					{
-						type="fixed";
-						pos[]={0,0};
 					};
 				};
-				class Draw
-				{
-					color[]={0.15000001,1,0.15000001,1};
 					alpha=0.22;
 					class Default
 					{
@@ -19684,7 +18123,6 @@ class CfgMagazines
 						color[]={1,1,1};
 						class PylonText1
 						{
-							type="text";
 							source="static";
 							scale=1;
 							sourceScale=1;
@@ -19707,7 +18145,6 @@ class CfgMagazines
 						};
 						class Shape
 						{
-							type="line";
 							width=4;
 							points[]=
 							{
@@ -19850,15 +18287,8 @@ class CfgMagazines
 						condition="PylonSelected*(PylonAmmoRelative>=0.001)";
 						color[]={0.15000001,1,0.15000001,1};
 						alpha=0.22;
-						class PylonText1: PylonText1
-						{
-						};
-						class Shape: Shape
-						{
-						};
 						class Polygon
 						{
-							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -19981,15 +18411,6 @@ class CfgMagazines
 					{
 						condition="pylonMagazineEmpty";
 						color[]={1,0,0,1};
-						class PylonText1: PylonText1
-						{
-						};
-						class Shape: Shape
-						{
-						};
-						class Polygon: Polygon
-						{
-						};
 					};
 				};
 			};
@@ -20007,15 +18428,11 @@ class CfgMagazines
 	{
 		ammo="rhs_ammo_rbk250_ao1";
 		displayname="$STR_RHS_MAG_RBK250_AO1";
-		displayNameShort="Cluster HE";
 		pylonWeapon="rhs_weap_rbk250_ao1";
 		class mfdElements
 		{
 			class rhs_rus_ammoname
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -20023,7 +18440,6 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -20048,9 +18464,6 @@ class CfgMagazines
 			};
 			class rhs_rus_ammoname_right
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -20058,7 +18471,6 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -20083,9 +18495,6 @@ class CfgMagazines
 			};
 			class rhs_su25_box
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="1-pylonMagazineEmpty";
@@ -20093,7 +18502,6 @@ class CfgMagazines
 					alpha=0.22;
 					class Shape
 					{
-						type="polygon";
 						width=4;
 						points[]=
 						{
@@ -20129,7 +18537,6 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
-							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -20165,15 +18572,8 @@ class CfgMagazines
 			{
 				class Bones
 				{
-					class Center
-					{
-						type="fixed";
-						pos[]={0,0};
 					};
 				};
-				class Draw
-				{
-					color[]={0.15000001,1,0.15000001,1};
 					alpha=0.22;
 					class Default
 					{
@@ -20181,7 +18581,6 @@ class CfgMagazines
 						color[]={1,1,1};
 						class PylonText1
 						{
-							type="text";
 							source="static";
 							scale=1;
 							sourceScale=1;
@@ -20204,7 +18603,6 @@ class CfgMagazines
 						};
 						class Shape
 						{
-							type="line";
 							width=4;
 							points[]=
 							{
@@ -20347,15 +18745,8 @@ class CfgMagazines
 						condition="PylonSelected*(PylonAmmoRelative>=0.001)";
 						color[]={0.15000001,1,0.15000001,1};
 						alpha=0.22;
-						class PylonText1: PylonText1
-						{
-						};
-						class Shape: Shape
-						{
-						};
 						class Polygon
 						{
-							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -20478,15 +18869,6 @@ class CfgMagazines
 					{
 						condition="pylonMagazineEmpty";
 						color[]={1,0,0,1};
-						class PylonText1: PylonText1
-						{
-						};
-						class Shape: Shape
-						{
-						};
-						class Polygon: Polygon
-						{
-						};
 					};
 				};
 			};
@@ -20510,7 +18892,6 @@ class CfgMagazines
 	{
 		ammo="rhs_ammo_rbk250_ptab25";
 		displayname="$STR_RHS_MAG_RBK250_PTAB25";
-		displayNameShort="Cluster HEAT";
 		pylonWeapon="rhs_weap_rbk250_ptab25";
 	};
 	class rhs_mag_rbk250_ptab25_ka52: rhs_mag_rbk250_ptab25
@@ -20531,7 +18912,6 @@ class CfgMagazines
 	{
 		ammo="rhs_ammo_rbk250_zab25t";
 		displayname="$STR_RHS_MAG_RBK250_ZAB25T";
-		displayNameShort="Cluster Incendiary";
 		pylonWeapon="rhs_weap_rbk250_zab25t";
 	};
 	class rhs_mag_rbk250_zab25t_ka52: rhs_mag_rbk250_zab25t
@@ -20563,9 +18943,6 @@ class CfgMagazines
 		{
 			class rhs_rus_ammoname
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -20573,7 +18950,6 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -20598,9 +18974,6 @@ class CfgMagazines
 			};
 			class rhs_rus_ammoname_right
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -20608,7 +18981,6 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -20633,9 +19005,6 @@ class CfgMagazines
 			};
 			class rhs_su25_box
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="1-pylonMagazineEmpty";
@@ -20643,7 +19012,6 @@ class CfgMagazines
 					alpha=0.22;
 					class Shape
 					{
-						type="polygon";
 						width=4;
 						points[]=
 						{
@@ -20679,7 +19047,6 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
-							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -20715,15 +19082,8 @@ class CfgMagazines
 			{
 				class Bones
 				{
-					class Center
-					{
-						type="fixed";
-						pos[]={0,0};
 					};
 				};
-				class Draw
-				{
-					color[]={0.15000001,1,0.15000001,1};
 					alpha=0.22;
 					class Default
 					{
@@ -20731,7 +19091,6 @@ class CfgMagazines
 						color[]={1,1,1};
 						class PylonText1
 						{
-							type="text";
 							source="static";
 							scale=1;
 							sourceScale=1;
@@ -20754,7 +19113,6 @@ class CfgMagazines
 						};
 						class Shape
 						{
-							type="line";
 							width=4;
 							points[]=
 							{
@@ -20897,15 +19255,8 @@ class CfgMagazines
 						condition="PylonSelected*(PylonAmmoRelative>=0.001)";
 						color[]={0.15000001,1,0.15000001,1};
 						alpha=0.22;
-						class PylonText1: PylonText1
-						{
-						};
-						class Shape: Shape
-						{
-						};
 						class Polygon
 						{
-							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -21028,15 +19379,6 @@ class CfgMagazines
 					{
 						condition="pylonMagazineEmpty";
 						color[]={1,0,0,1};
-						class PylonText1: PylonText1
-						{
-						};
-						class Shape: Shape
-						{
-						};
-						class Polygon: Polygon
-						{
-						};
 					};
 				};
 			};
@@ -21093,15 +19435,11 @@ class CfgMagazines
 	{
 		ammo="rhs_ammo_kab500";
 		displayname="$STR_RHS_KAB500L_NAME";
-		displayNameShort="LGB";
 		pylonWeapon="rhs_weap_kab500";
 		class mfdElements
 		{
 			class rhs_rus_ammoname
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -21109,7 +19447,6 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -21134,9 +19471,6 @@ class CfgMagazines
 			};
 			class rhs_rus_ammoname_right
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -21144,7 +19478,6 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -21169,9 +19502,6 @@ class CfgMagazines
 			};
 			class rhs_su25_box
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="1-pylonMagazineEmpty";
@@ -21179,7 +19509,6 @@ class CfgMagazines
 					alpha=0.22;
 					class Shape
 					{
-						type="polygon";
 						width=4;
 						points[]=
 						{
@@ -21215,7 +19544,6 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
-							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -21251,15 +19579,8 @@ class CfgMagazines
 			{
 				class Bones
 				{
-					class Center
-					{
-						type="fixed";
-						pos[]={0,0};
 					};
 				};
-				class Draw
-				{
-					color[]={0.15000001,1,0.15000001,1};
 					alpha=0.22;
 					class Default
 					{
@@ -21267,7 +19588,6 @@ class CfgMagazines
 						color[]={1,1,1};
 						class PylonText1
 						{
-							type="text";
 							source="static";
 							scale=1;
 							sourceScale=1;
@@ -21290,7 +19610,6 @@ class CfgMagazines
 						};
 						class Shape
 						{
-							type="line";
 							width=4;
 							points[]=
 							{
@@ -21433,15 +19752,8 @@ class CfgMagazines
 						condition="PylonSelected*(PylonAmmoRelative>=0.001)";
 						color[]={0.15000001,1,0.15000001,1};
 						alpha=0.22;
-						class PylonText1: PylonText1
-						{
-						};
-						class Shape: Shape
-						{
-						};
 						class Polygon
 						{
-							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -21564,15 +19876,6 @@ class CfgMagazines
 					{
 						condition="pylonMagazineEmpty";
 						color[]={1,0,0,1};
-						class PylonText1: PylonText1
-						{
-						};
-						class Shape: Shape
-						{
-						};
-						class Polygon: Polygon
-						{
-						};
 					};
 				};
 			};
@@ -21589,7 +19892,6 @@ class CfgMagazines
 	{
 		ammo="rhs_ammo_kab500lk";
 		displayname="$STR_RHS_KAB500LK_NAME";
-		displayNameShort="LG Cluster";
 		pylonWeapon="rhs_weap_kab500LK";
 	};
 	class rhs_mag_kab500LK_bd3_umk2a: rhs_mag_kab500LK
@@ -21603,7 +19905,6 @@ class CfgMagazines
 	{
 		ammo="rhs_ammo_kab500kr";
 		displayname="$STR_RHS_KAB500KR_NAME";
-		displayNameShort="TV Bomb";
 		pylonWeapon="rhs_weap_kab500kr";
 	};
 	class rhs_mag_kab500kr_bd3_umk2a: rhs_mag_kab500kr
@@ -21617,7 +19918,6 @@ class CfgMagazines
 	{
 		ammo="rhs_ammo_kab500od";
 		displayname="$STR_RHS_KAB500OD_NAME";
-		displayNameShort="TV HE Bomb";
 		pylonWeapon="rhs_weap_kab500od";
 	};
 	class rhs_mag_kab500od_bd3_umk2a: rhs_mag_kab500od
@@ -21631,15 +19931,11 @@ class CfgMagazines
 	{
 		ammo="rhs_ammo_rbk500_ao25";
 		displayname="$STR_RHS_MAG_RBK500_AO25";
-		displayNameShort="Cluster HE";
 		pylonWeapon="rhs_weap_rbk500_ao25";
 		class mfdElements
 		{
 			class rhs_rus_ammoname
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -21647,7 +19943,6 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -21672,9 +19967,6 @@ class CfgMagazines
 			};
 			class rhs_rus_ammoname_right
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -21682,7 +19974,6 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -21707,9 +19998,6 @@ class CfgMagazines
 			};
 			class rhs_su25_box
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="1-pylonMagazineEmpty";
@@ -21717,7 +20005,6 @@ class CfgMagazines
 					alpha=0.22;
 					class Shape
 					{
-						type="polygon";
 						width=4;
 						points[]=
 						{
@@ -21753,7 +20040,6 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
-							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -21812,7 +20098,6 @@ class CfgMagazines
 	{
 		ammo="rhs_ammo_rbk500_ofab50";
 		displayname="$STR_RHS_MAG_RBK500_OFAB50";
-		displayNameShort="Cluster HE-FRAG";
 		pylonWeapon="rhs_weap_rbk500_ofab50";
 	};
 	class rhs_mag_rbk500_ofab50_bd3_usk_a: rhs_mag_rbk500_ofab50
@@ -21840,7 +20125,6 @@ class CfgMagazines
 	{
 		ammo="rhs_ammo_rbk500_spbed";
 		displayname="$STR_RHS_MAG_RBK500_SPBED";
-		displayNameShort="Cluster Guided HEAT";
 		pylonWeapon="rhs_weap_rbk500_spbed";
 	};
 	class rhs_mag_rbk500_spbed_bd3_usk_a: rhs_mag_rbk500_spbed
@@ -21868,7 +20152,6 @@ class CfgMagazines
 	{
 		ammo="rhs_ammo_rbk500_ptab1m";
 		displayname="$STR_RHS_MAG_RBK500_PTAB1M";
-		displayNameShort="Cluster HEAT";
 		pylonWeapon="rhs_weap_rbk500_ptab1m";
 	};
 	class rhs_mag_rbk500_ptab1m_bd3_usk_a: rhs_mag_rbk500_ptab1m
@@ -21896,7 +20179,6 @@ class CfgMagazines
 	{
 		ammo="rhs_ammo_rbk500_zab25t";
 		displayname="$STR_RHS_MAG_RBK500_ZAB25T";
-		displayNameShort="Cluster Incendiary";
 		pylonWeapon="rhs_weap_rbk500_zab25t";
 	};
 	class rhs_mag_rbk500_zab25t_bd3_usk_a: rhs_mag_rbk500_zab25t
@@ -21924,7 +20206,6 @@ class CfgMagazines
 	{
 		ammo="rhs_ammo_kmgu2_ao25";
 		displayname="$STR_RHS_MAG_KMGU2_AO25";
-		displayNameShort="Cluster HE";
 		ejectSpeed[]={1,0,0};
 		initSpeed=0;
 		initSpeedY=-5;
@@ -21941,9 +20222,6 @@ class CfgMagazines
 		{
 			class rhs_rus_ammoname
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -21951,7 +20229,6 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -21976,9 +20253,6 @@ class CfgMagazines
 			};
 			class rhs_rus_ammoname_right
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -21986,7 +20260,6 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -22011,9 +20284,6 @@ class CfgMagazines
 			};
 			class rhs_su25_box
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="1-pylonMagazineEmpty";
@@ -22021,7 +20291,6 @@ class CfgMagazines
 					alpha=0.22;
 					class Shape
 					{
-						type="polygon";
 						width=4;
 						points[]=
 						{
@@ -22057,7 +20326,6 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
-							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -22093,15 +20361,8 @@ class CfgMagazines
 			{
 				class Bones
 				{
-					class Center
-					{
-						type="fixed";
-						pos[]={0,0};
 					};
 				};
-				class Draw
-				{
-					color[]={0.15000001,1,0.15000001,1};
 					alpha=0.22;
 					class Default
 					{
@@ -22109,7 +20370,6 @@ class CfgMagazines
 						color[]={1,1,1};
 						class PylonText1
 						{
-							type="text";
 							source="static";
 							scale=1;
 							sourceScale=1;
@@ -22132,7 +20392,6 @@ class CfgMagazines
 						};
 						class Shape
 						{
-							type="line";
 							width=4;
 							points[]=
 							{
@@ -22275,15 +20534,8 @@ class CfgMagazines
 						condition="PylonSelected*(PylonAmmoRelative>=0.001)";
 						color[]={0.15000001,1,0.15000001,1};
 						alpha=0.22;
-						class PylonText1: PylonText1
-						{
-						};
-						class Shape: Shape
-						{
-						};
 						class Polygon
 						{
-							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -22406,15 +20658,6 @@ class CfgMagazines
 					{
 						condition="pylonMagazineEmpty";
 						color[]={1,0,0,1};
-						class PylonText1: PylonText1
-						{
-						};
-						class Shape: Shape
-						{
-						};
-						class Polygon: Polygon
-						{
-						};
 					};
 				};
 			};
@@ -22438,7 +20681,6 @@ class CfgMagazines
 	{
 		ammo="rhs_ammo_kmgu2_ptab1m";
 		displayname="$STR_RHS_MAG_KMGU2_PTAB1M";
-		displayNameShort="Cluster HEAT";
 		pylonWeapon="rhs_weap_kmgu2_ptab1m";
 	};
 	class rhs_mag_kmgu2_ptab1m_bd3_umk2a: rhs_mag_kmgu2_ptab1m
@@ -22459,7 +20701,6 @@ class CfgMagazines
 	{
 		ammo="rhs_ammo_kmgu2_pfm1";
 		displayname="$STR_RHS_MAG_KMGU2_PFM1";
-		displayNameShort="Cluster AP Mine";
 		pylonWeapon="rhs_weap_kmgu2_pfm1";
 	};
 	class rhs_mag_kmgu2_pfm1_bd3_umk2a: rhs_mag_kmgu2_pfm1
@@ -22480,7 +20721,6 @@ class CfgMagazines
 	{
 		ammo="rhs_ammo_kmgu2_ptm1";
 		displayname="$STR_RHS_MAG_KMGU2_PTM1";
-		displayNameShort="Cluster AT Mine";
 		pylonWeapon="rhs_weap_kmgu2_ptm1";
 	};
 	class rhs_mag_kmgu2_ptm1_bd3_umk2a: rhs_mag_kmgu2_ptm1
@@ -22500,15 +20740,11 @@ class CfgMagazines
 	class ATMine_Range_Mag;
 	class rhs_mag_mine_pfm1: ATMine_Range_Mag
 	{
-		displayName="$STR_RHS_PFM1_NAME";
-		descriptionShort="$STR_RHS_CFGMAGAZINES_PMN21";
 		mass=4.2399998;
 		ammo="rhs_ammo_pfm1";
 	};
 	class rhs_mag_mine_ptm1: ATMine_Range_Mag
 	{
-		displayName="$STR_RHS_PTM1_NAME";
-		descriptionShort="$STR_RHS_CFGMAGAZINES_TM62M1";
 		mass=30;
 		ammo="rhs_ammo_ptm1";
 	};
@@ -22516,7 +20752,6 @@ class CfgMagazines
 	{
 		ammo="rhs_ammo_ptb1150";
 		displayname="$STR_RHS_PTB1150_NAME";
-		displayNameShort="PTB";
 		hardpoints[]=
 		{
 			"RHS_HP_PTB1150"
@@ -22526,9 +20761,6 @@ class CfgMagazines
 		{
 			class rhs_rus_ammoname
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -22536,7 +20768,6 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -22561,9 +20792,6 @@ class CfgMagazines
 			};
 			class rhs_rus_ammoname_right
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -22571,7 +20799,6 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -22596,9 +20823,6 @@ class CfgMagazines
 			};
 			class rhs_su25_box
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="1-pylonMagazineEmpty";
@@ -22606,7 +20830,6 @@ class CfgMagazines
 					alpha=0.22;
 					class Shape
 					{
-						type="polygon";
 						width=4;
 						points[]=
 						{
@@ -22642,7 +20865,6 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
-							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -22678,15 +20900,8 @@ class CfgMagazines
 			{
 				class Bones
 				{
-					class Center
-					{
-						type="fixed";
-						pos[]={0,0};
 					};
 				};
-				class Draw
-				{
-					color[]={0.15000001,1,0.15000001,1};
 					alpha=0.22;
 					class Default
 					{
@@ -22694,7 +20909,6 @@ class CfgMagazines
 						color[]={1,1,1};
 						class PylonText1
 						{
-							type="text";
 							source="static";
 							scale=1;
 							sourceScale=1;
@@ -22717,7 +20931,6 @@ class CfgMagazines
 						};
 						class Shape
 						{
-							type="line";
 							width=4;
 							points[]=
 							{
@@ -22860,15 +21073,8 @@ class CfgMagazines
 						condition="PylonSelected*(PylonAmmoRelative>=0.001)";
 						color[]={0.15000001,1,0.15000001,1};
 						alpha=0.22;
-						class PylonText1: PylonText1
-						{
-						};
-						class Shape: Shape
-						{
-						};
 						class Polygon
 						{
-							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -22991,15 +21197,6 @@ class CfgMagazines
 					{
 						condition="pylonMagazineEmpty";
 						color[]={1,0,0,1};
-						class PylonText1: PylonText1
-						{
-						};
-						class Shape: Shape
-						{
-						};
-						class Polygon: Polygon
-						{
-						};
 					};
 				};
 			};
@@ -23008,7 +21205,6 @@ class CfgMagazines
 	class rhs_mag_ptb1500: VehicleMagazine
 	{
 		ammo="rhs_ammo_ptb1500";
-		displayName="$STR_RHS_PTB1500_NAME";
 		count=1;
 		initSpeed=0;
 		sound[]={};
@@ -23023,9 +21219,6 @@ class CfgMagazines
 		{
 			class rhs_rus_ammoname
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -23033,7 +21226,6 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -23058,9 +21250,6 @@ class CfgMagazines
 			};
 			class rhs_rus_ammoname_right
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -23068,7 +21257,6 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -23093,9 +21281,6 @@ class CfgMagazines
 			};
 			class rhs_su25_box
 			{
-				class Bones
-				{
-				};
 				class Draw
 				{
 					condition="1-pylonMagazineEmpty";
@@ -23103,7 +21288,6 @@ class CfgMagazines
 					alpha=0.22;
 					class Shape
 					{
-						type="polygon";
 						width=4;
 						points[]=
 						{
@@ -23139,7 +21323,6 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
-							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -23175,15 +21358,8 @@ class CfgMagazines
 			{
 				class Bones
 				{
-					class Center
-					{
-						type="fixed";
-						pos[]={0,0};
 					};
 				};
-				class Draw
-				{
-					color[]={0.15000001,1,0.15000001,1};
 					alpha=0.22;
 					class Default
 					{
@@ -23191,7 +21367,6 @@ class CfgMagazines
 						color[]={1,1,1};
 						class PylonText1
 						{
-							type="text";
 							source="static";
 							scale=1;
 							sourceScale=1;
@@ -23214,7 +21389,6 @@ class CfgMagazines
 						};
 						class Shape
 						{
-							type="line";
 							width=4;
 							points[]=
 							{
@@ -23357,15 +21531,8 @@ class CfgMagazines
 						condition="PylonSelected*(PylonAmmoRelative>=0.001)";
 						color[]={0.15000001,1,0.15000001,1};
 						alpha=0.22;
-						class PylonText1: PylonText1
-						{
-						};
-						class Shape: Shape
-						{
-						};
 						class Polygon
 						{
-							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -23488,15 +21655,6 @@ class CfgMagazines
 					{
 						condition="pylonMagazineEmpty";
 						color[]={1,0,0,1};
-						class PylonText1: PylonText1
-						{
-						};
-						class Shape: Shape
-						{
-						};
-						class Polygon: Polygon
-						{
-						};
 					};
 				};
 			};
@@ -23507,7 +21665,6 @@ class CfgMagazines
 		ammo="rhs_ammo_ofz_23x115mm";
 		count=250;
 		displayname="UPK-23-250 OFZ";
-		displayNameShort="HE";
 		initspeed=720;
 		maxleadspeed=5;
 		namesound="";
@@ -23526,19 +21683,16 @@ class CfgMagazines
 	{
 		ammo="rhs_ammo_ofzt_23x115mm";
 		displayname="UPK-23-250 OFZT";
-		displayNameShort="HE-T";
 	};
 	class rhs_mag_upk23_btz: rhs_mag_upk23_ofz
 	{
 		ammo="rhs_ammo_bzt_23x115mm";
 		displayname="UPK-23-250 BZT";
-		displayNameShort="AP-T";
 	};
 	class rhs_mag_upk23_mixed: rhs_mag_upk23_ofz
 	{
 		ammo="rhs_ammo_mixed_23x115mm";
 		displayname="UPK-23-250 Mixed";
-		displayNameShort="Mixed";
 	};
 	class rhs_mag_upk23_ka52_ofz: rhs_mag_upk23_ofz
 	{
@@ -23581,252 +21735,91 @@ class CfgWeapons
 	{
 		class Far_AI;
 		class Medium_AI;
-		class Close_AI;
-		class Burst;
-	};
 	class rhs_weap_s5: rockets_Skyfire
 	{
-		aiDispersionCoefY=1;
-		aiDispersionCoefX=1.5;
 		cursor="missile";
 		cursoraim="EmptyCursor";
 		cursorsize=0;
-		displayName="$STR_RHS_WEAP_S5";
 		proxyShape="\rhsafrf\addons\rhs_a2port_air\data\proxy\ub16";
-		class gunClouds
-		{
-		};
 		fireLightAmbient[]={0,0,0};
 		fireLightDiffuse[]={0.93000001,0.63,0.25};
 		fireLightDuration=0.050999999;
 		fireLightIntensity=0.2;
 		canLock=1;
 		weaponLockDelay=8;
-		showToPlayer=1;
-		modes[]=
-		{
-			"AI_Burst",
-			"Burst"
-		};
-		class Far_AI: Far_AI
-		{
-			displayName="$STR_RHS_WEAP_S5";
-			aiRateOfFire=5;
-			aiRateOfFireDistance=1000;
-		};
-		class Medium_AI: Medium_AI
-		{
-			displayName="$STR_RHS_WEAP_S5";
-			aiRateOfFire=3;
-			aiRateOfFireDistance=600;
-		};
-		class Close_AI: Close_AI
-		{
-			displayName="$STR_RHS_WEAP_S5";
-			aiRateOfFire=0.5;
-			aiRateOfFireDistance=50;
-		};
 		class AI_Burst: RocketPods
 		{
-			showToPlayer=0;
-			displayName="$STR_RHS_WEAP_S5";
-			maxRange=1500;
-			maxRangeProbab=0.050000001;
 			dispersion=0.037999999;
 		};
 		class Burst: Burst
 		{
 			dispersion=0.037999999;
-			showToPlayer=1;
-			aiRateOfFire=0.5;
-			aiRateOfFireDistance=300;
-			displayName="$STR_RHS_WEAP_S5";
 			burst=1;
 			salvo=2;
-			minRange=0;
-			minRangeProbab=0.1;
-			midRange=0;
-			midRangeProbab=0.25;
-			maxRange=0;
-			maxRangeProbab=0.050000001;
 		};
-	};
-	class rhs_weap_s5_ub32: rhs_weap_s5
-	{
-	};
-	class rhs_weap_s5ko: rhs_weap_s5
-	{
-	};
-	class rhs_weap_s5k1: rhs_weap_s5
-	{
-	};
-	class rhs_weap_s5m1: rhs_weap_s5
-	{
 	};
 	class rhs_weap_s8: rhs_weap_s5
 	{
-		displayName="$STR_RHS_WEAP_S8";
-		class Far_AI: Far_AI
-		{
-			displayName="$STR_RHS_WEAP_S8";
-			aiRateOfFire=5;
-			aiRateOfFireDistance=1000;
-			minRange=500;
-			minRangeProbab=0.050000001;
-			midRange=600;
-			midRangeProbab=0.40000001;
-			maxRange=800;
-			maxRangeProbab=0.0099999998;
-		};
-		class Medium_AI: Medium_AI
-		{
-			displayName="$STR_RHS_WEAP_S8";
-			aiRateOfFire=3;
-			aiRateOfFireDistance=600;
-			minRange=300;
-			minRangeProbab=0.050000001;
-			midRange=400;
-			midRangeProbab=0.69999999;
-			maxRange=600;
-			maxRangeProbab=0.1;
-		};
-		class Close_AI: Close_AI
-		{
-			displayName="$STR_RHS_WEAP_S8";
-			aiRateOfFire=0.5;
-			aiRateOfFireDistance=50;
-			minRange=0;
-			minRangeProbab=0.050000001;
-			midRange=300;
-			midRangeProbab=0.69999999;
-			maxRange=400;
-			maxRangeProbab=0.1;
-		};
 		class AI_Burst: AI_Burst
 		{
 			dispersion=0.032000002;
-			displayName="$STR_RHS_WEAP_S8";
 		};
 		class Burst: Burst
 		{
 			dispersion=0.032000002;
-			displayName="$STR_RHS_WEAP_S8";
 		};
-	};
-	class rhs_weap_s8df: rhs_weap_s8
-	{
-	};
-	class rhs_weap_s8t: rhs_weap_s8
-	{
 	};
 	class rhs_weap_s13: rhs_weap_s8
 	{
-		displayName="$STR_RHS_WEAP_S13";
 		class AI_Burst: AI_Burst
 		{
 			reloadtime=0.15000001;
 			dispersion=0.02;
-			displayName="$STR_RHS_WEAP_S13";
 		};
 		class Burst: Burst
 		{
 			reloadtime=0.15000001;
 			dispersion=0.02;
-			displayName="$STR_RHS_WEAP_S13";
 		};
-	};
-	class rhs_weap_s13d: rhs_weap_s13
-	{
-	};
-	class rhs_weap_s13df: rhs_weap_s13
-	{
-	};
-	class rhs_weap_s13of: rhs_weap_s13
-	{
-	};
-	class rhs_weap_s13t: rhs_weap_s13
-	{
 	};
 	class rhs_weap_s24: rhs_weap_s13
 	{
-		displayName="$STR_RHS_WEAP_S24";
-		modes[]=
-		{
-			"AI_Burst",
-			"Burst",
-			"Single"
-		};
 		class AI_Burst: AI_Burst
 		{
 			dispersion=0.02;
-			displayName="$STR_RHS_WEAP_S24";
 		};
 		class Burst: Burst
 		{
 			dispersion=0.02;
-			displayName="$STR_RHS_WEAP_S24";
 		};
 		class Single: Burst
 		{
 			autofire=0;
-			displayName="$STR_RHS_WEAP_S24";
 			reloadTime=0.079999998;
-			showToPlayer=1;
 			burst=1;
 			salvo=1;
-			minRange=0;
-			minRangeProbab=0.1;
-			midRange=0;
-			midRangeProbab=0.25;
-			maxRange=0;
-			maxRangeProbab=0.050000001;
 		};
-	};
-	class rhs_weap_s24b: rhs_weap_s24
-	{
 	};
 	class rhs_weap_s25: rhs_weap_s13
 	{
-		displayName="$STR_RHS_WEAP_S25O";
-		modes[]=
-		{
-			"AI_Burst",
-			"Burst",
-			"Single"
-		};
 		class AI_Burst: AI_Burst
 		{
 			dispersion=0.0099999998;
-			displayName="$STR_RHS_WEAP_S25";
 		};
 		class Burst: Burst
 		{
 			dispersion=0.0099999998;
-			displayName="$STR_RHS_WEAP_S25";
 		};
 		class Single: Burst
 		{
 			autofire=0;
-			displayName="$STR_RHS_WEAP_S25";
 			reloadTime=0.079999998;
-			showToPlayer=1;
 			burst=1;
 			salvo=1;
-			minRange=0;
-			minRangeProbab=0.1;
-			midRange=0;
-			midRangeProbab=0.25;
-			maxRange=0;
-			maxRangeProbab=0.050000001;
 		};
-	};
-	class rhs_weap_s25of: rhs_weap_s25
-	{
-		displayName="$STR_RHS_WEAP_S25OF";
 	};
 	class rhs_weap_s25l: rhs_weap_s25
 	{
-		displayName="$STR_RHS_WEAP_S25L";
 		cursor="missile";
 		canLock=2;
 		weaponLockSystem=4;
@@ -23839,10 +21832,6 @@ class CfgWeapons
 				fired="_this call rhs_fnc_klenpsGuide";
 			};
 		};
-	};
-	class rhs_weap_s25ld: rhs_weap_s25
-	{
-		displayName="$STR_RHS_WEAP_S25LD";
 	};
 	class Missile_AA_04_Plane_CAS_01_F;
 	class rhs_weap_r27r_Launcher: Missile_AA_04_Plane_CAS_01_F
@@ -24000,10 +21989,6 @@ class CfgWeapons
 		weaponLockSystem=4;
 		weaponLockDelay=0.5;
 		cmImmunity=0.30000001;
-		modes[]=
-		{
-			"this"
-		};
 		class EventHandlers
 		{
 			class RHS_KlenPS
@@ -24014,9 +21999,6 @@ class CfgWeapons
 	};
 	class rhs_weap_kh25_mig29_Launcher: rhs_weap_kh25_Launcher
 	{
-		class EventHandlers
-		{
-		};
 	};
 	class rhs_weap_kh25ml_Launcher: rhs_weap_kh25_Launcher
 	{
@@ -24030,44 +22012,29 @@ class CfgWeapons
 	};
 	class rhs_weap_kh25ml_mig29_Launcher: rhs_weap_kh25ml_Launcher
 	{
-		class EventHandlers
-		{
-		};
 	};
 	class rhs_weap_kh25ma_Launcher: rhs_weap_kh25ml_Launcher
 	{
 		displayname="$STR_RHS_KH25MA_NAME";
 		weaponLockSystem=8;
 		weaponLockDelay=1.5;
-		class EventHandlers
-		{
-		};
 	};
 	class rhs_weap_kh25mt_Launcher: rhs_weap_kh25ml_Launcher
 	{
 		displayname="$STR_RHS_KH25MT_NAME";
 		weaponLockSystem="CM_Lock_TV";
 		weaponLockDelay=1;
-		class EventHandlers
-		{
-		};
 	};
 	class rhs_weap_kh25mtp_Launcher: rhs_weap_kh25ml_Launcher
 	{
 		displayname="$STR_RHS_KH25MTP_NAME";
 		weaponLockSystem=2;
 		weaponLockDelay=3;
-		class EventHandlers
-		{
-		};
 	};
 	class rhs_weap_kh25mp_Launcher: rhs_weap_kh25ml_Launcher
 	{
 		displayname="$STR_RHS_KH25MP_NAME";
 		weaponLockSystem=0;
-		class EventHandlers
-		{
-		};
 	};
 	class rhs_weap_kh29_Launcher: rhs_weap_kh25_Launcher
 	{
@@ -24084,9 +22051,6 @@ class CfgWeapons
 	};
 	class rhs_weap_kh29_mig29_Launcher: rhs_weap_kh29_Launcher
 	{
-		class EventHandlers
-		{
-		};
 	};
 	class rhs_weap_kh29ml_Launcher: rhs_weap_kh25ml_Launcher
 	{
@@ -24094,9 +22058,6 @@ class CfgWeapons
 	};
 	class rhs_weap_kh29ml_mig29_Launcher: rhs_weap_kh29ml_Launcher
 	{
-		class EventHandlers
-		{
-		};
 	};
 	class rhs_weap_kh29t_Launcher: rhs_weap_kh25ml_Launcher
 	{
@@ -24104,9 +22065,6 @@ class CfgWeapons
 		weaponLockSystem=1;
 		weaponLockDelay=2;
 		cmImmunity=0.5;
-		class EventHandlers
-		{
-		};
 	};
 	class rhs_weap_kh29mp_Launcher: rhs_weap_kh25ml_Launcher
 	{
@@ -24114,9 +22072,6 @@ class CfgWeapons
 		weaponLockSystem=8;
 		weaponLockDelay=1.5;
 		cmImmunity=0.30000001;
-		class EventHandlers
-		{
-		};
 	};
 	class rhs_weap_kh29d_Launcher: rhs_weap_kh25ml_Launcher
 	{
@@ -24124,9 +22079,6 @@ class CfgWeapons
 		weaponLockSystem=2;
 		weaponLockDelay=3;
 		cmImmunity=0.30000001;
-		class EventHandlers
-		{
-		};
 	};
 	class rhs_weap_kh38mle_Launcher: rhs_weap_kh29_Launcher
 	{
@@ -24139,9 +22091,6 @@ class CfgWeapons
 		midrangeprobab=0.89999998;
 		minrange=2000;
 		minrangeprobab=0.5;
-		class EventHandlers
-		{
-		};
 	};
 	class rhs_weap_kh38mae_Launcher: rhs_weap_kh25ml_Launcher
 	{
@@ -24159,10 +22108,6 @@ class CfgWeapons
 	};
 	class rhs_weap_kh55sm_Launcher: rhs_weap_kh29_Launcher
 	{
-		modes[]=
-		{
-			"this"
-		};
 		displayname="$STR_RHS_MKU56_NAME";
 		reloadtime=5;
 		class Eventhandlers: EventHandlers
@@ -24173,10 +22118,6 @@ class CfgWeapons
 			};
 		};
 	};
-	class rhs_weap_kh55sm_dummy_Launcher: rhs_weap_kh55sm_Launcher
-	{
-		showToPlayer=0;
-	};
 	class rhs_weap_9k121_Launcher: rhs_weap_kh55sm_Launcher
 	{
 		airateoffire=5;
@@ -24185,11 +22126,6 @@ class CfgWeapons
 		canlock=1;
 		reloadtime=1.5;
 		weaponlockdelay=4;
-		modes[]=
-		{
-			"Single",
-			"Burst"
-		};
 		class Single: rhs_weap_kh29_Launcher
 		{
 			airateoffire=5;
@@ -24209,9 +22145,6 @@ class CfgWeapons
 			burst=2;
 		};
 		holdsterAnimValue=1;
-		class Eventhandlers
-		{
-		};
 	};
 	class rhs_weap_fab250: MissileLauncher
 	{
@@ -24223,36 +22156,15 @@ class CfgWeapons
 		canlock=0;
 		airateoffire=1;
 		airateoffiredistance=500;
-		minRange=100;
-		minRangeProbab=0.5;
-		midRange=250;
-		midRangeProbab=1;
-		maxRange=550;
-		maxRangeProbab=0.60000002;
 		ballisticsComputer=8;
 		salvo=1;
 		reloadTime=0.1;
 		sounds[]={};
 		namesound="";
 	};
-	class rhs_weap_fab250_m62: rhs_weap_fab250
-	{
-	};
-	class rhs_weap_ofab250: rhs_weap_fab250
-	{
-	};
 	class rhs_weap_rbk250: rhs_weap_fab250
 	{
 		displayname="$STR_RHS_RBK250_NAME";
-	};
-	class rhs_weap_rbk250_ao1: rhs_weap_rbk250
-	{
-	};
-	class rhs_weap_rbk250_ptab25: rhs_weap_rbk250
-	{
-	};
-	class rhs_weap_rbk250_zab25t: rhs_weap_rbk250
-	{
 	};
 	class rhs_weap_fab100: rhs_weap_fab250
 	{
@@ -24261,14 +22173,6 @@ class CfgWeapons
 	};
 	class rhs_weap_fab100_mbd3_u4t: rhs_weap_fab100
 	{
-		modes[]=
-		{
-			"Single",
-			"Burst"
-		};
-		class Single: rhs_weap_fab250
-		{
-		};
 		class Burst: rhs_weap_fab250
 		{
 			minrange=200;
@@ -24288,29 +22192,9 @@ class CfgWeapons
 	{
 		displayname="$STR_RHS_KAB250_NAME";
 		canlock=1;
-		minRange=300;
-		minRangeProbab=0.40000001;
-		midRange=1000;
-		midRangeProbab=0.94999999;
-		maxRange=7000;
-		maxRangeProbab=0.89999998;
 		weaponLockDelay=0.1;
 		weaponLockSystem=4;
 		cmImmunity=0.30000001;
-		modes[]=
-		{
-			"LoalAltitude"
-		};
-		class LoalAltitude: RocketPods
-		{
-			displayName="LOAL";
-			minRange=300;
-			minRangeProbab=0.40000001;
-			midRange=1000;
-			midRangeProbab=0.94999999;
-			maxRange=8000;
-			maxRangeProbab=0.89999998;
-		};
 	};
 	class rhs_weap_fab500: rhs_weap_fab250
 	{
@@ -24337,43 +22221,14 @@ class CfgWeapons
 	class rhs_weap_kab500KR: rhs_weap_kab250
 	{
 		displayname="$STR_RHS_KAB500KR_NAME";
-		modes[]=
-		{
-			"Direct"
-		};
-		class Direct: rhs_weap_fab500
-		{
-		};
 	};
 	class rhs_weap_kab500OD: rhs_weap_kab250
 	{
 		displayname="$STR_RHS_KAB500OD_NAME";
-		modes[]=
-		{
-			"Direct"
-		};
-		class Direct: rhs_weap_fab500
-		{
-		};
 	};
 	class rhs_weap_rbk500: rhs_weap_fab500
 	{
 		displayname="$STR_RHS_RBK500_NAME";
-	};
-	class rhs_weap_rbk500_ao25: rhs_weap_rbk500
-	{
-	};
-	class rhs_weap_rbk500_ofab50: rhs_weap_rbk500
-	{
-	};
-	class rhs_weap_rbk500_spbed: rhs_weap_rbk500
-	{
-	};
-	class rhs_weap_rbk500_ptab1m: rhs_weap_rbk500
-	{
-	};
-	class rhs_weap_rbk500_zab25t: rhs_weap_rbk500
-	{
 	};
 	class rhs_weap_kmgu2: rhs_weap_fab250
 	{
@@ -24384,13 +22239,6 @@ class CfgWeapons
 		burst=8;
 		reloadTime=0.40000001;
 		salvo=2;
-		modes[]=
-		{
-			"Instant",
-			"Fast",
-			"Medium",
-			"Slow"
-		};
 		class Instant: rhs_weap_fab250
 		{
 			burst=8;
@@ -24410,34 +22258,8 @@ class CfgWeapons
 			reloadTime=1.5;
 		};
 	};
-	class rhs_weap_kmgu2_ptab1m: rhs_weap_kmgu2
-	{
-	};
-	class rhs_weap_kmgu2_ao25: rhs_weap_kmgu2
-	{
-	};
-	class rhs_weap_kmgu2_ptm1: rhs_weap_kmgu2
-	{
-	};
-	class rhs_weap_kmgu2_pfm1: rhs_weap_kmgu2
-	{
-	};
-	class rhs_weap_DummyLauncher: MissileLauncher
-	{
-		showToPlayer=0;
-	};
 	class Put: Default
 	{
-		muzzles[]+=
-		{
-			"Rhs_SmallMine_Muzzle"
-		};
-		class PutMuzzle: Default
-		{
-		};
-		class Rhs_SmallMine_Muzzle: PutMuzzle
-		{
-		};
 	};
 };
 class CfgNonAIVehicles
@@ -24866,138 +22688,88 @@ class cfgVehicles
 	class rhs_mine_pfm1: MineBase
 	{
 		ammo="rhs_ammo_pfm1";
-		displayName="$STR_RHS_PFM1_NAME";
 		icon="iconExplosiveAP";
-		descriptionShort="$STR_A3_cfgMagazines_ClassicMineRangeMagazine1";
-		class Library
-		{
-			libTextDesc="";
-		};
 	};
 	class rhs_mine_ptm1: MineBase
 	{
 		ammo="rhs_ammo_ptm1";
-		displayName="$STR_RHS_PTM1_NAME";
 		icon="iconExplosiveAT";
-		descriptionShort="$STR_A3_cfgMagazines_ClassicMineRangeMagazine1";
-		class Library
-		{
-			libTextDesc="";
-		};
 	};
 	class rhs_uxo_ao1_1: MineBase
 	{
 		ammo="rhs_ammo_uxo_ao1_1";
-		displayName="$STR_RHS_UXO_AO1_1";
 		icon="iconExplosiveUXO";
-		descriptionShort="$STR_A3_cfgMagazines_ClassicMineRangeMagazine1";
-		class Library
-		{
-			libTextDesc="";
-		};
 	};
 	class rhs_uxo_ao1_2: rhs_uxo_ao1_1
 	{
 		ammo="rhs_ammo_uxo_ao1_2";
-		displayName="$STR_RHS_UXO_AO1_2";
 	};
 	class rhs_uxo_ao1_3: rhs_uxo_ao1_1
 	{
 		ammo="rhs_ammo_uxo_ao1_3";
-		displayName="$STR_RHS_UXO_AO1_3";
 	};
 	class rhs_uxo_ptab1m_1: MineBase
 	{
 		ammo="rhs_ammo_uxo_ptab1m_1";
-		displayName="$STR_RHS_UXO_PTAB1M_1";
 		icon="iconExplosiveUXO";
-		descriptionShort="$STR_A3_cfgMagazines_ClassicMineRangeMagazine1";
-		class Library
-		{
-			libTextDesc="";
-		};
 	};
 	class rhs_uxo_ptab1m_2: rhs_uxo_ptab1m_1
 	{
 		ammo="rhs_ammo_uxo_ptab1m_2";
-		displayName="$STR_RHS_UXO_PTAB1M_2";
 	};
 	class rhs_uxo_ptab1m_3: rhs_uxo_ptab1m_1
 	{
 		ammo="rhs_ammo_uxo_ptab1m_3";
-		displayName="$STR_RHS_UXO_PTAB1M_3";
 	};
 	class rhs_uxo_ptab25m_1: MineBase
 	{
 		ammo="rhs_ammo_uxo_ptab25m_1";
-		displayName="$STR_RHS_UXO_PTAB25M_1";
 		icon="iconExplosiveUXO";
-		descriptionShort="$STR_A3_cfgMagazines_ClassicMineRangeMagazine1";
-		class Library
-		{
-			libTextDesc="";
-		};
 	};
 	class rhs_uxo_ptab25m_2: rhs_uxo_ptab25m_1
 	{
 		ammo="rhs_ammo_uxo_ptab25m_2";
-		displayName="$STR_RHS_UXO_PTAB25M_2";
 	};
 	class rhs_uxo_ptab25m_3: rhs_uxo_ptab25m_1
 	{
 		ammo="rhs_ammo_uxo_ptab25m_3";
-		displayName="$STR_RHS_UXO_PTAB25M_3";
 	};
 	class rhs_uxo_ptab25ko_1: MineBase
 	{
 		ammo="rhs_ammo_uxo_ptab25ko_1";
-		displayName="$STR_RHS_UXO_PTAB25KO_1";
 		icon="iconExplosiveUXO";
-		descriptionShort="$STR_A3_cfgMagazines_ClassicMineRangeMagazine1";
-		class Library
-		{
-			libTextDesc="";
-		};
 	};
 	class rhs_uxo_ptab25ko_2: rhs_uxo_ptab25ko_1
 	{
 		ammo="rhs_ammo_uxo_ptab25ko_2";
-		displayName="$STR_RHS_UXO_PTAB25KO_2";
 	};
 	class rhs_uxo_ptab25ko_3: rhs_uxo_ptab25ko_1
 	{
 		ammo="rhs_ammo_uxo_ptab25ko_3";
-		displayName="$STR_RHS_UXO_PTAB25KO_3";
 	};
 	class ModuleMine_APERSMine_F;
 	class rhs_mine_pfm1_module: ModuleMine_APERSMine_F
 	{
-		displayName="$STR_RHS_PFM1_NAME";
 		explosive="rhs_ammo_pfm1";
 	};
 	class rhs_mine_ptm1_module: ModuleMine_APERSMine_F
 	{
-		displayName="$STR_RHS_PTM1_NAME";
 		explosive="rhs_ammo_ptm1";
 	};
 	class rhs_uxo_ao1_module: ModuleMine_APERSMine_F
 	{
-		displayName="$STR_RHS_UXO_AO1_NAME";
 		explosive="rhs_ammo_uxo_ao1_1";
 	};
 	class rhs_uxo_ptab1m_module: ModuleMine_APERSMine_F
 	{
-		displayName="$STR_RHS_UXO_PTAB1M_NAME";
 		explosive="rhs_ammo_uxo_ptab1m_1";
 	};
 	class rhs_uxo_ptab25m_module: ModuleMine_APERSMine_F
 	{
-		displayName="$STR_RHS_UXO_PTAB25M_NAME";
 		explosive="rhs_ammo_uxo_ptab25m_1";
 	};
 	class rhs_uxo_ptab25ko_module: ModuleMine_APERSMine_F
 	{
-		displayName="$STR_RHS_UXO_PTAB25KO_NAME";
 		explosive="rhs_ammo_uxo_ptab25ko_1";
 	};
 	class Site_F;

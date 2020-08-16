@@ -84,9 +84,6 @@ class CfgPatches
 		};
 		name="A2 ported air";
 	};
-	class RHS_A2_AirImport
-	{
-		units[]={};
 		requiredAddons[]={};
 	};
 };
@@ -280,36 +277,6 @@ class CfgNonAIVehicles
 {
 	class ProxyWeapon;
 	class ProxyRetex;
-	class ProxyMi24Wreck: ProxyRetex
-	{
-		hiddenSelections[]=
-		{
-			"camo1",
-			"camo2"
-		};
-	};
-	class ProxyKa52Wreck: ProxyRetex
-	{
-		hiddenSelections[]=
-		{
-			"camo1",
-			"camo2"
-		};
-	};
-	class ProxyMI8Wreck: ProxyRetex
-	{
-		hiddenSelections[]=
-		{
-			"camo1"
-		};
-	};
-	class ProxySu25Wreck: ProxyRetex
-	{
-		hiddenSelections[]=
-		{
-			"camo1"
-		};
-	};
 };
 class SensorTemplatePassiveRadar;
 class SensorTemplateAntiRadiation;
@@ -336,9 +303,6 @@ class CfgVehicles
 			class HitGlass5;
 			class HitGlass6;
 			class HitHull;
-			class HitEngine;
-			class HitAvionics;
-		};
 	};
 	class Helicopter_Base_F: Helicopter
 	{
@@ -359,15 +323,9 @@ class CfgVehicles
 			class HitFuel;
 			class HitEngine;
 			class HitAvionics;
-			class HitVRotor;
-			class HitHRotor;
-		};
 		class AnimationSources;
 		class Eventhandlers;
 		class ViewOptics;
-		class CargoTurret;
-		class RotorLibHelicopterProperties;
-	};
 	class Heli_Attack_02_base_F: Helicopter_Base_F
 	{
 		class RotorLibHelicopterProperties;
@@ -386,48 +344,27 @@ class CfgVehicles
 		};
 		class AnimationSources;
 		class Eventhandlers;
-		class Viewoptics;
-		class RotorLibHelicopterProperties;
-	};
-	class Heli_Transport_02_base_F: Helicopter_Base_H
-	{
-	};
 	class Heli_Light_02_base_F: Helicopter_Base_H
 	{
 		class Turrets: Turrets
 		{
-			class CopilotTurret;
-			class MainTurret;
-		};
 		class Components;
 	};
 	class Plane: Air
 	{
-		class HitPoints;
-		class EventHandlers;
-	};
 	class Plane_Base_F: Plane
 	{
 		class AnimationSources;
 		class HitPoints: HitPoints
 		{
-			class HitHull;
-		};
-	};
 	class Plane_CAS_02_base_F;
 	class O_Plane_CAS_02_F: Plane_CAS_02_base_F
 	{
 		class EventHandlers;
-		class AnimationSources;
-		class ViewPilot;
-	};
 	class UAV: Plane
 	{
 		class NewTurret;
 		class ViewPilot;
-		class ViewOptics;
-		class AnimationSources;
-	};
 	class RHS_Mi24_base: Heli_Attack_02_base_F
 	{
 		rhs_decalParameters[]=
@@ -476,10 +413,6 @@ class CfgVehicles
 			"CAS_Heli"
 		};
 		audible=7;
-		class PilotCamera
-		{
-		};
-		displayName="Mi-24P";
 		icon="rhsafrf\addons\rhs_a2port_air\data\map_ico\icon_mi24_ca.paa";
 		getInRadius=2;
 		maxOmega=2000;
@@ -552,28 +485,22 @@ class CfgVehicles
 				{
 					class PlaneOrientation
 					{
-						type="fixed";
 						refreshRate=0.1;
 						pos[]={0.44,0.52999997};
 					};
 					class ImpactPoint
 					{
-						type="vector";
 						source="ImpactPoint";
 						pos[]={0.44,0.52999997};
 						pos0[]={0.44,0.47};
 						pos10[]={1.12,1.21};
 					};
 				};
-				class Draw
-				{
-					color[]={0.15000001,1,0.15000001};
 					alpha=0.80000001;
 					condition="on";
 					class ImpactCross
 					{
 						width=4;
-						type="line";
 						points[]=
 						{
 							
@@ -642,9 +569,6 @@ class CfgVehicles
 				borderBottom=0;
 				color[]={0,1,0,0.1};
 				enableParallax=0;
-				class material
-				{
-					ambient[]={1,1,1,1};
 					diffuse[]={10,10,10,1};
 					emissive[]={400,200,200,1};
 				};
@@ -652,7 +576,6 @@ class CfgVehicles
 				{
 					class MovementY
 					{
-						type="linear";
 						source="user";
 						sourceIndex=0;
 						refreshRate=0.1;
@@ -669,15 +592,11 @@ class CfgVehicles
 						minPos[]={1,0};
 					};
 				};
-				class Draw
-				{
-					color[]={0.89999998,0,0};
 					alpha=1;
 					condition=1;
 					class PlanePosition
 					{
 						width=8;
-						type="line";
 						points[]=
 						{
 							
@@ -727,15 +646,11 @@ class CfgVehicles
 							}
 						};
 					};
-					class BlackGroup
-					{
-						color[]={0,0,0};
 						alpha=1;
 						condition=1;
 						class Cross
 						{
 							width=8;
-							type="line";
 							points[]=
 							{
 								
@@ -819,72 +734,21 @@ class CfgVehicles
 		{
 			"RHS_HIND_Cargo_Exit"
 		};
-		hiddenSelections[]=
-		{
-			"camo1",
-			"camo2",
-			"exhaust",
-			"tail_decals",
-			"n1",
-			"n2",
-			"moving_map"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"\rhsafrf\addons\rhs_a2port_air\mi35\data\mi24p_001_co.paa",
-			"\rhsafrf\addons\rhs_a2port_air\mi35\data\mi24p_002_co.paa",
-			"rhsafrf\addons\rhs_a2port_air\mi17\data\mi171_det_co.paa",
-			"rhsafrf\addons\rhs_decals\data\labels\aviation\vvs_ca.paa"
-		};
 		class textureSources
 		{
 			class standard
 			{
-				displayName="Grey";
 				factions[]=
 				{
 					"rhs_faction_vvs_c",
 					"rhs_faction_vvs"
 				};
 			};
-			class Camo: standard
-			{
-				displayName="Camo #1";
-			};
-			class Camo1: standard
-			{
-				displayName="Camo #2";
-			};
-			class Camo2: standard
-			{
-				displayName="Camo #3";
-			};
-			class Camo3: standard
-			{
-				displayName="Camo #4";
-			};
-			class Camo4: standard
-			{
-				displayName="Soot Camo #1";
-			};
-			class Camo5: standard
-			{
-				displayName="Soot Camo #2";
-			};
-			class Camo6: standard
-			{
-				displayName="Soot Camo #3";
-			};
-			class Camo7: standard
-			{
-				displayName="CDF";
-			};
 		};
 		class Attributes
 		{
 			class rhs_hideExhaust
 			{
-				displayName="Hide exhaust cover";
 				tooltip="Hide exhaust cover. WARNING: DUE TO HOW ENGINE WORKS IT DOESN'T CHANGE EXHAUST MEMORY POINTS";
 				property="rhs_hideExhaust";
 				control="CheckboxNumber";
@@ -893,7 +757,6 @@ class CfgVehicles
 			};
 			class rhs_opendoors
 			{
-				displayName="Open cargo doors";
 				property="rhs_opendoors";
 				control="CheckboxNumber";
 				expression="_this animateDoor ['Door_Cargo',_value,true]";
@@ -901,13 +764,11 @@ class CfgVehicles
 			};
 			class rhs_decalNumber_type
 			{
-				displayName="Define font type of side number";
 				tooltip="Define kind of font that will be drawn on vehicle";
 				property="rhs_decalNumber_type";
 				control="Combo";
 				expression="if(_value != 'NoChange')then{ _this setVariable ['%s', _value];[_this,[['Number', cRHSAIRMI24NumberPlaces, _value]]] call rhs_fnc_decalsInit}";
 				defaultValue=0;
-				typeName="STRING";
 				class values
 				{
 					class NoChange
@@ -980,24 +841,20 @@ class CfgVehicles
 			};
 			class rhs_decalNumber
 			{
-				displayName="Set side number";
 				tooltip="Set side number. 2 numbers are required. Type 0 to hide numbers completly";
 				property="rhs_decalNumber";
 				control="Edit";
 				validate="Number";
 				defaultValue="-1";
-				typeName="Number";
 				expression="if(_value >= 0)then{if(_value == 0)then{{[_this setobjectTexture [_x,'a3\data_f\clear_empty.paa']]}foreach cRHSAIRMI24NumberPlaces}else{[_this, [['Number', cRHSAIRMI24NumberPlaces, _this getVariable ['rhs_decalNumber_type','AviaYellow'], _value] ] ] call rhs_fnc_decalsInit}};";
 			};
 			class rhs_decalTail
 			{
-				displayName="Define tail decal";
 				tooltip="Define tail decalthat will be drawn on vehicle";
 				property="rhs_decalTail";
 				control="Combo";
 				expression="[_this,[['Label', cRHSAIRMI24TailPlaces, 'Aviation',_value]]] call rhs_fnc_decalsInit";
 				defaultValue=-1;
-				typeName="Number";
 				class values
 				{
 					class Default
@@ -1232,15 +1089,11 @@ class CfgVehicles
 					{
 						class AirTarget
 						{
-							minRange=500;
-							maxRange=2000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=1;
 						};
 						class GroundTarget
 						{
-							minRange=500;
-							maxRange=3200;
 							objectDistanceLimitCoef=1;
 							viewDistanceLimitCoef=1;
 						};
@@ -1293,15 +1146,11 @@ class CfgVehicles
 							"RHS_HP_UB32",
 							"RHS_HP_UPK23"
 						};
-						priority=1;
 						attachment="rhs_mag_fab250";
 						maxweight=550;
 						UIposition[]={0.50300002,0.30000001};
 						turret[]={0};
 					};
-					class pylon2: pylon1
-					{
-						UIposition[]={0.16500001,0.30000001};
 						mirroredMissilePos=1;
 					};
 					class pylon3: pylon1
@@ -1319,13 +1168,9 @@ class CfgVehicles
 						};
 						attachment="rhs_mag_b8v20a_s8kom";
 						maxweight=400;
-						priority=2;
 						UIposition[]={0.583,0.34999999};
 						turret[]={};
 					};
-					class pylon4: pylon3
-					{
-						UIposition[]={0.085000001,0.34999999};
 						mirroredMissilePos=3;
 					};
 					class pylon5: pylon1
@@ -1337,16 +1182,12 @@ class CfgVehicles
 							"RHS_HP_9m120_Mi24",
 							"RHS_HP_Empty_Mi24"
 						};
-						priority=4;
 						bay=1;
 						attachment="rhs_mag_9M120M_Mi24_2x";
 						maxweight=150;
 						UIposition[]={0.62800002,0.40000001};
 						turret[]={0};
 					};
-					class pylon6: pylon5
-					{
-						UIposition[]={0.039999999,0.40000001};
 						mirroredMissilePos=5;
 					};
 					class cmDispenser
@@ -1357,7 +1198,6 @@ class CfgVehicles
 							"RHS_cm_ASO2_x2",
 							"RHS_cm_ASO2_x4"
 						};
-						priority=1;
 						attachment="rhs_ASO2_CMFlare_Chaff_Magazine_x4";
 						maxweight=800;
 						UIposition[]={0.33000001,0};
@@ -1619,16 +1459,10 @@ class CfgVehicles
 				radius=0.69999999;
 			};
 		};
-		class Damage
-		{
-		};
 		class compartmentsLights
 		{
 			class Comp1
 			{
-				class Light_Pilot
-				{
-					color[]={40,20,20};
 					ambient[]={0,0,0};
 					intensity=2.5;
 					size=0;
@@ -1651,9 +1485,6 @@ class CfgVehicles
 			};
 			class Comp2
 			{
-				class Light_Gunner
-				{
-					color[]={40,20,20};
 					ambient[]={0,0,0};
 					intensity=3.5;
 					size=0;
@@ -1692,28 +1523,16 @@ class CfgVehicles
 				drawLightSize=0.25;
 				drawLightCenterSize=0.079999998;
 			};
-			class RedStill: GreenStill
-			{
-				color[]={0.80000001,0,0};
 				ambient[]={0.079999998,0,0};
 				name="cerveny pozicni";
 			};
-			class WhiteStill: GreenStill
-			{
-				color[]={1,1,1};
 				ambient[]={0.1,0.1,0.1};
 				name="bily pozicni";
 			};
-			class WhiteBlicking: GreenStill
-			{
-				color[]={1,1,1};
 				ambient[]={0.1,0.1,0.1};
 				blinking=1;
 				name="bily pozicni blik";
 			};
-			class RedBlinking: WhiteBlicking
-			{
-				color[]={0.89999998,0.15000001,0.1};
 				ambient[]={0.090000004,0.015,0.0099999998};
 				name="cerveny pozicni blik";
 			};
@@ -1730,7 +1549,6 @@ class CfgVehicles
 	};
 	class RHS_Mi24V_Base: RHS_Mi24_base
 	{
-		displayName="Mi-24V";
 		tf_isolatedAmount_api=0.60000002;
 		LESH_canBeTowed=1;
 		LESH_towFromFront=1;
@@ -1765,15 +1583,6 @@ class CfgVehicles
 				primarygunner=1;
 				stabilizedInAxes=2;
 			};
-			class CargoTurret_02: CargoTurret_02
-			{
-			};
-			class CargoTurret_03: CargoTurret_03
-			{
-			};
-			class CargoTurret_04: CargoTurret_04
-			{
-			};
 		};
 		class Components: Components
 		{
@@ -1810,9 +1619,6 @@ class CfgVehicles
 					{
 						attachment="rhs_mag_9M120M_Mi24_2x";
 						turret[]={0};
-					};
-					class cmDispenser: cmDispenser
-					{
 					};
 				};
 			};
@@ -1841,7 +1647,6 @@ class CfgVehicles
 	};
 	class RHS_Mi24D_Base: RHS_Mi24V_Base
 	{
-		displayName="$STR_RHS_MI24D_Name";
 		class Exhausts
 		{
 			class Exhaust01
@@ -1869,15 +1674,6 @@ class CfgVehicles
 					"rhs_weap_2K8_launcher"
 				};
 			};
-			class CargoTurret_02: CargoTurret_02
-			{
-			};
-			class CargoTurret_03: CargoTurret_03
-			{
-			};
-			class CargoTurret_04: CargoTurret_04
-			{
-			};
 		};
 		class Components: Components
 		{
@@ -1914,9 +1710,6 @@ class CfgVehicles
 					{
 						attachment="rhs_mag_9M17P_Mi24_2x";
 						turret[]={0};
-					};
-					class cmDispenser: cmDispenser
-					{
 					};
 				};
 			};
@@ -1924,7 +1717,6 @@ class CfgVehicles
 	};
 	class RHS_Mi24D_Early_Base: RHS_Mi24D_Base
 	{
-		displayName="$STR_RHS_MI24D_Early_Name";
 		class Components: Components
 		{
 			class TransportPylonsComponent: TransportPylonsComponent
@@ -1960,9 +1752,6 @@ class CfgVehicles
 					{
 						attachment="rhs_mag_9M17_Mi24_2x";
 						turret[]={0};
-					};
-					class cmDispenser: cmDispenser
-					{
 					};
 				};
 			};
@@ -1976,9 +1765,6 @@ class CfgVehicles
 		LESH_towFromFront=1;
 		LESH_AxisOffsetTarget[]={0.5,8.5,-2.21};
 		LESH_WheelOffset[]={0.5,1};
-	};
-	class RHS_Mi24P_vvs: RHS_Mi24P_VVS_Base
-	{
 	};
 	class RHS_Mi24P_vvsc: RHS_Mi24P_vvs
 	{
@@ -1998,7 +1784,6 @@ class CfgVehicles
 	};
 	class RHS_Mi24P_CAS_VVS_Base: RHS_Mi24P_VVS_Base
 	{
-		displayName="$STR_RHS_MI24P_CAS_Name";
 		class Components: Components
 		{
 			class TransportPylonsComponent: TransportPylonsComponent
@@ -2035,15 +1820,9 @@ class CfgVehicles
 						attachment="rhs_mag_9M120M_Mi24_2x";
 						turret[]={0};
 					};
-					class cmDispenser: cmDispenser
-					{
-					};
 				};
 			};
 		};
-	};
-	class RHS_Mi24P_CAS_vvs: RHS_Mi24P_CAS_VVS_Base
-	{
 	};
 	class RHS_Mi24P_CAS_vvsc: RHS_Mi24P_CAS_vvs
 	{
@@ -2091,7 +1870,6 @@ class CfgVehicles
 	};
 	class RHS_Mi24P_AT_VVS_Base: RHS_Mi24P_VVS_Base
 	{
-		displayName="$STR_RHS_MI24P_AT_Name";
 		class Components: Components
 		{
 			class TransportPylonsComponent: TransportPylonsComponent
@@ -2128,15 +1906,9 @@ class CfgVehicles
 						attachment="rhs_mag_9M120M_Mi24_2x";
 						turret[]={0};
 					};
-					class cmDispenser: cmDispenser
-					{
-					};
 				};
 			};
 		};
-	};
-	class RHS_Mi24P_AT_vvs: RHS_Mi24P_AT_VVS_Base
-	{
 	};
 	class RHS_Mi24P_AT_vvsc: RHS_Mi24P_AT_vvs
 	{
@@ -2212,9 +1984,6 @@ class CfgVehicles
 		accuracy=0.5;
 		side=0;
 	};
-	class RHS_Mi24V_vvs: RHS_Mi24V_VVS_Base
-	{
-	};
 	class RHS_Mi24V_vvsc: RHS_Mi24V_vvs
 	{
 		hiddenselectionstextures[]=
@@ -2227,7 +1996,6 @@ class CfgVehicles
 	};
 	class RHS_Mi24V_FAB_VVS_Base: RHS_Mi24V_VVS_Base
 	{
-		displayName="$STR_RHS_MI24V_FAB_Name";
 		class Components: Components
 		{
 			class TransportPylonsComponent: TransportPylonsComponent
@@ -2264,15 +2032,9 @@ class CfgVehicles
 						attachment="rhs_mag_9M120M_Mi24_2x";
 						turret[]={0};
 					};
-					class cmDispenser: cmDispenser
-					{
-					};
 				};
 			};
 		};
-	};
-	class RHS_Mi24V_FAB_vvs: RHS_Mi24V_FAB_VVS_Base
-	{
 	};
 	class RHS_Mi24V_FAB_vvsc: RHS_Mi24V_FAB_vvs
 	{
@@ -2319,7 +2081,6 @@ class CfgVehicles
 	};
 	class RHS_Mi24V_UPK23_VVS_Base: RHS_Mi24V_VVS_Base
 	{
-		displayName="$STR_RHS_MI24V_UPK_Name";
 		class Components: Components
 		{
 			class TransportPylonsComponent: TransportPylonsComponent
@@ -2356,15 +2117,9 @@ class CfgVehicles
 						attachment="rhs_mag_9M120M_Mi24_2x";
 						turret[]={0};
 					};
-					class cmDispenser: cmDispenser
-					{
-					};
 				};
 			};
 		};
-	};
-	class RHS_Mi24V_UPK23_vvs: RHS_Mi24V_UPK23_VVS_Base
-	{
 	};
 	class RHS_Mi24V_UPK23_vvsc: RHS_Mi24V_UPK23_vvs
 	{
@@ -2411,7 +2166,6 @@ class CfgVehicles
 	};
 	class RHS_Mi24V_AT_VVS_Base: RHS_Mi24V_VVS_Base
 	{
-		displayName="$STR_RHS_MI24V_AT_Name";
 		class Components: Components
 		{
 			class TransportPylonsComponent: TransportPylonsComponent
@@ -2448,15 +2202,9 @@ class CfgVehicles
 						attachment="rhs_mag_9M120M_Mi24_2x";
 						turret[]={0};
 					};
-					class cmDispenser: cmDispenser
-					{
-					};
 				};
 			};
 		};
-	};
-	class RHS_Mi24V_AT_vvs: RHS_Mi24V_AT_VVS_Base
-	{
 	};
 	class RHS_Mi24V_AT_vvsc: RHS_Mi24V_AT_vvs
 	{
@@ -2503,7 +2251,6 @@ class CfgVehicles
 	};
 	class RHS_Mi24Vt_vvs: RHS_Mi24V_vvs
 	{
-		displayName="$STR_RHS_MI24Vt_Name";
 		slingLoadMaxCargoMass=2400;
 		slingLoadMemoryPoint="slingLoad0";
 		LESH_canBeTowed=1;
@@ -2565,7 +2312,6 @@ class CfgVehicles
 							"RHS_cm_ASO2_x2",
 							"RHS_cm_ASO2_x4"
 						};
-						priority=1;
 						attachment="rhs_ASO2_CMFlare_Chaff_Magazine_x4";
 						maxweight=800;
 						UIposition[]={0.33000001,0};
@@ -2626,9 +2372,6 @@ class CfgVehicles
 		rhs_decalParameters[]=
 		{
 			"['Number',cRHSAIRMI8NumberPlaces,'AviaYellow']"
-		};
-		class PilotCamera
-		{
 		};
 		availableForSupportTypes[]=
 		{
@@ -2777,19 +2520,6 @@ class CfgVehicles
 			"chase03",
 			"chase04"
 		};
-		class MFD
-		{
-		};
-		hiddenSelections[]=
-		{
-			"Camo1",
-			"Camo2",
-			"Camo3",
-			"Camo4",
-			"n1",
-			"n2",
-			"tail_decals"
-		};
 		hiddenselectionstextures[]=
 		{
 			"rhsafrf\addons\rhs_a2port_air\mi17\data\mi8_body_g_vsr_co.paa",
@@ -2802,50 +2532,16 @@ class CfgVehicles
 		};
 		class textureSources
 		{
-			class standard
-			{
-				displayName="Grey";
-			};
-			class Civilian: standard
-			{
-				displayName="Civilian";
-			};
-			class Camo: standard
-			{
-				displayName="CDF";
-			};
-			class Camo1: standard
-			{
-				displayName="Chedaki";
-			};
-			class Camo2: standard
-			{
-				displayName="Camo #1";
-			};
-			class Camo3: standard
-			{
-				displayName="Camo #2";
-			};
-			class Camo4: standard
-			{
-				displayName="Camo #3";
-			};
-			class Camo5: standard
-			{
-				displayName="Camo #4";
-			};
 		};
 		class Attributes
 		{
 			class rhs_decalNumber_type
 			{
-				displayName="Define font type of side number";
 				tooltip="Define kind of font that will be drawn on vehicle";
 				property="rhs_decalNumber_type";
 				control="Combo";
 				expression="if(_value != 'NoChange')then{ _this setVariable ['%s', _value];[_this,[['Number', cRHSAIRMI8NumberPlaces, _value]]] call rhs_fnc_decalsInit}";
 				defaultValue=0;
-				typeName="STRING";
 				class values
 				{
 					class NoChange
@@ -2918,24 +2614,20 @@ class CfgVehicles
 			};
 			class rhs_decalNumber
 			{
-				displayName="Set side number";
 				tooltip="Set side number. 2 numbers are required. Type 0 to hide numbers completly";
 				property="rhs_decalNumber";
 				control="Edit";
 				validate="Number";
-				typeName="Number";
 				defaultValue="-1";
 				expression="if( _value >= 0)then{if( _value == 0)then{{[_this setobjectTexture [_x,'a3\data_f\clear_empty.paa']]}foreach cRHSAIRMI8NumberPlaces}else{[_this, [['Number', cRHSAIRMI8NumberPlaces, _this getVariable ['rhs_decalNumber_type','AviaYellow'], _value] ] ] call rhs_fnc_decalsInit}};";
 			};
 			class rhs_decalTail
 			{
-				displayName="Define tail decal";
 				tooltip="Define tail decalthat will be drawn on vehicle";
 				property="rhs_decalTail";
 				control="Combo";
 				expression="[_this,[['Label', cRHSAIRMI8TailPlaces, 'Aviation',_value]]] call rhs_fnc_decalsInit";
 				defaultValue=-1;
-				typeName="Number";
 				class values
 				{
 					class Default
@@ -2973,7 +2665,6 @@ class CfgVehicles
 							"RHS_cm_ASO2_x4",
 							"RHS_cm_ASO2_x6"
 						};
-						priority=1;
 						attachment="rhs_ASO2_CMFlare_Chaff_Magazine_x6";
 						maxweight=800;
 						UIposition[]={0.33000001,0};
@@ -3030,9 +2721,6 @@ class CfgVehicles
 				precisegetinout=0;
 				canEject=0;
 				commanding=-1;
-				class Hitpoints
-				{
-				};
 				class Components
 				{
 					class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
@@ -3112,9 +2800,6 @@ class CfgVehicles
 				};
 				isCoPilot=0;
 				showAsCargo=1;
-				class Hitpoints
-				{
-				};
 				class Components
 				{
 					class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
@@ -3174,9 +2859,6 @@ class CfgVehicles
 				weapons[]=
 				{
 					"rhs_weap_pkt_v2"
-				};
-				class Hitpoints
-				{
 				};
 			};
 		};
@@ -3428,34 +3110,19 @@ class CfgVehicles
 				drawLightSize=0.25;
 				drawLightCenterSize=0.079999998;
 			};
-			class RedStill: GreenStill
-			{
-				color[]={0.80000001,0,0};
 				ambient[]={0.079999998,0,0};
 				name="cerveny pozicni";
 			};
-			class WhiteStill: GreenStill
-			{
-				color[]={1,1,1};
 				ambient[]={0.1,0.1,0.1};
 				name="bily pozicni";
 			};
-			class WhiteBlicking: GreenStill
-			{
-				color[]={1,1,1};
 				ambient[]={0.1,0.1,0.1};
 				blinking=1;
 				name="bily pozicni blik";
 			};
-			class RedBlinking: WhiteBlicking
-			{
-				color[]={0.89999998,0.15000001,0.1};
 				ambient[]={0.090000004,0.015,0.0099999998};
 				name="cerveny pozicni blik";
 			};
-		};
-		class Damage
-		{
 		};
 		class EventHandlers: Eventhandlers
 		{
@@ -3483,7 +3150,6 @@ class CfgVehicles
 		tf_isolatedAmount_api=0.40000001;
 		LockDetectionSystem="8";
 		incomingMissileDetectionSystem="8";
-		displayName="$STR_RHS_MI8MTV3_Name";
 		class Turrets: Turrets
 		{
 			class CopilotTurret: CopilotTurret
@@ -3569,9 +3235,6 @@ class CfgVehicles
 				LODTurnedIn=1000;
 				LODOpticsOut=1000;
 				LODOpticsIn=1000;
-				class Hitpoints
-				{
-				};
 			};
 			class BackTurret: BackTurret
 			{
@@ -3604,9 +3267,6 @@ class CfgVehicles
 				LODTurnedIn=1000;
 				LODOpticsOut=1000;
 				LODOpticsIn=1000;
-				class Hitpoints
-				{
-				};
 			};
 		};
 		class Exhausts
@@ -3644,15 +3304,11 @@ class CfgVehicles
 							"RHS_HP_UB32",
 							"RHS_HP_UPK23"
 						};
-						priority=1;
 						attachment="rhs_mag_b8v20a_s8kom";
 						maxweight=1200;
 						UIposition[]={0.52499998,0.47999999};
 						hitpoint="HitPylon1";
 					};
-					class pylon2: pylon1
-					{
-						UIposition[]={0.14,0.47999999};
 						mirroredMissilePos=1;
 						hitpoint="HitPylon2";
 					};
@@ -3669,27 +3325,16 @@ class CfgVehicles
 						};
 						attachment="rhs_mag_b8v20a_s8df";
 						maxweight=1200;
-						priority=2;
 						UIposition[]={0.57499999,0.43000001};
 						hitpoint="HitPylon3";
 					};
-					class pylon4: pylon3
-					{
-						UIposition[]={0.090000004,0.43000001};
 						mirroredMissilePos=3;
 						hitpoint="HitPylon4";
 					};
-					class pylon5
-					{
-						hardpoints[]={};
-						priority=4;
 						attachment="";
 						maxweight=400;
 						UIposition[]={0,0.60000002};
 					};
-					class pylon6: pylon5
-					{
-						UIposition[]={0,0.60000002};
 						mirroredMissilePos=5;
 					};
 					class cmDispenser
@@ -3701,7 +3346,6 @@ class CfgVehicles
 							"RHS_cm_ASO2_x4",
 							"RHS_cm_ASO2_x6"
 						};
-						priority=1;
 						attachment="rhs_ASO2_CMFlare_Chaff_Magazine_x6";
 						maxweight=800;
 						UIposition[]={0.33000001,0};
@@ -3775,7 +3419,6 @@ class CfgVehicles
 	};
 	class rhs_mi8mtv3_heavy_base: rhs_mi8mtv3_base
 	{
-		displayName="Mi-8MTV-3 (Heavy)";
 		class Components: Components
 		{
 			class TransportPylonsComponent
@@ -3796,15 +3439,11 @@ class CfgVehicles
 							"RHS_HP_UB32",
 							"RHS_HP_UPK23"
 						};
-						priority=1;
 						attachment="rhs_mag_b8v20a_s8kom";
 						maxweight=800;
 						UIposition[]={0.52499998,0.47999999};
 						hitpoint="HitPylon1";
 					};
-					class pylon2: pylon1
-					{
-						UIposition[]={0.14,0.47999999};
 						mirroredMissilePos=1;
 						hitpoint="HitPylon2";
 					};
@@ -3821,13 +3460,9 @@ class CfgVehicles
 						};
 						attachment="rhs_mag_b8v20a_s8kom";
 						maxweight=800;
-						priority=2;
 						UIposition[]={0.57499999,0.43000001};
 						hitpoint="HitPylon3";
 					};
-					class pylon4: pylon3
-					{
-						UIposition[]={0.090000004,0.43000001};
 						mirroredMissilePos=3;
 						hitpoint="HitPylon4";
 					};
@@ -3841,15 +3476,11 @@ class CfgVehicles
 							"RHS_HP_UB32",
 							"RHS_HP_UPK23"
 						};
-						priority=4;
 						attachment="rhs_mag_b8v20a_s8kom";
 						maxweight=400;
 						UIposition[]={0.625,0.38};
 						hitpoint="HitPylon5";
 					};
-					class pylon6: pylon5
-					{
-						UIposition[]={0.039999999,0.38};
 						mirroredMissilePos=5;
 						hitpoint="HitPylon6";
 					};
@@ -3862,7 +3493,6 @@ class CfgVehicles
 							"RHS_cm_ASO2_x4",
 							"RHS_cm_ASO2_x6"
 						};
-						priority=1;
 						attachment="rhs_ASO2_CMFlare_Chaff_Magazine_x6";
 						maxweight=800;
 						UIposition[]={0.33000001,0};
@@ -3885,9 +3515,6 @@ class CfgVehicles
 				LODOpticsOut=1200;
 				LODOpticsIn=1200;
 			};
-			class SideTurret: SideTurret
-			{
-			};
 			class BackTurret: BackTurret
 			{
 				initturn=180;
@@ -3904,7 +3531,6 @@ class CfgVehicles
 				minturn=-121;
 			};
 		};
-		displayName="$STR_RHS_MI8AMTSh_Name";
 		drivercompartments="Compartment1";
 		cargocompartments[]=
 		{
@@ -3925,40 +3551,11 @@ class CfgVehicles
 		{
 			class standard
 			{
-				displayName="Grey";
 				factions[]=
 				{
 					"rhs_faction_vvs_c",
 					"rhs_faction_vvs"
 				};
-			};
-			class Civilian: standard
-			{
-				displayName="Civilian";
-			};
-			class Camo: standard
-			{
-				displayName="CDF";
-			};
-			class Camo1: standard
-			{
-				displayName="Chedaki";
-			};
-			class Camo2: standard
-			{
-				displayName="Camo #1";
-			};
-			class Camo3: standard
-			{
-				displayName="Camo #2";
-			};
-			class Camo4: standard
-			{
-				displayName="Camo #3";
-			};
-			class Camo5: standard
-			{
-				displayName="Camo #4";
 			};
 		};
 		class Components: Components
@@ -3981,15 +3578,11 @@ class CfgVehicles
 							"RHS_HP_UB32",
 							"RHS_HP_UPK23"
 						};
-						priority=1;
 						attachment="rhs_mag_b8v20a_s8kom";
 						maxweight=1200;
 						UIposition[]={0.52499998,0.47999999};
 						hitpoint="HitPylon1";
 					};
-					class pylon2: pylon1
-					{
-						UIposition[]={0.14,0.47999999};
 						mirroredMissilePos=1;
 						hitpoint="HitPylon2";
 					};
@@ -4006,13 +3599,9 @@ class CfgVehicles
 						};
 						attachment="rhs_mag_b8v20a_s8df";
 						maxweight=1200;
-						priority=2;
 						UIposition[]={0.57499999,0.43000001};
 						hitpoint="HitPylon3";
 					};
-					class pylon4: pylon3
-					{
-						UIposition[]={0.090000004,0.43000001};
 						mirroredMissilePos=3;
 						hitpoint="HitPylon4";
 					};
@@ -4026,15 +3615,11 @@ class CfgVehicles
 							"RHS_HP_UB32",
 							"RHS_HP_UPK23"
 						};
-						priority=4;
 						attachment="rhs_mag_b8v20a_s8kom";
 						maxweight=400;
 						UIposition[]={0.625,0.38};
 						hitpoint="HitPylon5";
 					};
-					class pylon6: pylon5
-					{
-						UIposition[]={0.039999999,0.38};
 						mirroredMissilePos=5;
 						hitpoint="HitPylon6";
 					};
@@ -4046,7 +3631,6 @@ class CfgVehicles
 							"RHS_cm_ASO2_x2",
 							"RHS_cm_ASO2_x4"
 						};
-						priority=1;
 						attachment="rhs_ASO2_CMFlare_Chaff_Magazine_x4";
 						maxweight=800;
 						UIposition[]={0.33000001,0};
@@ -4057,7 +3641,6 @@ class CfgVehicles
 	};
 	class rhs_mi8t_base: RHS_Mi8_base
 	{
-		displayName="$STR_RHS_MI8T_Name";
 		accuracy=1.5;
 		tf_isolatedAmount_api=0.5;
 		hasGunner=0;
@@ -4077,7 +3660,6 @@ class CfgVehicles
 							"RHS_cm_ASO2_x2",
 							"RHS_cm_ASO2_x4"
 						};
-						priority=1;
 						attachment="";
 						maxweight=800;
 						UIposition[]={0.33000001,0};
@@ -4105,16 +3687,6 @@ class CfgVehicles
 				enabledByAnimationSource="LeftDoor";
 			};
 		};
-		hiddenSelections[]=
-		{
-			"Camo1",
-			"Camo2",
-			"Camo8",
-			"Camo4",
-			"n1",
-			"n2",
-			"tail_decals"
-		};
 		hiddenselectionstextures[]=
 		{
 			"rhsafrf\addons\rhs_a2port_air\mi17\data\mi8_body_g_vsr_co.paa",
@@ -4129,56 +3701,17 @@ class CfgVehicles
 		{
 			class standard
 			{
-				displayName="Grey";
 				factions[]=
 				{
 					"rhs_faction_vvs_c",
 					"rhs_faction_vvs"
 				};
 			};
-			class Civilian: standard
-			{
-				displayName="Civilian";
-			};
-			class Camo: standard
-			{
-				displayName="CDF";
-			};
-			class Camo1: standard
-			{
-				displayName="Chedaki";
-			};
-			class Camo2: standard
-			{
-				displayName="Camo #1";
-			};
-			class Camo3: standard
-			{
-				displayName="Camo #2";
-			};
-			class Camo4: standard
-			{
-				displayName="Camo #3";
-			};
-			class Camo5: standard
-			{
-				displayName="Camo #4";
-			};
 		};
 		class Attributes: Attributes
 		{
-			class rhs_decalNumber_type: rhs_decalNumber_type
-			{
-			};
-			class rhs_decalNumber: rhs_decalNumber
-			{
-			};
-			class rhs_decalTail: rhs_decalTail
-			{
-			};
 			class rhs_reardoors
 			{
-				displayName="Open rear doors";
 				property="rhs_opendoors";
 				control="CheckboxNumber";
 				expression="[_this,14,15,true] call rhs_fnc_mi8_checkDoor";
@@ -4186,7 +3719,6 @@ class CfgVehicles
 			};
 			class rhs_leftdoor: rhs_reardoors
 			{
-				displayName="Open left door";
 				property="rhs_leftdoor";
 				expression="_this animateDoor ['LeftDoor',_value,true]";
 			};
@@ -4204,7 +3736,6 @@ class CfgVehicles
 	};
 	class rhs_mi8amt_base: RHS_Mi8_base
 	{
-		displayName="$STR_RHS_MI8AMT_Name";
 		accuracy=1.5;
 		tf_isolatedAmount_api=0.5;
 		hasGunner=0;
@@ -4231,18 +3762,8 @@ class CfgVehicles
 		};
 		class Attributes: Attributes
 		{
-			class rhs_decalNumber_type: rhs_decalNumber_type
-			{
-			};
-			class rhs_decalNumber: rhs_decalNumber
-			{
-			};
-			class rhs_decalTail: rhs_decalTail
-			{
-			};
 			class rhs_reardoors
 			{
-				displayName="Open rear doors";
 				property="rhs_opendoors";
 				control="CheckboxNumber";
 				expression="[_this,14,15,true] call rhs_fnc_mi8_checkDoor";
@@ -4250,7 +3771,6 @@ class CfgVehicles
 			};
 			class rhs_leftdoor: rhs_reardoors
 			{
-				displayName="Open left door";
 				property="rhs_leftdoor";
 				expression="_this animateDoor ['LeftDoor',_value,true]";
 			};
@@ -4296,7 +3816,6 @@ class CfgVehicles
 	};
 	class RHS_Mi8mt_vvs: RHS_Mi8_VVS_Base
 	{
-		displayName="$STR_RHS_MI8MT_Name";
 		transportsoldier=14;
 	};
 	class RHS_Mi8mt_vvsc: RHS_Mi8mt_vvs
@@ -4344,13 +3863,9 @@ class CfgVehicles
 	};
 	class RHS_Mi8mt_Cargo_vvs: RHS_Mi8mt_vvs
 	{
-		displayName="$STR_RHS_MI8MT_CARGO_Name";
 		transportsoldier=13;
 		class Turrets: Turrets
 		{
-			class CopilotTurret: CopilotTurret
-			{
-			};
 			class CargoTurret_02: CargoTurret_01
 			{
 				proxyIndex=13;
@@ -4367,18 +3882,8 @@ class CfgVehicles
 		};
 		class Attributes: Attributes
 		{
-			class rhs_decalNumber_type: rhs_decalNumber_type
-			{
-			};
-			class rhs_decalNumber: rhs_decalNumber
-			{
-			};
-			class rhs_decalTail: rhs_decalTail
-			{
-			};
 			class rhs_reardoors
 			{
-				displayName="Open rear doors";
 				property="rhs_opendoors";
 				control="CheckboxNumber";
 				expression="[_this,13,14,true] call rhs_fnc_mi8_checkDoor";
@@ -4386,7 +3891,6 @@ class CfgVehicles
 			};
 			class rhs_leftdoor: rhs_reardoors
 			{
-				displayName="Open left door";
 				property="rhs_leftdoor";
 				expression="_this animateDoor ['LeftDoor',_value,true]";
 			};
@@ -4443,10 +3947,6 @@ class CfgVehicles
 			"rhsafrf\addons\rhs_decals\data\labels\aviation\vvs_ca.paa"
 		};
 	};
-	class RHS_Mi8MTV3_vvs: RHS_Mi8MTV3_VVS_Base
-	{
-		displayName="$STR_RHS_MI8MTV3_Name";
-	};
 	class RHS_Mi8MTV3_vvsc: RHS_Mi8MTV3_vvs
 	{
 		rhs_decalParameters[]=
@@ -4479,7 +3979,6 @@ class CfgVehicles
 	};
 	class RHS_Mi8MTV3_UPK23_vvs: RHS_Mi8MTV3_vvs
 	{
-		displayName="$STR_RHS_MI8MTV3_UPK_Name";
 		class Components: Components
 		{
 			class TransportPylonsComponent: TransportPylonsComponent
@@ -4501,15 +4000,6 @@ class CfgVehicles
 					class pylon4: pylon4
 					{
 						attachment="rhs_mag_b8v20a_s8kom";
-					};
-					class pylon5: pylon5
-					{
-					};
-					class pylon6: pylon6
-					{
-					};
-					class cmDispenser: cmDispenser
-					{
 					};
 				};
 			};
@@ -4568,7 +4058,6 @@ class CfgVehicles
 	};
 	class RHS_Mi8MTV3_FAB_vvs: RHS_Mi8MTV3_vvs
 	{
-		displayName="$STR_RHS_MI8MTV3_FAB_Name";
 		class Components: Components
 		{
 			class TransportPylonsComponent: TransportPylonsComponent
@@ -4590,15 +4079,6 @@ class CfgVehicles
 					class pylon4: pylon4
 					{
 						attachment="rhs_mag_b8v20a_s8kom";
-					};
-					class pylon5: pylon5
-					{
-					};
-					class pylon6: pylon6
-					{
-					};
-					class cmDispenser: cmDispenser
-					{
 					};
 				};
 			};
@@ -4636,16 +4116,9 @@ class CfgVehicles
 	};
 	class RHS_Mi8mtv3_Cargo_vvs: RHS_Mi8MTV3_vvs
 	{
-		displayName="$STR_RHS_Mi8mtv3_CARGO_Name";
 		transportsoldier=12;
 		class Turrets: Turrets
 		{
-			class CopilotTurret: CopilotTurret
-			{
-			};
-			class FrontTurret: FrontTurret
-			{
-			};
 			class CargoTurret_02: CargoTurret_01
 			{
 				proxyIndex=12;
@@ -4662,18 +4135,8 @@ class CfgVehicles
 		};
 		class Attributes: Attributes
 		{
-			class rhs_decalNumber_type: rhs_decalNumber_type
-			{
-			};
-			class rhs_decalNumber: rhs_decalNumber
-			{
-			};
-			class rhs_decalTail: rhs_decalTail
-			{
-			};
 			class rhs_reardoors
 			{
-				displayName="Open rear doors";
 				property="rhs_opendoors";
 				control="CheckboxNumber";
 				expression="[_this,12,14,true] call rhs_fnc_mi8_checkDoor";
@@ -4681,7 +4144,6 @@ class CfgVehicles
 			};
 			class rhs_leftdoor: rhs_reardoors
 			{
-				displayName="Open left door";
 				property="rhs_leftdoor";
 				expression="_this animateDoor ['LeftDoor',_value,true]";
 			};
@@ -4725,9 +4187,6 @@ class CfgVehicles
 			"rhsafrf\addons\rhs_decals\data\labels\aviation\vvs_ca.paa"
 		};
 	};
-	class RHS_Mi8MTV3_heavy_vvs: RHS_Mi8MTV3_Heavy_VVS_Base
-	{
-	};
 	class RHS_Mi8MTV3_heavy_vvsc: RHS_Mi8MTV3_heavy_vvs
 	{
 		rhs_decalParameters[]=
@@ -4757,10 +4216,6 @@ class CfgVehicles
 			"a3\data_f\clear_empty.paa",
 			"rhsafrf\addons\rhs_decals\data\labels\aviation\vvs_ca.paa"
 		};
-	};
-	class RHS_Mi8T_vvs: RHS_Mi8T_VVS_Base
-	{
-		displayName="$STR_RHS_Mi8T_Name";
 	};
 	class RHS_Mi8T_vvsc: RHS_Mi8T_vvs
 	{
@@ -4805,10 +4260,6 @@ class CfgVehicles
 			"rhsafrf\addons\rhs_decals\data\labels\aviation\vvs_ca.paa"
 		};
 	};
-	class RHS_Mi8AMT_vvs: RHS_Mi8AMT_VVS_Base
-	{
-		displayName="$STR_RHS_Mi8AMT_Name";
-	};
 	class RHS_Mi8AMT_vvsc: RHS_Mi8AMT_vvs
 	{
 		rhs_decalParameters[]=
@@ -4839,13 +4290,8 @@ class CfgVehicles
 			"rhsafrf\addons\rhs_decals\data\labels\aviation\vvs_ca.paa"
 		};
 	};
-	class RHS_Mi8AMTSh_vvs: RHS_Mi8AMTSh_VVS_Base
-	{
-		displayName="$STR_RHS_MI8AMTSh_Name";
-	};
 	class RHS_Mi8AMTSh_vvsc: RHS_Mi8AMTSh_vvs
 	{
-		displayName="$STR_RHS_MI8AMTSh_Name";
 		rhs_decalParameters[]=
 		{
 			"['Number',cRHSAIRMI8NumberPlaces,'AviaRed']"
@@ -4863,7 +4309,6 @@ class CfgVehicles
 	};
 	class RHS_Mi8AMTSh_UPK23_vvs: RHS_Mi8AMTSh_vvs
 	{
-		displayName="$STR_RHS_MI8AMTSh_UPK_Name";
 		class Components: Components
 		{
 			class TransportPylonsComponent: TransportPylonsComponent
@@ -4893,9 +4338,6 @@ class CfgVehicles
 					class pylon6: pylon6
 					{
 						attachment="rhs_mag_b8v20a_s8df";
-					};
-					class cmDispenser: cmDispenser
-					{
 					};
 				};
 			};
@@ -4941,7 +4383,6 @@ class CfgVehicles
 	};
 	class RHS_Mi8AMTSh_FAB_vvs: RHS_Mi8AMTSh_vvs
 	{
-		displayName="$STR_RHS_MI8AMTSh_FAB_Name";
 		class Components: Components
 		{
 			class TransportPylonsComponent: TransportPylonsComponent
@@ -4972,9 +4413,6 @@ class CfgVehicles
 					{
 						attachment="rhs_mag_b8v20a_s8df";
 					};
-					class cmDispenser: cmDispenser
-					{
-					};
 				};
 			};
 		};
@@ -4996,10 +4434,6 @@ class CfgVehicles
 			"rhsafrf\addons\rhs_decals\data\labels\aviation\vvs_ca.paa"
 		};
 	};
-	class RHS_Mi8amt_civilian: RHS_Mi8AMT_vvs
-	{
-		displayName="$STR_RHS_MI8AMT_Name";
-		rhs_decalParameters[]={};
 		side=3;
 		hiddenselectionstextures[]=
 		{
@@ -5010,9 +4444,6 @@ class CfgVehicles
 			"a3\data_f\clear_empty.paa",
 			"a3\data_f\clear_empty.paa",
 			"a3\data_f\clear_empty.paa"
-		};
-		class EventHandlers: EventHandlers
-		{
 		};
 		class Components: Components
 		{
@@ -5028,10 +4459,6 @@ class CfgVehicles
 			};
 		};
 	};
-	class RHS_Mi8t_civilian: RHS_Mi8T_vvs
-	{
-		displayName="$STR_RHS_MI8T_Name";
-		rhs_decalParameters[]={};
 		side=3;
 		hiddenselectionstextures[]=
 		{
@@ -5042,9 +4469,6 @@ class CfgVehicles
 			"a3\data_f\clear_empty.paa",
 			"a3\data_f\clear_empty.paa",
 			"a3\data_f\clear_empty.paa"
-		};
-		class EventHandlers: EventHandlers
-		{
 		};
 		class Components: Components
 		{
@@ -5098,9 +4522,6 @@ class CfgVehicles
 		allowTabLock=0;
 		driverCanEject=1;
 		driverCompartments=1;
-		class EjectionSystem
-		{
-		};
 		ejectDamageLimit=1;
 		memoryPointDriverOptics="pilotCamera";
 		class PilotCamera
@@ -5564,31 +4985,17 @@ class CfgVehicles
 		{
 			class standard
 			{
-				displayName="Blue";
 				factions[]=
 				{
 					"rhs_faction_vvs"
 				};
 			};
-			class standard2: standard
-			{
-				displayName="Grey";
-			};
 			class Camo: standard
 			{
-				displayName="Camo #1";
 				factions[]=
 				{
 					"rhs_faction_vvs_c"
 				};
-			};
-			class Camo1: Camo
-			{
-				displayName="Camo #2";
-			};
-			class Camo2: standard
-			{
-				displayName="CDF";
 			};
 		};
 		class Components
@@ -5617,15 +5024,11 @@ class CfgVehicles
 							"RHS_HP_UB32",
 							"RHS_HP_R73"
 						};
-						priority=9;
 						attachment="rhs_mag_fab250";
 						hitpoint="HitPylon1";
 						maxweight=1200;
 						UIposition[]={0.31999999,0.34999999};
 					};
-					class pylon2: pylon1
-					{
-						UIposition[]={0.31999999,0.2};
 						mirroredMissilePos=1;
 						hitpoint="HitPylon2";
 					};
@@ -5648,13 +5051,9 @@ class CfgVehicles
 							"RHS_HP_UB32",
 							"RHS_HP_R73"
 						};
-						priority=7;
 						hitpoint="HitPylon3";
 						UIposition[]={0.33000001,0.40000001};
 					};
-					class pylon4: pylon3
-					{
-						UIposition[]={0.33000001,0.15000001};
 						mirroredMissilePos=3;
 						hitpoint="HitPylon4";
 					};
@@ -5677,15 +5076,11 @@ class CfgVehicles
 							"RHS_HP_UB32",
 							"RHS_HP_R73"
 						};
-						priority=10;
 						attachment="rhs_mag_b8m1_s8kom";
 						hitpoint="HitPylon5";
 						maxweight=1200;
 						UIposition[]={0.34,0.44999999};
 					};
-					class pylon6: pylon5
-					{
-						UIposition[]={0.34,0.1};
 						mirroredMissilePos=5;
 						hitpoint="HitPylon6";
 					};
@@ -5707,15 +5102,11 @@ class CfgVehicles
 							"RHS_HP_UB32",
 							"RHS_HP_R73"
 						};
-						priority=11;
 						attachment="rhs_mag_b8m1_s8df";
 						hitpoint="HitPylon7";
 						maxweight=1200;
 						UIposition[]={0.34999999,0.5};
 					};
-					class pylon8: pylon7
-					{
-						UIposition[]={0.34999999,0.050000001};
 						mirroredMissilePos=7;
 						hitpoint="HitPylon8";
 					};
@@ -5725,15 +5116,11 @@ class CfgVehicles
 						{
 							"RHS_HP_R60"
 						};
-						priority=12;
 						attachment="rhs_mag_R60M";
 						hitpoint="HitPylon9";
 						maxweight=1200;
 						UIposition[]={0.36000001,0.55000001};
 					};
-					class pylon10: pylon9
-					{
-						UIposition[]={0.36000001,0};
 						mirroredMissilePos=9;
 						hitpoint="HitPylon10";
 					};
@@ -5745,7 +5132,6 @@ class CfgVehicles
 							"RHS_cm_ASO2_x2",
 							"RHS_cm_ASO2_x4"
 						};
-						priority=1;
 						attachment="rhs_ASO2_CMFlare_Chaff_Magazine_x4";
 						maxweight=800;
 						UIposition[]={0.625,0.27500001};
@@ -5939,26 +5325,18 @@ class CfgVehicles
 			{
 				class Components
 				{
-					class PassiveRadarSensorComponent: SensorTemplatePassiveRadar
-					{
-					};
 				};
-			};
-			class TransportCountermeasuresComponent
-			{
 			};
 		};
 		class Attributes
 		{
 			class rhs_decalNumber_type
 			{
-				displayName="Define font type of side number";
 				tooltip="Define kind of font that will be drawn on vehicle";
 				property="rhs_decalNumber_type";
 				control="Combo";
 				expression="if(_value != 'NoChange')then{ _this setVariable ['%s', _value];[_this,[['Number', cRHSAIRSU25NumberPlaces, _value]]] call rhs_fnc_decalsInit}";
 				defaultValue=0;
-				typeName="STRING";
 				class values
 				{
 					class NoChange
@@ -6031,24 +5409,20 @@ class CfgVehicles
 			};
 			class rhs_decalNumber
 			{
-				displayName="Set side number";
 				tooltip="Set side number. 2 numbers are required. Type 0 to hide numbers completly";
 				property="rhs_decalNumber";
 				control="Edit";
 				validate="Number";
 				defaultValue="-1";
-				typeName="Number";
 				expression="if(_value >= 0)then{if(_value == 0)then{{[_this setobjectTexture [_x,'a3\data_f\clear_empty.paa']]}foreach cRHSAIRSU25NumberPlaces}else{[_this, [['Number', cRHSAIRSU25NumberPlaces, _this getVariable ['rhs_decalNumber_type','AviaYellow'], _value] ] ] call rhs_fnc_decalsInit}};";
 			};
 			class rhs_decalNoseArt
 			{
-				displayName="Define Nose Art";
 				tooltip="Define Nose Art texture located near the cabin. Appears on both sides";
 				property="rhs_decalNoseArt";
 				control="Combo";
 				expression="if(_value >= 0)then{ [_this, [ [ 'Label', cRHSAIRSU25NosePlaces, 'Su25NoseArt',_value] ] ] call rhs_fnc_decalsInit};";
 				defaultValue="-1";
-				typeName="Number";
 				class values
 				{
 					class Random
@@ -6086,7 +5460,6 @@ class CfgVehicles
 			};
 			class rhs_decalSideArt: rhs_decalNoseArt
 			{
-				displayName="Define Side Art";
 				tooltip="Define Side Art texture located near the jet intake. Appears on both sides";
 				property="rhs_decalSideArt";
 				expression="if(_value >= 0)then{ [_this, [ [ 'Label', cRHSAIRSU25SidePlaces, 'Su25Ex',_value] ] ] call rhs_fnc_decalsInit};";
@@ -6117,13 +5490,11 @@ class CfgVehicles
 			};
 			class rhs_decalTail
 			{
-				displayName="Define tail decal";
 				tooltip="Define tail decal that will be drawn on vehicle";
 				property="rhs_decalTail";
 				control="Combo";
 				expression="[_this,[['Label', cRHSAIRSU25TailPlaces, 'Aviation',_value]]] call rhs_fnc_decalsInit";
 				defaultValue=-1;
-				typeName="Number";
 				class values
 				{
 					class Default
@@ -6166,9 +5537,6 @@ class CfgVehicles
 		{
 			class Comp1
 			{
-				class Light_General
-				{
-					color[]={40,20,20};
 					ambient[]={0,0,0};
 					intensity=2.5;
 					size=0;
@@ -6207,28 +5575,16 @@ class CfgVehicles
 				drawLightSize=0.25;
 				drawLightCenterSize=0.079999998;
 			};
-			class RedStill: GreenStill
-			{
-				color[]={0.80000001,0,0};
 				ambient[]={0.079999998,0,0};
 				name="cerveny pozicni";
 			};
-			class WhiteStill: GreenStill
-			{
-				color[]={1,1,1};
 				ambient[]={0.1,0.1,0.1};
 				name="bily pozicni";
 			};
-			class WhiteBlicking: GreenStill
-			{
-				color[]={1,1,1};
 				ambient[]={0.1,0.1,0.1};
 				blinking=1;
 				name="bily pozicni blik";
 			};
-			class RedBlinking: WhiteBlicking
-			{
-				color[]={0.89999998,0.15000001,0.1};
 				ambient[]={0.090000004,0.015,0.0099999998};
 				name="cerveny pozicni blik";
 			};
@@ -6284,23 +5640,14 @@ class CfgVehicles
 				borderRight=0;
 				borderTop=0;
 				borderBottom=0;
-				class Pos10Vector
-				{
-					pos0[]={0.51999998,0.029999999};
 					pos10[]={2.02,1.23};
-					type="vector";
 				};
 				color[]={0,1,0,0.1};
 				class Bones
 				{
-					class PlaneW
-					{
-						pos[]={0.5,0.5};
-						type="fixed";
 					};
 					class HorizonBankMGun
 					{
-						type="rotational";
 						source="HorizonBank";
 						min=-6.2831898;
 						max=6.2831898;
@@ -6308,11 +5655,7 @@ class CfgVehicles
 						maxAngle=360;
 						aspectRatio=0.80000001;
 					};
-					class HorizonBankReverted
-					{
-						pos0[]={-0,-0};
 						pos10[]={0,0};
-						type="rotational";
 						source="HorizonBank";
 						min=-6.2831898;
 						max=6.2831898;
@@ -6322,14 +5665,12 @@ class CfgVehicles
 					};
 					class ImpactPoint
 					{
-						type="vector";
 						source="ImpactPoint";
 						pos0[]={0.5,0.23};
 						pos10[]={1.38,1.46};
 					};
 					class TargetingPodDir
 					{
-						type="vector";
 						source="pilotcamera";
 						pos0[]=
 						{
@@ -6338,12 +5679,8 @@ class CfgVehicles
 						};
 						pos10[]={2.02,1.47};
 					};
-					class TargetingPodTarget: TargetingPodDir
-					{
-					};
 					class MissileFlightTimeRot1
 					{
-						type="rotational";
 						source="MissileFlightTime";
 						sourceScale=2.5;
 						min=0;
@@ -6449,7 +5786,6 @@ class CfgVehicles
 					};
 					class UserRot1
 					{
-						type="rotational";
 						source="user";
 						sourceIndex=4;
 						sourceScale=0.0040000002;
@@ -6555,16 +5891,12 @@ class CfgVehicles
 						max=60;
 					};
 				};
-				class Draw
-				{
-					color[]={0.69,0.22,0};
 					alpha=1;
 					class ImpactPoint
 					{
 						condition="1 - atmissile";
 						class Cros
 						{
-							type="line";
 							points[]=
 							{
 								
@@ -6631,7 +5963,6 @@ class CfgVehicles
 						};
 						class Dot
 						{
-							type="line";
 							points[]=
 							{
 								
@@ -6668,7 +5999,6 @@ class CfgVehicles
 						};
 						class Ring
 						{
-							type="line";
 							points[]=
 							{
 								
@@ -6970,7 +6300,6 @@ class CfgVehicles
 						};
 						class Triangle
 						{
-							type="line";
 							width=9;
 							points[]=
 							{
@@ -7026,7 +6355,6 @@ class CfgVehicles
 						};
 						class LaunchAutorization
 						{
-							type="line";
 							width=14;
 							points[]=
 							{
@@ -7088,7 +6416,6 @@ class CfgVehicles
 						};
 						class LaunchAutorizationBig
 						{
-							type="line";
 							width=24;
 							points[]=
 							{
@@ -7140,7 +6467,6 @@ class CfgVehicles
 						condition="atmissile-pilotcameralock";
 						class Cros
 						{
-							type="line";
 							points[]=
 							{
 								
@@ -7207,7 +6533,6 @@ class CfgVehicles
 						};
 						class Dot
 						{
-							type="line";
 							points[]=
 							{
 								
@@ -7244,7 +6569,6 @@ class CfgVehicles
 						};
 						class Ring
 						{
-							type="line";
 							points[]=
 							{
 								
@@ -7546,7 +6870,6 @@ class CfgVehicles
 						};
 						class Triangle
 						{
-							type="line";
 							width=9;
 							points[]=
 							{
@@ -7602,7 +6925,6 @@ class CfgVehicles
 						};
 						class LaunchAutorization
 						{
-							type="line";
 							width=14;
 							points[]=
 							{
@@ -7664,7 +6986,6 @@ class CfgVehicles
 						};
 						class LaunchAutorizationBig
 						{
-							type="line";
 							width=24;
 							points[]=
 							{
@@ -7716,7 +7037,6 @@ class CfgVehicles
 						condition="(atmissile)*(pilotcameralock>=0)*laseron";
 						class Cros
 						{
-							type="line";
 							points[]=
 							{
 								
@@ -7783,7 +7103,6 @@ class CfgVehicles
 						};
 						class Dot
 						{
-							type="line";
 							points[]=
 							{
 								
@@ -7820,7 +7139,6 @@ class CfgVehicles
 						};
 						class Ring
 						{
-							type="line";
 							points[]=
 							{
 								
@@ -8122,7 +7440,6 @@ class CfgVehicles
 						};
 						class Triangle
 						{
-							type="line";
 							width=9;
 							points[]=
 							{
@@ -8178,7 +7495,6 @@ class CfgVehicles
 						};
 						class LaunchAutorization
 						{
-							type="line";
 							width=14;
 							points[]=
 							{
@@ -8240,7 +7556,6 @@ class CfgVehicles
 						};
 						class LaunchAutorizationBig
 						{
-							type="line";
 							width=24;
 							points[]=
 							{
@@ -8292,7 +7607,6 @@ class CfgVehicles
 						condition="user5";
 						class Shape
 						{
-							type="polygon";
 							points[]=
 							{
 								
@@ -8335,9 +7649,6 @@ class CfgVehicles
 				color[]={0.15000001,1,0.15000001,1};
 				enableParallax=0;
 				font="PuristaMedium";
-				class Bones
-				{
-				};
 				class Draw
 				{
 					alpha=0.5;
@@ -8345,13 +7656,9 @@ class CfgVehicles
 					class MgunAmmo
 					{
 						condition="ammo2>=1";
-						class BlackBackground
-						{
-							color[]={0,0,0};
 							alpha=1;
 							class AmmoBox
 							{
-								type="polygon";
 								width=4;
 								points[]=
 								{
@@ -8386,7 +7693,6 @@ class CfgVehicles
 							condition="ammo2>=212";
 							class AmmoText
 							{
-								type="text";
 								source="static";
 								scale=1;
 								sourceScale=1;
@@ -8413,7 +7719,6 @@ class CfgVehicles
 							condition="(ammo2>=137)*(ammo2<=211)";
 							class AmmoText
 							{
-								type="text";
 								source="static";
 								scale=1;
 								sourceScale=1;
@@ -8440,7 +7745,6 @@ class CfgVehicles
 							condition="(ammo2>=63)*(ammo2<=136)";
 							class AmmoText
 							{
-								type="text";
 								source="static";
 								scale=1;
 								sourceScale=1;
@@ -8467,7 +7771,6 @@ class CfgVehicles
 							condition="(ammo2<=62)";
 							class AmmoText
 							{
-								type="text";
 								source="static";
 								scale=1;
 								sourceScale=1;
@@ -8493,13 +7796,9 @@ class CfgVehicles
 					class WeaponTypeRocket
 					{
 						condition="rocket";
-						class BlackBackground
-						{
-							color[]={0,0,0};
 							alpha=1;
 							class AmmoBox
 							{
-								type="polygon";
 								width=4;
 								points[]=
 								{
@@ -8531,7 +7830,6 @@ class CfgVehicles
 						};
 						class AmmoText
 						{
-							type="text";
 							source="static";
 							scale=1;
 							sourceScale=1;
@@ -8558,13 +7856,9 @@ class CfgVehicles
 						condition="missile";
 						class BlackBackground: BlackBackground
 						{
-							class AmmoBox: AmmoBox
-							{
-							};
 						};
 						class AmmoText
 						{
-							type="text";
 							source="static";
 							scale=1;
 							sourceScale=1;
@@ -8591,13 +7885,9 @@ class CfgVehicles
 						condition="bomb";
 						class BlackBackground: BlackBackground
 						{
-							class AmmoBox: AmmoBox
-							{
-							};
 						};
 						class AmmoText
 						{
-							type="text";
 							source="static";
 							scale=1;
 							sourceScale=1;
@@ -8624,13 +7914,9 @@ class CfgVehicles
 						condition="mgun";
 						class BlackBackground: BlackBackground
 						{
-							class AmmoBox: AmmoBox
-							{
-							};
 						};
 						class AmmoText
 						{
-							type="text";
 							source="static";
 							scale=1;
 							sourceScale=1;
@@ -8654,7 +7940,6 @@ class CfgVehicles
 					};
 					class Pylon1
 					{
-						type="pylonicon";
 						pos[]=
 						{
 							{0.345,0.34},
@@ -8757,9 +8042,6 @@ class CfgVehicles
 				borderBottom=0;
 				color[]={0.15000001,1,0.15000001,1};
 				enableParallax=0;
-				class Bones
-				{
-				};
 				class Draw
 				{
 					alpha=1;
@@ -8771,7 +8053,6 @@ class CfgVehicles
 						alpha=0.2;
 						class Bulb
 						{
-							type="polygon";
 							points[]=
 							{
 								
@@ -8800,14 +8081,10 @@ class CfgVehicles
 							};
 						};
 					};
-					class Laser_Active
-					{
-						color[]={0,0.49000001,0};
 						alpha=0.1;
 						condition="laseron";
 						class Bulb
 						{
-							type="polygon";
 							points[]=
 							{
 								
@@ -8841,9 +8118,6 @@ class CfgVehicles
 						condition="user0";
 						blinkingPattern[]={0.30000001,0.30000001};
 						blinkingStartsOn=1;
-						class Bulb: Bulb
-						{
-						};
 					};
 					class Launch_Disengage
 					{
@@ -8852,7 +8126,6 @@ class CfgVehicles
 						alpha=0.07;
 						class Bulb
 						{
-							type="polygon";
 							points[]=
 							{
 								
@@ -8916,9 +8189,6 @@ class CfgVehicles
 					{0.5,1},
 					{1,1}
 				};
-			};
-			class Wheel_1_fake: Wheel_1
-			{
 			};
 			class Wheel_2: Wheel_1
 			{
@@ -8997,7 +8267,6 @@ class CfgVehicles
 	};
 	class RHS_Su25SM_vvs: RHS_Su25_VVS_Base
 	{
-		displayName="$STR_RHS_SU25_Name";
 		hiddenselectionstextures[]=
 		{
 			"\rhsafrf\addons\rhs_a2port_air\su25\data\su25_body1_co.paa",
@@ -9011,7 +8280,6 @@ class CfgVehicles
 	};
 	class RHS_Su25SM_KH29_vvs: RHS_Su25SM_vvs
 	{
-		displayName="$STR_RHS_SU25_KH29_Name";
 		class Components: Components
 		{
 			class TransportPylonsComponent: TransportPylonsComponent
@@ -9041,21 +8309,6 @@ class CfgVehicles
 					class pylon6: pylon6
 					{
 						attachment="rhs_mag_kh25ML";
-					};
-					class pylon7: pylon7
-					{
-					};
-					class pylon8: pylon8
-					{
-					};
-					class pylon9: pylon9
-					{
-					};
-					class pylon10: pylon10
-					{
-					};
-					class cmDispenser: cmDispenser
-					{
 					};
 				};
 			};
@@ -9063,7 +8316,6 @@ class CfgVehicles
 	};
 	class RHS_Su25SM_CAS_vvs: RHS_Su25SM_vvs
 	{
-		displayName="$STR_RHS_SU25_CAS_Name";
 		class Components: Components
 		{
 			class TransportPylonsComponent: TransportPylonsComponent
@@ -9101,15 +8353,6 @@ class CfgVehicles
 					class pylon8: pylon8
 					{
 						attachment="rhs_mag_b8m1_s8df";
-					};
-					class pylon9: pylon9
-					{
-					};
-					class pylon10: pylon10
-					{
-					};
-					class cmDispenser: cmDispenser
-					{
 					};
 				};
 			};
@@ -9117,7 +8360,6 @@ class CfgVehicles
 	};
 	class RHS_Su25SM_Cluster_vvs: RHS_Su25SM_vvs
 	{
-		displayName="$STR_RHS_SU25_Cluster_Name";
 		class Components: Components
 		{
 			class TransportPylonsComponent: TransportPylonsComponent
@@ -9155,15 +8397,6 @@ class CfgVehicles
 					class pylon8: pylon8
 					{
 						attachment="rhs_mag_b8m1_s8df";
-					};
-					class pylon9: pylon9
-					{
-					};
-					class pylon10: pylon10
-					{
-					};
-					class cmDispenser: cmDispenser
-					{
 					};
 				};
 			};
@@ -9190,7 +8423,6 @@ class CfgVehicles
 	};
 	class RHS_Su25SM_KH29_vvsc: RHS_Su25SM_vvsc
 	{
-		displayName="$STR_RHS_SU25_KH29_Name";
 		class Components: Components
 		{
 			class TransportPylonsComponent: TransportPylonsComponent
@@ -9220,21 +8452,6 @@ class CfgVehicles
 					class pylon6: pylon6
 					{
 						attachment="rhs_mag_kh25ML";
-					};
-					class pylon7: pylon7
-					{
-					};
-					class pylon8: pylon8
-					{
-					};
-					class pylon9: pylon9
-					{
-					};
-					class pylon10: pylon10
-					{
-					};
-					class cmDispenser: cmDispenser
-					{
 					};
 				};
 			};
@@ -9242,7 +8459,6 @@ class CfgVehicles
 	};
 	class RHS_Su25SM_CAS_vvsc: RHS_Su25SM_vvsc
 	{
-		displayName="$STR_RHS_SU25_CAS_Name";
 		class Components: Components
 		{
 			class TransportPylonsComponent: TransportPylonsComponent
@@ -9280,15 +8496,6 @@ class CfgVehicles
 					class pylon8: pylon8
 					{
 						attachment="rhs_mag_b8m1_s8df";
-					};
-					class pylon9: pylon9
-					{
-					};
-					class pylon10: pylon10
-					{
-					};
-					class cmDispenser: cmDispenser
-					{
 					};
 				};
 			};
@@ -9296,7 +8503,6 @@ class CfgVehicles
 	};
 	class RHS_Su25SM_Cluster_vvsc: RHS_Su25SM_vvsc
 	{
-		displayName="$STR_RHS_SU25_Cluster_Name";
 		class Components: Components
 		{
 			class TransportPylonsComponent: TransportPylonsComponent
@@ -9334,15 +8540,6 @@ class CfgVehicles
 					class pylon8: pylon8
 					{
 						attachment="rhs_mag_b8m1_s8df";
-					};
-					class pylon9: pylon9
-					{
-					};
-					class pylon10: pylon10
-					{
-					};
-					class cmDispenser: cmDispenser
-					{
 					};
 				};
 			};
@@ -9401,7 +8598,6 @@ class CfgVehicles
 		ejectSpeed[]={1,0,11};
 		armor=55;
 		accuracy=0.55000001;
-		displayName="Ka-52";
 		icon="\rhsafrf\addons\rhs_a2port_air\data\map_ico\Icon_ka52_CA.paa";
 		castDriverShadow=1;
 		viewCargoShadow=1;
@@ -9444,9 +8640,6 @@ class CfgVehicles
 			"chase03",
 			"chase04"
 		};
-		class PilotCamera
-		{
-		};
 		receiveRemoteTargets=1;
 		reportRemoteTargets=1;
 		reportOwnPosition=1;
@@ -9487,21 +8680,6 @@ class CfgVehicles
 			class HitRotor1: HitGlass3
 			{
 				armor=1;
-			};
-			class HitRotor2: HitRotor1
-			{
-			};
-			class HitRotor3: HitRotor1
-			{
-			};
-			class HitRotor4: HitRotor1
-			{
-			};
-			class HitRotor5: HitRotor1
-			{
-			};
-			class HitRotor6: HitRotor1
-			{
 			};
 			class HitPylon1
 			{
@@ -9558,56 +8736,40 @@ class CfgVehicles
 					{
 						class AirTarget
 						{
-							minRange=9000;
-							maxRange=9000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
 						class GroundTarget
 						{
-							minRange=9000;
-							maxRange=9000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
 						angleRangeHorizontal=75;
 						angleRangeVertical=75;
-						typeRecognitionDistance=-1;
 						maxGroundNoiseDistance=0;
 						maxFogSeeThrough=0.30000001;
 						animDirection="mainGun";
-					};
-					class PassiveRadarSensorComponent: SensorTemplatePassiveRadar
-					{
 					};
 					class ActiveRadarSensorComponent: SensorTemplateActiveRadar
 					{
 						class AirTarget
 						{
-							minRange=11000;
-							maxRange=11000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
 						class GroundTarget
 						{
-							minRange=11000;
-							maxRange=11000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
 						angleRangeHorizontal=120;
 						angleRangeVertical=100;
-						typeRecognitionDistance=4000;
 						maxFogSeeThrough=1;
 						groundNoiseDistanceCoef=-1;
 						maxGroundNoiseDistance=-1;
 						minSpeedThreshold=0;
 						maxSpeedThreshold=0;
 						maxTrackableSpeed=125;
-					};
-					class DataLinkSensorComponent: SensorTemplateDataLink
-					{
 					};
 				};
 			};
@@ -9690,16 +8852,12 @@ class CfgVehicles
 							"RHS_HP_UB32_KA52",
 							"RHS_HP_UPK23_KA52"
 						};
-						priority=1;
 						attachment="rhs_mag_b8v20a_ka52_s8kom";
 						maxweight=650;
 						UIposition[]={0.50400001,0.40000001};
 						turret[]={};
 						hitpoint="HitPylon1";
 					};
-					class pylon2: pylon1
-					{
-						UIposition[]={0.16500001,0.40000001};
 						mirroredMissilePos=1;
 						hitpoint="HitPylon2";
 					};
@@ -9717,14 +8875,10 @@ class CfgVehicles
 						};
 						attachment="rhs_mag_apu6_9m127m_ka52";
 						maxweight=450;
-						priority=2;
 						UIposition[]={0.58399999,0.34999999};
 						turret[]={0};
 						hitpoint="HitPylon3";
 					};
-					class pylon4: pylon3
-					{
-						UIposition[]={0.085000001,0.34999999};
 						mirroredMissilePos=3;
 						hitpoint="HitPylon4";
 					};
@@ -9736,7 +8890,6 @@ class CfgVehicles
 							"RHS_cm_UV26_x2",
 							"RHS_cm_UV26_x4"
 						};
-						priority=1;
 						attachment="rhs_UV26_CMFlare_Chaff_Magazine_x4";
 						maxweight=800;
 						UIposition[]={0.33000001,0};
@@ -9849,51 +9002,26 @@ class CfgVehicles
 			minFov=0.1;
 			maxFov=1.2;
 		};
-		hiddenSelections[]=
-		{
-			"camo1",
-			"camo2",
-			"n1",
-			"n2",
-			"tail_decals",
-			"mfd_gun_tex"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"\rhsafrf\addons\rhs_a2port_air\ka52\data\ka52_01_RU_co.paa",
-			"\rhsafrf\addons\rhs_a2port_air\ka52\data\ka52_02_RU_co.paa",
-			"a3\data_f\clear_empty.paa",
-			"a3\data_f\clear_empty.paa",
-			"rhsafrf\addons\rhs_decals\data\labels\aviation\vvs_ca.paa",
-			"\rhsafrf\addons\rhs_a2port_air\Ka52\Data\rhs_ka52_samshin_wfov.paa"
-		};
 		class textureSources
 		{
 			class standard
 			{
-				displayName="Grey";
 				factions[]=
 				{
 					"rhs_faction_vvs_c",
 					"rhs_faction_vvs"
 				};
 			};
-			class Camo: standard
-			{
-				displayName="Camo";
-			};
 		};
 		class Attributes
 		{
 			class rhs_decalNumber_type
 			{
-				displayName="Define font type of side number";
 				tooltip="Define kind of font that will be drawn on vehicle";
 				property="rhs_decalNumber_type";
 				control="Combo";
 				expression="if(_value != 'NoChange')then{ _this setVariable ['%s', _value];[_this,[['Number', cRHSAIRKA52NumberPlaces, _value]]] call rhs_fnc_decalsInit}";
 				defaultValue=0;
-				typeName="STRING";
 				class values
 				{
 					class NoChange
@@ -9966,24 +9094,20 @@ class CfgVehicles
 			};
 			class rhs_decalNumber
 			{
-				displayName="Set side number";
 				tooltip="Set side number. 2 numbers are required. Type 0 to hide numbers completly";
 				property="rhs_decalNumber";
 				control="Edit";
 				validate="Number";
-				typeName="Number";
 				defaultValue="-1";
 				expression="if( _value >= 0)then{if( _value == 0)then{{[_this setobjectTexture [_x,'a3\data_f\clear_empty.paa']]}foreach cRHSAIRKA52NumberPlaces}else{[_this, [['Number', cRHSAIRKA52NumberPlaces, _this getVariable ['rhs_decalNumber_type','AviaYellow'], _value] ] ] call rhs_fnc_decalsInit}};";
 			};
 			class rhs_decalTail
 			{
-				displayName="Define tail decal";
 				tooltip="Define tail decalthat will be drawn on vehicle";
 				property="rhs_decalTail";
 				control="Combo";
 				expression="[_this,[['Label', cRHSAIRKA52TailPlaces, 'Aviation',_value]]] call rhs_fnc_decalsInit";
 				defaultValue=-1;
-				typeName="Number";
 				class values
 				{
 					class Default
@@ -10168,9 +9292,6 @@ class CfgVehicles
 		{
 			class Comp1
 			{
-				class Light_Pilot
-				{
-					color[]={40,20,20};
 					ambient[]={0,0,0};
 					intensity=2.5;
 					size=0;
@@ -10197,12 +9318,6 @@ class CfgVehicles
 			};
 			class Comp2: Comp1
 			{
-				class Light_Pilot: Light_Pilot
-				{
-				};
-				class Light_Gunner: Light_Gunner
-				{
-				};
 			};
 		};
 		class markerlights
@@ -10222,28 +9337,16 @@ class CfgVehicles
 				drawLightSize=0.25;
 				drawLightCenterSize=0.079999998;
 			};
-			class RedStill: GreenStill
-			{
-				color[]={0.80000001,0,0};
 				ambient[]={0.079999998,0,0};
 				name="cerveny pozicni";
 			};
-			class WhiteStill: GreenStill
-			{
-				color[]={1,1,1};
 				ambient[]={0.1,0.1,0.1};
 				name="bily pozicni";
 			};
-			class WhiteBlicking: GreenStill
-			{
-				color[]={1,1,1};
 				ambient[]={0.1,0.1,0.1};
 				blinking=1;
 				name="bily pozicni blik";
 			};
-			class RedBlinking: WhiteBlicking
-			{
-				color[]={0.89999998,0.15000001,0.1};
 				ambient[]={0.090000004,0.015,0.0099999998};
 				name="cerveny pozicni blik";
 			};
@@ -10257,9 +9360,6 @@ class CfgVehicles
 		{
 			"\rhsafrf\addons\rhs_a2port_air\ka52\data\Ka52_cauges_CO.paa",
 			"\rhsafrf\addons\rhs_a2port_air\ka52\data\Ka52_caugesmf_CO.paa"
-		};
-		class Damage
-		{
 		};
 		class MFD
 		{
@@ -10275,14 +9375,8 @@ class CfgVehicles
 				color[]={0,1,0,0.1};
 				font="rhs_digital_font_var";
 				enableParallax=0;
-				class material
-				{
-					ambient[]={1,1,1,1};
 					diffuse[]={1,1,1,1};
 					emissive[]={400,200,200,1};
-				};
-				class Bones
-				{
 				};
 				class Draw
 				{
@@ -10291,7 +9385,6 @@ class CfgVehicles
 					condition="on";
 					class Text
 					{
-						type="text";
 						align="center";
 						scale=1;
 						source="Heading";
@@ -10322,9 +9415,6 @@ class CfgVehicles
 				color[]={0,1,0,0.1};
 				font="rhs_digital_font_var";
 				turret[]={0};
-				class material
-				{
-					ambient[]={1,1,1,1};
 					diffuse[]={1,1,1,1};
 					emissive[]={400,200,200,1};
 				};
@@ -10335,7 +9425,6 @@ class CfgVehicles
 					condition="on";
 					class Speed
 					{
-						type="text";
 						align="left";
 						scale=1;
 						source="speed";
@@ -10381,7 +9470,6 @@ class CfgVehicles
 					};
 					class TurretDirection
 					{
-						type="text";
 						align="center";
 						scale=1;
 						source="userText";
@@ -10406,7 +9494,6 @@ class CfgVehicles
 					};
 					class TurretElevation
 					{
-						type="text";
 						align="left";
 						scale=1;
 						source="userText";
@@ -10432,7 +9519,6 @@ class CfgVehicles
 					};
 					class DistanceToTarget
 					{
-						type="text";
 						align="center";
 						scale=1;
 						source="userText";
@@ -10465,29 +9551,11 @@ class CfgVehicles
 				bottomLeft="mfd_2_gun_bl";
 				color[]={0,1,0,0.1};
 				font="rhs_digital_font_var";
-				class material
-				{
-					ambient[]={1,1,1,1};
 					diffuse[]={1,1,1,1};
 					emissive[]={400,200,200,1};
 				};
 				class Draw: Draw
 				{
-					class Speed: Speed
-					{
-					};
-					class Height: Height
-					{
-					};
-					class TurretDirection: TurretDirection
-					{
-					};
-					class TurretElevation: TurretElevation
-					{
-					};
-					class DistanceToTarget: DistanceToTarget
-					{
-					};
 				};
 			};
 			class CrossGunner
@@ -10506,7 +9574,6 @@ class CfgVehicles
 				{
 					class WeaponAim
 					{
-						type="vector";
 						source="turretworld";
 						pos0[]={0.5,0.41};
 						pos10[]={1.15,1.75};
@@ -10521,7 +9588,6 @@ class CfgVehicles
 					{
 						class Circle
 						{
-							type="line";
 							width=4;
 							points[]=
 							{
@@ -10584,10 +9650,6 @@ class CfgVehicles
 			};
 			class AirplaneHUD
 			{
-				class Pos10Vector
-				{
-					type="vector";
-					pos0[]={0.50199997,0.49000001};
 					pos10[]={1.112,1.03};
 				};
 				topLeft="HUD LH";
@@ -10603,26 +9665,16 @@ class CfgVehicles
 				font="rhs_digital_font_rus";
 				class Bones
 				{
-					class PlaneW
-					{
-						type="fixed";
-						pos[]={0.50199997,0.49000001};
 					};
 					class ImpactPoint
 					{
-						type="vector";
 						source="ImpactPoint";
 						pos0[]={0.5,0.38999999};
 						pos10[]={1.1339999,0.95999998};
 					};
-					class Limit0109
-					{
-						type="limit";
-						limits[]={0.1,0.1,0.89999998,0.89999998};
 					};
 					class MissileFlightTimeRot1
 					{
-						type="rotational";
 						source="MissileFlightTime";
 						sourceScale=1;
 						min=0;
@@ -10728,7 +9780,6 @@ class CfgVehicles
 					};
 					class ForwardVector
 					{
-						type="vector";
 						source="forward";
 						pos0[]={0,0};
 						pos10[]={0.347,0.345};
@@ -10736,20 +9787,17 @@ class CfgVehicles
 					class Target
 					{
 						source="target";
-						type="vector";
 						pos0[]={0.5,0.38999999};
 						pos10[]={1.1339999,0.95999998};
 					};
 					class Velocity: Pos10Vector
 					{
-						type="vector";
 						source="velocity";
 						pos0[]={0.50199997,0.49000001};
 						pos10[]={0.56300002,0.54400003};
 					};
 					class SliderSpeedSource
 					{
-						type="linear";
 						source="speed";
 						min=0;
 						max=138.88901;
@@ -10758,7 +9806,6 @@ class CfgVehicles
 					};
 					class AGLMove
 					{
-						type="linear";
 						source="altitudeAGL";
 						min=0;
 						max=50;
@@ -10775,7 +9822,6 @@ class CfgVehicles
 					};
 					class Heading
 					{
-						type="linear";
 						source="Heading";
 						min=-36;
 						max=36;
@@ -10784,7 +9830,6 @@ class CfgVehicles
 					};
 					class TargetDistanceMissile
 					{
-						type="rotational";
 						source="targetDist";
 						min=100;
 						max=3000;
@@ -10794,7 +9839,6 @@ class CfgVehicles
 					class vspeed
 					{
 						source="vspeed";
-						type="linear";
 						min=-30;
 						max=30;
 						minPos[]={0,0.059999999};
@@ -10802,7 +9846,6 @@ class CfgVehicles
 					};
 					class HorizonBankMGun
 					{
-						type="rotational";
 						source="HorizonBank";
 						min=-6.2831898;
 						max=6.2831898;
@@ -10813,7 +9856,6 @@ class CfgVehicles
 					class HorizonDive
 					{
 						source="horizonDive";
-						type="linear";
 						min=-1;
 						max=1;
 						minPos[]={0.50199997,2.49};
@@ -10821,7 +9863,6 @@ class CfgVehicles
 					};
 					class HorizonBankReverted
 					{
-						type="rotational";
 						source="HorizonBank";
 						min="-3.14159265*2";
 						max="3.14159265*2";
@@ -10829,11 +9870,7 @@ class CfgVehicles
 						maxAngle=-360;
 						aspectRatio=0.80000001;
 					};
-					class Level0
-					{
-						pos0[]={0.5,0.57999998};
 						pos10[]={1.3839999,1.3652};
-						type="horizon";
 						angle=0;
 					};
 					class LevelP5: Level0
@@ -10919,7 +9956,6 @@ class CfgVehicles
 						condition="mgun+rocket+bomb";
 						class Cross
 						{
-							type="line";
 							width=3;
 							points[]=
 							{
@@ -10979,7 +10015,6 @@ class CfgVehicles
 						};
 						class Circle
 						{
-							type="line";
 							width=3;
 							points[]=
 							{
@@ -11153,7 +10188,6 @@ class CfgVehicles
 						};
 						class Circle_Min_Range
 						{
-							type="line";
 							width=3;
 							points[]=
 							{
@@ -11383,7 +10417,6 @@ class CfgVehicles
 						};
 						class Distance
 						{
-							type="text";
 							source="ImpactDistance";
 							sourceScale=0.001;
 							sourcePrecision=1;
@@ -11410,9 +10443,6 @@ class CfgVehicles
 							};
 						};
 					};
-					class Static2
-					{
-						clipTL[]={0,0.5};
 						clipBR[]={1,0};
 						points[]=
 						{
@@ -11669,7 +10699,6 @@ class CfgVehicles
 							},
 							{}
 						};
-						type="line";
 					};
 					class HorizonBank
 					{
@@ -11822,14 +10851,12 @@ class CfgVehicles
 								1
 							}
 						};
-						type="line";
 					};
 					class CollectiveGroup
 					{
 						condition="simulRTD";
 						class CollectiveText
 						{
-							type="text";
 							source="static";
 							align="right";
 							scale=1;
@@ -11851,7 +10878,6 @@ class CfgVehicles
 						};
 						class CollectiveNumber
 						{
-							type="text";
 							source="rtdCollective";
 							sourceScale=100;
 							align="left";
@@ -11873,15 +10899,11 @@ class CfgVehicles
 							};
 						};
 					};
-					class Horizont
-					{
-						clipTL[]={0.25,0.25};
 						clipBR[]={0.75,0.75};
 						class Dimmed
 						{
 							class Level0
 							{
-								type="line";
 								width=4;
 								points[]=
 								{
@@ -11940,7 +10962,6 @@ class CfgVehicles
 							};
 							class LevelM5: Level0
 							{
-								type="line";
 								points[]=
 								{
 									
@@ -11972,7 +10993,6 @@ class CfgVehicles
 							};
 							class VALM_1_5
 							{
-								type="text";
 								source="static";
 								align="right";
 								scale=1;
@@ -12020,7 +11040,6 @@ class CfgVehicles
 							};
 							class LevelP5: Level0
 							{
-								type="line";
 								points[]=
 								{
 									
@@ -12052,7 +11071,6 @@ class CfgVehicles
 							};
 							class VALP_1_5
 							{
-								type="text";
 								source="static";
 								align="right";
 								scale=1;
@@ -12100,7 +11118,6 @@ class CfgVehicles
 							};
 							class LevelM10: Level0
 							{
-								type="line";
 								points[]=
 								{
 									
@@ -12132,7 +11149,6 @@ class CfgVehicles
 							};
 							class VALM_1_10
 							{
-								type="text";
 								source="static";
 								align="right";
 								scale=1;
@@ -12180,7 +11196,6 @@ class CfgVehicles
 							};
 							class LevelP10: Level0
 							{
-								type="line";
 								points[]=
 								{
 									
@@ -12212,7 +11227,6 @@ class CfgVehicles
 							};
 							class VALP_1_10
 							{
-								type="text";
 								source="static";
 								align="right";
 								scale=1;
@@ -12260,7 +11274,6 @@ class CfgVehicles
 							};
 							class LevelM15: Level0
 							{
-								type="line";
 								points[]=
 								{
 									
@@ -12292,7 +11305,6 @@ class CfgVehicles
 							};
 							class VALM_1_15
 							{
-								type="text";
 								source="static";
 								align="right";
 								scale=1;
@@ -12340,7 +11352,6 @@ class CfgVehicles
 							};
 							class LevelP15: Level0
 							{
-								type="line";
 								points[]=
 								{
 									
@@ -12372,7 +11383,6 @@ class CfgVehicles
 							};
 							class VALP_1_15
 							{
-								type="text";
 								source="static";
 								align="right";
 								scale=1;
@@ -12420,7 +11430,6 @@ class CfgVehicles
 							};
 							class LevelM20: Level0
 							{
-								type="line";
 								points[]=
 								{
 									
@@ -12452,7 +11461,6 @@ class CfgVehicles
 							};
 							class VALM_1_20
 							{
-								type="text";
 								source="static";
 								align="right";
 								scale=1;
@@ -12500,7 +11508,6 @@ class CfgVehicles
 							};
 							class LevelP20: Level0
 							{
-								type="line";
 								points[]=
 								{
 									
@@ -12532,7 +11539,6 @@ class CfgVehicles
 							};
 							class VALP_1_20
 							{
-								type="text";
 								source="static";
 								align="right";
 								scale=1;
@@ -12580,7 +11586,6 @@ class CfgVehicles
 							};
 							class LevelM25: Level0
 							{
-								type="line";
 								points[]=
 								{
 									
@@ -12612,7 +11617,6 @@ class CfgVehicles
 							};
 							class VALM_1_25
 							{
-								type="text";
 								source="static";
 								align="right";
 								scale=1;
@@ -12660,7 +11664,6 @@ class CfgVehicles
 							};
 							class LevelP25: Level0
 							{
-								type="line";
 								points[]=
 								{
 									
@@ -12692,7 +11695,6 @@ class CfgVehicles
 							};
 							class VALP_1_25
 							{
-								type="text";
 								source="static";
 								align="right";
 								scale=1;
@@ -12740,7 +11742,6 @@ class CfgVehicles
 							};
 							class LevelM30: Level0
 							{
-								type="line";
 								points[]=
 								{
 									
@@ -12772,7 +11773,6 @@ class CfgVehicles
 							};
 							class VALM_1_30
 							{
-								type="text";
 								source="static";
 								align="right";
 								scale=1;
@@ -12820,7 +11820,6 @@ class CfgVehicles
 							};
 							class LevelP30: Level0
 							{
-								type="line";
 								points[]=
 								{
 									
@@ -12852,7 +11851,6 @@ class CfgVehicles
 							};
 							class VALP_1_30
 							{
-								type="text";
 								source="static";
 								align="right";
 								scale=1;
@@ -12900,7 +11898,6 @@ class CfgVehicles
 							};
 							class LevelM35: Level0
 							{
-								type="line";
 								points[]=
 								{
 									
@@ -12932,7 +11929,6 @@ class CfgVehicles
 							};
 							class VALM_1_35
 							{
-								type="text";
 								source="static";
 								align="right";
 								scale=1;
@@ -12980,7 +11976,6 @@ class CfgVehicles
 							};
 							class LevelP35: Level0
 							{
-								type="line";
 								points[]=
 								{
 									
@@ -13012,7 +12007,6 @@ class CfgVehicles
 							};
 							class VALP_1_35
 							{
-								type="text";
 								source="static";
 								align="right";
 								scale=1;
@@ -13060,7 +12054,6 @@ class CfgVehicles
 							};
 							class LevelM40: Level0
 							{
-								type="line";
 								points[]=
 								{
 									
@@ -13092,7 +12085,6 @@ class CfgVehicles
 							};
 							class VALM_1_40
 							{
-								type="text";
 								source="static";
 								align="right";
 								scale=1;
@@ -13140,7 +12132,6 @@ class CfgVehicles
 							};
 							class LevelP40: Level0
 							{
-								type="line";
 								points[]=
 								{
 									
@@ -13172,7 +12163,6 @@ class CfgVehicles
 							};
 							class VALP_1_40
 							{
-								type="text";
 								source="static";
 								align="right";
 								scale=1;
@@ -13220,7 +12210,6 @@ class CfgVehicles
 							};
 							class LevelM45: Level0
 							{
-								type="line";
 								points[]=
 								{
 									
@@ -13252,7 +12241,6 @@ class CfgVehicles
 							};
 							class VALM_1_45
 							{
-								type="text";
 								source="static";
 								align="right";
 								scale=1;
@@ -13300,7 +12288,6 @@ class CfgVehicles
 							};
 							class LevelP45: Level0
 							{
-								type="line";
 								points[]=
 								{
 									
@@ -13332,7 +12319,6 @@ class CfgVehicles
 							};
 							class VALP_1_45
 							{
-								type="text";
 								source="static";
 								align="right";
 								scale=1;
@@ -13382,7 +12368,6 @@ class CfgVehicles
 					};
 					class Static
 					{
-						type="line";
 						width=4;
 						points[]=
 						{
@@ -13624,7 +12609,6 @@ class CfgVehicles
 						condition="speed-2.78";
 						class Static
 						{
-							type="line";
 							width=4;
 							points[]=
 							{
@@ -13806,7 +12790,6 @@ class CfgVehicles
 						};
 						class SpeedStatic500
 						{
-							type="text";
 							source="static";
 							scale=1;
 							sourceScale=1;
@@ -13837,7 +12820,6 @@ class CfgVehicles
 						};
 						class SpeedStatic0
 						{
-							type="text";
 							source="static";
 							scale=1;
 							sourceScale=1;
@@ -13873,7 +12855,6 @@ class CfgVehicles
 						class Panel
 						{
 							width=4;
-							type="line";
 							points[]=
 							{
 								
@@ -13982,7 +12963,6 @@ class CfgVehicles
 						};
 						class AltStatic50
 						{
-							type="text";
 							source="static";
 							scale=1;
 							sourceScale=1;
@@ -14004,10 +12984,6 @@ class CfgVehicles
 							};
 						};
 					};
-					class RadarBoxes
-					{
-						type="radar";
-						pos0[]={0.5,0.38999999};
 						pos10[]={1.1339999,0.95999998};
 						width=4;
 						points[]=
@@ -14043,7 +13019,6 @@ class CfgVehicles
 					{
 						class shape
 						{
-							type="line";
 							width=4;
 							points[]=
 							{
@@ -14097,7 +13072,6 @@ class CfgVehicles
 					};
 					class SpeedNumber
 					{
-						type="text";
 						align="right";
 						source="speed";
 						sourceScale=3.5999999;
@@ -14144,7 +13118,6 @@ class CfgVehicles
 					};
 					class AltNumberStatic: AltNumber
 					{
-						type="text";
 						source="static";
 						align="right";
 						scale=1;
@@ -14189,7 +13162,6 @@ class CfgVehicles
 					};
 					class VspeedNumberStaticP30
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -14212,7 +13184,6 @@ class CfgVehicles
 					};
 					class VspeedNumberStaticZERO
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -14235,7 +13206,6 @@ class CfgVehicles
 					};
 					class VspeedNumberStaticM30
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -14258,7 +13228,6 @@ class CfgVehicles
 					};
 					class NevimStatic3
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -14281,7 +13250,6 @@ class CfgVehicles
 					};
 					class NevimStaticZERO
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -14304,7 +13272,6 @@ class CfgVehicles
 					};
 					class NevimStatic1
 					{
-						type="text";
 						source="static";
 						scale=1;
 						sourceScale=1;
@@ -14327,7 +13294,6 @@ class CfgVehicles
 					};
 					class HeadingScale
 					{
-						type="scale";
 						source="heading";
 						horizontal=1;
 						sourceScale=0.1;
@@ -14378,15 +13344,6 @@ class CfgVehicles
 	class RHS_Ka52Black_base: RHS_Ka52_base
 	{
 		accuracy=0.5;
-		hiddenSelectionsTextures[]=
-		{
-			"\rhsafrf\addons\rhs_a2port_air\ka52\data\ka52_01_co.paa",
-			"\rhsafrf\addons\rhs_a2port_air\ka52\data\ka52_02_co.paa",
-			"a3\data_f\clear_empty.paa",
-			"a3\data_f\clear_empty.paa",
-			"rhsafrf\addons\rhs_decals\data\labels\aviation\vvs_ca.paa",
-			"\rhsafrf\addons\rhs_a2port_air\Ka52\Data\rhs_ka52_samshin_wfov.paa"
-		};
 	};
 	class RHS_Ka52_vvsc: RHS_Ka52_base
 	{
@@ -14404,7 +13361,6 @@ class CfgVehicles
 	};
 	class RHS_Ka52_UPK23_vvs: RHS_Ka52_vvs
 	{
-		displayName="Ka-52 (UPK)";
 		class Components: Components
 		{
 			class TransportPylonsComponent: TransportPylonsComponent
@@ -14430,9 +13386,6 @@ class CfgVehicles
 					{
 						attachment="rhs_mag_apu6_9m127m_ka52";
 						turret[]={0};
-					};
-					class cmDispenser: cmDispenser
-					{
 					};
 				};
 			};
@@ -14440,7 +13393,6 @@ class CfgVehicles
 	};
 	class RHS_Ka52_UPK23_vvsc: RHS_Ka52_vvsc
 	{
-		displayName="Ka-52 (UPK)";
 		class Components: Components
 		{
 			class TransportPylonsComponent: TransportPylonsComponent
@@ -14467,17 +13419,10 @@ class CfgVehicles
 						attachment="rhs_mag_apu6_9m127m_ka52";
 						turret[]={0};
 					};
-					class cmDispenser: cmDispenser
-					{
-					};
 				};
 			};
 		};
 	};
-	class rhs_ka52_blade: Plane
-	{
-		hiddenSelections[]={};
-		displayName="Ka-52 Blade";
 		draconicForceXCoef=17.200001;
 		draconicForceYCoef=12.6;
 		draconicForceZCoef=10.15;
@@ -14492,9 +13437,6 @@ class CfgVehicles
 		fuelExplosionPower=0;
 		explosionEffect="";
 		driveOnComponent[]={};
-		class Turrets
-		{
-		};
 		class Eventhandlers
 		{
 			HandleDamage="deleteVehicle (_this select 0)";
@@ -14502,10 +13444,6 @@ class CfgVehicles
 		SLX_XEH_DISABLED=1;
 	};
 	class Car_f;
-	class rhs_ka52_ejection_vest: Car_f
-	{
-		hiddenSelections[]={};
-		displayName="K37-800 Ejection Vest";
 		simulation="carX";
 		memoryPointsGetInCargo="Cargo";
 		memoryPointsGetInCargoDir="Cargo dir";
@@ -14522,17 +13460,10 @@ class CfgVehicles
 		occludeSoundsWhenIn=1;
 		obstructSoundsWhenIn=1;
 		driveOnComponent[]={};
-		class Turrets
-		{
-		};
-		class Eventhandlers
-		{
-		};
 		SLX_XEH_DISABLED=1;
 	};
 	class rhs_ka52_rps_rocket: rhs_ka52_ejection_vest
 	{
-		displayName="Ka-52 ejection rocket";
 		editorCategory="EdCat_Things";
 		armor=100000000000;
 		class Eventhandlers
@@ -14559,11 +13490,6 @@ class CfgVehicles
 			"O_UAV_AI"
 		};
 		accuracy=1;
-		class Library
-		{
-			libTextDesc="The Pchela-1T is an unmanned aerial vehicle (UAV) developed in Russia. Its primary uses are surveillance and observation or target designation.";
-		};
-		displayName="Pchela-1T";
 		icon="\rhsafrf\addons\rhs_a2port_air\data\map_ico\icon_Pchela1T_CA.paa";
 		armor=75;
 		damageResistance=0.03176;
@@ -14644,36 +13570,26 @@ class CfgVehicles
 				};
 			};
 		};
-		class Damage
-		{
-		};
 		class textureSources
 		{
 			class standard
 			{
-				displayName="Grey";
 				factions[]=
 				{
 					"rhs_faction_vvs_c",
 					"rhs_faction_vvs"
 				};
 			};
-			class Camo: standard
-			{
-				displayName="Camo";
-			};
 		};
 		class Attributes
 		{
 			class rhs_decalNumber_type
 			{
-				displayName="Define font type of side number";
 				tooltip="Define kind of font that will be drawn on vehicle";
 				property="rhs_decalNumber_type";
 				control="Combo";
 				expression="_this setVariable ['%s', _value];[_this,[['Number', cRHSAIRPchelaNumberPlaces, _value]]] call rhs_fnc_decalsInit";
 				defaultValue=0;
-				typeName="STRING";
 				class values
 				{
 					class AviaRed
@@ -14741,12 +13657,10 @@ class CfgVehicles
 			};
 			class rhs_decalNumber
 			{
-				displayName="Set side number";
 				tooltip="Set side number. 2 numbers are required. Type 0 to hide numbers completly";
 				property="rhs_decalNumber";
 				control="Edit";
 				validate="Number";
-				typeName="Number";
 				defaultValue="-1";
 				expression="if( _value >= 0)then{if( _value == 0)then{{[_this setobjectTexture [_x,'a3\data_f\clear_empty.paa']]}foreach cRHSAIRPchelaNumberPlaces}else{[_this, [['Number', cRHSAIRPchelaNumberPlaces, _this getVariable ['rhs_decalNumber_type','AviaYellow'], _value] ] ] call rhs_fnc_decalsInit}};";
 			};
@@ -14760,17 +13674,6 @@ class CfgVehicles
 		gearRetracting=0;
 		threat[]={0.30000001,0.30000001,0.1};
 		audible=8;
-		hiddenSelections[]=
-		{
-			"Camo",
-			"n1",
-			"n2",
-			"n3"
-		};
-		hiddenSelectionsTextures[]=
-		{
-			"\rhsafrf\addons\rhs_a2port_air\PCHELA1T\data\pchela1t_co.paa"
-		};
 		class EventHandlers: EventHandlers
 		{
 			class RHS_EventHandlers
@@ -14778,16 +13681,6 @@ class CfgVehicles
 				init="_this call rhs_fnc_air_init";
 			};
 		};
-	};
-	class rhs_pchela1t_vvs: rhs_pchela1t_base
-	{
-		hiddenSelectionsTextures[]=
-		{
-			"\rhsafrf\addons\rhs_a2port_air\PCHELA1T\data\pchela1tblu_co.paa"
-		};
-	};
-	class rhs_pchela1t_vvsc: rhs_pchela1t_base
-	{
 	};
 	class Module_F;
 	class ModuleCAS_F: Module_F
