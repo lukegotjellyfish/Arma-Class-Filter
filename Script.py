@@ -17,15 +17,27 @@ attributeSkip = ["author","url","requiredVersion", "onLoad","dlc","category","ed
 "turretInfoType","discreteDistance","discreteDistanceInitIndex","gunnerForceOptics","gunnerOutOpticsShowCursor","gunnerAction","gunnerInAction",
 "lodTurnedIn","lodTurnedOut","lodOpticsOut","canhideGunner","inGunnerMayFire","outGunnerMayFire","viewGunnerInExternal","gunnerGetInAction",
 "gunnerGetOutAction","gunnerDoor","gunnerCompartments","castGunnerShadow","gunBeg","gunEnd","memoryPointGunnerOptics","memoryPointGunnerOutOptics",
-"gunnerOpticsModel","gunnerOutOpticsModel","optics","disableSoundAttenuation","memoryPointsGetInGunner","memoryPointsGetInGunnerDir","crew"]
+"gunnerOpticsModel","gunnerOutOpticsModel","optics","disableSoundAttenuation","memoryPointsGetInGunner","memoryPointsGetInGunnerDir","crew",
+"rhs_grip1_change","rhs_grip2_change","rhs_grip3_change","baseWeapon","displayName","inertia","dexterity", "distanceZoomMin", "distanceZoomMax",
+"cameraDir", "weaponInfoType", "UiPicture", "magazineReloadSwitchPhase", "reloadAction", "maxRecoilSway", "swayDecaySpeed", "aimTransitionSpeed",
+"minRange", "minRangeProbab", "midRange", "midRangeProbab", "maxRange", "maxRangeProbab", "showToPlayer", "aiRateOfFire", "aiRateOfFireDistance",
+"requiredOpticType","aiDispersionCoefY", "aiDispersionCoefX","allowedSlots", "type", "descriptionShort","soundContinuous","soundBurst",
+"deployedPivot","hasBipod","holsterScale","holsterOffset","RMBhint","priority","onHoverText"]
+
 multiAttributeSkip = ["requiredAddons[]", "controls[]","cargoAction[]","memoryPointsGetInCargo[]","memoryPointsGetInCargoDir[]","cargoDoors[]","textures[]",
-"aggregateReflectors[]","mat[]","HiddenSelectionsTextures[]","magazines[]","soundServo[]"]
+"aggregateReflectors[]","mat[]","HiddenSelectionsTextures[]","magazines[]","soundServo[]", "modes[]","hiddenSelections[]","hiddenSelectionsTextures[]",
+"handAnim[]","discreteDistanceCameraPoint[]", "caseless[]", "soundBullet[]", "sounds[]", "drySound[]","muzzles[]",
+"bullet1[]","bullet2[]","bullet3[]","bullet4[]","bullet5[]","bullet6[]","bullet7[]","bullet8[]","bullet9[]","bullet10[]","bullet11[]","bullet12[]",
+"reloadMagazineSound[]","changeFiremodeSound[]"]
+
 classSkip = ["class CfgMovesBasic", "class RscInGameUI","class CfgMovesMaleSdr: CfgMovesBasic", "class ObjectTexture", "class DoorB", "class DoorL: DoorB",
 "class DoorR: DoorB", "class TurnIn", "class CargoTurret_01: CargoTurret", "class AnimationSources", "class UserActions","class RHS_Engine_Smoke",
 "class RHS_Engine_Fire: RHS_Engine_Smoke","class RHS_Engine_Sparks: RHS_Engine_Smoke", "class RHS_Engine_Sounds: RHS_Engine_Smoke",
 "class RHS_Engine_Smoke_small1: RHS_Engine_Smoke","class RHS_Engine_Smoke_small2: RHS_Engine_Smoke_small1", "class Reflectors", "class RenderTargets",
 "class RHSUSF_EventHandlers","class TransportBackpacks","class TransportMagazines","class TransportItems","class TransportWeapons",
-"class rhsusf_CGRCAT1A2_usmc_d: rhsusf_Cougar_base", "class DestructionEffects"]
+"class rhsusf_CGRCAT1A2_usmc_d: rhsusf_Cougar_base", "class DestructionEffects", "class CowsSlot", "class MuzzleSlot", "class PointerSlot",
+"class UnderBarrelSlot", "class LinkedItems", "class GunParticles", "class StandardSound", "class Library","class close","class short",
+"class medium","class far_optic1","class far_optic2","class OpticsModes"]
 
 def newFile(root, file):
 	with open(root + "\\\\" + file, "r", encoding="UTF-8") as f:
@@ -48,70 +60,89 @@ def newFile(root, file):
 
 	#print(fileToCreate)
 	#input("Halt")
+	fileWriteList = []
+	index = 0
+	toSkip = 0
+	for line in lines:
+		if toSkip > 0:
+			#print("Skipped [" + line.replace("\n","") + "]")
+			toSkip -= 1
+			index += 1
+			continue
+		lineStripped = line.replace("	","")
+
+		#Found class line
+		if lineStripped.startswith("class"):
+			tabCount = line.count("	")
+			i = 0
+			for x in classSkip:
+				if lineStripped.startswith(x):
+					tabCount = line.count("	")
+					while True:
+						if line[-2] != ";":
+							i += 1
+							if (lines[index+i] == tabCount * "	" + "};\n"):
+								break
+						#Single-line class
+						else:
+							break
+			toSkip = i
+			if i > 0:
+				index += 1
+				continue
+
+			fileWriteList.append(line)
+
+		#Found single-line attribute
+		elif (lineStripped.endswith(";\n") and lineStripped.startswith("}") == False):
+			cont = False
+			for x in attributeSkip:
+				if lineStripped.startswith(x):
+					cont = True
+			if cont == True:
+				index += 1
+				continue
+			fileWriteList.append(line)
+
+		#Found multi-line attribute
+		elif lineStripped.endswith("=\n"):
+			tabCount = line.count("	")
+			i = 0
+			for x in multiAttributeSkip:
+				if lineStripped.startswith(x):
+					while True:
+						if (lines[index+i] == tabCount * "	" + "};\n"):
+							break
+						i += 1
+					toSkip = i
+			if i > 0:
+				index += 1
+				continue
+			fileWriteList.append(line)
+
+		else:
+			fileWriteList.append(line)
+
+		index += 1
 
 	with open(fileToCreate, "w", encoding="UTF-8") as writeToThisFile:
-		index = 0
+		x = 0
 		toSkip = 0
-		for line in lines:
+		for item in fileWriteList:
 			if toSkip > 0:
 				#print("Skipped [" + line.replace("\n","") + "]")
 				toSkip -= 1
-				index += 1
+				x += 1
 				continue
-			lineStripped = line.replace("	","")
 
-			#Found class line
-			if lineStripped.startswith("class"):
-				tabCount = line.count("	")
-				i = 0
-				for x in classSkip:
-					if lineStripped.startswith(x):
-						tabCount = line.count("	")
-						while True:
-							if line[-2] != ";":
-								i += 1
-								if (lines[index+i] == tabCount * "	" + "};\n"):
-									break
-							else:
-								break
-				toSkip = i
-				if i > 0:
-					index += 1
-					continue
-				writeToThisFile.write(line)
-
-			#Found single-line attribute
-			elif (lineStripped.endswith(";\n") and lineStripped.startswith("}") == False):
-				cont = False
-				for x in attributeSkip:
-					if lineStripped.startswith(x):
-						cont = True
-				if cont == True:
-					index += 1
-					continue
-				writeToThisFile.write(line)
-
-			#Found multi-line attribute
-			elif lineStripped.endswith("=\n"):
-				tabCount = line.count("	")
-				i = 0
-				for x in multiAttributeSkip:
-					if lineStripped.startswith(x):
-						while True:
-							if (lines[index+i] == tabCount * "	" + "};\n"):
-								break
-							i += 1
-						toSkip = i
-				if i > 0:
-					index += 1
-					continue
-				writeToThisFile.write(line)
-
-			else:
-				writeToThisFile.write(line)
-
-			index += 1
-
+			tabCount = line.count("	")
+			if item.replace("	","").startswith("class") and fileWriteList[x+2].replace("	","").endswith("};\n"):
+				print("skipped empty class")
+				x += 1
+				toSkip = 2
+				continue
+			writeToThisFile.write(item)
+			x += 1
 
 mods = ["S:\\Steam\\steamapps\\common\\Arma 3\\!Workshop\\@RHSAFRF",
 		"S:\\Steam\\steamapps\\common\\Arma 3\\!Workshop\\@RHSUSAF",
