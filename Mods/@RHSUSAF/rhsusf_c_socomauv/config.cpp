@@ -36,6 +36,9 @@ class CfgVehicles
 		{
 			class MainTurret: NewTurret
 			{
+				class ViewOptics;
+			};
+		};
 		class HitPoints
 		{
 			class HitFuel;
@@ -49,6 +52,12 @@ class CfgVehicles
 			class HitGlass2;
 			class HitGlass3;
 			class HitGlass4;
+			class HitGlass5;
+			class HitGlass6;
+		};
+		class EventHandlers;
+		class ViewOptics;
+	};
 	class MRAP_01_base_F: Car_F
 	{
 		class EventHandlers;
@@ -61,7 +70,14 @@ class CfgVehicles
 			"TruckHorn2",
 			"rhsusf_weap_duke"
 		};
+		magazines[]=
+		{
+			"rhsusf_mag_duke"
+		};
 		class CargoTurret;
+		class Turrets: Turrets
+		{
+		};
 		class DriverOpticsIn
 		{
 			class DVE_Wide: ViewOptics
@@ -89,6 +105,12 @@ class CfgVehicles
 		};
 		class textureSources
 		{
+			class rhs_desert
+			{
+			};
+			class rhs_woodland
+			{
+			};
 		};
 		class Attributes
 		{
@@ -145,6 +167,9 @@ class CfgVehicles
 				MinimalHit=0.050000001;
 				explosionShielding=0.0099999998;
 				radius=0.15000001;
+			};
+			class HitDuke2: HitDuke1
+			{
 			};
 			class HitGlass7: HitGlass1
 			{
@@ -297,6 +322,12 @@ class CfgVehicles
 				maxHandBrakeTorque=300000;
 			};
 		};
+		class Damage
+		{
+		};
+		class EventHandlers: EventHandlers
+		{
+		};
 		class VehicleTransport
 		{
 			class Cargo
@@ -337,6 +368,9 @@ class CfgVehicles
 			};
 		};
 	};
+	class rhsusf_M1239_CROWS_base: rhsusf_M1239_base
+	{
+		threat[]={0.89999998,0.30000001,0.1};
 		class MFD
 		{
 			class MFD_CROWS
@@ -352,12 +386,21 @@ class CfgVehicles
 				alpha=1;
 				enableParallax=0;
 				font="RobotoCondensedLight";
+				class material
+				{
+					ambient[]={3,3,3,1};
 					diffuse[]={10,10,10,1};
 					emissive[]={400,200,200,1};
 				};
 				class Bones
 				{
+					class Static_Offset
+					{
+						pos[]={0.079999998,0.89999998};
 					};
+					class Cross
+					{
+						pos[]={0,-0.145};
 					};
 					class TurretRotation
 					{
@@ -371,6 +414,9 @@ class CfgVehicles
 						aspectRatio=1.29101;
 					};
 				};
+				class Draw
+				{
+					color[]={1,0,0,1};
 					alpha=1;
 					class StaticDraw
 					{
@@ -1105,6 +1151,13 @@ class CfgVehicles
 				{
 					"RHS_M2_CROWS_M153"
 				};
+				magazines[]=
+				{
+					"rhs_mag_400rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_400rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_400rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_400rnd_127x99_mag_Tracer_Red"
+				};
 				minElev=-20;
 				maxElev=60;
 				ejectDeadGunner=0;
@@ -1241,6 +1294,14 @@ class CfgVehicles
 				weapons[]=
 				{
 					"RHS_MK19_CROWS_M153"
+				};
+				magazines[]=
+				{
+					"RHS_96Rnd_40mm_MK19_M430A1",
+					"RHS_96Rnd_40mm_MK19_M430A1",
+					"RHS_96Rnd_40mm_MK19_M430A1",
+					"RHS_96Rnd_40mm_MK19_M430A1",
+					"RHS_96Rnd_40mm_MK19_M1001"
 				};
 			};
 		};

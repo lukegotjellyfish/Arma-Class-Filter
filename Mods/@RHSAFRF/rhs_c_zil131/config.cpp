@@ -31,12 +31,18 @@ class CfgVehicles
 	class LandVehicle;
 	class Car: LandVehicle
 	{
+		class HitPoints;
+		class NewTurret;
+	};
 	class Car_F: Car
 	{
 		class Turrets
 		{
 			class MainTurret: NewTurret
 			{
+				class ViewOptics;
+			};
+		};
 		class HitPoints
 		{
 			class HitLFWheel;
@@ -48,6 +54,12 @@ class CfgVehicles
 			class HitGlass2;
 			class HitGlass3;
 			class HitGlass4;
+			class HitGlass5;
+			class HitGlass6;
+		};
+		class EventHandlers;
+		class AnimationSources;
+	};
 	class Truck_F: Car_F
 	{
 		class ViewPilot;
@@ -59,6 +71,9 @@ class CfgVehicles
 			class HitLF2Wheel;
 			class HitRFWheel;
 			class HitRBWheel;
+			class HitRMWheel;
+			class HitRF2Wheel;
+		};
 		class AnimationSources;
 	};
 	class rhs_zil131_base: Truck_F
@@ -897,6 +912,9 @@ class CfgVehicles
 				effect="ExhaustEffectHTruck";
 			};
 		};
+		class Damage
+		{
+		};
 		armorLights=0.0099999998;
 		class HitPoints: HitPoints
 		{
@@ -1410,6 +1428,9 @@ class CfgVehicles
 	};
 	class rhs_zil131_flatbed_base: rhs_zil131_open_base
 	{
+		class Turrets
+		{
+		};
 		animationList[]=
 		{
 			"cover_hide",
@@ -1503,6 +1524,9 @@ class CfgVehicles
 		};
 		class VehicleTransport: VehicleTransport
 		{
+			class Cargo: Cargo
+			{
+			};
 			class Carrier: Carrier
 			{
 				disableHeightLimit=0;

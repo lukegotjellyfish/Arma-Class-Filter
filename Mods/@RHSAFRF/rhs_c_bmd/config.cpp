@@ -59,6 +59,9 @@ class CfgVehicles
 	class Tank: LandVehicle
 	{
 		class NewTurret;
+		class Sounds;
+		class HitPoints;
+	};
 	class Tank_F: Tank
 	{
 		class Turrets
@@ -67,6 +70,9 @@ class CfgVehicles
 			{
 				class Turrets
 				{
+					class CommanderOptics;
+				};
+			};
 		};
 		class AnimationSources;
 		class ViewPilot;
@@ -77,8 +83,17 @@ class CfgVehicles
 		{
 			class HitHull;
 			class HitEngine;
+			class HitLTrack;
+			class HitRTrack;
+		};
 		class Sounds: Sounds
 		{
+			class Engine;
+			class Movement;
+		};
+		class EventHandlers;
+		class Components;
+	};
 	class rhs_bmd_base: Tank_F
 	{
 		rhs_habarType=2;
@@ -121,6 +136,10 @@ class CfgVehicles
 		weapons[]=
 		{
 			"rhs_weap_smokegen"
+		};
+		magazines[]=
+		{
+			"rhs_mag_smokegen"
 		};
 		simulation="tankX";
 		normalSpeedForwardCoef=0.66000003;
@@ -246,6 +265,18 @@ class CfgVehicles
 					{1,1}
 				};
 			};
+			class L3: L2
+			{
+			};
+			class L4: L2
+			{
+			};
+			class L5: L2
+			{
+			};
+			class L6: L2
+			{
+			};
 			class L9: L2
 			{
 				maxDroop=0;
@@ -260,6 +291,18 @@ class CfgVehicles
 			{
 				side="right";
 				suspTravelDirection[]={0.125,-1,0};
+			};
+			class R3: R2
+			{
+			};
+			class R4: R2
+			{
+			};
+			class R5: R2
+			{
+			};
+			class R6: R2
+			{
 			};
 			class R9: R2
 			{
@@ -1203,6 +1246,24 @@ class CfgVehicles
 				expression="_this setVariable ['%s', _value];";
 				class values: values
 				{
+					class Army: Army
+					{
+					};
+					class Honor: Honor
+					{
+					};
+					class HonorGDR: HonorGDR
+					{
+					};
+					class Platoon: Platoon
+					{
+					};
+					class PlatoonGDR: PlatoonGDR
+					{
+					};
+					class PlatoonVDV: PlatoonVDV
+					{
+					};
 				};
 			};
 			class rhs_decalArmy: rhs_decalPlatoon
@@ -1269,6 +1330,9 @@ class CfgVehicles
 		animationSourceHatch="hatchDriver";
 		transportMaxMagazines=160;
 		transportMaxWeapons=10;
+		class Damage
+		{
+		};
 		damageResistance=0.017960001;
 		secondaryExplosion=-1;
 		armor=260;
@@ -1446,6 +1510,9 @@ class CfgVehicles
 						};
 					};
 				};
+				class Hitpoints
+				{
+				};
 			};
 			class MainTurret: MainTurret
 			{
@@ -1461,6 +1528,19 @@ class CfgVehicles
 				{
 					"rhs_weap_2a42",
 					"rhs_weap_pkt"
+				};
+				magazines[]=
+				{
+					"rhs_mag_3uor6_180",
+					"rhs_mag_3ubr8_120",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250"
 				};
 				selectionFireAnim="zasleh3";
 				minElev=-5;
@@ -1482,6 +1562,9 @@ class CfgVehicles
 				memoryPointMissileDir[]=
 				{
 					"Spice rakety"
+				};
+				class Turrets
+				{
 				};
 				class HitPoints
 				{
@@ -1628,12 +1711,25 @@ class CfgVehicles
 				{
 					"rhs_weap_pkt_bmd_bow1"
 				};
+				magazines[]=
+				{
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250"
+				};
 				ejectDeadGunner=0;
+				class CargoLight
+				{
+					ambient[]={0.60000002,0,0.15000001,1};
 					brightness=0.0070000002;
 					color[]={0,0,0,0};
 				};
 				memoryPointGun="memoryPointGun2";
 				startEngine=0;
+				class Turrets
+				{
+				};
 				gunnerOpticsEffect[]=
 				{
 					"TankGunnerOptics1",
@@ -1651,6 +1747,9 @@ class CfgVehicles
 					initFov=0.166666;
 					minFov=0.166666;
 					maxFov=0.166666;
+				};
+				class HitPoints
+				{
 				};
 			};
 			class LeftBack: NewTurret
@@ -1689,6 +1788,9 @@ class CfgVehicles
 					initFov=0.69999999;
 					minFov=0.69999999;
 					maxFov=0.69999999;
+				};
+				class HitPoints
+				{
 				};
 			};
 			class RightBack: LeftBack
@@ -1904,6 +2006,18 @@ class CfgVehicles
 					{1,1}
 				};
 			};
+			class L3: L2
+			{
+			};
+			class L4: L2
+			{
+			};
+			class L5: L2
+			{
+			};
+			class L6: L2
+			{
+			};
 			class L9: L2
 			{
 				maxDroop=0;
@@ -1918,6 +2032,18 @@ class CfgVehicles
 			{
 				side="right";
 				suspTravelDirection[]={0.125,-1,0};
+			};
+			class R3: R2
+			{
+			};
+			class R4: R2
+			{
+			};
+			class R5: R2
+			{
+			};
+			class R6: R2
+			{
 			};
 			class R9: R2
 			{
@@ -1943,6 +2069,9 @@ class CfgVehicles
 					"rhs_faction_vdv",
 					"rhs_faction_vv"
 				};
+			};
+			class Camo: standard
+			{
 			};
 		};
 		class Turrets: Turrets
@@ -1987,6 +2116,12 @@ class CfgVehicles
 						weapons[]=
 						{
 							"rhs_weap_9m111"
+						};
+						magazines[]=
+						{
+							"rhs_mag_9m113",
+							"rhs_mag_9m113",
+							"rhs_mag_9m113"
 						};
 						selectionFireAnim="zasleh4";
 						class OpticsIn
@@ -2082,6 +2217,36 @@ class CfgVehicles
 					};
 				};
 			};
+			class CommanderOptics1: CommanderOptics
+			{
+			};
+			class GPMGTurretBMD1: GPMGTurret1
+			{
+			};
+			class LeftBack1: LeftBack
+			{
+			};
+			class RightBack1: RightBack
+			{
+			};
+			class MainBack1: MainBack
+			{
+			};
+			class CargoTurret_02: CargoTurret_02
+			{
+			};
+			class CargoTurret_03: CargoTurret_03
+			{
+			};
+			class CargoTurret_04: CargoTurret_04
+			{
+			};
+			class CargoTurret_05: CargoTurret_05
+			{
+			};
+			class CargoTurret_06: CargoTurret_06
+			{
+			};
 		};
 		class EventHandlers: EventHandlers
 		{
@@ -2094,6 +2259,9 @@ class CfgVehicles
 	class rhs_bmd1_base: rhs_bmd_base
 	{
 		icon="\rhsafrf\addons\rhs_bmd\rhs_bmd1_icon.paa";
+		class Damage
+		{
+		};
 		class textureSources
 		{
 			class standard
@@ -2106,6 +2274,9 @@ class CfgVehicles
 					"rhs_faction_vv"
 				};
 			};
+			class Camo: standard
+			{
+			};
 		};
 		class Turrets: Turrets
 		{
@@ -2117,6 +2288,22 @@ class CfgVehicles
 					"rhs_weap_2a28",
 					"rhs_weap_pkt",
 					"rhs_weap_9k11"
+				};
+				magazines[]=
+				{
+					"rhs_mag_pg15v_24",
+					"rhs_mag_og15v_16",
+					"rhs_mag_9m14m",
+					"rhs_mag_9m14m",
+					"rhs_mag_9m14m",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250"
 				};
 				minElev=-4;
 				maxElev=33;
@@ -2192,6 +2379,13 @@ class CfgVehicles
 				{
 					"rhs_weap_pkt_bmd_bow2"
 				};
+				magazines[]=
+				{
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250"
+				};
 				minElev=-10;
 				maxElev=10;
 				initElev=0;
@@ -2217,6 +2411,33 @@ class CfgVehicles
 					maxFov=0.166666;
 				};
 			};
+			class GPMGTurretBMD1: GPMGTurret1
+			{
+			};
+			class LeftBack1: LeftBack
+			{
+			};
+			class RightBack1: RightBack
+			{
+			};
+			class MainBack1: MainBack
+			{
+			};
+			class CargoTurret_02: CargoTurret_02
+			{
+			};
+			class CargoTurret_03: CargoTurret_03
+			{
+			};
+			class CargoTurret_04: CargoTurret_04
+			{
+			};
+			class CargoTurret_05: CargoTurret_05
+			{
+			};
+			class CargoTurret_06: CargoTurret_06
+			{
+			};
 		};
 	};
 	class rhs_bmd1: rhs_bmd1_base
@@ -2241,6 +2462,34 @@ class CfgVehicles
 					"rhs_weap_2a28",
 					"rhs_weap_pkt"
 				};
+				magazines[]=
+				{
+					"rhs_mag_pg15v_24",
+					"rhs_mag_og15v_16",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250"
+				};
+			};
+			class CommanderOptics1: CommanderOptics1
+			{
+			};
+			class GPMGTurretBMD1: GPMGTurret1
+			{
+			};
+			class LeftBack1: LeftBack
+			{
+			};
+			class RightBack1: RightBack
+			{
+			};
+			class MainBack1: MainBack
+			{
 			};
 		};
 	};
@@ -2254,6 +2503,19 @@ class CfgVehicles
 				{
 					"rhs_weap_2a28",
 					"rhs_weap_pkt"
+				};
+				magazines[]=
+				{
+					"rhs_mag_pg15v_24",
+					"rhs_mag_og15v_16",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250"
 				};
 				class Turrets: Turrets
 				{
@@ -2291,6 +2553,12 @@ class CfgVehicles
 						weapons[]=
 						{
 							"rhs_weap_9m111"
+						};
+						magazines[]=
+						{
+							"rhs_mag_9m113",
+							"rhs_mag_9m113",
+							"rhs_mag_9m113"
 						};
 						selectionFireAnim="zasleh4";
 						class OpticsIn
@@ -2386,6 +2654,36 @@ class CfgVehicles
 					};
 				};
 			};
+			class CommanderOptics1: CommanderOptics1
+			{
+			};
+			class GPMGTurretBMD1: GPMGTurret1
+			{
+			};
+			class LeftBack1: LeftBack
+			{
+			};
+			class RightBack1: RightBack
+			{
+			};
+			class MainBack1: MainBack
+			{
+			};
+			class CargoTurret_02: CargoTurret_02
+			{
+			};
+			class CargoTurret_03: CargoTurret_03
+			{
+			};
+			class CargoTurret_04: CargoTurret_04
+			{
+			};
+			class CargoTurret_05: CargoTurret_05
+			{
+			};
+			class CargoTurret_06: CargoTurret_06
+			{
+			};
 		};
 		class EventHandlers: EventHandlers
 		{
@@ -2411,6 +2709,19 @@ class CfgVehicles
 				{
 					"rhs_weap_2a28",
 					"rhs_weap_pkt"
+				};
+				magazines[]=
+				{
+					"rhs_mag_pg15v_24",
+					"rhs_mag_og15v_16",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250"
 				};
 			};
 			class CommanderOptics1: CommanderOptics1
@@ -2455,10 +2766,40 @@ class CfgVehicles
 					};
 				};
 			};
+			class GPMGTurretBMD1: GPMGTurret1
+			{
+			};
+			class LeftBack1: LeftBack
+			{
+			};
+			class RightBack1: RightBack
+			{
+			};
+			class MainBack1: MainBack
+			{
+			};
+			class CargoTurret_02: CargoTurret_02
+			{
+			};
+			class CargoTurret_03: CargoTurret_03
+			{
+			};
+			class CargoTurret_04: CargoTurret_04
+			{
+			};
+			class CargoTurret_05: CargoTurret_05
+			{
+			};
+			class CargoTurret_06: CargoTurret_06
+			{
+			};
 		};
 	};
 	class rhs_bmd1r: rhs_bmd1_base
 	{
+		class Damage
+		{
+		};
 		class Turrets: Turrets
 		{
 			class MainTurret: MainTurret
@@ -2468,6 +2809,40 @@ class CfgVehicles
 				{
 					"rhs_weap_s8"
 				};
+				magazines[]=
+				{
+					"rhs_mag_s8_12"
+				};
+			};
+			class CommanderOptics1: CommanderOptics1
+			{
+			};
+			class GPMGTurretBMD1: GPMGTurret1
+			{
+			};
+			class LeftBack1: LeftBack
+			{
+			};
+			class RightBack1: RightBack
+			{
+			};
+			class MainBack1: MainBack
+			{
+			};
+			class CargoTurret_02: CargoTurret_02
+			{
+			};
+			class CargoTurret_03: CargoTurret_03
+			{
+			};
+			class CargoTurret_04: CargoTurret_04
+			{
+			};
+			class CargoTurret_05: CargoTurret_05
+			{
+			};
+			class CargoTurret_06: CargoTurret_06
+			{
 			};
 		};
 		class EventHandlers: EventHandlers
@@ -2508,6 +2883,22 @@ class CfgVehicles
 					"rhs_weap_9k133",
 					"rhs_weap_fcs_ammo"
 				};
+				magazines[]=
+				{
+					"rhs_mag_3uof8_180",
+					"rhs_mag_3ubr8_120",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_9m133_2",
+					"rhs_laserfcsmag",
+					"rhs_laserfcsmag"
+				};
 				class OpticsIn
 				{
 					class Wide: ViewOptics
@@ -2545,10 +2936,37 @@ class CfgVehicles
 						directionStabilized=1;
 					};
 				};
+				class Turrets
+				{
+				};
+			};
+			class CommanderOptics2: CommanderOptics1
+			{
 			};
 			class GPMGTurretBMD2: GPMGTurretBMD1
 			{
 				forceHideGunner=1;
+			};
+			class LeftBack2: LeftBack1
+			{
+			};
+			class RightBack2: RightBack1
+			{
+			};
+			class MainBack2: MainBack1
+			{
+			};
+			class CargoTurret_02: CargoTurret_02
+			{
+			};
+			class CargoTurret_04: CargoTurret_04
+			{
+			};
+			class CargoTurret_05: CargoTurret_05
+			{
+			};
+			class CargoTurret_06: CargoTurret_06
+			{
 			};
 		};
 		rhs_topPositions[]={1,2,3,4,6};
@@ -2559,6 +2977,12 @@ class CfgVehicles
 				reloaded="_this call rhs_fnc_bmd_at14_reload";
 				fired="_this call rhs_fnc_at14_fired;";
 			};
+			class RHS_BMD2
+			{
+			};
 		};
+	};
+	class rhs_bmd2k: rhs_bmd2
+	{
 	};
 };

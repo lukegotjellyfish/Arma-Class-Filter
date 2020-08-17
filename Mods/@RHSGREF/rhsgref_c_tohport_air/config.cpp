@@ -21,6 +21,9 @@ class CfgFunctions
 	class RHS
 	{
 		tag="RHS";
+		class functions
+		{
+		};
 	};
 };
 class DefaultVehicleSystemsDisplayManagerLeft
@@ -58,11 +61,29 @@ class CfgVehicles
 		};
 		class CargoTurret;
 	};
+	class Heli_Attack_02_base_F: Helicopter_Base_F
+	{
+	};
 	class RHS_Mi24_base: Heli_Attack_02_base_F
 	{
 		class Turrets: Turrets
 		{
+			class MainTurret: MainTurret
+			{
+			};
+			class CargoTurret_02: CargoTurret_01
+			{
+			};
+			class CargoTurret_03: CargoTurret_01
+			{
+			};
+			class CargoTurret_04: CargoTurret_01
+			{
+			};
 		};
+	};
+	class RHS_Mi24V_Base: RHS_Mi24_base
+	{
 	};
 	class RHS_Mi24V_VVS_Base: RHS_Mi24V_Base
 	{
@@ -94,6 +115,30 @@ class CfgVehicles
 					"rhs_faction_vvs_c",
 					"rhs_faction_vvs"
 				};
+			};
+			class Camo: standard
+			{
+			};
+			class Camo1: standard
+			{
+			};
+			class Camo2: standard
+			{
+			};
+			class Camo3: standard
+			{
+			};
+			class Camo4: standard
+			{
+			};
+			class Camo5: standard
+			{
+			};
+			class Camo6: standard
+			{
+			};
+			class Camo7: standard
+			{
 			};
 		};
 		class Attributes
@@ -249,6 +294,19 @@ class CfgVehicles
 		{
 			"rhs_weap_DIRCM_Lipa"
 		};
+		magazines[]=
+		{
+			"rhs_mag_DIRCM_Lipa",
+			"rhs_mag_DIRCM_Lipa",
+			"rhs_mag_DIRCM_Lipa",
+			"rhs_mag_DIRCM_Lipa",
+			"rhs_mag_DIRCM_Lipa",
+			"rhs_mag_DIRCM_Lipa",
+			"rhs_mag_DIRCM_Lipa",
+			"rhs_mag_DIRCM_Lipa",
+			"rhs_mag_DIRCM_Lipa",
+			"rhs_mag_DIRCM_Lipa"
+		};
 		transportsoldier=4;
 		class Components: Components
 		{
@@ -275,6 +333,9 @@ class CfgVehicles
 						turret[]={};
 						hitpoint="HitPylon1";
 					};
+					class pylon2: pylon1
+					{
+						UIposition[]={0.16500001,0.30000001};
 						mirroredMissilePos=1;
 						hitpoint="HitPylon2";
 					};
@@ -294,6 +355,9 @@ class CfgVehicles
 						turret[]={};
 						hitpoint="HitPylon3";
 					};
+					class pylon4: pylon3
+					{
+						UIposition[]={0.085000001,0.34999999};
 						mirroredMissilePos=3;
 						hitpoint="HitPylon4";
 					};
@@ -310,6 +374,9 @@ class CfgVehicles
 						turret[]={0};
 						hitpoint="HitPylon5";
 					};
+					class pylon6: pylon5
+					{
+						UIposition[]={0.039999999,0.40000001};
 						mirroredMissilePos=5;
 						hitpoint="HitPylon6";
 					};
@@ -371,6 +438,12 @@ class CfgVehicles
 						angleRangeHorizontal=46;
 						angleRangeVertical=36;
 					};
+					class LaserSensorComponent: SensorTemplateLaser
+					{
+					};
+					class PassiveRadarSensorComponent: SensorTemplatePassiveRadar
+					{
+					};
 				};
 			};
 			class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
@@ -408,6 +481,9 @@ class CfgVehicles
 					};
 				};
 			};
+			class TransportCountermeasuresComponent
+			{
+			};
 		};
 		class Turrets: Turrets
 		{
@@ -417,6 +493,12 @@ class CfgVehicles
 				{
 					"rhs_weap_gi2",
 					"Laserdesignator_pilotCamera"
+				};
+				magazines[]=
+				{
+					"rhs_mag_GI2_420_HE",
+					"rhs_mag_GI2_420_AP",
+					"Laserbatteries"
 				};
 				memoryPointGun="z_gun_chamber";
 				particlesPos="z_gun_chamber";
@@ -529,6 +611,15 @@ class CfgVehicles
 					};
 				};
 			};
+			class CargoTurret_02: CargoTurret_02
+			{
+			};
+			class CargoTurret_03: CargoTurret_03
+			{
+			};
+			class CargoTurret_04: CargoTurret_04
+			{
+			};
 		};
 		driveOnComponent[]=
 		{
@@ -599,6 +690,9 @@ class CfgVehicles
 						attachment="rhs_mag_zt3_4";
 						turret[]={0};
 					};
+					class cmDispenser: cmDispenser
+					{
+					};
 				};
 			};
 		};
@@ -641,6 +735,9 @@ class CfgVehicles
 					{
 						attachment="rhs_mag_zt3_4";
 						turret[]={0};
+					};
+					class cmDispenser: cmDispenser
+					{
 					};
 				};
 			};

@@ -97,6 +97,9 @@ class CfgVehicles
 	{
 		class NewTurret;
 		class Sounds;
+		class HitPoints;
+		class CommanderOptics;
+	};
 	class Tank_F: Tank
 	{
 		class Turrets
@@ -105,6 +108,9 @@ class CfgVehicles
 			{
 				class Turrets
 				{
+					class CommanderOptics;
+				};
+			};
 		};
 		class AnimationSources;
 		class ViewPilot;
@@ -115,9 +121,18 @@ class CfgVehicles
 		{
 			class HitHull;
 			class HitEngine;
+			class HitLTrack;
+			class HitRTrack;
+		};
 		class Sounds: Sounds
 		{
+			class Engine;
+			class Movement;
+		};
 		class EventHandlers;
+	};
+	class APC_Tracked_03_base_F: Tank_F
+	{
 	};
 	class RHS_M2A2_Base: APC_Tracked_03_base_F
 	{
@@ -907,6 +922,9 @@ class CfgVehicles
 		};
 		class Wheels
 		{
+			class L2
+			{
+				suspTravelDirection[]={-0.125,-1,0};
 				side="left";
 				steering=0;
 				width=0.40000001;
@@ -932,6 +950,21 @@ class CfgVehicles
 					{0.60000002,0.86000001}
 				};
 			};
+			class L3: L2
+			{
+			};
+			class L4: L2
+			{
+			};
+			class L5: L2
+			{
+			};
+			class L6: L2
+			{
+			};
+			class L7: L2
+			{
+			};
 			class L9: L2
 			{
 				maxDroop=0;
@@ -942,7 +975,25 @@ class CfgVehicles
 				maxDroop=0;
 				maxCompression=0;
 			};
+			class R2: L2
+			{
+				suspTravelDirection[]={0.125,-1,0};
 				side="right";
+			};
+			class R3: R2
+			{
+			};
+			class R4: R2
+			{
+			};
+			class R5: R2
+			{
+			};
+			class R6: R2
+			{
+			};
+			class R7: R2
+			{
 			};
 			class R9: R2
 			{
@@ -990,6 +1041,10 @@ class CfgVehicles
 		weapons[]=
 		{
 			"rhs_weap_smokegen"
+		};
+		magazines[]=
+		{
+			"rhs_mag_smokegen"
 		};
 		rhs_hasSmokeCap=1;
 		reportOwnPosition=1;
@@ -1133,6 +1188,22 @@ class CfgVehicles
 					"Rhs_weap_TOW_Launcher",
 					"rhs_weap_fcs_ammo"
 				};
+				magazines[]=
+				{
+					"rhs_mag_1100Rnd_762x51_M240",
+					"rhs_mag_1100Rnd_762x51_M240",
+					"rhs_mag_230Rnd_25mm_M242_HEI",
+					"rhs_mag_230Rnd_25mm_M242_HEI",
+					"rhs_mag_230Rnd_25mm_M242_HEI",
+					"rhs_mag_70Rnd_25mm_M242_APFSDS",
+					"rhs_mag_70Rnd_25mm_M242_APFSDS",
+					"rhs_mag_70Rnd_25mm_M242_APFSDS",
+					"rhs_mag_2Rnd_TOW2A",
+					"rhs_mag_2Rnd_TOW2A",
+					"rhs_mag_2Rnd_TOW2A",
+					"rhs_mag_2Rnd_TOW2BB",
+					"rhs_laserfcsmag"
+				};
 				class OpticsIn
 				{
 					class Wide
@@ -1175,6 +1246,10 @@ class CfgVehicles
 						weapons[]=
 						{
 							"rhsusf_weap_M257_8"
+						};
+						magazines[]=
+						{
+							"rhsusf_mag_L8A3_8"
 						};
 						class ViewOptics
 						{
@@ -1344,6 +1419,9 @@ class CfgVehicles
 				hitpoint="Hit_Optics_Dvr_Peri";
 			};
 		};
+		class EventHandlers: EventHandlers
+		{
+		};
 		armorLights=0.1;
 		class Attributes
 		{
@@ -1367,6 +1445,9 @@ class CfgVehicles
 	{
 		side=1;
 		damageResistance=0.01189;
+		class Damage
+		{
+		};
 	};
 	class RHS_M2A2_early: RHS_M2A2
 	{
@@ -1380,8 +1461,26 @@ class CfgVehicles
 					"rhs_weap_m240veh",
 					"rhs_weap_TOW_Launcher"
 				};
+				magazines[]=
+				{
+					"rhs_mag_1100Rnd_762x51_M240",
+					"rhs_mag_1100Rnd_762x51_M240",
+					"rhs_mag_230Rnd_25mm_M242_HEI",
+					"rhs_mag_230Rnd_25mm_M242_HEI",
+					"rhs_mag_230Rnd_25mm_M242_HEI",
+					"rhs_mag_70Rnd_25mm_M242_APFSDS",
+					"rhs_mag_70Rnd_25mm_M242_APFSDS",
+					"rhs_mag_70Rnd_25mm_M242_APFSDS",
+					"rhs_mag_2Rnd_TOW2",
+					"rhs_mag_2Rnd_TOW2",
+					"rhs_mag_2Rnd_TOW2",
+					"rhs_mag_2Rnd_TOW2"
+				};
 				class Turrets: Turrets
 				{
+					class CommanderOptics: CommanderOptics
+					{
+					};
 				};
 			};
 		};
@@ -2007,6 +2106,22 @@ class CfgVehicles
 		{
 			class MainTurret: MainTurret
 			{
+				magazines[]=
+				{
+					"rhs_mag_1100Rnd_762x51_M240",
+					"rhs_mag_1100Rnd_762x51_M240",
+					"rhs_mag_230Rnd_25mm_M242_HEI",
+					"rhs_mag_230Rnd_25mm_M242_HEI",
+					"rhs_mag_230Rnd_25mm_M242_HEI",
+					"rhs_mag_70Rnd_25mm_M242_APFSDS",
+					"rhs_mag_70Rnd_25mm_M242_APFSDS",
+					"rhs_mag_70Rnd_25mm_M242_APFSDS",
+					"rhs_mag_2Rnd_TOW2B_AERO",
+					"rhs_mag_2Rnd_TOW2B_AERO",
+					"rhs_mag_2Rnd_TOW2A",
+					"rhs_mag_2Rnd_TOW2BB",
+					"rhs_laserfcsmag"
+				};
 				class OpticsIn
 				{
 					class Wide
@@ -2761,16 +2876,27 @@ class CfgVehicles
 							"rhsusf_weap_M257_8",
 							"rhsusf_weap_duke"
 						};
+						magazines[]=
+						{
+							"rhsusf_mag_L8A3_8",
+							"rhsusf_mag_duke"
+						};
 					};
 				};
 			};
 		};
 		class Attributes: Attributes
 		{
+			class rhs_hideIFFPanel: rhs_hideIFFPanel
+			{
+			};
 			class rhs_hideDUKE: rhs_hideIFFPanel
 			{
 				property="rhs_hideDUKE";
 				expression="_this animate ['DUKE_Hide',_value,true];if(_value isEqualTo 1)then{_this removeWeaponTurret ['rhsusf_weap_duke',[0,0]]};";
+			};
+			class OpenRamp: OpenRamp
+			{
 			};
 		};
 		class EventHandlers: EventHandlers
@@ -2980,6 +3106,12 @@ class CfgVehicles
 				radius=0.16;
 			};
 		};
+		class Damage
+		{
+		};
+	};
+	class RHS_M2A3_BUSKIII_wd: RHS_M2A3_BUSKIII
+	{
 	};
 	class RHS_M6: RHS_M2A2_Base
 	{
@@ -2996,8 +3128,40 @@ class CfgVehicles
 					"Rhs_weap_stinger_Launcher",
 					"rhs_weap_fcs_ammo"
 				};
+				magazines[]=
+				{
+					"rhs_mag_1100Rnd_762x51_M240",
+					"rhs_mag_1100Rnd_762x51_M240",
+					"Rhs_mag_4Rnd_stinger",
+					"Rhs_mag_4Rnd_stinger",
+					"Rhs_mag_4Rnd_stinger",
+					"rhs_mag_70Rnd_25mm_M242_APFSDS",
+					"rhs_mag_230Rnd_25mm_M242_HEI",
+					"rhs_mag_70Rnd_25mm_M242_APFSDS",
+					"rhs_mag_230Rnd_25mm_M242_HEI",
+					"rhs_laserfcsmag",
+					"rhs_laserfcsmag"
+				};
 			};
 		};
+		class Damage
+		{
+		};
 		threat[]={0.89999998,0.30000001,1};
+	};
+	class RHS_M2A2_wd: RHS_M2A2
+	{
+	};
+	class RHS_M2A2_BUSKI_WD: RHS_M2A2_BUSKI
+	{
+	};
+	class RHS_M2A3_BUSKI_wd: RHS_M2A3_BUSKI
+	{
+	};
+	class RHS_M2A3_wd: RHS_M2A3
+	{
+	};
+	class RHS_M6_wd: RHS_M6
+	{
 	};
 };

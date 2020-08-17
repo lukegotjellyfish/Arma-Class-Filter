@@ -32,6 +32,9 @@ class CfgVehicles
 	class Tank: LandVehicle
 	{
 		class NewTurret;
+		class Sounds;
+		class HitPoints;
+	};
 	class Tank_F: Tank
 	{
 		class Turrets
@@ -40,6 +43,9 @@ class CfgVehicles
 			{
 				class Turrets
 				{
+					class CommanderOptics;
+				};
+			};
 		};
 		class AnimationSources;
 		class ViewPilot;
@@ -50,8 +56,17 @@ class CfgVehicles
 		{
 			class HitHull;
 			class HitEngine;
+			class HitLTrack;
+			class HitRTrack;
+		};
 		class Sounds: Sounds
 		{
+			class Engine;
+			class Movement;
+		};
+		class EventHandlers;
+		class Components;
+	};
 	class rhs_2s3tank_base: Tank_F
 	{
 		rhs_decalParameters[]=
@@ -153,6 +168,9 @@ class CfgVehicles
 		};
 		class Wheels
 		{
+			class L2
+			{
+				suspTravelDirection[]={-0.125,-1,0};
 				side="left";
 				width=0.47999999;
 				steering=0;
@@ -178,6 +196,21 @@ class CfgVehicles
 					{0.69999999,0.64999998}
 				};
 			};
+			class L3: L2
+			{
+			};
+			class L4: L2
+			{
+			};
+			class L5: L2
+			{
+			};
+			class L6: L2
+			{
+			};
+			class L7: L2
+			{
+			};
 			class L9: L2
 			{
 				maxDroop=0;
@@ -188,7 +221,25 @@ class CfgVehicles
 				maxDroop=0;
 				maxCompression=0;
 			};
+			class R2: L2
+			{
+				suspTravelDirection[]={0.125,-1,0};
 				side="right";
+			};
+			class R3: R2
+			{
+			};
+			class R4: R2
+			{
+			};
+			class R5: R2
+			{
+			};
+			class R6: R2
+			{
+			};
+			class R7: R2
+			{
 			};
 			class R9: R2
 			{
@@ -1036,6 +1087,15 @@ class CfgVehicles
 						{
 							"rhs_weap_pkt_2s3"
 						};
+						magazines[]=
+						{
+							"rhs_mag_762x54mm_250",
+							"rhs_mag_762x54mm_250",
+							"rhs_mag_762x54mm_250",
+							"rhs_mag_762x54mm_250",
+							"rhs_mag_762x54mm_250",
+							"rhs_mag_762x54mm_250"
+						};
 						class ViewOptics: ViewOptics
 						{
 							initAngleX=0;
@@ -1187,6 +1247,14 @@ class CfgVehicles
 				{
 					"RHS_Weap_2a33"
 				};
+				magazines[]=
+				{
+					"rhs_mag_HE_2a33",
+					"rhs_mag_WP_2a33",
+					"rhs_mag_LASER_2a33",
+					"rhs_mag_SMOKE_2a33",
+					"rhs_mag_ILLUM_2a33"
+				};
 				minElev=-5;
 				maxElev=77;
 				initElev=20;
@@ -1282,6 +1350,9 @@ class CfgVehicles
 				{
 					"rhs_faction_tv"
 				};
+			};
+			class rhs_sand
+			{
 			};
 		};
 		class Attributes
@@ -1472,6 +1543,9 @@ class CfgVehicles
 			minFov=0.69999999;
 			maxFov=0.69999999;
 		};
+		class Damage
+		{
+		};
 		class Exhausts
 		{
 			class Exhaust1
@@ -1522,5 +1596,8 @@ class CfgVehicles
 				};
 			};
 		};
+	};
+	class rhs_2s3_tv: rhs_2s3tank_base
+	{
 	};
 };

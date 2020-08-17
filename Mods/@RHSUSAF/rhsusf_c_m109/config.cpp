@@ -19,6 +19,9 @@ class CfgVehicles
 	class Tank: LandVehicle
 	{
 		class NewTurret;
+		class Sounds;
+		class HitPoints;
+	};
 	class Tank_F: Tank
 	{
 		class Turrets
@@ -27,6 +30,9 @@ class CfgVehicles
 			{
 				class Turrets
 				{
+					class CommanderOptics;
+				};
+			};
 		};
 		class ViewPilot;
 		class ViewOptics;
@@ -36,8 +42,17 @@ class CfgVehicles
 		{
 			class HitHull;
 			class HitEngine;
+			class HitLTrack;
+			class HitRTrack;
+		};
 		class Sounds: Sounds
 		{
+			class Engine;
+			class Movement;
+		};
+	};
+	class MBT_01_base_F: Tank_F
+	{
 	};
 	class MBT_01_arty_base_F: MBT_01_base_F
 	{
@@ -47,9 +62,15 @@ class CfgVehicles
 			{
 				class Turrets: Turrets
 				{
+					class CommanderOptics: CommanderOptics
+					{
+					};
 				};
 			};
 		};
+		class AnimationSources;
+		class EventHandlers;
+	};
 	class rhsusf_m109tank_base: MBT_01_arty_base_F
 	{
 		driveOnComponent[]=
@@ -169,6 +190,24 @@ class CfgVehicles
 					{0.69999999,0.75}
 				};
 			};
+			class L3: L2
+			{
+			};
+			class L4: L2
+			{
+			};
+			class L5: L2
+			{
+			};
+			class L6: L2
+			{
+			};
+			class L7: L2
+			{
+			};
+			class L8: L2
+			{
+			};
 			class L9: L2
 			{
 				maxDroop=0;
@@ -182,6 +221,24 @@ class CfgVehicles
 			class R2: L2
 			{
 				side="right";
+			};
+			class R3: R2
+			{
+			};
+			class R4: R2
+			{
+			};
+			class R5: R2
+			{
+			};
+			class R6: R2
+			{
+			};
+			class R7: R2
+			{
+			};
+			class R8: R2
+			{
 			};
 			class R9: R2
 			{
@@ -201,6 +258,10 @@ class CfgVehicles
 		weapons[]=
 		{
 			"rhs_weap_smokegen"
+		};
+		magazines[]=
+		{
+			"rhs_mag_smokegen"
 		};
 		cost=1500000;
 		damageResistance=0.02;
@@ -323,6 +384,16 @@ class CfgVehicles
 				{
 					"rhs_weap_m284"
 				};
+				magazines[]=
+				{
+					"rhs_mag_155mm_m795_28",
+					"rhs_mag_155mm_m825a1_2",
+					"rhs_mag_155mm_485_2",
+					"rhs_mag_155mm_m712_2",
+					"rhs_mag_155mm_m731_1",
+					"rhs_mag_155mm_raams_1",
+					"rhs_mag_155mm_m864_3"
+				};
 				memoryPointGun="usti hlavne2";
 				selectionFireAnim="zasleh2";
 				minElev=-5;
@@ -409,6 +480,9 @@ class CfgVehicles
 		availableForSupportTypes[]=
 		{
 			"Artillery"
+		};
+		class Damage
+		{
 		};
 		class ViewOptics: ViewOptics
 		{
@@ -549,9 +623,21 @@ class CfgVehicles
 				property="rhs_ammoslot_5";
 			};
 		};
+		class EventHandlers: EventHandlers
+		{
+		};
+	};
+	class rhsusf_m109_usarmy: rhsusf_m109tank_base
+	{
+	};
+	class rhsusf_m109d_usarmy: rhsusf_m109_usarmy
+	{
 	};
 };
 class CfgNonAIVehicles
 {
 	class ProxyRetex;
+	class Proxyrhsusf_m109a6_hull: ProxyRetex
+	{
+	};
 };

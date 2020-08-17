@@ -18,6 +18,15 @@ class CfgFunctions
 		class pontoon
 		{
 			file="rhsafrf\addons\rhs_c_pontoon\scripts";
+			class pontoon_update
+			{
+			};
+			class pontoon_climbAboard
+			{
+			};
+			class pontoon_loadOnVehicle
+			{
+			};
 		};
 	};
 };
@@ -26,6 +35,9 @@ class CfgVehicles
 	class House;
 	class House_F: House
 	{
+		class EventHandlers;
+		class DestructionEffects;
+	};
 	class rhs_pontoon_static: House_F
 	{
 		cost=8000;

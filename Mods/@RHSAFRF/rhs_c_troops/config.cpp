@@ -15217,20 +15217,56 @@ class CfgVehicles
 		maximumLoad=240;
 		mass=35;
 	};
+	class rhs_assault_umbts_ammo: rhs_assault_umbts
+	{
+	};
+	class rhs_assault_umbts_ammo_recon: rhs_assault_umbts
+	{
+	};
+	class rhs_assault_umbts_engineer: rhs_assault_umbts
+	{
+	};
+	class rhs_assault_umbts_engineer_empty: rhs_assault_umbts_engineer
+	{
+	};
+	class rhs_assault_umbts_medic: rhs_assault_umbts
+	{
+	};
+	class rhs_assault_umbts_demo: rhs_assault_umbts
+	{
+	};
 	class rhs_rpg: B_AssaultPack_Base
 	{
 		maximumLoad=140;
 		mass=20;
+	};
+	class rhs_rpg_at: rhs_rpg
+	{
+	};
+	class rhs_rpg_vl: rhs_rpg_at
+	{
+	};
+	class rhs_rpg_v: rhs_rpg_vl
+	{
+	};
+	class rhs_rpg_empty: rhs_rpg
+	{
 	};
 	class rhs_sidor: B_AssaultPack_Base
 	{
 		maximumLoad=129;
 		mass=20;
 	};
+	class rhs_sidorMG: rhs_sidor
+	{
+	};
 	class rhs_medic_bag: B_AssaultPack_Base
 	{
 		maximumLoad=96;
 		mass=15;
+	};
+	class rhs_medic_bag_filled: rhs_medic_bag
+	{
 	};
 	class B_Parachute;
 	class Steerable_Parachute_F;
@@ -15952,6 +15988,9 @@ class CfgVehicles
 			class HitChest;
 			class HitBody;
 			class HitArms;
+			class HitHands;
+			class HitLegs;
+		};
 		class Eventhandlers;
 	};
 	class rhs_infantry_msv_base: SoldierGB
@@ -15978,6 +16017,9 @@ class CfgVehicles
 		secondaryAmmoCoef=0.2;
 		handgunAmmoCoef=0.1;
 		cost=100000;
+		class Wounds
+		{
+		};
 		selectionClan="";
 		selectionbodywound="body_injury";
 		selectionlarmwound="l_arm_injury";
@@ -16005,6 +16047,19 @@ class CfgVehicles
 			"rhs_weap_rsp30_red",
 			"Throw",
 			"Put"
+		};
+		magazines[]=
+		{
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_mag_rgd5",
+			"rhs_mag_rgd5",
+			"rhs_mag_nspn_red"
 		};
 		respawnMagazines[]=
 		{
@@ -16106,6 +16161,19 @@ class CfgVehicles
 			"Throw",
 			"Put"
 		};
+		magazines[]=
+		{
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_mag_rgn",
+			"rhs_mag_rgn"
+		};
 		respawnMagazines[]=
 		{
 			"rhs_30Rnd_545x39_7N10_AK",
@@ -16172,6 +16240,20 @@ class CfgVehicles
 			"Throw",
 			"Put"
 		};
+		magazines[]=
+		{
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_mag_rgn",
+			"rhs_mag_rgn",
+			"rhs_rpg26_mag"
+		};
 		respawnMagazines[]=
 		{
 			"rhs_30Rnd_545x39_7N10_AK",
@@ -16203,6 +16285,20 @@ class CfgVehicles
 			"rhs_weap_rshg2",
 			"Throw",
 			"Put"
+		};
+		magazines[]=
+		{
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_mag_rgn",
+			"rhs_mag_rgn",
+			"rhs_rshg2_mag"
 		};
 		respawnMagazines[]=
 		{
@@ -16253,6 +16349,27 @@ class CfgVehicles
 			"rhs_weap_ak74m_gp25_dtk",
 			"Throw",
 			"Put"
+		};
+		magazines[]=
+		{
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_VOG25",
+			"rhs_VOG25",
+			"rhs_VOG25",
+			"rhs_VOG25",
+			"rhs_VOG25",
+			"rhs_VOG25",
+			"rhs_VOG25",
+			"rhs_VOG25",
+			"rhs_VOG25",
+			"rhs_VOG25"
 		};
 		respawnMagazines[]=
 		{
@@ -16307,6 +16424,11 @@ class CfgVehicles
 			"rhs_weap_pkp",
 			"Throw",
 			"Put"
+		};
+		magazines[]=
+		{
+			"rhs_100Rnd_762x54mmR",
+			"rhs_mag_rgn"
 		};
 		respawnMagazines[]=
 		{
@@ -16424,6 +16546,20 @@ class CfgVehicles
 			"Throw",
 			"Put",
 			"rhs_weap_rpg7_pgo"
+		};
+		magazines[]=
+		{
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_mag_rgn",
+			"rhs_mag_rgn",
+			"rhs_rpg7_PG7VL_mag"
 		};
 		respawnMagazines[]=
 		{
@@ -16545,6 +16681,19 @@ class CfgVehicles
 			"Throw",
 			"Put"
 		};
+		magazines[]=
+		{
+			"rhs_10Rnd_762x54mmR_7N1",
+			"rhs_10Rnd_762x54mmR_7N1",
+			"rhs_10Rnd_762x54mmR_7N1",
+			"rhs_10Rnd_762x54mmR_7N1",
+			"rhs_10Rnd_762x54mmR_7N1",
+			"rhs_10Rnd_762x54mmR_7N1",
+			"rhs_10Rnd_762x54mmR_7N1",
+			"rhs_10Rnd_762x54mmR_7N1",
+			"rhs_mag_rdg2_white",
+			"rhs_mag_rdg2_white"
+		};
 		respawnMagazines[]=
 		{
 			"rhs_10Rnd_762x54mmR_7N1",
@@ -16631,6 +16780,28 @@ class CfgVehicles
 			"Binocular",
 			"Throw",
 			"Put"
+		};
+		magazines[]=
+		{
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_mag_9x18_8_57N181S",
+			"rhs_mag_9x18_8_57N181S",
+			"rhs_mag_rdg2_white",
+			"rhs_mag_rgn",
+			"rhs_VOG25",
+			"rhs_VOG25",
+			"rhs_VOG25",
+			"rhs_VOG25",
+			"rhs_VOG25",
+			"rhs_VOG25",
+			"rhs_GRD40_White"
 		};
 		respawnMagazines[]=
 		{
@@ -16743,6 +16914,19 @@ class CfgVehicles
 			"Binocular",
 			"Throw",
 			"Put"
+		};
+		magazines[]=
+		{
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_mag_9x18_8_57N181S",
+			"rhs_mag_9x18_8_57N181S",
+			"rhs_mag_9x18_8_57N181S",
+			"rhs_mag_9x18_8_57N181S",
+			"rhs_mag_rdg2_white",
+			"rhs_mag_rdg2_white"
 		};
 		respawnMagazines[]=
 		{
@@ -16872,6 +17056,15 @@ class CfgVehicles
 			"Throw",
 			"rhs_weap_igla"
 		};
+		magazines[]=
+		{
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_mag_9k38_rocket"
+		};
 		respawnMagazines[]=
 		{
 			"rhs_30Rnd_545x39_7N10_AK",
@@ -16989,6 +17182,16 @@ class CfgVehicles
 			"Throw",
 			"Put"
 		};
+		magazines[]=
+		{
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_mag_9x19_17",
+			"rhs_mag_9x19_17",
+			"rhs_mag_9x19_17",
+			"rhs_mag_rdg2_white",
+			"rhs_mag_nspd"
+		};
 		respawnMagazines[]=
 		{
 			"rhs_30Rnd_545x39_7N10_AK",
@@ -17067,6 +17270,14 @@ class CfgVehicles
 			"Throw",
 			"Put"
 		};
+		magazines[]=
+		{
+			"rhs_mag_9x19_17",
+			"rhs_mag_9x19_17",
+			"rhs_mag_9x19_17",
+			"rhs_mag_rdg2_white",
+			"rhs_mag_nspd"
+		};
 		respawnMagazines[]=
 		{
 			"rhs_mag_9x19_17",
@@ -17110,6 +17321,17 @@ class CfgVehicles
 			"rhs_weap_pya",
 			"Throw",
 			"Put"
+		};
+		magazines[]=
+		{
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_mag_9x19_17",
+			"rhs_mag_9x19_17",
+			"rhs_mag_rdg2_white",
+			"rhs_mag_nspd"
 		};
 		respawnMagazines[]=
 		{
@@ -17156,6 +17378,17 @@ class CfgVehicles
 			"rhs_weap_pya",
 			"Throw",
 			"Put"
+		};
+		magazines[]=
+		{
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_mag_9x19_17",
+			"rhs_mag_9x19_17",
+			"rhs_mag_rdg2_white",
+			"rhs_mag_nspd"
 		};
 		respawnMagazines[]=
 		{
@@ -17209,6 +17442,19 @@ class CfgVehicles
 			"Throw",
 			"Put"
 		};
+		magazines[]=
+		{
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_mag_9x19_17",
+			"rhs_mag_9x19_17",
+			"rhs_mag_rdg2_white",
+			"rhs_mag_rdg2_white",
+			"rhs_mag_rdg2_white",
+			"rhs_mag_nspd"
+		};
 		respawnMagazines[]=
 		{
 			"rhs_30Rnd_545x39_7N10_AK",
@@ -17259,6 +17505,14 @@ class CfgVehicles
 			"Throw",
 			"Put"
 		};
+		magazines[]=
+		{
+			"rhs_mag_9x18_8_57N181S",
+			"rhs_mag_9x18_8_57N181S",
+			"rhs_mag_9x18_8_57N181S",
+			"rhs_mag_rdg2_white",
+			"rhs_mag_nspd"
+		};
 		respawnMagazines[]=
 		{
 			"rhs_mag_9x18_8_57N181S",
@@ -17266,6 +17520,9 @@ class CfgVehicles
 			"rhs_mag_9x18_8_57N181S",
 			"rhs_mag_rdg2_white",
 			"rhs_mag_nspd"
+		};
+		class Wounds
+		{
 		};
 		linkedItems[]=
 		{
@@ -17404,6 +17661,9 @@ class CfgVehicles
 	{
 		uniformClass="rhs_uniform_msv_emr";
 		selectionClan="clan";
+		class Wounds
+		{
+		};
 		identityTypes[]=
 		{
 			"LanguageRUS_F",
@@ -17456,6 +17716,9 @@ class CfgVehicles
 	{
 		uniformClass="rhs_uniform_msv_emr";
 		selectionClan="clan";
+		class Wounds
+		{
+		};
 		identityTypes[]=
 		{
 			"LanguageRUS_F",
@@ -17508,6 +17771,9 @@ class CfgVehicles
 	{
 		uniformClass="rhs_uniform_msv_emr";
 		selectionClan="clan";
+		class Wounds
+		{
+		};
 		identityTypes[]=
 		{
 			"LanguageRUS_F",
@@ -17542,6 +17808,9 @@ class CfgVehicles
 	{
 		uniformClass="rhs_uniform_msv_emr";
 		selectionClan="clan";
+		class Wounds
+		{
+		};
 		identityTypes[]=
 		{
 			"LanguageRUS_F",
@@ -17590,26 +17859,44 @@ class CfgVehicles
 			"ItemRadio"
 		};
 	};
+	class rhs_msv_emr_rifleman_patchless: rhs_msv_emr_rifleman
+	{
+	};
 	class rhs_msv_mflora_rifleman_patchless: rhs_msv_emr_rifleman
 	{
 		selectionClan="clan";
+		class Wounds
+		{
+		};
 	};
 	class rhs_msv_rifleman_patchless: rhs_msv_emr_rifleman
 	{
 		selectionClan="clan";
+		class Wounds
+		{
+		};
 	};
 	class rhs_msv_rifleman_patchless_alt: rhs_msv_emr_rifleman
 	{
 		selectionClan="clan";
+		class Wounds
+		{
+		};
 	};
 	class rhs_msv_rifleman_m88_patchless: rhs_msv_emr_rifleman
 	{
 		selectionClan="clan";
+		class Wounds
+		{
+		};
 	};
 	class rhs_msv_emr_arifleman: rhs_msv_arifleman
 	{
 		uniformClass="rhs_uniform_msv_emr";
 		selectionClan="clan";
+		class Wounds
+		{
+		};
 		identityTypes[]=
 		{
 			"LanguageRUS_F",
@@ -17662,6 +17949,9 @@ class CfgVehicles
 	{
 		uniformClass="rhs_uniform_msv_emr";
 		selectionClan="clan";
+		class Wounds
+		{
+		};
 		identityTypes[]=
 		{
 			"LanguageRUS_F",
@@ -17714,6 +18004,9 @@ class CfgVehicles
 	{
 		uniformClass="rhs_uniform_msv_emr";
 		selectionClan="clan";
+		class Wounds
+		{
+		};
 		identityTypes[]=
 		{
 			"LanguageRUS_F",
@@ -17767,6 +18060,9 @@ class CfgVehicles
 	{
 		uniformClass="rhs_uniform_msv_emr";
 		selectionClan="clan";
+		class Wounds
+		{
+		};
 		identityTypes[]=
 		{
 			"LanguageRUS_F",
@@ -17819,6 +18115,9 @@ class CfgVehicles
 	{
 		uniformClass="rhs_uniform_msv_emr";
 		selectionClan="clan";
+		class Wounds
+		{
+		};
 		identityTypes[]=
 		{
 			"LanguageRUS_F",
@@ -17871,6 +18170,9 @@ class CfgVehicles
 	{
 		uniformClass="rhs_uniform_msv_emr";
 		selectionClan="clan";
+		class Wounds
+		{
+		};
 		identityTypes[]=
 		{
 			"LanguageRUS_F",
@@ -17931,6 +18233,9 @@ class CfgVehicles
 	{
 		uniformClass="rhs_uniform_msv_emr";
 		selectionClan="clan";
+		class Wounds
+		{
+		};
 		identityTypes[]=
 		{
 			"LanguageRUS_F",
@@ -17994,6 +18299,27 @@ class CfgVehicles
 			"Throw",
 			"Put"
 		};
+		magazines[]=
+		{
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_mag_rdg2_white",
+			"rhs_VOG25",
+			"rhs_VOG25",
+			"rhs_VOG25",
+			"rhs_VOG25",
+			"rhs_VOG25",
+			"rhs_VOG25",
+			"rhs_VOG25",
+			"rhs_VOG25",
+			"rhs_GRD40_White"
+		};
 		respawnMagazines[]=
 		{
 			"rhs_30Rnd_545x39_7N10_AK",
@@ -18020,6 +18346,9 @@ class CfgVehicles
 	{
 		uniformClass="rhs_uniform_msv_emr";
 		selectionClan="clan";
+		class Wounds
+		{
+		};
 		identityTypes[]=
 		{
 			"LanguageRUS_F",
@@ -18093,6 +18422,28 @@ class CfgVehicles
 			"Throw",
 			"Put"
 		};
+		magazines[]=
+		{
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_mag_9x18_8_57N181S",
+			"rhs_mag_9x18_8_57N181S",
+			"rhs_mag_rdg2_white",
+			"rhs_mag_rgn",
+			"rhs_VOG25",
+			"rhs_VOG25",
+			"rhs_VOG25",
+			"rhs_VOG25",
+			"rhs_VOG25",
+			"rhs_VOG25",
+			"rhs_GRD40_White"
+		};
 		respawnMagazines[]=
 		{
 			"rhs_30Rnd_545x39_7N10_AK",
@@ -18120,6 +18471,9 @@ class CfgVehicles
 	{
 		uniformClass="rhs_uniform_msv_emr";
 		selectionClan="clan";
+		class Wounds
+		{
+		};
 		identityTypes[]=
 		{
 			"LanguageRUS_F",
@@ -18172,6 +18526,9 @@ class CfgVehicles
 	{
 		uniformClass="rhs_uniform_msv_emr";
 		selectionClan="clan";
+		class Wounds
+		{
+		};
 		identityTypes[]=
 		{
 			"LanguageRUS_F",
@@ -18202,6 +18559,9 @@ class CfgVehicles
 	{
 		uniformClass="rhs_uniform_msv_emr";
 		selectionClan="clan";
+		class Wounds
+		{
+		};
 		identityTypes[]=
 		{
 			"LanguageRUS_F",
@@ -18231,6 +18591,9 @@ class CfgVehicles
 	{
 		uniformClass="rhs_uniform_msv_emr";
 		selectionClan="clan";
+		class Wounds
+		{
+		};
 		identityTypes[]=
 		{
 			"LanguageRUS_F",
@@ -18283,6 +18646,9 @@ class CfgVehicles
 	{
 		uniformClass="rhs_uniform_msv_emr";
 		selectionClan="clan";
+		class Wounds
+		{
+		};
 		identityTypes[]=
 		{
 			"LanguageRUS_F",
@@ -18335,6 +18701,9 @@ class CfgVehicles
 	{
 		uniformClass="rhs_uniform_msv_emr";
 		selectionClan="clan";
+		class Wounds
+		{
+		};
 		identityTypes[]=
 		{
 			"LanguageRUS_F",
@@ -18387,6 +18756,9 @@ class CfgVehicles
 	{
 		uniformClass="rhs_uniform_msv_emr";
 		selectionClan="clan";
+		class Wounds
+		{
+		};
 		identityTypes[]=
 		{
 			"LanguageRUS_F",
@@ -18439,6 +18811,9 @@ class CfgVehicles
 	{
 		uniformClass="rhs_uniform_msv_emr";
 		selectionClan="clan";
+		class Wounds
+		{
+		};
 		identityTypes[]=
 		{
 			"LanguageRUS_F",
@@ -18469,6 +18844,9 @@ class CfgVehicles
 	{
 		uniformClass="rhs_uniform_msv_emr";
 		selectionClan="clan";
+		class Wounds
+		{
+		};
 		identityTypes[]=
 		{
 			"LanguageRUS_F",
@@ -18499,6 +18877,9 @@ class CfgVehicles
 	{
 		uniformClass="rhs_uniform_msv_emr";
 		selectionClan="clan";
+		class Wounds
+		{
+		};
 		identityTypes[]=
 		{
 			"LanguageRUS_F",
@@ -18543,6 +18924,9 @@ class CfgVehicles
 	{
 		uniformClass="rhs_uniform_msv_emr";
 		selectionClan="clan";
+		class Wounds
+		{
+		};
 		identityTypes[]=
 		{
 			"LanguageRUS_F",
@@ -18587,6 +18971,9 @@ class CfgVehicles
 	{
 		uniformClass="rhs_uniform_msv_emr";
 		selectionClan="clan";
+		class Wounds
+		{
+		};
 		identityTypes[]=
 		{
 			"LanguageRUS_F",
@@ -18631,6 +19018,9 @@ class CfgVehicles
 	{
 		uniformClass="rhs_uniform_msv_emr";
 		selectionClan="clan";
+		class Wounds
+		{
+		};
 		identityTypes[]=
 		{
 			"LanguageRUS_F",
@@ -18685,6 +19075,9 @@ class CfgVehicles
 		};
 		selectionClan="clan";
 		uniformClass="rhs_uniform_vdv_emr";
+		class Wounds
+		{
+		};
 		linkedItems[]=
 		{
 			"rhs_6b27m_digi",
@@ -18757,6 +19150,19 @@ class CfgVehicles
 			"Throw",
 			"Put"
 		};
+		magazines[]=
+		{
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_mag_rgn",
+			"rhs_mag_rgn"
+		};
 		respawnMagazines[]=
 		{
 			"rhs_30Rnd_545x39_7N10_AK",
@@ -18771,6 +19177,9 @@ class CfgVehicles
 			"rhs_mag_rgn"
 		};
 	};
+	class rhs_vdv_rifleman_alt: rhs_vdv_rifleman
+	{
+		headgearList[]={};
 		linkedItems[]=
 		{
 			"rhs_6b47",
@@ -18813,6 +19222,19 @@ class CfgVehicles
 			"Throw",
 			"Put"
 		};
+		magazines[]=
+		{
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_mag_rgn",
+			"rhs_mag_rgn"
+		};
 		respawnMagazines[]=
 		{
 			"rhs_30Rnd_545x39_7N10_AK",
@@ -18827,6 +19249,9 @@ class CfgVehicles
 			"rhs_mag_rgn"
 		};
 	};
+	class rhs_vdv_rifleman_lite: rhs_vdv_rifleman
+	{
+		headgearList[]={};
 		linkedItems[]=
 		{
 			"rhs_beret_vdv1",
@@ -18898,6 +19323,20 @@ class CfgVehicles
 			"Throw",
 			"Put"
 		};
+		magazines[]=
+		{
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_mag_rgn",
+			"rhs_mag_rgn",
+			"rhs_rpg26_mag"
+		};
 		respawnMagazines[]=
 		{
 			"rhs_30Rnd_545x39_7N10_AK",
@@ -18929,6 +19368,20 @@ class CfgVehicles
 			"rhs_weap_rshg2",
 			"Throw",
 			"Put"
+		};
+		magazines[]=
+		{
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_mag_rgn",
+			"rhs_mag_rgn",
+			"rhs_rshg2_mag"
 		};
 		respawnMagazines[]=
 		{
@@ -18978,6 +19431,28 @@ class CfgVehicles
 			"rhs_weap_ak74m_gp25_dtk",
 			"Throw",
 			"Put"
+		};
+		magazines[]=
+		{
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_mag_rgn",
+			"rhs_VOG25",
+			"rhs_VOG25",
+			"rhs_VOG25",
+			"rhs_VOG25",
+			"rhs_VOG25",
+			"rhs_VOG25",
+			"rhs_VOG25",
+			"rhs_VOG25",
+			"rhs_VOG25",
+			"rhs_GRD40_White"
 		};
 		respawnMagazines[]=
 		{
@@ -19049,6 +19524,28 @@ class CfgVehicles
 			"Throw",
 			"Put"
 		};
+		magazines[]=
+		{
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_mag_rgn",
+			"rhs_VOG25",
+			"rhs_VOG25",
+			"rhs_VOG25",
+			"rhs_VOG25",
+			"rhs_VOG25",
+			"rhs_VOG25",
+			"rhs_VOG25",
+			"rhs_VOG25",
+			"rhs_VOG25",
+			"rhs_GRD40_White"
+		};
 		respawnMagazines[]=
 		{
 			"rhs_30Rnd_545x39_7N10_AK",
@@ -19085,6 +19582,19 @@ class CfgVehicles
 			"rhs_weap_asval",
 			"Throw",
 			"Put"
+		};
+		magazines[]=
+		{
+			"rhs_20rnd_9x39mm_SP5",
+			"rhs_20rnd_9x39mm_SP5",
+			"rhs_20rnd_9x39mm_SP5",
+			"rhs_20rnd_9x39mm_SP5",
+			"rhs_20rnd_9x39mm_SP5",
+			"rhs_20rnd_9x39mm_SP5",
+			"rhs_20rnd_9x39mm_SP5",
+			"rhs_20rnd_9x39mm_SP5",
+			"rhs_mag_rgn",
+			"rhs_mag_rgn"
 		};
 		respawnMagazines[]=
 		{
@@ -19149,6 +19659,12 @@ class CfgVehicles
 			"rhs_weap_pkp",
 			"Throw",
 			"Put"
+		};
+		magazines[]=
+		{
+			"rhs_100Rnd_762x54mmR",
+			"rhs_mag_rgn",
+			"rhs_mag_rgn"
 		};
 		respawnMagazines[]=
 		{
@@ -19279,6 +19795,20 @@ class CfgVehicles
 			"Throw",
 			"Put"
 		};
+		magazines[]=
+		{
+			"rhs_10Rnd_762x54mmR_7N1",
+			"rhs_10Rnd_762x54mmR_7N1",
+			"rhs_10Rnd_762x54mmR_7N1",
+			"rhs_10Rnd_762x54mmR_7N1",
+			"rhs_10Rnd_762x54mmR_7N1",
+			"rhs_10Rnd_762x54mmR_7N1",
+			"rhs_10Rnd_762x54mmR_7N1",
+			"rhs_10Rnd_762x54mmR_7N1",
+			"rhs_mag_rdg2_white",
+			"rhs_mag_rdg2_white",
+			"rhs_mag_rgn"
+		};
 		respawnMagazines[]=
 		{
 			"rhs_10Rnd_762x54mmR_7N1",
@@ -19307,6 +19837,20 @@ class CfgVehicles
 			"rhs_asval_pso1",
 			"Throw",
 			"Put"
+		};
+		magazines[]=
+		{
+			"rhs_20rnd_9x39mm_SP5",
+			"rhs_20rnd_9x39mm_SP5",
+			"rhs_20rnd_9x39mm_SP5",
+			"rhs_20rnd_9x39mm_SP5",
+			"rhs_20rnd_9x39mm_SP5",
+			"rhs_20rnd_9x39mm_SP5",
+			"rhs_20rnd_9x39mm_SP5",
+			"rhs_20rnd_9x39mm_SP5",
+			"rhs_mag_rdg2_white",
+			"rhs_mag_rdg2_white",
+			"rhs_mag_rgn"
 		};
 		respawnMagazines[]=
 		{
@@ -19413,6 +19957,24 @@ class CfgVehicles
 			"Binocular",
 			"Throw",
 			"Put"
+		};
+		magazines[]=
+		{
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_mag_9x18_8_57N181S",
+			"rhs_mag_9x18_8_57N181S",
+			"rhs_mag_rdg2_white",
+			"rhs_mag_rdg2_white",
+			"rhs_mag_rgn",
+			"rhs_mag_rgn",
+			"rhs_rpg26_mag"
 		};
 		respawnMagazines[]=
 		{
@@ -19522,6 +20084,15 @@ class CfgVehicles
 			"Throw",
 			"Put"
 		};
+		magazines[]=
+		{
+			"rhs_mag_9x18_8_57N181S",
+			"rhs_mag_9x18_8_57N181S",
+			"rhs_mag_9x18_8_57N181S",
+			"rhs_mag_9x18_8_57N181S",
+			"rhs_mag_rdg2_white",
+			"rhs_mag_rdg2_white"
+		};
 		respawnMagazines[]=
 		{
 			"rhs_mag_9x18_8_57N181S",
@@ -19604,6 +20175,19 @@ class CfgVehicles
 			"Throw",
 			"Put",
 			"rhs_weap_rpg7_pgo"
+		};
+		magazines[]=
+		{
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_mag_rgn",
+			"rhs_rpg7_PG7VL_mag"
 		};
 		respawnMagazines[]=
 		{
@@ -19729,6 +20313,19 @@ class CfgVehicles
 			"Throw",
 			"Put"
 		};
+		magazines[]=
+		{
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_mag_rgn",
+			"rhs_mag_9k38_rocket"
+		};
 		respawnMagazines[]=
 		{
 			"rhs_30Rnd_545x39_7N10_AK",
@@ -19754,6 +20351,16 @@ class CfgVehicles
 			"ItemCompass",
 			"ItemWatch",
 			"ItemRadio"
+		};
+		magazines[]=
+		{
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_mag_nspn_red"
 		};
 		respawnLinkedItems[]=
 		{
@@ -19865,6 +20472,16 @@ class CfgVehicles
 			"Throw",
 			"Put"
 		};
+		magazines[]=
+		{
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_mag_9x19_17",
+			"rhs_mag_9x19_17",
+			"rhs_mag_9x19_17",
+			"rhs_mag_rdg2_white",
+			"rhs_mag_nspd"
+		};
 		respawnMagazines[]=
 		{
 			"rhs_30Rnd_545x39_7N10_AK",
@@ -19967,6 +20584,14 @@ class CfgVehicles
 			"Throw",
 			"Put"
 		};
+		magazines[]=
+		{
+			"rhs_mag_9x19_17",
+			"rhs_mag_9x19_17",
+			"rhs_mag_9x19_17",
+			"rhs_mag_rdg2_white",
+			"rhs_mag_nspd"
+		};
 		respawnMagazines[]=
 		{
 			"rhs_mag_9x19_17",
@@ -20010,6 +20635,17 @@ class CfgVehicles
 			"rhs_weap_pya",
 			"Throw",
 			"Put"
+		};
+		magazines[]=
+		{
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_mag_9x19_17",
+			"rhs_mag_9x19_17",
+			"rhs_mag_rdg2_white",
+			"rhs_mag_nspd"
 		};
 		respawnMagazines[]=
 		{
@@ -20056,6 +20692,17 @@ class CfgVehicles
 			"rhs_weap_pya",
 			"Throw",
 			"Put"
+		};
+		magazines[]=
+		{
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_mag_9x19_17",
+			"rhs_mag_9x19_17",
+			"rhs_mag_rdg2_white",
+			"rhs_mag_nspd"
 		};
 		respawnMagazines[]=
 		{
@@ -20109,6 +20756,19 @@ class CfgVehicles
 			"Throw",
 			"Put"
 		};
+		magazines[]=
+		{
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_mag_9x19_17",
+			"rhs_mag_9x19_17",
+			"rhs_mag_rdg2_white",
+			"rhs_mag_rdg2_white",
+			"rhs_mag_rdg2_white",
+			"rhs_mag_nspd"
+		};
 		respawnMagazines[]=
 		{
 			"rhs_30Rnd_545x39_7N10_AK",
@@ -20129,6 +20789,9 @@ class CfgVehicles
 		sensitivity=3;
 		threat[]={1,0.1,0.1};
 		camouflage=1.2;
+		class Wounds
+		{
+		};
 		uniformClass="rhs_uniform_vdv_emr_des";
 		linkedItems[]=
 		{
@@ -20202,6 +20865,19 @@ class CfgVehicles
 			"Throw",
 			"Put"
 		};
+		magazines[]=
+		{
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_mag_rgn",
+			"rhs_mag_rgn"
+		};
 		respawnMagazines[]=
 		{
 			"rhs_30Rnd_545x39_7N10_AK",
@@ -20216,6 +20892,9 @@ class CfgVehicles
 			"rhs_mag_rgn"
 		};
 	};
+	class rhs_vdv_des_rifleman_lite: rhs_vdv_des_rifleman
+	{
+		headgearList[]={};
 		linkedItems[]=
 		{
 			"rhs_beret_vdv1",
@@ -20425,6 +21104,9 @@ class CfgVehicles
 			"Head_Asian",
 			"rhs_scarf"
 		};
+		class Wounds
+		{
+		};
 		linkedItems[]=
 		{
 			"rhs_6b28_flora",
@@ -20458,6 +21140,9 @@ class CfgVehicles
 	class rhs_vdv_gorka_1_a_rifleman: rhs_vdv_gorka_r_y_rifleman
 	{
 		uniformClass="rhs_uniform_gorka_1_a";
+		class Wounds
+		{
+		};
 	};
 	class rhs_vdv_gorka_1_b_rifleman: rhs_vdv_gorka_1_a_rifleman
 	{
@@ -20503,6 +21188,9 @@ class CfgVehicles
 			"rhs_6b28_green_ess_bala",
 			1
 		};
+		class Wounds
+		{
+		};
 		linkedItems[]=
 		{
 			"rhs_6b28_flora",
@@ -20522,6 +21210,9 @@ class CfgVehicles
 			"ItemRadio"
 		};
 	};
+	class rhs_vdv_flora_rifleman_lite: rhs_vdv_flora_rifleman
+	{
+		headgearList[]={};
 		linkedItems[]=
 		{
 			"rhs_beret_vdv1",
@@ -21816,7 +22507,13 @@ class CfgVehicles
 			"ItemWatch",
 			"ItemRadio"
 		};
+		class Wounds
+		{
+		};
 	};
+	class rhs_vdv_mflora_rifleman_lite: rhs_vdv_mflora_rifleman
+	{
+		headgearList[]={};
 		linkedItems[]=
 		{
 			"rhs_beret_vdv1",
@@ -22831,6 +23528,9 @@ class CfgVehicles
 			"ItemRadio"
 		};
 	};
+	class rhs_vdv_recon_rifleman: rhs_vdv_rifleman
+	{
+		headgearList[]={};
 		class SpeechVariants
 		{
 			class Default
@@ -22860,6 +23560,9 @@ class CfgVehicles
 		camouflage=0.60000002;
 		sensitivity=3.5;
 		detectSkill=30;
+		class Wounds
+		{
+		};
 		weapons[]=
 		{
 			"rhs_weap_45th_ak74m",
@@ -22901,6 +23604,24 @@ class CfgVehicles
 			"ItemCompass",
 			"ItemWatch",
 			"ItemRadio"
+		};
+		magazines[]=
+		{
+			"rhs_30Rnd_545x39_7N22_AK",
+			"rhs_30Rnd_545x39_7N22_AK",
+			"rhs_30Rnd_545x39_7N22_AK",
+			"rhs_30Rnd_545x39_7N22_AK",
+			"rhs_30Rnd_545x39_7N22_AK",
+			"rhs_30Rnd_545x39_7N22_AK",
+			"rhs_30Rnd_545x39_7N22_AK",
+			"rhs_30Rnd_545x39_AK_green",
+			"rhs_mag_9x19_17",
+			"rhs_mag_9x19_17",
+			"rhs_mag_rgn",
+			"rhs_mag_fakel",
+			"rhs_mag_fakel",
+			"rhs_mag_rdg2_white",
+			"rhs_mag_nspd"
 		};
 		respawnMagazines[]=
 		{
@@ -22994,6 +23715,24 @@ class CfgVehicles
 			"Throw",
 			"Put"
 		};
+		magazines[]=
+		{
+			"rhs_30Rnd_762x39mm_U",
+			"rhs_30Rnd_762x39mm_U",
+			"rhs_30Rnd_762x39mm_U",
+			"rhs_30Rnd_762x39mm_U",
+			"rhs_30Rnd_762x39mm_U",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_mag_9x19_17",
+			"rhs_mag_9x19_17",
+			"rhs_mag_rgn",
+			"rhs_mag_fakel",
+			"rhs_mag_fakel",
+			"rhs_mag_rdg2_white",
+			"rhs_mag_nspd"
+		};
 		respawnMagazines[]=
 		{
 			"rhs_30Rnd_762x39mm_U",
@@ -23047,6 +23786,23 @@ class CfgVehicles
 			"Throw",
 			"Put"
 		};
+		magazines[]=
+		{
+			"rhs_30Rnd_762x39mm_89",
+			"rhs_30Rnd_762x39mm_89",
+			"rhs_30Rnd_762x39mm_89",
+			"rhs_30Rnd_762x39mm_89",
+			"rhs_30Rnd_762x39mm_89",
+			"rhs_30Rnd_762x39mm_89",
+			"rhs_30Rnd_762x39mm_89",
+			"rhs_mag_9x19_17",
+			"rhs_mag_9x19_17",
+			"rhs_mag_rgn",
+			"rhs_mag_fakel",
+			"rhs_mag_fakel",
+			"rhs_mag_rdg2_white",
+			"rhs_mag_nspd"
+		};
 		respawnMagazines[]=
 		{
 			"rhs_30Rnd_762x39mm_89",
@@ -23082,6 +23838,23 @@ class CfgVehicles
 			"rhs_weap_pya",
 			"Throw",
 			"Put"
+		};
+		magazines[]=
+		{
+			"rhs_30Rnd_545x39_7N22_AK",
+			"rhs_30Rnd_545x39_7N22_AK",
+			"rhs_30Rnd_545x39_7N22_AK",
+			"rhs_30Rnd_545x39_7N22_AK",
+			"rhs_30Rnd_545x39_7N22_AK",
+			"rhs_30Rnd_545x39_7N22_AK",
+			"rhs_30Rnd_545x39_7N22_AK",
+			"rhs_30Rnd_545x39_7N22_AK",
+			"rhs_rpg26_mag",
+			"rhs_mag_9x19_17",
+			"rhs_mag_9x19_17",
+			"rhs_mag_rgn",
+			"rhs_mag_rdg2_white",
+			"rhs_mag_nspd"
 		};
 		respawnMagazines[]=
 		{
@@ -23135,6 +23908,30 @@ class CfgVehicles
 			"Throw",
 			"Put"
 		};
+		magazines[]=
+		{
+			"rhs_30Rnd_545x39_7N22_AK",
+			"rhs_30Rnd_545x39_7N22_AK",
+			"rhs_30Rnd_545x39_7N22_AK",
+			"rhs_30Rnd_545x39_7N22_AK",
+			"rhs_30Rnd_545x39_7N22_AK",
+			"rhs_30Rnd_545x39_7N22_AK",
+			"rhs_30Rnd_545x39_7N22_AK",
+			"rhs_30Rnd_545x39_7N22_AK",
+			"rhs_VOG25",
+			"rhs_VOG25",
+			"rhs_VOG25",
+			"rhs_VOG25",
+			"rhs_VG40TB",
+			"rhs_VG40TB",
+			"rhs_VG40SZ",
+			"rhs_VG40OP_red",
+			"rhs_mag_9x19_17",
+			"rhs_mag_9x19_17",
+			"rhs_mag_rgn",
+			"rhs_mag_rdg2_white",
+			"rhs_mag_nspd"
+		};
 		respawnMagazines[]=
 		{
 			"rhs_30Rnd_545x39_7N22_AK",
@@ -23175,6 +23972,24 @@ class CfgVehicles
 			"rhs_weap_pya",
 			"Throw",
 			"Put"
+		};
+		magazines[]=
+		{
+			"rhs_20rnd_9x39mm_SP6",
+			"rhs_20rnd_9x39mm_SP6",
+			"rhs_20rnd_9x39mm_SP6",
+			"rhs_20rnd_9x39mm_SP6",
+			"rhs_20rnd_9x39mm_SP6",
+			"rhs_20rnd_9x39mm_SP6",
+			"rhs_20rnd_9x39mm_SP6",
+			"rhs_20rnd_9x39mm_SP6",
+			"rhs_mag_9x19_17",
+			"rhs_mag_9x19_17",
+			"rhs_mag_rgn",
+			"rhs_mag_fakel",
+			"rhs_mag_fakel",
+			"rhs_mag_rdg2_white",
+			"rhs_mag_nspd"
 		};
 		respawnMagazines[]=
 		{
@@ -23229,6 +24044,16 @@ class CfgVehicles
 			"rhs_weap_pya",
 			"Throw",
 			"Put"
+		};
+		magazines[]=
+		{
+			"rhs_100Rnd_762x54mmR",
+			"rhs_100Rnd_762x54mmR",
+			"rhs_mag_9x19_17",
+			"rhs_mag_9x19_17",
+			"rhs_mag_rgn",
+			"rhs_mag_rdg2_white",
+			"rhs_mag_nspd"
 		};
 		respawnMagazines[]=
 		{
@@ -23288,6 +24113,25 @@ class CfgVehicles
 			"Throw",
 			"Put"
 		};
+		magazines[]=
+		{
+			"rhs_30Rnd_762x39mm_U",
+			"rhs_30Rnd_762x39mm_U",
+			"rhs_30Rnd_762x39mm_U",
+			"rhs_30Rnd_762x39mm_U",
+			"rhs_30Rnd_762x39mm_U",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_rpg26_mag",
+			"rhs_mag_9x19_17",
+			"rhs_mag_9x19_17",
+			"rhs_mag_fakel",
+			"rhs_mag_fakel",
+			"rhs_mag_rgn",
+			"rhs_mag_rdg2_white",
+			"rhs_mag_nspd"
+		};
 		respawnMagazines[]=
 		{
 			"rhs_30Rnd_762x39mm_U",
@@ -23345,6 +24189,25 @@ class CfgVehicles
 			"rhs_weap_pya",
 			"Throw",
 			"Put"
+		};
+		magazines[]=
+		{
+			"rhs_30Rnd_545x39_7N22_AK",
+			"rhs_30Rnd_545x39_7N22_AK",
+			"rhs_30Rnd_545x39_7N22_AK",
+			"rhs_30Rnd_545x39_7N22_AK",
+			"rhs_30Rnd_545x39_7N22_AK",
+			"rhs_30Rnd_545x39_7N22_AK",
+			"rhs_30Rnd_545x39_7N22_AK",
+			"rhs_30Rnd_545x39_7N22_AK",
+			"rhs_rpg26_mag",
+			"rhs_mag_9x19_17",
+			"rhs_mag_9x19_17",
+			"rhs_mag_fakel",
+			"rhs_mag_fakel",
+			"rhs_mag_rgn",
+			"rhs_mag_rdg2_white",
+			"rhs_mag_nspd"
 		};
 		respawnMagazines[]=
 		{
@@ -23418,6 +24281,15 @@ class CfgVehicles
 			"Binocular",
 			"Throw",
 			"Put"
+		};
+		magazines[]=
+		{
+			"rhs_mag_9x18_8_57N181S",
+			"rhs_mag_9x18_8_57N181S",
+			"rhs_mag_9x18_8_57N181S",
+			"rhs_mag_9x18_8_57N181S",
+			"rhs_mag_rdg2_white",
+			"rhs_mag_rdg2_white"
 		};
 		respawnMagazines[]=
 		{
@@ -23503,6 +24375,22 @@ class CfgVehicles
 			"ItemWatch",
 			"ItemRadio"
 		};
+		magazines[]=
+		{
+			"rhs_10Rnd_762x54mmR_7N1",
+			"rhs_10Rnd_762x54mmR_7N1",
+			"rhs_10Rnd_762x54mmR_7N1",
+			"rhs_10Rnd_762x54mmR_7N1",
+			"rhs_10Rnd_762x54mmR_7N1",
+			"rhs_10Rnd_762x54mmR_7N1",
+			"rhs_10Rnd_762x54mmR_7N1",
+			"rhs_mag_9x19_17",
+			"rhs_mag_9x19_17",
+			"rhs_mag_rgn",
+			"rhs_mag_rdg2_white",
+			"rhs_mag_rdg2_white",
+			"rhs_mag_nspd"
+		};
 		respawnMagazines[]=
 		{
 			"rhs_10Rnd_762x54mmR_7N1",
@@ -23535,6 +24423,23 @@ class CfgVehicles
 			"rhs_weap_pya",
 			"Throw",
 			"Put"
+		};
+		magazines[]=
+		{
+			"rhs_20rnd_9x39mm_SP6",
+			"rhs_20rnd_9x39mm_SP6",
+			"rhs_20rnd_9x39mm_SP6",
+			"rhs_20rnd_9x39mm_SP6",
+			"rhs_20rnd_9x39mm_SP6",
+			"rhs_20rnd_9x39mm_SP6",
+			"rhs_20rnd_9x39mm_SP6",
+			"rhs_20rnd_9x39mm_SP6",
+			"rhs_mag_9x19_17",
+			"rhs_mag_9x19_17",
+			"rhs_mag_rgn",
+			"rhs_mag_rdg2_white",
+			"rhs_mag_rdg2_white",
+			"rhs_mag_nspd"
 		};
 		respawnMagazines[]=
 		{
@@ -23655,6 +24560,24 @@ class CfgVehicles
 			"Throw",
 			"Put"
 		};
+		magazines[]=
+		{
+			"rhs_30Rnd_545x39_7U1_AK",
+			"rhs_30Rnd_545x39_7U1_AK",
+			"rhs_30Rnd_545x39_7U1_AK",
+			"rhs_30Rnd_545x39_7U1_AK",
+			"rhs_30Rnd_545x39_7U1_AK",
+			"rhs_30Rnd_545x39_7U1_AK",
+			"rhs_30Rnd_545x39_7U1_AK",
+			"rhs_30Rnd_545x39_AK_green",
+			"rhs_mag_9x19_17",
+			"rhs_mag_9x19_17",
+			"rhs_mag_rgn",
+			"rhs_mag_fakel",
+			"rhs_mag_fakel",
+			"rhs_mag_rdg2_white",
+			"rhs_mag_nspd"
+		};
 		respawnMagazines[]=
 		{
 			"rhs_30Rnd_545x39_7U1_AK",
@@ -23761,6 +24684,30 @@ class CfgVehicles
 			"Throw",
 			"Put"
 		};
+		magazines[]=
+		{
+			"rhs_30Rnd_762x39mm_U",
+			"rhs_30Rnd_762x39mm_U",
+			"rhs_30Rnd_762x39mm_U",
+			"rhs_30Rnd_762x39mm_U",
+			"rhs_30Rnd_762x39mm_U",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm_tracer",
+			"rhs_mag_9x19_17",
+			"rhs_mag_9x19_17",
+			"rhs_VOG25",
+			"rhs_VOG25",
+			"rhs_VOG25",
+			"rhs_VG40TB",
+			"rhs_VG40TB",
+			"rhs_VG40SZ",
+			"rhs_VG40OP_red",
+			"rhs_mag_rgn",
+			"rhs_mag_fakel",
+			"rhs_mag_rdg2_white",
+			"rhs_mag_nspd"
+		};
 		respawnMagazines[]=
 		{
 			"rhs_30Rnd_762x39mm_U",
@@ -23826,6 +24773,16 @@ class CfgVehicles
 			"Throw",
 			"Put"
 		};
+		magazines[]=
+		{
+			"rhs_100Rnd_762x54mmR",
+			"rhs_100Rnd_762x54mmR",
+			"rhs_mag_9x19_17",
+			"rhs_mag_9x19_17",
+			"rhs_mag_rgn",
+			"rhs_mag_rdg2_white",
+			"rhs_mag_nspd"
+		};
 		respawnMagazines[]=
 		{
 			"rhs_100Rnd_762x54mmR",
@@ -23890,6 +24847,21 @@ class CfgVehicles
 			"Throw",
 			"Put"
 		};
+		magazines[]=
+		{
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_mag_9x19_17",
+			"rhs_mag_9x19_17",
+			"rhs_mag_rgn",
+			"rhs_mag_fakel",
+			"rhs_mag_rdg2_white"
+		};
 		respawnMagazines[]=
 		{
 			"rhs_30Rnd_762x39mm",
@@ -23921,6 +24893,22 @@ class CfgVehicles
 			"rhs_weap_pya",
 			"Throw",
 			"Put"
+		};
+		magazines[]=
+		{
+			"rhs_20rnd_9x39mm_SP6",
+			"rhs_20rnd_9x39mm_SP6",
+			"rhs_20rnd_9x39mm_SP6",
+			"rhs_20rnd_9x39mm_SP6",
+			"rhs_20rnd_9x39mm_SP6",
+			"rhs_20rnd_9x39mm_SP6",
+			"rhs_20rnd_9x39mm_SP6",
+			"rhs_20rnd_9x39mm_SP6",
+			"rhs_mag_9x19_17",
+			"rhs_mag_9x19_17",
+			"rhs_mag_rgn",
+			"rhs_mag_fakel",
+			"rhs_mag_rdg2_white"
 		};
 		respawnMagazines[]=
 		{
@@ -23990,6 +24978,20 @@ class CfgVehicles
 			"rhs_weap_rpg26",
 			"Throw",
 			"Put"
+		};
+		magazines[]=
+		{
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_mag_9x19_17",
+			"rhs_mag_9x19_17",
+			"rhs_mag_rgn",
+			"rhs_rpg26_mag"
 		};
 		respawnMagazines[]=
 		{
@@ -24061,6 +25063,20 @@ class CfgVehicles
 			"Put",
 			"rhs_weap_rpg7_pgo"
 		};
+		magazines[]=
+		{
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_mag_9x19_17",
+			"rhs_mag_9x19_17",
+			"rhs_mag_rgn",
+			"rhs_rpg7_PG7VL_mag"
+		};
 		respawnMagazines[]=
 		{
 			"rhs_30Rnd_762x39mm",
@@ -24111,6 +25127,13 @@ class CfgVehicles
 			"rhs_weap_pya",
 			"Throw",
 			"Put"
+		};
+		magazines[]=
+		{
+			"rhs_100Rnd_762x54mmR",
+			"rhs_mag_9x19_17",
+			"rhs_mag_9x19_17",
+			"rhs_mag_rgn"
 		};
 		respawnMagazines[]=
 		{
@@ -24207,6 +25230,21 @@ class CfgVehicles
 			"rhs_weap_pya",
 			"Throw",
 			"Put"
+		};
+		magazines[]=
+		{
+			"rhs_10Rnd_762x54mmR_7N1",
+			"rhs_10Rnd_762x54mmR_7N1",
+			"rhs_10Rnd_762x54mmR_7N1",
+			"rhs_10Rnd_762x54mmR_7N1",
+			"rhs_10Rnd_762x54mmR_7N1",
+			"rhs_10Rnd_762x54mmR_7N1",
+			"rhs_10Rnd_762x54mmR_7N1",
+			"rhs_10Rnd_762x54mmR_7N1",
+			"rhs_mag_9x19_17",
+			"rhs_mag_9x19_17",
+			"rhs_mag_rdg2_white",
+			"rhs_mag_rdg2_white"
 		};
 		respawnMagazines[]=
 		{
@@ -24334,6 +25372,9 @@ class CfgVehicles
 			1,
 			"rhs_6b7_1m_ess_bala",
 			1
+		};
+		class Wounds
+		{
 		};
 		linkedItems[]=
 		{
@@ -25405,6 +26446,24 @@ class CfgVehicles
 			"Throw",
 			"Put"
 		};
+		magazines[]=
+		{
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_mag_9x19_17",
+			"rhs_mag_9x19_17",
+			"rhs_mag_rgn",
+			"rhs_mag_fakel",
+			"rhs_mag_fakel",
+			"rhs_mag_rdg2_white",
+			"rhs_mag_nspd"
+		};
 		respawnMagazines[]=
 		{
 			"rhs_30Rnd_762x39mm",
@@ -26091,6 +27150,16 @@ class CfgVehicles
 			"Throw",
 			"Put"
 		};
+		magazines[]=
+		{
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_mag_9x19_17",
+			"rhs_mag_9x19_17",
+			"rhs_mag_9x19_17",
+			"rhs_mag_rdg2_white",
+			"rhs_mag_nspd"
+		};
 		respawnMagazines[]=
 		{
 			"rhs_30Rnd_545x39_7N10_AK",
@@ -26177,6 +27246,19 @@ class CfgVehicles
 			"Binocular",
 			"Throw",
 			"Put"
+		};
+		magazines[]=
+		{
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_mag_9x18_8_57N181S",
+			"rhs_mag_9x18_8_57N181S",
+			"rhs_mag_9x18_8_57N181S",
+			"rhs_mag_9x18_8_57N181S",
+			"rhs_mag_rdg2_white",
+			"rhs_mag_rdg2_white"
 		};
 		respawnMagazines[]=
 		{
@@ -26452,6 +27534,9 @@ class CfgWeapons
 			};
 		};
 	};
+	class rhs_fieldcap_vsr: rhs_fieldcap
+	{
+	};
 	class rhs_fieldcap_digi: rhs_fieldcap
 	{
 		class ItemInfo: ItemInfo
@@ -26465,6 +27550,15 @@ class CfgWeapons
 		{
 			uniformModel="\rhsafrf\addons\rhs_infantry2\gear\head\rhs_fieldcap_digi2";
 		};
+	};
+	class rhs_fieldcap_digi_des: rhs_fieldcap_digi
+	{
+	};
+	class rhs_fieldcap_ml: rhs_fieldcap
+	{
+	};
+	class rhs_fieldcap_khk: rhs_fieldcap
+	{
 	};
 	class rhs_fieldcap_helm: rhs_fieldcap
 	{
@@ -26480,6 +27574,9 @@ class CfgWeapons
 		{
 			uniformModel="\rhsafrf\addons\rhs_infantry\gear\head\rhs_fieldcap_helm_digi";
 		};
+	};
+	class rhs_fieldcap_helm_ml: rhs_fieldcap_helm
+	{
 	};
 	class rhs_fieldcap_izlom: rhs_fieldcap_digi2
 	{
@@ -26515,6 +27612,9 @@ class CfgWeapons
 			};
 		};
 	};
+	class rhs_beanie_green: rhs_beanie
+	{
+	};
 	class rhs_6b26: H_HelmetB
 	{
 		Scope=2;
@@ -26542,6 +27642,9 @@ class CfgWeapons
 			};
 		};
 	};
+	class rhs_6b26_bala: rhs_6b26
+	{
+		allowedFacewear[]={};
 		class ItemInfo: ItemInfo
 		{
 			mass=40;
@@ -26561,6 +27664,9 @@ class CfgWeapons
 			uniformModel="\rhsafrf\addons\rhs_infantry\gear\head\rhs_6b26_ess";
 		};
 	};
+	class rhs_6b26_ess_bala: rhs_6b26
+	{
+		allowedFacewear[]={};
 		class ItemInfo: ItemInfo
 		{
 			mass=40;
@@ -26574,6 +27680,9 @@ class CfgWeapons
 			uniformModel="\rhsafrf\addons\rhs_infantry\gear\head\rhs_6b26_green";
 		};
 	};
+	class rhs_6b26_bala_green: rhs_6b26_green
+	{
+		allowedFacewear[]={};
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="\rhsafrf\addons\rhs_infantry\gear\head\rhs_6b26_green_bala";
@@ -26586,6 +27695,9 @@ class CfgWeapons
 			uniformModel="\rhsafrf\addons\rhs_infantry\gear\head\rhs_6b26_green_ess";
 		};
 	};
+	class rhs_6b26_ess_bala_green: rhs_6b26_green
+	{
+		allowedFacewear[]={};
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="\rhsafrf\addons\rhs_infantry\gear\head\rhs_6b26_green_ess_bala";
@@ -26617,17 +27729,41 @@ class CfgWeapons
 			};
 		};
 	};
+	class rhs_6b27m_digi: rhs_6b27m
+	{
+	};
+	class rhs_6b27m_ml: rhs_6b27m
+	{
+	};
+	class rhs_6b27m_ess_bala: rhs_6b27m
+	{
+		allowedFacewear[]={};
 		class ItemInfo: ItemInfo
 		{
 			mass=34.32;
 			uniformModel="\rhsafrf\addons\rhs_infantry\gear\head\rhs_6b27m_ess_bala";
 		};
 	};
+	class rhs_6b27m_digi_ess_bala: rhs_6b27m_ess_bala
+	{
+	};
+	class rhs_6b27m_ML_ess_bala: rhs_6b27m_ess_bala
+	{
+	};
+	class rhs_6b27m_bala: rhs_6b27m
+	{
+		allowedFacewear[]={};
 		class ItemInfo: ItemInfo
 		{
 			mass=40;
 			uniformModel="\rhsafrf\addons\rhs_infantry\gear\head\rhs_6b27m_bala";
 		};
+	};
+	class rhs_6b27m_digi_bala: rhs_6b27m_bala
+	{
+	};
+	class rhs_6b27m_ml_bala: rhs_6b27m_bala
+	{
 	};
 	class rhs_6b27m_ess: rhs_6b27m
 	{
@@ -26645,6 +27781,12 @@ class CfgWeapons
 			mass=40;
 			uniformModel="\rhsafrf\addons\rhs_infantry\gear\head\rhs_6b27m_ess";
 		};
+	};
+	class rhs_6b27m_digi_ess: rhs_6b27m_ess
+	{
+	};
+	class rhs_6b27m_ml_ess: rhs_6b27m_ess
+	{
 	};
 	class rhs_6b27m_green: rhs_6b27m
 	{
@@ -26710,6 +27852,9 @@ class CfgWeapons
 			};
 		};
 	};
+	class rhs_6b28_flora: rhs_6b28
+	{
+	};
 	class rhs_6b28_ess: rhs_6b28
 	{
 		class ItemInfo: ItemInfo
@@ -26718,17 +27863,32 @@ class CfgWeapons
 			uniformModel="\rhsafrf\addons\rhs_infantry\gear\head\rhs_6b28_ess";
 		};
 	};
+	class rhs_6b28_flora_ess: rhs_6b28_ess
+	{
+	};
+	class rhs_6b28_bala: rhs_6b28
+	{
+		allowedFacewear[]={};
 		class ItemInfo: ItemInfo
 		{
 			mass=40;
 			uniformModel="\rhsafrf\addons\rhs_infantry\gear\head\rhs_6b28_bala";
 		};
 	};
+	class rhs_6b28_flora_bala: rhs_6b28_bala
+	{
+	};
+	class rhs_6b28_ess_bala: rhs_6b28
+	{
+		allowedFacewear[]={};
 		class ItemInfo: ItemInfo
 		{
 			mass=40;
 			uniformModel="\rhsafrf\addons\rhs_infantry\gear\head\rhs_6b28_ess_bala";
 		};
+	};
+	class rhs_6b28_flora_ess_bala: rhs_6b28_ess_bala
+	{
 	};
 	class rhs_6b28_green: rhs_6b28
 	{
@@ -26744,11 +27904,17 @@ class CfgWeapons
 			uniformModel="\rhsafrf\addons\rhs_infantry\gear\head\rhs_6b28_green_ess";
 		};
 	};
+	class rhs_6b28_green_bala: rhs_6b28
+	{
+		allowedFacewear[]={};
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="\rhsafrf\addons\rhs_infantry\gear\head\rhs_6b28_green_bala";
 		};
 	};
+	class rhs_6b28_green_ess_bala: rhs_6b28
+	{
+		allowedFacewear[]={};
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="\rhsafrf\addons\rhs_infantry\gear\head\rhs_6b28_green_ess_bala";
@@ -26780,6 +27946,9 @@ class CfgWeapons
 				};
 			};
 		};
+	};
+	class rhs_Booniehat_flora: rhs_Booniehat_digi
+	{
 	};
 	class rhs_ssh68: rhs_6b27m
 	{
@@ -26858,6 +28027,9 @@ class CfgWeapons
 			uniformModel="\rhsafrf\addons\rhs_infantry\gear\head\rhs_zsh7_mike_alt";
 		};
 	};
+	class rhs_gssh18: H_HelmetB
+	{
+		hiddenSelectionsTextures[]={};
 		class ItemInfo: HeadGearItem
 		{
 			mass=1;
@@ -26896,12 +28068,18 @@ class CfgWeapons
 			uniformModel="\rhsafrf\addons\rhs_infantry\gear\head\rhs_tsh4_ess";
 		};
 	};
+	class rhs_tsh4_bala: rhs_tsh4
+	{
+		allowedFacewear[]={};
 		class ItemInfo: ItemInfo
 		{
 			mass=6;
 			uniformModel="\rhsafrf\addons\rhs_infantry\gear\head\rhs_tsh4_bala";
 		};
 	};
+	class rhs_tsh4_ess_bala: rhs_tsh4
+	{
+		allowedFacewear[]={};
 		class ItemInfo: ItemInfo
 		{
 			mass=6;
@@ -26924,6 +28102,9 @@ class CfgWeapons
 			uniformModel="\rhsafrf\addons\rhs_infantry2\gear\head\rhs_6b47";
 		};
 	};
+	class rhs_6b47_bala: rhs_6b47
+	{
+		allowedFacewear[]={};
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="\rhsafrf\addons\rhs_infantry2\gear\head\rhs_6b47_bala";
@@ -26936,6 +28117,9 @@ class CfgWeapons
 			uniformModel="\rhsafrf\addons\rhs_infantry2\gear\head\rhs_6b47_ess";
 		};
 	};
+	class rhs_6b47_ess_bala: rhs_6b47
+	{
+		allowedFacewear[]={};
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="\rhsafrf\addons\rhs_infantry2\gear\head\rhs_6b47_ess_bala";
@@ -26964,16 +28148,25 @@ class CfgWeapons
 			uniformModel="\rhsafrf\addons\rhs_infantry2\gear\head\rhs_6b7_1m_ess";
 		};
 	};
+	class rhs_6b7_1m_ess_bala: rhs_6b7_1m
+	{
+		allowedFacewear[]={};
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="\rhsafrf\addons\rhs_infantry2\gear\head\rhs_6b7_1m_ess_bala";
 		};
 	};
+	class rhs_6b7_1m_bala1: rhs_6b7_1m
+	{
+		allowedFacewear[]={};
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="\rhsafrf\addons\rhs_infantry2\gear\head\rhs_6b7_1m_balaclava1";
 		};
 	};
+	class rhs_6b7_1m_bala1_emr: rhs_6b7_1m_bala1
+	{
+		allowedFacewear[]={};
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="\rhsafrf\addons\rhs_infantry2\gear\head\rhs_6b7_1m_cover_balaclava1";
@@ -26995,6 +28188,9 @@ class CfgWeapons
 			uniformModel="\rhsafrf\addons\rhs_infantry2\gear\head\rhs_6b7_1m_cover_ess";
 		};
 	};
+	class rhs_6b7_1m_emr_ess_bala: rhs_6b7_1m_bala1
+	{
+		allowedFacewear[]={};
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="\rhsafrf\addons\rhs_infantry2\gear\head\rhs_6b7_1m_cover_ess_bala";
@@ -27014,11 +28210,17 @@ class CfgWeapons
 			uniformModel="\rhsafrf\addons\rhs_infantry2\gear\head\rhs_6b7_1m_cover_balaclava1";
 		};
 	};
+	class rhs_6b7_1m_bala2: rhs_6b7_1m
+	{
+		allowedFacewear[]={};
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="\rhsafrf\addons\rhs_infantry2\gear\head\rhs_6b7_1m_balaclava2";
 		};
 	};
+	class rhs_6b7_1m_bala2_emr: rhs_6b7_1m_bala2
+	{
+		allowedFacewear[]={};
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="\rhsafrf\addons\rhs_infantry2\gear\head\rhs_6b7_1m_cover_balaclava2";
@@ -27054,6 +28256,9 @@ class CfgWeapons
 			uniformModel="\rhsafrf\addons\rhs_infantry2\gear\head\rhs_6b7_1m_cover";
 		};
 	};
+	class rhs_6b7_1m_flora: rhs_6b7_1m_emr
+	{
+	};
 	class rhs_6b7_1m_flora_ns3: rhs_6b7_1m_flora
 	{
 		class ItemInfo: ItemInfo
@@ -27061,6 +28266,12 @@ class CfgWeapons
 			uniformModel="\rhsafrf\addons\rhs_infantry2\gear\head\rhs_6b7_1m_cover_ns3";
 		};
 	};
+	class rhs_6b7_1m_olive: rhs_6b7_1m_emr
+	{
+	};
+	class rhs_altyn: rhs_6b7_1m_emr
+	{
+		allowedFacewear[]={};
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="\rhsafrf\addons\rhs_infantry2\gear\head\rhs_altyn";
@@ -27132,6 +28343,15 @@ class CfgWeapons
 			uniformModel="\rhsafrf\addons\rhs_infantry2\gear\head\rhs_altyn_novisor_ess_bala";
 		};
 	};
+	class rhs_zsh12: rhs_altyn_novisor
+	{
+	};
+	class rhs_zsh12_black: rhs_zsh12
+	{
+	};
+	class rhs_zsh12_bala: rhs_altyn_novisor_bala
+	{
+	};
 	class NVGoggles;
 	class rhs_1PN138: NVGoggles
 	{
@@ -27191,6 +28411,9 @@ class CfgWeapons
 		{
 			uniformModel="\rhsafrf\addons\rhs_infantry2\gear\head\rhs_milp_beret";
 		};
+	};
+	class rhs_beret_vdv3: rhs_beret_milp
+	{
 	};
 	class rhs_beret_mp2: rhs_beret_vdv1
 	{
@@ -27395,6 +28618,9 @@ class CfgWeapons
 			uniformModel="rhsafrf\addons\rhs_infantry\gear\vests\rhs_6b23_6sh92_radio";
 		};
 	};
+	class rhs_6sh46: Vest_Camo_Base
+	{
+		hiddenSelectionsTextures[]={};
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="rhsafrf\addons\rhs_infantry\gear\vests\rhs_6sh46";
@@ -27411,6 +28637,9 @@ class CfgWeapons
 			};
 		};
 	};
+	class rhs_vest_commander: Vest_Camo_Base
+	{
+		hiddenSelectionsTextures[]={};
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="rhsafrf\addons\rhs_infantry\gear\vests\rhs_commander";
@@ -27435,6 +28664,45 @@ class CfgWeapons
 			containerClass="Supply20";
 			mass=5;
 		};
+	};
+	class rhs_6b23_digi: rhs_6b23
+	{
+	};
+	class rhs_6b23_digi_crew: rhs_6b23_crew
+	{
+	};
+	class rhs_6b23_digi_engineer: rhs_6b23_engineer
+	{
+	};
+	class rhs_6b23_digi_medic: rhs_6b23_medic
+	{
+	};
+	class rhs_6b23_digi_rifleman: rhs_6b23_rifleman
+	{
+	};
+	class rhs_6b23_digi_crewofficer: rhs_6b23_crewofficer
+	{
+	};
+	class rhs_6b23_digi_sniper: rhs_6b23_sniper
+	{
+	};
+	class rhs_6b23_digi_6sh92: rhs_6b23_6sh92
+	{
+	};
+	class rhs_6b23_digi_6sh92_vog: rhs_6b23_6sh92_vog
+	{
+	};
+	class rhs_6b23_digi_6sh92_vog_headset: rhs_6b23_6sh92_vog_headset
+	{
+	};
+	class rhs_6b23_digi_6sh92_headset: rhs_6b23_6sh92_headset
+	{
+	};
+	class rhs_6b23_digi_6sh92_headset_mapcase: rhs_6b23_6sh92_headset_mapcase
+	{
+	};
+	class rhs_6b23_digi_6sh92_radio: rhs_6b23_6sh92_radio
+	{
 	};
 	class rhs_6b23_digi_6sh92_Spetsnaz: rhs_6b23_6sh92_radio
 	{
@@ -27514,6 +28782,45 @@ class CfgWeapons
 			mass=75;
 		};
 	};
+	class rhs_6b23_ML: rhs_6b23
+	{
+	};
+	class rhs_6b23_ML_crew: rhs_6b23_crew
+	{
+	};
+	class rhs_6b23_ML_engineer: rhs_6b23_engineer
+	{
+	};
+	class rhs_6b23_ML_medic: rhs_6b23_medic
+	{
+	};
+	class rhs_6b23_ML_rifleman: rhs_6b23_rifleman
+	{
+	};
+	class rhs_6b23_ML_crewofficer: rhs_6b23_crewofficer
+	{
+	};
+	class rhs_6b23_ML_sniper: rhs_6b23_sniper
+	{
+	};
+	class rhs_6b23_ML_6sh92: rhs_6b23_6sh92
+	{
+	};
+	class rhs_6b23_ML_6sh92_vog: rhs_6b23_6sh92_vog
+	{
+	};
+	class rhs_6b23_ML_6sh92_vog_headset: rhs_6b23_6sh92_vog_headset
+	{
+	};
+	class rhs_6b23_ML_6sh92_headset: rhs_6b23_6sh92_headset
+	{
+	};
+	class rhs_6b23_ML_6sh92_headset_mapcase: rhs_6b23_6sh92_headset_mapcase
+	{
+	};
+	class rhs_6b23_ML_6sh92_radio: rhs_6b23_6sh92_radio
+	{
+	};
 	class rhs_vydra_3m: Vest_Camo_Base
 	{
 		class ItemInfo: ItemInfo
@@ -27584,6 +28891,12 @@ class CfgWeapons
 			};
 		};
 	};
+	class rhs_6b23_digi_vydra_3m: rhs_6b23_vydra_3m
+	{
+	};
+	class rhs_6b23_ML_vydra_3m: rhs_6b23_vydra_3m
+	{
+	};
 	class rhs_6b23_6sh116: rhs_6b23_digi
 	{
 		class ItemInfo: ItemInfo
@@ -27629,6 +28942,12 @@ class CfgWeapons
 				};
 			};
 		};
+	};
+	class rhs_6b23_6sh116_flora: rhs_6b23_6sh116
+	{
+	};
+	class rhs_6b23_6sh116_od: rhs_6b23_6sh116
+	{
 	};
 	class rhs_6b23_6sh116_vog: rhs_6b23_6sh116
 	{
@@ -27779,6 +29098,39 @@ class CfgWeapons
 			uniformModel="rhsafrf\addons\rhs_infantry\gear\vests\rhs_6b13_6sh92_radio";
 		};
 	};
+	class rhs_6b13_EMR: rhs_6b13
+	{
+	};
+	class rhs_6b13_EMR_6sh92: rhs_6b13_6sh92
+	{
+	};
+	class rhs_6b13_EMR_6sh92_vog: rhs_6b13_6sh92_vog
+	{
+	};
+	class rhs_6b13_EMR_6sh92_headset_mapcase: rhs_6b13_6sh92_headset_mapcase
+	{
+	};
+	class rhs_6b13_EMR_6sh92_radio: rhs_6b13_6sh92_radio
+	{
+	};
+	class rhs_6b13_Flora: rhs_6b13
+	{
+	};
+	class rhs_6b13_Flora_crewofficer: rhs_6b13_crewofficer
+	{
+	};
+	class rhs_6b13_Flora_6sh92: rhs_6b13_6sh92
+	{
+	};
+	class rhs_6b13_Flora_6sh92_vog: rhs_6b13_6sh92_vog
+	{
+	};
+	class rhs_6b13_Flora_6sh92_headset_mapcase: rhs_6b13_6sh92_headset_mapcase
+	{
+	};
+	class rhs_6b13_Flora_6sh92_radio: rhs_6b13_6sh92_radio
+	{
+	};
 	class rhs_6b43: rhs_6b23
 	{
 		class ItemInfo: ItemInfo
@@ -27878,5 +29230,35 @@ class CfgWeapons
 		{
 			uniformModel="rhsafrf\addons\rhs_infantry\gear\vests\rhs_6sh92_radio";
 		};
+	};
+	class rhs_6sh92_digi: rhs_6sh92
+	{
+	};
+	class rhs_6sh92_digi_vog: rhs_6sh92_vog
+	{
+	};
+	class rhs_6sh92_digi_vog_headset: rhs_6sh92_vog_headset
+	{
+	};
+	class rhs_6sh92_digi_headset: rhs_6sh92_headset
+	{
+	};
+	class rhs_6sh92_digi_radio: rhs_6sh92_radio
+	{
+	};
+	class rhs_6sh92_vsr: rhs_6sh92
+	{
+	};
+	class rhs_6sh92_vsr_vog: rhs_6sh92_vog
+	{
+	};
+	class rhs_6sh92_vsr_vog_headset: rhs_6sh92_vog_headset
+	{
+	};
+	class rhs_6sh92_vsr_headset: rhs_6sh92_headset
+	{
+	};
+	class rhs_6sh92_vsr_radio: rhs_6sh92_radio
+	{
 	};
 };

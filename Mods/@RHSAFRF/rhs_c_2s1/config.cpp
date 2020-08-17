@@ -37,6 +37,9 @@ class CfgVehicles
 	class Tank: LandVehicle
 	{
 		class NewTurret;
+		class Sounds;
+		class HitPoints;
+	};
 	class Tank_F: Tank
 	{
 		class Turrets
@@ -45,6 +48,9 @@ class CfgVehicles
 			{
 				class Turrets
 				{
+					class CommanderOptics;
+				};
+			};
 		};
 		class AnimationSources;
 		class ViewPilot;
@@ -55,8 +61,17 @@ class CfgVehicles
 		{
 			class HitHull;
 			class HitEngine;
+			class HitLTrack;
+			class HitRTrack;
+		};
 		class Sounds: Sounds
 		{
+			class Engine;
+			class Movement;
+		};
+		class EventHandlers;
+		class Components;
+	};
 	class rhs_2s1tank_base: Tank_F
 	{
 		rhs_decalParameters[]=
@@ -178,6 +193,9 @@ class CfgVehicles
 		};
 		class Wheels
 		{
+			class L2
+			{
+				suspTravelDirection[]={-0.125,-1,0};
 				side="left";
 				width=0.33000001;
 				steering=0;
@@ -203,6 +221,24 @@ class CfgVehicles
 					{0.69999999,0.64999998}
 				};
 			};
+			class L3: L2
+			{
+			};
+			class L4: L2
+			{
+			};
+			class L5: L2
+			{
+			};
+			class L6: L2
+			{
+			};
+			class L7: L2
+			{
+			};
+			class L8: L2
+			{
+			};
 			class L9: L2
 			{
 				maxDroop=0;
@@ -213,7 +249,28 @@ class CfgVehicles
 				maxDroop=0;
 				maxCompression=0;
 			};
+			class R2: L2
+			{
+				suspTravelDirection[]={0.125,-1,0};
 				side="right";
+			};
+			class R3: R2
+			{
+			};
+			class R4: R2
+			{
+			};
+			class R5: R2
+			{
+			};
+			class R6: R2
+			{
+			};
+			class R7: R2
+			{
+			};
+			class R8: R2
+			{
 			};
 			class R9: R2
 			{
@@ -1196,6 +1253,14 @@ class CfgVehicles
 				{
 					"rhs_weap_2a31"
 				};
+				magazines[]=
+				{
+					"rhs_mag_3of56_10",
+					"rhs_mag_3of56_10",
+					"rhs_mag_3of56_10",
+					"rhs_mag_3of56_5",
+					"rhs_mag_bk13_5"
+				};
 				minElev=-5;
 				maxElev=77;
 				initElev=20;
@@ -1626,6 +1691,24 @@ class CfgVehicles
 				property="rhs_decalPlatoonTurretBackRight_type";
 				class values: values
 				{
+					class Platoon: Platoon
+					{
+					};
+					class PlatoonGDR: PlatoonGDR
+					{
+					};
+					class PlatoonVDV: PlatoonVDV
+					{
+					};
+					class Army: Army
+					{
+					};
+					class Honor: Honor
+					{
+					};
+					class HonorGDR: HonorGDR
+					{
+					};
 				};
 			};
 			class rhs_decalPlatoonTurretBackRight: rhs_decalPlatoonBack
@@ -1639,6 +1722,24 @@ class CfgVehicles
 				property="rhs_decalPlatoonTurretBackLeft_type";
 				class values: values
 				{
+					class Platoon: Platoon
+					{
+					};
+					class PlatoonGDR: PlatoonGDR
+					{
+					};
+					class PlatoonVDV: PlatoonVDV
+					{
+					};
+					class Army: Army
+					{
+					};
+					class Honor: Honor
+					{
+					};
+					class HonorGDR: HonorGDR
+					{
+					};
 				};
 			};
 			class rhs_decalPlatoonTurretBackLeft: rhs_decalPlatoonBack
@@ -1652,6 +1753,24 @@ class CfgVehicles
 				property="rhs_decalPlatoonTurretFrontRight_type";
 				class values: values
 				{
+					class Platoon: Platoon
+					{
+					};
+					class PlatoonGDR: PlatoonGDR
+					{
+					};
+					class PlatoonVDV: PlatoonVDV
+					{
+					};
+					class Army: Army
+					{
+					};
+					class Honor: Honor
+					{
+					};
+					class HonorGDR: HonorGDR
+					{
+					};
 				};
 			};
 			class rhs_decalPlatoonTurretFrontRight: rhs_decalPlatoonBack
@@ -1665,6 +1784,24 @@ class CfgVehicles
 				property="rhs_decalPlatoonTurretFrontLeft_type";
 				class values: values
 				{
+					class Platoon: Platoon
+					{
+					};
+					class PlatoonGDR: PlatoonGDR
+					{
+					};
+					class PlatoonVDV: PlatoonVDV
+					{
+					};
+					class Army: Army
+					{
+					};
+					class Honor: Honor
+					{
+					};
+					class HonorGDR: HonorGDR
+					{
+					};
 				};
 			};
 			class rhs_decalPlatoonTurretFrontLeft: rhs_decalPlatoonBack
@@ -1678,6 +1815,24 @@ class CfgVehicles
 				property="rhs_decalPlatoonHullLeft_type";
 				class values: values
 				{
+					class Platoon: Platoon
+					{
+					};
+					class PlatoonGDR: PlatoonGDR
+					{
+					};
+					class PlatoonVDV: PlatoonVDV
+					{
+					};
+					class Army: Army
+					{
+					};
+					class Honor: Honor
+					{
+					};
+					class HonorGDR: HonorGDR
+					{
+					};
 				};
 			};
 			class rhs_decalPlatoonHullLeft: rhs_decalPlatoonBack
@@ -1691,6 +1846,24 @@ class CfgVehicles
 				property="rhs_decalPlatoonHullRight_type";
 				class values: values
 				{
+					class Platoon: Platoon
+					{
+					};
+					class PlatoonGDR: PlatoonGDR
+					{
+					};
+					class PlatoonVDV: PlatoonVDV
+					{
+					};
+					class Army: Army
+					{
+					};
+					class Honor: Honor
+					{
+					};
+					class HonorGDR: HonorGDR
+					{
+					};
 				};
 			};
 			class rhs_decalPlatoonHullRight: rhs_decalPlatoonBack
@@ -1834,6 +2007,9 @@ class CfgVehicles
 			0.40000001,
 			"hide_shields_turret",
 			0.2
+		};
+		class Damage
+		{
 		};
 		class Exhausts
 		{

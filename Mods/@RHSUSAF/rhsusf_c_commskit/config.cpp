@@ -12,6 +12,9 @@ class CfgPatches
 };
 class CfgVehicleClasses
 {
+	class CNR
+	{
+	};
 };
 class CfgVehicles
 {
@@ -24,3 +27,6 @@ class CfgVehicles
 		nameSound="";
 		armor=450;
 		cost=0;
+		class EventHandlers;
+	};
+};

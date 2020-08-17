@@ -42,6 +42,9 @@ class CfgVehicles
 		{
 			class MainTurret: NewTurret
 			{
+				class ViewOptics;
+			};
+		};
 		class HitPoints
 		{
 			class HitFuel;
@@ -49,11 +52,17 @@ class CfgVehicles
 			class HitBody;
 			class HitLFWheel;
 			class HitLF2Wheel;
+			class HitRFWheel;
+			class HitRF2Wheel;
+		};
 	};
 	class MRAP_01_base_F: Car_F
 	{
 		class EventHandlers;
 	};
+	class rhsusf_mrzr_base: MRAP_01_base_F
+	{
+		extCameraPosition[]={0,0.75,-7};
 		attenuationEffectType="OpenCarAttenuation";
 		weapons[]=
 		{
@@ -119,6 +128,9 @@ class CfgVehicles
 			"SlingLoadCargo3",
 			"SlingLoadCargo4"
 		};
+		class EventHandlers: EventHandlers
+		{
+		};
 		class Turrets: Turrets
 		{
 			class CargoTurret_02: CargoTurret_01
@@ -166,12 +178,18 @@ class CfgVehicles
 				canHideGunner=0;
 				allowLauncherIn=0;
 				allowLauncherOut=0;
+				class dynamicViewLimits
+				{
+					CargoTurret_05[]={-65,75};
 				};
 				playerPosition=5;
 			};
 			class CargoTurret_05: CargoTurret_04
 			{
 				proxyIndex=6;
+				class dynamicViewLimits
+				{
+					CargoTurret_04[]={-75,65};
 				};
 				playerPosition=6;
 			};
@@ -824,6 +842,9 @@ class CfgVehicles
 			};
 		};
 		side=1;
+		class Damage
+		{
+		};
 		class textureSources
 		{
 			class standard
@@ -970,6 +991,12 @@ class CfgVehicles
 			"\rhsusf\addons\rhsusf_mrzr\data\rhsusf_mrzr_red_mud.rvmat",
 			"\rhsusf\addons\rhsusf_mrzr\data\rhsusf_mrzr_grn_mud.rvmat"
 		};
+	};
+	class rhsusf_mrzr4_w: rhsusf_mrzr4_d
+	{
+	};
+	class rhsusf_mrzr4_w_mud: rhsusf_mrzr4_d_mud
+	{
 	};
 };
 class CfgWeapons

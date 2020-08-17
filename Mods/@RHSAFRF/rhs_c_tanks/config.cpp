@@ -72,6 +72,9 @@ class CfgVehicles
 	class Tank: LandVehicle
 	{
 		class NewTurret;
+		class Sounds;
+		class HitPoints;
+	};
 	class Tank_F: Tank
 	{
 		class Turrets
@@ -80,6 +83,9 @@ class CfgVehicles
 			{
 				class Turrets
 				{
+					class CommanderOptics;
+				};
+			};
 		};
 		class AnimationSources;
 		class ViewPilot;
@@ -90,8 +96,17 @@ class CfgVehicles
 		{
 			class HitHull;
 			class HitEngine;
+			class HitLTrack;
+			class HitRTrack;
+		};
 		class Sounds: Sounds
 		{
+			class Engine;
+			class Movement;
+		};
+		class EventHandlers;
+		class Components;
+	};
 	class rhs_tank_base: Tank_F
 	{
 		rhs_hasSnorkel=1;
@@ -110,6 +125,10 @@ class CfgVehicles
 		weapons[]=
 		{
 			"rhs_weap_smokegen"
+		};
+		magazines[]=
+		{
+			"rhs_mag_smokegen"
 		};
 		simulation="tankX";
 		normalSpeedForwardCoef=0.75;
@@ -194,6 +213,9 @@ class CfgVehicles
 		};
 		class Wheels
 		{
+			class L2
+			{
+				suspTravelDirection[]={-0.125,-1,0};
 				side="left";
 				steering=0;
 				width=0.36000001;
@@ -219,6 +241,21 @@ class CfgVehicles
 					{0.69999999,0.75}
 				};
 			};
+			class L3: L2
+			{
+			};
+			class L4: L2
+			{
+			};
+			class L5: L2
+			{
+			};
+			class L6: L2
+			{
+			};
+			class L7: L2
+			{
+			};
 			class L9: L2
 			{
 				maxDroop=0;
@@ -229,7 +266,25 @@ class CfgVehicles
 				maxDroop=0;
 				maxCompression=0;
 			};
+			class R2: L2
+			{
+				suspTravelDirection[]={0.125,-1,0};
 				side="right";
+			};
+			class R3: R2
+			{
+			};
+			class R4: R2
+			{
+			};
+			class R5: R2
+			{
+			};
+			class R6: R2
+			{
+			};
+			class R7: R2
+			{
 			};
 			class R9: R2
 			{
@@ -706,6 +761,24 @@ class CfgVehicles
 		};
 		class textureSources
 		{
+			class standard
+			{
+			};
+			class r1: standard
+			{
+			};
+			class r2: standard
+			{
+			};
+			class r3: standard
+			{
+			};
+			class r4: standard
+			{
+			};
+			class r5: standard
+			{
+			};
 		};
 		class Attributes
 		{
@@ -828,6 +901,24 @@ class CfgVehicles
 				property="rhs_decalArmy_type";
 				class values: values
 				{
+					class Army: Army
+					{
+					};
+					class Platoon: Platoon
+					{
+					};
+					class PlatoonGDR: PlatoonGDR
+					{
+					};
+					class PlatoonVDV: PlatoonVDV
+					{
+					};
+					class Honor: Honor
+					{
+					};
+					class HonorGDR: HonorGDR
+					{
+					};
 				};
 			};
 			class rhs_decalArmy: rhs_decalPlatoon
@@ -841,6 +932,24 @@ class CfgVehicles
 				property="rhs_decalHonor_type";
 				class values: values
 				{
+					class Honor: Honor
+					{
+					};
+					class HonorGDR: HonorGDR
+					{
+					};
+					class Platoon: Platoon
+					{
+					};
+					class PlatoonGDR: PlatoonGDR
+					{
+					};
+					class PlatoonVDV: PlatoonVDV
+					{
+					};
+					class Army: Army
+					{
+					};
 				};
 			};
 			class rhs_decalHonor: rhs_decalPlatoon
@@ -1293,6 +1402,24 @@ class CfgVehicles
 					"rhs_weap_902a",
 					"rhs_weap_fcs"
 				};
+				magazines[]=
+				{
+					"rhs_mag_3bm22_10",
+					"rhs_mag_3bk18m_8",
+					"rhs_mag_3of26_6",
+					"rhs_mag_9m112m_4",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_3d17",
+					"rhs_laserfcsmag",
+					"rhs_laserfcsmag"
+				};
 				memoryPointGun="Mgun";
 				selectionFireAnim="zasleh1";
 				gunnerOpticsEffect[]=
@@ -1423,6 +1550,9 @@ class CfgVehicles
 				};
 				class Turrets: Turrets
 				{
+					class CommanderOptics: CommanderOptics
+					{
+						weapons[]={};
 						magazines[]={};
 						ejectDeadGunner=0;
 						minElev=-15;
@@ -1588,6 +1718,12 @@ class CfgVehicles
 						{
 							"rhs_weap_nsvt_t80"
 						};
+						magazines[]=
+						{
+							"rhs_mag_127x108mm_50",
+							"rhs_mag_127x108mm_50",
+							"rhs_mag_127x108mm_50"
+						};
 						selectionFireAnim="zasleh3";
 						class OpticsIn: OpticsIn
 						{
@@ -1648,6 +1784,9 @@ class CfgVehicles
 				hitpart="_this call rhs_fnc_hitSpall";
 			};
 		};
+		class Damage
+		{
+		};
 		class Components: Components
 		{
 			class VehicleSystemsDisplayManagerComponentLeft
@@ -1697,10 +1836,79 @@ class CfgVehicles
 		};
 		class Attributes: Attributes
 		{
+			class rhs_decalNumber_type: rhs_decalNumber_type
+			{
+			};
+			class rhs_decalNumber: rhs_decalNumber
+			{
+			};
+			class rhs_decalPlatoon_type: rhs_decalPlatoon_type
+			{
+			};
+			class rhs_decalPlatoon: rhs_decalPlatoon
+			{
+			};
+			class rhs_decalArmy_type: rhs_decalArmy_type
+			{
+			};
+			class rhs_decalArmy: rhs_decalArmy
+			{
+			};
+			class rhs_decalHonor_type: rhs_decalHonor_type
+			{
+			};
+			class rhs_decalHonor: rhs_decalHonor
+			{
+			};
+			class rhs_ammoslot_1_type: rhs_ammoslot_1_type
+			{
+			};
+			class rhs_ammoslot_1: rhs_ammoslot_1
+			{
+			};
+			class rhs_ammoslot_2_type: rhs_ammoslot_2_type
+			{
+			};
+			class rhs_ammoslot_2: rhs_ammoslot_2
+			{
+			};
+			class rhs_ammoslot_3_type: rhs_ammoslot_3_type
+			{
+			};
+			class rhs_ammoslot_3: rhs_ammoslot_3
+			{
+			};
+			class rhs_ammoslot_4_type: rhs_ammoslot_4_type
+			{
+			};
+			class rhs_ammoslot_4: rhs_ammoslot_4
+			{
+			};
+			class sideskirt_unhide: sideskirt_unhide
+			{
+			};
+			class fbskirt_unhide: fbskirt_unhide
+			{
+			};
+			class ftskirt_unhide: ftskirt_unhide
+			{
+			};
+			class log_unhide: log_unhide
+			{
+			};
 			class kshield_unhide: sideskirt_unhide
 			{
 				expression="[_this,1-_value,'%s'] call rhs_fnc_setHabarEden";
 				property="kshield_unhide";
+			};
+			class rhs_disableHabar: rhs_disableHabar
+			{
+			};
+			class rhs_snorkel: rhs_snorkel
+			{
+			};
+			class rhs_searchlight: rhs_searchlight
+			{
 			};
 		};
 	};
@@ -1717,8 +1925,28 @@ class CfgVehicles
 		{
 			class MainTurret: MainTurret
 			{
+				magazines[]=
+				{
+					"rhs_mag_3bm22_14",
+					"rhs_mag_3bk18m_8",
+					"rhs_mag_3of26_6",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_3d17",
+					"rhs_laserfcsmag",
+					"rhs_laserfcsmag"
+				};
 				class Turrets: Turrets
 				{
+					class CommanderOptics: CommanderOptics
+					{
+					};
 					class CommanderMG: CommanderMG
 					{
 						maxElev=25;
@@ -1728,10 +1956,73 @@ class CfgVehicles
 		};
 		class Attributes: Attributes
 		{
+			class rhs_decalNumber_type: rhs_decalNumber_type
+			{
+			};
+			class rhs_decalNumber: rhs_decalNumber
+			{
+			};
+			class rhs_decalPlatoon_type: rhs_decalPlatoon_type
+			{
+			};
+			class rhs_decalPlatoon: rhs_decalPlatoon
+			{
+			};
+			class rhs_decalArmy_type: rhs_decalArmy_type
+			{
+			};
+			class rhs_decalArmy: rhs_decalArmy
+			{
+			};
+			class rhs_decalHonor_type: rhs_decalHonor_type
+			{
+			};
+			class rhs_decalHonor: rhs_decalHonor
+			{
+			};
+			class rhs_ammoslot_1_type: rhs_ammoslot_1_type
+			{
+			};
+			class rhs_ammoslot_1: rhs_ammoslot_1
+			{
+			};
+			class rhs_ammoslot_2_type: rhs_ammoslot_2_type
+			{
+			};
+			class rhs_ammoslot_2: rhs_ammoslot_2
+			{
+			};
+			class rhs_ammoslot_3_type: rhs_ammoslot_3_type
+			{
+			};
+			class rhs_ammoslot_3: rhs_ammoslot_3
+			{
+			};
+			class sideskirt_unhide: sideskirt_unhide
+			{
+			};
+			class fbskirt_unhide: fbskirt_unhide
+			{
+			};
+			class ftskirt_unhide: ftskirt_unhide
+			{
+			};
+			class log_unhide: log_unhide
+			{
+			};
 			class kshield_unhide: sideskirt_unhide
 			{
 				expression="[_this,_value,'%s'] call rhs_fnc_setHabarEden";
 				property="kshield_unhide";
+			};
+			class rhs_disableHabar: rhs_disableHabar
+			{
+			};
+			class rhs_snorkel: rhs_snorkel
+			{
+			};
+			class rhs_searchlight: rhs_searchlight
+			{
 			};
 		};
 	};
@@ -1746,9 +2037,30 @@ class CfgVehicles
 		{
 			class MainTurret: MainTurret
 			{
+				magazines[]=
+				{
+					"rhs_mag_3bm22_10",
+					"rhs_mag_3bk18m_8",
+					"rhs_mag_3of26_6",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_9m112m_4",
+					"rhs_mag_3d17",
+					"rhs_laserfcsmag",
+					"rhs_laserfcsmag"
+				};
 				armorLights=0.1;
 				class Turrets: Turrets
 				{
+					class CommanderOptics: CommanderOptics
+					{
+						weapons[]={};
 						magazines[]={};
 						ejectDeadGunner=0;
 						minElev=-15;
@@ -1853,6 +2165,12 @@ class CfgVehicles
 						weapons[]=
 						{
 							"rhs_weap_nsvt_t80"
+						};
+						magazines[]=
+						{
+							"rhs_mag_127x108mm_50",
+							"rhs_mag_127x108mm_50",
+							"rhs_mag_127x108mm_50"
 						};
 						selectionFireAnim="zasleh3";
 						class OpticsIn: OpticsIn
@@ -2213,10 +2531,73 @@ class CfgVehicles
 		};
 		class Attributes: Attributes
 		{
+			class rhs_decalNumber_type: rhs_decalNumber_type
+			{
+			};
+			class rhs_decalNumber: rhs_decalNumber
+			{
+			};
+			class rhs_decalArmy_type: rhs_decalArmy_type
+			{
+			};
+			class rhs_decalArmy: rhs_decalArmy
+			{
+			};
+			class rhs_decalHonor_type: rhs_decalHonor_type
+			{
+			};
+			class rhs_decalHonor: rhs_decalHonor
+			{
+			};
+			class rhs_ammoslot_1_type: rhs_ammoslot_1_type
+			{
+			};
+			class rhs_ammoslot_1: rhs_ammoslot_1
+			{
+			};
+			class rhs_ammoslot_2_type: rhs_ammoslot_2_type
+			{
+			};
+			class rhs_ammoslot_2: rhs_ammoslot_2
+			{
+			};
+			class rhs_ammoslot_3_type: rhs_ammoslot_3_type
+			{
+			};
+			class rhs_ammoslot_3: rhs_ammoslot_3
+			{
+			};
+			class rhs_ammoslot_4_type: rhs_ammoslot_4_type
+			{
+			};
+			class rhs_ammoslot_4: rhs_ammoslot_4
+			{
+			};
+			class sideskirt_unhide: sideskirt_unhide
+			{
+			};
+			class fbskirt_unhide: fbskirt_unhide
+			{
+			};
+			class ftskirt_unhide: ftskirt_unhide
+			{
+			};
+			class log_unhide: log_unhide
+			{
+			};
 			class kshield_unhide: sideskirt_unhide
 			{
 				expression="[_this,1-_value,'%s'] call rhs_fnc_setHabarEden";
 				property="kshield_unhide";
+			};
+			class rhs_disableHabar: rhs_disableHabar
+			{
+			};
+			class rhs_snorkel: rhs_snorkel
+			{
+			};
+			class rhs_searchlight: rhs_searchlight
+			{
 			};
 		};
 	};
@@ -2233,6 +2614,23 @@ class CfgVehicles
 		{
 			class MainTurret: MainTurret
 			{
+				magazines[]=
+				{
+					"rhs_mag_3bm22_14",
+					"rhs_mag_3bk18m_8",
+					"rhs_mag_3of26_6",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_3d17",
+					"rhs_laserfcsmag",
+					"rhs_laserfcsmag"
+				};
 				class Turrets: Turrets
 				{
 					class CommanderOptics: CommanderOptics
@@ -2253,10 +2651,67 @@ class CfgVehicles
 		smokeLauncherAngle=60;
 		class Attributes: Attributes
 		{
+			class rhs_decalNumber_type: rhs_decalNumber_type
+			{
+			};
+			class rhs_decalNumber: rhs_decalNumber
+			{
+			};
+			class rhs_decalArmy_type: rhs_decalArmy_type
+			{
+			};
+			class rhs_decalArmy: rhs_decalArmy
+			{
+			};
+			class rhs_decalHonor_type: rhs_decalHonor_type
+			{
+			};
+			class rhs_decalHonor: rhs_decalHonor
+			{
+			};
+			class rhs_ammoslot_1_type: rhs_ammoslot_1_type
+			{
+			};
+			class rhs_ammoslot_1: rhs_ammoslot_1
+			{
+			};
+			class rhs_ammoslot_2_type: rhs_ammoslot_2_type
+			{
+			};
+			class rhs_ammoslot_2: rhs_ammoslot_2
+			{
+			};
+			class rhs_ammoslot_3_type: rhs_ammoslot_3_type
+			{
+			};
+			class rhs_ammoslot_3: rhs_ammoslot_3
+			{
+			};
+			class sideskirt_unhide: sideskirt_unhide
+			{
+			};
+			class fbskirt_unhide: fbskirt_unhide
+			{
+			};
+			class ftskirt_unhide: ftskirt_unhide
+			{
+			};
+			class log_unhide: log_unhide
+			{
+			};
 			class kshield_unhide: sideskirt_unhide
 			{
 				expression="[_this,_value,'%s'] call rhs_fnc_setHabarEden";
 				property="kshield_unhide";
+			};
+			class rhs_disableHabar: rhs_disableHabar
+			{
+			};
+			class rhs_snorkel: rhs_snorkel
+			{
+			};
+			class rhs_searchlight: rhs_searchlight
+			{
 			};
 		};
 	};
@@ -2264,6 +2719,12 @@ class CfgVehicles
 	{
 		armor=500;
 		class textureSources: textureSources
+		{
+			class standard
+			{
+			};
+		};
+		class Damage
 		{
 		};
 		class Turrets: Turrets
@@ -2275,6 +2736,22 @@ class CfgVehicles
 					"rhs_weap_2a26",
 					"rhs_weap_pkt",
 					"rhs_weap_fcs"
+				};
+				magazines[]=
+				{
+					"rhs_mag_3bm17_14",
+					"rhs_mag_3bk14_8",
+					"rhs_mag_3of26_6",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_laserfcsmag",
+					"rhs_laserfcsmag"
 				};
 				class OpticsIn: OpticsIn
 				{
@@ -2315,6 +2792,9 @@ class CfgVehicles
 				};
 				class Turrets: Turrets
 				{
+					class CommanderOptics: CommanderOptics
+					{
+						weapons[]={};
 						magazines[]={};
 						minElev=-25;
 						maxElev=60;
@@ -2332,6 +2812,24 @@ class CfgVehicles
 		};
 		class Attributes: Attributes
 		{
+			class rhs_decalNumber_type: rhs_decalNumber_type
+			{
+			};
+			class rhs_decalNumber: rhs_decalNumber
+			{
+			};
+			class rhs_decalArmy_type: rhs_decalArmy_type
+			{
+			};
+			class rhs_decalArmy: rhs_decalArmy
+			{
+			};
+			class rhs_decalHonor_type: rhs_decalHonor_type
+			{
+			};
+			class rhs_decalHonor: rhs_decalHonor
+			{
+			};
 			class rhs_ammoslot_1_type: rhs_ammoslot_1_type
 			{
 				class values
@@ -2374,6 +2872,9 @@ class CfgVehicles
 					};
 				};
 			};
+			class rhs_ammoslot_1: rhs_ammoslot_1
+			{
+			};
 			class rhs_ammoslot_2_type: rhs_ammoslot_2_type
 			{
 				class values
@@ -2404,10 +2905,40 @@ class CfgVehicles
 					};
 				};
 			};
+			class rhs_ammoslot_2: rhs_ammoslot_2
+			{
+			};
+			class rhs_ammoslot_3_type: rhs_ammoslot_3_type
+			{
+			};
+			class rhs_ammoslot_3: rhs_ammoslot_3
+			{
+			};
+			class sideskirt_unhide: sideskirt_unhide
+			{
+			};
+			class fbskirt_unhide: fbskirt_unhide
+			{
+			};
+			class ftskirt_unhide: ftskirt_unhide
+			{
+			};
+			class log_unhide: log_unhide
+			{
+			};
 			class kshield_unhide: sideskirt_unhide
 			{
 				expression="[_this,_value,'%s'] call rhs_fnc_setHabarEden";
 				property="kshield_unhide";
+			};
+			class rhs_disableHabar: rhs_disableHabar
+			{
+			};
+			class rhs_snorkel: rhs_snorkel
+			{
+			};
+			class rhs_searchlight: rhs_searchlight
+			{
 			};
 		};
 	};
@@ -2498,6 +3029,9 @@ class CfgVehicles
 		};
 		class Wheels
 		{
+			class L2
+			{
+				suspTravelDirection[]={-0.125,-1,0};
 				side="left";
 				steering=0;
 				width=0.36000001;
@@ -2523,6 +3057,21 @@ class CfgVehicles
 					{0.69999999,0.75}
 				};
 			};
+			class L3: L2
+			{
+			};
+			class L4: L2
+			{
+			};
+			class L5: L2
+			{
+			};
+			class L6: L2
+			{
+			};
+			class L7: L2
+			{
+			};
 			class L9: L2
 			{
 				maxDroop=0;
@@ -2533,7 +3082,25 @@ class CfgVehicles
 				maxDroop=0;
 				maxCompression=0;
 			};
+			class R2: L2
+			{
+				suspTravelDirection[]={0.125,-1,0};
 				side="right";
+			};
+			class R3: R2
+			{
+			};
+			class R4: R2
+			{
+			};
+			class R5: R2
+			{
+			};
+			class R6: R2
+			{
+			};
+			class R7: R2
+			{
 			};
 			class R9: R2
 			{
@@ -2548,6 +3115,12 @@ class CfgVehicles
 		};
 		class textureSources: textureSources
 		{
+			class standard
+			{
+			};
+		};
+		class Damage
+		{
 		};
 		class Turrets: Turrets
 		{
@@ -2559,6 +3132,24 @@ class CfgVehicles
 					"rhs_weap_pkt",
 					"rhs_weap_902a",
 					"rhs_weap_fcs"
+				};
+				magazines[]=
+				{
+					"rhs_mag_3bm42_10",
+					"rhs_mag_3bk21_8",
+					"rhs_mag_3of26_6",
+					"rhs_mag_9m119_4",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_3d17",
+					"rhs_laserfcsmag",
+					"rhs_laserfcsmag"
 				};
 				class OpticsIn
 				{
@@ -2630,6 +3221,15 @@ class CfgVehicles
 						weapons[]=
 						{
 							"rhs_weap_nsvt_t80"
+						};
+						magazines[]=
+						{
+							"rhs_mag_127x108mm_50",
+							"rhs_mag_127x108mm_50",
+							"rhs_mag_127x108mm_50",
+							"rhs_mag_127x108mm_50",
+							"rhs_mag_127x108mm_50",
+							"rhs_mag_127x108mm_50"
 						};
 						minElev=-25;
 						maxElev=60;
@@ -2728,6 +3328,24 @@ class CfgVehicles
 		};
 		class Attributes: Attributes
 		{
+			class rhs_decalNumber_type: rhs_decalNumber_type
+			{
+			};
+			class rhs_decalNumber: rhs_decalNumber
+			{
+			};
+			class rhs_decalArmy_type: rhs_decalArmy_type
+			{
+			};
+			class rhs_decalArmy: rhs_decalArmy
+			{
+			};
+			class rhs_decalHonor_type: rhs_decalHonor_type
+			{
+			};
+			class rhs_decalHonor: rhs_decalHonor
+			{
+			};
 			class rhs_ammoslot_1_type: rhs_ammoslot_1_type
 			{
 				class values
@@ -2800,6 +3418,9 @@ class CfgVehicles
 					};
 				};
 			};
+			class rhs_ammoslot_1: rhs_ammoslot_1
+			{
+			};
 			class rhs_ammoslot_2_type: rhs_ammoslot_2_type
 			{
 				class values
@@ -2848,6 +3469,9 @@ class CfgVehicles
 					};
 				};
 			};
+			class rhs_ammoslot_2: rhs_ammoslot_2
+			{
+			};
 			class rhs_ammoslot_3_type: rhs_ammoslot_3_type
 			{
 				class values
@@ -2865,6 +3489,9 @@ class CfgVehicles
 						defaultValue="rhs_mag_3of11";
 					};
 				};
+			};
+			class rhs_ammoslot_3: rhs_ammoslot_3
+			{
 			};
 			class rhs_ammoslot_4_type: rhs_ammoslot_4_type
 			{
@@ -2889,6 +3516,30 @@ class CfgVehicles
 						defaultValue="rhs_mag_9m119f";
 					};
 				};
+			};
+			class rhs_ammoslot_4: rhs_ammoslot_4
+			{
+			};
+			class sideskirt_unhide: sideskirt_unhide
+			{
+			};
+			class fbskirt_unhide: fbskirt_unhide
+			{
+			};
+			class ftskirt_unhide: ftskirt_unhide
+			{
+			};
+			class log_unhide: log_unhide
+			{
+			};
+			class rhs_disableHabar: rhs_disableHabar
+			{
+			};
+			class rhs_snorkel: rhs_snorkel
+			{
+			};
+			class rhs_searchlight: rhs_searchlight
+			{
 			};
 		};
 		class EventHandlers: EventHandlers
@@ -2989,6 +3640,9 @@ class CfgVehicles
 		};
 		class Wheels
 		{
+			class L2
+			{
+				suspTravelDirection[]={-0.125,-1,0};
 				side="left";
 				steering=0;
 				width=0.396;
@@ -3014,6 +3668,21 @@ class CfgVehicles
 					{0.69999999,0.75}
 				};
 			};
+			class L3: L2
+			{
+			};
+			class L4: L2
+			{
+			};
+			class L5: L2
+			{
+			};
+			class L6: L2
+			{
+			};
+			class L7: L2
+			{
+			};
 			class L9: L2
 			{
 				maxDroop=0;
@@ -3024,7 +3693,25 @@ class CfgVehicles
 				maxDroop=0;
 				maxCompression=0;
 			};
+			class R2: L2
+			{
+				suspTravelDirection[]={0.125,-1,0};
 				side="right";
+			};
+			class R3: R2
+			{
+			};
+			class R4: R2
+			{
+			};
+			class R5: R2
+			{
+			};
+			class R6: R2
+			{
+			};
+			class R7: R2
+			{
 			};
 			class R9: R2
 			{
@@ -3040,6 +3727,30 @@ class CfgVehicles
 		enableGPS=1;
 		reportOwnPosition=1;
 		class textureSources: textureSources
+		{
+			class standard
+			{
+			};
+			class tricolor: standard
+			{
+			};
+			class r1: standard
+			{
+			};
+			class r2: standard
+			{
+			};
+			class r3: standard
+			{
+			};
+			class r4: standard
+			{
+			};
+			class r5: standard
+			{
+			};
+		};
+		class Damage
 		{
 		};
 		class Turrets: Turrets
@@ -3101,6 +3812,24 @@ class CfgVehicles
 					"rhs_weap_pkt",
 					"rhs_weap_902a",
 					"rhs_weap_fcs"
+				};
+				magazines[]=
+				{
+					"rhs_mag_3bm46_10",
+					"rhs_mag_3bk31_8",
+					"rhs_mag_3of26_6",
+					"rhs_mag_9m119_4",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_3d17",
+					"rhs_laserfcsmag",
+					"rhs_laserfcsmag"
 				};
 				armorLights=0.1;
 			};
@@ -3620,6 +4349,18 @@ class CfgVehicles
 		};
 		class Attributes: Attributes
 		{
+			class rhs_decalNumber_type: rhs_decalNumber_type
+			{
+			};
+			class rhs_decalNumber: rhs_decalNumber
+			{
+			};
+			class rhs_decalHonor_type: rhs_decalHonor_type
+			{
+			};
+			class rhs_decalHonor: rhs_decalHonor
+			{
+			};
 			class rhs_ammoslot_1_type: rhs_ammoslot_1_type
 			{
 				class values
@@ -3692,6 +4433,9 @@ class CfgVehicles
 					};
 				};
 			};
+			class rhs_ammoslot_1: rhs_ammoslot_1
+			{
+			};
 			class rhs_ammoslot_2_type: rhs_ammoslot_2_type
 			{
 				class values
@@ -3740,6 +4484,9 @@ class CfgVehicles
 					};
 				};
 			};
+			class rhs_ammoslot_2: rhs_ammoslot_2
+			{
+			};
 			class rhs_ammoslot_3_type: rhs_ammoslot_3_type
 			{
 				class values
@@ -3757,6 +4504,9 @@ class CfgVehicles
 						defaultValue="rhs_mag_3of11";
 					};
 				};
+			};
+			class rhs_ammoslot_3: rhs_ammoslot_3
+			{
 			};
 			class rhs_ammoslot_4_type: rhs_ammoslot_4_type
 			{
@@ -3781,6 +4531,12 @@ class CfgVehicles
 						defaultValue="rhs_mag_9m119f";
 					};
 				};
+			};
+			class rhs_ammoslot_4: rhs_ammoslot_4
+			{
+			};
+			class rhs_searchlight: rhs_searchlight
+			{
 			};
 			class rhs_hideNSVT
 			{
@@ -3816,6 +4572,27 @@ class CfgVehicles
 		lockDetectionSystem=4;
 		class textureSources: textureSources
 		{
+			class standard
+			{
+			};
+			class tricolor: standard
+			{
+			};
+			class r1: standard
+			{
+			};
+			class r2: standard
+			{
+			};
+			class r3: standard
+			{
+			};
+			class r4: standard
+			{
+			};
+			class r5: standard
+			{
+			};
 		};
 		class HitPoints: HitPoints
 		{
@@ -4317,6 +5094,9 @@ class CfgVehicles
 				depends="era_27_hitpoint + smoketube_8_hitpoint";
 			};
 		};
+		class Damage
+		{
+		};
 		class Turrets: Turrets
 		{
 			class MainTurret: MainTurret
@@ -4328,6 +5108,24 @@ class CfgVehicles
 					"rhs_weap_902b",
 					"rhs_weap_fcs"
 				};
+				magazines[]=
+				{
+					"rhs_mag_3bm46_10",
+					"rhs_mag_3bk31_8",
+					"rhs_mag_3of26_6",
+					"rhs_mag_9m119_4",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_3d17_12",
+					"rhs_laserfcsmag",
+					"rhs_laserfcsmag"
+				};
 				class Turrets: Turrets
 				{
 					class CommanderOptics: CommanderOptics
@@ -4335,6 +5133,10 @@ class CfgVehicles
 						weapons[]=
 						{
 							"rhs_weap_dazzler"
+						};
+						magazines[]=
+						{
+							"rhs_mag_dazzler"
 						};
 					};
 				};
@@ -4404,6 +5206,12 @@ class CfgVehicles
 		};
 		class Attributes: Attributes
 		{
+			class rhs_decalNumber_type: rhs_decalNumber_type
+			{
+			};
+			class rhs_decalNumber: rhs_decalNumber
+			{
+			};
 			class rhs_ammoslot_1_type: rhs_ammoslot_1_type
 			{
 				class values
@@ -4476,6 +5284,9 @@ class CfgVehicles
 					};
 				};
 			};
+			class rhs_ammoslot_1: rhs_ammoslot_1
+			{
+			};
 			class rhs_ammoslot_2_type: rhs_ammoslot_2_type
 			{
 				class values
@@ -4524,6 +5335,9 @@ class CfgVehicles
 					};
 				};
 			};
+			class rhs_ammoslot_2: rhs_ammoslot_2
+			{
+			};
 			class rhs_ammoslot_3_type: rhs_ammoslot_3_type
 			{
 				class values
@@ -4541,6 +5355,9 @@ class CfgVehicles
 						defaultValue="rhs_mag_3of11";
 					};
 				};
+			};
+			class rhs_ammoslot_3: rhs_ammoslot_3
+			{
 			};
 			class rhs_ammoslot_4_type: rhs_ammoslot_4_type
 			{
@@ -4566,7 +5383,16 @@ class CfgVehicles
 					};
 				};
 			};
+			class rhs_ammoslot_4: rhs_ammoslot_4
+			{
+			};
+			class rhs_hideNSVT: rhs_hideNSVT
+			{
+			};
 		};
+	};
+	class rhs_t80u45m: rhs_t80u
+	{
 	};
 	class rhs_t80ue1: rhs_t80a
 	{
@@ -4658,6 +5484,9 @@ class CfgVehicles
 		};
 		class Wheels
 		{
+			class L2
+			{
+				suspTravelDirection[]={-0.125,-1,0};
 				side="left";
 				steering=0;
 				width=0.396;
@@ -4683,6 +5512,21 @@ class CfgVehicles
 					{0.69999999,0.75}
 				};
 			};
+			class L3: L2
+			{
+			};
+			class L4: L2
+			{
+			};
+			class L5: L2
+			{
+			};
+			class L6: L2
+			{
+			};
+			class L7: L2
+			{
+			};
 			class L9: L2
 			{
 				maxDroop=0;
@@ -4693,7 +5537,25 @@ class CfgVehicles
 				maxDroop=0;
 				maxCompression=0;
 			};
+			class R2: L2
+			{
+				suspTravelDirection[]={0.125,-1,0};
 				side="right";
+			};
+			class R3: R2
+			{
+			};
+			class R4: R2
+			{
+			};
+			class R5: R2
+			{
+			};
+			class R6: R2
+			{
+			};
+			class R7: R2
+			{
 			};
 			class R9: R2
 			{
@@ -4708,6 +5570,27 @@ class CfgVehicles
 		};
 		class textureSources: textureSources
 		{
+			class standard
+			{
+			};
+			class tricolor: standard
+			{
+			};
+			class r1: standard
+			{
+			};
+			class r2: standard
+			{
+			};
+			class r3: standard
+			{
+			};
+			class r4: standard
+			{
+			};
+			class r5: standard
+			{
+			};
 		};
 		class Turrets: Turrets
 		{
@@ -4715,6 +5598,9 @@ class CfgVehicles
 			{
 				class Turrets: Turrets
 				{
+					class CommanderOptics: CommanderOptics
+					{
+					};
 				};
 				weapons[]=
 				{
@@ -4722,6 +5608,24 @@ class CfgVehicles
 					"rhs_weap_pkt",
 					"rhs_weap_902a",
 					"rhs_weap_fcs"
+				};
+				magazines[]=
+				{
+					"rhs_mag_3bm46_10",
+					"rhs_mag_3bk31_8",
+					"rhs_mag_3of26_6",
+					"rhs_mag_9m119_4",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_3d17",
+					"rhs_laserfcsmag",
+					"rhs_laserfcsmag"
 				};
 				class OpticsIn
 				{
@@ -5316,8 +6220,17 @@ class CfgVehicles
 				depends="era_29_hitpoint";
 			};
 		};
+		class Damage
+		{
+		};
 		class Attributes: Attributes
 		{
+			class rhs_decalNumber_type: rhs_decalNumber_type
+			{
+			};
+			class rhs_decalNumber: rhs_decalNumber
+			{
+			};
 			class rhs_ammoslot_1_type: rhs_ammoslot_1_type
 			{
 				class values
@@ -5390,6 +6303,9 @@ class CfgVehicles
 					};
 				};
 			};
+			class rhs_ammoslot_1: rhs_ammoslot_1
+			{
+			};
 			class rhs_ammoslot_2_type: rhs_ammoslot_2_type
 			{
 				class values
@@ -5438,6 +6354,9 @@ class CfgVehicles
 					};
 				};
 			};
+			class rhs_ammoslot_2: rhs_ammoslot_2
+			{
+			};
 			class rhs_ammoslot_3_type: rhs_ammoslot_3_type
 			{
 				class values
@@ -5455,6 +6374,9 @@ class CfgVehicles
 						defaultValue="rhs_mag_3of11";
 					};
 				};
+			};
+			class rhs_ammoslot_3: rhs_ammoslot_3
+			{
 			};
 			class rhs_ammoslot_4_type: rhs_ammoslot_4_type
 			{
@@ -5480,6 +6402,9 @@ class CfgVehicles
 					};
 				};
 			};
+			class rhs_ammoslot_4: rhs_ammoslot_4
+			{
+			};
 		};
 		class EventHandlers: EventHandlers
 		{
@@ -5497,6 +6422,27 @@ class CfgVehicles
 	{
 		class textureSources: textureSources
 		{
+			class standard
+			{
+			};
+			class tricolor: standard
+			{
+			};
+			class r1: standard
+			{
+			};
+			class r2: standard
+			{
+			};
+			class r3: standard
+			{
+			};
+			class r4: standard
+			{
+			};
+			class r5: standard
+			{
+			};
 		};
 		class HitPoints: HitPoints
 		{
@@ -5519,6 +6465,9 @@ class CfgVehicles
 			{
 				class Turrets: Turrets
 				{
+					class CommanderOptics: CommanderOptics
+					{
+					};
 				};
 				class OpticsIn
 				{
@@ -5586,6 +6535,12 @@ class CfgVehicles
 		};
 		class Attributes: Attributes
 		{
+			class rhs_decalNumber_type: rhs_decalNumber_type
+			{
+			};
+			class rhs_decalNumber: rhs_decalNumber
+			{
+			};
 			class rhs_ammoslot_1_type: rhs_ammoslot_1_type
 			{
 				class values
@@ -5658,6 +6613,9 @@ class CfgVehicles
 					};
 				};
 			};
+			class rhs_ammoslot_1: rhs_ammoslot_1
+			{
+			};
 			class rhs_ammoslot_2_type: rhs_ammoslot_2_type
 			{
 				class values
@@ -5706,6 +6664,9 @@ class CfgVehicles
 					};
 				};
 			};
+			class rhs_ammoslot_2: rhs_ammoslot_2
+			{
+			};
 			class rhs_ammoslot_3_type: rhs_ammoslot_3_type
 			{
 				class values
@@ -5723,6 +6684,9 @@ class CfgVehicles
 						defaultValue="rhs_mag_3of11";
 					};
 				};
+			};
+			class rhs_ammoslot_3: rhs_ammoslot_3
+			{
 			};
 			class rhs_ammoslot_4_type: rhs_ammoslot_4_type
 			{
@@ -5748,6 +6712,12 @@ class CfgVehicles
 					};
 				};
 			};
+			class rhs_ammoslot_4: rhs_ammoslot_4
+			{
+			};
+			class rhs_hideNSVT: rhs_hideNSVT
+			{
+			};
 		};
 	};
 	class ThingX;
@@ -5755,5 +6725,8 @@ class CfgVehicles
 	{
 		reversed=1;
 		icon="iconObject_1x2";
+	};
+	class rhs_Wreck_T80u_turret_F: rhs_Wreck_T80_turret_F
+	{
 	};
 };

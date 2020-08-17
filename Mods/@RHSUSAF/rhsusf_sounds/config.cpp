@@ -1,5 +1,8 @@
 class CfgPatches
 {
+	class rhsusf_sounds
+	{
+		units[]={};
 		weapons[]={};
 		version="0.1";
 		name="USF Sounds";
@@ -8181,16 +8184,28 @@ class CfgWeapons
 	class InventoryOpticsItem_Base_F;
 	class Rifle_Base_F;
 	class Pistol_Base_F;
+	class arifle_MX_Base_F: Rifle_Base_F
+	{
+	};
 	class Rifle_Short_Base_F;
 	class Rifle_Long_Base_F;
 	class UGL_F;
 	class srifle_EBR_F;
 	class LMG_Mk200_F;
 	class MGun;
+	class LMG_RCWS: MGun
+	{
+	};
 	class SMG_02_base_F: Rifle_Short_Base_F
 	{
 		class Single;
+		class FullAuto;
+		class WeaponSlotsInfo;
+	};
 	class Launcher;
+	class Launcher_Base_F: Launcher
+	{
+	};
 	class launch_O_Titan_F;
 	class rhs_weap_saw_base: Rifle_Base_F
 	{
@@ -8225,23 +8240,44 @@ class CfgWeapons
 	class rhs_weap_M249_base;
 	class rhs_weap_m240_base: rhs_weap_M249_base
 	{
+		class manual: Mode_FullAuto
+		{
+		};
 	};
 	class LMG_M200: LMG_RCWS
 	{
 		class manual;
 		class close;
 		class short;
+		class medium;
+		class far;
+	};
 	class rhs_weap_m240veh: LMG_M200
 	{
+		class manual: manual
+		{
+		};
+		class far: far
+		{
+		};
 	};
 	class rhs_weap_m4_Base: arifle_MX_Base_F
 	{
 		class M203_GL: UGL_F
 		{
+			class Single: Mode_SemiAuto
+			{
+			};
 		};
 		class M320_GL: M203_GL
 		{
+			class Single: Mode_SemiAuto
+			{
+			};
 		};
+	};
+	class rhs_weap_m16a4: rhs_weap_m4_Base
+	{
 	};
 	class rhs_weap_m14ebrri;
 	class rhs_weap_sr25: rhs_weap_m14ebrri
@@ -8261,15 +8297,30 @@ class CfgWeapons
 	};
 	class rhs_weap_M590_5RD: Rifle_Base_F
 	{
+		class Single: Mode_SemiAuto
+		{
+		};
 	};
 	class rhs_weap_M590_8RD: rhs_weap_M590_5RD
 	{
+		class Single: Single
+		{
+		};
 	};
 	class rhs_weap_M320_Base_F: Pistol_Base_F
+	{
+		class Single: Mode_SemiAuto
+		{
+		};
+	};
+	class rhs_weap_XM2010_Base_F: Rifle_Base_F
 	{
 	};
 	class rhs_weap_m32_Base_F: Rifle_Base_F
 	{
+		class Single: Mode_SemiAuto
+		{
+		};
 	};
 	class GM6_base_F;
 	class rhs_weap_M107_Base_F: GM6_base_F
@@ -8322,12 +8373,18 @@ class CfgWeapons
 	{
 		class Single: Single
 		{
+			class SilencedSound
+			{
+				soundClosure[]={};
 			};
 		};
 	};
 	class RocketPods;
 	class MissileLauncher;
 	class Missile_AGM_02_Plane_CAS_01_F;
+	class rhs_weap_M136: Launcher_Base_F
+	{
+	};
 	class rhs_weap_fgm148: launch_O_Titan_F
 	{
 		class Single: Mode_SemiAuto
@@ -8343,9 +8400,21 @@ class CfgWeapons
 	};
 	class rhs_weap_HellfireLauncher: Missile_AGM_02_Plane_CAS_01_F
 	{
+		class TopDown: Mode_SemiAuto
+		{
+		};
+	};
+	class rhs_weap_SidewinderLauncher: MissileLauncher
+	{
 	};
 	class rhs_weap_FFARLauncher: RocketPods
 	{
+		class Far_AI: RocketPods
+		{
+		};
+		class Burst: RocketPods
+		{
+		};
 	};
 	class CannonCore;
 	class cannon_120mm: CannonCore
@@ -8353,6 +8422,9 @@ class CfgWeapons
 		class player;
 		class close;
 		class short;
+		class medium;
+		class far;
+	};
 	class autocannon_Base_F;
 	class autocannon_30mm_CTWS: autocannon_Base_F
 	{
@@ -8361,14 +8433,26 @@ class CfgWeapons
 			class player;
 			class close;
 			class short;
+			class medium;
+			class far;
+		};
 		class AP: autocannon_Base_F
 		{
 			class player;
 			class close;
 			class short;
+			class medium;
+			class far;
+		};
 	};
 	class rhs_weap_m256: cannon_120mm
 	{
+		class player: player
+		{
+		};
+		class far: far
+		{
+		};
 	};
 	class mortar_155mm_AMOS;
 	class cannon_155mm: mortar_155mm_AMOS
@@ -8381,38 +8465,116 @@ class CfgWeapons
 		class Burst1;
 		class Burst2;
 		class Burst3;
+		class Burst4;
+		class Burst5;
+	};
 	class rhs_weap_m284: cannon_155mm
 	{
+		class Single1: Single1
+		{
+		};
+		class Single2: Single2
+		{
+		};
+		class Single3: Single3
+		{
+		};
+		class Single4: Single4
+		{
+		};
+		class Single5: Single5
+		{
+		};
+		class Burst1: Burst1
+		{
+		};
+		class Burst2: Burst2
+		{
+		};
+		class Burst3: Burst3
+		{
+		};
+		class Burst4: Burst4
+		{
+		};
+		class Burst5: Burst5
+		{
+		};
 	};
 	class RHS_weap_M242BC: autocannon_30mm_CTWS
 	{
 		class HE: HE
 		{
+			class player: player
+			{
+			};
+			class far: far
+			{
+			};
 		};
 		class AP: AP
 		{
+			class player: player
+			{
+			};
+			class far: far
+			{
+			};
 		};
+	};
+	class HMG_127: LMG_RCWS
+	{
+	};
+	class HMG_01: HMG_127
+	{
 	};
 	class HMG_M2: HMG_01
 	{
 		class manual;
 		class close;
 		class short;
+		class medium;
+		class far;
+	};
 	class RHS_M2_Abrams_Commander: HMG_M2
 	{
+		class manual: manual
+		{
+		};
+		class far: far
+		{
+		};
 	};
 	class RHS_M2_Abrams_Gunner: HMG_M2
 	{
+		class manual: manual
+		{
+		};
+		class far: far
+		{
+		};
 	};
 	class RHS_M2: HMG_M2
 	{
+		class manual: manual
+		{
+		};
+		class far: far
+		{
+		};
 	};
 	class gatling_30mm;
 	class rhs_weap_M197: gatling_30mm
 	{
+		class manual: Mode_FullAuto
+		{
+		};
 	};
 	class rhs_weap_M230: rhs_weap_M197
 	{
+		class manual: Mode_FullAuto
+		{
+		};
 	};
 	class MGunCore;
 	class M134_minigun: MGunCore
@@ -8421,15 +8583,31 @@ class CfgWeapons
 		class HighROF;
 		class close;
 		class short;
+		class medium;
+		class far;
+	};
 	class rhs_weap_m134_minigun_1: M134_minigun
 	{
+		class LowROF: LowROF
+		{
+		};
+		class HighROF: HighROF
+		{
+		};
+		class far: far
+		{
+		};
 	};
 	class GMG_F;
 	class GMG_20mm;
 	class RHS_MK19: GMG_20mm
 	{
+		class manual: GMG_F
+		{
+		};
 	};
 };
+class CfgSounds;  //found empty after stripping
 	class rhs_m2010_bolt
 	{
 		name="rhs_m2010_bolt";

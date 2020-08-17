@@ -31,6 +31,9 @@ class CfgVehicles
 		{
 			class MainTurret: NewTurret
 			{
+				class ViewOptics;
+			};
+		};
 		class HitPoints
 		{
 			class HitFuel;
@@ -44,6 +47,9 @@ class CfgVehicles
 			class HitGlass2;
 			class HitGlass3;
 			class HitGlass4;
+			class HitGlass5;
+			class HitGlass6;
+		};
 		class EventHandlers;
 	};
 	class MRAP_01_base_F: Car_F
@@ -58,8 +64,18 @@ class CfgVehicles
 			"TruckHorn2",
 			"rhsusf_weap_duke"
 		};
+		magazines[]=
+		{
+			"rhsusf_mag_duke"
+		};
 		class textureSources
 		{
+			class rhs_desert
+			{
+			};
+			class rhs_woodland
+			{
+			};
 		};
 		class Attributes
 		{
@@ -72,6 +88,9 @@ class CfgVehicles
 			};
 		};
 		class CargoTurret;
+		class Turrets: Turrets
+		{
+		};
 		hullDamageCauseExplosion=1;
 		armorStructural=8;
 		class HitPoints: HitPoints
@@ -333,6 +352,12 @@ class CfgVehicles
 				steering=0;
 			};
 		};
+		class Damage
+		{
+		};
+		class EventHandlers: EventHandlers
+		{
+		};
 	};
 	class rhsusf_cougar_GPK_base: rhsusf_Cougar_base
 	{
@@ -412,6 +437,24 @@ class CfgVehicles
 				{
 					"RHS_M2"
 				};
+				magazines[]=
+				{
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red"
+				};
 				minElev=-10;
 				maxElev=40;
 				ejectDeadGunner=0;
@@ -421,6 +464,9 @@ class CfgVehicles
 					initFov=0.69999999;
 					minFov=0.25;
 					maxFov=1.1;
+				};
+				class ViewGunner: ViewOptics
+				{
 				};
 			};
 		};
@@ -437,7 +483,36 @@ class CfgVehicles
 				{
 					"RHS_MK19"
 				};
+				magazines[]=
+				{
+					"RHS_48Rnd_40mm_MK19_M430A1",
+					"RHS_48Rnd_40mm_MK19_M430A1",
+					"RHS_48Rnd_40mm_MK19_M430A1",
+					"RHS_48Rnd_40mm_MK19_M430A1",
+					"RHS_48Rnd_40mm_MK19_M430A1",
+					"RHS_48Rnd_40mm_MK19_M430A1",
+					"RHS_48Rnd_40mm_MK19_M430A1",
+					"RHS_48Rnd_40mm_MK19_M430A1",
+					"RHS_48Rnd_40mm_MK19_M430A1",
+					"RHS_48Rnd_40mm_MK19_M430A1",
+					"RHS_48Rnd_40mm_MK19_M430A1",
+					"RHS_48Rnd_40mm_MK19_M430A1",
+					"RHS_48Rnd_40mm_MK19_M430A1",
+					"RHS_48Rnd_40mm_MK19_M430A1",
+					"RHS_48Rnd_40mm_MK19_M1001",
+					"RHS_48Rnd_40mm_MK19_M1001",
+					"RHS_48Rnd_40mm_MK19_M1001"
+				};
 			};
 		};
+	};
+	class rhsusf_CGRCAT1A2_usmc_wd: rhsusf_CGRCAT1A2_usmc_d
+	{
+	};
+	class rhsusf_CGRCAT1A2_M2_usmc_wd: rhsusf_CGRCAT1A2_M2_usmc_d
+	{
+	};
+	class rhsusf_CGRCAT1A2_Mk19_usmc_wd: rhsusf_CGRCAT1A2_Mk19_usmc_d
+	{
 	};
 };

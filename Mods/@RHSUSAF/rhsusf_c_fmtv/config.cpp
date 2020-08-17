@@ -85,6 +85,9 @@ class CfgVehicles
 	class Car_F: Car
 	{
 		class AnimationSources;
+		class HitPoints;
+		class EventHandlers;
+	};
 	class Truck_F: Car_F
 	{
 		class ViewPilot;
@@ -104,7 +107,13 @@ class CfgVehicles
 			class HitGlass2;
 			class HitGlass3;
 			class HitGlass4;
+			class HitGlass5;
+			class HitGlass6;
+		};
 		class AnimationSources;
+	};
+	class Truck_01_base_F: Truck_F
+	{
 	};
 	class rhsusf_fmtv_base: Truck_01_base_F
 	{
@@ -115,6 +124,12 @@ class CfgVehicles
 		extCameraPosition[]={0.5,2,-8};
 		class textureSources
 		{
+			class rhs_desert
+			{
+			};
+			class rhs_woodland
+			{
+			};
 		};
 		class HitPoints: HitPoints
 		{
@@ -269,6 +284,9 @@ class CfgVehicles
 				steering=0;
 				maxHandBrakeTorque=36000;
 			};
+			class R1: L1
+			{
+				suspTravelDirection[]={0.125,-1,0};
 				steering=1;
 				side="right";
 			};
@@ -286,6 +304,9 @@ class CfgVehicles
 				direction="vyfuk konec";
 				effect="ExhaustEffectHEMTT";
 			};
+		};
+		class Damage
+		{
 		};
 		class CargoTurret;
 		class Turrets
@@ -314,8 +335,14 @@ class CfgVehicles
 		};
 		accuracy=0.5;
 	};
+	class rhsusf_M1078A1P2_open_fmtv_usarmy: rhsusf_M1078A1P2_fmtv_usarmy
+	{
+	};
 	class rhsusf_M1078A1P2_flatbed_fmtv_usarmy: rhsusf_M1078A1P2_fmtv_usarmy
 	{
+		class Turrets: Turrets
+		{
+		};
 		class VehicleTransport
 		{
 			class Cargo
@@ -367,8 +394,14 @@ class CfgVehicles
 			"SlingLoadCargo4"
 		};
 	};
+	class rhsusf_M1078A1P2_B_open_fmtv_usarmy: rhsusf_M1078A1P2_B_fmtv_usarmy
+	{
+	};
 	class rhsusf_M1078A1P2_B_flatbed_fmtv_usarmy: rhsusf_M1078A1P2_B_fmtv_usarmy
 	{
+		class Turrets: Turrets
+		{
+		};
 		class VehicleTransport
 		{
 			class Cargo
@@ -474,6 +507,13 @@ class CfgVehicles
 				{
 					"RHS_M2"
 				};
+				magazines[]=
+				{
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red"
+				};
 				minElev=-10;
 				maxElev=40;
 				soundAttenuationTurret="HeliAttenuationGunner";
@@ -486,13 +526,25 @@ class CfgVehicles
 					minFov=0.25;
 					maxFov=1.1;
 				};
+				class ViewGunner: ViewOptics
+				{
+				};
+			};
+			class CargoTurret_02: CargoTurret_02
+			{
 			};
 		};
+	};
+	class rhsusf_M1078A1P2_B_M2_open_fmtv_usarmy: rhsusf_M1078A1P2_B_M2_fmtv_usarmy
+	{
 	};
 	class rhsusf_M1078A1P2_B_M2_flatbed_fmtv_usarmy: rhsusf_M1078A1P2_B_M2_fmtv_usarmy
 	{
 		class Turrets: Turrets
 		{
+			class M2_Turret: M2_Turret
+			{
+			};
 		};
 		class VehicleTransport
 		{
@@ -559,6 +611,9 @@ class CfgVehicles
 				steering=0;
 				maxHandBrakeTorque=36000;
 			};
+			class R1: L1
+			{
+				suspTravelDirection[]={0.125,-1,0};
 				steering=1;
 				side="right";
 			};
@@ -598,6 +653,9 @@ class CfgVehicles
 				steering=0;
 				maxHandBrakeTorque=36000;
 			};
+			class R1: L1
+			{
+				suspTravelDirection[]={0.125,-1,0};
 				steering=1;
 				side="right";
 			};
@@ -678,6 +736,13 @@ class CfgVehicles
 				{
 					"RHS_M2"
 				};
+				magazines[]=
+				{
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red"
+				};
 				minElev=-10;
 				maxElev=40;
 				soundAttenuationTurret="HeliAttenuationGunner";
@@ -690,11 +755,23 @@ class CfgVehicles
 					minFov=0.25;
 					maxFov=1.1;
 				};
+				class ViewGunner: ViewOptics
+				{
+				};
+			};
+			class CargoTurret_02: CargoTurret_02
+			{
 			};
 		};
+	};
+	class rhsusf_M1083A1P2_open_fmtv_usarmy: rhsusf_M1083A1P2_fmtv_usarmy
+	{
 	};
 	class rhsusf_M1083A1P2_flatbed_fmtv_usarmy: rhsusf_M1083A1P2_fmtv_usarmy
 	{
+		class Turrets: Turrets
+		{
+		};
 		class VehicleTransport
 		{
 			class Cargo
@@ -735,8 +812,14 @@ class CfgVehicles
 			};
 		};
 	};
+	class rhsusf_M1083A1P2_B_open_fmtv_usarmy: rhsusf_M1083A1P2_B_fmtv_usarmy
+	{
+	};
 	class rhsusf_M1083A1P2_B_flatbed_fmtv_usarmy: rhsusf_M1083A1P2_B_fmtv_usarmy
 	{
+		class Turrets: Turrets
+		{
+		};
 		class VehicleTransport
 		{
 			class Cargo
@@ -776,11 +859,17 @@ class CfgVehicles
 				parachuteHeightLimitDefault=5;
 			};
 		};
+	};
+	class rhsusf_M1083A1P2_B_M2_open_fmtv_usarmy: rhsusf_M1083A1P2_B_M2_fmtv_usarmy
+	{
 	};
 	class rhsusf_M1083A1P2_B_M2_flatbed_fmtv_usarmy: rhsusf_M1083A1P2_B_M2_fmtv_usarmy
 	{
 		class Turrets: Turrets
 		{
+			class M2_Turret: M2_Turret
+			{
+			};
 		};
 		class VehicleTransport
 		{
@@ -864,12 +953,21 @@ class CfgVehicles
 				parachuteHeightLimitDefault=5;
 			};
 		};
+		class Turrets: Turrets
+		{
+		};
+	};
+	class rhsusf_M1084A1P2_B_fmtv_usarmy: rhsusf_M1084A1P2_fmtv_usarmy
+	{
 	};
 	class rhsusf_M1084A1P2_B_M2_fmtv_usarmy: rhsusf_M1083A1P2_B_M2_fmtv_usarmy
 	{
 		maxFordingDepth=0;
 		class Turrets: Turrets
 		{
+			class M2_Turret: M2_Turret
+			{
+			};
 		};
 		class VehicleTransport
 		{
@@ -931,6 +1029,9 @@ class CfgVehicles
 				expression="[_this,'hide_steps',1] spawn rhs_fnc_fmtv_Deploy";
 			};
 		};
+		class Turrets: Turrets
+		{
+		};
 	};
 	class rhsusf_M1085A1P2_B_Medical_fmtv_usarmy: rhsusf_M1083A1P2_B_fmtv_usarmy
 	{
@@ -959,6 +1060,9 @@ class CfgVehicles
 				steering=0;
 				maxHandBrakeTorque=36000;
 			};
+			class R1: L1
+			{
+				suspTravelDirection[]={0.125,-1,0};
 				steering=1;
 				side="right";
 			};
@@ -983,6 +1087,9 @@ class CfgVehicles
 				expression="[_this,'deploy_platform',1,true] spawn rhs_fnc_fmtv_Deploy; _this animateSource ['deploy_tent',1,true]";
 			};
 		};
+		class Turrets: Turrets
+		{
+		};
 		class VehicleTransport
 		{
 			class Cargo
@@ -997,6 +1104,144 @@ class CfgVehicles
 				};
 			};
 		};
+	};
+	class rhsusf_M1078A1P2_B_M2_WD_fmtv_usarmy: rhsusf_M1078A1P2_B_M2_fmtv_usarmy
+	{
+	};
+	class rhsusf_M1078A1P2_B_WD_fmtv_usarmy: rhsusf_M1078A1P2_B_fmtv_usarmy
+	{
+	};
+	class rhsusf_M1078A1P2_WD_fmtv_usarmy: rhsusf_M1078A1P2_fmtv_usarmy
+	{
+	};
+	class rhsusf_M1078A1P2_B_WD_CP_fmtv_usarmy: rhsusf_M1078A1P2_B_CP_fmtv_usarmy
+	{
+	};
+	class rhsusf_M1078A1P2_B_M2_WD_open_fmtv_usarmy: rhsusf_M1078A1P2_B_M2_open_fmtv_usarmy
+	{
+	};
+	class rhsusf_M1078A1P2_B_WD_open_fmtv_usarmy: rhsusf_M1078A1P2_B_open_fmtv_usarmy
+	{
+	};
+	class rhsusf_M1078A1P2_WD_open_fmtv_usarmy: rhsusf_M1078A1P2_open_fmtv_usarmy
+	{
+	};
+	class rhsusf_M1078A1P2_B_M2_WD_flatbed_fmtv_usarmy: rhsusf_M1078A1P2_B_M2_flatbed_fmtv_usarmy
+	{
+	};
+	class rhsusf_M1078A1P2_B_WD_flatbed_fmtv_usarmy: rhsusf_M1078A1P2_B_flatbed_fmtv_usarmy
+	{
+	};
+	class rhsusf_M1078A1P2_WD_flatbed_fmtv_usarmy: rhsusf_M1078A1P2_flatbed_fmtv_usarmy
+	{
+	};
+	class rhsusf_M1083A1P2_B_WD_fmtv_usarmy: rhsusf_M1083A1P2_B_fmtv_usarmy
+	{
+	};
+	class rhsusf_M1083A1P2_B_M2_WD_fmtv_usarmy: rhsusf_M1083A1P2_B_M2_fmtv_usarmy
+	{
+	};
+	class rhsusf_M1083A1P2_WD_fmtv_usarmy: rhsusf_M1083A1P2_fmtv_usarmy
+	{
+	};
+	class rhsusf_M1083A1P2_B_WD_open_fmtv_usarmy: rhsusf_M1083A1P2_B_open_fmtv_usarmy
+	{
+	};
+	class rhsusf_M1083A1P2_B_M2_WD_open_fmtv_usarmy: rhsusf_M1083A1P2_B_M2_open_fmtv_usarmy
+	{
+	};
+	class rhsusf_M1083A1P2_WD_open_fmtv_usarmy: rhsusf_M1083A1P2_open_fmtv_usarmy
+	{
+	};
+	class rhsusf_M1083A1P2_B_WD_flatbed_fmtv_usarmy: rhsusf_M1083A1P2_B_flatbed_fmtv_usarmy
+	{
+	};
+	class rhsusf_M1083A1P2_B_M2_WD_flatbed_fmtv_usarmy: rhsusf_M1083A1P2_B_M2_flatbed_fmtv_usarmy
+	{
+	};
+	class rhsusf_M1083A1P2_WD_flatbed_fmtv_usarmy: rhsusf_M1083A1P2_flatbed_fmtv_usarmy
+	{
+	};
+	class rhsusf_M1084A1P2_WD_fmtv_usarmy: rhsusf_M1084A1P2_fmtv_usarmy
+	{
+	};
+	class rhsusf_M1084A1P2_B_M2_WD_fmtv_usarmy: rhsusf_M1084A1P2_B_M2_fmtv_usarmy
+	{
+	};
+	class rhsusf_M1084A1P2_B_WD_fmtv_usarmy: rhsusf_M1084A1P2_B_fmtv_usarmy
+	{
+	};
+	class rhsusf_M1085A1P2_B_WD_Medical_fmtv_usarmy: rhsusf_M1085A1P2_B_Medical_fmtv_usarmy
+	{
+	};
+	class rhsusf_M1078A1P2_B_M2_D_fmtv_usarmy: rhsusf_M1078A1P2_B_M2_fmtv_usarmy
+	{
+	};
+	class rhsusf_M1078A1P2_B_D_fmtv_usarmy: rhsusf_M1078A1P2_B_fmtv_usarmy
+	{
+	};
+	class rhsusf_M1078A1P2_D_fmtv_usarmy: rhsusf_M1078A1P2_fmtv_usarmy
+	{
+	};
+	class rhsusf_M1078A1P2_B_D_CP_fmtv_usarmy: rhsusf_M1078A1P2_B_CP_fmtv_usarmy
+	{
+	};
+	class rhsusf_M1078A1P2_B_M2_D_open_fmtv_usarmy: rhsusf_M1078A1P2_B_M2_open_fmtv_usarmy
+	{
+	};
+	class rhsusf_M1078A1P2_B_D_open_fmtv_usarmy: rhsusf_M1078A1P2_B_open_fmtv_usarmy
+	{
+	};
+	class rhsusf_M1078A1P2_D_open_fmtv_usarmy: rhsusf_M1078A1P2_open_fmtv_usarmy
+	{
+	};
+	class rhsusf_M1078A1P2_B_M2_D_flatbed_fmtv_usarmy: rhsusf_M1078A1P2_B_M2_flatbed_fmtv_usarmy
+	{
+	};
+	class rhsusf_M1078A1P2_B_D_flatbed_fmtv_usarmy: rhsusf_M1078A1P2_B_flatbed_fmtv_usarmy
+	{
+	};
+	class rhsusf_M1078A1P2_D_flatbed_fmtv_usarmy: rhsusf_M1078A1P2_flatbed_fmtv_usarmy
+	{
+	};
+	class rhsusf_M1083A1P2_B_D_fmtv_usarmy: rhsusf_M1083A1P2_B_fmtv_usarmy
+	{
+	};
+	class rhsusf_M1083A1P2_B_M2_D_fmtv_usarmy: rhsusf_M1083A1P2_B_M2_fmtv_usarmy
+	{
+	};
+	class rhsusf_M1083A1P2_D_fmtv_usarmy: rhsusf_M1083A1P2_fmtv_usarmy
+	{
+	};
+	class rhsusf_M1083A1P2_B_D_open_fmtv_usarmy: rhsusf_M1083A1P2_B_open_fmtv_usarmy
+	{
+	};
+	class rhsusf_M1083A1P2_B_M2_D_open_fmtv_usarmy: rhsusf_M1083A1P2_B_M2_open_fmtv_usarmy
+	{
+	};
+	class rhsusf_M1083A1P2_D_open_fmtv_usarmy: rhsusf_M1083A1P2_open_fmtv_usarmy
+	{
+	};
+	class rhsusf_M1083A1P2_B_D_flatbed_fmtv_usarmy: rhsusf_M1083A1P2_B_flatbed_fmtv_usarmy
+	{
+	};
+	class rhsusf_M1083A1P2_B_M2_D_flatbed_fmtv_usarmy: rhsusf_M1083A1P2_B_M2_flatbed_fmtv_usarmy
+	{
+	};
+	class rhsusf_M1083A1P2_D_flatbed_fmtv_usarmy: rhsusf_M1083A1P2_flatbed_fmtv_usarmy
+	{
+	};
+	class rhsusf_M1084A1P2_D_fmtv_usarmy: rhsusf_M1084A1P2_fmtv_usarmy
+	{
+	};
+	class rhsusf_M1084A1P2_B_M2_D_fmtv_usarmy: rhsusf_M1084A1P2_B_M2_fmtv_usarmy
+	{
+	};
+	class rhsusf_M1084A1P2_B_D_fmtv_usarmy: rhsusf_M1084A1P2_B_fmtv_usarmy
+	{
+	};
+	class rhsusf_M1085A1P2_B_D_Medical_fmtv_usarmy: rhsusf_M1085A1P2_B_Medical_fmtv_usarmy
+	{
 	};
 	class rhsusf_M1078A1R_SOV_M2_D_fmtv_socom: rhsusf_M1078A1P2_B_M2_fmtv_usarmy
 	{
@@ -1021,6 +1266,21 @@ class CfgVehicles
 				{
 					"RHS_M2"
 				};
+				magazines[]=
+				{
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red"
+				};
 				minElev=-10;
 				maxElev=40;
 				soundAttenuationTurret="HeliAttenuationGunner";
@@ -1032,6 +1292,9 @@ class CfgVehicles
 					initFov=0.69999999;
 					minFov=0.25;
 					maxFov=1.1;
+				};
+				class ViewGunner: ViewOptics
+				{
 				};
 			};
 		};
@@ -1052,6 +1315,10 @@ class CfgVehicles
 			"TruckHorn2",
 			"rhsusf_weap_M257_8"
 		};
+		magazines[]=
+		{
+			"rhsusf_mag_L8A3_8"
+		};
 		rhs_hasSmokeCap=1;
 		attenuationEffectType="OpenCarAttenuation";
 		class Turrets: Turrets
@@ -1061,6 +1328,21 @@ class CfgVehicles
 				weapons[]=
 				{
 					"RHS_M2"
+				};
+				magazines[]=
+				{
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red"
 				};
 				minElev=-10;
 				maxElev=40;
@@ -1074,8 +1356,29 @@ class CfgVehicles
 					minFov=0.25;
 					maxFov=1.1;
 				};
+				class ViewGunner: ViewOptics
+				{
+				};
 			};
 		};
 		animationList[]={};
+	};
+	class rhsusf_M1084A1R_SOV_M2_WD_fmtv_socom: rhsusf_M1084A1R_SOV_M2_D_fmtv_socom
+	{
+	};
+	class rhsusf_M1078A1R_SOV_M2_WD_fmtv_socom: rhsusf_M1078A1R_SOV_M2_D_fmtv_socom
+	{
+	};
+	class rhsusf_M1083A1P2_B_M2_wd_MHQ_fmtv_usarmy: rhsusf_M1078A1P2_B_WD_CP_fmtv_usarmy
+	{
+	};
+	class rhsusf_M1083A1P2_B_M2_wd_Medical_fmtv_usarmy: rhsusf_M1085A1P2_B_WD_Medical_fmtv_usarmy
+	{
+	};
+	class rhsusf_M1083A1P2_B_M2_d_MHQ_fmtv_usarmy: rhsusf_M1078A1P2_B_D_CP_fmtv_usarmy
+	{
+	};
+	class rhsusf_M1083A1P2_B_M2_d_Medical_fmtv_usarmy: rhsusf_M1085A1P2_B_D_Medical_fmtv_usarmy
+	{
 	};
 };

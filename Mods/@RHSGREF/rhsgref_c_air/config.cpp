@@ -75,6 +75,9 @@ class CfgNonAIVehicles
 {
 	class ProxyWeapon;
 	class ProxyRetex;
+	class Proxyuh1h_wreck: ProxyRetex
+	{
+	};
 };
 class CfgVehicles
 {
@@ -92,6 +95,9 @@ class CfgVehicles
 			class HitGlass5;
 			class HitGlass6;
 			class HitHull;
+			class HitEngine;
+			class HitAvionics;
+		};
 	};
 	class Helicopter_Base_F: Helicopter
 	{
@@ -112,20 +118,32 @@ class CfgVehicles
 			class HitFuel;
 			class HitEngine;
 			class HitAvionics;
+			class HitVRotor;
+			class HitHRotor;
+		};
 		class AnimationSources;
 		class Eventhandlers;
 		class ViewOptics;
+		class CargoTurret;
+		class RotorLibHelicopterProperties;
+	};
 	class Heli_Attack_02_base_F: Helicopter_Base_F
 	{
 		class RotorLibHelicopterProperties;
 		class Sounds;
 		class HitPoints: HitPoints
 		{
+			class HitEngine1;
+		};
+	};
 	class Helicopter_Base_H: Helicopter_Base_F
 	{
 		class ViewOptics;
 		class Turrets: Turrets
 		{
+			class CopilotTurret;
+			class MainTurret;
+		};
 		class AnimationSources;
 		class HitPoints: HitPoints
 		{
@@ -140,7 +158,13 @@ class CfgVehicles
 			class HitGlass2;
 			class HitGlass3;
 			class HitGlass4;
+			class HitGlass5;
+			class HitGlass6;
+		};
 		class CargoTurret;
+		class RotorLibHelicopterProperties;
+		class Eventhandlers;
+	};
 	class rhs_uh1h_base: Helicopter_Base_H
 	{
 		forceInGarage=0;
@@ -543,6 +567,9 @@ class CfgVehicles
 			"slingCargoDetach1"
 		};
 		enableManualFire=0;
+		class MFD
+		{
+		};
 		class ViewPilot: ViewPilot
 		{
 			initFov=0.85000002;
@@ -898,6 +925,9 @@ class CfgVehicles
 		};
 		class SoundsExt
 		{
+			class SoundEvents
+			{
+			};
 			class Sounds
 			{
 				class Engine
@@ -1316,6 +1346,11 @@ class CfgVehicles
 				{
 					"rhs_weap_fcs_nolrf_ammo"
 				};
+				magazines[]=
+				{
+					"rhs_laserfcsmag",
+					"rhs_laserfcsmag"
+				};
 				class ViewGunner
 				{
 					minAngleX=-65;
@@ -1327,6 +1362,9 @@ class CfgVehicles
 					minFov=0.25;
 					maxFov=0.94999999;
 					initFov=0.85000002;
+				};
+				class Hitpoints
+				{
 				};
 			};
 			class RightGunner: MainTurret
@@ -1344,6 +1382,14 @@ class CfgVehicles
 				{
 					"rhs_weap_m240H_2"
 				};
+				magazines[]=
+				{
+					"rhs_mag_762x51_M240_200_M80",
+					"rhs_mag_762x51_M240_200_M80",
+					"rhs_mag_762x51_M240_200_M80",
+					"rhs_mag_762x51_M240_200_M80",
+					"rhs_mag_762x51_M240_200_M80"
+				};
 				selectionFireAnim="zasleh_2";
 				primaryGunner=0;
 				proxyIndex=3;
@@ -1360,12 +1406,23 @@ class CfgVehicles
 					minfov=0.25;
 				};
 				soundAttenuationTurret="HeliAttenuationGunner";
+				class Hitpoints
+				{
+				};
 			};
 			class LeftGunner: RightGunner
 			{
 				weapons[]=
 				{
 					"rhs_weap_m240H_1"
+				};
+				magazines[]=
+				{
+					"rhs_mag_762x51_M240_200_M80",
+					"rhs_mag_762x51_M240_200_M80",
+					"rhs_mag_762x51_M240_200_M80",
+					"rhs_mag_762x51_M240_200_M80",
+					"rhs_mag_762x51_M240_200_M80"
 				};
 				primaryGunner=0;
 				proxyIndex=2;
@@ -1517,6 +1574,9 @@ class CfgVehicles
 			};
 			delete HitWinch;
 		};
+		class Damage
+		{
+		};
 		irScanRangeMin=100;
 		irScanRangeMax=1000;
 		irScanToEyeFactor=2;
@@ -1529,6 +1589,18 @@ class CfgVehicles
 				{
 					"rhsgref_faction_hidf"
 				};
+			};
+			class hidf_summer: hidf_grey
+			{
+			};
+			class hidf_tropical: hidf_grey
+			{
+			};
+			class hidf_olv: hidf_grey
+			{
+			};
+			class hidf_tan: hidf_grey
+			{
 			};
 			class un
 			{
@@ -1551,6 +1623,9 @@ class CfgVehicles
 					"rhs_faction_usarmy_wd",
 					"rhs_faction_usarmy_d"
 				};
+			};
+			class us_army_med: us_army
+			{
 			};
 			class black
 			{
@@ -1592,6 +1667,12 @@ class CfgVehicles
 					"IND_F"
 				};
 			};
+			class olive: tan
+			{
+			};
+			class white: tan
+			{
+			};
 		};
 	};
 	class rhs_uh1h_hidf: rhs_uh1h_base
@@ -1604,6 +1685,39 @@ class CfgVehicles
 		enableSweep=0;
 		class textureSources: textureSources
 		{
+			class hidf_grey: hidf_grey
+			{
+			};
+			class hidf_summer: hidf_summer
+			{
+			};
+			class hidf_tropical: hidf_tropical
+			{
+			};
+			class hidf_olv: hidf_olv
+			{
+			};
+			class hidf_tan: hidf_tan
+			{
+			};
+			class us_army: us_army
+			{
+			};
+			class us_army_med: us_army_med
+			{
+			};
+			class black: black
+			{
+			};
+			class iraq: iraq
+			{
+			};
+			class takistan: takistan
+			{
+			};
+			class guerilla: guerilla
+			{
+			};
 		};
 		class Attributes
 		{
@@ -1643,6 +1757,9 @@ class CfgVehicles
 						attachment="rhs_mag_M151_19";
 						bay=-1;
 					};
+					class pylon2: pylon1
+					{
+						UIposition[]={0.1,0.44};
 						mirroredMissilePos=1;
 					};
 				};
@@ -1684,9 +1801,15 @@ class CfgVehicles
 		forceInGarage=1;
 		class Attributes: Attributes
 		{
+			class uh1h_textures: uh1h_textures
+			{
+			};
 		};
 		class Turrets: Turrets
 		{
+			class CopilotTurret: CopilotTurret
+			{
+			};
 		};
 	};
 	class rhs_uh1h_un: rhs_uh1h_base
@@ -1696,8 +1819,14 @@ class CfgVehicles
 		{
 			"rhsgref_cdf_un_pilot"
 		};
+		class Attributes
+		{
+		};
 		class Turrets: Turrets
 		{
+			class CopilotTurret: CopilotTurret
+			{
+			};
 		};
 	};
 	class rhs_uh1h_idap: rhs_uh1h_base
@@ -1707,8 +1836,14 @@ class CfgVehicles
 		{
 			"C_IDAP_Pilot_01_F"
 		};
+		class Attributes
+		{
+		};
 		class Turrets: Turrets
 		{
+			class CopilotTurret: CopilotTurret
+			{
+			};
 		};
 	};
 	class UWreck_base_F;
@@ -1717,14 +1852,23 @@ class CfgVehicles
 		keepHorizontalPlacement=1;
 		icon="rhsgref\addons\rhsgref_air\uh1h\ui\icon_uh1h_ca.paa";
 	};
+	class Heli_Transport_02_base_F: Helicopter_Base_H
+	{
+	};
 	class Heli_Light_02_base_F: Helicopter_Base_H
 	{
 		class Turrets: Turrets
 		{
+			class CopilotTurret;
+			class MainTurret;
+		};
 	};
 	class Plane: Air
 	{
 		class HitPoints;
+		class EventHandlers;
+		class NewTurret;
+	};
 	class Plane_Base_F: Plane
 	{
 		class NewTurret: NewTurret
@@ -1746,9 +1890,18 @@ class CfgVehicles
 	};
 	class Plane_Fighter_03_base_F: Plane_Base_F
 	{
+		class EventHandlers;
+		class Components;
+	};
 	class RHS_L159_base: Plane_Fighter_03_base_F
 	{
 		selectionDashboard="podsvit pristroju";
+		class pilotCamera
+		{
+		};
+		class EjectionSystem
+		{
+		};
 		driverCanEject=1;
 		class EventHandlers: EventHandlers
 		{
@@ -1858,6 +2011,9 @@ class CfgVehicles
 		};
 		class MarkerLights
 		{
+			class PositionRed
+			{
+				color[]={1,0,0};
 				ambient[]={0.1,0,0};
 				intensity=75;
 				name="cerveny pozicni";
@@ -1878,9 +2034,15 @@ class CfgVehicles
 					hardLimitEnd=1;
 				};
 			};
+			class PositionGreen: PositionRed
+			{
+				color[]={0,1,0};
 				ambient[]={0,0.1,0};
 				name="zeleny pozicni";
 			};
+			class PositionWhite: PositionRed
+			{
+				color[]={1,1,1};
 				ambient[]={0.1,0.1,0.1};
 				name="light_nav_back";
 			};
@@ -1920,6 +2082,9 @@ class CfgVehicles
 		envelope[]={0,0.15000001,1.1,3,5,5.8299999,6,5.8499999,5.5,4.8000002,3.5999999,1.8,0};
 		weapons[]={};
 		magazines[]={};
+		class Damage
+		{
+		};
 		class Components: Components
 		{
 			class TransportPylonsComponent
@@ -1980,12 +2145,21 @@ class CfgVehicles
 						};
 						hitpoint="HitPylon4";
 					};
+					class Pylons5: Pylons3
+					{
+						UIposition[]={0.33000001,0.38};
 						mirroredMissilePos=3;
 						hitpoint="HitPylon5";
 					};
+					class Pylons6: Pylons2
+					{
+						UIposition[]={0.33000001,0.43000001};
 						mirroredMissilePos=2;
 						hitpoint="HitPylon6";
 					};
+					class Pylons7: Pylons1
+					{
+						UIposition[]={0.34,0.47999999};
 						mirroredMissilePos=1;
 						hitpoint="HitPylon7";
 					};
@@ -2026,6 +2200,12 @@ class CfgVehicles
 			{
 				class Pylons: Pylons
 				{
+					class Pylons1: Pylons1
+					{
+					};
+					class Pylons2: Pylons2
+					{
+					};
 					class Pylons3: Pylons3
 					{
 						attachment="rhs_mag_agm65b";
@@ -2037,6 +2217,15 @@ class CfgVehicles
 					class Pylons5: Pylons5
 					{
 						attachment="rhs_mag_agm65b";
+					};
+					class Pylons6: Pylons6
+					{
+					};
+					class Pylons7: Pylons7
+					{
+					};
+					class cmDispenser: cmDispenser
+					{
 					};
 				};
 			};
@@ -2054,6 +2243,9 @@ class CfgVehicles
 			{
 				class Pylons: Pylons
 				{
+					class Pylons1: Pylons1
+					{
+					};
 					class Pylons2: Pylons2
 					{
 						attachment="rhs_mag_aim120";
@@ -2062,6 +2254,9 @@ class CfgVehicles
 					{
 						attachment="rhs_mag_aim120";
 					};
+					class Pylons4: Pylons4
+					{
+					};
 					class Pylons5: Pylons5
 					{
 						attachment="rhs_mag_aim120";
@@ -2069,6 +2264,12 @@ class CfgVehicles
 					class Pylons6: Pylons6
 					{
 						attachment="rhs_mag_aim120";
+					};
+					class Pylons7: Pylons7
+					{
+					};
+					class cmDispenser: cmDispenser
+					{
 					};
 				};
 			};
@@ -2082,6 +2283,9 @@ class CfgVehicles
 			{
 				class Pylons: Pylons
 				{
+					class Pylons1: Pylons1
+					{
+					};
 					class Pylons2: Pylons2
 					{
 						attachment="rhs_mag_FFAR_7_USAF";
@@ -2102,10 +2306,19 @@ class CfgVehicles
 					{
 						attachment="rhs_mag_FFAR_7_USAF";
 					};
+					class Pylons7: Pylons7
+					{
+					};
+					class cmDispenser: cmDispenser
+					{
+					};
 				};
 			};
 		};
 	};
+	class RHS_L39_base: RHS_L159_base
+	{
+		thrustCoef[]={1.8,1.5,1.4,1.3,1.3,1.3,1.3,1.2,1.1,0.80000001,0.60000002,0.40000001,0.30000001,0,0,0};
 		envelope[]={0,0.15000001,1.1,3,5,5.8299999,6,5.8499999,5.5,4.8000002,3.5999999,1.8,0};
 		class WingVortices
 		{
@@ -2141,6 +2354,9 @@ class CfgVehicles
 			"\rhsgref\addons\rhsgref_air\L39\Data\l-39_body_co.paa",
 			"\rhsgref\addons\rhsgref_air\L39\Data\l-39_body_1_co.paa"
 		};
+		class Damage
+		{
+		};
 		class MFD
 		{
 			class AirplaneHUD
@@ -2153,11 +2369,17 @@ class CfgVehicles
 				borderRight=0;
 				borderTop=0;
 				borderBottom=0;
+				class Pos10Vector
+				{
+					pos0[]={0.51999998,0.029999999};
 					pos10[]={2.02,1.23};
 				};
 				color[]={0,1,0,0.1};
 				class Bones
 				{
+					class PlaneW
+					{
+						pos[]={0.5,0.5};
 					};
 					class ImpactPoint
 					{
@@ -2561,6 +2783,9 @@ class CfgVehicles
 			{
 				class Components
 				{
+					class PassiveRadarSensorComponent: SensorTemplatePassiveRadar
+					{
+					};
 				};
 			};
 			class TransportPylonsComponent
@@ -2604,6 +2829,9 @@ class CfgVehicles
 		};
 	};
 	class Car_f;
+	class rhs_vs1_seat: Car_f
+	{
+		hiddenSelections[]={};
 		simulation="motorcycle";
 		isBicycle=0;
 		memoryPointTrack1L="";
@@ -2622,7 +2850,13 @@ class CfgVehicles
 		castCargoShadow=1;
 		occludeSoundsWhenIn=1;
 		obstructSoundsWhenIn=1;
+		class Turrets
+		{
+		};
 		driveOnComponent[]={};
+		class Eventhandlers
+		{
+		};
 		SLX_XEH_DISABLED=1;
 	};
 	class rhs_l159_cdf_b_CDF: rhs_l159_CDF
@@ -2880,6 +3114,9 @@ class CfgVehicles
 					{1,1}
 				};
 			};
+			class Wheel_2: Wheel_1
+			{
+			};
 			class Wheel_3: Wheel_2
 			{
 				steering=0;
@@ -3105,6 +3342,9 @@ class CfgVehicles
 				passThrough=0;
 			};
 		};
+		class Damage
+		{
+		};
 		driveOnComponent[]={};
 		driverLeftLegAnimName="pedal_l";
 		driverRightLegAnimName="pedal_r";
@@ -3143,6 +3383,9 @@ class CfgVehicles
 				isCopilot=1;
 				primaryGunner=0;
 				canEject=0;
+				class HitPoints
+				{
+				};
 				turretCanSee=15;
 				class Components
 				{
@@ -3219,6 +3462,12 @@ class CfgVehicles
 			class aeroschrot
 			{
 				displayname="АэроШрот";
+			};
+			class airtak
+			{
+			};
+			class military
+			{
 			};
 		};
 		class Attributes

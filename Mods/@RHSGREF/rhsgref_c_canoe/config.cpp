@@ -36,6 +36,9 @@ class CfgVehicles
 		};
 		armor=15;
 		epeImpulseDamageCoef=12;
+		class Turrets
+		{
+		};
 		class textureSources
 		{
 			class Purple
@@ -45,6 +48,30 @@ class CfgVehicles
 					"rhsgref_faction_hidf",
 					"CIV_F"
 				};
+			};
+			class Red: Purple
+			{
+			};
+			class Yellow: Purple
+			{
+			};
+			class Black: Purple
+			{
+			};
+			class Grey
+			{
+			};
+			class Blue: Purple
+			{
+			};
+			class Green: Purple
+			{
+			};
+			class Orange: Purple
+			{
+			};
+			class Camo: Purple
+			{
 			};
 		};
 		engineEffectSpeed=2;
@@ -107,6 +134,9 @@ class CfgVehicles
 			neutralString="N";
 			reverseString="R";
 		};
+		class Damage
+		{
+			mat[]={};
 		};
 		class EventHandlers: EventHandlers
 		{

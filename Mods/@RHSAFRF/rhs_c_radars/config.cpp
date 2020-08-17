@@ -115,6 +115,9 @@ class CfgVehicles
 	class House;
 	class House_F: House
 	{
+		class DestructionEffects;
+		class EventHandlers;
+	};
 	class rhs_p37: House_F
 	{
 		icon="\rhsafrf\addons\rhs_radars\data\icons\P37_icon.paa";
@@ -137,6 +140,12 @@ class CfgVehicles
 				init="_this call rhs_fnc_radar_init;[(_this select 0),'rhs_Sound_radar2'] spawn rhs_fnc_radar_engineSoundSource";
 			};
 		};
+	};
+	class Land_rhs_p37: rhs_p37
+	{
+	};
+	class Land_rhs_prv13: rhs_prv13
+	{
 	};
 	class LandVehicle;
 	class StaticWeapon: LandVehicle
@@ -242,6 +251,9 @@ class CfgVehicles
 				};
 			};
 		};
+		class Damage
+		{
+		};
 	};
 	class rhs_p37_turret_base: rhs_radars_turret_base
 	{
@@ -274,6 +286,9 @@ class CfgVehicles
 						minTrackableSpeed=0;
 						maxTrackableSpeed=230;
 					};
+					class DataLinkSensorComponent: SensorTemplateDataLink
+					{
+					};
 				};
 			};
 		};
@@ -299,6 +314,9 @@ class CfgVehicles
 				init="_this spawn RHS_fnc_radar_engineSound";
 			};
 		};
+	};
+	class rhs_p37_turret_vpvo: rhs_p37_turret_base
+	{
 	};
 	class rhs_prv13_turret_base: rhs_radars_turret_base
 	{
@@ -330,6 +348,9 @@ class CfgVehicles
 						minTrackableSpeed=0;
 						maxTrackableSpeed=230;
 					};
+					class DataLinkSensorComponent: SensorTemplateDataLink
+					{
+					};
 				};
 			};
 		};
@@ -356,10 +377,16 @@ class CfgVehicles
 			};
 		};
 	};
+	class rhs_prv13_turret_vpvo: rhs_prv13_turret_base
+	{
+	};
 	class rhs_2P3_1: ThingX
 	{
 		icon="\rhsafrf\addons\rhs_radars\data\icons\2P3_1_icon.paa";
 		selectionDamage="damage";
+		class Damage
+		{
+		};
 	};
 	class rhs_2P3_2: rhs_2P3_1
 	{
@@ -383,4 +410,10 @@ class CfgVehicles
 		sound="rhs_radar_engines02";
 	};
 	class Ruins_F;
+	class Land_rhs_p37_wreck: Ruins_F
+	{
+	};
+	class Land_rhs_prv13_wreck: Ruins_F
+	{
+	};
 };

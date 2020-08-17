@@ -1,5 +1,8 @@
 class CfgPatches
 {
+	class rhsgref_c_radio
+	{
+		units[]={};
 		weapons[]={};
 	};
 };
@@ -14,6 +17,9 @@ class CfgVoice
 		"RHS_Male05CZ"
 	};
 	class Base;
+	class BaseCZ: Base
+	{
+		variants[]={0.94999999,1,1.05};
 		voiceType="";
 		directories[]=
 		{
@@ -163,6 +169,9 @@ class cfgVoiceTypes
 };
 class RadioProtocolBase
 {
+	class Words;
+	class Arguments;
+};
 class RadioProtocolBaseCZ: RadioProtocolBase
 {
 	class Default;
@@ -423,9 +432,15 @@ class RadioProtocolBaseCZ: RadioProtocolBase
 	class Arguments: Arguments
 	{
 		class Direction;
+		class Distance1;
+		class AggrTargets;
+	};
 };
 class RadioProtocolCZ: RadioProtocolBaseCZ
 {
+	class Words: Words
+	{
+		NO_SPEECH[]={};
 		micOut[]=
 		{
 			"\rhsgref\addons\rhsgref_s_radio\Data\Mic_Out1"
@@ -8430,6 +8445,9 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 			gesture="";
 		};
 	};
+	class SentNotifySuppress: NormalCommand
+	{
+		versions[]={};
 	};
 	class SentWhereAreYou: SentWhereAreYou
 	{
@@ -8666,6 +8684,9 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 			"Version1",
 			1
 		};
+		class Version1
+		{
+			speech[]={};
 		};
 	};
 	class SentBehaviourSafe: SentBehaviourSafe
@@ -9886,6 +9907,9 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 			"Version1",
 			1
 		};
+		class Version1
+		{
+			speech[]={};
 		};
 	};
 	class SentCmdActionNear: SentCmdActionNear
@@ -9895,6 +9919,9 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 			"Version1",
 			1
 		};
+		class Version1
+		{
+			speech[]={};
 		};
 	};
 	class SentCmdActionFar: SentCmdActionFar
@@ -9904,6 +9931,9 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 			"Version1",
 			1
 		};
+		class Version1
+		{
+			speech[]={};
 		};
 	};
 	class SentCmdActionAt: SentCmdActionAt
@@ -9913,6 +9943,9 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 			"Version1",
 			1
 		};
+		class Version1
+		{
+			speech[]={};
 		};
 	};
 	class SentCmdTakeFlag: SentCmdTakeFlag
@@ -10583,6 +10616,9 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 			"Version1",
 			1
 		};
+		class Version1
+		{
+			speech[]={};
 		};
 	};
 	class SentCmdSwitchToGunner: SentCmdSwitchToGunner
@@ -10592,6 +10628,9 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 			"Version1",
 			1
 		};
+		class Version1
+		{
+			speech[]={};
 		};
 	};
 	class SentCmdSwitchToCommander: SentCmdSwitchToCommander
@@ -10601,6 +10640,9 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 			"Version1",
 			1
 		};
+		class Version1
+		{
+			speech[]={};
 		};
 	};
 	class SentCmdSwitchToCargo: SentCmdSwitchToCargo
@@ -10610,6 +10652,9 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 			"Version1",
 			1
 		};
+		class Version1
+		{
+			speech[]={};
 		};
 	};
 	class SentCmdGetOut: SentCmdGetOut
@@ -10738,6 +10783,9 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 			"Version1",
 			1
 		};
+		class Version1
+		{
+			speech[]={};
 		};
 	};
 	class SentNotifyAttack: SentNotifyAttack

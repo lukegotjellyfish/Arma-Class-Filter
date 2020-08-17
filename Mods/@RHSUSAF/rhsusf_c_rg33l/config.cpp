@@ -39,6 +39,9 @@ class CfgVehicles
 		{
 			class MainTurret: NewTurret
 			{
+				class ViewOptics;
+			};
+		};
 		class HitPoints
 		{
 			class HitFuel;
@@ -52,6 +55,12 @@ class CfgVehicles
 			class HitGlass2;
 			class HitGlass3;
 			class HitGlass4;
+			class HitGlass5;
+			class HitGlass6;
+		};
+		class EventHandlers;
+		class ViewOptics;
+	};
 	class MRAP_01_base_F: Car_F
 	{
 		class EventHandlers;
@@ -64,12 +73,22 @@ class CfgVehicles
 			"TruckHorn2",
 			"rhsusf_weap_duke"
 		};
+		magazines[]=
+		{
+			"rhsusf_mag_duke"
+		};
 		smokeLauncherGrenadeCount=1;
 		smokeLauncherVelocity=14;
 		smokeLauncherOnTurret=0;
 		smokeLauncherAngle=150;
 		class textureSources
 		{
+			class rhs_desert
+			{
+			};
+			class rhs_woodland
+			{
+			};
 		};
 		class Attributes
 		{
@@ -459,6 +478,9 @@ class CfgVehicles
 				maxHandBrakeTorque=300000;
 			};
 		};
+		class Damage
+		{
+		};
 		class EventHandlers: EventHandlers
 		{
 			init="if (local (_this select 0)) then {[(_this select 0), """", [], false] call bis_fnc_initVehicle;};";
@@ -468,6 +490,9 @@ class CfgVehicles
 	{
 		accuracy=0.5;
 	};
+	class rhsusf_RG33L_GPK_base: rhsusf_RG33L_base
+	{
+		threat[]={0.89999998,0.30000001,0.1};
 		animationList[]=
 		{
 			"hide_ogpkover",
@@ -489,6 +514,24 @@ class CfgVehicles
 				{
 					"RHS_M2"
 				};
+				magazines[]=
+				{
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red"
+				};
 				minElev=-10;
 				maxElev=40;
 				ejectDeadGunner=0;
@@ -498,6 +541,9 @@ class CfgVehicles
 					initFov=0.69999999;
 					minFov=0.25;
 					maxFov=1.1;
+				};
+				class ViewGunner: ViewOptics
+				{
 				};
 			};
 			class CargoTurret_02: CargoTurret_02
@@ -606,6 +652,35 @@ class CfgVehicles
 				{
 					"RHS_MK19"
 				};
+				magazines[]=
+				{
+					"RHS_48Rnd_40mm_MK19_M430A1",
+					"RHS_48Rnd_40mm_MK19_M430A1",
+					"RHS_48Rnd_40mm_MK19_M430A1",
+					"RHS_48Rnd_40mm_MK19_M430A1",
+					"RHS_48Rnd_40mm_MK19_M430A1",
+					"RHS_48Rnd_40mm_MK19_M430A1",
+					"RHS_48Rnd_40mm_MK19_M430A1",
+					"RHS_48Rnd_40mm_MK19_M430A1",
+					"RHS_48Rnd_40mm_MK19_M430A1",
+					"RHS_48Rnd_40mm_MK19_M430A1",
+					"RHS_48Rnd_40mm_MK19_M430A1",
+					"RHS_48Rnd_40mm_MK19_M430A1",
+					"RHS_48Rnd_40mm_MK19_M430A1",
+					"RHS_48Rnd_40mm_MK19_M430A1",
+					"RHS_48Rnd_40mm_MK19_M1001",
+					"RHS_48Rnd_40mm_MK19_M1001",
+					"RHS_48Rnd_40mm_MK19_M1001"
+				};
+			};
+			class CargoTurret_02: CargoTurret_02
+			{
+			};
+			class CargoTurret_03: CargoTurret_03
+			{
+			};
+			class CargoTurret_04: CargoTurret_04
+			{
 			};
 		};
 	};
@@ -626,6 +701,15 @@ class CfgVehicles
 		};
 		class Attributes: Attributes
 		{
+			class rhs_hideDUKE: rhs_hideDUKE
+			{
+			};
+			class DoorL: DoorL
+			{
+			};
+			class DoorR: DoorR
+			{
+			};
 			class rhino
 			{
 				control="CheckboxNumber";
@@ -647,6 +731,24 @@ class CfgVehicles
 				{
 					"RHS_M2"
 				};
+				magazines[]=
+				{
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red"
+				};
 				minElev=-10;
 				maxElev=40;
 				ejectDeadGunner=0;
@@ -656,6 +758,9 @@ class CfgVehicles
 					initFov=0.69999999;
 					minFov=0.25;
 					maxFov=1.1;
+				};
+				class ViewGunner: ViewOptics
+				{
 				};
 			};
 			class CargoTurret_02: CargoTurret_02
@@ -763,6 +868,35 @@ class CfgVehicles
 				{
 					"RHS_MK19"
 				};
+				magazines[]=
+				{
+					"RHS_48Rnd_40mm_MK19_M430A1",
+					"RHS_48Rnd_40mm_MK19_M430A1",
+					"RHS_48Rnd_40mm_MK19_M430A1",
+					"RHS_48Rnd_40mm_MK19_M430A1",
+					"RHS_48Rnd_40mm_MK19_M430A1",
+					"RHS_48Rnd_40mm_MK19_M430A1",
+					"RHS_48Rnd_40mm_MK19_M430A1",
+					"RHS_48Rnd_40mm_MK19_M430A1",
+					"RHS_48Rnd_40mm_MK19_M430A1",
+					"RHS_48Rnd_40mm_MK19_M430A1",
+					"RHS_48Rnd_40mm_MK19_M430A1",
+					"RHS_48Rnd_40mm_MK19_M430A1",
+					"RHS_48Rnd_40mm_MK19_M430A1",
+					"RHS_48Rnd_40mm_MK19_M430A1",
+					"RHS_48Rnd_40mm_MK19_M1001",
+					"RHS_48Rnd_40mm_MK19_M1001",
+					"RHS_48Rnd_40mm_MK19_M1001"
+				};
+			};
+			class CargoTurret_02: CargoTurret_02
+			{
+			};
+			class CargoTurret_03: CargoTurret_03
+			{
+			};
+			class CargoTurret_04: CargoTurret_04
+			{
 			};
 		};
 	};
@@ -770,24 +904,87 @@ class CfgVehicles
 	{
 		class Turrets: Turrets
 		{
+			class M2_Turret: M2_Turret
+			{
+			};
+			class CargoTurret_02: CargoTurret_02
+			{
+			};
+			class CargoTurret_03: CargoTurret_03
+			{
+			};
+			class CargoTurret_04: CargoTurret_04
+			{
+			};
 		};
 	};
 	class rhsusf_M1232_MC_M2_usmc_wd: rhsusf_M1232_M2_usarmy_d
 	{
 		class Turrets: Turrets
 		{
+			class M2_Turret: M2_Turret
+			{
+			};
+			class CargoTurret_02: CargoTurret_02
+			{
+			};
+			class CargoTurret_03: CargoTurret_03
+			{
+			};
+			class CargoTurret_04: CargoTurret_04
+			{
+			};
 		};
 	};
 	class rhsusf_M1232_MC_MK19_usmc_d: rhsusf_M1232_MK19_usarmy_d
 	{
 		class Turrets: Turrets
 		{
+			class M2_Turret: M2_Turret
+			{
+			};
+			class CargoTurret_02: CargoTurret_02
+			{
+			};
+			class CargoTurret_03: CargoTurret_03
+			{
+			};
+			class CargoTurret_04: CargoTurret_04
+			{
+			};
 		};
 	};
 	class rhsusf_M1232_MC_MK19_usmc_wd: rhsusf_M1232_MK19_usarmy_d
 	{
 		class Turrets: Turrets
 		{
+			class M2_Turret: M2_Turret
+			{
+			};
+			class CargoTurret_02: CargoTurret_02
+			{
+			};
+			class CargoTurret_03: CargoTurret_03
+			{
+			};
+			class CargoTurret_04: CargoTurret_04
+			{
+			};
 		};
+	};
+	class rhsusf_M1232_usarmy_wd: rhsusf_M1232_usarmy_d
+	{
+	};
+	class rhsusf_M1232_M2_usarmy_wd: rhsusf_M1232_M2_usarmy_d
+	{
+	};
+	class rhsusf_M1232_MK19_usarmy_wd: rhsusf_M1232_MK19_usarmy_d
+	{
+	};
+	class rhsusf_M1237_M2_usarmy_wd: rhsusf_M1237_M2_usarmy_d
+	{
+	};
+	class rhsusf_M1237_MK19_usarmy_wd: rhsusf_M1237_MK19_usarmy_d
+	{
 	};
 };

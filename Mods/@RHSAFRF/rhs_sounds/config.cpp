@@ -1,5 +1,8 @@
 class CfgPatches
 {
+	class rhs_sounds
+	{
+		units[]={};
 		weapons[]={};
 		version="0.1";
 		name="AFRF Sounds";
@@ -6112,8 +6115,14 @@ class CfgWeapons
 {
 	class InventoryOpticsItem_Base_F;
 	class Rifle_Base_F;
+	class arifle_MX_Base_F: Rifle_Base_F
+	{
+	};
 	class Rifle_Long_Base_F;
 	class GrenadeLauncher;
+	class UGL_F: GrenadeLauncher
+	{
+	};
 	class srifle_EBR_F;
 	class LMG_Mk200_F;
 	class LMG_M200;
@@ -6122,8 +6131,17 @@ class CfgWeapons
 	class hgun_PDW2000_F: pdw2000_base_F
 	{
 		class Single;
+		class FullAuto;
+		class WeaponSlotsInfo;
+	};
 	class rhs_weap_pp2000: hgun_PDW2000_F
 	{
+		class Single: Single
+		{
+		};
+		class FullAuto: FullAuto
+		{
+		};
 	};
 	class rhs_weap_ak74m_Base_F: Rifle_Base_F
 	{
@@ -6152,10 +6170,19 @@ class CfgWeapons
 			};
 		};
 	};
+	class rhs_weap_ak74m: rhs_weap_ak74m_Base_F
+	{
+	};
 	class rhs_weap_asval: rhs_weap_ak74m
 	{
 		L_ES_Prefix="nosound";
 		L_ES_maxPlopp=0;
+		class Single: Single
+		{
+		};
+		class FullAuto: FullAuto
+		{
+		};
 	};
 	class rhs_weap_akm: rhs_weap_ak74m
 	{
@@ -6184,6 +6211,9 @@ class CfgWeapons
 			};
 		};
 	};
+	class rhs_weap_ak103_base: rhs_weap_akm
+	{
+	};
 	class rhs_pkp_base: Rifle_Long_Base_F
 	{
 		class Single: Mode_SemiAuto
@@ -6211,11 +6241,26 @@ class CfgWeapons
 			};
 		};
 	};
+	class rhs_weap_pkp: rhs_pkp_base
+	{
+	};
 	class rhs_weap_rpk74: rhs_weap_pkp
+	{
+		class Single: Mode_SemiAuto
+		{
+		};
+		class Manual: Mode_FullAuto
+		{
+		};
+	};
+	class PKT: MGun
 	{
 	};
 	class rhs_weap_pkt: PKT
 	{
+		class manual: MGun
+		{
+		};
 	};
 	class rhs_weap_svd: rhs_weap_ak74m
 	{
@@ -6249,6 +6294,12 @@ class CfgWeapons
 	};
 	class GP25_Base: UGL_F
 	{
+		class Single: Mode_SemiAuto
+		{
+		};
+	};
+	class rhs_weap_orsis_Base_F: Rifle_Base_F
+	{
 	};
 	class hgun_Rook40_F;
 	class rhs_weap_pya: hgun_Rook40_F
@@ -6280,7 +6331,13 @@ class CfgWeapons
 		};
 	};
 	class Launcher;
+	class Launcher_Base_F: Launcher
+	{
+	};
 	class MissileLauncher;
+	class rhs_weap_rpg26: Launcher_Base_F
+	{
+	};
 	class rhs_weap_rpg7: Launcher_Base_F
 	{
 		class single: Mode_SemiAuto
@@ -6294,18 +6351,60 @@ class CfgWeapons
 			};
 		};
 	};
+	class rhs_weap_9k11: MissileLauncher
+	{
+	};
 	class missiles_Zephyr;
 	class missiles_titan;
+	class rhs_weap_9m111: MissileLauncher
+	{
+	};
+	class rhs_weap_9m119: rhs_weap_9m111
+	{
+	};
+	class rhs_weap_2k4: rhs_weap_9m111
+	{
+	};
+	class rhs_weap_9k133: rhs_weap_9m111
+	{
+	};
 	class RocketPods;
 	class rockets_Skyfire: RocketPods
 	{
 		class Far_AI;
 		class Medium_AI;
+		class Close_AI;
+		class Burst;
+	};
 	class rhs_weap_s5: rockets_Skyfire
+	{
+		class Far_AI: Far_AI
+		{
+		};
+		class Medium_AI: Medium_AI
+		{
+		};
+		class Close_AI: Close_AI
+		{
+		};
+		class Burst_AI: RocketPods
+		{
+		};
+		class Burst: Burst
+		{
+		};
+	};
+	class rhs_weap_9K114_launcher: MissileLauncher
 	{
 	};
 	class Missile_AA_04_Plane_CAS_01_F;
+	class rhs_weap_r73_Launcher: Missile_AA_04_Plane_CAS_01_F
+	{
+	};
 	class Missile_AGM_02_Plane_CAS_01_F;
+	class rhs_weap_kh25_Launcher: Missile_AGM_02_Plane_CAS_01_F
+	{
+	};
 	class gatling_30mm;
 	class rhs_weap_yakB: gatling_30mm
 	{
@@ -6321,36 +6420,90 @@ class CfgWeapons
 		class player;
 		class close;
 		class short;
+		class medium;
+		class far;
+	};
 	class autocannon_30mm_CTWS;
 	class rhs_weap_d81: cannon_120mm
 	{
+		class player: player
+		{
+		};
+		class far: far
+		{
+		};
 	};
 	class rhs_weap_2a42_base: autocannon_30mm_CTWS
+	{
+		class LowROFBMD2: Mode_FullAuto
+		{
+		};
+		class HighROFBMD2: LowROFBMD2
+		{
+		};
+	};
+	class rhs_weap_2a28_base: cannon_120mm
 	{
 	};
 	class RHS_weap_AZP23: CannonCore
 	{
+		class manual: CannonCore
+		{
+		};
+	};
+	class LMG_RCWS: MGun
+	{
 	};
 	class rhs_weap_DSHKM: LMG_RCWS
 	{
+		class manual: MGun
+		{
+		};
 	};
 	class rhs_weap_nsvt: rhs_weap_DSHKM
+	{
+		class manual: MGun
+		{
+		};
+	};
+	class rhs_weap_nsvt_effects: rhs_weap_nsvt
 	{
 	};
 	class rhs_weap_kord: rhs_weap_nsvt_effects
 	{
+		class manual: manual
+		{
+		};
 	};
 	class rhs_weap_kpvt: MGun
 	{
+		class manual: MGun
+		{
+		};
 	};
 	class RHS_weap_GSh30: gatling_30mm
 	{
+		class manual: Mode_FullAuto
+		{
+		};
 	};
 	class RHS_Weap_GSh301: RHS_weap_GSh30
 	{
+		class manual: manual
+		{
+		};
 	};
 	class SmokeLauncher;
+	class rhs_weap_902a: SmokeLauncher
+	{
+	};
 	class rhs_weap_902b: rhs_weap_902a
 	{
+		class Double: rhs_weap_902a
+		{
+		};
+		class Volley: Double
+		{
+		};
 	};
 };

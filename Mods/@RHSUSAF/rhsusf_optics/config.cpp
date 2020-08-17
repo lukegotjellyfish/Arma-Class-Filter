@@ -1,5 +1,8 @@
 class CfgPatches
 {
+	class rhsusf_optics
+	{
+		units[]={};
 		weapons[]={};
 	};
 };
@@ -420,6 +423,9 @@ class CfgInGameUI
 					"(profilenamespace getvariable ['IGUI_TEXT_RGB_B',1])",
 					"(profilenamespace getvariable ['IGUI_TEXT_RGB_A',0.8])+(profilenamespace getvariable ['RHS_UI_Targeting',0])"
 				};
+			};
+			class HitConfirm: Seeker
+			{
 			};
 			class KnownTarget: Seeker
 			{

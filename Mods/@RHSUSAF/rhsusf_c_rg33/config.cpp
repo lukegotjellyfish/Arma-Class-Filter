@@ -32,6 +32,9 @@ class CfgVehicles
 		{
 			class MainTurret: NewTurret
 			{
+				class ViewOptics;
+			};
+		};
 		class HitPoints
 		{
 			class HitFuel;
@@ -45,6 +48,12 @@ class CfgVehicles
 			class HitGlass2;
 			class HitGlass3;
 			class HitGlass4;
+			class HitGlass5;
+			class HitGlass6;
+		};
+		class EventHandlers;
+		class ViewOptics;
+	};
 	class MRAP_01_base_F: Car_F
 	{
 		class EventHandlers;
@@ -57,12 +66,22 @@ class CfgVehicles
 			"TruckHorn2",
 			"rhsusf_weap_duke"
 		};
+		magazines[]=
+		{
+			"rhsusf_mag_duke"
+		};
 		hideProxyInCombat=1;
 		canHideDriver=0;
 		LODDriverTurnedOut=1000;
 		LODDriverTurnedIn=1000;
 		class textureSources
 		{
+			class rhs_desert
+			{
+			};
+			class rhs_woodland
+			{
+			};
 		};
 		class Attributes
 		{
@@ -162,6 +181,9 @@ class CfgVehicles
 				MinimalHit=0.050000001;
 				explosionShielding=0.0099999998;
 				radius=0.15000001;
+			};
+			class HitDuke2: HitDuke1
+			{
 			};
 		};
 		armorLights=0.0099999998;
@@ -300,7 +322,16 @@ class CfgVehicles
 				steering=0;
 			};
 		};
+		class Damage
+		{
+		};
+		class EventHandlers: EventHandlers
+		{
+		};
 	};
+	class rhsusf_RG33_CROWS_base: rhsusf_RG33_base
+	{
+		threat[]={0.89999998,0.30000001,0.1};
 		class MFD
 		{
 			class MFD_CROWS
@@ -316,12 +347,21 @@ class CfgVehicles
 				alpha=1;
 				enableParallax=0;
 				font="RobotoCondensedLight";
+				class material
+				{
+					ambient[]={3,3,3,1};
 					diffuse[]={10,10,10,1};
 					emissive[]={400,200,200,1};
 				};
 				class Bones
 				{
+					class Static_Offset
+					{
+						pos[]={0.079999998,0.89999998};
 					};
+					class Cross
+					{
+						pos[]={0,-0.145};
 					};
 					class TurretRotation
 					{
@@ -335,6 +375,9 @@ class CfgVehicles
 						aspectRatio=1.29101;
 					};
 				};
+				class Draw
+				{
+					color[]={1,0,0,1};
 					alpha=1;
 					class StaticDraw
 					{
@@ -1069,6 +1112,13 @@ class CfgVehicles
 				{
 					"RHS_M2_CROWS_M153"
 				};
+				magazines[]=
+				{
+					"rhs_mag_400rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_400rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_400rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_400rnd_127x99_mag_Tracer_Red"
+				};
 				minElev=-20;
 				maxElev=60;
 				LODTurnedIn=1000;
@@ -1198,6 +1248,9 @@ class CfgVehicles
 					};
 				};
 			};
+			class CargoTurret_02: CargoTurret_02
+			{
+			};
 		};
 	};
 	class rhsusf_RG33_CROWSMK19_base: rhsusf_RG33_CROWS_base
@@ -1210,6 +1263,17 @@ class CfgVehicles
 				{
 					"RHS_MK19_CROWS_M153"
 				};
+				magazines[]=
+				{
+					"RHS_96Rnd_40mm_MK19_M430A1",
+					"RHS_96Rnd_40mm_MK19_M430A1",
+					"RHS_96Rnd_40mm_MK19_M430A1",
+					"RHS_96Rnd_40mm_MK19_M430A1",
+					"RHS_96Rnd_40mm_MK19_M1001"
+				};
+			};
+			class CargoTurret_02: CargoTurret_02
+			{
 			};
 		};
 	};
@@ -1236,5 +1300,29 @@ class CfgVehicles
 	class rhsusf_M1238A1_Mk19_socom_wd: rhsusf_RG33_CROWSMK19_base
 	{
 		accuracy=0.5;
+	};
+	class rhsusf_rg33_d: rhsusf_RG33_base
+	{
+	};
+	class rhsusf_rg33_wd: rhsusf_rg33_d
+	{
+	};
+	class rhsusf_rg33_usmc_d: rhsusf_rg33_d
+	{
+	};
+	class rhsusf_rg33_usmc_wd: rhsusf_rg33_wd
+	{
+	};
+	class rhsusf_rg33_m2_d: rhsusf_RG33_CROWS_base
+	{
+	};
+	class rhsusf_rg33_m2_wd: rhsusf_rg33_m2_d
+	{
+	};
+	class rhsusf_rg33_m2_usmc_d: rhsusf_rg33_m2_d
+	{
+	};
+	class rhsusf_rg33_m2_usmc_wd: rhsusf_rg33_m2_wd
+	{
 	};
 };

@@ -1,5 +1,8 @@
 class CfgPatches
 {
+	class rhs_c_btr70_camo
+	{
+		units[]={};
 		weapons[]={};
 		version="0.1.1.1";
 	};
@@ -20,6 +23,27 @@ class CfgVehicles
 					"rhs_faction_vdv",
 					"rhs_faction_vv"
 				};
+			};
+			class Camo2: Camo1
+			{
+			};
+			class Omon1: Camo1
+			{
+			};
+			class Omon2: Camo1
+			{
+			};
+			class MC: Camo1
+			{
+			};
+			class Desert: Camo1
+			{
+			};
+			class rhs_sand
+			{
+			};
+			class Marine: Camo1
+			{
 			};
 		};
 	};

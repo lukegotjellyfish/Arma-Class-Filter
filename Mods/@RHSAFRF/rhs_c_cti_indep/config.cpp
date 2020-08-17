@@ -94,6 +94,21 @@ class cfgWeapons
 			mass=40;
 		};
 	};
+	class rhs_insurgent_uniform_1: rhs_chdkz_uniform_1
+	{
+	};
+	class rhs_insurgent_uniform_2: rhs_chdkz_uniform_2
+	{
+	};
+	class rhs_insurgent_uniform_3: rhs_chdkz_uniform_3
+	{
+	};
+	class rhs_insurgent_uniform_4: rhs_chdkz_uniform_4
+	{
+	};
+	class rhs_insurgent_uniform_5: rhs_chdkz_uniform_5
+	{
+	};
 };
 class UniformSlotInfo;
 class CfgVehicles
@@ -137,6 +152,18 @@ class CfgVehicles
 	class B_FieldPack_cbr;
 	class B_TacticalPack_blk;
 	class B_Carryall_cbr;
+	class rhs_ins_pack: B_FieldPack_khk
+	{
+	};
+	class rhs_ins_pack_GR: B_FieldPack_cbr
+	{
+	};
+	class rhs_ins_packMG: B_TacticalPack_blk
+	{
+	};
+	class rhs_ins_demo: B_Carryall_cbr
+	{
+		hiddenSelectionsTextures[]={};
 	};
 	class I_G_Soldier_base_F;
 	class I_G_Soldier_F: I_G_Soldier_base_F
@@ -215,6 +242,18 @@ class CfgVehicles
 			"Throw",
 			"Put"
 		};
+		magazines[]=
+		{
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_mag_rgn",
+			"rhs_mag_rdg2_black"
+		};
 		respawnMagazines[]=
 		{
 			"rhs_30Rnd_762x39mm",
@@ -237,6 +276,9 @@ class CfgVehicles
 		hiddenSelectionsMaterials[]=
 		{
 			"\rhsafrf\addons\rhs_c_cti_indep\data\infantry\rvmats\clothing.rvmat"
+		};
+		class Wounds
+		{
 		};
 	};
 	class rhs_g_Soldier_F: rhs_ins_base
@@ -366,6 +408,18 @@ class CfgVehicles
 			"Throw",
 			"Put"
 		};
+		magazines[]=
+		{
+			"rhs_30Rnd_545x39_AK",
+			"rhs_30Rnd_545x39_AK",
+			"rhs_30Rnd_545x39_AK",
+			"rhs_30Rnd_545x39_AK",
+			"rhs_30Rnd_545x39_AK",
+			"rhs_30Rnd_545x39_AK",
+			"rhs_30Rnd_545x39_AK",
+			"rhs_mag_rgn",
+			"rhs_mag_rdg2_black"
+		};
 		respawnMagazines[]=
 		{
 			"rhs_30Rnd_545x39_AK",
@@ -417,6 +471,18 @@ class CfgVehicles
 			"Put",
 			"rhs_weap_rpg26"
 		};
+		magazines[]=
+		{
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_rpg26_mag",
+			"rhs_mag_rdg2_black"
+		};
 		respawnMagazines[]=
 		{
 			"rhs_30Rnd_762x39mm",
@@ -462,6 +528,26 @@ class CfgVehicles
 			"rhs_weap_akm_gp25",
 			"Throw",
 			"Put"
+		};
+		magazines[]=
+		{
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_VOG25",
+			"rhs_VOG25",
+			"rhs_VOG25",
+			"rhs_VOG25",
+			"rhs_VOG25",
+			"rhs_VOG25",
+			"rhs_VOG25",
+			"rhs_VOG25",
+			"rhs_VOG25",
+			"rhs_mag_rdg2_black"
 		};
 		respawnMagazines[]=
 		{
@@ -556,6 +642,16 @@ class CfgVehicles
 			"Throw",
 			"Put"
 		};
+		magazines[]=
+		{
+			"rhs_10Rnd_762x54mmR_7N1",
+			"rhs_10Rnd_762x54mmR_7N1",
+			"rhs_10Rnd_762x54mmR_7N1",
+			"rhs_10Rnd_762x54mmR_7N1",
+			"rhs_10Rnd_762x54mmR_7N1",
+			"rhs_10Rnd_762x54mmR_7N1",
+			"rhs_mag_rdg2_white"
+		};
 		respawnMagazines[]=
 		{
 			"rhs_10Rnd_762x54mmR_7N1",
@@ -600,6 +696,13 @@ class CfgVehicles
 			"rhs_weap_pkm",
 			"Throw",
 			"Put"
+		};
+		magazines[]=
+		{
+			"rhs_100Rnd_762x54mmR",
+			"rhs_mag_rgn",
+			"rhs_mag_rdg2_black",
+			"rhs_mag_rdg2_black"
 		};
 		respawnMagazines[]=
 		{
@@ -712,6 +815,19 @@ class CfgVehicles
 			"Binocular",
 			"Throw",
 			"Put"
+		};
+		magazines[]=
+		{
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_mag_rgd5",
+			"rhs_mag_rgd5",
+			"rhs_mag_nspn_red"
 		};
 		respawnMagazines[]=
 		{
@@ -838,6 +954,18 @@ class CfgVehicles
 			"Throw",
 			"Put"
 		};
+		magazines[]=
+		{
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_mag_9k38_rocket",
+			"rhs_mag_rdg2_black"
+		};
 		respawnMagazines[]=
 		{
 			"rhs_30Rnd_762x39mm",
@@ -947,6 +1075,9 @@ class CfgVehicles
 			class HitChest;
 			class HitBody;
 			class HitArms;
+			class HitHands;
+			class HitLegs;
+		};
 	};
 	class rhs_g_uniform1_base: SoldierGB
 	{
@@ -970,12 +1101,30 @@ class CfgVehicles
 		canCarryBackPack=1;
 		nakedUniform="U_BasicBody";
 		uniformClass="rhs_chdkz_uniform_1";
+		class Wounds
+		{
+		};
 		class HitPoints: HitPoints
 		{
+			class HitFace: HitFace
+			{
+			};
+			class HitNeck: HitNeck
+			{
+			};
 			class HitPelvis: HitPelvis
 			{
 				armor=1;
 				passThrough=0.60000002;
+			};
+			class HitAbdomen: HitAbdomen
+			{
+			};
+			class HitDiaphragm: HitDiaphragm
+			{
+			};
+			class HitChest: HitChest
+			{
 			};
 			class HitArms: HitArms
 			{
@@ -985,6 +1134,9 @@ class CfgVehicles
 			class HitHead: HitHead
 			{
 				armor=1;
+			};
+			class HitBody: HitBody
+			{
 			};
 			class HitHands: HitHands
 			{
@@ -1043,6 +1195,19 @@ class CfgVehicles
 			"Throw",
 			"Put"
 		};
+		magazines[]=
+		{
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_mag_rgd5",
+			"rhs_mag_rgd5",
+			"rhs_mag_nspn_red"
+		};
 		respawnMagazines[]=
 		{
 			"rhs_30Rnd_762x39mm",
@@ -1091,6 +1256,9 @@ class CfgVehicles
 		{
 			"\rhsafrf\addons\rhs_c_cti_indep\data\infantry\rvmats\clothing.rvmat"
 		};
+		class Wounds
+		{
+		};
 	};
 	class rhs_g_uniform3_base: rhs_g_uniform1_base
 	{
@@ -1098,6 +1266,9 @@ class CfgVehicles
 		hiddenSelectionsMaterials[]=
 		{
 			"\rhsafrf\addons\rhs_c_cti_indep\data\infantry\rvmats\clothing.rvmat"
+		};
+		class Wounds
+		{
 		};
 	};
 	class rhs_g_uniform4_base: rhs_g_uniform1_base
@@ -1107,6 +1278,9 @@ class CfgVehicles
 		{
 			"\rhsafrf\addons\rhs_c_cti_indep\data\infantry\rvmats\clothing.rvmat"
 		};
+		class Wounds
+		{
+		};
 	};
 	class rhs_g_uniform5_base: rhs_g_uniform1_base
 	{
@@ -1114,6 +1288,9 @@ class CfgVehicles
 		hiddenSelectionsMaterials[]=
 		{
 			"\rhsafrf\addons\rhs_c_cti_indep\data\infantry\rvmats\clothing.rvmat"
+		};
+		class Wounds
+		{
 		};
 	};
 };

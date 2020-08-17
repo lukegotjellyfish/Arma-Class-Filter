@@ -97,6 +97,15 @@ class CfgVehicles
 			};
 		};
 	};
+	class StaticMGWeapon: StaticWeapon
+	{
+	};
+	class StaticATWeapon: StaticWeapon
+	{
+	};
+	class StaticAAWeapon: StaticWeapon
+	{
+	};
 	class StaticCannon: StaticWeapon
 	{
 		class ViewOptics;
@@ -104,6 +113,9 @@ class CfgVehicles
 	class StaticGrenadeLauncher: StaticWeapon
 	{
 		class ViewOptics;
+	};
+	class StaticMortar: StaticWeapon
+	{
 	};
 	class rhs_m2staticmg_base: StaticMGWeapon
 	{
@@ -117,6 +129,9 @@ class CfgVehicles
 				passThrough=1;
 				name="telo";
 			};
+		};
+		class Damage
+		{
 		};
 		class ViewPilot: ViewPilot
 		{
@@ -149,6 +164,13 @@ class CfgVehicles
 				weapons[]=
 				{
 					"RHS_M2"
+				};
+				magazines[]=
+				{
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red"
 				};
 			};
 		};
@@ -265,6 +287,9 @@ class CfgVehicles
 				name="telo";
 			};
 		};
+		class Damage
+		{
+		};
 		class ViewPilot: ViewPilot
 		{
 			initAngleX=-0;
@@ -294,6 +319,13 @@ class CfgVehicles
 				weapons[]=
 				{
 					"RHS_MK19"
+				};
+				magazines[]=
+				{
+					"RHS_48Rnd_40mm_MK19_M430A1",
+					"RHS_48Rnd_40mm_MK19_M430A1",
+					"RHS_48Rnd_40mm_MK19_M430A1",
+					"RHS_48Rnd_40mm_MK19_M430A1"
 				};
 			};
 		};
@@ -373,6 +405,9 @@ class CfgVehicles
 			minMoveZ=-0.075000003;
 			maxMoveZ=0.1;
 		};
+		class Damage
+		{
+		};
 		class Turrets: Turrets
 		{
 			class MainTurret: MainTurret
@@ -389,6 +424,13 @@ class CfgVehicles
 				weapons[]=
 				{
 					"Rhs_weap_TOW_Launcher_static"
+				};
+				magazines[]=
+				{
+					"rhs_mag_TOW2A",
+					"rhs_mag_TOW2A",
+					"rhs_mag_TOW2A",
+					"rhs_mag_TOW2bb"
 				};
 				animationSourceElevation="ObsElevation";
 				maxHorizontalRotSpeed=0.25;
@@ -487,6 +529,9 @@ class CfgVehicles
 			"rhsusf_usmc_marpat_wd_rifleman"
 		};
 	};
+	class RHS_Stinger_AA_pod_Base: StaticAAWeapon
+	{
+		threat[]={0.30000001,0.30000001,1};
 		mapsize=2.8;
 		icon="\rhsusf\addons\rhsusf_heavyweapons\Data\map_ico\icomap_FIM92_static_CA.paa";
 		memoryPointMissile[]=
@@ -507,6 +552,9 @@ class CfgVehicles
 				passThrough=1;
 				name="telo";
 			};
+		};
+		class Damage
+		{
 		};
 		class ViewPilot: ViewPilot
 		{
@@ -539,6 +587,14 @@ class CfgVehicles
 				{
 					"Rhs_weap_stinger_Launcher_static"
 				};
+				magazines[]=
+				{
+					"Rhs_mag_2Rnd_stinger",
+					"Rhs_mag_2Rnd_stinger",
+					"Rhs_mag_2Rnd_stinger",
+					"Rhs_mag_2Rnd_stinger",
+					"Rhs_mag_2Rnd_stinger"
+				};
 				minTurn=-180;
 				maxTurn=180;
 				minelev=-10;
@@ -558,6 +614,9 @@ class CfgVehicles
 					minfov=0.046999998;
 				};
 			};
+		};
+		class EventHandlers: EventHandlers
+		{
 		};
 	};
 	class RHS_Stinger_AA_pod_D: RHS_Stinger_AA_pod_Base
@@ -621,6 +680,10 @@ class CfgVehicles
 				{
 					"rhs_mortar_81mm"
 				};
+				magazines[]=
+				{
+					"rhs_12Rnd_m821_HE"
+				};
 				elevationMode=3;
 				initCamElev=0;
 				minCamElev=-35;
@@ -632,7 +695,13 @@ class CfgVehicles
 				minTurn=-180;
 				maxTurn=180;
 				usePiP=2;
+				class Hitpoints
+				{
+				};
 			};
+		};
+		class Damage
+		{
 		};
 		htMin=1;
 		htMax=480;
@@ -790,6 +859,9 @@ class CfgVehicles
 				name="telo";
 			};
 		};
+		class Damage
+		{
+		};
 		class Turrets: Turrets
 		{
 			class MainTurret: MainTurret
@@ -797,6 +869,12 @@ class CfgVehicles
 				weapons[]=
 				{
 					"RHS_weap_M119"
+				};
+				magazines[]=
+				{
+					"RHS_mag_m1_he_12",
+					"rhs_mag_m314_ilum_4",
+					"rhs_mag_m60a2_smoke_4"
 				};
 				gunnerOpticsEffect[]=
 				{
@@ -824,6 +902,9 @@ class CfgVehicles
 		mfMax=0;
 		mFact=1;
 		tBody=450;
+		class EventHandlers: EventHandlers
+		{
+		};
 		class Attributes
 		{
 			class rhs_caseDeleteTime

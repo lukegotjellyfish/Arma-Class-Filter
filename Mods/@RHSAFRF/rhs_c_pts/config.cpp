@@ -42,6 +42,9 @@ class CfgVehicles
 	class Tank: LandVehicle
 	{
 		class NewTurret;
+		class Sounds;
+		class HitPoints;
+	};
 	class Tank_F: Tank
 	{
 		class Turrets
@@ -50,6 +53,9 @@ class CfgVehicles
 			{
 				class Turrets
 				{
+					class CommanderOptics;
+				};
+			};
 		};
 		class CommanderOptics;
 		class AnimationSources;
@@ -61,11 +67,20 @@ class CfgVehicles
 		{
 			class HitHull;
 			class HitEngine;
+			class HitLTrack;
+			class HitRTrack;
+		};
 		class Sounds: Sounds
 		{
+			class Engine;
+			class Movement;
+		};
 	};
 	class APC_Tracked_02_base_F: Tank_F
 	{
+		class EventHandlers;
+		class Components;
+	};
 	class rhs_pts_base: APC_Tracked_02_base_F
 	{
 		rhs_decalParameters[]=
@@ -206,6 +221,9 @@ class CfgVehicles
 		};
 		class Wheels
 		{
+			class L2
+			{
+				suspTravelDirection[]={-0.125,-1,0};
 				side="left";
 				width=0.2;
 				steering=0;
@@ -231,6 +249,21 @@ class CfgVehicles
 					{0.64999998,0.69999999}
 				};
 			};
+			class L3: L2
+			{
+			};
+			class L4: L2
+			{
+			};
+			class L5: L2
+			{
+			};
+			class L6: L2
+			{
+			};
+			class L7: L2
+			{
+			};
 			class L9: L2
 			{
 				maxDroop=0;
@@ -241,7 +274,25 @@ class CfgVehicles
 				maxDroop=0;
 				maxCompression=0;
 			};
+			class R2: L2
+			{
+				suspTravelDirection[]={0.125,-1,0};
 				side="right";
+			};
+			class R3: R2
+			{
+			};
+			class R4: R2
+			{
+			};
+			class R5: R2
+			{
+			};
+			class R6: R2
+			{
+			};
+			class R7: R2
+			{
 			};
 			class R9: R2
 			{
@@ -1066,6 +1117,9 @@ class CfgVehicles
 				radius=0.30000001;
 			};
 		};
+		class Turrets: Turrets
+		{
+		};
 		class Attributes
 		{
 			class rhs_decalNumber_type
@@ -1143,6 +1197,9 @@ class CfgVehicles
 				property="rhs_attachCargo";
 				expression="if(_value == 1)then{[_this] spawn rhs_fnc_pts_cargoAttach}else{[_this] call rhs_fnc_pts_cargoDetach};";
 			};
+		};
+		class Damage
+		{
 		};
 		class Exhausts
 		{
@@ -1246,5 +1303,8 @@ class CfgVehicles
 				};
 			};
 		};
+	};
+	class rhs_pts_vmf: rhs_pts_base
+	{
 	};
 };

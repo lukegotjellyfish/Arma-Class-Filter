@@ -37,9 +37,15 @@ class CfgVehicles
 	class LandVehicle;
 	class Car: LandVehicle
 	{
+		class NewTurret;
+		class ViewOptics;
+	};
 	class Car_F: Car
 	{
 		class AnimationSources;
+		class HitPoints;
+		class EventHandlers;
+	};
 	class Truck_F: Car_F
 	{
 		class ViewPilot;
@@ -58,11 +64,20 @@ class CfgVehicles
 			class HitGlass2;
 			class HitGlass3;
 			class HitGlass4;
+			class HitGlass5;
+			class HitGlass6;
+		};
 		class AnimationSources;
+	};
+	class Truck_01_base_F: Truck_F
+	{
 	};
 	class rhsusf_HEMTT_A4_base: Truck_01_base_F
 	{
 		side=1;
+		class Turrets
+		{
+		};
 		class Exhausts
 		{
 			class Exhaust1
@@ -249,6 +264,9 @@ class CfgVehicles
 		};
 		hiddenSelections[]={};
 		hiddenSelectionsTextures[]={};
+		class Damage
+		{
+		};
 		class EventHandlers: EventHandlers
 		{
 			init="if (local (_this select 0)) then {[(_this select 0), """", [], false] call bis_fnc_initVehicle;};";
@@ -298,12 +316,24 @@ class CfgVehicles
 		accuracy=0.5;
 		class textureSources
 		{
+			class rhs_woodland
+			{
+			};
+			class rhs_desert: rhs_woodland
+			{
+			};
 		};
 	};
 	class rhsusf_M977A4_BKIT_usarmy_wd: rhsusf_M977A4_usarmy_wd
 	{
 		class textureSources: textureSources
 		{
+			class rhs_woodland: rhs_woodland
+			{
+			};
+			class rhs_desert: rhs_desert
+			{
+			};
 		};
 	};
 	class rhsusf_M977A4_BKIT_M2_usarmy_wd: rhsusf_M977A4_usarmy_wd
@@ -312,6 +342,12 @@ class CfgVehicles
 		maxFordingDepth=0;
 		class textureSources: textureSources
 		{
+			class rhs_woodland: rhs_woodland
+			{
+			};
+			class rhs_desert: rhs_desert
+			{
+			};
 		};
 		animationList[]=
 		{
@@ -374,6 +410,13 @@ class CfgVehicles
 				{
 					"RHS_M2"
 				};
+				magazines[]=
+				{
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red"
+				};
 				minElev=-10;
 				maxElev=40;
 				ejectDeadGunner=0;
@@ -384,6 +427,9 @@ class CfgVehicles
 					initFov=0.69999999;
 					minFov=0.25;
 					maxFov=1.1;
+				};
+				class ViewGunner: ViewOptics
+				{
 				};
 			};
 		};
@@ -526,6 +572,12 @@ class CfgVehicles
 		};
 		class textureSources: textureSources
 		{
+			class rhs_woodland: rhs_woodland
+			{
+			};
+			class rhs_desert: rhs_desert
+			{
+			};
 		};
 	};
 	class rhsusf_M978A4_BKIT_usarmy_wd: rhsusf_M977A4_usarmy_wd
@@ -549,6 +601,45 @@ class CfgVehicles
 		};
 		class textureSources: textureSources
 		{
+			class rhs_woodland: rhs_woodland
+			{
+			};
+			class rhs_desert: rhs_desert
+			{
+			};
 		};
+	};
+	class rhsusf_M977A4_usarmy_d: rhsusf_M977A4_usarmy_wd
+	{
+	};
+	class rhsusf_M977A4_BKIT_usarmy_d: rhsusf_M977A4_BKIT_usarmy_wd
+	{
+	};
+	class rhsusf_M977A4_BKIT_M2_usarmy_d: rhsusf_M977A4_BKIT_M2_usarmy_wd
+	{
+	};
+	class rhsusf_M977A4_REPAIR_usarmy_d: rhsusf_M977A4_REPAIR_usarmy_wd
+	{
+	};
+	class rhsusf_M977A4_REPAIR_BKIT_usarmy_d: rhsusf_M977A4_REPAIR_BKIT_usarmy_wd
+	{
+	};
+	class rhsusf_M977A4_REPAIR_BKIT_M2_usarmy_d: rhsusf_M977A4_REPAIR_BKIT_M2_usarmy_wd
+	{
+	};
+	class rhsusf_M977A4_AMMO_usarmy_d: rhsusf_M977A4_AMMO_usarmy_wd
+	{
+	};
+	class rhsusf_M977A4_AMMO_BKIT_usarmy_d: rhsusf_M977A4_AMMO_BKIT_usarmy_wd
+	{
+	};
+	class rhsusf_M977A4_AMMO_BKIT_M2_usarmy_d: rhsusf_M977A4_AMMO_BKIT_M2_usarmy_wd
+	{
+	};
+	class rhsusf_M978A4_usarmy_d: rhsusf_M978A4_usarmy_wd
+	{
+	};
+	class rhsusf_M978A4_BKIT_usarmy_d: rhsusf_M978A4_BKIT_usarmy_wd
+	{
 	};
 };

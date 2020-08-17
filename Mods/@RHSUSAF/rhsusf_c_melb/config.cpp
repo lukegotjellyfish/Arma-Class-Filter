@@ -15,6 +15,9 @@ class CfgPatches
 		magazines[]={};
 		name="MELB";
 	};
+	class MELB_UI
+	{
+		units[]={};
 		weapons[]={};
 		requiredAddons[]={};
 	};
@@ -102,6 +105,7 @@ class CfgFunctions
 };
 class RscControlsGroup;
 class RscText;
+class RangeText: RscText;  //found empty after stripping
 class RscPicture;
 class RscOpticsText;
 class RscIGProgress;
@@ -118,6 +122,9 @@ class CfgVehicles
 	class Helicopter;
 	class Helicopter_Base_F: Helicopter
 	{
+		class Turrets;
+		class HitPoints;
+	};
 	class Helicopter_Base_H: Helicopter_Base_F
 	{
 		class EventHandlers;
@@ -137,9 +144,15 @@ class CfgVehicles
 			class HitGlass2;
 			class HitGlass3;
 			class HitGlass4;
+			class HitGlass5;
+			class HitGlass6;
+		};
 		class CargoTurret;
 		class AnimationSources;
 		class ViewOptics;
+		class RotorLibHelicopterProperties;
+		class Components;
+	};
 	class RHS_MELB_base: Helicopter_Base_H
 	{
 		side=1;
@@ -188,6 +201,22 @@ class CfgVehicles
 		weapons[]=
 		{
 			"rhsusf_weap_LWIRCM"
+		};
+		magazines[]=
+		{
+			"rhsusf_mag_LWIRCM",
+			"rhsusf_mag_LWIRCM",
+			"rhsusf_mag_LWIRCM",
+			"rhsusf_mag_LWIRCM",
+			"rhsusf_mag_LWIRCM",
+			"rhsusf_mag_LWIRCM",
+			"rhsusf_mag_LWIRCM",
+			"rhsusf_mag_LWIRCM",
+			"rhsusf_mag_LWIRCM",
+			"rhsusf_mag_LWIRCM"
+		};
+		class MFD
+		{
 		};
 		class ViewOptics: ViewOptics
 		{
@@ -986,6 +1015,9 @@ class CfgVehicles
 		};
 		class SoundsExt
 		{
+			class SoundEvents
+			{
+			};
 			class Sounds
 			{
 				class EngineExt
@@ -1395,6 +1427,9 @@ class CfgVehicles
 				};
 			};
 		};
+		class pilotCamera
+		{
+		};
 		class Exhausts
 		{
 			class Exhaust01
@@ -1517,6 +1552,9 @@ class CfgVehicles
 				explosionShielding=0.1;
 				radius=0.69999999;
 			};
+		};
+		class Damage
+		{
 		};
 		class Attributes
 		{
@@ -1691,6 +1729,9 @@ class CfgVehicles
 		};
 		class NVGMarkers
 		{
+			class IR_Position
+			{
+				color[]={0.1,0.1,0.1};
 				ambient[]={0.0099999998,0.0099999998,0.0099999998};
 				brightness=0.15000001;
 				name="IR_Position";
@@ -1727,6 +1768,21 @@ class CfgVehicles
 					"rhs_weap_laserDesignator_AI",
 					"rhs_weap_fcs_ah64",
 					"rhsusf_weap_LWIRCM"
+				};
+				magazines[]=
+				{
+					"rhsusf_mag_LWIRCM",
+					"rhsusf_mag_LWIRCM",
+					"rhsusf_mag_LWIRCM",
+					"rhsusf_mag_LWIRCM",
+					"rhsusf_mag_LWIRCM",
+					"rhsusf_mag_LWIRCM",
+					"rhsusf_mag_LWIRCM",
+					"rhsusf_mag_LWIRCM",
+					"rhsusf_mag_LWIRCM",
+					"rhsusf_mag_LWIRCM",
+					"rhs_laserfcsmag",
+					"rhs_LaserMag_ai"
 				};
 				primaryGunner=1;
 				usePreciseGetInAction=1;
@@ -1807,6 +1863,15 @@ class CfgVehicles
 				};
 				class Components
 				{
+					class VehicleSystemsDisplayManagerComponentLeft: VehicleSystemsTemplateLeftPilot
+					{
+					};
+					class VehicleSystemsDisplayManagerComponentRight: VehicleSystemsTemplateRightPilot
+					{
+					};
+				};
+				class Hitpoints
+				{
 				};
 			};
 		};
@@ -1823,7 +1888,22 @@ class CfgVehicles
 			{
 				class Components
 				{
+					class DataLinkSensorComponent: SensorTemplateDataLink
+					{
+					};
+					class PassiveRadarSensorComponent: SensorTemplatePassiveRadar
+					{
+					};
+					class LaserSensorComponent: SensorTemplateLaser
+					{
+					};
 				};
+			};
+			class VehicleSystemsDisplayManagerComponentLeft: VehicleSystemsTemplateLeftPilot
+			{
+			};
+			class VehicleSystemsDisplayManagerComponentRight: VehicleSystemsTemplateRightPilot
+			{
 			};
 		};
 	};
@@ -1837,6 +1917,9 @@ class CfgVehicles
 		threat[]={0.60000002,0.40000001,0.1};
 		class Turrets: Turrets
 		{
+			class CopilotTurret: CopilotTurret
+			{
+			};
 			class CargoTurret_02: CargoTurret_01
 			{
 				proxyIndex=2;
@@ -1846,6 +1929,21 @@ class CfgVehicles
 		};
 		class Attributes: Attributes
 		{
+			class rhs_MELB_TailNumber: rhs_MELB_TailNumber
+			{
+			};
+			class rhs_MELB_NoFear: rhs_MELB_NoFear
+			{
+			};
+			class rhs_MELB_SN_Nose: rhs_MELB_SN_Nose
+			{
+			};
+			class rhs_MELB_clan: rhs_MELB_clan
+			{
+			};
+			class MELB_ToggleBoy: MELB_ToggleBoy
+			{
+			};
 		};
 	};
 	class RHS_MELB_AH6M: RHS_MELB_base
@@ -1875,13 +1973,44 @@ class CfgVehicles
 			"rhs_weap_MASTERSAFE",
 			"rhsusf_weap_LWIRCM"
 		};
+		magazines[]=
+		{
+			"rhsusf_mag_LWIRCM",
+			"rhsusf_mag_LWIRCM",
+			"rhsusf_mag_LWIRCM",
+			"rhsusf_mag_LWIRCM",
+			"rhsusf_mag_LWIRCM",
+			"rhsusf_mag_LWIRCM",
+			"rhsusf_mag_LWIRCM",
+			"rhsusf_mag_LWIRCM",
+			"rhsusf_mag_LWIRCM",
+			"rhsusf_mag_LWIRCM"
+		};
 		threat[]={0.60000002,0.40000001,0.1};
 		cost=1000000;
 		class Turrets: Turrets
 		{
+			class CopilotTurret: CopilotTurret
+			{
+			};
 		};
 		class Attributes: Attributes
 		{
+			class rhs_MELB_TailNumber: rhs_MELB_TailNumber
+			{
+			};
+			class rhs_MELB_SGDM: rhs_MELB_SGDM
+			{
+			};
+			class rhs_MELB_SN_Nose: rhs_MELB_SN_Nose
+			{
+			};
+			class rhs_MELB_clan: rhs_MELB_clan
+			{
+			};
+			class MELB_ToggleBoy: MELB_ToggleBoy
+			{
+			};
 			class rhs_ExtLongL
 			{
 				tooltip="Extended weapon pylon on the port side \nSome clipping occurs with GAU-19";
@@ -1931,6 +2060,9 @@ class CfgVehicles
 						turret[]={};
 						hitpoint="HitPylon2";
 					};
+					class pylon3: pylon2
+					{
+						UIposition[]={0.103,0.30000001};
 						mirroredMissilePos=2;
 						attachment="rhs_mag_m134_pylon_3000";
 						turret[]={};
@@ -2090,6 +2222,9 @@ class CfgVehicles
 		};
 		class Turrets: Turrets
 		{
+			class CopilotTurret: CopilotTurret
+			{
+			};
 			class CargoTurret_03: CargoTurret
 			{
 				proxyIndex=3;
@@ -2101,6 +2236,9 @@ class CfgVehicles
 				ejectDeadGunner=0;
 				playerPosition=4;
 				soundAttenuationTurret="";
+				class Hitpoints
+				{
+				};
 			};
 			class CargoTurret_04: CargoTurret_03
 			{
@@ -2115,28 +2253,55 @@ class CfgVehicles
 				minElev=-45;
 				maxTurn=95;
 				minTurn=-95;
+				class dynamicViewLimits
+				{
+					CargoTurret_03[]={-30,95};
 					CargoTurret_07[]={-95,50};
 				};
 			};
 			class CargoTurret_06: CargoTurret_05
 			{
 				proxyIndex=6;
+				class dynamicViewLimits
+				{
+					CargoTurret_04[]={-95,30};
 					CargoTurret_08[]={-50,95};
 				};
 			};
 			class CargoTurret_07: CargoTurret_06
 			{
 				proxyIndex=7;
+				class dynamicViewLimits
+				{
+					CargoTurret_05[]={-50,95};
 				};
 			};
 			class CargoTurret_08: CargoTurret_07
 			{
 				proxyIndex=8;
+				class dynamicViewLimits
+				{
+					CargoTurret_06[]={-95,50};
 				};
 			};
 		};
 		class Attributes: Attributes
 		{
+			class rhs_MELB_TailNumber: rhs_MELB_TailNumber
+			{
+			};
+			class rhs_MELB_NoFear: rhs_MELB_NoFear
+			{
+			};
+			class rhs_MELB_SN_Nose: rhs_MELB_SN_Nose
+			{
+			};
+			class rhs_MELB_clan: rhs_MELB_clan
+			{
+			};
+			class MELB_ToggleBoy: MELB_ToggleBoy
+			{
+			};
 		};
 	};
 };

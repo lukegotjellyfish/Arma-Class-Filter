@@ -67,12 +67,18 @@ class CfgVehicles
 	class LandVehicle;
 	class Car: LandVehicle
 	{
+		class HitPoints;
+		class NewTurret;
+	};
 	class Car_F: Car
 	{
 		class Turrets
 		{
 			class MainTurret: NewTurret
 			{
+				class ViewOptics;
+			};
+		};
 		class HitPoints
 		{
 			class HitLFWheel;
@@ -84,6 +90,12 @@ class CfgVehicles
 			class HitGlass2;
 			class HitGlass3;
 			class HitGlass4;
+			class HitGlass5;
+			class HitGlass6;
+		};
+		class EventHandlers;
+		class AnimationSources;
+	};
 	class Truck_F: Car_F
 	{
 		class ViewPilot;
@@ -95,18 +107,27 @@ class CfgVehicles
 			class HitLF2Wheel;
 			class HitRFWheel;
 			class HitRBWheel;
+			class HitRMWheel;
+			class HitRF2Wheel;
+		};
 		class AnimationSources;
 	};
 	class Truck_02_base_F: Truck_F
 	{
 		class HitPoints: HitPoints
 		{
+			class HitFuel;
+			class HitEngine;
+		};
 	};
 	class O_Truck_02_covered_F: Truck_02_base_F
 	{
 		class CargoTurret;
 		class Turrets: Turrets
 		{
+			class CargoTurret_02: CargoTurret_01
+			{
+			};
 		};
 		class EventHandlers;
 	};
@@ -282,6 +303,9 @@ class CfgVehicles
 		canHideDriver=0;
 		driverLeftLegAnimName="pedalL";
 		driverRightLegAnimName="pedalR";
+		class Damage
+		{
+		};
 		armorLights=0.0099999998;
 		class HitPoints: HitPoints
 		{
@@ -626,6 +650,9 @@ class CfgVehicles
 				enabledByAnimationSource="cover_end_hide";
 				forceHideGunner=1;
 				commanding=-2;
+				class Hitpoints
+				{
+				};
 			};
 			class CargoTurret_03: CargoTurret_01
 			{
@@ -678,6 +705,12 @@ class CfgVehicles
 		hideProxyInCombat=1;
 		class Turrets: Turrets
 		{
+			class CargoTurret_02: CargoTurret_02
+			{
+			};
+			class CargoTurret_03: CargoTurret_03
+			{
+			};
 			class CargoTurret_04: CargoTurret_02
 			{
 				animationSourceHatch="turnout1";
@@ -783,6 +816,9 @@ class CfgVehicles
 	{
 		class Turrets: Turrets
 		{
+			class CargoTurret_03: CargoTurret_03
+			{
+			};
 		};
 		class VehicleTransport
 		{
@@ -861,6 +897,9 @@ class CfgVehicles
 	{
 		class VehicleTransport: VehicleTransport
 		{
+			class Cargo: Cargo
+			{
+			};
 			class Carrier: Carrier
 			{
 				disableHeightLimit=0;

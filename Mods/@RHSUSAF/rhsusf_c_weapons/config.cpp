@@ -532,6 +532,12 @@ class CfgPatches
 			"rhsusf_bino_m24",
 			"rhsusf_bino_m24_ARD"
 		};
+		magazines[]=
+		{
+			"rhs_200rnd_556x45_M_SAW",
+			"rhs_200rnd_556x45_T_SAW",
+			"rhs_200rnd_556x45_B_SAW"
+		};
 		name="RHSUSF Weapons & Accessories";
 	};
 };
@@ -574,6 +580,9 @@ class CfgCloudlets
 	class Default;
 	class RocketBackfireRPGNT;
 	class RocketBacksmokeRPGNT;
+	class RHS_RocketBackfireRPGNT: RocketBackfireRPGNT
+	{
+	};
 	class RHS_Fired_M136HEAT: RHS_RocketBackfireRPGNT
 	{
 		interval=0.26499999;
@@ -2505,6 +2514,9 @@ class CfgCloudlets
 };
 class CfgLights
 {
+	class RHSUSF_flashbang_light
+	{
+		color[]={11,11,9};
 		ambient[]={0.40000001,0.44999999,0.44999999};
 		brightness=1;
 		intensity=1090;
@@ -2520,6 +2532,9 @@ class CfgLights
 			hardLimitEnd=4;
 		};
 	};
+	class RHSUSF_ANM14_Light
+	{
+		diffuse[]={1,0.55000001,0.34999999};
 		color[]={1,0.55000001,0.34999999};
 		ambient[]={0.0060000001,0.0060000001,0.003,0};
 		brightness=100;
@@ -2542,6 +2557,9 @@ class CfgLights
 		};
 		position[]={0,0.30000001,0};
 	};
+	class RHSUSF_ANM14_SparksLight
+	{
+		diffuse[]={0.93699998,0.80000001,0.69999999};
 		color[]={0.93699998,0.80000001,0.69999999};
 		ambient[]={0.93699998,0.80000001,0.69999999};
 		brightness="10 + random 40";
@@ -2696,6 +2714,9 @@ class RHSUSF_12gExplosion
 };
 class RHSUSF_flashbang_Crater
 {
+	class Smoke1
+	{
+		position[]={0,0,0};
 		simulation="particles";
 		intensity=0.5;
 		interval=1;
@@ -2704,16 +2725,25 @@ class RHSUSF_flashbang_Crater
 };
 class RHSUSF_flashbang_10
 {
+	class Smoke1
+	{
+		position[]={0,0,0};
 		simulation="particles";
 		intensity=0.5;
 		interval=1;
 		lifeTime=1;
 	};
+	class Smoke2: Smoke1
+	{
+		position[]={0,0,0};
 		simulation="particles";
 		intensity=0.5;
 		interval=1;
 		lifeTime=1;
 	};
+	class Light
+	{
+		position[]={0,0,0};
 		simulation="light";
 		intensity=1;
 		interval=1;
@@ -2722,12 +2752,21 @@ class RHSUSF_flashbang_10
 };
 class RHSUSF_flashbang_15: RHSUSF_flashbang_10
 {
+	class Smoke1: Smoke1
+	{
+	};
 };
 class RHSUSF_flashbang_20: RHSUSF_flashbang_10
 {
+	class Smoke1: Smoke1
+	{
+	};
 };
 class RHS_CS_Grenade
 {
+	class Smoke1
+	{
+		position[]={0,0,0};
 		simulation="particles";
 		intensity=0.5;
 		interval=1;
@@ -2893,12 +2932,21 @@ class RHS_Fired_M136HEAT
 };
 class RHS_Fired_M136HEDP: RHS_Fired_M136HEAT
 {
+	class Script: Script
+	{
+	};
 };
 class RHS_Fired_M136HP: RHS_Fired_M136HEAT
 {
+	class Script: Script
+	{
+	};
 };
 class RHS_Fired_M72A7: RHS_Fired_M136HEAT
 {
+	class Script: Script
+	{
+	};
 };
 class RHSUSF_SMAW_backblast
 {
@@ -2949,6 +2997,9 @@ class RHSUSF_SMAW_cartrige
 };
 class RHS_m397_hit
 {
+	class Handler
+	{
+		position[]={0,0,0};
 		simulation="particles";
 		intensity=0.5;
 		interval=1;
@@ -3518,6 +3569,10 @@ class asdg_MuzzleSlot_9MM: asdg_MuzzleSlot
 		rhsusf_acc_omega9k=1;
 	};
 };
+class rhs_western_rifle_scopes_slot_short: asdg_OpticRail1913_short;  //found empty after stripping
+class rhs_western_rifle_scopes_slot_long: asdg_OpticRail1913_long;  //found empty after stripping
+class rhs_western_rifle_underbarrel_slot_bis: UnderBarrelSlot;  //found empty after stripping
+class rhs_rifle_gripod_slot: UnderBarrelSlot;  //found empty after stripping
 	iconScale=1;
 	iconPicture="\A3\Weapons_F\Data\clear_empty.paa";
 	iconPinPoint="Left";
@@ -3577,6 +3632,9 @@ class rhs_UnderSlot_m240: asdg_SlotInfo
 	linkProxy="\a3\data_f_mark\Proxies\Weapon_Slots\UNDERBARREL";
 	iconPicture="\A3\Weapons_F\Data\clear_empty.paa";
 	iconPinpoint="Bottom";
+	class compatibleItems
+	{
+	};
 };
 class rhs_western_m14_underbarrel_slot: UnderBarrelSlot
 {
@@ -3586,6 +3644,7 @@ class rhs_western_m14_underbarrel_slot: UnderBarrelSlot
 		rhsusf_acc_harris_swivel=1;
 	};
 };
+class rhs_western_rifle_muzzle_slot: asdg_MuzzleSlot_556;  //found empty after stripping
 	iconScale=1;
 	iconPicture="\A3\Weapons_F\Data\clear_empty.paa";
 	iconPinPoint="Left";
@@ -3594,10 +3653,15 @@ class rhs_western_m14_underbarrel_slot: UnderBarrelSlot
 		muzzle_snds_M=0;
 	};
 };
+class rhs_western_762rifle_muzzle_slot: asdg_MuzzleSlot_762;  //found empty after stripping
 	iconScale=1;
 	iconPicture="\A3\Weapons_F\Data\clear_empty.paa";
 	iconPinPoint="Left";
+	class compatibleItems: compatibleItems
+	{
+	};
 };
+class rhs_western_9mmpistol_muzzle_slot: asdg_MuzzleSlot_9MM;  //found empty after stripping
 	iconScale=1;
 	iconPicture="\A3\Weapons_F\Data\clear_empty.paa";
 	iconPinPoint="Left";
@@ -3606,10 +3670,15 @@ class rhs_western_m14_underbarrel_slot: UnderBarrelSlot
 		muzzle_snds_L=0;
 	};
 };
+class rhs_western_rifle_underbarrel_slot: asdg_UnderSlot;  //found empty after stripping
 	iconScale=1;
 	iconPicture="\A3\Weapons_F\Data\clear_empty.paa";
 	iconPinPoint="Left";
+	class compatibleItems: compatibleItems
+	{
+	};
 };
+class rhs_western_46mmsmg_muzzle_slot: asdg_MuzzleSlot;  //found empty after stripping
 	iconScale=1;
 	iconPicture="\A3\Weapons_F\Data\clear_empty.paa";
 	iconPinPoint="Left";
@@ -3622,6 +3691,7 @@ class rhs_western_m14_underbarrel_slot: UnderBarrelSlot
 		rhsusf_acc_rotex_mp7_aor1=1;
 	};
 };
+class asdg_MuzzleSlot_762MG: asdg_MuzzleSlot;  //found empty after stripping
 	iconScale=1;
 	iconPicture="\A3\Weapons_F\Data\clear_empty.paa";
 	iconPinPoint="Left";
@@ -3631,6 +3701,7 @@ class rhs_western_m14_underbarrel_slot: UnderBarrelSlot
 		rhsusf_acc_ARDEC_M240=1;
 	};
 };
+class rhs_western_m24_muzzle_slot: asdg_MuzzleSlot;  //found empty after stripping
 	iconScale=1;
 	iconPicture="\A3\Weapons_F\Data\clear_empty.paa";
 	iconPinPoint="Left";
@@ -3645,6 +3716,7 @@ class rhs_western_m14_underbarrel_slot: UnderBarrelSlot
 		rhsusf_acc_m24_muzzlehider_wd=1;
 	};
 };
+class rhs_western_m14_muzzle_slot: asdg_MuzzleSlot_762;  //found empty after stripping
 	iconScale=1;
 	iconPicture="\A3\Weapons_F\Data\clear_empty.paa";
 	iconPinPoint="Left";
@@ -3656,6 +3728,7 @@ class rhs_western_m14_underbarrel_slot: UnderBarrelSlot
 		rhsusf_acc_aac_m14dcqd_silencer_wd=1;
 	};
 };
+class rhs_western_rifle_scopes_slot: CowsSlot;  //found empty after stripping
 	iconScale=1;
 	iconPicture="\A3\Weapons_F\Data\clear_empty.paa";
 	iconPinPoint="Left";
@@ -3715,10 +3788,12 @@ class rhs_western_m14_underbarrel_slot: UnderBarrelSlot
 		"rhsusf_acc_SpecterDR_OD_3D"
 	};
 };
+class rhs_western_rifle_laser_slot_top: asdg_FrontSideRail;  //found empty after stripping
 	iconScale=1;
 	iconPicture="\A3\Weapons_F\Data\clear_empty.paa";
 	iconPinPoint="Left";
 };
+class rhs_western_rifle_laser_slot: rhs_western_rifle_laser_slot_top;  //found empty after stripping
 	iconScale=1;
 	iconPicture="\A3\Weapons_F\Data\clear_empty.paa";
 	iconPinPoint="Left";
@@ -3738,6 +3813,7 @@ class rhs_western_m14_underbarrel_slot: UnderBarrelSlot
 		rhsusf_acc_anpeq16a_light_top_h=0;
 	};
 };
+class rhs_western_pistol_laser_slot: asdg_PistolUnderRail;  //found empty after stripping
 class rhs_optics_debug: rhs_rifle_gripod_slot
 {
 	class compatibleItems
@@ -3875,6 +3951,9 @@ class rhs_grip_debug: rhs_rifle_gripod_slot
 };
 class rhs_side_debug: asdg_FrontSideRail
 {
+	class compatibleItems
+	{
+	};
 };
 class rhs_muzzle_debug: asdg_MuzzleSlot
 {
@@ -3924,56 +4003,101 @@ class rhs_bipod_debug: asdg_MuzzleSlot
 class CfgRecoils
 {
 	class recoil_default;
+	class rhs_recoil_m249: recoil_default
+	{
+		muzzleOuter[]={0.2,0.60000002,0.25,0.1};
 		muzzleInner[]={0,0,0.1,0.1};
 		kickBack[]={0.0049999999,0.02};
 		permanent=0.02;
 		temporary=0.02;
 	};
+	class rhs_recoil_m240: recoil_default
+	{
+		muzzleOuter[]={0.5,1,0.69999999,0.30000001};
 		muzzleInner[]={0,0,0.15000001,0.15000001};
 		kickBack[]={0.02,0.079999998};
 		permanent=0.039999999;
 		temporary=0.0049999999;
 	};
+	class rhs_recoil_m4: recoil_default
+	{
+		muzzleOuter[]={0.30000001,0.80000001,0.40000001,0.30000001};
 		kickBack[]={0.02,0.039999999};
 		temporary=0.0099999998;
 	};
+	class rhs_recoil_mk18: recoil_default
+	{
+		muzzleOuter[]={0.30000001,1,0.40000001,0.30000001};
 		kickBack[]={0.02,0.039999999};
 		temporary=0.0099999998;
 	};
+	class rhs_recoil_m27: recoil_default
+	{
+		muzzleOuter[]={0.30000001,0.80000001,0.40000001,0.30000001};
 		kickBack[]={0.02,0.039999999};
 		temporary=0.0099999998;
 	};
+	class rhs_recoil_mk18145: recoil_default
+	{
+		muzzleOuter[]={0.30000001,0.80000001,0.40000001,0.30000001};
 		kickBack[]={0.02,0.039999999};
 		temporary=0.0099999998;
 	};
+	class recoil_saw: recoil_default
+	{
+		muzzleOuter[]={0.2,0.60000002,0.2,0.2};
 		kickBack[]={0.0049999999,0.02};
 		temporary=0.0049999999;
 	};
+	class rhs_weap_smaw_recoil: recoil_default
+	{
+		muzzleOuter[]={0.30000001,1.5,0.69999999,1.2};
 		kickBack[]={0.02,0.039999999};
 		temporary=0.015;
 	};
+	class rhs_weap_smaw_SR_recoil: recoil_default
+	{
+		muzzleOuter[]={0.15000001,1,0.34999999,0.80000001};
 		kickBack[]={0.0099999998,0.02};
 		temporary=0.0074999998;
 	};
+	class rhs_weap_scarh_recoil: recoil_default
+	{
+		muzzleOuter[]={0.35299999,0.866,0.40000001,0.30000001};
 		kickBack[]={0.034000002,0.055};
 		permanent=0.155;
 		temporary=0.025;
 	};
+	class rhs_weap_scarh_folded_recoil: recoil_default
+	{
+		muzzleOuter[]={0.40000001,1.1,0.60000002,0.60000002};
 		kickBack[]={0.050000001,0.07};
 		permanent=0.1;
 		temporary=0.050000001;
 	};
+	class rhs_weap_scarl_recoil: recoil_default
+	{
+		muzzleOuter[]={0.40000001,0.89999998,0.5,0.30000001};
 		kickBack[]={0.02,0.039999999};
 		temporary=0.02;
 	};
+	class rhs_weap_scarl_folded_recoil: recoil_default
+	{
+		muzzleOuter[]={0.30000001,1.1,0.5,0.40000001};
 		kickBack[]={0.029999999,0.045000002};
 		permanent=0.1;
 		temporary=0.050000001;
 	};
+	class rhs_recoil_m590: recoil_default
+	{
+		muzzleOuter[]={0.40000001,1.1,0.5,0.69999999};
 		kickBack[]={0.105,0.11};
 		permanent=0.050000001;
 		temporary=0.079999998;
 	};
+	class rhs_recoil_m14: recoil_default
+	{
+		muzzleOuter[]={0.5,2.0999999,0.69999999,0.5};
 		kickBack[]={0.050000001,0.090000004};
 		permanent=0.02;
 		temporary=0.0099999998;
@@ -4151,6 +4275,12 @@ class CfgMagazineWells
 			"rhs_mag_30Rnd_556x45_Mk262_PMAG_Tan"
 		};
 	};
+	class CBA_556x45_STANAG_L
+	{
+	};
+	class CBA_556x45_STANAG_XL
+	{
+	};
 	class CBA_556x45_STANAG_2D
 	{
 		RHS_Magazines[]=
@@ -4162,6 +4292,9 @@ class CfgMagazineWells
 			"rhs_mag_100Rnd_556x45_Mk318_cmag",
 			"rhs_mag_100Rnd_556x45_Mk262_cmag"
 		};
+	};
+	class CBA_556x45_STANAG_2D_XL
+	{
 	};
 	class M249_556x45
 	{
@@ -4247,6 +4380,12 @@ class CfgMagazineWells
 			"rhsusf_20Rnd_762x51_SR25_m62_Mag"
 		};
 	};
+	class CBA_762x51_AR10_L
+	{
+	};
+	class CBA_762x51_AR10_XL
+	{
+	};
 	class M14_762x51
 	{
 		RHS_Magazines[]=
@@ -4266,6 +4405,12 @@ class CfgMagazineWells
 			"rhsusf_20Rnd_762x51_m80_Mag",
 			"rhsusf_20Rnd_762x51_m62_Mag"
 		};
+	};
+	class CBA_762x51_M14_L
+	{
+	};
+	class CBA_762x51_M14_XL
+	{
 	};
 	class CBA_762x51_SCAR
 	{
@@ -4322,6 +4467,18 @@ class CfgMagazineWells
 			"rhs_mag_M716_yellow"
 		};
 	};
+	class CBA_40mm_M203
+	{
+	};
+	class CBA_40mm_EGLM
+	{
+	};
+	class 3UGL_40x36
+	{
+	};
+	class CBA_40mm_3GL
+	{
+	};
 	class CBA_Carl_Gustaf
 	{
 		RHS_Magazines[]=
@@ -4349,8 +4506,17 @@ class CfgMagazineWells
 };
 class CfgOpticsEffect
 {
+	class rhs_m150_Blur
+	{
+		params[]={0.0015,0,0,0};
 	};
+	class rhs_g33_Blur
+	{
+		params[]={0.0020000001,0,0,0};
 	};
+	class rhs_su230_Blur
+	{
+		params[]={0.0017,0,0,0};
 	};
 };
 class CfgMineTriggers
@@ -4376,7 +4542,13 @@ class CfgMineTriggers
 		mineWireEnd[]={3.0050001,0.29899999,0.015};
 		mineTriggerMass=14;
 	};
+	class rhs_m49a1_6m_trigger: rhs_m49a1_3m_trigger
+	{
+		mineWireEnd[]={6.0019999,0.29899999,0.015};
 	};
+	class rhs_m49a1_10m_trigger: rhs_m49a1_3m_trigger
+	{
+		mineWireEnd[]={10.002,0.29899999,0.015};
 	};
 };
 class CfgAmmo
@@ -4402,7 +4574,6 @@ class CfgAmmo
 		cost=1;
 		airFriction=-0.0007034;
 		caliber=0.79000002;
-		cartridge="";
 		rhs_cartridge="\A3\Weapons_F_Mark\Ammo\cartridge_338_LM";
 		tracerScale=1;
 		tracerStartTime=0.050000001;
@@ -4437,14 +4608,11 @@ class CfgAmmo
 	class B_556x45_Ball;
 	class rhs_ammo_556x45_M855A1_Ball: B_556x45_Ball
 	{
-		cartridge="RHS_Cartridge_556x45_m855";
 		hit=9;
 		typicalSpeed=960;
 		airFriction=-0.000772;
 		caliber=0.64999998;
 		deflecting=21;
-		visibleFire=3;
-		audibleFire=7;
 	};
 	class rhs_ammo_556x45_M855A1_Ball_Red: rhs_ammo_556x45_M855A1_Ball
 	{
@@ -4452,23 +4620,37 @@ class CfgAmmo
 		tracerStartTime=0.072999999;
 		tracerEndTime=1;
 	};
+	class rhs_ammo_556x45_M855A1_Ball_Green: rhs_ammo_556x45_M855A1_Ball_Red
+	{
+	};
+	class rhs_ammo_556x45_M855A1_Ball_Yellow: rhs_ammo_556x45_M855A1_Ball_Red
+	{
+	};
+	class rhs_ammo_556x45_M855A1_Ball_Orange: rhs_ammo_556x45_M855A1_Ball_Red
+	{
+	};
 	class rhs_ammo_556x45_M855_Ball: B_556x45_Ball
 	{
-		cartridge="RHS_Cartridge_556x45_m855";
 		hit=9;
 		typicalSpeed=920;
 		airFriction=-0.00076000002;
 		caliber=0.44;
 		deflecting=21;
-		visibleFire=3;
-		audibleFire=7;
 	};
 	class rhs_ammo_556x45_M855_Ball_Red: rhs_ammo_556x45_M855_Ball
 	{
-		cartridge="RHS_Cartridge_556x45_m855";
 		nvgOnly=0;
 		tracerStartTime=0.072999999;
 		tracerEndTime=1;
+	};
+	class rhs_ammo_556x45_M855_Ball_Green: rhs_ammo_556x45_M855_Ball_Red
+	{
+	};
+	class rhs_ammo_556x45_M855_Ball_Yellow: rhs_ammo_556x45_M855_Ball_Red
+	{
+	};
+	class rhs_ammo_556x45_M855_Ball_Orange: rhs_ammo_556x45_M855_Ball_Red
+	{
 	};
 	class rhs_ammo_556x45_Mk318_Ball: B_556x45_Ball
 	{
@@ -4477,8 +4659,6 @@ class CfgAmmo
 		airFriction=-0.00076000002;
 		caliber=0.63999999;
 		deflecting=17;
-		visibleFire=3;
-		audibleFire=5.5;
 		tracerStartTime=0.072999999;
 		tracerEndTime=1;
 	};
@@ -4489,8 +4669,6 @@ class CfgAmmo
 		airFriction=-0.00066000002;
 		caliber=0.67699999;
 		deflecting=15;
-		visibleFire=2.5;
-		audibleFire=5;
 		tracerStartTime=0.072999999;
 		tracerEndTime=1.15;
 	};
@@ -4501,8 +4679,6 @@ class CfgAmmo
 		airFriction=-0.00076999998;
 		caliber=0.58999997;
 		deflecting=28;
-		visibleFire=3;
-		audibleFire=7;
 	};
 	class rhs_ammo_556x45_M196_Ball_Red: rhs_ammo_556x45_M193_Ball
 	{
@@ -4532,10 +4708,6 @@ class CfgAmmo
 		hit=11.55;
 		indirectHit=0;
 		indirectHitRange=0;
-		cartridge="FxCartridge_762";
-		visibleFire=22;
-		audibleFire=18;
-		visibleFireTime=3;
 		cost=1.2;
 		airLock=1;
 		caliber=0.44999999;
@@ -4570,19 +4742,16 @@ class CfgAmmo
 		caliber=0.51999998;
 		typicalSpeed=805;
 		airFriction=-0.00074739999;
-		cartridge="";
 		rhs_cartridge="\A3\weapons_f\ammo\cartridge_762";
 	};
 	class rhs_ammo_762x51_M993_Ball: rhs_ammo_762x51_M80_Ball
 	{
 		caliber=1.41176;
 		typicalSpeed=910;
-		cartridge="";
 		rhs_cartridge="\A3\weapons_f\ammo\cartridge_762";
 	};
 	class rhs_ammo_762x51_Mk316_Special_Ball: rhs_ammo_762x51_M118_Special_Ball
 	{
-		visibleFire=16;
 	};
 	class B_12Gauge_Pellets;
 	class rhs_ammo_m576_buckshot: B_12Gauge_Pellets
@@ -4590,7 +4759,6 @@ class CfgAmmo
 		hit=8;
 		indirectHit=0;
 		indirectHitRange=0.60000002;
-		cartridge="";
 		class HitEffects
 		{
 			Hit_Foliage_green="ImpactLeavesGreen";
@@ -4629,7 +4797,6 @@ class CfgAmmo
 			9
 		};
 		submunitionConeAngle=0.94999999;
-		cartridge="";
 		rhs_cartridge="\rhsusf\addons\rhsusf_weapons\casings\rhs_casing_12ga_buckshot";
 	};
 	class rhs_ammo_12g_00buckshot_pellet: BulletBase
@@ -4677,7 +4844,6 @@ class CfgAmmo
 		indirectHit=0;
 		indirectHitRange=0;
 		caliber=0.3048;
-		cartridge="";
 		rhs_cartridge="\rhsusf\addons\rhsusf_weapons\casings\rhs_casing_12ga_slug";
 		typicalSpeed=475.48999;
 		airFriction=-0.0020419999;
@@ -4688,7 +4854,6 @@ class CfgAmmo
 		indirectHit=1.143;
 		indirectHitRange=1.972;
 		caliber=0.2;
-		cartridge="";
 		rhs_cartridge="\rhsusf\addons\rhsusf_weapons\casings\rhs_casing_12ga_hefrag";
 		typicalSpeed=150;
 		airFriction=-0.0068999999;
@@ -4699,7 +4864,6 @@ class CfgAmmo
 		CraterEffects="";
 		dangerRadiusBulletClose=16;
 		dangerRadiusHit=40;
-		suppressionRadiusBulletClose=15;
 		suppressionRadiusHit=14;
 		soundHit1[]=
 		{
@@ -4781,7 +4945,6 @@ class CfgAmmo
 		deflecting=0;
 		typicalSpeed=1000;
 		caliber=0.86666697;
-		cartridge="";
 		class HitEffects
 		{
 			hitMetal="ImpactMetalSabotSmall";
@@ -4811,12 +4974,8 @@ class CfgAmmo
 		hit=5.1468592;
 		indirectHit=0;
 		indirectHitRange=0;
-		suppressionRadiusBulletClose=2;
-		cartridge="FxCartridge_9mm";
 		caliber=2.6809652;
 		deflecting=30;
-		visibleFire=5;
-		audibleFire=9;
 		typicalSpeed=280;
 		airFriction=-0.0018;
 	};
@@ -4831,12 +4990,8 @@ class CfgAmmo
 		hit=4.9457779;
 		indirectHit=0;
 		indirectHitRange=0;
-		suppressionRadiusBulletClose=2;
-		cartridge="FxCartridge_9mm";
 		caliber=0.67400002;
 		deflecting=29;
-		visibleFire=1.5;
-		audibleFire=3;
 		typicalSpeed=390.10001;
 		airFriction=-0.0027667;
 	};
@@ -4845,12 +5000,8 @@ class CfgAmmo
 		hit=6.9426537;
 		indirectHit=0;
 		indirectHitRange=0;
-		suppressionRadiusBulletClose=2;
-		cartridge="FxCartridge_9mm";
 		caliber=0.41499999;
 		deflecting=25;
-		visibleFire=1;
-		audibleFire=2.5;
 		cost=1;
 		typicalSpeed=301.79999;
 		airFriction=-0.001095;
@@ -4858,11 +5009,7 @@ class CfgAmmo
 	class rhs_ammo_46x30_FMJ: rhs_ammo_556x45_M855A1_Ball
 	{
 		hit=5.5;
-		suppressionRadiusBulletClose=2;
-		cartridge="FxCartridge_9mm";
 		caliber=0.64899999;
-		visibleFire=2;
-		audibleFire=5;
 		typicalSpeed=619.9632;
 		airFriction=-0.0027667;
 		deflecting=21;
@@ -4906,8 +5053,6 @@ class CfgAmmo
 		thrustTime=0;
 		thrust=10;
 		fuseDistance=5;
-		visibleFire=28;
-		audibleFire=16;
 		whistleDist=4;
 		timeToLive=12;
 		CraterEffects="ATRocketCrater";
@@ -5004,7 +5149,6 @@ class CfgAmmo
 		thrust=325;
 		fuseDistance=50;
 		explosive=1;
-		audibleFire=32;
 		whistleDist=16;
 		cmImmunity=0.94999999;
 		maxcontrolrange=7000;
@@ -5072,7 +5216,6 @@ class CfgAmmo
 	{
 		afMax=200;
 		aiAmmoUsageFlags="128 + 512";
-		audibleFire=32;
 		caliber=1;
 		warheadName="TandemHEAT";
 		submunitionAmmo="rhs_ammo_M_fgm148_AT_penetrator";
@@ -5091,6 +5234,9 @@ class CfgAmmo
 			"Direct",
 			"TopDown",
 			"Cruise"
+		};
+		class Direct
+		{
 		};
 		class TopDown
 		{
@@ -5391,7 +5537,6 @@ class CfgAmmo
 			1,
 			20
 		};
-		audibleFire=3;
 		caliber=0.0099999998;
 		hit=5;
 		indirectHit=0;
@@ -5550,8 +5695,6 @@ class CfgAmmo
 			frequency=8;
 			distance=1;
 		};
-		visibleFire=15;
-		audibleFire=20;
 	};
 	class rhs_ammo_maaws_HEAT_penetrator: rhsusf_ammo_basic_penetrator
 	{
@@ -5663,8 +5806,6 @@ class CfgAmmo
 			frequency=8;
 			distance=1;
 		};
-		visibleFire=15;
-		audibleFire=20;
 	};
 	class rhs_ammo_maaws_HEDP_penetrator: rhs_ammo_M136_penetrator
 	{
@@ -5768,8 +5909,6 @@ class CfgAmmo
 			frequency=8;
 			distance=1;
 		};
-		visibleFire=15;
-		audibleFire=20;
 	};
 	class rhs_ammo_maaws_SMOKE: RocketBase
 	{
@@ -5870,8 +6009,6 @@ class CfgAmmo
 			frequency=8;
 			distance=1;
 		};
-		visibleFire=15;
-		audibleFire=20;
 	};
 	class rhs_ammo_maaws_ILLUM: RocketBase
 	{
@@ -5972,8 +6109,6 @@ class CfgAmmo
 			frequency=8;
 			distance=1;
 		};
-		visibleFire=15;
-		audibleFire=20;
 	};
 	class PipeBombBase;
 	class rhsusf_m112_ammo: PipeBombBase
@@ -5996,6 +6131,9 @@ class CfgAmmo
 		mineInconspicuousness=5;
 		mineTrigger="RemoteTrigger";
 	};
+	class rhsusf_m112_ammo_scripted: rhsusf_m112_ammo
+	{
+	};
 	class rhsusf_m112x4_ammo: PipeBombBase
 	{
 		hit=3000;
@@ -6015,6 +6153,9 @@ class CfgAmmo
 		whistleDist=32;
 		mineInconspicuousness=5;
 		mineTrigger="RemoteTrigger";
+	};
+	class rhsusf_m112x4_ammo_scripted: rhsusf_m112x4_ammo
+	{
 	};
 	class MineBase;
 	class APERSMine_Range_Ammo;
@@ -6309,6 +6450,18 @@ class CfgAmmo
 	class SmokeShell;
 	class SmokeShellGreen;
 	class SmokeShellRed;
+	class rhs_40mm_smoke_white: SmokeShell
+	{
+	};
+	class rhs_40mm_smoke_red: SmokeShellRed
+	{
+	};
+	class rhs_40mm_smoke_green: SmokeShellGreen
+	{
+	};
+	class rhs_40mm_smoke_yellow: SmokeShellYellow
+	{
+	};
 	class rhs_40mm_m714_white: SmokeShell
 	{
 		explosionTime=-1;
@@ -6330,6 +6483,12 @@ class CfgAmmo
 		timeToLive=30;
 	};
 	class GrenadeHand;
+	class rhs_ammo_m67: GrenadeHand
+	{
+	};
+	class rhs_ammo_m69: GrenadeHand_stone
+	{
+	};
 	class rhs_ammo_m84: GrenadeHand
 	{
 		hit=0.1;
@@ -6438,9 +6597,27 @@ class CfgAmmo
 		explosionTime=1.5;
 		cost=10;
 	};
+	class rhs_ammo_mk3a2: GrenadeHand
+	{
 	};
+	class rhs_ammo_an_m8hc: SmokeShell
+	{
 	};
+	class rhs_ammo_m18_green: SmokeShell
+	{
+		smokeColor[]={0.21250001,0.62580001,0.48910001,1};
 	};
+	class rhs_ammo_m18_purple: rhs_ammo_m18_green
+	{
+		smokeColor[]={0.4341,0.1388,0.41440001,1};
+	};
+	class rhs_ammo_m18_red: rhs_ammo_m18_green
+	{
+		smokeColor[]={0.84380001,0.1383,0.1353,1};
+	};
+	class rhs_ammo_m18_yellow: rhs_ammo_m18_green
+	{
+		smokeColor[]={0.98830003,0.86059999,0.071900003,1};
 	};
 };
 class CfgMagazines
@@ -6550,6 +6727,69 @@ class CfgMagazines
 		ammo="rhs_ammo_556x45_M196_Ball_Red";
 		tracersEvery=1;
 	};
+	class rhs_mag_30Rnd_556x45_M855A1_EPM: rhs_mag_30Rnd_556x45_M855A1_Stanag
+	{
+	};
+	class rhs_mag_30Rnd_556x45_M855A1_EPM_Tracer_Red: rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red
+	{
+	};
+	class rhs_mag_30Rnd_556x45_Mk318_SCAR: rhs_mag_30Rnd_556x45_Mk318_Stanag
+	{
+	};
+	class rhs_mag_30Rnd_556x45_M855A1_Stanag_Pull: rhs_mag_30Rnd_556x45_M855A1_Stanag
+	{
+	};
+	class rhs_mag_30Rnd_556x45_M855A1_Stanag_Pull_Tracer_Red: rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red
+	{
+	};
+	class rhs_mag_30Rnd_556x45_M855_Stanag_Pull: rhs_mag_30Rnd_556x45_M855_Stanag
+	{
+	};
+	class rhs_mag_30Rnd_556x45_M855_Stanag_Pull_Tracer_Red: rhs_mag_30Rnd_556x45_M855_Stanag_Tracer_Red
+	{
+	};
+	class rhs_mag_30Rnd_556x45_Mk318_Stanag_Pull: rhs_mag_30Rnd_556x45_Mk318_Stanag
+	{
+	};
+	class rhs_mag_30Rnd_556x45_Mk262_Stanag_Pull: rhs_mag_30Rnd_556x45_Mk262_Stanag
+	{
+	};
+	class rhs_mag_30Rnd_556x45_M855A1_EPM_Pull: rhs_mag_30Rnd_556x45_M855A1_EPM
+	{
+	};
+	class rhs_mag_30Rnd_556x45_M855A1_EPM_Pull_Tracer_Red: rhs_mag_30Rnd_556x45_M855A1_EPM_Tracer_Red
+	{
+	};
+	class rhs_mag_30Rnd_556x45_Mk318_SCAR_Pull: rhs_mag_30Rnd_556x45_Mk318_SCAR
+	{
+	};
+	class rhs_mag_30Rnd_556x45_M855A1_Stanag_Ranger: rhs_mag_30Rnd_556x45_M855A1_Stanag
+	{
+	};
+	class rhs_mag_30Rnd_556x45_M855A1_Stanag_Ranger_Tracer_Red: rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red
+	{
+	};
+	class rhs_mag_30Rnd_556x45_M855_Stanag_Ranger: rhs_mag_30Rnd_556x45_M855_Stanag
+	{
+	};
+	class rhs_mag_30Rnd_556x45_M855_Stanag_Ranger_Tracer_Red: rhs_mag_30Rnd_556x45_M855_Stanag_Tracer_Red
+	{
+	};
+	class rhs_mag_30Rnd_556x45_Mk318_Stanag_Ranger: rhs_mag_30Rnd_556x45_Mk318_Stanag
+	{
+	};
+	class rhs_mag_30Rnd_556x45_Mk262_Stanag_Ranger: rhs_mag_30Rnd_556x45_Mk262_Stanag
+	{
+	};
+	class rhs_mag_30Rnd_556x45_M855A1_EPM_Ranger: rhs_mag_30Rnd_556x45_M855A1_EPM
+	{
+	};
+	class rhs_mag_30Rnd_556x45_M855A1_EPM_Ranger_Tracer_Red: rhs_mag_30Rnd_556x45_M855A1_EPM_Tracer_Red
+	{
+	};
+	class rhs_mag_30Rnd_556x45_Mk318_SCAR_Ranger: rhs_mag_30Rnd_556x45_Mk318_SCAR
+	{
+	};
 	class rhs_mag_30Rnd_556x45_M855A1_PMAG: rhs_mag_30Rnd_556x45_M855A1_Stanag
 	{
 		mass=9.3500004;
@@ -6578,6 +6818,24 @@ class CfgMagazines
 	{
 		ammo="rhs_ammo_556x45_Mk262_Ball";
 		initSpeed=838.20001;
+	};
+	class rhs_mag_30Rnd_556x45_M855A1_PMAG_Tan: rhs_mag_30Rnd_556x45_M855A1_PMAG
+	{
+	};
+	class rhs_mag_30Rnd_556x45_M855A1_PMAG_Tan_Tracer_Red: rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red
+	{
+	};
+	class rhs_mag_30Rnd_556x45_M855_PMAG_Tan: rhs_mag_30Rnd_556x45_M855_PMAG
+	{
+	};
+	class rhs_mag_30Rnd_556x45_M855_PMAG_Tan_Tracer_Red: rhs_mag_30Rnd_556x45_M855_PMAG_Tracer_Red
+	{
+	};
+	class rhs_mag_30Rnd_556x45_Mk318_PMAG_Tan: rhs_mag_30Rnd_556x45_Mk318_PMAG
+	{
+	};
+	class rhs_mag_30Rnd_556x45_Mk262_PMAG_Tan: rhs_mag_30Rnd_556x45_Mk262_PMAG
+	{
 	};
 	class rhs_mag_20Rnd_556x45_M193_Stanag: rhs_mag_30Rnd_556x45_M193_Stanag
 	{
@@ -6945,6 +7203,36 @@ class CfgMagazines
 		displayname="100rnd M249 Softpack M200";
 		ammo="rhs_ammo_556x45_blank";
 	};
+	class rhsusf_100Rnd_556x45_soft_pouch_ucp: rhsusf_100Rnd_556x45_soft_pouch
+	{
+	};
+	class rhsusf_100Rnd_556x45_mixed_soft_pouch_ucp: rhsusf_100Rnd_556x45_mixed_soft_pouch
+	{
+	};
+	class rhsusf_100Rnd_556x45_M855_soft_pouch_ucp: rhsusf_100Rnd_556x45_M855_soft_pouch
+	{
+	};
+	class rhsusf_100Rnd_556x45_M855_mixed_soft_pouch_ucp: rhsusf_100Rnd_556x45_M855_mixed_soft_pouch
+	{
+	};
+	class rhsusf_100Rnd_556x45_M200_soft_pouch_ucp: rhsusf_100Rnd_556x45_M200_soft_pouch
+	{
+	};
+	class rhsusf_100Rnd_556x45_soft_pouch_coyote: rhsusf_100Rnd_556x45_soft_pouch
+	{
+	};
+	class rhsusf_100Rnd_556x45_mixed_soft_pouch_coyote: rhsusf_100Rnd_556x45_mixed_soft_pouch
+	{
+	};
+	class rhsusf_100Rnd_556x45_M855_soft_pouch_coyote: rhsusf_100Rnd_556x45_M855_soft_pouch
+	{
+	};
+	class rhsusf_100Rnd_556x45_M855_mixed_soft_pouch_coyote: rhsusf_100Rnd_556x45_M855_mixed_soft_pouch
+	{
+	};
+	class rhsusf_100Rnd_556x45_M200_soft_pouch_coyote: rhsusf_100Rnd_556x45_M200_soft_pouch
+	{
+	};
 	class rhsusf_200Rnd_556x45_soft_pouch: rhsusf_100Rnd_556x45_soft_pouch
 	{
 		count=200;
@@ -6973,6 +7261,30 @@ class CfgMagazines
 		lastroundstracer=5;
 		tracersEvery=5;
 	};
+	class rhsusf_200Rnd_556x45_soft_pouch_ucp: rhsusf_200Rnd_556x45_soft_pouch
+	{
+	};
+	class rhsusf_200Rnd_556x45_mixed_soft_pouch_ucp: rhsusf_200Rnd_556x45_mixed_soft_pouch
+	{
+	};
+	class rhsusf_200Rnd_556x45_M855_soft_pouch_ucp: rhsusf_200Rnd_556x45_M855_soft_pouch
+	{
+	};
+	class rhsusf_200Rnd_556x45_M855_mixed_soft_pouch_ucp: rhsusf_200Rnd_556x45_M855_mixed_soft_pouch
+	{
+	};
+	class rhsusf_200Rnd_556x45_soft_pouch_coyote: rhsusf_200Rnd_556x45_soft_pouch
+	{
+	};
+	class rhsusf_200Rnd_556x45_mixed_soft_pouch_coyote: rhsusf_200Rnd_556x45_mixed_soft_pouch
+	{
+	};
+	class rhsusf_200Rnd_556x45_M855_soft_pouch_coyote: rhsusf_200Rnd_556x45_M855_soft_pouch
+	{
+	};
+	class rhsusf_200Rnd_556x45_M855_mixed_soft_pouch_coyote: rhsusf_200Rnd_556x45_M855_mixed_soft_pouch
+	{
+	};
 	class rhs_200rnd_556x45_M_SAW: rhsusf_200Rnd_556x45_soft_pouch
 	{
 		ammo="rhs_ammo_556x45_M855A1_Ball_Red";
@@ -6998,6 +7310,12 @@ class CfgMagazines
 		displaynameshort="M855A1 EPR";
 		lastroundstracer=0;
 		tracersevery=0;
+	};
+	class rhsusf_200Rnd_556x45_box: rhs_200rnd_556x45_B_SAW
+	{
+	};
+	class rhsusf_200rnd_556x45_mixed_box: rhs_200rnd_556x45_M_SAW
+	{
 	};
 	class rhsusf_200rnd_556x45_M855_box: rhs_200rnd_556x45_B_SAW
 	{
@@ -7135,6 +7453,15 @@ class CfgMagazines
 		initSpeed=910;
 		tracersEvery=1;
 	};
+	class rhsusf_20Rnd_762x51_SR25_m118_special_Mag: rhsusf_20Rnd_762x51_m118_special_Mag
+	{
+	};
+	class rhsusf_20Rnd_762x51_SR25_m993_Mag: rhsusf_20Rnd_762x51_m993_Mag
+	{
+	};
+	class rhsusf_20Rnd_762x51_SR25_m62_Mag: rhsusf_20Rnd_762x51_m62_Mag
+	{
+	};
 	class rhsusf_20Rnd_762x51_SR25_mk316_special_Mag: rhsusf_20Rnd_762x51_m118_special_Mag
 	{
 		initSpeed=814;
@@ -7183,6 +7510,12 @@ class CfgMagazines
 		mass=5.2800002;
 		initSpeed=910;
 		tracersEvery=1;
+	};
+	class rhsusf_5Rnd_762x51_AICS_m118_special_Mag: rhsusf_5Rnd_762x51_m118_special_Mag
+	{
+	};
+	class rhsusf_5Rnd_762x51_AICS_m993_Mag: rhsusf_5Rnd_762x51_m993_Mag
+	{
 	};
 	class rhsusf_5Rnd_762x51_AICS_m62_Mag: rhsusf_5Rnd_762x51_m62_Mag
 	{
@@ -7536,6 +7869,9 @@ class CfgWeapons
 	class Rifle_Base_F: Rifle
 	{
 		class WeaponSlotsInfo;
+		class GunParticles;
+		class Eventhandlers;
+	};
 	class Rifle_Short_Base_F: Rifle_Base_F
 	{
 		class WeaponSlotsInfo;
@@ -7543,6 +7879,9 @@ class CfgWeapons
 	class Pistol;
 	class Pistol_Base_F: Pistol
 	{
+		class WeaponSlotsInfo;
+		class GunParticles;
+	};
 	class Rifle_Long_Base_F: Rifle_Base_F
 	{
 		class WeaponSlotsInfo;
@@ -7551,13 +7890,29 @@ class CfgWeapons
 	class EBR_base_F;
 	class srifle_EBR_F: EBR_base_F
 	{
+		class WeaponSlotsInfo;
+		class GunParticles;
+	};
 	class Launcher;
 	class Launcher_Base_F: Launcher
 	{
+		class WeaponSlotsInfo;
+		class Eventhandlers;
+	};
+	class RHSUSF_SAFE_BASE: Rifle_Base_F
+	{
+		magazines[]={};
+		class Safe: Mode_SemiAuto
+		{
+			sounds[]={};
 		};
 	};
 	class RHS_FOLD_BASE: Rifle_Base_F
 	{
+		magazines[]=
+		{
+			"rhs_mag_fold_stock"
+		};
 		reloadTime=2.5;
 		magazineReloadTime=2.5;
 		class Safe: Mode_SemiAuto
@@ -7568,6 +7923,34 @@ class CfgWeapons
 	};
 	class rhs_weap_M320_Base_F: Pistol_Base_F
 	{
+		magazines[]=
+		{
+			"rhs_mag_M441_HE",
+			"rhs_mag_M433_HEDP",
+			"rhs_mag_M397_HET",
+			"rhs_mag_M4009",
+			"rhs_mag_m576",
+			"rhs_mag_M585_white",
+			"rhs_mag_M661_green",
+			"rhs_mag_M662_red",
+			"rhs_mag_M713_red",
+			"rhs_mag_M714_white",
+			"rhs_mag_M715_green",
+			"rhs_mag_M716_yellow",
+			"1Rnd_HE_Grenade_shell",
+			"UGL_FlareWhite_F",
+			"UGL_FlareGreen_F",
+			"UGL_FlareRed_F",
+			"UGL_FlareYellow_F",
+			"UGL_FlareCIR_F",
+			"1Rnd_Smoke_Grenade_shell",
+			"1Rnd_SmokeRed_Grenade_shell",
+			"1Rnd_SmokeGreen_Grenade_shell",
+			"1Rnd_SmokeYellow_Grenade_shell",
+			"1Rnd_SmokePurple_Grenade_shell",
+			"1Rnd_SmokeBlue_Grenade_shell",
+			"1Rnd_SmokeOrange_Grenade_shell"
+		};
 		magazineWell[]=
 		{
 			"UGL_40x36",
@@ -7575,10 +7958,22 @@ class CfgWeapons
 			"CBA_40mm_EGLM"
 		};
 		recoil="recoil_mx";
+		class WeaponSlotsInfo: WeaponSlotsInfo
+		{
+		};
 		class Single: Mode_SemiAuto
 		{
 			reloadTime=0.1;
 			dispersion=0.00092999998;
+		};
+		class single_medium_optics1: Single
+		{
+		};
+		class single_far_optics2: single_medium_optics1
+		{
+		};
+		class SAFE_PISTOL: RHSUSF_SAFE_BASE
+		{
 		};
 	};
 	class rhs_weap_M320: rhs_weap_M320_Base_F
@@ -7588,15 +7983,28 @@ class CfgWeapons
 		{
 			mass=33;
 		};
+		class ItemInfo
+		{
+		};
 	};
 	class rhs_weap_XM2010_Base_F: Rifle_Base_F
 	{
+		magazines[]=
+		{
+			"rhsusf_5Rnd_300winmag_xm2010"
+		};
 		recoil="recoil_gm6";
 		maxZeroing=1500;
+		class WeaponSlotsInfo: WeaponSlotsInfo
+		{
+		};
 		class Single: Mode_SemiAuto
 		{
 			reloadTime=1.6;
 			dispersion=0.0002909;
+		};
+		class SAFE: RHSUSF_SAFE_BASE
+		{
 		};
 		class Eventhandlers: Eventhandlers
 		{
@@ -7624,25 +8032,94 @@ class CfgWeapons
 		{
 			mass=121;
 		};
+		class ItemInfo
+		{
+		};
+	};
+	class rhs_weap_XM2010_d: rhs_weap_XM2010
+	{
+	};
+	class rhs_weap_XM2010_wd: rhs_weap_XM2010
+	{
+	};
+	class rhs_weap_XM2010_sa: rhs_weap_XM2010
+	{
 	};
 	class rhs_weap_m24sws: rhs_weap_XM2010_Base_F
 	{
+		magazines[]=
+		{
+			"rhsusf_5Rnd_762x51_m118_special_Mag",
+			"rhsusf_5Rnd_762x51_m993_Mag",
+			"rhsusf_5Rnd_762x51_m62_Mag"
+		};
 		maxZeroing=1000;
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=120.78;
 		};
+		class ItemInfo
+		{
+		};
+	};
+	class rhs_weap_m24sws_d: rhs_weap_m24sws
+	{
+	};
+	class rhs_weap_m24sws_wd: rhs_weap_m24sws
+	{
+	};
+	class rhs_weap_m24sws_blk: rhs_weap_m24sws
+	{
+	};
+	class rhs_weap_m24sws_ghillie: rhs_weap_m24sws
+	{
 	};
 	class rhs_weap_m40a5: rhs_weap_XM2010_Base_F
 	{
+		magazines[]=
+		{
+			"rhsusf_5Rnd_762x51_AICS_m118_special_Mag",
+			"rhsusf_5Rnd_762x51_AICS_m993_Mag",
+			"rhsusf_5Rnd_762x51_AICS_m62_Mag",
+			"rhsusf_10Rnd_762x51_m118_special_Mag",
+			"rhsusf_10Rnd_762x51_m993_Mag",
+			"rhsusf_10Rnd_762x51_m62_Mag",
+			"rhsusf_5Rnd_762x51_m118_special_Mag",
+			"rhsusf_5Rnd_762x51_m993_Mag",
+			"rhsusf_5Rnd_762x51_m62_Mag"
+		};
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=165;
 		};
 		maxZeroing=1000;
+		class ItemInfo
+		{
+		};
+	};
+	class rhs_weap_m40a5_d: rhs_weap_m40a5
+	{
+	};
+	class rhs_weap_m40a5_wd: rhs_weap_m40a5
+	{
+	};
+	class arifle_MX_Base_F: Rifle_Base_F
+	{
 	};
 	class rhs_weap_m4_Base: arifle_MX_Base_F
 	{
+		magazines[]=
+		{
+			"rhs_mag_30Rnd_556x45_M855A1_Stanag",
+			"rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red",
+			"rhs_mag_30Rnd_556x45_M855_Stanag",
+			"rhs_mag_30Rnd_556x45_M855_Stanag_Tracer_Red",
+			"rhs_mag_30Rnd_556x45_Mk318_Stanag",
+			"rhs_mag_30Rnd_556x45_Mk262_Stanag",
+			"rhs_mag_30Rnd_556x45_M193_Stanag",
+			"rhs_mag_30Rnd_556x45_M196_Stanag_Tracer_Red",
+			"rhs_mag_30Rnd_556x45_M200_Stanag"
+		};
 		magazineWell[]=
 		{
 			"STANAG_556x45",
@@ -7655,9 +8132,15 @@ class CfgWeapons
 		};
 		recoil="rhs_recoil_m4";
 		initSpeed=-0.94;
+		class ItemInfo
+		{
+		};
 		class WeaponSlotsInfo
 		{
 			mass=73.040001;
+			class GripodSlot: rhs_western_rifle_gripod_slot
+			{
+			};
 		};
 		class Single: Mode_SemiAuto
 		{
@@ -7682,6 +8165,9 @@ class CfgWeapons
 		{
 			burstRangeMax=3;
 		};
+		class single_far_optics2: single_medium_optics1
+		{
+		};
 		class fullauto_medium: FullAuto
 		{
 			burst=2;
@@ -7691,6 +8177,35 @@ class CfgWeapons
 		{
 			useModelOptics=0;
 			useExternalOptic=0;
+			magazines[]=
+			{
+				"rhs_mag_M441_HE",
+				"rhs_mag_M433_HEDP",
+				"rhs_mag_M781_Practice",
+				"rhs_mag_M397_HET",
+				"rhs_mag_M4009",
+				"rhs_mag_m576",
+				"rhs_mag_M585_white",
+				"rhs_mag_M661_green",
+				"rhs_mag_M662_red",
+				"rhs_mag_M713_red",
+				"rhs_mag_M714_white",
+				"rhs_mag_M715_green",
+				"rhs_mag_M716_yellow",
+				"1Rnd_HE_Grenade_shell",
+				"UGL_FlareWhite_F",
+				"UGL_FlareGreen_F",
+				"UGL_FlareRed_F",
+				"UGL_FlareYellow_F",
+				"UGL_FlareCIR_F",
+				"1Rnd_Smoke_Grenade_shell",
+				"1Rnd_SmokeRed_Grenade_shell",
+				"1Rnd_SmokeGreen_Grenade_shell",
+				"1Rnd_SmokeYellow_Grenade_shell",
+				"1Rnd_SmokePurple_Grenade_shell",
+				"1Rnd_SmokeBlue_Grenade_shell",
+				"1Rnd_SmokeOrange_Grenade_shell"
+			};
 			magazineWell[]=
 			{
 				"UGL_40x36",
@@ -7701,6 +8216,34 @@ class CfgWeapons
 		{
 			useModelOptics=0;
 			useExternalOptic=0;
+			magazines[]=
+			{
+				"rhs_mag_M441_HE",
+				"rhs_mag_M433_HEDP",
+				"rhs_mag_M397_HET",
+				"rhs_mag_M4009",
+				"rhs_mag_m576",
+				"rhs_mag_M585_white",
+				"rhs_mag_M661_green",
+				"rhs_mag_M662_red",
+				"rhs_mag_M713_red",
+				"rhs_mag_M714_white",
+				"rhs_mag_M715_green",
+				"rhs_mag_M716_yellow",
+				"1Rnd_HE_Grenade_shell",
+				"UGL_FlareWhite_F",
+				"UGL_FlareGreen_F",
+				"UGL_FlareRed_F",
+				"UGL_FlareYellow_F",
+				"UGL_FlareCIR_F",
+				"1Rnd_Smoke_Grenade_shell",
+				"1Rnd_SmokeRed_Grenade_shell",
+				"1Rnd_SmokeGreen_Grenade_shell",
+				"1Rnd_SmokeYellow_Grenade_shell",
+				"1Rnd_SmokePurple_Grenade_shell",
+				"1Rnd_SmokeBlue_Grenade_shell",
+				"1Rnd_SmokeOrange_Grenade_shell"
+			};
 			magazineWell[]=
 			{
 				"UGL_40x36",
@@ -7710,6 +8253,10 @@ class CfgWeapons
 		};
 		class Six12: Rifle_Base_F
 		{
+			magazines[]=
+			{
+				"rhs_mag_six12_slug"
+			};
 			maxZeroing=50;
 			ballisticsComputer=0;
 			muzzlePos="usti granatometu";
@@ -7724,6 +8271,9 @@ class CfgWeapons
 				reloadTime=0.30000001;
 				dispersion=0.01245;
 			};
+		};
+		class SAFE: RHSUSF_SAFE_BASE
+		{
 		};
 	};
 	class rhs_weap_m4: rhs_weap_m4_Base
@@ -7768,6 +8318,9 @@ class CfgWeapons
 			mass=73.040001;
 		};
 	};
+	class rhs_weap_m4_carryhandle_pmag: rhs_weap_m4_carryhandle
+	{
+	};
 	class rhs_weap_m4_carryhandle_mstock: rhs_weap_m4_carryhandle
 	{
 		class WeaponSlotsInfo: WeaponSlotsInfo
@@ -7782,11 +8335,65 @@ class CfgWeapons
 			mass=73.040001;
 		};
 	};
+	class rhs_weap_m4_grip2: rhs_weap_m4_grip
+	{
+	};
+	class rhs_weap_m4_grip3: rhs_weap_m4_grip
+	{
+	};
+	class rhs_weap_m4_pmag_grip: rhs_weap_m4_pmag
+	{
+	};
+	class rhs_weap_m4_pmag_grip2: rhs_weap_m4_pmag_grip
+	{
+	};
+	class rhs_weap_m4_pmag_grip3: rhs_weap_m4_pmag_grip
+	{
+	};
+	class rhs_weap_m4_mstock_grip: rhs_weap_m4_mstock
+	{
+	};
+	class rhs_weap_m4_mstock_grip2: rhs_weap_m4_mstock_grip
+	{
+	};
+	class rhs_weap_m4_mstock_grip3: rhs_weap_m4_mstock_grip
+	{
+	};
+	class rhs_weap_m4_carryhandle_grip: rhs_weap_m4_carryhandle
+	{
+	};
+	class rhs_weap_m4_carryhandle_grip2: rhs_weap_m4_carryhandle_grip
+	{
+	};
+	class rhs_weap_m4_carryhandle_grip3: rhs_weap_m4_carryhandle_grip
+	{
+	};
+	class rhs_weap_m4_carryhandle_pmag_grip: rhs_weap_m4_carryhandle_pmag
+	{
+	};
+	class rhs_weap_m4_carryhandle_pmag_grip2: rhs_weap_m4_carryhandle_pmag_grip
+	{
+	};
+	class rhs_weap_m4_carryhandle_pmag_grip3: rhs_weap_m4_carryhandle_pmag_grip
+	{
+	};
+	class rhs_weap_m4_carryhandle_mstock_grip: rhs_weap_m4_carryhandle_mstock
+	{
+	};
+	class rhs_weap_m4_carryhandle_mstock_grip2: rhs_weap_m4_carryhandle_mstock_grip
+	{
+	};
+	class rhs_weap_m4_carryhandle_mstock_grip3: rhs_weap_m4_carryhandle_mstock_grip
+	{
+	};
 	class rhs_weap_m4_m320: rhs_weap_m4
 	{
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=106.04;
+			class GripodSlot
+			{
+			};
 		};
 	};
 	class rhs_weap_m4_m203: rhs_weap_m4_m320
@@ -7803,6 +8410,9 @@ class CfgWeapons
 			mass=102.96;
 		};
 	};
+	class rhs_weap_m4_carryhandle_m203: rhs_weap_m4_m203
+	{
+	};
 	class rhs_weap_m4_carryhandle_m203S: rhs_weap_m4_carryhandle_m203
 	{
 		class WeaponSlotsInfo: WeaponSlotsInfo
@@ -7817,12 +8427,45 @@ class CfgWeapons
 			mass=63.799999;
 		};
 	};
+	class rhs_weap_m4a1_d: rhs_weap_m4a1
+	{
+	};
+	class rhs_weap_m4a1_wd: rhs_weap_m4a1
+	{
+	};
+	class rhs_weap_m4a1_mstock: rhs_weap_m4a1
+	{
+	};
+	class rhs_weap_m4a1_d_mstock: rhs_weap_m4a1_d
+	{
+	};
+	class rhs_weap_m4a1_wd_mstock: rhs_weap_m4a1_wd
+	{
+	};
+	class rhs_weap_m4a1_pmag: rhs_weap_m4a1
+	{
+	};
+	class rhs_weap_m4a1_carryhandle: rhs_weap_m4a1
+	{
+	};
+	class rhs_weap_m4a1_carryhandle_mstock: rhs_weap_m4a1_carryhandle
+	{
+	};
+	class rhs_weap_m4a1_carryhandle_pmag: rhs_weap_m4a1_carryhandle
+	{
+	};
 	class rhs_weap_m4a1_grip: rhs_weap_m4a1
 	{
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=65;
 		};
+	};
+	class rhs_weap_m4a1_grip2: rhs_weap_m4a1_grip
+	{
+	};
+	class rhs_weap_m4a1_grip3: rhs_weap_m4a1_grip
+	{
 	};
 	class rhs_weap_m4a1_d_grip: rhs_weap_m4a1_d
 	{
@@ -7831,11 +8474,92 @@ class CfgWeapons
 			mass=65;
 		};
 	};
+	class rhs_weap_m4a1_d_grip2: rhs_weap_m4a1_d_grip
+	{
+	};
+	class rhs_weap_m4a1_d_grip3: rhs_weap_m4a1_d_grip
+	{
+	};
+	class rhs_weap_m4a1_wd_grip: rhs_weap_m4a1_wd
+	{
+	};
+	class rhs_weap_m4a1_wd_grip2: rhs_weap_m4a1_wd_grip
+	{
+	};
+	class rhs_weap_m4a1_wd_grip3: rhs_weap_m4a1_wd_grip
+	{
+	};
+	class rhs_weap_m4a1_pmag_grip: rhs_weap_m4a1_pmag
+	{
+	};
+	class rhs_weap_m4a1_pmag_grip2: rhs_weap_m4a1_pmag_grip
+	{
+	};
+	class rhs_weap_m4a1_pmag_grip3: rhs_weap_m4a1_pmag_grip
+	{
+	};
+	class rhs_weap_m4a1_mstock_grip: rhs_weap_m4a1_mstock
+	{
+	};
+	class rhs_weap_m4a1_mstock_grip2: rhs_weap_m4a1_mstock_grip
+	{
+	};
+	class rhs_weap_m4a1_mstock_grip3: rhs_weap_m4a1_mstock_grip
+	{
+	};
+	class rhs_weap_m4a1_d_mstock_grip: rhs_weap_m4a1_d_mstock
+	{
+	};
+	class rhs_weap_m4a1_d_mstock_grip2: rhs_weap_m4a1_d_mstock_grip
+	{
+	};
+	class rhs_weap_m4a1_d_mstock_grip3: rhs_weap_m4a1_d_mstock_grip
+	{
+	};
+	class rhs_weap_m4a1_wd_mstock_grip: rhs_weap_m4a1_wd_mstock
+	{
+	};
+	class rhs_weap_m4a1_wd_mstock_grip2: rhs_weap_m4a1_wd_mstock_grip
+	{
+	};
+	class rhs_weap_m4a1_wd_mstock_grip3: rhs_weap_m4a1_wd_mstock_grip
+	{
+	};
+	class rhs_weap_m4a1_carryhandle_grip: rhs_weap_m4a1_carryhandle
+	{
+	};
+	class rhs_weap_m4a1_carryhandle_grip2: rhs_weap_m4a1_carryhandle_grip
+	{
+	};
+	class rhs_weap_m4a1_carryhandle_grip3: rhs_weap_m4a1_carryhandle_grip
+	{
+	};
+	class rhs_weap_m4a1_carryhandle_pmag_grip: rhs_weap_m4a1_carryhandle_pmag
+	{
+	};
+	class rhs_weap_m4a1_carryhandle_pmag_grip2: rhs_weap_m4a1_carryhandle_pmag_grip
+	{
+	};
+	class rhs_weap_m4a1_carryhandle_pmag_grip3: rhs_weap_m4a1_carryhandle_pmag_grip
+	{
+	};
+	class rhs_weap_m4a1_carryhandle_mstock_grip: rhs_weap_m4a1_carryhandle_mstock
+	{
+	};
+	class rhs_weap_m4a1_carryhandle_mstock_grip2: rhs_weap_m4a1_carryhandle_mstock_grip
+	{
+	};
+	class rhs_weap_m4a1_carryhandle_mstock_grip3: rhs_weap_m4a1_carryhandle_mstock_grip
+	{
+	};
 	class rhs_weap_m4a1_m203: rhs_weap_m4a1
 	{
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=93.720001;
+			class GripodSlot
+			{
+			};
 		};
 	};
 	class rhs_weap_m4a1_m203s: rhs_weap_m4a1_m203
@@ -7844,6 +8568,18 @@ class CfgWeapons
 		{
 			mass=93.720001;
 		};
+	};
+	class rhs_weap_m4a1_m203s_wd: rhs_weap_m4a1_m203s
+	{
+	};
+	class rhs_weap_m4a1_m203s_d: rhs_weap_m4a1_m203s
+	{
+	};
+	class rhs_weap_m4a1_m203s_sa: rhs_weap_m4a1_m203s
+	{
+	};
+	class rhs_weap_m4a1_carryhandle_m203: rhs_weap_m4a1_m203
+	{
 	};
 	class rhs_weap_m4a1_carryhandle_m203S: rhs_weap_m4a1_carryhandle_m203
 	{
@@ -7857,6 +8593,9 @@ class CfgWeapons
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=96.800003;
+			class GripodSlot
+			{
+			};
 		};
 	};
 	class rhs_weap_m4a1_blockII: rhs_weap_m4a1
@@ -7866,12 +8605,36 @@ class CfgWeapons
 			mass=67.779999;
 		};
 	};
+	class rhs_weap_m4a1_blockII_bk: rhs_weap_m4a1_blockII
+	{
+	};
+	class rhs_weap_m4a1_blockII_wd: rhs_weap_m4a1_blockII
+	{
+	};
+	class rhs_weap_m4a1_blockII_d: rhs_weap_m4a1_blockII
+	{
+	};
+	class rhs_weap_m4a1_blockII_KAC: rhs_weap_m4a1_blockII
+	{
+	};
+	class rhs_weap_m4a1_blockII_KAC_bk: rhs_weap_m4a1_blockII_KAC
+	{
+	};
+	class rhs_weap_m4a1_blockII_KAC_wd: rhs_weap_m4a1_blockII_KAC
+	{
+	};
+	class rhs_weap_m4a1_blockII_KAC_d: rhs_weap_m4a1_blockII_KAC
+	{
+	};
 	class rhs_weap_m4a1_blockII_grip: rhs_weap_m4a1_blockII
 	{
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=67.779999;
 		};
+	};
+	class rhs_weap_m4a1_blockII_grip2: rhs_weap_m4a1_blockII_grip
+	{
 	};
 	class rhs_weap_m4a1_blockII_grip_bk: rhs_weap_m4a1_blockII_bk
 	{
@@ -7880,12 +8643,18 @@ class CfgWeapons
 			mass=67.779999;
 		};
 	};
+	class rhs_weap_m4a1_blockII_grip2_bk: rhs_weap_m4a1_blockII_grip_bk
+	{
+	};
 	class rhs_weap_m4a1_blockII_grip_wd: rhs_weap_m4a1_blockII_wd
 	{
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=67.779999;
 		};
+	};
+	class rhs_weap_m4a1_blockII_grip2_wd: rhs_weap_m4a1_blockII_grip_wd
+	{
 	};
 	class rhs_weap_m4a1_blockII_grip_d: rhs_weap_m4a1_blockII_d
 	{
@@ -7894,12 +8663,18 @@ class CfgWeapons
 			mass=67.779999;
 		};
 	};
+	class rhs_weap_m4a1_blockII_grip2_d: rhs_weap_m4a1_blockII_grip_d
+	{
+	};
 	class rhs_weap_m4a1_blockII_grip_KAC: rhs_weap_m4a1_blockII_KAC
 	{
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=67.779999;
 		};
+	};
+	class rhs_weap_m4a1_blockII_grip2_KAC: rhs_weap_m4a1_blockII_grip_KAC
+	{
 	};
 	class rhs_weap_m4a1_blockII_grip_KAC_bk: rhs_weap_m4a1_blockII_KAC_bk
 	{
@@ -7908,12 +8683,18 @@ class CfgWeapons
 			mass=67.779999;
 		};
 	};
+	class rhs_weap_m4a1_blockII_grip2_KAC_bk: rhs_weap_m4a1_blockII_grip_KAC_bk
+	{
+	};
 	class rhs_weap_m4a1_blockII_grip_KAC_wd: rhs_weap_m4a1_blockII_KAC_wd
 	{
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=67.779999;
 		};
+	};
+	class rhs_weap_m4a1_blockII_grip2_KAC_wd: rhs_weap_m4a1_blockII_grip_KAC_wd
+	{
 	};
 	class rhs_weap_m4a1_blockII_grip_KAC_d: rhs_weap_m4a1_blockII_KAC_d
 	{
@@ -7922,12 +8703,27 @@ class CfgWeapons
 			mass=67.779999;
 		};
 	};
+	class rhs_weap_m4a1_blockII_grip2_KAC_d: rhs_weap_m4a1_blockII_grip_KAC_d
+	{
+	};
 	class rhs_weap_m4a1_blockII_M203: rhs_weap_m4a1_blockII
 	{
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=97.699997;
+			class GripodSlot
+			{
+			};
 		};
+	};
+	class rhs_weap_m4a1_blockII_M203_bk: rhs_weap_m4a1_blockII_M203
+	{
+	};
+	class rhs_weap_m4a1_blockII_M203_d: rhs_weap_m4a1_blockII_M203
+	{
+	};
+	class rhs_weap_m4a1_blockII_M203_wd: rhs_weap_m4a1_blockII_M203
+	{
 	};
 	class rhs_weap_mk18: rhs_weap_m4a1_blockII
 	{
@@ -7938,12 +8734,36 @@ class CfgWeapons
 		};
 		initSpeed=-0.89789999;
 	};
+	class rhs_weap_mk18_bk: rhs_weap_mk18
+	{
+	};
+	class rhs_weap_mk18_wd: rhs_weap_mk18
+	{
+	};
+	class rhs_weap_mk18_d: rhs_weap_mk18
+	{
+	};
+	class rhs_weap_mk18_KAC: rhs_weap_mk18
+	{
+	};
+	class rhs_weap_mk18_KAC_bk: rhs_weap_mk18_KAC
+	{
+	};
+	class rhs_weap_mk18_KAC_wd: rhs_weap_mk18_KAC
+	{
+	};
+	class rhs_weap_mk18_KAC_d: rhs_weap_mk18_KAC
+	{
+	};
 	class rhs_weap_mk18_grip: rhs_weap_mk18
 	{
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=59.900002;
 		};
+	};
+	class rhs_weap_mk18_grip2: rhs_weap_mk18_grip
+	{
 	};
 	class rhs_weap_mk18_grip_bk: rhs_weap_mk18_bk
 	{
@@ -7952,12 +8772,18 @@ class CfgWeapons
 			mass=59.900002;
 		};
 	};
+	class rhs_weap_mk18_grip2_bk: rhs_weap_mk18_grip_bk
+	{
+	};
 	class rhs_weap_mk18_grip_wd: rhs_weap_mk18_wd
 	{
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=54.560001;
 		};
+	};
+	class rhs_weap_mk18_grip2_wd: rhs_weap_mk18_grip_wd
+	{
 	};
 	class rhs_weap_mk18_grip_d: rhs_weap_mk18_d
 	{
@@ -7966,12 +8792,18 @@ class CfgWeapons
 			mass=54.560001;
 		};
 	};
+	class rhs_weap_mk18_grip2_d: rhs_weap_mk18_grip_d
+	{
+	};
 	class rhs_weap_mk18_grip_KAC: rhs_weap_mk18_KAC
 	{
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=54.560001;
 		};
+	};
+	class rhs_weap_mk18_grip2_KAC: rhs_weap_mk18_grip_KAC
+	{
 	};
 	class rhs_weap_mk18_grip_KAC_bk: rhs_weap_mk18_KAC_bk
 	{
@@ -7980,12 +8812,18 @@ class CfgWeapons
 			mass=54.560001;
 		};
 	};
+	class rhs_weap_mk18_grip2_KAC_bk: rhs_weap_mk18_grip_KAC_bk
+	{
+	};
 	class rhs_weap_mk18_grip_KAC_wd: rhs_weap_mk18_KAC_wd
 	{
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=54.560001;
 		};
+	};
+	class rhs_weap_mk18_grip2_KAC_wd: rhs_weap_mk18_grip_KAC_wd
+	{
 	};
 	class rhs_weap_mk18_grip_KAC_d: rhs_weap_mk18_KAC_d
 	{
@@ -7994,11 +8832,17 @@ class CfgWeapons
 			mass=54.560001;
 		};
 	};
+	class rhs_weap_mk18_grip2_KAC_d: rhs_weap_mk18_grip_KAC_d
+	{
+	};
 	class rhs_weap_mk18_m320: rhs_weap_mk18
 	{
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=87.559998;
+			class GripodSlot
+			{
+			};
 		};
 	};
 	class rhs_weap_m16a4: rhs_weap_m4_Base
@@ -8009,12 +8853,21 @@ class CfgWeapons
 		};
 		initSpeed=-1;
 	};
+	class rhs_weap_m16a4_pmag: rhs_weap_m16a4
+	{
+	};
+	class rhs_weap_m16a4_imod: rhs_weap_m16a4
+	{
+	};
 	class rhs_weap_m16a4_carryhandle: rhs_weap_m16a4
 	{
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=74.800003;
 		};
+	};
+	class rhs_weap_m16a4_carryhandle_pmag: rhs_weap_m16a4_carryhandle
+	{
 	};
 	class rhs_weap_m16a4_grip: rhs_weap_m16a4
 	{
@@ -8023,12 +8876,24 @@ class CfgWeapons
 			mass=74.800003;
 		};
 	};
+	class rhs_weap_m16a4_grip2: rhs_weap_m16a4_grip
+	{
+	};
+	class rhs_weap_m16a4_grip3: rhs_weap_m16a4_grip
+	{
+	};
 	class rhs_weap_m16a4_pmag_grip: rhs_weap_m16a4_pmag
 	{
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=74.800003;
 		};
+	};
+	class rhs_weap_m16a4_pmag_grip2: rhs_weap_m16a4_pmag_grip
+	{
+	};
+	class rhs_weap_m16a4_pmag_grip3: rhs_weap_m16a4_pmag_grip
+	{
 	};
 	class rhs_weap_m16a4_imod_grip: rhs_weap_m16a4_imod
 	{
@@ -8037,12 +8902,24 @@ class CfgWeapons
 			mass=74.800003;
 		};
 	};
+	class rhs_weap_m16a4_imod_grip2: rhs_weap_m16a4_imod_grip
+	{
+	};
+	class rhs_weap_m16a4_imod_grip3: rhs_weap_m16a4_imod_grip
+	{
+	};
 	class rhs_weap_m16a4_carryhandle_grip: rhs_weap_m16a4_carryhandle
 	{
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=74.800003;
 		};
+	};
+	class rhs_weap_m16a4_carryhandle_grip2: rhs_weap_m16a4_carryhandle_grip
+	{
+	};
+	class rhs_weap_m16a4_carryhandle_grip3: rhs_weap_m16a4_carryhandle_grip
+	{
 	};
 	class rhs_weap_m16a4_carryhandle_grip_pmag: rhs_weap_m16a4_carryhandle_pmag
 	{
@@ -8051,12 +8928,24 @@ class CfgWeapons
 			mass=74.800003;
 		};
 	};
+	class rhs_weap_m16a4_carryhandle_grip2_pmag: rhs_weap_m16a4_carryhandle_grip_pmag
+	{
+	};
+	class rhs_weap_m16a4_carryhandle_grip3_pmag: rhs_weap_m16a4_carryhandle_grip_pmag
+	{
+	};
 	class rhs_weap_m16a4_carryhandle_M203: rhs_weap_m16a4
 	{
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=104.72;
+			class GripodSlot
+			{
+			};
 		};
+	};
+	class rhs_weap_m16a4_imod_M203: rhs_weap_m16a4_carryhandle_M203
+	{
 	};
 	class rhs_weap_hk416d10: rhs_weap_m4a1
 	{
@@ -8072,6 +8961,9 @@ class CfgWeapons
 		class WeaponSlotsInfo
 		{
 			mass=72.82;
+			class GripodSlot: rhs_western_rifle_gripod_slot
+			{
+			};
 		};
 		class FullAuto: FullAuto
 		{
@@ -8079,6 +8971,15 @@ class CfgWeapons
 			dispersion=0.0018;
 		};
 		rhsusf_acc_anpeq15=1;
+	};
+	class rhs_weap_hk416d10_grip: rhs_weap_hk416d10
+	{
+	};
+	class rhs_weap_hk416d10_grip2: rhs_weap_hk416d10_grip
+	{
+	};
+	class rhs_weap_hk416d10_grip3: rhs_weap_hk416d10_grip2
+	{
 	};
 	class rhs_weap_hk416d145: rhs_weap_hk416d10
 	{
@@ -8095,6 +8996,27 @@ class CfgWeapons
 			mass=77;
 		};
 	};
+	class rhs_weap_hk416d145_grip: rhs_weap_hk416d145
+	{
+	};
+	class rhs_weap_hk416d145_grip2: rhs_weap_hk416d145_grip
+	{
+	};
+	class rhs_weap_hk416d145_grip3: rhs_weap_hk416d145_grip2
+	{
+	};
+	class rhs_weap_hk416d10_LMT: rhs_weap_hk416d10
+	{
+	};
+	class rhs_weap_hk416d10_LMT_grip: rhs_weap_hk416d10_LMT
+	{
+	};
+	class rhs_weap_hk416d10_LMT_grip2: rhs_weap_hk416d10_LMT_grip
+	{
+	};
+	class rhs_weap_hk416d10_LMT_grip3: rhs_weap_hk416d10_LMT_grip2
+	{
+	};
 	class rhs_weap_hk416d10_m320: rhs_weap_hk416d10
 	{
 		hiddenSelectionsMaterials[]=
@@ -8106,6 +9028,9 @@ class CfgWeapons
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=105.82;
+			class GripodSlot
+			{
+			};
 		};
 	};
 	class rhs_weap_hk416d145_m320: rhs_weap_hk416d145
@@ -8116,9 +9041,15 @@ class CfgWeapons
 			"\rhsusf\addons\rhsusf_weapons\m4\data\magazine.rvmat",
 			"\rhsusf\addons\rhsusf_weapons\m320\data\m320.rvmat"
 		};
+		class M320_GL: M320_GL
+		{
+		};
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=110;
+			class GripodSlot
+			{
+			};
 		};
 	};
 	class rhs_weap_hk416d10_LMT_d: rhs_weap_hk416d10_LMT
@@ -8130,6 +9061,15 @@ class CfgWeapons
 			"\rhsusf\addons\rhsusf_weapons2\sr25\data\buttstock2_mat.rvmat"
 		};
 	};
+	class rhs_weap_hk416d10_LMT_d_grip: rhs_weap_hk416d10_LMT_d
+	{
+	};
+	class rhs_weap_hk416d10_LMT_d_grip2: rhs_weap_hk416d10_LMT_d_grip
+	{
+	};
+	class rhs_weap_hk416d10_LMT_d_grip3: rhs_weap_hk416d10_LMT_d_grip2
+	{
+	};
 	class rhs_weap_hk416d10_LMT_wd: rhs_weap_hk416d10_LMT
 	{
 		hiddenSelectionsMaterials[]=
@@ -8138,6 +9078,15 @@ class CfgWeapons
 			"\rhsusf\addons\rhsusf_weapons\m4\data\magazine.rvmat",
 			"\rhsusf\addons\rhsusf_weapons2\sr25\data\buttstock2_mat.rvmat"
 		};
+	};
+	class rhs_weap_hk416d10_LMT_wd_grip: rhs_weap_hk416d10_LMT_wd
+	{
+	};
+	class rhs_weap_hk416d10_LMT_wd_grip2: rhs_weap_hk416d10_LMT_wd_grip
+	{
+	};
+	class rhs_weap_hk416d10_LMT_wd_grip3: rhs_weap_hk416d10_LMT_wd_grip2
+	{
 	};
 	class rhs_weap_hk416d145_d: rhs_weap_hk416d145
 	{
@@ -8148,6 +9097,15 @@ class CfgWeapons
 			"\rhsusf\addons\rhsusf_weapons2\sr25\data\buttstock2_mat.rvmat"
 		};
 	};
+	class rhs_weap_hk416d145_d_grip: rhs_weap_hk416d145_d
+	{
+	};
+	class rhs_weap_hk416d145_d_grip2: rhs_weap_hk416d145_d_grip
+	{
+	};
+	class rhs_weap_hk416d145_d_grip3: rhs_weap_hk416d145_d_grip2
+	{
+	};
 	class rhs_weap_hk416d145_d_2: rhs_weap_hk416d145
 	{
 		hiddenSelectionsMaterials[]=
@@ -8156,6 +9114,15 @@ class CfgWeapons
 			"\rhsusf\addons\rhsusf_weapons\m4\data\magazine.rvmat",
 			"\rhsusf\addons\rhsusf_weapons2\sr25\data\buttstock2_mat.rvmat"
 		};
+	};
+	class rhs_weap_hk416d145_d_2_grip: rhs_weap_hk416d145_d_2
+	{
+	};
+	class rhs_weap_hk416d145_d_2_grip2: rhs_weap_hk416d145_d_2_grip
+	{
+	};
+	class rhs_weap_hk416d145_d_2_grip3: rhs_weap_hk416d145_d_2_grip2
+	{
 	};
 	class rhs_weap_hk416d145_wd: rhs_weap_hk416d145
 	{
@@ -8166,6 +9133,15 @@ class CfgWeapons
 			"\rhsusf\addons\rhsusf_weapons2\sr25\data\buttstock2_mat.rvmat"
 		};
 	};
+	class rhs_weap_hk416d145_wd_grip: rhs_weap_hk416d145_wd
+	{
+	};
+	class rhs_weap_hk416d145_wd_grip2: rhs_weap_hk416d145_wd_grip
+	{
+	};
+	class rhs_weap_hk416d145_wd_grip3: rhs_weap_hk416d145_wd_grip2
+	{
+	};
 	class rhs_weap_hk416d145_wd_2: rhs_weap_hk416d145
 	{
 		hiddenSelectionsMaterials[]=
@@ -8175,6 +9151,15 @@ class CfgWeapons
 			"\rhsusf\addons\rhsusf_weapons2\sr25\data\buttstock2_mat.rvmat"
 		};
 	};
+	class rhs_weap_hk416d145_wd_2_grip: rhs_weap_hk416d145_wd_2
+	{
+	};
+	class rhs_weap_hk416d145_wd_2_grip2: rhs_weap_hk416d145_wd_2_grip
+	{
+	};
+	class rhs_weap_hk416d145_wd_2_grip3: rhs_weap_hk416d145_wd_2_grip2
+	{
+	};
 	class rhs_weap_m27iar: rhs_weap_m4a1
 	{
 		reloadTime=0.07;
@@ -8183,6 +9168,9 @@ class CfgWeapons
 		class WeaponSlotsInfo
 		{
 			mass=79.199997;
+			class GripodSlot: rhs_western_rifle_gripod_slot
+			{
+			};
 		};
 		class FullAuto: FullAuto
 		{
@@ -8198,14 +9186,44 @@ class CfgWeapons
 			mass=79.199997;
 		};
 	};
+	class rhs_weap_m27iar_grip1: rhs_weap_m27iar
+	{
+	};
+	class rhs_weap_m27iar_grip2: rhs_weap_m27iar
+	{
+	};
+	class rhs_weap_m27iar_grip3: rhs_weap_m27iar_grip2
+	{
+	};
 	class LMG_Mk200_F;
 	class rhs_weap_M249_base: LMG_Mk200_F
 	{
+		magazines[]=
+		{
+			"rhsusf_100Rnd_556x45_soft_pouch",
+			"rhsusf_200Rnd_556x45_soft_pouch",
+			"rhsusf_100Rnd_556x45_M200_soft_pouch",
+			"rhs_mag_30Rnd_556x45_Mk318_Stanag",
+			"rhs_mag_30Rnd_556x45_Mk262_Stanag",
+			"rhs_mag_30Rnd_556x45_M855A1_Stanag",
+			"rhs_mag_30Rnd_556x45_M855A1_Stanag_No_Tracer",
+			"rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red",
+			"rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Green",
+			"rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Yellow",
+			"rhs_mag_30Rnd_556x45_M200_Stanag",
+			"30Rnd_556x45_Stanag",
+			"30Rnd_556x45_Stanag_Tracer_Red",
+			"30Rnd_556x45_Stanag_Tracer_Green",
+			"30Rnd_556x45_Stanag_Tracer_Yellow"
+		};
 		cursor="mg";
 		cursorAim="EmptyCursor";
 		nameSound="Mgun";
 		recoil="recoil_mk200";
 		maxZeroing=1000;
+		class ItemInfo
+		{
+		};
 		class WeaponSlotsInfo
 		{
 			mass=151.8;
@@ -8216,6 +9234,9 @@ class CfgWeapons
 			dispersion=0.00101;
 		};
 	};
+	class rhs_weap_saw_base: Rifle_Base_F
+	{
+		magazines[]={};
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=151.8;
@@ -8232,6 +9253,9 @@ class CfgWeapons
 			minrange=1;
 			minrangeprobab=0.30000001;
 			airateoffire=4;
+		};
+		class SAFE: RHSUSF_SAFE_BASE
+		{
 		};
 	};
 	class rhs_weap_lmg_minimipara: rhs_weap_saw_base
@@ -8255,6 +9279,13 @@ class CfgWeapons
 			1,
 			1,
 			20
+		};
+		magazines[]=
+		{
+			"rhsusf_200Rnd_556x45_box",
+			"rhsusf_200rnd_556x45_mixed_box",
+			"rhsusf_200rnd_556x45_M855_box",
+			"rhsusf_200rnd_556x45_M855_mixed_box"
 		};
 		magazineWell[]=
 		{
@@ -8294,6 +9325,12 @@ class CfgWeapons
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=151.27;
+			class asdg_MuzzleSlot_556_minimi: rhs_western_rifle_muzzle_slot
+			{
+			};
+		};
+		class ItemInfo
+		{
 		};
 		class FullAuto: FullAuto
 		{
@@ -8336,7 +9373,13 @@ class CfgWeapons
 		class WeaponSlotsInfo
 		{
 			mass=149.28999;
+			class GripodSlot: rhs_western_mg_gripod_slot
+			{
+			};
 		};
+	};
+	class rhs_weap_m249_pip_S_vfg: rhs_weap_m249_pip_S
+	{
 	};
 	class rhs_weap_m249_pip_S_vfg1: rhs_weap_m249_pip_S_vfg
 	{
@@ -8482,6 +9525,9 @@ class CfgWeapons
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=161.37;
+			class GripodSlot: rhs_western_mg_gripod_slot
+			{
+			};
 		};
 	};
 	class rhs_weap_m249_pip_vfg1: rhs_weap_m249_pip_ris
@@ -8518,7 +9564,13 @@ class CfgWeapons
 		class WeaponSlotsInfo
 		{
 			mass=161.37;
+			class GripodSlot: rhs_western_mg_gripod_slot
+			{
+			};
 		};
+	};
+	class rhs_weap_m249_pip_L_vfg: rhs_weap_m249_pip_L
+	{
 	};
 	class rhs_weap_m249_pip_L_vfg1: rhs_weap_m249_pip_L_vfg
 	{
@@ -8658,6 +9710,9 @@ class CfgWeapons
 		{
 			mass=275;
 		};
+		class SAFE: RHSUSF_SAFE_BASE
+		{
+		};
 		class manual: Mode_FullAuto
 		{
 			dispersion=0.00079999998;
@@ -8667,6 +9722,21 @@ class CfgWeapons
 			burst=8;
 			burstRangeMax=16;
 		};
+		magazines[]=
+		{
+			"rhsusf_100Rnd_762x51",
+			"rhsusf_100Rnd_762x51_m61_ap",
+			"rhsusf_100Rnd_762x51_m62_tracer",
+			"rhsusf_100Rnd_762x51_m80a1epr",
+			"rhsusf_100Rnd_762x51_m82_blank",
+			"rhsusf_50Rnd_762x51",
+			"rhsusf_50Rnd_762x51_m61_ap",
+			"rhsusf_50Rnd_762x51_m62_tracer",
+			"rhsusf_50Rnd_762x51_m80a1epr",
+			"rhsusf_50Rnd_762x51_m82_blank",
+			"rhsusf_50Rnd_762x51_m993",
+			"rhsusf_100Rnd_762x51_m993"
+		};
 		magazineWell[]=
 		{
 			"M240_762x51"
@@ -8675,12 +9745,26 @@ class CfgWeapons
 	};
 	class rhs_weap_m240B: rhs_weap_m240_base
 	{
+		class WeaponSlotsInfo: WeaponSlotsInfo
+		{
+		};
 	};
 	class rhs_weap_m240G: rhs_weap_m240_base
 	{
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=255.2;
+		};
+	};
+	class rhs_weap_m240B_CAP: rhs_weap_m240B
+	{
+		magazines[]=
+		{
+			"rhsusf_50Rnd_762x51",
+			"rhsusf_50Rnd_762x51_m61_ap",
+			"rhsusf_50Rnd_762x51_m62_tracer",
+			"rhsusf_50Rnd_762x51_m80a1epr",
+			"rhsusf_50Rnd_762x51_m82_blank"
 		};
 	};
 	class rhs_weap_m14_base: srifle_EBR_F
@@ -8697,6 +9781,13 @@ class CfgWeapons
 		{
 			mass=90.199997;
 		};
+		magazines[]=
+		{
+			"rhsusf_20Rnd_762x51_m80_Mag",
+			"rhsusf_20Rnd_762x51_m118_special_Mag",
+			"rhsusf_20Rnd_762x51_m993_Mag",
+			"rhsusf_20Rnd_762x51_m62_Mag"
+		};
 		magazineWell[]=
 		{
 			"M14_762x51",
@@ -8706,6 +9797,9 @@ class CfgWeapons
 		};
 		reloadTime=2;
 		recoil="rhs_recoil_m14";
+		class SAFE: RHSUSF_SAFE_BASE
+		{
+		};
 		class Single: Mode_SemiAuto
 		{
 			reloadTime=0.082758598;
@@ -8715,6 +9809,15 @@ class CfgWeapons
 		{
 			reloadTime=0.082758598;
 			dispersion=0.00057999999;
+		};
+		class single_close_optics1: Single
+		{
+		};
+		class single_medium_optics1: single_close_optics1
+		{
+		};
+		class single_far_optics1: single_medium_optics1
+		{
 		};
 	};
 	class rhs_weap_m14_rail_base: rhs_weap_m14_base
@@ -8728,6 +9831,9 @@ class CfgWeapons
 	class rhs_weap_m14_ris_base: rhs_weap_m14_rail_base
 	{
 		displayname="M14 (RIS)";
+		class WeaponSlotsInfo: WeaponSlotsInfo
+		{
+		};
 	};
 	class rhs_weap_m14_socom_base: rhs_weap_m14_base
 	{
@@ -8821,6 +9927,12 @@ class CfgWeapons
 	};
 	class rhs_weap_m14ebrri_base: rhs_weap_m14_rail_base
 	{
+		magazines[]=
+		{
+			"rhsusf_20Rnd_762x51_m118_special_Mag",
+			"rhsusf_20Rnd_762x51_m993_Mag",
+			"rhsusf_20Rnd_762x51_m62_Mag"
+		};
 		maxZeroing=2000;
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
@@ -8831,8 +9943,18 @@ class CfgWeapons
 			dispersion=0.0002909;
 		};
 	};
+	class rhs_weap_m14ebrri: rhs_weap_m14ebrri_base
+	{
+	};
 	class rhs_weap_sr25: rhs_weap_m14ebrri
 	{
+		magazines[]=
+		{
+			"rhsusf_20Rnd_762x51_SR25_m118_special_Mag",
+			"rhsusf_20Rnd_762x51_SR25_mk316_special_Mag",
+			"rhsusf_20Rnd_762x51_SR25_m993_Mag",
+			"rhsusf_20Rnd_762x51_SR25_m62_Mag"
+		};
 		magazineWell[]=
 		{
 			"CBA_762x51_AR10",
@@ -8850,6 +9972,15 @@ class CfgWeapons
 		{
 			reloadTime=0.096000001;
 			dispersion=0.00028000001;
+		};
+		class single_close_optics1: Single
+		{
+		};
+		class single_medium_optics1: single_close_optics1
+		{
+		};
+		class single_far_optics1: single_medium_optics1
+		{
 		};
 	};
 	class rhs_weap_sr25_ec: rhs_weap_sr25
@@ -8878,6 +10009,9 @@ class CfgWeapons
 			mass=84.919998;
 		};
 	};
+	class rhs_weap_sr25_d: rhs_weap_sr25_wd
+	{
+	};
 	class rhs_weap_sr25_ec_d: rhs_weap_sr25_d
 	{
 		class WeaponSlotsInfo: WeaponSlotsInfo
@@ -8885,8 +10019,19 @@ class CfgWeapons
 			mass=84.919998;
 		};
 	};
+	class rhs_weap_m110: rhs_weap_sr25
+	{
+	};
+	class GM6_base_F: Rifle_Long_Base_F
+	{
+	};
 	class rhs_weap_M107_Base_F: GM6_base_F
 	{
+		magazines[]=
+		{
+			"rhsusf_mag_10Rnd_STD_50BMG_M33",
+			"rhsusf_mag_10Rnd_STD_50BMG_mk211"
+		};
 		magazineWell[]=
 		{
 			"CBA_50BMG_M107"
@@ -8900,6 +10045,9 @@ class CfgWeapons
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=283.79999;
+		};
+		class SAFE: RHSUSF_SAFE_BASE
+		{
 		};
 		rhs_deployedHandAnim="RHS_GestureHoldM107";
 	};
@@ -8933,9 +10081,24 @@ class CfgWeapons
 	};
 	class rhs_weap_M590_5RD: Rifle_Base_F
 	{
+		magazines[]=
+		{
+			"rhsusf_5Rnd_00Buck",
+			"rhsusf_5rnd_doomsday_buck",
+			"rhsusf_5Rnd_Slug",
+			"rhsusf_5Rnd_HE",
+			"rhsusf_5Rnd_FRAG"
+		};
 		displayname="M590A1 (Short)";
+		class SAFE: RHSUSF_SAFE_BASE
+		{
+		};
 		class RHS_ReloadAction: RHSUSF_SAFE_BASE
 		{
+			magazines[]=
+			{
+				"rhs_mag_fakeMuzzle1"
+			};
 			reloadTime=0.1;
 		};
 		recoil="rhs_recoil_m590";
@@ -8978,10 +10141,37 @@ class CfgWeapons
 	};
 	class rhs_weap_M590_8RD: rhs_weap_M590_5RD
 	{
+		magazines[]=
+		{
+			"rhsusf_8Rnd_00Buck",
+			"rhsusf_8rnd_doomsday_buck",
+			"rhsusf_8Rnd_Slug",
+			"rhsusf_8Rnd_HE",
+			"rhsusf_8Rnd_FRAG"
+		};
 		displayname="M590A1 (Long)";
+		class Single: Single
+		{
+		};
 	};
 	class rhs_weap_m32_Base_F: Rifle_Base_F
 	{
+		magazines[]=
+		{
+			"rhsusf_mag_6Rnd_M441_HE",
+			"rhsusf_mag_6Rnd_M433_HEDP",
+			"rhsusf_mag_6Rnd_M397_HET",
+			"rhsusf_mag_6Rnd_M576_Buckshot",
+			"rhsusf_mag_6Rnd_M781_Practice",
+			"rhsusf_mag_6Rnd_m4009",
+			"rhsusf_mag_6Rnd_M585_white",
+			"rhsusf_mag_6Rnd_m661_green",
+			"rhsusf_mag_6Rnd_m662_red",
+			"rhsusf_mag_6Rnd_M713_red",
+			"rhsusf_mag_6Rnd_M714_white",
+			"rhsusf_mag_6Rnd_M715_green",
+			"rhsusf_mag_6Rnd_M716_yellow"
+		};
 		recoil="recoil_gm6";
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
@@ -9001,9 +10191,18 @@ class CfgWeapons
 	{
 		class Single;
 		class FullAuto;
+		class WeaponSlotsInfo;
+		class GunParticles;
+	};
 	class rhsusf_weap_MP7A1_base_f: SMG_02_base_F
 	{
 		initspeed=-1;
+		magazines[]=
+		{
+			"rhsusf_mag_40Rnd_46x30_FMJ",
+			"rhsusf_mag_40Rnd_46x30_JHP",
+			"rhsusf_mag_40Rnd_46x30_AP"
+		};
 		magazineWell[]=
 		{
 			"CBA_46x30_MP7"
@@ -9012,6 +10211,9 @@ class CfgWeapons
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=24.200001;
+			class GripodSlot: rhs_western_rifle_gripod_slot
+			{
+			};
 		};
 		selectionfireanim="zasleh";
 		class Single: Single
@@ -9029,17 +10231,62 @@ class CfgWeapons
 	{
 		baseweapon="rhsusf_weap_MP7A2";
 	};
+	class rhsusf_weap_MP7A2_grip1: rhsusf_weap_MP7A2
+	{
+	};
+	class rhsusf_weap_MP7A2_grip2: rhsusf_weap_MP7A2
+	{
+	};
+	class rhsusf_weap_MP7A2_grip3: rhsusf_weap_MP7A2
+	{
+	};
 	class rhsusf_weap_MP7A2_winter: rhsusf_weap_MP7A2
 	{
 		baseweapon="rhsusf_weap_MP7A2_winter";
+	};
+	class rhsusf_weap_MP7A2_winter_grip1: rhsusf_weap_MP7A2_winter
+	{
+	};
+	class rhsusf_weap_MP7A2_winter_grip2: rhsusf_weap_MP7A2_winter
+	{
+	};
+	class rhsusf_weap_MP7A2_winter_grip3: rhsusf_weap_MP7A2_winter
+	{
 	};
 	class rhsusf_weap_MP7A2_desert: rhsusf_weap_MP7A2
 	{
 		baseweapon="rhsusf_weap_MP7A2_desert";
 	};
+	class rhsusf_weap_MP7A2_desert_grip1: rhsusf_weap_MP7A2_desert
+	{
+	};
+	class rhsusf_weap_MP7A2_desert_grip2: rhsusf_weap_MP7A2_desert
+	{
+	};
+	class rhsusf_weap_MP7A2_desert_grip3: rhsusf_weap_MP7A2_desert
+	{
+	};
 	class rhsusf_weap_MP7A2_aor1: rhsusf_weap_MP7A2
 	{
 		baseweapon="rhsusf_weap_MP7A2_aor1";
+	};
+	class rhsusf_weap_MP7A2_aor1_grip1: rhsusf_weap_MP7A2_aor1
+	{
+	};
+	class rhsusf_weap_MP7A2_aor1_grip2: rhsusf_weap_MP7A2_aor1
+	{
+	};
+	class rhsusf_weap_MP7A2_aor1_grip3: rhsusf_weap_MP7A2_aor1
+	{
+	};
+	class rhsusf_weap_MP7A1_winter: rhsusf_weap_MP7A2_winter
+	{
+	};
+	class rhsusf_weap_MP7A1_desert: rhsusf_weap_MP7A2_desert
+	{
+	};
+	class rhsusf_weap_MP7A1_aor1: rhsusf_weap_MP7A2_aor1
+	{
 	};
 	class rhsusf_weap_rifle_empty: rhs_weap_m4_Base
 	{
@@ -9054,13 +10301,22 @@ class CfgWeapons
 	};
 	class rhs_weap_SCAR_Base: arifle_MX_Base_F
 	{
+		class ItemInfo
+		{
+		};
 		class WeaponSlotsInfo
 		{
 			mass=73.040001;
+			class GripodSlot: rhs_western_rifle_gripod_slot
+			{
+			};
 		};
 		initSpeed=-1;
 		class Single: Mode_SemiAuto
 		{
+			class SilencedSound
+			{
+			};
 			reloadTime=0.075000003;
 			dispersion=0.00087270001;
 		};
@@ -9070,6 +10326,9 @@ class CfgWeapons
 		};
 		class FullAuto: Mode_FullAuto
 		{
+			class SilencedSound
+			{
+			};
 			reloadTime=0.075000003;
 			dispersion=0.0022;
 		};
@@ -9077,10 +10336,19 @@ class CfgWeapons
 		{
 			burstRangeMax=3;
 		};
+		class single_far_optics2: single_medium_optics1
+		{
+		};
 		class fullauto_medium: FullAuto
 		{
 			burst=2;
 			burstRangeMax=6;
+		};
+		class SAFE: RHSUSF_SAFE_BASE
+		{
+		};
+		class FOLD: RHS_FOLD_BASE
+		{
 		};
 		rhsusf_acc_anpeq15=2;
 		rhs_fold_checkOptic=0;
@@ -9096,6 +10364,9 @@ class CfgWeapons
 	class rhs_weap_SCAR_L_Base: rhs_weap_SCAR_Base
 	{
 		recoil="rhs_recoil_m4";
+		class WeaponSlotsInfo: WeaponSlotsInfo
+		{
+		};
 		magazineWell[]=
 		{
 			"STANAG_556x45"
@@ -9104,6 +10375,18 @@ class CfgWeapons
 	class rhs_weap_SCAR_H_Base: rhs_weap_SCAR_Base
 	{
 		recoil="rhs_weap_scarh_recoil";
+		class WeaponSlotsInfo: WeaponSlotsInfo
+		{
+		};
+		magazines[]=
+		{
+			"rhs_mag_20Rnd_SCAR_762x51_m80_ball",
+			"rhs_mag_20Rnd_SCAR_762x51_m61_ap",
+			"rhs_mag_20Rnd_SCAR_762x51_m62_tracer",
+			"rhs_mag_20Rnd_SCAR_762x51_m80a1_epr",
+			"rhs_mag_20Rnd_SCAR_762x51_m118_special",
+			"rhs_mag_20Rnd_SCAR_762x51_mk316_special"
+		};
 		magazineWell[]=
 		{
 			"CBA_762x51_SCAR"
@@ -9408,6 +10691,11 @@ class CfgWeapons
 		primary=1;
 		audiblefire=20;
 		recoil="rhs_weap_smaw_recoil";
+		magazines[]=
+		{
+			"rhs_mag_smaw_HEAA",
+			"rhs_mag_smaw_HEDP"
+		};
 		magazineWell[]=
 		{
 			"CBA_SMAW"
@@ -9420,6 +10708,9 @@ class CfgWeapons
 		canLock=0;
 		weaponLockDelay=3;
 		lockAcquire=0;
+		class WeaponSlotsInfo: WeaponSlotsInfo
+		{
+			allowedslots[]={901};
 			mass=165.44;
 		};
 		useAction=1;
@@ -9427,6 +10718,10 @@ class CfgWeapons
 		class rhs_weap_smaw_SR: Launcher_Base_F
 		{
 			primary=1;
+			magazines[]=
+			{
+				"rhs_mag_smaw_SR"
+			};
 			magazineWell[]=
 			{
 				"CBA_SMAW_Spotting_Rifle"
@@ -9443,6 +10738,9 @@ class CfgWeapons
 			};
 		};
 	};
+	class rhs_weap_smaw_green: rhs_weap_smaw
+	{
+	};
 	class rhs_weap_maaws: Launcher_Base_F
 	{
 		audiblefire=20;
@@ -9451,6 +10749,12 @@ class CfgWeapons
 		{
 			recoil="recoil_single_law";
 			dispersion=0.34999999;
+		};
+		magazines[]=
+		{
+			"rhs_mag_maaws_HEAT",
+			"rhs_mag_maaws_HEDP",
+			"rhs_mag_maaws_HE"
 		};
 		magazineWell[]=
 		{
@@ -9467,6 +10771,9 @@ class CfgWeapons
 		canLock=0;
 		weaponLockDelay=3;
 		lockAcquire=0;
+		class WeaponSlotsInfo: WeaponSlotsInfo
+		{
+			allowedslots[]={901};
 			mass="187,4";
 		};
 	};
@@ -9474,6 +10781,10 @@ class CfgWeapons
 	{
 		rhs_disposable=1;
 		magazineReloadTime=1;
+		magazines[]=
+		{
+			"rhs_m136_mag"
+		};
 		soundFly[]=
 		{
 			"RHSUSF_120mm_Shot_SoundSet",
@@ -9485,6 +10796,9 @@ class CfgWeapons
 		{
 			mass=147.39999;
 		};
+		class ItemInfo
+		{
+		};
 		class Eventhandlers: Eventhandlers
 		{
 			class RHS_DisposableWeapon
@@ -9493,9 +10807,27 @@ class CfgWeapons
 			};
 		};
 	};
+	class rhs_weap_M136_hedp: rhs_weap_M136
+	{
+		magazines[]=
+		{
+			"rhs_m136_hedp_mag"
+		};
+	};
+	class rhs_weap_M136_hp: rhs_weap_M136
+	{
+		magazines[]=
+		{
+			"rhs_m136_hp_mag"
+		};
+	};
 	class rhs_weap_M136_used: rhs_weap_M136
 	{
 		displayname="M136 HEAT (used)";
+		magazines[]=
+		{
+			"rhsusf_launcher_dummy_mag"
+		};
 	};
 	class rhs_weap_M136_hedp_used: rhs_weap_M136_used
 	{
@@ -9507,23 +10839,41 @@ class CfgWeapons
 	};
 	class rhs_weap_m72a7: rhs_weap_M136
 	{
+		magazines[]=
+		{
+			"rhs_m72a7_mag"
+		};
 		recoil="recoil_single_law";
 		dispersion=0.2;
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=77;
 		};
+		class ItemInfo
+		{
+		};
 	};
 	class rhs_weap_m72a7_used: rhs_weap_m72a7
 	{
 		displayname="M72A7 (used)";
+		magazines[]=
+		{
+			"rhsusf_launcher_dummy_mag"
+		};
 	};
 	class launch_O_Titan_F;
 	class rhs_weap_fim92: launch_O_Titan_F
 	{
+		magazines[]=
+		{
+			"rhs_fim92_mag"
+		};
 		shotPos="usti hlavne";
 		shotEnd="konec hlavne";
 		cmImmunity=0.89999998;
+		class WeaponSlotsInfo
+		{
+			allowedslots[]={};
 			mass=92.400002;
 		};
 		soundFly[]=
@@ -9544,6 +10894,10 @@ class CfgWeapons
 	};
 	class rhs_weap_fgm148: launch_O_Titan_F
 	{
+		magazines[]=
+		{
+			"rhs_fgm148_magazine_AT"
+		};
 		magazineReloadTime=12;
 		reloadTime=0.5;
 		autoReload=0;
@@ -9553,6 +10907,15 @@ class CfgWeapons
 		class Single: Mode_SemiAuto
 		{
 			reloadtime=10;
+		};
+		class Cruise: Single
+		{
+		};
+		class TopDown: Single
+		{
+		};
+		class ItemInfo
+		{
 		};
 		forceoptics=0;
 		lockAcquire=0;
@@ -9575,11 +10938,18 @@ class CfgWeapons
 	class rhs_weap_mk40_sraw: launch_O_Titan_F
 	{
 		AGM_enableTopDownAttack=1;
+		magazines[]=
+		{
+			"rhs_fgm172a_magazine_AT"
+		};
 		magazineReloadTime=12;
 		reloadTime=0.5;
 		autoReload=0;
 		shotPos="usti hlavne";
 		shotEnd="konec hlavne";
+		class ItemInfo
+		{
+		};
 		class WeaponSlotsInfo
 		{
 			mass=72.599998;
@@ -9598,10 +10968,275 @@ class CfgWeapons
 	class rhs_weap_mk41_sraw: rhs_weap_mk40_sraw
 	{
 		AGM_enableTopDownAttack=1;
+		magazines[]=
+		{
+			"rhs_fgm172b_magazine_MPV"
+		};
+		class ItemInfo
+		{
+		};
 		class WeaponSlotsInfo
 		{
 			mass=72.599998;
 		};
+	};
+	class rhs_weap_m4_bipod: rhs_weap_m4
+	{
+	};
+	class rhs_weap_m4a1_bipod: rhs_weap_m4a1
+	{
+	};
+	class rhs_weap_m4a1_carryhandle_bipod: rhs_weap_m4a1_carryhandle
+	{
+	};
+	class rhs_weap_m16a4_bipod: rhs_weap_m16a4
+	{
+	};
+	class rhs_weap_m16a4_carryhandle_bipod: rhs_weap_m16a4_carryhandle
+	{
+	};
+	class rhs_m4a1_m320: rhs_weap_m4a1_m320
+	{
+	};
+	class rhs_m4_m320: rhs_weap_m4_m320
+	{
+	};
+	class rhs_m4_compm4: rhs_weap_m4
+	{
+	};
+	class rhs_m4_acog: rhs_weap_m4
+	{
+	};
+	class rhs_m4_grip_compm4: rhs_weap_m4_grip3
+	{
+	};
+	class rhs_m4_m203_compm4: rhs_weap_m4_m203
+	{
+	};
+	class rhs_m4a1_compm4: rhs_weap_m4a1
+	{
+	};
+	class rhs_m4a1_grip_compm4: rhs_weap_m4a1_grip3
+	{
+	};
+	class rhs_m4a1_acog: rhs_weap_m4a1
+	{
+	};
+	class rhs_m4a1_acog2: rhs_weap_m4a1
+	{
+	};
+	class rhs_m4a1_acog3: rhs_weap_m4a1
+	{
+	};
+	class rhs_m4a1_grip_acog: rhs_weap_m4a1_grip3
+	{
+	};
+	class rhs_m4a1_grip_acog2: rhs_weap_m4a1_grip3
+	{
+	};
+	class rhs_m4a1_m203s_ACOG: rhs_weap_m4a1_m203
+	{
+	};
+	class rhs_m4a1_m320_acog: rhs_m4a1_m320
+	{
+	};
+	class rhs_weap_m16a4_grip_acog: rhs_weap_m16a4_grip2
+	{
+	};
+	class rhs_weap_m240b_elcan: rhs_weap_m240B_CAP
+	{
+	};
+	class rhs_weap_m249_pip_elcan: rhs_weap_m249_pip_S
+	{
+	};
+	class rhs_weap_m249_light_S_elcan: rhs_weap_m249_light_S
+	{
+	};
+	class rhs_weap_m249_light_L_elcan: rhs_weap_m249_light_L
+	{
+	};
+	class rhs_weap_XM2010_d_leu: rhs_weap_XM2010_d
+	{
+	};
+	class rhs_weap_XM2010_wd_leu: rhs_weap_XM2010_wd
+	{
+	};
+	class rhs_weap_m14ebrri_leu: rhs_weap_m14ebrri
+	{
+	};
+	class rhs_weap_M107_leu: rhs_weap_M107
+	{
+	};
+	class rhs_weap_M107_d_leu: rhs_weap_M107_d
+	{
+	};
+	class rhs_weap_M107_w_leu: rhs_weap_M107_w
+	{
+	};
+	class rhs_weap_m24sws_leu: rhs_weap_m24sws
+	{
+	};
+	class rhs_weap_m24sws_d_leu: rhs_weap_m24sws_d
+	{
+	};
+	class rhs_weap_m24sws_wd_leu: rhs_weap_m24sws_wd
+	{
+	};
+	class rhs_weap_m24sws_blk_leu: rhs_weap_m24sws_blk
+	{
+	};
+	class rhs_weap_m16a4_acog_usmc: rhs_weap_m16a4_carryhandle
+	{
+	};
+	class rhs_weap_m16a4_m203_acog_usmc: rhs_weap_m16a4_carryhandle_M203
+	{
+	};
+	class rhs_weap_m16a4_grip_acog_usmc: rhs_weap_m16a4_carryhandle_grip2
+	{
+	};
+	class rhs_weap_m16a4_grip_acog2_usmc: rhs_weap_m16a4_carryhandle_grip2
+	{
+	};
+	class rhs_m4_acog_usmc: rhs_weap_m4_carryhandle
+	{
+	};
+	class rhs_m4_acog2_usmc: rhs_weap_m4_carryhandle
+	{
+	};
+	class rhs_m4_grip_acog_usmc: rhs_weap_m4_carryhandle_grip3
+	{
+	};
+	class rhs_m4_grip_acog3_usmc: rhs_weap_m4_carryhandle_grip3
+	{
+	};
+	class rhs_m4_m203_acog_usmc: rhs_weap_m4_carryhandle_m203
+	{
+	};
+	class rhs_m4_m203s_acog_usmc: rhs_weap_m4_carryhandle_m203S
+	{
+	};
+	class rhs_m4a1_eotech: rhs_weap_m4a1
+	{
+	};
+	class rhs_m4a1_acog_usmc: rhs_weap_m4a1
+	{
+	};
+	class rhs_m4a1_acog2_usmc: rhs_weap_m4a1
+	{
+	};
+	class rhs_m4a1_acog3_usmc: rhs_weap_m4a1
+	{
+	};
+	class rhs_m4a1_acog2_usmc_sup: rhs_weap_m4a1
+	{
+	};
+	class rhs_m4a1_grip_eotech: rhs_weap_m4a1_carryhandle_grip3
+	{
+	};
+	class rhs_m4a1_grip_acog_usmc: rhs_weap_m4a1_carryhandle_grip3
+	{
+	};
+	class rhs_m4a1_grip_acog2_usmc_sup: rhs_weap_m4a1_carryhandle_grip3
+	{
+	};
+	class rhs_m4a1_grip_acog2_usmc_sup_tan: rhs_weap_m4a1_carryhandle_grip3
+	{
+	};
+	class rhs_m4a1_grip_acog3_usmc_sup: rhs_weap_m4a1_carryhandle_grip3
+	{
+	};
+	class rhs_m4a1_m203_acog3_usmc_sup: rhs_weap_m4a1_m203
+	{
+	};
+	class rhs_weap_m27iar_bipod_acog_usmc: rhs_weap_m27iar_grip
+	{
+	};
+	class rhs_weap_m27iar_bipod_acog_usmc_sup: rhs_weap_m27iar_grip
+	{
+	};
+	class rhs_weap_m27iar_bipod_acog_usmc_sup_tan: rhs_weap_m27iar
+	{
+	};
+	class rhs_weap_m39: rhs_weap_m14ebrri
+	{
+	};
+	class rhs_weap_m240b_usmc: rhs_weap_m240B_CAP
+	{
+	};
+	class rhs_weap_m249_pip_usmc: rhs_weap_m249_pip_L
+	{
+	};
+	class rhs_weap_m249_para_usmc: rhs_weap_m249_pip_S_para
+	{
+	};
+	class rhs_weap_sr25_usmc: rhs_weap_sr25
+	{
+	};
+	class rhs_weap_sr25_sup_usmc: rhs_weap_sr25
+	{
+	};
+	class rhs_weap_m40_wd_usmc: rhs_weap_m40a5_wd
+	{
+	};
+	class rhs_weap_m40_d_usmc: rhs_weap_m40a5_d
+	{
+	};
+	class rhs_weap_m32_usmc: rhs_weap_m32
+	{
+	};
+	class rhs_weap_smaw_optic: rhs_weap_smaw
+	{
+	};
+	class rhs_weap_smaw_gr_optic: rhs_weap_smaw_green
+	{
+	};
+	class rhs_weap_maaws_optic: rhs_weap_maaws
+	{
+	};
+	class rhs_weap_M107_premier: rhs_weap_M107
+	{
+	};
+	class rhs_weap_M107_d_premier: rhs_weap_M107_d
+	{
+	};
+	class rhs_weap_M107_w_premier: rhs_weap_M107_w
+	{
+	};
+	class rhs_m4a1_grip_eotech_soc: rhs_weap_m4a1_mstock_grip3
+	{
+	};
+	class rhs_weap_mk18_eotech: rhs_weap_mk18_KAC
+	{
+	};
+	class rhs_weap_mk18_eotech_sup: rhs_weap_mk18_KAC
+	{
+	};
+	class rhs_weap_mk18_SU230: rhs_weap_mk18_KAC
+	{
+	};
+	class rhs_weap_m4a1_blockII_KAC_SU230: rhs_weap_m4a1_blockII_KAC
+	{
+	};
+	class rhs_weap_m4a1_blockII_M203_SU230: rhs_weap_m4a1_blockII_M203
+	{
+	};
+	class rhs_weap_m4a1_blockII_KAC_SU230_sup: rhs_weap_m4a1_blockII_KAC
+	{
+	};
+	class rhs_weap_mk17_CQC_SU230A_marsoc: rhs_weap_mk17_CQC
+	{
+	};
+	class rhs_weap_mk17_CQC_SU230A_sup_marsoc: rhs_weap_mk17_CQC
+	{
+	};
+	class rhs_weap_mk17_CQC_G33_sup_marsoc: rhs_weap_mk17_CQC
+	{
+	};
+	class rhs_weap_mk17_LB_DMR_marsoc: rhs_weap_mk17_LB
+	{
+	};
+	class rhs_weap_sr25_sup_marsoc: rhs_weap_sr25_ec
+	{
 	};
 	class hgun_ACPC2_F;
 	class hgun_P07_F;
@@ -9614,13 +11249,25 @@ class CfgWeapons
 		{
 			mass=20.9;
 		};
+		magazines[]=
+		{
+			"rhsusf_mag_7x45acp_MHP"
+		};
 		magazineWell[]=
 		{
 			"CBA_45ACP_1911"
 		};
+		class SAFE_PISTOL: RHSUSF_SAFE_BASE
+		{
+		};
 	};
 	class rhsusf_weap_glock17g4: hgun_P07_F
 	{
+		magazines[]=
+		{
+			"rhsusf_mag_17Rnd_9x19_JHP",
+			"rhsusf_mag_17Rnd_9x19_FMJ"
+		};
 		magazineWell[]=
 		{
 			"CBA_9x19_Glock_Full"
@@ -9632,9 +11279,17 @@ class CfgWeapons
 		{
 			mass=13.75;
 		};
+		class SAFE_PISTOL: RHSUSF_SAFE_BASE
+		{
+		};
 	};
 	class rhsusf_weap_m9: rhsusf_weap_glock17g4
 	{
+		magazines[]=
+		{
+			"rhsusf_mag_15Rnd_9x19_JHP",
+			"rhsusf_mag_15Rnd_9x19_FMJ"
+		};
 		magazineWell[]=
 		{
 			"CBA_9x19_M9"
@@ -9645,6 +11300,9 @@ class CfgWeapons
 		class WeaponSlotsInfo
 		{
 			mass=20.9;
+		};
+		class SAFE_PISTOL: RHSUSF_SAFE_BASE
+		{
 		};
 	};
 	class Rangefinder;
@@ -9660,6 +11318,15 @@ class CfgWeapons
 			mass=20;
 		};
 	};
+	class rhsusf_bino_lerca_1200_tan: rhsusf_bino_lerca_1200_black
+	{
+	};
+	class lerca_1200_black: rhsusf_bino_lerca_1200_black
+	{
+	};
+	class lerca_1200_tan: rhsusf_bino_lerca_1200_tan
+	{
+	};
 	class rhsusf_bino_lrf_Vector21: Rangefinder
 	{
 		visionMode[]=
@@ -9670,6 +11337,9 @@ class CfgWeapons
 		{
 			mass=37.619999;
 		};
+	};
+	class rhsusf_lrf_Vector21: rhsusf_bino_lrf_Vector21
+	{
 	};
 	class rhsusf_bino_leopold_mk4: binocular
 	{
@@ -9682,6 +11352,9 @@ class CfgWeapons
 			mass=20;
 		};
 	};
+	class Leupold_Mk4: rhsusf_bino_leopold_mk4
+	{
+	};
 	class rhsusf_bino_m24: binocular
 	{
 		visionMode[]=
@@ -9692,6 +11365,15 @@ class CfgWeapons
 		{
 			mass=20;
 		};
+	};
+	class rhsusf_bino_m24_ARD: rhsusf_bino_m24
+	{
+	};
+	class m24_bino: rhsusf_bino_m24
+	{
+	};
+	class m24_bino_ARD: rhsusf_bino_m24_ARD
+	{
 	};
 	class ItemCore;
 	class InventoryMuzzleItem_Base_F;
@@ -9708,6 +11390,9 @@ class CfgWeapons
 			mass=10;
 		};
 	};
+	class rhsusf_acc_harris_swivel: rhsusf_acc_harris_bipod
+	{
+	};
 	class rhsusf_acc_saw_bipod: rhsusf_acc_harris_bipod
 	{
 		class ItemInfo: ItemInfo
@@ -9722,6 +11407,9 @@ class CfgWeapons
 			mass=10;
 		};
 	};
+	class rhsusf_acc_m14_bipod: rhsusf_acc_harris_bipod
+	{
+	};
 	class rhsusf_acc_grip1: rhsusf_acc_harris_bipod
 	{
 		class ItemInfo
@@ -9732,6 +11420,9 @@ class CfgWeapons
 	};
 	class rhsusf_acc_grip2: rhsusf_acc_grip1
 	{
+		class ItemInfo: ItemInfo
+		{
+		};
 		rhs_grip_type="rhs_grip2_change";
 	};
 	class rhsusf_acc_grip2_tan: rhsusf_acc_grip2
@@ -9765,13 +11456,25 @@ class CfgWeapons
 	{
 		rhs_grip_type="rhs_grip3_change";
 	};
+	class rhsusf_acc_rvg_de: rhsusf_acc_rvg_blk
+	{
+	};
 	class rhsusf_acc_tacsac_blk: rhsusf_acc_grip2
 	{
 		rhs_grip_type="rhs_grip2_change";
 	};
+	class rhsusf_acc_tacsac_tan: rhsusf_acc_tacsac_blk
+	{
+	};
+	class rhsusf_acc_tacsac_blue: rhsusf_acc_tacsac_blk
+	{
+	};
 	class rhsusf_acc_tdstubby_blk: rhsusf_acc_grip3
 	{
 		rhs_grip_type="rhs_grip3_change";
+	};
+	class rhsusf_acc_tdstubby_tan: rhsusf_acc_tdstubby_blk
+	{
 	};
 	class rhsusf_acc_kac_grip: rhsusf_acc_grip3
 	{
@@ -9790,7 +11493,16 @@ class CfgWeapons
 		class ItemInfo: InventoryFlashLightItem_Base_F
 		{
 			mass=0;
+			class Pointer
+			{
+			};
+			class FlashLight
+			{
+			};
 		};
+	};
+	class rhsusf_acc_anpeq15A: acc_pointer_IR
+	{
 	};
 	class rhsusf_acc_anpeq15: acc_pointer_IR
 	{
@@ -9805,6 +11517,9 @@ class CfgWeapons
 				irLaserPos="laser pos";
 				irLaserEnd="laser dir";
 				irDistance=5;
+			};
+			class FlashLight
+			{
 			};
 		};
 		rhs_anpeq15_base="rhsusf_acc_anpeq15";
@@ -9837,6 +11552,12 @@ class CfgWeapons
 		class ItemInfo: ItemInfo
 		{
 			mass=8;
+			class Pointer
+			{
+			};
+			class FlashLight
+			{
+				color[]={25,22,20};
 				ambient[]={0.001,0.001,0.001};
 				position="flash dir";
 				direction="flash";
@@ -9916,6 +11637,18 @@ class CfgWeapons
 	{
 		rhs_anpeq15_base="rhsusf_acc_anpeq15_bk_top";
 	};
+	class rhsusf_acc_anpeq15_top_h: rhsusf_acc_anpeq15_top
+	{
+	};
+	class rhsusf_acc_anpeq15_bk_top_h: rhsusf_acc_anpeq15_bk_top
+	{
+	};
+	class rhsusf_acc_anpeq15_top_sc: rhsusf_acc_anpeq15_top
+	{
+	};
+	class rhsusf_acc_anpeq15_bk_top_sc: rhsusf_acc_anpeq15_bk_top
+	{
+	};
 	class rhsusf_acc_anpeq15side: acc_pointer_IR
 	{
 		class ItemInfo: InventoryFlashLightItem_Base_F
@@ -9927,7 +11660,13 @@ class CfgWeapons
 				irLaserEnd="laser dir";
 				irDistance=5;
 			};
+			class FlashLight
+			{
+			};
 		};
+	};
+	class rhsusf_acc_anpeq15side_bk: rhsusf_acc_anpeq15side
+	{
 	};
 	class rhsusf_acc_anpeq16a: rhsusf_acc_anpeq15
 	{
@@ -9967,6 +11706,15 @@ class CfgWeapons
 	{
 		rhs_acc_combo="rhsusf_acc_anpeq16a_top_sc";
 	};
+	class rhsusf_acc_M952V: rhsusf_acc_anpeq15_light
+	{
+	};
+	class rhsusf_acc_wmx: rhsusf_acc_M952V
+	{
+	};
+	class rhsusf_acc_wmx_bk: rhsusf_acc_M952V
+	{
+	};
 	class rhsusf_silencer_base: muzzle_snds_H
 	{
 		class ItemInfo: InventoryMuzzleItem_Base_F
@@ -9979,10 +11727,6 @@ class CfgWeapons
 			class AmmoCoef
 			{
 				hit=1;
-				visibleFire=0.2;
-				audibleFire=0.40000001;
-				visibleFireTime=0.5;
-				audibleFireTime=1;
 				cost=1;
 				typicalSpeed=1;
 				airFriction=1;
@@ -10000,6 +11744,69 @@ class CfgWeapons
 			soundTypeIndex=1;
 		};
 	};
+	class rhsusf_acc_M2010S: rhsusf_silencer_base
+	{
+	};
+	class rhsusf_acc_M2010S_d: rhsusf_acc_M2010S
+	{
+	};
+	class rhsusf_acc_M2010S_sa: rhsusf_acc_M2010S
+	{
+	};
+	class rhsusf_acc_M2010S_wd: rhsusf_acc_M2010S
+	{
+	};
+	class rhsusf_acc_SR25S: rhsusf_silencer_base
+	{
+	};
+	class rhsusf_acc_SR25S_wd: rhsusf_acc_SR25S
+	{
+	};
+	class rhsusf_acc_SR25S_d: rhsusf_acc_SR25S
+	{
+	};
+	class rhsusf_acc_rotex5_grey: rhsusf_silencer_base
+	{
+	};
+	class rhsusf_acc_rotex5_tan: rhsusf_acc_rotex5_grey
+	{
+	};
+	class rhsusf_acc_nt4_black: rhsusf_silencer_base
+	{
+	};
+	class rhsusf_acc_nt4_tan: rhsusf_acc_nt4_black
+	{
+	};
+	class rhsusf_acc_omega9k: rhsusf_silencer_base
+	{
+	};
+	class rhsusf_acc_rotex_mp7: rhsusf_silencer_base
+	{
+	};
+	class rhsusf_acc_rotex_mp7_aor1: rhsusf_acc_rotex_mp7
+	{
+	};
+	class rhsusf_acc_rotex_mp7_winter: rhsusf_acc_rotex_mp7
+	{
+	};
+	class rhsusf_acc_rotex_mp7_desert: rhsusf_acc_rotex_mp7
+	{
+	};
+	class rhsusf_acc_muzzleFlash_SF3P556: ItemCore
+	{
+	};
+	class rhsusf_acc_muzzleFlash_SFMB556: rhsusf_acc_muzzleFlash_SF3P556
+	{
+	};
+	class rhsusf_acc_muzzleFlash_ardec_m240: rhsusf_acc_muzzleFlash_SF3P556
+	{
+	};
+	class rhsusf_acc_muzzleFlash_M14_USGI_NM: rhsusf_acc_muzzleFlash_SF3P556
+	{
+	};
+	class rhsusf_m4muzzlebreak_base: rhsusf_silencer_base
+	{
+	};
 	class rhsusf_acc_SF3P556: rhsusf_m4muzzlebreak_base
 	{
 		class ItemInfo: ItemInfo
@@ -10008,10 +11815,6 @@ class CfgWeapons
 			class AmmoCoef
 			{
 				hit=1;
-				visibleFire=0.80000001;
-				audibleFire=0.94999999;
-				visibleFireTime=0.94999999;
-				audibleFireTime=1;
 				cost=1;
 				typicalSpeed=1;
 				airFriction=1;
@@ -10056,6 +11859,15 @@ class CfgWeapons
 			};
 		};
 	};
+	class rhsusf_acc_m24_silencer_black: rhsusf_silencer_base
+	{
+	};
+	class rhsusf_acc_m24_silencer_d: rhsusf_acc_m24_silencer_black
+	{
+	};
+	class rhsusf_acc_m24_silencer_wd: rhsusf_acc_m24_silencer_black
+	{
+	};
 	class rhsusf_acc_m24_muzzlehider_black: rhsusf_m4muzzlebreak_base
 	{
 		class ItemInfo: ItemInfo
@@ -10064,10 +11876,6 @@ class CfgWeapons
 			class AmmoCoef
 			{
 				hit=1;
-				visibleFire=0.80000001;
-				audibleFire=0.94999999;
-				visibleFireTime=0.94999999;
-				audibleFireTime=1;
 				cost=1;
 				typicalSpeed=1;
 				airFriction=1;
@@ -10082,6 +11890,30 @@ class CfgWeapons
 			};
 			alternativeFire="rhsusf_acc_muzzleFlash_SF3P556";
 		};
+	};
+	class rhsusf_acc_m24_muzzlehider_d: rhsusf_acc_m24_muzzlehider_black
+	{
+	};
+	class rhsusf_acc_m24_muzzlehider_wd: rhsusf_acc_m24_muzzlehider_black
+	{
+	};
+	class rhsusf_acc_aac_scarh_silencer: rhsusf_silencer_base
+	{
+	};
+	class rhsusf_acc_aac_762sd_silencer: rhsusf_acc_aac_scarh_silencer
+	{
+	};
+	class rhsusf_acc_aac_762sdn6_silencer: rhsusf_acc_aac_scarh_silencer
+	{
+	};
+	class rhsusf_acc_aac_m14dcqd_silencer: rhsusf_acc_aac_scarh_silencer
+	{
+	};
+	class rhsusf_acc_aac_m14dcqd_silencer_d: rhsusf_acc_aac_scarh_silencer
+	{
+	};
+	class rhsusf_acc_aac_m14dcqd_silencer_wd: rhsusf_acc_aac_scarh_silencer
+	{
 	};
 	class rhsusf_acc_sniper_base: ItemCore
 	{
@@ -10099,30 +11931,78 @@ class CfgWeapons
 			mass=4;
 		};
 	};
+	class rhsusf_acc_T1_high: rhsusf_acc_compm4
+	{
+	};
 	class rhsusf_acc_T1_low: rhsusf_acc_T1_high
 	{
+		class ItemInfo: ItemInfo
+		{
+		};
 	};
 	class rhsusf_acc_T1_low_fwd: rhsusf_acc_T1_low
 	{
 		rhs_T1_base="rhsusf_acc_T1_low_fwd";
 	};
+	class rhsusf_acc_T1_low_fwd_ak: rhsusf_acc_T1_low_fwd
+	{
+	};
+	class rhsusf_acc_RX01: rhsusf_acc_compm4
+	{
+	};
+	class rhsusf_acc_RX01_tan: rhsusf_acc_RX01
+	{
+	};
+	class rhsusf_acc_RX01_NoFilter: rhsusf_acc_RX01
+	{
+	};
+	class rhsusf_acc_RX01_NoFilter_tan: rhsusf_acc_RX01_NoFilter
+	{
+	};
 	class rhsusf_acc_RM05: rhsusf_acc_T1_high
 	{
+		class ItemInfo: ItemInfo
+		{
+		};
 	};
 	class rhsusf_acc_RM05_fwd: rhsusf_acc_RM05
 	{
 		rhs_T1_base="rhsusf_acc_RM05_fwd";
 	};
+	class rhsusf_acc_RM05_fwd_ak: rhsusf_acc_RM05_fwd
+	{
+	};
 	class rhsusf_acc_mrds: rhsusf_acc_T1_high
 	{
+		class ItemInfo: ItemInfo
+		{
+		};
 	};
 	class rhsusf_acc_mrds_fwd: rhsusf_acc_mrds
 	{
 		rhs_T1_base="rhsusf_acc_mrds_fwd";
 	};
+	class rhsusf_acc_mrds_fwd_ak: rhsusf_acc_mrds_fwd
+	{
+	};
+	class rhsusf_acc_mrds_c: rhsusf_acc_mrds
+	{
+	};
 	class rhsusf_acc_mrds_fwd_c: rhsusf_acc_mrds_c
 	{
 		rhs_T1_base="rhsusf_acc_mrds_fwd_c";
+	};
+	class rhsusf_acc_mrds_fwd_c_ak: rhsusf_acc_mrds_fwd_c
+	{
+	};
+	class rhsusf_acc_eotech_552: rhsusf_acc_compm4
+	{
+	};
+	class rhsusf_acc_eotech_552_d: rhsusf_acc_eotech_552
+	{
+	};
+	class rhsusf_acc_eotech_552_wd: rhsusf_acc_eotech_552
+	{
 	};
 	class rhsusf_acc_anpvs27: ItemCore
 	{
@@ -10138,6 +12018,15 @@ class CfgWeapons
 		{
 			mass=14;
 		};
+	};
+	class rhsusf_acc_LEUPOLDMK4: rhsusf_acc_sniper_base
+	{
+	};
+	class rhsusf_acc_LEUPOLDMK4_d: rhsusf_acc_LEUPOLDMK4
+	{
+	};
+	class rhsusf_acc_LEUPOLDMK4_wd: rhsusf_acc_LEUPOLDMK4
+	{
 	};
 	class rhsusf_acc_ELCAN: rhsusf_acc_sniper_base
 	{
@@ -10155,6 +12044,9 @@ class CfgWeapons
 	class rhsusf_acc_elcan_3d: rhsusf_acc_ELCAN
 	{
 		rhs_optic_base="rhsusf_acc_ELCAN";
+		class ItemInfo: ItemInfo
+		{
+		};
 	};
 	class rhsusf_acc_elcan_ard_3d: rhsusf_acc_elcan_3d
 	{
@@ -10163,6 +12055,9 @@ class CfgWeapons
 	class rhsusf_acc_ELCAN_pip: rhsusf_acc_ELCAN
 	{
 		rhs_optic_base="rhsusf_acc_ELCAN";
+		class ItemInfo: ItemInfo
+		{
+		};
 	};
 	class rhsusf_acc_ELCAN_ard_pip: rhsusf_acc_ELCAN_pip
 	{
@@ -10180,14 +12075,23 @@ class CfgWeapons
 	class rhsusf_acc_su230_base_3d: rhsusf_acc_su230_base
 	{
 		rhs_optic_base="rhsusf_acc_su230_base";
+		class ItemInfo: ItemInfo
+		{
+		};
 	};
 	class rhsusf_acc_su230_mrds_base: rhsusf_acc_su230_base
 	{
 		rhs_optic_base="rhsusf_acc_su230_base";
+		class ItemInfo: ItemInfo
+		{
+		};
 	};
 	class rhsusf_acc_su230_mrds_base_3d: rhsusf_acc_su230_mrds_base
 	{
 		rhs_optic_base="rhsusf_acc_su230_base";
+		class ItemInfo: ItemInfo
+		{
+		};
 	};
 	class rhsusf_acc_su230: rhsusf_acc_su230_base
 	{
@@ -10208,6 +12112,9 @@ class CfgWeapons
 	class rhsusf_acc_su230a: rhsusf_acc_su230
 	{
 		rhs_optic_base="rhsusf_acc_su230a";
+		class ItemInfo: ItemInfo
+		{
+		};
 	};
 	class rhsusf_acc_su230a_3d: rhsusf_acc_su230_3d
 	{
@@ -10216,6 +12123,9 @@ class CfgWeapons
 	class rhsusf_acc_su230a_mrds: rhsusf_acc_su230_mrds
 	{
 		rhs_optic_base="rhsusf_acc_su230a_mrds";
+		class ItemInfo: ItemInfo
+		{
+		};
 	};
 	class rhsusf_acc_su230a_mrds_3d: rhsusf_acc_su230_mrds_3d
 	{
@@ -10253,8 +12163,41 @@ class CfgWeapons
 	{
 		rhs_optic_base="rhsusf_acc_su230a_mrds_c";
 	};
+	class rhsusf_acc_SpecterDR: rhsusf_acc_su230
+	{
+	};
+	class rhsusf_acc_SpecterDR_D: rhsusf_acc_su230_c
+	{
+	};
+	class rhsusf_acc_SpecterDR_OD: rhsusf_acc_su230_c
+	{
+	};
+	class rhsusf_acc_SpecterDR_CX: rhsusf_acc_su230_c
+	{
+	};
+	class rhsusf_acc_SpecterDR_A: rhsusf_acc_su230a
+	{
+	};
+	class rhsusf_acc_SpecterDR_3d: rhsusf_acc_su230_3d
+	{
+	};
+	class rhsusf_acc_SpecterDR_D_3D: rhsusf_acc_su230_c_3d
+	{
+	};
+	class rhsusf_acc_SpecterDR_OD_3D: rhsusf_acc_su230_c_3d
+	{
+	};
+	class rhsusf_acc_SpecterDR_A_3d: rhsusf_acc_su230a_c_3d
+	{
+	};
+	class rhsusf_acc_SpecterDR_CX_3D: rhsusf_acc_su230_c_3d
+	{
+	};
 	class rhsusf_acc_SpecterDR_pvs27: rhsusf_acc_SpecterDR
 	{
+		class ItemInfo: ItemInfo
+		{
+		};
 	};
 	class rhsusf_acc_ACOG: rhsusf_acc_sniper_base
 	{
@@ -10280,22 +12223,37 @@ class CfgWeapons
 	class rhsusf_acc_ACOG2: rhsusf_acc_ACOG
 	{
 		rhs_optic_base="rhsusf_acc_ACOG2";
+		class ItemInfo: ItemInfo
+		{
+		};
 	};
 	class rhsusf_acc_ACOG3: rhsusf_acc_ACOG
 	{
 		rhs_optic_base="rhsusf_acc_ACOG3";
+		class ItemInfo: ItemInfo
+		{
+		};
 	};
 	class rhsusf_acc_ACOG_USMC: rhsusf_acc_ACOG
 	{
 		rhs_optic_base="rhsusf_acc_ACOG_USMC";
+		class ItemInfo: ItemInfo
+		{
+		};
 	};
 	class rhsusf_acc_ACOG2_USMC: rhsusf_acc_ACOG2
 	{
 		rhs_optic_base="rhsusf_acc_ACOG2_USMC";
+		class ItemInfo: ItemInfo
+		{
+		};
 	};
 	class rhsusf_acc_ACOG3_USMC: rhsusf_acc_ACOG3
 	{
 		rhs_optic_base="rhsusf_acc_ACOG3_USMC";
+		class ItemInfo: ItemInfo
+		{
+		};
 	};
 	class rhsusf_acc_ACOG_RMR: rhsusf_acc_ACOG
 	{
@@ -10304,6 +12262,9 @@ class CfgWeapons
 	class rhsusf_acc_ACOG_3d: rhsusf_acc_ACOG
 	{
 		rhs_optic_base="rhsusf_acc_ACOG";
+		class ItemInfo: ItemInfo
+		{
+		};
 	};
 	class rhsusf_acc_ACOG_wd_3d: rhsusf_acc_ACOG_3d
 	{
@@ -10344,6 +12305,9 @@ class CfgWeapons
 	class rhsusf_acc_ACOG_pip: rhsusf_acc_ACOG
 	{
 		rhs_optic_base="rhsusf_acc_ACOG";
+		class ItemInfo: ItemInfo
+		{
+		};
 	};
 	class rhsusf_acc_ACOG_wd_pip: rhsusf_acc_ACOG_pip
 	{
@@ -10404,6 +12368,9 @@ class CfgWeapons
 			mass=9;
 		};
 	};
+	class rhsusf_acc_LEUPOLDMK4_2_d: rhsusf_acc_LEUPOLDMK4_2
+	{
+	};
 	class rhsusf_acc_premier: rhsusf_acc_LEUPOLDMK4_2
 	{
 		class ItemInfo: InventoryOpticsItem_Base_F
@@ -10418,6 +12385,9 @@ class CfgWeapons
 		{
 			mass=9;
 		};
+	};
+	class rhsusf_acc_premier_low: rhsusf_acc_premier
+	{
 	};
 	class rhsusf_acc_premier_anpvs27: rhsusf_acc_premier
 	{
@@ -10442,7 +12412,25 @@ class CfgWeapons
 			mass=9;
 		};
 	};
+	class rhsusf_acc_M8541_low: rhsusf_acc_M8541
+	{
+	};
+	class rhsusf_acc_M8541_low_d: rhsusf_acc_M8541_low
+	{
+	};
+	class rhsusf_acc_M8541_low_wd: rhsusf_acc_M8541_low
+	{
+	};
+	class rhsusf_acc_EOTECH: optic_Holosight
+	{
+	};
 	class rhsusf_acc_M2A1: rhsusf_acc_compm4
+	{
+		class ItemInfo: ItemInfo
+		{
+		};
+	};
+	class rhsusf_acc_eotech_xps3: optic_Holosight
 	{
 	};
 	class rhsusf_acc_ACOG_MDO: ItemCore
@@ -10493,33 +12481,63 @@ class CfgWeapons
 	};
 	class rhs_weap_optic_smaw_1: rhs_weap_optic_smaw
 	{
+		class ItemInfo: ItemInfo
+		{
+		};
 	};
 	class rhs_weap_optic_smaw_2: rhs_weap_optic_smaw_1
 	{
+		class ItemInfo: ItemInfo
+		{
+		};
 	};
 	class rhs_weap_optic_smaw_3: rhs_weap_optic_smaw_1
 	{
+		class ItemInfo: ItemInfo
+		{
+		};
 	};
 	class rhs_weap_optic_smaw_4: rhs_weap_optic_smaw_1
 	{
+		class ItemInfo: ItemInfo
+		{
+		};
 	};
 	class rhs_weap_optic_smaw_5: rhs_weap_optic_smaw_1
 	{
+		class ItemInfo: ItemInfo
+		{
+		};
 	};
 	class rhs_weap_optic_smaw_6: rhs_weap_optic_smaw_1
 	{
+		class ItemInfo: ItemInfo
+		{
+		};
 	};
 	class rhs_weap_optic_smaw_7: rhs_weap_optic_smaw_1
 	{
+		class ItemInfo: ItemInfo
+		{
+		};
 	};
 	class rhs_weap_optic_smaw_8: rhs_weap_optic_smaw_1
 	{
+		class ItemInfo: ItemInfo
+		{
+		};
 	};
 	class rhs_weap_optic_smaw_9: rhs_weap_optic_smaw_1
 	{
+		class ItemInfo: ItemInfo
+		{
+		};
 	};
 	class rhs_weap_optic_smaw_10: rhs_weap_optic_smaw_1
 	{
+		class ItemInfo: ItemInfo
+		{
+		};
 	};
 	class rhs_optic_maaws: ItemCore
 	{
@@ -10532,20 +12550,110 @@ class CfgWeapons
 	class Default;
 	class Put: Default
 	{
+		class PutMuzzle: Default
+		{
+		};
+		class Rhsusf_MineMuzzle: PutMuzzle
+		{
+			magazines[]=
+			{
+				"rhs_mine_M19_mag",
+				"rhsusf_mine_m14_mag",
+				"rhsusf_mine_m49a1_3m_mag",
+				"rhsusf_mine_m49a1_6m_mag",
+				"rhsusf_mine_m49a1_10m_mag"
+			};
+		};
 		class rhsusf_m112_muzzle: PutMuzzle
 		{
 			autoreload=0;
+			magazines[]=
+			{
+				"rhsusf_m112_mag"
+			};
 			enableAttack=1;
 		};
 		class rhsusf_m112x4_muzzle: PutMuzzle
 		{
 			autoreload=0;
+			magazines[]=
+			{
+				"rhsusf_m112x4_mag"
+			};
 			enableAttack=1;
 		};
 	};
 	class GrenadeLauncher;
 	class Throw: GrenadeLauncher
 	{
+		class ThrowMuzzle: GrenadeLauncher
+		{
+		};
+		class Rhsusf_Throw_Flash: ThrowMuzzle
+		{
+			magazines[]=
+			{
+				"rhs_mag_mk84"
+			};
+		};
+		class Rhsusf_Throw_Incendenary: ThrowMuzzle
+		{
+			magazines[]=
+			{
+				"rhs_mag_an_m14_th3"
+			};
+		};
+		class Rhsusf_Throw_CS: ThrowMuzzle
+		{
+			magazines[]=
+			{
+				"rhs_mag_m7a3_cs"
+			};
+		};
+		class Rhsusf_Throw_Smoke_white: ThrowMuzzle
+		{
+			magazines[]=
+			{
+				"rhs_mag_an_m8hc"
+			};
+		};
+		class Rhsusf_Throw_Smoke_green: ThrowMuzzle
+		{
+			magazines[]=
+			{
+				"rhs_mag_m18_green"
+			};
+		};
+		class Rhsusf_Throw_Smoke_red: ThrowMuzzle
+		{
+			magazines[]=
+			{
+				"rhs_mag_m18_red"
+			};
+		};
+		class Rhsusf_Throw_Smoke_purple: ThrowMuzzle
+		{
+			magazines[]=
+			{
+				"rhs_mag_m18_purple"
+			};
+		};
+		class Rhsusf_Throw_Smoke_yellow: ThrowMuzzle
+		{
+			magazines[]=
+			{
+				"rhs_mag_m18_yellow"
+			};
+		};
+		class Rhsusf_Throw_Grenade: ThrowMuzzle
+		{
+			magazines[]=
+			{
+				"rhs_mag_mk3a2",
+				"rhs_mag_m67",
+				"rhs_mag_m69"
+			};
+		};
 	};
 };
 class CfgFunctions
@@ -10883,6 +12991,9 @@ class CfgGesturesMale
 			rightHandIKBeg=1;
 			rightHandIKCurve[]={0,1,0.02,0,0.84500003,0,0.87,1};
 			rightHandIKEnd=1;
+		};
+		class RHS_GestureReloadM590: GestureReloadM4SSAS
+		{
 		};
 		class RHS_GestureReloadM590_Context: RHS_GestureReloadM590
 		{
@@ -11262,6 +13373,9 @@ class CfgGesturesMale
 class CfgVehicles
 {
 	class FxCartridge;
+	class RHS_Cartridge_556x45_m855: FxCartridge
+	{
+	};
 	class Thing;
 	class ThingX;
 	class rhs_collider: Thing
@@ -11269,6 +13383,9 @@ class CfgVehicles
 		accuracy=1000;
 		animated=0;
 		countsForScoreboard=0;
+	};
+	class rhs_collider_simple: rhs_collider
+	{
 	};
 	class House;
 	class rhs_vehcollider: House
@@ -11280,6 +13397,12 @@ class CfgVehicles
 	class rhsusf_ammocan_base: ThingX
 	{
 		editorCategory="EdCat_Things";
+	};
+	class rhsusf_ammocan_M2A1: rhsusf_ammocan_base
+	{
+	};
+	class rhsusf_ammocan_M19A1: rhsusf_ammocan_base
+	{
 	};
 	class MineBase;
 	class rhsusf_mine_M19: MineBase
@@ -11296,6 +13419,12 @@ class CfgVehicles
 	{
 		ammo="rhsusf_mine_m49a1_ammo";
 		icon="iconExplosiveAP";
+	};
+	class rhsusf_mine_m49a1_6m: MineBase
+	{
+	};
+	class rhsusf_mine_m49a1_10m: MineBase
+	{
 	};
 	class rhsusf_mine_m49a1_used: ThingX
 	{
@@ -11371,10 +13500,409 @@ class CfgVehicles
 	{
 		editorCategory="EdCat_Weapons";
 	};
+	class rhs_weapon_m24sws: rhs_weapon_base
+	{
+	};
+	class rhs_weapon_m24sws_wd: rhs_weapon_m24sws
+	{
+	};
+	class rhs_weapon_m24sws_d: rhs_weapon_m24sws
+	{
+	};
+	class rhs_weapon_m24sws_blk: rhs_weapon_m24sws
+	{
+	};
+	class rhs_weapon_m24sws_ghillie: rhs_weapon_m24sws
+	{
+	};
+	class rhs_weapon_XM2010: rhs_weapon_base
+	{
+	};
+	class rhs_weapon_XM2010_d: rhs_weapon_XM2010
+	{
+	};
+	class rhs_weapon_XM2010_wd: rhs_weapon_XM2010
+	{
+	};
+	class rhs_weapon_XM2010_sa: rhs_weapon_XM2010
+	{
+	};
+	class rhs_weapon_m40a5: rhs_weapon_base
+	{
+	};
+	class rhs_weapon_m40a5_d: rhs_weapon_m40a5
+	{
+	};
+	class rhs_weapon_m40a5_wd: rhs_weapon_m40a5
+	{
+	};
+	class rhs_weapon_m4: rhs_weapon_base
+	{
+	};
+	class rhs_weapon_m4_carryhandle: rhs_weapon_m4
+	{
+	};
+	class rhs_weapon_m4_carryhandle_pmag: rhs_weapon_m4
+	{
+	};
+	class rhs_weapon_m4_grip: rhs_weapon_m4
+	{
+	};
+	class rhs_weapon_m4_grip2: rhs_weapon_m4
+	{
+	};
+	class rhs_weapon_m4_grip3: rhs_weapon_m4
+	{
+	};
+	class rhs_weapon_m4_m320: rhs_weapon_m4
+	{
+	};
+	class rhs_weapon_m4_m203: rhs_weapon_m4
+	{
+	};
+	class rhs_weapon_m4_m203S: rhs_weapon_m4
+	{
+	};
+	class rhs_weapon_m4a1: rhs_weapon_m4
+	{
+	};
+	class rhs_weapon_m4a1_carryhandle: rhs_weapon_m4a1
+	{
+	};
+	class rhs_weapon_m4a1_carryhandle_pmag: rhs_weapon_m4a1
+	{
+	};
+	class rhs_weapon_m4a1_d: rhs_weapon_m4a1
+	{
+	};
+	class rhs_weapon_m4a1_d_mstock: rhs_weapon_m4a1
+	{
+	};
+	class rhs_weapon_m4a1_wd: rhs_weapon_m4a1
+	{
+	};
+	class rhs_weapon_m4a1_wd_mstock: rhs_weapon_m4a1
+	{
+	};
+	class rhs_weapon_m4a1_grip: rhs_weapon_m4a1
+	{
+	};
+	class rhs_weapon_m4a1_grip2: rhs_weapon_m4a1
+	{
+	};
+	class rhs_weapon_m4a1_carryhandle_grip: rhs_weapon_m4a1
+	{
+	};
+	class rhs_weapon_m4a1_carryhandle_grip2: rhs_weapon_m4a1
+	{
+	};
+	class rhs_weapon_m4a1_carryhandle_grip3: rhs_weapon_m4a1
+	{
+	};
+	class rhs_weapon_m4a1_m320: rhs_weapon_m4a1
+	{
+	};
+	class rhs_weapon_m4a1_m203: rhs_weapon_m4a1
+	{
+	};
+	class rhs_weapon_m4a1_m203s: rhs_weapon_m4a1
+	{
+	};
+	class rhs_weapon_m4a1_carryhandle_m203: rhs_weapon_m4a1
+	{
+	};
+	class rhs_weapon_m4a1_carryhandle_m203S: rhs_weapon_m4a1
+	{
+	};
+	class rhs_weapon_m4a1_m203s_d: rhs_weapon_m4a1
+	{
+	};
+	class rhs_weapon_m4a1_m203s_wd: rhs_weapon_m4a1
+	{
+	};
+	class rhs_weapon_m4a1_blockII: rhs_weapon_m4
+	{
+	};
+	class rhs_weapon_m4a1_blockII_KAC: rhs_weapon_m4a1_blockII
+	{
+	};
+	class rhs_weapon_m4a1_blockII_grip2: rhs_weapon_m4a1_blockII
+	{
+	};
+	class rhs_weapon_m4a1_blockII_grip2_KAC: rhs_weapon_m4a1_blockII
+	{
+	};
+	class rhs_weapon_m4a1_blockII_M203: rhs_weapon_m4a1_blockII
+	{
+	};
+	class rhs_weapon_mk18: rhs_weapon_m4
+	{
+	};
+	class rhs_weapon_mk18_KAC: rhs_weapon_mk18
+	{
+	};
+	class rhs_weapon_mk18_grip2: rhs_weapon_mk18
+	{
+	};
+	class rhs_weapon_mk18_grip2_KAC: rhs_weapon_mk18
+	{
+	};
+	class rhs_weapon_mk18_m320: rhs_weapon_mk18
+	{
+	};
+	class rhs_weapon_m16a4: rhs_weapon_m4
+	{
+	};
+	class rhs_weapon_m16a4_carryhandle: rhs_weapon_m16a4
+	{
+	};
+	class rhs_weapon_m16a4_carryhandle_pmag: rhs_weapon_m16a4
+	{
+	};
+	class rhs_weapon_m16a4_grip: rhs_weapon_m16a4
+	{
+	};
+	class rhs_weapon_m16a4_grip2: rhs_weapon_m16a4
+	{
+	};
+	class rhs_weapon_m16a4_carryhandle_grip: rhs_weapon_m16a4
+	{
+	};
+	class rhs_weapon_m16a4_carryhandle_grip2: rhs_weapon_m16a4
+	{
+	};
+	class rhs_weapon_m16a4_carryhandle_grip_pmag: rhs_weapon_m16a4
+	{
+	};
+	class rhs_weapon_m16a4_carryhandle_grip2_pmag: rhs_weapon_m16a4
+	{
+	};
+	class rhs_weapon_m16a4_carryhandle_M203: rhs_weapon_m16a4
+	{
+	};
+	class rhs_weapon_m16a4_imod: rhs_weapon_m16a4
+	{
+	};
+	class rhs_weapon_m16a4_imod_M203: rhs_weapon_m16a4
+	{
+	};
+	class rhs_weapon_hk416d10: rhs_weapon_m4a1
+	{
+	};
+	class rhs_weapon_hk416d10_LMT: rhs_weapon_hk416d10
+	{
+	};
+	class rhs_weapon_hk416d10_m320: rhs_weapon_hk416d10
+	{
+	};
+	class rhs_weapon_hk416d145: rhs_weapon_m4a1
+	{
+	};
+	class rhs_weapon_hk416d145_m320: rhs_weapon_hk416d145
+	{
+	};
+	class rhs_weapon_hk416d10_LMT_d: rhs_weapon_hk416d10_LMT
+	{
+	};
+	class rhs_weapon_hk416d10_LMT_wd: rhs_weapon_hk416d10_LMT
+	{
+	};
+	class rhs_weapon_hk416d145_d: rhs_weapon_hk416d145
+	{
+	};
+	class rhs_weapon_hk416d145_d_2: rhs_weapon_hk416d145
+	{
+	};
+	class rhs_weapon_hk416d145_wd: rhs_weapon_hk416d145
+	{
+	};
+	class rhs_weapon_hk416d145_wd_2: rhs_weapon_hk416d145
+	{
+	};
+	class rhs_weapon_m249_pip: rhs_weapon_base
+	{
+	};
+	class rhs_weapon_m249_pip_ris: rhs_weapon_m249_pip
+	{
+	};
+	class rhs_weapon_m249: rhs_weapon_m249_pip
+	{
+	};
+	class rhs_weapon_m249_pip_S: rhs_weapon_m249_pip
+	{
+	};
+	class rhs_weapon_m249_pip_S_para: rhs_weapon_m249_pip
+	{
+	};
+	class rhs_weapon_m249_pip_S_vfg: rhs_weapon_m249_pip
+	{
+	};
+	class rhs_weapon_m249_pip_L: rhs_weapon_m249_pip
+	{
+	};
+	class rhs_weapon_m249_pip_L_para: rhs_weapon_m249_pip
+	{
+	};
+	class rhs_weapon_m249_pip_L_vfg: rhs_weapon_m249_pip
+	{
+	};
+	class rhs_weapon_m249_light_S: rhs_weapon_m249_pip
+	{
+	};
+	class rhs_weapon_m249_light_L: rhs_weapon_m249_pip
+	{
+	};
+	class rhs_weapon_m27iar: rhs_weapon_m249_pip
+	{
+	};
+	class rhs_weapon_m27iar_grip: rhs_weapon_m27iar
+	{
+	};
+	class rhs_weapon_m240B: rhs_weapon_m249_pip
+	{
+	};
+	class rhs_weapon_m240B_CAP: rhs_weapon_m240B
+	{
+	};
+	class rhs_weapon_m240G: rhs_weapon_m240B
+	{
+	};
+	class rhs_weapon_rhs_weap_m14: rhs_weapon_XM2010
+	{
+	};
+	class rhs_weapon_rhs_weap_m14_wd: rhs_weapon_XM2010
+	{
+	};
+	class rhs_weapon_rhs_weap_m14_d: rhs_weapon_XM2010
+	{
+	};
+	class rhs_weapon_rhs_weap_m14_fiberglass: rhs_weapon_XM2010
+	{
+	};
+	class rhs_weapon_rhs_weap_m14_rail: rhs_weapon_XM2010
+	{
+	};
+	class rhs_weapon_rhs_weap_m14_rail_wd: rhs_weapon_XM2010
+	{
+	};
+	class rhs_weapon_rhs_weap_m14_rail_d: rhs_weapon_XM2010
+	{
+	};
+	class rhs_weapon_rhs_weap_m14_rail_fiberglass: rhs_weapon_XM2010
+	{
+	};
+	class rhs_weapon_rhs_weap_m14_ris: rhs_weapon_XM2010
+	{
+	};
+	class rhs_weapon_rhs_weap_m14_ris_wd: rhs_weapon_XM2010
+	{
+	};
+	class rhs_weapon_rhs_weap_m14_ris_d: rhs_weapon_XM2010
+	{
+	};
+	class rhs_weapon_rhs_weap_m14_ris_fiberglass: rhs_weapon_XM2010
+	{
+	};
+	class rhs_weapon_rhs_weap_m14_socom: rhs_weapon_XM2010
+	{
+	};
+	class rhs_weapon_rhs_weap_m14_socom_rail: rhs_weapon_XM2010
+	{
+	};
+	class rhs_weapon_m14ebrri: rhs_weapon_XM2010
+	{
+	};
+	class rhs_weapon_sr25: rhs_weapon_m14ebrri
+	{
+	};
+	class rhs_weapon_sr25_ec: rhs_weapon_sr25
+	{
+	};
+	class rhs_weapon_mk17_CQC: rhs_weapon_m14ebrri
+	{
+	};
+	class rhs_weapon_mk17_STD: rhs_weapon_mk17_CQC
+	{
+	};
+	class rhs_weapon_mk17_LB: rhs_weapon_mk17_CQC
+	{
+	};
+	class rhs_weapon_M107: rhs_weapon_base
+	{
+	};
+	class rhs_weapon_M107_w: rhs_weapon_M107
+	{
+	};
+	class rhs_weapon_M107_d: rhs_weapon_M107
+	{
+	};
+	class rhs_weapon_M590_5RD: rhs_weapon_m16a4
+	{
+	};
+	class rhs_weapon_M590_8RD: rhs_weapon_M590_5RD
+	{
+	};
+	class rhsusf_weapon_MP7A1_base_f: rhs_weapon_m16a4
+	{
+	};
+	class rhsusf_weapon_MP7A1_winter: rhsusf_weapon_MP7A1_base_f
+	{
+	};
+	class rhsusf_weapon_MP7A1_desert: rhsusf_weapon_MP7A1_base_f
+	{
+	};
+	class rhsusf_weapon_MP7A1_aor1: rhsusf_weapon_MP7A1_base_f
+	{
+	};
+	class rhsusf_weapon_m1911a1: rhs_weapon_base
+	{
+	};
+	class rhsusf_weapon_glock17g4: rhsusf_weapon_m1911a1
+	{
+	};
+	class rhsusf_weapon_m9: rhsusf_weapon_m1911a1
+	{
+	};
+	class rhs_weapon_M320: rhsusf_weapon_m1911a1
+	{
+	};
+	class rhs_weapon_M32: rhs_weapon_base
+	{
+	};
+	class rhs_weapon_M136: rhs_weapon_base
+	{
+	};
+	class rhs_weapon_M136_hedp: rhs_weapon_M136
+	{
+	};
+	class rhs_weapon_M136_hp: rhs_weapon_M136
+	{
+	};
+	class rhs_weapon_m72a7: rhs_weapon_M136
+	{
+	};
+	class rhs_weapon_smaw: rhs_weapon_M136
+	{
+	};
+	class rhs_weapon_smaw_green: rhs_weapon_smaw
+	{
+	};
+	class rhs_weapon_fgm148: rhs_weapon_M136
+	{
+	};
+	class rhs_weapon_fim92: rhs_weapon_M136
+	{
+	};
+	class rhs_weapon_maaws: rhs_weapon_M136
+	{
+	};
 	class Item_Base_F;
 	class rhsusf_lerca1200_black: Item_Base_F
 	{
 		editorCategory="EdCat_Equipment";
+	};
+	class rhsusf_lerca1200_tan: rhsusf_lerca1200_black
+	{
 	};
 	class rhsusf_vector21: Item_Base_F
 	{
@@ -11384,6 +13912,444 @@ class CfgVehicles
 	class rhs_magazine_base: WeaponHolder_Single_limited_item_F
 	{
 		editorCategory="EdCat_Weapons";
+	};
+	class rhs_magazine_rhs_mag_m67: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhs_mag_m69: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhs_mag_mk84: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhs_mag_an_m8hc: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhs_mag_an_m14_th3: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhs_mag_m7a3_cs: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhs_mag_mk3a2: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhs_mag_m18_green: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhs_mag_m18_purple: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhs_mag_m18_red: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhs_mag_m18_yellow: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhs_mag_30Rnd_556x45_M855A1_Stanag: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhs_mag_30Rnd_556x45_M855A1_Stanag_No_Tracer: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Green: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Yellow: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhs_mag_30Rnd_556x45_M855_Stanag: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhs_mag_30Rnd_556x45_M855_Stanag_Tracer_Red: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhs_mag_30Rnd_556x45_Mk318_Stanag: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhs_mag_30Rnd_556x45_Mk262_Stanag: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhs_mag_30Rnd_556x45_M200_Stanag: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhs_mag_30Rnd_556x45_M855A1_PMAG: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhs_mag_30Rnd_556x45_M855_PMAG: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhs_mag_30Rnd_556x45_M855_PMAG_Tracer_Red: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhs_mag_30Rnd_556x45_Mk318_PMAG: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhs_mag_30Rnd_556x45_Mk262_PMAG: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhs_mag_30Rnd_556x45_M855A1_PMAG_Tan: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhs_mag_30Rnd_556x45_M855A1_PMAG_Tan_Tracer_Red: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhs_mag_30Rnd_556x45_M855_PMAG_Tan: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhs_mag_30Rnd_556x45_M855_PMAG_Tan_Tracer_Red: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhs_mag_30Rnd_556x45_Mk318_PMAG_Tan: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhs_mag_30Rnd_556x45_Mk262_PMAG_Tan: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhs_mag_100Rnd_556x45_M855A1_cmag: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhs_mag_100Rnd_556x45_M855A1_cmag_mixed: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhs_mag_100Rnd_556x45_M855_cmag: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhs_mag_100Rnd_556x45_M855_cmag_mixed: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhs_mag_100Rnd_556x45_Mk318_cmag: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhs_mag_100Rnd_556x45_Mk262_cmag: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhs_mag_M441_HE: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhs_mag_M433_HEDP: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhs_mag_M397_HET: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhs_mag_M781_Practice: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhs_mag_M4009: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhs_mag_m576: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhs_mag_M585_white: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhs_mag_M661_green: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhs_mag_M662_red: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhs_mag_M713_red: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhs_mag_M714_white: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhs_mag_M715_green: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhs_mag_M716_yellow: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhsusf_mag_6Rnd_M441_HE: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhsusf_mag_6Rnd_M433_HEDP: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhsusf_mag_6Rnd_M397_HET: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhsusf_mag_6Rnd_M781_Practice: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhsusf_mag_6Rnd_m4009: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhsusf_mag_6Rnd_M576_Buckshot: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhsusf_mag_6Rnd_M585_white: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhsusf_mag_6Rnd_M661_green: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhsusf_mag_6Rnd_M662_red: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhsusf_mag_6Rnd_M713_red: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhsusf_mag_6Rnd_M714_white: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhsusf_mag_6Rnd_M715_green: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhsusf_mag_6Rnd_M716_yellow: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhsusf_5Rnd_300winmag_xm2010: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhsusf_mag_10Rnd_STD_50BMG_M33: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhsusf_mag_10Rnd_STD_50BMG_mk211: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhsusf_5Rnd_00Buck: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhsusf_8Rnd_00Buck: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhsusf_5Rnd_Slug: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhsusf_8Rnd_Slug: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhsusf_5Rnd_HE: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhsusf_8Rnd_HE: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhsusf_5Rnd_FRAG: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhsusf_8Rnd_FRAG: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhsusf_100Rnd_556x45_soft_pouch: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhsusf_100Rnd_556x45_mixed_soft_pouch: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhsusf_100Rnd_556x45_M855_soft_pouch: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhsusf_100Rnd_556x45_M855_mixed_soft_pouch: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhsusf_100Rnd_556x45_M200_soft_pouch: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhsusf_200Rnd_556x45_soft_pouch: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhsusf_200Rnd_556x45_mixed_soft_pouch: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhsusf_200Rnd_556x45_M855_soft_pouch: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhsusf_200Rnd_556x45_M855_mixed_soft_pouch: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhsusf_200Rnd_556x45_box: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhsusf_200Rnd_556x45_mixed_box: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhsusf_200Rnd_556x45_M855_box: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhsusf_200Rnd_556x45_M855_mixed_box: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhsusf_50Rnd_762x51: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhsusf_50Rnd_762x51_m61_ap: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhsusf_50Rnd_762x51_m62_tracer: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhsusf_50Rnd_762x51_m80a1epr: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhsusf_50Rnd_762x51_m82_blank: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhsusf_100Rnd_762x51: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhsusf_100Rnd_762x51_m61_ap: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhsusf_100Rnd_762x51_m62_tracer: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhsusf_100Rnd_762x51_m80a1epr: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhsusf_100Rnd_762x51_m82_blank: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhsusf_20Rnd_762x51_m118_special_Mag: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhsusf_20Rnd_762x51_m993_Mag: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhsusf_20Rnd_762x51_m80_Mag: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhsusf_20Rnd_762x51_m62_Mag: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhsusf_20Rnd_762x51_SR25_m118_special_Mag: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhsusf_20Rnd_762x51_SR25_mk316_special_Mag: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhsusf_20Rnd_762x51_SR25_m993_Mag: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhsusf_20Rnd_762x51_SR25_m62_Mag: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhs_mag_20Rnd_SCAR_762x51_m80_ball: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhs_mag_20Rnd_SCAR_762x51_m80a1_epr: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhs_mag_20Rnd_SCAR_762x51_m62_tracer: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhs_mag_20Rnd_SCAR_762x51_m61_ap: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhs_mag_20Rnd_SCAR_762x51_m118_special: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhs_mag_20Rnd_SCAR_762x51_mk316_special: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhsusf_5Rnd_762x51_m118_special_Mag: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhsusf_5Rnd_762x51_m993_Mag: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhsusf_5Rnd_762x51_m62_Mag: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhsusf_10Rnd_762x51_m118_special_Mag: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhsusf_10Rnd_762x51_m993_Mag: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhsusf_10Rnd_762x51_m62_Mag: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhsusf_5Rnd_762x51_AICS_m118_special_Mag: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhsusf_5Rnd_762x51_AICS_m993_Mag: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhsusf_5Rnd_762x51_AICS_m62_Mag: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhsusf_mag_40Rnd_46x30_FMJ: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhsusf_mag_40Rnd_46x30_JHP: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhsusf_mag_40Rnd_46x30_AP: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhsusf_mag_7x45acp_MHP: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhsusf_mag_17Rnd_9x19_JHP: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhsusf_mag_17Rnd_9x19_FMJ: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhsusf_mag_15Rnd_9x19_JHP: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhsusf_mag_15Rnd_9x19_FMJ: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhs_fim92_mag: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhs_fgm148_magazine_AT: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhs_fgm172a_magazine_AT: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhs_fgm172b_magazine_MPV: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhs_mag_smaw_HEAA: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhs_mag_smaw_HEDP: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhs_mag_smaw_SR: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhs_mag_maaws_HEAT: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhs_mag_maaws_HEDP: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhs_mag_maaws_HE: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhs_mag_maaws_SMOKE: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhs_mag_maaws_ILLUM: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhsusf_m112_mag: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhsusf_m112x4_mag: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhs_mine_M19_mag: rhs_magazine_base
+	{
+	};
+	class rhs_magazine_rhsusf_mine_m14_mag: rhs_magazine_base
+	{
 	};
 	class ModuleMine_APERSMine_F;
 	class rhsusf_mine_m14_module: ModuleMine_APERSMine_F

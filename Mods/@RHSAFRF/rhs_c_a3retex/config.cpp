@@ -35,10 +35,16 @@ class CfgVehicles
 	class Truck_03_base_F;
 	class O_Truck_03_repair_F: Truck_03_base_F
 	{
+		class textureSources;
+		class EventHandlers;
+	};
 	class Heli_Light_02_unarmed_base_F;
 	class O_Heli_Light_02_unarmed_F: Heli_Light_02_unarmed_base_F
 	{
 		class textureSources;
+		class EventHandlers;
+		class Components;
+	};
 	class rhs_typhoon_base: O_Truck_03_repair_F
 	{
 		terrainCoef=1.8;
@@ -195,6 +201,9 @@ class CfgVehicles
 		};
 		class EventHandlers: EventHandlers
 		{
+			class RHS_EventHandlers
+			{
+			};
 		};
 	};
 	class rhs_typhoon_vdv: rhs_typhoon_base
@@ -213,6 +222,9 @@ class CfgVehicles
 			"rhs_pilot_combat_heli"
 		};
 		side=0;
+		class MFD
+		{
+		};
 		class Components: Components
 		{
 			class SensorsManagerComponent
@@ -237,6 +249,9 @@ class CfgVehicles
 						maxFogSeeThrough=0.30000001;
 						animDirection="mainGun";
 					};
+					class PassiveRadarSensorComponent: SensorTemplatePassiveRadar
+					{
+					};
 					class ActiveRadarSensorComponent: SensorTemplateActiveRadar
 					{
 						class AirTarget
@@ -257,6 +272,9 @@ class CfgVehicles
 						minSpeedThreshold=0;
 						maxSpeedThreshold=0;
 						maxTrackableSpeed=125;
+					};
+					class DataLinkSensorComponent: SensorTemplateDataLink
+					{
 					};
 				};
 			};
@@ -336,9 +354,15 @@ class CfgVehicles
 					"rhs_faction_vvs_c"
 				};
 			};
+			class vvs_camo: vvs_grey
+			{
+			};
 		};
 		class EventHandlers: EventHandlers
 		{
+			class RHS_EventHandlers
+			{
+			};
 		};
 	};
 	class rhs_ka60_c: rhs_ka60_grey

@@ -26,6 +26,9 @@ class CfgPatches
 };
 class CfgVehicleClasses
 {
+	class rq11
+	{
+	};
 };
 class CfgVehicles
 {
@@ -44,11 +47,53 @@ class CfgVehicles
 	};
 	class rhsusf_RQ11MONITOR: rq11_base_object
 	{
+		class EventHandlers: EventHandlers
+		{
+		};
 	};
 	class rhsusf_RQ11RAVEN_STATIC: rq11_base_object
 	{
+		class EventHandlers: EventHandlers
+		{
+		};
 	};
 	class rhsusf_RQ11RAVEN_B_STATIC: rq11_base_object
+	{
+		class EventHandlers: EventHandlers
+		{
+		};
+	};
+	class rq11_zerlegt: rq11_base_object
+	{
+	};
+	class rq11b_zerlegt: rq11_base_object
+	{
+	};
+	class carpet_empty: rq11_base_object
+	{
+	};
+	class rq11_body: rq11_base_object
+	{
+	};
+	class rq11_camera: rq11_base_object
+	{
+	};
+	class rq11b_camera: rq11_base_object
+	{
+	};
+	class rq11_paddle: rq11_base_object
+	{
+	};
+	class rq11_rotor: rq11_base_object
+	{
+	};
+	class rq11_tail: rq11_base_object
+	{
+	};
+	class rq11_wing_m: rq11_base_object
+	{
+	};
+	class rq11_wing_lr: rq11_base_object
 	{
 	};
 	class ContainerSupply;
@@ -83,6 +128,9 @@ class CfgNonAiVehicles
 		avgHeight=30.1;
 		maxHeight=300;
 		moves="";
+		class EventHandlers
+		{
+		};
 	};
 	class rhsusf_RQ11_B_RAVEN: Kestrel_Random_F
 	{
@@ -98,6 +146,9 @@ class CfgNonAiVehicles
 		avgHeight=30.1;
 		maxHeight=300;
 		moves="";
+		class EventHandlers
+		{
+		};
 	};
 };
 class CfgSounds

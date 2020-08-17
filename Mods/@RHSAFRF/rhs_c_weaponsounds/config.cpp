@@ -1,5 +1,8 @@
 class CfgPatches
 {
+	class rhs_c_weaponsounds
+	{
+		units[]={};
 		weapons[]={};
 		authors[]=
 		{
@@ -3375,6 +3378,7 @@ class CfgSoundSets
 		loop=0;
 	};
 };
+class CfgSounds;  //found empty after stripping
 	class RHS_boltSnap_pk
 	{
 		name="RHS_boltSnap_pk";
@@ -3496,19 +3500,52 @@ class CfgWeapons
 	{
 		class Eventhandlers;
 	};
+	class Rifle_Short_Base_F: Rifle_Base_F
+	{
+	};
 	class Pistol;
+	class Pistol_Base_F: Pistol
+	{
+	};
+	class Rifle_Long_Base_F: Rifle_Base_F
+	{
+	};
 	class UGL_F;
 	class EBR_base_F;
+	class srifle_EBR_F: EBR_base_F
+	{
+	};
 	class Launcher;
+	class Launcher_Base_F: Launcher
+	{
+	};
+	class LMG_Mk200_F: Rifle_Long_Base_F
+	{
+	};
+	class arifle_MX_Base_F: Rifle_Base_F
+	{
+	};
 	class SMG_02_base_F: Rifle_Short_Base_F
 	{
 		class Single;
 		class FullAuto;
+		class WeaponSlotsInfo;
+		class GunParticles;
+	};
 	class pdw2000_base_F;
 	class hgun_PDW2000_F: pdw2000_base_F
 	{
+		class Single;
+		class FullAuto;
+	};
 	class rhs_weap_pp2000: hgun_PDW2000_F
 	{
+		class Single: Single
+		{
+		};
+		class FullAuto: FullAuto
+		{
+		};
 	};
 	class rhs_weap_ak74m_Base_F: Rifle_Base_F
 	{
@@ -3534,6 +3571,9 @@ class CfgWeapons
 				};
 			};
 		};
+	};
+	class rhs_weap_ak74m: rhs_weap_ak74m_Base_F
+	{
 	};
 	class rhs_weap_akm: rhs_weap_ak74m
 	{
@@ -3606,6 +3646,9 @@ class CfgWeapons
 	{
 		WW2_boltSnapSound="RHS_boltSnap_pk";
 		WW2_boltSnapDelay=0.1;
+		class FullAuto: Mode_FullAuto
+		{
+		};
 		class Eventhandlers: Eventhandlers
 		{
 			class RHS_pk_firedSoundHandler

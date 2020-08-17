@@ -137,13 +137,22 @@ class tu95_main_dialog
 	{
 		idc=-1;
 		style=0;
+		class VScrollbar
+		{
+			color[]={1,1,1,1};
 			width=0.021;
 			autoScrollSpeed=-1;
 			autoScrollDelay=5;
 			autoScrollRewind=0;
 		};
+		class HScrollbar
+		{
+			color[]={1,1,1,1};
 			height=0.028000001;
 		};
+		class ScrollBar
+		{
+			color[]={1,1,1,0.60000002};
 			colorActive[]={1,1,1,1};
 			colorDisabled[]={1,1,1,0.30000001};
 			arrowEmpty="\A3\ui_f\data\gui\cfg\slider\arrowEmpty_ca.paa";
@@ -338,6 +347,9 @@ class tu95_main_dialog
 		autoScrollSpeed=-1;
 		autoScrollDelay=5;
 		autoScrollRewind=0;
+		class ScrollBar
+		{
+			color[]={1,1,1,1};
 			colorActive[]={1,1,1,1};
 			colorDisabled[]={1,1,1,1};
 			thumb="\A3\ui_f\data\gui\cfg\scrollbar\thumb_ca.paa";
@@ -428,6 +440,9 @@ class tu95_main_dialog
 		scaleDefault=0.1;
 		onMouseButtonClick="";
 		onMouseButtonDblClick="";
+		class Legend
+		{
+			colorBackground[]={1,1,1,0.5};
 			color[]={0,0,0,1};
 			x="SafeZoneX + 					(			((safezoneW / safezoneH) min 1.2) / 40)";
 			y="SafeZoneY + safezoneH - 4.5 * 					(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
@@ -436,14 +451,23 @@ class tu95_main_dialog
 			font="PuristaMedium";
 			sizeEx="(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.8)";
 		};
+		class ActiveMarker
+		{
+			color[]={0.30000001,0.1,0.89999998,1};
 			size=50;
 		};
+		class Command
+		{
+			color[]={1,1,1,1};
 			icon="\A3\ui_f\data\map\mapcontrol\waypoint_ca.paa";
 			size=18;
 			importance=1;
 			coefMin=1;
 			coefMax=1;
 		};
+		class Task
+		{
+			colorCreated[]={1,1,1,1};
 			colorCanceled[]={0.69999999,0.69999999,0.69999999,1};
 			colorDone[]={0.69999999,1,0.30000001,1};
 			colorFailed[]={1,0.30000001,0.2,1};
@@ -464,144 +488,216 @@ class tu95_main_dialog
 			coefMin=1;
 			coefMax=1;
 		};
+		class CustomMark
+		{
+			color[]={0,0,0,1};
 			icon="\A3\ui_f\data\map\mapcontrol\custommark_ca.paa";
 			size=24;
 			importance=1;
 			coefMin=1;
 			coefMax=1;
 		};
+		class Tree
+		{
+			color[]={0.44999999,0.63999999,0.33000001,0.40000001};
 			icon="\A3\ui_f\data\map\mapcontrol\bush_ca.paa";
 			size=12;
 			importance="0.9 * 16 * 0.05";
 			coefMin=0.25;
 			coefMax=4;
 		};
+		class SmallTree
+		{
+			color[]={0.44999999,0.63999999,0.33000001,0.40000001};
 			icon="\A3\ui_f\data\map\mapcontrol\bush_ca.paa";
 			size=12;
 			importance="0.6 * 12 * 0.05";
 			coefMin=0.25;
 			coefMax=4;
 		};
+		class Bush
+		{
+			color[]={0.44999999,0.63999999,0.33000001,0.40000001};
 			icon="\A3\ui_f\data\map\mapcontrol\bush_ca.paa";
 			size="14/2";
 			importance="0.2 * 14 * 0.05 * 0.05";
 			coefMin=0.25;
 			coefMax=4;
 		};
+		class Church
+		{
+			color[]={1,1,1,1};
 			icon="\A3\ui_f\data\map\mapcontrol\church_CA.paa";
 			size=24;
 			importance=1;
 			coefMin=0.85000002;
 			coefMax=1;
 		};
+		class Chapel
+		{
+			color[]={0,0,0,1};
 			icon="\A3\ui_f\data\map\mapcontrol\Chapel_CA.paa";
 			size=24;
 			importance=1;
 			coefMin=0.85000002;
 			coefMax=1;
 		};
+		class Cross
+		{
+			color[]={0,0,0,1};
 			icon="\A3\ui_f\data\map\mapcontrol\Cross_CA.paa";
 			size=24;
 			importance=1;
 			coefMin=0.85000002;
 			coefMax=1;
 		};
+		class Rock
+		{
+			color[]={0.1,0.1,0.1,0.80000001};
 			icon="\A3\ui_f\data\map\mapcontrol\rock_ca.paa";
 			size=12;
 			importance="0.5 * 12 * 0.05";
 			coefMin=0.25;
 			coefMax=4;
 		};
+		class Bunker
+		{
+			color[]={0,0,0,1};
 			icon="\A3\ui_f\data\map\mapcontrol\bunker_ca.paa";
 			size=14;
 			importance="1.5 * 14 * 0.05";
 			coefMin=0.25;
 			coefMax=4;
 		};
+		class Fortress
+		{
+			color[]={0,0,0,1};
 			icon="\A3\ui_f\data\map\mapcontrol\bunker_ca.paa";
 			size=16;
 			importance="2 * 16 * 0.05";
 			coefMin=0.25;
 			coefMax=4;
 		};
+		class Fountain
+		{
+			color[]={0,0,0,1};
 			icon="\A3\ui_f\data\map\mapcontrol\fountain_ca.paa";
 			size=11;
 			importance="1 * 12 * 0.05";
 			coefMin=0.25;
 			coefMax=4;
 		};
+		class ViewTower
+		{
+			color[]={0,0,0,1};
 			icon="\A3\ui_f\data\map\mapcontrol\viewtower_ca.paa";
 			size=16;
 			importance="2.5 * 16 * 0.05";
 			coefMin=0.5;
 			coefMax=4;
 		};
+		class Lighthouse
+		{
+			color[]={1,1,1,1};
 			icon="\A3\ui_f\data\map\mapcontrol\lighthouse_CA.paa";
 			size=24;
 			importance=1;
 			coefMin=0.85000002;
 			coefMax=1;
 		};
+		class Quay
+		{
+			color[]={1,1,1,1};
 			icon="\A3\ui_f\data\map\mapcontrol\quay_CA.paa";
 			size=24;
 			importance=1;
 			coefMin=0.85000002;
 			coefMax=1;
 		};
+		class Fuelstation
+		{
+			color[]={1,1,1,1};
 			icon="\A3\ui_f\data\map\mapcontrol\fuelstation_CA.paa";
 			size=24;
 			importance=1;
 			coefMin=0.85000002;
 			coefMax=1;
 		};
+		class Hospital
+		{
+			color[]={1,1,1,1};
 			icon="\A3\ui_f\data\map\mapcontrol\hospital_CA.paa";
 			size=24;
 			importance=1;
 			coefMin=0.85000002;
 			coefMax=1;
 		};
+		class BusStop
+		{
+			color[]={1,1,1,1};
 			icon="\A3\ui_f\data\map\mapcontrol\busstop_CA.paa";
 			size=24;
 			importance=1;
 			coefMin=0.85000002;
 			coefMax=1;
 		};
+		class Transmitter
+		{
+			color[]={1,1,1,1};
 			icon="\A3\ui_f\data\map\mapcontrol\transmitter_CA.paa";
 			size=24;
 			importance=1;
 			coefMin=0.85000002;
 			coefMax=1;
 		};
+		class Stack
+		{
+			color[]={0,0,0,1};
 			icon="\A3\ui_f\data\map\mapcontrol\stack_ca.paa";
 			size=20;
 			importance="2 * 16 * 0.05";
 			coefMin=0.89999998;
 			coefMax=4;
 		};
+		class Ruin
+		{
+			color[]={0,0,0,1};
 			icon="\A3\ui_f\data\map\mapcontrol\ruin_ca.paa";
 			size=16;
 			importance="1.2 * 16 * 0.05";
 			coefMin=1;
 			coefMax=4;
 		};
+		class Tourism
+		{
+			color[]={0,0,0,1};
 			icon="\A3\ui_f\data\map\mapcontrol\tourism_ca.paa";
 			size=16;
 			importance="1 * 16 * 0.05";
 			coefMin=0.69999999;
 			coefMax=4;
 		};
+		class Watertower
+		{
+			color[]={1,1,1,1};
 			icon="\A3\ui_f\data\map\mapcontrol\watertower_CA.paa";
 			size=24;
 			importance=1;
 			coefMin=0.85000002;
 			coefMax=1;
 		};
+		class Waypoint
+		{
+			color[]={0,0,0,1};
 			size=24;
 			importance=1;
 			coefMin=1;
 			coefMax=1;
 			icon="\A3\ui_f\data\map\mapcontrol\waypoint_ca.paa";
 		};
+		class WaypointCompleted
+		{
+			color[]={0,0,0,1};
 			size=24;
 			importance=1;
 			coefMin=1;
@@ -997,6 +1093,12 @@ class CfgWeapons
 		class ItemInfo: InventoryFinsItem_Base_F
 		{
 			mass=110;
+			class Pointer
+			{
+			};
+			class FlashLight
+			{
+			};
 		};
 	};
 };
@@ -1023,9 +1125,15 @@ class CfgVehicles
 	class RHS_Su25_VVS_Base;
 	class RHS_Su25SM_vvs: RHS_Su25_VVS_Base
 	{
+		class userActions;
+		class Components;
+	};
 	class Air;
 	class Plane: Air
 	{
+		class HitPoints;
+		class NewTurret;
+	};
 	class Plane_Base_F: Plane
 	{
 		class NewTurret: NewTurret
@@ -1086,6 +1194,12 @@ class CfgVehicles
 		memoryPointLRocket="rocket_1";
 		memoryPointRMissile="missile_2";
 		memoryPointRRocket="rocket_2";
+		class EjectionSystem
+		{
+		};
+		class Turrets
+		{
+		};
 		threat[]={1,1,1};
 		waterLeakiness=1.5;
 		showAllTargets=4;
@@ -1104,6 +1218,11 @@ class CfgVehicles
 			"rhs_weap_MASTERSAFE_Holdster15",
 			"rhs_weap_CMFlareLauncher",
 			"rhs_weap_GSh301"
+		};
+		magazines[]=
+		{
+			"rhs_mag_gsh30_bt_250",
+			"120Rnd_CMFlare_Chaff_Magazine"
 		};
 		weaponsGroup1=128;
 		weaponsGroup4=64;
@@ -1144,6 +1263,15 @@ class CfgVehicles
 					"rhs_faction_vvs_c",
 					"rhs_faction_vvs"
 				};
+			};
+			class standard2: standard
+			{
+			};
+			class standard3: standard
+			{
+			};
+			class standard4: standard
+			{
 			};
 		};
 		class Attributes
@@ -1424,6 +1552,9 @@ class CfgVehicles
 				font="rhs_digital_font_rus";
 				class Bones
 				{
+					class PlaneOrientation
+					{
+						pos[]={0.5,0.52999997};
 					};
 					class ClimbFixed
 					{
@@ -1514,6 +1645,9 @@ class CfgVehicles
 						pos0[]={0.5,0.52999997};
 						pos10[]={1.12,1.3099999};
 					};
+					class Limit0109
+					{
+						limits[]={0.1,0.1,0.89999998,0.89999998};
 					};
 					class Target
 					{
@@ -1650,8 +1784,14 @@ class CfgVehicles
 					{
 						source="airportCorner4";
 					};
+					class ILS_H
+					{
+						pos0[]={0.5,0.52999997};
 						pos3[]={0.68599999,0.52999997};
 					};
+					class ILS_W: ILS_H
+					{
+						pos3[]={0.5,0.764};
 					};
 					class LarAmmoMax
 					{
@@ -1695,6 +1835,9 @@ class CfgVehicles
 						"user2"
 					};
 					condition="on";
+					class Horizont
+					{
+						clipTL[]={0.1,0.28};
 						clipBR[]={0.89999998,0.80000001};
 						class Dimmed
 						{
@@ -3743,6 +3886,9 @@ class CfgVehicles
 					class ILS
 					{
 						condition="ils";
+						class Glideslope
+						{
+							clipTL[]={0,0};
 							clipBR[]={1,1};
 							class ILS
 							{
@@ -6263,6 +6409,9 @@ class CfgVehicles
 							};
 						};
 					};
+					class RadarBoxes
+					{
+						pos0[]={0.5,0.52999997};
 						pos10[]={1.12,1.3099999};
 						width=4;
 						points[]=
@@ -6474,6 +6623,9 @@ class CfgVehicles
 				font="rhs_digital_font_rus";
 				class Bones
 				{
+					class PlaneW
+					{
+						pos[]={0.5,0.5};
 						pos10[]={0.77399999,0.76999998};
 					};
 					class Target
@@ -6483,6 +6635,9 @@ class CfgVehicles
 						pos10[]={0.77399999,0.76999998};
 					};
 				};
+				class Draw
+				{
+					color[]={0.15000001,1,0.15000001};
 					alpha=1;
 					condition="on";
 					class HeadOutside
@@ -6722,6 +6877,9 @@ class CfgVehicles
 								};
 							};
 						};
+						class Locking
+						{
+							blinkingPattern[]={0.2,0.2};
 							blinkingStartsOn=1;
 							condition="missileLocking";
 							class CircleLock
@@ -7346,6 +7504,9 @@ class CfgVehicles
 								1
 							};
 						};
+						class RadarBoxes
+						{
+							pos0[]={0.5,0.5};
 							pos10[]={0.77399999,0.76999998};
 							width=3;
 							points[]=
@@ -7886,6 +8047,9 @@ class CfgVehicles
 					{0.5,1},
 					{1,1}
 				};
+			};
+			class Wheel_1_fake: Wheel_1
+			{
 			};
 			class Wheel_2: Wheel_1
 			{
@@ -8500,6 +8664,9 @@ class CfgVehicles
 		};
 		class MarkerLights
 		{
+			class PositionRed
+			{
+				color[]={0.80000001,0,0};
 				ambient[]={0.079999998,0,0};
 				intensity=500;
 				name="PositionLight_red_1_pos";
@@ -8520,6 +8687,9 @@ class CfgVehicles
 					hardLimitEnd=1;
 				};
 			};
+			class PositionGreen: PositionRed
+			{
+				color[]={0,0.80000001,0};
 				ambient[]={0,0.079999998,0};
 				name="PositionLight_green_1_pos";
 			};
@@ -8528,6 +8698,9 @@ class CfgVehicles
 		{
 			class Comp1
 			{
+				class Light_General
+				{
+					color[]={20,40,20};
 					ambient[]={0,0,0};
 					intensity=2.5;
 					size=0;
@@ -8591,10 +8764,19 @@ class CfgVehicles
 						UIposition[]={0.27000001,0.30000001};
 						bay=1;
 					};
+					class pylonBayCenter2: pylonBayCenter1
+					{
+						UIposition[]={0.27000001,0.25};
 						mirroredMissilePos=1;
 					};
+					class pylonBayCenter3: pylonBayCenter1
+					{
+						UIposition[]={0.44999999,0.25};
 						bay=2;
 					};
+					class pylonBayCenter4: pylonBayCenter3
+					{
+						UIposition[]={0.44999999,0.30000001};
 						mirroredMissilePos=3;
 					};
 					class pylonBayRight1
@@ -8608,6 +8790,9 @@ class CfgVehicles
 						UIposition[]={0.18000001,0.37};
 						bay=4;
 					};
+					class pylonBayLeft1: pylonBayRight1
+					{
+						UIposition[]={0.18000001,0.18000001};
 						mirroredMissilePos=4;
 						bay=3;
 					};
@@ -8620,11 +8805,17 @@ class CfgVehicles
 						openBayWhenWeaponSelected=0;
 						autoCloseWhenEmptyDelay=4.5;
 					};
+					class BayCenter2: BayCenter1
+					{
+					};
 					class BayLeft1
 					{
 						bayOpenTime=0.5;
 						openBayWhenWeaponSelected=0;
 						autoCloseWhenEmptyDelay=2;
+					};
+					class BayRight1: BayLeft1
+					{
 					};
 				};
 			};
@@ -8665,6 +8856,9 @@ class CfgVehicles
 						maxTrackableSpeed=100;
 						aimDown=1;
 					};
+					class PassiveRadarSensorComponent: SensorTemplatePassiveRadar
+					{
+					};
 					class ActiveRadarSensorComponent: SensorTemplateActiveRadar
 					{
 						class AirTarget
@@ -8680,6 +8874,15 @@ class CfgVehicles
 						angleRangeHorizontal=60;
 						angleRangeVertical=60;
 						groundNoiseDistanceCoef=0.00039999999;
+					};
+					class LaserSensorComponent: SensorTemplateLaser
+					{
+					};
+					class NVSensorComponent: SensorTemplateNV
+					{
+					};
+					class DataLinkSensorComponent: SensorTemplateDataLink
+					{
 					};
 				};
 			};
@@ -8754,6 +8957,24 @@ class CfgVehicles
 			{
 				class pylons: pylons
 				{
+					class pylonBayCenter1: pylonBayCenter1
+					{
+					};
+					class pylonBayCenter2: pylonBayCenter2
+					{
+					};
+					class pylonBayCenter3: pylonBayCenter3
+					{
+					};
+					class pylonBayCenter4: pylonBayCenter4
+					{
+					};
+					class pylonBayRight1: pylonBayRight1
+					{
+					};
+					class pylonBayLeft1: pylonBayLeft1
+					{
+					};
 					class pylons1
 					{
 						hardpoints[]=
@@ -8769,6 +8990,9 @@ class CfgVehicles
 						maxweight=500;
 						UIposition[]={0.36000001,0.5};
 					};
+					class pylons2: pylons1
+					{
+						UIposition[]={0.36000001,0.050000001};
 						mirroredMissilePos=7;
 					};
 					class pylons3: pylons1
@@ -8777,6 +9001,9 @@ class CfgVehicles
 						maxweight=700;
 						UIposition[]={0.36000001,0.44999999};
 					};
+					class pylons4: pylons3
+					{
+						UIposition[]={0.36000001,0.1};
 						mirroredMissilePos=9;
 					};
 					class pylons5: pylons1
@@ -8785,15 +9012,33 @@ class CfgVehicles
 						maxweight=300;
 						UIposition[]={0.36000001,0.34999999};
 					};
+					class pylons6: pylons5
+					{
+						UIposition[]={0.36000001,0.2};
 						mirroredMissilePos=11;
 					};
 				};
 				class Bays: Bays
 				{
+					class BayCenter1: BayCenter1
+					{
+					};
+					class BayCenter2: BayCenter2
+					{
+					};
+					class BayLeft1: BayLeft1
+					{
+					};
+					class BayRight1: BayRight1
+					{
+					};
 				};
 			};
 		};
 	};
+	class RHS_T50_vvs_051: RHS_T50_vvs_generic
+	{
+		rhs_decalParameters[]={};
 		hiddenselectionstextures[]=
 		{
 			"\rhsafrf\addons\rhs_air\t50\data\pakfa_bluecamo_co.paa",
@@ -8878,6 +9123,9 @@ class CfgVehicles
 		};
 	};
 	class Car_f;
+	class rhs_k36d5_seat: Car_f
+	{
+		hiddenSelections[]={};
 		simulation="motorcycle";
 		isBicycle=0;
 		memoryPointTrack1L="";
@@ -8896,9 +9144,21 @@ class CfgVehicles
 		castCargoShadow=1;
 		occludeSoundsWhenIn=1;
 		obstructSoundsWhenIn=1;
+		class Turrets
+		{
+		};
+		class MFD
+		{
+		};
 		driveOnComponent[]={};
+		class Eventhandlers
+		{
+		};
 		SLX_XEH_DISABLED=1;
 	};
+	class rhs_t50_canopy: ThingX
+	{
+		hiddenSelections[]={};
 		editorCategory="EdCat_Things";
 		armor=100;
 		gearsUpFrictionCoef=0.0099999998;
@@ -8916,8 +9176,14 @@ class CfgVehicles
 		{
 			HandleDamage="deleteVehicle (_this select 0)";
 		};
+		class MFD
+		{
+		};
 		driveOnComponent[]={};
 		SLX_XEH_DISABLED=1;
+	};
+	class rhs_su25_canopy: rhs_t50_canopy
+	{
 	};
 	class RHS_TU95MS_base: Plane_Base_F
 	{
@@ -9178,14 +9444,29 @@ class CfgVehicles
 						bay=1;
 						turret[]={4};
 					};
+					class pylon2: pylon1
+					{
+						UIposition[]={0.486,0.46000001};
 						bay=2;
 					};
+					class pylon3: pylon1
+					{
+						UIposition[]={0.486,0.41};
 						bay=3;
 					};
+					class pylon4: pylon1
+					{
+						UIposition[]={0.333,0.34999999};
 						bay=4;
 					};
+					class pylon5: pylon1
+					{
+						UIposition[]={0.18000001,0.41};
 						bay=5;
 					};
+					class pylon6: pylon1
+					{
+						UIposition[]={0.18000001,0.46000001};
 						bay=6;
 					};
 				};
@@ -9197,12 +9478,30 @@ class CfgVehicles
 						openBayWhenWeaponSelected=1;
 						autoCloseWhenEmptyDelay=0;
 					};
+					class Bay2: Bay1
+					{
+					};
+					class Bay3: Bay1
+					{
+					};
+					class Bay4: Bay1
+					{
+					};
+					class Bay5: Bay1
+					{
+					};
+					class Bay6: Bay1
+					{
+					};
 				};
 			};
 			class SensorsManagerComponent
 			{
 				class Components
 				{
+					class PassiveRadarSensorComponent: SensorTemplatePassiveRadar
+					{
+					};
 				};
 			};
 			class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
@@ -9249,6 +9548,9 @@ class CfgVehicles
 		airBrake=0;
 		lightOnGear=1;
 		driverCanEject=0;
+		class EjectionSystem
+		{
+		};
 		landingAoa="rad 10";
 		angleOfIndicence="rad 3";
 		landingSpeed=240;
@@ -9342,6 +9644,9 @@ class CfgVehicles
 							};
 						};
 					};
+				};
+				class Hitpoints
+				{
 				};
 			};
 			class MainTurret2: MainTurret
@@ -9441,6 +9746,10 @@ class CfgVehicles
 				{
 					"RHS_Weap_GSh23Lx2"
 				};
+				magazines[]=
+				{
+					"rhs_mag_AM23_500"
+				};
 				minElev=-35;
 				maxElev=35;
 				initElev=0;
@@ -9493,6 +9802,9 @@ class CfgVehicles
 				dontCreateAI=1;
 			};
 		};
+		class Damage
+		{
+		};
 		weapons[]={};
 		magazines[]={};
 		hiddenselections[]=
@@ -9519,6 +9831,18 @@ class CfgVehicles
 				{
 					"rhs_faction_vvs"
 				};
+			};
+			class standard: Old
+			{
+			};
+			class standard2: standard
+			{
+			};
+			class standard3: standard
+			{
+			};
+			class standard4: standard
+			{
 			};
 		};
 		class Attributes
@@ -9851,6 +10175,9 @@ class CfgVehicles
 					{1,1}
 				};
 			};
+			class Wheel_1_fake: Wheel_1
+			{
+			};
 			class Wheel_2: Wheel_1
 			{
 				MOI=25.056299;
@@ -9862,9 +10189,15 @@ class CfgVehicles
 				springStrength=261000;
 				springDamperRate=9000;
 			};
+			class Wheel_3: Wheel_2
+			{
+			};
 			class Wheel_4: Wheel_2
 			{
 				side="Wheel_4_damper_land";
+			};
+			class Wheel_5: Wheel_4
+			{
 			};
 		};
 		driveOnComponent[]={};
@@ -9897,6 +10230,9 @@ class CfgVehicles
 		};
 		class MarkerLights
 		{
+			class PositionRed1
+			{
+				color[]={0.80000001,0,0};
 				ambient[]={0.079999998,0,0};
 				intensity=750;
 				name="PositionLight_red_1_pos";
@@ -9921,6 +10257,9 @@ class CfgVehicles
 			{
 				name="PositionLight_red_2_pos";
 			};
+			class PositionGreen1: PositionRed1
+			{
+				color[]={0,0.80000001,0};
 				ambient[]={0,0.079999998,0};
 				name="PositionLight_green_1_pos";
 			};
@@ -9928,6 +10267,9 @@ class CfgVehicles
 			{
 				name="PositionLight_green_2_pos";
 			};
+			class PositionWhite1: PositionGreen2
+			{
+				color[]={1,1,1};
 				ambient[]={0.1,0.1,0.1};
 				name="PositionLight_white_1_pos";
 			};
@@ -9935,6 +10277,9 @@ class CfgVehicles
 			{
 				name="PositionLight_white_2_pos";
 			};
+			class CollisionWhite1: PositionRed1
+			{
+				color[]={1,1,1};
 				ambient[]={0.1,0.1,0.1};
 				name="CollisionLight_white_1_pos";
 				blinking=1;

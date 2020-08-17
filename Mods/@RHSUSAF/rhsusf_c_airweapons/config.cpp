@@ -335,6 +335,9 @@ class CfgAmmo
 			};
 		};
 	};
+	class rhs_ammo_aim9: rhs_ammo_Sidewinder_AA
+	{
+	};
 	class rhs_ammo_aim9m: rhs_ammo_Sidewinder_AA
 	{
 		proxyShape="\a3\Weapons_F_EPC\Ammo\Missile_AA_04_F.p3d";
@@ -346,6 +349,9 @@ class CfgAmmo
 	class rhs_ammo_aim9m_ah64: rhs_ammo_aim9m
 	{
 		weaponType="bomb";
+	};
+	class rhs_ammo_aim9x: rhs_ammo_Sidewinder_AA
+	{
 	};
 	class rhs_ammo_aim9x_ah64: rhs_ammo_aim9x
 	{
@@ -458,6 +464,9 @@ class CfgAmmo
 	};
 	class Missile_AGM_02_F: MissileBase
 	{
+		class Components;
+		class Eventhandlers;
+	};
 	class rhs_ammo_Hellfire_AT: Missile_AGM_02_F
 	{
 		submunitionAmmo="rhs_ammo_Hellfire_AT_penetrator";
@@ -506,6 +515,9 @@ class CfgAmmo
 			"TopDown",
 			"LoalDistance",
 			"Cruise"
+		};
+		class Direct
+		{
 		};
 		class TopDown
 		{
@@ -744,6 +756,9 @@ class CfgAmmo
 		{
 			"Direct",
 			"LoalDistance"
+		};
+		class Direct
+		{
 		};
 		class LoalDistance
 		{
@@ -1017,6 +1032,9 @@ class CfgAmmo
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=1;
 						};
+						class GroundTarget: GroundTarget
+						{
+						};
 						maxTrackableSpeed=15;
 					};
 				};
@@ -1122,6 +1140,9 @@ class CfgAmmo
 		{
 			class SensorsManagerComponent
 			{
+				class Components
+				{
+				};
 			};
 		};
 	};
@@ -1287,9 +1308,6 @@ class CfgAmmo
 		hit=50;
 		indirectHit=3;
 		indirectHitRange=0.5;
-		visibleFire=25;
-		audibleFire=28;
-		visibleFireTime=4;
 		cost=80;
 		explosive=0;
 		airlock=2;
@@ -1320,6 +1338,12 @@ class CfgMagazines
 		{
 			class rhs_a10a_ammoname
 			{
+				class Bones
+				{
+				};
+				class Draw
+				{
+					color[]={1,1,1};
 					alpha=1;
 					class PylonText1
 					{
@@ -1347,6 +1371,12 @@ class CfgMagazines
 			};
 			class rhs_a10a_box
 			{
+				class Bones
+				{
+				};
+				class Draw
+				{
+					color[]={0.15000001,1,0.15000001};
 					alpha=1;
 					class Default
 					{
@@ -1460,11 +1490,17 @@ class CfgMagazines
 			};
 			class rhs_f22_pylon
 			{
+				class material
+				{
+					ambient[]={3,3,3,1};
 					diffuse[]={10,10,10,1};
 					emissive[]={400,200,200,1};
 				};
 				class Bones
 				{
+					class Center
+					{
+						pos[]={0,0};
 					};
 				};
 				class Draw
@@ -1593,6 +1629,12 @@ class CfgMagazines
 					{
 						condition="(PylonSelected +  PylonAmmoRelative)/2";
 						alpha=1;
+						class Shape: Shape
+						{
+						};
+						class PylonText1: PylonText1
+						{
+						};
 						class Background
 						{
 							points[]=
@@ -1716,6 +1758,15 @@ class CfgMagazines
 					{
 						condition="PylonAmmoRelative <= 0";
 						color[]={1,0,0,1};
+						class Shape: Shape
+						{
+						};
+						class PylonText1: PylonText1
+						{
+						};
+						class Background: Background
+						{
+						};
 					};
 				};
 			};
@@ -1749,6 +1800,12 @@ class CfgMagazines
 		{
 			class rhs_a10a_ammoname
 			{
+				class Bones
+				{
+				};
+				class Draw
+				{
+					color[]={1,1,1};
 					alpha=1;
 					class PylonText1
 					{
@@ -1776,6 +1833,12 @@ class CfgMagazines
 			};
 			class rhs_a10a_box
 			{
+				class Bones
+				{
+				};
+				class Draw
+				{
+					color[]={0.15000001,1,0.15000001};
 					alpha=1;
 					class Default
 					{
@@ -1953,6 +2016,12 @@ class CfgMagazines
 		{
 			class rhs_a10a_ammoname
 			{
+				class Bones
+				{
+				};
+				class Draw
+				{
+					color[]={1,1,1};
 					alpha=1;
 					class PylonText1
 					{
@@ -1980,6 +2049,12 @@ class CfgMagazines
 			};
 			class rhs_a10a_box
 			{
+				class Bones
+				{
+				};
+				class Draw
+				{
+					color[]={0.15000001,1,0.15000001};
 					alpha=1;
 					class Default
 					{
@@ -2093,11 +2168,17 @@ class CfgMagazines
 			};
 			class rhs_f22_pylon
 			{
+				class material
+				{
+					ambient[]={3,3,3,1};
 					diffuse[]={10,10,10,1};
 					emissive[]={400,200,200,1};
 				};
 				class Bones
 				{
+					class Center
+					{
+						pos[]={0,0};
 					};
 				};
 				class Draw
@@ -2226,6 +2307,12 @@ class CfgMagazines
 					{
 						condition="(PylonSelected +  PylonAmmoRelative)/2";
 						alpha=1;
+						class Shape: Shape
+						{
+						};
+						class PylonText1: PylonText1
+						{
+						};
 						class Background
 						{
 							points[]=
@@ -2349,6 +2436,15 @@ class CfgMagazines
 					{
 						condition="PylonAmmoRelative <= 0";
 						color[]={1,0,0,1};
+						class Shape: Shape
+						{
+						};
+						class PylonText1: PylonText1
+						{
+						};
+						class Background: Background
+						{
+						};
 					};
 				};
 			};
@@ -2379,11 +2475,17 @@ class CfgMagazines
 		{
 			class rhs_f22_pylon
 			{
+				class material
+				{
+					ambient[]={3,3,3,1};
 					diffuse[]={10,10,10,1};
 					emissive[]={400,200,200,1};
 				};
 				class Bones
 				{
+					class Center
+					{
+						pos[]={0,0};
 					};
 				};
 				class Draw
@@ -2512,6 +2614,12 @@ class CfgMagazines
 					{
 						condition="(PylonSelected +  PylonAmmoRelative)/2";
 						alpha=1;
+						class Shape: Shape
+						{
+						};
+						class PylonText1: PylonText1
+						{
+						};
 						class Background
 						{
 							points[]=
@@ -2635,6 +2743,15 @@ class CfgMagazines
 					{
 						condition="PylonAmmoRelative <= 0";
 						color[]={1,0,0,1};
+						class Shape: Shape
+						{
+						};
+						class PylonText1: PylonText1
+						{
+						};
+						class Background: Background
+						{
+						};
 					};
 				};
 			};
@@ -2657,11 +2774,17 @@ class CfgMagazines
 		{
 			class rhs_f22_pylon
 			{
+				class material
+				{
+					ambient[]={3,3,3,1};
 					diffuse[]={10,10,10,1};
 					emissive[]={400,200,200,1};
 				};
 				class Bones
 				{
+					class Center
+					{
+						pos[]={0,0};
 					};
 				};
 				class Draw
@@ -2790,6 +2913,12 @@ class CfgMagazines
 					{
 						condition="(PylonSelected +  PylonAmmoRelative)/2";
 						alpha=1;
+						class Shape: Shape
+						{
+						};
+						class PylonText1: PylonText1
+						{
+						};
 						class Background
 						{
 							points[]=
@@ -2913,6 +3042,15 @@ class CfgMagazines
 					{
 						condition="PylonAmmoRelative <= 0";
 						color[]={1,0,0,1};
+						class Shape: Shape
+						{
+						};
+						class PylonText1: PylonText1
+						{
+						};
+						class Background: Background
+						{
+						};
 					};
 				};
 			};
@@ -2931,9 +3069,18 @@ class CfgMagazines
 			{
 				class Bones
 				{
+					class Center
+					{
+						pos[]={-0.025,0};
 					};
+					class Center2
+					{
+						pos[]={0.02,-0};
 					};
 				};
+				class material
+				{
+					ambient[]={3,3,3,1};
 					diffuse[]={10,10,10,1};
 					emissive[]={400,200,200,1};
 				};
@@ -3187,6 +3334,9 @@ class CfgMagazines
 						alpha=1;
 						class Missile1: Missile1
 						{
+							class Shape: Shape
+							{
+							};
 							class Background
 							{
 								points[]=
@@ -3308,6 +3458,9 @@ class CfgMagazines
 						};
 						class Missile2: Missile2
 						{
+							class Shape: Shape
+							{
+							};
 							class Background
 							{
 								points[]=
@@ -3426,6 +3579,12 @@ class CfgMagazines
 									}
 								};
 							};
+						};
+						class PylonText1: PylonText1
+						{
+						};
+						class PylonText2: PylonText2
+						{
 						};
 					};
 					class HalfEmpty: Selected
@@ -3436,15 +3595,33 @@ class CfgMagazines
 						class Missile1: Missile1
 						{
 							condition="PylonAmmo<=1";
+							class Shape: Shape
+							{
+							};
+							class Background: Background
+							{
+							};
 						};
 						class Missile2: Missile2
 						{
 							condition="PylonAmmo<=0";
+							class Shape: Shape
+							{
+							};
+							class Background: Background
+							{
+							};
 						};
 					};
 					class Empty: HalfEmpty
 					{
 						condition="PylonAmmoRelative <= 0";
+						class PylonText1: PylonText1
+						{
+						};
+						class PylonText2: PylonText2
+						{
+						};
 					};
 				};
 			};
@@ -3487,6 +3664,12 @@ class CfgMagazines
 		{
 			class rhs_a10a_ammoname
 			{
+				class Bones
+				{
+				};
+				class Draw
+				{
+					color[]={1,1,1};
 					alpha=1;
 					class PylonText1
 					{
@@ -3514,6 +3697,12 @@ class CfgMagazines
 			};
 			class rhs_a10a_box
 			{
+				class Bones
+				{
+				};
+				class Draw
+				{
+					color[]={0.15000001,1,0.15000001};
 					alpha=1;
 					class Default
 					{
@@ -3627,6 +3816,9 @@ class CfgMagazines
 			};
 			class rhs_ah64_ammoname
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="pylonSelected";
@@ -3678,12 +3870,18 @@ class CfgMagazines
 			};
 			class RHS_A29_Weap_MFD
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					class Default
 					{
 						condition="PylonAmmoRelative>0";
 						color[]={0,0.12,0};
+						class BackgroundGroup
+						{
+							color[]={0,0,0};
 							class Background
 							{
 								points[]=
@@ -3916,22 +4114,73 @@ class CfgMagazines
 						{
 							width=8;
 						};
+						class BackgroundGroup: BackgroundGroup
+						{
+							color[]={0.99000001,0.94,0.58999997};
 							alpha=0.1;
+							class Background: Background
+							{
+							};
 						};
+						class BlackText: Default
+						{
+							color[]={0,0,0};
+							class PylonText1: PylonText1
+							{
+							};
+							class PylonText2: PylonText1
+							{
+							};
+							class PylonText3: PylonText1
+							{
+							};
+							class PylonText4: PylonText1
+							{
+							};
+							class PylonText5: PylonText1
+							{
+							};
+							class PylonText6: PylonText1
+							{
+							};
 						};
 					};
 					class Empty: Selected
 					{
 						condition="PylonAmmoRelative <= 0";
 						color[]={1,0,0,1};
+						class Shape: Shape
+						{
+						};
 						class BlackText: BlackText
 						{
+							class PylonText1: PylonText1
+							{
+							};
+							class PylonText2: PylonText1
+							{
+							};
+							class PylonText3: PylonText1
+							{
+							};
+							class PylonText4: PylonText1
+							{
+							};
+							class PylonText5: PylonText1
+							{
+							};
+							class PylonText6: PylonText1
+							{
+							};
 						};
 					};
 				};
 			};
 			class RHS_A29_Weap_MFD_Inventory
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					class PylonText1
@@ -4039,8 +4288,14 @@ class CfgMagazines
 		{
 			class RHS_AH64_Weap_MFD
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
+					class BackgroundGroup
+					{
+						color[]={0,0,0};
 						class Background
 						{
 							points[]=
@@ -4221,21 +4476,45 @@ class CfgMagazines
 					{
 						condition="(PylonSelected +  PylonAmmoRelative)/2";
 						color[]={0.99000001,0.94,0.58999997};
+						class Shape: Shape
+						{
+						};
+						class PylonText1: PylonText1
+						{
+						};
 					};
 					class Empty: Default
 					{
 						condition="PylonAmmoRelative <= 0";
 						color[]={1,0,0,1};
+						class Shape: Shape
+						{
+						};
+						class PylonText1: PylonText1
+						{
+						};
 					};
 				};
 			};
 			class RHS_AH64_Weap_MFD_Inventory
 			{
+				class Bones
+				{
+				};
+				class Draw
+				{
+				};
 			};
 			class RHS_A29_Weap_MFD
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
+					class BackgroundGroup
+					{
+						color[]={0,0,0};
 						class Background
 						{
 							points[]=
@@ -4394,16 +4673,25 @@ class CfgMagazines
 					{
 						condition="(PylonSelected +  PylonAmmoRelative)/2";
 						color[]={0.99000001,0.94,0.58999997};
+						class Shape: Shape
+						{
+						};
 					};
 					class Empty: Default
 					{
 						condition="PylonAmmoRelative <= 0";
 						color[]={1,0,0,1};
+						class Shape: Shape
+						{
+						};
 					};
 				};
 			};
 			class RHS_A29_Weap_MFD_Inventory
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					class PylonText1
@@ -4467,8 +4755,14 @@ class CfgMagazines
 		{
 			class RHS_AH64_Weap_MFD
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
+					class BackgroundGroup
+					{
+						color[]={0,0,0};
 						class Background
 						{
 							points[]=
@@ -4649,16 +4943,34 @@ class CfgMagazines
 					{
 						condition="(PylonSelected +  PylonAmmoRelative)/2";
 						color[]={0.99000001,0.94,0.58999997};
+						class Shape: Shape
+						{
+						};
+						class PylonText1: PylonText1
+						{
+						};
 					};
 					class Empty: Default
 					{
 						condition="PylonAmmoRelative <= 0";
 						color[]={1,0,0,1};
+						class Shape: Shape
+						{
+						};
+						class PylonText1: PylonText1
+						{
+						};
 					};
 				};
 			};
 			class RHS_AH64_Weap_MFD_Inventory
 			{
+				class Bones
+				{
+				};
+				class Draw
+				{
+				};
 			};
 		};
 	};
@@ -4685,8 +4997,14 @@ class CfgMagazines
 		{
 			class RHS_AH64_Weap_MFD
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
+					class BackgroundGroup
+					{
+						color[]={0,0,0};
 						alpha=1;
 						class Background
 						{
@@ -5270,16 +5588,52 @@ class CfgMagazines
 					{
 						condition="(PylonSelected +  PylonAmmoRelative)/2";
 						color[]={0.99000001,0.94,0.58999997};
+						class Shape: Shape
+						{
+						};
+						class PylonText1: PylonText1
+						{
+						};
+						class PylonText2: PylonText2
+						{
+						};
+						class PylonText3: PylonText3
+						{
+						};
+						class PylonText4: PylonText4
+						{
+						};
 					};
 					class Empty: Default
 					{
 						condition="PylonAmmoRelative <= 0";
 						color[]={1,0,0,1};
+						class Shape: Shape
+						{
+						};
+						class PylonText1: PylonText1
+						{
+						};
+						class PylonText2: PylonText2
+						{
+						};
+						class PylonText3: PylonText3
+						{
+						};
+						class PylonText4: PylonText4
+						{
+						};
 					};
 				};
 			};
 			class RHS_AH64_Weap_MFD_Inventory
 			{
+				class Bones
+				{
+				};
+				class Draw
+				{
+				};
 			};
 		};
 	};
@@ -5312,8 +5666,14 @@ class CfgMagazines
 		{
 			class RHS_A29_Weap_MFD
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
+					class BackgroundGroup
+					{
+						color[]={0,0,0};
 						class Background
 						{
 							points[]=
@@ -5472,11 +5832,17 @@ class CfgMagazines
 					{
 						condition="PylonAmmoRelative <= 0";
 						color[]={1,0,0,1};
+						class Shape: Shape
+						{
+						};
 					};
 					class Selected: Default
 					{
 						condition="(PylonSelected +  PylonAmmoRelative)/2";
 						color[]={0.99000001,0.94,0.58999997};
+						class Shape: Shape
+						{
+						};
 					};
 					class Default2
 					{
@@ -5606,16 +5972,25 @@ class CfgMagazines
 					{
 						condition="PylonAmmoRelative <= 0.5";
 						color[]={1,0,0,1};
+						class Shape: Shape
+						{
+						};
 					};
 					class Selected2: Default2
 					{
 						condition="((PylonSelected +  PylonAmmoRelative)/2)*(PylonAmmoRelative >= 1)";
 						color[]={0.99000001,0.94,0.58999997};
+						class Shape: Shape
+						{
+						};
 					};
 				};
 			};
 			class RHS_A29_Weap_MFD_Inventory
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					class PylonText1
@@ -5702,8 +6077,14 @@ class CfgMagazines
 		{
 			class RHS_AH64_Weap_MFD
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
+					class BackgroundGroup
+					{
+						color[]={0,0,0};
 						alpha=1;
 						class Background
 						{
@@ -6287,16 +6668,52 @@ class CfgMagazines
 					{
 						condition="(PylonSelected +  PylonAmmoRelative)/2";
 						color[]={0.99000001,0.94,0.58999997};
+						class Shape: Shape
+						{
+						};
+						class PylonText1: PylonText1
+						{
+						};
+						class PylonText2: PylonText2
+						{
+						};
+						class PylonText3: PylonText3
+						{
+						};
+						class PylonText4: PylonText4
+						{
+						};
 					};
 					class Empty: Default
 					{
 						condition="PylonAmmoRelative <= 0";
 						color[]={1,0,0,1};
+						class Shape: Shape
+						{
+						};
+						class PylonText1: PylonText1
+						{
+						};
+						class PylonText2: PylonText2
+						{
+						};
+						class PylonText3: PylonText3
+						{
+						};
+						class PylonText4: PylonText4
+						{
+						};
 					};
 				};
 			};
 			class RHS_AH64_Weap_MFD_Inventory
 			{
+				class Bones
+				{
+				};
+				class Draw
+				{
+				};
 			};
 		};
 	};
@@ -6312,8 +6729,14 @@ class CfgMagazines
 		{
 			class RHS_A29_Weap_MFD
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
+					class BackgroundGroup
+					{
+						color[]={0,0,0};
 						class Background
 						{
 							points[]=
@@ -6472,16 +6895,25 @@ class CfgMagazines
 					{
 						condition="(PylonSelected +  PylonAmmoRelative)/2";
 						color[]={0.99000001,0.94,0.58999997};
+						class Shape: Shape
+						{
+						};
 					};
 					class Empty: Default
 					{
 						condition="PylonAmmoRelative <= 0";
 						color[]={1,0,0,1};
+						class Shape: Shape
+						{
+						};
 					};
 				};
 			};
 			class RHS_A29_Weap_MFD_Inventory
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					class PylonText1
@@ -6567,8 +6999,14 @@ class CfgMagazines
 		{
 			class RHS_A29_Weap_MFD
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
+					class BackgroundGroup
+					{
+						color[]={0,0,0};
 						class Background
 						{
 							points[]=
@@ -6727,16 +7165,25 @@ class CfgMagazines
 					{
 						condition="(PylonSelected +  PylonAmmoRelative)/2";
 						color[]={0.99000001,0.94,0.58999997};
+						class Shape: Shape
+						{
+						};
 					};
 					class Empty: Default
 					{
 						condition="PylonAmmoRelative <= 0";
 						color[]={1,0,0,1};
+						class Shape: Shape
+						{
+						};
 					};
 				};
 			};
 			class RHS_A29_Weap_MFD_Inventory
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					class PylonText1
@@ -6899,6 +7346,12 @@ class CfgMagazines
 		{
 			class rhs_a10a_ammoname
 			{
+				class Bones
+				{
+				};
+				class Draw
+				{
+					color[]={1,1,1};
 					alpha=1;
 					class PylonText1
 					{
@@ -6926,6 +7379,12 @@ class CfgMagazines
 			};
 			class rhs_a10a_box
 			{
+				class Bones
+				{
+				};
+				class Draw
+				{
+					color[]={0.15000001,1,0.15000001};
 					alpha=1;
 					class Default
 					{
@@ -7047,6 +7506,12 @@ class CfgMagazines
 		{
 			class rhs_a10a_ammoname
 			{
+				class Bones
+				{
+				};
+				class Draw
+				{
+					color[]={1,1,1};
 					alpha=1;
 					class PylonText1
 					{
@@ -7074,6 +7539,12 @@ class CfgMagazines
 			};
 			class rhs_a10a_box
 			{
+				class Bones
+				{
+				};
+				class Draw
+				{
+					color[]={0.15000001,1,0.15000001};
 					alpha=1;
 					class Default
 					{
@@ -7324,6 +7795,12 @@ class CfgMagazines
 		{
 			class rhs_a10a_ammoname
 			{
+				class Bones
+				{
+				};
+				class Draw
+				{
+					color[]={1,1,1};
 					alpha=1;
 					class PylonText1
 					{
@@ -7351,6 +7828,12 @@ class CfgMagazines
 			};
 			class rhs_a10a_box
 			{
+				class Bones
+				{
+				};
+				class Draw
+				{
+					color[]={0.15000001,1,0.15000001};
 					alpha=1;
 					class Default
 					{
@@ -7464,6 +7947,9 @@ class CfgMagazines
 			};
 			class rhs_ah64_ammoname
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="pylonSelected";
@@ -7532,12 +8018,18 @@ class CfgMagazines
 		{
 			class RHS_AH64_Weap_MFD
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					class Default
 					{
 						condition="PylonAmmoRelative>0";
 						color[]={0,0.12,0};
+						class BackgroundGroup
+						{
+							color[]={0,0,0};
 							class Background
 							{
 								points[]=
@@ -7769,22 +8261,73 @@ class CfgMagazines
 						{
 							width=8;
 						};
+						class BackgroundGroup: BackgroundGroup
+						{
+							color[]={0,0.12,0};
 							alpha=0.30000001;
+							class Background: Background
+							{
+							};
 						};
+						class BlackText: Default
+						{
+							color[]={0,0,0};
+							class PylonText1: PylonText1
+							{
+							};
+							class PylonText2: PylonText1
+							{
+							};
+							class PylonText3: PylonText1
+							{
+							};
+							class PylonText4: PylonText1
+							{
+							};
+							class PylonText5: PylonText1
+							{
+							};
+							class PylonText6: PylonText1
+							{
+							};
 						};
 					};
 					class Empty: Selected
 					{
 						condition="PylonAmmoRelative <= 0";
 						color[]={1,0,0,1};
+						class Shape: Shape
+						{
+						};
 						class BlackText: BlackText
 						{
+							class PylonText1: PylonText1
+							{
+							};
+							class PylonText2: PylonText1
+							{
+							};
+							class PylonText3: PylonText1
+							{
+							};
+							class PylonText4: PylonText1
+							{
+							};
+							class PylonText5: PylonText1
+							{
+							};
+							class PylonText6: PylonText1
+							{
+							};
 						};
 					};
 				};
 			};
 			class RHS_AH64_Weap_MFD_Inventory
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					class PylonText1
@@ -7871,12 +8414,18 @@ class CfgMagazines
 			};
 			class RHS_A29_Weap_MFD
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					class Default
 					{
 						condition="PylonAmmoRelative>0";
 						color[]={0,0.12,0};
+						class BackgroundGroup
+						{
+							color[]={0,0,0};
 							class Background
 							{
 								points[]=
@@ -8109,22 +8658,73 @@ class CfgMagazines
 						{
 							width=8;
 						};
+						class BackgroundGroup: BackgroundGroup
+						{
+							color[]={0.99000001,0.94,0.58999997};
 							alpha=0.1;
+							class Background: Background
+							{
+							};
 						};
+						class BlackText: Default
+						{
+							color[]={0,0,0};
+							class PylonText1: PylonText1
+							{
+							};
+							class PylonText2: PylonText1
+							{
+							};
+							class PylonText3: PylonText1
+							{
+							};
+							class PylonText4: PylonText1
+							{
+							};
+							class PylonText5: PylonText1
+							{
+							};
+							class PylonText6: PylonText1
+							{
+							};
 						};
 					};
 					class Empty: Selected
 					{
 						condition="PylonAmmoRelative <= 0";
 						color[]={1,0,0,1};
+						class Shape: Shape
+						{
+						};
 						class BlackText: BlackText
 						{
+							class PylonText1: PylonText1
+							{
+							};
+							class PylonText2: PylonText1
+							{
+							};
+							class PylonText3: PylonText1
+							{
+							};
+							class PylonText4: PylonText1
+							{
+							};
+							class PylonText5: PylonText1
+							{
+							};
+							class PylonText6: PylonText1
+							{
+							};
 						};
 					};
 				};
 			};
 			class RHS_A29_Weap_MFD_Inventory
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					class PylonText1
@@ -8214,6 +8814,12 @@ class CfgMagazines
 		{
 			class rhs_a10a_ammoname
 			{
+				class Bones
+				{
+				};
+				class Draw
+				{
+					color[]={1,1,1};
 					alpha=1;
 					class PylonText1
 					{
@@ -8241,6 +8847,12 @@ class CfgMagazines
 			};
 			class rhs_a10a_box
 			{
+				class Bones
+				{
+				};
+				class Draw
+				{
+					color[]={0.15000001,1,0.15000001};
 					alpha=1;
 					class Default
 					{
@@ -8354,6 +8966,9 @@ class CfgMagazines
 			};
 			class rhs_ah64_ammoname
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="pylonSelected";
@@ -8405,12 +9020,18 @@ class CfgMagazines
 			};
 			class RHS_A29_Weap_MFD
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					class Default
 					{
 						condition="PylonAmmoRelative>0";
 						color[]={0,0.12,0};
+						class BackgroundGroup
+						{
+							color[]={0,0,0};
 							class Background
 							{
 								points[]=
@@ -8643,22 +9264,73 @@ class CfgMagazines
 						{
 							width=8;
 						};
+						class BackgroundGroup: BackgroundGroup
+						{
+							color[]={0.99000001,0.94,0.58999997};
 							alpha=0.1;
+							class Background: Background
+							{
+							};
 						};
+						class BlackText: Default
+						{
+							color[]={0,0,0};
+							class PylonText1: PylonText1
+							{
+							};
+							class PylonText2: PylonText1
+							{
+							};
+							class PylonText3: PylonText1
+							{
+							};
+							class PylonText4: PylonText1
+							{
+							};
+							class PylonText5: PylonText1
+							{
+							};
+							class PylonText6: PylonText1
+							{
+							};
 						};
 					};
 					class Empty: Selected
 					{
 						condition="PylonAmmoRelative <= 0";
 						color[]={1,0,0,1};
+						class Shape: Shape
+						{
+						};
 						class BlackText: BlackText
 						{
+							class PylonText1: PylonText1
+							{
+							};
+							class PylonText2: PylonText1
+							{
+							};
+							class PylonText3: PylonText1
+							{
+							};
+							class PylonText4: PylonText1
+							{
+							};
+							class PylonText5: PylonText1
+							{
+							};
+							class PylonText6: PylonText1
+							{
+							};
 						};
 					};
 				};
 			};
 			class RHS_A29_Weap_MFD_Inventory
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					class PylonText1
@@ -8746,12 +9418,18 @@ class CfgMagazines
 		{
 			class RHS_AH64_Weap_MFD
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					class Default
 					{
 						condition="PylonAmmoRelative>0";
 						color[]={0,0.12,0};
+						class BackgroundGroup
+						{
+							color[]={0,0,0};
 							class Background
 							{
 								points[]=
@@ -8983,22 +9661,73 @@ class CfgMagazines
 						{
 							width=8;
 						};
+						class BackgroundGroup: BackgroundGroup
+						{
+							color[]={0,0.12,0};
 							alpha=0.30000001;
+							class Background: Background
+							{
+							};
 						};
+						class BlackText: Default
+						{
+							color[]={0,0,0};
+							class PylonText1: PylonText1
+							{
+							};
+							class PylonText2: PylonText1
+							{
+							};
+							class PylonText3: PylonText1
+							{
+							};
+							class PylonText4: PylonText1
+							{
+							};
+							class PylonText5: PylonText1
+							{
+							};
+							class PylonText6: PylonText1
+							{
+							};
 						};
 					};
 					class Empty: Selected
 					{
 						condition="PylonAmmoRelative <= 0";
 						color[]={1,0,0,1};
+						class Shape: Shape
+						{
+						};
 						class BlackText: BlackText
 						{
+							class PylonText1: PylonText1
+							{
+							};
+							class PylonText2: PylonText1
+							{
+							};
+							class PylonText3: PylonText1
+							{
+							};
+							class PylonText4: PylonText1
+							{
+							};
+							class PylonText5: PylonText1
+							{
+							};
+							class PylonText6: PylonText1
+							{
+							};
 						};
 					};
 				};
 			};
 			class RHS_AH64_Weap_MFD_Inventory
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					class PylonText1
@@ -9100,6 +9829,12 @@ class CfgMagazines
 		{
 			class rhs_a10a_ammoname
 			{
+				class Bones
+				{
+				};
+				class Draw
+				{
+					color[]={1,1,1};
 					alpha=1;
 					class PylonText1
 					{
@@ -9127,6 +9862,12 @@ class CfgMagazines
 			};
 			class rhs_a10a_box
 			{
+				class Bones
+				{
+				};
+				class Draw
+				{
+					color[]={0.15000001,1,0.15000001};
 					alpha=1;
 					class Default
 					{
@@ -9240,6 +9981,9 @@ class CfgMagazines
 			};
 			class rhs_ah64_ammoname
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="pylonSelected";
@@ -9291,12 +10035,18 @@ class CfgMagazines
 			};
 			class RHS_A29_Weap_MFD
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					class Default
 					{
 						condition="PylonAmmoRelative>0";
 						color[]={0,0.12,0};
+						class BackgroundGroup
+						{
+							color[]={0,0,0};
 							class Background
 							{
 								points[]=
@@ -9529,22 +10279,73 @@ class CfgMagazines
 						{
 							width=8;
 						};
+						class BackgroundGroup: BackgroundGroup
+						{
+							color[]={0.99000001,0.94,0.58999997};
 							alpha=0.1;
+							class Background: Background
+							{
+							};
 						};
+						class BlackText: Default
+						{
+							color[]={0,0,0};
+							class PylonText1: PylonText1
+							{
+							};
+							class PylonText2: PylonText1
+							{
+							};
+							class PylonText3: PylonText1
+							{
+							};
+							class PylonText4: PylonText1
+							{
+							};
+							class PylonText5: PylonText1
+							{
+							};
+							class PylonText6: PylonText1
+							{
+							};
 						};
 					};
 					class Empty: Selected
 					{
 						condition="PylonAmmoRelative <= 0";
 						color[]={1,0,0,1};
+						class Shape: Shape
+						{
+						};
 						class BlackText: BlackText
 						{
+							class PylonText1: PylonText1
+							{
+							};
+							class PylonText2: PylonText1
+							{
+							};
+							class PylonText3: PylonText1
+							{
+							};
+							class PylonText4: PylonText1
+							{
+							};
+							class PylonText5: PylonText1
+							{
+							};
+							class PylonText6: PylonText1
+							{
+							};
 						};
 					};
 				};
 			};
 			class RHS_A29_Weap_MFD_Inventory
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					class PylonText1
@@ -9641,6 +10442,12 @@ class CfgMagazines
 		{
 			class rhs_a10a_ammoname
 			{
+				class Bones
+				{
+				};
+				class Draw
+				{
+					color[]={1,1,1};
 					alpha=1;
 					class PylonText1
 					{
@@ -9668,6 +10475,12 @@ class CfgMagazines
 			};
 			class rhs_a10a_box
 			{
+				class Bones
+				{
+				};
+				class Draw
+				{
+					color[]={0.15000001,1,0.15000001};
 					alpha=1;
 					class Default
 					{
@@ -9804,12 +10617,18 @@ class CfgMagazines
 			};
 			class RHS_A29_Weap_MFD
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					class Default
 					{
 						condition="PylonAmmoRelative>0";
 						color[]={0,0.12,0};
+						class BackgroundGroup
+						{
+							color[]={0,0,0};
 							class Background
 							{
 								points[]=
@@ -10042,22 +10861,73 @@ class CfgMagazines
 						{
 							width=8;
 						};
+						class BackgroundGroup: BackgroundGroup
+						{
+							color[]={0.99000001,0.94,0.58999997};
 							alpha=0.1;
+							class Background: Background
+							{
+							};
 						};
+						class BlackText: Default
+						{
+							color[]={0,0,0};
+							class PylonText1: PylonText1
+							{
+							};
+							class PylonText2: PylonText1
+							{
+							};
+							class PylonText3: PylonText1
+							{
+							};
+							class PylonText4: PylonText1
+							{
+							};
+							class PylonText5: PylonText1
+							{
+							};
+							class PylonText6: PylonText1
+							{
+							};
 						};
 					};
 					class Empty: Selected
 					{
 						condition="PylonAmmoRelative <= 0";
 						color[]={1,0,0,1};
+						class Shape: Shape
+						{
+						};
 						class BlackText: BlackText
 						{
+							class PylonText1: PylonText1
+							{
+							};
+							class PylonText2: PylonText1
+							{
+							};
+							class PylonText3: PylonText1
+							{
+							};
+							class PylonText4: PylonText1
+							{
+							};
+							class PylonText5: PylonText1
+							{
+							};
+							class PylonText6: PylonText1
+							{
+							};
 						};
 					};
 				};
 			};
 			class RHS_A29_Weap_MFD_Inventory
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					class PylonText1
@@ -10198,6 +11068,12 @@ class CfgMagazines
 		{
 			class rhs_a10a_ammoname
 			{
+				class Bones
+				{
+				};
+				class Draw
+				{
+					color[]={1,1,1};
 					alpha=1;
 					class PylonText1
 					{
@@ -10225,6 +11101,12 @@ class CfgMagazines
 			};
 			class rhs_a10a_box
 			{
+				class Bones
+				{
+				};
+				class Draw
+				{
+					color[]={0.15000001,1,0.15000001};
 					alpha=1;
 					class Default
 					{
@@ -10338,8 +11220,14 @@ class CfgMagazines
 			};
 			class RHS_A29_Weap_MFD
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
+					class BackgroundGroup
+					{
+						color[]={0,0,0};
 						class Background
 						{
 							points[]=
@@ -10597,16 +11485,25 @@ class CfgMagazines
 					{
 						condition="(PylonSelected +  PylonAmmoRelative)/2";
 						color[]={0.99000001,0.94,0.58999997};
+						class Shape: Shape
+						{
+						};
 					};
 					class Empty: Default
 					{
 						condition="PylonAmmoRelative <= 0";
 						color[]={1,0,0,1};
+						class Shape: Shape
+						{
+						};
 					};
 				};
 			};
 			class RHS_A29_Weap_MFD_Inventory
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					class PylonText1
@@ -10671,6 +11568,12 @@ class CfgMagazines
 		{
 			class rhs_a10a_ammoname
 			{
+				class Bones
+				{
+				};
+				class Draw
+				{
+					color[]={1,1,1};
 					alpha=1;
 					class PylonText1
 					{
@@ -10698,6 +11601,12 @@ class CfgMagazines
 			};
 			class rhs_a10a_box
 			{
+				class Bones
+				{
+				};
+				class Draw
+				{
+					color[]={0.15000001,1,0.15000001};
 					alpha=1;
 					class Default
 					{
@@ -10834,8 +11743,14 @@ class CfgMagazines
 			};
 			class RHS_A29_Weap_MFD
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
+					class BackgroundGroup
+					{
+						color[]={0,0,0};
 						class Background
 						{
 							points[]=
@@ -11093,16 +12008,25 @@ class CfgMagazines
 					{
 						condition="(PylonSelected +  PylonAmmoRelative)/2";
 						color[]={0.99000001,0.94,0.58999997};
+						class Shape: Shape
+						{
+						};
 					};
 					class Empty: Default
 					{
 						condition="PylonAmmoRelative <= 0";
 						color[]={1,0,0,1};
+						class Shape: Shape
+						{
+						};
 					};
 				};
 			};
 			class RHS_A29_Weap_MFD_Inventory
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					class PylonText1
@@ -11166,6 +12090,12 @@ class CfgMagazines
 		{
 			class rhs_a10a_ammoname
 			{
+				class Bones
+				{
+				};
+				class Draw
+				{
+					color[]={1,1,1};
 					alpha=1;
 					class PylonText1
 					{
@@ -11193,6 +12123,12 @@ class CfgMagazines
 			};
 			class rhs_a10a_box
 			{
+				class Bones
+				{
+				};
+				class Draw
+				{
+					color[]={0.15000001,1,0.15000001};
 					alpha=1;
 					class Default
 					{
@@ -11306,8 +12242,14 @@ class CfgMagazines
 			};
 			class RHS_A29_Weap_MFD
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
+					class BackgroundGroup
+					{
+						color[]={0,0,0};
 						class Background
 						{
 							points[]=
@@ -11564,16 +12506,25 @@ class CfgMagazines
 					{
 						condition="(PylonSelected +  PylonAmmoRelative)/2";
 						color[]={0.99000001,0.94,0.58999997};
+						class Shape: Shape
+						{
+						};
 					};
 					class Empty: Default
 					{
 						condition="PylonAmmoRelative <= 0";
 						color[]={1,0,0,1};
+						class Shape: Shape
+						{
+						};
 					};
 				};
 			};
 			class RHS_A29_Weap_MFD_Inventory
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					class PylonText1
@@ -11638,6 +12589,12 @@ class CfgMagazines
 		{
 			class rhs_a10a_ammoname
 			{
+				class Bones
+				{
+				};
+				class Draw
+				{
+					color[]={1,1,1};
 					alpha=1;
 					class PylonText1
 					{
@@ -11665,6 +12622,12 @@ class CfgMagazines
 			};
 			class rhs_a10a_box
 			{
+				class Bones
+				{
+				};
+				class Draw
+				{
+					color[]={0.15000001,1,0.15000001};
 					alpha=1;
 					class Default
 					{
@@ -11778,11 +12741,17 @@ class CfgMagazines
 			};
 			class rhs_f22_pylon
 			{
+				class material
+				{
+					ambient[]={3,3,3,1};
 					diffuse[]={10,10,10,1};
 					emissive[]={400,200,200,1};
 				};
 				class Bones
 				{
+					class Center
+					{
+						pos[]={0,0};
 					};
 				};
 				class Draw
@@ -11911,6 +12880,12 @@ class CfgMagazines
 					{
 						condition="(PylonSelected +  PylonAmmoRelative)/2";
 						alpha=1;
+						class Shape: Shape
+						{
+						};
+						class PylonText1: PylonText1
+						{
+						};
 						class Background
 						{
 							points[]=
@@ -12034,13 +13009,28 @@ class CfgMagazines
 					{
 						condition="PylonAmmoRelative <= 0";
 						color[]={1,0,0,1};
+						class Shape: Shape
+						{
+						};
+						class PylonText1: PylonText1
+						{
+						};
+						class Background: Background
+						{
+						};
 					};
 				};
 			};
 			class RHS_A29_Weap_MFD
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
+					class BackgroundGroup
+					{
+						color[]={0,0,0};
 						class Background
 						{
 							points[]=
@@ -12297,16 +13287,25 @@ class CfgMagazines
 					{
 						condition="(PylonSelected +  PylonAmmoRelative)/2";
 						color[]={0.99000001,0.94,0.58999997};
+						class Shape: Shape
+						{
+						};
 					};
 					class Empty: Default
 					{
 						condition="PylonAmmoRelative <= 0";
 						color[]={1,0,0,1};
+						class Shape: Shape
+						{
+						};
 					};
 				};
 			};
 			class RHS_A29_Weap_MFD_Inventory
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					class PylonText1
@@ -12371,6 +13370,12 @@ class CfgMagazines
 		{
 			class rhs_a10a_ammoname
 			{
+				class Bones
+				{
+				};
+				class Draw
+				{
+					color[]={1,1,1};
 					alpha=1;
 					class PylonText1
 					{
@@ -12398,6 +13403,12 @@ class CfgMagazines
 			};
 			class rhs_a10a_box
 			{
+				class Bones
+				{
+				};
+				class Draw
+				{
+					color[]={0.15000001,1,0.15000001};
 					alpha=1;
 					class Default
 					{
@@ -12511,8 +13522,14 @@ class CfgMagazines
 			};
 			class RHS_A29_Weap_MFD
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
+					class BackgroundGroup
+					{
+						color[]={0,0,0};
 						class Background
 						{
 							points[]=
@@ -12770,16 +13787,25 @@ class CfgMagazines
 					{
 						condition="(PylonSelected +  PylonAmmoRelative)/2";
 						color[]={0.99000001,0.94,0.58999997};
+						class Shape: Shape
+						{
+						};
 					};
 					class Empty: Default
 					{
 						condition="PylonAmmoRelative <= 0";
 						color[]={1,0,0,1};
+						class Shape: Shape
+						{
+						};
 					};
 				};
 			};
 			class RHS_A29_Weap_MFD_Inventory
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					class PylonText1
@@ -12844,6 +13870,12 @@ class CfgMagazines
 		{
 			class rhs_a10a_ammoname
 			{
+				class Bones
+				{
+				};
+				class Draw
+				{
+					color[]={1,1,1};
 					alpha=1;
 					class PylonText1
 					{
@@ -12871,6 +13903,12 @@ class CfgMagazines
 			};
 			class rhs_a10a_box
 			{
+				class Bones
+				{
+				};
+				class Draw
+				{
+					color[]={0.15000001,1,0.15000001};
 					alpha=1;
 					class Default
 					{
@@ -12984,8 +14022,14 @@ class CfgMagazines
 			};
 			class RHS_A29_Weap_MFD
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
+					class BackgroundGroup
+					{
+						color[]={0,0,0};
 						class Background
 						{
 							points[]=
@@ -13243,16 +14287,25 @@ class CfgMagazines
 					{
 						condition="(PylonSelected +  PylonAmmoRelative)/2";
 						color[]={0.99000001,0.94,0.58999997};
+						class Shape: Shape
+						{
+						};
 					};
 					class Empty: Default
 					{
 						condition="PylonAmmoRelative <= 0";
 						color[]={1,0,0,1};
+						class Shape: Shape
+						{
+						};
 					};
 				};
 			};
 			class RHS_A29_Weap_MFD_Inventory
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					class PylonText1
@@ -13329,6 +14382,12 @@ class CfgMagazines
 		{
 			class rhs_a10a_ammoname
 			{
+				class Bones
+				{
+				};
+				class Draw
+				{
+					color[]={1,1,1};
 					alpha=1;
 					class PylonText1
 					{
@@ -13356,6 +14415,12 @@ class CfgMagazines
 			};
 			class rhs_a10a_box
 			{
+				class Bones
+				{
+				};
+				class Draw
+				{
+					color[]={0.15000001,1,0.15000001};
 					alpha=1;
 					class Default
 					{
@@ -13469,8 +14534,14 @@ class CfgMagazines
 			};
 			class RHS_A29_Weap_MFD
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
+					class BackgroundGroup
+					{
+						color[]={0,0,0};
 						class Background
 						{
 							points[]=
@@ -13728,16 +14799,25 @@ class CfgMagazines
 					{
 						condition="(PylonSelected +  PylonAmmoRelative)/2";
 						color[]={0.99000001,0.94,0.58999997};
+						class Shape: Shape
+						{
+						};
 					};
 					class Empty: Default
 					{
 						condition="PylonAmmoRelative <= 0";
 						color[]={1,0,0,1};
+						class Shape: Shape
+						{
+						};
 					};
 				};
 			};
 			class RHS_A29_Weap_MFD_Inventory
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					class PylonText1
@@ -13802,6 +14882,12 @@ class CfgMagazines
 		{
 			class rhs_a10a_ammoname
 			{
+				class Bones
+				{
+				};
+				class Draw
+				{
+					color[]={1,1,1};
 					alpha=1;
 					class PylonText1
 					{
@@ -13829,6 +14915,12 @@ class CfgMagazines
 			};
 			class rhs_a10a_box
 			{
+				class Bones
+				{
+				};
+				class Draw
+				{
+					color[]={0.15000001,1,0.15000001};
 					alpha=1;
 					class Default
 					{
@@ -13942,8 +15034,14 @@ class CfgMagazines
 			};
 			class RHS_A29_Weap_MFD
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
+					class BackgroundGroup
+					{
+						color[]={0,0,0};
 						class Background
 						{
 							points[]=
@@ -14201,16 +15299,25 @@ class CfgMagazines
 					{
 						condition="(PylonSelected +  PylonAmmoRelative)/2";
 						color[]={0.99000001,0.94,0.58999997};
+						class Shape: Shape
+						{
+						};
 					};
 					class Empty: Default
 					{
 						condition="PylonAmmoRelative <= 0";
 						color[]={1,0,0,1};
+						class Shape: Shape
+						{
+						};
 					};
 				};
 			};
 			class RHS_A29_Weap_MFD_Inventory
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					class PylonText1
@@ -14278,6 +15385,12 @@ class CfgMagazines
 		{
 			class rhs_a10a_ammoname
 			{
+				class Bones
+				{
+				};
+				class Draw
+				{
+					color[]={1,1,1};
 					alpha=1;
 					class PylonText1
 					{
@@ -14305,6 +15418,12 @@ class CfgMagazines
 			};
 			class rhs_a10a_box
 			{
+				class Bones
+				{
+				};
+				class Draw
+				{
+					color[]={0.15000001,1,0.15000001};
 					alpha=1;
 					class Default
 					{
@@ -14503,6 +15622,15 @@ class CfgWeapons
 	class RocketPods;
 	class MissileLauncher;
 	class missiles_DAR;
+	class rhsusf_weap_DummyLauncher: MissileLauncher
+	{
+		magazines[]=
+		{
+			"rhs_mag_ANALQ131",
+			"rhs_mag_fueltank_UH60",
+			"rhs_mag_fueltank_UH60MEV"
+		};
+	};
 	class rhs_weap_SidewinderLauncher: MissileLauncher
 	{
 		shortNameMagazine="AIM-9X";
@@ -14522,6 +15650,14 @@ class CfgWeapons
 		weaponSoundEffect="DefaultRifle";
 		reloadTime=0.1;
 		magazineReloadTime=30;
+		magazines[]=
+		{
+			"rhs_mag_Sidewinder",
+			"rhs_mag_Sidewinder_2",
+			"rhs_mag_Sidewinder_int",
+			"rhs_mag_Sidewinder_heli",
+			"rhs_mag_Sidewinder_heli_2"
+		};
 		cursorSize=0;
 		cursor="missile";
 		cursorAim="EmptyCursor";
@@ -14532,20 +15668,52 @@ class CfgWeapons
 	class rhs_weap_AIM9M: rhs_weap_SidewinderLauncher
 	{
 		shortNameMagazine="AIM-9M";
+		magazines[]=
+		{
+			"rhs_mag_Sidewinder_heli",
+			"rhs_mag_Sidewinder_heli_2",
+			"rhs_mag_aim9m",
+			"rhs_mag_aim9m_2",
+			"rhs_mag_aim9m_int"
+		};
 	};
 	class rhs_weap_AIM120: rhs_weap_SidewinderLauncher
 	{
 		shortNameMagazine="AIM-120";
 		magazineReloadTime=0.1;
 		weaponLockSystem=8;
+		magazines[]=
+		{
+			"rhs_mag_aim120"
+		};
 	};
 	class rhs_weap_AIM120D: rhs_weap_AIM120
 	{
 		shortNameMagazine="AIM-120D";
 		magazineReloadTime=0.1;
+		magazines[]=
+		{
+			"rhs_mag_aim120d",
+			"rhs_mag_aim120d_int",
+			"rhs_mag_aim120d_2_F22_l",
+			"rhs_mag_aim120d_2_F22_r"
+		};
 	};
 	class rhs_weap_FFARLauncher: RocketPods
 	{
+		magazines[]=
+		{
+			"rhs_mag_M151_19",
+			"rhs_mag_M151_19_green",
+			"rhs_mag_M151_7",
+			"rhs_mag_M151_7_green",
+			"rhs_mag_M151_7_USAF_LAU131",
+			"rhs_mag_M151_21_USAF_LAU131_3",
+			"rhs_mag_FFAR_7_USAF",
+			"rhs_mag_FFAR_21_USAF_LAU68_3",
+			"rhs_mag_FFAR_19_USAF",
+			"rhs_mag_FFAR_57_USAF_LAU61_3"
+		};
 		cursor="rocket";
 		cursorAim="EmptyCursor";
 		cursorSize=0;
@@ -14592,8 +15760,27 @@ class CfgWeapons
 			burst=24;
 		};
 	};
+	class rhs_weap_FFARLauncher_M229: rhs_weap_FFARLauncher
+	{
+		magazines[]=
+		{
+			"rhs_mag_M229_19",
+			"rhs_mag_M229_19_green",
+			"rhs_mag_M229_7",
+			"rhs_mag_M229_7_green"
+		};
+	};
 	class rhs_weap_FFARLauncher_M257: rhs_weap_FFARLauncher
 	{
+		magazines[]=
+		{
+			"rhs_mag_M257_7",
+			"rhs_mag_M257_7_green",
+			"rhs_mag_M257_7_USAF_LAU131"
+		};
+		class Far_AI: Far_AI
+		{
+		};
 	};
 	class Missile_AGM_02_Plane_CAS_01_F;
 	class rhs_weap_HellfireLauncher: Missile_AGM_02_Plane_CAS_01_F
@@ -14610,6 +15797,12 @@ class CfgWeapons
 		minrangeprobab=0.60000002;
 		nameSound="MissileLauncher";
 		reloadTime=1;
+		magazines[]=
+		{
+			"rhs_mag_AGM114L_4",
+			"rhs_mag_AGM114L_2",
+			"rhs_mag_AGM114L"
+		};
 		canLock=2;
 		weaponLockDelay=3;
 		class TopDown: Mode_SemiAuto
@@ -14621,19 +15814,50 @@ class CfgWeapons
 			minrange=250;
 			minrangeprobab=0.60000002;
 		};
+		class LoalDistance: TopDown
+		{
+		};
+		class Cruise: TopDown
+		{
+		};
+	};
+	class rhs_weap_AGM114L_Launcher: rhs_weap_HellfireLauncher
+	{
+		magazines[]=
+		{
+			"rhs_mag_AGM114L_4",
+			"rhs_mag_AGM114L_2",
+			"rhs_mag_AGM114L",
+			"rhs_mag_AGM114L_2_plane",
+			"rhs_mag_AGM114L_plane"
+		};
 	};
 	class rhs_weap_AGM114K_base_Launcher: rhs_weap_HellfireLauncher
 	{
+		magazines[]=
+		{
+			"rhs_mag_agm114K_4",
+			"rhs_mag_agm114K_2",
+			"rhs_mag_agm114K",
+			"rhs_mag_AGM114K_2_plane",
+			"rhs_mag_AGM114K_plane"
+		};
 		class EventHandlers
 		{
 			fired="_this call rhs_fnc_LOALGuide";
 		};
 		canLock=1;
+		class TopDown: TopDown
+		{
+		};
 	};
 	class rhs_weap_AGM114K_Launcher: rhs_weap_AGM114K_base_Launcher
 	{
 		class LOAL_LO: rhs_weap_AGM114K_base_Launcher
 		{
+			class LoalDistance: TopDown
+			{
+			};
 			class EventHandlers
 			{
 				fired="_this call rhs_fnc_LOALGuide";
@@ -14641,16 +15865,33 @@ class CfgWeapons
 		};
 		class LOAL_HI: rhs_weap_AGM114K_base_Launcher
 		{
+			class LoalDistance: TopDown
+			{
+			};
 			class EventHandlers
 			{
 				fired="_this call rhs_fnc_LOALGuide";
 			};
+		};
+	};
+	class rhs_weap_AGM114M_base_Launcher: rhs_weap_HellfireLauncher
+	{
+		magazines[]=
+		{
+			"rhs_mag_agm114M_4",
+			"rhs_mag_agm114M_2",
+			"rhs_mag_agm114M",
+			"rhs_mag_AGM114M_2_plane",
+			"rhs_mag_AGM114M_plane"
 		};
 	};
 	class rhs_weap_AGM114M_Launcher: rhs_weap_AGM114M_base_Launcher
 	{
 		class LOAL_LO: rhs_weap_AGM114K_base_Launcher
 		{
+			class LoalDistance: TopDown
+			{
+			};
 			class EventHandlers
 			{
 				fired="_this call rhs_fnc_LOALGuide";
@@ -14658,16 +15899,33 @@ class CfgWeapons
 		};
 		class LOAL_HI: rhs_weap_AGM114K_base_Launcher
 		{
+			class LoalDistance: TopDown
+			{
+			};
 			class EventHandlers
 			{
 				fired="_this call rhs_fnc_LOALGuide";
 			};
 		};
 	};
+	class RHS_weap_AGM114N_base_Launcher: rhs_weap_HellfireLauncher
+	{
+		magazines[]=
+		{
+			"rhs_mag_agm114N_4",
+			"rhs_mag_agm114N_2",
+			"rhs_mag_agm114N",
+			"rhs_mag_AGM114N_2_plane",
+			"rhs_mag_AGM114N_plane"
+		};
+	};
 	class RHS_weap_AGM114N_Launcher: RHS_weap_AGM114N_base_Launcher
 	{
 		class LOAL_LO: rhs_weap_AGM114K_base_Launcher
 		{
+			class LoalDistance: TopDown
+			{
+			};
 			class EventHandlers
 			{
 				fired="_this call rhs_fnc_LOALGuide";
@@ -14675,6 +15933,9 @@ class CfgWeapons
 		};
 		class LOAL_HI: rhs_weap_AGM114K_base_Launcher
 		{
+			class LoalDistance: TopDown
+			{
+			};
 			class EventHandlers
 			{
 				fired="_this call rhs_fnc_LOALGuide";
@@ -14701,20 +15962,79 @@ class CfgWeapons
 		};
 		reloadTime=0.1;
 		magazineReloadTime=0.1;
+		magazines[]=
+		{
+			"rhs_mag_DAGR_4",
+			"rhs_mag_DAGR_8",
+			"rhs_mag_DAGR_16",
+			"rhs_mag_DAGR_4_plane",
+			"rhs_mag_DAGR_8_plane"
+		};
 		weaponLockDelay=3;
 		cursorAim="EmptyCursor";
 		cursor="EmptyCursor";
 		showAimCursorInternal=0;
+		class Direct: TopDown
+		{
+		};
+		class LoalDistance: TopDown
+		{
+		};
 	};
 	class rhs_weap_agm65: rhs_weap_HellfireLauncher
 	{
 		shortNameMagazine="AGM-65";
 		missileLockCone=65;
+		magazines[]=
+		{
+			"rhs_mag_agm65",
+			"rhs_mag_agm65b_x3"
+		};
 		reloadTime=0.1;
 		magazineReloadTime=0.1;
 		nameSound="MissileLauncher";
 		weaponSoundEffect="DefaultRifle";
 		weaponLockDelay=3;
+	};
+	class rhs_weap_agm65b: rhs_weap_agm65
+	{
+		magazines[]=
+		{
+			"rhs_mag_agm65b",
+			"rhs_mag_agm65b_3"
+		};
+	};
+	class rhs_weap_agm65d: rhs_weap_agm65
+	{
+		magazines[]=
+		{
+			"rhs_mag_agm65d",
+			"rhs_mag_agm65d_3"
+		};
+	};
+	class rhs_weap_agm65e: rhs_weap_agm65
+	{
+		magazines[]=
+		{
+			"rhs_mag_agm65e",
+			"rhs_mag_agm65e_3"
+		};
+	};
+	class rhs_weap_agm65f: rhs_weap_agm65
+	{
+		magazines[]=
+		{
+			"rhs_mag_agm65f",
+			"rhs_mag_agm65f_3"
+		};
+	};
+	class rhs_weap_agm65h: rhs_weap_agm65
+	{
+		magazines[]=
+		{
+			"rhs_mag_agm65h",
+			"rhs_mag_agm65h_3"
+		};
 	};
 	class rhs_weap_TOW_Launcher;
 	class rhs_weap_stinger_Launcher: rhs_weap_TOW_Launcher
@@ -14723,6 +16043,11 @@ class CfgWeapons
 		magazineReloadTime=5;
 		canLock=2;
 		weaponLockSystem=2;
+		magazines[]=
+		{
+			"rhs_mag_4Rnd_stinger",
+			"rhs_mag_2Rnd_stinger"
+		};
 	};
 	class rhs_weap_stinger_Launcher_static: rhs_weap_stinger_Launcher
 	{
@@ -14736,6 +16061,11 @@ class CfgWeapons
 		canLock=2;
 		autoReload=1;
 		weaponLockSystem=2;
+		magazines[]=
+		{
+			"rhs_mag_ATAS_2",
+			"rhs_mag_ATAS_AH64_2"
+		};
 	};
 	class Bomb_04_Plane_CAS_01_F;
 	class Mk82BombLauncher;
@@ -14744,12 +16074,20 @@ class CfgWeapons
 		cursorSize=0;
 		cursor="bomb";
 		cursorAim="EmptyCursor";
+		magazines[]=
+		{
+			"rhs_mag_gbu12"
+		};
 	};
 	class rhs_weap_gbu32: Bomb_04_Plane_CAS_01_F
 	{
 		cursorSize=0;
 		cursor="bomb";
 		cursorAim="EmptyCursor";
+		magazines[]=
+		{
+			"rhs_mag_gbu32"
+		};
 	};
 	class rhs_weap_mk82: Mk82BombLauncher
 	{
@@ -14758,6 +16096,35 @@ class CfgWeapons
 		cursorAim="EmptyCursor";
 		airateoffire=1;
 		airateoffiredistance=500;
+		magazines[]=
+		{
+			"rhs_mag_mk82",
+			"rhs_mag_mk82_3"
+		};
+	};
+	class rhs_weap_cbu100: rhs_weap_mk82
+	{
+		magazines[]=
+		{
+			"rhs_mag_cbu100",
+			"rhs_mag_cbu100_3"
+		};
+	};
+	class rhs_weap_cbu87: rhs_weap_mk82
+	{
+		magazines[]=
+		{
+			"rhs_mag_cbu87",
+			"rhs_mag_cbu87_3"
+		};
+	};
+	class rhs_weap_cbu89: rhs_weap_cbu87
+	{
+		magazines[]=
+		{
+			"rhs_mag_cbu89",
+			"rhs_mag_cbu89_3"
+		};
 	};
 	class CannonCore;
 	class weapon_Fighter_Gun20mm_AA: CannonCore
@@ -14775,6 +16142,10 @@ class CfgWeapons
 		holdsterAnimValue=1.5;
 		initSpeed=900;
 		CanLock=2;
+		magazines[]=
+		{
+			"rhsusf_20mm_M61A2"
+		};
 	};
 };
 class cfgVehicles

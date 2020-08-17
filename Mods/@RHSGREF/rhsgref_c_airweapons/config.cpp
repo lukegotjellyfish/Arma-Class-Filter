@@ -1,5 +1,8 @@
 class CfgPatches
 {
+	class rhsgref_c_airweapons
+	{
+		units[]={};
 		weapons[]={};
 		author[]=
 		{
@@ -106,6 +109,9 @@ class CfgAmmo
 		initTime=0;
 		thrustTime=4.0999999;
 		thrust=300;
+		class Direct
+		{
+		};
 		flightProfiles[]=
 		{
 			"Direct"
@@ -156,6 +162,9 @@ class CfgAmmo
 		hit=310;
 		caliber=66.666702;
 	};
+	class rhs_ammo_l159_fuelpod_proxy: rhs_ammo_atgmBase_base
+	{
+	};
 	class rhs_ammo_20mm_AP;
 	class rhs_ammo_20x139mm_AP: rhs_ammo_20mm_AP
 	{
@@ -167,7 +176,6 @@ class CfgAmmo
 		caliber=2.92063;
 		dangerRadiusBulletClose=16;
 		dangerRadiusHit=40;
-		suppressionRadiusBulletClose=10;
 		suppressionRadiusHit=14;
 		tracerEndTime=1.5;
 		class CamShakeHit
@@ -202,7 +210,6 @@ class CfgAmmo
 		caliber=1.4;
 		dangerRadiusBulletClose=20;
 		dangerRadiusHit=60;
-		suppressionRadiusBulletClose=12;
 		suppressionRadiusHit=24;
 		tracerEndTime=2;
 		class CamShakeExplode
@@ -296,6 +303,9 @@ class CfgMagazines
 			"RHS_HP_L159_FUELPOD"
 		};
 	};
+	class rhs_mag_l159_fuelpod_grey: rhs_mag_l159_fuelpod
+	{
+	};
 	class rhs_mag_GI2_420_HE: VehicleMagazine
 	{
 		displayname="20x139mm High-Explosive Indenciary";
@@ -360,6 +370,9 @@ class CfgWeapons
 		class manual;
 		class close;
 		class short;
+		class medium;
+		class far;
+	};
 	class rhs_weap_gi2_base: rhs_weap_M197
 	{
 		aidispersioncoefx=2;
@@ -377,6 +390,23 @@ class CfgWeapons
 			burstRangeMax=6;
 		};
 	};
+	class rhs_weap_gi2: rhs_weap_M197
+	{
+		magazines[]={};
+		class HE: rhs_weap_gi2_base
+		{
+			magazines[]=
+			{
+				"rhs_mag_GI2_420_HE"
+			};
+		};
+		class AP: rhs_weap_M197
+		{
+			magazines[]=
+			{
+				"rhs_mag_GI2_420_AP"
+			};
+		};
 	};
 	class RHS_weap_zpl20: gatling_30mm
 	{
@@ -396,6 +426,12 @@ class CfgWeapons
 				positionname="chamber_1";
 				effectname="MachineGun2";
 			};
+		};
+		magazines[]=
+		{
+			"rhs_mag_zpl20_hei",
+			"rhs_mag_zpl20_apit",
+			"rhs_mag_zpl20_mixed"
 		};
 		namesound="cannon";
 		soundcontinuous=1;
@@ -456,6 +492,11 @@ class CfgWeapons
 		cursoraim="EmptyCursor";
 		cursorsize=0;
 		displayname="ZT3 Ingwe";
+		magazines[]=
+		{
+			"rhs_mag_zt3",
+			"rhs_mag_zt3_4"
+		};
 		airateoffire=2.5;
 		airateoffiredistance=500;
 		maxrange=5000;
@@ -486,6 +527,11 @@ class CfgWeapons
 		minrangeprobab=0.80000001;
 		nameSound="MissileLauncher";
 		reloadTime=1;
+		magazines[]=
+		{
+			"rhs_mag_zt6_4",
+			"rhs_mag_zt6"
+		};
 		canLock=2;
 		weaponLockDelay=3;
 	};

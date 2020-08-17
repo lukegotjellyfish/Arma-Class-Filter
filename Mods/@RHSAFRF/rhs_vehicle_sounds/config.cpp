@@ -1,5 +1,8 @@
 class CfgPatches
 {
+	class rhs_vehicle_sounds
+	{
+		units[]={};
 		weapons[]={};
 		version="0.1";
 	};
@@ -1451,6 +1454,15 @@ class CfgSoundSets
 class cfgVehicles
 {
 	class Helicopter;
+	class Helicopter_Base_F: Helicopter
+	{
+	};
+	class Heli_Attack_02_base_F: Helicopter_Base_F
+	{
+	};
+	class Heli_Light_03_base_F: Helicopter_Base_F
+	{
+	};
 	class RHS_Mi24_base: Heli_Attack_02_base_F
 	{
 		class Sounds

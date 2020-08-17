@@ -142,6 +142,9 @@ class Wheels {
 		maxCompression = 0;
 	};
 
+	class R2: L2 {
+		side = "right";
+	};
 	class R3: R2 {
 	};
 	class R4: R2 {

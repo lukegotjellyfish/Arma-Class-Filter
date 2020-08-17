@@ -33,9 +33,15 @@ class CfgVehicles
 	class LandVehicle;
 	class Car: LandVehicle
 	{
+		class NewTurret;
+		class ViewOptics;
+	};
 	class Car_F: Car
 	{
 		class AnimationSources;
+		class HitPoints;
+		class EventHandlers;
+	};
 	class Truck_F: Car_F
 	{
 		class ViewPilot;
@@ -54,7 +60,13 @@ class CfgVehicles
 			class HitGlass2;
 			class HitGlass3;
 			class HitGlass4;
+			class HitGlass5;
+			class HitGlass6;
+		};
 		class AnimationSources;
+	};
+	class Truck_01_base_F: Truck_F
+	{
 	};
 	class rhsusf_caiman_base: Truck_01_base_F
 	{
@@ -64,10 +76,20 @@ class CfgVehicles
 			"TruckHorn2",
 			"rhsusf_weap_duke"
 		};
+		magazines[]=
+		{
+			"rhsusf_mag_duke"
+		};
 		extCameraPosition[]={0.5,2,-9};
 		driverRightLegAnimName="pedal_r";
 		class textureSources
 		{
+			class rhs_desert
+			{
+			};
+			class rhs_woodland
+			{
+			};
 		};
 		class Attributes
 		{
@@ -78,6 +100,9 @@ class CfgVehicles
 				property="rhs_hideDUKE";
 				expression="_this animate ['DUKE_Hide',_value,true];if(_value isEqualTo 1)then{_this removeWeaponTurret ['rhsusf_weap_duke',[-1]]};";
 			};
+		};
+		class Turrets
+		{
 		};
 		hullDamageCauseExplosion=1;
 		armorStructural=8;
@@ -328,6 +353,9 @@ class CfgVehicles
 				maxHandBrakeTorque=300000;
 			};
 		};
+		class Damage
+		{
+		};
 		class EventHandlers: EventHandlers
 		{
 			init="if (local (_this select 0)) then {[(_this select 0), """", [], false] call bis_fnc_initVehicle;};";
@@ -337,6 +365,9 @@ class CfgVehicles
 	{
 		accuracy=0.5;
 	};
+	class rhsusf_caiman_GPK_base: rhsusf_caiman_base
+	{
+		threat[]={0.89999998,0.30000001,0.1};
 		animationList[]=
 		{
 			"hide_ogpkover",
@@ -358,6 +389,24 @@ class CfgVehicles
 				{
 					"RHS_M2"
 				};
+				magazines[]=
+				{
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red"
+				};
 				minElev=-10;
 				maxElev=40;
 				ejectDeadGunner=0;
@@ -368,6 +417,9 @@ class CfgVehicles
 					initFov=0.69999999;
 					minFov=0.25;
 					maxFov=1.1;
+				};
+				class ViewGunner: ViewOptics
+				{
 				};
 			};
 		};
@@ -382,6 +434,26 @@ class CfgVehicles
 				weapons[]=
 				{
 					"RHS_MK19"
+				};
+				magazines[]=
+				{
+					"RHS_48Rnd_40mm_MK19_M430A1",
+					"RHS_48Rnd_40mm_MK19_M430A1",
+					"RHS_48Rnd_40mm_MK19_M430A1",
+					"RHS_48Rnd_40mm_MK19_M430A1",
+					"RHS_48Rnd_40mm_MK19_M430A1",
+					"RHS_48Rnd_40mm_MK19_M430A1",
+					"RHS_48Rnd_40mm_MK19_M430A1",
+					"RHS_48Rnd_40mm_MK19_M430A1",
+					"RHS_48Rnd_40mm_MK19_M430A1",
+					"RHS_48Rnd_40mm_MK19_M430A1",
+					"RHS_48Rnd_40mm_MK19_M430A1",
+					"RHS_48Rnd_40mm_MK19_M430A1",
+					"RHS_48Rnd_40mm_MK19_M430A1",
+					"RHS_48Rnd_40mm_MK19_M430A1",
+					"RHS_48Rnd_40mm_MK19_M1001",
+					"RHS_48Rnd_40mm_MK19_M1001",
+					"RHS_48Rnd_40mm_MK19_M1001"
 				};
 			};
 		};
@@ -406,12 +478,21 @@ class CfgVehicles
 				alpha=1;
 				enableParallax=0;
 				font="RobotoCondensedLight";
+				class material
+				{
+					ambient[]={3,3,3,1};
 					diffuse[]={10,10,10,1};
 					emissive[]={400,200,200,1};
 				};
 				class Bones
 				{
+					class Static_Offset
+					{
+						pos[]={0.079999998,0.89999998};
 					};
+					class Cross
+					{
+						pos[]={0,-0.145};
 					};
 					class TurretRotation
 					{
@@ -425,6 +506,9 @@ class CfgVehicles
 						aspectRatio=1.29101;
 					};
 				};
+				class Draw
+				{
+					color[]={1,0,0,1};
 					alpha=1;
 					class StaticDraw
 					{
@@ -1159,6 +1243,13 @@ class CfgVehicles
 				{
 					"RHS_M2_CROWS_M153"
 				};
+				magazines[]=
+				{
+					"rhs_mag_400rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_400rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_400rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_400rnd_127x99_mag_Tracer_Red"
+				};
 				minElev=-20;
 				maxElev=60;
 				ejectDeadGunner=0;
@@ -1296,6 +1387,12 @@ class CfgVehicles
 				{
 					"RHS_MK19_CROWS_M153"
 				};
+				magazines[]=
+				{
+					"RHS_96Rnd_40mm_MK19_M430A1",
+					"RHS_96Rnd_40mm_MK19_M430A1",
+					"RHS_96Rnd_40mm_MK19_M430A1"
+				};
 			};
 		};
 	};
@@ -1317,6 +1414,15 @@ class CfgVehicles
 		};
 		class Attributes: Attributes
 		{
+			class rhs_hideDUKE: rhs_hideDUKE
+			{
+			};
+			class DoorL: DoorL
+			{
+			};
+			class DoorR: DoorR
+			{
+			};
 			class rhino
 			{
 				control="CheckboxNumber";
@@ -1341,6 +1447,24 @@ class CfgVehicles
 				{
 					"RHS_M2"
 				};
+				magazines[]=
+				{
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red"
+				};
 				minElev=-10;
 				maxElev=40;
 				ejectDeadGunner=0;
@@ -1351,6 +1475,9 @@ class CfgVehicles
 					initFov=0.69999999;
 					minFov=0.25;
 					maxFov=1.1;
+				};
+				class ViewGunner: ViewOptics
+				{
 				};
 			};
 		};
@@ -1366,6 +1493,26 @@ class CfgVehicles
 				weapons[]=
 				{
 					"RHS_MK19"
+				};
+				magazines[]=
+				{
+					"RHS_48Rnd_40mm_MK19_M430A1",
+					"RHS_48Rnd_40mm_MK19_M430A1",
+					"RHS_48Rnd_40mm_MK19_M430A1",
+					"RHS_48Rnd_40mm_MK19_M430A1",
+					"RHS_48Rnd_40mm_MK19_M430A1",
+					"RHS_48Rnd_40mm_MK19_M430A1",
+					"RHS_48Rnd_40mm_MK19_M430A1",
+					"RHS_48Rnd_40mm_MK19_M430A1",
+					"RHS_48Rnd_40mm_MK19_M430A1",
+					"RHS_48Rnd_40mm_MK19_M430A1",
+					"RHS_48Rnd_40mm_MK19_M430A1",
+					"RHS_48Rnd_40mm_MK19_M430A1",
+					"RHS_48Rnd_40mm_MK19_M430A1",
+					"RHS_48Rnd_40mm_MK19_M430A1",
+					"RHS_48Rnd_40mm_MK19_M1001",
+					"RHS_48Rnd_40mm_MK19_M1001",
+					"RHS_48Rnd_40mm_MK19_M1001"
 				};
 			};
 		};

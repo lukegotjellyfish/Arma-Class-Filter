@@ -69,6 +69,9 @@ class CfgFunctions
 };
 class RscControlsGroup
 {
+	class VScrollbar;
+	class HScrollbar;
+};
 class RscButtonMenu;
 class RscTextCheckBox;
 class RHS_WP_Control_Checbkox: RscTextCheckBox
@@ -139,6 +142,9 @@ class CfgVehicles
 	class Air;
 	class Plane: Air
 	{
+		class HitPoints;
+		class NewTurret;
+	};
 	class Plane_Base_F: Plane
 	{
 		class NewTurret: NewTurret
@@ -152,6 +158,9 @@ class CfgVehicles
 		{
 			class HitHull;
 		};
+		class Components;
+		class Eventhandlers;
+	};
 	class rhs_mig29s_base: Plane_Base_F
 	{
 		icon="\rhsafrf\addons\rhs_mig29\data\ui\icon_mig29s_co.paa";
@@ -206,6 +215,10 @@ class CfgVehicles
 			"rhs_weap_MASTERSAFE",
 			"rhs_weap_GSh301"
 		};
+		magazines[]=
+		{
+			"rhs_mag_gsh30_mixed_150"
+		};
 		lockDetectionSystem=8;
 		incommingMisslieDetectionSystem=8;
 		soundLocked[]=
@@ -231,6 +244,12 @@ class CfgVehicles
 		availableForSupportTypes[]=
 		{
 			"CAS_Bombing"
+		};
+		class Turrets
+		{
+		};
+		class EjectionSystem
+		{
 		};
 		armor=60;
 		damageResistance=0.00336;
@@ -857,6 +876,51 @@ class CfgVehicles
 					"rhs_faction_vmf"
 				};
 			};
+			class Gray: Standard
+			{
+			};
+			class LightGray: Standard
+			{
+			};
+			class LightGray2: Standard
+			{
+			};
+			class Gray_camo: Standard
+			{
+			};
+			class Green_camo: Standard
+			{
+			};
+			class Green_camo2: Standard
+			{
+			};
+			class Green_camo3: Standard
+			{
+			};
+			class Green_camo4: Standard
+			{
+			};
+			class Green_camo5: Standard
+			{
+			};
+			class Green_camo6: Standard
+			{
+			};
+			class Green_camo7: Standard
+			{
+			};
+			class Green_camo_kubinka: Standard
+			{
+			};
+			class Green_camo_lipetsk: Standard
+			{
+			};
+			class Green_camo_aggressor1: Standard
+			{
+			};
+			class Green_camo_aggressor2: Standard
+			{
+			};
 		};
 		class Attributes
 		{
@@ -1264,6 +1328,9 @@ class CfgVehicles
 		{
 			class Comp1
 			{
+				class Light_General
+				{
+					color[]={40,20,20};
 					ambient[]={0,0,0};
 					intensity=2.1500001;
 					size=0;
@@ -1357,6 +1424,9 @@ class CfgVehicles
 					{1,1}
 				};
 			};
+			class Wheel_1_fake: Wheel_1
+			{
+			};
 			class Wheel_2: Wheel_1
 			{
 				steering=0;
@@ -1374,6 +1444,9 @@ class CfgVehicles
 		};
 		class MarkerLights
 		{
+			class PositionRed
+			{
+				color[]={0.80000001,0,0};
 				ambient[]={0.079999998,0,0};
 				intensity=500;
 				name="light_nav_left";
@@ -1394,9 +1467,15 @@ class CfgVehicles
 					hardLimitEnd=1;
 				};
 			};
+			class PositionGreen: PositionRed
+			{
+				color[]={0,0.80000001,0};
 				ambient[]={0,0.079999998,0};
 				name="light_nav_right";
 			};
+			class PositionWhite: PositionRed
+			{
+				color[]={1,1,1};
 				ambient[]={0.079999998,0.079999998,0.079999998};
 				name="light_nav_back";
 			};
@@ -1435,6 +1514,9 @@ class CfgVehicles
 						UIposition[]={0.31999999,0.2};
 						hitpoint="HitPylon1";
 					};
+					class pylon2: pylon1
+					{
+						UIposition[]={0.31999999,0.34999999};
 						mirroredMissilePos=1;
 						hitpoint="HitPylon2";
 					};
@@ -1462,6 +1544,9 @@ class CfgVehicles
 						attachment="rhs_mag_R73M_APU73";
 						hitpoint="HitPylon3";
 					};
+					class pylon4: pylon3
+					{
+						UIposition[]={0.33000001,0.40000001};
 						mirroredMissilePos=3;
 						hitpoint="HitPylon4";
 					};
@@ -1479,6 +1564,9 @@ class CfgVehicles
 						UIposition[]={0.34,0.1};
 						hitpoint="HitPylon5";
 					};
+					class pylon6: pylon5
+					{
+						UIposition[]={0.34,0.44999999};
 						mirroredMissilePos=5;
 						hitpoint="HitPylon6";
 					};
@@ -1584,6 +1672,9 @@ class CfgVehicles
 						angleRangeVertical=120;
 						maxTrackableSpeed=500;
 					};
+					class PassiveRadarSensorComponent: SensorTemplatePassiveRadar
+					{
+					};
 					class ActiveRadarSensorComponent: SensorTemplateActiveRadar
 					{
 						class AirTarget
@@ -1599,6 +1690,9 @@ class CfgVehicles
 						angleRangeHorizontal=60;
 						angleRangeVertical=60;
 						groundNoiseDistanceCoef=0.1;
+					};
+					class LaserSensorComponent: SensorTemplateLaser
+					{
 					};
 				};
 			};
@@ -1653,6 +1747,9 @@ class CfgVehicles
 				borderBottom=0;
 				color[]={0,1,0,0.1};
 				font="rhs_digital_font_rus";
+				class material
+				{
+					ambient[]={10,10,10,1};
 					diffuse[]={10,10,10,1};
 					emissive[]={400,200,200,1};
 				};
@@ -1663,6 +1760,9 @@ class CfgVehicles
 						refreshRate=0.1;
 						pos[]={0.50300002,0.52999997};
 					};
+					class ClimbFixed
+					{
+						pos[]={0.898,0.69999999};
 					};
 					class ClimbRotate
 					{
@@ -1743,6 +1843,9 @@ class CfgVehicles
 						pos0[]={0.5,0.52999997};
 						pos10[]={1.1131999,1.1344399};
 					};
+					class Limit0109
+					{
+						limits[]={0.1,0.1,0.89999998,0.89999998};
 					};
 					class Target
 					{
@@ -1885,8 +1988,14 @@ class CfgVehicles
 					{
 						source="airportCorner4";
 					};
+					class ILS_H
+					{
+						pos0[]={0.5,0.52999997};
 						pos3[]={0.68396002,0.52999997};
 					};
+					class ILS_W: ILS_H
+					{
+						pos3[]={0.5,0.71133202};
 					};
 					class LarAmmoMax
 					{
@@ -1921,8 +2030,14 @@ class CfgVehicles
 						source="LarAmmoMin";
 					};
 				};
+				class Draw
+				{
+					color[]={0.15000001,1,0.15000001};
 					alpha=1;
 					condition="on-user3";
+					class Horizont
+					{
+						clipTL[]={0.1,0.38};
 						clipBR[]={0.89999998,0.77999997};
 						condition="1-(bomb+mgun+atmissile+aamissile+rocket)*activeSensorsOn";
 						class Dimmed
@@ -3574,6 +3689,9 @@ class CfgVehicles
 					class ILS
 					{
 						condition="ils";
+						class Glideslope
+						{
+							clipTL[]={0,0};
 							clipBR[]={1,1};
 							class ILS
 							{
@@ -4907,6 +5025,9 @@ class CfgVehicles
 						class ZPSGroup: PPSGroup
 						{
 							condition="0";
+							class GText: GText
+							{
+							};
 						};
 					};
 					class TargetDiamond
@@ -5639,6 +5760,9 @@ class CfgVehicles
 							};
 						};
 					};
+					class RadarBoxes
+					{
+						pos0[]={0.50300002,0.52999997};
 						pos10[]={1.1162,1.1344399};
 						width=4;
 						points[]=
@@ -5845,6 +5969,12 @@ class CfgVehicles
 				borderBottom=0;
 				color[]={0,1,0,0.1};
 				font="rhs_digital_font_rus";
+				class Bones
+				{
+				};
+				class Draw
+				{
+					color[]={0.15000001,1,0.15000001};
 					alpha=1;
 					condition="user3*on";
 					class Shape
@@ -5890,6 +6020,9 @@ class CfgVehicles
 				borderBottom=0;
 				color[]={0,1,0,0.1};
 				font="rhs_digital_font_rus";
+				class material
+				{
+					ambient[]={10,10,10,1};
 					diffuse[]={10,10,10,1};
 					emissive[]={400,200,200,1};
 				};
@@ -5900,6 +6033,9 @@ class CfgVehicles
 						refreshRate=0.1;
 						pos[]={0.5,0.52999997};
 					};
+					class ClimbFixed
+					{
+						pos[]={0.898,0.69999999};
 					};
 					class ClimbRotate
 					{
@@ -5980,6 +6116,9 @@ class CfgVehicles
 						pos0[]={0.5,0.52999997};
 						pos10[]={1.38,1.4};
 					};
+					class Limit0109
+					{
+						limits[]={0.1,0.1,0.89999998,0.89999998};
 					};
 					class Target
 					{
@@ -6122,8 +6261,14 @@ class CfgVehicles
 					{
 						source="airportCorner4";
 					};
+					class ILS_H
+					{
+						pos0[]={0.5,0.52999997};
 						pos3[]={0.764,0.52999997};
 					};
+					class ILS_W: ILS_H
+					{
+						pos3[]={0.5,0.79100001};
 					};
 					class LarAmmoMax
 					{
@@ -6158,8 +6303,14 @@ class CfgVehicles
 						source="LarAmmoMin";
 					};
 				};
+				class Draw
+				{
+					color[]={0.15000001,1,0.15000001};
 					alpha=1;
 					condition="on-user3";
+					class Horizont
+					{
+						clipTL[]={0.1,0.38};
 						clipBR[]={0.89999998,0.77999997};
 						condition="1-(bomb+mgun+atmissile+aamissile+rocket)*activeSensorsOn";
 						class Dimmed
@@ -7811,6 +7962,9 @@ class CfgVehicles
 					class ILS
 					{
 						condition="ils";
+						class Glideslope
+						{
+							clipTL[]={0,0};
 							clipBR[]={1,1};
 							class ILS
 							{
@@ -9144,6 +9298,9 @@ class CfgVehicles
 						class ZPSGroup: PPSGroup
 						{
 							condition="0";
+							class GText: GText
+							{
+							};
 						};
 					};
 					class TargetDiamond
@@ -9876,6 +10033,9 @@ class CfgVehicles
 							};
 						};
 					};
+					class RadarBoxes
+					{
+						pos0[]={0.5,0.52999997};
 						pos10[]={1.38,1.4};
 						width=4;
 						points[]=
@@ -10081,6 +10241,9 @@ class CfgVehicles
 				borderTop=0;
 				borderBottom=0;
 				color[]={0,1,0,0.1};
+				class material
+				{
+					ambient[]={3,3,3,1};
 					diffuse[]={10,10,10,1};
 					emissive[]={400,200,200,1};
 				};
@@ -10194,6 +10357,9 @@ class CfgVehicles
 						sourceIndex=25;
 					};
 				};
+				class Draw
+				{
+					color[]={0.15000001,1,0.15000001};
 					alpha=1;
 					condition="on";
 					class CurrentTimeText
@@ -10454,6 +10620,9 @@ class CfgVehicles
 						class WP1
 						{
 							condition="user6>=0";
+							class CurrentWaypoint
+							{
+								color[]={0.89999998,0,0};
 								condition="1-WPIndex";
 								class WaypointShape
 								{
@@ -11068,6 +11237,9 @@ class CfgVehicles
 						class WP2
 						{
 							condition="user8>=0";
+							class CurrentWaypoint
+							{
+								color[]={0.89999998,0,0};
 								condition="(WPIndex>=1)*(WPIndex<=1)";
 								class WaypointShape
 								{
@@ -11700,6 +11872,9 @@ class CfgVehicles
 						class WP3
 						{
 							condition="user10>=0";
+							class CurrentWaypoint
+							{
+								color[]={0.89999998,0,0};
 								condition="(WPIndex>=2)*(WPIndex<=2)";
 								class WaypointShape
 								{
@@ -12332,6 +12507,9 @@ class CfgVehicles
 						class WP4
 						{
 							condition="user12>=0";
+							class CurrentWaypoint
+							{
+								color[]={0.89999998,0,0};
 								condition="(WPIndex>=3)*(WPIndex<=3)";
 								class WaypointShape
 								{
@@ -12964,6 +13142,9 @@ class CfgVehicles
 						class WP5
 						{
 							condition="user14>=0";
+							class CurrentWaypoint
+							{
+								color[]={0.89999998,0,0};
 								condition="(WPIndex>=4)*(WPIndex<=4)";
 								class WaypointShape
 								{
@@ -13596,6 +13777,9 @@ class CfgVehicles
 						class WP6
 						{
 							condition="user16>=0";
+							class CurrentWaypoint
+							{
+								color[]={0.89999998,0,0};
 								condition="(WPIndex>=5)*(WPIndex<=5)";
 								class WaypointShape
 								{
@@ -14228,6 +14412,9 @@ class CfgVehicles
 						class WP7
 						{
 							condition="user18>=0";
+							class CurrentWaypoint
+							{
+								color[]={0.89999998,0,0};
 								condition="(WPIndex>=6)*(WPIndex<=6)";
 								class WaypointShape
 								{
@@ -14860,6 +15047,9 @@ class CfgVehicles
 						class WP8
 						{
 							condition="user20>=0";
+							class CurrentWaypoint
+							{
+								color[]={0.89999998,0,0};
 								condition="(WPIndex>=7)*(WPIndex<=7)";
 								class WaypointShape
 								{
@@ -15492,6 +15682,9 @@ class CfgVehicles
 						class WP9
 						{
 							condition="user22>=0";
+							class CurrentWaypoint
+							{
+								color[]={0.89999998,0,0};
 								condition="(WPIndex>=8)*(WPIndex<=8)";
 								class WaypointShape
 								{
@@ -16124,6 +16317,9 @@ class CfgVehicles
 						class WP10
 						{
 							condition="user24>=0";
+							class CurrentWaypoint
+							{
+								color[]={0.89999998,0,0};
 								condition="(WPIndex>=9)*(WPIndex<=9)";
 								class WaypointShape
 								{
@@ -16754,6 +16950,9 @@ class CfgVehicles
 							};
 						};
 					};
+					class PlanePositionGroup
+					{
+						color[]={0.69999999,0,0.1};
 						class PlanePosition
 						{
 							width=8;
@@ -16851,6 +17050,9 @@ class CfgVehicles
 				font="rhs_digital_font_rus";
 				class Bones
 				{
+					class PlaneW
+					{
+						pos[]={0.5,0.5};
 						pos10[]={0.77399999,0.76999998};
 					};
 					class Target
@@ -16860,6 +17062,9 @@ class CfgVehicles
 						pos10[]={0.77399999,0.76999998};
 					};
 				};
+				class Draw
+				{
+					color[]={0.15000001,1,0.15000001};
 					alpha=1;
 					condition="user2";
 					class SearchMode
@@ -17132,6 +17337,9 @@ class CfgVehicles
 							};
 						};
 					};
+					class Locking
+					{
+						blinkingPattern[]={0.2,0.2};
 						blinkingStartsOn=1;
 						condition="missileLocking";
 						class CircleLock
@@ -17612,6 +17820,12 @@ class CfgVehicles
 				borderTop=0;
 				borderBottom=0;
 				color[]={0,1,0,0.1};
+				class Bones
+				{
+				};
+				class Draw
+				{
+					color[]={1,1,1};
 					alpha=0.059999999;
 					class CMcount
 					{
@@ -17648,6 +17862,12 @@ class CfgVehicles
 				borderBottom=0;
 				color[]={0,1,0,0.1};
 				font="rhs_digital_font_var";
+				class Bones
+				{
+				};
+				class Draw
+				{
+					color[]={0.98000002,0.63,0};
 					alpha=0.66000003;
 					condition="gmeter>=19";
 					class CMcount
@@ -17784,6 +18004,9 @@ class CfgVehicles
 						UIposition[]={0.31999999,0.2};
 						hitpoint="HitPylon1";
 					};
+					class pylon2: pylon1
+					{
+						UIposition[]={0.31999999,0.34999999};
 						mirroredMissilePos=1;
 						hitpoint="HitPylon2";
 					};
@@ -17813,6 +18036,9 @@ class CfgVehicles
 						attachment="rhs_mag_R73M_APU73";
 						hitpoint="HitPylon3";
 					};
+					class pylon4: pylon3
+					{
+						UIposition[]={0.33000001,0.40000001};
 						mirroredMissilePos=3;
 						hitpoint="HitPylon4";
 					};
@@ -17830,6 +18056,9 @@ class CfgVehicles
 						UIposition[]={0.34,0.1};
 						hitpoint="HitPylon5";
 					};
+					class pylon6: pylon5
+					{
+						UIposition[]={0.34,0.44999999};
 						mirroredMissilePos=5;
 						hitpoint="HitPylon6";
 					};
@@ -17963,6 +18192,9 @@ class CfgVehicles
 						angleRangeVertical=120;
 						maxTrackableSpeed=500;
 					};
+					class PassiveRadarSensorComponent: SensorTemplatePassiveRadar
+					{
+					};
 					class ActiveRadarSensorComponent: SensorTemplateActiveRadar
 					{
 						class AirTarget
@@ -17978,6 +18210,12 @@ class CfgVehicles
 						angleRangeHorizontal=60;
 						angleRangeVertical=60;
 						groundNoiseDistanceCoef=0.1;
+					};
+					class LaserSensorComponent: SensorTemplateLaser
+					{
+					};
+					class DataLinkSensorComponent: SensorTemplateDataLink
+					{
 					};
 				};
 			};
@@ -18042,6 +18280,9 @@ class CfgVehicles
 				borderBottom=0;
 				color[]={0,1,0,0.1};
 				font="rhs_digital_font_rus";
+				class material
+				{
+					ambient[]={10,10,10,1};
 					diffuse[]={10,10,10,1};
 					emissive[]={400,200,200,1};
 				};
@@ -18052,6 +18293,9 @@ class CfgVehicles
 						refreshRate=0.1;
 						pos[]={0.5,0.52999997};
 					};
+					class ClimbFixed
+					{
+						pos[]={0.898,0.69999999};
 					};
 					class ClimbRotate
 					{
@@ -18132,6 +18376,9 @@ class CfgVehicles
 						pos0[]={0.5,0.52999997};
 						pos10[]={1.08,1.12};
 					};
+					class Limit0109
+					{
+						limits[]={0.1,0.1,0.89999998,0.89999998};
 					};
 					class Target
 					{
@@ -18274,8 +18521,14 @@ class CfgVehicles
 					{
 						source="airportCorner4";
 					};
+					class ILS_H
+					{
+						pos0[]={0.5,0.52999997};
 						pos3[]={0.67400002,0.52999997};
 					};
+					class ILS_W: ILS_H
+					{
+						pos3[]={0.5,0.70700002};
 					};
 					class LarAmmoMax
 					{
@@ -18310,8 +18563,14 @@ class CfgVehicles
 						source="LarAmmoMin";
 					};
 				};
+				class Draw
+				{
+					color[]={0.15000001,1,0.15000001};
 					alpha=1;
 					condition="on-user3";
+					class Horizont
+					{
+						clipTL[]={0.1,0.38};
 						clipBR[]={0.89999998,0.77999997};
 						condition="1-(bomb+mgun+atmissile+aamissile+rocket)*activeSensorsOn";
 						class Dimmed
@@ -19963,6 +20222,9 @@ class CfgVehicles
 					class ILS
 					{
 						condition="ils";
+						class Glideslope
+						{
+							clipTL[]={0,0};
 							clipBR[]={1,1};
 							class ILS
 							{
@@ -21296,6 +21558,9 @@ class CfgVehicles
 						class ZPSGroup: PPSGroup
 						{
 							condition="0";
+							class GText: GText
+							{
+							};
 						};
 					};
 					class TargetDiamond
@@ -22028,6 +22293,9 @@ class CfgVehicles
 							};
 						};
 					};
+					class RadarBoxes
+					{
+						pos0[]={0.5,0.52999997};
 						pos10[]={1.08,1.12};
 						width=4;
 						points[]=
@@ -22234,6 +22502,12 @@ class CfgVehicles
 				borderBottom=0;
 				color[]={0,1,0,0.1};
 				font="rhs_digital_font_rus";
+				class Bones
+				{
+				};
+				class Draw
+				{
+					color[]={0.15000001,1,0.15000001};
 					alpha=1;
 					condition="user3*on";
 					class Shape
@@ -22279,19 +22553,46 @@ class CfgVehicles
 				borderBottom=0;
 				color[]={0,0,0,0.1};
 				font="rhs_digital_font_var";
+				class material
+				{
+					ambient[]={1,1,1,1};
 					diffuse[]={10,10,10,1};
 					emissive[]={400,200,200,1};
 				};
 				class Bones
 				{
+					class Pylon1
+					{
+						pos[]={0.68199998,0.63357699};
 					};
+					class Pylon2: Pylon1
+					{
+						pos[]={0.324,0.63357699};
 					};
+					class Pylon3: Pylon1
+					{
+						pos[]={0.78899997,0.63357699};
 					};
+					class Pylon4: Pylon1
+					{
+						pos[]={0.21699999,0.63357699};
 					};
+					class Pylon5: Pylon1
+					{
+						pos[]={0.89600003,0.63357699};
 					};
+					class Pylon6: Pylon1
+					{
+						pos[]={0.11,0.63357699};
 					};
+					class Pylon7: Pylon1
+					{
+						pos[]={0.50300002,0.63357699};
 					};
 				};
+				class Draw
+				{
+					color[]={1,1,1};
 					alpha=0.22;
 					condition="on";
 					class Group_TV
@@ -22394,6 +22695,9 @@ class CfgVehicles
 								1
 							};
 						};
+						class Pylon1_empty
+						{
+							color[]={1,0,0};
 							condition="pylonEmpty1";
 							class Shape
 							{
@@ -22428,6 +22732,9 @@ class CfgVehicles
 								};
 							};
 						};
+						class Pylon2_empty
+						{
+							color[]={1,0,0};
 							condition="pylonEmpty2";
 							class Shape
 							{
@@ -22462,6 +22769,9 @@ class CfgVehicles
 								};
 							};
 						};
+						class Pylon3_empty
+						{
+							color[]={1,0,0};
 							condition="pylonEmpty3";
 							class Shape
 							{
@@ -22496,6 +22806,9 @@ class CfgVehicles
 								};
 							};
 						};
+						class Pylon4_empty
+						{
+							color[]={1,0,0};
 							condition="pylonEmpty4";
 							class Shape
 							{
@@ -22530,6 +22843,9 @@ class CfgVehicles
 								};
 							};
 						};
+						class Pylon5_empty
+						{
+							color[]={1,0,0};
 							condition="pylonEmpty5";
 							class Shape
 							{
@@ -22564,6 +22880,9 @@ class CfgVehicles
 								};
 							};
 						};
+						class Pylon6_empty
+						{
+							color[]={1,0,0};
 							condition="pylonEmpty6";
 							class Shape
 							{
@@ -22598,6 +22917,9 @@ class CfgVehicles
 								};
 							};
 						};
+						class Pylon7_empty
+						{
+							color[]={1,0,0};
 							condition="pylonEmpty7";
 							class Shape
 							{
@@ -22718,6 +23040,12 @@ class CfgVehicles
 				borderBottom=0;
 				color[]={0,0,0,0.1};
 				font="rhs_digital_font_var";
+				class Bones
+				{
+				};
+				class Draw
+				{
+					color[]={0,0,0};
 					alpha=1;
 					condition="on";
 					class RadioFQ_1
@@ -23503,6 +23831,9 @@ class CfgVehicles
 				font="rhs_digital_font_rus";
 				class Bones
 				{
+					class PlaneW
+					{
+						pos[]={0.5,0.5};
 						pos10[]={0.77399999,0.76999998};
 					};
 					class Target
@@ -23512,6 +23843,9 @@ class CfgVehicles
 						pos10[]={0.77399999,0.76999998};
 					};
 				};
+				class Draw
+				{
+					color[]={0.15000001,1,0.15000001};
 					alpha=1;
 					condition="user2";
 					class SearchMode
@@ -23784,6 +24118,9 @@ class CfgVehicles
 							};
 						};
 					};
+					class Locking
+					{
+						blinkingPattern[]={0.2,0.2};
 						blinkingStartsOn=1;
 						condition="missileLocking";
 						class CircleLock
@@ -24264,6 +24601,12 @@ class CfgVehicles
 				borderTop=0;
 				borderBottom=0;
 				color[]={0,1,0,0.1};
+				class Bones
+				{
+				};
+				class Draw
+				{
+					color[]={1,1,1};
 					alpha=0.059999999;
 					class CMcount
 					{
@@ -24300,6 +24643,12 @@ class CfgVehicles
 				borderBottom=0;
 				color[]={0,1,0,0.1};
 				font="rhs_digital_font_var";
+				class Bones
+				{
+				};
+				class Draw
+				{
+					color[]={0.98000002,0.63,0};
 					alpha=0.66000003;
 					condition="gmeter>=9";
 					class CMcount
@@ -24489,11 +24838,20 @@ class CfgVehicles
 		};
 	};
 	class PlaneWreck;
+	class rhs_mig29sWreck: PlaneWreck
+	{
+		typicalCargo[]={};
 		irTarget=0;
 		transportAmmo=0;
 		transportRepair=0;
 		transportFuel=0;
 	};
 	class rhs_t50_canopy;
+	class rhs_mig29s_canopy: rhs_t50_canopy
+	{
+	};
 	class Thing;
+	class rhs_cockpitMap_waypoints: Thing
+	{
+	};
 };

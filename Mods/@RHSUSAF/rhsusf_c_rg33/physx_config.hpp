@@ -21,6 +21,7 @@
 		waterLeakiness = 250.0;
 
 		//----- Gearbox Parameters -----//
+		class complexGearbox;  //found empty after stripping
 			TransmissionRatios[] = {"High",8.2};
 			gearBoxMode = "auto";
 			moveOffGear = 1;

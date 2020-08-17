@@ -23,6 +23,9 @@ class CfgVehicles
 	class Car_F: Car
 	{
 		class AnimationSources;
+		class HitPoints;
+		class EventHandlers;
+	};
 	class Truck_F: Car_F
 	{
 		class ViewPilot;
@@ -42,6 +45,9 @@ class CfgVehicles
 			class HitGlass2;
 			class HitGlass3;
 			class HitGlass4;
+			class HitGlass5;
+			class HitGlass6;
+		};
 		class AnimationSources;
 	};
 	class Truck_01_base_F: Truck_F
@@ -122,6 +128,9 @@ class CfgVehicles
 				lockWhenVehicleSpeed=1;
 				elevationMode=3;
 				forceHideGunner=1;
+				class Turrets
+				{
+				};
 				class Hitpoints
 				{
 					class HitLauncher
@@ -151,6 +160,15 @@ class CfgVehicles
 		};
 		class textureSources
 		{
+			class rhs_desert
+			{
+			};
+			class rhs_woodland
+			{
+			};
+			class rhs_usmc_woodland
+			{
+			};
 		};
 		class HitPoints: HitPoints
 		{
@@ -335,6 +353,12 @@ class CfgVehicles
 				effect="ExhaustEffectHEMTT";
 			};
 		};
+		class Damage
+		{
+		};
+		class EventHandlers: EventHandlers
+		{
+		};
 		class Components: Components
 		{
 			class TransportPylonsComponent
@@ -370,6 +394,10 @@ class CfgVehicles
 				weapons[]=
 				{
 					"rhs_weap_atacms"
+				};
+				magazines[]=
+				{
+					"rhs_mag_mgm140a_1"
 				};
 			};
 		};

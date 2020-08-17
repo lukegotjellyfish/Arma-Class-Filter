@@ -1,5 +1,8 @@
 class CfgPatches
 {
+	class rhsusf_c_identity
+	{
+		units[]={};
 		weapons[]={};
 		version=1;
 	};

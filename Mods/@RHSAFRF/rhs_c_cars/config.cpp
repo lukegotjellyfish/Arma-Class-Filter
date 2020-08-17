@@ -156,6 +156,9 @@ class CfgVehicles
 		{
 			class MainTurret: NewTurret
 			{
+				class ViewOptics;
+			};
+		};
 		class HitPoints
 		{
 			class HitLFWheel;
@@ -165,6 +168,12 @@ class CfgVehicles
 			class HitGlass1;
 			class HitGlass2;
 			class HitGlass3;
+			class HitGlass4;
+			class HitGlass5;
+		};
+		class EventHandlers;
+		class AnimationSources;
+	};
 	class MRAP_02_base_F: Car_F
 	{
 		class HitPoints: HitPoints
@@ -179,6 +188,9 @@ class CfgVehicles
 			class HitGlass4;
 			class HitGlass5;
 			class HitBody;
+			class HitFuel;
+			class HitEngine;
+		};
 		class EventHandlers;
 	};
 	class rhs_tigr_base: MRAP_02_base_F
@@ -480,6 +492,9 @@ class CfgVehicles
 					"rhs_faction_vv"
 				};
 			};
+			class Camo: standard
+			{
+			};
 		};
 		class Attributes
 		{
@@ -650,6 +665,9 @@ class CfgVehicles
 			5.6234101e-005,
 			1
 		};
+		class Damage
+		{
+		};
 		class HitPoints: HitPoints
 		{
 			class HitLFWheel: HitLFWheel
@@ -776,6 +794,9 @@ class CfgVehicles
 			};
 		};
 	};
+	class rhs_tigr_vdv: rhs_tigr_base
+	{
+	};
 	class rhs_tigr_vmf: rhs_tigr_vdv
 	{
 		rhs_decalParameters[]=
@@ -799,6 +820,9 @@ class CfgVehicles
 			"['Number', cDecalsTigr4NumberPlaces, 'LicensePlate']",
 			"['Label', cDecalsTigrRightArmyPlaces, 'Army', [6,1]]"
 		};
+	};
+	class rhs_tigr_3camo_vdv: rhs_tigr_base
+	{
 	};
 	class rhs_tigr_3camo_vmf: rhs_tigr_3camo_vdv
 	{
@@ -858,6 +882,9 @@ class CfgVehicles
 			"['Label', cDecalsTigrRightArmyPlaces, 'Army', [6,1]]"
 		};
 	};
+	class rhs_tigr_ffv_3camo_vdv: rhs_tigr_ffv_vdv
+	{
+	};
 	class rhs_tigr_ffv_3camo_vmf: rhs_tigr_ffv_3camo_vdv
 	{
 		rhs_decalParameters[]=
@@ -885,6 +912,11 @@ class CfgVehicles
 	class rhs_tigr_sts_vdv: rhs_tigr_vdv
 	{
 		hideProxyInCombat=0;
+		magazines[]=
+		{
+			"rhs_proxy_ags30_12_mag",
+			"rhs_proxy_pkm_18_mag"
+		};
 		class Turrets: Turrets
 		{
 			class MainTurret: MainTurret
@@ -894,6 +926,29 @@ class CfgVehicles
 				weapons[]=
 				{
 					"rhs_weap_pkm_tigr"
+				};
+				magazines[]=
+				{
+					"rhs_mag_762x54mm_100",
+					"rhs_mag_762x54mm_100",
+					"rhs_mag_762x54mm_100",
+					"rhs_mag_762x54mm_100",
+					"rhs_mag_762x54mm_100",
+					"rhs_mag_762x54mm_100",
+					"rhs_mag_762x54mm_100",
+					"rhs_mag_762x54mm_100",
+					"rhs_mag_762x54mm_100",
+					"rhs_mag_762x54mm_100",
+					"rhs_mag_762x54mm_100",
+					"rhs_mag_762x54mm_100",
+					"rhs_mag_762x54mm_100",
+					"rhs_mag_762x54mm_100",
+					"rhs_mag_762x54mm_100",
+					"rhs_mag_762x54mm_100",
+					"rhs_mag_762x54mm_100",
+					"rhs_mag_762x54mm_100",
+					"rhs_mag_762x54mm_100",
+					"RHS_mag_VOG30_30"
 				};
 				selectionFireAnim="muzzleFlash1";
 				ejectDeadGunner=1;
@@ -962,6 +1017,22 @@ class CfgVehicles
 				{
 					"RHS_weap_AGS30_tigr"
 				};
+				magazines[]=
+				{
+					"RHS_mag_VOG30_30",
+					"RHS_mag_VOG30_30",
+					"RHS_mag_VOG30_30",
+					"RHS_mag_VOG30_30",
+					"RHS_mag_VOG30_30",
+					"RHS_mag_VOG30_30",
+					"RHS_mag_VOG30_30",
+					"RHS_mag_VOG30_30",
+					"RHS_mag_VOG30_30",
+					"RHS_mag_VOG30_30",
+					"RHS_mag_VOG30_30",
+					"RHS_mag_VOG30_30",
+					"rhs_mag_762x54mm_100"
+				};
 				class OpticsIn
 				{
 					class Sight: ViewOptics
@@ -1020,6 +1091,9 @@ class CfgVehicles
 				containerClosed="_this call rhs_fnc_tigr_sts_inventory_eh;";
 				reloaded="_this call rhs_fnc_tigr_sts_reloaded_eh";
 			};
+			class RHS_TigrHandler
+			{
+			};
 		};
 	};
 	class rhs_tigr_sts_vmf: rhs_tigr_sts_vdv
@@ -1031,6 +1105,12 @@ class CfgVehicles
 		};
 		class Turrets: Turrets
 		{
+			class MainTurret: MainTurret
+			{
+			};
+			class AGS_Turret: AGS_Turret
+			{
+			};
 		};
 	};
 	class rhs_tigr_sts_msv: rhs_tigr_sts_vdv
@@ -1042,6 +1122,12 @@ class CfgVehicles
 		};
 		class Turrets: Turrets
 		{
+			class MainTurret: MainTurret
+			{
+			};
+			class AGS_Turret: AGS_Turret
+			{
+			};
 		};
 	};
 	class rhs_tigr_sts_vv: rhs_tigr_sts_vdv
@@ -1053,7 +1139,16 @@ class CfgVehicles
 		};
 		class Turrets: Turrets
 		{
+			class MainTurret: MainTurret
+			{
+			};
+			class AGS_Turret: AGS_Turret
+			{
+			};
 		};
+	};
+	class rhs_tigr_sts_3camo_vdv: rhs_tigr_sts_vdv
+	{
 	};
 	class rhs_tigr_sts_3camo_vmf: rhs_tigr_sts_3camo_vdv
 	{
@@ -1064,6 +1159,12 @@ class CfgVehicles
 		};
 		class Turrets: Turrets
 		{
+			class MainTurret: MainTurret
+			{
+			};
+			class AGS_Turret: AGS_Turret
+			{
+			};
 		};
 	};
 	class rhs_tigr_sts_3camo_msv: rhs_tigr_sts_3camo_vdv
@@ -1075,6 +1176,12 @@ class CfgVehicles
 		};
 		class Turrets: Turrets
 		{
+			class MainTurret: MainTurret
+			{
+			};
+			class AGS_Turret: AGS_Turret
+			{
+			};
 		};
 	};
 	class rhs_tigr_sts_3camo_vv: rhs_tigr_sts_3camo_vdv
@@ -1086,6 +1193,12 @@ class CfgVehicles
 		};
 		class Turrets: Turrets
 		{
+			class MainTurret: MainTurret
+			{
+			};
+			class AGS_Turret: AGS_Turret
+			{
+			};
 		};
 	};
 	class rhs_tigr_m_vdv: rhs_tigr_vdv
@@ -1229,8 +1342,15 @@ class CfgVehicles
 			"TruckHorn",
 			"rhs_weap_902b"
 		};
+		magazines[]=
+		{
+			"rhs_mag_3d17_4"
+		};
 		hideProxyInCombat=0;
 		enableManualFire=0;
+		class Turrets: Turrets
+		{
+		};
 		class EventHandlers: EventHandlers
 		{
 			class RHS_EventHandlers: RHS_EventHandlers
@@ -1238,6 +1358,9 @@ class CfgVehicles
 				init="_this call rhs_fnc_tigr_init;(_this select 0) animateDoor ['hatch_gunner_h',1]";
 				getIn="_this call rhs_fnc_tigrm_turret_getin_eh";
 				seatSwitched="_this call rhs_fnc_tigrm_turret_seat_eh";
+			};
+			class RHS_TigrHandler
+			{
 			};
 		};
 	};
@@ -1248,6 +1371,9 @@ class CfgVehicles
 			"['Number', cDecalsTigr4NumberPlaces, 'LicensePlate']",
 			"['Label', cDecalsTigrRightArmyPlaces, 'Army', [3,1]]"
 		};
+		class Turrets: Turrets
+		{
+		};
 	};
 	class rhs_tigr_m_msv: rhs_tigr_m_vdv
 	{
@@ -1255,6 +1381,9 @@ class CfgVehicles
 		{
 			"['Number', cDecalsTigr4NumberPlaces, 'LicensePlate']",
 			"['Label', cDecalsTigrRightArmyPlaces, 'Platoon', 12]"
+		};
+		class Turrets: Turrets
+		{
 		};
 	};
 	class rhs_tigr_m_vv: rhs_tigr_m_vdv
@@ -1264,6 +1393,12 @@ class CfgVehicles
 			"['Number', cDecalsTigr4NumberPlaces, 'LicensePlate']",
 			"['Label', cDecalsTigrRightArmyPlaces, 'Army', [6,1]]"
 		};
+		class Turrets: Turrets
+		{
+		};
+	};
+	class rhs_tigr_m_3camo_vdv: rhs_tigr_m_vdv
+	{
 	};
 	class rhs_tigr_m_3camo_vmf: rhs_tigr_m_3camo_vdv
 	{
@@ -1271,6 +1406,9 @@ class CfgVehicles
 		{
 			"['Number', cDecalsTigr4NumberPlaces, 'LicensePlate']",
 			"['Label', cDecalsTigrRightArmyPlaces, 'Army', [3,1]]"
+		};
+		class Turrets: Turrets
+		{
 		};
 	};
 	class rhs_tigr_m_3camo_msv: rhs_tigr_m_3camo_vdv
@@ -1280,6 +1418,9 @@ class CfgVehicles
 			"['Number', cDecalsTigr4NumberPlaces, 'LicensePlate']",
 			"['Label', cDecalsTigrRightArmyPlaces, 'Platoon', 12]"
 		};
+		class Turrets: Turrets
+		{
+		};
 	};
 	class rhs_tigr_m_3camo_vv: rhs_tigr_m_3camo_vdv
 	{
@@ -1287,6 +1428,9 @@ class CfgVehicles
 		{
 			"['Number', cDecalsTigr4NumberPlaces, 'LicensePlate']",
 			"['Label', cDecalsTigrRightArmyPlaces, 'Army', [6,1]]"
+		};
+		class Turrets: Turrets
+		{
 		};
 	};
 };

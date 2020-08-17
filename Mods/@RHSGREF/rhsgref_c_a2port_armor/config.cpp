@@ -47,9 +47,15 @@ class Optics_Armored;
 class Optics_Commander_01: Optics_Armored
 {
 	class Wide;
+	class Medium;
+	class Narrow;
+};
 class Optics_Gunner_MBT_01: Optics_Armored
 {
 	class Wide;
+	class Medium;
+	class Narrow;
+};
 class CfgFunctions
 {
 	class RHS
@@ -93,6 +99,9 @@ class CfgVehicles
 			class HitLF2Wheel;
 			class HitRFWheel;
 			class HitRBWheel;
+			class HitRMWheel;
+			class HitRF2Wheel;
+		};
 	};
 	class Wheeled_APC_F: Car_F
 	{
@@ -100,6 +109,9 @@ class CfgVehicles
 		class ViewCargo;
 		class Sounds: Sounds
 		{
+			class Engine;
+			class Movement;
+		};
 		class NewTurret;
 		class Turrets
 		{
@@ -108,9 +120,15 @@ class CfgVehicles
 				class ViewOptics;
 				class Turrets
 				{
+					class CommanderOptics;
+				};
+			};
 		};
 		class AnimationSources;
 		class EventHandlers;
+		class CommanderOptics;
+		class Components;
+	};
 	class rhsgref_BRDM2: Wheeled_APC_F
 	{
 		rhs_decalParameters[]=
@@ -236,6 +254,9 @@ class CfgVehicles
 						};
 					};
 				};
+				class Hitpoints
+				{
+				};
 			};
 			class MainTurret: MainTurret
 			{
@@ -245,6 +266,27 @@ class CfgVehicles
 				{
 					"rhs_weap_kpvt",
 					"rhs_weap_pkt_btr"
+				};
+				magazines[]=
+				{
+					"rhs_mag_145x115mm_50",
+					"rhs_mag_145x115mm_50",
+					"rhs_mag_145x115mm_50",
+					"rhs_mag_145x115mm_50",
+					"rhs_mag_145x115mm_50",
+					"rhs_mag_145x115mm_50",
+					"rhs_mag_145x115mm_50",
+					"rhs_mag_145x115mm_50",
+					"rhs_mag_145x115mm_50",
+					"rhs_mag_145x115mm_50",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250"
 				};
 				soundServoVertical[]=
 				{
@@ -264,6 +306,9 @@ class CfgVehicles
 				usePiP=2;
 				canUseScanners=0;
 				allowTabLock=0;
+				class ViewOptics: RCWSOptics
+				{
+				};
 				class ViewGunner: ViewOptics
 				{
 					initAngleX=0;
@@ -298,6 +343,9 @@ class CfgVehicles
 							"Normal"
 						};
 						hitpoint="Hit_Optic_PP61AM";
+					};
+					class Night: Wide
+					{
 					};
 					class RearView: Wide
 					{
@@ -337,6 +385,9 @@ class CfgVehicles
 						explosionShielding=0.2;
 						radius=0.25;
 					};
+				};
+				class Turrets
+				{
 				};
 				class Components
 				{
@@ -390,6 +441,9 @@ class CfgVehicles
 				minTurn=-25;
 				proxyIndex=12;
 			};
+		};
+		class Damage
+		{
 		};
 		class Exhausts
 		{
@@ -1623,6 +1677,24 @@ class CfgVehicles
 					"rhsgref_faction_cdf_ground"
 				};
 			};
+			class chdkz
+			{
+			};
+			class khaki: chdkz
+			{
+			};
+			class olive: chdkz
+			{
+			};
+			class takistan: chdkz
+			{
+			};
+			class 3tone: chdkz
+			{
+			};
+			class chdkz02: chdkz
+			{
+			};
 		};
 		class Attributes
 		{
@@ -1809,12 +1881,27 @@ class CfgVehicles
 					"rhsgref_faction_cdf_ground"
 				};
 			};
+			class chdkz
+			{
+			};
+			class khaki: chdkz
+			{
+			};
+			class olive: chdkz
+			{
+			};
+			class takistan: chdkz
+			{
+			};
 		};
 		hiddenselectionstextures[]=
 		{
 			"\rhsgref\addons\rhsgref_a2port_armor\brdm2\data\cdf_brdm2_atgm_01_co.paa",
 			"\rhsgref\addons\rhsgref_a2port_armor\brdm2\data\brdm2_02_camo_co.paa",
 			"\rhsgref\addons\rhsgref_a2port_armor\brdm2\data\zbik_04_co.paa"
+		};
+		class Damage
+		{
 		};
 		class Turrets: Turrets
 		{
@@ -1823,6 +1910,12 @@ class CfgVehicles
 				weapons[]=
 				{
 					"rhs_weap_9P148"
+				};
+				magazines[]=
+				{
+					"rhs_mag_9m113_5",
+					"rhs_mag_9m113_5",
+					"rhs_mag_9m113_5"
 				};
 				gunnerOpticsEffect[]=
 				{
@@ -1864,6 +1957,18 @@ class CfgVehicles
 					};
 				};
 			};
+			class CargoTurret_02: CargoTurret_02
+			{
+			};
+			class CargoTurret_03: CargoTurret_03
+			{
+			};
+			class CargoTurret_04: CargoTurret_04
+			{
+			};
+			class CargoTurret_05: CargoTurret_05
+			{
+			};
 		};
 		class Hitpoints: HitPoints
 		{
@@ -1898,6 +2003,21 @@ class CfgVehicles
 			{
 				LODTurnedIn="VIEW_CARGO";
 			};
+			class CargoTurret_02: CargoTurret_02
+			{
+			};
+			class CargoTurret_03: CargoTurret_03
+			{
+			};
+			class CargoTurret_04: CargoTurret_04
+			{
+			};
+			class CargoTurret_05: CargoTurret_05
+			{
+			};
+			class CargoTurret_06: CargoTurret_06
+			{
+			};
 		};
 	};
 	class rhsgref_BRDM2_HQ: rhsgref_BRDM2UM
@@ -1910,6 +2030,20 @@ class CfgVehicles
 				weapons[]=
 				{
 					"rhs_weap_pkt_zeroing"
+				};
+				magazines[]=
+				{
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250"
+				};
+				class Turrets
+				{
 				};
 				startEngine=0;
 				memoryPointGun="usti hlavne3";
@@ -1940,6 +2074,21 @@ class CfgVehicles
 				commanding=1;
 				primaryGunner=0;
 				primaryObserver=1;
+			};
+			class CargoTurret_02: CargoTurret_02
+			{
+			};
+			class CargoTurret_03: CargoTurret_03
+			{
+			};
+			class CargoTurret_04: CargoTurret_04
+			{
+			};
+			class CargoTurret_05: CargoTurret_05
+			{
+			};
+			class CargoTurret_06: CargoTurret_06
+			{
 			};
 		};
 	};
@@ -2231,4 +2380,7 @@ class CfgVehicles
 class CfgNonAIVehicles
 {
 	class ProxyRetex;
+	class ProxyPSZ_BRDM2_wheel: ProxyRetex
+	{
+	};
 };

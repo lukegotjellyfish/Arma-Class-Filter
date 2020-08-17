@@ -90,12 +90,18 @@ class CfgVehicles
 	class LandVehicle;
 	class Car: LandVehicle
 	{
+		class HitPoints;
+		class NewTurret;
+	};
 	class Car_F: Car
 	{
 		class Turrets
 		{
 			class MainTurret: NewTurret
 			{
+				class ViewOptics;
+			};
+		};
 		class HitPoints
 		{
 			class HitLFWheel;
@@ -107,6 +113,12 @@ class CfgVehicles
 			class HitEngine;
 			class HitGlass1;
 			class HitGlass2;
+			class HitGlass3;
+			class HitGlass4;
+		};
+		class EventHandlers;
+		class ViewPilot;
+	};
 	class Truck_F: Car_F
 	{
 		class AnimationSources;
@@ -937,6 +949,21 @@ class CfgVehicles
 		};
 		class textureSources
 		{
+			class standard
+			{
+			};
+			class camo: standard
+			{
+			};
+			class cdf: standard
+			{
+			};
+			class chdkz: standard
+			{
+			};
+			class rhs_sand: standard
+			{
+			};
 		};
 		class HitPoints: HitPoints
 		{
@@ -1014,6 +1041,9 @@ class CfgVehicles
 			initAngleY=0;
 			minAngleY=-150;
 			maxAngleY=150;
+		};
+		class Damage
+		{
 		};
 		class Exhausts
 		{
@@ -1184,6 +1214,9 @@ class CfgVehicles
 			};
 		};
 	};
+	class rhs_gaz66_vmf: rhs_truck
+	{
+	};
 	class rhs_gaz66_vdv: rhs_gaz66_vmf
 	{
 		rhs_decalParameters[]=
@@ -1211,6 +1244,9 @@ class CfgVehicles
 	};
 	class rhs_gaz66_flat_vmf: rhs_gaz66_vmf
 	{
+		class Turrets
+		{
+		};
 		class VehicleTransport
 		{
 			class Cargo
@@ -1276,8 +1312,14 @@ class CfgVehicles
 			"['Label', cTrucksGazRightArmyPlaces, 'Platoon', 12]"
 		};
 	};
+	class rhs_gaz66o_vmf: rhs_gaz66_vmf
+	{
+		soundAttenuationCargo[]={1,0};
 		class Turrets: Turrets
 		{
+			class CargoTurret_02: CargoTurret_02
+			{
+			};
 			class CargoTurret_03: CargoTurret_02
 			{
 				animationSourceHatch="turnout1";
@@ -1369,6 +1411,9 @@ class CfgVehicles
 	};
 	class rhs_gaz66o_flat_vmf: rhs_gaz66o_vmf
 	{
+		class Turrets
+		{
+		};
 		class VehicleTransport
 		{
 			class Cargo
@@ -1439,6 +1484,12 @@ class CfgVehicles
 		icon="\rhsafrf\addons\rhs_gaz66\data\ico\icomap_GAZ66_radio_CA.paa";
 		maxFordingDepth=1.2;
 		tf_range=10000;
+		class Damage
+		{
+		};
+		class Turrets
+		{
+		};
 		class Attributes: Attributes
 		{
 			class rhs_radioDeploy
@@ -1449,7 +1500,34 @@ class CfgVehicles
 				expression="[_this,_value,true] call rhs_fnc_gaz66_radioDeploy";
 				defaultValue="0";
 			};
+			class rhs_decalNumber_type: rhs_decalNumber_type
+			{
+			};
+			class rhs_decalNumber: rhs_decalNumber
+			{
+			};
+			class rhs_decalArmy_type: rhs_decalArmy_type
+			{
+			};
+			class rhs_decalArmy: rhs_decalArmy
+			{
+			};
+			class rhs_decalPlatoon_type: rhs_decalPlatoon_type
+			{
+			};
+			class rhs_decalPlatoon: rhs_decalPlatoon
+			{
+			};
+			class rhs_hideLightCover: rhs_hideLightCover
+			{
+			};
+			class rhs_hidespare: rhs_hidespare
+			{
+			};
 		};
+	};
+	class rhs_gaz66_r142_vmf: rhs_gaz66_r142_base
+	{
 	};
 	class rhs_gaz66_r142_vdv: rhs_gaz66_r142_base
 	{
@@ -1482,6 +1560,15 @@ class CfgVehicles
 		memoryPointSupply="doplnovani";
 		transportRepair=2000000000;
 		supplyRadius=6.8000002;
+		class Damage
+		{
+		};
+		class Turrets
+		{
+		};
+	};
+	class rhs_gaz66_repair_vmf: rhs_gaz66_repair_base
+	{
 	};
 	class rhs_gaz66_repair_vdv: rhs_gaz66_repair_base
 	{
@@ -1514,6 +1601,15 @@ class CfgVehicles
 		attendant=1;
 		memoryPointSupply="doplnovani";
 		supplyRadius=4.5;
+		class Damage
+		{
+		};
+		class Turrets
+		{
+		};
+	};
+	class rhs_gaz66_ap2_vmf: rhs_gaz66_ap2_base
+	{
 	};
 	class rhs_gaz66_ap2_vdv: rhs_gaz66_ap2_base
 	{
@@ -1546,6 +1642,15 @@ class CfgVehicles
 		supplyRadius=9.5;
 		memoryPointSupply="doplnovani";
 		icon="\rhsafrf\addons\rhs_gaz66\data\ico\icomap_GAZ66_ammo_CA.paa";
+		class Damage
+		{
+		};
+		class Turrets
+		{
+		};
+	};
+	class rhs_gaz66_ammo_vmf: rhs_gaz66_ammo_base
+	{
 	};
 	class rhs_gaz66_ammo_vdv: rhs_gaz66_ammo_base
 	{
@@ -1575,6 +1680,9 @@ class CfgVehicles
 	class rhs_gaz66_zu23_base: rhs_gaz66_vmf
 	{
 		icon="\rhsafrf\addons\rhs_gaz66\data\ico\icomap_GAZ66_ammo_CA.paa";
+		class Damage
+		{
+		};
 		threat[]={0.60000002,0.1,0.60000002};
 		class Turrets: Turrets
 		{
@@ -1589,6 +1697,18 @@ class CfgVehicles
 				weapons[]=
 				{
 					"rhs_weap_2A14"
+				};
+				magazines[]=
+				{
+					"RHS_mag_AZP23_100",
+					"RHS_mag_AZP23_100",
+					"RHS_mag_AZP23_100",
+					"RHS_mag_AZP23_100",
+					"RHS_mag_AZP23_100",
+					"RHS_mag_AZP23_100",
+					"RHS_mag_AZP23_100",
+					"RHS_mag_AZP23_100",
+					"RHS_mag_AZP23_100"
 				};
 				selectionFireAnim="zasleh";
 				gunnerOpticsEffect[]=
@@ -1717,6 +1837,12 @@ class CfgVehicles
 	{
 		class Turrets: Turrets
 		{
+			class MainTurret: MainTurret
+			{
+			};
+			class CargoTurret_02: CargoTurret_02
+			{
+			};
 		};
 	};
 	class rhs_gaz66_zu23_vdv: rhs_gaz66_zu23_base
@@ -1729,6 +1855,12 @@ class CfgVehicles
 		};
 		class Turrets: Turrets
 		{
+			class MainTurret: MainTurret
+			{
+			};
+			class CargoTurret_02: CargoTurret_02
+			{
+			};
 		};
 	};
 	class rhs_gaz66_zu23_vv: rhs_gaz66_zu23_base
@@ -1740,6 +1872,12 @@ class CfgVehicles
 		};
 		class Turrets: Turrets
 		{
+			class MainTurret: MainTurret
+			{
+			};
+			class CargoTurret_02: CargoTurret_02
+			{
+			};
 		};
 	};
 	class rhs_gaz66_zu23_msv: rhs_gaz66_zu23_base
@@ -1751,6 +1889,12 @@ class CfgVehicles
 		};
 		class Turrets: Turrets
 		{
+			class MainTurret: MainTurret
+			{
+			};
+			class CargoTurret_02: CargoTurret_02
+			{
+			};
 		};
 	};
 };

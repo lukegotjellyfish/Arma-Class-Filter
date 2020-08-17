@@ -1,5 +1,8 @@
 class CfgPatches
 {
+	class RHSGREF_weapon_sounds
+	{
+		units[]={};
 		weapons[]={};
 		version="0.1";
 		name="GREF Weapon Sounds";
@@ -9533,22 +9536,46 @@ class CfgWeapons
 		class Eventhandlers;
 	};
 	class Pistol_Base_F;
+	class arifle_MX_Base_F: Rifle_Base_F
+	{
+	};
 	class Rifle_Long_Base_F;
 	class UGL_F;
 	class srifle_EBR_F;
 	class LMG_Mk200_F;
 	class MGun;
+	class LMG_RCWS: MGun
+	{
+	};
 	class SMG_01_Base;
 	class SMG_01_F: SMG_01_Base
 	{
 		class Single;
 		class FullAuto;
+		class WeaponSlotsInfo;
+		class GunParticles;
+	};
 	class Launcher;
+	class Launcher_Base_F: Launcher
+	{
+	};
 	class launch_O_Titan_F;
 	class rhs_weap_kar98k_Base_F: Rifle_Base_F
 	{
+		class Single: Mode_SemiAuto
+		{
+		};
 	};
 	class rhs_weap_m38_Base_F: Rifle_Base_F
+	{
+		class Single: Mode_SemiAuto
+		{
+		};
+	};
+	class rhs_weap_m38: rhs_weap_m38_Base_F
+	{
+	};
+	class rhs_weap_m38_rail: rhs_weap_m38
 	{
 	};
 	class rhs_weap_mosin_sbr: rhs_weap_m38_rail
@@ -9656,18 +9683,39 @@ class CfgWeapons
 	};
 	class rhs_weap_savz61: SMG_01_F
 	{
+		class Single: Single
+		{
+		};
+		class FullAuto: FullAuto
+		{
+		};
 	};
 	class rhs_weap_m3a1_base: Rifle_Base_F
 	{
+		class FullAuto: Mode_FullAuto
+		{
+		};
 	};
 	class rhs_weap_m3a1_specops: rhs_weap_m3a1_base
 	{
+		class FullAuto: FullAuto
+		{
+		};
 	};
 	class rhs_weap_MP44_base: Rifle_Base_F
 	{
+		class Single: Mode_SemiAuto
+		{
+		};
+		class FullAuto: Mode_FullAuto
+		{
+		};
 	};
 	class rhs_weap_M1garand_Base_F: Rifle_Base_F
 	{
+		class Single: Mode_SemiAuto
+		{
+		};
 	};
 	class rhs_weap_fnfal_base: Rifle_Base_F
 	{
@@ -9696,6 +9744,9 @@ class CfgWeapons
 	};
 	class rhs_weap_mg42_base: Rifle_Base_F
 	{
+		class manual: Mode_FullAuto
+		{
+		};
 		class Eventhandlers: Eventhandlers
 		{
 			class RHSGREF_mg42_beltIntake
@@ -9720,6 +9771,7 @@ class CfgWeapons
 		};
 	};
 };
+class CfgSounds;  //found empty after stripping
 	class RHSGREF_beltIntake_m249
 	{
 		name="RHSGREF_beltIntake_m249";

@@ -348,6 +348,12 @@ class CfgAmmo
 		};
 		caliber=11.4667;
 	};
+	class rhs_ammo_s5_ub16: rhs_ammo_s5
+	{
+	};
+	class rhs_ammo_s5_ub32: rhs_ammo_s5_ub16
+	{
+	};
 	class rhs_ammo_s24_base: rhs_ammo_s13b
 	{
 		proxyShape="\rhsafrf\addons\rhs_airweapons\rhs_m_s24";
@@ -396,6 +402,9 @@ class CfgAmmo
 	class rhs_ammo_s24: rhs_ammo_s24_base
 	{
 		effectsMissile="RHS_Rocket_Fired";
+	};
+	class rhs_ammo_s24b: rhs_ammo_s24_base
+	{
 	};
 	class rhs_ammo_s25_base: rhs_ammo_s24_base
 	{
@@ -549,6 +558,9 @@ class CfgAmmo
 		hit=300;
 		caliber=37.333302;
 	};
+	class rhs_ammo_9m114m: rhs_ammo_9m114
+	{
+	};
 	class rhs_ammo_9m114f: rhs_ammo_9m114
 	{
 		AIAmmoUsageFlags="64+128";
@@ -688,6 +700,9 @@ class CfgAmmo
 		};
 		submunitionConeAngle=360;
 	};
+	class rhs_ammo_9m127: rhs_ammo_9m120
+	{
+	};
 	class rhs_ammo_9m127m: rhs_ammo_9m127
 	{
 		indirecthit=86;
@@ -822,6 +837,9 @@ class CfgAmmo
 		{
 			"Direct",
 			"LoalDistance"
+		};
+		class Direct
+		{
 		};
 		class LoalDistance
 		{
@@ -1856,6 +1874,9 @@ class CfgAmmo
 		{
 			"Direct"
 		};
+		class Direct
+		{
+		};
 		hit=1500;
 		indirectHit=650;
 		indirectHitRange=13;
@@ -1912,6 +1933,9 @@ class CfgAmmo
 		{
 			class SensorsManagerComponent
 			{
+				class Components
+				{
+				};
 			};
 		};
 	};
@@ -1938,6 +1962,9 @@ class CfgAmmo
 		flightProfiles[]=
 		{
 			"LoalAltitude"
+		};
+		class Direct
+		{
 		};
 		class LoalAltitude
 		{
@@ -1978,6 +2005,9 @@ class CfgAmmo
 		{
 			class SensorsManagerComponent
 			{
+				class Components
+				{
+				};
 			};
 		};
 	};
@@ -2725,6 +2755,9 @@ class CfgMagazines
 		{
 			class rhs_rus_ammoname
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -2756,6 +2789,9 @@ class CfgMagazines
 			};
 			class rhs_rus_ammoname_right
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -2787,6 +2823,9 @@ class CfgMagazines
 			};
 			class rhs_su25_box
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="1-pylonMagazineEmpty";
@@ -2864,8 +2903,14 @@ class CfgMagazines
 			{
 				class Bones
 				{
+					class Center
+					{
+						pos[]={0,0};
 					};
 				};
+				class Draw
+				{
+					color[]={0.15000001,1,0.15000001,1};
 					alpha=0.22;
 					class Default
 					{
@@ -3163,11 +3208,29 @@ class CfgMagazines
 						condition="PylonSelected*(PylonAmmoRelative>=0.001)";
 						color[]={0.15000001,1,0.15000001,1};
 						alpha=0.22;
+						class PylonText1: PylonText1
+						{
+						};
+						class PylonValue1: PylonValue1
+						{
+						};
+						class Shape: Shape
+						{
+						};
 					};
 					class Empty: Selected
 					{
 						condition="pylonMagazineEmpty";
 						color[]={1,0,0,1};
+						class PylonText1: PylonText1
+						{
+						};
+						class PylonValue1: PylonValue1
+						{
+						};
+						class Shape: Shape
+						{
+						};
 					};
 				};
 			};
@@ -3202,6 +3265,9 @@ class CfgMagazines
 		{
 			class rhs_rus_ammoname
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -3233,6 +3299,9 @@ class CfgMagazines
 			};
 			class rhs_rus_ammoname_right
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -3264,6 +3333,9 @@ class CfgMagazines
 			};
 			class rhs_su25_box
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="1-pylonMagazineEmpty";
@@ -3341,8 +3413,14 @@ class CfgMagazines
 			{
 				class Bones
 				{
+					class Center
+					{
+						pos[]={0,0};
 					};
 				};
+				class Draw
+				{
+					color[]={0.15000001,1,0.15000001,1};
 					alpha=0.22;
 					class Default
 					{
@@ -3640,11 +3718,29 @@ class CfgMagazines
 						condition="PylonSelected*(PylonAmmoRelative>=0.001)";
 						color[]={0.15000001,1,0.15000001,1};
 						alpha=0.22;
+						class PylonText1: PylonText1
+						{
+						};
+						class PylonValue1: PylonValue1
+						{
+						};
+						class Shape: Shape
+						{
+						};
 					};
 					class Empty: Selected
 					{
 						condition="pylonMagazineEmpty";
 						color[]={1,0,0,1};
+						class PylonText1: PylonText1
+						{
+						};
+						class PylonValue1: PylonValue1
+						{
+						};
+						class Shape: Shape
+						{
+						};
 					};
 				};
 			};
@@ -3679,6 +3775,9 @@ class CfgMagazines
 		{
 			class rhs_rus_ammoname
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -3710,6 +3809,9 @@ class CfgMagazines
 			};
 			class rhs_rus_ammoname_right
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -3741,6 +3843,9 @@ class CfgMagazines
 			};
 			class rhs_su25_box
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="1-pylonMagazineEmpty";
@@ -3818,8 +3923,14 @@ class CfgMagazines
 			{
 				class Bones
 				{
+					class Center
+					{
+						pos[]={0,0};
 					};
 				};
+				class Draw
+				{
+					color[]={0.15000001,1,0.15000001,1};
 					alpha=0.22;
 					class Default
 					{
@@ -4117,11 +4228,29 @@ class CfgMagazines
 						condition="PylonSelected*(PylonAmmoRelative>=0.001)";
 						color[]={0.15000001,1,0.15000001,1};
 						alpha=0.22;
+						class PylonText1: PylonText1
+						{
+						};
+						class PylonValue1: PylonValue1
+						{
+						};
+						class Shape: Shape
+						{
+						};
 					};
 					class Empty: Selected
 					{
 						condition="pylonMagazineEmpty";
 						color[]={1,0,0,1};
+						class PylonText1: PylonText1
+						{
+						};
+						class PylonValue1: PylonValue1
+						{
+						};
+						class Shape: Shape
+						{
+						};
 					};
 				};
 			};
@@ -4156,6 +4285,9 @@ class CfgMagazines
 		{
 			class rhs_rus_ammoname
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -4187,6 +4319,9 @@ class CfgMagazines
 			};
 			class rhs_rus_ammoname_right
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -4218,6 +4353,9 @@ class CfgMagazines
 			};
 			class rhs_su25_box
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="1-pylonMagazineEmpty";
@@ -4295,8 +4433,14 @@ class CfgMagazines
 			{
 				class Bones
 				{
+					class Center
+					{
+						pos[]={0,0};
 					};
 				};
+				class Draw
+				{
+					color[]={0.15000001,1,0.15000001,1};
 					alpha=0.22;
 					class Default
 					{
@@ -4594,11 +4738,29 @@ class CfgMagazines
 						condition="PylonSelected*(PylonAmmoRelative>=0.001)";
 						color[]={0.15000001,1,0.15000001,1};
 						alpha=0.22;
+						class PylonText1: PylonText1
+						{
+						};
+						class PylonValue1: PylonValue1
+						{
+						};
+						class Shape: Shape
+						{
+						};
 					};
 					class Empty: Selected
 					{
 						condition="pylonMagazineEmpty";
 						color[]={1,0,0,1};
+						class PylonText1: PylonText1
+						{
+						};
+						class PylonValue1: PylonValue1
+						{
+						};
+						class Shape: Shape
+						{
+						};
 					};
 				};
 			};
@@ -4662,6 +4824,9 @@ class CfgMagazines
 		{
 			class rhs_rus_ammoname
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -4693,6 +4858,9 @@ class CfgMagazines
 			};
 			class rhs_rus_ammoname_right
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -4724,6 +4892,9 @@ class CfgMagazines
 			};
 			class rhs_su25_box
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="1-pylonMagazineEmpty";
@@ -4801,8 +4972,14 @@ class CfgMagazines
 			{
 				class Bones
 				{
+					class Center
+					{
+						pos[]={0,0};
 					};
 				};
+				class Draw
+				{
+					color[]={0.15000001,1,0.15000001,1};
 					alpha=0.22;
 					class Default
 					{
@@ -5100,11 +5277,29 @@ class CfgMagazines
 						condition="PylonSelected*(PylonAmmoRelative>=0.001)";
 						color[]={0.15000001,1,0.15000001,1};
 						alpha=0.22;
+						class PylonText1: PylonText1
+						{
+						};
+						class PylonValue1: PylonValue1
+						{
+						};
+						class Shape: Shape
+						{
+						};
 					};
 					class Empty: Selected
 					{
 						condition="pylonMagazineEmpty";
 						color[]={1,0,0,1};
+						class PylonText1: PylonText1
+						{
+						};
+						class PylonValue1: PylonValue1
+						{
+						};
+						class Shape: Shape
+						{
+						};
 					};
 				};
 			};
@@ -5129,6 +5324,9 @@ class CfgMagazines
 		{
 			class rhs_rus_ammoname
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -5160,6 +5358,9 @@ class CfgMagazines
 			};
 			class rhs_rus_ammoname_right
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -5191,6 +5392,9 @@ class CfgMagazines
 			};
 			class rhs_su25_box
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="1-pylonMagazineEmpty";
@@ -5268,8 +5472,14 @@ class CfgMagazines
 			{
 				class Bones
 				{
+					class Center
+					{
+						pos[]={0,0};
 					};
 				};
+				class Draw
+				{
+					color[]={0.15000001,1,0.15000001,1};
 					alpha=0.22;
 					class Default
 					{
@@ -5567,11 +5777,29 @@ class CfgMagazines
 						condition="PylonSelected*(PylonAmmoRelative>=0.001)";
 						color[]={0.15000001,1,0.15000001,1};
 						alpha=0.22;
+						class PylonText1: PylonText1
+						{
+						};
+						class PylonValue1: PylonValue1
+						{
+						};
+						class Shape: Shape
+						{
+						};
 					};
 					class Empty: Selected
 					{
 						condition="pylonMagazineEmpty";
 						color[]={1,0,0,1};
+						class PylonText1: PylonText1
+						{
+						};
+						class PylonValue1: PylonValue1
+						{
+						};
+						class Shape: Shape
+						{
+						};
 					};
 				};
 			};
@@ -5809,6 +6037,9 @@ class CfgMagazines
 		{
 			class rhs_rus_ammoname
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -5840,6 +6071,9 @@ class CfgMagazines
 			};
 			class rhs_rus_ammoname_right
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -5871,6 +6105,9 @@ class CfgMagazines
 			};
 			class rhs_su25_box
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="1-pylonMagazineEmpty";
@@ -5948,8 +6185,14 @@ class CfgMagazines
 			{
 				class Bones
 				{
+					class Center
+					{
+						pos[]={0,0};
 					};
 				};
+				class Draw
+				{
+					color[]={0.15000001,1,0.15000001,1};
 					alpha=0.22;
 					class Default
 					{
@@ -6247,11 +6490,29 @@ class CfgMagazines
 						condition="PylonSelected*(PylonAmmoRelative>=0.001)";
 						color[]={0.15000001,1,0.15000001,1};
 						alpha=0.22;
+						class PylonText1: PylonText1
+						{
+						};
+						class PylonValue1: PylonValue1
+						{
+						};
+						class Shape: Shape
+						{
+						};
 					};
 					class Empty: Selected
 					{
 						condition="pylonMagazineEmpty";
 						color[]={1,0,0,1};
+						class PylonText1: PylonText1
+						{
+						};
+						class PylonValue1: PylonValue1
+						{
+						};
+						class Shape: Shape
+						{
+						};
 					};
 				};
 			};
@@ -6354,6 +6615,9 @@ class CfgMagazines
 		{
 			class rhs_rus_ammoname
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -6385,6 +6649,9 @@ class CfgMagazines
 			};
 			class rhs_rus_ammoname_right
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -6416,6 +6683,9 @@ class CfgMagazines
 			};
 			class rhs_su25_box
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="1-pylonMagazineEmpty";
@@ -6493,8 +6763,14 @@ class CfgMagazines
 			{
 				class Bones
 				{
+					class Center
+					{
+						pos[]={0,0};
 					};
 				};
+				class Draw
+				{
+					color[]={0.15000001,1,0.15000001,1};
 					alpha=0.22;
 					class Default
 					{
@@ -6792,11 +7068,29 @@ class CfgMagazines
 						condition="PylonSelected*(PylonAmmoRelative>=0.001)";
 						color[]={0.15000001,1,0.15000001,1};
 						alpha=0.22;
+						class PylonText1: PylonText1
+						{
+						};
+						class PylonValue1: PylonValue1
+						{
+						};
+						class Shape: Shape
+						{
+						};
 					};
 					class Empty: Selected
 					{
 						condition="pylonMagazineEmpty";
 						color[]={1,0,0,1};
+						class PylonText1: PylonText1
+						{
+						};
+						class PylonValue1: PylonValue1
+						{
+						};
+						class Shape: Shape
+						{
+						};
 					};
 				};
 			};
@@ -6955,6 +7249,9 @@ class CfgMagazines
 		{
 			class rhs_rus_ammoname
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -6986,6 +7283,9 @@ class CfgMagazines
 			};
 			class rhs_rus_ammoname_right
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -7017,6 +7317,9 @@ class CfgMagazines
 			};
 			class rhs_su25_box
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="1-pylonMagazineEmpty";
@@ -7094,8 +7397,14 @@ class CfgMagazines
 			{
 				class Bones
 				{
+					class Center
+					{
+						pos[]={0,0};
 					};
 				};
+				class Draw
+				{
+					color[]={0.15000001,1,0.15000001,1};
 					alpha=0.22;
 					class Default
 					{
@@ -7267,6 +7576,12 @@ class CfgMagazines
 						condition="PylonSelected*(PylonAmmoRelative>=0.001)";
 						color[]={0.15000001,1,0.15000001,1};
 						alpha=0.22;
+						class PylonText1: PylonText1
+						{
+						};
+						class Shape: Shape
+						{
+						};
 						class Polygon
 						{
 							width=4;
@@ -7391,6 +7706,15 @@ class CfgMagazines
 					{
 						condition="pylonMagazineEmpty";
 						color[]={1,0,0,1};
+						class PylonText1: PylonText1
+						{
+						};
+						class Shape: Shape
+						{
+						};
+						class Polygon: Polygon
+						{
+						};
 					};
 				};
 			};
@@ -7432,6 +7756,9 @@ class CfgMagazines
 		{
 			class rhs_rus_ammoname
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -7463,6 +7790,9 @@ class CfgMagazines
 			};
 			class rhs_rus_ammoname_right
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -7494,6 +7824,9 @@ class CfgMagazines
 			};
 			class rhs_su25_box
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="1-pylonMagazineEmpty";
@@ -7571,8 +7904,14 @@ class CfgMagazines
 			{
 				class Bones
 				{
+					class Center
+					{
+						pos[]={0,0};
 					};
 				};
+				class Draw
+				{
+					color[]={0.15000001,1,0.15000001,1};
 					alpha=0.22;
 					class Default
 					{
@@ -7744,6 +8083,12 @@ class CfgMagazines
 						condition="PylonSelected*(PylonAmmoRelative>=0.001)";
 						color[]={0.15000001,1,0.15000001,1};
 						alpha=0.22;
+						class PylonText1: PylonText1
+						{
+						};
+						class Shape: Shape
+						{
+						};
 						class Polygon
 						{
 							width=4;
@@ -7868,6 +8213,15 @@ class CfgMagazines
 					{
 						condition="pylonMagazineEmpty";
 						color[]={1,0,0,1};
+						class PylonText1: PylonText1
+						{
+						};
+						class Shape: Shape
+						{
+						};
+						class Polygon: Polygon
+						{
+						};
 					};
 				};
 			};
@@ -7973,6 +8327,9 @@ class CfgMagazines
 		{
 			class rhs_rus_ammoname
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -8004,6 +8361,9 @@ class CfgMagazines
 			};
 			class rhs_rus_ammoname_right
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -8035,6 +8395,9 @@ class CfgMagazines
 			};
 			class rhs_su25_box
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="1-pylonMagazineEmpty";
@@ -8112,8 +8475,14 @@ class CfgMagazines
 			{
 				class Bones
 				{
+					class Center
+					{
+						pos[]={0,0};
 					};
 				};
+				class Draw
+				{
+					color[]={0.15000001,1,0.15000001,1};
 					alpha=0.22;
 					class Default
 					{
@@ -8285,6 +8654,12 @@ class CfgMagazines
 						condition="PylonSelected*(PylonAmmoRelative>=0.001)";
 						color[]={0.15000001,1,0.15000001,1};
 						alpha=0.22;
+						class PylonText1: PylonText1
+						{
+						};
+						class Shape: Shape
+						{
+						};
 						class Polygon
 						{
 							width=4;
@@ -8409,6 +8784,15 @@ class CfgMagazines
 					{
 						condition="pylonMagazineEmpty";
 						color[]={1,0,0,1};
+						class PylonText1: PylonText1
+						{
+						};
+						class Shape: Shape
+						{
+						};
+						class Polygon: Polygon
+						{
+						};
 					};
 				};
 			};
@@ -8429,6 +8813,9 @@ class CfgMagazines
 		{
 			class rhs_rus_ammoname
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -8460,6 +8847,9 @@ class CfgMagazines
 			};
 			class rhs_rus_ammoname_right
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -8491,6 +8881,9 @@ class CfgMagazines
 			};
 			class rhs_su25_box
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="1-pylonMagazineEmpty";
@@ -8568,8 +8961,14 @@ class CfgMagazines
 			{
 				class Bones
 				{
+					class Center
+					{
+						pos[]={0,0};
 					};
 				};
+				class Draw
+				{
+					color[]={0.15000001,1,0.15000001,1};
 					alpha=0.22;
 					class Default
 					{
@@ -8741,6 +9140,12 @@ class CfgMagazines
 						condition="PylonSelected*(PylonAmmoRelative>=0.001)";
 						color[]={0.15000001,1,0.15000001,1};
 						alpha=0.22;
+						class PylonText1: PylonText1
+						{
+						};
+						class Shape: Shape
+						{
+						};
 						class Polygon
 						{
 							width=4;
@@ -8865,6 +9270,15 @@ class CfgMagazines
 					{
 						condition="pylonMagazineEmpty";
 						color[]={1,0,0,1};
+						class PylonText1: PylonText1
+						{
+						};
+						class Shape: Shape
+						{
+						};
+						class Polygon: Polygon
+						{
+						};
 					};
 				};
 			};
@@ -8887,6 +9301,9 @@ class CfgMagazines
 		{
 			class rhs_rus_ammoname
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -8918,6 +9335,9 @@ class CfgMagazines
 			};
 			class rhs_rus_ammoname_right
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -8949,6 +9369,9 @@ class CfgMagazines
 			};
 			class rhs_su25_box
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="1-pylonMagazineEmpty";
@@ -9026,8 +9449,14 @@ class CfgMagazines
 			{
 				class Bones
 				{
+					class Center
+					{
+						pos[]={0,0};
 					};
 				};
+				class Draw
+				{
+					color[]={0.15000001,1,0.15000001,1};
 					alpha=0.22;
 					class Default
 					{
@@ -9199,6 +9628,12 @@ class CfgMagazines
 						condition="PylonSelected*(PylonAmmoRelative>=0.001)";
 						color[]={0.15000001,1,0.15000001,1};
 						alpha=0.22;
+						class PylonText1: PylonText1
+						{
+						};
+						class Shape: Shape
+						{
+						};
 						class Polygon
 						{
 							width=4;
@@ -9323,6 +9758,15 @@ class CfgMagazines
 					{
 						condition="pylonMagazineEmpty";
 						color[]={1,0,0,1};
+						class PylonText1: PylonText1
+						{
+						};
+						class Shape: Shape
+						{
+						};
+						class Polygon: Polygon
+						{
+						};
 					};
 				};
 			};
@@ -9343,6 +9787,9 @@ class CfgMagazines
 		{
 			class rhs_rus_ammoname
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -9374,6 +9821,9 @@ class CfgMagazines
 			};
 			class rhs_rus_ammoname_right
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -9405,6 +9855,9 @@ class CfgMagazines
 			};
 			class rhs_su25_box
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="1-pylonMagazineEmpty";
@@ -9482,8 +9935,14 @@ class CfgMagazines
 			{
 				class Bones
 				{
+					class Center
+					{
+						pos[]={0,0};
 					};
 				};
+				class Draw
+				{
+					color[]={0.15000001,1,0.15000001,1};
 					alpha=0.22;
 					class Default
 					{
@@ -9655,6 +10114,12 @@ class CfgMagazines
 						condition="PylonSelected*(PylonAmmoRelative>=0.001)";
 						color[]={0.15000001,1,0.15000001,1};
 						alpha=0.22;
+						class PylonText1: PylonText1
+						{
+						};
+						class Shape: Shape
+						{
+						};
 						class Polygon
 						{
 							width=4;
@@ -9779,6 +10244,15 @@ class CfgMagazines
 					{
 						condition="pylonMagazineEmpty";
 						color[]={1,0,0,1};
+						class PylonText1: PylonText1
+						{
+						};
+						class Shape: Shape
+						{
+						};
+						class Polygon: Polygon
+						{
+						};
 					};
 				};
 			};
@@ -9810,6 +10284,9 @@ class CfgMagazines
 		{
 			class rhs_rus_ammoname
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -9841,6 +10318,9 @@ class CfgMagazines
 			};
 			class rhs_rus_ammoname_right
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -9872,6 +10352,9 @@ class CfgMagazines
 			};
 			class rhs_su25_box
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="1-pylonMagazineEmpty";
@@ -9949,8 +10432,14 @@ class CfgMagazines
 			{
 				class Bones
 				{
+					class Center
+					{
+						pos[]={0,0};
 					};
 				};
+				class Draw
+				{
+					color[]={0.15000001,1,0.15000001,1};
 					alpha=0.22;
 					class Default
 					{
@@ -10122,6 +10611,12 @@ class CfgMagazines
 						condition="PylonSelected*(PylonAmmoRelative>=0.001)";
 						color[]={0.15000001,1,0.15000001,1};
 						alpha=0.22;
+						class PylonText1: PylonText1
+						{
+						};
+						class Shape: Shape
+						{
+						};
 						class Polygon
 						{
 							width=4;
@@ -10246,6 +10741,15 @@ class CfgMagazines
 					{
 						condition="pylonMagazineEmpty";
 						color[]={1,0,0,1};
+						class PylonText1: PylonText1
+						{
+						};
+						class Shape: Shape
+						{
+						};
+						class Polygon: Polygon
+						{
+						};
 					};
 				};
 			};
@@ -10266,6 +10770,9 @@ class CfgMagazines
 		{
 			class rhs_rus_ammoname
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -10297,6 +10804,9 @@ class CfgMagazines
 			};
 			class rhs_rus_ammoname_right
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -10328,6 +10838,9 @@ class CfgMagazines
 			};
 			class rhs_su25_box
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="1-pylonMagazineEmpty";
@@ -10405,8 +10918,14 @@ class CfgMagazines
 			{
 				class Bones
 				{
+					class Center
+					{
+						pos[]={0,0};
 					};
 				};
+				class Draw
+				{
+					color[]={0.15000001,1,0.15000001,1};
 					alpha=0.22;
 					class Default
 					{
@@ -10578,6 +11097,12 @@ class CfgMagazines
 						condition="PylonSelected*(PylonAmmoRelative>=0.001)";
 						color[]={0.15000001,1,0.15000001,1};
 						alpha=0.22;
+						class PylonText1: PylonText1
+						{
+						};
+						class Shape: Shape
+						{
+						};
 						class Polygon
 						{
 							width=4;
@@ -10702,6 +11227,15 @@ class CfgMagazines
 					{
 						condition="pylonMagazineEmpty";
 						color[]={1,0,0,1};
+						class PylonText1: PylonText1
+						{
+						};
+						class Shape: Shape
+						{
+						};
+						class Polygon: Polygon
+						{
+						};
 					};
 				};
 			};
@@ -10733,6 +11267,9 @@ class CfgMagazines
 		{
 			class rhs_rus_ammoname
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -10764,6 +11301,9 @@ class CfgMagazines
 			};
 			class rhs_rus_ammoname_right
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -10795,6 +11335,9 @@ class CfgMagazines
 			};
 			class rhs_su25_box
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="1-pylonMagazineEmpty";
@@ -10872,8 +11415,14 @@ class CfgMagazines
 			{
 				class Bones
 				{
+					class Center
+					{
+						pos[]={0,0};
 					};
 				};
+				class Draw
+				{
+					color[]={0.15000001,1,0.15000001,1};
 					alpha=0.22;
 					class Default
 					{
@@ -11045,6 +11594,12 @@ class CfgMagazines
 						condition="PylonSelected*(PylonAmmoRelative>=0.001)";
 						color[]={0.15000001,1,0.15000001,1};
 						alpha=0.22;
+						class PylonText1: PylonText1
+						{
+						};
+						class Shape: Shape
+						{
+						};
 						class Polygon
 						{
 							width=4;
@@ -11169,6 +11724,15 @@ class CfgMagazines
 					{
 						condition="pylonMagazineEmpty";
 						color[]={1,0,0,1};
+						class PylonText1: PylonText1
+						{
+						};
+						class Shape: Shape
+						{
+						};
+						class Polygon: Polygon
+						{
+						};
 					};
 				};
 			};
@@ -11189,6 +11753,9 @@ class CfgMagazines
 		{
 			class rhs_rus_ammoname
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -11220,6 +11787,9 @@ class CfgMagazines
 			};
 			class rhs_rus_ammoname_right
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -11251,6 +11821,9 @@ class CfgMagazines
 			};
 			class rhs_su25_box
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="1-pylonMagazineEmpty";
@@ -11328,8 +11901,14 @@ class CfgMagazines
 			{
 				class Bones
 				{
+					class Center
+					{
+						pos[]={0,0};
 					};
 				};
+				class Draw
+				{
+					color[]={0.15000001,1,0.15000001,1};
 					alpha=0.22;
 					class Default
 					{
@@ -11501,6 +12080,12 @@ class CfgMagazines
 						condition="PylonSelected*(PylonAmmoRelative>=0.001)";
 						color[]={0.15000001,1,0.15000001,1};
 						alpha=0.22;
+						class PylonText1: PylonText1
+						{
+						};
+						class Shape: Shape
+						{
+						};
 						class Polygon
 						{
 							width=4;
@@ -11625,6 +12210,15 @@ class CfgMagazines
 					{
 						condition="pylonMagazineEmpty";
 						color[]={1,0,0,1};
+						class PylonText1: PylonText1
+						{
+						};
+						class Shape: Shape
+						{
+						};
+						class Polygon: Polygon
+						{
+						};
 					};
 				};
 			};
@@ -11646,6 +12240,9 @@ class CfgMagazines
 		{
 			class rhs_rus_ammoname
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -11677,6 +12274,9 @@ class CfgMagazines
 			};
 			class rhs_rus_ammoname_right
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -11708,6 +12308,9 @@ class CfgMagazines
 			};
 			class rhs_su25_box
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="1-pylonMagazineEmpty";
@@ -11785,8 +12388,14 @@ class CfgMagazines
 			{
 				class Bones
 				{
+					class Center
+					{
+						pos[]={0,0};
 					};
 				};
+				class Draw
+				{
+					color[]={0.15000001,1,0.15000001,1};
 					alpha=0.22;
 					class Default
 					{
@@ -11958,6 +12567,12 @@ class CfgMagazines
 						condition="PylonSelected*(PylonAmmoRelative>=0.001)";
 						color[]={0.15000001,1,0.15000001,1};
 						alpha=0.22;
+						class PylonText1: PylonText1
+						{
+						};
+						class Shape: Shape
+						{
+						};
 						class Polygon
 						{
 							width=4;
@@ -12082,6 +12697,15 @@ class CfgMagazines
 					{
 						condition="pylonMagazineEmpty";
 						color[]={1,0,0,1};
+						class PylonText1: PylonText1
+						{
+						};
+						class Shape: Shape
+						{
+						};
+						class Polygon: Polygon
+						{
+						};
 					};
 				};
 			};
@@ -12143,6 +12767,9 @@ class CfgMagazines
 		{
 			class rhs_rus_ammoname
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -12174,6 +12801,9 @@ class CfgMagazines
 			};
 			class rhs_rus_ammoname_right
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -12205,6 +12835,9 @@ class CfgMagazines
 			};
 			class rhs_su25_box
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="1-pylonMagazineEmpty";
@@ -12282,8 +12915,14 @@ class CfgMagazines
 			{
 				class Bones
 				{
+					class Center
+					{
+						pos[]={0,0};
 					};
 				};
+				class Draw
+				{
+					color[]={0.15000001,1,0.15000001,1};
 					alpha=0.22;
 					class Default
 					{
@@ -12455,6 +13094,12 @@ class CfgMagazines
 						condition="PylonSelected*(PylonAmmoRelative>=0.001)";
 						color[]={0.15000001,1,0.15000001,1};
 						alpha=0.22;
+						class PylonText1: PylonText1
+						{
+						};
+						class Shape: Shape
+						{
+						};
 						class Polygon
 						{
 							width=4;
@@ -12579,6 +13224,15 @@ class CfgMagazines
 					{
 						condition="pylonMagazineEmpty";
 						color[]={1,0,0,1};
+						class PylonText1: PylonText1
+						{
+						};
+						class Shape: Shape
+						{
+						};
+						class Polygon: Polygon
+						{
+						};
 					};
 				};
 			};
@@ -12618,6 +13272,9 @@ class CfgMagazines
 		{
 			class rhs_rus_ammoname
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -12649,6 +13306,9 @@ class CfgMagazines
 			};
 			class rhs_rus_ammoname_right
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -12680,6 +13340,9 @@ class CfgMagazines
 			};
 			class rhs_su25_box
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="1-pylonMagazineEmpty";
@@ -12757,8 +13420,14 @@ class CfgMagazines
 			{
 				class Bones
 				{
+					class Center
+					{
+						pos[]={0,0};
 					};
 				};
+				class Draw
+				{
+					color[]={0.15000001,1,0.15000001,1};
 					alpha=0.22;
 					class Default
 					{
@@ -12930,6 +13599,12 @@ class CfgMagazines
 						condition="PylonSelected*(PylonAmmoRelative>=0.001)";
 						color[]={0.15000001,1,0.15000001,1};
 						alpha=0.22;
+						class PylonText1: PylonText1
+						{
+						};
+						class Shape: Shape
+						{
+						};
 						class Polygon
 						{
 							width=4;
@@ -13054,6 +13729,15 @@ class CfgMagazines
 					{
 						condition="pylonMagazineEmpty";
 						color[]={1,0,0,1};
+						class PylonText1: PylonText1
+						{
+						};
+						class Shape: Shape
+						{
+						};
+						class Polygon: Polygon
+						{
+						};
 					};
 				};
 			};
@@ -13091,6 +13775,9 @@ class CfgMagazines
 		{
 			class rhs_rus_ammoname
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -13122,6 +13809,9 @@ class CfgMagazines
 			};
 			class rhs_rus_ammoname_right
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -13153,6 +13843,9 @@ class CfgMagazines
 			};
 			class rhs_su25_box
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="1-pylonMagazineEmpty";
@@ -13230,8 +13923,14 @@ class CfgMagazines
 			{
 				class Bones
 				{
+					class Center
+					{
+						pos[]={0,0};
 					};
 				};
+				class Draw
+				{
+					color[]={0.15000001,1,0.15000001,1};
 					alpha=0.22;
 					class Default
 					{
@@ -13403,6 +14102,12 @@ class CfgMagazines
 						condition="PylonSelected*(PylonAmmoRelative>=0.001)";
 						color[]={0.15000001,1,0.15000001,1};
 						alpha=0.22;
+						class PylonText1: PylonText1
+						{
+						};
+						class Shape: Shape
+						{
+						};
 						class Polygon
 						{
 							width=4;
@@ -13527,6 +14232,15 @@ class CfgMagazines
 					{
 						condition="pylonMagazineEmpty";
 						color[]={1,0,0,1};
+						class PylonText1: PylonText1
+						{
+						};
+						class Shape: Shape
+						{
+						};
+						class Polygon: Polygon
+						{
+						};
 					};
 				};
 			};
@@ -13624,6 +14338,9 @@ class CfgMagazines
 		{
 			class rhs_rus_ammoname
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -13655,6 +14372,9 @@ class CfgMagazines
 			};
 			class rhs_rus_ammoname_right
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -13686,6 +14406,9 @@ class CfgMagazines
 			};
 			class rhs_su25_box
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="1-pylonMagazineEmpty";
@@ -13763,8 +14486,14 @@ class CfgMagazines
 			{
 				class Bones
 				{
+					class Center
+					{
+						pos[]={0,0};
 					};
 				};
+				class Draw
+				{
+					color[]={0.15000001,1,0.15000001,1};
 					alpha=0.22;
 					class Default
 					{
@@ -13936,6 +14665,12 @@ class CfgMagazines
 						condition="PylonSelected*(PylonAmmoRelative>=0.001)";
 						color[]={0.15000001,1,0.15000001,1};
 						alpha=0.22;
+						class PylonText1: PylonText1
+						{
+						};
+						class Shape: Shape
+						{
+						};
 						class Polygon
 						{
 							width=4;
@@ -14060,6 +14795,15 @@ class CfgMagazines
 					{
 						condition="pylonMagazineEmpty";
 						color[]={1,0,0,1};
+						class PylonText1: PylonText1
+						{
+						};
+						class Shape: Shape
+						{
+						};
+						class Polygon: Polygon
+						{
+						};
 					};
 				};
 			};
@@ -14083,6 +14827,9 @@ class CfgMagazines
 		{
 			class rhs_rus_ammoname
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -14114,6 +14861,9 @@ class CfgMagazines
 			};
 			class rhs_rus_ammoname_right
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -14145,6 +14895,9 @@ class CfgMagazines
 			};
 			class rhs_su25_box
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="1-pylonMagazineEmpty";
@@ -14222,8 +14975,14 @@ class CfgMagazines
 			{
 				class Bones
 				{
+					class Center
+					{
+						pos[]={0,0};
 					};
 				};
+				class Draw
+				{
+					color[]={0.15000001,1,0.15000001,1};
 					alpha=0.22;
 					class Default
 					{
@@ -14395,6 +15154,12 @@ class CfgMagazines
 						condition="PylonSelected*(PylonAmmoRelative>=0.001)";
 						color[]={0.15000001,1,0.15000001,1};
 						alpha=0.22;
+						class PylonText1: PylonText1
+						{
+						};
+						class Shape: Shape
+						{
+						};
 						class Polygon
 						{
 							width=4;
@@ -14519,6 +15284,15 @@ class CfgMagazines
 					{
 						condition="pylonMagazineEmpty";
 						color[]={1,0,0,1};
+						class PylonText1: PylonText1
+						{
+						};
+						class Shape: Shape
+						{
+						};
+						class Polygon: Polygon
+						{
+						};
 					};
 				};
 			};
@@ -14534,6 +15308,9 @@ class CfgMagazines
 		{
 			class rhs_rus_ammoname
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -14565,6 +15342,9 @@ class CfgMagazines
 			};
 			class rhs_rus_ammoname_right
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -14596,6 +15376,9 @@ class CfgMagazines
 			};
 			class rhs_su25_box
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="1-pylonMagazineEmpty";
@@ -14673,8 +15456,14 @@ class CfgMagazines
 			{
 				class Bones
 				{
+					class Center
+					{
+						pos[]={0,0};
 					};
 				};
+				class Draw
+				{
+					color[]={0.15000001,1,0.15000001,1};
 					alpha=0.22;
 					class Default
 					{
@@ -14846,6 +15635,12 @@ class CfgMagazines
 						condition="PylonSelected*(PylonAmmoRelative>=0.001)";
 						color[]={0.15000001,1,0.15000001,1};
 						alpha=0.22;
+						class PylonText1: PylonText1
+						{
+						};
+						class Shape: Shape
+						{
+						};
 						class Polygon
 						{
 							width=4;
@@ -14970,6 +15765,15 @@ class CfgMagazines
 					{
 						condition="pylonMagazineEmpty";
 						color[]={1,0,0,1};
+						class PylonText1: PylonText1
+						{
+						};
+						class Shape: Shape
+						{
+						};
+						class Polygon: Polygon
+						{
+						};
 					};
 				};
 			};
@@ -14985,6 +15789,9 @@ class CfgMagazines
 		{
 			class rhs_rus_ammoname
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -15016,6 +15823,9 @@ class CfgMagazines
 			};
 			class rhs_rus_ammoname_right
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -15047,6 +15857,9 @@ class CfgMagazines
 			};
 			class rhs_su25_box
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="1-pylonMagazineEmpty";
@@ -15124,8 +15937,14 @@ class CfgMagazines
 			{
 				class Bones
 				{
+					class Center
+					{
+						pos[]={0,0};
 					};
 				};
+				class Draw
+				{
+					color[]={0.15000001,1,0.15000001,1};
 					alpha=0.22;
 					class Default
 					{
@@ -15297,6 +16116,12 @@ class CfgMagazines
 						condition="PylonSelected*(PylonAmmoRelative>=0.001)";
 						color[]={0.15000001,1,0.15000001,1};
 						alpha=0.22;
+						class PylonText1: PylonText1
+						{
+						};
+						class Shape: Shape
+						{
+						};
 						class Polygon
 						{
 							width=4;
@@ -15421,6 +16246,15 @@ class CfgMagazines
 					{
 						condition="pylonMagazineEmpty";
 						color[]={1,0,0,1};
+						class PylonText1: PylonText1
+						{
+						};
+						class Shape: Shape
+						{
+						};
+						class Polygon: Polygon
+						{
+						};
 					};
 				};
 			};
@@ -15452,6 +16286,9 @@ class CfgMagazines
 		{
 			class rhs_rus_ammoname
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -15483,6 +16320,9 @@ class CfgMagazines
 			};
 			class rhs_rus_ammoname_right
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -15514,6 +16354,9 @@ class CfgMagazines
 			};
 			class rhs_su25_box
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="1-pylonMagazineEmpty";
@@ -15591,8 +16434,14 @@ class CfgMagazines
 			{
 				class Bones
 				{
+					class Center
+					{
+						pos[]={0,0};
 					};
 				};
+				class Draw
+				{
+					color[]={0.15000001,1,0.15000001,1};
 					alpha=0.22;
 					class Default
 					{
@@ -15764,6 +16613,12 @@ class CfgMagazines
 						condition="PylonSelected*(PylonAmmoRelative>=0.001)";
 						color[]={0.15000001,1,0.15000001,1};
 						alpha=0.22;
+						class PylonText1: PylonText1
+						{
+						};
+						class Shape: Shape
+						{
+						};
 						class Polygon
 						{
 							width=4;
@@ -15888,6 +16743,15 @@ class CfgMagazines
 					{
 						condition="pylonMagazineEmpty";
 						color[]={1,0,0,1};
+						class PylonText1: PylonText1
+						{
+						};
+						class Shape: Shape
+						{
+						};
+						class Polygon: Polygon
+						{
+						};
 					};
 				};
 			};
@@ -15903,6 +16767,9 @@ class CfgMagazines
 		{
 			class rhs_rus_ammoname
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -15934,6 +16801,9 @@ class CfgMagazines
 			};
 			class rhs_rus_ammoname_right
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -15965,6 +16835,9 @@ class CfgMagazines
 			};
 			class rhs_su25_box
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="1-pylonMagazineEmpty";
@@ -16042,8 +16915,14 @@ class CfgMagazines
 			{
 				class Bones
 				{
+					class Center
+					{
+						pos[]={0,0};
 					};
 				};
+				class Draw
+				{
+					color[]={0.15000001,1,0.15000001,1};
 					alpha=0.22;
 					class Default
 					{
@@ -16215,6 +17094,12 @@ class CfgMagazines
 						condition="PylonSelected*(PylonAmmoRelative>=0.001)";
 						color[]={0.15000001,1,0.15000001,1};
 						alpha=0.22;
+						class PylonText1: PylonText1
+						{
+						};
+						class Shape: Shape
+						{
+						};
 						class Polygon
 						{
 							width=4;
@@ -16339,6 +17224,15 @@ class CfgMagazines
 					{
 						condition="pylonMagazineEmpty";
 						color[]={1,0,0,1};
+						class PylonText1: PylonText1
+						{
+						};
+						class Shape: Shape
+						{
+						};
+						class Polygon: Polygon
+						{
+						};
 					};
 				};
 			};
@@ -16362,6 +17256,9 @@ class CfgMagazines
 		{
 			class rhs_rus_ammoname
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -16393,6 +17290,9 @@ class CfgMagazines
 			};
 			class rhs_rus_ammoname_right
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -16424,6 +17324,9 @@ class CfgMagazines
 			};
 			class rhs_su25_box
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="1-pylonMagazineEmpty";
@@ -16501,8 +17404,14 @@ class CfgMagazines
 			{
 				class Bones
 				{
+					class Center
+					{
+						pos[]={0,0};
 					};
 				};
+				class Draw
+				{
+					color[]={0.15000001,1,0.15000001,1};
 					alpha=0.22;
 					class Default
 					{
@@ -16674,6 +17583,12 @@ class CfgMagazines
 						condition="PylonSelected*(PylonAmmoRelative>=0.001)";
 						color[]={0.15000001,1,0.15000001,1};
 						alpha=0.22;
+						class PylonText1: PylonText1
+						{
+						};
+						class Shape: Shape
+						{
+						};
 						class Polygon
 						{
 							width=4;
@@ -16798,6 +17713,15 @@ class CfgMagazines
 					{
 						condition="pylonMagazineEmpty";
 						color[]={1,0,0,1};
+						class PylonText1: PylonText1
+						{
+						};
+						class Shape: Shape
+						{
+						};
+						class Polygon: Polygon
+						{
+						};
 					};
 				};
 			};
@@ -16947,6 +17871,9 @@ class CfgMagazines
 		{
 			class rhs_rus_ammoname
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -16978,6 +17905,9 @@ class CfgMagazines
 			};
 			class rhs_rus_ammoname_right
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -17009,6 +17939,9 @@ class CfgMagazines
 			};
 			class rhs_su25_box
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="1-pylonMagazineEmpty";
@@ -17086,8 +18019,14 @@ class CfgMagazines
 			{
 				class Bones
 				{
+					class Center
+					{
+						pos[]={0,0};
 					};
 				};
+				class Draw
+				{
+					color[]={0.15000001,1,0.15000001,1};
 					alpha=0.22;
 					class Default
 					{
@@ -17259,6 +18198,12 @@ class CfgMagazines
 						condition="PylonSelected*(PylonAmmoRelative>=0.001)";
 						color[]={0.15000001,1,0.15000001,1};
 						alpha=0.22;
+						class PylonText1: PylonText1
+						{
+						};
+						class Shape: Shape
+						{
+						};
 						class Polygon
 						{
 							width=4;
@@ -17383,6 +18328,15 @@ class CfgMagazines
 					{
 						condition="pylonMagazineEmpty";
 						color[]={1,0,0,1};
+						class PylonText1: PylonText1
+						{
+						};
+						class Shape: Shape
+						{
+						};
+						class Polygon: Polygon
+						{
+						};
 					};
 				};
 			};
@@ -17447,6 +18401,9 @@ class CfgMagazines
 		{
 			class rhs_rus_ammoname
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -17478,6 +18435,9 @@ class CfgMagazines
 			};
 			class rhs_rus_ammoname_right
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -17509,6 +18469,9 @@ class CfgMagazines
 			};
 			class rhs_su25_box
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="1-pylonMagazineEmpty";
@@ -17586,8 +18549,14 @@ class CfgMagazines
 			{
 				class Bones
 				{
+					class Center
+					{
+						pos[]={0,0};
 					};
 				};
+				class Draw
+				{
+					color[]={0.15000001,1,0.15000001,1};
 					alpha=0.22;
 					class Default
 					{
@@ -17759,6 +18728,12 @@ class CfgMagazines
 						condition="PylonSelected*(PylonAmmoRelative>=0.001)";
 						color[]={0.15000001,1,0.15000001,1};
 						alpha=0.22;
+						class PylonText1: PylonText1
+						{
+						};
+						class Shape: Shape
+						{
+						};
 						class Polygon
 						{
 							width=4;
@@ -17883,6 +18858,15 @@ class CfgMagazines
 					{
 						condition="pylonMagazineEmpty";
 						color[]={1,0,0,1};
+						class PylonText1: PylonText1
+						{
+						};
+						class Shape: Shape
+						{
+						};
+						class Polygon: Polygon
+						{
+						};
 					};
 				};
 			};
@@ -17975,6 +18959,9 @@ class CfgMagazines
 		{
 			class rhs_rus_ammoname
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -18006,6 +18993,9 @@ class CfgMagazines
 			};
 			class rhs_rus_ammoname_right
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -18037,6 +19027,9 @@ class CfgMagazines
 			};
 			class rhs_su25_box
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="1-pylonMagazineEmpty";
@@ -18114,8 +19107,14 @@ class CfgMagazines
 			{
 				class Bones
 				{
+					class Center
+					{
+						pos[]={0,0};
 					};
 				};
+				class Draw
+				{
+					color[]={0.15000001,1,0.15000001,1};
 					alpha=0.22;
 					class Default
 					{
@@ -18287,6 +19286,12 @@ class CfgMagazines
 						condition="PylonSelected*(PylonAmmoRelative>=0.001)";
 						color[]={0.15000001,1,0.15000001,1};
 						alpha=0.22;
+						class PylonText1: PylonText1
+						{
+						};
+						class Shape: Shape
+						{
+						};
 						class Polygon
 						{
 							width=4;
@@ -18411,6 +19416,15 @@ class CfgMagazines
 					{
 						condition="pylonMagazineEmpty";
 						color[]={1,0,0,1};
+						class PylonText1: PylonText1
+						{
+						};
+						class Shape: Shape
+						{
+						};
+						class Polygon: Polygon
+						{
+						};
 					};
 				};
 			};
@@ -18433,6 +19447,9 @@ class CfgMagazines
 		{
 			class rhs_rus_ammoname
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -18464,6 +19481,9 @@ class CfgMagazines
 			};
 			class rhs_rus_ammoname_right
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -18495,6 +19515,9 @@ class CfgMagazines
 			};
 			class rhs_su25_box
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="1-pylonMagazineEmpty";
@@ -18572,8 +19595,14 @@ class CfgMagazines
 			{
 				class Bones
 				{
+					class Center
+					{
+						pos[]={0,0};
 					};
 				};
+				class Draw
+				{
+					color[]={0.15000001,1,0.15000001,1};
 					alpha=0.22;
 					class Default
 					{
@@ -18745,6 +19774,12 @@ class CfgMagazines
 						condition="PylonSelected*(PylonAmmoRelative>=0.001)";
 						color[]={0.15000001,1,0.15000001,1};
 						alpha=0.22;
+						class PylonText1: PylonText1
+						{
+						};
+						class Shape: Shape
+						{
+						};
 						class Polygon
 						{
 							width=4;
@@ -18869,6 +19904,15 @@ class CfgMagazines
 					{
 						condition="pylonMagazineEmpty";
 						color[]={1,0,0,1};
+						class PylonText1: PylonText1
+						{
+						};
+						class Shape: Shape
+						{
+						};
+						class Polygon: Polygon
+						{
+						};
 					};
 				};
 			};
@@ -18943,6 +19987,9 @@ class CfgMagazines
 		{
 			class rhs_rus_ammoname
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -18974,6 +20021,9 @@ class CfgMagazines
 			};
 			class rhs_rus_ammoname_right
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -19005,6 +20055,9 @@ class CfgMagazines
 			};
 			class rhs_su25_box
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="1-pylonMagazineEmpty";
@@ -19082,8 +20135,14 @@ class CfgMagazines
 			{
 				class Bones
 				{
+					class Center
+					{
+						pos[]={0,0};
 					};
 				};
+				class Draw
+				{
+					color[]={0.15000001,1,0.15000001,1};
 					alpha=0.22;
 					class Default
 					{
@@ -19255,6 +20314,12 @@ class CfgMagazines
 						condition="PylonSelected*(PylonAmmoRelative>=0.001)";
 						color[]={0.15000001,1,0.15000001,1};
 						alpha=0.22;
+						class PylonText1: PylonText1
+						{
+						};
+						class Shape: Shape
+						{
+						};
 						class Polygon
 						{
 							width=4;
@@ -19379,6 +20444,15 @@ class CfgMagazines
 					{
 						condition="pylonMagazineEmpty";
 						color[]={1,0,0,1};
+						class PylonText1: PylonText1
+						{
+						};
+						class Shape: Shape
+						{
+						};
+						class Polygon: Polygon
+						{
+						};
 					};
 				};
 			};
@@ -19440,6 +20514,9 @@ class CfgMagazines
 		{
 			class rhs_rus_ammoname
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -19471,6 +20548,9 @@ class CfgMagazines
 			};
 			class rhs_rus_ammoname_right
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -19502,6 +20582,9 @@ class CfgMagazines
 			};
 			class rhs_su25_box
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="1-pylonMagazineEmpty";
@@ -19579,8 +20662,14 @@ class CfgMagazines
 			{
 				class Bones
 				{
+					class Center
+					{
+						pos[]={0,0};
 					};
 				};
+				class Draw
+				{
+					color[]={0.15000001,1,0.15000001,1};
 					alpha=0.22;
 					class Default
 					{
@@ -19752,6 +20841,12 @@ class CfgMagazines
 						condition="PylonSelected*(PylonAmmoRelative>=0.001)";
 						color[]={0.15000001,1,0.15000001,1};
 						alpha=0.22;
+						class PylonText1: PylonText1
+						{
+						};
+						class Shape: Shape
+						{
+						};
 						class Polygon
 						{
 							width=4;
@@ -19876,6 +20971,15 @@ class CfgMagazines
 					{
 						condition="pylonMagazineEmpty";
 						color[]={1,0,0,1};
+						class PylonText1: PylonText1
+						{
+						};
+						class Shape: Shape
+						{
+						};
+						class Polygon: Polygon
+						{
+						};
 					};
 				};
 			};
@@ -19936,6 +21040,9 @@ class CfgMagazines
 		{
 			class rhs_rus_ammoname
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -19967,6 +21074,9 @@ class CfgMagazines
 			};
 			class rhs_rus_ammoname_right
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -19998,6 +21108,9 @@ class CfgMagazines
 			};
 			class rhs_su25_box
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="1-pylonMagazineEmpty";
@@ -20222,6 +21335,9 @@ class CfgMagazines
 		{
 			class rhs_rus_ammoname
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -20253,6 +21369,9 @@ class CfgMagazines
 			};
 			class rhs_rus_ammoname_right
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -20284,6 +21403,9 @@ class CfgMagazines
 			};
 			class rhs_su25_box
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="1-pylonMagazineEmpty";
@@ -20361,8 +21483,14 @@ class CfgMagazines
 			{
 				class Bones
 				{
+					class Center
+					{
+						pos[]={0,0};
 					};
 				};
+				class Draw
+				{
+					color[]={0.15000001,1,0.15000001,1};
 					alpha=0.22;
 					class Default
 					{
@@ -20534,6 +21662,12 @@ class CfgMagazines
 						condition="PylonSelected*(PylonAmmoRelative>=0.001)";
 						color[]={0.15000001,1,0.15000001,1};
 						alpha=0.22;
+						class PylonText1: PylonText1
+						{
+						};
+						class Shape: Shape
+						{
+						};
 						class Polygon
 						{
 							width=4;
@@ -20658,6 +21792,15 @@ class CfgMagazines
 					{
 						condition="pylonMagazineEmpty";
 						color[]={1,0,0,1};
+						class PylonText1: PylonText1
+						{
+						};
+						class Shape: Shape
+						{
+						};
+						class Polygon: Polygon
+						{
+						};
 					};
 				};
 			};
@@ -20761,6 +21904,9 @@ class CfgMagazines
 		{
 			class rhs_rus_ammoname
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -20792,6 +21938,9 @@ class CfgMagazines
 			};
 			class rhs_rus_ammoname_right
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -20823,6 +21972,9 @@ class CfgMagazines
 			};
 			class rhs_su25_box
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="1-pylonMagazineEmpty";
@@ -20900,8 +22052,14 @@ class CfgMagazines
 			{
 				class Bones
 				{
+					class Center
+					{
+						pos[]={0,0};
 					};
 				};
+				class Draw
+				{
+					color[]={0.15000001,1,0.15000001,1};
 					alpha=0.22;
 					class Default
 					{
@@ -21073,6 +22231,12 @@ class CfgMagazines
 						condition="PylonSelected*(PylonAmmoRelative>=0.001)";
 						color[]={0.15000001,1,0.15000001,1};
 						alpha=0.22;
+						class PylonText1: PylonText1
+						{
+						};
+						class Shape: Shape
+						{
+						};
 						class Polygon
 						{
 							width=4;
@@ -21197,6 +22361,15 @@ class CfgMagazines
 					{
 						condition="pylonMagazineEmpty";
 						color[]={1,0,0,1};
+						class PylonText1: PylonText1
+						{
+						};
+						class Shape: Shape
+						{
+						};
+						class Polygon: Polygon
+						{
+						};
 					};
 				};
 			};
@@ -21219,6 +22392,9 @@ class CfgMagazines
 		{
 			class rhs_rus_ammoname
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -21250,6 +22426,9 @@ class CfgMagazines
 			};
 			class rhs_rus_ammoname_right
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="PylonSelected";
@@ -21281,6 +22460,9 @@ class CfgMagazines
 			};
 			class rhs_su25_box
 			{
+				class Bones
+				{
+				};
 				class Draw
 				{
 					condition="1-pylonMagazineEmpty";
@@ -21358,8 +22540,14 @@ class CfgMagazines
 			{
 				class Bones
 				{
+					class Center
+					{
+						pos[]={0,0};
 					};
 				};
+				class Draw
+				{
+					color[]={0.15000001,1,0.15000001,1};
 					alpha=0.22;
 					class Default
 					{
@@ -21531,6 +22719,12 @@ class CfgMagazines
 						condition="PylonSelected*(PylonAmmoRelative>=0.001)";
 						color[]={0.15000001,1,0.15000001,1};
 						alpha=0.22;
+						class PylonText1: PylonText1
+						{
+						};
+						class Shape: Shape
+						{
+						};
 						class Polygon
 						{
 							width=4;
@@ -21655,6 +22849,15 @@ class CfgMagazines
 					{
 						condition="pylonMagazineEmpty";
 						color[]={1,0,0,1};
+						class PylonText1: PylonText1
+						{
+						};
+						class Shape: Shape
+						{
+						};
+						class Polygon: Polygon
+						{
+						};
 					};
 				};
 			};
@@ -21735,18 +22938,47 @@ class CfgWeapons
 	{
 		class Far_AI;
 		class Medium_AI;
+		class Close_AI;
+		class Burst;
+	};
 	class rhs_weap_s5: rockets_Skyfire
 	{
 		cursor="missile";
 		cursoraim="EmptyCursor";
 		cursorsize=0;
 		proxyShape="\rhsafrf\addons\rhs_a2port_air\data\proxy\ub16";
+		class gunClouds
+		{
+		};
 		fireLightAmbient[]={0,0,0};
 		fireLightDiffuse[]={0.93000001,0.63,0.25};
 		fireLightDuration=0.050999999;
 		fireLightIntensity=0.2;
 		canLock=1;
 		weaponLockDelay=8;
+		magazines[]=
+		{
+			"rhs_mag_s5_192",
+			"rhs_mag_s5_128",
+			"rhs_mag_s5_64",
+			"rhs_mag_s5_32",
+			"rhs_mag_s5_16",
+			"rhs_mag_ub16_s5",
+			"rhs_mag_ub32_s5",
+			"rhs_mag_ub16_ka52_s5",
+			"rhs_mag_ub32_ka52_s5",
+			"rhs_mag_ub16_bd3_umk2a_s5",
+			"rhs_mag_ub32_bd3_umk2a_s5"
+		};
+		class Far_AI: Far_AI
+		{
+		};
+		class Medium_AI: Medium_AI
+		{
+		};
+		class Close_AI: Close_AI
+		{
+		};
 		class AI_Burst: RocketPods
 		{
 			dispersion=0.037999999;
@@ -21758,8 +22990,87 @@ class CfgWeapons
 			salvo=2;
 		};
 	};
+	class rhs_weap_s5_ub32: rhs_weap_s5
+	{
+		magazines[]=
+		{
+			"rhs_mag_s5_16"
+		};
+	};
+	class rhs_weap_s5ko: rhs_weap_s5
+	{
+		magazines[]=
+		{
+			"rhs_mag_s5_ko_192",
+			"rhs_mag_s5_ko_128",
+			"rhs_mag_s5_ko_64",
+			"rhs_mag_s5_ko_32",
+			"rhs_mag_s5_ko_16",
+			"rhs_mag_ub16_s5ko",
+			"rhs_mag_ub32_s5ko",
+			"rhs_mag_ub16_ka52_s5ko",
+			"rhs_mag_ub32_ka52_s5ko",
+			"rhs_mag_ub16_bd3_umk2a_s5ko",
+			"rhs_mag_ub32_bd3_umk2a_s5ko"
+		};
+	};
+	class rhs_weap_s5k1: rhs_weap_s5
+	{
+		magazines[]=
+		{
+			"rhs_mag_s5_k1_192",
+			"rhs_mag_s5_k1_128",
+			"rhs_mag_s5_k1_64",
+			"rhs_mag_s5_k1_32",
+			"rhs_mag_s5_k1_16",
+			"rhs_mag_ub16_s5k1",
+			"rhs_mag_ub32_s5k1",
+			"rhs_mag_ub16_ka52_s5k1",
+			"rhs_mag_ub32_ka52_s5k1",
+			"rhs_mag_ub16_bd3_umk2a_s5k1",
+			"rhs_mag_ub32_bd3_umk2a_s5k1"
+		};
+	};
+	class rhs_weap_s5m1: rhs_weap_s5
+	{
+		magazines[]=
+		{
+			"rhs_mag_s5_m1_192",
+			"rhs_mag_s5_m1_128",
+			"rhs_mag_s5_m1_64",
+			"rhs_mag_s5_m1_32",
+			"rhs_mag_s5_m1_16",
+			"rhs_mag_ub16_s5m1",
+			"rhs_mag_ub32_s5m1",
+			"rhs_mag_ub16_ka52_s5m1",
+			"rhs_mag_ub32_ka52_s5m1",
+			"rhs_mag_ub16_bd3_umk2a_s5m1",
+			"rhs_mag_ub32_bd3_umk2a_s5m1"
+		};
+	};
 	class rhs_weap_s8: rhs_weap_s5
 	{
+		magazines[]=
+		{
+			"rhs_mag_s8_12",
+			"rhs_mag_s8_20",
+			"rhs_mag_s8_40",
+			"rhs_mag_s8_80",
+			"rhs_mag_s8_120",
+			"rhs_mag_b8m1_s8kom",
+			"rhs_mag_b8v20a_s8kom",
+			"rhs_mag_b8v20a_ka52_s8kom",
+			"rhs_mag_b8m1_bd3_umk2a_s8kom"
+		};
+		class Far_AI: Far_AI
+		{
+		};
+		class Medium_AI: Medium_AI
+		{
+		};
+		class Close_AI: Close_AI
+		{
+		};
 		class AI_Burst: AI_Burst
 		{
 			dispersion=0.032000002;
@@ -21767,10 +23078,44 @@ class CfgWeapons
 		class Burst: Burst
 		{
 			dispersion=0.032000002;
+		};
+	};
+	class rhs_weap_s8df: rhs_weap_s8
+	{
+		magazines[]=
+		{
+			"rhs_mag_s8_df_20",
+			"rhs_mag_s8_df_40",
+			"rhs_mag_s8_df_80",
+			"rhs_mag_b8m1_s8df",
+			"rhs_mag_b8v20a_s8df",
+			"rhs_mag_b8v20a_ka52_s8df",
+			"rhs_mag_b8m1_bd3_umk2a_s8df"
+		};
+	};
+	class rhs_weap_s8t: rhs_weap_s8
+	{
+		magazines[]=
+		{
+			"rhs_mag_s8_t_20",
+			"rhs_mag_s8_t_40",
+			"rhs_mag_s8_t_80",
+			"rhs_mag_b8m1_s8t",
+			"rhs_mag_b8v20a_s8t",
+			"rhs_mag_b8v20a_ka52_s8t",
+			"rhs_mag_b8m1_bd3_umk2a_s8t"
 		};
 	};
 	class rhs_weap_s13: rhs_weap_s8
 	{
+		magazines[]=
+		{
+			"rhs_mag_s13b_10",
+			"rhs_mag_b13l_s13b",
+			"rhs_mag_b13l1_s13b",
+			"rhs_mag_b13l1_ka52_s13b",
+			"rhs_mag_b13l_bd3_umk2a_s13b"
+		};
 		class AI_Burst: AI_Burst
 		{
 			reloadtime=0.15000001;
@@ -21780,10 +23125,59 @@ class CfgWeapons
 		{
 			reloadtime=0.15000001;
 			dispersion=0.02;
+		};
+	};
+	class rhs_weap_s13d: rhs_weap_s13
+	{
+		magazines[]=
+		{
+			"rhs_mag_s13d_10",
+			"rhs_mag_b13l_s13d",
+			"rhs_mag_b13l1_s13d",
+			"rhs_mag_b13l1_ka52_s13d",
+			"rhs_mag_b13l_bd3_umk2a_s13d"
+		};
+	};
+	class rhs_weap_s13df: rhs_weap_s13
+	{
+		magazines[]=
+		{
+			"rhs_mag_s13df_10",
+			"rhs_mag_b13l_s13df",
+			"rhs_mag_b13l1_s13df",
+			"rhs_mag_b13l1_ka52_s13df",
+			"rhs_mag_b13l_bd3_umk2a_s13df"
+		};
+	};
+	class rhs_weap_s13of: rhs_weap_s13
+	{
+		magazines[]=
+		{
+			"rhs_mag_s13of_10",
+			"rhs_mag_b13l_s13of",
+			"rhs_mag_b13l1_s13of",
+			"rhs_mag_b13l1_ka52_s13of",
+			"rhs_mag_b13l_bd3_umk2a_s13of"
+		};
+	};
+	class rhs_weap_s13t: rhs_weap_s13
+	{
+		magazines[]=
+		{
+			"rhs_mag_s13t_10",
+			"rhs_mag_b13l_s13t",
+			"rhs_mag_b13l1_s13t",
+			"rhs_mag_b13l1_ka52_s13t",
+			"rhs_mag_b13l_bd3_umk2a_s13t"
 		};
 	};
 	class rhs_weap_s24: rhs_weap_s13
 	{
+		magazines[]=
+		{
+			"rhs_mag_apu68m3_s24",
+			"rhs_mag_apu68_bd3_umk2a_s24"
+		};
 		class AI_Burst: AI_Burst
 		{
 			dispersion=0.02;
@@ -21798,10 +23192,24 @@ class CfgWeapons
 			reloadTime=0.079999998;
 			burst=1;
 			salvo=1;
+		};
+	};
+	class rhs_weap_s24b: rhs_weap_s24
+	{
+		magazines[]=
+		{
+			"rhs_mag_apu68m3_s24b",
+			"rhs_mag_apu68_bd3_umk2a_s24b"
 		};
 	};
 	class rhs_weap_s25: rhs_weap_s13
 	{
+		magazines[]=
+		{
+			"rhs_mag_o25l_s25o",
+			"rhs_mag_bd3_usk_a_o25l_s25o",
+			"rhs_mag_bd3_umk2a_o25l_s25o"
+		};
 		class AI_Burst: AI_Burst
 		{
 			dispersion=0.0099999998;
@@ -21818,8 +23226,23 @@ class CfgWeapons
 			salvo=1;
 		};
 	};
+	class rhs_weap_s25of: rhs_weap_s25
+	{
+		magazines[]=
+		{
+			"rhs_mag_o25l_s25of",
+			"rhs_mag_bd3_usk_a_o25l_s25of",
+			"rhs_mag_bd3_umk2a_o25l_s25of"
+		};
+	};
 	class rhs_weap_s25l: rhs_weap_s25
 	{
+		magazines[]=
+		{
+			"rhs_mag_o25l_s25l",
+			"rhs_mag_bd3_usk_a_o25l_s25l",
+			"rhs_mag_bd3_umk2a_o25l_s25l"
+		};
 		cursor="missile";
 		canLock=2;
 		weaponLockSystem=4;
@@ -21833,6 +23256,15 @@ class CfgWeapons
 			};
 		};
 	};
+	class rhs_weap_s25ld: rhs_weap_s25
+	{
+		magazines[]=
+		{
+			"rhs_mag_o25l_s25ld",
+			"rhs_mag_bd3_usk_a_o25l_s25ld",
+			"rhs_mag_bd3_umk2a_o25l_s25ld"
+		};
+	};
 	class Missile_AA_04_Plane_CAS_01_F;
 	class rhs_weap_r27r_Launcher: Missile_AA_04_Plane_CAS_01_F
 	{
@@ -21840,6 +23272,13 @@ class CfgWeapons
 		cursoraim="EmptyCursor";
 		cursorsize=0;
 		displayname="$STR_RHS_R27R_NAME";
+		magazines[]=
+		{
+			"rhs_mag_R27R",
+			"rhs_mag_R27R_APU470",
+			"rhs_mag_R27ER",
+			"rhs_mag_R27ER_APU470"
+		};
 		airateoffire=5;
 		airateoffiredistance=16000;
 		maxrange=22000;
@@ -21868,6 +23307,13 @@ class CfgWeapons
 	class rhs_weap_r27t_Launcher: rhs_weap_r27r_Launcher
 	{
 		displayname="$STR_RHS_R27T_NAME";
+		magazines[]=
+		{
+			"rhs_mag_R27T",
+			"rhs_mag_R27T_APU470",
+			"rhs_mag_R27ET",
+			"rhs_mag_R27ET_APU470"
+		};
 		airateoffire=5;
 		airateoffiredistance=6000;
 		maxrange=20000;
@@ -21886,6 +23332,13 @@ class CfgWeapons
 		cursorsize=0;
 		displayname="$STR_RHS_R60_NAME";
 		canLock=2;
+		magazines[]=
+		{
+			"rhs_mag_R60",
+			"rhs_mag_R60_APU60",
+			"rhs_mag_R60M",
+			"rhs_mag_R60M_APU60"
+		};
 		airateoffire=5;
 		airateoffiredistance=7000;
 		maxrange=7000;
@@ -21916,6 +23369,11 @@ class CfgWeapons
 		cursorsize=0;
 		displayname="$STR_RHS_R73_NAME";
 		canLock=2;
+		magazines[]=
+		{
+			"rhs_mag_R73",
+			"rhs_mag_R73_APU73"
+		};
 		airateoffire=5;
 		airateoffiredistance=10000;
 		maxrange=10000;
@@ -21942,18 +23400,39 @@ class CfgWeapons
 	class rhs_weap_r73m_Launcher: rhs_weap_r73_Launcher
 	{
 		displayname="$STR_RHS_R73M_NAME";
+		magazines[]=
+		{
+			"rhs_mag_R73M",
+			"rhs_mag_R73M_APU73"
+		};
 	};
 	class rhs_weap_r74_Launcher: rhs_weap_r73_Launcher
 	{
 		displayname="$STR_RHS_R74_NAME";
+		magazines[]=
+		{
+			"rhs_mag_R74",
+			"rhs_mag_R74_APU73"
+		};
 	};
 	class rhs_weap_r74m2_Launcher: rhs_weap_r73_Launcher
 	{
 		displayname="$STR_RHS_R74M2_NAME";
+		magazines[]=
+		{
+			"rhs_mag_R74M2",
+			"rhs_mag_R74M2_int"
+		};
 	};
 	class rhs_weap_r77_Launcher: rhs_weap_r74_Launcher
 	{
 		displayname="$STR_RHS_R77_NAME";
+		magazines[]=
+		{
+			"rhs_mag_R77",
+			"rhs_mag_R77_AKU170",
+			"rhs_mag_R77_AKU170_MIG29"
+		};
 		weaponlockdelay=2;
 		airateoffire=5;
 		airateoffiredistance=16000;
@@ -21967,6 +23446,12 @@ class CfgWeapons
 	class rhs_weap_r77m_Launcher: rhs_weap_r77_Launcher
 	{
 		displayname="$STR_RHS_R77M_NAME";
+		magazines[]=
+		{
+			"rhs_mag_R77M",
+			"rhs_mag_R77M_AKU170",
+			"rhs_mag_R77M_AKU170_MIG29"
+		};
 		weaponlockdelay=2;
 	};
 	class Missile_AGM_02_Plane_CAS_01_F;
@@ -21976,6 +23461,10 @@ class CfgWeapons
 		cursoraim="EmptyCursor";
 		cursorsize=0;
 		displayname="$STR_RHS_KH25_NAME";
+		magazines[]=
+		{
+			"rhs_mag_kh25"
+		};
 		airateoffire=5;
 		airateoffiredistance=8000;
 		maxrange=7000;
@@ -21999,10 +23488,21 @@ class CfgWeapons
 	};
 	class rhs_weap_kh25_mig29_Launcher: rhs_weap_kh25_Launcher
 	{
+		magazines[]=
+		{
+			"rhs_mag_kh25_apu68_mig29"
+		};
+		class EventHandlers
+		{
+		};
 	};
 	class rhs_weap_kh25ml_Launcher: rhs_weap_kh25_Launcher
 	{
 		displayname="$STR_RHS_KH25ML_NAME";
+		magazines[]=
+		{
+			"rhs_mag_kh25ml"
+		};
 		maxrange=10000;
 		maxrangeprobab=0.44999999;
 		midrange=5000;
@@ -22012,33 +23512,75 @@ class CfgWeapons
 	};
 	class rhs_weap_kh25ml_mig29_Launcher: rhs_weap_kh25ml_Launcher
 	{
+		magazines[]=
+		{
+			"rhs_mag_kh25ml_apu68_mig29"
+		};
+		class EventHandlers
+		{
+		};
 	};
 	class rhs_weap_kh25ma_Launcher: rhs_weap_kh25ml_Launcher
 	{
 		displayname="$STR_RHS_KH25MA_NAME";
+		magazines[]=
+		{
+			"rhs_mag_kh25ma"
+		};
 		weaponLockSystem=8;
 		weaponLockDelay=1.5;
+		class EventHandlers
+		{
+		};
 	};
 	class rhs_weap_kh25mt_Launcher: rhs_weap_kh25ml_Launcher
 	{
 		displayname="$STR_RHS_KH25MT_NAME";
+		magazines[]=
+		{
+			"rhs_mag_kh25mt",
+			"rhs_mag_kh25mt_apu68_mig29"
+		};
 		weaponLockSystem="CM_Lock_TV";
 		weaponLockDelay=1;
+		class EventHandlers
+		{
+		};
 	};
 	class rhs_weap_kh25mtp_Launcher: rhs_weap_kh25ml_Launcher
 	{
 		displayname="$STR_RHS_KH25MTP_NAME";
+		magazines[]=
+		{
+			"rhs_mag_kh25mtp",
+			"rhs_mag_kh25mtp_apu68_mig29"
+		};
 		weaponLockSystem=2;
 		weaponLockDelay=3;
+		class EventHandlers
+		{
+		};
 	};
 	class rhs_weap_kh25mp_Launcher: rhs_weap_kh25ml_Launcher
 	{
 		displayname="$STR_RHS_KH25MP_NAME";
+		magazines[]=
+		{
+			"rhs_mag_kh25mp",
+			"rhs_mag_kh25mp_apu68_mig29"
+		};
 		weaponLockSystem=0;
+		class EventHandlers
+		{
+		};
 	};
 	class rhs_weap_kh29_Launcher: rhs_weap_kh25_Launcher
 	{
 		displayname="$STR_RHS_KH29L_NAME";
+		magazines[]=
+		{
+			"rhs_mag_kh29l"
+		};
 		airateoffire=5;
 		airateoffiredistance=8000;
 		maxrange=10000;
@@ -22051,38 +23593,84 @@ class CfgWeapons
 	};
 	class rhs_weap_kh29_mig29_Launcher: rhs_weap_kh29_Launcher
 	{
+		magazines[]=
+		{
+			"rhs_mag_kh29l_aku58_mig29"
+		};
+		class EventHandlers
+		{
+		};
 	};
 	class rhs_weap_kh29ml_Launcher: rhs_weap_kh25ml_Launcher
 	{
 		displayname="$STR_RHS_KH29ML_NAME";
+		magazines[]=
+		{
+			"rhs_mag_kh29ml"
+		};
 	};
 	class rhs_weap_kh29ml_mig29_Launcher: rhs_weap_kh29ml_Launcher
 	{
+		magazines[]=
+		{
+			"rhs_mag_kh29ml_aku58_mig29"
+		};
+		class EventHandlers
+		{
+		};
 	};
 	class rhs_weap_kh29t_Launcher: rhs_weap_kh25ml_Launcher
 	{
 		displayname="$STR_RHS_KH29T_NAME";
+		magazines[]=
+		{
+			"rhs_mag_kh29t",
+			"rhs_mag_kh29t_aku58_mig29"
+		};
 		weaponLockSystem=1;
 		weaponLockDelay=2;
 		cmImmunity=0.5;
+		class EventHandlers
+		{
+		};
 	};
 	class rhs_weap_kh29mp_Launcher: rhs_weap_kh25ml_Launcher
 	{
 		displayname="$STR_RHS_KH29MP_NAME";
+		magazines[]=
+		{
+			"rhs_mag_kh29mp",
+			"rhs_mag_kh29mp_aku58_mig29"
+		};
 		weaponLockSystem=8;
 		weaponLockDelay=1.5;
 		cmImmunity=0.30000001;
+		class EventHandlers
+		{
+		};
 	};
 	class rhs_weap_kh29d_Launcher: rhs_weap_kh25ml_Launcher
 	{
 		displayname="$STR_RHS_KH29D_NAME";
+		magazines[]=
+		{
+			"rhs_mag_kh29d"
+		};
 		weaponLockSystem=2;
 		weaponLockDelay=3;
 		cmImmunity=0.30000001;
+		class EventHandlers
+		{
+		};
 	};
 	class rhs_weap_kh38mle_Launcher: rhs_weap_kh29_Launcher
 	{
 		displayname="$STR_RHS_KH38MLE_NAME";
+		magazines[]=
+		{
+			"rhs_mag_kh38mle",
+			"rhs_mag_kh38mle_int"
+		};
 		airateoffire=5;
 		airateoffiredistance=8000;
 		maxrange=10000;
@@ -22091,10 +23679,18 @@ class CfgWeapons
 		midrangeprobab=0.89999998;
 		minrange=2000;
 		minrangeprobab=0.5;
+		class EventHandlers
+		{
+		};
 	};
 	class rhs_weap_kh38mae_Launcher: rhs_weap_kh25ml_Launcher
 	{
 		displayname="$STR_RHS_KH38MAE_NAME";
+		magazines[]=
+		{
+			"rhs_mag_Kh38mae",
+			"rhs_mag_Kh38mae_int"
+		};
 		weaponLockSystem=8;
 		weaponLockDelay=3;
 		cmImmunity=0.30000001;
@@ -22102,6 +23698,11 @@ class CfgWeapons
 	class rhs_weap_kh38mte_Launcher: rhs_weap_kh25ml_Launcher
 	{
 		displayname="$STR_RHS_KH38MTE_NAME";
+		magazines[]=
+		{
+			"rhs_mag_Kh38mte",
+			"rhs_mag_Kh38mte_int"
+		};
 		weaponLockSystem=2;
 		weaponLockDelay=3;
 		cmImmunity=0.30000001;
@@ -22109,6 +23710,17 @@ class CfgWeapons
 	class rhs_weap_kh55sm_Launcher: rhs_weap_kh29_Launcher
 	{
 		displayname="$STR_RHS_MKU56_NAME";
+		magazines[]=
+		{
+			"rhs_mag_kh55sm",
+			"rhs_mag_kh55sm_6",
+			"rhs_mag_kh55sm_nocamo",
+			"rhs_mag_kh55sm_nocamo_6",
+			"rhs_mag_kh55sh",
+			"rhs_mag_kh55sh_6",
+			"rhs_mag_kh55sh_nocamo",
+			"rhs_mag_kh55sh_nocamo_6"
+		};
 		reloadtime=5;
 		class Eventhandlers: EventHandlers
 		{
@@ -22118,11 +23730,19 @@ class CfgWeapons
 			};
 		};
 	};
+	class rhs_weap_kh55sm_dummy_Launcher: rhs_weap_kh55sm_Launcher
+	{
+	};
 	class rhs_weap_9k121_Launcher: rhs_weap_kh55sm_Launcher
 	{
 		airateoffire=5;
 		airateoffiredistance=4000;
 		displayname="9K121M";
+		magazines[]=
+		{
+			"rhs_mag_apu6_9m127_ka52",
+			"rhs_mag_apu6_9m127m_ka52"
+		};
 		canlock=1;
 		reloadtime=1.5;
 		weaponlockdelay=4;
@@ -22145,6 +23765,9 @@ class CfgWeapons
 			burst=2;
 		};
 		holdsterAnimValue=1;
+		class Eventhandlers
+		{
+		};
 	};
 	class rhs_weap_fab250: MissileLauncher
 	{
@@ -22153,6 +23776,15 @@ class CfgWeapons
 		cursorsize=0;
 		displayname="$STR_RHS_FAB250_NAME";
 		magazinereloadtime=0;
+		magazines[]=
+		{
+			"rhs_mag_fab250",
+			"rhs_mag_fab250_ka52",
+			"rhs_mag_fab250_bd3_umk2a",
+			"rhs_mag_fab250_bd3_usk_a",
+			"rhs_mag_fab250_2",
+			"rhs_mag_fab250_4"
+		};
 		canlock=0;
 		airateoffire=1;
 		airateoffiredistance=500;
@@ -22162,17 +23794,83 @@ class CfgWeapons
 		sounds[]={};
 		namesound="";
 	};
+	class rhs_weap_fab250_m62: rhs_weap_fab250
+	{
+		magazines[]=
+		{
+			"rhs_mag_fab250_m62",
+			"rhs_mag_fab250_m62_ka52",
+			"rhs_mag_fab250_m62_bd3_umk2a",
+			"rhs_mag_fab250_m62_bd3_usk_a"
+		};
+	};
+	class rhs_weap_ofab250: rhs_weap_fab250
+	{
+		magazines[]=
+		{
+			"rhs_mag_ofab250",
+			"rhs_mag_ofab250_ka52",
+			"rhs_mag_ofab250_bd3_umk2a",
+			"rhs_mag_ofab250_bd3_usk_a"
+		};
+	};
 	class rhs_weap_rbk250: rhs_weap_fab250
 	{
 		displayname="$STR_RHS_RBK250_NAME";
 	};
+	class rhs_weap_rbk250_ao1: rhs_weap_rbk250
+	{
+		magazines[]=
+		{
+			"rhs_mag_rbk250_ao1",
+			"rhs_mag_rbk250_ao1_ka52",
+			"rhs_mag_rbk250_ao1_bd3_umk2a",
+			"rhs_mag_rbk250_ao1_bd3_usk_a"
+		};
+	};
+	class rhs_weap_rbk250_ptab25: rhs_weap_rbk250
+	{
+		magazines[]=
+		{
+			"rhs_mag_rbk250_ptab25",
+			"rhs_mag_rbk250_ptab25_ka52",
+			"rhs_mag_rbk250_ptab25_bd3_umk2a",
+			"rhs_mag_rbk250_ptab25_bd3_usk_a"
+		};
+	};
+	class rhs_weap_rbk250_zab25t: rhs_weap_rbk250
+	{
+		magazines[]=
+		{
+			"rhs_mag_rbk250_zab25t",
+			"rhs_mag_rbk250_zab25t_ka52",
+			"rhs_mag_rbk250_zab25t_bd3_umk2a",
+			"rhs_mag_rbk250_zab25t_bd3_usk_a"
+		};
+	};
 	class rhs_weap_fab100: rhs_weap_fab250
 	{
 		displayname="$STR_RHS_MAG_FAB100";
+		magazines[]=
+		{
+			"rhs_mag_fab100",
+			"rhs_mag_fab100_ka52",
+			"rhs_mag_fab100_bd3_umk2a",
+			"rhs_mag_fab100_bd3_usk_a",
+			"rhs_mag_fab100_mbd3_u4t",
+			"rhs_mag_fab100_mbd3_u6"
+		};
 		reloadTime=0.1;
 	};
 	class rhs_weap_fab100_mbd3_u4t: rhs_weap_fab100
 	{
+		magazines[]=
+		{
+			"rhs_mag_fab100_mbd3_u4t"
+		};
+		class Single: rhs_weap_fab250
+		{
+		};
 		class Burst: rhs_weap_fab250
 		{
 			minrange=200;
@@ -22183,6 +23881,10 @@ class CfgWeapons
 	};
 	class rhs_weap_fab100_mbd3_u6: rhs_weap_fab100_mbd3_u4t
 	{
+		magazines[]=
+		{
+			"rhs_mag_fab100_mbd3_u6"
+		};
 		class Burst: Burst
 		{
 			burst=6;
@@ -22195,14 +23897,37 @@ class CfgWeapons
 		weaponLockDelay=0.1;
 		weaponLockSystem=4;
 		cmImmunity=0.30000001;
+		magazines[]=
+		{
+			"rhs_mag_kab250",
+			"rhs_mag_kab250_int"
+		};
+		class LoalAltitude: RocketPods
+		{
+		};
 	};
 	class rhs_weap_fab500: rhs_weap_fab250
 	{
 		displayname="$STR_RHS_FAB500_NAME";
+		magazines[]=
+		{
+			"rhs_mag_fab500",
+			"rhs_mag_fab500_bd3_usk_a",
+			"rhs_mag_fab500_bd3_umk2a",
+			"rhs_mag_fab500_ka52",
+			"rhs_mag_fab500_m54",
+			"rhs_mag_fab500_m54_bd3_usk_a",
+			"rhs_mag_fab500_m54_bd3_umk2a",
+			"rhs_mag_fab500_m54_ka52"
+		};
 	};
 	class rhs_weap_ptb1150: rhs_weap_fab250
 	{
 		displayname="$STR_RHS_PTB1150_NAME";
+		magazines[]=
+		{
+			"rhs_mag_ptb1150_ptb"
+		};
 		airateoffire=1;
 		airateoffiredistance=200;
 		minrange=100;
@@ -22213,26 +23938,109 @@ class CfgWeapons
 	class rhs_weap_kab500: rhs_weap_kab250
 	{
 		displayname="$STR_RHS_KAB500_NAME";
+		magazines[]=
+		{
+			"rhs_mag_kab500",
+			"rhs_mag_kab500_bd3_umk2a"
+		};
 	};
 	class rhs_weap_kab500lk: rhs_weap_kab250
 	{
 		displayname="$STR_RHS_KAB500LK_NAME";
+		magazines[]=
+		{
+			"rhs_mag_kab500lk",
+			"rhs_mag_kab500lk_bd3_umk2a"
+		};
 	};
 	class rhs_weap_kab500KR: rhs_weap_kab250
 	{
 		displayname="$STR_RHS_KAB500KR_NAME";
+		magazines[]=
+		{
+			"rhs_mag_kab500KR",
+			"rhs_mag_kab500KR_bd3_umk2a"
+		};
+		class Direct: rhs_weap_fab500
+		{
+		};
 	};
 	class rhs_weap_kab500OD: rhs_weap_kab250
 	{
 		displayname="$STR_RHS_KAB500OD_NAME";
+		magazines[]=
+		{
+			"rhs_mag_kab500OD",
+			"rhs_mag_kab500OD_bd3_umk2a"
+		};
+		class Direct: rhs_weap_fab500
+		{
+		};
 	};
 	class rhs_weap_rbk500: rhs_weap_fab500
 	{
 		displayname="$STR_RHS_RBK500_NAME";
 	};
+	class rhs_weap_rbk500_ao25: rhs_weap_rbk500
+	{
+		magazines[]=
+		{
+			"rhs_mag_rbk500_ao25",
+			"rhs_mag_rbk500_ao25_ka52",
+			"rhs_mag_rbk500_ao25_bd3_umk2a",
+			"rhs_mag_rbk500_ao25_bd3_usk_a"
+		};
+	};
+	class rhs_weap_rbk500_ofab50: rhs_weap_rbk500
+	{
+		magazines[]=
+		{
+			"rhs_mag_rbk500_ofab50",
+			"rhs_mag_rbk500_ofab50_ka52",
+			"rhs_mag_rbk500_ofab50_bd3_umk2a",
+			"rhs_mag_rbk500_ofab50_bd3_usk_a"
+		};
+	};
+	class rhs_weap_rbk500_spbed: rhs_weap_rbk500
+	{
+		magazines[]=
+		{
+			"rhs_mag_rbk500_spbed",
+			"rhs_mag_rbk500_spbed_ka52",
+			"rhs_mag_rbk500_spbed_bd3_umk2a",
+			"rhs_mag_rbk500_spbed_bd3_usk_a"
+		};
+	};
+	class rhs_weap_rbk500_ptab1m: rhs_weap_rbk500
+	{
+		magazines[]=
+		{
+			"rhs_mag_rbk500_ptab1m",
+			"rhs_mag_rbk500_ptab1m_ka52",
+			"rhs_mag_rbk500_ptab1m_bd3_umk2a",
+			"rhs_mag_rbk500_ptab1m_bd3_usk_a"
+		};
+	};
+	class rhs_weap_rbk500_zab25t: rhs_weap_rbk500
+	{
+		magazines[]=
+		{
+			"rhs_mag_rbk500_zab25t",
+			"rhs_mag_rbk500_zab25t_ka52",
+			"rhs_mag_rbk500_zab25t_bd3_umk2a",
+			"rhs_mag_rbk500_zab25t_bd3_usk_a"
+		};
+	};
 	class rhs_weap_kmgu2: rhs_weap_fab250
 	{
 		displayname="$STR_RHS_KMGU2_NAME";
+		magazines[]=
+		{
+			"rhs_mag_kmgu2",
+			"rhs_mag_kmgu2_ka52",
+			"rhs_mag_kmgu2_bd3_umk2a",
+			"rhs_mag_kmgu2_bd3_usk_a"
+		};
 		airateoffire=1;
 		airateoffiredistance=200;
 		minrange=100;
@@ -22258,8 +24066,62 @@ class CfgWeapons
 			reloadTime=1.5;
 		};
 	};
+	class rhs_weap_kmgu2_ptab1m: rhs_weap_kmgu2
+	{
+		magazines[]=
+		{
+			"rhs_mag_kmgu2_ptab1m",
+			"rhs_mag_kmgu2_ptab1m_bd3_umk2a",
+			"rhs_mag_kmgu2_ptab1m_ka52"
+		};
+	};
+	class rhs_weap_kmgu2_ao25: rhs_weap_kmgu2
+	{
+		magazines[]=
+		{
+			"rhs_mag_kmgu2_ao25",
+			"rhs_mag_kmgu2_ao25_bd3_umk2a",
+			"rhs_mag_kmgu2_ao25_ka52"
+		};
+	};
+	class rhs_weap_kmgu2_ptm1: rhs_weap_kmgu2
+	{
+		magazines[]=
+		{
+			"rhs_mag_kmgu2_ptm1",
+			"rhs_mag_kmgu2_ptm1_bd3_umk2a",
+			"rhs_mag_kmgu2_ptm1_ka52"
+		};
+	};
+	class rhs_weap_kmgu2_pfm1: rhs_weap_kmgu2
+	{
+		magazines[]=
+		{
+			"rhs_mag_kmgu2_pfm1",
+			"rhs_mag_kmgu2_pfm1_bd3_umk2a",
+			"rhs_mag_kmgu2_pfm1_ka52"
+		};
+	};
+	class rhs_weap_DummyLauncher: MissileLauncher
+	{
+		magazines[]=
+		{
+			"rhs_mag_ptb1500"
+		};
+	};
 	class Put: Default
 	{
+		class PutMuzzle: Default
+		{
+		};
+		class Rhs_SmallMine_Muzzle: PutMuzzle
+		{
+			magazines[]=
+			{
+				"rhs_mag_mine_pfm1",
+				"rhs_mag_mine_ptm1"
+			};
+		};
 	};
 };
 class CfgNonAIVehicles

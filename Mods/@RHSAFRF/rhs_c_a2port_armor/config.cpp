@@ -60,6 +60,9 @@ class CfgFunctions
 	class RHS
 	{
 		tag="RHS";
+		class functions
+		{
+		};
 	};
 };
 class CfgVehicles
@@ -68,6 +71,9 @@ class CfgVehicles
 	class Tank: LandVehicle
 	{
 		class NewTurret;
+		class Sounds;
+		class HitPoints;
+	};
 	class Tank_F: Tank
 	{
 		class Turrets
@@ -76,6 +82,9 @@ class CfgVehicles
 			{
 				class Turrets
 				{
+					class CommanderOptics;
+				};
+			};
 		};
 		class AnimationSources;
 		class ViewPilot;
@@ -86,8 +95,14 @@ class CfgVehicles
 		{
 			class HitHull;
 			class HitEngine;
+			class HitLTrack;
+			class HitRTrack;
+		};
 		class Sounds: Sounds
 		{
+			class Engine;
+			class Movement;
+		};
 		class EventHandlers;
 	};
 	class APC_Tracked_02_base_F: Tank_F
@@ -110,6 +125,9 @@ class CfgVehicles
 			class HitLF2Wheel;
 			class HitRFWheel;
 			class HitRBWheel;
+			class HitRMWheel;
+			class HitRF2Wheel;
+		};
 	};
 	class Wheeled_APC_F: Car_F
 	{
@@ -117,6 +135,9 @@ class CfgVehicles
 		class ViewCargo;
 		class Sounds: Sounds
 		{
+			class Engine;
+			class Movement;
+		};
 		class NewTurret;
 		class Turrets
 		{
@@ -125,9 +146,18 @@ class CfgVehicles
 				class ViewOptics;
 				class Turrets
 				{
+					class CommanderOptics;
+				};
+			};
 		};
+		class EventHandlers;
+		class CommanderOptics;
+	};
 	class rhs_btr_base: Wheeled_APC_F
 	{
+		class HitPoints: HitPoints
+		{
+		};
 		class AnimationSources;
 		class Attributes
 		{
@@ -158,6 +188,9 @@ class CfgVehicles
 			class wheel_1_unhide;
 			class rhs_disableHabar;
 			class driverViewHatch;
+			class commanderViewHatch;
+			class rhs_externalMount;
+		};
 		class ViewPilot;
 	};
 	class rhs_btr60_base: rhs_btr_base
@@ -289,10 +322,16 @@ class CfgVehicles
 					{1,1}
 				};
 			};
+			class LR: LF
+			{
+			};
 			class LR2: LR
 			{
 				steering=0;
 				maxHandBrakeTorque=10000;
+			};
+			class LR3: LR2
+			{
 			};
 			class RF: LF
 			{
@@ -300,10 +339,16 @@ class CfgVehicles
 				side="right";
 				suspTravelDirection[]={0.125,-1,0};
 			};
+			class RR: RF
+			{
+			};
 			class RR2: RR
 			{
 				steering=0;
 				maxHandBrakeTorque=10000;
+			};
+			class RR3: RR2
+			{
 			};
 		};
 		class textureSources
@@ -331,6 +376,72 @@ class CfgVehicles
 		};
 		class Attributes: Attributes
 		{
+			class rhs_decalNumber_type: rhs_decalNumber_type
+			{
+			};
+			class rhs_decalNumber: rhs_decalNumber
+			{
+			};
+			class rhs_decalPlatoon_type: rhs_decalPlatoon_type
+			{
+			};
+			class rhs_decalPlatoon: rhs_decalPlatoon
+			{
+			};
+			class rhs_decalArmy_type: rhs_decalArmy_type
+			{
+			};
+			class rhs_decalArmy: rhs_decalArmy
+			{
+			};
+			class rhs_decalRightTurret_type: rhs_decalRightTurret_type
+			{
+			};
+			class rhs_decalRightTurret: rhs_decalRightTurret
+			{
+			};
+			class rhs_decalFront_type: rhs_decalFront_type
+			{
+			};
+			class rhs_decalFront: rhs_decalFront
+			{
+			};
+			class rhs_decalVV_type: rhs_decalVV_type
+			{
+			};
+			class rhs_decalVV: rhs_decalVV
+			{
+			};
+			class crate_l1_unhide: crate_l1_unhide
+			{
+			};
+			class crate_l2_unhide: crate_l2_unhide
+			{
+			};
+			class crate_l3_unhide: crate_l3_unhide
+			{
+			};
+			class crate_r1_unhide: crate_r1_unhide
+			{
+			};
+			class crate_r2_unhide: crate_r2_unhide
+			{
+			};
+			class wheel_1_unhide: wheel_1_unhide
+			{
+			};
+			class rhs_disableHabar: rhs_disableHabar
+			{
+			};
+			class driverViewHatch: driverViewHatch
+			{
+			};
+			class commanderViewHatch: commanderViewHatch
+			{
+			};
+			class rhs_externalMount: rhs_externalMount
+			{
+			};
 		};
 		rhs_randomizedHabar[]=
 		{
@@ -490,6 +601,25 @@ class CfgVehicles
 					"rhs_weap_kpvt",
 					"rhs_weap_pkt_btr"
 				};
+				magazines[]=
+				{
+					"rhs_mag_145x115mm_50",
+					"rhs_mag_145x115mm_50",
+					"rhs_mag_145x115mm_50",
+					"rhs_mag_145x115mm_50",
+					"rhs_mag_145x115mm_50",
+					"rhs_mag_145x115mm_50",
+					"rhs_mag_145x115mm_50",
+					"rhs_mag_145x115mm_50",
+					"rhs_mag_145x115mm_50",
+					"rhs_mag_145x115mm_50",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250"
+				};
 				minElev=-5;
 				maxElev=30;
 				minTurn=-360;
@@ -572,6 +702,12 @@ class CfgVehicles
 							"Normal"
 						};
 					};
+					class Night: Wide
+					{
+					};
+				};
+				class Turrets
+				{
 				};
 			};
 			class CommanderOptics: CommanderOptics
@@ -716,9 +852,15 @@ class CfgVehicles
 				{
 					"rhs_weap_DummyLauncher"
 				};
+				class Hitpoints
+				{
+				};
 			};
 		};
 		rhs_topPositions[]={9,10,11,12,13,14,15,16};
+		class Damage
+		{
+		};
 		class EventHandlers: EventHandlers
 		{
 			class RHS_EventHandlers
@@ -853,6 +995,9 @@ class CfgVehicles
 		};
 		class Wheels
 		{
+			class L2
+			{
+				suspTravelDirection[]={-0.125,-1,0};
 				side="left";
 				steering=0;
 				width=0.33000001;
@@ -878,6 +1023,21 @@ class CfgVehicles
 					{0.60000002,0.60000002}
 				};
 			};
+			class L3: L2
+			{
+			};
+			class L4: L2
+			{
+			};
+			class L5: L2
+			{
+			};
+			class L6: L2
+			{
+			};
+			class L7: L2
+			{
+			};
 			class L9: L2
 			{
 				maxDroop=0;
@@ -892,6 +1052,21 @@ class CfgVehicles
 			{
 				side="right";
 				suspTravelDirection[]={0.125,-1,0};
+			};
+			class R3: R2
+			{
+			};
+			class R4: R2
+			{
+			};
+			class R5: R2
+			{
+			};
+			class R6: R2
+			{
+			};
+			class R7: R2
+			{
 			};
 			class R9: R2
 			{
@@ -987,6 +1162,12 @@ class CfgVehicles
 				{
 					"rhs_faction_vpvo"
 				};
+			};
+			class Chdkz
+			{
+			};
+			class rhs_sand
+			{
 			};
 		};
 		class Attributes
@@ -1092,6 +1273,9 @@ class CfgVehicles
 						maxVerticalRotSpeed=2;
 						class OpticsIn
 						{
+							class Wide: ViewOptics
+							{
+							};
 							class Periscope: ViewOptics
 							{
 								initAngleX=0;
@@ -1117,6 +1301,9 @@ class CfgVehicles
 						};
 						class Components
 						{
+							class AICarSteeringComponent
+							{
+								steeringPIDWeights[]={1.2,0.1,0.2};
 								speedPIDWeights[]={1.7,1.3,1.1};
 								doRemapSpeed=1;
 								remapSpeedRange[]={40,50};
@@ -1234,6 +1421,10 @@ class CfgVehicles
 				{
 					"RHS_weap_AZP23"
 				};
+				magazines[]=
+				{
+					"rhs_mag_AZP23_2000"
+				};
 				forceHideGunner=0;
 				minElev=-4.5;
 				maxElev=85;
@@ -1317,6 +1508,9 @@ class CfgVehicles
 				};
 			};
 		};
+		class Damage
+		{
+		};
 		class Exhausts
 		{
 			class Exhaust1
@@ -1367,5 +1561,8 @@ class CfgVehicles
 				getOut="_this call rhs_fnc_hatchAbandon";
 			};
 		};
+	};
+	class rhs_zsu234_aa: rhs_zsutank_base
+	{
 	};
 };

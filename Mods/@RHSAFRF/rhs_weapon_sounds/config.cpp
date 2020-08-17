@@ -1,5 +1,8 @@
 class CfgPatches
 {
+	class RHS_weapon_sounds
+	{
+		units[]={};
 		weapons[]={};
 		version="0.1";
 		name="AFRF Sounds";
@@ -6842,23 +6845,44 @@ class CfgWeapons
 {
 	class Rifle_Base_F;
 	class Pistol_Base_F;
+	class arifle_MX_Base_F: Rifle_Base_F
+	{
+	};
 	class Rifle_Short_Base_F;
 	class Rifle_Long_Base_F;
 	class UGL_F;
 	class srifle_EBR_F;
 	class LMG_Mk200_F;
 	class MGun;
+	class LMG_RCWS: MGun
+	{
+	};
 	class SMG_02_base_F: Rifle_Short_Base_F
 	{
 		class Single;
+		class FullAuto;
+		class WeaponSlotsInfo;
+	};
 	class Launcher;
+	class Launcher_Base_F: Launcher
+	{
+	};
 	class launch_O_Titan_F;
 	class pdw2000_base_F;
 	class hgun_PDW2000_F: pdw2000_base_F
 	{
 		class Single;
+		class FullAuto;
+		class WeaponSlotsInfo;
+	};
 	class rhs_weap_pp2000: hgun_PDW2000_F
 	{
+		class Single: Single
+		{
+		};
+		class FullAuto: FullAuto
+		{
+		};
 	};
 	class rhs_weap_ak74m_Base_F: Rifle_Base_F
 	{
@@ -6884,6 +6908,9 @@ class CfgWeapons
 				};
 			};
 		};
+	};
+	class rhs_weap_ak74m: rhs_weap_ak74m_Base_F
+	{
 	};
 	class rhs_weap_akm: rhs_weap_ak74m
 	{
@@ -6912,9 +6939,24 @@ class CfgWeapons
 	};
 	class rhs_pkp_base: Rifle_Long_Base_F
 	{
+		class Single: Mode_SemiAuto
+		{
+		};
+		class FullAuto: Mode_FullAuto
+		{
+		};
+	};
+	class rhs_weap_pkp: rhs_pkp_base
+	{
+	};
+	class PKT: MGun
+	{
 	};
 	class rhs_weap_pkt: PKT
 	{
+		class manual: MGun
+		{
+		};
 	};
 	class rhs_weap_svd: rhs_weap_ak74m
 	{

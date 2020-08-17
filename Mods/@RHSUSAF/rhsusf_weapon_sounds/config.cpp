@@ -1,5 +1,8 @@
 class CfgPatches
 {
+	class rhsusf_weapon_sounds
+	{
+		units[]={};
 		weapons[]={};
 		version="0.1";
 		name="USF Sounds";
@@ -9834,13 +9837,34 @@ class CfgWeapons
 		class Eventhandlers;
 	};
 	class Pistol_Base_F;
+	class arifle_MX_Base_F: Rifle_Base_F
+	{
+	};
+	class Rifle_Short_Base_F: Rifle_Base_F
+	{
+	};
+	class Rifle_Long_Base_F: Rifle_Base_F
+	{
+	};
 	class UGL_F;
 	class srifle_EBR_F;
+	class LMG_Mk200_F: Rifle_Long_Base_F
+	{
+	};
 	class MGun;
+	class LMG_RCWS: MGun
+	{
+	};
 	class SMG_02_base_F: Rifle_Short_Base_F
 	{
 		class Single;
+		class FullAuto;
+		class WeaponSlotsInfo;
+	};
 	class Launcher;
+	class Launcher_Base_F: Launcher
+	{
+	};
 	class launch_O_Titan_F;
 	class rhsusf_weap_MP7A1_base_f: SMG_02_base_F
 	{
@@ -9871,9 +9895,15 @@ class CfgWeapons
 	};
 	class rhs_weap_M590_5RD: Rifle_Base_F
 	{
+		class Single: Mode_SemiAuto
+		{
+		};
 	};
 	class rhs_weap_M590_8RD: rhs_weap_M590_5RD
 	{
+		class Single: Single
+		{
+		};
 	};
 	class rhs_weap_XM2010_Base_F: Rifle_Base_F
 	{
@@ -9919,6 +9949,9 @@ class CfgWeapons
 	};
 	class rhs_weap_SCAR_Base: arifle_MX_Base_F
 	{
+		class Single;
+		class FullAuto;
+	};
 	class rhs_weap_SCAR_L_Base: rhs_weap_SCAR_Base
 	{
 		class Single: Single
@@ -9971,6 +10004,9 @@ class CfgWeapons
 	};
 	class rhs_weap_M249_base: LMG_Mk200_F
 	{
+		class Eventhandlers: Eventhandlers
+		{
+		};
 	};
 	class rhs_weap_m240_base: rhs_weap_M249_base
 	{
@@ -9998,7 +10034,22 @@ class CfgWeapons
 		class manual;
 		class close;
 		class short;
+		class medium;
+		class far;
+	};
 	class rhs_weap_m240veh: LMG_M200
+	{
+		class manual: manual
+		{
+		};
+		class far: far
+		{
+		};
+	};
+	class HMG_127: LMG_RCWS
+	{
+	};
+	class HMG_01: HMG_127
 	{
 	};
 	class HMG_M2: HMG_01
@@ -10006,14 +10057,35 @@ class CfgWeapons
 		class manual;
 		class close;
 		class short;
+		class medium;
+		class far;
+	};
 	class RHS_M2_Abrams_Commander: HMG_M2
 	{
+		class manual: manual
+		{
+		};
+		class far: far
+		{
+		};
 	};
 	class RHS_M2_Abrams_Gunner: HMG_M2
 	{
+		class manual: manual
+		{
+		};
+		class far: far
+		{
+		};
 	};
 	class RHS_M2: HMG_M2
 	{
+		class manual: manual
+		{
+		};
+		class far: far
+		{
+		};
 	};
 	class autocannon_Base_F;
 	class autocannon_30mm_CTWS: autocannon_Base_F
@@ -10023,22 +10095,41 @@ class CfgWeapons
 			class player;
 			class close;
 			class short;
+			class medium;
+			class far;
+		};
 		class AP: autocannon_Base_F
 		{
 			class player;
 			class close;
 			class short;
+			class medium;
+			class far;
+		};
 	};
 	class RHS_weap_M242BC: autocannon_30mm_CTWS
 	{
 		class HE: HE
 		{
+			class player: player
+			{
+			};
+			class far: far
+			{
+			};
 		};
 		class AP: AP
 		{
+			class player: player
+			{
+			};
+			class far: far
+			{
+			};
 		};
 	};
 };
+class CfgSounds;  //found empty after stripping
 	class rhsusf_beltIntake_m249
 	{
 		name="rhsusf_beltIntake_m249";

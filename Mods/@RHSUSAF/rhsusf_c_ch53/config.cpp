@@ -1,5 +1,8 @@
 class CfgPatches
 {
+	class rhsusf_c_ch53
+	{
+		weapons[]={};
 		units[]=
 		{
 			"rhsusf_CH53E_USMC",
@@ -148,6 +151,12 @@ class CfgVehicles
 			class HitEngine;
 			class HitAvionics;
 			class HitVRotor;
+			class HitHRotor;
+			class HitFuel;
+		};
+		class Eventhandlers;
+		class Components;
+	};
 	class Helicopter_Base_H: Helicopter_Base_F
 	{
 		class RotorLibHelicopterProperties;
@@ -156,6 +165,9 @@ class CfgVehicles
 		{
 			class MainTurret;
 		};
+		class AnimationSources;
+		class Components;
+	};
 	class rhsusf_CH53E_USMC: Helicopter_Base_H
 	{
 		rhs_decalParameters[]=
@@ -1007,6 +1019,9 @@ class CfgVehicles
 		};
 		class SoundsExt
 		{
+			class SoundEvents
+			{
+			};
 			class Sounds
 			{
 				class EngineExt
@@ -1456,6 +1471,9 @@ class CfgVehicles
 				name="glass17";
 			};
 		};
+		class Damage
+		{
+		};
 		class MFD
 		{
 			class rhsusf_CH53_HUD_1
@@ -1516,6 +1534,9 @@ class CfgVehicles
 						pos0[]={0,0};
 						pos10[]={0.25,0.25};
 					};
+					class Level0
+					{
+						pos0[]={0.5,0.5};
 						pos10[]={0.77999997,0.77999997};
 						angle=0;
 					};
@@ -1664,8 +1685,14 @@ class CfgVehicles
 						angle=-90;
 					};
 				};
+				class Draw
+				{
+					color[]={0.18000001,1,0.18000001};
 					alpha=1;
 					condition="on";
+					class Horizont
+					{
+						clipTL[]={0.15000001,0.15000001};
 						clipBR[]={0.85000002,0.85000002};
 						class Dimmed
 						{
@@ -4633,6 +4660,9 @@ class CfgVehicles
 							{}
 						};
 					};
+					class RadarAltitudeBand
+					{
+						clipTL[]={0,0.2};
 						clipBR[]={1,0.80000001};
 						class radarbanda
 						{
@@ -4784,6 +4814,9 @@ class CfgVehicles
 							}
 						};
 					};
+					class HeadingScale_LEFT
+					{
+						clipTL[]={0,0};
 						clipBR[]={0.44999999,1};
 						class Heading_group
 						{
@@ -4820,6 +4853,9 @@ class CfgVehicles
 							};
 						};
 					};
+					class HeadingScale_RIGHT
+					{
+						clipTL[]={0.55000001,0};
 						clipBR[]={1,1};
 						class Heading_group
 						{
@@ -4984,6 +5020,9 @@ class CfgVehicles
 						pos10[]={0.25299999,0.25299999};
 					};
 				};
+				class Draw
+				{
+					color[]={0.18000001,1,0.18000001};
 					alpha=1;
 					condition="on";
 					class PlaneMovementCrosshair
@@ -5268,9 +5307,25 @@ class CfgVehicles
 			maxMainRotorStress=570000;
 			maxTailRotorStress=120000;
 		};
+		class Eventhandlers: Eventhandlers
+		{
+		};
 		weapons[]=
 		{
 			"rhsusf_weap_ANAAQ24"
+		};
+		magazines[]=
+		{
+			"rhsusf_mag_DIRCM",
+			"rhsusf_mag_DIRCM",
+			"rhsusf_mag_DIRCM",
+			"rhsusf_mag_DIRCM",
+			"rhsusf_mag_DIRCM",
+			"rhsusf_mag_DIRCM",
+			"rhsusf_mag_DIRCM",
+			"rhsusf_mag_DIRCM",
+			"rhsusf_mag_DIRCM",
+			"rhsusf_mag_DIRCM"
 		};
 		numberPhysicalWheels=3;
 		class Components: Components
@@ -5334,6 +5389,12 @@ class CfgVehicles
 						animDirection="ObsGun";
 						angleRangeHorizontal=98;
 						angleRangeVertical=72;
+					};
+					class LaserSensorComponent: SensorTemplateLaser
+					{
+					};
+					class PassiveRadarSensorComponent: SensorTemplatePassiveRadar
+					{
 					};
 				};
 			};
@@ -5400,6 +5461,9 @@ class CfgVehicles
 					};
 				};
 			};
+			class TransportCountermeasuresComponent
+			{
+			};
 		};
 		class CargoTurret;
 		class Turrets: Turrets
@@ -5421,6 +5485,10 @@ class CfgVehicles
 				weapons[]=
 				{
 					"rhs_weap_laserDesignator_AI"
+				};
+				magazines[]=
+				{
+					"rhs_LaserMag_ai"
 				};
 				precisegetinout=0;
 				usePiP=1;
@@ -5637,6 +5705,9 @@ class CfgVehicles
 		slingLoadMaxCargoMass=14000;
 		class MarkerLights
 		{
+			class PositionRed
+			{
+				color[]={0.80000001,0,0};
 				ambient[]={0.079999998,0,0};
 				intensity=75;
 				name="PositionLight_red_1_pos";
@@ -5657,13 +5728,22 @@ class CfgVehicles
 					hardLimitEnd=1;
 				};
 			};
+			class PositionGreen: PositionRed
+			{
+				color[]={0,0.80000001,0};
 				ambient[]={0,0.079999998,0};
 				name="PositionLight_green_1_pos";
 			};
+			class PositionWhite: PositionRed
+			{
+				color[]={1,1,1};
 				ambient[]={0.1,0.1,0.1};
 				name="PositionLight_white_1_pos";
 				drawLightSize=0.2;
 			};
+			class CollisionRed: PositionRed
+			{
+				color[]={0.89999998,0.15000001,0.1};
 				ambient[]={0.090000004,0.015,0.0099999998};
 				name="CollisionLight_red_1_pos";
 				blinking=1;
@@ -5672,6 +5752,9 @@ class CfgVehicles
 				drawLightSize=0.25;
 				drawLightCenterSize=0.079999998;
 			};
+			class CollisionWhite: PositionRed
+			{
+				color[]={1,1,1};
 				ambient[]={0.1,0.1,0.1};
 				name="CollisionLight_white_1_pos";
 				blinking=1;
@@ -5795,6 +5878,9 @@ class CfgVehicles
 	{
 		class Turrets: Turrets
 		{
+			class CopilotTurret: CopilotTurret
+			{
+			};
 			class GAU21: MainTurret
 			{
 				usePiP=0;
@@ -5817,6 +5903,12 @@ class CfgVehicles
 				weapons[]=
 				{
 					"rhs_weap_gau21_1"
+				};
+				magazines[]=
+				{
+					"rhs_mag_300rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_300rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_300rnd_127x99_mag_Tracer_Red"
 				};
 				preciseGetInOut=0;
 				commanding=-2;
@@ -5849,6 +5941,9 @@ class CfgVehicles
 				};
 				class OpticsIn
 				{
+					class ViewOptics: ViewGunner
+					{
+					};
 				};
 				memoryPointGun="muzzle_1";
 				soundAttenuationTurret="HeliAttenuationGunner";
@@ -5885,6 +5980,9 @@ class CfgVehicles
 							};
 						};
 					};
+				};
+				class Hitpoints
+				{
 				};
 			};
 		};
@@ -5965,12 +6063,21 @@ class CfgVehicles
 		};
 		class Turrets: Turrets
 		{
+			class CopilotTurret: CopilotTurret
+			{
+			};
+			class GAU21: GAU21
+			{
+			};
 		};
 	};
 	class rhsusf_CH53e_USMC_cargo: rhsusf_CH53E_USMC
 	{
 		class Turrets: Turrets
 		{
+			class CopilotTurret: CopilotTurret
+			{
+			};
 		};
 		class VehicleTransport: VehicleTransport
 		{
@@ -5988,6 +6095,9 @@ class CfgVehicles
 	{
 		class Turrets: Turrets
 		{
+			class CopilotTurret: CopilotTurret
+			{
+			};
 		};
 		class VehicleTransport: VehicleTransport
 		{

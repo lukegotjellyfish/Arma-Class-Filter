@@ -130,6 +130,9 @@ class CfgVehicles
 		{
 			class MainTurret: NewTurret
 			{
+				class ViewOptics;
+			};
+		};
 		class HitPoints
 		{
 			class HitFuel;
@@ -143,7 +146,13 @@ class CfgVehicles
 			class HitGlass2;
 			class HitGlass3;
 			class HitGlass4;
+			class HitGlass5;
+			class HitGlass6;
+		};
 		class ViewOptics;
+		class EventHandlers;
+		class Components;
+	};
 	class MRAP_01_base_F: Car_F
 	{
 		class EventHandlers;
@@ -155,6 +164,10 @@ class CfgVehicles
 		{
 			"TruckHorn2",
 			"rhsusf_weap_duke"
+		};
+		magazines[]=
+		{
+			"rhsusf_mag_duke"
 		};
 		driverRightLegAnimName="pedalR";
 		damageResistance=9.9999997e-005;
@@ -207,6 +220,9 @@ class CfgVehicles
 			{
 				class Components
 				{
+					class DataLinkSensorComponent: SensorTemplateDataLink
+					{
+					};
 				};
 			};
 			class VehicleSystemsDisplayManagerComponentLeft
@@ -268,13 +284,25 @@ class CfgVehicles
 				helmetRight[]={0.075000003,0,0};
 				helmetDown[]={0,-0.075000003,0};
 				font="rhsusf_txled";
+				class material
+				{
+					ambient[]={33,33,33,1};
 					diffuse[]={31,31,31,1};
 					emissive[]={400,200,200,1};
 				};
 				class Bones
 				{
+					class Sensor_Offset
+					{
+						pos[]={0.5,0.47999999};
 					};
+					class Static_Offset
+					{
+						pos[]={0.5,0.5};
 					};
+					class LimitWaypoint
+					{
+						limits[]={0.22,0.059999999,0.77999997,0.059999999};
 					};
 					class Sensor_Rotation
 					{
@@ -292,7 +320,13 @@ class CfgVehicles
 						pos0[]={0.5,0.5};
 						pos10[]={0.70999998,0.764};
 					};
+					class Direction_Center
+					{
+						pos[]={0.5,0.5};
 					};
+					class Rotation_WP_Dir
+					{
+						pos0[]={0,0};
 						pos10[]={0,0};
 						source="user";
 						sourceIndex=10;
@@ -302,6 +336,9 @@ class CfgVehicles
 						maxAngle=-360;
 						aspectRatio=1;
 					};
+					class Rotation_WP_Center
+					{
+						pos0[]={0,0};
 						pos10[]={0,0};
 						source="heading";
 						min=0;
@@ -422,14 +459,23 @@ class CfgVehicles
 					color[]={0,0,0.12};
 					class StaticClip
 					{
+						class WaypointGroup
+						{
+							color[]={0,0,0.12};
 							alpha=0.60000002;
 							class WP
 							{
 								condition="wpvalid";
+								class Draw
+								{
+									points[]={};
 								};
 								class WP1
 								{
 									condition="user26>=0";
+									class CurrentWaypoint
+									{
+										color[]={0.89999998,0,0};
 										alpha=1;
 										condition="1-WPIndex";
 										class WaypointShape
@@ -1233,6 +1279,9 @@ class CfgVehicles
 								class WP2
 								{
 									condition="user28>=0";
+									class CurrentWaypoint
+									{
+										color[]={0.89999998,0,0};
 										alpha=1;
 										condition="(WPIndex>=1)*(WPIndex<=1)";
 										class WaypointShape
@@ -2058,6 +2107,9 @@ class CfgVehicles
 								class WP3
 								{
 									condition="user30>=0";
+									class CurrentWaypoint
+									{
+										color[]={0.89999998,0,0};
 										alpha=1;
 										condition="(WPIndex>=2)*(WPIndex<=2)";
 										class WaypointShape
@@ -2883,6 +2935,9 @@ class CfgVehicles
 								class WP4
 								{
 									condition="user32>=0";
+									class CurrentWaypoint
+									{
+										color[]={0.89999998,0,0};
 										alpha=1;
 										condition="(WPIndex>=3)*(WPIndex<=3)";
 										class WaypointShape
@@ -3708,6 +3763,9 @@ class CfgVehicles
 								class WP5
 								{
 									condition="user34>=0";
+									class CurrentWaypoint
+									{
+										color[]={0.89999998,0,0};
 										alpha=1;
 										condition="(WPIndex>=4)*(WPIndex<=4)";
 										class WaypointShape
@@ -4533,6 +4591,9 @@ class CfgVehicles
 								class WP6
 								{
 									condition="user36>=0";
+									class CurrentWaypoint
+									{
+										color[]={0.89999998,0,0};
 										alpha=1;
 										condition="(WPIndex>=5)*(WPIndex<=5)";
 										class WaypointShape
@@ -5358,6 +5419,9 @@ class CfgVehicles
 								class WP7
 								{
 									condition="user38>=0";
+									class CurrentWaypoint
+									{
+										color[]={0.89999998,0,0};
 										alpha=1;
 										condition="(WPIndex>=6)*(WPIndex<=6)";
 										class WaypointShape
@@ -6183,6 +6247,9 @@ class CfgVehicles
 								class WP8
 								{
 									condition="user40>=0";
+									class CurrentWaypoint
+									{
+										color[]={0.89999998,0,0};
 										alpha=1;
 										condition="(WPIndex>=7)*(WPIndex<=7)";
 										class WaypointShape
@@ -7008,6 +7075,9 @@ class CfgVehicles
 								class WP9
 								{
 									condition="user42>=0";
+									class CurrentWaypoint
+									{
+										color[]={0.89999998,0,0};
 										alpha=1;
 										condition="(WPIndex>=8)*(WPIndex<=8)";
 										class WaypointShape
@@ -7833,6 +7903,9 @@ class CfgVehicles
 								class WP10
 								{
 									condition="user44>=0";
+									class CurrentWaypoint
+									{
+										color[]={0.89999998,0,0};
 										alpha=1;
 										condition="(WPIndex>=9)*(WPIndex<=9)";
 										class WaypointShape
@@ -9082,6 +9155,9 @@ class CfgVehicles
 							};
 						};
 					};
+					class LightBlue
+					{
+						color[]={0.43000001,0.80000001,0.93000001};
 						alpha=0.15000001;
 						class StaticDrawPolygon
 						{
@@ -9893,6 +9969,9 @@ class CfgVehicles
 							targetLineWidth=-0.00192;
 							targetLineLength=0.02;
 							range="user0";
+							class MissileThreat
+							{
+								color[]={1,0,0};
 								class TargetLines
 								{
 									width=2;
@@ -10107,6 +10186,9 @@ class CfgVehicles
 									};
 								};
 							};
+							class lockingThreat
+							{
+								color[]={1,0.30000001,0};
 								class TargetLines
 								{
 									points[]=
@@ -10141,6 +10223,9 @@ class CfgVehicles
 							};
 							class markingThreat: lockingThreat
 							{
+								class TargetLines: TargetLines
+								{
+								};
 							};
 							class rwr
 							{
@@ -10177,9 +10262,33 @@ class CfgVehicles
 									};
 								};
 							};
+							class rwrFriendly: rwr
+							{
+								color[]={0,0,0.12};
+								class TargetLines: TargetLines
+								{
+								};
 							};
+							class rwrEnemy: rwr
+							{
+								color[]={0.12,0,0};
+								class TargetLines: TargetLines
+								{
+								};
 							};
+							class rwrGroup: rwr
+							{
+								color[]={1,0,0};
+								class TargetLines: TargetLines
+								{
+								};
 							};
+							class rwrDestroyed
+							{
+							};
+							class markedTarget
+							{
+								color[]={1,0.30000001,0};
 								class TargetLines
 								{
 									width=3;
@@ -10276,7 +10385,16 @@ class CfgVehicles
 									};
 								};
 							};
+							class assignedTarget: markedTarget
+							{
+								color[]={1,0,0};
+								class TargetLines: TargetLines
+								{
+								};
 							};
+							class target
+							{
+								color[]={1,0.30000001,0};
 								class TargetLines
 								{
 									points[]=
@@ -10307,8 +10425,29 @@ class CfgVehicles
 									};
 								};
 							};
+							class targetFriendly: target
+							{
+								color[]={0,0,0.12};
+								class TargetLines: TargetLines
+								{
+								};
 							};
+							class targetEnemy: target
+							{
+								color[]={0.12,0,0};
+								class TargetLines: TargetLines
+								{
+								};
 							};
+							class targetGroup: target
+							{
+								color[]={0,0,0.12};
+								class TargetLines: TargetLines
+								{
+								};
+							};
+							class targetDestroyed
+							{
 							};
 							class targetGround: target
 							{
@@ -10379,6 +10518,9 @@ class CfgVehicles
 									};
 								};
 							};
+							class targetGroundFriendly: targetGround
+							{
+								color[]={0,0,0.12};
 								class TargetLines: TargetLines
 								{
 									width=3;
@@ -10605,6 +10747,9 @@ class CfgVehicles
 									};
 								};
 							};
+							class targetGroundEnemy: targetGround
+							{
+								color[]={0.12,0,0};
 								class TargetLines: TargetLines
 								{
 									width=3;
@@ -10672,12 +10817,48 @@ class CfgVehicles
 									};
 								};
 							};
+							class targetGroundGroup: targetGroundFriendly
+							{
+								color[]={0,0,0.12};
+								class TargetLines: TargetLines
+								{
+								};
+								class StaticDraw: StaticDraw
+								{
+								};
+							};
+							class targetGroundDestroyed
+							{
 							};
 							class targetGroundRemote: target
 							{
+								class TargetLines: TargetLines
+								{
+								};
 							};
+							class targetGroundRemoteFriendly: targetGroundRemote
+							{
+								color[]={0,0,0.12};
+								class TargetLines: TargetLines
+								{
+								};
 							};
+							class targetGroundRemoteEnemy: targetGroundRemote
+							{
+								color[]={0.12,0,0};
+								class TargetLines: TargetLines
+								{
+								};
 							};
+							class targetGroundRemoteGroup: targetGroundRemote
+							{
+								color[]={0,0,0.12};
+								class TargetLines: TargetLines
+								{
+								};
+							};
+							class targetGroundRemoteDestroyed
+							{
 							};
 							class targetLaser: target
 							{
@@ -10733,27 +10914,111 @@ class CfgVehicles
 									};
 								};
 							};
+							class targetLaserFriendly: targetLaser
+							{
+								color[]={0,0,0.12};
+								class TargetLines: TargetLines
+								{
+								};
 							};
+							class targetLaserEnemy: targetLaser
+							{
+								color[]={0.12,0,0};
+								class TargetLines: TargetLines
+								{
+								};
 							};
+							class targetLaserGroup: targetLaser
+							{
+								color[]={0,0,0.12};
+								class TargetLines: TargetLines
+								{
+								};
 							};
 							class targetNVG: targetLaser
 							{
+								class TargetLines: TargetLines
+								{
+								};
 							};
+							class targetNVGFriendly: targetNVG
+							{
+								color[]={0,0,0.12};
+								class TargetLines: TargetLines
+								{
+								};
 							};
+							class targetNVGEnemy: targetNVG
+							{
+								color[]={0.12,0,0};
+								class TargetLines: TargetLines
+								{
+								};
 							};
+							class targetNVGGroup: targetNVG
+							{
+								color[]={1,0,0};
+								class TargetLines: TargetLines
+								{
+								};
 							};
 							class targetMan: target
 							{
+								class TargetLines: TargetLines
+								{
+								};
 							};
+							class targetManFriendly: targetMan
+							{
+								color[]={0,0,0.12};
+								class TargetLines: TargetLines
+								{
+								};
 							};
+							class targetManEnemy: targetMan
+							{
+								color[]={0.12,0,0};
+								class TargetLines: TargetLines
+								{
+								};
 							};
+							class targetManGroup: targetMan
+							{
+								color[]={0,0,0.12};
+								class TargetLines: TargetLines
+								{
+								};
 							};
 							class targetManRemote: target
 							{
+								class TargetLines: TargetLines
+								{
+								};
 							};
+							class targetManRemoteFriendly: targetManRemote
+							{
+								color[]={0,0,0.12};
+								class TargetLines: TargetLines
+								{
+								};
 							};
+							class targetManRemoteEnemy: targetManRemote
+							{
+								color[]={0.12,0,0};
+								class TargetLines: TargetLines
+								{
+								};
 							};
+							class targetManRemoteGroup: targetManRemote
+							{
+								color[]={0,0,0.12};
+								class TargetLines: TargetLines
+								{
+								};
 							};
+							class targetAir
+							{
+								color[]={1,1,1};
 								class TargetLines
 								{
 									points[]=
@@ -10824,6 +11089,12 @@ class CfgVehicles
 									};
 								};
 							};
+							class targetAirFriendly: targetAir
+							{
+								color[]={0,0,0.12};
+								class TargetLines: TargetLines
+								{
+								};
 								class TargetArc
 								{
 									width=4;
@@ -10887,6 +11158,12 @@ class CfgVehicles
 									};
 								};
 							};
+							class targetAirEnemy: targetAir
+							{
+								color[]={0.12,0,0};
+								class TargetLines: TargetLines
+								{
+								};
 								class TargetArc
 								{
 									width=4;
@@ -10950,7 +11227,22 @@ class CfgVehicles
 									};
 								};
 							};
+							class targetAirGroup: targetAir
+							{
+								color[]={0,0,0.12};
+								class TargetLines: TargetLines
+								{
+								};
 							};
+							class targetAirDestroyed
+							{
+							};
+							class targetAirRemote: targetAir
+							{
+								color[]={1,1,1};
+								class TargetLines: TargetLines
+								{
+								};
 								class TargetArc
 								{
 									width=4;
@@ -10979,6 +11271,12 @@ class CfgVehicles
 									};
 								};
 							};
+							class targetAirRemoteFriendly: targetAirRemote
+							{
+								color[]={0,0,0.12};
+								class TargetLines: TargetLines
+								{
+								};
 								class TargetArc
 								{
 									width=4;
@@ -11042,6 +11340,12 @@ class CfgVehicles
 									};
 								};
 							};
+							class targetAirRemoteEnemy: targetAirRemote
+							{
+								color[]={0.12,0,0};
+								class TargetLines: TargetLines
+								{
+								};
 								class TargetArc
 								{
 									width=4;
@@ -11075,6 +11379,15 @@ class CfgVehicles
 									};
 								};
 							};
+							class targetAirRemoteGroup: targetAirRemote
+							{
+								color[]={0,0,0.12};
+								class TargetLines: TargetLines
+								{
+								};
+							};
+							class targetAirRemoteDestroyed
+							{
 							};
 						};
 					};
@@ -11093,8 +11406,14 @@ class CfgVehicles
 				alpha=1;
 				enableParallax=0;
 				font="LCD14";
+				class material
+				{
+					ambient[]={30,30,30,1};
 					diffuse[]={10,10,10,1};
 					emissive[]={200,400,200,1};
+				};
+				class Bones
+				{
 				};
 				class Draw
 				{
@@ -11263,8 +11582,14 @@ class CfgVehicles
 				alpha=1;
 				enableParallax=0;
 				font="rhsusf_digital_font_usa";
+				class material
+				{
+					ambient[]={30,30,30,1};
 					diffuse[]={10,10,10,1};
 					emissive[]={2000,4000,2000,1};
+				};
+				class Bones
+				{
 				};
 				class Draw
 				{
@@ -11360,15 +11685,27 @@ class CfgVehicles
 				alpha=1;
 				enableParallax=0;
 				font="rhsusf_digital_font_usa";
+				class material
+				{
+					ambient[]={16,16,16,1};
 					diffuse[]={10,10,10,1};
 					emissive[]={2000,4000,2000,1};
+				};
+				class Bones
+				{
 				};
 				class Draw
 				{
 					condition="on";
 					color[]={0,0,0,1};
 					alpha=0.80000001;
+					class PolygonDraw
+					{
+						color[]={0.070588201,0.086274497,0.023529399};
 						alpha=1;
+						class Polygon2
+						{
+							points[]={};
 						};
 						class Polygon
 						{
@@ -12156,6 +12493,15 @@ class CfgVehicles
 		};
 		class textureSources
 		{
+			class rhs_desert
+			{
+			};
+			class rhs_woodland
+			{
+			};
+			class rhs_olive
+			{
+			};
 		};
 		class Attributes
 		{
@@ -12540,6 +12886,9 @@ class CfgVehicles
 				maxHandBrakeTorque=14000;
 			};
 		};
+		class Damage
+		{
+		};
 		class EventHandlers: EventHandlers
 		{
 			class BIS_Randomisation
@@ -12704,6 +13053,12 @@ class CfgVehicles
 					minFov=0.25;
 					maxFov=1.1;
 				};
+				class ViewGunner: ViewOptics
+				{
+				};
+			};
+			class CoDriverTurret: CoDriverTurret
+			{
 			};
 		};
 	};
@@ -12717,6 +13072,20 @@ class CfgVehicles
 				{
 					"RHS_M2"
 				};
+				magazines[]=
+				{
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red"
+				};
+			};
+			class CoDriverTurret: CoDriverTurret
+			{
 			};
 		};
 	};
@@ -12730,6 +13099,29 @@ class CfgVehicles
 				{
 					"RHS_MK19"
 				};
+				magazines[]=
+				{
+					"RHS_48Rnd_40mm_MK19_M430A1",
+					"RHS_48Rnd_40mm_MK19_M430A1",
+					"RHS_48Rnd_40mm_MK19_M430A1",
+					"RHS_48Rnd_40mm_MK19_M430A1",
+					"RHS_48Rnd_40mm_MK19_M430A1",
+					"RHS_48Rnd_40mm_MK19_M430A1",
+					"RHS_48Rnd_40mm_MK19_M430A1",
+					"RHS_48Rnd_40mm_MK19_M430A1",
+					"RHS_48Rnd_40mm_MK19_M430A1",
+					"RHS_48Rnd_40mm_MK19_M430A1",
+					"RHS_48Rnd_40mm_MK19_M430A1",
+					"RHS_48Rnd_40mm_MK19_M430A1",
+					"RHS_48Rnd_40mm_MK19_M430A1",
+					"RHS_48Rnd_40mm_MK19_M430A1",
+					"RHS_48Rnd_40mm_MK19_M1001",
+					"RHS_48Rnd_40mm_MK19_M1001",
+					"RHS_48Rnd_40mm_MK19_M1001"
+				};
+			};
+			class CoDriverTurret: CoDriverTurret
+			{
 			};
 		};
 	};
@@ -12746,6 +13138,23 @@ class CfgVehicles
 				{
 					"rhs_weap_m240_m113"
 				};
+				magazines[]=
+				{
+					"rhs_mag_762x51_M240_200",
+					"rhs_mag_762x51_M240_200",
+					"rhs_mag_762x51_M240_200",
+					"rhs_mag_762x51_M240_200",
+					"rhs_mag_762x51_M240_200",
+					"rhs_mag_762x51_M240_200",
+					"rhs_mag_762x51_M240_200",
+					"rhs_mag_762x51_M240_200",
+					"rhs_mag_762x51_M240_200",
+					"rhs_mag_762x51_M240_200",
+					"rhs_mag_762x51_M240_200"
+				};
+			};
+			class CoDriverTurret: CoDriverTurret
+			{
 			};
 		};
 	};
@@ -12755,6 +13164,18 @@ class CfgVehicles
 		{
 			class Comp1: Comp1
 			{
+				class Light1: Light1
+				{
+				};
+				class Light2: Light2
+				{
+				};
+				class Light3: Light3
+				{
+				};
+				class Light_bft: Light_bft
+				{
+				};
 				class Light_crows: Light_bft
 				{
 					point="lightpoint_crows";
@@ -12779,13 +13200,25 @@ class CfgVehicles
 				helmetRight[]={0.075000003,0,0};
 				helmetDown[]={0,-0.075000003,0};
 				font="rhsusf_txled";
+				class material
+				{
+					ambient[]={33,33,33,1};
 					diffuse[]={31,31,31,1};
 					emissive[]={400,200,200,1};
 				};
 				class Bones
 				{
+					class Sensor_Offset
+					{
+						pos[]={0.5,0.47999999};
 					};
+					class Static_Offset
+					{
+						pos[]={0.5,0.5};
 					};
+					class LimitWaypoint
+					{
+						limits[]={0.22,0.059999999,0.77999997,0.059999999};
 					};
 					class Sensor_Rotation
 					{
@@ -12803,7 +13236,13 @@ class CfgVehicles
 						pos0[]={0.5,0.5};
 						pos10[]={0.70999998,0.764};
 					};
+					class Direction_Center
+					{
+						pos[]={0.5,0.5};
 					};
+					class Rotation_WP_Dir
+					{
+						pos0[]={0,0};
 						pos10[]={0,0};
 						source="user";
 						sourceIndex=10;
@@ -12813,6 +13252,9 @@ class CfgVehicles
 						maxAngle=-360;
 						aspectRatio=1;
 					};
+					class Rotation_WP_Center
+					{
+						pos0[]={0,0};
 						pos10[]={0,0};
 						source="heading";
 						min=0;
@@ -12933,14 +13375,23 @@ class CfgVehicles
 					color[]={0,0,0.12};
 					class StaticClip
 					{
+						class WaypointGroup
+						{
+							color[]={0,0,0.12};
 							alpha=0.60000002;
 							class WP
 							{
 								condition="wpvalid";
+								class Draw
+								{
+									points[]={};
 								};
 								class WP1
 								{
 									condition="user26>=0";
+									class CurrentWaypoint
+									{
+										color[]={0.89999998,0,0};
 										alpha=1;
 										condition="1-WPIndex";
 										class WaypointShape
@@ -13744,6 +14195,9 @@ class CfgVehicles
 								class WP2
 								{
 									condition="user28>=0";
+									class CurrentWaypoint
+									{
+										color[]={0.89999998,0,0};
 										alpha=1;
 										condition="(WPIndex>=1)*(WPIndex<=1)";
 										class WaypointShape
@@ -14569,6 +15023,9 @@ class CfgVehicles
 								class WP3
 								{
 									condition="user30>=0";
+									class CurrentWaypoint
+									{
+										color[]={0.89999998,0,0};
 										alpha=1;
 										condition="(WPIndex>=2)*(WPIndex<=2)";
 										class WaypointShape
@@ -15394,6 +15851,9 @@ class CfgVehicles
 								class WP4
 								{
 									condition="user32>=0";
+									class CurrentWaypoint
+									{
+										color[]={0.89999998,0,0};
 										alpha=1;
 										condition="(WPIndex>=3)*(WPIndex<=3)";
 										class WaypointShape
@@ -16219,6 +16679,9 @@ class CfgVehicles
 								class WP5
 								{
 									condition="user34>=0";
+									class CurrentWaypoint
+									{
+										color[]={0.89999998,0,0};
 										alpha=1;
 										condition="(WPIndex>=4)*(WPIndex<=4)";
 										class WaypointShape
@@ -17044,6 +17507,9 @@ class CfgVehicles
 								class WP6
 								{
 									condition="user36>=0";
+									class CurrentWaypoint
+									{
+										color[]={0.89999998,0,0};
 										alpha=1;
 										condition="(WPIndex>=5)*(WPIndex<=5)";
 										class WaypointShape
@@ -17869,6 +18335,9 @@ class CfgVehicles
 								class WP7
 								{
 									condition="user38>=0";
+									class CurrentWaypoint
+									{
+										color[]={0.89999998,0,0};
 										alpha=1;
 										condition="(WPIndex>=6)*(WPIndex<=6)";
 										class WaypointShape
@@ -18694,6 +19163,9 @@ class CfgVehicles
 								class WP8
 								{
 									condition="user40>=0";
+									class CurrentWaypoint
+									{
+										color[]={0.89999998,0,0};
 										alpha=1;
 										condition="(WPIndex>=7)*(WPIndex<=7)";
 										class WaypointShape
@@ -19519,6 +19991,9 @@ class CfgVehicles
 								class WP9
 								{
 									condition="user42>=0";
+									class CurrentWaypoint
+									{
+										color[]={0.89999998,0,0};
 										alpha=1;
 										condition="(WPIndex>=8)*(WPIndex<=8)";
 										class WaypointShape
@@ -20344,6 +20819,9 @@ class CfgVehicles
 								class WP10
 								{
 									condition="user44>=0";
+									class CurrentWaypoint
+									{
+										color[]={0.89999998,0,0};
 										alpha=1;
 										condition="(WPIndex>=9)*(WPIndex<=9)";
 										class WaypointShape
@@ -21593,6 +22071,9 @@ class CfgVehicles
 							};
 						};
 					};
+					class LightBlue
+					{
+						color[]={0.43000001,0.80000001,0.93000001};
 						alpha=0.15000001;
 						class StaticDrawPolygon
 						{
@@ -22404,6 +22885,9 @@ class CfgVehicles
 							targetLineWidth=-0.00192;
 							targetLineLength=0.02;
 							range="user0";
+							class MissileThreat
+							{
+								color[]={1,0,0};
 								class TargetLines
 								{
 									width=2;
@@ -22618,6 +23102,9 @@ class CfgVehicles
 									};
 								};
 							};
+							class lockingThreat
+							{
+								color[]={1,0.30000001,0};
 								class TargetLines
 								{
 									points[]=
@@ -22652,6 +23139,9 @@ class CfgVehicles
 							};
 							class markingThreat: lockingThreat
 							{
+								class TargetLines: TargetLines
+								{
+								};
 							};
 							class rwr
 							{
@@ -22688,9 +23178,33 @@ class CfgVehicles
 									};
 								};
 							};
+							class rwrFriendly: rwr
+							{
+								color[]={0,0,0.12};
+								class TargetLines: TargetLines
+								{
+								};
 							};
+							class rwrEnemy: rwr
+							{
+								color[]={0.12,0,0};
+								class TargetLines: TargetLines
+								{
+								};
 							};
+							class rwrGroup: rwr
+							{
+								color[]={1,0,0};
+								class TargetLines: TargetLines
+								{
+								};
 							};
+							class rwrDestroyed
+							{
+							};
+							class markedTarget
+							{
+								color[]={1,0.30000001,0};
 								class TargetLines
 								{
 									width=3;
@@ -22787,7 +23301,16 @@ class CfgVehicles
 									};
 								};
 							};
+							class assignedTarget: markedTarget
+							{
+								color[]={1,0,0};
+								class TargetLines: TargetLines
+								{
+								};
 							};
+							class target
+							{
+								color[]={1,0.30000001,0};
 								class TargetLines
 								{
 									points[]=
@@ -22818,8 +23341,29 @@ class CfgVehicles
 									};
 								};
 							};
+							class targetFriendly: target
+							{
+								color[]={0,0,0.12};
+								class TargetLines: TargetLines
+								{
+								};
 							};
+							class targetEnemy: target
+							{
+								color[]={0.12,0,0};
+								class TargetLines: TargetLines
+								{
+								};
 							};
+							class targetGroup: target
+							{
+								color[]={0,0,0.12};
+								class TargetLines: TargetLines
+								{
+								};
+							};
+							class targetDestroyed
+							{
 							};
 							class targetGround: target
 							{
@@ -22890,6 +23434,9 @@ class CfgVehicles
 									};
 								};
 							};
+							class targetGroundFriendly: targetGround
+							{
+								color[]={0,0,0.12};
 								class TargetLines: TargetLines
 								{
 									width=3;
@@ -23116,6 +23663,9 @@ class CfgVehicles
 									};
 								};
 							};
+							class targetGroundEnemy: targetGround
+							{
+								color[]={0.12,0,0};
 								class TargetLines: TargetLines
 								{
 									width=3;
@@ -23183,12 +23733,48 @@ class CfgVehicles
 									};
 								};
 							};
+							class targetGroundGroup: targetGroundFriendly
+							{
+								color[]={0,0,0.12};
+								class TargetLines: TargetLines
+								{
+								};
+								class StaticDraw: StaticDraw
+								{
+								};
+							};
+							class targetGroundDestroyed
+							{
 							};
 							class targetGroundRemote: target
 							{
+								class TargetLines: TargetLines
+								{
+								};
 							};
+							class targetGroundRemoteFriendly: targetGroundRemote
+							{
+								color[]={0,0,0.12};
+								class TargetLines: TargetLines
+								{
+								};
 							};
+							class targetGroundRemoteEnemy: targetGroundRemote
+							{
+								color[]={0.12,0,0};
+								class TargetLines: TargetLines
+								{
+								};
 							};
+							class targetGroundRemoteGroup: targetGroundRemote
+							{
+								color[]={0,0,0.12};
+								class TargetLines: TargetLines
+								{
+								};
+							};
+							class targetGroundRemoteDestroyed
+							{
 							};
 							class targetLaser: target
 							{
@@ -23244,27 +23830,111 @@ class CfgVehicles
 									};
 								};
 							};
+							class targetLaserFriendly: targetLaser
+							{
+								color[]={0,0,0.12};
+								class TargetLines: TargetLines
+								{
+								};
 							};
+							class targetLaserEnemy: targetLaser
+							{
+								color[]={0.12,0,0};
+								class TargetLines: TargetLines
+								{
+								};
 							};
+							class targetLaserGroup: targetLaser
+							{
+								color[]={0,0,0.12};
+								class TargetLines: TargetLines
+								{
+								};
 							};
 							class targetNVG: targetLaser
 							{
+								class TargetLines: TargetLines
+								{
+								};
 							};
+							class targetNVGFriendly: targetNVG
+							{
+								color[]={0,0,0.12};
+								class TargetLines: TargetLines
+								{
+								};
 							};
+							class targetNVGEnemy: targetNVG
+							{
+								color[]={0.12,0,0};
+								class TargetLines: TargetLines
+								{
+								};
 							};
+							class targetNVGGroup: targetNVG
+							{
+								color[]={1,0,0};
+								class TargetLines: TargetLines
+								{
+								};
 							};
 							class targetMan: target
 							{
+								class TargetLines: TargetLines
+								{
+								};
 							};
+							class targetManFriendly: targetMan
+							{
+								color[]={0,0,0.12};
+								class TargetLines: TargetLines
+								{
+								};
 							};
+							class targetManEnemy: targetMan
+							{
+								color[]={0.12,0,0};
+								class TargetLines: TargetLines
+								{
+								};
 							};
+							class targetManGroup: targetMan
+							{
+								color[]={0,0,0.12};
+								class TargetLines: TargetLines
+								{
+								};
 							};
 							class targetManRemote: target
 							{
+								class TargetLines: TargetLines
+								{
+								};
 							};
+							class targetManRemoteFriendly: targetManRemote
+							{
+								color[]={0,0,0.12};
+								class TargetLines: TargetLines
+								{
+								};
 							};
+							class targetManRemoteEnemy: targetManRemote
+							{
+								color[]={0.12,0,0};
+								class TargetLines: TargetLines
+								{
+								};
 							};
+							class targetManRemoteGroup: targetManRemote
+							{
+								color[]={0,0,0.12};
+								class TargetLines: TargetLines
+								{
+								};
 							};
+							class targetAir
+							{
+								color[]={1,1,1};
 								class TargetLines
 								{
 									points[]=
@@ -23335,6 +24005,12 @@ class CfgVehicles
 									};
 								};
 							};
+							class targetAirFriendly: targetAir
+							{
+								color[]={0,0,0.12};
+								class TargetLines: TargetLines
+								{
+								};
 								class TargetArc
 								{
 									width=4;
@@ -23398,6 +24074,12 @@ class CfgVehicles
 									};
 								};
 							};
+							class targetAirEnemy: targetAir
+							{
+								color[]={0.12,0,0};
+								class TargetLines: TargetLines
+								{
+								};
 								class TargetArc
 								{
 									width=4;
@@ -23461,7 +24143,22 @@ class CfgVehicles
 									};
 								};
 							};
+							class targetAirGroup: targetAir
+							{
+								color[]={0,0,0.12};
+								class TargetLines: TargetLines
+								{
+								};
 							};
+							class targetAirDestroyed
+							{
+							};
+							class targetAirRemote: targetAir
+							{
+								color[]={1,1,1};
+								class TargetLines: TargetLines
+								{
+								};
 								class TargetArc
 								{
 									width=4;
@@ -23490,6 +24187,12 @@ class CfgVehicles
 									};
 								};
 							};
+							class targetAirRemoteFriendly: targetAirRemote
+							{
+								color[]={0,0,0.12};
+								class TargetLines: TargetLines
+								{
+								};
 								class TargetArc
 								{
 									width=4;
@@ -23553,6 +24256,12 @@ class CfgVehicles
 									};
 								};
 							};
+							class targetAirRemoteEnemy: targetAirRemote
+							{
+								color[]={0.12,0,0};
+								class TargetLines: TargetLines
+								{
+								};
 								class TargetArc
 								{
 									width=4;
@@ -23586,6 +24295,15 @@ class CfgVehicles
 									};
 								};
 							};
+							class targetAirRemoteGroup: targetAirRemote
+							{
+								color[]={0,0,0.12};
+								class TargetLines: TargetLines
+								{
+								};
+							};
+							class targetAirRemoteDestroyed
+							{
 							};
 						};
 					};
@@ -23604,8 +24322,14 @@ class CfgVehicles
 				alpha=1;
 				enableParallax=0;
 				font="LCD14";
+				class material
+				{
+					ambient[]={30,30,30,1};
 					diffuse[]={10,10,10,1};
 					emissive[]={200,400,200,1};
+				};
+				class Bones
+				{
 				};
 				class Draw
 				{
@@ -23774,8 +24498,14 @@ class CfgVehicles
 				alpha=1;
 				enableParallax=0;
 				font="rhsusf_digital_font_usa";
+				class material
+				{
+					ambient[]={30,30,30,1};
 					diffuse[]={10,10,10,1};
 					emissive[]={2000,4000,2000,1};
+				};
+				class Bones
+				{
 				};
 				class Draw
 				{
@@ -23871,15 +24601,27 @@ class CfgVehicles
 				alpha=1;
 				enableParallax=0;
 				font="rhsusf_digital_font_usa";
+				class material
+				{
+					ambient[]={16,16,16,1};
 					diffuse[]={10,10,10,1};
 					emissive[]={2000,4000,2000,1};
+				};
+				class Bones
+				{
 				};
 				class Draw
 				{
 					condition="on";
 					color[]={0,0,0,1};
 					alpha=0.80000001;
+					class PolygonDraw
+					{
+						color[]={0.070588201,0.086274497,0.023529399};
 						alpha=1;
+						class Polygon2
+						{
+							points[]={};
 						};
 						class Polygon
 						{
@@ -24677,12 +25419,21 @@ class CfgVehicles
 				alpha=1;
 				enableParallax=0;
 				font="RobotoCondensedLight";
+				class material
+				{
+					ambient[]={3,3,3,1};
 					diffuse[]={10,10,10,1};
 					emissive[]={400,200,200,1};
 				};
 				class Bones
 				{
+					class Static_Offset
+					{
+						pos[]={0.079999998,0.89999998};
 					};
+					class Cross
+					{
+						pos[]={0,-0.145};
 					};
 					class TurretRotation
 					{
@@ -24696,6 +25447,9 @@ class CfgVehicles
 						aspectRatio=1.29101;
 					};
 				};
+				class Draw
+				{
+					color[]={1,0,0,1};
 					alpha=1;
 					class StaticDraw
 					{
@@ -25558,6 +26312,9 @@ class CfgVehicles
 					};
 				};
 			};
+			class CoDriverTurret: CoDriverTurret
+			{
+			};
 		};
 	};
 	class rhsusf_MATV_CROWS_M2_base: rhsusf_MATV_CROWS_base
@@ -25570,6 +26327,16 @@ class CfgVehicles
 				{
 					"RHS_M2_CROWS_M153"
 				};
+				magazines[]=
+				{
+					"rhs_mag_400rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_400rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_400rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_400rnd_127x99_mag_Tracer_Red"
+				};
+			};
+			class CoDriverTurret: CoDriverTurret
+			{
 			};
 		};
 	};
@@ -25583,6 +26350,17 @@ class CfgVehicles
 				{
 					"RHS_MK19_CROWS_M153"
 				};
+				magazines[]=
+				{
+					"RHS_96Rnd_40mm_MK19_M430A1",
+					"RHS_96Rnd_40mm_MK19_M430A1",
+					"RHS_96Rnd_40mm_MK19_M430A1",
+					"RHS_96Rnd_40mm_MK19_M430A1",
+					"RHS_96Rnd_40mm_MK19_M1001"
+				};
+			};
+			class CoDriverTurret: CoDriverTurret
+			{
 			};
 		};
 	};
@@ -25590,11 +26368,29 @@ class CfgVehicles
 	{
 		class textureSources: textureSources
 		{
+			class rhs_desert: rhs_desert
+			{
+			};
+			class rhs_woodland: rhs_woodland
+			{
+			};
+			class rhs_sofdeploy
+			{
+			};
+		};
+		class Attributes: Attributes
+		{
 		};
 		threat[]={0.89999998,0.30000001,0.1};
 		class CargoTurret;
 		class Turrets: Turrets
 		{
+			class CROWS_Turret: CROWS_Turret
+			{
+			};
+			class CoDriverTurret: CoDriverTurret
+			{
+			};
 			class CargoTurret_02: CargoTurret_01
 			{
 				animationSourceHatch="FFV_R";
@@ -25626,6 +26422,19 @@ class CfgVehicles
 				{
 					"RHS_M2_CROWS_M153"
 				};
+				magazines[]=
+				{
+					"rhs_mag_400rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_400rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_400rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_400rnd_127x99_mag_Tracer_Red"
+				};
+			};
+			class CoDriverTurret: CoDriverTurret
+			{
+			};
+			class CargoTurret_02: CargoTurret_02
+			{
 			};
 		};
 	};
@@ -25639,6 +26448,20 @@ class CfgVehicles
 				{
 					"RHS_MK19_CROWS_M153"
 				};
+				magazines[]=
+				{
+					"RHS_96Rnd_40mm_MK19_M430A1",
+					"RHS_96Rnd_40mm_MK19_M430A1",
+					"RHS_96Rnd_40mm_MK19_M430A1",
+					"RHS_96Rnd_40mm_MK19_M430A1",
+					"RHS_96Rnd_40mm_MK19_M1001"
+				};
+			};
+			class CoDriverTurret: CoDriverTurret
+			{
+			};
+			class CargoTurret_02: CargoTurret_02
+			{
 			};
 		};
 	};
@@ -25767,9 +26590,18 @@ class CfgVehicles
 	class StaticWeapon: LandVehicle
 	{
 		class Turrets;
+		class ViewOptics;
+		class EventHandlers;
+	};
 	class rhs_rhino_trigger: StaticWeapon
 	{
 		armor=15;
 		side=3;
+		class Turrets
+		{
+		};
+		class Hitpoints
+		{
+		};
 	};
 };

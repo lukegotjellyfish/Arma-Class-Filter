@@ -20,4 +20,7 @@ class CfgVehicles
 		icon="iconObject_5x2";
 		editorCategory="EdCat_Things";
 	};
+	class rhsgref_serhat_radar_d: rhsgref_serhat_radar
+	{
+	};
 };

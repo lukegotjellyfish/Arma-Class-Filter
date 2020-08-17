@@ -1,5 +1,8 @@
 class CfgPatches
 {
+	class rhs_c_vehiclesounds
+	{
+		units[]={};
 		weapons[]={};
 		version=1;
 	};
@@ -10,6 +13,12 @@ class Mode_FullAuto;
 class CfgVehicles
 {
 	class Tank;
+	class Tank_F: Tank
+	{
+	};
+	class rhs_2s1tank_base: Tank_F
+	{
+	};
 	class rhs_tank_base: Tank_F
 	{
 		attenuationEffectType="TankAttenuation";

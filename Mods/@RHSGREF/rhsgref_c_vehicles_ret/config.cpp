@@ -327,12 +327,18 @@ class CfgVehicles
 	class LandVehicle;
 	class Car: LandVehicle
 	{
+		class HitPoints;
+		class NewTurret;
+	};
 	class Car_F: Car
 	{
 		class Turrets
 		{
 			class MainTurret: NewTurret
 			{
+				class ViewOptics;
+			};
+		};
 		class HitPoints
 		{
 			class HitLFWheel;
@@ -344,14 +350,41 @@ class CfgVehicles
 			class HitGlass2;
 			class HitGlass3;
 			class HitGlass4;
+			class HitGlass5;
+			class HitGlass6;
+		};
+		class EventHandlers;
+		class AnimationSources;
+	};
+	class Offroad_01_base_F: Car_F
+	{
+	};
+	class Offroad_01_military_base_F: Offroad_01_base_F
+	{
+	};
+	class I_G_Offroad_01_F: Offroad_01_military_base_F
+	{
+	};
 	class Offroad_01_armed_base_F: Offroad_01_military_base_F
 	{
 		class Turrets: Turrets
 		{
+			class M2_Turret;
+		};
+	};
+	class I_G_Offroad_01_armed_F: Offroad_01_armed_base_F
+	{
+	};
 	class Offroad_01_AT_base_F: Offroad_01_military_base_F
 	{
 		class Turrets: Turrets
 		{
+			class AT_Turret;
+		};
+	};
+	class I_G_Offroad_01_AT_F: Offroad_01_AT_base_F
+	{
+	};
 	class Truck_F: Car_F
 	{
 		class ViewPilot;
@@ -363,11 +396,17 @@ class CfgVehicles
 			class HitLF2Wheel;
 			class HitRFWheel;
 			class HitRBWheel;
+			class HitRMWheel;
+			class HitRF2Wheel;
+		};
 		class AnimationSources;
 	};
 	class Tank: LandVehicle
 	{
 		class NewTurret;
+		class Sounds;
+		class HitPoints;
+	};
 	class Tank_F: Tank
 	{
 		class Turrets
@@ -376,6 +415,9 @@ class CfgVehicles
 			{
 				class Turrets
 				{
+					class CommanderOptics;
+				};
+			};
 		};
 		class AnimationSources;
 		class ViewPilot;
@@ -386,9 +428,18 @@ class CfgVehicles
 		{
 			class HitHull;
 			class HitEngine;
+			class HitLTrack;
+			class HitRTrack;
+		};
 		class Sounds: Sounds
 		{
+			class Engine;
+			class Movement;
+		};
 		class EventHandlers;
+	};
+	class APC_Tracked_02_base_F: Tank_F
+	{
 	};
 	class RHS_ZU23_base;
 	class rhs_d30_base;
@@ -410,22 +461,64 @@ class CfgVehicles
 	class RHS_MK19_TriPod_base;
 	class RHS_UAZ_Base: Offroad_01_base_F
 	{
+		class Turrets: Turrets
+		{
+		};
+	};
+	class rhs_uaz_open_Base: RHS_UAZ_Base
+	{
 	};
 	class RHS_UAZ_DShKM_Base: RHS_UAZ_Base
 	{
 		class CargoTurret;
 		class Turrets: Turrets
 		{
+			class MainTurret: MainTurret
+			{
+			};
 		};
+	};
+	class RHS_UAZ_AGS30_Base: RHS_UAZ_DShKM_Base
+	{
+	};
+	class RHS_UAZ_SPG9_Base: RHS_UAZ_DShKM_Base
+	{
 	};
 	class RHS_Ural_BaseTurret: Truck_F
 	{
+		class Turrets;
+		class AnimationSources;
+	};
+	class RHS_Ural_Base: RHS_Ural_BaseTurret
+	{
+	};
+	class RHS_Ural_MSV_Base: RHS_Ural_Base
+	{
+	};
+	class RHS_Ural_Civ_Base: RHS_Ural_Base
+	{
+	};
+	class RHS_Ural_Open_MSV_01: RHS_Ural_MSV_Base
+	{
+	};
+	class RHS_Ural_Support_MSV_Base_01: RHS_Ural_MSV_Base
+	{
+	};
+	class RHS_Ural_Fuel_MSV_01: RHS_Ural_Support_MSV_Base_01
+	{
+	};
+	class RHS_Ural_Repair_MSV_01: RHS_Ural_Support_MSV_Base_01
+	{
+	};
 	class RHS_Ural_Zu23_Base: RHS_Ural_BaseTurret
 	{
 		class Turrets: Turrets
 		{
 			class MainTurret;
 			class CargoTurret_01;
+			class CargoTurret_02;
+			class CargoTurret_03;
+		};
 	};
 	class RHS_BM21_MSV_01;
 	class rhs_truck: Truck_F
@@ -436,59 +529,215 @@ class CfgVehicles
 	{
 		class Turrets;
 	};
+	class rhs_gaz66o_vmf: rhs_gaz66_vmf
+	{
+	};
+	class rhs_gaz66_flat_vmf: rhs_gaz66_vmf
+	{
+	};
+	class rhs_gaz66o_flat_vmf: rhs_gaz66o_vmf
+	{
+	};
+	class rhs_gaz66_ap2_base: rhs_gaz66_vmf
+	{
+	};
+	class rhs_gaz66_ap2_vmf: rhs_gaz66_ap2_base
+	{
+	};
+	class rhs_gaz66_repair_base: rhs_gaz66_vmf
+	{
+	};
+	class rhs_gaz66_repair_vmf: rhs_gaz66_repair_base
+	{
+	};
+	class rhs_gaz66_r142_base: rhs_gaz66_vmf
+	{
+	};
+	class rhs_gaz66_r142_vmf: rhs_gaz66_r142_base
+	{
+	};
+	class rhs_gaz66_ammo_base: rhs_gaz66_vmf
+	{
+	};
+	class rhs_gaz66_ammo_vmf: rhs_gaz66_ammo_base
+	{
+	};
 	class rhs_gaz66_zu23_base: rhs_gaz66_vmf
 	{
 		class Turrets: Turrets
 		{
 			class MainTurret;
+			class CargoTurret_01;
+			class CargoTurret_02;
+		};
+	};
+	class rhs_gaz66_zu23_vmf: rhs_gaz66_zu23_base
+	{
 	};
 	class rhs_zil131_base: Truck_F
 	{
 		class textureSources
 		{
+			class CDF
+			{
+			};
+			class UN
+			{
+			};
+			class CHDKZ
+			{
+			};
 		};
+	};
+	class rhs_zil131_open_base: rhs_zil131_base
+	{
+	};
+	class rhs_zil131_flatbed_base: rhs_zil131_open_base
+	{
+	};
+	class rhs_zil131_flatbed_cover_base: rhs_zil131_flatbed_base
+	{
+	};
+	class MRAP_01_base_F: Car_F
+	{
+	};
+	class rhsusf_hmmwe_base: MRAP_01_base_F
+	{
+	};
+	class rhsusf_m998_w_2dr: rhsusf_hmmwe_base
+	{
+	};
+	class rhsusf_m998_w_2dr_halftop: rhsusf_m998_w_2dr
+	{
+	};
+	class rhsusf_m998_w_2dr_fulltop: rhsusf_m998_w_2dr_halftop
+	{
+	};
+	class rhsusf_m998_w_4dr: rhsusf_m998_w_2dr
+	{
+	};
+	class rhsusf_m998_w_4dr_halftop: rhsusf_m998_w_4dr
+	{
+	};
+	class rhsusf_m998_w_4dr_fulltop: rhsusf_m998_w_4dr_halftop
+	{
+	};
+	class rhsusf_m1025_w: rhsusf_m998_w_4dr_fulltop
+	{
+	};
+	class rhsusf_m1025_w_m2: rhsusf_m1025_w
+	{
+	};
+	class rhsusf_m1025_w_mk19: rhsusf_m1025_w_m2
+	{
 	};
 	class rhsusf_M1117_D;
 	class Wheeled_APC_F;
+	class rhs_btr_base: Wheeled_APC_F
+	{
+	};
 	class rhs_btr60_base: rhs_btr_base
 	{
 		class textureSources
 		{
+			class CDF
+			{
+			};
+			class CHDKZ
+			{
+			};
 		};
 		class EventHandlers;
+	};
+	class rhs_btr60_vmf: rhs_btr60_base
+	{
 	};
 	class rhs_btr70_vmf: rhs_btr_base
 	{
 		class textureSources
 		{
+			class CDF
+			{
+			};
+			class UN
+			{
+			};
+			class NAPA
+			{
+			};
+			class African
+			{
+			};
+			class Belarusian
+			{
+			};
+			class NVA
+			{
+			};
+			class Takistan
+			{
+			};
 		};
 		class EventHandlers;
 	};
 	class B_G_Van_01_fuel_F;
 	class B_G_Van_01_transport_F;
+	class rhs_bmd_base: Tank_F
+	{
+	};
 	class rhs_bmd1_base: rhs_bmd_base
 	{
 		class textureSources
 		{
+			class CDF
+			{
+			};
 		};
+	};
+	class rhs_bmd1: rhs_bmd1_base
+	{
+	};
+	class rhs_bmd1k: rhs_bmd1_base
+	{
+	};
+	class rhs_bmd1p: rhs_bmd1_base
+	{
+	};
+	class rhs_bmd1pk: rhs_bmd1_base
+	{
+	};
+	class rhs_bmd1r: rhs_bmd1_base
+	{
 	};
 	class rhs_bmd2_base: rhs_bmd_base
 	{
 		class textureSources
 		{
+			class CDF
+			{
+			};
 		};
+	};
+	class rhs_bmd2: rhs_bmd2_base
+	{
 	};
 	class rhs_bmd2k;
 	class rhs_bmp1tank_base: Tank_F
 	{
 		class textureSources
 		{
+			class CDF
+			{
+			};
 		};
 	};
 	class rhs_2s1tank_base: Tank_F
 	{
 		class TextureSources
 		{
+			class CDF
+			{
+			};
 			class ChDKZ
 			{
 				materials[]=
@@ -513,6 +762,9 @@ class CfgVehicles
 			{
 				class Turrets: Turrets
 				{
+					class CommanderOptics;
+					class LoaderOptics;
+				};
 			};
 		};
 	};
@@ -530,6 +782,9 @@ class CfgVehicles
 	{
 		class textureSources
 		{
+			class CDF
+			{
+			};
 		};
 		class EventHandlers;
 	};
@@ -541,10 +796,16 @@ class CfgVehicles
 			{
 				class Turrets: Turrets
 				{
+					class CommanderOptics;
+					class CommanderMG;
+				};
 			};
 		};
 		class textureSources
 		{
+			class RHS_CDF
+			{
+			};
 		};
 		class Attributes
 		{
@@ -560,6 +821,9 @@ class CfgVehicles
 			class rhs_ammoslot_3_type;
 			class rhs_ammoslot_3;
 			class rhs_ammoslot_4_type;
+			class rhs_ammoslot_4;
+			class rhs_hide_com_shield;
+		};
 	};
 	class rhs_t72ba_tv: rhs_a3t72tank_base
 	{
@@ -581,6 +845,9 @@ class CfgVehicles
 			{
 				class Turrets: Turrets
 				{
+					class CommanderOptics;
+					class CommanderMG;
+				};
 			};
 		};
 	};
@@ -588,9 +855,15 @@ class CfgVehicles
 	{
 		class Turrets: Turrets
 		{
+			class MainTurret: MainTurret
+			{
+			};
 		};
 		class textureSources
 		{
+			class RHS_CDF
+			{
+			};
 		};
 	};
 	class rhs_t80bv: rhs_t80b
@@ -601,12 +874,42 @@ class CfgVehicles
 			{
 				class Turrets: Turrets
 				{
+					class CommanderOptics: CommanderOptics
+					{
+					};
+					class CommanderMG: CommanderOptics
+					{
+					};
 				};
 			};
 		};
 		class textureSources
 		{
+			class RHS_CDF
+			{
+			};
 		};
+	};
+	class rhsusf_m113tank_base: APC_Tracked_02_base_F
+	{
+	};
+	class rhsusf_m113_usarmy: rhsusf_m113tank_base
+	{
+	};
+	class rhsusf_m113_usarmy_unarmed: rhsusf_m113tank_base
+	{
+	};
+	class rhsusf_m113_usarmy_supply: rhsusf_m113_usarmy
+	{
+	};
+	class rhsusf_m113_usarmy_MK19: rhsusf_m113tank_base
+	{
+	};
+	class rhsusf_m113_usarmy_M2_90: rhsusf_m113_usarmy_supply
+	{
+	};
+	class rhsusf_m113_usarmy_MK19_90: rhsusf_m113_usarmy_MK19
+	{
 	};
 	class Air;
 	class Helicopter: Air
@@ -630,6 +933,9 @@ class CfgVehicles
 	{
 		class AnimationSources;
 	};
+	class RHS_Mi8AMT_VVS_Base: RHS_Mi8AMT_base
+	{
+	};
 	class rhs_mi8mtv3_base: RHS_Mi8_base
 	{
 		class Components;
@@ -648,8 +954,17 @@ class CfgVehicles
 					class pylon3;
 					class pylon4;
 					class pylon5;
+					class pylon6;
+					class cmDispenser;
+				};
 			};
 		};
+	};
+	class RHS_Mi8AMTSh_VVS_Base: rhs_mi8amtsh_base
+	{
+	};
+	class RHS_Mi8AMTSh_vvs: RHS_Mi8AMTSh_VVS_Base
+	{
 	};
 	class RHS_Mi8AMTSh_UPK23_vvs: RHS_Mi8AMTSh_vvs
 	{
@@ -672,6 +987,9 @@ class CfgVehicles
 					class pylon3;
 					class pylon4;
 					class pylon5;
+					class pylon6;
+					class cmDispenser;
+				};
 			};
 		};
 	};
@@ -680,6 +998,12 @@ class CfgVehicles
 	class RHS_Mi24P_VVS_Base: RHS_Mi24_base
 	{
 		class AnimationSources;
+	};
+	class RHS_Mi24P_AT_VVS_Base: RHS_Mi24P_VVS_Base
+	{
+	};
+	class RHS_Mi24V_Base: RHS_Mi24_base
+	{
 	};
 	class RHS_Mi24V_VVS_Base: RHS_Mi24V_Base
 	{
@@ -713,6 +1037,9 @@ class CfgVehicles
 					class pylon4;
 					class pylon5;
 					class pylon6;
+					class pylon7;
+					class cmDispenser;
+				};
 			};
 		};
 		class TextureSources
@@ -895,6 +1222,15 @@ class CfgVehicles
 		};
 		class Turrets: Turrets
 		{
+			class MainTurret: MainTurret
+			{
+			};
+			class CargoTurret_02: CargoTurret_02
+			{
+			};
+			class CargoTurret_03: CargoTurret_03
+			{
+			};
 		};
 	};
 	class rhsgref_cdf_reg_BM21: RHS_BM21_MSV_01
@@ -978,6 +1314,12 @@ class CfgVehicles
 		};
 		class Turrets: Turrets
 		{
+			class MainTurret: MainTurret
+			{
+			};
+			class CargoTurret_02: CargoTurret_02
+			{
+			};
 		};
 	};
 	class rhsgref_cdf_zil131: rhs_zil131_base
@@ -1208,6 +1550,12 @@ class CfgVehicles
 			{
 				class Turrets: Turrets
 				{
+					class CommanderOptics: CommanderOptics
+					{
+					};
+					class LoaderOptics: LoaderOptics
+					{
+					};
 				};
 			};
 		};
@@ -1225,8 +1573,31 @@ class CfgVehicles
 		{
 			class MainTurret: MainTurret
 			{
+				magazines[]=
+				{
+					"rhs_mag_3bm32_7",
+					"rhs_mag_3bk18_6",
+					"rhs_mag_3of26_5",
+					"rhs_mag_9m119_4",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_3d17",
+					"rhs_LaserFCSMag"
+				};
 				class Turrets: Turrets
 				{
+					class CommanderOptics: CommanderOptics
+					{
+					};
+					class CommanderMG: CommanderMG
+					{
+					};
 				};
 			};
 		};
@@ -1244,8 +1615,31 @@ class CfgVehicles
 		{
 			class MainTurret: MainTurret
 			{
+				magazines[]=
+				{
+					"rhs_mag_3bm32_7",
+					"rhs_mag_3bk18_6",
+					"rhs_mag_3of26_5",
+					"rhs_mag_9m119_4",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_3d17",
+					"rhs_LaserFCSMag"
+				};
 				class Turrets: Turrets
 				{
+					class CommanderOptics: CommanderOptics
+					{
+					};
+					class CommanderMG: CommanderMG
+					{
+					};
 				};
 			};
 		};
@@ -1262,8 +1656,32 @@ class CfgVehicles
 		{
 			class MainTurret: MainTurret
 			{
+				magazines[]=
+				{
+					"rhs_mag_3bm22_10",
+					"rhs_mag_3bk18m_8",
+					"rhs_mag_3of26_6",
+					"rhs_mag_9m112m_4",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_3d17",
+					"rhs_laserfcsmag",
+					"rhs_laserfcsmag"
+				};
 				class Turrets: Turrets
 				{
+					class CommanderOptics: CommanderOptics
+					{
+					};
+					class CommanderMG: CommanderMG
+					{
+					};
 				};
 			};
 		};
@@ -1280,8 +1698,32 @@ class CfgVehicles
 		{
 			class MainTurret: MainTurret
 			{
+				magazines[]=
+				{
+					"rhs_mag_3bm22_10",
+					"rhs_mag_3bk18m_8",
+					"rhs_mag_3of26_6",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_9m112m_4",
+					"rhs_mag_3d17",
+					"rhs_laserfcsmag",
+					"rhs_laserfcsmag"
+				};
 				class Turrets: Turrets
 				{
+					class CommanderOptics: CommanderOptics
+					{
+					};
+					class CommanderMG: CommanderMG
+					{
+					};
 				};
 			};
 		};
@@ -1330,6 +1772,9 @@ class CfgVehicles
 					class pylon6: pylon6
 					{
 						attachment="rhs_mag_ub32_s5ko";
+					};
+					class cmDispenser: cmDispenser
+					{
 					};
 				};
 			};
@@ -1392,6 +1837,9 @@ class CfgVehicles
 					{
 						attachment="rhs_mag_ub32_s5ko";
 					};
+					class cmDispenser: cmDispenser
+					{
+					};
 				};
 			};
 		};
@@ -1453,6 +1901,9 @@ class CfgVehicles
 					{
 						attachment="rhs_mag_ub32_s5ko";
 					};
+					class cmDispenser: cmDispenser
+					{
+					};
 				};
 			};
 		};
@@ -1493,6 +1944,10 @@ class CfgVehicles
 		{
 			"rhs_weap_CMFlareLauncher"
 		};
+		magazines[]=
+		{
+			"168Rnd_CMFlare_Chaff_Magazine"
+		};
 		class Components: Components
 		{
 			class TransportPylonsComponent: TransportPylonsComponent
@@ -1528,6 +1983,9 @@ class CfgVehicles
 					{
 						attachment="rhs_mag_9M114M_Mi24_2x";
 						turret[]={0};
+					};
+					class cmDispenser: cmDispenser
+					{
 					};
 				};
 			};
@@ -1564,6 +2022,10 @@ class CfgVehicles
 		{
 			"rhs_weap_CMFlareLauncher"
 		};
+		magazines[]=
+		{
+			"168Rnd_CMFlare_Chaff_Magazine"
+		};
 		class Components: Components
 		{
 			class TransportPylonsComponent: TransportPylonsComponent
@@ -1599,6 +2061,9 @@ class CfgVehicles
 					{
 						attachment="rhs_mag_9M114M_Mi24_2x";
 						turret[]={0};
+					};
+					class cmDispenser: cmDispenser
+					{
 					};
 				};
 			};
@@ -1636,6 +2101,10 @@ class CfgVehicles
 		{
 			"rhs_weap_CMFlareLauncher"
 		};
+		magazines[]=
+		{
+			"168Rnd_CMFlare_Chaff_Magazine"
+		};
 		class Components: Components
 		{
 			class TransportPylonsComponent: TransportPylonsComponent
@@ -1671,6 +2140,9 @@ class CfgVehicles
 					{
 						attachment="rhs_mag_9M114M_Mi24_2x";
 						turret[]={0};
+					};
+					class cmDispenser: cmDispenser
+					{
 					};
 				};
 			};
@@ -1777,6 +2249,12 @@ class CfgVehicles
 					{
 						attachment="rhs_mag_R60M_APU60";
 					};
+					class pylon7: pylon7
+					{
+					};
+					class cmDispenser: cmDispenser
+					{
+					};
 				};
 			};
 		};
@@ -1877,6 +2355,15 @@ class CfgVehicles
 		side=1;
 		class Turrets: Turrets
 		{
+			class MainTurret: MainTurret
+			{
+			};
+			class CargoTurret_02: CargoTurret_02
+			{
+			};
+			class CargoTurret_03: CargoTurret_03
+			{
+			};
 		};
 	};
 	class rhsgref_cdf_b_reg_BM21: rhsgref_cdf_reg_BM21
@@ -1920,6 +2407,12 @@ class CfgVehicles
 		side=1;
 		class Turrets: Turrets
 		{
+			class MainTurret: MainTurret
+			{
+			};
+			class CargoTurret_02: CargoTurret_02
+			{
+			};
 		};
 	};
 	class rhsgref_cdf_b_zil131: rhsgref_cdf_zil131
@@ -2011,6 +2504,12 @@ class CfgVehicles
 			{
 				class Turrets: Turrets
 				{
+					class CommanderOptics: CommanderOptics
+					{
+					};
+					class LoaderOptics: LoaderOptics
+					{
+					};
 				};
 			};
 		};
@@ -2024,6 +2523,12 @@ class CfgVehicles
 			{
 				class Turrets: Turrets
 				{
+					class CommanderOptics: CommanderOptics
+					{
+					};
+					class CommanderMG: CommanderMG
+					{
+					};
 				};
 			};
 		};
@@ -2037,6 +2542,12 @@ class CfgVehicles
 			{
 				class Turrets: Turrets
 				{
+					class CommanderOptics: CommanderOptics
+					{
+					};
+					class CommanderMG: CommanderMG
+					{
+					};
 				};
 			};
 		};
@@ -2050,6 +2561,12 @@ class CfgVehicles
 			{
 				class Turrets: Turrets
 				{
+					class CommanderOptics: CommanderOptics
+					{
+					};
+					class CommanderMG: CommanderMG
+					{
+					};
 				};
 			};
 		};
@@ -2063,6 +2580,12 @@ class CfgVehicles
 			{
 				class Turrets: Turrets
 				{
+					class CommanderOptics: CommanderOptics
+					{
+					};
+					class CommanderMG: CommanderMG
+					{
+					};
 				};
 			};
 		};
@@ -2234,6 +2757,15 @@ class CfgVehicles
 		};
 		class Turrets: Turrets
 		{
+			class MainTurret: MainTurret
+			{
+			};
+			class CargoTurret_02: CargoTurret_02
+			{
+			};
+			class CargoTurret_03: CargoTurret_03
+			{
+			};
 		};
 	};
 	class rhsgref_nat_btr70: rhs_btr70_vmf
@@ -2316,6 +2848,9 @@ class CfgVehicles
 		accuracy=0.5;
 		class Turrets: Turrets
 		{
+			class MainTurret: MainTurret
+			{
+			};
 		};
 	};
 	class rhsgref_ins_uaz_ags: RHS_UAZ_AGS30_Base
@@ -2328,6 +2863,9 @@ class CfgVehicles
 		accuracy=0.5;
 		class Turrets: Turrets
 		{
+			class MainTurret: MainTurret
+			{
+			};
 		};
 	};
 	class rhsgref_ins_uaz_spg9: RHS_UAZ_SPG9_Base
@@ -2340,6 +2878,9 @@ class CfgVehicles
 		accuracy=0.5;
 		class Turrets: Turrets
 		{
+			class MainTurret: MainTurret
+			{
+			};
 		};
 	};
 	class rhsgref_ins_ural: RHS_Ural_Civ_Base
@@ -2372,6 +2913,15 @@ class CfgVehicles
 		};
 		class Turrets: Turrets
 		{
+			class MainTurret: MainTurret
+			{
+			};
+			class CargoTurret_02: CargoTurret_02
+			{
+			};
+			class CargoTurret_03: CargoTurret_03
+			{
+			};
 		};
 	};
 	class rhsgref_ins_BM21: RHS_BM21_MSV_01
@@ -2455,6 +3005,12 @@ class CfgVehicles
 		};
 		class Turrets: Turrets
 		{
+			class MainTurret: MainTurret
+			{
+			};
+			class CargoTurret_02: CargoTurret_02
+			{
+			};
 		};
 	};
 	class rhsgref_ins_zil131: rhs_zil131_base
@@ -2663,13 +3219,75 @@ class CfgVehicles
 		{
 			class MainTurret: MainTurret
 			{
+				magazines[]=
+				{
+					"rhs_mag_3bm26_7",
+					"rhs_mag_3bk14_6",
+					"rhs_mag_3of26_5",
+					"rhs_mag_9m119_4",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_3d17",
+					"rhs_LaserFCSMag"
+				};
 				class Turrets: Turrets
 				{
+					class CommanderOptics: CommanderOptics
+					{
+					};
+					class CommanderMG: CommanderMG
+					{
+					};
 				};
 			};
 		};
 		class Attributes: Attributes
 		{
+			class rhs_decalNumber_type: rhs_decalNumber_type
+			{
+			};
+			class rhs_decalNumber: rhs_decalNumber
+			{
+			};
+			class rhs_decalPlatoon_type: rhs_decalPlatoon_type
+			{
+			};
+			class rhs_decalPlatoon: rhs_decalPlatoon
+			{
+			};
+			class rhs_ammoslot_1_type: rhs_ammoslot_1_type
+			{
+			};
+			class rhs_ammoslot_1: rhs_ammoslot_1
+			{
+			};
+			class rhs_ammoslot_2_type: rhs_ammoslot_2_type
+			{
+			};
+			class rhs_ammoslot_2: rhs_ammoslot_2
+			{
+			};
+			class rhs_ammoslot_3_type: rhs_ammoslot_3_type
+			{
+			};
+			class rhs_ammoslot_3: rhs_ammoslot_3
+			{
+			};
+			class rhs_ammoslot_4_type: rhs_ammoslot_4_type
+			{
+			};
+			class rhs_ammoslot_4: rhs_ammoslot_4
+			{
+			};
+			class rhs_hide_com_shield: rhs_hide_com_shield
+			{
+			};
 			class rhs_hide_Flag
 			{
 				property="rhs_hide_Flag";
@@ -2698,13 +3316,75 @@ class CfgVehicles
 		{
 			class MainTurret: MainTurret
 			{
+				magazines[]=
+				{
+					"rhs_mag_3bm26_7",
+					"rhs_mag_3bk14_6",
+					"rhs_mag_3of26_5",
+					"rhs_mag_9m119_4",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_3d17",
+					"rhs_LaserFCSMag"
+				};
 				class Turrets: Turrets
 				{
+					class CommanderOptics: CommanderOptics
+					{
+					};
+					class CommanderMG: CommanderMG
+					{
+					};
 				};
 			};
 		};
 		class Attributes: Attributes
 		{
+			class rhs_decalNumber_type: rhs_decalNumber_type
+			{
+			};
+			class rhs_decalNumber: rhs_decalNumber
+			{
+			};
+			class rhs_decalPlatoon_type: rhs_decalPlatoon_type
+			{
+			};
+			class rhs_decalPlatoon: rhs_decalPlatoon
+			{
+			};
+			class rhs_ammoslot_1_type: rhs_ammoslot_1_type
+			{
+			};
+			class rhs_ammoslot_1: rhs_ammoslot_1
+			{
+			};
+			class rhs_ammoslot_2_type: rhs_ammoslot_2_type
+			{
+			};
+			class rhs_ammoslot_2: rhs_ammoslot_2
+			{
+			};
+			class rhs_ammoslot_3_type: rhs_ammoslot_3_type
+			{
+			};
+			class rhs_ammoslot_3: rhs_ammoslot_3
+			{
+			};
+			class rhs_ammoslot_4_type: rhs_ammoslot_4_type
+			{
+			};
+			class rhs_ammoslot_4: rhs_ammoslot_4
+			{
+			};
+			class rhs_hide_com_shield: rhs_hide_com_shield
+			{
+			};
 			class rhs_hide_Flag
 			{
 				property="rhs_hide_Flag";
@@ -2733,13 +3413,75 @@ class CfgVehicles
 		{
 			class MainTurret: MainTurret
 			{
+				magazines[]=
+				{
+					"rhs_mag_3bm26_7",
+					"rhs_mag_3bk14_6",
+					"rhs_mag_3of26_5",
+					"rhs_mag_9m119_4",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_762x54mm_250",
+					"rhs_mag_3d17",
+					"rhs_LaserFCSMag"
+				};
 				class Turrets: Turrets
 				{
+					class CommanderOptics: CommanderOptics
+					{
+					};
+					class CommanderMG: CommanderMG
+					{
+					};
 				};
 			};
 		};
 		class Attributes: Attributes
 		{
+			class rhs_decalNumber_type: rhs_decalNumber_type
+			{
+			};
+			class rhs_decalNumber: rhs_decalNumber
+			{
+			};
+			class rhs_decalPlatoon_type: rhs_decalPlatoon_type
+			{
+			};
+			class rhs_decalPlatoon: rhs_decalPlatoon
+			{
+			};
+			class rhs_ammoslot_1_type: rhs_ammoslot_1_type
+			{
+			};
+			class rhs_ammoslot_1: rhs_ammoslot_1
+			{
+			};
+			class rhs_ammoslot_2_type: rhs_ammoslot_2_type
+			{
+			};
+			class rhs_ammoslot_2: rhs_ammoslot_2
+			{
+			};
+			class rhs_ammoslot_3_type: rhs_ammoslot_3_type
+			{
+			};
+			class rhs_ammoslot_3: rhs_ammoslot_3
+			{
+			};
+			class rhs_ammoslot_4_type: rhs_ammoslot_4_type
+			{
+			};
+			class rhs_ammoslot_4: rhs_ammoslot_4
+			{
+			};
+			class rhs_hide_com_shield: rhs_hide_com_shield
+			{
+			};
 			class rhs_hide_Flag
 			{
 				property="rhs_hide_Flag";
@@ -2778,6 +3520,12 @@ class CfgVehicles
 			{
 				class Turrets: Turrets
 				{
+					class CommanderOptics: CommanderOptics
+					{
+					};
+					class LoaderOptics: LoaderOptics
+					{
+					};
 				};
 			};
 		};
@@ -2848,6 +3596,9 @@ class CfgVehicles
 		side=2;
 		class Turrets: Turrets
 		{
+			class MainTurret: MainTurret
+			{
+			};
 		};
 	};
 	class rhsgref_ins_g_uaz_ags: rhsgref_ins_uaz_ags
@@ -2855,6 +3606,9 @@ class CfgVehicles
 		side=2;
 		class Turrets: Turrets
 		{
+			class MainTurret: MainTurret
+			{
+			};
 		};
 	};
 	class rhsgref_ins_g_uaz_spg9: rhsgref_ins_uaz_spg9
@@ -2862,6 +3616,9 @@ class CfgVehicles
 		side=2;
 		class Turrets: Turrets
 		{
+			class MainTurret: MainTurret
+			{
+			};
 		};
 	};
 	class rhsgref_ins_g_ural: rhsgref_ins_ural
@@ -2889,6 +3646,15 @@ class CfgVehicles
 		side=2;
 		class Turrets: Turrets
 		{
+			class MainTurret: MainTurret
+			{
+			};
+			class CargoTurret_02: CargoTurret_02
+			{
+			};
+			class CargoTurret_03: CargoTurret_03
+			{
+			};
 		};
 	};
 	class rhsgref_ins_g_gaz66: rhsgref_ins_gaz66
@@ -2928,6 +3694,12 @@ class CfgVehicles
 		side=2;
 		class Turrets: Turrets
 		{
+			class MainTurret: MainTurret
+			{
+			};
+			class CargoTurret_02: CargoTurret_02
+			{
+			};
 		};
 	};
 	class rhsgref_ins_g_zil131: rhsgref_ins_zil131
@@ -3015,6 +3787,12 @@ class CfgVehicles
 			{
 				class Turrets: Turrets
 				{
+					class CommanderOptics: CommanderOptics
+					{
+					};
+					class CommanderMG: CommanderMG
+					{
+					};
 				};
 			};
 		};
@@ -3028,6 +3806,12 @@ class CfgVehicles
 			{
 				class Turrets: Turrets
 				{
+					class CommanderOptics: CommanderOptics
+					{
+					};
+					class CommanderMG: CommanderMG
+					{
+					};
 				};
 			};
 		};
@@ -3041,6 +3825,12 @@ class CfgVehicles
 			{
 				class Turrets: Turrets
 				{
+					class CommanderOptics: CommanderOptics
+					{
+					};
+					class CommanderMG: CommanderMG
+					{
+					};
 				};
 			};
 		};
@@ -3054,6 +3844,12 @@ class CfgVehicles
 			{
 				class Turrets: Turrets
 				{
+					class CommanderOptics: CommanderOptics
+					{
+					};
+					class LoaderOptics: LoaderOptics
+					{
+					};
 				};
 			};
 		};
@@ -3613,6 +4409,15 @@ class CfgVehicles
 				{
 					"RHS_M2_offroad"
 				};
+				magazines[]=
+				{
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red"
+				};
 			};
 		};
 	};
@@ -3660,6 +4465,22 @@ class CfgVehicles
 				weapons[]=
 				{
 					"rhs_weap_SPG9"
+				};
+				magazines[]=
+				{
+					"rhs_mag_OG9V",
+					"rhs_mag_OG9V",
+					"rhs_mag_OG9V",
+					"rhs_mag_OG9V",
+					"rhs_mag_OG9V",
+					"rhs_mag_OG9V",
+					"rhs_mag_OG9V",
+					"rhs_mag_PG9V",
+					"rhs_mag_PG9V",
+					"rhs_mag_PG9V",
+					"rhs_mag_PG9V",
+					"rhs_mag_PG9V",
+					"rhs_mag_PG9V"
 				};
 			};
 		};

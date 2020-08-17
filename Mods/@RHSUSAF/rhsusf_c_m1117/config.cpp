@@ -78,6 +78,9 @@ class CfgVehicles
 		{
 			class MainTurret: NewTurret
 			{
+				class ViewGunner;
+				class ViewOptics;
+			};
 		};
 		class HitPoints
 		{
@@ -91,9 +94,18 @@ class CfgVehicles
 			class HitGlass2;
 			class HitGlass3;
 			class HitGlass4;
+			class HitGlass5;
+			class HitGlass6;
+		};
 		class ViewPilot;
+		class ViewOptics;
+		class AnimationSources;
+	};
 	class Wheeled_APC_F: Car_F
 	{
+		class EventHandlers;
+		class CommanderOptics;
+	};
 	class rhsusf_M1117_base: Wheeled_APC_F
 	{
 		rhs_duke_type="rhsusf_duke";
@@ -282,6 +294,9 @@ class CfgVehicles
 		damageResistance=0.030990001;
 		selectionDamage="zbytek";
 		enableGPS=1;
+		class Damage
+		{
+		};
 		hideProxyInCombat=0;
 		driverCompartments="Compartment1";
 		cargoCompartments[]=
@@ -365,6 +380,22 @@ class CfgVehicles
 					"RHS_M2_M1117",
 					"RHS_MK19",
 					"rhsusf_weap_M257_8"
+				};
+				magazines[]=
+				{
+					"rhs_mag_200rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_200rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_200rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_200rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_200rnd_127x99_mag_Tracer_Red",
+					"RHS_96Rnd_40mm_MK19_M430A1",
+					"RHS_96Rnd_40mm_MK19_M430A1",
+					"RHS_96Rnd_40mm_MK19_M430A1",
+					"RHS_96Rnd_40mm_MK19_M430A1",
+					"RHS_96Rnd_40mm_MK19_M430A1",
+					"RHS_96Rnd_40mm_MK19_M430A1",
+					"RHS_96Rnd_40mm_MK19_M1001",
+					"rhsusf_mag_L8A3_8"
 				};
 				minElev=-5;
 				maxElev=60;
@@ -473,6 +504,10 @@ class CfgVehicles
 						{
 							"rhsusf_weap_duke"
 						};
+						magazines[]=
+						{
+							"rhsusf_mag_duke"
+						};
 						minElev=-4;
 						maxElev=20;
 						initElev=0;
@@ -510,6 +545,9 @@ class CfgVehicles
 							initFov=0.40000001;
 							minFov=0.2;
 							maxFov=0.40000001;
+						};
+						class HitPoints
+						{
 						};
 						class OpticsIn
 						{
@@ -1651,6 +1689,15 @@ class CfgVehicles
 					"rhs_faction_usarmy_d"
 				};
 			};
+			class desert: standard
+			{
+			};
+			class olive: standard
+			{
+			};
+			class un: standard
+			{
+			};
 		};
 		class PlayerSteeringCoefficients
 		{
@@ -1681,9 +1728,24 @@ class CfgVehicles
 			"rhsusf_army_ucp_rifleman_m4"
 		};
 	};
+	class rhsusf_M1117_W: rhsusf_M1117_D
+	{
+	};
+	class rhsusf_M1117_O: rhsusf_M1117_W
+	{
+	};
 	class ThingX;
 	class rhsusf_duke_d: ThingX
 	{
 		editorCategory="EdCat_Things";
+	};
+	class rhsusf_duke_wd: rhsusf_duke_d
+	{
+	};
+	class rhsusf_duke_m1a2_d: rhsusf_duke_d
+	{
+	};
+	class rhsusf_duke_m1a2_wd: rhsusf_duke_m1a2_d
+	{
 	};
 };

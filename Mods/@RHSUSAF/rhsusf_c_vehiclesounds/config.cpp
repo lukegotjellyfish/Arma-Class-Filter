@@ -1,5 +1,8 @@
 class CfgPatches
 {
+	class RHSUSF_c_vehicleSounds
+	{
+		units[]={};
 		weapons[]={};
 		version="0.1";
 	};
@@ -1321,6 +1324,15 @@ class cfgSoundSets
 class cfgVehicles
 {
 	class LandVehicle;
+	class Tank: LandVehicle
+	{
+	};
+	class Tank_F: Tank
+	{
+	};
+	class MBT_01_base_F: Tank_F
+	{
+	};
 	class rhsusf_m1a1tank_base: MBT_01_base_F
 	{
 		class Sounds

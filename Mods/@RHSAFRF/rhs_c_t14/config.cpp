@@ -37,15 +37,24 @@ class Optics_Armored;
 class Optics_Commander_02: Optics_Armored
 {
 	class Wide;
+	class Medium;
+	class Narrow;
+};
 class Optics_Gunner_MBT_02: Optics_Armored
 {
 	class Wide;
+	class Medium;
+	class Narrow;
+};
 class CfgVehicles
 {
 	class LandVehicle;
 	class Tank: LandVehicle
 	{
 		class NewTurret;
+		class Sounds;
+		class HitPoints;
+	};
 	class Tank_F: Tank
 	{
 		class Turrets
@@ -54,6 +63,9 @@ class CfgVehicles
 			{
 				class Turrets
 				{
+					class CommanderOptics;
+				};
+			};
 		};
 		class AnimationSources;
 		class ViewPilot;
@@ -64,8 +76,14 @@ class CfgVehicles
 		{
 			class HitHull;
 			class HitEngine;
+			class HitLTrack;
+			class HitRTrack;
+		};
 		class Sounds: Sounds
 		{
+			class Engine;
+			class Movement;
+		};
 		class EventHandlers;
 	};
 	class rhs_t14_base: Tank_F
@@ -461,6 +479,24 @@ class CfgVehicles
 					{0.60000002,0.89999998}
 				};
 			};
+			class L3: L2
+			{
+			};
+			class L4: L2
+			{
+			};
+			class L5: L4
+			{
+			};
+			class L6: L4
+			{
+			};
+			class L7: L2
+			{
+			};
+			class L8: L2
+			{
+			};
 			class L9: L2
 			{
 				maxDroop=0.0099999998;
@@ -475,6 +511,24 @@ class CfgVehicles
 			{
 				side="right";
 				suspTravelDirection[]={0.125,-1,0};
+			};
+			class R3: R2
+			{
+			};
+			class R4: R2
+			{
+			};
+			class R5: R2
+			{
+			};
+			class R6: R2
+			{
+			};
+			class R7: R2
+			{
+			};
+			class R8: R2
+			{
 			};
 			class R9: R2
 			{
@@ -1098,6 +1152,21 @@ class CfgVehicles
 							"rhs_weap_afganit_10",
 							"SmokeLauncher"
 						};
+						magazines[]=
+						{
+							"rhs_mag_762x54mm_2000",
+							"rhs_mag_aps_afganit",
+							"rhs_mag_aps_afganit",
+							"rhs_mag_aps_afganit",
+							"rhs_mag_aps_afganit",
+							"rhs_mag_aps_afganit",
+							"rhs_mag_aps_afganit",
+							"rhs_mag_aps_afganit",
+							"rhs_mag_aps_afganit",
+							"rhs_mag_aps_afganit",
+							"rhs_mag_aps_afganit",
+							"SmokeLauncherMag"
+						};
 						isPersonTurret=0;
 						personTurretAction="vehicle_turnout_2";
 						minOutElev=-10;
@@ -1126,6 +1195,15 @@ class CfgVehicles
 						};
 						class OpticsIn: Optics_Commander_02
 						{
+							class Wide: Wide
+							{
+							};
+							class Medium: Medium
+							{
+							};
+							class Narrow: Narrow
+							{
+							};
 						};
 						startEngine=0;
 						class HitPoints
@@ -1163,6 +1241,15 @@ class CfgVehicles
 					"rhs_weap_2a82_1m",
 					"rhs_weap_pktm_t14_RWS"
 				};
+				magazines[]=
+				{
+					"rhs_mag_3bm69_17",
+					"rhs_mag_3of26_7",
+					"rhs_mag_3bk31_6",
+					"rhs_mag_9m119m_4",
+					"rhs_mag_762x54mm_1000",
+					"rhs_mag_762x54mm_1000"
+				};
 				forceHideGunner=1;
 				minElev=-5;
 				maxElev=20;
@@ -1172,6 +1259,15 @@ class CfgVehicles
 				lockWhenDriverOut=1;
 				class OpticsIn: Optics_Gunner_MBT_02
 				{
+					class Wide: Wide
+					{
+					};
+					class Medium: Medium
+					{
+					};
+					class Narrow: Narrow
+					{
+					};
 				};
 				class HitPoints
 				{
@@ -1264,6 +1360,9 @@ class CfgVehicles
 				defaultValue="-1";
 				expression="if( _value >= 0)then{if( _value == 0)then{{[_this setobjectTexture [_x,'a3\data_f\clear_empty.paa']]}foreach cRHST14NumberPlaces}else{[_this, [['Number', cRHST14NumberPlaces, _this getVariable ['rhs_decalNumber_type','Default'], _value] ] ] call rhs_fnc_decalsInit}};";
 			};
+		};
+		class Damage
+		{
 		};
 		class EventHandlers: EventHandlers
 		{

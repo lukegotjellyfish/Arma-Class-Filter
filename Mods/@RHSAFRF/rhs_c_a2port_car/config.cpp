@@ -57,6 +57,9 @@ class CfgPatches
 		weapons[]={};
 		name="A2 ported cars";
 	};
+	class RHS_A2_CarsImport
+	{
+		units[]={};
 		weapons[]={};
 		requiredAddons[]={};
 	};
@@ -237,12 +240,18 @@ class CfgVehicles
 	class LandVehicle;
 	class Car: LandVehicle
 	{
+		class HitPoints;
+		class NewTurret;
+	};
 	class Car_F: Car
 	{
 		class Turrets
 		{
 			class MainTurret: NewTurret
 			{
+				class ViewOptics;
+			};
+		};
 		class HitPoints
 		{
 			class HitLFWheel;
@@ -254,6 +263,15 @@ class CfgVehicles
 			class HitGlass2;
 			class HitGlass3;
 			class HitGlass4;
+			class HitGlass5;
+			class HitGlass6;
+		};
+		class EventHandlers;
+		class AnimationSources;
+	};
+	class Offroad_01_base_F: Car_F
+	{
+	};
 	class Truck_F: Car_F
 	{
 		class ViewPilot;
@@ -265,6 +283,9 @@ class CfgVehicles
 			class HitLF2Wheel;
 			class HitRFWheel;
 			class HitRBWheel;
+			class HitRMWheel;
+			class HitRF2Wheel;
+		};
 		class AnimationSources;
 	};
 	class RHS_UAZ_Base: Offroad_01_base_F
@@ -295,6 +316,21 @@ class CfgVehicles
 					"rhs_faction_vdv",
 					"rhs_faction_vv"
 				};
+			};
+			class Camo: standard
+			{
+			};
+			class Camo1: standard
+			{
+			};
+			class Camo2: standard
+			{
+			};
+			class Camo3: standard
+			{
+			};
+			class Camo4: standard
+			{
 			};
 		};
 		class Attributes
@@ -1198,6 +1234,9 @@ class CfgVehicles
 				volume="engineOn*(1-asphalt)*(1-camPos)*(latSlipDrive Factor[-0.1, -0.4])*(Speed Factor[2, 15])";
 			};
 		};
+		class Turrets: Turrets
+		{
+		};
 		driverCompartments="Compartment1";
 		cargoCompartments[]=
 		{
@@ -1379,6 +1418,9 @@ class CfgVehicles
 		memoryPointTrackFRR="TrackFRR";
 		memoryPointTrackBRL="TrackBRL";
 		memoryPointTrackBRR="TrackBRR";
+		class Damage
+		{
+		};
 		class Exhausts
 		{
 			class Exhaust1
@@ -1548,6 +1590,9 @@ class CfgVehicles
 				proxyIndex=6;
 				maxTurn=105;
 				minTurn=-10;
+				class dynamicViewLimits
+				{
+					CargoTurret_01[]={40,105};
 				};
 			};
 			class CargoTurret_03: CargoTurret_01
@@ -1555,18 +1600,27 @@ class CfgVehicles
 				proxyIndex=1;
 				maxTurn=-41;
 				minTurn=-95;
+				class dynamicViewLimits
+				{
+				};
 			};
 			class CargoTurret_04: CargoTurret_01
 			{
 				proxyIndex=2;
 				maxTurn=95;
 				minTurn=18;
+				class dynamicViewLimits
+				{
+				};
 			};
 			class CargoTurret_05: CargoTurret_01
 			{
 				proxyIndex=4;
 				maxTurn=-11;
 				minTurn=-95;
+				class dynamicViewLimits
+				{
+				};
 			};
 		};
 	};
@@ -1606,6 +1660,18 @@ class CfgVehicles
 					"rhs_faction_vv"
 				};
 			};
+			class Camo: standard
+			{
+			};
+			class Camo1: standard
+			{
+			};
+			class Camo2: standard
+			{
+			};
+			class Camo4: standard
+			{
+			};
 		};
 		class CargoTurret;
 		class Turrets: Turrets
@@ -1616,6 +1682,14 @@ class CfgVehicles
 				weapons[]=
 				{
 					"rhs_weap_DSHKM"
+				};
+				magazines[]=
+				{
+					"rhs_mag_127x108mm_50",
+					"rhs_mag_127x108mm_50",
+					"rhs_mag_127x108mm_50",
+					"rhs_mag_127x108mm_50",
+					"rhs_mag_127x108mm_50"
 				};
 				selectionFireAnim="zasleh";
 				ejectDeadGunner=1;
@@ -1684,6 +1758,15 @@ class CfgVehicles
 				{
 					"RHS_weap_AGS30"
 				};
+				magazines[]=
+				{
+					"RHS_mag_VOG30_30",
+					"RHS_mag_VOG30_30",
+					"RHS_mag_VOG30_30",
+					"RHS_mag_VOG30_30",
+					"RHS_mag_VOG30_30",
+					"RHS_mag_VOG30_30"
+				};
 				class OpticsIn
 				{
 					class Sight: ViewOptics
@@ -1696,6 +1779,9 @@ class CfgVehicles
 			};
 		};
 	};
+	class RHS_UAZ_SPG9_Base: RHS_UAZ_DShKM_Base
+	{
+		threat[]={0.89999998,0.60000002,0.1};
 		class Turrets: Turrets
 		{
 			class MainTurret: MainTurret
@@ -1703,6 +1789,22 @@ class CfgVehicles
 				weapons[]=
 				{
 					"rhs_weap_SPG9"
+				};
+				magazines[]=
+				{
+					"rhs_mag_OG9V",
+					"rhs_mag_OG9V",
+					"rhs_mag_OG9V",
+					"rhs_mag_OG9V",
+					"rhs_mag_OG9V",
+					"rhs_mag_OG9V",
+					"rhs_mag_OG9V",
+					"rhs_mag_PG9V",
+					"rhs_mag_PG9V",
+					"rhs_mag_PG9V",
+					"rhs_mag_PG9V",
+					"rhs_mag_PG9V",
+					"rhs_mag_PG9V"
 				};
 				minElev=-10;
 				maxElev=30;
@@ -1749,6 +1851,9 @@ class CfgVehicles
 			"rhs_msv_driver"
 		};
 	};
+	class RHS_UAZ_MSV_01: RHS_UAZ_MSV_Base
+	{
+	};
 	class rhs_uaz_vdv: RHS_UAZ_MSV_01
 	{
 		rhs_decalParameters[]=
@@ -1773,6 +1878,9 @@ class CfgVehicles
 			"['Number', cDecals4CarsNumberPlaces, 'LicensePlate']",
 			"['Label', cDecalsCarsRightArmyPlaces, 'Army', [6,1]]"
 		};
+	};
+	class rhs_uaz_open_MSV_01: rhs_uaz_open_MSV_Base
+	{
 	};
 	class rhs_uaz_open_vdv: rhs_uaz_open_MSV_01
 	{
@@ -1809,6 +1917,36 @@ class CfgVehicles
 		mapsize=7;
 		class textureSources
 		{
+			class standard
+			{
+			};
+			class Camo: standard
+			{
+			};
+			class Camo1: standard
+			{
+			};
+			class Camo2: standard
+			{
+			};
+			class Camo3: standard
+			{
+			};
+			class Camo4: standard
+			{
+			};
+			class Camo5: standard
+			{
+			};
+			class Camo6: standard
+			{
+			};
+			class Camo7: standard
+			{
+			};
+			class rhs_sand: standard
+			{
+			};
 		};
 		class Attributes
 		{
@@ -2717,6 +2855,9 @@ class CfgVehicles
 		{
 			class MainTurret: NewTurret
 			{
+				class ViewOptics;
+			};
+		};
 		driverCompartments="Compartment1";
 		cargoCompartments[]=
 		{
@@ -2874,6 +3015,9 @@ class CfgVehicles
 		memorypointtrackflr="Stopa PLP";
 		memorypointtrackfrl="Stopa PPL";
 		memorypointtrackfrr="Stopa PPP";
+		class Damage
+		{
+		};
 		class Exhausts
 		{
 			class Exhaust1
@@ -3007,6 +3151,9 @@ class CfgVehicles
 				steering=0;
 				maxHandBrakeTorque=20000;
 			};
+			class LR2: LR
+			{
+			};
 			class RF: LF
 			{
 				steering=1;
@@ -3017,6 +3164,9 @@ class CfgVehicles
 			{
 				steering=0;
 				maxHandBrakeTorque=20000;
+			};
+			class RR2: RR
+			{
 			};
 		};
 		class EventHandlers: EventHandlers
@@ -3058,6 +3208,9 @@ class CfgVehicles
 			"['Label', cDecalsCarsRightArmyPlaces, 'Platoon', 12]"
 		};
 	};
+	class RHS_Ural_MSV_01: RHS_Ural_MSV_Base
+	{
+	};
 	class RHS_Ural_VDV_01: RHS_Ural_MSV_Base
 	{
 		rhs_decalParameters[]=
@@ -3085,6 +3238,9 @@ class CfgVehicles
 	};
 	class RHS_Ural_Flat_MSV_01: RHS_Ural_MSV_Base
 	{
+		class Turrets
+		{
+		};
 	};
 	class RHS_Ural_Flat_VDV_01: RHS_Ural_Flat_MSV_01
 	{
@@ -3111,6 +3267,9 @@ class CfgVehicles
 			"['Label', cDecalsCarsRightArmyPlaces, 'Army', [6,1]]"
 		};
 	};
+	class RHS_Ural_Open_MSV_01: RHS_Ural_MSV_Base
+	{
+		soundAttenuationCargo[]={1,1,0};
 		hideProxyInCombat=1;
 		canHideDriver=0;
 		class textureSources
@@ -3125,9 +3284,24 @@ class CfgVehicles
 					"rhs_faction_vv"
 				};
 			};
+			class Camo: standard
+			{
+			};
+			class Camo1: standard
+			{
+			};
+			class Camo2: standard
+			{
+			};
+			class rhs_sand: standard
+			{
+			};
 		};
 		class Turrets: Turrets
 		{
+			class CargoTurret_02: CargoTurret_02
+			{
+			};
 			class CargoTurret_03: CargoTurret_02
 			{
 				animationSourceHatch="turnout1";
@@ -3219,6 +3393,9 @@ class CfgVehicles
 	};
 	class RHS_Ural_Open_Flat_MSV_01: RHS_Ural_Open_MSV_01
 	{
+		class Turrets
+		{
+		};
 		class VehicleTransport
 		{
 			class Cargo
@@ -3286,6 +3463,9 @@ class CfgVehicles
 	};
 	class RHS_Ural_Support_MSV_Base_01: RHS_Ural_MSV_Base
 	{
+		class Turrets
+		{
+		};
 	};
 	class RHS_Ural_Fuel_MSV_01: RHS_Ural_Support_MSV_Base_01
 	{
@@ -3314,6 +3494,18 @@ class CfgVehicles
 					"rhs_faction_vdv",
 					"rhs_faction_vv"
 				};
+			};
+			class Camo: standard
+			{
+			};
+			class Camo1: standard
+			{
+			};
+			class Camo2: standard
+			{
+			};
+			class rhs_sand: standard
+			{
 			};
 		};
 	};
@@ -3352,6 +3544,9 @@ class CfgVehicles
 		icon="\A3\soft_f_beta\Truck_02\data\UI\Map_truck_02_repair_CA.paa";
 		transportRepair=2000000000;
 		supplyRadius=9.5;
+		class Damage
+		{
+		};
 		class textureSources
 		{
 			class standard
@@ -3363,6 +3558,21 @@ class CfgVehicles
 					"rhs_faction_vdv",
 					"rhs_faction_vv"
 				};
+			};
+			class Camo: standard
+			{
+			};
+			class Camo1: standard
+			{
+			};
+			class Camo2: standard
+			{
+			};
+			class Camo3: standard
+			{
+			};
+			class rhs_sand: standard
+			{
 			};
 		};
 	};
@@ -3485,44 +3695,161 @@ class CfgVehicles
 						turret[]={0};
 						hitpoint="HitLauncher";
 					};
+					class pylon2: pylon1
+					{
+						UIposition[]={0.12,0.14};
 					};
+					class pylon3: pylon1
+					{
+						UIposition[]={0.12,0.18000001};
 					};
+					class pylon4: pylon1
+					{
+						UIposition[]={0.12,0.22};
 					};
+					class pylon5: pylon1
+					{
+						UIposition[]={0.12,0.25999999};
 					};
+					class pylon6: pylon1
+					{
+						UIposition[]={0.12,0.30000001};
 					};
+					class pylon7: pylon1
+					{
+						UIposition[]={0.12,0.34};
 					};
+					class pylon8: pylon1
+					{
+						UIposition[]={0.12,0.38};
 					};
+					class pylon9: pylon1
+					{
+						UIposition[]={0.12,0.41999999};
 					};
+					class pylon10: pylon1
+					{
+						UIposition[]={0.12,0.46000001};
 					};
+					class pylon11: pylon1
+					{
+						UIposition[]={0.31,0.1};
 					};
+					class pylon12: pylon1
+					{
+						UIposition[]={0.31,0.14};
 					};
+					class pylon13: pylon1
+					{
+						UIposition[]={0.31,0.18000001};
 					};
+					class pylon14: pylon1
+					{
+						UIposition[]={0.31,0.22};
 					};
+					class pylon15: pylon1
+					{
+						UIposition[]={0.31,0.25999999};
 					};
+					class pylon16: pylon1
+					{
+						UIposition[]={0.31,0.30000001};
 					};
+					class pylon17: pylon1
+					{
+						UIposition[]={0.31,0.34};
 					};
+					class pylon18: pylon1
+					{
+						UIposition[]={0.31,0.38};
 					};
+					class pylon19: pylon1
+					{
+						UIposition[]={0.31,0.41999999};
 					};
+					class pylon20: pylon1
+					{
+						UIposition[]={0.31,0.46000001};
 					};
+					class pylon21: pylon1
+					{
+						UIposition[]={0.5,0.1};
 					};
+					class pylon22: pylon1
+					{
+						UIposition[]={0.5,0.14};
 					};
+					class pylon23: pylon1
+					{
+						UIposition[]={0.5,0.18000001};
 					};
+					class pylon24: pylon1
+					{
+						UIposition[]={0.5,0.22};
 					};
+					class pylon25: pylon1
+					{
+						UIposition[]={0.5,0.25999999};
 					};
+					class pylon26: pylon1
+					{
+						UIposition[]={0.5,0.30000001};
 					};
+					class pylon27: pylon1
+					{
+						UIposition[]={0.5,0.34};
 					};
+					class pylon28: pylon1
+					{
+						UIposition[]={0.5,0.38};
 					};
+					class pylon29: pylon1
+					{
+						UIposition[]={0.5,0.41999999};
 					};
+					class pylon30: pylon1
+					{
+						UIposition[]={0.5,0.46000001};
 					};
+					class pylon31: pylon1
+					{
+						UIposition[]={0.69,0.1};
 					};
+					class pylon32: pylon1
+					{
+						UIposition[]={0.69,0.14};
 					};
+					class pylon33: pylon1
+					{
+						UIposition[]={0.69,0.18000001};
 					};
+					class pylon34: pylon1
+					{
+						UIposition[]={0.69,0.22};
 					};
+					class pylon35: pylon1
+					{
+						UIposition[]={0.69,0.25999999};
 					};
+					class pylon36: pylon1
+					{
+						UIposition[]={0.69,0.30000001};
 					};
+					class pylon37: pylon1
+					{
+						UIposition[]={0.69,0.34};
 					};
+					class pylon38: pylon1
+					{
+						UIposition[]={0.69,0.38};
 					};
+					class pylon39: pylon1
+					{
+						UIposition[]={0.69,0.41999999};
 					};
+					class pylon40: pylon1
+					{
+						UIposition[]={0.69,0.46000001};
 					};
 				};
 				class Presets
@@ -3833,9 +4160,27 @@ class CfgVehicles
 					"rhs_faction_vv"
 				};
 			};
+			class Camo: standard
+			{
+			};
+			class Camo1: standard
+			{
+			};
+			class Camo2: standard
+			{
+			};
+			class Camo4: standard
+			{
+			};
+			class rhs_sand: standard
+			{
+			};
 		};
 		class EventHandlers: EventHandlers
 		{
+			class RHS_EventHandlers: RHS_EventHandlers
+			{
+			};
 		};
 	};
 	class RHS_BM21_VDV_01: RHS_BM21_MSV_01
@@ -3882,6 +4227,18 @@ class CfgVehicles
 				weapons[]=
 				{
 					"rhs_weap_2A14"
+				};
+				magazines[]=
+				{
+					"RHS_mag_AZP23_100",
+					"RHS_mag_AZP23_100",
+					"RHS_mag_AZP23_100",
+					"RHS_mag_AZP23_100",
+					"RHS_mag_AZP23_100",
+					"RHS_mag_AZP23_100",
+					"RHS_mag_AZP23_100",
+					"RHS_mag_AZP23_100",
+					"RHS_mag_AZP23_100"
 				};
 				selectionFireAnim="zasleh";
 				gunnerOpticsEffect[]=
@@ -4014,6 +4371,9 @@ class CfgVehicles
 				minTurn=-65;
 			};
 		};
+		class Damage
+		{
+		};
 		class textureSources
 		{
 			class standard
@@ -4025,6 +4385,15 @@ class CfgVehicles
 					"rhs_faction_vdv",
 					"rhs_faction_vv"
 				};
+			};
+			class Camo: standard
+			{
+			};
+			class Camo1: standard
+			{
+			};
+			class Camo2: standard
+			{
 			};
 		};
 	};
@@ -4043,6 +4412,15 @@ class CfgVehicles
 		};
 		class Turrets: Turrets
 		{
+			class MainTurret: MainTurret
+			{
+			};
+			class CargoTurret_02: CargoTurret_02
+			{
+			};
+			class CargoTurret_03: CargoTurret_03
+			{
+			};
 		};
 	};
 	class RHS_Ural_Zu23_VDV_01: RHS_Ural_Zu23_Base
@@ -4061,6 +4439,15 @@ class CfgVehicles
 		};
 		class Turrets: Turrets
 		{
+			class MainTurret: MainTurret
+			{
+			};
+			class CargoTurret_02: CargoTurret_02
+			{
+			};
+			class CargoTurret_03: CargoTurret_03
+			{
+			};
 		};
 	};
 	class RHS_Ural_Zu23_VMF_01: RHS_Ural_Zu23_Base
@@ -4074,6 +4461,15 @@ class CfgVehicles
 		side=0;
 		class Turrets: Turrets
 		{
+			class MainTurret: MainTurret
+			{
+			};
+			class CargoTurret_02: CargoTurret_02
+			{
+			};
+			class CargoTurret_03: CargoTurret_03
+			{
+			};
 		};
 	};
 	class RHS_Ural_Zu23_VV_01: RHS_Ural_Zu23_Base
@@ -4087,6 +4483,15 @@ class CfgVehicles
 		side=0;
 		class Turrets: Turrets
 		{
+			class MainTurret: MainTurret
+			{
+			};
+			class CargoTurret_02: CargoTurret_02
+			{
+			};
+			class CargoTurret_03: CargoTurret_03
+			{
+			};
 		};
 	};
 	class RHS_Ural_Civ_Base: RHS_Ural_Base
@@ -4094,6 +4499,24 @@ class CfgVehicles
 		accuracy=0.5;
 		side=3;
 		rhs_decalParameters[]={};
+	};
+	class RHS_Ural_Civ_01: RHS_Ural_Civ_Base
+	{
+	};
+	class RHS_Ural_Civ_02: RHS_Ural_Civ_01
+	{
+	};
+	class RHS_Ural_Civ_03: RHS_Ural_Civ_01
+	{
+	};
+	class RHS_Ural_Open_Civ_01: RHS_Ural_Civ_Base
+	{
+	};
+	class RHS_Ural_Open_Civ_02: RHS_Ural_Open_Civ_01
+	{
+	};
+	class RHS_Ural_Open_Civ_03: RHS_Ural_Open_Civ_01
+	{
 	};
 	class Truck_02_base_F;
 	class RHS_Civ_Truck_02_covered_F: Truck_02_base_F
@@ -4112,8 +4535,14 @@ class CfgSoundEffects
 	{
 		class RHS_CarAttenuation
 		{
+			class Equalizer0
+			{
+				bandwidth[]={2,2,2,2};
 				gain[]={0.89999998,0.80000001,0.69999999,0.60000002};
 			};
+			class Equalizer1
+			{
+				bandwidth[]={2,2,2,2};
 				gain[]={0.89999998,0.80000001,0.60000002,0.5};
 			};
 			class Echo

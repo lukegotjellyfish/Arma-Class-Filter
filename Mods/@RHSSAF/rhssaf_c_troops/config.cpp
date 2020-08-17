@@ -234,6 +234,9 @@ class CfgVehicles
 			class HitChest;
 			class HitBody;
 			class HitArms;
+			class HitHands;
+			class HitLegs;
+		};
 		class Eventhandlers;
 	};
 	class rhssaf_soldier_m10_base: SoldierGB
@@ -258,6 +261,9 @@ class CfgVehicles
 		secondaryAmmoCoef=0.2;
 		handgunAmmoCoef=0.1;
 		cost=100000;
+		class Wounds
+		{
+		};
 		class UniformInfo
 		{
 			class SlotsInfo
@@ -303,6 +309,18 @@ class CfgVehicles
 		{
 			"FirstAidKit"
 		};
+		magazines[]=
+		{
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
+		};
 		respawnMagazines[]=
 		{
 			"rhsgref_30rnd_556x45_m21",
@@ -333,12 +351,24 @@ class CfgVehicles
 			"ItemWatch",
 			"ItemRadio"
 		};
+		class EventHandlers: Eventhandlers
+		{
+		};
 	};
 	class rhssaf_soldier_m93_base: rhssaf_soldier_m10_base
 	{
+		class Wounds
+		{
+		};
+		class Eventhandlers: EventHandlers
+		{
+		};
 	};
 	class rhssaf_soldier_atf_base: rhssaf_soldier_m10_base
 	{
+		class Wounds
+		{
+		};
 		uniformClass="rhssaf_uniform_gendarmes_acu";
 		weapons[]=
 		{
@@ -360,6 +390,18 @@ class CfgVehicles
 		{
 			"FirstAidKit"
 		};
+		magazines[]=
+		{
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
+		};
 		respawnMagazines[]=
 		{
 			"rhsgref_30rnd_556x45_m21",
@@ -390,6 +432,18 @@ class CfgVehicles
 			"ItemWatch",
 			"ItemRadio"
 		};
+		class Eventhandlers: EventHandlers
+		{
+		};
+	};
+	class rhs_infantry_msv_base: SoldierGB
+	{
+	};
+	class rhs_pilot_base: rhs_infantry_msv_base
+	{
+	};
+	class rhs_pilot_transport_heli: rhs_pilot_base
+	{
 	};
 	class rhssaf_airforce_pilot_transport_heli: rhs_pilot_transport_heli
 	{
@@ -401,6 +455,9 @@ class CfgVehicles
 			"G_NATO_pilot"
 		};
 		uniformClass="rhssaf_uniform_heli_pilot";
+		class Wounds
+		{
+		};
 		genericNames="SerbianMen";
 		weapons[]=
 		{
@@ -421,6 +478,18 @@ class CfgVehicles
 		RespawnItems[]=
 		{
 			"FirstAidKit"
+		};
+		magazines[]=
+		{
+			"rhsgref_20rnd_765x17_vz61",
+			"rhsgref_20rnd_765x17_vz61",
+			"rhsgref_20rnd_765x17_vz61",
+			"rhsgref_20rnd_765x17_vz61",
+			"rhsgref_20rnd_765x17_vz61",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
 		};
 		respawnMagazines[]=
 		{
@@ -455,6 +524,9 @@ class CfgVehicles
 	class rhssaf_airforce_pilot_mig29: rhssaf_airforce_pilot_transport_heli
 	{
 		uniformClass="rhssaf_uniform_mig29_pilot";
+		class Wounds
+		{
+		};
 		weapons[]=
 		{
 			"rhs_weap_scorpion",
@@ -474,6 +546,18 @@ class CfgVehicles
 		RespawnItems[]=
 		{
 			"FirstAidKit"
+		};
+		magazines[]=
+		{
+			"rhsgref_20rnd_765x17_vz61",
+			"rhsgref_20rnd_765x17_vz61",
+			"rhsgref_20rnd_765x17_vz61",
+			"rhsgref_20rnd_765x17_vz61",
+			"rhsgref_20rnd_765x17_vz61",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
 		};
 		respawnMagazines[]=
 		{
@@ -535,6 +619,18 @@ class CfgVehicles
 		RespawnItems[]=
 		{
 			"FirstAidKit"
+		};
+		magazines[]=
+		{
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
 		};
 		respawnMagazines[]=
 		{
@@ -606,6 +702,18 @@ class CfgVehicles
 		{
 			"FirstAidKit"
 		};
+		magazines[]=
+		{
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
+		};
 		respawnMagazines[]=
 		{
 			"rhsgref_30rnd_556x45_m21",
@@ -659,6 +767,18 @@ class CfgVehicles
 		RespawnItems[]=
 		{
 			"FirstAidKit"
+		};
+		magazines[]=
+		{
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
 		};
 		respawnMagazines[]=
 		{
@@ -716,6 +836,18 @@ class CfgVehicles
 		{
 			"FirstAidKit"
 		};
+		magazines[]=
+		{
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
+		};
 		respawnMagazines[]=
 		{
 			"rhssaf_30Rnd_762x39mm_M67",
@@ -771,6 +903,27 @@ class CfgVehicles
 		RespawnItems[]=
 		{
 			"FirstAidKit"
+		};
+		magazines[]=
+		{
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhs_VOG25",
+			"rhs_VOG25",
+			"rhs_VOG25",
+			"rhs_VOG25",
+			"rhs_VOG25",
+			"rhs_VOG25",
+			"rhs_GRD40_white",
+			"rhs_GRD40_green",
+			"rhs_GRD40_red",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
 		};
 		respawnMagazines[]=
 		{
@@ -853,6 +1006,16 @@ class CfgVehicles
 		{
 			"FirstAidKit"
 		};
+		magazines[]=
+		{
+			"rhs_100Rnd_762x54mmR",
+			"rhs_100Rnd_762x54mmR",
+			"rhs_100Rnd_762x54mmR",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
+		};
 		respawnMagazines[]=
 		{
 			"rhs_100Rnd_762x54mmR",
@@ -906,6 +1069,18 @@ class CfgVehicles
 		RespawnItems[]=
 		{
 			"FirstAidKit"
+		};
+		magazines[]=
+		{
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
 		};
 		respawnMagazines[]=
 		{
@@ -966,6 +1141,17 @@ class CfgVehicles
 		{
 			"FirstAidKit"
 		};
+		magazines[]=
+		{
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhssaf_mag_brd_m83_red",
+			"rhssaf_mag_brd_m83_blue",
+			"rhssaf_mag_brd_m83_green"
+		};
 		respawnMagazines[]=
 		{
 			"rhsgref_30rnd_556x45_m21",
@@ -1023,6 +1209,17 @@ class CfgVehicles
 		RespawnItems[]=
 		{
 			"FirstAidKit"
+		};
+		magazines[]=
+		{
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhssaf_mag_brd_m83_red",
+			"rhssaf_mag_brd_m83_blue",
+			"rhssaf_mag_brd_m83_green"
 		};
 		respawnMagazines[]=
 		{
@@ -1097,6 +1294,21 @@ class CfgVehicles
 		{
 			"FirstAidKit"
 		};
+		magazines[]=
+		{
+			"rhsgref_10Rnd_792x57_m76",
+			"rhsgref_10Rnd_792x57_m76",
+			"rhsgref_10Rnd_792x57_m76",
+			"rhsgref_10Rnd_792x57_m76",
+			"rhsgref_10Rnd_792x57_m76",
+			"rhsgref_10Rnd_792x57_m76",
+			"rhsgref_10Rnd_792x57_m76",
+			"rhsgref_10Rnd_792x57_m76",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
+		};
 		respawnMagazines[]=
 		{
 			"rhsgref_10Rnd_792x57_m76",
@@ -1157,6 +1369,18 @@ class CfgVehicles
 		RespawnItems[]=
 		{
 			"FirstAidKit"
+		};
+		magazines[]=
+		{
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
 		};
 		respawnMagazines[]=
 		{
@@ -1234,6 +1458,18 @@ class CfgVehicles
 		{
 			"FirstAidKit"
 		};
+		magazines[]=
+		{
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
+		};
 		respawnMagazines[]=
 		{
 			"rhsgref_30rnd_556x45_m21",
@@ -1291,6 +1527,20 @@ class CfgVehicles
 		RespawnItems[]=
 		{
 			"FirstAidKit"
+		};
+		magazines[]=
+		{
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhs_mag_smaw_HEAA",
+			"rhs_mag_smaw_SR",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
 		};
 		respawnMagazines[]=
 		{
@@ -1360,6 +1610,18 @@ class CfgVehicles
 		{
 			"FirstAidKit"
 		};
+		magazines[]=
+		{
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
+		};
 		respawnMagazines[]=
 		{
 			"rhsgref_30rnd_556x45_m21",
@@ -1416,6 +1678,18 @@ class CfgVehicles
 		{
 			"FirstAidKit"
 		};
+		magazines[]=
+		{
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
+		};
 		respawnMagazines[]=
 		{
 			"rhsgref_30rnd_556x45_m21",
@@ -1471,6 +1745,18 @@ class CfgVehicles
 		RespawnItems[]=
 		{
 			"FirstAidKit"
+		};
+		magazines[]=
+		{
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
 		};
 		respawnMagazines[]=
 		{
@@ -1546,6 +1832,18 @@ class CfgVehicles
 		{
 			"FirstAidKit"
 		};
+		magazines[]=
+		{
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
+		};
 		respawnMagazines[]=
 		{
 			"rhsgref_30rnd_556x45_m21",
@@ -1605,6 +1903,18 @@ class CfgVehicles
 		RespawnItems[]=
 		{
 			"FirstAidKit"
+		};
+		magazines[]=
+		{
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
 		};
 		respawnMagazines[]=
 		{
@@ -1666,6 +1976,18 @@ class CfgVehicles
 		RespawnItems[]=
 		{
 			"FirstAidKit"
+		};
+		magazines[]=
+		{
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
 		};
 		respawnMagazines[]=
 		{
@@ -1729,6 +2051,18 @@ class CfgVehicles
 		{
 			"FirstAidKit"
 		};
+		magazines[]=
+		{
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
+		};
 		respawnMagazines[]=
 		{
 			"rhsgref_30rnd_556x45_m21",
@@ -1786,6 +2120,18 @@ class CfgVehicles
 		{
 			"FirstAidKit"
 		};
+		magazines[]=
+		{
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
+		};
 		respawnMagazines[]=
 		{
 			"rhssaf_30Rnd_762x39mm_M67",
@@ -1842,6 +2188,14 @@ class CfgVehicles
 		{
 			"FirstAidKit"
 		};
+		magazines[]=
+		{
+			"rhsgref_20rnd_765x17_vz61",
+			"rhsgref_20rnd_765x17_vz61",
+			"rhsgref_20rnd_765x17_vz61",
+			"rhsgref_20rnd_765x17_vz61",
+			"rhsgref_20rnd_765x17_vz61"
+		};
 		respawnMagazines[]=
 		{
 			"rhsgref_20rnd_765x17_vz61",
@@ -1893,6 +2247,14 @@ class CfgVehicles
 		RespawnItems[]=
 		{
 			"FirstAidKit"
+		};
+		magazines[]=
+		{
+			"rhsgref_20rnd_765x17_vz61",
+			"rhsgref_20rnd_765x17_vz61",
+			"rhsgref_20rnd_765x17_vz61",
+			"rhsgref_20rnd_765x17_vz61",
+			"rhsgref_20rnd_765x17_vz61"
 		};
 		respawnMagazines[]=
 		{
@@ -1965,6 +2327,17 @@ class CfgVehicles
 		RespawnItems[]=
 		{
 			"FirstAidKit"
+		};
+		magazines[]=
+		{
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhssaf_mag_brd_m83_red",
+			"rhssaf_mag_brd_m83_blue",
+			"rhssaf_mag_brd_m83_green"
 		};
 		respawnMagazines[]=
 		{
@@ -2109,6 +2482,18 @@ class CfgVehicles
 		{
 			"FirstAidKit"
 		};
+		magazines[]=
+		{
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
+		};
 		respawnMagazines[]=
 		{
 			"rhsgref_30rnd_556x45_m21",
@@ -2162,6 +2547,18 @@ class CfgVehicles
 		RespawnItems[]=
 		{
 			"FirstAidKit"
+		};
+		magazines[]=
+		{
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
 		};
 		respawnMagazines[]=
 		{
@@ -2233,6 +2630,18 @@ class CfgVehicles
 		{
 			"FirstAidKit"
 		};
+		magazines[]=
+		{
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
+		};
 		respawnMagazines[]=
 		{
 			"rhsgref_30rnd_556x45_m21",
@@ -2286,6 +2695,18 @@ class CfgVehicles
 		RespawnItems[]=
 		{
 			"FirstAidKit"
+		};
+		magazines[]=
+		{
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
 		};
 		respawnMagazines[]=
 		{
@@ -2343,6 +2764,18 @@ class CfgVehicles
 		{
 			"FirstAidKit"
 		};
+		magazines[]=
+		{
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
+		};
 		respawnMagazines[]=
 		{
 			"rhssaf_30Rnd_762x39mm_M67",
@@ -2398,6 +2831,27 @@ class CfgVehicles
 		RespawnItems[]=
 		{
 			"FirstAidKit"
+		};
+		magazines[]=
+		{
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhs_VOG25",
+			"rhs_VOG25",
+			"rhs_VOG25",
+			"rhs_VOG25",
+			"rhs_VOG25",
+			"rhs_VOG25",
+			"rhs_GRD40_white",
+			"rhs_GRD40_green",
+			"rhs_GRD40_red",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
 		};
 		respawnMagazines[]=
 		{
@@ -2480,6 +2934,16 @@ class CfgVehicles
 		{
 			"FirstAidKit"
 		};
+		magazines[]=
+		{
+			"rhs_100Rnd_762x54mmR",
+			"rhs_100Rnd_762x54mmR",
+			"rhs_100Rnd_762x54mmR",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
+		};
 		respawnMagazines[]=
 		{
 			"rhs_100Rnd_762x54mmR",
@@ -2533,6 +2997,18 @@ class CfgVehicles
 		RespawnItems[]=
 		{
 			"FirstAidKit"
+		};
+		magazines[]=
+		{
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
 		};
 		respawnMagazines[]=
 		{
@@ -2593,6 +3069,17 @@ class CfgVehicles
 		{
 			"FirstAidKit"
 		};
+		magazines[]=
+		{
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_mag_brd_m83_red",
+			"rhssaf_mag_brd_m83_blue",
+			"rhssaf_mag_brd_m83_green"
+		};
 		respawnMagazines[]=
 		{
 			"rhssaf_30Rnd_762x39mm_M67",
@@ -2650,6 +3137,17 @@ class CfgVehicles
 		RespawnItems[]=
 		{
 			"FirstAidKit"
+		};
+		magazines[]=
+		{
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_mag_brd_m83_red",
+			"rhssaf_mag_brd_m83_blue",
+			"rhssaf_mag_brd_m83_green"
 		};
 		respawnMagazines[]=
 		{
@@ -2724,6 +3222,21 @@ class CfgVehicles
 		{
 			"FirstAidKit"
 		};
+		magazines[]=
+		{
+			"rhsgref_10Rnd_792x57_m76",
+			"rhsgref_10Rnd_792x57_m76",
+			"rhsgref_10Rnd_792x57_m76",
+			"rhsgref_10Rnd_792x57_m76",
+			"rhsgref_10Rnd_792x57_m76",
+			"rhsgref_10Rnd_792x57_m76",
+			"rhsgref_10Rnd_792x57_m76",
+			"rhsgref_10Rnd_792x57_m76",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
+		};
 		respawnMagazines[]=
 		{
 			"rhsgref_10Rnd_792x57_m76",
@@ -2784,6 +3297,18 @@ class CfgVehicles
 		RespawnItems[]=
 		{
 			"FirstAidKit"
+		};
+		magazines[]=
+		{
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
 		};
 		respawnMagazines[]=
 		{
@@ -2861,6 +3386,18 @@ class CfgVehicles
 		{
 			"FirstAidKit"
 		};
+		magazines[]=
+		{
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
+		};
 		respawnMagazines[]=
 		{
 			"rhssaf_30Rnd_762x39mm_M67",
@@ -2918,6 +3455,20 @@ class CfgVehicles
 		RespawnItems[]=
 		{
 			"FirstAidKit"
+		};
+		magazines[]=
+		{
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhs_mag_smaw_HEAA",
+			"rhs_mag_smaw_SR",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
 		};
 		respawnMagazines[]=
 		{
@@ -2987,6 +3538,18 @@ class CfgVehicles
 		{
 			"FirstAidKit"
 		};
+		magazines[]=
+		{
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
+		};
 		respawnMagazines[]=
 		{
 			"rhssaf_30Rnd_762x39mm_M67",
@@ -3043,6 +3606,18 @@ class CfgVehicles
 		{
 			"FirstAidKit"
 		};
+		magazines[]=
+		{
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
+		};
 		respawnMagazines[]=
 		{
 			"rhssaf_30Rnd_762x39mm_M67",
@@ -3098,6 +3673,18 @@ class CfgVehicles
 		RespawnItems[]=
 		{
 			"FirstAidKit"
+		};
+		magazines[]=
+		{
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
 		};
 		respawnMagazines[]=
 		{
@@ -3173,6 +3760,18 @@ class CfgVehicles
 		{
 			"FirstAidKit"
 		};
+		magazines[]=
+		{
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
+		};
 		respawnMagazines[]=
 		{
 			"rhssaf_30Rnd_762x39mm_M67",
@@ -3232,6 +3831,18 @@ class CfgVehicles
 		RespawnItems[]=
 		{
 			"FirstAidKit"
+		};
+		magazines[]=
+		{
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
 		};
 		respawnMagazines[]=
 		{
@@ -3293,6 +3904,18 @@ class CfgVehicles
 		RespawnItems[]=
 		{
 			"FirstAidKit"
+		};
+		magazines[]=
+		{
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
 		};
 		respawnMagazines[]=
 		{
@@ -3356,6 +3979,18 @@ class CfgVehicles
 		{
 			"FirstAidKit"
 		};
+		magazines[]=
+		{
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
+		};
 		respawnMagazines[]=
 		{
 			"rhssaf_30Rnd_762x39mm_M67",
@@ -3412,6 +4047,18 @@ class CfgVehicles
 		RespawnItems[]=
 		{
 			"FirstAidKit"
+		};
+		magazines[]=
+		{
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
 		};
 		respawnMagazines[]=
 		{
@@ -3486,6 +4133,17 @@ class CfgVehicles
 		RespawnItems[]=
 		{
 			"FirstAidKit"
+		};
+		magazines[]=
+		{
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhssaf_mag_brd_m83_red",
+			"rhssaf_mag_brd_m83_blue",
+			"rhssaf_mag_brd_m83_green"
 		};
 		respawnMagazines[]=
 		{
@@ -3627,6 +4285,18 @@ class CfgVehicles
 		{
 			"FirstAidKit"
 		};
+		magazines[]=
+		{
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
+		};
 		respawnMagazines[]=
 		{
 			"rhsgref_30rnd_556x45_m21",
@@ -3696,6 +4366,18 @@ class CfgVehicles
 		RespawnItems[]=
 		{
 			"FirstAidKit"
+		};
+		magazines[]=
+		{
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
 		};
 		respawnMagazines[]=
 		{
@@ -3767,6 +4449,18 @@ class CfgVehicles
 		{
 			"FirstAidKit"
 		};
+		magazines[]=
+		{
+			"rhssaf_30rnd_556x45_EPR_G36",
+			"rhssaf_30rnd_556x45_EPR_G36",
+			"rhssaf_30rnd_556x45_EPR_G36",
+			"rhssaf_30rnd_556x45_EPR_G36",
+			"rhssaf_30rnd_556x45_EPR_G36",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
+		};
 		respawnMagazines[]=
 		{
 			"rhssaf_30rnd_556x45_EPR_G36",
@@ -3837,6 +4531,18 @@ class CfgVehicles
 		{
 			"FirstAidKit"
 		};
+		magazines[]=
+		{
+			"rhs_mag_30Rnd_556x45_Mk318_Stanag",
+			"rhs_mag_30Rnd_556x45_Mk318_Stanag",
+			"rhs_mag_30Rnd_556x45_Mk318_Stanag",
+			"rhs_mag_30Rnd_556x45_Mk318_Stanag",
+			"rhs_mag_30Rnd_556x45_Mk318_Stanag",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
+		};
 		respawnMagazines[]=
 		{
 			"rhs_mag_30Rnd_556x45_Mk318_Stanag",
@@ -3893,6 +4599,18 @@ class CfgVehicles
 		{
 			"FirstAidKit"
 		};
+		magazines[]=
+		{
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
+		};
 		respawnMagazines[]=
 		{
 			"rhsgref_30rnd_556x45_m21",
@@ -3948,6 +4666,27 @@ class CfgVehicles
 		RespawnItems[]=
 		{
 			"FirstAidKit"
+		};
+		magazines[]=
+		{
+			"rhssaf_30rnd_556x45_EPR_G36",
+			"rhssaf_30rnd_556x45_EPR_G36",
+			"rhssaf_30rnd_556x45_EPR_G36",
+			"rhssaf_30rnd_556x45_EPR_G36",
+			"rhssaf_30rnd_556x45_EPR_G36",
+			"rhs_mag_M433_HEDP",
+			"rhs_mag_M433_HEDP",
+			"rhs_mag_M433_HEDP",
+			"rhs_mag_M433_HEDP",
+			"rhs_mag_M433_HEDP",
+			"rhs_mag_M433_HEDP",
+			"rhs_mag_m714_White",
+			"rhs_mag_m715_Green",
+			"rhs_mag_m713_Red",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
 		};
 		respawnMagazines[]=
 		{
@@ -4013,6 +4752,27 @@ class CfgVehicles
 		RespawnItems[]=
 		{
 			"FirstAidKit"
+		};
+		magazines[]=
+		{
+			"rhs_mag_30Rnd_556x45_Mk318_Stanag",
+			"rhs_mag_30Rnd_556x45_Mk318_Stanag",
+			"rhs_mag_30Rnd_556x45_Mk318_Stanag",
+			"rhs_mag_30Rnd_556x45_Mk318_Stanag",
+			"rhs_mag_30Rnd_556x45_Mk318_Stanag",
+			"rhs_mag_M433_HEDP",
+			"rhs_mag_M433_HEDP",
+			"rhs_mag_M433_HEDP",
+			"rhs_mag_M433_HEDP",
+			"rhs_mag_M433_HEDP",
+			"rhs_mag_M433_HEDP",
+			"rhs_mag_m714_White",
+			"rhs_mag_m715_Green",
+			"rhs_mag_m713_Red",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
 		};
 		respawnMagazines[]=
 		{
@@ -4095,6 +4855,16 @@ class CfgVehicles
 		{
 			"FirstAidKit"
 		};
+		magazines[]=
+		{
+			"rhs_100Rnd_762x54mmR",
+			"rhs_100Rnd_762x54mmR",
+			"rhs_100Rnd_762x54mmR",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
+		};
 		respawnMagazines[]=
 		{
 			"rhs_100Rnd_762x54mmR",
@@ -4165,6 +4935,15 @@ class CfgVehicles
 		{
 			"FirstAidKit"
 		};
+		magazines[]=
+		{
+			"rhsusf_200rnd_556x45_mixed_box",
+			"rhsusf_200rnd_556x45_mixed_box",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
+		};
 		respawnMagazines[]=
 		{
 			"rhsusf_200rnd_556x45_mixed_box",
@@ -4217,6 +4996,18 @@ class CfgVehicles
 		RespawnItems[]=
 		{
 			"FirstAidKit"
+		};
+		magazines[]=
+		{
+			"rhssaf_30rnd_556x45_EPR_G36",
+			"rhssaf_30rnd_556x45_EPR_G36",
+			"rhssaf_30rnd_556x45_EPR_G36",
+			"rhssaf_30rnd_556x45_EPR_G36",
+			"rhssaf_30rnd_556x45_EPR_G36",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
 		};
 		respawnMagazines[]=
 		{
@@ -4273,6 +5064,18 @@ class CfgVehicles
 		RespawnItems[]=
 		{
 			"FirstAidKit"
+		};
+		magazines[]=
+		{
+			"rhssaf_30rnd_556x45_EPR_G36",
+			"rhssaf_30rnd_556x45_EPR_G36",
+			"rhssaf_30rnd_556x45_EPR_G36",
+			"rhssaf_30rnd_556x45_EPR_G36",
+			"rhssaf_30rnd_556x45_EPR_G36",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
 		};
 		respawnMagazines[]=
 		{
@@ -4333,6 +5136,17 @@ class CfgVehicles
 		{
 			"FirstAidKit"
 		};
+		magazines[]=
+		{
+			"rhs_mag_30Rnd_556x45_Mk318_Stanag",
+			"rhs_mag_30Rnd_556x45_Mk318_Stanag",
+			"rhs_mag_30Rnd_556x45_Mk318_Stanag",
+			"rhs_mag_30Rnd_556x45_Mk318_Stanag",
+			"rhs_mag_30Rnd_556x45_Mk318_Stanag",
+			"rhssaf_mag_brd_m83_red",
+			"rhssaf_mag_brd_m83_blue",
+			"rhssaf_mag_brd_m83_green"
+		};
 		respawnMagazines[]=
 		{
 			"rhs_mag_30Rnd_556x45_Mk318_Stanag",
@@ -4390,6 +5204,17 @@ class CfgVehicles
 		RespawnItems[]=
 		{
 			"FirstAidKit"
+		};
+		magazines[]=
+		{
+			"rhs_mag_30Rnd_556x45_Mk318_Stanag",
+			"rhs_mag_30Rnd_556x45_Mk318_Stanag",
+			"rhs_mag_30Rnd_556x45_Mk318_Stanag",
+			"rhs_mag_30Rnd_556x45_Mk318_Stanag",
+			"rhs_mag_30Rnd_556x45_Mk318_Stanag",
+			"rhssaf_mag_brd_m83_red",
+			"rhssaf_mag_brd_m83_blue",
+			"rhssaf_mag_brd_m83_green"
 		};
 		respawnMagazines[]=
 		{
@@ -4463,6 +5288,21 @@ class CfgVehicles
 		RespawnItems[]=
 		{
 			"FirstAidKit"
+		};
+		magazines[]=
+		{
+			"rhsgref_10Rnd_792x57_m76",
+			"rhsgref_10Rnd_792x57_m76",
+			"rhsgref_10Rnd_792x57_m76",
+			"rhsgref_10Rnd_792x57_m76",
+			"rhsgref_10Rnd_792x57_m76",
+			"rhsgref_10Rnd_792x57_m76",
+			"rhsgref_10Rnd_792x57_m76",
+			"rhsgref_10Rnd_792x57_m76",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
 		};
 		respawnMagazines[]=
 		{
@@ -4539,6 +5379,18 @@ class CfgVehicles
 		{
 			"FirstAidKit"
 		};
+		magazines[]=
+		{
+			"rhs_mag_20Rnd_SCAR_762x51_m118_special",
+			"rhs_mag_20Rnd_SCAR_762x51_m118_special",
+			"rhs_mag_20Rnd_SCAR_762x51_m118_special",
+			"rhs_mag_20Rnd_SCAR_762x51_m118_special",
+			"rhs_mag_20Rnd_SCAR_762x51_m118_special",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
+		};
 		respawnMagazines[]=
 		{
 			"rhs_mag_20Rnd_SCAR_762x51_m118_special",
@@ -4594,6 +5446,21 @@ class CfgVehicles
 		RespawnItems[]=
 		{
 			"FirstAidKit"
+		};
+		magazines[]=
+		{
+			"rhsusf_mag_10Rnd_STD_50BMG_M33",
+			"rhsusf_mag_10Rnd_STD_50BMG_M33",
+			"rhsusf_mag_10Rnd_STD_50BMG_M33",
+			"rhsusf_mag_10Rnd_STD_50BMG_M33",
+			"rhsusf_mag_10Rnd_STD_50BMG_M33",
+			"rhsusf_mag_10Rnd_STD_50BMG_M33",
+			"rhsusf_mag_10Rnd_STD_50BMG_M33",
+			"rhsusf_mag_10Rnd_STD_50BMG_M33",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
 		};
 		respawnMagazines[]=
 		{
@@ -4655,6 +5522,18 @@ class CfgVehicles
 		RespawnItems[]=
 		{
 			"FirstAidKit"
+		};
+		magazines[]=
+		{
+			"rhs_mag_30Rnd_556x45_Mk318_Stanag",
+			"rhs_mag_30Rnd_556x45_Mk318_Stanag",
+			"rhs_mag_30Rnd_556x45_Mk318_Stanag",
+			"rhs_mag_30Rnd_556x45_Mk318_Stanag",
+			"rhs_mag_30Rnd_556x45_Mk318_Stanag",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
 		};
 		respawnMagazines[]=
 		{
@@ -4732,6 +5611,18 @@ class CfgVehicles
 		{
 			"FirstAidKit"
 		};
+		magazines[]=
+		{
+			"rhssaf_30rnd_556x45_EPR_G36",
+			"rhssaf_30rnd_556x45_EPR_G36",
+			"rhssaf_30rnd_556x45_EPR_G36",
+			"rhssaf_30rnd_556x45_EPR_G36",
+			"rhssaf_30rnd_556x45_EPR_G36",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
+		};
 		respawnMagazines[]=
 		{
 			"rhssaf_30rnd_556x45_EPR_G36",
@@ -4789,6 +5680,20 @@ class CfgVehicles
 		RespawnItems[]=
 		{
 			"FirstAidKit"
+		};
+		magazines[]=
+		{
+			"rhssaf_30rnd_556x45_EPR_G36",
+			"rhssaf_30rnd_556x45_EPR_G36",
+			"rhssaf_30rnd_556x45_EPR_G36",
+			"rhssaf_30rnd_556x45_EPR_G36",
+			"rhssaf_30rnd_556x45_EPR_G36",
+			"rhs_mag_smaw_HEAA",
+			"rhs_mag_smaw_SR",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
 		};
 		respawnMagazines[]=
 		{
@@ -4858,6 +5763,19 @@ class CfgVehicles
 		{
 			"FirstAidKit"
 		};
+		magazines[]=
+		{
+			"rhssaf_30rnd_556x45_EPR_G36",
+			"rhssaf_30rnd_556x45_EPR_G36",
+			"rhssaf_30rnd_556x45_EPR_G36",
+			"rhssaf_30rnd_556x45_EPR_G36",
+			"rhssaf_30rnd_556x45_EPR_G36",
+			"rhs_mag_9k38_rocket",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
+		};
 		respawnMagazines[]=
 		{
 			"rhssaf_30rnd_556x45_EPR_G36",
@@ -4915,6 +5833,18 @@ class CfgVehicles
 		{
 			"FirstAidKit"
 		};
+		magazines[]=
+		{
+			"rhssaf_30rnd_556x45_EPR_G36",
+			"rhssaf_30rnd_556x45_EPR_G36",
+			"rhssaf_30rnd_556x45_EPR_G36",
+			"rhssaf_30rnd_556x45_EPR_G36",
+			"rhssaf_30rnd_556x45_EPR_G36",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
+		};
 		respawnMagazines[]=
 		{
 			"rhssaf_30rnd_556x45_EPR_G36",
@@ -4970,6 +5900,18 @@ class CfgVehicles
 		RespawnItems[]=
 		{
 			"FirstAidKit"
+		};
+		magazines[]=
+		{
+			"rhssaf_30rnd_556x45_EPR_G36",
+			"rhssaf_30rnd_556x45_EPR_G36",
+			"rhssaf_30rnd_556x45_EPR_G36",
+			"rhssaf_30rnd_556x45_EPR_G36",
+			"rhssaf_30rnd_556x45_EPR_G36",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
 		};
 		respawnMagazines[]=
 		{
@@ -5045,6 +5987,18 @@ class CfgVehicles
 		{
 			"FirstAidKit"
 		};
+		magazines[]=
+		{
+			"rhssaf_30rnd_556x45_EPR_G36",
+			"rhssaf_30rnd_556x45_EPR_G36",
+			"rhssaf_30rnd_556x45_EPR_G36",
+			"rhssaf_30rnd_556x45_EPR_G36",
+			"rhssaf_30rnd_556x45_EPR_G36",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
+		};
 		respawnMagazines[]=
 		{
 			"rhssaf_30rnd_556x45_EPR_G36",
@@ -5104,6 +6058,18 @@ class CfgVehicles
 		RespawnItems[]=
 		{
 			"FirstAidKit"
+		};
+		magazines[]=
+		{
+			"rhssaf_30rnd_556x45_EPR_G36",
+			"rhssaf_30rnd_556x45_EPR_G36",
+			"rhssaf_30rnd_556x45_EPR_G36",
+			"rhssaf_30rnd_556x45_EPR_G36",
+			"rhssaf_30rnd_556x45_EPR_G36",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
 		};
 		respawnMagazines[]=
 		{
@@ -5165,6 +6131,18 @@ class CfgVehicles
 		RespawnItems[]=
 		{
 			"FirstAidKit"
+		};
+		magazines[]=
+		{
+			"rhssaf_30rnd_556x45_EPR_G36",
+			"rhssaf_30rnd_556x45_EPR_G36",
+			"rhssaf_30rnd_556x45_EPR_G36",
+			"rhssaf_30rnd_556x45_EPR_G36",
+			"rhssaf_30rnd_556x45_EPR_G36",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
 		};
 		respawnMagazines[]=
 		{
@@ -5228,6 +6206,18 @@ class CfgVehicles
 		{
 			"FirstAidKit"
 		};
+		magazines[]=
+		{
+			"rhssaf_30rnd_556x45_EPR_G36",
+			"rhssaf_30rnd_556x45_EPR_G36",
+			"rhssaf_30rnd_556x45_EPR_G36",
+			"rhssaf_30rnd_556x45_EPR_G36",
+			"rhssaf_30rnd_556x45_EPR_G36",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
+		};
 		respawnMagazines[]=
 		{
 			"rhssaf_30rnd_556x45_EPR_G36",
@@ -5284,6 +6274,19 @@ class CfgVehicles
 		RespawnItems[]=
 		{
 			"FirstAidKit"
+		};
+		magazines[]=
+		{
+			"rhsusf_mag_40Rnd_46x30_FMJ",
+			"rhsusf_mag_40Rnd_46x30_FMJ",
+			"rhsusf_mag_40Rnd_46x30_FMJ",
+			"rhsusf_mag_40Rnd_46x30_FMJ",
+			"rhsusf_mag_40Rnd_46x30_FMJ",
+			"rhsusf_mag_40Rnd_46x30_FMJ",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
 		};
 		respawnMagazines[]=
 		{
@@ -5359,6 +6362,17 @@ class CfgVehicles
 		RespawnItems[]=
 		{
 			"FirstAidKit"
+		};
+		magazines[]=
+		{
+			"rhs_mag_30Rnd_556x45_Mk318_Stanag",
+			"rhs_mag_30Rnd_556x45_Mk318_Stanag",
+			"rhs_mag_30Rnd_556x45_Mk318_Stanag",
+			"rhs_mag_30Rnd_556x45_Mk318_Stanag",
+			"rhs_mag_30Rnd_556x45_Mk318_Stanag",
+			"rhssaf_mag_brd_m83_red",
+			"rhssaf_mag_brd_m83_blue",
+			"rhssaf_mag_brd_m83_green"
 		};
 		respawnMagazines[]=
 		{
@@ -5524,6 +6538,18 @@ class CfgVehicles
 		{
 			"FirstAidKit"
 		};
+		magazines[]=
+		{
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
+		};
 		respawnMagazines[]=
 		{
 			"rhssaf_30Rnd_762x39mm_M67",
@@ -5594,6 +6620,18 @@ class CfgVehicles
 		{
 			"FirstAidKit"
 		};
+		magazines[]=
+		{
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
+		};
 		respawnMagazines[]=
 		{
 			"rhsgref_30rnd_556x45_m21",
@@ -5648,6 +6686,18 @@ class CfgVehicles
 		RespawnItems[]=
 		{
 			"FirstAidKit"
+		};
+		magazines[]=
+		{
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
 		};
 		respawnMagazines[]=
 		{
@@ -5705,6 +6755,18 @@ class CfgVehicles
 		{
 			"FirstAidKit"
 		};
+		magazines[]=
+		{
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
+		};
 		respawnMagazines[]=
 		{
 			"rhssaf_30Rnd_762x39mm_M67",
@@ -5760,6 +6822,27 @@ class CfgVehicles
 		RespawnItems[]=
 		{
 			"FirstAidKit"
+		};
+		magazines[]=
+		{
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhs_VOG25",
+			"rhs_VOG25",
+			"rhs_VOG25",
+			"rhs_VOG25",
+			"rhs_VOG25",
+			"rhs_VOG25",
+			"rhs_GRD40_white",
+			"rhs_GRD40_green",
+			"rhs_GRD40_red",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
 		};
 		respawnMagazines[]=
 		{
@@ -5842,6 +6925,16 @@ class CfgVehicles
 		{
 			"FirstAidKit"
 		};
+		magazines[]=
+		{
+			"rhs_100Rnd_762x54mmR",
+			"rhs_100Rnd_762x54mmR",
+			"rhs_100Rnd_762x54mmR",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
+		};
 		respawnMagazines[]=
 		{
 			"rhs_100Rnd_762x54mmR",
@@ -5895,6 +6988,18 @@ class CfgVehicles
 		RespawnItems[]=
 		{
 			"FirstAidKit"
+		};
+		magazines[]=
+		{
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
 		};
 		respawnMagazines[]=
 		{
@@ -5955,6 +7060,17 @@ class CfgVehicles
 		{
 			"FirstAidKit"
 		};
+		magazines[]=
+		{
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_mag_brd_m83_red",
+			"rhssaf_mag_brd_m83_blue",
+			"rhssaf_mag_brd_m83_green"
+		};
 		respawnMagazines[]=
 		{
 			"rhssaf_30Rnd_762x39mm_M67",
@@ -6012,6 +7128,17 @@ class CfgVehicles
 		RespawnItems[]=
 		{
 			"FirstAidKit"
+		};
+		magazines[]=
+		{
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_mag_brd_m83_red",
+			"rhssaf_mag_brd_m83_blue",
+			"rhssaf_mag_brd_m83_green"
 		};
 		respawnMagazines[]=
 		{
@@ -6086,6 +7213,21 @@ class CfgVehicles
 		{
 			"FirstAidKit"
 		};
+		magazines[]=
+		{
+			"rhsgref_10Rnd_792x57_m76",
+			"rhsgref_10Rnd_792x57_m76",
+			"rhsgref_10Rnd_792x57_m76",
+			"rhsgref_10Rnd_792x57_m76",
+			"rhsgref_10Rnd_792x57_m76",
+			"rhsgref_10Rnd_792x57_m76",
+			"rhsgref_10Rnd_792x57_m76",
+			"rhsgref_10Rnd_792x57_m76",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
+		};
 		respawnMagazines[]=
 		{
 			"rhsgref_10Rnd_792x57_m76",
@@ -6146,6 +7288,18 @@ class CfgVehicles
 		RespawnItems[]=
 		{
 			"FirstAidKit"
+		};
+		magazines[]=
+		{
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
 		};
 		respawnMagazines[]=
 		{
@@ -6223,6 +7377,18 @@ class CfgVehicles
 		{
 			"FirstAidKit"
 		};
+		magazines[]=
+		{
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
+		};
 		respawnMagazines[]=
 		{
 			"rhssaf_30Rnd_762x39mm_M67",
@@ -6280,6 +7446,20 @@ class CfgVehicles
 		RespawnItems[]=
 		{
 			"FirstAidKit"
+		};
+		magazines[]=
+		{
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhs_mag_smaw_HEAA",
+			"rhs_mag_smaw_SR",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
 		};
 		respawnMagazines[]=
 		{
@@ -6349,6 +7529,19 @@ class CfgVehicles
 		{
 			"FirstAidKit"
 		};
+		magazines[]=
+		{
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhs_mag_9k38_rocket",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
+		};
 		respawnMagazines[]=
 		{
 			"rhssaf_30Rnd_762x39mm_M67",
@@ -6406,6 +7599,18 @@ class CfgVehicles
 		{
 			"FirstAidKit"
 		};
+		magazines[]=
+		{
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
+		};
 		respawnMagazines[]=
 		{
 			"rhssaf_30Rnd_762x39mm_M67",
@@ -6461,6 +7666,18 @@ class CfgVehicles
 		RespawnItems[]=
 		{
 			"FirstAidKit"
+		};
+		magazines[]=
+		{
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
 		};
 		respawnMagazines[]=
 		{
@@ -6536,6 +7753,18 @@ class CfgVehicles
 		{
 			"FirstAidKit"
 		};
+		magazines[]=
+		{
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
+		};
 		respawnMagazines[]=
 		{
 			"rhssaf_30Rnd_762x39mm_M67",
@@ -6595,6 +7824,18 @@ class CfgVehicles
 		RespawnItems[]=
 		{
 			"FirstAidKit"
+		};
+		magazines[]=
+		{
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
 		};
 		respawnMagazines[]=
 		{
@@ -6656,6 +7897,18 @@ class CfgVehicles
 		RespawnItems[]=
 		{
 			"FirstAidKit"
+		};
+		magazines[]=
+		{
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
 		};
 		respawnMagazines[]=
 		{
@@ -6719,6 +7972,18 @@ class CfgVehicles
 		{
 			"FirstAidKit"
 		};
+		magazines[]=
+		{
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
+		};
 		respawnMagazines[]=
 		{
 			"rhssaf_30Rnd_762x39mm_M67",
@@ -6775,6 +8040,18 @@ class CfgVehicles
 		RespawnItems[]=
 		{
 			"FirstAidKit"
+		};
+		magazines[]=
+		{
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
 		};
 		respawnMagazines[]=
 		{
@@ -6850,6 +8127,17 @@ class CfgVehicles
 		{
 			"FirstAidKit"
 		};
+		magazines[]=
+		{
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhssaf_mag_brd_m83_red",
+			"rhssaf_mag_brd_m83_blue",
+			"rhssaf_mag_brd_m83_green"
+		};
 		respawnMagazines[]=
 		{
 			"rhsgref_30rnd_556x45_m21",
@@ -6905,6 +8193,18 @@ class CfgVehicles
 		RespawnItems[]=
 		{
 			"FirstAidKit"
+		};
+		magazines[]=
+		{
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
 		};
 		respawnMagazines[]=
 		{
@@ -6976,6 +8276,18 @@ class CfgVehicles
 		{
 			"FirstAidKit"
 		};
+		magazines[]=
+		{
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
+		};
 		respawnMagazines[]=
 		{
 			"rhsgref_30rnd_556x45_m21",
@@ -7030,6 +8342,18 @@ class CfgVehicles
 		RespawnItems[]=
 		{
 			"FirstAidKit"
+		};
+		magazines[]=
+		{
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
 		};
 		respawnMagazines[]=
 		{
@@ -7087,6 +8411,18 @@ class CfgVehicles
 		{
 			"FirstAidKit"
 		};
+		magazines[]=
+		{
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
+		};
 		respawnMagazines[]=
 		{
 			"rhssaf_30Rnd_762x39mm_M67",
@@ -7142,6 +8478,27 @@ class CfgVehicles
 		RespawnItems[]=
 		{
 			"FirstAidKit"
+		};
+		magazines[]=
+		{
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhs_VOG25",
+			"rhs_VOG25",
+			"rhs_VOG25",
+			"rhs_VOG25",
+			"rhs_VOG25",
+			"rhs_VOG25",
+			"rhs_GRD40_white",
+			"rhs_GRD40_green",
+			"rhs_GRD40_red",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
 		};
 		respawnMagazines[]=
 		{
@@ -7224,6 +8581,16 @@ class CfgVehicles
 		{
 			"FirstAidKit"
 		};
+		magazines[]=
+		{
+			"rhs_100Rnd_762x54mmR",
+			"rhs_100Rnd_762x54mmR",
+			"rhs_100Rnd_762x54mmR",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
+		};
 		respawnMagazines[]=
 		{
 			"rhs_100Rnd_762x54mmR",
@@ -7277,6 +8644,18 @@ class CfgVehicles
 		RespawnItems[]=
 		{
 			"FirstAidKit"
+		};
+		magazines[]=
+		{
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
 		};
 		respawnMagazines[]=
 		{
@@ -7337,6 +8716,17 @@ class CfgVehicles
 		{
 			"FirstAidKit"
 		};
+		magazines[]=
+		{
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_mag_brd_m83_red",
+			"rhssaf_mag_brd_m83_blue",
+			"rhssaf_mag_brd_m83_green"
+		};
 		respawnMagazines[]=
 		{
 			"rhssaf_30Rnd_762x39mm_M67",
@@ -7394,6 +8784,17 @@ class CfgVehicles
 		RespawnItems[]=
 		{
 			"FirstAidKit"
+		};
+		magazines[]=
+		{
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_mag_brd_m83_red",
+			"rhssaf_mag_brd_m83_blue",
+			"rhssaf_mag_brd_m83_green"
 		};
 		respawnMagazines[]=
 		{
@@ -7468,6 +8869,21 @@ class CfgVehicles
 		{
 			"FirstAidKit"
 		};
+		magazines[]=
+		{
+			"rhsgref_10Rnd_792x57_m76",
+			"rhsgref_10Rnd_792x57_m76",
+			"rhsgref_10Rnd_792x57_m76",
+			"rhsgref_10Rnd_792x57_m76",
+			"rhsgref_10Rnd_792x57_m76",
+			"rhsgref_10Rnd_792x57_m76",
+			"rhsgref_10Rnd_792x57_m76",
+			"rhsgref_10Rnd_792x57_m76",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
+		};
 		respawnMagazines[]=
 		{
 			"rhsgref_10Rnd_792x57_m76",
@@ -7528,6 +8944,18 @@ class CfgVehicles
 		RespawnItems[]=
 		{
 			"FirstAidKit"
+		};
+		magazines[]=
+		{
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
 		};
 		respawnMagazines[]=
 		{
@@ -7605,6 +9033,18 @@ class CfgVehicles
 		{
 			"FirstAidKit"
 		};
+		magazines[]=
+		{
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
+		};
 		respawnMagazines[]=
 		{
 			"rhssaf_30Rnd_762x39mm_M67",
@@ -7662,6 +9102,20 @@ class CfgVehicles
 		RespawnItems[]=
 		{
 			"FirstAidKit"
+		};
+		magazines[]=
+		{
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhs_mag_smaw_HEAA",
+			"rhs_mag_smaw_SR",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
 		};
 		respawnMagazines[]=
 		{
@@ -7731,6 +9185,19 @@ class CfgVehicles
 		{
 			"FirstAidKit"
 		};
+		magazines[]=
+		{
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhs_mag_9k38_rocket",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
+		};
 		respawnMagazines[]=
 		{
 			"rhssaf_30Rnd_762x39mm_M67",
@@ -7788,6 +9255,18 @@ class CfgVehicles
 		{
 			"FirstAidKit"
 		};
+		magazines[]=
+		{
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
+		};
 		respawnMagazines[]=
 		{
 			"rhssaf_30Rnd_762x39mm_M67",
@@ -7843,6 +9322,18 @@ class CfgVehicles
 		RespawnItems[]=
 		{
 			"FirstAidKit"
+		};
+		magazines[]=
+		{
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
 		};
 		respawnMagazines[]=
 		{
@@ -7918,6 +9409,18 @@ class CfgVehicles
 		{
 			"FirstAidKit"
 		};
+		magazines[]=
+		{
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
+		};
 		respawnMagazines[]=
 		{
 			"rhssaf_30Rnd_762x39mm_M67",
@@ -7977,6 +9480,18 @@ class CfgVehicles
 		RespawnItems[]=
 		{
 			"FirstAidKit"
+		};
+		magazines[]=
+		{
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
 		};
 		respawnMagazines[]=
 		{
@@ -8038,6 +9553,18 @@ class CfgVehicles
 		RespawnItems[]=
 		{
 			"FirstAidKit"
+		};
+		magazines[]=
+		{
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
 		};
 		respawnMagazines[]=
 		{
@@ -8101,6 +9628,18 @@ class CfgVehicles
 		{
 			"FirstAidKit"
 		};
+		magazines[]=
+		{
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
+		};
 		respawnMagazines[]=
 		{
 			"rhssaf_30Rnd_762x39mm_M67",
@@ -8157,6 +9696,18 @@ class CfgVehicles
 		RespawnItems[]=
 		{
 			"FirstAidKit"
+		};
+		magazines[]=
+		{
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_30Rnd_762x39mm_M67",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_br_m75",
+			"rhssaf_mag_brd_m83_white",
+			"rhssaf_mag_brd_m83_green"
 		};
 		respawnMagazines[]=
 		{
@@ -8231,6 +9782,17 @@ class CfgVehicles
 		RespawnItems[]=
 		{
 			"FirstAidKit"
+		};
+		magazines[]=
+		{
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhsgref_30rnd_556x45_m21",
+			"rhssaf_mag_brd_m83_red",
+			"rhssaf_mag_brd_m83_blue",
+			"rhssaf_mag_brd_m83_green"
 		};
 		respawnMagazines[]=
 		{

@@ -1,5 +1,8 @@
 class CfgPatches
 {
+	class rhsusf_c_a2port_car
+	{
+		units[]={};
 		weapons[]={};
 		version=1;
 	};
@@ -169,8 +172,14 @@ class CfgSoundEffects
 	{
 		class RHS_CarAttenuation
 		{
+			class Equalizer0
+			{
+				bandwidth[]={2,2,2,2};
 				gain[]={0.89999998,0.80000001,0.69999999,0.60000002};
 			};
+			class Equalizer1
+			{
+				bandwidth[]={2,2,2,2};
 				gain[]={0.89999998,0.80000001,0.60000002,0.5};
 			};
 			class Echo

@@ -192,6 +192,9 @@ class cfgWeapons
 			};
 		};
 	};
+	class rhssaf_helmet_m59_85_nocamo: rhssaf_helmet_base
+	{
+	};
 	class rhssaf_helmet_m59_85_oakleaf: rhssaf_helmet_base
 	{
 		class ItemInfo: HeadGearItem
@@ -260,6 +263,15 @@ class cfgWeapons
 			};
 		};
 	};
+	class rhssaf_helmet_m97_black_nocamo: rhssaf_helmet_m97_olive_nocamo
+	{
+	};
+	class rhssaf_helmet_m97_black_nocamo_black_ess: rhssaf_helmet_m97_olive_nocamo_black_ess
+	{
+	};
+	class rhssaf_helmet_m97_black_nocamo_black_ess_bare: rhssaf_helmet_m97_olive_nocamo_black_ess_bare
+	{
+	};
 	class rhssaf_helmet_m97_woodland: rhssaf_helmet_base
 	{
 		class ItemInfo: HeadGearItem
@@ -276,6 +288,15 @@ class cfgWeapons
 				};
 			};
 		};
+	};
+	class rhssaf_helmet_m97_digital: rhssaf_helmet_m97_woodland
+	{
+	};
+	class rhssaf_helmet_m97_md2camo: rhssaf_helmet_m97_woodland
+	{
+	};
+	class rhssaf_helmet_m97_oakleaf: rhssaf_helmet_m97_woodland
+	{
 	};
 	class rhssaf_helmet_m97_nostrap_blue: rhssaf_helmet_m97_woodland
 	{
@@ -345,6 +366,15 @@ class cfgWeapons
 			};
 		};
 	};
+	class rhssaf_helmet_m97_digital_black_ess: rhssaf_helmet_m97_woodland_black_ess
+	{
+	};
+	class rhssaf_helmet_m97_md2camo_black_ess: rhssaf_helmet_m97_woodland_black_ess
+	{
+	};
+	class rhssaf_helmet_m97_oakleaf_black_ess: rhssaf_helmet_m97_woodland_black_ess
+	{
+	};
 	class rhssaf_helmet_m97_woodland_black_ess_bare: rhssaf_helmet_m97_woodland_black_ess
 	{
 		class ItemInfo: HeadGearItem
@@ -362,12 +392,33 @@ class cfgWeapons
 			};
 		};
 	};
+	class rhssaf_helmet_m97_digital_black_ess_bare: rhssaf_helmet_m97_woodland_black_ess_bare
+	{
+	};
+	class rhssaf_helmet_m97_md2camo_black_ess_bare: rhssaf_helmet_m97_woodland_black_ess_bare
+	{
+	};
+	class rhssaf_helmet_m97_oakleaf_black_ess_bare: rhssaf_helmet_m97_woodland_black_ess_bare
+	{
+	};
 	class rhssaf_helmet_m97_veil_Base: rhssaf_helmet_m97_woodland
 	{
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="\rhssaf\addons\rhssaf_m_headgear_veil\rhssaf_m97_veil";
 		};
+	};
+	class rhssaf_helmet_m97_veil_woodland: rhssaf_helmet_m97_veil_Base
+	{
+	};
+	class rhssaf_helmet_m97_veil_digital: rhssaf_helmet_m97_veil_Base
+	{
+	};
+	class rhssaf_helmet_m97_veil_md2camo: rhssaf_helmet_m97_veil_Base
+	{
+	};
+	class rhssaf_helmet_m97_veil_oakleaf: rhssaf_helmet_m97_veil_Base
+	{
 	};
 	class rhssaf_beret_green: rhssaf_helmet_base
 	{
@@ -386,9 +437,21 @@ class cfgWeapons
 			};
 		};
 	};
+	class H_PilotHelmetHeli_B: H_HelmetB
+	{
+	};
 	class H_PilotHelmetHeli_O: H_PilotHelmetHeli_B
 	{
 		class ItemInfo;
+	};
+	class rhssaf_beret_red: rhssaf_beret_green
+	{
+	};
+	class rhssaf_beret_para: rhssaf_beret_green
+	{
+	};
+	class rhssaf_beret_black: rhssaf_beret_green
+	{
 	};
 	class rhssaf_beret_blue_un: rhssaf_helmet_base
 	{
@@ -408,7 +471,31 @@ class cfgWeapons
 		};
 	};
 	class rhs_booniehat2_marpatd;
+	class rhssaf_booniehat_digital: rhs_booniehat2_marpatd
+	{
+	};
+	class rhssaf_booniehat_md2camo: rhs_booniehat2_marpatd
+	{
+	};
+	class rhssaf_booniehat_woodland: rhs_booniehat2_marpatd
+	{
+	};
 	class H_Bandanna_khk;
+	class rhssaf_bandana_digital: H_Bandanna_khk
+	{
+	};
+	class rhssaf_bandana_digital_desert: rhssaf_bandana_digital
+	{
+	};
+	class rhssaf_bandana_oakleaf: rhssaf_bandana_digital
+	{
+	};
+	class rhssaf_bandana_smb: rhssaf_bandana_digital
+	{
+	};
+	class rhssaf_bandana_md2camo: rhssaf_bandana_digital
+	{
+	};
 	class Uniform_Base;
 	class UniformItem;
 	class rhssaf_uniform_m10_digital: Uniform_Base
@@ -939,6 +1026,78 @@ class CfgVehicles
 		};
 		maximumLoad=320;
 		mass=60;
+	};
+	class rhssaf_Kitbag_smb_Ammo: rhssaf_kitbag_smb
+	{
+	};
+	class rhssaf_Kitbag_smb_std_m21: rhssaf_kitbag_smb
+	{
+	};
+	class rhssaf_Kitbag_smb_std_m70: rhssaf_kitbag_smb
+	{
+	};
+	class rhssaf_Kitbag_smb_std_g36: rhssaf_kitbag_smb
+	{
+	};
+	class rhssaf_Kitbag_smb_std_hk416: rhssaf_kitbag_smb
+	{
+	};
+	class rhssaf_Kitbag_smb_std_mp7a1: rhssaf_kitbag_smb
+	{
+	};
+	class rhssaf_Kitbag_smb_std_mgun_m84: rhssaf_kitbag_smb
+	{
+	};
+	class rhssaf_Kitbag_smb_std_mgun_minimi: rhssaf_kitbag_smb
+	{
+	};
+	class rhssaf_Kitbag_smb_std_m76: rhssaf_kitbag_smb
+	{
+	};
+	class rhssaf_Kitbag_smb_std_scarh: rhssaf_kitbag_smb
+	{
+	};
+	class rhssaf_Kitbag_smb_std_m82a1: rhssaf_kitbag_smb
+	{
+	};
+	class rhssaf_Kitbag_smb_std_asst_mgun_m84: rhssaf_kitbag_smb
+	{
+	};
+	class rhssaf_Kitbag_smb_std_asst_mgun_minimi: rhssaf_kitbag_smb
+	{
+	};
+	class rhssaf_Kitbag_smb_AA: rhssaf_kitbag_smb
+	{
+	};
+	class rhssaf_Kitbag_smb_asst_AA: rhssaf_kitbag_smb
+	{
+	};
+	class rhssaf_Kitbag_smb_Medic: rhssaf_kitbag_smb
+	{
+	};
+	class rhssaf_Kitbag_smb_Repair: rhssaf_kitbag_smb
+	{
+	};
+	class rhssaf_Kitbag_smb_AT: rhssaf_kitbag_smb
+	{
+	};
+	class rhssaf_Kitbag_smb_asst_AT: rhssaf_kitbag_smb
+	{
+	};
+	class rhssaf_Kitbag_smb_AAR: rhssaf_kitbag_smb
+	{
+	};
+	class rhssaf_Kitbag_smb_AAT: rhssaf_kitbag_smb
+	{
+	};
+	class rhssaf_Kitbag_smb_Exp: rhssaf_kitbag_smb
+	{
+	};
+	class rhssaf_Kitbag_smb_AAA: rhssaf_kitbag_smb
+	{
+	};
+	class rhssaf_Kitbag_smb_Eng: rhssaf_kitbag_smb
+	{
 	};
 	class Headgear_Base_F;
 	class Headgear_rhssaf_helmet_m59_85_nocamo: Headgear_Base_F

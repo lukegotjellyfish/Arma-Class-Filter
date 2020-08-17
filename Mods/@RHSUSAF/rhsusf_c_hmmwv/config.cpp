@@ -1,5 +1,8 @@
 class CfgPatches
 {
+	class rhsusf_vehicles
+	{
+		units[]={};
 		weapons[]={};
 		requiredAddons[]={};
 	};
@@ -123,6 +126,9 @@ class CfgVehicles
 		{
 			class MainTurret: NewTurret
 			{
+				class ViewOptics;
+			};
+		};
 		class HitPoints
 		{
 			class HitLFWheel;
@@ -133,10 +139,16 @@ class CfgVehicles
 			class HitGlass2;
 			class HitGlass3;
 			class HitGlass4;
+			class HitGlass5;
+			class HitGlass6;
+		};
 	};
 	class MRAP_01_base_F: Car_F
 	{
 		class Sounds;
+		class EventHandlers;
+		class Components;
+	};
 	class rhsusf_hmmwe_base: MRAP_01_base_F
 	{
 		class Sounds
@@ -884,6 +896,9 @@ class CfgVehicles
 		};
 		class Components: Components
 		{
+			class AICarSteeringComponent
+			{
+				steeringPIDWeights[]={3.0999999,0.1,0.40000001};
 				speedPIDWeights[]={0.69999999,0.2,0};
 				convoyPIDWeights[]={1,0.0099999998,0.0099999998};
 				doRemapSpeed=1;
@@ -1265,8 +1280,35 @@ class CfgVehicles
 				minTurn=-95;
 			};
 		};
+		class Damage
+		{
+		};
 		class Attributes: Attributes
 		{
+			class rhs_decalMask: rhs_decalMask
+			{
+			};
+			class rhs_decalDoors: rhs_decalDoors
+			{
+			};
+			class rhs_hideCIP: rhs_hideCIP
+			{
+			};
+			class rhs_hideBFT: rhs_hideBFT
+			{
+			};
+			class rhs_hideAntennas: rhs_hideAntennas
+			{
+			};
+			class rhs_hideA2Parts: rhs_hideA2Parts
+			{
+			};
+			class Door_LF: Door_LF
+			{
+			};
+			class Door_RF: Door_RF
+			{
+			};
 		};
 		class NVGMarkers
 		{
@@ -1304,6 +1346,9 @@ class CfgVehicles
 			};
 		};
 	};
+	class rhsusf_m998_d_2dr: rhsusf_m998_w_2dr
+	{
+	};
 	class rhsusf_m998_w_s_2dr: rhsusf_m998_w_2dr
 	{
 		class Exhausts
@@ -1337,7 +1382,13 @@ class CfgVehicles
 		soundAttenuationCargo[]={1,0};
 		class Turrets: Turrets
 		{
+			class CargoTurret_02: CargoTurret_02
+			{
+			};
 		};
+	};
+	class rhsusf_m998_d_2dr_halftop: rhsusf_m998_w_2dr_halftop
+	{
 	};
 	class rhsusf_m998_w_s_2dr_halftop: rhsusf_m998_w_2dr_halftop
 	{
@@ -1404,6 +1455,9 @@ class CfgVehicles
 			};
 		};
 	};
+	class rhsusf_m998_d_2dr_fulltop: rhsusf_m998_w_2dr_fulltop
+	{
+	};
 	class rhsusf_m998_w_s_2dr_fulltop: rhsusf_m998_w_2dr_fulltop
 	{
 		class Exhausts
@@ -1468,6 +1522,9 @@ class CfgVehicles
 				maxTurn=105;
 				minTurn=-80;
 				minElev=-45;
+				class dynamicViewLimits
+				{
+					CargoTurret_01[]={20,105};
 				};
 			};
 			class CargoTurret_03: CargoTurret_01
@@ -1475,6 +1532,9 @@ class CfgVehicles
 				proxyIndex=1;
 				maxTurn=-34;
 				minTurn=-95;
+				class dynamicViewLimits
+				{
+				};
 			};
 			class CargoTurret_04: CargoTurret_03
 			{
@@ -1491,7 +1551,40 @@ class CfgVehicles
 		};
 		class Attributes: Attributes
 		{
+			class rhs_decalMask: rhs_decalMask
+			{
+			};
+			class rhs_decalDoors: rhs_decalDoors
+			{
+			};
+			class rhs_hideCIP: rhs_hideCIP
+			{
+			};
+			class rhs_hideBFT: rhs_hideBFT
+			{
+			};
+			class rhs_hideAntennas: rhs_hideAntennas
+			{
+			};
+			class rhs_hideA2Parts: rhs_hideA2Parts
+			{
+			};
+			class Door_LF: Door_LF
+			{
+			};
+			class Door_RF: Door_RF
+			{
+			};
+			class Door_LB: Door_LB
+			{
+			};
+			class Door_RB: Door_RB
+			{
+			};
 		};
+	};
+	class rhsusf_m998_d_4dr: rhsusf_m998_w_4dr
+	{
 	};
 	class rhsusf_m998_w_s_4dr: rhsusf_m998_w_4dr
 	{
@@ -1527,7 +1620,13 @@ class CfgVehicles
 		class CargoTurret;
 		class Turrets: Turrets
 		{
+			class CargoTurret_02: CargoTurret_02
+			{
+			};
 		};
+	};
+	class rhsusf_m998_d_4dr_halftop: rhsusf_m998_w_4dr_halftop
+	{
 	};
 	class rhsusf_m998_w_s_4dr_halftop: rhsusf_m998_w_4dr_halftop
 	{
@@ -1587,6 +1686,12 @@ class CfgVehicles
 			};
 		};
 		class CargoTurret;
+		class Turrets: Turrets
+		{
+		};
+	};
+	class rhsusf_m998_d_4dr_fulltop: rhsusf_m998_w_4dr_fulltop
+	{
 	};
 	class rhsusf_m998_w_s_4dr_fulltop: rhsusf_m998_d_4dr_fulltop
 	{
@@ -1828,17 +1933,47 @@ class CfgVehicles
 		};
 		class Attributes: Attributes
 		{
+			class rhs_decalMask: rhs_decalMask
+			{
+			};
+			class rhs_decalDoors: rhs_decalDoors
+			{
+			};
+			class rhs_hideCIP: rhs_hideCIP
+			{
+			};
+			class rhs_hideBFT: rhs_hideBFT
+			{
+			};
+			class rhs_hideAntennas: rhs_hideAntennas
+			{
+			};
+			class rhs_hideA2Parts: rhs_hideA2Parts
+			{
+			};
+			class Door_LF: Door_LF
+			{
+			};
 			class ani_window_1: Door_LF
 			{
 				property="ani_window_1";
+			};
+			class Door_RF: Door_RF
+			{
 			};
 			class ani_window_2: Door_LF
 			{
 				property="ani_window_2";
 			};
+			class Door_LB: Door_LB
+			{
+			};
 			class ani_window_3: Door_LF
 			{
 				property="ani_window_3";
+			};
+			class Door_RB: Door_RB
+			{
 			};
 			class ani_window_4: Door_LF
 			{
@@ -1859,6 +1994,9 @@ class CfgVehicles
 			};
 		};
 	};
+	class rhsusf_m1025_d: rhsusf_m1025_w
+	{
+	};
 	class rhsusf_m1025_w_s: rhsusf_m1025_w
 	{
 		class Exhausts
@@ -1872,6 +2010,9 @@ class CfgVehicles
 		};
 		maxFordingDepth=0.75;
 		displayname="M1025A2 (Unarmed/Snorkel)";
+	};
+	class rhsusf_m1025_d_s: rhsusf_m1025_w_s
+	{
 	};
 	class rhsusf_m1025_w_m2: rhsusf_m1025_w
 	{
@@ -1893,6 +2034,9 @@ class CfgVehicles
 			};
 		};
 		nameSound="veh_vehicle_armedcar_s";
+		class HitPoints: HitPoints
+		{
+		};
 		threat[]={0.89999998,0.30000001,0.1};
 		class Turrets: Turrets
 		{
@@ -1901,6 +2045,15 @@ class CfgVehicles
 				weapons[]=
 				{
 					"RHS_M2"
+				};
+				magazines[]=
+				{
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red"
 				};
 				minElev=-10;
 				maxElev=40;
@@ -1913,6 +2066,15 @@ class CfgVehicles
 					minFov=0.25;
 					maxFov=1.1;
 				};
+				class ViewGunner: ViewOptics
+				{
+				};
+			};
+			class CargoTurret_02: CargoTurret_02
+			{
+			};
+			class CargoTurret_03: CargoTurret_03
+			{
 			};
 		};
 		class textureSources
@@ -1940,6 +2102,9 @@ class CfgVehicles
 			};
 		};
 	};
+	class rhsusf_m1025_d_m2: rhsusf_m1025_w_m2
+	{
+	};
 	class rhsusf_m1025_w_s_m2: rhsusf_m1025_w_m2
 	{
 		class Exhausts
@@ -1954,6 +2119,9 @@ class CfgVehicles
 		maxFordingDepth=0.75;
 		displayname="M1025A2 (M2/Snorkel)";
 	};
+	class rhsusf_m1025_d_s_m2: rhsusf_m1025_w_s_m2
+	{
+	};
 	class rhsusf_m1025_w_mk19: rhsusf_m1025_w_m2
 	{
 		Picture="\rhsusf\addons\rhsusf_hmmwv\pictures\rhsusf_m1025_mk19_ca.paa";
@@ -1966,8 +2134,27 @@ class CfgVehicles
 				{
 					"RHS_MK19"
 				};
+				magazines[]=
+				{
+					"RHS_48Rnd_40mm_MK19_M430A1",
+					"RHS_48Rnd_40mm_MK19_M430A1",
+					"RHS_48Rnd_40mm_MK19_M430A1",
+					"RHS_48Rnd_40mm_MK19_M430A1",
+					"RHS_48Rnd_40mm_MK19_M430A1",
+					"RHS_48Rnd_40mm_MK19_M430A1",
+					"RHS_48Rnd_40mm_MK19_M1001"
+				};
+			};
+			class CargoTurret_02: CargoTurret_02
+			{
+			};
+			class CargoTurret_03: CargoTurret_03
+			{
 			};
 		};
+	};
+	class rhsusf_m1025_d_Mk19: rhsusf_m1025_w_mk19
+	{
 	};
 	class rhsusf_m1025_w_s_Mk19: rhsusf_m1025_w_mk19
 	{
@@ -1982,6 +2169,9 @@ class CfgVehicles
 		};
 		maxFordingDepth=0.75;
 		displayname="M1025A2 (Mk19/Snorkel)";
+	};
+	class rhsusf_m1025_d_s_Mk19: rhsusf_m1025_w_s_Mk19
+	{
 	};
 	class rhsusf_m966_w: rhsusf_m1025_w
 	{
@@ -2003,6 +2193,9 @@ class CfgVehicles
 			};
 		};
 		nameSound="veh_vehicle_armedcar_s";
+		class HitPoints: HitPoints
+		{
+		};
 		threat[]={0.89999998,0.30000001,0.1};
 		class Turrets: Turrets
 		{
@@ -2015,6 +2208,15 @@ class CfgVehicles
 				weapons[]=
 				{
 					"rhs_weap_tow_launcher_static"
+				};
+				magazines[]=
+				{
+					"rhs_mag_TOW2A",
+					"rhs_mag_TOW2A",
+					"rhs_mag_TOW2b",
+					"rhs_mag_TOW2b",
+					"rhs_mag_TOW2bb",
+					"rhs_mag_TOW2bb"
 				};
 				maxHorizontalRotSpeed=0.25;
 				maxVerticalRotSpeed=0.15000001;
@@ -2082,6 +2284,12 @@ class CfgVehicles
 					};
 				};
 			};
+			class CargoTurret_02: CargoTurret_02
+			{
+			};
+			class CargoTurret_03: CargoTurret_03
+			{
+			};
 		};
 		class textureSources
 		{
@@ -2114,6 +2322,9 @@ class CfgVehicles
 			"Hide_Brushguard",
 			0.5
 		};
+	};
+	class rhsusf_m966_d: rhsusf_m966_w
+	{
 	};
 	class rhsusf_m1043_w: rhsusf_m1025_w
 	{
@@ -2277,6 +2488,9 @@ class CfgVehicles
 			};
 		};
 	};
+	class rhsusf_m1043_d: rhsusf_m1043_w
+	{
+	};
 	class rhsusf_m1043_w_s: rhsusf_m1043_w
 	{
 		class Exhausts
@@ -2290,6 +2504,9 @@ class CfgVehicles
 		};
 		maxFordingDepth=0.75;
 		displayname="M1043A2 (Unarmed/Snorkel)";
+	};
+	class rhsusf_m1043_d_s: rhsusf_m1043_w_s
+	{
 	};
 	class rhsusf_m1043_w_m2: rhsusf_m1025_w_m2
 	{
@@ -2320,6 +2537,9 @@ class CfgVehicles
 			};
 		};
 	};
+	class rhsusf_m1043_d_m2: rhsusf_m1043_w_m2
+	{
+	};
 	class rhsusf_m1043_w_s_m2: rhsusf_m1043_w_m2
 	{
 		class Exhausts
@@ -2333,6 +2553,9 @@ class CfgVehicles
 		};
 		maxFordingDepth=0.75;
 		displayname="M1043A2 (M2/Snorkel)";
+	};
+	class rhsusf_m1043_d_s_m2: rhsusf_m1043_w_s_m2
+	{
 	};
 	class rhsusf_m1043_w_mk19: rhsusf_m1025_w_mk19
 	{
@@ -2363,6 +2586,9 @@ class CfgVehicles
 			};
 		};
 	};
+	class rhsusf_m1043_d_mk19: rhsusf_m1043_w_mk19
+	{
+	};
 	class rhsusf_m1043_w_s_mk19: rhsusf_m1043_w_mk19
 	{
 		class Exhausts
@@ -2376,6 +2602,9 @@ class CfgVehicles
 		};
 		maxFordingDepth=0.75;
 		displayname="M1043A2 (Mk19/Snorkel)";
+	};
+	class rhsusf_m1043_d_s_mk19: rhsusf_m1043_w_s_mk19
+	{
 	};
 	class rhsusf_m1045_w: rhsusf_m966_w
 	{
@@ -2407,6 +2636,9 @@ class CfgVehicles
 		};
 		animationList[]={};
 	};
+	class rhsusf_m1045_d: rhsusf_m1045_w
+	{
+	};
 	class rhsusf_m1045_w_s: rhsusf_m1045_w
 	{
 		class Exhausts
@@ -2420,5 +2652,8 @@ class CfgVehicles
 		};
 		maxFordingDepth=0.75;
 		displayname="M1045A2 (M220A2/Snorkel)";
+	};
+	class rhsusf_m1045_d_s: rhsusf_m1045_w_s
+	{
 	};
 };

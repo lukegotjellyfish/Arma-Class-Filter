@@ -14,6 +14,9 @@ class CfgPatches
 class CfgMovesWomen: CfgMovesBasic
 {
 	class DefaultDie;
+	class ManActions
+	{
+	};
 };
 class CfgFunctions
 {
@@ -489,9 +492,18 @@ class CfgVehicles
 	};
 	class Ship: AllVehicles
 	{
+		class MarkerLights;
+		class ViewPilot;
+	};
+	class Ship_F: Ship
+	{
+	};
 	class RHS_Ship: Ship_F
 	{
 		class NewTurret;
+		class Turrets
+		{
+		};
 		class CargoTurret;
 		memoryPointsLeftEngineEffect="EngineEffectL";
 		memoryPointsRightEngineEffect="EngineEffectR";
@@ -746,8 +758,14 @@ class CfgVehicles
 		memoryPointExhaustDir="eng_1_exh_dir";
 		memoryPointsLeftWaterEffect="waterEffectLeft";
 		memoryPointsRightWaterEffect="waterEffectRight";
+		class Damage
+		{
+		};
 		class EventHandlers: DefaultEventhandlers
 		{
+			class rhs_markvsoc_eh
+			{
+			};
 		};
 		class Exhausts
 		{
@@ -766,6 +784,9 @@ class CfgVehicles
 		};
 		class MarkerLights
 		{
+			class mL_pos_port
+			{
+				color[]={0.80000001,0,0};
 				ambient[]={0.079999998,0,0};
 				intensity=100;
 				name="mL_pos_port";
@@ -777,9 +798,15 @@ class CfgVehicles
 				dayLight=0;
 				useFlare=0;
 			};
+			class mL_pos_stbd: mL_pos_port
+			{
+				color[]={0,0.80000001,0};
 				ambient[]={0,0.079999998,0};
 				name="mL_pos_stbd";
 			};
+			class mL_pos_aft
+			{
+				color[]={0.80000001,0.80000001,0.80000001};
 				ambient[]={0.079999998,0.079999998,0.079999998};
 				intensity=100;
 				name="mL_pos_aft";
@@ -1067,6 +1094,9 @@ class CfgVehicles
 				volume="(scrubLand factor[0.01, 0.20])";
 			};
 		};
+		class SoundEvents
+		{
+		};
 		class SpeechVariants
 		{
 			class Default
@@ -1092,6 +1122,15 @@ class CfgVehicles
 				weapons[]=
 				{
 					"RHS_MKV_M2_p"
+				};
+				magazines[]=
+				{
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+					"rhs_mag_100rnd_127x99_mag_Tracer_Red"
 				};
 				startEngine=0;
 				commanding=0;
@@ -1192,6 +1231,11 @@ class CfgVehicles
 				{
 					"RHS_MKV_M134"
 				};
+				magazines[]=
+				{
+					"2000Rnd_762x51_Belt_T_Red",
+					"2000Rnd_762x51_Belt_T_Red"
+				};
 				minElev=-45;
 				maxElev=35;
 				initElev=45;
@@ -1248,6 +1292,13 @@ class CfgVehicles
 				weapons[]=
 				{
 					"RHS_MKV_MK19"
+				};
+				magazines[]=
+				{
+					"RHS_48Rnd_40mm_MK19_M430A1",
+					"RHS_48Rnd_40mm_MK19_M430A1",
+					"RHS_48Rnd_40mm_MK19_M430A1",
+					"RHS_48Rnd_40mm_MK19_M430A1"
 				};
 				minElev=-45;
 				maxElev=55;
@@ -1309,6 +1360,10 @@ class CfgVehicles
 				{
 					"Laserdesignator_mounted"
 				};
+				magazines[]=
+				{
+					"Laserbatteries"
+				};
 				startEngine=0;
 				commanding=0;
 				primaryGunner=0;
@@ -1355,6 +1410,9 @@ class CfgVehicles
 				};
 				maxHorizontalRotSpeed=1.8;
 				maxVerticalRotSpeed=1.2;
+				class HitPoints
+				{
+				};
 			};
 			class rem_spotL_gunTurret: MainTurret
 			{
@@ -1405,6 +1463,9 @@ class CfgVehicles
 				};
 				maxHorizontalRotSpeed=1.8;
 				maxVerticalRotSpeed=1.2;
+				class HitPoints
+				{
+				};
 			};
 		};
 		class Attributes
@@ -1424,6 +1485,9 @@ class CfgVehicles
 		};
 		class textureSources
 		{
+			class marsoc
+			{
+			};
 		};
 	};
 	class House_F;
