@@ -5,6 +5,16 @@ import os
 import re
 import errno
 
+os.system("")
+
+cred     = '\033[91m'
+cgreen   = '\33[32m'
+cgrey    = '\33[90m'
+cviolet2 = '\33[95m'
+
+cbold    = '\33[1m'
+
+cend     = '\033[0m'
 
 #\n^\s*$
 attributeSkip = ["author","url","requiredVersion", "onLoad","dlc","category","editorSubcategory",
@@ -22,10 +32,11 @@ attributeSkip = ["author","url","requiredVersion", "onLoad","dlc","category","ed
 "cameraDir", "weaponInfoType", "UiPicture", "magazineReloadSwitchPhase", "reloadAction", "maxRecoilSway", "swayDecaySpeed", "aimTransitionSpeed",
 "minRange", "minRangeProbab", "midRange", "midRangeProbab", "maxRange", "maxRangeProbab", "showToPlayer", "aiRateOfFire", "aiRateOfFireDistance",
 "requiredOpticType","aiDispersionCoefY", "aiDispersionCoefX","allowedSlots", "type", "descriptionShort","soundContinuous","soundBurst",
-"deployedPivot","hasBipod","holsterScale","holsterOffset","RMBhint","priority","onHoverText"]
+"deployedPivot","hasBipod","holsterScale","holsterOffset","RMBhint","priority","onHoverText","cartridge","suppressionRadiusBulletClose","visibleFire",
+"audibleFire"]
 
 multiAttributeSkip = ["requiredAddons[]", "controls[]","cargoAction[]","memoryPointsGetInCargo[]","memoryPointsGetInCargoDir[]","cargoDoors[]","textures[]",
-"aggregateReflectors[]","mat[]","HiddenSelectionsTextures[]","magazines[]","soundServo[]", "modes[]","hiddenSelections[]","hiddenSelectionsTextures[]",
+"aggregateReflectors[]","mat[]","HiddenSelectionsTextures[]","soundServo[]", "modes[]","hiddenSelections[]","hiddenSelectionsTextures[]",
 "handAnim[]","discreteDistanceCameraPoint[]", "caseless[]", "soundBullet[]", "sounds[]", "drySound[]","muzzles[]",
 "bullet1[]","bullet2[]","bullet3[]","bullet4[]","bullet5[]","bullet6[]","bullet7[]","bullet8[]","bullet9[]","bullet10[]","bullet11[]","bullet12[]",
 "reloadMagazineSound[]","changeFiremodeSound[]"]
@@ -47,7 +58,7 @@ def newFile(root, file):
 	#print(root, file)
 	folder = re.search("addons\\\\[^\\\\]*", root).group(0).replace("addons\\","")
 	#print("Mod: " + modDir)
-	print("On: " + folder)
+	print(cviolet2 + "-------------------------------" + cend + (cgreen + cbold + folder + cend) + cviolet2 + "-------------------------------" + cend)
 	#input("Halt")
 	pathToCreate = "Mods\\" + modDir + "\\" + folder + "\\"
 	fileToCreate = pathToCreate + "\\" + file
@@ -130,17 +141,20 @@ def newFile(root, file):
 		toSkip = 0
 		for item in fileWriteList:
 			if toSkip > 0:
-				#print("Skipped [" + line.replace("\n","") + "]")
 				toSkip -= 1
 				x += 1
 				continue
 
 			tabCount = line.count("	")
-			if item.replace("	","").startswith("class") and fileWriteList[x+2].replace("	","").endswith("};\n"):
-				print("skipped empty class")
-				x += 1
-				toSkip = 2
-				continue
+			if item.replace("	","").startswith("class") and not item.endswith(";\n") and fileWriteList[x+2].replace("	","").endswith("};\n"):
+				if fileWriteList[x+1].count("	") != tabCount:
+					pass
+				else:
+					writeToThisFile.write(item.replace("\n","") + ";  //found empty after stripping\n")
+					print(cred + "[EMPTY CLASS] " + cend + cgrey + item.replace("\n","") + cend)
+					x += 1
+					toSkip = 2
+					continue
 			writeToThisFile.write(item)
 			x += 1
 
@@ -179,6 +193,12 @@ for x in mods:
 
 
 #Tried using MySQL because why and why not
+#There is literally no reason for me trying this, it would require faux sub-tables,
+ #something I didn't even try although now I think about it - it sounds really good
+
+#Database for each 
+#Parent mod: table
+
 """
 	modLine = re.search("@.*", filePath).group(0).split("\\")
 	modName = modLine[0].replace("@","").lower()
