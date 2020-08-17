@@ -146,6 +146,7 @@ def newFile(root, file):
 				continue
 
 			tabCount = line.count("	")
+	#do i need one of the if statements? can i combine the sub-if statement into the one above? maybe. This mess aesthetically fits the project though
 			if item.replace("	","").startswith("class") and not item.endswith(";\n") and fileWriteList[x+2].replace("	","").endswith("};\n"):
 				if fileWriteList[x+1].count("	") != tabCount:
 					pass
