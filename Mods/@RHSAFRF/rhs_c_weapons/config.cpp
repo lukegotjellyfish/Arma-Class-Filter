@@ -4988,7 +4988,6 @@ class CfgMagazines
 		mass=10.45;
 		count=1;
 		initSpeed=0;
-		maxLeadSpeed=0;
 		nameSoundWeapon="satchelcharge";
 		nameSound="satchelcharge";
 		weaponPoolAvailable=1;

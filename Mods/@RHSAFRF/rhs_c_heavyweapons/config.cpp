@@ -3230,7 +3230,6 @@ class CfgMagazines
 		ammo="rhs_laserbeam_FCS";
 		count=99;
 		initSpeed=600;
-		maxLeadSpeed=150;
 	};
 	class rhs_mag_bm_base: VehicleMagazine
 	{
@@ -3239,7 +3238,6 @@ class CfgMagazines
 		count=14;
 		initSpeed=900;
 		rhs_magazineIndex=1;
-		maxLeadSpeed=80;
 		muzzleImpulseFactor[]=
 		{
 			"14*0.2",
@@ -3466,7 +3464,6 @@ class CfgMagazines
 		magazineReloadTime=12;
 		count=8;
 		initSpeed=900;
-		maxLeadSpeed=27;
 		rhs_magazineIndex=2;
 		muzzleImpulseFactor=0.0099999998;
 	};
@@ -3622,7 +3619,6 @@ class CfgMagazines
 		count=17;
 		initSpeed=900;
 		rhs_magazineIndex=3;
-		maxLeadSpeed=40;
 		muzzleImpulseFactor=0.001;
 	};
 	class rhs_mag_of412_17: rhs_mag_of_base
@@ -3692,7 +3688,6 @@ class CfgMagazines
 		ammo="rhs_ammo_3UOF17";
 		count=22;
 		initSpeed=250;
-		maxLeadSpeed=60;
 		nameSound="heat";
 		tracersEvery=0;
 		rhs_magazineIndex=3;
@@ -3702,7 +3697,6 @@ class CfgMagazines
 		ammo="rhs_ammo_3UOF19";
 		count=22;
 		initSpeed=355;
-		maxLeadSpeed=60;
 		nameSound="heat";
 		tracersEvery=1;
 		rhs_magazineIndex=3;
@@ -4542,7 +4536,6 @@ class CfgMagazines
 		nameSound="heat";
 		ammo="rhs_ammo_3uor6";
 		count=230;
-		maxLeadSpeed=25;
 		initSpeed=1120;
 		tracersEvery=4;
 		weight="0.385*230";
@@ -4777,7 +4770,6 @@ class CfgMagazines
 		ammo="RHS_ammo_23mm_AA";
 		count=250;
 		initSpeed=980;
-		maxLeadSpeed=650;
 		nameSound="cannon";
 		tracersEvery=1;
 	};
@@ -4816,7 +4808,6 @@ class CfgMagazines
 		count=750;
 		tracersEvery=1;
 		initSpeed=817;
-		maxLeadSpeed=300;
 		weight="0.390*750";
 	};
 	class rhs_mag_gsh30_bt_750: rhs_mag_3uor6_230
@@ -4824,19 +4815,16 @@ class CfgMagazines
 		ammo="rhs_ammo_gsh30_bt";
 		count=750;
 		weight="0.390*750";
-		maxLeadSpeed=300;
 	};
 	class rhs_mag_gsh30_ofzt_250: rhs_mag_gsh30_ofzt_750
 	{
 		count=250;
 		weight="0.390*250";
-		maxLeadSpeed=300;
 	};
 	class rhs_mag_gsh30_bt_250: rhs_mag_gsh30_bt_750
 	{
 		count=250;
 		weight="0.390*250";
-		maxLeadSpeed=300;
 	};
 	class rhs_mag_gsh30_bt_150: rhs_mag_gsh30_bt_250
 	{
@@ -4902,7 +4890,6 @@ class CfgMagazines
 		tracersEvery=1;
 		count=1470;
 		weight=191.10001;
-		maxLeadSpeed=300;
 	};
 	class rhs_mag_127x108mm_1slt_1470: rhs_mag_127x108mm_1470
 	{
@@ -5232,7 +5219,6 @@ class CfgWeapons
 		autoFire=1;
 		dispersion=0.003;
 		magazineReloadTime=7;
-		maxLeadSpeed=600;
 		canLock=0;
 	};
 	class rhs_weap_pkt: PKT
@@ -5381,7 +5367,6 @@ class CfgWeapons
 		};
 		reloadTime=0.1;
 		dispersion=0.0020000001;
-		maxLeadSpeed=600;
 		canLock=0;
 		class manual: MGun
 		{
@@ -5725,7 +5710,6 @@ class CfgWeapons
 		ballisticsComputer=0;
 		flash="gunfire";
 		flashSize=10;
-		maxLeadSpeed=100;
 		reloadTime=6.5;
 		magazineReloadTime=6.5;
 		autoReload=0;
@@ -6173,7 +6157,6 @@ class CfgWeapons
 		};
 		reloadTime=7;
 		magazineReloadTime=5.5;
-		maxLeadSpeed=100;
 		class gunParticles
 		{
 			class Effect

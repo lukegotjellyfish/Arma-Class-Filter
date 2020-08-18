@@ -1326,7 +1326,6 @@ class CfgMagazines
 		ammo="rhs_ammo_Sidewinder_AA";
 		count=1;
 		initSpeed=0;
-		maxLeadSpeed=450;
 		nameSound="missiles";
 		pylonWeapon="rhs_weap_SidewinderLauncher";
 		hardpoints[]=
@@ -2003,7 +2002,6 @@ class CfgMagazines
 		ammo="rhs_ammo_fim92_missile";
 		count=2;
 		initSpeed=40;
-		maxLeadSpeed=450;
 		nameSound="missiles";
 		pylonWeapon="rhs_weap_ATAS_launcher";
 		hardpoints[]=
@@ -2468,7 +2466,6 @@ class CfgMagazines
 		ammo="rhs_ammo_aim120";
 		count=1;
 		initSpeed=0;
-		maxLeadSpeed=450;
 		nameSound="missiles";
 		pylonWeapon="rhs_weap_AIM120";
 		class mfdElements
@@ -3640,7 +3637,6 @@ class CfgMagazines
 		displayname="FIM-92F Stinger";
 		displaynameshort="FIM-92F";
 		initspeed=40;
-		maxLeadSpeed=850;
 		nameSound="missiles";
 		count=4;
 	};
@@ -4282,7 +4278,6 @@ class CfgMagazines
 		count=8;
 		nameSound="missiles";
 		initSpeed=0;
-		maxLeadSpeed=50;
 		weight=360;
 		class mfdElements
 		{
@@ -5641,7 +5636,6 @@ class CfgMagazines
 	{
 		displaynameshort="LG";
 		ammo="RHS_ammo_AGM_114K";
-		maxLeadSpeed=100;
 		count=1;
 		weight=45;
 		pylonWeapon="RHS_weap_AGM114K_Launcher";
@@ -6721,7 +6715,6 @@ class CfgMagazines
 	{
 		displaynameshort="LG HE";
 		ammo="RHS_ammo_AGM_114M";
-		maxLeadSpeed=100;
 		count=1;
 		weight=45;
 		pylonWeapon="RHS_weap_AGM114M_Launcher";
@@ -6991,7 +6984,6 @@ class CfgMagazines
 	{
 		displaynameshort="LG TB";
 		ammo="RHS_ammo_AGM_114N";
-		maxLeadSpeed=100;
 		count=1;
 		weight=45;
 		pylonWeapon="RHS_weap_AGM114N_Launcher";
@@ -7339,7 +7331,6 @@ class CfgMagazines
 	{
 		ammo="rhs_ammo_agm65";
 		initSpeed=0;
-		maxLeadSpeed=220;
 		count=1;
 		pylonWeapon="rhs_weap_agm65";
 		class mfdElements
@@ -7780,7 +7771,6 @@ class CfgMagazines
 	{
 		count=7;
 		initSpeed=44;
-		maxLeadSpeed=200;
 		nameSound="rockets";
 		weight=48;
 		ammo="rhs_ammo_Hydra_M151";
@@ -10430,7 +10420,6 @@ class CfgMagazines
 		ammo="rhs_ammo_FFAR_M151";
 		count=7;
 		initSpeed=44;
-		maxLeadSpeed=200;
 		nameSound="rockets";
 		hardpoints[]=
 		{

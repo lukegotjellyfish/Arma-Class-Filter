@@ -221,7 +221,6 @@ class CfgMagazines
 		ammo="RHS_9M79_1_F";
 		count=1;
 		initSpeed=44;
-		maxLeadSpeed=200;
 	};
 	class 1_Rnd_RHS_9M79_1_K: 1_Rnd_RHS_9M79_1_F
 	{

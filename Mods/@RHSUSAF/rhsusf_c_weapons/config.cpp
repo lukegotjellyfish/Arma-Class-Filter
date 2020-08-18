@@ -7083,7 +7083,6 @@ class CfgMagazines
 		initSpeed=853;
 		selectionFireAnsim="zasleh";
 		nameSound="magazine";
-		maxLeadSpeed=23;
 		weaponpoolavailable=1;
 		mass=41.139999;
 	};
@@ -7645,7 +7644,6 @@ class CfgMagazines
 		descriptionshort="Type: Surface-to-air<br />Caliber: 70 mm<br />Used in: FIM-92";
 		ammo="rhs_ammo_fim92_missile";
 		initSpeed=20;
-		maxLeadSpeed=220;
 	};
 	class rhs_fgm148_magazine_AT: CA_LauncherMagazine
 	{
@@ -7653,7 +7651,6 @@ class CfgMagazines
 		count=1;
 		ammo="rhs_ammo_M_fgm148_AT";
 		initSpeed=10;
-		maxLeadSpeed=350;
 		mass=286.88;
 	};
 	class rhs_fgm172a_magazine_AT: CA_LauncherMagazine
@@ -7662,7 +7659,6 @@ class CfgMagazines
 		count=1;
 		ammo="rhs_ammo_M_fgm172a_AT";
 		initSpeed=40;
-		maxLeadSpeed=350;
 		mass=140.8;
 	};
 	class rhs_fgm172b_magazine_MPV: rhs_fgm172a_magazine_AT
@@ -7670,7 +7666,6 @@ class CfgMagazines
 		descriptionshort="Type: High Explosive Multi-purpose<br />Caliber: 139 mm<br />Used in: Mk41 Mod 0";
 		count=1;
 		ammo="rhs_ammo_M_fgm172b_MPV";
-		maxLeadSpeed=350;
 		mass=140.8;
 	};
 	class rhs_mag_smaw_HEAA: CA_LauncherMagazine
@@ -7743,7 +7738,6 @@ class CfgMagazines
 		mass=12.54;
 		count=1;
 		initSpeed=0;
-		maxLeadSpeed=0;
 		nameSoundWeapon="satchelcharge";
 		nameSound="satchelcharge";
 		weaponPoolAvailable=1;

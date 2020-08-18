@@ -1511,7 +1511,6 @@ class CfgMagazines
 	{
 		ammo="rhs_mine_a200_bz_ammo";
 		mass=25;
-		maxLeadSpeed=0;
 		maxThrowHoldTime=2;
 		maxThrowIntensityCoef=1.4;
 		minThrowIntensityCoef=0.30000001;
@@ -1524,7 +1523,6 @@ class CfgMagazines
 	{
 		ammo="rhs_mine_M3_pressure_ammo";
 		mass=60;
-		maxLeadSpeed=0;
 		maxThrowHoldTime=2;
 		maxThrowIntensityCoef=1.4;
 		minThrowIntensityCoef=0.30000001;

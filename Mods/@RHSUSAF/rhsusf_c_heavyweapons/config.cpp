@@ -1450,12 +1450,10 @@ class CfgMagazines
 		ammo="rhs_laserbeam_FCS";
 		count=99;
 		initSpeed=600;
-		maxLeadSpeed=150;
 	};
 	class rhs_LaserMag_ai: Laserbatteries
 	{
 		initSpeed=96000;
-		maxLeadSpeed=1500;
 		ammo="rhs_laserbeam_ai";
 	};
 	class rhs_mag_M1069: VehicleMagazine
@@ -1468,7 +1466,6 @@ class CfgMagazines
 		};
 		count=8;
 		initSpeed=1410;
-		maxLeadSpeed=20;
 		nameSound="heat";
 		tracersEvery=1;
 		rhs_magazineIndex=3;
@@ -1519,7 +1516,6 @@ class CfgMagazines
 	{
 		ammo="rhs_ammo_M830";
 		initSpeed=915;
-		maxLeadSpeed=20;
 		rhs_magazineIndex=2;
 	};
 	class rhs_mag_M830A1: rhs_mag_M830
@@ -1649,7 +1645,6 @@ class CfgMagazines
 		ammo="rhs_ammo_20mm_AP";
 		count=750;
 		initSpeed=1036;
-		maxLeadSpeed=200;
 		tracersEvery=0;
 		nameSound="cannon";
 	};
@@ -1660,7 +1655,6 @@ class CfgMagazines
 		ammo="rhs_ammo_20mm_AP";
 		count=500;
 		initSpeed=1036;
-		maxLeadSpeed=200;
 		tracersEvery=0;
 		nameSound="cannon";
 	};
@@ -1670,7 +1664,6 @@ class CfgMagazines
 		count=1200;
 		initSpeed=805;
 		tracersEvery=0;
-		maxLeadSpeed=500;
 		nameSound="cannon";
 		airLock=1;
 		weight=419;
@@ -1685,7 +1678,6 @@ class CfgMagazines
 		ammo="rhs_ammo_mk19m3_M384";
 		count=48;
 		initSpeed=240;
-		maxLeadSpeed=100;
 		nameSound="grenadelauncher";
 		displaynameshort="M384 HE";
 	};
@@ -1724,7 +1716,6 @@ class CfgMagazines
 	{
 		ammo="rhs_ammo_127x99_Ball";
 		initSpeed=880;
-		maxLeadSpeed=200;
 		tracersEvery=5;
 		nameSound="mgun";
 		count=100;

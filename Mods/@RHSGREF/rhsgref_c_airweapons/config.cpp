@@ -256,7 +256,6 @@ class CfgMagazines
 		count=1;
 		initspeed=80;
 		weight=37.5;
-		maxLeadSpeed=33;
 	};
 	class rhs_mag_zt3_4: rhs_mag_zt3
 	{
@@ -277,7 +276,6 @@ class CfgMagazines
 		nameSound="missiles";
 		count=1;
 		initSpeed=0;
-		maxLeadSpeed=35;
 		weight=50;
 	};
 	class rhs_mag_zt6_4: rhs_mag_zt6
@@ -313,7 +311,6 @@ class CfgMagazines
 		ammo="rhs_ammo_20x139mm_HE";
 		count=420;
 		initSpeed=1050;
-		maxLeadSpeed=200;
 		tracersEvery=4;
 		nameSound="cannon";
 	};
@@ -324,7 +321,6 @@ class CfgMagazines
 		ammo="rhs_ammo_20x139mm_AP";
 		count=420;
 		initSpeed=1100;
-		maxLeadSpeed=200;
 		tracersEvery=4;
 		nameSound="cannon";
 	};
@@ -336,7 +332,6 @@ class CfgMagazines
 		ammo="rhs_ammo_20x139mm_HE";
 		count=210;
 		initSpeed=1020;
-		maxLeadSpeed=200;
 		tracersEvery=4;
 		muzzlePos="muzzlePos";
 		muzzleEnd="muzzleEnd";
