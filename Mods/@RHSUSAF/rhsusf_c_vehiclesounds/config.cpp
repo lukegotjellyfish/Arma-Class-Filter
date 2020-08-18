@@ -1324,15 +1324,9 @@ class cfgSoundSets
 class cfgVehicles
 {
 	class LandVehicle;
-	class Tank: LandVehicle
-	{
-	};
-	class Tank_F: Tank
-	{
-	};
-	class MBT_01_base_F: Tank_F
-	{
-	};
+	class Tank: LandVehicle;  //found empty after stripping
+	class Tank_F: Tank;  //found empty after stripping
+	class MBT_01_base_F: Tank_F;  //found empty after stripping
 	class rhsusf_m1a1tank_base: MBT_01_base_F
 	{
 		class Sounds

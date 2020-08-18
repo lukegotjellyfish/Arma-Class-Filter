@@ -294,9 +294,7 @@ class CfgVehicles
 		damageResistance=0.030990001;
 		selectionDamage="zbytek";
 		enableGPS=1;
-		class Damage
-		{
-		};
+		class Damage;  //found empty after stripping
 		hideProxyInCombat=0;
 		driverCompartments="Compartment1";
 		cargoCompartments[]=
@@ -546,9 +544,7 @@ class CfgVehicles
 							minFov=0.2;
 							maxFov=0.40000001;
 						};
-						class HitPoints
-						{
-						};
+						class HitPoints;  //found empty after stripping
 						class OpticsIn
 						{
 							class Wide: ViewOptics
@@ -1689,15 +1685,9 @@ class CfgVehicles
 					"rhs_faction_usarmy_d"
 				};
 			};
-			class desert: standard
-			{
-			};
-			class olive: standard
-			{
-			};
-			class un: standard
-			{
-			};
+			class desert: standard;  //found empty after stripping
+			class olive: standard;  //found empty after stripping
+			class un: standard;  //found empty after stripping
 		};
 		class PlayerSteeringCoefficients
 		{
@@ -1728,24 +1718,14 @@ class CfgVehicles
 			"rhsusf_army_ucp_rifleman_m4"
 		};
 	};
-	class rhsusf_M1117_W: rhsusf_M1117_D
-	{
-	};
-	class rhsusf_M1117_O: rhsusf_M1117_W
-	{
-	};
+	class rhsusf_M1117_W: rhsusf_M1117_D;  //found empty after stripping
+	class rhsusf_M1117_O: rhsusf_M1117_W;  //found empty after stripping
 	class ThingX;
 	class rhsusf_duke_d: ThingX
 	{
 		editorCategory="EdCat_Things";
 	};
-	class rhsusf_duke_wd: rhsusf_duke_d
-	{
-	};
-	class rhsusf_duke_m1a2_d: rhsusf_duke_d
-	{
-	};
-	class rhsusf_duke_m1a2_wd: rhsusf_duke_m1a2_d
-	{
-	};
+	class rhsusf_duke_wd: rhsusf_duke_d;  //found empty after stripping
+	class rhsusf_duke_m1a2_d: rhsusf_duke_d;  //found empty after stripping
+	class rhsusf_duke_m1a2_wd: rhsusf_duke_m1a2_d;  //found empty after stripping
 };

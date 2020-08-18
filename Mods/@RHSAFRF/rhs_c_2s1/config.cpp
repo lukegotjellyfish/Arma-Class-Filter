@@ -221,24 +221,12 @@ class CfgVehicles
 					{0.69999999,0.64999998}
 				};
 			};
-			class L3: L2
-			{
-			};
-			class L4: L2
-			{
-			};
-			class L5: L2
-			{
-			};
-			class L6: L2
-			{
-			};
-			class L7: L2
-			{
-			};
-			class L8: L2
-			{
-			};
+			class L3: L2;  //found empty after stripping
+			class L4: L2;  //found empty after stripping
+			class L5: L2;  //found empty after stripping
+			class L6: L2;  //found empty after stripping
+			class L7: L2;  //found empty after stripping
+			class L8: L2;  //found empty after stripping
 			class L9: L2
 			{
 				maxDroop=0;
@@ -254,24 +242,12 @@ class CfgVehicles
 				suspTravelDirection[]={0.125,-1,0};
 				side="right";
 			};
-			class R3: R2
-			{
-			};
-			class R4: R2
-			{
-			};
-			class R5: R2
-			{
-			};
-			class R6: R2
-			{
-			};
-			class R7: R2
-			{
-			};
-			class R8: R2
-			{
-			};
+			class R3: R2;  //found empty after stripping
+			class R4: R2;  //found empty after stripping
+			class R5: R2;  //found empty after stripping
+			class R6: R2;  //found empty after stripping
+			class R7: R2;  //found empty after stripping
+			class R8: R2;  //found empty after stripping
 			class R9: R2
 			{
 				maxDroop=0;
@@ -1691,24 +1667,12 @@ class CfgVehicles
 				property="rhs_decalPlatoonTurretBackRight_type";
 				class values: values
 				{
-					class Platoon: Platoon
-					{
-					};
-					class PlatoonGDR: PlatoonGDR
-					{
-					};
-					class PlatoonVDV: PlatoonVDV
-					{
-					};
-					class Army: Army
-					{
-					};
-					class Honor: Honor
-					{
-					};
-					class HonorGDR: HonorGDR
-					{
-					};
+					class Platoon: Platoon;  //found empty after stripping
+					class PlatoonGDR: PlatoonGDR;  //found empty after stripping
+					class PlatoonVDV: PlatoonVDV;  //found empty after stripping
+					class Army: Army;  //found empty after stripping
+					class Honor: Honor;  //found empty after stripping
+					class HonorGDR: HonorGDR;  //found empty after stripping
 				};
 			};
 			class rhs_decalPlatoonTurretBackRight: rhs_decalPlatoonBack
@@ -1722,24 +1686,12 @@ class CfgVehicles
 				property="rhs_decalPlatoonTurretBackLeft_type";
 				class values: values
 				{
-					class Platoon: Platoon
-					{
-					};
-					class PlatoonGDR: PlatoonGDR
-					{
-					};
-					class PlatoonVDV: PlatoonVDV
-					{
-					};
-					class Army: Army
-					{
-					};
-					class Honor: Honor
-					{
-					};
-					class HonorGDR: HonorGDR
-					{
-					};
+					class Platoon: Platoon;  //found empty after stripping
+					class PlatoonGDR: PlatoonGDR;  //found empty after stripping
+					class PlatoonVDV: PlatoonVDV;  //found empty after stripping
+					class Army: Army;  //found empty after stripping
+					class Honor: Honor;  //found empty after stripping
+					class HonorGDR: HonorGDR;  //found empty after stripping
 				};
 			};
 			class rhs_decalPlatoonTurretBackLeft: rhs_decalPlatoonBack
@@ -1753,24 +1705,12 @@ class CfgVehicles
 				property="rhs_decalPlatoonTurretFrontRight_type";
 				class values: values
 				{
-					class Platoon: Platoon
-					{
-					};
-					class PlatoonGDR: PlatoonGDR
-					{
-					};
-					class PlatoonVDV: PlatoonVDV
-					{
-					};
-					class Army: Army
-					{
-					};
-					class Honor: Honor
-					{
-					};
-					class HonorGDR: HonorGDR
-					{
-					};
+					class Platoon: Platoon;  //found empty after stripping
+					class PlatoonGDR: PlatoonGDR;  //found empty after stripping
+					class PlatoonVDV: PlatoonVDV;  //found empty after stripping
+					class Army: Army;  //found empty after stripping
+					class Honor: Honor;  //found empty after stripping
+					class HonorGDR: HonorGDR;  //found empty after stripping
 				};
 			};
 			class rhs_decalPlatoonTurretFrontRight: rhs_decalPlatoonBack
@@ -1784,24 +1724,12 @@ class CfgVehicles
 				property="rhs_decalPlatoonTurretFrontLeft_type";
 				class values: values
 				{
-					class Platoon: Platoon
-					{
-					};
-					class PlatoonGDR: PlatoonGDR
-					{
-					};
-					class PlatoonVDV: PlatoonVDV
-					{
-					};
-					class Army: Army
-					{
-					};
-					class Honor: Honor
-					{
-					};
-					class HonorGDR: HonorGDR
-					{
-					};
+					class Platoon: Platoon;  //found empty after stripping
+					class PlatoonGDR: PlatoonGDR;  //found empty after stripping
+					class PlatoonVDV: PlatoonVDV;  //found empty after stripping
+					class Army: Army;  //found empty after stripping
+					class Honor: Honor;  //found empty after stripping
+					class HonorGDR: HonorGDR;  //found empty after stripping
 				};
 			};
 			class rhs_decalPlatoonTurretFrontLeft: rhs_decalPlatoonBack
@@ -1815,24 +1743,12 @@ class CfgVehicles
 				property="rhs_decalPlatoonHullLeft_type";
 				class values: values
 				{
-					class Platoon: Platoon
-					{
-					};
-					class PlatoonGDR: PlatoonGDR
-					{
-					};
-					class PlatoonVDV: PlatoonVDV
-					{
-					};
-					class Army: Army
-					{
-					};
-					class Honor: Honor
-					{
-					};
-					class HonorGDR: HonorGDR
-					{
-					};
+					class Platoon: Platoon;  //found empty after stripping
+					class PlatoonGDR: PlatoonGDR;  //found empty after stripping
+					class PlatoonVDV: PlatoonVDV;  //found empty after stripping
+					class Army: Army;  //found empty after stripping
+					class Honor: Honor;  //found empty after stripping
+					class HonorGDR: HonorGDR;  //found empty after stripping
 				};
 			};
 			class rhs_decalPlatoonHullLeft: rhs_decalPlatoonBack
@@ -1846,24 +1762,12 @@ class CfgVehicles
 				property="rhs_decalPlatoonHullRight_type";
 				class values: values
 				{
-					class Platoon: Platoon
-					{
-					};
-					class PlatoonGDR: PlatoonGDR
-					{
-					};
-					class PlatoonVDV: PlatoonVDV
-					{
-					};
-					class Army: Army
-					{
-					};
-					class Honor: Honor
-					{
-					};
-					class HonorGDR: HonorGDR
-					{
-					};
+					class Platoon: Platoon;  //found empty after stripping
+					class PlatoonGDR: PlatoonGDR;  //found empty after stripping
+					class PlatoonVDV: PlatoonVDV;  //found empty after stripping
+					class Army: Army;  //found empty after stripping
+					class Honor: Honor;  //found empty after stripping
+					class HonorGDR: HonorGDR;  //found empty after stripping
 				};
 			};
 			class rhs_decalPlatoonHullRight: rhs_decalPlatoonBack
@@ -2008,9 +1912,7 @@ class CfgVehicles
 			"hide_shields_turret",
 			0.2
 		};
-		class Damage
-		{
-		};
+		class Damage;  //found empty after stripping
 		class Exhausts
 		{
 			class Exhaust1

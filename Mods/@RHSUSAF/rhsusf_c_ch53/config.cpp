@@ -1019,9 +1019,7 @@ class CfgVehicles
 		};
 		class SoundsExt
 		{
-			class SoundEvents
-			{
-			};
+			class SoundEvents;  //found empty after stripping
 			class Sounds
 			{
 				class EngineExt
@@ -1471,9 +1469,7 @@ class CfgVehicles
 				name="glass17";
 			};
 		};
-		class Damage
-		{
-		};
+		class Damage;  //found empty after stripping
 		class MFD
 		{
 			class rhsusf_CH53_HUD_1
@@ -5307,9 +5303,7 @@ class CfgVehicles
 			maxMainRotorStress=570000;
 			maxTailRotorStress=120000;
 		};
-		class Eventhandlers: Eventhandlers
-		{
-		};
+		class Eventhandlers: Eventhandlers;  //found empty after stripping
 		weapons[]=
 		{
 			"rhsusf_weap_ANAAQ24"
@@ -5390,12 +5384,8 @@ class CfgVehicles
 						angleRangeHorizontal=98;
 						angleRangeVertical=72;
 					};
-					class LaserSensorComponent: SensorTemplateLaser
-					{
-					};
-					class PassiveRadarSensorComponent: SensorTemplatePassiveRadar
-					{
-					};
+					class LaserSensorComponent: SensorTemplateLaser;  //found empty after stripping
+					class PassiveRadarSensorComponent: SensorTemplatePassiveRadar;  //found empty after stripping
 				};
 			};
 			class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
@@ -5461,9 +5451,7 @@ class CfgVehicles
 					};
 				};
 			};
-			class TransportCountermeasuresComponent
-			{
-			};
+			class TransportCountermeasuresComponent;  //found empty after stripping
 		};
 		class CargoTurret;
 		class Turrets: Turrets
@@ -5878,9 +5866,7 @@ class CfgVehicles
 	{
 		class Turrets: Turrets
 		{
-			class CopilotTurret: CopilotTurret
-			{
-			};
+			class CopilotTurret: CopilotTurret;  //found empty after stripping
 			class GAU21: MainTurret
 			{
 				usePiP=0;
@@ -5941,9 +5927,7 @@ class CfgVehicles
 				};
 				class OpticsIn
 				{
-					class ViewOptics: ViewGunner
-					{
-					};
+					class ViewOptics: ViewGunner;  //found empty after stripping
 				};
 				memoryPointGun="muzzle_1";
 				soundAttenuationTurret="HeliAttenuationGunner";
@@ -5981,9 +5965,7 @@ class CfgVehicles
 						};
 					};
 				};
-				class Hitpoints
-				{
-				};
+				class Hitpoints;  //found empty after stripping
 			};
 		};
 		class UVAnimations
@@ -6063,21 +6045,15 @@ class CfgVehicles
 		};
 		class Turrets: Turrets
 		{
-			class CopilotTurret: CopilotTurret
-			{
-			};
-			class GAU21: GAU21
-			{
-			};
+			class CopilotTurret: CopilotTurret;  //found empty after stripping
+			class GAU21: GAU21;  //found empty after stripping
 		};
 	};
 	class rhsusf_CH53e_USMC_cargo: rhsusf_CH53E_USMC
 	{
 		class Turrets: Turrets
 		{
-			class CopilotTurret: CopilotTurret
-			{
-			};
+			class CopilotTurret: CopilotTurret;  //found empty after stripping
 		};
 		class VehicleTransport: VehicleTransport
 		{
@@ -6095,9 +6071,7 @@ class CfgVehicles
 	{
 		class Turrets: Turrets
 		{
-			class CopilotTurret: CopilotTurret
-			{
-			};
+			class CopilotTurret: CopilotTurret;  //found empty after stripping
 		};
 		class VehicleTransport: VehicleTransport
 		{

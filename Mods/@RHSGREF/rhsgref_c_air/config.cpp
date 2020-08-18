@@ -75,9 +75,7 @@ class CfgNonAIVehicles
 {
 	class ProxyWeapon;
 	class ProxyRetex;
-	class Proxyuh1h_wreck: ProxyRetex
-	{
-	};
+	class Proxyuh1h_wreck: ProxyRetex;  //found empty after stripping
 };
 class CfgVehicles
 {
@@ -567,9 +565,7 @@ class CfgVehicles
 			"slingCargoDetach1"
 		};
 		enableManualFire=0;
-		class MFD
-		{
-		};
+		class MFD;  //found empty after stripping
 		class ViewPilot: ViewPilot
 		{
 			initFov=0.85000002;
@@ -925,9 +921,7 @@ class CfgVehicles
 		};
 		class SoundsExt
 		{
-			class SoundEvents
-			{
-			};
+			class SoundEvents;  //found empty after stripping
 			class Sounds
 			{
 				class Engine
@@ -1363,9 +1357,7 @@ class CfgVehicles
 					maxFov=0.94999999;
 					initFov=0.85000002;
 				};
-				class Hitpoints
-				{
-				};
+				class Hitpoints;  //found empty after stripping
 			};
 			class RightGunner: MainTurret
 			{
@@ -1406,9 +1398,7 @@ class CfgVehicles
 					minfov=0.25;
 				};
 				soundAttenuationTurret="HeliAttenuationGunner";
-				class Hitpoints
-				{
-				};
+				class Hitpoints;  //found empty after stripping
 			};
 			class LeftGunner: RightGunner
 			{
@@ -1574,9 +1564,7 @@ class CfgVehicles
 			};
 			delete HitWinch;
 		};
-		class Damage
-		{
-		};
+		class Damage;  //found empty after stripping
 		irScanRangeMin=100;
 		irScanRangeMax=1000;
 		irScanToEyeFactor=2;
@@ -1590,18 +1578,10 @@ class CfgVehicles
 					"rhsgref_faction_hidf"
 				};
 			};
-			class hidf_summer: hidf_grey
-			{
-			};
-			class hidf_tropical: hidf_grey
-			{
-			};
-			class hidf_olv: hidf_grey
-			{
-			};
-			class hidf_tan: hidf_grey
-			{
-			};
+			class hidf_summer: hidf_grey;  //found empty after stripping
+			class hidf_tropical: hidf_grey;  //found empty after stripping
+			class hidf_olv: hidf_grey;  //found empty after stripping
+			class hidf_tan: hidf_grey;  //found empty after stripping
 			class un
 			{
 				factions[]=
@@ -1624,9 +1604,7 @@ class CfgVehicles
 					"rhs_faction_usarmy_d"
 				};
 			};
-			class us_army_med: us_army
-			{
-			};
+			class us_army_med: us_army;  //found empty after stripping
 			class black
 			{
 				factions[]=
@@ -1667,12 +1645,8 @@ class CfgVehicles
 					"IND_F"
 				};
 			};
-			class olive: tan
-			{
-			};
-			class white: tan
-			{
-			};
+			class olive: tan;  //found empty after stripping
+			class white: tan;  //found empty after stripping
 		};
 	};
 	class rhs_uh1h_hidf: rhs_uh1h_base
@@ -1685,39 +1659,17 @@ class CfgVehicles
 		enableSweep=0;
 		class textureSources: textureSources
 		{
-			class hidf_grey: hidf_grey
-			{
-			};
-			class hidf_summer: hidf_summer
-			{
-			};
-			class hidf_tropical: hidf_tropical
-			{
-			};
-			class hidf_olv: hidf_olv
-			{
-			};
-			class hidf_tan: hidf_tan
-			{
-			};
-			class us_army: us_army
-			{
-			};
-			class us_army_med: us_army_med
-			{
-			};
-			class black: black
-			{
-			};
-			class iraq: iraq
-			{
-			};
-			class takistan: takistan
-			{
-			};
-			class guerilla: guerilla
-			{
-			};
+			class hidf_grey: hidf_grey;  //found empty after stripping
+			class hidf_summer: hidf_summer;  //found empty after stripping
+			class hidf_tropical: hidf_tropical;  //found empty after stripping
+			class hidf_olv: hidf_olv;  //found empty after stripping
+			class hidf_tan: hidf_tan;  //found empty after stripping
+			class us_army: us_army;  //found empty after stripping
+			class us_army_med: us_army_med;  //found empty after stripping
+			class black: black;  //found empty after stripping
+			class iraq: iraq;  //found empty after stripping
+			class takistan: takistan;  //found empty after stripping
+			class guerilla: guerilla;  //found empty after stripping
 		};
 		class Attributes
 		{
@@ -1801,15 +1753,11 @@ class CfgVehicles
 		forceInGarage=1;
 		class Attributes: Attributes
 		{
-			class uh1h_textures: uh1h_textures
-			{
-			};
+			class uh1h_textures: uh1h_textures;  //found empty after stripping
 		};
 		class Turrets: Turrets
 		{
-			class CopilotTurret: CopilotTurret
-			{
-			};
+			class CopilotTurret: CopilotTurret;  //found empty after stripping
 		};
 	};
 	class rhs_uh1h_un: rhs_uh1h_base
@@ -1819,14 +1767,10 @@ class CfgVehicles
 		{
 			"rhsgref_cdf_un_pilot"
 		};
-		class Attributes
-		{
-		};
+		class Attributes;  //found empty after stripping
 		class Turrets: Turrets
 		{
-			class CopilotTurret: CopilotTurret
-			{
-			};
+			class CopilotTurret: CopilotTurret;  //found empty after stripping
 		};
 	};
 	class rhs_uh1h_idap: rhs_uh1h_base
@@ -1836,14 +1780,10 @@ class CfgVehicles
 		{
 			"C_IDAP_Pilot_01_F"
 		};
-		class Attributes
-		{
-		};
+		class Attributes;  //found empty after stripping
 		class Turrets: Turrets
 		{
-			class CopilotTurret: CopilotTurret
-			{
-			};
+			class CopilotTurret: CopilotTurret;  //found empty after stripping
 		};
 	};
 	class UWreck_base_F;
@@ -1852,9 +1792,7 @@ class CfgVehicles
 		keepHorizontalPlacement=1;
 		icon="rhsgref\addons\rhsgref_air\uh1h\ui\icon_uh1h_ca.paa";
 	};
-	class Heli_Transport_02_base_F: Helicopter_Base_H
-	{
-	};
+	class Heli_Transport_02_base_F: Helicopter_Base_H;  //found empty after stripping
 	class Heli_Light_02_base_F: Helicopter_Base_H
 	{
 		class Turrets: Turrets
@@ -1896,12 +1834,8 @@ class CfgVehicles
 	class RHS_L159_base: Plane_Fighter_03_base_F
 	{
 		selectionDashboard="podsvit pristroju";
-		class pilotCamera
-		{
-		};
-		class EjectionSystem
-		{
-		};
+		class pilotCamera;  //found empty after stripping
+		class EjectionSystem;  //found empty after stripping
 		driverCanEject=1;
 		class EventHandlers: EventHandlers
 		{
@@ -2082,9 +2016,7 @@ class CfgVehicles
 		envelope[]={0,0.15000001,1.1,3,5,5.8299999,6,5.8499999,5.5,4.8000002,3.5999999,1.8,0};
 		weapons[]={};
 		magazines[]={};
-		class Damage
-		{
-		};
+		class Damage;  //found empty after stripping
 		class Components: Components
 		{
 			class TransportPylonsComponent
@@ -2200,12 +2132,8 @@ class CfgVehicles
 			{
 				class Pylons: Pylons
 				{
-					class Pylons1: Pylons1
-					{
-					};
-					class Pylons2: Pylons2
-					{
-					};
+					class Pylons1: Pylons1;  //found empty after stripping
+					class Pylons2: Pylons2;  //found empty after stripping
 					class Pylons3: Pylons3
 					{
 						attachment="rhs_mag_agm65b";
@@ -2218,15 +2146,9 @@ class CfgVehicles
 					{
 						attachment="rhs_mag_agm65b";
 					};
-					class Pylons6: Pylons6
-					{
-					};
-					class Pylons7: Pylons7
-					{
-					};
-					class cmDispenser: cmDispenser
-					{
-					};
+					class Pylons6: Pylons6;  //found empty after stripping
+					class Pylons7: Pylons7;  //found empty after stripping
+					class cmDispenser: cmDispenser;  //found empty after stripping
 				};
 			};
 		};
@@ -2243,9 +2165,7 @@ class CfgVehicles
 			{
 				class Pylons: Pylons
 				{
-					class Pylons1: Pylons1
-					{
-					};
+					class Pylons1: Pylons1;  //found empty after stripping
 					class Pylons2: Pylons2
 					{
 						attachment="rhs_mag_aim120";
@@ -2254,9 +2174,7 @@ class CfgVehicles
 					{
 						attachment="rhs_mag_aim120";
 					};
-					class Pylons4: Pylons4
-					{
-					};
+					class Pylons4: Pylons4;  //found empty after stripping
 					class Pylons5: Pylons5
 					{
 						attachment="rhs_mag_aim120";
@@ -2265,12 +2183,8 @@ class CfgVehicles
 					{
 						attachment="rhs_mag_aim120";
 					};
-					class Pylons7: Pylons7
-					{
-					};
-					class cmDispenser: cmDispenser
-					{
-					};
+					class Pylons7: Pylons7;  //found empty after stripping
+					class cmDispenser: cmDispenser;  //found empty after stripping
 				};
 			};
 		};
@@ -2283,9 +2197,7 @@ class CfgVehicles
 			{
 				class Pylons: Pylons
 				{
-					class Pylons1: Pylons1
-					{
-					};
+					class Pylons1: Pylons1;  //found empty after stripping
 					class Pylons2: Pylons2
 					{
 						attachment="rhs_mag_FFAR_7_USAF";
@@ -2306,12 +2218,8 @@ class CfgVehicles
 					{
 						attachment="rhs_mag_FFAR_7_USAF";
 					};
-					class Pylons7: Pylons7
-					{
-					};
-					class cmDispenser: cmDispenser
-					{
-					};
+					class Pylons7: Pylons7;  //found empty after stripping
+					class cmDispenser: cmDispenser;  //found empty after stripping
 				};
 			};
 		};
@@ -2354,9 +2262,7 @@ class CfgVehicles
 			"\rhsgref\addons\rhsgref_air\L39\Data\l-39_body_co.paa",
 			"\rhsgref\addons\rhsgref_air\L39\Data\l-39_body_1_co.paa"
 		};
-		class Damage
-		{
-		};
+		class Damage;  //found empty after stripping
 		class MFD
 		{
 			class AirplaneHUD
@@ -2783,9 +2689,7 @@ class CfgVehicles
 			{
 				class Components
 				{
-					class PassiveRadarSensorComponent: SensorTemplatePassiveRadar
-					{
-					};
+					class PassiveRadarSensorComponent: SensorTemplatePassiveRadar;  //found empty after stripping
 				};
 			};
 			class TransportPylonsComponent
@@ -2850,13 +2754,9 @@ class CfgVehicles
 		castCargoShadow=1;
 		occludeSoundsWhenIn=1;
 		obstructSoundsWhenIn=1;
-		class Turrets
-		{
-		};
+		class Turrets;  //found empty after stripping
 		driveOnComponent[]={};
-		class Eventhandlers
-		{
-		};
+		class Eventhandlers;  //found empty after stripping
 		SLX_XEH_DISABLED=1;
 	};
 	class rhs_l159_cdf_b_CDF: rhs_l159_CDF
@@ -3114,9 +3014,7 @@ class CfgVehicles
 					{1,1}
 				};
 			};
-			class Wheel_2: Wheel_1
-			{
-			};
+			class Wheel_2: Wheel_1;  //found empty after stripping
 			class Wheel_3: Wheel_2
 			{
 				steering=0;
@@ -3342,9 +3240,7 @@ class CfgVehicles
 				passThrough=0;
 			};
 		};
-		class Damage
-		{
-		};
+		class Damage;  //found empty after stripping
 		driveOnComponent[]={};
 		driverLeftLegAnimName="pedal_l";
 		driverRightLegAnimName="pedal_r";
@@ -3383,9 +3279,7 @@ class CfgVehicles
 				isCopilot=1;
 				primaryGunner=0;
 				canEject=0;
-				class HitPoints
-				{
-				};
+				class HitPoints;  //found empty after stripping
 				turretCanSee=15;
 				class Components
 				{
@@ -3463,12 +3357,8 @@ class CfgVehicles
 			{
 				displayname="АэроШрот";
 			};
-			class airtak
-			{
-			};
-			class military
-			{
-			};
+			class airtak;  //found empty after stripping
+			class military;  //found empty after stripping
 		};
 		class Attributes
 		{

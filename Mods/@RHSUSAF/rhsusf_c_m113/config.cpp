@@ -264,18 +264,10 @@ class CfgVehicles
 					{0.69999999,0.75}
 				};
 			};
-			class L3: L2
-			{
-			};
-			class L4: L2
-			{
-			};
-			class L5: L2
-			{
-			};
-			class L6: L2
-			{
-			};
+			class L3: L2;  //found empty after stripping
+			class L4: L2;  //found empty after stripping
+			class L5: L2;  //found empty after stripping
+			class L6: L2;  //found empty after stripping
 			class L9: L2
 			{
 				maxDroop=0;
@@ -291,18 +283,10 @@ class CfgVehicles
 				suspTravelDirection[]={0.125,-1,0};
 				side="right";
 			};
-			class R3: R2
-			{
-			};
-			class R4: R2
-			{
-			};
-			class R5: R2
-			{
-			};
-			class R6: R2
-			{
-			};
+			class R3: R2;  //found empty after stripping
+			class R4: R2;  //found empty after stripping
+			class R5: R2;  //found empty after stripping
+			class R6: R2;  //found empty after stripping
 			class R9: R2
 			{
 				maxDroop=0;
@@ -397,9 +381,7 @@ class CfgVehicles
 		{
 			class MainTurret: MainTurret
 			{
-				class Turrets
-				{
-				};
+				class Turrets;  //found empty after stripping
 				animationsourcehatch="";
 				memoryPointGun[]=
 				{
@@ -475,9 +457,7 @@ class CfgVehicles
 				};
 				class OpticsIn
 				{
-					class ViewOptics: ViewGunner
-					{
-					};
+					class ViewOptics: ViewGunner;  //found empty after stripping
 				};
 				class HitPoints
 				{
@@ -502,9 +482,7 @@ class CfgVehicles
 						radius=0.25;
 					};
 				};
-				class CommanderOptics
-				{
-				};
+				class CommanderOptics;  //found empty after stripping
 			};
 			class CargoTurret_02: CargoTurret_01
 			{
@@ -572,9 +550,7 @@ class CfgVehicles
 				};
 			};
 		};
-		class Damage
-		{
-		};
+		class Damage;  //found empty after stripping
 		smokeLauncherGrenadeCount=4;
 		smokeLauncherVelocity=14;
 		smokeLauncherOnTurret=0;
@@ -591,9 +567,7 @@ class CfgVehicles
 			maxFov=0.69999999;
 		};
 		armorLights=0.1;
-		class EventHandlers: EventHandlers
-		{
-		};
+		class EventHandlers: EventHandlers;  //found empty after stripping
 		class textureSources
 		{
 			class standard
@@ -648,9 +622,7 @@ class CfgVehicles
 			};
 		};
 	};
-	class rhsusf_m113_usarmy: rhsusf_m113tank_base
-	{
-	};
+	class rhsusf_m113_usarmy: rhsusf_m113tank_base;  //found empty after stripping
 	class rhsusf_m113_usarmy_supply: rhsusf_m113_usarmy
 	{
 		class textureSources
@@ -682,12 +654,8 @@ class CfgVehicles
 		supplyRadius=9.5;
 		class Turrets: Turrets
 		{
-			class MainTurret: MainTurret
-			{
-			};
-			class CargoTurret_02: CargoTurret_02
-			{
-			};
+			class MainTurret: MainTurret;  //found empty after stripping
+			class CargoTurret_02: CargoTurret_02;  //found empty after stripping
 		};
 	};
 	class rhsusf_m113_usarmy_unarmed: rhsusf_m113tank_base
@@ -696,9 +664,7 @@ class CfgVehicles
 		{
 			class MainTurret: MainTurret
 			{
-				class Turrets
-				{
-				};
+				class Turrets;  //found empty after stripping
 				weapons[]=
 				{
 					"rhsusf_weap_M259"
@@ -749,36 +715,22 @@ class CfgVehicles
 				maxHorizontalRotSpeed=1.8;
 				maxVerticalRotSpeed=1.8;
 			};
-			class CargoTurret_02: CargoTurret_02
-			{
-			};
+			class CargoTurret_02: CargoTurret_02;  //found empty after stripping
 		};
 		class textureSources: textureSources
 		{
-			class standard: standard
-			{
-			};
-			class Desert: Desert
-			{
-			};
-			class Olive: Olive
-			{
-			};
+			class standard: standard;  //found empty after stripping
+			class Desert: Desert;  //found empty after stripping
+			class Olive: Olive;  //found empty after stripping
 		};
 	};
 	class rhsusf_m113_usarmy_medical: rhsusf_m113_usarmy_unarmed
 	{
 		class textureSources: textureSources
 		{
-			class standard: standard
-			{
-			};
-			class Desert: Desert
-			{
-			};
-			class Olive: Olive
-			{
-			};
+			class standard: standard;  //found empty after stripping
+			class Desert: Desert;  //found empty after stripping
+			class Olive: Olive;  //found empty after stripping
 		};
 		attendant=1;
 		memoryPointSupply="doplnovani";
@@ -813,21 +765,13 @@ class CfgVehicles
 					"rhsusf_mag_L8A3_8"
 				};
 			};
-			class CargoTurret_02: CargoTurret_02
-			{
-			};
+			class CargoTurret_02: CargoTurret_02;  //found empty after stripping
 		};
 		class textureSources: textureSources
 		{
-			class standard: standard
-			{
-			};
-			class Desert: Desert
-			{
-			};
-			class Olive: Olive
-			{
-			};
+			class standard: standard;  //found empty after stripping
+			class Desert: Desert;  //found empty after stripping
+			class Olive: Olive;  //found empty after stripping
 		};
 	};
 	class rhsusf_m113_usarmy_MK19: rhsusf_m113tank_base
@@ -857,60 +801,30 @@ class CfgVehicles
 					"rhsusf_mag_L8A3_8"
 				};
 			};
-			class CargoTurret_02: CargoTurret_02
-			{
-			};
+			class CargoTurret_02: CargoTurret_02;  //found empty after stripping
 		};
 		class textureSources: textureSources
 		{
-			class standard: standard
-			{
-			};
-			class Desert: Desert
-			{
-			};
-			class Olive: Olive
-			{
-			};
+			class standard: standard;  //found empty after stripping
+			class Desert: Desert;  //found empty after stripping
+			class Olive: Olive;  //found empty after stripping
 		};
 	};
-	class rhsusf_m113d_usarmy: rhsusf_m113_usarmy
-	{
-	};
-	class rhsusf_m113d_usarmy_supply: rhsusf_m113_usarmy_supply
-	{
-	};
-	class rhsusf_m113d_usarmy_unarmed: rhsusf_m113_usarmy_unarmed
-	{
-	};
-	class rhsusf_m113d_usarmy_medical: rhsusf_m113_usarmy_medical
-	{
-	};
-	class rhsusf_m113d_usarmy_M240: rhsusf_m113_usarmy_M240
-	{
-	};
-	class rhsusf_m113d_usarmy_MK19: rhsusf_m113_usarmy_MK19
-	{
-	};
+	class rhsusf_m113d_usarmy: rhsusf_m113_usarmy;  //found empty after stripping
+	class rhsusf_m113d_usarmy_supply: rhsusf_m113_usarmy_supply;  //found empty after stripping
+	class rhsusf_m113d_usarmy_unarmed: rhsusf_m113_usarmy_unarmed;  //found empty after stripping
+	class rhsusf_m113d_usarmy_medical: rhsusf_m113_usarmy_medical;  //found empty after stripping
+	class rhsusf_m113d_usarmy_M240: rhsusf_m113_usarmy_M240;  //found empty after stripping
+	class rhsusf_m113d_usarmy_MK19: rhsusf_m113_usarmy_MK19;  //found empty after stripping
 	class rhsusf_m113_usarmy_M2_90: rhsusf_m113_usarmy_supply
 	{
 		class textureSources
 		{
-			class standard
-			{
-			};
-			class Olive
-			{
-			};
-			class Desert
-			{
-			};
-			class MERDC_SV
-			{
-			};
-			class MERDC_WV
-			{
-			};
+			class standard;  //found empty after stripping
+			class Olive;  //found empty after stripping
+			class Desert;  //found empty after stripping
+			class MERDC_SV;  //found empty after stripping
+			class MERDC_WV;  //found empty after stripping
 		};
 		transportAmmo=0;
 		supplyRadius=0;
@@ -919,34 +833,18 @@ class CfgVehicles
 	{
 		class textureSources
 		{
-			class standard
-			{
-			};
-			class Olive
-			{
-			};
-			class Desert
-			{
-			};
-			class MERDC_SV
-			{
-			};
-			class MERDC_WV
-			{
-			};
+			class standard;  //found empty after stripping
+			class Olive;  //found empty after stripping
+			class Desert;  //found empty after stripping
+			class MERDC_SV;  //found empty after stripping
+			class MERDC_WV;  //found empty after stripping
 		};
 	};
 };
 class CfgNonAIVehicles
 {
 	class ProxyRetex;
-	class ProxyRHS_M113_HULL: ProxyRetex
-	{
-	};
-	class ProxyRHS_M113_HULL_H: ProxyRHS_M113_HULL
-	{
-	};
-	class ProxyRHS_M113_HULL_H_90s: ProxyRHS_M113_HULL
-	{
-	};
+	class ProxyRHS_M113_HULL: ProxyRetex;  //found empty after stripping
+	class ProxyRHS_M113_HULL_H: ProxyRHS_M113_HULL;  //found empty after stripping
+	class ProxyRHS_M113_HULL_H_90s: ProxyRHS_M113_HULL;  //found empty after stripping
 };

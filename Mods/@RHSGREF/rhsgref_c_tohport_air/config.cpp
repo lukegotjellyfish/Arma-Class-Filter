@@ -21,9 +21,7 @@ class CfgFunctions
 	class RHS
 	{
 		tag="RHS";
-		class functions
-		{
-		};
+		class functions;  //found empty after stripping
 	};
 };
 class DefaultVehicleSystemsDisplayManagerLeft
@@ -61,30 +59,18 @@ class CfgVehicles
 		};
 		class CargoTurret;
 	};
-	class Heli_Attack_02_base_F: Helicopter_Base_F
-	{
-	};
+	class Heli_Attack_02_base_F: Helicopter_Base_F;  //found empty after stripping
 	class RHS_Mi24_base: Heli_Attack_02_base_F
 	{
 		class Turrets: Turrets
 		{
-			class MainTurret: MainTurret
-			{
-			};
-			class CargoTurret_02: CargoTurret_01
-			{
-			};
-			class CargoTurret_03: CargoTurret_01
-			{
-			};
-			class CargoTurret_04: CargoTurret_01
-			{
-			};
+			class MainTurret: MainTurret;  //found empty after stripping
+			class CargoTurret_02: CargoTurret_01;  //found empty after stripping
+			class CargoTurret_03: CargoTurret_01;  //found empty after stripping
+			class CargoTurret_04: CargoTurret_01;  //found empty after stripping
 		};
 	};
-	class RHS_Mi24V_Base: RHS_Mi24_base
-	{
-	};
+	class RHS_Mi24V_Base: RHS_Mi24_base;  //found empty after stripping
 	class RHS_Mi24V_VVS_Base: RHS_Mi24V_Base
 	{
 		class EventHandlers;
@@ -116,30 +102,14 @@ class CfgVehicles
 					"rhs_faction_vvs"
 				};
 			};
-			class Camo: standard
-			{
-			};
-			class Camo1: standard
-			{
-			};
-			class Camo2: standard
-			{
-			};
-			class Camo3: standard
-			{
-			};
-			class Camo4: standard
-			{
-			};
-			class Camo5: standard
-			{
-			};
-			class Camo6: standard
-			{
-			};
-			class Camo7: standard
-			{
-			};
+			class Camo: standard;  //found empty after stripping
+			class Camo1: standard;  //found empty after stripping
+			class Camo2: standard;  //found empty after stripping
+			class Camo3: standard;  //found empty after stripping
+			class Camo4: standard;  //found empty after stripping
+			class Camo5: standard;  //found empty after stripping
+			class Camo6: standard;  //found empty after stripping
+			class Camo7: standard;  //found empty after stripping
 		};
 		class Attributes
 		{
@@ -438,12 +408,8 @@ class CfgVehicles
 						angleRangeHorizontal=46;
 						angleRangeVertical=36;
 					};
-					class LaserSensorComponent: SensorTemplateLaser
-					{
-					};
-					class PassiveRadarSensorComponent: SensorTemplatePassiveRadar
-					{
-					};
+					class LaserSensorComponent: SensorTemplateLaser;  //found empty after stripping
+					class PassiveRadarSensorComponent: SensorTemplatePassiveRadar;  //found empty after stripping
 				};
 			};
 			class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
@@ -481,9 +447,7 @@ class CfgVehicles
 					};
 				};
 			};
-			class TransportCountermeasuresComponent
-			{
-			};
+			class TransportCountermeasuresComponent;  //found empty after stripping
 		};
 		class Turrets: Turrets
 		{
@@ -611,15 +575,9 @@ class CfgVehicles
 					};
 				};
 			};
-			class CargoTurret_02: CargoTurret_02
-			{
-			};
-			class CargoTurret_03: CargoTurret_03
-			{
-			};
-			class CargoTurret_04: CargoTurret_04
-			{
-			};
+			class CargoTurret_02: CargoTurret_02;  //found empty after stripping
+			class CargoTurret_03: CargoTurret_03;  //found empty after stripping
+			class CargoTurret_04: CargoTurret_04;  //found empty after stripping
 		};
 		driveOnComponent[]=
 		{
@@ -690,9 +648,7 @@ class CfgVehicles
 						attachment="rhs_mag_zt3_4";
 						turret[]={0};
 					};
-					class cmDispenser: cmDispenser
-					{
-					};
+					class cmDispenser: cmDispenser;  //found empty after stripping
 				};
 			};
 		};
@@ -736,9 +692,7 @@ class CfgVehicles
 						attachment="rhs_mag_zt3_4";
 						turret[]={0};
 					};
-					class cmDispenser: cmDispenser
-					{
-					};
+					class cmDispenser: cmDispenser;  //found empty after stripping
 				};
 			};
 		};

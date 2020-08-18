@@ -109,9 +109,7 @@ class CfgAmmo
 		initTime=0;
 		thrustTime=4.0999999;
 		thrust=300;
-		class Direct
-		{
-		};
+		class Direct;  //found empty after stripping
 		flightProfiles[]=
 		{
 			"Direct"
@@ -162,9 +160,7 @@ class CfgAmmo
 		hit=310;
 		caliber=66.666702;
 	};
-	class rhs_ammo_l159_fuelpod_proxy: rhs_ammo_atgmBase_base
-	{
-	};
+	class rhs_ammo_l159_fuelpod_proxy: rhs_ammo_atgmBase_base;  //found empty after stripping
 	class rhs_ammo_20mm_AP;
 	class rhs_ammo_20x139mm_AP: rhs_ammo_20mm_AP
 	{
@@ -301,9 +297,7 @@ class CfgMagazines
 			"RHS_HP_L159_FUELPOD"
 		};
 	};
-	class rhs_mag_l159_fuelpod_grey: rhs_mag_l159_fuelpod
-	{
-	};
+	class rhs_mag_l159_fuelpod_grey: rhs_mag_l159_fuelpod;  //found empty after stripping
 	class rhs_mag_GI2_420_HE: VehicleMagazine
 	{
 		displayname="20x139mm High-Explosive Indenciary";

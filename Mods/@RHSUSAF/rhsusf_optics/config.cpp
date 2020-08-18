@@ -424,9 +424,7 @@ class CfgInGameUI
 					"(profilenamespace getvariable ['IGUI_TEXT_RGB_A',0.8])+(profilenamespace getvariable ['RHS_UI_Targeting',0])"
 				};
 			};
-			class HitConfirm: Seeker
-			{
-			};
+			class HitConfirm: Seeker;  //found empty after stripping
 			class KnownTarget: Seeker
 			{
 				color[]=

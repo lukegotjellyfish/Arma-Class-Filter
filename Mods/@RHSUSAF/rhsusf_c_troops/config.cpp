@@ -14260,115 +14260,47 @@ class CfgVehicles
 		maximumLoad=240;
 		mass=35;
 	};
-	class rhsusf_assault_eagleaiii_ocp: rhsusf_assault_eagleaiii_ucp
-	{
-	};
+	class rhsusf_assault_eagleaiii_ocp: rhsusf_assault_eagleaiii_ucp;  //found empty after stripping
 	class rhsusf_assault_eagleaiii_ocp_engineer: rhsusf_assault_eagleaiii_ocp
 	{
 		maximumLoad=160;
 		mass=20;
 	};
-	class rhsusf_assault_eagleaiii_ucp_engineer: rhsusf_assault_eagleaiii_ucp
-	{
-	};
-	class rhsusf_assault_eagleaiii_ocp_medic: rhsusf_assault_eagleaiii_ocp
-	{
-	};
-	class rhsusf_assault_eagleaiii_ucp_medic: rhsusf_assault_eagleaiii_ucp
-	{
-	};
-	class rhsusf_assault_eagleaiii_ocp_demo: rhsusf_assault_eagleaiii_ocp
-	{
-	};
-	class rhsusf_assault_eagleaiii_ucp_demo: rhsusf_assault_eagleaiii_ucp
-	{
-	};
-	class rhsusf_assault_eagleaiii_ocp_ar: rhsusf_assault_eagleaiii_ocp
-	{
-	};
-	class rhsusf_assault_eagleaiii_ucp_ar: rhsusf_assault_eagleaiii_ucp
-	{
-	};
-	class rhsusf_assault_eagleaiii_ocp_mg: rhsusf_assault_eagleaiii_ocp
-	{
-	};
-	class rhsusf_assault_eagleaiii_ucp_mg: rhsusf_assault_eagleaiii_ucp
-	{
-	};
-	class rhsusf_assault_eagleaiii_ocp_at: rhsusf_assault_eagleaiii_ocp
-	{
-	};
-	class rhsusf_assault_eagleaiii_ucp_at: rhsusf_assault_eagleaiii_ucp
-	{
-	};
-	class rhsusf_assault_eagleaiii_ucp_maaws: rhsusf_assault_eagleaiii_ucp
-	{
-	};
-	class rhsusf_assault_eagleaiii_ocp_maaws: rhsusf_assault_eagleaiii_ocp
-	{
-	};
-	class rhsusf_assault_eagleaiii_coy: rhsusf_assault_eagleaiii_ucp
-	{
-	};
-	class rhsusf_assault_eagleaiii_coy_engineer: rhsusf_assault_eagleaiii_coy
-	{
-	};
-	class rhsusf_assault_eagleaiii_coy_demo: rhsusf_assault_eagleaiii_coy
-	{
-	};
-	class rhsusf_assault_eagleaiii_coy_eod: rhsusf_assault_eagleaiii_coy
-	{
-	};
-	class rhsusf_assault_eagleaiii_coy_m27: rhsusf_assault_eagleaiii_coy
-	{
-	};
-	class rhsusf_assault_eagleaiii_coy_ar: rhsusf_assault_eagleaiii_coy
-	{
-	};
-	class rhsusf_assault_eagleaiii_coy_mg: rhsusf_assault_eagleaiii_coy
-	{
-	};
-	class rhsusf_assault_eagleaiii_coy_assaultman: rhsusf_assault_eagleaiii_coy
-	{
-	};
-	class rhsusf_assault_eagleaiii_coy_at: rhsusf_assault_eagleaiii_coy
-	{
-	};
-	class rhsusf_assault_eagleaiii_coy_aa: rhsusf_assault_eagleaiii_coy
-	{
-	};
+	class rhsusf_assault_eagleaiii_ucp_engineer: rhsusf_assault_eagleaiii_ucp;  //found empty after stripping
+	class rhsusf_assault_eagleaiii_ocp_medic: rhsusf_assault_eagleaiii_ocp;  //found empty after stripping
+	class rhsusf_assault_eagleaiii_ucp_medic: rhsusf_assault_eagleaiii_ucp;  //found empty after stripping
+	class rhsusf_assault_eagleaiii_ocp_demo: rhsusf_assault_eagleaiii_ocp;  //found empty after stripping
+	class rhsusf_assault_eagleaiii_ucp_demo: rhsusf_assault_eagleaiii_ucp;  //found empty after stripping
+	class rhsusf_assault_eagleaiii_ocp_ar: rhsusf_assault_eagleaiii_ocp;  //found empty after stripping
+	class rhsusf_assault_eagleaiii_ucp_ar: rhsusf_assault_eagleaiii_ucp;  //found empty after stripping
+	class rhsusf_assault_eagleaiii_ocp_mg: rhsusf_assault_eagleaiii_ocp;  //found empty after stripping
+	class rhsusf_assault_eagleaiii_ucp_mg: rhsusf_assault_eagleaiii_ucp;  //found empty after stripping
+	class rhsusf_assault_eagleaiii_ocp_at: rhsusf_assault_eagleaiii_ocp;  //found empty after stripping
+	class rhsusf_assault_eagleaiii_ucp_at: rhsusf_assault_eagleaiii_ucp;  //found empty after stripping
+	class rhsusf_assault_eagleaiii_ucp_maaws: rhsusf_assault_eagleaiii_ucp;  //found empty after stripping
+	class rhsusf_assault_eagleaiii_ocp_maaws: rhsusf_assault_eagleaiii_ocp;  //found empty after stripping
+	class rhsusf_assault_eagleaiii_coy: rhsusf_assault_eagleaiii_ucp;  //found empty after stripping
+	class rhsusf_assault_eagleaiii_coy_engineer: rhsusf_assault_eagleaiii_coy;  //found empty after stripping
+	class rhsusf_assault_eagleaiii_coy_demo: rhsusf_assault_eagleaiii_coy;  //found empty after stripping
+	class rhsusf_assault_eagleaiii_coy_eod: rhsusf_assault_eagleaiii_coy;  //found empty after stripping
+	class rhsusf_assault_eagleaiii_coy_m27: rhsusf_assault_eagleaiii_coy;  //found empty after stripping
+	class rhsusf_assault_eagleaiii_coy_ar: rhsusf_assault_eagleaiii_coy;  //found empty after stripping
+	class rhsusf_assault_eagleaiii_coy_mg: rhsusf_assault_eagleaiii_coy;  //found empty after stripping
+	class rhsusf_assault_eagleaiii_coy_assaultman: rhsusf_assault_eagleaiii_coy;  //found empty after stripping
+	class rhsusf_assault_eagleaiii_coy_at: rhsusf_assault_eagleaiii_coy;  //found empty after stripping
+	class rhsusf_assault_eagleaiii_coy_aa: rhsusf_assault_eagleaiii_coy;  //found empty after stripping
 	class B_AssaultPack_rgr;
-	class rhsusf_falconii: B_AssaultPack_rgr
-	{
-	};
-	class rhsusf_falconii_coy: B_AssaultPack_rgr
-	{
-	};
-	class rhsusf_falconii_mc: B_AssaultPack_rgr
-	{
-	};
-	class rhsusf_falconii_gr: rhsusf_falconii
-	{
-	};
-	class rhsusf_falconii_coy_gr: rhsusf_falconii_coy
-	{
-	};
-	class rhsusf_falconii_gr_m32: rhsusf_falconii_coy
-	{
-	};
-	class rhsusf_falconii_breach: rhsusf_falconii
-	{
-	};
-	class rhsusf_falconii_recon: rhsusf_falconii_coy
-	{
-	};
+	class rhsusf_falconii: B_AssaultPack_rgr;  //found empty after stripping
+	class rhsusf_falconii_coy: B_AssaultPack_rgr;  //found empty after stripping
+	class rhsusf_falconii_mc: B_AssaultPack_rgr;  //found empty after stripping
+	class rhsusf_falconii_gr: rhsusf_falconii;  //found empty after stripping
+	class rhsusf_falconii_coy_gr: rhsusf_falconii_coy;  //found empty after stripping
+	class rhsusf_falconii_gr_m32: rhsusf_falconii_coy;  //found empty after stripping
+	class rhsusf_falconii_breach: rhsusf_falconii;  //found empty after stripping
+	class rhsusf_falconii_recon: rhsusf_falconii_coy;  //found empty after stripping
 	class B_Carryall_cbr;
-	class rhsusf_pack_slackman_m240: B_Carryall_cbr
-	{
-	};
-	class rhsusf_pack_slackman_m249: B_Carryall_cbr
-	{
-	};
+	class rhsusf_pack_slackman_m240: B_Carryall_cbr;  //found empty after stripping
+	class rhsusf_pack_slackman_m249: B_Carryall_cbr;  //found empty after stripping
 	class B_Parachute;
 	class Steerable_Parachute_F;
 	class rhsusf_eject_Parachute: Steerable_Parachute_F
@@ -15539,12 +15471,8 @@ class CfgVehicles
 	{
 		editorCategory="EdCat_WeaponAttachments";
 	};
-	class Item_rhsusf_acc_ELCAN_PIP: Item_rhsusf_acc_ELCAN
-	{
-	};
-	class Item_rhsusf_acc_ACOG_PIP: Item_rhsusf_acc_ACOG
-	{
-	};
+	class Item_rhsusf_acc_ELCAN_PIP: Item_rhsusf_acc_ELCAN;  //found empty after stripping
+	class Item_rhsusf_acc_ACOG_PIP: Item_rhsusf_acc_ACOG;  //found empty after stripping
 	class Land;
 	class Man;
 	class CAManBase: Man
@@ -15594,9 +15522,7 @@ class CfgVehicles
 		handgunAmmoCoef=0.1;
 		nakedUniform="U_BasicBody";
 		uniformClass="rhs_uniform_g3_mc";
-		class Wounds
-		{
-		};
+		class Wounds;  //found empty after stripping
 		class EventHandlers: EventHandlers
 		{
 			class RHS_NVG_Check
@@ -15632,9 +15558,7 @@ class CfgVehicles
 	class rhsusf_army_acu_uniform: rhsusf_socom_uniform_base
 	{
 		uniformClass="rhs_uniform_acu_ucp";
-		class Wounds
-		{
-		};
+		class Wounds;  //found empty after stripping
 	};
 	class rhsusf_army_acu_ucpd_uniform: rhsusf_army_acu_uniform
 	{
@@ -15651,16 +15575,12 @@ class CfgVehicles
 	class rhsusf_airforce_abu_uniform: rhsusf_socom_uniform_base
 	{
 		uniformClass="rhs_uniform_abu";
-		class Wounds
-		{
-		};
+		class Wounds;  //found empty after stripping
 	};
 	class rhsusf_army_bdu_erdl_uniform: rhsusf_airforce_abu_uniform
 	{
 		uniformClass="rhs_uniform_bdu_erdl";
-		class Wounds
-		{
-		};
+		class Wounds;  //found empty after stripping
 	};
 	class rhsusf_infantry_army_base: SoldierWB
 	{
@@ -15686,9 +15606,7 @@ class CfgVehicles
 		secondaryAmmoCoef=0.2;
 		handgunAmmoCoef=0.1;
 		cost=100000;
-		class Wounds
-		{
-		};
+		class Wounds;  //found empty after stripping
 		weapons[]=
 		{
 			"rhs_m4a1_compm4",
@@ -15771,12 +15689,8 @@ class CfgVehicles
 	{
 		uniformClass="rhs_uniform_cu_ocp_10th";
 	};
-	class rhsusf_army_ocp_rifleman_1stcav: rhsusf_infantry_army_1stcav
-	{
-	};
-	class rhsusf_army_ocp_rifleman_10th: rhsusf_infantry_army_10th
-	{
-	};
+	class rhsusf_army_ocp_rifleman_1stcav: rhsusf_infantry_army_1stcav;  //found empty after stripping
+	class rhsusf_army_ocp_rifleman_10th: rhsusf_infantry_army_10th;  //found empty after stripping
 	class rhsusf_army_ocp_rifleman: rhsusf_infantry_army_base
 	{
 		uniformClass="rhs_uniform_acu_oefcp";
@@ -22071,9 +21985,7 @@ class CfgVehicles
 		};
 		faceType="Man_A3";
 		genericNames="NATOMen";
-		class Wounds
-		{
-		};
+		class Wounds;  //found empty after stripping
 		weapons[]=
 		{
 			"rhs_weap_m16a4_grip_acog_usmc",
@@ -27794,9 +27706,7 @@ class CfgVehicles
 		};
 		class EventHandlers;
 	};
-	class rhsusf_infantry_socom_armysf_rifleman: rhsusf_infantry_socom_armysf_base
-	{
-	};
+	class rhsusf_infantry_socom_armysf_rifleman: rhsusf_infantry_socom_armysf_base;  //found empty after stripping
 	class rhsusf_infantry_socom_marsoc_base: rhsusf_socom_g3_m81_uniform
 	{
 		side=1;
@@ -27892,9 +27802,7 @@ class CfgVehicles
 			"Chemlight_red"
 		};
 	};
-	class rhsusf_socom_marsoc_cso: rhsusf_infantry_socom_marsoc_base
-	{
-	};
+	class rhsusf_socom_marsoc_cso: rhsusf_infantry_socom_marsoc_base;  //found empty after stripping
 	class rhsusf_socom_marsoc_cso_mk17: rhsusf_infantry_socom_marsoc_base
 	{
 		Items[]=
@@ -29163,12 +29071,8 @@ class CfgVehicles
 			"rhs_mag_m18_yellow"
 		};
 	};
-	class rhsusf_assault_eagleaiii_coy_medic: rhsusf_assault_eagleaiii_coy
-	{
-	};
-	class rhsusf_falconii_sarc: rhsusf_falconii
-	{
-	};
+	class rhsusf_assault_eagleaiii_coy_medic: rhsusf_assault_eagleaiii_coy;  //found empty after stripping
+	class rhsusf_falconii_sarc: rhsusf_falconii;  //found empty after stripping
 	class rhsusf_navy_marpat_wd_medic: rhsusf_usmc_marpat_wd_rifleman_m4
 	{
 		backpack="rhsusf_assault_eagleaiii_coy_medic";
@@ -29425,9 +29329,7 @@ class CfgVehicles
 			};
 		};
 		nameSound="veh_infantry_pilot_s";
-		class Wounds
-		{
-		};
+		class Wounds;  //found empty after stripping
 	};
 	class rhsusf_airforce_pilot: rhsusf_airforce_jetpilot
 	{
@@ -29804,12 +29706,8 @@ class CfgWeapons
 			mass=40;
 		};
 	};
-	class rhs_uniform_cu_ucp_patchless: rhs_uniform_cu_ocp
-	{
-	};
-	class rhs_uniform_cu_ocp_patchless: rhs_uniform_cu_ucp
-	{
-	};
+	class rhs_uniform_cu_ucp_patchless: rhs_uniform_cu_ocp;  //found empty after stripping
+	class rhs_uniform_cu_ocp_patchless: rhs_uniform_cu_ucp;  //found empty after stripping
 	class rhs_uniform_FROG01_d: rhs_uniform_cu_ocp
 	{
 		class ItemInfo: UniformItem
@@ -29830,9 +29728,7 @@ class CfgWeapons
 			mass=40;
 		};
 	};
-	class rhs_uniform_FROG01_m81: rhs_uniform_g3_m81
-	{
-	};
+	class rhs_uniform_FROG01_m81: rhs_uniform_g3_m81;  //found empty after stripping
 	class rhs_uniform_acu_ucp: Uniform_Base
 	{
 		class ItemInfo: UniformItem
@@ -29923,9 +29819,7 @@ class CfgWeapons
 	};
 	class rhsusf_patrolcap_ucp: rhsusf_patrolcap_ocp
 	{
-		class ItemInfo: ItemInfo
-		{
-		};
+		class ItemInfo: ItemInfo;  //found empty after stripping
 	};
 	class rhs_xmas_antlers: ItemCore
 	{
@@ -29956,18 +29850,10 @@ class CfgWeapons
 			uniformModel="\A3\Characters_F\Common\booniehat";
 		};
 	};
-	class rhs_Booniehat_ucp: rhs_Booniehat_ocp
-	{
-	};
-	class rhs_Booniehat_marpatd: rhs_Booniehat_ocp
-	{
-	};
-	class rhs_Booniehat_marpatwd: rhs_Booniehat_ocp
-	{
-	};
-	class rhs_Booniehat_m81: rhs_Booniehat_ocp
-	{
-	};
+	class rhs_Booniehat_ucp: rhs_Booniehat_ocp;  //found empty after stripping
+	class rhs_Booniehat_marpatd: rhs_Booniehat_ocp;  //found empty after stripping
+	class rhs_Booniehat_marpatwd: rhs_Booniehat_ocp;  //found empty after stripping
+	class rhs_Booniehat_m81: rhs_Booniehat_ocp;  //found empty after stripping
 	class rhs_booniehat2_marpatd: ItemCore
 	{
 		weaponPoolAvailable=1;
@@ -29986,9 +29872,7 @@ class CfgWeapons
 			uniformModel="\rhsusf\addons\rhsusf_infantry2\gear\head\hats\boonie";
 		};
 	};
-	class rhs_booniehat2_marpatwd: rhs_booniehat2_marpatd
-	{
-	};
+	class rhs_booniehat2_marpatwd: rhs_booniehat2_marpatd;  //found empty after stripping
 	class rhs_8point_marpatd: ItemCore
 	{
 		weaponPoolAvailable=1;
@@ -30007,9 +29891,7 @@ class CfgWeapons
 			uniformModel="\rhsusf\addons\rhsusf_infantry2\gear\head\hats\8point";
 		};
 	};
-	class rhs_8point_marpatwd: rhs_8point_marpatd
-	{
-	};
+	class rhs_8point_marpatwd: rhs_8point_marpatd;  //found empty after stripping
 	class rhsusf_ach_helmet_ocp: H_HelmetB
 	{
 		allowedFacewear[]=
@@ -30036,9 +29918,7 @@ class CfgWeapons
 			};
 		};
 	};
-	class rhsusf_ach_helmet_ocp_alt: rhsusf_ach_helmet_ocp
-	{
-	};
+	class rhsusf_ach_helmet_ocp_alt: rhsusf_ach_helmet_ocp;  //found empty after stripping
 	class rhsusf_ach_helmet_ocp_norotos: rhsusf_ach_helmet_ocp
 	{
 		class ItemInfo: ItemInfo
@@ -30046,12 +29926,8 @@ class CfgWeapons
 			uniformModel="\rhsusf\addons\rhsusf_infantry\gear\head\ach_norotos_01";
 		};
 	};
-	class rhsusf_ach_helmet_ucp: rhsusf_ach_helmet_ocp
-	{
-	};
-	class rhsusf_ach_helmet_ucp_alt: rhsusf_ach_helmet_ucp
-	{
-	};
+	class rhsusf_ach_helmet_ucp: rhsusf_ach_helmet_ocp;  //found empty after stripping
+	class rhsusf_ach_helmet_ucp_alt: rhsusf_ach_helmet_ucp;  //found empty after stripping
 	class rhsusf_ach_helmet_ucp_norotos: rhsusf_ach_helmet_ocp
 	{
 		class ItemInfo: ItemInfo
@@ -30059,12 +29935,8 @@ class CfgWeapons
 			uniformModel="\rhsusf\addons\rhsusf_infantry\gear\head\ach_norotos_01";
 		};
 	};
-	class rhsusf_ach_helmet_M81: rhsusf_ach_helmet_ocp
-	{
-	};
-	class rhsusf_ach_helmet_DCU: rhsusf_ach_helmet_ocp
-	{
-	};
+	class rhsusf_ach_helmet_M81: rhsusf_ach_helmet_ocp;  //found empty after stripping
+	class rhsusf_ach_helmet_DCU: rhsusf_ach_helmet_ocp;  //found empty after stripping
 	class rhsusf_ach_helmet_DCU_early: rhsusf_ach_helmet_ocp
 	{
 		class ItemInfo: ItemInfo
@@ -30093,15 +29965,9 @@ class CfgWeapons
 			uniformModel="\rhsusf\addons\rhsusf_infantry\gear\head\ach_headset";
 		};
 	};
-	class rhsusf_ach_helmet_headset_ocp_alt: rhsusf_ach_helmet_headset_ocp
-	{
-	};
-	class rhsusf_ach_helmet_headset_ucp: rhsusf_ach_helmet_headset_ocp
-	{
-	};
-	class rhsusf_ach_helmet_headset_ucp_alt: rhsusf_ach_helmet_headset_ucp
-	{
-	};
+	class rhsusf_ach_helmet_headset_ocp_alt: rhsusf_ach_helmet_headset_ocp;  //found empty after stripping
+	class rhsusf_ach_helmet_headset_ucp: rhsusf_ach_helmet_headset_ocp;  //found empty after stripping
+	class rhsusf_ach_helmet_headset_ucp_alt: rhsusf_ach_helmet_headset_ucp;  //found empty after stripping
 	class rhsusf_ach_helmet_ESS_ocp: rhsusf_ach_helmet_ocp
 	{
 		allowedFacewear[]=
@@ -30118,15 +29984,9 @@ class CfgWeapons
 			uniformModel="\rhsusf\addons\rhsusf_infantry\gear\head\ach_ess_01";
 		};
 	};
-	class rhsusf_ach_helmet_ESS_ocp_alt: rhsusf_ach_helmet_ESS_ocp
-	{
-	};
-	class rhsusf_ach_helmet_ESS_ucp: rhsusf_ach_helmet_ESS_ocp
-	{
-	};
-	class rhsusf_ach_helmet_ESS_ucp_alt: rhsusf_ach_helmet_ESS_ucp
-	{
-	};
+	class rhsusf_ach_helmet_ESS_ocp_alt: rhsusf_ach_helmet_ESS_ocp;  //found empty after stripping
+	class rhsusf_ach_helmet_ESS_ucp: rhsusf_ach_helmet_ESS_ocp;  //found empty after stripping
+	class rhsusf_ach_helmet_ESS_ucp_alt: rhsusf_ach_helmet_ESS_ucp;  //found empty after stripping
 	class rhsusf_ach_helmet_headset_ess_ocp: rhsusf_ach_helmet_ocp
 	{
 		allowedFacewear[]=
@@ -30143,15 +30003,9 @@ class CfgWeapons
 			uniformModel="\rhsusf\addons\rhsusf_infantry\gear\head\ach_headset_ess";
 		};
 	};
-	class rhsusf_ach_helmet_headset_ess_ocp_alt: rhsusf_ach_helmet_headset_ess_ocp
-	{
-	};
-	class rhsusf_ach_helmet_headset_ess_ucp: rhsusf_ach_helmet_headset_ess_ocp
-	{
-	};
-	class rhsusf_ach_helmet_headset_ess_ucp_alt: rhsusf_ach_helmet_headset_ess_ucp
-	{
-	};
+	class rhsusf_ach_helmet_headset_ess_ocp_alt: rhsusf_ach_helmet_headset_ess_ocp;  //found empty after stripping
+	class rhsusf_ach_helmet_headset_ess_ucp: rhsusf_ach_helmet_headset_ess_ocp;  //found empty after stripping
+	class rhsusf_ach_helmet_headset_ess_ucp_alt: rhsusf_ach_helmet_headset_ess_ucp;  //found empty after stripping
 	class rhsusf_ach_bare: rhsusf_ach_helmet_ocp
 	{
 		class ItemInfo: ItemInfo
@@ -30392,78 +30246,30 @@ class CfgWeapons
 			uniformModel="\rhsusf\addons\rhsusf_infantry2\gear\head\opscore\opscore";
 		};
 	};
-	class rhsusf_opscore_fg: rhsusf_opscore_01
-	{
-	};
-	class rhsusf_opscore_fg_pelt: rhsusf_opscore_01
-	{
-	};
-	class rhsusf_opscore_fg_pelt_nsw: rhsusf_opscore_01
-	{
-	};
-	class rhsusf_opscore_fg_pelt_cam: rhsusf_opscore_01
-	{
-	};
-	class rhsusf_opscore_ut: rhsusf_opscore_01
-	{
-	};
-	class rhsusf_opscore_ut_pelt: rhsusf_opscore_01
-	{
-	};
-	class rhsusf_opscore_ut_pelt_cam: rhsusf_opscore_01
-	{
-	};
-	class rhsusf_opscore_ut_pelt_nsw: rhsusf_opscore_01
-	{
-	};
-	class rhsusf_opscore_ut_pelt_nsw_cam: rhsusf_opscore_01
-	{
-	};
-	class rhsusf_opscore_bk: rhsusf_opscore_01
-	{
-	};
-	class rhsusf_opscore_bk_pelt: rhsusf_opscore_01
-	{
-	};
-	class rhsusf_opscore_mc: rhsusf_opscore_01
-	{
-	};
-	class rhsusf_opscore_mc_pelt: rhsusf_opscore_01
-	{
-	};
-	class rhsusf_opscore_mc_pelt_nsw: rhsusf_opscore_01
-	{
-	};
-	class rhsusf_opscore_aor1: rhsusf_opscore_01
-	{
-	};
-	class rhsusf_opscore_aor1_pelt: rhsusf_opscore_01
-	{
-	};
-	class rhsusf_opscore_aor1_pelt_nsw: rhsusf_opscore_01
-	{
-	};
-	class rhsusf_opscore_aor2: rhsusf_opscore_01
-	{
-	};
-	class rhsusf_opscore_aor2_pelt: rhsusf_opscore_01
-	{
-	};
-	class rhsusf_opscore_aor2_pelt_nsw: rhsusf_opscore_01
-	{
-	};
-	class rhsusf_opscore_paint: rhsusf_opscore_01
-	{
-	};
-	class rhsusf_opscore_paint_pelt: rhsusf_opscore_01
-	{
-	};
-	class rhsusf_opscore_paint_pelt_nsw: rhsusf_opscore_01
-	{
-	};
-	class rhsusf_opscore_paint_pelt_nsw_cam: rhsusf_opscore_01
-	{
-	};
+	class rhsusf_opscore_fg: rhsusf_opscore_01;  //found empty after stripping
+	class rhsusf_opscore_fg_pelt: rhsusf_opscore_01;  //found empty after stripping
+	class rhsusf_opscore_fg_pelt_nsw: rhsusf_opscore_01;  //found empty after stripping
+	class rhsusf_opscore_fg_pelt_cam: rhsusf_opscore_01;  //found empty after stripping
+	class rhsusf_opscore_ut: rhsusf_opscore_01;  //found empty after stripping
+	class rhsusf_opscore_ut_pelt: rhsusf_opscore_01;  //found empty after stripping
+	class rhsusf_opscore_ut_pelt_cam: rhsusf_opscore_01;  //found empty after stripping
+	class rhsusf_opscore_ut_pelt_nsw: rhsusf_opscore_01;  //found empty after stripping
+	class rhsusf_opscore_ut_pelt_nsw_cam: rhsusf_opscore_01;  //found empty after stripping
+	class rhsusf_opscore_bk: rhsusf_opscore_01;  //found empty after stripping
+	class rhsusf_opscore_bk_pelt: rhsusf_opscore_01;  //found empty after stripping
+	class rhsusf_opscore_mc: rhsusf_opscore_01;  //found empty after stripping
+	class rhsusf_opscore_mc_pelt: rhsusf_opscore_01;  //found empty after stripping
+	class rhsusf_opscore_mc_pelt_nsw: rhsusf_opscore_01;  //found empty after stripping
+	class rhsusf_opscore_aor1: rhsusf_opscore_01;  //found empty after stripping
+	class rhsusf_opscore_aor1_pelt: rhsusf_opscore_01;  //found empty after stripping
+	class rhsusf_opscore_aor1_pelt_nsw: rhsusf_opscore_01;  //found empty after stripping
+	class rhsusf_opscore_aor2: rhsusf_opscore_01;  //found empty after stripping
+	class rhsusf_opscore_aor2_pelt: rhsusf_opscore_01;  //found empty after stripping
+	class rhsusf_opscore_aor2_pelt_nsw: rhsusf_opscore_01;  //found empty after stripping
+	class rhsusf_opscore_paint: rhsusf_opscore_01;  //found empty after stripping
+	class rhsusf_opscore_paint_pelt: rhsusf_opscore_01;  //found empty after stripping
+	class rhsusf_opscore_paint_pelt_nsw: rhsusf_opscore_01;  //found empty after stripping
+	class rhsusf_opscore_paint_pelt_nsw_cam: rhsusf_opscore_01;  //found empty after stripping
 	class rhsusf_opscore_cover: rhsusf_opscore_01
 	{
 		class ItemInfo: ItemInfo
@@ -30473,30 +30279,14 @@ class CfgWeapons
 			uniformModel="\rhsusf\addons\rhsusf_infantry2\gear\head\opscore\opscore_cover";
 		};
 	};
-	class rhsusf_opscore_mc_cover: rhsusf_opscore_cover
-	{
-	};
-	class rhsusf_opscore_mc_cover_pelt: rhsusf_opscore_cover
-	{
-	};
-	class rhsusf_opscore_mc_cover_pelt_nsw: rhsusf_opscore_cover
-	{
-	};
-	class rhsusf_opscore_mc_cover_pelt_cam: rhsusf_opscore_cover
-	{
-	};
-	class rhsusf_opscore_rg_cover: rhsusf_opscore_cover
-	{
-	};
-	class rhsusf_opscore_rg_cover_pelt: rhsusf_opscore_cover
-	{
-	};
-	class rhsusf_opscore_coy_cover: rhsusf_opscore_cover
-	{
-	};
-	class rhsusf_opscore_coy_cover_pelt: rhsusf_opscore_cover
-	{
-	};
+	class rhsusf_opscore_mc_cover: rhsusf_opscore_cover;  //found empty after stripping
+	class rhsusf_opscore_mc_cover_pelt: rhsusf_opscore_cover;  //found empty after stripping
+	class rhsusf_opscore_mc_cover_pelt_nsw: rhsusf_opscore_cover;  //found empty after stripping
+	class rhsusf_opscore_mc_cover_pelt_cam: rhsusf_opscore_cover;  //found empty after stripping
+	class rhsusf_opscore_rg_cover: rhsusf_opscore_cover;  //found empty after stripping
+	class rhsusf_opscore_rg_cover_pelt: rhsusf_opscore_cover;  //found empty after stripping
+	class rhsusf_opscore_coy_cover: rhsusf_opscore_cover;  //found empty after stripping
+	class rhsusf_opscore_coy_cover_pelt: rhsusf_opscore_cover;  //found empty after stripping
 	class rhsusf_opscore_mar_01: rhsusf_ach_helmet_ocp
 	{
 		descriptionshort="OpsCore FAST Maritime Helmet";
@@ -30507,33 +30297,15 @@ class CfgWeapons
 			uniformModel="\rhsusf\addons\rhsusf_infantry2\gear\head\opscore\maritime";
 		};
 	};
-	class rhsusf_opscore_mar_ut: rhsusf_opscore_mar_01
-	{
-	};
-	class rhsusf_opscore_mar_ut_pelt: rhsusf_opscore_mar_01
-	{
-	};
-	class rhsusf_opscore_mar_fg: rhsusf_opscore_mar_01
-	{
-	};
-	class rhsusf_opscore_mar_fg_pelt: rhsusf_opscore_mar_01
-	{
-	};
-	class rhsusf_opscore_01_tan: rhsusf_opscore_01
-	{
-	};
-	class rhsusf_opscore_02: rhsusf_opscore_01
-	{
-	};
-	class rhsusf_opscore_02_tan: rhsusf_opscore_01
-	{
-	};
-	class rhsusf_opscore_03_ocp: rhsusf_opscore_01
-	{
-	};
-	class rhsusf_opscore_04_ocp: rhsusf_opscore_01
-	{
-	};
+	class rhsusf_opscore_mar_ut: rhsusf_opscore_mar_01;  //found empty after stripping
+	class rhsusf_opscore_mar_ut_pelt: rhsusf_opscore_mar_01;  //found empty after stripping
+	class rhsusf_opscore_mar_fg: rhsusf_opscore_mar_01;  //found empty after stripping
+	class rhsusf_opscore_mar_fg_pelt: rhsusf_opscore_mar_01;  //found empty after stripping
+	class rhsusf_opscore_01_tan: rhsusf_opscore_01;  //found empty after stripping
+	class rhsusf_opscore_02: rhsusf_opscore_01;  //found empty after stripping
+	class rhsusf_opscore_02_tan: rhsusf_opscore_01;  //found empty after stripping
+	class rhsusf_opscore_03_ocp: rhsusf_opscore_01;  //found empty after stripping
+	class rhsusf_opscore_04_ocp: rhsusf_opscore_01;  //found empty after stripping
 	class rhsusf_cvc_helmet: rhsusf_opscore_01
 	{
 		allowedFacewear[]=
@@ -30667,18 +30439,10 @@ class CfgWeapons
 			uniformModel="rhsusf\addons\rhsusf_infantry2\gear\head\hgu56\rhs_hgu56_visor_mask";
 		};
 	};
-	class rhsusf_hgu56p_visor_mask_skull: rhsusf_hgu56p_visor_mask
-	{
-	};
-	class rhsusf_hgu56p_mask_skull: rhsusf_hgu56p_mask
-	{
-	};
-	class rhsusf_hgu56p_visor_mask_mo: rhsusf_hgu56p_visor_mask
-	{
-	};
-	class rhsusf_hgu56p_mask_mo: rhsusf_hgu56p_mask
-	{
-	};
+	class rhsusf_hgu56p_visor_mask_skull: rhsusf_hgu56p_visor_mask;  //found empty after stripping
+	class rhsusf_hgu56p_mask_skull: rhsusf_hgu56p_mask;  //found empty after stripping
+	class rhsusf_hgu56p_visor_mask_mo: rhsusf_hgu56p_visor_mask;  //found empty after stripping
+	class rhsusf_hgu56p_mask_mo: rhsusf_hgu56p_mask;  //found empty after stripping
 	class rhsusf_hgu56p_mask_smiley: rhsusf_hgu56p
 	{
 		class ItemInfo: ItemInfo
@@ -30781,12 +30545,8 @@ class CfgWeapons
 			uniformModel="rhsusf\addons\rhsusf_infantry2\gear\head\hgu56\rhs_hgu56_visor_mask";
 		};
 	};
-	class rhsusf_hgu56p_mask_green_mo: rhsusf_hgu56p_mask_green
-	{
-	};
-	class rhsusf_hgu56p_visor_mask_green_mo: rhsusf_hgu56p_visor_mask_green
-	{
-	};
+	class rhsusf_hgu56p_mask_green_mo: rhsusf_hgu56p_mask_green;  //found empty after stripping
+	class rhsusf_hgu56p_visor_mask_green_mo: rhsusf_hgu56p_visor_mask_green;  //found empty after stripping
 	class rhsusf_hgu56p_tan: rhsusf_hgu56p
 	{
 		class ItemInfo: ItemInfo
@@ -31018,12 +30778,8 @@ class CfgWeapons
 			uniformModel="\rhsusf\addons\rhsusf_infantry\gear\head\mich_01_bowman";
 		};
 	};
-	class rhsusf_mich_helmet_marpatd: rhsusf_mich_helmet_marpatwd
-	{
-	};
-	class rhsusf_mich_helmet_marpatd_headset: rhsusf_mich_helmet_marpatwd_headset
-	{
-	};
+	class rhsusf_mich_helmet_marpatd: rhsusf_mich_helmet_marpatwd;  //found empty after stripping
+	class rhsusf_mich_helmet_marpatd_headset: rhsusf_mich_helmet_marpatwd_headset;  //found empty after stripping
 	class rhsusf_mich_helmet_marpatwd_alt: rhsusf_mich_helmet_marpatwd
 	{
 		class ItemInfo: ItemInfo
@@ -31038,12 +30794,8 @@ class CfgWeapons
 			uniformModel="\rhsusf\addons\rhsusf_infantry\gear\head\mich_01_alt_bowman";
 		};
 	};
-	class rhsusf_mich_helmet_marpatd_alt: rhsusf_mich_helmet_marpatwd_alt
-	{
-	};
-	class rhsusf_mich_helmet_marpatd_alt_headset: rhsusf_mich_helmet_marpatwd_alt_headset
-	{
-	};
+	class rhsusf_mich_helmet_marpatd_alt: rhsusf_mich_helmet_marpatwd_alt;  //found empty after stripping
+	class rhsusf_mich_helmet_marpatd_alt_headset: rhsusf_mich_helmet_marpatwd_alt_headset;  //found empty after stripping
 	class rhsusf_mich_helmet_marpatwd_norotos: rhsusf_mich_helmet_marpatwd
 	{
 		class ItemInfo: ItemInfo
@@ -31058,12 +30810,8 @@ class CfgWeapons
 			uniformModel="\rhsusf\addons\rhsusf_infantry\gear\head\mich_01_nor1_bowman";
 		};
 	};
-	class rhsusf_mich_helmet_marpatd_norotos: rhsusf_mich_helmet_marpatwd_norotos
-	{
-	};
-	class rhsusf_mich_helmet_marpatd_norotos_headset: rhsusf_mich_helmet_marpatwd_norotos_headset
-	{
-	};
+	class rhsusf_mich_helmet_marpatd_norotos: rhsusf_mich_helmet_marpatwd_norotos;  //found empty after stripping
+	class rhsusf_mich_helmet_marpatd_norotos_headset: rhsusf_mich_helmet_marpatwd_norotos_headset;  //found empty after stripping
 	class rhsusf_mich_helmet_marpatwd_norotos_arc: rhsusf_mich_helmet_marpatwd
 	{
 		class ItemInfo: ItemInfo
@@ -31078,12 +30826,8 @@ class CfgWeapons
 			uniformModel="\rhsusf\addons\rhsusf_infantry\gear\head\mich_01_nor1_arc_bowman";
 		};
 	};
-	class rhsusf_mich_helmet_marpatd_norotos_arc: rhsusf_mich_helmet_marpatwd_norotos_arc
-	{
-	};
-	class rhsusf_mich_helmet_marpatd_norotos_arc_headset: rhsusf_mich_helmet_marpatwd_norotos_arc_headset
-	{
-	};
+	class rhsusf_mich_helmet_marpatd_norotos_arc: rhsusf_mich_helmet_marpatwd_norotos_arc;  //found empty after stripping
+	class rhsusf_mich_helmet_marpatd_norotos_arc_headset: rhsusf_mich_helmet_marpatwd_norotos_arc_headset;  //found empty after stripping
 	class rhsusf_mich_bare: rhsusf_mich_helmet_marpatwd
 	{
 		class ItemInfo: ItemInfo
@@ -31366,32 +31110,22 @@ class CfgWeapons
 			uniformModel="\rhsusf\addons\rhsusf_infantry\gear\head\lwh_wd_headset";
 		};
 	};
-	class rhsusf_lwh_helmet_marpatwd: rhsusf_lwh_helmet_marpatd
-	{
-	};
+	class rhsusf_lwh_helmet_marpatwd: rhsusf_lwh_helmet_marpatd;  //found empty after stripping
 	class rhsusf_lwh_helmet_marpatwd_ess: rhsusf_lwh_helmet_marpatd_ess
 	{
-		class ItemInfo: ItemInfo
-		{
-		};
+		class ItemInfo: ItemInfo;  //found empty after stripping
 	};
 	class rhsusf_lwh_helmet_marpatwd_blk_ess: rhsusf_lwh_helmet_marpatd_ess
 	{
-		class ItemInfo: ItemInfo
-		{
-		};
+		class ItemInfo: ItemInfo;  //found empty after stripping
 	};
 	class rhsusf_lwh_helmet_marpatwd_headset: rhsusf_lwh_helmet_marpatd_headset
 	{
-		class ItemInfo: ItemInfo
-		{
-		};
+		class ItemInfo: ItemInfo;  //found empty after stripping
 	};
 	class rhsusf_lwh_helmet_marpatwd_headset_blk: rhsusf_lwh_helmet_marpatd_headset
 	{
-		class ItemInfo: ItemInfo
-		{
-		};
+		class ItemInfo: ItemInfo;  //found empty after stripping
 	};
 	class rhsusf_lwh_helmet_marpatwd_headset_blk2: rhsusf_lwh_helmet_marpatd_headset
 	{
@@ -31400,9 +31134,7 @@ class CfgWeapons
 			uniformModel="\rhsusf\addons\rhsusf_infantry\gear\head\lwh_wd_headset_2";
 		};
 	};
-	class rhsusf_lwh_helmet_M1942: rhsusf_lwh_helmet_marpatd
-	{
-	};
+	class rhsusf_lwh_helmet_M1942: rhsusf_lwh_helmet_marpatd;  //found empty after stripping
 	class rhsusf_Bowman: ItemCore
 	{
 		class ItemInfo: HeadGearItem
@@ -31558,9 +31290,7 @@ class CfgWeapons
 			};
 		};
 	};
-	class rhsusf_iotv_ocp: rhsusf_iotv_ocp_base
-	{
-	};
+	class rhsusf_iotv_ocp: rhsusf_iotv_ocp_base;  //found empty after stripping
 	class rhsusf_iotv_ocp_Grenadier: rhsusf_iotv_ocp_base
 	{
 		class ItemInfo: ItemInfo
@@ -31784,12 +31514,8 @@ class CfgWeapons
 			};
 		};
 	};
-	class rhsusf_iotv_ucp_base: rhsusf_iotv_ocp_base
-	{
-	};
-	class rhsusf_iotv_ucp: rhsusf_iotv_ocp
-	{
-	};
+	class rhsusf_iotv_ucp_base: rhsusf_iotv_ocp_base;  //found empty after stripping
+	class rhsusf_iotv_ucp: rhsusf_iotv_ocp;  //found empty after stripping
 	class rhsusf_iotv_ucp_Grenadier: rhsusf_iotv_ucp_base
 	{
 		class ItemInfo: ItemInfo
@@ -32552,75 +32278,51 @@ class CfgWeapons
 	};
 	class rhsusf_spcs_ucp: rhsusf_spcs_ocp
 	{
-		class ItemInfo: ItemInfo
-		{
-		};
+		class ItemInfo: ItemInfo;  //found empty after stripping
 	};
 	class rhsusf_spcs_ucp_squadleader: rhsusf_spcs_ocp_squadleader
 	{
-		class ItemInfo: ItemInfo
-		{
-		};
+		class ItemInfo: ItemInfo;  //found empty after stripping
 	};
 	class rhsusf_spcs_ucp_teamleader: rhsusf_spcs_ocp_teamleader
 	{
-		class ItemInfo: ItemInfo
-		{
-		};
+		class ItemInfo: ItemInfo;  //found empty after stripping
 	};
 	class rhsusf_spcs_ucp_teamleader_alt: rhsusf_spcs_ocp_teamleader_alt
 	{
-		class ItemInfo: ItemInfo
-		{
-		};
+		class ItemInfo: ItemInfo;  //found empty after stripping
 	};
 	class rhsusf_spcs_ucp_saw: rhsusf_spcs_ocp_saw
 	{
-		class ItemInfo: ItemInfo
-		{
-		};
+		class ItemInfo: ItemInfo;  //found empty after stripping
 	};
 	class rhsusf_spcs_ucp_grenadier: rhsusf_spcs_ocp_grenadier
 	{
-		class ItemInfo: ItemInfo
-		{
-		};
+		class ItemInfo: ItemInfo;  //found empty after stripping
 	};
 	class rhsusf_spcs_ucp_rifleman: rhsusf_spcs_ocp_rifleman
 	{
-		class ItemInfo: ItemInfo
-		{
-		};
+		class ItemInfo: ItemInfo;  //found empty after stripping
 	};
 	class rhsusf_spcs_ucp_rifleman_alt: rhsusf_spcs_ocp_rifleman_alt
 	{
-		class ItemInfo: ItemInfo
-		{
-		};
+		class ItemInfo: ItemInfo;  //found empty after stripping
 	};
 	class rhsusf_spcs_ucp_medic: rhsusf_spcs_ocp_medic
 	{
-		class ItemInfo: ItemInfo
-		{
-		};
+		class ItemInfo: ItemInfo;  //found empty after stripping
 	};
 	class rhsusf_spcs_ucp_crewman: rhsusf_spcs_ocp_crewman
 	{
-		class ItemInfo: ItemInfo
-		{
-		};
+		class ItemInfo: ItemInfo;  //found empty after stripping
 	};
 	class rhsusf_spcs_ucp_machinegunner: rhsusf_spcs_ocp_machinegunner
 	{
-		class ItemInfo: ItemInfo
-		{
-		};
+		class ItemInfo: ItemInfo;  //found empty after stripping
 	};
 	class rhsusf_spcs_ucp_sniper: rhsusf_spcs_ocp_sniper
 	{
-		class ItemInfo: ItemInfo
-		{
-		};
+		class ItemInfo: ItemInfo;  //found empty after stripping
 	};
 	class rhsusf_mbav: rhsusf_iotv_ocp_base
 	{
@@ -32710,12 +32412,8 @@ class CfgWeapons
 					armor="28 + 		3";
 					PassThrough=0.1;
 				};
-				class Diaphragm: Diaphragm
-				{
-				};
-				class Body: Body
-				{
-				};
+				class Diaphragm: Diaphragm;  //found empty after stripping
+				class Body: Body;  //found empty after stripping
 			};
 		};
 	};

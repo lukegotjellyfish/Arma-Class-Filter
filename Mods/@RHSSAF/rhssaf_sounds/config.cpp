@@ -6166,17 +6166,13 @@ class CfgWeapons
 {
 	class Rifle_Base_F;
 	class Pistol_Base_F;
-	class arifle_MX_Base_F: Rifle_Base_F
-	{
-	};
+	class arifle_MX_Base_F: Rifle_Base_F;  //found empty after stripping
 	class Rifle_Long_Base_F;
 	class UGL_F;
 	class srifle_EBR_F;
 	class LMG_Mk200_F;
 	class MGun;
-	class LMG_RCWS: MGun
-	{
-	};
+	class LMG_RCWS: MGun;  //found empty after stripping
 	class SMG_01_Base;
 	class SMG_01_F: SMG_01_Base
 	{
@@ -6186,9 +6182,7 @@ class CfgWeapons
 		class GunParticles;
 	};
 	class Launcher;
-	class Launcher_Base_F: Launcher
-	{
-	};
+	class Launcher_Base_F: Launcher;  //found empty after stripping
 	class launch_O_Titan_F;
 	class rhs_weap_m70_base: Rifle_Base_F
 	{
@@ -6292,21 +6286,17 @@ class CfgWeapons
 	};
 	class rhs_weap_scorpion: SMG_01_F
 	{
-		class Single: Single
-		{
-		};
-		class FullAuto: FullAuto
-		{
-		};
+		class Single: Single;  //found empty after stripping
+		class FullAuto: FullAuto;  //found empty after stripping
 	};
 	class rhs_weap_m84: Rifle_Long_Base_F
 	{
-		class FullAuto: Mode_FullAuto
-		{
-		};
+		class FullAuto: Mode_FullAuto;  //found empty after stripping
 	};
 };
-class CfgSounds;  //found empty after stripping
+class CfgSounds
+{
+	sounds[]={};
 	class RHSSAF_beltIntake_m249
 	{
 		name="RHSSAF_beltIntake_m249";

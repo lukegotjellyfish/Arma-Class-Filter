@@ -269,9 +269,7 @@ class CfgVehicles
 		class EventHandlers;
 		class AnimationSources;
 	};
-	class Offroad_01_base_F: Car_F
-	{
-	};
+	class Offroad_01_base_F: Car_F;  //found empty after stripping
 	class Truck_F: Car_F
 	{
 		class ViewPilot;
@@ -317,21 +315,11 @@ class CfgVehicles
 					"rhs_faction_vv"
 				};
 			};
-			class Camo: standard
-			{
-			};
-			class Camo1: standard
-			{
-			};
-			class Camo2: standard
-			{
-			};
-			class Camo3: standard
-			{
-			};
-			class Camo4: standard
-			{
-			};
+			class Camo: standard;  //found empty after stripping
+			class Camo1: standard;  //found empty after stripping
+			class Camo2: standard;  //found empty after stripping
+			class Camo3: standard;  //found empty after stripping
+			class Camo4: standard;  //found empty after stripping
 		};
 		class Attributes
 		{
@@ -1234,9 +1222,7 @@ class CfgVehicles
 				volume="engineOn*(1-asphalt)*(1-camPos)*(latSlipDrive Factor[-0.1, -0.4])*(Speed Factor[2, 15])";
 			};
 		};
-		class Turrets: Turrets
-		{
-		};
+		class Turrets: Turrets;  //found empty after stripping
 		driverCompartments="Compartment1";
 		cargoCompartments[]=
 		{
@@ -1418,9 +1404,7 @@ class CfgVehicles
 		memoryPointTrackFRR="TrackFRR";
 		memoryPointTrackBRL="TrackBRL";
 		memoryPointTrackBRR="TrackBRR";
-		class Damage
-		{
-		};
+		class Damage;  //found empty after stripping
 		class Exhausts
 		{
 			class Exhaust1
@@ -1600,27 +1584,21 @@ class CfgVehicles
 				proxyIndex=1;
 				maxTurn=-41;
 				minTurn=-95;
-				class dynamicViewLimits
-				{
-				};
+				class dynamicViewLimits;  //found empty after stripping
 			};
 			class CargoTurret_04: CargoTurret_01
 			{
 				proxyIndex=2;
 				maxTurn=95;
 				minTurn=18;
-				class dynamicViewLimits
-				{
-				};
+				class dynamicViewLimits;  //found empty after stripping
 			};
 			class CargoTurret_05: CargoTurret_01
 			{
 				proxyIndex=4;
 				maxTurn=-11;
 				minTurn=-95;
-				class dynamicViewLimits
-				{
-				};
+				class dynamicViewLimits;  //found empty after stripping
 			};
 		};
 	};
@@ -1660,18 +1638,10 @@ class CfgVehicles
 					"rhs_faction_vv"
 				};
 			};
-			class Camo: standard
-			{
-			};
-			class Camo1: standard
-			{
-			};
-			class Camo2: standard
-			{
-			};
-			class Camo4: standard
-			{
-			};
+			class Camo: standard;  //found empty after stripping
+			class Camo1: standard;  //found empty after stripping
+			class Camo2: standard;  //found empty after stripping
+			class Camo4: standard;  //found empty after stripping
 		};
 		class CargoTurret;
 		class Turrets: Turrets
@@ -1851,9 +1821,7 @@ class CfgVehicles
 			"rhs_msv_driver"
 		};
 	};
-	class RHS_UAZ_MSV_01: RHS_UAZ_MSV_Base
-	{
-	};
+	class RHS_UAZ_MSV_01: RHS_UAZ_MSV_Base;  //found empty after stripping
 	class rhs_uaz_vdv: RHS_UAZ_MSV_01
 	{
 		rhs_decalParameters[]=
@@ -1879,9 +1847,7 @@ class CfgVehicles
 			"['Label', cDecalsCarsRightArmyPlaces, 'Army', [6,1]]"
 		};
 	};
-	class rhs_uaz_open_MSV_01: rhs_uaz_open_MSV_Base
-	{
-	};
+	class rhs_uaz_open_MSV_01: rhs_uaz_open_MSV_Base;  //found empty after stripping
 	class rhs_uaz_open_vdv: rhs_uaz_open_MSV_01
 	{
 		rhs_decalParameters[]=
@@ -1917,36 +1883,16 @@ class CfgVehicles
 		mapsize=7;
 		class textureSources
 		{
-			class standard
-			{
-			};
-			class Camo: standard
-			{
-			};
-			class Camo1: standard
-			{
-			};
-			class Camo2: standard
-			{
-			};
-			class Camo3: standard
-			{
-			};
-			class Camo4: standard
-			{
-			};
-			class Camo5: standard
-			{
-			};
-			class Camo6: standard
-			{
-			};
-			class Camo7: standard
-			{
-			};
-			class rhs_sand: standard
-			{
-			};
+			class standard;  //found empty after stripping
+			class Camo: standard;  //found empty after stripping
+			class Camo1: standard;  //found empty after stripping
+			class Camo2: standard;  //found empty after stripping
+			class Camo3: standard;  //found empty after stripping
+			class Camo4: standard;  //found empty after stripping
+			class Camo5: standard;  //found empty after stripping
+			class Camo6: standard;  //found empty after stripping
+			class Camo7: standard;  //found empty after stripping
+			class rhs_sand: standard;  //found empty after stripping
 		};
 		class Attributes
 		{
@@ -3015,9 +2961,7 @@ class CfgVehicles
 		memorypointtrackflr="Stopa PLP";
 		memorypointtrackfrl="Stopa PPL";
 		memorypointtrackfrr="Stopa PPP";
-		class Damage
-		{
-		};
+		class Damage;  //found empty after stripping
 		class Exhausts
 		{
 			class Exhaust1
@@ -3151,9 +3095,7 @@ class CfgVehicles
 				steering=0;
 				maxHandBrakeTorque=20000;
 			};
-			class LR2: LR
-			{
-			};
+			class LR2: LR;  //found empty after stripping
 			class RF: LF
 			{
 				steering=1;
@@ -3165,9 +3107,7 @@ class CfgVehicles
 				steering=0;
 				maxHandBrakeTorque=20000;
 			};
-			class RR2: RR
-			{
-			};
+			class RR2: RR;  //found empty after stripping
 		};
 		class EventHandlers: EventHandlers
 		{
@@ -3208,9 +3148,7 @@ class CfgVehicles
 			"['Label', cDecalsCarsRightArmyPlaces, 'Platoon', 12]"
 		};
 	};
-	class RHS_Ural_MSV_01: RHS_Ural_MSV_Base
-	{
-	};
+	class RHS_Ural_MSV_01: RHS_Ural_MSV_Base;  //found empty after stripping
 	class RHS_Ural_VDV_01: RHS_Ural_MSV_Base
 	{
 		rhs_decalParameters[]=
@@ -3238,9 +3176,7 @@ class CfgVehicles
 	};
 	class RHS_Ural_Flat_MSV_01: RHS_Ural_MSV_Base
 	{
-		class Turrets
-		{
-		};
+		class Turrets;  //found empty after stripping
 	};
 	class RHS_Ural_Flat_VDV_01: RHS_Ural_Flat_MSV_01
 	{
@@ -3284,24 +3220,14 @@ class CfgVehicles
 					"rhs_faction_vv"
 				};
 			};
-			class Camo: standard
-			{
-			};
-			class Camo1: standard
-			{
-			};
-			class Camo2: standard
-			{
-			};
-			class rhs_sand: standard
-			{
-			};
+			class Camo: standard;  //found empty after stripping
+			class Camo1: standard;  //found empty after stripping
+			class Camo2: standard;  //found empty after stripping
+			class rhs_sand: standard;  //found empty after stripping
 		};
 		class Turrets: Turrets
 		{
-			class CargoTurret_02: CargoTurret_02
-			{
-			};
+			class CargoTurret_02: CargoTurret_02;  //found empty after stripping
 			class CargoTurret_03: CargoTurret_02
 			{
 				animationSourceHatch="turnout1";
@@ -3393,9 +3319,7 @@ class CfgVehicles
 	};
 	class RHS_Ural_Open_Flat_MSV_01: RHS_Ural_Open_MSV_01
 	{
-		class Turrets
-		{
-		};
+		class Turrets;  //found empty after stripping
 		class VehicleTransport
 		{
 			class Cargo
@@ -3463,9 +3387,7 @@ class CfgVehicles
 	};
 	class RHS_Ural_Support_MSV_Base_01: RHS_Ural_MSV_Base
 	{
-		class Turrets
-		{
-		};
+		class Turrets;  //found empty after stripping
 	};
 	class RHS_Ural_Fuel_MSV_01: RHS_Ural_Support_MSV_Base_01
 	{
@@ -3495,18 +3417,10 @@ class CfgVehicles
 					"rhs_faction_vv"
 				};
 			};
-			class Camo: standard
-			{
-			};
-			class Camo1: standard
-			{
-			};
-			class Camo2: standard
-			{
-			};
-			class rhs_sand: standard
-			{
-			};
+			class Camo: standard;  //found empty after stripping
+			class Camo1: standard;  //found empty after stripping
+			class Camo2: standard;  //found empty after stripping
+			class rhs_sand: standard;  //found empty after stripping
 		};
 	};
 	class RHS_Ural_Fuel_VDV_01: RHS_Ural_Fuel_MSV_01
@@ -3544,9 +3458,7 @@ class CfgVehicles
 		icon="\A3\soft_f_beta\Truck_02\data\UI\Map_truck_02_repair_CA.paa";
 		transportRepair=2000000000;
 		supplyRadius=9.5;
-		class Damage
-		{
-		};
+		class Damage;  //found empty after stripping
 		class textureSources
 		{
 			class standard
@@ -3559,21 +3471,11 @@ class CfgVehicles
 					"rhs_faction_vv"
 				};
 			};
-			class Camo: standard
-			{
-			};
-			class Camo1: standard
-			{
-			};
-			class Camo2: standard
-			{
-			};
-			class Camo3: standard
-			{
-			};
-			class rhs_sand: standard
-			{
-			};
+			class Camo: standard;  //found empty after stripping
+			class Camo1: standard;  //found empty after stripping
+			class Camo2: standard;  //found empty after stripping
+			class Camo3: standard;  //found empty after stripping
+			class rhs_sand: standard;  //found empty after stripping
 		};
 	};
 	class RHS_Ural_Repair_VDV_01: RHS_Ural_Repair_MSV_01
@@ -4160,27 +4062,15 @@ class CfgVehicles
 					"rhs_faction_vv"
 				};
 			};
-			class Camo: standard
-			{
-			};
-			class Camo1: standard
-			{
-			};
-			class Camo2: standard
-			{
-			};
-			class Camo4: standard
-			{
-			};
-			class rhs_sand: standard
-			{
-			};
+			class Camo: standard;  //found empty after stripping
+			class Camo1: standard;  //found empty after stripping
+			class Camo2: standard;  //found empty after stripping
+			class Camo4: standard;  //found empty after stripping
+			class rhs_sand: standard;  //found empty after stripping
 		};
 		class EventHandlers: EventHandlers
 		{
-			class RHS_EventHandlers: RHS_EventHandlers
-			{
-			};
+			class RHS_EventHandlers: RHS_EventHandlers;  //found empty after stripping
 		};
 	};
 	class RHS_BM21_VDV_01: RHS_BM21_MSV_01
@@ -4371,9 +4261,7 @@ class CfgVehicles
 				minTurn=-65;
 			};
 		};
-		class Damage
-		{
-		};
+		class Damage;  //found empty after stripping
 		class textureSources
 		{
 			class standard
@@ -4386,15 +4274,9 @@ class CfgVehicles
 					"rhs_faction_vv"
 				};
 			};
-			class Camo: standard
-			{
-			};
-			class Camo1: standard
-			{
-			};
-			class Camo2: standard
-			{
-			};
+			class Camo: standard;  //found empty after stripping
+			class Camo1: standard;  //found empty after stripping
+			class Camo2: standard;  //found empty after stripping
 		};
 	};
 	class RHS_Ural_Zu23_MSV_01: RHS_Ural_Zu23_Base
@@ -4412,15 +4294,9 @@ class CfgVehicles
 		};
 		class Turrets: Turrets
 		{
-			class MainTurret: MainTurret
-			{
-			};
-			class CargoTurret_02: CargoTurret_02
-			{
-			};
-			class CargoTurret_03: CargoTurret_03
-			{
-			};
+			class MainTurret: MainTurret;  //found empty after stripping
+			class CargoTurret_02: CargoTurret_02;  //found empty after stripping
+			class CargoTurret_03: CargoTurret_03;  //found empty after stripping
 		};
 	};
 	class RHS_Ural_Zu23_VDV_01: RHS_Ural_Zu23_Base
@@ -4439,15 +4315,9 @@ class CfgVehicles
 		};
 		class Turrets: Turrets
 		{
-			class MainTurret: MainTurret
-			{
-			};
-			class CargoTurret_02: CargoTurret_02
-			{
-			};
-			class CargoTurret_03: CargoTurret_03
-			{
-			};
+			class MainTurret: MainTurret;  //found empty after stripping
+			class CargoTurret_02: CargoTurret_02;  //found empty after stripping
+			class CargoTurret_03: CargoTurret_03;  //found empty after stripping
 		};
 	};
 	class RHS_Ural_Zu23_VMF_01: RHS_Ural_Zu23_Base
@@ -4461,15 +4331,9 @@ class CfgVehicles
 		side=0;
 		class Turrets: Turrets
 		{
-			class MainTurret: MainTurret
-			{
-			};
-			class CargoTurret_02: CargoTurret_02
-			{
-			};
-			class CargoTurret_03: CargoTurret_03
-			{
-			};
+			class MainTurret: MainTurret;  //found empty after stripping
+			class CargoTurret_02: CargoTurret_02;  //found empty after stripping
+			class CargoTurret_03: CargoTurret_03;  //found empty after stripping
 		};
 	};
 	class RHS_Ural_Zu23_VV_01: RHS_Ural_Zu23_Base
@@ -4483,15 +4347,9 @@ class CfgVehicles
 		side=0;
 		class Turrets: Turrets
 		{
-			class MainTurret: MainTurret
-			{
-			};
-			class CargoTurret_02: CargoTurret_02
-			{
-			};
-			class CargoTurret_03: CargoTurret_03
-			{
-			};
+			class MainTurret: MainTurret;  //found empty after stripping
+			class CargoTurret_02: CargoTurret_02;  //found empty after stripping
+			class CargoTurret_03: CargoTurret_03;  //found empty after stripping
 		};
 	};
 	class RHS_Ural_Civ_Base: RHS_Ural_Base
@@ -4500,24 +4358,12 @@ class CfgVehicles
 		side=3;
 		rhs_decalParameters[]={};
 	};
-	class RHS_Ural_Civ_01: RHS_Ural_Civ_Base
-	{
-	};
-	class RHS_Ural_Civ_02: RHS_Ural_Civ_01
-	{
-	};
-	class RHS_Ural_Civ_03: RHS_Ural_Civ_01
-	{
-	};
-	class RHS_Ural_Open_Civ_01: RHS_Ural_Civ_Base
-	{
-	};
-	class RHS_Ural_Open_Civ_02: RHS_Ural_Open_Civ_01
-	{
-	};
-	class RHS_Ural_Open_Civ_03: RHS_Ural_Open_Civ_01
-	{
-	};
+	class RHS_Ural_Civ_01: RHS_Ural_Civ_Base;  //found empty after stripping
+	class RHS_Ural_Civ_02: RHS_Ural_Civ_01;  //found empty after stripping
+	class RHS_Ural_Civ_03: RHS_Ural_Civ_01;  //found empty after stripping
+	class RHS_Ural_Open_Civ_01: RHS_Ural_Civ_Base;  //found empty after stripping
+	class RHS_Ural_Open_Civ_02: RHS_Ural_Open_Civ_01;  //found empty after stripping
+	class RHS_Ural_Open_Civ_03: RHS_Ural_Open_Civ_01;  //found empty after stripping
 	class Truck_02_base_F;
 	class RHS_Civ_Truck_02_covered_F: Truck_02_base_F
 	{

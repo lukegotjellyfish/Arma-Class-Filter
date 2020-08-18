@@ -266,34 +266,26 @@ class CfgVehicles
 					{1,1}
 				};
 			};
-			class LR: LF
-			{
-			};
+			class LR: LF;  //found empty after stripping
 			class LR2: LR
 			{
 				steering=0;
 				maxHandBrakeTorque=10000;
 			};
-			class LR3: LR2
-			{
-			};
+			class LR3: LR2;  //found empty after stripping
 			class RF: LF
 			{
 				steering=1;
 				side="right";
 				suspTravelDirection[]={0.125,-1,0};
 			};
-			class RR: RF
-			{
-			};
+			class RR: RF;  //found empty after stripping
 			class RR2: RR
 			{
 				steering=0;
 				maxHandBrakeTorque=10000;
 			};
-			class RR3: RR2
-			{
-			};
+			class RR3: RR2;  //found empty after stripping
 		};
 		radarType=0;
 		incomingMissileDetectionSystem=0;
@@ -466,24 +458,12 @@ class CfgVehicles
 				property="rhs_decalArmy_type";
 				class values: values
 				{
-					class Army: Army
-					{
-					};
-					class Honor: Honor
-					{
-					};
-					class HonorGDR: HonorGDR
-					{
-					};
-					class Platoon: Platoon
-					{
-					};
-					class PlatoonGDR: PlatoonGDR
-					{
-					};
-					class PlatoonVDV: PlatoonVDV
-					{
-					};
+					class Army: Army;  //found empty after stripping
+					class Honor: Honor;  //found empty after stripping
+					class HonorGDR: HonorGDR;  //found empty after stripping
+					class Platoon: Platoon;  //found empty after stripping
+					class PlatoonGDR: PlatoonGDR;  //found empty after stripping
+					class PlatoonVDV: PlatoonVDV;  //found empty after stripping
 				};
 			};
 			class rhs_decalArmy: rhs_decalPlatoon
@@ -497,24 +477,12 @@ class CfgVehicles
 				property="rhs_decalRightTurret_type";
 				class values: values
 				{
-					class Honor: Honor
-					{
-					};
-					class HonorGDR: HonorGDR
-					{
-					};
-					class Army: Army
-					{
-					};
-					class Platoon: Platoon
-					{
-					};
-					class PlatoonGDR: PlatoonGDR
-					{
-					};
-					class PlatoonVDV: PlatoonVDV
-					{
-					};
+					class Honor: Honor;  //found empty after stripping
+					class HonorGDR: HonorGDR;  //found empty after stripping
+					class Army: Army;  //found empty after stripping
+					class Platoon: Platoon;  //found empty after stripping
+					class PlatoonGDR: PlatoonGDR;  //found empty after stripping
+					class PlatoonVDV: PlatoonVDV;  //found empty after stripping
 				};
 			};
 			class rhs_decalRightTurret: rhs_decalPlatoon
@@ -1861,9 +1829,7 @@ class CfgVehicles
 				direction="vyfuk konec 2";
 			};
 		};
-		class Damage
-		{
-		};
+		class Damage;  //found empty after stripping
 		class CargoTurret;
 		class Turrets: Turrets
 		{
@@ -1992,9 +1958,7 @@ class CfgVehicles
 						};
 						hitpoint="Hit_Optic_MainSight";
 					};
-					class Night: Wide
-					{
-					};
+					class Night: Wide;  //found empty after stripping
 					class RearView: Wide
 					{
 						camPos="view_turret_rear";
@@ -2009,9 +1973,7 @@ class CfgVehicles
 						hitpoint="HitPeriscope10";
 					};
 				};
-				class Turrets
-				{
-				};
+				class Turrets;  //found empty after stripping
 				class Components
 				{
 					class VehicleSystemsDisplayManagerComponentLeft
@@ -2129,9 +2091,7 @@ class CfgVehicles
 						};
 					};
 				};
-				class Hitpoints
-				{
-				};
+				class Hitpoints;  //found empty after stripping
 			};
 			class CargoTurret_02: CargoTurret_01
 			{
@@ -2180,9 +2140,7 @@ class CfgVehicles
 				{
 					"rhs_weap_DummyLauncher"
 				};
-				class Hitpoints
-				{
-				};
+				class Hitpoints;  //found empty after stripping
 			};
 		};
 		class EventHandlers: EventHandlers
@@ -2249,9 +2207,7 @@ class CfgVehicles
 					"rhs_faction_vv"
 				};
 			};
-			class chdkz
-			{
-			};
+			class chdkz;  //found empty after stripping
 		};
 	};
 	class rhs_btr70_vdv: rhs_btr70_vmf
@@ -2420,9 +2376,7 @@ class CfgVehicles
 					};
 				};
 			};
-			class CommanderOptics: CommanderOptics
-			{
-			};
+			class CommanderOptics: CommanderOptics;  //found empty after stripping
 			class CargoTurret_02: CargoTurret_01
 			{
 				proxyIndex=10;
@@ -2463,9 +2417,7 @@ class CfgVehicles
 			{
 				proxyIndex=17;
 			};
-			class Commander_Out: Commander_Out
-			{
-			};
+			class Commander_Out: Commander_Out;  //found empty after stripping
 		};
 		rhs_topPositions[]={9,10,11,12,13,14,15,16,17};
 		normalSpeedForwardCoef=0.60000002;
@@ -2603,38 +2555,28 @@ class CfgVehicles
 					{1,1}
 				};
 			};
-			class LR: LF
-			{
-			};
+			class LR: LF;  //found empty after stripping
 			class LR2: LR
 			{
 				steering=0;
 				maxHandBrakeTorque=10000;
 			};
-			class LR3: LR2
-			{
-			};
+			class LR3: LR2;  //found empty after stripping
 			class RF: LF
 			{
 				steering=1;
 				side="right";
 				suspTravelDirection[]={0.125,-1,0};
 			};
-			class RR: RF
-			{
-			};
+			class RR: RF;  //found empty after stripping
 			class RR2: RR
 			{
 				steering=0;
 				maxHandBrakeTorque=10000;
 			};
-			class RR3: RR2
-			{
-			};
+			class RR3: RR2;  //found empty after stripping
 		};
-		class Damage
-		{
-		};
+		class Damage;  //found empty after stripping
 		class textureSources
 		{
 			class standard
@@ -2670,78 +2612,32 @@ class CfgVehicles
 					"rhs_faction_vv"
 				};
 			};
-			class rhs_sand
-			{
-			};
+			class rhs_sand;  //found empty after stripping
 		};
 		class Attributes: Attributes
 		{
-			class rhs_decalNumber_type: rhs_decalNumber_type
-			{
-			};
-			class rhs_decalNumber: rhs_decalNumber
-			{
-			};
-			class rhs_decalPlatoon_type: rhs_decalPlatoon_type
-			{
-			};
-			class rhs_decalPlatoon: rhs_decalPlatoon
-			{
-			};
-			class rhs_decalArmy_type: rhs_decalArmy_type
-			{
-			};
-			class rhs_decalArmy: rhs_decalArmy
-			{
-			};
-			class rhs_decalRightTurret_type: rhs_decalRightTurret_type
-			{
-			};
-			class rhs_decalRightTurret: rhs_decalRightTurret
-			{
-			};
-			class rhs_decalFront_type: rhs_decalFront_type
-			{
-			};
-			class rhs_decalFront: rhs_decalFront
-			{
-			};
-			class rhs_decalVV_type: rhs_decalVV_type
-			{
-			};
-			class rhs_decalVV: rhs_decalVV
-			{
-			};
-			class crate_l1_unhide: crate_l1_unhide
-			{
-			};
-			class crate_l2_unhide: crate_l2_unhide
-			{
-			};
-			class crate_l3_unhide: crate_l3_unhide
-			{
-			};
-			class crate_r1_unhide: crate_r1_unhide
-			{
-			};
-			class crate_r2_unhide: crate_r2_unhide
-			{
-			};
-			class wheel_1_unhide: wheel_1_unhide
-			{
-			};
-			class rhs_disableHabar: rhs_disableHabar
-			{
-			};
-			class driverViewHatch: driverViewHatch
-			{
-			};
-			class commanderViewHatch: commanderViewHatch
-			{
-			};
-			class rhs_externalMount: rhs_externalMount
-			{
-			};
+			class rhs_decalNumber_type: rhs_decalNumber_type;  //found empty after stripping
+			class rhs_decalNumber: rhs_decalNumber;  //found empty after stripping
+			class rhs_decalPlatoon_type: rhs_decalPlatoon_type;  //found empty after stripping
+			class rhs_decalPlatoon: rhs_decalPlatoon;  //found empty after stripping
+			class rhs_decalArmy_type: rhs_decalArmy_type;  //found empty after stripping
+			class rhs_decalArmy: rhs_decalArmy;  //found empty after stripping
+			class rhs_decalRightTurret_type: rhs_decalRightTurret_type;  //found empty after stripping
+			class rhs_decalRightTurret: rhs_decalRightTurret;  //found empty after stripping
+			class rhs_decalFront_type: rhs_decalFront_type;  //found empty after stripping
+			class rhs_decalFront: rhs_decalFront;  //found empty after stripping
+			class rhs_decalVV_type: rhs_decalVV_type;  //found empty after stripping
+			class rhs_decalVV: rhs_decalVV;  //found empty after stripping
+			class crate_l1_unhide: crate_l1_unhide;  //found empty after stripping
+			class crate_l2_unhide: crate_l2_unhide;  //found empty after stripping
+			class crate_l3_unhide: crate_l3_unhide;  //found empty after stripping
+			class crate_r1_unhide: crate_r1_unhide;  //found empty after stripping
+			class crate_r2_unhide: crate_r2_unhide;  //found empty after stripping
+			class wheel_1_unhide: wheel_1_unhide;  //found empty after stripping
+			class rhs_disableHabar: rhs_disableHabar;  //found empty after stripping
+			class driverViewHatch: driverViewHatch;  //found empty after stripping
+			class commanderViewHatch: commanderViewHatch;  //found empty after stripping
+			class rhs_externalMount: rhs_externalMount;  //found empty after stripping
 		};
 		rhs_randomizedHabar[]=
 		{
@@ -2797,15 +2693,9 @@ class CfgVehicles
 		weaponsGroup4=64;
 		class textureSources
 		{
-			class standard
-			{
-			};
-			class tricolourhard
-			{
-			};
-			class rhs_sand
-			{
-			};
+			class standard;  //found empty after stripping
+			class tricolourhard;  //found empty after stripping
+			class rhs_sand;  //found empty after stripping
 		};
 		class Turrets: Turrets
 		{
@@ -2859,36 +2749,16 @@ class CfgVehicles
 					"rhs_mag_3d17_6"
 				};
 			};
-			class CommanderOptics: CommanderOptics
-			{
-			};
-			class CargoTurret_02: CargoTurret_02
-			{
-			};
-			class CargoTurret_03: CargoTurret_03
-			{
-			};
-			class CargoTurret_04: CargoTurret_04
-			{
-			};
-			class CargoTurret_05: CargoTurret_05
-			{
-			};
-			class CargoTurret_06: CargoTurret_06
-			{
-			};
-			class CargoTurret_07: CargoTurret_07
-			{
-			};
-			class CargoTurret_08: CargoTurret_08
-			{
-			};
-			class CargoTurret_09: CargoTurret_09
-			{
-			};
-			class Commander_Out: Commander_Out
-			{
-			};
+			class CommanderOptics: CommanderOptics;  //found empty after stripping
+			class CargoTurret_02: CargoTurret_02;  //found empty after stripping
+			class CargoTurret_03: CargoTurret_03;  //found empty after stripping
+			class CargoTurret_04: CargoTurret_04;  //found empty after stripping
+			class CargoTurret_05: CargoTurret_05;  //found empty after stripping
+			class CargoTurret_06: CargoTurret_06;  //found empty after stripping
+			class CargoTurret_07: CargoTurret_07;  //found empty after stripping
+			class CargoTurret_08: CargoTurret_08;  //found empty after stripping
+			class CargoTurret_09: CargoTurret_09;  //found empty after stripping
+			class Commander_Out: Commander_Out;  //found empty after stripping
 		};
 		rhs_topPositions[]={9,10,11,12,13,14,15,16,17};
 	};
@@ -2925,10 +2795,6 @@ class CfgVehicles
 class CfgNonAIVehicles
 {
 	class ProxyRetex;
-	class Proxyrhs_wheel_1: ProxyRetex
-	{
-	};
-	class Proxyrhs_wheel_2: Proxyrhs_wheel_1
-	{
-	};
+	class Proxyrhs_wheel_1: ProxyRetex;  //found empty after stripping
+	class Proxyrhs_wheel_2: Proxyrhs_wheel_1;  //found empty after stripping
 };

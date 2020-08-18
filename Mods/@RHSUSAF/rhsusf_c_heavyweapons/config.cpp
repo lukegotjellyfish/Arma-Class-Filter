@@ -290,9 +290,7 @@ class CfgAmmo
 		tracerStartTime=0.1;
 		tracerEndTime=2.3;
 	};
-	class rhs_ammo_M1147: rhs_ammo_M1069
-	{
-	};
+	class rhs_ammo_M1147: rhs_ammo_M1069;  //found empty after stripping
 	class rhs_ammo_M416: rhs_ammo_M1069
 	{
 		caliber=16.296301;
@@ -575,9 +573,7 @@ class CfgAmmo
 		CraterEffects="";
 		whistleDist=0;
 	};
-	class rhs_m821_he: Sh_82mm_AMOS
-	{
-	};
+	class rhs_m821_he: Sh_82mm_AMOS;  //found empty after stripping
 	class Gatling_30mm_HE_Plane_CAS_01_F;
 	class rhs_ammo_30x173mm_GAU8_mixed: SubmunitionBase
 	{
@@ -865,9 +861,7 @@ class CfgAmmo
 		nvLock=1;
 		aiAmmoUsageFlags=448;
 	};
-	class MissileCore: Default
-	{
-	};
+	class MissileCore: Default;  //found empty after stripping
 	class MissileBase: MissileCore
 	{
 		class EventHandlers;
@@ -920,9 +914,7 @@ class CfgAmmo
 		{
 			"Direct"
 		};
-		class Direct
-		{
-		};
+		class Direct;  //found empty after stripping
 		soundFly[]=
 		{
 			"rhsusf\addons\rhsusf_heavyweapons\Sounds\TOW",
@@ -1185,12 +1177,8 @@ class CfgAmmo
 	{
 		submunitionAmmo="rhs_ammo_m31_rocket_deploy";
 	};
-	class rhs_ammo_m31_rocket_deploy: R_230mm_fly
-	{
-	};
-	class rhs_ammo_ATACMS_rocket_base: R_230mm_HE
-	{
-	};
+	class rhs_ammo_m31_rocket_deploy: R_230mm_fly;  //found empty after stripping
+	class rhs_ammo_ATACMS_rocket_base: R_230mm_HE;  //found empty after stripping
 	class rhs_ammo_mgm140a_rocket: rhs_ammo_ATACMS_rocket_base
 	{
 		triggerDistance=400;
@@ -1260,12 +1248,8 @@ class CfgAmmo
 		indirectHit=25;
 		indirectHitRange=8;
 	};
-	class rhs_ammo_m85_submunition: rhs_ammo_m77_submunition
-	{
-	};
-	class rhs_ammo_BAT_submunition: rhs_ammo_m77_submunition
-	{
-	};
+	class rhs_ammo_m85_submunition: rhs_ammo_m77_submunition;  //found empty after stripping
+	class rhs_ammo_BAT_submunition: rhs_ammo_m77_submunition;  //found empty after stripping
 	class SmokeLauncherAmmo;
 	class rhsusf_ammo_L8A3: SmokeLauncherAmmo
 	{
@@ -2067,9 +2051,7 @@ class CfgMagazines
 		initSpeed=30;
 		weight=0;
 	};
-	class rhsusf_mag_DIRCM: rhsusf_mag_LWIRCM
-	{
-	};
+	class rhsusf_mag_DIRCM: rhsusf_mag_LWIRCM;  //found empty after stripping
 	class 60Rnd_CMFlare_Chaff_Magazine;
 	class 30Rnd_CMFlare_Chaff_Magazine: 60Rnd_CMFlare_Chaff_Magazine
 	{
@@ -2391,9 +2373,7 @@ class CfgWeapons
 		};
 		reloadTime=2;
 		magazineReloadTime=2;
-		class gunParticles
-		{
-		};
+		class gunParticles;  //found empty after stripping
 		class Eventhandlers
 		{
 			fired="[_this select 0,_this select 1,true] call rhs_fnc_firedFCS";
@@ -2536,36 +2516,16 @@ class CfgWeapons
 			"rhs_mag_155mm_raams_1",
 			"rhs_mag_155mm_m864_3"
 		};
-		class Single1: Single1
-		{
-		};
-		class Single2: Single2
-		{
-		};
-		class Single3: Single3
-		{
-		};
-		class Single4: Single4
-		{
-		};
-		class Single5: Single5
-		{
-		};
-		class Burst1: Burst1
-		{
-		};
-		class Burst2: Burst2
-		{
-		};
-		class Burst3: Burst3
-		{
-		};
-		class Burst4: Burst4
-		{
-		};
-		class Burst5: Burst5
-		{
-		};
+		class Single1: Single1;  //found empty after stripping
+		class Single2: Single2;  //found empty after stripping
+		class Single3: Single3;  //found empty after stripping
+		class Single4: Single4;  //found empty after stripping
+		class Single5: Single5;  //found empty after stripping
+		class Burst1: Burst1;  //found empty after stripping
+		class Burst2: Burst2;  //found empty after stripping
+		class Burst3: Burst3;  //found empty after stripping
+		class Burst4: Burst4;  //found empty after stripping
+		class Burst5: Burst5;  //found empty after stripping
 	};
 	class autocannon_Base_F;
 	class autocannon_30mm_CTWS: autocannon_Base_F
@@ -2739,19 +2699,11 @@ class CfgWeapons
 			"rhs_mag_200rnd_127x99_SLAP_mag",
 			"rhs_mag_200rnd_127x99_SLAP_mag_Tracer_Red"
 		};
-		class manual: manual
-		{
-		};
-		class far: far
-		{
-		};
+		class manual: manual;  //found empty after stripping
+		class far: far;  //found empty after stripping
 	};
-	class RHS_M2_offroad: RHS_M2
-	{
-	};
-	class RHS_M2_M1117: RHS_M2
-	{
-	};
+	class RHS_M2_offroad: RHS_M2;  //found empty after stripping
+	class RHS_M2_M1117: RHS_M2;  //found empty after stripping
 	class RHS_MKV_M2_p: RHS_M2
 	{
 		selectionfireanim="m2_p_flash";
@@ -2784,9 +2736,7 @@ class CfgWeapons
 			"rhs_mag_400rnd_127x99_SLAP_mag_Tracer_Red"
 		};
 	};
-	class RHS_M2_CROWS_M153: RHS_M2_CROWS_M151
-	{
-	};
+	class RHS_M2_CROWS_M153: RHS_M2_CROWS_M151;  //found empty after stripping
 	class rhs_weap_gau21_1: RHS_M2
 	{
 		magazines[]=
@@ -2904,9 +2854,7 @@ class CfgWeapons
 		};
 		magazineReloadTime=12;
 	};
-	class rhs_weap_m240_abrams: rhs_weap_m240veh
-	{
-	};
+	class rhs_weap_m240_abrams: rhs_weap_m240veh;  //found empty after stripping
 	class rhs_weap_m240_m113: rhs_weap_m240veh
 	{
 		cursorAim="mg";
@@ -2920,12 +2868,8 @@ class CfgWeapons
 			reloadTime=0.075000003;
 		};
 	};
-	class rhs_weap_m240_m1134: rhs_weap_m240_m113
-	{
-	};
-	class rhs_weap_m240_abrams_coax: rhs_weap_m240veh
-	{
-	};
+	class rhs_weap_m240_m1134: rhs_weap_m240_m113;  //found empty after stripping
+	class rhs_weap_m240_abrams_coax: rhs_weap_m240veh;  //found empty after stripping
 	class rhs_weap_m240_bradley_coax: rhs_weap_m240veh
 	{
 		displaynameshort="M240C";
@@ -2938,16 +2882,10 @@ class CfgWeapons
 		cursor="EmptyCursor";
 		cursoraim="mg";
 		cursoraimon="EmptyCursor";
-		class manual: manual
-		{
-		};
+		class manual: manual;  //found empty after stripping
 	};
-	class rhs_weap_m240H_1: rhs_weap_m240H
-	{
-	};
-	class rhs_weap_m240H_2: rhs_weap_m240H_1
-	{
-	};
+	class rhs_weap_m240H_1: rhs_weap_m240H;  //found empty after stripping
+	class rhs_weap_m240H_2: rhs_weap_m240H_1;  //found empty after stripping
 	class MGunCore;
 	class M134_minigun: MGunCore
 	{
@@ -2960,9 +2898,7 @@ class CfgWeapons
 			"rhs_mag_762x51_m80a1_4000"
 		};
 	};
-	class rhs_weap_m134_minigun_2: rhs_weap_m134_minigun_1
-	{
-	};
+	class rhs_weap_m134_minigun_2: rhs_weap_m134_minigun_1;  //found empty after stripping
 	class RHS_MKV_M134: rhs_weap_m134_minigun_1
 	{
 		magazines[]=
@@ -3188,9 +3124,7 @@ class CfgWeapons
 			"RHS_96Rnd_40mm_MK19_M1001"
 		};
 	};
-	class RHS_MKV_MK19: RHS_MK19
-	{
-	};
+	class RHS_MKV_MK19: RHS_MK19;  //found empty after stripping
 	class RHS_MK19_CROWS_M151: RHS_MK19
 	{
 		magazineReloadTime=25;
@@ -3207,9 +3141,7 @@ class CfgWeapons
 			"RHS_96Rnd_40mm_MK19_M1001"
 		};
 	};
-	class RHS_MK19_CROWS_M153: RHS_MK19_CROWS_M151
-	{
-	};
+	class RHS_MK19_CROWS_M153: RHS_MK19_CROWS_M151;  //found empty after stripping
 	class missiles_titan;
 	class rhs_weap_TOW_Launcher: missiles_titan
 	{
@@ -3497,12 +3429,8 @@ class CfgWeapons
 	};
 	class rhsusf_weap_M6: rhsusf_weap_M257
 	{
-		class Double: Double
-		{
-		};
-		class Volley: Volley
-		{
-		};
+		class Double: Double;  //found empty after stripping
+		class Volley: Volley;  //found empty after stripping
 	};
 	class rhsusf_weap_M257_8: SmokeLauncher
 	{
@@ -3565,9 +3493,7 @@ class CfgWeapons
 			burst=8;
 			reloadTime=1.3;
 		};
-		class AITimed: Timed
-		{
-		};
+		class AITimed: Timed;  //found empty after stripping
 		class LongTimed: Single
 		{
 			burst=8;
@@ -3664,9 +3590,7 @@ class CfgWeapons
 		autoFire=1;
 		burst=1;
 	};
-	class rhsusf_weap_duke_on: rhsusf_weap_duke
-	{
-	};
+	class rhsusf_weap_duke_on: rhsusf_weap_duke;  //found empty after stripping
 	class rhsusf_weap_LWIRCM: MGun
 	{
 		magazines[]=
@@ -3682,9 +3606,7 @@ class CfgWeapons
 			multiplier=1;
 			soundContinuos=0;
 		};
-		class Burst2: Burst1
-		{
-		};
+		class Burst2: Burst1;  //found empty after stripping
 	};
 	class rhsusf_weap_ANALQ144: MGun
 	{
@@ -3705,21 +3627,15 @@ class CfgWeapons
 	};
 	class rhsusf_weap_ANALQ157: rhsusf_weap_ANALQ144
 	{
-		class Burst1: Burst1
-		{
-		};
+		class Burst1: Burst1;  //found empty after stripping
 	};
 	class rhsusf_weap_ANALQ212: rhsusf_weap_ANALQ144
 	{
-		class Burst1: Burst1
-		{
-		};
+		class Burst1: Burst1;  //found empty after stripping
 	};
 	class rhsusf_weap_ANAAQ24: rhsusf_weap_ANALQ144
 	{
-		class Burst1: Burst1
-		{
-		};
+		class Burst1: Burst1;  //found empty after stripping
 	};
 	class rhsusf_weap_laneMarkerSystem: SmokeLauncher
 	{
@@ -4194,9 +4110,7 @@ class CfgCloudlets
 		size[]={3.515625,7.03125,9.84375};
 		interval=0.5;
 	};
-	class RHSUSF_CM_L8A3_Smoke_Tail_Small_0: RHSUSF_CM_L8A3_Smoke_Tail_Base
-	{
-	};
+	class RHSUSF_CM_L8A3_Smoke_Tail_Small_0: RHSUSF_CM_L8A3_Smoke_Tail_Base;  //found empty after stripping
 	class RHSUSF_CM_L8A3_Smoke_Tail_Small_1: RHSUSF_CM_L8A3_Smoke_Tail_Small_0
 	{
 		color[]=
@@ -4688,12 +4602,8 @@ class RHS_120mm_Sabot_Eject
 		lifeTime=1;
 		enabled="flyTime interpolate [0,0.2,1,-1]";
 	};
-	class FX_2: FX_1
-	{
-	};
-	class FX_3: FX_1
-	{
-	};
+	class FX_2: FX_1;  //found empty after stripping
+	class FX_3: FX_1;  //found empty after stripping
 };
 class CfgMagazineWells
 {

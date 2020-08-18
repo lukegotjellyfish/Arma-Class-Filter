@@ -245,12 +245,8 @@ class CfgVehicles
 		{
 			"CAS_Bombing"
 		};
-		class Turrets
-		{
-		};
-		class EjectionSystem
-		{
-		};
+		class Turrets;  //found empty after stripping
+		class EjectionSystem;  //found empty after stripping
 		armor=60;
 		damageResistance=0.00336;
 		armorStructural=3;
@@ -876,51 +872,21 @@ class CfgVehicles
 					"rhs_faction_vmf"
 				};
 			};
-			class Gray: Standard
-			{
-			};
-			class LightGray: Standard
-			{
-			};
-			class LightGray2: Standard
-			{
-			};
-			class Gray_camo: Standard
-			{
-			};
-			class Green_camo: Standard
-			{
-			};
-			class Green_camo2: Standard
-			{
-			};
-			class Green_camo3: Standard
-			{
-			};
-			class Green_camo4: Standard
-			{
-			};
-			class Green_camo5: Standard
-			{
-			};
-			class Green_camo6: Standard
-			{
-			};
-			class Green_camo7: Standard
-			{
-			};
-			class Green_camo_kubinka: Standard
-			{
-			};
-			class Green_camo_lipetsk: Standard
-			{
-			};
-			class Green_camo_aggressor1: Standard
-			{
-			};
-			class Green_camo_aggressor2: Standard
-			{
-			};
+			class Gray: Standard;  //found empty after stripping
+			class LightGray: Standard;  //found empty after stripping
+			class LightGray2: Standard;  //found empty after stripping
+			class Gray_camo: Standard;  //found empty after stripping
+			class Green_camo: Standard;  //found empty after stripping
+			class Green_camo2: Standard;  //found empty after stripping
+			class Green_camo3: Standard;  //found empty after stripping
+			class Green_camo4: Standard;  //found empty after stripping
+			class Green_camo5: Standard;  //found empty after stripping
+			class Green_camo6: Standard;  //found empty after stripping
+			class Green_camo7: Standard;  //found empty after stripping
+			class Green_camo_kubinka: Standard;  //found empty after stripping
+			class Green_camo_lipetsk: Standard;  //found empty after stripping
+			class Green_camo_aggressor1: Standard;  //found empty after stripping
+			class Green_camo_aggressor2: Standard;  //found empty after stripping
 		};
 		class Attributes
 		{
@@ -1424,9 +1390,7 @@ class CfgVehicles
 					{1,1}
 				};
 			};
-			class Wheel_1_fake: Wheel_1
-			{
-			};
+			class Wheel_1_fake: Wheel_1;  //found empty after stripping
 			class Wheel_2: Wheel_1
 			{
 				steering=0;
@@ -1672,9 +1636,7 @@ class CfgVehicles
 						angleRangeVertical=120;
 						maxTrackableSpeed=500;
 					};
-					class PassiveRadarSensorComponent: SensorTemplatePassiveRadar
-					{
-					};
+					class PassiveRadarSensorComponent: SensorTemplatePassiveRadar;  //found empty after stripping
 					class ActiveRadarSensorComponent: SensorTemplateActiveRadar
 					{
 						class AirTarget
@@ -1691,9 +1653,7 @@ class CfgVehicles
 						angleRangeVertical=60;
 						groundNoiseDistanceCoef=0.1;
 					};
-					class LaserSensorComponent: SensorTemplateLaser
-					{
-					};
+					class LaserSensorComponent: SensorTemplateLaser;  //found empty after stripping
 				};
 			};
 			class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
@@ -5025,9 +4985,7 @@ class CfgVehicles
 						class ZPSGroup: PPSGroup
 						{
 							condition="0";
-							class GText: GText
-							{
-							};
+							class GText: GText;  //found empty after stripping
 						};
 					};
 					class TargetDiamond
@@ -5969,9 +5927,7 @@ class CfgVehicles
 				borderBottom=0;
 				color[]={0,1,0,0.1};
 				font="rhs_digital_font_rus";
-				class Bones
-				{
-				};
+				class Bones;  //found empty after stripping
 				class Draw
 				{
 					color[]={0.15000001,1,0.15000001};
@@ -9298,9 +9254,7 @@ class CfgVehicles
 						class ZPSGroup: PPSGroup
 						{
 							condition="0";
-							class GText: GText
-							{
-							};
+							class GText: GText;  //found empty after stripping
 						};
 					};
 					class TargetDiamond
@@ -17820,9 +17774,7 @@ class CfgVehicles
 				borderTop=0;
 				borderBottom=0;
 				color[]={0,1,0,0.1};
-				class Bones
-				{
-				};
+				class Bones;  //found empty after stripping
 				class Draw
 				{
 					color[]={1,1,1};
@@ -17862,9 +17814,7 @@ class CfgVehicles
 				borderBottom=0;
 				color[]={0,1,0,0.1};
 				font="rhs_digital_font_var";
-				class Bones
-				{
-				};
+				class Bones;  //found empty after stripping
 				class Draw
 				{
 					color[]={0.98000002,0.63,0};
@@ -18192,9 +18142,7 @@ class CfgVehicles
 						angleRangeVertical=120;
 						maxTrackableSpeed=500;
 					};
-					class PassiveRadarSensorComponent: SensorTemplatePassiveRadar
-					{
-					};
+					class PassiveRadarSensorComponent: SensorTemplatePassiveRadar;  //found empty after stripping
 					class ActiveRadarSensorComponent: SensorTemplateActiveRadar
 					{
 						class AirTarget
@@ -18211,12 +18159,8 @@ class CfgVehicles
 						angleRangeVertical=60;
 						groundNoiseDistanceCoef=0.1;
 					};
-					class LaserSensorComponent: SensorTemplateLaser
-					{
-					};
-					class DataLinkSensorComponent: SensorTemplateDataLink
-					{
-					};
+					class LaserSensorComponent: SensorTemplateLaser;  //found empty after stripping
+					class DataLinkSensorComponent: SensorTemplateDataLink;  //found empty after stripping
 				};
 			};
 			class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
@@ -21558,9 +21502,7 @@ class CfgVehicles
 						class ZPSGroup: PPSGroup
 						{
 							condition="0";
-							class GText: GText
-							{
-							};
+							class GText: GText;  //found empty after stripping
 						};
 					};
 					class TargetDiamond
@@ -22502,9 +22444,7 @@ class CfgVehicles
 				borderBottom=0;
 				color[]={0,1,0,0.1};
 				font="rhs_digital_font_rus";
-				class Bones
-				{
-				};
+				class Bones;  //found empty after stripping
 				class Draw
 				{
 					color[]={0.15000001,1,0.15000001};
@@ -23040,9 +22980,7 @@ class CfgVehicles
 				borderBottom=0;
 				color[]={0,0,0,0.1};
 				font="rhs_digital_font_var";
-				class Bones
-				{
-				};
+				class Bones;  //found empty after stripping
 				class Draw
 				{
 					color[]={0,0,0};
@@ -24601,9 +24539,7 @@ class CfgVehicles
 				borderTop=0;
 				borderBottom=0;
 				color[]={0,1,0,0.1};
-				class Bones
-				{
-				};
+				class Bones;  //found empty after stripping
 				class Draw
 				{
 					color[]={1,1,1};
@@ -24643,9 +24579,7 @@ class CfgVehicles
 				borderBottom=0;
 				color[]={0,1,0,0.1};
 				font="rhs_digital_font_var";
-				class Bones
-				{
-				};
+				class Bones;  //found empty after stripping
 				class Draw
 				{
 					color[]={0.98000002,0.63,0};
@@ -24847,11 +24781,7 @@ class CfgVehicles
 		transportFuel=0;
 	};
 	class rhs_t50_canopy;
-	class rhs_mig29s_canopy: rhs_t50_canopy
-	{
-	};
+	class rhs_mig29s_canopy: rhs_t50_canopy;  //found empty after stripping
 	class Thing;
-	class rhs_cockpitMap_waypoints: Thing
-	{
-	};
+	class rhs_cockpitMap_waypoints: Thing;  //found empty after stripping
 };

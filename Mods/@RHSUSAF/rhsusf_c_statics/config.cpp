@@ -97,15 +97,9 @@ class CfgVehicles
 			};
 		};
 	};
-	class StaticMGWeapon: StaticWeapon
-	{
-	};
-	class StaticATWeapon: StaticWeapon
-	{
-	};
-	class StaticAAWeapon: StaticWeapon
-	{
-	};
+	class StaticMGWeapon: StaticWeapon;  //found empty after stripping
+	class StaticATWeapon: StaticWeapon;  //found empty after stripping
+	class StaticAAWeapon: StaticWeapon;  //found empty after stripping
 	class StaticCannon: StaticWeapon
 	{
 		class ViewOptics;
@@ -114,9 +108,7 @@ class CfgVehicles
 	{
 		class ViewOptics;
 	};
-	class StaticMortar: StaticWeapon
-	{
-	};
+	class StaticMortar: StaticWeapon;  //found empty after stripping
 	class rhs_m2staticmg_base: StaticMGWeapon
 	{
 		icon="\rhsusf\addons\rhsusf_heavyweapons\data\map_ico\icomap_M2_CA.paa";
@@ -130,9 +122,7 @@ class CfgVehicles
 				name="telo";
 			};
 		};
-		class Damage
-		{
-		};
+		class Damage;  //found empty after stripping
 		class ViewPilot: ViewPilot
 		{
 			initAngleX=-0;
@@ -287,9 +277,7 @@ class CfgVehicles
 				name="telo";
 			};
 		};
-		class Damage
-		{
-		};
+		class Damage;  //found empty after stripping
 		class ViewPilot: ViewPilot
 		{
 			initAngleX=-0;
@@ -405,9 +393,7 @@ class CfgVehicles
 			minMoveZ=-0.075000003;
 			maxMoveZ=0.1;
 		};
-		class Damage
-		{
-		};
+		class Damage;  //found empty after stripping
 		class Turrets: Turrets
 		{
 			class MainTurret: MainTurret
@@ -553,9 +539,7 @@ class CfgVehicles
 				name="telo";
 			};
 		};
-		class Damage
-		{
-		};
+		class Damage;  //found empty after stripping
 		class ViewPilot: ViewPilot
 		{
 			initAngleX=-0;
@@ -615,9 +599,7 @@ class CfgVehicles
 				};
 			};
 		};
-		class EventHandlers: EventHandlers
-		{
-		};
+		class EventHandlers: EventHandlers;  //found empty after stripping
 	};
 	class RHS_Stinger_AA_pod_D: RHS_Stinger_AA_pod_Base
 	{
@@ -695,14 +677,10 @@ class CfgVehicles
 				minTurn=-180;
 				maxTurn=180;
 				usePiP=2;
-				class Hitpoints
-				{
-				};
+				class Hitpoints;  //found empty after stripping
 			};
 		};
-		class Damage
-		{
-		};
+		class Damage;  //found empty after stripping
 		htMin=1;
 		htMax=480;
 		afMax=0;
@@ -859,9 +837,7 @@ class CfgVehicles
 				name="telo";
 			};
 		};
-		class Damage
-		{
-		};
+		class Damage;  //found empty after stripping
 		class Turrets: Turrets
 		{
 			class MainTurret: MainTurret
@@ -902,9 +878,7 @@ class CfgVehicles
 		mfMax=0;
 		mFact=1;
 		tBody=450;
-		class EventHandlers: EventHandlers
-		{
-		};
+		class EventHandlers: EventHandlers;  //found empty after stripping
 		class Attributes
 		{
 			class rhs_caseDeleteTime

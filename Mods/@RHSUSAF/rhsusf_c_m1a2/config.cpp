@@ -518,16 +518,10 @@ class CfgVehicles
 		};
 		class textureSources
 		{
-			class woodland
-			{
-			};
-			class desert: woodland
-			{
-			};
+			class woodland;  //found empty after stripping
+			class desert: woodland;  //found empty after stripping
 		};
-		class Damage
-		{
-		};
+		class Damage;  //found empty after stripping
 		class ViewOptics: ViewOptics
 		{
 			visionMode[]=
@@ -536,9 +530,7 @@ class CfgVehicles
 				"NVG"
 			};
 		};
-		class EventHandlers: EventHandlers
-		{
-		};
+		class EventHandlers: EventHandlers;  //found empty after stripping
 	};
 	class rhsusf_m1a2sep1d_usarmy: rhsusf_m1a2tank_base
 	{
@@ -569,9 +561,7 @@ class CfgVehicles
 			{
 				class Turrets: Turrets
 				{
-					class CommanderOptics: CommanderOptics
-					{
-					};
+					class CommanderOptics: CommanderOptics;  //found empty after stripping
 					class Loader: Loader
 					{
 						maxTurn=117;
@@ -610,12 +600,8 @@ class CfgVehicles
 		};
 		class textureSources
 		{
-			class woodland
-			{
-			};
-			class desert: woodland
-			{
-			};
+			class woodland;  //found empty after stripping
+			class desert: woodland;  //found empty after stripping
 		};
 		class HitPoints: HitPoints
 		{
@@ -1628,12 +1614,8 @@ class CfgVehicles
 		};
 		class textureSources
 		{
-			class woodland
-			{
-			};
-			class desert: woodland
-			{
-			};
+			class woodland;  //found empty after stripping
+			class desert: woodland;  //found empty after stripping
 		};
 		class Turrets: Turrets
 		{
@@ -1654,58 +1636,30 @@ class CfgVehicles
 							"rhsusf_mag_duke"
 						};
 					};
-					class Loader: Loader
-					{
-					};
-					class CommanderMG: CommanderMG
-					{
-					};
+					class Loader: Loader;  //found empty after stripping
+					class CommanderMG: CommanderMG;  //found empty after stripping
 				};
 			};
 		};
 		class Attributes: Attributes
 		{
-			class rhs_hideIFFPanel: rhs_hideIFFPanel
-			{
-			};
-			class rhs_hideMiles: rhs_hideMiles
-			{
-			};
+			class rhs_hideIFFPanel: rhs_hideIFFPanel;  //found empty after stripping
+			class rhs_hideMiles: rhs_hideMiles;  //found empty after stripping
 			class rhs_hideDUKE: rhs_hideMiles
 			{
 				property="rhs_hideDUKE";
 				expression="_this animate ['DUKE_Hide',_value,true];if(_value isEqualTo 1)then{_this removeWeaponTurret ['rhsusf_weap_duke',[0,0]]}";
 			};
-			class rhs_decalBarrel_type: rhs_decalBarrel_type
-			{
-			};
-			class rhs_decalBarrel: rhs_decalBarrel
-			{
-			};
-			class rhs_decalPlatoon_type: rhs_decalPlatoon_type
-			{
-			};
-			class rhs_decalPlatoon: rhs_decalPlatoon
-			{
-			};
-			class rhs_ammoslot_1_type: rhs_ammoslot_1_type
-			{
-			};
-			class rhs_ammoslot_1: rhs_ammoslot_1
-			{
-			};
-			class rhs_ammoslot_2_type: rhs_ammoslot_2_type
-			{
-			};
-			class rhs_ammoslot_2: rhs_ammoslot_2
-			{
-			};
-			class rhs_ammoslot_3_type: rhs_ammoslot_3_type
-			{
-			};
-			class rhs_ammoslot_3: rhs_ammoslot_3
-			{
-			};
+			class rhs_decalBarrel_type: rhs_decalBarrel_type;  //found empty after stripping
+			class rhs_decalBarrel: rhs_decalBarrel;  //found empty after stripping
+			class rhs_decalPlatoon_type: rhs_decalPlatoon_type;  //found empty after stripping
+			class rhs_decalPlatoon: rhs_decalPlatoon;  //found empty after stripping
+			class rhs_ammoslot_1_type: rhs_ammoslot_1_type;  //found empty after stripping
+			class rhs_ammoslot_1: rhs_ammoslot_1;  //found empty after stripping
+			class rhs_ammoslot_2_type: rhs_ammoslot_2_type;  //found empty after stripping
+			class rhs_ammoslot_2: rhs_ammoslot_2;  //found empty after stripping
+			class rhs_ammoslot_3_type: rhs_ammoslot_3_type;  //found empty after stripping
+			class rhs_ammoslot_3: rhs_ammoslot_3;  //found empty after stripping
 		};
 		class EventHandlers: EventHandlers
 		{

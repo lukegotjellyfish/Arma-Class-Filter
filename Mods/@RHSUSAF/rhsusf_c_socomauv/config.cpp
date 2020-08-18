@@ -75,9 +75,7 @@ class CfgVehicles
 			"rhsusf_mag_duke"
 		};
 		class CargoTurret;
-		class Turrets: Turrets
-		{
-		};
+		class Turrets: Turrets;  //found empty after stripping
 		class DriverOpticsIn
 		{
 			class DVE_Wide: ViewOptics
@@ -105,12 +103,8 @@ class CfgVehicles
 		};
 		class textureSources
 		{
-			class rhs_desert
-			{
-			};
-			class rhs_woodland
-			{
-			};
+			class rhs_desert;  //found empty after stripping
+			class rhs_woodland;  //found empty after stripping
 		};
 		class Attributes
 		{
@@ -168,9 +162,7 @@ class CfgVehicles
 				explosionShielding=0.0099999998;
 				radius=0.15000001;
 			};
-			class HitDuke2: HitDuke1
-			{
-			};
+			class HitDuke2: HitDuke1;  //found empty after stripping
 			class HitGlass7: HitGlass1
 			{
 				name="glass7";
@@ -322,12 +314,8 @@ class CfgVehicles
 				maxHandBrakeTorque=300000;
 			};
 		};
-		class Damage
-		{
-		};
-		class EventHandlers: EventHandlers
-		{
-		};
+		class Damage;  //found empty after stripping
+		class EventHandlers: EventHandlers;  //found empty after stripping
 		class VehicleTransport
 		{
 			class Cargo

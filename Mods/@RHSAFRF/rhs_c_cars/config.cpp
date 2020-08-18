@@ -492,9 +492,7 @@ class CfgVehicles
 					"rhs_faction_vv"
 				};
 			};
-			class Camo: standard
-			{
-			};
+			class Camo: standard;  //found empty after stripping
 		};
 		class Attributes
 		{
@@ -665,9 +663,7 @@ class CfgVehicles
 			5.6234101e-005,
 			1
 		};
-		class Damage
-		{
-		};
+		class Damage;  //found empty after stripping
 		class HitPoints: HitPoints
 		{
 			class HitLFWheel: HitLFWheel
@@ -794,9 +790,7 @@ class CfgVehicles
 			};
 		};
 	};
-	class rhs_tigr_vdv: rhs_tigr_base
-	{
-	};
+	class rhs_tigr_vdv: rhs_tigr_base;  //found empty after stripping
 	class rhs_tigr_vmf: rhs_tigr_vdv
 	{
 		rhs_decalParameters[]=
@@ -821,9 +815,7 @@ class CfgVehicles
 			"['Label', cDecalsTigrRightArmyPlaces, 'Army', [6,1]]"
 		};
 	};
-	class rhs_tigr_3camo_vdv: rhs_tigr_base
-	{
-	};
+	class rhs_tigr_3camo_vdv: rhs_tigr_base;  //found empty after stripping
 	class rhs_tigr_3camo_vmf: rhs_tigr_3camo_vdv
 	{
 		rhs_decalParameters[]=
@@ -882,9 +874,7 @@ class CfgVehicles
 			"['Label', cDecalsTigrRightArmyPlaces, 'Army', [6,1]]"
 		};
 	};
-	class rhs_tigr_ffv_3camo_vdv: rhs_tigr_ffv_vdv
-	{
-	};
+	class rhs_tigr_ffv_3camo_vdv: rhs_tigr_ffv_vdv;  //found empty after stripping
 	class rhs_tigr_ffv_3camo_vmf: rhs_tigr_ffv_3camo_vdv
 	{
 		rhs_decalParameters[]=
@@ -1091,9 +1081,7 @@ class CfgVehicles
 				containerClosed="_this call rhs_fnc_tigr_sts_inventory_eh;";
 				reloaded="_this call rhs_fnc_tigr_sts_reloaded_eh";
 			};
-			class RHS_TigrHandler
-			{
-			};
+			class RHS_TigrHandler;  //found empty after stripping
 		};
 	};
 	class rhs_tigr_sts_vmf: rhs_tigr_sts_vdv
@@ -1105,12 +1093,8 @@ class CfgVehicles
 		};
 		class Turrets: Turrets
 		{
-			class MainTurret: MainTurret
-			{
-			};
-			class AGS_Turret: AGS_Turret
-			{
-			};
+			class MainTurret: MainTurret;  //found empty after stripping
+			class AGS_Turret: AGS_Turret;  //found empty after stripping
 		};
 	};
 	class rhs_tigr_sts_msv: rhs_tigr_sts_vdv
@@ -1122,12 +1106,8 @@ class CfgVehicles
 		};
 		class Turrets: Turrets
 		{
-			class MainTurret: MainTurret
-			{
-			};
-			class AGS_Turret: AGS_Turret
-			{
-			};
+			class MainTurret: MainTurret;  //found empty after stripping
+			class AGS_Turret: AGS_Turret;  //found empty after stripping
 		};
 	};
 	class rhs_tigr_sts_vv: rhs_tigr_sts_vdv
@@ -1139,17 +1119,11 @@ class CfgVehicles
 		};
 		class Turrets: Turrets
 		{
-			class MainTurret: MainTurret
-			{
-			};
-			class AGS_Turret: AGS_Turret
-			{
-			};
+			class MainTurret: MainTurret;  //found empty after stripping
+			class AGS_Turret: AGS_Turret;  //found empty after stripping
 		};
 	};
-	class rhs_tigr_sts_3camo_vdv: rhs_tigr_sts_vdv
-	{
-	};
+	class rhs_tigr_sts_3camo_vdv: rhs_tigr_sts_vdv;  //found empty after stripping
 	class rhs_tigr_sts_3camo_vmf: rhs_tigr_sts_3camo_vdv
 	{
 		rhs_decalParameters[]=
@@ -1159,12 +1133,8 @@ class CfgVehicles
 		};
 		class Turrets: Turrets
 		{
-			class MainTurret: MainTurret
-			{
-			};
-			class AGS_Turret: AGS_Turret
-			{
-			};
+			class MainTurret: MainTurret;  //found empty after stripping
+			class AGS_Turret: AGS_Turret;  //found empty after stripping
 		};
 	};
 	class rhs_tigr_sts_3camo_msv: rhs_tigr_sts_3camo_vdv
@@ -1176,12 +1146,8 @@ class CfgVehicles
 		};
 		class Turrets: Turrets
 		{
-			class MainTurret: MainTurret
-			{
-			};
-			class AGS_Turret: AGS_Turret
-			{
-			};
+			class MainTurret: MainTurret;  //found empty after stripping
+			class AGS_Turret: AGS_Turret;  //found empty after stripping
 		};
 	};
 	class rhs_tigr_sts_3camo_vv: rhs_tigr_sts_3camo_vdv
@@ -1193,12 +1159,8 @@ class CfgVehicles
 		};
 		class Turrets: Turrets
 		{
-			class MainTurret: MainTurret
-			{
-			};
-			class AGS_Turret: AGS_Turret
-			{
-			};
+			class MainTurret: MainTurret;  //found empty after stripping
+			class AGS_Turret: AGS_Turret;  //found empty after stripping
 		};
 	};
 	class rhs_tigr_m_vdv: rhs_tigr_vdv
@@ -1348,9 +1310,7 @@ class CfgVehicles
 		};
 		hideProxyInCombat=0;
 		enableManualFire=0;
-		class Turrets: Turrets
-		{
-		};
+		class Turrets: Turrets;  //found empty after stripping
 		class EventHandlers: EventHandlers
 		{
 			class RHS_EventHandlers: RHS_EventHandlers
@@ -1359,9 +1319,7 @@ class CfgVehicles
 				getIn="_this call rhs_fnc_tigrm_turret_getin_eh";
 				seatSwitched="_this call rhs_fnc_tigrm_turret_seat_eh";
 			};
-			class RHS_TigrHandler
-			{
-			};
+			class RHS_TigrHandler;  //found empty after stripping
 		};
 	};
 	class rhs_tigr_m_vmf: rhs_tigr_m_vdv
@@ -1371,9 +1329,7 @@ class CfgVehicles
 			"['Number', cDecalsTigr4NumberPlaces, 'LicensePlate']",
 			"['Label', cDecalsTigrRightArmyPlaces, 'Army', [3,1]]"
 		};
-		class Turrets: Turrets
-		{
-		};
+		class Turrets: Turrets;  //found empty after stripping
 	};
 	class rhs_tigr_m_msv: rhs_tigr_m_vdv
 	{
@@ -1382,9 +1338,7 @@ class CfgVehicles
 			"['Number', cDecalsTigr4NumberPlaces, 'LicensePlate']",
 			"['Label', cDecalsTigrRightArmyPlaces, 'Platoon', 12]"
 		};
-		class Turrets: Turrets
-		{
-		};
+		class Turrets: Turrets;  //found empty after stripping
 	};
 	class rhs_tigr_m_vv: rhs_tigr_m_vdv
 	{
@@ -1393,13 +1347,9 @@ class CfgVehicles
 			"['Number', cDecalsTigr4NumberPlaces, 'LicensePlate']",
 			"['Label', cDecalsTigrRightArmyPlaces, 'Army', [6,1]]"
 		};
-		class Turrets: Turrets
-		{
-		};
+		class Turrets: Turrets;  //found empty after stripping
 	};
-	class rhs_tigr_m_3camo_vdv: rhs_tigr_m_vdv
-	{
-	};
+	class rhs_tigr_m_3camo_vdv: rhs_tigr_m_vdv;  //found empty after stripping
 	class rhs_tigr_m_3camo_vmf: rhs_tigr_m_3camo_vdv
 	{
 		rhs_decalParameters[]=
@@ -1407,9 +1357,7 @@ class CfgVehicles
 			"['Number', cDecalsTigr4NumberPlaces, 'LicensePlate']",
 			"['Label', cDecalsTigrRightArmyPlaces, 'Army', [3,1]]"
 		};
-		class Turrets: Turrets
-		{
-		};
+		class Turrets: Turrets;  //found empty after stripping
 	};
 	class rhs_tigr_m_3camo_msv: rhs_tigr_m_3camo_vdv
 	{
@@ -1418,9 +1366,7 @@ class CfgVehicles
 			"['Number', cDecalsTigr4NumberPlaces, 'LicensePlate']",
 			"['Label', cDecalsTigrRightArmyPlaces, 'Platoon', 12]"
 		};
-		class Turrets: Turrets
-		{
-		};
+		class Turrets: Turrets;  //found empty after stripping
 	};
 	class rhs_tigr_m_3camo_vv: rhs_tigr_m_3camo_vdv
 	{
@@ -1429,8 +1375,6 @@ class CfgVehicles
 			"['Number', cDecalsTigr4NumberPlaces, 'LicensePlate']",
 			"['Label', cDecalsTigrRightArmyPlaces, 'Army', [6,1]]"
 		};
-		class Turrets: Turrets
-		{
-		};
+		class Turrets: Turrets;  //found empty after stripping
 	};
 };

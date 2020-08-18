@@ -15325,64 +15325,32 @@ class CfgVehicles
 			class HitLegs;
 		};
 	};
-	class SoldierWB: CAManBase
-	{
-	};
+	class SoldierWB: CAManBase;  //found empty after stripping
 	class B_FieldPack_oli;
 	class B_Carryall_oli;
-	class rhsgref_cdf_backpack_mg: B_Carryall_oli
-	{
-	};
-	class rhsgref_cdf_backpack_mg2: B_Carryall_oli
-	{
-	};
-	class rhsgref_cdf_backpack_mg3: B_Carryall_oli
-	{
-	};
-	class rhsgref_cdf_backpack_engineer: B_Carryall_oli
-	{
-	};
-	class rhsgref_cdf_backpack_medic: B_Carryall_oli
-	{
-	};
+	class rhsgref_cdf_backpack_mg: B_Carryall_oli;  //found empty after stripping
+	class rhsgref_cdf_backpack_mg2: B_Carryall_oli;  //found empty after stripping
+	class rhsgref_cdf_backpack_mg3: B_Carryall_oli;  //found empty after stripping
+	class rhsgref_cdf_backpack_engineer: B_Carryall_oli;  //found empty after stripping
+	class rhsgref_cdf_backpack_medic: B_Carryall_oli;  //found empty after stripping
 	class B_TacticalPack_oli;
 	class B_AssaultPack_blk;
 	class rhsusf_falconii;
-	class rhsgref_nat_backpack_mg: B_AssaultPack_blk
-	{
-	};
-	class rhsgref_nat_backpack_mg42: rhsusf_falconii
-	{
-	};
-	class rhsgref_nat_backpack_engineer: B_Carryall_oli
-	{
-	};
-	class rhsgref_nat_backpack_medic: B_TacticalPack_oli
-	{
-	};
-	class rhsgref_nat_backpack_explosives: B_TacticalPack_oli
-	{
-	};
+	class rhsgref_nat_backpack_mg: B_AssaultPack_blk;  //found empty after stripping
+	class rhsgref_nat_backpack_mg42: rhsusf_falconii;  //found empty after stripping
+	class rhsgref_nat_backpack_engineer: B_Carryall_oli;  //found empty after stripping
+	class rhsgref_nat_backpack_medic: B_TacticalPack_oli;  //found empty after stripping
+	class rhsgref_nat_backpack_explosives: B_TacticalPack_oli;  //found empty after stripping
 	class B_FieldPack_khk;
 	class B_FieldPack_cbr;
 	class B_TacticalPack_blk;
 	class B_Carryall_cbr;
 	class rhs_assault_umbts_engineer_empty;
-	class rhsgref_ins_pack: B_FieldPack_khk
-	{
-	};
-	class rhsgref_ins_pack_GR: B_FieldPack_cbr
-	{
-	};
-	class rhsgref_ins_packMG: B_TacticalPack_blk
-	{
-	};
-	class rhsgref_ins_pack_demo: rhs_assault_umbts_engineer_empty
-	{
-	};
-	class rhsgref_ins_pack_saboteur: rhsgref_ins_pack_demo
-	{
-	};
+	class rhsgref_ins_pack: B_FieldPack_khk;  //found empty after stripping
+	class rhsgref_ins_pack_GR: B_FieldPack_cbr;  //found empty after stripping
+	class rhsgref_ins_packMG: B_TacticalPack_blk;  //found empty after stripping
+	class rhsgref_ins_pack_demo: rhs_assault_umbts_engineer_empty;  //found empty after stripping
+	class rhsgref_ins_pack_saboteur: rhsgref_ins_pack_demo;  //found empty after stripping
 	class Bag_Base;
 	class B_AssaultPack_rgr;
 	class B_Kitbag_rgr;
@@ -15412,38 +15380,18 @@ class CfgVehicles
 			"\rhsgref\addons\rhsgref_infantry\data_cdf\alicepack_co_gref_ttsko.paa"
 		};
 	};
-	class rhsgref_hidf_alicepack_ar: rhsgref_hidf_alicepack
-	{
-	};
-	class rhsgref_hidf_alicepack_gr: rhsgref_hidf_alicepack
-	{
-	};
-	class rhsgref_hidf_alicepack_mg: rhsgref_hidf_alicepack
-	{
-	};
-	class rhsgref_hidf_alicepack_medic: rhsgref_hidf_alicepack
-	{
-	};
-	class rhsgref_hidf_backpack_ar: B_AssaultPack_rgr
-	{
-	};
-	class rhsgref_hidf_backpack_gr: B_AssaultPack_rgr
-	{
-	};
-	class rhsgref_hidf_backpack_mg: B_TacticalPack_oli
-	{
-	};
-	class rhsgref_hidf_backpack_medic: B_TacticalPack_oli
-	{
-	};
+	class rhsgref_hidf_alicepack_ar: rhsgref_hidf_alicepack;  //found empty after stripping
+	class rhsgref_hidf_alicepack_gr: rhsgref_hidf_alicepack;  //found empty after stripping
+	class rhsgref_hidf_alicepack_mg: rhsgref_hidf_alicepack;  //found empty after stripping
+	class rhsgref_hidf_alicepack_medic: rhsgref_hidf_alicepack;  //found empty after stripping
+	class rhsgref_hidf_backpack_ar: B_AssaultPack_rgr;  //found empty after stripping
+	class rhsgref_hidf_backpack_gr: B_AssaultPack_rgr;  //found empty after stripping
+	class rhsgref_hidf_backpack_mg: B_TacticalPack_oli;  //found empty after stripping
+	class rhsgref_hidf_backpack_medic: B_TacticalPack_oli;  //found empty after stripping
 	class rhs_rpg;
-	class rhsgref_tla_backpack_rpg: rhs_rpg
-	{
-	};
+	class rhsgref_tla_backpack_rpg: rhs_rpg;  //found empty after stripping
 	class rhs_sidor;
-	class rhsgref_tla_backpack_mg42: rhs_sidor
-	{
-	};
+	class rhsgref_tla_backpack_mg42: rhs_sidor;  //found empty after stripping
 	class rhsgref_cdf_ngd_base: SoldierGB
 	{
 		side=2;
@@ -15467,9 +15415,7 @@ class CfgVehicles
 		secondaryAmmoCoef=0.2;
 		handgunAmmoCoef=0.1;
 		cost=100000;
-		class Wounds
-		{
-		};
+		class Wounds;  //found empty after stripping
 		selectionbodywound="body_injury";
 		selectionlarmwound="l_arm_injury";
 		selectionlarmwound1="l_arm_injury";
@@ -16268,9 +16214,7 @@ class CfgVehicles
 		secondaryAmmoCoef=0.2;
 		handgunAmmoCoef=0.1;
 		cost=100000;
-		class Wounds
-		{
-		};
+		class Wounds;  //found empty after stripping
 		selectionbodywound="body_injury";
 		selectionlarmwound="l_arm_injury";
 		selectionlarmwound1="l_arm_injury";
@@ -16509,9 +16453,7 @@ class CfgVehicles
 			"Put"
 		};
 	};
-	class rhsgref_cdf_reg_rifleman_aks74: rhsgref_cdf_reg_rifleman_m70
-	{
-	};
+	class rhsgref_cdf_reg_rifleman_aks74: rhsgref_cdf_reg_rifleman_m70;  //found empty after stripping
 	class rhsgref_cdf_reg_rifleman_akm: rhsgref_cdf_reg_rifleman_m70
 	{
 		magazines[]=
@@ -17411,9 +17353,7 @@ class CfgVehicles
 		secondaryAmmoCoef=0.2;
 		handgunAmmoCoef=0.1;
 		cost=100000;
-		class Wounds
-		{
-		};
+		class Wounds;  //found empty after stripping
 		class UniformInfo
 		{
 			class SlotsInfo
@@ -17501,15 +17441,9 @@ class CfgVehicles
 			"rhs_mag_rgn"
 		};
 	};
-	class rhsgref_cdf_para_TTsKO_summer: rhsgref_cdf_para_base
-	{
-	};
-	class rhsgref_cdf_para_TTsKO_fall: rhsgref_cdf_para_base
-	{
-	};
-	class rhsgref_cdf_para_TTsKO_dark: rhsgref_cdf_para_base
-	{
-	};
+	class rhsgref_cdf_para_TTsKO_summer: rhsgref_cdf_para_base;  //found empty after stripping
+	class rhsgref_cdf_para_TTsKO_fall: rhsgref_cdf_para_base;  //found empty after stripping
+	class rhsgref_cdf_para_TTsKO_dark: rhsgref_cdf_para_base;  //found empty after stripping
 	class rhsgref_cdf_para_rifleman: rhsgref_cdf_para_base
 	{
 		linkedItems[]=
@@ -18737,9 +18671,7 @@ class CfgVehicles
 		secondaryAmmoCoef=0.2;
 		handgunAmmoCoef=0.1;
 		cost=100000;
-		class Wounds
-		{
-		};
+		class Wounds;  //found empty after stripping
 		selectionbodywound="body_injury";
 		selectionlarmwound="l_arm_injury";
 		selectionlarmwound1="l_arm_injury";
@@ -18883,9 +18815,7 @@ class CfgVehicles
 	class rhsgref_nat_gorka_1_flecktarn: rhsgref_nat_base
 	{
 		uniformClass="rhsgref_uniform_gorka_1_f";
-		class Wounds
-		{
-		};
+		class Wounds;  //found empty after stripping
 	};
 	class rhsgref_nat_rifleman: rhsgref_nat_base
 	{
@@ -19147,9 +19077,7 @@ class CfgVehicles
 			"rhs_mag_f1"
 		};
 	};
-	class rhsgref_nat_rifleman_mp44: rhsgref_nat_rifleman_m92
-	{
-	};
+	class rhsgref_nat_rifleman_mp44: rhsgref_nat_rifleman_m92;  //found empty after stripping
 	class rhsgref_nat_rifleman_vz58: rhsgref_nat_base
 	{
 		uniformClass="rhsgref_uniform_dpm_olive";
@@ -19948,9 +19876,7 @@ class CfgVehicles
 			"rhs_mag_f1"
 		};
 	};
-	class rhsgref_nat_pmil_rifleman_akm: rhsgref_nat_pmil_rifleman_m92
-	{
-	};
+	class rhsgref_nat_pmil_rifleman_akm: rhsgref_nat_pmil_rifleman_m92;  //found empty after stripping
 	class rhsgref_nat_pmil_rifleman_aksu: rhsgref_nat_pmil_rifleman
 	{
 		linkedItems[]=
@@ -20527,9 +20453,7 @@ class CfgVehicles
 		secondaryAmmoCoef=0.2;
 		handgunAmmoCoef=0.1;
 		cost=100000;
-		class Wounds
-		{
-		};
+		class Wounds;  //found empty after stripping
 		selectionbodywound="body_injury";
 		selectionlarmwound="l_arm_injury";
 		selectionlarmwound1="l_arm_injury";
@@ -21773,9 +21697,7 @@ class CfgVehicles
 		secondaryAmmoCoef=0.2;
 		handgunAmmoCoef=0.1;
 		cost=100000;
-		class Wounds
-		{
-		};
+		class Wounds;  //found empty after stripping
 		selectionbodywound="body_injury";
 		selectionlarmwound="l_arm_injury";
 		selectionlarmwound1="l_arm_injury";
@@ -22934,9 +22856,7 @@ class CfgVehicles
 		secondaryAmmoCoef=0.2;
 		handgunAmmoCoef=0.1;
 		cost=100000;
-		class Wounds
-		{
-		};
+		class Wounds;  //found empty after stripping
 		class UniformInfo
 		{
 			class SlotsInfo
@@ -25324,50 +25244,26 @@ class cfgWeapons
 	{
 		Scope=2;
 	};
-	class rhs_6b5_officer_khaki: rhs_6b5_officer
-	{
-	};
-	class rhs_6b5_medic_khaki: rhs_6b5_medic
-	{
-	};
-	class rhs_6b5_sniper_khaki: rhs_6b5_sniper
-	{
-	};
-	class rhs_6b5_rifleman_khaki: rhs_6b5_rifleman
-	{
-	};
+	class rhs_6b5_officer_khaki: rhs_6b5_officer;  //found empty after stripping
+	class rhs_6b5_medic_khaki: rhs_6b5_medic;  //found empty after stripping
+	class rhs_6b5_sniper_khaki: rhs_6b5_sniper;  //found empty after stripping
+	class rhs_6b5_rifleman_khaki: rhs_6b5_rifleman;  //found empty after stripping
 	class rhs_6b5_vsr: rhs_6b5
 	{
 		Scope=2;
 	};
-	class rhs_6b5_officer_vsr: rhs_6b5_officer
-	{
-	};
-	class rhs_6b5_medic_vsr: rhs_6b5_medic
-	{
-	};
-	class rhs_6b5_sniper_vsr: rhs_6b5_sniper
-	{
-	};
-	class rhs_6b5_rifleman_vsr: rhs_6b5_rifleman
-	{
-	};
+	class rhs_6b5_officer_vsr: rhs_6b5_officer;  //found empty after stripping
+	class rhs_6b5_medic_vsr: rhs_6b5_medic;  //found empty after stripping
+	class rhs_6b5_sniper_vsr: rhs_6b5_sniper;  //found empty after stripping
+	class rhs_6b5_rifleman_vsr: rhs_6b5_rifleman;  //found empty after stripping
 	class rhs_6b5_ttsko: rhs_6b5
 	{
 		Scope=2;
 	};
-	class rhs_6b5_officer_ttsko: rhs_6b5_officer
-	{
-	};
-	class rhs_6b5_medic_ttsko: rhs_6b5_medic
-	{
-	};
-	class rhs_6b5_sniper_ttsko: rhs_6b5_sniper
-	{
-	};
-	class rhs_6b5_rifleman_ttsko: rhs_6b5_rifleman
-	{
-	};
+	class rhs_6b5_officer_ttsko: rhs_6b5_officer;  //found empty after stripping
+	class rhs_6b5_medic_ttsko: rhs_6b5_medic;  //found empty after stripping
+	class rhs_6b5_sniper_ttsko: rhs_6b5_sniper;  //found empty after stripping
+	class rhs_6b5_rifleman_ttsko: rhs_6b5_rifleman;  //found empty after stripping
 	class rhsgref_otv_khaki: rhsgref_6b23_khaki_rifleman
 	{
 		Scope=2;
@@ -25528,28 +25424,14 @@ class cfgWeapons
 	};
 	class rhs_weap_ak103;
 	class rhs_weap_svds;
-	class rhsgref_weap_ak103_pso1m21: rhs_weap_ak103
-	{
-	};
-	class rhsgref_weap_ak103_pso1m2: rhs_weap_ak103
-	{
-	};
-	class rhsgref_weap_svds: rhs_weap_svds
-	{
-	};
+	class rhsgref_weap_ak103_pso1m21: rhs_weap_ak103;  //found empty after stripping
+	class rhsgref_weap_ak103_pso1m2: rhs_weap_ak103;  //found empty after stripping
+	class rhsgref_weap_svds: rhs_weap_svds;  //found empty after stripping
 	class rhs_weap_savz58v_rail_black;
 	class rhs_weap_savz58v_ris_grip3;
 	class rhs_weap_akm_zenitco01_b33_grip1;
-	class rhsgref_weap_savz58v_black_rxo1: rhs_weap_savz58v_rail_black
-	{
-	};
-	class rhsgref_weap_savz58v_saboteur: rhs_weap_savz58v_ris_grip3
-	{
-	};
-	class rhsgref_weap_akm_zenitco: rhs_weap_akm_zenitco01_b33_grip1
-	{
-	};
-	class rhsgref_weap_akm_zenitco_sd: rhs_weap_akm_zenitco01_b33_grip1
-	{
-	};
+	class rhsgref_weap_savz58v_black_rxo1: rhs_weap_savz58v_rail_black;  //found empty after stripping
+	class rhsgref_weap_savz58v_saboteur: rhs_weap_savz58v_ris_grip3;  //found empty after stripping
+	class rhsgref_weap_akm_zenitco: rhs_weap_akm_zenitco01_b33_grip1;  //found empty after stripping
+	class rhsgref_weap_akm_zenitco_sd: rhs_weap_akm_zenitco01_b33_grip1;  //found empty after stripping
 };

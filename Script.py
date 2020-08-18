@@ -5,6 +5,8 @@ import os
 import re
 import errno
 
+os.environ['LINES'] = "10000000"
+os.environ['COLUMNS'] = "500"
 os.system("")
 
 cred     = '\033[91m'
@@ -99,6 +101,7 @@ def newFile(root, file):
 							break
 			toSkip = i
 			if i > 0:
+				print(cred + "[SKIPPED CLASS]     " + cend + cgrey + line.replace("\n","").replace("	","  ") + cend)
 				index += 1
 				continue
 
@@ -112,6 +115,7 @@ def newFile(root, file):
 					cont = True
 			if cont == True:
 				index += 1
+				print(cred + "[SKIPPED ATTRIBUTE] " + cend + cgrey + line.replace("\n","").replace("	","  ") + cend)
 				continue
 			fileWriteList.append(line)
 
@@ -127,6 +131,7 @@ def newFile(root, file):
 						i += 1
 					toSkip = i
 			if i > 0:
+				print(cred + "[SKIPPED ATTRIBUTE] " + cend + cgrey + line.replace("\n","").replace("	","  ") + cend)
 				index += 1
 				continue
 			fileWriteList.append(line)
@@ -145,17 +150,22 @@ def newFile(root, file):
 				x += 1
 				continue
 
-			tabCount = line.count("	")
-	#do i need one of the if statements? can i combine the sub-if statement into the one above? maybe. This mess aesthetically fits the project though
-			if item.replace("	","").startswith("class") and not item.endswith(";\n") and fileWriteList[x+2].replace("	","").endswith("};\n"):
-				if fileWriteList[x+1].count("	") != tabCount:
-					pass
+			if item.replace("	","").startswith("class") and not item.endswith(";\n"):
+				#input("Found multiLine class [" + item.replace("\n","") + "], press to continue")
+				if fileWriteList[x+1].replace("	","") == "{\n":
+					#input("MultiLine class first line is a brace")
+					if fileWriteList[x+2].replace("	","") == "};\n":
+						#input("MultiLine class second line is a closing brace - do not add body of class")
+						writeToThisFile.write(item.replace("\n","") + ";  //found empty after stripping\n")
+						print(cred + "[EMPTY CLASS]     " + cend + cgrey + item.replace("\n","").replace("	","  ") + cend)
+						x += 1
+						toSkip = 2
+						continue
+					else:
+						pass
 				else:
-					writeToThisFile.write(item.replace("\n","") + ";  //found empty after stripping\n")
-					print(cred + "[EMPTY CLASS] " + cend + cgrey + item.replace("\n","") + cend)
-					x += 1
-					toSkip = 2
-					continue
+					pass
+			#print("Added: " + item.replace("\n","").replace("	",""))
 			writeToThisFile.write(item)
 			x += 1
 

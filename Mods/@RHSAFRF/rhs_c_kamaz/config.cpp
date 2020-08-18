@@ -125,9 +125,7 @@ class CfgVehicles
 		class CargoTurret;
 		class Turrets: Turrets
 		{
-			class CargoTurret_02: CargoTurret_01
-			{
-			};
+			class CargoTurret_02: CargoTurret_01;  //found empty after stripping
 		};
 		class EventHandlers;
 	};
@@ -303,9 +301,7 @@ class CfgVehicles
 		canHideDriver=0;
 		driverLeftLegAnimName="pedalL";
 		driverRightLegAnimName="pedalR";
-		class Damage
-		{
-		};
+		class Damage;  //found empty after stripping
 		armorLights=0.0099999998;
 		class HitPoints: HitPoints
 		{
@@ -650,9 +646,7 @@ class CfgVehicles
 				enabledByAnimationSource="cover_end_hide";
 				forceHideGunner=1;
 				commanding=-2;
-				class Hitpoints
-				{
-				};
+				class Hitpoints;  //found empty after stripping
 			};
 			class CargoTurret_03: CargoTurret_01
 			{
@@ -705,12 +699,8 @@ class CfgVehicles
 		hideProxyInCombat=1;
 		class Turrets: Turrets
 		{
-			class CargoTurret_02: CargoTurret_02
-			{
-			};
-			class CargoTurret_03: CargoTurret_03
-			{
-			};
+			class CargoTurret_02: CargoTurret_02;  //found empty after stripping
+			class CargoTurret_03: CargoTurret_03;  //found empty after stripping
 			class CargoTurret_04: CargoTurret_02
 			{
 				animationSourceHatch="turnout1";
@@ -816,9 +806,7 @@ class CfgVehicles
 	{
 		class Turrets: Turrets
 		{
-			class CargoTurret_03: CargoTurret_03
-			{
-			};
+			class CargoTurret_03: CargoTurret_03;  //found empty after stripping
 		};
 		class VehicleTransport
 		{
@@ -897,9 +885,7 @@ class CfgVehicles
 	{
 		class VehicleTransport: VehicleTransport
 		{
-			class Cargo: Cargo
-			{
-			};
+			class Cargo: Cargo;  //found empty after stripping
 			class Carrier: Carrier
 			{
 				disableHeightLimit=0;

@@ -9536,17 +9536,13 @@ class CfgWeapons
 		class Eventhandlers;
 	};
 	class Pistol_Base_F;
-	class arifle_MX_Base_F: Rifle_Base_F
-	{
-	};
+	class arifle_MX_Base_F: Rifle_Base_F;  //found empty after stripping
 	class Rifle_Long_Base_F;
 	class UGL_F;
 	class srifle_EBR_F;
 	class LMG_Mk200_F;
 	class MGun;
-	class LMG_RCWS: MGun
-	{
-	};
+	class LMG_RCWS: MGun;  //found empty after stripping
 	class SMG_01_Base;
 	class SMG_01_F: SMG_01_Base
 	{
@@ -9556,28 +9552,18 @@ class CfgWeapons
 		class GunParticles;
 	};
 	class Launcher;
-	class Launcher_Base_F: Launcher
-	{
-	};
+	class Launcher_Base_F: Launcher;  //found empty after stripping
 	class launch_O_Titan_F;
 	class rhs_weap_kar98k_Base_F: Rifle_Base_F
 	{
-		class Single: Mode_SemiAuto
-		{
-		};
+		class Single: Mode_SemiAuto;  //found empty after stripping
 	};
 	class rhs_weap_m38_Base_F: Rifle_Base_F
 	{
-		class Single: Mode_SemiAuto
-		{
-		};
+		class Single: Mode_SemiAuto;  //found empty after stripping
 	};
-	class rhs_weap_m38: rhs_weap_m38_Base_F
-	{
-	};
-	class rhs_weap_m38_rail: rhs_weap_m38
-	{
-	};
+	class rhs_weap_m38: rhs_weap_m38_Base_F;  //found empty after stripping
+	class rhs_weap_m38_rail: rhs_weap_m38;  //found empty after stripping
 	class rhs_weap_mosin_sbr: rhs_weap_m38_rail
 	{
 		class Single: Single
@@ -9683,39 +9669,25 @@ class CfgWeapons
 	};
 	class rhs_weap_savz61: SMG_01_F
 	{
-		class Single: Single
-		{
-		};
-		class FullAuto: FullAuto
-		{
-		};
+		class Single: Single;  //found empty after stripping
+		class FullAuto: FullAuto;  //found empty after stripping
 	};
 	class rhs_weap_m3a1_base: Rifle_Base_F
 	{
-		class FullAuto: Mode_FullAuto
-		{
-		};
+		class FullAuto: Mode_FullAuto;  //found empty after stripping
 	};
 	class rhs_weap_m3a1_specops: rhs_weap_m3a1_base
 	{
-		class FullAuto: FullAuto
-		{
-		};
+		class FullAuto: FullAuto;  //found empty after stripping
 	};
 	class rhs_weap_MP44_base: Rifle_Base_F
 	{
-		class Single: Mode_SemiAuto
-		{
-		};
-		class FullAuto: Mode_FullAuto
-		{
-		};
+		class Single: Mode_SemiAuto;  //found empty after stripping
+		class FullAuto: Mode_FullAuto;  //found empty after stripping
 	};
 	class rhs_weap_M1garand_Base_F: Rifle_Base_F
 	{
-		class Single: Mode_SemiAuto
-		{
-		};
+		class Single: Mode_SemiAuto;  //found empty after stripping
 	};
 	class rhs_weap_fnfal_base: Rifle_Base_F
 	{
@@ -9744,9 +9716,7 @@ class CfgWeapons
 	};
 	class rhs_weap_mg42_base: Rifle_Base_F
 	{
-		class manual: Mode_FullAuto
-		{
-		};
+		class manual: Mode_FullAuto;  //found empty after stripping
 		class Eventhandlers: Eventhandlers
 		{
 			class RHSGREF_mg42_beltIntake
@@ -9771,7 +9741,9 @@ class CfgWeapons
 		};
 	};
 };
-class CfgSounds;  //found empty after stripping
+class CfgSounds
+{
+	sounds[]={};
 	class RHSGREF_beltIntake_m249
 	{
 		name="RHSGREF_beltIntake_m249";

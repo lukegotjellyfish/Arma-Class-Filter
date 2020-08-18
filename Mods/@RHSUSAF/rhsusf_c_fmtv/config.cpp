@@ -112,9 +112,7 @@ class CfgVehicles
 		};
 		class AnimationSources;
 	};
-	class Truck_01_base_F: Truck_F
-	{
-	};
+	class Truck_01_base_F: Truck_F;  //found empty after stripping
 	class rhsusf_fmtv_base: Truck_01_base_F
 	{
 		side=1;
@@ -124,12 +122,8 @@ class CfgVehicles
 		extCameraPosition[]={0.5,2,-8};
 		class textureSources
 		{
-			class rhs_desert
-			{
-			};
-			class rhs_woodland
-			{
-			};
+			class rhs_desert;  //found empty after stripping
+			class rhs_woodland;  //found empty after stripping
 		};
 		class HitPoints: HitPoints
 		{
@@ -305,9 +299,7 @@ class CfgVehicles
 				effect="ExhaustEffectHEMTT";
 			};
 		};
-		class Damage
-		{
-		};
+		class Damage;  //found empty after stripping
 		class CargoTurret;
 		class Turrets
 		{
@@ -335,14 +327,10 @@ class CfgVehicles
 		};
 		accuracy=0.5;
 	};
-	class rhsusf_M1078A1P2_open_fmtv_usarmy: rhsusf_M1078A1P2_fmtv_usarmy
-	{
-	};
+	class rhsusf_M1078A1P2_open_fmtv_usarmy: rhsusf_M1078A1P2_fmtv_usarmy;  //found empty after stripping
 	class rhsusf_M1078A1P2_flatbed_fmtv_usarmy: rhsusf_M1078A1P2_fmtv_usarmy
 	{
-		class Turrets: Turrets
-		{
-		};
+		class Turrets: Turrets;  //found empty after stripping
 		class VehicleTransport
 		{
 			class Cargo
@@ -394,14 +382,10 @@ class CfgVehicles
 			"SlingLoadCargo4"
 		};
 	};
-	class rhsusf_M1078A1P2_B_open_fmtv_usarmy: rhsusf_M1078A1P2_B_fmtv_usarmy
-	{
-	};
+	class rhsusf_M1078A1P2_B_open_fmtv_usarmy: rhsusf_M1078A1P2_B_fmtv_usarmy;  //found empty after stripping
 	class rhsusf_M1078A1P2_B_flatbed_fmtv_usarmy: rhsusf_M1078A1P2_B_fmtv_usarmy
 	{
-		class Turrets: Turrets
-		{
-		};
+		class Turrets: Turrets;  //found empty after stripping
 		class VehicleTransport
 		{
 			class Cargo
@@ -526,25 +510,17 @@ class CfgVehicles
 					minFov=0.25;
 					maxFov=1.1;
 				};
-				class ViewGunner: ViewOptics
-				{
-				};
+				class ViewGunner: ViewOptics;  //found empty after stripping
 			};
-			class CargoTurret_02: CargoTurret_02
-			{
-			};
+			class CargoTurret_02: CargoTurret_02;  //found empty after stripping
 		};
 	};
-	class rhsusf_M1078A1P2_B_M2_open_fmtv_usarmy: rhsusf_M1078A1P2_B_M2_fmtv_usarmy
-	{
-	};
+	class rhsusf_M1078A1P2_B_M2_open_fmtv_usarmy: rhsusf_M1078A1P2_B_M2_fmtv_usarmy;  //found empty after stripping
 	class rhsusf_M1078A1P2_B_M2_flatbed_fmtv_usarmy: rhsusf_M1078A1P2_B_M2_fmtv_usarmy
 	{
 		class Turrets: Turrets
 		{
-			class M2_Turret: M2_Turret
-			{
-			};
+			class M2_Turret: M2_Turret;  //found empty after stripping
 		};
 		class VehicleTransport
 		{
@@ -755,23 +731,15 @@ class CfgVehicles
 					minFov=0.25;
 					maxFov=1.1;
 				};
-				class ViewGunner: ViewOptics
-				{
-				};
+				class ViewGunner: ViewOptics;  //found empty after stripping
 			};
-			class CargoTurret_02: CargoTurret_02
-			{
-			};
+			class CargoTurret_02: CargoTurret_02;  //found empty after stripping
 		};
 	};
-	class rhsusf_M1083A1P2_open_fmtv_usarmy: rhsusf_M1083A1P2_fmtv_usarmy
-	{
-	};
+	class rhsusf_M1083A1P2_open_fmtv_usarmy: rhsusf_M1083A1P2_fmtv_usarmy;  //found empty after stripping
 	class rhsusf_M1083A1P2_flatbed_fmtv_usarmy: rhsusf_M1083A1P2_fmtv_usarmy
 	{
-		class Turrets: Turrets
-		{
-		};
+		class Turrets: Turrets;  //found empty after stripping
 		class VehicleTransport
 		{
 			class Cargo
@@ -812,14 +780,10 @@ class CfgVehicles
 			};
 		};
 	};
-	class rhsusf_M1083A1P2_B_open_fmtv_usarmy: rhsusf_M1083A1P2_B_fmtv_usarmy
-	{
-	};
+	class rhsusf_M1083A1P2_B_open_fmtv_usarmy: rhsusf_M1083A1P2_B_fmtv_usarmy;  //found empty after stripping
 	class rhsusf_M1083A1P2_B_flatbed_fmtv_usarmy: rhsusf_M1083A1P2_B_fmtv_usarmy
 	{
-		class Turrets: Turrets
-		{
-		};
+		class Turrets: Turrets;  //found empty after stripping
 		class VehicleTransport
 		{
 			class Cargo
@@ -860,16 +824,12 @@ class CfgVehicles
 			};
 		};
 	};
-	class rhsusf_M1083A1P2_B_M2_open_fmtv_usarmy: rhsusf_M1083A1P2_B_M2_fmtv_usarmy
-	{
-	};
+	class rhsusf_M1083A1P2_B_M2_open_fmtv_usarmy: rhsusf_M1083A1P2_B_M2_fmtv_usarmy;  //found empty after stripping
 	class rhsusf_M1083A1P2_B_M2_flatbed_fmtv_usarmy: rhsusf_M1083A1P2_B_M2_fmtv_usarmy
 	{
 		class Turrets: Turrets
 		{
-			class M2_Turret: M2_Turret
-			{
-			};
+			class M2_Turret: M2_Turret;  //found empty after stripping
 		};
 		class VehicleTransport
 		{
@@ -953,21 +913,15 @@ class CfgVehicles
 				parachuteHeightLimitDefault=5;
 			};
 		};
-		class Turrets: Turrets
-		{
-		};
+		class Turrets: Turrets;  //found empty after stripping
 	};
-	class rhsusf_M1084A1P2_B_fmtv_usarmy: rhsusf_M1084A1P2_fmtv_usarmy
-	{
-	};
+	class rhsusf_M1084A1P2_B_fmtv_usarmy: rhsusf_M1084A1P2_fmtv_usarmy;  //found empty after stripping
 	class rhsusf_M1084A1P2_B_M2_fmtv_usarmy: rhsusf_M1083A1P2_B_M2_fmtv_usarmy
 	{
 		maxFordingDepth=0;
 		class Turrets: Turrets
 		{
-			class M2_Turret: M2_Turret
-			{
-			};
+			class M2_Turret: M2_Turret;  //found empty after stripping
 		};
 		class VehicleTransport
 		{
@@ -1029,9 +983,7 @@ class CfgVehicles
 				expression="[_this,'hide_steps',1] spawn rhs_fnc_fmtv_Deploy";
 			};
 		};
-		class Turrets: Turrets
-		{
-		};
+		class Turrets: Turrets;  //found empty after stripping
 	};
 	class rhsusf_M1085A1P2_B_Medical_fmtv_usarmy: rhsusf_M1083A1P2_B_fmtv_usarmy
 	{
@@ -1087,9 +1039,7 @@ class CfgVehicles
 				expression="[_this,'deploy_platform',1,true] spawn rhs_fnc_fmtv_Deploy; _this animateSource ['deploy_tent',1,true]";
 			};
 		};
-		class Turrets: Turrets
-		{
-		};
+		class Turrets: Turrets;  //found empty after stripping
 		class VehicleTransport
 		{
 			class Cargo
@@ -1105,144 +1055,52 @@ class CfgVehicles
 			};
 		};
 	};
-	class rhsusf_M1078A1P2_B_M2_WD_fmtv_usarmy: rhsusf_M1078A1P2_B_M2_fmtv_usarmy
-	{
-	};
-	class rhsusf_M1078A1P2_B_WD_fmtv_usarmy: rhsusf_M1078A1P2_B_fmtv_usarmy
-	{
-	};
-	class rhsusf_M1078A1P2_WD_fmtv_usarmy: rhsusf_M1078A1P2_fmtv_usarmy
-	{
-	};
-	class rhsusf_M1078A1P2_B_WD_CP_fmtv_usarmy: rhsusf_M1078A1P2_B_CP_fmtv_usarmy
-	{
-	};
-	class rhsusf_M1078A1P2_B_M2_WD_open_fmtv_usarmy: rhsusf_M1078A1P2_B_M2_open_fmtv_usarmy
-	{
-	};
-	class rhsusf_M1078A1P2_B_WD_open_fmtv_usarmy: rhsusf_M1078A1P2_B_open_fmtv_usarmy
-	{
-	};
-	class rhsusf_M1078A1P2_WD_open_fmtv_usarmy: rhsusf_M1078A1P2_open_fmtv_usarmy
-	{
-	};
-	class rhsusf_M1078A1P2_B_M2_WD_flatbed_fmtv_usarmy: rhsusf_M1078A1P2_B_M2_flatbed_fmtv_usarmy
-	{
-	};
-	class rhsusf_M1078A1P2_B_WD_flatbed_fmtv_usarmy: rhsusf_M1078A1P2_B_flatbed_fmtv_usarmy
-	{
-	};
-	class rhsusf_M1078A1P2_WD_flatbed_fmtv_usarmy: rhsusf_M1078A1P2_flatbed_fmtv_usarmy
-	{
-	};
-	class rhsusf_M1083A1P2_B_WD_fmtv_usarmy: rhsusf_M1083A1P2_B_fmtv_usarmy
-	{
-	};
-	class rhsusf_M1083A1P2_B_M2_WD_fmtv_usarmy: rhsusf_M1083A1P2_B_M2_fmtv_usarmy
-	{
-	};
-	class rhsusf_M1083A1P2_WD_fmtv_usarmy: rhsusf_M1083A1P2_fmtv_usarmy
-	{
-	};
-	class rhsusf_M1083A1P2_B_WD_open_fmtv_usarmy: rhsusf_M1083A1P2_B_open_fmtv_usarmy
-	{
-	};
-	class rhsusf_M1083A1P2_B_M2_WD_open_fmtv_usarmy: rhsusf_M1083A1P2_B_M2_open_fmtv_usarmy
-	{
-	};
-	class rhsusf_M1083A1P2_WD_open_fmtv_usarmy: rhsusf_M1083A1P2_open_fmtv_usarmy
-	{
-	};
-	class rhsusf_M1083A1P2_B_WD_flatbed_fmtv_usarmy: rhsusf_M1083A1P2_B_flatbed_fmtv_usarmy
-	{
-	};
-	class rhsusf_M1083A1P2_B_M2_WD_flatbed_fmtv_usarmy: rhsusf_M1083A1P2_B_M2_flatbed_fmtv_usarmy
-	{
-	};
-	class rhsusf_M1083A1P2_WD_flatbed_fmtv_usarmy: rhsusf_M1083A1P2_flatbed_fmtv_usarmy
-	{
-	};
-	class rhsusf_M1084A1P2_WD_fmtv_usarmy: rhsusf_M1084A1P2_fmtv_usarmy
-	{
-	};
-	class rhsusf_M1084A1P2_B_M2_WD_fmtv_usarmy: rhsusf_M1084A1P2_B_M2_fmtv_usarmy
-	{
-	};
-	class rhsusf_M1084A1P2_B_WD_fmtv_usarmy: rhsusf_M1084A1P2_B_fmtv_usarmy
-	{
-	};
-	class rhsusf_M1085A1P2_B_WD_Medical_fmtv_usarmy: rhsusf_M1085A1P2_B_Medical_fmtv_usarmy
-	{
-	};
-	class rhsusf_M1078A1P2_B_M2_D_fmtv_usarmy: rhsusf_M1078A1P2_B_M2_fmtv_usarmy
-	{
-	};
-	class rhsusf_M1078A1P2_B_D_fmtv_usarmy: rhsusf_M1078A1P2_B_fmtv_usarmy
-	{
-	};
-	class rhsusf_M1078A1P2_D_fmtv_usarmy: rhsusf_M1078A1P2_fmtv_usarmy
-	{
-	};
-	class rhsusf_M1078A1P2_B_D_CP_fmtv_usarmy: rhsusf_M1078A1P2_B_CP_fmtv_usarmy
-	{
-	};
-	class rhsusf_M1078A1P2_B_M2_D_open_fmtv_usarmy: rhsusf_M1078A1P2_B_M2_open_fmtv_usarmy
-	{
-	};
-	class rhsusf_M1078A1P2_B_D_open_fmtv_usarmy: rhsusf_M1078A1P2_B_open_fmtv_usarmy
-	{
-	};
-	class rhsusf_M1078A1P2_D_open_fmtv_usarmy: rhsusf_M1078A1P2_open_fmtv_usarmy
-	{
-	};
-	class rhsusf_M1078A1P2_B_M2_D_flatbed_fmtv_usarmy: rhsusf_M1078A1P2_B_M2_flatbed_fmtv_usarmy
-	{
-	};
-	class rhsusf_M1078A1P2_B_D_flatbed_fmtv_usarmy: rhsusf_M1078A1P2_B_flatbed_fmtv_usarmy
-	{
-	};
-	class rhsusf_M1078A1P2_D_flatbed_fmtv_usarmy: rhsusf_M1078A1P2_flatbed_fmtv_usarmy
-	{
-	};
-	class rhsusf_M1083A1P2_B_D_fmtv_usarmy: rhsusf_M1083A1P2_B_fmtv_usarmy
-	{
-	};
-	class rhsusf_M1083A1P2_B_M2_D_fmtv_usarmy: rhsusf_M1083A1P2_B_M2_fmtv_usarmy
-	{
-	};
-	class rhsusf_M1083A1P2_D_fmtv_usarmy: rhsusf_M1083A1P2_fmtv_usarmy
-	{
-	};
-	class rhsusf_M1083A1P2_B_D_open_fmtv_usarmy: rhsusf_M1083A1P2_B_open_fmtv_usarmy
-	{
-	};
-	class rhsusf_M1083A1P2_B_M2_D_open_fmtv_usarmy: rhsusf_M1083A1P2_B_M2_open_fmtv_usarmy
-	{
-	};
-	class rhsusf_M1083A1P2_D_open_fmtv_usarmy: rhsusf_M1083A1P2_open_fmtv_usarmy
-	{
-	};
-	class rhsusf_M1083A1P2_B_D_flatbed_fmtv_usarmy: rhsusf_M1083A1P2_B_flatbed_fmtv_usarmy
-	{
-	};
-	class rhsusf_M1083A1P2_B_M2_D_flatbed_fmtv_usarmy: rhsusf_M1083A1P2_B_M2_flatbed_fmtv_usarmy
-	{
-	};
-	class rhsusf_M1083A1P2_D_flatbed_fmtv_usarmy: rhsusf_M1083A1P2_flatbed_fmtv_usarmy
-	{
-	};
-	class rhsusf_M1084A1P2_D_fmtv_usarmy: rhsusf_M1084A1P2_fmtv_usarmy
-	{
-	};
-	class rhsusf_M1084A1P2_B_M2_D_fmtv_usarmy: rhsusf_M1084A1P2_B_M2_fmtv_usarmy
-	{
-	};
-	class rhsusf_M1084A1P2_B_D_fmtv_usarmy: rhsusf_M1084A1P2_B_fmtv_usarmy
-	{
-	};
-	class rhsusf_M1085A1P2_B_D_Medical_fmtv_usarmy: rhsusf_M1085A1P2_B_Medical_fmtv_usarmy
-	{
-	};
+	class rhsusf_M1078A1P2_B_M2_WD_fmtv_usarmy: rhsusf_M1078A1P2_B_M2_fmtv_usarmy;  //found empty after stripping
+	class rhsusf_M1078A1P2_B_WD_fmtv_usarmy: rhsusf_M1078A1P2_B_fmtv_usarmy;  //found empty after stripping
+	class rhsusf_M1078A1P2_WD_fmtv_usarmy: rhsusf_M1078A1P2_fmtv_usarmy;  //found empty after stripping
+	class rhsusf_M1078A1P2_B_WD_CP_fmtv_usarmy: rhsusf_M1078A1P2_B_CP_fmtv_usarmy;  //found empty after stripping
+	class rhsusf_M1078A1P2_B_M2_WD_open_fmtv_usarmy: rhsusf_M1078A1P2_B_M2_open_fmtv_usarmy;  //found empty after stripping
+	class rhsusf_M1078A1P2_B_WD_open_fmtv_usarmy: rhsusf_M1078A1P2_B_open_fmtv_usarmy;  //found empty after stripping
+	class rhsusf_M1078A1P2_WD_open_fmtv_usarmy: rhsusf_M1078A1P2_open_fmtv_usarmy;  //found empty after stripping
+	class rhsusf_M1078A1P2_B_M2_WD_flatbed_fmtv_usarmy: rhsusf_M1078A1P2_B_M2_flatbed_fmtv_usarmy;  //found empty after stripping
+	class rhsusf_M1078A1P2_B_WD_flatbed_fmtv_usarmy: rhsusf_M1078A1P2_B_flatbed_fmtv_usarmy;  //found empty after stripping
+	class rhsusf_M1078A1P2_WD_flatbed_fmtv_usarmy: rhsusf_M1078A1P2_flatbed_fmtv_usarmy;  //found empty after stripping
+	class rhsusf_M1083A1P2_B_WD_fmtv_usarmy: rhsusf_M1083A1P2_B_fmtv_usarmy;  //found empty after stripping
+	class rhsusf_M1083A1P2_B_M2_WD_fmtv_usarmy: rhsusf_M1083A1P2_B_M2_fmtv_usarmy;  //found empty after stripping
+	class rhsusf_M1083A1P2_WD_fmtv_usarmy: rhsusf_M1083A1P2_fmtv_usarmy;  //found empty after stripping
+	class rhsusf_M1083A1P2_B_WD_open_fmtv_usarmy: rhsusf_M1083A1P2_B_open_fmtv_usarmy;  //found empty after stripping
+	class rhsusf_M1083A1P2_B_M2_WD_open_fmtv_usarmy: rhsusf_M1083A1P2_B_M2_open_fmtv_usarmy;  //found empty after stripping
+	class rhsusf_M1083A1P2_WD_open_fmtv_usarmy: rhsusf_M1083A1P2_open_fmtv_usarmy;  //found empty after stripping
+	class rhsusf_M1083A1P2_B_WD_flatbed_fmtv_usarmy: rhsusf_M1083A1P2_B_flatbed_fmtv_usarmy;  //found empty after stripping
+	class rhsusf_M1083A1P2_B_M2_WD_flatbed_fmtv_usarmy: rhsusf_M1083A1P2_B_M2_flatbed_fmtv_usarmy;  //found empty after stripping
+	class rhsusf_M1083A1P2_WD_flatbed_fmtv_usarmy: rhsusf_M1083A1P2_flatbed_fmtv_usarmy;  //found empty after stripping
+	class rhsusf_M1084A1P2_WD_fmtv_usarmy: rhsusf_M1084A1P2_fmtv_usarmy;  //found empty after stripping
+	class rhsusf_M1084A1P2_B_M2_WD_fmtv_usarmy: rhsusf_M1084A1P2_B_M2_fmtv_usarmy;  //found empty after stripping
+	class rhsusf_M1084A1P2_B_WD_fmtv_usarmy: rhsusf_M1084A1P2_B_fmtv_usarmy;  //found empty after stripping
+	class rhsusf_M1085A1P2_B_WD_Medical_fmtv_usarmy: rhsusf_M1085A1P2_B_Medical_fmtv_usarmy;  //found empty after stripping
+	class rhsusf_M1078A1P2_B_M2_D_fmtv_usarmy: rhsusf_M1078A1P2_B_M2_fmtv_usarmy;  //found empty after stripping
+	class rhsusf_M1078A1P2_B_D_fmtv_usarmy: rhsusf_M1078A1P2_B_fmtv_usarmy;  //found empty after stripping
+	class rhsusf_M1078A1P2_D_fmtv_usarmy: rhsusf_M1078A1P2_fmtv_usarmy;  //found empty after stripping
+	class rhsusf_M1078A1P2_B_D_CP_fmtv_usarmy: rhsusf_M1078A1P2_B_CP_fmtv_usarmy;  //found empty after stripping
+	class rhsusf_M1078A1P2_B_M2_D_open_fmtv_usarmy: rhsusf_M1078A1P2_B_M2_open_fmtv_usarmy;  //found empty after stripping
+	class rhsusf_M1078A1P2_B_D_open_fmtv_usarmy: rhsusf_M1078A1P2_B_open_fmtv_usarmy;  //found empty after stripping
+	class rhsusf_M1078A1P2_D_open_fmtv_usarmy: rhsusf_M1078A1P2_open_fmtv_usarmy;  //found empty after stripping
+	class rhsusf_M1078A1P2_B_M2_D_flatbed_fmtv_usarmy: rhsusf_M1078A1P2_B_M2_flatbed_fmtv_usarmy;  //found empty after stripping
+	class rhsusf_M1078A1P2_B_D_flatbed_fmtv_usarmy: rhsusf_M1078A1P2_B_flatbed_fmtv_usarmy;  //found empty after stripping
+	class rhsusf_M1078A1P2_D_flatbed_fmtv_usarmy: rhsusf_M1078A1P2_flatbed_fmtv_usarmy;  //found empty after stripping
+	class rhsusf_M1083A1P2_B_D_fmtv_usarmy: rhsusf_M1083A1P2_B_fmtv_usarmy;  //found empty after stripping
+	class rhsusf_M1083A1P2_B_M2_D_fmtv_usarmy: rhsusf_M1083A1P2_B_M2_fmtv_usarmy;  //found empty after stripping
+	class rhsusf_M1083A1P2_D_fmtv_usarmy: rhsusf_M1083A1P2_fmtv_usarmy;  //found empty after stripping
+	class rhsusf_M1083A1P2_B_D_open_fmtv_usarmy: rhsusf_M1083A1P2_B_open_fmtv_usarmy;  //found empty after stripping
+	class rhsusf_M1083A1P2_B_M2_D_open_fmtv_usarmy: rhsusf_M1083A1P2_B_M2_open_fmtv_usarmy;  //found empty after stripping
+	class rhsusf_M1083A1P2_D_open_fmtv_usarmy: rhsusf_M1083A1P2_open_fmtv_usarmy;  //found empty after stripping
+	class rhsusf_M1083A1P2_B_D_flatbed_fmtv_usarmy: rhsusf_M1083A1P2_B_flatbed_fmtv_usarmy;  //found empty after stripping
+	class rhsusf_M1083A1P2_B_M2_D_flatbed_fmtv_usarmy: rhsusf_M1083A1P2_B_M2_flatbed_fmtv_usarmy;  //found empty after stripping
+	class rhsusf_M1083A1P2_D_flatbed_fmtv_usarmy: rhsusf_M1083A1P2_flatbed_fmtv_usarmy;  //found empty after stripping
+	class rhsusf_M1084A1P2_D_fmtv_usarmy: rhsusf_M1084A1P2_fmtv_usarmy;  //found empty after stripping
+	class rhsusf_M1084A1P2_B_M2_D_fmtv_usarmy: rhsusf_M1084A1P2_B_M2_fmtv_usarmy;  //found empty after stripping
+	class rhsusf_M1084A1P2_B_D_fmtv_usarmy: rhsusf_M1084A1P2_B_fmtv_usarmy;  //found empty after stripping
+	class rhsusf_M1085A1P2_B_D_Medical_fmtv_usarmy: rhsusf_M1085A1P2_B_Medical_fmtv_usarmy;  //found empty after stripping
 	class rhsusf_M1078A1R_SOV_M2_D_fmtv_socom: rhsusf_M1078A1P2_B_M2_fmtv_usarmy
 	{
 		accuracy=0.5;
@@ -1293,9 +1151,7 @@ class CfgVehicles
 					minFov=0.25;
 					maxFov=1.1;
 				};
-				class ViewGunner: ViewOptics
-				{
-				};
+				class ViewGunner: ViewOptics;  //found empty after stripping
 			};
 		};
 		animationList[]={};
@@ -1356,29 +1212,15 @@ class CfgVehicles
 					minFov=0.25;
 					maxFov=1.1;
 				};
-				class ViewGunner: ViewOptics
-				{
-				};
+				class ViewGunner: ViewOptics;  //found empty after stripping
 			};
 		};
 		animationList[]={};
 	};
-	class rhsusf_M1084A1R_SOV_M2_WD_fmtv_socom: rhsusf_M1084A1R_SOV_M2_D_fmtv_socom
-	{
-	};
-	class rhsusf_M1078A1R_SOV_M2_WD_fmtv_socom: rhsusf_M1078A1R_SOV_M2_D_fmtv_socom
-	{
-	};
-	class rhsusf_M1083A1P2_B_M2_wd_MHQ_fmtv_usarmy: rhsusf_M1078A1P2_B_WD_CP_fmtv_usarmy
-	{
-	};
-	class rhsusf_M1083A1P2_B_M2_wd_Medical_fmtv_usarmy: rhsusf_M1085A1P2_B_WD_Medical_fmtv_usarmy
-	{
-	};
-	class rhsusf_M1083A1P2_B_M2_d_MHQ_fmtv_usarmy: rhsusf_M1078A1P2_B_D_CP_fmtv_usarmy
-	{
-	};
-	class rhsusf_M1083A1P2_B_M2_d_Medical_fmtv_usarmy: rhsusf_M1085A1P2_B_D_Medical_fmtv_usarmy
-	{
-	};
+	class rhsusf_M1084A1R_SOV_M2_WD_fmtv_socom: rhsusf_M1084A1R_SOV_M2_D_fmtv_socom;  //found empty after stripping
+	class rhsusf_M1078A1R_SOV_M2_WD_fmtv_socom: rhsusf_M1078A1R_SOV_M2_D_fmtv_socom;  //found empty after stripping
+	class rhsusf_M1083A1P2_B_M2_wd_MHQ_fmtv_usarmy: rhsusf_M1078A1P2_B_WD_CP_fmtv_usarmy;  //found empty after stripping
+	class rhsusf_M1083A1P2_B_M2_wd_Medical_fmtv_usarmy: rhsusf_M1085A1P2_B_WD_Medical_fmtv_usarmy;  //found empty after stripping
+	class rhsusf_M1083A1P2_B_M2_d_MHQ_fmtv_usarmy: rhsusf_M1078A1P2_B_D_CP_fmtv_usarmy;  //found empty after stripping
+	class rhsusf_M1083A1P2_B_M2_d_Medical_fmtv_usarmy: rhsusf_M1085A1P2_B_D_Medical_fmtv_usarmy;  //found empty after stripping
 };

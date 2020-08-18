@@ -51,9 +51,7 @@ class CfgVehicles
 			class Movement;
 		};
 	};
-	class MBT_01_base_F: Tank_F
-	{
-	};
+	class MBT_01_base_F: Tank_F;  //found empty after stripping
 	class MBT_01_arty_base_F: MBT_01_base_F
 	{
 		class Turrets: Turrets
@@ -62,9 +60,7 @@ class CfgVehicles
 			{
 				class Turrets: Turrets
 				{
-					class CommanderOptics: CommanderOptics
-					{
-					};
+					class CommanderOptics: CommanderOptics;  //found empty after stripping
 				};
 			};
 		};
@@ -190,24 +186,12 @@ class CfgVehicles
 					{0.69999999,0.75}
 				};
 			};
-			class L3: L2
-			{
-			};
-			class L4: L2
-			{
-			};
-			class L5: L2
-			{
-			};
-			class L6: L2
-			{
-			};
-			class L7: L2
-			{
-			};
-			class L8: L2
-			{
-			};
+			class L3: L2;  //found empty after stripping
+			class L4: L2;  //found empty after stripping
+			class L5: L2;  //found empty after stripping
+			class L6: L2;  //found empty after stripping
+			class L7: L2;  //found empty after stripping
+			class L8: L2;  //found empty after stripping
 			class L9: L2
 			{
 				maxDroop=0;
@@ -222,24 +206,12 @@ class CfgVehicles
 			{
 				side="right";
 			};
-			class R3: R2
-			{
-			};
-			class R4: R2
-			{
-			};
-			class R5: R2
-			{
-			};
-			class R6: R2
-			{
-			};
-			class R7: R2
-			{
-			};
-			class R8: R2
-			{
-			};
+			class R3: R2;  //found empty after stripping
+			class R4: R2;  //found empty after stripping
+			class R5: R2;  //found empty after stripping
+			class R6: R2;  //found empty after stripping
+			class R7: R2;  //found empty after stripping
+			class R8: R2;  //found empty after stripping
 			class R9: R2
 			{
 				maxDroop=0;
@@ -481,9 +453,7 @@ class CfgVehicles
 		{
 			"Artillery"
 		};
-		class Damage
-		{
-		};
+		class Damage;  //found empty after stripping
 		class ViewOptics: ViewOptics
 		{
 			visionMode[]=
@@ -623,21 +593,13 @@ class CfgVehicles
 				property="rhs_ammoslot_5";
 			};
 		};
-		class EventHandlers: EventHandlers
-		{
-		};
+		class EventHandlers: EventHandlers;  //found empty after stripping
 	};
-	class rhsusf_m109_usarmy: rhsusf_m109tank_base
-	{
-	};
-	class rhsusf_m109d_usarmy: rhsusf_m109_usarmy
-	{
-	};
+	class rhsusf_m109_usarmy: rhsusf_m109tank_base;  //found empty after stripping
+	class rhsusf_m109d_usarmy: rhsusf_m109_usarmy;  //found empty after stripping
 };
 class CfgNonAIVehicles
 {
 	class ProxyRetex;
-	class Proxyrhsusf_m109a6_hull: ProxyRetex
-	{
-	};
+	class Proxyrhsusf_m109a6_hull: ProxyRetex;  //found empty after stripping
 };

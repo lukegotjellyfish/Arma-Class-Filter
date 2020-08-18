@@ -24,27 +24,13 @@ class CfgVehicles
 					"rhs_faction_vv"
 				};
 			};
-			class Camo2: Camo1
-			{
-			};
-			class Omon1: Camo1
-			{
-			};
-			class Omon2: Camo1
-			{
-			};
-			class MC: Camo1
-			{
-			};
-			class Desert: Camo1
-			{
-			};
-			class rhs_sand
-			{
-			};
-			class Marine: Camo1
-			{
-			};
+			class Camo2: Camo1;  //found empty after stripping
+			class Omon1: Camo1;  //found empty after stripping
+			class Omon2: Camo1;  //found empty after stripping
+			class MC: Camo1;  //found empty after stripping
+			class Desert: Camo1;  //found empty after stripping
+			class rhs_sand;  //found empty after stripping
+			class Marine: Camo1;  //found empty after stripping
 		};
 	};
 };

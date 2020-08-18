@@ -949,21 +949,11 @@ class CfgVehicles
 		};
 		class textureSources
 		{
-			class standard
-			{
-			};
-			class camo: standard
-			{
-			};
-			class cdf: standard
-			{
-			};
-			class chdkz: standard
-			{
-			};
-			class rhs_sand: standard
-			{
-			};
+			class standard;  //found empty after stripping
+			class camo: standard;  //found empty after stripping
+			class cdf: standard;  //found empty after stripping
+			class chdkz: standard;  //found empty after stripping
+			class rhs_sand: standard;  //found empty after stripping
 		};
 		class HitPoints: HitPoints
 		{
@@ -1042,9 +1032,7 @@ class CfgVehicles
 			minAngleY=-150;
 			maxAngleY=150;
 		};
-		class Damage
-		{
-		};
+		class Damage;  //found empty after stripping
 		class Exhausts
 		{
 			class Exhaust1
@@ -1214,9 +1202,7 @@ class CfgVehicles
 			};
 		};
 	};
-	class rhs_gaz66_vmf: rhs_truck
-	{
-	};
+	class rhs_gaz66_vmf: rhs_truck;  //found empty after stripping
 	class rhs_gaz66_vdv: rhs_gaz66_vmf
 	{
 		rhs_decalParameters[]=
@@ -1244,9 +1230,7 @@ class CfgVehicles
 	};
 	class rhs_gaz66_flat_vmf: rhs_gaz66_vmf
 	{
-		class Turrets
-		{
-		};
+		class Turrets;  //found empty after stripping
 		class VehicleTransport
 		{
 			class Cargo
@@ -1317,9 +1301,7 @@ class CfgVehicles
 		soundAttenuationCargo[]={1,0};
 		class Turrets: Turrets
 		{
-			class CargoTurret_02: CargoTurret_02
-			{
-			};
+			class CargoTurret_02: CargoTurret_02;  //found empty after stripping
 			class CargoTurret_03: CargoTurret_02
 			{
 				animationSourceHatch="turnout1";
@@ -1411,9 +1393,7 @@ class CfgVehicles
 	};
 	class rhs_gaz66o_flat_vmf: rhs_gaz66o_vmf
 	{
-		class Turrets
-		{
-		};
+		class Turrets;  //found empty after stripping
 		class VehicleTransport
 		{
 			class Cargo
@@ -1484,12 +1464,8 @@ class CfgVehicles
 		icon="\rhsafrf\addons\rhs_gaz66\data\ico\icomap_GAZ66_radio_CA.paa";
 		maxFordingDepth=1.2;
 		tf_range=10000;
-		class Damage
-		{
-		};
-		class Turrets
-		{
-		};
+		class Damage;  //found empty after stripping
+		class Turrets;  //found empty after stripping
 		class Attributes: Attributes
 		{
 			class rhs_radioDeploy
@@ -1500,35 +1476,17 @@ class CfgVehicles
 				expression="[_this,_value,true] call rhs_fnc_gaz66_radioDeploy";
 				defaultValue="0";
 			};
-			class rhs_decalNumber_type: rhs_decalNumber_type
-			{
-			};
-			class rhs_decalNumber: rhs_decalNumber
-			{
-			};
-			class rhs_decalArmy_type: rhs_decalArmy_type
-			{
-			};
-			class rhs_decalArmy: rhs_decalArmy
-			{
-			};
-			class rhs_decalPlatoon_type: rhs_decalPlatoon_type
-			{
-			};
-			class rhs_decalPlatoon: rhs_decalPlatoon
-			{
-			};
-			class rhs_hideLightCover: rhs_hideLightCover
-			{
-			};
-			class rhs_hidespare: rhs_hidespare
-			{
-			};
+			class rhs_decalNumber_type: rhs_decalNumber_type;  //found empty after stripping
+			class rhs_decalNumber: rhs_decalNumber;  //found empty after stripping
+			class rhs_decalArmy_type: rhs_decalArmy_type;  //found empty after stripping
+			class rhs_decalArmy: rhs_decalArmy;  //found empty after stripping
+			class rhs_decalPlatoon_type: rhs_decalPlatoon_type;  //found empty after stripping
+			class rhs_decalPlatoon: rhs_decalPlatoon;  //found empty after stripping
+			class rhs_hideLightCover: rhs_hideLightCover;  //found empty after stripping
+			class rhs_hidespare: rhs_hidespare;  //found empty after stripping
 		};
 	};
-	class rhs_gaz66_r142_vmf: rhs_gaz66_r142_base
-	{
-	};
+	class rhs_gaz66_r142_vmf: rhs_gaz66_r142_base;  //found empty after stripping
 	class rhs_gaz66_r142_vdv: rhs_gaz66_r142_base
 	{
 		rhs_decalParameters[]=
@@ -1560,16 +1518,10 @@ class CfgVehicles
 		memoryPointSupply="doplnovani";
 		transportRepair=2000000000;
 		supplyRadius=6.8000002;
-		class Damage
-		{
-		};
-		class Turrets
-		{
-		};
+		class Damage;  //found empty after stripping
+		class Turrets;  //found empty after stripping
 	};
-	class rhs_gaz66_repair_vmf: rhs_gaz66_repair_base
-	{
-	};
+	class rhs_gaz66_repair_vmf: rhs_gaz66_repair_base;  //found empty after stripping
 	class rhs_gaz66_repair_vdv: rhs_gaz66_repair_base
 	{
 		rhs_decalParameters[]=
@@ -1601,16 +1553,10 @@ class CfgVehicles
 		attendant=1;
 		memoryPointSupply="doplnovani";
 		supplyRadius=4.5;
-		class Damage
-		{
-		};
-		class Turrets
-		{
-		};
+		class Damage;  //found empty after stripping
+		class Turrets;  //found empty after stripping
 	};
-	class rhs_gaz66_ap2_vmf: rhs_gaz66_ap2_base
-	{
-	};
+	class rhs_gaz66_ap2_vmf: rhs_gaz66_ap2_base;  //found empty after stripping
 	class rhs_gaz66_ap2_vdv: rhs_gaz66_ap2_base
 	{
 		rhs_decalParameters[]=
@@ -1642,16 +1588,10 @@ class CfgVehicles
 		supplyRadius=9.5;
 		memoryPointSupply="doplnovani";
 		icon="\rhsafrf\addons\rhs_gaz66\data\ico\icomap_GAZ66_ammo_CA.paa";
-		class Damage
-		{
-		};
-		class Turrets
-		{
-		};
+		class Damage;  //found empty after stripping
+		class Turrets;  //found empty after stripping
 	};
-	class rhs_gaz66_ammo_vmf: rhs_gaz66_ammo_base
-	{
-	};
+	class rhs_gaz66_ammo_vmf: rhs_gaz66_ammo_base;  //found empty after stripping
 	class rhs_gaz66_ammo_vdv: rhs_gaz66_ammo_base
 	{
 		rhs_decalParameters[]=
@@ -1680,9 +1620,7 @@ class CfgVehicles
 	class rhs_gaz66_zu23_base: rhs_gaz66_vmf
 	{
 		icon="\rhsafrf\addons\rhs_gaz66\data\ico\icomap_GAZ66_ammo_CA.paa";
-		class Damage
-		{
-		};
+		class Damage;  //found empty after stripping
 		threat[]={0.60000002,0.1,0.60000002};
 		class Turrets: Turrets
 		{
@@ -1837,12 +1775,8 @@ class CfgVehicles
 	{
 		class Turrets: Turrets
 		{
-			class MainTurret: MainTurret
-			{
-			};
-			class CargoTurret_02: CargoTurret_02
-			{
-			};
+			class MainTurret: MainTurret;  //found empty after stripping
+			class CargoTurret_02: CargoTurret_02;  //found empty after stripping
 		};
 	};
 	class rhs_gaz66_zu23_vdv: rhs_gaz66_zu23_base
@@ -1855,12 +1789,8 @@ class CfgVehicles
 		};
 		class Turrets: Turrets
 		{
-			class MainTurret: MainTurret
-			{
-			};
-			class CargoTurret_02: CargoTurret_02
-			{
-			};
+			class MainTurret: MainTurret;  //found empty after stripping
+			class CargoTurret_02: CargoTurret_02;  //found empty after stripping
 		};
 	};
 	class rhs_gaz66_zu23_vv: rhs_gaz66_zu23_base
@@ -1872,12 +1802,8 @@ class CfgVehicles
 		};
 		class Turrets: Turrets
 		{
-			class MainTurret: MainTurret
-			{
-			};
-			class CargoTurret_02: CargoTurret_02
-			{
-			};
+			class MainTurret: MainTurret;  //found empty after stripping
+			class CargoTurret_02: CargoTurret_02;  //found empty after stripping
 		};
 	};
 	class rhs_gaz66_zu23_msv: rhs_gaz66_zu23_base
@@ -1889,12 +1815,8 @@ class CfgVehicles
 		};
 		class Turrets: Turrets
 		{
-			class MainTurret: MainTurret
-			{
-			};
-			class CargoTurret_02: CargoTurret_02
-			{
-			};
+			class MainTurret: MainTurret;  //found empty after stripping
+			class CargoTurret_02: CargoTurret_02;  //found empty after stripping
 		};
 	};
 };

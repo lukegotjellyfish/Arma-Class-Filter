@@ -371,9 +371,7 @@ class CfgVehicles
 				hitpoint="Hit_Optic_Driver_Rear";
 			};
 		};
-		class Exhausts
-		{
-		};
+		class Exhausts;  //found empty after stripping
 		armorLights=0.1;
 		class compartmentsLights
 		{
@@ -1115,9 +1113,7 @@ class CfgVehicles
 			{
 				class Components
 				{
-					class DataLinkSensorComponent: SensorTemplateDataLink
-					{
-					};
+					class DataLinkSensorComponent: SensorTemplateDataLink;  //found empty after stripping
 				};
 			};
 			class VehicleSystemsDisplayManagerComponentLeft
@@ -11890,9 +11886,7 @@ class CfgVehicles
 							};
 							class markingThreat: lockingThreat
 							{
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 							};
 							class rwr
 							{
@@ -11932,27 +11926,19 @@ class CfgVehicles
 							class rwrFriendly: rwr
 							{
 								color[]={0,0,0.12};
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 							};
 							class rwrEnemy: rwr
 							{
 								color[]={0.12,0,0};
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 							};
 							class rwrGroup: rwr
 							{
 								color[]={1,0,0};
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 							};
-							class rwrDestroyed
-							{
-							};
+							class rwrDestroyed;  //found empty after stripping
 							class markedTarget
 							{
 								color[]={1,0.30000001,0};
@@ -12055,9 +12041,7 @@ class CfgVehicles
 							class assignedTarget: markedTarget
 							{
 								color[]={1,0,0};
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 							};
 							class target
 							{
@@ -12095,27 +12079,19 @@ class CfgVehicles
 							class targetFriendly: target
 							{
 								color[]={0,0,0.12};
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 							};
 							class targetEnemy: target
 							{
 								color[]={0.12,0,0};
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 							};
 							class targetGroup: target
 							{
 								color[]={0,0,0.12};
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 							};
-							class targetDestroyed
-							{
-							};
+							class targetDestroyed;  //found empty after stripping
 							class targetGround: target
 							{
 								class TargetLines: TargetLines
@@ -12487,46 +12463,30 @@ class CfgVehicles
 							class targetGroundGroup: targetGroundFriendly
 							{
 								color[]={0,0,0.12};
-								class TargetLines: TargetLines
-								{
-								};
-								class StaticDraw: StaticDraw
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
+								class StaticDraw: StaticDraw;  //found empty after stripping
 							};
-							class targetGroundDestroyed
-							{
-							};
+							class targetGroundDestroyed;  //found empty after stripping
 							class targetGroundRemote: target
 							{
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 							};
 							class targetGroundRemoteFriendly: targetGroundRemote
 							{
 								color[]={0,0,0.12};
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 							};
 							class targetGroundRemoteEnemy: targetGroundRemote
 							{
 								color[]={0.12,0,0};
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 							};
 							class targetGroundRemoteGroup: targetGroundRemote
 							{
 								color[]={0,0,0.12};
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 							};
-							class targetGroundRemoteDestroyed
-							{
-							};
+							class targetGroundRemoteDestroyed;  //found empty after stripping
 							class targetLaser: target
 							{
 								class TargetLines: TargetLines
@@ -12584,104 +12544,74 @@ class CfgVehicles
 							class targetLaserFriendly: targetLaser
 							{
 								color[]={0,0,0.12};
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 							};
 							class targetLaserEnemy: targetLaser
 							{
 								color[]={0.12,0,0};
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 							};
 							class targetLaserGroup: targetLaser
 							{
 								color[]={0,0,0.12};
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 							};
 							class targetNVG: targetLaser
 							{
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 							};
 							class targetNVGFriendly: targetNVG
 							{
 								color[]={0,0,0.12};
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 							};
 							class targetNVGEnemy: targetNVG
 							{
 								color[]={0.12,0,0};
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 							};
 							class targetNVGGroup: targetNVG
 							{
 								color[]={1,0,0};
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 							};
 							class targetMan: target
 							{
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 							};
 							class targetManFriendly: targetMan
 							{
 								color[]={0,0,0.12};
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 							};
 							class targetManEnemy: targetMan
 							{
 								color[]={0.12,0,0};
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 							};
 							class targetManGroup: targetMan
 							{
 								color[]={0,0,0.12};
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 							};
 							class targetManRemote: target
 							{
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 							};
 							class targetManRemoteFriendly: targetManRemote
 							{
 								color[]={0,0,0.12};
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 							};
 							class targetManRemoteEnemy: targetManRemote
 							{
 								color[]={0.12,0,0};
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 							};
 							class targetManRemoteGroup: targetManRemote
 							{
 								color[]={0,0,0.12};
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 							};
 							class targetAir
 							{
@@ -12759,9 +12689,7 @@ class CfgVehicles
 							class targetAirFriendly: targetAir
 							{
 								color[]={0,0,0.12};
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 								class TargetArc
 								{
 									width=4;
@@ -12828,9 +12756,7 @@ class CfgVehicles
 							class targetAirEnemy: targetAir
 							{
 								color[]={0.12,0,0};
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 								class TargetArc
 								{
 									width=4;
@@ -12897,19 +12823,13 @@ class CfgVehicles
 							class targetAirGroup: targetAir
 							{
 								color[]={0,0,0.12};
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 							};
-							class targetAirDestroyed
-							{
-							};
+							class targetAirDestroyed;  //found empty after stripping
 							class targetAirRemote: targetAir
 							{
 								color[]={1,1,1};
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 								class TargetArc
 								{
 									width=4;
@@ -12941,9 +12861,7 @@ class CfgVehicles
 							class targetAirRemoteFriendly: targetAirRemote
 							{
 								color[]={0,0,0.12};
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 								class TargetArc
 								{
 									width=4;
@@ -13010,9 +12928,7 @@ class CfgVehicles
 							class targetAirRemoteEnemy: targetAirRemote
 							{
 								color[]={0.12,0,0};
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 								class TargetArc
 								{
 									width=4;
@@ -13049,29 +12965,19 @@ class CfgVehicles
 							class targetAirRemoteGroup: targetAirRemote
 							{
 								color[]={0,0,0.12};
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 							};
-							class targetAirRemoteDestroyed
-							{
-							};
+							class targetAirRemoteDestroyed;  //found empty after stripping
 						};
 					};
 				};
 			};
 		};
-		class Damage
-		{
-		};
+		class Damage;  //found empty after stripping
 		class TextureSources
 		{
-			class Olive
-			{
-			};
-			class Tan
-			{
-			};
+			class Olive;  //found empty after stripping
+			class Tan;  //found empty after stripping
 		};
 		class HitPoints: HitPoints
 		{
@@ -13161,9 +13067,7 @@ class CfgVehicles
 		{
 			class MainTurret: MainTurret
 			{
-				class Turrets
-				{
-				};
+				class Turrets;  //found empty after stripping
 				soundServoVertical[]=
 				{
 					"A3\Sounds_F\vehicles\armor\APC\noises\servo_APC_gunner_vertical",
@@ -13414,12 +13318,8 @@ class CfgVehicles
 					"rhsusf_mag_L8A3_16"
 				};
 			};
-			class CargoTurret_02: CargoTurret_02
-			{
-			};
-			class CargoTurret_03: CargoTurret_03
-			{
-			};
+			class CargoTurret_02: CargoTurret_02;  //found empty after stripping
+			class CargoTurret_03: CargoTurret_03;  //found empty after stripping
 		};
 	};
 	class rhsusf_stryker_m1126_mk19_base: rhsusf_stryker_m1126_base
@@ -13449,12 +13349,8 @@ class CfgVehicles
 					"rhsusf_mag_L8A3_16"
 				};
 			};
-			class CargoTurret_02: CargoTurret_02
-			{
-			};
-			class CargoTurret_03: CargoTurret_03
-			{
-			};
+			class CargoTurret_02: CargoTurret_02;  //found empty after stripping
+			class CargoTurret_03: CargoTurret_03;  //found empty after stripping
 		};
 	};
 	class rhsusf_stryker_m1126_m2_wd: rhsusf_stryker_m1126_m2_base
@@ -25046,9 +24942,7 @@ class CfgVehicles
 							};
 							class markingThreat: lockingThreat
 							{
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 							};
 							class rwr
 							{
@@ -25088,27 +24982,19 @@ class CfgVehicles
 							class rwrFriendly: rwr
 							{
 								color[]={0,0,0.12};
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 							};
 							class rwrEnemy: rwr
 							{
 								color[]={0.12,0,0};
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 							};
 							class rwrGroup: rwr
 							{
 								color[]={1,0,0};
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 							};
-							class rwrDestroyed
-							{
-							};
+							class rwrDestroyed;  //found empty after stripping
 							class markedTarget
 							{
 								color[]={1,0.30000001,0};
@@ -25211,9 +25097,7 @@ class CfgVehicles
 							class assignedTarget: markedTarget
 							{
 								color[]={1,0,0};
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 							};
 							class target
 							{
@@ -25251,27 +25135,19 @@ class CfgVehicles
 							class targetFriendly: target
 							{
 								color[]={0,0,0.12};
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 							};
 							class targetEnemy: target
 							{
 								color[]={0.12,0,0};
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 							};
 							class targetGroup: target
 							{
 								color[]={0,0,0.12};
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 							};
-							class targetDestroyed
-							{
-							};
+							class targetDestroyed;  //found empty after stripping
 							class targetGround: target
 							{
 								class TargetLines: TargetLines
@@ -25643,46 +25519,30 @@ class CfgVehicles
 							class targetGroundGroup: targetGroundFriendly
 							{
 								color[]={0,0,0.12};
-								class TargetLines: TargetLines
-								{
-								};
-								class StaticDraw: StaticDraw
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
+								class StaticDraw: StaticDraw;  //found empty after stripping
 							};
-							class targetGroundDestroyed
-							{
-							};
+							class targetGroundDestroyed;  //found empty after stripping
 							class targetGroundRemote: target
 							{
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 							};
 							class targetGroundRemoteFriendly: targetGroundRemote
 							{
 								color[]={0,0,0.12};
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 							};
 							class targetGroundRemoteEnemy: targetGroundRemote
 							{
 								color[]={0.12,0,0};
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 							};
 							class targetGroundRemoteGroup: targetGroundRemote
 							{
 								color[]={0,0,0.12};
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 							};
-							class targetGroundRemoteDestroyed
-							{
-							};
+							class targetGroundRemoteDestroyed;  //found empty after stripping
 							class targetLaser: target
 							{
 								class TargetLines: TargetLines
@@ -25740,104 +25600,74 @@ class CfgVehicles
 							class targetLaserFriendly: targetLaser
 							{
 								color[]={0,0,0.12};
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 							};
 							class targetLaserEnemy: targetLaser
 							{
 								color[]={0.12,0,0};
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 							};
 							class targetLaserGroup: targetLaser
 							{
 								color[]={0,0,0.12};
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 							};
 							class targetNVG: targetLaser
 							{
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 							};
 							class targetNVGFriendly: targetNVG
 							{
 								color[]={0,0,0.12};
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 							};
 							class targetNVGEnemy: targetNVG
 							{
 								color[]={0.12,0,0};
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 							};
 							class targetNVGGroup: targetNVG
 							{
 								color[]={1,0,0};
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 							};
 							class targetMan: target
 							{
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 							};
 							class targetManFriendly: targetMan
 							{
 								color[]={0,0,0.12};
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 							};
 							class targetManEnemy: targetMan
 							{
 								color[]={0.12,0,0};
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 							};
 							class targetManGroup: targetMan
 							{
 								color[]={0,0,0.12};
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 							};
 							class targetManRemote: target
 							{
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 							};
 							class targetManRemoteFriendly: targetManRemote
 							{
 								color[]={0,0,0.12};
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 							};
 							class targetManRemoteEnemy: targetManRemote
 							{
 								color[]={0.12,0,0};
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 							};
 							class targetManRemoteGroup: targetManRemote
 							{
 								color[]={0,0,0.12};
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 							};
 							class targetAir
 							{
@@ -25915,9 +25745,7 @@ class CfgVehicles
 							class targetAirFriendly: targetAir
 							{
 								color[]={0,0,0.12};
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 								class TargetArc
 								{
 									width=4;
@@ -25984,9 +25812,7 @@ class CfgVehicles
 							class targetAirEnemy: targetAir
 							{
 								color[]={0.12,0,0};
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 								class TargetArc
 								{
 									width=4;
@@ -26053,19 +25879,13 @@ class CfgVehicles
 							class targetAirGroup: targetAir
 							{
 								color[]={0,0,0.12};
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 							};
-							class targetAirDestroyed
-							{
-							};
+							class targetAirDestroyed;  //found empty after stripping
 							class targetAirRemote: targetAir
 							{
 								color[]={1,1,1};
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 								class TargetArc
 								{
 									width=4;
@@ -26097,9 +25917,7 @@ class CfgVehicles
 							class targetAirRemoteFriendly: targetAirRemote
 							{
 								color[]={0,0,0.12};
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 								class TargetArc
 								{
 									width=4;
@@ -26166,9 +25984,7 @@ class CfgVehicles
 							class targetAirRemoteEnemy: targetAirRemote
 							{
 								color[]={0.12,0,0};
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 								class TargetArc
 								{
 									width=4;
@@ -26205,29 +26021,19 @@ class CfgVehicles
 							class targetAirRemoteGroup: targetAirRemote
 							{
 								color[]={0,0,0.12};
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 							};
-							class targetAirRemoteDestroyed
-							{
-							};
+							class targetAirRemoteDestroyed;  //found empty after stripping
 						};
 					};
 				};
 			};
 		};
-		class Damage
-		{
-		};
+		class Damage;  //found empty after stripping
 		class TextureSources
 		{
-			class Olive
-			{
-			};
-			class Tan
-			{
-			};
+			class Olive;  //found empty after stripping
+			class Tan;  //found empty after stripping
 		};
 		class Turrets: Turrets
 		{
@@ -26269,9 +26075,7 @@ class CfgVehicles
 					minMoveZ=-0.075000003;
 					maxMoveZ=0.1;
 				};
-				class OpticsIn
-				{
-				};
+				class OpticsIn;  //found empty after stripping
 				magazines[]=
 				{
 					"rhsusf_mag_L8A3_16"
@@ -26401,9 +26205,7 @@ class CfgVehicles
 					minMoveZ=-0.075000003;
 					maxMoveZ=0.1;
 				};
-				class Components
-				{
-				};
+				class Components;  //found empty after stripping
 				class OpticsIn
 				{
 					class Wide: ViewOptics
@@ -26477,12 +26279,8 @@ class CfgVehicles
 					};
 				};
 			};
-			class CargoTurret_02: CargoTurret_02
-			{
-			};
-			class CargoTurret_03: CargoTurret_03
-			{
-			};
+			class CargoTurret_02: CargoTurret_02;  //found empty after stripping
+			class CargoTurret_03: CargoTurret_03;  //found empty after stripping
 		};
 		class Hitpoints: HitPoints
 		{
@@ -26512,21 +26310,11 @@ class CfgVehicles
 	{
 		class Turrets: Turrets
 		{
-			class MainTurret: MainTurret
-			{
-			};
-			class Turret_Weapon: Turret_Weapon
-			{
-			};
-			class Turret_LRAS: Turret_LRAS
-			{
-			};
-			class CargoTurret_02: CargoTurret_02
-			{
-			};
-			class CargoTurret_03: CargoTurret_03
-			{
-			};
+			class MainTurret: MainTurret;  //found empty after stripping
+			class Turret_Weapon: Turret_Weapon;  //found empty after stripping
+			class Turret_LRAS: Turret_LRAS;  //found empty after stripping
+			class CargoTurret_02: CargoTurret_02;  //found empty after stripping
+			class CargoTurret_03: CargoTurret_03;  //found empty after stripping
 		};
 	};
 	class rhsusf_stryker_m1127_m2_wd: rhsusf_stryker_m1127_m2_base
@@ -26539,9 +26327,7 @@ class CfgVehicles
 	};
 	class rhsusf_stryker_m1132_m2_base: rhsusf_stryker_m1126_m2_base
 	{
-		class Damage
-		{
-		};
+		class Damage;  //found empty after stripping
 		weapons[]={};
 		magazines[]=
 		{
@@ -26549,12 +26335,8 @@ class CfgVehicles
 		};
 		class TextureSources
 		{
-			class Olive
-			{
-			};
-			class Tan
-			{
-			};
+			class Olive;  //found empty after stripping
+			class Tan;  //found empty after stripping
 		};
 		class Hitpoints: HitPoints
 		{
@@ -38110,9 +37892,7 @@ class CfgVehicles
 							};
 							class markingThreat: lockingThreat
 							{
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 							};
 							class rwr
 							{
@@ -38152,27 +37932,19 @@ class CfgVehicles
 							class rwrFriendly: rwr
 							{
 								color[]={0,0,0.12};
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 							};
 							class rwrEnemy: rwr
 							{
 								color[]={0.12,0,0};
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 							};
 							class rwrGroup: rwr
 							{
 								color[]={1,0,0};
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 							};
-							class rwrDestroyed
-							{
-							};
+							class rwrDestroyed;  //found empty after stripping
 							class markedTarget
 							{
 								color[]={1,0.30000001,0};
@@ -38275,9 +38047,7 @@ class CfgVehicles
 							class assignedTarget: markedTarget
 							{
 								color[]={1,0,0};
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 							};
 							class target
 							{
@@ -38315,27 +38085,19 @@ class CfgVehicles
 							class targetFriendly: target
 							{
 								color[]={0,0,0.12};
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 							};
 							class targetEnemy: target
 							{
 								color[]={0.12,0,0};
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 							};
 							class targetGroup: target
 							{
 								color[]={0,0,0.12};
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 							};
-							class targetDestroyed
-							{
-							};
+							class targetDestroyed;  //found empty after stripping
 							class targetGround: target
 							{
 								class TargetLines: TargetLines
@@ -38707,46 +38469,30 @@ class CfgVehicles
 							class targetGroundGroup: targetGroundFriendly
 							{
 								color[]={0,0,0.12};
-								class TargetLines: TargetLines
-								{
-								};
-								class StaticDraw: StaticDraw
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
+								class StaticDraw: StaticDraw;  //found empty after stripping
 							};
-							class targetGroundDestroyed
-							{
-							};
+							class targetGroundDestroyed;  //found empty after stripping
 							class targetGroundRemote: target
 							{
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 							};
 							class targetGroundRemoteFriendly: targetGroundRemote
 							{
 								color[]={0,0,0.12};
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 							};
 							class targetGroundRemoteEnemy: targetGroundRemote
 							{
 								color[]={0.12,0,0};
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 							};
 							class targetGroundRemoteGroup: targetGroundRemote
 							{
 								color[]={0,0,0.12};
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 							};
-							class targetGroundRemoteDestroyed
-							{
-							};
+							class targetGroundRemoteDestroyed;  //found empty after stripping
 							class targetLaser: target
 							{
 								class TargetLines: TargetLines
@@ -38804,104 +38550,74 @@ class CfgVehicles
 							class targetLaserFriendly: targetLaser
 							{
 								color[]={0,0,0.12};
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 							};
 							class targetLaserEnemy: targetLaser
 							{
 								color[]={0.12,0,0};
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 							};
 							class targetLaserGroup: targetLaser
 							{
 								color[]={0,0,0.12};
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 							};
 							class targetNVG: targetLaser
 							{
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 							};
 							class targetNVGFriendly: targetNVG
 							{
 								color[]={0,0,0.12};
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 							};
 							class targetNVGEnemy: targetNVG
 							{
 								color[]={0.12,0,0};
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 							};
 							class targetNVGGroup: targetNVG
 							{
 								color[]={1,0,0};
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 							};
 							class targetMan: target
 							{
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 							};
 							class targetManFriendly: targetMan
 							{
 								color[]={0,0,0.12};
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 							};
 							class targetManEnemy: targetMan
 							{
 								color[]={0.12,0,0};
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 							};
 							class targetManGroup: targetMan
 							{
 								color[]={0,0,0.12};
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 							};
 							class targetManRemote: target
 							{
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 							};
 							class targetManRemoteFriendly: targetManRemote
 							{
 								color[]={0,0,0.12};
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 							};
 							class targetManRemoteEnemy: targetManRemote
 							{
 								color[]={0.12,0,0};
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 							};
 							class targetManRemoteGroup: targetManRemote
 							{
 								color[]={0,0,0.12};
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 							};
 							class targetAir
 							{
@@ -38979,9 +38695,7 @@ class CfgVehicles
 							class targetAirFriendly: targetAir
 							{
 								color[]={0,0,0.12};
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 								class TargetArc
 								{
 									width=4;
@@ -39048,9 +38762,7 @@ class CfgVehicles
 							class targetAirEnemy: targetAir
 							{
 								color[]={0.12,0,0};
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 								class TargetArc
 								{
 									width=4;
@@ -39117,19 +38829,13 @@ class CfgVehicles
 							class targetAirGroup: targetAir
 							{
 								color[]={0,0,0.12};
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 							};
-							class targetAirDestroyed
-							{
-							};
+							class targetAirDestroyed;  //found empty after stripping
 							class targetAirRemote: targetAir
 							{
 								color[]={1,1,1};
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 								class TargetArc
 								{
 									width=4;
@@ -39161,9 +38867,7 @@ class CfgVehicles
 							class targetAirRemoteFriendly: targetAirRemote
 							{
 								color[]={0,0,0.12};
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 								class TargetArc
 								{
 									width=4;
@@ -39230,9 +38934,7 @@ class CfgVehicles
 							class targetAirRemoteEnemy: targetAirRemote
 							{
 								color[]={0.12,0,0};
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 								class TargetArc
 								{
 									width=4;
@@ -39269,37 +38971,25 @@ class CfgVehicles
 							class targetAirRemoteGroup: targetAirRemote
 							{
 								color[]={0,0,0.12};
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 							};
-							class targetAirRemoteDestroyed
-							{
-							};
+							class targetAirRemoteDestroyed;  //found empty after stripping
 						};
 					};
 				};
 			};
 		};
-		class Damage
-		{
-		};
+		class Damage;  //found empty after stripping
 		class TextureSources
 		{
-			class Olive
-			{
-			};
-			class Tan
-			{
-			};
+			class Olive;  //found empty after stripping
+			class Tan;  //found empty after stripping
 		};
 		class Turrets: Turrets
 		{
 			class MainTurret: MainTurret
 			{
-				class Turrets
-				{
-				};
+				class Turrets;  //found empty after stripping
 				soundServoVertical[]=
 				{
 					"A3\Sounds_F\vehicles\armor\APC\noises\servo_APC_gunner_vertical",
@@ -39542,9 +39232,7 @@ class CfgVehicles
 					"rhs_mag_762x51_M240_200",
 					"rhs_mag_762x51_M240_200"
 				};
-				class OpticsIn
-				{
-				};
+				class OpticsIn;  //found empty after stripping
 				class ViewGunner: ViewOptics
 				{
 					initAngleX=-1;

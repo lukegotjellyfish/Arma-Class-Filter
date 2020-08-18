@@ -3378,7 +3378,9 @@ class CfgSoundSets
 		loop=0;
 	};
 };
-class CfgSounds;  //found empty after stripping
+class CfgSounds
+{
+	sounds[]={};
 	class RHS_boltSnap_pk
 	{
 		name="RHS_boltSnap_pk";
@@ -3500,31 +3502,17 @@ class CfgWeapons
 	{
 		class Eventhandlers;
 	};
-	class Rifle_Short_Base_F: Rifle_Base_F
-	{
-	};
+	class Rifle_Short_Base_F: Rifle_Base_F;  //found empty after stripping
 	class Pistol;
-	class Pistol_Base_F: Pistol
-	{
-	};
-	class Rifle_Long_Base_F: Rifle_Base_F
-	{
-	};
+	class Pistol_Base_F: Pistol;  //found empty after stripping
+	class Rifle_Long_Base_F: Rifle_Base_F;  //found empty after stripping
 	class UGL_F;
 	class EBR_base_F;
-	class srifle_EBR_F: EBR_base_F
-	{
-	};
+	class srifle_EBR_F: EBR_base_F;  //found empty after stripping
 	class Launcher;
-	class Launcher_Base_F: Launcher
-	{
-	};
-	class LMG_Mk200_F: Rifle_Long_Base_F
-	{
-	};
-	class arifle_MX_Base_F: Rifle_Base_F
-	{
-	};
+	class Launcher_Base_F: Launcher;  //found empty after stripping
+	class LMG_Mk200_F: Rifle_Long_Base_F;  //found empty after stripping
+	class arifle_MX_Base_F: Rifle_Base_F;  //found empty after stripping
 	class SMG_02_base_F: Rifle_Short_Base_F
 	{
 		class Single;
@@ -3540,12 +3528,8 @@ class CfgWeapons
 	};
 	class rhs_weap_pp2000: hgun_PDW2000_F
 	{
-		class Single: Single
-		{
-		};
-		class FullAuto: FullAuto
-		{
-		};
+		class Single: Single;  //found empty after stripping
+		class FullAuto: FullAuto;  //found empty after stripping
 	};
 	class rhs_weap_ak74m_Base_F: Rifle_Base_F
 	{
@@ -3572,9 +3556,7 @@ class CfgWeapons
 			};
 		};
 	};
-	class rhs_weap_ak74m: rhs_weap_ak74m_Base_F
-	{
-	};
+	class rhs_weap_ak74m: rhs_weap_ak74m_Base_F;  //found empty after stripping
 	class rhs_weap_akm: rhs_weap_ak74m
 	{
 		class Single: Mode_SemiAuto
@@ -3646,9 +3628,7 @@ class CfgWeapons
 	{
 		WW2_boltSnapSound="RHS_boltSnap_pk";
 		WW2_boltSnapDelay=0.1;
-		class FullAuto: Mode_FullAuto
-		{
-		};
+		class FullAuto: Mode_FullAuto;  //found empty after stripping
 		class Eventhandlers: Eventhandlers
 		{
 			class RHS_pk_firedSoundHandler

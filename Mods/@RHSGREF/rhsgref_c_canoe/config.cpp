@@ -36,9 +36,7 @@ class CfgVehicles
 		};
 		armor=15;
 		epeImpulseDamageCoef=12;
-		class Turrets
-		{
-		};
+		class Turrets;  //found empty after stripping
 		class textureSources
 		{
 			class Purple
@@ -49,30 +47,14 @@ class CfgVehicles
 					"CIV_F"
 				};
 			};
-			class Red: Purple
-			{
-			};
-			class Yellow: Purple
-			{
-			};
-			class Black: Purple
-			{
-			};
-			class Grey
-			{
-			};
-			class Blue: Purple
-			{
-			};
-			class Green: Purple
-			{
-			};
-			class Orange: Purple
-			{
-			};
-			class Camo: Purple
-			{
-			};
+			class Red: Purple;  //found empty after stripping
+			class Yellow: Purple;  //found empty after stripping
+			class Black: Purple;  //found empty after stripping
+			class Grey;  //found empty after stripping
+			class Blue: Purple;  //found empty after stripping
+			class Green: Purple;  //found empty after stripping
+			class Orange: Purple;  //found empty after stripping
+			class Camo: Purple;  //found empty after stripping
 		};
 		engineEffectSpeed=2;
 		leftEngineEffect="";

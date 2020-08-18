@@ -141,12 +141,8 @@ class CfgVehicles
 			};
 		};
 	};
-	class Land_rhs_p37: rhs_p37
-	{
-	};
-	class Land_rhs_prv13: rhs_prv13
-	{
-	};
+	class Land_rhs_p37: rhs_p37;  //found empty after stripping
+	class Land_rhs_prv13: rhs_prv13;  //found empty after stripping
 	class LandVehicle;
 	class StaticWeapon: LandVehicle
 	{
@@ -251,9 +247,7 @@ class CfgVehicles
 				};
 			};
 		};
-		class Damage
-		{
-		};
+		class Damage;  //found empty after stripping
 	};
 	class rhs_p37_turret_base: rhs_radars_turret_base
 	{
@@ -286,9 +280,7 @@ class CfgVehicles
 						minTrackableSpeed=0;
 						maxTrackableSpeed=230;
 					};
-					class DataLinkSensorComponent: SensorTemplateDataLink
-					{
-					};
+					class DataLinkSensorComponent: SensorTemplateDataLink;  //found empty after stripping
 				};
 			};
 		};
@@ -315,9 +307,7 @@ class CfgVehicles
 			};
 		};
 	};
-	class rhs_p37_turret_vpvo: rhs_p37_turret_base
-	{
-	};
+	class rhs_p37_turret_vpvo: rhs_p37_turret_base;  //found empty after stripping
 	class rhs_prv13_turret_base: rhs_radars_turret_base
 	{
 		icon="\rhsafrf\addons\rhs_radars\data\icons\prv13_icon.paa";
@@ -348,9 +338,7 @@ class CfgVehicles
 						minTrackableSpeed=0;
 						maxTrackableSpeed=230;
 					};
-					class DataLinkSensorComponent: SensorTemplateDataLink
-					{
-					};
+					class DataLinkSensorComponent: SensorTemplateDataLink;  //found empty after stripping
 				};
 			};
 		};
@@ -377,16 +365,12 @@ class CfgVehicles
 			};
 		};
 	};
-	class rhs_prv13_turret_vpvo: rhs_prv13_turret_base
-	{
-	};
+	class rhs_prv13_turret_vpvo: rhs_prv13_turret_base;  //found empty after stripping
 	class rhs_2P3_1: ThingX
 	{
 		icon="\rhsafrf\addons\rhs_radars\data\icons\2P3_1_icon.paa";
 		selectionDamage="damage";
-		class Damage
-		{
-		};
+		class Damage;  //found empty after stripping
 	};
 	class rhs_2P3_2: rhs_2P3_1
 	{
@@ -410,10 +394,6 @@ class CfgVehicles
 		sound="rhs_radar_engines02";
 	};
 	class Ruins_F;
-	class Land_rhs_p37_wreck: Ruins_F
-	{
-	};
-	class Land_rhs_prv13_wreck: Ruins_F
-	{
-	};
+	class Land_rhs_p37_wreck: Ruins_F;  //found empty after stripping
+	class Land_rhs_prv13_wreck: Ruins_F;  //found empty after stripping
 };

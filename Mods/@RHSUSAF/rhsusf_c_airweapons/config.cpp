@@ -335,9 +335,7 @@ class CfgAmmo
 			};
 		};
 	};
-	class rhs_ammo_aim9: rhs_ammo_Sidewinder_AA
-	{
-	};
+	class rhs_ammo_aim9: rhs_ammo_Sidewinder_AA;  //found empty after stripping
 	class rhs_ammo_aim9m: rhs_ammo_Sidewinder_AA
 	{
 		proxyShape="\a3\Weapons_F_EPC\Ammo\Missile_AA_04_F.p3d";
@@ -350,9 +348,7 @@ class CfgAmmo
 	{
 		weaponType="bomb";
 	};
-	class rhs_ammo_aim9x: rhs_ammo_Sidewinder_AA
-	{
-	};
+	class rhs_ammo_aim9x: rhs_ammo_Sidewinder_AA;  //found empty after stripping
 	class rhs_ammo_aim9x_ah64: rhs_ammo_aim9x
 	{
 		weaponType="bomb";
@@ -516,9 +512,7 @@ class CfgAmmo
 			"LoalDistance",
 			"Cruise"
 		};
-		class Direct
-		{
-		};
+		class Direct;  //found empty after stripping
 		class TopDown
 		{
 			ascendAngle=39;
@@ -757,9 +751,7 @@ class CfgAmmo
 			"Direct",
 			"LoalDistance"
 		};
-		class Direct
-		{
-		};
+		class Direct;  //found empty after stripping
 		class LoalDistance
 		{
 			lockSeekDistanceFromParent=200;
@@ -1032,9 +1024,7 @@ class CfgAmmo
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=1;
 						};
-						class GroundTarget: GroundTarget
-						{
-						};
+						class GroundTarget: GroundTarget;  //found empty after stripping
 						maxTrackableSpeed=15;
 					};
 				};
@@ -1140,9 +1130,7 @@ class CfgAmmo
 		{
 			class SensorsManagerComponent
 			{
-				class Components
-				{
-				};
+				class Components;  //found empty after stripping
 			};
 		};
 	};
@@ -1337,9 +1325,7 @@ class CfgMagazines
 		{
 			class rhs_a10a_ammoname
 			{
-				class Bones
-				{
-				};
+				class Bones;  //found empty after stripping
 				class Draw
 				{
 					color[]={1,1,1};
@@ -1370,9 +1356,7 @@ class CfgMagazines
 			};
 			class rhs_a10a_box
 			{
-				class Bones
-				{
-				};
+				class Bones;  //found empty after stripping
 				class Draw
 				{
 					color[]={0.15000001,1,0.15000001};
@@ -1628,12 +1612,8 @@ class CfgMagazines
 					{
 						condition="(PylonSelected +  PylonAmmoRelative)/2";
 						alpha=1;
-						class Shape: Shape
-						{
-						};
-						class PylonText1: PylonText1
-						{
-						};
+						class Shape: Shape;  //found empty after stripping
+						class PylonText1: PylonText1;  //found empty after stripping
 						class Background
 						{
 							points[]=
@@ -1757,15 +1737,9 @@ class CfgMagazines
 					{
 						condition="PylonAmmoRelative <= 0";
 						color[]={1,0,0,1};
-						class Shape: Shape
-						{
-						};
-						class PylonText1: PylonText1
-						{
-						};
-						class Background: Background
-						{
-						};
+						class Shape: Shape;  //found empty after stripping
+						class PylonText1: PylonText1;  //found empty after stripping
+						class Background: Background;  //found empty after stripping
 					};
 				};
 			};
@@ -1799,9 +1773,7 @@ class CfgMagazines
 		{
 			class rhs_a10a_ammoname
 			{
-				class Bones
-				{
-				};
+				class Bones;  //found empty after stripping
 				class Draw
 				{
 					color[]={1,1,1};
@@ -1832,9 +1804,7 @@ class CfgMagazines
 			};
 			class rhs_a10a_box
 			{
-				class Bones
-				{
-				};
+				class Bones;  //found empty after stripping
 				class Draw
 				{
 					color[]={0.15000001,1,0.15000001};
@@ -2014,9 +1984,7 @@ class CfgMagazines
 		{
 			class rhs_a10a_ammoname
 			{
-				class Bones
-				{
-				};
+				class Bones;  //found empty after stripping
 				class Draw
 				{
 					color[]={1,1,1};
@@ -2047,9 +2015,7 @@ class CfgMagazines
 			};
 			class rhs_a10a_box
 			{
-				class Bones
-				{
-				};
+				class Bones;  //found empty after stripping
 				class Draw
 				{
 					color[]={0.15000001,1,0.15000001};
@@ -2305,12 +2271,8 @@ class CfgMagazines
 					{
 						condition="(PylonSelected +  PylonAmmoRelative)/2";
 						alpha=1;
-						class Shape: Shape
-						{
-						};
-						class PylonText1: PylonText1
-						{
-						};
+						class Shape: Shape;  //found empty after stripping
+						class PylonText1: PylonText1;  //found empty after stripping
 						class Background
 						{
 							points[]=
@@ -2434,15 +2396,9 @@ class CfgMagazines
 					{
 						condition="PylonAmmoRelative <= 0";
 						color[]={1,0,0,1};
-						class Shape: Shape
-						{
-						};
-						class PylonText1: PylonText1
-						{
-						};
-						class Background: Background
-						{
-						};
+						class Shape: Shape;  //found empty after stripping
+						class PylonText1: PylonText1;  //found empty after stripping
+						class Background: Background;  //found empty after stripping
 					};
 				};
 			};
@@ -2611,12 +2567,8 @@ class CfgMagazines
 					{
 						condition="(PylonSelected +  PylonAmmoRelative)/2";
 						alpha=1;
-						class Shape: Shape
-						{
-						};
-						class PylonText1: PylonText1
-						{
-						};
+						class Shape: Shape;  //found empty after stripping
+						class PylonText1: PylonText1;  //found empty after stripping
 						class Background
 						{
 							points[]=
@@ -2740,15 +2692,9 @@ class CfgMagazines
 					{
 						condition="PylonAmmoRelative <= 0";
 						color[]={1,0,0,1};
-						class Shape: Shape
-						{
-						};
-						class PylonText1: PylonText1
-						{
-						};
-						class Background: Background
-						{
-						};
+						class Shape: Shape;  //found empty after stripping
+						class PylonText1: PylonText1;  //found empty after stripping
+						class Background: Background;  //found empty after stripping
 					};
 				};
 			};
@@ -2910,12 +2856,8 @@ class CfgMagazines
 					{
 						condition="(PylonSelected +  PylonAmmoRelative)/2";
 						alpha=1;
-						class Shape: Shape
-						{
-						};
-						class PylonText1: PylonText1
-						{
-						};
+						class Shape: Shape;  //found empty after stripping
+						class PylonText1: PylonText1;  //found empty after stripping
 						class Background
 						{
 							points[]=
@@ -3039,15 +2981,9 @@ class CfgMagazines
 					{
 						condition="PylonAmmoRelative <= 0";
 						color[]={1,0,0,1};
-						class Shape: Shape
-						{
-						};
-						class PylonText1: PylonText1
-						{
-						};
-						class Background: Background
-						{
-						};
+						class Shape: Shape;  //found empty after stripping
+						class PylonText1: PylonText1;  //found empty after stripping
+						class Background: Background;  //found empty after stripping
 					};
 				};
 			};
@@ -3331,9 +3267,7 @@ class CfgMagazines
 						alpha=1;
 						class Missile1: Missile1
 						{
-							class Shape: Shape
-							{
-							};
+							class Shape: Shape;  //found empty after stripping
 							class Background
 							{
 								points[]=
@@ -3455,9 +3389,7 @@ class CfgMagazines
 						};
 						class Missile2: Missile2
 						{
-							class Shape: Shape
-							{
-							};
+							class Shape: Shape;  //found empty after stripping
 							class Background
 							{
 								points[]=
@@ -3577,12 +3509,8 @@ class CfgMagazines
 								};
 							};
 						};
-						class PylonText1: PylonText1
-						{
-						};
-						class PylonText2: PylonText2
-						{
-						};
+						class PylonText1: PylonText1;  //found empty after stripping
+						class PylonText2: PylonText2;  //found empty after stripping
 					};
 					class HalfEmpty: Selected
 					{
@@ -3592,33 +3520,21 @@ class CfgMagazines
 						class Missile1: Missile1
 						{
 							condition="PylonAmmo<=1";
-							class Shape: Shape
-							{
-							};
-							class Background: Background
-							{
-							};
+							class Shape: Shape;  //found empty after stripping
+							class Background: Background;  //found empty after stripping
 						};
 						class Missile2: Missile2
 						{
 							condition="PylonAmmo<=0";
-							class Shape: Shape
-							{
-							};
-							class Background: Background
-							{
-							};
+							class Shape: Shape;  //found empty after stripping
+							class Background: Background;  //found empty after stripping
 						};
 					};
 					class Empty: HalfEmpty
 					{
 						condition="PylonAmmoRelative <= 0";
-						class PylonText1: PylonText1
-						{
-						};
-						class PylonText2: PylonText2
-						{
-						};
+						class PylonText1: PylonText1;  //found empty after stripping
+						class PylonText2: PylonText2;  //found empty after stripping
 					};
 				};
 			};
@@ -3660,9 +3576,7 @@ class CfgMagazines
 		{
 			class rhs_a10a_ammoname
 			{
-				class Bones
-				{
-				};
+				class Bones;  //found empty after stripping
 				class Draw
 				{
 					color[]={1,1,1};
@@ -3693,9 +3607,7 @@ class CfgMagazines
 			};
 			class rhs_a10a_box
 			{
-				class Bones
-				{
-				};
+				class Bones;  //found empty after stripping
 				class Draw
 				{
 					color[]={0.15000001,1,0.15000001};
@@ -3812,9 +3724,7 @@ class CfgMagazines
 			};
 			class rhs_ah64_ammoname
 			{
-				class Bones
-				{
-				};
+				class Bones;  //found empty after stripping
 				class Draw
 				{
 					condition="pylonSelected";
@@ -3866,9 +3776,7 @@ class CfgMagazines
 			};
 			class RHS_A29_Weap_MFD
 			{
-				class Bones
-				{
-				};
+				class Bones;  //found empty after stripping
 				class Draw
 				{
 					class Default
@@ -4114,69 +4022,39 @@ class CfgMagazines
 						{
 							color[]={0.99000001,0.94,0.58999997};
 							alpha=0.1;
-							class Background: Background
-							{
-							};
+							class Background: Background;  //found empty after stripping
 						};
 						class BlackText: Default
 						{
 							color[]={0,0,0};
-							class PylonText1: PylonText1
-							{
-							};
-							class PylonText2: PylonText1
-							{
-							};
-							class PylonText3: PylonText1
-							{
-							};
-							class PylonText4: PylonText1
-							{
-							};
-							class PylonText5: PylonText1
-							{
-							};
-							class PylonText6: PylonText1
-							{
-							};
+							class PylonText1: PylonText1;  //found empty after stripping
+							class PylonText2: PylonText1;  //found empty after stripping
+							class PylonText3: PylonText1;  //found empty after stripping
+							class PylonText4: PylonText1;  //found empty after stripping
+							class PylonText5: PylonText1;  //found empty after stripping
+							class PylonText6: PylonText1;  //found empty after stripping
 						};
 					};
 					class Empty: Selected
 					{
 						condition="PylonAmmoRelative <= 0";
 						color[]={1,0,0,1};
-						class Shape: Shape
-						{
-						};
+						class Shape: Shape;  //found empty after stripping
 						class BlackText: BlackText
 						{
-							class PylonText1: PylonText1
-							{
-							};
-							class PylonText2: PylonText1
-							{
-							};
-							class PylonText3: PylonText1
-							{
-							};
-							class PylonText4: PylonText1
-							{
-							};
-							class PylonText5: PylonText1
-							{
-							};
-							class PylonText6: PylonText1
-							{
-							};
+							class PylonText1: PylonText1;  //found empty after stripping
+							class PylonText2: PylonText1;  //found empty after stripping
+							class PylonText3: PylonText1;  //found empty after stripping
+							class PylonText4: PylonText1;  //found empty after stripping
+							class PylonText5: PylonText1;  //found empty after stripping
+							class PylonText6: PylonText1;  //found empty after stripping
 						};
 					};
 				};
 			};
 			class RHS_A29_Weap_MFD_Inventory
 			{
-				class Bones
-				{
-				};
+				class Bones;  //found empty after stripping
 				class Draw
 				{
 					class PylonText1
@@ -4283,9 +4161,7 @@ class CfgMagazines
 		{
 			class RHS_AH64_Weap_MFD
 			{
-				class Bones
-				{
-				};
+				class Bones;  //found empty after stripping
 				class Draw
 				{
 					class BackgroundGroup
@@ -4471,40 +4347,26 @@ class CfgMagazines
 					{
 						condition="(PylonSelected +  PylonAmmoRelative)/2";
 						color[]={0.99000001,0.94,0.58999997};
-						class Shape: Shape
-						{
-						};
-						class PylonText1: PylonText1
-						{
-						};
+						class Shape: Shape;  //found empty after stripping
+						class PylonText1: PylonText1;  //found empty after stripping
 					};
 					class Empty: Default
 					{
 						condition="PylonAmmoRelative <= 0";
 						color[]={1,0,0,1};
-						class Shape: Shape
-						{
-						};
-						class PylonText1: PylonText1
-						{
-						};
+						class Shape: Shape;  //found empty after stripping
+						class PylonText1: PylonText1;  //found empty after stripping
 					};
 				};
 			};
 			class RHS_AH64_Weap_MFD_Inventory
 			{
-				class Bones
-				{
-				};
-				class Draw
-				{
-				};
+				class Bones;  //found empty after stripping
+				class Draw;  //found empty after stripping
 			};
 			class RHS_A29_Weap_MFD
 			{
-				class Bones
-				{
-				};
+				class Bones;  //found empty after stripping
 				class Draw
 				{
 					class BackgroundGroup
@@ -4668,25 +4530,19 @@ class CfgMagazines
 					{
 						condition="(PylonSelected +  PylonAmmoRelative)/2";
 						color[]={0.99000001,0.94,0.58999997};
-						class Shape: Shape
-						{
-						};
+						class Shape: Shape;  //found empty after stripping
 					};
 					class Empty: Default
 					{
 						condition="PylonAmmoRelative <= 0";
 						color[]={1,0,0,1};
-						class Shape: Shape
-						{
-						};
+						class Shape: Shape;  //found empty after stripping
 					};
 				};
 			};
 			class RHS_A29_Weap_MFD_Inventory
 			{
-				class Bones
-				{
-				};
+				class Bones;  //found empty after stripping
 				class Draw
 				{
 					class PylonText1
@@ -4750,9 +4606,7 @@ class CfgMagazines
 		{
 			class RHS_AH64_Weap_MFD
 			{
-				class Bones
-				{
-				};
+				class Bones;  //found empty after stripping
 				class Draw
 				{
 					class BackgroundGroup
@@ -4938,34 +4792,22 @@ class CfgMagazines
 					{
 						condition="(PylonSelected +  PylonAmmoRelative)/2";
 						color[]={0.99000001,0.94,0.58999997};
-						class Shape: Shape
-						{
-						};
-						class PylonText1: PylonText1
-						{
-						};
+						class Shape: Shape;  //found empty after stripping
+						class PylonText1: PylonText1;  //found empty after stripping
 					};
 					class Empty: Default
 					{
 						condition="PylonAmmoRelative <= 0";
 						color[]={1,0,0,1};
-						class Shape: Shape
-						{
-						};
-						class PylonText1: PylonText1
-						{
-						};
+						class Shape: Shape;  //found empty after stripping
+						class PylonText1: PylonText1;  //found empty after stripping
 					};
 				};
 			};
 			class RHS_AH64_Weap_MFD_Inventory
 			{
-				class Bones
-				{
-				};
-				class Draw
-				{
-				};
+				class Bones;  //found empty after stripping
+				class Draw;  //found empty after stripping
 			};
 		};
 	};
@@ -4992,9 +4834,7 @@ class CfgMagazines
 		{
 			class RHS_AH64_Weap_MFD
 			{
-				class Bones
-				{
-				};
+				class Bones;  //found empty after stripping
 				class Draw
 				{
 					class BackgroundGroup
@@ -5583,52 +5423,28 @@ class CfgMagazines
 					{
 						condition="(PylonSelected +  PylonAmmoRelative)/2";
 						color[]={0.99000001,0.94,0.58999997};
-						class Shape: Shape
-						{
-						};
-						class PylonText1: PylonText1
-						{
-						};
-						class PylonText2: PylonText2
-						{
-						};
-						class PylonText3: PylonText3
-						{
-						};
-						class PylonText4: PylonText4
-						{
-						};
+						class Shape: Shape;  //found empty after stripping
+						class PylonText1: PylonText1;  //found empty after stripping
+						class PylonText2: PylonText2;  //found empty after stripping
+						class PylonText3: PylonText3;  //found empty after stripping
+						class PylonText4: PylonText4;  //found empty after stripping
 					};
 					class Empty: Default
 					{
 						condition="PylonAmmoRelative <= 0";
 						color[]={1,0,0,1};
-						class Shape: Shape
-						{
-						};
-						class PylonText1: PylonText1
-						{
-						};
-						class PylonText2: PylonText2
-						{
-						};
-						class PylonText3: PylonText3
-						{
-						};
-						class PylonText4: PylonText4
-						{
-						};
+						class Shape: Shape;  //found empty after stripping
+						class PylonText1: PylonText1;  //found empty after stripping
+						class PylonText2: PylonText2;  //found empty after stripping
+						class PylonText3: PylonText3;  //found empty after stripping
+						class PylonText4: PylonText4;  //found empty after stripping
 					};
 				};
 			};
 			class RHS_AH64_Weap_MFD_Inventory
 			{
-				class Bones
-				{
-				};
-				class Draw
-				{
-				};
+				class Bones;  //found empty after stripping
+				class Draw;  //found empty after stripping
 			};
 		};
 	};
@@ -5660,9 +5476,7 @@ class CfgMagazines
 		{
 			class RHS_A29_Weap_MFD
 			{
-				class Bones
-				{
-				};
+				class Bones;  //found empty after stripping
 				class Draw
 				{
 					class BackgroundGroup
@@ -5826,17 +5640,13 @@ class CfgMagazines
 					{
 						condition="PylonAmmoRelative <= 0";
 						color[]={1,0,0,1};
-						class Shape: Shape
-						{
-						};
+						class Shape: Shape;  //found empty after stripping
 					};
 					class Selected: Default
 					{
 						condition="(PylonSelected +  PylonAmmoRelative)/2";
 						color[]={0.99000001,0.94,0.58999997};
-						class Shape: Shape
-						{
-						};
+						class Shape: Shape;  //found empty after stripping
 					};
 					class Default2
 					{
@@ -5966,25 +5776,19 @@ class CfgMagazines
 					{
 						condition="PylonAmmoRelative <= 0.5";
 						color[]={1,0,0,1};
-						class Shape: Shape
-						{
-						};
+						class Shape: Shape;  //found empty after stripping
 					};
 					class Selected2: Default2
 					{
 						condition="((PylonSelected +  PylonAmmoRelative)/2)*(PylonAmmoRelative >= 1)";
 						color[]={0.99000001,0.94,0.58999997};
-						class Shape: Shape
-						{
-						};
+						class Shape: Shape;  //found empty after stripping
 					};
 				};
 			};
 			class RHS_A29_Weap_MFD_Inventory
 			{
-				class Bones
-				{
-				};
+				class Bones;  //found empty after stripping
 				class Draw
 				{
 					class PylonText1
@@ -6071,9 +5875,7 @@ class CfgMagazines
 		{
 			class RHS_AH64_Weap_MFD
 			{
-				class Bones
-				{
-				};
+				class Bones;  //found empty after stripping
 				class Draw
 				{
 					class BackgroundGroup
@@ -6662,52 +6464,28 @@ class CfgMagazines
 					{
 						condition="(PylonSelected +  PylonAmmoRelative)/2";
 						color[]={0.99000001,0.94,0.58999997};
-						class Shape: Shape
-						{
-						};
-						class PylonText1: PylonText1
-						{
-						};
-						class PylonText2: PylonText2
-						{
-						};
-						class PylonText3: PylonText3
-						{
-						};
-						class PylonText4: PylonText4
-						{
-						};
+						class Shape: Shape;  //found empty after stripping
+						class PylonText1: PylonText1;  //found empty after stripping
+						class PylonText2: PylonText2;  //found empty after stripping
+						class PylonText3: PylonText3;  //found empty after stripping
+						class PylonText4: PylonText4;  //found empty after stripping
 					};
 					class Empty: Default
 					{
 						condition="PylonAmmoRelative <= 0";
 						color[]={1,0,0,1};
-						class Shape: Shape
-						{
-						};
-						class PylonText1: PylonText1
-						{
-						};
-						class PylonText2: PylonText2
-						{
-						};
-						class PylonText3: PylonText3
-						{
-						};
-						class PylonText4: PylonText4
-						{
-						};
+						class Shape: Shape;  //found empty after stripping
+						class PylonText1: PylonText1;  //found empty after stripping
+						class PylonText2: PylonText2;  //found empty after stripping
+						class PylonText3: PylonText3;  //found empty after stripping
+						class PylonText4: PylonText4;  //found empty after stripping
 					};
 				};
 			};
 			class RHS_AH64_Weap_MFD_Inventory
 			{
-				class Bones
-				{
-				};
-				class Draw
-				{
-				};
+				class Bones;  //found empty after stripping
+				class Draw;  //found empty after stripping
 			};
 		};
 	};
@@ -6722,9 +6500,7 @@ class CfgMagazines
 		{
 			class RHS_A29_Weap_MFD
 			{
-				class Bones
-				{
-				};
+				class Bones;  //found empty after stripping
 				class Draw
 				{
 					class BackgroundGroup
@@ -6888,25 +6664,19 @@ class CfgMagazines
 					{
 						condition="(PylonSelected +  PylonAmmoRelative)/2";
 						color[]={0.99000001,0.94,0.58999997};
-						class Shape: Shape
-						{
-						};
+						class Shape: Shape;  //found empty after stripping
 					};
 					class Empty: Default
 					{
 						condition="PylonAmmoRelative <= 0";
 						color[]={1,0,0,1};
-						class Shape: Shape
-						{
-						};
+						class Shape: Shape;  //found empty after stripping
 					};
 				};
 			};
 			class RHS_A29_Weap_MFD_Inventory
 			{
-				class Bones
-				{
-				};
+				class Bones;  //found empty after stripping
 				class Draw
 				{
 					class PylonText1
@@ -6991,9 +6761,7 @@ class CfgMagazines
 		{
 			class RHS_A29_Weap_MFD
 			{
-				class Bones
-				{
-				};
+				class Bones;  //found empty after stripping
 				class Draw
 				{
 					class BackgroundGroup
@@ -7157,25 +6925,19 @@ class CfgMagazines
 					{
 						condition="(PylonSelected +  PylonAmmoRelative)/2";
 						color[]={0.99000001,0.94,0.58999997};
-						class Shape: Shape
-						{
-						};
+						class Shape: Shape;  //found empty after stripping
 					};
 					class Empty: Default
 					{
 						condition="PylonAmmoRelative <= 0";
 						color[]={1,0,0,1};
-						class Shape: Shape
-						{
-						};
+						class Shape: Shape;  //found empty after stripping
 					};
 				};
 			};
 			class RHS_A29_Weap_MFD_Inventory
 			{
-				class Bones
-				{
-				};
+				class Bones;  //found empty after stripping
 				class Draw
 				{
 					class PylonText1
@@ -7337,9 +7099,7 @@ class CfgMagazines
 		{
 			class rhs_a10a_ammoname
 			{
-				class Bones
-				{
-				};
+				class Bones;  //found empty after stripping
 				class Draw
 				{
 					color[]={1,1,1};
@@ -7370,9 +7130,7 @@ class CfgMagazines
 			};
 			class rhs_a10a_box
 			{
-				class Bones
-				{
-				};
+				class Bones;  //found empty after stripping
 				class Draw
 				{
 					color[]={0.15000001,1,0.15000001};
@@ -7497,9 +7255,7 @@ class CfgMagazines
 		{
 			class rhs_a10a_ammoname
 			{
-				class Bones
-				{
-				};
+				class Bones;  //found empty after stripping
 				class Draw
 				{
 					color[]={1,1,1};
@@ -7530,9 +7286,7 @@ class CfgMagazines
 			};
 			class rhs_a10a_box
 			{
-				class Bones
-				{
-				};
+				class Bones;  //found empty after stripping
 				class Draw
 				{
 					color[]={0.15000001,1,0.15000001};
@@ -7785,9 +7539,7 @@ class CfgMagazines
 		{
 			class rhs_a10a_ammoname
 			{
-				class Bones
-				{
-				};
+				class Bones;  //found empty after stripping
 				class Draw
 				{
 					color[]={1,1,1};
@@ -7818,9 +7570,7 @@ class CfgMagazines
 			};
 			class rhs_a10a_box
 			{
-				class Bones
-				{
-				};
+				class Bones;  //found empty after stripping
 				class Draw
 				{
 					color[]={0.15000001,1,0.15000001};
@@ -7937,9 +7687,7 @@ class CfgMagazines
 			};
 			class rhs_ah64_ammoname
 			{
-				class Bones
-				{
-				};
+				class Bones;  //found empty after stripping
 				class Draw
 				{
 					condition="pylonSelected";
@@ -8008,9 +7756,7 @@ class CfgMagazines
 		{
 			class RHS_AH64_Weap_MFD
 			{
-				class Bones
-				{
-				};
+				class Bones;  //found empty after stripping
 				class Draw
 				{
 					class Default
@@ -8255,69 +8001,39 @@ class CfgMagazines
 						{
 							color[]={0,0.12,0};
 							alpha=0.30000001;
-							class Background: Background
-							{
-							};
+							class Background: Background;  //found empty after stripping
 						};
 						class BlackText: Default
 						{
 							color[]={0,0,0};
-							class PylonText1: PylonText1
-							{
-							};
-							class PylonText2: PylonText1
-							{
-							};
-							class PylonText3: PylonText1
-							{
-							};
-							class PylonText4: PylonText1
-							{
-							};
-							class PylonText5: PylonText1
-							{
-							};
-							class PylonText6: PylonText1
-							{
-							};
+							class PylonText1: PylonText1;  //found empty after stripping
+							class PylonText2: PylonText1;  //found empty after stripping
+							class PylonText3: PylonText1;  //found empty after stripping
+							class PylonText4: PylonText1;  //found empty after stripping
+							class PylonText5: PylonText1;  //found empty after stripping
+							class PylonText6: PylonText1;  //found empty after stripping
 						};
 					};
 					class Empty: Selected
 					{
 						condition="PylonAmmoRelative <= 0";
 						color[]={1,0,0,1};
-						class Shape: Shape
-						{
-						};
+						class Shape: Shape;  //found empty after stripping
 						class BlackText: BlackText
 						{
-							class PylonText1: PylonText1
-							{
-							};
-							class PylonText2: PylonText1
-							{
-							};
-							class PylonText3: PylonText1
-							{
-							};
-							class PylonText4: PylonText1
-							{
-							};
-							class PylonText5: PylonText1
-							{
-							};
-							class PylonText6: PylonText1
-							{
-							};
+							class PylonText1: PylonText1;  //found empty after stripping
+							class PylonText2: PylonText1;  //found empty after stripping
+							class PylonText3: PylonText1;  //found empty after stripping
+							class PylonText4: PylonText1;  //found empty after stripping
+							class PylonText5: PylonText1;  //found empty after stripping
+							class PylonText6: PylonText1;  //found empty after stripping
 						};
 					};
 				};
 			};
 			class RHS_AH64_Weap_MFD_Inventory
 			{
-				class Bones
-				{
-				};
+				class Bones;  //found empty after stripping
 				class Draw
 				{
 					class PylonText1
@@ -8404,9 +8120,7 @@ class CfgMagazines
 			};
 			class RHS_A29_Weap_MFD
 			{
-				class Bones
-				{
-				};
+				class Bones;  //found empty after stripping
 				class Draw
 				{
 					class Default
@@ -8652,69 +8366,39 @@ class CfgMagazines
 						{
 							color[]={0.99000001,0.94,0.58999997};
 							alpha=0.1;
-							class Background: Background
-							{
-							};
+							class Background: Background;  //found empty after stripping
 						};
 						class BlackText: Default
 						{
 							color[]={0,0,0};
-							class PylonText1: PylonText1
-							{
-							};
-							class PylonText2: PylonText1
-							{
-							};
-							class PylonText3: PylonText1
-							{
-							};
-							class PylonText4: PylonText1
-							{
-							};
-							class PylonText5: PylonText1
-							{
-							};
-							class PylonText6: PylonText1
-							{
-							};
+							class PylonText1: PylonText1;  //found empty after stripping
+							class PylonText2: PylonText1;  //found empty after stripping
+							class PylonText3: PylonText1;  //found empty after stripping
+							class PylonText4: PylonText1;  //found empty after stripping
+							class PylonText5: PylonText1;  //found empty after stripping
+							class PylonText6: PylonText1;  //found empty after stripping
 						};
 					};
 					class Empty: Selected
 					{
 						condition="PylonAmmoRelative <= 0";
 						color[]={1,0,0,1};
-						class Shape: Shape
-						{
-						};
+						class Shape: Shape;  //found empty after stripping
 						class BlackText: BlackText
 						{
-							class PylonText1: PylonText1
-							{
-							};
-							class PylonText2: PylonText1
-							{
-							};
-							class PylonText3: PylonText1
-							{
-							};
-							class PylonText4: PylonText1
-							{
-							};
-							class PylonText5: PylonText1
-							{
-							};
-							class PylonText6: PylonText1
-							{
-							};
+							class PylonText1: PylonText1;  //found empty after stripping
+							class PylonText2: PylonText1;  //found empty after stripping
+							class PylonText3: PylonText1;  //found empty after stripping
+							class PylonText4: PylonText1;  //found empty after stripping
+							class PylonText5: PylonText1;  //found empty after stripping
+							class PylonText6: PylonText1;  //found empty after stripping
 						};
 					};
 				};
 			};
 			class RHS_A29_Weap_MFD_Inventory
 			{
-				class Bones
-				{
-				};
+				class Bones;  //found empty after stripping
 				class Draw
 				{
 					class PylonText1
@@ -8804,9 +8488,7 @@ class CfgMagazines
 		{
 			class rhs_a10a_ammoname
 			{
-				class Bones
-				{
-				};
+				class Bones;  //found empty after stripping
 				class Draw
 				{
 					color[]={1,1,1};
@@ -8837,9 +8519,7 @@ class CfgMagazines
 			};
 			class rhs_a10a_box
 			{
-				class Bones
-				{
-				};
+				class Bones;  //found empty after stripping
 				class Draw
 				{
 					color[]={0.15000001,1,0.15000001};
@@ -8956,9 +8636,7 @@ class CfgMagazines
 			};
 			class rhs_ah64_ammoname
 			{
-				class Bones
-				{
-				};
+				class Bones;  //found empty after stripping
 				class Draw
 				{
 					condition="pylonSelected";
@@ -9010,9 +8688,7 @@ class CfgMagazines
 			};
 			class RHS_A29_Weap_MFD
 			{
-				class Bones
-				{
-				};
+				class Bones;  //found empty after stripping
 				class Draw
 				{
 					class Default
@@ -9258,69 +8934,39 @@ class CfgMagazines
 						{
 							color[]={0.99000001,0.94,0.58999997};
 							alpha=0.1;
-							class Background: Background
-							{
-							};
+							class Background: Background;  //found empty after stripping
 						};
 						class BlackText: Default
 						{
 							color[]={0,0,0};
-							class PylonText1: PylonText1
-							{
-							};
-							class PylonText2: PylonText1
-							{
-							};
-							class PylonText3: PylonText1
-							{
-							};
-							class PylonText4: PylonText1
-							{
-							};
-							class PylonText5: PylonText1
-							{
-							};
-							class PylonText6: PylonText1
-							{
-							};
+							class PylonText1: PylonText1;  //found empty after stripping
+							class PylonText2: PylonText1;  //found empty after stripping
+							class PylonText3: PylonText1;  //found empty after stripping
+							class PylonText4: PylonText1;  //found empty after stripping
+							class PylonText5: PylonText1;  //found empty after stripping
+							class PylonText6: PylonText1;  //found empty after stripping
 						};
 					};
 					class Empty: Selected
 					{
 						condition="PylonAmmoRelative <= 0";
 						color[]={1,0,0,1};
-						class Shape: Shape
-						{
-						};
+						class Shape: Shape;  //found empty after stripping
 						class BlackText: BlackText
 						{
-							class PylonText1: PylonText1
-							{
-							};
-							class PylonText2: PylonText1
-							{
-							};
-							class PylonText3: PylonText1
-							{
-							};
-							class PylonText4: PylonText1
-							{
-							};
-							class PylonText5: PylonText1
-							{
-							};
-							class PylonText6: PylonText1
-							{
-							};
+							class PylonText1: PylonText1;  //found empty after stripping
+							class PylonText2: PylonText1;  //found empty after stripping
+							class PylonText3: PylonText1;  //found empty after stripping
+							class PylonText4: PylonText1;  //found empty after stripping
+							class PylonText5: PylonText1;  //found empty after stripping
+							class PylonText6: PylonText1;  //found empty after stripping
 						};
 					};
 				};
 			};
 			class RHS_A29_Weap_MFD_Inventory
 			{
-				class Bones
-				{
-				};
+				class Bones;  //found empty after stripping
 				class Draw
 				{
 					class PylonText1
@@ -9408,9 +9054,7 @@ class CfgMagazines
 		{
 			class RHS_AH64_Weap_MFD
 			{
-				class Bones
-				{
-				};
+				class Bones;  //found empty after stripping
 				class Draw
 				{
 					class Default
@@ -9655,69 +9299,39 @@ class CfgMagazines
 						{
 							color[]={0,0.12,0};
 							alpha=0.30000001;
-							class Background: Background
-							{
-							};
+							class Background: Background;  //found empty after stripping
 						};
 						class BlackText: Default
 						{
 							color[]={0,0,0};
-							class PylonText1: PylonText1
-							{
-							};
-							class PylonText2: PylonText1
-							{
-							};
-							class PylonText3: PylonText1
-							{
-							};
-							class PylonText4: PylonText1
-							{
-							};
-							class PylonText5: PylonText1
-							{
-							};
-							class PylonText6: PylonText1
-							{
-							};
+							class PylonText1: PylonText1;  //found empty after stripping
+							class PylonText2: PylonText1;  //found empty after stripping
+							class PylonText3: PylonText1;  //found empty after stripping
+							class PylonText4: PylonText1;  //found empty after stripping
+							class PylonText5: PylonText1;  //found empty after stripping
+							class PylonText6: PylonText1;  //found empty after stripping
 						};
 					};
 					class Empty: Selected
 					{
 						condition="PylonAmmoRelative <= 0";
 						color[]={1,0,0,1};
-						class Shape: Shape
-						{
-						};
+						class Shape: Shape;  //found empty after stripping
 						class BlackText: BlackText
 						{
-							class PylonText1: PylonText1
-							{
-							};
-							class PylonText2: PylonText1
-							{
-							};
-							class PylonText3: PylonText1
-							{
-							};
-							class PylonText4: PylonText1
-							{
-							};
-							class PylonText5: PylonText1
-							{
-							};
-							class PylonText6: PylonText1
-							{
-							};
+							class PylonText1: PylonText1;  //found empty after stripping
+							class PylonText2: PylonText1;  //found empty after stripping
+							class PylonText3: PylonText1;  //found empty after stripping
+							class PylonText4: PylonText1;  //found empty after stripping
+							class PylonText5: PylonText1;  //found empty after stripping
+							class PylonText6: PylonText1;  //found empty after stripping
 						};
 					};
 				};
 			};
 			class RHS_AH64_Weap_MFD_Inventory
 			{
-				class Bones
-				{
-				};
+				class Bones;  //found empty after stripping
 				class Draw
 				{
 					class PylonText1
@@ -9819,9 +9433,7 @@ class CfgMagazines
 		{
 			class rhs_a10a_ammoname
 			{
-				class Bones
-				{
-				};
+				class Bones;  //found empty after stripping
 				class Draw
 				{
 					color[]={1,1,1};
@@ -9852,9 +9464,7 @@ class CfgMagazines
 			};
 			class rhs_a10a_box
 			{
-				class Bones
-				{
-				};
+				class Bones;  //found empty after stripping
 				class Draw
 				{
 					color[]={0.15000001,1,0.15000001};
@@ -9971,9 +9581,7 @@ class CfgMagazines
 			};
 			class rhs_ah64_ammoname
 			{
-				class Bones
-				{
-				};
+				class Bones;  //found empty after stripping
 				class Draw
 				{
 					condition="pylonSelected";
@@ -10025,9 +9633,7 @@ class CfgMagazines
 			};
 			class RHS_A29_Weap_MFD
 			{
-				class Bones
-				{
-				};
+				class Bones;  //found empty after stripping
 				class Draw
 				{
 					class Default
@@ -10273,69 +9879,39 @@ class CfgMagazines
 						{
 							color[]={0.99000001,0.94,0.58999997};
 							alpha=0.1;
-							class Background: Background
-							{
-							};
+							class Background: Background;  //found empty after stripping
 						};
 						class BlackText: Default
 						{
 							color[]={0,0,0};
-							class PylonText1: PylonText1
-							{
-							};
-							class PylonText2: PylonText1
-							{
-							};
-							class PylonText3: PylonText1
-							{
-							};
-							class PylonText4: PylonText1
-							{
-							};
-							class PylonText5: PylonText1
-							{
-							};
-							class PylonText6: PylonText1
-							{
-							};
+							class PylonText1: PylonText1;  //found empty after stripping
+							class PylonText2: PylonText1;  //found empty after stripping
+							class PylonText3: PylonText1;  //found empty after stripping
+							class PylonText4: PylonText1;  //found empty after stripping
+							class PylonText5: PylonText1;  //found empty after stripping
+							class PylonText6: PylonText1;  //found empty after stripping
 						};
 					};
 					class Empty: Selected
 					{
 						condition="PylonAmmoRelative <= 0";
 						color[]={1,0,0,1};
-						class Shape: Shape
-						{
-						};
+						class Shape: Shape;  //found empty after stripping
 						class BlackText: BlackText
 						{
-							class PylonText1: PylonText1
-							{
-							};
-							class PylonText2: PylonText1
-							{
-							};
-							class PylonText3: PylonText1
-							{
-							};
-							class PylonText4: PylonText1
-							{
-							};
-							class PylonText5: PylonText1
-							{
-							};
-							class PylonText6: PylonText1
-							{
-							};
+							class PylonText1: PylonText1;  //found empty after stripping
+							class PylonText2: PylonText1;  //found empty after stripping
+							class PylonText3: PylonText1;  //found empty after stripping
+							class PylonText4: PylonText1;  //found empty after stripping
+							class PylonText5: PylonText1;  //found empty after stripping
+							class PylonText6: PylonText1;  //found empty after stripping
 						};
 					};
 				};
 			};
 			class RHS_A29_Weap_MFD_Inventory
 			{
-				class Bones
-				{
-				};
+				class Bones;  //found empty after stripping
 				class Draw
 				{
 					class PylonText1
@@ -10431,9 +10007,7 @@ class CfgMagazines
 		{
 			class rhs_a10a_ammoname
 			{
-				class Bones
-				{
-				};
+				class Bones;  //found empty after stripping
 				class Draw
 				{
 					color[]={1,1,1};
@@ -10464,9 +10038,7 @@ class CfgMagazines
 			};
 			class rhs_a10a_box
 			{
-				class Bones
-				{
-				};
+				class Bones;  //found empty after stripping
 				class Draw
 				{
 					color[]={0.15000001,1,0.15000001};
@@ -10606,9 +10178,7 @@ class CfgMagazines
 			};
 			class RHS_A29_Weap_MFD
 			{
-				class Bones
-				{
-				};
+				class Bones;  //found empty after stripping
 				class Draw
 				{
 					class Default
@@ -10854,69 +10424,39 @@ class CfgMagazines
 						{
 							color[]={0.99000001,0.94,0.58999997};
 							alpha=0.1;
-							class Background: Background
-							{
-							};
+							class Background: Background;  //found empty after stripping
 						};
 						class BlackText: Default
 						{
 							color[]={0,0,0};
-							class PylonText1: PylonText1
-							{
-							};
-							class PylonText2: PylonText1
-							{
-							};
-							class PylonText3: PylonText1
-							{
-							};
-							class PylonText4: PylonText1
-							{
-							};
-							class PylonText5: PylonText1
-							{
-							};
-							class PylonText6: PylonText1
-							{
-							};
+							class PylonText1: PylonText1;  //found empty after stripping
+							class PylonText2: PylonText1;  //found empty after stripping
+							class PylonText3: PylonText1;  //found empty after stripping
+							class PylonText4: PylonText1;  //found empty after stripping
+							class PylonText5: PylonText1;  //found empty after stripping
+							class PylonText6: PylonText1;  //found empty after stripping
 						};
 					};
 					class Empty: Selected
 					{
 						condition="PylonAmmoRelative <= 0";
 						color[]={1,0,0,1};
-						class Shape: Shape
-						{
-						};
+						class Shape: Shape;  //found empty after stripping
 						class BlackText: BlackText
 						{
-							class PylonText1: PylonText1
-							{
-							};
-							class PylonText2: PylonText1
-							{
-							};
-							class PylonText3: PylonText1
-							{
-							};
-							class PylonText4: PylonText1
-							{
-							};
-							class PylonText5: PylonText1
-							{
-							};
-							class PylonText6: PylonText1
-							{
-							};
+							class PylonText1: PylonText1;  //found empty after stripping
+							class PylonText2: PylonText1;  //found empty after stripping
+							class PylonText3: PylonText1;  //found empty after stripping
+							class PylonText4: PylonText1;  //found empty after stripping
+							class PylonText5: PylonText1;  //found empty after stripping
+							class PylonText6: PylonText1;  //found empty after stripping
 						};
 					};
 				};
 			};
 			class RHS_A29_Weap_MFD_Inventory
 			{
-				class Bones
-				{
-				};
+				class Bones;  //found empty after stripping
 				class Draw
 				{
 					class PylonText1
@@ -11057,9 +10597,7 @@ class CfgMagazines
 		{
 			class rhs_a10a_ammoname
 			{
-				class Bones
-				{
-				};
+				class Bones;  //found empty after stripping
 				class Draw
 				{
 					color[]={1,1,1};
@@ -11090,9 +10628,7 @@ class CfgMagazines
 			};
 			class rhs_a10a_box
 			{
-				class Bones
-				{
-				};
+				class Bones;  //found empty after stripping
 				class Draw
 				{
 					color[]={0.15000001,1,0.15000001};
@@ -11209,9 +10745,7 @@ class CfgMagazines
 			};
 			class RHS_A29_Weap_MFD
 			{
-				class Bones
-				{
-				};
+				class Bones;  //found empty after stripping
 				class Draw
 				{
 					class BackgroundGroup
@@ -11474,25 +11008,19 @@ class CfgMagazines
 					{
 						condition="(PylonSelected +  PylonAmmoRelative)/2";
 						color[]={0.99000001,0.94,0.58999997};
-						class Shape: Shape
-						{
-						};
+						class Shape: Shape;  //found empty after stripping
 					};
 					class Empty: Default
 					{
 						condition="PylonAmmoRelative <= 0";
 						color[]={1,0,0,1};
-						class Shape: Shape
-						{
-						};
+						class Shape: Shape;  //found empty after stripping
 					};
 				};
 			};
 			class RHS_A29_Weap_MFD_Inventory
 			{
-				class Bones
-				{
-				};
+				class Bones;  //found empty after stripping
 				class Draw
 				{
 					class PylonText1
@@ -11557,9 +11085,7 @@ class CfgMagazines
 		{
 			class rhs_a10a_ammoname
 			{
-				class Bones
-				{
-				};
+				class Bones;  //found empty after stripping
 				class Draw
 				{
 					color[]={1,1,1};
@@ -11590,9 +11116,7 @@ class CfgMagazines
 			};
 			class rhs_a10a_box
 			{
-				class Bones
-				{
-				};
+				class Bones;  //found empty after stripping
 				class Draw
 				{
 					color[]={0.15000001,1,0.15000001};
@@ -11732,9 +11256,7 @@ class CfgMagazines
 			};
 			class RHS_A29_Weap_MFD
 			{
-				class Bones
-				{
-				};
+				class Bones;  //found empty after stripping
 				class Draw
 				{
 					class BackgroundGroup
@@ -11997,25 +11519,19 @@ class CfgMagazines
 					{
 						condition="(PylonSelected +  PylonAmmoRelative)/2";
 						color[]={0.99000001,0.94,0.58999997};
-						class Shape: Shape
-						{
-						};
+						class Shape: Shape;  //found empty after stripping
 					};
 					class Empty: Default
 					{
 						condition="PylonAmmoRelative <= 0";
 						color[]={1,0,0,1};
-						class Shape: Shape
-						{
-						};
+						class Shape: Shape;  //found empty after stripping
 					};
 				};
 			};
 			class RHS_A29_Weap_MFD_Inventory
 			{
-				class Bones
-				{
-				};
+				class Bones;  //found empty after stripping
 				class Draw
 				{
 					class PylonText1
@@ -12079,9 +11595,7 @@ class CfgMagazines
 		{
 			class rhs_a10a_ammoname
 			{
-				class Bones
-				{
-				};
+				class Bones;  //found empty after stripping
 				class Draw
 				{
 					color[]={1,1,1};
@@ -12112,9 +11626,7 @@ class CfgMagazines
 			};
 			class rhs_a10a_box
 			{
-				class Bones
-				{
-				};
+				class Bones;  //found empty after stripping
 				class Draw
 				{
 					color[]={0.15000001,1,0.15000001};
@@ -12231,9 +11743,7 @@ class CfgMagazines
 			};
 			class RHS_A29_Weap_MFD
 			{
-				class Bones
-				{
-				};
+				class Bones;  //found empty after stripping
 				class Draw
 				{
 					class BackgroundGroup
@@ -12495,25 +12005,19 @@ class CfgMagazines
 					{
 						condition="(PylonSelected +  PylonAmmoRelative)/2";
 						color[]={0.99000001,0.94,0.58999997};
-						class Shape: Shape
-						{
-						};
+						class Shape: Shape;  //found empty after stripping
 					};
 					class Empty: Default
 					{
 						condition="PylonAmmoRelative <= 0";
 						color[]={1,0,0,1};
-						class Shape: Shape
-						{
-						};
+						class Shape: Shape;  //found empty after stripping
 					};
 				};
 			};
 			class RHS_A29_Weap_MFD_Inventory
 			{
-				class Bones
-				{
-				};
+				class Bones;  //found empty after stripping
 				class Draw
 				{
 					class PylonText1
@@ -12578,9 +12082,7 @@ class CfgMagazines
 		{
 			class rhs_a10a_ammoname
 			{
-				class Bones
-				{
-				};
+				class Bones;  //found empty after stripping
 				class Draw
 				{
 					color[]={1,1,1};
@@ -12611,9 +12113,7 @@ class CfgMagazines
 			};
 			class rhs_a10a_box
 			{
-				class Bones
-				{
-				};
+				class Bones;  //found empty after stripping
 				class Draw
 				{
 					color[]={0.15000001,1,0.15000001};
@@ -12869,12 +12369,8 @@ class CfgMagazines
 					{
 						condition="(PylonSelected +  PylonAmmoRelative)/2";
 						alpha=1;
-						class Shape: Shape
-						{
-						};
-						class PylonText1: PylonText1
-						{
-						};
+						class Shape: Shape;  //found empty after stripping
+						class PylonText1: PylonText1;  //found empty after stripping
 						class Background
 						{
 							points[]=
@@ -12998,23 +12494,15 @@ class CfgMagazines
 					{
 						condition="PylonAmmoRelative <= 0";
 						color[]={1,0,0,1};
-						class Shape: Shape
-						{
-						};
-						class PylonText1: PylonText1
-						{
-						};
-						class Background: Background
-						{
-						};
+						class Shape: Shape;  //found empty after stripping
+						class PylonText1: PylonText1;  //found empty after stripping
+						class Background: Background;  //found empty after stripping
 					};
 				};
 			};
 			class RHS_A29_Weap_MFD
 			{
-				class Bones
-				{
-				};
+				class Bones;  //found empty after stripping
 				class Draw
 				{
 					class BackgroundGroup
@@ -13276,25 +12764,19 @@ class CfgMagazines
 					{
 						condition="(PylonSelected +  PylonAmmoRelative)/2";
 						color[]={0.99000001,0.94,0.58999997};
-						class Shape: Shape
-						{
-						};
+						class Shape: Shape;  //found empty after stripping
 					};
 					class Empty: Default
 					{
 						condition="PylonAmmoRelative <= 0";
 						color[]={1,0,0,1};
-						class Shape: Shape
-						{
-						};
+						class Shape: Shape;  //found empty after stripping
 					};
 				};
 			};
 			class RHS_A29_Weap_MFD_Inventory
 			{
-				class Bones
-				{
-				};
+				class Bones;  //found empty after stripping
 				class Draw
 				{
 					class PylonText1
@@ -13359,9 +12841,7 @@ class CfgMagazines
 		{
 			class rhs_a10a_ammoname
 			{
-				class Bones
-				{
-				};
+				class Bones;  //found empty after stripping
 				class Draw
 				{
 					color[]={1,1,1};
@@ -13392,9 +12872,7 @@ class CfgMagazines
 			};
 			class rhs_a10a_box
 			{
-				class Bones
-				{
-				};
+				class Bones;  //found empty after stripping
 				class Draw
 				{
 					color[]={0.15000001,1,0.15000001};
@@ -13511,9 +12989,7 @@ class CfgMagazines
 			};
 			class RHS_A29_Weap_MFD
 			{
-				class Bones
-				{
-				};
+				class Bones;  //found empty after stripping
 				class Draw
 				{
 					class BackgroundGroup
@@ -13776,25 +13252,19 @@ class CfgMagazines
 					{
 						condition="(PylonSelected +  PylonAmmoRelative)/2";
 						color[]={0.99000001,0.94,0.58999997};
-						class Shape: Shape
-						{
-						};
+						class Shape: Shape;  //found empty after stripping
 					};
 					class Empty: Default
 					{
 						condition="PylonAmmoRelative <= 0";
 						color[]={1,0,0,1};
-						class Shape: Shape
-						{
-						};
+						class Shape: Shape;  //found empty after stripping
 					};
 				};
 			};
 			class RHS_A29_Weap_MFD_Inventory
 			{
-				class Bones
-				{
-				};
+				class Bones;  //found empty after stripping
 				class Draw
 				{
 					class PylonText1
@@ -13859,9 +13329,7 @@ class CfgMagazines
 		{
 			class rhs_a10a_ammoname
 			{
-				class Bones
-				{
-				};
+				class Bones;  //found empty after stripping
 				class Draw
 				{
 					color[]={1,1,1};
@@ -13892,9 +13360,7 @@ class CfgMagazines
 			};
 			class rhs_a10a_box
 			{
-				class Bones
-				{
-				};
+				class Bones;  //found empty after stripping
 				class Draw
 				{
 					color[]={0.15000001,1,0.15000001};
@@ -14011,9 +13477,7 @@ class CfgMagazines
 			};
 			class RHS_A29_Weap_MFD
 			{
-				class Bones
-				{
-				};
+				class Bones;  //found empty after stripping
 				class Draw
 				{
 					class BackgroundGroup
@@ -14276,25 +13740,19 @@ class CfgMagazines
 					{
 						condition="(PylonSelected +  PylonAmmoRelative)/2";
 						color[]={0.99000001,0.94,0.58999997};
-						class Shape: Shape
-						{
-						};
+						class Shape: Shape;  //found empty after stripping
 					};
 					class Empty: Default
 					{
 						condition="PylonAmmoRelative <= 0";
 						color[]={1,0,0,1};
-						class Shape: Shape
-						{
-						};
+						class Shape: Shape;  //found empty after stripping
 					};
 				};
 			};
 			class RHS_A29_Weap_MFD_Inventory
 			{
-				class Bones
-				{
-				};
+				class Bones;  //found empty after stripping
 				class Draw
 				{
 					class PylonText1
@@ -14371,9 +13829,7 @@ class CfgMagazines
 		{
 			class rhs_a10a_ammoname
 			{
-				class Bones
-				{
-				};
+				class Bones;  //found empty after stripping
 				class Draw
 				{
 					color[]={1,1,1};
@@ -14404,9 +13860,7 @@ class CfgMagazines
 			};
 			class rhs_a10a_box
 			{
-				class Bones
-				{
-				};
+				class Bones;  //found empty after stripping
 				class Draw
 				{
 					color[]={0.15000001,1,0.15000001};
@@ -14523,9 +13977,7 @@ class CfgMagazines
 			};
 			class RHS_A29_Weap_MFD
 			{
-				class Bones
-				{
-				};
+				class Bones;  //found empty after stripping
 				class Draw
 				{
 					class BackgroundGroup
@@ -14788,25 +14240,19 @@ class CfgMagazines
 					{
 						condition="(PylonSelected +  PylonAmmoRelative)/2";
 						color[]={0.99000001,0.94,0.58999997};
-						class Shape: Shape
-						{
-						};
+						class Shape: Shape;  //found empty after stripping
 					};
 					class Empty: Default
 					{
 						condition="PylonAmmoRelative <= 0";
 						color[]={1,0,0,1};
-						class Shape: Shape
-						{
-						};
+						class Shape: Shape;  //found empty after stripping
 					};
 				};
 			};
 			class RHS_A29_Weap_MFD_Inventory
 			{
-				class Bones
-				{
-				};
+				class Bones;  //found empty after stripping
 				class Draw
 				{
 					class PylonText1
@@ -14871,9 +14317,7 @@ class CfgMagazines
 		{
 			class rhs_a10a_ammoname
 			{
-				class Bones
-				{
-				};
+				class Bones;  //found empty after stripping
 				class Draw
 				{
 					color[]={1,1,1};
@@ -14904,9 +14348,7 @@ class CfgMagazines
 			};
 			class rhs_a10a_box
 			{
-				class Bones
-				{
-				};
+				class Bones;  //found empty after stripping
 				class Draw
 				{
 					color[]={0.15000001,1,0.15000001};
@@ -15023,9 +14465,7 @@ class CfgMagazines
 			};
 			class RHS_A29_Weap_MFD
 			{
-				class Bones
-				{
-				};
+				class Bones;  //found empty after stripping
 				class Draw
 				{
 					class BackgroundGroup
@@ -15288,25 +14728,19 @@ class CfgMagazines
 					{
 						condition="(PylonSelected +  PylonAmmoRelative)/2";
 						color[]={0.99000001,0.94,0.58999997};
-						class Shape: Shape
-						{
-						};
+						class Shape: Shape;  //found empty after stripping
 					};
 					class Empty: Default
 					{
 						condition="PylonAmmoRelative <= 0";
 						color[]={1,0,0,1};
-						class Shape: Shape
-						{
-						};
+						class Shape: Shape;  //found empty after stripping
 					};
 				};
 			};
 			class RHS_A29_Weap_MFD_Inventory
 			{
-				class Bones
-				{
-				};
+				class Bones;  //found empty after stripping
 				class Draw
 				{
 					class PylonText1
@@ -15374,9 +14808,7 @@ class CfgMagazines
 		{
 			class rhs_a10a_ammoname
 			{
-				class Bones
-				{
-				};
+				class Bones;  //found empty after stripping
 				class Draw
 				{
 					color[]={1,1,1};
@@ -15407,9 +14839,7 @@ class CfgMagazines
 			};
 			class rhs_a10a_box
 			{
-				class Bones
-				{
-				};
+				class Bones;  //found empty after stripping
 				class Draw
 				{
 					color[]={0.15000001,1,0.15000001};
@@ -15767,9 +15197,7 @@ class CfgWeapons
 			"rhs_mag_M257_7_green",
 			"rhs_mag_M257_7_USAF_LAU131"
 		};
-		class Far_AI: Far_AI
-		{
-		};
+		class Far_AI: Far_AI;  //found empty after stripping
 	};
 	class Missile_AGM_02_Plane_CAS_01_F;
 	class rhs_weap_HellfireLauncher: Missile_AGM_02_Plane_CAS_01_F
@@ -15803,12 +15231,8 @@ class CfgWeapons
 			minrange=250;
 			minrangeprobab=0.60000002;
 		};
-		class LoalDistance: TopDown
-		{
-		};
-		class Cruise: TopDown
-		{
-		};
+		class LoalDistance: TopDown;  //found empty after stripping
+		class Cruise: TopDown;  //found empty after stripping
 	};
 	class rhs_weap_AGM114L_Launcher: rhs_weap_HellfireLauncher
 	{
@@ -15836,17 +15260,13 @@ class CfgWeapons
 			fired="_this call rhs_fnc_LOALGuide";
 		};
 		canLock=1;
-		class TopDown: TopDown
-		{
-		};
+		class TopDown: TopDown;  //found empty after stripping
 	};
 	class rhs_weap_AGM114K_Launcher: rhs_weap_AGM114K_base_Launcher
 	{
 		class LOAL_LO: rhs_weap_AGM114K_base_Launcher
 		{
-			class LoalDistance: TopDown
-			{
-			};
+			class LoalDistance: TopDown;  //found empty after stripping
 			class EventHandlers
 			{
 				fired="_this call rhs_fnc_LOALGuide";
@@ -15854,9 +15274,7 @@ class CfgWeapons
 		};
 		class LOAL_HI: rhs_weap_AGM114K_base_Launcher
 		{
-			class LoalDistance: TopDown
-			{
-			};
+			class LoalDistance: TopDown;  //found empty after stripping
 			class EventHandlers
 			{
 				fired="_this call rhs_fnc_LOALGuide";
@@ -15878,9 +15296,7 @@ class CfgWeapons
 	{
 		class LOAL_LO: rhs_weap_AGM114K_base_Launcher
 		{
-			class LoalDistance: TopDown
-			{
-			};
+			class LoalDistance: TopDown;  //found empty after stripping
 			class EventHandlers
 			{
 				fired="_this call rhs_fnc_LOALGuide";
@@ -15888,9 +15304,7 @@ class CfgWeapons
 		};
 		class LOAL_HI: rhs_weap_AGM114K_base_Launcher
 		{
-			class LoalDistance: TopDown
-			{
-			};
+			class LoalDistance: TopDown;  //found empty after stripping
 			class EventHandlers
 			{
 				fired="_this call rhs_fnc_LOALGuide";
@@ -15912,9 +15326,7 @@ class CfgWeapons
 	{
 		class LOAL_LO: rhs_weap_AGM114K_base_Launcher
 		{
-			class LoalDistance: TopDown
-			{
-			};
+			class LoalDistance: TopDown;  //found empty after stripping
 			class EventHandlers
 			{
 				fired="_this call rhs_fnc_LOALGuide";
@@ -15922,9 +15334,7 @@ class CfgWeapons
 		};
 		class LOAL_HI: rhs_weap_AGM114K_base_Launcher
 		{
-			class LoalDistance: TopDown
-			{
-			};
+			class LoalDistance: TopDown;  //found empty after stripping
 			class EventHandlers
 			{
 				fired="_this call rhs_fnc_LOALGuide";
@@ -15963,12 +15373,8 @@ class CfgWeapons
 		cursorAim="EmptyCursor";
 		cursor="EmptyCursor";
 		showAimCursorInternal=0;
-		class Direct: TopDown
-		{
-		};
-		class LoalDistance: TopDown
-		{
-		};
+		class Direct: TopDown;  //found empty after stripping
+		class LoalDistance: TopDown;  //found empty after stripping
 	};
 	class rhs_weap_agm65: rhs_weap_HellfireLauncher
 	{

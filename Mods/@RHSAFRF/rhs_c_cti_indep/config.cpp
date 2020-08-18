@@ -94,21 +94,11 @@ class cfgWeapons
 			mass=40;
 		};
 	};
-	class rhs_insurgent_uniform_1: rhs_chdkz_uniform_1
-	{
-	};
-	class rhs_insurgent_uniform_2: rhs_chdkz_uniform_2
-	{
-	};
-	class rhs_insurgent_uniform_3: rhs_chdkz_uniform_3
-	{
-	};
-	class rhs_insurgent_uniform_4: rhs_chdkz_uniform_4
-	{
-	};
-	class rhs_insurgent_uniform_5: rhs_chdkz_uniform_5
-	{
-	};
+	class rhs_insurgent_uniform_1: rhs_chdkz_uniform_1;  //found empty after stripping
+	class rhs_insurgent_uniform_2: rhs_chdkz_uniform_2;  //found empty after stripping
+	class rhs_insurgent_uniform_3: rhs_chdkz_uniform_3;  //found empty after stripping
+	class rhs_insurgent_uniform_4: rhs_chdkz_uniform_4;  //found empty after stripping
+	class rhs_insurgent_uniform_5: rhs_chdkz_uniform_5;  //found empty after stripping
 };
 class UniformSlotInfo;
 class CfgVehicles
@@ -152,15 +142,9 @@ class CfgVehicles
 	class B_FieldPack_cbr;
 	class B_TacticalPack_blk;
 	class B_Carryall_cbr;
-	class rhs_ins_pack: B_FieldPack_khk
-	{
-	};
-	class rhs_ins_pack_GR: B_FieldPack_cbr
-	{
-	};
-	class rhs_ins_packMG: B_TacticalPack_blk
-	{
-	};
+	class rhs_ins_pack: B_FieldPack_khk;  //found empty after stripping
+	class rhs_ins_pack_GR: B_FieldPack_cbr;  //found empty after stripping
+	class rhs_ins_packMG: B_TacticalPack_blk;  //found empty after stripping
 	class rhs_ins_demo: B_Carryall_cbr
 	{
 		hiddenSelectionsTextures[]={};
@@ -277,9 +261,7 @@ class CfgVehicles
 		{
 			"\rhsafrf\addons\rhs_c_cti_indep\data\infantry\rvmats\clothing.rvmat"
 		};
-		class Wounds
-		{
-		};
+		class Wounds;  //found empty after stripping
 	};
 	class rhs_g_Soldier_F: rhs_ins_base
 	{
@@ -1101,31 +1083,19 @@ class CfgVehicles
 		canCarryBackPack=1;
 		nakedUniform="U_BasicBody";
 		uniformClass="rhs_chdkz_uniform_1";
-		class Wounds
-		{
-		};
+		class Wounds;  //found empty after stripping
 		class HitPoints: HitPoints
 		{
-			class HitFace: HitFace
-			{
-			};
-			class HitNeck: HitNeck
-			{
-			};
+			class HitFace: HitFace;  //found empty after stripping
+			class HitNeck: HitNeck;  //found empty after stripping
 			class HitPelvis: HitPelvis
 			{
 				armor=1;
 				passThrough=0.60000002;
 			};
-			class HitAbdomen: HitAbdomen
-			{
-			};
-			class HitDiaphragm: HitDiaphragm
-			{
-			};
-			class HitChest: HitChest
-			{
-			};
+			class HitAbdomen: HitAbdomen;  //found empty after stripping
+			class HitDiaphragm: HitDiaphragm;  //found empty after stripping
+			class HitChest: HitChest;  //found empty after stripping
 			class HitArms: HitArms
 			{
 				armor=1;
@@ -1135,9 +1105,7 @@ class CfgVehicles
 			{
 				armor=1;
 			};
-			class HitBody: HitBody
-			{
-			};
+			class HitBody: HitBody;  //found empty after stripping
 			class HitHands: HitHands
 			{
 				armor=1;
@@ -1256,9 +1224,7 @@ class CfgVehicles
 		{
 			"\rhsafrf\addons\rhs_c_cti_indep\data\infantry\rvmats\clothing.rvmat"
 		};
-		class Wounds
-		{
-		};
+		class Wounds;  //found empty after stripping
 	};
 	class rhs_g_uniform3_base: rhs_g_uniform1_base
 	{
@@ -1267,9 +1233,7 @@ class CfgVehicles
 		{
 			"\rhsafrf\addons\rhs_c_cti_indep\data\infantry\rvmats\clothing.rvmat"
 		};
-		class Wounds
-		{
-		};
+		class Wounds;  //found empty after stripping
 	};
 	class rhs_g_uniform4_base: rhs_g_uniform1_base
 	{
@@ -1278,9 +1242,7 @@ class CfgVehicles
 		{
 			"\rhsafrf\addons\rhs_c_cti_indep\data\infantry\rvmats\clothing.rvmat"
 		};
-		class Wounds
-		{
-		};
+		class Wounds;  //found empty after stripping
 	};
 	class rhs_g_uniform5_base: rhs_g_uniform1_base
 	{
@@ -1289,9 +1251,7 @@ class CfgVehicles
 		{
 			"\rhsafrf\addons\rhs_c_cti_indep\data\infantry\rvmats\clothing.rvmat"
 		};
-		class Wounds
-		{
-		};
+		class Wounds;  //found empty after stripping
 	};
 };
 class CfgFactionClasses

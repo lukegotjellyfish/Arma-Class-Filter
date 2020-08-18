@@ -421,9 +421,7 @@ class CfgVehicles
 				steering=0;
 				maxHandBrakeTorque=20000;
 			};
-			class LR2: LR
-			{
-			};
+			class LR2: LR;  //found empty after stripping
 			class RF: LF
 			{
 				side="right";
@@ -463,9 +461,7 @@ class CfgVehicles
 					"rhs_faction_rva"
 				};
 			};
-			class camo: standard
-			{
-			};
+			class camo: standard;  //found empty after stripping
 		};
 		class Attributes
 		{
@@ -579,9 +575,7 @@ class CfgVehicles
 				effect="ExhaustsEffectBig";
 			};
 		};
-		class Damage
-		{
-		};
+		class Damage;  //found empty after stripping
 		class Turrets: Turrets
 		{
 			class MainTurret: MainTurret
@@ -643,9 +637,7 @@ class CfgVehicles
 					minMoveZ=0;
 					maxMoveZ=0;
 				};
-				class ViewGunner: ViewCargo
-				{
-				};
+				class ViewGunner: ViewCargo;  //found empty after stripping
 			};
 		};
 		class ViewPilot: ViewPilot
@@ -760,9 +752,7 @@ class CfgVehicles
 			};
 		};
 	};
-	class rhs_9k79: OTR21_Base
-	{
-	};
+	class rhs_9k79: OTR21_Base;  //found empty after stripping
 	class rhs_9k79_K: rhs_9k79
 	{
 		class Turrets: Turrets

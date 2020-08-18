@@ -912,9 +912,7 @@ class CfgVehicles
 				effect="ExhaustEffectHTruck";
 			};
 		};
-		class Damage
-		{
-		};
+		class Damage;  //found empty after stripping
 		armorLights=0.0099999998;
 		class HitPoints: HitPoints
 		{
@@ -1428,9 +1426,7 @@ class CfgVehicles
 	};
 	class rhs_zil131_flatbed_base: rhs_zil131_open_base
 	{
-		class Turrets
-		{
-		};
+		class Turrets;  //found empty after stripping
 		animationList[]=
 		{
 			"cover_hide",
@@ -1524,9 +1520,7 @@ class CfgVehicles
 		};
 		class VehicleTransport: VehicleTransport
 		{
-			class Cargo: Cargo
-			{
-			};
+			class Cargo: Cargo;  //found empty after stripping
 			class Carrier: Carrier
 			{
 				disableHeightLimit=0;

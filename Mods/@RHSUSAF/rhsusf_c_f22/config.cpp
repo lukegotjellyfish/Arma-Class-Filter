@@ -43,12 +43,8 @@ class CfgVehicles
 		{
 			"rhsusf_airforce_jetpilot"
 		};
-		class pilotCamera
-		{
-		};
-		class EjectionSystem
-		{
-		};
+		class pilotCamera;  //found empty after stripping
+		class EjectionSystem;  //found empty after stripping
 		driverLeftLegAnimName="pedal_L";
 		driverRightLegAnimName="pedal_R";
 		driverCanEject=1;
@@ -168,12 +164,8 @@ class CfgVehicles
 						openBayWhenWeaponSelected=0;
 						autoCloseWhenEmptyDelay=4.5;
 					};
-					class BayCenter2: BayCenter1
-					{
-					};
-					class BayRight1: BayLeft1
-					{
-					};
+					class BayCenter2: BayCenter1;  //found empty after stripping
+					class BayRight1: BayLeft1;  //found empty after stripping
 				};
 			};
 			class SensorsManagerComponent
@@ -235,9 +227,7 @@ class CfgVehicles
 						maxFogSeeThrough=1;
 						maxTrackableSpeed=830;
 					};
-					class DataLinkSensorComponent: SensorTemplateDataLink
-					{
-					};
+					class DataLinkSensorComponent: SensorTemplateDataLink;  //found empty after stripping
 				};
 			};
 			class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
@@ -10125,21 +10115,15 @@ class CfgVehicles
 						};
 						class pointsUnknownEnemy: pointsUnknown
 						{
-							class Draw: Draw
-							{
-							};
+							class Draw: Draw;  //found empty after stripping
 						};
 						class pointsUnknownFriend: pointsUnknown
 						{
-							class Draw: Draw
-							{
-							};
+							class Draw: Draw;  //found empty after stripping
 						};
 						class pointsUnknownCiv: pointsUnknown
 						{
-							class Draw: Draw
-							{
-							};
+							class Draw: Draw;  //found empty after stripping
 						};
 						class pointsCar: points
 						{
@@ -10566,57 +10550,39 @@ class CfgVehicles
 						};
 						class pointsCarEnemy: pointsCar
 						{
-							class Draw: Draw
-							{
-							};
+							class Draw: Draw;  //found empty after stripping
 						};
 						class pointsCarFriend: pointsCar
 						{
-							class Draw: Draw
-							{
-							};
+							class Draw: Draw;  //found empty after stripping
 						};
 						class pointsCarCiv: pointsCar
 						{
-							class Draw: Draw
-							{
-							};
+							class Draw: Draw;  //found empty after stripping
 						};
 						class pointsCarNeutral: pointsCar
 						{
-							class Draw: Draw
-							{
-							};
+							class Draw: Draw;  //found empty after stripping
 						};
 						class pointsTank: points
 						{
-							class Draw: Draw
-							{
-							};
+							class Draw: Draw;  //found empty after stripping
 						};
 						class pointsTankEnemy: pointsTank
 						{
-							class Draw: Draw
-							{
-							};
+							class Draw: Draw;  //found empty after stripping
 						};
 						class pointsTankFriend: pointsTank
 						{
-							class Draw: Draw
-							{
-							};
+							class Draw: Draw;  //found empty after stripping
 						};
 						class pointsTankCiv: pointsTank
 						{
-							class Draw: Draw
-							{
-							};
+							class Draw: Draw;  //found empty after stripping
 						};
 						class pointsTankNeutral: pointsTank
 						{
-							class Draw: Draw
-							{
-							};
+							class Draw: Draw;  //found empty after stripping
 						};
 						class pointsAirplane
 						{
@@ -11280,9 +11246,7 @@ class CfgVehicles
 								};
 							};
 						};
-						class pointsNVG: pointsLaser
-						{
-						};
+						class pointsNVG: pointsLaser;  //found empty after stripping
 						class pointsStatic
 						{
 							class Draw
@@ -11311,18 +11275,10 @@ class CfgVehicles
 								};
 							};
 						};
-						class pointsStaticEnemy: pointsStatic
-						{
-						};
-						class pointsStaticFriend: pointsStatic
-						{
-						};
-						class pointsStaticCiv: pointsStatic
-						{
-						};
-						class pointsStaticNeutral: pointsStatic
-						{
-						};
+						class pointsStaticEnemy: pointsStatic;  //found empty after stripping
+						class pointsStaticFriend: pointsStatic;  //found empty after stripping
+						class pointsStaticCiv: pointsStatic;  //found empty after stripping
+						class pointsStaticNeutral: pointsStatic;  //found empty after stripping
 					};
 					class TargetDiamond
 					{
@@ -11440,9 +11396,7 @@ class CfgVehicles
 					diffuse[]={10,10,10,1};
 					emissive[]={400,200,200,1};
 				};
-				class Bones
-				{
-				};
+				class Bones;  //found empty after stripping
 				class Draw
 				{
 					condition="on";
@@ -18649,9 +18603,7 @@ class CfgVehicles
 					diffuse[]={10,10,10,1};
 					emissive[]={400,200,200,1};
 				};
-				class Bones
-				{
-				};
+				class Bones;  //found empty after stripping
 				class Draw
 				{
 					condition="on";
@@ -32407,9 +32359,7 @@ class CfgVehicles
 							};
 							class markingThreat: lockingThreat
 							{
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 							};
 							class rwr
 							{
@@ -32449,27 +32399,19 @@ class CfgVehicles
 							class rwrFriendly: rwr
 							{
 								color[]={0,1,0};
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 							};
 							class rwrEnemy: rwr
 							{
 								color[]={1,0,0};
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 							};
 							class rwrGroup: rwr
 							{
 								color[]={1,0,0};
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 							};
-							class rwrDestroyed
-							{
-							};
+							class rwrDestroyed;  //found empty after stripping
 							class markedTarget
 							{
 								color[]={1,0.30000001,0};
@@ -32572,9 +32514,7 @@ class CfgVehicles
 							class assignedTarget: markedTarget
 							{
 								color[]={1,0,0};
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 							};
 							class target
 							{
@@ -32796,9 +32736,7 @@ class CfgVehicles
 							class targetFriendly: target
 							{
 								color[]={0,1,0};
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 								class TextA
 								{
 									source="static";
@@ -32824,73 +32762,43 @@ class CfgVehicles
 							class targetEnemy: target
 							{
 								color[]={1,0,0};
-								class TargetLines: TargetLines
-								{
-								};
-								class TextA: TextA
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
+								class TextA: TextA;  //found empty after stripping
 							};
 							class targetGroup: target
 							{
 								color[]={1,0,0};
-								class TargetLines: TargetLines
-								{
-								};
-								class TextA: TextA
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
+								class TextA: TextA;  //found empty after stripping
 							};
-							class targetDestroyed
-							{
-							};
+							class targetDestroyed;  //found empty after stripping
 							class targetGround: target
 							{
-								class TargetLines: TargetLines
-								{
-								};
-								class TextA: TextA
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
+								class TextA: TextA;  //found empty after stripping
 							};
 							class targetGroundFriendly: targetGround
 							{
 								color[]={0,1,0};
-								class TargetLines: TargetLines
-								{
-								};
-								class TextA: TextA
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
+								class TextA: TextA;  //found empty after stripping
 							};
 							class targetGroundEnemy: targetGround
 							{
 								color[]={1,0,0};
-								class TargetLines: TargetLines
-								{
-								};
-								class TextA: TextA
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
+								class TextA: TextA;  //found empty after stripping
 							};
 							class targetGroundGroup: targetGround
 							{
 								color[]={1,0,0};
-								class TargetLines: TargetLines
-								{
-								};
-								class TextA: TextA
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
+								class TextA: TextA;  //found empty after stripping
 							};
-							class targetGroundDestroyed
-							{
-							};
+							class targetGroundDestroyed;  //found empty after stripping
 							class targetGroundRemote: target
 							{
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 								class TextA
 								{
 									source="static";
@@ -32916,191 +32824,113 @@ class CfgVehicles
 							class targetGroundRemoteFriendly: targetGroundRemote
 							{
 								color[]={0,1,0};
-								class TargetLines: TargetLines
-								{
-								};
-								class TextA: TextA
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
+								class TextA: TextA;  //found empty after stripping
 							};
 							class targetGroundRemoteEnemy: targetGroundRemote
 							{
 								color[]={1,0,0};
-								class TargetLines: TargetLines
-								{
-								};
-								class TextA: TextA
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
+								class TextA: TextA;  //found empty after stripping
 							};
 							class targetGroundRemoteGroup: targetGroundRemote
 							{
 								color[]={1,0,0};
-								class TargetLines: TargetLines
-								{
-								};
-								class TextA: TextA
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
+								class TextA: TextA;  //found empty after stripping
 							};
-							class targetGroundRemoteDestroyed
-							{
-							};
+							class targetGroundRemoteDestroyed;  //found empty after stripping
 							class targetLaser: target
 							{
-								class TargetLines: TargetLines
-								{
-								};
-								class TextA: TextA
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
+								class TextA: TextA;  //found empty after stripping
 							};
 							class targetLaserFriendly: targetLaser
 							{
 								color[]={0,1,0};
-								class TargetLines: TargetLines
-								{
-								};
-								class TextA: TextA
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
+								class TextA: TextA;  //found empty after stripping
 							};
 							class targetLaserEnemy: targetLaser
 							{
 								color[]={1,0,0};
-								class TargetLines: TargetLines
-								{
-								};
-								class TextA: TextA
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
+								class TextA: TextA;  //found empty after stripping
 							};
 							class targetLaserGroup: targetLaser
 							{
 								color[]={1,0,0};
-								class TargetLines: TargetLines
-								{
-								};
-								class TextA: TextA
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
+								class TextA: TextA;  //found empty after stripping
 							};
 							class targetNVG: target
 							{
-								class TargetLines: TargetLines
-								{
-								};
-								class TextA: TextA
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
+								class TextA: TextA;  //found empty after stripping
 							};
 							class targetNVGFriendly: targetNVG
 							{
 								color[]={0,1,0};
-								class TargetLines: TargetLines
-								{
-								};
-								class TextA: TextA
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
+								class TextA: TextA;  //found empty after stripping
 							};
 							class targetNVGEnemy: targetNVG
 							{
 								color[]={1,0,0};
-								class TargetLines: TargetLines
-								{
-								};
-								class TextA: TextA
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
+								class TextA: TextA;  //found empty after stripping
 							};
 							class targetNVGGroup: targetNVG
 							{
 								color[]={1,0,0};
-								class TargetLines: TargetLines
-								{
-								};
-								class TextA: TextA
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
+								class TextA: TextA;  //found empty after stripping
 							};
 							class targetMan: target
 							{
-								class TargetLines: TargetLines
-								{
-								};
-								class TextA: TextA
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
+								class TextA: TextA;  //found empty after stripping
 							};
 							class targetManFriendly: targetMan
 							{
 								color[]={0,1,0};
-								class TargetLines: TargetLines
-								{
-								};
-								class TextA: TextA
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
+								class TextA: TextA;  //found empty after stripping
 							};
 							class targetManEnemy: targetMan
 							{
 								color[]={1,0,0};
-								class TargetLines: TargetLines
-								{
-								};
-								class TextA: TextA
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
+								class TextA: TextA;  //found empty after stripping
 							};
 							class targetManGroup: targetMan
 							{
 								color[]={1,0,0};
-								class TargetLines: TargetLines
-								{
-								};
-								class TextA: TextA
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
+								class TextA: TextA;  //found empty after stripping
 							};
 							class targetManRemote: target
 							{
-								class TargetLines: TargetLines
-								{
-								};
-								class TextA: TextA
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
+								class TextA: TextA;  //found empty after stripping
 							};
 							class targetManRemoteFriendly: targetManRemote
 							{
 								color[]={0,1,0};
-								class TargetLines: TargetLines
-								{
-								};
-								class TextA: TextA
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
+								class TextA: TextA;  //found empty after stripping
 							};
 							class targetManRemoteEnemy: targetManRemote
 							{
 								color[]={1,0,0};
-								class TargetLines: TargetLines
-								{
-								};
-								class TextA: TextA
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
+								class TextA: TextA;  //found empty after stripping
 							};
 							class targetManRemoteGroup: targetManRemote
 							{
 								color[]={1,0,0};
-								class TargetLines: TargetLines
-								{
-								};
-								class TextA: TextA
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
+								class TextA: TextA;  //found empty after stripping
 							};
 							class targetAir
 							{
@@ -33322,42 +33152,26 @@ class CfgVehicles
 							class targetAirFriendly: targetAir
 							{
 								color[]={0,1,0};
-								class TargetLines: TargetLines
-								{
-								};
-								class TextA: TextA
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
+								class TextA: TextA;  //found empty after stripping
 							};
 							class targetAirEnemy: targetAir
 							{
 								color[]={1,0,0};
-								class TargetLines: TargetLines
-								{
-								};
-								class TextA: TextA
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
+								class TextA: TextA;  //found empty after stripping
 							};
 							class targetAirGroup: targetAir
 							{
 								color[]={1,0,0};
-								class TargetLines: TargetLines
-								{
-								};
-								class TextA: TextA
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
+								class TextA: TextA;  //found empty after stripping
 							};
-							class targetAirDestroyed
-							{
-							};
+							class targetAirDestroyed;  //found empty after stripping
 							class targetAirRemote: targetAir
 							{
 								color[]={1,1,1};
-								class TargetLines: TargetLines
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
 								class TextA
 								{
 									source="static";
@@ -33383,36 +33197,22 @@ class CfgVehicles
 							class targetAirRemoteFriendly: targetAirRemote
 							{
 								color[]={0,1,0};
-								class TargetLines: TargetLines
-								{
-								};
-								class TextA: TextA
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
+								class TextA: TextA;  //found empty after stripping
 							};
 							class targetAirRemoteEnemy: targetAirRemote
 							{
 								color[]={1,0,0};
-								class TargetLines: TargetLines
-								{
-								};
-								class TextA: TextA
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
+								class TextA: TextA;  //found empty after stripping
 							};
 							class targetAirRemoteGroup: targetAirRemote
 							{
 								color[]={1,0,0};
-								class TargetLines: TargetLines
-								{
-								};
-								class TextA: TextA
-								{
-								};
+								class TargetLines: TargetLines;  //found empty after stripping
+								class TextA: TextA;  //found empty after stripping
 							};
-							class targetAirRemoteDestroyed
-							{
-							};
+							class targetAirRemoteDestroyed;  //found empty after stripping
 						};
 					};
 				};
@@ -35004,22 +34804,14 @@ class CfgVehicles
 						class rwrFriendly: rwr
 						{
 							color[]={0,1,0};
-							class TargetLines: TargetLines
-							{
-							};
-							class TextA: TextA
-							{
-							};
+							class TargetLines: TargetLines;  //found empty after stripping
+							class TextA: TextA;  //found empty after stripping
 						};
 						class rwrEnemy: rwr
 						{
 							color[]={1,0,0};
-							class TargetLines: TargetLines
-							{
-							};
-							class TextA: TextA
-							{
-							};
+							class TargetLines: TargetLines;  //found empty after stripping
+							class TextA: TextA;  //found empty after stripping
 						};
 						class markedTarget
 						{
@@ -35375,28 +35167,18 @@ class CfgVehicles
 						class targetFriendly: target
 						{
 							color[]={0,1,0};
-							class TargetLines: TargetLines
-							{
-							};
-							class TextA: TextA
-							{
-							};
+							class TargetLines: TargetLines;  //found empty after stripping
+							class TextA: TextA;  //found empty after stripping
 						};
 						class targetEnemy: target
 						{
 							color[]={1,0,0};
-							class TargetLines: TargetLines
-							{
-							};
-							class TextA: TextA
-							{
-							};
+							class TargetLines: TargetLines;  //found empty after stripping
+							class TextA: TextA;  //found empty after stripping
 						};
 						class targetGround: target
 						{
-							class TargetLines: TargetLines
-							{
-							};
+							class TargetLines: TargetLines;  //found empty after stripping
 							class TextA
 							{
 								source="static";
@@ -35422,28 +35204,18 @@ class CfgVehicles
 						class targetGroundFriendly: targetGround
 						{
 							color[]={0,1,0};
-							class TargetLines: TargetLines
-							{
-							};
-							class TextA: TextA
-							{
-							};
+							class TargetLines: TargetLines;  //found empty after stripping
+							class TextA: TextA;  //found empty after stripping
 						};
 						class targetGroundEnemy: targetGround
 						{
 							color[]={1,0,0};
-							class TargetLines: TargetLines
-							{
-							};
-							class TextA: TextA
-							{
-							};
+							class TargetLines: TargetLines;  //found empty after stripping
+							class TextA: TextA;  //found empty after stripping
 						};
 						class targetGroundRemote: target
 						{
-							class TargetLines: TargetLines
-							{
-							};
+							class TargetLines: TargetLines;  //found empty after stripping
 							class TextA
 							{
 								source="static";
@@ -35469,22 +35241,14 @@ class CfgVehicles
 						class targetGroundRemoteFriendly: targetGroundRemote
 						{
 							color[]={0,1,0};
-							class TargetLines: TargetLines
-							{
-							};
-							class TextA: TextA
-							{
-							};
+							class TargetLines: TargetLines;  //found empty after stripping
+							class TextA: TextA;  //found empty after stripping
 						};
 						class targetGroundRemoteEnemy: targetGroundRemote
 						{
 							color[]={1,0,0};
-							class TargetLines: TargetLines
-							{
-							};
-							class TextA: TextA
-							{
-							};
+							class TargetLines: TargetLines;  //found empty after stripping
+							class TextA: TextA;  //found empty after stripping
 						};
 						class targetAir
 						{
@@ -35706,29 +35470,19 @@ class CfgVehicles
 						class targetAirFriendly: targetAir
 						{
 							color[]={0,1,0};
-							class TargetLines: TargetLines
-							{
-							};
-							class TextA: TextA
-							{
-							};
+							class TargetLines: TargetLines;  //found empty after stripping
+							class TextA: TextA;  //found empty after stripping
 						};
 						class targetAirEnemy: targetAir
 						{
 							color[]={1,0,0};
-							class TargetLines: TargetLines
-							{
-							};
-							class TextA: TextA
-							{
-							};
+							class TargetLines: TargetLines;  //found empty after stripping
+							class TextA: TextA;  //found empty after stripping
 						};
 						class targetAirRemote: targetAir
 						{
 							color[]={1,1,1};
-							class TargetLines: TargetLines
-							{
-							};
+							class TargetLines: TargetLines;  //found empty after stripping
 							class TextA
 							{
 								source="static";
@@ -35754,22 +35508,14 @@ class CfgVehicles
 						class targetAirRemoteFriendly: targetAirRemote
 						{
 							color[]={0,1,0};
-							class TargetLines: TargetLines
-							{
-							};
-							class TextA: TextA
-							{
-							};
+							class TargetLines: TargetLines;  //found empty after stripping
+							class TextA: TextA;  //found empty after stripping
 						};
 						class targetAirRemoteEnemy: targetAirRemote
 						{
 							color[]={1,0,0};
-							class TargetLines: TargetLines
-							{
-							};
-							class TextA: TextA
-							{
-							};
+							class TargetLines: TargetLines;  //found empty after stripping
+							class TextA: TextA;  //found empty after stripping
 						};
 					};
 					class MChaff_Text
@@ -35920,9 +35666,7 @@ class CfgVehicles
 					diffuse[]={10,10,10,1};
 					emissive[]={400,200,200,1};
 				};
-				class Bones
-				{
-				};
+				class Bones;  //found empty after stripping
 				class Draw
 				{
 					condition="on";
@@ -36153,9 +35897,7 @@ class CfgVehicles
 					diffuse[]={10,10,10,1};
 					emissive[]={400,200,200,1};
 				};
-				class Bones
-				{
-				};
+				class Bones;  //found empty after stripping
 				class Draw
 				{
 					condition="on";
@@ -36413,9 +36155,7 @@ class CfgVehicles
 					{1,1}
 				};
 			};
-			class Wheel_1_fake: Wheel_1
-			{
-			};
+			class Wheel_1_fake: Wheel_1;  //found empty after stripping
 			class Wheel_2: Wheel_1
 			{
 				steering=0;
@@ -36431,9 +36171,7 @@ class CfgVehicles
 				side="right";
 			};
 		};
-		class Damage
-		{
-		};
+		class Damage;  //found empty after stripping
 		class textureSources
 		{
 			class standard

@@ -131,9 +131,7 @@ class CfgVehicles
 		};
 		class EventHandlers;
 	};
-	class APC_Tracked_03_base_F: Tank_F
-	{
-	};
+	class APC_Tracked_03_base_F: Tank_F;  //found empty after stripping
 	class RHS_M2A2_Base: APC_Tracked_03_base_F
 	{
 		soundGetIn[]=
@@ -950,21 +948,11 @@ class CfgVehicles
 					{0.60000002,0.86000001}
 				};
 			};
-			class L3: L2
-			{
-			};
-			class L4: L2
-			{
-			};
-			class L5: L2
-			{
-			};
-			class L6: L2
-			{
-			};
-			class L7: L2
-			{
-			};
+			class L3: L2;  //found empty after stripping
+			class L4: L2;  //found empty after stripping
+			class L5: L2;  //found empty after stripping
+			class L6: L2;  //found empty after stripping
+			class L7: L2;  //found empty after stripping
 			class L9: L2
 			{
 				maxDroop=0;
@@ -980,21 +968,11 @@ class CfgVehicles
 				suspTravelDirection[]={0.125,-1,0};
 				side="right";
 			};
-			class R3: R2
-			{
-			};
-			class R4: R2
-			{
-			};
-			class R5: R2
-			{
-			};
-			class R6: R2
-			{
-			};
-			class R7: R2
-			{
-			};
+			class R3: R2;  //found empty after stripping
+			class R4: R2;  //found empty after stripping
+			class R5: R2;  //found empty after stripping
+			class R6: R2;  //found empty after stripping
+			class R7: R2;  //found empty after stripping
 			class R9: R2
 			{
 				maxDroop=0;
@@ -1419,9 +1397,7 @@ class CfgVehicles
 				hitpoint="Hit_Optics_Dvr_Peri";
 			};
 		};
-		class EventHandlers: EventHandlers
-		{
-		};
+		class EventHandlers: EventHandlers;  //found empty after stripping
 		armorLights=0.1;
 		class Attributes
 		{
@@ -1445,9 +1421,7 @@ class CfgVehicles
 	{
 		side=1;
 		damageResistance=0.01189;
-		class Damage
-		{
-		};
+		class Damage;  //found empty after stripping
 	};
 	class RHS_M2A2_early: RHS_M2A2
 	{
@@ -1478,9 +1452,7 @@ class CfgVehicles
 				};
 				class Turrets: Turrets
 				{
-					class CommanderOptics: CommanderOptics
-					{
-					};
+					class CommanderOptics: CommanderOptics;  //found empty after stripping
 				};
 			};
 		};
@@ -2887,17 +2859,13 @@ class CfgVehicles
 		};
 		class Attributes: Attributes
 		{
-			class rhs_hideIFFPanel: rhs_hideIFFPanel
-			{
-			};
+			class rhs_hideIFFPanel: rhs_hideIFFPanel;  //found empty after stripping
 			class rhs_hideDUKE: rhs_hideIFFPanel
 			{
 				property="rhs_hideDUKE";
 				expression="_this animate ['DUKE_Hide',_value,true];if(_value isEqualTo 1)then{_this removeWeaponTurret ['rhsusf_weap_duke',[0,0]]};";
 			};
-			class OpenRamp: OpenRamp
-			{
-			};
+			class OpenRamp: OpenRamp;  //found empty after stripping
 		};
 		class EventHandlers: EventHandlers
 		{
@@ -3106,13 +3074,9 @@ class CfgVehicles
 				radius=0.16;
 			};
 		};
-		class Damage
-		{
-		};
+		class Damage;  //found empty after stripping
 	};
-	class RHS_M2A3_BUSKIII_wd: RHS_M2A3_BUSKIII
-	{
-	};
+	class RHS_M2A3_BUSKIII_wd: RHS_M2A3_BUSKIII;  //found empty after stripping
 	class RHS_M6: RHS_M2A2_Base
 	{
 		side=1;
@@ -3144,24 +3108,12 @@ class CfgVehicles
 				};
 			};
 		};
-		class Damage
-		{
-		};
+		class Damage;  //found empty after stripping
 		threat[]={0.89999998,0.30000001,1};
 	};
-	class RHS_M2A2_wd: RHS_M2A2
-	{
-	};
-	class RHS_M2A2_BUSKI_WD: RHS_M2A2_BUSKI
-	{
-	};
-	class RHS_M2A3_BUSKI_wd: RHS_M2A3_BUSKI
-	{
-	};
-	class RHS_M2A3_wd: RHS_M2A3
-	{
-	};
-	class RHS_M6_wd: RHS_M6
-	{
-	};
+	class RHS_M2A2_wd: RHS_M2A2;  //found empty after stripping
+	class RHS_M2A2_BUSKI_WD: RHS_M2A2_BUSKI;  //found empty after stripping
+	class RHS_M2A3_BUSKI_wd: RHS_M2A3_BUSKI;  //found empty after stripping
+	class RHS_M2A3_wd: RHS_M2A3;  //found empty after stripping
+	class RHS_M6_wd: RHS_M6;  //found empty after stripping
 };

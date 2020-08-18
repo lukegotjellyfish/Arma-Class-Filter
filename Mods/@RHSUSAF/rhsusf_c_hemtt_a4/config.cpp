@@ -69,15 +69,11 @@ class CfgVehicles
 		};
 		class AnimationSources;
 	};
-	class Truck_01_base_F: Truck_F
-	{
-	};
+	class Truck_01_base_F: Truck_F;  //found empty after stripping
 	class rhsusf_HEMTT_A4_base: Truck_01_base_F
 	{
 		side=1;
-		class Turrets
-		{
-		};
+		class Turrets;  //found empty after stripping
 		class Exhausts
 		{
 			class Exhaust1
@@ -264,9 +260,7 @@ class CfgVehicles
 		};
 		hiddenSelections[]={};
 		hiddenSelectionsTextures[]={};
-		class Damage
-		{
-		};
+		class Damage;  //found empty after stripping
 		class EventHandlers: EventHandlers
 		{
 			init="if (local (_this select 0)) then {[(_this select 0), """", [], false] call bis_fnc_initVehicle;};";
@@ -316,24 +310,16 @@ class CfgVehicles
 		accuracy=0.5;
 		class textureSources
 		{
-			class rhs_woodland
-			{
-			};
-			class rhs_desert: rhs_woodland
-			{
-			};
+			class rhs_woodland;  //found empty after stripping
+			class rhs_desert: rhs_woodland;  //found empty after stripping
 		};
 	};
 	class rhsusf_M977A4_BKIT_usarmy_wd: rhsusf_M977A4_usarmy_wd
 	{
 		class textureSources: textureSources
 		{
-			class rhs_woodland: rhs_woodland
-			{
-			};
-			class rhs_desert: rhs_desert
-			{
-			};
+			class rhs_woodland: rhs_woodland;  //found empty after stripping
+			class rhs_desert: rhs_desert;  //found empty after stripping
 		};
 	};
 	class rhsusf_M977A4_BKIT_M2_usarmy_wd: rhsusf_M977A4_usarmy_wd
@@ -342,12 +328,8 @@ class CfgVehicles
 		maxFordingDepth=0;
 		class textureSources: textureSources
 		{
-			class rhs_woodland: rhs_woodland
-			{
-			};
-			class rhs_desert: rhs_desert
-			{
-			};
+			class rhs_woodland: rhs_woodland;  //found empty after stripping
+			class rhs_desert: rhs_desert;  //found empty after stripping
 		};
 		animationList[]=
 		{
@@ -428,9 +410,7 @@ class CfgVehicles
 					minFov=0.25;
 					maxFov=1.1;
 				};
-				class ViewGunner: ViewOptics
-				{
-				};
+				class ViewGunner: ViewOptics;  //found empty after stripping
 			};
 		};
 	};
@@ -572,12 +552,8 @@ class CfgVehicles
 		};
 		class textureSources: textureSources
 		{
-			class rhs_woodland: rhs_woodland
-			{
-			};
-			class rhs_desert: rhs_desert
-			{
-			};
+			class rhs_woodland: rhs_woodland;  //found empty after stripping
+			class rhs_desert: rhs_desert;  //found empty after stripping
 		};
 	};
 	class rhsusf_M978A4_BKIT_usarmy_wd: rhsusf_M977A4_usarmy_wd
@@ -601,45 +577,19 @@ class CfgVehicles
 		};
 		class textureSources: textureSources
 		{
-			class rhs_woodland: rhs_woodland
-			{
-			};
-			class rhs_desert: rhs_desert
-			{
-			};
+			class rhs_woodland: rhs_woodland;  //found empty after stripping
+			class rhs_desert: rhs_desert;  //found empty after stripping
 		};
 	};
-	class rhsusf_M977A4_usarmy_d: rhsusf_M977A4_usarmy_wd
-	{
-	};
-	class rhsusf_M977A4_BKIT_usarmy_d: rhsusf_M977A4_BKIT_usarmy_wd
-	{
-	};
-	class rhsusf_M977A4_BKIT_M2_usarmy_d: rhsusf_M977A4_BKIT_M2_usarmy_wd
-	{
-	};
-	class rhsusf_M977A4_REPAIR_usarmy_d: rhsusf_M977A4_REPAIR_usarmy_wd
-	{
-	};
-	class rhsusf_M977A4_REPAIR_BKIT_usarmy_d: rhsusf_M977A4_REPAIR_BKIT_usarmy_wd
-	{
-	};
-	class rhsusf_M977A4_REPAIR_BKIT_M2_usarmy_d: rhsusf_M977A4_REPAIR_BKIT_M2_usarmy_wd
-	{
-	};
-	class rhsusf_M977A4_AMMO_usarmy_d: rhsusf_M977A4_AMMO_usarmy_wd
-	{
-	};
-	class rhsusf_M977A4_AMMO_BKIT_usarmy_d: rhsusf_M977A4_AMMO_BKIT_usarmy_wd
-	{
-	};
-	class rhsusf_M977A4_AMMO_BKIT_M2_usarmy_d: rhsusf_M977A4_AMMO_BKIT_M2_usarmy_wd
-	{
-	};
-	class rhsusf_M978A4_usarmy_d: rhsusf_M978A4_usarmy_wd
-	{
-	};
-	class rhsusf_M978A4_BKIT_usarmy_d: rhsusf_M978A4_BKIT_usarmy_wd
-	{
-	};
+	class rhsusf_M977A4_usarmy_d: rhsusf_M977A4_usarmy_wd;  //found empty after stripping
+	class rhsusf_M977A4_BKIT_usarmy_d: rhsusf_M977A4_BKIT_usarmy_wd;  //found empty after stripping
+	class rhsusf_M977A4_BKIT_M2_usarmy_d: rhsusf_M977A4_BKIT_M2_usarmy_wd;  //found empty after stripping
+	class rhsusf_M977A4_REPAIR_usarmy_d: rhsusf_M977A4_REPAIR_usarmy_wd;  //found empty after stripping
+	class rhsusf_M977A4_REPAIR_BKIT_usarmy_d: rhsusf_M977A4_REPAIR_BKIT_usarmy_wd;  //found empty after stripping
+	class rhsusf_M977A4_REPAIR_BKIT_M2_usarmy_d: rhsusf_M977A4_REPAIR_BKIT_M2_usarmy_wd;  //found empty after stripping
+	class rhsusf_M977A4_AMMO_usarmy_d: rhsusf_M977A4_AMMO_usarmy_wd;  //found empty after stripping
+	class rhsusf_M977A4_AMMO_BKIT_usarmy_d: rhsusf_M977A4_AMMO_BKIT_usarmy_wd;  //found empty after stripping
+	class rhsusf_M977A4_AMMO_BKIT_M2_usarmy_d: rhsusf_M977A4_AMMO_BKIT_M2_usarmy_wd;  //found empty after stripping
+	class rhsusf_M978A4_usarmy_d: rhsusf_M978A4_usarmy_wd;  //found empty after stripping
+	class rhsusf_M978A4_BKIT_usarmy_d: rhsusf_M978A4_BKIT_usarmy_wd;  //found empty after stripping
 };

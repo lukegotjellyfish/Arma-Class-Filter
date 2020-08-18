@@ -48,9 +48,7 @@ class CfgVehicles
 		};
 		class AnimationSources;
 	};
-	class Truck_01_base_F: Truck_F
-	{
-	};
+	class Truck_01_base_F: Truck_F;  //found empty after stripping
 	class rhsusf_mtvr_base: Truck_01_base_F
 	{
 		side=1;
@@ -268,9 +266,7 @@ class CfgVehicles
 		};
 		hiddenSelections[]={};
 		hiddenSelectionsTextures[]={};
-		class EventHandlers: EventHandlers
-		{
-		};
+		class EventHandlers: EventHandlers;  //found empty after stripping
 		slingLoadCargoMemoryPoints[]=
 		{
 			"SlingLoadCargo1",

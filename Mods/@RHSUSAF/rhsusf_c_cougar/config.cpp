@@ -70,12 +70,8 @@ class CfgVehicles
 		};
 		class textureSources
 		{
-			class rhs_desert
-			{
-			};
-			class rhs_woodland
-			{
-			};
+			class rhs_desert;  //found empty after stripping
+			class rhs_woodland;  //found empty after stripping
 		};
 		class Attributes
 		{
@@ -88,9 +84,7 @@ class CfgVehicles
 			};
 		};
 		class CargoTurret;
-		class Turrets: Turrets
-		{
-		};
+		class Turrets: Turrets;  //found empty after stripping
 		hullDamageCauseExplosion=1;
 		armorStructural=8;
 		class HitPoints: HitPoints
@@ -352,12 +346,8 @@ class CfgVehicles
 				steering=0;
 			};
 		};
-		class Damage
-		{
-		};
-		class EventHandlers: EventHandlers
-		{
-		};
+		class Damage;  //found empty after stripping
+		class EventHandlers: EventHandlers;  //found empty after stripping
 	};
 	class rhsusf_cougar_GPK_base: rhsusf_Cougar_base
 	{
@@ -465,9 +455,7 @@ class CfgVehicles
 					minFov=0.25;
 					maxFov=1.1;
 				};
-				class ViewGunner: ViewOptics
-				{
-				};
+				class ViewGunner: ViewOptics;  //found empty after stripping
 			};
 		};
 	};
@@ -506,13 +494,7 @@ class CfgVehicles
 			};
 		};
 	};
-	class rhsusf_CGRCAT1A2_usmc_wd: rhsusf_CGRCAT1A2_usmc_d
-	{
-	};
-	class rhsusf_CGRCAT1A2_M2_usmc_wd: rhsusf_CGRCAT1A2_M2_usmc_d
-	{
-	};
-	class rhsusf_CGRCAT1A2_Mk19_usmc_wd: rhsusf_CGRCAT1A2_Mk19_usmc_d
-	{
-	};
+	class rhsusf_CGRCAT1A2_usmc_wd: rhsusf_CGRCAT1A2_usmc_d;  //found empty after stripping
+	class rhsusf_CGRCAT1A2_M2_usmc_wd: rhsusf_CGRCAT1A2_M2_usmc_d;  //found empty after stripping
+	class rhsusf_CGRCAT1A2_Mk19_usmc_wd: rhsusf_CGRCAT1A2_Mk19_usmc_d;  //found empty after stripping
 };

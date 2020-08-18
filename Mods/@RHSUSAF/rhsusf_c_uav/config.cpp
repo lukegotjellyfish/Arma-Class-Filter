@@ -26,9 +26,7 @@ class CfgPatches
 };
 class CfgVehicleClasses
 {
-	class rq11
-	{
-	};
+	class rq11;  //found empty after stripping
 };
 class CfgVehicles
 {
@@ -47,55 +45,27 @@ class CfgVehicles
 	};
 	class rhsusf_RQ11MONITOR: rq11_base_object
 	{
-		class EventHandlers: EventHandlers
-		{
-		};
+		class EventHandlers: EventHandlers;  //found empty after stripping
 	};
 	class rhsusf_RQ11RAVEN_STATIC: rq11_base_object
 	{
-		class EventHandlers: EventHandlers
-		{
-		};
+		class EventHandlers: EventHandlers;  //found empty after stripping
 	};
 	class rhsusf_RQ11RAVEN_B_STATIC: rq11_base_object
 	{
-		class EventHandlers: EventHandlers
-		{
-		};
+		class EventHandlers: EventHandlers;  //found empty after stripping
 	};
-	class rq11_zerlegt: rq11_base_object
-	{
-	};
-	class rq11b_zerlegt: rq11_base_object
-	{
-	};
-	class carpet_empty: rq11_base_object
-	{
-	};
-	class rq11_body: rq11_base_object
-	{
-	};
-	class rq11_camera: rq11_base_object
-	{
-	};
-	class rq11b_camera: rq11_base_object
-	{
-	};
-	class rq11_paddle: rq11_base_object
-	{
-	};
-	class rq11_rotor: rq11_base_object
-	{
-	};
-	class rq11_tail: rq11_base_object
-	{
-	};
-	class rq11_wing_m: rq11_base_object
-	{
-	};
-	class rq11_wing_lr: rq11_base_object
-	{
-	};
+	class rq11_zerlegt: rq11_base_object;  //found empty after stripping
+	class rq11b_zerlegt: rq11_base_object;  //found empty after stripping
+	class carpet_empty: rq11_base_object;  //found empty after stripping
+	class rq11_body: rq11_base_object;  //found empty after stripping
+	class rq11_camera: rq11_base_object;  //found empty after stripping
+	class rq11b_camera: rq11_base_object;  //found empty after stripping
+	class rq11_paddle: rq11_base_object;  //found empty after stripping
+	class rq11_rotor: rq11_base_object;  //found empty after stripping
+	class rq11_tail: rq11_base_object;  //found empty after stripping
+	class rq11_wing_m: rq11_base_object;  //found empty after stripping
+	class rq11_wing_lr: rq11_base_object;  //found empty after stripping
 	class ContainerSupply;
 	class Bag_Base;
 	class B_Kitbag_Base;
@@ -128,9 +98,7 @@ class CfgNonAiVehicles
 		avgHeight=30.1;
 		maxHeight=300;
 		moves="";
-		class EventHandlers
-		{
-		};
+		class EventHandlers;  //found empty after stripping
 	};
 	class rhsusf_RQ11_B_RAVEN: Kestrel_Random_F
 	{
@@ -146,9 +114,7 @@ class CfgNonAiVehicles
 		avgHeight=30.1;
 		maxHeight=300;
 		moves="";
-		class EventHandlers
-		{
-		};
+		class EventHandlers;  //found empty after stripping
 	};
 };
 class CfgSounds

@@ -107,15 +107,9 @@ class CfgVehicles
 			};
 		};
 	};
-	class RHS_Mi8_VVS_Base: RHS_Mi8_base
-	{
-	};
-	class RHS_Mi8mt_vvs: RHS_Mi8_VVS_Base
-	{
-	};
-	class RHS_Mi8mt_Cargo_vvs: RHS_Mi8mt_vvs
-	{
-	};
+	class RHS_Mi8_VVS_Base: RHS_Mi8_base;  //found empty after stripping
+	class RHS_Mi8mt_vvs: RHS_Mi8_VVS_Base;  //found empty after stripping
+	class RHS_Mi8mt_Cargo_vvs: RHS_Mi8mt_vvs;  //found empty after stripping
 	class LandVehicle;
 	class Car: LandVehicle
 	{
@@ -134,9 +128,7 @@ class CfgVehicles
 			};
 		};
 	};
-	class Offroad_01_base_F: Car_F
-	{
-	};
+	class Offroad_01_base_F: Car_F;  //found empty after stripping
 	class Tank: LandVehicle
 	{
 		class NewTurret;
@@ -176,13 +168,9 @@ class CfgVehicles
 	};
 	class RHS_UAZ_Base: Offroad_01_base_F
 	{
-		class Turrets: Turrets
-		{
-		};
+		class Turrets: Turrets;  //found empty after stripping
 	};
-	class rhs_uaz_open_Base: RHS_UAZ_Base
-	{
-	};
+	class rhs_uaz_open_Base: RHS_UAZ_Base;  //found empty after stripping
 	class Truck_F: Car_F
 	{
 		class ViewPilot;
@@ -259,34 +247,18 @@ class CfgVehicles
 		};
 		class Turrets;
 	};
-	class rhsusf_m1025_w: rhsusf_m998_w_4dr_fulltop
-	{
-	};
-	class rhsusf_m1025_w_m2: rhsusf_m1025_w
-	{
-	};
+	class rhsusf_m1025_w: rhsusf_m998_w_4dr_fulltop;  //found empty after stripping
+	class rhsusf_m1025_w_m2: rhsusf_m1025_w;  //found empty after stripping
 	class RHS_Ural_BaseTurret: Truck_F
 	{
 		class Turrets;
 	};
-	class RHS_Ural_Base: RHS_Ural_BaseTurret
-	{
-	};
-	class RHS_Ural_MSV_Base: RHS_Ural_Base
-	{
-	};
-	class RHS_Ural_Civ_Base: RHS_Ural_Base
-	{
-	};
-	class RHS_Ural_Open_MSV_01: RHS_Ural_MSV_Base
-	{
-	};
-	class RHS_Ural_Support_MSV_Base_01: RHS_Ural_MSV_Base
-	{
-	};
-	class RHS_Ural_Fuel_MSV_01: RHS_Ural_Support_MSV_Base_01
-	{
-	};
+	class RHS_Ural_Base: RHS_Ural_BaseTurret;  //found empty after stripping
+	class RHS_Ural_MSV_Base: RHS_Ural_Base;  //found empty after stripping
+	class RHS_Ural_Civ_Base: RHS_Ural_Base;  //found empty after stripping
+	class RHS_Ural_Open_MSV_01: RHS_Ural_MSV_Base;  //found empty after stripping
+	class RHS_Ural_Support_MSV_Base_01: RHS_Ural_MSV_Base;  //found empty after stripping
+	class RHS_Ural_Fuel_MSV_01: RHS_Ural_Support_MSV_Base_01;  //found empty after stripping
 	class rhs_a3t72tank_base: Tank_F
 	{
 		class Turrets: Turrets
@@ -333,12 +305,8 @@ class CfgVehicles
 			};
 		};
 	};
-	class rhs_pts_base: APC_Tracked_02_base_F
-	{
-	};
-	class rhs_pts_vmf: rhs_pts_base
-	{
-	};
+	class rhs_pts_base: APC_Tracked_02_base_F;  //found empty after stripping
+	class rhs_pts_vmf: rhs_pts_base;  //found empty after stripping
 	class rhs_mig29s_base: Plane_Base_F
 	{
 		class Components: Components
@@ -376,9 +344,7 @@ class CfgVehicles
 			};
 		};
 	};
-	class rhs_mig29sm_base: rhs_mig29s_base
-	{
-	};
+	class rhs_mig29sm_base: rhs_mig29s_base;  //found empty after stripping
 	class rhssaf_m998_olive_2dr_halftop: rhsusf_m998_w_2dr
 	{
 		side=2;
@@ -479,12 +445,8 @@ class CfgVehicles
 				};
 				class Turrets: Turrets
 				{
-					class CommanderOptics: CommanderOptics
-					{
-					};
-					class CommanderMG: CommanderMG
-					{
-					};
+					class CommanderOptics: CommanderOptics;  //found empty after stripping
+					class CommanderMG: CommanderMG;  //found empty after stripping
 				};
 			};
 		};
@@ -509,12 +471,8 @@ class CfgVehicles
 			{
 				class Turrets: Turrets
 				{
-					class CommanderOptics: CommanderOptics
-					{
-					};
-					class LoaderOptics: LoaderOptics
-					{
-					};
+					class CommanderOptics: CommanderOptics;  //found empty after stripping
+					class LoaderOptics: LoaderOptics;  //found empty after stripping
 				};
 			};
 		};
@@ -647,12 +605,8 @@ class CfgVehicles
 					{
 						attachment="rhs_mag_R73M_APU73";
 					};
-					class pylon7: pylon7
-					{
-					};
-					class cmDispenser: cmDispenser
-					{
-					};
+					class pylon7: pylon7;  //found empty after stripping
+					class cmDispenser: cmDispenser;  //found empty after stripping
 				};
 			};
 		};
@@ -708,12 +662,8 @@ class CfgVehicles
 					{
 						attachment="rhs_mag_R60M_APU60";
 					};
-					class pylon7: pylon7
-					{
-					};
-					class cmDispenser: cmDispenser
-					{
-					};
+					class pylon7: pylon7;  //found empty after stripping
+					class cmDispenser: cmDispenser;  //found empty after stripping
 				};
 			};
 		};

@@ -17,9 +17,7 @@ class CfgVehicles
 		armor=5000;
 		armorLights=0.050000001;
 	};
-	class All
-	{
-	};
+	class All;  //found empty after stripping
 	class LaserTarget: All
 	{
 		class EventHandlers
@@ -36,9 +34,7 @@ class CfgFunctions
 	class RHS
 	{
 		tag="RHS";
-		class SHTORA
-		{
-		};
+		class SHTORA;  //found empty after stripping
 		class Afganit
 		{
 			class aps_missileFired
@@ -54,9 +50,7 @@ class CfgAmmo
 	{
 		class EventHandlers;
 	};
-	class MissileCore: Default
-	{
-	};
+	class MissileCore: Default;  //found empty after stripping
 	class MissileBase: MissileCore
 	{
 		class EventHandlers: EventHandlers
@@ -67,9 +61,7 @@ class CfgAmmo
 			};
 		};
 	};
-	class RocketCore: Default
-	{
-	};
+	class RocketCore: Default;  //found empty after stripping
 	class RocketBase: RocketCore
 	{
 		class EventHandlers: EventHandlers

@@ -58,9 +58,7 @@ class CfgVehicles
 	class Helicopter: Air
 	{
 		class Turrets;
-		class HitPoints
-		{
-		};
+		class HitPoints;  //found empty after stripping
 	};
 	class Helicopter_Base_F: Helicopter
 	{
@@ -4640,9 +4638,7 @@ class CfgVehicles
 					"rhs_faction_vvs"
 				};
 			};
-			class Camo: standard
-			{
-			};
+			class Camo: standard;  //found empty after stripping
 		};
 		class Attributes
 		{
@@ -5306,9 +5302,7 @@ class CfgVehicles
 				depends="HitWings";
 			};
 		};
-		class Damage
-		{
-		};
+		class Damage;  //found empty after stripping
 		class Components: Components
 		{
 			class SensorsManagerComponent
@@ -5333,12 +5327,8 @@ class CfgVehicles
 						maxFogSeeThrough=0.30000001;
 						animDirection="mainGun";
 					};
-					class PassiveRadarSensorComponent: SensorTemplatePassiveRadar
-					{
-					};
-					class DataLinkSensorComponent: SensorTemplateDataLink
-					{
-					};
+					class PassiveRadarSensorComponent: SensorTemplatePassiveRadar;  //found empty after stripping
+					class DataLinkSensorComponent: SensorTemplateDataLink;  //found empty after stripping
 				};
 			};
 			class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
@@ -5730,9 +5720,7 @@ class CfgVehicles
 						maxFogSeeThrough=0.30000001;
 						animDirection="mainGun";
 					};
-					class PassiveRadarSensorComponent: SensorTemplatePassiveRadar
-					{
-					};
+					class PassiveRadarSensorComponent: SensorTemplatePassiveRadar;  //found empty after stripping
 					class ActiveRadarSensorComponent: SensorTemplateActiveRadar
 					{
 						class AirTarget
@@ -5752,9 +5740,7 @@ class CfgVehicles
 						maxFogSeeThrough=1;
 						maxTrackableSpeed=555;
 					};
-					class DataLinkSensorComponent: SensorTemplateDataLink
-					{
-					};
+					class DataLinkSensorComponent: SensorTemplateDataLink;  //found empty after stripping
 				};
 			};
 			class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
@@ -5812,25 +5798,15 @@ class CfgVehicles
 						attachment="rhs_mag_9M120M_Mi28_8x";
 						turret[]={0};
 					};
-					class cmDispenser: cmDispenser
-					{
-					};
+					class cmDispenser: cmDispenser;  //found empty after stripping
 				};
 			};
 		};
 	};
-	class rhs_mi28n_vvs: rhs_mi28n_base
-	{
-	};
-	class rhs_mi28n_vvsc: rhs_mi28n_base
-	{
-	};
-	class rhs_mi28n_s13_vvs: rhs_mi28n_S13_base
-	{
-	};
-	class rhs_mi28n_s13_vvsc: rhs_mi28n_S13_base
-	{
-	};
+	class rhs_mi28n_vvs: rhs_mi28n_base;  //found empty after stripping
+	class rhs_mi28n_vvsc: rhs_mi28n_base;  //found empty after stripping
+	class rhs_mi28n_s13_vvs: rhs_mi28n_S13_base;  //found empty after stripping
+	class rhs_mi28n_s13_vvsc: rhs_mi28n_S13_base;  //found empty after stripping
 	class Wreck_base_F;
 	class Land_rhs_mi28_wreck: Wreck_base_F
 	{
@@ -5840,9 +5816,7 @@ class CfgVehicles
 		};
 		icon="iconObject_1x2";
 	};
-	class Land_rhs_mi28_wreck2: Land_rhs_mi28_wreck
-	{
-	};
+	class Land_rhs_mi28_wreck2: Land_rhs_mi28_wreck;  //found empty after stripping
 	class rhs_mi28_wing_left: Plane
 	{
 		draconicForceXCoef=17.200001;
@@ -5859,25 +5833,15 @@ class CfgVehicles
 		fuelExplosionPower=0;
 		explosionEffect="";
 		driveOnComponent[]={};
-		class Turrets
-		{
-		};
+		class Turrets;  //found empty after stripping
 		class Eventhandlers
 		{
 			HandleDamage="deleteVehicle (_this select 0)";
 		};
 		SLX_XEH_DISABLED=1;
 	};
-	class rhs_mi28_wing_right: rhs_mi28_wing_left
-	{
-	};
-	class rhs_mi28_door_gunner: rhs_mi28_wing_left
-	{
-	};
-	class rhs_mi28_door_pilot: rhs_mi28_door_gunner
-	{
-	};
-	class rhs_mi28_balonetes: rhs_mi28_door_gunner
-	{
-	};
+	class rhs_mi28_wing_right: rhs_mi28_wing_left;  //found empty after stripping
+	class rhs_mi28_door_gunner: rhs_mi28_wing_left;  //found empty after stripping
+	class rhs_mi28_door_pilot: rhs_mi28_door_gunner;  //found empty after stripping
+	class rhs_mi28_balonetes: rhs_mi28_door_gunner;  //found empty after stripping
 };

@@ -4641,7 +4641,9 @@ class CfgSoundSets
 		loop=0;
 	};
 };
-class CfgSounds;  //found empty after stripping
+class CfgSounds
+{
+	sounds[]={};
 	class RHSUSF_boltSnap_m249
 	{
 		name="RHSUSF_boltSnap_m249";
@@ -4775,31 +4777,17 @@ class CfgWeapons
 	{
 		class Eventhandlers;
 	};
-	class Rifle_Short_Base_F: Rifle_Base_F
-	{
-	};
+	class Rifle_Short_Base_F: Rifle_Base_F;  //found empty after stripping
 	class Pistol;
-	class Pistol_Base_F: Pistol
-	{
-	};
-	class Rifle_Long_Base_F: Rifle_Base_F
-	{
-	};
+	class Pistol_Base_F: Pistol;  //found empty after stripping
+	class Rifle_Long_Base_F: Rifle_Base_F;  //found empty after stripping
 	class UGL_F;
 	class EBR_base_F;
-	class srifle_EBR_F: EBR_base_F
-	{
-	};
+	class srifle_EBR_F: EBR_base_F;  //found empty after stripping
 	class Launcher;
-	class Launcher_Base_F: Launcher
-	{
-	};
-	class LMG_Mk200_F: Rifle_Long_Base_F
-	{
-	};
-	class arifle_MX_Base_F: Rifle_Base_F
-	{
-	};
+	class Launcher_Base_F: Launcher;  //found empty after stripping
+	class LMG_Mk200_F: Rifle_Long_Base_F;  //found empty after stripping
+	class arifle_MX_Base_F: Rifle_Base_F;  //found empty after stripping
 	class SMG_02_base_F: Rifle_Short_Base_F
 	{
 		class Single;
@@ -4998,9 +4986,7 @@ class CfgWeapons
 	{
 		WW2_boltSnapSound="RHSUSF_boltSnap_m240";
 		WW2_boltSnapDelay=0.090000004;
-		class manual: Mode_FullAuto
-		{
-		};
+		class manual: Mode_FullAuto;  //found empty after stripping
 		class Eventhandlers: Eventhandlers
 		{
 			class RHSUSF_weapon_firedSoundHandler

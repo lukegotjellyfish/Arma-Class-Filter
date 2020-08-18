@@ -11,9 +11,7 @@ class CfgPatches
 };
 class CfgAddons
 {
-	class PreloadBanks
-	{
-	};
+	class PreloadBanks;  //found empty after stripping
 	class PreloadAddons
 	{
 		class RHS_SAF

@@ -65,9 +65,7 @@ class CfgVehicles
 		};
 		class AnimationSources;
 	};
-	class Truck_01_base_F: Truck_F
-	{
-	};
+	class Truck_01_base_F: Truck_F;  //found empty after stripping
 	class rhsusf_caiman_base: Truck_01_base_F
 	{
 		side=1;
@@ -84,12 +82,8 @@ class CfgVehicles
 		driverRightLegAnimName="pedal_r";
 		class textureSources
 		{
-			class rhs_desert
-			{
-			};
-			class rhs_woodland
-			{
-			};
+			class rhs_desert;  //found empty after stripping
+			class rhs_woodland;  //found empty after stripping
 		};
 		class Attributes
 		{
@@ -101,9 +95,7 @@ class CfgVehicles
 				expression="_this animate ['DUKE_Hide',_value,true];if(_value isEqualTo 1)then{_this removeWeaponTurret ['rhsusf_weap_duke',[-1]]};";
 			};
 		};
-		class Turrets
-		{
-		};
+		class Turrets;  //found empty after stripping
 		hullDamageCauseExplosion=1;
 		armorStructural=8;
 		class HitPoints: HitPoints
@@ -353,9 +345,7 @@ class CfgVehicles
 				maxHandBrakeTorque=300000;
 			};
 		};
-		class Damage
-		{
-		};
+		class Damage;  //found empty after stripping
 		class EventHandlers: EventHandlers
 		{
 			init="if (local (_this select 0)) then {[(_this select 0), """", [], false] call bis_fnc_initVehicle;};";
@@ -418,9 +408,7 @@ class CfgVehicles
 					minFov=0.25;
 					maxFov=1.1;
 				};
-				class ViewGunner: ViewOptics
-				{
-				};
+				class ViewGunner: ViewOptics;  //found empty after stripping
 			};
 		};
 	};
@@ -1414,15 +1402,9 @@ class CfgVehicles
 		};
 		class Attributes: Attributes
 		{
-			class rhs_hideDUKE: rhs_hideDUKE
-			{
-			};
-			class DoorL: DoorL
-			{
-			};
-			class DoorR: DoorR
-			{
-			};
+			class rhs_hideDUKE: rhs_hideDUKE;  //found empty after stripping
+			class DoorL: DoorL;  //found empty after stripping
+			class DoorR: DoorR;  //found empty after stripping
 			class rhino
 			{
 				control="CheckboxNumber";
@@ -1476,9 +1458,7 @@ class CfgVehicles
 					minFov=0.25;
 					maxFov=1.1;
 				};
-				class ViewGunner: ViewOptics
-				{
-				};
+				class ViewGunner: ViewOptics;  //found empty after stripping
 			};
 		};
 	};

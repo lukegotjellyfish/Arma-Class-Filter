@@ -428,9 +428,7 @@ class CfgAmmo
 		explosionTime=4;
 	};
 	class SmokeShell;
-	class rhssaf_ammo_brd_m83_white: SmokeShell
-	{
-	};
+	class rhssaf_ammo_brd_m83_white: SmokeShell;  //found empty after stripping
 	class rhssaf_ammo_brd_m83_yellow: rhssaf_ammo_brd_m83_white
 	{
 		smokeColor[]={0.98830003,0.86059999,0.071900003,1};
@@ -719,9 +717,7 @@ class CfgAmmo
 		mineInconspicuousness=5;
 		mineTrigger="RemoteTrigger";
 	};
-	class rhssaf_tm100_ammo_scripted: rhssaf_tm100_ammo
-	{
-	};
+	class rhssaf_tm100_ammo_scripted: rhssaf_tm100_ammo;  //found empty after stripping
 	class rhssaf_tm200_ammo: rhssaf_tm100_ammo
 	{
 		hit=400;
@@ -730,9 +726,7 @@ class CfgAmmo
 		mineModelDisabled="\rhssaf\addons\rhssaf_m_explosives\tm500\rhssaf_tm200_d";
 		defaultMagazine="rhssaf_tm200_mag";
 	};
-	class rhssaf_tm200_ammo_scripted: rhssaf_tm200_ammo
-	{
-	};
+	class rhssaf_tm200_ammo_scripted: rhssaf_tm200_ammo;  //found empty after stripping
 	class rhssaf_tm500_ammo: rhssaf_tm100_ammo
 	{
 		hit=1000;
@@ -749,9 +743,7 @@ class CfgAmmo
 			"Explosion_Debris_SoundSet"
 		};
 	};
-	class rhssaf_tm500_ammo_scripted: rhssaf_tm500_ammo
-	{
-	};
+	class rhssaf_tm500_ammo_scripted: rhssaf_tm500_ammo;  //found empty after stripping
 };
 class CfgMineTriggers
 {
@@ -804,206 +796,76 @@ class CfgVehicles
 	{
 		editorCategory="EdCat_Weapons";
 	};
-	class rhssaf_weapon_cz99: rhssaf_weapon_base
-	{
-	};
-	class rhssaf_weapon_m92: rhssaf_weapon_base
-	{
-	};
-	class rhssaf_weapon_m92_fold: rhssaf_weapon_m92
-	{
-	};
-	class rhssaf_weapon_scorpion: rhssaf_weapon_m92
-	{
-	};
-	class rhssaf_weapon_m76: rhssaf_weapon_base
-	{
-	};
-	class rhssaf_weapon_m82a1: rhssaf_weapon_m76
-	{
-	};
-	class rhssaf_weapon_minimi: rhssaf_weapon_base
-	{
-	};
-	class rhssaf_weapon_m84: rhssaf_weapon_minimi
-	{
-	};
-	class rhssaf_weapon_m70ab2: rhssaf_weapon_base
-	{
-	};
-	class rhssaf_weapon_m70ab2_fold: rhssaf_weapon_m70ab2
-	{
-	};
-	class rhssaf_weapon_m70b1: rhssaf_weapon_m70ab2
-	{
-	};
-	class rhssaf_weapon_m70b1n: rhssaf_weapon_m70ab2
-	{
-	};
-	class rhssaf_weapon_m70b3n: rhssaf_weapon_m70ab2
-	{
-	};
-	class rhssaf_weapon_m70b3n_pbg40: rhssaf_weapon_m70ab2
-	{
-	};
-	class rhssaf_weapon_m21a: rhssaf_weapon_base
-	{
-	};
-	class rhssaf_weapon_m21a_pr: rhssaf_weapon_m21a
-	{
-	};
-	class rhssaf_weapon_m21a_fold: rhssaf_weapon_m21a
-	{
-	};
-	class rhssaf_weapon_m21a_pbg40: rhssaf_weapon_m21a
-	{
-	};
-	class rhssaf_weapon_m21a_pr_pbg40: rhssaf_weapon_m21a
-	{
-	};
-	class rhssaf_weapon_m21s: rhssaf_weapon_m21a
-	{
-	};
-	class rhssaf_weapon_m21s_pr: rhssaf_weapon_m21a
-	{
-	};
-	class rhssaf_weapon_m21s_fold: rhssaf_weapon_m21a
-	{
-	};
-	class rhssaf_weapon_g36c: rhssaf_weapon_m21a
-	{
-	};
-	class rhssaf_weapon_g36kv: rhssaf_weapon_g36c
-	{
-	};
-	class rhssaf_weapon_g36kv_ag36: rhssaf_weapon_g36c
-	{
-	};
-	class rhssaf_weapon_m80: rhssaf_weapon_base
-	{
-	};
+	class rhssaf_weapon_cz99: rhssaf_weapon_base;  //found empty after stripping
+	class rhssaf_weapon_m92: rhssaf_weapon_base;  //found empty after stripping
+	class rhssaf_weapon_m92_fold: rhssaf_weapon_m92;  //found empty after stripping
+	class rhssaf_weapon_scorpion: rhssaf_weapon_m92;  //found empty after stripping
+	class rhssaf_weapon_m76: rhssaf_weapon_base;  //found empty after stripping
+	class rhssaf_weapon_m82a1: rhssaf_weapon_m76;  //found empty after stripping
+	class rhssaf_weapon_minimi: rhssaf_weapon_base;  //found empty after stripping
+	class rhssaf_weapon_m84: rhssaf_weapon_minimi;  //found empty after stripping
+	class rhssaf_weapon_m70ab2: rhssaf_weapon_base;  //found empty after stripping
+	class rhssaf_weapon_m70ab2_fold: rhssaf_weapon_m70ab2;  //found empty after stripping
+	class rhssaf_weapon_m70b1: rhssaf_weapon_m70ab2;  //found empty after stripping
+	class rhssaf_weapon_m70b1n: rhssaf_weapon_m70ab2;  //found empty after stripping
+	class rhssaf_weapon_m70b3n: rhssaf_weapon_m70ab2;  //found empty after stripping
+	class rhssaf_weapon_m70b3n_pbg40: rhssaf_weapon_m70ab2;  //found empty after stripping
+	class rhssaf_weapon_m21a: rhssaf_weapon_base;  //found empty after stripping
+	class rhssaf_weapon_m21a_pr: rhssaf_weapon_m21a;  //found empty after stripping
+	class rhssaf_weapon_m21a_fold: rhssaf_weapon_m21a;  //found empty after stripping
+	class rhssaf_weapon_m21a_pbg40: rhssaf_weapon_m21a;  //found empty after stripping
+	class rhssaf_weapon_m21a_pr_pbg40: rhssaf_weapon_m21a;  //found empty after stripping
+	class rhssaf_weapon_m21s: rhssaf_weapon_m21a;  //found empty after stripping
+	class rhssaf_weapon_m21s_pr: rhssaf_weapon_m21a;  //found empty after stripping
+	class rhssaf_weapon_m21s_fold: rhssaf_weapon_m21a;  //found empty after stripping
+	class rhssaf_weapon_g36c: rhssaf_weapon_m21a;  //found empty after stripping
+	class rhssaf_weapon_g36kv: rhssaf_weapon_g36c;  //found empty after stripping
+	class rhssaf_weapon_g36kv_ag36: rhssaf_weapon_g36c;  //found empty after stripping
+	class rhssaf_weapon_m80: rhssaf_weapon_base;  //found empty after stripping
 	class WeaponHolder_Single_limited_item_F;
 	class rhssaf_magazine_base: WeaponHolder_Single_limited_item_F
 	{
 		editorCategory="EdCat_Weapons";
 	};
-	class rhssaf_magazine_rhssaf_mag_br_m75: rhssaf_magazine_base
-	{
-	};
-	class rhssaf_magazine_rhssaf_mag_br_m84: rhssaf_magazine_base
-	{
-	};
-	class rhssaf_magazine_rhssaf_mag_rshb_p98: rhssaf_magazine_base
-	{
-	};
-	class rhssaf_magazine_rhssaf_mag_brz_m88: rhssaf_magazine_base
-	{
-	};
-	class rhssaf_magazine_rhssaf_mag_brd_m83_white: rhssaf_magazine_base
-	{
-	};
-	class rhssaf_magazine_rhssaf_mag_brd_m83_green: rhssaf_magazine_base
-	{
-	};
-	class rhssaf_magazine_rhssaf_mag_brd_m83_red: rhssaf_magazine_base
-	{
-	};
-	class rhssaf_magazine_rhssaf_mag_brd_m83_yellow: rhssaf_magazine_base
-	{
-	};
-	class rhssaf_magazine_rhssaf_mag_brd_m83_blue: rhssaf_magazine_base
-	{
-	};
-	class rhssaf_magazine_rhssaf_mag_brd_m83_orange: rhssaf_magazine_base
-	{
-	};
-	class rhssaf_magazine_rhssaf_mag_brk_m79: rhssaf_magazine_base
-	{
-	};
-	class rhssaf_magazine_rhsgref_20rnd_765x17_vz61: rhssaf_magazine_base
-	{
-	};
-	class rhssaf_magazine_rhsgref_10rnd_765x17_vz61: rhssaf_magazine_base
-	{
-	};
-	class rhssaf_magazine_rhssaf_mag_15Rnd_9x19_FMJ: rhssaf_magazine_base
-	{
-	};
-	class rhssaf_magazine_rhssaf_mag_15Rnd_9x19_JHP: rhssaf_magazine_base
-	{
-	};
-	class rhssaf_magazine_rhsgref_30rnd_556x45_m21: rhssaf_magazine_base
-	{
-	};
-	class rhssaf_magazine_rhsgref_30rnd_556x45_m21_t: rhssaf_magazine_base
-	{
-	};
-	class rhssaf_magazine_rhssaf_30rnd_556x45_EPR_G36: rhssaf_magazine_base
-	{
-	};
-	class rhssaf_magazine_rhssaf_30rnd_556x45_SOST_G36: rhssaf_magazine_base
-	{
-	};
-	class rhssaf_magazine_rhssaf_30rnd_556x45_SPR_G36: rhssaf_magazine_base
-	{
-	};
-	class rhssaf_magazine_rhssaf_100rnd_556x45_EPR_G36: rhssaf_magazine_base
-	{
-	};
-	class rhssaf_magazine_rhssaf_30rnd_556x45_Tracers_G36: rhssaf_magazine_base
-	{
-	};
-	class rhssaf_magazine_rhssaf_30rnd_556x45_TDIM_G36: rhssaf_magazine_base
-	{
-	};
-	class rhssaf_magazine_rhssaf_30rnd_556x45_MDIM_G36: rhssaf_magazine_base
-	{
-	};
-	class rhssaf_magazine_rhssaf_30Rnd_762x39mm_M67: rhssaf_magazine_base
-	{
-	};
-	class rhssaf_magazine_rhssaf_30Rnd_762x39mm_M78_tracer: rhssaf_magazine_base
-	{
-	};
-	class rhssaf_magazine_rhssaf_30Rnd_762x39_M82_api: rhssaf_magazine_base
-	{
-	};
-	class rhssaf_magazine_rhsgref_10Rnd_792x57_m76: rhssaf_magazine_base
-	{
-	};
-	class rhssaf_magazine_rhssaf_10Rnd_792x57_m76_tracer: rhssaf_magazine_base
-	{
-	};
-	class rhssaf_magazine_rhssaf_250Rnd_762x54R: rhssaf_magazine_base
-	{
-	};
-	class rhssaf_magazine_rhssaf_mine_pma3_mag: rhssaf_magazine_base
-	{
-	};
-	class rhssaf_magazine_rhssaf_mine_tma4_mag: rhssaf_magazine_base
-	{
-	};
-	class rhssaf_magazine_rhssaf_mine_mrud_a_mag: rhssaf_magazine_base
-	{
-	};
-	class rhssaf_magazine_rhssaf_mine_mrud_b_mag: rhssaf_magazine_base
-	{
-	};
-	class rhssaf_magazine_rhssaf_mine_mrud_c_mag: rhssaf_magazine_base
-	{
-	};
-	class rhssaf_magazine_rhssaf_mine_mrud_d_mag: rhssaf_magazine_base
-	{
-	};
-	class rhssaf_magazine_rhssaf_tm100_mag: rhssaf_magazine_base
-	{
-	};
-	class rhssaf_magazine_rhssaf_tm200_mag: rhssaf_magazine_base
-	{
-	};
-	class rhssaf_magazine_rhssaf_tm500_mag: rhssaf_magazine_base
-	{
-	};
+	class rhssaf_magazine_rhssaf_mag_br_m75: rhssaf_magazine_base;  //found empty after stripping
+	class rhssaf_magazine_rhssaf_mag_br_m84: rhssaf_magazine_base;  //found empty after stripping
+	class rhssaf_magazine_rhssaf_mag_rshb_p98: rhssaf_magazine_base;  //found empty after stripping
+	class rhssaf_magazine_rhssaf_mag_brz_m88: rhssaf_magazine_base;  //found empty after stripping
+	class rhssaf_magazine_rhssaf_mag_brd_m83_white: rhssaf_magazine_base;  //found empty after stripping
+	class rhssaf_magazine_rhssaf_mag_brd_m83_green: rhssaf_magazine_base;  //found empty after stripping
+	class rhssaf_magazine_rhssaf_mag_brd_m83_red: rhssaf_magazine_base;  //found empty after stripping
+	class rhssaf_magazine_rhssaf_mag_brd_m83_yellow: rhssaf_magazine_base;  //found empty after stripping
+	class rhssaf_magazine_rhssaf_mag_brd_m83_blue: rhssaf_magazine_base;  //found empty after stripping
+	class rhssaf_magazine_rhssaf_mag_brd_m83_orange: rhssaf_magazine_base;  //found empty after stripping
+	class rhssaf_magazine_rhssaf_mag_brk_m79: rhssaf_magazine_base;  //found empty after stripping
+	class rhssaf_magazine_rhsgref_20rnd_765x17_vz61: rhssaf_magazine_base;  //found empty after stripping
+	class rhssaf_magazine_rhsgref_10rnd_765x17_vz61: rhssaf_magazine_base;  //found empty after stripping
+	class rhssaf_magazine_rhssaf_mag_15Rnd_9x19_FMJ: rhssaf_magazine_base;  //found empty after stripping
+	class rhssaf_magazine_rhssaf_mag_15Rnd_9x19_JHP: rhssaf_magazine_base;  //found empty after stripping
+	class rhssaf_magazine_rhsgref_30rnd_556x45_m21: rhssaf_magazine_base;  //found empty after stripping
+	class rhssaf_magazine_rhsgref_30rnd_556x45_m21_t: rhssaf_magazine_base;  //found empty after stripping
+	class rhssaf_magazine_rhssaf_30rnd_556x45_EPR_G36: rhssaf_magazine_base;  //found empty after stripping
+	class rhssaf_magazine_rhssaf_30rnd_556x45_SOST_G36: rhssaf_magazine_base;  //found empty after stripping
+	class rhssaf_magazine_rhssaf_30rnd_556x45_SPR_G36: rhssaf_magazine_base;  //found empty after stripping
+	class rhssaf_magazine_rhssaf_100rnd_556x45_EPR_G36: rhssaf_magazine_base;  //found empty after stripping
+	class rhssaf_magazine_rhssaf_30rnd_556x45_Tracers_G36: rhssaf_magazine_base;  //found empty after stripping
+	class rhssaf_magazine_rhssaf_30rnd_556x45_TDIM_G36: rhssaf_magazine_base;  //found empty after stripping
+	class rhssaf_magazine_rhssaf_30rnd_556x45_MDIM_G36: rhssaf_magazine_base;  //found empty after stripping
+	class rhssaf_magazine_rhssaf_30Rnd_762x39mm_M67: rhssaf_magazine_base;  //found empty after stripping
+	class rhssaf_magazine_rhssaf_30Rnd_762x39mm_M78_tracer: rhssaf_magazine_base;  //found empty after stripping
+	class rhssaf_magazine_rhssaf_30Rnd_762x39_M82_api: rhssaf_magazine_base;  //found empty after stripping
+	class rhssaf_magazine_rhsgref_10Rnd_792x57_m76: rhssaf_magazine_base;  //found empty after stripping
+	class rhssaf_magazine_rhssaf_10Rnd_792x57_m76_tracer: rhssaf_magazine_base;  //found empty after stripping
+	class rhssaf_magazine_rhssaf_250Rnd_762x54R: rhssaf_magazine_base;  //found empty after stripping
+	class rhssaf_magazine_rhssaf_mine_pma3_mag: rhssaf_magazine_base;  //found empty after stripping
+	class rhssaf_magazine_rhssaf_mine_tma4_mag: rhssaf_magazine_base;  //found empty after stripping
+	class rhssaf_magazine_rhssaf_mine_mrud_a_mag: rhssaf_magazine_base;  //found empty after stripping
+	class rhssaf_magazine_rhssaf_mine_mrud_b_mag: rhssaf_magazine_base;  //found empty after stripping
+	class rhssaf_magazine_rhssaf_mine_mrud_c_mag: rhssaf_magazine_base;  //found empty after stripping
+	class rhssaf_magazine_rhssaf_mine_mrud_d_mag: rhssaf_magazine_base;  //found empty after stripping
+	class rhssaf_magazine_rhssaf_tm100_mag: rhssaf_magazine_base;  //found empty after stripping
+	class rhssaf_magazine_rhssaf_tm200_mag: rhssaf_magazine_base;  //found empty after stripping
+	class rhssaf_magazine_rhssaf_tm500_mag: rhssaf_magazine_base;  //found empty after stripping
 	class MineBase;
 	class rhssaf_mine_pma3: MineBase
 	{
@@ -1090,9 +952,7 @@ class CfgVehicles
 		};
 		class EventHandlers;
 	};
-	class StaticMortar: StaticWeapon
-	{
-	};
+	class StaticMortar: StaticWeapon;  //found empty after stripping
 	class rhs_m70c_60mm_base: StaticMortar
 	{
 		availableForSupportTypes[]=
@@ -1101,9 +961,7 @@ class CfgVehicles
 		};
 		displayname="M70C";
 		icon="rhsafrf\addons\rhs_heavyweapons\data\mapico\icomap_podnos_2b14_CA.paa";
-		class Damage
-		{
-		};
+		class Damage;  //found empty after stripping
 		class Turrets: Turrets
 		{
 			class MainTurret: MainTurret
@@ -1282,19 +1140,11 @@ class CfgWeapons
 		recoilProne="assaultRifleBase";
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
-			class rhs_npz_slot
-			{
-			};
+			class rhs_npz_slot;  //found empty after stripping
 		};
-		class SAFE: RHS_SAFE_BASE
-		{
-		};
-		class PBG40Muzzle: PBG40_Base
-		{
-		};
-		class RGMuzzle: RifleGrenade_Base
-		{
-		};
+		class SAFE: RHS_SAFE_BASE;  //found empty after stripping
+		class PBG40Muzzle: PBG40_Base;  //found empty after stripping
+		class RGMuzzle: RifleGrenade_Base;  //found empty after stripping
 		class Single: Mode_SemiAuto
 		{
 			reloadTime=0.1;
@@ -1305,12 +1155,8 @@ class CfgWeapons
 			reloadTime=0.1;
 			dispersion=0.0020999999;
 		};
-		class single_medium_optics1: Single
-		{
-		};
-		class single_far_optics2: single_medium_optics1
-		{
-		};
+		class single_medium_optics1: Single;  //found empty after stripping
+		class single_far_optics2: single_medium_optics1;  //found empty after stripping
 		class fullauto_medium: FullAuto
 		{
 			aiBurstTerminable=1;
@@ -1428,12 +1274,8 @@ class CfgWeapons
 			reloadTime=0.1;
 			dispersion=0.00095000002;
 		};
-		class single_medium_optics1: Single
-		{
-		};
-		class single_far_optics2: single_medium_optics1
-		{
-		};
+		class single_medium_optics1: Single;  //found empty after stripping
+		class single_far_optics2: single_medium_optics1;  //found empty after stripping
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=95.699997;
@@ -1460,12 +1302,8 @@ class CfgWeapons
 			reloadTime=0.1;
 			dispersion=0.0020999999;
 		};
-		class single_medium_optics1: Single
-		{
-		};
-		class single_far_optics2: single_medium_optics1
-		{
-		};
+		class single_medium_optics1: Single;  //found empty after stripping
+		class single_far_optics2: single_medium_optics1;  //found empty after stripping
 		class fullauto_medium: FullAuto
 		{
 			aiBurstTerminable=1;
@@ -1492,9 +1330,7 @@ class CfgWeapons
 	{
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
-			class rhs_mtz_slot
-			{
-			};
+			class rhs_mtz_slot;  //found empty after stripping
 			mass=91.300003;
 		};
 		rhs_mtz="rhs_weap_m21a";
@@ -1504,9 +1340,7 @@ class CfgWeapons
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=124.3;
-			class rhs_mtz_slot
-			{
-			};
+			class rhs_mtz_slot;  //found empty after stripping
 		};
 		rhs_mtz="rhs_weap_m21a_pbg40";
 	};
@@ -1740,15 +1574,9 @@ class CfgWeapons
 			"bullet12",
 			0.082999997
 		};
-		class SAFE: RHS_SAFE_BASE
-		{
-		};
-		class AG36Muzzle: rhs_weap_ag36_base
-		{
-		};
-		class WeaponSlotsInfo: WeaponSlotsInfo
-		{
-		};
+		class SAFE: RHS_SAFE_BASE;  //found empty after stripping
+		class AG36Muzzle: rhs_weap_ag36_base;  //found empty after stripping
+		class WeaponSlotsInfo: WeaponSlotsInfo;  //found empty after stripping
 		class Single: Mode_SemiAuto
 		{
 			dispersion=0.00055559602;
@@ -1772,12 +1600,8 @@ class CfgWeapons
 		{
 			burst=5;
 		};
-		class single_medium_optics1: Single
-		{
-		};
-		class single_far_optics2: single_medium_optics1
-		{
-		};
+		class single_medium_optics1: Single;  //found empty after stripping
+		class single_far_optics2: single_medium_optics1;  //found empty after stripping
 	};
 	class rhs_weap_g36c: rhs_weap_g36_base
 	{
@@ -1788,9 +1612,7 @@ class CfgWeapons
 		class WeaponSlotsInfo
 		{
 			mass=65.739998;
-			class GripodSlot: rhs_western_rifle_gripod_slot
-			{
-			};
+			class GripodSlot: rhs_western_rifle_gripod_slot;  //found empty after stripping
 		};
 		class Single: Single
 		{
@@ -1808,22 +1630,12 @@ class CfgWeapons
 			dispersion=0.00087270001;
 			reloadtime=0.079999998;
 		};
-		class single_medium_optics1: Single
-		{
-		};
-		class single_far_optics2: single_medium_optics1
-		{
-		};
+		class single_medium_optics1: Single;  //found empty after stripping
+		class single_far_optics2: single_medium_optics1;  //found empty after stripping
 	};
-	class rhs_weap_g36c_grip1: rhs_weap_g36c
-	{
-	};
-	class rhs_weap_g36c_grip2: rhs_weap_g36c
-	{
-	};
-	class rhs_weap_g36c_grip3: rhs_weap_g36c
-	{
-	};
+	class rhs_weap_g36c_grip1: rhs_weap_g36c;  //found empty after stripping
+	class rhs_weap_g36c_grip2: rhs_weap_g36c;  //found empty after stripping
+	class rhs_weap_g36c_grip3: rhs_weap_g36c;  //found empty after stripping
 	class rhs_weap_g36kv: rhs_weap_g36_base
 	{
 		reloadmagazinesound[]=
@@ -1838,20 +1650,12 @@ class CfgWeapons
 		class WeaponSlotsInfo
 		{
 			mass=74.139999;
-			class GripodSlot: rhs_western_rifle_gripod_slot
-			{
-			};
+			class GripodSlot: rhs_western_rifle_gripod_slot;  //found empty after stripping
 		};
 	};
-	class rhs_weap_g36kv_grip1: rhs_weap_g36kv
-	{
-	};
-	class rhs_weap_g36kv_grip2: rhs_weap_g36kv
-	{
-	};
-	class rhs_weap_g36kv_grip3: rhs_weap_g36kv
-	{
-	};
+	class rhs_weap_g36kv_grip1: rhs_weap_g36kv;  //found empty after stripping
+	class rhs_weap_g36kv_grip2: rhs_weap_g36kv;  //found empty after stripping
+	class rhs_weap_g36kv_grip3: rhs_weap_g36kv;  //found empty after stripping
 	class rhs_weap_g36kv_ag36: rhs_weap_g36kv
 	{
 		handanim[]=
@@ -1862,9 +1666,7 @@ class CfgWeapons
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=107.14;
-			class GripodSlot
-			{
-			};
+			class GripodSlot;  //found empty after stripping
 		};
 	};
 	class rhs_weap_SCAR_H_Base;
@@ -2227,9 +2029,7 @@ class CfgWeapons
 			dispersion=0.00086999999;
 			recoil="recoil_auto_mk200";
 			recoilProne="recoil_auto_prone_mk200";
-			class SilencedSound
-			{
-			};
+			class SilencedSound;  //found empty after stripping
 		};
 	};
 	class rhs_weap_lmg_minimipara;
@@ -2239,9 +2039,7 @@ class CfgWeapons
 		class WeaponSlotsInfo
 		{
 			mass=149.49001;
-			class GripodSlot: rhs_western_mg_gripod_slot
-			{
-			};
+			class GripodSlot: rhs_western_mg_gripod_slot;  //found empty after stripping
 		};
 		rhs_fold_checkOptic=0;
 		rhs_fold="rhs_weap_minimi_para_railed_folded";
@@ -2336,9 +2134,7 @@ class CfgWeapons
 		{
 			mass=66;
 		};
-		class ItemInfo
-		{
-		};
+		class ItemInfo;  //found empty after stripping
 		class Eventhandlers: Eventhandlers
 		{
 			class RHS_DisposableWeapon
@@ -2387,82 +2183,34 @@ class CfgWeapons
 			mass=13.64;
 		};
 	};
-	class rhs_acc_mtz: rhs_acc_scope_base
-	{
-	};
-	class rhs_weap_m21s_eo: rhs_weap_m21s_pr
-	{
-	};
-	class rhs_weap_m21a_pr_aco: rhs_weap_m21a_pr
-	{
-	};
-	class rhs_weap_m21a_pkas: rhs_weap_m21a
-	{
-	};
-	class rhs_weap_m21s_pkas: rhs_weap_m21s
-	{
-	};
-	class rhs_weap_m21a_pr_mrco: rhs_weap_m21a_pr
-	{
-	};
-	class rhs_weap_m21a_pr_hamr: rhs_weap_m21a_pr
-	{
-	};
-	class rhs_weap_m21a_pr_sos: rhs_weap_m21a_pr
-	{
-	};
-	class rhs_weap_m21s_pr_aco: rhs_weap_m21s_pr
-	{
-	};
-	class rhs_weap_m21s_pr_mrco: rhs_weap_m21s_pr
-	{
-	};
-	class rhs_weap_m21s_pr_hamr: rhs_weap_m21s_pr
-	{
-	};
-	class rhs_weap_m21s_pr_sos: rhs_weap_m21s_pr
-	{
-	};
-	class rhs_weap_m76_pso: rhs_weap_m76
-	{
-	};
-	class rhs_weap_minimi_para_railed_eot552_m952v_sfmb: rhs_weap_minimi_para_railed
-	{
-	};
-	class rhs_weap_g36c_compm4: rhs_weap_g36c
-	{
-	};
-	class rhs_weap_g36c_grip3_eo: rhs_weap_g36c_grip3
-	{
-	};
-	class rhs_weap_g36kv_compm4: rhs_weap_g36kv
-	{
-	};
-	class rhs_weap_g36kv_ag36_eo: rhs_weap_g36kv_ag36
-	{
-	};
-	class rhs_weap_g36kv_grip3_eo: rhs_weap_g36kv_grip3
-	{
-	};
-	class rhs_weap_m82a1_leu: rhs_weap_m82a1
-	{
-	};
+	class rhs_acc_mtz: rhs_acc_scope_base;  //found empty after stripping
+	class rhs_weap_m21s_eo: rhs_weap_m21s_pr;  //found empty after stripping
+	class rhs_weap_m21a_pr_aco: rhs_weap_m21a_pr;  //found empty after stripping
+	class rhs_weap_m21a_pkas: rhs_weap_m21a;  //found empty after stripping
+	class rhs_weap_m21s_pkas: rhs_weap_m21s;  //found empty after stripping
+	class rhs_weap_m21a_pr_mrco: rhs_weap_m21a_pr;  //found empty after stripping
+	class rhs_weap_m21a_pr_hamr: rhs_weap_m21a_pr;  //found empty after stripping
+	class rhs_weap_m21a_pr_sos: rhs_weap_m21a_pr;  //found empty after stripping
+	class rhs_weap_m21s_pr_aco: rhs_weap_m21s_pr;  //found empty after stripping
+	class rhs_weap_m21s_pr_mrco: rhs_weap_m21s_pr;  //found empty after stripping
+	class rhs_weap_m21s_pr_hamr: rhs_weap_m21s_pr;  //found empty after stripping
+	class rhs_weap_m21s_pr_sos: rhs_weap_m21s_pr;  //found empty after stripping
+	class rhs_weap_m76_pso: rhs_weap_m76;  //found empty after stripping
+	class rhs_weap_minimi_para_railed_eot552_m952v_sfmb: rhs_weap_minimi_para_railed;  //found empty after stripping
+	class rhs_weap_g36c_compm4: rhs_weap_g36c;  //found empty after stripping
+	class rhs_weap_g36c_grip3_eo: rhs_weap_g36c_grip3;  //found empty after stripping
+	class rhs_weap_g36kv_compm4: rhs_weap_g36kv;  //found empty after stripping
+	class rhs_weap_g36kv_ag36_eo: rhs_weap_g36kv_ag36;  //found empty after stripping
+	class rhs_weap_g36kv_grip3_eo: rhs_weap_g36kv_grip3;  //found empty after stripping
+	class rhs_weap_m82a1_leu: rhs_weap_m82a1;  //found empty after stripping
 	class rhs_weap_hk416d10;
-	class rhs_weap_hk416d10_compm4: rhs_weap_hk416d10
-	{
-	};
-	class rhs_weap_SCARH_STD_grip2_su230a: rhs_weap_SCARH_STD_grip2
-	{
-	};
-	class rhs_weap_SCARH_LB_bipod_m8541: rhs_weap_SCARH_LB
-	{
-	};
+	class rhs_weap_hk416d10_compm4: rhs_weap_hk416d10;  //found empty after stripping
+	class rhs_weap_SCARH_STD_grip2_su230a: rhs_weap_SCARH_STD_grip2;  //found empty after stripping
+	class rhs_weap_SCARH_LB_bipod_m8541: rhs_weap_SCARH_LB;  //found empty after stripping
 	class Default;
 	class Put: Default
 	{
-		class PutMuzzle: Default
-		{
-		};
+		class PutMuzzle: Default;  //found empty after stripping
 		class Rhssaf_Mine_Muzzle: PutMuzzle
 		{
 			magazines[]=
@@ -2506,9 +2254,7 @@ class CfgWeapons
 	class GrenadeLauncher;
 	class Throw: GrenadeLauncher
 	{
-		class ThrowMuzzle: GrenadeLauncher
-		{
-		};
+		class ThrowMuzzle: GrenadeLauncher;  //found empty after stripping
 		class rhssaff_throw_flashbang: ThrowMuzzle
 		{
 			magazines[]=
@@ -2858,24 +2604,12 @@ class CfgMagazines
 	class rhs_mag_20Rnd_SCAR_762x51_m61_ap;
 	class rhs_mag_20Rnd_SCAR_762x51_m118_special;
 	class rhs_mag_20Rnd_SCAR_762x51_mk316_special;
-	class rhs_mag_20Rnd_SCAR_762x51_m80_ball_bk: rhs_mag_20Rnd_SCAR_762x51_m80_ball
-	{
-	};
-	class rhs_mag_20Rnd_SCAR_762x51_m80a1_epr_bk: rhs_mag_20Rnd_SCAR_762x51_m80a1_epr
-	{
-	};
-	class rhs_mag_20Rnd_SCAR_762x51_m62_tracer_bk: rhs_mag_20Rnd_SCAR_762x51_m62_tracer
-	{
-	};
-	class rhs_mag_20Rnd_SCAR_762x51_m61_ap_bk: rhs_mag_20Rnd_SCAR_762x51_m61_ap
-	{
-	};
-	class rhs_mag_20Rnd_SCAR_762x51_m118_special_bk: rhs_mag_20Rnd_SCAR_762x51_m118_special
-	{
-	};
-	class rhs_mag_20Rnd_SCAR_762x51_mk316_special_bk: rhs_mag_20Rnd_SCAR_762x51_mk316_special
-	{
-	};
+	class rhs_mag_20Rnd_SCAR_762x51_m80_ball_bk: rhs_mag_20Rnd_SCAR_762x51_m80_ball;  //found empty after stripping
+	class rhs_mag_20Rnd_SCAR_762x51_m80a1_epr_bk: rhs_mag_20Rnd_SCAR_762x51_m80a1_epr;  //found empty after stripping
+	class rhs_mag_20Rnd_SCAR_762x51_m62_tracer_bk: rhs_mag_20Rnd_SCAR_762x51_m62_tracer;  //found empty after stripping
+	class rhs_mag_20Rnd_SCAR_762x51_m61_ap_bk: rhs_mag_20Rnd_SCAR_762x51_m61_ap;  //found empty after stripping
+	class rhs_mag_20Rnd_SCAR_762x51_m118_special_bk: rhs_mag_20Rnd_SCAR_762x51_m118_special;  //found empty after stripping
+	class rhs_mag_20Rnd_SCAR_762x51_mk316_special_bk: rhs_mag_20Rnd_SCAR_762x51_mk316_special;  //found empty after stripping
 	class rhsgref_10Rnd_792x57_m76: CA_Magazine
 	{
 		displaynameshort="$STR_RHSSAF_10RND_792X57_M76_DISPLAYNAMESHORT";

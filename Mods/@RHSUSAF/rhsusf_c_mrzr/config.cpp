@@ -128,9 +128,7 @@ class CfgVehicles
 			"SlingLoadCargo3",
 			"SlingLoadCargo4"
 		};
-		class EventHandlers: EventHandlers
-		{
-		};
+		class EventHandlers: EventHandlers;  //found empty after stripping
 		class Turrets: Turrets
 		{
 			class CargoTurret_02: CargoTurret_01
@@ -842,9 +840,7 @@ class CfgVehicles
 			};
 		};
 		side=1;
-		class Damage
-		{
-		};
+		class Damage;  //found empty after stripping
 		class textureSources
 		{
 			class standard
@@ -992,12 +988,8 @@ class CfgVehicles
 			"\rhsusf\addons\rhsusf_mrzr\data\rhsusf_mrzr_grn_mud.rvmat"
 		};
 	};
-	class rhsusf_mrzr4_w: rhsusf_mrzr4_d
-	{
-	};
-	class rhsusf_mrzr4_w_mud: rhsusf_mrzr4_d_mud
-	{
-	};
+	class rhsusf_mrzr4_w: rhsusf_mrzr4_d;  //found empty after stripping
+	class rhsusf_mrzr4_w_mud: rhsusf_mrzr4_d_mud;  //found empty after stripping
 };
 class CfgWeapons
 {

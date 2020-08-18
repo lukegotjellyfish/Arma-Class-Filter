@@ -13,12 +13,8 @@ class Mode_FullAuto;
 class CfgVehicles
 {
 	class Tank;
-	class Tank_F: Tank
-	{
-	};
-	class rhs_2s1tank_base: Tank_F
-	{
-	};
+	class Tank_F: Tank;  //found empty after stripping
+	class rhs_2s1tank_base: Tank_F;  //found empty after stripping
 	class rhs_tank_base: Tank_F
 	{
 		attenuationEffectType="TankAttenuation";

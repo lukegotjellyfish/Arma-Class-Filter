@@ -201,9 +201,7 @@ class CfgVehicles
 		};
 		class EventHandlers: EventHandlers
 		{
-			class RHS_EventHandlers
-			{
-			};
+			class RHS_EventHandlers;  //found empty after stripping
 		};
 	};
 	class rhs_typhoon_vdv: rhs_typhoon_base
@@ -222,9 +220,7 @@ class CfgVehicles
 			"rhs_pilot_combat_heli"
 		};
 		side=0;
-		class MFD
-		{
-		};
+		class MFD;  //found empty after stripping
 		class Components: Components
 		{
 			class SensorsManagerComponent
@@ -249,9 +245,7 @@ class CfgVehicles
 						maxFogSeeThrough=0.30000001;
 						animDirection="mainGun";
 					};
-					class PassiveRadarSensorComponent: SensorTemplatePassiveRadar
-					{
-					};
+					class PassiveRadarSensorComponent: SensorTemplatePassiveRadar;  //found empty after stripping
 					class ActiveRadarSensorComponent: SensorTemplateActiveRadar
 					{
 						class AirTarget
@@ -273,9 +267,7 @@ class CfgVehicles
 						maxSpeedThreshold=0;
 						maxTrackableSpeed=125;
 					};
-					class DataLinkSensorComponent: SensorTemplateDataLink
-					{
-					};
+					class DataLinkSensorComponent: SensorTemplateDataLink;  //found empty after stripping
 				};
 			};
 			class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
@@ -354,15 +346,11 @@ class CfgVehicles
 					"rhs_faction_vvs_c"
 				};
 			};
-			class vvs_camo: vvs_grey
-			{
-			};
+			class vvs_camo: vvs_grey;  //found empty after stripping
 		};
 		class EventHandlers: EventHandlers
 		{
-			class RHS_EventHandlers
-			{
-			};
+			class RHS_EventHandlers;  //found empty after stripping
 		};
 	};
 	class rhs_ka60_c: rhs_ka60_grey

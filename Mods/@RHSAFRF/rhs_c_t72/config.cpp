@@ -1040,21 +1040,11 @@ class CfgVehicles
 					{0.69999999,0.75}
 				};
 			};
-			class L3: L2
-			{
-			};
-			class L4: L2
-			{
-			};
-			class L5: L2
-			{
-			};
-			class L6: L2
-			{
-			};
-			class L7: L2
-			{
-			};
+			class L3: L2;  //found empty after stripping
+			class L4: L2;  //found empty after stripping
+			class L5: L2;  //found empty after stripping
+			class L6: L2;  //found empty after stripping
+			class L7: L2;  //found empty after stripping
 			class L9: L2
 			{
 				maxDroop=0;
@@ -1070,21 +1060,11 @@ class CfgVehicles
 				suspTravelDirection[]={0.125,-1,0};
 				side="right";
 			};
-			class R3: R2
-			{
-			};
-			class R4: R2
-			{
-			};
-			class R5: R2
-			{
-			};
-			class R6: R2
-			{
-			};
-			class R7: R2
-			{
-			};
+			class R3: R2;  //found empty after stripping
+			class R4: R2;  //found empty after stripping
+			class R5: R2;  //found empty after stripping
+			class R6: R2;  //found empty after stripping
+			class R7: R2;  //found empty after stripping
 			class R9: R2
 			{
 				maxDroop=0;
@@ -1739,30 +1719,14 @@ class CfgVehicles
 		};
 		class textureSources
 		{
-			class standard
-			{
-			};
-			class rhs_Sand: standard
-			{
-			};
-			class rhs_chdkz: rhs_Sand
-			{
-			};
-			class r1: standard
-			{
-			};
-			class r2: standard
-			{
-			};
-			class r3: standard
-			{
-			};
-			class r4: standard
-			{
-			};
-			class r5: standard
-			{
-			};
+			class standard;  //found empty after stripping
+			class rhs_Sand: standard;  //found empty after stripping
+			class rhs_chdkz: rhs_Sand;  //found empty after stripping
+			class r1: standard;  //found empty after stripping
+			class r2: standard;  //found empty after stripping
+			class r3: standard;  //found empty after stripping
+			class r4: standard;  //found empty after stripping
+			class r5: standard;  //found empty after stripping
 		};
 		class Attributes
 		{
@@ -1885,24 +1849,12 @@ class CfgVehicles
 				property="rhs_decalHonor_type";
 				class values: values
 				{
-					class Honor: Honor
-					{
-					};
-					class HonorGDR: HonorGDR
-					{
-					};
-					class Platoon: Platoon
-					{
-					};
-					class PlatoonGDR: PlatoonGDR
-					{
-					};
-					class PlatoonVDV: PlatoonVDV
-					{
-					};
-					class Army: Army
-					{
-					};
+					class Honor: Honor;  //found empty after stripping
+					class HonorGDR: HonorGDR;  //found empty after stripping
+					class Platoon: Platoon;  //found empty after stripping
+					class PlatoonGDR: PlatoonGDR;  //found empty after stripping
+					class PlatoonVDV: PlatoonVDV;  //found empty after stripping
+					class Army: Army;  //found empty after stripping
 				};
 			};
 			class rhs_decalHonor: rhs_decalPlatoon
@@ -2116,9 +2068,7 @@ class CfgVehicles
 				defaultValue="0";
 			};
 		};
-		class Damage
-		{
-		};
+		class Damage;  //found empty after stripping
 		class ViewOptics: ViewOptics
 		{
 			visionMode[]=
@@ -2186,22 +2136,14 @@ class CfgVehicles
 			};
 		};
 	};
-	class rhs_t72ba_tv: rhs_a3t72tank_base
-	{
-	};
+	class rhs_t72ba_tv: rhs_a3t72tank_base;  //found empty after stripping
 	class rhs_t72bb_tv: rhs_a3t72tank_base
 	{
 		class textureSources: textureSources
 		{
-			class standard: standard
-			{
-			};
-			class rhs_Sand: rhs_Sand
-			{
-			};
-			class rhs_chdkz: rhs_Sand
-			{
-			};
+			class standard: standard;  //found empty after stripping
+			class rhs_Sand: rhs_Sand;  //found empty after stripping
+			class rhs_chdkz: rhs_Sand;  //found empty after stripping
 		};
 		class HitPoints: HitPoints
 		{
@@ -2703,15 +2645,9 @@ class CfgVehicles
 	{
 		class textureSources: textureSources
 		{
-			class standard: standard
-			{
-			};
-			class rhs_Sand: rhs_Sand
-			{
-			};
-			class rhs_chdkz: rhs_chdkz
-			{
-			};
+			class standard: standard;  //found empty after stripping
+			class rhs_Sand: rhs_Sand;  //found empty after stripping
+			class rhs_chdkz: rhs_chdkz;  //found empty after stripping
 		};
 		class HitPoints: HitPoints
 		{
@@ -3221,21 +3157,11 @@ class CfgVehicles
 				dampingRate=3143;
 				dampingRateInAir=3143;
 			};
-			class L3: L2
-			{
-			};
-			class L4: L2
-			{
-			};
-			class L5: L2
-			{
-			};
-			class L6: L2
-			{
-			};
-			class L7: L2
-			{
-			};
+			class L3: L2;  //found empty after stripping
+			class L4: L2;  //found empty after stripping
+			class L5: L2;  //found empty after stripping
+			class L6: L2;  //found empty after stripping
+			class L7: L2;  //found empty after stripping
 			class L9: L2
 			{
 				maxDroop=0;
@@ -3250,21 +3176,11 @@ class CfgVehicles
 			{
 				side="right";
 			};
-			class R3: R2
-			{
-			};
-			class R4: R2
-			{
-			};
-			class R5: R2
-			{
-			};
-			class R6: R2
-			{
-			};
-			class R7: R2
-			{
-			};
+			class R3: R2;  //found empty after stripping
+			class R4: R2;  //found empty after stripping
+			class R5: R2;  //found empty after stripping
+			class R6: R2;  //found empty after stripping
+			class R7: R2;  //found empty after stripping
 			class R9: R2
 			{
 				maxDroop=0;
@@ -3282,19 +3198,11 @@ class CfgVehicles
 		reportOwnPosition=1;
 		class textureSources: textureSources
 		{
-			class standard: standard
-			{
-			};
-			class rhs_Sand: rhs_Sand
-			{
-			};
-			class rhs_chdkz: rhs_chdkz
-			{
-			};
+			class standard: standard;  //found empty after stripping
+			class rhs_Sand: rhs_Sand;  //found empty after stripping
+			class rhs_chdkz: rhs_chdkz;  //found empty after stripping
 		};
-		class Damage
-		{
-		};
+		class Damage;  //found empty after stripping
 		class HitPoints: HitPoints
 		{
 			class Hit_Optic_SosnaU
@@ -3738,9 +3646,7 @@ class CfgVehicles
 							};
 						};
 					};
-					class CommanderMG: CommanderMG
-					{
-					};
+					class CommanderMG: CommanderMG;  //found empty after stripping
 				};
 				maxHorizontalRotSpeed=0.88;
 				weapons[]=
@@ -3805,18 +3711,10 @@ class CfgVehicles
 		};
 		class Attributes: Attributes
 		{
-			class rhs_decalNumber_type: rhs_decalNumber_type
-			{
-			};
-			class rhs_decalNumber: rhs_decalNumber
-			{
-			};
-			class rhs_decalPlatoon_type: rhs_decalPlatoon_type
-			{
-			};
-			class rhs_decalPlatoon: rhs_decalPlatoon
-			{
-			};
+			class rhs_decalNumber_type: rhs_decalNumber_type;  //found empty after stripping
+			class rhs_decalNumber: rhs_decalNumber;  //found empty after stripping
+			class rhs_decalPlatoon_type: rhs_decalPlatoon_type;  //found empty after stripping
+			class rhs_decalPlatoon: rhs_decalPlatoon;  //found empty after stripping
 			class rhs_ammoslot_1_type: rhs_ammoslot_1_type
 			{
 				class values
@@ -3889,9 +3787,7 @@ class CfgVehicles
 					};
 				};
 			};
-			class rhs_ammoslot_1: rhs_ammoslot_1
-			{
-			};
+			class rhs_ammoslot_1: rhs_ammoslot_1;  //found empty after stripping
 			class rhs_ammoslot_2_type: rhs_ammoslot_2_type
 			{
 				class values
@@ -3940,9 +3836,7 @@ class CfgVehicles
 					};
 				};
 			};
-			class rhs_ammoslot_2: rhs_ammoslot_2
-			{
-			};
+			class rhs_ammoslot_2: rhs_ammoslot_2;  //found empty after stripping
 			class rhs_ammoslot_3_type: rhs_ammoslot_3_type
 			{
 				class values
@@ -3961,9 +3855,7 @@ class CfgVehicles
 					};
 				};
 			};
-			class rhs_ammoslot_3: rhs_ammoslot_3
-			{
-			};
+			class rhs_ammoslot_3: rhs_ammoslot_3;  //found empty after stripping
 			class rhs_ammoslot_4_type: rhs_ammoslot_4_type
 			{
 				class values
@@ -3988,9 +3880,7 @@ class CfgVehicles
 					};
 				};
 			};
-			class rhs_ammoslot_4: rhs_ammoslot_4
-			{
-			};
+			class rhs_ammoslot_4: rhs_ammoslot_4;  //found empty after stripping
 		};
 	};
 	class rhs_t72be_tv: rhs_t72bd_tv
@@ -4065,21 +3955,11 @@ class CfgVehicles
 				dampingRate=3143;
 				dampingRateInAir=3143;
 			};
-			class L3: L2
-			{
-			};
-			class L4: L2
-			{
-			};
-			class L5: L2
-			{
-			};
-			class L6: L2
-			{
-			};
-			class L7: L2
-			{
-			};
+			class L3: L2;  //found empty after stripping
+			class L4: L2;  //found empty after stripping
+			class L5: L2;  //found empty after stripping
+			class L6: L2;  //found empty after stripping
+			class L7: L2;  //found empty after stripping
 			class L9: L2
 			{
 				maxDroop=0;
@@ -4094,21 +3974,11 @@ class CfgVehicles
 			{
 				side="right";
 			};
-			class R3: R2
-			{
-			};
-			class R4: R2
-			{
-			};
-			class R5: R2
-			{
-			};
-			class R6: R2
-			{
-			};
-			class R7: R2
-			{
-			};
+			class R3: R2;  //found empty after stripping
+			class R4: R2;  //found empty after stripping
+			class R5: R2;  //found empty after stripping
+			class R6: R2;  //found empty after stripping
+			class R7: R2;  //found empty after stripping
 			class R9: R2
 			{
 				maxDroop=0;
@@ -4140,16 +4010,10 @@ class CfgVehicles
 		};
 		class textureSources: textureSources
 		{
-			class standard: standard
-			{
-			};
-			class rhs_Sand: rhs_Sand
-			{
-			};
+			class standard: standard;  //found empty after stripping
+			class rhs_Sand: rhs_Sand;  //found empty after stripping
 		};
-		class Damage
-		{
-		};
+		class Damage;  //found empty after stripping
 		animationList[]=
 		{
 			"hide_hull_slats",
@@ -5116,21 +4980,11 @@ class CfgVehicles
 					{0.69999999,0.75}
 				};
 			};
-			class L3: L2
-			{
-			};
-			class L4: L2
-			{
-			};
-			class L5: L2
-			{
-			};
-			class L6: L2
-			{
-			};
-			class L7: L2
-			{
-			};
+			class L3: L2;  //found empty after stripping
+			class L4: L2;  //found empty after stripping
+			class L5: L2;  //found empty after stripping
+			class L6: L2;  //found empty after stripping
+			class L7: L2;  //found empty after stripping
 			class L9: L2
 			{
 				maxDroop=0;
@@ -5146,21 +5000,11 @@ class CfgVehicles
 				suspTravelDirection[]={0.125,-1,0};
 				side="right";
 			};
-			class R3: R2
-			{
-			};
-			class R4: R2
-			{
-			};
-			class R5: R2
-			{
-			};
-			class R6: R2
-			{
-			};
-			class R7: R2
-			{
-			};
+			class R3: R2;  //found empty after stripping
+			class R4: R2;  //found empty after stripping
+			class R5: R2;  //found empty after stripping
+			class R6: R2;  //found empty after stripping
+			class R7: R2;  //found empty after stripping
 			class R9: R2
 			{
 				maxDroop=0;
@@ -5175,15 +5019,9 @@ class CfgVehicles
 		enableGPS=1;
 		class textureSources: textureSources
 		{
-			class standard: standard
-			{
-			};
-			class rhs_Sand: rhs_Sand
-			{
-			};
-			class RHS_CDF
-			{
-			};
+			class standard: standard;  //found empty after stripping
+			class rhs_Sand: rhs_Sand;  //found empty after stripping
+			class RHS_CDF;  //found empty after stripping
 		};
 		rhs_aps_shtora=1;
 		class EventHandlers: EventHandlers
@@ -5562,9 +5400,7 @@ class CfgVehicles
 				};
 			};
 		};
-		class Damage
-		{
-		};
+		class Damage;  //found empty after stripping
 	};
 	class rhs_t90a_tv: rhs_t90_tv
 	{
@@ -5638,21 +5474,11 @@ class CfgVehicles
 				dampingRate=3143;
 				dampingRateInAir=3143;
 			};
-			class L3: L2
-			{
-			};
-			class L4: L2
-			{
-			};
-			class L5: L2
-			{
-			};
-			class L6: L2
-			{
-			};
-			class L7: L2
-			{
-			};
+			class L3: L2;  //found empty after stripping
+			class L4: L2;  //found empty after stripping
+			class L5: L2;  //found empty after stripping
+			class L6: L2;  //found empty after stripping
+			class L7: L2;  //found empty after stripping
 			class L9: L2
 			{
 				maxDroop=0;
@@ -5667,21 +5493,11 @@ class CfgVehicles
 			{
 				side="right";
 			};
-			class R3: R2
-			{
-			};
-			class R4: R2
-			{
-			};
-			class R5: R2
-			{
-			};
-			class R6: R2
-			{
-			};
-			class R7: R2
-			{
-			};
+			class R3: R2;  //found empty after stripping
+			class R4: R2;  //found empty after stripping
+			class R5: R2;  //found empty after stripping
+			class R6: R2;  //found empty after stripping
+			class R7: R2;  //found empty after stripping
 			class R9: R2
 			{
 				maxDroop=0;
@@ -5695,12 +5511,8 @@ class CfgVehicles
 		};
 		class textureSources: textureSources
 		{
-			class standard: standard
-			{
-			};
-			class rhs_Sand: rhs_Sand
-			{
-			};
+			class standard: standard;  //found empty after stripping
+			class rhs_Sand: rhs_Sand;  //found empty after stripping
 		};
 		receiveRemoteTargets=1;
 		reportRemoteTargets=1;
@@ -5866,12 +5678,8 @@ class CfgVehicles
 	{
 		class textureSources: textureSources
 		{
-			class standard: standard
-			{
-			};
-			class rhs_Sand: rhs_Sand
-			{
-			};
+			class standard: standard;  //found empty after stripping
+			class rhs_Sand: rhs_Sand;  //found empty after stripping
 		};
 		class HitPoints: Hitpoints
 		{
@@ -6260,24 +6068,16 @@ class CfgVehicles
 				radius=0.16;
 			};
 		};
-		class Damage
-		{
-		};
+		class Damage;  //found empty after stripping
 	};
 	class rhs_t90sab_tv: rhs_t90a_tv
 	{
 		class textureSources: textureSources
 		{
-			class standard: standard
-			{
-			};
-			class rhs_Sand: rhs_Sand
-			{
-			};
+			class standard: standard;  //found empty after stripping
+			class rhs_Sand: rhs_Sand;  //found empty after stripping
 		};
-		class Damage
-		{
-		};
+		class Damage;  //found empty after stripping
 		class DriverOpticsIn
 		{
 			class OpticView: ViewPilot
@@ -7020,21 +6820,11 @@ class CfgVehicles
 				dampingRate=3143;
 				dampingRateInAir=3143;
 			};
-			class L3: L2
-			{
-			};
-			class L4: L2
-			{
-			};
-			class L5: L2
-			{
-			};
-			class L6: L2
-			{
-			};
-			class L7: L2
-			{
-			};
+			class L3: L2;  //found empty after stripping
+			class L4: L2;  //found empty after stripping
+			class L5: L2;  //found empty after stripping
+			class L6: L2;  //found empty after stripping
+			class L7: L2;  //found empty after stripping
 			class L9: L2
 			{
 				maxDroop=0;
@@ -7049,21 +6839,11 @@ class CfgVehicles
 			{
 				side="right";
 			};
-			class R3: R2
-			{
-			};
-			class R4: R2
-			{
-			};
-			class R5: R2
-			{
-			};
-			class R6: R2
-			{
-			};
-			class R7: R2
-			{
-			};
+			class R3: R2;  //found empty after stripping
+			class R4: R2;  //found empty after stripping
+			class R5: R2;  //found empty after stripping
+			class R6: R2;  //found empty after stripping
+			class R7: R2;  //found empty after stripping
 			class R9: R2
 			{
 				maxDroop=0;
@@ -7077,16 +6857,10 @@ class CfgVehicles
 		};
 		class textureSources: textureSources
 		{
-			class standard: standard
-			{
-			};
-			class rhs_Sand: rhs_Sand
-			{
-			};
+			class standard: standard;  //found empty after stripping
+			class rhs_Sand: rhs_Sand;  //found empty after stripping
 		};
-		class Damage
-		{
-		};
+		class Damage;  //found empty after stripping
 		rhs_aps_shtora=1;
 		class Turrets: Turrets
 		{
@@ -8017,16 +7791,10 @@ class CfgVehicles
 	{
 		class textureSources: textureSources
 		{
-			class standard: standard
-			{
-			};
-			class rhs_Sand: rhs_Sand
-			{
-			};
+			class standard: standard;  //found empty after stripping
+			class rhs_Sand: rhs_Sand;  //found empty after stripping
 		};
-		class Damage
-		{
-		};
+		class Damage;  //found empty after stripping
 		class DriverOpticsIn
 		{
 			class OpticView: ViewPilot
@@ -8844,89 +8612,35 @@ class CfgVehicles
 		reversed=1;
 		icon="iconObject_1x2";
 	};
-	class rhs_Wreck_T90a_turret_F: rhs_Wreck_T72_turret_F
-	{
-	};
-	class rhs_Wreck_T90am_turret_F: rhs_Wreck_T72_turret_F
-	{
-	};
+	class rhs_Wreck_T90a_turret_F: rhs_Wreck_T72_turret_F;  //found empty after stripping
+	class rhs_Wreck_T90am_turret_F: rhs_Wreck_T72_turret_F;  //found empty after stripping
 };
 class CfgNonAIVehicles
 {
 	class ProxyRetex;
-	class Proxyrhs_t72b_hull_extra: ProxyRetex
-	{
-	};
-	class Proxyrhs_t72b_hull2_extra: Proxyrhs_t72b_hull_extra
-	{
-	};
-	class Proxyrhs_t72b3_hull: Proxyrhs_t72b_hull_extra
-	{
-	};
-	class Proxyrhs_t72b_drivl: Proxyrhs_t72b_hull_extra
-	{
-	};
-	class Proxyrhs_t72b_drivr: Proxyrhs_t72b_hull_extra
-	{
-	};
-	class Proxyrhs_t72b_retl: Proxyrhs_t72b_hull_extra
-	{
-	};
-	class Proxyrhs_t72b_retr: Proxyrhs_t72b_hull_extra
-	{
-	};
-	class Proxyrhs_t72b_gun_extra: Proxyrhs_t72b_hull_extra
-	{
-	};
-	class Proxyrhs_t72b_comcop_extra: Proxyrhs_t72b_hull_extra
-	{
-	};
-	class Proxyrhs_t72b_turret_extra: Proxyrhs_t72b_hull_extra
-	{
-	};
-	class Proxyrhs_t72b_turret2_extra: Proxyrhs_t72b_hull_extra
-	{
-	};
-	class Proxyrhs_B3gun_extra: Proxyrhs_t72b_hull_extra
-	{
-	};
-	class Proxyrhs_B3comcop_extra: Proxyrhs_t72b_hull_extra
-	{
-	};
-	class Proxyrhs_B3turretextra: Proxyrhs_t72b_hull_extra
-	{
-	};
-	class Proxyrhs_t72b_latefront: Proxyrhs_t72b_hull_extra
-	{
-	};
-	class Proxyrhs_t72b_veryearly: Proxyrhs_t72b_hull_extra
-	{
-	};
-	class Proxyrhs_t72b_andbfront: Proxyrhs_t72b_hull_extra
-	{
-	};
-	class Proxyrhs_t90a_turretextra: Proxyrhs_t72b_hull_extra
-	{
-	};
-	class Proxyrhs_t90_comm: Proxyrhs_t72b_hull_extra
-	{
-	};
-	class Proxyturret_extra_t90: Proxyrhs_t72b_hull_extra
-	{
-	};
-	class Proxyrhs_nsvt_handle_extra: Proxyrhs_t72b_hull_extra
-	{
-	};
-	class Proxyrhs_nsvt_gunmount_extra: Proxyrhs_t72b_hull_extra
-	{
-	};
-	class Proxyrhs_nsvt_extra: Proxyrhs_t72b_hull_extra
-	{
-	};
-	class Proxyrhs_t72b_e_hull: Proxyrhs_t72b_hull_extra
-	{
-	};
-	class Proxyrhs_t72b_e_turretextra: Proxyrhs_t72b_hull_extra
-	{
-	};
+	class Proxyrhs_t72b_hull_extra: ProxyRetex;  //found empty after stripping
+	class Proxyrhs_t72b_hull2_extra: Proxyrhs_t72b_hull_extra;  //found empty after stripping
+	class Proxyrhs_t72b3_hull: Proxyrhs_t72b_hull_extra;  //found empty after stripping
+	class Proxyrhs_t72b_drivl: Proxyrhs_t72b_hull_extra;  //found empty after stripping
+	class Proxyrhs_t72b_drivr: Proxyrhs_t72b_hull_extra;  //found empty after stripping
+	class Proxyrhs_t72b_retl: Proxyrhs_t72b_hull_extra;  //found empty after stripping
+	class Proxyrhs_t72b_retr: Proxyrhs_t72b_hull_extra;  //found empty after stripping
+	class Proxyrhs_t72b_gun_extra: Proxyrhs_t72b_hull_extra;  //found empty after stripping
+	class Proxyrhs_t72b_comcop_extra: Proxyrhs_t72b_hull_extra;  //found empty after stripping
+	class Proxyrhs_t72b_turret_extra: Proxyrhs_t72b_hull_extra;  //found empty after stripping
+	class Proxyrhs_t72b_turret2_extra: Proxyrhs_t72b_hull_extra;  //found empty after stripping
+	class Proxyrhs_B3gun_extra: Proxyrhs_t72b_hull_extra;  //found empty after stripping
+	class Proxyrhs_B3comcop_extra: Proxyrhs_t72b_hull_extra;  //found empty after stripping
+	class Proxyrhs_B3turretextra: Proxyrhs_t72b_hull_extra;  //found empty after stripping
+	class Proxyrhs_t72b_latefront: Proxyrhs_t72b_hull_extra;  //found empty after stripping
+	class Proxyrhs_t72b_veryearly: Proxyrhs_t72b_hull_extra;  //found empty after stripping
+	class Proxyrhs_t72b_andbfront: Proxyrhs_t72b_hull_extra;  //found empty after stripping
+	class Proxyrhs_t90a_turretextra: Proxyrhs_t72b_hull_extra;  //found empty after stripping
+	class Proxyrhs_t90_comm: Proxyrhs_t72b_hull_extra;  //found empty after stripping
+	class Proxyturret_extra_t90: Proxyrhs_t72b_hull_extra;  //found empty after stripping
+	class Proxyrhs_nsvt_handle_extra: Proxyrhs_t72b_hull_extra;  //found empty after stripping
+	class Proxyrhs_nsvt_gunmount_extra: Proxyrhs_t72b_hull_extra;  //found empty after stripping
+	class Proxyrhs_nsvt_extra: Proxyrhs_t72b_hull_extra;  //found empty after stripping
+	class Proxyrhs_t72b_e_hull: Proxyrhs_t72b_hull_extra;  //found empty after stripping
+	class Proxyrhs_t72b_e_turretextra: Proxyrhs_t72b_hull_extra;  //found empty after stripping
 };

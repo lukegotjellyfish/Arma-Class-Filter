@@ -1280,35 +1280,17 @@ class CfgVehicles
 				minTurn=-95;
 			};
 		};
-		class Damage
-		{
-		};
+		class Damage;  //found empty after stripping
 		class Attributes: Attributes
 		{
-			class rhs_decalMask: rhs_decalMask
-			{
-			};
-			class rhs_decalDoors: rhs_decalDoors
-			{
-			};
-			class rhs_hideCIP: rhs_hideCIP
-			{
-			};
-			class rhs_hideBFT: rhs_hideBFT
-			{
-			};
-			class rhs_hideAntennas: rhs_hideAntennas
-			{
-			};
-			class rhs_hideA2Parts: rhs_hideA2Parts
-			{
-			};
-			class Door_LF: Door_LF
-			{
-			};
-			class Door_RF: Door_RF
-			{
-			};
+			class rhs_decalMask: rhs_decalMask;  //found empty after stripping
+			class rhs_decalDoors: rhs_decalDoors;  //found empty after stripping
+			class rhs_hideCIP: rhs_hideCIP;  //found empty after stripping
+			class rhs_hideBFT: rhs_hideBFT;  //found empty after stripping
+			class rhs_hideAntennas: rhs_hideAntennas;  //found empty after stripping
+			class rhs_hideA2Parts: rhs_hideA2Parts;  //found empty after stripping
+			class Door_LF: Door_LF;  //found empty after stripping
+			class Door_RF: Door_RF;  //found empty after stripping
 		};
 		class NVGMarkers
 		{
@@ -1346,9 +1328,7 @@ class CfgVehicles
 			};
 		};
 	};
-	class rhsusf_m998_d_2dr: rhsusf_m998_w_2dr
-	{
-	};
+	class rhsusf_m998_d_2dr: rhsusf_m998_w_2dr;  //found empty after stripping
 	class rhsusf_m998_w_s_2dr: rhsusf_m998_w_2dr
 	{
 		class Exhausts
@@ -1382,14 +1362,10 @@ class CfgVehicles
 		soundAttenuationCargo[]={1,0};
 		class Turrets: Turrets
 		{
-			class CargoTurret_02: CargoTurret_02
-			{
-			};
+			class CargoTurret_02: CargoTurret_02;  //found empty after stripping
 		};
 	};
-	class rhsusf_m998_d_2dr_halftop: rhsusf_m998_w_2dr_halftop
-	{
-	};
+	class rhsusf_m998_d_2dr_halftop: rhsusf_m998_w_2dr_halftop;  //found empty after stripping
 	class rhsusf_m998_w_s_2dr_halftop: rhsusf_m998_w_2dr_halftop
 	{
 		class Exhausts
@@ -1455,9 +1431,7 @@ class CfgVehicles
 			};
 		};
 	};
-	class rhsusf_m998_d_2dr_fulltop: rhsusf_m998_w_2dr_fulltop
-	{
-	};
+	class rhsusf_m998_d_2dr_fulltop: rhsusf_m998_w_2dr_fulltop;  //found empty after stripping
 	class rhsusf_m998_w_s_2dr_fulltop: rhsusf_m998_w_2dr_fulltop
 	{
 		class Exhausts
@@ -1532,9 +1506,7 @@ class CfgVehicles
 				proxyIndex=1;
 				maxTurn=-34;
 				minTurn=-95;
-				class dynamicViewLimits
-				{
-				};
+				class dynamicViewLimits;  //found empty after stripping
 			};
 			class CargoTurret_04: CargoTurret_03
 			{
@@ -1551,41 +1523,19 @@ class CfgVehicles
 		};
 		class Attributes: Attributes
 		{
-			class rhs_decalMask: rhs_decalMask
-			{
-			};
-			class rhs_decalDoors: rhs_decalDoors
-			{
-			};
-			class rhs_hideCIP: rhs_hideCIP
-			{
-			};
-			class rhs_hideBFT: rhs_hideBFT
-			{
-			};
-			class rhs_hideAntennas: rhs_hideAntennas
-			{
-			};
-			class rhs_hideA2Parts: rhs_hideA2Parts
-			{
-			};
-			class Door_LF: Door_LF
-			{
-			};
-			class Door_RF: Door_RF
-			{
-			};
-			class Door_LB: Door_LB
-			{
-			};
-			class Door_RB: Door_RB
-			{
-			};
+			class rhs_decalMask: rhs_decalMask;  //found empty after stripping
+			class rhs_decalDoors: rhs_decalDoors;  //found empty after stripping
+			class rhs_hideCIP: rhs_hideCIP;  //found empty after stripping
+			class rhs_hideBFT: rhs_hideBFT;  //found empty after stripping
+			class rhs_hideAntennas: rhs_hideAntennas;  //found empty after stripping
+			class rhs_hideA2Parts: rhs_hideA2Parts;  //found empty after stripping
+			class Door_LF: Door_LF;  //found empty after stripping
+			class Door_RF: Door_RF;  //found empty after stripping
+			class Door_LB: Door_LB;  //found empty after stripping
+			class Door_RB: Door_RB;  //found empty after stripping
 		};
 	};
-	class rhsusf_m998_d_4dr: rhsusf_m998_w_4dr
-	{
-	};
+	class rhsusf_m998_d_4dr: rhsusf_m998_w_4dr;  //found empty after stripping
 	class rhsusf_m998_w_s_4dr: rhsusf_m998_w_4dr
 	{
 		class Exhausts
@@ -1620,14 +1570,10 @@ class CfgVehicles
 		class CargoTurret;
 		class Turrets: Turrets
 		{
-			class CargoTurret_02: CargoTurret_02
-			{
-			};
+			class CargoTurret_02: CargoTurret_02;  //found empty after stripping
 		};
 	};
-	class rhsusf_m998_d_4dr_halftop: rhsusf_m998_w_4dr_halftop
-	{
-	};
+	class rhsusf_m998_d_4dr_halftop: rhsusf_m998_w_4dr_halftop;  //found empty after stripping
 	class rhsusf_m998_w_s_4dr_halftop: rhsusf_m998_w_4dr_halftop
 	{
 		class Exhausts
@@ -1686,13 +1632,9 @@ class CfgVehicles
 			};
 		};
 		class CargoTurret;
-		class Turrets: Turrets
-		{
-		};
+		class Turrets: Turrets;  //found empty after stripping
 	};
-	class rhsusf_m998_d_4dr_fulltop: rhsusf_m998_w_4dr_fulltop
-	{
-	};
+	class rhsusf_m998_d_4dr_fulltop: rhsusf_m998_w_4dr_fulltop;  //found empty after stripping
 	class rhsusf_m998_w_s_4dr_fulltop: rhsusf_m998_d_4dr_fulltop
 	{
 		class Exhausts
@@ -1933,48 +1875,28 @@ class CfgVehicles
 		};
 		class Attributes: Attributes
 		{
-			class rhs_decalMask: rhs_decalMask
-			{
-			};
-			class rhs_decalDoors: rhs_decalDoors
-			{
-			};
-			class rhs_hideCIP: rhs_hideCIP
-			{
-			};
-			class rhs_hideBFT: rhs_hideBFT
-			{
-			};
-			class rhs_hideAntennas: rhs_hideAntennas
-			{
-			};
-			class rhs_hideA2Parts: rhs_hideA2Parts
-			{
-			};
-			class Door_LF: Door_LF
-			{
-			};
+			class rhs_decalMask: rhs_decalMask;  //found empty after stripping
+			class rhs_decalDoors: rhs_decalDoors;  //found empty after stripping
+			class rhs_hideCIP: rhs_hideCIP;  //found empty after stripping
+			class rhs_hideBFT: rhs_hideBFT;  //found empty after stripping
+			class rhs_hideAntennas: rhs_hideAntennas;  //found empty after stripping
+			class rhs_hideA2Parts: rhs_hideA2Parts;  //found empty after stripping
+			class Door_LF: Door_LF;  //found empty after stripping
 			class ani_window_1: Door_LF
 			{
 				property="ani_window_1";
 			};
-			class Door_RF: Door_RF
-			{
-			};
+			class Door_RF: Door_RF;  //found empty after stripping
 			class ani_window_2: Door_LF
 			{
 				property="ani_window_2";
 			};
-			class Door_LB: Door_LB
-			{
-			};
+			class Door_LB: Door_LB;  //found empty after stripping
 			class ani_window_3: Door_LF
 			{
 				property="ani_window_3";
 			};
-			class Door_RB: Door_RB
-			{
-			};
+			class Door_RB: Door_RB;  //found empty after stripping
 			class ani_window_4: Door_LF
 			{
 				property="ani_window_4";
@@ -1994,9 +1916,7 @@ class CfgVehicles
 			};
 		};
 	};
-	class rhsusf_m1025_d: rhsusf_m1025_w
-	{
-	};
+	class rhsusf_m1025_d: rhsusf_m1025_w;  //found empty after stripping
 	class rhsusf_m1025_w_s: rhsusf_m1025_w
 	{
 		class Exhausts
@@ -2011,9 +1931,7 @@ class CfgVehicles
 		maxFordingDepth=0.75;
 		displayname="M1025A2 (Unarmed/Snorkel)";
 	};
-	class rhsusf_m1025_d_s: rhsusf_m1025_w_s
-	{
-	};
+	class rhsusf_m1025_d_s: rhsusf_m1025_w_s;  //found empty after stripping
 	class rhsusf_m1025_w_m2: rhsusf_m1025_w
 	{
 		Picture="\rhsusf\addons\rhsusf_hmmwv\pictures\rhsusf_m1025_m2_ca.paa";
@@ -2034,9 +1952,7 @@ class CfgVehicles
 			};
 		};
 		nameSound="veh_vehicle_armedcar_s";
-		class HitPoints: HitPoints
-		{
-		};
+		class HitPoints: HitPoints;  //found empty after stripping
 		threat[]={0.89999998,0.30000001,0.1};
 		class Turrets: Turrets
 		{
@@ -2066,16 +1982,10 @@ class CfgVehicles
 					minFov=0.25;
 					maxFov=1.1;
 				};
-				class ViewGunner: ViewOptics
-				{
-				};
+				class ViewGunner: ViewOptics;  //found empty after stripping
 			};
-			class CargoTurret_02: CargoTurret_02
-			{
-			};
-			class CargoTurret_03: CargoTurret_03
-			{
-			};
+			class CargoTurret_02: CargoTurret_02;  //found empty after stripping
+			class CargoTurret_03: CargoTurret_03;  //found empty after stripping
 		};
 		class textureSources
 		{
@@ -2102,9 +2012,7 @@ class CfgVehicles
 			};
 		};
 	};
-	class rhsusf_m1025_d_m2: rhsusf_m1025_w_m2
-	{
-	};
+	class rhsusf_m1025_d_m2: rhsusf_m1025_w_m2;  //found empty after stripping
 	class rhsusf_m1025_w_s_m2: rhsusf_m1025_w_m2
 	{
 		class Exhausts
@@ -2119,9 +2027,7 @@ class CfgVehicles
 		maxFordingDepth=0.75;
 		displayname="M1025A2 (M2/Snorkel)";
 	};
-	class rhsusf_m1025_d_s_m2: rhsusf_m1025_w_s_m2
-	{
-	};
+	class rhsusf_m1025_d_s_m2: rhsusf_m1025_w_s_m2;  //found empty after stripping
 	class rhsusf_m1025_w_mk19: rhsusf_m1025_w_m2
 	{
 		Picture="\rhsusf\addons\rhsusf_hmmwv\pictures\rhsusf_m1025_mk19_ca.paa";
@@ -2145,17 +2051,11 @@ class CfgVehicles
 					"RHS_48Rnd_40mm_MK19_M1001"
 				};
 			};
-			class CargoTurret_02: CargoTurret_02
-			{
-			};
-			class CargoTurret_03: CargoTurret_03
-			{
-			};
+			class CargoTurret_02: CargoTurret_02;  //found empty after stripping
+			class CargoTurret_03: CargoTurret_03;  //found empty after stripping
 		};
 	};
-	class rhsusf_m1025_d_Mk19: rhsusf_m1025_w_mk19
-	{
-	};
+	class rhsusf_m1025_d_Mk19: rhsusf_m1025_w_mk19;  //found empty after stripping
 	class rhsusf_m1025_w_s_Mk19: rhsusf_m1025_w_mk19
 	{
 		class Exhausts
@@ -2170,9 +2070,7 @@ class CfgVehicles
 		maxFordingDepth=0.75;
 		displayname="M1025A2 (Mk19/Snorkel)";
 	};
-	class rhsusf_m1025_d_s_Mk19: rhsusf_m1025_w_s_Mk19
-	{
-	};
+	class rhsusf_m1025_d_s_Mk19: rhsusf_m1025_w_s_Mk19;  //found empty after stripping
 	class rhsusf_m966_w: rhsusf_m1025_w
 	{
 		Picture="\rhsusf\addons\rhsusf_hmmwv\pictures\rhsusf_m966_ca.paa";
@@ -2193,9 +2091,7 @@ class CfgVehicles
 			};
 		};
 		nameSound="veh_vehicle_armedcar_s";
-		class HitPoints: HitPoints
-		{
-		};
+		class HitPoints: HitPoints;  //found empty after stripping
 		threat[]={0.89999998,0.30000001,0.1};
 		class Turrets: Turrets
 		{
@@ -2284,12 +2180,8 @@ class CfgVehicles
 					};
 				};
 			};
-			class CargoTurret_02: CargoTurret_02
-			{
-			};
-			class CargoTurret_03: CargoTurret_03
-			{
-			};
+			class CargoTurret_02: CargoTurret_02;  //found empty after stripping
+			class CargoTurret_03: CargoTurret_03;  //found empty after stripping
 		};
 		class textureSources
 		{
@@ -2323,9 +2215,7 @@ class CfgVehicles
 			0.5
 		};
 	};
-	class rhsusf_m966_d: rhsusf_m966_w
-	{
-	};
+	class rhsusf_m966_d: rhsusf_m966_w;  //found empty after stripping
 	class rhsusf_m1043_w: rhsusf_m1025_w
 	{
 		normalSpeedForwardCoef=0.69999999;
@@ -2488,9 +2378,7 @@ class CfgVehicles
 			};
 		};
 	};
-	class rhsusf_m1043_d: rhsusf_m1043_w
-	{
-	};
+	class rhsusf_m1043_d: rhsusf_m1043_w;  //found empty after stripping
 	class rhsusf_m1043_w_s: rhsusf_m1043_w
 	{
 		class Exhausts
@@ -2505,9 +2393,7 @@ class CfgVehicles
 		maxFordingDepth=0.75;
 		displayname="M1043A2 (Unarmed/Snorkel)";
 	};
-	class rhsusf_m1043_d_s: rhsusf_m1043_w_s
-	{
-	};
+	class rhsusf_m1043_d_s: rhsusf_m1043_w_s;  //found empty after stripping
 	class rhsusf_m1043_w_m2: rhsusf_m1025_w_m2
 	{
 		displayname="M1043A2 (M2)";
@@ -2537,9 +2423,7 @@ class CfgVehicles
 			};
 		};
 	};
-	class rhsusf_m1043_d_m2: rhsusf_m1043_w_m2
-	{
-	};
+	class rhsusf_m1043_d_m2: rhsusf_m1043_w_m2;  //found empty after stripping
 	class rhsusf_m1043_w_s_m2: rhsusf_m1043_w_m2
 	{
 		class Exhausts
@@ -2554,9 +2438,7 @@ class CfgVehicles
 		maxFordingDepth=0.75;
 		displayname="M1043A2 (M2/Snorkel)";
 	};
-	class rhsusf_m1043_d_s_m2: rhsusf_m1043_w_s_m2
-	{
-	};
+	class rhsusf_m1043_d_s_m2: rhsusf_m1043_w_s_m2;  //found empty after stripping
 	class rhsusf_m1043_w_mk19: rhsusf_m1025_w_mk19
 	{
 		displayname="M1043A2 (Mk19)";
@@ -2586,9 +2468,7 @@ class CfgVehicles
 			};
 		};
 	};
-	class rhsusf_m1043_d_mk19: rhsusf_m1043_w_mk19
-	{
-	};
+	class rhsusf_m1043_d_mk19: rhsusf_m1043_w_mk19;  //found empty after stripping
 	class rhsusf_m1043_w_s_mk19: rhsusf_m1043_w_mk19
 	{
 		class Exhausts
@@ -2603,9 +2483,7 @@ class CfgVehicles
 		maxFordingDepth=0.75;
 		displayname="M1043A2 (Mk19/Snorkel)";
 	};
-	class rhsusf_m1043_d_s_mk19: rhsusf_m1043_w_s_mk19
-	{
-	};
+	class rhsusf_m1043_d_s_mk19: rhsusf_m1043_w_s_mk19;  //found empty after stripping
 	class rhsusf_m1045_w: rhsusf_m966_w
 	{
 		displayname="M1045A2 (M220A2)";
@@ -2636,9 +2514,7 @@ class CfgVehicles
 		};
 		animationList[]={};
 	};
-	class rhsusf_m1045_d: rhsusf_m1045_w
-	{
-	};
+	class rhsusf_m1045_d: rhsusf_m1045_w;  //found empty after stripping
 	class rhsusf_m1045_w_s: rhsusf_m1045_w
 	{
 		class Exhausts
@@ -2653,7 +2529,5 @@ class CfgVehicles
 		maxFordingDepth=0.75;
 		displayname="M1045A2 (M220A2/Snorkel)";
 	};
-	class rhsusf_m1045_d_s: rhsusf_m1045_w_s
-	{
-	};
+	class rhsusf_m1045_d_s: rhsusf_m1045_w_s;  //found empty after stripping
 };

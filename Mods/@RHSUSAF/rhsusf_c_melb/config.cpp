@@ -215,9 +215,7 @@ class CfgVehicles
 			"rhsusf_mag_LWIRCM",
 			"rhsusf_mag_LWIRCM"
 		};
-		class MFD
-		{
-		};
+		class MFD;  //found empty after stripping
 		class ViewOptics: ViewOptics
 		{
 			initAngleX=0;
@@ -1015,9 +1013,7 @@ class CfgVehicles
 		};
 		class SoundsExt
 		{
-			class SoundEvents
-			{
-			};
+			class SoundEvents;  //found empty after stripping
 			class Sounds
 			{
 				class EngineExt
@@ -1427,9 +1423,7 @@ class CfgVehicles
 				};
 			};
 		};
-		class pilotCamera
-		{
-		};
+		class pilotCamera;  //found empty after stripping
 		class Exhausts
 		{
 			class Exhaust01
@@ -1553,9 +1547,7 @@ class CfgVehicles
 				radius=0.69999999;
 			};
 		};
-		class Damage
-		{
-		};
+		class Damage;  //found empty after stripping
 		class Attributes
 		{
 			class rhs_MELB_TailNumber
@@ -1863,16 +1855,10 @@ class CfgVehicles
 				};
 				class Components
 				{
-					class VehicleSystemsDisplayManagerComponentLeft: VehicleSystemsTemplateLeftPilot
-					{
-					};
-					class VehicleSystemsDisplayManagerComponentRight: VehicleSystemsTemplateRightPilot
-					{
-					};
+					class VehicleSystemsDisplayManagerComponentLeft: VehicleSystemsTemplateLeftPilot;  //found empty after stripping
+					class VehicleSystemsDisplayManagerComponentRight: VehicleSystemsTemplateRightPilot;  //found empty after stripping
 				};
-				class Hitpoints
-				{
-				};
+				class Hitpoints;  //found empty after stripping
 			};
 		};
 		class EventHandlers: EventHandlers
@@ -1888,23 +1874,13 @@ class CfgVehicles
 			{
 				class Components
 				{
-					class DataLinkSensorComponent: SensorTemplateDataLink
-					{
-					};
-					class PassiveRadarSensorComponent: SensorTemplatePassiveRadar
-					{
-					};
-					class LaserSensorComponent: SensorTemplateLaser
-					{
-					};
+					class DataLinkSensorComponent: SensorTemplateDataLink;  //found empty after stripping
+					class PassiveRadarSensorComponent: SensorTemplatePassiveRadar;  //found empty after stripping
+					class LaserSensorComponent: SensorTemplateLaser;  //found empty after stripping
 				};
 			};
-			class VehicleSystemsDisplayManagerComponentLeft: VehicleSystemsTemplateLeftPilot
-			{
-			};
-			class VehicleSystemsDisplayManagerComponentRight: VehicleSystemsTemplateRightPilot
-			{
-			};
+			class VehicleSystemsDisplayManagerComponentLeft: VehicleSystemsTemplateLeftPilot;  //found empty after stripping
+			class VehicleSystemsDisplayManagerComponentRight: VehicleSystemsTemplateRightPilot;  //found empty after stripping
 		};
 	};
 	class RHS_MELB_H6M: RHS_MELB_base
@@ -1917,9 +1893,7 @@ class CfgVehicles
 		threat[]={0.60000002,0.40000001,0.1};
 		class Turrets: Turrets
 		{
-			class CopilotTurret: CopilotTurret
-			{
-			};
+			class CopilotTurret: CopilotTurret;  //found empty after stripping
 			class CargoTurret_02: CargoTurret_01
 			{
 				proxyIndex=2;
@@ -1929,21 +1903,11 @@ class CfgVehicles
 		};
 		class Attributes: Attributes
 		{
-			class rhs_MELB_TailNumber: rhs_MELB_TailNumber
-			{
-			};
-			class rhs_MELB_NoFear: rhs_MELB_NoFear
-			{
-			};
-			class rhs_MELB_SN_Nose: rhs_MELB_SN_Nose
-			{
-			};
-			class rhs_MELB_clan: rhs_MELB_clan
-			{
-			};
-			class MELB_ToggleBoy: MELB_ToggleBoy
-			{
-			};
+			class rhs_MELB_TailNumber: rhs_MELB_TailNumber;  //found empty after stripping
+			class rhs_MELB_NoFear: rhs_MELB_NoFear;  //found empty after stripping
+			class rhs_MELB_SN_Nose: rhs_MELB_SN_Nose;  //found empty after stripping
+			class rhs_MELB_clan: rhs_MELB_clan;  //found empty after stripping
+			class MELB_ToggleBoy: MELB_ToggleBoy;  //found empty after stripping
 		};
 	};
 	class RHS_MELB_AH6M: RHS_MELB_base
@@ -1990,27 +1954,15 @@ class CfgVehicles
 		cost=1000000;
 		class Turrets: Turrets
 		{
-			class CopilotTurret: CopilotTurret
-			{
-			};
+			class CopilotTurret: CopilotTurret;  //found empty after stripping
 		};
 		class Attributes: Attributes
 		{
-			class rhs_MELB_TailNumber: rhs_MELB_TailNumber
-			{
-			};
-			class rhs_MELB_SGDM: rhs_MELB_SGDM
-			{
-			};
-			class rhs_MELB_SN_Nose: rhs_MELB_SN_Nose
-			{
-			};
-			class rhs_MELB_clan: rhs_MELB_clan
-			{
-			};
-			class MELB_ToggleBoy: MELB_ToggleBoy
-			{
-			};
+			class rhs_MELB_TailNumber: rhs_MELB_TailNumber;  //found empty after stripping
+			class rhs_MELB_SGDM: rhs_MELB_SGDM;  //found empty after stripping
+			class rhs_MELB_SN_Nose: rhs_MELB_SN_Nose;  //found empty after stripping
+			class rhs_MELB_clan: rhs_MELB_clan;  //found empty after stripping
+			class MELB_ToggleBoy: MELB_ToggleBoy;  //found empty after stripping
 			class rhs_ExtLongL
 			{
 				tooltip="Extended weapon pylon on the port side \nSome clipping occurs with GAU-19";
@@ -2222,9 +2174,7 @@ class CfgVehicles
 		};
 		class Turrets: Turrets
 		{
-			class CopilotTurret: CopilotTurret
-			{
-			};
+			class CopilotTurret: CopilotTurret;  //found empty after stripping
 			class CargoTurret_03: CargoTurret
 			{
 				proxyIndex=3;
@@ -2236,9 +2186,7 @@ class CfgVehicles
 				ejectDeadGunner=0;
 				playerPosition=4;
 				soundAttenuationTurret="";
-				class Hitpoints
-				{
-				};
+				class Hitpoints;  //found empty after stripping
 			};
 			class CargoTurret_04: CargoTurret_03
 			{
@@ -2287,21 +2235,11 @@ class CfgVehicles
 		};
 		class Attributes: Attributes
 		{
-			class rhs_MELB_TailNumber: rhs_MELB_TailNumber
-			{
-			};
-			class rhs_MELB_NoFear: rhs_MELB_NoFear
-			{
-			};
-			class rhs_MELB_SN_Nose: rhs_MELB_SN_Nose
-			{
-			};
-			class rhs_MELB_clan: rhs_MELB_clan
-			{
-			};
-			class MELB_ToggleBoy: MELB_ToggleBoy
-			{
-			};
+			class rhs_MELB_TailNumber: rhs_MELB_TailNumber;  //found empty after stripping
+			class rhs_MELB_NoFear: rhs_MELB_NoFear;  //found empty after stripping
+			class rhs_MELB_SN_Nose: rhs_MELB_SN_Nose;  //found empty after stripping
+			class rhs_MELB_clan: rhs_MELB_clan;  //found empty after stripping
+			class MELB_ToggleBoy: MELB_ToggleBoy;  //found empty after stripping
 		};
 	};
 };

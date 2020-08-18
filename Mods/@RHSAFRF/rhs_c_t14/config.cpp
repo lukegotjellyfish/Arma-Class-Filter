@@ -479,24 +479,12 @@ class CfgVehicles
 					{0.60000002,0.89999998}
 				};
 			};
-			class L3: L2
-			{
-			};
-			class L4: L2
-			{
-			};
-			class L5: L4
-			{
-			};
-			class L6: L4
-			{
-			};
-			class L7: L2
-			{
-			};
-			class L8: L2
-			{
-			};
+			class L3: L2;  //found empty after stripping
+			class L4: L2;  //found empty after stripping
+			class L5: L4;  //found empty after stripping
+			class L6: L4;  //found empty after stripping
+			class L7: L2;  //found empty after stripping
+			class L8: L2;  //found empty after stripping
 			class L9: L2
 			{
 				maxDroop=0.0099999998;
@@ -512,24 +500,12 @@ class CfgVehicles
 				side="right";
 				suspTravelDirection[]={0.125,-1,0};
 			};
-			class R3: R2
-			{
-			};
-			class R4: R2
-			{
-			};
-			class R5: R2
-			{
-			};
-			class R6: R2
-			{
-			};
-			class R7: R2
-			{
-			};
-			class R8: R2
-			{
-			};
+			class R3: R2;  //found empty after stripping
+			class R4: R2;  //found empty after stripping
+			class R5: R2;  //found empty after stripping
+			class R6: R2;  //found empty after stripping
+			class R7: R2;  //found empty after stripping
+			class R8: R2;  //found empty after stripping
 			class R9: R2
 			{
 				maxDroop=0.0099999998;
@@ -1195,15 +1171,9 @@ class CfgVehicles
 						};
 						class OpticsIn: Optics_Commander_02
 						{
-							class Wide: Wide
-							{
-							};
-							class Medium: Medium
-							{
-							};
-							class Narrow: Narrow
-							{
-							};
+							class Wide: Wide;  //found empty after stripping
+							class Medium: Medium;  //found empty after stripping
+							class Narrow: Narrow;  //found empty after stripping
 						};
 						startEngine=0;
 						class HitPoints
@@ -1259,15 +1229,9 @@ class CfgVehicles
 				lockWhenDriverOut=1;
 				class OpticsIn: Optics_Gunner_MBT_02
 				{
-					class Wide: Wide
-					{
-					};
-					class Medium: Medium
-					{
-					};
-					class Narrow: Narrow
-					{
-					};
+					class Wide: Wide;  //found empty after stripping
+					class Medium: Medium;  //found empty after stripping
+					class Narrow: Narrow;  //found empty after stripping
 				};
 				class HitPoints
 				{
@@ -1361,9 +1325,7 @@ class CfgVehicles
 				expression="if( _value >= 0)then{if( _value == 0)then{{[_this setobjectTexture [_x,'a3\data_f\clear_empty.paa']]}foreach cRHST14NumberPlaces}else{[_this, [['Number', cRHST14NumberPlaces, _this getVariable ['rhs_decalNumber_type','Default'], _value] ] ] call rhs_fnc_decalsInit}};";
 			};
 		};
-		class Damage
-		{
-		};
+		class Damage;  //found empty after stripping
 		class EventHandlers: EventHandlers
 		{
 			class RHS_EventHandlers

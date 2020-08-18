@@ -1454,15 +1454,9 @@ class CfgSoundSets
 class cfgVehicles
 {
 	class Helicopter;
-	class Helicopter_Base_F: Helicopter
-	{
-	};
-	class Heli_Attack_02_base_F: Helicopter_Base_F
-	{
-	};
-	class Heli_Light_03_base_F: Helicopter_Base_F
-	{
-	};
+	class Helicopter_Base_F: Helicopter;  //found empty after stripping
+	class Heli_Attack_02_base_F: Helicopter_Base_F;  //found empty after stripping
+	class Heli_Light_03_base_F: Helicopter_Base_F;  //found empty after stripping
 	class RHS_Mi24_base: Heli_Attack_02_base_F
 	{
 		class Sounds

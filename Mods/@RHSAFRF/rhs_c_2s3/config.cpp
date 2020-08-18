@@ -196,21 +196,11 @@ class CfgVehicles
 					{0.69999999,0.64999998}
 				};
 			};
-			class L3: L2
-			{
-			};
-			class L4: L2
-			{
-			};
-			class L5: L2
-			{
-			};
-			class L6: L2
-			{
-			};
-			class L7: L2
-			{
-			};
+			class L3: L2;  //found empty after stripping
+			class L4: L2;  //found empty after stripping
+			class L5: L2;  //found empty after stripping
+			class L6: L2;  //found empty after stripping
+			class L7: L2;  //found empty after stripping
 			class L9: L2
 			{
 				maxDroop=0;
@@ -226,21 +216,11 @@ class CfgVehicles
 				suspTravelDirection[]={0.125,-1,0};
 				side="right";
 			};
-			class R3: R2
-			{
-			};
-			class R4: R2
-			{
-			};
-			class R5: R2
-			{
-			};
-			class R6: R2
-			{
-			};
-			class R7: R2
-			{
-			};
+			class R3: R2;  //found empty after stripping
+			class R4: R2;  //found empty after stripping
+			class R5: R2;  //found empty after stripping
+			class R6: R2;  //found empty after stripping
+			class R7: R2;  //found empty after stripping
 			class R9: R2
 			{
 				maxDroop=0;
@@ -1351,9 +1331,7 @@ class CfgVehicles
 					"rhs_faction_tv"
 				};
 			};
-			class rhs_sand
-			{
-			};
+			class rhs_sand;  //found empty after stripping
 		};
 		class Attributes
 		{
@@ -1543,9 +1521,7 @@ class CfgVehicles
 			minFov=0.69999999;
 			maxFov=0.69999999;
 		};
-		class Damage
-		{
-		};
+		class Damage;  //found empty after stripping
 		class Exhausts
 		{
 			class Exhaust1
@@ -1597,7 +1573,5 @@ class CfgVehicles
 			};
 		};
 	};
-	class rhs_2s3_tv: rhs_2s3tank_base
-	{
-	};
+	class rhs_2s3_tv: rhs_2s3tank_base;  //found empty after stripping
 };

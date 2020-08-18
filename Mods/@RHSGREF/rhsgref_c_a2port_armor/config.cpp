@@ -254,9 +254,7 @@ class CfgVehicles
 						};
 					};
 				};
-				class Hitpoints
-				{
-				};
+				class Hitpoints;  //found empty after stripping
 			};
 			class MainTurret: MainTurret
 			{
@@ -306,9 +304,7 @@ class CfgVehicles
 				usePiP=2;
 				canUseScanners=0;
 				allowTabLock=0;
-				class ViewOptics: RCWSOptics
-				{
-				};
+				class ViewOptics: RCWSOptics;  //found empty after stripping
 				class ViewGunner: ViewOptics
 				{
 					initAngleX=0;
@@ -344,9 +340,7 @@ class CfgVehicles
 						};
 						hitpoint="Hit_Optic_PP61AM";
 					};
-					class Night: Wide
-					{
-					};
+					class Night: Wide;  //found empty after stripping
 					class RearView: Wide
 					{
 						camPos="view_turret_rear";
@@ -386,9 +380,7 @@ class CfgVehicles
 						radius=0.25;
 					};
 				};
-				class Turrets
-				{
-				};
+				class Turrets;  //found empty after stripping
 				class Components
 				{
 					class VehicleSystemsDisplayManagerComponentLeft
@@ -442,9 +434,7 @@ class CfgVehicles
 				proxyIndex=12;
 			};
 		};
-		class Damage
-		{
-		};
+		class Damage;  //found empty after stripping
 		class Exhausts
 		{
 			class Exhaust
@@ -1677,24 +1667,12 @@ class CfgVehicles
 					"rhsgref_faction_cdf_ground"
 				};
 			};
-			class chdkz
-			{
-			};
-			class khaki: chdkz
-			{
-			};
-			class olive: chdkz
-			{
-			};
-			class takistan: chdkz
-			{
-			};
-			class 3tone: chdkz
-			{
-			};
-			class chdkz02: chdkz
-			{
-			};
+			class chdkz;  //found empty after stripping
+			class khaki: chdkz;  //found empty after stripping
+			class olive: chdkz;  //found empty after stripping
+			class takistan: chdkz;  //found empty after stripping
+			class 3tone: chdkz;  //found empty after stripping
+			class chdkz02: chdkz;  //found empty after stripping
 		};
 		class Attributes
 		{
@@ -1881,18 +1859,10 @@ class CfgVehicles
 					"rhsgref_faction_cdf_ground"
 				};
 			};
-			class chdkz
-			{
-			};
-			class khaki: chdkz
-			{
-			};
-			class olive: chdkz
-			{
-			};
-			class takistan: chdkz
-			{
-			};
+			class chdkz;  //found empty after stripping
+			class khaki: chdkz;  //found empty after stripping
+			class olive: chdkz;  //found empty after stripping
+			class takistan: chdkz;  //found empty after stripping
 		};
 		hiddenselectionstextures[]=
 		{
@@ -1900,9 +1870,7 @@ class CfgVehicles
 			"\rhsgref\addons\rhsgref_a2port_armor\brdm2\data\brdm2_02_camo_co.paa",
 			"\rhsgref\addons\rhsgref_a2port_armor\brdm2\data\zbik_04_co.paa"
 		};
-		class Damage
-		{
-		};
+		class Damage;  //found empty after stripping
 		class Turrets: Turrets
 		{
 			class MainTurret: MainTurret
@@ -1957,18 +1925,10 @@ class CfgVehicles
 					};
 				};
 			};
-			class CargoTurret_02: CargoTurret_02
-			{
-			};
-			class CargoTurret_03: CargoTurret_03
-			{
-			};
-			class CargoTurret_04: CargoTurret_04
-			{
-			};
-			class CargoTurret_05: CargoTurret_05
-			{
-			};
+			class CargoTurret_02: CargoTurret_02;  //found empty after stripping
+			class CargoTurret_03: CargoTurret_03;  //found empty after stripping
+			class CargoTurret_04: CargoTurret_04;  //found empty after stripping
+			class CargoTurret_05: CargoTurret_05;  //found empty after stripping
 		};
 		class Hitpoints: HitPoints
 		{
@@ -2003,21 +1963,11 @@ class CfgVehicles
 			{
 				LODTurnedIn="VIEW_CARGO";
 			};
-			class CargoTurret_02: CargoTurret_02
-			{
-			};
-			class CargoTurret_03: CargoTurret_03
-			{
-			};
-			class CargoTurret_04: CargoTurret_04
-			{
-			};
-			class CargoTurret_05: CargoTurret_05
-			{
-			};
-			class CargoTurret_06: CargoTurret_06
-			{
-			};
+			class CargoTurret_02: CargoTurret_02;  //found empty after stripping
+			class CargoTurret_03: CargoTurret_03;  //found empty after stripping
+			class CargoTurret_04: CargoTurret_04;  //found empty after stripping
+			class CargoTurret_05: CargoTurret_05;  //found empty after stripping
+			class CargoTurret_06: CargoTurret_06;  //found empty after stripping
 		};
 	};
 	class rhsgref_BRDM2_HQ: rhsgref_BRDM2UM
@@ -2042,9 +1992,7 @@ class CfgVehicles
 					"rhs_mag_762x54mm_250",
 					"rhs_mag_762x54mm_250"
 				};
-				class Turrets
-				{
-				};
+				class Turrets;  //found empty after stripping
 				startEngine=0;
 				memoryPointGun="usti hlavne3";
 				selectionFireAnim="zasleh";
@@ -2075,21 +2023,11 @@ class CfgVehicles
 				primaryGunner=0;
 				primaryObserver=1;
 			};
-			class CargoTurret_02: CargoTurret_02
-			{
-			};
-			class CargoTurret_03: CargoTurret_03
-			{
-			};
-			class CargoTurret_04: CargoTurret_04
-			{
-			};
-			class CargoTurret_05: CargoTurret_05
-			{
-			};
-			class CargoTurret_06: CargoTurret_06
-			{
-			};
+			class CargoTurret_02: CargoTurret_02;  //found empty after stripping
+			class CargoTurret_03: CargoTurret_03;  //found empty after stripping
+			class CargoTurret_04: CargoTurret_04;  //found empty after stripping
+			class CargoTurret_05: CargoTurret_05;  //found empty after stripping
+			class CargoTurret_06: CargoTurret_06;  //found empty after stripping
 		};
 	};
 	class rhsgref_BRDM2_b: rhsgref_BRDM2
@@ -2380,7 +2318,5 @@ class CfgVehicles
 class CfgNonAIVehicles
 {
 	class ProxyRetex;
-	class ProxyPSZ_BRDM2_wheel: ProxyRetex
-	{
-	};
+	class ProxyPSZ_BRDM2_wheel: ProxyRetex;  //found empty after stripping
 };

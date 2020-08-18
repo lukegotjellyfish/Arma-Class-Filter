@@ -1093,12 +1093,8 @@ class CfgWeapons
 		class ItemInfo: InventoryFinsItem_Base_F
 		{
 			mass=110;
-			class Pointer
-			{
-			};
-			class FlashLight
-			{
-			};
+			class Pointer;  //found empty after stripping
+			class FlashLight;  //found empty after stripping
 		};
 	};
 };
@@ -1194,12 +1190,8 @@ class CfgVehicles
 		memoryPointLRocket="rocket_1";
 		memoryPointRMissile="missile_2";
 		memoryPointRRocket="rocket_2";
-		class EjectionSystem
-		{
-		};
-		class Turrets
-		{
-		};
+		class EjectionSystem;  //found empty after stripping
+		class Turrets;  //found empty after stripping
 		threat[]={1,1,1};
 		waterLeakiness=1.5;
 		showAllTargets=4;
@@ -1264,15 +1256,9 @@ class CfgVehicles
 					"rhs_faction_vvs"
 				};
 			};
-			class standard2: standard
-			{
-			};
-			class standard3: standard
-			{
-			};
-			class standard4: standard
-			{
-			};
+			class standard2: standard;  //found empty after stripping
+			class standard3: standard;  //found empty after stripping
+			class standard4: standard;  //found empty after stripping
 		};
 		class Attributes
 		{
@@ -8048,9 +8034,7 @@ class CfgVehicles
 					{1,1}
 				};
 			};
-			class Wheel_1_fake: Wheel_1
-			{
-			};
+			class Wheel_1_fake: Wheel_1;  //found empty after stripping
 			class Wheel_2: Wheel_1
 			{
 				steering=0;
@@ -8805,18 +8789,14 @@ class CfgVehicles
 						openBayWhenWeaponSelected=0;
 						autoCloseWhenEmptyDelay=4.5;
 					};
-					class BayCenter2: BayCenter1
-					{
-					};
+					class BayCenter2: BayCenter1;  //found empty after stripping
 					class BayLeft1
 					{
 						bayOpenTime=0.5;
 						openBayWhenWeaponSelected=0;
 						autoCloseWhenEmptyDelay=2;
 					};
-					class BayRight1: BayLeft1
-					{
-					};
+					class BayRight1: BayLeft1;  //found empty after stripping
 				};
 			};
 			class SensorsManagerComponent
@@ -8856,9 +8836,7 @@ class CfgVehicles
 						maxTrackableSpeed=100;
 						aimDown=1;
 					};
-					class PassiveRadarSensorComponent: SensorTemplatePassiveRadar
-					{
-					};
+					class PassiveRadarSensorComponent: SensorTemplatePassiveRadar;  //found empty after stripping
 					class ActiveRadarSensorComponent: SensorTemplateActiveRadar
 					{
 						class AirTarget
@@ -8875,15 +8853,9 @@ class CfgVehicles
 						angleRangeVertical=60;
 						groundNoiseDistanceCoef=0.00039999999;
 					};
-					class LaserSensorComponent: SensorTemplateLaser
-					{
-					};
-					class NVSensorComponent: SensorTemplateNV
-					{
-					};
-					class DataLinkSensorComponent: SensorTemplateDataLink
-					{
-					};
+					class LaserSensorComponent: SensorTemplateLaser;  //found empty after stripping
+					class NVSensorComponent: SensorTemplateNV;  //found empty after stripping
+					class DataLinkSensorComponent: SensorTemplateDataLink;  //found empty after stripping
 				};
 			};
 			class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
@@ -8957,24 +8929,12 @@ class CfgVehicles
 			{
 				class pylons: pylons
 				{
-					class pylonBayCenter1: pylonBayCenter1
-					{
-					};
-					class pylonBayCenter2: pylonBayCenter2
-					{
-					};
-					class pylonBayCenter3: pylonBayCenter3
-					{
-					};
-					class pylonBayCenter4: pylonBayCenter4
-					{
-					};
-					class pylonBayRight1: pylonBayRight1
-					{
-					};
-					class pylonBayLeft1: pylonBayLeft1
-					{
-					};
+					class pylonBayCenter1: pylonBayCenter1;  //found empty after stripping
+					class pylonBayCenter2: pylonBayCenter2;  //found empty after stripping
+					class pylonBayCenter3: pylonBayCenter3;  //found empty after stripping
+					class pylonBayCenter4: pylonBayCenter4;  //found empty after stripping
+					class pylonBayRight1: pylonBayRight1;  //found empty after stripping
+					class pylonBayLeft1: pylonBayLeft1;  //found empty after stripping
 					class pylons1
 					{
 						hardpoints[]=
@@ -9020,18 +8980,10 @@ class CfgVehicles
 				};
 				class Bays: Bays
 				{
-					class BayCenter1: BayCenter1
-					{
-					};
-					class BayCenter2: BayCenter2
-					{
-					};
-					class BayLeft1: BayLeft1
-					{
-					};
-					class BayRight1: BayRight1
-					{
-					};
+					class BayCenter1: BayCenter1;  //found empty after stripping
+					class BayCenter2: BayCenter2;  //found empty after stripping
+					class BayLeft1: BayLeft1;  //found empty after stripping
+					class BayRight1: BayRight1;  //found empty after stripping
 				};
 			};
 		};
@@ -9144,16 +9096,10 @@ class CfgVehicles
 		castCargoShadow=1;
 		occludeSoundsWhenIn=1;
 		obstructSoundsWhenIn=1;
-		class Turrets
-		{
-		};
-		class MFD
-		{
-		};
+		class Turrets;  //found empty after stripping
+		class MFD;  //found empty after stripping
 		driveOnComponent[]={};
-		class Eventhandlers
-		{
-		};
+		class Eventhandlers;  //found empty after stripping
 		SLX_XEH_DISABLED=1;
 	};
 	class rhs_t50_canopy: ThingX
@@ -9176,15 +9122,11 @@ class CfgVehicles
 		{
 			HandleDamage="deleteVehicle (_this select 0)";
 		};
-		class MFD
-		{
-		};
+		class MFD;  //found empty after stripping
 		driveOnComponent[]={};
 		SLX_XEH_DISABLED=1;
 	};
-	class rhs_su25_canopy: rhs_t50_canopy
-	{
-	};
+	class rhs_su25_canopy: rhs_t50_canopy;  //found empty after stripping
 	class RHS_TU95MS_base: Plane_Base_F
 	{
 		side=0;
@@ -9478,30 +9420,18 @@ class CfgVehicles
 						openBayWhenWeaponSelected=1;
 						autoCloseWhenEmptyDelay=0;
 					};
-					class Bay2: Bay1
-					{
-					};
-					class Bay3: Bay1
-					{
-					};
-					class Bay4: Bay1
-					{
-					};
-					class Bay5: Bay1
-					{
-					};
-					class Bay6: Bay1
-					{
-					};
+					class Bay2: Bay1;  //found empty after stripping
+					class Bay3: Bay1;  //found empty after stripping
+					class Bay4: Bay1;  //found empty after stripping
+					class Bay5: Bay1;  //found empty after stripping
+					class Bay6: Bay1;  //found empty after stripping
 				};
 			};
 			class SensorsManagerComponent
 			{
 				class Components
 				{
-					class PassiveRadarSensorComponent: SensorTemplatePassiveRadar
-					{
-					};
+					class PassiveRadarSensorComponent: SensorTemplatePassiveRadar;  //found empty after stripping
 				};
 			};
 			class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
@@ -9548,9 +9478,7 @@ class CfgVehicles
 		airBrake=0;
 		lightOnGear=1;
 		driverCanEject=0;
-		class EjectionSystem
-		{
-		};
+		class EjectionSystem;  //found empty after stripping
 		landingAoa="rad 10";
 		angleOfIndicence="rad 3";
 		landingSpeed=240;
@@ -9645,9 +9573,7 @@ class CfgVehicles
 						};
 					};
 				};
-				class Hitpoints
-				{
-				};
+				class Hitpoints;  //found empty after stripping
 			};
 			class MainTurret2: MainTurret
 			{
@@ -9802,9 +9728,7 @@ class CfgVehicles
 				dontCreateAI=1;
 			};
 		};
-		class Damage
-		{
-		};
+		class Damage;  //found empty after stripping
 		weapons[]={};
 		magazines[]={};
 		hiddenselections[]=
@@ -9832,18 +9756,10 @@ class CfgVehicles
 					"rhs_faction_vvs"
 				};
 			};
-			class standard: Old
-			{
-			};
-			class standard2: standard
-			{
-			};
-			class standard3: standard
-			{
-			};
-			class standard4: standard
-			{
-			};
+			class standard: Old;  //found empty after stripping
+			class standard2: standard;  //found empty after stripping
+			class standard3: standard;  //found empty after stripping
+			class standard4: standard;  //found empty after stripping
 		};
 		class Attributes
 		{
@@ -10175,9 +10091,7 @@ class CfgVehicles
 					{1,1}
 				};
 			};
-			class Wheel_1_fake: Wheel_1
-			{
-			};
+			class Wheel_1_fake: Wheel_1;  //found empty after stripping
 			class Wheel_2: Wheel_1
 			{
 				MOI=25.056299;
@@ -10189,16 +10103,12 @@ class CfgVehicles
 				springStrength=261000;
 				springDamperRate=9000;
 			};
-			class Wheel_3: Wheel_2
-			{
-			};
+			class Wheel_3: Wheel_2;  //found empty after stripping
 			class Wheel_4: Wheel_2
 			{
 				side="Wheel_4_damper_land";
 			};
-			class Wheel_5: Wheel_4
-			{
-			};
+			class Wheel_5: Wheel_4;  //found empty after stripping
 		};
 		driveOnComponent[]={};
 		class Exhausts

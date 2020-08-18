@@ -356,15 +356,9 @@ class CfgVehicles
 		class EventHandlers;
 		class AnimationSources;
 	};
-	class Offroad_01_base_F: Car_F
-	{
-	};
-	class Offroad_01_military_base_F: Offroad_01_base_F
-	{
-	};
-	class I_G_Offroad_01_F: Offroad_01_military_base_F
-	{
-	};
+	class Offroad_01_base_F: Car_F;  //found empty after stripping
+	class Offroad_01_military_base_F: Offroad_01_base_F;  //found empty after stripping
+	class I_G_Offroad_01_F: Offroad_01_military_base_F;  //found empty after stripping
 	class Offroad_01_armed_base_F: Offroad_01_military_base_F
 	{
 		class Turrets: Turrets
@@ -372,9 +366,7 @@ class CfgVehicles
 			class M2_Turret;
 		};
 	};
-	class I_G_Offroad_01_armed_F: Offroad_01_armed_base_F
-	{
-	};
+	class I_G_Offroad_01_armed_F: Offroad_01_armed_base_F;  //found empty after stripping
 	class Offroad_01_AT_base_F: Offroad_01_military_base_F
 	{
 		class Turrets: Turrets
@@ -382,9 +374,7 @@ class CfgVehicles
 			class AT_Turret;
 		};
 	};
-	class I_G_Offroad_01_AT_F: Offroad_01_AT_base_F
-	{
-	};
+	class I_G_Offroad_01_AT_F: Offroad_01_AT_base_F;  //found empty after stripping
 	class Truck_F: Car_F
 	{
 		class ViewPilot;
@@ -438,9 +428,7 @@ class CfgVehicles
 		};
 		class EventHandlers;
 	};
-	class APC_Tracked_02_base_F: Tank_F
-	{
-	};
+	class APC_Tracked_02_base_F: Tank_F;  //found empty after stripping
 	class RHS_ZU23_base;
 	class rhs_d30_base;
 	class rhs_D30_AT_base;
@@ -461,55 +449,31 @@ class CfgVehicles
 	class RHS_MK19_TriPod_base;
 	class RHS_UAZ_Base: Offroad_01_base_F
 	{
-		class Turrets: Turrets
-		{
-		};
+		class Turrets: Turrets;  //found empty after stripping
 	};
-	class rhs_uaz_open_Base: RHS_UAZ_Base
-	{
-	};
+	class rhs_uaz_open_Base: RHS_UAZ_Base;  //found empty after stripping
 	class RHS_UAZ_DShKM_Base: RHS_UAZ_Base
 	{
 		class CargoTurret;
 		class Turrets: Turrets
 		{
-			class MainTurret: MainTurret
-			{
-			};
+			class MainTurret: MainTurret;  //found empty after stripping
 		};
 	};
-	class RHS_UAZ_AGS30_Base: RHS_UAZ_DShKM_Base
-	{
-	};
-	class RHS_UAZ_SPG9_Base: RHS_UAZ_DShKM_Base
-	{
-	};
+	class RHS_UAZ_AGS30_Base: RHS_UAZ_DShKM_Base;  //found empty after stripping
+	class RHS_UAZ_SPG9_Base: RHS_UAZ_DShKM_Base;  //found empty after stripping
 	class RHS_Ural_BaseTurret: Truck_F
 	{
 		class Turrets;
 		class AnimationSources;
 	};
-	class RHS_Ural_Base: RHS_Ural_BaseTurret
-	{
-	};
-	class RHS_Ural_MSV_Base: RHS_Ural_Base
-	{
-	};
-	class RHS_Ural_Civ_Base: RHS_Ural_Base
-	{
-	};
-	class RHS_Ural_Open_MSV_01: RHS_Ural_MSV_Base
-	{
-	};
-	class RHS_Ural_Support_MSV_Base_01: RHS_Ural_MSV_Base
-	{
-	};
-	class RHS_Ural_Fuel_MSV_01: RHS_Ural_Support_MSV_Base_01
-	{
-	};
-	class RHS_Ural_Repair_MSV_01: RHS_Ural_Support_MSV_Base_01
-	{
-	};
+	class RHS_Ural_Base: RHS_Ural_BaseTurret;  //found empty after stripping
+	class RHS_Ural_MSV_Base: RHS_Ural_Base;  //found empty after stripping
+	class RHS_Ural_Civ_Base: RHS_Ural_Base;  //found empty after stripping
+	class RHS_Ural_Open_MSV_01: RHS_Ural_MSV_Base;  //found empty after stripping
+	class RHS_Ural_Support_MSV_Base_01: RHS_Ural_MSV_Base;  //found empty after stripping
+	class RHS_Ural_Fuel_MSV_01: RHS_Ural_Support_MSV_Base_01;  //found empty after stripping
+	class RHS_Ural_Repair_MSV_01: RHS_Ural_Support_MSV_Base_01;  //found empty after stripping
 	class RHS_Ural_Zu23_Base: RHS_Ural_BaseTurret
 	{
 		class Turrets: Turrets
@@ -529,39 +493,17 @@ class CfgVehicles
 	{
 		class Turrets;
 	};
-	class rhs_gaz66o_vmf: rhs_gaz66_vmf
-	{
-	};
-	class rhs_gaz66_flat_vmf: rhs_gaz66_vmf
-	{
-	};
-	class rhs_gaz66o_flat_vmf: rhs_gaz66o_vmf
-	{
-	};
-	class rhs_gaz66_ap2_base: rhs_gaz66_vmf
-	{
-	};
-	class rhs_gaz66_ap2_vmf: rhs_gaz66_ap2_base
-	{
-	};
-	class rhs_gaz66_repair_base: rhs_gaz66_vmf
-	{
-	};
-	class rhs_gaz66_repair_vmf: rhs_gaz66_repair_base
-	{
-	};
-	class rhs_gaz66_r142_base: rhs_gaz66_vmf
-	{
-	};
-	class rhs_gaz66_r142_vmf: rhs_gaz66_r142_base
-	{
-	};
-	class rhs_gaz66_ammo_base: rhs_gaz66_vmf
-	{
-	};
-	class rhs_gaz66_ammo_vmf: rhs_gaz66_ammo_base
-	{
-	};
+	class rhs_gaz66o_vmf: rhs_gaz66_vmf;  //found empty after stripping
+	class rhs_gaz66_flat_vmf: rhs_gaz66_vmf;  //found empty after stripping
+	class rhs_gaz66o_flat_vmf: rhs_gaz66o_vmf;  //found empty after stripping
+	class rhs_gaz66_ap2_base: rhs_gaz66_vmf;  //found empty after stripping
+	class rhs_gaz66_ap2_vmf: rhs_gaz66_ap2_base;  //found empty after stripping
+	class rhs_gaz66_repair_base: rhs_gaz66_vmf;  //found empty after stripping
+	class rhs_gaz66_repair_vmf: rhs_gaz66_repair_base;  //found empty after stripping
+	class rhs_gaz66_r142_base: rhs_gaz66_vmf;  //found empty after stripping
+	class rhs_gaz66_r142_vmf: rhs_gaz66_r142_base;  //found empty after stripping
+	class rhs_gaz66_ammo_base: rhs_gaz66_vmf;  //found empty after stripping
+	class rhs_gaz66_ammo_vmf: rhs_gaz66_ammo_base;  //found empty after stripping
 	class rhs_gaz66_zu23_base: rhs_gaz66_vmf
 	{
 		class Turrets: Turrets
@@ -571,173 +513,93 @@ class CfgVehicles
 			class CargoTurret_02;
 		};
 	};
-	class rhs_gaz66_zu23_vmf: rhs_gaz66_zu23_base
-	{
-	};
+	class rhs_gaz66_zu23_vmf: rhs_gaz66_zu23_base;  //found empty after stripping
 	class rhs_zil131_base: Truck_F
 	{
 		class textureSources
 		{
-			class CDF
-			{
-			};
-			class UN
-			{
-			};
-			class CHDKZ
-			{
-			};
+			class CDF;  //found empty after stripping
+			class UN;  //found empty after stripping
+			class CHDKZ;  //found empty after stripping
 		};
 	};
-	class rhs_zil131_open_base: rhs_zil131_base
-	{
-	};
-	class rhs_zil131_flatbed_base: rhs_zil131_open_base
-	{
-	};
-	class rhs_zil131_flatbed_cover_base: rhs_zil131_flatbed_base
-	{
-	};
-	class MRAP_01_base_F: Car_F
-	{
-	};
-	class rhsusf_hmmwe_base: MRAP_01_base_F
-	{
-	};
-	class rhsusf_m998_w_2dr: rhsusf_hmmwe_base
-	{
-	};
-	class rhsusf_m998_w_2dr_halftop: rhsusf_m998_w_2dr
-	{
-	};
-	class rhsusf_m998_w_2dr_fulltop: rhsusf_m998_w_2dr_halftop
-	{
-	};
-	class rhsusf_m998_w_4dr: rhsusf_m998_w_2dr
-	{
-	};
-	class rhsusf_m998_w_4dr_halftop: rhsusf_m998_w_4dr
-	{
-	};
-	class rhsusf_m998_w_4dr_fulltop: rhsusf_m998_w_4dr_halftop
-	{
-	};
-	class rhsusf_m1025_w: rhsusf_m998_w_4dr_fulltop
-	{
-	};
-	class rhsusf_m1025_w_m2: rhsusf_m1025_w
-	{
-	};
-	class rhsusf_m1025_w_mk19: rhsusf_m1025_w_m2
-	{
-	};
+	class rhs_zil131_open_base: rhs_zil131_base;  //found empty after stripping
+	class rhs_zil131_flatbed_base: rhs_zil131_open_base;  //found empty after stripping
+	class rhs_zil131_flatbed_cover_base: rhs_zil131_flatbed_base;  //found empty after stripping
+	class MRAP_01_base_F: Car_F;  //found empty after stripping
+	class rhsusf_hmmwe_base: MRAP_01_base_F;  //found empty after stripping
+	class rhsusf_m998_w_2dr: rhsusf_hmmwe_base;  //found empty after stripping
+	class rhsusf_m998_w_2dr_halftop: rhsusf_m998_w_2dr;  //found empty after stripping
+	class rhsusf_m998_w_2dr_fulltop: rhsusf_m998_w_2dr_halftop;  //found empty after stripping
+	class rhsusf_m998_w_4dr: rhsusf_m998_w_2dr;  //found empty after stripping
+	class rhsusf_m998_w_4dr_halftop: rhsusf_m998_w_4dr;  //found empty after stripping
+	class rhsusf_m998_w_4dr_fulltop: rhsusf_m998_w_4dr_halftop;  //found empty after stripping
+	class rhsusf_m1025_w: rhsusf_m998_w_4dr_fulltop;  //found empty after stripping
+	class rhsusf_m1025_w_m2: rhsusf_m1025_w;  //found empty after stripping
+	class rhsusf_m1025_w_mk19: rhsusf_m1025_w_m2;  //found empty after stripping
 	class rhsusf_M1117_D;
 	class Wheeled_APC_F;
-	class rhs_btr_base: Wheeled_APC_F
-	{
-	};
+	class rhs_btr_base: Wheeled_APC_F;  //found empty after stripping
 	class rhs_btr60_base: rhs_btr_base
 	{
 		class textureSources
 		{
-			class CDF
-			{
-			};
-			class CHDKZ
-			{
-			};
+			class CDF;  //found empty after stripping
+			class CHDKZ;  //found empty after stripping
 		};
 		class EventHandlers;
 	};
-	class rhs_btr60_vmf: rhs_btr60_base
-	{
-	};
+	class rhs_btr60_vmf: rhs_btr60_base;  //found empty after stripping
 	class rhs_btr70_vmf: rhs_btr_base
 	{
 		class textureSources
 		{
-			class CDF
-			{
-			};
-			class UN
-			{
-			};
-			class NAPA
-			{
-			};
-			class African
-			{
-			};
-			class Belarusian
-			{
-			};
-			class NVA
-			{
-			};
-			class Takistan
-			{
-			};
+			class CDF;  //found empty after stripping
+			class UN;  //found empty after stripping
+			class NAPA;  //found empty after stripping
+			class African;  //found empty after stripping
+			class Belarusian;  //found empty after stripping
+			class NVA;  //found empty after stripping
+			class Takistan;  //found empty after stripping
 		};
 		class EventHandlers;
 	};
 	class B_G_Van_01_fuel_F;
 	class B_G_Van_01_transport_F;
-	class rhs_bmd_base: Tank_F
-	{
-	};
+	class rhs_bmd_base: Tank_F;  //found empty after stripping
 	class rhs_bmd1_base: rhs_bmd_base
 	{
 		class textureSources
 		{
-			class CDF
-			{
-			};
+			class CDF;  //found empty after stripping
 		};
 	};
-	class rhs_bmd1: rhs_bmd1_base
-	{
-	};
-	class rhs_bmd1k: rhs_bmd1_base
-	{
-	};
-	class rhs_bmd1p: rhs_bmd1_base
-	{
-	};
-	class rhs_bmd1pk: rhs_bmd1_base
-	{
-	};
-	class rhs_bmd1r: rhs_bmd1_base
-	{
-	};
+	class rhs_bmd1: rhs_bmd1_base;  //found empty after stripping
+	class rhs_bmd1k: rhs_bmd1_base;  //found empty after stripping
+	class rhs_bmd1p: rhs_bmd1_base;  //found empty after stripping
+	class rhs_bmd1pk: rhs_bmd1_base;  //found empty after stripping
+	class rhs_bmd1r: rhs_bmd1_base;  //found empty after stripping
 	class rhs_bmd2_base: rhs_bmd_base
 	{
 		class textureSources
 		{
-			class CDF
-			{
-			};
+			class CDF;  //found empty after stripping
 		};
 	};
-	class rhs_bmd2: rhs_bmd2_base
-	{
-	};
+	class rhs_bmd2: rhs_bmd2_base;  //found empty after stripping
 	class rhs_bmd2k;
 	class rhs_bmp1tank_base: Tank_F
 	{
 		class textureSources
 		{
-			class CDF
-			{
-			};
+			class CDF;  //found empty after stripping
 		};
 	};
 	class rhs_2s1tank_base: Tank_F
 	{
 		class TextureSources
 		{
-			class CDF
-			{
-			};
+			class CDF;  //found empty after stripping
 			class ChDKZ
 			{
 				materials[]=
@@ -782,9 +644,7 @@ class CfgVehicles
 	{
 		class textureSources
 		{
-			class CDF
-			{
-			};
+			class CDF;  //found empty after stripping
 		};
 		class EventHandlers;
 	};
@@ -803,9 +663,7 @@ class CfgVehicles
 		};
 		class textureSources
 		{
-			class RHS_CDF
-			{
-			};
+			class RHS_CDF;  //found empty after stripping
 		};
 		class Attributes
 		{
@@ -855,15 +713,11 @@ class CfgVehicles
 	{
 		class Turrets: Turrets
 		{
-			class MainTurret: MainTurret
-			{
-			};
+			class MainTurret: MainTurret;  //found empty after stripping
 		};
 		class textureSources
 		{
-			class RHS_CDF
-			{
-			};
+			class RHS_CDF;  //found empty after stripping
 		};
 	};
 	class rhs_t80bv: rhs_t80b
@@ -874,43 +728,23 @@ class CfgVehicles
 			{
 				class Turrets: Turrets
 				{
-					class CommanderOptics: CommanderOptics
-					{
-					};
-					class CommanderMG: CommanderOptics
-					{
-					};
+					class CommanderOptics: CommanderOptics;  //found empty after stripping
+					class CommanderMG: CommanderOptics;  //found empty after stripping
 				};
 			};
 		};
 		class textureSources
 		{
-			class RHS_CDF
-			{
-			};
+			class RHS_CDF;  //found empty after stripping
 		};
 	};
-	class rhsusf_m113tank_base: APC_Tracked_02_base_F
-	{
-	};
-	class rhsusf_m113_usarmy: rhsusf_m113tank_base
-	{
-	};
-	class rhsusf_m113_usarmy_unarmed: rhsusf_m113tank_base
-	{
-	};
-	class rhsusf_m113_usarmy_supply: rhsusf_m113_usarmy
-	{
-	};
-	class rhsusf_m113_usarmy_MK19: rhsusf_m113tank_base
-	{
-	};
-	class rhsusf_m113_usarmy_M2_90: rhsusf_m113_usarmy_supply
-	{
-	};
-	class rhsusf_m113_usarmy_MK19_90: rhsusf_m113_usarmy_MK19
-	{
-	};
+	class rhsusf_m113tank_base: APC_Tracked_02_base_F;  //found empty after stripping
+	class rhsusf_m113_usarmy: rhsusf_m113tank_base;  //found empty after stripping
+	class rhsusf_m113_usarmy_unarmed: rhsusf_m113tank_base;  //found empty after stripping
+	class rhsusf_m113_usarmy_supply: rhsusf_m113_usarmy;  //found empty after stripping
+	class rhsusf_m113_usarmy_MK19: rhsusf_m113tank_base;  //found empty after stripping
+	class rhsusf_m113_usarmy_M2_90: rhsusf_m113_usarmy_supply;  //found empty after stripping
+	class rhsusf_m113_usarmy_MK19_90: rhsusf_m113_usarmy_MK19;  //found empty after stripping
 	class Air;
 	class Helicopter: Air
 	{
@@ -933,9 +767,7 @@ class CfgVehicles
 	{
 		class AnimationSources;
 	};
-	class RHS_Mi8AMT_VVS_Base: RHS_Mi8AMT_base
-	{
-	};
+	class RHS_Mi8AMT_VVS_Base: RHS_Mi8AMT_base;  //found empty after stripping
 	class rhs_mi8mtv3_base: RHS_Mi8_base
 	{
 		class Components;
@@ -960,12 +792,8 @@ class CfgVehicles
 			};
 		};
 	};
-	class RHS_Mi8AMTSh_VVS_Base: rhs_mi8amtsh_base
-	{
-	};
-	class RHS_Mi8AMTSh_vvs: RHS_Mi8AMTSh_VVS_Base
-	{
-	};
+	class RHS_Mi8AMTSh_VVS_Base: rhs_mi8amtsh_base;  //found empty after stripping
+	class RHS_Mi8AMTSh_vvs: RHS_Mi8AMTSh_VVS_Base;  //found empty after stripping
 	class RHS_Mi8AMTSh_UPK23_vvs: RHS_Mi8AMTSh_vvs
 	{
 		class AnimationSources;
@@ -999,12 +827,8 @@ class CfgVehicles
 	{
 		class AnimationSources;
 	};
-	class RHS_Mi24P_AT_VVS_Base: RHS_Mi24P_VVS_Base
-	{
-	};
-	class RHS_Mi24V_Base: RHS_Mi24_base
-	{
-	};
+	class RHS_Mi24P_AT_VVS_Base: RHS_Mi24P_VVS_Base;  //found empty after stripping
+	class RHS_Mi24V_Base: RHS_Mi24_base;  //found empty after stripping
 	class RHS_Mi24V_VVS_Base: RHS_Mi24V_Base
 	{
 		class AnimationSources;
@@ -1222,15 +1046,9 @@ class CfgVehicles
 		};
 		class Turrets: Turrets
 		{
-			class MainTurret: MainTurret
-			{
-			};
-			class CargoTurret_02: CargoTurret_02
-			{
-			};
-			class CargoTurret_03: CargoTurret_03
-			{
-			};
+			class MainTurret: MainTurret;  //found empty after stripping
+			class CargoTurret_02: CargoTurret_02;  //found empty after stripping
+			class CargoTurret_03: CargoTurret_03;  //found empty after stripping
 		};
 	};
 	class rhsgref_cdf_reg_BM21: RHS_BM21_MSV_01
@@ -1314,12 +1132,8 @@ class CfgVehicles
 		};
 		class Turrets: Turrets
 		{
-			class MainTurret: MainTurret
-			{
-			};
-			class CargoTurret_02: CargoTurret_02
-			{
-			};
+			class MainTurret: MainTurret;  //found empty after stripping
+			class CargoTurret_02: CargoTurret_02;  //found empty after stripping
 		};
 	};
 	class rhsgref_cdf_zil131: rhs_zil131_base
@@ -1550,12 +1364,8 @@ class CfgVehicles
 			{
 				class Turrets: Turrets
 				{
-					class CommanderOptics: CommanderOptics
-					{
-					};
-					class LoaderOptics: LoaderOptics
-					{
-					};
+					class CommanderOptics: CommanderOptics;  //found empty after stripping
+					class LoaderOptics: LoaderOptics;  //found empty after stripping
 				};
 			};
 		};
@@ -1592,12 +1402,8 @@ class CfgVehicles
 				};
 				class Turrets: Turrets
 				{
-					class CommanderOptics: CommanderOptics
-					{
-					};
-					class CommanderMG: CommanderMG
-					{
-					};
+					class CommanderOptics: CommanderOptics;  //found empty after stripping
+					class CommanderMG: CommanderMG;  //found empty after stripping
 				};
 			};
 		};
@@ -1634,12 +1440,8 @@ class CfgVehicles
 				};
 				class Turrets: Turrets
 				{
-					class CommanderOptics: CommanderOptics
-					{
-					};
-					class CommanderMG: CommanderMG
-					{
-					};
+					class CommanderOptics: CommanderOptics;  //found empty after stripping
+					class CommanderMG: CommanderMG;  //found empty after stripping
 				};
 			};
 		};
@@ -1676,12 +1478,8 @@ class CfgVehicles
 				};
 				class Turrets: Turrets
 				{
-					class CommanderOptics: CommanderOptics
-					{
-					};
-					class CommanderMG: CommanderMG
-					{
-					};
+					class CommanderOptics: CommanderOptics;  //found empty after stripping
+					class CommanderMG: CommanderMG;  //found empty after stripping
 				};
 			};
 		};
@@ -1718,12 +1516,8 @@ class CfgVehicles
 				};
 				class Turrets: Turrets
 				{
-					class CommanderOptics: CommanderOptics
-					{
-					};
-					class CommanderMG: CommanderMG
-					{
-					};
+					class CommanderOptics: CommanderOptics;  //found empty after stripping
+					class CommanderMG: CommanderMG;  //found empty after stripping
 				};
 			};
 		};
@@ -1773,9 +1567,7 @@ class CfgVehicles
 					{
 						attachment="rhs_mag_ub32_s5ko";
 					};
-					class cmDispenser: cmDispenser
-					{
-					};
+					class cmDispenser: cmDispenser;  //found empty after stripping
 				};
 			};
 		};
@@ -1837,9 +1629,7 @@ class CfgVehicles
 					{
 						attachment="rhs_mag_ub32_s5ko";
 					};
-					class cmDispenser: cmDispenser
-					{
-					};
+					class cmDispenser: cmDispenser;  //found empty after stripping
 				};
 			};
 		};
@@ -1901,9 +1691,7 @@ class CfgVehicles
 					{
 						attachment="rhs_mag_ub32_s5ko";
 					};
-					class cmDispenser: cmDispenser
-					{
-					};
+					class cmDispenser: cmDispenser;  //found empty after stripping
 				};
 			};
 		};
@@ -1984,9 +1772,7 @@ class CfgVehicles
 						attachment="rhs_mag_9M114M_Mi24_2x";
 						turret[]={0};
 					};
-					class cmDispenser: cmDispenser
-					{
-					};
+					class cmDispenser: cmDispenser;  //found empty after stripping
 				};
 			};
 		};
@@ -2062,9 +1848,7 @@ class CfgVehicles
 						attachment="rhs_mag_9M114M_Mi24_2x";
 						turret[]={0};
 					};
-					class cmDispenser: cmDispenser
-					{
-					};
+					class cmDispenser: cmDispenser;  //found empty after stripping
 				};
 			};
 		};
@@ -2141,9 +1925,7 @@ class CfgVehicles
 						attachment="rhs_mag_9M114M_Mi24_2x";
 						turret[]={0};
 					};
-					class cmDispenser: cmDispenser
-					{
-					};
+					class cmDispenser: cmDispenser;  //found empty after stripping
 				};
 			};
 		};
@@ -2249,12 +2031,8 @@ class CfgVehicles
 					{
 						attachment="rhs_mag_R60M_APU60";
 					};
-					class pylon7: pylon7
-					{
-					};
-					class cmDispenser: cmDispenser
-					{
-					};
+					class pylon7: pylon7;  //found empty after stripping
+					class cmDispenser: cmDispenser;  //found empty after stripping
 				};
 			};
 		};
@@ -2355,15 +2133,9 @@ class CfgVehicles
 		side=1;
 		class Turrets: Turrets
 		{
-			class MainTurret: MainTurret
-			{
-			};
-			class CargoTurret_02: CargoTurret_02
-			{
-			};
-			class CargoTurret_03: CargoTurret_03
-			{
-			};
+			class MainTurret: MainTurret;  //found empty after stripping
+			class CargoTurret_02: CargoTurret_02;  //found empty after stripping
+			class CargoTurret_03: CargoTurret_03;  //found empty after stripping
 		};
 	};
 	class rhsgref_cdf_b_reg_BM21: rhsgref_cdf_reg_BM21
@@ -2407,12 +2179,8 @@ class CfgVehicles
 		side=1;
 		class Turrets: Turrets
 		{
-			class MainTurret: MainTurret
-			{
-			};
-			class CargoTurret_02: CargoTurret_02
-			{
-			};
+			class MainTurret: MainTurret;  //found empty after stripping
+			class CargoTurret_02: CargoTurret_02;  //found empty after stripping
 		};
 	};
 	class rhsgref_cdf_b_zil131: rhsgref_cdf_zil131
@@ -2504,12 +2272,8 @@ class CfgVehicles
 			{
 				class Turrets: Turrets
 				{
-					class CommanderOptics: CommanderOptics
-					{
-					};
-					class LoaderOptics: LoaderOptics
-					{
-					};
+					class CommanderOptics: CommanderOptics;  //found empty after stripping
+					class LoaderOptics: LoaderOptics;  //found empty after stripping
 				};
 			};
 		};
@@ -2523,12 +2287,8 @@ class CfgVehicles
 			{
 				class Turrets: Turrets
 				{
-					class CommanderOptics: CommanderOptics
-					{
-					};
-					class CommanderMG: CommanderMG
-					{
-					};
+					class CommanderOptics: CommanderOptics;  //found empty after stripping
+					class CommanderMG: CommanderMG;  //found empty after stripping
 				};
 			};
 		};
@@ -2542,12 +2302,8 @@ class CfgVehicles
 			{
 				class Turrets: Turrets
 				{
-					class CommanderOptics: CommanderOptics
-					{
-					};
-					class CommanderMG: CommanderMG
-					{
-					};
+					class CommanderOptics: CommanderOptics;  //found empty after stripping
+					class CommanderMG: CommanderMG;  //found empty after stripping
 				};
 			};
 		};
@@ -2561,12 +2317,8 @@ class CfgVehicles
 			{
 				class Turrets: Turrets
 				{
-					class CommanderOptics: CommanderOptics
-					{
-					};
-					class CommanderMG: CommanderMG
-					{
-					};
+					class CommanderOptics: CommanderOptics;  //found empty after stripping
+					class CommanderMG: CommanderMG;  //found empty after stripping
 				};
 			};
 		};
@@ -2580,12 +2332,8 @@ class CfgVehicles
 			{
 				class Turrets: Turrets
 				{
-					class CommanderOptics: CommanderOptics
-					{
-					};
-					class CommanderMG: CommanderMG
-					{
-					};
+					class CommanderOptics: CommanderOptics;  //found empty after stripping
+					class CommanderMG: CommanderMG;  //found empty after stripping
 				};
 			};
 		};
@@ -2757,15 +2505,9 @@ class CfgVehicles
 		};
 		class Turrets: Turrets
 		{
-			class MainTurret: MainTurret
-			{
-			};
-			class CargoTurret_02: CargoTurret_02
-			{
-			};
-			class CargoTurret_03: CargoTurret_03
-			{
-			};
+			class MainTurret: MainTurret;  //found empty after stripping
+			class CargoTurret_02: CargoTurret_02;  //found empty after stripping
+			class CargoTurret_03: CargoTurret_03;  //found empty after stripping
 		};
 	};
 	class rhsgref_nat_btr70: rhs_btr70_vmf
@@ -2848,9 +2590,7 @@ class CfgVehicles
 		accuracy=0.5;
 		class Turrets: Turrets
 		{
-			class MainTurret: MainTurret
-			{
-			};
+			class MainTurret: MainTurret;  //found empty after stripping
 		};
 	};
 	class rhsgref_ins_uaz_ags: RHS_UAZ_AGS30_Base
@@ -2863,9 +2603,7 @@ class CfgVehicles
 		accuracy=0.5;
 		class Turrets: Turrets
 		{
-			class MainTurret: MainTurret
-			{
-			};
+			class MainTurret: MainTurret;  //found empty after stripping
 		};
 	};
 	class rhsgref_ins_uaz_spg9: RHS_UAZ_SPG9_Base
@@ -2878,9 +2616,7 @@ class CfgVehicles
 		accuracy=0.5;
 		class Turrets: Turrets
 		{
-			class MainTurret: MainTurret
-			{
-			};
+			class MainTurret: MainTurret;  //found empty after stripping
 		};
 	};
 	class rhsgref_ins_ural: RHS_Ural_Civ_Base
@@ -2913,15 +2649,9 @@ class CfgVehicles
 		};
 		class Turrets: Turrets
 		{
-			class MainTurret: MainTurret
-			{
-			};
-			class CargoTurret_02: CargoTurret_02
-			{
-			};
-			class CargoTurret_03: CargoTurret_03
-			{
-			};
+			class MainTurret: MainTurret;  //found empty after stripping
+			class CargoTurret_02: CargoTurret_02;  //found empty after stripping
+			class CargoTurret_03: CargoTurret_03;  //found empty after stripping
 		};
 	};
 	class rhsgref_ins_BM21: RHS_BM21_MSV_01
@@ -3005,12 +2735,8 @@ class CfgVehicles
 		};
 		class Turrets: Turrets
 		{
-			class MainTurret: MainTurret
-			{
-			};
-			class CargoTurret_02: CargoTurret_02
-			{
-			};
+			class MainTurret: MainTurret;  //found empty after stripping
+			class CargoTurret_02: CargoTurret_02;  //found empty after stripping
 		};
 	};
 	class rhsgref_ins_zil131: rhs_zil131_base
@@ -3238,56 +2964,26 @@ class CfgVehicles
 				};
 				class Turrets: Turrets
 				{
-					class CommanderOptics: CommanderOptics
-					{
-					};
-					class CommanderMG: CommanderMG
-					{
-					};
+					class CommanderOptics: CommanderOptics;  //found empty after stripping
+					class CommanderMG: CommanderMG;  //found empty after stripping
 				};
 			};
 		};
 		class Attributes: Attributes
 		{
-			class rhs_decalNumber_type: rhs_decalNumber_type
-			{
-			};
-			class rhs_decalNumber: rhs_decalNumber
-			{
-			};
-			class rhs_decalPlatoon_type: rhs_decalPlatoon_type
-			{
-			};
-			class rhs_decalPlatoon: rhs_decalPlatoon
-			{
-			};
-			class rhs_ammoslot_1_type: rhs_ammoslot_1_type
-			{
-			};
-			class rhs_ammoslot_1: rhs_ammoslot_1
-			{
-			};
-			class rhs_ammoslot_2_type: rhs_ammoslot_2_type
-			{
-			};
-			class rhs_ammoslot_2: rhs_ammoslot_2
-			{
-			};
-			class rhs_ammoslot_3_type: rhs_ammoslot_3_type
-			{
-			};
-			class rhs_ammoslot_3: rhs_ammoslot_3
-			{
-			};
-			class rhs_ammoslot_4_type: rhs_ammoslot_4_type
-			{
-			};
-			class rhs_ammoslot_4: rhs_ammoslot_4
-			{
-			};
-			class rhs_hide_com_shield: rhs_hide_com_shield
-			{
-			};
+			class rhs_decalNumber_type: rhs_decalNumber_type;  //found empty after stripping
+			class rhs_decalNumber: rhs_decalNumber;  //found empty after stripping
+			class rhs_decalPlatoon_type: rhs_decalPlatoon_type;  //found empty after stripping
+			class rhs_decalPlatoon: rhs_decalPlatoon;  //found empty after stripping
+			class rhs_ammoslot_1_type: rhs_ammoslot_1_type;  //found empty after stripping
+			class rhs_ammoslot_1: rhs_ammoslot_1;  //found empty after stripping
+			class rhs_ammoslot_2_type: rhs_ammoslot_2_type;  //found empty after stripping
+			class rhs_ammoslot_2: rhs_ammoslot_2;  //found empty after stripping
+			class rhs_ammoslot_3_type: rhs_ammoslot_3_type;  //found empty after stripping
+			class rhs_ammoslot_3: rhs_ammoslot_3;  //found empty after stripping
+			class rhs_ammoslot_4_type: rhs_ammoslot_4_type;  //found empty after stripping
+			class rhs_ammoslot_4: rhs_ammoslot_4;  //found empty after stripping
+			class rhs_hide_com_shield: rhs_hide_com_shield;  //found empty after stripping
 			class rhs_hide_Flag
 			{
 				property="rhs_hide_Flag";
@@ -3335,56 +3031,26 @@ class CfgVehicles
 				};
 				class Turrets: Turrets
 				{
-					class CommanderOptics: CommanderOptics
-					{
-					};
-					class CommanderMG: CommanderMG
-					{
-					};
+					class CommanderOptics: CommanderOptics;  //found empty after stripping
+					class CommanderMG: CommanderMG;  //found empty after stripping
 				};
 			};
 		};
 		class Attributes: Attributes
 		{
-			class rhs_decalNumber_type: rhs_decalNumber_type
-			{
-			};
-			class rhs_decalNumber: rhs_decalNumber
-			{
-			};
-			class rhs_decalPlatoon_type: rhs_decalPlatoon_type
-			{
-			};
-			class rhs_decalPlatoon: rhs_decalPlatoon
-			{
-			};
-			class rhs_ammoslot_1_type: rhs_ammoslot_1_type
-			{
-			};
-			class rhs_ammoslot_1: rhs_ammoslot_1
-			{
-			};
-			class rhs_ammoslot_2_type: rhs_ammoslot_2_type
-			{
-			};
-			class rhs_ammoslot_2: rhs_ammoslot_2
-			{
-			};
-			class rhs_ammoslot_3_type: rhs_ammoslot_3_type
-			{
-			};
-			class rhs_ammoslot_3: rhs_ammoslot_3
-			{
-			};
-			class rhs_ammoslot_4_type: rhs_ammoslot_4_type
-			{
-			};
-			class rhs_ammoslot_4: rhs_ammoslot_4
-			{
-			};
-			class rhs_hide_com_shield: rhs_hide_com_shield
-			{
-			};
+			class rhs_decalNumber_type: rhs_decalNumber_type;  //found empty after stripping
+			class rhs_decalNumber: rhs_decalNumber;  //found empty after stripping
+			class rhs_decalPlatoon_type: rhs_decalPlatoon_type;  //found empty after stripping
+			class rhs_decalPlatoon: rhs_decalPlatoon;  //found empty after stripping
+			class rhs_ammoslot_1_type: rhs_ammoslot_1_type;  //found empty after stripping
+			class rhs_ammoslot_1: rhs_ammoslot_1;  //found empty after stripping
+			class rhs_ammoslot_2_type: rhs_ammoslot_2_type;  //found empty after stripping
+			class rhs_ammoslot_2: rhs_ammoslot_2;  //found empty after stripping
+			class rhs_ammoslot_3_type: rhs_ammoslot_3_type;  //found empty after stripping
+			class rhs_ammoslot_3: rhs_ammoslot_3;  //found empty after stripping
+			class rhs_ammoslot_4_type: rhs_ammoslot_4_type;  //found empty after stripping
+			class rhs_ammoslot_4: rhs_ammoslot_4;  //found empty after stripping
+			class rhs_hide_com_shield: rhs_hide_com_shield;  //found empty after stripping
 			class rhs_hide_Flag
 			{
 				property="rhs_hide_Flag";
@@ -3432,56 +3098,26 @@ class CfgVehicles
 				};
 				class Turrets: Turrets
 				{
-					class CommanderOptics: CommanderOptics
-					{
-					};
-					class CommanderMG: CommanderMG
-					{
-					};
+					class CommanderOptics: CommanderOptics;  //found empty after stripping
+					class CommanderMG: CommanderMG;  //found empty after stripping
 				};
 			};
 		};
 		class Attributes: Attributes
 		{
-			class rhs_decalNumber_type: rhs_decalNumber_type
-			{
-			};
-			class rhs_decalNumber: rhs_decalNumber
-			{
-			};
-			class rhs_decalPlatoon_type: rhs_decalPlatoon_type
-			{
-			};
-			class rhs_decalPlatoon: rhs_decalPlatoon
-			{
-			};
-			class rhs_ammoslot_1_type: rhs_ammoslot_1_type
-			{
-			};
-			class rhs_ammoslot_1: rhs_ammoslot_1
-			{
-			};
-			class rhs_ammoslot_2_type: rhs_ammoslot_2_type
-			{
-			};
-			class rhs_ammoslot_2: rhs_ammoslot_2
-			{
-			};
-			class rhs_ammoslot_3_type: rhs_ammoslot_3_type
-			{
-			};
-			class rhs_ammoslot_3: rhs_ammoslot_3
-			{
-			};
-			class rhs_ammoslot_4_type: rhs_ammoslot_4_type
-			{
-			};
-			class rhs_ammoslot_4: rhs_ammoslot_4
-			{
-			};
-			class rhs_hide_com_shield: rhs_hide_com_shield
-			{
-			};
+			class rhs_decalNumber_type: rhs_decalNumber_type;  //found empty after stripping
+			class rhs_decalNumber: rhs_decalNumber;  //found empty after stripping
+			class rhs_decalPlatoon_type: rhs_decalPlatoon_type;  //found empty after stripping
+			class rhs_decalPlatoon: rhs_decalPlatoon;  //found empty after stripping
+			class rhs_ammoslot_1_type: rhs_ammoslot_1_type;  //found empty after stripping
+			class rhs_ammoslot_1: rhs_ammoslot_1;  //found empty after stripping
+			class rhs_ammoslot_2_type: rhs_ammoslot_2_type;  //found empty after stripping
+			class rhs_ammoslot_2: rhs_ammoslot_2;  //found empty after stripping
+			class rhs_ammoslot_3_type: rhs_ammoslot_3_type;  //found empty after stripping
+			class rhs_ammoslot_3: rhs_ammoslot_3;  //found empty after stripping
+			class rhs_ammoslot_4_type: rhs_ammoslot_4_type;  //found empty after stripping
+			class rhs_ammoslot_4: rhs_ammoslot_4;  //found empty after stripping
+			class rhs_hide_com_shield: rhs_hide_com_shield;  //found empty after stripping
 			class rhs_hide_Flag
 			{
 				property="rhs_hide_Flag";
@@ -3520,12 +3156,8 @@ class CfgVehicles
 			{
 				class Turrets: Turrets
 				{
-					class CommanderOptics: CommanderOptics
-					{
-					};
-					class LoaderOptics: LoaderOptics
-					{
-					};
+					class CommanderOptics: CommanderOptics;  //found empty after stripping
+					class LoaderOptics: LoaderOptics;  //found empty after stripping
 				};
 			};
 		};
@@ -3596,9 +3228,7 @@ class CfgVehicles
 		side=2;
 		class Turrets: Turrets
 		{
-			class MainTurret: MainTurret
-			{
-			};
+			class MainTurret: MainTurret;  //found empty after stripping
 		};
 	};
 	class rhsgref_ins_g_uaz_ags: rhsgref_ins_uaz_ags
@@ -3606,9 +3236,7 @@ class CfgVehicles
 		side=2;
 		class Turrets: Turrets
 		{
-			class MainTurret: MainTurret
-			{
-			};
+			class MainTurret: MainTurret;  //found empty after stripping
 		};
 	};
 	class rhsgref_ins_g_uaz_spg9: rhsgref_ins_uaz_spg9
@@ -3616,9 +3244,7 @@ class CfgVehicles
 		side=2;
 		class Turrets: Turrets
 		{
-			class MainTurret: MainTurret
-			{
-			};
+			class MainTurret: MainTurret;  //found empty after stripping
 		};
 	};
 	class rhsgref_ins_g_ural: rhsgref_ins_ural
@@ -3646,15 +3272,9 @@ class CfgVehicles
 		side=2;
 		class Turrets: Turrets
 		{
-			class MainTurret: MainTurret
-			{
-			};
-			class CargoTurret_02: CargoTurret_02
-			{
-			};
-			class CargoTurret_03: CargoTurret_03
-			{
-			};
+			class MainTurret: MainTurret;  //found empty after stripping
+			class CargoTurret_02: CargoTurret_02;  //found empty after stripping
+			class CargoTurret_03: CargoTurret_03;  //found empty after stripping
 		};
 	};
 	class rhsgref_ins_g_gaz66: rhsgref_ins_gaz66
@@ -3694,12 +3314,8 @@ class CfgVehicles
 		side=2;
 		class Turrets: Turrets
 		{
-			class MainTurret: MainTurret
-			{
-			};
-			class CargoTurret_02: CargoTurret_02
-			{
-			};
+			class MainTurret: MainTurret;  //found empty after stripping
+			class CargoTurret_02: CargoTurret_02;  //found empty after stripping
 		};
 	};
 	class rhsgref_ins_g_zil131: rhsgref_ins_zil131
@@ -3787,12 +3403,8 @@ class CfgVehicles
 			{
 				class Turrets: Turrets
 				{
-					class CommanderOptics: CommanderOptics
-					{
-					};
-					class CommanderMG: CommanderMG
-					{
-					};
+					class CommanderOptics: CommanderOptics;  //found empty after stripping
+					class CommanderMG: CommanderMG;  //found empty after stripping
 				};
 			};
 		};
@@ -3806,12 +3418,8 @@ class CfgVehicles
 			{
 				class Turrets: Turrets
 				{
-					class CommanderOptics: CommanderOptics
-					{
-					};
-					class CommanderMG: CommanderMG
-					{
-					};
+					class CommanderOptics: CommanderOptics;  //found empty after stripping
+					class CommanderMG: CommanderMG;  //found empty after stripping
 				};
 			};
 		};
@@ -3825,12 +3433,8 @@ class CfgVehicles
 			{
 				class Turrets: Turrets
 				{
-					class CommanderOptics: CommanderOptics
-					{
-					};
-					class CommanderMG: CommanderMG
-					{
-					};
+					class CommanderOptics: CommanderOptics;  //found empty after stripping
+					class CommanderMG: CommanderMG;  //found empty after stripping
 				};
 			};
 		};
@@ -3844,12 +3448,8 @@ class CfgVehicles
 			{
 				class Turrets: Turrets
 				{
-					class CommanderOptics: CommanderOptics
-					{
-					};
-					class LoaderOptics: LoaderOptics
-					{
-					};
+					class CommanderOptics: CommanderOptics;  //found empty after stripping
+					class LoaderOptics: LoaderOptics;  //found empty after stripping
 				};
 			};
 		};

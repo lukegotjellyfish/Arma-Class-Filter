@@ -18,15 +18,9 @@ class CfgFunctions
 		class pontoon
 		{
 			file="rhsafrf\addons\rhs_c_pontoon\scripts";
-			class pontoon_update
-			{
-			};
-			class pontoon_climbAboard
-			{
-			};
-			class pontoon_loadOnVehicle
-			{
-			};
+			class pontoon_update;  //found empty after stripping
+			class pontoon_climbAboard;  //found empty after stripping
+			class pontoon_loadOnVehicle;  //found empty after stripping
 		};
 	};
 };

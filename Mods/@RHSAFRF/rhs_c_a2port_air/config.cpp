@@ -280,18 +280,10 @@ class CfgNonAIVehicles
 {
 	class ProxyWeapon;
 	class ProxyRetex;
-	class ProxyMi24Wreck: ProxyRetex
-	{
-	};
-	class ProxyKa52Wreck: ProxyRetex
-	{
-	};
-	class ProxyMI8Wreck: ProxyRetex
-	{
-	};
-	class ProxySu25Wreck: ProxyRetex
-	{
-	};
+	class ProxyMi24Wreck: ProxyRetex;  //found empty after stripping
+	class ProxyKa52Wreck: ProxyRetex;  //found empty after stripping
+	class ProxyMI8Wreck: ProxyRetex;  //found empty after stripping
+	class ProxySu25Wreck: ProxyRetex;  //found empty after stripping
 };
 class SensorTemplatePassiveRadar;
 class SensorTemplateAntiRadiation;
@@ -371,9 +363,7 @@ class CfgVehicles
 		class Viewoptics;
 		class RotorLibHelicopterProperties;
 	};
-	class Heli_Transport_02_base_F: Helicopter_Base_H
-	{
-	};
+	class Heli_Transport_02_base_F: Helicopter_Base_H;  //found empty after stripping
 	class Heli_Light_02_base_F: Helicopter_Base_H
 	{
 		class Turrets: Turrets
@@ -458,9 +448,7 @@ class CfgVehicles
 			"CAS_Heli"
 		};
 		audible=7;
-		class PilotCamera
-		{
-		};
+		class PilotCamera;  //found empty after stripping
 		icon="rhsafrf\addons\rhs_a2port_air\data\map_ico\icon_mi24_ca.paa";
 		getInRadius=2;
 		maxOmega=2000;
@@ -804,30 +792,14 @@ class CfgVehicles
 					"rhs_faction_vvs"
 				};
 			};
-			class Camo: standard
-			{
-			};
-			class Camo1: standard
-			{
-			};
-			class Camo2: standard
-			{
-			};
-			class Camo3: standard
-			{
-			};
-			class Camo4: standard
-			{
-			};
-			class Camo5: standard
-			{
-			};
-			class Camo6: standard
-			{
-			};
-			class Camo7: standard
-			{
-			};
+			class Camo: standard;  //found empty after stripping
+			class Camo1: standard;  //found empty after stripping
+			class Camo2: standard;  //found empty after stripping
+			class Camo3: standard;  //found empty after stripping
+			class Camo4: standard;  //found empty after stripping
+			class Camo5: standard;  //found empty after stripping
+			class Camo6: standard;  //found empty after stripping
+			class Camo7: standard;  //found empty after stripping
 		};
 		class Attributes
 		{
@@ -1570,9 +1542,7 @@ class CfgVehicles
 				radius=0.69999999;
 			};
 		};
-		class Damage
-		{
-		};
+		class Damage;  //found empty after stripping
 		class compartmentsLights
 		{
 			class Comp1
@@ -1733,15 +1703,9 @@ class CfgVehicles
 				primarygunner=1;
 				stabilizedInAxes=2;
 			};
-			class CargoTurret_02: CargoTurret_02
-			{
-			};
-			class CargoTurret_03: CargoTurret_03
-			{
-			};
-			class CargoTurret_04: CargoTurret_04
-			{
-			};
+			class CargoTurret_02: CargoTurret_02;  //found empty after stripping
+			class CargoTurret_03: CargoTurret_03;  //found empty after stripping
+			class CargoTurret_04: CargoTurret_04;  //found empty after stripping
 		};
 		class Components: Components
 		{
@@ -1779,9 +1743,7 @@ class CfgVehicles
 						attachment="rhs_mag_9M120M_Mi24_2x";
 						turret[]={0};
 					};
-					class cmDispenser: cmDispenser
-					{
-					};
+					class cmDispenser: cmDispenser;  //found empty after stripping
 				};
 			};
 		};
@@ -1840,15 +1802,9 @@ class CfgVehicles
 					"rhs_mag_127x108mm_1SLT_1470"
 				};
 			};
-			class CargoTurret_02: CargoTurret_02
-			{
-			};
-			class CargoTurret_03: CargoTurret_03
-			{
-			};
-			class CargoTurret_04: CargoTurret_04
-			{
-			};
+			class CargoTurret_02: CargoTurret_02;  //found empty after stripping
+			class CargoTurret_03: CargoTurret_03;  //found empty after stripping
+			class CargoTurret_04: CargoTurret_04;  //found empty after stripping
 		};
 		class Components: Components
 		{
@@ -1886,9 +1842,7 @@ class CfgVehicles
 						attachment="rhs_mag_9M17P_Mi24_2x";
 						turret[]={0};
 					};
-					class cmDispenser: cmDispenser
-					{
-					};
+					class cmDispenser: cmDispenser;  //found empty after stripping
 				};
 			};
 		};
@@ -1931,9 +1885,7 @@ class CfgVehicles
 						attachment="rhs_mag_9M17_Mi24_2x";
 						turret[]={0};
 					};
-					class cmDispenser: cmDispenser
-					{
-					};
+					class cmDispenser: cmDispenser;  //found empty after stripping
 				};
 			};
 		};
@@ -1947,9 +1899,7 @@ class CfgVehicles
 		LESH_AxisOffsetTarget[]={0.5,8.5,-2.21};
 		LESH_WheelOffset[]={0.5,1};
 	};
-	class RHS_Mi24P_vvs: RHS_Mi24P_VVS_Base
-	{
-	};
+	class RHS_Mi24P_vvs: RHS_Mi24P_VVS_Base;  //found empty after stripping
 	class RHS_Mi24P_vvsc: RHS_Mi24P_vvs
 	{
 		hiddenselectionstextures[]=
@@ -2004,16 +1954,12 @@ class CfgVehicles
 						attachment="rhs_mag_9M120M_Mi24_2x";
 						turret[]={0};
 					};
-					class cmDispenser: cmDispenser
-					{
-					};
+					class cmDispenser: cmDispenser;  //found empty after stripping
 				};
 			};
 		};
 	};
-	class RHS_Mi24P_CAS_vvs: RHS_Mi24P_CAS_VVS_Base
-	{
-	};
+	class RHS_Mi24P_CAS_vvs: RHS_Mi24P_CAS_VVS_Base;  //found empty after stripping
 	class RHS_Mi24P_CAS_vvsc: RHS_Mi24P_CAS_vvs
 	{
 		hiddenselectionstextures[]=
@@ -2096,16 +2042,12 @@ class CfgVehicles
 						attachment="rhs_mag_9M120M_Mi24_2x";
 						turret[]={0};
 					};
-					class cmDispenser: cmDispenser
-					{
-					};
+					class cmDispenser: cmDispenser;  //found empty after stripping
 				};
 			};
 		};
 	};
-	class RHS_Mi24P_AT_vvs: RHS_Mi24P_AT_VVS_Base
-	{
-	};
+	class RHS_Mi24P_AT_vvs: RHS_Mi24P_AT_VVS_Base;  //found empty after stripping
 	class RHS_Mi24P_AT_vvsc: RHS_Mi24P_AT_vvs
 	{
 		hiddenselectionstextures[]=
@@ -2180,9 +2122,7 @@ class CfgVehicles
 		accuracy=0.5;
 		side=0;
 	};
-	class RHS_Mi24V_vvs: RHS_Mi24V_VVS_Base
-	{
-	};
+	class RHS_Mi24V_vvs: RHS_Mi24V_VVS_Base;  //found empty after stripping
 	class RHS_Mi24V_vvsc: RHS_Mi24V_vvs
 	{
 		hiddenselectionstextures[]=
@@ -2231,16 +2171,12 @@ class CfgVehicles
 						attachment="rhs_mag_9M120M_Mi24_2x";
 						turret[]={0};
 					};
-					class cmDispenser: cmDispenser
-					{
-					};
+					class cmDispenser: cmDispenser;  //found empty after stripping
 				};
 			};
 		};
 	};
-	class RHS_Mi24V_FAB_vvs: RHS_Mi24V_FAB_VVS_Base
-	{
-	};
+	class RHS_Mi24V_FAB_vvs: RHS_Mi24V_FAB_VVS_Base;  //found empty after stripping
 	class RHS_Mi24V_FAB_vvsc: RHS_Mi24V_FAB_vvs
 	{
 		hiddenselectionstextures[]=
@@ -2322,16 +2258,12 @@ class CfgVehicles
 						attachment="rhs_mag_9M120M_Mi24_2x";
 						turret[]={0};
 					};
-					class cmDispenser: cmDispenser
-					{
-					};
+					class cmDispenser: cmDispenser;  //found empty after stripping
 				};
 			};
 		};
 	};
-	class RHS_Mi24V_UPK23_vvs: RHS_Mi24V_UPK23_VVS_Base
-	{
-	};
+	class RHS_Mi24V_UPK23_vvs: RHS_Mi24V_UPK23_VVS_Base;  //found empty after stripping
 	class RHS_Mi24V_UPK23_vvsc: RHS_Mi24V_UPK23_vvs
 	{
 		hiddenselectionstextures[]=
@@ -2413,16 +2345,12 @@ class CfgVehicles
 						attachment="rhs_mag_9M120M_Mi24_2x";
 						turret[]={0};
 					};
-					class cmDispenser: cmDispenser
-					{
-					};
+					class cmDispenser: cmDispenser;  //found empty after stripping
 				};
 			};
 		};
 	};
-	class RHS_Mi24V_AT_vvs: RHS_Mi24V_AT_VVS_Base
-	{
-	};
+	class RHS_Mi24V_AT_vvs: RHS_Mi24V_AT_VVS_Base;  //found empty after stripping
 	class RHS_Mi24V_AT_vvsc: RHS_Mi24V_AT_vvs
 	{
 		hiddenselectionstextures[]=
@@ -2590,9 +2518,7 @@ class CfgVehicles
 		{
 			"['Number',cRHSAIRMI8NumberPlaces,'AviaYellow']"
 		};
-		class PilotCamera
-		{
-		};
+		class PilotCamera;  //found empty after stripping
 		availableForSupportTypes[]=
 		{
 			"Drop",
@@ -2740,9 +2666,7 @@ class CfgVehicles
 			"chase03",
 			"chase04"
 		};
-		class MFD
-		{
-		};
+		class MFD;  //found empty after stripping
 		hiddenselectionstextures[]=
 		{
 			"rhsafrf\addons\rhs_a2port_air\mi17\data\mi8_body_g_vsr_co.paa",
@@ -2755,30 +2679,14 @@ class CfgVehicles
 		};
 		class textureSources
 		{
-			class standard
-			{
-			};
-			class Civilian: standard
-			{
-			};
-			class Camo: standard
-			{
-			};
-			class Camo1: standard
-			{
-			};
-			class Camo2: standard
-			{
-			};
-			class Camo3: standard
-			{
-			};
-			class Camo4: standard
-			{
-			};
-			class Camo5: standard
-			{
-			};
+			class standard;  //found empty after stripping
+			class Civilian: standard;  //found empty after stripping
+			class Camo: standard;  //found empty after stripping
+			class Camo1: standard;  //found empty after stripping
+			class Camo2: standard;  //found empty after stripping
+			class Camo3: standard;  //found empty after stripping
+			class Camo4: standard;  //found empty after stripping
+			class Camo5: standard;  //found empty after stripping
 		};
 		class Attributes
 		{
@@ -2968,9 +2876,7 @@ class CfgVehicles
 				precisegetinout=0;
 				canEject=0;
 				commanding=-1;
-				class Hitpoints
-				{
-				};
+				class Hitpoints;  //found empty after stripping
 				class Components
 				{
 					class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
@@ -3065,9 +2971,7 @@ class CfgVehicles
 				};
 				isCoPilot=0;
 				showAsCargo=1;
-				class Hitpoints
-				{
-				};
+				class Hitpoints;  //found empty after stripping
 				class Components
 				{
 					class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
@@ -3128,9 +3032,7 @@ class CfgVehicles
 				{
 					"rhs_weap_pkt_v2"
 				};
-				class Hitpoints
-				{
-				};
+				class Hitpoints;  //found empty after stripping
 			};
 		};
 		class HitPoints: HitPoints
@@ -3407,9 +3309,7 @@ class CfgVehicles
 				name="cerveny pozicni blik";
 			};
 		};
-		class Damage
-		{
-		};
+		class Damage;  //found empty after stripping
 		class EventHandlers: Eventhandlers
 		{
 			class RHS_EventHandlers
@@ -3521,9 +3421,7 @@ class CfgVehicles
 				LODTurnedIn=1000;
 				LODOpticsOut=1000;
 				LODOpticsIn=1000;
-				class Hitpoints
-				{
-				};
+				class Hitpoints;  //found empty after stripping
 			};
 			class BackTurret: BackTurret
 			{
@@ -3556,9 +3454,7 @@ class CfgVehicles
 				LODTurnedIn=1000;
 				LODOpticsOut=1000;
 				LODOpticsIn=1000;
-				class Hitpoints
-				{
-				};
+				class Hitpoints;  //found empty after stripping
 			};
 		};
 		class Exhausts
@@ -3828,9 +3724,7 @@ class CfgVehicles
 				LODOpticsOut=1200;
 				LODOpticsIn=1200;
 			};
-			class SideTurret: SideTurret
-			{
-			};
+			class SideTurret: SideTurret;  //found empty after stripping
 			class BackTurret: BackTurret
 			{
 				initturn=180;
@@ -3873,27 +3767,13 @@ class CfgVehicles
 					"rhs_faction_vvs"
 				};
 			};
-			class Civilian: standard
-			{
-			};
-			class Camo: standard
-			{
-			};
-			class Camo1: standard
-			{
-			};
-			class Camo2: standard
-			{
-			};
-			class Camo3: standard
-			{
-			};
-			class Camo4: standard
-			{
-			};
-			class Camo5: standard
-			{
-			};
+			class Civilian: standard;  //found empty after stripping
+			class Camo: standard;  //found empty after stripping
+			class Camo1: standard;  //found empty after stripping
+			class Camo2: standard;  //found empty after stripping
+			class Camo3: standard;  //found empty after stripping
+			class Camo4: standard;  //found empty after stripping
+			class Camo5: standard;  //found empty after stripping
 		};
 		class Components: Components
 		{
@@ -4053,39 +3933,19 @@ class CfgVehicles
 					"rhs_faction_vvs"
 				};
 			};
-			class Civilian: standard
-			{
-			};
-			class Camo: standard
-			{
-			};
-			class Camo1: standard
-			{
-			};
-			class Camo2: standard
-			{
-			};
-			class Camo3: standard
-			{
-			};
-			class Camo4: standard
-			{
-			};
-			class Camo5: standard
-			{
-			};
+			class Civilian: standard;  //found empty after stripping
+			class Camo: standard;  //found empty after stripping
+			class Camo1: standard;  //found empty after stripping
+			class Camo2: standard;  //found empty after stripping
+			class Camo3: standard;  //found empty after stripping
+			class Camo4: standard;  //found empty after stripping
+			class Camo5: standard;  //found empty after stripping
 		};
 		class Attributes: Attributes
 		{
-			class rhs_decalNumber_type: rhs_decalNumber_type
-			{
-			};
-			class rhs_decalNumber: rhs_decalNumber
-			{
-			};
-			class rhs_decalTail: rhs_decalTail
-			{
-			};
+			class rhs_decalNumber_type: rhs_decalNumber_type;  //found empty after stripping
+			class rhs_decalNumber: rhs_decalNumber;  //found empty after stripping
+			class rhs_decalTail: rhs_decalTail;  //found empty after stripping
 			class rhs_reardoors
 			{
 				property="rhs_opendoors";
@@ -4138,15 +3998,9 @@ class CfgVehicles
 		};
 		class Attributes: Attributes
 		{
-			class rhs_decalNumber_type: rhs_decalNumber_type
-			{
-			};
-			class rhs_decalNumber: rhs_decalNumber
-			{
-			};
-			class rhs_decalTail: rhs_decalTail
-			{
-			};
+			class rhs_decalNumber_type: rhs_decalNumber_type;  //found empty after stripping
+			class rhs_decalNumber: rhs_decalNumber;  //found empty after stripping
+			class rhs_decalTail: rhs_decalTail;  //found empty after stripping
 			class rhs_reardoors
 			{
 				property="rhs_opendoors";
@@ -4251,9 +4105,7 @@ class CfgVehicles
 		transportsoldier=13;
 		class Turrets: Turrets
 		{
-			class CopilotTurret: CopilotTurret
-			{
-			};
+			class CopilotTurret: CopilotTurret;  //found empty after stripping
 			class CargoTurret_02: CargoTurret_01
 			{
 				proxyIndex=13;
@@ -4270,15 +4122,9 @@ class CfgVehicles
 		};
 		class Attributes: Attributes
 		{
-			class rhs_decalNumber_type: rhs_decalNumber_type
-			{
-			};
-			class rhs_decalNumber: rhs_decalNumber
-			{
-			};
-			class rhs_decalTail: rhs_decalTail
-			{
-			};
+			class rhs_decalNumber_type: rhs_decalNumber_type;  //found empty after stripping
+			class rhs_decalNumber: rhs_decalNumber;  //found empty after stripping
+			class rhs_decalTail: rhs_decalTail;  //found empty after stripping
 			class rhs_reardoors
 			{
 				property="rhs_opendoors";
@@ -4344,9 +4190,7 @@ class CfgVehicles
 			"rhsafrf\addons\rhs_decals\data\labels\aviation\vvs_ca.paa"
 		};
 	};
-	class RHS_Mi8MTV3_vvs: RHS_Mi8MTV3_VVS_Base
-	{
-	};
+	class RHS_Mi8MTV3_vvs: RHS_Mi8MTV3_VVS_Base;  //found empty after stripping
 	class RHS_Mi8MTV3_vvsc: RHS_Mi8MTV3_vvs
 	{
 		rhs_decalParameters[]=
@@ -4401,15 +4245,9 @@ class CfgVehicles
 					{
 						attachment="rhs_mag_b8v20a_s8kom";
 					};
-					class pylon5: pylon5
-					{
-					};
-					class pylon6: pylon6
-					{
-					};
-					class cmDispenser: cmDispenser
-					{
-					};
+					class pylon5: pylon5;  //found empty after stripping
+					class pylon6: pylon6;  //found empty after stripping
+					class cmDispenser: cmDispenser;  //found empty after stripping
 				};
 			};
 		};
@@ -4489,15 +4327,9 @@ class CfgVehicles
 					{
 						attachment="rhs_mag_b8v20a_s8kom";
 					};
-					class pylon5: pylon5
-					{
-					};
-					class pylon6: pylon6
-					{
-					};
-					class cmDispenser: cmDispenser
-					{
-					};
+					class pylon5: pylon5;  //found empty after stripping
+					class pylon6: pylon6;  //found empty after stripping
+					class cmDispenser: cmDispenser;  //found empty after stripping
 				};
 			};
 		};
@@ -4537,12 +4369,8 @@ class CfgVehicles
 		transportsoldier=12;
 		class Turrets: Turrets
 		{
-			class CopilotTurret: CopilotTurret
-			{
-			};
-			class FrontTurret: FrontTurret
-			{
-			};
+			class CopilotTurret: CopilotTurret;  //found empty after stripping
+			class FrontTurret: FrontTurret;  //found empty after stripping
 			class CargoTurret_02: CargoTurret_01
 			{
 				proxyIndex=12;
@@ -4559,15 +4387,9 @@ class CfgVehicles
 		};
 		class Attributes: Attributes
 		{
-			class rhs_decalNumber_type: rhs_decalNumber_type
-			{
-			};
-			class rhs_decalNumber: rhs_decalNumber
-			{
-			};
-			class rhs_decalTail: rhs_decalTail
-			{
-			};
+			class rhs_decalNumber_type: rhs_decalNumber_type;  //found empty after stripping
+			class rhs_decalNumber: rhs_decalNumber;  //found empty after stripping
+			class rhs_decalTail: rhs_decalTail;  //found empty after stripping
 			class rhs_reardoors
 			{
 				property="rhs_opendoors";
@@ -4620,9 +4442,7 @@ class CfgVehicles
 			"rhsafrf\addons\rhs_decals\data\labels\aviation\vvs_ca.paa"
 		};
 	};
-	class RHS_Mi8MTV3_heavy_vvs: RHS_Mi8MTV3_Heavy_VVS_Base
-	{
-	};
+	class RHS_Mi8MTV3_heavy_vvs: RHS_Mi8MTV3_Heavy_VVS_Base;  //found empty after stripping
 	class RHS_Mi8MTV3_heavy_vvsc: RHS_Mi8MTV3_heavy_vvs
 	{
 		rhs_decalParameters[]=
@@ -4653,9 +4473,7 @@ class CfgVehicles
 			"rhsafrf\addons\rhs_decals\data\labels\aviation\vvs_ca.paa"
 		};
 	};
-	class RHS_Mi8T_vvs: RHS_Mi8T_VVS_Base
-	{
-	};
+	class RHS_Mi8T_vvs: RHS_Mi8T_VVS_Base;  //found empty after stripping
 	class RHS_Mi8T_vvsc: RHS_Mi8T_vvs
 	{
 		rhs_decalParameters[]=
@@ -4699,9 +4517,7 @@ class CfgVehicles
 			"rhsafrf\addons\rhs_decals\data\labels\aviation\vvs_ca.paa"
 		};
 	};
-	class RHS_Mi8AMT_vvs: RHS_Mi8AMT_VVS_Base
-	{
-	};
+	class RHS_Mi8AMT_vvs: RHS_Mi8AMT_VVS_Base;  //found empty after stripping
 	class RHS_Mi8AMT_vvsc: RHS_Mi8AMT_vvs
 	{
 		rhs_decalParameters[]=
@@ -4732,9 +4548,7 @@ class CfgVehicles
 			"rhsafrf\addons\rhs_decals\data\labels\aviation\vvs_ca.paa"
 		};
 	};
-	class RHS_Mi8AMTSh_vvs: RHS_Mi8AMTSh_VVS_Base
-	{
-	};
+	class RHS_Mi8AMTSh_vvs: RHS_Mi8AMTSh_VVS_Base;  //found empty after stripping
 	class RHS_Mi8AMTSh_vvsc: RHS_Mi8AMTSh_vvs
 	{
 		rhs_decalParameters[]=
@@ -4784,9 +4598,7 @@ class CfgVehicles
 					{
 						attachment="rhs_mag_b8v20a_s8df";
 					};
-					class cmDispenser: cmDispenser
-					{
-					};
+					class cmDispenser: cmDispenser;  //found empty after stripping
 				};
 			};
 		};
@@ -4861,9 +4673,7 @@ class CfgVehicles
 					{
 						attachment="rhs_mag_b8v20a_s8df";
 					};
-					class cmDispenser: cmDispenser
-					{
-					};
+					class cmDispenser: cmDispenser;  //found empty after stripping
 				};
 			};
 		};
@@ -4899,9 +4709,7 @@ class CfgVehicles
 			"a3\data_f\clear_empty.paa",
 			"a3\data_f\clear_empty.paa"
 		};
-		class EventHandlers: EventHandlers
-		{
-		};
+		class EventHandlers: EventHandlers;  //found empty after stripping
 		class Components: Components
 		{
 			class TransportPylonsComponent: TransportPylonsComponent
@@ -4930,9 +4738,7 @@ class CfgVehicles
 			"a3\data_f\clear_empty.paa",
 			"a3\data_f\clear_empty.paa"
 		};
-		class EventHandlers: EventHandlers
-		{
-		};
+		class EventHandlers: EventHandlers;  //found empty after stripping
 		class Components: Components
 		{
 			class TransportPylonsComponent: TransportPylonsComponent
@@ -4985,9 +4791,7 @@ class CfgVehicles
 		allowTabLock=0;
 		driverCanEject=1;
 		driverCompartments=1;
-		class EjectionSystem
-		{
-		};
+		class EjectionSystem;  //found empty after stripping
 		ejectDamageLimit=1;
 		memoryPointDriverOptics="pilotCamera";
 		class PilotCamera
@@ -5461,9 +5265,7 @@ class CfgVehicles
 					"rhs_faction_vvs"
 				};
 			};
-			class standard2: standard
-			{
-			};
+			class standard2: standard;  //found empty after stripping
 			class Camo: standard
 			{
 				factions[]=
@@ -5471,12 +5273,8 @@ class CfgVehicles
 					"rhs_faction_vvs_c"
 				};
 			};
-			class Camo1: Camo
-			{
-			};
-			class Camo2: standard
-			{
-			};
+			class Camo1: Camo;  //found empty after stripping
+			class Camo2: standard;  //found empty after stripping
 		};
 		class Components
 		{
@@ -5820,14 +5618,10 @@ class CfgVehicles
 			{
 				class Components
 				{
-					class PassiveRadarSensorComponent: SensorTemplatePassiveRadar
-					{
-					};
+					class PassiveRadarSensorComponent: SensorTemplatePassiveRadar;  //found empty after stripping
 				};
 			};
-			class TransportCountermeasuresComponent
-			{
-			};
+			class TransportCountermeasuresComponent;  //found empty after stripping
 		};
 		class Attributes
 		{
@@ -6204,9 +5998,7 @@ class CfgVehicles
 						};
 						pos10[]={2.02,1.47};
 					};
-					class TargetingPodTarget: TargetingPodDir
-					{
-					};
+					class TargetingPodTarget: TargetingPodDir;  //found empty after stripping
 					class MissileFlightTimeRot1
 					{
 						source="MissileFlightTime";
@@ -8180,9 +7972,7 @@ class CfgVehicles
 				color[]={0.15000001,1,0.15000001,1};
 				enableParallax=0;
 				font="PuristaMedium";
-				class Bones
-				{
-				};
+				class Bones;  //found empty after stripping
 				class Draw
 				{
 					alpha=0.5;
@@ -8396,9 +8186,7 @@ class CfgVehicles
 						condition="missile";
 						class BlackBackground: BlackBackground
 						{
-							class AmmoBox: AmmoBox
-							{
-							};
+							class AmmoBox: AmmoBox;  //found empty after stripping
 						};
 						class AmmoText
 						{
@@ -8428,9 +8216,7 @@ class CfgVehicles
 						condition="bomb";
 						class BlackBackground: BlackBackground
 						{
-							class AmmoBox: AmmoBox
-							{
-							};
+							class AmmoBox: AmmoBox;  //found empty after stripping
 						};
 						class AmmoText
 						{
@@ -8460,9 +8246,7 @@ class CfgVehicles
 						condition="mgun";
 						class BlackBackground: BlackBackground
 						{
-							class AmmoBox: AmmoBox
-							{
-							};
+							class AmmoBox: AmmoBox;  //found empty after stripping
 						};
 						class AmmoText
 						{
@@ -8591,9 +8375,7 @@ class CfgVehicles
 				borderBottom=0;
 				color[]={0.15000001,1,0.15000001,1};
 				enableParallax=0;
-				class Bones
-				{
-				};
+				class Bones;  //found empty after stripping
 				class Draw
 				{
 					alpha=1;
@@ -8673,9 +8455,7 @@ class CfgVehicles
 						condition="user0";
 						blinkingPattern[]={0.30000001,0.30000001};
 						blinkingStartsOn=1;
-						class Bulb: Bulb
-						{
-						};
+						class Bulb: Bulb;  //found empty after stripping
 					};
 					class Launch_Disengage
 					{
@@ -8748,9 +8528,7 @@ class CfgVehicles
 					{1,1}
 				};
 			};
-			class Wheel_1_fake: Wheel_1
-			{
-			};
+			class Wheel_1_fake: Wheel_1;  //found empty after stripping
 			class Wheel_2: Wheel_1
 			{
 				steering=0;
@@ -8871,21 +8649,11 @@ class CfgVehicles
 					{
 						attachment="rhs_mag_kh25ML";
 					};
-					class pylon7: pylon7
-					{
-					};
-					class pylon8: pylon8
-					{
-					};
-					class pylon9: pylon9
-					{
-					};
-					class pylon10: pylon10
-					{
-					};
-					class cmDispenser: cmDispenser
-					{
-					};
+					class pylon7: pylon7;  //found empty after stripping
+					class pylon8: pylon8;  //found empty after stripping
+					class pylon9: pylon9;  //found empty after stripping
+					class pylon10: pylon10;  //found empty after stripping
+					class cmDispenser: cmDispenser;  //found empty after stripping
 				};
 			};
 		};
@@ -8930,15 +8698,9 @@ class CfgVehicles
 					{
 						attachment="rhs_mag_b8m1_s8df";
 					};
-					class pylon9: pylon9
-					{
-					};
-					class pylon10: pylon10
-					{
-					};
-					class cmDispenser: cmDispenser
-					{
-					};
+					class pylon9: pylon9;  //found empty after stripping
+					class pylon10: pylon10;  //found empty after stripping
+					class cmDispenser: cmDispenser;  //found empty after stripping
 				};
 			};
 		};
@@ -8983,15 +8745,9 @@ class CfgVehicles
 					{
 						attachment="rhs_mag_b8m1_s8df";
 					};
-					class pylon9: pylon9
-					{
-					};
-					class pylon10: pylon10
-					{
-					};
-					class cmDispenser: cmDispenser
-					{
-					};
+					class pylon9: pylon9;  //found empty after stripping
+					class pylon10: pylon10;  //found empty after stripping
+					class cmDispenser: cmDispenser;  //found empty after stripping
 				};
 			};
 		};
@@ -9047,21 +8803,11 @@ class CfgVehicles
 					{
 						attachment="rhs_mag_kh25ML";
 					};
-					class pylon7: pylon7
-					{
-					};
-					class pylon8: pylon8
-					{
-					};
-					class pylon9: pylon9
-					{
-					};
-					class pylon10: pylon10
-					{
-					};
-					class cmDispenser: cmDispenser
-					{
-					};
+					class pylon7: pylon7;  //found empty after stripping
+					class pylon8: pylon8;  //found empty after stripping
+					class pylon9: pylon9;  //found empty after stripping
+					class pylon10: pylon10;  //found empty after stripping
+					class cmDispenser: cmDispenser;  //found empty after stripping
 				};
 			};
 		};
@@ -9106,15 +8852,9 @@ class CfgVehicles
 					{
 						attachment="rhs_mag_b8m1_s8df";
 					};
-					class pylon9: pylon9
-					{
-					};
-					class pylon10: pylon10
-					{
-					};
-					class cmDispenser: cmDispenser
-					{
-					};
+					class pylon9: pylon9;  //found empty after stripping
+					class pylon10: pylon10;  //found empty after stripping
+					class cmDispenser: cmDispenser;  //found empty after stripping
 				};
 			};
 		};
@@ -9159,15 +8899,9 @@ class CfgVehicles
 					{
 						attachment="rhs_mag_b8m1_s8df";
 					};
-					class pylon9: pylon9
-					{
-					};
-					class pylon10: pylon10
-					{
-					};
-					class cmDispenser: cmDispenser
-					{
-					};
+					class pylon9: pylon9;  //found empty after stripping
+					class pylon10: pylon10;  //found empty after stripping
+					class cmDispenser: cmDispenser;  //found empty after stripping
 				};
 			};
 		};
@@ -9267,9 +9001,7 @@ class CfgVehicles
 			"chase03",
 			"chase04"
 		};
-		class PilotCamera
-		{
-		};
+		class PilotCamera;  //found empty after stripping
 		receiveRemoteTargets=1;
 		reportRemoteTargets=1;
 		reportOwnPosition=1;
@@ -9324,21 +9056,11 @@ class CfgVehicles
 			{
 				armor=1;
 			};
-			class HitRotor2: HitRotor1
-			{
-			};
-			class HitRotor3: HitRotor1
-			{
-			};
-			class HitRotor4: HitRotor1
-			{
-			};
-			class HitRotor5: HitRotor1
-			{
-			};
-			class HitRotor6: HitRotor1
-			{
-			};
+			class HitRotor2: HitRotor1;  //found empty after stripping
+			class HitRotor3: HitRotor1;  //found empty after stripping
+			class HitRotor4: HitRotor1;  //found empty after stripping
+			class HitRotor5: HitRotor1;  //found empty after stripping
+			class HitRotor6: HitRotor1;  //found empty after stripping
 			class HitPylon1
 			{
 				armor=-30;
@@ -9408,9 +9130,7 @@ class CfgVehicles
 						maxFogSeeThrough=0.30000001;
 						animDirection="mainGun";
 					};
-					class PassiveRadarSensorComponent: SensorTemplatePassiveRadar
-					{
-					};
+					class PassiveRadarSensorComponent: SensorTemplatePassiveRadar;  //found empty after stripping
 					class ActiveRadarSensorComponent: SensorTemplateActiveRadar
 					{
 						class AirTarget
@@ -9432,9 +9152,7 @@ class CfgVehicles
 						maxSpeedThreshold=0;
 						maxTrackableSpeed=125;
 					};
-					class DataLinkSensorComponent: SensorTemplateDataLink
-					{
-					};
+					class DataLinkSensorComponent: SensorTemplateDataLink;  //found empty after stripping
 				};
 			};
 			class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
@@ -9682,9 +9400,7 @@ class CfgVehicles
 					"rhs_faction_vvs"
 				};
 			};
-			class Camo: standard
-			{
-			};
+			class Camo: standard;  //found empty after stripping
 		};
 		class Attributes
 		{
@@ -10000,12 +9716,8 @@ class CfgVehicles
 			};
 			class Comp2: Comp1
 			{
-				class Light_Pilot: Light_Pilot
-				{
-				};
-				class Light_Gunner: Light_Gunner
-				{
-				};
+				class Light_Pilot: Light_Pilot;  //found empty after stripping
+				class Light_Gunner: Light_Gunner;  //found empty after stripping
 			};
 		};
 		class markerlights
@@ -10061,9 +9773,7 @@ class CfgVehicles
 			"\rhsafrf\addons\rhs_a2port_air\ka52\data\Ka52_cauges_CO.paa",
 			"\rhsafrf\addons\rhs_a2port_air\ka52\data\Ka52_caugesmf_CO.paa"
 		};
-		class Damage
-		{
-		};
+		class Damage;  //found empty after stripping
 		class MFD
 		{
 			class MFD_Left_Compass
@@ -10084,9 +9794,7 @@ class CfgVehicles
 					diffuse[]={1,1,1,1};
 					emissive[]={400,200,200,1};
 				};
-				class Bones
-				{
-				};
+				class Bones;  //found empty after stripping
 				class Draw
 				{
 					alpha=0.94999999;
@@ -10271,21 +9979,11 @@ class CfgVehicles
 				};
 				class Draw: Draw
 				{
-					class Speed: Speed
-					{
-					};
-					class Height: Height
-					{
-					};
-					class TurretDirection: TurretDirection
-					{
-					};
-					class TurretElevation: TurretElevation
-					{
-					};
-					class DistanceToTarget: DistanceToTarget
-					{
-					};
+					class Speed: Speed;  //found empty after stripping
+					class Height: Height;  //found empty after stripping
+					class TurretDirection: TurretDirection;  //found empty after stripping
+					class TurretElevation: TurretElevation;  //found empty after stripping
+					class DistanceToTarget: DistanceToTarget;  //found empty after stripping
 				};
 			};
 			class CrossGunner
@@ -14138,9 +13836,7 @@ class CfgVehicles
 						attachment="rhs_mag_apu6_9m127m_ka52";
 						turret[]={0};
 					};
-					class cmDispenser: cmDispenser
-					{
-					};
+					class cmDispenser: cmDispenser;  //found empty after stripping
 				};
 			};
 		};
@@ -14173,9 +13869,7 @@ class CfgVehicles
 						attachment="rhs_mag_apu6_9m127m_ka52";
 						turret[]={0};
 					};
-					class cmDispenser: cmDispenser
-					{
-					};
+					class cmDispenser: cmDispenser;  //found empty after stripping
 				};
 			};
 		};
@@ -14197,9 +13891,7 @@ class CfgVehicles
 		fuelExplosionPower=0;
 		explosionEffect="";
 		driveOnComponent[]={};
-		class Turrets
-		{
-		};
+		class Turrets;  //found empty after stripping
 		class Eventhandlers
 		{
 			HandleDamage="deleteVehicle (_this select 0)";
@@ -14226,12 +13918,8 @@ class CfgVehicles
 		occludeSoundsWhenIn=1;
 		obstructSoundsWhenIn=1;
 		driveOnComponent[]={};
-		class Turrets
-		{
-		};
-		class Eventhandlers
-		{
-		};
+		class Turrets;  //found empty after stripping
+		class Eventhandlers;  //found empty after stripping
 		SLX_XEH_DISABLED=1;
 	};
 	class rhs_ka52_rps_rocket: rhs_ka52_ejection_vest
@@ -14342,9 +14030,7 @@ class CfgVehicles
 				};
 			};
 		};
-		class Damage
-		{
-		};
+		class Damage;  //found empty after stripping
 		class textureSources
 		{
 			class standard
@@ -14355,9 +14041,7 @@ class CfgVehicles
 					"rhs_faction_vvs"
 				};
 			};
-			class Camo: standard
-			{
-			};
+			class Camo: standard;  //found empty after stripping
 		};
 		class Attributes
 		{
@@ -14460,12 +14144,8 @@ class CfgVehicles
 			};
 		};
 	};
-	class rhs_pchela1t_vvs: rhs_pchela1t_base
-	{
-	};
-	class rhs_pchela1t_vvsc: rhs_pchela1t_base
-	{
-	};
+	class rhs_pchela1t_vvs: rhs_pchela1t_base;  //found empty after stripping
+	class rhs_pchela1t_vvsc: rhs_pchela1t_base;  //found empty after stripping
 	class Module_F;
 	class ModuleCAS_F: Module_F
 	{

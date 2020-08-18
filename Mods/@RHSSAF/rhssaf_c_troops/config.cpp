@@ -261,9 +261,7 @@ class CfgVehicles
 		secondaryAmmoCoef=0.2;
 		handgunAmmoCoef=0.1;
 		cost=100000;
-		class Wounds
-		{
-		};
+		class Wounds;  //found empty after stripping
 		class UniformInfo
 		{
 			class SlotsInfo
@@ -351,24 +349,16 @@ class CfgVehicles
 			"ItemWatch",
 			"ItemRadio"
 		};
-		class EventHandlers: Eventhandlers
-		{
-		};
+		class EventHandlers: Eventhandlers;  //found empty after stripping
 	};
 	class rhssaf_soldier_m93_base: rhssaf_soldier_m10_base
 	{
-		class Wounds
-		{
-		};
-		class Eventhandlers: EventHandlers
-		{
-		};
+		class Wounds;  //found empty after stripping
+		class Eventhandlers: EventHandlers;  //found empty after stripping
 	};
 	class rhssaf_soldier_atf_base: rhssaf_soldier_m10_base
 	{
-		class Wounds
-		{
-		};
+		class Wounds;  //found empty after stripping
 		uniformClass="rhssaf_uniform_gendarmes_acu";
 		weapons[]=
 		{
@@ -432,19 +422,11 @@ class CfgVehicles
 			"ItemWatch",
 			"ItemRadio"
 		};
-		class Eventhandlers: EventHandlers
-		{
-		};
+		class Eventhandlers: EventHandlers;  //found empty after stripping
 	};
-	class rhs_infantry_msv_base: SoldierGB
-	{
-	};
-	class rhs_pilot_base: rhs_infantry_msv_base
-	{
-	};
-	class rhs_pilot_transport_heli: rhs_pilot_base
-	{
-	};
+	class rhs_infantry_msv_base: SoldierGB;  //found empty after stripping
+	class rhs_pilot_base: rhs_infantry_msv_base;  //found empty after stripping
+	class rhs_pilot_transport_heli: rhs_pilot_base;  //found empty after stripping
 	class rhssaf_airforce_pilot_transport_heli: rhs_pilot_transport_heli
 	{
 		side=2;
@@ -455,9 +437,7 @@ class CfgVehicles
 			"G_NATO_pilot"
 		};
 		uniformClass="rhssaf_uniform_heli_pilot";
-		class Wounds
-		{
-		};
+		class Wounds;  //found empty after stripping
 		genericNames="SerbianMen";
 		weapons[]=
 		{
@@ -524,9 +504,7 @@ class CfgVehicles
 	class rhssaf_airforce_pilot_mig29: rhssaf_airforce_pilot_transport_heli
 	{
 		uniformClass="rhssaf_uniform_mig29_pilot";
-		class Wounds
-		{
-		};
+		class Wounds;  //found empty after stripping
 		weapons[]=
 		{
 			"rhs_weap_scorpion",

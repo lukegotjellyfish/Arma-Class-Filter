@@ -12,9 +12,7 @@ class CfgPatches
 };
 class CfgVehicleClasses
 {
-	class CNR
-	{
-	};
+	class CNR;  //found empty after stripping
 };
 class CfgVehicles
 {

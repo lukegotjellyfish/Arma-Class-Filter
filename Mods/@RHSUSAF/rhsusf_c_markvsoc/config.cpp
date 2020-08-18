@@ -14,9 +14,7 @@ class CfgPatches
 class CfgMovesWomen: CfgMovesBasic
 {
 	class DefaultDie;
-	class ManActions
-	{
-	};
+	class ManActions;  //found empty after stripping
 };
 class CfgFunctions
 {
@@ -495,15 +493,11 @@ class CfgVehicles
 		class MarkerLights;
 		class ViewPilot;
 	};
-	class Ship_F: Ship
-	{
-	};
+	class Ship_F: Ship;  //found empty after stripping
 	class RHS_Ship: Ship_F
 	{
 		class NewTurret;
-		class Turrets
-		{
-		};
+		class Turrets;  //found empty after stripping
 		class CargoTurret;
 		memoryPointsLeftEngineEffect="EngineEffectL";
 		memoryPointsRightEngineEffect="EngineEffectR";
@@ -758,14 +752,10 @@ class CfgVehicles
 		memoryPointExhaustDir="eng_1_exh_dir";
 		memoryPointsLeftWaterEffect="waterEffectLeft";
 		memoryPointsRightWaterEffect="waterEffectRight";
-		class Damage
-		{
-		};
+		class Damage;  //found empty after stripping
 		class EventHandlers: DefaultEventhandlers
 		{
-			class rhs_markvsoc_eh
-			{
-			};
+			class rhs_markvsoc_eh;  //found empty after stripping
 		};
 		class Exhausts
 		{
@@ -1094,9 +1084,7 @@ class CfgVehicles
 				volume="(scrubLand factor[0.01, 0.20])";
 			};
 		};
-		class SoundEvents
-		{
-		};
+		class SoundEvents;  //found empty after stripping
 		class SpeechVariants
 		{
 			class Default
@@ -1410,9 +1398,7 @@ class CfgVehicles
 				};
 				maxHorizontalRotSpeed=1.8;
 				maxVerticalRotSpeed=1.2;
-				class HitPoints
-				{
-				};
+				class HitPoints;  //found empty after stripping
 			};
 			class rem_spotL_gunTurret: MainTurret
 			{
@@ -1463,9 +1449,7 @@ class CfgVehicles
 				};
 				maxHorizontalRotSpeed=1.8;
 				maxVerticalRotSpeed=1.2;
-				class HitPoints
-				{
-				};
+				class HitPoints;  //found empty after stripping
 			};
 		};
 		class Attributes
@@ -1485,9 +1469,7 @@ class CfgVehicles
 		};
 		class textureSources
 		{
-			class marsoc
-			{
-			};
+			class marsoc;  //found empty after stripping
 		};
 	};
 	class House_F;

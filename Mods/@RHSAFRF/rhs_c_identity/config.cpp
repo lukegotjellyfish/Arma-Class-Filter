@@ -527,7 +527,5 @@ class CfgFaces
 class CfgHeads
 {
 	class Default_A3;
-	class RHS_EmptyHead: Default_A3
-	{
-	};
+	class RHS_EmptyHead: Default_A3;  //found empty after stripping
 };

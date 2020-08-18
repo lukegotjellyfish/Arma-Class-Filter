@@ -133,24 +133,18 @@ class CfgAmmo
 		submunitionAmmo="";
 		triggerTime=0.001;
 		timeToLive=0.1;
-		class HitEffects
-		{
-		};
+		class HitEffects;  //found empty after stripping
 	};
 	class Default;
 	class BulletCore;
 	class BulletBase;
 	class ShellBase;
-	class MissileCore: Default
-	{
-	};
+	class MissileCore: Default;  //found empty after stripping
 	class MissileBase: MissileCore
 	{
 		class EventHandlers;
 	};
-	class rhs_ammo_902a: SmokeLauncherAmmo
-	{
-	};
+	class rhs_ammo_902a: SmokeLauncherAmmo;  //found empty after stripping
 	class rhs_ammo_3d17: SmokeLauncherAmmo
 	{
 		rhs_smokeShell="rhs_ammo_3d17_shell";
@@ -349,9 +343,7 @@ class CfgAmmo
 		cost=500;
 		deflecting=15;
 	};
-	class rhs_ammo_br412: rhs_ammo_br_base
-	{
-	};
+	class rhs_ammo_br412: rhs_ammo_br_base;  //found empty after stripping
 	class rhs_ammo_bm_base: Sh_125mm_APFSDS
 	{
 		cost=500;
@@ -995,9 +987,7 @@ class CfgAmmo
 		CraterEffects="ArtyShellCrater";
 		ExplosionEffects="ArtyShellExplosion";
 	};
-	class rhs_ammo_of412: rhs_ammo_of_base
-	{
-	};
+	class rhs_ammo_of412: rhs_ammo_of_base;  //found empty after stripping
 	class rhs_ammo_of11: rhs_ammo_of_base
 	{
 		hit=170;
@@ -1254,9 +1244,7 @@ class CfgAmmo
 		CraterEffects="ExploAmmoCrater";
 	};
 	class Sh_155mm_AMOS_LG;
-	class rhs_ammo_3WOF93: Sh_155mm_AMOS_LG
-	{
-	};
+	class rhs_ammo_3WOF93: Sh_155mm_AMOS_LG;  //found empty after stripping
 	class Flare_82mm_AMOS_White;
 	class rhs_ammo_3WS23: Flare_82mm_AMOS_White
 	{
@@ -1330,9 +1318,7 @@ class CfgAmmo
 		indirectHit=50;
 		indirectHitRange=30;
 	};
-	class rhs_ammo_3of69m: Sh_155mm_AMOS_LG
-	{
-	};
+	class rhs_ammo_3of69m: Sh_155mm_AMOS_LG;  //found empty after stripping
 	class rhs_ammo_s463: Flare_82mm_AMOS_White
 	{
 		hit=8;
@@ -2838,12 +2824,8 @@ class CfgAmmo
 		timeToLive=25;
 		tracerEndTime=3;
 	};
-	class rhs_ammo_127x108mm: rhs_ammo_127x107mm
-	{
-	};
-	class rhs_ammo_127x108mm_notracer: rhs_ammo_127x108mm
-	{
-	};
+	class rhs_ammo_127x108mm: rhs_ammo_127x107mm;  //found empty after stripping
+	class rhs_ammo_127x108mm_notracer: rhs_ammo_127x108mm;  //found empty after stripping
 	class rhs_ammo_127x108mm_x5: SubmunitionBase
 	{
 		explosive=0;
@@ -2965,9 +2947,7 @@ class CfgAmmo
 		simulation="shotSubmunitions";
 		triggerTime=0.0099999998;
 	};
-	class rhs_ammo_ofz_23x115mm: RHS_ammo_23mm_AA
-	{
-	};
+	class rhs_ammo_ofz_23x115mm: RHS_ammo_23mm_AA;  //found empty after stripping
 	class rhs_ammo_ofzt_23x115mm: rhs_ammo_ofz_23x115mm
 	{
 		indirectHit=30;
@@ -4963,12 +4943,8 @@ class CfgWeapons
 			burst=6;
 			autoFire=1;
 		};
-		class AIDouble: Double
-		{
-		};
-		class AIVolley: Volley
-		{
-		};
+		class AIDouble: Double;  //found empty after stripping
+		class AIVolley: Volley;  //found empty after stripping
 	};
 	class rhs_weap_smokegen: Default
 	{
@@ -5025,9 +5001,7 @@ class CfgWeapons
 			burst=8;
 			reloadTime=1.3;
 		};
-		class AITimed: Timed
-		{
-		};
+		class AITimed: Timed;  //found empty after stripping
 		class LongTimed: Single
 		{
 			burst=8;
@@ -5206,12 +5180,8 @@ class CfgWeapons
 			burst=6;
 			autoFire=1;
 		};
-		class AIDouble: Double
-		{
-		};
-		class AIVolley: Volley
-		{
-		};
+		class AIDouble: Double;  //found empty after stripping
+		class AIVolley: Volley;  //found empty after stripping
 	};
 	class PKT: MGun
 	{
@@ -5248,19 +5218,11 @@ class CfgWeapons
 	};
 	class rhs_weap_pktm: rhs_weap_pkt
 	{
-		class manual: manual
-		{
-		};
+		class manual: manual;  //found empty after stripping
 	};
-	class rhs_weap_pkt_v1: rhs_weap_pkt
-	{
-	};
-	class rhs_weap_pkt_v2: rhs_weap_pkt
-	{
-	};
-	class rhs_weap_pkt_v3: rhs_weap_pkt
-	{
-	};
+	class rhs_weap_pkt_v1: rhs_weap_pkt;  //found empty after stripping
+	class rhs_weap_pkt_v2: rhs_weap_pkt;  //found empty after stripping
+	class rhs_weap_pkt_v3: rhs_weap_pkt;  //found empty after stripping
 	class rhs_weap_pkt_bmd_coax: rhs_weap_pkt
 	{
 		class gunParticles
@@ -5351,9 +5313,7 @@ class CfgWeapons
 	{
 		ballisticsComputer="2 + 16";
 	};
-	class LMG_RCWS: MGun
-	{
-	};
+	class LMG_RCWS: MGun;  //found empty after stripping
 	class rhs_weap_DSHKM: LMG_RCWS
 	{
 		initSpeed=0;
@@ -5413,22 +5373,14 @@ class CfgWeapons
 			burstRangeMax=8;
 		};
 	};
-	class rhs_weap_nsvt_effects: rhs_weap_nsvt
-	{
-	};
-	class rhs_weap_nsvt_t72_var1: rhs_weap_nsvt_effects
-	{
-	};
-	class rhs_weap_nsvt_t72: rhs_weap_nsvt_effects
-	{
-	};
+	class rhs_weap_nsvt_effects: rhs_weap_nsvt;  //found empty after stripping
+	class rhs_weap_nsvt_t72_var1: rhs_weap_nsvt_effects;  //found empty after stripping
+	class rhs_weap_nsvt_t72: rhs_weap_nsvt_effects;  //found empty after stripping
 	class rhs_weap_nsvt_obj681: rhs_weap_nsvt_effects
 	{
 		holdsterAnimValue=1;
 	};
-	class rhs_weap_nsvt_t80: rhs_weap_nsvt_effects
-	{
-	};
+	class rhs_weap_nsvt_t80: rhs_weap_nsvt_effects;  //found empty after stripping
 	class rhs_weap_nsvt_t90m_RWS: rhs_weap_nsvt_t72
 	{
 		ballisticsComputer="2 + 16";
@@ -5604,9 +5556,7 @@ class CfgWeapons
 			burstRangeMax=10;
 		};
 	};
-	class RHS_weap_Ags30_tigr: RHS_weap_Ags30
-	{
-	};
+	class RHS_weap_Ags30_tigr: RHS_weap_Ags30;  //found empty after stripping
 	class CannonCore;
 	class cannon_120mm: CannonCore
 	{
@@ -5625,9 +5575,7 @@ class CfgWeapons
 		};
 		reloadTime=2;
 		magazineReloadTime=2;
-		class gunParticles
-		{
-		};
+		class gunParticles;  //found empty after stripping
 		class Eventhandlers
 		{
 			fired="[_this select 0,_this select 1,true] call rhs_fnc_firedFCS";
@@ -5725,9 +5673,7 @@ class CfgWeapons
 		{
 			autoReload=0;
 		};
-		class far: far
-		{
-		};
+		class far: far;  //found empty after stripping
 	};
 	class rhs_weap_2a26: rhs_weap_d81
 	{
@@ -5974,9 +5920,7 @@ class CfgWeapons
 	};
 	class rhs_weap_2a42: rhs_weap_2a42_base
 	{
-		class HE: rhs_weap_2a42_base
-		{
-		};
+		class HE: rhs_weap_2a42_base;  //found empty after stripping
 		class AP: rhs_weap_2a42_base
 		{
 			magazineWell[]=
@@ -6028,9 +5972,7 @@ class CfgWeapons
 	};
 	class rhs_weap_2a72: rhs_weap_2a72_base
 	{
-		class HE: rhs_weap_2a72_base
-		{
-		};
+		class HE: rhs_weap_2a72_base;  //found empty after stripping
 		class AP: rhs_weap_2a72_base
 		{
 			magazineWell[]=
@@ -6177,9 +6119,7 @@ class CfgWeapons
 	};
 	class rhs_weap_2a28: rhs_weap_2a28_base
 	{
-		class AP: rhs_weap_2a28_base
-		{
-		};
+		class AP: rhs_weap_2a28_base;  //found empty after stripping
 		class HE: rhs_weap_2a28_base
 		{
 			magazines[]=
@@ -6203,9 +6143,7 @@ class CfgWeapons
 	};
 	class rhs_weap_2a41: rhs_weap_2a41_base
 	{
-		class AP: rhs_weap_2a41_base
-		{
-		};
+		class AP: rhs_weap_2a41_base;  //found empty after stripping
 		class HE: rhs_weap_2a41_base
 		{
 			magazines[]=
@@ -10122,12 +10060,8 @@ class RHS_125mm_Sabot_Eject
 		lifeTime=1;
 		enabled="flyTime interpolate [0,0.2,1,-1]";
 	};
-	class FX_2: FX_1
-	{
-	};
-	class FX_3: FX_1
-	{
-	};
+	class FX_2: FX_1;  //found empty after stripping
+	class FX_3: FX_1;  //found empty after stripping
 };
 class CfgMagazineWells
 {
@@ -10358,18 +10292,10 @@ class CfgVehicles
 	{
 		editorCategory="EdCat_Things";
 	};
-	class rhs_weap_9m113_used: rhs_casing_122mm
-	{
-	};
-	class rhs_weap_9m111_used: rhs_weap_9m113_used
-	{
-	};
-	class rhs_weap_9K115_launcher_used: rhs_weap_9m111_used
-	{
-	};
-	class rhs_weap_9K133_launcher_used: rhs_weap_9m111_used
-	{
-	};
+	class rhs_weap_9m113_used: rhs_casing_122mm;  //found empty after stripping
+	class rhs_weap_9m111_used: rhs_weap_9m113_used;  //found empty after stripping
+	class rhs_weap_9K115_launcher_used: rhs_weap_9m111_used;  //found empty after stripping
+	class rhs_weap_9K133_launcher_used: rhs_weap_9m111_used;  //found empty after stripping
 	class LandVehicle;
 	class StaticWeapon: LandVehicle
 	{
@@ -10392,15 +10318,9 @@ class CfgVehicles
 			};
 		};
 	};
-	class StaticMGWeapon: StaticWeapon
-	{
-	};
-	class StaticATWeapon: StaticWeapon
-	{
-	};
-	class StaticAAWeapon: StaticWeapon
-	{
-	};
+	class StaticMGWeapon: StaticWeapon;  //found empty after stripping
+	class StaticATWeapon: StaticWeapon;  //found empty after stripping
+	class StaticAAWeapon: StaticWeapon;  //found empty after stripping
 	class StaticCannon: StaticWeapon
 	{
 		class ViewOptics;
@@ -10409,9 +10329,7 @@ class CfgVehicles
 	{
 		class ViewOptics;
 	};
-	class StaticMortar: StaticWeapon
-	{
-	};
+	class StaticMortar: StaticWeapon;  //found empty after stripping
 	class RHS_ZU23_base: StaticCannon
 	{
 		displayname="ZU-23-2";
@@ -10509,9 +10427,7 @@ class CfgVehicles
 				};
 			};
 		};
-		class Damage
-		{
-		};
+		class Damage;  //found empty after stripping
 	};
 	class RHS_ZU23_MSV: RHS_ZU23_base
 	{
@@ -10522,9 +10438,7 @@ class CfgVehicles
 		};
 		class Turrets: Turrets
 		{
-			class MainTurret: MainTurret
-			{
-			};
+			class MainTurret: MainTurret;  //found empty after stripping
 		};
 	};
 	class RHS_ZU23_VDV: RHS_ZU23_base
@@ -10536,9 +10450,7 @@ class CfgVehicles
 		};
 		class Turrets: Turrets
 		{
-			class MainTurret: MainTurret
-			{
-			};
+			class MainTurret: MainTurret;  //found empty after stripping
 		};
 	};
 	class RHS_ZU23_VMF: RHS_ZU23_base
@@ -10550,14 +10462,10 @@ class CfgVehicles
 		};
 		class Turrets: Turrets
 		{
-			class MainTurret: MainTurret
-			{
-			};
+			class MainTurret: MainTurret;  //found empty after stripping
 		};
 	};
-	class AT_01_base_F: StaticMGWeapon
-	{
-	};
+	class AT_01_base_F: StaticMGWeapon;  //found empty after stripping
 	class rhs_nsv_tripod_base: StaticMGWeapon
 	{
 		icon="\rhsafrf\addons\rhs_heavyweapons\mg\bis_kord\icomap_kord_CA.paa";
@@ -10589,9 +10497,7 @@ class CfgVehicles
 			minMoveZ=-0.075000003;
 			maxMoveZ=0.1;
 		};
-		class Damage
-		{
-		};
+		class Damage;  //found empty after stripping
 		class Turrets: Turrets
 		{
 			class MainTurret: MainTurret
@@ -10663,9 +10569,7 @@ class CfgVehicles
 	class RHS_KORD_Base: rhs_nsv_tripod_base
 	{
 		icon="rhsafrf\addons\rhs_heavyweapons\data\mapico\icomap_kord_CA.paa";
-		class Damage
-		{
-		};
+		class Damage;  //found empty after stripping
 		class ViewPilot: ViewPilot
 		{
 			initAngleX=-0;
@@ -10825,9 +10729,7 @@ class CfgVehicles
 				name="telo";
 			};
 		};
-		class Damage
-		{
-		};
+		class Damage;  //found empty after stripping
 		class ViewPilot: ViewPilot
 		{
 			initAngleX=-0;
@@ -10967,9 +10869,7 @@ class CfgVehicles
 			minMoveZ=-0.075000003;
 			maxMoveZ=0.1;
 		};
-		class Damage
-		{
-		};
+		class Damage;  //found empty after stripping
 		class Turrets: Turrets
 		{
 			class MainTurret: MainTurret
@@ -11114,9 +11014,7 @@ class CfgVehicles
 			maxMoveZ=0.1;
 		};
 		hiddenSelections[]={};
-		class Damage
-		{
-		};
+		class Damage;  //found empty after stripping
 		class Turrets: Turrets
 		{
 			class MainTurret: MainTurret
@@ -11216,12 +11114,8 @@ class CfgVehicles
 				};
 				class OpticsIn
 				{
-					class HEAT: ViewOptics
-					{
-					};
-					class HE: ViewOptics
-					{
-					};
+					class HEAT: ViewOptics;  //found empty after stripping
+					class HE: ViewOptics;  //found empty after stripping
 				};
 			};
 		};
@@ -11289,9 +11183,7 @@ class CfgVehicles
 			minMoveZ=-0.075000003;
 			maxMoveZ=0.1;
 		};
-		class Damage
-		{
-		};
+		class Damage;  //found empty after stripping
 		memoryPointMissile[]=
 		{
 			"Rocket_2",
@@ -11418,9 +11310,7 @@ class CfgVehicles
 			minMoveZ=-0.075000003;
 			maxMoveZ=0.1;
 		};
-		class Damage
-		{
-		};
+		class Damage;  //found empty after stripping
 		class Turrets: Turrets
 		{
 			class MainTurret: MainTurret
@@ -11611,9 +11501,7 @@ class CfgVehicles
 			minMoveZ=-0.075000003;
 			maxMoveZ=0.1;
 		};
-		class Damage
-		{
-		};
+		class Damage;  //found empty after stripping
 		class Turrets: Turrets
 		{
 			class MainTurret: MainTurret
@@ -11815,9 +11703,7 @@ class CfgVehicles
 				};
 			};
 		};
-		class Damage
-		{
-		};
+		class Damage;  //found empty after stripping
 		htMin=1;
 		htMax=480;
 		afMax=0;
@@ -12024,9 +11910,7 @@ class CfgVehicles
 		};
 		class Attributes: Attributes
 		{
-			class rhs_caseDeleteTime: rhs_caseDeleteTime
-			{
-			};
+			class rhs_caseDeleteTime: rhs_caseDeleteTime;  //found empty after stripping
 			class rhs_ammoslot_1_type
 			{
 				tooltip="Define type of shell for #1 slot [HE rounds]";
@@ -12310,9 +12194,7 @@ class CfgVehicles
 				};
 				class OpticsIn
 				{
-					class Wide: ViewOptics
-					{
-					};
+					class Wide: ViewOptics;  //found empty after stripping
 					class Medium: Wide
 					{
 						initFov=0.029200001;
@@ -12328,9 +12210,7 @@ class CfgVehicles
 				};
 				class OpticsOut
 				{
-					class ViewGunner: ViewGunner
-					{
-					};
+					class ViewGunner: ViewGunner;  //found empty after stripping
 				};
 			};
 		};

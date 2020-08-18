@@ -6115,14 +6115,10 @@ class CfgWeapons
 {
 	class InventoryOpticsItem_Base_F;
 	class Rifle_Base_F;
-	class arifle_MX_Base_F: Rifle_Base_F
-	{
-	};
+	class arifle_MX_Base_F: Rifle_Base_F;  //found empty after stripping
 	class Rifle_Long_Base_F;
 	class GrenadeLauncher;
-	class UGL_F: GrenadeLauncher
-	{
-	};
+	class UGL_F: GrenadeLauncher;  //found empty after stripping
 	class srifle_EBR_F;
 	class LMG_Mk200_F;
 	class LMG_M200;
@@ -6136,12 +6132,8 @@ class CfgWeapons
 	};
 	class rhs_weap_pp2000: hgun_PDW2000_F
 	{
-		class Single: Single
-		{
-		};
-		class FullAuto: FullAuto
-		{
-		};
+		class Single: Single;  //found empty after stripping
+		class FullAuto: FullAuto;  //found empty after stripping
 	};
 	class rhs_weap_ak74m_Base_F: Rifle_Base_F
 	{
@@ -6170,19 +6162,13 @@ class CfgWeapons
 			};
 		};
 	};
-	class rhs_weap_ak74m: rhs_weap_ak74m_Base_F
-	{
-	};
+	class rhs_weap_ak74m: rhs_weap_ak74m_Base_F;  //found empty after stripping
 	class rhs_weap_asval: rhs_weap_ak74m
 	{
 		L_ES_Prefix="nosound";
 		L_ES_maxPlopp=0;
-		class Single: Single
-		{
-		};
-		class FullAuto: FullAuto
-		{
-		};
+		class Single: Single;  //found empty after stripping
+		class FullAuto: FullAuto;  //found empty after stripping
 	};
 	class rhs_weap_akm: rhs_weap_ak74m
 	{
@@ -6211,9 +6197,7 @@ class CfgWeapons
 			};
 		};
 	};
-	class rhs_weap_ak103_base: rhs_weap_akm
-	{
-	};
+	class rhs_weap_ak103_base: rhs_weap_akm;  //found empty after stripping
 	class rhs_pkp_base: Rifle_Long_Base_F
 	{
 		class Single: Mode_SemiAuto
@@ -6241,26 +6225,16 @@ class CfgWeapons
 			};
 		};
 	};
-	class rhs_weap_pkp: rhs_pkp_base
-	{
-	};
+	class rhs_weap_pkp: rhs_pkp_base;  //found empty after stripping
 	class rhs_weap_rpk74: rhs_weap_pkp
 	{
-		class Single: Mode_SemiAuto
-		{
-		};
-		class Manual: Mode_FullAuto
-		{
-		};
+		class Single: Mode_SemiAuto;  //found empty after stripping
+		class Manual: Mode_FullAuto;  //found empty after stripping
 	};
-	class PKT: MGun
-	{
-	};
+	class PKT: MGun;  //found empty after stripping
 	class rhs_weap_pkt: PKT
 	{
-		class manual: MGun
-		{
-		};
+		class manual: MGun;  //found empty after stripping
 	};
 	class rhs_weap_svd: rhs_weap_ak74m
 	{
@@ -6294,13 +6268,9 @@ class CfgWeapons
 	};
 	class GP25_Base: UGL_F
 	{
-		class Single: Mode_SemiAuto
-		{
-		};
+		class Single: Mode_SemiAuto;  //found empty after stripping
 	};
-	class rhs_weap_orsis_Base_F: Rifle_Base_F
-	{
-	};
+	class rhs_weap_orsis_Base_F: Rifle_Base_F;  //found empty after stripping
 	class hgun_Rook40_F;
 	class rhs_weap_pya: hgun_Rook40_F
 	{
@@ -6331,13 +6301,9 @@ class CfgWeapons
 		};
 	};
 	class Launcher;
-	class Launcher_Base_F: Launcher
-	{
-	};
+	class Launcher_Base_F: Launcher;  //found empty after stripping
 	class MissileLauncher;
-	class rhs_weap_rpg26: Launcher_Base_F
-	{
-	};
+	class rhs_weap_rpg26: Launcher_Base_F;  //found empty after stripping
 	class rhs_weap_rpg7: Launcher_Base_F
 	{
 		class single: Mode_SemiAuto
@@ -6351,23 +6317,13 @@ class CfgWeapons
 			};
 		};
 	};
-	class rhs_weap_9k11: MissileLauncher
-	{
-	};
+	class rhs_weap_9k11: MissileLauncher;  //found empty after stripping
 	class missiles_Zephyr;
 	class missiles_titan;
-	class rhs_weap_9m111: MissileLauncher
-	{
-	};
-	class rhs_weap_9m119: rhs_weap_9m111
-	{
-	};
-	class rhs_weap_2k4: rhs_weap_9m111
-	{
-	};
-	class rhs_weap_9k133: rhs_weap_9m111
-	{
-	};
+	class rhs_weap_9m111: MissileLauncher;  //found empty after stripping
+	class rhs_weap_9m119: rhs_weap_9m111;  //found empty after stripping
+	class rhs_weap_2k4: rhs_weap_9m111;  //found empty after stripping
+	class rhs_weap_9k133: rhs_weap_9m111;  //found empty after stripping
 	class RocketPods;
 	class rockets_Skyfire: RocketPods
 	{
@@ -6378,33 +6334,17 @@ class CfgWeapons
 	};
 	class rhs_weap_s5: rockets_Skyfire
 	{
-		class Far_AI: Far_AI
-		{
-		};
-		class Medium_AI: Medium_AI
-		{
-		};
-		class Close_AI: Close_AI
-		{
-		};
-		class Burst_AI: RocketPods
-		{
-		};
-		class Burst: Burst
-		{
-		};
+		class Far_AI: Far_AI;  //found empty after stripping
+		class Medium_AI: Medium_AI;  //found empty after stripping
+		class Close_AI: Close_AI;  //found empty after stripping
+		class Burst_AI: RocketPods;  //found empty after stripping
+		class Burst: Burst;  //found empty after stripping
 	};
-	class rhs_weap_9K114_launcher: MissileLauncher
-	{
-	};
+	class rhs_weap_9K114_launcher: MissileLauncher;  //found empty after stripping
 	class Missile_AA_04_Plane_CAS_01_F;
-	class rhs_weap_r73_Launcher: Missile_AA_04_Plane_CAS_01_F
-	{
-	};
+	class rhs_weap_r73_Launcher: Missile_AA_04_Plane_CAS_01_F;  //found empty after stripping
 	class Missile_AGM_02_Plane_CAS_01_F;
-	class rhs_weap_kh25_Launcher: Missile_AGM_02_Plane_CAS_01_F
-	{
-	};
+	class rhs_weap_kh25_Launcher: Missile_AGM_02_Plane_CAS_01_F;  //found empty after stripping
 	class gatling_30mm;
 	class rhs_weap_yakB: gatling_30mm
 	{
@@ -6426,84 +6366,50 @@ class CfgWeapons
 	class autocannon_30mm_CTWS;
 	class rhs_weap_d81: cannon_120mm
 	{
-		class player: player
-		{
-		};
-		class far: far
-		{
-		};
+		class player: player;  //found empty after stripping
+		class far: far;  //found empty after stripping
 	};
 	class rhs_weap_2a42_base: autocannon_30mm_CTWS
 	{
-		class LowROFBMD2: Mode_FullAuto
-		{
-		};
-		class HighROFBMD2: LowROFBMD2
-		{
-		};
+		class LowROFBMD2: Mode_FullAuto;  //found empty after stripping
+		class HighROFBMD2: LowROFBMD2;  //found empty after stripping
 	};
-	class rhs_weap_2a28_base: cannon_120mm
-	{
-	};
+	class rhs_weap_2a28_base: cannon_120mm;  //found empty after stripping
 	class RHS_weap_AZP23: CannonCore
 	{
-		class manual: CannonCore
-		{
-		};
+		class manual: CannonCore;  //found empty after stripping
 	};
-	class LMG_RCWS: MGun
-	{
-	};
+	class LMG_RCWS: MGun;  //found empty after stripping
 	class rhs_weap_DSHKM: LMG_RCWS
 	{
-		class manual: MGun
-		{
-		};
+		class manual: MGun;  //found empty after stripping
 	};
 	class rhs_weap_nsvt: rhs_weap_DSHKM
 	{
-		class manual: MGun
-		{
-		};
+		class manual: MGun;  //found empty after stripping
 	};
-	class rhs_weap_nsvt_effects: rhs_weap_nsvt
-	{
-	};
+	class rhs_weap_nsvt_effects: rhs_weap_nsvt;  //found empty after stripping
 	class rhs_weap_kord: rhs_weap_nsvt_effects
 	{
-		class manual: manual
-		{
-		};
+		class manual: manual;  //found empty after stripping
 	};
 	class rhs_weap_kpvt: MGun
 	{
-		class manual: MGun
-		{
-		};
+		class manual: MGun;  //found empty after stripping
 	};
 	class RHS_weap_GSh30: gatling_30mm
 	{
-		class manual: Mode_FullAuto
-		{
-		};
+		class manual: Mode_FullAuto;  //found empty after stripping
 	};
 	class RHS_Weap_GSh301: RHS_weap_GSh30
 	{
-		class manual: manual
-		{
-		};
+		class manual: manual;  //found empty after stripping
 	};
 	class SmokeLauncher;
-	class rhs_weap_902a: SmokeLauncher
-	{
-	};
+	class rhs_weap_902a: SmokeLauncher;  //found empty after stripping
 	class rhs_weap_902b: rhs_weap_902a
 	{
-		class Double: rhs_weap_902a
-		{
-		};
-		class Volley: Double
-		{
-		};
+		class Double: rhs_weap_902a;  //found empty after stripping
+		class Volley: Double;  //found empty after stripping
 	};
 };

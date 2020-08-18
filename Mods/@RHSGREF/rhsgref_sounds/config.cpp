@@ -15,24 +15,16 @@ class CfgWeapons
 {
 	class InventoryOpticsItem_Base_F;
 	class Rifle_Base_F;
-	class arifle_MX_Base_F: Rifle_Base_F
-	{
-	};
+	class arifle_MX_Base_F: Rifle_Base_F;  //found empty after stripping
 	class Rifle_Long_Base_F;
 	class UGL_F;
 	class srifle_EBR_F;
 	class LMG_Mk200_F;
 	class LMG_M200;
 	class MGun;
-	class rhs_weap_m70_base: Rifle_Base_F
-	{
-	};
-	class rhs_weap_m21_base: rhs_weap_m70_base
-	{
-	};
-	class rhs_weap_m76: rhs_weap_m70_base
-	{
-	};
+	class rhs_weap_m70_base: Rifle_Base_F;  //found empty after stripping
+	class rhs_weap_m21_base: rhs_weap_m70_base;  //found empty after stripping
+	class rhs_weap_m76: rhs_weap_m70_base;  //found empty after stripping
 	class rhs_weap_m38_Base_F: Rifle_Base_F
 	{
 		class Single: Mode_SemiAuto
@@ -49,9 +41,7 @@ class CfgWeapons
 	};
 	class rhs_weap_kar98k_Base_F: Rifle_Base_F
 	{
-		class Single: Mode_SemiAuto
-		{
-		};
+		class Single: Mode_SemiAuto;  //found empty after stripping
 	};
 	class rhs_weap_savz58_base: Rifle_Base_F
 	{
@@ -109,10 +99,6 @@ class CfgWeapons
 	};
 	class MissileLauncher;
 	class Missile_AGM_02_Plane_CAS_01_F;
-	class rhs_weap_zt3_launcher: MissileLauncher
-	{
-	};
-	class rhs_weap_zt6_Launcher: Missile_AGM_02_Plane_CAS_01_F
-	{
-	};
+	class rhs_weap_zt3_launcher: MissileLauncher;  //found empty after stripping
+	class rhs_weap_zt6_Launcher: Missile_AGM_02_Plane_CAS_01_F;  //found empty after stripping
 };

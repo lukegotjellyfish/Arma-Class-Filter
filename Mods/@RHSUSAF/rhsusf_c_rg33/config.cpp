@@ -76,12 +76,8 @@ class CfgVehicles
 		LODDriverTurnedIn=1000;
 		class textureSources
 		{
-			class rhs_desert
-			{
-			};
-			class rhs_woodland
-			{
-			};
+			class rhs_desert;  //found empty after stripping
+			class rhs_woodland;  //found empty after stripping
 		};
 		class Attributes
 		{
@@ -182,9 +178,7 @@ class CfgVehicles
 				explosionShielding=0.0099999998;
 				radius=0.15000001;
 			};
-			class HitDuke2: HitDuke1
-			{
-			};
+			class HitDuke2: HitDuke1;  //found empty after stripping
 		};
 		armorLights=0.0099999998;
 		normalSpeedForwardCoef=0.89999998;
@@ -322,12 +316,8 @@ class CfgVehicles
 				steering=0;
 			};
 		};
-		class Damage
-		{
-		};
-		class EventHandlers: EventHandlers
-		{
-		};
+		class Damage;  //found empty after stripping
+		class EventHandlers: EventHandlers;  //found empty after stripping
 	};
 	class rhsusf_RG33_CROWS_base: rhsusf_RG33_base
 	{
@@ -1248,9 +1238,7 @@ class CfgVehicles
 					};
 				};
 			};
-			class CargoTurret_02: CargoTurret_02
-			{
-			};
+			class CargoTurret_02: CargoTurret_02;  //found empty after stripping
 		};
 	};
 	class rhsusf_RG33_CROWSMK19_base: rhsusf_RG33_CROWS_base
@@ -1272,9 +1260,7 @@ class CfgVehicles
 					"RHS_96Rnd_40mm_MK19_M1001"
 				};
 			};
-			class CargoTurret_02: CargoTurret_02
-			{
-			};
+			class CargoTurret_02: CargoTurret_02;  //found empty after stripping
 		};
 	};
 	class rhsusf_M1238A1_socom_d: rhsusf_RG33_base
@@ -1301,28 +1287,12 @@ class CfgVehicles
 	{
 		accuracy=0.5;
 	};
-	class rhsusf_rg33_d: rhsusf_RG33_base
-	{
-	};
-	class rhsusf_rg33_wd: rhsusf_rg33_d
-	{
-	};
-	class rhsusf_rg33_usmc_d: rhsusf_rg33_d
-	{
-	};
-	class rhsusf_rg33_usmc_wd: rhsusf_rg33_wd
-	{
-	};
-	class rhsusf_rg33_m2_d: rhsusf_RG33_CROWS_base
-	{
-	};
-	class rhsusf_rg33_m2_wd: rhsusf_rg33_m2_d
-	{
-	};
-	class rhsusf_rg33_m2_usmc_d: rhsusf_rg33_m2_d
-	{
-	};
-	class rhsusf_rg33_m2_usmc_wd: rhsusf_rg33_m2_wd
-	{
-	};
+	class rhsusf_rg33_d: rhsusf_RG33_base;  //found empty after stripping
+	class rhsusf_rg33_wd: rhsusf_rg33_d;  //found empty after stripping
+	class rhsusf_rg33_usmc_d: rhsusf_rg33_d;  //found empty after stripping
+	class rhsusf_rg33_usmc_wd: rhsusf_rg33_wd;  //found empty after stripping
+	class rhsusf_rg33_m2_d: rhsusf_RG33_CROWS_base;  //found empty after stripping
+	class rhsusf_rg33_m2_wd: rhsusf_rg33_m2_d;  //found empty after stripping
+	class rhsusf_rg33_m2_usmc_d: rhsusf_rg33_m2_d;  //found empty after stripping
+	class rhsusf_rg33_m2_usmc_wd: rhsusf_rg33_m2_wd;  //found empty after stripping
 };

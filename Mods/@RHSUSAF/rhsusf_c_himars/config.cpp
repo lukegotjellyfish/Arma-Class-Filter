@@ -128,9 +128,7 @@ class CfgVehicles
 				lockWhenVehicleSpeed=1;
 				elevationMode=3;
 				forceHideGunner=1;
-				class Turrets
-				{
-				};
+				class Turrets;  //found empty after stripping
 				class Hitpoints
 				{
 					class HitLauncher
@@ -160,15 +158,9 @@ class CfgVehicles
 		};
 		class textureSources
 		{
-			class rhs_desert
-			{
-			};
-			class rhs_woodland
-			{
-			};
-			class rhs_usmc_woodland
-			{
-			};
+			class rhs_desert;  //found empty after stripping
+			class rhs_woodland;  //found empty after stripping
+			class rhs_usmc_woodland;  //found empty after stripping
 		};
 		class HitPoints: HitPoints
 		{
@@ -353,12 +345,8 @@ class CfgVehicles
 				effect="ExhaustEffectHEMTT";
 			};
 		};
-		class Damage
-		{
-		};
-		class EventHandlers: EventHandlers
-		{
-		};
+		class Damage;  //found empty after stripping
+		class EventHandlers: EventHandlers;  //found empty after stripping
 		class Components: Components
 		{
 			class TransportPylonsComponent
