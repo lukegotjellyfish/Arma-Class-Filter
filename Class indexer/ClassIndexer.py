@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 import csv
 import os
@@ -7,6 +8,7 @@ os.environ['LINES'] = "10000000"
 os.environ['COLUMNS'] = "500"
 os.system("")
 
+cred     = '\033[91m'
 cgreen   = '\33[32m'
 cgrey    = '\33[90m'
 cviolet2 = '\33[95m'
@@ -32,8 +34,6 @@ bluForAmmo = ["rhs_ammo_12g_slug", "rhs_ammo_12g_00buckshot", "rhsusf_ammo_127x9
 "rhs_ammo_556x45_M855A1_Ball", "rhs_ammo_792x33_SmE_ball", "rhs_ammo_46x30_JHP",
 "rhs_ammo_9x19_JHP", "rhs_ammo_45ACP_MHP", "rhs_ammo_9x17", "rhs_ammo_8mm_mhp"]
 
-bluForVehicles = []
-
 opForWeapons = ["rhs_weap_Izh18", "rhs_weap_t5000", "rhs_weap_svdp", "rhs_weap_svdp_npz", "rhs_weap_m76",
 "rhs_weap_m38", "rhs_weap_m38_rail", "rhs_weap_pkm", "rhs_weap_pkp", "rhs_weap_m84", "rhs_weap_asval",
 "rhs_weap_asval_npz", "rhs_weap_dsr1", "rhs_weap_ak74mr", "rhs_weap_ak74m", "rhs_weap_vss",
@@ -48,22 +48,51 @@ opForAmmo = ["rhs_ammo_12g_slug", "rhs_ammo_12g_00buckshot", "B_338_Ball", "rhs_
 "rhs_B_545x39_Ball", "rhs_ammo_556x45_M855A1_Ball", "rhs_B_762x39_Ball",
 "rhs_B_762x39_Ball", "rhs_B_762x39_Ball", "rhs_B_762x39_Ball_89"]
 
-opForVehicles = []
+additionalClasses = []
 
-def csvCreator(filePath):
+def SortPassedClass(line, _class, lines, xval):
+	x = 1
+	if line.startswith("	class " + _class + ";") \
+		or line.startswith("	class " + _class + ":") \
+		or line.startswith("	class " + _class + "\n"):
+		strippedLine = line.replace("\n","")
+		print("[" + cgreen + str(xval).zfill(5) + cend + "]" + cgrey + strippedLine + cend)
+		if line.count(": ") > 0:
+			inheritClass = line.split(": ")[1].replace("\n","")
+			if inheritClass not in additionalClasses:
+				print("found parent: " + inheritClass)
+				for _line in lines:
+					if _line.startswith("	class " + inheritClass):
+						print("Recursievly executed")
+						additionalClasses.append(inheritClass)
+						return SortPassedClass(_line, inheritClass, lines, x)
+						break
+					x += 1
+		return [x, strippedLine]
+	else:
+		return [0, ""]
+
+def CsvCreator(filePath):
 	with open(filePath + "\\config.cpp", "r", encoding="utf-8") as configFile, \
 		 open("config.csv", "a", encoding="utf-8", newline='\n') as csvFile:
 		lines = configFile.readlines()
 
 		csvwriter = csv.writer(csvFile, delimiter=',')
 
-		x = 0
+		x = 1
+		inheritance = []
 		for line in lines:
-			if line.startswith("	class"):
-				strippedLine = line.replace("\n","")
-				print("[" + cgreen + str(x).zfill(5) + cend + "]" + cgrey + strippedLine + cend)
-				csvwriter.writerow([filePath, x, strippedLine])
-			x += 1
+			for array in bluForWeapons, bluForAmmo, opForWeapons, opForAmmo:
+				for classes in array, inheritance:
+					for _class in classes:
+						passed = SortPassedClass(line, _class, lines, x)
+						if passed[0] != 0:
+							if passed[0] > 1:
+								_x = passed[0]
+							else:
+								_x = x
+							csvwriter.writerow([filePath, _x, passed[1]])
+						x += 1
 
 
 #Clear config.csv/Create empty config.csv
@@ -75,4 +104,4 @@ for root, dirs, files in os.walk("..\\Mods"):
 			print(cviolet2 + "-------------------------------" + \
 				cend + (cgreen + cbold + root + cend) + cviolet2 + \
 				"-------------------------------" + cend)
-			csvCreator(root)
+			CsvCreator(root)
