@@ -1,0 +1,2 @@
+PYTHON "ClassIndexer.py"
+PAUSE
