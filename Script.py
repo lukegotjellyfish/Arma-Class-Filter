@@ -57,28 +57,25 @@ def newFile(root, file):
 		lines = f.readlines()
 
 	modDir = re.search("@[^\\\\]*", root).group(0)
-	#print(root, file)
 	folder = re.search("addons\\\\[^\\\\]*", root).group(0).replace("addons\\","")
-	#print("Mod: " + modDir)
+
 	print(cviolet2 + "-------------------------------" + cend + (cgreen + cbold + folder + cend) + cviolet2 + "-------------------------------" + cend)
-	#input("Halt")
+
 	pathToCreate = "Mods\\" + modDir + "\\" + folder + "\\"
 	fileToCreate = pathToCreate + "\\" + file
+
 	if not os.path.exists(os.path.dirname(pathToCreate)):
 		try:
 			os.makedirs(os.path.dirname(pathToCreate))
-		except OSError as exc: # Guard against race condition
+		except OSError as exc:
 			if exc.errno != errno.EEXIST:
 				raise
 
-	#print(fileToCreate)
-	#input("Halt")
 	fileWriteList = []
 	index = 0
 	toSkip = 0
 	for line in lines:
 		if toSkip > 0:
-			#print("Skipped [" + line.replace("\n","") + "]")
 			toSkip -= 1
 			index += 1
 			continue
@@ -177,7 +174,7 @@ mods = ["S:\\Steam\\steamapps\\common\\Arma 3\\!Workshop\\@RHSAFRF",
 for x in mods:
 	for root, dirs, files in os.walk(x):
 		for file in files:
-			if file == 'config.cpp' or file == "physx_config.hpp":
+			if file == 'config.cpp':
 				newFile(root, file)
 
 
