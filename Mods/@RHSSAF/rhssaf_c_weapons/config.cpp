@@ -1540,13 +1540,6 @@ class CfgWeapons
 			1,
 			10
 		};
-		reloadmagazinesound[]=
-		{
-			"rhssaf\addons\rhssaf_sounds\G36\G36_reload",
-			0.89999998,
-			1,
-			35
-		};
 		soundbullet[]=
 		{
 			"bullet1",
@@ -1606,7 +1599,6 @@ class CfgWeapons
 	class rhs_weap_g36c: rhs_weap_g36_base
 	{
 		deployedpivot="deploypivot";
-		discretedistance[]={100};
 		discretedistanceinitindex=0;
 		memoryPointCamera="eye";
 		class WeaponSlotsInfo
@@ -1638,14 +1630,6 @@ class CfgWeapons
 	class rhs_weap_g36c_grip3: rhs_weap_g36c;  //found empty after stripping
 	class rhs_weap_g36kv: rhs_weap_g36_base
 	{
-		reloadmagazinesound[]=
-		{
-			"rhssaf\addons\rhssaf_sounds\G36\G36EV_reload",
-			0.89999998,
-			1,
-			35
-		};
-		discretedistance[]={300};
 		discretedistanceinitindex=0;
 		class WeaponSlotsInfo
 		{
@@ -1986,13 +1970,6 @@ class CfgWeapons
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=193.60001;
-		};
-		reloadmagazinesound[]=
-		{
-			"rhssaf\addons\rhssaf_sounds\m84\reload_belt_1",
-			1,
-			1,
-			50
 		};
 		soundBipodDeploy[]=
 		{

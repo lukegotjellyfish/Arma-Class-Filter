@@ -8793,13 +8793,6 @@ class CfgWeapons
 			1,
 			10
 		};
-		reloadmagazinesound[]=
-		{
-			"\rhsusf\addons\rhsusf_weapons2\M249\snd\saw_reload",
-			0.5,
-			1,
-			20
-		};
 		maxZeroing=1000;
 		handanim[]=
 		{
