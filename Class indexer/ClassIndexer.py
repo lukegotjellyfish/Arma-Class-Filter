@@ -115,7 +115,7 @@ def findClass(className, terminated=False):
 
 
 #Clear config.csv/Create empty config.csv
-open("config.csv", "w", encoding="utf-8").close()
+#open("config.csv", "w", encoding="utf-8").close()
 
 #List of file contents
 fileList = []
