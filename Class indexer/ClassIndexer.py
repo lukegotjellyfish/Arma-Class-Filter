@@ -20,6 +20,8 @@ cbold    = '\33[1m'
 #cmd endstyle
 cend     = '\033[0m'
 
+
+#Classes for weapons pages
 bluForWeapons = ["rhs_weap_M590_5RD", "rhs_weap_M107", "rhs_weap_XM2010",
 "rhs_weap_m1garand_sa43", "rhs_weap_m14ebrri", "rhs_weap_sr25", "rhs_weap_l1a1",
 "rhs_weap_SCARH_STD", "rhs_weap_m40a5", "rhs_weap_m24sws", "rhs_weap_kar98k",
@@ -37,6 +39,7 @@ bluForAmmo = ["rhs_ammo_12g_slug", "rhs_ammo_12g_00buckshot", "rhsusf_ammo_127x9
 "rhs_ammo_556x45_M855A1_Ball", "rhs_ammo_792x33_SmE_ball", "rhs_ammo_46x30_JHP",
 "rhs_ammo_9x19_JHP", "rhs_ammo_45ACP_MHP", "rhs_ammo_9x17", "rhs_ammo_8mm_mhp"]
 
+
 opForWeapons = ["rhs_weap_Izh18", "rhs_weap_t5000", "rhs_weap_svdp", "rhs_weap_svdp_npz", "rhs_weap_m76",
 "rhs_weap_m38", "rhs_weap_m38_rail", "rhs_weap_pkm", "rhs_weap_pkp", "rhs_weap_m84", "rhs_weap_asval",
 "rhs_weap_asval_npz", "rhs_weap_dsr1", "rhs_weap_ak74mr", "rhs_weap_ak74m", "rhs_weap_vss",
@@ -51,12 +54,14 @@ opForAmmo = ["rhs_ammo_12g_slug", "rhs_ammo_12g_00buckshot", "B_338_Ball", "rhs_
 "rhs_B_545x39_Ball", "rhs_ammo_556x45_M855A1_Ball", "rhs_B_762x39_Ball",
 "rhs_B_762x39_Ball", "rhs_B_762x39_Ball", "rhs_B_762x39_Ball_89"]
 
-rejectedClasses = ["Default"]
-#Rifle does not contain any information to take
-#Rifle_Long_Base_F does not contain any information to take
+#Classes for launcher page
+bluForLaunchers = []
+bluForLauncherAmmo = []
+opForLaunchers = []
+opForLauncherAmo = []
+
 
 def findClass(className):
-	x = 0
 	print("Searching files for class [" + className + "]")
 	skipEnd = 0
 	onClass = False
@@ -108,7 +113,6 @@ def findClass(className):
 						cgreen + cbold + "Recursion ended" + cend + \
 						cviolet2 + "----------------------" + cend)
 					return classBody
-			x += 1
 	return classBody
 
 
