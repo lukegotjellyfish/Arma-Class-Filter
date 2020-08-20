@@ -3,17 +3,21 @@
 import os
 import re
 
+#console setup
 os.environ['LINES'] = "10000000"
 os.environ['COLUMNS'] = "500"
 os.system("")
 
+#cmd colours
 cred     = '\033[91m'
 cgreen   = '\33[32m'
 cgrey    = '\33[90m'
 cviolet2 = '\33[95m'
 
+#cmd styles
 cbold    = '\33[1m'
 
+#cmd endstyle
 cend     = '\033[0m'
 
 bluForWeapons = ["rhs_weap_M590_5RD", "rhs_weap_M107", "rhs_weap_XM2010",
@@ -51,23 +55,20 @@ rejectedClasses = ["Default"]
 #Rifle does not contain any information to take
 #Rifle_Long_Base_F does not contain any information to take
 
-def findClass(className, terminated=False):
+def findClass(className):
 	x = 0
 	print("Searching files for class [" + className + "]")
 	skipEnd = 0
 	onClass = False
-	passedClass = False
 	classBody = []
 	for configFile in fileList:
-		if terminated == True:
-			break
 		for line in configFile:
+			#Classes we want are either "\tclass x\n" or "\tclass x: y\n"
 			if line == "	class " + className + "\n" \
 				or line.startswith("	class " + className + ":") \
 					or onClass == True:
 
 				onClass = True
-
 
 				if line.startswith("	class"):
 					print("Class found " + line.replace("\n",""))
@@ -94,7 +95,6 @@ def findClass(className, terminated=False):
 				#If opening brace found, add a skip to avoid ending on next brace
 				#For the length o fthe class, skip = 1 as the class opens with a brace
 				if line.replace("	","") == "{\n":
-					passedClass = True
 					skipEnd += 1
 				#The next ending brace was found, discount skip
 				elif line.replace("	","") == "};\n":
@@ -104,8 +104,9 @@ def findClass(className, terminated=False):
 						onClass = False
 				classBody.append(line.replace("\n",""))
 				if onClass == False:
-					terminated = True
-					print("-------------Recursion ended-------------")
+					print(cviolet2 + "----------------------" + cend + \
+						cgreen + cbold + "Recursion ended" + cend + \
+						cviolet2 + "----------------------" + cend)
 					return classBody
 			x += 1
 	return classBody
@@ -153,7 +154,7 @@ for sideList in bluForWeapons, bluForAmmo, opForWeapons, opForAmmo:
 		orderedResult = list(reversed(orderedResult))
 		for classBody in orderedResult:
 			for classDetails in classBody:
-				print(classDetails)
+				print(cgrey + classDetails + cend)
 		print(cviolet2 + "-------------------------------" + \
 		cend + (cgreen + cbold + "Next class" + cend) + cviolet2 + \
 		"-------------------------------" + cend)
