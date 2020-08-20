@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-import csv
 import os
-import time
 import re
 
 os.environ['LINES'] = "10000000"
