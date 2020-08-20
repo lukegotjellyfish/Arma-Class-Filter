@@ -2,7 +2,8 @@
 # -*- coding: utf-8 -*-
 import csv
 import os
-
+import time
+import re
 
 os.environ['LINES'] = "10000000"
 os.environ['COLUMNS'] = "500"
@@ -48,60 +49,113 @@ opForAmmo = ["rhs_ammo_12g_slug", "rhs_ammo_12g_00buckshot", "B_338_Ball", "rhs_
 "rhs_B_545x39_Ball", "rhs_ammo_556x45_M855A1_Ball", "rhs_B_762x39_Ball",
 "rhs_B_762x39_Ball", "rhs_B_762x39_Ball", "rhs_B_762x39_Ball_89"]
 
-additionalClasses = []
+rejectedClasses = ["Default"]
+#Rifle does not contain any information to take
+#Rifle_Long_Base_F does not contain any information to take
 
-def SortPassedClass(line, _class, lines, xval):
-	x = 1
-	if line.startswith("	class " + _class + ";") \
-		or line.startswith("	class " + _class + ":") \
-		or line.startswith("	class " + _class + "\n"):
-		strippedLine = line.replace("\n","")
-		print("[" + cgreen + str(xval).zfill(5) + cend + "]" + cgrey + strippedLine + cend)
-		if line.count(": ") > 0:
-			inheritClass = line.split(": ")[1].replace("\n","")
-			if inheritClass not in additionalClasses:
-				print("found parent: " + inheritClass)
-				for _line in lines:
-					if _line.startswith("	class " + inheritClass):
-						print("Recursievly executed")
-						additionalClasses.append(inheritClass)
-						return SortPassedClass(_line, inheritClass, lines, x)
-						break
-					x += 1
-		return [x, strippedLine]
-	else:
-		return [0, ""]
+def findClass(className, terminated=False):
+	x = 0
+	print("Searching files for class [" + className + "]")
+	skipEnd = 0
+	onClass = False
+	passedClass = False
+	classBody = []
+	for configFile in fileList:
+		if terminated == True:
+			break
+		for line in configFile:
+			if line == "	class " + className + "\n" \
+				or line.startswith("	class " + className + ":") \
+					or onClass == True:
 
-def CsvCreator(filePath):
-	with open(filePath + "\\config.cpp", "r", encoding="utf-8") as configFile, \
-		 open("config.csv", "a", encoding="utf-8", newline='\n') as csvFile:
-		lines = configFile.readlines()
+				onClass = True
 
-		csvwriter = csv.writer(csvFile, delimiter=',')
 
-		x = 1
-		inheritance = []
-		for line in lines:
-			for array in bluForWeapons, bluForAmmo, opForWeapons, opForAmmo:
-				for classes in array, inheritance:
-					for _class in classes:
-						passed = SortPassedClass(line, _class, lines, x)
-						if passed[0] != 0:
-							if passed[0] > 1:
-								_x = passed[0]
-							else:
-								_x = x
-							csvwriter.writerow([filePath, _x, passed[1]])
-						x += 1
+				if line.startswith("	class"):
+					print("Class found " + line.replace("\n",""))
+					#This regex search is required for my generated config.cpp files as
+					# classes that end as empty are stripped to a single line with a comment
+					# marking them as stripped to a single line.
+					if line.count(":") == 1 :
+						_className = re.search("class [^\n:]*: ([^\n;]*)", line).group(1).replace("\n","")
+					else:
+						_className = re.search("class ([^\n;]*)", line).group(1).replace("\n","")
+
+					if _className != className:
+						print(cred + "New findClass(_className[" + _className + "] | className[" + className + "])" + cend)
+						#print("Inherit added on end of array: " + str(findClass(_className)))
+						foundClass = findClass(_className)
+						if len(foundClass) == 1:
+							for returnedList in foundClass:
+								for returnedItem in returnedList:
+									classBody.append(returnedItem)
+						else:
+							for returnedItem in foundClass:
+								classBody.append(returnedItem)
+
+				#If opening brace found, add a skip to avoid ending on next brace
+				#For the length o fthe class, skip = 1 as the class opens with a brace
+				if line.replace("	","") == "{\n":
+					passedClass = True
+					skipEnd += 1
+				#The next ending brace was found, discount skip
+				elif line.replace("	","") == "};\n":
+					skipEnd -= 1
+					#If skips are 0, the end of the class has been reached
+					if skipEnd == 0:
+						onClass = False
+				classBody.append(line.replace("\n",""))
+				if onClass == False:
+					terminated = True
+					print("-------------Recursion ended-------------")
+					return classBody
+			x += 1
+	return classBody
+
 
 
 #Clear config.csv/Create empty config.csv
 open("config.csv", "w", encoding="utf-8").close()
 
-for root, dirs, files in os.walk("..\\Mods"):
-	for file in files:
-		if file == 'config.cpp':
-			print(cviolet2 + "-------------------------------" + \
-				cend + (cgreen + cbold + root + cend) + cviolet2 + \
-				"-------------------------------" + cend)
-			CsvCreator(root)
+#List of file contents
+fileList = []
+walkList = ["S:\\Steam\\steamapps\\common\\Arma 3\\!Workshop\\@ArmaBases", "..\\Mods"]
+for walk in walkList:
+	for root, dirs, files in os.walk(walk):
+		for file in files:
+			if file == 'config.cpp':
+				with open(root + "\\" + file, "r", encoding="utf-8") as f:
+					fileList.append(f.readlines())
+					print(cviolet2 + "-------------------------------" + \
+					cend + (cgreen + cbold + root + cend) + cviolet2 + \
+					"-------------------------------" + cend)
+
+
+
+
+for sideList in bluForWeapons, bluForAmmo, opForWeapons, opForAmmo:
+	for _class in sideList:
+		#Fetch class to get details of
+		result = findClass(_class)
+
+		#Create list for sorting of each class in returned class details
+		orderedResult = []
+		onClass = False
+		construct = []
+		for a in result:
+			if a.startswith("	class") or onClass == True:
+				onClass = True
+				construct.append(a)
+			if a == "	};":
+				construct.append(a)
+				onClass = False
+				orderedResult.append(construct)
+				construct = []
+
+		orderedResult = list(reversed(orderedResult))
+		for classBody in orderedResult:
+			for classDetails in classBody:
+				print(classDetails)
+		print(cviolet2 + "-------------------------------" + \
+		cend + (cgreen + cbold + "Next class" + cend) + cviolet2 + \
+		"-------------------------------" + cend)
