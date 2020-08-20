@@ -35,13 +35,13 @@ attributeSkip = ["author","url","requiredVersion", "onLoad","dlc","category","ed
 "minRange", "minRangeProbab", "midRange", "midRangeProbab", "maxRange", "maxRangeProbab", "showToPlayer", "aiRateOfFire", "aiRateOfFireDistance",
 "requiredOpticType","aiDispersionCoefY", "aiDispersionCoefX","allowedSlots", "type", "descriptionShort","soundContinuous","soundBurst",
 "deployedPivot","hasBipod","holsterScale","holsterOffset","RMBhint","priority","onHoverText","cartridge","suppressionRadiusBulletClose","visibleFire",
-"audibleFire","maxLeadSpeed"]
+"audibleFire","maxLeadSpeed","discretedistance[]"]
 
 multiAttributeSkip = ["requiredAddons[]", "controls[]","cargoAction[]","memoryPointsGetInCargo[]","memoryPointsGetInCargoDir[]","cargoDoors[]","textures[]",
 "aggregateReflectors[]","mat[]","HiddenSelectionsTextures[]","soundServo[]", "modes[]","hiddenSelections[]","hiddenSelectionsTextures[]",
 "handAnim[]","discreteDistanceCameraPoint[]", "caseless[]", "soundBullet[]", "sounds[]", "drySound[]","muzzles[]",
 "bullet1[]","bullet2[]","bullet3[]","bullet4[]","bullet5[]","bullet6[]","bullet7[]","bullet8[]","bullet9[]","bullet10[]","bullet11[]","bullet12[]",
-"reloadMagazineSound[]","changeFiremodeSound[]"]
+"reloadMagazineSound[]","changeFiremodeSound[]","reloadmagazinesound[]"]
 
 classSkip = ["class CfgMovesBasic", "class RscInGameUI","class CfgMovesMaleSdr: CfgMovesBasic", "class ObjectTexture", "class DoorB", "class DoorL: DoorB",
 "class DoorR: DoorB", "class TurnIn", "class CargoTurret_01: CargoTurret", "class AnimationSources", "class UserActions","class RHS_Engine_Smoke",
@@ -169,7 +169,8 @@ def newFile(root, file):
 mods = ["S:\\Steam\\steamapps\\common\\Arma 3\\!Workshop\\@RHSAFRF",
 		"S:\\Steam\\steamapps\\common\\Arma 3\\!Workshop\\@RHSUSAF",
 		"S:\\Steam\\steamapps\\common\\Arma 3\\!Workshop\\@RHSGREF",
-		"S:\\Steam\\steamapps\\common\\Arma 3\\!Workshop\\@RHSSAF"]
+		"S:\\Steam\\steamapps\\common\\Arma 3\\!Workshop\\@RHSSAF",
+		"S:\\Steam\\steamapps\\common\\Arma 3\\!Workshop\\@ArmaBases"]
 
 for x in mods:
 	for root, dirs, files in os.walk(x):
