@@ -60,6 +60,10 @@ bluForLauncherAmmo = []
 opForLaunchers = []
 opForLauncherAmo = []
 
+#Classes for vehicles
+bluForVehicles = []
+opForVehicles = []
+
 
 def findClass(className):
 	print("Searching files for class [" + className + "]")
