@@ -37,21 +37,41 @@ Opfor:
 Blufor:
 	M1025A2 (Unarmed)   = rhsusf_m1025_w
 	M1025A2 (M2)        = rhsusf_m1025_w_m2
+		100x6 M2 Ball
 	M113A3 (MEV)        = rhsusf_m113_usarmy_medical
 	M1025A2 (Mk19)      = rhsusf_m1025_w_Mk19
+		48x6 M430A1 HEDP
+	M1220               = rhsusf_m1220_usarmy_wd
+	M1220 (Mk19)        = rhsusf_M1220_MK19_usarmy_wd
+		48*14 M430A1 HEDP
 	M113A3 (M2)         = rhsusf_m113_usarmy
+
 	M1045A2 (M220A2)    = rhsusf_m1045_w
+		
 	M1117 ASV           = rhsusf_m1117_w
+		
 	M113A3 (Mk19)       = rhsusf_m113_usarmy_Mk19
+		
 	Ural-4320 (ZU-23-2) = rhsgref_cdf_b_ural_Zu23
+		
 	M1232               = rhsusf_m1232_usarmy_wd
 	M1220 (M2 CROWS)    = rhsusf_m1220_m153_m2_usarmy_wd
+		
 	M1232 (Mk19)        = rhsusf_m1232_MK19_usarmy_wd
+		
 	M6A2                = RHS_M6_wd
+		
 	M2A2ODS             = RHS_M2A2_wd
+		
 	M2A2ODS (BUSK 1)    = rhs_m2a2_buski_wd
+		
 	M1A1HC              = rhsusf_m1a1hc_wd
+		
 	M1A1FEP             = rhsusf_m1a1fep_wd
+		
 	M1A1SA (TUSK I)     = rhsusf_m1a1aim_tuski_wd
+		
 	M2A3 (BUSK III)     = RHS_M2A3_BUSKIII_WD
+		
 	M1A2SEPv1 (TUSK II) = rhsusf_m1a2sep1tuskiiwd_usarmy
+		
