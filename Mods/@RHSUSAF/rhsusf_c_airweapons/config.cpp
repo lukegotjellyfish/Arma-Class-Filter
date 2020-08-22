@@ -290,9 +290,6 @@ class CfgAmmo
 		thrust=390;
 		fuseDistance=300;
 		explosionAngle=60;
-		CraterEffects="AAMissileCrater";
-		explosionEffects="AAMissileExplosion";
-		effectsMissile="missile3";
 		whistleDist=20;
 		cmImmunity=0.95999998;
 		missileLockMaxDistance=8000;
@@ -495,8 +492,6 @@ class CfgAmmo
 		maneuvrability=21;
 		timeToLive=70;
 		whistleDist=4;
-		effectsMissileInit="MissileDAR1";
-		effectsMissile="missile2";
 		missileLockMaxDistance=8000;
 		missileLockMinDistance=200;
 		missileLockMaxSpeed=56;
@@ -606,8 +601,6 @@ class CfgAmmo
 		irLock=1;
 		laserLock=1;
 		muzzleEffect="";
-		effectsMissileInit="MissileDAR1";
-		effectsMissile="missile1";
 		whistleDist=4;
 		aiAmmoUsageFlags="64+128 + 512";
 		missileLockMaxDistance=8000;
@@ -668,20 +661,6 @@ class CfgAmmo
 			frequency=20;
 			distance=1;
 		};
-		class CamShakeFire
-		{
-			power="(122^0.25)";
-			duration="((round (122^0.5))*0.2 max 0.2)";
-			frequency=20;
-			distance="((122^0.5)*8)";
-		};
-		class CamShakePlayerFire
-		{
-			power=2;
-			duration=0.1;
-			frequency=20;
-			distance=1;
-		};
 		SoundSetExplosion[]=
 		{
 			"RocketsHeavy_Exp_SoundSet",
@@ -691,7 +670,6 @@ class CfgAmmo
 	};
 	class RHS_ammo_AGM_114N: RHS_ammo_AGM_114M
 	{
-		AIAmmoUsageFlags="64+128";
 		cost=100;
 		hit=210;
 		indirectHit=85;
@@ -705,7 +683,6 @@ class CfgAmmo
 			frequency=20;
 			distance="((5 + 110^0.5)*8)";
 		};
-		explosionEffects="RHS_FAE_Explosion";
 	};
 	class RHS_Ammo_DAGR: MissileBase
 	{
@@ -733,9 +710,6 @@ class CfgAmmo
 		fuseDistance=50;
 		whistleDist=4;
 		muzzleEffect="";
-		effectsMissileInit="MissileDAR1";
-		effectsMissile="missile1";
-		explosionEffects="ATMissileExplosion";
 		weaponLockSystem=4;
 		manualControl=1;
 		aiAmmoUsageFlags="64 + 128+512";
@@ -797,20 +771,6 @@ class CfgAmmo
 			frequency=20;
 			distance=1;
 		};
-		class CamShakeFire
-		{
-			power=3.3234601;
-			duration=2.2;
-			frequency=20;
-			distance=88.3629;
-		};
-		class CamShakePlayerFire
-		{
-			power=2;
-			duration=0.1;
-			frequency=20;
-			distance=1;
-		};
 	};
 	class rhs_ammo_agm65: rhs_ammo_Hellfire_AT
 	{
@@ -849,9 +809,6 @@ class CfgAmmo
 		thrustTime=2;
 		thrust=246;
 		fuseDistance=500;
-		CraterEffects="ATRocketCrater";
-		explosionEffects="ATRocketExplosion";
-		effectsMissileInit="PylonBackEffects";
 		muzzleEffect="";
 		class Hiteffects
 		{

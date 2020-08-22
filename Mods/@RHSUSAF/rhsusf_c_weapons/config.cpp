@@ -4584,7 +4584,6 @@ class CfgAmmo
 		explosive=0.40000001;
 		caliber=2.05761;
 		craterEffects="ATMissileCrater";
-		explosionEffects="RHS_ExploSmallAmmoExplosion";
 		explosionSoundEffect="DefaultExplosion";
 	};
 	class B_556x45_Ball;
@@ -4727,29 +4726,6 @@ class CfgAmmo
 		hit=8;
 		indirectHit=0;
 		indirectHitRange=0.60000002;
-		class HitEffects
-		{
-			Hit_Foliage_green="ImpactLeavesGreen";
-			Hit_Foliage_Dead="ImpactLeavesDead";
-			Hit_Foliage_Green_big="ImpactLeavesGreenBig";
-			Hit_Foliage_Palm="ImpactLeavesPalm";
-			Hit_Foliage_Pine="ImpactLeavesPine";
-			hitFoliage="ImpactLeaves";
-			hitGlass="ImpactGlass";
-			hitGlassArmored="ImpactGlassThin";
-			hitWood="ImpactWood";
-			hitMetal="ImpactMetal";
-			hitMetalPlate="ImpactMetal";
-			hitBuilding="ImpactPlaster";
-			hitPlastic="ImpactPlastic";
-			hitRubber="ImpactRubber";
-			hitConcrete="ImpactConcrete";
-			hitMan="ImpactEffectsBlood";
-			hitGroundSoft="ImpactEffectsSmall";
-			hitGroundHard="ImpactEffectsHardGround";
-			hitWater="ImpactEffectsWater";
-			hitVirtual="ImpactMetal";
-		};
 	};
 	class rhs_ammo_12g_00buckshot: B_12Gauge_Pellets
 	{
@@ -4775,29 +4751,6 @@ class CfgAmmo
 		caliber=0.23999999;
 		typicalSpeed=403.85999;
 		airFriction=-0.0063399998;
-		class HitEffects
-		{
-			Hit_Foliage_green="ImpactLeavesGreen";
-			Hit_Foliage_Dead="ImpactLeavesDead";
-			Hit_Foliage_Green_big="ImpactLeavesGreenBig";
-			Hit_Foliage_Palm="ImpactLeavesPalm";
-			Hit_Foliage_Pine="ImpactLeavesPine";
-			hitFoliage="ImpactLeaves";
-			hitGlass="ImpactGlass";
-			hitGlassArmored="ImpactGlassThin";
-			hitWood="ImpactWood";
-			hitMetal="ImpactMetal";
-			hitMetalPlate="ImpactMetal";
-			hitBuilding="ImpactPlaster";
-			hitPlastic="ImpactPlastic";
-			hitRubber="ImpactRubber";
-			hitConcrete="ImpactConcrete";
-			hitMan="ImpactEffectsBlood";
-			hitGroundSoft="ImpactEffectsSmall";
-			hitGroundHard="ImpactEffectsHardGround";
-			hitWater="ImpactEffectsWater";
-			hitVirtual="ImpactMetal";
-		};
 	};
 	class rhs_ammo_doomsday_buckshot: rhs_ammo_m576_buckshot
 	{
@@ -4828,8 +4781,6 @@ class CfgAmmo
 		timeToLive=5;
 		deflecting=0;
 		explosive=1;
-		explosionEffects="RHSUSF_12gExplosion";
-		CraterEffects="";
 		dangerRadiusBulletClose=16;
 		dangerRadiusHit=40;
 		suppressionRadiusHit=14;
@@ -4913,29 +4864,6 @@ class CfgAmmo
 		deflecting=0;
 		typicalSpeed=1000;
 		caliber=0.86666697;
-		class HitEffects
-		{
-			hitMetal="ImpactMetalSabotSmall";
-			hitMetalPlate="ImpactMetalSabotSmall";
-			hitBuilding="ImpactConcreteSabotSmall";
-			hitConcrete="ImpactConcreteSabotSmall";
-			hitGroundSoft="ImpactEffectsGroundSabot";
-			hitGroundHard="ImpactEffectsGroundSabot";
-			Hit_Foliage_green="ImpactLeavesGreen";
-			Hit_Foliage_Dead="ImpactLeavesDead";
-			Hit_Foliage_Green_big="ImpactLeavesGreenBig";
-			Hit_Foliage_Palm="ImpactLeavesPalm";
-			Hit_Foliage_Pine="ImpactLeavesPine";
-			hitFoliage="ImpactLeaves";
-			hitGlass="ImpactGlass";
-			hitGlassArmored="ImpactGlassThin";
-			hitWood="ImpactWood";
-			hitPlastic="ImpactPlastic";
-			hitRubber="ImpactRubber";
-			hitMan="ImpactEffectsBlood";
-			hitWater="ImpactEffectsWater";
-			default_mat="ImpactEffectsGroundSabot";
-		};
 	};
 	class rhs_ammo_45ACP_MHP: BulletBase
 	{
@@ -5023,23 +4951,6 @@ class CfgAmmo
 		fuseDistance=5;
 		whistleDist=4;
 		timeToLive=12;
-		CraterEffects="ATRocketCrater";
-		explosionEffects="ATRocketExplosion";
-		effectsMissileInit="RocketBackEffectsRPG";
-		effectsMissile="missile3";
-		class CamShakeFire
-		{
-			power=10;
-			duration=0.5;
-			frequency=20;
-			distance=30;
-		};
-		class CamShakePlayerFire
-		{
-			power=5;
-			duration=0.1;
-			frequency=20;
-		};
 	};
 	class rhs_ammo_M136_penetrator: rhsusf_ammo_basic_penetrator
 	{
@@ -5120,9 +5031,6 @@ class CfgAmmo
 		whistleDist=16;
 		cmImmunity=0.94999999;
 		maxcontrolrange=7000;
-		CraterEffects="AAMissileCrater";
-		effectsMissile="RHS_FIM92_Fired";
-		effectsMissileInit="RocketBackEffectsRPG";
 		submunitionConeType[]=
 		{
 			"randomcenter",
@@ -5240,8 +5148,6 @@ class CfgAmmo
 		simulationStep=0.001;
 		cmImmunity=0.89999998;
 		cost=1000;
-		effectsMissile="missile2";
-		effectsMissileInit="RocketBackEffectsRPG";
 		effectsSmoke="SmokeShellWhite";
 		missileLockMaxDistance=3000;
 		missileLockMinDistance=100;
@@ -5351,13 +5257,6 @@ class CfgAmmo
 			1,
 			1200
 		};
-		soundFly[]=
-		{
-			"A3\Sounds_F\weapons\Rockets\new_rocket_6",
-			5.6234136,
-			1,
-			35
-		};
 		hit=260;
 		indirectHit=11;
 		indirectHitRange=3.0999999;
@@ -5370,10 +5269,6 @@ class CfgAmmo
 		thrustTime=10;
 		thrust=0;
 		fuseDistance=15;
-		CraterEffects="ATMissileCrater";
-		explosionEffects="ATMissileExplosion";
-		effectsMissileInit="RHSUSF_SMAW_backblast";
-		effectsMissile="RHSUSF_SMAW_MissileTrail";
 		simulationStep=0.02;
 		airLock=0;
 		irLock=0;
@@ -5392,20 +5287,6 @@ class CfgAmmo
 			power=110;
 			duration="((round (110^0.25))*0.2 max 0.2)";
 			frequency=20;
-			distance=1;
-		};
-		class CamShakeFire
-		{
-			power="(20^0.25)";
-			duration="((round (20^0.5))*0.2 max 0.2)";
-			frequency=20;
-			distance="((20^0.5)*8)";
-		};
-		class CamShakePlayerFire
-		{
-			power=0.1;
-			duration=0.2;
-			frequency=8;
 			distance=1;
 		};
 	};
@@ -5430,13 +5311,6 @@ class CfgAmmo
 			1,
 			1200
 		};
-		soundFly[]=
-		{
-			"A3\Sounds_F\weapons\Rockets\new_rocket_6",
-			5.6234136,
-			1,
-			35
-		};
 		hit=150;
 		indirectHit=51;
 		indirectHitRange=6.6999998;
@@ -5449,10 +5323,6 @@ class CfgAmmo
 		thrustTime=10;
 		thrust=0;
 		fuseDistance=15;
-		CraterEffects="ATMissileCrater";
-		explosionEffects="ATMissileExplosion";
-		effectsMissileInit="RHSUSF_SMAW_backblast";
-		effectsMissile="RHSUSF_SMAW_MissileTrail";
 		simulationStep=0.02;
 		airLock=0;
 		irLock=0;
@@ -5471,20 +5341,6 @@ class CfgAmmo
 			power=110;
 			duration="((round (110^0.25))*0.2 max 0.2)";
 			frequency=20;
-			distance=1;
-		};
-		class CamShakeFire
-		{
-			power="(20^0.25)";
-			duration="((round (20^0.5))*0.2 max 0.2)";
-			frequency=20;
-			distance="((20^0.5)*8)";
-		};
-		class CamShakePlayerFire
-		{
-			power=0.1;
-			duration=0.2;
-			frequency=8;
 			distance=1;
 		};
 	};
@@ -5515,10 +5371,6 @@ class CfgAmmo
 		thrustTime=0;
 		thrust=0;
 		fuseDistance=15;
-		CraterEffects="ATMissileCrater";
-		explosionEffects="ATMissileExplosion";
-		effectsMissileInit="RHSUSF_SMAW_cartrige";
-		effectsMissile="EmptyEffect";
 		simulationStep=0.02;
 		airLock=0;
 		irLock=0;
@@ -5537,20 +5389,6 @@ class CfgAmmo
 			power=110;
 			duration="((round (110^0.25))*0.2 max 0.2)";
 			frequency=20;
-			distance=1;
-		};
-		class CamShakeFire
-		{
-			power="(5^0.25)";
-			duration="((round (20^0.5))*0.2 max 0.2)";
-			frequency=20;
-			distance="((20^0.5)*8)";
-		};
-		class CamShakePlayerFire
-		{
-			power=0.1;
-			duration=0.2;
-			frequency=8;
 			distance=1;
 		};
 	};
@@ -5604,13 +5442,6 @@ class CfgAmmo
 			"soundHit4",
 			0.25
 		};
-		soundFly[]=
-		{
-			"A3\Sounds_F\arsenal\weapons_static\Missile_Launcher\rocket_fly",
-			1.1,
-			1.1,
-			900
-		};
 		hit=270;
 		indirectHit=15;
 		indirectHitRange=3.0999999;
@@ -5623,10 +5454,6 @@ class CfgAmmo
 		thrustTime=0.1;
 		thrust=0.1;
 		fuseDistance=15;
-		CraterEffects="ATMissileCrater";
-		explosionEffects="ATMissileExplosion";
-		effectsMissileInit="";
-		effectsMissile="RHSUSF_SMAW_MissileTrail";
 		simulationStep=0.02;
 		airLock=0;
 		irLock=0;
@@ -5645,20 +5472,6 @@ class CfgAmmo
 			power=110;
 			duration="((round (110^0.25))*0.2 max 0.2)";
 			frequency=20;
-			distance=1;
-		};
-		class CamShakeFire
-		{
-			power=5;
-			duration="((round (20^0.5))*0.2 max 0.2)";
-			frequency=20;
-			distance="((20^0.5)*8)";
-		};
-		class CamShakePlayerFire
-		{
-			power=2;
-			duration=0.2;
-			frequency=8;
 			distance=1;
 		};
 	};
@@ -5716,13 +5529,6 @@ class CfgAmmo
 			"soundHit4",
 			0.25
 		};
-		soundFly[]=
-		{
-			"A3\Sounds_F\arsenal\weapons_static\Missile_Launcher\rocket_fly",
-			1.1,
-			1.1,
-			900
-		};
 		hit=250;
 		indirectHit=45;
 		indirectHitRange=5.0999999;
@@ -5734,10 +5540,6 @@ class CfgAmmo
 		thrustTime=0.1;
 		thrust=0.1;
 		fuseDistance=15;
-		CraterEffects="ATMissileCrater";
-		explosionEffects="ATMissileExplosion";
-		effectsMissileInit="";
-		effectsMissile="RHSUSF_SMAW_MissileTrail";
 		simulationStep=0.02;
 		airLock=0;
 		irLock=0;
@@ -5756,20 +5558,6 @@ class CfgAmmo
 			power=110;
 			duration="((round (110^0.25))*0.2 max 0.2)";
 			frequency=20;
-			distance=1;
-		};
-		class CamShakeFire
-		{
-			power=5;
-			duration="((round (20^0.5))*0.2 max 0.2)";
-			frequency=20;
-			distance="((20^0.5)*8)";
-		};
-		class CamShakePlayerFire
-		{
-			power=2;
-			duration=0.2;
-			frequency=8;
 			distance=1;
 		};
 	};
@@ -5819,13 +5607,6 @@ class CfgAmmo
 			"soundHit4",
 			0.25
 		};
-		soundFly[]=
-		{
-			"A3\Sounds_F\arsenal\weapons_static\Missile_Launcher\rocket_fly",
-			1.1,
-			1.1,
-			900
-		};
 		hit=75;
 		indirectHit=65;
 		indirectHitRange=11;
@@ -5837,10 +5618,6 @@ class CfgAmmo
 		thrustTime=0.1;
 		thrust=0.1;
 		fuseDistance=15;
-		CraterEffects="ArtyShellCrater";
-		explosionEffects="MortarExplosion";
-		effectsMissileInit="";
-		effectsMissile="RHSUSF_SMAW_MissileTrail";
 		simulationStep=0.02;
 		airLock=0;
 		irLock=0;
@@ -5859,20 +5636,6 @@ class CfgAmmo
 			power=110;
 			duration="((round (110^0.25))*0.2 max 0.2)";
 			frequency=20;
-			distance=1;
-		};
-		class CamShakeFire
-		{
-			power=5;
-			duration="((round (20^0.5))*0.2 max 0.2)";
-			frequency=20;
-			distance="((20^0.5)*8)";
-		};
-		class CamShakePlayerFire
-		{
-			power=2;
-			duration=0.2;
-			frequency=8;
 			distance=1;
 		};
 	};
@@ -5918,13 +5681,6 @@ class CfgAmmo
 			"soundHit4",
 			0.25
 		};
-		soundFly[]=
-		{
-			"A3\Sounds_F\arsenal\weapons_static\Missile_Launcher\rocket_fly",
-			1.1,
-			1.1,
-			900
-		};
 		hit=30;
 		indirectHit=0;
 		indirectHitRange=2;
@@ -5936,11 +5692,7 @@ class CfgAmmo
 		thrustTime=0.1;
 		thrust=0.1;
 		fuseDistance=0;
-		CraterEffects="ExploAmmoCrater";
-		explosionEffects="ExplosionEffects";
 		effectsSmoke="SmokeShellWhite";
-		effectsMissileInit="";
-		effectsMissile="RHSUSF_SMAW_MissileTrail";
 		simulationStep=0.02;
 		airLock=0;
 		irLock=0;
@@ -5959,20 +5711,6 @@ class CfgAmmo
 			power=110;
 			duration="((round (110^0.25))*0.2 max 0.2)";
 			frequency=20;
-			distance=1;
-		};
-		class CamShakeFire
-		{
-			power=5;
-			duration="((round (20^0.5))*0.2 max 0.2)";
-			frequency=20;
-			distance="((20^0.5)*8)";
-		};
-		class CamShakePlayerFire
-		{
-			power=2;
-			duration=0.2;
-			frequency=8;
 			distance=1;
 		};
 	};
@@ -6018,13 +5756,6 @@ class CfgAmmo
 			"soundHit4",
 			0.25
 		};
-		soundFly[]=
-		{
-			"A3\Sounds_F\arsenal\weapons_static\Missile_Launcher\rocket_fly",
-			1.1,
-			1.1,
-			900
-		};
 		hit=30;
 		indirectHit=0;
 		indirectHitRange=1;
@@ -6036,11 +5767,7 @@ class CfgAmmo
 		thrustTime=0.1;
 		thrust=0.1;
 		fuseDistance=0;
-		CraterEffects="ExploAmmoCrater";
-		explosionEffects="ExplosionEffects";
 		effectFlare="FlareShell";
-		effectsMissileInit="";
-		effectsMissile="RHSUSF_SMAW_MissileTrail";
 		simulationStep=0.02;
 		airLock=0;
 		irLock=0;
@@ -6061,20 +5788,6 @@ class CfgAmmo
 			frequency=20;
 			distance=1;
 		};
-		class CamShakeFire
-		{
-			power=5;
-			duration="((round (20^0.5))*0.2 max 0.2)";
-			frequency=20;
-			distance="((20^0.5)*8)";
-		};
-		class CamShakePlayerFire
-		{
-			power=2;
-			duration=0.2;
-			frequency=8;
-			distance=1;
-		};
 	};
 	class PipeBombBase;
 	class rhsusf_m112_ammo: PipeBombBase
@@ -6092,7 +5805,6 @@ class CfgAmmo
 		};
 		defaultMagazine="rhsusf_m112_mag";
 		ExplosionEffects="MineNondirectionalExplosionSmall";
-		CraterEffects="MineNondirectionalCraterSmall";
 		whistleDist=32;
 		mineInconspicuousness=5;
 		mineTrigger="RemoteTrigger";
@@ -6113,7 +5825,6 @@ class CfgAmmo
 			1500
 		};
 		ExplosionEffects="MineNondirectionalExplosion";
-		CraterEffects="MineNondirectionalCrater";
 		whistleDist=32;
 		mineInconspicuousness=5;
 		mineTrigger="RemoteTrigger";
@@ -6142,8 +5853,6 @@ class CfgAmmo
 			"ATmine_Tail_SoundSet",
 			"Explosion_Debris_SoundSet"
 		};
-		explosionEffects="ATMineExplosion";
-		CraterEffects="ATMineCrater";
 		whistleDist=8;
 		cost=200;
 		mineInconspicuousness=30;
@@ -6172,7 +5881,6 @@ class CfgAmmo
 	};
 	class rhsusf_mine_m14_ammo: MineBase
 	{
-		AIAmmoUsageFlags="16";
 		hit=3;
 		indirectHit=30;
 		indirectHitRange=0.2;
@@ -6186,8 +5894,6 @@ class CfgAmmo
 			1,
 			2000
 		};
-		explosionEffects="MineExplosion";
-		CraterEffects="MineCrater";
 		whistleDist=8;
 		cost=200;
 		mineInconspicuousness=3;
@@ -6202,8 +5908,6 @@ class CfgAmmo
 		minDamageForCamShakeHit=1.55;
 		mineInconspicuousness=35;
 		mineTrigger="rhs_m49a1_3m_trigger";
-		CraterEffects="";
-		explosionEffects="";
 		rhs_flare_used="rhsusf_mine_m49a1_used";
 		rhs_flare_offset[]={0,0,0.30000001};
 		class CamShakeExplode
@@ -6309,50 +6013,12 @@ class CfgAmmo
 		whistleDist=16;
 		typicalSpeed=185;
 		caliber=0.5;
-		CraterEffects="";
-		explosionEffects="";
 		explosionSoundEffect="";
 		simulation="shotShell";
-		class HitEffects
-		{
-			hitMetal="RHSUSF_40mmPracticePuff";
-			hitMetalPlate="RHSUSF_40mmPracticePuff";
-			hitBuilding="RHSUSF_40mmPracticePuff";
-			hitConcrete="RHSUSF_40mmPracticePuff";
-			hitGroundSoft="RHSUSF_40mmPracticePuff";
-			hitGroundHard="RHSUSF_40mmPracticePuff";
-			Hit_Foliage_green="RHSUSF_40mmPracticePuff";
-			Hit_Foliage_Dead="RHSUSF_40mmPracticePuff";
-			Hit_Foliage_Green_big="RHSUSF_40mmPracticePuff";
-			Hit_Foliage_Palm="RHSUSF_40mmPracticePuff";
-			Hit_Foliage_Pine="RHSUSF_40mmPracticePuff";
-			hitFoliage="RHSUSF_40mmPracticePuff";
-			hitGlass="RHSUSF_40mmPracticePuff";
-			hitGlassArmored="RHSUSF_40mmPracticePuff";
-			hitWood="RHSUSF_40mmPracticePuff";
-			hitPlastic="RHSUSF_40mmPracticePuff";
-			hitRubber="RHSUSF_40mmPracticePuff";
-			hitMan="RHSUSF_40mmPracticePuff";
-			hitWater="ImpactEffectsWater";
-		};
 		class CamShakeHit
 		{
 			power=20;
 			duration="((round (20^0.25))*0.2 max 0.2)";
-			frequency=20;
-			distance=1;
-		};
-		class CamShakeFire
-		{
-			power="(0^0.25)";
-			duration="((round (0^0.5))*0.2 max 0.2)";
-			frequency=20;
-			distance="((0^0.5)*8)";
-		};
-		class CamShakePlayerFire
-		{
-			power=0;
-			duration=0.1;
 			frequency=20;
 			distance=1;
 		};
@@ -6378,25 +6044,6 @@ class CfgAmmo
 	class rhs_ammo_m397: rhsusf_40mm_HE
 	{
 		deflecting=90;
-		class HitEffects
-		{
-			hitMetal="RHS_m397_hit";
-			hitMetalPlate="RHS_m397_hit";
-			hitBuilding="RHS_m397_hit";
-			hitConcrete="RHS_m397_hit";
-			hitGroundSoft="RHS_m397_hit";
-			hitGroundHard="RHS_m397_hit";
-			default_mat="RHS_m397_hit";
-			hitFoliage="RHS_m397_hit";
-			hitGlass="RHS_m397_hit";
-			hitGlassArmored="RHS_m397_hit";
-			hitWood="RHS_m397_hit";
-			hitPlastic="RHS_m397_hit";
-			hitRubber="RHS_m397_hit";
-			hitMan="RHS_m397_hit";
-			hitWater="RHS_m397_hit";
-			hitVirtual="RHS_m397_hit";
-		};
 		typicalspeed=75;
 		deleteParentWhenTriggered=1;
 		submunitionAmmo="rhs_ammo_m397_explosion";
@@ -6451,8 +6098,6 @@ class CfgAmmo
 	};
 	class rhs_ammo_an_m14_th3: SmokeShell
 	{
-		CraterEffects="NoCrater";
-		explosionEffects="NoExplosion";
 		cost=150;
 		timeToLive=25;
 		effectsSmoke="RHS_Incendenary_Grenade";
@@ -6487,8 +6132,6 @@ class CfgAmmo
 		explosive=0.5;
 		deflecting=0;
 		caliber=0.84666699;
-		CraterEffects="";
-		explosionEffects="";
 		soundHit[]=
 		{
 			"",
@@ -6514,29 +6157,6 @@ class CfgAmmo
 		hitMetalplate[]={};
 		hitWater[]={};
 		bulletFly[]={};
-		class HitEffects
-		{
-			hitMetal="";
-			hitMetalPlate="";
-			hitBuilding="";
-			hitConcrete="";
-			hitGroundSoft="";
-			hitGroundHard="";
-			Hit_Foliage_green="";
-			Hit_Foliage_Dead="";
-			Hit_Foliage_Green_big="";
-			Hit_Foliage_Palm="";
-			Hit_Foliage_Pine="";
-			hitFoliage="";
-			hitGlass="";
-			hitGlassArmored="";
-			hitWood="";
-			hitPlastic="";
-			hitRubber="";
-			hitMan="";
-			hitWater="";
-			default_mat="";
-		};
 	};
 	class rhs_ammo_m7a3_cs: GrenadeHand
 	{
@@ -10140,13 +9760,6 @@ class CfgWeapons
 			"CBA_Carl_Gustaf"
 		};
 		recoil="rhs_weap_smaw_SR_recoil";
-		soundFly[]=
-		{
-			"A3\sounds_f\weapons\rockets\rocket_fly_1",
-			0.31622776,
-			1.5,
-			900
-		};
 		canLock=0;
 		weaponLockDelay=3;
 		lockAcquire=0;
@@ -10163,11 +9776,6 @@ class CfgWeapons
 		magazines[]=
 		{
 			"rhs_m136_mag"
-		};
-		soundFly[]=
-		{
-			"RHSUSF_120mm_Shot_SoundSet",
-			"RHSUSF_autocannon_Tail_SoundSet"
 		};
 		recoil="recoil_single_law";
 		dispersion=0.15000001;
@@ -10250,13 +9858,6 @@ class CfgWeapons
 		{
 			allowedslots[]={};
 			mass=92.400002;
-		};
-		soundFly[]=
-		{
-			"A3\sounds_f\weapons\rockets\rocket_fly_1",
-			0.316228,
-			1.5,
-			700
 		};
 		value=20;
 		canLock=2;

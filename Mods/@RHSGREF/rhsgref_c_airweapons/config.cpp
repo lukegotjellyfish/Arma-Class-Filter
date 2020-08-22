@@ -59,7 +59,6 @@ class CfgAmmo
 		timetolive=30;
 		whistledist=3;
 		proxyShape="\rhsgref\addons\rhsgref_airweapons\zt3\rhs_m_zt3";
-		AIAmmoUsageFlags="64+128+512";
 		missileManualControlCone=45;
 		rhs_saclos=1;
 		rhs_ballisticMode=0;
@@ -117,8 +116,6 @@ class CfgAmmo
 		fuseDistance=50;
 		whistleDist=4;
 		muzzleEffect="";
-		effectsMissileInit="MissileDAR1";
-		effectsMissile="missile1";
 		aiAmmoUsageFlags="64+128 + 512";
 		lockSeekRadius=120;
 		missileLockMaxDistance=10000;
@@ -178,20 +175,6 @@ class CfgAmmo
 		{
 			power=20;
 			duration="((round (20^0.25))*0.2 max 0.2)";
-			frequency=20;
-			distance=1;
-		};
-		class CamShakeFire
-		{
-			power="(19^0.25)";
-			duration="((round (19^0.5))*0.2 max 0.2)";
-			frequency=20;
-			distance="((19^0.5)*8)";
-		};
-		class CamShakePlayerFire
-		{
-			power=0.0099999998;
-			duration=0.1;
 			frequency=20;
 			distance=1;
 		};

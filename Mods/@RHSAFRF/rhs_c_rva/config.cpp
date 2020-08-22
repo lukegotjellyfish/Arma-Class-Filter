@@ -134,18 +134,8 @@ class CfgAmmo
 		thrustTime=25;
 		thrust=80;
 		fuseDistance=5;
-		CraterEffects="RHS_HeavyBombCrater";
-		explosionEffects="RHS_HeavyBombExplosion";
-		effectsMissile="missile5";
 		whistleOnFire=2;
 		whistleDist=60;
-		soundFly[]=
-		{
-			"A3\Sounds_F\weapons\Rockets\rocket_fly_2",
-			2.5,
-			1.5,
-			10800
-		};
 		RHS_WarheadType="REPLACE";
 		RHS_FuseRange=25;
 		SoundSetExplosion[]=

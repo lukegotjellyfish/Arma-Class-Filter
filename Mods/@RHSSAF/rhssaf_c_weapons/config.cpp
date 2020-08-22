@@ -461,8 +461,6 @@ class CfgAmmo
 	};
 	class rhssaf_ammo_brz_m88: SmokeShell
 	{
-		CraterEffects="NoCrater";
-		explosionEffects="NoExplosion";
 		cost=150;
 		timeToLive=25;
 		effectsSmoke="RHS_Incendenary_Grenade";
@@ -497,8 +495,6 @@ class CfgAmmo
 		simulationStep=0.001;
 		explosionTime=-1;
 		timeToLive=5;
-		explosionEffects="";
-		CraterEffects="";
 		SoundSetExplosion[]={};
 		multiSoundHit[]={};
 		hit=0.1;
@@ -531,8 +527,6 @@ class CfgAmmo
 		timeToLive=1;
 		explosionTime=0;
 		explosionSoundEffect="DefaultExplosion";
-		CraterEffects="GrenadeCrater";
-		explosionEffects="GrenadeExplosion";
 		submunitionAmmo="rhssaf_ammo_brk_m79_penetrator";
 		submunitionDirectionType="SubmunitionModelDirection";
 		submunitionInitialOffset[]={0,0,-0.2};
@@ -558,7 +552,6 @@ class CfgAmmo
 	class PipeBombBase;
 	class rhssaf_mine_pma3_ammo: MineBase
 	{
-		AIAmmoUsageFlags="16";
 		hit=3;
 		indirectHit=40;
 		indirectHitRange=0.1;
@@ -572,8 +565,6 @@ class CfgAmmo
 			1,
 			2000
 		};
-		explosionEffects="MineExplosion";
-		CraterEffects="MineCrater";
 		whistleDist=8;
 		cost=200;
 		mineInconspicuousness=3;
@@ -581,7 +572,6 @@ class CfgAmmo
 	};
 	class rhssaf_mine_tma4_ammo: MineBase
 	{
-		AIAmmoUsageFlags="16";
 		hit=2200;
 		indirectHit=1250;
 		indirectHitRange=2;
@@ -594,8 +584,6 @@ class CfgAmmo
 			"ATmine_Tail_SoundSet",
 			"Explosion_Debris_SoundSet"
 		};
-		explosionEffects="ATMineExplosion";
-		CraterEffects="ATMineCrater";
 		whistleDist=8;
 		cost=200;
 		mineInconspicuousness=30;
@@ -624,7 +612,6 @@ class CfgAmmo
 	};
 	class rhssaf_mine_mrud_a_ammo: DirectionalBombBase
 	{
-		AIAmmoUsageFlags="16";
 		hit=15;
 		indirectHit=15;
 		indirectHitRange=10;
@@ -659,8 +646,6 @@ class CfgAmmo
 			1,
 			1500
 		};
-		explosionEffects="MineExplosion";
-		CraterEffects="MineCrater";
 		whistleDist=8;
 		cost=200;
 		mineInconspicuousness=30;
@@ -712,7 +697,6 @@ class CfgAmmo
 		};
 		defaultMagazine="rhssaf_tm100_mag";
 		ExplosionEffects="MineNondirectionalExplosionSmall";
-		CraterEffects="MineNondirectionalCraterSmall";
 		whistleDist=32;
 		mineInconspicuousness=5;
 		mineTrigger="RemoteTrigger";
@@ -734,7 +718,6 @@ class CfgAmmo
 		indirectHitRange=5;
 		mineModelDisabled="\rhssaf\addons\rhssaf_m_explosives\tm500\rhssaf_tm500_d";
 		ExplosionEffects="MineNondirectionalExplosion";
-		CraterEffects="MineNondirectionalCrater";
 		defaultMagazine="rhssaf_tm500_mag";
 		SoundSetExplosion[]=
 		{
@@ -2092,13 +2075,6 @@ class CfgWeapons
 	};
 	class rhs_weap_m80: Launcher_Base_F
 	{
-		soundFly[]=
-		{
-			"A3\sounds_f\weapons\rockets\rocket_fly_1",
-			0.316228,
-			1.5,
-			700
-		};
 		magazines[]=
 		{
 			"rhs_m80_mag"

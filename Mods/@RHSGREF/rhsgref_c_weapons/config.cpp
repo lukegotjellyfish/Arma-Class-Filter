@@ -508,8 +508,6 @@ class CfgAmmo
 		simulationStep=0.001;
 		explosionTime=-1;
 		timeToLive=5;
-		explosionEffects="";
-		CraterEffects="";
 		SoundSetExplosion[]={};
 		multiSoundHit[]={};
 		hit=0.1;
@@ -543,8 +541,6 @@ class CfgAmmo
 		timeToLive=1;
 		explosionTime=0;
 		explosionSoundEffect="DefaultExplosion";
-		CraterEffects="GrenadeCrater";
-		explosionEffects="GrenadeExplosion";
 		submunitionAmmo="rhsgref_ammo_rkg3em_penetrator";
 		submunitionDirectionType="SubmunitionModelDirection";
 		submunitionInitialOffset[]={0,0,-0.2};
@@ -623,11 +619,9 @@ class CfgAmmo
 		hit=2;
 		indirectHit=2;
 		indirectHitRange=2;
-		explosionEffects="RHS_GDM40Effect";
 	};
 	class rhs_grenade_mki_ammo: SmokeShell
 	{
-		AIAmmoUsageFlags="1+4";
 		smokeColor[]={1,1,1,0.5};
 		lightColor[]={0.5,0.5,0.5,0.5};
 		effectsSmoke="EmptyEffect";
@@ -647,7 +641,6 @@ class CfgAmmo
 	class R_PG32V_F: RocketBase;  //found empty after stripping
 	class rhs_ammo_rpg75_rocket: R_PG32V_F
 	{
-		AIAmmoUsageFlags="128+256+512";
 		submunitionAmmo="rhs_ammo_rpg75_penetrator";
 		submunitionDirectionType="SubmunitionModelDirection";
 		submunitionInitialOffset[]={0,0,-0.2};
@@ -671,30 +664,6 @@ class CfgAmmo
 		fuseDistance=5;
 		whistleDist=4;
 		timeToLive=6;
-		CraterEffects="ATRocketCrater";
-		explosionEffects="ATRocketExplosion";
-		effectsMissileInit="RocketBackEffectsNLAW";
-		effectsMissile="missile3";
-		class CamShakeFire
-		{
-			power=10;
-			duration=0.5;
-			frequency=20;
-			distance=30;
-		};
-		class CamShakePlayerFire
-		{
-			power=5;
-			duration=0.1;
-			frequency=20;
-		};
-		soundFly[]=
-		{
-			"A3\Sounds_F\arsenal\weapons_static\Missile_Launcher\rocket_fly",
-			1.1,
-			0.69999999,
-			250
-		};
 	};
 	class rhs_ammo_rpg75_penetrator: rhs_ammo_3bk12_penetrator
 	{
@@ -702,7 +671,6 @@ class CfgAmmo
 	};
 	class rhs_ammo_panzerfaust60_rocket: R_PG32V_F
 	{
-		AIAmmoUsageFlags="128+256+512";
 		submunitionAmmo="rhs_ammo_panzerfaust60_penetrator";
 		submunitionDirectionType="SubmunitionModelDirection";
 		submunitionInitialOffset[]={0,0,-0.2};
@@ -726,30 +694,6 @@ class CfgAmmo
 		fuseDistance=5;
 		whistleDist=4;
 		timeToLive=6;
-		CraterEffects="ATRocketCrater";
-		explosionEffects="ATRocketExplosion";
-		effectsMissileInit="RocketBackEffectsNLAW";
-		effectsMissile="missile3";
-		class CamShakeFire
-		{
-			power=10;
-			duration=0.5;
-			frequency=20;
-			distance=30;
-		};
-		class CamShakePlayerFire
-		{
-			power=5;
-			duration=0.1;
-			frequency=20;
-		};
-		soundFly[]=
-		{
-			"A3\Sounds_F\arsenal\weapons_static\Missile_Launcher\rocket_fly",
-			1.1,
-			0.69999999,
-			250
-		};
 	};
 	class rhs_ammo_panzerfaust60_penetrator: rhs_ammo_3bk12_penetrator
 	{
@@ -784,8 +728,6 @@ class CfgAmmo
 			1,
 			20
 		};
-		explosionEffects="";
-		CraterEffects="";
 		deleteParentWhenTriggered=1;
 		submunitionConeAngle[]={0,10};
 		submunitionConeAngleHorizontal=720;
@@ -923,7 +865,6 @@ class CfgAmmo
 			1
 		};
 		submunitionInitSpeed=5;
-		explosionEffects="BoundingMineExplosion";
 	};
 	class rhs_mine_m2a3b_trip_ammo: rhs_mine_m2a3b_press_ammo
 	{

@@ -148,24 +148,7 @@ class CfgAmmo
 		submunitionInitSpeed=200;
 		deleteParentWhenTriggered=0;
 		triggerTime=0.0020000001;
-		soundVehiclePlateInt1[]=
-		{
-			"rhsusf\addons\rhsusf_c_heavyweapons\sounds\Inhit.wav",
-			4.2387199,
-			1,
-			100
-		};
-		hitArmorInt[]=
-		{
-			"soundVehiclePlateInt1",
-			1
-		};
 		hitDefaultInt[]=
-		{
-			"soundVehiclePlateInt1",
-			1
-		};
-		hitMetalInt[]=
 		{
 			"soundVehiclePlateInt1",
 			1
@@ -531,13 +514,6 @@ class CfgAmmo
 			frequency=20;
 			distance=1;
 		};
-		class CamShakeFire
-		{
-			power="(105^0.25)*10";
-			duration="((round (105^0.5))*0.2 max 0.2)";
-			frequency=20;
-			distance="((105^0.5))";
-		};
 	};
 	class rhs_ammo_m314_ilum: Flare_82mm_AMOS_White
 	{
@@ -552,7 +528,6 @@ class CfgAmmo
 			0,
 			1
 		};
-		CraterEffects="";
 		whistleDist=0;
 		intensity="10000 * 6";
 		timeToLive=90;
@@ -570,7 +545,6 @@ class CfgAmmo
 			0,
 			1
 		};
-		CraterEffects="";
 		whistleDist=0;
 	};
 	class rhs_m821_he: Sh_82mm_AMOS;  //found empty after stripping
@@ -614,20 +588,6 @@ class CfgAmmo
 		{
 			power=30;
 			duration=0.40000001;
-			frequency=20;
-			distance=1;
-		};
-		class CamShakeFire
-		{
-			power=2.3403499;
-			duration=1;
-			frequency=20;
-			distance=43.817799;
-		};
-		class CamShakePlayerFire
-		{
-			power=30;
-			duration=0.1;
 			frequency=20;
 			distance=1;
 		};
@@ -703,20 +663,6 @@ class CfgAmmo
 	class rhs_ammo_127x99_Ball: B_127x99_Ball
 	{
 		caliber=2.34848;
-		class CamShakeFire
-		{
-			power=1;
-			duration=0.2;
-			frequency=20;
-			distance=8;
-		};
-		class CamShakePlayerFire
-		{
-			power=1;
-			duration=0.1;
-			frequency=20;
-			distance=1;
-		};
 	};
 	class rhs_ammo_127x99_Ball_Tracer_Red: rhs_ammo_127x99_Ball
 	{
@@ -734,20 +680,6 @@ class CfgAmmo
 	class rhs_ammo_127x99_SLAP: B_127x99_SLAP
 	{
 		caliber=2.8099201;
-		class CamShakeFire
-		{
-			power=1;
-			duration=0.2;
-			frequency=20;
-			distance=8;
-		};
-		class CamShakePlayerFire
-		{
-			power=1;
-			duration=0.1;
-			frequency=20;
-			distance=1;
-		};
 	};
 	class rhs_ammo_127x99_SLAP_Tracer_Red: rhs_ammo_127x99_SLAP
 	{
@@ -761,74 +693,10 @@ class CfgAmmo
 	{
 		tracerEndTime=3;
 	};
-	class rhs_ammo_127x99_Ball_Plane: rhs_ammo_127x99_Ball
-	{
-		class CamShakeFire
-		{
-			power=1.56508;
-			duration=0.40000001;
-			frequency=20;
-			distance=19.5959;
-		};
-		class CamShakePlayerFire
-		{
-			power=6;
-			duration=0.1;
-			frequency=20;
-			distance=1;
-		};
-	};
-	class rhs_ammo_127x99_Ball_Tracer_Red_Plane: rhs_ammo_127x99_Ball_Tracer_Red
-	{
-		class CamShakeFire
-		{
-			power=1.56508;
-			duration=0.40000001;
-			frequency=20;
-			distance=19.5959;
-		};
-		class CamShakePlayerFire
-		{
-			power=6;
-			duration=0.1;
-			frequency=20;
-			distance=1;
-		};
-	};
-	class rhs_ammo_127x99_SLAP_Plane: rhs_ammo_127x99_SLAP
-	{
-		class CamShakeFire
-		{
-			power=1.56508;
-			duration=0.40000001;
-			frequency=20;
-			distance=19.5959;
-		};
-		class CamShakePlayerFire
-		{
-			power=6;
-			duration=0.1;
-			frequency=20;
-			distance=1;
-		};
-	};
-	class rhs_ammo_127x99_SLAP_Tracer_Red_Plane: rhs_ammo_127x99_SLAP_Tracer_Red
-	{
-		class CamShakeFire
-		{
-			power=1.56508;
-			duration=0.40000001;
-			frequency=20;
-			distance=19.5959;
-		};
-		class CamShakePlayerFire
-		{
-			power=6;
-			duration=0.1;
-			frequency=20;
-			distance=1;
-		};
-	};
+	class rhs_ammo_127x99_Ball_Plane: rhs_ammo_127x99_Ball;  //found empty after stripping
+	class rhs_ammo_127x99_Ball_Tracer_Red_Plane: rhs_ammo_127x99_Ball_Tracer_Red;  //found empty after stripping
+	class rhs_ammo_127x99_SLAP_Plane: rhs_ammo_127x99_SLAP;  //found empty after stripping
+	class rhs_ammo_127x99_SLAP_Tracer_Red_Plane: rhs_ammo_127x99_SLAP_Tracer_Red;  //found empty after stripping
 	class rhs_ammo_127x99_Ball_AI: rhs_ammo_127x99_Ball
 	{
 		irLock=1;
@@ -904,7 +772,6 @@ class CfgAmmo
 		maxSpeed=296;
 		deflecting=0;
 		fuseDistance=5;
-		effectsMissile="missile2";
 		whistleDist=2;
 		weaponLockSystem=1;
 		rhs_saclos=1;
@@ -915,13 +782,6 @@ class CfgAmmo
 			"Direct"
 		};
 		class Direct;  //found empty after stripping
-		soundFly[]=
-		{
-			"rhsusf\addons\rhsusf_heavyweapons\Sounds\TOW",
-			1.1,
-			0.69999999,
-			550
-		};
 		class EventHandlers: EventHandlers
 		{
 			class RHS_Guidance
@@ -1048,7 +908,6 @@ class CfgAmmo
 	};
 	class rhs_ammo_TOW2_BB: rhs_ammo_TOW2_AT
 	{
-		AIAmmoUsageFlags="64+128+256";
 		submunitionAmmo="rhs_ammo_TOW2_BB_penetrator";
 		hit=120;
 		indirectHit=30;
@@ -1078,9 +937,6 @@ class CfgAmmo
 		indirectHit=100;
 		indirectHitRange=12;
 		explosive=1;
-		CraterEffects="ArtyShellCrater";
-		explosionEffects="MortarExplosion";
-		effectsMissile="missile2";
 		class CamShakeExplode
 		{
 			power=22;
@@ -1092,20 +948,6 @@ class CfgAmmo
 		{
 			power=110;
 			duration=0.60000002;
-			frequency=20;
-			distance=1;
-		};
-		class CamShakeFire
-		{
-			power=3.2385299;
-			duration=2;
-			frequency=20;
-			distance=83.904701;
-		};
-		class CamShakePlayerFire
-		{
-			power=5;
-			duration=0.1;
 			frequency=20;
 			distance=1;
 		};
@@ -1215,7 +1057,6 @@ class CfgAmmo
 		hit=5000;
 		indirectHit=1150;
 		indirectHitRange=12;
-		explosionEffects="BombExplosion";
 	};
 	class Mo_cluster_AP;
 	class ShotDeployBase;
@@ -1257,7 +1098,6 @@ class CfgAmmo
 		muzzleEffect="";
 		weaponLockSystem="1";
 		simulation="shotCM";
-		AIAmmoUsageFlags="4 + 8";
 		hit=0;
 		indirectHit=0;
 		indirectHitRange=0;
@@ -1274,7 +1114,6 @@ class CfgAmmo
 		muzzleEffect="";
 		weaponLockSystem="1";
 		simulation="shotCM";
-		AIAmmoUsageFlags="0";
 		hit=0;
 		indirectHit=0;
 		indirectHitRange=0;
@@ -1291,7 +1130,6 @@ class CfgAmmo
 		muzzleEffect="";
 		weaponLockSystem="0";
 		simulation="shotCM";
-		AIAmmoUsageFlags="0";
 		hit=0;
 		indirectHit=0;
 		indirectHitRange=0;
@@ -1308,7 +1146,6 @@ class CfgAmmo
 		muzzleEffect="";
 		weaponLockSystem="2";
 		simulation="shotCM";
-		AIAmmoUsageFlags="4";
 		hit=0;
 		indirectHit=0;
 		indirectHitRange=0;
@@ -1334,26 +1171,6 @@ class CfgAmmo
 		maxControlRange=-1;
 		initTime=0;
 		aiAmmoUsageFlags=8;
-		soundFly[]=
-		{
-			"A3\sounds_f\dummysound",
-			0.1,
-			1
-		};
-		supersonicCrackNear[]=
-		{
-			"A3\sounds_f\dummysound",
-			0,
-			1,
-			0
-		};
-		supersonicCrackFar[]=
-		{
-			"A3\sounds_f\dummysound",
-			0,
-			1,
-			0
-		};
 		effectsSmoke="EmptyEffect";
 	};
 	class Grenade;
@@ -1361,7 +1178,6 @@ class CfgAmmo
 	class rhsusf_ammo_L8A3_shell: Grenade
 	{
 		simulation="shotShell";
-		AIAmmoUsageFlags="4";
 		hit=3;
 		indirectHit=1;
 		indirectHitRange=2;
@@ -1408,8 +1224,6 @@ class CfgAmmo
 			"soundHit4",
 			0.25
 		};
-		explosionEffects="RHSUSF_CM_L8A3_Effect";
-		CraterEffects="EmptyEffect";
 		explosionTime=0.69999999;
 		timeToLive=1;
 		coefGravity=2.5;
