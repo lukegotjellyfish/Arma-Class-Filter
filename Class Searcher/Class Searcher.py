@@ -3,9 +3,15 @@
 import os
 import re
 
-#console setup
-os.environ['LINES'] = "10000000"
-os.environ['COLUMNS'] = "500"
+
+"""
+TODO:
+- Create CSV output for weapons+their ammo
+- Create output for vehicles
+"""
+
+
+#Console setup for coloured output
 os.system("")
 
 #cmd colours
