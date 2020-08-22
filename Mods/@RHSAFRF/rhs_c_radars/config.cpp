@@ -284,21 +284,6 @@ class CfgVehicles
 				};
 			};
 		};
-		class Sounds
-		{
-			class EngineLoop
-			{
-				sound[]=
-				{
-					"\rhsafrf\addons\rhs_c_radars\Sounds\Engines01.wav",
-					9,
-					1,
-					70
-				};
-				frequency="1";
-				volume="engineOn";
-			};
-		};
 		class EventHandlers: EventHandlers
 		{
 			class RHS_EventHandlers
@@ -340,21 +325,6 @@ class CfgVehicles
 					};
 					class DataLinkSensorComponent: SensorTemplateDataLink;  //found empty after stripping
 				};
-			};
-		};
-		class Sounds
-		{
-			class EngineLoop
-			{
-				sound[]=
-				{
-					"\rhsafrf\addons\rhs_c_radars\Sounds\Engines02.wav",
-					9,
-					1,
-					70
-				};
-				frequency="1";
-				volume="engineOn";
 			};
 		};
 		class EventHandlers: EventHandlers

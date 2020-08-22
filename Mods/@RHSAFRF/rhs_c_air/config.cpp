@@ -8122,46 +8122,6 @@ class CfgVehicles
 			1,
 			40
 		};
-		soundEngineOnInt[]=
-		{
-			"A3\Sounds_F_Jets\vehicles\air\Plane_Fighter_02\O_Plane_Fighter_02_engine_start_int",
-			1,
-			1
-		};
-		soundEngineOnExt[]=
-		{
-			"A3\Sounds_F_Jets\vehicles\air\Plane_Fighter_02\O_Plane_Fighter_02_engine_start_ext",
-			1.75,
-			1,
-			300
-		};
-		soundEngineOffInt[]=
-		{
-			"A3\Sounds_F_Jets\vehicles\air\Plane_Fighter_02\O_Plane_Fighter_02_engine_shut_int",
-			1,
-			1
-		};
-		soundEngineOffExt[]=
-		{
-			"A3\Sounds_F_Jets\vehicles\air\Plane_Fighter_02\O_Plane_Fighter_02_engine_shut_ext",
-			1.75,
-			1,
-			300
-		};
-		soundGetIn[]=
-		{
-			"A3\Sounds_F\vehicles\air\CAS_01\getin_wipeout",
-			1,
-			1,
-			40
-		};
-		soundGetOut[]=
-		{
-			"A3\Sounds_F\air\Plane_Fighter_03\getout",
-			1,
-			1,
-			40
-		};
 		soundWaterCollision1[]=
 		{
 			"A3\Sounds_F\vehicles\crashes\planes\plane_crash_water_1",
@@ -8182,84 +8142,6 @@ class CfgVehicles
 			0.5,
 			"soundWaterCollision2",
 			0.5
-		};
-		buildCrash0[]=
-		{
-			"A3\Sounds_F\vehicles\crashes\cars\cars_coll_big_default_ext_1",
-			1,
-			1,
-			900
-		};
-		buildCrash1[]=
-		{
-			"A3\Sounds_F\vehicles\crashes\cars\cars_coll_big_default_ext_2",
-			1,
-			1,
-			900
-		};
-		buildCrash2[]=
-		{
-			"A3\Sounds_F\vehicles\crashes\cars\cars_coll_big_default_ext_3",
-			1,
-			1,
-			900
-		};
-		buildCrash3[]=
-		{
-			"A3\Sounds_F\vehicles\crashes\cars\cars_coll_big_default_ext_4",
-			1,
-			1,
-			900
-		};
-		soundBuildingCrash[]=
-		{
-			"buildCrash0",
-			0.25,
-			"buildCrash1",
-			0.25,
-			"buildCrash2",
-			0.25,
-			"buildCrash3",
-			0.25
-		};
-		WoodCrash0[]=
-		{
-			"A3\Sounds_F\vehicles\crashes\cars\cars_coll_big_wood_ext_1",
-			3.1622801,
-			1,
-			900
-		};
-		WoodCrash1[]=
-		{
-			"A3\Sounds_F\vehicles\crashes\cars\cars_coll_big_wood_ext_2",
-			3.1622801,
-			1,
-			900
-		};
-		WoodCrash2[]=
-		{
-			"A3\Sounds_F\vehicles\crashes\cars\cars_coll_big_wood_ext_6",
-			3.1622801,
-			1,
-			900
-		};
-		WoodCrash3[]=
-		{
-			"A3\Sounds_F\vehicles\crashes\cars\cars_coll_big_wood_ext_8",
-			3.1622801,
-			1,
-			900
-		};
-		soundWoodCrash[]=
-		{
-			"woodCrash0",
-			0.25,
-			"woodCrash1",
-			0.25,
-			"woodCrash2",
-			0.25,
-			"woodCrash3",
-			0.25
 		};
 		armorCrash0[]=
 		{
@@ -8288,17 +8170,6 @@ class CfgVehicles
 			1,
 			1,
 			900
-		};
-		soundArmorCrash[]=
-		{
-			"ArmorCrash0",
-			0.25,
-			"ArmorCrash1",
-			0.25,
-			"ArmorCrash2",
-			0.25,
-			"ArmorCrash3",
-			0.25
 		};
 		Crash0[]=
 		{
@@ -8339,12 +8210,6 @@ class CfgVehicles
 			"Crash3",
 			0.25
 		};
-		soundDammage[]=
-		{
-			"",
-			0.56234097,
-			1
-		};
 		class scrubLandInt
 		{
 			sound[]=
@@ -8356,24 +8221,6 @@ class CfgVehicles
 			};
 			frequency=1;
 			volume="(scrubLand factor[0.01, 0.20])";
-		};
-		class Sounds
-		{
-			soundSets[]=
-			{
-				"Plane_Fighter_02_EngineLowExt_SoundSet",
-				"Plane_Fighter_02_EngineHighExt_SoundSet",
-				"Plane_Fighter_02_ForsageExt_SoundSet",
-				"Plane_Fighter_02_WindNoiseExt_SoundSet",
-				"Plane_Fighter_02_EngineExt_Dist_Front_SoundSet",
-				"Plane_Fighter_02_EngineExt_Middle_SoundSet",
-				"Plane_Fighter_02_EngineExt_Dist_Rear_SoundSet",
-				"Plane_Fighter_02_EngineLowInt_SoundSet",
-				"Plane_Fighter_02_EngineHighInt_SoundSet",
-				"Plane_Fighter_02_ForsageInt_SoundSet",
-				"Plane_Fighter_02_WindNoiseInt_SoundSet",
-				"Plane_Fighter_02_VelocityInt_SoundSet"
-			};
 		};
 		driveOnComponent[]={};
 		class Exhausts
@@ -9159,54 +9006,6 @@ class CfgVehicles
 		{
 			"GetOutHigh"
 		};
-		soundGetIn[]=
-		{
-			"A3\Sounds_F_EPC\CAS_01\getin_wipeout",
-			1,
-			1,
-			40
-		};
-		soundGetOut[]=
-		{
-			"A3\Sounds_F\air\Plane_Fighter_03\getout",
-			1,
-			1,
-			40
-		};
-		soundDammage[]=
-		{
-			"",
-			0.56234133,
-			1
-		};
-		soundEngineOnInt[]=
-		{
-			"rhsafrf\addons\rhs_vehiclesounds\sounds\air\Tu95\tu95_int_start",
-			6,
-			1,
-			500
-		};
-		soundEngineOnExt[]=
-		{
-			"rhsafrf\addons\rhs_vehiclesounds\sounds\air\Tu95\tu95_ext_start",
-			6.4125376,
-			1,
-			500
-		};
-		soundEngineOffInt[]=
-		{
-			"rhsafrf\addons\rhs_vehiclesounds\sounds\air\Tu95\tu95_int_stop",
-			6,
-			1,
-			500
-		};
-		soundEngineOffExt[]=
-		{
-			"rhsafrf\addons\rhs_vehiclesounds\sounds\air\Tu95\tu95_ext_stop",
-			6.4125376,
-			1,
-			500
-		};
 		soundLocked[]=
 		{
 			"\A3\Sounds_F\weapons\Rockets\locked_1",
@@ -9246,126 +9045,6 @@ class CfgVehicles
 			4.6309576,
 			1,
 			100
-		};
-		class Sounds
-		{
-			class EngineLowOut
-			{
-				sound[]=
-				{
-					"rhsafrf\addons\rhs_vehiclesounds\sounds\air\Tu95\tu95_ext_low",
-					10,
-					1,
-					4000
-				};
-				frequency="1.0 min (rpm + 0.5)";
-				volume="(camPos*4*(rpm factor[0.2, 1.1])*(rpm factor[1.1, 0.5]))*2";
-			};
-			class EngineHighOut
-			{
-				sound[]=
-				{
-					"rhsafrf\addons\rhs_vehiclesounds\sounds\air\Tu95\tu95_ext_low",
-					10,
-					1.2,
-					4300
-				};
-				frequency="1";
-				volume="(camPos*4*(rpm factor[0.2, 1.1])*(rpm factor[1.1, 0.5]))*1";
-			};
-			class ForsageOut
-			{
-				sound[]=
-				{
-					"rhsafrf\addons\rhs_vehiclesounds\sounds\air\Tu95\tu95_ext_high",
-					10,
-					1.2,
-					4500
-				};
-				frequency="1";
-				volume="(engineOn*camPos*(thrust factor[0.6, 1.0]))*1";
-				cone[]={3.1400001,3.9200001,2,0.5};
-			};
-			class WindNoiseOut
-			{
-				sound[]=
-				{
-					"A3\Sounds_F\air\Plane_Fighter_03\noise",
-					1.0623413,
-					1,
-					150
-				};
-				frequency="(0.1+(1.2*(speed factor[1, 150])))";
-				volume="camPos*(speed factor[1, 150])";
-			};
-			class EngineLowIn
-			{
-				sound[]=
-				{
-					"rhsafrf\addons\rhs_vehiclesounds\sounds\air\Tu95\tu95_int_low",
-					3.1622777,
-					1
-				};
-				frequency="1.0 + (rpm + 0.5)";
-				volume="((1-camPos)*((rpm factor[0.2, 0.1])*(rpm factor[0.1, 0.7])))*3";
-			};
-			class EngineHighIn
-			{
-				sound[]=
-				{
-					"rhsafrf\addons\rhs_vehiclesounds\sounds\air\Tu95\tu95_int_low",
-					3.1622777,
-					1.2
-				};
-				frequency="1";
-				volume="((1-camPos)*(rpm factor[0.85, 1.0]))*3";
-			};
-			class ForsageIn
-			{
-				sound[]=
-				{
-					"rhsafrf\addons\rhs_vehiclesounds\sounds\air\Tu95\tu95_ext_high",
-					3.3496544,
-					1.2
-				};
-				frequency="1";
-				volume="((1-camPos)*(engineOn*(thrust factor[0.6, 1.0])))*0.5";
-			};
-			class WindNoiseIn
-			{
-				sound[]=
-				{
-					"A3\Sounds_F\air\Plane_Fighter_03\noise_int",
-					0.81622773,
-					1
-				};
-				frequency="(0.1+(1.2*(speed factor[1, 150])))";
-				volume="(1-camPos)*(speed factor[1, 150])";
-			};
-			class RainExt
-			{
-				sound[]=
-				{
-					"A3\Sounds_F\vehicles\noises\rain1_ext",
-					1.7782794,
-					1,
-					100
-				};
-				frequency=1;
-				volume="camPos * rain * (speed factor[50, 0])";
-			};
-			class RainInt
-			{
-				sound[]=
-				{
-					"A3\Sounds_F\vehicles\noises\rain1_int",
-					1,
-					1,
-					100
-				};
-				frequency=1;
-				volume="(1-camPos) * rain * (speed factor[50, 0])";
-			};
 		};
 		class Components: Components
 		{

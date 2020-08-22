@@ -159,11 +159,6 @@ class CfgVehicles
 			class HitLTrack;
 			class HitRTrack;
 		};
-		class Sounds: Sounds
-		{
-			class Engine;
-			class Movement;
-		};
 		class EventHandlers;
 	};
 	class RHS_UAZ_Base: Offroad_01_base_F
@@ -206,11 +201,6 @@ class CfgVehicles
 	};
 	class rhsusf_m998_w_2dr_fulltop: rhsusf_m998_w_2dr_halftop
 	{
-		class Sounds: Sounds
-		{
-			class RainIn;
-			class RainExt;
-		};
 		class Turrets: Turrets
 		{
 			class CargoTurret_01;
@@ -240,11 +230,6 @@ class CfgVehicles
 	};
 	class rhsusf_m998_w_4dr_fulltop: rhsusf_m998_w_4dr_halftop
 	{
-		class Sounds: Sounds
-		{
-			class RainIn;
-			class RainExt;
-		};
 		class Turrets;
 	};
 	class rhsusf_m1025_w: rhsusf_m998_w_4dr_fulltop;  //found empty after stripping
@@ -359,31 +344,6 @@ class CfgVehicles
 		displayname="$STR_RHSSAF_M998_OLIVE_2DR_FULLTOP_DISPLAYNAME";
 		attenuationEffectType="RHS_CarAttenuation";
 		soundAttenuationCargo[]={1};
-		class Sounds: Sounds
-		{
-			class RainIn
-			{
-				sound[]=
-				{
-					"rhsusf\addons\rhsusf_sounds\misc\rain.wss",
-					1.4125376,
-					1
-				};
-				frequency=1;
-				volume="rain*(1-camPos)";
-			};
-			class RainExt
-			{
-				sound[]=
-				{
-					"rhsusf\addons\rhsusf_sounds\misc\rain.wss",
-					1.4125376,
-					1
-				};
-				frequency=1;
-				volume="rain*camPos";
-			};
-		};
 		class Turrets: Turrets
 		{
 			class CargoTurret_02: CargoTurret_02

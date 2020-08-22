@@ -68,11 +68,6 @@ class CfgVehicles
 			class HitLTrack;
 			class HitRTrack;
 		};
-		class Sounds: Sounds
-		{
-			class Engine;
-			class Movement;
-		};
 		class EventHandlers;
 	};
 	class MBT_03_base_F: Tank_F

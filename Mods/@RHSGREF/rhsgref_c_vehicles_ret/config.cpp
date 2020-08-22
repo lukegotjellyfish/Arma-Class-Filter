@@ -421,11 +421,6 @@ class CfgVehicles
 			class HitLTrack;
 			class HitRTrack;
 		};
-		class Sounds: Sounds
-		{
-			class Engine;
-			class Movement;
-		};
 		class EventHandlers;
 	};
 	class APC_Tracked_02_base_F: Tank_F;  //found empty after stripping

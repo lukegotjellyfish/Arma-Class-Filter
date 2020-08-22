@@ -44,11 +44,6 @@ class CfgVehicles
 		class ViewOptics;
 		class ViewCargo;
 		class EventHandlers;
-		class Sounds: Sounds
-		{
-			class Engine;
-			class Movement;
-		};
 		class NewTurret;
 		class Turrets
 		{

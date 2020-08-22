@@ -85,11 +85,6 @@ class CfgVehicles
 			class HitLTrack;
 			class HitRTrack;
 		};
-		class Sounds: Sounds
-		{
-			class Engine;
-			class Movement;
-		};
 	};
 	class APC_Tracked_02_base_F: Tank_F
 	{

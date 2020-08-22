@@ -45,11 +45,6 @@ class CfgVehicles
 			class HitLTrack;
 			class HitRTrack;
 		};
-		class Sounds: Sounds
-		{
-			class Engine;
-			class Movement;
-		};
 	};
 	class MBT_01_base_F: Tank_F;  //found empty after stripping
 	class MBT_01_arty_base_F: MBT_01_base_F

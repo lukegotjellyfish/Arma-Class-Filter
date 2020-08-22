@@ -565,46 +565,6 @@ class CfgVehicles
 		HeadAimDown=3;
 		headGforceLeaningFactor[]={0.0049999999,0.001,0.015};
 		attenuationEffectType="PlaneAttenuation";
-		soundGetIn[]=
-		{
-			"A3\Sounds_F\vehicles\air\CAS_01\getin_wipeout",
-			1,
-			1,
-			40
-		};
-		soundGetOut[]=
-		{
-			"A3\Sounds_F\air\Plane_Fighter_03\getout",
-			1,
-			1,
-			40
-		};
-		soundEngineOnInt[]=
-		{
-			"A3\Sounds_F_Jets\vehicles\air\Plane_Fighter_02\O_Plane_Fighter_02_engine_start_int",
-			1,
-			1
-		};
-		soundEngineOnExt[]=
-		{
-			"A3\Sounds_F_Jets\vehicles\air\Plane_Fighter_02\O_Plane_Fighter_02_engine_start_ext",
-			1.75,
-			1,
-			300
-		};
-		soundEngineOffInt[]=
-		{
-			"A3\Sounds_F_Jets\vehicles\air\Plane_Fighter_02\O_Plane_Fighter_02_engine_shut_int",
-			1,
-			1
-		};
-		soundEngineOffExt[]=
-		{
-			"A3\Sounds_F_Jets\vehicles\air\Plane_Fighter_02\O_Plane_Fighter_02_engine_shut_ext",
-			1.75,
-			1,
-			300
-		};
 		cabinOpenSound[]=
 		{
 			"A3\Sounds_F_Jets\vehicles\air\Plane_Fighter_02\FX_Plane_Fighter_02_cabine_open_ext",
@@ -645,12 +605,6 @@ class CfgVehicles
 			10,
 			0.5
 		};
-		soundDammage[]=
-		{
-			"\rhsafrf\addons\rhs_mig29\sound\warn",
-			0.56234097,
-			1
-		};
 		soundGearUp[]=
 		{
 			"A3\Sounds_F_Jets\vehicles\air\Shared\FX_Plane_Jet_gear_up",
@@ -682,117 +636,6 @@ class CfgVehicles
 		soundSetSonicBoom[]=
 		{
 			"Plane_Fighter_SonicBoom_SoundSet"
-		};
-		class Sounds
-		{
-			soundSets[]=
-			{
-				"Plane_Fighter_02_EngineLowExt_SoundSet",
-				"Plane_Fighter_02_EngineHighExt_SoundSet",
-				"Plane_Fighter_02_ForsageExt_SoundSet",
-				"Plane_Fighter_02_WindNoiseExt_SoundSet",
-				"Plane_Fighter_02_EngineExt_Dist_Front_SoundSet",
-				"Plane_Fighter_02_EngineExt_Middle_SoundSet",
-				"Plane_Fighter_02_EngineExt_Dist_Rear_SoundSet",
-				"Plane_Fighter_02_EngineLowInt_SoundSet",
-				"Plane_Fighter_02_EngineHighInt_SoundSet",
-				"Plane_Fighter_02_ForsageInt_SoundSet",
-				"Plane_Fighter_02_WindNoiseInt_SoundSet",
-				"Plane_Fighter_02_VelocityInt_SoundSet"
-			};
-			class EngineLowOut
-			{
-				sound[]=
-				{
-					"\rhsafrf\addons\rhs_mig29\sound\ext",
-					10,
-					1,
-					1600
-				};
-				frequency="1.0 min (rpm + 0.5)";
-				volume="engineOn*camPos*(rpm factor[0.85, 0])";
-			};
-			class EngineHighOut
-			{
-				sound[]=
-				{
-					"\rhsafrf\addons\rhs_mig29\sound\ext",
-					10,
-					1.3,
-					1800
-				};
-				frequency="1";
-				volume="engineOn*camPos*(rpm factor[0.55, 1.0])";
-			};
-			class ForsageOut
-			{
-				sound[]=
-				{
-					"\rhsafrf\addons\rhs_mig29\sound\ext-aft",
-					3.1622777,
-					0.80000001,
-					2000
-				};
-				frequency="1";
-				volume="engineOn*camPos*(thrust factor[0.5, 1.0])";
-				cone[]={3.1400001,3.9200001,2,0.40000001};
-			};
-			class WindNoiseOut
-			{
-				sound[]=
-				{
-					"\rhsafrf\addons\rhs_mig29\sound\ext-wind",
-					1,
-					1,
-					150
-				};
-				frequency="(0.1+(1.2*(speed factor[1, 150])))";
-				volume="camPos*(speed factor[1, 150])";
-			};
-			class EngineLowIn
-			{
-				sound[]=
-				{
-					"\rhsafrf\addons\rhs_mig29\sound\int",
-					3.1622777,
-					1
-				};
-				frequency="1.0 min (rpm + 0.5)";
-				volume="(1-camPos)*(engineOn*(rpm factor[0.85, 0]))";
-			};
-			class EngineHighIn
-			{
-				sound[]=
-				{
-					"\rhsafrf\addons\rhs_mig29\sound\int",
-					3.1622777,
-					1
-				};
-				frequency="1";
-				volume="(1-camPos)*(engineOn*(rpm factor[0.55, 1.0]))";
-			};
-			class ForsageIn
-			{
-				sound[]=
-				{
-					"\rhsafrf\addons\rhs_mig29\sound\int-aft",
-					1.7782794,
-					0.80000001
-				};
-				frequency="1";
-				volume="(1-camPos)*(engineOn*(thrust factor[0.5, 1.0]))";
-			};
-			class WindNoiseIn
-			{
-				sound[]=
-				{
-					"\rhsafrf\addons\rhs_mig29\sound\int-wind",
-					1,
-					1
-				};
-				frequency="(0.1+(1.2*(speed factor[1, 150])))";
-				volume="(1-camPos)*(speed factor[1, 150])";
-			};
 		};
 		class ViewPilot: ViewPilot
 		{

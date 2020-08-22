@@ -96,11 +96,6 @@ class CfgVehicles
 			class HitLTrack;
 			class HitRTrack;
 		};
-		class Sounds: Sounds
-		{
-			class Engine;
-			class Movement;
-		};
 		class EventHandlers;
 	};
 	class APC_Tracked_02_base_F: Tank_F
@@ -131,11 +126,6 @@ class CfgVehicles
 	{
 		class ViewOptics;
 		class ViewCargo;
-		class Sounds: Sounds
-		{
-			class Engine;
-			class Movement;
-		};
 		class NewTurret;
 		class Turrets
 		{

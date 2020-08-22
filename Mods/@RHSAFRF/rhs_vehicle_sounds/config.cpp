@@ -1457,42 +1457,5 @@ class cfgVehicles
 	class Helicopter_Base_F: Helicopter;  //found empty after stripping
 	class Heli_Attack_02_base_F: Helicopter_Base_F;  //found empty after stripping
 	class Heli_Light_03_base_F: Helicopter_Base_F;  //found empty after stripping
-	class RHS_Mi24_base: Heli_Attack_02_base_F
-	{
-		class Sounds
-		{
-			soundSetsExt[]=
-			{
-				"RHS_Heli_hind_ext_close_base_SoundSet",
-				"RHS_Heli_hind_ext_close_bass_SoundSet",
-				"RHS_Heli_hind_ext_mid_SoundSet",
-				"RHS_Heli_hind_ext_far_SoundSet",
-				"RHS_Heli_hind_ext_flyAwayLayer_SoundSet",
-				"RHS_Heli_hind_ext_flyTowardsLayer_SoundSet",
-				"RHS_Heli_hind_ext_rotorScrew_close_SoundSet",
-				"RHS_Heli_hind_ext_rotor_close_base_SoundSet",
-				"RHS_Heli_hind_ext_rotor_close_bass_SoundSet",
-				"RHS_Heli_hind_ext_rotor_mid_base_SoundSet",
-				"RHS_Heli_hind_ext_turbine_SoundSet",
-				"RHS_Heli_hind_ext_rotor_swift_SoundSet",
-				"RHS_Heli_hind_ext_reverb_SoundSet",
-				"RHS_Heli_Hind_ext_turbine_SoundSet"
-			};
-			soundSetsInt[]=
-			{
-				"RHS_Heli_hind_int_engine_SoundSet",
-				"RHS_Heli_hind_int_rotor_SoundSet",
-				"RHS_Heli_hind_int_slow_SoundSet",
-				"RHS_Heli_hind_int_mid_SoundSet",
-				"RHS_Heli_hind_int_fast_SoundSet",
-				"RHS_Plane_Int_wind_light_soundSet",
-				"RHS_Plane_Int_wind_hard_soundSet",
-				"RHS_Plane_Int_gForce_hard_soundSet",
-				"RHS_Plane_Int_rain_light_soundSet",
-				"RHS_Plane_Int_rain_hard_soundSet",
-				"RHS_Plane_ext_rain_light_soundSet",
-				"RHS_Plane_ext_rain_hard_soundSet"
-			};
-		};
-	};
+	class RHS_Mi24_base: Heli_Attack_02_base_F;  //found empty after stripping
 };

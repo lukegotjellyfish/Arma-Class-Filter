@@ -462,32 +462,6 @@ class CfgVehicles
 				depends="0";
 			};
 		};
-		soundEngineOnInt[]=
-		{
-			"A3\Sounds_F_Jets\vehicles\air\Plane_Fighter_01\B_PLANE_FIGHTER_01_engine_start_int",
-			1,
-			1
-		};
-		soundEngineOnExt[]=
-		{
-			"A3\Sounds_F_Jets\vehicles\air\Plane_Fighter_01\B_PLANE_FIGHTER_01_engine_start_ext",
-			1.75,
-			1,
-			300
-		};
-		soundEngineOffInt[]=
-		{
-			"A3\Sounds_F_Jets\vehicles\air\Plane_Fighter_01\B_PLANE_FIGHTER_01_engine_shut_int",
-			1,
-			1
-		};
-		soundEngineOffExt[]=
-		{
-			"A3\Sounds_F_Jets\vehicles\air\Plane_Fighter_01\B_PLANE_FIGHTER_01_engine_shut_ext",
-			1.75,
-			1,
-			300
-		};
 		soundLocked[]=
 		{
 			"A3\Sounds_F_Jets\vehicles\air\Shared\FX_Plane_Jet_lockedOn1",
@@ -531,24 +505,6 @@ class CfgVehicles
 		soundSetSonicBoom[]=
 		{
 			"Plane_Fighter_SonicBoom_SoundSet"
-		};
-		class Sounds
-		{
-			soundSets[]=
-			{
-				"Plane_Fighter_01_EngineLowExt_SoundSet",
-				"Plane_Fighter_01_EngineHighExt_SoundSet",
-				"Plane_Fighter_01_ForsageExt_SoundSet",
-				"Plane_Fighter_01_WindNoiseExt_SoundSet",
-				"Plane_Fighter_01_EngineExt_Dist_Front_SoundSet",
-				"Plane_Fighter_01_EngineExt_Middle_SoundSet",
-				"Plane_Fighter_01_EngineExt_Dist_Rear_SoundSet",
-				"Plane_Fighter_01_EngineLowInt_SoundSet",
-				"Plane_Fighter_01_EngineHighInt_SoundSet",
-				"Plane_Fighter_01_ForsageInt_SoundSet",
-				"Plane_Fighter_01_WindNoiseInt_SoundSet",
-				"Plane_Fighter_01_VelocityInt_SoundSet"
-			};
 		};
 		class Exhausts
 		{

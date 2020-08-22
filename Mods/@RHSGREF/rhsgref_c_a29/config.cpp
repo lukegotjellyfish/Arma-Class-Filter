@@ -66802,51 +66802,6 @@ class CfgVehicles
 			};
 		};
 		attenuationEffectType="PlaneAttenuation";
-		soundGetIn[]=
-		{
-			"A3\Sounds_F\air\Plane_Fighter_03\getin",
-			0.56234097,
-			1
-		};
-		soundGetOut[]=
-		{
-			"A3\Sounds_F\air\Plane_Fighter_03\getout",
-			0.56234097,
-			1,
-			40
-		};
-		soundDammage[]=
-		{
-			"",
-			0.56234097,
-			1
-		};
-		soundEngineOnInt[]=
-		{
-			"\rhsgref\addons\rhsgref_a29\sounds\new_sounds\ext_startup.wav",
-			0.5,
-			1
-		};
-		soundEngineOnExt[]=
-		{
-			"\rhsgref\addons\rhsgref_a29\sounds\new_sounds\ext_startup.wav",
-			2.2,
-			1,
-			700
-		};
-		soundEngineOffInt[]=
-		{
-			"\rhsgref\addons\rhsgref_a29\sounds\new_sounds\ext_shutdown.wav",
-			1,
-			1
-		};
-		soundEngineOffExt[]=
-		{
-			"\rhsgref\addons\rhsgref_a29\sounds\new_sounds\ext_shutdown.wav",
-			2.8,
-			1,
-			500
-		};
 		soundLocked[]=
 		{
 			"\A3\Sounds_F\weapons\Rockets\locked_1",
@@ -66918,22 +66873,6 @@ class CfgVehicles
 		soundSetSonicBoom[]=
 		{
 			"Plane_Fighter_SonicBoom_SoundSet"
-		};
-		class Sounds
-		{
-			soundSets[]=
-			{
-				"RHS_JST_A29_Ext_Taxi_SoundSet",
-				"RHS_JST_A29_Ext_High_SoundSet",
-				"RHS_JST_A29_Ext_Whistle_SoundSet",
-				"RHS_JST_A29_Ext_Whistle_Rear_SoundSet",
-				"RHS_JST_A29_Ext_Flyby_SoundSet",
-				"RHS_JST_A29_Ext_Flyby_Rumble_SoundSet",
-				"RHS_JST_A29_Ext_Dist_Front_SoundSet",
-				"RHS_JST_A29_Ext_Dist_Rear_SoundSet",
-				"RHS_JST_A29_snd_int_jet",
-				"RHS_JST_A29_snd_int_prop"
-			};
 		};
 		class PilotCamera;  //found empty after stripping
 		class DriverOpticsIn
