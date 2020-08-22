@@ -59,6 +59,12 @@ opForAmmo = ["rhs_ammo_12g_slug", "rhs_ammo_12g_00buckshot", "B_338_Ball", "rhs_
 "rhs_B_545x39_Ball", "rhs_ammo_556x45_M855A1_Ball", "rhs_B_762x39_Ball",
 "rhs_B_762x39_Ball", "rhs_B_762x39_Ball", "rhs_B_762x39_Ball_89"]
 
+#Dict for attribute explanations
+attributeEncyclopedia = \
+{
+	"fireLightDuration": "//Duration of light from muzzle flash.",
+	"fireLightIntensity": "//Intensity of light from muzzle flash."
+}
 
 #Classes for launcher page
 bluForLaunchers = []
@@ -86,7 +92,7 @@ def findClass(className):
 				onClass = True
 
 				if line.startswith("	class"):
-					print("Class found " + line.replace("\n",""))
+					  #print("Class found " + line.replace("\n",""))
 					#This regex search is required for my generated config.cpp files as
 					# classes that end as empty are stripped to a single line with a comment
 					# marking them as stripped to a single line.
@@ -96,7 +102,7 @@ def findClass(className):
 						_className = re.search("class ([^\n;]*)", line).group(1).replace("\n","")
 
 					if _className != className:
-						print(cred + "New findClass(_className[" + _className + "] | className[" + className + "])" + cend)
+						#print(cred + "New findClass(_className[" + _className + "] | className[" + className + "])" + cend)
 						#print("Inherit added on end of array: " + str(findClass(_className)))
 						foundClass = findClass(_className)
 						if len(foundClass) == 1:
@@ -118,12 +124,15 @@ def findClass(className):
 					if skipEnd == 0:
 						onClass = False
 
+				"""
+				Add a function here to add a description of attribute to EOL
+				"""
 				classBody.append(line.replace("\n",""))
 
 				if onClass == False:
-					print(cviolet2 + "----------------------" + cend + \
-						cgreen + cbold + "Recursion ended" + cend + \
-						cviolet2 + "----------------------" + cend)
+					# print(cviolet2 + "----------------------" + cend + \
+					# 	cgreen + cbold + "Recursion ended" + cend + \
+					# 	cviolet2 + "----------------------" + cend)
 					return classBody
 	return classBody
 
@@ -146,20 +155,24 @@ def OrderResult(result):
 
 
 def OrderedClasses(itemList, fileName):
-	for _class in itemList:
-		result = findClass(_class)
+	with open(fileName, "w") as file:
+		for _class in itemList:
+			result = findClass(_class)
 
-		orderedResult = OrderResult(result)
-		del orderedResult[-1][-1] #last item is a duplicate }; and I have no idea why
+			orderedResult = OrderResult(result)
 
-		for classBody in orderedResult:
-			print(classBody)
-			for classDetails in classBody:
-				print(cgrey + classDetails + cend)
+			for classBody in orderedResult:
+				#print(classBody)
+				del classBody[-1] #last item is a duplicate }; and I have no idea why
+				for classDetails in classBody:
+					#print(classDetails)
+					file.write(classDetails + "\n")
+					#print(cgrey + classDetails + cend)
+			file.write("\n\n----------NEW WEAP/AMMO CLASS----------\n")
 
-		print(cviolet2 + "-------------------------------" + cend + \
-		(cgreen + cbold + "Next class" + cend) + \
-		cviolet2 + "-------------------------------" + cend)
+			print(cviolet2 + "-------------------------------" + cend + \
+			(cgreen + cbold + "Next class" + cend) + \
+			cviolet2 + "-------------------------------" + cend)
 
 
 
@@ -180,9 +193,9 @@ for walk in walkList:
 					"-------------------------------" + cend)
 
 
-#OrderedClasses(bluForWeapons, "BluForWeapons.txt")
-#OrderedClasses(bluForAmmo, "BluForAmmo.txt")
-#OrderedClasses(opForWeapons, "OpForWeapons.txt")
+OrderedClasses(bluForWeapons, "BluForWeapons.txt")
+OrderedClasses(bluForAmmo, "BluForAmmo.txt")
+OrderedClasses(opForWeapons, "OpForWeapons.txt")
 OrderedClasses(opForAmmo, "OpForAmmo.txt")
 
 #OrderedClasses()
