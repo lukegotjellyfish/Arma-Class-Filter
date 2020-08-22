@@ -17,43 +17,14 @@ cbold    = '\33[1m'
 
 cend     = '\033[0m'
 
+#Regex strip to multi-line attribute and class names
+#([^\[]*\[\])=\n[^\{]*\{[^\}]*\};\n
+
 #\n^\s*$
-attributeSkip = ["author","url","requiredVersion", "onLoad","dlc","category","editorSubcategory",
-"vehicleClass","insideSoundCoef","unitInfoType","model","Icon","mapSize","transportMaxBackpacks","transportSoldier",
-"destrType","crewExplosionProtection","camShakeCoef","dustFrontLeftPos","dustFrontRightPos","dustBackLeftPos","dustBackRightPos","tf_hasLRradio_api",
-"selectionBrakeLights","selectionBackLights","driverAction","driverInAction","driverLeftHandAnimName","driverRightHandAnimName","cargoProxyIndexes",
-"getInProxyOrder","getInAction","getOutAction","driverDoor","viewDriverInExternal","forceHideDriver","factions","textureList","cargoCompartments",
-"visual","ammoExplosionEffect","boneName","center","boundary","suspForceAppPointOffset","tireForceAppPointOffset","tex", "picture","editorPreview",
-"scope", "faction", "showNVGGunner","gunnerLeftHandAnimName","gunnerRightHandAnimName","body","gun","animationSourceBody","animationSourceGun",
-"turretInfoType","discreteDistance","discreteDistanceInitIndex","gunnerForceOptics","gunnerOutOpticsShowCursor","gunnerAction","gunnerInAction",
-"lodTurnedIn","lodTurnedOut","lodOpticsOut","canhideGunner","inGunnerMayFire","outGunnerMayFire","viewGunnerInExternal","gunnerGetInAction",
-"gunnerGetOutAction","gunnerDoor","gunnerCompartments","castGunnerShadow","gunBeg","gunEnd","memoryPointGunnerOptics","memoryPointGunnerOutOptics",
-"gunnerOpticsModel","gunnerOutOpticsModel","optics","disableSoundAttenuation","memoryPointsGetInGunner","memoryPointsGetInGunnerDir","crew",
-"rhs_grip1_change","rhs_grip2_change","rhs_grip3_change","baseWeapon","displayName","inertia","dexterity", "distanceZoomMin", "distanceZoomMax",
-"cameraDir", "weaponInfoType", "UiPicture", "magazineReloadSwitchPhase", "reloadAction", "maxRecoilSway", "swayDecaySpeed", "aimTransitionSpeed",
-"minRange", "minRangeProbab", "midRange", "midRangeProbab", "maxRange", "maxRangeProbab", "showToPlayer", "aiRateOfFire", "aiRateOfFireDistance",
-"requiredOpticType","aiDispersionCoefY", "aiDispersionCoefX","allowedSlots", "type", "descriptionShort","soundContinuous","soundBurst",
-"deployedPivot","hasBipod","holsterScale","holsterOffset","RMBhint","priority","onHoverText","cartridge","suppressionRadiusBulletClose","visibleFire",
-"audibleFire","maxLeadSpeed","discretedistance[]"]
+attributeSkip = ["AIAmmoUsageFlags", "CraterEffects", "Icon", "RMBhint", "UiPicture", "aiDispersionCoefX", "aiDispersionCoefY", "aiRateOfFire", "aiRateOfFireDistance", "aimTransitionSpeed", "allowedSlots", "ammoExplosionEffect", "animationSourceBody", "animationSourceGun", "audibleFire", "author", "baseWeapon", "body", "boneName", "boundary", "camShakeCoef", "cameraDir", "canhideGunner", "cargoCompartments", "cargoProxyIndexes", "cartridge", "castGunnerShadow", "category", "center", "crew", "crewExplosionProtection", "deployedPivot", "descriptionShort", "destrType", "dexterity", "disableSoundAttenuation", "discreteDistance", "discreteDistanceInitIndex", "discretedistance[]", "displayName", "distanceZoomMax", "distanceZoomMin", "dlc", "driverAction", "driverDoor", "driverInAction", "driverLeftHandAnimName", "driverRightHandAnimName", "dustBackLeftPos", "dustBackRightPos", "dustFrontLeftPos", "dustFrontRightPos", "editorPreview", "editorSubcategory", "effectsMissile", "effectsMissileInit", "explosionEffects", "faction", "factions", "forceHideDriver", "getInAction", "getInProxyOrder", "getOutAction", "gun", "gunBeg", "gunEnd", "gunnerAction", "gunnerCompartments", "gunnerDoor", "gunnerForceOptics", "gunnerGetInAction", "gunnerGetOutAction", "gunnerInAction", "gunnerLeftHandAnimName", "gunnerOpticsModel", "gunnerOutOpticsModel", "gunnerOutOpticsShowCursor", "gunnerRightHandAnimName", "hasBipod", "holsterOffset", "holsterScale", "inGunnerMayFire", "inertia", "insideSoundCoef", "lodOpticsOut", "lodTurnedIn", "lodTurnedOut", "magazineReloadSwitchPhase", "mapSize", "maxLeadSpeed", "maxRange", "maxRangeProbab", "maxRecoilSway", "memoryPointGunnerOptics", "memoryPointGunnerOutOptics", "memoryPointsGetInGunner", "memoryPointsGetInGunnerDir", "midRange", "midRangeProbab", "minRange", "minRangeProbab", "model", "onHoverText", "onLoad", "optics", "outGunnerMayFire", "picture", "priority", "reloadAction", "requiredOpticType", "requiredVersion", "rhs_grip1_change", "rhs_grip2_change", "rhs_grip3_change", "scope", "selectionBackLights", "selectionBrakeLights", "showNVGGunner", "showToPlayer", "soundBurst", "soundContinuous", "suppressionRadiusBulletClose", "suspForceAppPointOffset", "swayDecaySpeed", "tex", "textureList", "tf_hasLRradio_api", "tireForceAppPointOffset", "transportMaxBackpacks", "transportSoldier", "turretInfoType", "type", "unitInfoType", "url", "vehicleClass", "viewDriverInExternal", "viewGunnerInExternal", "visibleFire", "visual", "weaponInfoType"]
+multiAttributeSkip = ["ArmorCrash0[]", "ArmorCrash1[]", "ArmorCrash2[]", "ArmorCrash3[]", "Crash0[]", "HiddenSelectionsTextures[]", "WoodCrash0[]", "WoodCrash1[]", "WoodCrash2[]", "WoodCrash3[]", "WoodCrash4[]", "WoodCrash5[]", "aggregateReflectors[]", "armorCrash0[]", "buildCrash0[]", "buildCrash1[]", "buildCrash2[]", "buildCrash3[]", "bullet10[]", "bullet11[]", "bullet12[]", "bullet1[]", "bullet2[]", "bullet3[]", "bullet4[]", "bullet5[]", "bullet6[]", "bullet7[]", "bullet8[]", "bullet9[]", "bulletFly10[]", "bulletFly11[]", "bulletFly12[]", "bulletFly1[]", "bulletFly2[]", "bulletFly3[]", "bulletFly4[]", "bulletFly5[]", "bulletFly6[]", "bulletFly7[]", "bulletFly8[]", "bulletFly9[]", "bulletFly[]", "cabinOpenSound[]", "cargoAction[]", "cargoDoors[]", "caseless[]", "changeFiremodeSound[]", "class CamShakeExplode", "class CamShakeFire", "class CamShakeHit", "class CamShakePlayerFire", "class HitEffects", "class SuperSonicCrack", "controls[]", "discreteDistanceCameraPoint[]", "drySound[]", "handAnim[]", "hiddenSelectionsTextures[]", "hiddenSelections[]", "hitArmorInt[]", "hitArmor[]", "hitBell[]", "hitBuilding[]", "hitConcrete[]", "hitDefault[]", "hitFoliage[]", "hitGlassArmored[]", "hitGlass[]", "hitGroundHard[]", "hitGroundSoft[]", "hitMan[]", "hitMetalInt[]", "hitMetal[]", "hitMetalplate[]", "hitPlastic[]", "hitRubber[]", "hitTyre[]", "hitWater[]", "hitWood[]", "impactArmor[]", "impactBuilding[]", "impactConcrete[]", "impactDefault[]", "impactFoliage[]", "impactGlassArmored[]", "impactGlass[]", "impactGroundHard[]", "impactGroundSoft[]", "impactGroundSoft[]", "impactIron[]", "impactMan[]", "impactMetal[]", "impactMetalplate[]", "impactPlastic[]", "impactRubber[]", "impactTyre[]", "impactWater[]", "impactWood[]", "mat[]", "memoryPointsGetInCargoDir[]", "memoryPointsGetInCargo[]", "modes[]", "muzzles[]", "reloadMagazineSound[]", "reloadmagazinesound[]", "requiredAddons[]", "soundArmorCrash[]", "soundBell1[]", "soundBuildingCrash[]", "soundBullet[]", "soundConcrete1[]", "soundConcrete2[]", "soundConcrete3[]", "soundConcrete4[]", "soundConcrete5[]", "soundConcrete6[]", "soundConcrete7[]", "soundConcrete8[]", "soundDammage[]", "soundDefault1[]", "soundDefault2[]", "soundDefault3[]", "soundDefault4[]", "soundDefault5[]", "soundDefault6[]", "soundDefault7[]", "soundDefault8[]", "soundEngineOffExt[]", "soundEngineOffInt[]", "soundEngineOnExt[]", "soundEngineOnInt[]", "soundFly[]", "soundGeneralCollision1[]", "soundGetIn[]", "soundGetOut[]", "soundGlass1[]", "soundGlass2[]", "soundGlass3[]", "soundGlass4[]", "soundGlass5[]", "soundGlass6[]", "soundGlass7[]", "soundGlass8[]", "soundGlassArmored1[]", "soundGlassArmored2[]", "soundGlassArmored3[]", "soundGlassArmored4[]", "soundGlassArmored5[]", "soundGlassArmored6[]", "soundGlassArmored7[]", "soundGlassArmored8[]", "soundGroundHard1[]", "soundGroundHard2[]", "soundGroundHard3[]", "soundGroundHard4[]", "soundGroundHard5[]", "soundGroundHard6[]", "soundGroundHard7[]", "soundGroundHard8[]", "soundGroundSoft1[]", "soundGroundSoft2[]", "soundGroundSoft3[]", "soundGroundSoft4[]", "soundGroundSoft5[]", "soundGroundSoft6[]", "soundGroundSoft7[]", "soundGroundSoft8[]", "soundHitBody1[]", "soundHitBody2[]", "soundHitBody3[]", "soundHitBody4[]", "soundHitBody5[]", "soundHitBody6[]", "soundHitBody7[]", "soundHitBody8[]", "soundHitBuilding1[]", "soundHitBuilding2[]", "soundHitBuilding3[]", "soundHitBuilding4[]", "soundHitBuilding5[]", "soundHitBuilding6[]", "soundHitBuilding7[]", "soundHitBuilding8[]", "soundHitFoliage1[]", "soundHitFoliage2[]", "soundHitFoliage3[]", "soundHitFoliage4[]", "soundHitFoliage5[]", "soundHitFoliage6[]", "soundHitFoliage7[]", "soundHitFoliage8[]", "soundImpactDefault1[]", "soundImpactDefault1[]", "soundLocked[]", "soundMetal1[]", "soundMetal2[]", "soundMetal3[]", "soundMetal4[]", "soundMetal5[]", "soundMetal6[]", "soundMetal7[]", "soundMetal8[]", "soundMetalInt1[]", "soundMetalInt2[]", "soundMetalInt3[]", "soundMetalInt4[]", "soundMetalInt5[]", "soundMetalInt6[]", "soundPlastic1[]", "soundPlastic2[]", "soundPlastic3[]", "soundPlastic4[]", "soundPlastic5[]", "soundPlastic6[]", "soundPlastic7[]", "soundPlastic8[]", "soundRubber1[]", "soundRubber2[]", "soundRubber3[]", "soundRubber4[]", "soundRubber5[]", "soundRubber6[]", "soundServo[]", "soundTyre1[]", "soundTyre2[]", "soundTyre3[]", "soundTyre4[]", "soundTyre5[]", "soundTyre6[]", "soundTyre7[]", "soundTyre8[]", "soundVehiclePlate1[]", "soundVehiclePlate2[]", "soundVehiclePlate3[]", "soundVehiclePlate4[]", "soundVehiclePlate5[]", "soundVehiclePlate6[]", "soundVehiclePlate7[]", "soundVehiclePlate8[]", "soundVehiclePlateInt10[]", "soundVehiclePlateInt11[]", "soundVehiclePlateInt12[]", "soundVehiclePlateInt13[]", "soundVehiclePlateInt14[]", "soundVehiclePlateInt15[]", "soundVehiclePlateInt1[]", "soundVehiclePlateInt2[]", "soundVehiclePlateInt3[]", "soundVehiclePlateInt4[]", "soundVehiclePlateInt5[]", "soundVehiclePlateInt6[]", "soundVehiclePlateInt7[]", "soundVehiclePlateInt8[]", "soundVehiclePlateInt9[]", "soundWater1[]", "soundWater2[]", "soundWater3[]", "soundWater4[]", "soundWater5[]", "soundWater6[]", "soundWater7[]", "soundWater8[]", "soundWood1[]", "soundWood2[]", "soundWood3[]", "soundWood4[]", "soundWood5[]", "soundWood6[]", "soundWood7[]", "soundWood8[]", "soundWoodCrash[]", "sounds[]", "supersonicCrackFar[]", "supersonicCrackNear[]", "textures[]"]
+classSkip = ["class AnimationSources", "class CamShakeFire", "class CamShakePlayerFire", "class CargoTurret_01: CargoTurret", "class CfgMovesBasic", "class CfgMovesMaleSdr: CfgMovesBasic", "class CowsSlot", "class DestructionEffects", "class DoorB", "class DoorL: DoorB", "class DoorR: DoorB", "class GunParticles", "class HitEffects", "class Library", "class LinkedItems", "class MuzzleSlot", "class ObjectTexture", "class OpticsModes", "class PointerSlot", "class RHSUSF_EventHandlers", "class RHS_Engine_Fire: RHS_Engine_Smoke", "class RHS_Engine_Smoke", "class RHS_Engine_Smoke_small1: RHS_Engine_Smoke", "class RHS_Engine_Smoke_small2: RHS_Engine_Smoke_small1", "class RHS_Engine_Sounds: RHS_Engine_Smoke", "class RHS_Engine_Sparks: RHS_Engine_Smoke", "class Reflectors", "class RenderTargets", "class RscInGameUI", "class Sounds", "class SpeechVariants", "class StandardSound", "class SuperSonicCrack", "class TransportBackpacks", "class TransportItems", "class TransportMagazines", "class TransportWeapons", "class TurnIn", "class UnderBarrelSlot", "class UserActions", "class close", "class far_optic1", "class far_optic2", "class medium", "class rhsusf_CGRCAT1A2_usmc_d: rhsusf_Cougar_base", "class short"]
 
-multiAttributeSkip = ["requiredAddons[]", "controls[]","cargoAction[]","memoryPointsGetInCargo[]","memoryPointsGetInCargoDir[]","cargoDoors[]","textures[]",
-"aggregateReflectors[]","mat[]","HiddenSelectionsTextures[]","soundServo[]", "modes[]","hiddenSelections[]","hiddenSelectionsTextures[]",
-"handAnim[]","discreteDistanceCameraPoint[]", "caseless[]", "soundBullet[]", "sounds[]", "drySound[]","muzzles[]",
-"bullet1[]","bullet2[]","bullet3[]","bullet4[]","bullet5[]","bullet6[]","bullet7[]","bullet8[]","bullet9[]","bullet10[]","bullet11[]","bullet12[]",
-"reloadMagazineSound[]","changeFiremodeSound[]","reloadmagazinesound[]","soundGetIn[]","soundGetOut[]","soundDammage[]","soundEngineOnInt[]",
-"soundEngineOnExt[]","soundEngineOffInt[]","soundEngineOffExt[]","buildCrash0[]","buildCrash1[]","buildCrash2[]","buildCrash3[]",
-"soundBuildingCrash[]","WoodCrash0[]","WoodCrash1[]","WoodCrash2[]","WoodCrash3[]","WoodCrash4[]","WoodCrash5[]","soundWoodCrash[]",
-"ArmorCrash0[]","ArmorCrash1[]","ArmorCrash2[]","ArmorCrash3[]","soundArmorCrash[]", "soundLocked[]","cabinOpenSound[]",
-"armorCrash0[]", "Crash0[]", "soundGeneralCollision1[]"]
-
-classSkip = ["class CfgMovesBasic", "class RscInGameUI","class CfgMovesMaleSdr: CfgMovesBasic", "class ObjectTexture", "class DoorB", "class DoorL: DoorB",
-"class DoorR: DoorB", "class TurnIn", "class CargoTurret_01: CargoTurret", "class AnimationSources", "class UserActions","class RHS_Engine_Smoke",
-"class RHS_Engine_Fire: RHS_Engine_Smoke","class RHS_Engine_Sparks: RHS_Engine_Smoke", "class RHS_Engine_Sounds: RHS_Engine_Smoke",
-"class RHS_Engine_Smoke_small1: RHS_Engine_Smoke","class RHS_Engine_Smoke_small2: RHS_Engine_Smoke_small1", "class Reflectors", "class RenderTargets",
-"class RHSUSF_EventHandlers","class TransportBackpacks","class TransportMagazines","class TransportItems","class TransportWeapons",
-"class rhsusf_CGRCAT1A2_usmc_d: rhsusf_Cougar_base", "class DestructionEffects", "class CowsSlot", "class MuzzleSlot", "class PointerSlot",
-"class UnderBarrelSlot", "class LinkedItems", "class GunParticles", "class StandardSound", "class Library","class close","class short",
-"class medium","class far_optic1","class far_optic2","class OpticsModes", "class Sounds", "class SpeechVariants"]
 
 def newFile(root, file, logfile):
 	with open(root + "\\\\" + file, "r", encoding="UTF-8") as f:
@@ -104,7 +75,7 @@ def newFile(root, file, logfile):
 			if i > 0:
 				preppedLine = line.replace("\n","").replace("	","  ")
 				logfile.write("[SKIPPED CLASS]     " + preppedLine + "\n")
-				print(cred + "[SKIPPED CLASS]     " + cend + cgrey + preppedLine + cend)
+				#print(cred + "[SKIPPED CLASS]     " + cend + cgrey + preppedLine + cend)
 				index += 1
 				continue
 
@@ -121,11 +92,11 @@ def newFile(root, file, logfile):
 				index += 1
 				preppedLine = line.replace("\n","").replace("	","  ")
 				logfile.write("[SKIPPED ATTRIBUTE]     " + preppedLine + "\n")
-				print(cred + "[SKIPPED ATTRIBUTE] " + cend + cgrey + preppedLine + cend)
+				#print(cred + "[SKIPPED ATTRIBUTE] " + cend + cgrey + preppedLine + cend)
 				continue
 			preppedLine = line.replace("\n","").replace("	","  ")
 			logfile.write("[ADDED]             " + preppedLine)
-			print(cgreen + "[ADDED]             " + cend + preppedLine)
+			#print(cgreen + "[ADDED]             " + cend + preppedLine)
 			fileWriteList.append(line)
 
 		#Found multi-line attribute
@@ -142,18 +113,18 @@ def newFile(root, file, logfile):
 			if i > 0:
 				preppedLine = line.replace("\n","").replace("	","  ")
 				logfile.write("[SKIPPED ATTRIBUTE]     " + preppedLine + "\n")
-				print(cred + "[SKIPPED ATTRIBUTE] " + cend + cgrey + preppedLine + cend)
+				#print(cred + "[SKIPPED ATTRIBUTE] " + cend + cgrey + preppedLine + cend)
 				index += 1
 				continue
 			preppedLine = line.replace("\n","").replace("	","  ")
 			logfile.write("[ADDED]             " + preppedLine)
-			print(cgreen + "[ADDED]             " + cend + preppedLine)
+			#print(cgreen + "[ADDED]             " + cend + preppedLine)
 			fileWriteList.append(line)
 
 		else:
 			preppedLine = line.replace("\n","").replace("	","  ")
 			logfile.write("[ADDED]             " + preppedLine)
-			print(cgreen + "[ADDED]             " + cend + preppedLine)
+			#print(cgreen + "[ADDED]             " + cend + preppedLine)
 			fileWriteList.append(line)
 
 		index += 1
@@ -176,7 +147,7 @@ def newFile(root, file, logfile):
 						writeToThisFile.write(item.replace("\n","") + ";  //found empty after stripping\n")
 						preppedLine = line.replace("\n","").replace("	","  ")
 						logfile.write("[EMPTY CLASS]     " + preppedLine + "\n")
-						print(cred + "[EMPTY CLASS]     " + cend + cgrey + preppedLine + cend)
+						#print(cred + "[EMPTY CLASS]     " + cend + cgrey + preppedLine + cend)
 						x += 1
 						toSkip = 2
 						continue
