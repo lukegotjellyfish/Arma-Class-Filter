@@ -45,7 +45,6 @@ bluForAmmo = ["rhs_ammo_12g_slug", "rhs_ammo_12g_00buckshot", "rhsusf_ammo_127x9
 "rhs_ammo_556x45_M855A1_Ball", "rhs_ammo_792x33_SmE_ball", "rhs_ammo_46x30_JHP",
 "rhs_ammo_9x19_JHP", "rhs_ammo_45ACP_MHP", "rhs_ammo_9x17", "rhs_ammo_8mm_mhp"]
 
-
 opForWeapons = ["rhs_weap_Izh18", "rhs_weap_t5000", "rhs_weap_svdp", "rhs_weap_svdp_npz", "rhs_weap_m76",
 "rhs_weap_m38", "rhs_weap_m38_rail", "rhs_weap_pkm", "rhs_weap_pkp", "rhs_weap_m84", "rhs_weap_asval",
 "rhs_weap_asval_npz", "rhs_weap_dsr1", "rhs_weap_ak74mr", "rhs_weap_ak74m", "rhs_weap_vss",
@@ -59,6 +58,7 @@ opForAmmo = ["rhs_ammo_12g_slug", "rhs_ammo_12g_00buckshot", "B_338_Ball", "rhs_
 "rhs_B_545x39_7N10_Ball", "rhs_B_9x39_SP5", "rhs_B_9x39_SP5", "rhs_B_545x39_Ball",
 "rhs_B_545x39_Ball", "rhs_ammo_556x45_M855A1_Ball", "rhs_B_762x39_Ball",
 "rhs_B_762x39_Ball", "rhs_B_762x39_Ball", "rhs_B_762x39_Ball_89"]
+
 
 #Classes for launcher page
 bluForLaunchers = []
@@ -117,13 +117,49 @@ def findClass(className):
 					#If skips are 0, the end of the class has been reached
 					if skipEnd == 0:
 						onClass = False
+
 				classBody.append(line.replace("\n",""))
+
 				if onClass == False:
 					print(cviolet2 + "----------------------" + cend + \
 						cgreen + cbold + "Recursion ended" + cend + \
 						cviolet2 + "----------------------" + cend)
 					return classBody
 	return classBody
+
+
+def OrderResult(result):
+	#Create list for sorting of each class in returned class details
+	orderedResult = []
+	onClass = False
+	construct = []
+	for a in result:
+		if a.startswith("	class") or onClass == True:
+			onClass = True
+			construct.append(a)
+		if a == "	};":
+			construct.append(a)
+			onClass = False
+			orderedResult.append(construct)
+			construct = []
+	return list(reversed(orderedResult))
+
+
+def OrderedClasses(itemList, fileName):
+	for _class in itemList:
+		result = findClass(_class)
+
+		orderedResult = OrderResult(result)
+		del orderedResult[-1][-1] #last item is a duplicate }; and I have no idea why
+
+		for classBody in orderedResult:
+			print(classBody)
+			for classDetails in classBody:
+				print(cgrey + classDetails + cend)
+
+		print(cviolet2 + "-------------------------------" + cend + \
+		(cgreen + cbold + "Next class" + cend) + \
+		cviolet2 + "-------------------------------" + cend)
 
 
 
@@ -144,31 +180,12 @@ for walk in walkList:
 					"-------------------------------" + cend)
 
 
+#OrderedClasses(bluForWeapons, "BluForWeapons.txt")
+#OrderedClasses(bluForAmmo, "BluForAmmo.txt")
+#OrderedClasses(opForWeapons, "OpForWeapons.txt")
+OrderedClasses(opForAmmo, "OpForAmmo.txt")
 
-
-for sideList in bluForWeapons, bluForAmmo, opForWeapons, opForAmmo:
-	for _class in sideList:
-		#Fetch class to get details of
-		result = findClass(_class)
-
-		#Create list for sorting of each class in returned class details
-		orderedResult = []
-		onClass = False
-		construct = []
-		for a in result:
-			if a.startswith("	class") or onClass == True:
-				onClass = True
-				construct.append(a)
-			if a == "	};":
-				construct.append(a)
-				onClass = False
-				orderedResult.append(construct)
-				construct = []
-
-		orderedResult = list(reversed(orderedResult))
-		for classBody in orderedResult:
-			for classDetails in classBody:
-				print(cgrey + classDetails + cend)
-		print(cviolet2 + "-------------------------------" + \
-		cend + (cgreen + cbold + "Next class" + cend) + cviolet2 + \
-		"-------------------------------" + cend)
+#OrderedClasses()
+#OrderedClasses()
+#OrderedClasses()
+#OrderedClasses()
