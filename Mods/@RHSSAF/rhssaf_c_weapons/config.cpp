@@ -1150,12 +1150,6 @@ class CfgWeapons
 	{
 		recoil="recoil_mk20";
 		recoilProne="assaultRifleBase";
-		magazineWell[]=
-		{
-			"AK_762x39",
-			"CBA_762x39_AK",
-			"CBA_762x39_RPK"
-		};
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=87.339996;
@@ -1209,12 +1203,6 @@ class CfgWeapons
 	};
 	class rhs_weap_m92: rhs_weap_m70_base
 	{
-		magazineWell[]=
-		{
-			"AK_762x39",
-			"CBA_762x39_AK",
-			"CBA_762x39_RPK"
-		};
 		initSpeed=-0.92000002;
 		recoil="recoil_akm";
 		class Single: Single
@@ -1247,10 +1235,6 @@ class CfgWeapons
 			"rhsgref_10Rnd_792x57_m76",
 			"rhssaf_10Rnd_792x57_m76_tracer"
 		};
-		magazineWell[]=
-		{
-			"CBA_792x57_M76"
-		};
 		recoil="recoil_akm";
 		class Single: Mode_SemiAuto
 		{
@@ -1270,10 +1254,6 @@ class CfgWeapons
 		{
 			"rhsgref_30rnd_556x45_m21",
 			"rhsgref_30rnd_556x45_m21_t"
-		};
-		magazineWell[]=
-		{
-			"CBA_556x45_M21"
 		};
 		class Single: Mode_SemiAuto
 		{
@@ -1410,10 +1390,6 @@ class CfgWeapons
 			"rhsgref_20rnd_765x17_vz61",
 			"rhsgref_10rnd_765x17_vz61"
 		};
-		magazineWell[]=
-		{
-			"CBA_32ACP_Vz61"
-		};
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=28.16;
@@ -1463,10 +1439,6 @@ class CfgWeapons
 			"1Rnd_SmokeBlue_Grenade_shell",
 			"1Rnd_SmokeOrange_Grenade_shell"
 		};
-		magazineWell[]=
-		{
-			"UGL_40x36"
-		};
 		useModelOptics=0;
 		useExternalOptic=0;
 		cursoraim="gl";
@@ -1509,10 +1481,6 @@ class CfgWeapons
 			"rhssaf_30rnd_556x45_TDIM_G36",
 			"150Rnd_556x45_Drum_Mag_F",
 			"150Rnd_556x45_Drum_Mag_Tracer_F"
-		};
-		magazineWell[]=
-		{
-			"CBA_556x45_G36"
 		};
 		aidispersioncoefx=4;
 		aidispersioncoefy=6;
@@ -1936,10 +1904,6 @@ class CfgWeapons
 			"rhs_100Rnd_762x54mmR_7N26",
 			"rhs_100Rnd_762x54mmR_7BZ3"
 		};
-		magazineWell[]=
-		{
-			"PK_762x54R"
-		};
 		recoil="recoil_zafir";
 		maxZeroing=1500;
 		handanim[]=
@@ -2115,10 +2079,6 @@ class CfgWeapons
 		{
 			"rhssaf_mag_15Rnd_9x19_FMJ",
 			"rhssaf_mag_15Rnd_9x19_JHP"
-		};
-		magazineWell[]=
-		{
-			"CZ99_9x19_PARA"
 		};
 		initSpeed=-0.89999998;
 		dispersion=0.02;

@@ -739,20 +739,6 @@ class CfgAmmo
 		};
 		submunitionInitSpeed=5;
 		mineJumpEffects="MineJumpEffect";
-		class CamShakeExplode
-		{
-			power=0;
-			duration=0.2;
-			frequency=20;
-			distance=0;
-		};
-		class CamShakeHit
-		{
-			power=0;
-			duration=0.2;
-			frequency=20;
-			distance=1;
-		};
 		hit=0;
 		indirectHit=0;
 		indirectHitRange=0;
@@ -2106,10 +2092,6 @@ class CfgWeapons
 		{
 			"rhsgref_5Rnd_792x57_kar98k"
 		};
-		magazineWell[]=
-		{
-			"CBA_792x57_K98"
-		};
 		recoil="recoil_dmr_01";
 		maxZeroing=2000;
 		class WeaponSlotsInfo: WeaponSlotsInfo;  //found empty after stripping
@@ -2147,10 +2129,6 @@ class CfgWeapons
 		magazines[]=
 		{
 			"rhsgref_5Rnd_762x54_m38"
-		};
-		magazineWell[]=
-		{
-			"CBA_762x54R_Mosin"
 		};
 		recoil="recoil_dmr_01";
 		class WeaponSlotsInfo: WeaponSlotsInfo;  //found empty after stripping
@@ -2232,10 +2210,6 @@ class CfgWeapons
 			"rhs_30Rnd_762x39mm_89",
 			"rhs_30Rnd_762x39mm_U"
 		};
-		magazineWell[]=
-		{
-			"CBA_762x39_AK"
-		};
 		recoil="recoil_mk20";
 		recoilProne="assaultRifleBase";
 		class WeaponSlotsInfo: WeaponSlotsInfo
@@ -2266,10 +2240,6 @@ class CfgWeapons
 	{
 		recoil="recoil_mk20";
 		recoilProne="assaultRifleBase";
-		magazineWell[]=
-		{
-			"AK_762x39"
-		};
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=87.339996;
@@ -2296,10 +2266,6 @@ class CfgWeapons
 	};
 	class rhs_weap_m92: rhs_weap_m70_base
 	{
-		magazineWell[]=
-		{
-			"AK_762x39"
-		};
 		initSpeed=-0.92000002;
 		recoil="recoil_akm";
 		class Single: Single
@@ -2331,10 +2297,6 @@ class CfgWeapons
 		{
 			"rhsgref_10Rnd_792x57_m76"
 		};
-		magazineWell[]=
-		{
-			"CBA_792x57_M76"
-		};
 		recoil="recoil_akm";
 		class Single: Mode_SemiAuto
 		{
@@ -2354,10 +2316,6 @@ class CfgWeapons
 		{
 			"rhsgref_30rnd_556x45_m21",
 			"rhsgref_30rnd_556x45_m21_t"
-		};
-		magazineWell[]=
-		{
-			"CBA_556x45_M21"
 		};
 		class Single: Mode_SemiAuto
 		{
@@ -2469,10 +2427,6 @@ class CfgWeapons
 			"rhsgref_20rnd_765x17_vz61",
 			"rhsgref_10rnd_765x17_vz61"
 		};
-		magazineWell[]=
-		{
-			"CBA_32ACP_Vz61"
-		};
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=28.16;
@@ -2503,10 +2457,6 @@ class CfgWeapons
 		{
 			"rhs_30Rnd_762x39mm_Savz58",
 			"rhs_30Rnd_762x39mm_Savz58_tracer"
-		};
-		magazineWell[]=
-		{
-			"CBA_762x39_VZ58"
 		};
 		recoil="recoil_ktbc";
 		class WeaponSlotsInfo: WeaponSlotsInfo
@@ -2678,10 +2628,6 @@ class CfgWeapons
 			"rhsgref_30rnd_556x45_vhs2",
 			"rhsgref_30rnd_556x45_vhs2_t"
 		};
-		magazineWell[]=
-		{
-			"CBA_556x45_G36"
-		};
 		recoil="recoil_ktbc";
 		memoryPointCamera="eye";
 		class SAFE: RHS_SAFE_BASE;  //found empty after stripping
@@ -2726,10 +2672,6 @@ class CfgWeapons
 				"rhs_mag_M714_white",
 				"rhs_mag_M715_green",
 				"rhs_mag_M716_yellow"
-			};
-			magazineWell[]=
-			{
-				"UGL_40x36"
 			};
 		};
 	};
@@ -2786,10 +2728,6 @@ class CfgWeapons
 		{
 			"rhsgref_24rnd_75x55_Stgw57"
 		};
-		magazineWell[]=
-		{
-			"CBA_75x55_STGW57"
-		};
 		recoil="recoil_mk20";
 		recoilProne="assaultRifleBase";
 		class WeaponSlotsInfo: WeaponSlotsInfo
@@ -2823,10 +2761,6 @@ class CfgWeapons
 			"rhsgref_30rnd_1143x23_M1T_SMG",
 			"rhsgref_30rnd_1143x23_M1911B_2mag_SMG",
 			"rhsgref_30rnd_1143x23_M1T_2mag_SMG"
-		};
-		magazineWell[]=
-		{
-			"CBA_45ACP_Grease"
 		};
 		class SAFE: RHS_SAFE_BASE;  //found empty after stripping
 		recoil="recoil_mx";
@@ -2862,10 +2796,6 @@ class CfgWeapons
 		{
 			"rhsgref_30Rnd_792x33_SmE_StG",
 			"rhsgref_25Rnd_792x33_SmE_StG"
-		};
-		magazineWell[]=
-		{
-			"CBA_792x33_StG"
 		};
 		recoil="recoil_mk20";
 		recoilProne="assaultRifleBase";
@@ -2983,10 +2913,6 @@ class CfgWeapons
 			"rhs_mag_M715_green",
 			"rhs_mag_M716_yellow"
 		};
-		magazineWell[]=
-		{
-			"UGL_40x36"
-		};
 		recoil="recoil_gm6";
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
@@ -3004,11 +2930,6 @@ class CfgWeapons
 		magazines[]=
 		{
 			"rhs_mag_20Rnd_762x51_m80_fnfal"
-		};
-		magazineWell[]=
-		{
-			"CBA_762x51_FAL",
-			"CBA_762x51_FAL_L"
 		};
 		recoil="rhs_recoil_fnfal";
 		class WeaponSlotsInfo: WeaponSlotsInfo
@@ -3323,10 +3244,6 @@ class CfgWeapons
 		magazines[]=
 		{
 			"rhs_mag_762x25_8"
-		};
-		magazineWell[]=
-		{
-			"CBA_762x25_TT"
 		};
 		dispersion=0.02;
 		ffCount=1;

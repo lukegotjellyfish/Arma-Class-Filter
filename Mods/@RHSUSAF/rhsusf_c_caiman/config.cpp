@@ -1403,8 +1403,6 @@ class CfgVehicles
 		class Attributes: Attributes
 		{
 			class rhs_hideDUKE: rhs_hideDUKE;  //found empty after stripping
-			class DoorL: DoorL;  //found empty after stripping
-			class DoorR: DoorR;  //found empty after stripping
 			class rhino
 			{
 				control="CheckboxNumber";

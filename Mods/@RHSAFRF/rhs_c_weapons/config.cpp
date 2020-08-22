@@ -3588,20 +3588,6 @@ class CfgAmmo
 		rhs_flare_type="rhs_mine_msk40p_white_flare";
 		rhs_flare_used="rhs_mine_msk40p_white_used";
 		rhs_flare_offset[]={0,0,0.34999999};
-		class CamShakeExplode
-		{
-			power=0;
-			duration=0.2;
-			frequency=20;
-			distance=0;
-		};
-		class CamShakeHit
-		{
-			power=0;
-			duration=0.2;
-			frequency=20;
-			distance=1;
-		};
 		mineModelDisabled="\rhsafrf\addons\rhs_weapons\mines\rhs_msk40p_white_d";
 		defaultMagazine="rhs_mine_msk40p_white_mag";
 		soundHit[]=
@@ -3921,124 +3907,6 @@ class CfgAmmo
 		whistleDist=4;
 		timeToLive=6;
 		airLock=1;
-		class EventHandlers;
-	};
-	class rhs_rpg7v2_pg7vl_penetrator: rhs_ammo_base_penetrator
-	{
-		caliber=36;
-	};
-	class rhs_rpg7v2_pg7v: rhs_rpg7v2_pg7vl
-	{
-		airfriction=0.81999999;
-		sideAirFriction=0.2105;
-		thrustTime=0.69;
-		thrust=195;
-		submunitionAmmo="rhs_rpg7v2_pg7v_penetrator";
-		submunitionDirectionType="SubmunitionModelDirection";
-		submunitionInitialOffset[]={0,0,-0.2};
-		submunitionParentSpeedCoef=0;
-		submunitionInitSpeed=1000;
-		triggerOnImpact=1;
-		deleteParentWhenTriggered=0;
-	};
-	class rhs_rpg7v2_pg7v_penetrator: rhs_ammo_base_penetrator
-	{
-		caliber=17.3333;
-	};
-	class rhs_rpg7v2_pg7vm: rhs_rpg7v2_pg7v
-	{
-		airfriction=0.87;
-		sideAirFriction=0.175;
-		submunitionAmmo="rhs_rpg7v2_pg7vm_penetrator";
-		submunitionDirectionType="SubmunitionModelDirection";
-		submunitionInitialOffset[]={0,0,-0.2};
-		submunitionParentSpeedCoef=0;
-		submunitionInitSpeed=1000;
-		triggerOnImpact=1;
-		deleteParentWhenTriggered=0;
-	};
-	class rhs_rpg7v2_pg7vm_penetrator: rhs_ammo_base_penetrator
-	{
-		caliber=20;
-	};
-	class rhs_rpg7v2_pg7vs: rhs_rpg7v2_pg7vm
-	{
-		submunitionAmmo="rhs_rpg7v2_pg7vm_penetrator";
-		submunitionDirectionType="SubmunitionModelDirection";
-		submunitionInitialOffset[]={0,0,-0.2};
-		submunitionParentSpeedCoef=0;
-		submunitionInitSpeed=1000;
-		triggerOnImpact=1;
-		deleteParentWhenTriggered=0;
-	};
-	class rhs_rpg7v2_pg7vs_penetrator: rhs_ammo_base_penetrator
-	{
-		caliber=26.6667;
-	};
-	class rhs_rpg7v2_pg7vr: rhs_rpg7v2_pg7vl
-	{
-		warheadName="TandemHEAT";
-		submunitionAmmo="rhs_rpg7v2_pg7vr_penetrator";
-		submunitionDirectionType="SubmunitionModelDirection";
-		submunitionInitialOffset[]={0,0,-0.2};
-		submunitionParentSpeedCoef=0;
-		submunitionInitSpeed=1000;
-		triggerOnImpact=1;
-		deleteParentWhenTriggered=0;
-		hit=230;
-		indirectHit=20;
-		indirectHitRange=3.8;
-		cost=300;
-		maxSpeed=110;
-		initTime=0.15000001;
-		airfriction=0.89999998;
-		sideAirFriction=0.1;
-		thrust=120;
-		fuseDistance=5;
-		timeToLive=6;
-		airLock=1;
-	};
-	class rhs_rpg7v2_pg7vr_penetrator: rhs_ammo_base_penetrator
-	{
-		warheadName="TandemHEAT";
-		caliber=41.333302;
-	};
-	class rhs_rpg7v2_tbg7v: rhs_rpg7v2_pg7vl
-	{
-		warheadName="HE";
-		hit=120;
-		indirectHit=60;
-		indirectHitRange=12;
-		cost=100;
-		maxSpeed=110;
-		initTime=0.15000001;
-		airfriction=0.89999998;
-		thrust=120;
-		explosive=1;
-		allowAgainstInfantry=1;
-		timeToLive=60;
-		class CamShakeExplode
-		{
-			power=22;
-			duration=2;
-			frequency=20;
-			distance=227.905;
-		};
-		class CamShakeHit
-		{
-			power=110;
-			duration=0.60000002;
-			frequency=20;
-			distance=1;
-		};
-		submunitionConeAngle[]={120,220};
-		submunitionConeAngleHorizontal=720;
-		submunitionAutoleveling=1;
-		submunitionConeType[]=
-		{
-			"randomupcone",
-			15
-		};
 		submunitionAmmo="rhs_ammo_thermobaric_wave";
 		submunitionDirectionType="SubmunitionModelDirection";
 		submunitionInitialOffset[]={0,0,-0.40000001};
@@ -4066,20 +3934,6 @@ class CfgAmmo
 		timeToLive=60;
 		CraterWaterEffects="ImpactEffectsWaterHE";
 		ExplosionEffects="HEShellExplosion";
-		class CamShakeExplode
-		{
-			power=24;
-			duration=2.2;
-			frequency=20;
-			distance=231.636;
-		};
-		class CamShakeHit
-		{
-			power=120;
-			duration=0.60000002;
-			frequency=20;
-			distance=1;
-		};
 	};
 	class rhs_rpg7v2_type63_airburst: rhs_rpg7v2_og7v
 	{
@@ -5149,11 +5003,6 @@ class CfgWeapons
 			"rhs_VG40MD_Red",
 			"rhs_GDM40"
 		};
-		magazineWell[]=
-		{
-			"VOG_40mm",
-			"CBA_40mm_GP"
-		};
 		recoil="rhs_recoil_gp25";
 		class Single: Mode_SemiAuto;  //found empty after stripping
 	};
@@ -5165,12 +5014,6 @@ class CfgWeapons
 			"rhs_30Rnd_545x39_7N10_plum_AK",
 			"rhs_30Rnd_545x39_7N10_desert_AK",
 			"rhs_30Rnd_545x39_7N10_camo_AK"
-		};
-		magazineWell[]=
-		{
-			"AK_545x39",
-			"CBA_545x39_AK",
-			"CBA_545x39_RPK"
 		};
 		recoil="rhs_recoil_ak74m";
 		class WeaponSlotsInfo: WeaponSlotsInfo
@@ -5618,12 +5461,6 @@ class CfgWeapons
 			"rhs_30Rnd_762x39mm_bakelite_tracer",
 			"rhs_30Rnd_762x39mm_bakelite_89",
 			"rhs_30Rnd_762x39mm_bakelite_U"
-		};
-		magazineWell[]=
-		{
-			"AK_762x39",
-			"CBA_762x39_AK",
-			"CBA_762x39_RPK"
 		};
 		class Single: Mode_SemiAuto
 		{
@@ -6431,10 +6268,6 @@ class CfgWeapons
 			"rhs_10rnd_9x39mm_SP5",
 			"rhs_10rnd_9x39mm_SP6"
 		};
-		magazineWell[]=
-		{
-			"CBA_9x39_VSS"
-		};
 		maxZeroing=420;
 		fireLightDuration=0;
 		fireLightIntensity=0;
@@ -6639,10 +6472,6 @@ class CfgWeapons
 			"rhs_10Rnd_762x54mmR_7N1",
 			"rhs_10Rnd_762x54mmR_7N14"
 		};
-		magazineWell[]=
-		{
-			"CBA_762x54R_SVD"
-		};
 		class Single: Mode_SemiAuto
 		{
 			reloadTime=0.085000001;
@@ -6716,10 +6545,6 @@ class CfgWeapons
 		{
 			"rhs_5Rnd_338lapua_t5000"
 		};
-		magazineWell[]=
-		{
-			"CBA_338LM_T5000"
-		};
 		recoil="rhs_recoil_orsis";
 		maxZeroing=1800;
 		class WeaponSlotsInfo: WeaponSlotsInfo;  //found empty after stripping
@@ -6772,10 +6597,6 @@ class CfgWeapons
 			"rhs_mag_9x19mm_7n21_44",
 			"rhs_mag_9x19mm_7n31_44"
 		};
-		magazineWell[]=
-		{
-			"CBA_9x19_PP2000"
-		};
 		class Single: Single
 		{
 			reloadTime=0.075000003;
@@ -6799,19 +6620,6 @@ class CfgWeapons
 	class rhs_weap_rifle_empty: rhs_weap_ak74m_Base_F
 	{
 		displayname="Magazine proxy picture";
-		magazineWell[]=
-		{
-			"RPG7",
-			"AK_545x39",
-			"AK_762x39",
-			"CBA_762x54R_SVD",
-			"CBA_9x39_VSS",
-			"CBA_762x51_SCAR",
-			"STANAG_556x45",
-			"M249_556x45",
-			"M240_762x51",
-			"CBA_762x51_FAL"
-		};
 		class WeaponSlotsInfo
 		{
 			mass=132.2;
@@ -6862,10 +6670,6 @@ class CfgWeapons
 		magazines[]=
 		{
 			"rhs_mag_9x19_17"
-		};
-		magazineWell[]=
-		{
-			"CBA_9x19_MP443"
 		};
 		dispersion=0.02;
 		ffCount=1;
@@ -7006,10 +6810,6 @@ class CfgWeapons
 		{
 			"rhs_mag_9x18_8_57N181S"
 		};
-		magazineWell[]=
-		{
-			"CBA_9x18_PM"
-		};
 		dispersion=0.02;
 		ffCount=1;
 	};
@@ -7018,10 +6818,6 @@ class CfgWeapons
 		magazines[]=
 		{
 			"rhs_mag_9x18_12_57N181S"
-		};
-		magazineWell[]=
-		{
-			"CBA_9x18_PMM"
 		};
 	};
 	class rhs_weap_pb_6p9: rhs_weap_makarov_pm
@@ -7035,10 +6831,6 @@ class CfgWeapons
 			"rhs_18rnd_9x21mm_7N28",
 			"rhs_18rnd_9x21mm_7N29",
 			"rhs_18rnd_9x21mm_7BT3"
-		};
-		magazineWell[]=
-		{
-			"CBA_9x21_SR1M"
 		};
 	};
 	class Rifle_Long_Base_F: Rifle_Base_F
@@ -7054,10 +6846,6 @@ class CfgWeapons
 			"rhs_100Rnd_762x54mmR_7N13",
 			"rhs_100Rnd_762x54mmR_7N26",
 			"rhs_100Rnd_762x54mmR_7BZ3"
-		};
-		magazineWell[]=
-		{
-			"PK_762x54R"
 		};
 		cursor="mg";
 		cursorAim="EmptyCursor";
@@ -7125,12 +6913,6 @@ class CfgWeapons
 			"rhs_30Rnd_545x39_7N10_AK",
 			"rhs_30Rnd_545x39_7N22_AK",
 			"rhs_30Rnd_545x39_AK_green"
-		};
-		magazineWell[]=
-		{
-			"AK_545x39",
-			"CBA_545x39_AK",
-			"CBA_545x39_RPK"
 		};
 		aidispersioncoefx=15;
 		aidispersioncoefy=16;
@@ -7245,11 +7027,6 @@ class CfgWeapons
 			"rhs_rpg7_OG7V_mag",
 			"rhs_rpg7_TBG7V_mag",
 			"rhs_rpg7_TYPE69_airburst_mag"
-		};
-		magazineWell[]=
-		{
-			"RPG7",
-			"CBA_RPG7"
 		};
 		class single: Mode_SemiAuto
 		{

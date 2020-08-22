@@ -106,24 +106,7 @@ class CfgVehicles
 			class rhs_desert;  //found empty after stripping
 			class rhs_woodland;  //found empty after stripping
 		};
-		class Attributes
-		{
-			class DoorL2
-			{
-				control="CheckboxNumber";
-				defaultValue="0";
-				property="Door_L2";
-				expression="_this animateDoor ['%s',_value,true]";
-			};
-			class DoorL: DoorL2
-			{
-				property="Door_L";
-			};
-			class DoorR: DoorL2
-			{
-				property="Door_R";
-			};
-		};
+		class Attributes;  //found empty after stripping
 		hullDamageCauseExplosion=1;
 		armorStructural=8;
 		class HitPoints: HitPoints

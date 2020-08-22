@@ -4824,20 +4824,6 @@ class CfgAmmo
 			0.25
 		};
 		explosionSoundEffect="DefaultExplosion";
-		class CamShakeExplode
-		{
-			power="(9*0.2)";
-			duration="((round (9^0.5))*0.2 max 0.2)";
-			frequency=20;
-			distance="((1 + 9^0.5)*8)";
-		};
-		class CamShakeHit
-		{
-			power=9;
-			duration="((round (9^0.25))*0.2 max 0.2)";
-			frequency=20;
-			distance=1;
-		};
 	};
 	class rhs_ammo_12g_HE: rhs_ammo_12g_FRAG
 	{
@@ -4951,91 +4937,6 @@ class CfgAmmo
 		fuseDistance=5;
 		whistleDist=4;
 		timeToLive=12;
-	};
-	class rhs_ammo_M136_penetrator: rhsusf_ammo_basic_penetrator
-	{
-		caliber=26.6667;
-	};
-	class rhs_ammo_M136_hp_rocket: rhs_ammo_M136_rocket
-	{
-		submunitionAmmo="rhs_ammo_M136_hp_penetrator";
-		submunitionDirectionType="SubmunitionModelDirection";
-		submunitionInitialOffset[]={0,0,-0.2};
-		submunitionParentSpeedCoef=0;
-		submunitionInitSpeed=1000;
-		triggerOnImpact=1;
-		deleteParentWhenTriggered=0;
-		hit=245;
-	};
-	class rhs_ammo_M136_hp_penetrator: rhs_ammo_M136_penetrator
-	{
-		caliber=36.666698;
-	};
-	class rhs_ammo_M136_hedp_rocket: rhs_ammo_M136_rocket
-	{
-		submunitionAmmo="rhs_ammo_M136_hedp_penetrator";
-		submunitionDirectionType="SubmunitionModelDirection";
-		submunitionInitialOffset[]={0,0,-0.2};
-		submunitionParentSpeedCoef=0;
-		submunitionInitSpeed=1000;
-		triggerOnImpact=1;
-		deleteParentWhenTriggered=0;
-		hit=235;
-		indirectHit=31;
-		indirectHitRange=6.0999999;
-		cost=200;
-		explosive=0.64999998;
-	};
-	class rhs_ammo_M136_hedp_penetrator: rhs_ammo_M136_penetrator
-	{
-		hit=235;
-		caliber=10;
-	};
-	class rhs_ammo_m72a7_rocket: rhs_ammo_M136_hedp_rocket
-	{
-		submunitionAmmo="rhs_ammo_M136_hedp_penetrator";
-		submunitionDirectionType="SubmunitionModelDirection";
-		submunitionInitialOffset[]={0,0,-0.2};
-		submunitionParentSpeedCoef=0;
-		submunitionInitSpeed=1000;
-		triggerOnImpact=1;
-		deleteParentWhenTriggered=0;
-		hit=145;
-		indirectHit=19;
-	};
-	class M_Titan_AA: MissileBase
-	{
-		class Components;
-	};
-	class rhs_ammo_fim92_missile: M_Titan_AA
-	{
-		hit=60;
-		indirectHit=55;
-		indirectHitRange=8;
-		proximityExplosionDistance=10;
-		maneuvrability=34;
-		simulationStep=0.001;
-		trackOversteer=0.94999999;
-		trackLead=0.60000002;
-		airLock=2;
-		irLock=1;
-		cost=1000;
-		timeToLive=15;
-		sideairfriction=0.079999998;
-		maxSpeed=750;
-		initTime=0.25;
-		thrustTime=4.9000001;
-		thrust=325;
-		fuseDistance=50;
-		explosive=1;
-		whistleDist=16;
-		cmImmunity=0.94999999;
-		maxcontrolrange=7000;
-		submunitionConeType[]=
-		{
-			"randomcenter",
-			30
-		};
 		submunitionConeAngle=65;
 		submunitionAmmo="rhs_ammo_he_fragments";
 		submunitionDirectionType="SubmunitionTargetDirection";
@@ -5275,42 +5176,6 @@ class CfgAmmo
 		timeToLive=25;
 		maneuvrability=0;
 		allowAgainstInfantry=0;
-		class CamShakeExplode
-		{
-			power="(55*0.2)";
-			duration="((round (55^0.5))*0.2 max 0.2)";
-			frequency=20;
-			distance="((5 + 55^0.5)*8)";
-		};
-		class CamShakeHit
-		{
-			power=110;
-			duration="((round (110^0.25))*0.2 max 0.2)";
-			frequency=20;
-			distance=1;
-		};
-	};
-	class rhs_ammo_smaw_HEAA_penetrator: rhsusf_ammo_basic_penetrator
-	{
-		caliber=39.333302;
-	};
-	class rhs_ammo_smaw_HEDP: RocketBase
-	{
-		submunitionAmmo="rhs_ammo_smaw_HEDP_penetrator";
-		submunitionDirectionType="SubmunitionModelDirection";
-		submunitionInitialOffset[]={0,0,-0.2};
-		submunitionParentSpeedCoef=0;
-		submunitionInitSpeed=1000;
-		triggerOnImpact=1;
-		deleteParentWhenTriggered=0;
-		EffectFly="ArtilleryTrails";
-		soundHit[]=
-		{
-			"A3\Sounds_F\weapons\Rockets\explosion_missile_04",
-			10,
-			1,
-			1200
-		};
 		hit=150;
 		indirectHit=51;
 		indirectHitRange=6.6999998;
@@ -5329,36 +5194,6 @@ class CfgAmmo
 		timeToLive=25;
 		maneuvrability=0;
 		allowAgainstInfantry=1;
-		class CamShakeExplode
-		{
-			power="(55*0.2)";
-			duration="((round (55^0.5))*0.2 max 0.2)";
-			frequency=20;
-			distance="((5 + 55^0.5)*8)";
-		};
-		class CamShakeHit
-		{
-			power=110;
-			duration="((round (110^0.25))*0.2 max 0.2)";
-			frequency=20;
-			distance=1;
-		};
-	};
-	class rhs_ammo_smaw_HEDP_penetrator: rhs_ammo_M136_penetrator
-	{
-		hit=235;
-		caliber=16.6667;
-	};
-	class rhs_ammo_smaw_SR: RocketBase
-	{
-		explosive=0;
-		soundHit[]=
-		{
-			"\a3\sounds_f\weapons\hits\plastic_4.wss",
-			0.70794576,
-			1,
-			20
-		};
 		caliber=0.0099999998;
 		hit=5;
 		indirectHit=0;
@@ -5377,39 +5212,6 @@ class CfgAmmo
 		timeToLive=25;
 		maneuvrability=0;
 		allowAgainstInfantry=1;
-		class CamShakeExplode
-		{
-			power="(55*0.2)";
-			duration="((round (55^0.5))*0.2 max 0.2)";
-			frequency=20;
-			distance="((5 + 55^0.5)*8)";
-		};
-		class CamShakeHit
-		{
-			power=110;
-			duration="((round (110^0.25))*0.2 max 0.2)";
-			frequency=20;
-			distance=1;
-		};
-	};
-	class rhs_ammo_maaws_HEAT: RocketBase
-	{
-		submunitionAmmo="rhs_ammo_maaws_HEAT_penetrator";
-		submunitionDirectionType="SubmunitionModelDirection";
-		submunitionInitialOffset[]={0,0,-0.2};
-		submunitionParentSpeedCoef=0;
-		submunitionInitSpeed=1000;
-		triggerOnImpact=1;
-		deleteParentWhenTriggered=0;
-		explosive=0.64999998;
-		EffectFly="ArtilleryTrails";
-		soundHit1[]=
-		{
-			"A3\Sounds_F\arsenal\explosives\shells\Artillery_tank_shell_155mm_explosion_01",
-			2.5118899,
-			1,
-			1900
-		};
 		soundHit2[]=
 		{
 			"A3\Sounds_F\arsenal\explosives\shells\Artillery_tank_shell_155mm_explosion_02",
@@ -5460,43 +5262,6 @@ class CfgAmmo
 		timeToLive=25;
 		maneuvrability=0;
 		allowAgainstInfantry=0;
-		class CamShakeExplode
-		{
-			power="(55*0.2)";
-			duration="((round (55^0.5))*0.2 max 0.2)";
-			frequency=20;
-			distance="((5 + 55^0.5)*8)";
-		};
-		class CamShakeHit
-		{
-			power=110;
-			duration="((round (110^0.25))*0.2 max 0.2)";
-			frequency=20;
-			distance=1;
-		};
-	};
-	class rhs_ammo_maaws_HEAT_penetrator: rhsusf_ammo_basic_penetrator
-	{
-		caliber=39.333302;
-	};
-	class rhs_ammo_maaws_HEDP: RocketBase
-	{
-		submunitionAmmo="rhs_ammo_maaws_HEDP_penetrator";
-		submunitionDirectionType="SubmunitionModelDirection";
-		submunitionInitialOffset[]={0,0,-0.2};
-		submunitionParentSpeedCoef=0;
-		submunitionInitSpeed=1000;
-		triggerOnImpact=1;
-		deleteParentWhenTriggered=0;
-		explosive=0.64999998;
-		EffectFly="ArtilleryTrails";
-		soundHit1[]=
-		{
-			"A3\Sounds_F\arsenal\explosives\shells\Artillery_tank_shell_155mm_explosion_01",
-			2.5118899,
-			1,
-			1900
-		};
 		soundHit2[]=
 		{
 			"A3\Sounds_F\arsenal\explosives\shells\Artillery_tank_shell_155mm_explosion_02",
@@ -5546,35 +5311,6 @@ class CfgAmmo
 		timeToLive=25;
 		maneuvrability=0;
 		allowAgainstInfantry=1;
-		class CamShakeExplode
-		{
-			power="(55*0.2)";
-			duration="((round (55^0.5))*0.2 max 0.2)";
-			frequency=20;
-			distance="((5 + 55^0.5)*8)";
-		};
-		class CamShakeHit
-		{
-			power=110;
-			duration="((round (110^0.25))*0.2 max 0.2)";
-			frequency=20;
-			distance=1;
-		};
-	};
-	class rhs_ammo_maaws_HEDP_penetrator: rhs_ammo_M136_penetrator
-	{
-		caliber=11.6667;
-	};
-	class rhs_ammo_maaws_HE: RocketBase
-	{
-		EffectFly="ArtilleryTrails";
-		soundHit1[]=
-		{
-			"A3\Sounds_F\arsenal\explosives\shells\Artillery_tank_shell_155mm_explosion_01",
-			2.5118899,
-			1,
-			1900
-		};
 		soundHit2[]=
 		{
 			"A3\Sounds_F\arsenal\explosives\shells\Artillery_tank_shell_155mm_explosion_02",
@@ -5624,31 +5360,6 @@ class CfgAmmo
 		timeToLive=25;
 		maneuvrability=0;
 		allowAgainstInfantry=1;
-		class CamShakeExplode
-		{
-			power="(55*0.2)";
-			duration="((round (55^0.5))*0.2 max 0.2)";
-			frequency=20;
-			distance="((5 + 55^0.5)*8)";
-		};
-		class CamShakeHit
-		{
-			power=110;
-			duration="((round (110^0.25))*0.2 max 0.2)";
-			frequency=20;
-			distance=1;
-		};
-	};
-	class rhs_ammo_maaws_SMOKE: RocketBase
-	{
-		EffectFly="ArtilleryTrails";
-		soundHit1[]=
-		{
-			"A3\Sounds_F\arsenal\explosives\shells\Artillery_tank_shell_155mm_explosion_01",
-			2.5118899,
-			1,
-			1900
-		};
 		soundHit2[]=
 		{
 			"A3\Sounds_F\arsenal\explosives\shells\Artillery_tank_shell_155mm_explosion_02",
@@ -5699,31 +5410,6 @@ class CfgAmmo
 		timeToLive=25;
 		maneuvrability=0;
 		allowAgainstInfantry=0;
-		class CamShakeExplode
-		{
-			power="(55*0.2)";
-			duration="((round (55^0.5))*0.2 max 0.2)";
-			frequency=20;
-			distance="((5 + 55^0.5)*8)";
-		};
-		class CamShakeHit
-		{
-			power=110;
-			duration="((round (110^0.25))*0.2 max 0.2)";
-			frequency=20;
-			distance=1;
-		};
-	};
-	class rhs_ammo_maaws_ILLUM: RocketBase
-	{
-		EffectFly="ArtilleryTrails";
-		soundHit1[]=
-		{
-			"A3\Sounds_F\arsenal\explosives\shells\Artillery_tank_shell_155mm_explosion_01",
-			2.5118899,
-			1,
-			1900
-		};
 		soundHit2[]=
 		{
 			"A3\Sounds_F\arsenal\explosives\shells\Artillery_tank_shell_155mm_explosion_02",
@@ -5774,35 +5460,6 @@ class CfgAmmo
 		timeToLive=25;
 		maneuvrability=0;
 		allowAgainstInfantry=0;
-		class CamShakeExplode
-		{
-			power="(55*0.2)";
-			duration="((round (55^0.5))*0.2 max 0.2)";
-			frequency=20;
-			distance="((5 + 55^0.5)*8)";
-		};
-		class CamShakeHit
-		{
-			power=110;
-			duration="((round (110^0.25))*0.2 max 0.2)";
-			frequency=20;
-			distance=1;
-		};
-	};
-	class PipeBombBase;
-	class rhsusf_m112_ammo: PipeBombBase
-	{
-		hit=1000;
-		indirectHit=1000;
-		indirectHitRange=3;
-		mineModelDisabled="\rhsusf\addons\rhsusf_weapons\explosives\rhsusf_m112x1_d";
-		soundHit[]=
-		{
-			"A3\Sounds_F\weapons\Mines\mine_debris_5",
-			3.1622777,
-			1,
-			1500
-		};
 		defaultMagazine="rhsusf_m112_mag";
 		ExplosionEffects="MineNondirectionalExplosionSmall";
 		whistleDist=32;
@@ -5910,20 +5567,6 @@ class CfgAmmo
 		mineTrigger="rhs_m49a1_3m_trigger";
 		rhs_flare_used="rhsusf_mine_m49a1_used";
 		rhs_flare_offset[]={0,0,0.30000001};
-		class CamShakeExplode
-		{
-			power=0;
-			duration=0.2;
-			frequency=20;
-			distance=0;
-		};
-		class CamShakeHit
-		{
-			power=0;
-			duration=0.2;
-			frequency=20;
-			distance=1;
-		};
 		mineModelDisabled="\rhsusf\addons\rhsusf_weapons\mines\rhsusf_m49a1_d";
 		defaultMagazine="rhsusf_mine_m49a1_3m_mag";
 		SmokeShellSoundHit1[]=
@@ -6015,35 +5658,6 @@ class CfgAmmo
 		caliber=0.5;
 		explosionSoundEffect="";
 		simulation="shotShell";
-		class CamShakeHit
-		{
-			power=20;
-			duration="((round (20^0.25))*0.2 max 0.2)";
-			frequency=20;
-			distance=1;
-		};
-	};
-	class rhsusf_40mm_white: F_40mm_White
-	{
-		brightness=25;
-		timeToLive=60;
-		intensity=100000;
-	};
-	class rhsusf_40mm_red: F_40mm_Red
-	{
-		brightness=25;
-		timeToLive=60;
-		intensity=100000;
-	};
-	class rhsusf_40mm_green: F_40mm_Green
-	{
-		brightness=25;
-		timeToLive=60;
-		intensity=100000;
-	};
-	class rhs_ammo_m397: rhsusf_40mm_HE
-	{
-		deflecting=90;
 		typicalspeed=75;
 		deleteParentWhenTriggered=1;
 		submunitionAmmo="rhs_ammo_m397_explosion";
@@ -7407,12 +7021,6 @@ class CfgWeapons
 			"1Rnd_SmokeBlue_Grenade_shell",
 			"1Rnd_SmokeOrange_Grenade_shell"
 		};
-		magazineWell[]=
-		{
-			"UGL_40x36",
-			"CBA_40mm_M203",
-			"CBA_40mm_EGLM"
-		};
 		recoil="recoil_mx";
 		class WeaponSlotsInfo: WeaponSlotsInfo;  //found empty after stripping
 		class Single: Mode_SemiAuto
@@ -7536,16 +7144,6 @@ class CfgWeapons
 			"rhs_mag_30Rnd_556x45_M196_Stanag_Tracer_Red",
 			"rhs_mag_30Rnd_556x45_M200_Stanag"
 		};
-		magazineWell[]=
-		{
-			"STANAG_556x45",
-			"STANAG_556x45_Large",
-			"CBA_556x45_STANAG",
-			"CBA_556x45_STANAG_L",
-			"CBA_556x45_STANAG_XL",
-			"CBA_556x45_STANAG_2D",
-			"CBA_556x45_STANAG_2D_XL"
-		};
 		recoil="rhs_recoil_m4";
 		initSpeed=-0.94;
 		class ItemInfo;  //found empty after stripping
@@ -7616,11 +7214,6 @@ class CfgWeapons
 				"1Rnd_SmokeBlue_Grenade_shell",
 				"1Rnd_SmokeOrange_Grenade_shell"
 			};
-			magazineWell[]=
-			{
-				"UGL_40x36",
-				"CBA_40mm_M203"
-			};
 		};
 		class M320_GL: M203_GL
 		{
@@ -7653,12 +7246,6 @@ class CfgWeapons
 				"1Rnd_SmokePurple_Grenade_shell",
 				"1Rnd_SmokeBlue_Grenade_shell",
 				"1Rnd_SmokeOrange_Grenade_shell"
-			};
-			magazineWell[]=
-			{
-				"UGL_40x36",
-				"CBA_40mm_M203",
-				"CBA_40mm_EGLM"
 			};
 		};
 		class Six12: Rifle_Base_F
@@ -8393,15 +7980,6 @@ class CfgWeapons
 			"rhsusf_200rnd_556x45_M855_box",
 			"rhsusf_200rnd_556x45_M855_mixed_box"
 		};
-		magazineWell[]=
-		{
-			"STANAG_556x45",
-			"CBA_556x45_STANAG",
-			"CBA_556x45_STANAG_L",
-			"CBA_556x45_STANAG_XL",
-			"M249_556x45",
-			"CBA_556x45_MINIMI"
-		};
 		cursor="mg";
 		cursorAim="EmptyCursor";
 		nameSound="Mgun";
@@ -8820,10 +8398,6 @@ class CfgWeapons
 			"rhsusf_50Rnd_762x51_m993",
 			"rhsusf_100Rnd_762x51_m993"
 		};
-		magazineWell[]=
-		{
-			"M240_762x51"
-		};
 		rhs_deployedHandAnim="RHS_GestureHoldM240";
 	};
 	class rhs_weap_m240B: rhs_weap_m240_base
@@ -8868,13 +8442,6 @@ class CfgWeapons
 			"rhsusf_20Rnd_762x51_m118_special_Mag",
 			"rhsusf_20Rnd_762x51_m993_Mag",
 			"rhsusf_20Rnd_762x51_m62_Mag"
-		};
-		magazineWell[]=
-		{
-			"M14_762x51",
-			"CBA_762x51_M14",
-			"CBA_762x51_M14_L",
-			"CBA_762x51_M14_XL"
 		};
 		reloadTime=2;
 		recoil="rhs_recoil_m14";
@@ -9024,12 +8591,6 @@ class CfgWeapons
 			"rhsusf_20Rnd_762x51_SR25_m993_Mag",
 			"rhsusf_20Rnd_762x51_SR25_m62_Mag"
 		};
-		magazineWell[]=
-		{
-			"CBA_762x51_AR10",
-			"CBA_762x51_AR10_L",
-			"CBA_762x51_AR10_XL"
-		};
 		maxZeroing=1000;
 		reloadTime=2;
 		recoil="recoil_ebr";
@@ -9088,10 +8649,6 @@ class CfgWeapons
 		{
 			"rhsusf_mag_10Rnd_STD_50BMG_M33",
 			"rhsusf_mag_10Rnd_STD_50BMG_mk211"
-		};
-		magazineWell[]=
-		{
-			"CBA_50BMG_M107"
 		};
 		recoil="recoil_gm6";
 		maxZeroing=2000;
@@ -9254,10 +8811,6 @@ class CfgWeapons
 			"rhsusf_mag_40Rnd_46x30_JHP",
 			"rhsusf_mag_40Rnd_46x30_AP"
 		};
-		magazineWell[]=
-		{
-			"CBA_46x30_MP7"
-		};
 		maxZeroing=200;
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
@@ -9310,13 +8863,6 @@ class CfgWeapons
 	class rhsusf_weap_rifle_empty: rhs_weap_m4_Base
 	{
 		displayname="Magazine proxy picture";
-		magazineWell[]=
-		{
-			"STANAG_556x45",
-			"STANAG_556x45_Large",
-			"M249_556x45",
-			"M240_762x51"
-		};
 	};
 	class rhs_weap_SCAR_Base: arifle_MX_Base_F
 	{
@@ -9370,10 +8916,6 @@ class CfgWeapons
 	{
 		recoil="rhs_recoil_m4";
 		class WeaponSlotsInfo: WeaponSlotsInfo;  //found empty after stripping
-		magazineWell[]=
-		{
-			"STANAG_556x45"
-		};
 	};
 	class rhs_weap_SCAR_H_Base: rhs_weap_SCAR_Base
 	{
@@ -9387,10 +8929,6 @@ class CfgWeapons
 			"rhs_mag_20Rnd_SCAR_762x51_m80a1_epr",
 			"rhs_mag_20Rnd_SCAR_762x51_m118_special",
 			"rhs_mag_20Rnd_SCAR_762x51_mk316_special"
-		};
-		magazineWell[]=
-		{
-			"CBA_762x51_SCAR"
 		};
 		class Single: Single
 		{
@@ -9697,10 +9235,6 @@ class CfgWeapons
 			"rhs_mag_smaw_HEAA",
 			"rhs_mag_smaw_HEDP"
 		};
-		magazineWell[]=
-		{
-			"CBA_SMAW"
-		};
 		class Single: Mode_SemiAuto
 		{
 			recoil="recoil_single_law";
@@ -9722,10 +9256,6 @@ class CfgWeapons
 			magazines[]=
 			{
 				"rhs_mag_smaw_SR"
-			};
-			magazineWell[]=
-			{
-				"CBA_SMAW_Spotting_Rifle"
 			};
 			magazinereloadtime=3.75;
 			reloadtime=0.2;
@@ -9754,10 +9284,6 @@ class CfgWeapons
 			"rhs_mag_maaws_HEAT",
 			"rhs_mag_maaws_HEDP",
 			"rhs_mag_maaws_HE"
-		};
-		magazineWell[]=
-		{
-			"CBA_Carl_Gustaf"
 		};
 		recoil="rhs_weap_smaw_SR_recoil";
 		canLock=0;
@@ -10047,10 +9573,6 @@ class CfgWeapons
 		{
 			"rhsusf_mag_7x45acp_MHP"
 		};
-		magazineWell[]=
-		{
-			"CBA_45ACP_1911"
-		};
 		class SAFE_PISTOL: RHSUSF_SAFE_BASE;  //found empty after stripping
 	};
 	class rhsusf_weap_glock17g4: hgun_P07_F
@@ -10059,10 +9581,6 @@ class CfgWeapons
 		{
 			"rhsusf_mag_17Rnd_9x19_JHP",
 			"rhsusf_mag_17Rnd_9x19_FMJ"
-		};
-		magazineWell[]=
-		{
-			"CBA_9x19_Glock_Full"
 		};
 		initSpeed=-0.89999998;
 		dispersion=0.02;
@@ -10079,10 +9597,6 @@ class CfgWeapons
 		{
 			"rhsusf_mag_15Rnd_9x19_JHP",
 			"rhsusf_mag_15Rnd_9x19_FMJ"
-		};
-		magazineWell[]=
-		{
-			"CBA_9x19_M9"
 		};
 		initSpeed=-0.94999999;
 		dispersion=0.02;

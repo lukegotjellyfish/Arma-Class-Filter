@@ -171,40 +171,6 @@ class CfgAmmo
 		dangerRadiusHit=40;
 		suppressionRadiusHit=14;
 		tracerEndTime=1.5;
-		class CamShakeHit
-		{
-			power=20;
-			duration="((round (20^0.25))*0.2 max 0.2)";
-			frequency=20;
-			distance=1;
-		};
-	};
-	class rhs_ammo_20x139mm_HE: rhs_ammo_20x139mm_AP
-	{
-		hit=20;
-		explosive=0.80000001;
-		indirectHit=4;
-		indirectHitRange=6.9000001;
-		typicalSpeed=1100;
-		caliber=1.4;
-		dangerRadiusBulletClose=20;
-		dangerRadiusHit=60;
-		suppressionRadiusHit=24;
-		tracerEndTime=2;
-		class CamShakeExplode
-		{
-			power="(19*0.2)";
-			duration="((round (19^0.5))*0.2 max 0.2)";
-			frequency=20;
-			distance="((2 + 19^0.5)*8)";
-		};
-		class CamShakeHit
-		{
-			power=19;
-			duration="((round (19^0.25))*0.2 max 0.2)";
-			frequency=20;
-			distance=1;
-		};
 	};
 	class SubmunitionBase;
 	class rhs_ammo_20x139mm_mixed: SubmunitionBase

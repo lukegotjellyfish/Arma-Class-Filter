@@ -500,20 +500,6 @@ class CfgAmmo
 		indirectHit=75;
 		indirectHitRange=21;
 		timetolive=220;
-		class CamShakeExplode
-		{
-			power="(105*0.2)*10";
-			duration="((round (105^0.5))*0.2 max 0.2)";
-			frequency=20;
-			distance="((30 + 105^0.5))";
-		};
-		class CamShakeHit
-		{
-			power="105 * 10";
-			duration="((round (105^0.25))*0.2 max 0.2)";
-			frequency=20;
-			distance=1;
-		};
 	};
 	class rhs_ammo_m314_ilum: Flare_82mm_AMOS_White
 	{
@@ -577,71 +563,6 @@ class CfgAmmo
 			"rhs_ammo_PGU13B_HE",
 			0.2
 		};
-		class CamShakeExplode
-		{
-			power=6;
-			duration=1;
-			frequency=20;
-			distance=83.817802;
-		};
-		class CamShakeHit
-		{
-			power=30;
-			duration=0.40000001;
-			frequency=20;
-			distance=1;
-		};
-	};
-	class rhs_ammo_PGU13B_HE: Gatling_30mm_HE_Plane_CAS_01_F
-	{
-		hit=80;
-		explosive=0.89999998;
-		timeToLive=10;
-	};
-	class rhs_ammo_PGU14B_API: B_30mm_APFSDS_Tracer_Red
-	{
-		hit=120;
-		explosive=0;
-		typicalSpeed=860;
-		airFriction=-0.00036000001;
-		timeToLive=10;
-		caliber=6;
-		tracerEndTime=10;
-	};
-	class B_20mm;
-	class rhs_ammo_30x113mm_M789_HEDP: B_30mm_HE
-	{
-		allowagainstinfantry=1;
-		hit=37;
-		indirectHit=15;
-		indirectHitRange=3;
-		tracerScale=2;
-		tracerStartTime=0.1;
-		tracerEndTime=4;
-		explosive=0.40000001;
-		caliber=2;
-		airFriction=-0.00078;
-		timeToLive=12;
-		submunitionAmmo="rhs_ammo_30x113mm_M789_HEDP_penetrator";
-		submunitionDirectionType="SubmunitionModelDirection";
-		submunitionInitialOffset[]={0,0,-0.2};
-		submunitionParentSpeedCoef=0;
-		submunitionInitSpeed=1000;
-		triggerOnImpact=1;
-		deleteParentWhenTriggered=0;
-	};
-	class rhs_ammo_30x113mm_M789_HEDP_laser: rhs_ammo_30x113mm_M789_HEDP
-	{
-		laserLock=1;
-	};
-	class rhs_ammo_30x113mm_M789_HEDP_penetrator: rhsusf_ammo_basic_penetrator
-	{
-		hit=90;
-		submunitionConeType[]=
-		{
-			"randomcenter",
-			4
-		};
 		caliber=1.66667;
 	};
 	class rhs_ammo_20mm_AP: B_20mm
@@ -663,124 +584,6 @@ class CfgAmmo
 	class rhs_ammo_127x99_Ball: B_127x99_Ball
 	{
 		caliber=2.34848;
-	};
-	class rhs_ammo_127x99_Ball_Tracer_Red: rhs_ammo_127x99_Ball
-	{
-		tracerEndTime=3;
-	};
-	class rhs_ammo_127x99_Ball_Tracer_Green: rhs_ammo_127x99_Ball
-	{
-		tracerEndTime=3;
-	};
-	class rhs_ammo_127x99_Ball_Tracer_Yellow: rhs_ammo_127x99_Ball
-	{
-		tracerEndTime=3;
-	};
-	class B_127x99_SLAP;
-	class rhs_ammo_127x99_SLAP: B_127x99_SLAP
-	{
-		caliber=2.8099201;
-	};
-	class rhs_ammo_127x99_SLAP_Tracer_Red: rhs_ammo_127x99_SLAP
-	{
-		tracerEndTime=3;
-	};
-	class rhs_ammo_127x99_SLAP_Tracer_Green: rhs_ammo_127x99_SLAP
-	{
-		tracerEndTime=3;
-	};
-	class rhs_ammo_127x99_SLAP_Tracer_Yellow: rhs_ammo_127x99_SLAP
-	{
-		tracerEndTime=3;
-	};
-	class rhs_ammo_127x99_Ball_Plane: rhs_ammo_127x99_Ball;  //found empty after stripping
-	class rhs_ammo_127x99_Ball_Tracer_Red_Plane: rhs_ammo_127x99_Ball_Tracer_Red;  //found empty after stripping
-	class rhs_ammo_127x99_SLAP_Plane: rhs_ammo_127x99_SLAP;  //found empty after stripping
-	class rhs_ammo_127x99_SLAP_Tracer_Red_Plane: rhs_ammo_127x99_SLAP_Tracer_Red;  //found empty after stripping
-	class rhs_ammo_127x99_Ball_AI: rhs_ammo_127x99_Ball
-	{
-		irLock=1;
-		laserLock=1;
-		airLock=1;
-		nvLock=1;
-		aiAmmoUsageFlags=448;
-	};
-	class rhs_ammo_127x99_Ball_Tracer_Red_AI: rhs_ammo_127x99_Ball_Tracer_Red
-	{
-		irLock=1;
-		laserLock=1;
-		airLock=1;
-		nvLock=1;
-		aiAmmoUsageFlags=448;
-	};
-	class rhs_ammo_127x99_SLAP_AI: rhs_ammo_127x99_SLAP
-	{
-		irLock=1;
-		laserLock=1;
-		airLock=1;
-		nvLock=1;
-		aiAmmoUsageFlags=448;
-	};
-	class rhs_ammo_127x99_SLAP_Tracer_Red_AI: rhs_ammo_127x99_SLAP_Tracer_Red
-	{
-		irLock=1;
-		laserLock=1;
-		airLock=1;
-		nvLock=1;
-		aiAmmoUsageFlags=448;
-	};
-	class MissileCore: Default;  //found empty after stripping
-	class MissileBase: MissileCore
-	{
-		class EventHandlers;
-	};
-	class M_Titan_AT: MissileBase
-	{
-		class Components;
-	};
-	class rhs_ammo_TOW_AT: M_Titan_AT
-	{
-		submunitionAmmo="rhs_ammo_TOW_AT_penetrator";
-		submunitionDirectionType="SubmunitionModelDirection";
-		submunitionInitialOffset[]={0,0,-0.2};
-		submunitionParentSpeedCoef=0;
-		submunitionInitSpeed=1000;
-		triggerOnImpact=1;
-		deleteParentWhenTriggered=0;
-		hit=480;
-		indirectHit=12;
-		indirectHitRange=4.1999998;
-		cost=800;
-		canlock=0;
-		irLock=1;
-		trackOversteer=0.80000001;
-		trackLead=0.89999998;
-		timeToLive=30;
-		maneuvrability=10;
-		simulationStep=0.0049999999;
-		airFriction=0.14;
-		sideAirFriction=0.75;
-		lockType=1;
-		manualControl=1;
-		maxControlRange=3000;
-		manualControlOffset=150;
-		missileManualControlCone=45;
-		autoSeekTarget=1;
-		initTime=0.15099999;
-		thrustTime=1.45;
-		thrust=165;
-		maxSpeed=296;
-		deflecting=0;
-		fuseDistance=5;
-		whistleDist=2;
-		weaponLockSystem=1;
-		rhs_saclos=1;
-		rhs_ballisticMode=0;
-		rhs_guideMode="WIRE";
-		flightProfiles[]=
-		{
-			"Direct"
-		};
 		class Direct;  //found empty after stripping
 		class EventHandlers: EventHandlers
 		{
@@ -937,25 +740,6 @@ class CfgAmmo
 		indirectHit=100;
 		indirectHitRange=12;
 		explosive=1;
-		class CamShakeExplode
-		{
-			power=22;
-			duration=2;
-			frequency=20;
-			distance=227.905;
-		};
-		class CamShakeHit
-		{
-			power=110;
-			duration=0.60000002;
-			frequency=20;
-			distance=1;
-		};
-		submunitionConeType[]=
-		{
-			"randomcenter",
-			15
-		};
 		submunitionConeAngle=120;
 		submunitionAmmo="rhs_ammo_thermobaric_wave";
 		submunitionDirectionType="SubmunitionModelDirection";
@@ -1171,6 +955,13 @@ class CfgAmmo
 		maxControlRange=-1;
 		initTime=0;
 		aiAmmoUsageFlags=8;
+		supersonicCrackFar[]=
+		{
+			"A3\sounds_f\dummysound",
+			0,
+			1,
+			0
+		};
 		effectsSmoke="EmptyEffect";
 	};
 	class Grenade;
@@ -2270,10 +2061,6 @@ class CfgWeapons
 			"rhs_mag_M1028",
 			"rhs_mag_M416"
 		};
-		magazineWell[]=
-		{
-			"RHS_Cannon_120mm_M256"
-		};
 		class player: player
 		{
 			reloadTime=11;
@@ -2376,11 +2163,6 @@ class CfgWeapons
 				"rhs_mag_230Rnd_25mm_M242_HEI",
 				"rhs_mag_70Rnd_25mm_M242_APFSDS"
 			};
-			magazineWell[]=
-			{
-				"RHS_AutoCannon_25mm_M242_HE",
-				"RHS_AutoCannon_25mm_M242_AP"
-			};
 			canlock=0;
 			magazineReloadTime=0.30000001;
 			class player: player
@@ -2403,10 +2185,6 @@ class CfgWeapons
 			magazines[]=
 			{
 				"rhs_mag_70Rnd_25mm_M242_APFSDS"
-			};
-			magazineWell[]=
-			{
-				"RHS_AutoCannon_25mm_M242_AP"
 			};
 			canlock=0;
 			class player: player

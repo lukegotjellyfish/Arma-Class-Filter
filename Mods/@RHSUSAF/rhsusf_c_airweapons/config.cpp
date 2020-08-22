@@ -647,26 +647,6 @@ class CfgAmmo
 		indirectHitRange=11;
 		dangerRadiusHit=1250;
 		suppressionRadiusHit=120;
-		class CamShakeExplode
-		{
-			power="(122*0.2)";
-			duration="((round (122^0.5))*0.2 max 0.2)";
-			frequency=20;
-			distance="((10 + 122^0.5)*8)";
-		};
-		class CamShakeHit
-		{
-			power=122;
-			duration="((round (122^0.25))*0.2 max 0.2)";
-			frequency=20;
-			distance=1;
-		};
-		SoundSetExplosion[]=
-		{
-			"RocketsHeavy_Exp_SoundSet",
-			"RocketsHeavy_Tail_SoundSet",
-			"Explosion_Debris_SoundSet"
-		};
 	};
 	class RHS_ammo_AGM_114N: RHS_ammo_AGM_114M
 	{
@@ -676,13 +656,6 @@ class CfgAmmo
 		indirectHitRange=20;
 		explosive=1;
 		allowAgainstInfantry=1;
-		class CamShakeExplode
-		{
-			power="(110*0.2)";
-			duration="((round (110^0.5))*0.2 max 0.2)";
-			frequency=20;
-			distance="((5 + 110^0.5)*8)";
-		};
 	};
 	class RHS_Ammo_DAGR: MissileBase
 	{
@@ -756,49 +729,6 @@ class CfgAmmo
 					};
 				};
 			};
-		};
-		class CamShakeExplode
-		{
-			power=24.4;
-			duration=2.2;
-			frequency=20;
-			distance=208.36301;
-		};
-		class CamShakeHit
-		{
-			power=122;
-			duration=0.60000002;
-			frequency=20;
-			distance=1;
-		};
-	};
-	class rhs_ammo_agm65: rhs_ammo_Hellfire_AT
-	{
-		submunitionAmmo="rhs_ammo_agm65_penetrator";
-		submunitionDirectionType="SubmunitionModelDirection";
-		submunitionInitialOffset[]={0,0,-0.2};
-		submunitionParentSpeedCoef=0;
-		submunitionInitSpeed=1000;
-		triggerOnImpact=1;
-		deleteParentWhenTriggered=0;
-		proxyShape="\rhsusf\addons\rhsusf_a2port_air\data\proxy\rhsusf_m_agm65.p3d";
-		cost=1000;
-		hit=400;
-		indirectHit=250;
-		indirectHitRange=10.5;
-		whistleDist=8;
-		simulationStep=0.0020000001;
-		airLock=0;
-		irLock=0;
-		laserLock=0;
-		cmimmunity=0.80000001;
-		manualControl=1;
-		maxControlRange=11000;
-		maneuvrability=14;
-		trackOversteer=1;
-		flightProfiles[]=
-		{
-			"Direct"
 		};
 		maxSpeed=320;
 		timeToLive=45;

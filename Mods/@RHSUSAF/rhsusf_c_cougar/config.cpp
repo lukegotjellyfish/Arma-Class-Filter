@@ -349,6 +349,10 @@ class CfgVehicles
 		class Damage;  //found empty after stripping
 		class EventHandlers: EventHandlers;  //found empty after stripping
 	};
+	class rhsusf_CGRCAT1A2_usmc_d: rhsusf_Cougar_base
+	{
+		accuracy=0.5;
+	};
 	class rhsusf_cougar_GPK_base: rhsusf_Cougar_base
 	{
 		class Hitpoints: HitPoints

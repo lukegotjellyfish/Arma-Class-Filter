@@ -224,6 +224,13 @@ class CfgAmmo
 		maxControlRange=-1;
 		initTime=0;
 		aiAmmoUsageFlags=8;
+		supersonicCrackFar[]=
+		{
+			"A3\sounds_f\dummysound",
+			0,
+			1,
+			0
+		};
 		effectsSmoke="EmptyEffect";
 	};
 	class CMflareAmmo;
@@ -1065,55 +1072,6 @@ class CfgAmmo
 		indirectHitRange=4.1739998;
 		dangerRadiusHit=50;
 		suppressionRadiusHit=20;
-		class CamShakeExplode
-		{
-			power="(30*0.2)";
-			duration="((round (30^0.5))*0.2 max 0.2)";
-			frequency=20;
-			distance="((3 + 30^0.5)*8)";
-		};
-		class CamShakeHit
-		{
-			power=20;
-			duration="((round (30^0.25))*0.2 max 0.2)";
-			frequency=20;
-			distance=1;
-		};
-	};
-	class rhs_ammo_GPD30: rhs_ammo_VOG30
-	{
-		hit=50;
-		indirectHit=7;
-		airFriction=-0.00079000002;
-		indirectHitRange=5.1919999;
-	};
-	class rhs_ammo_VOG17m: rhs_ammo_VOG30
-	{
-		hit=35;
-		indirectHit=4;
-		indirectHitRange=3.3280001;
-	};
-	class Sh_155mm_AMOS;
-	class rhs_ammo_3WOF27: Sh_155mm_AMOS
-	{
-		cost=100;
-		artilleryLock=1;
-		hit=300;
-		indirectHit=105;
-		indirectHitRange=28;
-		timetolive=220;
-	};
-	class rhs_ammo_3WB3: rhs_ammo_3WOF27
-	{
-		cost=100;
-		artilleryLock=1;
-		simulation="shotSubmunitions";
-		submunitionAmmo="rhs_ammo_3WB3_submunition";
-		submunitionConeType[]=
-		{
-			"poissondisc",
-			1
-		};
 		submunitionConeAngle=1;
 		simulationStep=0.0099999998;
 		triggerDistance=15;
@@ -1132,45 +1090,6 @@ class CfgAmmo
 			"rhs_nuke_explosion_soundset",
 			"Shell155mm_Tail_SoundSet",
 			"Explosion_Debris_SoundSet"
-		};
-		class CamShakeExplode
-		{
-			power=100;
-			duration=4.4000001;
-			frequency=20;
-			distance=13098.9;
-		};
-		class CamShakeHit
-		{
-			power=500;
-			duration=1;
-			frequency=20;
-			distance=1;
-		};
-	};
-	class rhs_ammo_152_WP: rhs_ammo_3WOF27
-	{
-		hit=60;
-		indirectHit=50;
-		indirectHitRange=30;
-		explosive=0.80000001;
-		ExplosionEffects="WPExplosion";
-	};
-	class Sh_155mm_AMOS_LG;
-	class rhs_ammo_3WOF93: Sh_155mm_AMOS_LG;  //found empty after stripping
-	class Flare_82mm_AMOS_White;
-	class rhs_ammo_3WS23: Flare_82mm_AMOS_White
-	{
-		hit=8;
-		indirectHit=0;
-		indirectHitRange=0;
-		explosive=0;
-		ExplosionEffects="";
-		soundHit[]=
-		{
-			"",
-			0,
-			1
 		};
 		whistleDist=0;
 		intensity="10000 * 7";
@@ -1200,20 +1119,6 @@ class CfgAmmo
 		indirectHit=105;
 		indirectHitRange=28;
 		timetolive=220;
-		class CamShakeExplode
-		{
-			power="(122*0.2)*10";
-			duration="((round (122^0.5))*0.2 max 0.2)";
-			frequency=20;
-			distance="((30 + 122^0.5))";
-		};
-		class CamShakeHit
-		{
-			power="122 * 10";
-			duration="((round (122^0.25))*0.2 max 0.2)";
-			frequency=20;
-			distance=1;
-		};
 		aiAmmoUsageFlags="64+32+128+256";
 	};
 	class rhs_ammo_3of56: rhs_ammo_of462
@@ -1877,51 +1782,6 @@ class CfgAmmo
 		cost=100;
 		explosive=1;
 		allowAgainstInfantry=1;
-		class CamShakeExplode
-		{
-			power="(210*0.2)";
-			duration="((round (210^0.5))*0.2 max 0.2)";
-			frequency=20;
-			distance="((5 + 210^0.5)*8)";
-		};
-	};
-	class rhs_ammo_9m115: rhs_ammo_9m119
-	{
-		submunitionAmmo="rhs_ammo_9m115_penetrator";
-		submunitionDirectionType="SubmunitionModelDirection";
-		submunitionInitialOffset[]={0,0,-0.2};
-		submunitionParentSpeedCoef=0;
-		submunitionInitSpeed=1000;
-		triggerOnImpact=1;
-		deleteParentWhenTriggered=0;
-		maxControlRange=1000;
-		initTime=0.25;
-		maxSpeed=223;
-		timetolive=12;
-		class CamShakeExplode
-		{
-			power="(55*0.2)";
-			duration="((round (55^0.5))*0.2 max 0.2)";
-			frequency=20;
-			distance="((4 + 55^0.5)*8)";
-		};
-		class CamShakeHit
-		{
-			power=110;
-			duration="((round (110^0.25))*0.2 max 0.2)";
-			frequency=20;
-			distance=1;
-		};
-		rhs_saclos=1;
-		rhs_ballisticMode=1;
-		rhs_guideMode="WIRE";
-		class EventHandlers: EventHandlers
-		{
-			class RHS_Guidance
-			{
-				fired="_this call RHS_fnc_saclosGuide";
-			};
-		};
 	};
 	class rhs_ammo_9m115_penetrator: rhs_ammo_9m112_penetrator
 	{
@@ -1970,53 +1830,6 @@ class CfgAmmo
 		cost=100;
 		explosive=1;
 		allowAgainstInfantry=1;
-		class CamShakeExplode
-		{
-			power="(210*0.2)";
-			duration="((round (210^0.5))*0.2 max 0.2)";
-			frequency=20;
-			distance="((5 + 210^0.5)*8)";
-		};
-	};
-	class rhs_ammo_9m133: rhs_ammo_atgmBase_base
-	{
-		submunitionAmmo="rhs_ammo_9m133_penetrator";
-		submunitionDirectionType="SubmunitionModelDirection";
-		submunitionInitialOffset[]={0,0,-0.2};
-		submunitionParentSpeedCoef=0;
-		submunitionInitSpeed=1000;
-		triggerOnImpact=1;
-		deleteParentWhenTriggered=0;
-		indirectHit=18;
-		indirectHitRange=4.5;
-		whistleDist=3;
-		canlock=1;
-		irLock=1;
-		trackOversteer=0.30000001;
-		trackLead=1;
-		maneuvrability=9;
-		typicalSpeed=120;
-		maxSpeed=300;
-		inittime=0.25;
-		laserlock=0;
-		manualControl=0;
-		missileManualControlCone=20;
-		airFriction=0.13;
-		sideairfriction=0.1;
-		maxcontrolrange=5000;
-		thrust=152;
-		thrusttime=3;
-		timetolive=30;
-		rhs_saclos=1;
-		rhs_ballisticMode=1;
-		rhs_guideMode="BEAMRIDER";
-		class EventHandlers: EventHandlers
-		{
-			class RHS_Guidance
-			{
-				fired="_this call RHS_fnc_saclosGuide";
-			};
-		};
 	};
 	class rhs_ammo_9m133_penetrator: rhs_ammo_9m112_penetrator
 	{
@@ -2111,61 +1924,6 @@ class CfgAmmo
 	{
 		submunitionAmmo="rhs_m21OF_fly";
 		proxyShape="\rhsafrf\addons\rhs_heavyweapons\grad\rhs_r_m21OF_in";
-		class CamShakeExplode
-		{
-			power=24.4;
-			duration=2.2;
-			frequency=20;
-			distance=328.36301;
-		};
-		class CamShakeHit
-		{
-			power=122;
-			duration=0.60000002;
-			frequency=20;
-			distance=1;
-		};
-	};
-	class rhs_m21OF_fly: R_230mm_fly
-	{
-		hit=900;
-		indirectHit=500;
-		indirectHitRange=25;
-		class CamShakeExplode
-		{
-			power=24.4;
-			duration=2.2;
-			frequency=20;
-			distance=328.36301;
-		};
-		class CamShakeHit
-		{
-			power=122;
-			duration=0.60000002;
-			frequency=20;
-			distance=1;
-		};
-	};
-	class rhs_ammo_9m28f: rhs_ammo_m21OF_HE
-	{
-		submunitionAmmo="rhs_9m28f_fly";
-	};
-	class rhs_9m28f_fly: rhs_m21OF_fly
-	{
-		hit=1100;
-		indirectHit=500;
-		indirectHitRange=45;
-	};
-	class rhs_ammo_9m28k: rhs_ammo_m21OF_HE
-	{
-		triggerDistance=250;
-		triggerSpeedCoef[]={0.5,1};
-		submunitionConeAngle=19;
-		submunitionConeType[]=
-		{
-			"randomcenter",
-			3
-		};
 		submunitionAmmo[]=
 		{
 			"rhs_ammo_ptm3_deploy",
@@ -2456,42 +2214,6 @@ class CfgAmmo
 		typicalspeed=1120;
 		airfriction=-0.00056000001;
 		cost=75;
-		class CamShakeExplode
-		{
-			power="(45^0.5)";
-			duration="((round (45^0.5))*0.2 max 0.2)";
-			frequency=20;
-			distance="((45^0.5)*3)";
-		};
-		class CamShakeHit
-		{
-			power=45;
-			duration="((round (45^0.25))*0.2 max 0.2)";
-			frequency=20;
-			distance=1;
-		};
-	};
-	class rhs_ammo_gsh30_bt: rhs_ammo_3ubr8
-	{
-		cost=10;
-		weaponType="mgun";
-	};
-	class rhs_ammo_gsh30_mixed: SubmunitionBase
-	{
-		hit=90;
-		typicalspeed=1120;
-		airfriction=-0.00056000001;
-		airLock=1;
-		cost=10;
-		submunitionAmmo[]=
-		{
-			"rhs_ammo_3ubr8",
-			0.33000001,
-			"rhs_ammo_3uof8",
-			0.33000001,
-			"rhs_ammo_3uor6",
-			0.33000001
-		};
 		weaponType="mgun";
 		simulation="shotSubmunitions";
 		triggerTime=0.0099999998;
@@ -2520,51 +2242,6 @@ class CfgAmmo
 		allowAgainstInfantry=1;
 		aiAmmoUsageFlags="64 + 128 + 256";
 		weaponType="special";
-		class CamShakeExplode
-		{
-			power=6;
-			duration=1;
-			frequency=20;
-			distance=83.817802;
-		};
-		class CamShakeHit
-		{
-			power=30;
-			duration=0.40000001;
-			frequency=20;
-			distance=1;
-		};
-	};
-	class rhs_ammo_3uof8: rhs_ammo_3uor6
-	{
-		hit=50;
-		indirectHit=33;
-	};
-	class B_127x108_Ball;
-	class rhs_ammo_127x107mm: B_127x108_Ball
-	{
-		hit=25;
-		timeToLive=25;
-		tracerEndTime=3;
-	};
-	class rhs_ammo_127x108mm: rhs_ammo_127x107mm;  //found empty after stripping
-	class rhs_ammo_127x108mm_notracer: rhs_ammo_127x108mm;  //found empty after stripping
-	class rhs_ammo_127x108mm_x5: SubmunitionBase
-	{
-		explosive=0;
-		allowAgainstInfantry=1;
-		airlock=1;
-		airfriction=-0.00089999998;
-		audiblefire=22;
-		visiblefire=22;
-		visiblefiretime=3;
-		submunitionAmmo[]=
-		{
-			"rhs_ammo_127x108mm_notracer",
-			0.85000002,
-			"rhs_ammo_127x108mm",
-			0.15000001
-		};
 		submunitionConeType[]=
 		{
 			"randomcenter",
@@ -2576,28 +2253,6 @@ class CfgAmmo
 		triggerSpeedCoef[]={0.80000001,1};
 		hit=25;
 		timeToLive=15;
-		class CamShakeExplode
-		{
-			power=2.4000001;
-			duration=0.60000002;
-			frequency=20;
-			distance=51.712799;
-		};
-		class CamShakeHit
-		{
-			power=12;
-			duration=0.40000001;
-			frequency=20;
-			distance=1;
-		};
-	};
-	class rhs_ammo_127x108mm_1SLT: rhs_ammo_127x108mm_x5
-	{
-		submunitionConeType[]=
-		{
-			"randomcenter",
-			2
-		};
 		submunitionConeAngle=0.207;
 		weaponType="mGun";
 	};
@@ -5370,10 +5025,6 @@ class CfgWeapons
 		{
 			"rhs_mag_dummy"
 		};
-		magazineWell[]=
-		{
-			"RHS_Cannon_125mm_D81"
-		};
 		class player: player
 		{
 			autoReload=0;
@@ -5413,11 +5064,6 @@ class CfgWeapons
 	{
 		aiDispersioncoefX=3.5;
 		aiDispersioncoefY=5;
-		magazineWell[]=
-		{
-			"RHS_Cannon_125mm_D81",
-			"RHS_Cannon_125mm_2A46M"
-		};
 	};
 	class rhs_weap_2a46m: rhs_weap_2a46m_2
 	{
@@ -5433,12 +5079,6 @@ class CfgWeapons
 	{
 		aiDispersioncoefX=3;
 		aiDispersioncoefY=5;
-		magazineWell[]=
-		{
-			"RHS_Cannon_125mm_D81",
-			"RHS_Cannon_125mm_2A46M",
-			"RHS_Cannon_125mm_2A46M_5"
-		};
 		class player: player
 		{
 			reloadtime=6;
@@ -5453,13 +5093,6 @@ class CfgWeapons
 	{
 		aiDispersioncoefX=2.5;
 		aiDispersioncoefY=4;
-		magazineWell[]=
-		{
-			"RHS_Cannon_125mm_D81",
-			"RHS_Cannon_125mm_2A46M",
-			"RHS_Cannon_125mm_2A46M_5",
-			"RHS_Cannon_125mm_2A82"
-		};
 	};
 	class rhs_weap_2a82_1m: rhs_weap_2a82
 	{
@@ -5568,11 +5201,6 @@ class CfgWeapons
 		autoFire=1;
 		canLock=0;
 		magazines[]={};
-		magazineWell[]=
-		{
-			"RHS_AutoCannon_30mm_2A42_AP",
-			"RHS_AutoCannon_30mm_2A42_HE"
-		};
 		cursor="EmptyCursor";
 		cursorAim="mg";
 		cursorSize=1;
@@ -5626,13 +5254,7 @@ class CfgWeapons
 	class rhs_weap_2a42: rhs_weap_2a42_base
 	{
 		class HE: rhs_weap_2a42_base;  //found empty after stripping
-		class AP: rhs_weap_2a42_base
-		{
-			magazineWell[]=
-			{
-				"RHS_AutoCannon_30mm_2A42_HE"
-			};
-		};
+		class AP: rhs_weap_2a42_base;  //found empty after stripping
 	};
 	class rhs_weap_2a72_base: rhs_weap_2a42
 	{
@@ -5678,13 +5300,7 @@ class CfgWeapons
 	class rhs_weap_2a72: rhs_weap_2a72_base
 	{
 		class HE: rhs_weap_2a72_base;  //found empty after stripping
-		class AP: rhs_weap_2a72_base
-		{
-			magazineWell[]=
-			{
-				"RHS_AutoCannon_30mm_2A42_HE"
-			};
-		};
+		class AP: rhs_weap_2a72_base;  //found empty after stripping
 	};
 	class rhs_weap_2a72_btr: rhs_weap_2a72_base
 	{
@@ -5709,10 +5325,6 @@ class CfgWeapons
 			{
 				dispersion=0.0049999999;
 			};
-			magazineWell[]=
-			{
-				"RHS_AutoCannon_30mm_2A42_AP"
-			};
 		};
 	};
 	class rhs_weap_2a70: rhs_weap_d81
@@ -5731,10 +5343,6 @@ class CfgWeapons
 			"rhs_mag_9m117m_8",
 			"rhs_mag_9m117m1_3",
 			"rhs_mag_9m117m1_8"
-		};
-		magazineWell[]=
-		{
-			"RHS_Cannon_100mm_2A70"
 		};
 		reloadSound[]=
 		{

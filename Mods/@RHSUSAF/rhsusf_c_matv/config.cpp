@@ -12405,24 +12405,7 @@ class CfgVehicles
 			class rhs_woodland;  //found empty after stripping
 			class rhs_olive;  //found empty after stripping
 		};
-		class Attributes
-		{
-			class DoorRF
-			{
-				control="CheckboxNumber";
-				defaultValue="0";
-				property="Door_RF";
-				expression="_this animateDoor ['%s',_value,true]";
-			};
-			class DoorLB: DoorRF
-			{
-				property="Door_LB";
-			};
-			class DoorRB: DoorRF
-			{
-				property="Door_RB";
-			};
-		};
+		class Attributes;  //found empty after stripping
 		class UVAnimations
 		{
 			class BFT_Map_Scale
