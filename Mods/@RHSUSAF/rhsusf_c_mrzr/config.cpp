@@ -287,13 +287,6 @@ class CfgVehicles
 			1,
 			75
 		};
-		armorCrash0[]=
-		{
-			"A3\Sounds_F\vehicles2\soft\shared\collisions\Vehicle_Soft_Collision_Medium_01",
-			1.9952624,
-			1,
-			75
-		};
 		armorCrash1[]=
 		{
 			"A3\Sounds_F\vehicles2\soft\shared\collisions\Vehicle_Soft_Collision_Medium_02",
@@ -339,13 +332,6 @@ class CfgVehicles
 		armorCrash7[]=
 		{
 			"A3\Sounds_F\vehicles2\soft\shared\collisions\Vehicle_Soft_Collision_Medium_08",
-			1.9952624,
-			1,
-			75
-		};
-		Crash0[]=
-		{
-			"A3\Sounds_F\vehicles2\soft\shared\collisions\Vehicle_Soft_Collision_Medium_01",
 			1.9952624,
 			1,
 			75

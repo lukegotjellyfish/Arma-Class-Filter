@@ -872,20 +872,6 @@ class CfgVehicles
 	};
 	class RHS_UAZ_DShKM_Base: RHS_UAZ_Base
 	{
-		class SpeechVariants
-		{
-			class Default
-			{
-				speechSingular[]=
-				{
-					"veh_vehicle_armedcar_s"
-				};
-				speechPlural[]=
-				{
-					"veh_vehicle_armedcar_p"
-				};
-			};
-		};
 		nameSound="veh_vehicle_armedcar_s";
 		attenuationEffectType="OpenCarAttenuation";
 		threat[]={0.89999998,0.30000001,0.1};

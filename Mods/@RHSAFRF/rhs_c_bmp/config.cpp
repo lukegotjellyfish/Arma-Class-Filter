@@ -255,20 +255,6 @@ class CfgVehicles
 			"['Label', cBMPPlatoon, 'Platoon',11]",
 			"['Label', cBMPLeftBack, 'Army', 2]"
 		};
-		class SpeechVariants
-		{
-			class Default
-			{
-				speechSingular[]=
-				{
-					"veh_vehicle_APC_s"
-				};
-				speechPlural[]=
-				{
-					"veh_vehicle_APC_p"
-				};
-			};
-		};
 		nameSound="veh_vehicle_APC_s";
 		cargoGetInAction[]=
 		{

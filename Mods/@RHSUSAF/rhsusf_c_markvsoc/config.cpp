@@ -815,20 +815,6 @@ class CfgVehicles
 		occludeSoundsWhenIn=0.316228;
 		obstructSoundsWhenIn=0.56234097;
 		class SoundEvents;  //found empty after stripping
-		class SpeechVariants
-		{
-			class Default
-			{
-				speechSingular[]=
-				{
-					"veh_ship_attackBoat_s"
-				};
-				speechPlural[]=
-				{
-					"veh_ship_attackBoat_p"
-				};
-			};
-		};
 		class Turrets: Turrets
 		{
 			class MainTurret: NewTurret

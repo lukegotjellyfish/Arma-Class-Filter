@@ -1309,20 +1309,6 @@ class CfgVehicles
 		Picture="\rhsusf\addons\rhsusf_hmmwv\pictures\rhsusf_m1025_m2_ca.paa";
 		displayname="M1025A2 (M2)";
 		attenuationEffectType="RHS_CarAttenuation";
-		class SpeechVariants
-		{
-			class Default
-			{
-				speechSingular[]=
-				{
-					"veh_vehicle_armedcar_s"
-				};
-				speechPlural[]=
-				{
-					"veh_vehicle_armedcar_p"
-				};
-			};
-		};
 		nameSound="veh_vehicle_armedcar_s";
 		class HitPoints: HitPoints;  //found empty after stripping
 		threat[]={0.89999998,0.30000001,0.1};
@@ -1448,20 +1434,6 @@ class CfgVehicles
 		Picture="\rhsusf\addons\rhsusf_hmmwv\pictures\rhsusf_m966_ca.paa";
 		displayname="M966A1 (M220A2)";
 		attenuationEffectType="RHS_CarAttenuation";
-		class SpeechVariants
-		{
-			class Default
-			{
-				speechSingular[]=
-				{
-					"veh_vehicle_armedcar_s"
-				};
-				speechPlural[]=
-				{
-					"veh_vehicle_armedcar_p"
-				};
-			};
-		};
 		nameSound="veh_vehicle_armedcar_s";
 		class HitPoints: HitPoints;  //found empty after stripping
 		threat[]={0.89999998,0.30000001,0.1};

@@ -643,20 +643,6 @@ class CfgVehicles
 	};
 	class rhssaf_army_m10_digital_rifleman_m21: rhssaf_soldier_army_digital_base
 	{
-		class SpeechVariants
-		{
-			class Default
-			{
-				speechSingular[]=
-				{
-					"veh_infantry_s"
-				};
-				speechPlural[]=
-				{
-					"veh_infantry_p"
-				};
-			};
-		};
 		nameSound="veh_infantry_s";
 		cost=100000;
 		backpack="rhssaf_Kitbag_smb_std_m21";
@@ -945,20 +931,6 @@ class CfgVehicles
 	};
 	class rhssaf_army_m10_digital_mgun_m84: rhssaf_soldier_army_digital_base
 	{
-		class SpeechVariants
-		{
-			class Default
-			{
-				speechSingular[]=
-				{
-					"veh_infantry_MG_s"
-				};
-				speechPlural[]=
-				{
-					"veh_infantry_MG_p"
-				};
-			};
-		};
 		nameSound="veh_infantry_MG_s";
 		cost=110000;
 		threat[]={1,0.1,0.30000001};
@@ -1233,20 +1205,6 @@ class CfgVehicles
 	};
 	class rhssaf_army_m10_digital_sniper_m76: rhssaf_soldier_army_digital_base
 	{
-		class SpeechVariants
-		{
-			class Default
-			{
-				speechSingular[]=
-				{
-					"veh_infantry_sniper_s"
-				};
-				speechPlural[]=
-				{
-					"veh_infantry_sniper_p"
-				};
-			};
-		};
 		nameSound="veh_infantry_sniper_s";
 		cost=150000;
 		backpack="rhssaf_Kitbag_smb_std_m76";
@@ -1393,20 +1351,6 @@ class CfgVehicles
 	};
 	class rhssaf_army_m10_digital_rifleman_at: rhssaf_soldier_army_digital_base
 	{
-		class SpeechVariants
-		{
-			class Default
-			{
-				speechSingular[]=
-				{
-					"veh_infantry_AT_s"
-				};
-				speechPlural[]=
-				{
-					"veh_infantry_AT_p"
-				};
-			};
-		};
 		nameSound="veh_infantry_AT_s";
 		cost=180000;
 		threat[]={1,0.5,0.30000001};
@@ -1769,20 +1713,6 @@ class CfgVehicles
 	};
 	class rhssaf_army_m10_digital_medic: rhssaf_soldier_army_digital_base
 	{
-		class SpeechVariants
-		{
-			class Default
-			{
-				speechSingular[]=
-				{
-					"veh_infantry_medic_s"
-				};
-				speechPlural[]=
-				{
-					"veh_infantry_medic_p"
-				};
-			};
-		};
 		nameSound="veh_infantry_medic_s";
 		attendant=1;
 		cost=300000;
@@ -2265,20 +2195,6 @@ class CfgVehicles
 	};
 	class rhssaf_army_m10_digital_officer: rhssaf_soldier_army_digital_base
 	{
-		class SpeechVariants
-		{
-			class Default
-			{
-				speechSingular[]=
-				{
-					"veh_infantry_officer_s"
-				};
-				speechPlural[]=
-				{
-					"veh_infantry_officer_p"
-				};
-			};
-		};
 		nameSound="veh_infantry_officer_s";
 		cost=600000;
 		camouflage=1.6;
@@ -2571,20 +2487,6 @@ class CfgVehicles
 	};
 	class rhssaf_army_m93_oakleaf_summer_rifleman_m21: rhssaf_soldier_army_oakleaf_summer_base
 	{
-		class SpeechVariants
-		{
-			class Default
-			{
-				speechSingular[]=
-				{
-					"veh_infantry_s"
-				};
-				speechPlural[]=
-				{
-					"veh_infantry_p"
-				};
-			};
-		};
 		nameSound="veh_infantry_s";
 		cost=100000;
 		backpack="rhssaf_Kitbag_smb_std_m21";
@@ -2873,20 +2775,6 @@ class CfgVehicles
 	};
 	class rhssaf_army_m93_oakleaf_summer_mgun_m84: rhssaf_soldier_army_oakleaf_summer_base
 	{
-		class SpeechVariants
-		{
-			class Default
-			{
-				speechSingular[]=
-				{
-					"veh_infantry_MG_s"
-				};
-				speechPlural[]=
-				{
-					"veh_infantry_MG_p"
-				};
-			};
-		};
 		nameSound="veh_infantry_MG_s";
 		cost=110000;
 		threat[]={1,0.1,0.30000001};
@@ -3161,20 +3049,6 @@ class CfgVehicles
 	};
 	class rhssaf_army_m93_oakleaf_summer_sniper_m76: rhssaf_soldier_army_oakleaf_summer_base
 	{
-		class SpeechVariants
-		{
-			class Default
-			{
-				speechSingular[]=
-				{
-					"veh_infantry_sniper_s"
-				};
-				speechPlural[]=
-				{
-					"veh_infantry_sniper_p"
-				};
-			};
-		};
 		nameSound="veh_infantry_sniper_s";
 		cost=150000;
 		backpack="rhssaf_Kitbag_smb_std_m76";
@@ -3321,20 +3195,6 @@ class CfgVehicles
 	};
 	class rhssaf_army_m93_oakleaf_summer_rifleman_at: rhssaf_soldier_army_oakleaf_summer_base
 	{
-		class SpeechVariants
-		{
-			class Default
-			{
-				speechSingular[]=
-				{
-					"veh_infantry_AT_s"
-				};
-				speechPlural[]=
-				{
-					"veh_infantry_AT_p"
-				};
-			};
-		};
 		nameSound="veh_infantry_AT_s";
 		cost=180000;
 		threat[]={1,0.5,0.30000001};
@@ -3697,20 +3557,6 @@ class CfgVehicles
 	};
 	class rhssaf_army_m93_oakleaf_summer_medic: rhssaf_soldier_army_oakleaf_summer_base
 	{
-		class SpeechVariants
-		{
-			class Default
-			{
-				speechSingular[]=
-				{
-					"veh_infantry_medic_s"
-				};
-				speechPlural[]=
-				{
-					"veh_infantry_medic_p"
-				};
-			};
-		};
 		nameSound="veh_infantry_medic_s";
 		attendant=1;
 		cost=300000;
@@ -4071,20 +3917,6 @@ class CfgVehicles
 	};
 	class rhssaf_army_m93_oakleaf_summer_officer: rhssaf_soldier_army_oakleaf_summer_base
 	{
-		class SpeechVariants
-		{
-			class Default
-			{
-				speechSingular[]=
-				{
-					"veh_infantry_officer_s"
-				};
-				speechPlural[]=
-				{
-					"veh_infantry_officer_p"
-				};
-			};
-		};
 		nameSound="veh_infantry_officer_s";
 		cost=600000;
 		camouflage=1.6;
@@ -4308,20 +4140,6 @@ class CfgVehicles
 	};
 	class rhssaf_army_m10_para_rifleman_m21: rhssaf_soldier_army_para_digital_base
 	{
-		class SpeechVariants
-		{
-			class Default
-			{
-				speechSingular[]=
-				{
-					"veh_infantry_s"
-				};
-				speechPlural[]=
-				{
-					"veh_infantry_p"
-				};
-			};
-		};
 		nameSound="veh_infantry_s";
 		cost=100000;
 		backpack="rhssaf_Kitbag_smb_std_m21";
@@ -4390,20 +4208,6 @@ class CfgVehicles
 	};
 	class rhssaf_army_m10_para_rifleman_g36: rhssaf_army_m10_para_rifleman_m21
 	{
-		class SpeechVariants
-		{
-			class Default
-			{
-				speechSingular[]=
-				{
-					"veh_infantry_s"
-				};
-				speechPlural[]=
-				{
-					"veh_infantry_p"
-				};
-			};
-		};
 		nameSound="veh_infantry_s";
 		cost=100000;
 		backpack="rhssaf_Kitbag_smb_std_g36";
@@ -4472,20 +4276,6 @@ class CfgVehicles
 	};
 	class rhssaf_army_m10_para_rifleman_hk416: rhssaf_army_m10_para_rifleman_m21
 	{
-		class SpeechVariants
-		{
-			class Default
-			{
-				speechSingular[]=
-				{
-					"veh_infantry_s"
-				};
-				speechPlural[]=
-				{
-					"veh_infantry_p"
-				};
-			};
-		};
 		nameSound="veh_infantry_s";
 		cost=100000;
 		backpack="rhssaf_Kitbag_smb_std_hk416";
@@ -4794,20 +4584,6 @@ class CfgVehicles
 	};
 	class rhssaf_army_m10_para_mgun_m84: rhssaf_soldier_army_para_digital_base
 	{
-		class SpeechVariants
-		{
-			class Default
-			{
-				speechSingular[]=
-				{
-					"veh_infantry_MG_s"
-				};
-				speechPlural[]=
-				{
-					"veh_infantry_MG_p"
-				};
-			};
-		};
 		nameSound="veh_infantry_MG_s";
 		cost=110000;
 		threat[]={1,0.1,0.30000001};
@@ -4874,20 +4650,6 @@ class CfgVehicles
 	};
 	class rhssaf_army_m10_para_mgun_minimi: rhssaf_soldier_army_para_digital_base
 	{
-		class SpeechVariants
-		{
-			class Default
-			{
-				speechSingular[]=
-				{
-					"veh_infantry_MG_s"
-				};
-				speechPlural[]=
-				{
-					"veh_infantry_MG_p"
-				};
-			};
-		};
 		nameSound="veh_infantry_MG_s";
 		cost=110000;
 		threat[]={1,0.1,0.30000001};
@@ -5228,20 +4990,6 @@ class CfgVehicles
 	};
 	class rhssaf_army_m10_para_sniper_m76: rhssaf_soldier_army_para_digital_base
 	{
-		class SpeechVariants
-		{
-			class Default
-			{
-				speechSingular[]=
-				{
-					"veh_infantry_sniper_s"
-				};
-				speechPlural[]=
-				{
-					"veh_infantry_sniper_p"
-				};
-			};
-		};
 		nameSound="veh_infantry_sniper_s";
 		cost=150000;
 		backpack="rhssaf_Kitbag_smb_std_m76";
@@ -5318,20 +5066,6 @@ class CfgVehicles
 	};
 	class rhssaf_army_m10_para_sniper_scarH: rhssaf_soldier_army_para_digital_base
 	{
-		class SpeechVariants
-		{
-			class Default
-			{
-				speechSingular[]=
-				{
-					"veh_infantry_sniper_s"
-				};
-				speechPlural[]=
-				{
-					"veh_infantry_sniper_p"
-				};
-			};
-		};
 		nameSound="veh_infantry_sniper_s";
 		cost=150000;
 		backpack="rhssaf_Kitbag_smb_std_scarh";
@@ -5546,20 +5280,6 @@ class CfgVehicles
 	};
 	class rhssaf_army_m10_para_rifleman_at: rhssaf_soldier_army_para_digital_base
 	{
-		class SpeechVariants
-		{
-			class Default
-			{
-				speechSingular[]=
-				{
-					"veh_infantry_AT_s"
-				};
-				speechPlural[]=
-				{
-					"veh_infantry_AT_p"
-				};
-			};
-		};
 		nameSound="veh_infantry_AT_s";
 		cost=180000;
 		threat[]={1,0.5,0.30000001};
@@ -5924,20 +5644,6 @@ class CfgVehicles
 	};
 	class rhssaf_army_m10_para_medic: rhssaf_soldier_army_para_digital_base
 	{
-		class SpeechVariants
-		{
-			class Default
-			{
-				speechSingular[]=
-				{
-					"veh_infantry_medic_s"
-				};
-				speechPlural[]=
-				{
-					"veh_infantry_medic_p"
-				};
-			};
-		};
 		nameSound="veh_infantry_medic_s";
 		attendant=1;
 		cost=300000;
@@ -6300,20 +6006,6 @@ class CfgVehicles
 	};
 	class rhssaf_army_m10_para_officer: rhssaf_soldier_army_para_digital_base
 	{
-		class SpeechVariants
-		{
-			class Default
-			{
-				speechSingular[]=
-				{
-					"veh_infantry_officer_s"
-				};
-				speechPlural[]=
-				{
-					"veh_infantry_officer_p"
-				};
-			};
-		};
 		nameSound="veh_infantry_officer_s";
 		cost=600000;
 		camouflage=1.6;
@@ -6561,20 +6253,6 @@ class CfgVehicles
 	};
 	class rhssaf_un_m10_digital_desert_rifleman_m21: rhssaf_soldier_un_desert_base
 	{
-		class SpeechVariants
-		{
-			class Default
-			{
-				speechSingular[]=
-				{
-					"veh_infantry_s"
-				};
-				speechPlural[]=
-				{
-					"veh_infantry_p"
-				};
-			};
-		};
 		nameSound="veh_infantry_s";
 		cost=100000;
 		backpack="rhssaf_Kitbag_smb_std_m21";
@@ -6864,20 +6542,6 @@ class CfgVehicles
 	};
 	class rhssaf_un_m10_digital_desert_mgun_m84: rhssaf_soldier_un_desert_base
 	{
-		class SpeechVariants
-		{
-			class Default
-			{
-				speechSingular[]=
-				{
-					"veh_infantry_MG_s"
-				};
-				speechPlural[]=
-				{
-					"veh_infantry_MG_p"
-				};
-			};
-		};
 		nameSound="veh_infantry_MG_s";
 		cost=110000;
 		threat[]={1,0.1,0.30000001};
@@ -7152,20 +6816,6 @@ class CfgVehicles
 	};
 	class rhssaf_un_m10_digital_desert_sniper_m76: rhssaf_soldier_un_desert_base
 	{
-		class SpeechVariants
-		{
-			class Default
-			{
-				speechSingular[]=
-				{
-					"veh_infantry_sniper_s"
-				};
-				speechPlural[]=
-				{
-					"veh_infantry_sniper_p"
-				};
-			};
-		};
 		nameSound="veh_infantry_sniper_s";
 		cost=150000;
 		backpack="rhssaf_Kitbag_smb_std_m76";
@@ -7312,20 +6962,6 @@ class CfgVehicles
 	};
 	class rhssaf_un_m10_digital_desert_rifleman_at: rhssaf_soldier_un_desert_base
 	{
-		class SpeechVariants
-		{
-			class Default
-			{
-				speechSingular[]=
-				{
-					"veh_infantry_AT_s"
-				};
-				speechPlural[]=
-				{
-					"veh_infantry_AT_p"
-				};
-			};
-		};
 		nameSound="veh_infantry_AT_s";
 		cost=180000;
 		threat[]={1,0.5,0.30000001};
@@ -7690,20 +7326,6 @@ class CfgVehicles
 	};
 	class rhssaf_un_m10_digital_desert_medic: rhssaf_soldier_un_desert_base
 	{
-		class SpeechVariants
-		{
-			class Default
-			{
-				speechSingular[]=
-				{
-					"veh_infantry_medic_s"
-				};
-				speechPlural[]=
-				{
-					"veh_infantry_medic_p"
-				};
-			};
-		};
 		nameSound="veh_infantry_medic_s";
 		attendant=1;
 		cost=300000;
@@ -8064,20 +7686,6 @@ class CfgVehicles
 	};
 	class rhssaf_un_m10_digital_desert_officer: rhssaf_soldier_un_desert_base
 	{
-		class SpeechVariants
-		{
-			class Default
-			{
-				speechSingular[]=
-				{
-					"veh_infantry_officer_s"
-				};
-				speechPlural[]=
-				{
-					"veh_infantry_officer_p"
-				};
-			};
-		};
 		nameSound="veh_infantry_officer_s";
 		cost=600000;
 		camouflage=1.6;
@@ -8217,20 +7825,6 @@ class CfgVehicles
 	};
 	class rhssaf_un_m10_digital_rifleman_m21: rhssaf_soldier_un_digital_base
 	{
-		class SpeechVariants
-		{
-			class Default
-			{
-				speechSingular[]=
-				{
-					"veh_infantry_s"
-				};
-				speechPlural[]=
-				{
-					"veh_infantry_p"
-				};
-			};
-		};
 		nameSound="veh_infantry_s";
 		cost=100000;
 		backpack="rhssaf_Kitbag_smb_std_m21";
@@ -8520,20 +8114,6 @@ class CfgVehicles
 	};
 	class rhssaf_un_m10_digital_mgun_m84: rhssaf_soldier_un_digital_base
 	{
-		class SpeechVariants
-		{
-			class Default
-			{
-				speechSingular[]=
-				{
-					"veh_infantry_MG_s"
-				};
-				speechPlural[]=
-				{
-					"veh_infantry_MG_p"
-				};
-			};
-		};
 		nameSound="veh_infantry_MG_s";
 		cost=110000;
 		threat[]={1,0.1,0.30000001};
@@ -8808,20 +8388,6 @@ class CfgVehicles
 	};
 	class rhssaf_un_m10_digital_sniper_m76: rhssaf_soldier_un_digital_base
 	{
-		class SpeechVariants
-		{
-			class Default
-			{
-				speechSingular[]=
-				{
-					"veh_infantry_sniper_s"
-				};
-				speechPlural[]=
-				{
-					"veh_infantry_sniper_p"
-				};
-			};
-		};
 		nameSound="veh_infantry_sniper_s";
 		cost=150000;
 		backpack="rhssaf_Kitbag_smb_std_m76";
@@ -8968,20 +8534,6 @@ class CfgVehicles
 	};
 	class rhssaf_un_m10_digital_rifleman_at: rhssaf_soldier_un_digital_base
 	{
-		class SpeechVariants
-		{
-			class Default
-			{
-				speechSingular[]=
-				{
-					"veh_infantry_AT_s"
-				};
-				speechPlural[]=
-				{
-					"veh_infantry_AT_p"
-				};
-			};
-		};
 		nameSound="veh_infantry_AT_s";
 		cost=180000;
 		threat[]={1,0.5,0.30000001};
@@ -9346,20 +8898,6 @@ class CfgVehicles
 	};
 	class rhssaf_un_m10_digital_medic: rhssaf_soldier_un_digital_base
 	{
-		class SpeechVariants
-		{
-			class Default
-			{
-				speechSingular[]=
-				{
-					"veh_infantry_medic_s"
-				};
-				speechPlural[]=
-				{
-					"veh_infantry_medic_p"
-				};
-			};
-		};
 		nameSound="veh_infantry_medic_s";
 		attendant=1;
 		cost=300000;
@@ -9720,20 +9258,6 @@ class CfgVehicles
 	};
 	class rhssaf_un_m10_digital_officer: rhssaf_soldier_un_digital_base
 	{
-		class SpeechVariants
-		{
-			class Default
-			{
-				speechSingular[]=
-				{
-					"veh_infantry_officer_s"
-				};
-				speechPlural[]=
-				{
-					"veh_infantry_officer_p"
-				};
-			};
-		};
 		nameSound="veh_infantry_officer_s";
 		cost=600000;
 		camouflage=1.6;

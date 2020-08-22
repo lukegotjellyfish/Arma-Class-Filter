@@ -462,12 +462,6 @@ class CfgVehicles
 				depends="0";
 			};
 		};
-		soundLocked[]=
-		{
-			"A3\Sounds_F_Jets\vehicles\air\Shared\FX_Plane_Jet_lockedOn1",
-			1,
-			1
-		};
 		soundIncommingMissile[]=
 		{
 			"A3\Sounds_F_Jets\vehicles\air\Shared\FX_Plane_Jet_lockedon2",

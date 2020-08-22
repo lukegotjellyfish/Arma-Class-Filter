@@ -92,20 +92,6 @@ class CfgVehicles
 	};
 	class rhsusf_m113tank_base: APC_Tracked_02_base_F
 	{
-		class SpeechVariants
-		{
-			class Default
-			{
-				speechSingular[]=
-				{
-					"veh_vehicle_APC_s"
-				};
-				speechPlural[]=
-				{
-					"veh_vehicle_APC_p"
-				};
-			};
-		};
 		nameSound="veh_vehicle_APC_s";
 		accuracy=0.30000001;
 		typicalCargo[]={};

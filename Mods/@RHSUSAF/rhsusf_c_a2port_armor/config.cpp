@@ -267,20 +267,6 @@ class CfgVehicles
 				maxCompression=0;
 			};
 		};
-		class SpeechVariants
-		{
-			class Default
-			{
-				speechSingular[]=
-				{
-					"veh_vehicle_APC_s"
-				};
-				speechPlural[]=
-				{
-					"veh_vehicle_APC_p"
-				};
-			};
-		};
 		nameSound="veh_vehicle_APC_s";
 		driveOnComponent[]=
 		{

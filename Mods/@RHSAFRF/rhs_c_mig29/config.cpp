@@ -221,12 +221,6 @@ class CfgVehicles
 		};
 		lockDetectionSystem=8;
 		incommingMisslieDetectionSystem=8;
-		soundLocked[]=
-		{
-			"\rhsafrf\addons\rhs_mig29\sound\locking",
-			0.00031622799,
-			1
-		};
 		soundIncommingMissile[]=
 		{
 			"\rhsafrf\addons\rhs_mig29\sound\incomingmissile",
@@ -565,13 +559,6 @@ class CfgVehicles
 		HeadAimDown=3;
 		headGforceLeaningFactor[]={0.0049999999,0.001,0.015};
 		attenuationEffectType="PlaneAttenuation";
-		cabinOpenSound[]=
-		{
-			"A3\Sounds_F_Jets\vehicles\air\Plane_Fighter_02\FX_Plane_Fighter_02_cabine_open_ext",
-			3.1622801,
-			1,
-			40
-		};
 		cabinCloseSound[]=
 		{
 			"A3\Sounds_F_Jets\vehicles\air\Plane_Fighter_02\FX_Plane_Fighter_02_cabine_close_ext",

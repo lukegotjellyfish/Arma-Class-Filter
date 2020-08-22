@@ -428,12 +428,6 @@ class CfgVehicles
 			"TruckHorn"
 		};
 		magazines[]={};
-		soundLocked[]=
-		{
-			"\A3\Sounds_F\weapons\Rockets\locked_1",
-			1,
-			1
-		};
 		soundIncommingMissile[]=
 		{
 			"\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_4",

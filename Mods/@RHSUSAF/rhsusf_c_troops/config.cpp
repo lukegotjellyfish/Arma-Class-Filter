@@ -15887,20 +15887,6 @@ class CfgVehicles
 	class rhsusf_army_ocp_riflemanat: rhsusf_army_ocp_rifleman
 	{
 		uniformClass="rhs_uniform_acu_oefcp";
-		class SpeechVariants
-		{
-			class Default
-			{
-				speechSingular[]=
-				{
-					"veh_infantry_AT_s"
-				};
-				speechPlural[]=
-				{
-					"veh_infantry_AT_p"
-				};
-			};
-		};
 		nameSound="veh_infantry_AT_s";
 		cost=180000;
 		threat[]={1,0.69999999,0.30000001};
@@ -16046,20 +16032,6 @@ class CfgVehicles
 	class rhsusf_army_ocp_autorifleman: rhsusf_infantry_army_base
 	{
 		uniformClass="rhs_uniform_acu_oefcp";
-		class SpeechVariants
-		{
-			class Default
-			{
-				speechSingular[]=
-				{
-					"veh_infantry_MG_s"
-				};
-				speechPlural[]=
-				{
-					"veh_infantry_MG_p"
-				};
-			};
-		};
 		nameSound="veh_infantry_MG_s";
 		cost=125000;
 		threat[]={1,0.1,0.30000001};
@@ -16222,20 +16194,6 @@ class CfgVehicles
 	class rhsusf_army_ocp_marksman: rhsusf_infantry_army_base
 	{
 		uniformClass="rhs_uniform_acu_oefcp";
-		class SpeechVariants
-		{
-			class Default
-			{
-				speechSingular[]=
-				{
-					"veh_infantry_sniper_s"
-				};
-				speechPlural[]=
-				{
-					"veh_infantry_sniper_p"
-				};
-			};
-		};
 		nameSound="veh_infantry_sniper_s";
 		cost=150000;
 		sensitivity=3.3;
@@ -16318,20 +16276,6 @@ class CfgVehicles
 	class rhsusf_army_ocp_officer: rhsusf_infantry_army_base
 	{
 		uniformClass="rhs_uniform_acu_oefcp";
-		class SpeechVariants
-		{
-			class Default
-			{
-				speechSingular[]=
-				{
-					"veh_infantry_officer_s"
-				};
-				speechPlural[]=
-				{
-					"veh_infantry_officer_p"
-				};
-			};
-		};
 		nameSound="veh_infantry_officer_s";
 		cost=600000;
 		camouflage=1.6;
@@ -16779,20 +16723,6 @@ class CfgVehicles
 	class rhsusf_army_ocp_javelin: rhsusf_army_ocp_riflemanat
 	{
 		uniformClass="rhs_uniform_acu_oefcp";
-		class SpeechVariants
-		{
-			class Default
-			{
-				speechSingular[]=
-				{
-					"veh_infantry_AT_s"
-				};
-				speechPlural[]=
-				{
-					"veh_infantry_AT_p"
-				};
-			};
-		};
 		nameSound="veh_infantry_AT_s";
 		cost=190000;
 		threat[]={1,1,0.80000001};
@@ -16840,20 +16770,6 @@ class CfgVehicles
 	class rhsusf_army_ocp_javelin_assistant: rhsusf_army_ocp_riflemanat
 	{
 		uniformClass="rhs_uniform_acu_oefcp";
-		class SpeechVariants
-		{
-			class Default
-			{
-				speechSingular[]=
-				{
-					"veh_infantry_AT_s"
-				};
-				speechPlural[]=
-				{
-					"veh_infantry_AT_p"
-				};
-			};
-		};
 		nameSound="veh_infantry_AT_s";
 		cost=190000;
 		threat[]={1,1,0.80000001};
@@ -16898,20 +16814,6 @@ class CfgVehicles
 	class rhsusf_army_ocp_maaws: rhsusf_army_ocp_riflemanat
 	{
 		uniformClass="rhs_uniform_acu_oefcp";
-		class SpeechVariants
-		{
-			class Default
-			{
-				speechSingular[]=
-				{
-					"veh_infantry_AT_s"
-				};
-				speechPlural[]=
-				{
-					"veh_infantry_AT_p"
-				};
-			};
-		};
 		nameSound="veh_infantry_AT_s";
 		cost=190000;
 		threat[]={1,1,0.80000001};
@@ -16960,20 +16862,6 @@ class CfgVehicles
 	class rhsusf_army_ocp_aa: rhsusf_army_ocp_riflemanat
 	{
 		uniformClass="rhs_uniform_acu_oefcp";
-		class SpeechVariants
-		{
-			class Default
-			{
-				speechSingular[]=
-				{
-					"veh_infantry_AT_s"
-				};
-				speechPlural[]=
-				{
-					"veh_infantry_AT_p"
-				};
-			};
-		};
 		nameSound="veh_infantry_AT_s";
 		cost=200000;
 		threat[]={1,1,0.80000001};
@@ -17265,20 +17153,6 @@ class CfgVehicles
 	class rhsusf_army_ocp_sniper: rhsusf_army_ocp_marksman
 	{
 		uniformClass="rhs_uniform_acu_oefcp";
-		class SpeechVariants
-		{
-			class Default
-			{
-				speechSingular[]=
-				{
-					"veh_infantry_sniper_s"
-				};
-				speechPlural[]=
-				{
-					"veh_infantry_sniper_p"
-				};
-			};
-		};
 		nameSound="veh_infantry_sniper_s";
 		cost=350000;
 		threat[]={1,0.30000001,0.30000001};
@@ -17757,20 +17631,6 @@ class CfgVehicles
 	class rhsusf_army_ocp_helipilot: rhsusf_infantry_army_base
 	{
 		uniformClass="rhs_uniform_acu_oefcp";
-		class SpeechVariants
-		{
-			class Default
-			{
-				speechSingular[]=
-				{
-					"veh_infantry_pilot_s"
-				};
-				speechPlural[]=
-				{
-					"veh_infantry_pilot_p"
-				};
-			};
-		};
 		nameSound="veh_infantry_pilot_s";
 		cost=160000;
 		camouflage=2;
@@ -22166,20 +22026,6 @@ class CfgVehicles
 	};
 	class rhsusf_usmc_marpat_wd_riflemanat: rhsusf_usmc_marpat_wd_rifleman
 	{
-		class SpeechVariants
-		{
-			class Default
-			{
-				speechSingular[]=
-				{
-					"veh_infantry_AT_s"
-				};
-				speechPlural[]=
-				{
-					"veh_infantry_AT_p"
-				};
-			};
-		};
 		nameSound="veh_infantry_AT_s";
 		cost=180000;
 		threat[]={1,0.69999999,0.30000001};
@@ -22551,20 +22397,6 @@ class CfgVehicles
 	};
 	class rhsusf_usmc_marpat_wd_autorifleman_m249: rhsusf_usmc_marpat_wd_autorifleman
 	{
-		class SpeechVariants
-		{
-			class Default
-			{
-				speechSingular[]=
-				{
-					"veh_infantry_MG_s"
-				};
-				speechPlural[]=
-				{
-					"veh_infantry_MG_p"
-				};
-			};
-		};
 		nameSound="veh_infantry_MG_s";
 		cost=125000;
 		threat[]={1,0.1,0.30000001};
@@ -22722,20 +22554,6 @@ class CfgVehicles
 	};
 	class rhsusf_usmc_marpat_wd_officer: rhsusf_usmc_marpat_wd_rifleman
 	{
-		class SpeechVariants
-		{
-			class Default
-			{
-				speechSingular[]=
-				{
-					"veh_infantry_officer_s"
-				};
-				speechPlural[]=
-				{
-					"veh_infantry_officer_p"
-				};
-			};
-		};
 		nameSound="veh_infantry_officer_s";
 		cost=600000;
 		camouflage=1.6;
@@ -23140,20 +22958,6 @@ class CfgVehicles
 	};
 	class rhsusf_usmc_marpat_wd_smaw: rhsusf_usmc_marpat_wd_riflemanat
 	{
-		class SpeechVariants
-		{
-			class Default
-			{
-				speechSingular[]=
-				{
-					"veh_infantry_AT_s"
-				};
-				speechPlural[]=
-				{
-					"veh_infantry_AT_p"
-				};
-			};
-		};
 		nameSound="veh_infantry_AT_s";
 		cost=190000;
 		threat[]={1,1,0.80000001};
@@ -23593,20 +23397,6 @@ class CfgVehicles
 	};
 	class rhsusf_usmc_marpat_wd_marksman: rhsusf_usmc_marpat_wd_rifleman
 	{
-		class SpeechVariants
-		{
-			class Default
-			{
-				speechSingular[]=
-				{
-					"veh_infantry_sniper_s"
-				};
-				speechPlural[]=
-				{
-					"veh_infantry_sniper_p"
-				};
-			};
-		};
 		nameSound="veh_infantry_sniper_s";
 		cost=150000;
 		sensitivity=3.3;
@@ -23675,20 +23465,6 @@ class CfgVehicles
 	};
 	class rhsusf_usmc_marpat_wd_spotter: rhsusf_usmc_marpat_wd_marksman
 	{
-		class SpeechVariants
-		{
-			class Default
-			{
-				speechSingular[]=
-				{
-					"veh_infantry_SF_s"
-				};
-				speechPlural[]=
-				{
-					"veh_infantry_SF_p"
-				};
-			};
-		};
 		nameSound="veh_infantry_SF_s";
 		cost=250000;
 		threat[]={1,0.30000001,0.30000001};
@@ -23755,20 +23531,6 @@ class CfgVehicles
 	};
 	class rhsusf_usmc_marpat_wd_sniper: rhsusf_usmc_marpat_wd_marksman
 	{
-		class SpeechVariants
-		{
-			class Default
-			{
-				speechSingular[]=
-				{
-					"veh_infantry_sniper_s"
-				};
-				speechPlural[]=
-				{
-					"veh_infantry_sniper_p"
-				};
-			};
-		};
 		nameSound="veh_infantry_sniper_s";
 		cost=350000;
 		threat[]={1,0.30000001,0.30000001};
@@ -24160,20 +23922,6 @@ class CfgVehicles
 	};
 	class rhsusf_usmc_marpat_wd_helipilot: rhsusf_infantry_usmc_base
 	{
-		class SpeechVariants
-		{
-			class Default
-			{
-				speechSingular[]=
-				{
-					"veh_infantry_pilot_s"
-				};
-				speechPlural[]=
-				{
-					"veh_infantry_pilot_p"
-				};
-			};
-		};
 		nameSound="veh_infantry_pilot_s";
 		cost=160000;
 		camouflage=2;
@@ -25220,20 +24968,6 @@ class CfgVehicles
 	};
 	class rhsusf_usmc_lar_marpat_wd_riflemanat: rhsusf_usmc_lar_marpat_wd_rifleman
 	{
-		class SpeechVariants
-		{
-			class Default
-			{
-				speechSingular[]=
-				{
-					"veh_infantry_AT_s"
-				};
-				speechPlural[]=
-				{
-					"veh_infantry_AT_p"
-				};
-			};
-		};
 		nameSound="veh_infantry_AT_s";
 		cost=180000;
 		threat[]={1,0.69999999,0.30000001};
@@ -25580,20 +25314,6 @@ class CfgVehicles
 	};
 	class rhsusf_usmc_lar_marpat_wd_marksman: rhsusf_usmc_lar_marpat_wd_rifleman
 	{
-		class SpeechVariants
-		{
-			class Default
-			{
-				speechSingular[]=
-				{
-					"veh_infantry_sniper_s"
-				};
-				speechPlural[]=
-				{
-					"veh_infantry_sniper_p"
-				};
-			};
-		};
 		nameSound="veh_infantry_sniper_s";
 		cost=150000;
 		sensitivity=3.3;
@@ -26181,20 +25901,6 @@ class CfgVehicles
 	};
 	class rhsusf_usmc_recon_marpat_wd_rifleman_at: rhsusf_infantry_usmc_recon_base
 	{
-		class SpeechVariants
-		{
-			class Default
-			{
-				speechSingular[]=
-				{
-					"veh_infantry_AT_s"
-				};
-				speechPlural[]=
-				{
-					"veh_infantry_AT_p"
-				};
-			};
-		};
 		nameSound="veh_infantry_AT_s";
 		cost=180000;
 		threat[]={1,0.69999999,0.30000001};
@@ -26542,20 +26248,6 @@ class CfgVehicles
 	};
 	class rhsusf_usmc_recon_marpat_wd_marksman: rhsusf_infantry_usmc_recon_base
 	{
-		class SpeechVariants
-		{
-			class Default
-			{
-				speechSingular[]=
-				{
-					"veh_infantry_sniper_s"
-				};
-				speechPlural[]=
-				{
-					"veh_infantry_sniper_p"
-				};
-			};
-		};
 		nameSound="veh_infantry_sniper_s";
 		cost=150000;
 		sensitivity=3.3;
@@ -26715,20 +26407,6 @@ class CfgVehicles
 	};
 	class rhsusf_usmc_recon_marpat_wd_officer: rhsusf_infantry_usmc_recon_base
 	{
-		class SpeechVariants
-		{
-			class Default
-			{
-				speechSingular[]=
-				{
-					"veh_infantry_officer_s"
-				};
-				speechPlural[]=
-				{
-					"veh_infantry_officer_p"
-				};
-			};
-		};
 		nameSound="veh_infantry_officer_s";
 		cost=600000;
 		camouflage=1.6;
@@ -28627,20 +28305,6 @@ class CfgVehicles
 	};
 	class rhsusf_socom_marsoc_spotter: rhsusf_infantry_socom_marsoc_base
 	{
-		class SpeechVariants
-		{
-			class Default
-			{
-				speechSingular[]=
-				{
-					"veh_infantry_sniper_s"
-				};
-				speechPlural[]=
-				{
-					"veh_infantry_sniper_p"
-				};
-			};
-		};
 		nameSound="veh_infantry_sniper_s";
 		cost=250000;
 		threat[]={1,0.30000001,0.30000001};
@@ -28819,20 +28483,6 @@ class CfgVehicles
 	};
 	class rhsusf_socom_marsoc_marksman: rhsusf_socom_marsoc_cso
 	{
-		class SpeechVariants
-		{
-			class Default
-			{
-				speechSingular[]=
-				{
-					"veh_infantry_sniper_s"
-				};
-				speechPlural[]=
-				{
-					"veh_infantry_sniper_p"
-				};
-			};
-		};
 		nameSound="veh_infantry_sniper_s";
 		cost=150000;
 		sensitivity=3.3;
@@ -28997,20 +28647,6 @@ class CfgVehicles
 	};
 	class rhsusf_socom_swcc_officer: rhsusf_socom_swcc_crewman
 	{
-		class SpeechVariants
-		{
-			class Default
-			{
-				speechSingular[]=
-				{
-					"veh_infantry_officer_s"
-				};
-				speechPlural[]=
-				{
-					"veh_infantry_officer_p"
-				};
-			};
-		};
 		nameSound="veh_infantry_officer_s";
 		cost=600000;
 		camouflage=1.6;
@@ -29314,20 +28950,6 @@ class CfgVehicles
 			"rhs_mag_an_m8hc"
 		};
 		cost=165000;
-		class SpeechVariants
-		{
-			class Default
-			{
-				speechSingular[]=
-				{
-					"veh_infantry_pilot_s"
-				};
-				speechPlural[]=
-				{
-					"veh_infantry_pilot_p"
-				};
-			};
-		};
 		nameSound="veh_infantry_pilot_s";
 		class Wounds;  //found empty after stripping
 	};

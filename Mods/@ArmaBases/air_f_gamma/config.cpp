@@ -363,13 +363,6 @@ class CfgVehicles
 			};
 		};
 		attenuationEffectType="PlaneAttenuation";
-		cabinOpenSound[]=
-		{
-			"A3\Sounds_F\air\noises\Plane_Fighter03_CabinOpen",
-			1.7782794,
-			1,
-			40
-		};
 		cabinCloseSound[]=
 		{
 			"A3\Sounds_F\air\noises\Plane_Fighter03_CabinClose",
@@ -390,12 +383,6 @@ class CfgVehicles
 			10,
 			1,
 			40
-		};
-		soundLocked[]=
-		{
-			"\A3\Sounds_F\weapons\Rockets\locked_1",
-			0.31622776,
-			1
 		};
 		soundIncommingMissile[]=
 		{
@@ -431,13 +418,6 @@ class CfgVehicles
 			1,
 			100
 		};
-		armorCrash0[]=
-		{
-			"A3\Sounds_F\vehicles\crashes\cars\cars_coll_big_default_ext_1",
-			1,
-			1,
-			900
-		};
 		armorCrash1[]=
 		{
 			"A3\Sounds_F\vehicles\crashes\cars\cars_coll_big_default_ext_2",
@@ -455,13 +435,6 @@ class CfgVehicles
 		armorCrash3[]=
 		{
 			"A3\Sounds_F\vehicles\crashes\cars\cars_coll_big_default_ext_4",
-			1,
-			1,
-			900
-		};
-		Crash0[]=
-		{
-			"A3\Sounds_F\vehicles\crashes\cars\cars_coll_big_default_ext_1",
 			1,
 			1,
 			900

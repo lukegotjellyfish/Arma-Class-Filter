@@ -16164,20 +16164,6 @@ class CfgVehicles
 	};
 	class rhs_msv_LAT: rhs_msv_rifleman
 	{
-		class SpeechVariants
-		{
-			class Default
-			{
-				speechSingular[]=
-				{
-					"veh_infantry_AT_s"
-				};
-				speechPlural[]=
-				{
-					"veh_infantry_AT_p"
-				};
-			};
-		};
 		nameSound="veh_infantry_AT_s";
 		cost=180000;
 		threat[]={1,0.69999999,0.30000001};
@@ -16369,20 +16355,6 @@ class CfgVehicles
 	};
 	class rhs_msv_arifleman: rhs_msv_rifleman
 	{
-		class SpeechVariants
-		{
-			class Default
-			{
-				speechSingular[]=
-				{
-					"veh_infantry_MG_s"
-				};
-				speechPlural[]=
-				{
-					"veh_infantry_MG_p"
-				};
-			};
-		};
 		nameSound="veh_infantry_MG_s";
 		cost=125000;
 		threat[]={1,0.1,0.30000001};
@@ -16471,20 +16443,6 @@ class CfgVehicles
 	};
 	class rhs_msv_grenadier_rpg: rhs_msv_rifleman
 	{
-		class SpeechVariants
-		{
-			class Default
-			{
-				speechSingular[]=
-				{
-					"veh_infantry_AT_s"
-				};
-				speechPlural[]=
-				{
-					"veh_infantry_AT_p"
-				};
-			};
-		};
 		nameSound="veh_infantry_AT_s";
 		cost=160000;
 		threat[]={1,0.5,0.2};
@@ -16577,20 +16535,6 @@ class CfgVehicles
 	};
 	class rhs_msv_marksman: rhs_msv_rifleman
 	{
-		class SpeechVariants
-		{
-			class Default
-			{
-				speechSingular[]=
-				{
-					"veh_infantry_sniper_s"
-				};
-				speechPlural[]=
-				{
-					"veh_infantry_sniper_p"
-				};
-			};
-		};
 		nameSound="veh_infantry_sniper_s";
 		cost=150000;
 		sensitivity=3.3;
@@ -16827,20 +16771,6 @@ class CfgVehicles
 	};
 	class rhs_msv_officer_armored: rhs_msv_rifleman
 	{
-		class SpeechVariants
-		{
-			class Default
-			{
-				speechSingular[]=
-				{
-					"veh_infantry_officer_s"
-				};
-				speechPlural[]=
-				{
-					"veh_infantry_officer_p"
-				};
-			};
-		};
 		nameSound="veh_infantry_officer_s";
 		cost=600000;
 		camouflage=1.6;
@@ -16939,20 +16869,6 @@ class CfgVehicles
 	};
 	class rhs_msv_at: rhs_msv_grenadier_rpg
 	{
-		class SpeechVariants
-		{
-			class Default
-			{
-				speechSingular[]=
-				{
-					"veh_infantry_AT_s"
-				};
-				speechPlural[]=
-				{
-					"veh_infantry_AT_p"
-				};
-			};
-		};
 		nameSound="veh_infantry_AT_s";
 		cost=180000;
 		threat[]={1,0.69999999,0.30000001};
@@ -16980,20 +16896,6 @@ class CfgVehicles
 	};
 	class rhs_msv_aa: rhs_msv_at
 	{
-		class SpeechVariants
-		{
-			class Default
-			{
-				speechSingular[]=
-				{
-					"veh_infantry_AT_s"
-				};
-				speechPlural[]=
-				{
-					"veh_infantry_AT_p"
-				};
-			};
-		};
 		nameSound="veh_infantry_AT_s";
 		cost=200000;
 		threat[]={1,1,0.80000001};
@@ -17085,20 +16987,6 @@ class CfgVehicles
 		attendant=1;
 		icon="iconManMedic";
 		backpack="rhs_assault_umbts_medic";
-		class SpeechVariants
-		{
-			class Default
-			{
-				speechSingular[]=
-				{
-					"veh_infantry_medic_s"
-				};
-				speechPlural[]=
-				{
-					"veh_infantry_medic_p"
-				};
-			};
-		};
 		nameSound="veh_infantry_medic_s";
 		linkedItems[]=
 		{
@@ -17445,20 +17333,6 @@ class CfgVehicles
 	};
 	class rhs_pilot_base: rhs_infantry_msv_base
 	{
-		class SpeechVariants
-		{
-			class Default
-			{
-				speechSingular[]=
-				{
-					"veh_infantry_pilot_s"
-				};
-				speechPlural[]=
-				{
-					"veh_infantry_pilot_p"
-				};
-			};
-		};
 		nameSound="veh_infantry_pilot_s";
 		identityTypes[]=
 		{
@@ -19183,20 +19057,6 @@ class CfgVehicles
 	};
 	class rhs_vdv_LAT: rhs_vdv_rifleman
 	{
-		class SpeechVariants
-		{
-			class Default
-			{
-				speechSingular[]=
-				{
-					"veh_infantry_AT_s"
-				};
-				speechPlural[]=
-				{
-					"veh_infantry_AT_p"
-				};
-			};
-		};
 		nameSound="veh_infantry_AT_s";
 		cost=180000;
 		threat[]={1,0.69999999,0.30000001};
@@ -19522,20 +19382,6 @@ class CfgVehicles
 	};
 	class rhs_vdv_arifleman: rhs_vdv_rifleman
 	{
-		class SpeechVariants
-		{
-			class Default
-			{
-				speechSingular[]=
-				{
-					"veh_infantry_MG_s"
-				};
-				speechPlural[]=
-				{
-					"veh_infantry_MG_p"
-				};
-			};
-		};
 		nameSound="veh_infantry_MG_s";
 		cost=125000;
 		threat[]={1,0.1,0.30000001};
@@ -19629,20 +19475,6 @@ class CfgVehicles
 	};
 	class rhs_vdv_marksman: rhs_vdv_rifleman
 	{
-		class SpeechVariants
-		{
-			class Default
-			{
-				speechSingular[]=
-				{
-					"veh_infantry_sniper_s"
-				};
-				speechPlural[]=
-				{
-					"veh_infantry_sniper_p"
-				};
-			};
-		};
 		nameSound="veh_infantry_sniper_s";
 		cost=150000;
 		sensitivity=3.3;
@@ -19932,20 +19764,6 @@ class CfgVehicles
 	};
 	class rhs_vdv_officer_armored: rhs_vdv_rifleman
 	{
-		class SpeechVariants
-		{
-			class Default
-			{
-				speechSingular[]=
-				{
-					"veh_infantry_officer_s"
-				};
-				speechPlural[]=
-				{
-					"veh_infantry_officer_p"
-				};
-			};
-		};
 		nameSound="veh_infantry_officer_s";
 		cost=600000;
 		camouflage=1.6;
@@ -20036,20 +19854,6 @@ class CfgVehicles
 	};
 	class rhs_vdv_grenadier_rpg: rhs_vdv_grenadier
 	{
-		class SpeechVariants
-		{
-			class Default
-			{
-				speechSingular[]=
-				{
-					"veh_infantry_AT_s"
-				};
-				speechPlural[]=
-				{
-					"veh_infantry_AT_p"
-				};
-			};
-		};
 		nameSound="veh_infantry_AT_s";
 		cost=160000;
 		threat[]={1,0.5,0.2};
@@ -20117,20 +19921,6 @@ class CfgVehicles
 	};
 	class rhs_vdv_at: rhs_vdv_grenadier_rpg
 	{
-		class SpeechVariants
-		{
-			class Default
-			{
-				speechSingular[]=
-				{
-					"veh_infantry_AT_s"
-				};
-				speechPlural[]=
-				{
-					"veh_infantry_AT_p"
-				};
-			};
-		};
 		nameSound="veh_infantry_AT_s";
 		cost=180000;
 		threat[]={1,0.69999999,0.30000001};
@@ -20172,20 +19962,6 @@ class CfgVehicles
 	};
 	class rhs_vdv_aa: rhs_vdv_at
 	{
-		class SpeechVariants
-		{
-			class Default
-			{
-				speechSingular[]=
-				{
-					"veh_infantry_AT_s"
-				};
-				speechPlural[]=
-				{
-					"veh_infantry_AT_p"
-				};
-			};
-		};
 		nameSound="veh_infantry_AT_s";
 		cost=200000;
 		threat[]={1,1,0.80000001};
@@ -20299,20 +20075,6 @@ class CfgVehicles
 		attendant=1;
 		icon="iconManMedic";
 		backpack="rhs_assault_umbts_medic";
-		class SpeechVariants
-		{
-			class Default
-			{
-				speechSingular[]=
-				{
-					"veh_infantry_medic_s"
-				};
-				speechPlural[]=
-				{
-					"veh_infantry_medic_p"
-				};
-			};
-		};
 		nameSound="veh_infantry_medic_s";
 		linkedItems[]=
 		{
@@ -23431,20 +23193,6 @@ class CfgVehicles
 	class rhs_vdv_recon_rifleman: rhs_vdv_rifleman
 	{
 		headgearList[]={};
-		class SpeechVariants
-		{
-			class Default
-			{
-				speechSingular[]=
-				{
-					"veh_infantry_SF_s"
-				};
-				speechPlural[]=
-				{
-					"veh_infantry_SF_p"
-				};
-			};
-		};
 		identityTypes[]=
 		{
 			"LanguageRUS_F",
@@ -24129,20 +23877,6 @@ class CfgVehicles
 	};
 	class rhs_vdv_recon_officer_armored: rhs_vdv_recon_rifleman
 	{
-		class SpeechVariants
-		{
-			class Default
-			{
-				speechSingular[]=
-				{
-					"veh_infantry_officer_s"
-				};
-				speechPlural[]=
-				{
-					"veh_infantry_officer_p"
-				};
-			};
-		};
 		nameSound="veh_infantry_officer_s";
 		cost=600000;
 		camouflage=1.6;
@@ -24222,20 +23956,6 @@ class CfgVehicles
 	};
 	class rhs_vdv_recon_marksman: rhs_vdv_recon_rifleman
 	{
-		class SpeechVariants
-		{
-			class Default
-			{
-				speechSingular[]=
-				{
-					"veh_infantry_sniper_s"
-				};
-				speechPlural[]=
-				{
-					"veh_infantry_sniper_p"
-				};
-			};
-		};
 		nameSound="veh_infantry_sniper_s";
 		cost=150000;
 		sensitivity=3.3;
@@ -24827,20 +24547,6 @@ class CfgVehicles
 	};
 	class rhs_mvd_izlom_rifleman_LAT: rhs_mvd_izlom_rifleman
 	{
-		class SpeechVariants
-		{
-			class Default
-			{
-				speechSingular[]=
-				{
-					"veh_infantry_AT_s"
-				};
-				speechPlural[]=
-				{
-					"veh_infantry_AT_p"
-				};
-			};
-		};
 		nameSound="veh_infantry_AT_s";
 		cost=180000;
 		threat[]={1,0.69999999,0.30000001};
@@ -24909,20 +24615,6 @@ class CfgVehicles
 	};
 	class rhs_mvd_izlom_grenadier_rpg: rhs_mvd_izlom_rifleman
 	{
-		class SpeechVariants
-		{
-			class Default
-			{
-				speechSingular[]=
-				{
-					"veh_infantry_AT_s"
-				};
-				speechPlural[]=
-				{
-					"veh_infantry_AT_p"
-				};
-			};
-		};
 		nameSound="veh_infantry_AT_s";
 		cost=160000;
 		threat[]={1,0.5,0.2};
@@ -24994,20 +24686,6 @@ class CfgVehicles
 	};
 	class rhs_mvd_izlom_arifleman: rhs_mvd_izlom_rifleman
 	{
-		class SpeechVariants
-		{
-			class Default
-			{
-				speechSingular[]=
-				{
-					"veh_infantry_MG_s"
-				};
-				speechPlural[]=
-				{
-					"veh_infantry_MG_p"
-				};
-			};
-		};
 		nameSound="veh_infantry_MG_s";
 		cost=125000;
 		threat[]={1,0.1,0.30000001};
@@ -25080,20 +24758,6 @@ class CfgVehicles
 	};
 	class rhs_mvd_izlom_marksman: rhs_mvd_izlom_rifleman
 	{
-		class SpeechVariants
-		{
-			class Default
-			{
-				speechSingular[]=
-				{
-					"veh_infantry_sniper_s"
-				};
-				speechPlural[]=
-				{
-					"veh_infantry_sniper_p"
-				};
-			};
-		};
 		nameSound="veh_infantry_sniper_s";
 		cost=150000;
 		sensitivity=3.3;
@@ -26982,20 +26646,6 @@ class CfgVehicles
 	class rhs_rva_crew: rhs_infantry_msv_base
 	{
 		uniformClass="rhs_uniform_rva_flora";
-		class SpeechVariants
-		{
-			class Default
-			{
-				speechSingular[]=
-				{
-					"veh_infantry_pilot_s"
-				};
-				speechPlural[]=
-				{
-					"veh_infantry_pilot_p"
-				};
-			};
-		};
 		engineer=1;
 		icon="iconManEngineer";
 		identityTypes[]=
@@ -27090,20 +26740,6 @@ class CfgVehicles
 	};
 	class rhs_rva_crew_officer: rhs_rva_crew
 	{
-		class SpeechVariants
-		{
-			class Default
-			{
-				speechSingular[]=
-				{
-					"veh_infantry_officer_s"
-				};
-				speechPlural[]=
-				{
-					"veh_infantry_officer_p"
-				};
-			};
-		};
 		nameSound="veh_infantry_officer_s";
 		cost=600000;
 		camouflage=1.6;

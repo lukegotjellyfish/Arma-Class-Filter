@@ -95,13 +95,6 @@ class CfgVehicles
 			};
 		};
 		attenuationEffectType="OpenCarAttenuation";
-		soundGeneralCollision1[]=
-		{
-			"A3\sounds_f\Vehicles\boat\noises\Metal_boat_crash_armor_01",
-			"db5",
-			1,
-			100
-		};
 		soundGeneralCollision2[]=
 		{
 			"A3\sounds_f\Vehicles\boat\noises\Metal_boat_crash_armor_02",

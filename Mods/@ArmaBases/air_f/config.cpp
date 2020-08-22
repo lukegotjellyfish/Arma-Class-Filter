@@ -442,13 +442,6 @@ class CfgVehicles
 			0,
 			1
 		};
-		soundGeneralCollision1[]=
-		{
-			"A3\Sounds_F\vehicles\crashes\helis\Heli_coll_default_int_1",
-			1,
-			1,
-			100
-		};
 		soundGeneralCollision2[]=
 		{
 			"A3\Sounds_F\vehicles\crashes\helis\Heli_coll_default_int_2",
@@ -527,12 +520,6 @@ class CfgVehicles
 			0.5,
 			"soundWaterCollision2",
 			0.5
-		};
-		soundLocked[]=
-		{
-			"\A3\Sounds_F\weapons\Rockets\opfor_lock_1",
-			1,
-			1
 		};
 		soundIncommingMissile[]=
 		{

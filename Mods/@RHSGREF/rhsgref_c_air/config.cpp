@@ -244,13 +244,6 @@ class CfgVehicles
 			retreatBladeStallWarningSpeed=63;
 			rtd_center="rtd_center";
 		};
-		soundGeneralCollision1[]=
-		{
-			"A3\Sounds_F\vehicles\crashes\helis\Heli_coll_default_int_1",
-			1,
-			1,
-			100
-		};
 		soundGeneralCollision2[]=
 		{
 			"A3\Sounds_F\vehicles\crashes\helis\Heli_coll_default_int_2",
@@ -329,12 +322,6 @@ class CfgVehicles
 			0.5,
 			"soundWaterCollision2",
 			0.5
-		};
-		soundLocked[]=
-		{
-			"\A3\Sounds_F\weapons\Rockets\opfor_lock_1",
-			1,
-			1
 		};
 		soundIncommingMissile[]=
 		{
@@ -2037,12 +2024,6 @@ class CfgVehicles
 			"Compartment1"
 		};
 		attenuationEffectType="HeliAttenuation";
-		soundLocked[]=
-		{
-			"\A3\Sounds_F\weapons\Rockets\locked_1",
-			0.099999994,
-			1
-		};
 		soundIncommingMissile[]=
 		{
 			"\A3\Sounds_F\weapons\Rockets\locked_3",

@@ -113,20 +113,6 @@ class CfgVehicles
 		};
 		side=0;
 		icon="\rhsafrf\addons\rhs_bmd\rhs_bmd2_icon.paa";
-		class SpeechVariants
-		{
-			class Default
-			{
-				speechSingular[]=
-				{
-					"veh_vehicle_APC_s"
-				};
-				speechPlural[]=
-				{
-					"veh_vehicle_APC_p"
-				};
-			};
-		};
 		nameSound="veh_vehicle_APC_s";
 		weapons[]=
 		{

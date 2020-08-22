@@ -66802,12 +66802,6 @@ class CfgVehicles
 			};
 		};
 		attenuationEffectType="PlaneAttenuation";
-		soundLocked[]=
-		{
-			"\A3\Sounds_F\weapons\Rockets\locked_1",
-			0.1,
-			1
-		};
 		soundIncommingMissile[]=
 		{
 			"\A3\Sounds_F\weapons\Rockets\locked_3",
@@ -66841,13 +66835,6 @@ class CfgVehicles
 			0.63095701,
 			1,
 			100
-		};
-		cabinOpenSound[]=
-		{
-			"A3\Sounds_F_Jets\vehicles\air\Plane_Fighter_01\FX_Plane_Fighter_01_cabine_open_ext",
-			3.1622801,
-			1,
-			40
 		};
 		cabinCloseSound[]=
 		{

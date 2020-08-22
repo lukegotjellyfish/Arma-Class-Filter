@@ -109,20 +109,6 @@ class CfgVehicles
 	class rhsusf_M1117_base: Wheeled_APC_F
 	{
 		rhs_duke_type="rhsusf_duke";
-		class SpeechVariants
-		{
-			class Default
-			{
-				speechSingular[]=
-				{
-					"veh_vehicle_MRAP_s"
-				};
-				speechPlural[]=
-				{
-					"veh_vehicle_MRAP_p"
-				};
-			};
-		};
 		nameSound="veh_vehicle_MRAP_s";
 		radarType=8;
 		driverCanSee="2+4+16";

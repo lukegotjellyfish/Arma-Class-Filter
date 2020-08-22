@@ -966,20 +966,6 @@ class CfgVehicles
 		uniformClass="rhs_chdkz_uniform_3";
 		attendant=1;
 		icon="iconManMedic";
-		class SpeechVariants
-		{
-			class Default
-			{
-				speechSingular[]=
-				{
-					"veh_infantry_medic_s"
-				};
-				speechPlural[]=
-				{
-					"veh_infantry_medic_p"
-				};
-			};
-		};
 		nameSound="veh_infantry_medic_s";
 		headgearProbability=0;
 		linkedItems[]=

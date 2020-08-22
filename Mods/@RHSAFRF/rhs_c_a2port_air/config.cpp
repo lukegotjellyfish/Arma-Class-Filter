@@ -758,12 +758,6 @@ class CfgVehicles
 			1.098107,
 			1
 		};
-		soundLocked[]=
-		{
-			"",
-			1.5848932,
-			1
-		};
 		hideWeaponsCargo=0;
 		cargoaction[]=
 		{
@@ -8579,12 +8573,6 @@ class CfgVehicles
 		{
 			"\rhsafrf\addons\rhs_c_a2port_air\sounds\alarm_beep",
 			1.098107,
-			1
-		};
-		soundLocked[]=
-		{
-			"",
-			1.5848932,
 			1
 		};
 		class EventHandlers: EventHandlers

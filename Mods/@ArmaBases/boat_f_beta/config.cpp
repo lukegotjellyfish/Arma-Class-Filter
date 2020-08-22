@@ -27,20 +27,6 @@ class CfgVehicles
 	class SDV_01_base_F: Boat_F
 	{
 		features="Randomization: No						<br />Camo selections: 1 - the whole body						<br />Script door sources: None						<br />Script animations: Doors, periscope						<br />Executed scripts: None						<br />Firing from vehicles: No						<br />Slingload: Slingloadable						<br />Cargo proxy indexes: 1 and 2";
-		class SpeechVariants
-		{
-			class Default
-			{
-				speechSingular[]=
-				{
-					"veh_ship_submarine_s"
-				};
-				speechPlural[]=
-				{
-					"veh_ship_submarine_p"
-				};
-			};
-		};
 		nameSound="veh_ship_submarine_s";
 		_generalMacro="SDV_01_base_F";
 		fuelCapacity=120;

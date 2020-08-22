@@ -8054,12 +8054,6 @@ class CfgVehicles
 		{
 			"Plane_Fighter_SonicBoom_SoundSet"
 		};
-		soundLocked[]=
-		{
-			"A3\Sounds_F_Jets\vehicles\air\Shared\FX_Plane_Jet_lockedOn1",
-			1,
-			1
-		};
 		soundIncommingMissile[]=
 		{
 			"A3\Sounds_F_Jets\vehicles\air\Shared\FX_Plane_Jet_lockedon2",
@@ -8093,13 +8087,6 @@ class CfgVehicles
 			1.5,
 			1,
 			150
-		};
-		cabinOpenSound[]=
-		{
-			"A3\Sounds_F_Jets\vehicles\air\Plane_Fighter_02\FX_Plane_Fighter_02_cabine_open_ext",
-			3.1622801,
-			1,
-			40
 		};
 		cabinCloseSound[]=
 		{
@@ -8143,13 +8130,6 @@ class CfgVehicles
 			"soundWaterCollision2",
 			0.5
 		};
-		armorCrash0[]=
-		{
-			"A3\Sounds_F\vehicles\crashes\cars\cars_coll_big_default_ext_1",
-			1,
-			1,
-			900
-		};
 		armorCrash1[]=
 		{
 			"A3\Sounds_F\vehicles\crashes\cars\cars_coll_big_default_ext_2",
@@ -8167,13 +8147,6 @@ class CfgVehicles
 		armorCrash3[]=
 		{
 			"A3\Sounds_F\vehicles\crashes\cars\cars_coll_big_default_ext_4",
-			1,
-			1,
-			900
-		};
-		Crash0[]=
-		{
-			"A3\Sounds_F\vehicles\crashes\cars\cars_coll_big_default_ext_1",
 			1,
 			1,
 			900
@@ -9005,12 +8978,6 @@ class CfgVehicles
 		cargoGetOutAction[]=
 		{
 			"GetOutHigh"
-		};
-		soundLocked[]=
-		{
-			"\A3\Sounds_F\weapons\Rockets\locked_1",
-			0.31622776,
-			1
 		};
 		soundIncommingMissile[]=
 		{

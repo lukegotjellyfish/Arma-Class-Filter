@@ -55,13 +55,6 @@ class CfgVehicles
 			};
 		};
 		attenuationEffectType="OpenCarAttenuation";
-		soundGeneralCollision1[]=
-		{
-			"A3\sounds_f\Vehicles\boat\noises\Rubber_boat_crash_armor_01",
-			1.7782794,
-			1,
-			200
-		};
 		soundGeneralCollision2[]=
 		{
 			"A3\sounds_f\Vehicles\boat\noises\Rubber_boat_crash_armor_02",

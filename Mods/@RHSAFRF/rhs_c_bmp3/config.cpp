@@ -402,20 +402,6 @@ class CfgVehicles
 		tracksSpeed=1.35;
 		wheelCircumference=1.9220001;
 		attenuationEffectType="TankAttenuation";
-		class SpeechVariants
-		{
-			class Default
-			{
-				speechSingular[]=
-				{
-					"veh_vehicle_APC_s"
-				};
-				speechPlural[]=
-				{
-					"veh_vehicle_APC_p"
-				};
-			};
-		};
 		nameSound="veh_vehicle_APC_s";
 		extCameraPosition[]={0,2,-9};
 		HeadAimDown=0;
