@@ -5,8 +5,6 @@ import os
 import re
 import errno
 
-os.environ['LINES'] = "10000000"
-os.environ['COLUMNS'] = "500"
 os.system("")
 
 cred     = '\033[91m'
@@ -41,7 +39,10 @@ multiAttributeSkip = ["requiredAddons[]", "controls[]","cargoAction[]","memoryPo
 "aggregateReflectors[]","mat[]","HiddenSelectionsTextures[]","soundServo[]", "modes[]","hiddenSelections[]","hiddenSelectionsTextures[]",
 "handAnim[]","discreteDistanceCameraPoint[]", "caseless[]", "soundBullet[]", "sounds[]", "drySound[]","muzzles[]",
 "bullet1[]","bullet2[]","bullet3[]","bullet4[]","bullet5[]","bullet6[]","bullet7[]","bullet8[]","bullet9[]","bullet10[]","bullet11[]","bullet12[]",
-"reloadMagazineSound[]","changeFiremodeSound[]","reloadmagazinesound[]"]
+"reloadMagazineSound[]","changeFiremodeSound[]","reloadmagazinesound[]","soundGetIn[]","soundGetOut[]","soundDammage[]","soundEngineOnInt[]",
+"soundEngineOnExt[]","soundEngineOffInt[]","soundEngineOffExt[]","buildCrash0[]","buildCrash1[]","buildCrash2[]","buildCrash3[]",
+"soundBuildingCrash[]","WoodCrash0[]","WoodCrash1[]","WoodCrash2[]","WoodCrash3[]","WoodCrash4[]","WoodCrash5[]","soundWoodCrash[]",
+"ArmorCrash0[]","ArmorCrash1[]","ArmorCrash2[]","ArmorCrash3[]","soundArmorCrash[]"]
 
 classSkip = ["class CfgMovesBasic", "class RscInGameUI","class CfgMovesMaleSdr: CfgMovesBasic", "class ObjectTexture", "class DoorB", "class DoorL: DoorB",
 "class DoorR: DoorB", "class TurnIn", "class CargoTurret_01: CargoTurret", "class AnimationSources", "class UserActions","class RHS_Engine_Smoke",
@@ -50,15 +51,16 @@ classSkip = ["class CfgMovesBasic", "class RscInGameUI","class CfgMovesMaleSdr: 
 "class RHSUSF_EventHandlers","class TransportBackpacks","class TransportMagazines","class TransportItems","class TransportWeapons",
 "class rhsusf_CGRCAT1A2_usmc_d: rhsusf_Cougar_base", "class DestructionEffects", "class CowsSlot", "class MuzzleSlot", "class PointerSlot",
 "class UnderBarrelSlot", "class LinkedItems", "class GunParticles", "class StandardSound", "class Library","class close","class short",
-"class medium","class far_optic1","class far_optic2","class OpticsModes"]
+"class medium","class far_optic1","class far_optic2","class OpticsModes", "class Sounds"]
 
-def newFile(root, file):
+def newFile(root, file, logfile):
 	with open(root + "\\\\" + file, "r", encoding="UTF-8") as f:
 		lines = f.readlines()
 
 	modDir = re.search("@[^\\\\]*", root).group(0)
 	folder = re.search("addons\\\\[^\\\\]*", root).group(0).replace("addons\\","")
 
+	logfile.write("-------------------------------" + folder + "-------------------------------")
 	print(cviolet2 + "-------------------------------" + cend + (cgreen + cbold + folder + cend) + cviolet2 + "-------------------------------" + cend)
 
 	pathToCreate = "Mods\\" + modDir + "\\" + folder + "\\"
@@ -98,6 +100,7 @@ def newFile(root, file):
 							break
 			toSkip = i
 			if i > 0:
+				logfile.write("[SKIPPED CLASS]     " + line.replace("\n","").replace("	","  ") + "\n")
 				print(cred + "[SKIPPED CLASS]     " + cend + cgrey + line.replace("\n","").replace("	","  ") + cend)
 				index += 1
 				continue
@@ -112,6 +115,7 @@ def newFile(root, file):
 					cont = True
 			if cont == True:
 				index += 1
+				logfile.write("[SKIPPED ATTRIBUTE]     " + line.replace("\n","").replace("	","  ") + "\n")
 				print(cred + "[SKIPPED ATTRIBUTE] " + cend + cgrey + line.replace("\n","").replace("	","  ") + cend)
 				continue
 			fileWriteList.append(line)
@@ -128,6 +132,7 @@ def newFile(root, file):
 						i += 1
 					toSkip = i
 			if i > 0:
+				logfile.write("[SKIPPED ATTRIBUTE]     " + line.replace("\n","").replace("	","  ") + "\n")
 				print(cred + "[SKIPPED ATTRIBUTE] " + cend + cgrey + line.replace("\n","").replace("	","  ") + cend)
 				index += 1
 				continue
@@ -154,6 +159,7 @@ def newFile(root, file):
 					if fileWriteList[x+2].replace("	","") == "};\n":
 						#input("MultiLine class second line is a closing brace - do not add body of class")
 						writeToThisFile.write(item.replace("\n","") + ";  //found empty after stripping\n")
+						logfile.write("[EMPTY CLASS]     " + line.replace("\n","").replace("	","  ") + "\n")
 						print(cred + "[EMPTY CLASS]     " + cend + cgrey + item.replace("\n","").replace("	","  ") + cend)
 						x += 1
 						toSkip = 2
@@ -162,7 +168,6 @@ def newFile(root, file):
 						pass
 				else:
 					pass
-			#print("Added: " + item.replace("\n","").replace("	",""))
 			writeToThisFile.write(item)
 			x += 1
 
@@ -172,11 +177,12 @@ mods = ["S:\\Steam\\steamapps\\common\\Arma 3\\!Workshop\\@RHSAFRF",
 		"S:\\Steam\\steamapps\\common\\Arma 3\\!Workshop\\@RHSSAF",
 		"S:\\Steam\\steamapps\\common\\Arma 3\\!Workshop\\@ArmaBases"]
 
-for x in mods:
-	for root, dirs, files in os.walk(x):
-		for file in files:
-			if file == 'config.cpp':
-				newFile(root, file)
+with open("logfile.txt", "w", encoding="utf-8") as logfile:
+	for x in mods:
+		for root, dirs, files in os.walk(x):
+			for file in files:
+				if file == 'config.cpp':
+					newFile(root, file, logfile)
 
 
 #\n^\s*$  blanknewline
