@@ -8,33 +8,59 @@ Opfor:
 (seem to not have included )
 	UAZ-3151                = RHS_UAZ_MSV_01
 	UAZ-3151 (DShKM)        = rhsgref_ins_uaz_dshkm
-
+		
 	GAZ-233011 (Camo/Hatch) = rhs_tigr_3camo_msv
 	UAZ-3151 (SPG-9)        = rhsgref_ins_uaz_spg9
+		
 	BRDM-2 [KPVT,PKT]       = rhsref_BRDM2_vdv
+		
 	BRDM-2  (9P148)         = rhsgref_BRDM2_ATGM_vdv
+		
 	GAZ-66 (ZU-23-2)        = rhs_gaz66_zu23_msv
+		
 	BMD-1R                  = rhs_bmd1r
-	btr-80                  = rhs_btr80_msv
+		
+	BTR-80                  = rhs_btr80_msv
+		
 	BMD-1PK                 = rhsgref_ins_bmp1k
+		
 	BMP-1P                  = rhsgref_ins_bmpm1p
+		
 	BMP-2D                  = rhsgref_ins_bmp2d
+		
 	ZSU-23-4V               = rhs_zsu234_aa
+		
 	2S25                    = rhs_sprut_vdv
+		
 	BMD-2M                  = rhs_bmd2m
+		
 	BMP-3 (early)           = rhs_bmp3_msv
+		
 	BTR-80A                 = rhs_btr80a_msv
+		
 	BMD-4                   = rhs_bmd4_vdv
+		
+		
 	T-72B (obr. 1985g.)     = rhs_t72bb_tv
+		
 	T-80BVK                 = rhs_t80bvk
+		
 	T-80UK                  = rhs_t80uk
+		
 	T-72 (obr. 1989g.)      = rhs_t72bc_tv
+		
 	T-90 (obr. 1992g.)      = rhs_t90a_tv
+		
 	BMD-4M (A)              = rhs_bmd4ma_vdv
+		
 	T-90A (obr. 2006g.)     = rhs_t90a_tv
+		
 	T-72B3 (obr. 2012g.)    = rhs_t72bd_tv
+		
 	BMP-3 (Vesna-K/A)       = rhs_bmp3mera_msv
+		
 	T-80UE-1                = rhs_t80ue1
+		
 
 Blufor:
 	M1025A2 (Unarmed)   = rhsusf_m1025_w
