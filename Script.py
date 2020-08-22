@@ -5,6 +5,7 @@ import os
 import re
 import errno
 
+
 os.system("")
 
 cred     = '\033[91m'
@@ -42,7 +43,8 @@ multiAttributeSkip = ["requiredAddons[]", "controls[]","cargoAction[]","memoryPo
 "reloadMagazineSound[]","changeFiremodeSound[]","reloadmagazinesound[]","soundGetIn[]","soundGetOut[]","soundDammage[]","soundEngineOnInt[]",
 "soundEngineOnExt[]","soundEngineOffInt[]","soundEngineOffExt[]","buildCrash0[]","buildCrash1[]","buildCrash2[]","buildCrash3[]",
 "soundBuildingCrash[]","WoodCrash0[]","WoodCrash1[]","WoodCrash2[]","WoodCrash3[]","WoodCrash4[]","WoodCrash5[]","soundWoodCrash[]",
-"ArmorCrash0[]","ArmorCrash1[]","ArmorCrash2[]","ArmorCrash3[]","soundArmorCrash[]"]
+"ArmorCrash0[]","ArmorCrash1[]","ArmorCrash2[]","ArmorCrash3[]","soundArmorCrash[]", "soundLocked[]","cabinOpenSound[]",
+"armorCrash0[]", "Crash0[]", "soundGeneralCollision1[]"]
 
 classSkip = ["class CfgMovesBasic", "class RscInGameUI","class CfgMovesMaleSdr: CfgMovesBasic", "class ObjectTexture", "class DoorB", "class DoorL: DoorB",
 "class DoorR: DoorB", "class TurnIn", "class CargoTurret_01: CargoTurret", "class AnimationSources", "class UserActions","class RHS_Engine_Smoke",
@@ -51,7 +53,7 @@ classSkip = ["class CfgMovesBasic", "class RscInGameUI","class CfgMovesMaleSdr: 
 "class RHSUSF_EventHandlers","class TransportBackpacks","class TransportMagazines","class TransportItems","class TransportWeapons",
 "class rhsusf_CGRCAT1A2_usmc_d: rhsusf_Cougar_base", "class DestructionEffects", "class CowsSlot", "class MuzzleSlot", "class PointerSlot",
 "class UnderBarrelSlot", "class LinkedItems", "class GunParticles", "class StandardSound", "class Library","class close","class short",
-"class medium","class far_optic1","class far_optic2","class OpticsModes", "class Sounds"]
+"class medium","class far_optic1","class far_optic2","class OpticsModes", "class Sounds", "class SpeechVariants"]
 
 def newFile(root, file, logfile):
 	with open(root + "\\\\" + file, "r", encoding="UTF-8") as f:
@@ -100,8 +102,9 @@ def newFile(root, file, logfile):
 							break
 			toSkip = i
 			if i > 0:
-				logfile.write("[SKIPPED CLASS]     " + line.replace("\n","").replace("	","  ") + "\n")
-				print(cred + "[SKIPPED CLASS]     " + cend + cgrey + line.replace("\n","").replace("	","  ") + cend)
+				preppedLine = line.replace("\n","").replace("	","  ")
+				logfile.write("[SKIPPED CLASS]     " + preppedLine + "\n")
+				print(cred + "[SKIPPED CLASS]     " + cend + cgrey + preppedLine + cend)
 				index += 1
 				continue
 
@@ -113,11 +116,16 @@ def newFile(root, file, logfile):
 			for x in attributeSkip:
 				if lineStripped.startswith(x):
 					cont = True
+					break
 			if cont == True:
 				index += 1
-				logfile.write("[SKIPPED ATTRIBUTE]     " + line.replace("\n","").replace("	","  ") + "\n")
-				print(cred + "[SKIPPED ATTRIBUTE] " + cend + cgrey + line.replace("\n","").replace("	","  ") + cend)
+				preppedLine = line.replace("\n","").replace("	","  ")
+				logfile.write("[SKIPPED ATTRIBUTE]     " + preppedLine + "\n")
+				print(cred + "[SKIPPED ATTRIBUTE] " + cend + cgrey + preppedLine + cend)
 				continue
+			preppedLine = line.replace("\n","").replace("	","  ")
+			logfile.write("[ADDED]             " + preppedLine)
+			print(cgreen + "[ADDED]             " + cend + preppedLine)
 			fileWriteList.append(line)
 
 		#Found multi-line attribute
@@ -132,13 +140,20 @@ def newFile(root, file, logfile):
 						i += 1
 					toSkip = i
 			if i > 0:
-				logfile.write("[SKIPPED ATTRIBUTE]     " + line.replace("\n","").replace("	","  ") + "\n")
-				print(cred + "[SKIPPED ATTRIBUTE] " + cend + cgrey + line.replace("\n","").replace("	","  ") + cend)
+				preppedLine = line.replace("\n","").replace("	","  ")
+				logfile.write("[SKIPPED ATTRIBUTE]     " + preppedLine + "\n")
+				print(cred + "[SKIPPED ATTRIBUTE] " + cend + cgrey + preppedLine + cend)
 				index += 1
 				continue
+			preppedLine = line.replace("\n","").replace("	","  ")
+			logfile.write("[ADDED]             " + preppedLine)
+			print(cgreen + "[ADDED]             " + cend + preppedLine)
 			fileWriteList.append(line)
 
 		else:
+			preppedLine = line.replace("\n","").replace("	","  ")
+			logfile.write("[ADDED]             " + preppedLine)
+			print(cgreen + "[ADDED]             " + cend + preppedLine)
 			fileWriteList.append(line)
 
 		index += 1
@@ -159,8 +174,9 @@ def newFile(root, file, logfile):
 					if fileWriteList[x+2].replace("	","") == "};\n":
 						#input("MultiLine class second line is a closing brace - do not add body of class")
 						writeToThisFile.write(item.replace("\n","") + ";  //found empty after stripping\n")
-						logfile.write("[EMPTY CLASS]     " + line.replace("\n","").replace("	","  ") + "\n")
-						print(cred + "[EMPTY CLASS]     " + cend + cgrey + item.replace("\n","").replace("	","  ") + cend)
+						preppedLine = line.replace("\n","").replace("	","  ")
+						logfile.write("[EMPTY CLASS]     " + preppedLine + "\n")
+						print(cred + "[EMPTY CLASS]     " + cend + cgrey + preppedLine + cend)
 						x += 1
 						toSkip = 2
 						continue
