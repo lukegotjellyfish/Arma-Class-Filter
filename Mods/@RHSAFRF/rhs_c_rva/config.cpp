@@ -134,16 +134,8 @@ class CfgAmmo
 		thrustTime=25;
 		thrust=80;
 		fuseDistance=5;
-		whistleOnFire=2;
-		whistleDist=60;
 		RHS_WarheadType="REPLACE";
 		RHS_FuseRange=25;
-		SoundSetExplosion[]=
-		{
-			"BombsHeavy_Exp_SoundSet",
-			"BombsHeavy_Tail_SoundSet",
-			"Explosion_Debris_SoundSet"
-		};
 	};
 	class RHS_9N123F: RHS_9M79_1_F
 	{

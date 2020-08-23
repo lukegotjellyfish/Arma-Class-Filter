@@ -2596,19 +2596,6 @@ class CfgWeapons
 				};
 			};
 		};
-		class FullAuto: Mode_FullAuto
-		{
-			class BaseSoundModeType;
-			class SilencedSound: BaseSoundModeType
-			{
-				SoundSetShot[]=
-				{
-					"DMR03_silencerShot_SoundSet",
-					"DMR03_silencerTail_SoundSet",
-					"DMR03_silencerInteriorTail_SoundSet"
-				};
-			};
-		};
 	};
 	class DMR_04_base_F: Rifle_Long_Base_F
 	{
@@ -2632,36 +2619,10 @@ class CfgWeapons
 				};
 			};
 		};
-		class FullAuto: Mode_FullAuto
-		{
-			class BaseSoundModeType;
-			class SilencedSound: BaseSoundModeType
-			{
-				SoundSetShot[]=
-				{
-					"DMR05_silencerShot_SoundSet",
-					"DMR05_silencerTail_SoundSet",
-					"DMR05_silencerInteriorTail_SoundSet"
-				};
-			};
-		};
 	};
 	class DMR_06_base_F: Rifle_Long_Base_F
 	{
 		class Single: Mode_SemiAuto
-		{
-			class BaseSoundModeType;
-			class SilencedSound: BaseSoundModeType
-			{
-				SoundSetShot[]=
-				{
-					"DMR06_silencerShot_SoundSet",
-					"DMR06_silencerTail_SoundSet",
-					"DMR06_silencerInteriorTail_SoundSet"
-				};
-			};
-		};
-		class FullAuto: Mode_FullAuto
 		{
 			class BaseSoundModeType;
 			class SilencedSound: BaseSoundModeType

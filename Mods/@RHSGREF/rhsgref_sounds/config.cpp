@@ -57,34 +57,10 @@ class CfgWeapons
 				};
 			};
 		};
-		class FullAuto: Mode_FullAuto
-		{
-			class SilencedSound
-			{
-				soundSetShot[]=
-				{
-					"RHS_akm_Closure_SoundSet",
-					"RHS_akm_ShotSD_SoundSet",
-					"RHS_Rifle1_SD_Tail_SoundSet"
-				};
-			};
-		};
 	};
 	class rhs_weap_stgw57_base: Rifle_Base_F
 	{
 		class Single: Mode_SemiAuto
-		{
-			class SilencedSound
-			{
-				soundSetShot[]=
-				{
-					"RHS_akm_Closure_SoundSet",
-					"RHS_akm_ShotSD_SoundSet",
-					"RHS_Rifle1_SD_Tail_SoundSet"
-				};
-			};
-		};
-		class FullAuto: Mode_FullAuto
 		{
 			class SilencedSound
 			{

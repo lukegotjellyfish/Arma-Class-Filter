@@ -3475,7 +3475,6 @@ class CfgAmmo
 		aiAmmoUsageFlags="4 + 2";
 		smokeColor[]={1,1,1,1};
 		effectsSmoke="SmokeShellWhiteEffect";
-		whistleDist=0;
 	};
 	class rhs_g_vg40md_green: rhs_g_vg40md_white
 	{
@@ -3524,7 +3523,6 @@ class CfgAmmo
 			1,
 			50
 		};
-		whistleDist=8;
 		cost=200;
 		mineInconspicuousness=30;
 		mineTrigger="RangeTriggerShort";
@@ -3544,13 +3542,6 @@ class CfgAmmo
 			1,
 			2000
 		};
-		SoundSetExplosion[]=
-		{
-			"ATmine_Exp_SoundSet",
-			"ATmine_Tail_SoundSet",
-			"Explosion_Debris_SoundSet"
-		};
-		whistleDist=8;
 		cost=200;
 		mineInconspicuousness=30;
 		mineTrigger="rhs_tm62Trigger";
@@ -3597,12 +3588,6 @@ class CfgAmmo
 			1,
 			1500
 		};
-		SoundSetExplosion[]=
-		{
-			"TrainingMine_Exp_SoundSet",
-			"TrainingMine_Report_SoundSet"
-		};
-		whistleDist=8;
 		cost=200;
 		class Eventhandlers: EventHandlers
 		{
@@ -3743,7 +3728,6 @@ class CfgAmmo
 			1
 		};
 		submunitionInitSpeed=60;
-		whistleDist=8;
 		cost=200;
 		mineInconspicuousness=30;
 		mineTrigger="rhs_ozm72_a_Trigger";
@@ -3789,15 +3773,8 @@ class CfgAmmo
 			1,
 			20
 		};
-		SoundSetExplosion[]=
-		{
-			"ExplosiveCharge_Exp_SoundSet",
-			"ExplosiveCharge_Tail_SoundSet",
-			"Explosion_Debris_SoundSet"
-		};
 		defaultMagazine="rhs_ec75_mag";
 		ExplosionEffects="MineNondirectionalExplosionSmall";
-		whistleDist=32;
 		mineInconspicuousness=5;
 		mineTrigger="RemoteTrigger";
 	};
@@ -3858,7 +3835,6 @@ class CfgAmmo
 		thrust=10;
 		fuseDistance=5;
 		explosive=0.34999999;
-		whistleDist=4;
 		timeToLive=12;
 	};
 	class rhs_rpg26_penetrator: rhs_ammo_base_penetrator
@@ -3904,7 +3880,6 @@ class CfgAmmo
 		thrustTime=0.5;
 		thrust=180;
 		fuseDistance=5;
-		whistleDist=4;
 		timeToLive=6;
 		airLock=1;
 		submunitionAmmo="rhs_ammo_thermobaric_wave";
@@ -5038,19 +5013,8 @@ class CfgWeapons
 		{
 			burstRangeMax=3;
 		};
-		class FullAuto: Mode_FullAuto
-		{
-			aiBurstTerminable=1;
-			reloadTime=0.092299998;
-			dispersion=0.00092999998;
-		};
 		class single_medium_optics1: Single;  //found empty after stripping
 		class single_far_optics2: single_medium_optics1;  //found empty after stripping
-		class fullauto_medium: FullAuto
-		{
-			burst=2;
-			burstRangeMax=5;
-		};
 		class GP25Muzzle: GP25_Base;  //found empty after stripping
 	};
 	class rhs_weap_ak74m: rhs_weap_ak74m_Base_F
@@ -5473,17 +5437,6 @@ class CfgWeapons
 			aiBurstTerminable=1;
 			burstRangeMax=3;
 		};
-		class FullAuto: Mode_FullAuto
-		{
-			reloadTime=0.1;
-			dispersion=0.0020999999;
-		};
-		class fullauto_medium: FullAuto
-		{
-			aiBurstTerminable=1;
-			burst=2;
-			burstRangeMax=6;
-		};
 		class single_medium_optics1: Single
 		{
 			burstRangeMax=3;
@@ -5615,16 +5568,6 @@ class CfgWeapons
 			aiBurstTerminable=0;
 			reloadTime=0.1;
 			dispersion=0.0020999999;
-		};
-		class FullAuto: FullAuto
-		{
-			reloadTime=0.1;
-			dispersion=0.0020999999;
-		};
-		class fullauto_medium: FullAuto
-		{
-			burst=2;
-			burstRangeMax=5;
 		};
 		class single_medium_optics1: Single;  //found empty after stripping
 		class single_far_optics2: single_medium_optics1;  //found empty after stripping
@@ -6208,18 +6151,8 @@ class CfgWeapons
 			reloadTime=0.092299998;
 			dispersion=0.0019499999;
 		};
-		class FullAuto: FullAuto
-		{
-			reloadTime=0.092299998;
-			dispersion=0.0019499999;
-		};
 		class single_medium_optics1: Single;  //found empty after stripping
 		class single_far_optics2: single_medium_optics1;  //found empty after stripping
-		class fullauto_medium: FullAuto
-		{
-			burst=2;
-			burstRangeMax=5;
-		};
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=59.619999;
@@ -6277,18 +6210,8 @@ class CfgWeapons
 			reloadTime=0.066699997;
 			dispersion=0.00163;
 		};
-		class FullAuto: FullAuto
-		{
-			reloadTime=0.066699997;
-			dispersion=0.00163;
-		};
 		class single_medium_optics1: Single;  //found empty after stripping
 		class single_far_optics2: Single;  //found empty after stripping
-		class fullauto_medium: FullAuto
-		{
-			burst=2;
-			burstRangeMax=5;
-		};
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=65.120003;
@@ -6398,11 +6321,6 @@ class CfgWeapons
 			"rhs_20rnd_9x39mm_SP6"
 		};
 		class Single: Single
-		{
-			reloadTime=0.1;
-			dispersion=0.0014299999;
-		};
-		class FullAuto: FullAuto
 		{
 			reloadTime=0.1;
 			dispersion=0.0014299999;
@@ -6598,11 +6516,6 @@ class CfgWeapons
 			"rhs_mag_9x19mm_7n31_44"
 		};
 		class Single: Single
-		{
-			reloadTime=0.075000003;
-			dispersion=0.0020300001;
-		};
-		class FullAuto: FullAuto
 		{
 			reloadTime=0.075000003;
 			dispersion=0.0020300001;
@@ -6855,12 +6768,6 @@ class CfgWeapons
 		class WeaponSlotsInfo: WeaponSlotsInfo;  //found empty after stripping
 		class SAFE: RHS_SAFE_BASE;  //found empty after stripping
 		maxZeroing=1500;
-		class FullAuto: Mode_FullAuto
-		{
-			reloadTime=0.092;
-			dispersion=0.00101;
-			aiBurstTerminable=1;
-		};
 		class Single: Mode_SemiAuto
 		{
 			reloadTime=0.092;

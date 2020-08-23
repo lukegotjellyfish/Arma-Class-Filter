@@ -6133,23 +6133,10 @@ class CfgWeapons
 	class rhs_weap_pp2000: hgun_PDW2000_F
 	{
 		class Single: Single;  //found empty after stripping
-		class FullAuto: FullAuto;  //found empty after stripping
 	};
 	class rhs_weap_ak74m_Base_F: Rifle_Base_F
 	{
 		class Single: Mode_SemiAuto
-		{
-			class SilencedSound
-			{
-				soundSetShot[]=
-				{
-					"RHS_ak74_Closure_SoundSet",
-					"RHS_ak74_ShotSD_SoundSet",
-					"RHS_Rifle1_SD_Tail_SoundSet"
-				};
-			};
-		};
-		class FullAuto: Mode_FullAuto
 		{
 			class SilencedSound
 			{
@@ -6168,23 +6155,10 @@ class CfgWeapons
 		L_ES_Prefix="nosound";
 		L_ES_maxPlopp=0;
 		class Single: Single;  //found empty after stripping
-		class FullAuto: FullAuto;  //found empty after stripping
 	};
 	class rhs_weap_akm: rhs_weap_ak74m
 	{
 		class Single: Mode_SemiAuto
-		{
-			class SilencedSound
-			{
-				soundSetShot[]=
-				{
-					"RHS_akm_Closure_SoundSet",
-					"RHS_akm_ShotSD_SoundSet",
-					"RHS_Rifle1_SD_Tail_SoundSet"
-				};
-			};
-		};
-		class FullAuto: Mode_FullAuto
 		{
 			class SilencedSound
 			{
@@ -6201,18 +6175,6 @@ class CfgWeapons
 	class rhs_pkp_base: Rifle_Long_Base_F
 	{
 		class Single: Mode_SemiAuto
-		{
-			class SilencedSound
-			{
-				soundSetShot[]=
-				{
-					"RHS_pkp_Closure_SoundSet",
-					"RHS_pkp_Shot_SoundSet",
-					"RHS_mmg1_Tail_SoundSet"
-				};
-			};
-		};
-		class FullAuto: Mode_FullAuto
 		{
 			class SilencedSound
 			{

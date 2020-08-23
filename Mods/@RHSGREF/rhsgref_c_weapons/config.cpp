@@ -662,7 +662,6 @@ class CfgAmmo
 		thrustTime=0;
 		thrust=0;
 		fuseDistance=5;
-		whistleDist=4;
 		timeToLive=6;
 	};
 	class rhs_ammo_rpg75_penetrator: rhs_ammo_3bk12_penetrator
@@ -692,7 +691,6 @@ class CfgAmmo
 		thrustTime=0;
 		thrust=0;
 		fuseDistance=5;
-		whistleDist=4;
 		timeToLive=6;
 	};
 	class rhs_ammo_panzerfaust60_penetrator: rhs_ammo_3bk12_penetrator
@@ -769,12 +767,6 @@ class CfgAmmo
 	};
 	class rhs_mine_smine35_trip_explo_ammo: ShellBase
 	{
-		SoundSetExplosion[]=
-		{
-			"M6slamMine_Exp_SoundSet",
-			"M6slamMine_Tail_SoundSet",
-			"Explosion_Debris_SoundSet"
-		};
 		explosionTime=0.3125;
 		hit=20;
 		indirectHit=20;
@@ -859,12 +851,6 @@ class CfgAmmo
 	};
 	class rhs_mine_m2a3b_explo_ammo: ShellBase
 	{
-		SoundSetExplosion[]=
-		{
-			"M6slamMine_Exp_SoundSet",
-			"M6slamMine_Tail_SoundSet",
-			"Explosion_Debris_SoundSet"
-		};
 		explosionTime=0.40000001;
 		hit=15;
 		indirectHit=15;
@@ -2223,18 +2209,8 @@ class CfgWeapons
 			reloadTime=0.1;
 			dispersion=0.0020999999;
 		};
-		class FullAuto: Mode_FullAuto
-		{
-			reloadTime=0.1;
-			dispersion=0.0020999999;
-		};
 		class single_medium_optics1: Single;  //found empty after stripping
 		class single_far_optics2: single_medium_optics1;  //found empty after stripping
-		class fullauto_medium: FullAuto
-		{
-			aiBurstTerminable=1;
-			burst=3;
-		};
 	};
 	class rhs_weap_m70ab2: rhs_weap_m70_base
 	{
@@ -2269,10 +2245,6 @@ class CfgWeapons
 		initSpeed=-0.92000002;
 		recoil="recoil_akm";
 		class Single: Single
-		{
-			dispersion=0.0025500001;
-		};
-		class FullAuto: FullAuto
 		{
 			dispersion=0.0025500001;
 		};
@@ -2322,11 +2294,6 @@ class CfgWeapons
 			reloadTime=0.1;
 			dispersion=0.0020999999;
 		};
-		class FullAuto: Mode_FullAuto
-		{
-			reloadTime=0.1;
-			dispersion=0.0020999999;
-		};
 		class Single_AI: Single
 		{
 			aiBurstTerminable=1;
@@ -2334,12 +2301,6 @@ class CfgWeapons
 		};
 		class single_medium_optics1: Single;  //found empty after stripping
 		class single_far_optics2: single_medium_optics1;  //found empty after stripping
-		class fullauto_medium: FullAuto
-		{
-			aiBurstTerminable=1;
-			burst=3;
-			burstRangeMax=3;
-		};
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			class rhs_mtz_slot: SlotInfo
@@ -2382,10 +2343,6 @@ class CfgWeapons
 		{
 			dispersion=0.0032500001;
 		};
-		class FullAuto: FullAuto
-		{
-			dispersion=0.0032500001;
-		};
 		rhs_mtz="rhs_weap_m21s_pr";
 		rhs_fold="rhs_weap_m21s_fold";
 		class WeaponSlotsInfo: WeaponSlotsInfo
@@ -2397,10 +2354,6 @@ class CfgWeapons
 	{
 		initSpeed=-0.98000002;
 		class Single: Single
-		{
-			dispersion=0.0032500001;
-		};
-		class FullAuto: FullAuto
 		{
 			dispersion=0.0032500001;
 		};
@@ -2437,11 +2390,6 @@ class CfgWeapons
 			reloadTime=0.075000003;
 			dispersion=0.00050000002;
 		};
-		class FullAuto: FullAuto
-		{
-			reloadTime=0.075000003;
-			dispersion=0.00050000002;
-		};
 	};
 	class rhs_weap_savz61_folded: rhs_weap_savz61
 	{
@@ -2469,11 +2417,6 @@ class CfgWeapons
 			reloadTime=0.075000003;
 			dispersion=0.0020999999;
 		};
-		class FullAuto: Mode_FullAuto
-		{
-			reloadTime=0.075000003;
-			dispersion=0.0020999999;
-		};
 		class Single_AI: Single
 		{
 			aiBurstTerminable=1;
@@ -2481,12 +2424,6 @@ class CfgWeapons
 		};
 		class single_medium_optics1: Single;  //found empty after stripping
 		class single_far_optics2: single_medium_optics1;  //found empty after stripping
-		class fullauto_medium: FullAuto
-		{
-			aiBurstTerminable=1;
-			burst=3;
-			burstRangeMax=3;
-		};
 	};
 	class rhs_weap_savz58_rail_base: rhs_weap_savz58_base
 	{
@@ -2604,13 +2541,6 @@ class CfgWeapons
 			"rhsgref_1Rnd_Slug"
 		};
 		displayname="$STR_RHS_WEAP_IZH18_DISPLAYNAME";
-		reloadSound[]=
-		{
-			"A3\sounds_f\weapons\M320\M320_reload",
-			0.1,
-			1,
-			30
-		};
 		class Single: Mode_SemiAuto
 		{
 			reloadTime=0.5;
@@ -2636,11 +2566,6 @@ class CfgWeapons
 			reloadTime=0.071000002;
 			dispersion=0.0020999999;
 		};
-		class FullAuto: Mode_FullAuto
-		{
-			reloadTime=0.071000002;
-			dispersion=0.0020999999;
-		};
 		class Single_AI: Single
 		{
 			aiBurstTerminable=1;
@@ -2648,12 +2573,6 @@ class CfgWeapons
 		};
 		class single_medium_optics1: Single;  //found empty after stripping
 		class single_far_optics2: single_medium_optics1;  //found empty after stripping
-		class fullauto_medium: FullAuto
-		{
-			aiBurstTerminable=1;
-			burst=3;
-			burstRangeMax=3;
-		};
 		class VHS_BG: UGL_F
 		{
 			useModelOptics=0;
@@ -2740,17 +2659,8 @@ class CfgWeapons
 			reloadTime=0.12;
 			dispersion=0.0020999999;
 		};
-		class FullAuto: Mode_FullAuto
-		{
-			reloadTime=0.12;
-			dispersion=0.0020999999;
-		};
 		class single_medium_optics1: Single;  //found empty after stripping
 		class single_far_optics2: single_medium_optics1;  //found empty after stripping
-		class fullauto_medium: FullAuto
-		{
-			burst=3;
-		};
 	};
 	class rhs_weap_stgw57: rhs_weap_stgw57_base;  //found empty after stripping
 	class rhs_weap_m3a1_base: Rifle_Base_F
@@ -2766,13 +2676,6 @@ class CfgWeapons
 		recoil="recoil_mx";
 		cursor="smg";
 		class WeaponSlotsInfo: WeaponSlotsInfo;  //found empty after stripping
-		class FullAuto: Mode_FullAuto
-		{
-			reloadTime=0.15000001;
-			dispersion=0.00131;
-			recoil="recoil_auto_smg_01";
-			recoilProne="recoil_auto_prone_smg_01";
-		};
 	};
 	class rhs_weap_m3a1: rhs_weap_m3a1_base
 	{
@@ -2809,17 +2712,8 @@ class CfgWeapons
 			reloadTime=0.103448;
 			dispersion=0.0020999999;
 		};
-		class FullAuto: Mode_FullAuto
-		{
-			reloadTime=0.103448;
-			dispersion=0.0020999999;
-		};
 		class single_medium_optics1: Single;  //found empty after stripping
 		class single_far_optics2: single_medium_optics1;  //found empty after stripping
-		class fullauto_medium: FullAuto
-		{
-			burst=3;
-		};
 	};
 	class rhs_weap_MP44: rhs_weap_MP44_base;  //found empty after stripping
 	class rhs_weap_M1garand_Base_F: Rifle_Base_F
@@ -2942,11 +2836,6 @@ class CfgWeapons
 			reloadTime=0.085714303;
 			dispersion=0.0020999999;
 		};
-		class FullAuto: Mode_FullAuto
-		{
-			reloadTime=0.085714303;
-			dispersion=0.0020999999;
-		};
 		class Single_AI: Single
 		{
 			aiBurstTerminable=1;
@@ -2954,12 +2843,6 @@ class CfgWeapons
 		};
 		class single_medium_optics1: Single;  //found empty after stripping
 		class single_far_optics2: single_medium_optics1;  //found empty after stripping
-		class fullauto_medium: FullAuto
-		{
-			aiBurstTerminable=1;
-			burst=3;
-			burstRangeMax=3;
-		};
 	};
 	class rhs_weap_fnfal50_61_base: rhs_weap_fnfal_base;  //found empty after stripping
 	class rhs_weap_fnfal50_62_base: rhs_weap_fnfal_base;  //found empty after stripping

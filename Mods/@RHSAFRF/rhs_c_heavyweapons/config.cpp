@@ -267,8 +267,6 @@ class CfgAmmo
 		tracerScale=0;
 		tracerStartTime=0;
 		tracerEndTime=0;
-		whistleOnFire=0;
-		whistleDist=0;
 		muzzleEffect="";
 		explosive=0;
 		caliber=0;
@@ -333,8 +331,6 @@ class CfgAmmo
 		deflecting=10;
 		caliber=33.330002;
 		timeToLive=15;
-		whistleOnFire=1;
-		whistleDist=14;
 		muzzleEffect="";
 	};
 	class rhs_ammo_3bm_base: rhs_ammo_bm_base
@@ -343,7 +339,6 @@ class CfgAmmo
 		indirectHitRange=0.5;
 		typicalSpeed=1700;
 		simulationStep=0.0099999998;
-		effectFly="RHS_125mm_Sabot_Eject";
 	};
 	class rhs_ammo_base_penetrator: rhs_ammo_3bm_base
 	{
@@ -360,9 +355,6 @@ class CfgAmmo
 		timeToLive=0.0099999998;
 		simulationStep=0.00050000002;
 		airFriction=-0.5;
-		whistleOnFire=0;
-		whistleDist=0;
-		effectFly="";
 		submunitionConeType[]=
 		{
 			"randomcenter",
@@ -375,10 +367,6 @@ class CfgAmmo
 		submunitionInitSpeed=200;
 		deleteParentWhenTriggered=0;
 		triggerTime=0.003;
-		SoundSetExplosion[]=
-		{
-			"Silence_SoundSet"
-		};
 	};
 	class rhs_ammo_cluster_penetrator: Sh_125mm_APFSDS
 	{
@@ -392,8 +380,6 @@ class CfgAmmo
 		typicalSpeed=1000;
 		simulationStep=0.00050000002;
 		airFriction=-0.5;
-		whistleOnFire=0;
-		whistleDist=0;
 		submunitionConeType[]=
 		{
 			"randomcenter",
@@ -406,10 +392,6 @@ class CfgAmmo
 		submunitionInitSpeed=200;
 		deleteParentWhenTriggered=0;
 		triggerTime=0.003;
-		SoundSetExplosion[]=
-		{
-			"Silence_SoundSet"
-		};
 	};
 	class rhs_ammo_ap_penetrator: Sh_125mm_APFSDS
 	{
@@ -972,7 +954,6 @@ class CfgAmmo
 		indirectHitRange=15;
 		typicalSpeed=850;
 		caliber=5;
-		whistleDist=60;
 		rhs_ammo_airburst="rhs_ammo_3of_airburst";
 	};
 	class rhs_ammo_3of_airburst: ShellBase
@@ -1017,7 +998,6 @@ class CfgAmmo
 			0,
 			1
 		};
-		whistleDist=0;
 	};
 	class rhs_ammo_3UOF17: rhs_ammo_3of_base
 	{
@@ -1031,7 +1011,6 @@ class CfgAmmo
 		simulationStep=0.0099999998;
 		ExplosionEffects="ArtyShellExplosion";
 		caliber=6;
-		whistleDist=40;
 		timeToLive=35;
 	};
 	class rhs_ammo_3UOF19: rhs_ammo_3UOF17
@@ -1085,13 +1064,6 @@ class CfgAmmo
 		indirectHitRange=500;
 		explosionTime=0.0099999998;
 		ExplosionEffects="RHS_NukeExplosion5";
-		SoundSetExplosion[]=
-		{
-			"rhs_nuke_explosion_soundset",
-			"Shell155mm_Tail_SoundSet",
-			"Explosion_Debris_SoundSet"
-		};
-		whistleDist=0;
 		intensity="10000 * 7";
 		timeToLive=90;
 	};
@@ -1109,7 +1081,6 @@ class CfgAmmo
 			0,
 			1
 		};
-		whistleDist=0;
 	};
 	class rhs_ammo_of462: Sh_155mm_AMOS
 	{
@@ -1141,7 +1112,6 @@ class CfgAmmo
 			0,
 			1
 		};
-		whistleDist=0;
 		intensity="10000 * 6";
 		timeToLive=90;
 	};
@@ -1158,7 +1128,6 @@ class CfgAmmo
 			0,
 			1
 		};
-		whistleDist=0;
 	};
 	class Sh_82mm_AMOS;
 	class rhs_ammo_3vo18: Sh_82mm_AMOS
@@ -1185,7 +1154,6 @@ class CfgAmmo
 			0,
 			1
 		};
-		whistleDist=0;
 	};
 	class M_Titan_AT: MissileBase
 	{
@@ -1213,7 +1181,6 @@ class CfgAmmo
 		thrust=250;
 		deflecting=0;
 		fuseDistance=50;
-		whistleDist=2;
 		class Direct;
 		flightProfiles[]=
 		{
@@ -1884,7 +1851,6 @@ class CfgAmmo
 		deleteParentWhenTriggered=0;
 		indirectHit=20;
 		indirectHitRange=3.2;
-		whistleDist=3;
 		canlock=1;
 		irLock=1;
 		trackOversteer=0.30000001;
@@ -2009,8 +1975,6 @@ class CfgAmmo
 		thrustTime=0.34999999;
 		thrust=1400;
 		timeToLive=8;
-		whistleOnFire=1;
-		whistleDist=14;
 		tracerScale=2;
 		tracerStartTime=0.1;
 		tracerEndTime=2.3;
@@ -2023,7 +1987,6 @@ class CfgAmmo
 		airfriction=0.074000001;
 		sideAirFriction=0.5;
 		smokeTrail=2;
-		whistleDist=2;
 		CraterWaterEffects="ImpactEffectsWaterHE";
 		ExplosionEffects="HEShellExplosion";
 		effectsmissileinit="RocketBackEffectsStaticRPG";
@@ -2042,7 +2005,6 @@ class CfgAmmo
 		cost=200;
 		aiAmmoUsageFlags="128+512";
 		smokeTrail=2;
-		whistleDist=2;
 		effectsmissileinit="RocketBackEffectsStaticRPG";
 		warheadName="HEAT";
 		submunitionAmmo="rhs_ammo_pg9v_penetrator";
@@ -5008,13 +4970,6 @@ class CfgWeapons
 		cursor="EmptyCursor";
 		cursoraim="cannon";
 		cursoraimon="cannon";
-		reloadSound[]=
-		{
-			"",
-			1,
-			1,
-			200
-		};
 		ballisticsComputer=0;
 		flash="gunfire";
 		flashSize=10;
@@ -5158,12 +5113,6 @@ class CfgWeapons
 			2.5118864,
 			1,
 			1500
-		};
-		reloadSound[]=
-		{
-			"\rhsafrf\addons\rhs_c_heavyweapons\sounds\rhs_s_u5ts_reload.ogg",
-			1,
-			1
 		};
 		magazines[]=
 		{
@@ -5344,13 +5293,6 @@ class CfgWeapons
 			"rhs_mag_9m117m1_3",
 			"rhs_mag_9m117m1_8"
 		};
-		reloadSound[]=
-		{
-			"\rhsafrf\addons\rhs_c_heavyweapons\sounds\autoloader",
-			3.1622777,
-			1,
-			200
-		};
 		class gunParticles
 		{
 			class Effect
@@ -5394,13 +5336,6 @@ class CfgWeapons
 		canLock=0;
 		ballisticsComputer=0;
 		cursor="EmptyCursor";
-		reloadSound[]=
-		{
-			"A3\sounds_f\vehicles\armor\noises\reload_tank_cannon_3",
-			3.1622777,
-			1,
-			10
-		};
 		magazines[]=
 		{
 			"rhs_mag_pg15v_24",
@@ -5489,13 +5424,6 @@ class CfgWeapons
 		};
 		class Single1: Mode_SemiAuto
 		{
-			reloadSound[]=
-			{
-				"A3\sounds_f\dummysound",
-				1,
-				1,
-				20
-			};
 			weaponSoundEffect="DefaultRifle";
 			reloadTime=8;
 			artilleryDispersion=7.1999998;
@@ -5512,13 +5440,6 @@ class CfgWeapons
 		class Burst1: Mode_Burst
 		{
 			burst=6;
-			reloadSound[]=
-			{
-				"A3\sounds_f\dummysound",
-				1,
-				1,
-				20
-			};
 			weaponSoundEffect="DefaultRifle";
 			reloadTime=6;
 			artilleryDispersion=5.3000002;
@@ -5610,13 +5531,6 @@ class CfgWeapons
 		reloadTime=6;
 		magazineReloadTime=6;
 		autoReload=1;
-		reloadSound[]=
-		{
-			"",
-			3.1622777,
-			1,
-			200
-		};
 	};
 	class rhs_weap_gsh30: gatling_30mm
 	{
@@ -6115,12 +6029,6 @@ class CfgWeapons
 	{
 		reloadTime=10;
 		magazineReloadTime=8.5;
-		reloadSound[]=
-		{
-			"\rhsafrf\addons\rhs_c_heavyweapons\sounds\rhs_s_2a37_reload.ogg",
-			1,
-			1
-		};
 		magazines[]=
 		{
 			"rhs_mag_3m7_12"

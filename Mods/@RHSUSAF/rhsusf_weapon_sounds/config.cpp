@@ -9868,18 +9868,6 @@ class CfgWeapons
 				};
 			};
 		};
-		class FullAuto: FullAuto
-		{
-			class SilencedSound
-			{
-				soundSetShot[]=
-				{
-					"RHSUSF_MP7_Closure_SoundSet",
-					"RHSUSF_MP7_ShotSD_SoundSet",
-					"RHSUSF_rifle1_SD_Tail_SoundSet"
-				};
-			};
-		};
 	};
 	class rhs_weap_M590_5RD: Rifle_Base_F
 	{
@@ -9949,32 +9937,10 @@ class CfgWeapons
 				};
 			};
 		};
-		class FullAuto: FullAuto
-		{
-			class SilencedSound
-			{
-				soundSetShot[]=
-				{
-					"RHSUSF_sd_M4_Shot_SoundSet",
-					"RHSUSF_sd_Rifle1_Tail_SoundSet"
-				};
-			};
-		};
 	};
 	class rhs_weap_SCAR_H_Base: rhs_weap_SCAR_Base
 	{
 		class Single: Single
-		{
-			class SilencedSound
-			{
-				soundSetShot[]=
-				{
-					"RHSUSF_sd_SCARH_Shot_SoundSet",
-					"RHSUSF_sd_Rifle1_Tail_SoundSet"
-				};
-			};
-		};
-		class FullAuto: FullAuto
 		{
 			class SilencedSound
 			{

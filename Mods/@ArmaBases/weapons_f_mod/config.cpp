@@ -66,24 +66,6 @@ class CfgWeapons
 				};
 			};
 		};
-		class FullAuto: Mode_FullAuto
-		{
-			multiplier=1;
-			burst=1;
-			reloadTime=0.0666667;
-			dispersion=0.001;
-			autoFire=1;
-			class BaseSoundModeType;
-			class SilencedSound: BaseSoundModeType
-			{
-				soundsetshot[]=
-				{
-					"ADR_97_silencerShot_SoundSet",
-					"ADR_97_silencerTail_SoundSet",
-					"ADR_97_silencerInteriorTail_SoundSet"
-				};
-			};
-		};
 		class WeaponSlotsInfo
 		{
 			mass=50;
@@ -95,10 +77,6 @@ class CfgWeapons
 		maxZeroing=600;
 		initSpeed=-1;
 		class Single: Single
-		{
-			dispersion=0.0012000001;
-		};
-		class FullAuto: FullAuto
 		{
 			dispersion=0.0012000001;
 		};

@@ -381,7 +381,6 @@ class CfgAmmo
 		deflecting=5;
 		airFriction=-0.0015;
 		fuseDistance=30;
-		whistleDist=5;
 	};
 	class rhssaf_ammo_tkm_m60: GrenadeBase
 	{
@@ -394,7 +393,6 @@ class CfgAmmo
 		deflecting=5;
 		airFriction=-0.0015;
 		fuseDistance=30;
-		whistleDist=5;
 	};
 	class rhs_ammo_m80_penetrator: rhs_ammo_base_penetrator
 	{
@@ -565,7 +563,6 @@ class CfgAmmo
 			1,
 			2000
 		};
-		whistleDist=8;
 		cost=200;
 		mineInconspicuousness=3;
 		mineTrigger="RangeTriggerShort";
@@ -578,13 +575,6 @@ class CfgAmmo
 		mineModelDisabled="\rhssaf\addons\rhssaf_m_explosives\mines_at\tma4\rhssaf_tma4_d";
 		icon="iconExplosiveAT";
 		defaultMagazine="rhssaf_mine_tma4_mag";
-		SoundSetExplosion[]=
-		{
-			"ATmine_Exp_SoundSet",
-			"ATmine_Tail_SoundSet",
-			"Explosion_Debris_SoundSet"
-		};
-		whistleDist=8;
 		cost=200;
 		mineInconspicuousness=30;
 		mineTrigger="rhssaf_tma4Trigger";
@@ -646,7 +636,6 @@ class CfgAmmo
 			1,
 			1500
 		};
-		whistleDist=8;
 		cost=200;
 		mineInconspicuousness=30;
 		mineTrigger="rhssaf_mrud_a_Trigger";
@@ -689,15 +678,8 @@ class CfgAmmo
 			1,
 			20
 		};
-		SoundSetExplosion[]=
-		{
-			"ExplosiveCharge_Exp_SoundSet",
-			"ExplosiveCharge_Tail_SoundSet",
-			"Explosion_Debris_SoundSet"
-		};
 		defaultMagazine="rhssaf_tm100_mag";
 		ExplosionEffects="MineNondirectionalExplosionSmall";
-		whistleDist=32;
 		mineInconspicuousness=5;
 		mineTrigger="RemoteTrigger";
 	};
@@ -719,12 +701,6 @@ class CfgAmmo
 		mineModelDisabled="\rhssaf\addons\rhssaf_m_explosives\tm500\rhssaf_tm500_d";
 		ExplosionEffects="MineNondirectionalExplosion";
 		defaultMagazine="rhssaf_tm500_mag";
-		SoundSetExplosion[]=
-		{
-			"ClaymoreMine_Exp_SoundSet",
-			"ClaymoreMine_Tail_SoundSet",
-			"Explosion_Debris_SoundSet"
-		};
 	};
 	class rhssaf_tm500_ammo_scripted: rhssaf_tm500_ammo;  //found empty after stripping
 };
@@ -1133,18 +1109,8 @@ class CfgWeapons
 			reloadTime=0.1;
 			dispersion=0.0020999999;
 		};
-		class FullAuto: Mode_FullAuto
-		{
-			reloadTime=0.1;
-			dispersion=0.0020999999;
-		};
 		class single_medium_optics1: Single;  //found empty after stripping
 		class single_far_optics2: single_medium_optics1;  //found empty after stripping
-		class fullauto_medium: FullAuto
-		{
-			aiBurstTerminable=1;
-			burst=3;
-		};
 	};
 	class rhs_weap_m70ab2: rhs_weap_m70_base
 	{
@@ -1209,10 +1175,6 @@ class CfgWeapons
 		{
 			dispersion=0.0025500001;
 		};
-		class FullAuto: FullAuto
-		{
-			dispersion=0.0025500001;
-		};
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=78.540001;
@@ -1260,18 +1222,8 @@ class CfgWeapons
 			reloadTime=0.1;
 			dispersion=0.0020999999;
 		};
-		class FullAuto: Mode_FullAuto
-		{
-			reloadTime=0.1;
-			dispersion=0.0020999999;
-		};
 		class single_medium_optics1: Single;  //found empty after stripping
 		class single_far_optics2: single_medium_optics1;  //found empty after stripping
-		class fullauto_medium: FullAuto
-		{
-			aiBurstTerminable=1;
-			burst=3;
-		};
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			class rhs_mtz_slot: SlotInfo
@@ -1341,10 +1293,6 @@ class CfgWeapons
 		{
 			dispersion=0.0032500001;
 		};
-		class FullAuto: FullAuto
-		{
-			dispersion=0.0032500001;
-		};
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=89.540001;
@@ -1356,10 +1304,6 @@ class CfgWeapons
 	{
 		initSpeed=-0.98000002;
 		class Single: Single
-		{
-			dispersion=0.0032500001;
-		};
-		class FullAuto: FullAuto
 		{
 			dispersion=0.0032500001;
 		};
@@ -1396,11 +1340,6 @@ class CfgWeapons
 		};
 		selectionfireanim="zasleh";
 		class Single: Single
-		{
-			reloadTime=0.075000003;
-			dispersion=0.00050000002;
-		};
-		class FullAuto: FullAuto
 		{
 			reloadTime=0.075000003;
 			dispersion=0.00050000002;
@@ -1531,18 +1470,9 @@ class CfgWeapons
 			dispersion=0.00055559602;
 			reloadtime=0.079999998;
 		};
-		class FullAuto: Mode_FullAuto
-		{
-			dispersion=0.00055559602;
-			reloadtime=0.079999998;
-		};
 		class Burst2rnd: Burst
 		{
 			burst=2;
-		};
-		class fullauto_medium: FullAuto
-		{
-			burst=5;
 		};
 		class single_medium_optics1: Single;  //found empty after stripping
 		class single_far_optics2: single_medium_optics1;  //found empty after stripping
@@ -1565,11 +1495,6 @@ class CfgWeapons
 		class Burst: Burst
 		{
 			burst=2;
-			dispersion=0.00087270001;
-			reloadtime=0.079999998;
-		};
-		class FullAuto: FullAuto
-		{
 			dispersion=0.00087270001;
 			reloadtime=0.079999998;
 		};
@@ -1947,14 +1872,6 @@ class CfgWeapons
 			20
 		};
 		jsrs_soundeffect="JSRS2_Distance_Effects_PK";
-		class FullAuto: Mode_FullAuto
-		{
-			reloadTime=0.085714288;
-			dispersion=0.00086999999;
-			recoil="recoil_auto_mk200";
-			recoilProne="recoil_auto_prone_mk200";
-			class SilencedSound;  //found empty after stripping
-		};
 	};
 	class rhs_weap_lmg_minimipara;
 	class rhs_weap_minimi_para_railed: rhs_weap_lmg_minimipara
@@ -2257,13 +2174,6 @@ class CfgWeapons
 		};
 		class Single0: Mode_SemiAuto
 		{
-			reloadSound[]=
-			{
-				"A3\Sounds_F\arsenal\weapons_static\Mortar\reload_mortar",
-				1,
-				1,
-				20
-			};
 			reloadTime=1.8;
 			dispersion=0;
 			artilleryDispersion=0;
@@ -2281,13 +2191,6 @@ class CfgWeapons
 		{
 			burst=4;
 			aiBurstTerminable=1;
-			reloadSound[]=
-			{
-				"A3\Sounds_F\arsenal\weapons_static\Mortar\reload_mortar",
-				1,
-				1,
-				20
-			};
 			reloadTime=1.8;
 			artilleryDispersion=2.2;
 			artilleryCharge=0.2;

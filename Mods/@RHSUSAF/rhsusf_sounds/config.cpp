@@ -8201,36 +8201,8 @@ class CfgWeapons
 	class Launcher;
 	class Launcher_Base_F: Launcher;  //found empty after stripping
 	class launch_O_Titan_F;
-	class rhs_weap_saw_base: Rifle_Base_F
-	{
-		class FullAuto: Mode_FullAuto
-		{
-			class SilencedSound
-			{
-				soundSetShot[]=
-				{
-					"RHSUSF_m249_Closure_SoundSet",
-					"RHSUSF_m249_ShotSD_SoundSet",
-					"RHSUSF_rifle1_SD_Tail_SoundSet"
-				};
-			};
-		};
-	};
-	class rhs_weap_lmg_minimipara: rhs_weap_saw_base
-	{
-		class FullAuto: FullAuto
-		{
-			class SilencedSound
-			{
-				soundSetShot[]=
-				{
-					"RHSUSF_m249_Closure_SoundSet",
-					"RHSUSF_m249_ShotSD_SoundSet",
-					"RHSUSF_rifle1_SD_Tail_SoundSet"
-				};
-			};
-		};
-	};
+	class rhs_weap_saw_base: Rifle_Base_F;  //found empty after stripping
+	class rhs_weap_lmg_minimipara: rhs_weap_saw_base;  //found empty after stripping
 	class rhs_weap_M249_base;
 	class rhs_weap_m240_base: rhs_weap_M249_base
 	{
@@ -8313,18 +8285,6 @@ class CfgWeapons
 	class rhsusf_weap_MP7A1_base_f: SMG_02_base_F
 	{
 		class Single: Single
-		{
-			class SilencedSound
-			{
-				soundSetShot[]=
-				{
-					"RHSUSF_MP7_Closure_SoundSet",
-					"RHSUSF_MP7_ShotSD_SoundSet",
-					"RHSUSF_rifle1_SD_Tail_SoundSet"
-				};
-			};
-		};
-		class FullAuto: FullAuto
 		{
 			class SilencedSound
 			{

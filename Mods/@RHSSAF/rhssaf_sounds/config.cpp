@@ -6197,17 +6197,6 @@ class CfgWeapons
 				};
 			};
 		};
-		class FullAuto: Mode_FullAuto
-		{
-			class SilencedSound
-			{
-				soundSetShot[]=
-				{
-					"RHSSAF_sd_M70_Shot_SoundSet",
-					"RHSSAF_sd_MMG1_Tail_SoundSet"
-				};
-			};
-		};
 	};
 	class rhs_weap_m76: rhs_weap_m70_base
 	{
@@ -6226,17 +6215,6 @@ class CfgWeapons
 	class rhs_weap_m21_base: rhs_weap_m70_base
 	{
 		class Single: Mode_SemiAuto
-		{
-			class SilencedSound
-			{
-				soundSetShot[]=
-				{
-					"RHSSAF_sd_M21_Shot_SoundSet",
-					"RHSSAF_sd_rifle1_Tail_SoundSet"
-				};
-			};
-		};
-		class FullAuto: Mode_FullAuto
 		{
 			class SilencedSound
 			{
@@ -6272,27 +6250,12 @@ class CfgWeapons
 				};
 			};
 		};
-		class FullAuto: Mode_FullAuto
-		{
-			class SilencedSound
-			{
-				soundSetShot[]=
-				{
-					"RHSSAF_sd_G36_Shot_SoundSet",
-					"RHSSAF_sd_Rifle1_Tail_SoundSet"
-				};
-			};
-		};
 	};
 	class rhs_weap_scorpion: SMG_01_F
 	{
 		class Single: Single;  //found empty after stripping
-		class FullAuto: FullAuto;  //found empty after stripping
 	};
-	class rhs_weap_m84: Rifle_Long_Base_F
-	{
-		class FullAuto: Mode_FullAuto;  //found empty after stripping
-	};
+	class rhs_weap_m84: Rifle_Long_Base_F;  //found empty after stripping
 };
 class CfgSounds
 {

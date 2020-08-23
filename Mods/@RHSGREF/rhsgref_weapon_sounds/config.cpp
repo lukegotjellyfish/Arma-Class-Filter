@@ -9591,17 +9591,6 @@ class CfgWeapons
 				};
 			};
 		};
-		class FullAuto: Mode_FullAuto
-		{
-			class SilencedSound
-			{
-				soundSetShot[]=
-				{
-					"RHSGREF_sd_M70_Shot_SoundSet",
-					"RHSGREF_sd_rifle1_Tail_SoundSet"
-				};
-			};
-		};
 	};
 	class rhs_weap_m76: rhs_weap_m70_base
 	{
@@ -9630,17 +9619,6 @@ class CfgWeapons
 				};
 			};
 		};
-		class FullAuto: Mode_FullAuto
-		{
-			class SilencedSound
-			{
-				soundSetShot[]=
-				{
-					"RHSGREF_sd_M21_Shot_SoundSet",
-					"RHSGREF_sd_rifle1_Tail_SoundSet"
-				};
-			};
-		};
 	};
 	class rhs_weap_vhs2_base: Rifle_Base_F
 	{
@@ -9655,35 +9633,16 @@ class CfgWeapons
 				};
 			};
 		};
-		class FullAuto: Mode_FullAuto
-		{
-			class SilencedSound
-			{
-				soundSetShot[]=
-				{
-					"RHSGREF_sd_VHS2_Shot_SoundSet",
-					"RHSGREF_sd_rifle1_Tail_SoundSet"
-				};
-			};
-		};
 	};
 	class rhs_weap_savz61: SMG_01_F
 	{
 		class Single: Single;  //found empty after stripping
-		class FullAuto: FullAuto;  //found empty after stripping
 	};
-	class rhs_weap_m3a1_base: Rifle_Base_F
-	{
-		class FullAuto: Mode_FullAuto;  //found empty after stripping
-	};
-	class rhs_weap_m3a1_specops: rhs_weap_m3a1_base
-	{
-		class FullAuto: FullAuto;  //found empty after stripping
-	};
+	class rhs_weap_m3a1_base: Rifle_Base_F;  //found empty after stripping
+	class rhs_weap_m3a1_specops: rhs_weap_m3a1_base;  //found empty after stripping
 	class rhs_weap_MP44_base: Rifle_Base_F
 	{
 		class Single: Mode_SemiAuto;  //found empty after stripping
-		class FullAuto: Mode_FullAuto;  //found empty after stripping
 	};
 	class rhs_weap_M1garand_Base_F: Rifle_Base_F
 	{
@@ -9692,17 +9651,6 @@ class CfgWeapons
 	class rhs_weap_fnfal_base: Rifle_Base_F
 	{
 		class Single: Mode_SemiAuto
-		{
-			class SilencedSound
-			{
-				soundSetShot[]=
-				{
-					"RHSGREF_sd_fnfal_Shot_SoundSet",
-					"RHSGREF_sd_mmg1_Tail_SoundSet"
-				};
-			};
-		};
-		class FullAuto: Mode_FullAuto
 		{
 			class SilencedSound
 			{

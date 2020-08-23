@@ -1122,12 +1122,6 @@ class CfgAmmo
 		missileLockMinDistance=1500;
 		missileLockMaxSpeed=55;
 		cameraViewAvailable=0;
-		SoundSetExplosion[]=
-		{
-			"BombsHeavy_Exp_SoundSet",
-			"BombsHeavy_Tail_SoundSet",
-			"Explosion_Debris_SoundSet"
-		};
 	};
 	class rhs_ammo_kh29l: rhs_ammo_kh29_base
 	{
@@ -1473,12 +1467,6 @@ class CfgAmmo
 		lockType=0;
 		irlock=1;
 		laserlock=1;
-		SoundSetExplosion[]=
-		{
-			"BombsHeavy_Exp_SoundSet",
-			"BombsHeavy_Tail_SoundSet",
-			"Explosion_Debris_SoundSet"
-		};
 		RHS_yield=50000;
 		RHS_FuseRange=100;
 		RHS_WarheadType="NUKE";
@@ -1674,7 +1662,6 @@ class CfgAmmo
 		hit=15;
 		indirectHit=8;
 		indirectHitRange=5;
-		effectFly="";
 	};
 	class rhs_ammo_ao1_uxo_deploy: UXO_deploy_BombCluster_base_F
 	{
@@ -1870,7 +1857,6 @@ class CfgAmmo
 			"randomcenter",
 			1
 		};
-		effectFly="ArtilleryTrails";
 	};
 	class F_40mm_White;
 	class rhs_ammo_sub_zab25t: F_40mm_White
@@ -1887,12 +1873,6 @@ class CfgAmmo
 		hit=8000;
 		indirectHit=2400;
 		indirectHitRange=25;
-		SoundSetExplosion[]=
-		{
-			"BombsHeavy_Exp_SoundSet",
-			"BombsHeavy_Tail_SoundSet",
-			"Explosion_Debris_SoundSet"
-		};
 		proxyShape="\rhsafrf\addons\rhs_airweapons\rhs_m_fab500";
 	};
 	class rhs_ammo_fab500_m54: rhs_ammo_fab500
@@ -1906,12 +1886,6 @@ class CfgAmmo
 		hit=8000;
 		indirectHit=2400;
 		indirectHitRange=25;
-		SoundSetExplosion[]=
-		{
-			"BombsHeavy_Exp_SoundSet",
-			"BombsHeavy_Tail_SoundSet",
-			"Explosion_Debris_SoundSet"
-		};
 	};
 	class rhs_ammo_kab500lk: rhs_ammo_kab500
 	{

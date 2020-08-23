@@ -114,7 +114,6 @@ class CfgAmmo
 			"Direct"
 		};
 		fuseDistance=50;
-		whistleDist=4;
 		muzzleEffect="";
 		aiAmmoUsageFlags="64+128 + 512";
 		lockSeekRadius=120;

@@ -4809,18 +4809,6 @@ class CfgWeapons
 				};
 			};
 		};
-		class FullAuto: FullAuto
-		{
-			class SilencedSound
-			{
-				soundSetShot[]=
-				{
-					"RHSUSF_MP7_Closure_SoundSet",
-					"RHSUSF_MP7_ShotSD_SoundSet",
-					"RHSUSF_rifle1_SD_Tail_SoundSet"
-				};
-			};
-		};
 	};
 	class rhs_weap_XM2010_Base_F: Rifle_Base_F
 	{
@@ -4855,18 +4843,6 @@ class CfgWeapons
 				};
 			};
 		};
-		class FullAuto: Mode_FullAuto
-		{
-			class SilencedSound
-			{
-				soundSetShot[]=
-				{
-					"RHSUSF_sd_M4_Shot_SoundSet",
-					"RHSUSF_sd_Rifle1_Tail_SoundSet",
-					"RHSUSF_sd_M4_stereoLayer_SoundSet"
-				};
-			};
-		};
 	};
 	class rhs_weap_m4_Base: arifle_MX_Base_F
 	{
@@ -4883,18 +4859,6 @@ class CfgWeapons
 			};
 		};
 		class Burst: Mode_Burst
-		{
-			class SilencedSound
-			{
-				soundSetShot[]=
-				{
-					"RHSUSF_sd_M4_Shot_SoundSet",
-					"RHSUSF_sd_Rifle1_Tail_SoundSet",
-					"RHSUSF_sd_M4_stereoLayer_SoundSet"
-				};
-			};
-		};
-		class FullAuto: Mode_FullAuto
 		{
 			class SilencedSound
 			{
@@ -4938,18 +4902,6 @@ class CfgWeapons
 	{
 		WW2_boltSnapSound="RHSUSF_boltSnap_m249";
 		WW2_boltSnapDelay=0.079999998;
-		class FullAuto: Mode_FullAuto
-		{
-			class SilencedSound
-			{
-				soundSetShot[]=
-				{
-					"RHSUSF_sd_m4_Shot_SoundSet",
-					"RHSUSF_sd_Rifle1_Tail_SoundSet",
-					"RHSUSF_sd_m4_stereoLayer_SoundSet"
-				};
-			};
-		};
 		class Eventhandlers: Eventhandlers
 		{
 			class RHSUSF_weapon_firedSoundHandler
@@ -4962,18 +4914,6 @@ class CfgWeapons
 	{
 		WW2_boltSnapSound="RHSUSF_boltSnap_m249";
 		WW2_boltSnapDelay=0.075000003;
-		class FullAuto: Mode_FullAuto
-		{
-			class SilencedSound
-			{
-				soundSetShot[]=
-				{
-					"RHSUSF_sd_m4_Shot_SoundSet",
-					"RHSUSF_sd_Rifle1_Tail_SoundSet",
-					"RHSUSF_sd_m4_stereoLayer_SoundSet"
-				};
-			};
-		};
 		class Eventhandlers: Eventhandlers
 		{
 			class RHSUSF_weapon_firedSoundHandler

@@ -290,7 +290,6 @@ class CfgAmmo
 		thrust=390;
 		fuseDistance=300;
 		explosionAngle=60;
-		whistleDist=20;
 		cmImmunity=0.95999998;
 		missileLockMaxDistance=8000;
 		missileLockMinDistance=300;
@@ -491,7 +490,6 @@ class CfgAmmo
 		trackLead=0.2;
 		maneuvrability=21;
 		timeToLive=70;
-		whistleDist=4;
 		missileLockMaxDistance=8000;
 		missileLockMinDistance=200;
 		missileLockMaxSpeed=56;
@@ -601,7 +599,6 @@ class CfgAmmo
 		irLock=1;
 		laserLock=1;
 		muzzleEffect="";
-		whistleDist=4;
 		aiAmmoUsageFlags="64+128 + 512";
 		missileLockMaxDistance=8000;
 		missileLockMinDistance=400;
@@ -681,7 +678,6 @@ class CfgAmmo
 		thrustTime=1.5700001;
 		thrust=825;
 		fuseDistance=50;
-		whistleDist=4;
 		muzzleEffect="";
 		weaponLockSystem=4;
 		manualControl=1;
@@ -932,7 +928,6 @@ class CfgAmmo
 		sideAirFriction=0.0040000002;
 		timeToLive=60;
 		fuseDistance=40;
-		whistleDist=24;
 	};
 	class rhs_ammo_FFAR_M151: rhs_ammo_Hydra_HE_Heli
 	{
@@ -1048,7 +1043,6 @@ class CfgAmmo
 		deleteParentWhenTriggered=0;
 		hit=50;
 		indirectHitRange=4;
-		effectFly="";
 	};
 	class rhs_ammo_sub_mk118_penetrator: rhs_ammo_cluster_penetrator
 	{
@@ -1135,7 +1129,6 @@ class CfgAmmo
 		deleteParentWhenTriggered=0;
 		hit=8;
 		indirectHitRange=10;
-		effectFly="";
 	};
 	class rhs_ammo_sub_blu97_penetrator: rhs_ammo_cluster_penetrator
 	{

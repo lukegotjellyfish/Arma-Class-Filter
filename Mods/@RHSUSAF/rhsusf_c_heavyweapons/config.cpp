@@ -78,8 +78,6 @@ class CfgAmmo
 		timeToLive=0.0099999998;
 		simulationStep=0.00050000002;
 		airFriction=-0.5;
-		whistleOnFire=0;
-		whistleDist=0;
 		submunitionConeType[]=
 		{
 			"randomcenter",
@@ -92,10 +90,6 @@ class CfgAmmo
 		submunitionInitSpeed=200;
 		deleteParentWhenTriggered=0;
 		triggerTime=0.003;
-		SoundSetExplosion[]=
-		{
-			"Silence_SoundSet"
-		};
 	};
 	class rhs_ammo_cluster_penetrator: Sh_125mm_APFSDS
 	{
@@ -109,8 +103,6 @@ class CfgAmmo
 		typicalSpeed=1000;
 		simulationStep=0.00050000002;
 		airFriction=-0.5;
-		whistleOnFire=0;
-		whistleDist=0;
 		submunitionConeType[]=
 		{
 			"randomcenter",
@@ -123,10 +115,6 @@ class CfgAmmo
 		submunitionInitSpeed=200;
 		deleteParentWhenTriggered=0;
 		triggerTime=0.003;
-		SoundSetExplosion[]=
-		{
-			"Silence_SoundSet"
-		};
 	};
 	class rhs_ammo_ap_penetrator: Sh_125mm_APFSDS
 	{
@@ -196,8 +184,6 @@ class CfgAmmo
 		tracerScale=0;
 		tracerStartTime=0;
 		tracerEndTime=0;
-		whistleOnFire=0;
-		whistleDist=0;
 		muzzleEffect="";
 		explosive=0;
 		caliber=0;
@@ -268,7 +254,6 @@ class CfgAmmo
 		airFriction=-0.00044999999;
 		caliber=12;
 		timeToLive=15;
-		whistleDist=14;
 		tracerScale=2;
 		tracerStartTime=0.1;
 		tracerEndTime=2.3;
@@ -297,12 +282,9 @@ class CfgAmmo
 		airFriction=-3.9999999e-005;
 		simulationStep=0.0099999998;
 		timeToLive=15;
-		whistleOnFire=1;
-		whistleDist=14;
 		tracerScale=2;
 		tracerStartTime=0.1;
 		tracerEndTime=2.3;
-		effectFly="RHS_120mm_Sabot_Eject";
 		caliber=0.1;
 		submunitionAmmo="rhs_ammo_M829_penetrator";
 		submunitionDirectionType="SubmunitionModelDirection";
@@ -514,7 +496,6 @@ class CfgAmmo
 			0,
 			1
 		};
-		whistleDist=0;
 		intensity="10000 * 6";
 		timeToLive=90;
 	};
@@ -531,7 +512,6 @@ class CfgAmmo
 			0,
 			1
 		};
-		whistleDist=0;
 	};
 	class rhs_m821_he: Sh_82mm_AMOS;  //found empty after stripping
 	class Gatling_30mm_HE_Plane_CAS_01_F;
@@ -662,7 +642,6 @@ class CfgAmmo
 		indirectHitRange=4;
 		maxSpeed=329;
 		thrust=210;
-		whistleDist=4;
 		rhs_ballisticMode=0;
 	};
 	class rhs_ammo_TOW2_AT_static: rhs_ammo_TOW2_AT
@@ -2038,13 +2017,6 @@ class CfgWeapons
 		airateoffire=7;
 		airateoffiredistance=250;
 		dispersion=0.00025000001;
-		reloadSound[]=
-		{
-			"\rhsusf\addons\rhsusf_c_heavyweapons\sounds\reload_tank_cannon_loader",
-			3.622776,
-			1,
-			15
-		};
 		reloadTime=17;
 		magazineReloadTime=12;
 		autoReload=1;
@@ -2096,13 +2068,6 @@ class CfgWeapons
 		nameSound="cannon";
 		cursor="mortar";
 		cursorAim="EmptyCursor";
-		reloadSound[]=
-		{
-			"A3\Sounds_F\vehicles\armor\noises\reload_tank_cannon_2",
-			31.622776,
-			1,
-			15
-		};
 		reloadTime=6;
 		magazineReloadTime=7;
 		autoReload=1;
@@ -3257,13 +3222,6 @@ class CfgWeapons
 		};
 		class Single0: Mode_SemiAuto
 		{
-			reloadSound[]=
-			{
-				"A3\Sounds_F\arsenal\weapons_static\Mortar\reload_mortar",
-				1,
-				1,
-				20
-			};
 			reloadTime=1.8;
 			artilleryDispersion=1.9;
 			artilleryCharge=0.2;
@@ -3288,13 +3246,6 @@ class CfgWeapons
 		{
 			burst=4;
 			aiBurstTerminable=1;
-			reloadSound[]=
-			{
-				"A3\Sounds_F\arsenal\weapons_static\Mortar\reload_mortar",
-				1,
-				1,
-				20
-			};
 			reloadTime=1.8;
 			artilleryDispersion=2.2;
 			artilleryCharge=0.2;
