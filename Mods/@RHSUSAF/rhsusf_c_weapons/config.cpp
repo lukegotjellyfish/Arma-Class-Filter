@@ -4556,7 +4556,6 @@ class CfgAmmo
 		cost=1;
 		airFriction=-0.0007034;
 		caliber=0.79000002;
-		rhs_cartridge="\A3\Weapons_F_Mark\Ammo\cartridge_338_LM";
 		tracerScale=1;
 		tracerStartTime=0.050000001;
 		tracerEndTime=1;
@@ -4711,13 +4710,11 @@ class CfgAmmo
 		caliber=0.51999998;
 		typicalSpeed=805;
 		airFriction=-0.00074739999;
-		rhs_cartridge="\A3\weapons_f\ammo\cartridge_762";
 	};
 	class rhs_ammo_762x51_M993_Ball: rhs_ammo_762x51_M80_Ball
 	{
 		caliber=1.41176;
 		typicalSpeed=910;
-		rhs_cartridge="\A3\weapons_f\ammo\cartridge_762";
 	};
 	class rhs_ammo_762x51_Mk316_Special_Ball: rhs_ammo_762x51_M118_Special_Ball;  //found empty after stripping
 	class B_12Gauge_Pellets;
@@ -4741,7 +4738,6 @@ class CfgAmmo
 			9
 		};
 		submunitionConeAngle=0.94999999;
-		rhs_cartridge="\rhsusf\addons\rhsusf_weapons\casings\rhs_casing_12ga_buckshot";
 	};
 	class rhs_ammo_12g_00buckshot_pellet: BulletBase
 	{
@@ -4765,7 +4761,6 @@ class CfgAmmo
 		indirectHit=0;
 		indirectHitRange=0;
 		caliber=0.3048;
-		rhs_cartridge="\rhsusf\addons\rhsusf_weapons\casings\rhs_casing_12ga_slug";
 		typicalSpeed=475.48999;
 		airFriction=-0.0020419999;
 	};
@@ -4775,7 +4770,6 @@ class CfgAmmo
 		indirectHit=1.143;
 		indirectHitRange=1.972;
 		caliber=0.2;
-		rhs_cartridge="\rhsusf\addons\rhsusf_weapons\casings\rhs_casing_12ga_hefrag";
 		typicalSpeed=150;
 		airFriction=-0.0068999999;
 		timeToLive=5;
@@ -4838,7 +4832,6 @@ class CfgAmmo
 		indirectHit=1.143;
 		indirectHitRange=0.986;
 		caliber=0.1;
-		rhs_cartridge="\rhsusf\addons\rhsusf_weapons\casings\rhs_casing_12ga_heer";
 		typicalSpeed=150;
 		airFriction=-0.0074;
 		deflecting=0;
