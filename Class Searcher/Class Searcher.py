@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 import os
 import re
+import csv
 
 
 """
@@ -29,7 +30,7 @@ cend     = '\033[0m'
 
 #Classes for weapons pages
 bluForWeapons = ["rhs_weap_M590_5RD", "rhs_weap_M107", "rhs_weap_XM2010",
-"rhs_weap_m1garand_sa43", "rhs_weap_m14ebrri", "rhs_weap_sr25", "rhs_weap_l1a1",
+"rhs_weap_m1garand_sa43", "rhs_weap_m14ebrri", "rhs_weap_sr25", "rhs_weap_l1a1_base",
 "rhs_weap_SCARH_STD", "rhs_weap_m40a5", "rhs_weap_m24sws", "rhs_weap_kar98k",
 "rhs_weap_mg42", "rhs_weap_mosin_sbr", "rhs_weap_m240G", "rhs_weap_m4a1_blockII",
 "rhs_weap_mk18", "rhs_weap_m27iar", "rhs_weap_hk416d145", "rhs_weap_m16a4",
@@ -154,27 +155,41 @@ def OrderResult(result):
 	return list(reversed(orderedResult))
 
 
-def OrderedClasses(itemList, fileName):
-	with open(fileName, "w") as file:
-		for _class in itemList:
-			result = findClass(_class)
+def OrderedClasses(itemList, fileName, includeList):
+	try:
+		os.mkdir(fileName)
+	except FileExistsError:
+		pass
 
-			orderedResult = OrderResult(result)
-			className = orderedResult[0]
-			input(className)
+	for _class in itemList:
+		result = findClass(_class)
 
+		orderedResult = OrderResult(result)
+		className = re.search("class ([^:]*):", orderedResult[0][0]).group(1)
+
+		with open(fileName + "\\" + className + ".cpp", "w", encoding="utf-8") as file:
+			print("Writing to file")
+			file.write(className + "\n")
+			addedForClass = []
 			for classBody in orderedResult:
 				#print(classBody)
 				del classBody[-1] #last item is a duplicate }; and I have no idea why
-				for classDetails in classBody:
-					#print(classDetails)
-					file.write(classDetails + "\n")
-					#print(cgrey + classDetails + cend)
-			file.write("\n\n----------NEW WEAP/AMMO CLASS----------\n")
 
-			print(cviolet2 + "-------------------------------" + cend + \
-			(cgreen + cbold + "Next class" + cend) + \
-			cviolet2 + "-------------------------------" + cend)
+				for attribute in includeList:
+					for item in classBody:
+						try:
+							_temp = re.search("(" + attribute + "=[^\n]*)", item).group(1)
+							_attribute = re.search("([^=]*)=",_temp).group(1)
+							if _attribute not in addedForClass:
+								addedForClass.append(_attribute)
+								file.write(_temp + "\n")
+						except AttributeError:
+							continue
+
+		print(cviolet2 + "-------------------------------" + cend + \
+		(cgreen + cbold + "Next class" + cend) + \
+		cviolet2 + "-------------------------------" + cend)
+
 
 
 
@@ -194,11 +209,12 @@ for walk in walkList:
 					cend + (cgreen + cbold + root + cend) + cviolet2 + \
 					"-------------------------------" + cend)
 
-
-OrderedClasses(bluForWeapons, "BluForWeapons.txt")
-OrderedClasses(bluForAmmo, "BluForAmmo.txt")
-OrderedClasses(opForWeapons, "OpForWeapons.txt")
-OrderedClasses(opForAmmo, "OpForAmmo.txt")
+weaponAttributes = ["dispersion", "mass", "maxZeroing", "recoil", "reloadTime"]
+ammoAttributes = ["hit", "deflecting", "caliber", "typicalSpeed", "airFriction", "initSpeed"]
+OrderedClasses(bluForWeapons, "BluForWeapons", weaponAttributes)
+OrderedClasses(bluForAmmo, "BluForAmmo", ammoAttributes)
+OrderedClasses(opForWeapons, "OpForWeapons", weaponAttributes)
+OrderedClasses(opForAmmo, "OpForAmmo", ammoAttributes)
 
 #OrderedClasses()
 #OrderedClasses()
