@@ -29,6 +29,7 @@ attributeSkip = [
 	"aiRateOfFire",
 	"aiRateOfFireDistance",
 	"allowedSlots",
+	'ammo="";',
 	"ammoExplosionEffect",
 	"animationSourceBody",
 	"animationSourceGun",
@@ -73,6 +74,7 @@ attributeSkip = [
 	"dustFrontRightPos",
 	"editorPreview",
 	"editorSubcategory",
+	"effectFly",
 	"effectsMissile",
 	"effectsMissileInit",
 	"explosionEffects",
@@ -162,9 +164,10 @@ attributeSkip = [
 	"viewGunnerInExternal",
 	"visibleFire",
 	"visual",
-	"weaponInfoType"
+	"weaponInfoType",
+	"whistleDist",
+	"whistleOnFire"
 ]
-
 multiAttributeSkip = [
 	"aggregateReflectors[]",
 	"armorCrash0[]",
@@ -385,6 +388,7 @@ multiAttributeSkip = [
 	"soundRubber6[]",
 	"sounds[]",
 	"soundServo[]",
+	"SoundSetExplosion[]",
 	"soundTyre1[]",
 	"soundTyre2[]",
 	"soundTyre3[]",
