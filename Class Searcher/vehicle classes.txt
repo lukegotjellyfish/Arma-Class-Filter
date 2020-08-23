@@ -14,7 +14,7 @@ Opfor:
 		
 	BRDM-2 [KPVT,PKT]       = rhsref_BRDM2_vdv
 		
-	BRDM-2  (9P148)         = rhsgref_BRDM2_ATGM_vdv
+	BRDM-2 (9P148)         = rhsgref_BRDM2_ATGM_vdv
 		
 	GAZ-66 (ZU-23-2)        = rhs_gaz66_zu23_msv
 		
@@ -39,7 +39,6 @@ Opfor:
 	BTR-80A                 = rhs_btr80a_msv
 		
 	BMD-4                   = rhs_bmd4_vdv
-		
 		
 	T-72B (obr. 1985g.)     = rhs_t72bb_tv
 		
