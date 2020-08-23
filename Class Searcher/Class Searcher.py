@@ -7,8 +7,7 @@ import csv
 
 """
 TODO:
-- Create CSV output for weapons+their ammo
-- Create output for vehicles
+- create dict/list for classes to elimated repeated searches
 """
 
 
