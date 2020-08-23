@@ -32,7 +32,7 @@ bluForWeapons = ["rhs_weap_M590_5RD", "rhs_weap_M107", "rhs_weap_XM2010",
 "rhs_weap_m1garand_sa43", "rhs_weap_m14ebrri", "rhs_weap_sr25", "rhs_weap_l1a1",
 "rhs_weap_SCARH_STD", "rhs_weap_m40a5", "rhs_weap_m24sws", "rhs_weap_kar98k",
 "rhs_weap_mg42", "rhs_weap_mosin_sbr", "rhs_weap_m240G", "rhs_weap_m4a1_blockII",
-"rhs_weap_mk18", "rhs_weap_m27iar", "rhs_weap_hk416d145:", "rhs_weap_m16a4",
+"rhs_weap_mk18", "rhs_weap_m27iar", "rhs_weap_hk416d145", "rhs_weap_m16a4",
 "rhs_weap_m4a1", "rhs_weap_m21a", "rhs_weap_g36kv", "rhs_weap_m249", "rhs_weap_m249_pip",
 "rhs_weap_MP44", "rhsusf_weap_MP7A2", "rhsusf_weap_m9", "rhsusf_weap_glock17g4",
 "rhs_weap_m3a1_specops", "rhsusf_weap_m1911a1", "rhs_weap_savz61", "rhs_weap_type94_new"]
@@ -160,6 +160,7 @@ def OrderedClasses(itemList, fileName):
 			result = findClass(_class)
 
 			orderedResult = OrderResult(result)
+			className = orderedResult[0]
 
 			for classBody in orderedResult:
 				#print(classBody)
