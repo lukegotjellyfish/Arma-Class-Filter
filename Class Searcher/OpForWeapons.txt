@@ -1,0 +1,5065 @@
+	class rhs_weap_Izh18: Rifle_Base_F
+	{
+		magazines[]=
+		{
+			"rhsgref_1Rnd_00Buck",
+			"rhsgref_1Rnd_Slug"
+		};
+		displayname="$STR_RHS_WEAP_IZH18_DISPLAYNAME";
+		reloadSound[]=
+		{
+			"A3\sounds_f\weapons\M320\M320_reload",
+			0.1,
+			1,
+			30
+		};
+		class Single: Mode_SemiAuto
+		{
+			reloadTime=0.5;
+		};
+		fireSpreadAngle=0.94999999;
+		class WeaponSlotsInfo
+		{
+			mass=71.720001;
+		};
+	};
+	class Rifle_Base_F: Rifle
+	{
+		scope=0;
+		discreteDistance[]={100,200,300,400,500,600};
+		discreteDistanceInitIndex=1;
+		weaponInfoType="RscWeaponZeroing";
+		recoil="recoil_default";
+		deployedPivot="bipod";
+		class GunParticles
+		{
+			class FirstEffect
+			{
+				effectName="RifleAssaultCloud";
+				positionName="Usti hlavne";
+				directionName="Konec hlavne";
+			};
+		};
+	};
+	class Rifle: RifleCore
+	{
+		htMin=1;
+		htMax=600;
+		afMax=0;
+		mfMax=0;
+		mFact=1;
+		tBody=100;
+		autoFire=1;
+		reloadAction="ReloadMagazine";
+		soundContinuous=0;
+		optics=0;
+		scope=1;
+		cursor="arifle";
+		cursoraim="CursorAim";
+		value=4;
+		displayName="$STR_DN_RIFLE";
+		nameSound="rifle";
+		reloadTime=0.15000001;
+		modelOptics="-";
+		sound[]={};
+		opticsFlare=0;
+		autoReload=0;
+		aiDispersionCoefX=6;
+		aiDispersionCoefY=6;
+		opticsZoomMin=0.25;
+		opticsZoomMax=1.25;
+		opticsZoomInit=0.75;
+		distanceZoomMin=300;
+		distanceZoomMax=300;
+		maxLeadSpeed=23;
+		canLock=0;
+		flash="gunfire";
+		flashSize=0.5;
+		dispersion=0.00029;
+		recoil="assaultRifleBase";
+		recoilProne="assaultRifleBase";
+		ffMagnitude=0.5;
+		ffFrequency=11;
+		ffCount=3;
+		weaponPoolAvailable=1;
+		maxZeroing=1000;
+		class WeaponSlotsInfo
+		{
+			mass=2;
+			class MuzzleSlot: MuzzleSlot
+			{
+			};
+			class CowsSlot: CowsSlot
+			{
+			};
+			class PointerSlot: PointerSlot
+			{
+			};
+			allowedSlots[]={901};
+		};
+		zeroingSound[]=
+		{
+			"A3\Sounds_F\arsenal\sfx\shared\zeroing_knob_tick_metal",
+			0.31622776,
+			1,
+			5
+		};
+	};
+	class RifleCore: Default
+	{
+	};
+	class Default
+	{
+		class Default
+		{
+			hit[]={1};
+			speed[]={1};
+		};
+		class AP
+		{
+			hit[]={1};
+			speed[]={0.89999998,1};
+		};
+		class HE
+		{
+			hit[]={1};
+			speed[]={0.5,1};
+		};
+		class HEAT
+		{
+			hit[]={1};
+			speed[]={0.80000001,1};
+		};
+		class TandemHEAT
+		{
+			hit[]={1};
+			speed[]={0.89999998,1};
+		};
+	};
+
+
+----------NEW WEAP/AMMO CLASS----------
+	class rhs_weap_t5000: rhs_weap_orsis_Base_F
+	{
+		class WeaponSlotsInfo: WeaponSlotsInfo
+		{
+			mass=132.2;
+		};
+		class ItemInfo;  //found empty after stripping
+	};
+	class rhs_weap_orsis_Base_F: Rifle_Base_F
+	{
+		magazines[]=
+		{
+			"rhs_5Rnd_338lapua_t5000"
+		};
+		recoil="rhs_recoil_orsis";
+		maxZeroing=1800;
+		class WeaponSlotsInfo: WeaponSlotsInfo;  //found empty after stripping
+		class Single: Mode_SemiAuto
+		{
+			reloadTime=1.6;
+			dispersion=0.0002909;
+		};
+		class SAFE: RHS_SAFE_BASE;  //found empty after stripping
+		class Eventhandlers: Eventhandlers
+		{
+			class RHS_BoltAction
+			{
+				fired="[_this select 0,_this select 1,_this select 1] call rhs_fnc_boltAction;";
+			};
+		};
+		rhs_boltActionSound[]=
+		{
+			"rhsafrf\addons\rhs_c_weapons\sounds\bolt.wss",
+			1.42,
+			1,
+			20
+		};
+		rhs_boltActionAnim="RHS_GestureRechamberOrsis";
+	};
+	class Rifle_Base_F: Rifle
+	{
+		scope=0;
+		discreteDistance[]={100,200,300,400,500,600};
+		discreteDistanceInitIndex=1;
+		weaponInfoType="RscWeaponZeroing";
+		recoil="recoil_default";
+		deployedPivot="bipod";
+		class GunParticles
+		{
+			class FirstEffect
+			{
+				effectName="RifleAssaultCloud";
+				positionName="Usti hlavne";
+				directionName="Konec hlavne";
+			};
+		};
+	};
+	class Rifle: RifleCore
+	{
+		htMin=1;
+		htMax=600;
+		afMax=0;
+		mfMax=0;
+		mFact=1;
+		tBody=100;
+		autoFire=1;
+		reloadAction="ReloadMagazine";
+		soundContinuous=0;
+		optics=0;
+		scope=1;
+		cursor="arifle";
+		cursoraim="CursorAim";
+		value=4;
+		displayName="$STR_DN_RIFLE";
+		nameSound="rifle";
+		reloadTime=0.15000001;
+		modelOptics="-";
+		sound[]={};
+		opticsFlare=0;
+		autoReload=0;
+		aiDispersionCoefX=6;
+		aiDispersionCoefY=6;
+		opticsZoomMin=0.25;
+		opticsZoomMax=1.25;
+		opticsZoomInit=0.75;
+		distanceZoomMin=300;
+		distanceZoomMax=300;
+		maxLeadSpeed=23;
+		canLock=0;
+		flash="gunfire";
+		flashSize=0.5;
+		dispersion=0.00029;
+		recoil="assaultRifleBase";
+		recoilProne="assaultRifleBase";
+		ffMagnitude=0.5;
+		ffFrequency=11;
+		ffCount=3;
+		weaponPoolAvailable=1;
+		maxZeroing=1000;
+		class WeaponSlotsInfo
+		{
+			mass=2;
+			class MuzzleSlot: MuzzleSlot
+			{
+			};
+			class CowsSlot: CowsSlot
+			{
+			};
+			class PointerSlot: PointerSlot
+			{
+			};
+			allowedSlots[]={901};
+		};
+		zeroingSound[]=
+		{
+			"A3\Sounds_F\arsenal\sfx\shared\zeroing_knob_tick_metal",
+			0.31622776,
+			1,
+			5
+		};
+	};
+	class RifleCore: Default
+	{
+	};
+	class Default
+	{
+		class Default
+		{
+			hit[]={1};
+			speed[]={1};
+		};
+		class AP
+		{
+			hit[]={1};
+			speed[]={0.89999998,1};
+		};
+		class HE
+		{
+			hit[]={1};
+			speed[]={0.5,1};
+		};
+		class HEAT
+		{
+			hit[]={1};
+			speed[]={0.80000001,1};
+		};
+		class TandemHEAT
+		{
+			hit[]={1};
+			speed[]={0.89999998,1};
+		};
+	};
+
+
+----------NEW WEAP/AMMO CLASS----------
+	class rhs_weap_svdp: rhs_weap_svd
+	{
+		displayname="$STR_RHS_WEAP_SVDM";
+		class WeaponSlotsInfo: WeaponSlotsInfo
+		{
+			mass=116.6;
+		};
+		class Single: Mode_SemiAuto
+		{
+			reloadTime=0.085000001;
+			dispersion=0.00069999998;
+		};
+		class single_close_optics1: Single;  //found empty after stripping
+		class single_medium_optics1: single_close_optics1;  //found empty after stripping
+		class single_far_optics1: single_medium_optics1;  //found empty after stripping
+		rhs_npz="rhs_weap_svdp_npz";
+	};
+	class rhs_weap_svd: rhs_weap_ak74m
+	{
+		displayname="$STR_RHS_SVD_NAME";
+		recoil="rhs_recoil_svd";
+		class WeaponSlotsInfo: WeaponSlotsInfo
+		{
+			mass=77;
+		};
+		maxZeroing=1200;
+		magazines[]=
+		{
+			"rhs_10Rnd_762x54mmR_7N1",
+			"rhs_10Rnd_762x54mmR_7N14"
+		};
+		class Single: Mode_SemiAuto
+		{
+			reloadTime=0.085000001;
+			dispersion=0.00069999998;
+		};
+		class single_close_optics1: Single;  //found empty after stripping
+		class single_medium_optics1: single_close_optics1;  //found empty after stripping
+		class single_far_optics1: single_medium_optics1;  //found empty after stripping
+		hiddenSelections[]={};
+		hiddenSelectionsTextures[]={};
+		rhs_pso1m2_type="rhs_acc_pso1m2";
+		rhs_pso1m21_type="rhs_acc_pso1m21_svd";
+	};
+	class rhs_weap_ak74m: rhs_weap_ak74m_Base_F
+	{
+		rhs_pkas_type="rhs_acc_pkas";
+		rhs_1p29_type="rhs_acc_1p29";
+		rhs_pso1m2_type="rhs_acc_pso1m2_ak";
+		rhs_pso1m21_type="rhs_acc_pso1m21_ak";
+		rhs_pgo7v_type="rhs_acc_pgo7v_ak";
+		rhs_pgo7v2_type="rhs_acc_pgo7v2_ak";
+		rhs_pgo7v3_type="rhs_acc_pgo7v3_ak";
+		rhs_fold="rhs_weap_ak74m_folded";
+		rhs_fold_anim="RHS_GestureFoldAK74M";
+		rhs_fold_sound[]=
+		{
+			"rhsafrf\addons\rhs_c_weapons\sounds\stock_folding.wss",
+			1.42,
+			1,
+			20
+		};
+		rhs_npz="rhs_weap_ak74m_npz";
+		class WeaponSlotsInfo: WeaponSlotsInfo
+		{
+			mass=74.800003;
+		};
+		class ItemInfo;  //found empty after stripping
+	};
+	class rhs_weap_ak74m_Base_F: Rifle_Base_F
+	{
+		magazines[]=
+		{
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_plum_AK",
+			"rhs_30Rnd_545x39_7N10_desert_AK",
+			"rhs_30Rnd_545x39_7N10_camo_AK"
+		};
+		recoil="rhs_recoil_ak74m";
+		class WeaponSlotsInfo: WeaponSlotsInfo
+		{
+			class rhs_npz_slot: SlotInfo
+			{
+				compatibleItems[]=
+				{
+					"rhs_acc_npz"
+				};
+			};
+		};
+		class SAFE: RHS_SAFE_BASE;  //found empty after stripping
+		class FOLD: RHS_FOLD_BASE;  //found empty after stripping
+		class Single: Mode_SemiAuto
+		{
+			aiBurstTerminable=1;
+			reloadTime=0.092299998;
+			dispersion=0.00092999998;
+		};
+		class Single_AI: Single
+		{
+			burstRangeMax=3;
+		};
+		class FullAuto: Mode_FullAuto
+		{
+			aiBurstTerminable=1;
+			reloadTime=0.092299998;
+			dispersion=0.00092999998;
+		};
+		class single_medium_optics1: Single;  //found empty after stripping
+		class single_far_optics2: single_medium_optics1;  //found empty after stripping
+		class fullauto_medium: FullAuto
+		{
+			burst=2;
+			burstRangeMax=5;
+		};
+		class GP25Muzzle: GP25_Base;  //found empty after stripping
+	};
+	class Rifle_Base_F: Rifle
+	{
+		scope=0;
+		discreteDistance[]={100,200,300,400,500,600};
+		discreteDistanceInitIndex=1;
+		weaponInfoType="RscWeaponZeroing";
+		recoil="recoil_default";
+		deployedPivot="bipod";
+		class GunParticles
+		{
+			class FirstEffect
+			{
+				effectName="RifleAssaultCloud";
+				positionName="Usti hlavne";
+				directionName="Konec hlavne";
+			};
+		};
+	};
+	class Rifle: RifleCore
+	{
+		htMin=1;
+		htMax=600;
+		afMax=0;
+		mfMax=0;
+		mFact=1;
+		tBody=100;
+		autoFire=1;
+		reloadAction="ReloadMagazine";
+		soundContinuous=0;
+		optics=0;
+		scope=1;
+		cursor="arifle";
+		cursoraim="CursorAim";
+		value=4;
+		displayName="$STR_DN_RIFLE";
+		nameSound="rifle";
+		reloadTime=0.15000001;
+		modelOptics="-";
+		sound[]={};
+		opticsFlare=0;
+		autoReload=0;
+		aiDispersionCoefX=6;
+		aiDispersionCoefY=6;
+		opticsZoomMin=0.25;
+		opticsZoomMax=1.25;
+		opticsZoomInit=0.75;
+		distanceZoomMin=300;
+		distanceZoomMax=300;
+		maxLeadSpeed=23;
+		canLock=0;
+		flash="gunfire";
+		flashSize=0.5;
+		dispersion=0.00029;
+		recoil="assaultRifleBase";
+		recoilProne="assaultRifleBase";
+		ffMagnitude=0.5;
+		ffFrequency=11;
+		ffCount=3;
+		weaponPoolAvailable=1;
+		maxZeroing=1000;
+		class WeaponSlotsInfo
+		{
+			mass=2;
+			class MuzzleSlot: MuzzleSlot
+			{
+			};
+			class CowsSlot: CowsSlot
+			{
+			};
+			class PointerSlot: PointerSlot
+			{
+			};
+			allowedSlots[]={901};
+		};
+		zeroingSound[]=
+		{
+			"A3\Sounds_F\arsenal\sfx\shared\zeroing_knob_tick_metal",
+			0.31622776,
+			1,
+			5
+		};
+	};
+	class RifleCore: Default
+	{
+	};
+	class Default
+	{
+		class Default
+		{
+			hit[]={1};
+			speed[]={1};
+		};
+		class AP
+		{
+			hit[]={1};
+			speed[]={0.89999998,1};
+		};
+		class HE
+		{
+			hit[]={1};
+			speed[]={0.5,1};
+		};
+		class HEAT
+		{
+			hit[]={1};
+			speed[]={0.80000001,1};
+		};
+		class TandemHEAT
+		{
+			hit[]={1};
+			speed[]={0.89999998,1};
+		};
+	};
+
+
+----------NEW WEAP/AMMO CLASS----------
+	class rhs_weap_svdp_npz: rhs_weap_svdp
+	{
+		class WeaponSlotsInfo: WeaponSlotsInfo
+		{
+			mass=116.6;
+			class rhs_npz_slot;  //found empty after stripping
+		};
+		rhs_npz="rhs_weap_svdp";
+	};
+	class rhs_weap_svdp: rhs_weap_svd
+	{
+		displayname="$STR_RHS_WEAP_SVDM";
+		class WeaponSlotsInfo: WeaponSlotsInfo
+		{
+			mass=116.6;
+		};
+		class Single: Mode_SemiAuto
+		{
+			reloadTime=0.085000001;
+			dispersion=0.00069999998;
+		};
+		class single_close_optics1: Single;  //found empty after stripping
+		class single_medium_optics1: single_close_optics1;  //found empty after stripping
+		class single_far_optics1: single_medium_optics1;  //found empty after stripping
+		rhs_npz="rhs_weap_svdp_npz";
+	};
+	class rhs_weap_svd: rhs_weap_ak74m
+	{
+		displayname="$STR_RHS_SVD_NAME";
+		recoil="rhs_recoil_svd";
+		class WeaponSlotsInfo: WeaponSlotsInfo
+		{
+			mass=77;
+		};
+		maxZeroing=1200;
+		magazines[]=
+		{
+			"rhs_10Rnd_762x54mmR_7N1",
+			"rhs_10Rnd_762x54mmR_7N14"
+		};
+		class Single: Mode_SemiAuto
+		{
+			reloadTime=0.085000001;
+			dispersion=0.00069999998;
+		};
+		class single_close_optics1: Single;  //found empty after stripping
+		class single_medium_optics1: single_close_optics1;  //found empty after stripping
+		class single_far_optics1: single_medium_optics1;  //found empty after stripping
+		hiddenSelections[]={};
+		hiddenSelectionsTextures[]={};
+		rhs_pso1m2_type="rhs_acc_pso1m2";
+		rhs_pso1m21_type="rhs_acc_pso1m21_svd";
+	};
+	class rhs_weap_ak74m: rhs_weap_ak74m_Base_F
+	{
+		rhs_pkas_type="rhs_acc_pkas";
+		rhs_1p29_type="rhs_acc_1p29";
+		rhs_pso1m2_type="rhs_acc_pso1m2_ak";
+		rhs_pso1m21_type="rhs_acc_pso1m21_ak";
+		rhs_pgo7v_type="rhs_acc_pgo7v_ak";
+		rhs_pgo7v2_type="rhs_acc_pgo7v2_ak";
+		rhs_pgo7v3_type="rhs_acc_pgo7v3_ak";
+		rhs_fold="rhs_weap_ak74m_folded";
+		rhs_fold_anim="RHS_GestureFoldAK74M";
+		rhs_fold_sound[]=
+		{
+			"rhsafrf\addons\rhs_c_weapons\sounds\stock_folding.wss",
+			1.42,
+			1,
+			20
+		};
+		rhs_npz="rhs_weap_ak74m_npz";
+		class WeaponSlotsInfo: WeaponSlotsInfo
+		{
+			mass=74.800003;
+		};
+		class ItemInfo;  //found empty after stripping
+	};
+	class rhs_weap_ak74m_Base_F: Rifle_Base_F
+	{
+		magazines[]=
+		{
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_plum_AK",
+			"rhs_30Rnd_545x39_7N10_desert_AK",
+			"rhs_30Rnd_545x39_7N10_camo_AK"
+		};
+		recoil="rhs_recoil_ak74m";
+		class WeaponSlotsInfo: WeaponSlotsInfo
+		{
+			class rhs_npz_slot: SlotInfo
+			{
+				compatibleItems[]=
+				{
+					"rhs_acc_npz"
+				};
+			};
+		};
+		class SAFE: RHS_SAFE_BASE;  //found empty after stripping
+		class FOLD: RHS_FOLD_BASE;  //found empty after stripping
+		class Single: Mode_SemiAuto
+		{
+			aiBurstTerminable=1;
+			reloadTime=0.092299998;
+			dispersion=0.00092999998;
+		};
+		class Single_AI: Single
+		{
+			burstRangeMax=3;
+		};
+		class FullAuto: Mode_FullAuto
+		{
+			aiBurstTerminable=1;
+			reloadTime=0.092299998;
+			dispersion=0.00092999998;
+		};
+		class single_medium_optics1: Single;  //found empty after stripping
+		class single_far_optics2: single_medium_optics1;  //found empty after stripping
+		class fullauto_medium: FullAuto
+		{
+			burst=2;
+			burstRangeMax=5;
+		};
+		class GP25Muzzle: GP25_Base;  //found empty after stripping
+	};
+	class Rifle_Base_F: Rifle
+	{
+		scope=0;
+		discreteDistance[]={100,200,300,400,500,600};
+		discreteDistanceInitIndex=1;
+		weaponInfoType="RscWeaponZeroing";
+		recoil="recoil_default";
+		deployedPivot="bipod";
+		class GunParticles
+		{
+			class FirstEffect
+			{
+				effectName="RifleAssaultCloud";
+				positionName="Usti hlavne";
+				directionName="Konec hlavne";
+			};
+		};
+	};
+	class Rifle: RifleCore
+	{
+		htMin=1;
+		htMax=600;
+		afMax=0;
+		mfMax=0;
+		mFact=1;
+		tBody=100;
+		autoFire=1;
+		reloadAction="ReloadMagazine";
+		soundContinuous=0;
+		optics=0;
+		scope=1;
+		cursor="arifle";
+		cursoraim="CursorAim";
+		value=4;
+		displayName="$STR_DN_RIFLE";
+		nameSound="rifle";
+		reloadTime=0.15000001;
+		modelOptics="-";
+		sound[]={};
+		opticsFlare=0;
+		autoReload=0;
+		aiDispersionCoefX=6;
+		aiDispersionCoefY=6;
+		opticsZoomMin=0.25;
+		opticsZoomMax=1.25;
+		opticsZoomInit=0.75;
+		distanceZoomMin=300;
+		distanceZoomMax=300;
+		maxLeadSpeed=23;
+		canLock=0;
+		flash="gunfire";
+		flashSize=0.5;
+		dispersion=0.00029;
+		recoil="assaultRifleBase";
+		recoilProne="assaultRifleBase";
+		ffMagnitude=0.5;
+		ffFrequency=11;
+		ffCount=3;
+		weaponPoolAvailable=1;
+		maxZeroing=1000;
+		class WeaponSlotsInfo
+		{
+			mass=2;
+			class MuzzleSlot: MuzzleSlot
+			{
+			};
+			class CowsSlot: CowsSlot
+			{
+			};
+			class PointerSlot: PointerSlot
+			{
+			};
+			allowedSlots[]={901};
+		};
+		zeroingSound[]=
+		{
+			"A3\Sounds_F\arsenal\sfx\shared\zeroing_knob_tick_metal",
+			0.31622776,
+			1,
+			5
+		};
+	};
+	class RifleCore: Default
+	{
+	};
+	class Default
+	{
+		class Default
+		{
+			hit[]={1};
+			speed[]={1};
+		};
+		class AP
+		{
+			hit[]={1};
+			speed[]={0.89999998,1};
+		};
+		class HE
+		{
+			hit[]={1};
+			speed[]={0.5,1};
+		};
+		class HEAT
+		{
+			hit[]={1};
+			speed[]={0.80000001,1};
+		};
+		class TandemHEAT
+		{
+			hit[]={1};
+			speed[]={0.89999998,1};
+		};
+	};
+
+
+----------NEW WEAP/AMMO CLASS----------
+	class rhs_weap_m76: rhs_weap_m70_base
+	{
+		magazines[]=
+		{
+			"rhsgref_10Rnd_792x57_m76"
+		};
+		recoil="recoil_akm";
+		class Single: Mode_SemiAuto
+		{
+			reloadTime=0.1;
+			dispersion=0.00095000002;
+		};
+		class single_medium_optics1: Single;  //found empty after stripping
+		class single_far_optics2: single_medium_optics1;  //found empty after stripping
+		class WeaponSlotsInfo: WeaponSlotsInfo
+		{
+			mass=95.699997;
+		};
+	};
+	class rhs_weap_m70_base: Rifle_Base_F
+	{
+		magazines[]=
+		{
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm_tracer",
+			"rhs_30Rnd_762x39mm_89",
+			"rhs_30Rnd_762x39mm_U"
+		};
+		recoil="recoil_mk20";
+		recoilProne="assaultRifleBase";
+		class WeaponSlotsInfo: WeaponSlotsInfo
+		{
+			class rhs_npz_slot;  //found empty after stripping
+		};
+		class SAFE: RHS_SAFE_BASE;  //found empty after stripping
+		class RGMuzzle: RifleGrenade_Base;  //found empty after stripping
+		class Single: Mode_SemiAuto
+		{
+			reloadTime=0.1;
+			dispersion=0.0020999999;
+		};
+		class FullAuto: Mode_FullAuto
+		{
+			reloadTime=0.1;
+			dispersion=0.0020999999;
+		};
+		class single_medium_optics1: Single;  //found empty after stripping
+		class single_far_optics2: single_medium_optics1;  //found empty after stripping
+		class fullauto_medium: FullAuto
+		{
+			aiBurstTerminable=1;
+			burst=3;
+		};
+	};
+	class Rifle_Base_F: Rifle
+	{
+		scope=0;
+		discreteDistance[]={100,200,300,400,500,600};
+		discreteDistanceInitIndex=1;
+		weaponInfoType="RscWeaponZeroing";
+		recoil="recoil_default";
+		deployedPivot="bipod";
+		class GunParticles
+		{
+			class FirstEffect
+			{
+				effectName="RifleAssaultCloud";
+				positionName="Usti hlavne";
+				directionName="Konec hlavne";
+			};
+		};
+	};
+	class Rifle: RifleCore
+	{
+		htMin=1;
+		htMax=600;
+		afMax=0;
+		mfMax=0;
+		mFact=1;
+		tBody=100;
+		autoFire=1;
+		reloadAction="ReloadMagazine";
+		soundContinuous=0;
+		optics=0;
+		scope=1;
+		cursor="arifle";
+		cursoraim="CursorAim";
+		value=4;
+		displayName="$STR_DN_RIFLE";
+		nameSound="rifle";
+		reloadTime=0.15000001;
+		modelOptics="-";
+		sound[]={};
+		opticsFlare=0;
+		autoReload=0;
+		aiDispersionCoefX=6;
+		aiDispersionCoefY=6;
+		opticsZoomMin=0.25;
+		opticsZoomMax=1.25;
+		opticsZoomInit=0.75;
+		distanceZoomMin=300;
+		distanceZoomMax=300;
+		maxLeadSpeed=23;
+		canLock=0;
+		flash="gunfire";
+		flashSize=0.5;
+		dispersion=0.00029;
+		recoil="assaultRifleBase";
+		recoilProne="assaultRifleBase";
+		ffMagnitude=0.5;
+		ffFrequency=11;
+		ffCount=3;
+		weaponPoolAvailable=1;
+		maxZeroing=1000;
+		class WeaponSlotsInfo
+		{
+			mass=2;
+			class MuzzleSlot: MuzzleSlot
+			{
+			};
+			class CowsSlot: CowsSlot
+			{
+			};
+			class PointerSlot: PointerSlot
+			{
+			};
+			allowedSlots[]={901};
+		};
+		zeroingSound[]=
+		{
+			"A3\Sounds_F\arsenal\sfx\shared\zeroing_knob_tick_metal",
+			0.31622776,
+			1,
+			5
+		};
+	};
+	class RifleCore: Default
+	{
+	};
+	class Default
+	{
+		class Default
+		{
+			hit[]={1};
+			speed[]={1};
+		};
+		class AP
+		{
+			hit[]={1};
+			speed[]={0.89999998,1};
+		};
+		class HE
+		{
+			hit[]={1};
+			speed[]={0.5,1};
+		};
+		class HEAT
+		{
+			hit[]={1};
+			speed[]={0.80000001,1};
+		};
+		class TandemHEAT
+		{
+			hit[]={1};
+			speed[]={0.89999998,1};
+		};
+	};
+
+
+----------NEW WEAP/AMMO CLASS----------
+	class rhs_weap_m38: rhs_weap_m38_Base_F
+	{
+		initSpeed=-0.95999998;
+		class WeaponSlotsInfo: WeaponSlotsInfo
+		{
+			mass=74.800003;
+		};
+		class ItemInfo;  //found empty after stripping
+	};
+	class rhs_weap_m38_Base_F: Rifle_Base_F
+	{
+		magazines[]=
+		{
+			"rhsgref_5Rnd_762x54_m38"
+		};
+		recoil="recoil_dmr_01";
+		class WeaponSlotsInfo: WeaponSlotsInfo;  //found empty after stripping
+		class Single: Mode_SemiAuto
+		{
+			reloadTime=1.6;
+			dispersion=0.000235;
+		};
+		class Eventhandlers: Eventhandlers
+		{
+			class RHS_BoltAction
+			{
+				fired="[_this select 0,_this select 1,_this select 1] call rhs_fnc_boltAction;";
+			};
+		};
+		rhs_boltActionSound[]=
+		{
+			"rhsgref\addons\rhsgref_weapons\kar98k\data\sounds\kar98k_bolt.wss",
+			1.42,
+			1,
+			20
+		};
+		rhs_boltActionAnim="RHS_GestureRechamberM38";
+	};
+	class Rifle_Base_F: Rifle
+	{
+		scope=0;
+		discreteDistance[]={100,200,300,400,500,600};
+		discreteDistanceInitIndex=1;
+		weaponInfoType="RscWeaponZeroing";
+		recoil="recoil_default";
+		deployedPivot="bipod";
+		class GunParticles
+		{
+			class FirstEffect
+			{
+				effectName="RifleAssaultCloud";
+				positionName="Usti hlavne";
+				directionName="Konec hlavne";
+			};
+		};
+	};
+	class Rifle: RifleCore
+	{
+		htMin=1;
+		htMax=600;
+		afMax=0;
+		mfMax=0;
+		mFact=1;
+		tBody=100;
+		autoFire=1;
+		reloadAction="ReloadMagazine";
+		soundContinuous=0;
+		optics=0;
+		scope=1;
+		cursor="arifle";
+		cursoraim="CursorAim";
+		value=4;
+		displayName="$STR_DN_RIFLE";
+		nameSound="rifle";
+		reloadTime=0.15000001;
+		modelOptics="-";
+		sound[]={};
+		opticsFlare=0;
+		autoReload=0;
+		aiDispersionCoefX=6;
+		aiDispersionCoefY=6;
+		opticsZoomMin=0.25;
+		opticsZoomMax=1.25;
+		opticsZoomInit=0.75;
+		distanceZoomMin=300;
+		distanceZoomMax=300;
+		maxLeadSpeed=23;
+		canLock=0;
+		flash="gunfire";
+		flashSize=0.5;
+		dispersion=0.00029;
+		recoil="assaultRifleBase";
+		recoilProne="assaultRifleBase";
+		ffMagnitude=0.5;
+		ffFrequency=11;
+		ffCount=3;
+		weaponPoolAvailable=1;
+		maxZeroing=1000;
+		class WeaponSlotsInfo
+		{
+			mass=2;
+			class MuzzleSlot: MuzzleSlot
+			{
+			};
+			class CowsSlot: CowsSlot
+			{
+			};
+			class PointerSlot: PointerSlot
+			{
+			};
+			allowedSlots[]={901};
+		};
+		zeroingSound[]=
+		{
+			"A3\Sounds_F\arsenal\sfx\shared\zeroing_knob_tick_metal",
+			0.31622776,
+			1,
+			5
+		};
+	};
+	class RifleCore: Default
+	{
+	};
+	class Default
+	{
+		class Default
+		{
+			hit[]={1};
+			speed[]={1};
+		};
+		class AP
+		{
+			hit[]={1};
+			speed[]={0.89999998,1};
+		};
+		class HE
+		{
+			hit[]={1};
+			speed[]={0.5,1};
+		};
+		class HEAT
+		{
+			hit[]={1};
+			speed[]={0.80000001,1};
+		};
+		class TandemHEAT
+		{
+			hit[]={1};
+			speed[]={0.89999998,1};
+		};
+	};
+
+
+----------NEW WEAP/AMMO CLASS----------
+	class rhs_weap_m38_rail: rhs_weap_m38
+	{
+		class WeaponSlotsInfo: WeaponSlotsInfo
+		{
+			icon="\rhsgref\addons\rhsgref_weapons\icons\w_m382_inv_ca.paa";
+			mass=74.800003;
+		};
+	};
+	class rhs_weap_m38: rhs_weap_m38_Base_F
+	{
+		initSpeed=-0.95999998;
+		class WeaponSlotsInfo: WeaponSlotsInfo
+		{
+			mass=74.800003;
+		};
+		class ItemInfo;  //found empty after stripping
+	};
+	class rhs_weap_m38_Base_F: Rifle_Base_F
+	{
+		magazines[]=
+		{
+			"rhsgref_5Rnd_762x54_m38"
+		};
+		recoil="recoil_dmr_01";
+		class WeaponSlotsInfo: WeaponSlotsInfo;  //found empty after stripping
+		class Single: Mode_SemiAuto
+		{
+			reloadTime=1.6;
+			dispersion=0.000235;
+		};
+		class Eventhandlers: Eventhandlers
+		{
+			class RHS_BoltAction
+			{
+				fired="[_this select 0,_this select 1,_this select 1] call rhs_fnc_boltAction;";
+			};
+		};
+		rhs_boltActionSound[]=
+		{
+			"rhsgref\addons\rhsgref_weapons\kar98k\data\sounds\kar98k_bolt.wss",
+			1.42,
+			1,
+			20
+		};
+		rhs_boltActionAnim="RHS_GestureRechamberM38";
+	};
+	class Rifle_Base_F: Rifle
+	{
+		scope=0;
+		discreteDistance[]={100,200,300,400,500,600};
+		discreteDistanceInitIndex=1;
+		weaponInfoType="RscWeaponZeroing";
+		recoil="recoil_default";
+		deployedPivot="bipod";
+		class GunParticles
+		{
+			class FirstEffect
+			{
+				effectName="RifleAssaultCloud";
+				positionName="Usti hlavne";
+				directionName="Konec hlavne";
+			};
+		};
+	};
+	class Rifle: RifleCore
+	{
+		htMin=1;
+		htMax=600;
+		afMax=0;
+		mfMax=0;
+		mFact=1;
+		tBody=100;
+		autoFire=1;
+		reloadAction="ReloadMagazine";
+		soundContinuous=0;
+		optics=0;
+		scope=1;
+		cursor="arifle";
+		cursoraim="CursorAim";
+		value=4;
+		displayName="$STR_DN_RIFLE";
+		nameSound="rifle";
+		reloadTime=0.15000001;
+		modelOptics="-";
+		sound[]={};
+		opticsFlare=0;
+		autoReload=0;
+		aiDispersionCoefX=6;
+		aiDispersionCoefY=6;
+		opticsZoomMin=0.25;
+		opticsZoomMax=1.25;
+		opticsZoomInit=0.75;
+		distanceZoomMin=300;
+		distanceZoomMax=300;
+		maxLeadSpeed=23;
+		canLock=0;
+		flash="gunfire";
+		flashSize=0.5;
+		dispersion=0.00029;
+		recoil="assaultRifleBase";
+		recoilProne="assaultRifleBase";
+		ffMagnitude=0.5;
+		ffFrequency=11;
+		ffCount=3;
+		weaponPoolAvailable=1;
+		maxZeroing=1000;
+		class WeaponSlotsInfo
+		{
+			mass=2;
+			class MuzzleSlot: MuzzleSlot
+			{
+			};
+			class CowsSlot: CowsSlot
+			{
+			};
+			class PointerSlot: PointerSlot
+			{
+			};
+			allowedSlots[]={901};
+		};
+		zeroingSound[]=
+		{
+			"A3\Sounds_F\arsenal\sfx\shared\zeroing_knob_tick_metal",
+			0.31622776,
+			1,
+			5
+		};
+	};
+	class RifleCore: Default
+	{
+	};
+	class Default
+	{
+		class Default
+		{
+			hit[]={1};
+			speed[]={1};
+		};
+		class AP
+		{
+			hit[]={1};
+			speed[]={0.89999998,1};
+		};
+		class HE
+		{
+			hit[]={1};
+			speed[]={0.5,1};
+		};
+		class HEAT
+		{
+			hit[]={1};
+			speed[]={0.80000001,1};
+		};
+		class TandemHEAT
+		{
+			hit[]={1};
+			speed[]={0.89999998,1};
+		};
+	};
+
+
+----------NEW WEAP/AMMO CLASS----------
+	class rhs_weap_pkm: rhs_weap_pkp
+	{
+		recoil="recoil_zafir";
+		class WeaponSlotsInfo: WeaponSlotsInfo
+		{
+			mass=165;
+		};
+		class manual: FullAuto
+		{
+			reloadTime=0.092;
+			dispersion=0.00092999998;
+			aiBurstTerminable=1;
+		};
+	};
+	class rhs_weap_pkp: rhs_pkp_base
+	{
+		class WeaponSlotsInfo: WeaponSlotsInfo
+		{
+			mass=191.39999;
+		};
+	};
+	class rhs_pkp_base: Rifle_Long_Base_F
+	{
+		magazines[]=
+		{
+			"rhs_100Rnd_762x54mmR",
+			"rhs_100Rnd_762x54mmR_green",
+			"rhs_100Rnd_762x54mmR_7N13",
+			"rhs_100Rnd_762x54mmR_7N26",
+			"rhs_100Rnd_762x54mmR_7BZ3"
+		};
+		cursor="mg";
+		cursorAim="EmptyCursor";
+		nameSound="Mgun";
+		recoil="recoil_zafir";
+		class ItemInfo;  //found empty after stripping
+		class WeaponSlotsInfo: WeaponSlotsInfo;  //found empty after stripping
+		class SAFE: RHS_SAFE_BASE;  //found empty after stripping
+		maxZeroing=1500;
+		class FullAuto: Mode_FullAuto
+		{
+			reloadTime=0.092;
+			dispersion=0.00101;
+			aiBurstTerminable=1;
+		};
+		class Single: Mode_SemiAuto
+		{
+			reloadTime=0.092;
+			dispersion=0.00101;
+			autoFire=0;
+		};
+		rhs_pkas_type="rhs_acc_pkas_pkp";
+		rhs_pso1m2_type="rhs_acc_pso1m2_pkp";
+		rhs_pso1m21_type="rhs_acc_pso1m21_pkp";
+		rhs_pgo7v_type="rhs_acc_pgo7v_pkp";
+		rhs_pgo7v2_type="rhs_acc_pgo7v2_pkp";
+		rhs_pgo7v3_type="rhs_acc_pgo7v3_pkp";
+		rhs_1p29_type="rhs_acc_1p29_pkp";
+	};
+	class Rifle_Long_Base_F: Rifle_Base_F
+	{
+		class WeaponSlotsInfo: WeaponSlotsInfo
+		{
+			allowedSlots[]={};
+		};
+	};
+	class Rifle_Base_F: Rifle
+	{
+		scope=0;
+		discreteDistance[]={100,200,300,400,500,600};
+		discreteDistanceInitIndex=1;
+		weaponInfoType="RscWeaponZeroing";
+		recoil="recoil_default";
+		deployedPivot="bipod";
+		class GunParticles
+		{
+			class FirstEffect
+			{
+				effectName="RifleAssaultCloud";
+				positionName="Usti hlavne";
+				directionName="Konec hlavne";
+			};
+		};
+	};
+	class Rifle: RifleCore
+	{
+		htMin=1;
+		htMax=600;
+		afMax=0;
+		mfMax=0;
+		mFact=1;
+		tBody=100;
+		autoFire=1;
+		reloadAction="ReloadMagazine";
+		soundContinuous=0;
+		optics=0;
+		scope=1;
+		cursor="arifle";
+		cursoraim="CursorAim";
+		value=4;
+		displayName="$STR_DN_RIFLE";
+		nameSound="rifle";
+		reloadTime=0.15000001;
+		modelOptics="-";
+		sound[]={};
+		opticsFlare=0;
+		autoReload=0;
+		aiDispersionCoefX=6;
+		aiDispersionCoefY=6;
+		opticsZoomMin=0.25;
+		opticsZoomMax=1.25;
+		opticsZoomInit=0.75;
+		distanceZoomMin=300;
+		distanceZoomMax=300;
+		maxLeadSpeed=23;
+		canLock=0;
+		flash="gunfire";
+		flashSize=0.5;
+		dispersion=0.00029;
+		recoil="assaultRifleBase";
+		recoilProne="assaultRifleBase";
+		ffMagnitude=0.5;
+		ffFrequency=11;
+		ffCount=3;
+		weaponPoolAvailable=1;
+		maxZeroing=1000;
+		class WeaponSlotsInfo
+		{
+			mass=2;
+			class MuzzleSlot: MuzzleSlot
+			{
+			};
+			class CowsSlot: CowsSlot
+			{
+			};
+			class PointerSlot: PointerSlot
+			{
+			};
+			allowedSlots[]={901};
+		};
+		zeroingSound[]=
+		{
+			"A3\Sounds_F\arsenal\sfx\shared\zeroing_knob_tick_metal",
+			0.31622776,
+			1,
+			5
+		};
+	};
+	class RifleCore: Default
+	{
+	};
+	class Default
+	{
+		class Default
+		{
+			hit[]={1};
+			speed[]={1};
+		};
+		class AP
+		{
+			hit[]={1};
+			speed[]={0.89999998,1};
+		};
+		class HE
+		{
+			hit[]={1};
+			speed[]={0.5,1};
+		};
+		class HEAT
+		{
+			hit[]={1};
+			speed[]={0.80000001,1};
+		};
+		class TandemHEAT
+		{
+			hit[]={1};
+			speed[]={0.89999998,1};
+		};
+	};
+
+
+----------NEW WEAP/AMMO CLASS----------
+	class rhs_weap_pkp: rhs_pkp_base
+	{
+		class WeaponSlotsInfo: WeaponSlotsInfo
+		{
+			mass=191.39999;
+		};
+	};
+	class rhs_pkp_base: Rifle_Long_Base_F
+	{
+		magazines[]=
+		{
+			"rhs_100Rnd_762x54mmR",
+			"rhs_100Rnd_762x54mmR_green",
+			"rhs_100Rnd_762x54mmR_7N13",
+			"rhs_100Rnd_762x54mmR_7N26",
+			"rhs_100Rnd_762x54mmR_7BZ3"
+		};
+		cursor="mg";
+		cursorAim="EmptyCursor";
+		nameSound="Mgun";
+		recoil="recoil_zafir";
+		class ItemInfo;  //found empty after stripping
+		class WeaponSlotsInfo: WeaponSlotsInfo;  //found empty after stripping
+		class SAFE: RHS_SAFE_BASE;  //found empty after stripping
+		maxZeroing=1500;
+		class FullAuto: Mode_FullAuto
+		{
+			reloadTime=0.092;
+			dispersion=0.00101;
+			aiBurstTerminable=1;
+		};
+		class Single: Mode_SemiAuto
+		{
+			reloadTime=0.092;
+			dispersion=0.00101;
+			autoFire=0;
+		};
+		rhs_pkas_type="rhs_acc_pkas_pkp";
+		rhs_pso1m2_type="rhs_acc_pso1m2_pkp";
+		rhs_pso1m21_type="rhs_acc_pso1m21_pkp";
+		rhs_pgo7v_type="rhs_acc_pgo7v_pkp";
+		rhs_pgo7v2_type="rhs_acc_pgo7v2_pkp";
+		rhs_pgo7v3_type="rhs_acc_pgo7v3_pkp";
+		rhs_1p29_type="rhs_acc_1p29_pkp";
+	};
+	class Rifle_Long_Base_F: Rifle_Base_F
+	{
+		class WeaponSlotsInfo: WeaponSlotsInfo
+		{
+			allowedSlots[]={};
+		};
+	};
+	class Rifle_Base_F: Rifle
+	{
+		scope=0;
+		discreteDistance[]={100,200,300,400,500,600};
+		discreteDistanceInitIndex=1;
+		weaponInfoType="RscWeaponZeroing";
+		recoil="recoil_default";
+		deployedPivot="bipod";
+		class GunParticles
+		{
+			class FirstEffect
+			{
+				effectName="RifleAssaultCloud";
+				positionName="Usti hlavne";
+				directionName="Konec hlavne";
+			};
+		};
+	};
+	class Rifle: RifleCore
+	{
+		htMin=1;
+		htMax=600;
+		afMax=0;
+		mfMax=0;
+		mFact=1;
+		tBody=100;
+		autoFire=1;
+		reloadAction="ReloadMagazine";
+		soundContinuous=0;
+		optics=0;
+		scope=1;
+		cursor="arifle";
+		cursoraim="CursorAim";
+		value=4;
+		displayName="$STR_DN_RIFLE";
+		nameSound="rifle";
+		reloadTime=0.15000001;
+		modelOptics="-";
+		sound[]={};
+		opticsFlare=0;
+		autoReload=0;
+		aiDispersionCoefX=6;
+		aiDispersionCoefY=6;
+		opticsZoomMin=0.25;
+		opticsZoomMax=1.25;
+		opticsZoomInit=0.75;
+		distanceZoomMin=300;
+		distanceZoomMax=300;
+		maxLeadSpeed=23;
+		canLock=0;
+		flash="gunfire";
+		flashSize=0.5;
+		dispersion=0.00029;
+		recoil="assaultRifleBase";
+		recoilProne="assaultRifleBase";
+		ffMagnitude=0.5;
+		ffFrequency=11;
+		ffCount=3;
+		weaponPoolAvailable=1;
+		maxZeroing=1000;
+		class WeaponSlotsInfo
+		{
+			mass=2;
+			class MuzzleSlot: MuzzleSlot
+			{
+			};
+			class CowsSlot: CowsSlot
+			{
+			};
+			class PointerSlot: PointerSlot
+			{
+			};
+			allowedSlots[]={901};
+		};
+		zeroingSound[]=
+		{
+			"A3\Sounds_F\arsenal\sfx\shared\zeroing_knob_tick_metal",
+			0.31622776,
+			1,
+			5
+		};
+	};
+	class RifleCore: Default
+	{
+	};
+	class Default
+	{
+		class Default
+		{
+			hit[]={1};
+			speed[]={1};
+		};
+		class AP
+		{
+			hit[]={1};
+			speed[]={0.89999998,1};
+		};
+		class HE
+		{
+			hit[]={1};
+			speed[]={0.5,1};
+		};
+		class HEAT
+		{
+			hit[]={1};
+			speed[]={0.80000001,1};
+		};
+		class TandemHEAT
+		{
+			hit[]={1};
+			speed[]={0.89999998,1};
+		};
+	};
+
+
+----------NEW WEAP/AMMO CLASS----------
+	class rhs_weap_m84: Rifle_Long_Base_F
+	{
+		magazines[]=
+		{
+			"rhs_100Rnd_762x54mmR",
+			"rhs_100Rnd_762x54mmR_green",
+			"rhssaf_250Rnd_762x54R",
+			"rhs_100Rnd_762x54mmR_7N13",
+			"rhs_100Rnd_762x54mmR_7N26",
+			"rhs_100Rnd_762x54mmR_7BZ3"
+		};
+		recoil="recoil_zafir";
+		maxZeroing=1500;
+		handanim[]=
+		{
+			"OFP2_ManSkeleton",
+			"\rhssaf\addons\rhssaf_m_weapon_m84\data\anim\m84.rtm"
+		};
+		nameSound="Mgun";
+		cursor="mg";
+		cursorAim="EmptyCursor";
+		class WeaponSlotsInfo: WeaponSlotsInfo
+		{
+			mass=193.60001;
+		};
+		soundBipodDeploy[]=
+		{
+			"A3\Sounds_F_Mark\arsenal\sfx\bipods\Bipod_generic_deploy",
+			0.707946,
+			1,
+			20
+		};
+		soundBipodFold[]=
+		{
+			"A3\Sounds_F_Mark\arsenal\sfx\bipods\Bipod_generic_fold",
+			0.707946,
+			1,
+			20
+		};
+		soundBipodDown[]=
+		{
+			"A3\Sounds_F_Mark\arsenal\sfx\bipods\Bipod_generic_down",
+			0.707946,
+			1,
+			20
+		};
+		soundBipodUp[]=
+		{
+			"A3\Sounds_F_Mark\arsenal\sfx\bipods\Bipod_generic_up",
+			0.707946,
+			1,
+			20
+		};
+		jsrs_soundeffect="JSRS2_Distance_Effects_PK";
+		class FullAuto: Mode_FullAuto
+		{
+			reloadTime=0.085714288;
+			dispersion=0.00086999999;
+			recoil="recoil_auto_mk200";
+			recoilProne="recoil_auto_prone_mk200";
+			class SilencedSound;  //found empty after stripping
+		};
+	};
+	class Rifle_Long_Base_F: Rifle_Base_F
+	{
+		class WeaponSlotsInfo: WeaponSlotsInfo
+		{
+			allowedSlots[]={};
+		};
+	};
+	class Rifle_Base_F: Rifle
+	{
+		scope=0;
+		discreteDistance[]={100,200,300,400,500,600};
+		discreteDistanceInitIndex=1;
+		weaponInfoType="RscWeaponZeroing";
+		recoil="recoil_default";
+		deployedPivot="bipod";
+		class GunParticles
+		{
+			class FirstEffect
+			{
+				effectName="RifleAssaultCloud";
+				positionName="Usti hlavne";
+				directionName="Konec hlavne";
+			};
+		};
+	};
+	class Rifle: RifleCore
+	{
+		htMin=1;
+		htMax=600;
+		afMax=0;
+		mfMax=0;
+		mFact=1;
+		tBody=100;
+		autoFire=1;
+		reloadAction="ReloadMagazine";
+		soundContinuous=0;
+		optics=0;
+		scope=1;
+		cursor="arifle";
+		cursoraim="CursorAim";
+		value=4;
+		displayName="$STR_DN_RIFLE";
+		nameSound="rifle";
+		reloadTime=0.15000001;
+		modelOptics="-";
+		sound[]={};
+		opticsFlare=0;
+		autoReload=0;
+		aiDispersionCoefX=6;
+		aiDispersionCoefY=6;
+		opticsZoomMin=0.25;
+		opticsZoomMax=1.25;
+		opticsZoomInit=0.75;
+		distanceZoomMin=300;
+		distanceZoomMax=300;
+		maxLeadSpeed=23;
+		canLock=0;
+		flash="gunfire";
+		flashSize=0.5;
+		dispersion=0.00029;
+		recoil="assaultRifleBase";
+		recoilProne="assaultRifleBase";
+		ffMagnitude=0.5;
+		ffFrequency=11;
+		ffCount=3;
+		weaponPoolAvailable=1;
+		maxZeroing=1000;
+		class WeaponSlotsInfo
+		{
+			mass=2;
+			class MuzzleSlot: MuzzleSlot
+			{
+			};
+			class CowsSlot: CowsSlot
+			{
+			};
+			class PointerSlot: PointerSlot
+			{
+			};
+			allowedSlots[]={901};
+		};
+		zeroingSound[]=
+		{
+			"A3\Sounds_F\arsenal\sfx\shared\zeroing_knob_tick_metal",
+			0.31622776,
+			1,
+			5
+		};
+	};
+	class RifleCore: Default
+	{
+	};
+	class Default
+	{
+		class Default
+		{
+			hit[]={1};
+			speed[]={1};
+		};
+		class AP
+		{
+			hit[]={1};
+			speed[]={0.89999998,1};
+		};
+		class HE
+		{
+			hit[]={1};
+			speed[]={0.5,1};
+		};
+		class HEAT
+		{
+			hit[]={1};
+			speed[]={0.80000001,1};
+		};
+		class TandemHEAT
+		{
+			hit[]={1};
+			speed[]={0.89999998,1};
+		};
+	};
+
+
+----------NEW WEAP/AMMO CLASS----------
+	class rhs_weap_asval: rhs_weap_ak74m
+	{
+		recoil="rhs_recoil_asval";
+		magazines[]=
+		{
+			"rhs_20rnd_9x39mm_SP5",
+			"rhs_20rnd_9x39mm_SP6",
+			"rhs_10rnd_9x39mm_SP5",
+			"rhs_10rnd_9x39mm_SP6"
+		};
+		maxZeroing=420;
+		fireLightDuration=0;
+		fireLightIntensity=0;
+		initSpeed=-1.0535001;
+		class Single: Single
+		{
+			reloadTime=0.066699997;
+			dispersion=0.00163;
+		};
+		class FullAuto: FullAuto
+		{
+			reloadTime=0.066699997;
+			dispersion=0.00163;
+		};
+		class single_medium_optics1: Single;  //found empty after stripping
+		class single_far_optics2: Single;  //found empty after stripping
+		class fullauto_medium: FullAuto
+		{
+			burst=2;
+			burstRangeMax=5;
+		};
+		class WeaponSlotsInfo: WeaponSlotsInfo
+		{
+			mass=65.120003;
+			class rhs_npz_slot: SlotInfo
+			{
+				compatibleItems[]=
+				{
+					"rhs_acc_npz"
+				};
+			};
+		};
+		rhs_npz="rhs_weap_asval_npz";
+		rhs_fold="rhs_weap_asval_folded";
+		rhs_pkas_type="rhs_acc_pkas_asval";
+		rhs_1p29_type="rhs_acc_1p29_asval";
+		rhs_pso1m2_type="rhs_acc_pso1m2_asval";
+		rhs_pso1m21_type="rhs_acc_pso1m21";
+		rhs_pgo7v_type="rhs_acc_pgo7v_asval";
+		rhs_pgo7v2_type="rhs_acc_pgo7v2_asval";
+		rhs_pgo7v3_type="rhs_acc_pgo7v3_asval";
+	};
+	class rhs_weap_ak74m: rhs_weap_ak74m_Base_F
+	{
+		rhs_pkas_type="rhs_acc_pkas";
+		rhs_1p29_type="rhs_acc_1p29";
+		rhs_pso1m2_type="rhs_acc_pso1m2_ak";
+		rhs_pso1m21_type="rhs_acc_pso1m21_ak";
+		rhs_pgo7v_type="rhs_acc_pgo7v_ak";
+		rhs_pgo7v2_type="rhs_acc_pgo7v2_ak";
+		rhs_pgo7v3_type="rhs_acc_pgo7v3_ak";
+		rhs_fold="rhs_weap_ak74m_folded";
+		rhs_fold_anim="RHS_GestureFoldAK74M";
+		rhs_fold_sound[]=
+		{
+			"rhsafrf\addons\rhs_c_weapons\sounds\stock_folding.wss",
+			1.42,
+			1,
+			20
+		};
+		rhs_npz="rhs_weap_ak74m_npz";
+		class WeaponSlotsInfo: WeaponSlotsInfo
+		{
+			mass=74.800003;
+		};
+		class ItemInfo;  //found empty after stripping
+	};
+	class rhs_weap_ak74m_Base_F: Rifle_Base_F
+	{
+		magazines[]=
+		{
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_plum_AK",
+			"rhs_30Rnd_545x39_7N10_desert_AK",
+			"rhs_30Rnd_545x39_7N10_camo_AK"
+		};
+		recoil="rhs_recoil_ak74m";
+		class WeaponSlotsInfo: WeaponSlotsInfo
+		{
+			class rhs_npz_slot: SlotInfo
+			{
+				compatibleItems[]=
+				{
+					"rhs_acc_npz"
+				};
+			};
+		};
+		class SAFE: RHS_SAFE_BASE;  //found empty after stripping
+		class FOLD: RHS_FOLD_BASE;  //found empty after stripping
+		class Single: Mode_SemiAuto
+		{
+			aiBurstTerminable=1;
+			reloadTime=0.092299998;
+			dispersion=0.00092999998;
+		};
+		class Single_AI: Single
+		{
+			burstRangeMax=3;
+		};
+		class FullAuto: Mode_FullAuto
+		{
+			aiBurstTerminable=1;
+			reloadTime=0.092299998;
+			dispersion=0.00092999998;
+		};
+		class single_medium_optics1: Single;  //found empty after stripping
+		class single_far_optics2: single_medium_optics1;  //found empty after stripping
+		class fullauto_medium: FullAuto
+		{
+			burst=2;
+			burstRangeMax=5;
+		};
+		class GP25Muzzle: GP25_Base;  //found empty after stripping
+	};
+	class Rifle_Base_F: Rifle
+	{
+		scope=0;
+		discreteDistance[]={100,200,300,400,500,600};
+		discreteDistanceInitIndex=1;
+		weaponInfoType="RscWeaponZeroing";
+		recoil="recoil_default";
+		deployedPivot="bipod";
+		class GunParticles
+		{
+			class FirstEffect
+			{
+				effectName="RifleAssaultCloud";
+				positionName="Usti hlavne";
+				directionName="Konec hlavne";
+			};
+		};
+	};
+	class Rifle: RifleCore
+	{
+		htMin=1;
+		htMax=600;
+		afMax=0;
+		mfMax=0;
+		mFact=1;
+		tBody=100;
+		autoFire=1;
+		reloadAction="ReloadMagazine";
+		soundContinuous=0;
+		optics=0;
+		scope=1;
+		cursor="arifle";
+		cursoraim="CursorAim";
+		value=4;
+		displayName="$STR_DN_RIFLE";
+		nameSound="rifle";
+		reloadTime=0.15000001;
+		modelOptics="-";
+		sound[]={};
+		opticsFlare=0;
+		autoReload=0;
+		aiDispersionCoefX=6;
+		aiDispersionCoefY=6;
+		opticsZoomMin=0.25;
+		opticsZoomMax=1.25;
+		opticsZoomInit=0.75;
+		distanceZoomMin=300;
+		distanceZoomMax=300;
+		maxLeadSpeed=23;
+		canLock=0;
+		flash="gunfire";
+		flashSize=0.5;
+		dispersion=0.00029;
+		recoil="assaultRifleBase";
+		recoilProne="assaultRifleBase";
+		ffMagnitude=0.5;
+		ffFrequency=11;
+		ffCount=3;
+		weaponPoolAvailable=1;
+		maxZeroing=1000;
+		class WeaponSlotsInfo
+		{
+			mass=2;
+			class MuzzleSlot: MuzzleSlot
+			{
+			};
+			class CowsSlot: CowsSlot
+			{
+			};
+			class PointerSlot: PointerSlot
+			{
+			};
+			allowedSlots[]={901};
+		};
+		zeroingSound[]=
+		{
+			"A3\Sounds_F\arsenal\sfx\shared\zeroing_knob_tick_metal",
+			0.31622776,
+			1,
+			5
+		};
+	};
+	class RifleCore: Default
+	{
+	};
+	class Default
+	{
+		class Default
+		{
+			hit[]={1};
+			speed[]={1};
+		};
+		class AP
+		{
+			hit[]={1};
+			speed[]={0.89999998,1};
+		};
+		class HE
+		{
+			hit[]={1};
+			speed[]={0.5,1};
+		};
+		class HEAT
+		{
+			hit[]={1};
+			speed[]={0.80000001,1};
+		};
+		class TandemHEAT
+		{
+			hit[]={1};
+			speed[]={0.89999998,1};
+		};
+	};
+
+
+----------NEW WEAP/AMMO CLASS----------
+	class rhs_weap_asval_npz: rhs_weap_asval
+	{
+		class WeaponSlotsInfo: WeaponSlotsInfo
+		{
+			class rhs_npz_slot;  //found empty after stripping
+		};
+		rhs_fold="";
+		rhs_npz="rhs_weap_asval";
+	};
+	class rhs_weap_asval: rhs_weap_ak74m
+	{
+		recoil="rhs_recoil_asval";
+		magazines[]=
+		{
+			"rhs_20rnd_9x39mm_SP5",
+			"rhs_20rnd_9x39mm_SP6",
+			"rhs_10rnd_9x39mm_SP5",
+			"rhs_10rnd_9x39mm_SP6"
+		};
+		maxZeroing=420;
+		fireLightDuration=0;
+		fireLightIntensity=0;
+		initSpeed=-1.0535001;
+		class Single: Single
+		{
+			reloadTime=0.066699997;
+			dispersion=0.00163;
+		};
+		class FullAuto: FullAuto
+		{
+			reloadTime=0.066699997;
+			dispersion=0.00163;
+		};
+		class single_medium_optics1: Single;  //found empty after stripping
+		class single_far_optics2: Single;  //found empty after stripping
+		class fullauto_medium: FullAuto
+		{
+			burst=2;
+			burstRangeMax=5;
+		};
+		class WeaponSlotsInfo: WeaponSlotsInfo
+		{
+			mass=65.120003;
+			class rhs_npz_slot: SlotInfo
+			{
+				compatibleItems[]=
+				{
+					"rhs_acc_npz"
+				};
+			};
+		};
+		rhs_npz="rhs_weap_asval_npz";
+		rhs_fold="rhs_weap_asval_folded";
+		rhs_pkas_type="rhs_acc_pkas_asval";
+		rhs_1p29_type="rhs_acc_1p29_asval";
+		rhs_pso1m2_type="rhs_acc_pso1m2_asval";
+		rhs_pso1m21_type="rhs_acc_pso1m21";
+		rhs_pgo7v_type="rhs_acc_pgo7v_asval";
+		rhs_pgo7v2_type="rhs_acc_pgo7v2_asval";
+		rhs_pgo7v3_type="rhs_acc_pgo7v3_asval";
+	};
+	class rhs_weap_ak74m: rhs_weap_ak74m_Base_F
+	{
+		rhs_pkas_type="rhs_acc_pkas";
+		rhs_1p29_type="rhs_acc_1p29";
+		rhs_pso1m2_type="rhs_acc_pso1m2_ak";
+		rhs_pso1m21_type="rhs_acc_pso1m21_ak";
+		rhs_pgo7v_type="rhs_acc_pgo7v_ak";
+		rhs_pgo7v2_type="rhs_acc_pgo7v2_ak";
+		rhs_pgo7v3_type="rhs_acc_pgo7v3_ak";
+		rhs_fold="rhs_weap_ak74m_folded";
+		rhs_fold_anim="RHS_GestureFoldAK74M";
+		rhs_fold_sound[]=
+		{
+			"rhsafrf\addons\rhs_c_weapons\sounds\stock_folding.wss",
+			1.42,
+			1,
+			20
+		};
+		rhs_npz="rhs_weap_ak74m_npz";
+		class WeaponSlotsInfo: WeaponSlotsInfo
+		{
+			mass=74.800003;
+		};
+		class ItemInfo;  //found empty after stripping
+	};
+	class rhs_weap_ak74m_Base_F: Rifle_Base_F
+	{
+		magazines[]=
+		{
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_plum_AK",
+			"rhs_30Rnd_545x39_7N10_desert_AK",
+			"rhs_30Rnd_545x39_7N10_camo_AK"
+		};
+		recoil="rhs_recoil_ak74m";
+		class WeaponSlotsInfo: WeaponSlotsInfo
+		{
+			class rhs_npz_slot: SlotInfo
+			{
+				compatibleItems[]=
+				{
+					"rhs_acc_npz"
+				};
+			};
+		};
+		class SAFE: RHS_SAFE_BASE;  //found empty after stripping
+		class FOLD: RHS_FOLD_BASE;  //found empty after stripping
+		class Single: Mode_SemiAuto
+		{
+			aiBurstTerminable=1;
+			reloadTime=0.092299998;
+			dispersion=0.00092999998;
+		};
+		class Single_AI: Single
+		{
+			burstRangeMax=3;
+		};
+		class FullAuto: Mode_FullAuto
+		{
+			aiBurstTerminable=1;
+			reloadTime=0.092299998;
+			dispersion=0.00092999998;
+		};
+		class single_medium_optics1: Single;  //found empty after stripping
+		class single_far_optics2: single_medium_optics1;  //found empty after stripping
+		class fullauto_medium: FullAuto
+		{
+			burst=2;
+			burstRangeMax=5;
+		};
+		class GP25Muzzle: GP25_Base;  //found empty after stripping
+	};
+	class Rifle_Base_F: Rifle
+	{
+		scope=0;
+		discreteDistance[]={100,200,300,400,500,600};
+		discreteDistanceInitIndex=1;
+		weaponInfoType="RscWeaponZeroing";
+		recoil="recoil_default";
+		deployedPivot="bipod";
+		class GunParticles
+		{
+			class FirstEffect
+			{
+				effectName="RifleAssaultCloud";
+				positionName="Usti hlavne";
+				directionName="Konec hlavne";
+			};
+		};
+	};
+	class Rifle: RifleCore
+	{
+		htMin=1;
+		htMax=600;
+		afMax=0;
+		mfMax=0;
+		mFact=1;
+		tBody=100;
+		autoFire=1;
+		reloadAction="ReloadMagazine";
+		soundContinuous=0;
+		optics=0;
+		scope=1;
+		cursor="arifle";
+		cursoraim="CursorAim";
+		value=4;
+		displayName="$STR_DN_RIFLE";
+		nameSound="rifle";
+		reloadTime=0.15000001;
+		modelOptics="-";
+		sound[]={};
+		opticsFlare=0;
+		autoReload=0;
+		aiDispersionCoefX=6;
+		aiDispersionCoefY=6;
+		opticsZoomMin=0.25;
+		opticsZoomMax=1.25;
+		opticsZoomInit=0.75;
+		distanceZoomMin=300;
+		distanceZoomMax=300;
+		maxLeadSpeed=23;
+		canLock=0;
+		flash="gunfire";
+		flashSize=0.5;
+		dispersion=0.00029;
+		recoil="assaultRifleBase";
+		recoilProne="assaultRifleBase";
+		ffMagnitude=0.5;
+		ffFrequency=11;
+		ffCount=3;
+		weaponPoolAvailable=1;
+		maxZeroing=1000;
+		class WeaponSlotsInfo
+		{
+			mass=2;
+			class MuzzleSlot: MuzzleSlot
+			{
+			};
+			class CowsSlot: CowsSlot
+			{
+			};
+			class PointerSlot: PointerSlot
+			{
+			};
+			allowedSlots[]={901};
+		};
+		zeroingSound[]=
+		{
+			"A3\Sounds_F\arsenal\sfx\shared\zeroing_knob_tick_metal",
+			0.31622776,
+			1,
+			5
+		};
+	};
+	class RifleCore: Default
+	{
+	};
+	class Default
+	{
+		class Default
+		{
+			hit[]={1};
+			speed[]={1};
+		};
+		class AP
+		{
+			hit[]={1};
+			speed[]={0.89999998,1};
+		};
+		class HE
+		{
+			hit[]={1};
+			speed[]={0.5,1};
+		};
+		class HEAT
+		{
+			hit[]={1};
+			speed[]={0.80000001,1};
+		};
+		class TandemHEAT
+		{
+			hit[]={1};
+			speed[]={0.89999998,1};
+		};
+	};
+
+
+----------NEW WEAP/AMMO CLASS----------
+	class rhs_weap_dsr1: rhs_weap_XM2010_Base_F
+	{
+		magazines[]=
+		{
+			"rhsusf_5Rnd_762x51_m118_special_Mag",
+			"rhsusf_5Rnd_762x51_m993_Mag",
+			"rhsusf_5Rnd_762x51_m62_Mag"
+		};
+		initSpeed=-0.95999998;
+		class WeaponSlotsInfo
+		{
+			class rhs_mtz_slot;  //found empty after stripping
+			mass=129.8;
+		};
+		class ItemInfo;  //found empty after stripping
+	};
+	class rhs_weap_XM2010_Base_F: Rifle_Base_F
+	{
+		magazines[]=
+		{
+			"rhsusf_5Rnd_300winmag_xm2010"
+		};
+		recoil="recoil_gm6";
+		maxZeroing=1500;
+		class WeaponSlotsInfo: WeaponSlotsInfo;  //found empty after stripping
+		class Single: Mode_SemiAuto
+		{
+			reloadTime=1.6;
+			dispersion=0.0002909;
+		};
+		class SAFE: RHSUSF_SAFE_BASE;  //found empty after stripping
+		class Eventhandlers: Eventhandlers
+		{
+			class RHS_BoltAction
+			{
+				fired="[_this # 0,_this # 1,_this # 1,_this # 4] call rhs_fnc_boltAction;";
+			};
+		};
+		rhs_boltActionSound[]=
+		{
+			"rhsusf\addons\rhsusf_sounds\m2010\bolt.wss",
+			1.42,
+			1,
+			20
+		};
+		rhs_boltActionAnim="RHS_GestureRechamberM2010";
+		rhs_boltActionCasePos[]={-0.02,-0.15000001,0.0099999998};
+		rhs_boltActionCaseDir[]={0.30000001,-0.15000001,0.25};
+		rhs_boltActionCaseDelay=0.25;
+		rhs_boltActionCaseSelection="leftHand";
+	};
+	class Rifle_Base_F: Rifle
+	{
+		scope=0;
+		discreteDistance[]={100,200,300,400,500,600};
+		discreteDistanceInitIndex=1;
+		weaponInfoType="RscWeaponZeroing";
+		recoil="recoil_default";
+		deployedPivot="bipod";
+		class GunParticles
+		{
+			class FirstEffect
+			{
+				effectName="RifleAssaultCloud";
+				positionName="Usti hlavne";
+				directionName="Konec hlavne";
+			};
+		};
+	};
+	class Rifle: RifleCore
+	{
+		htMin=1;
+		htMax=600;
+		afMax=0;
+		mfMax=0;
+		mFact=1;
+		tBody=100;
+		autoFire=1;
+		reloadAction="ReloadMagazine";
+		soundContinuous=0;
+		optics=0;
+		scope=1;
+		cursor="arifle";
+		cursoraim="CursorAim";
+		value=4;
+		displayName="$STR_DN_RIFLE";
+		nameSound="rifle";
+		reloadTime=0.15000001;
+		modelOptics="-";
+		sound[]={};
+		opticsFlare=0;
+		autoReload=0;
+		aiDispersionCoefX=6;
+		aiDispersionCoefY=6;
+		opticsZoomMin=0.25;
+		opticsZoomMax=1.25;
+		opticsZoomInit=0.75;
+		distanceZoomMin=300;
+		distanceZoomMax=300;
+		maxLeadSpeed=23;
+		canLock=0;
+		flash="gunfire";
+		flashSize=0.5;
+		dispersion=0.00029;
+		recoil="assaultRifleBase";
+		recoilProne="assaultRifleBase";
+		ffMagnitude=0.5;
+		ffFrequency=11;
+		ffCount=3;
+		weaponPoolAvailable=1;
+		maxZeroing=1000;
+		class WeaponSlotsInfo
+		{
+			mass=2;
+			class MuzzleSlot: MuzzleSlot
+			{
+			};
+			class CowsSlot: CowsSlot
+			{
+			};
+			class PointerSlot: PointerSlot
+			{
+			};
+			allowedSlots[]={901};
+		};
+		zeroingSound[]=
+		{
+			"A3\Sounds_F\arsenal\sfx\shared\zeroing_knob_tick_metal",
+			0.31622776,
+			1,
+			5
+		};
+	};
+	class RifleCore: Default
+	{
+	};
+	class Default
+	{
+		class Default
+		{
+			hit[]={1};
+			speed[]={1};
+		};
+		class AP
+		{
+			hit[]={1};
+			speed[]={0.89999998,1};
+		};
+		class HE
+		{
+			hit[]={1};
+			speed[]={0.5,1};
+		};
+		class HEAT
+		{
+			hit[]={1};
+			speed[]={0.80000001,1};
+		};
+		class TandemHEAT
+		{
+			hit[]={1};
+			speed[]={0.89999998,1};
+		};
+	};
+
+
+----------NEW WEAP/AMMO CLASS----------
+	class rhs_weap_ak74mr: rhs_weap_ak74m
+	{
+		class WeaponSlotsInfo
+		{
+			mass=74.800003;
+			class GripodSlot: rhs_russian_rifle_gripod_slot;  //found empty after stripping
+			class AuxPointerSlot: rhs_russian_aux_barrel_slot;  //found empty after stripping
+		};
+		rhs_fold="rhs_weap_ak74mr_folded";
+		rhs_fold_checkOptic=0;
+		rhs_npz="";
+		rhsusf_acc_anpeq15=0;
+		rhsusf_acc_t1=0;
+	};
+	class rhs_weap_ak74m: rhs_weap_ak74m_Base_F
+	{
+		rhs_pkas_type="rhs_acc_pkas";
+		rhs_1p29_type="rhs_acc_1p29";
+		rhs_pso1m2_type="rhs_acc_pso1m2_ak";
+		rhs_pso1m21_type="rhs_acc_pso1m21_ak";
+		rhs_pgo7v_type="rhs_acc_pgo7v_ak";
+		rhs_pgo7v2_type="rhs_acc_pgo7v2_ak";
+		rhs_pgo7v3_type="rhs_acc_pgo7v3_ak";
+		rhs_fold="rhs_weap_ak74m_folded";
+		rhs_fold_anim="RHS_GestureFoldAK74M";
+		rhs_fold_sound[]=
+		{
+			"rhsafrf\addons\rhs_c_weapons\sounds\stock_folding.wss",
+			1.42,
+			1,
+			20
+		};
+		rhs_npz="rhs_weap_ak74m_npz";
+		class WeaponSlotsInfo: WeaponSlotsInfo
+		{
+			mass=74.800003;
+		};
+		class ItemInfo;  //found empty after stripping
+	};
+	class rhs_weap_ak74m_Base_F: Rifle_Base_F
+	{
+		magazines[]=
+		{
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_plum_AK",
+			"rhs_30Rnd_545x39_7N10_desert_AK",
+			"rhs_30Rnd_545x39_7N10_camo_AK"
+		};
+		recoil="rhs_recoil_ak74m";
+		class WeaponSlotsInfo: WeaponSlotsInfo
+		{
+			class rhs_npz_slot: SlotInfo
+			{
+				compatibleItems[]=
+				{
+					"rhs_acc_npz"
+				};
+			};
+		};
+		class SAFE: RHS_SAFE_BASE;  //found empty after stripping
+		class FOLD: RHS_FOLD_BASE;  //found empty after stripping
+		class Single: Mode_SemiAuto
+		{
+			aiBurstTerminable=1;
+			reloadTime=0.092299998;
+			dispersion=0.00092999998;
+		};
+		class Single_AI: Single
+		{
+			burstRangeMax=3;
+		};
+		class FullAuto: Mode_FullAuto
+		{
+			aiBurstTerminable=1;
+			reloadTime=0.092299998;
+			dispersion=0.00092999998;
+		};
+		class single_medium_optics1: Single;  //found empty after stripping
+		class single_far_optics2: single_medium_optics1;  //found empty after stripping
+		class fullauto_medium: FullAuto
+		{
+			burst=2;
+			burstRangeMax=5;
+		};
+		class GP25Muzzle: GP25_Base;  //found empty after stripping
+	};
+	class Rifle_Base_F: Rifle
+	{
+		scope=0;
+		discreteDistance[]={100,200,300,400,500,600};
+		discreteDistanceInitIndex=1;
+		weaponInfoType="RscWeaponZeroing";
+		recoil="recoil_default";
+		deployedPivot="bipod";
+		class GunParticles
+		{
+			class FirstEffect
+			{
+				effectName="RifleAssaultCloud";
+				positionName="Usti hlavne";
+				directionName="Konec hlavne";
+			};
+		};
+	};
+	class Rifle: RifleCore
+	{
+		htMin=1;
+		htMax=600;
+		afMax=0;
+		mfMax=0;
+		mFact=1;
+		tBody=100;
+		autoFire=1;
+		reloadAction="ReloadMagazine";
+		soundContinuous=0;
+		optics=0;
+		scope=1;
+		cursor="arifle";
+		cursoraim="CursorAim";
+		value=4;
+		displayName="$STR_DN_RIFLE";
+		nameSound="rifle";
+		reloadTime=0.15000001;
+		modelOptics="-";
+		sound[]={};
+		opticsFlare=0;
+		autoReload=0;
+		aiDispersionCoefX=6;
+		aiDispersionCoefY=6;
+		opticsZoomMin=0.25;
+		opticsZoomMax=1.25;
+		opticsZoomInit=0.75;
+		distanceZoomMin=300;
+		distanceZoomMax=300;
+		maxLeadSpeed=23;
+		canLock=0;
+		flash="gunfire";
+		flashSize=0.5;
+		dispersion=0.00029;
+		recoil="assaultRifleBase";
+		recoilProne="assaultRifleBase";
+		ffMagnitude=0.5;
+		ffFrequency=11;
+		ffCount=3;
+		weaponPoolAvailable=1;
+		maxZeroing=1000;
+		class WeaponSlotsInfo
+		{
+			mass=2;
+			class MuzzleSlot: MuzzleSlot
+			{
+			};
+			class CowsSlot: CowsSlot
+			{
+			};
+			class PointerSlot: PointerSlot
+			{
+			};
+			allowedSlots[]={901};
+		};
+		zeroingSound[]=
+		{
+			"A3\Sounds_F\arsenal\sfx\shared\zeroing_knob_tick_metal",
+			0.31622776,
+			1,
+			5
+		};
+	};
+	class RifleCore: Default
+	{
+	};
+	class Default
+	{
+		class Default
+		{
+			hit[]={1};
+			speed[]={1};
+		};
+		class AP
+		{
+			hit[]={1};
+			speed[]={0.89999998,1};
+		};
+		class HE
+		{
+			hit[]={1};
+			speed[]={0.5,1};
+		};
+		class HEAT
+		{
+			hit[]={1};
+			speed[]={0.80000001,1};
+		};
+		class TandemHEAT
+		{
+			hit[]={1};
+			speed[]={0.89999998,1};
+		};
+	};
+
+
+----------NEW WEAP/AMMO CLASS----------
+	class rhs_weap_ak74m: rhs_weap_ak74m_Base_F
+	{
+		rhs_pkas_type="rhs_acc_pkas";
+		rhs_1p29_type="rhs_acc_1p29";
+		rhs_pso1m2_type="rhs_acc_pso1m2_ak";
+		rhs_pso1m21_type="rhs_acc_pso1m21_ak";
+		rhs_pgo7v_type="rhs_acc_pgo7v_ak";
+		rhs_pgo7v2_type="rhs_acc_pgo7v2_ak";
+		rhs_pgo7v3_type="rhs_acc_pgo7v3_ak";
+		rhs_fold="rhs_weap_ak74m_folded";
+		rhs_fold_anim="RHS_GestureFoldAK74M";
+		rhs_fold_sound[]=
+		{
+			"rhsafrf\addons\rhs_c_weapons\sounds\stock_folding.wss",
+			1.42,
+			1,
+			20
+		};
+		rhs_npz="rhs_weap_ak74m_npz";
+		class WeaponSlotsInfo: WeaponSlotsInfo
+		{
+			mass=74.800003;
+		};
+		class ItemInfo;  //found empty after stripping
+	};
+	class rhs_weap_ak74m_Base_F: Rifle_Base_F
+	{
+		magazines[]=
+		{
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_plum_AK",
+			"rhs_30Rnd_545x39_7N10_desert_AK",
+			"rhs_30Rnd_545x39_7N10_camo_AK"
+		};
+		recoil="rhs_recoil_ak74m";
+		class WeaponSlotsInfo: WeaponSlotsInfo
+		{
+			class rhs_npz_slot: SlotInfo
+			{
+				compatibleItems[]=
+				{
+					"rhs_acc_npz"
+				};
+			};
+		};
+		class SAFE: RHS_SAFE_BASE;  //found empty after stripping
+		class FOLD: RHS_FOLD_BASE;  //found empty after stripping
+		class Single: Mode_SemiAuto
+		{
+			aiBurstTerminable=1;
+			reloadTime=0.092299998;
+			dispersion=0.00092999998;
+		};
+		class Single_AI: Single
+		{
+			burstRangeMax=3;
+		};
+		class FullAuto: Mode_FullAuto
+		{
+			aiBurstTerminable=1;
+			reloadTime=0.092299998;
+			dispersion=0.00092999998;
+		};
+		class single_medium_optics1: Single;  //found empty after stripping
+		class single_far_optics2: single_medium_optics1;  //found empty after stripping
+		class fullauto_medium: FullAuto
+		{
+			burst=2;
+			burstRangeMax=5;
+		};
+		class GP25Muzzle: GP25_Base;  //found empty after stripping
+	};
+	class Rifle_Base_F: Rifle
+	{
+		scope=0;
+		discreteDistance[]={100,200,300,400,500,600};
+		discreteDistanceInitIndex=1;
+		weaponInfoType="RscWeaponZeroing";
+		recoil="recoil_default";
+		deployedPivot="bipod";
+		class GunParticles
+		{
+			class FirstEffect
+			{
+				effectName="RifleAssaultCloud";
+				positionName="Usti hlavne";
+				directionName="Konec hlavne";
+			};
+		};
+	};
+	class Rifle: RifleCore
+	{
+		htMin=1;
+		htMax=600;
+		afMax=0;
+		mfMax=0;
+		mFact=1;
+		tBody=100;
+		autoFire=1;
+		reloadAction="ReloadMagazine";
+		soundContinuous=0;
+		optics=0;
+		scope=1;
+		cursor="arifle";
+		cursoraim="CursorAim";
+		value=4;
+		displayName="$STR_DN_RIFLE";
+		nameSound="rifle";
+		reloadTime=0.15000001;
+		modelOptics="-";
+		sound[]={};
+		opticsFlare=0;
+		autoReload=0;
+		aiDispersionCoefX=6;
+		aiDispersionCoefY=6;
+		opticsZoomMin=0.25;
+		opticsZoomMax=1.25;
+		opticsZoomInit=0.75;
+		distanceZoomMin=300;
+		distanceZoomMax=300;
+		maxLeadSpeed=23;
+		canLock=0;
+		flash="gunfire";
+		flashSize=0.5;
+		dispersion=0.00029;
+		recoil="assaultRifleBase";
+		recoilProne="assaultRifleBase";
+		ffMagnitude=0.5;
+		ffFrequency=11;
+		ffCount=3;
+		weaponPoolAvailable=1;
+		maxZeroing=1000;
+		class WeaponSlotsInfo
+		{
+			mass=2;
+			class MuzzleSlot: MuzzleSlot
+			{
+			};
+			class CowsSlot: CowsSlot
+			{
+			};
+			class PointerSlot: PointerSlot
+			{
+			};
+			allowedSlots[]={901};
+		};
+		zeroingSound[]=
+		{
+			"A3\Sounds_F\arsenal\sfx\shared\zeroing_knob_tick_metal",
+			0.31622776,
+			1,
+			5
+		};
+	};
+	class RifleCore: Default
+	{
+	};
+	class Default
+	{
+		class Default
+		{
+			hit[]={1};
+			speed[]={1};
+		};
+		class AP
+		{
+			hit[]={1};
+			speed[]={0.89999998,1};
+		};
+		class HE
+		{
+			hit[]={1};
+			speed[]={0.5,1};
+		};
+		class HEAT
+		{
+			hit[]={1};
+			speed[]={0.80000001,1};
+		};
+		class TandemHEAT
+		{
+			hit[]={1};
+			speed[]={0.89999998,1};
+		};
+	};
+
+
+----------NEW WEAP/AMMO CLASS----------
+	class rhs_weap_vss: rhs_weap_asval
+	{
+		fireLightDuration=0;
+		fireLightIntensity=0;
+		initSpeed=-1.0535001;
+		magazines[]=
+		{
+			"rhs_10rnd_9x39mm_SP5",
+			"rhs_10rnd_9x39mm_SP6",
+			"rhs_20rnd_9x39mm_SP5",
+			"rhs_20rnd_9x39mm_SP6"
+		};
+		class Single: Single
+		{
+			reloadTime=0.1;
+			dispersion=0.0014299999;
+		};
+		class FullAuto: FullAuto
+		{
+			reloadTime=0.1;
+			dispersion=0.0014299999;
+		};
+		class WeaponSlotsInfo: WeaponSlotsInfo
+		{
+			mass=57.200001;
+			class rhs_npz_slot: SlotInfo
+			{
+				compatibleItems[]=
+				{
+					"rhs_acc_npz"
+				};
+			};
+		};
+		rhs_fold="";
+		rhs_npz="rhs_weap_vss_npz";
+	};
+	class rhs_weap_asval: rhs_weap_ak74m
+	{
+		recoil="rhs_recoil_asval";
+		magazines[]=
+		{
+			"rhs_20rnd_9x39mm_SP5",
+			"rhs_20rnd_9x39mm_SP6",
+			"rhs_10rnd_9x39mm_SP5",
+			"rhs_10rnd_9x39mm_SP6"
+		};
+		maxZeroing=420;
+		fireLightDuration=0;
+		fireLightIntensity=0;
+		initSpeed=-1.0535001;
+		class Single: Single
+		{
+			reloadTime=0.066699997;
+			dispersion=0.00163;
+		};
+		class FullAuto: FullAuto
+		{
+			reloadTime=0.066699997;
+			dispersion=0.00163;
+		};
+		class single_medium_optics1: Single;  //found empty after stripping
+		class single_far_optics2: Single;  //found empty after stripping
+		class fullauto_medium: FullAuto
+		{
+			burst=2;
+			burstRangeMax=5;
+		};
+		class WeaponSlotsInfo: WeaponSlotsInfo
+		{
+			mass=65.120003;
+			class rhs_npz_slot: SlotInfo
+			{
+				compatibleItems[]=
+				{
+					"rhs_acc_npz"
+				};
+			};
+		};
+		rhs_npz="rhs_weap_asval_npz";
+		rhs_fold="rhs_weap_asval_folded";
+		rhs_pkas_type="rhs_acc_pkas_asval";
+		rhs_1p29_type="rhs_acc_1p29_asval";
+		rhs_pso1m2_type="rhs_acc_pso1m2_asval";
+		rhs_pso1m21_type="rhs_acc_pso1m21";
+		rhs_pgo7v_type="rhs_acc_pgo7v_asval";
+		rhs_pgo7v2_type="rhs_acc_pgo7v2_asval";
+		rhs_pgo7v3_type="rhs_acc_pgo7v3_asval";
+	};
+	class rhs_weap_ak74m: rhs_weap_ak74m_Base_F
+	{
+		rhs_pkas_type="rhs_acc_pkas";
+		rhs_1p29_type="rhs_acc_1p29";
+		rhs_pso1m2_type="rhs_acc_pso1m2_ak";
+		rhs_pso1m21_type="rhs_acc_pso1m21_ak";
+		rhs_pgo7v_type="rhs_acc_pgo7v_ak";
+		rhs_pgo7v2_type="rhs_acc_pgo7v2_ak";
+		rhs_pgo7v3_type="rhs_acc_pgo7v3_ak";
+		rhs_fold="rhs_weap_ak74m_folded";
+		rhs_fold_anim="RHS_GestureFoldAK74M";
+		rhs_fold_sound[]=
+		{
+			"rhsafrf\addons\rhs_c_weapons\sounds\stock_folding.wss",
+			1.42,
+			1,
+			20
+		};
+		rhs_npz="rhs_weap_ak74m_npz";
+		class WeaponSlotsInfo: WeaponSlotsInfo
+		{
+			mass=74.800003;
+		};
+		class ItemInfo;  //found empty after stripping
+	};
+	class rhs_weap_ak74m_Base_F: Rifle_Base_F
+	{
+		magazines[]=
+		{
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_plum_AK",
+			"rhs_30Rnd_545x39_7N10_desert_AK",
+			"rhs_30Rnd_545x39_7N10_camo_AK"
+		};
+		recoil="rhs_recoil_ak74m";
+		class WeaponSlotsInfo: WeaponSlotsInfo
+		{
+			class rhs_npz_slot: SlotInfo
+			{
+				compatibleItems[]=
+				{
+					"rhs_acc_npz"
+				};
+			};
+		};
+		class SAFE: RHS_SAFE_BASE;  //found empty after stripping
+		class FOLD: RHS_FOLD_BASE;  //found empty after stripping
+		class Single: Mode_SemiAuto
+		{
+			aiBurstTerminable=1;
+			reloadTime=0.092299998;
+			dispersion=0.00092999998;
+		};
+		class Single_AI: Single
+		{
+			burstRangeMax=3;
+		};
+		class FullAuto: Mode_FullAuto
+		{
+			aiBurstTerminable=1;
+			reloadTime=0.092299998;
+			dispersion=0.00092999998;
+		};
+		class single_medium_optics1: Single;  //found empty after stripping
+		class single_far_optics2: single_medium_optics1;  //found empty after stripping
+		class fullauto_medium: FullAuto
+		{
+			burst=2;
+			burstRangeMax=5;
+		};
+		class GP25Muzzle: GP25_Base;  //found empty after stripping
+	};
+	class Rifle_Base_F: Rifle
+	{
+		scope=0;
+		discreteDistance[]={100,200,300,400,500,600};
+		discreteDistanceInitIndex=1;
+		weaponInfoType="RscWeaponZeroing";
+		recoil="recoil_default";
+		deployedPivot="bipod";
+		class GunParticles
+		{
+			class FirstEffect
+			{
+				effectName="RifleAssaultCloud";
+				positionName="Usti hlavne";
+				directionName="Konec hlavne";
+			};
+		};
+	};
+	class Rifle: RifleCore
+	{
+		htMin=1;
+		htMax=600;
+		afMax=0;
+		mfMax=0;
+		mFact=1;
+		tBody=100;
+		autoFire=1;
+		reloadAction="ReloadMagazine";
+		soundContinuous=0;
+		optics=0;
+		scope=1;
+		cursor="arifle";
+		cursoraim="CursorAim";
+		value=4;
+		displayName="$STR_DN_RIFLE";
+		nameSound="rifle";
+		reloadTime=0.15000001;
+		modelOptics="-";
+		sound[]={};
+		opticsFlare=0;
+		autoReload=0;
+		aiDispersionCoefX=6;
+		aiDispersionCoefY=6;
+		opticsZoomMin=0.25;
+		opticsZoomMax=1.25;
+		opticsZoomInit=0.75;
+		distanceZoomMin=300;
+		distanceZoomMax=300;
+		maxLeadSpeed=23;
+		canLock=0;
+		flash="gunfire";
+		flashSize=0.5;
+		dispersion=0.00029;
+		recoil="assaultRifleBase";
+		recoilProne="assaultRifleBase";
+		ffMagnitude=0.5;
+		ffFrequency=11;
+		ffCount=3;
+		weaponPoolAvailable=1;
+		maxZeroing=1000;
+		class WeaponSlotsInfo
+		{
+			mass=2;
+			class MuzzleSlot: MuzzleSlot
+			{
+			};
+			class CowsSlot: CowsSlot
+			{
+			};
+			class PointerSlot: PointerSlot
+			{
+			};
+			allowedSlots[]={901};
+		};
+		zeroingSound[]=
+		{
+			"A3\Sounds_F\arsenal\sfx\shared\zeroing_knob_tick_metal",
+			0.31622776,
+			1,
+			5
+		};
+	};
+	class RifleCore: Default
+	{
+	};
+	class Default
+	{
+		class Default
+		{
+			hit[]={1};
+			speed[]={1};
+		};
+		class AP
+		{
+			hit[]={1};
+			speed[]={0.89999998,1};
+		};
+		class HE
+		{
+			hit[]={1};
+			speed[]={0.5,1};
+		};
+		class HEAT
+		{
+			hit[]={1};
+			speed[]={0.80000001,1};
+		};
+		class TandemHEAT
+		{
+			hit[]={1};
+			speed[]={0.89999998,1};
+		};
+	};
+
+
+----------NEW WEAP/AMMO CLASS----------
+	class rhs_weap_vss_npz: rhs_weap_vss
+	{
+		class WeaponSlotsInfo: WeaponSlotsInfo
+		{
+			class rhs_npz_slot;  //found empty after stripping
+		};
+		rhs_npz="rhs_weap_vss";
+	};
+	class rhs_weap_vss: rhs_weap_asval
+	{
+		fireLightDuration=0;
+		fireLightIntensity=0;
+		initSpeed=-1.0535001;
+		magazines[]=
+		{
+			"rhs_10rnd_9x39mm_SP5",
+			"rhs_10rnd_9x39mm_SP6",
+			"rhs_20rnd_9x39mm_SP5",
+			"rhs_20rnd_9x39mm_SP6"
+		};
+		class Single: Single
+		{
+			reloadTime=0.1;
+			dispersion=0.0014299999;
+		};
+		class FullAuto: FullAuto
+		{
+			reloadTime=0.1;
+			dispersion=0.0014299999;
+		};
+		class WeaponSlotsInfo: WeaponSlotsInfo
+		{
+			mass=57.200001;
+			class rhs_npz_slot: SlotInfo
+			{
+				compatibleItems[]=
+				{
+					"rhs_acc_npz"
+				};
+			};
+		};
+		rhs_fold="";
+		rhs_npz="rhs_weap_vss_npz";
+	};
+	class rhs_weap_asval: rhs_weap_ak74m
+	{
+		recoil="rhs_recoil_asval";
+		magazines[]=
+		{
+			"rhs_20rnd_9x39mm_SP5",
+			"rhs_20rnd_9x39mm_SP6",
+			"rhs_10rnd_9x39mm_SP5",
+			"rhs_10rnd_9x39mm_SP6"
+		};
+		maxZeroing=420;
+		fireLightDuration=0;
+		fireLightIntensity=0;
+		initSpeed=-1.0535001;
+		class Single: Single
+		{
+			reloadTime=0.066699997;
+			dispersion=0.00163;
+		};
+		class FullAuto: FullAuto
+		{
+			reloadTime=0.066699997;
+			dispersion=0.00163;
+		};
+		class single_medium_optics1: Single;  //found empty after stripping
+		class single_far_optics2: Single;  //found empty after stripping
+		class fullauto_medium: FullAuto
+		{
+			burst=2;
+			burstRangeMax=5;
+		};
+		class WeaponSlotsInfo: WeaponSlotsInfo
+		{
+			mass=65.120003;
+			class rhs_npz_slot: SlotInfo
+			{
+				compatibleItems[]=
+				{
+					"rhs_acc_npz"
+				};
+			};
+		};
+		rhs_npz="rhs_weap_asval_npz";
+		rhs_fold="rhs_weap_asval_folded";
+		rhs_pkas_type="rhs_acc_pkas_asval";
+		rhs_1p29_type="rhs_acc_1p29_asval";
+		rhs_pso1m2_type="rhs_acc_pso1m2_asval";
+		rhs_pso1m21_type="rhs_acc_pso1m21";
+		rhs_pgo7v_type="rhs_acc_pgo7v_asval";
+		rhs_pgo7v2_type="rhs_acc_pgo7v2_asval";
+		rhs_pgo7v3_type="rhs_acc_pgo7v3_asval";
+	};
+	class rhs_weap_ak74m: rhs_weap_ak74m_Base_F
+	{
+		rhs_pkas_type="rhs_acc_pkas";
+		rhs_1p29_type="rhs_acc_1p29";
+		rhs_pso1m2_type="rhs_acc_pso1m2_ak";
+		rhs_pso1m21_type="rhs_acc_pso1m21_ak";
+		rhs_pgo7v_type="rhs_acc_pgo7v_ak";
+		rhs_pgo7v2_type="rhs_acc_pgo7v2_ak";
+		rhs_pgo7v3_type="rhs_acc_pgo7v3_ak";
+		rhs_fold="rhs_weap_ak74m_folded";
+		rhs_fold_anim="RHS_GestureFoldAK74M";
+		rhs_fold_sound[]=
+		{
+			"rhsafrf\addons\rhs_c_weapons\sounds\stock_folding.wss",
+			1.42,
+			1,
+			20
+		};
+		rhs_npz="rhs_weap_ak74m_npz";
+		class WeaponSlotsInfo: WeaponSlotsInfo
+		{
+			mass=74.800003;
+		};
+		class ItemInfo;  //found empty after stripping
+	};
+	class rhs_weap_ak74m_Base_F: Rifle_Base_F
+	{
+		magazines[]=
+		{
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_plum_AK",
+			"rhs_30Rnd_545x39_7N10_desert_AK",
+			"rhs_30Rnd_545x39_7N10_camo_AK"
+		};
+		recoil="rhs_recoil_ak74m";
+		class WeaponSlotsInfo: WeaponSlotsInfo
+		{
+			class rhs_npz_slot: SlotInfo
+			{
+				compatibleItems[]=
+				{
+					"rhs_acc_npz"
+				};
+			};
+		};
+		class SAFE: RHS_SAFE_BASE;  //found empty after stripping
+		class FOLD: RHS_FOLD_BASE;  //found empty after stripping
+		class Single: Mode_SemiAuto
+		{
+			aiBurstTerminable=1;
+			reloadTime=0.092299998;
+			dispersion=0.00092999998;
+		};
+		class Single_AI: Single
+		{
+			burstRangeMax=3;
+		};
+		class FullAuto: Mode_FullAuto
+		{
+			aiBurstTerminable=1;
+			reloadTime=0.092299998;
+			dispersion=0.00092999998;
+		};
+		class single_medium_optics1: Single;  //found empty after stripping
+		class single_far_optics2: single_medium_optics1;  //found empty after stripping
+		class fullauto_medium: FullAuto
+		{
+			burst=2;
+			burstRangeMax=5;
+		};
+		class GP25Muzzle: GP25_Base;  //found empty after stripping
+	};
+	class Rifle_Base_F: Rifle
+	{
+		scope=0;
+		discreteDistance[]={100,200,300,400,500,600};
+		discreteDistanceInitIndex=1;
+		weaponInfoType="RscWeaponZeroing";
+		recoil="recoil_default";
+		deployedPivot="bipod";
+		class GunParticles
+		{
+			class FirstEffect
+			{
+				effectName="RifleAssaultCloud";
+				positionName="Usti hlavne";
+				directionName="Konec hlavne";
+			};
+		};
+	};
+	class Rifle: RifleCore
+	{
+		htMin=1;
+		htMax=600;
+		afMax=0;
+		mfMax=0;
+		mFact=1;
+		tBody=100;
+		autoFire=1;
+		reloadAction="ReloadMagazine";
+		soundContinuous=0;
+		optics=0;
+		scope=1;
+		cursor="arifle";
+		cursoraim="CursorAim";
+		value=4;
+		displayName="$STR_DN_RIFLE";
+		nameSound="rifle";
+		reloadTime=0.15000001;
+		modelOptics="-";
+		sound[]={};
+		opticsFlare=0;
+		autoReload=0;
+		aiDispersionCoefX=6;
+		aiDispersionCoefY=6;
+		opticsZoomMin=0.25;
+		opticsZoomMax=1.25;
+		opticsZoomInit=0.75;
+		distanceZoomMin=300;
+		distanceZoomMax=300;
+		maxLeadSpeed=23;
+		canLock=0;
+		flash="gunfire";
+		flashSize=0.5;
+		dispersion=0.00029;
+		recoil="assaultRifleBase";
+		recoilProne="assaultRifleBase";
+		ffMagnitude=0.5;
+		ffFrequency=11;
+		ffCount=3;
+		weaponPoolAvailable=1;
+		maxZeroing=1000;
+		class WeaponSlotsInfo
+		{
+			mass=2;
+			class MuzzleSlot: MuzzleSlot
+			{
+			};
+			class CowsSlot: CowsSlot
+			{
+			};
+			class PointerSlot: PointerSlot
+			{
+			};
+			allowedSlots[]={901};
+		};
+		zeroingSound[]=
+		{
+			"A3\Sounds_F\arsenal\sfx\shared\zeroing_knob_tick_metal",
+			0.31622776,
+			1,
+			5
+		};
+	};
+	class RifleCore: Default
+	{
+	};
+	class Default
+	{
+		class Default
+		{
+			hit[]={1};
+			speed[]={1};
+		};
+		class AP
+		{
+			hit[]={1};
+			speed[]={0.89999998,1};
+		};
+		class HE
+		{
+			hit[]={1};
+			speed[]={0.5,1};
+		};
+		class HEAT
+		{
+			hit[]={1};
+			speed[]={0.80000001,1};
+		};
+		class TandemHEAT
+		{
+			hit[]={1};
+			speed[]={0.89999998,1};
+		};
+	};
+
+
+----------NEW WEAP/AMMO CLASS----------
+	class rhs_weap_ak74: rhs_weap_ak74m
+	{
+		class ItemInfo;  //found empty after stripping
+		class WeaponSlotsInfo: WeaponSlotsInfo
+		{
+			mass=81.400002;
+			class rhs_npz_slot;  //found empty after stripping
+		};
+		magazines[]=
+		{
+			"rhs_30Rnd_545x39_7N6M_AK",
+			"rhs_30Rnd_545x39_7N6M_green_AK",
+			"rhs_30Rnd_545x39_7N6M_plum_AK",
+			"rhs_30Rnd_545x39_7N6_AK",
+			"rhs_30Rnd_545x39_7N6_green_AK"
+		};
+		rhs_fold="";
+	};
+	class rhs_weap_ak74m: rhs_weap_ak74m_Base_F
+	{
+		rhs_pkas_type="rhs_acc_pkas";
+		rhs_1p29_type="rhs_acc_1p29";
+		rhs_pso1m2_type="rhs_acc_pso1m2_ak";
+		rhs_pso1m21_type="rhs_acc_pso1m21_ak";
+		rhs_pgo7v_type="rhs_acc_pgo7v_ak";
+		rhs_pgo7v2_type="rhs_acc_pgo7v2_ak";
+		rhs_pgo7v3_type="rhs_acc_pgo7v3_ak";
+		rhs_fold="rhs_weap_ak74m_folded";
+		rhs_fold_anim="RHS_GestureFoldAK74M";
+		rhs_fold_sound[]=
+		{
+			"rhsafrf\addons\rhs_c_weapons\sounds\stock_folding.wss",
+			1.42,
+			1,
+			20
+		};
+		rhs_npz="rhs_weap_ak74m_npz";
+		class WeaponSlotsInfo: WeaponSlotsInfo
+		{
+			mass=74.800003;
+		};
+		class ItemInfo;  //found empty after stripping
+	};
+	class rhs_weap_ak74m_Base_F: Rifle_Base_F
+	{
+		magazines[]=
+		{
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_plum_AK",
+			"rhs_30Rnd_545x39_7N10_desert_AK",
+			"rhs_30Rnd_545x39_7N10_camo_AK"
+		};
+		recoil="rhs_recoil_ak74m";
+		class WeaponSlotsInfo: WeaponSlotsInfo
+		{
+			class rhs_npz_slot: SlotInfo
+			{
+				compatibleItems[]=
+				{
+					"rhs_acc_npz"
+				};
+			};
+		};
+		class SAFE: RHS_SAFE_BASE;  //found empty after stripping
+		class FOLD: RHS_FOLD_BASE;  //found empty after stripping
+		class Single: Mode_SemiAuto
+		{
+			aiBurstTerminable=1;
+			reloadTime=0.092299998;
+			dispersion=0.00092999998;
+		};
+		class Single_AI: Single
+		{
+			burstRangeMax=3;
+		};
+		class FullAuto: Mode_FullAuto
+		{
+			aiBurstTerminable=1;
+			reloadTime=0.092299998;
+			dispersion=0.00092999998;
+		};
+		class single_medium_optics1: Single;  //found empty after stripping
+		class single_far_optics2: single_medium_optics1;  //found empty after stripping
+		class fullauto_medium: FullAuto
+		{
+			burst=2;
+			burstRangeMax=5;
+		};
+		class GP25Muzzle: GP25_Base;  //found empty after stripping
+	};
+	class Rifle_Base_F: Rifle
+	{
+		scope=0;
+		discreteDistance[]={100,200,300,400,500,600};
+		discreteDistanceInitIndex=1;
+		weaponInfoType="RscWeaponZeroing";
+		recoil="recoil_default";
+		deployedPivot="bipod";
+		class GunParticles
+		{
+			class FirstEffect
+			{
+				effectName="RifleAssaultCloud";
+				positionName="Usti hlavne";
+				directionName="Konec hlavne";
+			};
+		};
+	};
+	class Rifle: RifleCore
+	{
+		htMin=1;
+		htMax=600;
+		afMax=0;
+		mfMax=0;
+		mFact=1;
+		tBody=100;
+		autoFire=1;
+		reloadAction="ReloadMagazine";
+		soundContinuous=0;
+		optics=0;
+		scope=1;
+		cursor="arifle";
+		cursoraim="CursorAim";
+		value=4;
+		displayName="$STR_DN_RIFLE";
+		nameSound="rifle";
+		reloadTime=0.15000001;
+		modelOptics="-";
+		sound[]={};
+		opticsFlare=0;
+		autoReload=0;
+		aiDispersionCoefX=6;
+		aiDispersionCoefY=6;
+		opticsZoomMin=0.25;
+		opticsZoomMax=1.25;
+		opticsZoomInit=0.75;
+		distanceZoomMin=300;
+		distanceZoomMax=300;
+		maxLeadSpeed=23;
+		canLock=0;
+		flash="gunfire";
+		flashSize=0.5;
+		dispersion=0.00029;
+		recoil="assaultRifleBase";
+		recoilProne="assaultRifleBase";
+		ffMagnitude=0.5;
+		ffFrequency=11;
+		ffCount=3;
+		weaponPoolAvailable=1;
+		maxZeroing=1000;
+		class WeaponSlotsInfo
+		{
+			mass=2;
+			class MuzzleSlot: MuzzleSlot
+			{
+			};
+			class CowsSlot: CowsSlot
+			{
+			};
+			class PointerSlot: PointerSlot
+			{
+			};
+			allowedSlots[]={901};
+		};
+		zeroingSound[]=
+		{
+			"A3\Sounds_F\arsenal\sfx\shared\zeroing_knob_tick_metal",
+			0.31622776,
+			1,
+			5
+		};
+	};
+	class RifleCore: Default
+	{
+	};
+	class Default
+	{
+		class Default
+		{
+			hit[]={1};
+			speed[]={1};
+		};
+		class AP
+		{
+			hit[]={1};
+			speed[]={0.89999998,1};
+		};
+		class HE
+		{
+			hit[]={1};
+			speed[]={0.5,1};
+		};
+		class HEAT
+		{
+			hit[]={1};
+			speed[]={0.80000001,1};
+		};
+		class TandemHEAT
+		{
+			hit[]={1};
+			speed[]={0.89999998,1};
+		};
+	};
+
+
+----------NEW WEAP/AMMO CLASS----------
+	class rhs_weap_aks74un: rhs_weap_aks74u
+	{
+		class WeaponSlotsInfo: WeaponSlotsInfo
+		{
+			mass=59.619999;
+			class rhs_npz_slot;  //found empty after stripping
+		};
+		rhs_fold="rhs_weap_aks74un_folded";
+	};
+	class rhs_weap_aks74u: rhs_weap_aks74
+	{
+		recoil="recoil_ktb";
+		initSpeed=-0.83499998;
+		class Single: Single
+		{
+			reloadTime=0.092299998;
+			dispersion=0.0019499999;
+		};
+		class FullAuto: FullAuto
+		{
+			reloadTime=0.092299998;
+			dispersion=0.0019499999;
+		};
+		class single_medium_optics1: Single;  //found empty after stripping
+		class single_far_optics2: single_medium_optics1;  //found empty after stripping
+		class fullauto_medium: FullAuto
+		{
+			burst=2;
+			burstRangeMax=5;
+		};
+		class WeaponSlotsInfo: WeaponSlotsInfo
+		{
+			mass=59.619999;
+			class rhs_npz_slot;  //found empty after stripping
+		};
+		rhs_fold="rhs_weap_aks74u_folded";
+	};
+	class rhs_weap_aks74: rhs_weap_ak74
+	{
+		class ItemInfo;  //found empty after stripping
+		class WeaponSlotsInfo: WeaponSlotsInfo
+		{
+			mass=65;
+		};
+		rhs_fold="rhs_weap_aks74_folded";
+		rhs_npz="";
+	};
+	class rhs_weap_ak74: rhs_weap_ak74m
+	{
+		class ItemInfo;  //found empty after stripping
+		class WeaponSlotsInfo: WeaponSlotsInfo
+		{
+			mass=81.400002;
+			class rhs_npz_slot;  //found empty after stripping
+		};
+		magazines[]=
+		{
+			"rhs_30Rnd_545x39_7N6M_AK",
+			"rhs_30Rnd_545x39_7N6M_green_AK",
+			"rhs_30Rnd_545x39_7N6M_plum_AK",
+			"rhs_30Rnd_545x39_7N6_AK",
+			"rhs_30Rnd_545x39_7N6_green_AK"
+		};
+		rhs_fold="";
+	};
+	class rhs_weap_ak74m: rhs_weap_ak74m_Base_F
+	{
+		rhs_pkas_type="rhs_acc_pkas";
+		rhs_1p29_type="rhs_acc_1p29";
+		rhs_pso1m2_type="rhs_acc_pso1m2_ak";
+		rhs_pso1m21_type="rhs_acc_pso1m21_ak";
+		rhs_pgo7v_type="rhs_acc_pgo7v_ak";
+		rhs_pgo7v2_type="rhs_acc_pgo7v2_ak";
+		rhs_pgo7v3_type="rhs_acc_pgo7v3_ak";
+		rhs_fold="rhs_weap_ak74m_folded";
+		rhs_fold_anim="RHS_GestureFoldAK74M";
+		rhs_fold_sound[]=
+		{
+			"rhsafrf\addons\rhs_c_weapons\sounds\stock_folding.wss",
+			1.42,
+			1,
+			20
+		};
+		rhs_npz="rhs_weap_ak74m_npz";
+		class WeaponSlotsInfo: WeaponSlotsInfo
+		{
+			mass=74.800003;
+		};
+		class ItemInfo;  //found empty after stripping
+	};
+	class rhs_weap_ak74m_Base_F: Rifle_Base_F
+	{
+		magazines[]=
+		{
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_plum_AK",
+			"rhs_30Rnd_545x39_7N10_desert_AK",
+			"rhs_30Rnd_545x39_7N10_camo_AK"
+		};
+		recoil="rhs_recoil_ak74m";
+		class WeaponSlotsInfo: WeaponSlotsInfo
+		{
+			class rhs_npz_slot: SlotInfo
+			{
+				compatibleItems[]=
+				{
+					"rhs_acc_npz"
+				};
+			};
+		};
+		class SAFE: RHS_SAFE_BASE;  //found empty after stripping
+		class FOLD: RHS_FOLD_BASE;  //found empty after stripping
+		class Single: Mode_SemiAuto
+		{
+			aiBurstTerminable=1;
+			reloadTime=0.092299998;
+			dispersion=0.00092999998;
+		};
+		class Single_AI: Single
+		{
+			burstRangeMax=3;
+		};
+		class FullAuto: Mode_FullAuto
+		{
+			aiBurstTerminable=1;
+			reloadTime=0.092299998;
+			dispersion=0.00092999998;
+		};
+		class single_medium_optics1: Single;  //found empty after stripping
+		class single_far_optics2: single_medium_optics1;  //found empty after stripping
+		class fullauto_medium: FullAuto
+		{
+			burst=2;
+			burstRangeMax=5;
+		};
+		class GP25Muzzle: GP25_Base;  //found empty after stripping
+	};
+	class Rifle_Base_F: Rifle
+	{
+		scope=0;
+		discreteDistance[]={100,200,300,400,500,600};
+		discreteDistanceInitIndex=1;
+		weaponInfoType="RscWeaponZeroing";
+		recoil="recoil_default";
+		deployedPivot="bipod";
+		class GunParticles
+		{
+			class FirstEffect
+			{
+				effectName="RifleAssaultCloud";
+				positionName="Usti hlavne";
+				directionName="Konec hlavne";
+			};
+		};
+	};
+	class Rifle: RifleCore
+	{
+		htMin=1;
+		htMax=600;
+		afMax=0;
+		mfMax=0;
+		mFact=1;
+		tBody=100;
+		autoFire=1;
+		reloadAction="ReloadMagazine";
+		soundContinuous=0;
+		optics=0;
+		scope=1;
+		cursor="arifle";
+		cursoraim="CursorAim";
+		value=4;
+		displayName="$STR_DN_RIFLE";
+		nameSound="rifle";
+		reloadTime=0.15000001;
+		modelOptics="-";
+		sound[]={};
+		opticsFlare=0;
+		autoReload=0;
+		aiDispersionCoefX=6;
+		aiDispersionCoefY=6;
+		opticsZoomMin=0.25;
+		opticsZoomMax=1.25;
+		opticsZoomInit=0.75;
+		distanceZoomMin=300;
+		distanceZoomMax=300;
+		maxLeadSpeed=23;
+		canLock=0;
+		flash="gunfire";
+		flashSize=0.5;
+		dispersion=0.00029;
+		recoil="assaultRifleBase";
+		recoilProne="assaultRifleBase";
+		ffMagnitude=0.5;
+		ffFrequency=11;
+		ffCount=3;
+		weaponPoolAvailable=1;
+		maxZeroing=1000;
+		class WeaponSlotsInfo
+		{
+			mass=2;
+			class MuzzleSlot: MuzzleSlot
+			{
+			};
+			class CowsSlot: CowsSlot
+			{
+			};
+			class PointerSlot: PointerSlot
+			{
+			};
+			allowedSlots[]={901};
+		};
+		zeroingSound[]=
+		{
+			"A3\Sounds_F\arsenal\sfx\shared\zeroing_knob_tick_metal",
+			0.31622776,
+			1,
+			5
+		};
+	};
+	class RifleCore: Default
+	{
+	};
+	class Default
+	{
+		class Default
+		{
+			hit[]={1};
+			speed[]={1};
+		};
+		class AP
+		{
+			hit[]={1};
+			speed[]={0.89999998,1};
+		};
+		class HE
+		{
+			hit[]={1};
+			speed[]={0.5,1};
+		};
+		class HEAT
+		{
+			hit[]={1};
+			speed[]={0.80000001,1};
+		};
+		class TandemHEAT
+		{
+			hit[]={1};
+			speed[]={0.89999998,1};
+		};
+	};
+
+
+----------NEW WEAP/AMMO CLASS----------
+	class rhs_weap_vhsd2: rhs_weap_vhs2_base
+	{
+		class WeaponSlotsInfo
+		{
+			mass=85.800003;
+			class GripodSlot: rhs_western_rifle_gripod_slot;  //found empty after stripping
+		};
+	};
+	class rhs_weap_vhs2_base: Rifle_Base_F
+	{
+		magazines[]=
+		{
+			"rhsgref_30rnd_556x45_vhs2",
+			"rhsgref_30rnd_556x45_vhs2_t"
+		};
+		recoil="recoil_ktbc";
+		memoryPointCamera="eye";
+		class SAFE: RHS_SAFE_BASE;  //found empty after stripping
+		class Single: Mode_SemiAuto
+		{
+			reloadTime=0.071000002;
+			dispersion=0.0020999999;
+		};
+		class FullAuto: Mode_FullAuto
+		{
+			reloadTime=0.071000002;
+			dispersion=0.0020999999;
+		};
+		class Single_AI: Single
+		{
+			aiBurstTerminable=1;
+			burstRangeMax=3;
+		};
+		class single_medium_optics1: Single;  //found empty after stripping
+		class single_far_optics2: single_medium_optics1;  //found empty after stripping
+		class fullauto_medium: FullAuto
+		{
+			aiBurstTerminable=1;
+			burst=3;
+			burstRangeMax=3;
+		};
+		class VHS_BG: UGL_F
+		{
+			useModelOptics=0;
+			useExternalOptic=0;
+			magazines[]=
+			{
+				"rhs_mag_M441_HE",
+				"rhs_mag_M433_HEDP",
+				"rhs_mag_M397_HET",
+				"rhs_mag_M4009",
+				"rhs_mag_m576",
+				"rhs_mag_M585_white",
+				"rhs_mag_M661_green",
+				"rhs_mag_M662_red",
+				"rhs_mag_M713_red",
+				"rhs_mag_M714_white",
+				"rhs_mag_M715_green",
+				"rhs_mag_M716_yellow"
+			};
+		};
+	};
+	class Rifle_Base_F: Rifle
+	{
+		scope=0;
+		discreteDistance[]={100,200,300,400,500,600};
+		discreteDistanceInitIndex=1;
+		weaponInfoType="RscWeaponZeroing";
+		recoil="recoil_default";
+		deployedPivot="bipod";
+		class GunParticles
+		{
+			class FirstEffect
+			{
+				effectName="RifleAssaultCloud";
+				positionName="Usti hlavne";
+				directionName="Konec hlavne";
+			};
+		};
+	};
+	class Rifle: RifleCore
+	{
+		htMin=1;
+		htMax=600;
+		afMax=0;
+		mfMax=0;
+		mFact=1;
+		tBody=100;
+		autoFire=1;
+		reloadAction="ReloadMagazine";
+		soundContinuous=0;
+		optics=0;
+		scope=1;
+		cursor="arifle";
+		cursoraim="CursorAim";
+		value=4;
+		displayName="$STR_DN_RIFLE";
+		nameSound="rifle";
+		reloadTime=0.15000001;
+		modelOptics="-";
+		sound[]={};
+		opticsFlare=0;
+		autoReload=0;
+		aiDispersionCoefX=6;
+		aiDispersionCoefY=6;
+		opticsZoomMin=0.25;
+		opticsZoomMax=1.25;
+		opticsZoomInit=0.75;
+		distanceZoomMin=300;
+		distanceZoomMax=300;
+		maxLeadSpeed=23;
+		canLock=0;
+		flash="gunfire";
+		flashSize=0.5;
+		dispersion=0.00029;
+		recoil="assaultRifleBase";
+		recoilProne="assaultRifleBase";
+		ffMagnitude=0.5;
+		ffFrequency=11;
+		ffCount=3;
+		weaponPoolAvailable=1;
+		maxZeroing=1000;
+		class WeaponSlotsInfo
+		{
+			mass=2;
+			class MuzzleSlot: MuzzleSlot
+			{
+			};
+			class CowsSlot: CowsSlot
+			{
+			};
+			class PointerSlot: PointerSlot
+			{
+			};
+			allowedSlots[]={901};
+		};
+		zeroingSound[]=
+		{
+			"A3\Sounds_F\arsenal\sfx\shared\zeroing_knob_tick_metal",
+			0.31622776,
+			1,
+			5
+		};
+	};
+	class RifleCore: Default
+	{
+	};
+	class Default
+	{
+		class Default
+		{
+			hit[]={1};
+			speed[]={1};
+		};
+		class AP
+		{
+			hit[]={1};
+			speed[]={0.89999998,1};
+		};
+		class HE
+		{
+			hit[]={1};
+			speed[]={0.5,1};
+		};
+		class HEAT
+		{
+			hit[]={1};
+			speed[]={0.80000001,1};
+		};
+		class TandemHEAT
+		{
+			hit[]={1};
+			speed[]={0.89999998,1};
+		};
+	};
+
+
+----------NEW WEAP/AMMO CLASS----------
+	class rhs_weap_akmn: rhs_weap_akm
+	{
+		class WeaponSlotsInfo: WeaponSlotsInfo
+		{
+			mass=71.080002;
+			class rhs_npz_slot: SlotInfo
+			{
+				compatibleItems[]=
+				{
+					"rhs_acc_npz"
+				};
+			};
+		};
+		rhs_npz="rhs_weap_akmn_npz";
+	};
+	class rhs_weap_akm: rhs_weap_ak74m
+	{
+		recoil="rhs_recoil_akm";
+		class WeaponSlotsInfo: WeaponSlotsInfo
+		{
+			mass=69.080002;
+			class rhs_npz_slot;  //found empty after stripping
+		};
+		magazines[]=
+		{
+			"rhs_30Rnd_762x39mm_bakelite",
+			"rhs_30Rnd_762x39mm_bakelite_tracer",
+			"rhs_30Rnd_762x39mm_bakelite_89",
+			"rhs_30Rnd_762x39mm_bakelite_U"
+		};
+		class Single: Mode_SemiAuto
+		{
+			aiBurstTerminable=0;
+			reloadTime=0.1;
+			dispersion=0.0020999999;
+		};
+		class Single_AI: Single
+		{
+			aiBurstTerminable=1;
+			burstRangeMax=3;
+		};
+		class FullAuto: Mode_FullAuto
+		{
+			reloadTime=0.1;
+			dispersion=0.0020999999;
+		};
+		class fullauto_medium: FullAuto
+		{
+			aiBurstTerminable=1;
+			burst=2;
+			burstRangeMax=6;
+		};
+		class single_medium_optics1: Single
+		{
+			burstRangeMax=3;
+		};
+		class single_far_optics2: single_medium_optics1;  //found empty after stripping
+		class GP25Muzzle: GP25_Base;  //found empty after stripping
+	};
+	class rhs_weap_ak74m: rhs_weap_ak74m_Base_F
+	{
+		rhs_pkas_type="rhs_acc_pkas";
+		rhs_1p29_type="rhs_acc_1p29";
+		rhs_pso1m2_type="rhs_acc_pso1m2_ak";
+		rhs_pso1m21_type="rhs_acc_pso1m21_ak";
+		rhs_pgo7v_type="rhs_acc_pgo7v_ak";
+		rhs_pgo7v2_type="rhs_acc_pgo7v2_ak";
+		rhs_pgo7v3_type="rhs_acc_pgo7v3_ak";
+		rhs_fold="rhs_weap_ak74m_folded";
+		rhs_fold_anim="RHS_GestureFoldAK74M";
+		rhs_fold_sound[]=
+		{
+			"rhsafrf\addons\rhs_c_weapons\sounds\stock_folding.wss",
+			1.42,
+			1,
+			20
+		};
+		rhs_npz="rhs_weap_ak74m_npz";
+		class WeaponSlotsInfo: WeaponSlotsInfo
+		{
+			mass=74.800003;
+		};
+		class ItemInfo;  //found empty after stripping
+	};
+	class rhs_weap_ak74m_Base_F: Rifle_Base_F
+	{
+		magazines[]=
+		{
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_plum_AK",
+			"rhs_30Rnd_545x39_7N10_desert_AK",
+			"rhs_30Rnd_545x39_7N10_camo_AK"
+		};
+		recoil="rhs_recoil_ak74m";
+		class WeaponSlotsInfo: WeaponSlotsInfo
+		{
+			class rhs_npz_slot: SlotInfo
+			{
+				compatibleItems[]=
+				{
+					"rhs_acc_npz"
+				};
+			};
+		};
+		class SAFE: RHS_SAFE_BASE;  //found empty after stripping
+		class FOLD: RHS_FOLD_BASE;  //found empty after stripping
+		class Single: Mode_SemiAuto
+		{
+			aiBurstTerminable=1;
+			reloadTime=0.092299998;
+			dispersion=0.00092999998;
+		};
+		class Single_AI: Single
+		{
+			burstRangeMax=3;
+		};
+		class FullAuto: Mode_FullAuto
+		{
+			aiBurstTerminable=1;
+			reloadTime=0.092299998;
+			dispersion=0.00092999998;
+		};
+		class single_medium_optics1: Single;  //found empty after stripping
+		class single_far_optics2: single_medium_optics1;  //found empty after stripping
+		class fullauto_medium: FullAuto
+		{
+			burst=2;
+			burstRangeMax=5;
+		};
+		class GP25Muzzle: GP25_Base;  //found empty after stripping
+	};
+	class Rifle_Base_F: Rifle
+	{
+		scope=0;
+		discreteDistance[]={100,200,300,400,500,600};
+		discreteDistanceInitIndex=1;
+		weaponInfoType="RscWeaponZeroing";
+		recoil="recoil_default";
+		deployedPivot="bipod";
+		class GunParticles
+		{
+			class FirstEffect
+			{
+				effectName="RifleAssaultCloud";
+				positionName="Usti hlavne";
+				directionName="Konec hlavne";
+			};
+		};
+	};
+	class Rifle: RifleCore
+	{
+		htMin=1;
+		htMax=600;
+		afMax=0;
+		mfMax=0;
+		mFact=1;
+		tBody=100;
+		autoFire=1;
+		reloadAction="ReloadMagazine";
+		soundContinuous=0;
+		optics=0;
+		scope=1;
+		cursor="arifle";
+		cursoraim="CursorAim";
+		value=4;
+		displayName="$STR_DN_RIFLE";
+		nameSound="rifle";
+		reloadTime=0.15000001;
+		modelOptics="-";
+		sound[]={};
+		opticsFlare=0;
+		autoReload=0;
+		aiDispersionCoefX=6;
+		aiDispersionCoefY=6;
+		opticsZoomMin=0.25;
+		opticsZoomMax=1.25;
+		opticsZoomInit=0.75;
+		distanceZoomMin=300;
+		distanceZoomMax=300;
+		maxLeadSpeed=23;
+		canLock=0;
+		flash="gunfire";
+		flashSize=0.5;
+		dispersion=0.00029;
+		recoil="assaultRifleBase";
+		recoilProne="assaultRifleBase";
+		ffMagnitude=0.5;
+		ffFrequency=11;
+		ffCount=3;
+		weaponPoolAvailable=1;
+		maxZeroing=1000;
+		class WeaponSlotsInfo
+		{
+			mass=2;
+			class MuzzleSlot: MuzzleSlot
+			{
+			};
+			class CowsSlot: CowsSlot
+			{
+			};
+			class PointerSlot: PointerSlot
+			{
+			};
+			allowedSlots[]={901};
+		};
+		zeroingSound[]=
+		{
+			"A3\Sounds_F\arsenal\sfx\shared\zeroing_knob_tick_metal",
+			0.31622776,
+			1,
+			5
+		};
+	};
+	class RifleCore: Default
+	{
+	};
+	class Default
+	{
+		class Default
+		{
+			hit[]={1};
+			speed[]={1};
+		};
+		class AP
+		{
+			hit[]={1};
+			speed[]={0.89999998,1};
+		};
+		class HE
+		{
+			hit[]={1};
+			speed[]={0.5,1};
+		};
+		class HEAT
+		{
+			hit[]={1};
+			speed[]={0.80000001,1};
+		};
+		class TandemHEAT
+		{
+			hit[]={1};
+			speed[]={0.89999998,1};
+		};
+	};
+
+
+----------NEW WEAP/AMMO CLASS----------
+	class rhs_weap_savz58v_rail: rhs_weap_savz58_rail_base
+	{
+		recoil="recoil_mxc";
+		rhs_fold="rhs_weap_savz58v_rail_fold";
+	};
+	class rhs_weap_savz58_rail_base: rhs_weap_savz58_base
+	{
+		class WeaponSlotsInfo: WeaponSlotsInfo
+		{
+			mass=69.199997;
+		};
+	};
+	class rhs_weap_savz58_base: Rifle_Base_F
+	{
+		magazines[]=
+		{
+			"rhs_30Rnd_762x39mm_Savz58",
+			"rhs_30Rnd_762x39mm_Savz58_tracer"
+		};
+		recoil="recoil_ktbc";
+		class WeaponSlotsInfo: WeaponSlotsInfo
+		{
+			mass=68.199997;
+		};
+		class SAFE: RHS_SAFE_BASE;  //found empty after stripping
+		class Single: Mode_SemiAuto
+		{
+			reloadTime=0.075000003;
+			dispersion=0.0020999999;
+		};
+		class FullAuto: Mode_FullAuto
+		{
+			reloadTime=0.075000003;
+			dispersion=0.0020999999;
+		};
+		class Single_AI: Single
+		{
+			aiBurstTerminable=1;
+			burstRangeMax=3;
+		};
+		class single_medium_optics1: Single;  //found empty after stripping
+		class single_far_optics2: single_medium_optics1;  //found empty after stripping
+		class fullauto_medium: FullAuto
+		{
+			aiBurstTerminable=1;
+			burst=3;
+			burstRangeMax=3;
+		};
+	};
+	class Rifle_Base_F: Rifle
+	{
+		scope=0;
+		discreteDistance[]={100,200,300,400,500,600};
+		discreteDistanceInitIndex=1;
+		weaponInfoType="RscWeaponZeroing";
+		recoil="recoil_default";
+		deployedPivot="bipod";
+		class GunParticles
+		{
+			class FirstEffect
+			{
+				effectName="RifleAssaultCloud";
+				positionName="Usti hlavne";
+				directionName="Konec hlavne";
+			};
+		};
+	};
+	class Rifle: RifleCore
+	{
+		htMin=1;
+		htMax=600;
+		afMax=0;
+		mfMax=0;
+		mFact=1;
+		tBody=100;
+		autoFire=1;
+		reloadAction="ReloadMagazine";
+		soundContinuous=0;
+		optics=0;
+		scope=1;
+		cursor="arifle";
+		cursoraim="CursorAim";
+		value=4;
+		displayName="$STR_DN_RIFLE";
+		nameSound="rifle";
+		reloadTime=0.15000001;
+		modelOptics="-";
+		sound[]={};
+		opticsFlare=0;
+		autoReload=0;
+		aiDispersionCoefX=6;
+		aiDispersionCoefY=6;
+		opticsZoomMin=0.25;
+		opticsZoomMax=1.25;
+		opticsZoomInit=0.75;
+		distanceZoomMin=300;
+		distanceZoomMax=300;
+		maxLeadSpeed=23;
+		canLock=0;
+		flash="gunfire";
+		flashSize=0.5;
+		dispersion=0.00029;
+		recoil="assaultRifleBase";
+		recoilProne="assaultRifleBase";
+		ffMagnitude=0.5;
+		ffFrequency=11;
+		ffCount=3;
+		weaponPoolAvailable=1;
+		maxZeroing=1000;
+		class WeaponSlotsInfo
+		{
+			mass=2;
+			class MuzzleSlot: MuzzleSlot
+			{
+			};
+			class CowsSlot: CowsSlot
+			{
+			};
+			class PointerSlot: PointerSlot
+			{
+			};
+			allowedSlots[]={901};
+		};
+		zeroingSound[]=
+		{
+			"A3\Sounds_F\arsenal\sfx\shared\zeroing_knob_tick_metal",
+			0.31622776,
+			1,
+			5
+		};
+	};
+	class RifleCore: Default
+	{
+	};
+	class rhs_weap_savz58p_rail: rhs_weap_savz58_rail_base;  //found empty after stripping
+	class Default
+	{
+		class Default
+		{
+			hit[]={1};
+			speed[]={1};
+		};
+		class AP
+		{
+			hit[]={1};
+			speed[]={0.89999998,1};
+		};
+		class HE
+		{
+			hit[]={1};
+			speed[]={0.5,1};
+		};
+		class HEAT
+		{
+			hit[]={1};
+			speed[]={0.80000001,1};
+		};
+		class TandemHEAT
+		{
+			hit[]={1};
+			speed[]={0.89999998,1};
+		};
+	};
+	class rhs_weap_savz58_rail_base: rhs_weap_savz58_base
+	{
+		class WeaponSlotsInfo: WeaponSlotsInfo
+		{
+			mass=69.199997;
+		};
+	};
+	class rhs_weap_savz58_base: Rifle_Base_F
+	{
+		magazines[]=
+		{
+			"rhs_30Rnd_762x39mm_Savz58",
+			"rhs_30Rnd_762x39mm_Savz58_tracer"
+		};
+		recoil="recoil_ktbc";
+		class WeaponSlotsInfo: WeaponSlotsInfo
+		{
+			mass=68.199997;
+		};
+		class SAFE: RHS_SAFE_BASE;  //found empty after stripping
+		class Single: Mode_SemiAuto
+		{
+			reloadTime=0.075000003;
+			dispersion=0.0020999999;
+		};
+		class FullAuto: Mode_FullAuto
+		{
+			reloadTime=0.075000003;
+			dispersion=0.0020999999;
+		};
+		class Single_AI: Single
+		{
+			aiBurstTerminable=1;
+			burstRangeMax=3;
+		};
+		class single_medium_optics1: Single;  //found empty after stripping
+		class single_far_optics2: single_medium_optics1;  //found empty after stripping
+		class fullauto_medium: FullAuto
+		{
+			aiBurstTerminable=1;
+			burst=3;
+			burstRangeMax=3;
+		};
+	};
+	class Rifle_Base_F: Rifle
+	{
+		scope=0;
+		discreteDistance[]={100,200,300,400,500,600};
+		discreteDistanceInitIndex=1;
+		weaponInfoType="RscWeaponZeroing";
+		recoil="recoil_default";
+		deployedPivot="bipod";
+		class GunParticles
+		{
+			class FirstEffect
+			{
+				effectName="RifleAssaultCloud";
+				positionName="Usti hlavne";
+				directionName="Konec hlavne";
+			};
+		};
+	};
+	class Rifle: RifleCore
+	{
+		htMin=1;
+		htMax=600;
+		afMax=0;
+		mfMax=0;
+		mFact=1;
+		tBody=100;
+		autoFire=1;
+		reloadAction="ReloadMagazine";
+		soundContinuous=0;
+		optics=0;
+		scope=1;
+		cursor="arifle";
+		cursoraim="CursorAim";
+		value=4;
+		displayName="$STR_DN_RIFLE";
+		nameSound="rifle";
+		reloadTime=0.15000001;
+		modelOptics="-";
+		sound[]={};
+		opticsFlare=0;
+		autoReload=0;
+		aiDispersionCoefX=6;
+		aiDispersionCoefY=6;
+		opticsZoomMin=0.25;
+		opticsZoomMax=1.25;
+		opticsZoomInit=0.75;
+		distanceZoomMin=300;
+		distanceZoomMax=300;
+		maxLeadSpeed=23;
+		canLock=0;
+		flash="gunfire";
+		flashSize=0.5;
+		dispersion=0.00029;
+		recoil="assaultRifleBase";
+		recoilProne="assaultRifleBase";
+		ffMagnitude=0.5;
+		ffFrequency=11;
+		ffCount=3;
+		weaponPoolAvailable=1;
+		maxZeroing=1000;
+		class WeaponSlotsInfo
+		{
+			mass=2;
+			class MuzzleSlot: MuzzleSlot
+			{
+			};
+			class CowsSlot: CowsSlot
+			{
+			};
+			class PointerSlot: PointerSlot
+			{
+			};
+			allowedSlots[]={901};
+		};
+		zeroingSound[]=
+		{
+			"A3\Sounds_F\arsenal\sfx\shared\zeroing_knob_tick_metal",
+			0.31622776,
+			1,
+			5
+		};
+	};
+	class RifleCore: Default
+	{
+	};
+	class Default
+	{
+		class Default
+		{
+			hit[]={1};
+			speed[]={1};
+		};
+		class AP
+		{
+			hit[]={1};
+			speed[]={0.89999998,1};
+		};
+		class HE
+		{
+			hit[]={1};
+			speed[]={0.5,1};
+		};
+		class HEAT
+		{
+			hit[]={1};
+			speed[]={0.80000001,1};
+		};
+		class TandemHEAT
+		{
+			hit[]={1};
+			speed[]={0.89999998,1};
+		};
+	};
+
+
+----------NEW WEAP/AMMO CLASS----------
+	class rhs_weap_savz58v_fold: rhs_weap_savz58v
+	{
+		recoil="recoil_mmg_01";
+		rhs_fold="rhs_weap_savz58v";
+	};
+	class rhs_weap_savz58v: rhs_weap_savz58_base
+	{
+		recoil="recoil_mxc";
+		rhs_fold="rhs_weap_savz58v_fold";
+	};
+	class rhs_weap_savz58_base: Rifle_Base_F
+	{
+		magazines[]=
+		{
+			"rhs_30Rnd_762x39mm_Savz58",
+			"rhs_30Rnd_762x39mm_Savz58_tracer"
+		};
+		recoil="recoil_ktbc";
+		class WeaponSlotsInfo: WeaponSlotsInfo
+		{
+			mass=68.199997;
+		};
+		class SAFE: RHS_SAFE_BASE;  //found empty after stripping
+		class Single: Mode_SemiAuto
+		{
+			reloadTime=0.075000003;
+			dispersion=0.0020999999;
+		};
+		class FullAuto: Mode_FullAuto
+		{
+			reloadTime=0.075000003;
+			dispersion=0.0020999999;
+		};
+		class Single_AI: Single
+		{
+			aiBurstTerminable=1;
+			burstRangeMax=3;
+		};
+		class single_medium_optics1: Single;  //found empty after stripping
+		class single_far_optics2: single_medium_optics1;  //found empty after stripping
+		class fullauto_medium: FullAuto
+		{
+			aiBurstTerminable=1;
+			burst=3;
+			burstRangeMax=3;
+		};
+	};
+	class Rifle_Base_F: Rifle
+	{
+		scope=0;
+		discreteDistance[]={100,200,300,400,500,600};
+		discreteDistanceInitIndex=1;
+		weaponInfoType="RscWeaponZeroing";
+		recoil="recoil_default";
+		deployedPivot="bipod";
+		class GunParticles
+		{
+			class FirstEffect
+			{
+				effectName="RifleAssaultCloud";
+				positionName="Usti hlavne";
+				directionName="Konec hlavne";
+			};
+		};
+	};
+	class Rifle: RifleCore
+	{
+		htMin=1;
+		htMax=600;
+		afMax=0;
+		mfMax=0;
+		mFact=1;
+		tBody=100;
+		autoFire=1;
+		reloadAction="ReloadMagazine";
+		soundContinuous=0;
+		optics=0;
+		scope=1;
+		cursor="arifle";
+		cursoraim="CursorAim";
+		value=4;
+		displayName="$STR_DN_RIFLE";
+		nameSound="rifle";
+		reloadTime=0.15000001;
+		modelOptics="-";
+		sound[]={};
+		opticsFlare=0;
+		autoReload=0;
+		aiDispersionCoefX=6;
+		aiDispersionCoefY=6;
+		opticsZoomMin=0.25;
+		opticsZoomMax=1.25;
+		opticsZoomInit=0.75;
+		distanceZoomMin=300;
+		distanceZoomMax=300;
+		maxLeadSpeed=23;
+		canLock=0;
+		flash="gunfire";
+		flashSize=0.5;
+		dispersion=0.00029;
+		recoil="assaultRifleBase";
+		recoilProne="assaultRifleBase";
+		ffMagnitude=0.5;
+		ffFrequency=11;
+		ffCount=3;
+		weaponPoolAvailable=1;
+		maxZeroing=1000;
+		class WeaponSlotsInfo
+		{
+			mass=2;
+			class MuzzleSlot: MuzzleSlot
+			{
+			};
+			class CowsSlot: CowsSlot
+			{
+			};
+			class PointerSlot: PointerSlot
+			{
+			};
+			allowedSlots[]={901};
+		};
+		zeroingSound[]=
+		{
+			"A3\Sounds_F\arsenal\sfx\shared\zeroing_knob_tick_metal",
+			0.31622776,
+			1,
+			5
+		};
+	};
+	class RifleCore: Default
+	{
+	};
+	class Default
+	{
+		class Default
+		{
+			hit[]={1};
+			speed[]={1};
+		};
+		class AP
+		{
+			hit[]={1};
+			speed[]={0.89999998,1};
+		};
+		class HE
+		{
+			hit[]={1};
+			speed[]={0.5,1};
+		};
+		class HEAT
+		{
+			hit[]={1};
+			speed[]={0.80000001,1};
+		};
+		class TandemHEAT
+		{
+			hit[]={1};
+			speed[]={0.89999998,1};
+		};
+	};
+
+
+----------NEW WEAP/AMMO CLASS----------
+	class rhs_weap_ak103: rhs_weap_ak103_base
+	{
+		rhs_npz="rhs_weap_ak103_npz";
+		rhs_fold="rhs_weap_ak103_folded";
+	};
+	class rhs_weap_ak103_base: rhs_weap_akm
+	{
+		recoil="recoil_sdar";
+		class WeaponSlotsInfo: WeaponSlotsInfo
+		{
+			mass=74.800003;
+			class rhs_npz_slot: SlotInfo
+			{
+				compatibleItems[]=
+				{
+					"rhs_acc_npz"
+				};
+			};
+		};
+		class Single: Single
+		{
+			reloadTime=0.1;
+			dispersion=0.0020999999;
+		};
+		class Burst: Mode_Burst
+		{
+			aiBurstTerminable=0;
+			reloadTime=0.1;
+			dispersion=0.0020999999;
+		};
+		class FullAuto: FullAuto
+		{
+			reloadTime=0.1;
+			dispersion=0.0020999999;
+		};
+		class fullauto_medium: FullAuto
+		{
+			burst=2;
+			burstRangeMax=5;
+		};
+		class single_medium_optics1: Single;  //found empty after stripping
+		class single_far_optics2: single_medium_optics1;  //found empty after stripping
+		class GP25Muzzle: GP25_Base;  //found empty after stripping
+		magazines[]=
+		{
+			"rhs_30Rnd_762x39mm_polymer",
+			"rhs_30Rnd_762x39mm_polymer_tracer",
+			"rhs_30Rnd_762x39mm_polymer_89",
+			"rhs_30Rnd_762x39mm_polymer_U",
+			"rhs_30Rnd_762x39mm_bakelite",
+			"rhs_30Rnd_762x39mm_bakelite_tracer",
+			"rhs_30Rnd_762x39mm_bakelite_89",
+			"rhs_30Rnd_762x39mm_bakelite_U",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm_tracer",
+			"rhs_30Rnd_762x39mm_89",
+			"rhs_30Rnd_762x39mm_U",
+			"rhs_10Rnd_762x39mm",
+			"rhs_10Rnd_762x39mm_tracer",
+			"rhs_10Rnd_762x39mm_89",
+			"rhs_10Rnd_762x39mm_U",
+			"rhs_75Rnd_762x39mm",
+			"rhs_75Rnd_762x39mm_tracer",
+			"rhs_75Rnd_762x39mm_89"
+		};
+	};
+	class rhs_weap_akm: rhs_weap_ak74m
+	{
+		recoil="rhs_recoil_akm";
+		class WeaponSlotsInfo: WeaponSlotsInfo
+		{
+			mass=69.080002;
+			class rhs_npz_slot;  //found empty after stripping
+		};
+		magazines[]=
+		{
+			"rhs_30Rnd_762x39mm_bakelite",
+			"rhs_30Rnd_762x39mm_bakelite_tracer",
+			"rhs_30Rnd_762x39mm_bakelite_89",
+			"rhs_30Rnd_762x39mm_bakelite_U"
+		};
+		class Single: Mode_SemiAuto
+		{
+			aiBurstTerminable=0;
+			reloadTime=0.1;
+			dispersion=0.0020999999;
+		};
+		class Single_AI: Single
+		{
+			aiBurstTerminable=1;
+			burstRangeMax=3;
+		};
+		class FullAuto: Mode_FullAuto
+		{
+			reloadTime=0.1;
+			dispersion=0.0020999999;
+		};
+		class fullauto_medium: FullAuto
+		{
+			aiBurstTerminable=1;
+			burst=2;
+			burstRangeMax=6;
+		};
+		class single_medium_optics1: Single
+		{
+			burstRangeMax=3;
+		};
+		class single_far_optics2: single_medium_optics1;  //found empty after stripping
+		class GP25Muzzle: GP25_Base;  //found empty after stripping
+	};
+	class rhs_weap_ak74m: rhs_weap_ak74m_Base_F
+	{
+		rhs_pkas_type="rhs_acc_pkas";
+		rhs_1p29_type="rhs_acc_1p29";
+		rhs_pso1m2_type="rhs_acc_pso1m2_ak";
+		rhs_pso1m21_type="rhs_acc_pso1m21_ak";
+		rhs_pgo7v_type="rhs_acc_pgo7v_ak";
+		rhs_pgo7v2_type="rhs_acc_pgo7v2_ak";
+		rhs_pgo7v3_type="rhs_acc_pgo7v3_ak";
+		rhs_fold="rhs_weap_ak74m_folded";
+		rhs_fold_anim="RHS_GestureFoldAK74M";
+		rhs_fold_sound[]=
+		{
+			"rhsafrf\addons\rhs_c_weapons\sounds\stock_folding.wss",
+			1.42,
+			1,
+			20
+		};
+		rhs_npz="rhs_weap_ak74m_npz";
+		class WeaponSlotsInfo: WeaponSlotsInfo
+		{
+			mass=74.800003;
+		};
+		class ItemInfo;  //found empty after stripping
+	};
+	class rhs_weap_ak74m_Base_F: Rifle_Base_F
+	{
+		magazines[]=
+		{
+			"rhs_30Rnd_545x39_7N10_AK",
+			"rhs_30Rnd_545x39_7N10_plum_AK",
+			"rhs_30Rnd_545x39_7N10_desert_AK",
+			"rhs_30Rnd_545x39_7N10_camo_AK"
+		};
+		recoil="rhs_recoil_ak74m";
+		class WeaponSlotsInfo: WeaponSlotsInfo
+		{
+			class rhs_npz_slot: SlotInfo
+			{
+				compatibleItems[]=
+				{
+					"rhs_acc_npz"
+				};
+			};
+		};
+		class SAFE: RHS_SAFE_BASE;  //found empty after stripping
+		class FOLD: RHS_FOLD_BASE;  //found empty after stripping
+		class Single: Mode_SemiAuto
+		{
+			aiBurstTerminable=1;
+			reloadTime=0.092299998;
+			dispersion=0.00092999998;
+		};
+		class Single_AI: Single
+		{
+			burstRangeMax=3;
+		};
+		class FullAuto: Mode_FullAuto
+		{
+			aiBurstTerminable=1;
+			reloadTime=0.092299998;
+			dispersion=0.00092999998;
+		};
+		class single_medium_optics1: Single;  //found empty after stripping
+		class single_far_optics2: single_medium_optics1;  //found empty after stripping
+		class fullauto_medium: FullAuto
+		{
+			burst=2;
+			burstRangeMax=5;
+		};
+		class GP25Muzzle: GP25_Base;  //found empty after stripping
+	};
+	class Rifle_Base_F: Rifle
+	{
+		scope=0;
+		discreteDistance[]={100,200,300,400,500,600};
+		discreteDistanceInitIndex=1;
+		weaponInfoType="RscWeaponZeroing";
+		recoil="recoil_default";
+		deployedPivot="bipod";
+		class GunParticles
+		{
+			class FirstEffect
+			{
+				effectName="RifleAssaultCloud";
+				positionName="Usti hlavne";
+				directionName="Konec hlavne";
+			};
+		};
+	};
+	class Rifle: RifleCore
+	{
+		htMin=1;
+		htMax=600;
+		afMax=0;
+		mfMax=0;
+		mFact=1;
+		tBody=100;
+		autoFire=1;
+		reloadAction="ReloadMagazine";
+		soundContinuous=0;
+		optics=0;
+		scope=1;
+		cursor="arifle";
+		cursoraim="CursorAim";
+		value=4;
+		displayName="$STR_DN_RIFLE";
+		nameSound="rifle";
+		reloadTime=0.15000001;
+		modelOptics="-";
+		sound[]={};
+		opticsFlare=0;
+		autoReload=0;
+		aiDispersionCoefX=6;
+		aiDispersionCoefY=6;
+		opticsZoomMin=0.25;
+		opticsZoomMax=1.25;
+		opticsZoomInit=0.75;
+		distanceZoomMin=300;
+		distanceZoomMax=300;
+		maxLeadSpeed=23;
+		canLock=0;
+		flash="gunfire";
+		flashSize=0.5;
+		dispersion=0.00029;
+		recoil="assaultRifleBase";
+		recoilProne="assaultRifleBase";
+		ffMagnitude=0.5;
+		ffFrequency=11;
+		ffCount=3;
+		weaponPoolAvailable=1;
+		maxZeroing=1000;
+		class WeaponSlotsInfo
+		{
+			mass=2;
+			class MuzzleSlot: MuzzleSlot
+			{
+			};
+			class CowsSlot: CowsSlot
+			{
+			};
+			class PointerSlot: PointerSlot
+			{
+			};
+			allowedSlots[]={901};
+		};
+		zeroingSound[]=
+		{
+			"A3\Sounds_F\arsenal\sfx\shared\zeroing_knob_tick_metal",
+			0.31622776,
+			1,
+			5
+		};
+	};
+	class RifleCore: Default
+	{
+	};
+	class Default
+	{
+		class Default
+		{
+			hit[]={1};
+			speed[]={1};
+		};
+		class AP
+		{
+			hit[]={1};
+			speed[]={0.89999998,1};
+		};
+		class HE
+		{
+			hit[]={1};
+			speed[]={0.5,1};
+		};
+		class HEAT
+		{
+			hit[]={1};
+			speed[]={0.80000001,1};
+		};
+		class TandemHEAT
+		{
+			hit[]={1};
+			speed[]={0.89999998,1};
+		};
+	};
+
+
+----------NEW WEAP/AMMO CLASS----------
