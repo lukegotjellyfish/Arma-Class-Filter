@@ -131,6 +131,7 @@ attributeSkip = [
 	"reloadAction",
 	"requiredOpticType",
 	"requiredVersion",
+	"rhs_cartridge",
 	"rhs_grip1_change",
 	"rhs_grip2_change",
 	"rhs_grip3_change",
