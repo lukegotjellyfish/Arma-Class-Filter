@@ -31,19 +31,18 @@ cend     = '\033[0m'
 bluForWeapons = ["rhs_weap_M590_5RD", "rhs_weap_M107", "rhs_weap_XM2010",
 "rhs_weap_m1garand_sa43", "rhs_weap_m14ebrri", "rhs_weap_sr25", "rhs_weap_l1a1_base",
 "rhs_weap_SCARH_STD", "rhs_weap_m40a5", "rhs_weap_m24sws", "rhs_weap_kar98k",
-"rhs_weap_mg42", "rhs_weap_mosin_sbr", "rhs_weap_m240G", "rhs_weap_m4a1_blockII",
+"rhs_weap_mg42_base", "rhs_weap_mosin_sbr", "rhs_weap_m240G", "rhs_weap_m4a1_blockII",
 "rhs_weap_mk18", "rhs_weap_m27iar", "rhs_weap_hk416d145", "rhs_weap_m16a4",
 "rhs_weap_m4a1", "rhs_weap_m21a", "rhs_weap_g36kv", "rhs_weap_m249", "rhs_weap_m249_pip",
 "rhs_weap_MP44", "rhsusf_weap_MP7A2", "rhsusf_weap_m9", "rhsusf_weap_glock17g4",
 "rhs_weap_m3a1_specops", "rhsusf_weap_m1911a1", "rhs_weap_savz61", "rhs_weap_type94_new"]
 
-bluForAmmo = ["rhs_ammo_12g_slug", "rhs_ammo_12g_00buckshot", "rhsusf_ammo_127x99_M33_Ball",
-"rhsusf_ammo_127x99_mk211", "rhsusf_B_300winmag", "rhs_ammo_762x63_M2B_ball",
-"rhs_ammo_762x51_M118_Special_Ball", "rhs_ammo_762x51_M80_Ball", "rhs_ammo_762x51_M993_Ball",
-"rhs_ammo_792x57_Ball", "rhs_B_762x54_Ball", "rhs_ammo_762x51_M80A1EPR_Ball",
-"rhs_ammo_556x45_Mk262_Ball", "rhs_ammo_556x45_Mk318_Ball", "rhs_ammo_556x45_M855_Ball",
-"rhs_ammo_556x45_M855A1_Ball", "rhs_ammo_792x33_SmE_ball", "rhs_ammo_46x30_JHP",
-"rhs_ammo_9x19_JHP", "rhs_ammo_45ACP_MHP", "rhs_ammo_9x17", "rhs_ammo_8mm_mhp"]
+bluForMagazines = [
+"rhsusf_mag_10Rnd_STD_50BMG_M33",
+"rhsusf_5Rnd_300winmag_xm2010",
+"rhsgref_8Rnd_762x63_M2B_M1rifle",
+"rhs_mag_20Rnd_SCAR_762x51_m80_ball"
+]
 
 opForWeapons = ["rhs_weap_Izh18", "rhs_weap_t5000", "rhs_weap_svdp", "rhs_weap_svdp_npz", "rhs_weap_m76",
 "rhs_weap_m38", "rhs_weap_m38_rail", "rhs_weap_pkm", "rhs_weap_pkp", "rhs_weap_m84", "rhs_weap_asval",
@@ -51,20 +50,67 @@ opForWeapons = ["rhs_weap_Izh18", "rhs_weap_t5000", "rhs_weap_svdp", "rhs_weap_s
 "rhs_weap_vss_npz", "rhs_weap_ak74", "rhs_weap_aks74un", "rhs_weap_vhsd2", "rhs_weap_akmn",
 "rhs_weap_savz58p_rail", "rhs_weap_savz58v_fold", "rhs_weap_ak103"]
 
-opForAmmo = ["rhs_ammo_12g_slug", "rhs_ammo_12g_00buckshot", "B_338_Ball", "rhs_B_762x54_7N14_Ball",
-"rhs_B_762x54_7N14_Ball", "rhs_ammo_792x57_Ball", "rhs_B_762x54_Ball", "rhs_B_762x54_Ball",
-"rhs_B_762x54_Ball", "rhs_B_762x54_Ball", "rhs_B_762x54_Ball", "rhs_B_9x39_SP6",
-"rhs_B_9x39_SP6", "rhs_ammo_762x51_M62_tracer", "rhs_B_545x39_7N22_Ball",
-"rhs_B_545x39_7N10_Ball", "rhs_B_9x39_SP5", "rhs_B_9x39_SP5", "rhs_B_545x39_Ball",
-"rhs_B_545x39_Ball", "rhs_ammo_556x45_M855A1_Ball", "rhs_B_762x39_Ball",
-"rhs_B_762x39_Ball", "rhs_B_762x39_Ball", "rhs_B_762x39_Ball_89"]
-
-#Dict for attribute explanations
-attributeEncyclopedia = \
-{
-	"fireLightDuration": "//Duration of light from muzzle flash.",
-	"fireLightIntensity": "//Intensity of light from muzzle flash."
-}
+opForMagazines = [
+"",
+"",
+"",
+"",
+"",
+"",
+"",
+"",
+"",
+"",
+"",
+"",
+"",
+"",
+"",
+"",
+"",
+"",
+"",
+"",
+"",
+"",
+"",
+"",
+"",
+"",
+"",
+"",
+"",
+"",
+"",
+"",
+"",
+"",
+"",
+"",
+"",
+"",
+"",
+"",
+"",
+"",
+"",
+"",
+"",
+"",
+"",
+"",
+"",
+"",
+"",
+"",
+"",
+"",
+"",
+"",
+"",
+"",
+""
+]
 
 #Classes for launcher page
 bluForLaunchers = []
@@ -113,9 +159,22 @@ def findClass(className):
 							for returnedItem in foundClass:
 								classBody.append(returnedItem)
 
+				#Add ammo stats taken from magazine
+				elif line.replace("	","").startswith("ammo=") and line.replace("	", "") != 'ammo="";\n':
+					ammoClass = re.search('ammo="([^"]*)";', line).group(1)
+
+					foundClass = findClass(ammoClass)
+					if len(foundClass) == 1:
+						for returnedList in foundClass:
+							for returnedItem in returnedList:
+								classBody.append(returnedItem)
+					else:
+						for returnedItem in foundClass:
+							classBody.append(returnedItem)
+
 				#If opening brace found, add a skip to avoid ending on next brace
 				#For the length o fthe class, skip = 1 as the class opens with a brace
-				if line.replace("	","") == "{\n":
+				elif line.replace("	","") == "{\n":
 					skipEnd += 1
 				#The next ending brace was found, discount skip
 				elif line.replace("	","") == "};\n":
@@ -143,18 +202,22 @@ def OrderResult(result):
 	onClass = False
 	construct = []
 	for a in result:
-		if a.startswith("	class") or onClass == True:
+		if a.replace("	","").startswith("class") or onClass == True:
+			tabCount = a.count("	")
 			onClass = True
 			construct.append(a)
-		if a == "	};":
-			construct.append(a)
+		if a == tabCount * "	" + "};":
 			onClass = False
 			orderedResult.append(construct)
 			construct = []
-	return list(reversed(orderedResult))
+
+	#Empty lists are being added to the list on second run, need to fix this at the core
+	reversedList = list(reversed(orderedResult))
+	fixedReversedList = [x for x in reversedList if x]
+	return fixedReversedList
 
 
-def OrderedClasses(itemList, fileName, includeList):
+def OrderedClasses(itemList, fileName, includeList, findMagazines=False):
 	try:
 		os.mkdir(fileName)
 	except FileExistsError:
@@ -167,15 +230,33 @@ def OrderedClasses(itemList, fileName, includeList):
 		className = re.search("class ([^:]*):", orderedResult[0][0]).group(1)
 
 		with open(fileName + "\\" + className + ".cpp", "w", encoding="utf-8") as file:
-			print("Writing to file")
 			file.write(className + "\n")
 			addedForClass = []
 			for classBody in orderedResult:
 				#print(classBody)
-				del classBody[-1] #last item is a duplicate }; and I have no idea why
+				#del classBody[-1] #last item is a duplicate }; and I have no idea why
 
 				for attribute in includeList:
+					magazinesFlag = False
 					for item in classBody:
+
+						if findMagazines == True and magazinesFlag == True:
+							if item.endswith("};"):
+								file.write("};\n")
+								magazinesFlag = False
+							elif item.endswith("{"):
+								pass
+							else:
+								print(item.replace('"',"").replace(",",""))
+								file.write("	" + item.replace("	","") + "\n")
+							continue
+
+						if findMagazines == True and item.replace("	","").startswith("magazines[]="):
+							addedForClass.append("magazines")
+							file.write("magazines[] = {\n")
+							magazinesFlag = True
+
+
 						try:
 							_temp = re.search("(" + attribute + "=[^\n]*)", item).group(1)
 							_attribute = re.search("([^=]*)=",_temp).group(1)
@@ -189,11 +270,6 @@ def OrderedClasses(itemList, fileName, includeList):
 		(cgreen + cbold + "Next class" + cend) + \
 		cviolet2 + "-------------------------------" + cend)
 
-
-
-
-#Clear config.csv/Create empty config.csv
-#open("config.csv", "w", encoding="utf-8").close()
 
 #List of file contents
 fileList = []
@@ -209,11 +285,10 @@ for walk in walkList:
 					"-------------------------------" + cend)
 
 weaponAttributes = ["dispersion", "mass", "maxZeroing", "recoil", "reloadTime"]
-ammoAttributes = ["hit", "deflecting", "caliber", "typicalSpeed", "airFriction", "initSpeed"]
-OrderedClasses(bluForWeapons, "BluForWeapons", weaponAttributes)
-OrderedClasses(bluForAmmo, "BluForAmmo", ammoAttributes)
-OrderedClasses(opForWeapons, "OpForWeapons", weaponAttributes)
-OrderedClasses(opForAmmo, "OpForAmmo", ammoAttributes)
+ammoAttributes = ["hit", "count", "indirectHit","indirectHitRange","timeToLive","explosive", "deflecting", "caliber", "typicalSpeed", "airFriction", "initSpeed"]
+#OrderedClasses(bluForWeapons, "BluForWeapons", weaponAttributes, findMagazines=True)
+#OrderedClasses(opForWeapons, "OpForWeapons", weaponAttributes, findMagazines=True)
+OrderedClasses(bluForMagazines, "BluForMagazines", ammoAttributes)
 
 #OrderedClasses()
 #OrderedClasses()
