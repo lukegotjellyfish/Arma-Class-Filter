@@ -1,0 +1,11 @@
+rhsusf_B_300winmag
+hit=18.5;
+indirectHit=0;
+indirectHitRange=0;
+caliber=0.79000002;
+typicalSpeed=869;
+airFriction=-0.0007034;
+timeToLive=6;
+deflecting=15;
+count=30;
+initSpeed=900;
