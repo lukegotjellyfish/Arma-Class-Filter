@@ -288,6 +288,7 @@ class CfgVehicles
 			"['Label', cM1PlnSymPlaces, 'ArmyPlt_Abrams_D']",
 			"['Label', cM1BarrelSymPlaces, 'BarrelArt_Abrams_WD']"
 		};
+		displayName="$STR_M1A1SAwd_Name";
 		accuracy=0.30000001;
 		typicalCargo[]={};
 		side=1;
@@ -979,8 +980,14 @@ class CfgVehicles
 		};
 		class textureSources
 		{
-			class woodland;  //found empty after stripping
-			class desert: woodland;  //found empty after stripping
+			class woodland
+			{
+				displayName="Woodland";
+			};
+			class desert: woodland
+			{
+				displayName="Desert";
+			};
 		};
 		class Damage;  //found empty after stripping
 		class ViewOptics: ViewOptics
@@ -1056,6 +1063,7 @@ class CfgVehicles
 		{
 			class rhs_hideIFFPanel
 			{
+				displayName="Hide IFF Panel";
 				property="rhs_hideIFFPanel";
 				control="CheckboxNumber";
 				expression="_this animate ['IFF_Panels_Hide',_value,true]";
@@ -1063,6 +1071,7 @@ class CfgVehicles
 			};
 			class rhs_hideMiles
 			{
+				displayName="Hide Miles Panel";
 				property="rhs_hideMiles";
 				control="CheckboxNumber";
 				expression="_this animate ['Miles_Hide',_value,true]";
@@ -1070,6 +1079,7 @@ class CfgVehicles
 			};
 			class rhs_decalBarrel_type
 			{
+				displayName="Define type of barrel art";
 				tooltip="Define type of barrel art. You can choose between desert & Woodland variants";
 				property="rhs_decalBarrel_type";
 				control="Combo";
@@ -1092,6 +1102,7 @@ class CfgVehicles
 			};
 			class rhs_decalBarrel
 			{
+				displayName="Define barrel art";
 				tooltip="Define barrel art. Available numbers from 0 to 55, type number above 55 to clear that place";
 				property="rhs_decalBarrel";
 				control="Edit";
@@ -1101,6 +1112,7 @@ class CfgVehicles
 			};
 			class rhs_decalPlatoon_type
 			{
+				displayName="Define type of platoon symbol";
 				tooltip="Define type of platoon symbol. You can choose between desert & Woodland variants";
 				property="rhs_decalPlatoon_type";
 				control="Combo";
@@ -1123,6 +1135,7 @@ class CfgVehicles
 			};
 			class rhs_decalPlatoon
 			{
+				displayName="Define platoon symbol";
 				tooltip="Define platoon symbol";
 				property="rhs_decalPlatoon";
 				control="Combo";
@@ -1218,6 +1231,7 @@ class CfgVehicles
 			};
 			class rhs_ammoslot_1_type
 			{
+				displayName="Ammo slot #1 type";
 				tooltip="Define type of shell for #1 slot";
 				property="rhs_ammoslot_1_type";
 				control="Combo";
@@ -1270,6 +1284,7 @@ class CfgVehicles
 			};
 			class rhs_ammoslot_1
 			{
+				displayName="Ammo slot #1 count";
 				tooltip="Define number of rounds stored inside of type #1. Max 36. Leave -1 for default loadout";
 				property="rhs_ammoslot_1";
 				control="Edit";
@@ -1279,22 +1294,26 @@ class CfgVehicles
 			};
 			class rhs_ammoslot_2_type: rhs_ammoslot_1_type
 			{
+				displayName="Ammo slot #2 type";
 				tooltip="Define type of shell for #2 slot";
 				property="rhs_ammoslot_2_type";
 				defaultValue="0";
 			};
 			class rhs_ammoslot_2: rhs_ammoslot_1
 			{
+				displayName="Ammo slot #2 count";
 				tooltip="Define number of rounds stored inside of type #2. Max 36. Leave -1 for default loadout";
 				property="rhs_ammoslot_2";
 			};
 			class rhs_ammoslot_3_type: rhs_ammoslot_1_type
 			{
+				displayName="Ammo slot #3 type";
 				tooltip="Define type of shell for #3 slot";
 				property="rhs_ammoslot_3_type";
 			};
 			class rhs_ammoslot_3: rhs_ammoslot_1
 			{
+				displayName="Ammo slot #3 count";
 				tooltip="Define number of rounds stored inside of type #3. Max 36. Leave -1 for default loadout";
 				property="rhs_ammoslot_3";
 			};
@@ -1308,9 +1327,11 @@ class CfgVehicles
 			"['Label', cM1PlnSymPlaces, 'ArmyPlt_Abrams_WD']",
 			"['Label', cM1BarrelSymPlaces, 'BarrelArt_Abrams_WD']"
 		};
+		displayName="$STR_M1A1SAwd_Name";
 	};
 	class rhsusf_m1a1aimd_usarmy: rhsusf_m1a1tank_base
 	{
+		displayName="$STR_M1A1SAwd_Name";
 		rhs_decalParameters[]=
 		{
 			"['Label', cM1PlnSymPlaces, 'ArmyPlt_Abrams_D']",
@@ -1326,6 +1347,7 @@ class CfgVehicles
 	};
 	class rhsusf_m1a1aim_tuski_wd: rhsusf_m1a1tank_base
 	{
+		displayName="$STR_M1A1SATUSKIwd_Name";
 		rhs_decalParameters[]=
 		{
 			"['Label', cM1PlnSymPlaces, 'ArmyPlt_Abrams_WD']",
@@ -1333,8 +1355,14 @@ class CfgVehicles
 		};
 		class textureSources
 		{
-			class woodland;  //found empty after stripping
-			class desert: woodland;  //found empty after stripping
+			class woodland
+			{
+				displayName="Woodland";
+			};
+			class desert: woodland
+			{
+				displayName="Desert";
+			};
 		};
 		class Turrets: Turrets
 		{
@@ -1869,6 +1897,7 @@ class CfgVehicles
 	};
 	class rhsusf_m1a1aim_tuski_d: rhsusf_m1a1aim_tuski_wd
 	{
+		displayName="$STR_M1A1SATUSKIwd_Name";
 		rhs_decalParameters[]=
 		{
 			"['Label', cM1PlnSymPlaces, 'ArmyPlt_Abrams_D']",
@@ -1877,6 +1906,7 @@ class CfgVehicles
 	};
 	class rhsusf_m1a1fep_d: rhsusf_m1a1tank_base
 	{
+		displayName="$STR_M1A1FEPd_Name";
 		rhs_duke_type="rhsusf_duke_m1a2";
 		rhs_decalParameters[]=
 		{
@@ -1893,9 +1923,18 @@ class CfgVehicles
 		};
 		class textureSources
 		{
-			class woodland;  //found empty after stripping
-			class desert: woodland;  //found empty after stripping
-			class OD: woodland;  //found empty after stripping
+			class woodland
+			{
+				displayName="Woodland";
+			};
+			class desert: woodland
+			{
+				displayName="Desert";
+			};
+			class OD: woodland
+			{
+				displayName="Olive Drab";
+			};
 		};
 		class Turrets: Turrets
 		{
@@ -2039,6 +2078,7 @@ class CfgVehicles
 			class rhs_hideIFFPanel: rhs_hideIFFPanel;  //found empty after stripping
 			class rhs_hideDUKE: rhs_hideMiles
 			{
+				displayName="hide DUKE antennas";
 				property="rhs_hideDUKE";
 				expression="_this animate ['DUKE_Hide',_value,true];if(_value isEqualTo 1)then{_this removeWeaponTurret ['rhsusf_weap_duke',[0,0]]}";
 			};
@@ -2063,6 +2103,7 @@ class CfgVehicles
 	};
 	class rhsusf_m1a1fep_wd: rhsusf_m1a1fep_d
 	{
+		displayName="$STR_M1A1FEPd_Name";
 		rhs_decalParameters[]=
 		{
 			"['Label', cM1PlnSymPlaces, 'ArmyPlt_Abrams_WD']",
@@ -2094,6 +2135,7 @@ class CfgVehicles
 			"['Label', cM1PlnSymPlaces, 'ArmyPlt_Abrams_WD']",
 			"['Label', cM1BarrelSymPlaces, 'BarrelArt_Abrams_WD']"
 		};
+		displayName="$STR_M1A1FEPod_Name";
 	};
 	class rhsusf_m1a1hc_wd: rhsusf_m1a1tank_base
 	{
@@ -2102,11 +2144,21 @@ class CfgVehicles
 			"['Label', cM1PlnSymPlaces, 'ArmyPlt_Abrams_WD']",
 			"['Label', cM1BarrelSymPlaces, 'BarrelArt_Abrams_WD']"
 		};
+		displayName="$STR_M1A1hcd_Name";
 		class textureSources
 		{
-			class woodland;  //found empty after stripping
-			class desert: woodland;  //found empty after stripping
-			class OD: woodland;  //found empty after stripping
+			class woodland
+			{
+				displayName="Woodland";
+			};
+			class desert: woodland
+			{
+				displayName="Desert";
+			};
+			class OD: woodland
+			{
+				displayName="Olive Drab";
+			};
 		};
 		class Turrets: Turrets
 		{

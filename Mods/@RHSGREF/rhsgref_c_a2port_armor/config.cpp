@@ -126,6 +126,7 @@ class CfgVehicles
 	};
 	class rhsgref_BRDM2: Wheeled_APC_F
 	{
+		displayName="BRDM-2";
 		rhs_decalParameters[]=
 		{
 			"['Number', [3,4,5], 'CDF']"
@@ -971,22 +972,42 @@ class CfgVehicles
 		{
 			class standard
 			{
+				displayName="CDF";
 				factions[]=
 				{
 					"rhsgref_faction_cdf_ground"
 				};
 			};
-			class chdkz;  //found empty after stripping
-			class khaki: chdkz;  //found empty after stripping
-			class olive: chdkz;  //found empty after stripping
-			class takistan: chdkz;  //found empty after stripping
-			class 3tone: chdkz;  //found empty after stripping
-			class chdkz02: chdkz;  //found empty after stripping
+			class chdkz
+			{
+				displayName="CHDKZ 01";
+			};
+			class khaki: chdkz
+			{
+				displayName="Khaki";
+			};
+			class olive: chdkz
+			{
+				displayName="Green";
+			};
+			class takistan: chdkz
+			{
+				displayName="Takistan";
+			};
+			class 3tone: chdkz
+			{
+				displayName="Tri-color";
+			};
+			class chdkz02: chdkz
+			{
+				displayName="CHDKZ 02";
+			};
 		};
 		class Attributes
 		{
 			class rhs_decalNumber_type
 			{
+				displayName="Define font type of plate number";
 				tooltip="Define kind of font that will be drawn on vehicle.";
 				property="rhs_decalNumber_type";
 				control="Combo";
@@ -1040,6 +1061,7 @@ class CfgVehicles
 			class rhs_decalNumber
 			{
 				collapsed=1;
+				displayName="Set side number";
 				tooltip="Set side number. 4 numbers are required. Type 0 to hide numbers complety & leave at -1 to get random number";
 				property="rhs_decalNumber";
 				control="Edit";
@@ -1049,6 +1071,7 @@ class CfgVehicles
 			};
 			class rhs_decalPlatoon_type
 			{
+				displayName="Define platoon symbol type";
 				tooltip="Decal type";
 				property="rhs_decalPlatoon_type";
 				control="Combo";
@@ -1092,6 +1115,7 @@ class CfgVehicles
 			};
 			class rhs_decalPlatoon
 			{
+				displayName="Set platoon symbol";
 				tooltip="Set platoon symbol located on right & rear of vehicles. Usually used for platoon symbols. -1 leaves current symbol & 0 clears decal.";
 				property="rhs_decalPlatoon";
 				control="Edit";
@@ -1101,6 +1125,7 @@ class CfgVehicles
 			};
 			class big_numbers_hide
 			{
+				displayName="hide big decal numbers";
 				property="big_numbers_hide";
 				control="CheckboxNumber";
 				expression="_this animate ['%s',_value,true]";
@@ -1108,15 +1133,18 @@ class CfgVehicles
 			};
 			class small_numbers_hide: big_numbers_hide
 			{
+				displayName="hide small decal numbers";
 				property="small_numbers_hide";
 			};
 			class driverViewHatch: big_numbers_hide
 			{
+				displayName="Open driver view hatch";
 				property="driverViewHatch";
 				expression="_this animateDoor ['%s',_value,true]";
 			};
 			class commanderViewHatch: driverViewHatch
 			{
+				displayName="Open commander view hatch";
 				property="commanderViewHatch";
 			};
 		};
@@ -1158,20 +1186,34 @@ class CfgVehicles
 	};
 	class rhsgref_BRDM2_ATGM: rhsgref_BRDM2
 	{
+		displayName="BRDM-2 (9P148)";
 		accuracy=0.30000001;
 		class textureSources
 		{
 			class standard
 			{
+				displayName="CDF";
 				factions[]=
 				{
 					"rhsgref_faction_cdf_ground"
 				};
 			};
-			class chdkz;  //found empty after stripping
-			class khaki: chdkz;  //found empty after stripping
-			class olive: chdkz;  //found empty after stripping
-			class takistan: chdkz;  //found empty after stripping
+			class chdkz
+			{
+				displayName="CHDKZ";
+			};
+			class khaki: chdkz
+			{
+				displayName="Khaki";
+			};
+			class olive: chdkz
+			{
+				displayName="Green";
+			};
+			class takistan: chdkz
+			{
+				displayName="Takistan";
+			};
 		};
 		hiddenselectionstextures[]=
 		{
@@ -1262,6 +1304,7 @@ class CfgVehicles
 	};
 	class rhsgref_BRDM2UM: rhsgref_BRDM2
 	{
+		displayName="BRDM-2UM";
 		attenuationEffectType="OpenCarAttenuation";
 		soundAttenuationCargo[]={1,1,1};
 		threat[]={0.30000001,0,0.1};
@@ -1281,6 +1324,7 @@ class CfgVehicles
 	};
 	class rhsgref_BRDM2_HQ: rhsgref_BRDM2UM
 	{
+		displayName="BRDM-2UM (Armed)";
 		class Turrets: Turrets
 		{
 			class MainTurret: NewTurret

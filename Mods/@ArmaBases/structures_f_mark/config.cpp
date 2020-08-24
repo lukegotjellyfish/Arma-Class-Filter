@@ -20,6 +20,7 @@ class CfgVehicles
 	class TargetBaseX: ThingX
 	{
 		_generalMacro="TargetBaseX";
+		displayName="$STR_DN_TARGET";
 		DLC="Mark";
 		icon="iconObject";
 		editorCategory="EdCat_Things";
@@ -45,6 +46,7 @@ class CfgVehicles
 			init="''";
 		};
 		_generalMacro="Land_VR_Target_Dart_01_F";
+		displayName="$STR_A3_CfgVehicles_Land_VR_Target_Dart_01_F0";
 		DLC="Mark";
 		icon="iconObject_10x1";
 		accuracy=0;
@@ -95,6 +97,7 @@ class CfgVehicles
 			init="''";
 		};
 		_generalMacro="Land_VR_Target_MBT_01_cannon_F";
+		displayName="$STR_A3_CfgVehicles_Land_VR_Target_MBT_01_cannon_F0";
 		DLC="Mark";
 		icon="iconObject_2x5";
 		armor=800;
@@ -192,6 +195,7 @@ class CfgVehicles
 			init="''";
 		};
 		_generalMacro="Land_VR_Target_MRAP_01_F";
+		displayName="$STR_A3_CfgVehicles_Land_VR_Target_MRAP_01_F0";
 		DLC="Mark";
 		icon="iconObject_1x2";
 		armor=300;
@@ -312,6 +316,7 @@ class CfgVehicles
 			init="''";
 		};
 		_generalMacro="Land_VR_Target_APC_Wheeled_01_F";
+		displayName="$STR_A3_CfgVehicles_Land_VR_Target_APC_Wheeled_01_F0";
 		DLC="Mark";
 		icon="iconObject_2x5";
 		armor=250;

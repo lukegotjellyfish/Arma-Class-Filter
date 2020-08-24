@@ -1026,6 +1026,8 @@ class CfgMagazines
 	};
 	class rhs_mag_M1069: VehicleMagazine
 	{
+		displayName="XM1069 HE-FRAG";
+		displayNameShort="M1069";
 		ammo="rhs_ammo_M1069";
 		muzzleImpulseFactor[]=
 		{
@@ -1040,22 +1042,30 @@ class CfgMagazines
 	};
 	class rhs_mag_M1147: rhs_mag_M1069
 	{
+		displayName="M1147 HE-FRAG";
+		displayNameShort="M1147";
 		ammo="rhs_ammo_M1147";
 	};
 	class rhs_mag_M416: rhs_mag_M1069
 	{
+		displayName="M416 Smoke";
+		displayNameShort="M416";
 		ammo="rhs_ammo_M416";
 		initSpeed=732;
 		rhs_magazineIndex=-1;
 	};
 	class rhs_mag_M1028: rhs_mag_M1069
 	{
+		displayName="M1028 Canister";
+		displayNameShort="M1028";
 		ammo="rhs_ammo_M1028";
 		initSpeed=1410;
 		rhs_magazineIndex=3;
 	};
 	class rhs_mag_M829: rhs_mag_M1069
 	{
+		displayName="M829 APFSDS-T";
+		displayNameShort="M829";
 		ammo="rhs_ammo_M829";
 		count=28;
 		initSpeed=1670;
@@ -1064,30 +1074,40 @@ class CfgMagazines
 	};
 	class rhs_mag_M829A1: rhs_mag_M829
 	{
+		displayName="M829A1 APFSDS-T";
+		displayNameShort="M829A1";
 		ammo="rhs_ammo_M829A1";
 		count=28;
 		initSpeed=1575;
 	};
 	class rhs_mag_M829A2: rhs_mag_M829
 	{
+		displayName="M829A2 APFSDS-T";
+		displayNameShort="M829A2";
 		ammo="rhs_ammo_M829A2";
 		count=28;
 		initSpeed=1680;
 	};
 	class rhs_mag_M829A3: rhs_mag_M829
 	{
+		displayName="M829A3 APFSDS-T";
+		displayNameShort="M829A3";
 		ammo="rhs_ammo_M829A3";
 		count=28;
 		initSpeed=1555;
 	};
 	class rhs_mag_M830: rhs_mag_M1069
 	{
+		displayName="M830 HEAT-FS";
+		displayNameShort="M830";
 		ammo="rhs_ammo_M830";
 		initSpeed=915;
 		rhs_magazineIndex=2;
 	};
 	class rhs_mag_M830A1: rhs_mag_M830
 	{
+		displayName="M830A1 MPAT";
+		displayNameShort="M830A1";
 		ammo="rhs_ammo_M830A1";
 		count=8;
 		initSpeed=1440;
@@ -1228,6 +1248,7 @@ class CfgMagazines
 	};
 	class rhs_mag_30x113mm_M789_HEDP_1200: VehicleMagazine
 	{
+		displayName="30x113mm M789 HEDP-T";
 		ammo="rhs_ammo_30x113mm_M789_HEDP";
 		count=1200;
 		initSpeed=805;
@@ -1243,6 +1264,7 @@ class CfgMagazines
 	};
 	class RHS_48Rnd_40mm_MK19: VehicleMagazine
 	{
+		displayName="Mk. 19 40mm M384 HE";
 		ammo="rhs_ammo_mk19m3_M384";
 		count=48;
 		initSpeed=240;
@@ -1251,16 +1273,19 @@ class CfgMagazines
 	};
 	class RHS_48Rnd_40mm_MK19_M430I: RHS_48Rnd_40mm_MK19
 	{
+		displayName="Mk. 19 40mm M430I HEDP";
 		displaynameshort="M430I HEDP";
 		ammo="rhs_ammo_mk19m3_M430I";
 	};
 	class RHS_48Rnd_40mm_MK19_M430A1: RHS_48Rnd_40mm_MK19
 	{
+		displayName="Mk. 19 40mm M430A1 HEDP";
 		displaynameshort="M430A1 HEDP";
 		ammo="rhs_ammo_mk19m3_M430A1";
 	};
 	class RHS_48Rnd_40mm_MK19_M1001: RHS_48Rnd_40mm_MK19
 	{
+		displayName="Mk. 19 40mm M1001 Canister";
 		displaynameshort="M1001 Canister";
 		ammo="rhs_ammo_mk19m3_M1001";
 	};
@@ -1287,37 +1312,45 @@ class CfgMagazines
 		tracersEvery=5;
 		nameSound="mgun";
 		count=100;
+		displayName="12.7mm M2 HMG Belt";
 		displaynameshort="M2 Ball";
 	};
 	class rhs_mag_100rnd_127x99_mag_Tracer_Red: rhs_mag_100rnd_127x99_mag
 	{
 		ammo="rhs_ammo_127x99_Ball_Tracer_Red";
+		displayName="12.7mm M2 HMG Tracer (Red) Belt";
 	};
 	class rhs_mag_100rnd_127x99_mag_Tracer_Green: rhs_mag_100rnd_127x99_mag_Tracer_Red
 	{
 		ammo="rhs_ammo_127x99_Ball_Tracer_Green";
+		displayName="12.7mm M2 HMG Tracer (Green) Belt";
 	};
 	class rhs_mag_100rnd_127x99_mag_Tracer_Yellow: rhs_mag_100rnd_127x99_mag_Tracer_Red
 	{
 		ammo="rhs_ammo_127x99_Ball_Tracer_Yellow";
+		displayName="12.7mm M2 HMG Tracer (Yellow) Belt";
 	};
 	class rhs_mag_100rnd_127x99_SLAP_mag: rhs_mag_100rnd_127x99_mag
 	{
 		ammo="rhs_ammo_127x99_SLAP";
+		displayName="12.7mm SLAP M2 HMG Belt";
 		displaynameshort="M903 SLAP";
 		initSpeed=1210;
 	};
 	class rhs_mag_100rnd_127x99_SLAP_mag_Tracer_Red: rhs_mag_100rnd_127x99_SLAP_mag
 	{
 		ammo="rhs_ammo_127x99_SLAP_Tracer_Red";
+		displayName="12.7mm SLAP M2 HMG Tracer (Red) Belt";
 	};
 	class rhs_mag_100rnd_127x99_SLAP_mag_Tracer_Green: rhs_mag_100rnd_127x99_SLAP_mag
 	{
 		ammo="rhs_ammo_127x99_SLAP_Tracer_Green";
+		displayName="12.7mm SLAP M2 HMG Tracer (Green) Belt";
 	};
 	class rhs_mag_100rnd_127x99_SLAP_mag_Tracer_Yellow: rhs_mag_100rnd_127x99_SLAP_mag
 	{
 		ammo="rhs_ammo_127x99_SLAP_Tracer_Yellow";
+		displayName="12.7mm SLAP M2 HMG Tracer (Yellow) Belt";
 	};
 	class rhs_mag_200rnd_127x99_mag: rhs_mag_100rnd_127x99_mag
 	{
@@ -1404,6 +1437,8 @@ class CfgMagazines
 	class 8Rnd_82mm_Mo_shells;
 	class rhs_1Rnd_m821_HE: 8Rnd_82mm_Mo_shells
 	{
+		displayName="81mm M821 HE Mortar Shell";
+		displayNameShort="$STR_A3_cfgmagazines_8rnd_82mm_mo_shells_dns";
 		count=1;
 		ammo="rhs_m821_he";
 		initSpeed=200;
@@ -1415,6 +1450,8 @@ class CfgMagazines
 	class rhs_mag_155mm_m795_28: 32Rnd_155mm_Mo_shells
 	{
 		initSpeed=810;
+		displayNameShort="$STR_A3_CfgMagazines_50Rnd_120mm_Mo_shells_dns";
+		displayName="$STR_A3_CfgMagazines_50Rnd_120mm_Mo_shells0";
 		ammo="Sh_155mm_AMOS";
 		count=32;
 		nameSound="heat";
@@ -1424,28 +1461,40 @@ class CfgMagazines
 	{
 		count=2;
 		ammo="Smoke_120mm_AMOS_White";
+		displayName="$STR_A3_CfgMagazines_10Rnd_120mm_Mo_smoke0";
+		displayNameShort="$STR_A3_CfgMagazines_SmokeShell_dns";
 	};
 	class rhs_mag_155mm_485_2: rhs_mag_155mm_m825a1_2
 	{
 		ammo="rhsusf_40mm_white";
+		displayName="Illumination";
+		displayNameShort="Illumination";
 	};
 	class rhs_mag_155mm_m712_2: rhs_mag_155mm_m825a1_2
 	{
 		ammo="Sh_155mm_AMOS_LG";
+		displayName="$STR_A3_CfgMagazines_10Rnd_120mm_Mo_LG0";
+		displayNameShort="$STR_A3_CfgMagazines_10Rnd_120mm_Mo_LG0";
 	};
 	class rhs_mag_155mm_m731_1: rhs_mag_155mm_m825a1_2
 	{
 		count=1;
 		ammo="Mine_155mm_AMOS_range";
+		displayName="$STR_A3_CfgMagazines_10Rnd_120mm_Mo_mine0";
+		displayNameShort="$STR_A3_CfgMagazines_10Rnd_120mm_Mo_mine0";
 	};
 	class rhs_mag_155mm_raams_1: rhs_mag_155mm_m731_1
 	{
 		ammo="AT_Mine_155mm_AMOS_range";
+		displayName="$STR_A3_at_mine_cluster_0";
+		displayNameShort="$STR_A3_at_mine_cluster_0";
 	};
 	class rhs_mag_155mm_m864_3: rhs_mag_155mm_m825a1_2
 	{
 		count=3;
 		ammo="Cluster_155mm_AMOS";
+		displayName="$STR_A3_CfgMagazines_10Rnd_120mm_Mo_Cluster0";
+		displayNameShort="$STR_A3_CfgMagazines_10Rnd_120mm_Mo_Cluster0";
 	};
 	class rhs_mag_2Rnd_TOW: VehicleMagazine
 	{
@@ -1535,6 +1584,8 @@ class CfgMagazines
 	};
 	class rhs_mag_m26_6: VehicleMagazine
 	{
+		displayName="M26";
+		displayNameShort="Cluster";
 		ammo="rhs_ammo_m26_rocket";
 		nameSound="rockets";
 		initSpeed=650;
@@ -1547,11 +1598,13 @@ class CfgMagazines
 	};
 	class rhs_mag_m26a1_6: rhs_mag_m26_6
 	{
+		displayName="M26A1";
 		ammo="rhs_ammo_m26a1_rocket";
 		initSpeed=850;
 	};
 	class rhs_mag_m30_6: rhs_mag_m26a1_6
 	{
+		displayName="M30";
 		ammo="rhs_ammo_m30_rocket";
 		hardpoints[]=
 		{
@@ -1561,10 +1614,14 @@ class CfgMagazines
 	};
 	class rhs_mag_m31_6: rhs_mag_m30_6
 	{
+		displayName="M31";
+		displayNameShort="Unitary HE";
 		ammo="rhs_ammo_m31_rocket";
 	};
 	class rhs_mag_mgm140a_1: rhs_mag_m30_6
 	{
+		displayName="MGM-140A (M39)";
+		displayNameShort="Cluster";
 		ammo="rhs_ammo_mgm140a_rocket";
 		count=1;
 		hardpoints[]=
@@ -1575,17 +1632,22 @@ class CfgMagazines
 	};
 	class rhs_mag_mgm140b_1: rhs_mag_mgm140a_1
 	{
+		displayName="MGM-140B (M39A1)";
 		ammo="rhs_ammo_mgm140b_rocket";
 		pylonWeapon="rhs_weap_atacms_guided";
 	};
 	class rhs_mag_mgm164_block2_1: rhs_mag_mgm140a_1
 	{
 		hardpoints[]={};
+		displayName="MGM-164A";
+		displayNameShort="Cluster, Guided HEAT";
 		ammo="rhs_ammo_mgm164_block2_rocket";
 	};
 	class rhs_mag_mgm164_block4_1: rhs_mag_mgm140a_1
 	{
 		hardpoints[]={};
+		displayName="MGM-168";
+		displayNameShort="Unitary HE";
 		ammo="rhs_ammo_mgm164_block4_rocket";
 		pylonWeapon="rhs_weap_atacms_guided";
 	};
@@ -1615,6 +1677,8 @@ class CfgMagazines
 	{
 		count=999;
 		ammo="rhs_ammo_smokegen";
+		displayName="$STR_RHSUSF_MAG_SMOKEGEN";
+		displayNameShort="$STR_RHSUSF_MAG_SMOKEGEN";
 	};
 	class rhsusf_mag_duke: SmokeLauncherMag
 	{
@@ -1934,6 +1998,7 @@ class CfgWeapons
 	class MGun;
 	class rhs_weap_MASTERSAFE: Default
 	{
+		displayName="MASTERSAFE";
 		magazines[]={};
 	};
 	class rhs_weap_MASTERSAFE_Holdster15: rhs_weap_MASTERSAFE
@@ -2065,6 +2130,7 @@ class CfgWeapons
 	};
 	class rhs_weap_m284: cannon_155mm
 	{
+		displayName="$STR_A3_mortar_120mm_AMOS0";
 		nameSound="cannon";
 		cursor="mortar";
 		cursorAim="EmptyCursor";
@@ -2121,8 +2187,10 @@ class CfgWeapons
 		airateoffiredistance=1000;
 		canlock=0;
 		FCSMaxLeadSpeed=0;
+		displayName="25mm M242";
 		class HE: HE
 		{
+			displayName="25mm M242";
 			magazines[]=
 			{
 				"rhs_mag_230Rnd_25mm_M242_HEI",
@@ -2147,6 +2215,7 @@ class CfgWeapons
 		};
 		class AP: AP
 		{
+			displayName="25mm M242 - M919 APFSDS-T";
 			magazines[]=
 			{
 				"rhs_mag_70Rnd_25mm_M242_APFSDS"
@@ -2172,6 +2241,7 @@ class CfgWeapons
 	};
 	class RHS_weap_M119: mortar_155mm_AMOS
 	{
+		displayName="$STR_RHS_DN_M119";
 		ballisticscomputer=2;
 		reloadTime=6;
 		magazineReloadTime=6;
@@ -2215,6 +2285,7 @@ class CfgWeapons
 	};
 	class RHS_M2_Abrams_Gunner: HMG_M2
 	{
+		displayName="M2 CSAMM";
 		displaynameshort="M2 CSAMM";
 		canLock=0;
 		initspeed=0;
@@ -2264,9 +2335,11 @@ class CfgWeapons
 	class RHS_MKV_M2_p: RHS_M2
 	{
 		selectionfireanim="m2_p_flash";
+		displayName="Port M2";
 	};
 	class RHS_MKV_M2_s: RHS_MKV_M2_p
 	{
+		displayName="Stbd M2";
 		selectionfireanim="m2_s_flash";
 	};
 	class RHS_M2_CROWS_M151: RHS_M2
@@ -2296,6 +2369,7 @@ class CfgWeapons
 	class RHS_M2_CROWS_M153: RHS_M2_CROWS_M151;  //found empty after stripping
 	class rhs_weap_gau21_1: RHS_M2
 	{
+		displayName="GAU-21";
 		magazines[]=
 		{
 			"rhs_mag_100rnd_127x99_mag",
@@ -2326,6 +2400,7 @@ class CfgWeapons
 	};
 	class rhs_weap_M3W_A29: rhs_weap_gau21_1
 	{
+		displayName="2xM3 HMG";
 		selectionFireAnim[]=
 		{
 			"zasleh"
@@ -2393,6 +2468,7 @@ class CfgWeapons
 		cursoraimon="EmptyCursor";
 		aidispersioncoefx=8.3999996;
 		aidispersioncoefy=9.6000004;
+		displayName="M240";
 		displaynameshort="M240";
 		class manual: manual
 		{
@@ -2415,6 +2491,7 @@ class CfgWeapons
 	class rhs_weap_m240_m113: rhs_weap_m240veh
 	{
 		cursorAim="mg";
+		displayName="M240B";
 		displaynameshort="M240B";
 		class manual: manual
 		{
@@ -2429,17 +2506,22 @@ class CfgWeapons
 	class rhs_weap_m240_abrams_coax: rhs_weap_m240veh;  //found empty after stripping
 	class rhs_weap_m240_bradley_coax: rhs_weap_m240veh
 	{
+		displayName="M240C";
 		displaynameshort="M240C";
 		ballisticsComputer="2 + 16";
 		minZeroing=200;
 	};
 	class rhs_weap_m240H: rhs_weap_m240veh
 	{
+		displayName="M240H";
 		displaynameshort="M240H";
 		cursor="EmptyCursor";
 		cursoraim="mg";
 		cursoraimon="EmptyCursor";
-		class manual: manual;  //found empty after stripping
+		class manual: manual
+		{
+			displayName="M240H";
+		};
 	};
 	class rhs_weap_m240H_1: rhs_weap_m240H;  //found empty after stripping
 	class rhs_weap_m240H_2: rhs_weap_m240H_1;  //found empty after stripping
@@ -2450,6 +2532,7 @@ class CfgWeapons
 	};
 	class rhs_weap_m134_minigun_1: M134_minigun
 	{
+		displayName="M134 Minigun 7.62mm";
 		magazines[]=
 		{
 			"rhs_mag_762x51_m80a1_4000"
@@ -2462,6 +2545,7 @@ class CfgWeapons
 		{
 			"2000Rnd_762x51_Belt_T_Red"
 		};
+		displayName="Port M134";
 		class gunParticles
 		{
 			class effect1
@@ -2491,6 +2575,7 @@ class CfgWeapons
 		weight=40;
 		class LowROF: LowROF
 		{
+			displayName="LO";
 			flash="gunfire";
 			flashSize=0.1;
 			recoil="Empty";
@@ -2500,6 +2585,7 @@ class CfgWeapons
 		};
 		class HighROF: LowROF
 		{
+			displayName="HI";
 			reloadTime=0.015;
 		};
 		class far: medium
@@ -2514,6 +2600,7 @@ class CfgWeapons
 		cursor="mg";
 		cursorAim="EmptyCursor";
 		cursorSize=0;
+		displayName="M197";
 		ballisticsComputer=16;
 		autoFire=1;
 		nameSound="cannon";
@@ -2524,6 +2611,7 @@ class CfgWeapons
 		canLock=2;
 		class manual: Mode_FullAuto
 		{
+			displayName="M197";
 			autoFire=1;
 			reloadTime=0.059999999;
 			dispersion=0.0085000005;
@@ -2537,22 +2625,26 @@ class CfgWeapons
 	};
 	class rhs_weap_M301: rhs_weap_M197
 	{
+		displayName="M301";
 		magazines[]=
 		{
 			"rhs_mag_M301_500"
 		};
 		class manual: manual
 		{
+			displayName="M301(LO)";
 			reloadTime=0.079999998;
 		};
 		class HighROF: manual
 		{
+			displayName="M301(HI)";
 			reloadTime=0.039999999;
 			dispersion=0.0094999997;
 		};
 	};
 	class rhs_weap_M230: rhs_weap_M197
 	{
+		displayName="M230";
 		magazines[]=
 		{
 			"rhs_mag_30x113mm_M789_HEDP_1200",
@@ -2561,6 +2653,7 @@ class CfgWeapons
 		shotFromTurret=0;
 		class manual: Mode_FullAuto
 		{
+			displayName="BURST: 10";
 			rhs_burstLimiter=10;
 			autoFire=1;
 			reloadTime=0.096000001;
@@ -2570,18 +2663,22 @@ class CfgWeapons
 		};
 		class burst_20: manual
 		{
+			displayName="BURST: 20";
 			rhs_burstLimiter=20;
 		};
 		class burst_50: manual
 		{
+			displayName="BURST: 50";
 			rhs_burstLimiter=50;
 		};
 		class burst_100: manual
 		{
+			displayName="BURST: 100";
 			rhs_burstLimiter=100;
 		};
 		class burst_all: manual
 		{
+			displayName="BURST: ALL";
 			rhs_burstLimiter=1200;
 		};
 		class far: close
@@ -2599,6 +2696,7 @@ class CfgWeapons
 	};
 	class RHS_weap_gau8: Gatling_30mm_Plane_CAS_01_F
 	{
+		displayName="GAU-8";
 		cursorSize=0;
 		cursor="mg";
 		cursorAim="EmptyCursor";
@@ -2613,15 +2711,18 @@ class CfgWeapons
 		class LowROF: LowROF
 		{
 			class StandardSound;
+			displayName="LO";
 			reloadTime=0.029999999;
 		};
 		class HighROF: LowROF
 		{
+			displayName="HI";
 			reloadtime=0.015;
 		};
 	};
 	class RHS_weap_gau19: HMG_127
 	{
+		displayName="GAU-19/A";
 		cursor="EmptyCursor";
 		cursorAim="EmptyCursor";
 		magazines[]=
@@ -2633,6 +2734,7 @@ class CfgWeapons
 		weight=60;
 		class LowROF: Mode_FullAuto
 		{
+			displayName="GAU/LO";
 			flash="gunfire";
 			flashSize=0.1;
 			recoil="Empty";
@@ -2669,6 +2771,7 @@ class CfgWeapons
 			burst=2;
 			burstRangeMax=6;
 		};
+		displayName="Mk. 19";
 		magazines[]=
 		{
 			"RHS_48Rnd_40mm_MK19",
@@ -2681,7 +2784,10 @@ class CfgWeapons
 			"RHS_96Rnd_40mm_MK19_M1001"
 		};
 	};
-	class RHS_MKV_MK19: RHS_MK19;  //found empty after stripping
+	class RHS_MKV_MK19: RHS_MK19
+	{
+		displayName="Stbd MK19";
+	};
 	class RHS_MK19_CROWS_M151: RHS_MK19
 	{
 		magazineReloadTime=25;
@@ -2704,6 +2810,7 @@ class CfgWeapons
 	{
 		holdsterAnimValue=1;
 		autoReload=0;
+		displayName="BGM-71 TOW Launcher";
 		canLock=0;
 		cursor="rocket";
 		reloadTime=2;
@@ -2726,6 +2833,7 @@ class CfgWeapons
 		canLock=0;
 		autoReload=0;
 		magazineReloadTime=15;
+		displayName="BGM-71 TOW Launcher";
 		magazines[]=
 		{
 			"rhs_mag_TOW",
@@ -2756,82 +2864,102 @@ class CfgWeapons
 		};
 		class Mode_1: Mode_base
 		{
+			displayName="1000m-1300m";
 			artilleryCharge=0.13500001;
 		};
 		class Mode_2: Mode_base
 		{
+			displayName="1300m-1700m";
 			artilleryCharge=0.153;
 		};
 		class Mode_3: Mode_base
 		{
+			displayName="1700m-2200m";
 			artilleryCharge=0.175;
 		};
 		class Mode_4: Mode_base
 		{
+			displayName="2200m-2900m";
 			artilleryCharge=0.2;
 		};
 		class Mode_5: Mode_base
 		{
+			displayName="2900m-3800m";
 			artilleryCharge=0.228;
 		};
 		class Mode_6: Mode_base
 		{
+			displayName="3800m-5000m";
 			artilleryCharge=0.26100001;
 		};
 		class Mode_7: Mode_base
 		{
+			displayName="5000m-6600m";
 			artilleryCharge=0.30000001;
 		};
 		class Mode_8: Mode_base
 		{
+			displayName="6600m-8500m";
 			artilleryCharge=0.34099999;
 		};
 		class Mode_9: Mode_base
 		{
+			displayName="8500m-11000m";
 			artilleryCharge=0.38800001;
 		};
 		class Mode_10: Mode_base
 		{
+			displayName="11000m-14000m";
 			artilleryCharge=0.44;
 		};
 		class Mode_11: Mode_base
 		{
+			displayName="14000m-18000m";
 			artilleryCharge=0.495;
 		};
 		class Mode_12: Mode_base
 		{
+			displayName="18000m-23000m";
 			artilleryCharge=0.56;
 		};
 		class Mode_13: Mode_base
 		{
+			displayName="23000m-30000m";
 			artilleryCharge=0.639;
 		};
 		class Mode_14: Mode_base
 		{
+			displayName="30000m-40000m";
 			artilleryCharge=0.74000001;
 		};
 		class Mode_15: Mode_base
 		{
+			displayName="40000m-52000m";
 			artilleryCharge=0.84200001;
 		};
 		class Mode_16: Mode_base
 		{
+			displayName="52000m-67000m";
 			artilleryCharge=0.95999998;
 		};
 		class Mode_17: Mode_base
 		{
+			displayName="62000m-67000m";
 			artilleryCharge=1.96;
 		};
 		class Mode_18: Mode_base
 		{
+			displayName="52000m-67000m";
 			artilleryCharge=0.95999998;
 		};
 		class Mode_19: Mode_base
 		{
+			displayName="52000m-67000m";
 			artilleryCharge=0.95999998;
 		};
 		class Mode_20: Mode_base
 		{
+			displayName="52000m-67000m";
 			artilleryCharge=0.95999998;
 		};
 		class EventHandlers
@@ -2871,66 +2999,82 @@ class CfgWeapons
 		};
 		class Mode_1: Mode_base
 		{
+			displayName="1000m-1300m";
 			artilleryCharge=0.13500001;
 		};
 		class Mode_2: Mode_base
 		{
+			displayName="1300m-1700m";
 			artilleryCharge=0.153;
 		};
 		class Mode_3: Mode_base
 		{
+			displayName="1700m-2200m";
 			artilleryCharge=0.175;
 		};
 		class Mode_4: Mode_base
 		{
+			displayName="2200m-2900m";
 			artilleryCharge=0.2;
 		};
 		class Mode_5: Mode_base
 		{
+			displayName="2900m-3800m";
 			artilleryCharge=0.228;
 		};
 		class Mode_6: Mode_base
 		{
+			displayName="3800m-5000m";
 			artilleryCharge=0.26100001;
 		};
 		class Mode_7: Mode_base
 		{
+			displayName="5000m-6600m";
 			artilleryCharge=0.30000001;
 		};
 		class Mode_8: Mode_base
 		{
+			displayName="6600m-8500m";
 			artilleryCharge=0.34099999;
 		};
 		class Mode_9: Mode_base
 		{
+			displayName="8500m-11000m";
 			artilleryCharge=0.38800001;
 		};
 		class Mode_10: Mode_base
 		{
+			displayName="11000m-14000m";
 			artilleryCharge=0.44;
 		};
 		class Mode_11: Mode_base
 		{
+			displayName="14000m-18000m";
 			artilleryCharge=0.495;
 		};
 		class Mode_12: Mode_base
 		{
+			displayName="18000m-23000m";
 			artilleryCharge=0.56;
 		};
 		class Mode_13: Mode_base
 		{
+			displayName="23000m-30000m";
 			artilleryCharge=0.639;
 		};
 		class Mode_14: Mode_base
 		{
+			displayName="30000m-40000m";
 			artilleryCharge=0.74000001;
 		};
 		class Mode_15: Mode_base
 		{
+			displayName="40000m-52000m";
 			artilleryCharge=0.84200001;
 		};
 		class Mode_16: Mode_base
 		{
+			displayName="52000m-67000m";
 			artilleryCharge=0.95999998;
 		};
 	};
@@ -2978,16 +3122,24 @@ class CfgWeapons
 			burst=8;
 			multiplier=1;
 			autoFire=1;
+			displayName="M257 (8)";
 		};
 		class Volley: Double
 		{
 			burst=16;
+			displayName="M257 (16)";
 		};
 	};
 	class rhsusf_weap_M6: rhsusf_weap_M257
 	{
-		class Double: Double;  //found empty after stripping
-		class Volley: Volley;  //found empty after stripping
+		class Double: Double
+		{
+			displayName="M6 (8)";
+		};
+		class Volley: Volley
+		{
+			displayName="M6 (16)";
+		};
 	};
 	class rhsusf_weap_M257_8: SmokeLauncher
 	{
@@ -3001,10 +3153,12 @@ class CfgWeapons
 			burst=4;
 			multiplier=1;
 			autoFire=1;
+			displayName="M257 (4)";
 		};
 		class Volley: Double
 		{
 			burst=8;
+			displayName="M257 (8)";
 		};
 	};
 	class rhsusf_weap_M250: SmokeLauncher
@@ -3019,10 +3173,12 @@ class CfgWeapons
 			burst=6;
 			multiplier=1;
 			autoFire=1;
+			displayName="M250 (6)";
 		};
 		class Volley: Double
 		{
 			burst=12;
+			displayName="M250 (12)";
 		};
 	};
 	class CMFlareLauncher: SmokeLauncher
@@ -3047,12 +3203,14 @@ class CfgWeapons
 		};
 		class Timed: Single
 		{
+			displayName="Timed";
 			burst=8;
 			reloadTime=1.3;
 		};
 		class AITimed: Timed;  //found empty after stripping
 		class LongTimed: Single
 		{
+			displayName="Timed 16f/4s";
 			burst=8;
 			reloadTime=4;
 		};
@@ -3125,18 +3283,22 @@ class CfgWeapons
 		class Single: Mode_SemiAuto
 		{
 			cursor="EmptyCursor";
+			displayName="$STR_RHSUSF_WEAP_SMOKEGEN";
 			autoFire=1;
 			burst=1;
 			reloadTime=8;
 		};
 		class Continuos: Single
 		{
+			displayName="$STR_RHSUSF_WEAP_SMOKEGEN_CONT";
 			burst=999;
 			reloadTime=8;
 		};
 	};
 	class rhsusf_weap_duke: SmokeLauncher
 	{
+		displayName="DUKE offline";
+		displayNameShort="DUKE offline";
 		magazines[]=
 		{
 			"rhsusf_mag_duke"
@@ -3147,9 +3309,14 @@ class CfgWeapons
 		autoFire=1;
 		burst=1;
 	};
-	class rhsusf_weap_duke_on: rhsusf_weap_duke;  //found empty after stripping
+	class rhsusf_weap_duke_on: rhsusf_weap_duke
+	{
+		displayName="DUKE online";
+		displayNameShort="DUKE online";
+	};
 	class rhsusf_weap_LWIRCM: MGun
 	{
+		displayName="LWIRCM";
 		magazines[]=
 		{
 			"rhsusf_mag_LWIRCM"
@@ -3158,6 +3325,7 @@ class CfgWeapons
 		simulation="cmlauncher";
 		class Burst1: Mode_Burst
 		{
+			displayName="LWIRCM";
 			reloadTime=0.25;
 			burst=120;
 			multiplier=1;
@@ -3167,6 +3335,7 @@ class CfgWeapons
 	};
 	class rhsusf_weap_ANALQ144: MGun
 	{
+		displayName="LWIRCM";
 		magazines[]=
 		{
 			"rhsusf_mag_LWIRCM",
@@ -3176,6 +3345,7 @@ class CfgWeapons
 		simulation="cmlauncher";
 		class Burst1: Mode_Burst
 		{
+			displayName="AN/ALQ-144";
 			reloadTime=0.5;
 			burst=120;
 			multiplier=1;
@@ -3184,18 +3354,32 @@ class CfgWeapons
 	};
 	class rhsusf_weap_ANALQ157: rhsusf_weap_ANALQ144
 	{
-		class Burst1: Burst1;  //found empty after stripping
+		displayName="AN/ALQ-157";
+		class Burst1: Burst1
+		{
+			displayName="AN/ALQ-157";
+		};
 	};
 	class rhsusf_weap_ANALQ212: rhsusf_weap_ANALQ144
 	{
-		class Burst1: Burst1;  //found empty after stripping
+		displayName="AN/ALQ-212";
+		class Burst1: Burst1
+		{
+			displayName="AN/ALQ-212";
+		};
 	};
 	class rhsusf_weap_ANAAQ24: rhsusf_weap_ANALQ144
 	{
-		class Burst1: Burst1;  //found empty after stripping
+		displayName="AN/AAQ-24";
+		class Burst1: Burst1
+		{
+			displayName="AN/AAQ-24";
+		};
 	};
 	class rhsusf_weap_laneMarkerSystem: SmokeLauncher
 	{
+		displayName="Lane Marking";
+		displayNameShort="Lane Marking";
 		magazines[]=
 		{
 			"rhsusf_mag_laneMarkerSystem"
@@ -3222,28 +3406,34 @@ class CfgWeapons
 		};
 		class Single0: Mode_SemiAuto
 		{
+			displayName="CHARGE 0";
 			reloadTime=1.8;
 			artilleryDispersion=1.9;
 			artilleryCharge=0.2;
 		};
 		class Single1: Single0
 		{
+			displayName="CHARGE 1";
 			artilleryCharge=0.40000001;
 		};
 		class Single2: Single1
 		{
+			displayName="CHARGE 2";
 			artilleryCharge=0.60000002;
 		};
 		class Single3: Single1
 		{
+			displayName="CHARGE 3";
 			artilleryCharge=0.80000001;
 		};
 		class Single4: Single1
 		{
+			displayName="CHARGE 4";
 			artilleryCharge=1;
 		};
 		class Burst0: Mode_Burst
 		{
+			displayName="$STR_A3_mortar_82mm_Burst10";
 			burst=4;
 			aiBurstTerminable=1;
 			reloadTime=1.8;
@@ -3252,18 +3442,22 @@ class CfgWeapons
 		};
 		class Burst1: Burst0
 		{
+			displayName="$STR_A3_mortar_82mm_Burst20";
 			artilleryCharge=0.40000001;
 		};
 		class Burst2: Burst0
 		{
+			displayName="$STR_A3_mortar_82mm_Burst30";
 			artilleryCharge=0.60000002;
 		};
 		class Burst3: Burst0
 		{
+			displayName="$STR_A3_mortar_82mm_Burst30";
 			artilleryCharge=0.80000001;
 		};
 		class Burst4: Burst1
 		{
+			displayName="$STR_A3_mortar_82mm_Burst30";
 			artilleryCharge=1;
 		};
 	};
@@ -4198,14 +4392,17 @@ class CfgVehicles
 	class Signs_base_F;
 	class rhs_casing_105mm_m14b1: ThingX
 	{
+		displayName="105mm m14b1 Artilery Casing";
 		editorCategory="EdCat_Things";
 	};
 	class rhs_laneMarker: ThingX
 	{
+		displayName="Lane marker pole";
 		editorCategory="EdCat_Things";
 	};
 	class rhs_laneMarker_static: Signs_base_F
 	{
+		displayName="Lane marker pole (static)";
 		editorCategory="EdCat_Things";
 		armor=20;
 	};

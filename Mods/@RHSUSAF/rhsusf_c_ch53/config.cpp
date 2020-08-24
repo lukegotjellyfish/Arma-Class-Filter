@@ -180,6 +180,7 @@ class CfgVehicles
 		rhs_gearAnim="Gear_Nose_1";
 		rhs_paraScript="rhs_fnc_vehPara";
 		rhs_hasNoRadar=1;
+		displayName="CH-53E";
 		expansion=3;
 		Picture="\rhsusf\addons\rhsusf_ch53\data\ui\ch53_picture_ca.paa";
 		irTarget=1;
@@ -301,6 +302,7 @@ class CfgVehicles
 		{
 			class standard
 			{
+				displayName="Standard";
 				factions[]=
 				{
 					"rhs_faction_usmc_wd",
@@ -5013,6 +5015,7 @@ class CfgVehicles
 		{
 			class rhs_decalNumber_type
 			{
+				displayName="Define font type of side number";
 				tooltip="Define kind of font that will be drawn on vehicle";
 				property="rhs_decalNumber_type";
 				control="Combo";
@@ -5035,6 +5038,7 @@ class CfgVehicles
 			};
 			class rhs_decalNumber
 			{
+				displayName="Set side number";
 				tooltip="Set side number. 2 numbers are required. If 0, random number will be generated";
 				property="rhs_decalNumber";
 				control="Edit";
@@ -5044,6 +5048,7 @@ class CfgVehicles
 			};
 			class rhs_openRamp
 			{
+				displayName="Open rear ramp";
 				property="rhs_openRamp";
 				control="slider";
 				expression="_this animate ['ramp_bottom',_value];_this animate ['ramp_top',_value];";
@@ -5053,17 +5058,20 @@ class CfgVehicles
 			{
 				control="CheckboxNumber";
 				defaultValue="0";
+				displayName="Fold helicopter rotors";
 				property="FoldHeli";
 				expression="[_this,_value,true] call rhsusf_fnc_ch53_fold";
 			};
 			class hide_cargo: rhs_openRamp
 			{
+				displayName="Hide cargo benches";
 				property="hide_cargo";
 				control="CheckboxNumber";
 				expression="_this animate ['%s',_value,true];_this lockCargo (_value == 1)";
 			};
 			class rhs_attachCargo: FoldHeli
 			{
+				displayName="Attach cargo";
 				tooltip="Attaching cargo (using attachTo command) just like when you use ramp action";
 				property="rhs_attachCargo";
 				expression="if(_value == 1)then{[_this] spawn rhs_fnc_cargoAttach}else{{if(not(_x isKindOf 'Man'))then{detach _x}}foreach attachedObjects _this};";
@@ -5100,6 +5108,7 @@ class CfgVehicles
 	};
 	class rhsusf_CH53E_USMC_GAU21: rhsusf_CH53E_USMC
 	{
+		displayName="CH-53E (GAU-21)";
 		class Turrets: Turrets
 		{
 			class CopilotTurret: CopilotTurret;  //found empty after stripping
@@ -5221,6 +5230,7 @@ class CfgVehicles
 		{
 			class rhs_decalNumber_type
 			{
+				displayName="Define font type of side number";
 				tooltip="Define kind of font that will be drawn on vehicle";
 				property="rhs_decalNumber_type";
 				control="Combo";
@@ -5243,6 +5253,7 @@ class CfgVehicles
 			};
 			class rhs_decalNumber
 			{
+				displayName="Set side number";
 				tooltip="Set side number. 2 numbers are required. If 0, random number will be generated";
 				property="rhs_decalNumber";
 				control="Edit";
@@ -5252,6 +5263,7 @@ class CfgVehicles
 			};
 			class rhs_openRamp
 			{
+				displayName="Open rear ramp";
 				property="rhs_openRamp";
 				control="slider";
 				expression="_this animate ['ramp_bottom',_value];";
@@ -5261,6 +5273,7 @@ class CfgVehicles
 			{
 				control="CheckboxNumber";
 				defaultValue="0";
+				displayName="Fold helicopter rotors";
 				property="FoldHeli";
 				expression="[_this,_value,true] call rhsusf_fnc_ch53_fold";
 			};
@@ -5287,6 +5300,7 @@ class CfgVehicles
 	};
 	class rhsusf_CH53e_USMC_cargo: rhsusf_CH53E_USMC
 	{
+		displayName="CH-53E (Cargo)";
 		class Turrets: Turrets
 		{
 			class CopilotTurret: CopilotTurret;  //found empty after stripping
@@ -5305,6 +5319,7 @@ class CfgVehicles
 	};
 	class rhsusf_CH53e_USMC_D_cargo: rhsusf_CH53E_USMC_D
 	{
+		displayName="CH-53E (Cargo)";
 		class Turrets: Turrets
 		{
 			class CopilotTurret: CopilotTurret;  //found empty after stripping

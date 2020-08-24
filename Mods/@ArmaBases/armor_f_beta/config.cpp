@@ -235,6 +235,7 @@ class CfgVehicles
 				maxHandBrakeTorque=300000;
 			};
 		};
+		displayName="$STR_A3_CfgVehicles_O_APC_Wheeled_02_RCWS";
 		icon="\A3\Armor_F_Beta\APC_Wheeled_02\Data\UI\map_APC_Wheeled_02_rcws_ca.paa";
 		memoryPointTaskMarker="TaskMarker_1_pos";
 		terrainCoef=1.5;
@@ -656,6 +657,7 @@ class CfgVehicles
 		{
 			class Hex
 			{
+				displayName="$STR_A3_TEXTURESOURCES_OPFOR0";
 				factions[]=
 				{
 					"OPF_F"

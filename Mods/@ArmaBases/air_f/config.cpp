@@ -72,6 +72,7 @@ class CfgVehicles
 	{
 		features="Randomization: No						<br />Camo selections: 1 - the whole exterior						<br />Script door sources: No						<br />Script animations: Doors, HideWeapon, proxy						<br />Executed scripts: None 						<br />Firing from vehicles: No						<br />Slingload: Slingloads up to 500 kg						<br />Cargo proxy indexes: 1 to 8";
 		_generalMacro="Heli_Light_02_base_F";
+		displayName="$STR_A3_CfgVehicles_Heli_Light_02_Base_F0";
 		icon="\A3\Air_F\Heli_Light_02\Data\UI\Map_Heli_Light_02_CA.paa";
 		armor=40;
 		cost=3000000;
@@ -150,6 +151,7 @@ class CfgVehicles
 		{
 			class Opfor
 			{
+				displayName="$STR_A3_TEXTURESOURCES_OPFOR0";
 				faction[]=
 				{
 					"OPF_F"
@@ -157,6 +159,7 @@ class CfgVehicles
 			};
 			class Black
 			{
+				displayName="$STR_A3_TEXTURESOURCES_BLACK0";
 				faction[]=
 				{
 					"OPF_F"
@@ -164,6 +167,7 @@ class CfgVehicles
 			};
 			class Blackcustom
 			{
+				displayName="$STR_A3_TEXTURESOURCES_BLACKCUSTOM0";
 				faction[]=
 				{
 					"OPF_F"
@@ -171,6 +175,7 @@ class CfgVehicles
 			};
 			class Blue
 			{
+				displayName="$STR_A3_TEXTURESOURCES_BLUE0";
 				factions[]=
 				{
 					"CIV_F"
@@ -5099,10 +5104,12 @@ class CfgVehicles
 				{
 					class Empty
 					{
+						displayName="$STR_empty";
 						attachment[]={};
 					};
 					class Default
 					{
+						displayName="$STR_vehicle_default";
 						attachment[]=
 						{
 							"PylonWeapon_2000Rnd_65x39_belt",
@@ -5111,6 +5118,7 @@ class CfgVehicles
 					};
 					class AT
 					{
+						displayName="$STR_A3_cfgmagazines_titan_at_dns";
 						attachment[]=
 						{
 							"PylonRack_12Rnd_PG_missiles",
@@ -5119,6 +5127,7 @@ class CfgVehicles
 					};
 					class CAS
 					{
+						displayName="$STR_A3_CAS_PRESET_DISPLAYNAME";
 						attachment[]=
 						{
 							"PylonRack_12Rnd_missiles",
@@ -6750,6 +6759,7 @@ class CfgVehicles
 			init="[this, '', []] call bis_fnc_initVehicle";
 		};
 		_generalMacro="O_Heli_Light_02_unarmed_F";
+		displayName="$STR_A3_CfgVehicles_O_Heli_Light_02_Unarmed_F0";
 		side=0;
 		accuracy=1.5;
 		textureList[]=
@@ -7289,6 +7299,7 @@ class CfgVehicles
 			init="[this, '', []] call bis_fnc_initVehicle";
 		};
 		_generalMacro="O_Heli_Light_02_v2_F";
+		displayName="$STR_A3_CfgVehicles_O_Heli_Light_02_v2_F0";
 		icon="\A3\Air_F\Heli_Light_02\Data\UI\Map_Heli_Light_02_rockets_CA.paa";
 		side=0;
 		accuracy=1.5;

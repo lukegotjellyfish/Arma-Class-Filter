@@ -131,6 +131,7 @@ class CfgVehicles
 	};
 	class rhs_kamaz5350: O_Truck_02_covered_F
 	{
+		displayName="KamAZ-5350";
 		normalSpeedForwardCoef=0.75;
 		slowSpeedForwardCoef=0.44999999;
 		terrainCoef=1.2;
@@ -449,6 +450,7 @@ class CfgVehicles
 		{
 			class standard
 			{
+				displayName="Standard";
 				factions[]=
 				{
 					"rhs_faction_vmf",
@@ -462,6 +464,7 @@ class CfgVehicles
 		{
 			class rhs_decalNumber_type
 			{
+				displayName="Define font type of plate number";
 				tooltip="Define kind of font that will be drawn on vehicle.";
 				property="rhs_decalNumber_type";
 				control="Combo";
@@ -515,6 +518,7 @@ class CfgVehicles
 			class rhs_decalNumber
 			{
 				collapsed=1;
+				displayName="Set plate number";
 				tooltip="Set plate number. 4 numbers are required. If 0, random number will be generated";
 				property="rhs_decalNumber";
 				control="Edit";
@@ -524,6 +528,7 @@ class CfgVehicles
 			};
 			class rhs_decalArmy_type
 			{
+				displayName="Define large door roundel type";
 				tooltip="Decal type";
 				property="rhs_decalArmy_type";
 				control="Combo";
@@ -566,6 +571,7 @@ class CfgVehicles
 			};
 			class rhs_decalArmy
 			{
+				displayName="Set large door roundel symbol";
 				tooltip="Set large door roundel located on both sides. Usually used for army symbols. -1 leaves current symbol & 0 clears decal.";
 				property="rhs_decalArmy";
 				control="Edit";
@@ -575,18 +581,21 @@ class CfgVehicles
 			};
 			class rhs_decalPlatoon_type: rhs_decalArmy_type
 			{
+				displayName="Define small door roundel type";
 				property="rhs_decalPlatoon_type";
 				expression="_this setVariable ['%s', _value];";
 				defaultValue="0";
 			};
 			class rhs_decalPlatoon: rhs_decalArmy
 			{
+				displayName="Set small door roundel symbol";
 				tooltip="Define small door roundel located on both sides. Usually used for platoon symbols. -1 leaves current symbol & 0 clears decal.";
 				property="rhs_decalPlatoon";
 				expression="if(parseNumber _value >= 0)then{ [_this, [ [ 'Label', [10],  _this getVariable ['rhs_decalPlatoon_type','Army'],call compile _value] ] ] call rhs_fnc_decalsInit};";
 			};
 			class rhs_hidespare
 			{
+				displayName="Remove spare wheel";
 				property="rhs_hidespare";
 				control="CheckboxNumber";
 				expression="_this animate ['spare_hide',_value,true]";
@@ -594,20 +603,24 @@ class CfgVehicles
 			};
 			class rhs_hidebench: rhs_hidespare
 			{
+				displayName="Remove cargo bench";
 				property="rhs_hidebench";
 				expression="_this animateSource ['bench_hide',_value,true];";
 			};
 			class Door_LF: rhs_hidespare
 			{
+				displayName="Open front left door";
 				property="Door_LF";
 				expression="_this animateDoor ['%s',_value,true]";
 			};
 			class Door_RF: Door_LF
 			{
+				displayName="Open front right door";
 				property="Door_RF";
 			};
 			class back_door: Door_LF
 			{
+				displayName="Open back door";
 				property="back_door";
 			};
 		};
@@ -696,6 +709,7 @@ class CfgVehicles
 	};
 	class rhs_kamaz5350_open: rhs_kamaz5350
 	{
+		displayName="KamAZ-5350 (Open)";
 		hideProxyInCombat=1;
 		class Turrets: Turrets
 		{
@@ -804,6 +818,7 @@ class CfgVehicles
 	};
 	class rhs_kamaz5350_flatbed: rhs_kamaz5350_open
 	{
+		displayName="KamAZ-5350 (Open/Flatbed)";
 		class Turrets: Turrets
 		{
 			class CargoTurret_03: CargoTurret_03;  //found empty after stripping
@@ -883,6 +898,7 @@ class CfgVehicles
 	};
 	class rhs_kamaz5350_flatbed_cover: rhs_kamaz5350_flatbed
 	{
+		displayName="KamAZ-5350 (Flatbed)";
 		class VehicleTransport: VehicleTransport
 		{
 			class Cargo: Cargo;  //found empty after stripping

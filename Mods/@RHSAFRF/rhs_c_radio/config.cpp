@@ -39,6 +39,7 @@ class CfgVoice
 	};
 	class RHS_Male01RUS: RHS_RUS
 	{
+		displayName="Russian Voice 01";
 		directories[]=
 		{
 			"\rhsafrf\addons\rhs_s_radio\radio\Male01\",
@@ -47,6 +48,7 @@ class CfgVoice
 	};
 	class RHS_Male02RUS: RHS_RUS
 	{
+		displayName="Russian Voice 02";
 		directories[]=
 		{
 			"\rhsafrf\addons\rhs_s_radio\radio\Male02\",
@@ -55,6 +57,7 @@ class CfgVoice
 	};
 	class RHS_Male03RUS: RHS_RUS
 	{
+		displayName="Russian Voice 03";
 		directories[]=
 		{
 			"\rhsafrf\addons\rhs_s_radio\radio\Male03\",
@@ -63,6 +66,7 @@ class CfgVoice
 	};
 	class RHS_Male04RUS: RHS_RUS
 	{
+		displayName="Russian Voice 04";
 		directories[]=
 		{
 			"\rhsafrf\addons\rhs_s_radio\radio\Male04\",
@@ -71,6 +75,7 @@ class CfgVoice
 	};
 	class RHS_Male05RUS: RHS_RUS
 	{
+		displayName="Russian Voice 05";
 		directories[]=
 		{
 			"\rhsafrf\addons\rhs_s_radio\radio\Male02\",

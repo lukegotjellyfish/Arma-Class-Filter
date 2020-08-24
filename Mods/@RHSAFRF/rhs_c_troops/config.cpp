@@ -15214,17 +15214,28 @@ class CfgVehicles
 	class B_AssaultPack_Base;
 	class rhs_assault_umbts: B_AssaultPack_Base
 	{
+		displayName="$STR_RHS_UMBTSBACKPACK_NAME";
 		maximumLoad=240;
 		mass=35;
 	};
 	class rhs_assault_umbts_ammo: rhs_assault_umbts;  //found empty after stripping
 	class rhs_assault_umbts_ammo_recon: rhs_assault_umbts;  //found empty after stripping
-	class rhs_assault_umbts_engineer: rhs_assault_umbts;  //found empty after stripping
+	class rhs_assault_umbts_engineer: rhs_assault_umbts
+	{
+		displayName="$STR_RHS_UMBTSBACKPACKENGINEER_NAME";
+	};
 	class rhs_assault_umbts_engineer_empty: rhs_assault_umbts_engineer;  //found empty after stripping
-	class rhs_assault_umbts_medic: rhs_assault_umbts;  //found empty after stripping
-	class rhs_assault_umbts_demo: rhs_assault_umbts;  //found empty after stripping
+	class rhs_assault_umbts_medic: rhs_assault_umbts
+	{
+		displayName="$STR_RHS_UMBTSBACKPACKMEDIC_NAME";
+	};
+	class rhs_assault_umbts_demo: rhs_assault_umbts
+	{
+		displayName="$STR_RHS_UMBTSBACKPACKDEMOLITIONS_NAME";
+	};
 	class rhs_rpg: B_AssaultPack_Base
 	{
+		displayName="$STR_RHS_RPGCARRIER_NAME";
 		maximumLoad=140;
 		mass=20;
 	};
@@ -15234,12 +15245,17 @@ class CfgVehicles
 	class rhs_rpg_empty: rhs_rpg;  //found empty after stripping
 	class rhs_sidor: B_AssaultPack_Base
 	{
+		displayName="$STR_RHS_SIDOR_NAME";
 		maximumLoad=129;
 		mass=20;
 	};
-	class rhs_sidorMG: rhs_sidor;  //found empty after stripping
+	class rhs_sidorMG: rhs_sidor
+	{
+		displayName="$STR_RHS_SIDORPKBOXES_NAME";
+	};
 	class rhs_medic_bag: B_AssaultPack_Base
 	{
+		displayName="$STR_RHS_MEDICBAG_NAME";
 		maximumLoad=96;
 		mass=15;
 	};
@@ -15266,9 +15282,11 @@ class CfgVehicles
 		thrustdeccel=0.001;
 		thrustnormal=0.001;
 		turnforcescale=9.9999997e-005;
+		displayName="D-6 Parachute";
 	};
 	class rhs_d6_Parachute_backpack: B_Parachute
 	{
+		displayName="D6 Parachute Bag";
 		ParachuteClass="rhs_d6_Parachute";
 		maximumLoad=0;
 		mass=130;
@@ -15276,674 +15294,842 @@ class CfgVehicles
 	class Item_Base_F;
 	class Item_rhs_uniform_flora: Item_Base_F
 	{
+		displayName="Flora (MSV)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_uniform_vdv_emr: Item_Base_F
 	{
+		displayName="EMR-Summer (VDV)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_uniform_msv_emr: Item_Base_F
 	{
+		displayName="EMR-Summer (MSV)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_uniform_vdv_flora: Item_Base_F
 	{
+		displayName="Flora (VDV)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_uniform_vdv_mflora: Item_Base_F
 	{
+		displayName="Mountain Flora (VDV)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_uniform_m88_patchless: Item_Base_F
 	{
+		displayName="M88";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_uniform_flora_patchless: Item_Base_F
 	{
+		displayName="Flora";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_uniform_flora_patchless_alt: Item_Base_F
 	{
+		displayName="Flora (Alt.)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_uniform_emr_patchless: Item_Base_F
 	{
+		displayName="EMR-Summer";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_uniform_mflora_patchless: Item_Base_F
 	{
+		displayName="Mountain Flora";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_uniform_df15: Item_Base_F
 	{
+		displayName="DF-15-2";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_uniform_gorka_r_y: Item_Base_F
 	{
+		displayName="Gorka-R (Yellow)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_uniform_gorka_r_g: Item_Base_F
 	{
+		displayName="Gorka-R (Green)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_uniform_vdv_emr_des: Item_Base_F
 	{
+		displayName="EMR-Desert (VDV)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6sh46: Item_Base_F
 	{
+		displayName="6Sh46";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6b13: Item_Base_F
 	{
+		displayName="6B13 VSR 3-TsV";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6b13_6sh92: Item_Base_F
 	{
+		displayName="6B13 VSR 3-TsV (6Sh92)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6b13_crewofficer: Item_Base_F
 	{
+		displayName="6B13 VSR 3-TsV (Crew Officer)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6b13_6sh92_vog: Item_Base_F
 	{
+		displayName="6B13 VSR 3-TsV (6Sh92/VOG)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6b13_6sh92_headset_mapcase: Item_Base_F
 	{
+		displayName="6B13 VSR 3-TsV (6Sh92/Headset/Mapcase)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6b13_6sh92_radio: Item_Base_F
 	{
+		displayName="6B13 VSR 3-TsV (6Sh92/Radio)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6b13_flora: Item_Base_F
 	{
+		displayName="6B13";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6b13_Flora_crewofficer: Item_Base_F
 	{
+		displayName="6B13 (Crew Officer)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6b13_Flora_6sh92: Item_Base_F
 	{
+		displayName="6B13 (6Sh92)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6b13_Flora_6sh92_vog: Item_Base_F
 	{
+		displayName="6B13 (6Sh92/VOG)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6b13_Flora_6sh92_headset_mapcase: Item_Base_F
 	{
+		displayName="6B13 (6Sh92/Headset/Mapcase)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6b13_Flora_6sh92_radio: Item_Base_F
 	{
+		displayName="6B13 (6Sh92/Radio)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6b13_emr: Item_Base_F
 	{
+		displayName="6B13 EMR-Summer";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6b13_emr_crewofficer: Item_Base_F
 	{
+		displayName="6B13 EMR (Crew Officer)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6b13_emr_6sh92: Item_Base_F
 	{
+		displayName="6B13 EMR (6Sh92)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6b13_emr_6sh92_vog: Item_Base_F
 	{
+		displayName="6B13 EMR (6Sh92/VOG)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6b13_emr_6sh92_headset_mapcase: Item_Base_F
 	{
+		displayName="6B13 EMR (6Sh92/Headset/Mapcase)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6b13_emr_6sh92_radio: Item_Base_F
 	{
+		displayName="6B13 EMR (6Sh92/Radio)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6b23: Item_Base_F
 	{
+		displayName="6B23";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6b23_crew: Item_Base_F
 	{
+		displayName="6B23 (Crew)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6b23_crewofficer: Item_Base_F
 	{
+		displayName="6B23 (Crew Officer)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_vest_commander: Item_Base_F
 	{
+		displayName="Mapcase and Holster";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6b23_engineer: Item_Base_F
 	{
+		displayName="6B23 (Engineer)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6b23_medic: Item_Base_F
 	{
+		displayName="6B23 (Medic)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6b23_rifleman: Item_Base_F
 	{
+		displayName="6B23 (Rifleman)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6b23_sniper: Item_Base_F
 	{
+		displayName="6B23 (Sniper)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6b23_6sh92: Item_Base_F
 	{
+		displayName="6B23 (6Sh92)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6b23_6sh92_vog: Item_Base_F
 	{
+		displayName="6B23 (6Sh92/VOG)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6b23_6sh92_vog_headset: Item_Base_F
 	{
+		displayName="6B23 (6Sh92/VOG/Headset)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6b23_6sh92_headset: Item_Base_F
 	{
+		displayName="6B23 (6Sh92/Headset)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6b23_6sh92_headset_mapcase: Item_Base_F
 	{
+		displayName="6B23 (6Sh92/Headset/Mapcase)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6b23_6sh92_radio: Item_Base_F
 	{
+		displayName="6B23 (6Sh92/Radio)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6b23_digi: Item_Base_F
 	{
+		displayName="6B23 EMR-Summer";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6b23_digi_crew: Item_Base_F
 	{
+		displayName="6B23 EMR-Summer (Crew)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6b23_digi_crewofficer: Item_Base_F
 	{
+		displayName="6B23 EMR-Summer (Crew Officer)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6b23_digi_engineer: Item_Base_F
 	{
+		displayName="6B23 EMR-Summer (Engineer)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6b23_digi_medic: Item_Base_F
 	{
+		displayName="6B23 EMR-Summer (Medic)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6b23_digi_rifleman: Item_Base_F
 	{
+		displayName="6B23 EMR-Summer (Rifleman)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6b23_digi_sniper: Item_Base_F
 	{
+		displayName="6B23 EMR-Summer (Sniper)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6b23_digi_6sh92: Item_Base_F
 	{
+		displayName="6B23 EMR-Summer (6Sh92)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6b23_digi_6sh92_vog: Item_Base_F
 	{
+		displayName="6B23 EMR-Summer (6Sh92/VOG)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6b23_digi_6sh92_vog_headset: Item_Base_F
 	{
+		displayName="6B23 EMR-Summer (6Sh92/VOG/Headset)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6b23_digi_6sh92_headset: Item_Base_F
 	{
+		displayName="6B23 EMR-Summer (6Sh92/Headset)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6b23_digi_6sh92_headset_mapcase: Item_Base_F
 	{
+		displayName="6B23 EMR-Summer (6Sh92/Headset/Mapcase)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6b23_digi_6sh92_radio: Item_Base_F
 	{
+		displayName="6B23 EMR-Summer (6Sh92/Radio)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6b23_ML: Item_Base_F
 	{
+		displayName="6B23 Mountain Les";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6b23_ML_crew: Item_Base_F
 	{
+		displayName="6B23 Mountain Les (Crew)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6b23_ML_crewofficer: Item_Base_F
 	{
+		displayName="6B23 Mountain Les (Crew Officer)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6b23_ML_engineer: Item_Base_F
 	{
+		displayName="6B23 Mountain Les (Engineer)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6b23_ML_medic: Item_Base_F
 	{
+		displayName="6B23 Mountain Les (Medic)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6b23_ML_rifleman: Item_Base_F
 	{
+		displayName="6B23 Mountain Les (Rifleman)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6b23_ML_sniper: Item_Base_F
 	{
+		displayName="6B23 Mountain Les (Sniper)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6b23_ML_6sh92: Item_Base_F
 	{
+		displayName="6B23 Mountain Les (6Sh92)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6b23_ML_6sh92_vog: Item_Base_F
 	{
+		displayName="6B23 Mountain Les (6Sh92/VOG)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6b23_ML_6sh92_vog_headset: Item_Base_F
 	{
+		displayName="6B23 Mountain Les (6Sh92/VOG/Headset)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6b23_ML_6sh92_headset: Item_Base_F
 	{
+		displayName="6B23 Mountain Les (6Sh92/Headset)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6b23_ML_6sh92_headset_mapcase: Item_Base_F
 	{
+		displayName="6B23 Mountain Les (6Sh92/Headset/Mapcase)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6b23_ML_6sh92_radio: Item_Base_F
 	{
+		displayName="6B23 Mountain Les (6Sh92/Radio)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6sh92: Item_Base_F
 	{
+		displayName="6Sh92";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6sh92_vog: Item_Base_F
 	{
+		displayName="6Sh92 (VOG)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6sh92_vog_headset: Item_Base_F
 	{
+		displayName="6Sh92 (VOG/Headset)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6sh92_headset: Item_Base_F
 	{
+		displayName="6Sh92 (Headset)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6sh92_radio: Item_Base_F
 	{
+		displayName="6Sh92 (Radio)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6sh92_digi: Item_Base_F
 	{
+		displayName="6Sh92 EMR-Summer";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6sh92_digi_vog: Item_Base_F
 	{
+		displayName="6Sh92 EMR-Summer (VOG)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6sh92_digi_vog_headset: Item_Base_F
 	{
+		displayName="6Sh92 EMR-Summer (VOG/Headset)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6sh92_digi_headset: Item_Base_F
 	{
+		displayName="6Sh92 EMR-Summer (Headset)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6sh92_digi_radio: Item_Base_F
 	{
+		displayName="6Sh92 EMR-Summer (Radio)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_vydra_3m: Item_Base_F
 	{
+		displayName="Vydra-3M";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_fieldcap: Item_Base_F
 	{
+		displayName="Field Cap";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_fieldcap_helm: Item_Base_F
 	{
+		displayName="Field Cap (6B27M)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_tsh4: Item_Base_F
 	{
+		displayName="TSh-4";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_tsh4_ess: Item_Base_F
 	{
+		displayName="TSh-4 (ESS)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_tsh4_bala: Item_Base_F
 	{
+		displayName="TSh-4 (Balaclava)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_tsh4_ess_bala: Item_Base_F
 	{
+		displayName="TSh-4 (ESS/Balaclava)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_fieldcap_digi_des: Item_Base_F
 	{
+		displayName="Field Cap EMR-Desert";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_zsh7a: Item_Base_F
 	{
+		displayName="ZSh-7A (KM-35)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_zsh7a_mike: Item_Base_F
 	{
+		displayName="ZSh-7A";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_zsh12: Item_Base_F
 	{
+		displayName="ZSh-1-2";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_gssh18: Item_Base_F
 	{
+		displayName="GSSh-A-18";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6b26: Item_Base_F
 	{
+		displayName="6B26 Flora";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6b26_ess: Item_Base_F
 	{
+		displayName="6B26 Flora (ESS)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6b26_bala: Item_Base_F
 	{
+		displayName="6B26 Flora (Balaclava)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6b26_ess_bala: Item_Base_F
 	{
+		displayName="6B26 Flora (ESS/Balaclava)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6b26_green: Item_Base_F
 	{
+		displayName="6B26";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6b26_ess_green: Item_Base_F
 	{
+		displayName="6B26 (ESS)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6b26_bala_green: Item_Base_F
 	{
+		displayName="6B26 (Balaclava)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6b26_ess_bala_green: Item_Base_F
 	{
+		displayName="6B26 (ESS/Balaclava)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6b27m: Item_Base_F
 	{
+		displayName="6B27M Flora";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6b27m_ess: Item_Base_F
 	{
+		displayName="6B27M Flora (ESS)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6b27m_bala: Item_Base_F
 	{
+		displayName="6B27M Flora (Balaclava)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6b27m_ess_bala: Item_Base_F
 	{
+		displayName="6B27M Flora (ESS/Balaclava)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6b27m_digi: Item_Base_F
 	{
+		displayName="6B27M EMR-Summer";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6b27m_digi_ess: Item_Base_F
 	{
+		displayName="6B27M EMR-Summer (ESS)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6b27m_digi_bala: Item_Base_F
 	{
+		displayName="6B27M EMR-Summer (Balaclava)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6b27m_digi_ess_bala: Item_Base_F
 	{
+		displayName="6B27M EMR-Summer (ESS/Balaclava)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6b27m_ml: Item_Base_F
 	{
+		displayName="6B27M Mountain Les";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6b27m_ml_ess: Item_Base_F
 	{
+		displayName="6B27M Mountain Les (ESS)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6b27m_ml_bala: Item_Base_F
 	{
+		displayName="6B27M Mountain Les (Balaclava)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6b27m_ml_ess_bala: Item_Base_F
 	{
+		displayName="6B27M Mountain Les (ESS/Balaclava)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6b27m_green: Item_Base_F
 	{
+		displayName="6B27M";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6b27m_green_ess: Item_Base_F
 	{
+		displayName="6B27M (ESS)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6b27m_green_bala: Item_Base_F
 	{
+		displayName="6B27M (Balaclava)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6b27m_green_ess_bala: Item_Base_F
 	{
+		displayName="6B27M (ESS/Balaclava)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6b28: Item_Base_F
 	{
+		displayName="6B28 EMR-Summer";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6b28_ess: Item_Base_F
 	{
+		displayName="6B28 EMR-Summer (ESS)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6b28_bala: Item_Base_F
 	{
+		displayName="6B28 EMR-Summer (Balaclava)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6b28_ess_bala: Item_Base_F
 	{
+		displayName="6B28 EMR-Summer (ESS/Balaclava)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6b28_flora: Item_Base_F
 	{
+		displayName="6B28 Flora";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6b28_flora_ess: Item_Base_F
 	{
+		displayName="6B28 Flora (ESS)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6b28_flora_ess_bala: Item_Base_F
 	{
+		displayName="6B28 Flora (ESS/Balaclava)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6b28_flora_bala: Item_Base_F
 	{
+		displayName="6B28 Flora (Balaclava)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6b28_green: Item_Base_F
 	{
+		displayName="6B28";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6b28_green_ess: Item_Base_F
 	{
+		displayName="6B28 (ESS)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6b28_green_bala: Item_Base_F
 	{
+		displayName="6B28 (Balaclava)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_6b28_green_ess_bala: Item_Base_F
 	{
+		displayName="6B28 (ESS/Balaclava)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_ssh68: Item_Base_F
 	{
+		displayName="SSh-68";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_Booniehat_digi: Item_Base_F
 	{
+		displayName="Boonie Hat EMR-Summer";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_Booniehat_flora: Item_Base_F
 	{
+		displayName="Boonie Hat Flora";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_fieldcap_digi: Item_Base_F
 	{
+		displayName="Field Cap EMR-Summer";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_fieldcap_helm_digi: Item_Base_F
 	{
+		displayName="Field Cap (6B27M EMR-Summer)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_fieldcap_ml: Item_Base_F
 	{
+		displayName="Field Cap Mountain Les";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_fieldcap_helm_ml: Item_Base_F
 	{
+		displayName="Field Cap (6B27M Mountain Les)";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_beanie: Item_Base_F
 	{
+		displayName="Beanie Flora";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_beanie_green: Item_Base_F
 	{
+		displayName="Beanie";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_rhs_acc_npz: Item_Base_F
 	{
+		displayName="Rail Adapter";
 		editorCategory="EdCat_WeaponAttachments";
 	};
 	class Item_rhs_acc_1pn93_1: Item_Base_F
 	{
+		displayName="1PN93-1";
 		editorCategory="EdCat_WeaponAttachments";
 	};
 	class Item_rhs_acc_1pn93_2: Item_Base_F
 	{
+		displayName="1PN93-2";
 		editorCategory="EdCat_WeaponAttachments";
 	};
 	class Item_rhs_acc_pso1m2: Item_Base_F
 	{
+		displayName="PSO-1M2";
 		editorCategory="EdCat_WeaponAttachments";
 	};
 	class Item_rhs_acc_pso1m21: Item_Base_F
 	{
+		displayName="PSO-1M2-1";
 		editorCategory="EdCat_WeaponAttachments";
 	};
 	class Item_rhs_acc_pkas: Item_Base_F
 	{
+		displayName="PK-AS";
 		editorCategory="EdCat_WeaponAttachments";
 	};
 	class Item_rhs_acc_pgo7v: Item_Base_F
 	{
+		displayName="PGO-7V3";
 		editorCategory="EdCat_WeaponAttachments";
 	};
 	class Item_rhs_acc_1p29: Item_Base_F
 	{
+		displayName="1P29";
 		editorCategory="EdCat_WeaponAttachments";
 	};
 	class Item_rhs_acc_1p78: Item_Base_F
 	{
+		displayName="1P78";
 		editorCategory="EdCat_WeaponAttachments";
 	};
 	class Item_rhs_acc_1p87: Item_Base_F
 	{
+		displayName="1P87";
 		editorCategory="EdCat_WeaponAttachments";
 	};
 	class Item_rhs_acc_ekp1: Item_Base_F
 	{
+		displayName="EKP-1S-03";
 		editorCategory="EdCat_WeaponAttachments";
 	};
 	class Item_rhs_acc_ekp8_02: Item_Base_F
 	{
+		displayName="EKP-8-02";
 		editorCategory="EdCat_WeaponAttachments";
 	};
 	class Item_rhs_acc_ekp8_18: Item_Base_F
 	{
+		displayName="EKP-8-18";
 		editorCategory="EdCat_WeaponAttachments";
 	};
 	class Item_rhs_acc_1p63: Item_Base_F
 	{
+		displayName="1P63";
 		editorCategory="EdCat_WeaponAttachments";
 	};
 	class Item_rhs_acc_tgpa: Item_Base_F
 	{
+		displayName="TGP-A";
 		editorCategory="EdCat_WeaponAttachments";
 	};
 	class Item_rhs_acc_pbs1: Item_Base_F
 	{
+		displayName="PBS-1";
 		editorCategory="EdCat_WeaponAttachments";
 	};
 	class Item_rhs_acc_tgpv: Item_Base_F
 	{
+		displayName="TGP-V";
 		editorCategory="EdCat_WeaponAttachments";
 	};
 	class Item_rhs_acc_dtk4long: Item_Base_F
 	{
+		displayName="DTK-4 (7.62)";
 		editorCategory="EdCat_WeaponAttachments";
 	};
 	class Item_rhs_acc_dtk4short: Item_Base_F
 	{
+		displayName="DTK-4 (5.45)";
 		editorCategory="EdCat_WeaponAttachments";
 	};
 	class Item_rhs_acc_dtk4screws: Item_Base_F
 	{
+		displayName="DTK-4 (7.62)";
 		editorCategory="EdCat_WeaponAttachments";
 	};
 	class Item_rhs_acc_dtk3: Item_Base_F
 	{
+		displayName="DTK-3";
 		editorCategory="EdCat_WeaponAttachments";
 	};
 	class Item_rhs_acc_dtk: Item_Base_F
 	{
+		displayName="DTK";
 		editorCategory="EdCat_WeaponAttachments";
 	};
 	class Item_rhs_acc_dtk1: Item_Base_F
 	{
+		displayName="DTK-1";
 		editorCategory="EdCat_WeaponAttachments";
 	};
 	class Item_rhs_acc_dtk1l: Item_Base_F
 	{
+		displayName="DTK-1L";
 		editorCategory="EdCat_WeaponAttachments";
 	};
 	class Item_rhs_acc_dtk2: Item_Base_F
 	{
+		displayName="DTK-2";
 		editorCategory="EdCat_WeaponAttachments";
 	};
 	class Item_rhs_acc_ak5: Item_Base_F
 	{
+		displayName="DPM-AK-5";
 		editorCategory="EdCat_WeaponAttachments";
 	};
 	class Item_rhs_acc_2dpZenit: Item_Base_F
 	{
+		displayName="2DP";
 		editorCategory="EdCat_WeaponAttachments";
 	};
 	class Item_rhs_acc_pgs64: Item_Base_F
 	{
+		displayName="PG S64";
 		editorCategory="EdCat_WeaponAttachments";
 	};
 	class Man;
@@ -15972,6 +16158,7 @@ class CfgVehicles
 	class rhs_infantry_msv_base: SoldierGB
 	{
 		side=0;
+		displayName="$STR_RHS_INF_RIFLEMAN";
 		identityTypes[]=
 		{
 			"LanguageRUS_F",
@@ -16082,6 +16269,7 @@ class CfgVehicles
 	};
 	class rhs_msv_rifleman: rhs_infantry_msv_base
 	{
+		displayName="$STR_RHS_INF_RIFLEMAN";
 		class EventHandlers: EventHandlers
 		{
 			init="if (local (_this select 0)) then {[(_this select 0), [], []] call BIS_fnc_unitHeadgear;}";
@@ -16164,6 +16352,7 @@ class CfgVehicles
 	};
 	class rhs_msv_LAT: rhs_msv_rifleman
 	{
+		displayName="$STR_RHS_INF_LAT";
 		nameSound="veh_infantry_AT_s";
 		cost=180000;
 		threat[]={1,0.69999999,0.30000001};
@@ -16232,6 +16421,7 @@ class CfgVehicles
 	};
 	class rhs_msv_RShG2: rhs_msv_LAT
 	{
+		displayName="$STR_RHS_INF_RShG2";
 		weapons[]=
 		{
 			"rhs_weap_ak74m_dtk",
@@ -16278,6 +16468,7 @@ class CfgVehicles
 	};
 	class rhs_msv_grenadier: rhs_msv_rifleman
 	{
+		displayName="$STR_RHS_INF_GRENADIER";
 		cost=130000;
 		threat[]={1,0.30000001,0.1};
 		linkedItems[]=
@@ -16355,6 +16546,7 @@ class CfgVehicles
 	};
 	class rhs_msv_arifleman: rhs_msv_rifleman
 	{
+		displayName="$STR_RHS_INF_ARIFLEMAN";
 		nameSound="veh_infantry_MG_s";
 		cost=125000;
 		threat[]={1,0.1,0.30000001};
@@ -16386,6 +16578,7 @@ class CfgVehicles
 	};
 	class rhs_msv_machinegunner: rhs_msv_arifleman
 	{
+		displayName="$STR_RHS_INF_MACHINEGUNNER";
 		linkedItems[]=
 		{
 			"rhs_6b27m_green_ess",
@@ -16419,6 +16612,7 @@ class CfgVehicles
 	};
 	class rhs_msv_machinegunner_assistant: rhs_msv_rifleman
 	{
+		displayName="$STR_RHS_INF_MACHINEGUNNER_ASSISTANT";
 		cost=110000;
 		camouflage=1.5;
 		linkedItems[]=
@@ -16443,6 +16637,7 @@ class CfgVehicles
 	};
 	class rhs_msv_grenadier_rpg: rhs_msv_rifleman
 	{
+		displayName="$STR_RHS_INF_GRENADIER_RPG";
 		nameSound="veh_infantry_AT_s";
 		cost=160000;
 		threat[]={1,0.5,0.2};
@@ -16512,6 +16707,7 @@ class CfgVehicles
 	};
 	class rhs_msv_strelok_rpg_assist: rhs_msv_rifleman
 	{
+		displayName="$STR_RHS_INF_GRENADIER_RPG_ASSISTANT";
 		linkedItems[]=
 		{
 			"rhs_6b27m",
@@ -16535,6 +16731,7 @@ class CfgVehicles
 	};
 	class rhs_msv_marksman: rhs_msv_rifleman
 	{
+		displayName="$STR_RHS_INF_MARKSMAN";
 		nameSound="veh_infantry_sniper_s";
 		cost=150000;
 		sensitivity=3.3;
@@ -16628,6 +16825,7 @@ class CfgVehicles
 	};
 	class rhs_msv_efreitor: rhs_msv_rifleman
 	{
+		displayName="$STR_RHS_INF_EFREITOR";
 		cost=350000;
 		camouflage=1.4;
 		sensitivity=3.3;
@@ -16653,6 +16851,7 @@ class CfgVehicles
 	};
 	class rhs_msv_sergeant: rhs_msv_rifleman
 	{
+		displayName="$STR_RHS_INF_SERGEANT";
 		cost=500000;
 		camouflage=1.4;
 		sensitivity=3.3;
@@ -16746,6 +16945,7 @@ class CfgVehicles
 	};
 	class rhs_msv_junior_sergeant: rhs_msv_sergeant
 	{
+		displayName="$STR_RHS_INF_JUNIOR_SERGEANT";
 		cost=450000;
 		camouflage=1.4;
 		sensitivity=3.3;
@@ -16771,6 +16971,7 @@ class CfgVehicles
 	};
 	class rhs_msv_officer_armored: rhs_msv_rifleman
 	{
+		displayName="$STR_RHS_INF_OFFICER_ARMORED";
 		nameSound="veh_infantry_officer_s";
 		cost=600000;
 		camouflage=1.6;
@@ -16848,6 +17049,7 @@ class CfgVehicles
 	};
 	class rhs_msv_officer: rhs_msv_officer_armored
 	{
+		displayName="$STR_RHS_INF_OFFICER";
 		linkedItems[]=
 		{
 			"rhs_fieldcap",
@@ -16869,6 +17071,7 @@ class CfgVehicles
 	};
 	class rhs_msv_at: rhs_msv_grenadier_rpg
 	{
+		displayName="AT Specialist";
 		nameSound="veh_infantry_AT_s";
 		cost=180000;
 		threat[]={1,0.69999999,0.30000001};
@@ -16896,6 +17099,7 @@ class CfgVehicles
 	};
 	class rhs_msv_aa: rhs_msv_at
 	{
+		displayName="$STR_RHS_INF_AA";
 		nameSound="veh_infantry_AT_s";
 		cost=200000;
 		threat[]={1,1,0.80000001};
@@ -16954,6 +17158,7 @@ class CfgVehicles
 	};
 	class rhs_msv_engineer: rhs_msv_rifleman
 	{
+		displayName="$STR_RHS_INF_ENGINEER";
 		cost=220000;
 		camouflage=1.6;
 		sensitivity=2.5;
@@ -16984,6 +17189,7 @@ class CfgVehicles
 	};
 	class rhs_msv_medic: rhs_msv_rifleman
 	{
+		displayName="$STR_RHS_INF_MEDIC";
 		attendant=1;
 		icon="iconManMedic";
 		backpack="rhs_assault_umbts_medic";
@@ -17009,6 +17215,7 @@ class CfgVehicles
 	};
 	class rhs_msv_driver_armored: rhs_msv_rifleman
 	{
+		displayName="$STR_RHS_INF_DRIVER_ARMORED";
 		engineer=1;
 		icon="iconManEngineer";
 		headgearList[]={};
@@ -17067,6 +17274,7 @@ class CfgVehicles
 	};
 	class rhs_msv_driver: rhs_msv_driver_armored
 	{
+		displayName="$STR_RHS_INF_DRIVER";
 		linkedItems[]=
 		{
 			"rhs_fieldcap",
@@ -17088,6 +17296,7 @@ class CfgVehicles
 	};
 	class rhs_msv_crew: rhs_msv_rifleman
 	{
+		displayName="$STR_RHS_INF_CREW";
 		cost=90000;
 		camouflage=1.6;
 		sensitivity=2.5;
@@ -17152,6 +17361,7 @@ class CfgVehicles
 	};
 	class rhs_msv_armoredcrew: rhs_msv_crew
 	{
+		displayName="$STR_RHS_INF_CREW_ARMORED";
 		linkedItems[]=
 		{
 			"rhs_tsh4_ess",
@@ -17209,6 +17419,7 @@ class CfgVehicles
 	};
 	class rhs_msv_combatcrew: rhs_msv_crew
 	{
+		displayName="$STR_RHS_INF_CREW_COMBAT";
 		linkedItems[]=
 		{
 			"rhs_tsh4_ess",
@@ -17266,6 +17477,7 @@ class CfgVehicles
 	};
 	class rhs_msv_crew_commander: rhs_msv_crew
 	{
+		displayName="$STR_RHS_INF_CREW_COMMANDER";
 		cost=450000;
 		camouflage=1.4;
 		sensitivity=3.3;
@@ -17340,6 +17552,7 @@ class CfgVehicles
 			"Head_Euro",
 			"Head_Asian"
 		};
+		displayName="Pilot";
 		uniformClass="rhs_uniform_df15";
 		weapons[]=
 		{
@@ -17387,10 +17600,12 @@ class CfgVehicles
 	};
 	class rhs_pilot_tan_base: rhs_pilot_base
 	{
+		displayName="Pilot";
 		uniformClass="rhs_uniform_df15_tan";
 	};
 	class rhs_pilot: rhs_pilot_base
 	{
+		displayName="$STR_RHS_PILOT_NAME";
 		cost=160000;
 		camouflage=2;
 		class EventHandlers: EventHandlers
@@ -17423,6 +17638,7 @@ class CfgVehicles
 	};
 	class rhs_pilot_tan: rhs_pilot_tan_base
 	{
+		displayName="Pilot (Tan)";
 		nameSound="veh_infantry_pilot_s";
 		cost=160000;
 		camouflage=2;
@@ -17456,6 +17672,7 @@ class CfgVehicles
 	};
 	class rhs_pilot_combat_heli: rhs_pilot_base
 	{
+		displayName="$STR_RHS_PILOTCOMBATHELICOPTER_NAME";
 		class EventHandlers: EventHandlers
 		{
 			init="if (local (_this select 0)) then {[(_this select 0), [], []] call BIS_fnc_unitHeadgear;}";
@@ -17486,6 +17703,7 @@ class CfgVehicles
 	};
 	class rhs_pilot_transport_heli: rhs_pilot_base
 	{
+		displayName="$STR_RHS_PILOTTRANSPORT_NAME";
 		linkedItems[]=
 		{
 			"rhs_gssh18",
@@ -17697,24 +17915,31 @@ class CfgVehicles
 			"ItemRadio"
 		};
 	};
-	class rhs_msv_emr_rifleman_patchless: rhs_msv_emr_rifleman;  //found empty after stripping
+	class rhs_msv_emr_rifleman_patchless: rhs_msv_emr_rifleman
+	{
+		displayName="$STR_RHS_INF_RIFLEMAN_PATCHLESS";
+	};
 	class rhs_msv_mflora_rifleman_patchless: rhs_msv_emr_rifleman
 	{
+		displayName="$STR_RHS_INF_RIFLEMAN_PATCHLESS";
 		selectionClan="clan";
 		class Wounds;  //found empty after stripping
 	};
 	class rhs_msv_rifleman_patchless: rhs_msv_emr_rifleman
 	{
+		displayName="$STR_RHS_INF_RIFLEMAN_PATCHLESS";
 		selectionClan="clan";
 		class Wounds;  //found empty after stripping
 	};
 	class rhs_msv_rifleman_patchless_alt: rhs_msv_emr_rifleman
 	{
+		displayName="$STR_RHS_INF_RIFLEMAN_PATCHLESS";
 		selectionClan="clan";
 		class Wounds;  //found empty after stripping
 	};
 	class rhs_msv_rifleman_m88_patchless: rhs_msv_emr_rifleman
 	{
+		displayName="$STR_RHS_INF_RIFLEMAN_PATCHLESS";
 		selectionClan="clan";
 		class Wounds;  //found empty after stripping
 	};
@@ -17752,6 +17977,7 @@ class CfgVehicles
 			"rhs_6b27m_green_ess_bala",
 			1
 		};
+		displayName="$STR_RHS_INF_ARIFLEMAN";
 		linkedItems[]=
 		{
 			"rhs_6b27m_digi",
@@ -18047,6 +18273,7 @@ class CfgVehicles
 	};
 	class rhs_msv_emr_efreitor: rhs_msv_emr_grenadier
 	{
+		displayName="$STR_RHS_INF_EFREITOR";
 		uniformClass="rhs_uniform_msv_emr";
 		selectionClan="clan";
 		class Wounds;  //found empty after stripping
@@ -18158,6 +18385,7 @@ class CfgVehicles
 	};
 	class rhs_msv_emr_sergeant: rhs_msv_emr_grenadier
 	{
+		displayName="$STR_RHS_INF_SERGEANT";
 		uniformClass="rhs_uniform_msv_emr";
 		selectionClan="clan";
 		class Wounds;  //found empty after stripping
@@ -18313,6 +18541,7 @@ class CfgVehicles
 			"rhs_6b27m_green_ess_bala",
 			1
 		};
+		displayName="$STR_RHS_INF_JUNIOR_SERGEANT";
 		linkedItems[]=
 		{
 			"rhs_6b27m_digi",
@@ -18374,6 +18603,7 @@ class CfgVehicles
 			"Head_Russian",
 			"Head_Asian"
 		};
+		displayName="$STR_RHS_INF_OFFICER";
 		linkedItems[]=
 		{
 			"rhs_fieldcap_digi",
@@ -18849,6 +19079,7 @@ class CfgVehicles
 	};
 	class rhs_infantry_vdv_base: rhs_infantry_msv_base
 	{
+		displayName="$STR_RHS_INF_RIFLEMAN";
 		accuracy=2.3;
 		sensitivity=3;
 		threat[]={1,0.1,0.1};
@@ -18881,6 +19112,7 @@ class CfgVehicles
 	};
 	class rhs_vdv_rifleman: rhs_infantry_vdv_base
 	{
+		displayName="$STR_RHS_INF_RIFLEMAN";
 		class EventHandlers: EventHandlers
 		{
 			init="if (local (_this select 0)) then {[(_this select 0), [], []] call BIS_fnc_unitHeadgear;}";
@@ -18963,6 +19195,7 @@ class CfgVehicles
 	};
 	class rhs_vdv_rifleman_alt: rhs_vdv_rifleman
 	{
+		displayName="$STR_RHS_INF_RIFLEMAN_2";
 		headgearList[]={};
 		linkedItems[]=
 		{
@@ -19035,6 +19268,7 @@ class CfgVehicles
 	};
 	class rhs_vdv_rifleman_lite: rhs_vdv_rifleman
 	{
+		displayName="$STR_RHS_INF_RIFLEMAN_L";
 		headgearList[]={};
 		linkedItems[]=
 		{
@@ -19057,6 +19291,7 @@ class CfgVehicles
 	};
 	class rhs_vdv_LAT: rhs_vdv_rifleman
 	{
+		displayName="$STR_RHS_INF_LAT";
 		nameSound="veh_infantry_AT_s";
 		cost=180000;
 		threat[]={1,0.69999999,0.30000001};
@@ -19125,6 +19360,7 @@ class CfgVehicles
 	};
 	class rhs_vdv_RShG2: rhs_vdv_LAT
 	{
+		displayName="$STR_RHS_INF_RShG2";
 		weapons[]=
 		{
 			"rhs_weap_ak74m_dtk",
@@ -19170,6 +19406,7 @@ class CfgVehicles
 	};
 	class rhs_vdv_grenadier: rhs_vdv_rifleman
 	{
+		displayName="$STR_RHS_INF_GRENADIER";
 		cost=130000;
 		threat[]={1,0.30000001,0.1};
 		linkedItems[]=
@@ -19249,6 +19486,7 @@ class CfgVehicles
 	};
 	class rhs_vdv_grenadier_alt: rhs_vdv_rifleman_alt
 	{
+		displayName="$STR_RHS_INF_GRENADIER_2";
 		cost=130000;
 		threat[]={1,0.30000001,0.1};
 		headgearList[]={};
@@ -19341,6 +19579,7 @@ class CfgVehicles
 	};
 	class rhs_vdv_rifleman_asval: rhs_vdv_rifleman
 	{
+		displayName="$STR_RHS_INF_RIFLEMAN_ASVAL";
 		weapons[]=
 		{
 			"rhs_weap_asval",
@@ -19382,6 +19621,7 @@ class CfgVehicles
 	};
 	class rhs_vdv_arifleman: rhs_vdv_rifleman
 	{
+		displayName="$STR_RHS_INF_ARIFLEMAN";
 		nameSound="veh_infantry_MG_s";
 		cost=125000;
 		threat[]={1,0.1,0.30000001};
@@ -19433,6 +19673,7 @@ class CfgVehicles
 	};
 	class rhs_vdv_machinegunner: rhs_vdv_arifleman
 	{
+		displayName="$STR_RHS_INF_MACHINEGUNNER";
 		cost=125000;
 		threat[]={1,0.1,0.30000001};
 		icon="iconManMG";
@@ -19469,12 +19710,14 @@ class CfgVehicles
 	};
 	class rhs_vdv_machinegunner_assistant: rhs_vdv_rifleman
 	{
+		displayName="$STR_RHS_INF_MACHINEGUNNER_ASSISTANT";
 		cost=110000;
 		camouflage=1.5;
 		backpack="rhs_sidorMG";
 	};
 	class rhs_vdv_marksman: rhs_vdv_rifleman
 	{
+		displayName="$STR_RHS_INF_MARKSMAN";
 		nameSound="veh_infantry_sniper_s";
 		cost=150000;
 		sensitivity=3.3;
@@ -19568,6 +19811,7 @@ class CfgVehicles
 	};
 	class rhs_vdv_marksman_asval: rhs_vdv_rifleman_asval
 	{
+		displayName="$STR_RHS_INF_MARKSMAN_ASVAL";
 		weapons[]=
 		{
 			"rhs_asval_pso1",
@@ -19611,6 +19855,7 @@ class CfgVehicles
 	};
 	class rhs_vdv_efreitor: rhs_vdv_LAT
 	{
+		displayName="$STR_RHS_INF_EFREITOR";
 		cost=350000;
 		camouflage=1.4;
 		sensitivity=3.3;
@@ -19650,6 +19895,7 @@ class CfgVehicles
 	};
 	class rhs_vdv_sergeant: rhs_vdv_LAT
 	{
+		displayName="$STR_RHS_INF_SERGEANT";
 		cost=500000;
 		camouflage=1.4;
 		sensitivity=3.3;
@@ -19739,6 +19985,7 @@ class CfgVehicles
 	};
 	class rhs_vdv_junior_sergeant: rhs_vdv_sergeant
 	{
+		displayName="$STR_RHS_INF_JUNIOR_SERGEANT";
 		cost=450000;
 		camouflage=1.4;
 		sensitivity=3.3;
@@ -19764,6 +20011,7 @@ class CfgVehicles
 	};
 	class rhs_vdv_officer_armored: rhs_vdv_rifleman
 	{
+		displayName="$STR_RHS_INF_OFFICER_ARMORED";
 		nameSound="veh_infantry_officer_s";
 		cost=600000;
 		camouflage=1.6;
@@ -19833,6 +20081,7 @@ class CfgVehicles
 	};
 	class rhs_vdv_officer: rhs_vdv_officer_armored
 	{
+		displayName="$STR_RHS_INF_OFFICER";
 		linkedItems[]=
 		{
 			"rhs_beret_vdv1",
@@ -19854,6 +20103,7 @@ class CfgVehicles
 	};
 	class rhs_vdv_grenadier_rpg: rhs_vdv_grenadier
 	{
+		displayName="$STR_RHS_INF_GRENADIER_RPG";
 		nameSound="veh_infantry_AT_s";
 		cost=160000;
 		threat[]={1,0.5,0.2};
@@ -19921,6 +20171,7 @@ class CfgVehicles
 	};
 	class rhs_vdv_at: rhs_vdv_grenadier_rpg
 	{
+		displayName="AT Specialist";
 		nameSound="veh_infantry_AT_s";
 		cost=180000;
 		threat[]={1,0.69999999,0.30000001};
@@ -19962,6 +20213,7 @@ class CfgVehicles
 	};
 	class rhs_vdv_aa: rhs_vdv_at
 	{
+		displayName="$STR_RHS_INF_AA";
 		nameSound="veh_infantry_AT_s";
 		cost=200000;
 		threat[]={1,1,0.80000001};
@@ -20029,6 +20281,7 @@ class CfgVehicles
 	};
 	class rhs_vdv_strelok_rpg_assist: rhs_vdv_rifleman
 	{
+		displayName="$STR_RHS_INF_GRENADIER_RPG_ASSISTANT";
 		linkedItems[]=
 		{
 			"rhs_6b28",
@@ -20072,6 +20325,7 @@ class CfgVehicles
 	};
 	class rhs_vdv_medic: rhs_vdv_rifleman
 	{
+		displayName="$STR_RHS_INF_MEDIC";
 		attendant=1;
 		icon="iconManMedic";
 		backpack="rhs_assault_umbts_medic";
@@ -20097,6 +20351,7 @@ class CfgVehicles
 	};
 	class rhs_vdv_engineer: rhs_vdv_rifleman
 	{
+		displayName="$STR_RHS_INF_ENGINEER";
 		cost=220000;
 		camouflage=1.6;
 		sensitivity=2.5;
@@ -20127,6 +20382,7 @@ class CfgVehicles
 	};
 	class rhs_vdv_driver_armored: rhs_vdv_rifleman
 	{
+		displayName="$STR_RHS_INF_DRIVER_ARMORED";
 		engineer=1;
 		icon="iconManEngineer";
 		headgearList[]={};
@@ -20185,6 +20441,7 @@ class CfgVehicles
 	};
 	class rhs_vdv_driver: rhs_vdv_driver_armored
 	{
+		displayName="$STR_RHS_INF_DRIVER";
 		linkedItems[]=
 		{
 			"rhs_beret_vdv1",
@@ -20206,6 +20463,7 @@ class CfgVehicles
 	};
 	class rhs_vdv_crew: rhs_vdv_rifleman
 	{
+		displayName="$STR_RHS_INF_CREW";
 		cost=90000;
 		camouflage=1.6;
 		sensitivity=2.5;
@@ -20276,6 +20534,7 @@ class CfgVehicles
 	};
 	class rhs_vdv_armoredcrew: rhs_vdv_crew
 	{
+		displayName="$STR_RHS_INF_CREW_ARMORED";
 		linkedItems[]=
 		{
 			"rhs_tsh4_ess",
@@ -20333,6 +20592,7 @@ class CfgVehicles
 	};
 	class rhs_vdv_combatcrew: rhs_vdv_crew
 	{
+		displayName="$STR_RHS_INF_CREW_COMBAT";
 		linkedItems[]=
 		{
 			"rhs_tsh4_ess",
@@ -20390,6 +20650,7 @@ class CfgVehicles
 	};
 	class rhs_vdv_crew_commander: rhs_vdv_crew
 	{
+		displayName="$STR_RHS_INF_CREW_COMMANDER";
 		cost=450000;
 		camouflage=1.4;
 		sensitivity=3.3;
@@ -20457,6 +20718,7 @@ class CfgVehicles
 	};
 	class rhs_infantry_vdv_des_base: rhs_infantry_vdv_base
 	{
+		displayName="$STR_RHS_INF_RIFLEMAN";
 		accuracy=2.3;
 		sensitivity=3;
 		threat[]={1,0.1,0.1};
@@ -20482,6 +20744,7 @@ class CfgVehicles
 	};
 	class rhs_vdv_des_rifleman: rhs_infantry_vdv_des_base
 	{
+		displayName="$STR_RHS_INF_RIFLEMAN";
 		class EventHandlers: EventHandlers
 		{
 			init="if (local (_this select 0)) then {[(_this select 0), [], []] call BIS_fnc_unitHeadgear;}";
@@ -20564,6 +20827,7 @@ class CfgVehicles
 	};
 	class rhs_vdv_des_rifleman_lite: rhs_vdv_des_rifleman
 	{
+		displayName="$STR_RHS_INF_RIFLEMAN_L";
 		headgearList[]={};
 		linkedItems[]=
 		{
@@ -20586,58 +20850,72 @@ class CfgVehicles
 	};
 	class rhs_emr_des_rifleman_patchless: rhs_vdv_des_rifleman
 	{
+		displayName="$STR_RHS_INF_RIFLEMAN_PATCHLESS";
 		selectionClan="clan";
 	};
 	class rhs_vdv_des_LAT: rhs_vdv_LAT
 	{
+		displayName="$STR_RHS_INF_LAT";
 		uniformClass="rhs_uniform_vdv_emr_des";
 	};
 	class rhs_vdv_des_RShG2: rhs_vdv_RShG2
 	{
+		displayName="$STR_RHS_INF_RShG2";
 		uniformClass="rhs_uniform_vdv_emr_des";
 	};
 	class rhs_vdv_des_grenadier: rhs_vdv_grenadier
 	{
+		displayName="$STR_RHS_INF_GRENADIER";
 		uniformClass="rhs_uniform_vdv_emr_des";
 	};
 	class rhs_vdv_des_rifleman_asval: rhs_vdv_rifleman_asval
 	{
+		displayName="$STR_RHS_INF_RIFLEMAN_ASVAL";
 		uniformClass="rhs_uniform_vdv_emr_des";
 	};
 	class rhs_vdv_des_arifleman: rhs_vdv_arifleman
 	{
+		displayName="$STR_RHS_INF_ARIFLEMAN";
 		uniformClass="rhs_uniform_vdv_emr_des";
 	};
 	class rhs_vdv_des_machinegunner: rhs_vdv_machinegunner
 	{
+		displayName="$STR_RHS_INF_MACHINEGUNNER";
 		uniformClass="rhs_uniform_vdv_emr_des";
 	};
 	class rhs_vdv_des_machinegunner_assistant: rhs_vdv_machinegunner_assistant
 	{
+		displayName="$STR_RHS_INF_MACHINEGUNNER_ASSISTANT";
 		uniformClass="rhs_uniform_vdv_emr_des";
 	};
 	class rhs_vdv_des_marksman: rhs_vdv_marksman
 	{
+		displayName="$STR_RHS_INF_MARKSMAN";
 		uniformClass="rhs_uniform_vdv_emr_des";
 	};
 	class rhs_vdv_des_marksman_asval: rhs_vdv_marksman_asval
 	{
+		displayName="$STR_RHS_INF_MARKSMAN_ASVAL";
 		uniformClass="rhs_uniform_vdv_emr_des";
 	};
 	class rhs_vdv_des_efreitor: rhs_vdv_efreitor
 	{
+		displayName="$STR_RHS_INF_EFREITOR";
 		uniformClass="rhs_uniform_vdv_emr_des";
 	};
 	class rhs_vdv_des_sergeant: rhs_vdv_sergeant
 	{
+		displayName="$STR_RHS_INF_SERGEANT";
 		uniformClass="rhs_uniform_vdv_emr_des";
 	};
 	class rhs_vdv_des_junior_sergeant: rhs_vdv_junior_sergeant
 	{
+		displayName="$STR_RHS_INF_JUNIOR_SERGEANT";
 		uniformClass="rhs_uniform_vdv_emr_des";
 	};
 	class rhs_vdv_des_officer_armored: rhs_vdv_officer_armored
 	{
+		displayName="$STR_RHS_INF_OFFICER_ARMORED";
 		uniformClass="rhs_uniform_vdv_emr_des";
 		linkedItems[]=
 		{
@@ -20660,6 +20938,7 @@ class CfgVehicles
 	};
 	class rhs_vdv_des_officer: rhs_vdv_officer
 	{
+		displayName="$STR_RHS_INF_OFFICER";
 		uniformClass="rhs_uniform_vdv_emr_des";
 		linkedItems[]=
 		{
@@ -20682,30 +20961,37 @@ class CfgVehicles
 	};
 	class rhs_vdv_des_grenadier_rpg: rhs_vdv_grenadier_rpg
 	{
+		displayName="$STR_RHS_INF_GRENADIER_RPG";
 		uniformClass="rhs_uniform_vdv_emr_des";
 	};
 	class rhs_vdv_des_at: rhs_vdv_at
 	{
+		displayName="AT Specialist";
 		uniformClass="rhs_uniform_vdv_emr_des";
 	};
 	class rhs_vdv_des_aa: rhs_vdv_aa
 	{
+		displayName="$STR_RHS_INF_AA";
 		uniformClass="rhs_uniform_vdv_emr_des";
 	};
 	class rhs_vdv_des_strelok_rpg_assist: rhs_vdv_strelok_rpg_assist
 	{
+		displayName="$STR_RHS_INF_GRENADIER_RPG_ASSISTANT";
 		uniformClass="rhs_uniform_vdv_emr_des";
 	};
 	class rhs_vdv_des_medic: rhs_vdv_medic
 	{
+		displayName="$STR_RHS_INF_MEDIC";
 		uniformClass="rhs_uniform_vdv_emr_des";
 	};
 	class rhs_vdv_des_engineer: rhs_vdv_engineer
 	{
+		displayName="$STR_RHS_INF_ENGINEER";
 		uniformClass="rhs_uniform_vdv_emr_des";
 	};
 	class rhs_vdv_des_driver_armored: rhs_vdv_driver_armored
 	{
+		displayName="$STR_RHS_INF_DRIVER_ARMORED";
 		uniformClass="rhs_uniform_vdv_emr_des";
 		linkedItems[]=
 		{
@@ -20728,6 +21014,7 @@ class CfgVehicles
 	};
 	class rhs_vdv_des_driver: rhs_vdv_driver
 	{
+		displayName="$STR_RHS_INF_DRIVER";
 		uniformClass="rhs_uniform_vdv_emr_des";
 		linkedItems[]=
 		{
@@ -20750,18 +21037,22 @@ class CfgVehicles
 	};
 	class rhs_vdv_des_crew: rhs_vdv_crew
 	{
+		displayName="$STR_RHS_INF_CREW";
 		uniformClass="rhs_uniform_vdv_emr_des";
 	};
 	class rhs_vdv_des_armoredcrew: rhs_vdv_armoredcrew
 	{
+		displayName="$STR_RHS_INF_CREW_ARMORED";
 		uniformClass="rhs_uniform_vdv_emr_des";
 	};
 	class rhs_vdv_des_combatcrew: rhs_vdv_combatcrew
 	{
+		displayName="$STR_RHS_INF_CREW_COMBAT";
 		uniformClass="rhs_uniform_vdv_emr_des";
 	};
 	class rhs_vdv_des_crew_commander: rhs_vdv_crew_commander
 	{
+		displayName="$STR_RHS_INF_CREW_COMMANDER";
 		uniformClass="rhs_uniform_vdv_emr_des";
 	};
 	class rhs_vdv_gorka_r_y_rifleman: rhs_vdv_rifleman
@@ -20876,6 +21167,7 @@ class CfgVehicles
 	};
 	class rhs_vdv_flora_rifleman_lite: rhs_vdv_flora_rifleman
 	{
+		displayName="$STR_RHS_INF_RIFLEMAN_L";
 		headgearList[]={};
 		linkedItems[]=
 		{
@@ -22175,6 +22467,7 @@ class CfgVehicles
 	};
 	class rhs_vdv_mflora_rifleman_lite: rhs_vdv_mflora_rifleman
 	{
+		displayName="$STR_RHS_INF_RIFLEMAN_L";
 		headgearList[]={};
 		linkedItems[]=
 		{
@@ -23192,6 +23485,7 @@ class CfgVehicles
 	};
 	class rhs_vdv_recon_rifleman: rhs_vdv_rifleman
 	{
+		displayName="$STR_RHS_INF_RIFLEMAN";
 		headgearList[]={};
 		identityTypes[]=
 		{
@@ -23290,6 +23584,7 @@ class CfgVehicles
 	};
 	class rhs_vdv_recon_rifleman_l: rhs_vdv_recon_rifleman
 	{
+		displayName="$STR_RHS_INF_RIFLEMAN_L";
 		uniformClass="rhs_uniform_gorka_r_g";
 		weapons[]=
 		{
@@ -23328,6 +23623,7 @@ class CfgVehicles
 	};
 	class rhs_vdv_recon_rifleman_akms: rhs_vdv_recon_rifleman
 	{
+		displayName="$STR_RHS_INF_RIFLEMAN_AKMS";
 		uniformClass="rhs_uniform_gorka_r_g";
 		linkedItems[]=
 		{
@@ -23400,6 +23696,7 @@ class CfgVehicles
 	};
 	class rhs_vdv_recon_rifleman_ak103: rhs_vdv_recon_rifleman_akms
 	{
+		displayName="$STR_RHS_INF_RIFLEMAN_AK103";
 		linkedItems[]=
 		{
 			"rhs_6b23_digi_6sh92_headset_spetsnaz",
@@ -23469,6 +23766,7 @@ class CfgVehicles
 	};
 	class rhs_vdv_recon_rifleman_lat: rhs_vdv_recon_rifleman
 	{
+		displayName="$STR_RHS_INF_LAT";
 		weapons[]=
 		{
 			"rhs_weap_45th_ak74m",
@@ -23522,6 +23820,7 @@ class CfgVehicles
 	};
 	class rhs_vdv_recon_grenadier: rhs_vdv_recon_rifleman
 	{
+		displayName="$STR_RHS_INF_GRENADIER";
 		linkedItems[]=
 		{
 			"rhs_6b23_digi_6sh92_Vog_Radio_Spetsnaz",
@@ -23605,6 +23904,7 @@ class CfgVehicles
 	};
 	class rhs_vdv_recon_rifleman_asval: rhs_vdv_recon_rifleman
 	{
+		displayName="$STR_RHS_INF_RIFLEMAN_ASVAL";
 		weapons[]=
 		{
 			"rhs_weap_45th_asval",
@@ -23658,6 +23958,7 @@ class CfgVehicles
 	};
 	class rhs_vdv_recon_arifleman: rhs_vdv_recon_rifleman
 	{
+		displayName="$STR_RHS_INF_ARIFLEMAN";
 		uniformClass="rhs_uniform_gorka_r_g";
 		linkedItems[]=
 		{
@@ -23715,12 +24016,14 @@ class CfgVehicles
 	};
 	class rhs_vdv_recon_machinegunner_assistant: rhs_vdv_recon_rifleman
 	{
+		displayName="$STR_RHS_INF_MACHINEGUNNER_ASSISTANT";
 		cost=110000;
 		camouflage=1.5;
 		backpack="rhs_sidorMG";
 	};
 	class rhs_vdv_recon_efreitor: rhs_vdv_recon_rifleman_lat
 	{
+		displayName="$STR_RHS_INF_EFREITOR";
 		cost=350000;
 		camouflage=1.4;
 		sensitivity=3.3;
@@ -23800,6 +24103,7 @@ class CfgVehicles
 	};
 	class rhs_vdv_recon_sergeant: rhs_vdv_recon_rifleman_lat
 	{
+		displayName="$STR_RHS_INF_SERGEANT";
 		linkedItems[]=
 		{
 			"rhs_6b23_digi_6sh92_headset_mapcase",
@@ -23877,6 +24181,7 @@ class CfgVehicles
 	};
 	class rhs_vdv_recon_officer_armored: rhs_vdv_recon_rifleman
 	{
+		displayName="$STR_RHS_INF_OFFICER_ARMORED";
 		nameSound="veh_infantry_officer_s";
 		cost=600000;
 		camouflage=1.6;
@@ -23935,6 +24240,7 @@ class CfgVehicles
 	};
 	class rhs_vdv_recon_officer: rhs_vdv_recon_officer_armored
 	{
+		displayName="$STR_RHS_INF_OFFICER";
 		linkedItems[]=
 		{
 			"rhs_Booniehat_digi",
@@ -23956,6 +24262,7 @@ class CfgVehicles
 	};
 	class rhs_vdv_recon_marksman: rhs_vdv_recon_rifleman
 	{
+		displayName="$STR_RHS_INF_MARKSMAN";
 		nameSound="veh_infantry_sniper_s";
 		cost=150000;
 		sensitivity=3.3;
@@ -24028,6 +24335,7 @@ class CfgVehicles
 	};
 	class rhs_vdv_recon_marksman_asval: rhs_vdv_recon_marksman
 	{
+		displayName="$STR_RHS_INF_MARKSMAN_ASVAL";
 		weapons[]=
 		{
 			"rhs_asval_pso1",
@@ -24079,6 +24387,7 @@ class CfgVehicles
 	};
 	class rhs_vdv_recon_marksman_vss: rhs_vdv_recon_marksman_asval
 	{
+		displayName="$STR_RHS_INF_MARKSMAN_VSS";
 		weapons[]=
 		{
 			"rhs_weap_45th_vss",
@@ -24096,6 +24405,7 @@ class CfgVehicles
 	};
 	class rhs_vdv_recon_medic: rhs_vdv_recon_rifleman
 	{
+		displayName="$STR_RHS_INF_MEDIC";
 		attendant=1;
 		icon="iconManMedic";
 		nameSound="veh_infantry_medic_s";
@@ -24135,6 +24445,7 @@ class CfgVehicles
 	};
 	class rhs_vdv_recon_rifleman_scout: rhs_vdv_recon_rifleman
 	{
+		displayName="$STR_RHSUSF_INF_SCOUT_AK74";
 		identityTypes[]=
 		{
 			"LanguageRUS_F",
@@ -24218,6 +24529,7 @@ class CfgVehicles
 	};
 	class rhs_vdv_recon_rifleman_scout_akm: rhs_vdv_recon_rifleman_akms
 	{
+		displayName="$STR_RHSUSF_INF_SCOUT";
 		identityTypes[]=
 		{
 			"LanguageRUS_F",
@@ -24265,6 +24577,7 @@ class CfgVehicles
 	};
 	class rhs_vdv_recon_grenadier_scout: rhs_vdv_recon_rifleman_scout_akm
 	{
+		displayName="$STR_RHSUSF_INF_SCOUT_GR";
 		uniformClass="rhs_uniform_gorka_r_g";
 		linkedItems[]=
 		{
@@ -24354,6 +24667,7 @@ class CfgVehicles
 	};
 	class rhs_vdv_recon_arifleman_scout: rhs_vdv_recon_rifleman_scout
 	{
+		displayName="$STR_RHSUSF_INF_SCOUT_PKP";
 		uniformClass="rhs_uniform_gorka_r_g";
 		linkedItems[]=
 		{
@@ -24422,6 +24736,7 @@ class CfgVehicles
 			"Head_Russian",
 			"Head_Asian"
 		};
+		displayName="$STR_RHS_INF_RIFLEMAN_AK103";
 		headgearList[]={};
 		Items[]=
 		{
@@ -24498,6 +24813,7 @@ class CfgVehicles
 	};
 	class rhs_mvd_izlom_rifleman_asval: rhs_mvd_izlom_rifleman
 	{
+		displayName="$STR_RHS_INF_RIFLEMAN_ASVAL";
 		weapons[]=
 		{
 			"rhs_weap_45th_asval",
@@ -24547,6 +24863,7 @@ class CfgVehicles
 	};
 	class rhs_mvd_izlom_rifleman_LAT: rhs_mvd_izlom_rifleman
 	{
+		displayName="$STR_RHS_INF_LAT";
 		nameSound="veh_infantry_AT_s";
 		cost=180000;
 		threat[]={1,0.69999999,0.30000001};
@@ -24615,6 +24932,7 @@ class CfgVehicles
 	};
 	class rhs_mvd_izlom_grenadier_rpg: rhs_mvd_izlom_rifleman
 	{
+		displayName="$STR_RHS_INF_GRENADIER_RPG";
 		nameSound="veh_infantry_AT_s";
 		cost=160000;
 		threat[]={1,0.5,0.2};
@@ -24686,6 +25004,7 @@ class CfgVehicles
 	};
 	class rhs_mvd_izlom_arifleman: rhs_mvd_izlom_rifleman
 	{
+		displayName="$STR_RHS_INF_ARIFLEMAN";
 		nameSound="veh_infantry_MG_s";
 		cost=125000;
 		threat[]={1,0.1,0.30000001};
@@ -24723,6 +25042,7 @@ class CfgVehicles
 	};
 	class rhs_mvd_izlom_machinegunner: rhs_mvd_izlom_arifleman
 	{
+		displayName="$STR_RHS_INF_MACHINEGUNNER";
 		linkedItems[]=
 		{
 			"rhs_6b27m_green_ess",
@@ -24758,6 +25078,7 @@ class CfgVehicles
 	};
 	class rhs_mvd_izlom_marksman: rhs_mvd_izlom_rifleman
 	{
+		displayName="$STR_RHS_INF_MARKSMAN";
 		nameSound="veh_infantry_sniper_s";
 		cost=150000;
 		sensitivity=3.3;
@@ -24826,6 +25147,7 @@ class CfgVehicles
 	};
 	class rhs_mvd_izlom_marksman_vss: rhs_mvd_izlom_rifleman_asval
 	{
+		displayName="$STR_RHS_INF_MARKSMAN_VSS";
 		weapons[]=
 		{
 			"rhs_weap_45th_vss",
@@ -24843,6 +25165,7 @@ class CfgVehicles
 	};
 	class rhs_mvd_izlom_efreitor: rhs_mvd_izlom_rifleman_LAT
 	{
+		displayName="$STR_RHS_INF_EFREITOR";
 		cost=350000;
 		camouflage=1.4;
 		sensitivity=3.3;
@@ -24868,6 +25191,7 @@ class CfgVehicles
 	};
 	class rhs_mvd_izlom_sergeant: rhs_mvd_izlom_rifleman
 	{
+		displayName="$STR_RHS_INF_SERGEANT";
 		cost=500000;
 		camouflage=1.4;
 		sensitivity=3.3;
@@ -24962,6 +25286,7 @@ class CfgVehicles
 	class rhs_vmf_flora_rifleman_lite: rhs_vmf_flora_rifleman
 	{
 		uniformClass="rhs_uniform_vmf_flora";
+		displayName="$STR_RHS_INF_RIFLEMAN_L";
 		linkedItems[]=
 		{
 			"rhs_beret_mp1",
@@ -26645,6 +26970,7 @@ class CfgVehicles
 	};
 	class rhs_rva_crew: rhs_infantry_msv_base
 	{
+		displayName="$STR_RHS_INF_DRIVER";
 		uniformClass="rhs_uniform_rva_flora";
 		engineer=1;
 		icon="iconManEngineer";
@@ -26719,6 +27045,7 @@ class CfgVehicles
 	};
 	class rhs_rva_crew_armored: rhs_rva_crew
 	{
+		displayName="$STR_RHS_INF_DRIVER_ARMORED";
 		linkedItems[]=
 		{
 			"rhs_fieldcap",
@@ -26745,6 +27072,7 @@ class CfgVehicles
 		camouflage=1.6;
 		sensitivity=3;
 		icon="iconManOfficer";
+		displayName="$STR_RHS_INF_OFFICER";
 		linkedItems[]=
 		{
 			"rhs_fieldcap",
@@ -26808,6 +27136,7 @@ class CfgVehicles
 	};
 	class rhs_rva_crew_officer_armored: rhs_rva_crew_officer
 	{
+		displayName="$STR_RHS_INF_OFFICER_ARMORED";
 		linkedItems[]=
 		{
 			"rhs_fieldcap",
@@ -26829,6 +27158,7 @@ class CfgVehicles
 	};
 	class rhs_invisible_man: rhs_infantry_msv_base
 	{
+		displayName="invisibru";
 		uniformClass="rhs_uniform_invisible";
 	};
 };
@@ -26869,6 +27199,7 @@ class CfgWeapons
 	class Uniform_Base;
 	class rhs_uniform_flora: Uniform_Base
 	{
+		displayName="$STR_RHS_FLORAMSV_NAME";
 		class ItemInfo: UniformItem
 		{
 			uniformModel="-";
@@ -26879,6 +27210,7 @@ class CfgWeapons
 	};
 	class rhs_uniform_df15: rhs_uniform_flora
 	{
+		displayName="$STR_RHS_DF152_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformClass="rhs_pilot_base";
@@ -26886,6 +27218,7 @@ class CfgWeapons
 	};
 	class rhs_uniform_df15_tan: rhs_uniform_df15
 	{
+		displayName="$STR_RHS_DF152_TAN_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformClass="rhs_pilot_tan_base";
@@ -26893,6 +27226,7 @@ class CfgWeapons
 	};
 	class rhs_uniform_msv_emr: rhs_uniform_flora
 	{
+		displayName="$STR_RHS_EMRSUMMERMSV_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformClass="rhs_msv_emr_rifleman";
@@ -26900,6 +27234,7 @@ class CfgWeapons
 	};
 	class rhs_uniform_mvd_izlom: rhs_uniform_flora
 	{
+		displayName="$STR_RHS_IZLOM_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformClass="rhs_mvd_izlom_rifleman";
@@ -26907,6 +27242,7 @@ class CfgWeapons
 	};
 	class rhs_uniform_vdv_emr: rhs_uniform_flora
 	{
+		displayName="$STR_RHS_EMRSUMMERVDV_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformClass="rhs_vdv_rifleman";
@@ -26914,6 +27250,7 @@ class CfgWeapons
 	};
 	class rhs_uniform_vdv_emr_des: rhs_uniform_flora
 	{
+		displayName="$STR_RHS_EMRDESERTVDV_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformClass="rhs_vdv_des_rifleman";
@@ -26921,6 +27258,7 @@ class CfgWeapons
 	};
 	class rhs_uniform_vdv_flora: rhs_uniform_flora
 	{
+		displayName="$STR_RHS_FLORAVDV_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformClass="rhs_vdv_flora_rifleman";
@@ -26928,6 +27266,7 @@ class CfgWeapons
 	};
 	class rhs_uniform_vmf_flora: rhs_uniform_flora
 	{
+		displayName="$STR_RHS_FLORAVMF_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformClass="rhs_vmf_flora_rifleman";
@@ -26935,6 +27274,7 @@ class CfgWeapons
 	};
 	class rhs_uniform_vmf_flora_subdued: rhs_uniform_vmf_flora
 	{
+		displayName="$STR_RHS_FLORAVMF_SUBDUED_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformClass="rhs_vmf_flora_rifleman_subdued";
@@ -26942,6 +27282,7 @@ class CfgWeapons
 	};
 	class rhs_uniform_rva_flora: rhs_uniform_flora
 	{
+		displayName="$STR_RHS_FLORARVA_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformClass="rhs_rva_crew";
@@ -26949,6 +27290,7 @@ class CfgWeapons
 	};
 	class rhs_uniform_vdv_mflora: rhs_uniform_flora
 	{
+		displayName="$STR_RHS_MOUNTAINFLORAVDV_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformClass="rhs_vdv_mflora_rifleman";
@@ -26956,6 +27298,7 @@ class CfgWeapons
 	};
 	class rhs_uniform_mflora_patchless: rhs_uniform_flora
 	{
+		displayName="$STR_RHS_MOUNTAINFLORA_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformClass="rhs_msv_mflora_rifleman_patchless";
@@ -26963,6 +27306,7 @@ class CfgWeapons
 	};
 	class rhs_uniform_emr_des_patchless: rhs_uniform_flora
 	{
+		displayName="$STR_RHS_EMRDESERT_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformClass="rhs_emr_des_rifleman_patchless";
@@ -26970,6 +27314,7 @@ class CfgWeapons
 	};
 	class rhs_uniform_flora_patchless: rhs_uniform_flora
 	{
+		displayName="$STR_RHS_FLORA_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformClass="rhs_msv_rifleman_patchless";
@@ -26977,6 +27322,7 @@ class CfgWeapons
 	};
 	class rhs_uniform_flora_patchless_alt: rhs_uniform_flora
 	{
+		displayName="$STR_RHS_FLORA_ALT_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformClass="rhs_msv_rifleman_patchless_alt";
@@ -26984,6 +27330,7 @@ class CfgWeapons
 	};
 	class rhs_uniform_emr_patchless: rhs_uniform_flora
 	{
+		displayName="$STR_RHS_EMRSUMMER_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformClass="rhs_msv_emr_rifleman_patchless";
@@ -26991,6 +27338,7 @@ class CfgWeapons
 	};
 	class rhs_uniform_m88_patchless: rhs_uniform_flora
 	{
+		displayName="$STR_RHS_M88_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformClass="rhs_msv_rifleman_m88_patchless";
@@ -26998,6 +27346,7 @@ class CfgWeapons
 	};
 	class rhs_uniform_gorka_r_y: rhs_uniform_flora
 	{
+		displayName="$STR_RHS_GORKARY_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformClass="rhs_vdv_gorka_r_y_rifleman";
@@ -27005,6 +27354,7 @@ class CfgWeapons
 	};
 	class rhs_uniform_gorka_r_g: rhs_uniform_gorka_r_y
 	{
+		displayName="$STR_RHS_GORKARG_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformClass="rhs_vdv_gorka_r_g_rifleman";
@@ -27012,6 +27362,7 @@ class CfgWeapons
 	};
 	class rhs_uniform_gorka_1_a: rhs_uniform_flora
 	{
+		displayName="Gorka 1 (Afghanka)";
 		class ItemInfo: ItemInfo
 		{
 			uniformClass="rhs_vdv_gorka_1_a_rifleman";
@@ -27019,6 +27370,7 @@ class CfgWeapons
 	};
 	class rhs_uniform_gorka_1_b: rhs_uniform_gorka_1_a
 	{
+		displayName="Gorka 1 (Berezka)";
 		class ItemInfo: ItemInfo
 		{
 			uniformClass="rhs_vdv_gorka_1_b_rifleman";
@@ -27026,6 +27378,7 @@ class CfgWeapons
 	};
 	class rhs_uniform_invisible: rhs_uniform_gorka_r_y
 	{
+		displayName="Invisibru";
 		class ItemInfo: ItemInfo
 		{
 			uniformClass="rhs_invisible_man";
@@ -27051,6 +27404,7 @@ class CfgWeapons
 			"G_Aviator",
 			1
 		};
+		displayName="$STR_RHS_FIELDCAP_NAME";
 		class ItemInfo: HeadGearItem
 		{
 			mass=5;
@@ -27066,9 +27420,13 @@ class CfgWeapons
 			};
 		};
 	};
-	class rhs_fieldcap_vsr: rhs_fieldcap;  //found empty after stripping
+	class rhs_fieldcap_vsr: rhs_fieldcap
+	{
+		displayName="$STR_RHS_FIELDCAPVSR_NAME";
+	};
 	class rhs_fieldcap_digi: rhs_fieldcap
 	{
+		displayName="$STR_RHS_FIELDCAPEMRSUMMER_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="\rhsafrf\addons\rhs_infantry\gear\head\rhs_fieldcap_digi";
@@ -27076,16 +27434,27 @@ class CfgWeapons
 	};
 	class rhs_fieldcap_digi2: rhs_fieldcap
 	{
+		displayName="$STR_RHS_FIELDCAPEMRSUMMER2_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="\rhsafrf\addons\rhs_infantry2\gear\head\rhs_fieldcap_digi2";
 		};
 	};
-	class rhs_fieldcap_digi_des: rhs_fieldcap_digi;  //found empty after stripping
-	class rhs_fieldcap_ml: rhs_fieldcap;  //found empty after stripping
-	class rhs_fieldcap_khk: rhs_fieldcap;  //found empty after stripping
+	class rhs_fieldcap_digi_des: rhs_fieldcap_digi
+	{
+		displayName="$STR_RHS_FIELDCAPEMRDES_NAME";
+	};
+	class rhs_fieldcap_ml: rhs_fieldcap
+	{
+		displayName="$STR_RHS_FIELDCAPML_NAME";
+	};
+	class rhs_fieldcap_khk: rhs_fieldcap
+	{
+		displayName="$STR_RHS_FIELDCAPKHK_NAME";
+	};
 	class rhs_fieldcap_helm: rhs_fieldcap
 	{
+		displayName="$STR_RHS_FIELDCAP6B27M_NAME";
 		class ItemInfo: ItemInfo
 		{
 			mass=20;
@@ -27094,14 +27463,19 @@ class CfgWeapons
 	};
 	class rhs_fieldcap_helm_digi: rhs_fieldcap_helm
 	{
+		displayName="$STR_RHS_FIELDCAP6B27MEMRSUMMER_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="\rhsafrf\addons\rhs_infantry\gear\head\rhs_fieldcap_helm_digi";
 		};
 	};
-	class rhs_fieldcap_helm_ml: rhs_fieldcap_helm;  //found empty after stripping
+	class rhs_fieldcap_helm_ml: rhs_fieldcap_helm
+	{
+		displayName="$STR_RHS_FIELDCAP6B27MML_NAME";
+	};
 	class rhs_fieldcap_izlom: rhs_fieldcap_digi2
 	{
+		displayName="$STR_RHS_FIELDCAPIZLOM_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="\rhsafrf\addons\rhs_infantry2\gear\head\rhs_fieldcap_digi2";
@@ -27118,6 +27492,7 @@ class CfgWeapons
 			"G_Aviator",
 			1
 		};
+		displayName="$STR_RHS_BEANIE_FLORA";
 		Scope=2;
 		class ItemInfo: HeadGearItem
 		{
@@ -27134,7 +27509,10 @@ class CfgWeapons
 			};
 		};
 	};
-	class rhs_beanie_green: rhs_beanie;  //found empty after stripping
+	class rhs_beanie_green: rhs_beanie
+	{
+		displayName="$STR_RHS_BEANIE";
+	};
 	class rhs_6b26: H_HelmetB
 	{
 		Scope=2;
@@ -27147,6 +27525,7 @@ class CfgWeapons
 			"G_Aviator",
 			1
 		};
+		displayName="$STR_RHS_6B26FLORA_NAME";
 		class ItemInfo: ItemInfo
 		{
 			mass=40;
@@ -27165,6 +27544,7 @@ class CfgWeapons
 	class rhs_6b26_bala: rhs_6b26
 	{
 		allowedFacewear[]={};
+		displayName="$STR_RHS_6B26BALAFLORA_NAME";
 		class ItemInfo: ItemInfo
 		{
 			mass=40;
@@ -27173,6 +27553,7 @@ class CfgWeapons
 	};
 	class rhs_6b26_ess: rhs_6b26
 	{
+		displayName="$STR_RHS_6B26ESSFLORA_NAME";
 		allowedFacewear[]=
 		{
 			"rhs_scarf",
@@ -27187,6 +27568,7 @@ class CfgWeapons
 	class rhs_6b26_ess_bala: rhs_6b26
 	{
 		allowedFacewear[]={};
+		displayName="$STR_RHS_6B26ESSBALAFLORA_NAME";
 		class ItemInfo: ItemInfo
 		{
 			mass=40;
@@ -27195,6 +27577,7 @@ class CfgWeapons
 	};
 	class rhs_6b26_green: rhs_6b26
 	{
+		displayName="$STR_RHS_6B26_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="\rhsafrf\addons\rhs_infantry\gear\head\rhs_6b26_green";
@@ -27203,6 +27586,7 @@ class CfgWeapons
 	class rhs_6b26_bala_green: rhs_6b26_green
 	{
 		allowedFacewear[]={};
+		displayName="$STR_RHS_6B26BALA_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="\rhsafrf\addons\rhs_infantry\gear\head\rhs_6b26_green_bala";
@@ -27210,6 +27594,7 @@ class CfgWeapons
 	};
 	class rhs_6b26_ess_green: rhs_6b26_green
 	{
+		displayName="$STR_RHS_6B26ESS_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="\rhsafrf\addons\rhs_infantry\gear\head\rhs_6b26_green_ess";
@@ -27218,6 +27603,7 @@ class CfgWeapons
 	class rhs_6b26_ess_bala_green: rhs_6b26_green
 	{
 		allowedFacewear[]={};
+		displayName="$STR_RHS_6B26ESSBALA_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="\rhsafrf\addons\rhs_infantry\gear\head\rhs_6b26_green_ess_bala";
@@ -27234,6 +27620,7 @@ class CfgWeapons
 			"G_Aviator",
 			1
 		};
+		displayName="$STR_RHS_6B27MFLORA_NAME";
 		class ItemInfo: ItemInfo
 		{
 			mass=40;
@@ -27249,30 +27636,50 @@ class CfgWeapons
 			};
 		};
 	};
-	class rhs_6b27m_digi: rhs_6b27m;  //found empty after stripping
-	class rhs_6b27m_ml: rhs_6b27m;  //found empty after stripping
+	class rhs_6b27m_digi: rhs_6b27m
+	{
+		displayName="$STR_RHS_6B27MEMRSUMMER_NAME";
+	};
+	class rhs_6b27m_ml: rhs_6b27m
+	{
+		displayName="$STR_RHS_6B27MML_NAME";
+	};
 	class rhs_6b27m_ess_bala: rhs_6b27m
 	{
 		allowedFacewear[]={};
+		displayName="$STR_RHS_6B27MFLORAESSBALACLAVA_NAME";
 		class ItemInfo: ItemInfo
 		{
 			mass=34.32;
 			uniformModel="\rhsafrf\addons\rhs_infantry\gear\head\rhs_6b27m_ess_bala";
 		};
 	};
-	class rhs_6b27m_digi_ess_bala: rhs_6b27m_ess_bala;  //found empty after stripping
-	class rhs_6b27m_ML_ess_bala: rhs_6b27m_ess_bala;  //found empty after stripping
+	class rhs_6b27m_digi_ess_bala: rhs_6b27m_ess_bala
+	{
+		displayName="$STR_RHS_6B27MEMRSUMMERESSBALACLAVA_NAME";
+	};
+	class rhs_6b27m_ML_ess_bala: rhs_6b27m_ess_bala
+	{
+		displayName="$STR_RHS_6B27MMLESSBALACLAVA_NAME";
+	};
 	class rhs_6b27m_bala: rhs_6b27m
 	{
 		allowedFacewear[]={};
+		displayName="$STR_RHS_6B27MFLORABALACLAVA_NAME";
 		class ItemInfo: ItemInfo
 		{
 			mass=40;
 			uniformModel="\rhsafrf\addons\rhs_infantry\gear\head\rhs_6b27m_bala";
 		};
 	};
-	class rhs_6b27m_digi_bala: rhs_6b27m_bala;  //found empty after stripping
-	class rhs_6b27m_ml_bala: rhs_6b27m_bala;  //found empty after stripping
+	class rhs_6b27m_digi_bala: rhs_6b27m_bala
+	{
+		displayName="$STR_RHS_6B27MEMRSUMMERBALACLAVA_NAME";
+	};
+	class rhs_6b27m_ml_bala: rhs_6b27m_bala
+	{
+		displayName="$STR_RHS_6B27MMLBALACLAVA_NAME";
+	};
 	class rhs_6b27m_ess: rhs_6b27m
 	{
 		allowedFacewear[]=
@@ -27284,14 +27691,21 @@ class CfgWeapons
 			"G_Aviator",
 			1
 		};
+		displayName="$STR_RHS_6B27MFLORAESS_NAME";
 		class ItemInfo: ItemInfo
 		{
 			mass=40;
 			uniformModel="\rhsafrf\addons\rhs_infantry\gear\head\rhs_6b27m_ess";
 		};
 	};
-	class rhs_6b27m_digi_ess: rhs_6b27m_ess;  //found empty after stripping
-	class rhs_6b27m_ml_ess: rhs_6b27m_ess;  //found empty after stripping
+	class rhs_6b27m_digi_ess: rhs_6b27m_ess
+	{
+		displayName="$STR_RHS_6B27MEMRSUMMERESS_NAME";
+	};
+	class rhs_6b27m_ml_ess: rhs_6b27m_ess
+	{
+		displayName="$STR_RHS_6B27MMLESS_NAME";
+	};
 	class rhs_6b27m_green: rhs_6b27m
 	{
 		allowedFacewear[]=
@@ -27303,6 +27717,7 @@ class CfgWeapons
 			"G_Aviator",
 			1
 		};
+		displayName="$STR_RHS_6B27M_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="\rhsafrf\addons\rhs_infantry\gear\head\rhs_6b27m_green";
@@ -27310,6 +27725,7 @@ class CfgWeapons
 	};
 	class rhs_6b27m_green_ess: rhs_6b27m_ess
 	{
+		displayName="$STR_RHS_6B27MESS_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="\rhsafrf\addons\rhs_infantry\gear\head\rhs_6b27m_green_ess";
@@ -27317,6 +27733,7 @@ class CfgWeapons
 	};
 	class rhs_6b27m_green_bala: rhs_6b27m_bala
 	{
+		displayName="$STR_RHS_6B27MBALACLAVA_NAME";
 		class ItemInfo: ItemInfo
 		{
 			mass=40;
@@ -27325,6 +27742,7 @@ class CfgWeapons
 	};
 	class rhs_6b27m_green_ess_bala: rhs_6b27m_ess_bala
 	{
+		displayName="$STR_RHS_6B27MESSBALACLAVA_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="\rhsafrf\addons\rhs_infantry\gear\head\rhs_6b27m_green_ess_bala";
@@ -27341,6 +27759,7 @@ class CfgWeapons
 			"G_Aviator",
 			1
 		};
+		displayName="$STR_RHS_6B28EMRSUMMER_NAME";
 		class ItemInfo: ItemInfo
 		{
 			mass=40;
@@ -27356,38 +27775,54 @@ class CfgWeapons
 			};
 		};
 	};
-	class rhs_6b28_flora: rhs_6b28;  //found empty after stripping
+	class rhs_6b28_flora: rhs_6b28
+	{
+		displayName="$STR_RHS_6B28FLORA_NAME";
+	};
 	class rhs_6b28_ess: rhs_6b28
 	{
+		displayName="$STR_RHS_6B28EMRSUMMERESS_NAME";
 		class ItemInfo: ItemInfo
 		{
 			mass=40;
 			uniformModel="\rhsafrf\addons\rhs_infantry\gear\head\rhs_6b28_ess";
 		};
 	};
-	class rhs_6b28_flora_ess: rhs_6b28_ess;  //found empty after stripping
+	class rhs_6b28_flora_ess: rhs_6b28_ess
+	{
+		displayName="$STR_RHS_6B28FLORAESS_NAME";
+	};
 	class rhs_6b28_bala: rhs_6b28
 	{
 		allowedFacewear[]={};
+		displayName="$STR_RHS_6B28EMRSUMMERBALACLAVA_NAME";
 		class ItemInfo: ItemInfo
 		{
 			mass=40;
 			uniformModel="\rhsafrf\addons\rhs_infantry\gear\head\rhs_6b28_bala";
 		};
 	};
-	class rhs_6b28_flora_bala: rhs_6b28_bala;  //found empty after stripping
+	class rhs_6b28_flora_bala: rhs_6b28_bala
+	{
+		displayName="$STR_RHS_6B28FLORABALACLAVA_NAME";
+	};
 	class rhs_6b28_ess_bala: rhs_6b28
 	{
 		allowedFacewear[]={};
+		displayName="$STR_RHS_6B28EMRSUMMERESSBALACLAVA_NAME";
 		class ItemInfo: ItemInfo
 		{
 			mass=40;
 			uniformModel="\rhsafrf\addons\rhs_infantry\gear\head\rhs_6b28_ess_bala";
 		};
 	};
-	class rhs_6b28_flora_ess_bala: rhs_6b28_ess_bala;  //found empty after stripping
+	class rhs_6b28_flora_ess_bala: rhs_6b28_ess_bala
+	{
+		displayName="$STR_RHS_6B28FLORAESSBALACLAVA_NAME";
+	};
 	class rhs_6b28_green: rhs_6b28
 	{
+		displayName="$STR_RHS_6B28_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="\rhsafrf\addons\rhs_infantry\gear\head\rhs_6b28_green";
@@ -27395,6 +27830,7 @@ class CfgWeapons
 	};
 	class rhs_6b28_green_ess: rhs_6b28_ess
 	{
+		displayName="$STR_RHS_6B28ESS_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="\rhsafrf\addons\rhs_infantry\gear\head\rhs_6b28_green_ess";
@@ -27403,6 +27839,7 @@ class CfgWeapons
 	class rhs_6b28_green_bala: rhs_6b28
 	{
 		allowedFacewear[]={};
+		displayName="$STR_RHS_6B28BALACLAVA_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="\rhsafrf\addons\rhs_infantry\gear\head\rhs_6b28_green_bala";
@@ -27411,6 +27848,7 @@ class CfgWeapons
 	class rhs_6b28_green_ess_bala: rhs_6b28
 	{
 		allowedFacewear[]={};
+		displayName="$STR_RHS_6B28ESSBALACLAVA_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="\rhsafrf\addons\rhs_infantry\gear\head\rhs_6b28_green_ess_bala";
@@ -27427,6 +27865,7 @@ class CfgWeapons
 			"G_Aviator",
 			1
 		};
+		displayName="$STR_RHS_BOONIEHATEMRSUMMER_NAME";
 		weaponPoolAvailable=1;
 		class ItemInfo: HeadGearItem
 		{
@@ -27443,7 +27882,10 @@ class CfgWeapons
 			};
 		};
 	};
-	class rhs_Booniehat_flora: rhs_Booniehat_digi;  //found empty after stripping
+	class rhs_Booniehat_flora: rhs_Booniehat_digi
+	{
+		displayName="$STR_RHS_BOONIEHATFLORA_NAME";
+	};
 	class rhs_ssh68: rhs_6b27m
 	{
 		allowedFacewear[]=
@@ -27455,6 +27897,7 @@ class CfgWeapons
 			"G_Aviator",
 			1
 		};
+		displayName="$STR_RHS_SSH68_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="\rhsafrf\addons\rhs_infantry\gear\head\rhs_ssh68";
@@ -27471,6 +27914,7 @@ class CfgWeapons
 	};
 	class rhs_zsh7a: H_HelmetB
 	{
+		displayName="$STR_RHS_ZSH7AKM35_NAME";
 		class ItemInfo: ItemInfo
 		{
 			mass=11;
@@ -27495,6 +27939,7 @@ class CfgWeapons
 	};
 	class rhs_zsh7a_mike: rhs_zsh7a
 	{
+		displayName="$STR_RHS_ZSH7A_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="\rhsafrf\addons\rhs_infantry\gear\head\rhs_zsh7_mike";
@@ -27502,6 +27947,7 @@ class CfgWeapons
 	};
 	class rhs_zsh7a_mike_green: rhs_zsh7a_mike
 	{
+		displayName="$STR_RHS_ZSH7A_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="\rhsafrf\addons\rhs_infantry\gear\head\rhs_zsh7_mike";
@@ -27509,6 +27955,7 @@ class CfgWeapons
 	};
 	class rhs_zsh7a_mike_alt: rhs_zsh7a_mike
 	{
+		displayName="$STR_RHS_ZSH7A_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="\rhsafrf\addons\rhs_infantry\gear\head\rhs_zsh7_mike_alt";
@@ -27516,6 +27963,7 @@ class CfgWeapons
 	};
 	class rhs_zsh7a_mike_green_alt: rhs_zsh7a_mike_green
 	{
+		displayName="$STR_RHS_ZSH7A_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="\rhsafrf\addons\rhs_infantry\gear\head\rhs_zsh7_mike_alt";
@@ -27523,6 +27971,7 @@ class CfgWeapons
 	};
 	class rhs_gssh18: H_HelmetB
 	{
+		displayName="$STR_RHS_GSSH18_NAME";
 		hiddenSelectionsTextures[]={};
 		class ItemInfo: HeadGearItem
 		{
@@ -27541,6 +27990,7 @@ class CfgWeapons
 			"G_Aviator",
 			2
 		};
+		displayName="$STR_RHS_TSH4_NAME";
 		class ItemInfo: HeadGearItem
 		{
 			mass=5;
@@ -27556,6 +28006,7 @@ class CfgWeapons
 			"rhs_scarf",
 			7
 		};
+		displayName="$STR_RHS_TSH4ESS_NAME";
 		class ItemInfo: ItemInfo
 		{
 			mass=6;
@@ -27565,6 +28016,7 @@ class CfgWeapons
 	class rhs_tsh4_bala: rhs_tsh4
 	{
 		allowedFacewear[]={};
+		displayName="$STR_RHS_TSH4BALACLAVA_NAME";
 		class ItemInfo: ItemInfo
 		{
 			mass=6;
@@ -27574,6 +28026,7 @@ class CfgWeapons
 	class rhs_tsh4_ess_bala: rhs_tsh4
 	{
 		allowedFacewear[]={};
+		displayName="$STR_RHS_TSH4ESSBALACLAVA_NAME";
 		class ItemInfo: ItemInfo
 		{
 			mass=6;
@@ -27591,6 +28044,7 @@ class CfgWeapons
 			"G_Aviator",
 			1
 		};
+		displayName="$STR_RHS_6B47_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="\rhsafrf\addons\rhs_infantry2\gear\head\rhs_6b47";
@@ -27599,6 +28053,7 @@ class CfgWeapons
 	class rhs_6b47_bala: rhs_6b47
 	{
 		allowedFacewear[]={};
+		displayName="$STR_RHS_6B47_BALA_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="\rhsafrf\addons\rhs_infantry2\gear\head\rhs_6b47_bala";
@@ -27606,6 +28061,7 @@ class CfgWeapons
 	};
 	class rhs_6b47_ess: rhs_6b47
 	{
+		displayName="$STR_RHS_6B47_ESS_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="\rhsafrf\addons\rhs_infantry2\gear\head\rhs_6b47_ess";
@@ -27614,6 +28070,7 @@ class CfgWeapons
 	class rhs_6b47_ess_bala: rhs_6b47
 	{
 		allowedFacewear[]={};
+		displayName="$STR_RHS_6B47_ESS_BALA_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="\rhsafrf\addons\rhs_infantry2\gear\head\rhs_6b47_ess_bala";
@@ -27630,6 +28087,7 @@ class CfgWeapons
 			"G_Aviator",
 			1
 		};
+		displayName="$STR_RHS_6B71M_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="\rhsafrf\addons\rhs_infantry2\gear\head\rhs_6b7_1m";
@@ -27637,6 +28095,7 @@ class CfgWeapons
 	};
 	class rhs_6b7_1m_ess: rhs_6b7_1m
 	{
+		displayName="$STR_RHS_6B71M_ESS_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="\rhsafrf\addons\rhs_infantry2\gear\head\rhs_6b7_1m_ess";
@@ -27645,6 +28104,7 @@ class CfgWeapons
 	class rhs_6b7_1m_ess_bala: rhs_6b7_1m
 	{
 		allowedFacewear[]={};
+		displayName="$STR_RHS_6B71M_ESS_BALA_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="\rhsafrf\addons\rhs_infantry2\gear\head\rhs_6b7_1m_ess_bala";
@@ -27653,6 +28113,7 @@ class CfgWeapons
 	class rhs_6b7_1m_bala1: rhs_6b7_1m
 	{
 		allowedFacewear[]={};
+		displayName="$STR_RHS_6B71M_BALA_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="\rhsafrf\addons\rhs_infantry2\gear\head\rhs_6b7_1m_balaclava1";
@@ -27661,6 +28122,7 @@ class CfgWeapons
 	class rhs_6b7_1m_bala1_emr: rhs_6b7_1m_bala1
 	{
 		allowedFacewear[]={};
+		displayName="$STR_RHS_6B71M_EMR_BALA_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="\rhsafrf\addons\rhs_infantry2\gear\head\rhs_6b7_1m_cover_balaclava1";
@@ -27677,6 +28139,7 @@ class CfgWeapons
 			"G_Aviator",
 			1
 		};
+		displayName="$STR_RHS_6B71M_EMR_ESS_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="\rhsafrf\addons\rhs_infantry2\gear\head\rhs_6b7_1m_cover_ess";
@@ -27685,6 +28148,7 @@ class CfgWeapons
 	class rhs_6b7_1m_emr_ess_bala: rhs_6b7_1m_bala1
 	{
 		allowedFacewear[]={};
+		displayName="$STR_RHS_6B71M_EMR_ESS_BALA_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="\rhsafrf\addons\rhs_infantry2\gear\head\rhs_6b7_1m_cover_ess_bala";
@@ -27692,6 +28156,7 @@ class CfgWeapons
 	};
 	class rhs_6b7_1m_bala1_flora: rhs_6b7_1m_bala1_emr
 	{
+		displayName="$STR_RHS_6B71M_FLORA_BALA_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="\rhsafrf\addons\rhs_infantry2\gear\head\rhs_6b7_1m_cover_balaclava1";
@@ -27699,6 +28164,7 @@ class CfgWeapons
 	};
 	class rhs_6b7_1m_bala1_olive: rhs_6b7_1m_bala1_emr
 	{
+		displayName="$STR_RHS_6B71M_OLIVE_BALA_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="\rhsafrf\addons\rhs_infantry2\gear\head\rhs_6b7_1m_cover_balaclava1";
@@ -27707,6 +28173,7 @@ class CfgWeapons
 	class rhs_6b7_1m_bala2: rhs_6b7_1m
 	{
 		allowedFacewear[]={};
+		displayName="$STR_RHS_6B71M_BALA_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="\rhsafrf\addons\rhs_infantry2\gear\head\rhs_6b7_1m_balaclava2";
@@ -27715,6 +28182,7 @@ class CfgWeapons
 	class rhs_6b7_1m_bala2_emr: rhs_6b7_1m_bala2
 	{
 		allowedFacewear[]={};
+		displayName="$STR_RHS_6B71M_EMR_BALA_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="\rhsafrf\addons\rhs_infantry2\gear\head\rhs_6b7_1m_cover_balaclava2";
@@ -27722,6 +28190,7 @@ class CfgWeapons
 	};
 	class rhs_6b7_1m_bala2_flora: rhs_6b7_1m_bala2_emr
 	{
+		displayName="$STR_RHS_6B71M_FLORA_BALA_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="\rhsafrf\addons\rhs_infantry2\gear\head\rhs_6b7_1m_cover_balaclava2";
@@ -27729,6 +28198,7 @@ class CfgWeapons
 	};
 	class rhs_6b7_1m_bala2_olive: rhs_6b7_1m_bala2_emr
 	{
+		displayName="$STR_RHS_6B71M_OLIVE_BALA_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="\rhsafrf\addons\rhs_infantry2\gear\head\rhs_6b7_1m_cover_balaclava2";
@@ -27745,23 +28215,32 @@ class CfgWeapons
 			"G_Aviator",
 			1
 		};
+		displayName="$STR_RHS_6B71M_EMR_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="\rhsafrf\addons\rhs_infantry2\gear\head\rhs_6b7_1m_cover";
 		};
 	};
-	class rhs_6b7_1m_flora: rhs_6b7_1m_emr;  //found empty after stripping
+	class rhs_6b7_1m_flora: rhs_6b7_1m_emr
+	{
+		displayName="$STR_RHS_6B71M_FLORA_NAME";
+	};
 	class rhs_6b7_1m_flora_ns3: rhs_6b7_1m_flora
 	{
+		displayName="$STR_RHS_6B71M_FLORA_NS3_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="\rhsafrf\addons\rhs_infantry2\gear\head\rhs_6b7_1m_cover_ns3";
 		};
 	};
-	class rhs_6b7_1m_olive: rhs_6b7_1m_emr;  //found empty after stripping
+	class rhs_6b7_1m_olive: rhs_6b7_1m_emr
+	{
+		displayName="$STR_RHS_6B71M_OLIVE_NAME";
+	};
 	class rhs_altyn: rhs_6b7_1m_emr
 	{
 		allowedFacewear[]={};
+		displayName="$STR_RHS_ALTYN_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="\rhsafrf\addons\rhs_infantry2\gear\head\rhs_altyn";
@@ -27778,6 +28257,7 @@ class CfgWeapons
 	};
 	class rhs_altyn_bala: rhs_altyn
 	{
+		displayName="$STR_RHS_ALTYN_BALA_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="\rhsafrf\addons\rhs_infantry2\gear\head\rhs_altyn_bala";
@@ -27785,6 +28265,7 @@ class CfgWeapons
 	};
 	class rhs_altyn_visordown: rhs_altyn
 	{
+		displayName="$STR_RHS_ALTYN_VISORDOWN_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="\rhsafrf\addons\rhs_infantry2\gear\head\rhs_altyn_visordown";
@@ -27807,6 +28288,7 @@ class CfgWeapons
 	};
 	class rhs_altyn_novisor: rhs_altyn
 	{
+		displayName="$STR_RHS_ALTYN_NOVISOR_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="\rhsafrf\addons\rhs_infantry2\gear\head\rhs_altyn_novisor";
@@ -27814,6 +28296,7 @@ class CfgWeapons
 	};
 	class rhs_altyn_novisor_bala: rhs_altyn_novisor
 	{
+		displayName="$STR_RHS_ALTYN_NOVISOR_BALA_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="\rhsafrf\addons\rhs_infantry2\gear\head\rhs_altyn_novisor_bala";
@@ -27821,6 +28304,7 @@ class CfgWeapons
 	};
 	class rhs_altyn_novisor_ess: rhs_altyn
 	{
+		displayName="$STR_RHS_ALTYN_NOVISOR_ESS_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="\rhsafrf\addons\rhs_infantry2\gear\head\rhs_altyn_novisor_ess";
@@ -27828,6 +28312,7 @@ class CfgWeapons
 	};
 	class rhs_altyn_novisor_ess_bala: rhs_altyn_novisor_ess
 	{
+		displayName="$STR_RHS_ALTYN_NOVISOR_ESS_BALA_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="\rhsafrf\addons\rhs_infantry2\gear\head\rhs_altyn_novisor_ess_bala";
@@ -27841,6 +28326,7 @@ class CfgWeapons
 	{
 		Scope=2;
 		ScopeCurator=2;
+		displayName="$STR_RHS_1PN138";
 		class ItemInfo
 		{
 			hmdType=0;
@@ -27859,6 +28345,7 @@ class CfgWeapons
 			"G_Aviator",
 			1
 		};
+		displayName="$STR_RHS_BERET_VDV_NAME";
 		weaponPoolAvailable=1;
 		class ItemInfo: HeadGearItem
 		{
@@ -27884,6 +28371,7 @@ class CfgWeapons
 	};
 	class rhs_beret_mp1: rhs_beret_vdv1
 	{
+		displayName="$STR_RHS_BERET_MP_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="\rhsafrf\addons\rhs_infantry2\gear\head\rhs_mp_beret";
@@ -27891,14 +28379,19 @@ class CfgWeapons
 	};
 	class rhs_beret_milp: rhs_beret_vdv1
 	{
+		displayName="$STR_RHS_BERET_MILP_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="\rhsafrf\addons\rhs_infantry2\gear\head\rhs_milp_beret";
 		};
 	};
-	class rhs_beret_vdv3: rhs_beret_milp;  //found empty after stripping
+	class rhs_beret_vdv3: rhs_beret_milp
+	{
+		displayName="$STR_RHS_BERET_VDV_NAME";
+	};
 	class rhs_beret_mp2: rhs_beret_vdv1
 	{
+		displayName="$STR_RHS_BERET_MP_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="\rhsafrf\addons\rhs_infantry2\gear\head\rhs_mp_beret2";
@@ -27906,6 +28399,7 @@ class CfgWeapons
 	};
 	class rhs_beret_mvd: rhs_beret_milp
 	{
+		displayName="$STR_RHS_BERET_MVD_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="\rhsafrf\addons\rhs_infantry2\gear\head\rhs_milp_beret";
@@ -27917,6 +28411,7 @@ class CfgWeapons
 	};
 	class rhs_6b23: Vest_Camo_Base
 	{
+		displayName="$STR_RHS_6B23_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="rhsafrf\addons\rhs_infantry\gear\vests\rhs_6b23";
@@ -27963,6 +28458,7 @@ class CfgWeapons
 	};
 	class rhs_6b23_crew: rhs_6b23
 	{
+		displayName="$STR_RHS_6B23CREW_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="rhsafrf\addons\rhs_infantry\gear\vests\rhs_6b23_6sh46";
@@ -27972,6 +28468,7 @@ class CfgWeapons
 	};
 	class rhs_6b23_engineer: rhs_6b23
 	{
+		displayName="$STR_RHS_6B23ENGINEER_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="rhsafrf\addons\rhs_infantry\gear\vests\rhs_6b23_engineer";
@@ -27981,6 +28478,7 @@ class CfgWeapons
 	};
 	class rhs_6b23_medic: rhs_6b23
 	{
+		displayName="$STR_RHS_6B23MEDIC_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="rhsafrf\addons\rhs_infantry\gear\vests\rhs_6b23_medic";
@@ -27990,6 +28488,7 @@ class CfgWeapons
 	};
 	class rhs_6b23_rifleman: rhs_6b23
 	{
+		displayName="$STR_RHS_6B23RIFLEMAN_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="rhsafrf\addons\rhs_infantry\gear\vests\rhs_6b23_rifleman";
@@ -27999,6 +28498,7 @@ class CfgWeapons
 	};
 	class rhs_6b23_crewofficer: rhs_6b23
 	{
+		displayName="$STR_RHS_6B23CREWOFFICER_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="rhsafrf\addons\rhs_infantry\gear\vests\rhs_6b23_crewofficer";
@@ -28008,6 +28508,7 @@ class CfgWeapons
 	};
 	class rhs_6b23_sniper: rhs_6b23
 	{
+		displayName="$STR_RHS_6B23SNIPER_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="rhsafrf\addons\rhs_infantry\gear\vests\rhs_6b23_sniper";
@@ -28017,6 +28518,7 @@ class CfgWeapons
 	};
 	class rhs_6b23_6sh92: rhs_6b23
 	{
+		displayName="$STR_RHS_6B236SH92_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="rhsafrf\addons\rhs_infantry\gear\vests\rhs_6b23_6sh92";
@@ -28063,6 +28565,7 @@ class CfgWeapons
 	};
 	class rhs_6b23_6sh92_vog: rhs_6b23_6sh92
 	{
+		displayName="$STR_RHS_6B236SH92VOG_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="rhsafrf\addons\rhs_infantry\gear\vests\rhs_6b23_6sh92_vog";
@@ -28072,6 +28575,7 @@ class CfgWeapons
 	};
 	class rhs_6b23_6sh92_vog_headset: rhs_6b23_6sh92_vog
 	{
+		displayName="$STR_RHS_6B236SH92VOGHEADSET_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="rhsafrf\addons\rhs_infantry\gear\vests\rhs_6b23_6sh92_vog_headset";
@@ -28079,6 +28583,7 @@ class CfgWeapons
 	};
 	class rhs_6b23_6sh92_headset: rhs_6b23_6sh92
 	{
+		displayName="$STR_RHS_6B236SH92HEADSET_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="rhsafrf\addons\rhs_infantry\gear\vests\rhs_6b23_6sh92_headset";
@@ -28086,6 +28591,7 @@ class CfgWeapons
 	};
 	class rhs_6b23_6sh92_headset_mapcase: rhs_6b23_6sh92
 	{
+		displayName="$STR_RHS_6B236SH92HEADSETMAPCASE_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="rhsafrf\addons\rhs_infantry\gear\vests\rhs_6b23_6sh92_headset_mapcase";
@@ -28095,6 +28601,7 @@ class CfgWeapons
 	};
 	class rhs_6b23_6sh92_radio: rhs_6b23_6sh92
 	{
+		displayName="$STR_RHS_6B236SH92RADIO_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="rhsafrf\addons\rhs_infantry\gear\vests\rhs_6b23_6sh92_radio";
@@ -28102,6 +28609,7 @@ class CfgWeapons
 	};
 	class rhs_6sh46: Vest_Camo_Base
 	{
+		displayName="$STR_RHS_6SH46_NAME";
 		hiddenSelectionsTextures[]={};
 		class ItemInfo: ItemInfo
 		{
@@ -28121,6 +28629,7 @@ class CfgWeapons
 	};
 	class rhs_vest_commander: Vest_Camo_Base
 	{
+		displayName="$STR_RHS_MAPCASEANDHOLSTER_NAME";
 		hiddenSelectionsTextures[]={};
 		class ItemInfo: ItemInfo
 		{
@@ -28140,6 +28649,7 @@ class CfgWeapons
 	};
 	class rhs_vest_pistol_holster: rhs_vest_commander
 	{
+		displayName="$STR_RHS_HOLSTER_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="rhsafrf\addons\rhs_infantry\gear\vests\rhs_pistol_holster";
@@ -28147,21 +28657,61 @@ class CfgWeapons
 			mass=5;
 		};
 	};
-	class rhs_6b23_digi: rhs_6b23;  //found empty after stripping
-	class rhs_6b23_digi_crew: rhs_6b23_crew;  //found empty after stripping
-	class rhs_6b23_digi_engineer: rhs_6b23_engineer;  //found empty after stripping
-	class rhs_6b23_digi_medic: rhs_6b23_medic;  //found empty after stripping
-	class rhs_6b23_digi_rifleman: rhs_6b23_rifleman;  //found empty after stripping
-	class rhs_6b23_digi_crewofficer: rhs_6b23_crewofficer;  //found empty after stripping
-	class rhs_6b23_digi_sniper: rhs_6b23_sniper;  //found empty after stripping
-	class rhs_6b23_digi_6sh92: rhs_6b23_6sh92;  //found empty after stripping
-	class rhs_6b23_digi_6sh92_vog: rhs_6b23_6sh92_vog;  //found empty after stripping
-	class rhs_6b23_digi_6sh92_vog_headset: rhs_6b23_6sh92_vog_headset;  //found empty after stripping
-	class rhs_6b23_digi_6sh92_headset: rhs_6b23_6sh92_headset;  //found empty after stripping
-	class rhs_6b23_digi_6sh92_headset_mapcase: rhs_6b23_6sh92_headset_mapcase;  //found empty after stripping
-	class rhs_6b23_digi_6sh92_radio: rhs_6b23_6sh92_radio;  //found empty after stripping
+	class rhs_6b23_digi: rhs_6b23
+	{
+		displayName="$STR_RHS_6B23EMRSUMMER_NAME";
+	};
+	class rhs_6b23_digi_crew: rhs_6b23_crew
+	{
+		displayName="$STR_RHS_6B23EMRSUMMERCREW_NAME";
+	};
+	class rhs_6b23_digi_engineer: rhs_6b23_engineer
+	{
+		displayName="$STR_RHS_6B23EMRSUMMERENGINEER_NAME";
+	};
+	class rhs_6b23_digi_medic: rhs_6b23_medic
+	{
+		displayName="$STR_RHS_6B23EMRSUMMERMEDIC_NAME";
+	};
+	class rhs_6b23_digi_rifleman: rhs_6b23_rifleman
+	{
+		displayName="$STR_RHS_6B23EMRSUMMERRIFLEMAN_NAME";
+	};
+	class rhs_6b23_digi_crewofficer: rhs_6b23_crewofficer
+	{
+		displayName="$STR_RHS_6B23EMRSUMMERCREWOFFICER_NAME";
+	};
+	class rhs_6b23_digi_sniper: rhs_6b23_sniper
+	{
+		displayName="$STR_RHS_6B23EMRSUMMERSNIPER_NAME";
+	};
+	class rhs_6b23_digi_6sh92: rhs_6b23_6sh92
+	{
+		displayName="$STR_RHS_6B23EMRSUMMER6SH92_NAME";
+	};
+	class rhs_6b23_digi_6sh92_vog: rhs_6b23_6sh92_vog
+	{
+		displayName="$STR_RHS_6B23EMRSUMMER6SH92VOG_NAME";
+	};
+	class rhs_6b23_digi_6sh92_vog_headset: rhs_6b23_6sh92_vog_headset
+	{
+		displayName="$STR_RHS_6B23EMRSUMMER6SH92VOGHEADSET_NAME";
+	};
+	class rhs_6b23_digi_6sh92_headset: rhs_6b23_6sh92_headset
+	{
+		displayName="$STR_RHS_6B23EMRSUMMER6SH92HEADSET_NAME";
+	};
+	class rhs_6b23_digi_6sh92_headset_mapcase: rhs_6b23_6sh92_headset_mapcase
+	{
+		displayName="$STR_RHS_6B23EMRSUMMER6SH92HEADSETMAPCASE_NAME";
+	};
+	class rhs_6b23_digi_6sh92_radio: rhs_6b23_6sh92_radio
+	{
+		displayName="$STR_RHS_6B23EMRSUMMER6SH92RADIO_NAME";
+	};
 	class rhs_6b23_digi_6sh92_Spetsnaz: rhs_6b23_6sh92_radio
 	{
+		displayName="$STR_RHS_6B23EMR6SH92RADIOSPNZ_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="rhsafrf\addons\rhs_infantry\gear\vests\rhs_6b23_6sh92_radio_spetsnaz";
@@ -28208,6 +28758,7 @@ class CfgWeapons
 	};
 	class rhs_6b23_digi_6sh92_Vog_Radio_Spetsnaz: rhs_6b23_6sh92_radio
 	{
+		displayName="$STR_RHS_6B23EMR6SH92VOGRADIOSPNZ_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="rhsafrf\addons\rhs_infantry\gear\vests\rhs_6b23_6sh92_vog_radio_spetsnaz";
@@ -28217,6 +28768,7 @@ class CfgWeapons
 	};
 	class rhs_6b23_digi_6sh92_headset_spetsnaz: rhs_6b23_6sh92_radio
 	{
+		displayName="$STR_RHS_6B23EMR6SH92HEADSETSPNZ_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="rhsafrf\addons\rhs_infantry\gear\vests\rhs_6b23_6sh92_headset_spetsnaz";
@@ -28224,6 +28776,7 @@ class CfgWeapons
 	};
 	class rhs_6b23_digi_6sh92_spetsnaz2: rhs_6b23_6sh92_radio
 	{
+		displayName="$STR_RHS_6B23EMR6SH92SPNZ_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="rhsafrf\addons\rhs_infantry\gear\vests\rhs_6b23_6sh92_spetsnaz";
@@ -28231,6 +28784,7 @@ class CfgWeapons
 	};
 	class rhs_6b23_digi_6sh92_Vog_Spetsnaz: rhs_6b23_6sh92_radio
 	{
+		displayName="$STR_RHS_6B23EMR6SH92VOGSPNZ_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="rhsafrf\addons\rhs_infantry\gear\vests\rhs_6b23_6sh92_vog_spetsnaz";
@@ -28238,21 +28792,61 @@ class CfgWeapons
 			mass=75;
 		};
 	};
-	class rhs_6b23_ML: rhs_6b23;  //found empty after stripping
-	class rhs_6b23_ML_crew: rhs_6b23_crew;  //found empty after stripping
-	class rhs_6b23_ML_engineer: rhs_6b23_engineer;  //found empty after stripping
-	class rhs_6b23_ML_medic: rhs_6b23_medic;  //found empty after stripping
-	class rhs_6b23_ML_rifleman: rhs_6b23_rifleman;  //found empty after stripping
-	class rhs_6b23_ML_crewofficer: rhs_6b23_crewofficer;  //found empty after stripping
-	class rhs_6b23_ML_sniper: rhs_6b23_sniper;  //found empty after stripping
-	class rhs_6b23_ML_6sh92: rhs_6b23_6sh92;  //found empty after stripping
-	class rhs_6b23_ML_6sh92_vog: rhs_6b23_6sh92_vog;  //found empty after stripping
-	class rhs_6b23_ML_6sh92_vog_headset: rhs_6b23_6sh92_vog_headset;  //found empty after stripping
-	class rhs_6b23_ML_6sh92_headset: rhs_6b23_6sh92_headset;  //found empty after stripping
-	class rhs_6b23_ML_6sh92_headset_mapcase: rhs_6b23_6sh92_headset_mapcase;  //found empty after stripping
-	class rhs_6b23_ML_6sh92_radio: rhs_6b23_6sh92_radio;  //found empty after stripping
+	class rhs_6b23_ML: rhs_6b23
+	{
+		displayName="$STR_RHS_6B23ML_NAME";
+	};
+	class rhs_6b23_ML_crew: rhs_6b23_crew
+	{
+		displayName="$STR_RHS_6B23MLCREW_NAME";
+	};
+	class rhs_6b23_ML_engineer: rhs_6b23_engineer
+	{
+		displayName="$STR_RHS_6B23MLENGINEER_NAME";
+	};
+	class rhs_6b23_ML_medic: rhs_6b23_medic
+	{
+		displayName="$STR_RHS_6B23MLMEDIC_NAME";
+	};
+	class rhs_6b23_ML_rifleman: rhs_6b23_rifleman
+	{
+		displayName="$STR_RHS_6B23MLRIFLEMAN_NAME";
+	};
+	class rhs_6b23_ML_crewofficer: rhs_6b23_crewofficer
+	{
+		displayName="$STR_RHS_6B23MLCREWOFFICER_NAME";
+	};
+	class rhs_6b23_ML_sniper: rhs_6b23_sniper
+	{
+		displayName="$STR_RHS_6B23MLSNIPER_NAME";
+	};
+	class rhs_6b23_ML_6sh92: rhs_6b23_6sh92
+	{
+		displayName="$STR_RHS_6B23ML6SH92_NAME";
+	};
+	class rhs_6b23_ML_6sh92_vog: rhs_6b23_6sh92_vog
+	{
+		displayName="$STR_RHS_6B23ML6SH92VOG_NAME";
+	};
+	class rhs_6b23_ML_6sh92_vog_headset: rhs_6b23_6sh92_vog_headset
+	{
+		displayName="$STR_RHS_6B23ML6SH92VOGHEADSET_NAME";
+	};
+	class rhs_6b23_ML_6sh92_headset: rhs_6b23_6sh92_headset
+	{
+		displayName="$STR_RHS_6B23ML6SH92HEADSET_NAME";
+	};
+	class rhs_6b23_ML_6sh92_headset_mapcase: rhs_6b23_6sh92_headset_mapcase
+	{
+		displayName="$STR_RHS_6B23ML6SH92HEADSETMAPCASE_NAME";
+	};
+	class rhs_6b23_ML_6sh92_radio: rhs_6b23_6sh92_radio
+	{
+		displayName="$STR_RHS_6B23ML6SH92RADIO_NAME";
+	};
 	class rhs_vydra_3m: Vest_Camo_Base
 	{
+		displayName="$STR_RHS_VYDRA3M_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="rhsafrf\addons\rhs_infantry\gear\vests\rhs_vydra_3m";
@@ -28277,6 +28871,7 @@ class CfgWeapons
 	};
 	class rhs_6b23_vydra_3m: rhs_6b23_6sh92
 	{
+		displayName="$STR_RHS_6B23VYDRA3M_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="rhsafrf\addons\rhs_infantry\gear\vests\rhs_6b23_vydra_3m";
@@ -28321,10 +28916,17 @@ class CfgWeapons
 			};
 		};
 	};
-	class rhs_6b23_digi_vydra_3m: rhs_6b23_vydra_3m;  //found empty after stripping
-	class rhs_6b23_ML_vydra_3m: rhs_6b23_vydra_3m;  //found empty after stripping
+	class rhs_6b23_digi_vydra_3m: rhs_6b23_vydra_3m
+	{
+		displayName="$STR_RHS_6B23EMRVYDRA3M_NAME";
+	};
+	class rhs_6b23_ML_vydra_3m: rhs_6b23_vydra_3m
+	{
+		displayName="$STR_RHS_6B23MLVYDRA3M_NAME";
+	};
 	class rhs_6b23_6sh116: rhs_6b23_digi
 	{
+		displayName="$STR_RHS_6B23EMRSUMMER6SH116_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="rhsafrf\addons\rhs_infantry2\gear\vests\rhs_6b23_6sh116";
@@ -28369,10 +28971,17 @@ class CfgWeapons
 			};
 		};
 	};
-	class rhs_6b23_6sh116_flora: rhs_6b23_6sh116;  //found empty after stripping
-	class rhs_6b23_6sh116_od: rhs_6b23_6sh116;  //found empty after stripping
+	class rhs_6b23_6sh116_flora: rhs_6b23_6sh116
+	{
+		displayName="$STR_RHS_6B23FLORA6SH116_NAME";
+	};
+	class rhs_6b23_6sh116_od: rhs_6b23_6sh116
+	{
+		displayName="$STR_RHS_6B23OD6SH116_NAME";
+	};
 	class rhs_6b23_6sh116_vog: rhs_6b23_6sh116
 	{
+		displayName="$STR_RHS_6B23EMRSUMMER6SH116VOG_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="rhsafrf\addons\rhs_infantry2\gear\vests\rhs_6b23_6sh116_vog";
@@ -28382,6 +28991,7 @@ class CfgWeapons
 	};
 	class rhs_6b23_6sh116_vog_flora: rhs_6b23_6sh116_vog
 	{
+		displayName="$STR_RHS_6B23FLORA6SH116VOG_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="rhsafrf\addons\rhs_infantry2\gear\vests\rhs_6b23_6sh116_vog";
@@ -28389,6 +28999,7 @@ class CfgWeapons
 	};
 	class rhs_6b23_6sh116_vog_od: rhs_6b23_6sh116_vog
 	{
+		displayName="$STR_RHS_6B23OD6SH116VOG_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="rhsafrf\addons\rhs_infantry2\gear\vests\rhs_6b23_6sh116_vog";
@@ -28396,6 +29007,7 @@ class CfgWeapons
 	};
 	class rhs_6b13: rhs_6b23
 	{
+		displayName="$STR_RHS_6B13_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="rhsafrf\addons\rhs_infantry\gear\vests\rhs_6b13";
@@ -28442,6 +29054,7 @@ class CfgWeapons
 	};
 	class rhs_6b13_crewofficer: rhs_6b13
 	{
+		displayName="$STR_RHS_6B13CREWOFFICER_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="rhsafrf\addons\rhs_infantry\gear\vests\rhs_6b13_crewofficer";
@@ -28451,6 +29064,7 @@ class CfgWeapons
 	};
 	class rhs_6b13_6sh92: rhs_6b13
 	{
+		displayName="$STR_RHS_6B136SH92_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="rhsafrf\addons\rhs_infantry\gear\vests\rhs_6b13_6sh92";
@@ -28497,6 +29111,7 @@ class CfgWeapons
 	};
 	class rhs_6b13_6sh92_vog: rhs_6b13_6sh92
 	{
+		displayName="$STR_RHS_6B136SH92VOG_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="rhsafrf\addons\rhs_infantry\gear\vests\rhs_6b13_6sh92_vog";
@@ -28506,6 +29121,7 @@ class CfgWeapons
 	};
 	class rhs_6b13_6sh92_headset_mapcase: rhs_6b13_6sh92
 	{
+		displayName="$STR_RHS_6B136SH92HEADSETMAPCASE_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="rhsafrf\addons\rhs_infantry\gear\vests\rhs_6b13_6sh92_headset_mapcase";
@@ -28515,24 +29131,59 @@ class CfgWeapons
 	};
 	class rhs_6b13_6sh92_radio: rhs_6b13_6sh92
 	{
+		displayName="$STR_RHS_6B136SH92RADIO_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="rhsafrf\addons\rhs_infantry\gear\vests\rhs_6b13_6sh92_radio";
 		};
 	};
-	class rhs_6b13_EMR: rhs_6b13;  //found empty after stripping
-	class rhs_6b13_EMR_6sh92: rhs_6b13_6sh92;  //found empty after stripping
-	class rhs_6b13_EMR_6sh92_vog: rhs_6b13_6sh92_vog;  //found empty after stripping
-	class rhs_6b13_EMR_6sh92_headset_mapcase: rhs_6b13_6sh92_headset_mapcase;  //found empty after stripping
-	class rhs_6b13_EMR_6sh92_radio: rhs_6b13_6sh92_radio;  //found empty after stripping
-	class rhs_6b13_Flora: rhs_6b13;  //found empty after stripping
-	class rhs_6b13_Flora_crewofficer: rhs_6b13_crewofficer;  //found empty after stripping
-	class rhs_6b13_Flora_6sh92: rhs_6b13_6sh92;  //found empty after stripping
-	class rhs_6b13_Flora_6sh92_vog: rhs_6b13_6sh92_vog;  //found empty after stripping
-	class rhs_6b13_Flora_6sh92_headset_mapcase: rhs_6b13_6sh92_headset_mapcase;  //found empty after stripping
-	class rhs_6b13_Flora_6sh92_radio: rhs_6b13_6sh92_radio;  //found empty after stripping
+	class rhs_6b13_EMR: rhs_6b13
+	{
+		displayName="$STR_RHS_6B13EMRSUMMER_NAME";
+	};
+	class rhs_6b13_EMR_6sh92: rhs_6b13_6sh92
+	{
+		displayName="$STR_RHS_6B13EMR6SH92_NAME";
+	};
+	class rhs_6b13_EMR_6sh92_vog: rhs_6b13_6sh92_vog
+	{
+		displayName="$STR_RHS_6B13EMR6SH92VOG_NAME";
+	};
+	class rhs_6b13_EMR_6sh92_headset_mapcase: rhs_6b13_6sh92_headset_mapcase
+	{
+		displayName="$STR_RHS_6B13EMR6SH92HEADSETMAPCASE_NAME";
+	};
+	class rhs_6b13_EMR_6sh92_radio: rhs_6b13_6sh92_radio
+	{
+		displayName="$STR_RHS_6B13EMR6SH92RADIO_NAME";
+	};
+	class rhs_6b13_Flora: rhs_6b13
+	{
+		displayName="$STR_RHS_6B13FLORA_NAME";
+	};
+	class rhs_6b13_Flora_crewofficer: rhs_6b13_crewofficer
+	{
+		displayName="$STR_RHS_6B13FLORACREWOFFICER_NAME";
+	};
+	class rhs_6b13_Flora_6sh92: rhs_6b13_6sh92
+	{
+		displayName="$STR_RHS_6B13FLORA6SH92_NAME";
+	};
+	class rhs_6b13_Flora_6sh92_vog: rhs_6b13_6sh92_vog
+	{
+		displayName="$STR_RHS_6B13FLORA6SH92VOG_NAME";
+	};
+	class rhs_6b13_Flora_6sh92_headset_mapcase: rhs_6b13_6sh92_headset_mapcase
+	{
+		displayName="$STR_RHS_6B13FLORA6SH92HEADSETMAPCASE_NAME";
+	};
+	class rhs_6b13_Flora_6sh92_radio: rhs_6b13_6sh92_radio
+	{
+		displayName="$STR_RHS_6B13FLORA6SH92RADIO_NAME";
+	};
 	class rhs_6b43: rhs_6b23
 	{
+		displayName="$STR_RHS_6B43_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="rhsafrf\addons\rhs_infantry2\gear\vests\rhs_6b43_m";
@@ -28579,6 +29230,7 @@ class CfgWeapons
 	};
 	class rhs_6sh92: Vest_Camo_Base
 	{
+		displayName="$STR_RHS_6SH92_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="rhsafrf\addons\rhs_infantry\gear\vests\rhs_6sh92";
@@ -28603,6 +29255,7 @@ class CfgWeapons
 	};
 	class rhs_6sh92_vog: rhs_6sh92
 	{
+		displayName="$STR_RHS_6SH92VOG_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="rhsafrf\addons\rhs_infantry\gear\vests\rhs_6sh92_vog";
@@ -28612,6 +29265,7 @@ class CfgWeapons
 	};
 	class rhs_6sh92_vog_headset: rhs_6sh92_vog
 	{
+		displayName="$STR_RHS_6SH92VOGHEADSET_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="rhsafrf\addons\rhs_infantry\gear\vests\rhs_6sh92_vog_headset";
@@ -28619,6 +29273,7 @@ class CfgWeapons
 	};
 	class rhs_6sh92_headset: rhs_6sh92
 	{
+		displayName="$STR_RHS_6SH92HEADSET_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="rhsafrf\addons\rhs_infantry\gear\vests\rhs_6sh92_headset";
@@ -28626,19 +29281,50 @@ class CfgWeapons
 	};
 	class rhs_6sh92_radio: rhs_6sh92
 	{
+		displayName="$STR_RHS_6SH92RADIO_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="rhsafrf\addons\rhs_infantry\gear\vests\rhs_6sh92_radio";
 		};
 	};
-	class rhs_6sh92_digi: rhs_6sh92;  //found empty after stripping
-	class rhs_6sh92_digi_vog: rhs_6sh92_vog;  //found empty after stripping
-	class rhs_6sh92_digi_vog_headset: rhs_6sh92_vog_headset;  //found empty after stripping
-	class rhs_6sh92_digi_headset: rhs_6sh92_headset;  //found empty after stripping
-	class rhs_6sh92_digi_radio: rhs_6sh92_radio;  //found empty after stripping
-	class rhs_6sh92_vsr: rhs_6sh92;  //found empty after stripping
-	class rhs_6sh92_vsr_vog: rhs_6sh92_vog;  //found empty after stripping
-	class rhs_6sh92_vsr_vog_headset: rhs_6sh92_vog_headset;  //found empty after stripping
-	class rhs_6sh92_vsr_headset: rhs_6sh92_headset;  //found empty after stripping
-	class rhs_6sh92_vsr_radio: rhs_6sh92_radio;  //found empty after stripping
+	class rhs_6sh92_digi: rhs_6sh92
+	{
+		displayName="$STR_RHS_6SH92EMRSUMMER_NAME";
+	};
+	class rhs_6sh92_digi_vog: rhs_6sh92_vog
+	{
+		displayName="$STR_RHS_6SH92EMRSUMMERVOG_NAME";
+	};
+	class rhs_6sh92_digi_vog_headset: rhs_6sh92_vog_headset
+	{
+		displayName="$STR_RHS_6SH92EMRSUMMERVOGHEADSET_NAME";
+	};
+	class rhs_6sh92_digi_headset: rhs_6sh92_headset
+	{
+		displayName="$STR_RHS_6SH92EMRSUMMERHEADSET_NAME";
+	};
+	class rhs_6sh92_digi_radio: rhs_6sh92_radio
+	{
+		displayName="$STR_RHS_6SH92EMRSUMMERRADIO_NAME";
+	};
+	class rhs_6sh92_vsr: rhs_6sh92
+	{
+		displayName="$STR_RHS_6SH92VSR_NAME";
+	};
+	class rhs_6sh92_vsr_vog: rhs_6sh92_vog
+	{
+		displayName="$STR_RHS_6SH92VSRVOG_NAME";
+	};
+	class rhs_6sh92_vsr_vog_headset: rhs_6sh92_vog_headset
+	{
+		displayName="$STR_RHS_6SH92VSRVOGHEADSET_NAME";
+	};
+	class rhs_6sh92_vsr_headset: rhs_6sh92_headset
+	{
+		displayName="$STR_RHS_6SH92VSRHEADSET_NAME";
+	};
+	class rhs_6sh92_vsr_radio: rhs_6sh92_radio
+	{
+		displayName="$STR_RHS_6SH92VSRRADIO_NAME";
+	};
 };

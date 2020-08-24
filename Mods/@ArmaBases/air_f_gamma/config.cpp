@@ -64,10 +64,12 @@ class CfgVehicles
 			init="''";
 		};
 		_generalMacro="Plane_Fighter_03_Canopy_F";
+		displayName="$STR_A3_Fighter_03_Canopy_name";
 	};
 	class Ejection_Seat_Plane_Fighter_03_base_F: Ejection_Seat_Base_F
 	{
 		_generalMacro="Ejection_Seat_Plane_Fighter_03_base_F";
+		displayName="$STR_A3_Ejection_Seat_02_name";
 		icon="iconParachute";
 	};
 	class I_Ejection_Seat_Plane_Fighter_03_F: Ejection_Seat_Plane_Fighter_03_base_F
@@ -96,6 +98,7 @@ class CfgVehicles
 	{
 		features="Randomization: No						<br />Camo selections: 2 - the main body, wings and lower part of body						<br />Script door sources: None						<br />Script animations: AddScalpel, AddAsraam_out, AddAsraam_mid, AddMk82, AddGbu12, AddZephyr, AddDar						<br />Executed scripts: None 						<br />Firing from vehicles: No						<br />Slingload: Slingloadable						<br />Cargo proxy indexes: None";
 		_generalMacro="Plane_Fighter_03_base_F";
+		displayName="$STR_A3_CfgVehicles_Plane_Fighter_03_base_F0";
 		icon="\A3\Air_F_Gamma\Plane_Fighter_03\Data\UI\Map_Plane_Fighter_03_CA.paa";
 		accuracy=0.2;
 		memoryPointTaskMarker="TaskMarker_1_pos";
@@ -637,6 +640,7 @@ class CfgVehicles
 		{
 			class Hex
 			{
+				displayName="$STR_A3_TEXTURESOURCES_HEX0";
 				factions[]=
 				{
 					"OPF_F",
@@ -645,6 +649,7 @@ class CfgVehicles
 			};
 			class Green
 			{
+				displayName="$STR_A3_TEXTURESOURCES_INDEP0";
 				factions[]=
 				{
 					"IND_F"
@@ -652,6 +657,7 @@ class CfgVehicles
 			};
 			class Grey
 			{
+				displayName="$STR_A3_TEXTURESOURCES_GREY0";
 				factions[]=
 				{
 					"OPF_F",
@@ -9164,10 +9170,12 @@ class CfgVehicles
 				{
 					class Empty
 					{
+						displayName="$STR_empty";
 						attachment[]={};
 					};
 					class Default
 					{
+						displayName="$STR_vehicle_default";
 						attachment[]=
 						{
 							"PylonRack_1Rnd_Missile_AA_04_F",
@@ -9181,6 +9189,7 @@ class CfgVehicles
 					};
 					class AA
 					{
+						displayName="$STR_A3_cfgmagazines_titan_aa_dns";
 						attachment[]=
 						{
 							"PylonRack_1Rnd_Missile_AA_04_F",
@@ -9194,6 +9203,7 @@ class CfgVehicles
 					};
 					class AT
 					{
+						displayName="$STR_A3_cfgmagazines_titan_at_dns";
 						attachment[]=
 						{
 							"PylonRack_1Rnd_Missile_AA_04_F",
@@ -9207,6 +9217,7 @@ class CfgVehicles
 					};
 					class CAS
 					{
+						displayName="$STR_A3_CAS_PRESET_DISPLAYNAME";
 						attachment[]=
 						{
 							"PylonRack_1Rnd_LG_scalpel",
@@ -9620,6 +9631,7 @@ class CfgVehicles
 			init="[this, '', []] call bis_fnc_initVehicle";
 		};
 		_generalMacro="I_Plane_Fighter_03_CAS_F";
+		displayName="$STR_A3_CfgVehicles_O_Plane_Fighter_03_CAS0";
 		side=2;
 		typicalCargo[]=
 		{
@@ -10046,6 +10058,7 @@ class CfgVehicles
 			init="[this, '', []] call bis_fnc_initVehicle";
 		};
 		_generalMacro="I_Plane_Fighter_03_AA_F";
+		displayName="$STR_A3_CfgVehicles_I_Plane_Fighter_03_AA_F0";
 		weapons[]=
 		{
 			"Twin_Cannon_20mm",
@@ -10459,6 +10472,7 @@ class CfgVehicles
 			init="[this, '', []] call bis_fnc_initVehicle";
 		};
 		_generalMacro="I_Plane_Fighter_03_dynamicLoadout_F";
+		displayName="$STR_A3_CfgVehicles_O_Plane_Fighter_03_CAS0";
 		side=2;
 		typicalCargo[]=
 		{

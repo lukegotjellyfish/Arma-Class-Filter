@@ -83,6 +83,7 @@ class CfgVehicles
 	};
 	class rhs_t14_base: Tank_F
 	{
+		displayName="T-14";
 		rhs_decalParameters[]=
 		{
 			"['Number',cRHST14NumberPlaces,'Default']"
@@ -1016,6 +1017,7 @@ class CfgVehicles
 		{
 			class rhs_decalNumber_type
 			{
+				displayName="Define font type of plate number";
 				tooltip="Define kind of font that will be drawn on vehicle.";
 				property="rhs_decalNumber_type";
 				control="Combo";
@@ -1069,6 +1071,7 @@ class CfgVehicles
 			class rhs_decalNumber
 			{
 				collapsed=1;
+				displayName="Set side number";
 				tooltip="Set side number. 4 numbers are required. Type 0 to hide numbers complety & leave at -1 to get random number";
 				property="rhs_decalNumber";
 				control="Edit";

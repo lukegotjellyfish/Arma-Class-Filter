@@ -34,6 +34,7 @@ class CfgVehicles
 		};
 		_generalMacro="Submarine_01_F";
 		features="Randomization: No										<br />Camo selections: None										<br />Script door sources: None										<br />Script animations: None										<br />Executed scripts: None										<br />Firing from vehicles: No										<br />Slingload: No										<br />Cargo proxy indexes: None";
+		displayName="$STR_A3_CFGVEHICLES_PROTEUS";
 		icon="iconObject_1x5";
 		editorCategory="EdCat_Structures_Altis";
 		memoryPointTaskMarker="TaskMarker_1_pos";

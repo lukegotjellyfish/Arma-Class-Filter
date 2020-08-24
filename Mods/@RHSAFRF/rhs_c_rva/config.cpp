@@ -101,14 +101,17 @@ class cfgWaypoints
 {
 	class RHS
 	{
+		displayName="RHS Special Waypoints";
 		class wpTochkaDeploy
 		{
+			displayName="Tochka-U - Deploy";
 			tooltip="Deploys Tochka-U to ready to fire state";
 			file="\rhsafrf\addons\rhs_c_rva\scripts\WP_TochkaDeploy.sqf";
 			icon="\a3\3DEN\Data\CfgWaypoints\TransportUnload_ca.paa";
 		};
 		class wpTochkaFire: wpTochkaDeploy
 		{
+			displayName="Tochka-U - Fire";
 			tooltip="Tochka-U will fire missile at waypoint position";
 			file="\rhsafrf\addons\rhs_c_rva\scripts\WP_TochkaFire.sqf";
 			icon="\a3\3DEN\Data\CfgWaypoints\Destroy_ca.paa";
@@ -171,6 +174,7 @@ class cfgWeapons
 	class RocketPods;
 	class RHS_9M79_1Launcher: RocketPods
 	{
+		displayName="$STR_RHS_ss21_9M79_1Launcher";
 		magazines[]=
 		{
 			"1_Rnd_RHS_9M79_1_F",
@@ -200,17 +204,20 @@ class CfgMagazines
 	class rhs_mag_40Rnd_122mm_rockets;
 	class 1_Rnd_RHS_9M79_1_F: rhs_mag_40Rnd_122mm_rockets
 	{
+		displayName="$STR_RHS_ss21_1_Rnd_RHS_9M79_1_F";
 		ammo="RHS_9M79_1_F";
 		count=1;
 		initSpeed=44;
 	};
 	class 1_Rnd_RHS_9M79_1_K: 1_Rnd_RHS_9M79_1_F
 	{
+		displayName="$STR_RHS_ss21_1_Rnd_RHS_9M79_1_K";
 		ammo="RHS_9M79_1_K";
 		count=1;
 	};
 	class 1_Rnd_RHS_9M79B: 1_Rnd_RHS_9M79_1_F
 	{
+		displayName="$STR_RHS_ss21_1_Rnd_RHS_9M79B";
 		ammo="RHS_9M79B";
 		count=1;
 	};
@@ -425,6 +432,7 @@ class CfgVehicles
 		mfMax=100;
 		mFact=0;
 		tBody=0;
+		displayName="$STR_RHS_ss21";
 		hiddenselections[]=
 		{
 			"camo1",
@@ -438,17 +446,22 @@ class CfgVehicles
 		{
 			class standard
 			{
+				displayName="Standard";
 				factions[]=
 				{
 					"rhs_faction_rva"
 				};
 			};
-			class camo: standard;  //found empty after stripping
+			class camo: standard
+			{
+				displayName="Camo";
+			};
 		};
 		class Attributes
 		{
 			class rhs_decalNumber_type
 			{
+				displayName="Define font type of plate number";
 				tooltip="Define kind of font that will be drawn on vehicle.";
 				property="rhs_decalNumber_type";
 				control="Combo";
@@ -502,6 +515,7 @@ class CfgVehicles
 			class rhs_decalNumber
 			{
 				collapsed=1;
+				displayName="Set side number";
 				tooltip="Set side number. 3 numbers are required. Type 0 to hide numbers complety & leave at -1 to get random number";
 				property="rhs_decalNumber";
 				control="Edit";
@@ -511,6 +525,7 @@ class CfgVehicles
 			};
 			class rhs_deploy
 			{
+				displayName="Deploy Tochka";
 				tooltip="Deploys Tochka in ready to launch state. In order to fire Tochka use following command Tochka doTarget enemyTarget (may be laser target or vehicle).";
 				property="rhs_deploy";
 				control="Checkbox";
@@ -737,6 +752,7 @@ class CfgVehicles
 	class rhs_9k79: OTR21_Base;  //found empty after stripping
 	class rhs_9k79_K: rhs_9k79
 	{
+		displayName="$STR_RHS_ss21K";
 		class Turrets: Turrets
 		{
 			class MainTurret: MainTurret
@@ -750,6 +766,7 @@ class CfgVehicles
 	};
 	class rhs_9k79_B: rhs_9k79
 	{
+		displayName="$STR_RHS_ss21B";
 		class Turrets: Turrets
 		{
 			class MainTurret: MainTurret

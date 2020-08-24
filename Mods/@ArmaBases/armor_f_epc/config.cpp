@@ -888,6 +888,7 @@ class CfgVehicles
 			init="[this, '', []] call bis_fnc_initVehicle";
 		};
 		_generalMacro="B_MBT_01_TUSK_F";
+		displayName="$STR_A3_CfgVehicles_B_MBT_01_TUSK_F0";
 		class MFD
 		{
 			class MFD_Driver_Heading
@@ -3096,6 +3097,7 @@ class CfgVehicles
 		{
 			class Sand
 			{
+				displayName="$STR_A3_TextureSources_Sand0";
 				factions[]=
 				{
 					"BLU_F"
@@ -3103,6 +3105,7 @@ class CfgVehicles
 			};
 			class Olive
 			{
+				displayName="$STR_A3_TEXTURESOURCES_OLIVE0";
 				factions[]=
 				{
 					"BLU_T_F"

@@ -111,6 +111,7 @@ class CfgVehicles
 			"Track_R",
 			"Slide"
 		};
+		displayName="$STR_BMD2_Name";
 		side=0;
 		icon="\rhsafrf\addons\rhs_bmd\rhs_bmd2_icon.paa";
 		nameSound="veh_vehicle_APC_s";
@@ -313,6 +314,7 @@ class CfgVehicles
 		{
 			class rhs_decalNumber_type
 			{
+				displayName="Define font type of plate number";
 				tooltip="Define kind of font that will be drawn on vehicle.";
 				property="rhs_decalNumber_type";
 				control="Combo";
@@ -366,6 +368,7 @@ class CfgVehicles
 			class rhs_decalNumber
 			{
 				collapsed=1;
+				displayName="Set side number";
 				tooltip="Set side number. 4 numbers are required. Type 0 to hide numbers complety & leave at -1 to get random number";
 				property="rhs_decalNumber";
 				control="Edit";
@@ -375,6 +378,7 @@ class CfgVehicles
 			};
 			class rhs_decalPlatoon_type
 			{
+				displayName="Define platoon symbol type";
 				tooltip="Decal type";
 				property="rhs_decalPlatoon_type";
 				control="Combo";
@@ -418,6 +422,7 @@ class CfgVehicles
 			};
 			class rhs_decalPlatoon
 			{
+				displayName="Set platoon symbol";
 				tooltip="Set platoon symbol located on right & rear of vehicles. Usually used for platoon symbols. -1 leaves current symbol & 0 clears decal.";
 				property="rhs_decalPlatoon";
 				control="Edit";
@@ -427,6 +432,7 @@ class CfgVehicles
 			};
 			class rhs_decalArmy_type: rhs_decalPlatoon_type
 			{
+				displayName="Define army symbol type";
 				property="rhs_decalArmy_type";
 				expression="_this setVariable ['%s', _value];";
 				class values: values
@@ -441,12 +447,14 @@ class CfgVehicles
 			};
 			class rhs_decalArmy: rhs_decalPlatoon
 			{
+				displayName="Set army symbol";
 				tooltip="Define symbol located on left side of vehicle. Usually used for army symbols. -1 leaves current symbol & 0 clears decal.";
 				property="rhs_decalArmy";
 				expression="if(parseNumber _value >= 0)then{ [_this, [ [ 'Label', cBMDArmySymPlaces,  _this getVariable ['rhs_decalArmy_type','Army'],call compile _value] ] ] call rhs_fnc_decalsInit};";
 			};
 			class crate_l1_unhide
 			{
+				displayName="hide l1 crate";
 				property="crate_l1_unhide";
 				control="CheckboxNumber";
 				expression="[_this,_value,'%s'] call rhs_fnc_setHabarEden";
@@ -454,34 +462,42 @@ class CfgVehicles
 			};
 			class crate_l2_unhide: crate_l1_unhide
 			{
+				displayName="hide l2 crate";
 				property="crate_l2_unhide";
 			};
 			class crate_l3_unhide: crate_l1_unhide
 			{
+				displayName="hide l3 crate";
 				property="crate_l3_unhide";
 			};
 			class crate_r1_unhide: crate_l1_unhide
 			{
+				displayName="hide r1 crate";
 				property="crate_r1_unhide";
 			};
 			class crate_r2_unhide: crate_l1_unhide
 			{
+				displayName="hide r2 crate";
 				property="crate_r2_unhide";
 			};
 			class crate_r3_unhide: crate_l1_unhide
 			{
+				displayName="hide r3 crate";
 				property="crate_r3_unhide";
 			};
 			class wood_1_unhide: crate_l1_unhide
 			{
+				displayName="hide wood log 1";
 				property="wood_1_unhide";
 			};
 			class wood_2_unhide: crate_l1_unhide
 			{
+				displayName="hide wood log 2";
 				property="wood_2_unhide";
 			};
 			class rhs_disableHabar: crate_l1_unhide
 			{
+				displayName="Disable habar";
 				property="rhs_disableHabar";
 				expression="[_this,_value,'%s',_value] call rhs_fnc_setHabarEden";
 				defaultValue="0";
@@ -1207,6 +1223,7 @@ class CfgVehicles
 		{
 			class standard
 			{
+				displayName="Standard";
 				factions[]=
 				{
 					"rhs_faction_vmf",
@@ -1215,7 +1232,10 @@ class CfgVehicles
 					"rhs_faction_vv"
 				};
 			};
-			class Camo: standard;  //found empty after stripping
+			class Camo: standard
+			{
+				displayName="Chedaki";
+			};
 		};
 		class Turrets: Turrets
 		{
@@ -1381,12 +1401,14 @@ class CfgVehicles
 	};
 	class rhs_bmd1_base: rhs_bmd_base
 	{
+		displayName="$STR_BMD1_Name";
 		icon="\rhsafrf\addons\rhs_bmd\rhs_bmd1_icon.paa";
 		class Damage;  //found empty after stripping
 		class textureSources
 		{
 			class standard
 			{
+				displayName="Standard";
 				factions[]=
 				{
 					"rhs_faction_vmf",
@@ -1395,7 +1417,10 @@ class CfgVehicles
 					"rhs_faction_vv"
 				};
 			};
-			class Camo: standard;  //found empty after stripping
+			class Camo: standard
+			{
+				displayName="Chedaki";
+			};
 		};
 		class Turrets: Turrets
 		{
@@ -1553,6 +1578,7 @@ class CfgVehicles
 	};
 	class rhs_bmd1k: rhs_bmd1_base
 	{
+		displayName="$STR_BMD1K_Name";
 		tf_range_api=17000;
 		class Turrets: Turrets
 		{
@@ -1586,6 +1612,7 @@ class CfgVehicles
 	};
 	class rhs_bmd1p: rhs_bmd1_base
 	{
+		displayName="$STR_BMD1P_Name";
 		class Turrets: Turrets
 		{
 			class MainTurret: MainTurret
@@ -1772,6 +1799,7 @@ class CfgVehicles
 	};
 	class rhs_bmd1pk: rhs_bmd1_base
 	{
+		displayName="$STR_BMD1PK_Name";
 		class Turrets: Turrets
 		{
 			class MainTurret: MainTurret
@@ -1850,6 +1878,7 @@ class CfgVehicles
 	};
 	class rhs_bmd1r: rhs_bmd1_base
 	{
+		displayName="$STR_BMD1R_Name";
 		class Damage;  //found empty after stripping
 		class Turrets: Turrets
 		{
@@ -1902,6 +1931,7 @@ class CfgVehicles
 	};
 	class rhs_bmd2m: rhs_bmd2
 	{
+		displayName="$STR_BMD2M_Name";
 		enableGPS=1;
 		class Turrets: Turrets
 		{
@@ -1993,5 +2023,8 @@ class CfgVehicles
 			class RHS_BMD2;  //found empty after stripping
 		};
 	};
-	class rhs_bmd2k: rhs_bmd2;  //found empty after stripping
+	class rhs_bmd2k: rhs_bmd2
+	{
+		displayName="$STR_BMD2K_Name";
+	};
 };

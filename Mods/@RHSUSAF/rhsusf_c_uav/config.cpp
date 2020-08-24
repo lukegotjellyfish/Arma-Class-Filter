@@ -26,7 +26,10 @@ class CfgPatches
 };
 class CfgVehicleClasses
 {
-	class rq11;  //found empty after stripping
+	class rq11
+	{
+		displayName="RHS RQ-11 Parts";
+	};
 };
 class CfgVehicles
 {
@@ -45,37 +48,75 @@ class CfgVehicles
 	};
 	class rhsusf_RQ11MONITOR: rq11_base_object
 	{
+		displayName="[GCS] Ground Control Station";
 		class EventHandlers: EventHandlers;  //found empty after stripping
 	};
 	class rhsusf_RQ11RAVEN_STATIC: rq11_base_object
 	{
+		displayName="[RQ-11] Raven A (static)";
 		class EventHandlers: EventHandlers;  //found empty after stripping
 	};
 	class rhsusf_RQ11RAVEN_B_STATIC: rq11_base_object
 	{
+		displayName="[RQ-11] Raven B (static)";
 		class EventHandlers: EventHandlers;  //found empty after stripping
 	};
-	class rq11_zerlegt: rq11_base_object;  //found empty after stripping
-	class rq11b_zerlegt: rq11_base_object;  //found empty after stripping
-	class carpet_empty: rq11_base_object;  //found empty after stripping
-	class rq11_body: rq11_base_object;  //found empty after stripping
-	class rq11_camera: rq11_base_object;  //found empty after stripping
-	class rq11b_camera: rq11_base_object;  //found empty after stripping
-	class rq11_paddle: rq11_base_object;  //found empty after stripping
-	class rq11_rotor: rq11_base_object;  //found empty after stripping
-	class rq11_tail: rq11_base_object;  //found empty after stripping
-	class rq11_wing_m: rq11_base_object;  //found empty after stripping
-	class rq11_wing_lr: rq11_base_object;  //found empty after stripping
+	class rq11_zerlegt: rq11_base_object
+	{
+		displayName="Raven A blanket with parts";
+	};
+	class rq11b_zerlegt: rq11_base_object
+	{
+		displayName="Raven B Blanket with parts";
+	};
+	class carpet_empty: rq11_base_object
+	{
+		displayName="Blanket";
+	};
+	class rq11_body: rq11_base_object
+	{
+		displayName="Raven Body";
+	};
+	class rq11_camera: rq11_base_object
+	{
+		displayName="Raven A Camera Package";
+	};
+	class rq11b_camera: rq11_base_object
+	{
+		displayName="Raven B Camera Package";
+	};
+	class rq11_paddle: rq11_base_object
+	{
+		displayName="Raven Elevator";
+	};
+	class rq11_rotor: rq11_base_object
+	{
+		displayName="Raven Propeller";
+	};
+	class rq11_tail: rq11_base_object
+	{
+		displayName="Raven Tail";
+	};
+	class rq11_wing_m: rq11_base_object
+	{
+		displayName="Raven Wing Center";
+	};
+	class rq11_wing_lr: rq11_base_object
+	{
+		displayName="Raven Wing Ends";
+	};
 	class ContainerSupply;
 	class Bag_Base;
 	class B_Kitbag_Base;
 	class B_rhsusf_BACKPACK: B_Kitbag_Base
 	{
+		displayName="Raven A Backpack";
 		maximumLoad=0.1;
 		mass=40;
 	};
 	class B_rhsusf_B_BACKPACK: rhsusf_assault_eagleaiii_ocp
 	{
+		displayName="Eagle A-III OCP (Raven)";
 		maximumLoad=0.1;
 		mass=100;
 	};

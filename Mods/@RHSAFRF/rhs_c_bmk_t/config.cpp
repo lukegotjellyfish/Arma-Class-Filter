@@ -16,6 +16,7 @@ class CfgVehicles
 	class Ship_F;
 	class rhs_bmk_t_base: Ship_F
 	{
+		displayName="BMK Tug";
 		editorSubCategory="rhs_EdSubcat_boat";
 		cargoGetInAction[]=
 		{

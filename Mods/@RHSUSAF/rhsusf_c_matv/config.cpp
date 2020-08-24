@@ -160,6 +160,7 @@ class CfgVehicles
 	class rhsusf_MATV_base: MRAP_01_base_F
 	{
 		side=1;
+		displayName="MATV Base";
 		weapons[]=
 		{
 			"TruckHorn2",
@@ -12401,9 +12402,18 @@ class CfgVehicles
 		};
 		class textureSources
 		{
-			class rhs_desert;  //found empty after stripping
-			class rhs_woodland;  //found empty after stripping
-			class rhs_olive;  //found empty after stripping
+			class rhs_desert
+			{
+				displayName="Desert";
+			};
+			class rhs_woodland
+			{
+				displayName="Woodland";
+			};
+			class rhs_olive
+			{
+				displayName="Olive";
+			};
 		};
 		class Attributes;  //found empty after stripping
 		class UVAnimations
@@ -12805,6 +12815,7 @@ class CfgVehicles
 			{
 				control="CheckboxNumber";
 				defaultValue="0";
+				displayName="Lower Rhino";
 				property="Rhino_down";
 				expression="_this animateDoor ['%s',_value,true]";
 			};
@@ -26139,7 +26150,10 @@ class CfgVehicles
 		{
 			class rhs_desert: rhs_desert;  //found empty after stripping
 			class rhs_woodland: rhs_woodland;  //found empty after stripping
-			class rhs_sofdeploy;  //found empty after stripping
+			class rhs_sofdeploy
+			{
+				displayName="Deployed";
+			};
 		};
 		class Attributes: Attributes;  //found empty after stripping
 		threat[]={0.89999998,0.30000001,0.1};
@@ -26216,110 +26230,137 @@ class CfgVehicles
 	};
 	class rhsusf_m1240a1_usarmy_d: rhsusf_MATV_base
 	{
+		displayName="$STR_RHS_M1240_NAME";
 		accuracy=0.5;
 	};
 	class rhsusf_m1240a1_m2_usarmy_d: rhsusf_MATV_OGPK_M2_base
 	{
+		displayName="$STR_RHS_M1240_M2_NAME";
 		accuracy=0.5;
 	};
 	class rhsusf_m1240a1_mk19_usarmy_d: rhsusf_MATV_OGPK_MK19_base
 	{
+		displayName="$STR_RHS_M1240_MK19_NAME";
 		accuracy=0.5;
 	};
 	class rhsusf_m1240a1_m240_usarmy_d: rhsusf_MATV_OGPK_M240_base
 	{
+		displayName="$STR_RHS_M1240_M240_NAME";
 		accuracy=0.5;
 	};
 	class rhsusf_m1240a1_m2crows_usarmy_d: rhsusf_MATV_CROWS_M2_base
 	{
+		displayName="$STR_RHS_M1240_M153_M2_NAME";
 		accuracy=0.5;
 	};
 	class rhsusf_m1240a1_mk19crows_usarmy_d: rhsusf_MATV_CROWS_MK19_base
 	{
+		displayName="$STR_RHS_M1240_M153_MK19_NAME";
 		accuracy=0.5;
 	};
 	class rhsusf_m1240a1_usarmy_wd: rhsusf_MATV_base
 	{
+		displayName="$STR_RHS_M1240_NAME";
 		accuracy=0.5;
 	};
 	class rhsusf_m1240a1_m2_usarmy_wd: rhsusf_MATV_OGPK_M2_base
 	{
+		displayName="$STR_RHS_M1240_M2_NAME";
 		accuracy=0.5;
 	};
 	class rhsusf_m1240a1_mk19_usarmy_wd: rhsusf_MATV_OGPK_MK19_base
 	{
+		displayName="$STR_RHS_M1240_MK19_NAME";
 		accuracy=0.5;
 	};
 	class rhsusf_m1240a1_m240_usarmy_wd: rhsusf_MATV_OGPK_M240_base
 	{
+		displayName="$STR_RHS_M1240_M240_NAME";
 		accuracy=0.5;
 	};
 	class rhsusf_m1240a1_m2crows_usarmy_wd: rhsusf_MATV_CROWS_M2_base
 	{
+		displayName="$STR_RHS_M1240_M153_M2_NAME";
 		accuracy=0.5;
 	};
 	class rhsusf_m1240a1_mk19crows_usarmy_wd: rhsusf_MATV_CROWS_MK19_base
 	{
+		displayName="$STR_RHS_M1240_M153_MK19_NAME";
 		accuracy=0.5;
 	};
 	class rhsusf_m1240a1_usmc_wd: rhsusf_MATV_base
 	{
+		displayName="$STR_RHS_M1240_NAME";
 		accuracy=0.5;
 	};
 	class rhsusf_m1240a1_m2_usmc_wd: rhsusf_MATV_OGPK_M2_base
 	{
+		displayName="$STR_RHS_M1240_M2_NAME";
 		accuracy=0.5;
 	};
 	class rhsusf_m1240a1_mk19_usmc_wd: rhsusf_MATV_OGPK_MK19_base
 	{
+		displayName="$STR_RHS_M1240_MK19_NAME";
 		accuracy=0.5;
 	};
 	class rhsusf_m1240a1_m240_usmc_wd: rhsusf_MATV_OGPK_M240_base
 	{
+		displayName="$STR_RHS_M1240_M240_NAME";
 		accuracy=0.5;
 	};
 	class rhsusf_m1240a1_m2crows_usmc_wd: rhsusf_MATV_CROWS_M2_base
 	{
+		displayName="$STR_RHS_M1240_M153_M2_NAME";
 		accuracy=0.5;
 	};
 	class rhsusf_m1240a1_mk19crows_usmc_wd: rhsusf_MATV_CROWS_MK19_base
 	{
+		displayName="$STR_RHS_M1240_M153_MK19_NAME";
 		accuracy=0.5;
 	};
 	class rhsusf_m1240a1_usmc_d: rhsusf_MATV_base
 	{
+		displayName="$STR_RHS_M1240_NAME";
 		accuracy=0.5;
 	};
 	class rhsusf_m1240a1_m2_usmc_d: rhsusf_MATV_OGPK_M2_base
 	{
+		displayName="$STR_RHS_M1240_M2_NAME";
 		accuracy=0.5;
 	};
 	class rhsusf_m1240a1_mk19_usmc_d: rhsusf_MATV_OGPK_MK19_base
 	{
+		displayName="$STR_RHS_M1240_MK19_NAME";
 		accuracy=0.5;
 	};
 	class rhsusf_m1240a1_m240_usmc_d: rhsusf_MATV_OGPK_M240_base
 	{
+		displayName="$STR_RHS_M1240_M240_NAME";
 		accuracy=0.5;
 	};
 	class rhsusf_m1240a1_m2crows_usmc_d: rhsusf_MATV_CROWS_M2_base
 	{
+		displayName="$STR_RHS_M1240_M153_M2_NAME";
 		accuracy=0.5;
 	};
 	class rhsusf_m1240a1_mk19crows_usmc_d: rhsusf_MATV_CROWS_MK19_base
 	{
+		displayName="$STR_RHS_M1240_M153_MK19_NAME";
 		accuracy=0.5;
 	};
 	class rhsusf_m1245_m2crows_socom_d: rhsusf_MATV_SOF_CROWS_M2_base
 	{
+		displayName="$STR_RHS_M1245_M2_NAME";
 		accuracy=0.5;
 	};
 	class rhsusf_m1245_mk19crows_socom_d: rhsusf_MATV_SOF_CROWS_MK19_base
 	{
+		displayName="$STR_RHS_M1245_MK19_NAME";
 		accuracy=0.5;
 	};
 	class rhsusf_m1245_m2crows_socom_deploy: rhsusf_MATV_SOF_CROWS_M2_base
 	{
+		displayName="$STR_RHS_M1245_M2_DEPLOY_NAME";
 		accuracy=0.5;
 		animationList[]=
 		{
@@ -26329,6 +26370,7 @@ class CfgVehicles
 	};
 	class rhsusf_m1245_mk19crows_socom_deploy: rhsusf_MATV_SOF_CROWS_MK19_base
 	{
+		displayName="$STR_RHS_M1245_MK19_DEPLOY_NAME";
 		accuracy=0.5;
 		animationList[]=
 		{

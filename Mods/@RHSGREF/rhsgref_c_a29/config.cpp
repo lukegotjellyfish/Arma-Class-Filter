@@ -430,6 +430,7 @@ class CfgVehicles
 	class Plane_Fighter_03_base_F: Plane_Base_F;  //found empty after stripping
 	class RHSGREF_A29_Base: Plane_Fighter_03_base_F
 	{
+		displayName="A-29 Super Tucano";
 		icon="rhsgref\addons\rhsgref_c_a29\data\rhs_a29_mapIcon_ca.paa";
 		laserScanner=1;
 		showAllTargets=2;
@@ -66578,10 +66579,22 @@ class CfgVehicles
 		};
 		class textureSources
 		{
-			class Standard;  //found empty after stripping
-			class Brazil;  //found empty after stripping
-			class Ecuador;  //found empty after stripping
-			class HIDF;  //found empty after stripping
+			class Standard
+			{
+				displayName="USAF";
+			};
+			class Brazil
+			{
+				displayName="Brazil";
+			};
+			class Ecuador
+			{
+				displayName="Ecuador";
+			};
+			class HIDF
+			{
+				displayName="HIDF";
+			};
 		};
 		class Damage;  //found empty after stripping
 		weapons[]=
@@ -119317,6 +119330,7 @@ class CfgVehicles
 	};
 	class RHSGREF_A29B_HIDF: RHSGREF_A29_Base
 	{
+		displayName="A-29 Super Tucano";
 		side=1;
 		availableForSupportTypes[]=
 		{
@@ -119330,6 +119344,7 @@ class CfgVehicles
 	};
 	class RHS_JST_A29_Canopy: thingX
 	{
+		displayName="JST_Canopy";
 		animated=0;
 		reversed=0;
 		nameSound="";
@@ -119344,6 +119359,7 @@ class CfgVehicles
 	class RHS_JST_A29_Ejection_Seat: Ejection_Seat_Base_F
 	{
 		side=1;
+		displayName="Super Tucano Ejection Seat";
 		canFloat=0;
 		extCameraPosition[]={0,3,-10};
 		threat[]={0,0,0};

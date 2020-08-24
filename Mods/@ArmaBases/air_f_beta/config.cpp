@@ -24,6 +24,7 @@ class CfgVehicles
 		_generalMacro="Parachute_02_base_F";
 		animated=1;
 		accuracy=1000;
+		displayName="$STR_A3_CfgVehicles_ParachuteCargo_Base0";
 		animationOpen="A3\Air_F_Beta\Parachute_02\Data\Anim\Para_Medium_Start.rtm";
 		animationDrop="A3\Air_F_Beta\Parachute_02\Data\Anim\Para_Medium_Landing.rtm";
 	};

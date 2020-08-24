@@ -13,6 +13,7 @@ class CfgHints
 	{
 		class DynamicGroups
 		{
+			displayName="$STR_A3_DynamicGroups1";
 			description="$STR_A3_DynamicGroups2";
 			tip="";
 			image="\A3\Ui_f\data\GUI\Cfg\Hints\Rifle_ca.paa";
@@ -35,6 +36,7 @@ class CfgHints
 		{
 			class EndGameVirtualArsenal_sub
 			{
+				displayName="$STR_A3_rscdisplaymain_buttonvirtualarsenal";
 				description="$STR_A3_EndGameVA2";
 				tip="";
 				image="\A3\Ui_f\data\GUI\Cfg\Hints\Switch_ca.paa";

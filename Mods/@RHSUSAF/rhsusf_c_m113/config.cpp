@@ -93,6 +93,7 @@ class CfgVehicles
 	class rhsusf_m113tank_base: APC_Tracked_02_base_F
 	{
 		nameSound="veh_vehicle_APC_s";
+		displayName="$STR_M113A3WD_Name";
 		accuracy=0.30000001;
 		typicalCargo[]={};
 		side=1;
@@ -553,6 +554,7 @@ class CfgVehicles
 		{
 			class standard
 			{
+				displayName="Woodland";
 				factions[]=
 				{
 					"rhs_faction_usarmy_wd"
@@ -560,6 +562,7 @@ class CfgVehicles
 			};
 			class Desert
 			{
+				displayName="Desert";
 				factions[]=
 				{
 					"rhs_faction_usarmy_d"
@@ -567,6 +570,7 @@ class CfgVehicles
 			};
 			class Olive
 			{
+				displayName="Olive";
 				factions[]=
 				{
 					"rhs_faction_usarmy_wd"
@@ -589,6 +593,7 @@ class CfgVehicles
 		{
 			class rhs_hideIFFPanel
 			{
+				displayName="Hide IFF Panel";
 				property="rhs_hideIFFPanel";
 				control="CheckboxNumber";
 				expression="_this animate ['IFF_Panels_Hide',_value,true]";
@@ -596,6 +601,7 @@ class CfgVehicles
 			};
 			class rhs_openRamp
 			{
+				displayName="Open rear ramp";
 				property="rhs_openRamp";
 				control="CheckboxNumber";
 				expression="_this animateDoor ['ramp',_value,true]";
@@ -603,13 +609,18 @@ class CfgVehicles
 			};
 		};
 	};
-	class rhsusf_m113_usarmy: rhsusf_m113tank_base;  //found empty after stripping
+	class rhsusf_m113_usarmy: rhsusf_m113tank_base
+	{
+		displayName="$STR_M113A3WD_Name";
+	};
 	class rhsusf_m113_usarmy_supply: rhsusf_m113_usarmy
 	{
+		displayName="$STR_M113A3_AMMO";
 		class textureSources
 		{
 			class standard
 			{
+				displayName="Woodland";
 				factions[]=
 				{
 					"rhs_faction_usarmy_wd"
@@ -617,6 +628,7 @@ class CfgVehicles
 			};
 			class Olive
 			{
+				displayName="Olive";
 				factions[]=
 				{
 					"rhs_faction_usarmy_wd"
@@ -624,6 +636,7 @@ class CfgVehicles
 			};
 			class Desert
 			{
+				displayName="Desert";
 				factions[]=
 				{
 					"rhs_faction_usarmy_d"
@@ -698,6 +711,7 @@ class CfgVehicles
 			};
 			class CargoTurret_02: CargoTurret_02;  //found empty after stripping
 		};
+		displayName="$STR_M113A3_UN";
 		class textureSources: textureSources
 		{
 			class standard: standard;  //found empty after stripping
@@ -707,6 +721,7 @@ class CfgVehicles
 	};
 	class rhsusf_m113_usarmy_medical: rhsusf_m113_usarmy_unarmed
 	{
+		displayName="$STR_M113A3_MED";
 		class textureSources: textureSources
 		{
 			class standard: standard;  //found empty after stripping
@@ -748,6 +763,7 @@ class CfgVehicles
 			};
 			class CargoTurret_02: CargoTurret_02;  //found empty after stripping
 		};
+		displayName="$STR_M113A3_M240";
 		class textureSources: textureSources
 		{
 			class standard: standard;  //found empty after stripping
@@ -784,6 +800,7 @@ class CfgVehicles
 			};
 			class CargoTurret_02: CargoTurret_02;  //found empty after stripping
 		};
+		displayName="$STR_M113A3_MK19";
 		class textureSources: textureSources
 		{
 			class standard: standard;  //found empty after stripping
@@ -799,26 +816,58 @@ class CfgVehicles
 	class rhsusf_m113d_usarmy_MK19: rhsusf_m113_usarmy_MK19;  //found empty after stripping
 	class rhsusf_m113_usarmy_M2_90: rhsusf_m113_usarmy_supply
 	{
+		displayName="M113A3 (M2/Early)";
 		class textureSources
 		{
-			class standard;  //found empty after stripping
-			class Olive;  //found empty after stripping
-			class Desert;  //found empty after stripping
-			class MERDC_SV;  //found empty after stripping
-			class MERDC_WV;  //found empty after stripping
+			class standard
+			{
+				displayName="Woodland";
+			};
+			class Olive
+			{
+				displayName="Olive";
+			};
+			class Desert
+			{
+				displayName="Desert";
+			};
+			class MERDC_SV
+			{
+				displayName="MERDC (Summer Verdant)";
+			};
+			class MERDC_WV
+			{
+				displayName="MERDC (Winter Verdant)";
+			};
 		};
 		transportAmmo=0;
 		supplyRadius=0;
 	};
 	class rhsusf_m113_usarmy_MK19_90: rhsusf_m113_usarmy_MK19
 	{
+		displayName="M113A3 (Mk19/Early)";
 		class textureSources
 		{
-			class standard;  //found empty after stripping
-			class Olive;  //found empty after stripping
-			class Desert;  //found empty after stripping
-			class MERDC_SV;  //found empty after stripping
-			class MERDC_WV;  //found empty after stripping
+			class standard
+			{
+				displayName="Woodland";
+			};
+			class Olive
+			{
+				displayName="Olive";
+			};
+			class Desert
+			{
+				displayName="Desert";
+			};
+			class MERDC_SV
+			{
+				displayName="MERDC (Summer Verdant)";
+			};
+			class MERDC_WV
+			{
+				displayName="MERDC (Winter Verdant)";
+			};
 		};
 	};
 };

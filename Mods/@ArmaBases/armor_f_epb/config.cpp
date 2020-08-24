@@ -2890,6 +2890,7 @@ class CfgVehicles
 		{
 			class Indep_01
 			{
+				displayName="$STR_A3_TEXTURESOURCES_INDEP0";
 				factions[]=
 				{
 					"IND_F"
@@ -2897,6 +2898,7 @@ class CfgVehicles
 			};
 			class Indep_02
 			{
+				displayName="$STR_A3_texturesources_indepjungle0";
 				factions[]=
 				{
 					"IND_F"
@@ -2904,6 +2906,7 @@ class CfgVehicles
 			};
 			class Indep_03
 			{
+				displayName="$STR_A3_texturesources_indepdesert0";
 				factions[]=
 				{
 					"IND_F"
@@ -3776,5 +3779,6 @@ class CfgVehicles
 			init="[this, '', []] call bis_fnc_initVehicle";
 		};
 		_generalMacro="I_MBT_03_cannon_F";
+		displayName="$STR_A3_CfgVehicles_I_MBT_03_cannon_F0";
 	};
 };

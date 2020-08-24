@@ -302,10 +302,12 @@ class CfgVehicles
 		};
 		icon="\rhsafrf\addons\rhs_a2port_car\data\mapico\icomap_uaz_ca.paa";
 		mapsize=4;
+		displayName="$STR_RHS_UAZ469_NAME";
 		class textureSources
 		{
 			class standard
 			{
+				displayName="Standard";
 				factions[]=
 				{
 					"rhs_faction_msv",
@@ -315,16 +317,32 @@ class CfgVehicles
 					"rhs_faction_vv"
 				};
 			};
-			class Camo: standard;  //found empty after stripping
-			class Camo1: standard;  //found empty after stripping
-			class Camo2: standard;  //found empty after stripping
-			class Camo3: standard;  //found empty after stripping
-			class Camo4: standard;  //found empty after stripping
+			class Camo: standard
+			{
+				displayName="Camo";
+			};
+			class Camo1: standard
+			{
+				displayName="Chedaki";
+			};
+			class Camo2: standard
+			{
+				displayName="CDF";
+			};
+			class Camo3: standard
+			{
+				displayName="Civil";
+			};
+			class Camo4: standard
+			{
+				displayName="UN";
+			};
 		};
 		class Attributes
 		{
 			class rhs_decalNumber_type
 			{
+				displayName="Define font type of plate number";
 				tooltip="Define kind of font that will be drawn on vehicle.";
 				property="rhs_decalNumber_type";
 				control="Combo";
@@ -378,6 +396,7 @@ class CfgVehicles
 			class rhs_decalNumber
 			{
 				collapsed=1;
+				displayName="Set plate number";
 				tooltip="Set plate number. 4 numbers are required. If 0, random number will be generated";
 				property="rhs_decalNumber";
 				control="Edit";
@@ -387,6 +406,7 @@ class CfgVehicles
 			};
 			class rhs_decalArmy_type
 			{
+				displayName="Define large door roundel type";
 				tooltip="Decal type";
 				property="rhs_decalArmy_type";
 				control="Combo";
@@ -429,6 +449,7 @@ class CfgVehicles
 			};
 			class rhs_decalArmy
 			{
+				displayName="Set large door roundel symbol";
 				tooltip="Set large door roundel located on both sides. Usually used for army symbols. -1 leaves current symbol & 0 clears decal.";
 				property="rhs_decalArmy";
 				control="Edit";
@@ -438,18 +459,21 @@ class CfgVehicles
 			};
 			class rhs_decalPlatoon_type: rhs_decalArmy_type
 			{
+				displayName="Define small door roundel type";
 				property="rhs_decalPlatoon_type";
 				expression="_this setVariable ['%s', _value];";
 				defaultValue="0";
 			};
 			class rhs_decalPlatoon: rhs_decalArmy
 			{
+				displayName="Set small door roundel symbol";
 				tooltip="Define small door roundel located on both sides. Usually used for platoon symbols. -1 leaves current symbol & 0 clears decal.";
 				property="rhs_decalPlatoon";
 				expression="if(parseNumber _value >= 0)then{ [_this, [ [ 'Label', cDecalsCarsRightPlatoonPlaces,  _this getVariable ['rhs_decalPlatoon_type','Army'],call compile _value] ] ] call rhs_fnc_decalsInit};";
 			};
 			class rhs_hideLightCover
 			{
+				displayName="Hide light covers";
 				property="rhs_hideLightCover";
 				control="CheckboxNumber";
 				expression="_this animate ['light_hide',_value,true]";
@@ -457,24 +481,29 @@ class CfgVehicles
 			};
 			class rhs_hidespare: rhs_hideLightCover
 			{
+				displayName="Remove spare wheel";
 				property="rhs_hidespare";
 				expression="_this animate ['spare_hide',_value,true]";
 			};
 			class Door_LF: rhs_hidespare
 			{
+				displayName="Open front left door";
 				property="Door_LF";
 				expression="_this animateDoor ['%s',_value,true]";
 			};
 			class Door_RF: Door_LF
 			{
+				displayName="Open front right door";
 				property="Door_RF";
 			};
 			class Door_LB: Door_LF
 			{
+				displayName="Open left back door";
 				property="Door_LB";
 			};
 			class Door_RB: Door_LF
 			{
+				displayName="Open right back door";
 				property="Door_RB";
 			};
 		};
@@ -831,6 +860,7 @@ class CfgVehicles
 	};
 	class rhs_uaz_open_Base: RHS_UAZ_Base
 	{
+		displayName="$STR_RHS_UAZ469OPEN_NAME";
 		attenuationEffectType="OpenCarAttenuation";
 		showNVGDriver=1;
 		showNVGCargo[]={1};
@@ -873,6 +903,7 @@ class CfgVehicles
 	class RHS_UAZ_DShKM_Base: RHS_UAZ_Base
 	{
 		nameSound="veh_vehicle_armedcar_s";
+		displayName="UAZ-3151 (DShKM)";
 		attenuationEffectType="OpenCarAttenuation";
 		threat[]={0.89999998,0.30000001,0.1};
 		memoryPointsGetInCargo[]={};
@@ -884,6 +915,7 @@ class CfgVehicles
 		{
 			class standard
 			{
+				displayName="Standard";
 				factions[]=
 				{
 					"rhs_faction_vmf",
@@ -892,10 +924,22 @@ class CfgVehicles
 					"rhs_faction_vv"
 				};
 			};
-			class Camo: standard;  //found empty after stripping
-			class Camo1: standard;  //found empty after stripping
-			class Camo2: standard;  //found empty after stripping
-			class Camo4: standard;  //found empty after stripping
+			class Camo: standard
+			{
+				displayName="Camo";
+			};
+			class Camo1: standard
+			{
+				displayName="Chedaki";
+			};
+			class Camo2: standard
+			{
+				displayName="CDF";
+			};
+			class Camo4: standard
+			{
+				displayName="UN";
+			};
 		};
 		class CargoTurret;
 		class Turrets: Turrets
@@ -972,6 +1016,7 @@ class CfgVehicles
 	};
 	class RHS_UAZ_AGS30_Base: RHS_UAZ_DShKM_Base
 	{
+		displayName="UAZ-3151 (AGS-30)";
 		attenuationEffectType="OpenCarAttenuation";
 		threat[]={0.89999998,0.30000001,0.1};
 		class Turrets: Turrets
@@ -1005,6 +1050,7 @@ class CfgVehicles
 	};
 	class RHS_UAZ_SPG9_Base: RHS_UAZ_DShKM_Base
 	{
+		displayName="UAZ-3151 (SPG-9)";
 		threat[]={0.89999998,0.60000002,0.1};
 		class Turrets: Turrets
 		{
@@ -1135,23 +1181,55 @@ class CfgVehicles
 		};
 		icon="\rhsafrf\addons\rhs_a2port_car\data\mapico\icomap_ural_ca.paa";
 		mapsize=7;
+		displayName="$STR_RHS_URAL4320_NAME";
 		class textureSources
 		{
-			class standard;  //found empty after stripping
-			class Camo: standard;  //found empty after stripping
-			class Camo1: standard;  //found empty after stripping
-			class Camo2: standard;  //found empty after stripping
-			class Camo3: standard;  //found empty after stripping
-			class Camo4: standard;  //found empty after stripping
-			class Camo5: standard;  //found empty after stripping
-			class Camo6: standard;  //found empty after stripping
-			class Camo7: standard;  //found empty after stripping
-			class rhs_sand: standard;  //found empty after stripping
+			class standard
+			{
+				displayName="Khaki";
+			};
+			class Camo: standard
+			{
+				displayName="Camo";
+			};
+			class Camo1: standard
+			{
+				displayName="Chedaki";
+			};
+			class Camo2: standard
+			{
+				displayName="CDF";
+			};
+			class Camo3: standard
+			{
+				displayName="Civil Blue";
+			};
+			class Camo4: standard
+			{
+				displayName="Civil Yellow";
+			};
+			class Camo5: standard
+			{
+				displayName="Civil Worker";
+			};
+			class Camo6: standard
+			{
+				displayName="UN";
+			};
+			class Camo7: standard
+			{
+				displayName="Takistan";
+			};
+			class rhs_sand: standard
+			{
+				displayName="Sand";
+			};
 		};
 		class Attributes
 		{
 			class rhs_decalNumber_type
 			{
+				displayName="Define font type of plate number";
 				tooltip="Define kind of font that will be drawn on vehicle.";
 				property="rhs_decalNumber_type";
 				control="Combo";
@@ -1205,6 +1283,7 @@ class CfgVehicles
 			class rhs_decalNumber
 			{
 				collapsed=1;
+				displayName="Set plate number";
 				tooltip="Set plate number. 4 numbers are required. If 0, random number will be generated";
 				property="rhs_decalNumber";
 				control="Edit";
@@ -1214,6 +1293,7 @@ class CfgVehicles
 			};
 			class rhs_decalArmy_type
 			{
+				displayName="Define large door roundel type";
 				tooltip="Decal type";
 				property="rhs_decalArmy_type";
 				control="Combo";
@@ -1256,6 +1336,7 @@ class CfgVehicles
 			};
 			class rhs_decalArmy
 			{
+				displayName="Set large door roundel symbol";
 				tooltip="Set large door roundel located on both sides. Usually used for army symbols. -1 leaves current symbol & 0 clears decal.";
 				property="rhs_decalArmy";
 				control="Edit";
@@ -1265,18 +1346,21 @@ class CfgVehicles
 			};
 			class rhs_decalPlatoon_type: rhs_decalArmy_type
 			{
+				displayName="Define small door roundel type";
 				property="rhs_decalPlatoon_type";
 				expression="_this setVariable ['%s', _value];";
 				defaultValue="0";
 			};
 			class rhs_decalPlatoon: rhs_decalArmy
 			{
+				displayName="Set small door roundel symbol";
 				tooltip="Define small door roundel located on both sides. Usually used for platoon symbols. -1 leaves current symbol & 0 clears decal.";
 				property="rhs_decalPlatoon";
 				expression="if(parseNumber _value >= 0)then{ [_this, [ [ 'Label', cDecalsCarsRightPlatoonPlaces,  _this getVariable ['rhs_decalPlatoon_type','Army'],call compile _value] ] ] call rhs_fnc_decalsInit};";
 			};
 			class rhs_hideLightCover
 			{
+				displayName="Hide light covers";
 				property="rhs_hideLightCover";
 				control="CheckboxNumber";
 				expression="_this animate ['light_hide',_value,true]";
@@ -1284,16 +1368,19 @@ class CfgVehicles
 			};
 			class rhs_hidespare: rhs_hideLightCover
 			{
+				displayName="Remove spare wheel";
 				property="rhs_hidespare";
 				expression="_this animate ['spare_hide',_value,true]";
 			};
 			class Door_LF: rhs_hidespare
 			{
+				displayName="Open front left door";
 				property="Door_LF";
 				expression="_this animateDoor ['%s',_value,true]";
 			};
 			class Door_RF: Door_LF
 			{
+				displayName="Open front right door";
 				property="Door_RF";
 			};
 		};
@@ -1692,6 +1779,7 @@ class CfgVehicles
 	};
 	class RHS_Ural_Flat_MSV_01: RHS_Ural_MSV_Base
 	{
+		displayName="Ural-4320 (Flatbed)";
 		class Turrets;  //found empty after stripping
 	};
 	class RHS_Ural_Flat_VDV_01: RHS_Ural_Flat_MSV_01
@@ -1721,6 +1809,7 @@ class CfgVehicles
 	};
 	class RHS_Ural_Open_MSV_01: RHS_Ural_MSV_Base
 	{
+		displayName="$STR_RHS_URAL4320OPEN_NAME";
 		soundAttenuationCargo[]={1,1,0};
 		hideProxyInCombat=1;
 		canHideDriver=0;
@@ -1728,6 +1817,7 @@ class CfgVehicles
 		{
 			class standard
 			{
+				displayName="Khaki";
 				factions[]=
 				{
 					"rhs_faction_vmf",
@@ -1736,10 +1826,22 @@ class CfgVehicles
 					"rhs_faction_vv"
 				};
 			};
-			class Camo: standard;  //found empty after stripping
-			class Camo1: standard;  //found empty after stripping
-			class Camo2: standard;  //found empty after stripping
-			class rhs_sand: standard;  //found empty after stripping
+			class Camo: standard
+			{
+				displayName="CDF";
+			};
+			class Camo1: standard
+			{
+				displayName="Takistan";
+			};
+			class Camo2: standard
+			{
+				displayName="Chedaki";
+			};
+			class rhs_sand: standard
+			{
+				displayName="Sand";
+			};
 		};
 		class Turrets: Turrets
 		{
@@ -1835,6 +1937,7 @@ class CfgVehicles
 	};
 	class RHS_Ural_Open_Flat_MSV_01: RHS_Ural_Open_MSV_01
 	{
+		displayName="Ural-4320 (Open/Flatbed)";
 		class Turrets;  //found empty after stripping
 		class VehicleTransport
 		{
@@ -1907,6 +2010,7 @@ class CfgVehicles
 	};
 	class RHS_Ural_Fuel_MSV_01: RHS_Ural_Support_MSV_Base_01
 	{
+		displayName="$STR_RHS_URAL4320FUEL_NAME";
 		icon="\A3\soft_f_gamma\Truck_02\data\UI\Map_Truck_02_fuel_CA.paa";
 		transportfuel=10000;
 		supplyRadius=9.5;
@@ -1925,6 +2029,7 @@ class CfgVehicles
 		{
 			class standard
 			{
+				displayName="Khaki";
 				factions[]=
 				{
 					"rhs_faction_vmf",
@@ -1933,10 +2038,22 @@ class CfgVehicles
 					"rhs_faction_vv"
 				};
 			};
-			class Camo: standard;  //found empty after stripping
-			class Camo1: standard;  //found empty after stripping
-			class Camo2: standard;  //found empty after stripping
-			class rhs_sand: standard;  //found empty after stripping
+			class Camo: standard
+			{
+				displayName="CDF";
+			};
+			class Camo1: standard
+			{
+				displayName="Takistan";
+			};
+			class Camo2: standard
+			{
+				displayName="Chedaki";
+			};
+			class rhs_sand: standard
+			{
+				displayName="Sand";
+			};
 		};
 	};
 	class RHS_Ural_Fuel_VDV_01: RHS_Ural_Fuel_MSV_01
@@ -1971,6 +2088,7 @@ class CfgVehicles
 			"['Number', cDecals4CarsNumberPlaces, 'Default']",
 			"['Label', cDecalsCarsRightArmyPlaces, 'Platoon', 12]"
 		};
+		displayName="$STR_RHS_URAL4320Repair_NAME";
 		icon="\A3\soft_f_beta\Truck_02\data\UI\Map_truck_02_repair_CA.paa";
 		transportRepair=2000000000;
 		supplyRadius=9.5;
@@ -1979,6 +2097,7 @@ class CfgVehicles
 		{
 			class standard
 			{
+				displayName="Khaki";
 				factions[]=
 				{
 					"rhs_faction_vmf",
@@ -1987,11 +2106,26 @@ class CfgVehicles
 					"rhs_faction_vv"
 				};
 			};
-			class Camo: standard;  //found empty after stripping
-			class Camo1: standard;  //found empty after stripping
-			class Camo2: standard;  //found empty after stripping
-			class Camo3: standard;  //found empty after stripping
-			class rhs_sand: standard;  //found empty after stripping
+			class Camo: standard
+			{
+				displayName="3-Color Camo";
+			};
+			class Camo1: standard
+			{
+				displayName="CDF";
+			};
+			class Camo2: standard
+			{
+				displayName="Takistan";
+			};
+			class Camo3: standard
+			{
+				displayName="Chedaki";
+			};
+			class rhs_sand: standard
+			{
+				displayName="Sand";
+			};
 		};
 	};
 	class RHS_Ural_Repair_VDV_01: RHS_Ural_Repair_MSV_01
@@ -2032,6 +2166,7 @@ class CfgVehicles
 		{
 			"rhs_msv_driver"
 		};
+		displayName="$STR_RHS_BM21_NAME";
 		icon="\rhsafrf\addons\rhs_a2port_car\data\mapico\icomap_URAL_BM21_CA.paa";
 		mapsize=8;
 		availableforsupporttypes[]=
@@ -2570,6 +2705,7 @@ class CfgVehicles
 		{
 			class standard
 			{
+				displayName="Khaki";
 				factions[]=
 				{
 					"rhs_faction_vmf",
@@ -2578,11 +2714,26 @@ class CfgVehicles
 					"rhs_faction_vv"
 				};
 			};
-			class Camo: standard;  //found empty after stripping
-			class Camo1: standard;  //found empty after stripping
-			class Camo2: standard;  //found empty after stripping
-			class Camo4: standard;  //found empty after stripping
-			class rhs_sand: standard;  //found empty after stripping
+			class Camo: standard
+			{
+				displayName="3-Color Camo";
+			};
+			class Camo1: standard
+			{
+				displayName="Chedaki";
+			};
+			class Camo2: standard
+			{
+				displayName="CDF";
+			};
+			class Camo4: standard
+			{
+				displayName="Takistan";
+			};
+			class rhs_sand: standard
+			{
+				displayName="Sand";
+			};
 		};
 		class EventHandlers: EventHandlers
 		{
@@ -2616,6 +2767,7 @@ class CfgVehicles
 	};
 	class RHS_Ural_Zu23_Base: RHS_Ural_BaseTurret
 	{
+		displayName="$STR_RHS_URAL4320_ZU23_NAME";
 		icon="\rhsafrf\addons\rhs_a2port_car\data\mapico\icomap_URAL_zu23_CA.paa";
 		mapsize=8;
 		threat[]={0.60000002,0.1,0.60000002};
@@ -2782,6 +2934,7 @@ class CfgVehicles
 		{
 			class standard
 			{
+				displayName="Khaki";
 				factions[]=
 				{
 					"rhs_faction_vmf",
@@ -2790,9 +2943,18 @@ class CfgVehicles
 					"rhs_faction_vv"
 				};
 			};
-			class Camo: standard;  //found empty after stripping
-			class Camo1: standard;  //found empty after stripping
-			class Camo2: standard;  //found empty after stripping
+			class Camo: standard
+			{
+				displayName="CDF";
+			};
+			class Camo1: standard
+			{
+				displayName="Takistan";
+			};
+			class Camo2: standard
+			{
+				displayName="Chedaki";
+			};
 		};
 	};
 	class RHS_Ural_Zu23_MSV_01: RHS_Ural_Zu23_Base
@@ -2874,12 +3036,30 @@ class CfgVehicles
 		side=3;
 		rhs_decalParameters[]={};
 	};
-	class RHS_Ural_Civ_01: RHS_Ural_Civ_Base;  //found empty after stripping
-	class RHS_Ural_Civ_02: RHS_Ural_Civ_01;  //found empty after stripping
-	class RHS_Ural_Civ_03: RHS_Ural_Civ_01;  //found empty after stripping
-	class RHS_Ural_Open_Civ_01: RHS_Ural_Civ_Base;  //found empty after stripping
-	class RHS_Ural_Open_Civ_02: RHS_Ural_Open_Civ_01;  //found empty after stripping
-	class RHS_Ural_Open_Civ_03: RHS_Ural_Open_Civ_01;  //found empty after stripping
+	class RHS_Ural_Civ_01: RHS_Ural_Civ_Base
+	{
+		displayName="$STR_RHS_URAL4320BLUE_NAME";
+	};
+	class RHS_Ural_Civ_02: RHS_Ural_Civ_01
+	{
+		displayName="$STR_RHS_URAL4320YELLOW_NAME";
+	};
+	class RHS_Ural_Civ_03: RHS_Ural_Civ_01
+	{
+		displayName="$STR_RHS_URAL4320WORKER_NAME";
+	};
+	class RHS_Ural_Open_Civ_01: RHS_Ural_Civ_Base
+	{
+		displayName="$STR_RHS_URAL4320BLUEOPEN_NAME";
+	};
+	class RHS_Ural_Open_Civ_02: RHS_Ural_Open_Civ_01
+	{
+		displayName="$STR_RHS_URAL4320YELLOWOPEN_NAME";
+	};
+	class RHS_Ural_Open_Civ_03: RHS_Ural_Open_Civ_01
+	{
+		displayName="$STR_RHS_URAL4320WORKEROPEN_NAME";
+	};
 	class Truck_02_base_F;
 	class RHS_Civ_Truck_02_covered_F: Truck_02_base_F
 	{
@@ -2888,6 +3068,7 @@ class CfgVehicles
 	class RHS_Civ_Truck_02_transport_F: Truck_02_base_F
 	{
 		side=3;
+		displayName="$STR_A3_CfgVehicles_C_Truck_02_Dump0";
 		castCargoShadow=1;
 	};
 };

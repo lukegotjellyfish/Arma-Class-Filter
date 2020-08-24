@@ -216,6 +216,7 @@ class CfgMagazines
 	class rhs_mag_zt6: VehicleMagazine
 	{
 		ammo="rhs_ammo_zt6";
+		displayName="ZT6 Mokopa";
 		displaynameshort="ZT6";
 		nameSound="missiles";
 		count=1;
@@ -237,6 +238,8 @@ class CfgMagazines
 	class rhs_mag_l159_fuelpod: VehicleMagazine
 	{
 		ammo="rhs_ammo_l159_fuelpod_proxy";
+		displayName="Fuel Pod";
+		displayNameShort="Fuel Pod";
 		count=1;
 		weight=100;
 		pylonweapon="rhsusf_weap_DummyLauncher";
@@ -245,7 +248,11 @@ class CfgMagazines
 			"RHS_HP_L159_FUELPOD"
 		};
 	};
-	class rhs_mag_l159_fuelpod_grey: rhs_mag_l159_fuelpod;  //found empty after stripping
+	class rhs_mag_l159_fuelpod_grey: rhs_mag_l159_fuelpod
+	{
+		displayName="Fuel Pod (Grey)";
+		displayNameShort="Fuel Pod (Grey)";
+	};
 	class rhs_mag_GI2_420_HE: VehicleMagazine
 	{
 		displayname="20x139mm High-Explosive Indenciary";
@@ -316,6 +323,7 @@ class CfgWeapons
 		aidispersioncoefy=4;
 		class manual: manual
 		{
+			displayName="GI-2";
 			autoFire=1;
 			reloadTime=0.083329998;
 			dispersion=0.00125;
@@ -329,9 +337,11 @@ class CfgWeapons
 	};
 	class rhs_weap_gi2: rhs_weap_M197
 	{
+		displayName="GI-2";
 		magazines[]={};
 		class HE: rhs_weap_gi2_base
 		{
+			displayName="GI-2 HE";
 			magazines[]=
 			{
 				"rhs_mag_GI2_420_HE"
@@ -339,6 +349,7 @@ class CfgWeapons
 		};
 		class AP: rhs_weap_M197
 		{
+			displayName="GI-2 AP";
 			magazines[]=
 			{
 				"rhs_mag_GI2_420_AP"
@@ -452,6 +463,7 @@ class CfgWeapons
 	class rhs_weap_zt6_Launcher: Missile_AGM_02_Plane_CAS_01_F
 	{
 		autoFire=0;
+		displayName="ZT-6 Mokopa";
 		missileLockCone=65;
 		cursorSize=0;
 		cursor="missile";

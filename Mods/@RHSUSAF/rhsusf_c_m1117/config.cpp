@@ -110,6 +110,7 @@ class CfgVehicles
 	{
 		rhs_duke_type="rhsusf_duke";
 		nameSound="veh_vehicle_MRAP_s";
+		displayName="M1117 ASV";
 		radarType=8;
 		driverCanSee="2+4+16";
 		commanderCanSee="2+4+16";
@@ -567,6 +568,7 @@ class CfgVehicles
 		{
 			class rhs_hideDUKE
 			{
+				displayName="hide DUKE antennas";
 				property="rhs_hideDUKE";
 				expression="_this animate ['DUKE_Hide',_value,true]";
 				control="CheckboxNumber";
@@ -574,6 +576,7 @@ class CfgVehicles
 			};
 			class door_l
 			{
+				displayName="Open left door";
 				property="door_l";
 				control="CheckboxNumber";
 				defaultValue="0";
@@ -581,22 +584,27 @@ class CfgVehicles
 			};
 			class door_r: door_l
 			{
+				displayName="Open right door";
 				property="door_r";
 			};
 			class door_b: door_l
 			{
+				displayName="Open back doors";
 				property="door_b";
 			};
 			class hatch_commander: door_l
 			{
+				displayName="Open commander hatch";
 				property="hatch_commander";
 			};
 			class hatch_driver: door_l
 			{
+				displayName="Open driver hatch";
 				property="hatch_driver";
 			};
 			class hatch_gunner: door_l
 			{
+				displayName="Open gunner hatch";
 				property="hatch_gunner";
 			};
 		};
@@ -809,15 +817,25 @@ class CfgVehicles
 		{
 			class standard
 			{
+				displayName="Woodland";
 				factions[]=
 				{
 					"rhs_faction_usarmy_wd",
 					"rhs_faction_usarmy_d"
 				};
 			};
-			class desert: standard;  //found empty after stripping
-			class olive: standard;  //found empty after stripping
-			class un: standard;  //found empty after stripping
+			class desert: standard
+			{
+				displayName="Desert";
+			};
+			class olive: standard
+			{
+				displayName="OD";
+			};
+			class un: standard
+			{
+				displayName="UN";
+			};
 		};
 		class PlayerSteeringCoefficients
 		{
@@ -849,13 +867,26 @@ class CfgVehicles
 		};
 	};
 	class rhsusf_M1117_W: rhsusf_M1117_D;  //found empty after stripping
-	class rhsusf_M1117_O: rhsusf_M1117_W;  //found empty after stripping
+	class rhsusf_M1117_O: rhsusf_M1117_W
+	{
+		displayName="M1117 ASV (OD)";
+	};
 	class ThingX;
 	class rhsusf_duke_d: ThingX
 	{
+		displayName="Broken DUKE antenna";
 		editorCategory="EdCat_Things";
 	};
-	class rhsusf_duke_wd: rhsusf_duke_d;  //found empty after stripping
-	class rhsusf_duke_m1a2_d: rhsusf_duke_d;  //found empty after stripping
-	class rhsusf_duke_m1a2_wd: rhsusf_duke_m1a2_d;  //found empty after stripping
+	class rhsusf_duke_wd: rhsusf_duke_d
+	{
+		displayName="Broken DUKE antenna (wd)";
+	};
+	class rhsusf_duke_m1a2_d: rhsusf_duke_d
+	{
+		displayName="Broken DUKE antenna (long/d)";
+	};
+	class rhsusf_duke_m1a2_wd: rhsusf_duke_m1a2_d
+	{
+		displayName="Broken DUKE antenna (long/wd)";
+	};
 };

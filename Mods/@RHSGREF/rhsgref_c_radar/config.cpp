@@ -17,8 +17,12 @@ class CfgVehicles
 	class NonStrategic;
 	class rhsgref_serhat_radar: NonStrategic
 	{
+		displayName="SERHAT Radar (Woodland)";
 		icon="iconObject_5x2";
 		editorCategory="EdCat_Things";
 	};
-	class rhsgref_serhat_radar_d: rhsgref_serhat_radar;  //found empty after stripping
+	class rhsgref_serhat_radar_d: rhsgref_serhat_radar
+	{
+		displayName="SERHAT Radar (Desert)";
+	};
 };

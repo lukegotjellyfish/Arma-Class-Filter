@@ -88,6 +88,7 @@ class CfgVehicles
 		weapons[]={};
 		magazines[]={};
 		rhs_maxCargoMassCoeff=5.0000001e-008;
+		displayName="$STR_RHSAFRF_PTSM";
 		accuracy=0.30000001;
 		side=0;
 		driverOpticsModel="";
@@ -339,6 +340,7 @@ class CfgVehicles
 		{
 			class rhs_decalNumber_type
 			{
+				displayName="Define font type of plate number";
 				tooltip="Define kind of font that will be drawn on vehicle.";
 				property="rhs_decalNumber_type";
 				control="Combo";
@@ -392,6 +394,7 @@ class CfgVehicles
 			class rhs_decalNumber
 			{
 				collapsed=1;
+				displayName="Set side number";
 				tooltip="Set side number. 3 numbers are required. Type 0 to hide numbers complety & leave at -1 to get random number";
 				property="rhs_decalNumber";
 				control="Edit";
@@ -401,6 +404,7 @@ class CfgVehicles
 			};
 			class rhs_openramp
 			{
+				displayName="Open ramp";
 				property="rhs_opendoors";
 				control="CheckboxNumber";
 				expression="_this animateDoor ['ramp',_value];";
@@ -408,6 +412,7 @@ class CfgVehicles
 			};
 			class rhs_attachCargo: rhs_openramp
 			{
+				displayName="Attach cargo";
 				tooltip="Attaching cargo (using attachTo command) just like when you use ramp action";
 				property="rhs_attachCargo";
 				expression="if(_value == 1)then{[_this] spawn rhs_fnc_pts_cargoAttach}else{[_this] call rhs_fnc_pts_cargoDetach};";

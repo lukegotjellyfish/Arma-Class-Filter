@@ -58,6 +58,7 @@ class CfgFiringDrills
 {
 	class SP_FD11
 	{
+		displayName="$STR_A3_FIRING_DRILLS_COF_PURPLE01_NAME";
 		color[]={0.69019598,0.25097999,0.65490198,1};
 		colorName="purple";
 		objectCOF="BIS_firingDrills1";
@@ -1452,6 +1453,7 @@ class CfgFiringDrills
 	};
 	class SP_FD12
 	{
+		displayName="$STR_A3_FIRING_DRILLS_COF_PURPLE02_NAME";
 		color[]={0.69019598,0.25097999,0.65490198,1};
 		colorName="purple";
 		objectCOF="BIS_firingDrills1";
@@ -2972,6 +2974,7 @@ class CfgFiringDrills
 	};
 	class SP_FD13
 	{
+		displayName="$STR_A3_FIRING_DRILLS_COF_PURPLE03_NAME";
 		color[]={0.69019598,0.25097999,0.65490198,1};
 		colorName="purple";
 		objectCOF="BIS_firingDrills1";
@@ -4134,6 +4137,7 @@ class CfgMissions
 	};
 	class Showcases
 	{
+		displayName="$STR_A3_CfgMissions_Showcases0";
 		class Showcase_FiringFromVehicles
 		{
 			directory="a3\missions_f_mark\showcases\showcase_firingfromvehicles.altis";

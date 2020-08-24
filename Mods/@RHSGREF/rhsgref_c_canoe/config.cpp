@@ -22,6 +22,7 @@ class CfgVehicles
 	class rhsgref_canoe_base: Rubber_duck_base_F
 	{
 		DLC="RHS_GREF";
+		displayName="Poseidon II";
 		extCameraPosition[]={0,1,-3};
 		LODDriverTurnedIn=0;
 		LODDriverTurnedOut=0;
@@ -41,20 +42,45 @@ class CfgVehicles
 		{
 			class Purple
 			{
+				displayName="Purple";
 				factions[]=
 				{
 					"rhsgref_faction_hidf",
 					"CIV_F"
 				};
 			};
-			class Red: Purple;  //found empty after stripping
-			class Yellow: Purple;  //found empty after stripping
-			class Black: Purple;  //found empty after stripping
-			class Grey;  //found empty after stripping
-			class Blue: Purple;  //found empty after stripping
-			class Green: Purple;  //found empty after stripping
-			class Orange: Purple;  //found empty after stripping
-			class Camo: Purple;  //found empty after stripping
+			class Red: Purple
+			{
+				displayName="$STR_A3_TEXTURESOURCES_RED0";
+			};
+			class Yellow: Purple
+			{
+				displayName="$STR_A3_TEXTURESOURCES_YELLOW0";
+			};
+			class Black: Purple
+			{
+				displayName="$STR_A3_TEXTURESOURCES_BLACK0";
+			};
+			class Grey
+			{
+				displayName="$STR_A3_TEXTURESOURCES_GREY0";
+			};
+			class Blue: Purple
+			{
+				displayName="$STR_A3_TEXTURESOURCES_BLUE0";
+			};
+			class Green: Purple
+			{
+				displayName="$STR_A3_TEXTURESOURCES_GREEN0";
+			};
+			class Orange: Purple
+			{
+				displayName="$STR_A3_TEXTURESOURCES_ORANGE0";
+			};
+			class Camo: Purple
+			{
+				displayName="$STR_A3_RSCDISPLAYGARAGE_TAB_TEXTURESOURCES";
+			};
 		};
 		engineEffectSpeed=2;
 		leftEngineEffect="";

@@ -126,6 +126,7 @@ class CfgVehicles
 	class rhs_truck: Truck_F
 	{
 		icon="\rhsafrf\addons\rhs_gaz66\data\ico\icomap_GAZ66_CA.paa";
+		displayName="$STR_RHS_GAZ66";
 		side=0;
 		rhs_decalParameters[]=
 		{
@@ -320,11 +321,26 @@ class CfgVehicles
 		};
 		class textureSources
 		{
-			class standard;  //found empty after stripping
-			class camo: standard;  //found empty after stripping
-			class cdf: standard;  //found empty after stripping
-			class chdkz: standard;  //found empty after stripping
-			class rhs_sand: standard;  //found empty after stripping
+			class standard
+			{
+				displayName="Standard";
+			};
+			class camo: standard
+			{
+				displayName="3-Color Camo";
+			};
+			class cdf: standard
+			{
+				displayName="CDF";
+			};
+			class chdkz: standard
+			{
+				displayName="ChDKZ";
+			};
+			class rhs_sand: standard
+			{
+				displayName="Sand";
+			};
 		};
 		class HitPoints: HitPoints
 		{
@@ -417,6 +433,7 @@ class CfgVehicles
 		{
 			class rhs_decalNumber_type
 			{
+				displayName="Define font type of plate number";
 				tooltip="Define kind of font that will be drawn on vehicle.";
 				property="rhs_decalNumber_type";
 				control="Combo";
@@ -470,6 +487,7 @@ class CfgVehicles
 			class rhs_decalNumber
 			{
 				collapsed=1;
+				displayName="Set plate number";
 				tooltip="Set plate number. 4 numbers are required. If 0, random number will be generated";
 				property="rhs_decalNumber";
 				control="Edit";
@@ -479,6 +497,7 @@ class CfgVehicles
 			};
 			class rhs_decalArmy_type
 			{
+				displayName="Define large door roundel type";
 				tooltip="Decal type";
 				property="rhs_decalArmy_type";
 				control="Combo";
@@ -521,6 +540,7 @@ class CfgVehicles
 			};
 			class rhs_decalArmy
 			{
+				displayName="Set large door roundel symbol";
 				tooltip="Set large door roundel located on both sides. Usually used for army symbols. -1 leaves current symbol & 0 clears decal.";
 				property="rhs_decalArmy";
 				control="Edit";
@@ -530,18 +550,21 @@ class CfgVehicles
 			};
 			class rhs_decalPlatoon_type: rhs_decalArmy_type
 			{
+				displayName="Define small door roundel type";
 				property="rhs_decalPlatoon_type";
 				expression="_this setVariable ['%s', _value];";
 				defaultValue="0";
 			};
 			class rhs_decalPlatoon: rhs_decalArmy
 			{
+				displayName="Set small door roundel symbol";
 				tooltip="Define small door roundel located on both sides. Usually used for platoon symbols. -1 leaves current symbol & 0 clears decal.";
 				property="rhs_decalPlatoon";
 				expression="if(parseNumber _value >= 0)then{ [_this, [ [ 'Label', cTrucksGazRightPlatoonPlaces,  _this getVariable ['rhs_decalPlatoon_type','Army'],call compile _value] ] ] call rhs_fnc_decalsInit};";
 			};
 			class rhs_hideLightCover
 			{
+				displayName="Hide light covers";
 				property="rhs_hideLightCover";
 				control="CheckboxNumber";
 				expression="_this animate ['light_hide',_value,true]";
@@ -549,6 +572,7 @@ class CfgVehicles
 			};
 			class rhs_hidespare: rhs_hideLightCover
 			{
+				displayName="Remove spare wheel";
 				property="rhs_hidespare";
 				expression="_this animate ['spare_hide',_value,true]";
 			};
@@ -601,6 +625,7 @@ class CfgVehicles
 	};
 	class rhs_gaz66_flat_vmf: rhs_gaz66_vmf
 	{
+		displayName="$STR_RHS_GAZ66FLAT";
 		class Turrets;  //found empty after stripping
 		class VehicleTransport
 		{
@@ -669,6 +694,7 @@ class CfgVehicles
 	};
 	class rhs_gaz66o_vmf: rhs_gaz66_vmf
 	{
+		displayName="$STR_RHS_GAZ66OPEN";
 		soundAttenuationCargo[]={1,0};
 		class Turrets: Turrets
 		{
@@ -764,6 +790,7 @@ class CfgVehicles
 	};
 	class rhs_gaz66o_flat_vmf: rhs_gaz66o_vmf
 	{
+		displayName="GAZ-66 (Open/Flatbed)";
 		class Turrets;  //found empty after stripping
 		class VehicleTransport
 		{
@@ -832,6 +859,7 @@ class CfgVehicles
 	};
 	class rhs_gaz66_r142_base: rhs_gaz66_vmf
 	{
+		displayName="$STR_RHS_GAZ66R";
 		icon="\rhsafrf\addons\rhs_gaz66\data\ico\icomap_GAZ66_radio_CA.paa";
 		maxFordingDepth=1.2;
 		tf_range=10000;
@@ -841,6 +869,7 @@ class CfgVehicles
 		{
 			class rhs_radioDeploy
 			{
+				displayName="Deploy Mast";
 				tooltip="Deploys R-142N radio mast";
 				property="rhs_radioDeploy";
 				control="CheckboxNumber";
@@ -887,6 +916,7 @@ class CfgVehicles
 	{
 		icon="\rhsafrf\addons\rhs_gaz66\data\ico\icomap_GAZ66_repair_CA.paa";
 		memoryPointSupply="doplnovani";
+		displayName="$STR_RHS_GAZ66REP";
 		transportRepair=2000000000;
 		supplyRadius=6.8000002;
 		class Damage;  //found empty after stripping
@@ -920,6 +950,7 @@ class CfgVehicles
 	};
 	class rhs_gaz66_ap2_base: rhs_gaz66_vmf
 	{
+		displayName="$STR_RHS_GAZ66AP2";
 		icon="\rhsafrf\addons\rhs_gaz66\data\ico\icomap_GAZ66_med_CA.paa";
 		attendant=1;
 		memoryPointSupply="doplnovani";
@@ -955,6 +986,7 @@ class CfgVehicles
 	};
 	class rhs_gaz66_ammo_base: rhs_gaz66_vmf
 	{
+		displayName="$STR_RHS_GAZ66AMMO";
 		transportAmmo=30000;
 		supplyRadius=9.5;
 		memoryPointSupply="doplnovani";
@@ -990,6 +1022,7 @@ class CfgVehicles
 	};
 	class rhs_gaz66_zu23_base: rhs_gaz66_vmf
 	{
+		displayName="$STR_RHS_GAZ66_ZU23";
 		icon="\rhsafrf\addons\rhs_gaz66\data\ico\icomap_GAZ66_ammo_CA.paa";
 		class Damage;  //found empty after stripping
 		threat[]={0.60000002,0.1,0.60000002};

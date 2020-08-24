@@ -273,6 +273,7 @@ class CfgVehicles
 			};
 		};
 		attenuationEffectType="TankAttenuation";
+		displayName="$STR_RHS_T80B";
 		accuracy=0.2;
 		cost=1500000;
 		tf_range_api=45000;
@@ -305,17 +306,36 @@ class CfgVehicles
 		};
 		class textureSources
 		{
-			class standard;  //found empty after stripping
-			class r1: standard;  //found empty after stripping
-			class r2: standard;  //found empty after stripping
-			class r3: standard;  //found empty after stripping
-			class r4: standard;  //found empty after stripping
-			class r5: standard;  //found empty after stripping
+			class standard
+			{
+				displayName="Standard";
+			};
+			class r1: standard
+			{
+				displayName="#1";
+			};
+			class r2: standard
+			{
+				displayName="#2";
+			};
+			class r3: standard
+			{
+				displayName="#3";
+			};
+			class r4: standard
+			{
+				displayName="#4";
+			};
+			class r5: standard
+			{
+				displayName="#5";
+			};
 		};
 		class Attributes
 		{
 			class rhs_decalNumber_type
 			{
+				displayName="Define font type of plate number";
 				tooltip="Define kind of font that will be drawn on vehicle.";
 				property="rhs_decalNumber_type";
 				control="Combo";
@@ -369,6 +389,7 @@ class CfgVehicles
 			class rhs_decalNumber
 			{
 				collapsed=1;
+				displayName="Set side number";
 				tooltip="Set side number. 3 numbers are required. Type 0 to hide numbers complety & leave at -1 to get random number";
 				property="rhs_decalNumber";
 				control="Edit";
@@ -378,6 +399,7 @@ class CfgVehicles
 			};
 			class rhs_decalPlatoon_type
 			{
+				displayName="Define platoon symbol type";
 				tooltip="Decal type";
 				property="rhs_decalPlatoon_type";
 				control="Combo";
@@ -421,6 +443,7 @@ class CfgVehicles
 			};
 			class rhs_decalPlatoon
 			{
+				displayName="Set platoon symbol";
 				tooltip="Set platoon symbol located on turret front. Usually used for platoon symbols. -1 leaves current symbol & 0 clears decal.";
 				property="rhs_decalPlatoon";
 				control="Edit";
@@ -430,6 +453,7 @@ class CfgVehicles
 			};
 			class rhs_decalArmy_type: rhs_decalPlatoon_type
 			{
+				displayName="Define army symbol type";
 				property="rhs_decalArmy_type";
 				class values: values
 				{
@@ -443,12 +467,14 @@ class CfgVehicles
 			};
 			class rhs_decalArmy: rhs_decalPlatoon
 			{
+				displayName="Set army symbol";
 				tooltip="Define symbol located on gunner hatch. Usually used for army symbols. -1 leaves current symbol & 0 clears decal.";
 				property="rhs_decalArmy";
 				expression="if(parseNumber _value >= 0)then{ [_this, [ [ 'Label', cRHST80ArmSymPlaces,  _this getVariable ['rhs_decalArmy_type','Army'],call compile _value] ] ] call rhs_fnc_decalsInit};";
 			};
 			class rhs_decalHonor_type: rhs_decalPlatoon_type
 			{
+				displayName="Define honor symbol type";
 				property="rhs_decalHonor_type";
 				class values: values
 				{
@@ -462,12 +488,14 @@ class CfgVehicles
 			};
 			class rhs_decalHonor: rhs_decalPlatoon
 			{
+				displayName="Set honor symbol";
 				tooltip="Define symbol located on IR Lamp. Usually used for honor symbols. -1 leaves current symbol & 0 clears decal.";
 				property="rhs_decalHonor";
 				expression="if(parseNumber _value >= 0)then{ [_this, [ [ 'Label', cRHST80HnrSymPlaces,  _this getVariable ['rhs_decalHonor_type','Honor'],call compile _value] ] ] call rhs_fnc_decalsInit};";
 			};
 			class rhs_ammoslot_1_type
 			{
+				displayName="Ammo slot #1 type";
 				tooltip="Define type of shell for #1 slot [AP rounds]";
 				property="rhs_ammoslot_1_type";
 				control="Combo";
@@ -545,6 +573,7 @@ class CfgVehicles
 			};
 			class rhs_ammoslot_1
 			{
+				displayName="Ammo slot #1 count";
 				tooltip="Define number of rounds stored inside of type #1. Max 28. Leave -1 for default loadout";
 				property="rhs_ammoslot_1";
 				control="Edit";
@@ -554,6 +583,7 @@ class CfgVehicles
 			};
 			class rhs_ammoslot_2_type: rhs_ammoslot_1_type
 			{
+				displayName="Ammo slot #2 type";
 				tooltip="Define type of shell for #2 slot [HEAT rounds]";
 				property="rhs_ammoslot_2_type";
 				class values
@@ -604,11 +634,13 @@ class CfgVehicles
 			};
 			class rhs_ammoslot_2: rhs_ammoslot_1
 			{
+				displayName="Ammo slot #2 count";
 				tooltip="Define number of rounds stored inside of type #2. Max 28. Leave -1 for default loadout";
 				property="rhs_ammoslot_2";
 			};
 			class rhs_ammoslot_3_type: rhs_ammoslot_1_type
 			{
+				displayName="Ammo slot #3 type";
 				tooltip="Define type of shell for #3 slot [HE rounds]";
 				property="rhs_ammoslot_3_type";
 				class values
@@ -629,11 +661,13 @@ class CfgVehicles
 			};
 			class rhs_ammoslot_3: rhs_ammoslot_1
 			{
+				displayName="Ammo slot #3 count";
 				tooltip="Define number of rounds stored inside of type #3. Max 28. Leave -1 for default loadout";
 				property="rhs_ammoslot_3";
 			};
 			class rhs_ammoslot_4_type: rhs_ammoslot_1_type
 			{
+				displayName="Ammo slot #4 type";
 				tooltip="Define type of shell for #4 slot [ATGM rounds]";
 				property="rhs_ammoslot4_type";
 				class values
@@ -672,11 +706,13 @@ class CfgVehicles
 			};
 			class rhs_ammoslot_4: rhs_ammoslot_1
 			{
+				displayName="Ammo slot #4 count";
 				tooltip="Define number of rounds stored inside of type #4. Max 28. Leave -1 for default loadout";
 				property="rhs_ammoslot_4";
 			};
 			class sideskirt_unhide
 			{
+				displayName="Hide side skirt";
 				property="sideskirt_unhide";
 				control="CheckboxNumber";
 				expression="[_this,_value,'%s'] call rhs_fnc_setHabarEden";
@@ -684,29 +720,35 @@ class CfgVehicles
 			};
 			class fbskirt_unhide: sideskirt_unhide
 			{
+				displayName="Hide front bottom rubber skirt";
 				property="fbskirt_unhide";
 			};
 			class ftskirt_unhide: sideskirt_unhide
 			{
+				displayName="Hide front top rubber skirt";
 				property="ftskirt_unhide";
 			};
 			class log_unhide: sideskirt_unhide
 			{
+				displayName="Hide back log";
 				property="log_unhide";
 			};
 			class rhs_disableHabar: sideskirt_unhide
 			{
+				displayName="Disable randomized habar";
 				property="rhs_disableHabar";
 				expression="[_this,_value,'%s',_value] call rhs_fnc_setHabarEden";
 				defaultValue="0";
 			};
 			class rhs_snorkel: rhs_disableHabar
 			{
+				displayName="Mount snorkel";
 				property="rhs_snorkel";
 				expression="_this  animate ['snorkel_unhide',_value];_this  animate ['snorkel_unhide2',_value];_this animate ['snorkel_hide',1-_value];";
 			};
 			class rhs_searchlight: rhs_disableHabar
 			{
+				displayName="Close gunner searchlight";
 				property="rhs_searchlight";
 				control="Checkbox";
 				expression="[_this,_value] call rhs_fnc_t80_searchlightTexture ";
@@ -1364,6 +1406,7 @@ class CfgVehicles
 			class log_unhide: log_unhide;  //found empty after stripping
 			class kshield_unhide: sideskirt_unhide
 			{
+				displayName="Unhide commander shield";
 				expression="[_this,1-_value,'%s'] call rhs_fnc_setHabarEden";
 				property="kshield_unhide";
 			};
@@ -1374,6 +1417,7 @@ class CfgVehicles
 	};
 	class rhs_t80bk: rhs_t80b
 	{
+		displayName="$STR_RHS_T80BK";
 		hiddenSelectionsMaterials[]=
 		{
 			"rhsafrf\addons\rhs_t80\data\materials\hull_g.rvmat",
@@ -1434,6 +1478,7 @@ class CfgVehicles
 			class log_unhide: log_unhide;  //found empty after stripping
 			class kshield_unhide: sideskirt_unhide
 			{
+				displayName="Hide commander shield";
 				expression="[_this,_value,'%s'] call rhs_fnc_setHabarEden";
 				property="kshield_unhide";
 			};
@@ -1444,6 +1489,7 @@ class CfgVehicles
 	};
 	class rhs_t80bv: rhs_t80b
 	{
+		displayName="$STR_RHS_T80BV";
 		armor=550;
 		smokeLauncherGrenadeCount=6;
 		smokeLauncherVelocity=14;
@@ -1967,6 +2013,7 @@ class CfgVehicles
 			class log_unhide: log_unhide;  //found empty after stripping
 			class kshield_unhide: sideskirt_unhide
 			{
+				displayName="Unhide commander shield";
 				expression="[_this,1-_value,'%s'] call rhs_fnc_setHabarEden";
 				property="kshield_unhide";
 			};
@@ -1977,6 +2024,7 @@ class CfgVehicles
 	};
 	class rhs_t80bvk: rhs_t80bv
 	{
+		displayName="$STR_RHS_T80BVK";
 		hiddenSelectionsMaterials[]=
 		{
 			"rhsafrf\addons\rhs_t80\data\materials\hull_g.rvmat",
@@ -2043,6 +2091,7 @@ class CfgVehicles
 			class log_unhide: log_unhide;  //found empty after stripping
 			class kshield_unhide: sideskirt_unhide
 			{
+				displayName="Hide commander shield";
 				expression="[_this,_value,'%s'] call rhs_fnc_setHabarEden";
 				property="kshield_unhide";
 			};
@@ -2053,10 +2102,14 @@ class CfgVehicles
 	};
 	class rhs_t80: rhs_t80b
 	{
+		displayName="$STR_RHS_T80";
 		armor=500;
 		class textureSources: textureSources
 		{
-			class standard;  //found empty after stripping
+			class standard
+			{
+				displayName="Standard";
+			};
 		};
 		class Damage;  //found empty after stripping
 		class Turrets: Turrets
@@ -2232,6 +2285,7 @@ class CfgVehicles
 			class log_unhide: log_unhide;  //found empty after stripping
 			class kshield_unhide: sideskirt_unhide
 			{
+				displayName="Hide commander shield";
 				expression="[_this,_value,'%s'] call rhs_fnc_setHabarEden";
 				property="kshield_unhide";
 			};
@@ -2242,6 +2296,7 @@ class CfgVehicles
 	};
 	class rhs_t80a: rhs_t80bv
 	{
+		displayName="$STR_RHS_T80A";
 		accuracy=0.80000001;
 		armor=600;
 		simulation="tankX";
@@ -2393,7 +2448,10 @@ class CfgVehicles
 		};
 		class textureSources: textureSources
 		{
-			class standard;  //found empty after stripping
+			class standard
+			{
+				displayName="Standard";
+			};
 		};
 		class Damage;  //found empty after stripping
 		class Turrets: Turrets
@@ -2944,17 +3002,39 @@ class CfgVehicles
 				maxCompression=0;
 			};
 		};
+		displayName="$STR_RHS_T80U";
 		enableGPS=1;
 		reportOwnPosition=1;
 		class textureSources: textureSources
 		{
-			class standard;  //found empty after stripping
-			class tricolor: standard;  //found empty after stripping
-			class r1: standard;  //found empty after stripping
-			class r2: standard;  //found empty after stripping
-			class r3: standard;  //found empty after stripping
-			class r4: standard;  //found empty after stripping
-			class r5: standard;  //found empty after stripping
+			class standard
+			{
+				displayName="Standard";
+			};
+			class tricolor: standard
+			{
+				displayName="3-Color Camo";
+			};
+			class r1: standard
+			{
+				displayName="#1";
+			};
+			class r2: standard
+			{
+				displayName="#2";
+			};
+			class r3: standard
+			{
+				displayName="#3";
+			};
+			class r4: standard
+			{
+				displayName="#4";
+			};
+			class r5: standard
+			{
+				displayName="#5";
+			};
 		};
 		class Damage;  //found empty after stripping
 		class Turrets: Turrets
@@ -3726,6 +3806,7 @@ class CfgVehicles
 			class rhs_searchlight: rhs_searchlight;  //found empty after stripping
 			class rhs_hideNSVT
 			{
+				displayName="Hide NSVT";
 				property="rhs_hideNSVT";
 				control="CheckboxNumber";
 				expression="_this animate ['nsvtHide',_value,true]";
@@ -3746,6 +3827,7 @@ class CfgVehicles
 	};
 	class rhs_t80uk: rhs_t80u
 	{
+		displayName="T-80UK";
 		rhs_aps_shtora=1;
 		class EventHandlers: EventHandlers
 		{
@@ -3758,13 +3840,34 @@ class CfgVehicles
 		lockDetectionSystem=4;
 		class textureSources: textureSources
 		{
-			class standard;  //found empty after stripping
-			class tricolor: standard;  //found empty after stripping
-			class r1: standard;  //found empty after stripping
-			class r2: standard;  //found empty after stripping
-			class r3: standard;  //found empty after stripping
-			class r4: standard;  //found empty after stripping
-			class r5: standard;  //found empty after stripping
+			class standard
+			{
+				displayName="Standard";
+			};
+			class tricolor: standard
+			{
+				displayName="3-Color Camo";
+			};
+			class r1: standard
+			{
+				displayName="#1";
+			};
+			class r2: standard
+			{
+				displayName="#2";
+			};
+			class r3: standard
+			{
+				displayName="#3";
+			};
+			class r4: standard
+			{
+				displayName="#4";
+			};
+			class r5: standard
+			{
+				displayName="#5";
+			};
 		};
 		class HitPoints: HitPoints
 		{
@@ -4547,7 +4650,10 @@ class CfgVehicles
 			class rhs_hideNSVT: rhs_hideNSVT;  //found empty after stripping
 		};
 	};
-	class rhs_t80u45m: rhs_t80u;  //found empty after stripping
+	class rhs_t80u45m: rhs_t80u
+	{
+		displayName="$STR_RHS_T80U45M";
+	};
 	class rhs_t80ue1: rhs_t80a
 	{
 		rhs_hasSnorkel=0;
@@ -4702,15 +4808,37 @@ class CfgVehicles
 				maxCompression=0;
 			};
 		};
+		displayName="$STR_RHS_T80UE1";
 		class textureSources: textureSources
 		{
-			class standard;  //found empty after stripping
-			class tricolor: standard;  //found empty after stripping
-			class r1: standard;  //found empty after stripping
-			class r2: standard;  //found empty after stripping
-			class r3: standard;  //found empty after stripping
-			class r4: standard;  //found empty after stripping
-			class r5: standard;  //found empty after stripping
+			class standard
+			{
+				displayName="Standard";
+			};
+			class tricolor: standard
+			{
+				displayName="3-Color Camo";
+			};
+			class r1: standard
+			{
+				displayName="#1";
+			};
+			class r2: standard
+			{
+				displayName="#2";
+			};
+			class r3: standard
+			{
+				displayName="#3";
+			};
+			class r4: standard
+			{
+				displayName="#4";
+			};
+			class r5: standard
+			{
+				displayName="#5";
+			};
 		};
 		class Turrets: Turrets
 		{
@@ -5524,15 +5652,37 @@ class CfgVehicles
 	};
 	class rhs_t80um: rhs_t80u
 	{
+		displayName="$STR_RHS_T80UM";
 		class textureSources: textureSources
 		{
-			class standard;  //found empty after stripping
-			class tricolor: standard;  //found empty after stripping
-			class r1: standard;  //found empty after stripping
-			class r2: standard;  //found empty after stripping
-			class r3: standard;  //found empty after stripping
-			class r4: standard;  //found empty after stripping
-			class r5: standard;  //found empty after stripping
+			class standard
+			{
+				displayName="Standard";
+			};
+			class tricolor: standard
+			{
+				displayName="3-Color Camo";
+			};
+			class r1: standard
+			{
+				displayName="#1";
+			};
+			class r2: standard
+			{
+				displayName="#2";
+			};
+			class r3: standard
+			{
+				displayName="#3";
+			};
+			class r4: standard
+			{
+				displayName="#4";
+			};
+			class r5: standard
+			{
+				displayName="#5";
+			};
 		};
 		class HitPoints: HitPoints
 		{
@@ -5798,7 +5948,11 @@ class CfgVehicles
 	class rhs_Wreck_T80_turret_F: ThingX
 	{
 		reversed=1;
+		displayName="T-80 Wreck (Turret)";
 		icon="iconObject_1x2";
 	};
-	class rhs_Wreck_T80u_turret_F: rhs_Wreck_T80_turret_F;  //found empty after stripping
+	class rhs_Wreck_T80u_turret_F: rhs_Wreck_T80_turret_F
+	{
+		displayName="T-80U Wreck (Turret)";
+	};
 };

@@ -125,6 +125,7 @@ class CfgVehicles
 			"['Number', cBTR3NumberPlaces, 'Default']",
 			"['Label', cBTRPlnSymPlaces, 'Army',[3,1]]"
 		};
+		displayName="$STR_RHS_BTR70_Name";
 		canHideDriver=0;
 		normalSpeedForwardCoef=0.60000002;
 		slowSpeedForwardCoef=0.44999999;
@@ -295,6 +296,7 @@ class CfgVehicles
 		{
 			class rhs_decalNumber_type
 			{
+				displayName="Define font type of side number (3 digits)";
 				tooltip="Define kind of font that will be drawn on vehicle. 3 digits";
 				property="rhs_decalNumber_type";
 				control="Combo";
@@ -353,6 +355,7 @@ class CfgVehicles
 			class rhs_decalNumber
 			{
 				collapsed=1;
+				displayName="Set side number (3 digits)";
 				tooltip="Set side number. 4 numbers are required. Type 0 to hide numbers complety & leave at -1 to get random number";
 				property="rhs_decalNumber";
 				control="Edit";
@@ -362,42 +365,49 @@ class CfgVehicles
 			};
 			class rhs_decalNumber_type2: rhs_decalNumber_type
 			{
+				displayName="Define font type of side number (2 digits)";
 				tooltip="Define kind of font that will be drawn on vehicle. 2 digits";
 				property="rhs_decalNumber_type2";
 				expression="if(_value != 'NoChange')then{ _this setVariable ['%s', _value];[_this,[['Number', cBTR2NumberPlaces, _value]]] call rhs_fnc_decalsInit}";
 			};
 			class rhs_decalNumber2: rhs_decalNumber
 			{
+				displayName="Set side number (2 digits)";
 				tooltip="Set side number. 2 numbers are required. Hides on 0";
 				property="rhs_decalNumber2";
 				expression="if( _value >= 0)then{if( _value == 0)then{{[_this setobjectTexture [_x,'a3\data_f\clear_empty.paa']]}foreach cBTR2NumberPlaces}else{[_this, [['Number', cBTR2NumberPlaces, _this getVariable ['rhs_decalNumber_type2','Default'], _value] ] ] call rhs_fnc_decalsInit}};";
 			};
 			class rhs_decalNumber_type3: rhs_decalNumber_type
 			{
+				displayName="Define font type of side number (4 digits)";
 				tooltip="Define kind of font that will be drawn on vehicle. 4 digits";
 				property="rhs_decalNumber_type3";
 				expression="if(_value != 'NoChange')then{ _this setVariable ['%s', _value];[_this,[['Number', cBTR4NumberPlaces, _value]]] call rhs_fnc_decalsInit}";
 			};
 			class rhs_decalNumber3: rhs_decalNumber
 			{
+				displayName="Set side number (4 digits)";
 				tooltip="Set side number. 4 numbers are required. Hides on 0";
 				property="rhs_decalNumber3";
 				expression="if( _value >= 0)then{if( _value == 0)then{{[_this setobjectTexture [_x,'a3\data_f\clear_empty.paa']]}foreach cBTR4NumberPlaces}else{[_this, [['Number', cBTR4NumberPlaces, _this getVariable ['rhs_decalNumber_type3','Default'], _value] ] ] call rhs_fnc_decalsInit}};";
 			};
 			class rhs_decalNumber_type4: rhs_decalNumber_type
 			{
+				displayName="Define font type of side number (4 digits CDF)";
 				tooltip="Define kind of font that will be drawn on vehicle. 4 digits, CDF style numbering";
 				property="rhs_decalNumber_type4";
 				expression="if(_value != 'NoChange')then{ _this setVariable ['%s', _value];[_this,[['Number', cBTRCDF4NumberPlaces, _value]]] call rhs_fnc_decalsInit}";
 			};
 			class rhs_decalNumber4: rhs_decalNumber
 			{
+				displayName="Set side number (4 digits CDF)";
 				tooltip="Set side number. 4 numbers are required. Hides on 0";
 				property="rhs_decalNumber4";
 				expression="if( _value >= 0)then{if( _value == 0)then{{[_this setobjectTexture [_x,'a3\data_f\clear_empty.paa']]}foreach cBTRCDF4NumberPlaces}else{[_this, [['Number', cBTRCDF4NumberPlaces, _this getVariable ['rhs_decalNumber_type4','CDF'], _value] ] ] call rhs_fnc_decalsInit}};";
 			};
 			class rhs_decalPlatoon_type
 			{
+				displayName="Define platoon symbol type";
 				tooltip="Decal type";
 				property="rhs_decalPlatoon_type";
 				control="Combo";
@@ -441,6 +451,7 @@ class CfgVehicles
 			};
 			class rhs_decalPlatoon
 			{
+				displayName="Set platoon symbol";
 				tooltip="Set platoon symbol located on all 4 sides of vehicle. Usually used for platoon symbols. -1 leaves current symbol & 0 clears decal.";
 				property="rhs_decalPlatoon";
 				control="Edit";
@@ -450,6 +461,7 @@ class CfgVehicles
 			};
 			class rhs_decalArmy_type: rhs_decalPlatoon_type
 			{
+				displayName="Define back army symbol type";
 				property="rhs_decalArmy_type";
 				class values: values
 				{
@@ -463,12 +475,14 @@ class CfgVehicles
 			};
 			class rhs_decalArmy: rhs_decalPlatoon
 			{
+				displayName="Set back army symbol";
 				tooltip="Define symbol located on right back side of vehicle hull. Usually used for army symbols. -1 leaves current symbol & 0 clears decal.";
 				property="rhs_decalArmy";
 				expression="if(parseNumber _value >= 0)then{ [_this, [ [ 'Label', cBTRBackArmSymPlaces,  _this getVariable ['rhs_decalArmy_type','Army'],call compile _value] ] ] call rhs_fnc_decalsInit};";
 			};
 			class rhs_decalRightTurret_type: rhs_decalArmy_type
 			{
+				displayName="Define right turret side symbol type";
 				property="rhs_decalRightTurret_type";
 				class values: values
 				{
@@ -482,62 +496,74 @@ class CfgVehicles
 			};
 			class rhs_decalRightTurret: rhs_decalPlatoon
 			{
+				displayName="Set right turret side symbol";
 				tooltip="Define right turret side symbol. Usually used for honor symbols. -1 leaves current symbol & 0 clears decal.";
 				property="rhs_decalRightTurret";
 				expression="if(parseNumber _value >= 0)then{ [_this, [ [ 'Label', cBTRRightGvardSymPlaces,  _this getVariable ['rhs_decalRightTurret_type','Honor'],call compile _value] ] ] call rhs_fnc_decalsInit};";
 			};
 			class rhs_decalLeftTurret_type: rhs_decalRightTurret_type
 			{
+				displayName="Define left turret symbol type";
 				property="rhs_decalLeftTurret_type";
 			};
 			class rhs_decalLeftTurret: rhs_decalRightTurret
 			{
+				displayName="Set left turret symbol";
 				tooltip="Define symbol located on left side of vehicle turret. Usually used for honor symbols. -1 leaves current symbol & 0 clears decal.";
 				property="rhs_decalLeftTurret";
 				expression="if(parseNumber _value >= 0)then{ [_this, [ [ 'Label', cBTRLeftGvardSymPlaces,  _this getVariable ['rhs_decalLeftTurret_type','Honor'],call compile _value] ] ] call rhs_fnc_decalsInit};";
 			};
 			class rhs_decalFront_type: rhs_decalArmy_type
 			{
+				displayName="Define front side roundels type";
 				property="rhs_decalFront_type";
 			};
 			class rhs_decalFront: rhs_decalPlatoon
 			{
+				displayName="Set front side roundels";
 				tooltip="Define symbol located on front of vehicle hull. Usually used for OMON symbols. -1 leaves current symbol & 0 clears decal.";
 				property="rhs_decalFront";
 				expression="if(parseNumber _value >= 0)then{ [_this, [ [ 'Label', cBTROMONSymbolPlaces,  _this getVariable ['rhs_decalFront_type','Army'],call compile _value] ] ] call rhs_fnc_decalsInit};";
 			};
 			class rhs_decalLowerFront_type: rhs_decalArmy_type
 			{
+				displayName="Define front hull symbol type";
 				property="rhs_decalLowerFront_type";
 			};
 			class rhs_decalLowerFront: rhs_decalPlatoon
 			{
+				displayName="Set front hull symbol";
 				tooltip="Define symbol located on front of vehicle hull. Usually used for army symbols. -1 leaves current symbol & 0 clears decal.";
 				property="rhs_decalLowerFront";
 				expression="if(parseNumber _value >= 0)then{ [_this, [ [ 'Label', cBTRFrontPlatePlaces,  _this getVariable ['rhs_decalLowerFront_type','Army'],call compile _value] ] ] call rhs_fnc_decalsInit};";
 			};
 			class rhs_decalFlag_type: rhs_decalArmy_type
 			{
+				displayName="Define flag/side marking type";
 				property="rhs_decalFlag_type";
 			};
 			class rhs_decalFlag: rhs_decalPlatoon
 			{
+				displayName="Set flag/side marking";
 				tooltip="Define symbol located on front of vehicle hull. Usually used for navy flag symbols. -1 leaves current symbol & 0 clears decal.";
 				property="rhs_decalFlag";
 				expression="if(parseNumber _value >= 0)then{ [_this, [ [ 'Label', cBTRFlagSymPlaces,  _this getVariable ['rhs_decalFlag_type','Army'],call compile _value] ] ] call rhs_fnc_decalsInit};";
 			};
 			class rhs_decalVV_type: rhs_decalPlatoon_type
 			{
+				displayName="Define VV letter type";
 				property="rhs_decalVV_type";
 			};
 			class rhs_decalVV: rhs_decalPlatoon
 			{
+				displayName="Set VV letter";
 				tooltip="Define symbol next to VV 2 digits numbering system decal. Usually used for VV T letter for numbering system (code 13). -1 leaves current symbol & 0 clears decal.";
 				property="rhs_decalVV";
 				expression="if(parseNumber _value >= 0)then{ [_this, [ [ 'Label', cBTRVVLetterSymPlaces,  _this getVariable ['rhs_decalVV_type','Platoon'],call compile _value] ] ] call rhs_fnc_decalsInit};";
 			};
 			class crate_l1_unhide
 			{
+				displayName="hide l1 crate";
 				property="crate_l1_unhide";
 				control="CheckboxNumber";
 				expression="[_this,_value,'%s'] call rhs_fnc_setHabarEden";
@@ -545,101 +571,125 @@ class CfgVehicles
 			};
 			class crate_l2_unhide: crate_l1_unhide
 			{
+				displayName="Hide l2 crate";
 				property="crate_l2_unhide";
 			};
 			class crate_l3_unhide: crate_l1_unhide
 			{
+				displayName="Hide l3 crate";
 				property="crate_l3_unhide";
 			};
 			class crate_l4_unhide: crate_l1_unhide
 			{
+				displayName="Hide l4 crate";
 				property="crate_l4_unhide";
 			};
 			class crate_r1_unhide: crate_l1_unhide
 			{
+				displayName="Hide r1 crate";
 				property="crate_r1_unhide";
 			};
 			class crate_r2_unhide: crate_l1_unhide
 			{
+				displayName="Hide r2 crate";
 				property="crate_r2_unhide";
 			};
 			class crate_r3_unhide: crate_l1_unhide
 			{
+				displayName="Hide r3 crate";
 				property="crate_r3_unhide";
 			};
 			class crate_r4_unhide: crate_l1_unhide
 			{
+				displayName="Hide r4 crate";
 				property="crate_r4_unhide";
 			};
 			class water_1_unhide: crate_l1_unhide
 			{
+				displayName="Hide water tank 1";
 				property="water_1_unhide";
 			};
 			class water_2_unhide: crate_l1_unhide
 			{
+				displayName="Hide water tank 2";
 				property="water_2_unhide";
 			};
 			class wheel_1_unhide: crate_l1_unhide
 			{
+				displayName="Hide spare wheel 1";
 				property="wheel_1_unhide";
 			};
 			class wheel_2_unhide: crate_l1_unhide
 			{
+				displayName="Hide spare wheel 2";
 				property="wheel_2_unhide";
 			};
 			class rhs_disableHabar: crate_l1_unhide
 			{
+				displayName="Disable habar";
 				property="rhs_disableHabar";
 				expression="[_this,_value,'%s',_value] call rhs_fnc_setHabarEden";
 				defaultValue="0";
 			};
 			class dHatch: rhs_disableHabar
 			{
+				displayName="Open driver top hatch";
 				property="dHatch";
 				expression="_this animateDoor ['%s',_value,true]";
 			};
 			class cHatch: dHatch
 			{
+				displayName="Open commander top hatch";
 				property="cHatch";
 			};
 			class l_door: dHatch
 			{
+				displayName="Open left door";
 				property="l_door";
 			};
 			class r_door: dHatch
 			{
+				displayName="Open right door";
 				property="r_door";
 			};
 			class windows: dHatch
 			{
+				displayName="Open firing ports";
 				property="windows";
 			};
 			class t_door_1: dHatch
 			{
+				displayName="Open top hatch 1";
 				property="t_door_1";
 			};
 			class t_door_2: dHatch
 			{
+				displayName="Open top hatch 2";
 				property="t_door_2";
 			};
 			class engineHatches: dHatch
 			{
+				displayName="Open engine hatches";
 				property="engineHatches";
 			};
 			class propDoor: dHatch
 			{
+				displayName="Open propulsion cover";
 				property="propDoor";
 			};
 			class driverViewHatch: dHatch
 			{
+				displayName="Open driver view hatch";
 				property="driverViewHatch";
 			};
 			class commanderViewHatch: dHatch
 			{
+				displayName="Open commander view hatch";
 				property="commanderViewHatch";
 			};
 			class rhs_externalMount: rhs_disableHabar
 			{
+				displayName="Disable external mount";
 				property="rhs_externalMount";
 				control="Checkbox";
 				expression="[_this,_value] call rhs_fnc_lockTop";
@@ -1316,10 +1366,12 @@ class CfgVehicles
 		};
 		driverRightLegAnimName="pedalR";
 		driverLeftLegAnimName="pedalL";
+		displayName="$STR_RHS_BTR70_Name";
 		class textureSources
 		{
 			class standard
 			{
+				displayName="Standard";
 				factions[]=
 				{
 					"rhs_faction_msv",
@@ -1329,7 +1381,10 @@ class CfgVehicles
 					"rhs_faction_vv"
 				};
 			};
-			class chdkz;  //found empty after stripping
+			class chdkz
+			{
+				displayName="CHDKZ";
+			};
 		};
 	};
 	class rhs_btr70_vdv: rhs_btr70_vmf
@@ -1698,11 +1753,13 @@ class CfgVehicles
 			};
 			class RR3: RR2;  //found empty after stripping
 		};
+		displayName="$STR_RHS_BTR80_Name";
 		class Damage;  //found empty after stripping
 		class textureSources
 		{
 			class standard
 			{
+				displayName="Standard";
 				factions[]=
 				{
 					"rhs_faction_msv",
@@ -1714,6 +1771,7 @@ class CfgVehicles
 			};
 			class tricolourhard
 			{
+				displayName="Tri-Colour (hard-edge)";
 				factions[]=
 				{
 					"rhs_faction_msv",
@@ -1725,6 +1783,7 @@ class CfgVehicles
 			};
 			class tricolourparade
 			{
+				displayName="Tri-Colour (parade)";
 				factions[]=
 				{
 					"rhs_faction_msv",
@@ -1734,7 +1793,10 @@ class CfgVehicles
 					"rhs_faction_vv"
 				};
 			};
-			class rhs_sand;  //found empty after stripping
+			class rhs_sand
+			{
+				displayName="Sand";
+			};
 		};
 		class Attributes: Attributes
 		{
@@ -1811,13 +1873,23 @@ class CfgVehicles
 	};
 	class rhs_btr80a_msv: rhs_btr80_msv
 	{
+		displayName="$STR_RHS_BTR80A_Name";
 		weaponsGroup1=128;
 		weaponsGroup4=64;
 		class textureSources
 		{
-			class standard;  //found empty after stripping
-			class tricolourhard;  //found empty after stripping
-			class rhs_sand;  //found empty after stripping
+			class standard
+			{
+				displayName="Standard";
+			};
+			class tricolourhard
+			{
+				displayName="Tri-Colour (hard-edge)";
+			};
+			class rhs_sand
+			{
+				displayName="Sand";
+			};
 		};
 		class Turrets: Turrets
 		{

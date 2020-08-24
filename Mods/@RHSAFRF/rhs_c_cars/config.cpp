@@ -366,6 +366,7 @@ class CfgVehicles
 		{
 			class standard
 			{
+				displayName="Standard";
 				factions[]=
 				{
 					"rhs_faction_vmf",
@@ -374,12 +375,16 @@ class CfgVehicles
 					"rhs_faction_vv"
 				};
 			};
-			class Camo: standard;  //found empty after stripping
+			class Camo: standard
+			{
+				displayName="Camo";
+			};
 		};
 		class Attributes
 		{
 			class rhs_decalNumber_type
 			{
+				displayName="Define font type of plate number";
 				tooltip="Define kind of font that will be drawn on vehicle.";
 				property="rhs_decalNumber_type";
 				control="Combo";
@@ -433,6 +438,7 @@ class CfgVehicles
 			class rhs_decalNumber
 			{
 				collapsed=1;
+				displayName="Set plate number";
 				tooltip="Set plate number. 4 numbers are required. If 0, random number will be generated";
 				property="rhs_decalNumber";
 				control="Edit";
@@ -442,6 +448,7 @@ class CfgVehicles
 			};
 			class rhs_decalArmy_type
 			{
+				displayName="Define large door roundel type";
 				tooltip="Decal type";
 				property="rhs_decalArmy_type";
 				control="Combo";
@@ -484,6 +491,7 @@ class CfgVehicles
 			};
 			class rhs_decalArmy
 			{
+				displayName="Set large door roundel symbol";
 				tooltip="Set large door roundel located on both sides. Usually used for army symbols. -1 leaves current symbol & 0 clears decal.";
 				property="rhs_decalArmy";
 				control="Edit";
@@ -493,18 +501,21 @@ class CfgVehicles
 			};
 			class rhs_decalPlatoon_type: rhs_decalArmy_type
 			{
+				displayName="Define small door roundel type";
 				property="rhs_decalPlatoon_type";
 				expression="_this setVariable ['%s', _value];";
 				defaultValue="0";
 			};
 			class rhs_decalPlatoon: rhs_decalArmy
 			{
+				displayName="Set small door roundel symbol";
 				tooltip="Define small door roundel located on both sides. Usually used for platoon symbols. -1 leaves current symbol & 0 clears decal.";
 				property="rhs_decalPlatoon";
 				expression="if(parseNumber _value >= 0)then{ [_this, [ [ 'Label', cDecalsTigrRightPlatoonPlaces,  _this getVariable ['rhs_decalPlatoon_type','Army'],call compile _value] ] ] call rhs_fnc_decalsInit};";
 			};
 			class rhs_hidespare
 			{
+				displayName="Remove spare wheel";
 				property="rhs_hidespare";
 				control="CheckboxNumber";
 				expression="_this animate ['spare_hide',_value,true]";
@@ -512,18 +523,22 @@ class CfgVehicles
 			};
 			class Door_LF: rhs_hidespare
 			{
+				displayName="Open front left door";
 				property="Door_LF";
 				expression="_this animateDoor ['%s',_value,true]";
 			};
 			class Door_RF: Door_LF
 			{
+				displayName="Open front right door";
 				property="Door_RF";
 			};
 			class Door_Rear: Door_LF
 			{
+				displayName="Open rear doors";
 				property="Door_Rear";
 			};
 		};
+		displayName="$STR_RHS_GAZ233011";
 		hideProxyInCombat=1;
 		driverIsCommander=1;
 		enableGPS=0;
@@ -697,7 +712,10 @@ class CfgVehicles
 			"['Label', cDecalsTigrRightArmyPlaces, 'Army', [6,1]]"
 		};
 	};
-	class rhs_tigr_3camo_vdv: rhs_tigr_base;  //found empty after stripping
+	class rhs_tigr_3camo_vdv: rhs_tigr_base
+	{
+		displayName="$STR_RHS_GAZ233011_3CAMO";
+	};
 	class rhs_tigr_3camo_vmf: rhs_tigr_3camo_vdv
 	{
 		rhs_decalParameters[]=
@@ -724,6 +742,7 @@ class CfgVehicles
 	};
 	class rhs_tigr_ffv_vdv: rhs_tigr_vdv
 	{
+		displayName="$STR_RHS_GAZ233011_HATCH";
 		class Turrets: Turrets
 		{
 			class CargoTurret_02: CargoTurret_02
@@ -756,7 +775,10 @@ class CfgVehicles
 			"['Label', cDecalsTigrRightArmyPlaces, 'Army', [6,1]]"
 		};
 	};
-	class rhs_tigr_ffv_3camo_vdv: rhs_tigr_ffv_vdv;  //found empty after stripping
+	class rhs_tigr_ffv_3camo_vdv: rhs_tigr_ffv_vdv
+	{
+		displayName="$STR_RHS_GAZ233011_HATCH_3CAMO";
+	};
 	class rhs_tigr_ffv_3camo_vmf: rhs_tigr_ffv_3camo_vdv
 	{
 		rhs_decalParameters[]=
@@ -783,6 +805,7 @@ class CfgVehicles
 	};
 	class rhs_tigr_sts_vdv: rhs_tigr_vdv
 	{
+		displayName="$STR_RHS_GAZ233014";
 		hideProxyInCombat=0;
 		magazines[]=
 		{
@@ -1005,7 +1028,10 @@ class CfgVehicles
 			class AGS_Turret: AGS_Turret;  //found empty after stripping
 		};
 	};
-	class rhs_tigr_sts_3camo_vdv: rhs_tigr_sts_vdv;  //found empty after stripping
+	class rhs_tigr_sts_3camo_vdv: rhs_tigr_sts_vdv
+	{
+		displayName="$STR_RHS_GAZ233014_3CAMO";
+	};
 	class rhs_tigr_sts_3camo_vmf: rhs_tigr_sts_3camo_vdv
 	{
 		rhs_decalParameters[]=
@@ -1181,6 +1207,7 @@ class CfgVehicles
 				maxHandBrakeTorque=20000;
 			};
 		};
+		displayName="$STR_RHS_GAZ233114";
 		weapons[]=
 		{
 			"TruckHorn",
@@ -1231,7 +1258,10 @@ class CfgVehicles
 		};
 		class Turrets: Turrets;  //found empty after stripping
 	};
-	class rhs_tigr_m_3camo_vdv: rhs_tigr_m_vdv;  //found empty after stripping
+	class rhs_tigr_m_3camo_vdv: rhs_tigr_m_vdv
+	{
+		displayName="$STR_RHS_GAZ233114_3CAMO";
+	};
 	class rhs_tigr_m_3camo_vmf: rhs_tigr_m_3camo_vdv
 	{
 		rhs_decalParameters[]=

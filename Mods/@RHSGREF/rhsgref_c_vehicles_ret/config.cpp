@@ -513,9 +513,18 @@ class CfgVehicles
 	{
 		class textureSources
 		{
-			class CDF;  //found empty after stripping
-			class UN;  //found empty after stripping
-			class CHDKZ;  //found empty after stripping
+			class CDF
+			{
+				displayName="CDF";
+			};
+			class UN
+			{
+				displayName="UN";
+			};
+			class CHDKZ
+			{
+				displayName="CHDKZ";
+			};
 		};
 	};
 	class rhs_zil131_open_base: rhs_zil131_base;  //found empty after stripping
@@ -539,8 +548,14 @@ class CfgVehicles
 	{
 		class textureSources
 		{
-			class CDF;  //found empty after stripping
-			class CHDKZ;  //found empty after stripping
+			class CDF
+			{
+				displayName="CDF";
+			};
+			class CHDKZ
+			{
+				displayName="CHDKZ";
+			};
 		};
 		class EventHandlers;
 	};
@@ -549,13 +564,34 @@ class CfgVehicles
 	{
 		class textureSources
 		{
-			class CDF;  //found empty after stripping
-			class UN;  //found empty after stripping
-			class NAPA;  //found empty after stripping
-			class African;  //found empty after stripping
-			class Belarusian;  //found empty after stripping
-			class NVA;  //found empty after stripping
-			class Takistan;  //found empty after stripping
+			class CDF
+			{
+				displayName="CDF";
+			};
+			class UN
+			{
+				displayName="UN";
+			};
+			class NAPA
+			{
+				displayName="NAPA";
+			};
+			class African
+			{
+				displayName="African";
+			};
+			class Belarusian
+			{
+				displayName="Belarusian";
+			};
+			class NVA
+			{
+				displayName="NVA";
+			};
+			class Takistan
+			{
+				displayName="Takistan";
+			};
 		};
 		class EventHandlers;
 	};
@@ -566,7 +602,10 @@ class CfgVehicles
 	{
 		class textureSources
 		{
-			class CDF;  //found empty after stripping
+			class CDF
+			{
+				displayName="CDF";
+			};
 		};
 	};
 	class rhs_bmd1: rhs_bmd1_base;  //found empty after stripping
@@ -578,7 +617,10 @@ class CfgVehicles
 	{
 		class textureSources
 		{
-			class CDF;  //found empty after stripping
+			class CDF
+			{
+				displayName="CDF";
+			};
 		};
 	};
 	class rhs_bmd2: rhs_bmd2_base;  //found empty after stripping
@@ -587,16 +629,23 @@ class CfgVehicles
 	{
 		class textureSources
 		{
-			class CDF;  //found empty after stripping
+			class CDF
+			{
+				displayName="CDF";
+			};
 		};
 	};
 	class rhs_2s1tank_base: Tank_F
 	{
 		class TextureSources
 		{
-			class CDF;  //found empty after stripping
+			class CDF
+			{
+				displayName="CDF";
+			};
 			class ChDKZ
 			{
+				displayName="ChDKZ";
 				materials[]=
 				{
 					"rhsgref\addons\rhsgref_vehicles_ret\data\chdkz\rhs_2s1_chdkz_hull.rvmat",
@@ -639,7 +688,10 @@ class CfgVehicles
 	{
 		class textureSources
 		{
-			class CDF;  //found empty after stripping
+			class CDF
+			{
+				displayName="CDF";
+			};
 		};
 		class EventHandlers;
 	};
@@ -658,7 +710,10 @@ class CfgVehicles
 		};
 		class textureSources
 		{
-			class RHS_CDF;  //found empty after stripping
+			class RHS_CDF
+			{
+				displayName="CDF";
+			};
 		};
 		class Attributes
 		{
@@ -712,7 +767,10 @@ class CfgVehicles
 		};
 		class textureSources
 		{
-			class RHS_CDF;  //found empty after stripping
+			class RHS_CDF
+			{
+				displayName="CDF";
+			};
 		};
 	};
 	class rhs_t80bv: rhs_t80b
@@ -730,7 +788,10 @@ class CfgVehicles
 		};
 		class textureSources
 		{
-			class RHS_CDF;  //found empty after stripping
+			class RHS_CDF
+			{
+				displayName="CDF";
+			};
 		};
 	};
 	class rhsusf_m113tank_base: APC_Tracked_02_base_F;  //found empty after stripping
@@ -865,6 +926,7 @@ class CfgVehicles
 		{
 			class RHS_CDF1
 			{
+				displayName="CDF";
 				factions[]=
 				{
 					"rhsgref_faction_cdf_air",
@@ -879,6 +941,7 @@ class CfgVehicles
 			};
 			class RHS_CDF2
 			{
+				displayName="CDF (Summer)";
 				factions[]=
 				{
 					"rhsgref_faction_cdf_air",
@@ -887,6 +950,7 @@ class CfgVehicles
 			};
 			class RHS_CDF3
 			{
+				displayName="CDF (Winter)";
 				factions[]=
 				{
 					"rhsgref_faction_cdf_air",
@@ -895,6 +959,7 @@ class CfgVehicles
 			};
 			class RHS_TKA
 			{
+				displayName="Takistan";
 				factions[]=
 				{
 					""
@@ -997,6 +1062,7 @@ class CfgVehicles
 	};
 	class rhsgref_cdf_ural: RHS_Ural_Civ_Base
 	{
+		displayName="$STR_RHS_URAL4320_NAME";
 		side=2;
 		rhs_decalParameters[]=
 		{
@@ -1005,6 +1071,7 @@ class CfgVehicles
 	};
 	class rhsgref_cdf_ural_open: RHS_Ural_Open_MSV_01
 	{
+		displayName="$STR_RHS_URAL4320OPEN_NAME";
 		side=2;
 		rhs_decalParameters[]=
 		{
@@ -1013,6 +1080,7 @@ class CfgVehicles
 	};
 	class rhsgref_cdf_ural_fuel: RHS_Ural_Fuel_MSV_01
 	{
+		displayName="$STR_RHS_URAL4320FUEL_NAME";
 		side=2;
 		rhs_decalParameters[]=
 		{
@@ -1021,6 +1089,7 @@ class CfgVehicles
 	};
 	class rhsgref_cdf_ural_repair: RHS_Ural_Repair_MSV_01
 	{
+		displayName="$STR_RHS_URAL4320REPAIR_NAME";
 		side=2;
 		rhs_decalParameters[]=
 		{
@@ -1343,6 +1412,7 @@ class CfgVehicles
 	};
 	class rhsgref_cdf_2s1: rhs_2s1tank_base
 	{
+		displayName="$STR_2S1_Name";
 		side=2;
 		textureList[]=
 		{
@@ -2476,18 +2546,22 @@ class CfgVehicles
 	};
 	class rhsgref_nat_ural: RHS_Ural_Civ_Base
 	{
+		displayName="$STR_RHS_URAL4320_NAME";
 		side=2;
 	};
 	class rhsgref_nat_ural_open: RHS_Ural_Civ_Base
 	{
+		displayName="$STR_RHS_URAL4320OPEN_NAME";
 		side=2;
 	};
 	class rhsgref_nat_ural_work: RHS_Ural_Civ_Base
 	{
+		displayName="$STR_RHS_URAL4320WORKER_NAME";
 		side=2;
 	};
 	class rhsgref_nat_ural_work_open: RHS_Ural_Civ_Base
 	{
+		displayName="$STR_RHS_URAL4320WORKEROPEN_NAME";
 		side=2;
 	};
 	class rhsgref_nat_ural_Zu23: RHS_Ural_Zu23_Base
@@ -2616,22 +2690,27 @@ class CfgVehicles
 	};
 	class rhsgref_ins_ural: RHS_Ural_Civ_Base
 	{
+		displayName="$STR_RHS_URAL4320_NAME";
 		side=0;
 	};
 	class rhsgref_ins_ural_open: RHS_Ural_Civ_Base
 	{
+		displayName="$STR_RHS_URAL4320OPEN_NAME";
 		side=0;
 	};
 	class rhsgref_ins_ural_work: RHS_Ural_Civ_Base
 	{
+		displayName="$STR_RHS_URAL4320WORKER_NAME";
 		side=0;
 	};
 	class rhsgref_ins_ural_work_open: RHS_Ural_Civ_Base
 	{
+		displayName="$STR_RHS_URAL4320WORKEROPEN_NAME";
 		side=0;
 	};
 	class rhsgref_ins_ural_repair: RHS_Ural_Repair_MSV_01
 	{
+		displayName="$STR_RHS_URAL4320REPAIR_NAME";
 		side=0;
 	};
 	class rhsgref_ins_ural_Zu23: RHS_Ural_Zu23_Base
@@ -2981,6 +3060,7 @@ class CfgVehicles
 			class rhs_hide_com_shield: rhs_hide_com_shield;  //found empty after stripping
 			class rhs_hide_Flag
 			{
+				displayName="Hide Flag";
 				property="rhs_hide_Flag";
 				control="Checkbox";
 				expression="_this setvariable ['rhs_t72_disableFlag',_value]";
@@ -3048,6 +3128,7 @@ class CfgVehicles
 			class rhs_hide_com_shield: rhs_hide_com_shield;  //found empty after stripping
 			class rhs_hide_Flag
 			{
+				displayName="Hide Flag";
 				property="rhs_hide_Flag";
 				control="Checkbox";
 				expression="_this setvariable ['rhs_t72_disableFlag',_value]";
@@ -3115,6 +3196,7 @@ class CfgVehicles
 			class rhs_hide_com_shield: rhs_hide_com_shield;  //found empty after stripping
 			class rhs_hide_Flag
 			{
+				displayName="Hide Flag";
 				property="rhs_hide_Flag";
 				control="Checkbox";
 				expression="_this setvariable ['rhs_t72_disableFlag',_value]";
@@ -3537,6 +3619,7 @@ class CfgVehicles
 	};
 	class rhsgref_un_m1117: rhsusf_M1117_D
 	{
+		displayName="M1117 ASV (UN)";
 		side=2;
 	};
 	class rhsgref_un_btr70: rhs_btr70_vmf
@@ -3763,6 +3846,7 @@ class CfgVehicles
 	class rhsgref_hidf_m113a3_m2: rhsusf_m113_usarmy_M2_90
 	{
 		side=1;
+		displayName="$STR_M113A3WD_Name";
 		memoryPointSupply="doplnovani";
 		transportAmmo=0;
 		supplyRadius=-1;
@@ -3770,6 +3854,7 @@ class CfgVehicles
 		{
 			class LightGreen
 			{
+				displayName="Light Green (HIDF)";
 				factions[]=
 				{
 					"rhsgref_faction_hidf"
@@ -3777,6 +3862,7 @@ class CfgVehicles
 			};
 			class MERDC_TV
 			{
+				displayName="MERDC (Tropical Verdant/HIDF)";
 				factions[]=
 				{
 					"rhsgref_faction_hidf"
@@ -3784,6 +3870,7 @@ class CfgVehicles
 			};
 			class MERDC_SV
 			{
+				displayName="MERDC (Summer Verdant/HIDF)";
 				factions[]=
 				{
 					"rhsgref_faction_hidf"
@@ -3807,6 +3894,7 @@ class CfgVehicles
 		{
 			class LightGreen
 			{
+				displayName="Light Green (HIDF)";
 				factions[]=
 				{
 					"rhsgref_faction_hidf"
@@ -3814,6 +3902,7 @@ class CfgVehicles
 			};
 			class MERDC_TV
 			{
+				displayName="MERDC (Tropical Verdant/HIDF)";
 				factions[]=
 				{
 					"rhsgref_faction_hidf"
@@ -3821,6 +3910,7 @@ class CfgVehicles
 			};
 			class MERDC_SV
 			{
+				displayName="MERDC (Summer Verdant/HIDF)";
 				factions[]=
 				{
 					"rhsgref_faction_hidf"
@@ -3840,6 +3930,7 @@ class CfgVehicles
 	class rhsgred_hidf_cessna_o3a: C_Plane_Civil_01_F
 	{
 		side=1;
+		displayName="O-3A";
 		typicalCargo[]=
 		{
 			"rhsgref_hidf_helipilot"
@@ -3900,6 +3991,7 @@ class CfgVehicles
 		{
 			class tlastandard
 			{
+				displayName="TLA Standard";
 				factions[]=
 				{
 					"rhsgref_faction_tla"
@@ -3907,6 +3999,7 @@ class CfgVehicles
 			};
 			class tlacamo01: tlastandard
 			{
+				displayName="TLA Camo";
 				factions[]=
 				{
 					"rhsgref_faction_tla"

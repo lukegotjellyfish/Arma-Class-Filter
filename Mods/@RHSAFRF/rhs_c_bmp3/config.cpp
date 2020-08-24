@@ -86,6 +86,7 @@ class CfgVehicles
 		{
 			"rhs_mag_smokegen"
 		};
+		displayName="$STR_BMP3_Name";
 		accuracy=0.30000001;
 		side=0;
 		class MFD
@@ -946,13 +947,20 @@ class CfgVehicles
 		};
 		class textureSources
 		{
-			class standard;  //found empty after stripping
-			class rhs_sand: standard;  //found empty after stripping
+			class standard
+			{
+				displayName="Standard";
+			};
+			class rhs_sand: standard
+			{
+				displayName="Sand";
+			};
 		};
 		class Attributes
 		{
 			class rhs_decalNumber_type
 			{
+				displayName="Define font type of plate number";
 				tooltip="Define kind of font that will be drawn on vehicle.";
 				property="rhs_decalNumber_type";
 				control="Combo";
@@ -1006,6 +1014,7 @@ class CfgVehicles
 			class rhs_decalNumber
 			{
 				collapsed=1;
+				displayName="Set side number";
 				tooltip="Set side number. 4 numbers are required. Type 0 to hide numbers complety & leave at -1 to get random number";
 				property="rhs_decalNumber";
 				control="Edit";
@@ -1015,6 +1024,7 @@ class CfgVehicles
 			};
 			class rhs_decalPlatoon_type
 			{
+				displayName="Define platoon symbol type";
 				tooltip="Decal type";
 				property="rhs_decalPlatoon_type";
 				control="Combo";
@@ -1057,6 +1067,7 @@ class CfgVehicles
 			};
 			class rhs_decalPlatoon
 			{
+				displayName="Set platoon symbol";
 				tooltip="Set platoon symbol located on both sides. Usually used for platoon symbols. -1 leaves current symbol & 0 clears decal.";
 				property="rhs_decalPlatoon";
 				control="Edit";
@@ -1132,9 +1143,13 @@ class CfgVehicles
 			};
 		};
 	};
-	class rhs_bmp3_msv: rhs_bmp3tank_base;  //found empty after stripping
+	class rhs_bmp3_msv: rhs_bmp3tank_base
+	{
+		displayName="$STR_BMP3_Name";
+	};
 	class rhs_bmp3_late_msv: rhs_bmp3tank_base
 	{
+		displayName="$STR_BMP3_Late_Name";
 		class textureSources: textureSources
 		{
 			class standard: standard;  //found empty after stripping
@@ -1166,6 +1181,7 @@ class CfgVehicles
 	};
 	class rhs_bmp3m_msv: rhs_bmp3tank_base
 	{
+		displayName="$STR_BMP3M_Name";
 		enableGPS=1;
 		reportOwnPosition=1;
 		enginePower=478;
@@ -1367,6 +1383,7 @@ class CfgVehicles
 	};
 	class rhs_bmp3mera_msv: rhs_bmp3m_msv
 	{
+		displayName="$STR_BMP3MERA_Name";
 		class HitPoints: HitPoints
 		{
 			class Armor_Composite_50

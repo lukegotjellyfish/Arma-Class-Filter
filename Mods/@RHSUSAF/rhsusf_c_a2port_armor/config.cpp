@@ -306,6 +306,7 @@ class CfgVehicles
 		{
 			class standard
 			{
+				displayName="Woodland";
 				factions[]=
 				{
 					"rhs_faction_usarmy_wd"
@@ -313,6 +314,7 @@ class CfgVehicles
 			};
 			class Desert
 			{
+				displayName="Desert";
 				factions[]=
 				{
 					"rhs_faction_usarmy_d"
@@ -320,6 +322,7 @@ class CfgVehicles
 			};
 			class Olive
 			{
+				displayName="Olive";
 				factions[]=
 				{
 					"rhs_faction_usarmy_wd"
@@ -672,6 +675,7 @@ class CfgVehicles
 		{
 			class rhs_hideIFFPanel
 			{
+				displayName="Hide IFF Panel";
 				property="rhs_hideIFFPanel";
 				control="CheckboxNumber";
 				expression="_this animate ['IFF_Panels_Hide',_value,true]";
@@ -681,6 +685,7 @@ class CfgVehicles
 			{
 				control="CheckboxNumber";
 				defaultValue="0";
+				displayName="Open rear ramp";
 				property="OpenRamp";
 				expression="_this animateDoor ['ramp', _value,true];_this setVariable ['ramp_handler',_value,true]";
 			};
@@ -688,12 +693,14 @@ class CfgVehicles
 	};
 	class RHS_M2A2: RHS_M2A2_Base
 	{
+		displayName="M2A2ODS";
 		side=1;
 		damageResistance=0.01189;
 		class Damage;  //found empty after stripping
 	};
 	class RHS_M2A2_early: RHS_M2A2
 	{
+		displayName="M2A2";
 		class Turrets: Turrets
 		{
 			class MainTurret: MainTurret
@@ -728,11 +735,13 @@ class CfgVehicles
 	};
 	class RHS_M2A2_BUSKI: RHS_M2A2
 	{
+		displayName="M2A2ODS (BUSK I)";
 		damageResistance=0.01101;
 		class textureSources
 		{
 			class standard
 			{
+				displayName="Woodland";
 				factions[]=
 				{
 					"rhs_faction_usarmy_wd"
@@ -740,6 +749,7 @@ class CfgVehicles
 			};
 			class Desert
 			{
+				displayName="Desert";
 				factions[]=
 				{
 					"rhs_faction_usarmy_d"
@@ -747,6 +757,7 @@ class CfgVehicles
 			};
 			class Olive
 			{
+				displayName="Olive";
 				factions[]=
 				{
 					"rhs_faction_usarmy_wd"
@@ -1299,11 +1310,13 @@ class CfgVehicles
 	};
 	class RHS_M2A3: RHS_M2A2
 	{
+		displayName="M2A3";
 		damageResistance=0.01189;
 		class textureSources
 		{
 			class standard
 			{
+				displayName="Woodland";
 				factions[]=
 				{
 					"rhs_faction_usarmy_wd"
@@ -1311,6 +1324,7 @@ class CfgVehicles
 			};
 			class Desert
 			{
+				displayName="Desert";
 				factions[]=
 				{
 					"rhs_faction_usarmy_d"
@@ -1318,6 +1332,7 @@ class CfgVehicles
 			};
 			class Olive
 			{
+				displayName="Olive";
 				factions[]=
 				{
 					"rhs_faction_usarmy_wd"
@@ -1521,11 +1536,13 @@ class CfgVehicles
 	class RHS_M2A3_BUSKI: RHS_M2A3
 	{
 		rhs_duke_type="rhsusf_duke_m1a2";
+		displayName="M2A3 (BUSK I)";
 		damageResistance=0.01189;
 		class textureSources
 		{
 			class standard
 			{
+				displayName="Woodland";
 				factions[]=
 				{
 					"rhs_faction_usarmy_wd"
@@ -1533,6 +1550,7 @@ class CfgVehicles
 			};
 			class Desert
 			{
+				displayName="Desert";
 				factions[]=
 				{
 					"rhs_faction_usarmy_d"
@@ -1540,6 +1558,7 @@ class CfgVehicles
 			};
 			class Olive
 			{
+				displayName="Olive";
 				factions[]=
 				{
 					"rhs_faction_usarmy_wd"
@@ -2131,6 +2150,7 @@ class CfgVehicles
 			class rhs_hideIFFPanel: rhs_hideIFFPanel;  //found empty after stripping
 			class rhs_hideDUKE: rhs_hideIFFPanel
 			{
+				displayName="hide DUKE antennas";
 				property="rhs_hideDUKE";
 				expression="_this animate ['DUKE_Hide',_value,true];if(_value isEqualTo 1)then{_this removeWeaponTurret ['rhsusf_weap_duke',[0,0]]};";
 			};
@@ -2147,10 +2167,12 @@ class CfgVehicles
 	class RHS_M2A3_BUSKIII: RHS_M2A3_BUSKI
 	{
 		rhs_duke_type="rhsusf_duke";
+		displayName="M2A3 (BUSK III)";
 		class textureSources
 		{
 			class standard
 			{
+				displayName="Woodland";
 				factions[]=
 				{
 					"rhs_faction_usarmy_wd"
@@ -2158,6 +2180,7 @@ class CfgVehicles
 			};
 			class Desert
 			{
+				displayName="Desert";
 				factions[]=
 				{
 					"rhs_faction_usarmy_d"
@@ -2165,6 +2188,7 @@ class CfgVehicles
 			};
 			class Olive
 			{
+				displayName="Olive";
 				factions[]=
 				{
 					"rhs_faction_usarmy_wd"
@@ -2348,6 +2372,7 @@ class CfgVehicles
 	class RHS_M2A3_BUSKIII_wd: RHS_M2A3_BUSKIII;  //found empty after stripping
 	class RHS_M6: RHS_M2A2_Base
 	{
+		displayName="M6A2";
 		side=1;
 		damageResistance=0.01101;
 		class Turrets: Turrets
@@ -2384,5 +2409,8 @@ class CfgVehicles
 	class RHS_M2A2_BUSKI_WD: RHS_M2A2_BUSKI;  //found empty after stripping
 	class RHS_M2A3_BUSKI_wd: RHS_M2A3_BUSKI;  //found empty after stripping
 	class RHS_M2A3_wd: RHS_M2A3;  //found empty after stripping
-	class RHS_M6_wd: RHS_M6;  //found empty after stripping
+	class RHS_M6_wd: RHS_M6
+	{
+		displayName="M6A2";
+	};
 };

@@ -249,6 +249,7 @@ class CfgVehicles
 		};
 		faceType="Man_A3";
 		side=2;
+		displayName="$STR_RHSSAF_SOLDIER_BASE_DISPLAYNAME";
 		genericNames="SerbianMen";
 		portrait="";
 		icon="iconMan";
@@ -439,6 +440,7 @@ class CfgVehicles
 		uniformClass="rhssaf_uniform_heli_pilot";
 		class Wounds;  //found empty after stripping
 		genericNames="SerbianMen";
+		displayName="$STR_RHSSAF_AIRFORCE_PILOT_TRANSPORT_HELI_DISPLAYNAME";
 		weapons[]=
 		{
 			"rhs_weap_scorpion",
@@ -505,6 +507,7 @@ class CfgVehicles
 	{
 		uniformClass="rhssaf_uniform_mig29_pilot";
 		class Wounds;  //found empty after stripping
+		displayName="Mig-29 Pilot";
 		weapons[]=
 		{
 			"rhs_weap_scorpion",
@@ -577,6 +580,7 @@ class CfgVehicles
 	};
 	class rhssaf_soldier_army_digital_base: rhssaf_soldier_m10_base
 	{
+		displayName="$STR_RHSSAF_SOLDIER_ARMY_DIGITAL_BASE_DISPLAYNAME";
 		uniformClass="rhssaf_uniform_m10_digital";
 		weapons[]=
 		{
@@ -644,6 +648,7 @@ class CfgVehicles
 	class rhssaf_army_m10_digital_rifleman_m21: rhssaf_soldier_army_digital_base
 	{
 		nameSound="veh_infantry_s";
+		displayName="$STR_RHSSAF_ARMY_M10_DIGITAL_RIFLEMAN_M21_DISPLAYNAME";
 		cost=100000;
 		backpack="rhssaf_Kitbag_smb_std_m21";
 		weapons[]=
@@ -711,6 +716,7 @@ class CfgVehicles
 	};
 	class rhssaf_army_m10_digital_rifleman_m70: rhssaf_army_m10_digital_rifleman_m21
 	{
+		displayName="$STR_RHSSAF_ARMY_M10_DIGITAL_RIFLEMAN_M70_DISPLAYNAME";
 		backpack="rhssaf_Kitbag_smb_std_m70";
 		weapons[]=
 		{
@@ -777,6 +783,7 @@ class CfgVehicles
 	};
 	class rhssaf_army_m10_digital_rifleman_ammo: rhssaf_army_m10_digital_rifleman_m21
 	{
+		displayName="$STR_RHSSAF_ARMY_M10_DIGITAL_RIFLEMAN_AMMO_DISPLAYNAME";
 		cost=110000;
 		camouflage=1.5;
 		backpack="rhssaf_Kitbag_smb_Ammo";
@@ -845,6 +852,7 @@ class CfgVehicles
 	};
 	class rhssaf_army_m10_digital_gl: rhssaf_soldier_army_digital_base
 	{
+		displayName="$STR_RHSSAF_ARMY_M10_DIGITAL_GL_DISPLAYNAME";
 		cost=130000;
 		threat[]={1,0.30000001,0.1};
 		backpack="rhssaf_Kitbag_smb_std_m21";
@@ -932,6 +940,7 @@ class CfgVehicles
 	class rhssaf_army_m10_digital_mgun_m84: rhssaf_soldier_army_digital_base
 	{
 		nameSound="veh_infantry_MG_s";
+		displayName="$STR_RHSSAF_ARMY_M10_DIGITAL_MGUN_M84_DISPLAYNAME";
 		cost=110000;
 		threat[]={1,0.1,0.30000001};
 		icon="iconManMG";
@@ -997,6 +1006,7 @@ class CfgVehicles
 	};
 	class rhssaf_army_m10_digital_asst_mgun: rhssaf_army_m10_digital_rifleman_m21
 	{
+		displayName="$STR_RHSSAF_ARMY_M10_DIGITAL_ASST_MGUN_DISPLAYNAME";
 		cost=110000;
 		camouflage=1.5;
 		backpack="rhssaf_Kitbag_smb_std_asst_mgun_m84";
@@ -1065,6 +1075,7 @@ class CfgVehicles
 	};
 	class rhssaf_army_m10_digital_sq_lead: rhssaf_soldier_army_digital_base
 	{
+		displayName="$STR_RHSSAF_ARMY_M10_DIGITAL_SQ_LEAD_DISPLAYNAME";
 		cost=500000;
 		camouflage=1.4;
 		icon="iconManLeader";
@@ -1136,6 +1147,7 @@ class CfgVehicles
 	};
 	class rhssaf_army_m10_digital_ft_lead: rhssaf_army_m10_digital_sq_lead
 	{
+		displayName="$STR_RHSSAF_ARMY_M10_DIGITAL_FT_LEAD_DISPLAYNAME";
 		cost=450000;
 		backpack="rhssaf_Kitbag_smb_std_m70";
 		weapons[]=
@@ -1206,6 +1218,7 @@ class CfgVehicles
 	class rhssaf_army_m10_digital_sniper_m76: rhssaf_soldier_army_digital_base
 	{
 		nameSound="veh_infantry_sniper_s";
+		displayName="$STR_RHSSAF_ARMY_M10_DIGITAL_SNIPER_M76_DISPLAYNAME";
 		cost=150000;
 		backpack="rhssaf_Kitbag_smb_std_m76";
 		weapons[]=
@@ -1281,6 +1294,7 @@ class CfgVehicles
 	};
 	class rhssaf_army_m10_digital_spotter: rhssaf_army_m10_digital_rifleman_m21
 	{
+		displayName="$STR_RHSSAF_ARMY_M10_DIGITAL_SPOTTER_DISPLAYNAME";
 		cost=110000;
 		camouflage=1.5;
 		backpack="rhssaf_Kitbag_smb_std_m70";
@@ -1352,6 +1366,7 @@ class CfgVehicles
 	class rhssaf_army_m10_digital_rifleman_at: rhssaf_soldier_army_digital_base
 	{
 		nameSound="veh_infantry_AT_s";
+		displayName="$STR_RHSSAF_ARMY_M10_DIGITAL_RIFLEMAN_AT_DISPLAYNAME";
 		cost=180000;
 		threat[]={1,0.5,0.30000001};
 		icon="iconManAT";
@@ -1425,6 +1440,7 @@ class CfgVehicles
 	};
 	class rhssaf_army_m10_digital_spec_at: rhssaf_army_m10_digital_rifleman_at
 	{
+		displayName="$STR_RHSSAF_ARMY_M10_DIGITAL_SPEC_AT_DISPLAYNAME";
 		cost=190000;
 		threat[]={1,0.69999999,0.30000001};
 		backpack="rhssaf_Kitbag_smb_AT";
@@ -1507,6 +1523,7 @@ class CfgVehicles
 	};
 	class rhssaf_army_m10_digital_spec_aa: rhssaf_army_m10_digital_rifleman_at
 	{
+		displayName="$STR_RHSSAF_ARMY_M10_DIGITAL_SPEC_AA_DISPLAYNAME";
 		cost=200000;
 		threat[]={1,0.1,0.69999999};
 		backpack="rhssaf_Kitbag_smb_AA";
@@ -1577,6 +1594,7 @@ class CfgVehicles
 	};
 	class rhssaf_army_m10_digital_asst_spec_at: rhssaf_army_m10_digital_rifleman_m21
 	{
+		displayName="$STR_RHSSAF_ARMY_M10_DIGITAL_ASST_SPEC_AT_DISPLAYNAME";
 		cost=110000;
 		camouflage=1.5;
 		backpack="rhssaf_Kitbag_smb_asst_AT";
@@ -1645,6 +1663,7 @@ class CfgVehicles
 	};
 	class rhssaf_army_m10_digital_asst_spec_aa: rhssaf_army_m10_digital_rifleman_m21
 	{
+		displayName="$STR_RHSSAF_ARMY_M10_DIGITAL_ASST_SPEC_AA_DISPLAYNAME";
 		cost=110000;
 		camouflage=1.5;
 		backpack="rhssaf_Kitbag_smb_asst_AA";
@@ -1714,6 +1733,7 @@ class CfgVehicles
 	class rhssaf_army_m10_digital_medic: rhssaf_soldier_army_digital_base
 	{
 		nameSound="veh_infantry_medic_s";
+		displayName="$STR_RHSSAF_ARMY_M10_DIGITAL_MEDIC_DISPLAYNAME";
 		attendant=1;
 		cost=300000;
 		camouflage=1.6;
@@ -1785,6 +1805,7 @@ class CfgVehicles
 	};
 	class rhssaf_army_m10_digital_repair: rhssaf_soldier_army_digital_base
 	{
+		displayName="$STR_RHSSAF_ARMY_M10_DIGITAL_REPAIR_DISPLAYNAME";
 		engineer=1;
 		detectSkill=40;
 		cost=220000;
@@ -1857,6 +1878,7 @@ class CfgVehicles
 	};
 	class rhssaf_army_m10_digital_exp: rhssaf_soldier_army_digital_base
 	{
+		displayName="$STR_RHSSAF_ARMY_M10_DIGITAL_EXP_DISPLAYNAME";
 		cost=115000;
 		camouflage=1.6;
 		canDeactivateMines=1;
@@ -1930,6 +1952,7 @@ class CfgVehicles
 	};
 	class rhssaf_army_m10_digital_engineer: rhssaf_soldier_army_digital_base
 	{
+		displayName="$STR_RHSSAF_ARMY_M10_DIGITAL_ENGINEER_DISPLAYNAME";
 		engineer=1;
 		cost=220000;
 		camouflage=1.6;
@@ -2004,6 +2027,7 @@ class CfgVehicles
 	};
 	class rhssaf_army_m10_digital_crew: rhssaf_soldier_army_digital_base
 	{
+		displayName="$STR_RHSSAF_ARMY_M10_DIGITAL_CREW_DISPLAYNAME";
 		camouflage=1.6;
 		cost=90000;
 		role="Crewman";
@@ -2073,6 +2097,7 @@ class CfgVehicles
 	};
 	class rhssaf_army_m10_digital_crew_armored: rhssaf_soldier_army_digital_base
 	{
+		displayName="$STR_RHSSAF_ARMY_M10_DIGITAL_CREW_ARMORED_DISPLAYNAME";
 		camouflage=1.6;
 		cost=90000;
 		role="Crewman";
@@ -2133,6 +2158,7 @@ class CfgVehicles
 	};
 	class rhssaf_army_m10_digital_crew_armored_nco: rhssaf_soldier_army_digital_base
 	{
+		displayName="$STR_RHSSAF_ARMY_M10_DIGITAL_CREW_ARMORED_NCO_DISPLAYNAME";
 		camouflage=1.6;
 		cost=90000;
 		role="Crewman";
@@ -2196,6 +2222,7 @@ class CfgVehicles
 	class rhssaf_army_m10_digital_officer: rhssaf_soldier_army_digital_base
 	{
 		nameSound="veh_infantry_officer_s";
+		displayName="$STR_RHSSAF_ARMY_M10_DIGITAL_OFFICER_DISPLAYNAME";
 		cost=600000;
 		camouflage=1.6;
 		icon="iconManOfficer";
@@ -2355,6 +2382,7 @@ class CfgVehicles
 	};
 	class rhssaf_soldier_army_oakleaf_base: rhssaf_soldier_m93_base
 	{
+		displayName="$STR_RHSSAF_SOLDIER_ARMY_OAKLEAF_BASE_DISPLAYNAME";
 		uniformClass="rhssaf_uniform_m93_oakleaf";
 		weapons[]=
 		{
@@ -2421,6 +2449,7 @@ class CfgVehicles
 	};
 	class rhssaf_soldier_army_oakleaf_summer_base: rhssaf_soldier_m93_base
 	{
+		displayName="$STR_RHSSAF_SOLDIER_ARMY_OAKLEAF_SUMMER_BASE_DISPLAYNAME";
 		uniformClass="rhssaf_uniform_m93_oakleaf_summer";
 		weapons[]=
 		{
@@ -2488,6 +2517,7 @@ class CfgVehicles
 	class rhssaf_army_m93_oakleaf_summer_rifleman_m21: rhssaf_soldier_army_oakleaf_summer_base
 	{
 		nameSound="veh_infantry_s";
+		displayName="$STR_RHSSAF_ARMY_M93_OAKLEAF_SUMMER_RIFLEMAN_M21_DISPLAYNAME";
 		cost=100000;
 		backpack="rhssaf_Kitbag_smb_std_m21";
 		weapons[]=
@@ -2555,6 +2585,7 @@ class CfgVehicles
 	};
 	class rhssaf_army_m93_oakleaf_summer_rifleman_m70: rhssaf_army_m93_oakleaf_summer_rifleman_m21
 	{
+		displayName="$STR_RHSSAF_ARMY_M93_OAKLEAF_SUMMER_RIFLEMAN_M70_DISPLAYNAME";
 		backpack="rhssaf_Kitbag_smb_std_m70";
 		weapons[]=
 		{
@@ -2621,6 +2652,7 @@ class CfgVehicles
 	};
 	class rhssaf_army_m93_oakleaf_summer_rifleman_ammo: rhssaf_army_m93_oakleaf_summer_rifleman_m21
 	{
+		displayName="$STR_RHSSAF_ARMY_M93_OAKLEAF_SUMMER_RIFLEMAN_AMMO_DISPLAYNAME";
 		cost=110000;
 		camouflage=1.5;
 		backpack="rhssaf_Kitbag_smb_Ammo";
@@ -2689,6 +2721,7 @@ class CfgVehicles
 	};
 	class rhssaf_army_m93_oakleaf_summer_gl: rhssaf_soldier_army_oakleaf_summer_base
 	{
+		displayName="$STR_RHSSAF_ARMY_M93_OAKLEAF_SUMMER_GL_DISPLAYNAME";
 		cost=130000;
 		threat[]={1,0.30000001,0.1};
 		backpack="rhssaf_Kitbag_smb_std_m70";
@@ -2776,6 +2809,7 @@ class CfgVehicles
 	class rhssaf_army_m93_oakleaf_summer_mgun_m84: rhssaf_soldier_army_oakleaf_summer_base
 	{
 		nameSound="veh_infantry_MG_s";
+		displayName="$STR_RHSSAF_ARMY_M93_OAKLEAF_SUMMER_MGUN_M84_DISPLAYNAME";
 		cost=110000;
 		threat[]={1,0.1,0.30000001};
 		icon="iconManMG";
@@ -2841,6 +2875,7 @@ class CfgVehicles
 	};
 	class rhssaf_army_m93_oakleaf_summer_asst_mgun: rhssaf_army_m93_oakleaf_summer_rifleman_m21
 	{
+		displayName="$STR_RHSSAF_ARMY_M93_OAKLEAF_SUMMER_ASST_MGUN_DISPLAYNAME";
 		cost=110000;
 		camouflage=1.5;
 		backpack="rhssaf_Kitbag_smb_std_asst_mgun_m84";
@@ -2909,6 +2944,7 @@ class CfgVehicles
 	};
 	class rhssaf_army_m93_oakleaf_summer_sq_lead: rhssaf_soldier_army_oakleaf_summer_base
 	{
+		displayName="$STR_RHSSAF_ARMY_M93_OAKLEAF_SUMMER_SQ_LEAD_DISPLAYNAME";
 		cost=500000;
 		camouflage=1.4;
 		icon="iconManLeader";
@@ -2980,6 +3016,7 @@ class CfgVehicles
 	};
 	class rhssaf_army_m93_oakleaf_summer_ft_lead: rhssaf_army_m93_oakleaf_summer_sq_lead
 	{
+		displayName="$STR_RHSSAF_ARMY_M93_OAKLEAF_SUMMER_FT_LEAD_DISPLAYNAME";
 		cost=450000;
 		backpack="rhssaf_Kitbag_smb_std_m70";
 		weapons[]=
@@ -3050,6 +3087,7 @@ class CfgVehicles
 	class rhssaf_army_m93_oakleaf_summer_sniper_m76: rhssaf_soldier_army_oakleaf_summer_base
 	{
 		nameSound="veh_infantry_sniper_s";
+		displayName="$STR_RHSSAF_ARMY_M93_OAKLEAF_SUMMER_SNIPER_M76_DISPLAYNAME";
 		cost=150000;
 		backpack="rhssaf_Kitbag_smb_std_m76";
 		weapons[]=
@@ -3125,6 +3163,7 @@ class CfgVehicles
 	};
 	class rhssaf_army_m93_oakleaf_summer_spotter: rhssaf_army_m93_oakleaf_summer_rifleman_m21
 	{
+		displayName="$STR_RHSSAF_ARMY_M93_OAKLEAF_SUMMER_SPOTTER_DISPLAYNAME";
 		cost=110000;
 		camouflage=1.5;
 		backpack="rhssaf_Kitbag_smb_std_m70";
@@ -3196,6 +3235,7 @@ class CfgVehicles
 	class rhssaf_army_m93_oakleaf_summer_rifleman_at: rhssaf_soldier_army_oakleaf_summer_base
 	{
 		nameSound="veh_infantry_AT_s";
+		displayName="$STR_RHSSAF_ARMY_M93_OAKLEAF_SUMMER_RIFLEMAN_AT_DISPLAYNAME";
 		cost=180000;
 		threat[]={1,0.5,0.30000001};
 		icon="iconManAT";
@@ -3269,6 +3309,7 @@ class CfgVehicles
 	};
 	class rhssaf_army_m93_oakleaf_summer_spec_at: rhssaf_army_m93_oakleaf_summer_rifleman_at
 	{
+		displayName="$STR_RHSSAF_ARMY_M93_OAKLEAF_SUMMER_SPEC_AT_DISPLAYNAME";
 		cost=190000;
 		threat[]={1,0.69999999,0.30000001};
 		backpack="rhssaf_Kitbag_smb_AT";
@@ -3351,6 +3392,7 @@ class CfgVehicles
 	};
 	class rhssaf_army_m93_oakleaf_summer_spec_aa: rhssaf_army_m93_oakleaf_summer_rifleman_at
 	{
+		displayName="$STR_RHSSAF_ARMY_M93_OAKLEAF_SUMMER_SPEC_AA_DISPLAYNAME";
 		cost=200000;
 		threat[]={1,0.1,0.69999999};
 		backpack="rhssaf_Kitbag_smb_AA";
@@ -3421,6 +3463,7 @@ class CfgVehicles
 	};
 	class rhssaf_army_m93_oakleaf_summer_asst_spec_at: rhssaf_army_m93_oakleaf_summer_rifleman_m21
 	{
+		displayName="$STR_RHSSAF_ARMY_M93_OAKLEAF_SUMMER_ASST_SPEC_AT_DISPLAYNAME";
 		cost=110000;
 		camouflage=1.5;
 		backpack="rhssaf_Kitbag_smb_asst_AT";
@@ -3489,6 +3532,7 @@ class CfgVehicles
 	};
 	class rhssaf_army_m93_oakleaf_summer_asst_spec_aa: rhssaf_army_m93_oakleaf_summer_rifleman_m21
 	{
+		displayName="$STR_RHSSAF_ARMY_M93_OAKLEAF_SUMMER_ASST_SPEC_AA_DISPLAYNAME";
 		cost=110000;
 		camouflage=1.5;
 		backpack="rhssaf_Kitbag_smb_asst_AA";
@@ -3558,6 +3602,7 @@ class CfgVehicles
 	class rhssaf_army_m93_oakleaf_summer_medic: rhssaf_soldier_army_oakleaf_summer_base
 	{
 		nameSound="veh_infantry_medic_s";
+		displayName="$STR_RHSSAF_ARMY_M93_OAKLEAF_SUMMER_MEDIC_DISPLAYNAME";
 		attendant=1;
 		cost=300000;
 		camouflage=1.6;
@@ -3629,6 +3674,7 @@ class CfgVehicles
 	};
 	class rhssaf_army_m93_oakleaf_summer_repair: rhssaf_soldier_army_oakleaf_summer_base
 	{
+		displayName="$STR_RHSSAF_ARMY_M93_OAKLEAF_SUMMER_REPAIR_DISPLAYNAME";
 		engineer=1;
 		detectSkill=40;
 		cost=220000;
@@ -3701,6 +3747,7 @@ class CfgVehicles
 	};
 	class rhssaf_army_m93_oakleaf_summer_exp: rhssaf_soldier_army_oakleaf_summer_base
 	{
+		displayName="$STR_RHSSAF_ARMY_M93_OAKLEAF_SUMMER_EXP_DISPLAYNAME";
 		cost=115000;
 		camouflage=1.6;
 		canDeactivateMines=1;
@@ -3774,6 +3821,7 @@ class CfgVehicles
 	};
 	class rhssaf_army_m93_oakleaf_summer_engineer: rhssaf_soldier_army_oakleaf_summer_base
 	{
+		displayName="$STR_RHSSAF_ARMY_M93_OAKLEAF_SUMMER_ENGINEER_DISPLAYNAME";
 		engineer=1;
 		cost=220000;
 		camouflage=1.6;
@@ -3848,6 +3896,7 @@ class CfgVehicles
 	};
 	class rhssaf_army_m93_oakleaf_summer_crew: rhssaf_soldier_army_oakleaf_summer_base
 	{
+		displayName="$STR_RHSSAF_ARMY_M93_OAKLEAF_SUMMER_CREW_DISPLAYNAME";
 		camouflage=1.6;
 		cost=90000;
 		role="Crewman";
@@ -3918,6 +3967,7 @@ class CfgVehicles
 	class rhssaf_army_m93_oakleaf_summer_officer: rhssaf_soldier_army_oakleaf_summer_base
 	{
 		nameSound="veh_infantry_officer_s";
+		displayName="$STR_RHSSAF_ARMY_M93_OAKLEAF_SUMMER_OFFICER_DISPLAYNAME";
 		cost=600000;
 		camouflage=1.6;
 		icon="iconManOfficer";
@@ -4073,6 +4123,7 @@ class CfgVehicles
 	};
 	class rhssaf_soldier_army_para_digital_base: rhssaf_soldier_m10_base
 	{
+		displayName="$STR_RHSSAF_SOLDIER_ARMY_PARA_DIGITAL_BASE_DISPLAYNAME";
 		uniformClass="rhssaf_uniform_m10_digital_summer";
 		movesFatigue="rhssaf_fatigue_spec";
 		weapons[]=
@@ -4141,6 +4192,7 @@ class CfgVehicles
 	class rhssaf_army_m10_para_rifleman_m21: rhssaf_soldier_army_para_digital_base
 	{
 		nameSound="veh_infantry_s";
+		displayName="$STR_RHSSAF_ARMY_M10_PARA_RIFLEMAN_M21_DISPLAYNAME";
 		cost=100000;
 		backpack="rhssaf_Kitbag_smb_std_m21";
 		weapons[]=
@@ -4209,6 +4261,7 @@ class CfgVehicles
 	class rhssaf_army_m10_para_rifleman_g36: rhssaf_army_m10_para_rifleman_m21
 	{
 		nameSound="veh_infantry_s";
+		displayName="$STR_RHSSAF_ARMY_M10_PARA_RIFLEMAN_G36_DISPLAYNAME";
 		cost=100000;
 		backpack="rhssaf_Kitbag_smb_std_g36";
 		weapons[]=
@@ -4277,6 +4330,7 @@ class CfgVehicles
 	class rhssaf_army_m10_para_rifleman_hk416: rhssaf_army_m10_para_rifleman_m21
 	{
 		nameSound="veh_infantry_s";
+		displayName="$STR_RHSSAF_ARMY_M10_PARA_RIFLEMAN_HK416_DISPLAYNAME";
 		cost=100000;
 		backpack="rhssaf_Kitbag_smb_std_hk416";
 		weapons[]=
@@ -4344,6 +4398,7 @@ class CfgVehicles
 	};
 	class rhssaf_army_m10_para_rifleman_ammo: rhssaf_army_m10_para_rifleman_m21
 	{
+		displayName="$STR_RHSSAF_ARMY_M10_PARA_RIFLEMAN_AMMO_DISPLAYNAME";
 		cost=110000;
 		camouflage=1.5;
 		backpack="rhssaf_Kitbag_smb_Ammo";
@@ -4412,6 +4467,7 @@ class CfgVehicles
 	};
 	class rhssaf_army_m10_para_gl_ag36: rhssaf_soldier_army_para_digital_base
 	{
+		displayName="$STR_RHSSAF_ARMY_M10_PARA_GL_AG36_DISPLAYNAME";
 		cost=130000;
 		threat[]={1,0.30000001,0.1};
 		backpack="rhssaf_Kitbag_smb_std_g36";
@@ -4498,6 +4554,7 @@ class CfgVehicles
 	};
 	class rhssaf_army_m10_para_gl_m320: rhssaf_soldier_army_para_digital_base
 	{
+		displayName="$STR_RHSSAF_ARMY_M10_PARA_GL_M320_DISPLAYNAME";
 		cost=130000;
 		threat[]={1,0.30000001,0.1};
 		backpack="rhssaf_Kitbag_smb_std_hk416";
@@ -4585,6 +4642,7 @@ class CfgVehicles
 	class rhssaf_army_m10_para_mgun_m84: rhssaf_soldier_army_para_digital_base
 	{
 		nameSound="veh_infantry_MG_s";
+		displayName="$STR_RHSSAF_ARMY_M10_PARA_MGUN_M84_DISPLAYNAME";
 		cost=110000;
 		threat[]={1,0.1,0.30000001};
 		icon="iconManMG";
@@ -4651,6 +4709,7 @@ class CfgVehicles
 	class rhssaf_army_m10_para_mgun_minimi: rhssaf_soldier_army_para_digital_base
 	{
 		nameSound="veh_infantry_MG_s";
+		displayName="$STR_RHSSAF_ARMY_M10_PARA_MGUN_MINIMI_DISPLAYNAME";
 		cost=110000;
 		threat[]={1,0.1,0.30000001};
 		icon="iconManMG";
@@ -4714,6 +4773,7 @@ class CfgVehicles
 	};
 	class rhssaf_army_m10_para_asst_mgun_m84: rhssaf_army_m10_para_rifleman_m21
 	{
+		displayName="$STR_RHSSAF_ARMY_M10_PARA_ASST_MGUN_M84_DISPLAYNAME";
 		cost=110000;
 		camouflage=1.5;
 		backpack="rhssaf_Kitbag_smb_std_asst_mgun_m84";
@@ -4782,6 +4842,7 @@ class CfgVehicles
 	};
 	class rhssaf_army_m10_para_asst_mgun_minimi: rhssaf_army_m10_para_rifleman_m21
 	{
+		displayName="$STR_RHSSAF_ARMY_M10_PARA_ASST_MGUN_MINIMI_DISPLAYNAME";
 		cost=110000;
 		camouflage=1.5;
 		backpack="rhssaf_Kitbag_smb_std_asst_mgun_minimi";
@@ -4850,6 +4911,7 @@ class CfgVehicles
 	};
 	class rhssaf_army_m10_para_sq_lead: rhssaf_soldier_army_para_digital_base
 	{
+		displayName="$STR_RHSSAF_ARMY_M10_PARA_SQ_LEAD_DISPLAYNAME";
 		cost=500000;
 		camouflage=1.4;
 		icon="iconManLeader";
@@ -4921,6 +4983,7 @@ class CfgVehicles
 	};
 	class rhssaf_army_m10_para_ft_lead: rhssaf_army_m10_para_sq_lead
 	{
+		displayName="$STR_RHSSAF_ARMY_M10_PARA_FT_LEAD_DISPLAYNAME";
 		cost=450000;
 		backpack="rhssaf_Kitbag_smb_std_hk416";
 		weapons[]=
@@ -4991,6 +5054,7 @@ class CfgVehicles
 	class rhssaf_army_m10_para_sniper_m76: rhssaf_soldier_army_para_digital_base
 	{
 		nameSound="veh_infantry_sniper_s";
+		displayName="$STR_RHSSAF_ARMY_M10_PARA_SNIPER_M76_DISPLAYNAME";
 		cost=150000;
 		backpack="rhssaf_Kitbag_smb_std_m76";
 		weapons[]=
@@ -5067,6 +5131,7 @@ class CfgVehicles
 	class rhssaf_army_m10_para_sniper_scarH: rhssaf_soldier_army_para_digital_base
 	{
 		nameSound="veh_infantry_sniper_s";
+		displayName="$STR_RHSSAF_ARMY_M10_PARA_SNIPER_SCARH_DISPLAYNAME";
 		cost=150000;
 		backpack="rhssaf_Kitbag_smb_std_scarh";
 		weapons[]=
@@ -5136,6 +5201,7 @@ class CfgVehicles
 	};
 	class rhssaf_army_m10_para_sniper_m82a1: rhssaf_army_m10_para_sniper_m76
 	{
+		displayName="$STR_RHSSAF_ARMY_M10_PARA_SNIPER_M82A1_DISPLAYNAME";
 		backpack="rhssaf_Kitbag_smb_std_m82a1";
 		weapons[]=
 		{
@@ -5210,6 +5276,7 @@ class CfgVehicles
 	};
 	class rhssaf_army_m10_para_spotter: rhssaf_army_m10_para_rifleman_m21
 	{
+		displayName="$STR_RHSSAF_ARMY_M10_PARA_SPOTTER_DISPLAYNAME";
 		cost=110000;
 		camouflage=1.5;
 		backpack="rhssaf_Kitbag_smb_std_hk416";
@@ -5281,6 +5348,7 @@ class CfgVehicles
 	class rhssaf_army_m10_para_rifleman_at: rhssaf_soldier_army_para_digital_base
 	{
 		nameSound="veh_infantry_AT_s";
+		displayName="$STR_RHSSAF_ARMY_M10_PARA_RIFLEMAN_AT_DISPLAYNAME";
 		cost=180000;
 		threat[]={1,0.5,0.30000001};
 		icon="iconManAT";
@@ -5354,6 +5422,7 @@ class CfgVehicles
 	};
 	class rhssaf_army_m10_para_spec_at: rhssaf_army_m10_para_rifleman_at
 	{
+		displayName="$STR_RHSSAF_ARMY_M10_PARA_SPEC_AT_DISPLAYNAME";
 		cost=190000;
 		threat[]={1,0.69999999,0.30000001};
 		backpack="rhssaf_Kitbag_smb_AT";
@@ -5436,6 +5505,7 @@ class CfgVehicles
 	};
 	class rhssaf_army_m10_para_spec_aa: rhssaf_army_m10_para_rifleman_at
 	{
+		displayName="$STR_RHSSAF_ARMY_M10_PARA_SPEC_AA_DISPLAYNAME";
 		cost=200000;
 		threat[]={1,0.1,0.69999999};
 		backpack="rhssaf_Kitbag_smb_AA";
@@ -5508,6 +5578,7 @@ class CfgVehicles
 	};
 	class rhssaf_army_m10_para_asst_spec_at: rhssaf_army_m10_para_rifleman_m21
 	{
+		displayName="$STR_RHSSAF_ARMY_M10_PARA_ASST_SPEC_AT_DISPLAYNAME";
 		cost=110000;
 		camouflage=1.5;
 		backpack="rhssaf_Kitbag_smb_asst_AT";
@@ -5576,6 +5647,7 @@ class CfgVehicles
 	};
 	class rhssaf_army_m10_para_asst_spec_aa: rhssaf_army_m10_para_rifleman_m21
 	{
+		displayName="$STR_RHSSAF_ARMY_M10_PARA_ASST_SPEC_AA_DISPLAYNAME";
 		cost=110000;
 		camouflage=1.5;
 		backpack="rhssaf_Kitbag_smb_asst_AA";
@@ -5645,6 +5717,7 @@ class CfgVehicles
 	class rhssaf_army_m10_para_medic: rhssaf_soldier_army_para_digital_base
 	{
 		nameSound="veh_infantry_medic_s";
+		displayName="$STR_RHSSAF_ARMY_M10_PARA_MEDIC_DISPLAYNAME";
 		attendant=1;
 		cost=300000;
 		camouflage=1.6;
@@ -5716,6 +5789,7 @@ class CfgVehicles
 	};
 	class rhssaf_army_m10_para_repair: rhssaf_soldier_army_para_digital_base
 	{
+		displayName="$STR_RHSSAF_ARMY_M10_PARA_REPAIR_DISPLAYNAME";
 		engineer=1;
 		detectSkill=40;
 		cost=220000;
@@ -5788,6 +5862,7 @@ class CfgVehicles
 	};
 	class rhssaf_army_m10_para_exp: rhssaf_soldier_army_para_digital_base
 	{
+		displayName="$STR_RHSSAF_ARMY_M10_PARA_EXP_DISPLAYNAME";
 		cost=115000;
 		camouflage=1.6;
 		canDeactivateMines=1;
@@ -5861,6 +5936,7 @@ class CfgVehicles
 	};
 	class rhssaf_army_m10_para_engineer: rhssaf_soldier_army_para_digital_base
 	{
+		displayName="$STR_RHSSAF_ARMY_M10_PARA_ENGINEER_DISPLAYNAME";
 		engineer=1;
 		cost=220000;
 		camouflage=1.6;
@@ -5935,6 +6011,7 @@ class CfgVehicles
 	};
 	class rhssaf_army_m10_para_crew: rhssaf_soldier_army_para_digital_base
 	{
+		displayName="$STR_RHSSAF_ARMY_M10_PARA_CREW_DISPLAYNAME";
 		camouflage=1.6;
 		cost=90000;
 		role="Crewman";
@@ -6007,6 +6084,7 @@ class CfgVehicles
 	class rhssaf_army_m10_para_officer: rhssaf_soldier_army_para_digital_base
 	{
 		nameSound="veh_infantry_officer_s";
+		displayName="$STR_RHSSAF_ARMY_M10_PARA_OFFICER_DISPLAYNAME";
 		cost=600000;
 		camouflage=1.6;
 		icon="iconManOfficer";
@@ -6186,6 +6264,7 @@ class CfgVehicles
 	};
 	class rhssaf_soldier_un_desert_base: rhssaf_soldier_m10_base
 	{
+		displayName="$STR_RHSSAF_SOLDIER_UN_DESERT_BASE_DISPLAYNAME";
 		uniformClass="rhssaf_uniform_m10_digital_desert";
 		backpack="rhssaf_Kitbag_smb_std_m70";
 		weapons[]=
@@ -6254,6 +6333,7 @@ class CfgVehicles
 	class rhssaf_un_m10_digital_desert_rifleman_m21: rhssaf_soldier_un_desert_base
 	{
 		nameSound="veh_infantry_s";
+		displayName="$STR_RHSSAF_UN_M10_DIGITAL_DESERT_RIFLEMAN_M21_DISPLAYNAME";
 		cost=100000;
 		backpack="rhssaf_Kitbag_smb_std_m21";
 		weapons[]=
@@ -6321,6 +6401,7 @@ class CfgVehicles
 	};
 	class rhssaf_un_m10_digital_desert_rifleman_m70: rhssaf_un_m10_digital_desert_rifleman_m21
 	{
+		displayName="$STR_RHSSAF_UN_M10_DIGITAL_DESERT_RIFLEMAN_M70_DISPLAYNAME";
 		cost=100000;
 		backpack="rhssaf_Kitbag_smb_std_m70";
 		weapons[]=
@@ -6388,6 +6469,7 @@ class CfgVehicles
 	};
 	class rhssaf_un_m10_digital_desert_rifleman_ammo: rhssaf_un_m10_digital_desert_rifleman_m21
 	{
+		displayName="$STR_RHSSAF_UN_M10_DIGITAL_DESERT_RIFLEMAN_AMMO_DISPLAYNAME";
 		cost=110000;
 		camouflage=1.5;
 		backpack="rhssaf_Kitbag_smb_Ammo";
@@ -6456,6 +6538,7 @@ class CfgVehicles
 	};
 	class rhssaf_un_m10_digital_desert_gl: rhssaf_soldier_un_desert_base
 	{
+		displayName="$STR_RHSSAF_UN_M10_DIGITAL_DESERT_GL_DISPLAYNAME";
 		cost=130000;
 		threat[]={1,0.30000001,0.1};
 		backpack="rhssaf_Kitbag_smb_std_m21";
@@ -6543,6 +6626,7 @@ class CfgVehicles
 	class rhssaf_un_m10_digital_desert_mgun_m84: rhssaf_soldier_un_desert_base
 	{
 		nameSound="veh_infantry_MG_s";
+		displayName="$STR_RHSSAF_UN_M10_DIGITAL_DESERT_MGUN_M84_DISPLAYNAME";
 		cost=110000;
 		threat[]={1,0.1,0.30000001};
 		icon="iconManMG";
@@ -6608,6 +6692,7 @@ class CfgVehicles
 	};
 	class rhssaf_un_m10_digital_desert_asst_mgun: rhssaf_un_m10_digital_desert_rifleman_m21
 	{
+		displayName="$STR_RHSSAF_UN_M10_DIGITAL_DESERT_ASST_MGUN_DISPLAYNAME";
 		cost=110000;
 		camouflage=1.5;
 		backpack="rhssaf_Kitbag_smb_std_asst_mgun_m84";
@@ -6676,6 +6761,7 @@ class CfgVehicles
 	};
 	class rhssaf_un_m10_digital_desert_sq_lead: rhssaf_soldier_un_desert_base
 	{
+		displayName="$STR_RHSSAF_UN_M10_DIGITAL_DESERT_SQ_LEAD_DISPLAYNAME";
 		cost=500000;
 		camouflage=1.4;
 		icon="iconManLeader";
@@ -6747,6 +6833,7 @@ class CfgVehicles
 	};
 	class rhssaf_un_m10_digital_desert_ft_lead: rhssaf_un_m10_digital_desert_sq_lead
 	{
+		displayName="$STR_RHSSAF_UN_M10_DIGITAL_DESERT_FT_LEAD_DISPLAYNAME";
 		cost=450000;
 		backpack="rhssaf_Kitbag_smb_std_m70";
 		weapons[]=
@@ -6817,6 +6904,7 @@ class CfgVehicles
 	class rhssaf_un_m10_digital_desert_sniper_m76: rhssaf_soldier_un_desert_base
 	{
 		nameSound="veh_infantry_sniper_s";
+		displayName="$STR_RHSSAF_UN_M10_DIGITAL_DESERT_SNIPER_M76_DISPLAYNAME";
 		cost=150000;
 		backpack="rhssaf_Kitbag_smb_std_m76";
 		weapons[]=
@@ -6892,6 +6980,7 @@ class CfgVehicles
 	};
 	class rhssaf_un_m10_digital_desert_spotter: rhssaf_un_m10_digital_desert_rifleman_m21
 	{
+		displayName="$STR_RHSSAF_UN_M10_DIGITAL_DESERT_SPOTTER_DISPLAYNAME";
 		cost=110000;
 		camouflage=1.5;
 		backpack="rhssaf_Kitbag_smb_std_m70";
@@ -6963,6 +7052,7 @@ class CfgVehicles
 	class rhssaf_un_m10_digital_desert_rifleman_at: rhssaf_soldier_un_desert_base
 	{
 		nameSound="veh_infantry_AT_s";
+		displayName="$STR_RHSSAF_UN_M10_DIGITAL_DESERT_RIFLEMAN_AT_DISPLAYNAME";
 		cost=180000;
 		threat[]={1,0.5,0.30000001};
 		icon="iconManAT";
@@ -7036,6 +7126,7 @@ class CfgVehicles
 	};
 	class rhssaf_un_m10_digital_desert_spec_at: rhssaf_un_m10_digital_desert_rifleman_at
 	{
+		displayName="$STR_RHSSAF_UN_M10_DIGITAL_DESERT_SPEC_AT_DISPLAYNAME";
 		cost=190000;
 		threat[]={1,0.69999999,0.30000001};
 		backpack="rhssaf_Kitbag_smb_AT";
@@ -7118,6 +7209,7 @@ class CfgVehicles
 	};
 	class rhssaf_un_m10_digital_desert_spec_aa: rhssaf_un_m10_digital_desert_rifleman_at
 	{
+		displayName="$STR_RHSSAF_UN_M10_DIGITAL_DESERT_SPEC_AA_DISPLAYNAME";
 		cost=200000;
 		threat[]={1,0.1,0.69999999};
 		backpack="rhssaf_Kitbag_smb_AA";
@@ -7190,6 +7282,7 @@ class CfgVehicles
 	};
 	class rhssaf_un_m10_digital_desert_asst_spec_at: rhssaf_un_m10_digital_desert_rifleman_m21
 	{
+		displayName="$STR_RHSSAF_UN_M10_DIGITAL_DESERT_ASST_SPEC_AT_DISPLAYNAME";
 		cost=110000;
 		camouflage=1.5;
 		backpack="rhssaf_Kitbag_smb_asst_AT";
@@ -7258,6 +7351,7 @@ class CfgVehicles
 	};
 	class rhssaf_un_m10_digital_desert_asst_spec_aa: rhssaf_un_m10_digital_desert_rifleman_m21
 	{
+		displayName="$STR_RHSSAF_UN_M10_DIGITAL_DESERT_ASST_SPEC_AA_DISPLAYNAME";
 		cost=110000;
 		camouflage=1.5;
 		backpack="rhssaf_Kitbag_smb_asst_AA";
@@ -7327,6 +7421,7 @@ class CfgVehicles
 	class rhssaf_un_m10_digital_desert_medic: rhssaf_soldier_un_desert_base
 	{
 		nameSound="veh_infantry_medic_s";
+		displayName="$STR_RHSSAF_UN_M10_DIGITAL_DESERT_MEDIC_DISPLAYNAME";
 		attendant=1;
 		cost=300000;
 		camouflage=1.6;
@@ -7398,6 +7493,7 @@ class CfgVehicles
 	};
 	class rhssaf_un_m10_digital_desert_repair: rhssaf_soldier_un_desert_base
 	{
+		displayName="$STR_RHSSAF_UN_M10_DIGITAL_DESERT_REPAIR_DISPLAYNAME";
 		engineer=1;
 		detectSkill=40;
 		cost=220000;
@@ -7470,6 +7566,7 @@ class CfgVehicles
 	};
 	class rhssaf_un_m10_digital_desert_exp: rhssaf_soldier_un_desert_base
 	{
+		displayName="$STR_RHSSAF_UN_M10_DIGITAL_DESERT_EXP_DISPLAYNAME";
 		cost=115000;
 		camouflage=1.6;
 		canDeactivateMines=1;
@@ -7543,6 +7640,7 @@ class CfgVehicles
 	};
 	class rhssaf_un_m10_digital_desert_engineer: rhssaf_soldier_un_desert_base
 	{
+		displayName="$STR_RHSSAF_UN_M10_DIGITAL_DESERT_ENGINEER_DISPLAYNAME";
 		engineer=1;
 		cost=220000;
 		camouflage=1.6;
@@ -7617,6 +7715,7 @@ class CfgVehicles
 	};
 	class rhssaf_un_m10_digital_desert_crew: rhssaf_soldier_un_desert_base
 	{
+		displayName="$STR_RHSSAF_UN_M10_DIGITAL_DESERT_CREW_DISPLAYNAME";
 		camouflage=1.6;
 		cost=90000;
 		role="Crewman";
@@ -7687,6 +7786,7 @@ class CfgVehicles
 	class rhssaf_un_m10_digital_desert_officer: rhssaf_soldier_un_desert_base
 	{
 		nameSound="veh_infantry_officer_s";
+		displayName="$STR_RHSSAF_UN_M10_DIGITAL_DESERT_OFFICER_DISPLAYNAME";
 		cost=600000;
 		camouflage=1.6;
 		icon="iconManOfficer";
@@ -7758,6 +7858,7 @@ class CfgVehicles
 	};
 	class rhssaf_soldier_un_digital_base: rhssaf_soldier_m10_base
 	{
+		displayName="$STR_RHSSAF_SOLDIER_UN_DIGITAL_BASE_DISPLAYNAME";
 		uniformClass="rhssaf_uniform_m10_digital_tan_boots";
 		backpack="rhssaf_Kitbag_smb_std_m70";
 		weapons[]=
@@ -7826,6 +7927,7 @@ class CfgVehicles
 	class rhssaf_un_m10_digital_rifleman_m21: rhssaf_soldier_un_digital_base
 	{
 		nameSound="veh_infantry_s";
+		displayName="$STR_RHSSAF_UN_M10_DIGITAL_RIFLEMAN_M21_DISPLAYNAME";
 		cost=100000;
 		backpack="rhssaf_Kitbag_smb_std_m21";
 		weapons[]=
@@ -7893,6 +7995,7 @@ class CfgVehicles
 	};
 	class rhssaf_un_m10_digital_rifleman_m70: rhssaf_un_m10_digital_rifleman_m21
 	{
+		displayName="$STR_RHSSAF_UN_M10_DIGITAL_RIFLEMAN_M70_DISPLAYNAME";
 		cost=100000;
 		backpack="rhssaf_Kitbag_smb_std_m70";
 		weapons[]=
@@ -7960,6 +8063,7 @@ class CfgVehicles
 	};
 	class rhssaf_un_m10_digital_rifleman_ammo: rhssaf_un_m10_digital_rifleman_m21
 	{
+		displayName="$STR_RHSSAF_UN_M10_DIGITAL_RIFLEMAN_AMMO_DISPLAYNAME";
 		cost=110000;
 		camouflage=1.5;
 		backpack="rhssaf_Kitbag_smb_Ammo";
@@ -8028,6 +8132,7 @@ class CfgVehicles
 	};
 	class rhssaf_un_m10_digital_gl: rhssaf_soldier_un_digital_base
 	{
+		displayName="$STR_RHSSAF_UN_M10_DIGITAL_GL_DISPLAYNAME";
 		cost=130000;
 		threat[]={1,0.30000001,0.1};
 		backpack="rhssaf_Kitbag_smb_std_m21";
@@ -8115,6 +8220,7 @@ class CfgVehicles
 	class rhssaf_un_m10_digital_mgun_m84: rhssaf_soldier_un_digital_base
 	{
 		nameSound="veh_infantry_MG_s";
+		displayName="$STR_RHSSAF_UN_M10_DIGITAL_MGUN_M84_DISPLAYNAME";
 		cost=110000;
 		threat[]={1,0.1,0.30000001};
 		icon="iconManMG";
@@ -8180,6 +8286,7 @@ class CfgVehicles
 	};
 	class rhssaf_un_m10_digital_asst_mgun: rhssaf_un_m10_digital_rifleman_m21
 	{
+		displayName="$STR_RHSSAF_UN_M10_DIGITAL_ASST_MGUN_DISPLAYNAME";
 		cost=110000;
 		camouflage=1.5;
 		backpack="rhssaf_Kitbag_smb_std_asst_mgun_m84";
@@ -8248,6 +8355,7 @@ class CfgVehicles
 	};
 	class rhssaf_un_m10_digital_sq_lead: rhssaf_soldier_un_digital_base
 	{
+		displayName="$STR_RHSSAF_UN_M10_DIGITAL_SQ_LEAD_DISPLAYNAME";
 		cost=500000;
 		camouflage=1.4;
 		icon="iconManLeader";
@@ -8319,6 +8427,7 @@ class CfgVehicles
 	};
 	class rhssaf_un_m10_digital_ft_lead: rhssaf_un_m10_digital_sq_lead
 	{
+		displayName="$STR_RHSSAF_UN_M10_DIGITAL_FT_LEAD_DISPLAYNAME";
 		cost=450000;
 		backpack="rhssaf_Kitbag_smb_std_m70";
 		weapons[]=
@@ -8389,6 +8498,7 @@ class CfgVehicles
 	class rhssaf_un_m10_digital_sniper_m76: rhssaf_soldier_un_digital_base
 	{
 		nameSound="veh_infantry_sniper_s";
+		displayName="$STR_RHSSAF_UN_M10_DIGITAL_SNIPER_M76_DISPLAYNAME";
 		cost=150000;
 		backpack="rhssaf_Kitbag_smb_std_m76";
 		weapons[]=
@@ -8464,6 +8574,7 @@ class CfgVehicles
 	};
 	class rhssaf_un_m10_digital_spotter: rhssaf_un_m10_digital_rifleman_m21
 	{
+		displayName="$STR_RHSSAF_UN_M10_DIGITAL_SPOTTER_DISPLAYNAME";
 		cost=110000;
 		camouflage=1.5;
 		backpack="rhssaf_Kitbag_smb_std_m70";
@@ -8535,6 +8646,7 @@ class CfgVehicles
 	class rhssaf_un_m10_digital_rifleman_at: rhssaf_soldier_un_digital_base
 	{
 		nameSound="veh_infantry_AT_s";
+		displayName="$STR_RHSSAF_UN_M10_DIGITAL_RIFLEMAN_AT_DISPLAYNAME";
 		cost=180000;
 		threat[]={1,0.5,0.30000001};
 		icon="iconManAT";
@@ -8608,6 +8720,7 @@ class CfgVehicles
 	};
 	class rhssaf_un_m10_digital_spec_at: rhssaf_un_m10_digital_rifleman_at
 	{
+		displayName="$STR_RHSSAF_UN_M10_DIGITAL_SPEC_AT_DISPLAYNAME";
 		cost=190000;
 		threat[]={1,0.69999999,0.30000001};
 		backpack="rhssaf_Kitbag_smb_AT";
@@ -8690,6 +8803,7 @@ class CfgVehicles
 	};
 	class rhssaf_un_m10_digital_spec_aa: rhssaf_un_m10_digital_rifleman_at
 	{
+		displayName="$STR_RHSSAF_UN_M10_DIGITAL_SPEC_AA_DISPLAYNAME";
 		cost=200000;
 		threat[]={1,0.1,0.69999999};
 		backpack="rhssaf_Kitbag_smb_AA";
@@ -8762,6 +8876,7 @@ class CfgVehicles
 	};
 	class rhssaf_un_m10_digital_asst_spec_at: rhssaf_un_m10_digital_rifleman_m21
 	{
+		displayName="$STR_RHSSAF_UN_M10_DIGITAL_ASST_SPEC_AT_DISPLAYNAME";
 		cost=110000;
 		camouflage=1.5;
 		backpack="rhssaf_Kitbag_smb_asst_AT";
@@ -8830,6 +8945,7 @@ class CfgVehicles
 	};
 	class rhssaf_un_m10_digital_asst_spec_aa: rhssaf_un_m10_digital_rifleman_m21
 	{
+		displayName="$STR_RHSSAF_UN_M10_DIGITAL_ASST_SPEC_AA_DISPLAYNAME";
 		cost=110000;
 		camouflage=1.5;
 		backpack="rhssaf_Kitbag_smb_asst_AA";
@@ -8899,6 +9015,7 @@ class CfgVehicles
 	class rhssaf_un_m10_digital_medic: rhssaf_soldier_un_digital_base
 	{
 		nameSound="veh_infantry_medic_s";
+		displayName="$STR_RHSSAF_UN_M10_DIGITAL_MEDIC_DISPLAYNAME";
 		attendant=1;
 		cost=300000;
 		camouflage=1.6;
@@ -8970,6 +9087,7 @@ class CfgVehicles
 	};
 	class rhssaf_un_m10_digital_repair: rhssaf_soldier_un_digital_base
 	{
+		displayName="$STR_RHSSAF_UN_M10_DIGITAL_REPAIR_DISPLAYNAME";
 		engineer=1;
 		detectSkill=40;
 		cost=220000;
@@ -9042,6 +9160,7 @@ class CfgVehicles
 	};
 	class rhssaf_un_m10_digital_exp: rhssaf_soldier_un_digital_base
 	{
+		displayName="$STR_RHSSAF_UN_M10_DIGITAL_EXP_DISPLAYNAME";
 		cost=115000;
 		camouflage=1.6;
 		canDeactivateMines=1;
@@ -9115,6 +9234,7 @@ class CfgVehicles
 	};
 	class rhssaf_un_m10_digital_engineer: rhssaf_soldier_un_digital_base
 	{
+		displayName="$STR_RHSSAF_UN_M10_DIGITAL_ENGINEER_DISPLAYNAME";
 		engineer=1;
 		cost=220000;
 		camouflage=1.6;
@@ -9189,6 +9309,7 @@ class CfgVehicles
 	};
 	class rhssaf_un_m10_digital_crew: rhssaf_soldier_un_digital_base
 	{
+		displayName="$STR_RHSSAF_UN_M10_DIGITAL_CREW_DISPLAYNAME";
 		camouflage=1.6;
 		cost=90000;
 		role="Crewman";
@@ -9259,6 +9380,7 @@ class CfgVehicles
 	class rhssaf_un_m10_digital_officer: rhssaf_soldier_un_digital_base
 	{
 		nameSound="veh_infantry_officer_s";
+		displayName="$STR_RHSSAF_UN_M10_DIGITAL_OFFICER_DISPLAYNAME";
 		cost=600000;
 		camouflage=1.6;
 		icon="iconManOfficer";

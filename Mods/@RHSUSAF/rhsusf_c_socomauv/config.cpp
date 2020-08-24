@@ -65,6 +65,7 @@ class CfgVehicles
 	class rhsusf_M1239_base: MRAP_01_base_F
 	{
 		side=1;
+		displayName="SOCOM AUV";
 		weapons[]=
 		{
 			"TruckHorn2",
@@ -103,8 +104,14 @@ class CfgVehicles
 		};
 		class textureSources
 		{
-			class rhs_desert;  //found empty after stripping
-			class rhs_woodland;  //found empty after stripping
+			class rhs_desert
+			{
+				displayName="Desert";
+			};
+			class rhs_woodland
+			{
+				displayName="Woodland";
+			};
 		};
 		class Attributes;  //found empty after stripping
 		hullDamageCauseExplosion=1;
@@ -341,6 +348,7 @@ class CfgVehicles
 	};
 	class rhsusf_M1239_CROWS_base: rhsusf_M1239_base
 	{
+		displayName="SOCOM AUV (CROWS)";
 		threat[]={0.89999998,0.30000001,0.1};
 		class MFD
 		{
@@ -1258,6 +1266,7 @@ class CfgVehicles
 	};
 	class rhsusf_M1239_CROWSMK19_base: rhsusf_M1239_CROWS_base
 	{
+		displayName="SOCOM AUV (CROWS)";
 		class Turrets: Turrets
 		{
 			class CROWS_Turret: CROWS_Turret
@@ -1279,6 +1288,7 @@ class CfgVehicles
 	};
 	class rhsusf_M1239_Deploy_base: rhsusf_M1239_CROWS_base
 	{
+		displayName="SOCOM AUV (Deployed)";
 		transportAmmo=450000;
 		transportFuel=450000;
 		transportRepair=100000000;
@@ -1300,6 +1310,7 @@ class CfgVehicles
 	};
 	class rhsusf_M1239_DeployMK19_base: rhsusf_M1239_CROWSMK19_base
 	{
+		displayName="SOCOM AUV (Deployed)";
 		transportAmmo=450000;
 		transportFuel=450000;
 		transportRepair=100000000;
@@ -1321,6 +1332,7 @@ class CfgVehicles
 	};
 	class rhsusf_M1239_socom_d: rhsusf_M1239_base
 	{
+		displayName="$STR_RHS_M1239_NAME";
 		accuracy=0.5;
 	};
 	class rhsusf_M1239_socom_wd: rhsusf_M1239_socom_d
@@ -1329,6 +1341,7 @@ class CfgVehicles
 	};
 	class rhsusf_M1239_M2_socom_d: rhsusf_M1239_CROWS_base
 	{
+		displayName="$STR_RHS_M1239_M153_M2_NAME";
 		accuracy=0.5;
 	};
 	class rhsusf_M1239_M2_socom_wd: rhsusf_M1239_M2_socom_d
@@ -1337,6 +1350,7 @@ class CfgVehicles
 	};
 	class rhsusf_M1239_MK19_socom_d: rhsusf_M1239_CROWSMK19_base
 	{
+		displayName="$STR_RHS_M1239_M153_MK19_NAME";
 		accuracy=0.5;
 	};
 	class rhsusf_M1239_MK19_socom_wd: rhsusf_M1239_MK19_socom_d
@@ -1345,6 +1359,7 @@ class CfgVehicles
 	};
 	class rhsusf_M1239_M2_Deploy_socom_d: rhsusf_M1239_Deploy_base
 	{
+		displayName="$STR_RHS_M1239_M153_M2_DEPLOY_NAME";
 		accuracy=0.5;
 	};
 	class rhsusf_M1239_M2_Deploy_socom_wd: rhsusf_M1239_M2_Deploy_socom_d
@@ -1353,6 +1368,7 @@ class CfgVehicles
 	};
 	class rhsusf_M1239_MK19_Deploy_socom_d: rhsusf_M1239_DeployMK19_base
 	{
+		displayName="$STR_RHS_M1239_M153_MK19_DEPLOY_NAME";
 		accuracy=0.5;
 	};
 	class rhsusf_M1239_MK19_Deploy_socom_wd: rhsusf_M1239_MK19_Deploy_socom_d

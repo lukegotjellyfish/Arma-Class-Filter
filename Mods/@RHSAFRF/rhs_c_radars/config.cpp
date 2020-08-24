@@ -120,6 +120,7 @@ class CfgVehicles
 	};
 	class rhs_p37: House_F
 	{
+		displayName="$STR_RHS_P37";
 		icon="\rhsafrf\addons\rhs_radars\data\icons\P37_icon.paa";
 		mapsize=23;
 		class EventHandlers: EventHandlers
@@ -133,6 +134,7 @@ class CfgVehicles
 	class rhs_prv13: rhs_p37
 	{
 		icon="\rhsafrf\addons\rhs_radars\data\icons\prv13_icon.paa";
+		displayName="$STR_RHS_PRV13";
 		class EventHandlers: EventHandlers
 		{
 			class RHS_EventHandlers
@@ -251,6 +253,7 @@ class CfgVehicles
 	};
 	class rhs_p37_turret_base: rhs_radars_turret_base
 	{
+		displayName="$STR_RHS_P37";
 		icon="\rhsafrf\addons\rhs_radars\data\icons\P37_icon.paa";
 		mapsize=23;
 		class Components
@@ -296,6 +299,7 @@ class CfgVehicles
 	class rhs_prv13_turret_base: rhs_radars_turret_base
 	{
 		icon="\rhsafrf\addons\rhs_radars\data\icons\prv13_icon.paa";
+		displayName="$STR_RHS_PRV13";
 		class Components
 		{
 			class SensorsManagerComponent
@@ -339,29 +343,35 @@ class CfgVehicles
 	class rhs_2P3_1: ThingX
 	{
 		icon="\rhsafrf\addons\rhs_radars\data\icons\2P3_1_icon.paa";
+		displayName="$STR_RHS_2P3_1";
 		selectionDamage="damage";
 		class Damage;  //found empty after stripping
 	};
 	class rhs_2P3_2: rhs_2P3_1
 	{
 		icon="\rhsafrf\addons\rhs_radars\data\icons\2P3_2_icon.paa";
+		displayName="$STR_RHS_2P3_2";
 	};
 	class rhs_v2: rhs_2P3_1
 	{
 		icon="\rhsafrf\addons\rhs_radars\data\icons\2P3_2_icon.paa";
+		displayName="$STR_RHS_V2";
 	};
 	class rhs_v3: rhs_v2
 	{
 		icon="\rhsafrf\addons\rhs_radars\data\icons\2P3_2_icon.paa";
+		displayName="$STR_RHS_V3";
 	};
 	class Sound;
 	class rhs_Sound_radar1: Sound
 	{
 		sound="rhs_radar_engines01";
+		displayName="Stream";
 	};
 	class rhs_Sound_radar2: Sound
 	{
 		sound="rhs_radar_engines02";
+		displayName="Alarm";
 	};
 	class Ruins_F;
 	class Land_rhs_p37_wreck: Ruins_F;  //found empty after stripping

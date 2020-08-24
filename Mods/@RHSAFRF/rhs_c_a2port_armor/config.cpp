@@ -333,6 +333,7 @@ class CfgVehicles
 		{
 			class standard
 			{
+				displayName="Standard";
 				factions[]=
 				{
 					"rhs_faction_vmf",
@@ -343,6 +344,7 @@ class CfgVehicles
 			};
 			class 3tone: standard
 			{
+				displayName="3-Color Camo";
 				factions[]=
 				{
 					"rhs_faction_vmf",
@@ -386,6 +388,7 @@ class CfgVehicles
 			"crate_r2_unhide",
 			"wheel_1_unhide"
 		};
+		displayName="$STR_RHS_btr60_Name";
 		icon="\rhsafrf\addons\rhs_a2port_armor\Data\icon_btr60_ca.paa";
 		driverOpticsModel="\rhsafrf\addons\rhs_optics\vehicles\rhs_tnpo170a";
 		driverForceOptics=0;
@@ -985,6 +988,7 @@ class CfgVehicles
 				maxCompression=0;
 			};
 		};
+		displayName="$STR_RHS_ZSU_Name";
 		accuracy=0.30000001;
 		typicalCargo[]={};
 		side=0;
@@ -1064,18 +1068,26 @@ class CfgVehicles
 		{
 			class standard
 			{
+				displayName="Standard";
 				factions[]=
 				{
 					"rhs_faction_vpvo"
 				};
 			};
-			class Chdkz;  //found empty after stripping
-			class rhs_sand;  //found empty after stripping
+			class Chdkz
+			{
+				displayName="Chedaki";
+			};
+			class rhs_sand
+			{
+				displayName="Sand";
+			};
 		};
 		class Attributes
 		{
 			class rhs_decalNumber_type
 			{
+				displayName="Define font type of plate number";
 				tooltip="Define kind of font that will be drawn on vehicle.";
 				property="rhs_decalNumber_type";
 				control="Combo";
@@ -1129,6 +1141,7 @@ class CfgVehicles
 			class rhs_decalNumber
 			{
 				collapsed=1;
+				displayName="Set side number";
 				tooltip="Set side number. 4 numbers are required. Type 0 to hide numbers complety & leave at -1 to get random number";
 				property="rhs_decalNumber";
 				control="Edit";
@@ -1460,5 +1473,8 @@ class CfgVehicles
 			};
 		};
 	};
-	class rhs_zsu234_aa: rhs_zsutank_base;  //found empty after stripping
+	class rhs_zsu234_aa: rhs_zsutank_base
+	{
+		displayName="$STR_RHS_ZSU_Name";
+	};
 };

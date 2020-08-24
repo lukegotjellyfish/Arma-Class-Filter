@@ -449,6 +449,7 @@ class CfgVehicles
 		};
 		audible=7;
 		class PilotCamera;  //found empty after stripping
+		displayName="Mi-24P";
 		icon="rhsafrf\addons\rhs_a2port_air\data\map_ico\icon_mi24_ca.paa";
 		getInRadius=2;
 		maxOmega=2000;
@@ -780,25 +781,51 @@ class CfgVehicles
 		{
 			class standard
 			{
+				displayName="Grey";
 				factions[]=
 				{
 					"rhs_faction_vvs_c",
 					"rhs_faction_vvs"
 				};
 			};
-			class Camo: standard;  //found empty after stripping
-			class Camo1: standard;  //found empty after stripping
-			class Camo2: standard;  //found empty after stripping
-			class Camo3: standard;  //found empty after stripping
-			class Camo4: standard;  //found empty after stripping
-			class Camo5: standard;  //found empty after stripping
-			class Camo6: standard;  //found empty after stripping
-			class Camo7: standard;  //found empty after stripping
+			class Camo: standard
+			{
+				displayName="Camo #1";
+			};
+			class Camo1: standard
+			{
+				displayName="Camo #2";
+			};
+			class Camo2: standard
+			{
+				displayName="Camo #3";
+			};
+			class Camo3: standard
+			{
+				displayName="Camo #4";
+			};
+			class Camo4: standard
+			{
+				displayName="Soot Camo #1";
+			};
+			class Camo5: standard
+			{
+				displayName="Soot Camo #2";
+			};
+			class Camo6: standard
+			{
+				displayName="Soot Camo #3";
+			};
+			class Camo7: standard
+			{
+				displayName="CDF";
+			};
 		};
 		class Attributes
 		{
 			class rhs_hideExhaust
 			{
+				displayName="Hide exhaust cover";
 				tooltip="Hide exhaust cover. WARNING: DUE TO HOW ENGINE WORKS IT DOESN'T CHANGE EXHAUST MEMORY POINTS";
 				property="rhs_hideExhaust";
 				control="CheckboxNumber";
@@ -807,6 +834,7 @@ class CfgVehicles
 			};
 			class rhs_opendoors
 			{
+				displayName="Open cargo doors";
 				property="rhs_opendoors";
 				control="CheckboxNumber";
 				expression="_this animateDoor ['Door_Cargo',_value,true]";
@@ -814,6 +842,7 @@ class CfgVehicles
 			};
 			class rhs_decalNumber_type
 			{
+				displayName="Define font type of side number";
 				tooltip="Define kind of font that will be drawn on vehicle";
 				property="rhs_decalNumber_type";
 				control="Combo";
@@ -891,6 +920,7 @@ class CfgVehicles
 			};
 			class rhs_decalNumber
 			{
+				displayName="Set side number";
 				tooltip="Set side number. 2 numbers are required. Type 0 to hide numbers completly";
 				property="rhs_decalNumber";
 				control="Edit";
@@ -900,6 +930,7 @@ class CfgVehicles
 			};
 			class rhs_decalTail
 			{
+				displayName="Define tail decal";
 				tooltip="Define tail decalthat will be drawn on vehicle";
 				property="rhs_decalTail";
 				control="Combo";
@@ -1645,6 +1676,7 @@ class CfgVehicles
 	};
 	class RHS_Mi24V_Base: RHS_Mi24_base
 	{
+		displayName="Mi-24V";
 		tf_isolatedAmount_api=0.60000002;
 		LESH_canBeTowed=1;
 		LESH_towFromFront=1;
@@ -1765,6 +1797,7 @@ class CfgVehicles
 	};
 	class RHS_Mi24D_Base: RHS_Mi24V_Base
 	{
+		displayName="$STR_RHS_MI24D_Name";
 		class Exhausts
 		{
 			class Exhaust01
@@ -1843,6 +1876,7 @@ class CfgVehicles
 	};
 	class RHS_Mi24D_Early_Base: RHS_Mi24D_Base
 	{
+		displayName="$STR_RHS_MI24D_Early_Name";
 		class Components: Components
 		{
 			class TransportPylonsComponent: TransportPylonsComponent
@@ -1912,6 +1946,7 @@ class CfgVehicles
 	};
 	class RHS_Mi24P_CAS_VVS_Base: RHS_Mi24P_VVS_Base
 	{
+		displayName="$STR_RHS_MI24P_CAS_Name";
 		class Components: Components
 		{
 			class TransportPylonsComponent: TransportPylonsComponent
@@ -2000,6 +2035,7 @@ class CfgVehicles
 	};
 	class RHS_Mi24P_AT_VVS_Base: RHS_Mi24P_VVS_Base
 	{
+		displayName="$STR_RHS_MI24P_AT_Name";
 		class Components: Components
 		{
 			class TransportPylonsComponent: TransportPylonsComponent
@@ -2129,6 +2165,7 @@ class CfgVehicles
 	};
 	class RHS_Mi24V_FAB_VVS_Base: RHS_Mi24V_VVS_Base
 	{
+		displayName="$STR_RHS_MI24V_FAB_Name";
 		class Components: Components
 		{
 			class TransportPylonsComponent: TransportPylonsComponent
@@ -2216,6 +2253,7 @@ class CfgVehicles
 	};
 	class RHS_Mi24V_UPK23_VVS_Base: RHS_Mi24V_VVS_Base
 	{
+		displayName="$STR_RHS_MI24V_UPK_Name";
 		class Components: Components
 		{
 			class TransportPylonsComponent: TransportPylonsComponent
@@ -2303,6 +2341,7 @@ class CfgVehicles
 	};
 	class RHS_Mi24V_AT_VVS_Base: RHS_Mi24V_VVS_Base
 	{
+		displayName="$STR_RHS_MI24V_AT_Name";
 		class Components: Components
 		{
 			class TransportPylonsComponent: TransportPylonsComponent
@@ -2390,6 +2429,7 @@ class CfgVehicles
 	};
 	class RHS_Mi24Vt_vvs: RHS_Mi24V_vvs
 	{
+		displayName="$STR_RHS_MI24Vt_Name";
 		slingLoadMaxCargoMass=2400;
 		slingLoadMemoryPoint="slingLoad0";
 		LESH_canBeTowed=1;
@@ -2673,19 +2713,44 @@ class CfgVehicles
 		};
 		class textureSources
 		{
-			class standard;  //found empty after stripping
-			class Civilian: standard;  //found empty after stripping
-			class Camo: standard;  //found empty after stripping
-			class Camo1: standard;  //found empty after stripping
-			class Camo2: standard;  //found empty after stripping
-			class Camo3: standard;  //found empty after stripping
-			class Camo4: standard;  //found empty after stripping
-			class Camo5: standard;  //found empty after stripping
+			class standard
+			{
+				displayName="Grey";
+			};
+			class Civilian: standard
+			{
+				displayName="Civilian";
+			};
+			class Camo: standard
+			{
+				displayName="CDF";
+			};
+			class Camo1: standard
+			{
+				displayName="Chedaki";
+			};
+			class Camo2: standard
+			{
+				displayName="Camo #1";
+			};
+			class Camo3: standard
+			{
+				displayName="Camo #2";
+			};
+			class Camo4: standard
+			{
+				displayName="Camo #3";
+			};
+			class Camo5: standard
+			{
+				displayName="Camo #4";
+			};
 		};
 		class Attributes
 		{
 			class rhs_decalNumber_type
 			{
+				displayName="Define font type of side number";
 				tooltip="Define kind of font that will be drawn on vehicle";
 				property="rhs_decalNumber_type";
 				control="Combo";
@@ -2763,6 +2828,7 @@ class CfgVehicles
 			};
 			class rhs_decalNumber
 			{
+				displayName="Set side number";
 				tooltip="Set side number. 2 numbers are required. Type 0 to hide numbers completly";
 				property="rhs_decalNumber";
 				control="Edit";
@@ -2772,6 +2838,7 @@ class CfgVehicles
 			};
 			class rhs_decalTail
 			{
+				displayName="Define tail decal";
 				tooltip="Define tail decalthat will be drawn on vehicle";
 				property="rhs_decalTail";
 				control="Combo";
@@ -3330,6 +3397,7 @@ class CfgVehicles
 		tf_isolatedAmount_api=0.40000001;
 		LockDetectionSystem="8";
 		incomingMissileDetectionSystem="8";
+		displayName="$STR_RHS_MI8MTV3_Name";
 		class Turrets: Turrets
 		{
 			class CopilotTurret: CopilotTurret
@@ -3613,6 +3681,7 @@ class CfgVehicles
 	};
 	class rhs_mi8mtv3_heavy_base: rhs_mi8mtv3_base
 	{
+		displayName="Mi-8MTV-3 (Heavy)";
 		class Components: Components
 		{
 			class TransportPylonsComponent
@@ -3735,6 +3804,7 @@ class CfgVehicles
 				minturn=-121;
 			};
 		};
+		displayName="$STR_RHS_MI8AMTSh_Name";
 		drivercompartments="Compartment1";
 		cargocompartments[]=
 		{
@@ -3755,19 +3825,41 @@ class CfgVehicles
 		{
 			class standard
 			{
+				displayName="Grey";
 				factions[]=
 				{
 					"rhs_faction_vvs_c",
 					"rhs_faction_vvs"
 				};
 			};
-			class Civilian: standard;  //found empty after stripping
-			class Camo: standard;  //found empty after stripping
-			class Camo1: standard;  //found empty after stripping
-			class Camo2: standard;  //found empty after stripping
-			class Camo3: standard;  //found empty after stripping
-			class Camo4: standard;  //found empty after stripping
-			class Camo5: standard;  //found empty after stripping
+			class Civilian: standard
+			{
+				displayName="Civilian";
+			};
+			class Camo: standard
+			{
+				displayName="CDF";
+			};
+			class Camo1: standard
+			{
+				displayName="Chedaki";
+			};
+			class Camo2: standard
+			{
+				displayName="Camo #1";
+			};
+			class Camo3: standard
+			{
+				displayName="Camo #2";
+			};
+			class Camo4: standard
+			{
+				displayName="Camo #3";
+			};
+			class Camo5: standard
+			{
+				displayName="Camo #4";
+			};
 		};
 		class Components: Components
 		{
@@ -3861,6 +3953,7 @@ class CfgVehicles
 	};
 	class rhs_mi8t_base: RHS_Mi8_base
 	{
+		displayName="$STR_RHS_MI8T_Name";
 		accuracy=1.5;
 		tf_isolatedAmount_api=0.5;
 		hasGunner=0;
@@ -3921,19 +4014,41 @@ class CfgVehicles
 		{
 			class standard
 			{
+				displayName="Grey";
 				factions[]=
 				{
 					"rhs_faction_vvs_c",
 					"rhs_faction_vvs"
 				};
 			};
-			class Civilian: standard;  //found empty after stripping
-			class Camo: standard;  //found empty after stripping
-			class Camo1: standard;  //found empty after stripping
-			class Camo2: standard;  //found empty after stripping
-			class Camo3: standard;  //found empty after stripping
-			class Camo4: standard;  //found empty after stripping
-			class Camo5: standard;  //found empty after stripping
+			class Civilian: standard
+			{
+				displayName="Civilian";
+			};
+			class Camo: standard
+			{
+				displayName="CDF";
+			};
+			class Camo1: standard
+			{
+				displayName="Chedaki";
+			};
+			class Camo2: standard
+			{
+				displayName="Camo #1";
+			};
+			class Camo3: standard
+			{
+				displayName="Camo #2";
+			};
+			class Camo4: standard
+			{
+				displayName="Camo #3";
+			};
+			class Camo5: standard
+			{
+				displayName="Camo #4";
+			};
 		};
 		class Attributes: Attributes
 		{
@@ -3942,6 +4057,7 @@ class CfgVehicles
 			class rhs_decalTail: rhs_decalTail;  //found empty after stripping
 			class rhs_reardoors
 			{
+				displayName="Open rear doors";
 				property="rhs_opendoors";
 				control="CheckboxNumber";
 				expression="[_this,14,15,true] call rhs_fnc_mi8_checkDoor";
@@ -3949,6 +4065,7 @@ class CfgVehicles
 			};
 			class rhs_leftdoor: rhs_reardoors
 			{
+				displayName="Open left door";
 				property="rhs_leftdoor";
 				expression="_this animateDoor ['LeftDoor',_value,true]";
 			};
@@ -3966,6 +4083,7 @@ class CfgVehicles
 	};
 	class rhs_mi8amt_base: RHS_Mi8_base
 	{
+		displayName="$STR_RHS_MI8AMT_Name";
 		accuracy=1.5;
 		tf_isolatedAmount_api=0.5;
 		hasGunner=0;
@@ -3997,6 +4115,7 @@ class CfgVehicles
 			class rhs_decalTail: rhs_decalTail;  //found empty after stripping
 			class rhs_reardoors
 			{
+				displayName="Open rear doors";
 				property="rhs_opendoors";
 				control="CheckboxNumber";
 				expression="[_this,14,15,true] call rhs_fnc_mi8_checkDoor";
@@ -4004,6 +4123,7 @@ class CfgVehicles
 			};
 			class rhs_leftdoor: rhs_reardoors
 			{
+				displayName="Open left door";
 				property="rhs_leftdoor";
 				expression="_this animateDoor ['LeftDoor',_value,true]";
 			};
@@ -4049,6 +4169,7 @@ class CfgVehicles
 	};
 	class RHS_Mi8mt_vvs: RHS_Mi8_VVS_Base
 	{
+		displayName="$STR_RHS_MI8MT_Name";
 		transportsoldier=14;
 	};
 	class RHS_Mi8mt_vvsc: RHS_Mi8mt_vvs
@@ -4096,6 +4217,7 @@ class CfgVehicles
 	};
 	class RHS_Mi8mt_Cargo_vvs: RHS_Mi8mt_vvs
 	{
+		displayName="$STR_RHS_MI8MT_CARGO_Name";
 		transportsoldier=13;
 		class Turrets: Turrets
 		{
@@ -4121,6 +4243,7 @@ class CfgVehicles
 			class rhs_decalTail: rhs_decalTail;  //found empty after stripping
 			class rhs_reardoors
 			{
+				displayName="Open rear doors";
 				property="rhs_opendoors";
 				control="CheckboxNumber";
 				expression="[_this,13,14,true] call rhs_fnc_mi8_checkDoor";
@@ -4128,6 +4251,7 @@ class CfgVehicles
 			};
 			class rhs_leftdoor: rhs_reardoors
 			{
+				displayName="Open left door";
 				property="rhs_leftdoor";
 				expression="_this animateDoor ['LeftDoor',_value,true]";
 			};
@@ -4184,7 +4308,10 @@ class CfgVehicles
 			"rhsafrf\addons\rhs_decals\data\labels\aviation\vvs_ca.paa"
 		};
 	};
-	class RHS_Mi8MTV3_vvs: RHS_Mi8MTV3_VVS_Base;  //found empty after stripping
+	class RHS_Mi8MTV3_vvs: RHS_Mi8MTV3_VVS_Base
+	{
+		displayName="$STR_RHS_MI8MTV3_Name";
+	};
 	class RHS_Mi8MTV3_vvsc: RHS_Mi8MTV3_vvs
 	{
 		rhs_decalParameters[]=
@@ -4217,6 +4344,7 @@ class CfgVehicles
 	};
 	class RHS_Mi8MTV3_UPK23_vvs: RHS_Mi8MTV3_vvs
 	{
+		displayName="$STR_RHS_MI8MTV3_UPK_Name";
 		class Components: Components
 		{
 			class TransportPylonsComponent: TransportPylonsComponent
@@ -4299,6 +4427,7 @@ class CfgVehicles
 	};
 	class RHS_Mi8MTV3_FAB_vvs: RHS_Mi8MTV3_vvs
 	{
+		displayName="$STR_RHS_MI8MTV3_FAB_Name";
 		class Components: Components
 		{
 			class TransportPylonsComponent: TransportPylonsComponent
@@ -4360,6 +4489,7 @@ class CfgVehicles
 	};
 	class RHS_Mi8mtv3_Cargo_vvs: RHS_Mi8MTV3_vvs
 	{
+		displayName="$STR_RHS_Mi8mtv3_CARGO_Name";
 		transportsoldier=12;
 		class Turrets: Turrets
 		{
@@ -4386,6 +4516,7 @@ class CfgVehicles
 			class rhs_decalTail: rhs_decalTail;  //found empty after stripping
 			class rhs_reardoors
 			{
+				displayName="Open rear doors";
 				property="rhs_opendoors";
 				control="CheckboxNumber";
 				expression="[_this,12,14,true] call rhs_fnc_mi8_checkDoor";
@@ -4393,6 +4524,7 @@ class CfgVehicles
 			};
 			class rhs_leftdoor: rhs_reardoors
 			{
+				displayName="Open left door";
 				property="rhs_leftdoor";
 				expression="_this animateDoor ['LeftDoor',_value,true]";
 			};
@@ -4467,7 +4599,10 @@ class CfgVehicles
 			"rhsafrf\addons\rhs_decals\data\labels\aviation\vvs_ca.paa"
 		};
 	};
-	class RHS_Mi8T_vvs: RHS_Mi8T_VVS_Base;  //found empty after stripping
+	class RHS_Mi8T_vvs: RHS_Mi8T_VVS_Base
+	{
+		displayName="$STR_RHS_Mi8T_Name";
+	};
 	class RHS_Mi8T_vvsc: RHS_Mi8T_vvs
 	{
 		rhs_decalParameters[]=
@@ -4511,7 +4646,10 @@ class CfgVehicles
 			"rhsafrf\addons\rhs_decals\data\labels\aviation\vvs_ca.paa"
 		};
 	};
-	class RHS_Mi8AMT_vvs: RHS_Mi8AMT_VVS_Base;  //found empty after stripping
+	class RHS_Mi8AMT_vvs: RHS_Mi8AMT_VVS_Base
+	{
+		displayName="$STR_RHS_Mi8AMT_Name";
+	};
 	class RHS_Mi8AMT_vvsc: RHS_Mi8AMT_vvs
 	{
 		rhs_decalParameters[]=
@@ -4542,9 +4680,13 @@ class CfgVehicles
 			"rhsafrf\addons\rhs_decals\data\labels\aviation\vvs_ca.paa"
 		};
 	};
-	class RHS_Mi8AMTSh_vvs: RHS_Mi8AMTSh_VVS_Base;  //found empty after stripping
+	class RHS_Mi8AMTSh_vvs: RHS_Mi8AMTSh_VVS_Base
+	{
+		displayName="$STR_RHS_MI8AMTSh_Name";
+	};
 	class RHS_Mi8AMTSh_vvsc: RHS_Mi8AMTSh_vvs
 	{
+		displayName="$STR_RHS_MI8AMTSh_Name";
 		rhs_decalParameters[]=
 		{
 			"['Number',cRHSAIRMI8NumberPlaces,'AviaRed']"
@@ -4562,6 +4704,7 @@ class CfgVehicles
 	};
 	class RHS_Mi8AMTSh_UPK23_vvs: RHS_Mi8AMTSh_vvs
 	{
+		displayName="$STR_RHS_MI8AMTSh_UPK_Name";
 		class Components: Components
 		{
 			class TransportPylonsComponent: TransportPylonsComponent
@@ -4637,6 +4780,7 @@ class CfgVehicles
 	};
 	class RHS_Mi8AMTSh_FAB_vvs: RHS_Mi8AMTSh_vvs
 	{
+		displayName="$STR_RHS_MI8AMTSh_FAB_Name";
 		class Components: Components
 		{
 			class TransportPylonsComponent: TransportPylonsComponent
@@ -4691,6 +4835,7 @@ class CfgVehicles
 	};
 	class RHS_Mi8amt_civilian: RHS_Mi8AMT_vvs
 	{
+		displayName="$STR_RHS_MI8AMT_Name";
 		rhs_decalParameters[]={};
 		side=3;
 		hiddenselectionstextures[]=
@@ -4720,6 +4865,7 @@ class CfgVehicles
 	};
 	class RHS_Mi8t_civilian: RHS_Mi8T_vvs
 	{
+		displayName="$STR_RHS_MI8T_Name";
 		rhs_decalParameters[]={};
 		side=3;
 		hiddenselectionstextures[]=
@@ -5254,21 +5400,32 @@ class CfgVehicles
 		{
 			class standard
 			{
+				displayName="Blue";
 				factions[]=
 				{
 					"rhs_faction_vvs"
 				};
 			};
-			class standard2: standard;  //found empty after stripping
+			class standard2: standard
+			{
+				displayName="Grey";
+			};
 			class Camo: standard
 			{
+				displayName="Camo #1";
 				factions[]=
 				{
 					"rhs_faction_vvs_c"
 				};
 			};
-			class Camo1: Camo;  //found empty after stripping
-			class Camo2: standard;  //found empty after stripping
+			class Camo1: Camo
+			{
+				displayName="Camo #2";
+			};
+			class Camo2: standard
+			{
+				displayName="CDF";
+			};
 		};
 		class Components
 		{
@@ -5621,6 +5778,7 @@ class CfgVehicles
 		{
 			class rhs_decalNumber_type
 			{
+				displayName="Define font type of side number";
 				tooltip="Define kind of font that will be drawn on vehicle";
 				property="rhs_decalNumber_type";
 				control="Combo";
@@ -5698,6 +5856,7 @@ class CfgVehicles
 			};
 			class rhs_decalNumber
 			{
+				displayName="Set side number";
 				tooltip="Set side number. 2 numbers are required. Type 0 to hide numbers completly";
 				property="rhs_decalNumber";
 				control="Edit";
@@ -5707,6 +5866,7 @@ class CfgVehicles
 			};
 			class rhs_decalNoseArt
 			{
+				displayName="Define Nose Art";
 				tooltip="Define Nose Art texture located near the cabin. Appears on both sides";
 				property="rhs_decalNoseArt";
 				control="Combo";
@@ -5749,6 +5909,7 @@ class CfgVehicles
 			};
 			class rhs_decalSideArt: rhs_decalNoseArt
 			{
+				displayName="Define Side Art";
 				tooltip="Define Side Art texture located near the jet intake. Appears on both sides";
 				property="rhs_decalSideArt";
 				expression="if(_value >= 0)then{ [_this, [ [ 'Label', cRHSAIRSU25SidePlaces, 'Su25Ex',_value] ] ] call rhs_fnc_decalsInit};";
@@ -5779,6 +5940,7 @@ class CfgVehicles
 			};
 			class rhs_decalTail
 			{
+				displayName="Define tail decal";
 				tooltip="Define tail decal that will be drawn on vehicle";
 				property="rhs_decalTail";
 				control="Combo";
@@ -8594,6 +8756,7 @@ class CfgVehicles
 	};
 	class RHS_Su25SM_vvs: RHS_Su25_VVS_Base
 	{
+		displayName="$STR_RHS_SU25_Name";
 		hiddenselectionstextures[]=
 		{
 			"\rhsafrf\addons\rhs_a2port_air\su25\data\su25_body1_co.paa",
@@ -8607,6 +8770,7 @@ class CfgVehicles
 	};
 	class RHS_Su25SM_KH29_vvs: RHS_Su25SM_vvs
 	{
+		displayName="$STR_RHS_SU25_KH29_Name";
 		class Components: Components
 		{
 			class TransportPylonsComponent: TransportPylonsComponent
@@ -8648,6 +8812,7 @@ class CfgVehicles
 	};
 	class RHS_Su25SM_CAS_vvs: RHS_Su25SM_vvs
 	{
+		displayName="$STR_RHS_SU25_CAS_Name";
 		class Components: Components
 		{
 			class TransportPylonsComponent: TransportPylonsComponent
@@ -8695,6 +8860,7 @@ class CfgVehicles
 	};
 	class RHS_Su25SM_Cluster_vvs: RHS_Su25SM_vvs
 	{
+		displayName="$STR_RHS_SU25_Cluster_Name";
 		class Components: Components
 		{
 			class TransportPylonsComponent: TransportPylonsComponent
@@ -8761,6 +8927,7 @@ class CfgVehicles
 	};
 	class RHS_Su25SM_KH29_vvsc: RHS_Su25SM_vvsc
 	{
+		displayName="$STR_RHS_SU25_KH29_Name";
 		class Components: Components
 		{
 			class TransportPylonsComponent: TransportPylonsComponent
@@ -8802,6 +8969,7 @@ class CfgVehicles
 	};
 	class RHS_Su25SM_CAS_vvsc: RHS_Su25SM_vvsc
 	{
+		displayName="$STR_RHS_SU25_CAS_Name";
 		class Components: Components
 		{
 			class TransportPylonsComponent: TransportPylonsComponent
@@ -8849,6 +9017,7 @@ class CfgVehicles
 	};
 	class RHS_Su25SM_Cluster_vvsc: RHS_Su25SM_vvsc
 	{
+		displayName="$STR_RHS_SU25_Cluster_Name";
 		class Components: Components
 		{
 			class TransportPylonsComponent: TransportPylonsComponent
@@ -8947,6 +9116,7 @@ class CfgVehicles
 		ejectSpeed[]={1,0,11};
 		armor=55;
 		accuracy=0.55000001;
+		displayName="Ka-52";
 		icon="\rhsafrf\addons\rhs_a2port_air\data\map_ico\Icon_ka52_CA.paa";
 		castDriverShadow=1;
 		viewCargoShadow=1;
@@ -9382,18 +9552,23 @@ class CfgVehicles
 		{
 			class standard
 			{
+				displayName="Grey";
 				factions[]=
 				{
 					"rhs_faction_vvs_c",
 					"rhs_faction_vvs"
 				};
 			};
-			class Camo: standard;  //found empty after stripping
+			class Camo: standard
+			{
+				displayName="Camo";
+			};
 		};
 		class Attributes
 		{
 			class rhs_decalNumber_type
 			{
+				displayName="Define font type of side number";
 				tooltip="Define kind of font that will be drawn on vehicle";
 				property="rhs_decalNumber_type";
 				control="Combo";
@@ -9471,6 +9646,7 @@ class CfgVehicles
 			};
 			class rhs_decalNumber
 			{
+				displayName="Set side number";
 				tooltip="Set side number. 2 numbers are required. Type 0 to hide numbers completly";
 				property="rhs_decalNumber";
 				control="Edit";
@@ -9480,6 +9656,7 @@ class CfgVehicles
 			};
 			class rhs_decalTail
 			{
+				displayName="Define tail decal";
 				tooltip="Define tail decalthat will be drawn on vehicle";
 				property="rhs_decalTail";
 				control="Combo";
@@ -13798,6 +13975,7 @@ class CfgVehicles
 	};
 	class RHS_Ka52_UPK23_vvs: RHS_Ka52_vvs
 	{
+		displayName="Ka-52 (UPK)";
 		class Components: Components
 		{
 			class TransportPylonsComponent: TransportPylonsComponent
@@ -13831,6 +14009,7 @@ class CfgVehicles
 	};
 	class RHS_Ka52_UPK23_vvsc: RHS_Ka52_vvsc
 	{
+		displayName="Ka-52 (UPK)";
 		class Components: Components
 		{
 			class TransportPylonsComponent: TransportPylonsComponent
@@ -13865,6 +14044,7 @@ class CfgVehicles
 	class rhs_ka52_blade: Plane
 	{
 		hiddenSelections[]={};
+		displayName="Ka-52 Blade";
 		draconicForceXCoef=17.200001;
 		draconicForceYCoef=12.6;
 		draconicForceZCoef=10.15;
@@ -13890,6 +14070,7 @@ class CfgVehicles
 	class rhs_ka52_ejection_vest: Car_f
 	{
 		hiddenSelections[]={};
+		displayName="K37-800 Ejection Vest";
 		simulation="carX";
 		memoryPointsGetInCargo="Cargo";
 		memoryPointsGetInCargoDir="Cargo dir";
@@ -13912,6 +14093,7 @@ class CfgVehicles
 	};
 	class rhs_ka52_rps_rocket: rhs_ka52_ejection_vest
 	{
+		displayName="Ka-52 ejection rocket";
 		editorCategory="EdCat_Things";
 		armor=100000000000;
 		class Eventhandlers
@@ -13938,6 +14120,7 @@ class CfgVehicles
 			"O_UAV_AI"
 		};
 		accuracy=1;
+		displayName="Pchela-1T";
 		icon="\rhsafrf\addons\rhs_a2port_air\data\map_ico\icon_Pchela1T_CA.paa";
 		armor=75;
 		damageResistance=0.03176;
@@ -14023,18 +14206,23 @@ class CfgVehicles
 		{
 			class standard
 			{
+				displayName="Grey";
 				factions[]=
 				{
 					"rhs_faction_vvs_c",
 					"rhs_faction_vvs"
 				};
 			};
-			class Camo: standard;  //found empty after stripping
+			class Camo: standard
+			{
+				displayName="Camo";
+			};
 		};
 		class Attributes
 		{
 			class rhs_decalNumber_type
 			{
+				displayName="Define font type of side number";
 				tooltip="Define kind of font that will be drawn on vehicle";
 				property="rhs_decalNumber_type";
 				control="Combo";
@@ -14107,6 +14295,7 @@ class CfgVehicles
 			};
 			class rhs_decalNumber
 			{
+				displayName="Set side number";
 				tooltip="Set side number. 2 numbers are required. Type 0 to hide numbers completly";
 				property="rhs_decalNumber";
 				control="Edit";

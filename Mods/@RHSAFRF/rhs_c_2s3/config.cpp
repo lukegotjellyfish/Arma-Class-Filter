@@ -79,6 +79,7 @@ class CfgVehicles
 			"Track_R",
 			"Slide"
 		};
+		displayName="$STR_2S3M1_Name";
 		accuracy=0.30000001;
 		typicalCargo[]={};
 		side=0;
@@ -556,6 +557,7 @@ class CfgVehicles
 		{
 			class standard
 			{
+				displayName="Standard";
 				factions[]=
 				{
 					"rhs_faction_tv"
@@ -563,17 +565,22 @@ class CfgVehicles
 			};
 			class rhs_tri
 			{
+				displayName="3-Color Camo";
 				factions[]=
 				{
 					"rhs_faction_tv"
 				};
 			};
-			class rhs_sand;  //found empty after stripping
+			class rhs_sand
+			{
+				displayName="Sand";
+			};
 		};
 		class Attributes
 		{
 			class rhs_decalNumber_type
 			{
+				displayName="Define font type of plate number";
 				tooltip="Define kind of font that will be drawn on vehicle.";
 				property="rhs_decalNumber_type";
 				control="Combo";
@@ -627,6 +634,7 @@ class CfgVehicles
 			class rhs_decalNumber
 			{
 				collapsed=1;
+				displayName="Set side number";
 				tooltip="Set side number. 4 numbers are required. Type 0 to hide numbers complety & leave at -1 to get random number";
 				property="rhs_decalNumber";
 				control="Edit";
@@ -636,6 +644,7 @@ class CfgVehicles
 			};
 			class rhs_ammoslot_1_type
 			{
+				displayName="Ammo slot #1 type";
 				tooltip="Define type of shell for #1 slot [HE rounds]";
 				property="rhs_ammoslot_1_type";
 				control="Combo";
@@ -653,6 +662,7 @@ class CfgVehicles
 			};
 			class rhs_ammoslot_1
 			{
+				displayName="Ammo slot #1 count";
 				tooltip="Define number of rounds stored inside of type #1. Max 46. Leave -1 for default loadout";
 				property="rhs_ammoslot_1";
 				control="Edit";
@@ -662,6 +672,7 @@ class CfgVehicles
 			};
 			class rhs_ammoslot_2_type: rhs_ammoslot_1_type
 			{
+				displayName="Ammo slot #2 type";
 				tooltip="Define type of shell for #2 slot [Smoke rounds]";
 				property="rhs_ammoslot_2_type";
 				class values
@@ -676,11 +687,13 @@ class CfgVehicles
 			};
 			class rhs_ammoslot_2: rhs_ammoslot_1
 			{
+				displayName="Ammo slot #2 count";
 				tooltip="Define number of rounds stored inside of type #2. Max 46. Leave -1 for default loadout";
 				property="rhs_ammoslot_2";
 			};
 			class rhs_ammoslot_3_type: rhs_ammoslot_1_type
 			{
+				displayName="Ammo slot #3 type";
 				tooltip="Define type of shell for #3 slot [Illumination rounds]";
 				property="rhs_ammoslot_3_type";
 				class values
@@ -695,11 +708,13 @@ class CfgVehicles
 			};
 			class rhs_ammoslot_3: rhs_ammoslot_1
 			{
+				displayName="Ammo slot #3 count";
 				tooltip="Define number of rounds stored inside of type #3. Max 46. Leave -1 for default loadout";
 				property="rhs_ammoslot_3";
 			};
 			class rhs_ammoslot_4_type: rhs_ammoslot_1_type
 			{
+				displayName="Ammo slot #4 type";
 				tooltip="Define type of shell for #4 slot [Laser guided rounds]";
 				property="rhs_ammoslot_4_type";
 				class values
@@ -714,11 +729,13 @@ class CfgVehicles
 			};
 			class rhs_ammoslot_4: rhs_ammoslot_1
 			{
+				displayName="Ammo slot #4 count";
 				tooltip="Define number of rounds stored inside of type #4. Max 46. Leave -1 for default loadout";
 				property="rhs_ammoslot_4";
 			};
 			class rhs_ammoslot_5_type: rhs_ammoslot_1_type
 			{
+				displayName="Ammo slot #5 type";
 				tooltip="Define type of shell for #5 slot [Special rounds]";
 				property="rhs_ammoslot_5_type";
 				class values
@@ -739,6 +756,7 @@ class CfgVehicles
 			};
 			class rhs_ammoslot_5: rhs_ammoslot_1
 			{
+				displayName="Ammo slot #5 count";
 				tooltip="Define number of rounds stored inside of type #5. Max 40. Leave -1 for default loadout";
 				property="rhs_ammoslot_5";
 			};
@@ -810,5 +828,8 @@ class CfgVehicles
 			};
 		};
 	};
-	class rhs_2s3_tv: rhs_2s3tank_base;  //found empty after stripping
+	class rhs_2s3_tv: rhs_2s3tank_base
+	{
+		displayName="$STR_2S3M1_Name";
+	};
 };

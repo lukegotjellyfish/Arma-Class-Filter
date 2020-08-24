@@ -80,6 +80,7 @@ class CfgVehicles
 		{
 			class RHS_SAF_Green
 			{
+				displayName="SAF (Green)";
 				factions[]=
 				{
 					"rhssaf_faction_airforce"
@@ -93,6 +94,7 @@ class CfgVehicles
 		{
 			class RHS_SAF_Camo
 			{
+				displayName="SAF (Camo)";
 				factions[]=
 				{
 					"rhssaf_faction_airforce"
@@ -100,6 +102,7 @@ class CfgVehicles
 			};
 			class RHS_SAF_Green
 			{
+				displayName="SAF (Green)";
 				factions[]=
 				{
 					"rhssaf_faction_airforce"
@@ -272,6 +275,7 @@ class CfgVehicles
 		{
 			class RHS_SAF_Camo
 			{
+				displayName="SAF (Camo)";
 				factions[]=
 				{
 					"rhssaf_faction_army"
@@ -315,6 +319,7 @@ class CfgVehicles
 		{
 			class RHS_SAF_Gray
 			{
+				displayName="SAF (Gray)";
 				factions[]=
 				{
 					"rhssaf_faction_airforce"
@@ -322,6 +327,7 @@ class CfgVehicles
 			};
 			class RHS_SAF_Blue
 			{
+				displayName="SAF (Blue-Gray)";
 				factions[]=
 				{
 					"rhssaf_faction_airforce"
@@ -364,16 +370,19 @@ class CfgVehicles
 	};
 	class rhssaf_army_ural: RHS_Ural_Civ_Base
 	{
+		displayName="$STR_RHSSAF_ARMY_URAL_DISPLAYNAME";
 		side=2;
 		rhs_decalParameters[]={};
 	};
 	class rhssaf_army_ural_open: RHS_Ural_Open_MSV_01
 	{
+		displayName="$STR_RHSSAF_ARMY_URAL_OPEN_DISPLAYNAME";
 		side=2;
 		rhs_decalParameters[]={};
 	};
 	class rhssaf_army_ural_fuel: RHS_Ural_Fuel_MSV_01
 	{
+		displayName="$STR_RHSSAF_ARMY_URAL_FUEL_DISPLAYNAME";
 		side=2;
 		rhs_decalParameters[]={};
 	};
@@ -381,6 +390,7 @@ class CfgVehicles
 	{
 		rhs_decalParameters[]={};
 		side=2;
+		displayName="$STR_RHSSAF_ARMY_T72S_DISPLAYNAME";
 		class Turrets: Turrets
 		{
 			class MainTurret: MainTurret
@@ -413,6 +423,7 @@ class CfgVehicles
 	};
 	class rhssaf_army_2s1: rhs_2s1tank_base
 	{
+		displayName="$STR_2S1_Name";
 		side=2;
 		textureList[]=
 		{
@@ -439,6 +450,7 @@ class CfgVehicles
 	};
 	class rhssaf_army_pts: rhs_pts_vmf
 	{
+		displayName="$STR_RHSSAF_ARMY_PTS_DISPLAYNAME";
 		side=2;
 		rhs_decalParameters[]=
 		{
@@ -518,6 +530,7 @@ class CfgVehicles
 	};
 	class rhssaf_airforce_l_18_101: rhs_mig29sm_base
 	{
+		displayName="L-18 (101/CAP)";
 		side=2;
 		hiddenselectionstextures[]=
 		{
@@ -573,6 +586,7 @@ class CfgVehicles
 	};
 	class rhssaf_airforce_l_18: rhs_mig29sm_base
 	{
+		displayName="L-18";
 		side=2;
 		hiddenselectionstextures[]=
 		{

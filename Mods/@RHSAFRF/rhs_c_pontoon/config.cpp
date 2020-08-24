@@ -36,12 +36,15 @@ class CfgVehicles
 	{
 		cost=8000;
 		armor=1500;
+		displayName="Pontoon (static)";
+		displayNameShort="Pontoon (s)";
 		icon="iconObject_2x3";
 		editorSubCategory="rhs_EdSubcat_boat";
 		class Attributes
 		{
 			class rhs_fold_pontoon
 			{
+				displayName="Fold Pontoon";
 				property="rhs_fold_pontoon";
 				control="CheckboxNumber";
 				expression="_this animateSource ['fold_source',_value,true];_this enableVehicleCargo (_value isEqualTo 1);";
@@ -66,6 +69,7 @@ class CfgVehicles
 	{
 		cost=8000;
 		armor=1500;
+		displayName="Pontoon (floating)";
 		icon="iconObject_2x3";
 		editorSubCategory="rhs_EdSubcat_boat";
 		waterLeakiness=9.9999997e-005;
@@ -74,6 +78,7 @@ class CfgVehicles
 		{
 			class rhs_fold_pontoon
 			{
+				displayName="Fold Pontoon";
 				property="rhs_fold_pontoon";
 				control="CheckboxNumber";
 				expression="_this animateSource ['fold_source',_value,true];_this enableVehicleCargo (_value isEqualTo 1);";
@@ -110,5 +115,6 @@ class CfgNonAIVehicles
 	{
 		cost=8000;
 		armor=1500;
+		displayName="Pontoon (static)";
 	};
 };

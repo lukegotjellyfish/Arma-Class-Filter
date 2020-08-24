@@ -2165,6 +2165,7 @@ class CfgAmmo
 	class rhs_ammo_3ubr6: rhs_ammo_30x165mm_base
 	{
 		hit=60;
+		displayName="$STR_RHS_AMMO_3UBR6";
 		caliber=3.7800701;
 		typicalspeed=1120;
 		airfriction=-0.00056000001;
@@ -2198,6 +2199,7 @@ class CfgAmmo
 		airfriction=-0.00019999999;
 		caliber=1.39;
 		timeToLive=15;
+		displayName="$STR_RHS_AMMO_3UOR6";
 		tracerScale=2;
 		tracerStartTime=0.1;
 		tracerEndTime=10;
@@ -2314,6 +2316,8 @@ class CfgMagazines
 	class rhs_mag_902a: SmokeLauncherMag
 	{
 		count=1;
+		displayName="$STR_RHS_MAG_902A";
+		displayNameShort="$STR_RHS_MAG_SH_902A";
 		ammo="rhs_ammo_902a";
 	};
 	class rhs_mag_3d17: SmokeLauncherMag
@@ -2321,6 +2325,8 @@ class CfgMagazines
 		count=8;
 		initSpeed=50;
 		ammo="rhs_ammo_3d17";
+		displayName="$STR_RHS_MAG_3D17";
+		displayNameShort="$STR_RHS_MAG_SH_3D17";
 	};
 	class rhs_mag_3d17_4: rhs_mag_3d17
 	{
@@ -2339,6 +2345,8 @@ class CfgMagazines
 	{
 		count=999;
 		ammo="rhs_ammo_smokegen";
+		displayName="$STR_RHS_MAG_SMOKEGEN";
+		displayNameShort="$STR_RHS_MAG_SH_SMOKEGEN";
 	};
 	class rhs_mag_dazzler: rhs_mag_smokegen
 	{
@@ -2548,6 +2556,8 @@ class CfgMagazines
 	};
 	class rhs_mag_br412_14: rhs_mag_bm_base
 	{
+		displayName="$STR_RHS_MAG_BR412";
+		displayNameShort="$STR_RHS_MAG_SH_BR412";
 		ammo="rhs_ammo_br412";
 		initSpeed=1450;
 	};
@@ -2557,22 +2567,30 @@ class CfgMagazines
 	};
 	class rhs_mag_bm25_14: rhs_mag_bm_base
 	{
+		displayName="$STR_RHS_MAG_3UBM11";
+		displayNameShort="$STR_RHS_MAG_SH_3UBM11";
 		ammo="rhs_ammo_bm25";
 		initSpeed=1430;
 	};
 	class rhs_mag_bm8_14: rhs_mag_bm_base
 	{
+		displayName="$STR_RHS_MAG_3UBM6";
+		displayNameShort="$STR_RHS_MAG_SH_3UBM6";
 		ammo="rhs_ammo_bm8";
 		initSpeed=1415;
 	};
 	class rhs_mag_bm4_15: rhs_mag_bm_base
 	{
+		displayName="$STR_RHS_MAG_3UBM4";
+		displayNameShort="$STR_RHS_MAG_SH_3UBM4";
 		ammo="rhs_ammo_bm4";
 		count=15;
 		initSpeed=1411;
 	};
 	class rhs_mag_bm23_15: rhs_mag_bm_base
 	{
+		displayName="$STR_RHS_MAG_3UBM13";
+		displayNameShort="$STR_RHS_MAG_SH_3UBM13";
 		ammo="rhs_ammo_bm23";
 		initSpeed=1450;
 		count=15;
@@ -2591,6 +2609,8 @@ class CfgMagazines
 	};
 	class rhs_mag_3bm9_10: rhs_mag_3bm_base
 	{
+		displayName="$STR_RHS_MAG_3BM9";
+		displayNameShort="$STR_RHS_MAG_SH_3BM9";
 		ammo="rhs_ammo_3bm9";
 		initSpeed=1800;
 	};
@@ -2600,6 +2620,8 @@ class CfgMagazines
 	};
 	class rhs_mag_3bm12_10: rhs_mag_3bm_base
 	{
+		displayName="$STR_RHS_MAG_3BM12";
+		displayNameShort="$STR_RHS_MAG_SH_3BM12";
 		ammo="rhs_ammo_3bm12";
 		initSpeed=1800;
 	};
@@ -2609,6 +2631,8 @@ class CfgMagazines
 	};
 	class rhs_mag_3bm15_10: rhs_mag_3bm_base
 	{
+		displayName="$STR_RHS_MAG_3BM15";
+		displayNameShort="$STR_RHS_MAG_SH_3BM15";
 		ammo="rhs_ammo_3bm15";
 		initSpeed=1785;
 	};
@@ -2618,6 +2642,8 @@ class CfgMagazines
 	};
 	class rhs_mag_3bm17_10: rhs_mag_3bm_base
 	{
+		displayName="$STR_RHS_MAG_3BM17";
+		displayNameShort="$STR_RHS_MAG_SH_3BM17";
 		ammo="rhs_ammo_3bm17";
 		initSpeed=1760;
 	};
@@ -2631,6 +2657,8 @@ class CfgMagazines
 	};
 	class rhs_mag_3bm22_10: rhs_mag_3bm_base
 	{
+		displayName="$STR_RHS_MAG_3BM22";
+		displayNameShort="$STR_RHS_MAG_SH_3BM22";
 		ammo="rhs_ammo_3bm22";
 		initSpeed=1760;
 	};
@@ -2648,6 +2676,8 @@ class CfgMagazines
 	};
 	class rhs_mag_3bm26_10: rhs_mag_3bm_base
 	{
+		displayName="$STR_RHS_MAG_3BM26";
+		displayNameShort="$STR_RHS_MAG_SH_3BM26";
 		ammo="rhs_ammo_3bm26";
 		initSpeed=1720;
 	};
@@ -2661,6 +2691,8 @@ class CfgMagazines
 	};
 	class rhs_mag_3bm29_10: rhs_mag_3bm_base
 	{
+		displayName="$STR_RHS_MAG_3BM29";
+		displayNameShort="$STR_RHS_MAG_SH_3BM29";
 		ammo="rhs_ammo_3bm29";
 		initSpeed=1660;
 	};
@@ -2674,6 +2706,8 @@ class CfgMagazines
 	};
 	class rhs_mag_3bm32_10: rhs_mag_3bm_base
 	{
+		displayName="$STR_RHS_MAG_3BM32";
+		displayNameShort="$STR_RHS_MAG_SH_3BM32";
 		ammo="rhs_ammo_3bm32";
 		initSpeed=1700;
 	};
@@ -2687,6 +2721,8 @@ class CfgMagazines
 	};
 	class rhs_mag_3bm42_10: rhs_mag_3bm_base
 	{
+		displayName="$STR_RHS_MAG_3BM42";
+		displayNameShort="$STR_RHS_MAG_SH_3BM42";
 		ammo="rhs_ammo_3bm42";
 		initSpeed=1700;
 	};
@@ -2700,6 +2736,8 @@ class CfgMagazines
 	};
 	class rhs_mag_3bm42m_10: rhs_mag_3bm_base
 	{
+		displayName="$STR_RHS_MAG_3BM42M";
+		displayNameShort="$STR_RHS_MAG_SH_3BM42M";
 		ammo="rhs_ammo_3bm42m";
 		initSpeed=1750;
 	};
@@ -2709,6 +2747,8 @@ class CfgMagazines
 	};
 	class rhs_mag_3bm46_10: rhs_mag_3bm_base
 	{
+		displayName="$STR_RHS_MAG_3BM46";
+		displayNameShort="$STR_RHS_MAG_SH_3BM46";
 		ammo="rhs_ammo_3bm46";
 		initSpeed=1700;
 	};
@@ -2722,6 +2762,8 @@ class CfgMagazines
 	};
 	class rhs_mag_3bm59_10: rhs_mag_3bm_base
 	{
+		displayName="$STR_RHS_MAG_3BM59";
+		displayNameShort="$STR_RHS_MAG_SH_3BM59";
 		ammo="rhs_ammo_3bm59";
 		initSpeed=1700;
 	};
@@ -2731,6 +2773,8 @@ class CfgMagazines
 	};
 	class rhs_mag_3bm60_10: rhs_mag_3bm_base
 	{
+		displayName="$STR_RHS_MAG_3BM60";
+		displayNameShort="$STR_RHS_MAG_SH_3BM60";
 		ammo="rhs_ammo_3bm60";
 		initSpeed=1700;
 	};
@@ -2740,6 +2784,8 @@ class CfgMagazines
 	};
 	class rhs_mag_3bm69_10: rhs_mag_3bm_base
 	{
+		displayName="$STR_RHS_MAG_3BM59";
+		displayNameShort="$STR_RHS_MAG_SH_3BM59";
 		ammo="rhs_ammo_3bm69";
 		initSpeed=2050;
 	};
@@ -2753,6 +2799,8 @@ class CfgMagazines
 	};
 	class rhs_mag_3bm70_10: rhs_mag_3bm_base
 	{
+		displayName="$STR_RHS_MAG_3BM70";
+		displayNameShort="$STR_RHS_MAG_SH_3BM70";
 		ammo="rhs_ammo_3bm70";
 		initSpeed=2050;
 	};
@@ -2771,17 +2819,23 @@ class CfgMagazines
 	};
 	class rhs_mag_bk4_5: rhs_mag_bk_base
 	{
+		displayName="$STR_RHS_MAG_3UBK3";
+		displayNameShort="$STR_RHS_MAG_SH_3UBK3";
 		ammo="rhs_ammo_bk4";
 		count=5;
 		initSpeed=1750;
 	};
 	class rhs_mag_bk5_8: rhs_mag_bk_base
 	{
+		displayName="$STR_RHS_MAG_3UBK4";
+		displayNameShort="$STR_RHS_MAG_SH_3UBK4";
 		ammo="rhs_ammo_bk5";
 		initSpeed=900;
 	};
 	class rhs_mag_bk6m: rhs_mag_bk_base
 	{
+		displayName="$STR_RHS_MAG_bk6m";
+		displayNameShort="$STR_RHS_MAG_SH_bk6m";
 		ammo="rhs_ammo_bk6m";
 		initSpeed=740;
 		count=1;
@@ -2796,6 +2850,8 @@ class CfgMagazines
 	};
 	class rhs_mag_bk13: rhs_mag_bk_base
 	{
+		displayName="$STR_RHS_MAG_bk13";
+		displayNameShort="$STR_RHS_MAG_SH_bk13";
 		ammo="rhs_ammo_bk13";
 		initSpeed=726;
 		count=1;
@@ -2810,12 +2866,16 @@ class CfgMagazines
 	};
 	class rhs_mag_bk15_5: rhs_mag_bk_base
 	{
+		displayName="$STR_RHS_MAG_3UBK7";
+		displayNameShort="$STR_RHS_MAG_SH_3UBK7";
 		ammo="rhs_ammo_bk15";
 		count=5;
 		initSpeed=1750;
 	};
 	class rhs_mag_bk17_8: rhs_mag_bk_base
 	{
+		displayName="$STR_RHS_MAG_3UBK9";
+		displayNameShort="$STR_RHS_MAG_SH_3UBK9";
 		ammo="rhs_ammo_bk17";
 		initSpeed=850;
 	};
@@ -2833,6 +2893,8 @@ class CfgMagazines
 	};
 	class rhs_mag_3bk12_8: rhs_mag_3bk_base
 	{
+		displayName="$STR_RHS_MAG_3BK12";
+		displayNameShort="$STR_RHS_MAG_SH_3BK12";
 		ammo="rhs_ammo_3bk12";
 		initSpeed=905;
 	};
@@ -2842,6 +2904,8 @@ class CfgMagazines
 	};
 	class rhs_mag_3bk14_8: rhs_mag_3bk_base
 	{
+		displayName="$STR_RHS_MAG_3BK14";
+		displayNameShort="$STR_RHS_MAG_SH_3BK14";
 		ammo="rhs_ammo_3bk14";
 		initSpeed=905;
 	};
@@ -2855,6 +2919,8 @@ class CfgMagazines
 	};
 	class rhs_mag_3bk18_8: rhs_mag_3bk_base
 	{
+		displayName="$STR_RHS_MAG_3BK18";
+		displayNameShort="$STR_RHS_MAG_SH_3BK18";
 		ammo="rhs_ammo_3bk18";
 		initSpeed=905;
 	};
@@ -2868,6 +2934,8 @@ class CfgMagazines
 	};
 	class rhs_mag_3bk18m_8: rhs_mag_3bk_base
 	{
+		displayName="$STR_RHS_MAG_3BK18M";
+		displayNameShort="$STR_RHS_MAG_SH_3BK18M";
 		ammo="rhs_ammo_3bk18M";
 		initSpeed=905;
 	};
@@ -2881,6 +2949,8 @@ class CfgMagazines
 	};
 	class rhs_mag_3bk21_8: rhs_mag_3bk_base
 	{
+		displayName="$STR_RHS_MAG_3BK21";
+		displayNameShort="$STR_RHS_MAG_SH_3BK21";
 		ammo="rhs_ammo_3bk21";
 		initSpeed=905;
 	};
@@ -2890,6 +2960,8 @@ class CfgMagazines
 	};
 	class rhs_mag_3bk29_8: rhs_mag_3bk_base
 	{
+		displayName="$STR_RHS_MAG_3BK29";
+		displayNameShort="$STR_RHS_MAG_SH_3BK29";
 		ammo="rhs_ammo_3bk29";
 		initSpeed=905;
 	};
@@ -2899,6 +2971,8 @@ class CfgMagazines
 	};
 	class rhs_mag_3bk31_8: rhs_mag_3bk_base
 	{
+		displayName="$STR_RHS_MAG_3BK31";
+		displayNameShort="$STR_RHS_MAG_SH_3BK31";
 		ammo="rhs_ammo_3bk31";
 		initSpeed=905;
 	};
@@ -2925,6 +2999,8 @@ class CfgMagazines
 	};
 	class rhs_mag_of412_17: rhs_mag_of_base
 	{
+		displayName="$STR_RHS_MAG_OF412";
+		displayNameShort="$STR_RHS_MAG_SH_OF412";
 		ammo="rhs_ammo_of412";
 	};
 	class rhs_mag_of412_21: rhs_mag_of412_17
@@ -2937,12 +3013,16 @@ class CfgMagazines
 	};
 	class rhs_mag_of11_20: rhs_mag_of_base
 	{
+		displayName="$STR_RHS_MAG_3UOF11";
+		displayNameShort="$STR_RHS_MAG_SH_3UOF11";
 		ammo="rhs_ammo_of11";
 		count=20;
 		muzzleImpulseFactor[]={1,0.1};
 	};
 	class rhs_mag_of28_20: rhs_mag_of_base
 	{
+		displayName="$STR_RHS_MAG_3UOF37";
+		displayNameShort="$STR_RHS_MAG_SH_3UOF37";
 		ammo="rhs_ammo_of28";
 		count=20;
 		muzzleImpulseFactor[]={1,0.1};
@@ -2961,6 +3041,8 @@ class CfgMagazines
 	};
 	class rhs_mag_3of11_6: rhs_mag_3of_base
 	{
+		displayName="$STR_RHS_MAG_3OF11";
+		displayNameShort="$STR_RHS_MAG_SH_3OF11";
 		ammo="rhs_ammo_3of11";
 	};
 	class rhs_mag_3of11: rhs_mag_3of11_6
@@ -2969,6 +3051,8 @@ class CfgMagazines
 	};
 	class rhs_mag_3of26_6: rhs_mag_3of_base
 	{
+		displayName="$STR_RHS_MAG_3OF26";
+		displayNameShort="$STR_RHS_MAG_SH_3OF26";
 		ammo="rhs_ammo_3of26";
 		initSpeed=850;
 		tracersEvery=0;
@@ -2987,6 +3071,8 @@ class CfgMagazines
 	};
 	class rhs_mag_3UOF17_22: VehicleMagazine
 	{
+		displayName="$STR_RHS_MAG_3UOF17";
+		displayNameShort="$STR_RHS_MAG_SH_3UOF17";
 		ammo="rhs_ammo_3UOF17";
 		count=22;
 		initSpeed=250;
@@ -2996,6 +3082,8 @@ class CfgMagazines
 	};
 	class rhs_mag_3UOF19_22: VehicleMagazine
 	{
+		displayName="$STR_RHS_MAG_3UOF19";
+		displayNameShort="$STR_RHS_MAG_SH_3UOF19";
 		ammo="rhs_ammo_3UOF19";
 		count=22;
 		initSpeed=355;
@@ -3005,10 +3093,14 @@ class CfgMagazines
 	};
 	class rhs_mag_3UOF191_22: rhs_mag_3UOF19_22
 	{
+		displayName="3UOF191";
+		displayNameShort="3UOF191";
 		ammo="rhs_ammo_3UOF191";
 	};
 	class rhs_mag_9m41_20: VehicleMagazine
 	{
+		displayName="$STR_RHS_9m41_NAME";
+		displayNameShort="$STR_RHS_9m41_NAME";
 		ammo="Flare_82mm_AMOS_White";
 		count=20;
 		initSpeed=200;
@@ -3016,9 +3108,11 @@ class CfgMagazines
 	class 32Rnd_155mm_Mo_shells;
 	class rhs_mag_HE_2a33: 32Rnd_155mm_Mo_shells
 	{
+		displayName="$STR_RHS_53WOF27_NAME";
 		ammo="rhs_ammo_3WOF27";
 		count=26;
 		nameSound="heat";
+		displayNameShort="$STR_RHS_53WOF27_NAME";
 	};
 	class rhs_mag_HE_2a33_26: 32Rnd_155mm_Mo_shells
 	{
@@ -3026,6 +3120,8 @@ class CfgMagazines
 	};
 	class rhs_mag_WP_2a33: rhs_mag_HE_2a33
 	{
+		displayName="$STR_RHS_53OCH540_NAME";
+		displayNameShort="$STR_RHS_53OCH540_NAME";
 		count=5;
 		ammo="rhs_ammo_152_WP";
 	};
@@ -3035,6 +3131,8 @@ class CfgMagazines
 	};
 	class rhs_mag_Atomic_2a33: rhs_mag_HE_2a33
 	{
+		displayName="$STR_RHS_3WB3_NAME";
+		displayNameShort="$STR_RHS_3WB3_NAME";
 		ammo="rhs_ammo_3WB3";
 	};
 	class rhs_mag_Atomic_2a33_26: rhs_mag_Atomic_2a33
@@ -3043,6 +3141,8 @@ class CfgMagazines
 	};
 	class rhs_mag_LASER_2a33: rhs_mag_HE_2a33
 	{
+		displayName="$STR_RHS_3WOF93_NAME";
+		displayNameShort="$STR_RHS_3WOF93_NAME";
 		count=5;
 		ammo="rhs_ammo_3WOF93";
 	};
@@ -3052,6 +3152,8 @@ class CfgMagazines
 	};
 	class rhs_mag_SMOKE_2a33: rhs_mag_HE_2a33
 	{
+		displayName="$STR_RHS_53WD546_NAME";
+		displayNameShort="$STR_RHS_53WD546_NAME";
 		count=5;
 		ammo="rhs_ammo_53WD546U";
 	};
@@ -3061,6 +3163,8 @@ class CfgMagazines
 	};
 	class rhs_mag_ILLUM_2a33: rhs_mag_HE_2a33
 	{
+		displayName="$STR_RHS_3WS23_NAME";
+		displayNameShort="$STR_RHS_3WS23_NAME";
 		count=5;
 		ammo="rhs_ammo_3WS23";
 	};
@@ -3070,6 +3174,8 @@ class CfgMagazines
 	};
 	class rhs_mag_of462: 32Rnd_155mm_Mo_shells
 	{
+		displayName="$STR_RHS_MAG_of462";
+		displayNameShort="$STR_RHS_MAG_SH_of462";
 		ammo="rhs_ammo_of462";
 		count=1;
 		nameSound="heat";
@@ -3082,6 +3188,8 @@ class CfgMagazines
 	};
 	class rhs_mag_3of56: rhs_mag_of462
 	{
+		displayName="$STR_RHS_MAG_3of56";
+		displayNameShort="$STR_RHS_MAG_SH_3of56";
 		ammo="rhs_ammo_3of56";
 	};
 	class rhs_mag_3of56_10: rhs_mag_3of56
@@ -3094,6 +3202,8 @@ class CfgMagazines
 	};
 	class rhs_mag_d462: rhs_mag_of462
 	{
+		displayName="$STR_RHS_MAG_d462";
+		displayNameShort="$STR_RHS_MAG_SH_d462";
 		ammo="rhs_ammo_d462";
 		rhs_magazineIndex=-1;
 	};
@@ -3103,6 +3213,8 @@ class CfgMagazines
 	};
 	class rhs_mag_s463: rhs_mag_of462
 	{
+		displayName="$STR_RHS_MAG_s463";
+		displayNameShort="$STR_RHS_MAG_SH_s463";
 		ammo="rhs_ammo_s463";
 		rhs_magazineIndex=-1;
 	};
@@ -3112,6 +3224,8 @@ class CfgMagazines
 	};
 	class rhs_mag_3of69m: rhs_mag_of462
 	{
+		displayName="$STR_RHS_MAG_3of69m";
+		displayNameShort="$STR_RHS_MAG_SH_3of69m";
 		ammo="rhs_ammo_3of69m";
 		rhs_magazineIndex=-1;
 	};
@@ -3121,24 +3235,34 @@ class CfgMagazines
 	};
 	class rhs_mag_3vo18_10: 32Rnd_155mm_Mo_shells
 	{
+		displayName="$STR_RHS_MAG_3vo18";
+		displayNameShort="$STR_RHS_MAG_SH_3vo18";
 		ammo="rhs_ammo_3vo18";
 		count=10;
 		initSpeed=211;
 	};
 	class rhs_mag_3vs25m_10: rhs_mag_3vo18_10
 	{
+		displayName="$STR_RHS_MAG_3vs25m";
+		displayNameShort="$STR_RHS_MAG_SH_3vs25m";
 		ammo="rhs_ammo_3vs25m";
 	};
 	class rhs_mag_53_va_832a_10: rhs_mag_3vo18_10
 	{
+		displayName="$STR_RHS_MAG_va_832a";
+		displayNameShort="$STR_RHS_MAG_SH_va_832a";
 		ammo="rhs_ammo_3vs25m";
 	};
 	class rhs_mag_d832du_10: rhs_mag_3vo18_10
 	{
+		displayName="$STR_RHS_MAG_d832du";
+		displayNameShort="$STR_RHS_MAG_SH_d832du";
 		ammo="rhs_ammo_d832du";
 	};
 	class rhs_mag_9m14m: VehicleMagazine
 	{
+		displayName="$STR_RHS_MAG_9M14M";
+		displayNameShort="$STR_RHS_MAG_SH_9M14M";
 		ammo="rhs_ammo_9m14m";
 		count=1;
 		initSpeed=80;
@@ -3161,10 +3285,14 @@ class CfgMagazines
 	};
 	class rhs_mag_9m14: rhs_mag_9m14m
 	{
+		displayName="$STR_RHS_MAG_9M14";
+		displayNameShort="$STR_RHS_MAG_SH_9M14";
 		ammo="rhs_ammo_9m14";
 	};
 	class rhs_mag_9m17: VehicleMagazine
 	{
+		displayName="$STR_RHS_MAG_9M17";
+		displayNameShort="$STR_RHS_MAG_SH_9M17";
 		ammo="rhs_ammo_9m17";
 		count=1;
 		initSpeed=80;
@@ -3173,6 +3301,8 @@ class CfgMagazines
 	};
 	class rhs_mag_9m17p: rhs_mag_9m17
 	{
+		displayName="$STR_RHS_MAG_9M17P";
+		displayNameShort="$STR_RHS_MAG_SH_9M17P";
 		ammo="rhs_ammo_9m17p";
 	};
 	class rhs_mag_9M17_Mi24_2x: rhs_mag_9m17
@@ -3188,10 +3318,14 @@ class CfgMagazines
 	};
 	class rhs_mag_9M17p_Mi24_2x: rhs_mag_9M17_Mi24_2x
 	{
+		displayName="$STR_RHS_MAG_9M17P";
+		displayNameShort="$STR_RHS_MAG_SH_9M17P";
 		ammo="rhs_ammo_9m17p";
 	};
 	class rhs_mag_9m112_6: VehicleMagazine
 	{
+		displayName="$STR_RHS_MAG_9M112";
+		displayNameShort="$STR_RHS_MAG_SH_9M112";
 		reloadTime=30;
 		magazineReloadTime=30;
 		ammo="rhs_ammo_9m112";
@@ -3203,6 +3337,8 @@ class CfgMagazines
 	};
 	class rhs_mag_9m112m_6: rhs_mag_9m112_6
 	{
+		displayName="$STR_RHS_MAG_9M112M";
+		displayNameShort="$STR_RHS_MAG_SH_9M112M";
 		ammo="rhs_ammo_9m112m";
 	};
 	class rhs_mag_9m112m_4: rhs_mag_9m112m_6
@@ -3211,20 +3347,28 @@ class CfgMagazines
 	};
 	class rhs_mag_9m112m2_6: rhs_mag_9m112_6
 	{
+		displayName="$STR_RHS_MAG_9M112M2";
+		displayNameShort="$STR_RHS_MAG_SH_9M112M2";
 		ammo="rhs_ammo_9m112m2";
 	};
 	class rhs_mag_9m124_6: rhs_mag_9m112_6
 	{
+		displayName="$STR_RHS_MAG_9M124";
+		displayNameShort="$STR_RHS_MAG_SH_9M124";
 		ammo="rhs_ammo_9m124";
 	};
 	class rhs_mag_9m128_6: rhs_mag_9m112_6
 	{
 		canLock=0;
+		displayName="$STR_RHS_MAG_9M128";
+		displayNameShort="$STR_RHS_MAG_SH_9M128";
 		ammo="rhs_ammo_9m128";
 		count=6;
 	};
 	class rhs_mag_9m113: VehicleMagazine
 	{
+		displayName="$STR_RHS_MAG_9M113";
+		displayNameShort="$STR_RHS_MAG_SH_9M113";
 		ammo="rhs_ammo_9m113";
 		count=1;
 		initSpeed=80;
@@ -3246,6 +3390,8 @@ class CfgMagazines
 	};
 	class rhs_mag_9m113M: rhs_mag_9m113
 	{
+		displayName="$STR_RHS_MAG_9M113M";
+		displayNameShort="$STR_RHS_MAG_SH_9M113M";
 		ammo="rhs_ammo_9m113M";
 	};
 	class rhs_mag_9m113M_3: rhs_mag_9m113M
@@ -3262,6 +3408,8 @@ class CfgMagazines
 	};
 	class rhs_mag_9m111: rhs_mag_9m113
 	{
+		displayName="$STR_RHS_MAG_9M111";
+		displayNameShort="$STR_RHS_MAG_SH_9M111";
 		ammo="rhs_ammo_9m111";
 	};
 	class rhs_mag_9m111_3: rhs_mag_9m111
@@ -3278,6 +3426,8 @@ class CfgMagazines
 	};
 	class rhs_mag_9m111M: rhs_mag_9m111
 	{
+		displayName="$STR_RHS_MAG_9M111M";
+		displayNameShort="$STR_RHS_MAG_SH_9M111M";
 		ammo="rhs_ammo_9m111M";
 	};
 	class rhs_mag_9m111M_3: rhs_mag_9m111M
@@ -3294,6 +3444,8 @@ class CfgMagazines
 	};
 	class rhs_mag_9m117_3: VehicleMagazine
 	{
+		displayName="$STR_RHS_MAG_3UBK101";
+		displayNameShort="$STR_RHS_MAG_SH_3UBK101";
 		ammo="rhs_ammo_9m117";
 		reloadTime=12;
 		magazineReloadTime=12;
@@ -3309,6 +3461,8 @@ class CfgMagazines
 	};
 	class rhs_mag_9m117m_3: rhs_mag_9m117_3
 	{
+		displayName="$STR_RHS_MAG_3UBK10M";
+		displayNameShort="$STR_RHS_MAG_SH_3UBK10M";
 		ammo="rhs_ammo_9m117m";
 		count=3;
 	};
@@ -3318,6 +3472,8 @@ class CfgMagazines
 	};
 	class rhs_mag_9m117m1_3: rhs_mag_9m117_3
 	{
+		displayName="$STR_RHS_MAG_3UBK23";
+		displayNameShort="$STR_RHS_MAG_SH_3UBK23";
 		ammo="rhs_ammo_9m117m";
 		count=3;
 	};
@@ -3327,6 +3483,8 @@ class CfgMagazines
 	};
 	class rhs_mag_9m118_3: rhs_mag_9m117_3
 	{
+		displayName="$STR_RHS_MAG_3UBK102";
+		displayNameShort="$STR_RHS_MAG_SH_3UBK102";
 		canlock=1;
 		ammo="rhs_ammo_9m118";
 		count=3;
@@ -3335,6 +3493,8 @@ class CfgMagazines
 	class rhs_mag_9m119_6: rhs_mag_9m112_6
 	{
 		canLock=0;
+		displayName="$STR_RHS_MAG_9M119";
+		displayNameShort="$STR_RHS_MAG_SH_9M119";
 		ammo="rhs_ammo_9m119";
 		count=6;
 	};
@@ -3344,6 +3504,8 @@ class CfgMagazines
 	};
 	class rhs_mag_9m119rx_6: rhs_mag_9m119_6
 	{
+		displayName="$STR_RHS_MAG_9M119RX";
+		displayNameShort="$STR_RHS_MAG_SH_9M119RX";
 		canLock=0;
 		reloadTime=8;
 		magazineReloadTime=8;
@@ -3356,6 +3518,8 @@ class CfgMagazines
 	class rhs_mag_9m119m_6: rhs_mag_9m112_6
 	{
 		canLock=0;
+		displayName="$STR_RHS_MAG_9M119M";
+		displayNameShort="$STR_RHS_MAG_SH_9M119M";
 		ammo="rhs_ammo_9m119m";
 		count=6;
 	};
@@ -3365,10 +3529,14 @@ class CfgMagazines
 	};
 	class rhs_mag_9m119f_6: rhs_mag_9m112_6
 	{
+		displayName="$STR_RHS_MAG_9M119F";
+		displayNameShort="$STR_RHS_MAG_SH_9M119F";
 		ammo="rhs_ammo_9m119f";
 	};
 	class rhs_mag_9m133_2: VehicleMagazine
 	{
+		displayName="$STR_RHS_MAG_9M133";
+		displayNameShort="$STR_RHS_MAG_SH_9M133";
 		canLock=1;
 		reloadTime=8;
 		magazineReloadTime=8;
@@ -3386,6 +3554,8 @@ class CfgMagazines
 	};
 	class rhs_mag_9m133f_2: rhs_mag_9m133_2
 	{
+		displayName="$STR_RHS_MAG_9M133F";
+		displayNameShort="$STR_RHS_MAG_SH_9M133F";
 		ammo="rhs_ammo_9m133f";
 	};
 	class rhs_mag_9m133f: rhs_mag_9m133f_2
@@ -3395,6 +3565,8 @@ class CfgMagazines
 	};
 	class rhs_mag_9m1331_2: rhs_mag_9m133_2
 	{
+		displayName="$STR_RHS_MAG_9M1331";
+		displayNameShort="$STR_RHS_MAG_SH_9M1331";
 		ammo="rhs_ammo_9m1331";
 	};
 	class rhs_mag_9m1331: rhs_mag_9m1331_2
@@ -3404,6 +3576,8 @@ class CfgMagazines
 	};
 	class rhs_mag_9m133m2_2: rhs_mag_9m133_2
 	{
+		displayName="$STR_RHS_MAG_9M133M2";
+		displayNameShort="$STR_RHS_MAG_SH_9M133M2";
 		ammo="rhs_ammo_9m133m2";
 	};
 	class rhs_mag_9m133m2: rhs_mag_9m133m2_2
@@ -3413,6 +3587,7 @@ class CfgMagazines
 	};
 	class rhs_mag_3m7_12: VehicleMagazine
 	{
+		displayName="3M7";
 		canLock=1;
 		reloadTime=10;
 		magazineReloadTime=8.5;
@@ -3435,6 +3610,8 @@ class CfgMagazines
 	};
 	class rhs_mag_9M115: VehicleMagazine
 	{
+		displayName="$STR_RHS_MAG_9M115";
+		displayNameShort="$STR_RHS_MAG_SH_9M115";
 		canLock=0;
 		reloadTime=8;
 		magazineReloadTime=8;
@@ -3447,14 +3624,20 @@ class CfgMagazines
 	};
 	class rhs_mag_9M131: rhs_mag_9M115
 	{
+		displayName="$STR_RHS_MAG_9M131";
+		displayNameShort="$STR_RHS_MAG_SH_9M131";
 		ammo="rhs_ammo_9m131";
 	};
 	class rhs_mag_9M131M: rhs_mag_9M115
 	{
+		displayName="$STR_RHS_MAG_9M131m";
+		displayNameShort="$STR_RHS_MAG_SH_9M131m";
 		ammo="rhs_ammo_9m131m";
 	};
 	class rhs_mag_9M131F: rhs_mag_9M115
 	{
+		displayName="$STR_RHS_MAG_9M131f";
+		displayNameShort="$STR_RHS_MAG_SH_9M131f";
 		ammo="rhs_ammo_9m131f";
 	};
 	class rhs_mag_9M114: VehicleMagazine
@@ -3654,6 +3837,7 @@ class CfgMagazines
 	class rhs_mag_mi24_empty: VehicleMagazine
 	{
 		ammo="rhs_ammo_ptb1500";
+		displayName="Empty Shelf";
 		count=1;
 		mass=8.5;
 		weight=8.5;
@@ -3781,6 +3965,8 @@ class CfgMagazines
 	};
 	class rhs_mag_pg15v_24: VehicleMagazine
 	{
+		displayName="$STR_RHS_MAG_PG15V";
+		displayNameShort="$STR_RHS_MAG_SH_PG15V";
 		ammo="rhs_ammo_pg15v";
 		count=24;
 		initSpeed=690;
@@ -3795,6 +3981,8 @@ class CfgMagazines
 	};
 	class rhs_mag_og15v_16: VehicleMagazine
 	{
+		displayName="$STR_RHS_MAG_OG15V";
+		displayNameShort="$STR_RHS_MAG_SH_OG15V";
 		ammo="rhs_ammo_og15v";
 		count=16;
 		initSpeed=290;
@@ -3809,32 +3997,44 @@ class CfgMagazines
 	};
 	class rhs_mag_pg9v: rhs_mag_pg15v_24
 	{
+		displayName="$STR_RHS_MAG_PG9V";
+		displayNameShort="$STR_RHS_MAG_SH_PG9V";
 		ammo="rhs_ammo_pg9v";
 		count=1;
 		initSpeed=435;
 	};
 	class rhs_mag_pg9n: rhs_mag_pg9v
 	{
+		displayName="$STR_RHS_MAG_PG9N";
+		displayNameShort="$STR_RHS_MAG_SH_PG9N";
 		ammo="rhs_ammo_pg9n";
 	};
 	class rhs_mag_pg9vnt: rhs_mag_pg9v
 	{
+		displayName="$STR_RHS_MAG_PG9VNT";
+		displayNameShort="$STR_RHS_MAG_SH_PG9VNT";
 		ammo="rhs_ammo_pg9vnt";
 		initSpeed=400;
 	};
 	class rhs_mag_og9v: rhs_mag_og15v_16
 	{
+		displayName="$STR_RHS_MAG_OG9V";
+		displayNameShort="$STR_RHS_MAG_SH_OG9V";
 		ammo="rhs_ammo_og9v";
 		count=1;
 		initSpeed=316;
 	};
 	class rhs_mag_og9vm: rhs_mag_og9v
 	{
+		displayName="$STR_RHS_MAG_OG9VM";
+		displayNameShort="$STR_RHS_MAG_SH_OG9VM";
 		ammo="rhs_ammo_og9vm";
 	};
 	class 450Rnd_127x108_Ball;
 	class rhs_mag_3uor6_230: 450Rnd_127x108_Ball
 	{
+		displayName="$STR_RHS_MAG_3UOR6";
+		displayNameShort="$STR_RHS_MAG_SH_3UOR6";
 		nameSound="heat";
 		ammo="rhs_ammo_3uor6";
 		count=230;
@@ -3885,6 +4085,8 @@ class CfgMagazines
 	};
 	class rhs_mag_3uof8_230: rhs_mag_3uor6_230
 	{
+		displayName="$STR_RHS_MAG_3UOF8";
+		displayNameShort="$STR_RHS_MAG_SH_3UOF8";
 		ammo="rhs_ammo_3uof8";
 		initSpeed=960;
 		weight=89.470001;
@@ -3931,6 +4133,8 @@ class CfgMagazines
 	};
 	class rhs_mag_3ubr6_230: rhs_mag_3uor6_230
 	{
+		displayName="$STR_RHS_MAG_3UBR6";
+		displayNameShort="$STR_RHS_MAG_SH_3UBR6";
 		ammo="rhs_ammo_3ubr6";
 		nameSound="sabot";
 		weight=92;
@@ -3979,6 +4183,8 @@ class CfgMagazines
 	};
 	class rhs_mag_3ubr8_230: rhs_mag_3ubr6_230
 	{
+		displayName="$STR_RHS_MAG_3UBR8";
+		displayNameShort="$STR_RHS_MAG_SH_3UBR8";
 		ammo="rhs_ammo_3ubr8";
 		weight=69;
 	};
@@ -4024,6 +4230,8 @@ class CfgMagazines
 	};
 	class rhs_mag_3ubr11_230: rhs_mag_3ubr6_230
 	{
+		displayName="$STR_RHS_MAG_3UBR11";
+		displayNameShort="$STR_RHS_MAG_SH_3UBR11";
 		ammo="rhs_ammo_3ubr11";
 		weight=69;
 	};
@@ -4069,6 +4277,7 @@ class CfgMagazines
 	};
 	class rhs_mag_AZP23_250: VehicleMagazine
 	{
+		displayName="$STR_RHS_AZP23_NAME";
 		ammo="RHS_ammo_23mm_AA";
 		count=250;
 		initSpeed=980;
@@ -4106,6 +4315,8 @@ class CfgMagazines
 	};
 	class rhs_mag_gsh30_ofzt_750: rhs_mag_3ubr6_230
 	{
+		displayName="$STR_RHS_MAG_OFZT30GSH";
+		displayNameShort="$STR_RHS_MAG_SH_OFZT30GSH";
 		ammo="rhs_ammo_3uof8";
 		count=750;
 		tracersEvery=1;
@@ -4114,6 +4325,8 @@ class CfgMagazines
 	};
 	class rhs_mag_gsh30_bt_750: rhs_mag_3uor6_230
 	{
+		displayName="$STR_RHS_MAG_BT30GSH";
+		displayNameShort="$STR_RHS_MAG_SH_BT30GSH";
 		ammo="rhs_ammo_gsh30_bt";
 		count=750;
 		weight="0.390*750";
@@ -4139,6 +4352,8 @@ class CfgMagazines
 	};
 	class rhs_mag_762x54mm_100: VehicleMagazine
 	{
+		displayName="$STR_RHS_MAG_762X54MM";
+		displayNameShort="$STR_RHS_MAG_SH_762X54MM";
 		count=100;
 		ammo="rhs_B_762x54_Ball";
 		initSpeed=855;
@@ -4164,6 +4379,8 @@ class CfgMagazines
 	};
 	class rhs_mag_127x108mm_50: VehicleMagazine
 	{
+		displayName="$STR_RHS_MAG_127X108MM";
+		displayNameShort="$STR_RHS_MAG_SH_127X108MM";
 		count=50;
 		ammo="rhs_ammo_127x108mm";
 		initSpeed=817;
@@ -4196,12 +4413,16 @@ class CfgMagazines
 	class rhs_mag_127x108mm_1slt_1470: rhs_mag_127x108mm_1470
 	{
 		ammo="rhs_ammo_127x108mm_1SLT";
+		displayName="$STR_RHS_MAG_127X108MM_1SLT";
+		displayNameShort="$STR_RHS_MAG_SH_127X108MM_1SLT";
 		tracersEvery=1;
 		weight=208.74001;
 		initSpeed=735;
 	};
 	class rhs_mag_145x115mm_50: VehicleMagazine
 	{
+		displayName="$STR_RHS_MAG_145X115MM";
+		displayNameShort="$STR_RHS_MAG_SH_145X115MM";
 		count=50;
 		ammo="rhs_ammo_145x115mm";
 		initSpeed=988;
@@ -4210,6 +4431,8 @@ class CfgMagazines
 	};
 	class RHS_mag_VOG30_30: VehicleMagazine
 	{
+		displayName="$STR_RHS_MAG_VOG30";
+		displayNameShort="$STR_RHS_MAG_SH_VOG30";
 		count=30;
 		ammo="rhs_ammo_VOG30";
 		initSpeed=185;
@@ -4217,10 +4440,14 @@ class CfgMagazines
 	};
 	class RHS_mag_GPD30_30: RHS_mag_VOG30_30
 	{
+		displayName="$STR_RHS_MAG_GPD30";
+		displayNameShort="$STR_RHS_MAG_SH_GPD30";
 		ammo="rhs_ammo_GPD30";
 	};
 	class RHS_mag_VOG17m_30: RHS_mag_VOG30_30
 	{
+		displayName="$STR_RHS_MAG_VOG17m";
+		displayNameShort="$STR_RHS_MAG_SH_VOG17m";
 		ammo="rhs_ammo_VOG17m";
 	};
 };
@@ -4232,6 +4459,7 @@ class CfgWeapons
 	class MGun;
 	class rhs_weap_MASTERSAFE: Default
 	{
+		displayName="MASTERSAFE";
 		magazines[]={};
 	};
 	class rhs_weap_MASTERSAFE_Holdster15: rhs_weap_MASTERSAFE
@@ -4240,6 +4468,7 @@ class CfgWeapons
 	};
 	class rhs_weap_902a: SmokeLauncher
 	{
+		displayName="$STR_RHS_WEAP_902A";
 		magazines[]=
 		{
 			"rhs_mag_902a",
@@ -4253,17 +4482,20 @@ class CfgWeapons
 	};
 	class rhs_weap_902b: rhs_weap_902a
 	{
+		displayName="$STR_RHS_WEAP_902B";
 		class Double: rhs_weap_902a
 		{
 			reloadTime=0.098999999;
 			burst=2;
 			multiplier=1;
 			autoFire=1;
+			displayName="$STR_RHS_WEAP_902B";
 		};
 		class Volley: Double
 		{
 			burst=6;
 			autoFire=1;
+			displayName="$STR_RHS_WEAP_902B_BURST";
 		};
 		class AIDouble: Double;  //found empty after stripping
 		class AIVolley: Volley;  //found empty after stripping
@@ -4279,18 +4511,21 @@ class CfgWeapons
 		class Single: Mode_SemiAuto
 		{
 			cursor="EmptyCursor";
+			displayName="$STR_RHS_WEAP_SMOKEGEN";
 			autoFire=1;
 			burst=1;
 			reloadTime=8;
 		};
 		class Continuos: Single
 		{
+			displayName="Smokegen (cont)";
 			burst=999;
 			reloadTime=8;
 		};
 	};
 	class rhs_weap_dazzler: rhs_weap_smokegen
 	{
+		displayName="Dazzler";
 		magazines[]=
 		{
 			"rhs_mag_dazzler"
@@ -4320,12 +4555,14 @@ class CfgWeapons
 		};
 		class Timed: Single
 		{
+			displayName="Timed";
 			burst=8;
 			reloadTime=1.3;
 		};
 		class AITimed: Timed;  //found empty after stripping
 		class LongTimed: Single
 		{
+			displayName="Timed 16f/4s";
 			burst=8;
 			reloadTime=4;
 		};
@@ -4368,6 +4605,7 @@ class CfgWeapons
 	};
 	class rhs_weap_DIRCM_Vitebsk: MGun
 	{
+		displayName="Vitebsk DIRCM";
 		magazines[]=
 		{
 			"RHS_mag_DIRCM_Vitebsk"
@@ -4376,6 +4614,7 @@ class CfgWeapons
 		simulation="cmlauncher";
 		class Burst1: Mode_Burst
 		{
+			displayName="DIRCM";
 			reloadTime=0.5;
 			burst=120;
 			multiplier=1;
@@ -4384,12 +4623,14 @@ class CfgWeapons
 	};
 	class rhs_weap_DIRCM_Lipa: rhs_weap_DIRCM_Vitebsk
 	{
+		displayName="Lipa DIRCM";
 		magazines[]=
 		{
 			"rhs_mag_DIRCM_Lipa"
 		};
 		class Burst1: Mode_Burst
 		{
+			displayName="DIRCM";
 			reloadTime=1;
 			burst=80;
 			multiplier=1;
@@ -4486,6 +4727,7 @@ class CfgWeapons
 	};
 	class rhs_weap_afganit_smoke: rhs_weap_902a
 	{
+		displayName="Smoke Launcher";
 		magazines[]=
 		{
 			"rhs_mag_afganit_smoke_12"
@@ -4496,11 +4738,13 @@ class CfgWeapons
 			burst=2;
 			multiplier=1;
 			autoFire=1;
+			displayName="Smoke (Single)";
 		};
 		class Volley: Double
 		{
 			burst=6;
 			autoFire=1;
+			displayName="Smoke (Burst)";
 		};
 		class AIDouble: Double;  //found empty after stripping
 		class AIVolley: Volley;  //found empty after stripping
@@ -4516,6 +4760,7 @@ class CfgWeapons
 	class rhs_weap_pkt: PKT
 	{
 		showAimCursorInternal=1;
+		displayName="$STR_RHS_WEAP_PKT";
 		magazines[]=
 		{
 			"rhs_mag_762x54mm_100",
@@ -4527,6 +4772,7 @@ class CfgWeapons
 		initSpeed=0;
 		class manual: MGun
 		{
+			displayName="$STR_RHS_WEAP_PKT";
 			autoFire=1;
 			reloadTime=0.075000003;
 			dispersion=0.00125;
@@ -4540,7 +4786,11 @@ class CfgWeapons
 	};
 	class rhs_weap_pktm: rhs_weap_pkt
 	{
-		class manual: manual;  //found empty after stripping
+		displayName="$STR_RHS_WEAP_PKTM";
+		class manual: manual
+		{
+			displayName="$STR_RHS_WEAP_PKTM";
+		};
 	};
 	class rhs_weap_pkt_v1: rhs_weap_pkt;  //found empty after stripping
 	class rhs_weap_pkt_v2: rhs_weap_pkt;  //found empty after stripping
@@ -4640,6 +4890,7 @@ class CfgWeapons
 	{
 		initSpeed=0;
 		autoFire=1;
+		displayName="$STR_RHS_WEAP_DSHKM";
 		ballisticscomputer=2;
 		magazineReloadTime=12;
 		magazines[]=
@@ -4652,6 +4903,7 @@ class CfgWeapons
 		canLock=0;
 		class manual: MGun
 		{
+			displayName="$STR_RHS_WEAP_NSVT";
 			autoFire=1;
 			reloadTime=0.1;
 			dispersion=0.0020000001;
@@ -4670,6 +4922,7 @@ class CfgWeapons
 	};
 	class rhs_weap_nsvt: rhs_weap_DSHKM
 	{
+		displayName="$STR_RHS_WEAP_NSVT";
 		magazines[]=
 		{
 			"rhs_mag_127x108mm_50",
@@ -4684,6 +4937,7 @@ class CfgWeapons
 		dispersion=0.0020000001;
 		class manual: MGun
 		{
+			displayName="$STR_RHS_WEAP_NSVT";
 			autoFire=1;
 			reloadTime=0.086000003;
 			dispersion=0.0020000001;
@@ -4709,8 +4963,10 @@ class CfgWeapons
 	};
 	class rhs_weap_kord: rhs_weap_nsvt_effects
 	{
+		displayName="$STR_RHS_DN_KORD";
 		class manual: manual
 		{
+			displayName="$STR_RHS_DN_KORD";
 			reloadTime=0.094999999;
 			dispersion=0.0020000001;
 		};
@@ -4743,6 +4999,7 @@ class CfgWeapons
 				directionname="machinegun_eject_dir";
 			};
 		};
+		displayName="$STR_RHS_WEAP_KPVT";
 		magazines[]=
 		{
 			"rhs_mag_145x115mm_50"
@@ -4750,6 +5007,7 @@ class CfgWeapons
 		selectionFireAnim="zasleh3";
 		class manual: MGun
 		{
+			displayName="$STR_RHS_WEAP_KPVT";
 			autoFire=1;
 			reloadTime=0.1;
 			dispersion=0.00069999998;
@@ -4837,6 +5095,7 @@ class CfgWeapons
 	class RHS_weap_Ags30: GMG_20mm
 	{
 		ballisticsComputer=2;
+		displayName="AGS-30";
 		magazines[]=
 		{
 			"RHS_mag_VOG30_30",
@@ -4864,8 +5123,10 @@ class CfgWeapons
 	{
 		ballisticscomputer=2;
 		magazineReloadTime=5;
+		displayName="$STR_RHS_WEAP_PKM";
 		class manual: manual
 		{
+			displayName="$STR_RHS_WEAP_PKM";
 			autoFire=1;
 			reloadTime=0.075000003;
 			dispersion=0.00125;
@@ -4990,6 +5251,7 @@ class CfgWeapons
 	{
 		aiDispersioncoefX=5;
 		aiDispersioncoefY=9;
+		displayName="$STR_RHS_WEAP_2A26";
 		magazines[]=
 		{
 			"rhs_mag_dummy",
@@ -5014,26 +5276,31 @@ class CfgWeapons
 	{
 		aiDispersioncoefX=3.5;
 		aiDispersioncoefY=6.5;
+		displayName="$STR_RHS_WEAP_2A462";
 	};
 	class rhs_weap_2a46m_2: rhs_weap_d81
 	{
 		aiDispersioncoefX=3.5;
 		aiDispersioncoefY=5;
+		displayName="$STR_RHS_WEAP_2A46M2";
 	};
 	class rhs_weap_2a46m: rhs_weap_2a46m_2
 	{
 		aiDispersioncoefX=4;
 		aiDispersioncoefY=7;
+		displayName="$STR_RHS_WEAP_2A46M";
 	};
 	class rhs_weap_2a46m_4: rhs_weap_2a46m_2
 	{
 		aiDispersioncoefX=3.5;
 		aiDispersioncoefY=5;
+		displayName="$STR_RHS_WEAP_2A46M4";
 	};
 	class rhs_weap_2a46m_5: rhs_weap_2a46m_2
 	{
 		aiDispersioncoefX=3;
 		aiDispersioncoefY=5;
+		displayName="$STR_RHS_WEAP_2A46M5";
 		class player: player
 		{
 			reloadtime=6;
@@ -5048,11 +5315,13 @@ class CfgWeapons
 	{
 		aiDispersioncoefX=2.5;
 		aiDispersioncoefY=4;
+		displayName="$STR_RHS_WEAP_2A82";
 	};
 	class rhs_weap_2a82_1m: rhs_weap_2a82
 	{
 		aiDispersioncoefX=2.5;
 		aiDispersioncoefY=3;
+		displayName="$STR_RHS_WEAP_2A82_1M";
 		magazineReloadTime=5.5;
 		class player: player
 		{
@@ -5066,6 +5335,7 @@ class CfgWeapons
 	};
 	class rhs_weap_d10t2s_2: rhs_weap_d81
 	{
+		displayName="$STR_RHS_WEAP_D10T2S";
 		magazines[]=
 		{
 			"rhs_mag_bm25_14",
@@ -5080,6 +5350,7 @@ class CfgWeapons
 	};
 	class rhs_weap_d10tg: rhs_weap_d10t2s_2
 	{
+		displayName="$STR_RHS_WEAP_D10TG";
 		magazines[]=
 		{
 			"rhs_mag_br412_14",
@@ -5091,6 +5362,7 @@ class CfgWeapons
 	};
 	class rhs_weap_d10t2s: rhs_weap_d10t2s_2
 	{
+		displayName="$STR_RHS_WEAP_D10T2S";
 		magazines[]=
 		{
 			"rhs_mag_br412_14",
@@ -5107,6 +5379,7 @@ class CfgWeapons
 	};
 	class rhs_weap_u5ts: rhs_weap_d81
 	{
+		displayName="$STR_RHS_WEAP_2A20";
 		sound[]=
 		{
 			"\rhsafrf\addons\rhs_c_heavyweapons\sounds\rhs_s_u5ts.ogg",
@@ -5144,6 +5417,7 @@ class CfgWeapons
 		aiDispersioncoefY=3;
 		airateoffire=1;
 		airateoffiredistance=1000;
+		displayName="$STR_RHS_WEAP_2A42";
 		nameSound="cannon";
 		reloadTime=0.02;
 		magazinereloadtime=0.2;
@@ -5183,6 +5457,8 @@ class CfgWeapons
 		};
 		class LowROFBMD2: Mode_FullAuto
 		{
+			displayName="$STR_RHS_WEAP_MODE_300";
+			displayNameShort="$STR_RHS_WEAP_MODE_300";
 			reloadTime=0.2;
 			flash="gunfire";
 			flashSize=0.1;
@@ -5191,6 +5467,8 @@ class CfgWeapons
 		};
 		class HighROFBMD2: LowROFBMD2
 		{
+			displayName="$STR_RHS_WEAP_MODE_600";
+			displayNameShort="$STR_RHS_WEAP_MODE_600";
 			reloadTime=0.1;
 			dispersion=0.0032500001;
 		};
@@ -5207,6 +5485,7 @@ class CfgWeapons
 	};
 	class rhs_weap_2a72_base: rhs_weap_2a42
 	{
+		displayName="$STR_RHS_WEAP_2A72";
 		class gunParticles
 		{
 			class Shell
@@ -5228,6 +5507,8 @@ class CfgWeapons
 		ballisticsComputer=0;
 		class LowROFBMD2: LowROFBMD2
 		{
+			displayName="$STR_RHS_WEAP_MODE_SINGLE";
+			displayNameShort="$STR_RHS_WEAP_MODE_SINGLE";
 			reloadTime=0.2;
 			autofire=0;
 			flash="gunfire";
@@ -5237,6 +5518,8 @@ class CfgWeapons
 		};
 		class HighROFBMD2: LowROFBMD2
 		{
+			displayName="$STR_RHS_WEAP_MODE_330";
+			displayNameShort="$STR_RHS_WEAP_MODE_330";
 			reloadTime=0.18181799;
 			autofire=1;
 		};
@@ -5280,6 +5563,7 @@ class CfgWeapons
 	{
 		aiDispersioncoefX=2;
 		aiDispersioncoefY=4;
+		displayName="$STR_RHS_WEAP_2A70";
 		magazineReloadTime=5.5;
 		magazines[]=
 		{
@@ -5317,6 +5601,7 @@ class CfgWeapons
 	{
 		aiDispersioncoefX=3;
 		aiDispersioncoefY=4;
+		displayName="$STR_RHS_WEAP_2A75";
 		magazineReloadTime=7.5;
 		class player: player
 		{
@@ -5336,6 +5621,7 @@ class CfgWeapons
 		canLock=0;
 		ballisticsComputer=0;
 		cursor="EmptyCursor";
+		displayName="$STR_RHS_WEAP_2A28";
 		magazines[]=
 		{
 			"rhs_mag_pg15v_24",
@@ -5380,6 +5666,7 @@ class CfgWeapons
 	};
 	class rhs_weap_2a41_base: rhs_weap_2a28_base
 	{
+		displayName="$STR_RHS_WEAP_2A41";
 		class player: player
 		{
 			dispersion="0.00025*10";
@@ -5424,6 +5711,7 @@ class CfgWeapons
 		};
 		class Single1: Mode_SemiAuto
 		{
+			displayName="Semi (close)";
 			weaponSoundEffect="DefaultRifle";
 			reloadTime=8;
 			artilleryDispersion=7.1999998;
@@ -5431,14 +5719,17 @@ class CfgWeapons
 		};
 		class Single2: Single1
 		{
+			displayName="Semi (medium)";
 			artilleryCharge=0.30000001;
 		};
 		class Single3: Single1
 		{
+			displayName="Semi (far)";
 			artilleryCharge=0.47999999;
 		};
 		class Burst1: Mode_Burst
 		{
+			displayName="Burst (close)";
 			burst=6;
 			weaponSoundEffect="DefaultRifle";
 			reloadTime=6;
@@ -5447,10 +5738,12 @@ class CfgWeapons
 		};
 		class Burst2: Burst1
 		{
+			displayName="Burst (medium)";
 			artilleryCharge=0.30000001;
 		};
 		class Burst3: Burst1
 		{
+			displayName="Burst (far)";
 			artilleryCharge=0.47999999;
 		};
 	};
@@ -5481,6 +5774,7 @@ class CfgWeapons
 	};
 	class rhs_weap_d30: mortar_155mm_AMOS
 	{
+		displayName="$STR_RHS_DN_D30";
 		ballisticscomputer=2;
 		reloadTime=6;
 		magazineReloadTime=6;
@@ -5507,6 +5801,7 @@ class CfgWeapons
 	};
 	class rhs_weap_d30_at: rhs_weap_d81
 	{
+		displayName="$STR_RHS_DN_D30";
 		magazines[]=
 		{
 			"rhs_mag_of462",
@@ -5658,6 +5953,7 @@ class CfgWeapons
 		};
 		class rhs_burst_safe: rhs_weap_gsh30
 		{
+			displayName="Burst Lock - GSh-30-1";
 			class manual: manual
 			{
 				showtoplayer=0;
@@ -5782,6 +6078,7 @@ class CfgWeapons
 	class rhs_weap_azp23: CannonCore
 	{
 		ballisticsComputer=4;
+		displayName="$STR_RHS_AZP23_NAME";
 		nameSound="cannon";
 		cursor="emptyCursor";
 		cursorAim="mg";
@@ -5853,6 +6150,7 @@ class CfgWeapons
 		magazineReloadTime=14;
 		class manual: CannonCore
 		{
+			displayName="$STR_RHS_AZP23_NAME";
 			autoFire=1;
 			reloadTime=0.024;
 			dispersion=0.0049999999;
@@ -5870,6 +6168,7 @@ class CfgWeapons
 		ballisticsComputer=2;
 		canLock=0;
 		weaponLockSystem=1;
+		displayName="2A14";
 		class gunParticles
 		{
 			class effect1
@@ -5887,6 +6186,7 @@ class CfgWeapons
 		};
 		class manual: manual
 		{
+			displayName="2A14";
 			reloadTime=0.029999999;
 		};
 	};
@@ -5901,6 +6201,7 @@ class CfgWeapons
 	};
 	class rhs_weap_2p130: mortar_82mm
 	{
+		displayName="$STR_RHS_2P130_NAME";
 		magazines[]=
 		{
 			"rhs_mag_9m41_20"
@@ -5932,6 +6233,7 @@ class CfgWeapons
 	};
 	class rhs_weap_2b14: mortar_82mm
 	{
+		displayName="$STR_RHS_2b14_NAME";
 		magazines[]=
 		{
 			"rhs_mag_3vo18_10",
@@ -5943,6 +6245,7 @@ class CfgWeapons
 	class MissileLauncher;
 	class rhs_weap_9k11: MissileLauncher
 	{
+		displayName="$STR_RHS_WEAP_9K11";
 		reloadTime=3;
 		magazineReloadTime=30;
 		magazines[]=
@@ -5962,6 +6265,7 @@ class CfgWeapons
 		canLock=1;
 		reloadTime=30;
 		magazineReloadTime=30;
+		displayName="$STR_RHS_WEAP_9M111";
 		magazines[]=
 		{
 			"rhs_mag_9m111",
@@ -5983,6 +6287,7 @@ class CfgWeapons
 	class rhs_weap_9m113: rhs_weap_9m111
 	{
 		autoreload=0;
+		displayName="$STR_RHS_WEAP_9M113";
 		magazines[]=
 		{
 			"rhs_mag_9m113m",
@@ -6019,6 +6324,7 @@ class CfgWeapons
 	{
 		reloadTime=30;
 		magazineReloadTime=30;
+		displayName="$STR_RHS_WEAP_9M111";
 		magazines[]=
 		{
 			"rhs_mag_9m113_3",
@@ -6029,6 +6335,7 @@ class CfgWeapons
 	{
 		reloadTime=10;
 		magazineReloadTime=8.5;
+		displayName="2K4";
 		magazines[]=
 		{
 			"rhs_mag_3m7_12"
@@ -6036,6 +6343,7 @@ class CfgWeapons
 	};
 	class rhs_weap_9k133: rhs_weap_9m111
 	{
+		displayName="$STR_RHS_WEAP_9K133";
 		magazines[]=
 		{
 			"rhs_mag_9m133_2"
@@ -6046,6 +6354,7 @@ class CfgWeapons
 	class rhs_weap_SPG9: RocketPods
 	{
 		canlock=0;
+		displayName="$STR_RHS_DN_SPG9";
 		reloadTime=3;
 		magazineReloadTime=10;
 		magazines[]=
@@ -6220,6 +6529,7 @@ class CfgWeapons
 	class missiles_titan_static;
 	class rhs_weap_Igla_twice: missiles_titan_static
 	{
+		displayName="$STR_RHS_DN_IGLA_TWICE";
 		reloadTime=4;
 		magazineReloadTime=20;
 		magazines[]=
@@ -6255,26 +6565,32 @@ class CfgWeapons
 		};
 		class Mode_1: Close
 		{
+			displayName="5000m-6500m";
 			artilleryCharge=0.36500001;
 		};
 		class Mode_2: Close
 		{
+			displayName="6500m-8300m";
 			artilleryCharge=0.41499999;
 		};
 		class Mode_3: Close
 		{
+			displayName="8300m-10000m";
 			artilleryCharge=0.47;
 		};
 		class Mode_4: Close
 		{
+			displayName="10000m-13000m";
 			artilleryCharge=0.51800001;
 		};
 		class Mode_5: Close
 		{
+			displayName="13000m-16000m";
 			artilleryCharge=0.57999998;
 		};
 		class Mode_6: Close
 		{
+			displayName="16000m-20000m";
 			artilleryCharge=0.64999998;
 		};
 		class EventHandlers
@@ -6300,42 +6616,52 @@ class CfgWeapons
 		};
 		class Mode_1: Close
 		{
+			displayName="1500m-1900m";
 			artilleryCharge=0.2;
 		};
 		class Mode_2: Close
 		{
+			displayName="1900m-2400m";
 			artilleryCharge=0.226;
 		};
 		class Mode_3: Close
 		{
+			displayName="2400m-3100m";
 			artilleryCharge=0.255;
 		};
 		class Mode_4: Close
 		{
+			displayName="3100m-4000m";
 			artilleryCharge=0.28799999;
 		};
 		class Mode_5: Close
 		{
+			displayName="4000m-3100m";
 			artilleryCharge=0.33000001;
 		};
 		class Mode_6: Close
 		{
+			displayName="5000m-6500m";
 			artilleryCharge=0.36500001;
 		};
 		class Mode_7: Close
 		{
+			displayName="6500m-8300m";
 			artilleryCharge=0.41499999;
 		};
 		class Mode_8: Close
 		{
+			displayName="8300m-10000m";
 			artilleryCharge=0.47;
 		};
 		class Mode_9: Close
 		{
+			displayName="10000m-13000m";
 			artilleryCharge=0.51800001;
 		};
 		class Mode_10: Close
 		{
+			displayName="13000m-15000m";
 			artilleryCharge=0.56;
 		};
 	};
@@ -6347,38 +6673,47 @@ class CfgWeapons
 		};
 		class Mode_1: Close
 		{
+			displayName="1500m-1900m";
 			artilleryCharge=0.2;
 		};
 		class Mode_2: Close
 		{
+			displayName="1900m-2400m";
 			artilleryCharge=0.226;
 		};
 		class Mode_3: Close
 		{
+			displayName="2400m-3100m";
 			artilleryCharge=0.255;
 		};
 		class Mode_4: Close
 		{
+			displayName="3100m-4000m";
 			artilleryCharge=0.28799999;
 		};
 		class Mode_5: Close
 		{
+			displayName="4000m-3100m";
 			artilleryCharge=0.33000001;
 		};
 		class Mode_6: Close
 		{
+			displayName="5000m-6500m";
 			artilleryCharge=0.36500001;
 		};
 		class Mode_7: Close
 		{
+			displayName="6500m-8300m";
 			artilleryCharge=0.41499999;
 		};
 		class Mode_8: Close
 		{
+			displayName="8300m-10000m";
 			artilleryCharge=0.47;
 		};
 		class Mode_9: Close
 		{
+			displayName="10000m-13000m";
 			artilleryCharge=0.51800001;
 		};
 	};
@@ -6390,34 +6725,42 @@ class CfgWeapons
 		};
 		class Mode_1: Close
 		{
+			displayName="5000m-6500m";
 			artilleryCharge=0.36500001;
 		};
 		class Mode_2: Close
 		{
+			displayName="6500m-8300m";
 			artilleryCharge=0.41499999;
 		};
 		class Mode_3: Close
 		{
+			displayName="8300m-10000m";
 			artilleryCharge=0.47;
 		};
 		class Mode_4: Close
 		{
+			displayName="10000m-13000m";
 			artilleryCharge=0.51800001;
 		};
 		class Mode_5: Close
 		{
+			displayName="13000m-16000m";
 			artilleryCharge=0.57999998;
 		};
 		class Mode_6: Close
 		{
+			displayName="16000m-20000m";
 			artilleryCharge=0.64999998;
 		};
 		class Mode_7: Close
 		{
+			displayName="20000m-25000m";
 			artilleryCharge=0.72000003;
 		};
 		class Mode_8: Close
 		{
+			displayName="25000m-30000m";
 			artilleryCharge=0.79000002;
 		};
 	};
@@ -6429,42 +6772,52 @@ class CfgWeapons
 		};
 		class Mode_1: Close
 		{
+			displayName="5000m-6500m";
 			artilleryCharge=0.36500001;
 		};
 		class Mode_2: Close
 		{
+			displayName="6500m-8300m";
 			artilleryCharge=0.41499999;
 		};
 		class Mode_3: Close
 		{
+			displayName="8300m-10000m";
 			artilleryCharge=0.47;
 		};
 		class Mode_4: Close
 		{
+			displayName="10000m-13000m";
 			artilleryCharge=0.51800001;
 		};
 		class Mode_5: Close
 		{
+			displayName="13000m-16000m";
 			artilleryCharge=0.57999998;
 		};
 		class Mode_6: Close
 		{
+			displayName="16000m-20000m";
 			artilleryCharge=0.64999998;
 		};
 		class Mode_7: Close
 		{
+			displayName="20000m-25000m";
 			artilleryCharge=0.72000003;
 		};
 		class Mode_8: Close
 		{
+			displayName="25000m-30000m";
 			artilleryCharge=0.79000002;
 		};
 		class Mode_9: Close
 		{
+			displayName="30000m-35000m";
 			artilleryCharge=0.85000002;
 		};
 		class Mode_10: Close
 		{
+			displayName="35000m-40000m";
 			artilleryCharge=0.91000003;
 		};
 	};
@@ -6476,38 +6829,47 @@ class CfgWeapons
 		};
 		class Mode_1: Close
 		{
+			displayName="5000m-6500m";
 			artilleryCharge=0.36500001;
 		};
 		class Mode_2: Close
 		{
+			displayName="6500m-8300m";
 			artilleryCharge=0.41499999;
 		};
 		class Mode_3: Close
 		{
+			displayName="8300m-10000m";
 			artilleryCharge=0.47;
 		};
 		class Mode_4: Close
 		{
+			displayName="10000m-13000m";
 			artilleryCharge=0.51800001;
 		};
 		class Mode_5: Close
 		{
+			displayName="13000m-16000m";
 			artilleryCharge=0.57999998;
 		};
 		class Mode_6: Close
 		{
+			displayName="16000m-20000m";
 			artilleryCharge=0.64999998;
 		};
 		class Mode_7: Close
 		{
+			displayName="20000m-25000m";
 			artilleryCharge=0.72000003;
 		};
 		class Mode_8: Close
 		{
+			displayName="25000m-30000m";
 			artilleryCharge=0.79000002;
 		};
 		class Mode_9: Close
 		{
+			displayName="30000m-37500m";
 			artilleryCharge=0.87900001;
 		};
 	};
@@ -9505,18 +9867,32 @@ class CfgVehicles
 	class ThingX;
 	class rhs_casing_30mm: House
 	{
+		displayName="Cartridge";
 		nameSound="";
 		accuracy=0.2;
 		armor=5;
 	};
 	class rhs_casing_122mm: ThingX
 	{
+		displayName="122mm Artilery Casing";
 		editorCategory="EdCat_Things";
 	};
-	class rhs_weap_9m113_used: rhs_casing_122mm;  //found empty after stripping
-	class rhs_weap_9m111_used: rhs_weap_9m113_used;  //found empty after stripping
-	class rhs_weap_9K115_launcher_used: rhs_weap_9m111_used;  //found empty after stripping
-	class rhs_weap_9K133_launcher_used: rhs_weap_9m111_used;  //found empty after stripping
+	class rhs_weap_9m113_used: rhs_casing_122mm
+	{
+		displayName="9M113 Used Tube";
+	};
+	class rhs_weap_9m111_used: rhs_weap_9m113_used
+	{
+		displayName="9M111 Used Tube";
+	};
+	class rhs_weap_9K115_launcher_used: rhs_weap_9m111_used
+	{
+		displayName="9K115 Used Tube";
+	};
+	class rhs_weap_9K133_launcher_used: rhs_weap_9m111_used
+	{
+		displayName="9K133 Used Tube";
+	};
 	class LandVehicle;
 	class StaticWeapon: LandVehicle
 	{
@@ -9690,6 +10066,7 @@ class CfgVehicles
 	class rhs_nsv_tripod_base: StaticMGWeapon
 	{
 		icon="\rhsafrf\addons\rhs_heavyweapons\mg\bis_kord\icomap_kord_CA.paa";
+		displayName="NSV (6T7)";
 		sensorPosition="gunnerView";
 		class Hitpoints
 		{
@@ -9753,6 +10130,7 @@ class CfgVehicles
 				"RHS_NSV_Gun_Bag",
 				"RHS_NSV_Tripod_Bag"
 			};
+			displayName="";
 		};
 	};
 	class RHS_NSV_TriPod_MSV: rhs_nsv_tripod_base
@@ -9790,6 +10168,7 @@ class CfgVehicles
 	class RHS_KORD_Base: rhs_nsv_tripod_base
 	{
 		icon="rhsafrf\addons\rhs_heavyweapons\data\mapico\icomap_kord_CA.paa";
+		displayName="$STR_RHS_DN_KORD_LOW";
 		class Damage;  //found empty after stripping
 		class ViewPilot: ViewPilot
 		{
@@ -9856,6 +10235,7 @@ class CfgVehicles
 				"rhs_Kord_Gun_Bag",
 				"rhs_Kord_Tripod_Bag"
 			};
+			displayName="";
 		};
 	};
 	class rhs_KORD_MSV: RHS_KORD_Base
@@ -9892,6 +10272,7 @@ class CfgVehicles
 	};
 	class RHS_KORD_high_base: RHS_KORD_Base
 	{
+		displayName="$STR_rhs_DN_KORD";
 		icon="rhsafrf\addons\rhs_heavyweapons\data\mapico\icomap_kord6u16sp_CA.paa";
 		class Turrets: Turrets
 		{
@@ -9940,6 +10321,7 @@ class CfgVehicles
 	class rhs_DSHKM_base: StaticMGWeapon
 	{
 		icon="\rhsafrf\addons\rhs_heavyweapons\data\mapico\icomap_DShKM_CA.paa";
+		displayName="$STR_rhs_DN_DSHKM";
 		sensorPosition="gunnerView";
 		class Hitpoints
 		{
@@ -10014,6 +10396,7 @@ class CfgVehicles
 				"rhs_DShkM_Gun_Bag",
 				"rhs_DShkM_TripodHigh_Bag"
 			};
+			displayName="";
 		};
 	};
 	class rhs_DSHKM_ins: rhs_DSHKM_base
@@ -10049,6 +10432,7 @@ class CfgVehicles
 				"rhs_DShkM_Gun_Bag",
 				"rhs_DShkM_TripodLow_Bag"
 			};
+			displayName="";
 		};
 	};
 	class rhs_DSHKM_Mini_TriPod_ins: rhs_DSHkM_Mini_TriPod_base
@@ -10061,6 +10445,7 @@ class CfgVehicles
 	};
 	class RHS_AGS30_TriPod_base: StaticGrenadeLauncher
 	{
+		displayName="AGS-30 (6P17)";
 		icon="rhsafrf\addons\rhs_heavyweapons\data\mapico\icomap_ags_CA.paa";
 		sensorPosition="gunnerView";
 		class Hitpoints
@@ -10142,6 +10527,7 @@ class CfgVehicles
 				"RHS_AGS30_Gun_Bag",
 				"RHS_AGS30_Tripod_Bag"
 			};
+			displayName="";
 		};
 	};
 	class RHS_AGS30_TriPod_MSV: RHS_AGS30_TriPod_base
@@ -10204,6 +10590,7 @@ class CfgVehicles
 	};
 	class rhs_SPG9_base: AT_01_base_F
 	{
+		displayName="$STR_rhs_DN_SPG9";
 		icon="rhsafrf\addons\rhs_heavyweapons\data\mapico\icon_spg9_CA.paa";
 		nameSound="cannon";
 		sensorPosition="gunnerView";
@@ -10309,10 +10696,12 @@ class CfgVehicles
 				"rhs_SPG9_Gun_Bag",
 				"rhs_SPG9_Tripod_Bag"
 			};
+			displayName="";
 		};
 	};
 	class rhs_SPG9M_base: rhs_SPG9_base
 	{
+		displayName="$STR_rhs_DN_SPG9M";
 		class Turrets: Turrets
 		{
 			class MainTurret: MainTurret
@@ -10375,6 +10764,7 @@ class CfgVehicles
 	};
 	class rhs_Igla_AA_pod_Base: StaticAAWeapon
 	{
+		displayName="$STR_rhs_DN_IGLA_AA_POD_EAST";
 		mapsize=2.8;
 		icon="rhsafrf\addons\rhs_heavyweapons\data\mapico\icomap_igla_aa_pod_CA.paa";
 		class Hitpoints
@@ -10578,11 +10968,13 @@ class CfgVehicles
 				"rhs_Podnos_Gun_Bag",
 				"rhs_Podnos_Bipod_Bag"
 			};
+			displayName="";
 		};
 		class Attributes
 		{
 			class rhs_ammoslot_1_type
 			{
+				displayName="Ammo slot #1 type";
 				tooltip="Define type of shell for #1 slot [HE rounds]";
 				property="rhs_ammoslot_1_type";
 				control="Combo";
@@ -10600,6 +10992,7 @@ class CfgVehicles
 			};
 			class rhs_ammoslot_1
 			{
+				displayName="Ammo slot #1 count";
 				tooltip="Define number of rounds stored inside of type #1. Max 40. Leave -1 for default loadout";
 				property="rhs_ammoslot_1";
 				control="Edit";
@@ -10609,6 +11002,7 @@ class CfgVehicles
 			};
 			class rhs_ammoslot_2_type: rhs_ammoslot_1_type
 			{
+				displayName="Ammo slot #2 type";
 				tooltip="Define type of shell for #2 slot [Illumination rounds]";
 				property="rhs_ammoslot_2_type";
 				class values
@@ -10623,11 +11017,13 @@ class CfgVehicles
 			};
 			class rhs_ammoslot_2: rhs_ammoslot_1
 			{
+				displayName="Ammo slot #2 count";
 				tooltip="Define number of rounds stored inside of type #2. Max 40. Leave -1 for default loadout";
 				property="rhs_ammoslot_2";
 			};
 			class rhs_ammoslot_3_type: rhs_ammoslot_1_type
 			{
+				displayName="Ammo slot #3 type";
 				tooltip="Define type of shell for #3 slot [Smoke rounds]";
 				property="rhs_ammoslot_3_type";
 				class values
@@ -10642,6 +11038,7 @@ class CfgVehicles
 			};
 			class rhs_ammoslot_3: rhs_ammoslot_1
 			{
+				displayName="Ammo slot #3 count";
 				tooltip="Define number of rounds stored inside of type #3. Max 40. Leave -1 for default loadout";
 				property="rhs_ammoslot_3";
 			};
@@ -10691,6 +11088,7 @@ class CfgVehicles
 				"rhs_Metis_Gun_Bag",
 				"rhs_Metis_Tripod_Bag"
 			};
+			displayName="";
 		};
 		displayname="$STR_rhs_DN_AT13M";
 		icon="rhsafrf\addons\rhs_heavyweapons\data\mapico\icomap_metis_at13_CA.paa";
@@ -10871,6 +11269,7 @@ class CfgVehicles
 			"Artillery"
 		};
 		artilleryScanner=1;
+		displayName="$STR_rhs_DN_D30";
 		icon="rhsafrf\addons\rhs_heavyweapons\data\mapico\icomap_d30_CA.paa";
 		typicalCargo[]={};
 		driveOnComponent[]=
@@ -10942,6 +11341,7 @@ class CfgVehicles
 		{
 			class rhs_caseDeleteTime
 			{
+				displayName="Spent case liftime";
 				tooltip="Define how long spent caseses are rendred in game. Type -1 for infinitve time";
 				property="rhs_caseDeleteTime";
 				control="Edit";
@@ -10951,6 +11351,7 @@ class CfgVehicles
 			};
 			class rhs_ammoslot_1_type
 			{
+				displayName="Ammo slot #1 type";
 				tooltip="Define type of shell for #1 slot [HE rounds]";
 				property="rhs_ammoslot_1_type";
 				control="Combo";
@@ -10974,6 +11375,7 @@ class CfgVehicles
 			};
 			class rhs_ammoslot_1
 			{
+				displayName="Ammo slot #1 count";
 				tooltip="Define number of rounds stored inside of type #1. Max 40. Leave -1 for default loadout";
 				property="rhs_ammoslot_1";
 				control="Edit";
@@ -10983,6 +11385,7 @@ class CfgVehicles
 			};
 			class rhs_ammoslot_2_type: rhs_ammoslot_1_type
 			{
+				displayName="Ammo slot #2 type";
 				tooltip="Define type of shell for #2 slot [Smoke rounds]";
 				property="rhs_ammoslot_2_type";
 				class values
@@ -10997,11 +11400,13 @@ class CfgVehicles
 			};
 			class rhs_ammoslot_2: rhs_ammoslot_1
 			{
+				displayName="Ammo slot #2 count";
 				tooltip="Define number of rounds stored inside of type #2. Max 40. Leave -1 for default loadout";
 				property="rhs_ammoslot_2";
 			};
 			class rhs_ammoslot_3_type: rhs_ammoslot_1_type
 			{
+				displayName="Ammo slot #3 type";
 				tooltip="Define type of shell for #3 slot [Illumination rounds]";
 				property="rhs_ammoslot_3_type";
 				class values
@@ -11016,11 +11421,13 @@ class CfgVehicles
 			};
 			class rhs_ammoslot_3: rhs_ammoslot_1
 			{
+				displayName="Ammo slot #3 count";
 				tooltip="Define number of rounds stored inside of type #3. Max 40. Leave -1 for default loadout";
 				property="rhs_ammoslot_3";
 			};
 			class rhs_ammoslot_4_type: rhs_ammoslot_1_type
 			{
+				displayName="Ammo slot #4 type";
 				tooltip="Define type of shell for #4 slot [Laser guided rounds]";
 				property="rhs_ammoslot_4_type";
 				class values
@@ -11035,6 +11442,7 @@ class CfgVehicles
 			};
 			class rhs_ammoslot_4: rhs_ammoslot_1
 			{
+				displayName="Ammo slot #4 count";
 				tooltip="Define number of rounds stored inside of type #4. Max 40. Leave -1 for default loadout";
 				property="rhs_ammoslot_4";
 			};
@@ -11094,6 +11502,7 @@ class CfgVehicles
 	};
 	class rhs_D30_AT_base: rhs_D30_base
 	{
+		displayName="$STR_rhs_DN_d30_AT";
 		availableForSupportTypes[]={};
 		artilleryScanner=0;
 		sensorPosition="gunnerView";
@@ -11134,6 +11543,7 @@ class CfgVehicles
 			class rhs_caseDeleteTime: rhs_caseDeleteTime;  //found empty after stripping
 			class rhs_ammoslot_1_type
 			{
+				displayName="Ammo slot #1 type";
 				tooltip="Define type of shell for #1 slot [HE rounds]";
 				property="rhs_ammoslot_1_type";
 				control="Combo";
@@ -11157,6 +11567,7 @@ class CfgVehicles
 			};
 			class rhs_ammoslot_1
 			{
+				displayName="Ammo slot #1 count";
 				tooltip="Define number of rounds stored inside of type #1. Max 40. Leave -1 for default loadout";
 				property="rhs_ammoslot_1";
 				control="Edit";
@@ -11166,6 +11577,7 @@ class CfgVehicles
 			};
 			class rhs_ammoslot_2_type: rhs_ammoslot_1_type
 			{
+				displayName="Ammo slot #2 type";
 				tooltip="Define type of shell for #2 slot [Smoke rounds]";
 				property="rhs_ammoslot_2_type";
 				class values
@@ -11180,11 +11592,13 @@ class CfgVehicles
 			};
 			class rhs_ammoslot_2: rhs_ammoslot_1
 			{
+				displayName="Ammo slot #2 count";
 				tooltip="Define number of rounds stored inside of type #2. Max 40. Leave -1 for default loadout";
 				property="rhs_ammoslot_2";
 			};
 			class rhs_ammoslot_3_type: rhs_ammoslot_1_type
 			{
+				displayName="Ammo slot #3 type";
 				tooltip="Define type of shell for #3 slot [Illumination rounds]";
 				property="rhs_ammoslot_3_type";
 				class values
@@ -11199,11 +11613,13 @@ class CfgVehicles
 			};
 			class rhs_ammoslot_3: rhs_ammoslot_1
 			{
+				displayName="Ammo slot #3 count";
 				tooltip="Define number of rounds stored inside of type #3. Max 40. Leave -1 for default loadout";
 				property="rhs_ammoslot_3";
 			};
 			class rhs_ammoslot_4_type: rhs_ammoslot_1_type
 			{
+				displayName="Ammo slot #4 type";
 				tooltip="Define type of shell for #4 slot [Laser guided rounds]";
 				property="rhs_ammoslot_4_type";
 				class values
@@ -11218,11 +11634,13 @@ class CfgVehicles
 			};
 			class rhs_ammoslot_4: rhs_ammoslot_1
 			{
+				displayName="Ammo slot #4 count";
 				tooltip="Define number of rounds stored inside of type #4. Max 40. Leave -1 for default loadout";
 				property="rhs_ammoslot_4";
 			};
 			class rhs_ammoslot_5_type: rhs_ammoslot_1_type
 			{
+				displayName="Ammo slot #5 type";
 				tooltip="Define type of shell for #5 slot [HEAT rounds]";
 				property="rhs_ammoslot_5_type";
 				class values
@@ -11243,6 +11661,7 @@ class CfgVehicles
 			};
 			class rhs_ammoslot_5: rhs_ammoslot_1
 			{
+				displayName="Ammo slot #5 count";
 				tooltip="Define number of rounds stored inside of type #5. Max 40. Leave -1 for default loadout";
 				property="rhs_ammoslot_5";
 			};
@@ -11322,6 +11741,7 @@ class CfgVehicles
 				"rhs_Kornet_Gun_Bag",
 				"rhs_Kornet_Tripod_Bag"
 			};
+			displayName="";
 		};
 		displayname="$STR_rhs_DN_kornet";
 		icon="rhsafrf\addons\rhs_heavyweapons\data\mapico\icomap_metis_at13_CA.paa";
@@ -11507,6 +11927,7 @@ class CfgVehicles
 	};
 	class RHS_NSV_Gun_Bag: Weapon_Bag_Base
 	{
+		displayName="NSV Gun Bag";
 		mass=382;
 		icon="\rhsafrf\addons\rhs_heavyweapons\bags\mapIcon_backpack_CA.paa";
 		class assembleInfo
@@ -11515,14 +11936,17 @@ class CfgVehicles
 			base="";
 			assembleTo="";
 			dissasembleTo[]={};
+			displayName="";
 		};
 	};
 	class RHS_NSV_Tripod_Bag: Weapon_Bag_Base
 	{
 		mass=250;
+		displayName="NSV 6T7 Tripod Bag";
 		icon="\rhsafrf\addons\rhs_heavyweapons\bags\mapIcon_backpack_CA.paa";
 		class assembleInfo: assembleInfo
 		{
+			displayName="$STR_A3_CfgVehicles_B_HMG_01_Wpn_assembleInfo0";
 			assembleTo="RHS_NSV_TriPod_MSV";
 			base[]=
 			{
@@ -11532,6 +11956,7 @@ class CfgVehicles
 	};
 	class RHS_DShkM_Gun_Bag: RHS_NSV_Gun_Bag
 	{
+		displayName="DShkM Gun Bag";
 		mass=380;
 		class assembleInfo
 		{
@@ -11539,13 +11964,16 @@ class CfgVehicles
 			base="";
 			assembleTo="";
 			dissasembleTo[]={};
+			displayName="";
 		};
 	};
 	class RHS_DShkM_TripodHigh_Bag: RHS_NSV_Tripod_Bag
 	{
 		mass=420;
+		displayName="DShkM High Tripod Bag";
 		class assembleInfo: assembleInfo
 		{
+			displayName="$STR_A3_CfgVehicles_B_HMG_01_Wpn_assembleInfo0";
 			assembleTo="RHS_DSHKM_INS";
 			base[]=
 			{
@@ -11556,6 +11984,7 @@ class CfgVehicles
 	class RHS_DShkM_TripodLow_Bag: RHS_DShkM_TripodHigh_Bag
 	{
 		mass=300;
+		displayName="DShkM Low Tripod Bag";
 		class assembleInfo: assembleInfo
 		{
 			assembleTo="rhs_DSHKM_Mini_TriPod_ins";
@@ -11563,11 +11992,13 @@ class CfgVehicles
 	};
 	class RHS_Kord_Gun_Bag: RHS_DShkM_Gun_Bag
 	{
+		displayName="KORD Gun Bag";
 		mass=250;
 	};
 	class RHS_Kord_Tripod_Bag: RHS_DShkM_TripodHigh_Bag
 	{
 		mass=450;
+		displayName="KORD 6T7 Tripod Bag";
 		class assembleInfo: assembleInfo
 		{
 			assembleTo="RHS_Kord_MSV";
@@ -11579,13 +12010,16 @@ class CfgVehicles
 	};
 	class RHS_Metis_Gun_Bag: RHS_DShkM_Gun_Bag
 	{
+		displayName="9K115-2 'Metis-M' Gun Bag";
 		mass=80;
 	};
 	class RHS_Metis_Tripod_Bag: RHS_DShkM_TripodHigh_Bag
 	{
 		mass=70;
+		displayName="9K115-2 'Metis-M' Tripod Bag";
 		class assembleInfo: assembleInfo
 		{
+			displayName="$STR_A3_CfgVehicles_B_AT_01_Wpn_assembleInfo0";
 			assembleTo="rhs_Metis_9k115_2_msv";
 			base[]=
 			{
@@ -11595,6 +12029,7 @@ class CfgVehicles
 	};
 	class RHS_Kornet_Gun_Bag: RHS_NSV_Gun_Bag
 	{
+		displayName="9K133 'Kornet' Gun Bag";
 		mass=80;
 		hiddenselections[]=
 		{
@@ -11608,8 +12043,10 @@ class CfgVehicles
 	class RHS_Kornet_Tripod_Bag: RHS_NSV_Tripod_Bag
 	{
 		mass=70;
+		displayName="9K133 'Kornet' Tripod Bag";
 		class assembleInfo: assembleInfo
 		{
+			displayName="$STR_A3_CfgVehicles_B_AT_01_Wpn_assembleInfo0";
 			assembleTo="rhs_Kornet_9M133_2_msv";
 			base[]=
 			{
@@ -11619,13 +12056,16 @@ class CfgVehicles
 	};
 	class RHS_AGS30_Gun_Bag: RHS_DShkM_Gun_Bag
 	{
+		displayName="AGS-30 Gun Bag";
 		mass=100;
 	};
 	class RHS_AGS30_Tripod_Bag: RHS_DShkM_TripodHigh_Bag
 	{
 		mass=60;
+		displayName="AGS-30 6P17 Tripod Bag";
 		class assembleInfo: assembleInfo
 		{
+			displayName="$STR_A3_CfgVehicles_B_gmg_01_Wpn_assembleInfo0";
 			assembleTo="RHS_AGS30_TriPod_MSV";
 			base[]=
 			{
@@ -11635,13 +12075,16 @@ class CfgVehicles
 	};
 	class RHS_SPG9_Gun_Bag: RHS_DShkM_Gun_Bag
 	{
+		displayName="SPG-9 Gun Bag";
 		mass=470;
 	};
 	class RHS_SPG9_Tripod_Bag: RHS_DShkM_TripodHigh_Bag
 	{
 		mass=110;
+		displayName="SPG-9 Tripod Bag";
 		class assembleInfo: assembleInfo
 		{
+			displayName="$STR_A3_CfgVehicles_B_AT_01_Wpn_assembleInfo0";
 			assembleTo="rhs_SPG9_INS";
 			base[]=
 			{
@@ -11651,13 +12094,16 @@ class CfgVehicles
 	};
 	class RHS_Podnos_Gun_Bag: RHS_DShkM_Gun_Bag
 	{
+		displayName="2B14-1 'Podnos' Gun Bag";
 		mass=162;
 	};
 	class RHS_Podnos_Bipod_Bag: RHS_DShkM_TripodHigh_Bag
 	{
 		mass=139;
+		displayName="2B14-1 'Podnos' Bipod Bag";
 		class assembleInfo: assembleInfo
 		{
+			displayName="$STR_A3_CfgVehicles_B_Mortar_01_Wpn_assembleInfo0";
 			assembleTo="rhs_2b14_82mm_msv";
 			base[]=
 			{

@@ -1830,6 +1830,7 @@ class CfgVehicles
 		{
 			class Green
 			{
+				displayName="$STR_A3_TEXTURESOURCES_GREEN0";
 				factions[]=
 				{
 					"IND_F"
@@ -1837,6 +1838,7 @@ class CfgVehicles
 			};
 			class Indep
 			{
+				displayName="$STR_A3_TEXTURESOURCES_INDEP0";
 				factions[]=
 				{
 					"IND_F"
@@ -1925,10 +1927,12 @@ class CfgVehicles
 				{
 					class Empty
 					{
+						displayName="$STR_empty";
 						attachment[]={};
 					};
 					class Default
 					{
+						displayName="$STR_vehicle_default";
 						attachment[]=
 						{
 							"PylonRack_12Rnd_missiles",
@@ -1937,6 +1941,7 @@ class CfgVehicles
 					};
 					class AT
 					{
+						displayName="$STR_A3_cfgmagazines_titan_at_dns";
 						attachment[]=
 						{
 							"PylonRack_12Rnd_PG_missiles",

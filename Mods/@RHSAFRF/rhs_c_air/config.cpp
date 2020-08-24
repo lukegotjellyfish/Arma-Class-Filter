@@ -1049,8 +1049,10 @@ class cfgWaypoints
 {
 	class RHS
 	{
+		displayName="RHS Special Waypoints";
 		class wpParadropInfantry
 		{
+			displayName="Infantry paradrop";
 			tooltip="Ejects infantry from vehicle. If parachute backpack is not present new artifical parachute is created upon ejection";
 			file="\rhsafrf\addons\rhs_c_air\scripts\WP_ParaInf.sqf";
 			icon="\a3\3DEN\Data\CfgWaypoints\Unload_ca.paa";
@@ -1059,6 +1061,7 @@ class cfgWaypoints
 				class ParaDropDelay
 				{
 					property="ParadropDelay";
+					displayName="Delay between paradrop";
 					tooltip="Defines delay between ejection of units. By default ejection delay is calculated based on vehicle speed. Leave it at -1 for default setting.";
 					control="Edit";
 					defaultValue="-1";
@@ -1067,6 +1070,7 @@ class cfgWaypoints
 				class ParachuteType
 				{
 					property="ParachuteType";
+					displayName="Parachute type";
 					tooltip="Defines what kind of parachute will units use after ejection. By default Russian D-6 parachute is used.";
 					control="Edit";
 					defaultValue="rhs_d6_Parachute";
@@ -1076,6 +1080,7 @@ class cfgWaypoints
 		};
 		class wpTu95Fire: wpParadropInfantry
 		{
+			displayName="Tu-95 - Fire";
 			tooltip="Tu-95 will fire missile at waypoint position";
 			file="\rhsafrf\addons\rhs_c_air\scripts\WP_Tu95Fire.sqf";
 			icon="\a3\3DEN\Data\CfgWaypoints\Destroy_ca.paa";
@@ -1090,6 +1095,7 @@ class CfgWeapons
 	class InventoryFinsItem_Base_F;
 	class rhs_item_flightrecorder: ItemCore
 	{
+		displayName="Flight recorder";
 		class ItemInfo: InventoryFinsItem_Base_F
 		{
 			mass=110;
@@ -1156,6 +1162,7 @@ class CfgVehicles
 			"['Label', cRHSAIRT50SquadPlaces, 'AviationsSquadrons']",
 			"['Label', cRHSAIRT50StarPlaces, 'Aviation',1]"
 		};
+		displayName="$STR_T50_name";
 		icon="\rhsafrf\addons\rhs_air\t50\data\ui\icomap_pakfa.paa";
 		LESH_canBeTowed=1;
 		LESH_towFromFront=1;
@@ -1250,20 +1257,31 @@ class CfgVehicles
 		{
 			class standard
 			{
+				displayName="$STR_T50_blue_name";
 				factions[]=
 				{
 					"rhs_faction_vvs_c",
 					"rhs_faction_vvs"
 				};
 			};
-			class standard2: standard;  //found empty after stripping
-			class standard3: standard;  //found empty after stripping
-			class standard4: standard;  //found empty after stripping
+			class standard2: standard
+			{
+				displayName="$STR_T50_blueonblue_name";
+			};
+			class standard3: standard
+			{
+				displayName="$STR_T50_grey_name";
+			};
+			class standard4: standard
+			{
+				displayName="$STR_T50_bluegeneric_name";
+			};
 		};
 		class Attributes
 		{
 			class rhs_decalNumber_type
 			{
+				displayName="Define font type of side number";
 				tooltip="Define kind of font that will be drawn on vehicle";
 				property="rhs_decalNumber_type";
 				control="Combo";
@@ -1341,6 +1359,7 @@ class CfgVehicles
 			};
 			class rhs_decalNumber
 			{
+				displayName="Set side number";
 				tooltip="Set side number. 2 numbers are required. Hides on 0";
 				property="rhs_decalNumber";
 				control="Edit";
@@ -1350,18 +1369,21 @@ class CfgVehicles
 			};
 			class rhs_decalNumber_type2: rhs_decalNumber_type
 			{
+				displayName="Define font type of side number (3 digits)";
 				tooltip="Define kind of font that will be drawn on vehicle";
 				property="rhs_decalNumber_type2";
 				expression="if(_value != 'NoChange')then{ _this setVariable ['%s', _value];[_this,[['Number', cRHSAIRT50NumberPlaces2, _value]]] call rhs_fnc_decalsInit}";
 			};
 			class rhs_decalNumber2: rhs_decalNumber
 			{
+				displayName="Set side number (3 digits)";
 				tooltip="Set side number. 3 numbers are required. Hides on 0";
 				property="rhs_decalNumber2";
 				expression="if(_value >= 0)then{if( _value == 0)then{{[_this setobjectTexture [_x,'a3\data_f\clear_empty.paa']]}foreach cRHSAIRT50NumberPlaces2}else{[_this, [['Number', cRHSAIRT50NumberPlaces2, _this getVariable ['rhs_decalNumber_type2','AviaBlue'], _value] ] ] call rhs_fnc_decalsInit}};";
 			};
 			class rhs_decalSquadArt
 			{
+				displayName="Define Squadron Art";
 				tooltip="Define Squadron Art texture located on tail wings. Appears on both sides";
 				property="rhs_decalNoseArt";
 				control="Combo";
@@ -1434,6 +1456,7 @@ class CfgVehicles
 			};
 			class rhs_decalStarArt: rhs_decalSquadArt
 			{
+				displayName="Define Stars Art";
 				tooltip="Define Stars Art texture located on wings";
 				property="rhs_decalStarArt";
 				expression="if(_value >= 0)then{ [_this, [ [ 'Label', cRHSAIRT50StarPlaces, 'Aviation',_value] ] ] call rhs_fnc_decalsInit};";
@@ -1464,6 +1487,7 @@ class CfgVehicles
 			};
 			class rhs_hideantenna
 			{
+				displayName="Remove antenna";
 				property="rhs_hideantenna";
 				control="CheckboxNumber";
 				expression="_this animate ['antenna_hide',_value,true]";
@@ -1471,6 +1495,7 @@ class CfgVehicles
 			};
 			class rhs_hidesensors: rhs_hideantenna
 			{
+				displayName="Remove sensors";
 				property="rhs_hidesensors";
 				expression="_this animate ['sensors_hide',_value,true]";
 			};
@@ -8742,6 +8767,7 @@ class CfgVehicles
 	};
 	class RHS_T50_vvs_generic_ext: RHS_T50_vvs_generic
 	{
+		displayName="T-50 obr. 2011 (external pylons)";
 		radarTargetSize=0.80000001;
 		class Components: Components
 		{
@@ -8810,6 +8836,7 @@ class CfgVehicles
 	};
 	class RHS_T50_vvs_051: RHS_T50_vvs_generic
 	{
+		displayName="$STR_T50_051_name";
 		rhs_decalParameters[]={};
 		hiddenselectionstextures[]=
 		{
@@ -8828,6 +8855,7 @@ class CfgVehicles
 	};
 	class RHS_T50_vvs_052: RHS_T50_vvs_051
 	{
+		displayName="$STR_T50_052_name";
 		hiddenselectionstextures[]=
 		{
 			"\rhsafrf\addons\rhs_air\t50\data\pakfa_greycamo_co.paa",
@@ -8845,6 +8873,7 @@ class CfgVehicles
 	};
 	class RHS_T50_vvs_053: RHS_T50_vvs_051
 	{
+		displayName="$STR_T50_053_name";
 		hiddenselectionstextures[]=
 		{
 			"\rhsafrf\addons\rhs_air\t50\data\pakfa_bluecamo_co.paa",
@@ -8862,6 +8891,7 @@ class CfgVehicles
 	};
 	class RHS_T50_vvs_054: RHS_T50_vvs_051
 	{
+		displayName="$STR_T50_054_name";
 		hiddenselectionstextures[]=
 		{
 			"\rhsafrf\addons\rhs_air\t50\data\pakfa_bluecamo_co.paa",
@@ -8879,6 +8909,7 @@ class CfgVehicles
 	};
 	class RHS_T50_vvs_blueonblue: RHS_T50_vvs_051
 	{
+		displayName="$STR_T50_055_name";
 		hiddenselectionstextures[]=
 		{
 			"\rhsafrf\addons\rhs_air\t50\data\pakfa_blueonblue_co.paa",
@@ -8898,6 +8929,7 @@ class CfgVehicles
 	class rhs_k36d5_seat: Car_f
 	{
 		hiddenSelections[]={};
+		displayName="K36D-5 Ejection Seat";
 		simulation="motorcycle";
 		isBicycle=0;
 		memoryPointTrack1L="";
@@ -8925,6 +8957,7 @@ class CfgVehicles
 	class rhs_t50_canopy: ThingX
 	{
 		hiddenSelections[]={};
+		displayName="T-50 Canopy";
 		editorCategory="EdCat_Things";
 		armor=100;
 		gearsUpFrictionCoef=0.0099999998;
@@ -8946,7 +8979,10 @@ class CfgVehicles
 		driveOnComponent[]={};
 		SLX_XEH_DISABLED=1;
 	};
-	class rhs_su25_canopy: rhs_t50_canopy;  //found empty after stripping
+	class rhs_su25_canopy: rhs_t50_canopy
+	{
+		displayName="Su-25 Canopy";
+	};
 	class RHS_TU95MS_base: Plane_Base_F
 	{
 		side=0;
@@ -8954,6 +8990,7 @@ class CfgVehicles
 		{
 			"['Number',cRHSAIRTU95NumberPlaces,'AviaRed2']"
 		};
+		displayName="$STR_TU95_name";
 		icon="\rhsafrf\addons\rhs_air\tu95ms\data\ui\icomap_tu95.paa";
 		memoryPointsGetInDriver="pos driver";
 		memoryPointsGetInDriverDir="pos driver dir";
@@ -9397,20 +9434,34 @@ class CfgVehicles
 		{
 			class Old
 			{
+				displayName="$STR_TU95_name";
 				factions[]=
 				{
 					"rhs_faction_vvs"
 				};
 			};
-			class standard: Old;  //found empty after stripping
-			class standard2: standard;  //found empty after stripping
-			class standard3: standard;  //found empty after stripping
-			class standard4: standard;  //found empty after stripping
+			class standard: Old
+			{
+				displayName="$STR_TU95_chelyabinsk_name";
+			};
+			class standard2: standard
+			{
+				displayName="$STR_TU95_dubna_name";
+			};
+			class standard3: standard
+			{
+				displayName="$STR_TU95_irkutsk_name";
+			};
+			class standard4: standard
+			{
+				displayName="$STR_TU95_tambov_name";
+			};
 		};
 		class Attributes
 		{
 			class rhs_decalNumber_type
 			{
+				displayName="Define font type of side number";
 				tooltip="Define kind of font that will be drawn on vehicle";
 				property="rhs_decalNumber_type";
 				control="Combo";
@@ -9442,6 +9493,7 @@ class CfgVehicles
 			};
 			class rhs_decalNumber
 			{
+				displayName="Set side number";
 				tooltip="Set side number. 2 numbers are required. Hides on 0";
 				property="rhs_decalNumber";
 				control="Edit";
@@ -9451,6 +9503,7 @@ class CfgVehicles
 			};
 			class rhs_decalNames
 			{
+				displayName="Define City Names Art";
 				tooltip="Define City Names texture located on side under the cockpit. Appears on both sides";
 				property="rhs_decalNoseArt";
 				control="Combo";
@@ -9473,6 +9526,7 @@ class CfgVehicles
 			};
 			class rhs_decalCoA
 			{
+				displayName="Define City Coat of Arms Art";
 				tooltip="Define City Coat of Arms texture located on nose. Appears on both sides";
 				property="rhs_decalNoseArt";
 				control="Combo";
@@ -9495,6 +9549,7 @@ class CfgVehicles
 			};
 			class rhs_decalStarArt: rhs_decalCoA
 			{
+				displayName="Define Stars Art";
 				tooltip="Define Stars Art texture located on wings";
 				property="rhs_decalStarArt";
 				expression="if(_value >= 0)then{ [_this, [ [ 'Label', cRHSAIRTU95StarPlaces, 'Aviation',_value] ] ] call rhs_fnc_decalsInit};";
@@ -9525,6 +9580,7 @@ class CfgVehicles
 			};
 			class bbcpoccnn_decals1_hide
 			{
+				displayName="Remove Part One of VVS Decal";
 				property="bbcpoccnn_decals1_hide";
 				control="CheckboxNumber";
 				expression="_this animate ['bbcpoccnn_decals1_hide',_value,true]";
@@ -9532,6 +9588,7 @@ class CfgVehicles
 			};
 			class bbcpoccnn_decals2_hide
 			{
+				displayName="Remove Part Two of VVS Decal";
 				property="bbcpoccnn_decals2_hide";
 				control="CheckboxNumber";
 				expression="_this animate ['bbcpoccnn_decals2_hide',_value,true]";
@@ -9539,6 +9596,7 @@ class CfgVehicles
 			};
 			class rf_decals_hide: bbcpoccnn_decals2_hide
 			{
+				displayName="Remove RF- Decal";
 				property="rf_decals_hide";
 				expression="_this animate ['rf_decals_hide',_value,true]";
 				defaultValue="1";
@@ -9862,6 +9920,7 @@ class CfgVehicles
 	{
 		side=0;
 		rhs_decalParameters[]={};
+		displayName="$STR_TU95_name";
 		hiddenselectionstextures[]=
 		{
 			"",
@@ -9875,6 +9934,7 @@ class CfgVehicles
 	{
 		side=0;
 		rhs_decalParameters[]={};
+		displayName="$STR_TU95_dubna_name";
 		hiddenselectionstextures[]=
 		{
 			"\rhsafrf\addons\rhs_decals\Data\Labels\Tu95\rhs_decal_dubna_coa_ca.paa",
@@ -9887,6 +9947,7 @@ class CfgVehicles
 	class RHS_TU95MS_vvs_irkutsk: RHS_TU95MS_base
 	{
 		side=0;
+		displayName="$STR_TU95_irkutsk_name";
 		hiddenselectionstextures[]=
 		{
 			"\rhsafrf\addons\rhs_decals\Data\Labels\Tu95\rhs_decal_irkutsk_coa_ca.paa",
@@ -9899,6 +9960,7 @@ class CfgVehicles
 	class RHS_TU95MS_vvs_tambov: RHS_TU95MS_base
 	{
 		side=0;
+		displayName="$STR_TU95_tambov_name";
 		hiddenselectionstextures[]=
 		{
 			"\rhsafrf\addons\rhs_decals\Data\Labels\Tu95\rhs_decal_tambov_coa_ca.paa",
@@ -9911,6 +9973,7 @@ class CfgVehicles
 	class RHS_TU95MS_vvs_chelyabinsk: RHS_TU95MS_base
 	{
 		side=0;
+		displayName="$STR_TU95_chelyabinsk_name";
 		hiddenselectionstextures[]=
 		{
 			"\rhsafrf\addons\rhs_decals\Data\Labels\Tu95\rhs_decal_chelyabinsk_coa_ca.paa",
@@ -9922,6 +9985,7 @@ class CfgVehicles
 	};
 	class Land_rhs_tu95_wreck: Wreck_base_F
 	{
+		displayName="Tu-95MS6 Wreck";
 		class Armory
 		{
 			disabled=1;
@@ -9930,6 +9994,7 @@ class CfgVehicles
 	};
 	class rhs_flightrecorder_assembled: ThingX
 	{
+		displayName="Plane flight recorder (assembled)";
 		icon="iconObject_1x1";
 		editorCategory="EdCat_Things";
 		vehicleCategory="Interactive_F";
@@ -9938,6 +10003,7 @@ class CfgVehicles
 	class Item_Base_F;
 	class rhs_flightrecorder: ThingX
 	{
+		displayName="Plane flight recorder";
 		editorCategory="EdCat_Things";
 		vehicleCategory="Interactive_F";
 		forceSupply=1;

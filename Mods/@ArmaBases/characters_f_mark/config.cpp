@@ -137,70 +137,87 @@ class CfgVehicles
 	class Vest_Base_F;
 	class Item_U_B_FullGhillie_lsh: Item_Base_F
 	{
+		displayName="$STR_A3_B_Full_Ghillie_Lush_F0";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_U_B_FullGhillie_sard: Item_Base_F
 	{
+		displayName="$STR_A3_B_Full_Ghillie_SemiArid_F0";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_U_B_FullGhillie_ard: Item_Base_F
 	{
+		displayName="$STR_A3_B_Full_Ghillie_Arid_F0";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_U_O_FullGhillie_lsh: Item_Base_F
 	{
+		displayName="$STR_A3_O_Full_Ghillie_Lush_F0";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_U_O_FullGhillie_sard: Item_Base_F
 	{
+		displayName="$STR_A3_O_Full_Ghillie_SemiArid_F0";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_U_O_FullGhillie_ard: Item_Base_F
 	{
+		displayName="$STR_A3_O_Full_Ghillie_Arid_F0";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_U_I_FullGhillie_lsh: Item_Base_F
 	{
+		displayName="$STR_A3_I_Full_Ghillie_Lush_F0";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_U_I_FullGhillie_sard: Item_Base_F
 	{
+		displayName="$STR_A3_I_Full_Ghillie_SemiArid_F0";
 		editorCategory="EdCat_Equipment";
 	};
 	class Item_U_I_FullGhillie_ard: Item_Base_F
 	{
+		displayName="$STR_A3_I_Full_Ghillie_Arid_F0";
 		editorCategory="EdCat_Equipment";
 	};
 	class Vest_V_PlateCarrierGL_rgr: Vest_Base_F
 	{
+		displayName="$STR_A3_V_PlateCarrierGL_rgr0";
 		editorCategory="EdCat_Equipment";
 	};
 	class Vest_V_PlateCarrierGL_blk: Vest_Base_F
 	{
+		displayName="$STR_A3_V_PlateCarrierGL_blk0";
 		editorCategory="EdCat_Equipment";
 	};
 	class Vest_V_PlateCarrierGL_mtp: Vest_Base_F
 	{
+		displayName="$STR_A3_V_PlateCarrierGL_mtp0";
 		editorCategory="EdCat_Equipment";
 	};
 	class Vest_V_PlateCarrierSpec_rgr: Vest_Base_F
 	{
+		displayName="$STR_A3_V_PlateCarrierSpec_rgr0";
 		editorCategory="EdCat_Equipment";
 	};
 	class Vest_V_PlateCarrierSpec_blk: Vest_Base_F
 	{
+		displayName="$STR_A3_V_PlateCarrierSpec_blk0";
 		editorCategory="EdCat_Equipment";
 	};
 	class Vest_V_PlateCarrierSpec_mtp: Vest_Base_F
 	{
+		displayName="$STR_A3_V_PlateCarrierSpec_mtp0";
 		editorCategory="EdCat_Equipment";
 	};
 	class Vest_V_PlateCarrierIAGL_dgtl: Vest_Base_F
 	{
+		displayName="$STR_A3_V_PlateCarrierIAGL_dgtl0";
 		editorCategory="EdCat_Equipment";
 	};
 	class Vest_V_PlateCarrierIAGL_oli: Vest_Base_F
 	{
+		displayName="$STR_A3_V_PlateCarrierIAGL_oli0";
 		editorCategory="EdCat_Equipment";
 	};
 };
@@ -305,6 +322,7 @@ class CfgFaces
 		class WhiteHead_01;
 		class CamoHead_White_01_F: WhiteHead_01
 		{
+			displayName="Camo_White_01";
 			material="\A3\Characters_F_Mark\Heads\Data\m_camo_White_01.rvmat";
 			materialWounded1="A3\Characters_F_Mark\Heads\Data\m_camo_White_01_injury.rvmat";
 			materialWounded2="A3\Characters_F_Mark\Heads\Data\m_camo_White_01_injury.rvmat";
@@ -320,6 +338,7 @@ class CfgFaces
 		class WhiteHead_02;
 		class CamoHead_White_02_F: WhiteHead_02
 		{
+			displayName="Camo_White_02";
 			material="\A3\Characters_F_Mark\Heads\Data\m_camo_White_02.rvmat";
 			materialWounded1="A3\Characters_F_Mark\Heads\Data\m_camo_White_02_injury.rvmat";
 			materialWounded2="A3\Characters_F_Mark\Heads\Data\m_camo_White_02_injury.rvmat";
@@ -335,6 +354,7 @@ class CfgFaces
 		class WhiteHead_03;
 		class CamoHead_White_03_F: WhiteHead_03
 		{
+			displayName="Camo_White_03";
 			material="\A3\Characters_F_Mark\Heads\Data\m_camo_White_03.rvmat";
 			materialWounded1="A3\Characters_F_Mark\Heads\Data\m_camo_White_03_injury.rvmat";
 			materialWounded2="A3\Characters_F_Mark\Heads\Data\m_camo_White_03_injury.rvmat";
@@ -350,6 +370,7 @@ class CfgFaces
 		class WhiteHead_04;
 		class CamoHead_White_04_F: WhiteHead_04
 		{
+			displayName="Camo_White_04";
 			material="\A3\Characters_F_Mark\Heads\Data\m_camo_White_04.rvmat";
 			materialWounded1="A3\Characters_F_Mark\Heads\Data\m_camo_White_04_injury.rvmat";
 			materialWounded2="A3\Characters_F_Mark\Heads\Data\m_camo_White_04_injury.rvmat";
@@ -365,6 +386,7 @@ class CfgFaces
 		class WhiteHead_05;
 		class CamoHead_White_05_F: WhiteHead_05
 		{
+			displayName="Camo_White_05";
 			material="\A3\Characters_F_Mark\Heads\Data\m_camo_White_05.rvmat";
 			materialWounded1="A3\Characters_F_Mark\Heads\Data\m_camo_White_05_injury.rvmat";
 			materialWounded2="A3\Characters_F_Mark\Heads\Data\m_camo_White_05_injury.rvmat";
@@ -380,6 +402,7 @@ class CfgFaces
 		class WhiteHead_06;
 		class CamoHead_White_06_F: WhiteHead_06
 		{
+			displayName="Camo_White_06";
 			material="\A3\Characters_F_Mark\Heads\Data\m_camo_White_06.rvmat";
 			materialWounded1="A3\Characters_F_Mark\Heads\Data\m_camo_White_06_injury.rvmat";
 			materialWounded2="A3\Characters_F_Mark\Heads\Data\m_camo_White_06_injury.rvmat";
@@ -395,6 +418,7 @@ class CfgFaces
 		class WhiteHead_07;
 		class CamoHead_White_07_F: WhiteHead_07
 		{
+			displayName="Camo_White_07";
 			material="\A3\Characters_F_Mark\Heads\Data\m_camo_White_07.rvmat";
 			materialWounded1="A3\Characters_F_Mark\Heads\Data\m_camo_White_07_injury.rvmat";
 			materialWounded2="A3\Characters_F_Mark\Heads\Data\m_camo_White_07_injury.rvmat";
@@ -410,6 +434,7 @@ class CfgFaces
 		class WhiteHead_08;
 		class CamoHead_White_08_F: WhiteHead_08
 		{
+			displayName="Camo_White_08";
 			material="\A3\Characters_F_Mark\Heads\Data\m_camo_White_08.rvmat";
 			materialWounded1="A3\Characters_F_Mark\Heads\Data\m_camo_White_08_injury.rvmat";
 			materialWounded2="A3\Characters_F_Mark\Heads\Data\m_camo_White_08_injury.rvmat";
@@ -425,6 +450,7 @@ class CfgFaces
 		class WhiteHead_09;
 		class CamoHead_White_09_F: WhiteHead_09
 		{
+			displayName="Camo_White_09";
 			material="\A3\Characters_F_Mark\Heads\Data\m_camo_White_09.rvmat";
 			materialWounded1="A3\Characters_F_Mark\Heads\Data\m_camo_White_09_injury.rvmat";
 			materialWounded2="A3\Characters_F_Mark\Heads\Data\m_camo_White_09_injury.rvmat";
@@ -440,6 +466,7 @@ class CfgFaces
 		class WhiteHead_10;
 		class CamoHead_White_10_F: WhiteHead_10
 		{
+			displayName="Camo_White_10";
 			material="\A3\Characters_F_Mark\Heads\Data\m_camo_White_10.rvmat";
 			materialWounded1="A3\Characters_F_Mark\Heads\Data\m_camo_White_10_injury.rvmat";
 			materialWounded2="A3\Characters_F_Mark\Heads\Data\m_camo_White_10_injury.rvmat";
@@ -455,6 +482,7 @@ class CfgFaces
 		class WhiteHead_11;
 		class CamoHead_White_11_F: WhiteHead_11
 		{
+			displayName="Camo_White_11";
 			material="\A3\Characters_F_Mark\Heads\Data\m_camo_White_11.rvmat";
 			materialWounded1="A3\Characters_F_Mark\Heads\Data\m_camo_White_11_injury.rvmat";
 			materialWounded2="A3\Characters_F_Mark\Heads\Data\m_camo_White_11_injury.rvmat";
@@ -470,6 +498,7 @@ class CfgFaces
 		class WhiteHead_12;
 		class CamoHead_White_12_F: WhiteHead_12
 		{
+			displayName="Camo_White_12";
 			material="\A3\Characters_F_Mark\Heads\Data\m_camo_White_12.rvmat";
 			materialWounded1="A3\Characters_F_Mark\Heads\Data\m_camo_White_12_injury.rvmat";
 			materialWounded2="A3\Characters_F_Mark\Heads\Data\m_camo_White_12_injury.rvmat";
@@ -485,6 +514,7 @@ class CfgFaces
 		class WhiteHead_13;
 		class CamoHead_White_13_F: WhiteHead_13
 		{
+			displayName="Camo_White_13";
 			material="\A3\Characters_F_Mark\Heads\Data\m_camo_White_13.rvmat";
 			materialWounded1="A3\Characters_F_Mark\Heads\Data\m_camo_White_13_injury.rvmat";
 			materialWounded2="A3\Characters_F_Mark\Heads\Data\m_camo_White_13_injury.rvmat";
@@ -500,6 +530,7 @@ class CfgFaces
 		class WhiteHead_14;
 		class CamoHead_White_14_F: WhiteHead_14
 		{
+			displayName="Camo_White_14";
 			material="\A3\Characters_F_Mark\Heads\Data\m_camo_White_14.rvmat";
 			materialWounded1="A3\Characters_F_Mark\Heads\Data\m_camo_White_14_injury.rvmat";
 			materialWounded2="A3\Characters_F_Mark\Heads\Data\m_camo_White_14_injury.rvmat";
@@ -515,6 +546,7 @@ class CfgFaces
 		class WhiteHead_15;
 		class CamoHead_White_15_F: WhiteHead_15
 		{
+			displayName="Camo_White_15";
 			material="\A3\Characters_F_Mark\Heads\Data\m_camo_White_15.rvmat";
 			materialWounded1="A3\Characters_F_Mark\Heads\Data\m_camo_White_15_injury.rvmat";
 			materialWounded2="A3\Characters_F_Mark\Heads\Data\m_camo_White_15_injury.rvmat";
@@ -530,6 +562,7 @@ class CfgFaces
 		class WhiteHead_16;
 		class CamoHead_White_16_F: WhiteHead_16
 		{
+			displayName="Camo_White_16";
 			material="\A3\Characters_F_Mark\Heads\Data\m_camo_White_16.rvmat";
 			materialWounded1="A3\Characters_F_Mark\Heads\Data\m_camo_White_16_injury.rvmat";
 			materialWounded2="A3\Characters_F_Mark\Heads\Data\m_camo_White_16_injury.rvmat";
@@ -545,6 +578,7 @@ class CfgFaces
 		class WhiteHead_17;
 		class CamoHead_White_17_F: WhiteHead_17
 		{
+			displayName="Camo_White_17";
 			material="\A3\Characters_F_Mark\Heads\Data\m_camo_White_17.rvmat";
 			materialWounded1="A3\Characters_F_Mark\Heads\Data\m_camo_White_17_injury.rvmat";
 			materialWounded2="A3\Characters_F_Mark\Heads\Data\m_camo_White_17_injury.rvmat";
@@ -560,6 +594,7 @@ class CfgFaces
 		class WhiteHead_18;
 		class CamoHead_White_18_F: WhiteHead_18
 		{
+			displayName="Camo_White_18";
 			material="\A3\Characters_F_Mark\Heads\Data\m_camo_White_18.rvmat";
 			materialWounded1="A3\Characters_F_Mark\Heads\Data\m_camo_White_18_injury.rvmat";
 			materialWounded2="A3\Characters_F_Mark\Heads\Data\m_camo_White_18_injury.rvmat";
@@ -575,6 +610,7 @@ class CfgFaces
 		class WhiteHead_19;
 		class CamoHead_White_19_F: WhiteHead_19
 		{
+			displayName="Camo_White_19";
 			material="\A3\Characters_F_Mark\Heads\Data\m_camo_White_19.rvmat";
 			materialWounded1="A3\Characters_F_Mark\Heads\Data\m_camo_White_19_injury.rvmat";
 			materialWounded2="A3\Characters_F_Mark\Heads\Data\m_camo_White_19_injury.rvmat";
@@ -590,6 +626,7 @@ class CfgFaces
 		class WhiteHead_20;
 		class CamoHead_White_20_F: WhiteHead_20
 		{
+			displayName="Camo_White_20";
 			material="\A3\Characters_F_Mark\Heads\Data\m_camo_White_20.rvmat";
 			materialWounded1="A3\Characters_F_Mark\Heads\Data\m_camo_White_20_injury.rvmat";
 			materialWounded2="A3\Characters_F_Mark\Heads\Data\m_camo_White_20_injury.rvmat";
@@ -605,6 +642,7 @@ class CfgFaces
 		class WhiteHead_21;
 		class CamoHead_White_21_F: WhiteHead_21
 		{
+			displayName="Camo_White_21";
 			material="\A3\Characters_F_Mark\Heads\Data\m_camo_White_21.rvmat";
 			materialWounded1="A3\Characters_F_Mark\Heads\Data\m_camo_White_21_injury.rvmat";
 			materialWounded2="A3\Characters_F_Mark\Heads\Data\m_camo_White_21_injury.rvmat";
@@ -620,6 +658,7 @@ class CfgFaces
 		class AfricanHead_01;
 		class CamoHead_African_01_F: AfricanHead_01
 		{
+			displayName="Camo_African_01";
 			material="\A3\Characters_F_Mark\Heads\Data\m_camo_African_01.rvmat";
 			materialWounded1="A3\Characters_F_Mark\Heads\Data\m_camo_African_01_injury.rvmat";
 			materialWounded2="A3\Characters_F_Mark\Heads\Data\m_camo_African_01_injury.rvmat";
@@ -635,6 +674,7 @@ class CfgFaces
 		class AfricanHead_02;
 		class CamoHead_African_02_F: AfricanHead_02
 		{
+			displayName="Camo_African_02";
 			material="\A3\Characters_F_Mark\Heads\Data\m_camo_African_02.rvmat";
 			materialWounded1="A3\Characters_F_Mark\Heads\Data\m_camo_African_02_injury.rvmat";
 			materialWounded2="A3\Characters_F_Mark\Heads\Data\m_camo_African_02_injury.rvmat";
@@ -650,6 +690,7 @@ class CfgFaces
 		class AfricanHead_03;
 		class CamoHead_African_03_F: AfricanHead_03
 		{
+			displayName="Camo_African_03";
 			material="\A3\Characters_F_Mark\Heads\Data\m_camo_African_03.rvmat";
 			materialWounded1="A3\Characters_F_Mark\Heads\Data\m_camo_African_03_injury.rvmat";
 			materialWounded2="A3\Characters_F_Mark\Heads\Data\m_camo_African_03_injury.rvmat";
@@ -665,6 +706,7 @@ class CfgFaces
 		class GreekHead_A3_01;
 		class CamoHead_Greek_01_F: GreekHead_A3_01
 		{
+			displayName="Camo_Greek_01";
 			material="\A3\Characters_F_Mark\Heads\Data\m_camo_Greek_01.rvmat";
 			materialWounded1="A3\Characters_F_Mark\Heads\Data\m_camo_Greek_01_injury.rvmat";
 			materialWounded2="A3\Characters_F_Mark\Heads\Data\m_camo_Greek_01_injury.rvmat";
@@ -680,6 +722,7 @@ class CfgFaces
 		class GreekHead_A3_02;
 		class CamoHead_Greek_02_F: GreekHead_A3_02
 		{
+			displayName="Camo_Greek_02";
 			material="\A3\Characters_F_Mark\Heads\Data\m_camo_Greek_02.rvmat";
 			materialWounded1="A3\Characters_F_Mark\Heads\Data\m_camo_Greek_02_injury.rvmat";
 			materialWounded2="A3\Characters_F_Mark\Heads\Data\m_camo_Greek_02_injury.rvmat";
@@ -695,6 +738,7 @@ class CfgFaces
 		class GreekHead_A3_03;
 		class CamoHead_Greek_03_F: GreekHead_A3_03
 		{
+			displayName="Camo_Greek_03";
 			material="\A3\Characters_F_Mark\Heads\Data\m_camo_Greek_03.rvmat";
 			materialWounded1="A3\Characters_F_Mark\Heads\Data\m_camo_Greek_03_injury.rvmat";
 			materialWounded2="A3\Characters_F_Mark\Heads\Data\m_camo_Greek_03_injury.rvmat";
@@ -710,6 +754,7 @@ class CfgFaces
 		class GreekHead_A3_04;
 		class CamoHead_Greek_04_F: GreekHead_A3_04
 		{
+			displayName="Camo_Greek_04";
 			material="\A3\Characters_F_Mark\Heads\Data\m_camo_Greek_04.rvmat";
 			materialWounded1="A3\Characters_F_Mark\Heads\Data\m_camo_Greek_04_injury.rvmat";
 			materialWounded2="A3\Characters_F_Mark\Heads\Data\m_camo_Greek_04_injury.rvmat";
@@ -725,6 +770,7 @@ class CfgFaces
 		class GreekHead_A3_05;
 		class CamoHead_Greek_05_F: GreekHead_A3_05
 		{
+			displayName="Camo_Greek_05";
 			material="\A3\Characters_F_Mark\Heads\Data\m_camo_White_01.rvmat";
 			materialWounded1="A3\Characters_F_Mark\Heads\Data\m_camo_White_01_injury.rvmat";
 			materialWounded2="A3\Characters_F_Mark\Heads\Data\m_camo_White_01_injury.rvmat";
@@ -740,6 +786,7 @@ class CfgFaces
 		class GreekHead_A3_06;
 		class CamoHead_Greek_06_F: GreekHead_A3_06
 		{
+			displayName="Camo_Greek_06";
 			material="\A3\Characters_F_Mark\Heads\Data\m_camo_White_02.rvmat";
 			materialWounded1="A3\Characters_F_Mark\Heads\Data\m_camo_White_02_injury.rvmat";
 			materialWounded2="A3\Characters_F_Mark\Heads\Data\m_camo_White_02_injury.rvmat";
@@ -755,6 +802,7 @@ class CfgFaces
 		class GreekHead_A3_07;
 		class CamoHead_Greek_07_F: GreekHead_A3_07
 		{
+			displayName="Camo_Greek_07";
 			material="\A3\Characters_F_Mark\Heads\Data\m_camo_White_03.rvmat";
 			materialWounded1="A3\Characters_F_Mark\Heads\Data\m_camo_White_03_injury.rvmat";
 			materialWounded2="A3\Characters_F_Mark\Heads\Data\m_camo_White_03_injury.rvmat";
@@ -770,6 +818,7 @@ class CfgFaces
 		class GreekHead_A3_08;
 		class CamoHead_Greek_08_F: GreekHead_A3_08
 		{
+			displayName="Camo_Greek_08";
 			material="\A3\Characters_F_Mark\Heads\Data\m_camo_White_04.rvmat";
 			materialWounded1="A3\Characters_F_Mark\Heads\Data\m_camo_White_04_injury.rvmat";
 			materialWounded2="A3\Characters_F_Mark\Heads\Data\m_camo_White_04_injury.rvmat";
@@ -785,6 +834,7 @@ class CfgFaces
 		class GreekHead_A3_09;
 		class CamoHead_Greek_09_F: GreekHead_A3_09
 		{
+			displayName="Camo_Greek_09";
 			material="\A3\Characters_F_Mark\Heads\Data\m_camo_White_05.rvmat";
 			materialWounded1="A3\Characters_F_Mark\Heads\Data\m_camo_White_05_injury.rvmat";
 			materialWounded2="A3\Characters_F_Mark\Heads\Data\m_camo_White_05_injury.rvmat";
@@ -800,6 +850,7 @@ class CfgFaces
 		class AsianHead_A3_01;
 		class CamoHead_Asian_01_F: AsianHead_A3_01
 		{
+			displayName="Camo_Asian_01";
 			material="\A3\Characters_F_Mark\Heads\Data\m_camo_Asian_01.rvmat";
 			materialWounded1="A3\Characters_F_Mark\Heads\Data\m_camo_Asian_01_injury.rvmat";
 			materialWounded2="A3\Characters_F_Mark\Heads\Data\m_camo_Asian_01_injury.rvmat";
@@ -815,6 +866,7 @@ class CfgFaces
 		class AsianHead_A3_02;
 		class CamoHead_Asian_02_F: AsianHead_A3_02
 		{
+			displayName="Camo_Asian_02";
 			material="\A3\Characters_F_Mark\Heads\Data\m_camo_Asian_02.rvmat";
 			materialWounded1="A3\Characters_F_Mark\Heads\Data\m_camo_Asian_02_injury.rvmat";
 			materialWounded2="A3\Characters_F_Mark\Heads\Data\m_camo_Asian_02_injury.rvmat";
@@ -830,6 +882,7 @@ class CfgFaces
 		class AsianHead_A3_03;
 		class CamoHead_Asian_03_F: AsianHead_A3_03
 		{
+			displayName="Camo_Asian_03";
 			material="\A3\Characters_F_Mark\Heads\Data\m_camo_Asian_03.rvmat";
 			materialWounded1="A3\Characters_F_Mark\Heads\Data\m_camo_Asian_03_injury.rvmat";
 			materialWounded2="A3\Characters_F_Mark\Heads\Data\m_camo_Asian_03_injury.rvmat";
@@ -845,6 +898,7 @@ class CfgFaces
 		class PersianHead_A3_01;
 		class CamoHead_Persian_01_F: PersianHead_A3_01
 		{
+			displayName="Camo_Persian_01";
 			material="\A3\Characters_F_Mark\Heads\Data\m_camo_Persian_01.rvmat";
 			materialWounded1="A3\Characters_F_Mark\Heads\Data\m_camo_Persian_01_injury.rvmat";
 			materialWounded2="A3\Characters_F_Mark\Heads\Data\m_camo_Persian_01_injury.rvmat";
@@ -860,6 +914,7 @@ class CfgFaces
 		class PersianHead_A3_02;
 		class CamoHead_Persian_02_F: PersianHead_A3_02
 		{
+			displayName="Camo_Persian_02";
 			material="\A3\Characters_F_Mark\Heads\Data\m_camo_Persian_02.rvmat";
 			materialWounded1="A3\Characters_F_Mark\Heads\Data\m_camo_Persian_02_injury.rvmat";
 			materialWounded2="A3\Characters_F_Mark\Heads\Data\m_camo_Persian_02_injury.rvmat";
@@ -875,6 +930,7 @@ class CfgFaces
 		class PersianHead_A3_03;
 		class CamoHead_Persian_03_F: PersianHead_A3_03
 		{
+			displayName="Camo_Persian_03";
 			material="\A3\Characters_F_Mark\Heads\Data\m_camo_Persian_03.rvmat";
 			materialWounded1="A3\Characters_F_Mark\Heads\Data\m_camo_Persian_03_injury.rvmat";
 			materialWounded2="A3\Characters_F_Mark\Heads\Data\m_camo_Persian_03_injury.rvmat";

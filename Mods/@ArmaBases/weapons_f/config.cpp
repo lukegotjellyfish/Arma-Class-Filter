@@ -306,6 +306,7 @@ class CfgWeapons
 			mass=50;
 		};
 		initSpeed=370;
+		displayName="$STR_A3_CfgWeapons_SMG_020";
 	};
 	class SMG_02_ACO_F: SMG_02_F
 	{

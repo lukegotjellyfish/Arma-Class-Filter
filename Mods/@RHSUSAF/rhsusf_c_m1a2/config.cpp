@@ -109,6 +109,7 @@ class CfgVehicles
 			"['Label', cM1PlnSymPlaces, 'ArmyPlt_Abrams_D']",
 			"['Label', cM1BarrelSymPlaces, 'BarrelArt_Abrams_WD']"
 		};
+		displayName="$STR_M1A2SEP_Name";
 		accuracy=0.30000001;
 		typicalCargo[]={};
 		side=1;
@@ -513,8 +514,14 @@ class CfgVehicles
 		};
 		class textureSources
 		{
-			class woodland;  //found empty after stripping
-			class desert: woodland;  //found empty after stripping
+			class woodland
+			{
+				displayName="Woodland";
+			};
+			class desert: woodland
+			{
+				displayName="Desert";
+			};
 		};
 		class Damage;  //found empty after stripping
 		class ViewOptics: ViewOptics
@@ -529,6 +536,7 @@ class CfgVehicles
 	};
 	class rhsusf_m1a2sep1d_usarmy: rhsusf_m1a2tank_base
 	{
+		displayName="$STR_M1A2SEP_Name";
 		rhs_decalParameters[]=
 		{
 			"['Label', cM1PlnSymPlaces, 'ArmyPlt_Abrams_D']",
@@ -537,6 +545,7 @@ class CfgVehicles
 	};
 	class rhsusf_m1a2sep1wd_usarmy: rhsusf_m1a2tank_base
 	{
+		displayName="$STR_M1A2SEPWD_Name";
 		rhs_decalParameters[]=
 		{
 			"['Label', cM1PlnSymPlaces, 'ArmyPlt_Abrams_WD']",
@@ -545,6 +554,7 @@ class CfgVehicles
 	};
 	class rhsusf_m1a2sep1tuskid_usarmy: rhsusf_m1a2tank_base
 	{
+		displayName="$STR_M1A2SEPTUSKI_Name";
 		rhs_decalParameters[]=
 		{
 			"['Label', cM1PlnSymPlaces, 'ArmyPlt_Abrams_D']",
@@ -595,8 +605,14 @@ class CfgVehicles
 		};
 		class textureSources
 		{
-			class woodland;  //found empty after stripping
-			class desert: woodland;  //found empty after stripping
+			class woodland
+			{
+				displayName="Woodland";
+			};
+			class desert: woodland
+			{
+				displayName="Desert";
+			};
 		};
 		class HitPoints: HitPoints
 		{
@@ -1037,6 +1053,7 @@ class CfgVehicles
 			"['Label', cM1PlnSymPlaces, 'ArmyPlt_Abrams_WD']",
 			"['Label', cM1BarrelSymPlaces, 'BarrelArt_Abrams_WD']"
 		};
+		displayName="$STR_M1A2SEPWDTUSKII_Name";
 		rhs_duke_type="rhsusf_duke_m1a2";
 		class HitPoints: HitPoints
 		{
@@ -1609,8 +1626,14 @@ class CfgVehicles
 		};
 		class textureSources
 		{
-			class woodland;  //found empty after stripping
-			class desert: woodland;  //found empty after stripping
+			class woodland
+			{
+				displayName="Woodland";
+			};
+			class desert: woodland
+			{
+				displayName="Desert";
+			};
 		};
 		class Turrets: Turrets
 		{
@@ -1642,6 +1665,7 @@ class CfgVehicles
 			class rhs_hideMiles: rhs_hideMiles;  //found empty after stripping
 			class rhs_hideDUKE: rhs_hideMiles
 			{
+				displayName="hide DUKE antennas";
 				property="rhs_hideDUKE";
 				expression="_this animate ['DUKE_Hide',_value,true];if(_value isEqualTo 1)then{_this removeWeaponTurret ['rhsusf_weap_duke',[0,0]]}";
 			};

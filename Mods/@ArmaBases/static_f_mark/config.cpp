@@ -120,6 +120,7 @@ class CfgVehicles
 			{
 				"O_Static_Designator_02_weapon_F"
 			};
+			displayName="";
 		};
 		class EventHandlers: EventHandlers
 		{
@@ -227,11 +228,13 @@ class CfgVehicles
 	class O_Static_Designator_02_weapon_F: Weapon_Bag_Base
 	{
 		_generalMacro="O_Static_Designator_02_weapon_F";
+		displayName="$STR_A3_CfgVehicles_O_Static_Designator_02_weapon_F0";
 		editorCategory="EdCat_Equipment";
 		mass=180;
 		DLC="Mark";
 		class assembleInfo: assembleInfo
 		{
+			displayName="$STR_A3_CfgVehicles_Static_Designator_02_base_F0";
 			assembleTo="O_Static_Designator_02_F";
 			base[]=
 			{

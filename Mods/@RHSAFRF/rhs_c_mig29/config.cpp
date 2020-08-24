@@ -163,6 +163,7 @@ class CfgVehicles
 	};
 	class rhs_mig29s_base: Plane_Base_F
 	{
+		displayName="$STR_MiG29S_name";
 		icon="\rhsafrf\addons\rhs_mig29\data\ui\icon_mig29s_co.paa";
 		cost=20000000;
 		leftDustEffect="LDustEffects";
@@ -695,6 +696,7 @@ class CfgVehicles
 		{
 			class Standard
 			{
+				displayName="Blue";
 				factions[]=
 				{
 					"rhs_faction_vvs",
@@ -702,26 +704,72 @@ class CfgVehicles
 					"rhs_faction_vmf"
 				};
 			};
-			class Gray: Standard;  //found empty after stripping
-			class LightGray: Standard;  //found empty after stripping
-			class LightGray2: Standard;  //found empty after stripping
-			class Gray_camo: Standard;  //found empty after stripping
-			class Green_camo: Standard;  //found empty after stripping
-			class Green_camo2: Standard;  //found empty after stripping
-			class Green_camo3: Standard;  //found empty after stripping
-			class Green_camo4: Standard;  //found empty after stripping
-			class Green_camo5: Standard;  //found empty after stripping
-			class Green_camo6: Standard;  //found empty after stripping
-			class Green_camo7: Standard;  //found empty after stripping
-			class Green_camo_kubinka: Standard;  //found empty after stripping
-			class Green_camo_lipetsk: Standard;  //found empty after stripping
-			class Green_camo_aggressor1: Standard;  //found empty after stripping
-			class Green_camo_aggressor2: Standard;  //found empty after stripping
+			class Gray: Standard
+			{
+				displayName="Gray";
+			};
+			class LightGray: Standard
+			{
+				displayName="Light Gray";
+			};
+			class LightGray2: Standard
+			{
+				displayName="Light Gray 2";
+			};
+			class Gray_camo: Standard
+			{
+				displayName="Gray Camo";
+			};
+			class Green_camo: Standard
+			{
+				displayName="Green Camo 1";
+			};
+			class Green_camo2: Standard
+			{
+				displayName="Green Camo 2";
+			};
+			class Green_camo3: Standard
+			{
+				displayName="Green Camo 3";
+			};
+			class Green_camo4: Standard
+			{
+				displayName="Green Camo 4";
+			};
+			class Green_camo5: Standard
+			{
+				displayName="Green Camo 5";
+			};
+			class Green_camo6: Standard
+			{
+				displayName="Green Camo 6";
+			};
+			class Green_camo7: Standard
+			{
+				displayName="Green Camo 7";
+			};
+			class Green_camo_kubinka: Standard
+			{
+				displayName="Green Camo Kubinka";
+			};
+			class Green_camo_lipetsk: Standard
+			{
+				displayName="Green Camo Lipetsk";
+			};
+			class Green_camo_aggressor1: Standard
+			{
+				displayName="Aggressor 1";
+			};
+			class Green_camo_aggressor2: Standard
+			{
+				displayName="Aggressor 2";
+			};
 		};
 		class Attributes
 		{
 			class rhs_decalNumber_type
 			{
+				displayName="Define font type of intake number";
 				tooltip="Define kind of font that will be drawn on vehicle intake";
 				property="rhs_decalNumber_type";
 				control="Combo";
@@ -819,6 +867,7 @@ class CfgVehicles
 			};
 			class rhs_decalTailNumber_type
 			{
+				displayName="Define font type of tail number";
 				tooltip="Define kind of font that will be drawn on vehicle tail";
 				property="rhs_decalTailNumber_type";
 				control="Combo";
@@ -916,6 +965,7 @@ class CfgVehicles
 			};
 			class rhs_decalNumber
 			{
+				displayName="Set side number";
 				tooltip="Set side number. 2 numbers are required. Type 0 to hide numbers completly";
 				property="rhs_decalNumber";
 				control="Edit";
@@ -925,6 +975,7 @@ class CfgVehicles
 			};
 			class rhs_decalRoundel
 			{
+				displayName="Define Roundel";
 				tooltip="Define Roundel texture located on the wings and tail.";
 				property="rhs_decalRoundel";
 				control="Combo";
@@ -972,6 +1023,7 @@ class CfgVehicles
 			};
 			class rhs_decalNoseArt
 			{
+				displayName="Define Nose Art";
 				tooltip="Define Nose Art texture located near the cabin.";
 				property="rhs_decalNoseArt";
 				control="Combo";
@@ -1049,6 +1101,7 @@ class CfgVehicles
 			};
 			class rhs_decalTail
 			{
+				displayName="Define Tail Art";
 				tooltip="Define tail decal that will be drawn on vehicle";
 				property="rhs_decalTail";
 				control="Combo";
@@ -17700,6 +17753,7 @@ class CfgVehicles
 	};
 	class rhs_mig29sm_base: rhs_mig29s_base
 	{
+		displayName="$STR_MiG29SM_name";
 		class pilotCamera
 		{
 			class OpticsIn
@@ -24604,6 +24658,7 @@ class CfgVehicles
 	class PlaneWreck;
 	class rhs_mig29sWreck: PlaneWreck
 	{
+		displayName="MiG-29S Wreck";
 		typicalCargo[]={};
 		irTarget=0;
 		transportAmmo=0;
@@ -24611,7 +24666,13 @@ class CfgVehicles
 		transportFuel=0;
 	};
 	class rhs_t50_canopy;
-	class rhs_mig29s_canopy: rhs_t50_canopy;  //found empty after stripping
+	class rhs_mig29s_canopy: rhs_t50_canopy
+	{
+		displayName="MiG-29S Canopy";
+	};
 	class Thing;
-	class rhs_cockpitMap_waypoints: Thing;  //found empty after stripping
+	class rhs_cockpitMap_waypoints: Thing
+	{
+		displayName="Cockpit Map";
+	};
 };

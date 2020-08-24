@@ -2312,6 +2312,8 @@ class CfgMagazines
 	class VehicleMagazine;
 	class rhs_mag_s5_32: VehicleMagazine
 	{
+		displayName="$STR_RHS_MAG_S5";
+		displayNameShort="$STR_RHS_MAG_SH_S5";
 		ammo="rhs_ammo_s5";
 		count=64;
 		maxleadspeed=200;
@@ -2807,6 +2809,8 @@ class CfgMagazines
 	};
 	class rhs_mag_s5_m1_32: rhs_mag_s5_32
 	{
+		displayName="$STR_RHS_MAG_s5m1";
+		displayNameShort="$STR_RHS_MAG_SH_s5m1";
 		ammo="rhs_ammo_s5m1";
 		count=64;
 		weight=247.03999;
@@ -3299,6 +3303,8 @@ class CfgMagazines
 	};
 	class rhs_mag_s5_k1_32: rhs_mag_s5_32
 	{
+		displayName="$STR_RHS_MAG_s5k1";
+		displayNameShort="$STR_RHS_MAG_SH_s5k1";
 		ammo="rhs_ammo_s5k1";
 		count=64;
 		weight=232.96001;
@@ -3791,6 +3797,8 @@ class CfgMagazines
 	};
 	class rhs_mag_s5_ko_32: rhs_mag_s5_32
 	{
+		displayName="$STR_RHS_MAG_s5ko";
+		displayNameShort="$STR_RHS_MAG_SH_s5ko";
 		ammo="rhs_ammo_s5ko";
 		count=64;
 		weight=283.51999;
@@ -4283,6 +4291,8 @@ class CfgMagazines
 	};
 	class rhs_mag_s8_12: VehicleMagazine
 	{
+		displayName="$STR_RHS_MAG_S8KOM";
+		displayNameShort="$STR_RHS_MAG_SH_S8KOM";
 		ammo="rhs_ammo_s8";
 		count=12;
 		initSpeed=44;
@@ -4314,6 +4324,8 @@ class CfgMagazines
 	{
 		count=20;
 		weight=268;
+		displayName="$STR_RHS_MAG_S8DF";
+		displayNameShort="$STR_RHS_MAG_SH_S8DF";
 		ammo="rhs_ammo_s8df";
 		class mfdElements
 		{
@@ -4796,6 +4808,8 @@ class CfgMagazines
 	{
 		count=20;
 		weight=320;
+		displayName="$STR_RHS_MAG_S8T";
+		displayNameShort="$STR_RHS_MAG_SH_S8T";
 		ammo="rhs_ammo_s8t";
 		class mfdElements
 		{
@@ -5276,6 +5290,8 @@ class CfgMagazines
 	};
 	class rhs_mag_s13b_10: VehicleMagazine
 	{
+		displayName="$STR_RHS_MAG_S13B";
+		displayNameShort="$STR_RHS_MAG_SH_S13B";
 		ammo="rhs_ammo_s13b";
 		count=10;
 		maxleadspeed=200;
@@ -5285,21 +5301,29 @@ class CfgMagazines
 	};
 	class rhs_mag_s13d_10: rhs_mag_s13b_10
 	{
+		displayName="$STR_RHS_MAG_S13D";
+		displayNameShort="$STR_RHS_MAG_SH_S13D";
 		ammo="rhs_ammo_s13d";
 		weight=680;
 	};
 	class rhs_mag_s13df_10: rhs_mag_s13b_10
 	{
+		displayName="$STR_RHS_MAG_S13DF";
+		displayNameShort="$STR_RHS_MAG_SH_S13DF";
 		ammo="rhs_ammo_s13df";
 		weight=680;
 	};
 	class rhs_mag_s13t_10: rhs_mag_s13b_10
 	{
+		displayName="$STR_RHS_MAG_S13T";
+		displayNameShort="$STR_RHS_MAG_SH_S13T";
 		ammo="rhs_ammo_s13t";
 		weight=750;
 	};
 	class rhs_mag_s13of_10: rhs_mag_s13b_10
 	{
+		displayName="$STR_RHS_MAG_S13OF";
+		displayNameShort="$STR_RHS_MAG_SH_S13OF";
 		ammo="rhs_ammo_s13of";
 		weight=690;
 	};
@@ -5317,6 +5341,8 @@ class CfgMagazines
 	};
 	class rhs_mag_ub16_s5m1: rhs_mag_ub16_s5
 	{
+		displayName="$STR_RHS_MAG_s5m1";
+		displayNameShort="$STR_RHS_MAG_SH_s5m1";
 		ammo="rhs_ammo_s5m1";
 		mass=115.76;
 		weight=115.76;
@@ -5324,6 +5350,8 @@ class CfgMagazines
 	};
 	class rhs_mag_ub16_s5k1: rhs_mag_ub16_s5
 	{
+		displayName="$STR_RHS_MAG_s5k1";
+		displayNameShort="$STR_RHS_MAG_SH_s5k1";
 		ammo="rhs_ammo_s5k1";
 		mass=112.24;
 		weight=112.24;
@@ -5331,6 +5359,8 @@ class CfgMagazines
 	};
 	class rhs_mag_ub16_s5ko: rhs_mag_ub16_s5
 	{
+		displayName="$STR_RHS_MAG_s5ko";
+		displayNameShort="$STR_RHS_MAG_SH_s5ko";
 		ammo="rhs_ammo_s5ko";
 		mass=124.88;
 		weight=124.88;
@@ -5345,6 +5375,8 @@ class CfgMagazines
 	};
 	class rhs_mag_ub16_ka52_s5m1: rhs_mag_ub16_ka52_s5
 	{
+		displayName="$STR_RHS_MAG_s5m1";
+		displayNameShort="$STR_RHS_MAG_SH_s5m1";
 		ammo="rhs_ammo_s5m1";
 		mass=115.76;
 		weight=115.76;
@@ -5352,6 +5384,8 @@ class CfgMagazines
 	};
 	class rhs_mag_ub16_ka52_s5k1: rhs_mag_ub16_ka52_s5
 	{
+		displayName="$STR_RHS_MAG_s5k1";
+		displayNameShort="$STR_RHS_MAG_SH_s5k1";
 		ammo="rhs_ammo_s5k1";
 		mass=112.24;
 		weight=112.24;
@@ -5359,6 +5393,8 @@ class CfgMagazines
 	};
 	class rhs_mag_ub16_ka52_s5ko: rhs_mag_ub16_ka52_s5
 	{
+		displayName="$STR_RHS_MAG_s5ko";
+		displayNameShort="$STR_RHS_MAG_SH_s5ko";
 		ammo="rhs_ammo_s5ko";
 		mass=124.88;
 		weight=124.88;
@@ -5373,6 +5409,8 @@ class CfgMagazines
 	};
 	class rhs_mag_ub16_bd3_umk2a_s5m1: rhs_mag_ub16_bd3_umk2a_s5
 	{
+		displayName="$STR_RHS_MAG_s5m1";
+		displayNameShort="$STR_RHS_MAG_SH_s5m1";
 		ammo="rhs_ammo_s5m1";
 		mass=115.76;
 		weight=115.76;
@@ -5380,6 +5418,8 @@ class CfgMagazines
 	};
 	class rhs_mag_ub16_bd3_umk2a_s5k1: rhs_mag_ub16_bd3_umk2a_s5
 	{
+		displayName="$STR_RHS_MAG_s5k1";
+		displayNameShort="$STR_RHS_MAG_SH_s5k1";
 		ammo="rhs_ammo_s5k1";
 		mass=112.24;
 		weight=112.24;
@@ -5387,6 +5427,8 @@ class CfgMagazines
 	};
 	class rhs_mag_ub16_bd3_umk2a_s5ko: rhs_mag_ub16_bd3_umk2a_s5
 	{
+		displayName="$STR_RHS_MAG_s5ko";
+		displayNameShort="$STR_RHS_MAG_SH_s5ko";
 		ammo="rhs_ammo_s5ko";
 		mass=124.88;
 		weight=124.88;
@@ -5406,6 +5448,8 @@ class CfgMagazines
 	};
 	class rhs_mag_ub32_s5m1: rhs_mag_ub32_s5
 	{
+		displayName="$STR_RHS_MAG_s5m1";
+		displayNameShort="$STR_RHS_MAG_SH_s5m1";
 		ammo="rhs_ammo_s5m1";
 		mass=232.52;
 		weight=232.52;
@@ -5413,6 +5457,8 @@ class CfgMagazines
 	};
 	class rhs_mag_ub32_s5k1: rhs_mag_ub32_s5
 	{
+		displayName="$STR_RHS_MAG_s5k1";
+		displayNameShort="$STR_RHS_MAG_SH_s5k1";
 		ammo="rhs_ammo_s5k1";
 		mass=225.48;
 		weight=225.48;
@@ -5420,6 +5466,8 @@ class CfgMagazines
 	};
 	class rhs_mag_ub32_s5ko: rhs_mag_ub32_s5
 	{
+		displayName="$STR_RHS_MAG_s5ko";
+		displayNameShort="$STR_RHS_MAG_SH_s5ko";
 		ammo="rhs_ammo_s5ko";
 		mass=250.75999;
 		weight=250.75999;
@@ -5434,6 +5482,8 @@ class CfgMagazines
 	};
 	class rhs_mag_ub32_ka52_s5m1: rhs_mag_ub32_ka52_s5
 	{
+		displayName="$STR_RHS_MAG_s5m1";
+		displayNameShort="$STR_RHS_MAG_SH_s5m1";
 		ammo="rhs_ammo_s5m1";
 		mass=232.52;
 		weight=232.52;
@@ -5441,6 +5491,8 @@ class CfgMagazines
 	};
 	class rhs_mag_ub32_ka52_s5k1: rhs_mag_ub32_ka52_s5
 	{
+		displayName="$STR_RHS_MAG_s5k1";
+		displayNameShort="$STR_RHS_MAG_SH_s5k1";
 		ammo="rhs_ammo_s5k1";
 		mass=225.48;
 		weight=225.48;
@@ -5448,6 +5500,8 @@ class CfgMagazines
 	};
 	class rhs_mag_ub32_ka52_s5ko: rhs_mag_ub32_ka52_s5
 	{
+		displayName="$STR_RHS_MAG_s5ko";
+		displayNameShort="$STR_RHS_MAG_SH_s5ko";
 		ammo="rhs_ammo_s5ko";
 		mass=250.75999;
 		weight=250.75999;
@@ -5462,6 +5516,8 @@ class CfgMagazines
 	};
 	class rhs_mag_ub32_bd3_umk2a_s5m1: rhs_mag_ub32_bd3_umk2a_s5
 	{
+		displayName="$STR_RHS_MAG_s5m1";
+		displayNameShort="$STR_RHS_MAG_SH_s5m1";
 		ammo="rhs_ammo_s5m1";
 		mass=115.76;
 		weight=115.76;
@@ -5469,6 +5525,8 @@ class CfgMagazines
 	};
 	class rhs_mag_ub32_bd3_umk2a_s5k1: rhs_mag_ub32_bd3_umk2a_s5
 	{
+		displayName="$STR_RHS_MAG_s5k1";
+		displayNameShort="$STR_RHS_MAG_SH_s5k1";
 		ammo="rhs_ammo_s5k1";
 		mass=112.24;
 		weight=112.24;
@@ -5476,6 +5534,8 @@ class CfgMagazines
 	};
 	class rhs_mag_ub32_bd3_umk2a_s5ko: rhs_mag_ub32_bd3_umk2a_s5
 	{
+		displayName="$STR_RHS_MAG_s5ko";
+		displayNameShort="$STR_RHS_MAG_SH_s5ko";
 		ammo="rhs_ammo_s5ko";
 		mass=124.88;
 		weight=124.88;
@@ -5961,6 +6021,8 @@ class CfgMagazines
 	};
 	class rhs_mag_b8m1_s8df: rhs_mag_b8m1_s8kom
 	{
+		displayName="$STR_RHS_MAG_s8df";
+		displayNameShort="$STR_RHS_MAG_SH_s8df";
 		ammo="rhs_ammo_s8df";
 		mass=418;
 		weight=418;
@@ -5968,6 +6030,8 @@ class CfgMagazines
 	};
 	class rhs_mag_b8m1_s8t: rhs_mag_b8m1_s8kom
 	{
+		displayName="$STR_RHS_MAG_s8t";
+		displayNameShort="$STR_RHS_MAG_SH_s8t";
 		ammo="rhs_ammo_s8t";
 		mass=450;
 		weight=450;
@@ -5982,6 +6046,8 @@ class CfgMagazines
 	};
 	class rhs_mag_b8m1_bd3_umk2a_s8df: rhs_mag_b8m1_bd3_umk2a_s8kom
 	{
+		displayName="$STR_RHS_MAG_s8df";
+		displayNameShort="$STR_RHS_MAG_SH_s8df";
 		ammo="rhs_ammo_s8df";
 		mass=391;
 		weight=391;
@@ -5989,6 +6055,8 @@ class CfgMagazines
 	};
 	class rhs_mag_b8m1_bd3_umk2a_s8t: rhs_mag_b8m1_bd3_umk2a_s8kom
 	{
+		displayName="$STR_RHS_MAG_s8t";
+		displayNameShort="$STR_RHS_MAG_SH_s8t";
 		ammo="rhs_ammo_s8t";
 		mass=423;
 		weight=423;
@@ -6008,6 +6076,8 @@ class CfgMagazines
 	};
 	class rhs_mag_b8v20a_s8df: rhs_mag_b8v20a_s8kom
 	{
+		displayName="$STR_RHS_MAG_s8df";
+		displayNameShort="$STR_RHS_MAG_SH_s8df";
 		ammo="rhs_ammo_s8df";
 		mass=391;
 		weight=391;
@@ -6015,6 +6085,8 @@ class CfgMagazines
 	};
 	class rhs_mag_b8v20a_s8t: rhs_mag_b8v20a_s8kom
 	{
+		displayName="$STR_RHS_MAG_s8t";
+		displayNameShort="$STR_RHS_MAG_SH_s8t";
 		ammo="rhs_ammo_s8t";
 		mass=423;
 		weight=423;
@@ -6029,6 +6101,8 @@ class CfgMagazines
 	};
 	class rhs_mag_b8v20a_ka52_s8df: rhs_mag_b8v20a_ka52_s8kom
 	{
+		displayName="$STR_RHS_MAG_s8df";
+		displayNameShort="$STR_RHS_MAG_SH_s8df";
 		ammo="rhs_ammo_s8df";
 		mass=391;
 		weight=391;
@@ -6036,6 +6110,8 @@ class CfgMagazines
 	};
 	class rhs_mag_b8v20a_ka52_s8t: rhs_mag_b8v20a_ka52_s8kom
 	{
+		displayName="$STR_RHS_MAG_s8t";
+		displayNameShort="$STR_RHS_MAG_SH_s8t";
 		ammo="rhs_ammo_s8t";
 		mass=423;
 		weight=423;
@@ -6521,6 +6597,8 @@ class CfgMagazines
 	};
 	class rhs_mag_b13l_s13d: rhs_mag_b13l_s13b
 	{
+		displayName="$STR_RHS_MAG_s13d";
+		displayNameShort="$STR_RHS_MAG_SH_s13d";
 		ammo="rhs_ammo_s13d";
 		mass=500;
 		weight=500;
@@ -6528,6 +6606,8 @@ class CfgMagazines
 	};
 	class rhs_mag_b13l_s13df: rhs_mag_b13l_s13b
 	{
+		displayName="$STR_RHS_MAG_s13df";
+		displayNameShort="$STR_RHS_MAG_SH_s13df";
 		ammo="rhs_ammo_s13df";
 		mass=500;
 		weight=500;
@@ -6535,6 +6615,8 @@ class CfgMagazines
 	};
 	class rhs_mag_b13l_s13t: rhs_mag_b13l_s13b
 	{
+		displayName="$STR_RHS_MAG_s13t";
+		displayNameShort="$STR_RHS_MAG_SH_s13t";
 		ammo="rhs_ammo_s13t";
 		mass=535;
 		weight=535;
@@ -6542,6 +6624,8 @@ class CfgMagazines
 	};
 	class rhs_mag_b13l_s13of: rhs_mag_b13l_s13b
 	{
+		displayName="$STR_RHS_MAG_s13of";
+		displayNameShort="$STR_RHS_MAG_SH_s13of";
 		ammo="rhs_ammo_s13of";
 		mass=505;
 		weight=505;
@@ -6556,6 +6640,8 @@ class CfgMagazines
 	};
 	class rhs_mag_b13l_bd3_umk2a_s13d: rhs_mag_b13l_bd3_umk2a_s13b
 	{
+		displayName="$STR_RHS_MAG_s13d";
+		displayNameShort="$STR_RHS_MAG_SH_s13d";
 		ammo="rhs_ammo_s13d";
 		mass=480;
 		weight=480;
@@ -6563,6 +6649,8 @@ class CfgMagazines
 	};
 	class rhs_mag_b13l_bd3_umk2a_s13df: rhs_mag_b13l_bd3_umk2a_s13b
 	{
+		displayName="$STR_RHS_MAG_s13df";
+		displayNameShort="$STR_RHS_MAG_SH_s13df";
 		ammo="rhs_ammo_s13df";
 		mass=480;
 		weight=480;
@@ -6570,6 +6658,8 @@ class CfgMagazines
 	};
 	class rhs_mag_b13l_bd3_umk2a_s13t: rhs_mag_b13l_bd3_umk2a_s13b
 	{
+		displayName="$STR_RHS_MAG_s13t";
+		displayNameShort="$STR_RHS_MAG_SH_s13t";
 		ammo="rhs_ammo_s13t";
 		mass=515;
 		weight=515;
@@ -6577,6 +6667,8 @@ class CfgMagazines
 	};
 	class rhs_mag_b13l_bd3_umk2a_s13of: rhs_mag_b13l_bd3_umk2a_s13b
 	{
+		displayName="$STR_RHS_MAG_s13of";
+		displayNameShort="$STR_RHS_MAG_SH_s13of";
 		ammo="rhs_ammo_s13of";
 		mass=485;
 		weight=485;
@@ -6596,6 +6688,8 @@ class CfgMagazines
 	};
 	class rhs_mag_b13l1_s13d: rhs_mag_b13l1_s13b
 	{
+		displayName="$STR_RHS_MAG_s13d";
+		displayNameShort="$STR_RHS_MAG_SH_s13d";
 		ammo="rhs_ammo_s13d";
 		mass=480;
 		weight=480;
@@ -6603,6 +6697,8 @@ class CfgMagazines
 	};
 	class rhs_mag_b13l1_s13df: rhs_mag_b13l1_s13b
 	{
+		displayName="$STR_RHS_MAG_s13df";
+		displayNameShort="$STR_RHS_MAG_SH_s13df";
 		ammo="rhs_ammo_s13df";
 		mass=480;
 		weight=480;
@@ -6610,6 +6706,8 @@ class CfgMagazines
 	};
 	class rhs_mag_b13l1_s13t: rhs_mag_b13l1_s13b
 	{
+		displayName="$STR_RHS_MAG_s13t";
+		displayNameShort="$STR_RHS_MAG_SH_s13t";
 		ammo="rhs_ammo_s13t";
 		mass=515;
 		weight=515;
@@ -6617,6 +6715,8 @@ class CfgMagazines
 	};
 	class rhs_mag_b13l1_s13of: rhs_mag_b13l1_s13b
 	{
+		displayName="$STR_RHS_MAG_s13of";
+		displayNameShort="$STR_RHS_MAG_SH_s13of";
 		ammo="rhs_ammo_s13of";
 		mass=485;
 		weight=485;
@@ -6631,6 +6731,8 @@ class CfgMagazines
 	};
 	class rhs_mag_b13l1_ka52_s13d: rhs_mag_b13l1_ka52_s13b
 	{
+		displayName="$STR_RHS_MAG_s13d";
+		displayNameShort="$STR_RHS_MAG_SH_s13d";
 		ammo="rhs_ammo_s13d";
 		mass=480;
 		weight=480;
@@ -6638,6 +6740,8 @@ class CfgMagazines
 	};
 	class rhs_mag_b13l1_ka52_s13df: rhs_mag_b13l1_ka52_s13b
 	{
+		displayName="$STR_RHS_MAG_s13df";
+		displayNameShort="$STR_RHS_MAG_SH_s13df";
 		ammo="rhs_ammo_s13df";
 		mass=480;
 		weight=480;
@@ -6645,6 +6749,8 @@ class CfgMagazines
 	};
 	class rhs_mag_b13l1_ka52_s13t: rhs_mag_b13l1_ka52_s13b
 	{
+		displayName="$STR_RHS_MAG_s13t";
+		displayNameShort="$STR_RHS_MAG_SH_s13t";
 		ammo="rhs_ammo_s13t";
 		mass=515;
 		weight=515;
@@ -6652,6 +6758,8 @@ class CfgMagazines
 	};
 	class rhs_mag_b13l1_ka52_s13of: rhs_mag_b13l1_ka52_s13b
 	{
+		displayName="$STR_RHS_MAG_s13of";
+		displayNameShort="$STR_RHS_MAG_SH_s13of";
 		ammo="rhs_ammo_s13of";
 		mass=485;
 		weight=485;
@@ -6659,6 +6767,8 @@ class CfgMagazines
 	};
 	class rhs_mag_apu68m3_s24: rhs_mag_s13b_10
 	{
+		displayName="$STR_RHS_MAG_S24";
+		displayNameShort="$STR_RHS_MAG_SH_S24";
 		ammo="rhs_ammo_s24";
 		count=1;
 		mass=280;
@@ -7129,6 +7239,8 @@ class CfgMagazines
 	};
 	class rhs_mag_apu68m3_s24b: rhs_mag_apu68m3_s24
 	{
+		displayName="$STR_RHS_MAG_s24b";
+		displayNameShort="$STR_RHS_MAG_SH_s24b";
 		ammo="rhs_ammo_s24b";
 		mass=280;
 		weight=280;
@@ -7143,6 +7255,8 @@ class CfgMagazines
 	};
 	class rhs_mag_apu68_bd3_umk2a_s24b: rhs_mag_apu68_bd3_umk2a_s24
 	{
+		displayName="$STR_RHS_MAG_s24b";
+		displayNameShort="$STR_RHS_MAG_SH_s24b";
 		ammo="rhs_ammo_s24b";
 		mass=280;
 		weight=280;
@@ -7150,6 +7264,8 @@ class CfgMagazines
 	};
 	class rhs_mag_o25l_s25o: rhs_mag_apu68m3_s24
 	{
+		displayName="$STR_RHS_MAG_S25O";
+		displayNameShort="$STR_RHS_MAG_SH_S25O";
 		ammo="rhs_ammo_s25o";
 		count=1;
 		mass=290;
@@ -7620,6 +7736,8 @@ class CfgMagazines
 	};
 	class rhs_mag_o25l_s25of: rhs_mag_o25l_s25o
 	{
+		displayName="$STR_RHS_MAG_s25of";
+		displayNameShort="$STR_RHS_MAG_SH_s25of";
 		ammo="rhs_ammo_s25of";
 		mass=290;
 		weight=290;
@@ -7627,6 +7745,8 @@ class CfgMagazines
 	};
 	class rhs_mag_o25l_s25l: rhs_mag_o25l_s25o
 	{
+		displayName="$STR_RHS_MAG_s25l";
+		displayNameShort="$STR_RHS_MAG_SH_s25l";
 		ammo="rhs_ammo_s25l";
 		mass=290;
 		weight=290;
@@ -7634,6 +7754,8 @@ class CfgMagazines
 	};
 	class rhs_mag_o25l_s25ld: rhs_mag_o25l_s25o
 	{
+		displayName="$STR_RHS_MAG_s25ld";
+		displayNameShort="$STR_RHS_MAG_SH_s25ld";
 		ammo="rhs_ammo_s25ld";
 		mass=290;
 		weight=290;
@@ -7650,6 +7772,8 @@ class CfgMagazines
 	};
 	class rhs_mag_bd3_usk_a_o25l_s25of: rhs_mag_bd3_usk_a_o25l_s25o
 	{
+		displayName="$STR_RHS_MAG_s25of";
+		displayNameShort="$STR_RHS_MAG_SH_s25of";
 		ammo="rhs_ammo_s25of";
 		mass=310;
 		weight=310;
@@ -7657,6 +7781,8 @@ class CfgMagazines
 	};
 	class rhs_mag_bd3_usk_a_o25l_s25l: rhs_mag_bd3_usk_a_o25l_s25o
 	{
+		displayName="$STR_RHS_MAG_s25l";
+		displayNameShort="$STR_RHS_MAG_SH_s25l";
 		ammo="rhs_ammo_s25l";
 		mass=310;
 		weight=310;
@@ -7664,6 +7790,8 @@ class CfgMagazines
 	};
 	class rhs_mag_bd3_usk_a_o25l_s25ld: rhs_mag_bd3_usk_a_o25l_s25o
 	{
+		displayName="$STR_RHS_MAG_s25ld";
+		displayNameShort="$STR_RHS_MAG_SH_s25ld";
 		ammo="rhs_ammo_s25ld";
 		mass=310;
 		weight=310;
@@ -7680,6 +7808,8 @@ class CfgMagazines
 	};
 	class rhs_mag_bd3_umk2a_o25l_s25of: rhs_mag_bd3_umk2a_o25l_s25o
 	{
+		displayName="$STR_RHS_MAG_s25of";
+		displayNameShort="$STR_RHS_MAG_SH_s25of";
 		ammo="rhs_ammo_s25of";
 		mass=310;
 		weight=310;
@@ -7687,6 +7817,8 @@ class CfgMagazines
 	};
 	class rhs_mag_bd3_umk2a_o25l_s25l: rhs_mag_bd3_umk2a_o25l_s25o
 	{
+		displayName="$STR_RHS_MAG_s25l";
+		displayNameShort="$STR_RHS_MAG_SH_s25l";
 		ammo="rhs_ammo_s25l";
 		mass=310;
 		weight=310;
@@ -7694,6 +7826,8 @@ class CfgMagazines
 	};
 	class rhs_mag_bd3_umk2a_o25l_s25ld: rhs_mag_bd3_umk2a_o25l_s25o
 	{
+		displayName="$STR_RHS_MAG_s25ld";
+		displayNameShort="$STR_RHS_MAG_SH_s25ld";
 		ammo="rhs_ammo_s25ld";
 		mass=310;
 		weight=310;
@@ -16947,6 +17081,7 @@ class CfgMagazines
 		namesound="";
 		ammo="rhs_ammo_fab100";
 		displayname="$STR_RHS_MAG_FAB100";
+		displayNameShort="HE";
 		hardpoints[]=
 		{
 			"RHS_HP_FAB100"
@@ -17458,6 +17593,7 @@ class CfgMagazines
 		ammo="rhs_ammo_fab250";
 		count=1;
 		displayname="$STR_RHS_FAB250_NAME";
+		displayNameShort="HE";
 		initspeed=0;
 		maxleadspeed=5;
 		namesound="";
@@ -17985,6 +18121,7 @@ class CfgMagazines
 	{
 		ammo="rhs_ammo_ofab250";
 		displayname="$STR_RHS_OFAB250_NAME";
+		displayNameShort="HE-FRAG";
 		pylonWeapon="rhs_weap_ofab250";
 	};
 	class rhs_mag_ofab250_ka52: rhs_mag_ofab250
@@ -18005,6 +18142,7 @@ class CfgMagazines
 	{
 		ammo="rhs_ammo_kab250";
 		displayname="$STR_RHS_KAB250_NAME";
+		displayNameShort="LGB";
 		pylonWeapon="rhs_weap_kab250";
 		hardpoints[]=
 		{
@@ -18481,6 +18619,7 @@ class CfgMagazines
 	{
 		ammo="rhs_ammo_rbk250_ao1";
 		displayname="$STR_RHS_MAG_RBK250_AO1";
+		displayNameShort="Cluster HE";
 		pylonWeapon="rhs_weap_rbk250_ao1";
 		class mfdElements
 		{
@@ -18959,6 +19098,7 @@ class CfgMagazines
 	{
 		ammo="rhs_ammo_rbk250_ptab25";
 		displayname="$STR_RHS_MAG_RBK250_PTAB25";
+		displayNameShort="Cluster HEAT";
 		pylonWeapon="rhs_weap_rbk250_ptab25";
 	};
 	class rhs_mag_rbk250_ptab25_ka52: rhs_mag_rbk250_ptab25
@@ -18979,6 +19119,7 @@ class CfgMagazines
 	{
 		ammo="rhs_ammo_rbk250_zab25t";
 		displayname="$STR_RHS_MAG_RBK250_ZAB25T";
+		displayNameShort="Cluster Incendiary";
 		pylonWeapon="rhs_weap_rbk250_zab25t";
 	};
 	class rhs_mag_rbk250_zab25t_ka52: rhs_mag_rbk250_zab25t
@@ -19516,6 +19657,7 @@ class CfgMagazines
 	{
 		ammo="rhs_ammo_kab500";
 		displayname="$STR_RHS_KAB500L_NAME";
+		displayNameShort="LGB";
 		pylonWeapon="rhs_weap_kab500";
 		class mfdElements
 		{
@@ -19987,6 +20129,7 @@ class CfgMagazines
 	{
 		ammo="rhs_ammo_kab500lk";
 		displayname="$STR_RHS_KAB500LK_NAME";
+		displayNameShort="LG Cluster";
 		pylonWeapon="rhs_weap_kab500LK";
 	};
 	class rhs_mag_kab500LK_bd3_umk2a: rhs_mag_kab500LK
@@ -20000,6 +20143,7 @@ class CfgMagazines
 	{
 		ammo="rhs_ammo_kab500kr";
 		displayname="$STR_RHS_KAB500KR_NAME";
+		displayNameShort="TV Bomb";
 		pylonWeapon="rhs_weap_kab500kr";
 	};
 	class rhs_mag_kab500kr_bd3_umk2a: rhs_mag_kab500kr
@@ -20013,6 +20157,7 @@ class CfgMagazines
 	{
 		ammo="rhs_ammo_kab500od";
 		displayname="$STR_RHS_KAB500OD_NAME";
+		displayNameShort="TV HE Bomb";
 		pylonWeapon="rhs_weap_kab500od";
 	};
 	class rhs_mag_kab500od_bd3_umk2a: rhs_mag_kab500od
@@ -20026,6 +20171,7 @@ class CfgMagazines
 	{
 		ammo="rhs_ammo_rbk500_ao25";
 		displayname="$STR_RHS_MAG_RBK500_AO25";
+		displayNameShort="Cluster HE";
 		pylonWeapon="rhs_weap_rbk500_ao25";
 		class mfdElements
 		{
@@ -20196,6 +20342,7 @@ class CfgMagazines
 	{
 		ammo="rhs_ammo_rbk500_ofab50";
 		displayname="$STR_RHS_MAG_RBK500_OFAB50";
+		displayNameShort="Cluster HE-FRAG";
 		pylonWeapon="rhs_weap_rbk500_ofab50";
 	};
 	class rhs_mag_rbk500_ofab50_bd3_usk_a: rhs_mag_rbk500_ofab50
@@ -20223,6 +20370,7 @@ class CfgMagazines
 	{
 		ammo="rhs_ammo_rbk500_spbed";
 		displayname="$STR_RHS_MAG_RBK500_SPBED";
+		displayNameShort="Cluster Guided HEAT";
 		pylonWeapon="rhs_weap_rbk500_spbed";
 	};
 	class rhs_mag_rbk500_spbed_bd3_usk_a: rhs_mag_rbk500_spbed
@@ -20250,6 +20398,7 @@ class CfgMagazines
 	{
 		ammo="rhs_ammo_rbk500_ptab1m";
 		displayname="$STR_RHS_MAG_RBK500_PTAB1M";
+		displayNameShort="Cluster HEAT";
 		pylonWeapon="rhs_weap_rbk500_ptab1m";
 	};
 	class rhs_mag_rbk500_ptab1m_bd3_usk_a: rhs_mag_rbk500_ptab1m
@@ -20277,6 +20426,7 @@ class CfgMagazines
 	{
 		ammo="rhs_ammo_rbk500_zab25t";
 		displayname="$STR_RHS_MAG_RBK500_ZAB25T";
+		displayNameShort="Cluster Incendiary";
 		pylonWeapon="rhs_weap_rbk500_zab25t";
 	};
 	class rhs_mag_rbk500_zab25t_bd3_usk_a: rhs_mag_rbk500_zab25t
@@ -20304,6 +20454,7 @@ class CfgMagazines
 	{
 		ammo="rhs_ammo_kmgu2_ao25";
 		displayname="$STR_RHS_MAG_KMGU2_AO25";
+		displayNameShort="Cluster HE";
 		ejectSpeed[]={1,0,0};
 		initSpeed=0;
 		initSpeedY=-5;
@@ -20793,6 +20944,7 @@ class CfgMagazines
 	{
 		ammo="rhs_ammo_kmgu2_ptab1m";
 		displayname="$STR_RHS_MAG_KMGU2_PTAB1M";
+		displayNameShort="Cluster HEAT";
 		pylonWeapon="rhs_weap_kmgu2_ptab1m";
 	};
 	class rhs_mag_kmgu2_ptab1m_bd3_umk2a: rhs_mag_kmgu2_ptab1m
@@ -20813,6 +20965,7 @@ class CfgMagazines
 	{
 		ammo="rhs_ammo_kmgu2_pfm1";
 		displayname="$STR_RHS_MAG_KMGU2_PFM1";
+		displayNameShort="Cluster AP Mine";
 		pylonWeapon="rhs_weap_kmgu2_pfm1";
 	};
 	class rhs_mag_kmgu2_pfm1_bd3_umk2a: rhs_mag_kmgu2_pfm1
@@ -20833,6 +20986,7 @@ class CfgMagazines
 	{
 		ammo="rhs_ammo_kmgu2_ptm1";
 		displayname="$STR_RHS_MAG_KMGU2_PTM1";
+		displayNameShort="Cluster AT Mine";
 		pylonWeapon="rhs_weap_kmgu2_ptm1";
 	};
 	class rhs_mag_kmgu2_ptm1_bd3_umk2a: rhs_mag_kmgu2_ptm1
@@ -20852,11 +21006,13 @@ class CfgMagazines
 	class ATMine_Range_Mag;
 	class rhs_mag_mine_pfm1: ATMine_Range_Mag
 	{
+		displayName="$STR_RHS_PFM1_NAME";
 		mass=4.2399998;
 		ammo="rhs_ammo_pfm1";
 	};
 	class rhs_mag_mine_ptm1: ATMine_Range_Mag
 	{
+		displayName="$STR_RHS_PTM1_NAME";
 		mass=30;
 		ammo="rhs_ammo_ptm1";
 	};
@@ -20864,6 +21020,7 @@ class CfgMagazines
 	{
 		ammo="rhs_ammo_ptb1150";
 		displayname="$STR_RHS_PTB1150_NAME";
+		displayNameShort="PTB";
 		hardpoints[]=
 		{
 			"RHS_HP_PTB1150"
@@ -21331,6 +21488,7 @@ class CfgMagazines
 	class rhs_mag_ptb1500: VehicleMagazine
 	{
 		ammo="rhs_ammo_ptb1500";
+		displayName="$STR_RHS_PTB1500_NAME";
 		count=1;
 		initSpeed=0;
 		sound[]={};
@@ -21805,6 +21963,7 @@ class CfgMagazines
 		ammo="rhs_ammo_ofz_23x115mm";
 		count=250;
 		displayname="UPK-23-250 OFZ";
+		displayNameShort="HE";
 		initspeed=720;
 		maxleadspeed=5;
 		namesound="";
@@ -21823,16 +21982,19 @@ class CfgMagazines
 	{
 		ammo="rhs_ammo_ofzt_23x115mm";
 		displayname="UPK-23-250 OFZT";
+		displayNameShort="HE-T";
 	};
 	class rhs_mag_upk23_btz: rhs_mag_upk23_ofz
 	{
 		ammo="rhs_ammo_bzt_23x115mm";
 		displayname="UPK-23-250 BZT";
+		displayNameShort="AP-T";
 	};
 	class rhs_mag_upk23_mixed: rhs_mag_upk23_ofz
 	{
 		ammo="rhs_ammo_mixed_23x115mm";
 		displayname="UPK-23-250 Mixed";
+		displayNameShort="Mixed";
 	};
 	class rhs_mag_upk23_ka52_ofz: rhs_mag_upk23_ofz
 	{
@@ -21883,6 +22045,7 @@ class CfgWeapons
 		cursor="missile";
 		cursoraim="EmptyCursor";
 		cursorsize=0;
+		displayName="$STR_RHS_WEAP_S5";
 		proxyShape="\rhsafrf\addons\rhs_a2port_air\data\proxy\ub16";
 		class gunClouds;  //found empty after stripping
 		fireLightAmbient[]={0,0,0};
@@ -21905,16 +22068,27 @@ class CfgWeapons
 			"rhs_mag_ub16_bd3_umk2a_s5",
 			"rhs_mag_ub32_bd3_umk2a_s5"
 		};
-		class Far_AI: Far_AI;  //found empty after stripping
-		class Medium_AI: Medium_AI;  //found empty after stripping
-		class Close_AI: Close_AI;  //found empty after stripping
+		class Far_AI: Far_AI
+		{
+			displayName="$STR_RHS_WEAP_S5";
+		};
+		class Medium_AI: Medium_AI
+		{
+			displayName="$STR_RHS_WEAP_S5";
+		};
+		class Close_AI: Close_AI
+		{
+			displayName="$STR_RHS_WEAP_S5";
+		};
 		class AI_Burst: RocketPods
 		{
+			displayName="$STR_RHS_WEAP_S5";
 			dispersion=0.037999999;
 		};
 		class Burst: Burst
 		{
 			dispersion=0.037999999;
+			displayName="$STR_RHS_WEAP_S5";
 			burst=1;
 			salvo=2;
 		};
@@ -21979,6 +22153,7 @@ class CfgWeapons
 	};
 	class rhs_weap_s8: rhs_weap_s5
 	{
+		displayName="$STR_RHS_WEAP_S8";
 		magazines[]=
 		{
 			"rhs_mag_s8_12",
@@ -21991,16 +22166,27 @@ class CfgWeapons
 			"rhs_mag_b8v20a_ka52_s8kom",
 			"rhs_mag_b8m1_bd3_umk2a_s8kom"
 		};
-		class Far_AI: Far_AI;  //found empty after stripping
-		class Medium_AI: Medium_AI;  //found empty after stripping
-		class Close_AI: Close_AI;  //found empty after stripping
+		class Far_AI: Far_AI
+		{
+			displayName="$STR_RHS_WEAP_S8";
+		};
+		class Medium_AI: Medium_AI
+		{
+			displayName="$STR_RHS_WEAP_S8";
+		};
+		class Close_AI: Close_AI
+		{
+			displayName="$STR_RHS_WEAP_S8";
+		};
 		class AI_Burst: AI_Burst
 		{
 			dispersion=0.032000002;
+			displayName="$STR_RHS_WEAP_S8";
 		};
 		class Burst: Burst
 		{
 			dispersion=0.032000002;
+			displayName="$STR_RHS_WEAP_S8";
 		};
 	};
 	class rhs_weap_s8df: rhs_weap_s8
@@ -22031,6 +22217,7 @@ class CfgWeapons
 	};
 	class rhs_weap_s13: rhs_weap_s8
 	{
+		displayName="$STR_RHS_WEAP_S13";
 		magazines[]=
 		{
 			"rhs_mag_s13b_10",
@@ -22043,11 +22230,13 @@ class CfgWeapons
 		{
 			reloadtime=0.15000001;
 			dispersion=0.02;
+			displayName="$STR_RHS_WEAP_S13";
 		};
 		class Burst: Burst
 		{
 			reloadtime=0.15000001;
 			dispersion=0.02;
+			displayName="$STR_RHS_WEAP_S13";
 		};
 	};
 	class rhs_weap_s13d: rhs_weap_s13
@@ -22096,6 +22285,7 @@ class CfgWeapons
 	};
 	class rhs_weap_s24: rhs_weap_s13
 	{
+		displayName="$STR_RHS_WEAP_S24";
 		magazines[]=
 		{
 			"rhs_mag_apu68m3_s24",
@@ -22104,14 +22294,17 @@ class CfgWeapons
 		class AI_Burst: AI_Burst
 		{
 			dispersion=0.02;
+			displayName="$STR_RHS_WEAP_S24";
 		};
 		class Burst: Burst
 		{
 			dispersion=0.02;
+			displayName="$STR_RHS_WEAP_S24";
 		};
 		class Single: Burst
 		{
 			autofire=0;
+			displayName="$STR_RHS_WEAP_S24";
 			reloadTime=0.079999998;
 			burst=1;
 			salvo=1;
@@ -22127,6 +22320,7 @@ class CfgWeapons
 	};
 	class rhs_weap_s25: rhs_weap_s13
 	{
+		displayName="$STR_RHS_WEAP_S25O";
 		magazines[]=
 		{
 			"rhs_mag_o25l_s25o",
@@ -22136,14 +22330,17 @@ class CfgWeapons
 		class AI_Burst: AI_Burst
 		{
 			dispersion=0.0099999998;
+			displayName="$STR_RHS_WEAP_S25";
 		};
 		class Burst: Burst
 		{
 			dispersion=0.0099999998;
+			displayName="$STR_RHS_WEAP_S25";
 		};
 		class Single: Burst
 		{
 			autofire=0;
+			displayName="$STR_RHS_WEAP_S25";
 			reloadTime=0.079999998;
 			burst=1;
 			salvo=1;
@@ -22151,6 +22348,7 @@ class CfgWeapons
 	};
 	class rhs_weap_s25of: rhs_weap_s25
 	{
+		displayName="$STR_RHS_WEAP_S25OF";
 		magazines[]=
 		{
 			"rhs_mag_o25l_s25of",
@@ -22160,6 +22358,7 @@ class CfgWeapons
 	};
 	class rhs_weap_s25l: rhs_weap_s25
 	{
+		displayName="$STR_RHS_WEAP_S25L";
 		magazines[]=
 		{
 			"rhs_mag_o25l_s25l",
@@ -22181,6 +22380,7 @@ class CfgWeapons
 	};
 	class rhs_weap_s25ld: rhs_weap_s25
 	{
+		displayName="$STR_RHS_WEAP_S25LD";
 		magazines[]=
 		{
 			"rhs_mag_o25l_s25ld",
@@ -22795,7 +22995,10 @@ class CfgWeapons
 			"rhs_mag_kab250",
 			"rhs_mag_kab250_int"
 		};
-		class LoalAltitude: RocketPods;  //found empty after stripping
+		class LoalAltitude: RocketPods
+		{
+			displayName="LOAL";
+		};
 	};
 	class rhs_weap_fab500: rhs_weap_fab250
 	{
@@ -23435,88 +23638,108 @@ class cfgVehicles
 	class rhs_mine_pfm1: MineBase
 	{
 		ammo="rhs_ammo_pfm1";
+		displayName="$STR_RHS_PFM1_NAME";
 		icon="iconExplosiveAP";
 	};
 	class rhs_mine_ptm1: MineBase
 	{
 		ammo="rhs_ammo_ptm1";
+		displayName="$STR_RHS_PTM1_NAME";
 		icon="iconExplosiveAT";
 	};
 	class rhs_uxo_ao1_1: MineBase
 	{
 		ammo="rhs_ammo_uxo_ao1_1";
+		displayName="$STR_RHS_UXO_AO1_1";
 		icon="iconExplosiveUXO";
 	};
 	class rhs_uxo_ao1_2: rhs_uxo_ao1_1
 	{
 		ammo="rhs_ammo_uxo_ao1_2";
+		displayName="$STR_RHS_UXO_AO1_2";
 	};
 	class rhs_uxo_ao1_3: rhs_uxo_ao1_1
 	{
 		ammo="rhs_ammo_uxo_ao1_3";
+		displayName="$STR_RHS_UXO_AO1_3";
 	};
 	class rhs_uxo_ptab1m_1: MineBase
 	{
 		ammo="rhs_ammo_uxo_ptab1m_1";
+		displayName="$STR_RHS_UXO_PTAB1M_1";
 		icon="iconExplosiveUXO";
 	};
 	class rhs_uxo_ptab1m_2: rhs_uxo_ptab1m_1
 	{
 		ammo="rhs_ammo_uxo_ptab1m_2";
+		displayName="$STR_RHS_UXO_PTAB1M_2";
 	};
 	class rhs_uxo_ptab1m_3: rhs_uxo_ptab1m_1
 	{
 		ammo="rhs_ammo_uxo_ptab1m_3";
+		displayName="$STR_RHS_UXO_PTAB1M_3";
 	};
 	class rhs_uxo_ptab25m_1: MineBase
 	{
 		ammo="rhs_ammo_uxo_ptab25m_1";
+		displayName="$STR_RHS_UXO_PTAB25M_1";
 		icon="iconExplosiveUXO";
 	};
 	class rhs_uxo_ptab25m_2: rhs_uxo_ptab25m_1
 	{
 		ammo="rhs_ammo_uxo_ptab25m_2";
+		displayName="$STR_RHS_UXO_PTAB25M_2";
 	};
 	class rhs_uxo_ptab25m_3: rhs_uxo_ptab25m_1
 	{
 		ammo="rhs_ammo_uxo_ptab25m_3";
+		displayName="$STR_RHS_UXO_PTAB25M_3";
 	};
 	class rhs_uxo_ptab25ko_1: MineBase
 	{
 		ammo="rhs_ammo_uxo_ptab25ko_1";
+		displayName="$STR_RHS_UXO_PTAB25KO_1";
 		icon="iconExplosiveUXO";
 	};
 	class rhs_uxo_ptab25ko_2: rhs_uxo_ptab25ko_1
 	{
 		ammo="rhs_ammo_uxo_ptab25ko_2";
+		displayName="$STR_RHS_UXO_PTAB25KO_2";
 	};
 	class rhs_uxo_ptab25ko_3: rhs_uxo_ptab25ko_1
 	{
 		ammo="rhs_ammo_uxo_ptab25ko_3";
+		displayName="$STR_RHS_UXO_PTAB25KO_3";
 	};
 	class ModuleMine_APERSMine_F;
 	class rhs_mine_pfm1_module: ModuleMine_APERSMine_F
 	{
+		displayName="$STR_RHS_PFM1_NAME";
 		explosive="rhs_ammo_pfm1";
 	};
 	class rhs_mine_ptm1_module: ModuleMine_APERSMine_F
 	{
+		displayName="$STR_RHS_PTM1_NAME";
 		explosive="rhs_ammo_ptm1";
 	};
 	class rhs_uxo_ao1_module: ModuleMine_APERSMine_F
 	{
+		displayName="$STR_RHS_UXO_AO1_NAME";
 		explosive="rhs_ammo_uxo_ao1_1";
 	};
 	class rhs_uxo_ptab1m_module: ModuleMine_APERSMine_F
 	{
+		displayName="$STR_RHS_UXO_PTAB1M_NAME";
 		explosive="rhs_ammo_uxo_ptab1m_1";
 	};
 	class rhs_uxo_ptab25m_module: ModuleMine_APERSMine_F
 	{
+		displayName="$STR_RHS_UXO_PTAB25M_NAME";
 		explosive="rhs_ammo_uxo_ptab25m_1";
 	};
 	class rhs_uxo_ptab25ko_module: ModuleMine_APERSMine_F
 	{
+		displayName="$STR_RHS_UXO_PTAB25KO_NAME";
 		explosive="rhs_ammo_uxo_ptab25ko_1";
 	};
 	class Site_F;

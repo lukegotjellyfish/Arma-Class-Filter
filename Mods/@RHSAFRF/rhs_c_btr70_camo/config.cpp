@@ -16,6 +16,7 @@ class CfgVehicles
 		{
 			class Camo1
 			{
+				displayName="3-Color Camo (1)";
 				factions[]=
 				{
 					"rhs_faction_vmf",
@@ -24,13 +25,34 @@ class CfgVehicles
 					"rhs_faction_vv"
 				};
 			};
-			class Camo2: Camo1;  //found empty after stripping
-			class Omon1: Camo1;  //found empty after stripping
-			class Omon2: Camo1;  //found empty after stripping
-			class MC: Camo1;  //found empty after stripping
-			class Desert: Camo1;  //found empty after stripping
-			class rhs_sand;  //found empty after stripping
-			class Marine: Camo1;  //found empty after stripping
+			class Camo2: Camo1
+			{
+				displayName="3-Color Camo (2)";
+			};
+			class Omon1: Camo1
+			{
+				displayName="Omon (1)";
+			};
+			class Omon2: Camo1
+			{
+				displayName="Omon (2)";
+			};
+			class MC: Camo1
+			{
+				displayName="MS (Peacekeeper)";
+			};
+			class Desert: Camo1
+			{
+				displayName="Desert";
+			};
+			class rhs_sand
+			{
+				displayName="Sand";
+			};
+			class Marine: Camo1
+			{
+				displayName="Marine";
+			};
 		};
 	};
 };

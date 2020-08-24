@@ -12,6 +12,7 @@ class CfgVehicles
 	class Lamps_base_F;
 	class RHS_Dazzler: Lamps_base_F
 	{
+		displayName="Shtora Dazzler";
 		timeToLive=30;
 		gravityFactor=0;
 		armor=5000;

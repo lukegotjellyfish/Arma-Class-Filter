@@ -44,6 +44,7 @@ class CfgVoice
 			"\rhsgref\addons\rhsgref_s_radio\radio\Male01\",
 			"\rhsgref\addons\rhsgref_s_radio\radio\Male01\"
 		};
+		displayName="Czech Voice 01";
 	};
 	class RHS_Male02CZ: CZ
 	{
@@ -52,6 +53,7 @@ class CfgVoice
 			"\rhsgref\addons\rhsgref_s_radio\radio\Male02\",
 			"\rhsgref\addons\rhsgref_s_radio\radio\Male02\"
 		};
+		displayName="Czech Voice 02";
 	};
 	class RHS_Male03CZ: CZ
 	{
@@ -60,6 +62,7 @@ class CfgVoice
 			"\rhsgref\addons\rhsgref_s_radio\radio\Male01\",
 			"\rhsgref\addons\rhsgref_s_radio\radio\Male01\"
 		};
+		displayName="Czech Voice 03";
 		voiceType="Voice 03";
 	};
 	class RHS_Male04CZ: CZ
@@ -69,6 +72,7 @@ class CfgVoice
 			"\rhsgref\addons\rhsgref_s_radio\radio\Male01\",
 			"\rhsgref\addons\rhsgref_s_radio\radio\Male01\"
 		};
+		displayName="Czech Voice 04";
 	};
 	class RHS_Male05CZ: CZ
 	{
@@ -77,6 +81,7 @@ class CfgVoice
 			"\rhsgref\addons\rhsgref_s_radio\radio\Male02\",
 			"\rhsgref\addons\rhsgref_s_radio\radio\Male02\"
 		};
+		displayName="Czech Voice 05";
 	};
 };
 class cfgVoiceTypes

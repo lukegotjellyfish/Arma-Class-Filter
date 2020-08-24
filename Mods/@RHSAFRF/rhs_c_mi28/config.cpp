@@ -194,6 +194,7 @@ class CfgVehicles
 			"CAS_Heli"
 		};
 		audible=7;
+		displayName="$STR_MI28N_name";
 		icon="rhsafrf\addons\rhs_a2port_air\data\map_ico\icon_mi24_ca.paa";
 		getInRadius=2;
 		allowTabLock=0;
@@ -4632,18 +4633,23 @@ class CfgVehicles
 		{
 			class standard
 			{
+				displayName="Grey";
 				factions[]=
 				{
 					"rhs_faction_vvs_c",
 					"rhs_faction_vvs"
 				};
 			};
-			class Camo: standard;  //found empty after stripping
+			class Camo: standard
+			{
+				displayName="Camo";
+			};
 		};
 		class Attributes
 		{
 			class rhs_hideRadome
 			{
+				displayName="Hide radome";
 				tooltip="Hide the rotor-mounted radome";
 				property="rhs_hideRadome";
 				control="CheckboxNumber";
@@ -4652,6 +4658,7 @@ class CfgVehicles
 			};
 			class rhs_decalNumber_type
 			{
+				displayName="Define font type of side number";
 				tooltip="Define kind of font that will be drawn on vehicle";
 				property="rhs_decalNumber_type";
 				control="Combo";
@@ -4729,6 +4736,7 @@ class CfgVehicles
 			};
 			class rhs_decalNumber
 			{
+				displayName="Set side number";
 				tooltip="Set side number. 2 numbers are required. Type 0 to hide numbers completly";
 				property="rhs_decalNumber";
 				control="Edit";
@@ -4738,6 +4746,7 @@ class CfgVehicles
 			};
 			class rhs_decalTail
 			{
+				displayName="Define tail decal";
 				tooltip="Define tail decal that will be drawn on vehicle";
 				property="rhs_decalTail";
 				control="Combo";
@@ -5695,6 +5704,7 @@ class CfgVehicles
 	};
 	class rhs_mi28n_base: rhs_mi28_base
 	{
+		displayName="$STR_MI28N_name";
 		selectionFireAnim="";
 		class Components: Components
 		{
@@ -5772,6 +5782,7 @@ class CfgVehicles
 	};
 	class rhs_mi28n_S13_base: rhs_mi28n_base
 	{
+		displayName="Mi-28N (S-13)";
 		class Components: Components
 		{
 			class TransportPylonsComponent: TransportPylonsComponent
@@ -5810,15 +5821,20 @@ class CfgVehicles
 	class Wreck_base_F;
 	class Land_rhs_mi28_wreck: Wreck_base_F
 	{
+		displayName="Mi-28N Wreck";
 		class Armory
 		{
 			disabled=1;
 		};
 		icon="iconObject_1x2";
 	};
-	class Land_rhs_mi28_wreck2: Land_rhs_mi28_wreck;  //found empty after stripping
+	class Land_rhs_mi28_wreck2: Land_rhs_mi28_wreck
+	{
+		displayName="Mi-28N Wreck 2";
+	};
 	class rhs_mi28_wing_left: Plane
 	{
+		displayName="Mi-28 Wing";
 		draconicForceXCoef=17.200001;
 		draconicForceYCoef=12.6;
 		draconicForceZCoef=10.15;
@@ -5841,7 +5857,10 @@ class CfgVehicles
 		SLX_XEH_DISABLED=1;
 	};
 	class rhs_mi28_wing_right: rhs_mi28_wing_left;  //found empty after stripping
-	class rhs_mi28_door_gunner: rhs_mi28_wing_left;  //found empty after stripping
+	class rhs_mi28_door_gunner: rhs_mi28_wing_left
+	{
+		displayName="Mi-28 Door";
+	};
 	class rhs_mi28_door_pilot: rhs_mi28_door_gunner;  //found empty after stripping
 	class rhs_mi28_balonetes: rhs_mi28_door_gunner;  //found empty after stripping
 };

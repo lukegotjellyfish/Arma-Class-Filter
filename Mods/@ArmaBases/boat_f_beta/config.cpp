@@ -29,6 +29,7 @@ class CfgVehicles
 		features="Randomization: No						<br />Camo selections: 1 - the whole body						<br />Script door sources: None						<br />Script animations: Doors, periscope						<br />Executed scripts: None						<br />Firing from vehicles: No						<br />Slingload: Slingloadable						<br />Cargo proxy indexes: 1 and 2";
 		nameSound="veh_ship_submarine_s";
 		_generalMacro="SDV_01_base_F";
+		displayName="$STR_A3_CfgVehicles_SDV_Base0";
 		fuelCapacity=120;
 		leftEngineEffect="LEngEffectsSmall";
 		rightEngineEffect="REngEffectsSmall";

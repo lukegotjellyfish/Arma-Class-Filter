@@ -125,6 +125,7 @@ class CfgVehicles
 			"Track_R",
 			"Slide"
 		};
+		displayName="$STR_T72BA_Name";
 		accuracy=0.30000001;
 		supplyRadius=1;
 		memoryPointSupply="pos driver";
@@ -955,19 +956,44 @@ class CfgVehicles
 		};
 		class textureSources
 		{
-			class standard;  //found empty after stripping
-			class rhs_Sand: standard;  //found empty after stripping
-			class rhs_chdkz: rhs_Sand;  //found empty after stripping
-			class r1: standard;  //found empty after stripping
-			class r2: standard;  //found empty after stripping
-			class r3: standard;  //found empty after stripping
-			class r4: standard;  //found empty after stripping
-			class r5: standard;  //found empty after stripping
+			class standard
+			{
+				displayName="Standard";
+			};
+			class rhs_Sand: standard
+			{
+				displayName="Sand";
+			};
+			class rhs_chdkz: rhs_Sand
+			{
+				displayName="CHDKZ";
+			};
+			class r1: standard
+			{
+				displayName="#1";
+			};
+			class r2: standard
+			{
+				displayName="#2";
+			};
+			class r3: standard
+			{
+				displayName="#3";
+			};
+			class r4: standard
+			{
+				displayName="#4";
+			};
+			class r5: standard
+			{
+				displayName="#5";
+			};
 		};
 		class Attributes
 		{
 			class rhs_decalNumber_type
 			{
+				displayName="Define font type of plate number";
 				tooltip="Define kind of font that will be drawn on vehicle.";
 				property="rhs_decalNumber_type";
 				control="Combo";
@@ -1021,6 +1047,7 @@ class CfgVehicles
 			class rhs_decalNumber
 			{
 				collapsed=1;
+				displayName="Set side number";
 				tooltip="Set side number. 3 numbers are required. Type 0 to hide numbers complety & leave at -1 to get random number";
 				property="rhs_decalNumber";
 				control="Edit";
@@ -1030,6 +1057,7 @@ class CfgVehicles
 			};
 			class rhs_decalPlatoon_type
 			{
+				displayName="Define platoon symbol type";
 				tooltip="Decal type";
 				property="rhs_decalPlatoon_type";
 				control="Combo";
@@ -1073,6 +1101,7 @@ class CfgVehicles
 			};
 			class rhs_decalPlatoon
 			{
+				displayName="Set platoon symbol";
 				tooltip="Set platoon symbol located on turret. Usually used for platoon symbols. -1 leaves current symbol & 0 clears decal.";
 				property="rhs_decalPlatoon";
 				control="Edit";
@@ -1082,6 +1111,7 @@ class CfgVehicles
 			};
 			class rhs_decalHonor_type: rhs_decalPlatoon_type
 			{
+				displayName="Define honor symbol type";
 				property="rhs_decalHonor_type";
 				class values: values
 				{
@@ -1095,12 +1125,14 @@ class CfgVehicles
 			};
 			class rhs_decalHonor: rhs_decalPlatoon
 			{
+				displayName="Set honor symbol";
 				tooltip="Define symbol located on IR Lamp ('84-'89 type tanks only). Usually used for honor symbols. -1 leaves current symbol & 0 clears decal.";
 				property="rhs_decalHonor";
 				expression="if(parseNumber _value >= 0)then{ [_this, [ [ 'Label', cRHST72HnrSymPlaces,  _this getVariable ['rhs_decalHonor_type','Honor'],call compile _value] ] ] call rhs_fnc_decalsInit};";
 			};
 			class rhs_ammoslot_1_type
 			{
+				displayName="Ammo slot #1 type";
 				tooltip="Define type of shell for #1 slot [AP rounds]";
 				property="rhs_ammoslot_1_type";
 				control="Combo";
@@ -1178,6 +1210,7 @@ class CfgVehicles
 			};
 			class rhs_ammoslot_1
 			{
+				displayName="Ammo slot #1 count";
 				tooltip="Define number of rounds stored inside of type #1. Max 22. Leave -1 for default loadout";
 				property="rhs_ammoslot_1";
 				control="Edit";
@@ -1187,6 +1220,7 @@ class CfgVehicles
 			};
 			class rhs_ammoslot_2_type: rhs_ammoslot_1_type
 			{
+				displayName="Ammo slot #2 type";
 				tooltip="Define type of shell for #2 slot [HEAT rounds]";
 				property="rhs_ammoslot_2_type";
 				class values
@@ -1237,11 +1271,13 @@ class CfgVehicles
 			};
 			class rhs_ammoslot_2: rhs_ammoslot_1
 			{
+				displayName="Ammo slot #2 count";
 				tooltip="Define number of rounds stored inside of type #2. Max 22. Leave -1 for default loadout";
 				property="rhs_ammoslot_2";
 			};
 			class rhs_ammoslot_3_type: rhs_ammoslot_1_type
 			{
+				displayName="Ammo slot #3 type";
 				tooltip="Define type of shell for #3 slot [HE rounds]";
 				property="rhs_ammoslot_3_type";
 				class values
@@ -1262,11 +1298,13 @@ class CfgVehicles
 			};
 			class rhs_ammoslot_3: rhs_ammoslot_1
 			{
+				displayName="Ammo slot #3 count";
 				tooltip="Define number of rounds stored inside of type #3. Max 22. Leave -1 for default loadout";
 				property="rhs_ammoslot_3";
 			};
 			class rhs_ammoslot_4_type: rhs_ammoslot_1_type
 			{
+				displayName="Ammo slot #4 type";
 				tooltip="Define type of shell for #4 slot [ATGM rounds]";
 				property="rhs_ammoslot4_type";
 				class values
@@ -1293,11 +1331,13 @@ class CfgVehicles
 			};
 			class rhs_ammoslot_4: rhs_ammoslot_1
 			{
+				displayName="Ammo slot #4 count";
 				tooltip="Define number of rounds stored inside of type #4. Max 22. Leave -1 for default loadout";
 				property="rhs_ammoslot_4";
 			};
 			class rhs_hide_com_shield
 			{
+				displayName="Remove commander shield";
 				property="rhs_hide_com_shield";
 				control="CheckboxNumber";
 				expression="_this animate ['hide_com_shield',_value,true]";
@@ -1372,14 +1412,21 @@ class CfgVehicles
 			};
 		};
 	};
-	class rhs_t72ba_tv: rhs_a3t72tank_base;  //found empty after stripping
+	class rhs_t72ba_tv: rhs_a3t72tank_base
+	{
+		displayName="$STR_T72BA_Name";
+	};
 	class rhs_t72bb_tv: rhs_a3t72tank_base
 	{
+		displayName="$STR_T72BB_Name";
 		class textureSources: textureSources
 		{
 			class standard: standard;  //found empty after stripping
 			class rhs_Sand: rhs_Sand;  //found empty after stripping
-			class rhs_chdkz: rhs_Sand;  //found empty after stripping
+			class rhs_chdkz: rhs_Sand
+			{
+				displayName="CHDKZ";
+			};
 		};
 		class HitPoints: HitPoints
 		{
@@ -1879,11 +1926,15 @@ class CfgVehicles
 	};
 	class rhs_t72bc_tv: rhs_a3t72tank_base
 	{
+		displayName="$STR_T72BC_Name";
 		class textureSources: textureSources
 		{
 			class standard: standard;  //found empty after stripping
 			class rhs_Sand: rhs_Sand;  //found empty after stripping
-			class rhs_chdkz: rhs_chdkz;  //found empty after stripping
+			class rhs_chdkz: rhs_chdkz
+			{
+				displayName="";
+			};
 		};
 		class HitPoints: HitPoints
 		{
@@ -2323,6 +2374,7 @@ class CfgVehicles
 	};
 	class rhs_t72bd_tv: rhs_a3t72tank_base
 	{
+		displayName="$STR_T72BD_Name";
 		normalSpeedForwardCoef=0.75;
 		slowSpeedForwardCoef=0.25;
 		fuelCapacity=29.5;
@@ -2436,7 +2488,10 @@ class CfgVehicles
 		{
 			class standard: standard;  //found empty after stripping
 			class rhs_Sand: rhs_Sand;  //found empty after stripping
-			class rhs_chdkz: rhs_chdkz;  //found empty after stripping
+			class rhs_chdkz: rhs_chdkz
+			{
+				displayName="";
+			};
 		};
 		class Damage;  //found empty after stripping
 		class HitPoints: HitPoints
@@ -3121,6 +3176,7 @@ class CfgVehicles
 	};
 	class rhs_t72be_tv: rhs_t72bd_tv
 	{
+		displayName="$STR_T72BE_Name";
 		normalSpeedForwardCoef=0.75;
 		slowSpeedForwardCoef=0.25;
 		fuelCapacity=29.5;
@@ -4103,6 +4159,7 @@ class CfgVehicles
 	};
 	class rhs_t90_tv: rhs_t72bd_tv
 	{
+		displayName="$STR_T90_Name";
 		simulation="tankX";
 		normalSpeedForwardCoef=0.75;
 		slowSpeedForwardCoef=0.25;
@@ -4257,7 +4314,10 @@ class CfgVehicles
 		{
 			class standard: standard;  //found empty after stripping
 			class rhs_Sand: rhs_Sand;  //found empty after stripping
-			class RHS_CDF;  //found empty after stripping
+			class RHS_CDF
+			{
+				displayName="";
+			};
 		};
 		rhs_aps_shtora=1;
 		class EventHandlers: EventHandlers
@@ -4640,6 +4700,7 @@ class CfgVehicles
 	};
 	class rhs_t90a_tv: rhs_t90_tv
 	{
+		displayName="$STR_T90A_Name";
 		normalSpeedForwardCoef=0.75;
 		slowSpeedForwardCoef=0.25;
 		fuelCapacity=29.5;
@@ -4912,6 +4973,7 @@ class CfgVehicles
 	};
 	class rhs_t90saa_tv: rhs_t90a_tv
 	{
+		displayName="$STR_T90SAA_Name";
 		class textureSources: textureSources
 		{
 			class standard: standard;  //found empty after stripping
@@ -5308,6 +5370,7 @@ class CfgVehicles
 	};
 	class rhs_t90sab_tv: rhs_t90a_tv
 	{
+		displayName="$STR_T90SAB_Name";
 		class textureSources: textureSources
 		{
 			class standard: standard;  //found empty after stripping
@@ -5986,6 +6049,7 @@ class CfgVehicles
 	};
 	class rhs_t90am_tv: rhs_t90_tv
 	{
+		displayName="$STR_T90AM_Name";
 		normalSpeedForwardCoef=0.75;
 		slowSpeedForwardCoef=0.25;
 		fuelCapacity=29.5;
@@ -7025,6 +7089,7 @@ class CfgVehicles
 	};
 	class rhs_t90sm_tv: rhs_t90am_tv
 	{
+		displayName="$STR_T90SM_Name";
 		class textureSources: textureSources
 		{
 			class standard: standard;  //found empty after stripping
@@ -7846,10 +7911,17 @@ class CfgVehicles
 	class rhs_Wreck_T72_turret_F: ThingX
 	{
 		reversed=1;
+		displayName="T-72B Wreck (Turret)";
 		icon="iconObject_1x2";
 	};
-	class rhs_Wreck_T90a_turret_F: rhs_Wreck_T72_turret_F;  //found empty after stripping
-	class rhs_Wreck_T90am_turret_F: rhs_Wreck_T72_turret_F;  //found empty after stripping
+	class rhs_Wreck_T90a_turret_F: rhs_Wreck_T72_turret_F
+	{
+		displayName="T-90A Wreck (Turret)";
+	};
+	class rhs_Wreck_T90am_turret_F: rhs_Wreck_T72_turret_F
+	{
+		displayName="T-90A Wreck (Turret)";
+	};
 };
 class CfgNonAIVehicles
 {

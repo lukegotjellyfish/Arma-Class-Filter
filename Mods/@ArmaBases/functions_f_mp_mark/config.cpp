@@ -79,8 +79,11 @@ class CfgHints
 {
 	class DynamicGroups
 	{
+		displayName="Dynamic Groups";
 		class DG_DynamicGroups
 		{
+			displayName="Dynamic Groups";
+			displayNameShort="Groups";
 			description="Join or create your own group, invite other players and form your own squad.";
 			tip="Press %11 to open/close the Dynamic Groups interface";
 			arguments[]=
@@ -98,8 +101,10 @@ class CfgHints
 	};
 	class MP_Marksmen
 	{
+		displayName="HVT";
 		class MK_GroupMarkers
 		{
+			displayName="$STR_A3_mp_groundsupport_hints_group_markers_label";
 			description="Group Markers allow you to visualize friendly groups near your location.";
 			tip="Press %3CTRL +%4 %11 to toggle on/off the group markers";
 			image="\a3\ui_f\data\gui\cfg\hints\UnitType_CA.paa";

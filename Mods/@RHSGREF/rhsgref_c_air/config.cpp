@@ -167,6 +167,7 @@ class CfgVehicles
 	{
 		forceInGarage=0;
 		icon="rhsgref\addons\rhsgref_air\uh1h\ui\icon_uh1h_ca.paa";
+		displayName="UH1H";
 		GetInAction="pilot_Heli_Light_02_Enter";
 		GetOutAction="pilot_Heli_Light_02_Exit";
 		preciseGetInOut=1;
@@ -788,17 +789,31 @@ class CfgVehicles
 		{
 			class hidf_grey
 			{
+				displayName="HIDF Grey";
 				factions[]=
 				{
 					"rhsgref_faction_hidf"
 				};
 			};
-			class hidf_summer: hidf_grey;  //found empty after stripping
-			class hidf_tropical: hidf_grey;  //found empty after stripping
-			class hidf_olv: hidf_grey;  //found empty after stripping
-			class hidf_tan: hidf_grey;  //found empty after stripping
+			class hidf_summer: hidf_grey
+			{
+				displayName="HIDF MERDC (Summer verdant)";
+			};
+			class hidf_tropical: hidf_grey
+			{
+				displayName="HIDF MERDC (Tropical verdant)";
+			};
+			class hidf_olv: hidf_grey
+			{
+				displayName="HIDF Olive";
+			};
+			class hidf_tan: hidf_grey
+			{
+				displayName="HIDF Tan";
+			};
 			class un
 			{
+				displayName="UN";
 				factions[]=
 				{
 					"rhsgref_faction_un"
@@ -806,6 +821,7 @@ class CfgVehicles
 			};
 			class idap
 			{
+				displayName="IDAP";
 				factions[]=
 				{
 					"CIV_IDAP_F"
@@ -813,15 +829,20 @@ class CfgVehicles
 			};
 			class us_army
 			{
+				displayName="US Army";
 				factions[]=
 				{
 					"rhs_faction_usarmy_wd",
 					"rhs_faction_usarmy_d"
 				};
 			};
-			class us_army_med: us_army;  //found empty after stripping
+			class us_army_med: us_army
+			{
+				displayName="US Army (Medevac)";
+			};
 			class black
 			{
+				displayName="Black";
 				factions[]=
 				{
 					"CIV_F"
@@ -829,6 +850,7 @@ class CfgVehicles
 			};
 			class iraq
 			{
+				displayName="Iraqi Air Force";
 				factions[]=
 				{
 					"IND_F"
@@ -836,6 +858,7 @@ class CfgVehicles
 			};
 			class takistan
 			{
+				displayName="Takistan";
 				factions[]=
 				{
 					"OPF_F"
@@ -843,6 +866,7 @@ class CfgVehicles
 			};
 			class guerilla
 			{
+				displayName="Guerilla";
 				factions[]=
 				{
 					"IND_G_F",
@@ -852,6 +876,7 @@ class CfgVehicles
 			};
 			class tan
 			{
+				displayName="Tan";
 				factions[]=
 				{
 					"IND_G_F",
@@ -860,13 +885,20 @@ class CfgVehicles
 					"IND_F"
 				};
 			};
-			class olive: tan;  //found empty after stripping
-			class white: tan;  //found empty after stripping
+			class olive: tan
+			{
+				displayName="Olive";
+			};
+			class white: tan
+			{
+				displayName="White";
+			};
 		};
 	};
 	class rhs_uh1h_hidf: rhs_uh1h_base
 	{
 		side=1;
+		displayName="UH-1H";
 		typicalCargo[]=
 		{
 			"rhsgref_hidf_helipilot"
@@ -892,6 +924,7 @@ class CfgVehicles
 			{
 				control="ObjectTexture";
 				data="ObjectTexture";
+				displayName="Paint";
 				tooltip="Select paint color.";
 			};
 		};
@@ -899,6 +932,7 @@ class CfgVehicles
 	class rhs_uh1h_hidf_gunship: rhs_uh1h_hidf
 	{
 		forceInGarage=1;
+		displayName="UH-1H Gunship";
 		availableForSupportTypes[]=
 		{
 			"CAS_Heli",
@@ -966,6 +1000,7 @@ class CfgVehicles
 	class rhs_uh1h_hidf_unarmed: rhs_uh1h_hidf
 	{
 		forceInGarage=1;
+		displayName="UH-1H Unarmed";
 		class Attributes: Attributes
 		{
 			class uh1h_textures: uh1h_textures;  //found empty after stripping
@@ -978,6 +1013,7 @@ class CfgVehicles
 	class rhs_uh1h_un: rhs_uh1h_base
 	{
 		side=2;
+		displayName="UH-1H";
 		typicalCargo[]=
 		{
 			"rhsgref_cdf_un_pilot"
@@ -991,6 +1027,7 @@ class CfgVehicles
 	class rhs_uh1h_idap: rhs_uh1h_base
 	{
 		side=3;
+		displayName="UH-1H";
 		typicalCargo[]=
 		{
 			"C_IDAP_Pilot_01_F"
@@ -1005,6 +1042,7 @@ class CfgVehicles
 	class Land_UH1H_Wreck_F: UWreck_base_F
 	{
 		keepHorizontalPlacement=1;
+		displayName="UH-1H Wreck";
 		icon="rhsgref\addons\rhsgref_air\uh1h\ui\icon_uh1h_ca.paa";
 	};
 	class Heli_Transport_02_base_F: Helicopter_Base_H;  //found empty after stripping
@@ -1048,6 +1086,7 @@ class CfgVehicles
 	};
 	class RHS_L159_base: Plane_Fighter_03_base_F
 	{
+		displayName="$STR_RHSGREF_AIR_L159_NAME";
 		selectionDashboard="podsvit pristroju";
 		class pilotCamera;  //found empty after stripping
 		class EjectionSystem;  //found empty after stripping
@@ -1341,6 +1380,7 @@ class CfgVehicles
 	};
 	class rhs_l159_CDF_plamen: rhs_l159_CDF
 	{
+		displayName="L-159 (Plamen)";
 		class Components: Components
 		{
 			class TransportPylonsComponent: TransportPylonsComponent
@@ -1374,6 +1414,7 @@ class CfgVehicles
 	};
 	class rhs_l159_CDF_CAP: rhs_l159_CDF
 	{
+		displayName="L-159 (CAP)";
 		class Components: Components
 		{
 			class TransportPylonsComponent: TransportPylonsComponent
@@ -1406,6 +1447,7 @@ class CfgVehicles
 	};
 	class rhs_l159_CDF_CAS: rhs_l159_CDF
 	{
+		displayName="L-159 (CAS)";
 		class Components: Components
 		{
 			class TransportPylonsComponent: TransportPylonsComponent
@@ -1441,6 +1483,7 @@ class CfgVehicles
 	};
 	class RHS_L39_base: RHS_L159_base
 	{
+		displayName="$STR_RHSGREF_AIR_L39C_NAME";
 		thrustCoef[]={1.8,1.5,1.4,1.3,1.3,1.3,1.3,1.2,1.1,0.80000001,0.60000002,0.40000001,0.30000001,0,0,0};
 		envelope[]={0,0.15000001,1.1,3,5,5.8299999,6,5.8499999,5.5,4.8000002,3.5999999,1.8,0};
 		class WingVortices
@@ -1951,6 +1994,7 @@ class CfgVehicles
 	class rhs_vs1_seat: Car_f
 	{
 		hiddenSelections[]={};
+		displayName="VS-1 Ejection Seat";
 		simulation="motorcycle";
 		isBicycle=0;
 		memoryPointTrack1L="";
@@ -2416,6 +2460,7 @@ class CfgVehicles
 		{
 			class standardCDF
 			{
+				displayName="CDF";
 				factions[]=
 				{
 					"rhsgref_faction_cdf_air"
@@ -2425,13 +2470,20 @@ class CfgVehicles
 			{
 				displayname="АэроШрот";
 			};
-			class airtak;  //found empty after stripping
-			class military;  //found empty after stripping
+			class airtak
+			{
+				displayName="AirTak";
+			};
+			class military
+			{
+				displayName="Military";
+			};
 		};
 		class Attributes
 		{
 			class rhs_decalNumber_type
 			{
+				displayName="Define font type of side number";
 				tooltip="Define kind of font that will be drawn on vehicle";
 				property="rhs_decalNumber_type";
 				control="Combo";
@@ -2509,6 +2561,7 @@ class CfgVehicles
 			};
 			class rhs_decalNumber
 			{
+				displayName="Set side number";
 				tooltip="Set side number. 2 numbers are required. Type 0 to hide numbers completly";
 				property="rhs_decalNumber";
 				control="Edit";
@@ -2518,6 +2571,7 @@ class CfgVehicles
 			};
 			class rhs_decalTail
 			{
+				displayName="Define tail decal";
 				tooltip="Define tail decal that will be drawn on vehicle";
 				property="rhs_decalTail";
 				control="Combo";
@@ -2550,6 +2604,7 @@ class CfgVehicles
 			};
 			class door
 			{
+				displayName="Open Door";
 				property="door";
 				control="slider";
 				expression="_this animate ['door',_value];";
@@ -2693,6 +2748,7 @@ class CfgVehicles
 		{
 			"rhsgref_cdf_air_pilot"
 		};
+		displayName="$STR_RHSGREF_AIR_AN2_NAME";
 		rhs_decalParameters[]=
 		{
 			"['Number',[3,4],'AviaCDF']",

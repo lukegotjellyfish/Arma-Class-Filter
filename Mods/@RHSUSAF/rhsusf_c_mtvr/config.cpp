@@ -52,6 +52,7 @@ class CfgVehicles
 	class rhsusf_mtvr_base: Truck_01_base_F
 	{
 		side=1;
+		displayName="MTVR";
 		supplyRadius=4.5;
 		class HitPoints: HitPoints
 		{
@@ -277,6 +278,7 @@ class CfgVehicles
 	};
 	class rhsusf_mtvr_mk23_wd: rhsusf_mtvr_base
 	{
+		displayName="Mk23 MTVR";
 		accuracy=0.5;
 	};
 };

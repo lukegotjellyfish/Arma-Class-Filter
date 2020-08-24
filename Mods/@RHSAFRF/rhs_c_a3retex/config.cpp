@@ -47,6 +47,7 @@ class CfgVehicles
 	};
 	class rhs_typhoon_base: O_Truck_03_repair_F
 	{
+		displayName="$STR_RHS_KAMAZ63968_NAME";
 		terrainCoef=1.8;
 		wheelCircumference=3.776;
 		turnCoef=3.7;
@@ -190,6 +191,7 @@ class CfgVehicles
 		{
 			class rhs_green
 			{
+				displayName="Green";
 				factions[]=
 				{
 					"rhs_faction_vmf",
@@ -215,6 +217,7 @@ class CfgVehicles
 		LESH_AxisOffsetTarget[]={0,-8,-0.74000001};
 		LESH_WheelOffset[]={0,3};
 		armorStructural=2;
+		displayName="Ka-60";
 		typicalCargo[]=
 		{
 			"rhs_pilot_combat_heli"
@@ -340,13 +343,17 @@ class CfgVehicles
 		{
 			class vvs_grey
 			{
+				displayName="VVS - Grey";
 				factions[]=
 				{
 					"rhs_faction_vvs",
 					"rhs_faction_vvs_c"
 				};
 			};
-			class vvs_camo: vvs_grey;  //found empty after stripping
+			class vvs_camo: vvs_grey
+			{
+				displayName="VVS - Camo";
+			};
 		};
 		class EventHandlers: EventHandlers
 		{

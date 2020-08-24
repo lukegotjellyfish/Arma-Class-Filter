@@ -70,6 +70,7 @@ class CfgVehicles
 	{
 		features="Randomization: No						<br />Camo selections: 3 - hull, main turret, cannon and accessories						<br />Script door sources: None						<br />Script animations: None						<br />Executed scripts: None						<br />Firing from vehicles: No						<br />Slingload: No						<br />Cargo proxy indexes: None";
 		_generalMacro="MBT_02_base_F";
+		displayName="$STR_A3_CfgVehicles_MBT_02_Base0";
 		memoryPointTaskMarker="TaskMarker_1_pos";
 		driverForceOptics=0;
 		LODDriverTurnedOut=0;
@@ -2730,6 +2731,7 @@ class CfgVehicles
 		weaponsGroup3="8 + 	16 + 	32";
 		weaponsGroup4="64 + 		128";
 		features="Randomization: No						<br />Camo selections: 4 - hull, main turret, accessories, RCWS turret						<br />Script door sources: None						<br />Script animations: None						<br />Executed scripts: None						<br />Firing from vehicles: No						<br />Slingload: No						<br />Cargo proxy indexes: None";
+		displayName="$STR_A3_CFGVEHICLES_MBT_02_ARTY_BASE0";
 		class MFD
 		{
 			class MFD_Driver_Heading
@@ -5463,6 +5465,7 @@ class CfgVehicles
 		{
 			class Hex
 			{
+				displayName="$STR_A3_TEXTURESOURCES_OPFOR0";
 				factions[]=
 				{
 					"OPF_F"
@@ -6284,6 +6287,7 @@ class CfgVehicles
 		{
 			class Hex
 			{
+				displayName="$STR_A3_TEXTURESOURCES_OPFOR0";
 				factions[]=
 				{
 					"OPF_F"

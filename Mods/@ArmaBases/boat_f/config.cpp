@@ -25,6 +25,7 @@ class CfgVehicles
 	{
 		features="Randomization: No						<br />Camo selections: 1 - main body						<br />Script door sources: None						<br />Script animations: None						<br />Executed scripts: None						<br />Firing from vehicles: Positions 1 to 4						<br />Slingload: Slingloadable						<br />Cargo proxy indexes: 1 to 4";
 		_generalMacro="Rubber_duck_base_F";
+		displayName="$STR_A3_CfgVehicles_Rubber_duck_base0";
 		accuracy=0.5;
 		memoryPointTaskMarker="TaskMarker_1_pos";
 		slingLoadCargoMemoryPoints[]=
@@ -169,6 +170,7 @@ class CfgVehicles
 		{
 			class Black
 			{
+				displayName="$STR_A3_TEXTURESOURCES_BLACK0";
 				factions[]=
 				{
 					"BLU_F"
@@ -176,6 +178,7 @@ class CfgVehicles
 			};
 			class Hex
 			{
+				displayName="$STR_A3_TEXTURESOURCES_OPFOR0";
 				factions[]=
 				{
 					"OPF_F"
@@ -183,6 +186,7 @@ class CfgVehicles
 			};
 			class Rescue
 			{
+				displayName="$STR_A3_TEXTURESOURCES_RESCUE0";
 				factions[]=
 				{
 					"BLU_F",
@@ -192,6 +196,7 @@ class CfgVehicles
 			};
 			class Civilian
 			{
+				displayName="$STR_A3_TEXTURESOURCES_CIV0";
 				factions[]=
 				{
 					"CIV_F"
@@ -199,6 +204,7 @@ class CfgVehicles
 			};
 			class Digital
 			{
+				displayName="$STR_A3_TEXTURESOURCES_DIGITAL0";
 				factions[]=
 				{
 					"IND_F"
@@ -364,6 +370,7 @@ class CfgVehicles
 	class Rescue_duck_base_F: Rubber_duck_base_F
 	{
 		_generalMacro="Rescue_duck_base_F";
+		displayName="$STR_A3_CfgVehicles_Rescue_duck_base0";
 		textureList[]=
 		{
 			"Rescue",

@@ -69,6 +69,7 @@ class CfgVehicles
 	class rhsusf_caiman_base: Truck_01_base_F
 	{
 		side=1;
+		displayName="Caiman";
 		weapons[]=
 		{
 			"TruckHorn2",
@@ -82,8 +83,14 @@ class CfgVehicles
 		driverRightLegAnimName="pedal_r";
 		class textureSources
 		{
-			class rhs_desert;  //found empty after stripping
-			class rhs_woodland;  //found empty after stripping
+			class rhs_desert
+			{
+				displayName="Desert";
+			};
+			class rhs_woodland
+			{
+				displayName="Woodland";
+			};
 		};
 		class Attributes
 		{
@@ -91,6 +98,7 @@ class CfgVehicles
 			{
 				control="CheckboxNumber";
 				defaultValue="0";
+				displayName="hide DUKE antennas";
 				property="rhs_hideDUKE";
 				expression="_this animate ['DUKE_Hide',_value,true];if(_value isEqualTo 1)then{_this removeWeaponTurret ['rhsusf_weap_duke',[-1]]};";
 			};
@@ -353,6 +361,7 @@ class CfgVehicles
 	};
 	class rhsusf_M1220_usarmy_d: rhsusf_caiman_base
 	{
+		displayName="$STR_RHS_M1220_NAME";
 		accuracy=0.5;
 	};
 	class rhsusf_caiman_GPK_base: rhsusf_caiman_base
@@ -370,6 +379,7 @@ class CfgVehicles
 	};
 	class rhsusf_M1220_M2_usarmy_d: rhsusf_caiman_GPK_base
 	{
+		displayName="$STR_RHS_M1220_M2_NAME";
 		accuracy=0.5;
 		class Turrets: Turrets
 		{
@@ -414,6 +424,7 @@ class CfgVehicles
 	};
 	class rhsusf_M1220_MK19_usarmy_d: rhsusf_M1220_M2_usarmy_d
 	{
+		displayName="$STR_RHS_M1220_MK19_NAME";
 		accuracy=0.5;
 		class Turrets: Turrets
 		{
@@ -448,6 +459,7 @@ class CfgVehicles
 	};
 	class rhsusf_M1220_M153_M2_usarmy_d: rhsusf_M1220_M2_usarmy_d
 	{
+		displayName="$STR_RHS_M1220_M153_M2_NAME";
 		accuracy=0.5;
 		threat[]={0.89999998,0.30000001,0.1};
 		animationList[]={};
@@ -1367,6 +1379,7 @@ class CfgVehicles
 	};
 	class rhsusf_M1220_M153_MK19_usarmy_d: rhsusf_M1220_M153_M2_usarmy_d
 	{
+		displayName="$STR_RHS_M1220_M153_MK19_NAME";
 		class Turrets: Turrets
 		{
 			class CROWS_Turret: CROWS_Turret
@@ -1386,6 +1399,7 @@ class CfgVehicles
 	};
 	class rhsusf_M1230_M2_usarmy_d: rhsusf_caiman_GPK_base
 	{
+		displayName="$STR_RHS_M1230_M2_NAME";
 		accuracy=0.5;
 		class Hitpoints: HitPoints
 		{
@@ -1407,6 +1421,7 @@ class CfgVehicles
 			{
 				control="CheckboxNumber";
 				defaultValue="0";
+				displayName="Lower Rhino";
 				property="Rhino_down";
 				expression="_this animateDoor ['%s',_value,true]";
 			};
@@ -1414,6 +1429,7 @@ class CfgVehicles
 			{
 				control="CheckboxNumber";
 				defaultValue="0";
+				displayName="hide Low Wire Protection Kit";
 				property="rhs_hideLWPK";
 				expression="_this animate ['LWPK_hide',_value,true]";
 			};
@@ -1462,6 +1478,7 @@ class CfgVehicles
 	};
 	class rhsusf_M1230_MK19_usarmy_d: rhsusf_M1230_M2_usarmy_d
 	{
+		displayName="$STR_RHS_M1230_MK19_NAME";
 		accuracy=0.5;
 		threat[]={0.89999998,0.30000001,0.1};
 		class Turrets: Turrets
@@ -1497,39 +1514,48 @@ class CfgVehicles
 	};
 	class rhsusf_M1230a1_usarmy_d: rhsusf_M1220_usarmy_d
 	{
+		displayName="$STR_RHS_M1230A1_NAME";
 		accuracy=0.5;
 		attendant=1;
 	};
 	class rhsusf_M1220_usarmy_wd: rhsusf_M1220_usarmy_d
 	{
+		displayName="$STR_RHS_M1220_NAME";
 		accuracy=0.5;
 	};
 	class rhsusf_M1220_M2_usarmy_wd: rhsusf_M1220_M2_usarmy_d
 	{
+		displayName="$STR_RHS_M1220_M2_NAME";
 		accuracy=0.5;
 	};
 	class rhsusf_M1220_MK19_usarmy_wd: rhsusf_M1220_MK19_usarmy_d
 	{
+		displayName="$STR_RHS_M1220_MK19_NAME";
 		accuracy=0.5;
 	};
 	class rhsusf_M1230_M2_usarmy_wd: rhsusf_M1230_M2_usarmy_d
 	{
+		displayName="$STR_RHS_M1230_M2_NAME";
 		accuracy=0.5;
 	};
 	class rhsusf_M1230_MK19_usarmy_wd: rhsusf_M1230_MK19_usarmy_d
 	{
+		displayName="$STR_RHS_M1230_MK19_NAME";
 		accuracy=0.5;
 	};
 	class rhsusf_M1220_M153_M2_usarmy_wd: rhsusf_M1220_M153_M2_usarmy_d
 	{
+		displayName="$STR_RHS_M1220_M153_M2_NAME";
 		accuracy=0.5;
 	};
 	class rhsusf_M1220_M153_MK19_usarmy_wd: rhsusf_M1220_M153_MK19_usarmy_d
 	{
+		displayName="$STR_RHS_M1220_M153_MK19_NAME";
 		accuracy=0.5;
 	};
 	class rhsusf_M1230a1_usarmy_wd: rhsusf_M1230a1_usarmy_d
 	{
+		displayName="$STR_RHS_M1230A1_NAME";
 		accuracy=0.5;
 	};
 };

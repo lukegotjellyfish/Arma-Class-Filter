@@ -96,6 +96,7 @@ class CfgVehicles
 			"Track_R",
 			"Slide"
 		};
+		displayName="$STR_SPRUT_Name";
 		accuracy=0.30000001;
 		weapons[]=
 		{
@@ -654,17 +655,36 @@ class CfgVehicles
 		};
 		class textureSources
 		{
-			class standard;  //found empty after stripping
-			class r1: standard;  //found empty after stripping
-			class r2: standard;  //found empty after stripping
-			class r3: standard;  //found empty after stripping
-			class r4: standard;  //found empty after stripping
-			class r5: standard;  //found empty after stripping
+			class standard
+			{
+				displayName="Standard";
+			};
+			class r1: standard
+			{
+				displayName="#1";
+			};
+			class r2: standard
+			{
+				displayName="#2";
+			};
+			class r3: standard
+			{
+				displayName="#3";
+			};
+			class r4: standard
+			{
+				displayName="#4";
+			};
+			class r5: standard
+			{
+				displayName="#5";
+			};
 		};
 		class Attributes
 		{
 			class rhs_decalNumber_type
 			{
+				displayName="Define font type of plate number";
 				tooltip="Define kind of font that will be drawn on vehicle.";
 				property="rhs_decalNumber_type";
 				control="Combo";
@@ -718,6 +738,7 @@ class CfgVehicles
 			class rhs_decalNumber
 			{
 				collapsed=1;
+				displayName="Set side number";
 				tooltip="Set side number. 4 numbers are required. Type 0 to hide numbers complety & leave at -1 to get random number";
 				property="rhs_decalNumber";
 				control="Edit";
@@ -727,6 +748,7 @@ class CfgVehicles
 			};
 			class rhs_decalPlatoon_type
 			{
+				displayName="Define platoon symbol type";
 				tooltip="Decal type";
 				property="rhs_decalPlatoon_type";
 				control="Combo";
@@ -769,6 +791,7 @@ class CfgVehicles
 			};
 			class rhs_decalPlatoon
 			{
+				displayName="Set platoon symbol";
 				tooltip="Set platoon symbol located on both sides. Usually used for platoon symbols. -1 leaves current symbol & 0 clears decal.";
 				property="rhs_decalPlatoon";
 				control="Edit";
@@ -778,6 +801,7 @@ class CfgVehicles
 			};
 			class rhs_ammoslot_1_type
 			{
+				displayName="Ammo slot #1 type";
 				tooltip="Define type of shell for #1 slot";
 				property="rhs_ammoslot_1_type";
 				control="Combo";
@@ -855,6 +879,7 @@ class CfgVehicles
 			};
 			class rhs_ammoslot_1
 			{
+				displayName="Ammo slot #1 count";
 				tooltip="Define number of rounds stored inside of type #1. Max 22. Leave -1 for default loadout";
 				property="rhs_ammoslot_1";
 				control="Edit";
@@ -864,6 +889,7 @@ class CfgVehicles
 			};
 			class rhs_ammoslot_2_type: rhs_ammoslot_1_type
 			{
+				displayName="Ammo slot #2 type";
 				tooltip="Define type of shell for #2 slot";
 				property="rhs_ammoslot_2_type";
 				class values
@@ -914,11 +940,13 @@ class CfgVehicles
 			};
 			class rhs_ammoslot_2: rhs_ammoslot_1
 			{
+				displayName="Ammo slot #2 count";
 				tooltip="Define number of rounds stored inside of type #2. Max 22. Leave -1 for default loadout";
 				property="rhs_ammoslot_2";
 			};
 			class rhs_ammoslot_3_type: rhs_ammoslot_1_type
 			{
+				displayName="Ammo slot #3 type";
 				tooltip="Define type of shell for #3 slot";
 				property="rhs_ammoslot_3_type";
 				class values
@@ -939,11 +967,13 @@ class CfgVehicles
 			};
 			class rhs_ammoslot_3: rhs_ammoslot_1
 			{
+				displayName="Ammo slot #3 count";
 				tooltip="Define number of rounds stored inside of type #3. Max 22. Leave -1 for default loadout";
 				property="rhs_ammoslot_3";
 			};
 			class rhs_ammoslot_4_type: rhs_ammoslot_1_type
 			{
+				displayName="Ammo slot #4 type";
 				tooltip="Define type of shell for #4 slot";
 				property="rhs_ammoslot4_type";
 				class values
@@ -970,6 +1000,7 @@ class CfgVehicles
 			};
 			class rhs_ammoslot_4: rhs_ammoslot_1
 			{
+				displayName="Ammo slot #4 count";
 				tooltip="Define number of rounds stored inside of type #4. Max 22. Leave -1 for default loadout";
 				property="rhs_ammoslot_4";
 			};
@@ -1045,7 +1076,10 @@ class CfgVehicles
 			};
 		};
 	};
-	class rhs_sprut_vdv: rhs_a3spruttank_base;  //found empty after stripping
+	class rhs_sprut_vdv: rhs_a3spruttank_base
+	{
+		displayName="$STR_SPRUT_Name";
+	};
 	class rhs_bmd4_vdv: rhs_a3spruttank_base
 	{
 		rhs_decalParameters[]=
@@ -1053,6 +1087,7 @@ class CfgVehicles
 			"['Number',cRHSBMD4NumberPlaces,'Default']",
 			"['Label',cRHSBMD4PlnSymPlaces, 'Platoon',11]"
 		};
+		displayName="$STR_BMD4_Name";
 		simulation="tankX";
 		normalSpeedForwardCoef=0.85000002;
 		slowSpeedForwardCoef=0.5;
@@ -1233,7 +1268,10 @@ class CfgVehicles
 		nameSound="veh_vehicle_APC_s";
 		class textureSources: textureSources
 		{
-			class standard: standard;  //found empty after stripping
+			class standard: standard
+			{
+				displayName="Standard";
+			};
 			class r1: r1;  //found empty after stripping
 			class r2: r2;  //found empty after stripping
 			class r3: r3;  //found empty after stripping
@@ -1689,6 +1727,7 @@ class CfgVehicles
 				maxCompression=0;
 			};
 		};
+		displayName="$STR_BMD4M_Name";
 		class Hitpoints: HitPoints
 		{
 			class Armor_Composite_75
@@ -1718,7 +1757,10 @@ class CfgVehicles
 		};
 		class textureSources: textureSources
 		{
-			class standard: standard;  //found empty after stripping
+			class standard: standard
+			{
+				displayName="Standard";
+			};
 		};
 		class Turrets: Turrets
 		{
@@ -1785,6 +1827,7 @@ class CfgVehicles
 	};
 	class rhs_bmd4ma_vdv: rhs_bmd4m_vdv
 	{
+		displayName="$STR_BMD4MA_Name";
 		class Hitpoints: Hitpoints
 		{
 			class Armor_Composite_60
@@ -1814,7 +1857,10 @@ class CfgVehicles
 		};
 		class textureSources: textureSources
 		{
-			class standard: standard;  //found empty after stripping
+			class standard: standard
+			{
+				displayName="Standard";
+			};
 		};
 	};
 };

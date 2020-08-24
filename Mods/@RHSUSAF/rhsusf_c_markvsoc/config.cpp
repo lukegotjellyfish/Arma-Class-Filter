@@ -505,6 +505,7 @@ class CfgVehicles
 	};
 	class rhsusf_mkvsoc: RHS_Ship
 	{
+		displayName="Mk.V SOC";
 		side=1;
 		nameSound="veh_ship_attackBoat_s";
 		canFloat=0;
@@ -1174,6 +1175,7 @@ class CfgVehicles
 			{
 				control="CheckboxNumber";
 				defaultValue="0";
+				displayName="Attach cargo";
 				tooltip="Attaching cargo (using attachTo command) just like when you use ramp action";
 				property="rhs_attachCargo";
 				expression="if(_value == 1)then{[_this] spawn rhsusf_fnc_markvsoc_attachBoats};";
@@ -1185,13 +1187,17 @@ class CfgVehicles
 		};
 		class textureSources
 		{
-			class marsoc;  //found empty after stripping
+			class marsoc
+			{
+				displayName="US";
+			};
 		};
 	};
 	class House_F;
 	class Land_PierLadder_F;
 	class Land_MkV_Ladder: Land_PierLadder_F
 	{
+		displayName="Ladder (MkV)";
 		icon="";
 		armor=150;
 		ladders[]=
@@ -1205,6 +1211,7 @@ class CfgVehicles
 	};
 	class Land_MkV_Roadway: House_F
 	{
+		displayName="Roadway (MkV)";
 		icon="";
 		armor=150;
 	};

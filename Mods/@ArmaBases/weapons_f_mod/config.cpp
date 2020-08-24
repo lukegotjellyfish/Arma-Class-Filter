@@ -41,6 +41,7 @@ class CfgWeapons
 	class SMG_03_TR_BASE: Rifle_Base_F
 	{
 		_generalMacro="SMG_03_TR_BASE";
+		displayName="$STR_A3_CfgWeapons_SMG_03_TR_BASE0";
 		magazines[]=
 		{
 			"50Rnd_570x28_SMG_03"
@@ -84,22 +85,27 @@ class CfgWeapons
 	class SMG_03_TR_black: SMG_03_TR_BASE
 	{
 		_generalMacro="SMG_03_TR_black";
+		displayName="$STR_A3_CfgWeapons_SMG_03_TR_black0";
 	};
 	class SMG_03_TR_camo: SMG_03_TR_black
 	{
 		_generalMacro="SMG_03_TR_camo";
+		displayName="$STR_A3_CfgWeapons_SMG_03_TR_camo0";
 	};
 	class SMG_03_TR_khaki: SMG_03_TR_black
 	{
 		_generalMacro="SMG_03_TR_khaki";
+		displayName="$STR_A3_CfgWeapons_SMG_03_TR_khaki0";
 	};
 	class SMG_03_TR_hex: SMG_03_TR_BASE
 	{
 		_generalMacro="SMG_03_TR_hex";
+		displayName="$STR_A3_CfgWeapons_SMG_03_TR_hex0";
 	};
 	class SMG_03C_TR_black: SMG_03C_BASE
 	{
 		_generalMacro="SMG_03C_TR_black";
+		displayName="$STR_A3_CfgWeapons_SMG_03C_TR_black0";
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=40;
@@ -108,18 +114,22 @@ class CfgWeapons
 	class SMG_03C_TR_camo: SMG_03C_TR_black
 	{
 		_generalMacro="SMG_03C_TR_camo";
+		displayName="$STR_A3_CfgWeapons_SMG_03C_TR_camo0";
 	};
 	class SMG_03C_TR_khaki: SMG_03C_TR_black
 	{
 		_generalMacro="SMG_03C_TR_khaki";
+		displayName="$STR_A3_CfgWeapons_SMG_03C_TR_khaki0";
 	};
 	class SMG_03C_TR_hex: SMG_03C_TR_black
 	{
 		_generalMacro="SMG_03C_TR_hex";
+		displayName="$STR_A3_CfgWeapons_SMG_03C_TR_hex0";
 	};
 	class SMG_03_black: SMG_03_TR_BASE
 	{
 		_generalMacro="SMG_03_black";
+		displayName="$STR_A3_CfgWeapons_SMG_03_black0";
 		class WeaponSlotsInfo
 		{
 			mass=50;
@@ -128,18 +138,22 @@ class CfgWeapons
 	class SMG_03_camo: SMG_03_black
 	{
 		_generalMacro="SMG_03_camo";
+		displayName="$STR_A3_CfgWeapons_SMG_03_camo0";
 	};
 	class SMG_03_khaki: SMG_03_black
 	{
 		_generalMacro="SMG_03_khaki";
+		displayName="$STR_A3_CfgWeapons_SMG_03_khaki0";
 	};
 	class SMG_03_hex: SMG_03_black
 	{
 		_generalMacro="SMG_03_hex";
+		displayName="$STR_A3_CfgWeapons_SMG_03_hex0";
 	};
 	class SMG_03C_black: SMG_03C_BASE
 	{
 		_generalMacro="SMG_03C_black";
+		displayName="$STR_A3_CfgWeapons_SMG_03C_black0";
 		class WeaponSlotsInfo
 		{
 			mass=40;
@@ -148,13 +162,16 @@ class CfgWeapons
 	class SMG_03C_camo: SMG_03C_black
 	{
 		_generalMacro="SMG_03C_camo";
+		displayName="$STR_A3_CfgWeapons_SMG_03C_camo0";
 	};
 	class SMG_03C_khaki: SMG_03C_black
 	{
 		_generalMacro="SMG_03C_khaki";
+		displayName="$STR_A3_CfgWeapons_SMG_03C_khaki0";
 	};
 	class SMG_03C_hex: SMG_03C_black
 	{
 		_generalMacro="SMG_03C_hex";
+		displayName="$STR_A3_CfgWeapons_SMG_03C_hex0";
 	};
 };

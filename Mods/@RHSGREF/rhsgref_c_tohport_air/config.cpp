@@ -96,25 +96,51 @@ class CfgVehicles
 		{
 			class standard
 			{
+				displayName="Grey";
 				factions[]=
 				{
 					"rhs_faction_vvs_c",
 					"rhs_faction_vvs"
 				};
 			};
-			class Camo: standard;  //found empty after stripping
-			class Camo1: standard;  //found empty after stripping
-			class Camo2: standard;  //found empty after stripping
-			class Camo3: standard;  //found empty after stripping
-			class Camo4: standard;  //found empty after stripping
-			class Camo5: standard;  //found empty after stripping
-			class Camo6: standard;  //found empty after stripping
-			class Camo7: standard;  //found empty after stripping
+			class Camo: standard
+			{
+				displayName="Camo #1";
+			};
+			class Camo1: standard
+			{
+				displayName="Camo #2";
+			};
+			class Camo2: standard
+			{
+				displayName="Camo #3";
+			};
+			class Camo3: standard
+			{
+				displayName="Camo #4";
+			};
+			class Camo4: standard
+			{
+				displayName="Soot Camo #1";
+			};
+			class Camo5: standard
+			{
+				displayName="Soot Camo #2";
+			};
+			class Camo6: standard
+			{
+				displayName="Soot Camo #3";
+			};
+			class Camo7: standard
+			{
+				displayName="CDF";
+			};
 		};
 		class Attributes
 		{
 			class rhs_hideExhaust
 			{
+				displayName="Hide exhaust cover";
 				tooltip="Hide exhaust cover. WARNING: DUE TO HOW ENGINE WORKS IT DOESN'T CHANGE EXHAUST MEMORY POINTS";
 				property="rhs_hideExhaust";
 				control="CheckboxNumber";
@@ -123,6 +149,7 @@ class CfgVehicles
 			};
 			class rhs_air_filter
 			{
+				displayName="Hide air filter";
 				tooltip="Hide air filter";
 				property="rhs_air_filter";
 				control="CheckboxNumber";
@@ -131,6 +158,7 @@ class CfgVehicles
 			};
 			class rhs_opendoors
 			{
+				displayName="Open cargo doors";
 				property="rhs_opendoors";
 				control="CheckboxNumber";
 				expression="_this animateDoor ['Door_Cargo',_value,true]";
@@ -138,6 +166,7 @@ class CfgVehicles
 			};
 			class rhs_decalNumber_type
 			{
+				displayName="Define font type of side number";
 				tooltip="Define kind of font that will be drawn on vehicle";
 				property="rhs_decalNumber_type";
 				control="Combo";
@@ -215,6 +244,7 @@ class CfgVehicles
 			};
 			class rhs_decalNumber
 			{
+				displayName="Set side number";
 				tooltip="Set side number. 2 numbers are required. Type 0 to hide numbers completly";
 				property="rhs_decalNumber";
 				control="Edit";
@@ -224,6 +254,7 @@ class CfgVehicles
 			};
 			class rhs_decalTail
 			{
+				displayName="Define tail decal";
 				tooltip="Define tail decalthat will be drawn on vehicle";
 				property="rhs_decalTail";
 				control="Combo";
@@ -586,10 +617,12 @@ class CfgVehicles
 	};
 	class rhsgref_mi24g_CAS: rhsgref_mi24g_base
 	{
+		displayName="$STR_RHSGREF_AIR_SUPERHIND_NAME";
 		side=2;
 	};
 	class rhsgref_mi24g_UPK23: rhsgref_mi24g_base
 	{
+		displayName="$STR_RHSGREF_AIR_SUPERHIND_UPK_NAME";
 		side=2;
 		memoryPointGun[]=
 		{
@@ -655,6 +688,7 @@ class CfgVehicles
 	};
 	class rhsgref_mi24g_FAB: rhsgref_mi24g_base
 	{
+		displayName="$STR_RHSGREF_AIR_SUPERHIND_FAB_NAME";
 		side=2;
 		class Components: Components
 		{

@@ -68,6 +68,7 @@ class CfgVehicles
 		{
 			"slide"
 		};
+		displayName="$STR_M109A6WD_Name";
 		accuracy=0.30000001;
 		icon="\rhsusf\addons\rhsusf_m109\data\sa_m109a6_icon_ca.paa";
 		typicalCargo[]={};
@@ -431,6 +432,7 @@ class CfgVehicles
 		{
 			class standard
 			{
+				displayName="Woodland";
 				factions[]=
 				{
 					"rhs_faction_usarmy_wd"
@@ -438,6 +440,7 @@ class CfgVehicles
 			};
 			class Desert
 			{
+				displayName="Desert";
 				factions[]=
 				{
 					"rhs_faction_usarmy_d"
@@ -474,6 +477,7 @@ class CfgVehicles
 		{
 			class rhs_hideIFFPanel
 			{
+				displayName="Hide IFF Panel";
 				property="rhs_hideIFFPanel";
 				control="CheckboxNumber";
 				expression="_this animate ['IFF_Panels_Hide',_value,true]";
@@ -481,6 +485,7 @@ class CfgVehicles
 			};
 			class rhs_ammoslot_1_type
 			{
+				displayName="Ammo slot #1 type";
 				tooltip="Define type of shell for #1 slot [HE rounds]";
 				property="rhs_ammoslot_1_type";
 				control="Combo";
@@ -498,6 +503,7 @@ class CfgVehicles
 			};
 			class rhs_ammoslot_1
 			{
+				displayName="Ammo slot #1 count";
 				tooltip="Define number of rounds stored inside of type #1. Max 46. Leave -1 for default loadout";
 				property="rhs_ammoslot_1";
 				control="Edit";
@@ -507,6 +513,7 @@ class CfgVehicles
 			};
 			class rhs_ammoslot_2_type: rhs_ammoslot_1_type
 			{
+				displayName="Ammo slot #2 type";
 				tooltip="Define type of shell for #2 slot [Smoke rounds]";
 				property="rhs_ammoslot_2_type";
 				class values
@@ -521,11 +528,13 @@ class CfgVehicles
 			};
 			class rhs_ammoslot_2: rhs_ammoslot_1
 			{
+				displayName="Ammo slot #2 count";
 				tooltip="Define number of rounds stored inside of type #2. Max 46. Leave -1 for default loadout";
 				property="rhs_ammoslot_2";
 			};
 			class rhs_ammoslot_3_type: rhs_ammoslot_1_type
 			{
+				displayName="Ammo slot #3 type";
 				tooltip="Define type of shell for #3 slot [Cluster rounds]";
 				property="rhs_ammoslot_3_type";
 				class values
@@ -540,11 +549,13 @@ class CfgVehicles
 			};
 			class rhs_ammoslot_3: rhs_ammoslot_1
 			{
+				displayName="Ammo slot #3 count";
 				tooltip="Define number of rounds stored inside of type #3. Max 46. Leave -1 for default loadout";
 				property="rhs_ammoslot_3";
 			};
 			class rhs_ammoslot_4_type: rhs_ammoslot_1_type
 			{
+				displayName="Ammo slot #4 type";
 				tooltip="Define type of shell for #4 slot [Laser guided rounds]";
 				property="rhs_ammoslot_4_type";
 				class values
@@ -559,11 +570,13 @@ class CfgVehicles
 			};
 			class rhs_ammoslot_4: rhs_ammoslot_1
 			{
+				displayName="Ammo slot #4 count";
 				tooltip="Define number of rounds stored inside of type #4. Max 46. Leave -1 for default loadout";
 				property="rhs_ammoslot_4";
 			};
 			class rhs_ammoslot_5_type: rhs_ammoslot_1_type
 			{
+				displayName="Ammo slot #5 type";
 				tooltip="Define type of shell for #5 slot [Special rounds]";
 				property="rhs_ammoslot_5_type";
 				class values
@@ -584,14 +597,21 @@ class CfgVehicles
 			};
 			class rhs_ammoslot_5: rhs_ammoslot_1
 			{
+				displayName="Ammo slot #5 count";
 				tooltip="Define number of rounds stored inside of type #5. Max 40. Leave -1 for default loadout";
 				property="rhs_ammoslot_5";
 			};
 		};
 		class EventHandlers: EventHandlers;  //found empty after stripping
 	};
-	class rhsusf_m109_usarmy: rhsusf_m109tank_base;  //found empty after stripping
-	class rhsusf_m109d_usarmy: rhsusf_m109_usarmy;  //found empty after stripping
+	class rhsusf_m109_usarmy: rhsusf_m109tank_base
+	{
+		displayName="$STR_M109A6WD_Name";
+	};
+	class rhsusf_m109d_usarmy: rhsusf_m109_usarmy
+	{
+		displayName="$STR_M109A6D_Name";
+	};
 };
 class CfgNonAIVehicles
 {

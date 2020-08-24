@@ -15328,29 +15328,74 @@ class CfgVehicles
 	class SoldierWB: CAManBase;  //found empty after stripping
 	class B_FieldPack_oli;
 	class B_Carryall_oli;
-	class rhsgref_cdf_backpack_mg: B_Carryall_oli;  //found empty after stripping
-	class rhsgref_cdf_backpack_mg2: B_Carryall_oli;  //found empty after stripping
-	class rhsgref_cdf_backpack_mg3: B_Carryall_oli;  //found empty after stripping
-	class rhsgref_cdf_backpack_engineer: B_Carryall_oli;  //found empty after stripping
-	class rhsgref_cdf_backpack_medic: B_Carryall_oli;  //found empty after stripping
+	class rhsgref_cdf_backpack_mg: B_Carryall_oli
+	{
+		displayName="Backpack MG";
+	};
+	class rhsgref_cdf_backpack_mg2: B_Carryall_oli
+	{
+		displayName="Backpack MG2";
+	};
+	class rhsgref_cdf_backpack_mg3: B_Carryall_oli
+	{
+		displayName="Backpack MG3";
+	};
+	class rhsgref_cdf_backpack_engineer: B_Carryall_oli
+	{
+		displayName="Backpack Engineer";
+	};
+	class rhsgref_cdf_backpack_medic: B_Carryall_oli
+	{
+		displayName="Backpack Medic";
+	};
 	class B_TacticalPack_oli;
 	class B_AssaultPack_blk;
 	class rhsusf_falconii;
-	class rhsgref_nat_backpack_mg: B_AssaultPack_blk;  //found empty after stripping
-	class rhsgref_nat_backpack_mg42: rhsusf_falconii;  //found empty after stripping
-	class rhsgref_nat_backpack_engineer: B_Carryall_oli;  //found empty after stripping
-	class rhsgref_nat_backpack_medic: B_TacticalPack_oli;  //found empty after stripping
-	class rhsgref_nat_backpack_explosives: B_TacticalPack_oli;  //found empty after stripping
+	class rhsgref_nat_backpack_mg: B_AssaultPack_blk
+	{
+		displayName="Backpack MG";
+	};
+	class rhsgref_nat_backpack_mg42: rhsusf_falconii
+	{
+		displayName="Backpack MG42";
+	};
+	class rhsgref_nat_backpack_engineer: B_Carryall_oli
+	{
+		displayName="Backpack Engineer";
+	};
+	class rhsgref_nat_backpack_medic: B_TacticalPack_oli
+	{
+		displayName="Backpack Medic";
+	};
+	class rhsgref_nat_backpack_explosives: B_TacticalPack_oli
+	{
+		displayName="Backpack Saboteur";
+	};
 	class B_FieldPack_khk;
 	class B_FieldPack_cbr;
 	class B_TacticalPack_blk;
 	class B_Carryall_cbr;
 	class rhs_assault_umbts_engineer_empty;
-	class rhsgref_ins_pack: B_FieldPack_khk;  //found empty after stripping
-	class rhsgref_ins_pack_GR: B_FieldPack_cbr;  //found empty after stripping
-	class rhsgref_ins_packMG: B_TacticalPack_blk;  //found empty after stripping
-	class rhsgref_ins_pack_demo: rhs_assault_umbts_engineer_empty;  //found empty after stripping
-	class rhsgref_ins_pack_saboteur: rhsgref_ins_pack_demo;  //found empty after stripping
+	class rhsgref_ins_pack: B_FieldPack_khk
+	{
+		displayName="Backpack (Ammo)";
+	};
+	class rhsgref_ins_pack_GR: B_FieldPack_cbr
+	{
+		displayName="Backpack (Ammo)";
+	};
+	class rhsgref_ins_packMG: B_TacticalPack_blk
+	{
+		displayName="Backpack (MG)";
+	};
+	class rhsgref_ins_pack_demo: rhs_assault_umbts_engineer_empty
+	{
+		displayName="$STR_RHS_UMBTSBACKPACKDEMOLITIONS_NAME";
+	};
+	class rhsgref_ins_pack_saboteur: rhsgref_ins_pack_demo
+	{
+		displayName="Backpack Saboteur";
+	};
 	class Bag_Base;
 	class B_AssaultPack_rgr;
 	class B_Kitbag_rgr;
@@ -15490,6 +15535,7 @@ class CfgVehicles
 	};
 	class rhsgref_cdf_ngd_rifleman: rhsgref_cdf_ngd_base
 	{
+		displayName="$STR_RHS_INF_RIFLEMAN";
 		linkedItems[]=
 		{
 			"rhsgref_ssh68_ttsko_forest",
@@ -15511,6 +15557,7 @@ class CfgVehicles
 	};
 	class rhsgref_cdf_ngd_rifleman_rpg75: rhsgref_cdf_ngd_base
 	{
+		displayName="$STR_RHSGREF_INF_RIFLEMAN_RPG75";
 		nameSound="veh_infantry_AT_s";
 		cost=180000;
 		threat[]={1,0.69999999,0.30000001};
@@ -15596,6 +15643,7 @@ class CfgVehicles
 	};
 	class rhsgref_cdf_ngd_rifleman_ak74: rhsgref_cdf_ngd_base
 	{
+		displayName="$STR_RHSGREF_inf_rifleman_ak74";
 		linkedItems[]=
 		{
 			"rhs_ssh68",
@@ -15651,6 +15699,7 @@ class CfgVehicles
 	};
 	class rhsgref_cdf_ngd_rifleman_lite: rhsgref_cdf_ngd_base
 	{
+		displayName="$STR_RHS_INF_RIFLEMAN_L";
 		linkedItems[]=
 		{
 			"rhsgref_fieldcap_ttsko_forest",
@@ -15684,6 +15733,7 @@ class CfgVehicles
 	};
 	class rhsgref_cdf_ngd_grenadier: rhsgref_cdf_ngd_rifleman
 	{
+		displayName="$STR_RHS_INF_GRENADIER";
 		linkedItems[]=
 		{
 			"rhsgref_fieldcap_ttsko_forest",
@@ -15752,6 +15802,7 @@ class CfgVehicles
 	};
 	class rhsgref_cdf_ngd_machinegunner: rhsgref_cdf_ngd_rifleman
 	{
+		displayName="$STR_RHS_INF_MACHINEGUNNER";
 		nameSound="veh_infantry_MG_s";
 		cost=125000;
 		threat[]={1,0.1,0.30000001};
@@ -15799,6 +15850,7 @@ class CfgVehicles
 	};
 	class rhsgref_cdf_ngd_officer: rhsgref_cdf_ngd_rifleman
 	{
+		displayName="$STR_RHS_INF_OFFICER";
 		cost=600000;
 		camouflage=1.4;
 		sensitivity=3.3;
@@ -15858,6 +15910,7 @@ class CfgVehicles
 	};
 	class rhsgref_cdf_ngd_squadleader: rhsgref_cdf_ngd_rifleman
 	{
+		displayName="$STR_RHSUSF_INF_SQUADLEADER";
 		cost=500000;
 		camouflage=1.4;
 		sensitivity=3.3;
@@ -15931,6 +15984,7 @@ class CfgVehicles
 	};
 	class rhsgref_cdf_ngd_grenadier_rpg: rhsgref_cdf_ngd_rifleman
 	{
+		displayName="$STR_rhsgref_inf_AT";
 		nameSound="veh_infantry_AT_s";
 		cost=160000;
 		threat[]={1,0.5,0.2};
@@ -15994,6 +16048,7 @@ class CfgVehicles
 	};
 	class rhsgref_cdf_ngd_medic: rhsgref_cdf_ngd_rifleman
 	{
+		displayName="$STR_RHS_INF_MEDIC";
 		attendant=1;
 		icon="iconManMedic";
 		nameSound="veh_infantry_medic_s";
@@ -16031,6 +16086,7 @@ class CfgVehicles
 	};
 	class rhsgref_cdf_ngd_engineer: rhsgref_cdf_ngd_rifleman
 	{
+		displayName="$STR_RHS_INF_ENGINEER";
 		cost=220000;
 		camouflage=1.6;
 		sensitivity=2.5;
@@ -16073,6 +16129,7 @@ class CfgVehicles
 	};
 	class rhsgref_cdf_ngd_crew: rhsgref_cdf_ngd_rifleman
 	{
+		displayName="$STR_RHS_INF_CREW";
 		cost=90000;
 		camouflage=1.6;
 		sensitivity=2.5;
@@ -16239,6 +16296,7 @@ class CfgVehicles
 	};
 	class rhsgref_cdf_reg_rifleman: rhsgref_cdf_reg_base
 	{
+		displayName="$STR_RHS_INF_RIFLEMAN";
 		weapons[]=
 		{
 			"rhs_weap_ak74",
@@ -16272,6 +16330,7 @@ class CfgVehicles
 	};
 	class rhsgref_cdf_reg_rifleman_rpg75: rhsgref_cdf_reg_base
 	{
+		displayName="$STR_RHSGREF_INF_RIFLEMAN_RPG75";
 		nameSound="veh_infantry_AT_s";
 		cost=180000;
 		threat[]={1,0.69999999,0.30000001};
@@ -16338,6 +16397,7 @@ class CfgVehicles
 	};
 	class rhsgref_cdf_reg_rifleman_m70: rhsgref_cdf_reg_base
 	{
+		displayName="$STR_RHSGREF_INF_RIFLEMAN_AKS74";
 		linkedItems[]=
 		{
 			"rhsgref_6b27m_ttsko_mountain",
@@ -16372,6 +16432,7 @@ class CfgVehicles
 	class rhsgref_cdf_reg_rifleman_aks74: rhsgref_cdf_reg_rifleman_m70;  //found empty after stripping
 	class rhsgref_cdf_reg_rifleman_akm: rhsgref_cdf_reg_rifleman_m70
 	{
+		displayName="$STR_RHS_INF_RIFLEMAN_AKM";
 		magazines[]=
 		{
 			"rhs_30Rnd_762x39mm_bakelite",
@@ -16411,6 +16472,7 @@ class CfgVehicles
 	};
 	class rhsgref_cdf_reg_rifleman_lite: rhsgref_cdf_reg_base
 	{
+		displayName="$STR_RHS_INF_RIFLEMAN_L";
 		linkedItems[]=
 		{
 			"rhsgref_fieldcap_ttsko_mountain",
@@ -16444,6 +16506,7 @@ class CfgVehicles
 	};
 	class rhsgref_cdf_reg_grenadier: rhsgref_cdf_reg_rifleman
 	{
+		displayName="$STR_RHS_INF_GRENADIER";
 		linkedItems[]=
 		{
 			"rhsgref_6b27m_ttsko_mountain",
@@ -16518,6 +16581,7 @@ class CfgVehicles
 	};
 	class rhsgref_cdf_reg_machinegunner: rhsgref_cdf_reg_rifleman
 	{
+		displayName="$STR_RHS_INF_MACHINEGUNNER";
 		nameSound="veh_infantry_MG_s";
 		cost=125000;
 		threat[]={1,0.1,0.30000001};
@@ -16567,6 +16631,7 @@ class CfgVehicles
 	};
 	class rhsgref_cdf_reg_marksman: rhsgref_cdf_reg_rifleman
 	{
+		displayName="$STR_RHS_INF_MARKSMAN";
 		nameSound="veh_infantry_sniper_s";
 		cost=150000;
 		sensitivity=3.3;
@@ -16629,6 +16694,7 @@ class CfgVehicles
 	};
 	class rhsgref_cdf_reg_general: rhsgref_cdf_reg_rifleman
 	{
+		displayName="General";
 		cost=1000000;
 		camouflage=1.4;
 		sensitivity=3.3;
@@ -16686,6 +16752,7 @@ class CfgVehicles
 	};
 	class rhsgref_cdf_reg_officer: rhsgref_cdf_reg_rifleman
 	{
+		displayName="$STR_RHS_INF_OFFICER";
 		cost=600000;
 		camouflage=1.4;
 		sensitivity=3.3;
@@ -16749,6 +16816,7 @@ class CfgVehicles
 	};
 	class rhsgref_cdf_reg_squadleader: rhsgref_cdf_reg_rifleman
 	{
+		displayName="$STR_RHSUSF_INF_SQUADLEADER";
 		cost=500000;
 		camouflage=1.4;
 		sensitivity=3.3;
@@ -16822,6 +16890,7 @@ class CfgVehicles
 	};
 	class rhsgref_cdf_reg_grenadier_rpg: rhsgref_cdf_reg_rifleman
 	{
+		displayName="$STR_rhsgref_inf_AT";
 		nameSound="veh_infantry_AT_s";
 		cost=160000;
 		threat[]={1,0.5,0.2};
@@ -16889,6 +16958,7 @@ class CfgVehicles
 	};
 	class rhsgref_cdf_reg_specialist_aa: rhsgref_cdf_reg_rifleman
 	{
+		displayName="$STR_rhsgref_inf_AA";
 		linkedItems[]=
 		{
 			"rhsgref_6b27m_ttsko_forest",
@@ -16946,6 +17016,7 @@ class CfgVehicles
 	};
 	class rhsgref_cdf_reg_medic: rhsgref_cdf_reg_rifleman
 	{
+		displayName="$STR_RHS_INF_MEDIC";
 		attendant=1;
 		icon="iconManMedic";
 		nameSound="veh_infantry_medic_s";
@@ -17005,6 +17076,7 @@ class CfgVehicles
 	};
 	class rhsgref_cdf_reg_engineer: rhsgref_cdf_reg_rifleman
 	{
+		displayName="$STR_RHS_INF_ENGINEER";
 		cost=220000;
 		camouflage=1.6;
 		sensitivity=2.5;
@@ -17047,6 +17119,7 @@ class CfgVehicles
 	};
 	class rhsgref_cdf_reg_crew: rhsgref_cdf_reg_rifleman
 	{
+		displayName="$STR_RHS_INF_CREW";
 		cost=90000;
 		camouflage=1.6;
 		sensitivity=2.5;
@@ -17097,6 +17170,7 @@ class CfgVehicles
 	};
 	class rhsgref_cdf_reg_crew_commander: rhsgref_cdf_reg_crew
 	{
+		displayName="$STR_RHS_INF_CREW_COMMANDER";
 		cost=450000;
 		camouflage=1.4;
 		sensitivity=3.3;
@@ -17154,6 +17228,7 @@ class CfgVehicles
 	};
 	class rhsgref_cdf_air_pilot: rhsgref_cdf_reg_crew
 	{
+		displayName="$STR_RHS_PILOT_NAME";
 		cost=500000;
 		camouflage=1.4;
 		sensitivity=3.3;
@@ -17292,6 +17367,7 @@ class CfgVehicles
 	class rhsgref_cdf_para_TTsKO_dark: rhsgref_cdf_para_base;  //found empty after stripping
 	class rhsgref_cdf_para_rifleman: rhsgref_cdf_para_base
 	{
+		displayName="$STR_RHS_INF_RIFLEMAN";
 		linkedItems[]=
 		{
 			"rhsgref_6b27m_ttsko_digi",
@@ -17313,6 +17389,7 @@ class CfgVehicles
 	};
 	class rhsgref_cdf_para_rifleman_lite: rhsgref_cdf_para_rifleman
 	{
+		displayName="$STR_RHS_INF_RIFLEMAN_L";
 		uniformClass="rhsgref_uniform_para_ttsko_mountain";
 		linkedItems[]=
 		{
@@ -17347,6 +17424,7 @@ class CfgVehicles
 	};
 	class rhsgref_cdf_para_grenadier: rhsgref_cdf_para_rifleman
 	{
+		displayName="$STR_RHSUSF_INF_GRENADIERA";
 		linkedItems[]=
 		{
 			"rhsgref_6b27m_ttsko_digi",
@@ -17421,6 +17499,7 @@ class CfgVehicles
 	};
 	class rhsgref_cdf_para_autorifleman: rhsgref_cdf_para_rifleman
 	{
+		displayName="$STR_RHSUSF_INF_ARIFLEMAN";
 		nameSound="veh_infantry_MG_s";
 		cost=125000;
 		threat[]={1,0.1,0.30000001};
@@ -17473,6 +17552,7 @@ class CfgVehicles
 	};
 	class rhsgref_cdf_para_machinegunner: rhsgref_cdf_para_rifleman
 	{
+		displayName="$STR_RHS_INF_MACHINEGUNNER";
 		nameSound="veh_infantry_MG_s";
 		cost=125000;
 		threat[]={1,0.1,0.30000001};
@@ -17522,6 +17602,7 @@ class CfgVehicles
 	};
 	class rhsgref_cdf_para_marksman: rhsgref_cdf_para_rifleman
 	{
+		displayName="$STR_RHS_INF_MARKSMAN";
 		nameSound="veh_infantry_sniper_s";
 		cost=150000;
 		sensitivity=3.3;
@@ -17584,6 +17665,7 @@ class CfgVehicles
 	};
 	class rhsgref_cdf_para_officer: rhsgref_cdf_para_rifleman
 	{
+		displayName="$STR_RHS_INF_OFFICER";
 		cost=600000;
 		camouflage=1.4;
 		sensitivity=3.3;
@@ -17647,6 +17729,7 @@ class CfgVehicles
 	};
 	class rhsgref_cdf_para_squadleader: rhsgref_cdf_para_rifleman
 	{
+		displayName="$STR_RHSUSF_INF_SQUADLEADER";
 		cost=500000;
 		camouflage=1.4;
 		sensitivity=3.3;
@@ -17726,6 +17809,7 @@ class CfgVehicles
 	};
 	class rhsgref_cdf_para_grenadier_rpg: rhsgref_cdf_para_rifleman
 	{
+		displayName="$STR_rhsgref_inf_AT";
 		nameSound="veh_infantry_AT_s";
 		cost=160000;
 		threat[]={1,0.5,0.2};
@@ -17795,6 +17879,7 @@ class CfgVehicles
 	};
 	class rhsgref_cdf_para_specialist_aa: rhsgref_cdf_para_rifleman
 	{
+		displayName="$STR_rhsgref_inf_AA";
 		uniformClass="rhsgref_uniform_para_ttsko_urban";
 		linkedItems[]=
 		{
@@ -17851,6 +17936,7 @@ class CfgVehicles
 	};
 	class rhsgref_cdf_para_medic: rhsgref_cdf_para_rifleman
 	{
+		displayName="$STR_RHS_INF_MEDIC";
 		attendant=1;
 		icon="iconManMedic";
 		nameSound="veh_infantry_medic_s";
@@ -17908,6 +17994,7 @@ class CfgVehicles
 	};
 	class rhsgref_cdf_para_engineer: rhsgref_cdf_para_rifleman
 	{
+		displayName="$STR_RHS_INF_ENGINEER";
 		cost=220000;
 		camouflage=1.6;
 		sensitivity=2.5;
@@ -17920,6 +18007,7 @@ class CfgVehicles
 	};
 	class rhsgref_cdf_para_crew: rhsgref_cdf_para_rifleman
 	{
+		displayName="$STR_RHS_INF_CREW";
 		cost=90000;
 		camouflage=1.6;
 		sensitivity=2.5;
@@ -18595,6 +18683,7 @@ class CfgVehicles
 	};
 	class rhsgref_nat_rifleman: rhsgref_nat_base
 	{
+		displayName="$STR_RHSGREF_INF_rifleman_pm63";
 		linkedItems[]=
 		{
 			"H_Booniehat_oli",
@@ -18630,6 +18719,7 @@ class CfgVehicles
 	};
 	class rhsgref_nat_rifleman_akms: rhsgref_nat_base
 	{
+		displayName="$STR_RHS_INF_RIFLEMAN_AKMS";
 		uniformClass="rhsgref_uniform_woodland_olive";
 		linkedItems[]=
 		{
@@ -18666,6 +18756,7 @@ class CfgVehicles
 	};
 	class rhsgref_nat_rifleman_aks74: rhsgref_nat_base
 	{
+		displayName="$STR_RHSGREF_INF_RIFLEMAN_AKS74";
 		uniformClass="rhsgref_uniform_woodland_olive";
 		linkedItems[]=
 		{
@@ -18724,6 +18815,7 @@ class CfgVehicles
 	};
 	class rhsgref_nat_militiaman_kar98k: rhsgref_nat_base
 	{
+		displayName="$STR_rhsgref_inf_militiaman_kar98k";
 		uniformClass="rhsgref_uniform_woodland";
 		linkedItems[]=
 		{
@@ -18798,6 +18890,7 @@ class CfgVehicles
 	};
 	class rhsgref_nat_rifleman_m92: rhsgref_nat_base
 	{
+		displayName="$STR_RHSGREF_inf_rifleman_mp44";
 		linkedItems[]=
 		{
 			"H_Booniehat_oli",
@@ -18856,6 +18949,7 @@ class CfgVehicles
 	class rhsgref_nat_rifleman_mp44: rhsgref_nat_rifleman_m92;  //found empty after stripping
 	class rhsgref_nat_rifleman_vz58: rhsgref_nat_base
 	{
+		displayName="$STR_RHSGREF_inf_rifleman_savz58";
 		uniformClass="rhsgref_uniform_dpm_olive";
 		linkedItems[]=
 		{
@@ -18914,6 +19008,7 @@ class CfgVehicles
 	};
 	class rhsgref_nat_grenadier: rhsgref_nat_rifleman
 	{
+		displayName="$STR_RHS_INF_GRENADIER";
 		linkedItems[]=
 		{
 			"rhs_balaclava1_olive",
@@ -18977,6 +19072,7 @@ class CfgVehicles
 	};
 	class rhsgref_nat_warlord: rhsgref_nat_base
 	{
+		displayName="$STR_RHSGREF_INF_WARLORD";
 		icon="iconManOfficer";
 		uniformClass="rhsgref_uniform_flecktarn";
 		linkedItems[]=
@@ -19032,6 +19128,7 @@ class CfgVehicles
 	};
 	class rhsgref_nat_commander: rhsgref_nat_base
 	{
+		displayName="$STR_RHSGREF_INF_FIELD_COMMANDER";
 		icon="iconManLeader";
 		uniformClass="rhsgref_uniform_flecktarn";
 		linkedItems[]=
@@ -19095,6 +19192,7 @@ class CfgVehicles
 	};
 	class rhsgref_nat_machinegunner: rhsgref_nat_base
 	{
+		displayName="$STR_RHS_INF_MACHINEGUNNER";
 		icon="iconManMG";
 		uniformClass="rhsgref_uniform_woodland_olive";
 		linkedItems[]=
@@ -19139,6 +19237,7 @@ class CfgVehicles
 	};
 	class rhsgref_nat_machinegunner_mg42: rhsgref_nat_base
 	{
+		displayName="$STR_RHSGREF_INF_MACHINEGUNNER_MG42";
 		icon="iconManMG";
 		uniformClass="rhsgref_uniform_dpm";
 		linkedItems[]=
@@ -19185,6 +19284,7 @@ class CfgVehicles
 	};
 	class rhsgref_nat_grenadier_rpg: rhsgref_nat_rifleman
 	{
+		displayName="$STR_RHSGREF_INF_AT";
 		icon="iconManAT";
 		linkedItems[]=
 		{
@@ -19242,6 +19342,7 @@ class CfgVehicles
 	};
 	class rhsgref_nat_specialist_aa: rhsgref_nat_base
 	{
+		displayName="$STR_RHSGREF_INF_AA";
 		icon="iconManAT";
 		uniformClass="rhsgref_uniform_tigerstripe";
 		linkedItems[]=
@@ -19299,6 +19400,7 @@ class CfgVehicles
 	};
 	class rhsgref_nat_hunter: rhsgref_nat_base
 	{
+		displayName="$STR_RHSGREF_INF_HUNTER";
 		nameSound="veh_infantry_sniper_s";
 		cost=150000;
 		sensitivity=3.3;
@@ -19352,6 +19454,7 @@ class CfgVehicles
 	};
 	class rhsgref_nat_scout: rhsgref_nat_base
 	{
+		displayName="$STR_RHSUSF_INF_SCOUT";
 		uniformClass="rhsgref_uniform_tigerstripe";
 		linkedItems[]=
 		{
@@ -19388,6 +19491,7 @@ class CfgVehicles
 	};
 	class rhsgref_nat_saboteur: rhsgref_nat_base
 	{
+		displayName="$STR_RHSGREF_INF_SABOTEUR";
 		uniformClass="rhsgref_uniform_flecktarn";
 		cost=115000;
 		camouflage=1.6;
@@ -19419,6 +19523,7 @@ class CfgVehicles
 	};
 	class rhsgref_nat_medic: rhsgref_nat_base
 	{
+		displayName="$STR_RHSGREF_INF_MEDIC";
 		attendant=1;
 		icon="iconManMedic";
 		nameSound="veh_infantry_medic_s";
@@ -19456,6 +19561,7 @@ class CfgVehicles
 	};
 	class rhsgref_nat_crew: rhsgref_nat_base
 	{
+		displayName="$STR_RHS_INF_CREW";
 		cost=90000;
 		camouflage=1.6;
 		sensitivity=2.5;
@@ -19511,6 +19617,7 @@ class CfgVehicles
 	};
 	class rhsgref_nat_pmil_rifleman: rhsgref_nat_base
 	{
+		displayName="$STR_RHSGREF_INF_RIFLEMAN_SAVZ58";
 		uniformClass="rhsgref_uniform_alpenflage";
 		linkedItems[]=
 		{
@@ -19569,6 +19676,7 @@ class CfgVehicles
 	};
 	class rhsgref_nat_pmil_rifleman_m92: rhsgref_nat_pmil_rifleman
 	{
+		displayName="$STR_RHS_INF_RIFLEMAN_AKM";
 		linkedItems[]=
 		{
 			"rhsgref_Booniehat_alpen",
@@ -19627,6 +19735,7 @@ class CfgVehicles
 	class rhsgref_nat_pmil_rifleman_akm: rhsgref_nat_pmil_rifleman_m92;  //found empty after stripping
 	class rhsgref_nat_pmil_rifleman_aksu: rhsgref_nat_pmil_rifleman
 	{
+		displayName="$STR_rhsgref_inf_rifleman_aksu";
 		linkedItems[]=
 		{
 			"rhsgref_Booniehat_alpen",
@@ -19684,6 +19793,7 @@ class CfgVehicles
 	};
 	class rhsgref_nat_pmil_grenadier: rhsgref_nat_pmil_rifleman
 	{
+		displayName="$STR_RHS_INF_GRENADIER";
 		weapons[]=
 		{
 			"rhs_weap_akm_gp25",
@@ -19729,6 +19839,7 @@ class CfgVehicles
 	};
 	class rhsgref_nat_pmil_commander: rhsgref_nat_pmil_rifleman
 	{
+		displayName="$STR_RHSGREF_INF_FIELD_COMMANDER";
 		icon="iconManLeader";
 		weapons[]=
 		{
@@ -19771,6 +19882,7 @@ class CfgVehicles
 	};
 	class rhsgref_nat_pmil_machinegunner: rhsgref_nat_pmil_rifleman
 	{
+		displayName="$STR_RHS_INF_MACHINEGUNNER";
 		icon="iconManMG";
 		linkedItems[]=
 		{
@@ -19814,6 +19926,7 @@ class CfgVehicles
 	};
 	class rhsgref_nat_pmil_grenadier_rpg: rhsgref_nat_pmil_rifleman
 	{
+		displayName="$STR_RHSGREF_INF_AT";
 		icon="iconManAT";
 		linkedItems[]=
 		{
@@ -19871,6 +19984,7 @@ class CfgVehicles
 	};
 	class rhsgref_nat_pmil_specialist_aa: rhsgref_nat_pmil_rifleman
 	{
+		displayName="$STR_RHSGREF_INF_AA";
 		icon="iconManAT";
 		linkedItems[]=
 		{
@@ -19927,6 +20041,7 @@ class CfgVehicles
 	};
 	class rhsgref_nat_pmil_hunter: rhsgref_nat_pmil_rifleman
 	{
+		displayName="$STR_RHSGREF_INF_MARKSMAN";
 		nameSound="veh_infantry_sniper_s";
 		cost=150000;
 		sensitivity=3.3;
@@ -19981,6 +20096,7 @@ class CfgVehicles
 	};
 	class rhsgref_nat_pmil_scout: rhsgref_nat_pmil_rifleman
 	{
+		displayName="$STR_RHSUSF_INF_SCOUT";
 		linkedItems[]=
 		{
 			"rhsgref_Booniehat_alpen",
@@ -20038,6 +20154,7 @@ class CfgVehicles
 	};
 	class rhsgref_nat_pmil_saboteur: rhsgref_nat_pmil_rifleman
 	{
+		displayName="$STR_RHSGREF_INF_SABOTEUR";
 		cost=115000;
 		camouflage=1.6;
 		sensitivity=2.5;
@@ -20080,6 +20197,7 @@ class CfgVehicles
 	};
 	class rhsgref_nat_pmil_medic: rhsgref_nat_pmil_rifleman
 	{
+		displayName="$STR_RHS_INF_MEDIC";
 		attendant=1;
 		icon="iconManMedic";
 		nameSound="veh_infantry_medic_s";
@@ -20099,6 +20217,7 @@ class CfgVehicles
 	};
 	class rhsgref_nat_pmil_crew: rhsgref_nat_pmil_rifleman
 	{
+		displayName="$STR_RHS_INF_CREW";
 		cost=90000;
 		camouflage=1.6;
 		sensitivity=2.5;
@@ -20292,6 +20411,7 @@ class CfgVehicles
 	};
 	class rhsgref_ins_rifleman: rhsgref_ins_uniform_specter
 	{
+		displayName="$STR_RHS_INF_RIFLEMAN_AK103";
 		linkedItems[]=
 		{
 			"rhsgref_bcap_specter",
@@ -20313,6 +20433,7 @@ class CfgVehicles
 	};
 	class rhsgref_ins_rifleman_akm: rhsgref_ins_reed
 	{
+		displayName="$STR_RHS_INF_RIFLEMAN_AKM";
 		linkedItems[]=
 		{
 			"rhs_beanie_green",
@@ -20370,6 +20491,7 @@ class CfgVehicles
 	};
 	class rhsgref_ins_rifleman_aksu: rhsgref_ins_reed
 	{
+		displayName="$STR_RHSGREF_INF_RIFLEMAN_AKSU";
 		linkedItems[]=
 		{
 			"rhs_beanie_green",
@@ -20427,6 +20549,7 @@ class CfgVehicles
 	};
 	class rhsgref_ins_rifleman_aks74: rhsgref_ins_rifleman_aksu
 	{
+		displayName="$STR_RHSGREF_INF_RIFLEMAN_AKS74";
 		linkedItems[]=
 		{
 			"rhs_beanie_green",
@@ -20484,6 +20607,7 @@ class CfgVehicles
 	};
 	class rhsgref_ins_rifleman_RPG26: rhsgref_ins_uniform_specter
 	{
+		displayName="$STR_RHS_INF_LAT";
 		linkedItems[]=
 		{
 			"rhs_beanie",
@@ -20539,6 +20663,7 @@ class CfgVehicles
 	};
 	class rhsgref_ins_militiaman_mosin: rhsgref_ins_reed
 	{
+		displayName="$STR_rhsgref_inf_militiaman_m38";
 		linkedItems[]=
 		{
 			"H_Booniehat_tan",
@@ -20614,6 +20739,7 @@ class CfgVehicles
 	};
 	class rhsgref_ins_grenadier: rhsgref_ins_uniform_specter
 	{
+		displayName="$STR_RHS_INF_GRENADIER";
 		linkedItems[]=
 		{
 			"rhsgref_bcap_specter",
@@ -20675,6 +20801,7 @@ class CfgVehicles
 	};
 	class rhsgref_ins_machinegunner: rhsgref_ins_reed
 	{
+		displayName="$STR_RHS_INF_MACHINEGUNNER";
 		linkedItems[]=
 		{
 			"H_Bandanna_gry",
@@ -20717,6 +20844,7 @@ class CfgVehicles
 	};
 	class rhsgref_ins_squadleader: rhsgref_ins_uniform_specter
 	{
+		displayName="$STR_RHS_INF_OFFICER";
 		linkedItems[]=
 		{
 			"rhsgref_patrolcap_specter",
@@ -20778,6 +20906,7 @@ class CfgVehicles
 	};
 	class rhsgref_ins_commander: rhsgref_ins_reed
 	{
+		displayName="Commander";
 		linkedItems[]=
 		{
 			"H_Beret_blk",
@@ -20833,6 +20962,7 @@ class CfgVehicles
 	};
 	class rhsgref_ins_grenadier_rpg: rhsgref_ins_uniform_izlom
 	{
+		displayName="$STR_rhsgref_inf_AT";
 		linkedItems[]=
 		{
 			"G_Balaclava_blk",
@@ -20887,6 +21017,7 @@ class CfgVehicles
 	};
 	class rhsgref_ins_specialist_aa: rhsgref_ins_reed
 	{
+		displayName="$STR_rhsgref_inf_AA";
 		linkedItems[]=
 		{
 			"rhs_balaclava1_olive",
@@ -20940,6 +21071,7 @@ class CfgVehicles
 	};
 	class rhsgref_ins_engineer: rhsgref_ins_uniform_gorka_g
 	{
+		displayName="$STR_rhsgref_inf_sapper";
 		cost=220000;
 		camouflage=1.6;
 		sensitivity=2.5;
@@ -20970,6 +21102,7 @@ class CfgVehicles
 	};
 	class rhsgref_ins_saboteur: rhsgref_ins_uniform_specter
 	{
+		displayName="Saboteur";
 		cost=115000;
 		camouflage=1.6;
 		sensitivity=2.5;
@@ -21032,6 +21165,7 @@ class CfgVehicles
 	};
 	class rhsgref_ins_sniper: rhsgref_ins_uniform_izlom
 	{
+		displayName="Sniper";
 		nameSound="veh_infantry_sniper_s";
 		cost=150000;
 		sensitivity=3.3;
@@ -21070,6 +21204,7 @@ class CfgVehicles
 	};
 	class rhsgref_ins_spotter: rhsgref_ins_uniform_gorka_y
 	{
+		displayName="$STR_RHSUSF_INF_SPOTTER";
 		nameSound="veh_infantry_sniper_s";
 		cost=150000;
 		sensitivity=3.3;
@@ -21132,6 +21267,7 @@ class CfgVehicles
 	};
 	class rhsgref_ins_medic: rhsgref_ins_uniform_specter
 	{
+		displayName="$STR_RHS_INF_MEDIC";
 		attendant=1;
 		icon="iconManMedic";
 		nameSound="veh_infantry_medic_s";
@@ -21175,6 +21311,7 @@ class CfgVehicles
 	};
 	class rhsgref_ins_crew: rhsgref_ins_uniform_specter
 	{
+		displayName="$STR_RHS_INF_CREW";
 		cost=90000;
 		camouflage=1.6;
 		sensitivity=2.5;
@@ -21225,6 +21362,7 @@ class CfgVehicles
 	};
 	class rhsgref_ins_pilot: rhsgref_ins_uniform_specter
 	{
+		displayName="$STR_RHS_PILOT_NAME";
 		cost=500000;
 		camouflage=1.4;
 		sensitivity=3.3;
@@ -21488,6 +21626,7 @@ class CfgVehicles
 	};
 	class rhsgref_hidf_rifleman: rhsgref_hidf_base
 	{
+		displayName="$STR_RHSUSF_INF_RIFLEMAN";
 		class EventHandlers: EventHandlers
 		{
 			init="if (local (_this select 0)) then {[(_this select 0), [], nil] call BIS_fnc_unitHeadgear;}";
@@ -21536,6 +21675,7 @@ class CfgVehicles
 	};
 	class rhsgref_hidf_grenadier: rhsgref_hidf_rifleman
 	{
+		displayName="$STR_RHSUSF_INF_GRENADIERA";
 		cost=130000;
 		threat[]={1,0.30000001,0.1};
 		linkedItems[]=
@@ -21606,6 +21746,7 @@ class CfgVehicles
 	};
 	class rhsgref_hidf_grenadier_m79: rhsgref_hidf_grenadier
 	{
+		displayName="$STR_RHSGREF_INF_GRENADIER_M79";
 		linkedItems[]=
 		{
 			"rhsgref_helmet_M1_bare",
@@ -21704,6 +21845,7 @@ class CfgVehicles
 	};
 	class rhsgref_hidf_rifleman_m72: rhsgref_hidf_rifleman
 	{
+		displayName="$STR_RHSUSF_INF_RIFLEMAN_LAW";
 		nameSound="veh_infantry_AT_s";
 		cost=160000;
 		threat[]={1,0.69999999,0.30000001};
@@ -21770,6 +21912,7 @@ class CfgVehicles
 	};
 	class rhsgref_hidf_autorifleman: rhsgref_hidf_rifleman
 	{
+		displayName="$STR_RHSUSF_INF_ARIFLEMAN";
 		nameSound="veh_infantry_MG_s";
 		cost=125000;
 		threat[]={1,0.1,0.30000001};
@@ -21822,11 +21965,13 @@ class CfgVehicles
 	};
 	class rhsgref_hidf_autorifleman_assist: rhsgref_hidf_rifleman
 	{
+		displayName="$STR_RHSUSF_INF_AARIFLEMAN";
 		cost=110000;
 		backpack="rhsgref_hidf_alicepack_ar";
 	};
 	class rhsgref_hidf_machinegunner: rhsgref_hidf_autorifleman
 	{
+		displayName="$STR_RHSUSF_INF_MG";
 		weapons[]=
 		{
 			"rhs_weap_m240G",
@@ -21857,11 +22002,13 @@ class CfgVehicles
 	};
 	class rhsgref_hidf_machinegunner_assist: rhsgref_hidf_rifleman
 	{
+		displayName="$STR_RHSUSF_INF_AMG";
 		cost=110000;
 		backpack="rhsgref_hidf_alicepack_mg";
 	};
 	class rhsgref_hidf_marksman: rhsgref_hidf_rifleman
 	{
+		displayName="$STR_RHSUSF_INF_MARKSMAN";
 		nameSound="veh_infantry_sniper_s";
 		cost=150000;
 		sensitivity=3.3;
@@ -21932,6 +22079,7 @@ class CfgVehicles
 	};
 	class rhsgref_hidf_squadleader: rhsgref_hidf_rifleman
 	{
+		displayName="$STR_RHSUSF_INF_SQUADLEADER";
 		cost=500000;
 		camouflage=1.4;
 		sensitivity=3.3;
@@ -22003,6 +22151,7 @@ class CfgVehicles
 	};
 	class rhsgref_hidf_teamleader: rhsgref_hidf_rifleman
 	{
+		displayName="$STR_RHSUSF_INF_TEAMLEADER";
 		cost=450000;
 		camouflage=1.4;
 		sensitivity=3.3;
@@ -22068,6 +22217,7 @@ class CfgVehicles
 	};
 	class rhsgref_hidf_medic: rhsgref_hidf_rifleman
 	{
+		displayName="$STR_RHSUSF_INF_MEDIC";
 		attendant=1;
 		icon="iconManMedic";
 		backpack="rhsgref_hidf_alicepack_medic";
@@ -22135,6 +22285,7 @@ class CfgVehicles
 	};
 	class rhsgref_hidf_sniper: rhsgref_hidf_marksman
 	{
+		displayName="$STR_RHSUSF_INF_SNIPER";
 		nameSound="veh_infantry_sniper_s";
 		cost=350000;
 		threat[]={1,0.30000001,0.30000001};
@@ -22214,6 +22365,7 @@ class CfgVehicles
 	};
 	class rhsgref_hidf_crewman: rhsgref_hidf_base
 	{
+		displayName="$STR_RHSUSF_INF_CREW";
 		cost=90000;
 		camouflage=1.6;
 		sensitivity=2.5;
@@ -22283,6 +22435,7 @@ class CfgVehicles
 	};
 	class rhsgref_hidf_helipilot: rhsgref_hidf_base
 	{
+		displayName="Helicopter Pilot";
 		nameSound="veh_infantry_pilot_s";
 		cost=160000;
 		camouflage=2;
@@ -22345,6 +22498,7 @@ class CfgVehicles
 	};
 	class rhsgref_hidf_boat_driver: rhsgref_hidf_base
 	{
+		displayName="Driver (Boat)";
 		class EventHandlers: EventHandlers
 		{
 			init="if (local (_this select 0)) then {[(_this select 0), [], nil] call BIS_fnc_unitHeadgear;}";
@@ -22565,6 +22719,7 @@ class CfgVehicles
 			"H_HeadBandage_stained_F",
 			0.1
 		};
+		displayName="Insurgent (AKM)";
 		linkedItems[]=
 		{
 			"rhsgref_chicom",
@@ -22615,6 +22770,7 @@ class CfgVehicles
 			"H_HeadBandage_stained_F",
 			0.1
 		};
+		displayName="Insurgent (AKMS)";
 		linkedItems[]=
 		{
 			"rhsgref_chicom",
@@ -22681,6 +22837,7 @@ class CfgVehicles
 			"H_HeadBandage_stained_F",
 			0.1
 		};
+		displayName="Insurgent (M16)";
 		linkedItems[]=
 		{
 			"rhsgref_alice_webbing",
@@ -22740,6 +22897,7 @@ class CfgVehicles
 	};
 	class rhsgref_tla_rifleman_pm63: rhsgref_tla_rifleman
 	{
+		displayName="Insurgent (PM-63)";
 		linkedItems[]=
 		{
 			"rhsgref_chicom",
@@ -22773,6 +22931,7 @@ class CfgVehicles
 	};
 	class rhsgref_tla_rifleman_vz58: rhsgref_tla_rifleman
 	{
+		displayName="Insurgent (Vz.58)";
 		linkedItems[]=
 		{
 			"rhsgref_chicom",
@@ -22845,6 +23004,7 @@ class CfgVehicles
 			"H_HeadBandage_stained_F",
 			0.1
 		};
+		displayName="Insurgent (M1 Garand)";
 		linkedItems[]=
 		{
 			"rhsgref_chicom",
@@ -22927,6 +23087,7 @@ class CfgVehicles
 			"H_HeadBandage_stained_F",
 			0.1
 		};
+		displayName="Insurgent (L1A1)";
 		linkedItems[]=
 		{
 			"rhsgref_alice_webbing",
@@ -22999,6 +23160,7 @@ class CfgVehicles
 			"H_HeadBandage_stained_F",
 			0.1
 		};
+		displayName="Cell Leader";
 		cost=500000;
 		camouflage=1.4;
 		sensitivity=3.3;
@@ -23079,6 +23241,7 @@ class CfgVehicles
 			"H_HeadBandage_stained_F",
 			0.1
 		};
+		displayName="Grenadier";
 		linkedItems[]=
 		{
 			"rhsgref_chicom",
@@ -23169,6 +23332,7 @@ class CfgVehicles
 			"H_HeadBandage_stained_F",
 			0.1
 		};
+		displayName="Grenadier (M79)";
 		linkedItems[]=
 		{
 			"rhsgref_chicom",
@@ -23267,6 +23431,7 @@ class CfgVehicles
 			"H_HeadBandage_stained_F",
 			0.1
 		};
+		displayName="Machine Gunner";
 		nameSound="veh_infantry_MG_s";
 		cost=125000;
 		threat[]={1,0.1,0.30000001};
@@ -23317,6 +23482,7 @@ class CfgVehicles
 	};
 	class rhsgref_tla_machinegunner_mg42: rhsgref_tla_machinegunner
 	{
+		displayName="Machine Gunner (MG42)";
 		weapons[]=
 		{
 			"rhs_weap_mg42",
@@ -23370,6 +23536,7 @@ class CfgVehicles
 			"H_HeadBandage_stained_F",
 			0.1
 		};
+		displayName="Insurgent (RPG-75)";
 		nameSound="veh_infantry_AT_s";
 		cost=180000;
 		threat[]={1,0.69999999,0.30000001};
@@ -23432,6 +23599,7 @@ class CfgVehicles
 	};
 	class rhsgref_tla_specialist_at: rhsgref_tla_rifleman_rpg75
 	{
+		displayName="AT Specialist";
 		linkedItems[]=
 		{
 			"rhsgref_chicom",
@@ -23488,6 +23656,7 @@ class CfgVehicles
 	};
 	class rhsgref_tla_medic: rhsgref_tla_para1
 	{
+		displayName="Medic";
 		headgearList[]=
 		{
 			"H_Hat_Safari_olive_F",
@@ -23554,6 +23723,7 @@ class CfgVehicles
 	};
 	class rhsgref_tla_crew: rhsgref_tla_para2
 	{
+		displayName="Crewman";
 		headgearList[]=
 		{
 			"rhs_tsh4_ess",
@@ -23616,6 +23786,7 @@ class cfgWeapons
 	class Uniform_Base;
 	class rhsgref_uniform_ttsko_forest: Uniform_Base
 	{
+		displayName="M88 TTsKO (Forest)";
 		class ItemInfo: UniformItem
 		{
 			uniformModel="-";
@@ -23626,6 +23797,7 @@ class cfgWeapons
 	};
 	class rhsgref_uniform_ttsko_mountain: Uniform_Base
 	{
+		displayName="M88 TTsKO (Mountain)";
 		class ItemInfo: UniformItem
 		{
 			uniformModel="-";
@@ -23636,6 +23808,7 @@ class cfgWeapons
 	};
 	class rhsgref_uniform_ttsko_urban: Uniform_Base
 	{
+		displayName="M88 TTsKO (Urban)";
 		class ItemInfo: UniformItem
 		{
 			uniformModel="-";
@@ -23646,6 +23819,7 @@ class cfgWeapons
 	};
 	class rhsgref_uniform_vsr: Uniform_Base
 	{
+		displayName="M88 (VSR)";
 		class ItemInfo: UniformItem
 		{
 			uniformModel="-";
@@ -23656,6 +23830,7 @@ class cfgWeapons
 	};
 	class rhsgref_uniform_para_ttsko_oxblood: Uniform_Base
 	{
+		displayName="M10 TTsKO (Oxblood)";
 		class ItemInfo: UniformItem
 		{
 			uniformModel="-";
@@ -23666,6 +23841,7 @@ class cfgWeapons
 	};
 	class rhsgref_uniform_para_ttsko_mountain: Uniform_Base
 	{
+		displayName="M10 TTsKO (Mountain)";
 		class ItemInfo: UniformItem
 		{
 			uniformModel="-";
@@ -23676,6 +23852,7 @@ class cfgWeapons
 	};
 	class rhsgref_uniform_para_ttsko_urban: Uniform_Base
 	{
+		displayName="M10 TTsKO (Urban)";
 		class ItemInfo: UniformItem
 		{
 			uniformModel="-";
@@ -23686,6 +23863,7 @@ class cfgWeapons
 	};
 	class rhsgref_uniform_specter: Uniform_Base
 	{
+		displayName="Spectre-SKWO";
 		class ItemInfo: UniformItem
 		{
 			uniformModel="-";
@@ -23696,6 +23874,7 @@ class cfgWeapons
 	};
 	class rhsgref_uniform_reed: Uniform_Base
 	{
+		displayName="M93 (Urban Reed)";
 		class ItemInfo: UniformItem
 		{
 			uniformModel="-";
@@ -23706,6 +23885,7 @@ class cfgWeapons
 	};
 	class rhsgref_uniform_alpenflage: Uniform_Base
 	{
+		displayName="M93 (Alpenflage)";
 		class ItemInfo: UniformItem
 		{
 			uniformModel="-";
@@ -23716,6 +23896,7 @@ class cfgWeapons
 	};
 	class rhsgref_uniform_flecktarn: Uniform_Base
 	{
+		displayName="M93 (Flecktarn Jacket)";
 		class ItemInfo: UniformItem
 		{
 			uniformModel="-";
@@ -23726,6 +23907,7 @@ class cfgWeapons
 	};
 	class rhsgref_uniform_flecktarn_full: Uniform_Base
 	{
+		displayName="M93 (Flecktarn)";
 		class ItemInfo: UniformItem
 		{
 			uniformModel="-";
@@ -23736,6 +23918,7 @@ class cfgWeapons
 	};
 	class rhsgref_uniform_tigerstripe: Uniform_Base
 	{
+		displayName="M93 (Tiger Stripe)";
 		class ItemInfo: UniformItem
 		{
 			uniformModel="-";
@@ -23746,6 +23929,7 @@ class cfgWeapons
 	};
 	class rhsgref_uniform_woodland: Uniform_Base
 	{
+		displayName="M93 (Woodland)";
 		class ItemInfo: UniformItem
 		{
 			uniformModel="-";
@@ -23756,6 +23940,7 @@ class cfgWeapons
 	};
 	class rhsgref_uniform_woodland_olive: Uniform_Base
 	{
+		displayName="M93 (Woodland/Olive)";
 		class ItemInfo: UniformItem
 		{
 			uniformModel="-";
@@ -23766,6 +23951,7 @@ class cfgWeapons
 	};
 	class rhsgref_uniform_ERDL: Uniform_Base
 	{
+		displayName="M93 (ERDL)";
 		class ItemInfo: UniformItem
 		{
 			uniformModel="-";
@@ -23776,6 +23962,7 @@ class cfgWeapons
 	};
 	class rhsgref_uniform_og107: Uniform_Base
 	{
+		displayName="M93 (OG-107)";
 		class ItemInfo: UniformItem
 		{
 			uniformModel="-";
@@ -23786,6 +23973,7 @@ class cfgWeapons
 	};
 	class rhsgref_uniform_og107_erdl: Uniform_Base
 	{
+		displayName="M93 (OG-107/ERDL)";
 		class ItemInfo: UniformItem
 		{
 			uniformModel="-";
@@ -23796,6 +23984,7 @@ class cfgWeapons
 	};
 	class rhsgref_uniform_altis_lizard: Uniform_Base
 	{
+		displayName="M93 (Altis Lizard)";
 		class ItemInfo: UniformItem
 		{
 			uniformModel="-";
@@ -23806,6 +23995,7 @@ class cfgWeapons
 	};
 	class rhsgref_uniform_olive: Uniform_Base
 	{
+		displayName="M93 (Olive)";
 		class ItemInfo: UniformItem
 		{
 			uniformModel="-";
@@ -23816,6 +24006,7 @@ class cfgWeapons
 	};
 	class rhsgref_uniform_altis_lizard_olive: Uniform_Base
 	{
+		displayName="M93 (Altis Lizard/Olive)";
 		class ItemInfo: UniformItem
 		{
 			uniformModel="-";
@@ -23826,6 +24017,7 @@ class cfgWeapons
 	};
 	class rhsgref_uniform_dpm: Uniform_Base
 	{
+		displayName="M93 (DPM)";
 		class ItemInfo: UniformItem
 		{
 			uniformModel="-";
@@ -23836,6 +24028,7 @@ class cfgWeapons
 	};
 	class rhsgref_uniform_dpm_olive: Uniform_Base
 	{
+		displayName="M93 (DPM/Olive)";
 		class ItemInfo: UniformItem
 		{
 			uniformModel="-";
@@ -23846,6 +24039,7 @@ class cfgWeapons
 	};
 	class rhsgref_uniform_3color_desert: Uniform_Base
 	{
+		displayName="M93 (3-Color Desert)";
 		class ItemInfo: UniformItem
 		{
 			uniformModel="-";
@@ -23856,6 +24050,7 @@ class cfgWeapons
 	};
 	class rhsgref_uniform_gorka_1_f: Uniform_Base
 	{
+		displayName="Gorka 1 (Flecktarn)";
 		class ItemInfo: UniformItem
 		{
 			uniformModel="-";
@@ -23870,6 +24065,7 @@ class cfgWeapons
 	};
 	class rhsgref_uniform_TLA_1: U_IG_leader
 	{
+		displayName="Guerilla Uniform (Tanoa Lizard)";
 		class ItemInfo: ItemInfo
 		{
 			uniformClass="rhsgref_tla_para1";
@@ -23877,6 +24073,7 @@ class cfgWeapons
 	};
 	class rhsgref_uniform_TLA_2: U_IG_leader
 	{
+		displayName="Guerilla Uniform (Tanoa Lizard/Olive)";
 		class ItemInfo: ItemInfo
 		{
 			uniformClass="rhsgref_tla_para2";
@@ -23893,6 +24090,7 @@ class cfgWeapons
 	class rhs_fieldcap_digi2;
 	class rhsgref_un_beret: ItemCore
 	{
+		displayName="Beret (UN)";
 		weaponPoolAvailable=1;
 		class ItemInfo: HeadGearItem
 		{
@@ -23902,6 +24100,7 @@ class cfgWeapons
 	};
 	class rhsgref_Booniehat_alpen: ItemCore
 	{
+		displayName="Booniehat Alpenflage";
 		weaponPoolAvailable=1;
 		class ItemInfo: HeadGearItem
 		{
@@ -23911,6 +24110,7 @@ class cfgWeapons
 	};
 	class rhsgref_bcap_specter: H_Cap_red
 	{
+		displayName="Baseball Cap (Spectre-SKWO)";
 		allowedFacewear[]=
 		{
 			"G_Aviator",
@@ -23932,6 +24132,7 @@ class cfgWeapons
 	};
 	class rhsgref_patrolcap_specter: rhs_fieldcap_digi2
 	{
+		displayName="Field Cap (Spectre-SKWO)";
 		class ItemInfo: HeadGearItem
 		{
 			mass=5;
@@ -23945,6 +24146,7 @@ class cfgWeapons
 			"rhs_scarf",
 			"G_Aviator"
 		};
+		displayName="$STR_RHS_FIELDCAP_NAME";
 		class ItemInfo: HeadGearItem
 		{
 			mass=5;
@@ -23953,6 +24155,7 @@ class cfgWeapons
 	};
 	class rhsgref_fieldcap_ttsko_forest: rhsgref_fieldcap
 	{
+		displayName="Fieldcap TTsKO Forest";
 		allowedFacewear[]=
 		{
 			"G_Squares_Tinted",
@@ -23961,6 +24164,7 @@ class cfgWeapons
 	};
 	class rhsgref_fieldcap_ttsko_mountain: rhsgref_fieldcap
 	{
+		displayName="Fieldcap TTsKO Mountain";
 		allowedFacewear[]=
 		{
 			"G_Squares_Tinted",
@@ -23969,6 +24173,7 @@ class cfgWeapons
 	};
 	class rhsgref_fieldcap_ttsko_urban: rhsgref_fieldcap
 	{
+		displayName="Fieldcap TTsKO Urban";
 		allowedFacewear[]=
 		{
 			"G_Squares_Tinted",
@@ -23977,6 +24182,7 @@ class cfgWeapons
 	};
 	class rhsgref_fieldcap_ttsko_digi: rhsgref_fieldcap
 	{
+		displayName="Fieldcap TTsKO Digital";
 		allowedFacewear[]=
 		{
 			"rhs_scarf",
@@ -23990,6 +24196,7 @@ class cfgWeapons
 			"rhs_scarf",
 			"G_Aviator"
 		};
+		displayName="SSh-68 TTsKO";
 		class ItemInfo: ItemInfo
 		{
 			mass=40;
@@ -24007,6 +24214,7 @@ class cfgWeapons
 	};
 	class rhsgref_ssh68_ttsko_mountain: rhsgref_ssh68
 	{
+		displayName="SSh-68 TTsKO (Mountain)";
 		allowedFacewear[]=
 		{
 			"G_Squares_Tinted",
@@ -24015,6 +24223,7 @@ class cfgWeapons
 	};
 	class rhsgref_ssh68_ttsko_forest: rhsgref_ssh68
 	{
+		displayName="SSh-68 TTsKO (Forest)";
 		allowedFacewear[]=
 		{
 			"G_Squares_Tinted",
@@ -24023,6 +24232,7 @@ class cfgWeapons
 	};
 	class rhsgref_ssh68_ttsko_fall: rhsgref_ssh68
 	{
+		displayName="SSh-68 TTsKO (Fall)";
 		allowedFacewear[]=
 		{
 			"G_Squares_Tinted",
@@ -24031,6 +24241,7 @@ class cfgWeapons
 	};
 	class rhsgref_ssh68_ttsko_summer: rhsgref_ssh68
 	{
+		displayName="SSh-68 TTsKO (Summer)";
 		allowedFacewear[]=
 		{
 			"G_Squares_Tinted",
@@ -24039,6 +24250,7 @@ class cfgWeapons
 	};
 	class rhsgref_ssh68_ttsko_dark: rhsgref_ssh68
 	{
+		displayName="SSh-68 TTsKO (Urban)";
 		allowedFacewear[]=
 		{
 			"G_Squares_Tinted",
@@ -24047,6 +24259,7 @@ class cfgWeapons
 	};
 	class rhsgref_ssh68_ttsko_digi: rhsgref_ssh68
 	{
+		displayName="SSh-68 TTsKO (Digital)";
 		allowedFacewear[]=
 		{
 			"G_Squares_Tinted",
@@ -24055,6 +24268,7 @@ class cfgWeapons
 	};
 	class rhsgref_ssh68_emr: rhsgref_ssh68
 	{
+		displayName="SSh-68 EMR-Summer";
 		allowedFacewear[]=
 		{
 			"G_Squares_Tinted",
@@ -24063,6 +24277,7 @@ class cfgWeapons
 	};
 	class rhsgref_ssh68_un: rhsgref_ssh68
 	{
+		displayName="SSh-68 UN";
 		allowedFacewear[]=
 		{
 			"G_Squares_Tinted",
@@ -24071,6 +24286,7 @@ class cfgWeapons
 	};
 	class rhsgref_ssh68_vsr: rhsgref_ssh68
 	{
+		displayName="SSh-68 VSR";
 		allowedFacewear[]=
 		{
 			"G_Squares_Tinted",
@@ -24084,6 +24300,7 @@ class cfgWeapons
 			"rhs_scarf",
 			"G_Aviator"
 		};
+		displayName="M56";
 		hidddenSelections[]=
 		{
 			"Camo2"
@@ -24110,6 +24327,7 @@ class cfgWeapons
 			"rhs_scarf",
 			"G_Aviator"
 		};
+		displayName="$STR_rhsgref_gear_kaska_k93";
 		hiddenSelectionsMaterials[]=
 		{
 			"rhsgref\addons\rhsgref_infantry\data_cdf\6b27_cdf.rvmat"
@@ -24131,6 +24349,7 @@ class cfgWeapons
 	};
 	class rhsgref_6b27m_ttsko_forest: rhsgref_6b27m
 	{
+		displayName="$STR_rhsgref_gear_kaska_k93_forest";
 		allowedFacewear[]=
 		{
 			"G_Squares_Tinted",
@@ -24143,6 +24362,7 @@ class cfgWeapons
 	};
 	class rhsgref_6b27m_ttsko_mountain: rhsgref_6b27m
 	{
+		displayName="$STR_rhsgref_gear_kaska_k93_mountain";
 		allowedFacewear[]=
 		{
 			"G_Squares_Tinted",
@@ -24155,6 +24375,7 @@ class cfgWeapons
 	};
 	class rhsgref_6b27m_ttsko_urban: rhsgref_6b27m
 	{
+		displayName="$STR_rhsgref_gear_kaska_k93_urban";
 		allowedFacewear[]=
 		{
 			"G_Squares_Tinted",
@@ -24167,6 +24388,7 @@ class cfgWeapons
 	};
 	class rhsgref_6b27m_ttsko_digi: rhsgref_6b27m
 	{
+		displayName="$STR_rhsgref_gear_kaska_k93_digi";
 		allowedFacewear[]=
 		{
 			"rhs_scarf",
@@ -24179,6 +24401,7 @@ class cfgWeapons
 	};
 	class rhsgref_helmet_M1_bare: H_HelmetB
 	{
+		displayName="M1 (OG-107)";
 		class ItemInfo: ItemInfo
 		{
 			mass=40;
@@ -24196,6 +24419,7 @@ class cfgWeapons
 	};
 	class rhsgref_helmet_M1_bare_alt01: rhsgref_helmet_M1_bare
 	{
+		displayName="M1 (OG-107/Alt.)";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="rhsgref\addons\rhsgref_infantry\gear_tanoa\head\M1_strapup";
@@ -24203,6 +24427,7 @@ class cfgWeapons
 	};
 	class rhsgref_helmet_M1_liner: H_HelmetB
 	{
+		displayName="M1 (Liner)";
 		class ItemInfo: ItemInfo
 		{
 			mass=40;
@@ -24220,6 +24445,7 @@ class cfgWeapons
 	};
 	class rhsgref_helmet_M1_mit: H_HelmetB
 	{
+		displayName="M1 (Mitchell)";
 		class ItemInfo: ItemInfo
 		{
 			mass=42;
@@ -24237,6 +24463,7 @@ class cfgWeapons
 	};
 	class rhsgref_helmet_M1_erdl: rhsgref_helmet_M1_mit
 	{
+		displayName="M1 (ERDL)";
 		class ItemInfo: ItemInfo
 		{
 			mass=42;
@@ -24254,6 +24481,7 @@ class cfgWeapons
 	};
 	class rhsgref_helmet_M1_des: rhsgref_helmet_M1_mit
 	{
+		displayName="M1 (Desert)";
 		class ItemInfo: ItemInfo
 		{
 			mass=42;
@@ -24271,6 +24499,7 @@ class cfgWeapons
 	};
 	class rhsgref_hat_M1951: H_HelmetB
 	{
+		displayName="Patrol Cap (OG-107)";
 		class ItemInfo: ItemInfo
 		{
 			mass=5;
@@ -24288,6 +24517,7 @@ class cfgWeapons
 	};
 	class rhsgref_hat_m1941cap: rhsgref_hat_M1951
 	{
+		displayName="M1941 Wool Cap";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="rhsgref\addons\rhsgref_infantry\gear_tanoa\head\m1941cap";
@@ -24295,6 +24525,7 @@ class cfgWeapons
 	};
 	class rhsgref_helmet_M1_painted: rhsgref_helmet_M1_bare
 	{
+		displayName="M1 (Painted)";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="rhsgref\addons\rhsgref_infantry\gear_tanoa\head\M1_strapdown";
@@ -24302,6 +24533,7 @@ class cfgWeapons
 	};
 	class rhsgref_helmet_M1_painted_alt01: rhsgref_helmet_M1_bare
 	{
+		displayName="M1 (Painted/Alt.)";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="rhsgref\addons\rhsgref_infantry\gear_tanoa\head\M1_strapup";
@@ -24309,6 +24541,7 @@ class cfgWeapons
 	};
 	class rhsgref_helmet_pasgt_erdl: H_HelmetB
 	{
+		displayName="PASGT (ERDL)";
 		class ItemInfo: ItemInfo
 		{
 			mass=40;
@@ -24326,6 +24559,7 @@ class cfgWeapons
 	};
 	class rhsgref_helmet_pasgt_erdl_rhino: H_HelmetB
 	{
+		displayName="PASGT (ERDL, Rhino)";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="rhsgref\addons\rhsgref_infantry\gear_tanoa\head\pasgt_helmet_rhino";
@@ -24333,6 +24567,7 @@ class cfgWeapons
 	};
 	class rhsgref_helmet_pasgt_woodland: rhsgref_helmet_pasgt_erdl
 	{
+		displayName="PASGT (Woodland)";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="rhsgref\addons\rhsgref_infantry\gear_tanoa\head\pasgt_helmet";
@@ -24340,6 +24575,7 @@ class cfgWeapons
 	};
 	class rhsgref_helmet_pasgt_woodland_rhino: rhsgref_helmet_pasgt_erdl_rhino
 	{
+		displayName="PASGT (Woodland, Rhino)";
 		class ItemInfo: ItemInfo
 		{
 			mass=40;
@@ -24348,6 +24584,7 @@ class cfgWeapons
 	};
 	class rhsgref_helmet_pasgt_flecktarn: rhsgref_helmet_pasgt_erdl_rhino
 	{
+		displayName="PASGT (Flecktarn)";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="rhsgref\addons\rhsgref_infantry\gear_tanoa\head\pasgt_helmet_rhino";
@@ -24355,6 +24592,7 @@ class cfgWeapons
 	};
 	class rhsgref_helmet_pasgt_un: rhsgref_helmet_pasgt_erdl
 	{
+		displayName="PASGT (UN)";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="rhsgref\addons\rhsgref_infantry\gear_tanoa\head\pasgt_helmet";
@@ -24362,6 +24600,7 @@ class cfgWeapons
 	};
 	class rhsgref_helmet_pasgt_press: rhsgref_helmet_pasgt_erdl
 	{
+		displayName="PASGT (Press)";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="rhsgref\addons\rhsgref_infantry\gear_tanoa\head\pasgt_helmet";
@@ -24369,6 +24608,7 @@ class cfgWeapons
 	};
 	class rhsgref_helmet_pasgt_3color_desert: rhsgref_helmet_pasgt_erdl
 	{
+		displayName="PASGT (3-Color Desert)";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="rhsgref\addons\rhsgref_infantry\gear_tanoa\head\pasgt_helmet";
@@ -24376,6 +24616,7 @@ class cfgWeapons
 	};
 	class rhsgref_helmet_pasgt_3color_desert_rhino: rhsgref_helmet_pasgt_erdl_rhino
 	{
+		displayName="PASGT (3-Color Desert, Rhino)";
 		class ItemInfo: ItemInfo
 		{
 			mass=40;
@@ -24384,6 +24625,7 @@ class cfgWeapons
 	};
 	class rhsgref_helmet_pasgt_altis_lizard: rhsgref_helmet_pasgt_erdl
 	{
+		displayName="PASGT (Altis Lizard)";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="rhsgref\addons\rhsgref_infantry\gear_tanoa\head\pasgt_helmet";
@@ -24391,6 +24633,7 @@ class cfgWeapons
 	};
 	class rhsgref_helmet_pasgt_olive: rhsgref_helmet_pasgt_erdl
 	{
+		displayName="PASGT (Olive)";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="rhsgref\addons\rhsgref_infantry\gear_tanoa\head\pasgt_helmet";
@@ -24398,6 +24641,7 @@ class cfgWeapons
 	};
 	class rhsgref_hat_m43cap_heer: rhsgref_hat_m1941cap
 	{
+		displayName="M43 Cap";
 		class ItemInfo: ItemInfo
 		{
 			mass=5;
@@ -24406,6 +24650,7 @@ class cfgWeapons
 	};
 	class rhsgref_hat_m43cap_heer1_tilted: rhsgref_hat_m43cap_heer
 	{
+		displayName="M43 Cap (Tilted)";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="rhsgref\addons\rhsgref_infantry\gear\Head\m43cap_tilted";
@@ -24413,6 +24658,7 @@ class cfgWeapons
 	};
 	class rhsgref_helmet_m1940: rhsgref_helmet_M1_bare
 	{
+		displayName="M40";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="rhsgref\addons\rhsgref_infantry\gear\Head\M1940_strapdown";
@@ -24420,6 +24666,7 @@ class cfgWeapons
 	};
 	class rhsgref_helmet_m1940_alt1: rhsgref_helmet_m1940
 	{
+		displayName="M40 (Strap Up)";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="rhsgref\addons\rhsgref_infantry\gear\Head\M1940_strapup";
@@ -24427,6 +24674,7 @@ class cfgWeapons
 	};
 	class rhsgref_helmet_m1940_h: rhsgref_helmet_m1940
 	{
+		displayName="M40 (Heer Decal)";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="rhsgref\addons\rhsgref_infantry\gear\Head\M1940_strapdown";
@@ -24434,6 +24682,7 @@ class cfgWeapons
 	};
 	class rhsgref_helmet_m1940_camo01: rhsgref_helmet_m1940
 	{
+		displayName="M40 (Painted)";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="rhsgref\addons\rhsgref_infantry\gear\Head\M1940_strapdown";
@@ -24441,6 +24690,7 @@ class cfgWeapons
 	};
 	class rhsgref_helmet_m1940_camo01_alt1: rhsgref_helmet_m1940_camo01
 	{
+		displayName="M40 (Strap Up/Painted)";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="rhsgref\addons\rhsgref_infantry\gear\Head\M1940_strapup";
@@ -24448,6 +24698,7 @@ class cfgWeapons
 	};
 	class rhsgref_helmet_m1940_winter: rhsgref_helmet_m1940
 	{
+		displayName="M40 (Winter)";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="rhsgref\addons\rhsgref_infantry\gear\Head\M1940_strapdown";
@@ -24455,6 +24706,7 @@ class cfgWeapons
 	};
 	class rhsgref_helmet_m1940_winter_alt1: rhsgref_helmet_m1940_winter
 	{
+		displayName="M40 (Strap Up/Winter)";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="rhsgref\addons\rhsgref_infantry\gear\Head\M1940_strapup";
@@ -24462,6 +24714,7 @@ class cfgWeapons
 	};
 	class rhsgref_helmet_m1942: rhsgref_helmet_m1940
 	{
+		displayName="M42";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="rhsgref\addons\rhsgref_infantry\gear\Head\M1942_strapdown";
@@ -24469,6 +24722,7 @@ class cfgWeapons
 	};
 	class rhsgref_helmet_m1942_alt1: rhsgref_helmet_m1942
 	{
+		displayName="M42 (Strap Up)";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="rhsgref\addons\rhsgref_infantry\gear\Head\M1942_strapup";
@@ -24476,6 +24730,7 @@ class cfgWeapons
 	};
 	class rhsgref_helmet_m1942_h: rhsgref_helmet_m1942
 	{
+		displayName="M42 (Heer Decal)";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="rhsgref\addons\rhsgref_infantry\gear\Head\M1942_strapdown";
@@ -24483,6 +24738,7 @@ class cfgWeapons
 	};
 	class rhsgref_helmet_m1942_camo01: rhsgref_helmet_m1942
 	{
+		displayName="M42 (Painted)";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="rhsgref\addons\rhsgref_infantry\gear\Head\M1942_strapdown";
@@ -24490,6 +24746,7 @@ class cfgWeapons
 	};
 	class rhsgref_helmet_m1942_camo01_alt1: rhsgref_helmet_m1942_camo01
 	{
+		displayName="M42 (Strap Up/Painted)";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="rhsgref\addons\rhsgref_infantry\gear\Head\M1942_strapup";
@@ -24497,6 +24754,7 @@ class cfgWeapons
 	};
 	class rhsgref_helmet_m1942_winter: rhsgref_helmet_m1942
 	{
+		displayName="M42 (Winter)";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="rhsgref\addons\rhsgref_infantry\gear\Head\M1942_strapdown";
@@ -24504,6 +24762,7 @@ class cfgWeapons
 	};
 	class rhsgref_helmet_m1942_winter_alt1: rhsgref_helmet_m1942_winter
 	{
+		displayName="M42 (Strap Up/Winter)";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="rhsgref\addons\rhsgref_infantry\gear\Head\M1942_strapup";
@@ -24511,6 +24770,7 @@ class cfgWeapons
 	};
 	class rhsgref_helmet_m1942_heermarshcover: rhsgref_helmet_m1942
 	{
+		displayName="M42 Covered (Sumpf 44)";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="rhsgref\addons\rhsgref_infantry\gear\Head\M1942_heercoversummer";
@@ -24518,6 +24778,7 @@ class cfgWeapons
 	};
 	class rhsgref_helmet_m1942_heersplintercover: rhsgref_helmet_m1942_heermarshcover
 	{
+		displayName="M42 Covered (Splitter 31)";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="rhsgref\addons\rhsgref_infantry\gear\Head\M1942_heercoversummer";
@@ -24525,6 +24786,7 @@ class cfgWeapons
 	};
 	class rhsgref_helmet_m1942_heergreycover: rhsgref_helmet_m1942_heermarshcover
 	{
+		displayName="M42 Covered (Mouse Grey)";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="rhsgref\addons\rhsgref_infantry\gear\Head\M1942_heercoversummer";
@@ -24532,6 +24794,7 @@ class cfgWeapons
 	};
 	class rhsgref_helmet_m1942_heerwintercover: rhsgref_helmet_m1942_heermarshcover
 	{
+		displayName="M42 Covered (Winter)";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="rhsgref\addons\rhsgref_infantry\gear\Head\M1942_heercoverwinter";
@@ -24545,6 +24808,7 @@ class cfgWeapons
 	class rhsgref_6b23_khaki: rhs_6b23
 	{
 		Scope=2;
+		displayName="6B23 Khaki (Utility)";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="rhsafrf\addons\rhs_infantry\gear\vests\rhs_6b23_engineer";
@@ -24555,6 +24819,7 @@ class cfgWeapons
 	class rhsgref_6b23_khaki_rifleman: rhsgref_6b23_khaki
 	{
 		Scope=2;
+		displayName="6B23 Khaki (Rifleman)";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="rhsafrf\addons\rhs_infantry\gear\vests\rhs_6b23_vydra_3m";
@@ -24565,6 +24830,7 @@ class cfgWeapons
 	class rhsgref_6b23_khaki_sniper: rhsgref_6b23_khaki
 	{
 		Scope=2;
+		displayName="6B23 Khaki (Sniper)";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="rhsafrf\addons\rhs_infantry\gear\vests\rhs_6b23_sniper";
@@ -24575,6 +24841,7 @@ class cfgWeapons
 	class rhsgref_6b23_khaki_officer: rhsgref_6b23_khaki
 	{
 		Scope=2;
+		displayName="6B23 Khaki (Officer)";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="rhsafrf\addons\rhs_infantry\gear\vests\rhs_6b23_crewofficer";
@@ -24585,6 +24852,7 @@ class cfgWeapons
 	class rhsgref_6b23_khaki_nco: rhsgref_6b23_khaki
 	{
 		Scope=2;
+		displayName="6B23 Khaki (NCO)";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="rhsafrf\addons\rhs_infantry\gear\vests\rhs_6b23_6sh46";
@@ -24595,6 +24863,7 @@ class cfgWeapons
 	class rhsgref_6b23_khaki_medic: rhsgref_6b23_khaki
 	{
 		Scope=2;
+		displayName="6B23 Khaki (Medic)";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="rhsafrf\addons\rhs_infantry\gear\vests\rhs_6b23_medic";
@@ -24605,6 +24874,7 @@ class cfgWeapons
 	class rhsgref_6b23_ttsko_forest: rhsgref_6b23_khaki
 	{
 		Scope=2;
+		displayName="6B23 TTsKO Forest (Utility)";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="rhsafrf\addons\rhs_infantry\gear\vests\rhs_6b23_engineer";
@@ -24613,6 +24883,7 @@ class cfgWeapons
 	class rhsgref_6b23_ttsko_forest_rifleman: rhsgref_6b23_khaki_rifleman
 	{
 		Scope=2;
+		displayName="6B23 TTsKO Forest (Rifleman)";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="rhsafrf\addons\rhs_infantry\gear\vests\rhs_6b23_vydra_3m";
@@ -24621,6 +24892,7 @@ class cfgWeapons
 	class rhsgref_6b23_ttsko_mountain: rhsgref_6b23_khaki
 	{
 		Scope=2;
+		displayName="6B23 TTsKO Mountain (Utility)";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="rhsafrf\addons\rhs_infantry\gear\vests\rhs_6b23_engineer";
@@ -24629,6 +24901,7 @@ class cfgWeapons
 	class rhsgref_6b23_ttsko_mountain_rifleman: rhsgref_6b23_khaki_rifleman
 	{
 		Scope=2;
+		displayName="6B23 TTsKO Mountain (Rifleman)";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="rhsafrf\addons\rhs_infantry\gear\vests\rhs_6b23_vydra_3m";
@@ -24637,6 +24910,7 @@ class cfgWeapons
 	class rhsgref_6b23_ttsko_mountain_sniper: rhsgref_6b23_khaki_sniper
 	{
 		Scope=2;
+		displayName="6B23 TTsKO Mountain (Sniper)";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="rhsafrf\addons\rhs_infantry\gear\vests\rhs_6b23_sniper";
@@ -24645,6 +24919,7 @@ class cfgWeapons
 	class rhsgref_6b23_ttsko_mountain_officer: rhsgref_6b23_khaki_officer
 	{
 		Scope=2;
+		displayName="6B23 TTsKO Mountain (Officer)";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="rhsafrf\addons\rhs_infantry\gear\vests\rhs_6b23_crewofficer";
@@ -24653,6 +24928,7 @@ class cfgWeapons
 	class rhsgref_6b23_ttsko_mountain_nco: rhsgref_6b23_khaki_nco
 	{
 		Scope=2;
+		displayName="6B23 TTsKO Mountain (NCO)";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="rhsafrf\addons\rhs_infantry\gear\vests\rhs_6b23_6sh46";
@@ -24661,6 +24937,7 @@ class cfgWeapons
 	class rhsgref_6b23_ttsko_mountain_medic: rhsgref_6b23_khaki_medic
 	{
 		Scope=2;
+		displayName="6B23 TTsKO Mountain (Medic)";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="rhsafrf\addons\rhs_infantry\gear\vests\rhs_6b23_medic";
@@ -24669,6 +24946,7 @@ class cfgWeapons
 	class rhsgref_6b23_ttsko_digi: rhsgref_6b23_khaki
 	{
 		Scope=2;
+		displayName="6B23 TTsKO Digital (Utility)";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="rhsafrf\addons\rhs_infantry\gear\vests\rhs_6b23_engineer";
@@ -24677,6 +24955,7 @@ class cfgWeapons
 	class rhsgref_6b23_ttsko_digi_rifleman: rhsgref_6b23_khaki_rifleman
 	{
 		Scope=2;
+		displayName="6B23 TTsKO Digital (Rifleman)";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="rhsafrf\addons\rhs_infantry\gear\vests\rhs_6b23_vydra_3m";
@@ -24685,6 +24964,7 @@ class cfgWeapons
 	class rhsgref_6b23_ttsko_digi_sniper: rhsgref_6b23_khaki_sniper
 	{
 		Scope=2;
+		displayName="6B23 TTsKO Digital (Sniper)";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="rhsafrf\addons\rhs_infantry\gear\vests\rhs_6b23_sniper";
@@ -24693,6 +24973,7 @@ class cfgWeapons
 	class rhsgref_6b23_ttsko_digi_officer: rhsgref_6b23_khaki_officer
 	{
 		Scope=2;
+		displayName="6B23 TTsKO Digital (Officer)";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="rhsafrf\addons\rhs_infantry\gear\vests\rhs_6b23_crewofficer";
@@ -24701,6 +24982,7 @@ class cfgWeapons
 	class rhsgref_6b23_ttsko_digi_nco: rhsgref_6b23_khaki_nco
 	{
 		Scope=2;
+		displayName="6B23 TTsKO Digital (NCO)";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="rhsafrf\addons\rhs_infantry\gear\vests\rhs_6b23_6sh46";
@@ -24709,6 +24991,7 @@ class cfgWeapons
 	class rhsgref_6b23_ttsko_digi_medic: rhsgref_6b23_khaki_medic
 	{
 		Scope=2;
+		displayName="6B23 TTsKO Digital (Medic)";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="rhsafrf\addons\rhs_infantry\gear\vests\rhs_6b23_medic";
@@ -24716,6 +24999,7 @@ class cfgWeapons
 	};
 	class rhs_6b5: rhs_6b23
 	{
+		displayName="$STR_RHSGREF_6B5_OLIVE_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="rhsgref\addons\rhsgref_infantry\gear_cdf\vests\rhs_6b5_rifleman";
@@ -24758,6 +25042,7 @@ class cfgWeapons
 	};
 	class rhs_6b5_officer: rhs_6b5
 	{
+		displayName="$STR_RHSGREF_6B5_OFFICER_OLIVE_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="rhsgref\addons\rhsgref_infantry\gear_cdf\vests\rhs_6b5_officer";
@@ -24767,6 +25052,7 @@ class cfgWeapons
 	};
 	class rhs_6b5_medic: rhs_6b5
 	{
+		displayName="$STR_RHSGREF_6B5_MEDIC_OLIVE_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="rhsgref\addons\rhsgref_infantry\gear_cdf\vests\rhs_6b5_medic";
@@ -24776,6 +25062,7 @@ class cfgWeapons
 	};
 	class rhs_6b5_sniper: rhs_6b5
 	{
+		displayName="$STR_RHSGREF_6B5_SNIPER_OLIVE_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="rhsgref\addons\rhsgref_infantry\gear_cdf\vests\rhs_6b5_sniper";
@@ -24785,6 +25072,7 @@ class cfgWeapons
 	};
 	class rhs_6b5_rifleman: rhs_6b5
 	{
+		displayName="$STR_RHSGREF_6B5_RIFLEMAN_OLIVE_NAME";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="rhsgref\addons\rhsgref_infantry\gear_cdf\vests\rhs_6b5_6sh46_rifleman";
@@ -24795,30 +25083,70 @@ class cfgWeapons
 	class rhs_6b5_khaki: rhs_6b5
 	{
 		Scope=2;
+		displayName="$STR_RHSGREF_6B5_NAME";
 	};
-	class rhs_6b5_officer_khaki: rhs_6b5_officer;  //found empty after stripping
-	class rhs_6b5_medic_khaki: rhs_6b5_medic;  //found empty after stripping
-	class rhs_6b5_sniper_khaki: rhs_6b5_sniper;  //found empty after stripping
-	class rhs_6b5_rifleman_khaki: rhs_6b5_rifleman;  //found empty after stripping
+	class rhs_6b5_officer_khaki: rhs_6b5_officer
+	{
+		displayName="$STR_RHSGREF_6B5_OFFICER_NAME";
+	};
+	class rhs_6b5_medic_khaki: rhs_6b5_medic
+	{
+		displayName="$STR_RHSGREF_6B5_MEDIC_NAME";
+	};
+	class rhs_6b5_sniper_khaki: rhs_6b5_sniper
+	{
+		displayName="$STR_RHSGREF_6B5_SNIPER_NAME";
+	};
+	class rhs_6b5_rifleman_khaki: rhs_6b5_rifleman
+	{
+		displayName="$STR_RHSGREF_6B5_RIFLEMAN_NAME";
+	};
 	class rhs_6b5_vsr: rhs_6b5
 	{
 		Scope=2;
+		displayName="$STR_RHSGREF_6B5_VSR_NAME";
 	};
-	class rhs_6b5_officer_vsr: rhs_6b5_officer;  //found empty after stripping
-	class rhs_6b5_medic_vsr: rhs_6b5_medic;  //found empty after stripping
-	class rhs_6b5_sniper_vsr: rhs_6b5_sniper;  //found empty after stripping
-	class rhs_6b5_rifleman_vsr: rhs_6b5_rifleman;  //found empty after stripping
+	class rhs_6b5_officer_vsr: rhs_6b5_officer
+	{
+		displayName="$STR_RHSGREF_6B5_OFFICER_VSR_NAME";
+	};
+	class rhs_6b5_medic_vsr: rhs_6b5_medic
+	{
+		displayName="$STR_RHSGREF_6B5_MEDIC_VSR_NAME";
+	};
+	class rhs_6b5_sniper_vsr: rhs_6b5_sniper
+	{
+		displayName="$STR_RHSGREF_6B5_SNIPER_VSR_NAME";
+	};
+	class rhs_6b5_rifleman_vsr: rhs_6b5_rifleman
+	{
+		displayName="$STR_RHSGREF_6B5_RIFLEMAN_VSR_NAME";
+	};
 	class rhs_6b5_ttsko: rhs_6b5
 	{
 		Scope=2;
+		displayName="$STR_RHSGREF_6B5_TTsKO_NAME";
 	};
-	class rhs_6b5_officer_ttsko: rhs_6b5_officer;  //found empty after stripping
-	class rhs_6b5_medic_ttsko: rhs_6b5_medic;  //found empty after stripping
-	class rhs_6b5_sniper_ttsko: rhs_6b5_sniper;  //found empty after stripping
-	class rhs_6b5_rifleman_ttsko: rhs_6b5_rifleman;  //found empty after stripping
+	class rhs_6b5_officer_ttsko: rhs_6b5_officer
+	{
+		displayName="$STR_RHSGREF_6B5_OFFICER_TTsKO_NAME";
+	};
+	class rhs_6b5_medic_ttsko: rhs_6b5_medic
+	{
+		displayName="$STR_RHSGREF_6B5_MEDIC_TTsKO_NAME";
+	};
+	class rhs_6b5_sniper_ttsko: rhs_6b5_sniper
+	{
+		displayName="$STR_RHSGREF_6B5_SNIPER_TTsKO_NAME";
+	};
+	class rhs_6b5_rifleman_ttsko: rhs_6b5_rifleman
+	{
+		displayName="$STR_RHSGREF_6B5_RIFLEMAN_TTsKO_NAME";
+	};
 	class rhsgref_otv_khaki: rhsgref_6b23_khaki_rifleman
 	{
 		Scope=2;
+		displayName="OTV (Khaki)";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="A3\Characters_F_Beta\INDEP\equip_ia_vest01";
@@ -24861,6 +25189,7 @@ class cfgWeapons
 	class rhsgref_otv_digi: rhsgref_otv_khaki
 	{
 		Scope=2;
+		displayName="OTV (Digital)";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="A3\Characters_F_Beta\INDEP\equip_ia_vest01";
@@ -24869,6 +25198,7 @@ class cfgWeapons
 	class rhsgref_TacVest_ERDL: rhsgref_6b23_khaki_rifleman
 	{
 		Scope=2;
+		displayName="Tactical Vest (ERDL)";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="A3\Characters_F\Common\equip_tacticalvest";
@@ -24911,6 +25241,7 @@ class cfgWeapons
 	class rhsgref_alice_webbing: rhs_6b23
 	{
 		Scope=2;
+		displayName="ALICE Webbing";
 		hiddenSelections[]={};
 		hiddenSelectionsTextures[]={};
 		class ItemInfo: ItemInfo
@@ -24932,6 +25263,7 @@ class cfgWeapons
 	class rhsgref_chestrig: rhs_6b23
 	{
 		Scope=2;
+		displayName="Chest Rig (Light)";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="a3\Characters_F\Common\equip_chestrig_light";
@@ -24951,6 +25283,7 @@ class cfgWeapons
 	class rhsgref_chicom: rhsgref_chestrig
 	{
 		Scope=2;
+		displayName="Chicom Chest Rig";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="rhsgref\addons\rhsgref_infantry\gear_tanoa\vest\rhs_vest_chicom.p3d";
@@ -24969,6 +25302,7 @@ class cfgWeapons
 	};
 	class rhsgref_chicom_m88: rhsgref_chicom
 	{
+		displayName="Chicom Chest Rig (M88)";
 		class ItemInfo: ItemInfo
 		{
 			uniformModel="rhsgref\addons\rhsgref_infantry\gear_tanoa\vest\rhs_vest_chicom2.p3d";
