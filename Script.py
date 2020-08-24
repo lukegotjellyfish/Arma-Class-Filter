@@ -59,7 +59,6 @@ attributeSkip = [
 	"discreteDistance",
 	"discretedistance[]",
 	"discreteDistanceInitIndex",
-	"displayName",
 	"distanceZoomMax",
 	"distanceZoomMin",
 	"dlc",
