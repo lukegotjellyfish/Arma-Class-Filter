@@ -1,0 +1,11 @@
+CamShakeHit
+hit=16;
+indirectHit=0;
+indirectHitRange=0;
+timeToLive=10;
+caliber=2;
+typicalSpeed=890;
+airFriction=-0.00060999999;
+deflecting=15;
+count=30;
+initSpeed=900;

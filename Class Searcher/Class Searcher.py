@@ -69,8 +69,8 @@ bluForMagazines = [
 	"rhsusf_mag_10Rnd_STD_50BMG_mk211",
 	"rhsusf_5Rnd_300winmag_xm2010",
 	"rhsgref_8Rnd_762x63_M2B_M1rifle",
-	"rhsusf_20Rnd_762x51_SR25_m118_special_Mag",
-	"rhsusf_20Rnd_762x51_SR25_m118_special_Mag",
+	"rhsusf_20Rnd_762x51_m118_special_Mag",
+	"rhsusf_20Rnd_762x51_m118_special_Mag",
 	"rhs_mag_20Rnd_762x51_m80_fnfal",
 	"rhs_mag_20Rnd_SCAR_762x51_m80_ball",
 	"rhsusf_10Rnd_762x51_m993_Mag",
@@ -87,8 +87,8 @@ bluForMagazines = [
 	"rhs_mag_30Rnd_556x45_M855_Stanag",
 	"rhsgref_30rnd_556x45_m21",
 	"rhssaf_30rnd_556x45_EPR_G36",
-	"rhsusf_200Rnd_556x45_box",
-	"rhsusf_200Rnd_556x45_box",
+	"rhs_200rnd_556x45_B_SAW",
+	"rhs_200rnd_556x45_B_SAW",
 	"rhsgref_8Rnd_762x63_M2B_M1rifle",
 	"rhsusf_mag_40Rnd_46x30_JHP",
 	"rhsusf_mag_15Rnd_9x19_JHP",
@@ -126,30 +126,30 @@ opForWeapons = [
 ]
 opForMagazines = [
 	"rhsgref_1Rnd_00Buck",
-	"hsgref_1Rnd_Slug",
-	"hs_5Rnd_338lapua_t5000",
-	"hs_10Rnd_762x54mmR_7N14",
-	"hs_10Rnd_762x54mmR_7N14",
-	"hsgref_10Rnd_792x57_m76",
-	"hsgref_5Rnd_762x54_m38",
-	"hsgref_5Rnd_762x54_m38",
-	"hs_100Rnd_762x54mmR",
-	"hs_100Rnd_762x54mmR",
-	"hssaf_250Rnd_762x54R",
-	"hs_20rnd_9x39mm_SP6",
-	"hs_20rnd_9x39mm_SP6",
-	"hsusf_5Rnd_762x51_m62_Mag",
-	"hs_30Rnd_545x39_7N22_AK",
-	"hs_30Rnd_545x39_7N10_AK",
-	"hs_10rnd_9x39mm_SP5",
-	"hs_10rnd_9x39mm_SP5",
-	"hs_30Rnd_545x39_7N6_AK",
-	"hs_30Rnd_545x39_7N6M_AK",
-	"hsgref_30rnd_556x45_vhs2",
-	"hs_30Rnd_762x39mm_bakelite",
-	"hs_30Rnd_762x39mm_Savz58",
-	"hs_30Rnd_762x39mm_Savz58",
-	"hs_30Rnd_762x39mm_polymer"
+	"rhsgref_1Rnd_Slug",
+	"rhs_5Rnd_338lapua_t5000",
+	"rhs_10Rnd_762x54mmR_7N14",
+	"rhs_10Rnd_762x54mmR_7N14",
+	"rhsgref_10Rnd_792x57_m76",
+	"rhsgref_5Rnd_762x54_m38",
+	"rhsgref_5Rnd_762x54_m38",
+	"rhs_100Rnd_762x54mmR",
+	"rhs_100Rnd_762x54mmR",
+	"rhssaf_250Rnd_762x54R",
+	"rhs_20rnd_9x39mm_SP6",
+	"rhs_20rnd_9x39mm_SP6",
+	"rhsusf_5Rnd_762x51_m62_Mag",
+	"rhs_30Rnd_545x39_7N22_AK",
+	"rhs_30Rnd_545x39_7N10_AK",
+	"rhs_10rnd_9x39mm_SP5",
+	"rhs_10rnd_9x39mm_SP5",
+	"rhs_30Rnd_545x39_7N6_AK",
+	"rhs_30Rnd_545x39_7N6M_AK",
+	"rhsgref_30rnd_556x45_vhs2",
+	"rhs_30Rnd_762x39mm",
+	"rhs_30Rnd_762x39mm",
+	"rhs_30Rnd_762x39mm",
+	"rhs_30Rnd_762x39mm"
 ]
 
 #Classes for launcher page
@@ -182,7 +182,7 @@ def findClass(className):
 					#This regex search is required for my generated config.cpp files as
 					# classes that end as empty are stripped to a single line with a comment
 					# marking them as stripped to a single line.
-					if line.count(":") == 1 :
+					if line.count(":") == 1:
 						_className = re.search("class [^\n:]*: ([^\n;]*)", line).group(1).replace("\n","")
 					else:
 						_className = re.search("class ([^\n;]*)", line).group(1).replace("\n","")
@@ -222,10 +222,6 @@ def findClass(className):
 					#If skips are 0, the end of the class has been reached
 					if skipEnd == 0:
 						onClass = False
-
-				"""
-				Add a function here to add a description of attribute to EOL
-				"""
 				classBody.append(line.replace("\n",""))
 
 				if onClass == False:
@@ -267,7 +263,7 @@ def OrderedClasses(itemList, fileName, includeList, findMagazines=False):
 		result = findClass(_class)
 
 		orderedResult = OrderResult(result)
-		className = re.search("class ([^:]*):", orderedResult[0][0]).group(1)
+		className = re.search("class ([^:\n;]*)", orderedResult[0][0]).group(1)
 
 		with open(fileName + "\\" + className + ".cpp", "w", encoding="utf-8") as file:
 			file.write(className + "\n")
@@ -326,8 +322,8 @@ for walk in walkList:
 
 weaponAttributes = ["dispersion", "mass", "maxZeroing", "recoil", "reloadTime"]
 ammoAttributes = ["hit", "count", "indirectHit","indirectHitRange","timeToLive","explosive", "deflecting", "caliber", "typicalSpeed", "airFriction", "initSpeed"]
-OrderedClasses(bluForWeapons, "BluForWeapons", weaponAttributes, findMagazines=True)
-OrderedClasses(opForWeapons, "OpForWeapons", weaponAttributes, findMagazines=True)
+OrderedClasses(bluForWeapons, "BluForWeapons", weaponAttributes)
+OrderedClasses(opForWeapons, "OpForWeapons", weaponAttributes)
 OrderedClasses(bluForMagazines, "BluForMagazines", ammoAttributes)
 OrderedClasses(opForMagazines, "OpForMagazines", ammoAttributes)
 

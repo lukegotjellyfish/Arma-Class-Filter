@@ -1,0 +1,11 @@
+rhs_ammo_8mm_mhp
+hit=3.4313264;
+indirectHit=0;
+indirectHitRange=0;
+deflecting=30;
+caliber=0.53333336;
+typicalSpeed=290;
+airFriction=-0.0018;
+timeToLive=6;
+count=30;
+initSpeed=900;

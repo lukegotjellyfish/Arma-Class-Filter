@@ -1,0 +1,11 @@
+rhs_ammo_762x51_M993_Ball
+caliber=1.41176;
+typicalSpeed=910;
+hit=11.55;
+indirectHit=0;
+indirectHitRange=0;
+airFriction=-0.00068140001;
+timeToLive=6;
+deflecting=15;
+count=5;
+initSpeed=900;

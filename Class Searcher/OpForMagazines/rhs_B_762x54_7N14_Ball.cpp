@@ -1,0 +1,11 @@
+rhs_B_762x54_7N14_Ball
+hit=13.61;
+caliber=0.91463399;
+typicalSpeed=823;
+airFriction=-0.00075599999;
+deflecting=15;
+indirectHit=0;
+indirectHitRange=0;
+timeToLive=6;
+count=30;
+initSpeed=900;

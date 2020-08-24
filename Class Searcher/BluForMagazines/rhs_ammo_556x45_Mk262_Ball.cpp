@@ -1,0 +1,11 @@
+rhs_ammo_556x45_Mk262_Ball
+hit=10.3;
+deflecting=15;
+caliber=0.67699999;
+typicalSpeed=838.20001;
+airFriction=-0.00066000002;
+indirectHit=0;
+indirectHitRange=0;
+timeToLive=6;
+count=30;
+initSpeed=900;

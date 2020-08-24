@@ -1,0 +1,11 @@
+rhs_ammo_9x17
+hit=4.8699999;
+deflecting=37;
+caliber=0.338;
+typicalSpeed=272;
+airFriction=-0.0017671455;
+indirectHit=0;
+indirectHitRange=0;
+timeToLive=6;
+count=30;
+initSpeed=900;

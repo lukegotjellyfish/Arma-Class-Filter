@@ -1,0 +1,11 @@
+rhs_B_762x39_Ball
+hit=8.5;
+deflecting=15;
+caliber=0.55000001;
+typicalSpeed=718;
+airFriction=-0.0016519;
+indirectHit=0;
+indirectHitRange=0;
+timeToLive=6;
+count=30;
+initSpeed=900;

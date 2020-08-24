@@ -1,0 +1,11 @@
+rhs_ammo_45ACP_MHP
+hit=5.1468592;
+indirectHit=0;
+indirectHitRange=0;
+deflecting=30;
+caliber=2.6809652;
+typicalSpeed=280;
+airFriction=-0.0018;
+timeToLive=6;
+count=30;
+initSpeed=900;
