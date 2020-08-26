@@ -261,19 +261,20 @@ def findClass(className):
 def OrderResult(result):
 	#Create list for sorting of each class in returned class details
 	orderedResult = []
-	onClass = False
+	onClass = 0
 	construct = []
+	tabCount = ""
 	for a in result:
-		if a.replace("	","").startswith("class") or onClass == True:
+		print(a)
+		if a.count("	class") > 0 or onClass > 0:
 			tabCount = a.count("	")
-			onClass = True
-			construct.append(a)
-		if a == tabCount * "	" + "};":
-			onClass = False
+			onClass += 1
+			construct.append(a.replace("	",""))
+		if a.count("	};") > 0 and a.count("	") == tabCount:
+			onClass -= 1
 			orderedResult.append(construct)
 			construct = []
 
-	#Empty lists are being added to the list on second run, need to fix this at the core
 	reversedList = list(reversed(orderedResult))
 	fixedReversedList = [x for x in reversedList if x]
 	return fixedReversedList
@@ -286,9 +287,7 @@ def OrderedClasses(itemList, fileName, includeList, findMagazines=False):
 		pass
 
 	for _class in itemList:
-		input("Starting")
 		result = findClass(_class)
-
 		orderedResult = OrderResult(result)
 
 		with open(fileName + "\\" + _class + ".cpp", "w", encoding="utf-8") as file:
@@ -301,7 +300,6 @@ def OrderedClasses(itemList, fileName, includeList, findMagazines=False):
 				for attribute in includeList:
 					magazinesFlag = False
 					for item in classBody:
-
 						if findMagazines == True and magazinesFlag == True:
 							if item.endswith("};"):
 								file.write("};\n")
@@ -309,7 +307,6 @@ def OrderedClasses(itemList, fileName, includeList, findMagazines=False):
 							elif item.endswith("{"):
 								pass
 							else:
-								print(item.replace('"',"").replace(",",""))
 								file.write("	" + item.replace("	","") + "\n")
 							continue
 
@@ -321,9 +318,8 @@ def OrderedClasses(itemList, fileName, includeList, findMagazines=False):
 
 						try:
 							_temp = re.search("(" + attribute + "=[^\n]*)", item).group(1)
-							_attribute = re.search("([^=]*)=",_temp).group(1)
-							if _attribute not in addedForClass:
-								addedForClass.append(_attribute)
+							if _temp not in addedForClass:
+								addedForClass.append(_temp)
 								file.write(_temp + "\n")
 						except AttributeError:
 							continue
@@ -331,6 +327,7 @@ def OrderedClasses(itemList, fileName, includeList, findMagazines=False):
 		print(cviolet2 + "-------------------------------" + cend + \
 		(cgreen + cbold + "Next class" + cend) + \
 		cviolet2 + "-------------------------------" + cend)
+		input("next item")
 
 
 #List of file contents
@@ -374,6 +371,7 @@ launcherAttributes = [
 	"mass",
 	"maxZeroing",
 	"recoil",
+	"reloadAction",
 	"weaponLockDelay",
 	"weaponLockSystem"
 ]
@@ -399,7 +397,7 @@ launcherAmmoAttributes = [
 #OrderedClasses(bluForMagazines, "BluForMagazines", ammoAttributes)
 #OrderedClasses(opForMagazines, "OpForMagazines", ammoAttributes)
 OrderedClasses(launchers, "Launchers", launcherAttributes)
-OrderedClasses(launcherAmmo, "LauncherAmmo", launcherAmmoAttributes)
+#OrderedClasses(launcherAmmo, "LauncherAmmo", launcherAmmoAttributes)
 #OrderedClasses()
 #OrderedClasses()
 #OrderedClasses()
