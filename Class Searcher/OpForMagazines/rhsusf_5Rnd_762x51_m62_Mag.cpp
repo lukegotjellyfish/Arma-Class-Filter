@@ -1,0 +1,11 @@
+rhsusf_5Rnd_762x51_m62_Mag
+initSpeed=910;
+hit=11;
+airFriction=-0.00068140001;
+caliber=0.44999999;
+indirectHit=0;
+indirectHitRange=0;
+typicalSpeed=838;
+deflecting=15;
+timeToLive=6;
+count=5;

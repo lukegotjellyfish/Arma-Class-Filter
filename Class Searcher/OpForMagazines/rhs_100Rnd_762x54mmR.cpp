@@ -1,0 +1,11 @@
+rhs_100Rnd_762x54mmR
+count=100;
+initSpeed=798;
+airFriction=-0.0010922001;
+caliber=0.341151;
+deflecting=15;
+hit=11.47;
+typicalSpeed=828;
+indirectHit=0;
+indirectHitRange=0;
+timeToLive=6;

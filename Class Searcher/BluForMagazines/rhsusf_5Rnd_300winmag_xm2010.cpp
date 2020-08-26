@@ -1,0 +1,11 @@
+rhsusf_5Rnd_300winmag_xm2010
+count=5;
+initSpeed=869;
+airFriction=-0.0007034;
+caliber=0.79000002;
+hit=18.5;
+indirectHit=0;
+indirectHitRange=0;
+typicalSpeed=869;
+deflecting=15;
+timeToLive=6;

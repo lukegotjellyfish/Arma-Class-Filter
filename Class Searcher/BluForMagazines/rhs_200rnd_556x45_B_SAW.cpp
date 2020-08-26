@@ -1,0 +1,11 @@
+rhs_200rnd_556x45_B_SAW
+airFriction=-0.000772;
+caliber=0.64999998;
+deflecting=21;
+hit=9;
+typicalSpeed=960;
+indirectHit=0;
+indirectHitRange=0;
+timeToLive=6;
+count=200;
+initSpeed=960;

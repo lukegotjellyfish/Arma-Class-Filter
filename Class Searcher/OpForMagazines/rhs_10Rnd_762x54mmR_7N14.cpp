@@ -1,0 +1,11 @@
+rhs_10Rnd_762x54mmR_7N14
+airFriction=-0.00075599999;
+caliber=0.91463399;
+hit=13.61;
+typicalSpeed=823;
+deflecting=15;
+indirectHit=0;
+indirectHitRange=0;
+timeToLive=6;
+count=10;
+initSpeed=823;

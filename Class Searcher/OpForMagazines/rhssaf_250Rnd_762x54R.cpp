@@ -1,0 +1,11 @@
+rhssaf_250Rnd_762x54R
+count=250;
+airFriction=-0.0010922001;
+caliber=0.341151;
+deflecting=15;
+hit=11.47;
+typicalSpeed=828;
+indirectHit=0;
+indirectHitRange=0;
+timeToLive=6;
+initSpeed=798;

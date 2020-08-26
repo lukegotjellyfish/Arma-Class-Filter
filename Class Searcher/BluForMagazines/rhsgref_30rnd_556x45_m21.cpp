@@ -1,0 +1,11 @@
+rhsgref_30rnd_556x45_m21
+count=30;
+initSpeed=925;
+airFriction=-0.00076000002;
+caliber=0.44;
+deflecting=21;
+hit=9;
+typicalSpeed=920;
+indirectHit=0;
+indirectHitRange=0;
+timeToLive=6;

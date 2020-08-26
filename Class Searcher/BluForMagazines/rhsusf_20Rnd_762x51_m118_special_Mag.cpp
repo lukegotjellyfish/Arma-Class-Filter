@@ -1,0 +1,11 @@
+rhsusf_20Rnd_762x51_m118_special_Mag
+initSpeed=805;
+airFriction=-0.00074739999;
+caliber=0.51999998;
+typicalSpeed=805;
+hit=11.55;
+indirectHit=0;
+indirectHitRange=0;
+count=20;
+deflecting=15;
+timeToLive=6;

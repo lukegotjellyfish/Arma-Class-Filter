@@ -1,5 +1,4 @@
-rhsusf_mag_15Rnd_9x19_JHP
-count=15;
+rhsusf_mag_17Rnd_9x19_JHP
 initSpeed=301.79999;
 airFriction=-0.001095;
 caliber=0.41499999;
@@ -9,3 +8,4 @@ indirectHit=0;
 indirectHitRange=0;
 typicalSpeed=301.79999;
 timeToLive=6;
+count=17;

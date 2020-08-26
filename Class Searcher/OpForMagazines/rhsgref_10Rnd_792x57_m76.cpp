@@ -1,0 +1,11 @@
+rhsgref_10Rnd_792x57_m76
+count=10;
+initSpeed=730;
+airFriction=-0.00068140001;
+caliber=0.44999999;
+hit=11.55;
+indirectHit=0;
+indirectHitRange=0;
+typicalSpeed=838;
+deflecting=15;
+timeToLive=6;

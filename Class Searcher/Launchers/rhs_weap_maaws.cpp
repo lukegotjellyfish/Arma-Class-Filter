@@ -1,0 +1,9 @@
+rhs_weap_maaws
+canLock=0;
+lockAcquire=0;
+mass="187,4";
+weaponLockDelay=3;
+recoil="rhs_weap_smaw_SR_recoil";
+dispersion=0.34999999;
+maxZeroing=900;
+reloadAction="RHS_ReloadRPG";

@@ -1,0 +1,11 @@
+rhsusf_mag_7x45acp_MHP
+count=7;
+initSpeed=280;
+airFriction=-0.0018;
+caliber=2.6809652;
+deflecting=30;
+hit=5.1468592;
+indirectHit=0;
+indirectHitRange=0;
+typicalSpeed=280;
+timeToLive=6;

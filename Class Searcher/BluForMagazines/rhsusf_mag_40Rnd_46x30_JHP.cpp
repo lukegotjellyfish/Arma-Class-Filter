@@ -1,0 +1,11 @@
+rhsusf_mag_40Rnd_46x30_JHP
+count=40;
+initSpeed=620;
+caliber=0.46399999;
+deflecting=25;
+hit=7.4000001;
+typicalSpeed=699.8208;
+airFriction=-0.0027667;
+indirectHit=0;
+indirectHitRange=0;
+timeToLive=6;

@@ -1,0 +1,11 @@
+rhsgref_1Rnd_Slug
+initSpeed=395;
+airFriction=-0.0020419999;
+caliber=0.3048;
+hit=34.509998;
+indirectHit=0;
+indirectHitRange=0;
+typicalSpeed=475.48999;
+deflecting=30;
+timeToLive=6;
+count=1;

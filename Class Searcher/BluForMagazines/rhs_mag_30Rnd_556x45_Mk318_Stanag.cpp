@@ -1,0 +1,11 @@
+rhs_mag_30Rnd_556x45_Mk318_Stanag
+initSpeed=950.36639;
+airFriction=-0.00076000002;
+caliber=0.63999999;
+deflecting=17;
+hit=9.5500002;
+typicalSpeed=950;
+indirectHit=0;
+indirectHitRange=0;
+timeToLive=6;
+count=30;

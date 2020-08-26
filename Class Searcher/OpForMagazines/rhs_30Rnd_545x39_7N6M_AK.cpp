@@ -1,0 +1,11 @@
+rhs_30Rnd_545x39_7N6M_AK
+initSpeed=880;
+airFriction=-0.0011390001;
+caliber=0.231884;
+deflecting=20;
+hit=9.3000002;
+typicalSpeed=880;
+indirectHit=0;
+indirectHitRange=0;
+timeToLive=6;
+count=30;
