@@ -294,9 +294,6 @@ def OrderedClasses(itemList, fileName, includeList, findMagazines=False):
 			file.write(_class + "\n")
 			addedForClass = []
 			for classBody in orderedResult:
-				#print(classBody)
-				#del classBody[-1] #last item is a duplicate }; and I have no idea why
-
 				for attribute in includeList:
 					magazinesFlag = False
 					for item in classBody:
@@ -318,8 +315,8 @@ def OrderedClasses(itemList, fileName, includeList, findMagazines=False):
 
 						try:
 							_temp = re.search("(" + attribute + "=[^\n]*)", item).group(1)
-							if _temp not in addedForClass:
-								addedForClass.append(_temp)
+							if attribute not in addedForClass:
+								addedForClass.append(attribute)
 								file.write(_temp + "\n")
 						except AttributeError:
 							continue
@@ -327,7 +324,6 @@ def OrderedClasses(itemList, fileName, includeList, findMagazines=False):
 		print(cviolet2 + "-------------------------------" + cend + \
 		(cgreen + cbold + "Next class" + cend) + \
 		cviolet2 + "-------------------------------" + cend)
-		input("next item")
 
 
 #List of file contents
@@ -392,10 +388,10 @@ launcherAmmoAttributes = [
 	"",
 	""
 ]
-#OrderedClasses(bluForWeapons, "BluForWeapons", weaponAttributes)
-#OrderedClasses(opForWeapons, "OpForWeapons", weaponAttributes)
-#OrderedClasses(bluForMagazines, "BluForMagazines", ammoAttributes)
-#OrderedClasses(opForMagazines, "OpForMagazines", ammoAttributes)
+OrderedClasses(bluForWeapons, "BluForWeapons", weaponAttributes)
+OrderedClasses(opForWeapons, "OpForWeapons", weaponAttributes)
+OrderedClasses(bluForMagazines, "BluForMagazines", ammoAttributes)
+OrderedClasses(opForMagazines, "OpForMagazines", ammoAttributes)
 OrderedClasses(launchers, "Launchers", launcherAttributes)
 #OrderedClasses(launcherAmmo, "LauncherAmmo", launcherAmmoAttributes)
 #OrderedClasses()
