@@ -2,6 +2,16 @@ class CfgPatches
 {
 	class rhs_cti_insurgents
 	{
+		requiredAddons[]=
+		{
+			"A3_Structures_F_Mil_Flags",
+			"rhs_c_a2port_armor",
+			"rhs_c_bmp",
+			"rhs_c_bmd",
+			"rhs_c_btr",
+			"rhs_c_t72"
+		};
+		requiredVersion=0.1;
 		units[]=
 		{
 			"rhs_g_Soldier_F",
@@ -46,7 +56,21 @@ class cfgWeapons
 	class U_I_OfficerUniform;
 	class rhs_chdkz_uniform_1: U_I_OfficerUniform
 	{
+		dlc="RHS_AFRF";
+		scope=1;
+		scopeCurator=1;
 		displayName="Guerilla Uniform (Les)";
+		picture="\A3\characters_f\data\ui\icon_U_IR_Officer_spc_ca.paa";
+		model="A3\Characters_F\Common\Suitpacks\suitpack_blufor_diver";
+		author="$STR_RHS_AUTHOR_FULL";
+		hiddenSelections[]=
+		{
+			"camo"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"\A3\Characters_F\Common\Suitpacks\data\suitpack_soldier_indep_co.paa"
+		};
 		class ItemInfo: UniformItem
 		{
 			uniformModel="-";
@@ -57,7 +81,21 @@ class cfgWeapons
 	};
 	class rhs_chdkz_uniform_2: U_I_OfficerUniform
 	{
+		dlc="RHS_AFRF";
+		scope=1;
+		scopeCurator=1;
 		displayName="Guerilla Uniform (Half-Les)";
+		picture="\A3\characters_f\data\ui\icon_U_IR_Officer_spc_ca.paa";
+		model="A3\Characters_F\Common\Suitpacks\suitpack_blufor_diver";
+		author="$STR_RHS_AUTHOR_FULL";
+		hiddenSelections[]=
+		{
+			"camo"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"\A3\Characters_F\Common\Suitpacks\data\suitpack_soldier_indep_co.paa"
+		};
 		class ItemInfo: UniformItem
 		{
 			uniformModel="-";
@@ -68,7 +106,21 @@ class cfgWeapons
 	};
 	class rhs_chdkz_uniform_3: U_I_OfficerUniform
 	{
+		dlc="RHS_AFRF";
+		scope=1;
+		scopeCurator=1;
 		displayName="Guerilla Uniform (Half-Kamysh)";
+		picture="\A3\characters_f\data\ui\icon_U_IR_Officer_spc_ca.paa";
+		model="A3\Characters_F\Common\Suitpacks\suitpack_blufor_diver";
+		author="$STR_RHS_AUTHOR_FULL";
+		hiddenSelections[]=
+		{
+			"camo"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"\A3\Characters_F\Common\Suitpacks\data\suitpack_soldier_indep_co.paa"
+		};
 		class ItemInfo: UniformItem
 		{
 			uniformModel="-";
@@ -79,7 +131,21 @@ class cfgWeapons
 	};
 	class rhs_chdkz_uniform_4: U_I_OfficerUniform
 	{
+		dlc="RHS_AFRF";
+		scope=1;
+		scopeCurator=1;
 		displayName="Guerilla Uniform (Half-Flora)";
+		picture="\A3\characters_f\data\ui\icon_U_IR_Officer_spc_ca.paa";
+		model="A3\Characters_F\Common\Suitpacks\suitpack_blufor_diver";
+		author="$STR_RHS_AUTHOR_FULL";
+		hiddenSelections[]=
+		{
+			"camo"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"\A3\Characters_F\Common\Suitpacks\data\suitpack_soldier_indep_co.paa"
+		};
 		class ItemInfo: UniformItem
 		{
 			uniformModel="-";
@@ -90,7 +156,21 @@ class cfgWeapons
 	};
 	class rhs_chdkz_uniform_5: U_I_OfficerUniform
 	{
+		dlc="RHS_AFRF";
+		scope=1;
+		scopeCurator=1;
 		displayName="Guerilla Uniform (Flora-Les)";
+		picture="\A3\characters_f\data\ui\icon_U_IR_Officer_spc_ca.paa";
+		model="A3\Characters_F\Common\Suitpacks\suitpack_blufor_diver";
+		author="$STR_RHS_AUTHOR_FULL";
+		hiddenSelections[]=
+		{
+			"camo"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"\A3\Characters_F\Common\Suitpacks\data\suitpack_soldier_indep_co.paa"
+		};
 		class ItemInfo: UniformItem
 		{
 			uniformModel="-";
@@ -99,11 +179,31 @@ class cfgWeapons
 			mass=40;
 		};
 	};
-	class rhs_insurgent_uniform_1: rhs_chdkz_uniform_1;  //found empty after stripping
-	class rhs_insurgent_uniform_2: rhs_chdkz_uniform_2;  //found empty after stripping
-	class rhs_insurgent_uniform_3: rhs_chdkz_uniform_3;  //found empty after stripping
-	class rhs_insurgent_uniform_4: rhs_chdkz_uniform_4;  //found empty after stripping
-	class rhs_insurgent_uniform_5: rhs_chdkz_uniform_5;  //found empty after stripping
+	class rhs_insurgent_uniform_1: rhs_chdkz_uniform_1
+	{
+		scope=1;
+		scopeCurator=1;
+	};
+	class rhs_insurgent_uniform_2: rhs_chdkz_uniform_2
+	{
+		scope=1;
+		scopeCurator=1;
+	};
+	class rhs_insurgent_uniform_3: rhs_chdkz_uniform_3
+	{
+		scope=1;
+		scopeCurator=1;
+	};
+	class rhs_insurgent_uniform_4: rhs_chdkz_uniform_4
+	{
+		scope=1;
+		scopeCurator=1;
+	};
+	class rhs_insurgent_uniform_5: rhs_chdkz_uniform_5
+	{
+		scope=1;
+		scopeCurator=1;
+	};
 };
 class UniformSlotInfo;
 class CfgVehicles
@@ -111,14 +211,27 @@ class CfgVehicles
 	class FlagCarrierCore;
 	class rhs_FlagCarrier: FlagCarrierCore
 	{
+		author="$STR_A3_Bohemia_Interactive";
+		scope=0;
+		scopeCurator=0;
 		displayName="";
+		model="\rhsafrf\addons\rhs_c_cti_indep\flag_rebel.p3d";
 		icon="iconObject_circle";
+		vehicleClass="Flag";
 		cost=1000;
 		keepHorizontalPlacement=1;
 		accuracy=1000;
 		animated=0;
 		nameSound="obj_flag";
 		supplyRadius=2;
+		hiddenSelections[]=
+		{
+			"vlajka"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"\A3\Structures_F\Mil\Flags\Data\Mast_civ_CO.paa"
+		};
 		hiddenSelectionsMaterials[]=
 		{
 			"\A3\Structures_F\Mil\Flags\Data\Mast_civ.rvmat"
@@ -126,6 +239,9 @@ class CfgVehicles
 	};
 	class rhs_Flag_chdkz: rhs_FlagCarrier
 	{
+		author="$STR_RHS_AUTHOR_FULL";
+		scope=2;
+		scopeCurator=2;
 		displayName="CHDKZ Small Flag";
 		class EventHandlers
 		{
@@ -137,6 +253,9 @@ class CfgVehicles
 	};
 	class rhs_Flag_Insurgents: rhs_FlagCarrier
 	{
+		author="$STR_RHS_AUTHOR_FULL";
+		scope=2;
+		scopeCurator=2;
 		displayName="Insurgents Small Flag";
 		class EventHandlers
 		{
@@ -152,20 +271,78 @@ class CfgVehicles
 	class B_Carryall_cbr;
 	class rhs_ins_pack: B_FieldPack_khk
 	{
+		scope=1;
 		displayName="Backpack (Ammo)";
+		class TransportMagazines
+		{
+			class _xx_rhs_30Rnd_762x39mm
+			{
+				magazine="rhs_30Rnd_762x39mm";
+				count=6;
+			};
+			class _xx_rhs_mag_rgn
+			{
+				magazine="rhs_mag_rgn";
+				count=3;
+			};
+		};
 	};
 	class rhs_ins_pack_GR: B_FieldPack_cbr
 	{
+		scope=1;
 		displayName="Backpack (Ammo)";
+		class TransportMagazines
+		{
+			class _xx_rhs_30Rnd_762x39mm
+			{
+				magazine="rhs_30Rnd_762x39mm";
+				count=6;
+			};
+			class _xx_rhs_mag_rgn
+			{
+				magazine="rhs_mag_rgn";
+				count=3;
+			};
+		};
 	};
 	class rhs_ins_packMG: B_TacticalPack_blk
 	{
+		scope=1;
 		displayName="Backpack (MG)";
+		class TransportMagazines
+		{
+			class _xx_PKM
+			{
+				magazine="rhs_100Rnd_762x54mmR";
+				count=3;
+			};
+		};
 	};
 	class rhs_ins_demo: B_Carryall_cbr
 	{
+		author="$STR_RHS_AUTHOR_FULL";
+		scope=1;
+		model="\rhsafrf\addons\rhs_infantry\gear\backpacks\rhs_assault_umtbs_engineer";
 		displayName="$STR_RHS_UMBTSBACKPACKDEMOLITIONS_NAME";
 		hiddenSelectionsTextures[]={};
+		class TransportItems
+		{
+			class _xx_DemoCharge_Remote_Mag
+			{
+				name="DemoCharge_Remote_Mag";
+				count=1;
+			};
+			class _xx_rhs_mine_tm62m_mag
+			{
+				name="rhs_mine_tm62m_mag";
+				count=1;
+			};
+			class _xx_rhs_mine_pmn2_mag
+			{
+				name="rhs_mine_pmn2_mag";
+				count=3;
+			};
+		};
 	};
 	class I_G_Soldier_base_F;
 	class I_G_Soldier_F: I_G_Soldier_base_F
@@ -174,7 +351,12 @@ class CfgVehicles
 	};
 	class rhs_ins_base: I_G_Soldier_F
 	{
+		scope=0;
+		scopeCurator=0;
+		author="$STR_RHS_AUTHOR_FULL";
 		displayName="$STR_RHS_INF_RIFLEMAN";
+		faction="rhs_faction_insurgents";
+		dlc="RHS_AFRF";
 		identityTypes[]=
 		{
 			"LanguageRUS_F",
@@ -280,10 +462,28 @@ class CfgVehicles
 		{
 			"\rhsafrf\addons\rhs_c_cti_indep\data\infantry\rvmats\clothing.rvmat"
 		};
-		class Wounds;  //found empty after stripping
+		class Wounds
+		{
+			tex[]={};
+			mat[]=
+			{
+				"rhsafrf\addons\rhs_c_cti_indep\data\infantry\rvmats\clothing.rvmat",
+				"rhsafrf\addons\rhs_c_cti_indep\data\infantry\rvmats\clothing_w1.rvmat",
+				"rhsafrf\addons\rhs_c_cti_indep\data\infantry\rvmats\clothing_w2.rvmat",
+				"rhsafrf\addons\rhs_c_cti_indep\data\infantry\rvmats\clothing.rvmat",
+				"rhsafrf\addons\rhs_c_cti_indep\data\infantry\rvmats\clothing_w1.rvmat",
+				"rhsafrf\addons\rhs_c_cti_indep\data\infantry\rvmats\clothing_w2.rvmat",
+				"rhsafrf\addons\rhs_c_cti_indep\data\infantry\rvmats\clothing.rvmat",
+				"rhsafrf\addons\rhs_c_cti_indep\data\infantry\rvmats\clothing_w1.rvmat",
+				"rhsafrf\addons\rhs_c_cti_indep\data\infantry\rvmats\clothing_w2.rvmat"
+			};
+		};
 	};
 	class rhs_g_Soldier_F: rhs_ins_base
 	{
+		scope=1;
+		scopeCurator=1;
+		author="$STR_RHS_AUTHOR_FULL";
 		displayName="$STR_RHS_INF_RIFLEMAN_AKM";
 		uniformClass="rhs_chdkz_uniform_4";
 		linkedItems[]=
@@ -307,6 +507,9 @@ class CfgVehicles
 	};
 	class rhs_g_Soldier_lite_F: rhs_ins_base
 	{
+		scope=1;
+		scopeCurator=1;
+		author="$STR_RHS_AUTHOR_FULL";
 		displayName="$STR_RHS_INF_RIFLEMAN_L";
 		uniformClass="rhs_chdkz_uniform_5";
 		headgearProbability=0;
@@ -343,6 +546,9 @@ class CfgVehicles
 	};
 	class rhs_g_Soldier_F2: rhs_ins_base
 	{
+		scope=1;
+		scopeCurator=1;
+		author="$STR_RHS_AUTHOR_FULL";
 		displayName="$STR_RHS_INF_RIFLEMAN_AK103";
 		uniformClass="rhs_chdkz_uniform_2";
 		linkedItems[]=
@@ -380,6 +586,9 @@ class CfgVehicles
 	};
 	class rhs_g_Soldier_F3: rhs_ins_base
 	{
+		scope=1;
+		scopeCurator=1;
+		author="$STR_RHS_AUTHOR_FULL";
 		displayName="Rifleman (AK74M)";
 		uniformClass="rhs_chdkz_uniform_3";
 		linkedItems[]=
@@ -440,6 +649,9 @@ class CfgVehicles
 	};
 	class rhs_g_Soldier_AT_F: rhs_ins_base
 	{
+		scope=1;
+		scopeCurator=1;
+		author="$STR_RHS_AUTHOR_FULL";
 		displayName="$STR_RHS_INF_LAT";
 		uniformClass="rhs_chdkz_uniform_2";
 		headgearProbability=0;
@@ -504,6 +716,9 @@ class CfgVehicles
 	};
 	class rhs_g_Soldier_GL_F: rhs_ins_base
 	{
+		scope=1;
+		scopeCurator=1;
+		author="$STR_RHS_AUTHOR_FULL";
 		displayName="$STR_RHS_INF_GRENADIER";
 		uniformClass="rhs_chdkz_uniform_2";
 		linkedItems[]=
@@ -580,6 +795,9 @@ class CfgVehicles
 	};
 	class rhs_g_Soldier_TL_F: rhs_g_Soldier_GL_F
 	{
+		scope=1;
+		scopeCurator=1;
+		author="$STR_RHS_AUTHOR_FULL";
 		displayName="$STR_RHSUSF_INF_SCOUT_GR";
 		uniformClass="rhs_chdkz_uniform_4";
 		headgearProbability=0;
@@ -618,6 +836,9 @@ class CfgVehicles
 	};
 	class rhs_g_Soldier_M_F: rhs_ins_base
 	{
+		scope=1;
+		scopeCurator=1;
+		author="$STR_RHS_AUTHOR_FULL";
 		displayName="$STR_RHS_INF_MARKSMAN";
 		uniformClass="rhs_chdkz_uniform_5";
 		headgearProbability=0;
@@ -674,6 +895,9 @@ class CfgVehicles
 	};
 	class rhs_g_Soldier_AR_F: rhs_ins_base
 	{
+		scope=1;
+		scopeCurator=1;
+		author="$STR_RHS_AUTHOR_FULL";
 		displayName="$STR_RHS_INF_MACHINEGUNNER";
 		uniformClass="rhs_chdkz_uniform_4";
 		headgearProbability=0;
@@ -725,6 +949,9 @@ class CfgVehicles
 	};
 	class rhs_g_Soldier_AAR_F: rhs_ins_base
 	{
+		scope=1;
+		scopeCurator=1;
+		author="$STR_RHS_AUTHOR_FULL";
 		displayName="$STR_RHS_INF_MACHINEGUNNER_ASSISTANT";
 		uniformClass="rhs_chdkz_uniform_1";
 		linkedItems[]=
@@ -749,6 +976,9 @@ class CfgVehicles
 	};
 	class rhs_g_Soldier_LAT_F: rhs_ins_base
 	{
+		scope=1;
+		scopeCurator=1;
+		author="$STR_RHS_AUTHOR_FULL";
 		displayName="$STR_RHS_INF_GRENADIER_RPG";
 		uniformClass="rhs_chdkz_uniform_4";
 		weapons[]=
@@ -769,6 +999,9 @@ class CfgVehicles
 	};
 	class rhs_g_Soldier_AAT_F: rhs_ins_base
 	{
+		scope=1;
+		scopeCurator=1;
+		author="$STR_RHS_AUTHOR_FULL";
 		displayName="$STR_RHS_INF_GRENADIER_RPG_ASSISTANT";
 		uniformClass="rhs_chdkz_uniform_2";
 		headgearProbability=0;
@@ -795,6 +1028,9 @@ class CfgVehicles
 	};
 	class rhs_g_Soldier_SL_F: rhs_ins_base
 	{
+		scope=1;
+		scopeCurator=1;
+		author="$STR_RHS_AUTHOR_FULL";
 		displayName="$STR_RHS_INF_SERGEANT";
 		uniformClass="rhs_chdkz_uniform_3";
 		headgearProbability=0;
@@ -860,6 +1096,9 @@ class CfgVehicles
 	};
 	class rhs_g_engineer_F: rhs_ins_base
 	{
+		scope=1;
+		scopeCurator=1;
+		author="$STR_RHS_AUTHOR_FULL";
 		displayName="$STR_RHS_INF_ENGINEER";
 		uniformClass="rhs_chdkz_uniform_2";
 		cost=220000;
@@ -870,6 +1109,7 @@ class CfgVehicles
 		detectSkill=60;
 		threat[]={1,0.5,0.1};
 		icon="iconManEngineer";
+		picture="pictureRepair";
 		headgearProbability=0;
 		linkedItems[]=
 		{
@@ -905,6 +1145,9 @@ class CfgVehicles
 	};
 	class rhs_g_Soldier_exp_F: rhs_ins_base
 	{
+		scope=1;
+		scopeCurator=1;
+		author="$STR_RHS_AUTHOR_FULL";
 		displayName="Bomber";
 		uniformClass="rhs_chdkz_uniform_4";
 		headgearProbability=0;
@@ -929,6 +1172,7 @@ class CfgVehicles
 			"ItemRadio"
 		};
 		icon="iconManExplosive";
+		picture="pictureExplosive";
 		canDeactivateMines=1;
 		detectSkill=80;
 		threat[]={1,0.5,0.1};
@@ -936,6 +1180,9 @@ class CfgVehicles
 	};
 	class rhs_g_Soldier_AA_F: rhs_ins_base
 	{
+		scope=1;
+		scopeCurator=1;
+		author="$STR_RHS_AUTHOR_FULL";
 		displayName="$STR_RHS_INF_AA";
 		uniformClass="rhs_chdkz_uniform_5";
 		headgearProbability=0;
@@ -998,10 +1245,30 @@ class CfgVehicles
 	};
 	class rhs_g_medic_F: rhs_ins_base
 	{
+		scope=1;
+		scopeCurator=1;
+		author="$STR_RHS_AUTHOR_FULL";
 		displayName="$STR_RHS_INF_MEDIC";
 		uniformClass="rhs_chdkz_uniform_3";
 		attendant=1;
 		icon="iconManMedic";
+		picture="pictureHeal";
+		class SpeechVariants
+		{
+			class Default
+			{
+				speechSingular[]=
+				{
+					"veh_infantry_medic_s"
+				};
+				speechPlural[]=
+				{
+					"veh_infantry_medic_p"
+				};
+			};
+		};
+		textSingular="medic";
+		textPlural="medics";
 		nameSound="veh_infantry_medic_s";
 		headgearProbability=0;
 		linkedItems[]=
@@ -1026,6 +1293,9 @@ class CfgVehicles
 	};
 	class rhs_g_Crew_F: rhs_ins_base
 	{
+		scope=1;
+		scopeCurator=1;
+		author="$STR_RHS_AUTHOR_FULL";
 		displayName="$STR_RHS_INF_CREW";
 		uniformClass="rhs_chdkz_uniform_1";
 		headgearProbability=0;
@@ -1086,8 +1356,14 @@ class CfgVehicles
 	};
 	class rhs_g_uniform1_base: SoldierGB
 	{
+		dlc="RHS_AFRF";
+		scope=1;
+		scopeCurator=0;
+		author="$STR_RHS_AUTHOR_FULL";
 		expansion=1;
+		faction="rhs_faction_insurgents";
 		side=2;
+		vehicleClass="Men";
 		displayName="$STR_DN_RIFLEMAN";
 		identityTypes[]=
 		{
@@ -1098,6 +1374,7 @@ class CfgVehicles
 		faceType="Man_A3";
 		genericNames="RussianMen";
 		portrait="";
+		picture="";
 		icon="iconMan";
 		accuracy=2.3;
 		sensitivity=3;
@@ -1105,9 +1382,26 @@ class CfgVehicles
 		camouflage=1.4;
 		minFireTime=7;
 		canCarryBackPack=1;
+		model="\A3\characters_F_gamma\Guerrilla\ig_leader.p3d";
+		modelSides[]={0,3};
 		nakedUniform="U_BasicBody";
 		uniformClass="rhs_chdkz_uniform_1";
-		class Wounds;  //found empty after stripping
+		class Wounds
+		{
+			tex[]={};
+			mat[]=
+			{
+				"rhsafrf\addons\rhs_c_cti_indep\data\infantry\rvmats\clothing.rvmat",
+				"rhsafrf\addons\rhs_c_cti_indep\data\infantry\rvmats\clothing_w1.rvmat",
+				"rhsafrf\addons\rhs_c_cti_indep\data\infantry\rvmats\clothing_w2.rvmat",
+				"rhsafrf\addons\rhs_c_cti_indep\data\infantry\rvmats\clothing.rvmat",
+				"rhsafrf\addons\rhs_c_cti_indep\data\infantry\rvmats\clothing_w1.rvmat",
+				"rhsafrf\addons\rhs_c_cti_indep\data\infantry\rvmats\clothing_w2.rvmat",
+				"rhsafrf\addons\rhs_c_cti_indep\data\infantry\rvmats\clothing.rvmat",
+				"rhsafrf\addons\rhs_c_cti_indep\data\infantry\rvmats\clothing_w1.rvmat",
+				"rhsafrf\addons\rhs_c_cti_indep\data\infantry\rvmats\clothing_w2.rvmat"
+			};
+		};
 		class HitPoints: HitPoints
 		{
 			class HitFace: HitFace;  //found empty after stripping
@@ -1235,6 +1529,16 @@ class CfgVehicles
 			"ItemWatch",
 			"ItemRadio"
 		};
+		hiddenSelections[]=
+		{
+			"Camo1",
+			"Camo2",
+			"insignia"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"\rhsafrf\addons\rhs_c_cti_indep\data\infantry\clothing01_co.paa"
+		};
 		hiddenSelectionsMaterials[]=
 		{
 			"\rhsafrf\addons\rhs_c_cti_indep\data\infantry\rvmats\clothing.rvmat"
@@ -1244,38 +1548,138 @@ class CfgVehicles
 	class rhs_g_uniform2_base: rhs_g_uniform1_base
 	{
 		uniformClass="rhs_chdkz_uniform_2";
+		hiddenSelections[]=
+		{
+			"Camo1",
+			"Camo2",
+			"insignia"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"\rhsafrf\addons\rhs_c_cti_indep\data\infantry\clothing02_co.paa"
+		};
 		hiddenSelectionsMaterials[]=
 		{
 			"\rhsafrf\addons\rhs_c_cti_indep\data\infantry\rvmats\clothing.rvmat"
 		};
-		class Wounds;  //found empty after stripping
+		class Wounds
+		{
+			tex[]={};
+			mat[]=
+			{
+				"rhsafrf\addons\rhs_c_cti_indep\data\infantry\rvmats\clothing.rvmat",
+				"rhsafrf\addons\rhs_c_cti_indep\data\infantry\rvmats\clothing_w1.rvmat",
+				"rhsafrf\addons\rhs_c_cti_indep\data\infantry\rvmats\clothing_w2.rvmat",
+				"rhsafrf\addons\rhs_c_cti_indep\data\infantry\rvmats\clothing.rvmat",
+				"rhsafrf\addons\rhs_c_cti_indep\data\infantry\rvmats\clothing_w1.rvmat",
+				"rhsafrf\addons\rhs_c_cti_indep\data\infantry\rvmats\clothing_w2.rvmat",
+				"rhsafrf\addons\rhs_c_cti_indep\data\infantry\rvmats\clothing.rvmat",
+				"rhsafrf\addons\rhs_c_cti_indep\data\infantry\rvmats\clothing_w1.rvmat",
+				"rhsafrf\addons\rhs_c_cti_indep\data\infantry\rvmats\clothing_w2.rvmat"
+			};
+		};
 	};
 	class rhs_g_uniform3_base: rhs_g_uniform1_base
 	{
 		uniformClass="rhs_chdkz_uniform_3";
+		hiddenSelections[]=
+		{
+			"Camo1",
+			"Camo2",
+			"insignia"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"\rhsafrf\addons\rhs_c_cti_indep\data\infantry\clothing03_co.paa"
+		};
 		hiddenSelectionsMaterials[]=
 		{
 			"\rhsafrf\addons\rhs_c_cti_indep\data\infantry\rvmats\clothing.rvmat"
 		};
-		class Wounds;  //found empty after stripping
+		class Wounds
+		{
+			tex[]={};
+			mat[]=
+			{
+				"rhsafrf\addons\rhs_c_cti_indep\data\infantry\rvmats\clothing.rvmat",
+				"rhsafrf\addons\rhs_c_cti_indep\data\infantry\rvmats\clothing_w1.rvmat",
+				"rhsafrf\addons\rhs_c_cti_indep\data\infantry\rvmats\clothing_w2.rvmat",
+				"rhsafrf\addons\rhs_c_cti_indep\data\infantry\rvmats\clothing.rvmat",
+				"rhsafrf\addons\rhs_c_cti_indep\data\infantry\rvmats\clothing_w1.rvmat",
+				"rhsafrf\addons\rhs_c_cti_indep\data\infantry\rvmats\clothing_w2.rvmat",
+				"rhsafrf\addons\rhs_c_cti_indep\data\infantry\rvmats\clothing.rvmat",
+				"rhsafrf\addons\rhs_c_cti_indep\data\infantry\rvmats\clothing_w1.rvmat",
+				"rhsafrf\addons\rhs_c_cti_indep\data\infantry\rvmats\clothing_w2.rvmat"
+			};
+		};
 	};
 	class rhs_g_uniform4_base: rhs_g_uniform1_base
 	{
 		uniformClass="rhs_chdkz_uniform_4";
+		hiddenSelections[]=
+		{
+			"Camo1",
+			"Camo2",
+			"insignia"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"\rhsafrf\addons\rhs_c_cti_indep\data\infantry\clothing04_co.paa"
+		};
 		hiddenSelectionsMaterials[]=
 		{
 			"\rhsafrf\addons\rhs_c_cti_indep\data\infantry\rvmats\clothing.rvmat"
 		};
-		class Wounds;  //found empty after stripping
+		class Wounds
+		{
+			tex[]={};
+			mat[]=
+			{
+				"rhsafrf\addons\rhs_c_cti_indep\data\infantry\rvmats\clothing.rvmat",
+				"rhsafrf\addons\rhs_c_cti_indep\data\infantry\rvmats\clothing_w1.rvmat",
+				"rhsafrf\addons\rhs_c_cti_indep\data\infantry\rvmats\clothing_w2.rvmat",
+				"rhsafrf\addons\rhs_c_cti_indep\data\infantry\rvmats\clothing.rvmat",
+				"rhsafrf\addons\rhs_c_cti_indep\data\infantry\rvmats\clothing_w1.rvmat",
+				"rhsafrf\addons\rhs_c_cti_indep\data\infantry\rvmats\clothing_w2.rvmat",
+				"rhsafrf\addons\rhs_c_cti_indep\data\infantry\rvmats\clothing.rvmat",
+				"rhsafrf\addons\rhs_c_cti_indep\data\infantry\rvmats\clothing_w1.rvmat",
+				"rhsafrf\addons\rhs_c_cti_indep\data\infantry\rvmats\clothing_w2.rvmat"
+			};
+		};
 	};
 	class rhs_g_uniform5_base: rhs_g_uniform1_base
 	{
 		uniformClass="rhs_chdkz_uniform_5";
+		hiddenSelections[]=
+		{
+			"Camo1",
+			"Camo2",
+			"insignia"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"\rhsafrf\addons\rhs_c_cti_indep\data\infantry\clothing05_co.paa"
+		};
 		hiddenSelectionsMaterials[]=
 		{
 			"\rhsafrf\addons\rhs_c_cti_indep\data\infantry\rvmats\clothing.rvmat"
 		};
-		class Wounds;  //found empty after stripping
+		class Wounds
+		{
+			tex[]={};
+			mat[]=
+			{
+				"rhsafrf\addons\rhs_c_cti_indep\data\infantry\rvmats\clothing.rvmat",
+				"rhsafrf\addons\rhs_c_cti_indep\data\infantry\rvmats\clothing_w1.rvmat",
+				"rhsafrf\addons\rhs_c_cti_indep\data\infantry\rvmats\clothing_w2.rvmat",
+				"rhsafrf\addons\rhs_c_cti_indep\data\infantry\rvmats\clothing.rvmat",
+				"rhsafrf\addons\rhs_c_cti_indep\data\infantry\rvmats\clothing_w1.rvmat",
+				"rhsafrf\addons\rhs_c_cti_indep\data\infantry\rvmats\clothing_w2.rvmat",
+				"rhsafrf\addons\rhs_c_cti_indep\data\infantry\rvmats\clothing.rvmat",
+				"rhsafrf\addons\rhs_c_cti_indep\data\infantry\rvmats\clothing_w1.rvmat",
+				"rhsafrf\addons\rhs_c_cti_indep\data\infantry\rvmats\clothing_w2.rvmat"
+			};
+		};
 	};
 };
 class CfgFactionClasses
@@ -1283,6 +1687,7 @@ class CfgFactionClasses
 	class rhs_faction_insurgents
 	{
 		displayName="Eastern Militia";
+		priority=-9;
 		side=2;
 		icon="\rhsafrf\addons\rhs_c_cti_indep\data\insurgents_faction_icon.paa";
 		flag="\rhsafrf\addons\rhs_c_cti_indep\data\map_flag_insurgents_co.paa";
@@ -1296,5 +1701,6 @@ class CfgMarkers
 	{
 		name="Insurgents";
 		icon="\rhsafrf\addons\rhs_c_cti_indep\data\map_flag_insurgents_co.paa";
+		texture="\rhsafrf\addons\rhs_c_cti_indep\data\map_flag_insurgents_co.paa";
 	};
 };

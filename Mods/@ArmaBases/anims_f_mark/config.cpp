@@ -3,6 +3,11 @@ class CfgPatches
 	class A3_Anims_F_Mark_Deployment
 	{
 		addonRootClass="A3_Anims_F_Mark";
+		requiredAddons[]=
+		{
+			"A3_Anims_F_Mark"
+		};
+		requiredVersion=0.1;
 		units[]={};
 		weapons[]={};
 	};

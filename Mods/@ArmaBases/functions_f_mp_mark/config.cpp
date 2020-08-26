@@ -2,7 +2,14 @@ class CfgPatches
 {
 	class A3_Functions_F_MP_Mark
 	{
+		author="$STR_A3_Bohemia_Interactive";
 		name="Arma 3 Marksmen (Multiplayer) - Script Functions";
+		url="https://www.arma3.com";
+		requiredAddons[]=
+		{
+			"A3_Data_F_Mark"
+		};
+		requiredVersion=0.1;
 		units[]={};
 		weapons[]={};
 	};
@@ -80,6 +87,7 @@ class CfgHints
 	class DynamicGroups
 	{
 		displayName="Dynamic Groups";
+		dlc=-1;
 		class DG_DynamicGroups
 		{
 			displayName="Dynamic Groups";
@@ -97,11 +105,13 @@ class CfgHints
 				}
 			};
 			image="\A3\Ui_f\data\GUI\Cfg\Hints\Commanding_ca.paa";
+			dlc=-1;
 		};
 	};
 	class MP_Marksmen
 	{
 		displayName="HVT";
+		dlc=-1;
 		class MK_GroupMarkers
 		{
 			displayName="$STR_A3_mp_groundsupport_hints_group_markers_label";
@@ -118,6 +128,7 @@ class CfgHints
 					}
 				}
 			};
+			dlc=-1;
 		};
 	};
 };
@@ -126,6 +137,7 @@ class CfgNotifications
 	class DynamicGroups_Base
 	{
 		iconPicture="\a3\Ui_f\data\GUI\Cfg\Ranks\general_gs.paa";
+		priority=10;
 		duration=4;
 		sound="defaultNotification";
 		soundClose="defaultNotificationClose";

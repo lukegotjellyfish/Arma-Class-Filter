@@ -3,6 +3,11 @@ class CfgPatches
 	class A3_Armor_F_EPB_MBT_03
 	{
 		addonRootClass="A3_Armor_F_EPB";
+		requiredAddons[]=
+		{
+			"A3_Armor_F_EPB"
+		};
+		requiredVersion=0.1;
 		units[]=
 		{
 			"I_MBT_03_cannon_F"
@@ -68,11 +73,18 @@ class CfgVehicles
 			class HitLTrack;
 			class HitRTrack;
 		};
+		class Sounds: Sounds
+		{
+			class Engine;
+			class Movement;
+		};
 		class EventHandlers;
 	};
 	class MBT_03_base_F: Tank_F
 	{
 		features="Randomization: No						<br />Camo selections: 3 - hull, main turret, RCWS turret						<br />Script door sources: None						<br />Script animations: HideHull, HideTurret						<br />Executed scripts: None						<br />Firing from vehicles: No						<br />Slingload: No						<br />Cargo proxy indexes: None";
+		author="$STR_A3_Bohemia_Interactive";
+		mapSize=11.57;
 		_generalMacro="MBT_03_base_F";
 		simulation="tankX";
 		fuelCapacity=20;
@@ -148,6 +160,9 @@ class CfgVehicles
 			{
 				side="left";
 				suspTravelDirection[]={-0.125,-1,0};
+				boneName="wheel_podkoloL1";
+				center="wheel_1_2_axis";
+				boundary="wheel_1_2_bound";
 				steering=0;
 				width=0.5;
 				mass=200;
@@ -171,19 +186,55 @@ class CfgVehicles
 					{0.5,0.89999998}
 				};
 			};
-			class L3: L2;  //found empty after stripping
-			class L4: L2;  //found empty after stripping
-			class L5: L4;  //found empty after stripping
-			class L6: L4;  //found empty after stripping
-			class L7: L2;  //found empty after stripping
-			class L8: L2;  //found empty after stripping
+			class L3: L2
+			{
+				boneName="wheel_podkolol2";
+				center="wheel_1_3_axis";
+				boundary="wheel_1_3_bound";
+			};
+			class L4: L2
+			{
+				boneName="wheel_podkolol3";
+				center="wheel_1_4_axis";
+				boundary="wheel_1_4_bound";
+			};
+			class L5: L4
+			{
+				boneName="wheel_podkolol4";
+				center="wheel_1_5_axis";
+				boundary="wheel_1_5_bound";
+			};
+			class L6: L4
+			{
+				boneName="wheel_podkolol5";
+				center="wheel_1_6_axis";
+				boundary="wheel_1_6_bound";
+			};
+			class L7: L2
+			{
+				boneName="wheel_podkolol6";
+				center="wheel_1_7_axis";
+				boundary="wheel_1_7_bound";
+			};
+			class L8: L2
+			{
+				boneName="wheel_podkolol7";
+				center="wheel_1_8_axis";
+				boundary="wheel_1_8_bound";
+			};
 			class L9: L2
 			{
+				boneName="wheel_podkolol9";
+				center="wheel_1_9_axis";
+				boundary="wheel_1_9_bound";
 				maxDroop=0.0099999998;
 				maxCompression=0.0099999998;
 			};
 			class L1: L2
 			{
+				boneName="";
+				center="wheel_1_1_axis";
+				boundary="wheel_1_1_bound";
 				maxDroop=0.0099999998;
 				maxCompression=0.0099999998;
 			};
@@ -191,20 +242,59 @@ class CfgVehicles
 			{
 				side="right";
 				suspTravelDirection[]={0.125,-1,0};
+				boneName="wheel_podkolop1";
+				center="wheel_2_2_axis";
+				boundary="wheel_2_2_bound";
 			};
-			class R3: R2;  //found empty after stripping
-			class R4: R2;  //found empty after stripping
-			class R5: R2;  //found empty after stripping
-			class R6: R2;  //found empty after stripping
-			class R7: R2;  //found empty after stripping
-			class R8: R2;  //found empty after stripping
+			class R3: R2
+			{
+				boneName="wheel_podkolop2";
+				center="wheel_2_3_axis";
+				boundary="wheel_2_3_bound";
+			};
+			class R4: R2
+			{
+				boneName="wheel_podkolop3";
+				center="wheel_2_4_axis";
+				boundary="wheel_2_4_bound";
+			};
+			class R5: R2
+			{
+				boneName="wheel_podkolop4";
+				center="wheel_2_5_axis";
+				boundary="wheel_2_5_bound";
+			};
+			class R6: R2
+			{
+				boneName="wheel_podkolop5";
+				center="wheel_2_6_axis";
+				boundary="wheel_2_6_bound";
+			};
+			class R7: R2
+			{
+				boneName="wheel_podkolop6";
+				center="wheel_2_7_axis";
+				boundary="wheel_2_7_bound";
+			};
+			class R8: R2
+			{
+				boneName="wheel_podkolop7";
+				center="wheel_2_8_axis";
+				boundary="wheel_2_8_bound";
+			};
 			class R9: R2
 			{
+				boneName="wheel_podkolop9";
+				center="wheel_2_9_axis";
+				boundary="wheel_2_9_bound";
 				maxDroop=0.0099999998;
 				maxCompression=0.0099999998;
 			};
 			class R1: R2
 			{
+				boneName="";
+				center="wheel_2_1_axis";
+				boundary="wheel_2_1_bound";
 				maxDroop=0.0099999998;
 				maxCompression=0.0099999998;
 			};
@@ -238,6 +328,7 @@ class CfgVehicles
 					condition="on";
 					class Driver_Heading
 					{
+						type="text";
 						source="heading";
 						sourceScale=1;
 						sourceLength=3;
@@ -289,7 +380,9 @@ class CfgVehicles
 					condition="1";
 					class Driver_Heading
 					{
+						type="text";
 						source="static";
+						text="AZIMUTH";
 						sourceScale=1;
 						sourceLength=3;
 						scale=1;
@@ -340,6 +433,7 @@ class CfgVehicles
 					condition="1";
 					class Driver_Heading
 					{
+						type="text";
 						source="heading";
 						sourceScale=1;
 						sourceLength=3;
@@ -391,7 +485,9 @@ class CfgVehicles
 					condition="1";
 					class Top_text
 					{
+						type="text";
 						source="static";
+						text="READY TO";
 						sourceScale=1;
 						sourceLength=3;
 						scale=1;
@@ -415,7 +511,9 @@ class CfgVehicles
 					};
 					class Bottom_text
 					{
+						type="text";
 						source="static";
+						text="FIRE";
 						sourceScale=1;
 						sourceLength=3;
 						scale=1;
@@ -467,7 +565,9 @@ class CfgVehicles
 					condition="1";
 					class Main_armament
 					{
+						type="text";
 						source="static";
+						text="MAIN ARMAMENT";
 						sourceScale=1;
 						sourceLength=3;
 						scale=1;
@@ -491,7 +591,9 @@ class CfgVehicles
 					};
 					class Machinegun
 					{
+						type="text";
 						source="static";
+						text="COAX";
 						sourceScale=1;
 						sourceLength=3;
 						scale=1;
@@ -515,7 +617,9 @@ class CfgVehicles
 					};
 					class Main_armament_ammo_type
 					{
+						type="text";
 						source="static";
+						text="AMMO TYPE";
 						sourceScale=1;
 						sourceLength=3;
 						scale=1;
@@ -539,7 +643,9 @@ class CfgVehicles
 					};
 					class Lased_distance_elevation
 					{
+						type="text";
 						source="static";
+						text="LASED DIST";
 						sourceScale=1;
 						sourceLength=3;
 						scale=1;
@@ -563,7 +669,9 @@ class CfgVehicles
 					};
 					class Azimut
 					{
+						type="text";
 						source="static";
+						text="AZIMUTH";
 						sourceScale=1;
 						sourceLength=3;
 						scale=1;
@@ -587,7 +695,9 @@ class CfgVehicles
 					};
 					class Damage
 					{
+						type="text";
 						source="static";
+						text="DAMAGE";
 						sourceScale=1;
 						sourceLength=3;
 						scale=1;
@@ -611,6 +721,7 @@ class CfgVehicles
 					};
 					class Heading
 					{
+						type="text";
 						source="[x]turretworld";
 						sourceScale=1;
 						sourceLength=3;
@@ -635,6 +746,7 @@ class CfgVehicles
 					};
 					class Lased_Range
 					{
+						type="text";
 						source="laserDist";
 						sourceScale=1;
 						sourceLength=4;
@@ -687,6 +799,7 @@ class CfgVehicles
 					condition="1";
 					class Gunner_AmmoType
 					{
+						type="text";
 						source="ammoFormat";
 						sourceScale=1;
 						sourceLength=3;
@@ -739,6 +852,7 @@ class CfgVehicles
 					condition="1";
 					class Gunner_Text_1
 					{
+						type="text";
 						source="ammo";
 						sourceScale=1;
 						sourceLength=3;
@@ -792,7 +906,9 @@ class CfgVehicles
 					condition="1";
 					class Main_Armament_Ammo_Type_1
 					{
+						type="text";
 						source="static";
+						text="APFSDS-T";
 						sourceScale=1;
 						sourceLength=3;
 						scale=1;
@@ -816,6 +932,7 @@ class CfgVehicles
 					};
 					class Gunner_Text_1
 					{
+						type="text";
 						source="ammo";
 						sourceScale=1;
 						sourceLength=2;
@@ -841,7 +958,9 @@ class CfgVehicles
 					};
 					class Main_Armament_Ammo_Type_2
 					{
+						type="text";
 						source="static";
+						text="HE-T";
 						sourceScale=1;
 						sourceLength=3;
 						scale=1;
@@ -865,6 +984,7 @@ class CfgVehicles
 					};
 					class Gunner_Text_2
 					{
+						type="text";
 						source="ammo";
 						sourceScale=1;
 						sourceLength=2;
@@ -890,7 +1010,9 @@ class CfgVehicles
 					};
 					class Main_Armament_Ammo_Type_3
 					{
+						type="text";
 						source="static";
+						text="HEAT-MP-T";
 						sourceScale=1;
 						sourceLength=3;
 						scale=1;
@@ -914,6 +1036,7 @@ class CfgVehicles
 					};
 					class Gunner_Text_3
 					{
+						type="text";
 						source="ammo";
 						sourceScale=1;
 						sourceLength=2;
@@ -966,7 +1089,9 @@ class CfgVehicles
 					condition="on";
 					class Generic_Text1
 					{
+						type="text";
 						source="static";
+						text="MODE: AUTO";
 						scale=1;
 						sourceScale=1;
 						align="right";
@@ -988,7 +1113,9 @@ class CfgVehicles
 					};
 					class Generic_Text2
 					{
+						type="text";
 						source="static";
+						text="SIGHT: READY";
 						scale=1;
 						sourceScale=1;
 						align="right";
@@ -1010,7 +1137,9 @@ class CfgVehicles
 					};
 					class Generic_Text3
 					{
+						type="text";
 						source="static";
+						text="SENSITIVITY: 04";
 						scale=1;
 						sourceScale=1;
 						align="right";
@@ -1032,7 +1161,9 @@ class CfgVehicles
 					};
 					class Generic_Text4
 					{
+						type="text";
 						source="static";
+						text="PCU | SEL | RESET";
 						scale=1;
 						sourceScale=1;
 						align="center";
@@ -1081,7 +1212,9 @@ class CfgVehicles
 					condition="on";
 					class Generic_Text1
 					{
+						type="text";
 						source="static";
+						text="TRU | FIRE | ICU";
 						scale=1;
 						sourceScale=1;
 						align="center";
@@ -1103,7 +1236,9 @@ class CfgVehicles
 					};
 					class Generic_Text2
 					{
+						type="text";
 						source="static";
+						text="BRIGHTNESS: AUTO";
 						scale=1;
 						sourceScale=1;
 						align="right";
@@ -1125,7 +1260,9 @@ class CfgVehicles
 					};
 					class Generic_Text3
 					{
+						type="text";
 						source="static";
+						text="VOL: 09";
 						scale=1;
 						sourceScale=1;
 						align="right";
@@ -1147,7 +1284,9 @@ class CfgVehicles
 					};
 					class Generic_Text4
 					{
+						type="text";
 						source="static";
+						text="GRAT | VNTS | SEL";
 						scale=1;
 						sourceScale=1;
 						align="center";
@@ -1197,7 +1336,9 @@ class CfgVehicles
 					condition="1";
 					class Main_armament
 					{
+						type="text";
 						source="static";
+						text="MAIN ARMAMENT";
 						sourceScale=1;
 						sourceLength=3;
 						scale=1;
@@ -1221,7 +1362,9 @@ class CfgVehicles
 					};
 					class Machinegun
 					{
+						type="text";
 						source="static";
+						text="COAX MG";
 						sourceScale=1;
 						sourceLength=3;
 						scale=1;
@@ -1245,7 +1388,9 @@ class CfgVehicles
 					};
 					class Commander_machinegun
 					{
+						type="text";
 						source="static";
+						text="MG";
 						sourceScale=1;
 						sourceLength=3;
 						scale=1;
@@ -1269,7 +1414,9 @@ class CfgVehicles
 					};
 					class Commander_armament
 					{
+						type="text";
 						source="static";
+						text="COM ARMAMENT";
 						sourceScale=1;
 						sourceLength=3;
 						scale=1;
@@ -1293,7 +1440,9 @@ class CfgVehicles
 					};
 					class Commander_armament_magazines
 					{
+						type="text";
 						source="static";
+						text="MAG";
 						sourceScale=1;
 						sourceLength=3;
 						scale=1;
@@ -1317,7 +1466,9 @@ class CfgVehicles
 					};
 					class Main_armament_ammo_type
 					{
+						type="text";
 						source="static";
+						text="AMMO TYPE";
 						sourceScale=1;
 						sourceLength=3;
 						scale=1;
@@ -1341,7 +1492,9 @@ class CfgVehicles
 					};
 					class Lased_distance_elevation
 					{
+						type="text";
 						source="static";
+						text="LASED DIST";
 						sourceScale=1;
 						sourceLength=3;
 						scale=1;
@@ -1365,7 +1518,9 @@ class CfgVehicles
 					};
 					class Azimut
 					{
+						type="text";
 						source="static";
+						text="AZIMUTH";
 						sourceScale=1;
 						sourceLength=3;
 						scale=1;
@@ -1389,7 +1544,9 @@ class CfgVehicles
 					};
 					class Damage
 					{
+						type="text";
 						source="static";
+						text="DAMAGE";
 						sourceScale=1;
 						sourceLength=3;
 						scale=1;
@@ -1413,6 +1570,7 @@ class CfgVehicles
 					};
 					class Heading
 					{
+						type="text";
 						source="[x]turretworld";
 						sourceScale=1;
 						sourceLength=3;
@@ -1437,6 +1595,7 @@ class CfgVehicles
 					};
 					class Lased_Range
 					{
+						type="text";
 						source="laserDist";
 						sourceScale=1;
 						sourceLength=4;
@@ -1482,7 +1641,9 @@ class CfgVehicles
 					condition="1";
 					class Top_text
 					{
+						type="text";
 						source="static";
+						text="READY TO";
 						scale=1;
 						sourceScale=1;
 						align="center";
@@ -1504,7 +1665,9 @@ class CfgVehicles
 					};
 					class Bottom_text
 					{
+						type="text";
 						source="static";
+						text="FIRE";
 						scale=1;
 						sourceScale=1;
 						align="center";
@@ -1547,7 +1710,9 @@ class CfgVehicles
 					condition="1";
 					class Top_text
 					{
+						type="text";
 						source="static";
+						text="SMOKE";
 						scale=1;
 						sourceScale=1;
 						align="center";
@@ -1569,7 +1734,9 @@ class CfgVehicles
 					};
 					class Bottom_text
 					{
+						type="text";
 						source="static";
+						text="SCREEN";
 						scale=1;
 						sourceScale=1;
 						align="center";
@@ -1619,6 +1786,7 @@ class CfgVehicles
 					condition="1";
 					class Gunner_AmmoType
 					{
+						type="text";
 						source="ammoFormat";
 						sourceScale=1;
 						sourceLength=3;
@@ -1671,7 +1839,9 @@ class CfgVehicles
 					condition="1";
 					class Main_Armament_Ammo_Type_1
 					{
+						type="text";
 						source="static";
+						text="APFSDS-T";
 						sourceScale=1;
 						sourceLength=3;
 						scale=1;
@@ -1695,6 +1865,7 @@ class CfgVehicles
 					};
 					class Gunner_Text_1
 					{
+						type="text";
 						source="ammo";
 						sourceScale=1;
 						sourceLength=2;
@@ -1720,7 +1891,9 @@ class CfgVehicles
 					};
 					class Main_Armament_Ammo_Type_2
 					{
+						type="text";
 						source="static";
+						text="HE-T";
 						sourceScale=1;
 						sourceLength=3;
 						scale=1;
@@ -1744,6 +1917,7 @@ class CfgVehicles
 					};
 					class Gunner_Text_2
 					{
+						type="text";
 						source="ammo";
 						sourceScale=1;
 						sourceLength=2;
@@ -1769,7 +1943,9 @@ class CfgVehicles
 					};
 					class Main_Armament_Ammo_Type_3
 					{
+						type="text";
 						source="static";
+						text="HEAT-MP-T";
 						sourceScale=1;
 						sourceLength=3;
 						scale=1;
@@ -1793,6 +1969,7 @@ class CfgVehicles
 					};
 					class Gunner_Text_3
 					{
+						type="text";
 						source="ammo";
 						sourceScale=1;
 						sourceLength=2;
@@ -1846,6 +2023,7 @@ class CfgVehicles
 					condition="1";
 					class Gunner_Text_1
 					{
+						type="text";
 						source="ammo";
 						sourceScale=1;
 						sourceLength=3;
@@ -1899,6 +2077,7 @@ class CfgVehicles
 					condition="1";
 					class Gunner_Text_1
 					{
+						type="text";
 						source="ammo";
 						sourceScale=1;
 						sourceLength=1;
@@ -1952,6 +2131,7 @@ class CfgVehicles
 					condition="1";
 					class Gunner_Text_1
 					{
+						type="text";
 						source="ammo";
 						sourceScale=1;
 						sourceLength=3;
@@ -2005,6 +2185,7 @@ class CfgVehicles
 					condition="1";
 					class Azimuth_number
 					{
+						type="text";
 						source="[x]turretworld";
 						sourceScale=1;
 						sourceLength=3;
@@ -2029,7 +2210,9 @@ class CfgVehicles
 					};
 					class Elevation_Text
 					{
+						type="text";
 						source="static";
+						text="E: ";
 						sourceScale=1;
 						sourceLength=3;
 						scale=1;
@@ -2053,6 +2236,7 @@ class CfgVehicles
 					};
 					class Elevation_Number
 					{
+						type="text";
 						source="[y]turretworld";
 						sourceScale=1;
 						sourceLength=4;
@@ -2078,6 +2262,7 @@ class CfgVehicles
 					};
 					class Lased_Range
 					{
+						type="text";
 						source="laserDist";
 						sourceScale=1;
 						sourceLength=4;
@@ -2102,7 +2287,9 @@ class CfgVehicles
 					};
 					class VisionMode_Text
 					{
+						type="text";
 						source="static";
+						text="WFOV";
 						sourceScale=1;
 						sourceLength=3;
 						scale=1;
@@ -2126,6 +2313,7 @@ class CfgVehicles
 					};
 					class VisionMode_String
 					{
+						type="text";
 						source="visionMode";
 						sourceScale=1;
 						sourceLength=3;
@@ -2178,6 +2366,7 @@ class CfgVehicles
 					condition="on";
 					class Driver_Heading
 					{
+						type="text";
 						source="[x]turretworld";
 						sourceScale=1;
 						sourceLength=3;
@@ -2229,7 +2418,9 @@ class CfgVehicles
 					condition="on";
 					class Generic_Text1
 					{
+						type="text";
 						source="static";
+						text="MODE: AUTO";
 						scale=1;
 						sourceScale=1;
 						align="right";
@@ -2251,7 +2442,9 @@ class CfgVehicles
 					};
 					class Generic_Text2
 					{
+						type="text";
 						source="static";
+						text="MANUAL MODE: OFF";
 						scale=1;
 						sourceScale=1;
 						align="right";
@@ -2273,7 +2466,9 @@ class CfgVehicles
 					};
 					class Generic_Text3
 					{
+						type="text";
 						source="static";
+						text="SENSITIVITY: 04";
 						scale=1;
 						sourceScale=1;
 						align="right";
@@ -2295,7 +2490,9 @@ class CfgVehicles
 					};
 					class Generic_Text4
 					{
+						type="text";
 						source="static";
+						text="PCU | SEL | RESET";
 						scale=1;
 						sourceScale=1;
 						align="center";
@@ -2344,7 +2541,9 @@ class CfgVehicles
 					condition="on";
 					class Generic_Text1
 					{
+						type="text";
 						source="static";
+						text="CH: INT1 | VOL: 07";
 						scale=1;
 						sourceScale=1;
 						align="center";
@@ -2367,6 +2566,8 @@ class CfgVehicles
 				};
 			};
 		};
+		editorSubcategory="EdSubcat_Tanks";
+		scope=0;
 		maxFordingDepth=-1.5;
 		steerAheadSimul=0.5;
 		steerAheadPlan=0.34999999;
@@ -2374,6 +2575,9 @@ class CfgVehicles
 		predictTurnSimul=2.5999999;
 		brakeDistance=15;
 		precision=5;
+		transportSoldier=0;
+		getInAction="GetInLow";
+		getOutAction="GetOutLow";
 		cargoGetInAction[]=
 		{
 			"GetInLow"
@@ -2382,16 +2586,31 @@ class CfgVehicles
 		{
 			"GetOutLow"
 		};
+		cargoAction[]=
+		{
+			"passenger_flatground_leanleft",
+			"passenger_flatground_generic01",
+			"passenger_flatground_generic02",
+			"passenger_flatground_generic03",
+			"passenger_flatground_generic04",
+			"passenger_flatground_generic05"
+		};
 		waterResistance=3;
 		waterDamageEngine=0.1;
 		wheelCircumference=2.25;
 		tracksSpeed=-1;
+		forceHideDriver=0;
 		driverForceOptics=0;
 		LODDriverOpticsIn=1202;
 		driverOpticsModel="\A3\weapons_f\reticle\optics_empty";
+		viewDriverInExternal=1;
 		LODDriverTurnedOut=0;
 		driverInfoPanelCameraPos="driverview_old";
+		driverAction="Driver_MBT_03_cannon_F_out";
+		driverInAction="Driver_MBT_03_cannon_F_in";
 		extCameraPosition[]={0,3,-9.75};
+		driverLeftHandAnimName="drivewheel";
+		driverRightHandAnimName="drivewheel";
 		driverLeftLegAnimName="pedal_brake";
 		driverRightLegAnimName="pedal_thrust";
 		class ViewOptics: ViewOptics
@@ -2430,7 +2649,11 @@ class CfgVehicles
 		armorStructural=6;
 		damageResistance=0.0054700002;
 		cost=2500000;
+		crewVulnerable=0;
+		crewExplosionProtection=0.99989998;
 		epeImpulseDamageCoef=18;
+		model="\A3\Armor_F_EPB\MBT_03\MBT_03_cannon_F.p3d";
+		picture="\A3\Armor_F_EPB\MBT_03\Data\UI\MBT_03_Ca.paa";
 		icon="\A3\Armor_F_EPB\MBT_03\Data\UI\map_MBT_03_Ca.paa";
 		memoryPointTaskMarker="TaskMarker_1_pos";
 		class HitPoints: HitPoints
@@ -2441,6 +2664,7 @@ class CfgVehicles
 				material=-1;
 				armorComponent="hit_hull";
 				name="hit_hull_point";
+				visual="zbytek";
 				passThrough=1;
 				minimalHit=0.2;
 				explosionShielding=0.2;
@@ -2452,6 +2676,7 @@ class CfgVehicles
 				material=-1;
 				armorComponent="hit_engine";
 				name="hit_engine_point";
+				visual="-";
 				passThrough=0.5;
 				minimalHit=0.2;
 				explosionShielding=0.2;
@@ -2463,6 +2688,7 @@ class CfgVehicles
 				material=-1;
 				armorComponent="hit_fuel";
 				name="hit_fuel_point";
+				visual="-";
 				passThrough=0.30000001;
 				minimalHit=0.1;
 				explosionShielding=0.60000002;
@@ -2473,6 +2699,7 @@ class CfgVehicles
 				material=-1;
 				armorComponent="hit_trackL";
 				name="hit_trackL_point";
+				visual="pas_L";
 				radius=0.2;
 				armor=-650;
 				minimalHit=0.073846199;
@@ -2484,6 +2711,7 @@ class CfgVehicles
 				material=-1;
 				armorComponent="hit_trackR";
 				name="hit_trackR_point";
+				visual="pas_P";
 				radius=0.2;
 				armor=-650;
 				minimalHit=0.073846199;
@@ -2498,6 +2726,7 @@ class CfgVehicles
 				armor=-200;
 				minimalHit=0.30000001;
 				passThrough=0;
+				visual="-";
 				explosionShielding=2;
 				radius=0.25;
 			};
@@ -2531,6 +2760,35 @@ class CfgVehicles
 		{
 			init="";
 		};
+		class RenderTargets
+		{
+			class driver_display
+			{
+				renderTarget="rendertarget1";
+				class CameraView1
+				{
+					pointPosition="PIP0_pos";
+					pointDirection="PIP0_dir";
+					renderVisionMode=0;
+					renderQuality=2;
+					fov=0.80000001;
+					turret[]={-1};
+				};
+			};
+			class commander_display
+			{
+				renderTarget="rendertarget0";
+				class CameraView1
+				{
+					pointPosition="commanderview";
+					pointDirection="commanderview_dir";
+					renderVisionMode=0;
+					renderQuality=2;
+					fov=0.305731;
+					turret[]={0,0};
+				};
+			};
+		};
 		class Exhausts
 		{
 			class Exhaust1
@@ -2546,7 +2804,66 @@ class CfgVehicles
 				effect="ExhaustEffectTankSide";
 			};
 		};
+		insideSoundCoef=0.89999998;
 		threat[]={0.80000001,1,0.30000001};
+		class Reflectors
+		{
+			class Left
+			{
+				color[]={1900,1800,1700};
+				ambient[]={5,5,5};
+				position="Light_L";
+				direction="Light_L_end";
+				hitpoint="Light_L";
+				selection="Light_L";
+				size=1;
+				innerAngle=100;
+				outerAngle=179;
+				coneFadeCoef=10;
+				intensity=1;
+				useFlare=0;
+				dayLight=0;
+				flareSize=1;
+				class Attenuation
+				{
+					start=1;
+					constant=0;
+					linear=0;
+					quadratic=0.25;
+					hardLimitStart=30;
+					hardLimitEnd=60;
+				};
+			};
+			class Right: Left
+			{
+				position="Light_R";
+				direction="Light_R_end";
+				hitpoint="Light_R";
+				selection="Light_R";
+			};
+			class Right2: Right
+			{
+				position="light_R_flare";
+				hitpoint="Light_R_flare";
+				useFlare=1;
+			};
+			class Left2: Left
+			{
+				position="light_L_flare";
+				hitpoint="Light_L_flare";
+				useFlare=1;
+			};
+		};
+		aggregateReflectors[]=
+		{
+			
+			{
+				"Left",
+				"Right",
+				"Left2",
+				"Right2"
+			}
+		};
 		class compartmentsLights
 		{
 			class Comp1
@@ -2610,6 +2927,12 @@ class CfgVehicles
 				};
 			};
 		};
+		soundLocked[]=
+		{
+			"\A3\Sounds_F\weapons\Rockets\locked_1",
+			1,
+			1
+		};
 		soundIncommingMissile[]=
 		{
 			"\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_2",
@@ -2628,6 +2951,10 @@ class CfgVehicles
 				{
 					class CommanderOptics: CommanderOptics
 					{
+						memoryPointGunnerOutOptics="commanderview";
+						memoryPointGunnerOptics="commanderview";
+						gunBeg="Usti hlavne2";
+						gunEnd="Konec hlavne2";
 						memoryPointGun="usti hlavne2";
 						selectionFireAnim="zasleh2";
 						minElev=-25;
@@ -2647,6 +2974,13 @@ class CfgVehicles
 							"200Rnd_127x99_mag_Tracer_Yellow",
 							"SmokeLauncherMag"
 						};
+						soundServo[]=
+						{
+							"A3\Sounds_F\vehicles\armor\noises\servo_armor_comm",
+							0.56234133,
+							1,
+							30
+						};
 						soundServoVertical[]=
 						{
 							"A3\Sounds_F\vehicles\armor\noises\servo_armor_comm",
@@ -2654,12 +2988,25 @@ class CfgVehicles
 							1,
 							30
 						};
+						outGunnerMayFire=0;
+						inGunnerMayFire=1;
+						gunnerAction="Commander_MBT_03_cannon_F_out";
+						gunnerInAction="Commander_MBT_03_cannon_F_in";
+						gunnerGetInAction="GetInLow";
+						gunnerGetOutAction="GetOutLow";
+						discreteDistance[]={100,200,300,400,500,600,700,800,900,1000,1100,1200,1300,1400,1500,1600,1700,1800,1900,2000};
+						discreteDistanceInitIndex=2;
+						gunnerOpticsModel="\A3\weapons_f\reticle\Optics_Commander_02_F";
+						gunnerOutOpticsModel="";
+						gunnerOpticsEffect[]={};
+						gunnerForceOptics=0;
 						usePip=2;
 						LODOpticsIn=0;
 						isPersonTurret=0;
 						personTurretAction="vehicle_turnout_1";
 						animationSourceStickX="com_turret_control_x";
 						animationSourceStickY="com_turret_control_y";
+						gunnerRightHandAnimName="com_turret_control";
 						class dynamicViewLimits
 						{
 							MainTurret[]={-135,75};
@@ -2714,11 +3061,14 @@ class CfgVehicles
 						};
 						viewGunnerShadowAmb=0.5;
 						viewGunnerShadowDiff=0.050000001;
+						turretInfoType="RscOptics_APC_Wheeled_03_commander";
 						showCrewAim=1;
 						startEngine=0;
+						gunnerHasFlares=1;
 						stabilizedInAxes=3;
 						maxHorizontalRotSpeed=1.8;
 						maxVerticalRotSpeed=1.8;
+						viewGunnerInExternal=1;
 						class HitPoints
 						{
 							class HitComTurret
@@ -2727,6 +3077,7 @@ class CfgVehicles
 								material=-1;
 								armorComponent="hit_com_turret";
 								name="hit_com_turret_point";
+								visual="vezVelitele";
 								passThrough=0;
 								minimalHit=0.1;
 								explosionShielding=1;
@@ -2739,6 +3090,7 @@ class CfgVehicles
 								material=-1;
 								armorComponent="hit_com_gun";
 								name="hit_com_gun_point";
+								visual="zbranVelitele";
 								passThrough=0;
 								minimalHit=0.1;
 								explosionShielding=1;
@@ -2748,6 +3100,12 @@ class CfgVehicles
 						};
 					};
 				};
+				gunBeg="Usti hlavne";
+				gunEnd="Konec hlavne";
+				gunnerInAction="Gunner_MBT_03_cannon_F_in";
+				gunnerAction="Gunner_MBT_03_cannon_F_out";
+				gunnerGetInAction="GetInLow";
+				gunnerGetOutAction="GetOutLow";
 				weapons[]=
 				{
 					"cannon_120mm_long",
@@ -2769,6 +3127,13 @@ class CfgVehicles
 					"200Rnd_762x51_Belt_Yellow",
 					"200Rnd_762x51_Belt_Yellow"
 				};
+				soundServo[]=
+				{
+					"A3\Sounds_F\vehicles\armor\noises\servo_armor_gunner",
+					0.15848932,
+					1,
+					50
+				};
 				soundServoVertical[]=
 				{
 					"A3\Sounds_F\vehicles\armor\noises\servo_armor_gunner_vertical",
@@ -2781,13 +3146,23 @@ class CfgVehicles
 				LODOpticsIn=0;
 				animationSourceStickX="turret_control_x";
 				animationSourceStickY="turret_control_y";
+				gunnerRightHandAnimName="turret_control";
 				viewGunnerShadowAmb=0.5;
 				viewGunnerShadowDiff=0.050000001;
+				discreteDistance[]={100,200,300,400,500,600,700,800,900,1000,1100,1200,1300,1400,1500,1600,1700,1800,1900,2000,2100,2200,2300,2400,2500,2600,2700,2800,2900,3000,3100,3200,3300,3400,3500,3600,3700,3800,3900,4000,4100,4200,4300,4400,4500,4600,4700,4800,4900,5000};
+				discreteDistanceInitIndex=5;
+				memoryPointGunnerOptics="gunnerview";
 				memoryPointGun="usti hlavne3";
 				minElev=-9;
 				maxElev=20;
 				initElev=10;
+				gunnerOutOpticsModel="";
+				gunnerOutOpticsEffect[]={};
+				gunnerOpticsEffect[]={};
+				gunnerForceOptics=0;
 				startEngine=0;
+				inGunnerMayFire=1;
+				viewGunnerInExternal=1;
 				isPersonTurret=0;
 				personTurretAction="vehicle_turnout_1";
 				class dynamicViewLimits
@@ -2824,6 +3199,7 @@ class CfgVehicles
 					minMoveZ=-0.075000003;
 					maxMoveZ=0.1;
 				};
+				turretInfoType="RscOptics_MBT_03_gunner";
 				showCrewAim=2;
 				class TurnOut
 				{
@@ -2840,6 +3216,25 @@ class CfgVehicles
 						{-9.0504999,102.8447}
 					};
 				};
+				class TurnIn: TurnOut
+				{
+					limitsArrayTop[]=
+					{
+						{19.9995,-180},
+						{19.998501,180}
+					};
+					limitsArrayBottom[]=
+					{
+						{-2,-180},
+						{-1,-154.4525},
+						{-5.8804998,-82.711601},
+						{-8.9499998,20.756201},
+						{-7.9499998,-20.756201},
+						{-5.8804998,82.711601},
+						{-1,153.1266},
+						{-2,180}
+					};
+				};
 				class HitPoints
 				{
 					class HitTurret
@@ -2848,6 +3243,7 @@ class CfgVehicles
 						material=-1;
 						armorComponent="hit_main_turret";
 						name="hit_main_turret_point";
+						visual="vez";
 						passThrough=0;
 						minimalHit=0.1;
 						explosionShielding=0.2;
@@ -2860,6 +3256,7 @@ class CfgVehicles
 						material=-1;
 						armorComponent="hit_main_gun";
 						name="hit_main_gun_point";
+						visual="zbran";
 						passThrough=0;
 						minimalHit=0.1;
 						explosionShielding=0.40000001;
@@ -2869,7 +3266,205 @@ class CfgVehicles
 				};
 			};
 		};
-		class Damage;  //found empty after stripping
+		class Damage
+		{
+			tex[]={};
+			mat[]=
+			{
+				"A3\Armor_F_EPB\MBT_03\data\MBT_03_Ext01.rvmat",
+				"A3\Armor_F_EPB\MBT_03\data\MBT_03_Ext01_damage.rvmat",
+				"A3\Armor_F_EPB\MBT_03\data\MBT_03_Ext01_destruct.rvmat",
+				"A3\Armor_F_EPB\MBT_03\data\MBT_03_Ext02.rvmat",
+				"A3\Armor_F_EPB\MBT_03\data\MBT_03_Ext02_damage.rvmat",
+				"A3\Armor_F_EPB\MBT_03\data\MBT_03_Ext02_destruct.rvmat",
+				"A3\Armor_F_EPB\MBT_03\data\MBT_03_RCWS.rvmat",
+				"A3\Armor_F_EPB\MBT_03\data\MBT_03_RCWS_damage.rvmat",
+				"A3\Armor_F_EPB\MBT_03\data\MBT_03_RCWS_destruct.rvmat",
+				"A3\Armor_F_EPB\MBT_03\data\MBT_03_track.rvmat",
+				"A3\Armor_F_EPB\MBT_03\data\MBT_03_track_damage.rvmat",
+				"A3\Armor_F_EPB\MBT_03\data\MBT_03_track_destruct.rvmat"
+			};
+		};
+		class AnimationSources: AnimationSources
+		{
+			class muzzle_rot_cannon
+			{
+				source="ammorandom";
+				weapon="cannon_120mm_long";
+			};
+			class muzzle_rot_coax
+			{
+				source="ammorandom";
+				weapon="LMG_coax";
+			};
+			class muzzle_rot_hmg
+			{
+				source="ammorandom";
+				weapon="HMG_127_APC";
+			};
+			class muzzle_hide_coax
+			{
+				source="reload";
+				weapon="LMG_coax";
+			};
+			class recoil_source
+			{
+				source="reload";
+				weapon="cannon_120mm_long";
+			};
+			class LockMuzzle
+			{
+				source="user";
+				initPhase=0;
+				animPeriod=0.30000001;
+			};
+			class HitEngine_src
+			{
+				source="Hit";
+				hitpoint="HitEngine";
+				raw=1;
+			};
+			class HitFuel_src
+			{
+				source="Hit";
+				hitpoint="HitFuel";
+				raw=1;
+			};
+			class HitHull_src
+			{
+				source="Hit";
+				hitpoint="HitHull";
+				raw=1;
+			};
+			class HitMainGun_src
+			{
+				source="Hit";
+				hitpoint="HitGun";
+				raw=1;
+			};
+			class HitTurret_src
+			{
+				source="Hit";
+				hitpoint="HitTurret";
+				raw=1;
+			};
+			class HitComTurret_src
+			{
+				source="Hit";
+				hitpoint="HitComTurret";
+				raw=1;
+			};
+			class Smoke_source
+			{
+				source="revolving";
+				weapon="SmokeLauncher";
+			};
+			class HitSLAT_Left_src
+			{
+				source="Hit";
+				hitpoint="HitSLAT_Left";
+				raw=1;
+			};
+			class HitSLAT_Right_src
+			{
+				source="Hit";
+				hitpoint="HitSLAT_Right";
+				raw=1;
+			};
+			class HitSLAT_back_src
+			{
+				source="Hit";
+				hitpoint="HitSLAT_back";
+				raw=1;
+			};
+			class HitSLAT_front_src
+			{
+				source="Hit";
+				hitpoint="HitSLAT_front";
+				raw=1;
+			};
+			class HitSLAT_top_left_src
+			{
+				source="Hit";
+				hitpoint="HitSLAT_top_left";
+				raw=1;
+			};
+			class HitSLAT_top_right_src
+			{
+				source="Hit";
+				hitpoint="HitSLAT_top_right";
+				raw=1;
+			};
+			class HitSLAT_top_back_src
+			{
+				source="Hit";
+				hitpoint="HitSLAT_top_back";
+				raw=1;
+			};
+			class HideTurret
+			{
+				displayName="$STR_A3_CfgVehicles_MBT_03_base_F_AnimationSources_HideTurret1";
+				author="$STR_A3_Bohemia_Interactive";
+				source="user";
+				initPhase=0;
+				animPeriod=0.0099999998;
+				mass=-5;
+			};
+			class HideHull
+			{
+				displayName="$STR_A3_CfgVehicles_MBT_03_base_F_AnimationSources_HideHull1";
+				author="$STR_A3_Bohemia_Interactive";
+				source="user";
+				initPhase=0;
+				animPeriod=0.0099999998;
+				mass=-15;
+			};
+			class showCamonetHull
+			{
+				displayName="$STR_A3_animationsources_showcamonethull0";
+				author="$STR_A3_Bohemia_Interactive";
+				source="user";
+				animPeriod=0.001;
+				initPhase=0;
+				mass=-50;
+			};
+			class showCamonetCannon
+			{
+				source="user";
+				animPeriod=0.001;
+				initPhase=0;
+			};
+			class showCamonetCannon1
+			{
+				source="user";
+				animPeriod=0.001;
+				initPhase=0;
+			};
+			class showCamonetTurret
+			{
+				displayName="$STR_A3_animationsources_showcamonetturret0";
+				author="$STR_A3_Bohemia_Interactive";
+				source="user";
+				forceAnimatePhase=1;
+				forceAnimate[]=
+				{
+					"showCamonetCannon",
+					1,
+					"showCamonetCannon1",
+					1
+				};
+				forceAnimate2[]=
+				{
+					"showCamonetCannon",
+					0,
+					"showCamonetCannon1",
+					0
+				};
+				animPeriod=0.001;
+				initPhase=0;
+				mass=-50;
+			};
+		};
 		animationList[]=
 		{
 			"showCamonetHull",
@@ -2891,6 +3486,14 @@ class CfgVehicles
 			class Indep_01
 			{
 				displayName="$STR_A3_TEXTURESOURCES_INDEP0";
+				author="$STR_A3_Bohemia_Interactive";
+				textures[]=
+				{
+					"a3\armor_f_epb\mbt_03\data\mbt_03_ext01_co.paa",
+					"a3\armor_f_epb\mbt_03\data\mbt_03_ext02_co.paa",
+					"a3\armor_f_epb\mbt_03\data\mbt_03_rcws_co.paa",
+					"A3\Armor_F\Data\camonet_AAF_Digi_Green_CO.paa"
+				};
 				factions[]=
 				{
 					"IND_F"
@@ -2899,6 +3502,14 @@ class CfgVehicles
 			class Indep_02
 			{
 				displayName="$STR_A3_texturesources_indepjungle0";
+				author="$STR_A3_Bohemia_Interactive";
+				textures[]=
+				{
+					"a3\armor_f_epb\mbt_03\data\mbt_03_ext01_co.paa",
+					"a3\armor_f_epb\mbt_03\data\mbt_03_ext02_co.paa",
+					"a3\armor_f_epb\mbt_03\data\mbt_03_rcws_co.paa",
+					"A3\Armor_F\Data\camonet_AAF_Digi_Jungle_CO.paa"
+				};
 				factions[]=
 				{
 					"IND_F"
@@ -2907,25 +3518,89 @@ class CfgVehicles
 			class Indep_03
 			{
 				displayName="$STR_A3_texturesources_indepdesert0";
+				author="$STR_A3_Bohemia_Interactive";
+				textures[]=
+				{
+					"a3\armor_f_epb\mbt_03\data\mbt_03_ext01_co.paa",
+					"a3\armor_f_epb\mbt_03\data\mbt_03_ext02_co.paa",
+					"a3\armor_f_epb\mbt_03\data\mbt_03_rcws_co.paa",
+					"A3\Armor_F\Data\camonet_AAF_Digi_Desert_CO.paa"
+				};
 				factions[]=
 				{
 					"IND_F"
 				};
 			};
 		};
+		class Library
+		{
+			libTextDesc="$STR_A3_CfgVehicles_MBT_03_base_F_Library0";
+		};
+		hiddenSelections[]=
+		{
+			"Camo1",
+			"Camo2",
+			"Camo3",
+			"CamoNet"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"a3\armor_f_epb\mbt_03\data\mbt_03_ext01_co.paa",
+			"a3\armor_f_epb\mbt_03\data\mbt_03_ext02_co.paa",
+			"a3\armor_f_epb\mbt_03\data\mbt_03_rcws_co.paa",
+			"A3\Armor_F\Data\camonet_AAF_Digi_Green_CO.paa"
+		};
+		class TransportMagazines
+		{
+			class _xx_SmokeShell
+			{
+				magazine="SmokeShell";
+				count=2;
+			};
+			class _xx_SmokeShellGreen
+			{
+				magazine="SmokeShellGreen";
+				count=2;
+			};
+			class _xx_30Rnd_556x45_Stanag
+			{
+				magazine="30Rnd_556x45_Stanag";
+				count=4;
+			};
+		};
+		class TransportWeapons
+		{
+			class _xx_arifle_Mk20C_F
+			{
+				weapon="arifle_Mk20C_F";
+				count=2;
+			};
+		};
+		class TransportItems
+		{
+			class _xx_FirstAidKit
+			{
+				name="FirstAidKit";
+				count=10;
+			};
+		};
 		numberPhysicalWheels=18;
 	};
 	class I_MBT_03_base_F: MBT_03_base_F
 	{
+		author="$STR_A3_Bohemia_Interactive";
 		_generalMacro="I_MBT_03_base_F";
+		crew="I_crew_F";
 		typicalCargo[]=
 		{
 			"I_Soldier_F"
 		};
 		side=2;
+		faction="IND_F";
 	};
 	class I_MBT_03_cannon_F: I_MBT_03_base_F
 	{
+		author="$STR_A3_Bohemia_Interactive";
 		class SimpleObject
 		{
 			eden=1;
@@ -3778,7 +4453,9 @@ class CfgVehicles
 			verticalOffsetWorld=-0.168;
 			init="[this, '', []] call bis_fnc_initVehicle";
 		};
+		editorPreview="\A3\EditorPreviews_F\Data\CfgVehicles\I_MBT_03_cannon_F.jpg";
 		_generalMacro="I_MBT_03_cannon_F";
+		scope=2;
 		displayName="$STR_A3_CfgVehicles_I_MBT_03_cannon_F0";
 	};
 };

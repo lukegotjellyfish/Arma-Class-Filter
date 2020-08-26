@@ -2,7 +2,14 @@ class CfgPatches
 {
 	class A3_Missions_F_Mark
 	{
+		author="$STR_A3_Bohemia_Interactive";
 		name="Arma 3 Marksmen - Playable Content";
+		url="https://www.arma3.com";
+		requiredAddons[]=
+		{
+			"A3_Data_F_Mark"
+		};
+		requiredVersion=0.1;
 		units[]={};
 		weapons[]={};
 	};
@@ -192,6 +199,7 @@ class CfgFiringDrills
 					class T1
 					{
 						object="BIS_FD_target2_1";
+						type="PopUp_Acc1";
 						upTime=4;
 					};
 					class T2: T1
@@ -247,6 +255,7 @@ class CfgFiringDrills
 						object="BIS_FD_bonus2_1";
 						optional=1;
 						bonus=10;
+						type="Metal_Pole_Skeet";
 					};
 					class Optional2: Optional1
 					{
@@ -274,6 +283,7 @@ class CfgFiringDrills
 					class T1
 					{
 						object="BIS_FD_target3_1";
+						type="PopUp_Acc1";
 						upTime=8;
 					};
 					class T2: T1
@@ -427,6 +437,7 @@ class CfgFiringDrills
 						};
 						triggerTime=2;
 						upTime=20;
+						type="Swivel";
 					};
 					class T14: T1
 					{
@@ -452,6 +463,7 @@ class CfgFiringDrills
 						object="BIS_FD_bonus3_1";
 						optional=1;
 						bonus=10;
+						type="Metal_Pole_Skeet";
 					};
 					class Optional2: Optional1
 					{
@@ -482,6 +494,7 @@ class CfgFiringDrills
 						object="BIS_FD_bonus3_8";
 						optional=1;
 						bonus=5;
+						type="Balloon";
 					};
 					class Optional9: Optional8
 					{
@@ -507,6 +520,7 @@ class CfgFiringDrills
 						object="BIS_FD_bonus3_12";
 						optional=1;
 						bonus=10;
+						type="Metal_Pole_Skeet";
 					};
 					class Optional13: Optional12
 					{
@@ -533,6 +547,7 @@ class CfgFiringDrills
 						object="BIS_FD_bonus3_18";
 						optional=1;
 						bonus=5;
+						type="Balloon";
 					};
 					class Optional19: Optional18
 					{
@@ -604,6 +619,7 @@ class CfgFiringDrills
 							"BIS_FD_target4_1B",
 							"BIS_FD_target4_1C"
 						};
+						type="PopUp";
 						upTime=30;
 					};
 					class T2: T1
@@ -778,6 +794,7 @@ class CfgFiringDrills
 						object="BIS_FD_bonus4_1";
 						optional=1;
 						bonus=10;
+						type="Metal_Pole_Skeet";
 					};
 					class Optional2: Optional1
 					{
@@ -796,6 +813,7 @@ class CfgFiringDrills
 						object="BIS_FD_bonus4_5";
 						optional=1;
 						bonus=5;
+						type="Balloon";
 					};
 					class Optional6: Optional5
 					{
@@ -831,6 +849,7 @@ class CfgFiringDrills
 					class T1
 					{
 						object="BIS_FD_target5_1";
+						type="PopUp";
 						upTime=9;
 					};
 					class T2: T1
@@ -1009,6 +1028,7 @@ class CfgFiringDrills
 						object="BIS_FD_bonus5_1";
 						optional=1;
 						bonus=10;
+						type="Metal_Pole_Skeet";
 					};
 					class Optional2: Optional1
 					{
@@ -1019,6 +1039,7 @@ class CfgFiringDrills
 						object="BIS_FD_bonus5_3";
 						optional=1;
 						bonus=5;
+						type="Balloon";
 					};
 					class Optional4: Optional3
 					{
@@ -1122,6 +1143,7 @@ class CfgFiringDrills
 					class T1
 					{
 						object="BIS_FD_target6_1";
+						type="PopUp";
 						upTime=10;
 						positionsMove[]=
 						{
@@ -1412,6 +1434,7 @@ class CfgFiringDrills
 						object="BIS_FD_bonus6_1";
 						optional=1;
 						bonus=10;
+						type="Metal_Pole_Skeet";
 					};
 					class Optional2: Optional1
 					{
@@ -1438,6 +1461,7 @@ class CfgFiringDrills
 						object="BIS_FD_bonus6_7";
 						optional=1;
 						bonus=5;
+						type="Balloon";
 					};
 					class Optional8: Optional7
 					{
@@ -1658,6 +1682,7 @@ class CfgFiringDrills
 					class T1
 					{
 						object="BIS_FD_target2_1";
+						type="Steel_Plate";
 					};
 					class T2: T1
 					{
@@ -1670,6 +1695,7 @@ class CfgFiringDrills
 					class T4
 					{
 						object="BIS_FD_target2_4";
+						type="Steel_Plate";
 					};
 					class T5: T4
 					{
@@ -1682,6 +1708,7 @@ class CfgFiringDrills
 					class T7
 					{
 						object="BIS_FD_target2_7";
+						type="Steel_Plate";
 					};
 					class T8: T7
 					{
@@ -1694,10 +1721,12 @@ class CfgFiringDrills
 					class T10
 					{
 						object="BIS_FD_target2_10";
+						type="Steel_Plate";
 					};
 					class T11
 					{
 						object="BIS_FD_target2_11";
+						type="PopUp_Oval";
 						trigger="BIS_FD_target2_10";
 					};
 					class Optional1
@@ -1707,6 +1736,7 @@ class CfgFiringDrills
 						bonus=25;
 						upTime=4;
 						triggerTime=0.5;
+						type="Skeet";
 						trigger="BIS_FD_target2_11";
 					};
 					class T12: T10
@@ -1740,6 +1770,7 @@ class CfgFiringDrills
 					class T16
 					{
 						object="BIS_FD_target2_16";
+						type="Steel_Plate";
 					};
 					class T17: T16
 					{
@@ -1748,6 +1779,7 @@ class CfgFiringDrills
 					class T18
 					{
 						object="BIS_FD_target2_18";
+						type="PopUp_Oval";
 						trigger[]=
 						{
 							"BIS_FD_target2_16",
@@ -1764,6 +1796,7 @@ class CfgFiringDrills
 						object="BIS_FD_bonus2_5";
 						optional=1;
 						bonus=5;
+						type="Balloon";
 					};
 					class Optional6: Optional5
 					{
@@ -1791,10 +1824,12 @@ class CfgFiringDrills
 					class T1
 					{
 						object="BIS_FD_target3_1";
+						type="Steel_Plate";
 					};
 					class T2
 					{
 						object="BIS_FD_target3_2";
+						type="PopUp_Oval";
 						trigger="BIS_FD_target3_1";
 					};
 					class Optional1
@@ -1804,6 +1839,7 @@ class CfgFiringDrills
 						bonus=25;
 						upTime=4;
 						triggerTime=0.5;
+						type="Skeet";
 						trigger="BIS_FD_target3_2";
 					};
 					class T3: T2
@@ -1827,10 +1863,12 @@ class CfgFiringDrills
 					class T5
 					{
 						object="BIS_FD_target3_5";
+						type="Steel_Plate";
 					};
 					class T6
 					{
 						object="BIS_FD_target3_6";
+						type="PopUp_Oval";
 						trigger="BIS_FD_target3_5";
 					};
 					class Optional4: Optional1
@@ -1850,10 +1888,12 @@ class CfgFiringDrills
 					class T8
 					{
 						object="BIS_FD_target3_8";
+						type="Steel_Plate";
 					};
 					class T9
 					{
 						object="BIS_FD_target3_9";
+						type="PopUp_Oval";
 						trigger="BIS_FD_target3_8";
 					};
 					class Optional6: Optional1
@@ -1864,6 +1904,7 @@ class CfgFiringDrills
 					class T10
 					{
 						object="BIS_FD_target3_10";
+						type="PopUp_Oval";
 					};
 					class T11: T10
 					{
@@ -1946,6 +1987,7 @@ class CfgFiringDrills
 						object="BIS_FD_bonus3_11";
 						optional=1;
 						bonus=5;
+						type="Balloon";
 					};
 					class Optional12: Optional11
 					{
@@ -1968,6 +2010,7 @@ class CfgFiringDrills
 							"BIS_FD_target3_21A",
 							"BIS_FD_target3_21B"
 						};
+						type="PopUp_Oval";
 					};
 					class T22: T21
 					{
@@ -2044,14 +2087,17 @@ class CfgFiringDrills
 						object="BIS_FD_bonus4_1";
 						optional=1;
 						bonus=5;
+						type="Balloon";
 					};
 					class T1
 					{
 						object="BIS_FD_target4_1";
+						type="PopUp_Oval";
 					};
 					class T2
 					{
 						object="BIS_FD_target4_2";
+						type="PopUp_Acc1";
 						trigger="BIS_FD_target4_1";
 						upTime=9;
 						positionsMove[]=
@@ -2095,10 +2141,12 @@ class CfgFiringDrills
 					class T6
 					{
 						object="BIS_FD_target4_6";
+						type="PopUp_Oval";
 					};
 					class T7
 					{
 						object="BIS_FD_target4_7";
+						type="PopUp_Acc1";
 						trigger="BIS_FD_target4_6";
 						upTime=5;
 						positionsMove[]=
@@ -2123,6 +2171,7 @@ class CfgFiringDrills
 						object="BIS_FD_bonus4_14";
 						optional=1;
 						bonus=10;
+						type="Metal_Pole_Skeet";
 					};
 					class Optional15: Optional14
 					{
@@ -2135,16 +2184,19 @@ class CfgFiringDrills
 					class T9
 					{
 						object="BIS_FD_target4_9";
+						type="PopUp_Oval";
 					};
 					class T10
 					{
 						object="BIS_FD_target4_10";
+						type="Swivel";
 						trigger="BIS_FD_target4_9";
 						upTime=9;
 					};
 					class T11
 					{
 						object="BIS_FD_target4_11";
+						type="PopUp_Acc1";
 						trigger="BIS_FD_target4_9";
 						upTime=11;
 					};
@@ -2157,6 +2209,7 @@ class CfgFiringDrills
 					class T13: T11
 					{
 						object="BIS_FD_target4_13";
+						type="PopUp";
 						upTime=9.5;
 					};
 					class NoShoot1
@@ -2179,6 +2232,7 @@ class CfgFiringDrills
 					class T14
 					{
 						object="BIS_FD_target4_14";
+						type="PopUp_Oval";
 					};
 					class NoShoot4
 					{
@@ -2219,6 +2273,7 @@ class CfgFiringDrills
 					class T15
 					{
 						object="BIS_FD_target4_15";
+						type="PopUp_Acc1";
 						trigger="BIS_FD_target4_14";
 						triggerTime=3;
 						upTime=11;
@@ -2272,10 +2327,12 @@ class CfgFiringDrills
 					class T19
 					{
 						object="BIS_FD_target4_19";
+						type="PopUp_Oval";
 					};
 					class T20
 					{
 						object="BIS_FD_target4_20";
+						type="PopUp_Acc1";
 						trigger="BIS_FD_target4_19";
 						upTime=10;
 						positions[]=
@@ -2377,11 +2434,13 @@ class CfgFiringDrills
 					class T1
 					{
 						object="BIS_FD_target5_1";
+						type="PopUp_Acc1";
 					};
 					class T2: T1
 					{
 						object="BIS_FD_target5_2";
 						chance=0.80000001;
+						type="Swivel";
 						upTime=22;
 					};
 					class T3: T1
@@ -2409,6 +2468,7 @@ class CfgFiringDrills
 					class T5: T1
 					{
 						object="BIS_FD_target5_5";
+						type="Swivel";
 					};
 					class T6: T1
 					{
@@ -2423,6 +2483,7 @@ class CfgFiringDrills
 					class T8: T1
 					{
 						object="BIS_FD_target5_8";
+						type="Swivel";
 						positions[]=
 						{
 							"BIS_FD_target5_8A",
@@ -2442,6 +2503,7 @@ class CfgFiringDrills
 					{
 						object="BIS_FD_target5_10";
 						upTime=38;
+						type="Swivel";
 					};
 					class T11: T1
 					{
@@ -2490,6 +2552,7 @@ class CfgFiringDrills
 						object="BIS_FD_bonus5_1";
 						optional=1;
 						bonus=10;
+						type="Metal_Pole_Skeet";
 					};
 					class Optional2: Optional1
 					{
@@ -2520,6 +2583,7 @@ class CfgFiringDrills
 						object="BIS_FD_bonus5_8";
 						optional=1;
 						bonus=5;
+						type="Balloon";
 					};
 					class Optional9: Optional8
 					{
@@ -2563,15 +2627,18 @@ class CfgFiringDrills
 					class T1
 					{
 						object="BIS_FD_target6_1";
+						type="PopUp_Acc1";
 					};
 					class T2: T1
 					{
 						object="BIS_FD_target6_2";
 						triggerTime=2;
+						type="Swivel";
 					};
 					class T3: T1
 					{
 						object="BIS_FD_target6_3";
+						type="Swivel";
 					};
 					class T4: T1
 					{
@@ -2824,6 +2891,7 @@ class CfgFiringDrills
 					{
 						object="BIS_FD_target6_30";
 						triggerTime=67;
+						type="Swivel";
 					};
 					class T31: T1
 					{
@@ -2913,6 +2981,7 @@ class CfgFiringDrills
 						object="BIS_FD_bonus6_1";
 						optional=1;
 						bonus=10;
+						type="Metal_Pole_Skeet";
 					};
 					class Optional2: Optional1
 					{
@@ -2939,6 +3008,7 @@ class CfgFiringDrills
 						object="BIS_FD_bonus6_7";
 						optional=1;
 						bonus=5;
+						type="Balloon";
 					};
 					class Optional8: Optional7
 					{
@@ -3083,6 +3153,7 @@ class CfgFiringDrills
 					class T1
 					{
 						object="BIS_FD_target2_1";
+						type="PopUp_Acc1";
 						upTime=9;
 						positions[]=
 						{
@@ -3123,6 +3194,7 @@ class CfgFiringDrills
 					class T4: T1
 					{
 						object="BIS_FD_target2_4";
+						type="Swivel";
 						upTime=5;
 						positions[]={};
 						directions[]={};
@@ -3196,6 +3268,7 @@ class CfgFiringDrills
 						object="BIS_FD_bonus2_1";
 						optional=1;
 						bonus=10;
+						type="Metal_Pole_Skeet";
 					};
 					class Optional2: Optional1
 					{
@@ -3212,6 +3285,7 @@ class CfgFiringDrills
 					class T1
 					{
 						object="BIS_FD_target3_1";
+						type="PopUp_Acc1";
 						upTime=8;
 						triggerTime=1;
 						positions[]=
@@ -3262,6 +3336,7 @@ class CfgFiringDrills
 						object="BIS_FD_bonus3_1";
 						optional=1;
 						bonus=10;
+						type="Metal_Pole_Skeet";
 					};
 					class Optional2: Optional1
 					{
@@ -3286,6 +3361,7 @@ class CfgFiringDrills
 					class T1
 					{
 						object="BIS_FD_target4_1";
+						type="PopUp_Acc1";
 						upTime=6;
 					};
 					class T2: T1
@@ -3335,6 +3411,7 @@ class CfgFiringDrills
 						object="BIS_FD_bonus4_1";
 						optional=1;
 						bonus=10;
+						type="Metal_Pole_Skeet";
 					};
 				};
 			};
@@ -3347,6 +3424,7 @@ class CfgFiringDrills
 					class T1
 					{
 						object="BIS_FD_target5_1";
+						type="PopUp_Acc1";
 						upTime=6;
 						positionsMove[]=
 						{
@@ -3367,6 +3445,7 @@ class CfgFiringDrills
 					class T3
 					{
 						object="BIS_FD_target5_3";
+						type="PopUp_Acc1";
 						upTime=10;
 						positions[]=
 						{
@@ -3442,6 +3521,7 @@ class CfgFiringDrills
 					class T1
 					{
 						object="BIS_FD_target6_1";
+						type="PopUp_Acc1";
 						upTime=7;
 						positions[]=
 						{
@@ -3488,6 +3568,7 @@ class CfgFiringDrills
 						object="BIS_FD_bonus6_1";
 						optional=1;
 						bonus=10;
+						type="Metal_Pole_Skeet";
 					};
 					class Optional2: Optional1
 					{
@@ -3508,6 +3589,7 @@ class CfgFiringDrills
 					class T1
 					{
 						object="BIS_FD_target7_1";
+						type="Swivel";
 						upTime=7;
 						positions[]=
 						{
@@ -3524,6 +3606,7 @@ class CfgFiringDrills
 					class T2
 					{
 						object="BIS_FD_target7_2";
+						type="PopUp_Acc1";
 						upTime=5;
 					};
 					class T3: T2
@@ -3544,6 +3627,7 @@ class CfgFiringDrills
 					class T1
 					{
 						object="BIS_FD_target8_1";
+						type="PopUp_Acc1";
 						upTime=6;
 					};
 					class T2: T1
@@ -3609,6 +3693,7 @@ class CfgFiringDrills
 					class T1
 					{
 						object="BIS_FD_target9_1";
+						type="PopUp_Acc1";
 						upTime=8;
 						triggerTime=10;
 						positions[]=
@@ -3625,6 +3710,7 @@ class CfgFiringDrills
 					class T2
 					{
 						object="BIS_FD_target9_2";
+						type="PopUp_Acc1";
 						upTime=12;
 						chance=0.80000001;
 					};
@@ -3692,6 +3778,7 @@ class CfgFiringDrills
 						object="BIS_FD_bonus9_1";
 						optional=1;
 						bonus=10;
+						type="Metal_Pole_Skeet";
 					};
 					class Optional2: Optional1
 					{
@@ -3715,6 +3802,7 @@ class CfgFiringDrills
 					class T1
 					{
 						object="BIS_FD_target10_1";
+						type="PopUp_Acc1";
 						upTime=12;
 						positions[]=
 						{
@@ -3776,6 +3864,7 @@ class CfgFiringDrills
 						object="BIS_FD_bonus10_1";
 						optional=1;
 						bonus=10;
+						type="Metal_Pole_Skeet";
 					};
 					class Optional2: Optional1
 					{
@@ -3795,6 +3884,7 @@ class CfgFiringDrills
 					class T1
 					{
 						object="BIS_FD_target11_1";
+						type="PopUp_Acc1";
 						upTime=15;
 					};
 					class T2: T1
@@ -3900,6 +3990,7 @@ class CfgFiringDrills
 					class T1
 					{
 						object="BIS_FD_target12_1";
+						type="PopUp_Acc1";
 						upTime=10;
 					};
 					class T2: T1
@@ -3966,6 +4057,7 @@ class CfgFiringDrills
 						object="BIS_FD_bonus12_1";
 						optional=1;
 						bonus=10;
+						type="Metal_Pole_Skeet";
 					};
 					class Optional2: Optional1
 					{
@@ -3989,6 +4081,7 @@ class CfgFiringDrills
 					class T1
 					{
 						object="BIS_FD_target13_1";
+						type="PopUp";
 						upTime=6;
 						positions[]=
 						{
@@ -4008,6 +4101,7 @@ class CfgFiringDrills
 					class T2: T1
 					{
 						object="BIS_FD_target13_2";
+						type="Swivel";
 						chance=0.69999999;
 						triggerTime=2;
 						upTime=12;
@@ -4018,6 +4112,7 @@ class CfgFiringDrills
 					{
 						object="BIS_FD_target13_3";
 						trigger="BIS_FD_target13_2";
+						type="PopUp_Acc1";
 						upTime=15;
 						positionsMove[]=
 						{
@@ -4030,6 +4125,7 @@ class CfgFiringDrills
 					class T4: T1
 					{
 						object="BIS_FD_target13_4";
+						type="PopUp_Acc1";
 						upTime=15;
 						positionsMove[]=
 						{
@@ -4042,6 +4138,7 @@ class CfgFiringDrills
 					class T5: T1
 					{
 						object="BIS_FD_target13_5";
+						type="PopUp_Acc1";
 						upTime=17;
 						positionsMove[]=
 						{
@@ -4107,6 +4204,7 @@ class CfgMissions
 				briefingName="$STR_A3_FIRING_DRILLS_PURPLE";
 				overviewText="$STR_A3_FIRING_DRILLS_PURPLE_OVERVIEW";
 				overviewPicture="\a3\Missions_F_Mark\data\img\FiringDrills_Purple_overview_CA.paa";
+				author="$STR_A3_Bohemia_Interactive";
 				class SP_FD11
 				{
 					directory="a3\Missions_F_Mark\Challenges\firing_drills\sp_fd11.altis";
@@ -4115,6 +4213,7 @@ class CfgMissions
 					overviewPicture="\a3\Missions_F_Mark\data\img\SP_FD11_overview_CA.paa";
 					overviewPictureUnowned="\a3\Missions_F_Mark\data\img\SP_FD11_overview_blackwhite_CA.paa";
 					overviewScript="\A3\Modules_F_Beta\FiringDrills\scripts\overviewScript.sqf";
+					author="$STR_A3_Bohemia_Interactive";
 				};
 				class SP_FD12: SP_FD11
 				{
@@ -4162,6 +4261,7 @@ class CfgVRCourses
 		official=0;
 		icon="\A3\Structures_F_Bootcamp\VR\Helpers\Data\VR_Symbol_default_CA.paa";
 		locks[]={};
+		priority=-1;
 	};
 	class WeaponHandlingA: Default
 	{
@@ -4240,11 +4340,13 @@ class CfgSentences
 	{
 		class 01_Spotted
 		{
+			priority=0;
 			file="\a3\missions_f_Mark\kb\Showcase_FiringFromVehicles\Showcase_FiringFromVehicles_01_Spotted.bikb";
 			class Sentences
 			{
 				class showcase_firingfromvehicles_01_spotted_SFA_0
 				{
+					text="$STR_A3_showcase_firingfromvehicles_01_spotted_SFA_0";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_firingfromvehicles\01_Spotted\showcase_firingfromvehicles_01_spotted_SFA_0.ogg"
@@ -4256,6 +4358,7 @@ class CfgSentences
 				};
 				class showcase_firingfromvehicles_01_spotted_BHQ_0
 				{
+					text="$STR_A3_showcase_firingfromvehicles_01_spotted_BHQ_0";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_firingfromvehicles\01_Spotted\showcase_firingfromvehicles_01_spotted_BHQ_0.ogg"
@@ -4267,6 +4370,7 @@ class CfgSentences
 				};
 				class showcase_firingfromvehicles_01_spotted_SFA_1
 				{
+					text="$STR_A3_showcase_firingfromvehicles_01_spotted_SFA_1";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_firingfromvehicles\01_Spotted\showcase_firingfromvehicles_01_spotted_SFA_1.ogg"
@@ -4278,6 +4382,7 @@ class CfgSentences
 				};
 				class showcase_firingfromvehicles_01_spotted_BHQ_1
 				{
+					text="$STR_A3_showcase_firingfromvehicles_01_spotted_BHQ_1";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_firingfromvehicles\01_Spotted\showcase_firingfromvehicles_01_spotted_BHQ_1.ogg"
@@ -4302,11 +4407,13 @@ class CfgSentences
 		};
 		class 01b_Spotted_Remote
 		{
+			priority=0;
 			file="\a3\missions_f_Mark\kb\Showcase_FiringFromVehicles\Showcase_FiringFromVehicles_01b_Spotted_Remote.bikb";
 			class Sentences
 			{
 				class showcase_firingfromvehicles_01b_spotted_remote_SFA_0
 				{
+					text="$STR_A3_showcase_firingfromvehicles_01b_spotted_remote_SFA_0";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_firingfromvehicles\01b_Spotted_Remote\showcase_firingfromvehicles_01b_spotted_remote_SFA_0.ogg"
@@ -4318,6 +4425,7 @@ class CfgSentences
 				};
 				class showcase_firingfromvehicles_01b_spotted_remote_BHQ_0
 				{
+					text="$STR_A3_showcase_firingfromvehicles_01b_spotted_remote_BHQ_0";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_firingfromvehicles\01b_Spotted_Remote\showcase_firingfromvehicles_01b_spotted_remote_BHQ_0.ogg"
@@ -4329,6 +4437,7 @@ class CfgSentences
 				};
 				class showcase_firingfromvehicles_01b_spotted_remote_SFA_1
 				{
+					text="$STR_A3_showcase_firingfromvehicles_01b_spotted_remote_SFA_1";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_firingfromvehicles\01b_Spotted_Remote\showcase_firingfromvehicles_01b_spotted_remote_SFA_1.ogg"
@@ -4340,6 +4449,7 @@ class CfgSentences
 				};
 				class showcase_firingfromvehicles_01b_spotted_remote_BHQ_1
 				{
+					text="$STR_A3_showcase_firingfromvehicles_01b_spotted_remote_BHQ_1";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_firingfromvehicles\01b_Spotted_Remote\showcase_firingfromvehicles_01b_spotted_remote_BHQ_1.ogg"
@@ -4364,11 +4474,13 @@ class CfgSentences
 		};
 		class 05_Sentries
 		{
+			priority=0;
 			file="\a3\missions_f_Mark\kb\Showcase_FiringFromVehicles\Showcase_FiringFromVehicles_05_Sentries.bikb";
 			class Sentences
 			{
 				class showcase_firingfromvehicles_05_sentries_SFA_0
 				{
+					text="$STR_A3_showcase_firingfromvehicles_05_sentries_SFA_0";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_firingfromvehicles\05_Sentries\showcase_firingfromvehicles_05_sentries_SFA_0.ogg"
@@ -4380,6 +4492,7 @@ class CfgSentences
 				};
 				class showcase_firingfromvehicles_05_sentries_BHQ_0
 				{
+					text="$STR_A3_showcase_firingfromvehicles_05_sentries_BHQ_0";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_firingfromvehicles\05_Sentries\showcase_firingfromvehicles_05_sentries_BHQ_0.ogg"
@@ -4391,6 +4504,7 @@ class CfgSentences
 				};
 				class showcase_firingfromvehicles_05_sentries_SFA_1
 				{
+					text="$STR_A3_showcase_firingfromvehicles_05_sentries_SFA_1";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_firingfromvehicles\05_Sentries\showcase_firingfromvehicles_05_sentries_SFA_1.ogg"
@@ -4402,6 +4516,7 @@ class CfgSentences
 				};
 				class showcase_firingfromvehicles_05_sentries_SFA_2
 				{
+					text="$STR_A3_showcase_firingfromvehicles_05_sentries_SFA_2";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_firingfromvehicles\05_Sentries\showcase_firingfromvehicles_05_sentries_SFA_2.ogg"
@@ -4426,11 +4541,13 @@ class CfgSentences
 		};
 		class 10_Located
 		{
+			priority=0;
 			file="\a3\missions_f_Mark\kb\Showcase_FiringFromVehicles\Showcase_FiringFromVehicles_10_Located.bikb";
 			class Sentences
 			{
 				class showcase_firingfromvehicles_10_located_SFA_0
 				{
+					text="$STR_A3_showcase_firingfromvehicles_10_located_SFA_0";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_firingfromvehicles\10_Located\showcase_firingfromvehicles_10_located_SFA_0.ogg"
@@ -4442,6 +4559,7 @@ class CfgSentences
 				};
 				class showcase_firingfromvehicles_10_located_HEL_0
 				{
+					text="$STR_A3_showcase_firingfromvehicles_10_located_HEL_0";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_firingfromvehicles\10_Located\showcase_firingfromvehicles_10_located_HEL_0.ogg"
@@ -4453,6 +4571,7 @@ class CfgSentences
 				};
 				class showcase_firingfromvehicles_10_located_SFA_1
 				{
+					text="$STR_A3_showcase_firingfromvehicles_10_located_SFA_1";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_firingfromvehicles\10_Located\showcase_firingfromvehicles_10_located_SFA_1.ogg"
@@ -4464,6 +4583,7 @@ class CfgSentences
 				};
 				class showcase_firingfromvehicles_10_located_BHQ_0
 				{
+					text="$STR_A3_showcase_firingfromvehicles_10_located_BHQ_0";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_firingfromvehicles\10_Located\showcase_firingfromvehicles_10_located_BHQ_0.ogg"
@@ -4488,11 +4608,13 @@ class CfgSentences
 		};
 		class 10b_Located_Remote
 		{
+			priority=0;
 			file="\a3\missions_f_Mark\kb\Showcase_FiringFromVehicles\Showcase_FiringFromVehicles_10b_Located_Remote.bikb";
 			class Sentences
 			{
 				class showcase_firingfromvehicles_10b_located_remote_SFA_0
 				{
+					text="$STR_A3_showcase_firingfromvehicles_10b_located_remote_SFA_0";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_firingfromvehicles\10b_Located_Remote\showcase_firingfromvehicles_10b_located_remote_SFA_0.ogg"
@@ -4504,6 +4626,7 @@ class CfgSentences
 				};
 				class showcase_firingfromvehicles_10b_located_remote_HEL_0
 				{
+					text="$STR_A3_showcase_firingfromvehicles_10b_located_remote_HEL_0";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_firingfromvehicles\10b_Located_Remote\showcase_firingfromvehicles_10b_located_remote_HEL_0.ogg"
@@ -4515,6 +4638,7 @@ class CfgSentences
 				};
 				class showcase_firingfromvehicles_10b_located_remote_SFA_1
 				{
+					text="$STR_A3_showcase_firingfromvehicles_10b_located_remote_SFA_1";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_firingfromvehicles\10b_Located_Remote\showcase_firingfromvehicles_10b_located_remote_SFA_1.ogg"
@@ -4526,6 +4650,7 @@ class CfgSentences
 				};
 				class showcase_firingfromvehicles_10b_located_remote_BHQ_0
 				{
+					text="$STR_A3_showcase_firingfromvehicles_10b_located_remote_BHQ_0";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_firingfromvehicles\10b_Located_Remote\showcase_firingfromvehicles_10b_located_remote_BHQ_0.ogg"
@@ -4550,11 +4675,13 @@ class CfgSentences
 		};
 		class 15_Technical
 		{
+			priority=0;
 			file="\a3\missions_f_Mark\kb\Showcase_FiringFromVehicles\Showcase_FiringFromVehicles_15_Technical.bikb";
 			class Sentences
 			{
 				class showcase_firingfromvehicles_15_technical_HEL_0
 				{
+					text="$STR_A3_showcase_firingfromvehicles_15_technical_HEL_0";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_firingfromvehicles\15_Technical\showcase_firingfromvehicles_15_technical_HEL_0.ogg"
@@ -4566,6 +4693,7 @@ class CfgSentences
 				};
 				class showcase_firingfromvehicles_15_technical_SFA_0
 				{
+					text="$STR_A3_showcase_firingfromvehicles_15_technical_SFA_0";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_firingfromvehicles\15_Technical\showcase_firingfromvehicles_15_technical_SFA_0.ogg"
@@ -4577,6 +4705,7 @@ class CfgSentences
 				};
 				class showcase_firingfromvehicles_15_technical_SFA_1
 				{
+					text="$STR_A3_showcase_firingfromvehicles_15_technical_SFA_1";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_firingfromvehicles\15_Technical\showcase_firingfromvehicles_15_technical_SFA_1.ogg"
@@ -4588,6 +4717,7 @@ class CfgSentences
 				};
 				class showcase_firingfromvehicles_15_technical_BHQ_0
 				{
+					text="$STR_A3_showcase_firingfromvehicles_15_technical_BHQ_0";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_firingfromvehicles\15_Technical\showcase_firingfromvehicles_15_technical_BHQ_0.ogg"
@@ -4599,6 +4729,7 @@ class CfgSentences
 				};
 				class showcase_firingfromvehicles_15_technical_SFA_2
 				{
+					text="$STR_A3_showcase_firingfromvehicles_15_technical_SFA_2";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_firingfromvehicles\15_Technical\showcase_firingfromvehicles_15_technical_SFA_2.ogg"
@@ -4610,6 +4741,7 @@ class CfgSentences
 				};
 				class showcase_firingfromvehicles_15_technical_BHQ_1
 				{
+					text="$STR_A3_showcase_firingfromvehicles_15_technical_BHQ_1";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_firingfromvehicles\15_Technical\showcase_firingfromvehicles_15_technical_BHQ_1.ogg"
@@ -4621,6 +4753,7 @@ class CfgSentences
 				};
 				class showcase_firingfromvehicles_15_technical_SFA_3
 				{
+					text="$STR_A3_showcase_firingfromvehicles_15_technical_SFA_3";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_firingfromvehicles\15_Technical\showcase_firingfromvehicles_15_technical_SFA_3.ogg"
@@ -4632,6 +4765,7 @@ class CfgSentences
 				};
 				class showcase_firingfromvehicles_15_technical_SFA_4
 				{
+					text="$STR_A3_showcase_firingfromvehicles_15_technical_SFA_4";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_firingfromvehicles\15_Technical\showcase_firingfromvehicles_15_technical_SFA_4.ogg"
@@ -4656,11 +4790,13 @@ class CfgSentences
 		};
 		class 15b_Technical_Remote
 		{
+			priority=0;
 			file="\a3\missions_f_Mark\kb\Showcase_FiringFromVehicles\Showcase_FiringFromVehicles_15b_Technical_Remote.bikb";
 			class Sentences
 			{
 				class showcase_firingfromvehicles_15b_technical_remote_HEL_0
 				{
+					text="$STR_A3_showcase_firingfromvehicles_15b_technical_remote_HEL_0";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_firingfromvehicles\15b_Technical_Remote\showcase_firingfromvehicles_15b_technical_remote_HEL_0.ogg"
@@ -4672,6 +4808,7 @@ class CfgSentences
 				};
 				class showcase_firingfromvehicles_15b_technical_remote_SFA_0
 				{
+					text="$STR_A3_showcase_firingfromvehicles_15b_technical_remote_SFA_0";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_firingfromvehicles\15b_Technical_Remote\showcase_firingfromvehicles_15b_technical_remote_SFA_0.ogg"
@@ -4683,6 +4820,7 @@ class CfgSentences
 				};
 				class showcase_firingfromvehicles_15b_technical_remote_SFA_1
 				{
+					text="$STR_A3_showcase_firingfromvehicles_15b_technical_remote_SFA_1";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_firingfromvehicles\15b_Technical_Remote\showcase_firingfromvehicles_15b_technical_remote_SFA_1.ogg"
@@ -4694,6 +4832,7 @@ class CfgSentences
 				};
 				class showcase_firingfromvehicles_15b_technical_remote_BHQ_0
 				{
+					text="$STR_A3_showcase_firingfromvehicles_15b_technical_remote_BHQ_0";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_firingfromvehicles\15b_Technical_Remote\showcase_firingfromvehicles_15b_technical_remote_BHQ_0.ogg"
@@ -4705,6 +4844,7 @@ class CfgSentences
 				};
 				class showcase_firingfromvehicles_15b_technical_remote_SFA_2
 				{
+					text="$STR_A3_showcase_firingfromvehicles_15b_technical_remote_SFA_2";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_firingfromvehicles\15b_Technical_Remote\showcase_firingfromvehicles_15b_technical_remote_SFA_2.ogg"
@@ -4716,6 +4856,7 @@ class CfgSentences
 				};
 				class showcase_firingfromvehicles_15b_technical_remote_BHQ_1
 				{
+					text="$STR_A3_showcase_firingfromvehicles_15b_technical_remote_BHQ_1";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_firingfromvehicles\15b_Technical_Remote\showcase_firingfromvehicles_15b_technical_remote_BHQ_1.ogg"
@@ -4727,6 +4868,7 @@ class CfgSentences
 				};
 				class showcase_firingfromvehicles_15b_technical_remote_SFA_3
 				{
+					text="$STR_A3_showcase_firingfromvehicles_15b_technical_remote_SFA_3";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_firingfromvehicles\15b_Technical_Remote\showcase_firingfromvehicles_15b_technical_remote_SFA_3.ogg"
@@ -4738,6 +4880,7 @@ class CfgSentences
 				};
 				class showcase_firingfromvehicles_15b_technical_remote_SFA_4
 				{
+					text="$STR_A3_showcase_firingfromvehicles_15b_technical_remote_SFA_4";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_firingfromvehicles\15b_Technical_Remote\showcase_firingfromvehicles_15b_technical_remote_SFA_4.ogg"
@@ -4762,11 +4905,13 @@ class CfgSentences
 		};
 		class 20_Destroyed
 		{
+			priority=0;
 			file="\a3\missions_f_Mark\kb\Showcase_FiringFromVehicles\Showcase_FiringFromVehicles_20_Destroyed.bikb";
 			class Sentences
 			{
 				class showcase_firingfromvehicles_20_destroyed_SFA_0
 				{
+					text="$STR_A3_showcase_firingfromvehicles_20_destroyed_SFA_0";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_firingfromvehicles\20_Destroyed\showcase_firingfromvehicles_20_destroyed_SFA_0.ogg"
@@ -4778,6 +4923,7 @@ class CfgSentences
 				};
 				class showcase_firingfromvehicles_20_destroyed_BHQ_0
 				{
+					text="$STR_A3_showcase_firingfromvehicles_20_destroyed_BHQ_0";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_firingfromvehicles\20_Destroyed\showcase_firingfromvehicles_20_destroyed_BHQ_0.ogg"
@@ -4802,11 +4948,13 @@ class CfgSentences
 		};
 		class 20b_Destroyed_Remote
 		{
+			priority=0;
 			file="\a3\missions_f_Mark\kb\Showcase_FiringFromVehicles\Showcase_FiringFromVehicles_20b_Destroyed_Remote.bikb";
 			class Sentences
 			{
 				class showcase_firingfromvehicles_20b_destroyed_remote_SFA_0
 				{
+					text="$STR_A3_showcase_firingfromvehicles_20b_destroyed_remote_SFA_0";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_firingfromvehicles\20b_Destroyed_Remote\showcase_firingfromvehicles_20b_destroyed_remote_SFA_0.ogg"
@@ -4818,6 +4966,7 @@ class CfgSentences
 				};
 				class showcase_firingfromvehicles_20b_destroyed_remote_BHQ_0
 				{
+					text="$STR_A3_showcase_firingfromvehicles_20b_destroyed_remote_BHQ_0";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_firingfromvehicles\20b_Destroyed_Remote\showcase_firingfromvehicles_20b_destroyed_remote_BHQ_0.ogg"
@@ -4842,11 +4991,13 @@ class CfgSentences
 		};
 		class 23_Orders
 		{
+			priority=0;
 			file="\a3\missions_f_Mark\kb\Showcase_FiringFromVehicles\Showcase_FiringFromVehicles_23_Orders.bikb";
 			class Sentences
 			{
 				class showcase_firingfromvehicles_23_orders_BHQ_0
 				{
+					text="$STR_A3_showcase_firingfromvehicles_23_orders_BHQ_0";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_firingfromvehicles\23_Orders\showcase_firingfromvehicles_23_orders_BHQ_0.ogg"
@@ -4858,6 +5009,7 @@ class CfgSentences
 				};
 				class showcase_firingfromvehicles_23_orders_SFA_0
 				{
+					text="$STR_A3_showcase_firingfromvehicles_23_orders_SFA_0";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_firingfromvehicles\23_Orders\showcase_firingfromvehicles_23_orders_SFA_0.ogg"
@@ -4869,6 +5021,7 @@ class CfgSentences
 				};
 				class showcase_firingfromvehicles_23_orders_BHQ_1
 				{
+					text="$STR_A3_showcase_firingfromvehicles_23_orders_BHQ_1";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_firingfromvehicles\23_Orders\showcase_firingfromvehicles_23_orders_BHQ_1.ogg"
@@ -4880,6 +5033,7 @@ class CfgSentences
 				};
 				class showcase_firingfromvehicles_23_orders_BHQ_2
 				{
+					text="$STR_A3_showcase_firingfromvehicles_23_orders_BHQ_2";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_firingfromvehicles\23_Orders\showcase_firingfromvehicles_23_orders_BHQ_2.ogg"
@@ -4891,6 +5045,7 @@ class CfgSentences
 				};
 				class showcase_firingfromvehicles_23_orders_BHQ_3
 				{
+					text="$STR_A3_showcase_firingfromvehicles_23_orders_BHQ_3";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_firingfromvehicles\23_Orders\showcase_firingfromvehicles_23_orders_BHQ_3.ogg"
@@ -4902,6 +5057,7 @@ class CfgSentences
 				};
 				class showcase_firingfromvehicles_23_orders_BHQ_4
 				{
+					text="$STR_A3_showcase_firingfromvehicles_23_orders_BHQ_4";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_firingfromvehicles\23_Orders\showcase_firingfromvehicles_23_orders_BHQ_4.ogg"
@@ -4913,6 +5069,7 @@ class CfgSentences
 				};
 				class showcase_firingfromvehicles_23_orders_SFA_1
 				{
+					text="$STR_A3_showcase_firingfromvehicles_23_orders_SFA_1";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_firingfromvehicles\23_Orders\showcase_firingfromvehicles_23_orders_SFA_1.ogg"
@@ -4924,6 +5081,7 @@ class CfgSentences
 				};
 				class showcase_firingfromvehicles_23_orders_HEL_0
 				{
+					text="$STR_A3_showcase_firingfromvehicles_23_orders_HEL_0";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_firingfromvehicles\23_Orders\showcase_firingfromvehicles_23_orders_HEL_0.ogg"
@@ -4935,6 +5093,7 @@ class CfgSentences
 				};
 				class showcase_firingfromvehicles_23_orders_BHQ_5
 				{
+					text="$STR_A3_showcase_firingfromvehicles_23_orders_BHQ_5";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_firingfromvehicles\23_Orders\showcase_firingfromvehicles_23_orders_BHQ_5.ogg"
@@ -4946,6 +5105,7 @@ class CfgSentences
 				};
 				class showcase_firingfromvehicles_23_orders_BHQ_6
 				{
+					text="$STR_A3_showcase_firingfromvehicles_23_orders_BHQ_6";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_firingfromvehicles\23_Orders\showcase_firingfromvehicles_23_orders_BHQ_6.ogg"
@@ -4957,6 +5117,7 @@ class CfgSentences
 				};
 				class showcase_firingfromvehicles_23_orders_SFA_2
 				{
+					text="$STR_A3_showcase_firingfromvehicles_23_orders_SFA_2";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_firingfromvehicles\23_Orders\showcase_firingfromvehicles_23_orders_SFA_2.ogg"
@@ -4981,11 +5142,13 @@ class CfgSentences
 		};
 		class 25_Plan
 		{
+			priority=0;
 			file="\a3\missions_f_Mark\kb\Showcase_FiringFromVehicles\Showcase_FiringFromVehicles_25_Plan.bikb";
 			class Sentences
 			{
 				class showcase_firingfromvehicles_25_plan_SFA_0
 				{
+					text="$STR_A3_showcase_firingfromvehicles_25_plan_SFA_0";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_firingfromvehicles\25_Plan\showcase_firingfromvehicles_25_plan_SFA_0.ogg"
@@ -4997,6 +5160,7 @@ class CfgSentences
 				};
 				class showcase_firingfromvehicles_25_plan_BHQ_0
 				{
+					text="$STR_A3_showcase_firingfromvehicles_25_plan_BHQ_0";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_firingfromvehicles\25_Plan\showcase_firingfromvehicles_25_plan_BHQ_0.ogg"
@@ -5008,6 +5172,7 @@ class CfgSentences
 				};
 				class showcase_firingfromvehicles_25_plan_SFA_1
 				{
+					text="$STR_A3_showcase_firingfromvehicles_25_plan_SFA_1";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_firingfromvehicles\25_Plan\showcase_firingfromvehicles_25_plan_SFA_1.ogg"
@@ -5019,6 +5184,7 @@ class CfgSentences
 				};
 				class showcase_firingfromvehicles_25_plan_SFA_2
 				{
+					text="$STR_A3_showcase_firingfromvehicles_25_plan_SFA_2";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_firingfromvehicles\25_Plan\showcase_firingfromvehicles_25_plan_SFA_2.ogg"
@@ -5030,6 +5196,7 @@ class CfgSentences
 				};
 				class showcase_firingfromvehicles_25_plan_HEL_0
 				{
+					text="$STR_A3_showcase_firingfromvehicles_25_plan_HEL_0";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_firingfromvehicles\25_Plan\showcase_firingfromvehicles_25_plan_HEL_0.ogg"
@@ -5041,6 +5208,7 @@ class CfgSentences
 				};
 				class showcase_firingfromvehicles_25_plan_SFA_3
 				{
+					text="$STR_A3_showcase_firingfromvehicles_25_plan_SFA_3";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_firingfromvehicles\25_Plan\showcase_firingfromvehicles_25_plan_SFA_3.ogg"
@@ -5065,11 +5233,13 @@ class CfgSentences
 		};
 		class 30_Bug_Out
 		{
+			priority=0;
 			file="\a3\missions_f_Mark\kb\Showcase_FiringFromVehicles\Showcase_FiringFromVehicles_30_Bug_Out.bikb";
 			class Sentences
 			{
 				class showcase_firingfromvehicles_30_bug_out_HEL_0
 				{
+					text="$STR_A3_showcase_firingfromvehicles_30_bug_out_HEL_0";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_firingfromvehicles\30_Bug_Out\showcase_firingfromvehicles_30_bug_out_HEL_0.ogg"
@@ -5081,6 +5251,7 @@ class CfgSentences
 				};
 				class showcase_firingfromvehicles_30_bug_out_HEL_1
 				{
+					text="$STR_A3_showcase_firingfromvehicles_30_bug_out_HEL_1";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_firingfromvehicles\30_Bug_Out\showcase_firingfromvehicles_30_bug_out_HEL_1.ogg"
@@ -5092,6 +5263,7 @@ class CfgSentences
 				};
 				class showcase_firingfromvehicles_30_bug_out_HEL_2
 				{
+					text="$STR_A3_showcase_firingfromvehicles_30_bug_out_HEL_2";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_firingfromvehicles\30_Bug_Out\showcase_firingfromvehicles_30_bug_out_HEL_2.ogg"
@@ -5103,6 +5275,7 @@ class CfgSentences
 				};
 				class showcase_firingfromvehicles_30_bug_out_HEL_3
 				{
+					text="$STR_A3_showcase_firingfromvehicles_30_bug_out_HEL_3";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_firingfromvehicles\30_Bug_Out\showcase_firingfromvehicles_30_bug_out_HEL_3.ogg"
@@ -5114,6 +5287,7 @@ class CfgSentences
 				};
 				class showcase_firingfromvehicles_30_bug_out_HEL_4
 				{
+					text="$STR_A3_showcase_firingfromvehicles_30_bug_out_HEL_4";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_firingfromvehicles\30_Bug_Out\showcase_firingfromvehicles_30_bug_out_HEL_4.ogg"
@@ -5125,6 +5299,7 @@ class CfgSentences
 				};
 				class showcase_firingfromvehicles_30_bug_out_HEL_5
 				{
+					text="$STR_A3_showcase_firingfromvehicles_30_bug_out_HEL_5";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_firingfromvehicles\30_Bug_Out\showcase_firingfromvehicles_30_bug_out_HEL_5.ogg"
@@ -5136,6 +5311,7 @@ class CfgSentences
 				};
 				class showcase_firingfromvehicles_30_bug_out_BHQ_0
 				{
+					text="$STR_A3_showcase_firingfromvehicles_30_bug_out_BHQ_0";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_firingfromvehicles\30_Bug_Out\showcase_firingfromvehicles_30_bug_out_BHQ_0.ogg"
@@ -5147,6 +5323,7 @@ class CfgSentences
 				};
 				class showcase_firingfromvehicles_30_bug_out_BHQ_1
 				{
+					text="$STR_A3_showcase_firingfromvehicles_30_bug_out_BHQ_1";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_firingfromvehicles\30_Bug_Out\showcase_firingfromvehicles_30_bug_out_BHQ_1.ogg"
@@ -5158,6 +5335,7 @@ class CfgSentences
 				};
 				class showcase_firingfromvehicles_30_bug_out_SFA_0
 				{
+					text="$STR_A3_showcase_firingfromvehicles_30_bug_out_SFA_0";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_firingfromvehicles\30_Bug_Out\showcase_firingfromvehicles_30_bug_out_SFA_0.ogg"
@@ -5182,11 +5360,13 @@ class CfgSentences
 		};
 		class 32_Church_Contact
 		{
+			priority=0;
 			file="\a3\missions_f_Mark\kb\Showcase_FiringFromVehicles\Showcase_FiringFromVehicles_32_Church_Contact.bikb";
 			class Sentences
 			{
 				class showcase_firingfromvehicles_32_church_contact_SFA_0
 				{
+					text="$STR_A3_showcase_firingfromvehicles_32_church_contact_SFA_0";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_firingfromvehicles\32_Church_Contact\showcase_firingfromvehicles_32_church_contact_SFA_0.ogg"
@@ -5211,11 +5391,13 @@ class CfgSentences
 		};
 		class 33_Church_Clear
 		{
+			priority=0;
 			file="\a3\missions_f_Mark\kb\Showcase_FiringFromVehicles\Showcase_FiringFromVehicles_33_Church_Clear.bikb";
 			class Sentences
 			{
 				class showcase_firingfromvehicles_33_church_clear_SFA_0
 				{
+					text="$STR_A3_showcase_firingfromvehicles_33_church_clear_SFA_0";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_firingfromvehicles\33_Church_Clear\showcase_firingfromvehicles_33_church_clear_SFA_0.ogg"
@@ -5240,11 +5422,13 @@ class CfgSentences
 		};
 		class 35_Crew_Found
 		{
+			priority=0;
 			file="\a3\missions_f_Mark\kb\Showcase_FiringFromVehicles\Showcase_FiringFromVehicles_35_Crew_Found.bikb";
 			class Sentences
 			{
 				class showcase_firingfromvehicles_35_crew_found_SFA_0
 				{
+					text="$STR_A3_showcase_firingfromvehicles_35_crew_found_SFA_0";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_firingfromvehicles\35_Crew_Found\showcase_firingfromvehicles_35_crew_found_SFA_0.ogg"
@@ -5256,6 +5440,7 @@ class CfgSentences
 				};
 				class showcase_firingfromvehicles_35_crew_found_BHQ_0
 				{
+					text="$STR_A3_showcase_firingfromvehicles_35_crew_found_BHQ_0";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_firingfromvehicles\35_Crew_Found\showcase_firingfromvehicles_35_crew_found_BHQ_0.ogg"
@@ -5267,6 +5452,7 @@ class CfgSentences
 				};
 				class showcase_firingfromvehicles_35_crew_found_SFA_1
 				{
+					text="$STR_A3_showcase_firingfromvehicles_35_crew_found_SFA_1";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_firingfromvehicles\35_Crew_Found\showcase_firingfromvehicles_35_crew_found_SFA_1.ogg"
@@ -5291,11 +5477,13 @@ class CfgSentences
 		};
 		class 40_All_In
 		{
+			priority=0;
 			file="\a3\missions_f_Mark\kb\Showcase_FiringFromVehicles\Showcase_FiringFromVehicles_40_All_In.bikb";
 			class Sentences
 			{
 				class showcase_firingfromvehicles_40_all_in_SFA_0
 				{
+					text="$STR_A3_showcase_firingfromvehicles_40_all_in_SFA_0";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_firingfromvehicles\40_All_In\showcase_firingfromvehicles_40_all_in_SFA_0.ogg"
@@ -5320,11 +5508,13 @@ class CfgSentences
 		};
 		class 45_Extracted
 		{
+			priority=0;
 			file="\a3\missions_f_Mark\kb\Showcase_FiringFromVehicles\Showcase_FiringFromVehicles_45_Extracted.bikb";
 			class Sentences
 			{
 				class showcase_firingfromvehicles_45_extracted_SFA_0
 				{
+					text="$STR_A3_showcase_firingfromvehicles_45_extracted_SFA_0";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_firingfromvehicles\45_Extracted\showcase_firingfromvehicles_45_extracted_SFA_0.ogg"
@@ -5336,6 +5526,7 @@ class CfgSentences
 				};
 				class showcase_firingfromvehicles_45_extracted_BHQ_0
 				{
+					text="$STR_A3_showcase_firingfromvehicles_45_extracted_BHQ_0";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_firingfromvehicles\45_Extracted\showcase_firingfromvehicles_45_extracted_BHQ_0.ogg"
@@ -5360,11 +5551,13 @@ class CfgSentences
 		};
 		class 50_Artillery
 		{
+			priority=0;
 			file="\a3\missions_f_Mark\kb\Showcase_FiringFromVehicles\Showcase_FiringFromVehicles_50_Artillery.bikb";
 			class Sentences
 			{
 				class showcase_firingfromvehicles_50_artillery_SFA_0
 				{
+					text="$STR_A3_showcase_firingfromvehicles_50_artillery_SFA_0";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_firingfromvehicles\50_Artillery\showcase_firingfromvehicles_50_artillery_SFA_0.ogg"
@@ -5376,6 +5569,7 @@ class CfgSentences
 				};
 				class showcase_firingfromvehicles_50_artillery_SFA_1
 				{
+					text="$STR_A3_showcase_firingfromvehicles_50_artillery_SFA_1";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_firingfromvehicles\50_Artillery\showcase_firingfromvehicles_50_artillery_SFA_1.ogg"
@@ -5387,6 +5581,7 @@ class CfgSentences
 				};
 				class showcase_firingfromvehicles_50_artillery_BHQ_0
 				{
+					text="$STR_A3_showcase_firingfromvehicles_50_artillery_BHQ_0";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_firingfromvehicles\50_Artillery\showcase_firingfromvehicles_50_artillery_BHQ_0.ogg"
@@ -5398,6 +5593,7 @@ class CfgSentences
 				};
 				class showcase_firingfromvehicles_50_artillery_SFA_2
 				{
+					text="$STR_A3_showcase_firingfromvehicles_50_artillery_SFA_2";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_firingfromvehicles\50_Artillery\showcase_firingfromvehicles_50_artillery_SFA_2.ogg"
@@ -5409,6 +5605,7 @@ class CfgSentences
 				};
 				class showcase_firingfromvehicles_50_artillery_BHQ_1
 				{
+					text="$STR_A3_showcase_firingfromvehicles_50_artillery_BHQ_1";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_firingfromvehicles\50_Artillery\showcase_firingfromvehicles_50_artillery_BHQ_1.ogg"
@@ -5420,6 +5617,7 @@ class CfgSentences
 				};
 				class showcase_firingfromvehicles_50_artillery_SFA_3
 				{
+					text="$STR_A3_showcase_firingfromvehicles_50_artillery_SFA_3";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_firingfromvehicles\50_Artillery\showcase_firingfromvehicles_50_artillery_SFA_3.ogg"
@@ -5431,6 +5629,7 @@ class CfgSentences
 				};
 				class showcase_firingfromvehicles_50_artillery_SFA_4
 				{
+					text="$STR_A3_showcase_firingfromvehicles_50_artillery_SFA_4";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_firingfromvehicles\50_Artillery\showcase_firingfromvehicles_50_artillery_SFA_4.ogg"
@@ -5455,11 +5654,13 @@ class CfgSentences
 		};
 		class x01_ROE_Failed
 		{
+			priority=0;
 			file="\a3\missions_f_Mark\kb\Showcase_FiringFromVehicles\Showcase_FiringFromVehicles_x01_ROE_Failed.bikb";
 			class Sentences
 			{
 				class showcase_firingfromvehicles_x01_roe_failed_SFA_0
 				{
+					text="$STR_A3_showcase_firingfromvehicles_x01_roe_failed_SFA_0";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_firingfromvehicles\x01_ROE_Failed\showcase_firingfromvehicles_x01_roe_failed_SFA_0.ogg"
@@ -5484,11 +5685,13 @@ class CfgSentences
 		};
 		class x05_UAV_No_Ammo
 		{
+			priority=0;
 			file="\a3\missions_f_Mark\kb\Showcase_FiringFromVehicles\Showcase_FiringFromVehicles_x05_UAV_No_Ammo.bikb";
 			class Sentences
 			{
 				class showcase_firingfromvehicles_x05_uav_no_ammo_BHQ_0
 				{
+					text="$STR_A3_showcase_firingfromvehicles_x05_uav_no_ammo_BHQ_0";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_firingfromvehicles\x05_UAV_No_Ammo\showcase_firingfromvehicles_x05_uav_no_ammo_BHQ_0.ogg"
@@ -5500,6 +5703,7 @@ class CfgSentences
 				};
 				class showcase_firingfromvehicles_x05_uav_no_ammo_BHQ_1
 				{
+					text="$STR_A3_showcase_firingfromvehicles_x05_uav_no_ammo_BHQ_1";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_firingfromvehicles\x05_UAV_No_Ammo\showcase_firingfromvehicles_x05_uav_no_ammo_BHQ_1.ogg"
@@ -5524,11 +5728,13 @@ class CfgSentences
 		};
 		class x10_UAV_Warning
 		{
+			priority=0;
 			file="\a3\missions_f_Mark\kb\Showcase_FiringFromVehicles\Showcase_FiringFromVehicles_x10_UAV_Warning.bikb";
 			class Sentences
 			{
 				class showcase_firingfromvehicles_x10_uav_warning_SFA_0
 				{
+					text="$STR_A3_showcase_firingfromvehicles_x10_uav_warning_SFA_0";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_firingfromvehicles\x10_UAV_Warning\showcase_firingfromvehicles_x10_uav_warning_SFA_0.ogg"
@@ -5553,11 +5759,13 @@ class CfgSentences
 		};
 		class x15_UAV_Punish
 		{
+			priority=0;
 			file="\a3\missions_f_Mark\kb\Showcase_FiringFromVehicles\Showcase_FiringFromVehicles_x15_UAV_Punish.bikb";
 			class Sentences
 			{
 				class showcase_firingfromvehicles_x15_uav_punish_SFA_0
 				{
+					text="$STR_A3_showcase_firingfromvehicles_x15_uav_punish_SFA_0";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_firingfromvehicles\x15_UAV_Punish\showcase_firingfromvehicles_x15_uav_punish_SFA_0.ogg"
@@ -5585,11 +5793,13 @@ class CfgSentences
 	{
 		class 01_Prologue
 		{
+			priority=0;
 			file="\a3\missions_f_Mark\kb\Showcase_Marksman\Showcase_Marksman_01_Prologue.bikb";
 			class Sentences
 			{
 				class showcase_marksman_01_prologue_PLA_0
 				{
+					text="$STR_A3_showcase_marksman_01_prologue_PLA_0";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_marksman\01_Prologue\showcase_marksman_01_prologue_PLA_0.ogg"
@@ -5601,6 +5811,7 @@ class CfgSentences
 				};
 				class showcase_marksman_01_prologue_LED_0
 				{
+					text="$STR_A3_showcase_marksman_01_prologue_LED_0";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_marksman\01_Prologue\showcase_marksman_01_prologue_LED_0.ogg"
@@ -5612,6 +5823,7 @@ class CfgSentences
 				};
 				class showcase_marksman_01_prologue_PLA_1
 				{
+					text="$STR_A3_showcase_marksman_01_prologue_PLA_1";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_marksman\01_Prologue\showcase_marksman_01_prologue_PLA_1.ogg"
@@ -5636,11 +5848,13 @@ class CfgSentences
 		};
 		class 05_VillaCleared
 		{
+			priority=0;
 			file="\a3\missions_f_Mark\kb\Showcase_Marksman\Showcase_Marksman_05_VillaCleared.bikb";
 			class Sentences
 			{
 				class showcase_marksman_05_villacleared_PLA_0
 				{
+					text="$STR_A3_showcase_marksman_05_villacleared_PLA_0";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_marksman\05_VillaCleared\showcase_marksman_05_villacleared_PLA_0.ogg"
@@ -5652,6 +5866,7 @@ class CfgSentences
 				};
 				class showcase_marksman_05_villacleared_LED_0
 				{
+					text="$STR_A3_showcase_marksman_05_villacleared_LED_0";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_marksman\05_VillaCleared\showcase_marksman_05_villacleared_LED_0.ogg"
@@ -5676,11 +5891,13 @@ class CfgSentences
 		};
 		class 10_IntelFound
 		{
+			priority=0;
 			file="\a3\missions_f_Mark\kb\Showcase_Marksman\Showcase_Marksman_10_IntelFound.bikb";
 			class Sentences
 			{
 				class showcase_marksman_10_intelfound_PLA_0
 				{
+					text="$STR_A3_showcase_marksman_10_intelfound_PLA_0";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_marksman\10_IntelFound\showcase_marksman_10_intelfound_PLA_0.ogg"
@@ -5692,6 +5909,7 @@ class CfgSentences
 				};
 				class showcase_marksman_10_intelfound_LED_0
 				{
+					text="$STR_A3_showcase_marksman_10_intelfound_LED_0";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_marksman\10_IntelFound\showcase_marksman_10_intelfound_LED_0.ogg"
@@ -5703,6 +5921,7 @@ class CfgSentences
 				};
 				class showcase_marksman_10_intelfound_PLA_1
 				{
+					text="$STR_A3_showcase_marksman_10_intelfound_PLA_1";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_marksman\10_IntelFound\showcase_marksman_10_intelfound_PLA_1.ogg"
@@ -5714,6 +5933,7 @@ class CfgSentences
 				};
 				class showcase_marksman_10_intelfound_PLA_2
 				{
+					text="$STR_A3_showcase_marksman_10_intelfound_PLA_2";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_marksman\10_IntelFound\showcase_marksman_10_intelfound_PLA_2.ogg"
@@ -5725,6 +5945,7 @@ class CfgSentences
 				};
 				class showcase_marksman_10_intelfound_LED_1
 				{
+					text="$STR_A3_showcase_marksman_10_intelfound_LED_1";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_marksman\10_IntelFound\showcase_marksman_10_intelfound_LED_1.ogg"
@@ -5736,6 +5957,7 @@ class CfgSentences
 				};
 				class showcase_marksman_10_intelfound_PLA_3
 				{
+					text="$STR_A3_showcase_marksman_10_intelfound_PLA_3";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_marksman\10_IntelFound\showcase_marksman_10_intelfound_PLA_3.ogg"
@@ -5760,11 +5982,13 @@ class CfgSentences
 		};
 		class 15_LZClear
 		{
+			priority=0;
 			file="\a3\missions_f_Mark\kb\Showcase_Marksman\Showcase_Marksman_15_LZClear.bikb";
 			class Sentences
 			{
 				class showcase_marksman_15_lzclear_PLA_0
 				{
+					text="$STR_A3_showcase_marksman_15_lzclear_PLA_0";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_marksman\15_LZClear\showcase_marksman_15_lzclear_PLA_0.ogg"
@@ -5776,6 +6000,7 @@ class CfgSentences
 				};
 				class showcase_marksman_15_lzclear_PLA_1
 				{
+					text="$STR_A3_showcase_marksman_15_lzclear_PLA_1";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_marksman\15_LZClear\showcase_marksman_15_lzclear_PLA_1.ogg"
@@ -5787,6 +6012,7 @@ class CfgSentences
 				};
 				class showcase_marksman_15_lzclear_LED_0
 				{
+					text="$STR_A3_showcase_marksman_15_lzclear_LED_0";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_marksman\15_LZClear\showcase_marksman_15_lzclear_LED_0.ogg"
@@ -5798,6 +6024,7 @@ class CfgSentences
 				};
 				class showcase_marksman_15_lzclear_LED_1
 				{
+					text="$STR_A3_showcase_marksman_15_lzclear_LED_1";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_marksman\15_LZClear\showcase_marksman_15_lzclear_LED_1.ogg"
@@ -5809,6 +6036,7 @@ class CfgSentences
 				};
 				class showcase_marksman_15_lzclear_LED_2
 				{
+					text="$STR_A3_showcase_marksman_15_lzclear_LED_2";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_marksman\15_LZClear\showcase_marksman_15_lzclear_LED_2.ogg"
@@ -5833,11 +6061,13 @@ class CfgSentences
 		};
 		class 20_GetIn
 		{
+			priority=0;
 			file="\a3\missions_f_Mark\kb\Showcase_Marksman\Showcase_Marksman_20_GetIn.bikb";
 			class Sentences
 			{
 				class showcase_marksman_20_getin_LED_0
 				{
+					text="$STR_A3_showcase_marksman_20_getin_LED_0";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_marksman\20_GetIn\showcase_marksman_20_getin_LED_0.ogg"
@@ -5862,11 +6092,13 @@ class CfgSentences
 		};
 		class 25_ChangeOfPlan
 		{
+			priority=0;
 			file="\a3\missions_f_Mark\kb\Showcase_Marksman\Showcase_Marksman_25_ChangeOfPlan.bikb";
 			class Sentences
 			{
 				class showcase_marksman_25_changeofplan_LED_0
 				{
+					text="$STR_A3_showcase_marksman_25_changeofplan_LED_0";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_marksman\25_ChangeOfPlan\showcase_marksman_25_changeofplan_LED_0.ogg"
@@ -5878,6 +6110,7 @@ class CfgSentences
 				};
 				class showcase_marksman_25_changeofplan_LED_1
 				{
+					text="$STR_A3_showcase_marksman_25_changeofplan_LED_1";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_marksman\25_ChangeOfPlan\showcase_marksman_25_changeofplan_LED_1.ogg"
@@ -5889,6 +6122,7 @@ class CfgSentences
 				};
 				class showcase_marksman_25_changeofplan_LED_2
 				{
+					text="$STR_A3_showcase_marksman_25_changeofplan_LED_2";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_marksman\25_ChangeOfPlan\showcase_marksman_25_changeofplan_LED_2.ogg"
@@ -5900,6 +6134,7 @@ class CfgSentences
 				};
 				class showcase_marksman_25_changeofplan_PLA_0
 				{
+					text="$STR_A3_showcase_marksman_25_changeofplan_PLA_0";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_marksman\25_ChangeOfPlan\showcase_marksman_25_changeofplan_PLA_0.ogg"
@@ -5924,11 +6159,13 @@ class CfgSentences
 		};
 		class 30_Details
 		{
+			priority=0;
 			file="\a3\missions_f_Mark\kb\Showcase_Marksman\Showcase_Marksman_30_Details.bikb";
 			class Sentences
 			{
 				class showcase_marksman_30_details_LED_0
 				{
+					text="$STR_A3_showcase_marksman_30_details_LED_0";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_marksman\30_Details\showcase_marksman_30_details_LED_0.ogg"
@@ -5940,6 +6177,7 @@ class CfgSentences
 				};
 				class showcase_marksman_30_details_LED_1
 				{
+					text="$STR_A3_showcase_marksman_30_details_LED_1";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_marksman\30_Details\showcase_marksman_30_details_LED_1.ogg"
@@ -5951,6 +6189,7 @@ class CfgSentences
 				};
 				class showcase_marksman_30_details_LED_2
 				{
+					text="$STR_A3_showcase_marksman_30_details_LED_2";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_marksman\30_Details\showcase_marksman_30_details_LED_2.ogg"
@@ -5962,6 +6201,7 @@ class CfgSentences
 				};
 				class showcase_marksman_30_details_LED_3
 				{
+					text="$STR_A3_showcase_marksman_30_details_LED_3";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_marksman\30_Details\showcase_marksman_30_details_LED_3.ogg"
@@ -5973,6 +6213,7 @@ class CfgSentences
 				};
 				class showcase_marksman_30_details_PLA_0
 				{
+					text="$STR_A3_showcase_marksman_30_details_PLA_0";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_marksman\30_Details\showcase_marksman_30_details_PLA_0.ogg"
@@ -5984,6 +6225,7 @@ class CfgSentences
 				};
 				class showcase_marksman_30_details_LED_4
 				{
+					text="$STR_A3_showcase_marksman_30_details_LED_4";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_marksman\30_Details\showcase_marksman_30_details_LED_4.ogg"
@@ -5995,6 +6237,7 @@ class CfgSentences
 				};
 				class showcase_marksman_30_details_PLA_1
 				{
+					text="$STR_A3_showcase_marksman_30_details_PLA_1";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_marksman\30_Details\showcase_marksman_30_details_PLA_1.ogg"
@@ -6019,11 +6262,13 @@ class CfgSentences
 		};
 		class 35_CampInfo
 		{
+			priority=0;
 			file="\a3\missions_f_Mark\kb\Showcase_Marksman\Showcase_Marksman_35_CampInfo.bikb";
 			class Sentences
 			{
 				class showcase_marksman_35_campinfo_PLA_0
 				{
+					text="$STR_A3_showcase_marksman_35_campinfo_PLA_0";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_marksman\35_CampInfo\showcase_marksman_35_campinfo_PLA_0.ogg"
@@ -6035,6 +6280,7 @@ class CfgSentences
 				};
 				class showcase_marksman_35_campinfo_LED_0
 				{
+					text="$STR_A3_showcase_marksman_35_campinfo_LED_0";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_marksman\35_CampInfo\showcase_marksman_35_campinfo_LED_0.ogg"
@@ -6046,6 +6292,7 @@ class CfgSentences
 				};
 				class showcase_marksman_35_campinfo_LED_1
 				{
+					text="$STR_A3_showcase_marksman_35_campinfo_LED_1";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_marksman\35_CampInfo\showcase_marksman_35_campinfo_LED_1.ogg"
@@ -6057,6 +6304,7 @@ class CfgSentences
 				};
 				class showcase_marksman_35_campinfo_LED_2
 				{
+					text="$STR_A3_showcase_marksman_35_campinfo_LED_2";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_marksman\35_CampInfo\showcase_marksman_35_campinfo_LED_2.ogg"
@@ -6068,6 +6316,7 @@ class CfgSentences
 				};
 				class showcase_marksman_35_campinfo_PLA_1
 				{
+					text="$STR_A3_showcase_marksman_35_campinfo_PLA_1";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_marksman\35_CampInfo\showcase_marksman_35_campinfo_PLA_1.ogg"
@@ -6092,11 +6341,13 @@ class CfgSentences
 		};
 		class 40_LiveFeed
 		{
+			priority=0;
 			file="\a3\missions_f_Mark\kb\Showcase_Marksman\Showcase_Marksman_40_LiveFeed.bikb";
 			class Sentences
 			{
 				class showcase_marksman_40_livefeed_LED_0
 				{
+					text="$STR_A3_showcase_marksman_40_livefeed_LED_0";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_marksman\40_LiveFeed\showcase_marksman_40_livefeed_LED_0.ogg"
@@ -6121,11 +6372,13 @@ class CfgSentences
 		};
 		class 45_Signal
 		{
+			priority=0;
 			file="\a3\missions_f_Mark\kb\Showcase_Marksman\Showcase_Marksman_45_Signal.bikb";
 			class Sentences
 			{
 				class showcase_marksman_45_signal_PLA_0
 				{
+					text="$STR_A3_showcase_marksman_45_signal_PLA_0";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_marksman\45_Signal\showcase_marksman_45_signal_PLA_0.ogg"
@@ -6150,11 +6403,13 @@ class CfgSentences
 		};
 		class 50_Victory
 		{
+			priority=0;
 			file="\a3\missions_f_Mark\kb\Showcase_Marksman\Showcase_Marksman_50_Victory.bikb";
 			class Sentences
 			{
 				class showcase_marksman_50_victory_PLA_0
 				{
+					text="$STR_A3_showcase_marksman_50_victory_PLA_0";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_marksman\50_Victory\showcase_marksman_50_victory_PLA_0.ogg"
@@ -6166,6 +6421,7 @@ class CfgSentences
 				};
 				class showcase_marksman_50_victory_LED_0
 				{
+					text="$STR_A3_showcase_marksman_50_victory_LED_0";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_marksman\50_Victory\showcase_marksman_50_victory_LED_0.ogg"
@@ -6190,11 +6446,13 @@ class CfgSentences
 		};
 		class x01_Losses
 		{
+			priority=0;
 			file="\a3\missions_f_Mark\kb\Showcase_Marksman\Showcase_Marksman_x01_Losses.bikb";
 			class Sentences
 			{
 				class showcase_marksman_x01_losses_LED_0
 				{
+					text="$STR_A3_showcase_marksman_x01_losses_LED_0";
 					speech[]=
 					{
 						"\a3\dubbing_f_mark\showcase_marksman\x01_Losses\showcase_marksman_x01_losses_LED_0.ogg"

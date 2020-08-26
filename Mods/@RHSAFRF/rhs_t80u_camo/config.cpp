@@ -4,6 +4,12 @@ class CfgPatches
 	{
 		units[]={};
 		weapons[]={};
+		requiredVersion=1.3200001;
+		requiredAddons[]=
+		{
+			"rhs_t80u",
+			"rhs_c_tanks"
+		};
 		version=0.37;
 	};
 };

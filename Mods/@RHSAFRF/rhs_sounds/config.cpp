@@ -4,8 +4,18 @@ class CfgPatches
 	{
 		units[]={};
 		weapons[]={};
+		requiredVersion=1.3200001;
+		requiredAddons[]=
+		{
+			"A3_Sounds_F",
+			"rhs_c_weapons",
+			"rhs_c_heavyWeapons",
+			"rhs_c_airweapons"
+		};
 		version="0.1";
 		name="AFRF Sounds";
+		author="$STR_RHS_AUTHOR_FULL";
+		url="http://www.rhsmods.org/";
 	};
 };
 class Mode_SemiAuto;
@@ -15,6 +25,7 @@ class CfgSound3DProcessors
 {
 	class RHS_Sniper_crackling_3DProcessingType
 	{
+		type="panner";
 		innerRange=60;
 		range=370;
 		rangeCurve[]=
@@ -25,6 +36,7 @@ class CfgSound3DProcessors
 	};
 	class RHS_Cannon_3DProcessingType
 	{
+		type="panner";
 		innerRange=100;
 		range=100;
 		rangeCurve="InverseSquare2Curve";
@@ -120,6 +132,7 @@ class cfgDistanceFilters
 {
 	class RHS_defaultDistanceFilter
 	{
+		type="lowPassFilter";
 		minCutoffFrequency=150;
 		qFactor=1;
 		innerRange=400;
@@ -128,6 +141,7 @@ class cfgDistanceFilters
 	};
 	class RHS_rifleTailDistanceFilter
 	{
+		type="lowPassFilter";
 		minCutoffFrequency=150;
 		qFactor=1;
 		innerRange=350;
@@ -136,6 +150,7 @@ class cfgDistanceFilters
 	};
 	class RHS_vehicletDistanceFilter
 	{
+		type="lowPassFilter";
 		minCutoffFrequency=550;
 		qFactor=1;
 		innerRange=0;
@@ -6132,12 +6147,79 @@ class CfgWeapons
 	};
 	class rhs_weap_pp2000: hgun_PDW2000_F
 	{
-		class Single: Single;  //found empty after stripping
+		class Single: Single
+		{
+			class StandardSound
+			{
+				soundSetShot[]=
+				{
+					"RHS_pp2000_Closure_SoundSet",
+					"RHS_pp2000_Shot_SoundSet",
+					"RHS_pistol1_Tail_SoundSet"
+				};
+			};
+		};
+		class FullAuto: FullAuto
+		{
+			class StandardSound
+			{
+				soundSetShot[]=
+				{
+					"RHS_pp2000_Closure_SoundSet",
+					"RHS_pp2000_Shot_SoundSet",
+					"RHS_pistol1_Tail_SoundSet"
+				};
+			};
+		};
 	};
 	class rhs_weap_ak74m_Base_F: Rifle_Base_F
 	{
+		reloadMagazineSound[]=
+		{
+			"rhsafrf\addons\rhs_sounds\ak_shared\reload",
+			0.80000001,
+			1,
+			10
+		};
+		changeFiremodeSound[]=
+		{
+			"rhsafrf\addons\rhs_sounds\ak_shared\firemode",
+			0.60000002,
+			1,
+			5
+		};
 		class Single: Mode_SemiAuto
 		{
+			class StandardSound
+			{
+				soundSetShot[]=
+				{
+					"RHS_ak74_Closure_SoundSet",
+					"RHS_ak74_Shot_SoundSet",
+					"RHS_rifle1_Tail_SoundSet"
+				};
+			};
+			class SilencedSound
+			{
+				soundSetShot[]=
+				{
+					"RHS_ak74_Closure_SoundSet",
+					"RHS_ak74_ShotSD_SoundSet",
+					"RHS_Rifle1_SD_Tail_SoundSet"
+				};
+			};
+		};
+		class FullAuto: Mode_FullAuto
+		{
+			class StandardSound
+			{
+				soundSetShot[]=
+				{
+					"RHS_ak74_Closure_SoundSet",
+					"RHS_ak74_Shot_SoundSet",
+					"RHS_rifle1_Tail_SoundSet"
+				};
+			};
 			class SilencedSound
 			{
 				soundSetShot[]=
@@ -6154,12 +6236,79 @@ class CfgWeapons
 	{
 		L_ES_Prefix="nosound";
 		L_ES_maxPlopp=0;
-		class Single: Single;  //found empty after stripping
+		class Single: Single
+		{
+			class StandardSound
+			{
+				soundSetShot[]=
+				{
+					"RHS_ASVAL_Closure_SoundSet",
+					"RHS_ASVAL_ShotSD_SoundSet",
+					"RHS_rifle1_SD_Tail_SoundSet"
+				};
+			};
+		};
+		class FullAuto: FullAuto
+		{
+			class StandardSound
+			{
+				soundSetShot[]=
+				{
+					"RHS_ASVAL_Closure_SoundSet",
+					"RHS_ASVAL_ShotSD_SoundSet",
+					"RHS_rifle1_SD_Tail_SoundSet"
+				};
+			};
+		};
 	};
 	class rhs_weap_akm: rhs_weap_ak74m
 	{
+		reloadMagazineSound[]=
+		{
+			"rhsafrf\addons\rhs_sounds\ak_shared\reload_AK762",
+			0.80000001,
+			1,
+			10
+		};
+		changeFiremodeSound[]=
+		{
+			"rhsafrf\addons\rhs_sounds\ak_shared\firemode",
+			0.60000002,
+			1,
+			5
+		};
 		class Single: Mode_SemiAuto
 		{
+			class StandardSound
+			{
+				soundSetShot[]=
+				{
+					"RHS_akm_Closure_SoundSet",
+					"RHS_akm_Shot_SoundSet",
+					"RHS_lmg1_Tail_SoundSet"
+				};
+			};
+			class SilencedSound
+			{
+				soundSetShot[]=
+				{
+					"RHS_akm_Closure_SoundSet",
+					"RHS_akm_ShotSD_SoundSet",
+					"RHS_Rifle1_SD_Tail_SoundSet"
+				};
+			};
+		};
+		class FullAuto: Mode_FullAuto
+		{
+			class StandardSound
+			{
+				soundSetShot[]=
+				{
+					"RHS_akm_Closure_SoundSet",
+					"RHS_akm_Shot_SoundSet",
+					"RHS_lmg1_Tail_SoundSet"
+				};
+			};
 			class SilencedSound
 			{
 				soundSetShot[]=
@@ -6171,11 +6320,57 @@ class CfgWeapons
 			};
 		};
 	};
-	class rhs_weap_ak103_base: rhs_weap_akm;  //found empty after stripping
+	class rhs_weap_ak103_base: rhs_weap_akm
+	{
+		reloadMagazineSound[]=
+		{
+			"rhsafrf\addons\rhs_sounds\ak_shared\reload",
+			0.80000001,
+			1,
+			10
+		};
+	};
 	class rhs_pkp_base: Rifle_Long_Base_F
 	{
+		reloadMagazineSound[]=
+		{
+			"rhsafrf\addons\rhs_sounds\pkp\reload",
+			1.1,
+			1,
+			12
+		};
 		class Single: Mode_SemiAuto
 		{
+			class StandardSound
+			{
+				soundSetShot[]=
+				{
+					"RHS_pkp_Closure_SoundSet",
+					"RHS_pkp_Shot_SoundSet",
+					"RHS_mmg1_Tail_SoundSet"
+				};
+			};
+			class SilencedSound
+			{
+				soundSetShot[]=
+				{
+					"RHS_pkp_Closure_SoundSet",
+					"RHS_pkp_Shot_SoundSet",
+					"RHS_mmg1_Tail_SoundSet"
+				};
+			};
+		};
+		class FullAuto: Mode_FullAuto
+		{
+			class StandardSound
+			{
+				soundSetShot[]=
+				{
+					"RHS_pkp_Closure_SoundSet",
+					"RHS_pkp_Shot_SoundSet",
+					"RHS_mmg1_Tail_SoundSet"
+				};
+			};
 			class SilencedSound
 			{
 				soundSetShot[]=
@@ -6190,18 +6385,118 @@ class CfgWeapons
 	class rhs_weap_pkp: rhs_pkp_base;  //found empty after stripping
 	class rhs_weap_rpk74: rhs_weap_pkp
 	{
-		class Single: Mode_SemiAuto;  //found empty after stripping
-		class Manual: Mode_FullAuto;  //found empty after stripping
+		class Single: Mode_SemiAuto
+		{
+			sounds[]=
+			{
+				"StandardSound"
+			};
+			class StandardSound
+			{
+				soundClosure[]={};
+				begin1[]=
+				{
+					"rhsafrf\addons\rhs_sounds\rpk\rpk_1",
+					2.3499999,
+					1,
+					2000
+				};
+				begin2[]=
+				{
+					"rhsafrf\addons\rhs_sounds\rpk\rpk_2",
+					2.3499999,
+					1,
+					2000
+				};
+				soundBegin[]=
+				{
+					"begin1",
+					0.5,
+					"begin2",
+					0.5
+				};
+			};
+		};
+		class Manual: Mode_FullAuto
+		{
+			sounds[]=
+			{
+				"StandardSound"
+			};
+			class StandardSound
+			{
+				soundClosure[]={};
+				begin1[]=
+				{
+					"rhsafrf\addons\rhs_sounds\rpk\rpk_1",
+					2.3499999,
+					1,
+					2000
+				};
+				begin2[]=
+				{
+					"rhsafrf\addons\rhs_sounds\rpk\rpk_2",
+					2.3499999,
+					1,
+					2000
+				};
+				soundBegin[]=
+				{
+					"begin1",
+					0.5,
+					"begin2",
+					0.5
+				};
+			};
+		};
 	};
 	class PKT: MGun;  //found empty after stripping
 	class rhs_weap_pkt: PKT
 	{
-		class manual: MGun;  //found empty after stripping
+		class manual: MGun
+		{
+			sounds[]=
+			{
+				"StandardSound"
+			};
+			class StandardSound
+			{
+				soundSetShot[]=
+				{
+					"RHS_pkp_Closure_SoundSet",
+					"RHS_pkp_Shot_SoundSet",
+					"RHS_mmg1_Tail_SoundSet"
+				};
+			};
+		};
 	};
 	class rhs_weap_svd: rhs_weap_ak74m
 	{
+		reloadMagazineSound[]=
+		{
+			"rhsafrf\addons\rhs_sounds\svd\rhs_reload_svd",
+			1.2,
+			1,
+			15
+		};
+		changeFiremodeSound[]=
+		{
+			"rhsafrf\addons\rhs_sounds\ak_shared\firemode",
+			0.60000002,
+			1,
+			5
+		};
 		class Single: Mode_SemiAuto
 		{
+			class StandardSound
+			{
+				soundSetShot[]=
+				{
+					"RHS_svd_Closure_SoundSet",
+					"RHS_akm_Shot_SoundSet",
+					"RHS_mmg1_Tail_SoundSet"
+				};
+			};
 			class SilencedSound
 			{
 				soundSetShot[]=
@@ -6215,8 +6510,31 @@ class CfgWeapons
 	};
 	class rhs_weap_svdp: rhs_weap_svd
 	{
+		reloadMagazineSound[]=
+		{
+			"rhsafrf\addons\rhs_sounds\svd\rhs_reload_svd",
+			1.2,
+			1,
+			15
+		};
+		changeFiremodeSound[]=
+		{
+			"rhsafrf\addons\rhs_sounds\ak_shared\firemode",
+			0.60000002,
+			1,
+			5
+		};
 		class Single: Mode_SemiAuto
 		{
+			class StandardSound
+			{
+				soundSetShot[]=
+				{
+					"RHS_svd_Closure_SoundSet",
+					"RHS_akm_Shot_SoundSet",
+					"RHS_mmg1_Tail_SoundSet"
+				};
+			};
 			class SilencedSound
 			{
 				soundSetShot[]=
@@ -6230,12 +6548,66 @@ class CfgWeapons
 	};
 	class GP25_Base: UGL_F
 	{
-		class Single: Mode_SemiAuto;  //found empty after stripping
+		class Single: Mode_SemiAuto
+		{
+			sounds[]=
+			{
+				"StandardSound"
+			};
+			class StandardSound
+			{
+				soundSetShot[]=
+				{
+					"rhs_gp25_shot_SoundSet",
+					"UGL_Tail_SoundSet",
+					"UGL_InteriorTail_SoundSet"
+				};
+			};
+		};
 	};
-	class rhs_weap_orsis_Base_F: Rifle_Base_F;  //found empty after stripping
+	class rhs_weap_orsis_Base_F: Rifle_Base_F
+	{
+		reloadMagazineSound[]=
+		{
+			"rhsafrf\addons\rhs_sounds\t5000\reload",
+			1.2,
+			1,
+			15
+		};
+	};
 	class hgun_Rook40_F;
 	class rhs_weap_pya: hgun_Rook40_F
 	{
+		sounds[]=
+		{
+			"StandardSound",
+			"SilencedSound"
+		};
+		class StandardSound
+		{
+			begin1[]=
+			{
+				"rhsafrf\addons\rhs_sounds\mp-443\mp-443_1",
+				2.55,
+				1,
+				1000
+			};
+			begin2[]=
+			{
+				"rhsafrf\addons\rhs_sounds\mp-443\mp-443_2",
+				2.55,
+				1,
+				1000
+			};
+			soundBegin[]=
+			{
+				"begin1",
+				0.5,
+				"begin2",
+				0.5
+			};
+			soundClosure[]={};
+		};
 		class SilencedSound
 		{
 			begin1[]=
@@ -6265,11 +6637,71 @@ class CfgWeapons
 	class Launcher;
 	class Launcher_Base_F: Launcher;  //found empty after stripping
 	class MissileLauncher;
-	class rhs_weap_rpg26: Launcher_Base_F;  //found empty after stripping
+	class rhs_weap_rpg26: Launcher_Base_F
+	{
+		sounds[]=
+		{
+			"StandardSound"
+		};
+		class StandardSound
+		{
+			weaponSoundEffect="DefaultRifle";
+			begin1[]=
+			{
+				"rhsafrf\addons\rhs_sounds\rpg\rpg_1",
+				2.3499999,
+				1,
+				1100
+			};
+			begin2[]=
+			{
+				"rhsafrf\addons\rhs_sounds\rpg\rpg_2",
+				2.3499999,
+				1,
+				1100
+			};
+			soundBegin[]=
+			{
+				"begin1",
+				0.5,
+				"begin2",
+				0.5
+			};
+		};
+	};
 	class rhs_weap_rpg7: Launcher_Base_F
 	{
 		class single: Mode_SemiAuto
 		{
+			sounds[]=
+			{
+				"StandardSound"
+			};
+			class StandardSound
+			{
+				weaponSoundEffect="DefaultRifle";
+				begin1[]=
+				{
+					"rhsafrf\addons\rhs_sounds\rpg\rpg_1",
+					2.3499999,
+					1,
+					1100
+				};
+				begin2[]=
+				{
+					"rhsafrf\addons\rhs_sounds\rpg\rpg_2",
+					2.3499999,
+					1,
+					1100
+				};
+				soundBegin[]=
+				{
+					"begin1",
+					0.5,
+					"begin2",
+					0.5
+				};
+			};
 			sound[]=
 			{
 				"rhsafrf\addons\rhs_sounds\rpg\rpg_1",
@@ -6279,13 +6711,172 @@ class CfgWeapons
 			};
 		};
 	};
-	class rhs_weap_9k11: MissileLauncher;  //found empty after stripping
+	class rhs_weap_9k11: MissileLauncher
+	{
+		sounds[]=
+		{
+			"StandardSound"
+		};
+		class StandardSound
+		{
+			weaponSoundEffect="DefaultRifle";
+			begin1[]=
+			{
+				"rhsafrf\addons\rhs_sounds\atgm\atgm_1",
+				2.3499999,
+				1,
+				1400
+			};
+			begin2[]=
+			{
+				"rhsafrf\addons\rhs_sounds\atgm\atgm_2",
+				2.3499999,
+				1,
+				1400
+			};
+			soundBegin[]=
+			{
+				"begin1",
+				0.5,
+				"begin2",
+				0.5
+			};
+			soundsetshot[]=
+			{
+				"RocketsMedium_Shot_SoundSet"
+			};
+		};
+	};
 	class missiles_Zephyr;
 	class missiles_titan;
-	class rhs_weap_9m111: MissileLauncher;  //found empty after stripping
-	class rhs_weap_9m119: rhs_weap_9m111;  //found empty after stripping
-	class rhs_weap_2k4: rhs_weap_9m111;  //found empty after stripping
-	class rhs_weap_9k133: rhs_weap_9m111;  //found empty after stripping
+	class rhs_weap_9m111: MissileLauncher
+	{
+		sounds[]=
+		{
+			"StandardSound"
+		};
+		class StandardSound
+		{
+			weaponSoundEffect="DefaultRifle";
+			begin1[]=
+			{
+				"rhsafrf\addons\rhs_sounds\atgm\atgm_1",
+				2.3499999,
+				1,
+				1400
+			};
+			begin2[]=
+			{
+				"rhsafrf\addons\rhs_sounds\atgm\atgm_2",
+				2.3499999,
+				1,
+				1400
+			};
+			soundBegin[]=
+			{
+				"begin1",
+				0.5,
+				"begin2",
+				0.5
+			};
+		};
+	};
+	class rhs_weap_9m119: rhs_weap_9m111
+	{
+		sounds[]=
+		{
+			"StandardSound"
+		};
+		class StandardSound
+		{
+			weaponSoundEffect="DefaultRifle";
+			begin1[]=
+			{
+				"rhsafrf\addons\rhs_sounds\atgm\atgm_1",
+				2.3499999,
+				1,
+				1400
+			};
+			begin2[]=
+			{
+				"rhsafrf\addons\rhs_sounds\atgm\atgm_2",
+				2.3499999,
+				1,
+				1400
+			};
+			soundBegin[]=
+			{
+				"begin1",
+				0.5,
+				"begin2",
+				0.5
+			};
+		};
+	};
+	class rhs_weap_2k4: rhs_weap_9m111
+	{
+		sounds[]=
+		{
+			"StandardSound"
+		};
+		class StandardSound
+		{
+			weaponSoundEffect="DefaultRifle";
+			begin1[]=
+			{
+				"rhsafrf\addons\rhs_sounds\atgm\atgm_1",
+				2.3499999,
+				1,
+				1400
+			};
+			begin2[]=
+			{
+				"rhsafrf\addons\rhs_sounds\atgm\atgm_2",
+				2.3499999,
+				1,
+				1400
+			};
+			soundBegin[]=
+			{
+				"begin1",
+				0.5,
+				"begin2",
+				0.5
+			};
+		};
+	};
+	class rhs_weap_9k133: rhs_weap_9m111
+	{
+		sounds[]=
+		{
+			"StandardSound"
+		};
+		class StandardSound
+		{
+			weaponSoundEffect="DefaultRifle";
+			begin1[]=
+			{
+				"rhsafrf\addons\rhs_sounds\atgm\atgm_1",
+				2.3499999,
+				1,
+				1400
+			};
+			begin2[]=
+			{
+				"rhsafrf\addons\rhs_sounds\atgm\atgm_2",
+				2.3499999,
+				1,
+				1400
+			};
+			soundBegin[]=
+			{
+				"begin1",
+				0.5,
+				"begin2",
+				0.5
+			};
+		};
+	};
 	class RocketPods;
 	class rockets_Skyfire: RocketPods
 	{
@@ -6296,22 +6887,314 @@ class CfgWeapons
 	};
 	class rhs_weap_s5: rockets_Skyfire
 	{
-		class Far_AI: Far_AI;  //found empty after stripping
-		class Medium_AI: Medium_AI;  //found empty after stripping
-		class Close_AI: Close_AI;  //found empty after stripping
-		class Burst_AI: RocketPods;  //found empty after stripping
-		class Burst: Burst;  //found empty after stripping
+		class Far_AI: Far_AI
+		{
+			sounds[]=
+			{
+				"StandardSound"
+			};
+			class StandardSound
+			{
+				weaponSoundEffect="DefaultRifle";
+				begin1[]=
+				{
+					"rhsafrf\addons\rhs_sounds\atgm\atgm_1",
+					2.3499999,
+					1,
+					1400
+				};
+				begin2[]=
+				{
+					"rhsafrf\addons\rhs_sounds\atgm\atgm_2",
+					2.3499999,
+					1,
+					1400
+				};
+				soundBegin[]=
+				{
+					"begin1",
+					0.5,
+					"begin2",
+					0.5
+				};
+				soundsetshot[]=
+				{
+					"RocketsMedium_Shot_SoundSet"
+				};
+			};
+		};
+		class Medium_AI: Medium_AI
+		{
+			sounds[]=
+			{
+				"StandardSound"
+			};
+			class StandardSound
+			{
+				weaponSoundEffect="DefaultRifle";
+				begin1[]=
+				{
+					"rhsafrf\addons\rhs_sounds\atgm\atgm_1",
+					2.3499999,
+					1,
+					1400
+				};
+				begin2[]=
+				{
+					"rhsafrf\addons\rhs_sounds\atgm\atgm_2",
+					2.3499999,
+					1,
+					1400
+				};
+				soundBegin[]=
+				{
+					"begin1",
+					0.5,
+					"begin2",
+					0.5
+				};
+				soundsetshot[]=
+				{
+					"RocketsMedium_Shot_SoundSet"
+				};
+			};
+		};
+		class Close_AI: Close_AI
+		{
+			sounds[]=
+			{
+				"StandardSound"
+			};
+			class StandardSound
+			{
+				weaponSoundEffect="DefaultRifle";
+				begin1[]=
+				{
+					"rhsafrf\addons\rhs_sounds\atgm\atgm_1",
+					2.3499999,
+					1,
+					1400
+				};
+				begin2[]=
+				{
+					"rhsafrf\addons\rhs_sounds\atgm\atgm_2",
+					2.3499999,
+					1,
+					1400
+				};
+				soundBegin[]=
+				{
+					"begin1",
+					0.5,
+					"begin2",
+					0.5
+				};
+				soundsetshot[]=
+				{
+					"RocketsMedium_Shot_SoundSet"
+				};
+			};
+		};
+		class Burst_AI: RocketPods
+		{
+			sounds[]=
+			{
+				"StandardSound"
+			};
+			class StandardSound
+			{
+				weaponSoundEffect="DefaultRifle";
+				begin1[]=
+				{
+					"rhsafrf\addons\rhs_sounds\atgm\atgm_1",
+					2.3499999,
+					1,
+					1400
+				};
+				begin2[]=
+				{
+					"rhsafrf\addons\rhs_sounds\atgm\atgm_2",
+					2.3499999,
+					1,
+					1400
+				};
+				soundBegin[]=
+				{
+					"begin1",
+					0.5,
+					"begin2",
+					0.5
+				};
+				soundsetshot[]=
+				{
+					"RocketsMedium_Shot_SoundSet"
+				};
+			};
+		};
+		class Burst: Burst
+		{
+			sounds[]=
+			{
+				"StandardSound"
+			};
+			class StandardSound
+			{
+				weaponSoundEffect="DefaultRifle";
+				begin1[]=
+				{
+					"rhsafrf\addons\rhs_sounds\atgm\atgm_1",
+					2.3499999,
+					1,
+					1400
+				};
+				begin2[]=
+				{
+					"rhsafrf\addons\rhs_sounds\atgm\atgm_2",
+					2.3499999,
+					1,
+					1400
+				};
+				soundBegin[]=
+				{
+					"begin1",
+					0.5,
+					"begin2",
+					0.5
+				};
+				soundsetshot[]=
+				{
+					"RocketsMedium_Shot_SoundSet"
+				};
+			};
+		};
 	};
-	class rhs_weap_9K114_launcher: MissileLauncher;  //found empty after stripping
+	class rhs_weap_9K114_launcher: MissileLauncher
+	{
+		sounds[]=
+		{
+			"StandardSound"
+		};
+		class StandardSound
+		{
+			weaponSoundEffect="DefaultRifle";
+			begin1[]=
+			{
+				"rhsafrf\addons\rhs_sounds\atgm\atgm_1",
+				2.3499999,
+				1,
+				1400
+			};
+			begin2[]=
+			{
+				"rhsafrf\addons\rhs_sounds\atgm\atgm_2",
+				2.3499999,
+				1,
+				1400
+			};
+			soundsetshot[]=
+			{
+				"RocketsMedium_Shot_SoundSet"
+			};
+			soundBegin[]=
+			{
+				"begin1",
+				0.5,
+				"begin2",
+				0.5
+			};
+		};
+	};
 	class Missile_AA_04_Plane_CAS_01_F;
-	class rhs_weap_r73_Launcher: Missile_AA_04_Plane_CAS_01_F;  //found empty after stripping
+	class rhs_weap_r73_Launcher: Missile_AA_04_Plane_CAS_01_F
+	{
+		sounds[]=
+		{
+			"StandardSound"
+		};
+		class StandardSound
+		{
+			weaponSoundEffect="DefaultRifle";
+			begin1[]=
+			{
+				"rhsafrf\addons\rhs_sounds\atgm\atgm_1",
+				2.3499999,
+				1,
+				1400
+			};
+			begin2[]=
+			{
+				"rhsafrf\addons\rhs_sounds\atgm\atgm_2",
+				2.3499999,
+				1,
+				1400
+			};
+			soundsetshot[]=
+			{
+				"RocketsMedium_Shot_SoundSet"
+			};
+			soundBegin[]=
+			{
+				"begin1",
+				0.5,
+				"begin2",
+				0.5
+			};
+		};
+	};
 	class Missile_AGM_02_Plane_CAS_01_F;
-	class rhs_weap_kh25_Launcher: Missile_AGM_02_Plane_CAS_01_F;  //found empty after stripping
+	class rhs_weap_kh25_Launcher: Missile_AGM_02_Plane_CAS_01_F
+	{
+		sounds[]=
+		{
+			"StandardSound"
+		};
+		class StandardSound
+		{
+			weaponSoundEffect="DefaultRifle";
+			begin1[]=
+			{
+				"rhsafrf\addons\rhs_sounds\atgm\atgm_1",
+				2.3499999,
+				1,
+				1400
+			};
+			begin2[]=
+			{
+				"rhsafrf\addons\rhs_sounds\atgm\atgm_2",
+				2.3499999,
+				1,
+				1400
+			};
+			soundBegin[]=
+			{
+				"begin1",
+				0.5,
+				"begin2",
+				0.5
+			};
+			soundsetshot[]=
+			{
+				"RocketsMedium_Shot_SoundSet"
+			};
+		};
+	};
 	class gatling_30mm;
 	class rhs_weap_yakB: gatling_30mm
 	{
 		class manual: Mode_FullAuto
 		{
+			sounds[]=
+			{
+				"StandardSound"
+			};
+			class StandardSound
+			{
+				soundSetShot[]=
+				{
+					"RHS_yakb_Shot_SoundSet",
+					"RHS_sniper1_Tail_SoundSet"
+				};
+			};
 			soundburst=0;
 			soundcontinuous=0;
 		};
@@ -6328,50 +7211,325 @@ class CfgWeapons
 	class autocannon_30mm_CTWS;
 	class rhs_weap_d81: cannon_120mm
 	{
-		class player: player;  //found empty after stripping
-		class far: far;  //found empty after stripping
+		class player: player
+		{
+			class StandardSound
+			{
+				soundSetShot[]=
+				{
+					"RHS_120mm_Shot_SoundSet",
+					"RHS_120mm_int_Shot_SoundSet",
+					"RHS_cannon_Tail_SoundSet"
+				};
+			};
+		};
+		class close: close
+		{
+			class StandardSound
+			{
+				soundSetShot[]=
+				{
+					"RHS_120mm_Shot_SoundSet",
+					"RHS_120mm_int_Shot_SoundSet",
+					"RHS_cannon_Tail_SoundSet"
+				};
+			};
+		};
+		class short: short
+		{
+			class StandardSound
+			{
+				soundSetShot[]=
+				{
+					"RHS_120mm_Shot_SoundSet",
+					"RHS_120mm_int_Shot_SoundSet",
+					"RHS_cannon_Tail_SoundSet"
+				};
+			};
+		};
+		class medium: medium
+		{
+			class StandardSound
+			{
+				soundSetShot[]=
+				{
+					"RHS_120mm_Shot_SoundSet",
+					"RHS_120mm_int_Shot_SoundSet",
+					"RHS_cannon_Tail_SoundSet"
+				};
+			};
+		};
+		class far: far
+		{
+			class StandardSound
+			{
+				soundSetShot[]=
+				{
+					"RHS_120mm_Shot_SoundSet",
+					"RHS_120mm_int_Shot_SoundSet",
+					"RHS_cannon_Tail_SoundSet"
+				};
+			};
+		};
 	};
 	class rhs_weap_2a42_base: autocannon_30mm_CTWS
 	{
-		class LowROFBMD2: Mode_FullAuto;  //found empty after stripping
-		class HighROFBMD2: LowROFBMD2;  //found empty after stripping
+		class LowROFBMD2: Mode_FullAuto
+		{
+			sounds[]=
+			{
+				"StandardSound"
+			};
+			class StandardSound
+			{
+				soundSetShot[]=
+				{
+					"RHS_autocannon_Shot_SoundSet",
+					"RHS_autocannon_int_Shot_SoundSet",
+					"RHS_autocannon_Tail_SoundSet"
+				};
+			};
+		};
+		class HighROFBMD2: LowROFBMD2
+		{
+			class StandardSound
+			{
+				soundSetShot[]=
+				{
+					"RHS_autocannon_Shot_SoundSet",
+					"RHS_autocannon_int_Shot_SoundSet",
+					"RHS_autocannon_Tail_SoundSet"
+				};
+			};
+		};
 	};
-	class rhs_weap_2a28_base: cannon_120mm;  //found empty after stripping
+	class rhs_weap_2a28_base: cannon_120mm
+	{
+		sounds[]=
+		{
+			"StandardSound"
+		};
+		class StandardSound
+		{
+			weaponSoundEffect="DefaultRifle";
+			begin1[]=
+			{
+				"rhsafrf\addons\rhs_sounds\2a28\2a28_1",
+				3.1500001,
+				1,
+				2700
+			};
+			begin2[]=
+			{
+				"rhsafrf\addons\rhs_sounds\2a28\2a28_2",
+				3.1500001,
+				1,
+				2700
+			};
+			soundBegin[]=
+			{
+				"begin1",
+				0.5,
+				"begin2",
+				0.5
+			};
+		};
+	};
 	class RHS_weap_AZP23: CannonCore
 	{
-		class manual: CannonCore;  //found empty after stripping
+		class manual: CannonCore
+		{
+			sounds[]=
+			{
+				"StandardSound"
+			};
+			class StandardSound
+			{
+				soundSetShot[]=
+				{
+					"RHS_KPVT_Closure_SoundSet",
+					"RHS_KPVT_Shot_SoundSet",
+					"RHS_KPVT_Int_Shot_SoundSet",
+					"RHS_autocannon_Tail_SoundSet"
+				};
+			};
+		};
 	};
 	class LMG_RCWS: MGun;  //found empty after stripping
 	class rhs_weap_DSHKM: LMG_RCWS
 	{
-		class manual: MGun;  //found empty after stripping
+		class manual: MGun
+		{
+			class StandardSound
+			{
+				soundSetShot[]=
+				{
+					"RHS_DSHKM_Closure_SoundSet",
+					"RHS_DSHKM_Shot_SoundSet",
+					"RHS_DSHKM_Int_Shot_SoundSet",
+					"RHS_sniper1_Tail_SoundSet"
+				};
+			};
+		};
 	};
 	class rhs_weap_nsvt: rhs_weap_DSHKM
 	{
-		class manual: MGun;  //found empty after stripping
+		class manual: MGun
+		{
+			class StandardSound
+			{
+				soundSetShot[]=
+				{
+					"RHS_DSHKM_Closure_SoundSet",
+					"RHS_DSHKM_Shot_SoundSet",
+					"RHS_DSHKM_Int_Shot_SoundSet",
+					"RHS_sniper1_Tail_SoundSet"
+				};
+			};
+		};
 	};
 	class rhs_weap_nsvt_effects: rhs_weap_nsvt;  //found empty after stripping
 	class rhs_weap_kord: rhs_weap_nsvt_effects
 	{
-		class manual: manual;  //found empty after stripping
+		class manual: manual
+		{
+			class StandardSound
+			{
+				soundSetShot[]=
+				{
+					"RHS_DSHKM_Closure_SoundSet",
+					"RHS_DSHKM_Shot_SoundSet",
+					"RHS_DSHKM_Int_Shot_SoundSet",
+					"RHS_sniper1_Tail_SoundSet"
+				};
+			};
+		};
 	};
 	class rhs_weap_kpvt: MGun
 	{
-		class manual: MGun;  //found empty after stripping
+		class manual: MGun
+		{
+			sounds[]=
+			{
+				"StandardSound"
+			};
+			class StandardSound
+			{
+				soundSetShot[]=
+				{
+					"RHS_KPVT_Closure_SoundSet",
+					"RHS_KPVT_Shot_SoundSet",
+					"RHS_KPVT_Int_Shot_SoundSet",
+					"RHS_sniper1_Tail_SoundSet"
+				};
+			};
+		};
 	};
 	class RHS_weap_GSh30: gatling_30mm
 	{
-		class manual: Mode_FullAuto;  //found empty after stripping
+		class manual: Mode_FullAuto
+		{
+			sounds[]=
+			{
+				"StandardSound"
+			};
+			class StandardSound
+			{
+				soundSetShot[]=
+				{
+					"RHS_KPVT_Closure_SoundSet",
+					"RHS_KPVT_Shot_SoundSet",
+					"RHS_KPVT_Int_Shot_SoundSet",
+					"RHS_autocannon_Tail_SoundSet"
+				};
+			};
+		};
 	};
 	class RHS_Weap_GSh301: RHS_weap_GSh30
 	{
-		class manual: manual;  //found empty after stripping
+		class manual: manual
+		{
+			sounds[]=
+			{
+				"StandardSound"
+			};
+			class StandardSound
+			{
+				soundSetShot[]=
+				{
+					"RHS_KPVT_Closure_SoundSet",
+					"RHS_KPVT_Shot_SoundSet",
+					"RHS_KPVT_Int_Shot_SoundSet",
+					"RHS_autocannon_Tail_SoundSet"
+				};
+			};
+		};
 	};
 	class SmokeLauncher;
-	class rhs_weap_902a: SmokeLauncher;  //found empty after stripping
+	class rhs_weap_902a: SmokeLauncher
+	{
+		sounds[]=
+		{
+			"StandardSound"
+		};
+		class StandardSound
+		{
+			begin1[]=
+			{
+				"rhsafrf\addons\rhs_sounds\smoke\902A_1",
+				2.8,
+				1,
+				600
+			};
+			begin2[]=
+			{
+				"rhsafrf\addons\rhs_sounds\smoke\902A_2",
+				2.8,
+				1,
+				600
+			};
+			soundBegin[]=
+			{
+				"begin1",
+				0.5,
+				"begin2",
+				0.5
+			};
+		};
+	};
 	class rhs_weap_902b: rhs_weap_902a
 	{
-		class Double: rhs_weap_902a;  //found empty after stripping
+		class Double: rhs_weap_902a
+		{
+			sounds[]=
+			{
+				"StandardSound"
+			};
+			class StandardSound
+			{
+				begin1[]=
+				{
+					"rhsafrf\addons\rhs_sounds\smoke\902A_1",
+					2.8,
+					1,
+					600
+				};
+				begin2[]=
+				{
+					"rhsafrf\addons\rhs_sounds\smoke\902A_2",
+					2.8,
+					1,
+					600
+				};
+				soundBegin[]=
+				{
+					"begin1",
+					0.5,
+					"begin2",
+					0.5
+				};
+			};
+		};
 		class Volley: Double;  //found empty after stripping
 	};
 };

@@ -82,11 +82,21 @@ class CfgPatches
 			"rhs_d6_Parachute",
 			"rhs_d6_Parachute_backpack"
 		};
+		requiredVersion=1.62;
+		requiredAddons[]=
+		{
+			"rhs_c_airweapons",
+			"rhs_c_heavyweapons",
+			"rhs_main"
+		};
 		name="A2 ported air";
+		author="$STR_RHS_AUTHOR_FULL";
+		url="http://www.rhsmods.org/";
 	};
 	class RHS_A2_AirImport
 	{
 		units[]={};
+		requiredVersion=1.3200001;
 		requiredAddons[]={};
 	};
 };
@@ -97,6 +107,478 @@ class DefaultVehicleSystemsDisplayManagerLeft
 class DefaultVehicleSystemsDisplayManagerRight
 {
 	class components;
+};
+class CfgMovesBasic
+{
+	class DefaultDie;
+	class ManActions
+	{
+		RHS_HIND_Pilot="RHS_HIND_Pilot";
+		RHS_HIND_Gunner="RHS_HIND_Gunner";
+		RHS_HIND_Cargo="RHS_HIND_Cargo";
+		RHS_HIND_Cargo_Enter="GetInHelicopterCargoRfl";
+		RHS_HIND_Cargo_Exit="GetOutHelicopterCargoRfl";
+		RHS_Mi17_Pilot="RHS_Mi17_Pilot";
+		RHS_Mi17_Gunner="RHS_Mi17_Gunner";
+		RHS_Mi17v2_Gunner="RHS_Mi17v2_Gunner";
+		RHS_Mi17_Cargo01="RHS_Mi17_Cargo01";
+		RHS_Mi17_Cargo02="RHS_Mi17_Cargo02";
+		RHS_Mi8_Pilot="RHS_Mi8_Pilot";
+		RHS_Mi8_PilotV2="RHS_Mi8_PilotV2";
+		RHS_Mi8_Gunner="RHS_Mi8_Gunner";
+		RHS_Mi8_GunnerFront="RHS_Mi8_GunnerFront";
+		RHS_Mi8_Cargo="RHS_Mi8_Cargo";
+		RHS_SU25_Pilot="RHS_SU25_Pilot";
+		RHS_Ka52_Pilot="RHS_Ka52_Pilot";
+		RHS_Ka52_Pilot_Eject="RHS_ka52_Pilot_Eject_Wait";
+		RHS_Ka52_Gunner="RHS_Ka52_Gunner";
+		RHS_D6_Pilot="RHS_D6_Pilot_Init";
+	};
+};
+class CfgMovesMaleSdr: CfgMovesBasic
+{
+	class States
+	{
+		class Crew;
+		class RHS_SU25_Pilot: Crew
+		{
+			file="\rhsafrf\addons\rhs_a2port_air\anim\SU25Pilot.rtm";
+			interpolateTo[]=
+			{
+				"RHS_KIA_SU25_Pilot",
+				1
+			};
+			leftHandIKCurve[]={1};
+			rightHandIKCurve[]={1};
+			leftHandIKBeg=1;
+			leftHandIKEnd=1;
+			leaning="crewShake_half";
+		};
+		class RHS_KIA_SU25_Pilot: DefaultDie
+		{
+			file="\rhsafrf\addons\rhs_a2port_air\anim\SU25PilotKIA.rtm";
+			speed=0.5;
+			looped=0;
+			terminal=1;
+			soundEnabled=0;
+			connectTo[]=
+			{
+				"Unconscious",
+				0.1
+			};
+		};
+		class RHS_KIA_HIND_Pilot: RHS_KIA_SU25_Pilot
+		{
+			file="\rhsafrf\addons\rhs_a2port_air\anim\KIA_Mi35_Pilot.rtm";
+		};
+		class RHS_HIND_Pilot: Crew
+		{
+			file="\rhsafrf\addons\rhs_a2port_air\anim\Mi35_Pilot.rtm";
+			interpolateTo[]=
+			{
+				"RHS_KIA_HIND_Pilot",
+				1
+			};
+			leftHandIKCurve[]={1};
+			rightHandIKCurve[]={1};
+			leftHandIKBeg=1;
+			leftHandIKEnd=1;
+			leaning="crewShake_half";
+		};
+		class RHS_KIA_HIND_Gunner: RHS_KIA_SU25_Pilot
+		{
+			file="\rhsafrf\addons\rhs_a2port_air\anim\KIA_Mi35_Gunner.rtm";
+		};
+		class RHS_HIND_Gunner: Crew
+		{
+			file="\rhsafrf\addons\rhs_a2port_air\anim\Mi35_Gunner.rtm";
+			interpolateTo[]=
+			{
+				"RHS_KIA_HIND_Gunner",
+				1
+			};
+			leaning="crewShake_half";
+		};
+		class RHS_KIA_HIND_Cargo: RHS_KIA_SU25_Pilot
+		{
+			file="\rhsafrf\addons\rhs_a2port_air\anim\KIA_Skodovka_Cargo01.rtm";
+		};
+		class RHS_HIND_Cargo: Crew
+		{
+			file="\rhsafrf\addons\rhs_a2port_car\data\anim\UAZ_Cargo03.rtm";
+			interpolateTo[]=
+			{
+				"RHS_KIA_HIND_Cargo",
+				0.1
+			};
+		};
+		class RHS_Mi17v2_Gunner: Crew
+		{
+			file="\rhsafrf\addons\rhs_a2port_air\anim\MI171_Gunner.rtm";
+			connectTo[]=
+			{
+				"RHS_Mi17v2_KIA_Gunner",
+				1
+			};
+			interpolateTo[]=
+			{
+				"RHS_Mi17v2_KIA_Gunner",
+				1
+			};
+			speed=1e+010;
+		};
+		class RHS_Mi17v2_KIA_Gunner: RHS_KIA_SU25_Pilot
+		{
+			file="\rhsafrf\addons\rhs_a2port_air\anim\MI171_KIA_Gunner.rtm";
+		};
+		class RHS_KIA_KA50_Pilot: RHS_KIA_SU25_Pilot
+		{
+			file="\rhsafrf\addons\rhs_a2port_air\anim\KIA_KA50_Pilot.rtm";
+			leaning="crewShake_half";
+		};
+		class RHS_KA50_Pilot: Crew
+		{
+			file="\rhsafrf\addons\rhs_a2port_air\anim\KA50_Pilot.rtm";
+			interpolateTo[]=
+			{
+				"RHS_KIA_KA50_Pilot",
+				1
+			};
+			leftHandIKCurve[]={1};
+			rightHandIKCurve[]={1};
+			leftHandIKBeg=1;
+			leftHandIKEnd=1;
+			leaning="crewShake_half";
+		};
+		class RHS_KIA_Mi17_Pilot: RHS_KIA_SU25_Pilot
+		{
+			file="\rhsafrf\addons\rhs_a2port_air\anim\KIA_Mi17_Pilot.rtm";
+		};
+		class RHS_Mi17_Pilot: Crew
+		{
+			file="\rhsafrf\addons\rhs_a2port_air\anim\Mi17_Pilot.rtm";
+			interpolateTo[]=
+			{
+				"RHS_KIA_Mi17_Pilot",
+				1
+			};
+			leftHandIKCurve[]={1};
+			rightHandIKCurve[]={1};
+			leftHandIKBeg=1;
+			leftHandIKEnd=1;
+		};
+		class RHS_KIA_Mi8_Pilot: RHS_KIA_SU25_Pilot
+		{
+			file="\rhsafrf\addons\rhs_a2port_air\anim\KIA_Mi8_Pilot.rtm";
+		};
+		class RHS_Mi8_Pilot: Crew
+		{
+			file="\rhsafrf\addons\rhs_a2port_air\anim\Mi8_Pilot.rtm";
+			interpolateTo[]=
+			{
+				"RHS_KIA_Mi8_Pilot",
+				1
+			};
+			leftHandIKCurve[]={1};
+			rightHandIKCurve[]={1};
+			leftHandIKBeg=1;
+			leftHandIKEnd=1;
+		};
+		class RHS_Mi8_PilotV2: RHS_Mi8_Pilot
+		{
+			file="\rhsafrf\addons\rhs_a2port_air\anim\Mi8_PilotV2.rtm";
+		};
+		class RHS_KIA_Mi17_Gunner: RHS_KIA_SU25_Pilot
+		{
+			file="\rhsafrf\addons\rhs_a2port_air\anim\KIA_Mi17_Gunner.rtm";
+		};
+		class RHS_Mi17_Gunner: Crew
+		{
+			file="\rhsafrf\addons\rhs_a2port_air\anim\Mi17_Gunner.rtm";
+			interpolateTo[]=
+			{
+				"RHS_KIA_Mi17_Gunner",
+				1
+			};
+		};
+		class RHS_KIA_Mi8_Gunner: RHS_KIA_SU25_Pilot
+		{
+			file="\rhsafrf\addons\rhs_a2port_air\anim\KIA_Mi8_Gunner.rtm";
+		};
+		class RHS_Mi8_Gunner: Crew
+		{
+			file="\rhsafrf\addons\rhs_a2port_air\anim\Mi8_Gunner.rtm";
+			interpolateTo[]=
+			{
+				"RHS_KIA_Mi8_Gunner",
+				1
+			};
+		};
+		class RHS_Mi8_GunnerFront: Crew
+		{
+			file="\rhsafrf\addons\rhs_a2port_air\anim\Mi8_GunnerFront.rtm";
+			interpolateTo[]=
+			{
+				"RHS_KIA_Mi8_Gunner",
+				1
+			};
+		};
+		class RHS_Mi17_Cargo01: Crew
+		{
+			file="\rhsafrf\addons\rhs_a2port_air\anim\Mi17_Pilot.rtm";
+			interpolateTo[]=
+			{
+				"RHS_KIA_Mi17_Pilot",
+				1
+			};
+		};
+		class RHS_Mi8_Cargo: Crew
+		{
+			file="\rhsafrf\addons\rhs_a2port_air\anim\Mi8_Pilot.rtm";
+			interpolateTo[]=
+			{
+				"RHS_KIA_Mi8_Pilot",
+				1
+			};
+		};
+		class RHS_KIA_Mi17_Cargo02: RHS_KIA_SU25_Pilot
+		{
+			file="\rhsafrf\addons\rhs_a2port_air\anim\KIA_Mi17_Cargo02.rtm";
+		};
+		class RHS_Mi17_Cargo02: Crew
+		{
+			file="\rhsafrf\addons\rhs_a2port_air\anim\Mi17_Cargo02_V0.rtm";
+			interpolateTo[]=
+			{
+				"RHS_KIA_Mi17_Cargo02",
+				0.1
+			};
+			connectTo[]=
+			{
+				"RHS_Mi17_Cargo02",
+				0.1,
+				"RHS_Mi17_Cargo02_V1",
+				0.1,
+				"RHS_Mi17_Cargo02_V2",
+				0.1,
+				"RHS_Mi17_Cargo02_V3",
+				0.1,
+				"RHS_Mi17_Cargo02_V4",
+				0.1,
+				"RHS_Mi17_Cargo02_V5",
+				0.1,
+				"RHS_Mi17_Cargo02_V6",
+				0.1
+			};
+			equivalentTo="RHS_Mi17_Cargo02";
+			variantsAI[]=
+			{
+				"RHS_Mi17_Cargo02",
+				0.40000001,
+				"RHS_Mi17_Cargo02_V1",
+				0.1,
+				"RHS_Mi17_Cargo02_V2",
+				0.1,
+				"RHS_Mi17_Cargo02_V3",
+				0.1,
+				"RHS_Mi17_Cargo02_V4",
+				0.1,
+				"RHS_Mi17_Cargo02_V5",
+				0.1,
+				"RHS_Mi17_Cargo02_V6",
+				0.1
+			};
+			variantAfter[]={5,10,20};
+			speed=0.30000001;
+		};
+		class RHS_Mi17_Cargo02_V1: RHS_Mi17_Cargo02
+		{
+			file="\rhsafrf\addons\rhs_a2port_air\anim\Mi17_Cargo02_V1.rtm";
+			interpolateTo[]=
+			{
+				"RHS_KIA_Mi17_Cargo02",
+				0.1
+			};
+			connectTo[]=
+			{
+				"RHS_Mi17_Cargo02",
+				0.1
+			};
+			speed=0.27000001;
+			variantAfter[]={3.7,3.7,3.7};
+		};
+		class RHS_Mi17_Cargo02_V2: RHS_Mi17_Cargo02
+		{
+			file="\rhsafrf\addons\rhs_a2port_air\anim\Mi17_Cargo02_V2.rtm";
+			interpolateTo[]=
+			{
+				"RHS_KIA_Mi17_Cargo02",
+				0.1
+			};
+			connectTo[]=
+			{
+				"RHS_Mi17_Cargo02",
+				0.1
+			};
+			speed=0.345;
+			variantAfter[]={3,3,3};
+		};
+		class RHS_Mi17_Cargo02_V3: RHS_Mi17_Cargo02
+		{
+			file="\rhsafrf\addons\rhs_a2port_air\anim\Mi17_Cargo02_V3.rtm";
+			interpolateTo[]=
+			{
+				"RHS_KIA_Mi17_Cargo02",
+				0.1
+			};
+			connectTo[]=
+			{
+				"RHS_Mi17_Cargo02",
+				0.1
+			};
+			speed=0.2;
+			variantAfter[]={5,5,5};
+		};
+		class RHS_Mi17_Cargo02_V4: RHS_Mi17_Cargo02
+		{
+			file="\rhsafrf\addons\rhs_a2port_air\anim\Mi17_Cargo02_V4.rtm";
+			interpolateTo[]=
+			{
+				"RHS_KIA_Mi17_Cargo02",
+				0.1
+			};
+			connectTo[]=
+			{
+				"RHS_Mi17_Cargo02",
+				0.1
+			};
+			speed=0.20100001;
+			variantAfter[]={5,5,5};
+		};
+		class RHS_Mi17_Cargo02_V5: RHS_Mi17_Cargo02
+		{
+			file="\rhsafrf\addons\rhs_a2port_air\anim\Mi17_Cargo02_V5.rtm";
+			interpolateTo[]=
+			{
+				"RHS_KIA_Mi17_Cargo02",
+				0.1
+			};
+			connectTo[]=
+			{
+				"RHS_Mi17_Cargo02",
+				0.1
+			};
+			speed=0.197;
+			variantAfter[]={5,5,5};
+		};
+		class RHS_Mi17_Cargo02_V6: RHS_Mi17_Cargo02
+		{
+			file="\rhsafrf\addons\rhs_a2port_air\anim\Mi17_Cargo02_V6.rtm";
+			interpolateTo[]=
+			{
+				"RHS_KIA_Mi17_Cargo02",
+				0.1
+			};
+			connectTo[]=
+			{
+				"RHS_Mi17_Cargo02",
+				0.1
+			};
+			speed=0.345;
+			variantAfter[]={3,3,3};
+		};
+		class RHS_KIA_ka52_Pilot: RHS_KIA_SU25_Pilot
+		{
+			file="\rhsafrf\addons\rhs_a2port_air\anim\KIA_Ka52_Pilot.rtm";
+		};
+		class RHS_ka52_Pilot: Crew
+		{
+			file="\rhsafrf\addons\rhs_a2port_air\anim\ka52_Pilot.rtm";
+			interpolateTo[]=
+			{
+				"RHS_KIA_ka52_Pilot",
+				1
+			};
+			leftHandIKCurve[]={1};
+			rightHandIKCurve[]={1};
+			leftHandIKBeg=1;
+			leftHandIKEnd=1;
+		};
+		class RHS_ka52_Pilot_Eject_Wait: Crew
+		{
+			file="\rhsafrf\addons\rhs_a2port_air\anim\ka52_Pilot.rtm";
+			interpolateTo[]=
+			{
+				"RHS_ka52_Pilot_Eject",
+				1
+			};
+			interpolationSpeed=1;
+			leaning="empty";
+		};
+		class RHS_ka52_Pilot_Eject: RHS_ka52_Pilot
+		{
+			file="\rhsafrf\addons\rhs_a2port_air\anim\ka52_Pilot_eject.rtm";
+			leaning="empty";
+		};
+		class RHS_KIA_ka52_Gunner: RHS_KIA_SU25_Pilot
+		{
+			file="\rhsafrf\addons\rhs_a2port_air\anim\KIA_ka52_Gunner.rtm";
+		};
+		class RHS_ka52_Gunner: Crew
+		{
+			file="\rhsafrf\addons\rhs_a2port_air\anim\ka52_Gunner.rtm";
+			interpolateTo[]=
+			{
+				"RHS_KIA_ka52_Gunner",
+				1
+			};
+		};
+		class RHS_D6_Pilot_Init: Crew
+		{
+			file="\rhsafrf\addons\rhs_c_a2port_air\anims\rhs_para_d6_init.rtm";
+			interpolationSpeed=1;
+			speed=-3.5;
+			looped=0;
+			connectTo[]=
+			{
+				"RHS_D6_Pilot",
+				1
+			};
+			interpolateTo[]=
+			{
+				"RHS_KIA_D6_Pilot",
+				1
+			};
+			variantsAI[]=
+			{
+				"RHS_D6_Pilot",
+				1
+			};
+			variantsPlayer[]=
+			{
+				"RHS_D6_Pilot",
+				1
+			};
+			variantAfter[]={1.5,1.5,1.5};
+			useIdles=0;
+			leftHandIKCurve[]={0};
+			rightHandIKCurve[]={0};
+		};
+		class RHS_D6_Pilot: Crew
+		{
+			file="\rhsafrf\addons\rhs_c_a2port_air\anims\rhs_para_d6.rtm";
+			interpolateTo[]=
+			{
+				"RHS_KIA_D6_Pilot",
+				1
+			};
+			speed=0.066519;
+		};
+		class RHS_KIA_D6_Pilot: RHS_KIA_SU25_Pilot
+		{
+			file="\rhsafrf\addons\rhs_c_a2port_air\anims\rhs_kia_para_d6.rtm";
+		};
+	};
 };
 class CfgFunctions
 {
@@ -280,10 +762,40 @@ class CfgNonAIVehicles
 {
 	class ProxyWeapon;
 	class ProxyRetex;
-	class ProxyMi24Wreck: ProxyRetex;  //found empty after stripping
-	class ProxyKa52Wreck: ProxyRetex;  //found empty after stripping
-	class ProxyMI8Wreck: ProxyRetex;  //found empty after stripping
-	class ProxySu25Wreck: ProxyRetex;  //found empty after stripping
+	class ProxyMi24Wreck: ProxyRetex
+	{
+		hiddenSelections[]=
+		{
+			"camo1",
+			"camo2"
+		};
+		model="\rhsafrf\addons\rhs_a2port_air\Mi35\Mi24Wreck";
+	};
+	class ProxyKa52Wreck: ProxyRetex
+	{
+		hiddenSelections[]=
+		{
+			"camo1",
+			"camo2"
+		};
+		model="\rhsafrf\addons\rhs_a2port_air\Ka52\Ka52Wreck";
+	};
+	class ProxyMI8Wreck: ProxyRetex
+	{
+		hiddenSelections[]=
+		{
+			"camo1"
+		};
+		model="\rhsafrf\addons\rhs_a2port_air\Mi17\MI8Wreck";
+	};
+	class ProxySu25Wreck: ProxyRetex
+	{
+		hiddenSelections[]=
+		{
+			"camo1"
+		};
+		model="\rhsafrf\addons\rhs_a2port_air\Su25\Su25Wreck";
+	};
 };
 class SensorTemplatePassiveRadar;
 class SensorTemplateAntiRadiation;
@@ -341,6 +853,10 @@ class CfgVehicles
 		class ViewOptics;
 		class CargoTurret;
 		class RotorLibHelicopterProperties;
+		class Reflectors
+		{
+			class Right;
+		};
 	};
 	class Heli_Attack_02_base_F: Helicopter_Base_F
 	{
@@ -406,6 +922,9 @@ class CfgVehicles
 		{
 			"['Number',cRHSAIRMI24NumberPlaces,'AviaYellow']"
 		};
+		dlc="RHS_AFRF";
+		category="Air";
+		crew="rhs_pilot_combat_heli";
 		typicalCargo[]=
 		{
 			"rhs_pilot_combat_heli"
@@ -419,6 +938,7 @@ class CfgVehicles
 		tailBladeVertical=1;
 		tailBladeCenter="mala osa";
 		mainBladeCenter="rotor_center";
+		bodyFrictionCoef=0.51999998;
 		backRotorForceCoef=1;
 		liftForceCoef=2;
 		altFullForce=4000;
@@ -448,10 +968,17 @@ class CfgVehicles
 			"CAS_Heli"
 		};
 		audible=7;
+		camShakeCoef=0.80000001;
 		class PilotCamera;  //found empty after stripping
+		scope=1;
+		mapSize=16;
+		vehicleClass="rhs_vehclass_helicopter";
+		editorSubcategory="rhs_EdSubcat_helicopter";
 		displayName="Mi-24P";
 		icon="rhsafrf\addons\rhs_a2port_air\data\map_ico\icon_mi24_ca.paa";
+		picture="\rhsafrf\addons\rhs_a2port_air\data\ico\rhs_mi24p_pic_ca.paa";
 		getInRadius=2;
+		gunnerUsesPilotView=0;
 		maxOmega=2000;
 		class Wheels
 		{
@@ -460,6 +987,11 @@ class CfgVehicles
 			{
 				steering=1;
 				side="left";
+				boneName="gear_1_1_damper";
+				suspForceAppPointOffset="gear_1_1_wheel_axis";
+				tireForceAppPointOffset="gear_1_1_wheel_axis";
+				center="gear_1_1_wheel_axis";
+				boundary="gear_1_1_wheel_bound";
 				suspTravelDirection[]={0,-1,0};
 				width=0.43700001;
 				mass=15;
@@ -488,6 +1020,11 @@ class CfgVehicles
 			{
 				steering=0;
 				side="left";
+				boneName="gear_2_1_damper";
+				suspForceAppPointOffset="gear_2_1_wheel_hub";
+				tireForceAppPointOffset="gear_2_1_wheel_hub";
+				center="gear_2_1_wheel_hub";
+				boundary="gear_2_1_wheel_bound";
 				sprungMass=2856;
 				width=0.237;
 				maxCompression=1.6;
@@ -496,6 +1033,11 @@ class CfgVehicles
 			class wheel_2_2: wheel_2_1
 			{
 				side="right";
+				boneName="gear_2_2_damper";
+				suspForceAppPointOffset="gear_2_2_wheel_hub";
+				tireForceAppPointOffset="gear_2_2_wheel_hub";
+				center="gear_2_2_wheel_hub";
+				boundary="gear_2_2_wheel_bound";
 			};
 		};
 		gearRetracting=1;
@@ -522,11 +1064,13 @@ class CfgVehicles
 				{
 					class PlaneOrientation
 					{
+						type="fixed";
 						refreshRate=0.1;
 						pos[]={0.44,0.52999997};
 					};
 					class ImpactPoint
 					{
+						type="vector";
 						source="ImpactPoint";
 						pos[]={0.44,0.52999997};
 						pos0[]={0.44,0.47};
@@ -541,6 +1085,7 @@ class CfgVehicles
 					class ImpactCross
 					{
 						width=4;
+						type="line";
 						points[]=
 						{
 							
@@ -619,6 +1164,7 @@ class CfgVehicles
 				{
 					class MovementY
 					{
+						type="linear";
 						source="user";
 						sourceIndex=0;
 						refreshRate=0.1;
@@ -643,6 +1189,7 @@ class CfgVehicles
 					class PlanePosition
 					{
 						width=8;
+						type="line";
 						points[]=
 						{
 							
@@ -700,6 +1247,7 @@ class CfgVehicles
 						class Cross
 						{
 							width=8;
+							type="line";
 							points[]=
 							{
 								
@@ -746,9 +1294,12 @@ class CfgVehicles
 				};
 			};
 		};
+		gunnerCanSee="2+4+8+16";
 		driverCanSee="2+4+8+16";
 		irTarget=1;
 		irTargetSize=1;
+		visualTarget=1;
+		visualTargetSize=1.2;
 		radarTarget=1;
 		radarTargetSize=1;
 		incomingMissileDetectionSystem=8;
@@ -759,10 +1310,67 @@ class CfgVehicles
 			1.098107,
 			1
 		};
+		soundLocked[]=
+		{
+			"",
+			1.5848932,
+			1
+		};
+		unitInfoType="RHS_RscUnitInfoAir_Mi24";
+		unitInfoTypeRTD="RHS_RscUnitInfoAir_RTD_Mi24";
+		unitInfoTypeLite="RHS_RscUnitInfoAir_RTD_Basic_Mi24";
 		hideWeaponsCargo=0;
+		class TransportMagazines
+		{
+			class _xx_rhs_30Rnd_545x39_7N10_AK
+			{
+				magazine="rhs_30Rnd_545x39_7N10_AK";
+				count=30;
+			};
+			class _xx_rhs_mag_rgd5
+			{
+				magazine="rhs_mag_rgd5";
+				count=10;
+			};
+			class _xx_rhs_mag_nspn_red
+			{
+				magazine="rhs_mag_nspn_red";
+				count=10;
+			};
+			class _xx_rhs_mag_rdg2_white
+			{
+				magazine="rhs_mag_rdg2_white";
+				count=4;
+			};
+		};
+		class TransportItems
+		{
+			class _xx_FirstAidKit
+			{
+				name="FirstAidKit";
+				count=8;
+			};
+			class _xx_Medikit
+			{
+				name="Medikit";
+				count=1;
+			};
+			class _xx_Toolkit
+			{
+				name="Toolkit";
+				count=1;
+			};
+		};
+		class TransportWeapons;  //found empty after stripping
+		class TransportBackpacks;  //found empty after stripping
+		driverDoor="Door_Pilot";
 		cargoaction[]=
 		{
 			"RHS_HIND_Cargo"
+		};
+		cargoDoors[]=
+		{
+			"Door_Cargo"
 		};
 		driverCompartments=1;
 		cargoCompartments[]=
@@ -777,11 +1385,36 @@ class CfgVehicles
 		{
 			"RHS_HIND_Cargo_Exit"
 		};
+		model="\rhsafrf\addons\rhs_a2port_air\mi35\mi24_p";
+		hiddenSelections[]=
+		{
+			"camo1",
+			"camo2",
+			"exhaust",
+			"tail_decals",
+			"n1",
+			"n2",
+			"moving_map"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"\rhsafrf\addons\rhs_a2port_air\mi35\data\mi24p_001_co.paa",
+			"\rhsafrf\addons\rhs_a2port_air\mi35\data\mi24p_002_co.paa",
+			"rhsafrf\addons\rhs_a2port_air\mi17\data\mi171_det_co.paa",
+			"rhsafrf\addons\rhs_decals\data\labels\aviation\vvs_ca.paa"
+		};
 		class textureSources
 		{
 			class standard
 			{
 				displayName="Grey";
+				author="$STR_RHS_AUTHOR_FULL";
+				textures[]=
+				{
+					"\rhsafrf\addons\rhs_a2port_air\mi35\data\mi24p_001_co.paa",
+					"\rhsafrf\addons\rhs_a2port_air\mi35\data\mi24p_002_co.paa",
+					"rhsafrf\addons\rhs_a2port_air\mi17\data\mi171_det_co.paa"
+				};
 				factions[]=
 				{
 					"rhs_faction_vvs_c",
@@ -791,38 +1424,102 @@ class CfgVehicles
 			class Camo: standard
 			{
 				displayName="Camo #1";
+				author="$STR_RHS_AUTHOR_FULL";
+				textures[]=
+				{
+					"\rhsafrf\addons\rhs_a2port_air\mi35\data\mi24v_001_co.paa",
+					"\rhsafrf\addons\rhs_a2port_air\mi35\data\mi24v_002_co.paa",
+					"rhsafrf\addons\rhs_a2port_air\Mi17\data\camo\mi8_det_g_camo1_co.paa"
+				};
 			};
 			class Camo1: standard
 			{
 				displayName="Camo #2";
+				author="$STR_RHS_AUTHOR_FULL";
+				textures[]=
+				{
+					"\rhsafrf\addons\rhs_a2port_air\mi35\data\camo\mi24p_001_camo1_co.paa",
+					"\rhsafrf\addons\rhs_a2port_air\mi35\data\camo\mi24p_002_camo1_co.paa",
+					"rhsafrf\addons\rhs_a2port_air\Mi17\data\camo\mi8_det_g_camo1_co.paa"
+				};
 			};
 			class Camo2: standard
 			{
 				displayName="Camo #3";
+				author="$STR_RHS_AUTHOR_FULL";
+				textures[]=
+				{
+					"\rhsafrf\addons\rhs_a2port_air\mi35\data\camo\mi24p_001_camo2_co.paa",
+					"\rhsafrf\addons\rhs_a2port_air\mi35\data\camo\mi24p_002_camo2_co.paa",
+					"rhsafrf\addons\rhs_a2port_air\Mi17\data\mi8_det_o_co.paa"
+				};
 			};
 			class Camo3: standard
 			{
 				displayName="Camo #4";
+				author="$STR_RHS_AUTHOR_FULL";
+				textures[]=
+				{
+					"\rhsafrf\addons\rhs_a2port_air\mi35\data\camo\mi24p_001_camo3_co.paa",
+					"\rhsafrf\addons\rhs_a2port_air\mi35\data\camo\mi24p_002_camo3_co.paa",
+					"rhsafrf\addons\rhs_a2port_air\Mi17\data\mi8_det_w_co.paa"
+				};
 			};
 			class Camo4: standard
 			{
 				displayName="Soot Camo #1";
+				author="$STR_RHS_AUTHOR_FULL";
+				textures[]=
+				{
+					"\rhsafrf\addons\rhs_a2port_air\mi35\data\soot\mi24p_001_soot1_co.paa",
+					"\rhsafrf\addons\rhs_a2port_air\mi35\data\soot\mi24p_002_soot1_co.paa",
+					"rhsafrf\addons\rhs_a2port_air\Mi17\data\camo\mi8_det_g_camo1_co.paa"
+				};
 			};
 			class Camo5: standard
 			{
 				displayName="Soot Camo #2";
+				author="$STR_RHS_AUTHOR_FULL";
+				textures[]=
+				{
+					"\rhsafrf\addons\rhs_a2port_air\mi35\data\soot\mi24p_001_soot2_co.paa",
+					"\rhsafrf\addons\rhs_a2port_air\mi35\data\soot\mi24p_002_soot2_co.paa",
+					"rhsafrf\addons\rhs_a2port_air\Mi17\data\camo\mi8_det_g_camo1_co.paa"
+				};
 			};
 			class Camo6: standard
 			{
 				displayName="Soot Camo #3";
+				author="$STR_RHS_AUTHOR_FULL";
+				textures[]=
+				{
+					"\rhsafrf\addons\rhs_a2port_air\mi35\data\soot\mi24p_001_soot3_co.paa",
+					"\rhsafrf\addons\rhs_a2port_air\mi35\data\soot\mi24p_002_soot3_co.paa",
+					"rhsafrf\addons\rhs_a2port_air\Mi17\data\camo\mi8_det_g_camo1_co.paa"
+				};
 			};
 			class Camo7: standard
 			{
 				displayName="CDF";
+				author="$STR_RHS_AUTHOR_FULL";
+				textures[]=
+				{
+					"\rhsafrf\addons\rhs_a2port_air\mi35\data\mi35_001_co.paa",
+					"\rhsafrf\addons\rhs_a2port_air\mi35\data\mi35_002_co.paa",
+					"rhsafrf\addons\rhs_a2port_air\Mi17\data\camo\mi8_det_g_camo1_co.paa"
+				};
 			};
 		};
+		textureList[]={};
 		class Attributes
 		{
+			class ObjectTexture
+			{
+				control="ObjectTexture";
+				data="ObjectTexture";
+				displayName="Skin";
+				tooltip="Texture and material set applied on the object.";
+			};
 			class rhs_hideExhaust
 			{
 				displayName="Hide exhaust cover";
@@ -848,6 +1545,7 @@ class CfgVehicles
 				control="Combo";
 				expression="if(_value != 'NoChange')then{ _this setVariable ['%s', _value];[_this,[['Number', cRHSAIRMI24NumberPlaces, _value]]] call rhs_fnc_decalsInit}";
 				defaultValue=0;
+				typeName="STRING";
 				class values
 				{
 					class NoChange
@@ -926,6 +1624,7 @@ class CfgVehicles
 				control="Edit";
 				validate="Number";
 				defaultValue="-1";
+				typeName="Number";
 				expression="if(_value >= 0)then{if(_value == 0)then{{[_this setobjectTexture [_x,'a3\data_f\clear_empty.paa']]}foreach cRHSAIRMI24NumberPlaces}else{[_this, [['Number', cRHSAIRMI24NumberPlaces, _this getVariable ['rhs_decalNumber_type','AviaYellow'], _value] ] ] call rhs_fnc_decalsInit}};";
 			};
 			class rhs_decalTail
@@ -936,6 +1635,7 @@ class CfgVehicles
 				control="Combo";
 				expression="[_this,[['Label', cRHSAIRMI24TailPlaces, 'Aviation',_value]]] call rhs_fnc_decalsInit";
 				defaultValue=-1;
+				typeName="Number";
 				class values
 				{
 					class Default
@@ -965,9 +1665,15 @@ class CfgVehicles
 		selectionShowDamage="poskozeni";
 		slingLoadMaxCargoMass=2400;
 		precisegetinout=1;
+		driverAction="rhs_hind_pilot";
+		driverInAction="rhs_hind_pilot";
+		getInAction="pilot_Heli_Light_02_Enter";
+		getOutAction="pilot_Heli_Light_02_Exit";
 		memoryPointsGetInDriverPrecise="pos driver";
 		memoryPointsGetInDriver="pos driver";
 		memoryPointsGetInDriverDir="pos driver dir";
+		driverLeftHandAnimName="stick_pilot";
+		driverRightHandAnimName="stick_pilot";
 		memoryPointLRocket="rocket_1";
 		memoryPointRRocket="rocket_2";
 		memoryPointLMissile="missile_1";
@@ -1013,6 +1719,8 @@ class CfgVehicles
 			"rhs_mag_DIRCM_Lipa"
 		};
 		transportsoldier=4;
+		cargoProxyIndexes[]={1,2,3,4};
+		getInProxyOrder[]={1,2,3,4,5,6,7,8};
 		class Turrets: Turrets
 		{
 			class MainTurret: MainTurret
@@ -1025,13 +1733,27 @@ class CfgVehicles
 				{
 					"rhs_laserfcsmag"
 				};
+				gunnerAction="rhs_hind_gunner";
+				gunnerInAction="rhs_hind_gunner";
+				gunnerGetInAction="Heli_Attack_01_Pilot_enter";
+				gunnerGetOutAction="Heli_Attack_01_Pilot_exit";
+				memoryPointsGetInGunnerPrecise="pos gunner";
+				memoryPointsGetInGunner="pos gunner";
+				memoryPointsGetInGunnerDir="pos gunner dir";
+				gunnerLeftHandAnimName="stick_gunner";
+				gunnerRightHandAnimName="stick_gunner";
+				gunnerCompartments="Compartment2";
+				castGunnerShadow=1;
 				viewGunnerShadow=1;
 				precisegetinout=1;
+				outGunnerMayFire=1;
 				commanding=0;
 				primaryGunner=1;
 				isCopilot=1;
 				selectionFireAnim="";
 				memoryPointGun="";
+				gunBeg="";
+				gunEnd="";
 				initelev=4;
 				initturn=0;
 				maxelev=20;
@@ -1042,8 +1764,13 @@ class CfgVehicles
 				particlesDir="";
 				canHideGunner=0;
 				usePiP=1;
+				lodTurnedIn=1000;
+				lodTurnedOut=1000;
 				stabilizedInAxes=3;
+				memoryPointGunnerOptics="gunnerview2";
+				memoryPointGunnerOutOptics="gunnerview2";
 				turretinfotype="RHS_RscWeaponMi24_FCS";
+				gunnerDoor="door_gunner";
 				canUseScanners=0;
 				allowTabLock=0;
 				class ViewOptics
@@ -1067,6 +1794,8 @@ class CfgVehicles
 				{
 					class KPS53AV
 					{
+						opticsDisplayName="KPS53AV";
+						gunneropticsmodel="\A3\weapons_f\reticle\optics_empty";
 						initanglex=0;
 						initangley=0;
 						maxanglex=30;
@@ -1082,6 +1811,8 @@ class CfgVehicles
 					{
 						camPos="view_9s475";
 						hitpoint="Hit_Optic_9S475";
+						opticsDisplayName="9S475_3";
+						gunneropticsmodel="rhsafrf\addons\rhs_a2port_air\mi35\rhs_sight_9s475_x3";
 						initanglex=0;
 						initangley=0;
 						maxanglex=30;
@@ -1099,6 +1830,8 @@ class CfgVehicles
 					};
 					class 9S475_10: 9S475_3
 					{
+						opticsDisplayName="9S475_10";
+						gunneropticsmodel="rhsafrf\addons\rhs_a2port_air\mi35\rhs_sight_9s475_x10";
 						initfov=0.07;
 						maxfov=0.07;
 						minfov=0.07;
@@ -1109,6 +1842,7 @@ class CfgVehicles
 				{
 					class KPS53AV
 					{
+						gunneropticsmodel="\A3\weapons_f\reticle\optics_empty";
 						initanglex=0;
 						initangley=0;
 						maxanglex=30;
@@ -1122,6 +1856,37 @@ class CfgVehicles
 						visionmode[]=
 						{
 							"Normal"
+						};
+					};
+				};
+				class Reflectors
+				{
+					class cabin
+					{
+						color[]={830,100,100};
+						ambient[]={5,0,0};
+						intensity=9;
+						size=1;
+						innerAngle=90;
+						outerAngle=165;
+						coneFadeCoef=1;
+						position="cabin_light";
+						direction="cabin_light_dir";
+						hitpoint="cabin_light";
+						selection="cabin_light";
+						useFlare=0;
+						flareSize=1;
+						flareMaxDistance=5;
+						dayLight=1;
+						blinking=0;
+						class Attenuation
+						{
+							start=0;
+							constant=0;
+							linear=1;
+							quadratic=50;
+							hardLimitStart=1;
+							hardLimitEnd=1.5;
 						};
 					};
 				};
@@ -1159,20 +1924,63 @@ class CfgVehicles
 					};
 				};
 			};
+			class CargoTurret_01: CargoTurret
+			{
+				gunnerAction="passenger_inside_1";
+				gunnerGetInAction="GetInHeli_Transport_01Cargo";
+				gunnerGetOutAction="RHS_HIND_Cargo_Exit";
+				memoryPointsGetInGunner="pos cargo R2";
+				memoryPointsGetInGunnerDir="pos cargo R2 dir";
+				gunnerName="Passenger (Right Bench 2)";
+				gunnerCompartments="Compartment3";
+				proxyIndex=5;
+				maxElev=15;
+				minElev=-45;
+				maxTurn=40;
+				minTurn=-15;
+				lodTurnedIn=1200;
+				lodTurnedOut=1200;
+				lodOpticsIn=1200;
+				lodOpticsOut=1200;
+				isPersonTurret=1;
+				gunnerUsesPilotView=0;
+				gunnerDoor="Door_Cargo";
+				selectionFireAnim="";
+				commanding=-2;
+				weapons[]=
+				{
+					"rhs_weap_DummyLauncher"
+				};
+				cantCreateAI=1;
+				playerPosition=2;
+				soundAttenuationTurret="HeliAttenuationRamp";
+				disableSoundAttenuation=0;
+				enabledByAnimationSource="Door_Cargo";
+				class Hitpoints;  //found empty after stripping
+			};
 			class CargoTurret_02: CargoTurret_01
 			{
+				gunnerName="Passenger (Right Bench 1)";
+				memoryPointsGetInGunner="pos cargo R";
+				memoryPointsGetInGunnerDir="pos cargo R dir";
 				proxyIndex=7;
 				maxTurn=34;
 				minTurn=-30;
 			};
 			class CargoTurret_03: CargoTurret_01
 			{
+				memoryPointsGetInGunner="pos cargo L2";
+				memoryPointsGetInGunnerDir="pos cargo L2 dir";
+				gunnerName="Passenger (Left Bench 2)";
 				proxyIndex=6;
 				maxTurn=25;
 				minTurn=-44;
 			};
 			class CargoTurret_04: CargoTurret_01
 			{
+				gunnerName="Passenger (Left Bench 1)";
+				memoryPointsGetInGunner="pos cargo L";
+				memoryPointsGetInGunnerDir="pos cargo L dir";
 				proxyIndex=8;
 				maxTurn=31;
 				minTurn=-25;
@@ -1188,11 +1996,15 @@ class CfgVehicles
 					{
 						class AirTarget
 						{
+							minRange=500;
+							maxRange=2000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=1;
 						};
 						class GroundTarget
 						{
+							minRange=500;
+							maxRange=3200;
 							objectDistanceLimitCoef=1;
 							viewDistanceLimitCoef=1;
 						};
@@ -1245,6 +2057,7 @@ class CfgVehicles
 							"RHS_HP_UB32",
 							"RHS_HP_UPK23"
 						};
+						priority=1;
 						attachment="rhs_mag_fab250";
 						maxweight=550;
 						UIposition[]={0.50300002,0.30000001};
@@ -1270,6 +2083,7 @@ class CfgVehicles
 						};
 						attachment="rhs_mag_b8v20a_s8kom";
 						maxweight=400;
+						priority=2;
 						UIposition[]={0.583,0.34999999};
 						turret[]={};
 					};
@@ -1287,6 +2101,7 @@ class CfgVehicles
 							"RHS_HP_9m120_Mi24",
 							"RHS_HP_Empty_Mi24"
 						};
+						priority=4;
 						bay=1;
 						attachment="rhs_mag_9M120M_Mi24_2x";
 						maxweight=150;
@@ -1306,6 +2121,7 @@ class CfgVehicles
 							"RHS_cm_ASO2_x2",
 							"RHS_cm_ASO2_x4"
 						};
+						priority=1;
 						attachment="rhs_ASO2_CMFlare_Chaff_Magazine_x4";
 						maxweight=800;
 						UIposition[]={0.33000001,0};
@@ -1381,6 +2197,37 @@ class CfgVehicles
 				};
 			};
 		};
+		class UserActions
+		{
+			class openDoor
+			{
+				displayName="Open Door";
+				position="";
+				radius=3;
+				priority=11;
+				showWindow=0;
+				onlyForplayer=1;
+				condition="this doorPhase 'Door_Cargo' < 0.5 AND alive this";
+				statement="this animateDoor ['Door_Cargo',1]";
+				shortcut="user12";
+			};
+			class closeDoor: openDoor
+			{
+				displayName="Close Door";
+				condition="this doorPhase 'Door_Cargo' > 0.5 AND alive this";
+				statement="this animateDoor ['Door_Cargo',0]";
+			};
+			class ToggleLight
+			{
+				displayName="Toggle interior light";
+				position="pos driver";
+				radius=15;
+				showwindow=0;
+				condition="player in this;";
+				statement="[this,'cabinlights_hide',[0]] call rhs_fnc_toggleIntLight";
+				onlyforplayer=1;
+			};
+		};
 		class Exhausts
 		{
 			class Exhaust01
@@ -1413,6 +2260,7 @@ class CfgVehicles
 				radius=0.40000001;
 				minimalHit=0.15000001;
 				explosionShielding=1.5;
+				visual="podsvit pristroju";
 			};
 			class HitEngine1: HitEngine1
 			{
@@ -1431,6 +2279,7 @@ class CfgVehicles
 			class HitEngine: HitEngine2
 			{
 				armor=999;
+				visual="camo2";
 				name="engine_hit";
 				convexComponent="engine_hit";
 				depends="0.5 * (HitEngine1 + HitEngine2)";
@@ -1442,6 +2291,7 @@ class CfgVehicles
 				material=51;
 				passThrough=0.30000001;
 				name="tail_rotor_hit";
+				visual="mala vrtule staticka";
 			};
 			class HitHRotor
 			{
@@ -1450,6 +2300,7 @@ class CfgVehicles
 				material=51;
 				passThrough=0.1;
 				name="main_rotor_hit";
+				visual="velka vrtule staticka";
 			};
 			class HitGlass1: HitGlass1
 			{
@@ -1503,6 +2354,7 @@ class CfgVehicles
 				armor=-40;
 				explosionShielding=0;
 				name="";
+				visual="-";
 				armorComponent="Hit_Optic_9S475";
 				passThrough=0;
 			};
@@ -1515,6 +2367,47 @@ class CfgVehicles
 				minimalHit=0.80000001;
 				explosionShielding=0.1;
 				radius=0.69999999;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					class RHS_Pylon_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_pylon_1";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_Pylon_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_pylon_1";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_Pylon_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_pylon_1";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_Pylon_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_pylon_1";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class HitPylon2
 			{
@@ -1525,6 +2418,47 @@ class CfgVehicles
 				minimalHit=0.80000001;
 				explosionShielding=0.1;
 				radius=0.69999999;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					class RHS_Pylon_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_pylon_2";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_Pylon_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_pylon_2";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_Pylon_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_pylon_2";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_Pylon_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_pylon_2";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class HitPylon3
 			{
@@ -1535,6 +2469,47 @@ class CfgVehicles
 				minimalHit=0.80000001;
 				explosionShielding=0.1;
 				radius=0.69999999;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					class RHS_Pylon_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_pylon_3";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_Pylon_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_pylon_3";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_Pylon_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_pylon_3";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_Pylon_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_pylon_3";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class HitPylon4
 			{
@@ -1545,6 +2520,47 @@ class CfgVehicles
 				minimalHit=0.80000001;
 				explosionShielding=0.1;
 				radius=0.69999999;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					class RHS_Pylon_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_pylon_4";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_Pylon_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_pylon_4";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_Pylon_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_pylon_4";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_Pylon_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_pylon_4";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class HitPylon5
 			{
@@ -1555,6 +2571,47 @@ class CfgVehicles
 				minimalHit=0.80000001;
 				explosionShielding=0.1;
 				radius=0.69999999;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					class RHS_Pylon_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_pylon_5";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_Pylon_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_pylon_5";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_Pylon_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_pylon_5";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_Pylon_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_pylon_5";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class HitPylon6
 			{
@@ -1565,9 +2622,198 @@ class CfgVehicles
 				minimalHit=0.80000001;
 				explosionShielding=0.1;
 				radius=0.69999999;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					class RHS_Pylon_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_pylon_6";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_Pylon_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_pylon_6";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_Pylon_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_pylon_6";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_Pylon_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_pylon_6";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 		};
-		class Damage;  //found empty after stripping
+		class Damage
+		{
+			tex[]={};
+			mat[]=
+			{
+				"rhsafrf\addons\rhs_a2port_air\mi35\data\mi35_sklo.rvmat",
+				"rhsafrf\addons\rhs_a2port_air\mi35\data\mi35_sklo_damage.rvmat",
+				"rhsafrf\addons\rhs_a2port_air\mi35\data\mi35_sklo_damage.rvmat",
+				"rhsafrf\addons\rhs_a2port_air\mi35\data\mi35_sklo_interier.rvmat",
+				"rhsafrf\addons\rhs_a2port_air\mi35\data\mi35_sklo_interier_damage.rvmat",
+				"rhsafrf\addons\rhs_a2port_air\mi35\data\mi35_sklo_interier_damage.rvmat",
+				"rhsafrf\addons\rhs_a2port_air\mi35\data\mi35_001.rvmat",
+				"rhsafrf\addons\rhs_a2port_air\mi35\data\mi35_001_damage.rvmat",
+				"rhsafrf\addons\rhs_a2port_air\mi35\data\mi35_001_destruct.rvmat",
+				"rhsafrf\addons\rhs_a2port_air\mi35\data\mi35_002.rvmat",
+				"rhsafrf\addons\rhs_a2port_air\mi35\data\mi35_002_damage.rvmat",
+				"rhsafrf\addons\rhs_a2port_air\mi35\data\mi35_002_destruct.rvmat",
+				"rhsafrf\addons\rhs_a2port_air\mi35\data\mi35_003.rvmat",
+				"rhsafrf\addons\rhs_a2port_air\mi35\data\mi35_003_damage.rvmat",
+				"rhsafrf\addons\rhs_a2port_air\mi35\data\mi35_003_destruct.rvmat",
+				"a3\data_f\default.rvmat",
+				"a3\data_f\default.rvmat",
+				"a3\data_f\default_destruct.rvmat"
+			};
+		};
+		class AnimationSources: AnimationSources
+		{
+			class cabinlights_hide
+			{
+				source="user";
+				animPeriod=1e-006;
+				initPhase=0;
+			};
+			class Door_Gunner
+			{
+				source="door";
+				animPeriod=0.80000001;
+			};
+			class Door_Pilot
+			{
+				source="door";
+				animPeriod=0.80000001;
+			};
+			class Door_Cargo
+			{
+				source="door";
+				animPeriod=1;
+				initPhase=0;
+				sound="ServoDoorsSound";
+				soundPosition="pos cargo dir";
+			};
+			class muzzle_rot_hmg
+			{
+				weapon="rhs_weap_gsh30";
+				source="ammorandom";
+			};
+			class muzzle_hide_hmg
+			{
+				weapon="rhs_weap_gsh30";
+				source="reload";
+			};
+			class exhaust_hide
+			{
+				source="user";
+				initPhase=0;
+				animPeriod=9.9999997e-006;
+				mass=1;
+				displayName="hide exhaust";
+			};
+			class rwr_lights_lock
+			{
+				source="user";
+				initPhase=0;
+				animPeriod=8;
+			};
+			class rwr_lock_dir_primary: rwr_lights_lock
+			{
+				animPeriod=0.1;
+			};
+			class rwr_lock_primary: rwr_lights_lock
+			{
+				animPeriod=1e-007;
+			};
+			class rwr_signal_strenght: rwr_lights_lock
+			{
+				animPeriod=1e-007;
+			};
+			class rwr_lights: rwr_lock_primary;  //found empty after stripping
+			class damper_1_1_source
+			{
+				source="damper";
+				wheel="wheel_1_1";
+			};
+			class damper_2_1_source
+			{
+				source="damper";
+				wheel="wheel_2_1";
+			};
+			class damper_2_2_source
+			{
+				source="damper";
+				wheel="wheel_2_2";
+			};
+			class wheel_1_1_source
+			{
+				source="wheel";
+				wheel="wheel_1_1";
+			};
+			class wheel_2_1_source
+			{
+				source="wheel";
+				wheel="wheel_2_1";
+			};
+			class wheel_2_2_source
+			{
+				source="wheel";
+				wheel="wheel_2_2";
+			};
+			class hit_pylon_1_source
+			{
+				source="Hit";
+				hitpoint="HitPylon1";
+			};
+			class hit_pylon_2_source
+			{
+				source="Hit";
+				hitpoint="HitPylon2";
+			};
+			class hit_pylon_3_source
+			{
+				source="Hit";
+				hitpoint="HitPylon3";
+			};
+			class hit_pylon_4_source
+			{
+				source="Hit";
+				hitpoint="HitPylon4";
+			};
+			class hit_pylon_5_source
+			{
+				source="Hit";
+				hitpoint="HitPylon5";
+			};
+			class hit_pylon_6_source
+			{
+				source="Hit";
+				hitpoint="HitPylon6";
+			};
+		};
 		class compartmentsLights
 		{
 			class Comp1
@@ -1621,6 +2867,50 @@ class CfgVehicles
 				};
 			};
 		};
+		class Reflectors
+		{
+			class Light
+			{
+				color[]={7000,7500,10000};
+				ambient[]={70,75,100};
+				intensity=50;
+				size=1;
+				innerAngle=5;
+				outerAngle=75;
+				coneFadeCoef=10;
+				position="l svetlo";
+				direction="l svetlo konec";
+				hitpoint="l svetlo";
+				selection="l svetlo";
+				useFlare=0;
+				dayLight=0;
+				flareSize=0.75;
+				class Attenuation
+				{
+					start=0;
+					constant=0;
+					linear=1;
+					quadratic=0;
+					hardLimitStart=200;
+					hardLimitEnd=250;
+				};
+			};
+			class Light_Flare: Light
+			{
+				intensity=0.5;
+				useFlare=1;
+				innerAngle=5;
+				outerAngle=175;
+			};
+		};
+		aggregateReflectors[]=
+		{
+			
+			{
+				"Light",
+				"Light_Flare"
+			}
+		};
 		class markerlights
 		{
 			class GreenStill
@@ -1664,6 +2954,33 @@ class CfgVehicles
 				name="cerveny pozicni blik";
 			};
 		};
+		class RenderTargets
+		{
+			class LeftMirror
+			{
+				renderTarget="rendertarget0";
+				class CameraView1
+				{
+					pointPosition="m1p";
+					pointDirection="m1d";
+					renderQuality=2;
+					renderVisionMode=4;
+					fov=0.69999999;
+				};
+			};
+			class RightMirror
+			{
+				renderTarget="rendertarget1";
+				class CameraView1
+				{
+					pointPosition="m2p";
+					pointDirection="m2d";
+					renderQuality=2;
+					renderVisionMode=4;
+					fov=0.69999999;
+				};
+			};
+		};
 		class EventHandlers: Eventhandlers
 		{
 			class RHS_EventHandlers
@@ -1676,7 +2993,10 @@ class CfgVehicles
 	};
 	class RHS_Mi24V_Base: RHS_Mi24_base
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_Mi24V_Base.paa";
 		displayName="Mi-24V";
+		model="\rhsafrf\addons\rhs_a2port_air\mi35\mi24_v";
+		picture="\rhsafrf\addons\rhs_a2port_air\data\ico\rhs_mi24v_pic_ca.paa";
 		tf_isolatedAmount_api=0.60000002;
 		LESH_canBeTowed=1;
 		LESH_towFromFront=1;
@@ -1700,10 +3020,30 @@ class CfgVehicles
 			"rhs_mag_DIRCM_Lipa"
 		};
 		selectionFireAnim="";
+		class AnimationSources: AnimationSources
+		{
+			class Gatling_1
+			{
+				source="revolving";
+				weapon="rhs_weap_yakB";
+			};
+			class muzzle_rot_hmg
+			{
+				weapon="rhs_weap_yakB";
+				source="ammorandom";
+			};
+			class muzzle_hide_hmg
+			{
+				weapon="rhs_weap_yakB";
+				source="reload";
+			};
+		};
 		class Turrets: Turrets
 		{
 			class MainTurret: MainTurret
 			{
+				body="mainTurret";
+				gun="mainGun";
 				weapons[]=
 				{
 					"rhs_weap_yakB",
@@ -1714,6 +3054,8 @@ class CfgVehicles
 					"rhs_mag_127x108mm_1SLT_1470",
 					"rhs_laserfcsmag"
 				};
+				gunBeg="muzzle_1";
+				gunEnd="chamber_1";
 				memoryPointGun="chamber_1";
 				particlesPos="chamber_1";
 				particlesDir="muzzle_1";
@@ -1729,6 +3071,7 @@ class CfgVehicles
 				primarygunner=1;
 				stabilizedInAxes=2;
 			};
+			class CargoTurret_01: CargoTurret_01;  //found empty after stripping
 			class CargoTurret_02: CargoTurret_02;  //found empty after stripping
 			class CargoTurret_03: CargoTurret_03;  //found empty after stripping
 			class CargoTurret_04: CargoTurret_04;  //found empty after stripping
@@ -1797,7 +3140,17 @@ class CfgVehicles
 	};
 	class RHS_Mi24D_Base: RHS_Mi24V_Base
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_Mi24V_Base.paa";
 		displayName="$STR_RHS_MI24D_Name";
+		class AnimationSources: AnimationSources
+		{
+			class exhaust_hide
+			{
+				source="user";
+				initPhase=1;
+				animPeriod=9.9999997e-006;
+			};
+		};
 		class Exhausts
 		{
 			class Exhaust01
@@ -1829,6 +3182,7 @@ class CfgVehicles
 					"rhs_mag_127x108mm_1SLT_1470"
 				};
 			};
+			class CargoTurret_01: CargoTurret_01;  //found empty after stripping
 			class CargoTurret_02: CargoTurret_02;  //found empty after stripping
 			class CargoTurret_03: CargoTurret_03;  //found empty after stripping
 			class CargoTurret_04: CargoTurret_04;  //found empty after stripping
@@ -1920,16 +3274,27 @@ class CfgVehicles
 	};
 	class RHS_Mi24P_VVS_Base: RHS_Mi24_base
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_Mi24P_VVS_Base.paa";
 		accuracy=0.5;
 		side=0;
+		faction="rhs_faction_vvs";
 		LESH_canBeTowed=1;
 		LESH_towFromFront=1;
 		LESH_AxisOffsetTarget[]={0.5,8.5,-2.21};
 		LESH_WheelOffset[]={0.5,1};
 	};
-	class RHS_Mi24P_vvs: RHS_Mi24P_VVS_Base;  //found empty after stripping
+	class RHS_Mi24P_vvs: RHS_Mi24P_VVS_Base
+	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_Mi24P_vvs.paa";
+		scope=2;
+		author="$STR_RHS_AUTHOR_FULL";
+	};
 	class RHS_Mi24P_vvsc: RHS_Mi24P_vvs
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_Mi24P_vvsc.paa";
+		faction="rhs_faction_vvs_c";
+		scope=2;
+		author="$STR_RHS_AUTHOR_FULL";
 		hiddenselectionstextures[]=
 		{
 			"\rhsafrf\addons\rhs_a2port_air\Mi35\Data\camo\mi24p_001_camo1_co.paa",
@@ -1946,6 +3311,7 @@ class CfgVehicles
 	};
 	class RHS_Mi24P_CAS_VVS_Base: RHS_Mi24P_VVS_Base
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_Mi24P_CAS_VVS_Base.paa";
 		displayName="$STR_RHS_MI24P_CAS_Name";
 		class Components: Components
 		{
@@ -1988,9 +3354,20 @@ class CfgVehicles
 			};
 		};
 	};
-	class RHS_Mi24P_CAS_vvs: RHS_Mi24P_CAS_VVS_Base;  //found empty after stripping
+	class RHS_Mi24P_CAS_vvs: RHS_Mi24P_CAS_VVS_Base
+	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_Mi24P_CAS_vvs.paa";
+		scope=1;
+		scopeCurator=2;
+		author="$STR_RHS_AUTHOR_FULL";
+	};
 	class RHS_Mi24P_CAS_vvsc: RHS_Mi24P_CAS_vvs
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_Mi24P_CAS_vvsc.paa";
+		faction="rhs_faction_vvs_c";
+		scope=1;
+		scopeCurator=2;
+		author="$STR_RHS_AUTHOR_FULL";
 		hiddenselectionstextures[]=
 		{
 			"\rhsafrf\addons\rhs_a2port_air\Mi35\Data\camo\mi24p_001_camo1_co.paa",
@@ -2008,6 +3385,20 @@ class CfgVehicles
 	};
 	class RHS_Mi24P_CAS_vdv: RHS_Mi24P_CAS_VVS_Base
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_Mi24P_CAS_vdv.paa";
+		scope=1;
+		scopeCurator=2;
+		author="$STR_RHS_AUTHOR_FULL";
+		faction="rhs_faction_vdv";
+		class AnimationSources: AnimationSources
+		{
+			class exhaust_hide
+			{
+				source="user";
+				initPhase=1;
+				animPeriod=9.9999997e-006;
+			};
+		};
 		hiddenselectionstextures[]=
 		{
 			"\rhsafrf\addons\rhs_a2port_air\Mi35\Data\camo\mi24p_001_camo2_co.paa",
@@ -2035,6 +3426,7 @@ class CfgVehicles
 	};
 	class RHS_Mi24P_AT_VVS_Base: RHS_Mi24P_VVS_Base
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_Mi24P_AT_VVS_Base.paa";
 		displayName="$STR_RHS_MI24P_AT_Name";
 		class Components: Components
 		{
@@ -2077,9 +3469,20 @@ class CfgVehicles
 			};
 		};
 	};
-	class RHS_Mi24P_AT_vvs: RHS_Mi24P_AT_VVS_Base;  //found empty after stripping
+	class RHS_Mi24P_AT_vvs: RHS_Mi24P_AT_VVS_Base
+	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_Mi24P_AT_vvs.paa";
+		scope=1;
+		scopeCurator=2;
+		author="$STR_RHS_AUTHOR_FULL";
+	};
 	class RHS_Mi24P_AT_vvsc: RHS_Mi24P_AT_vvs
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_Mi24P_AT_vvsc.paa";
+		faction="rhs_faction_vvs_c";
+		scope=1;
+		scopeCurator=2;
+		author="$STR_RHS_AUTHOR_FULL";
 		hiddenselectionstextures[]=
 		{
 			"\rhsafrf\addons\rhs_a2port_air\Mi35\Data\camo\mi24p_001_camo1_co.paa",
@@ -2097,6 +3500,20 @@ class CfgVehicles
 	};
 	class RHS_Mi24P_AT_vdv: RHS_Mi24P_AT_VVS_Base
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_Mi24P_AT_vdv.paa";
+		scope=1;
+		scopeCurator=2;
+		author="$STR_RHS_AUTHOR_FULL";
+		faction="rhs_faction_vdv";
+		class AnimationSources: AnimationSources
+		{
+			class exhaust_hide
+			{
+				source="user";
+				initPhase=1;
+				animPeriod=9.9999997e-006;
+			};
+		};
 		hiddenselectionstextures[]=
 		{
 			"\rhsafrf\addons\rhs_a2port_air\Mi35\Data\camo\mi24p_001_camo2_co.paa",
@@ -2123,6 +3540,19 @@ class CfgVehicles
 	};
 	class RHS_Mi24P_vdv: RHS_Mi24P_vvsc
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_Mi24P_vdv.paa";
+		faction="rhs_faction_vdv";
+		author="$STR_RHS_AUTHOR_FULL";
+		scope=2;
+		class AnimationSources: AnimationSources
+		{
+			class exhaust_hide
+			{
+				source="user";
+				initPhase=1;
+				animPeriod=9.9999997e-006;
+			};
+		};
 		hiddenselectionstextures[]=
 		{
 			"\rhsafrf\addons\rhs_a2port_air\Mi35\Data\camo\mi24p_001_camo2_co.paa",
@@ -2149,12 +3579,23 @@ class CfgVehicles
 	};
 	class RHS_Mi24V_VVS_Base: RHS_Mi24V_Base
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_Mi24V_VVS_Base.paa";
 		accuracy=0.5;
 		side=0;
+		faction="rhs_faction_vvs";
 	};
-	class RHS_Mi24V_vvs: RHS_Mi24V_VVS_Base;  //found empty after stripping
+	class RHS_Mi24V_vvs: RHS_Mi24V_VVS_Base
+	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_Mi24V_vvs.paa";
+		scope=2;
+		author="$STR_RHS_AUTHOR_FULL";
+	};
 	class RHS_Mi24V_vvsc: RHS_Mi24V_vvs
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_Mi24V_vvsc.paa";
+		faction="rhs_faction_vvs_c";
+		scope=2;
+		author="$STR_RHS_AUTHOR_FULL";
 		hiddenselectionstextures[]=
 		{
 			"\rhsafrf\addons\rhs_a2port_air\Mi35\Data\camo\mi24p_001_camo1_co.paa",
@@ -2165,6 +3606,8 @@ class CfgVehicles
 	};
 	class RHS_Mi24V_FAB_VVS_Base: RHS_Mi24V_VVS_Base
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_Mi24V_FAB_VVS_Base.paa";
+		faction="rhs_faction_vvs";
 		displayName="$STR_RHS_MI24V_FAB_Name";
 		class Components: Components
 		{
@@ -2207,9 +3650,19 @@ class CfgVehicles
 			};
 		};
 	};
-	class RHS_Mi24V_FAB_vvs: RHS_Mi24V_FAB_VVS_Base;  //found empty after stripping
+	class RHS_Mi24V_FAB_vvs: RHS_Mi24V_FAB_VVS_Base
+	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_Mi24V_FAB_vvs.paa";
+		scope=1;
+		scopeCurator=2;
+		author="$STR_RHS_AUTHOR_FULL";
+	};
 	class RHS_Mi24V_FAB_vvsc: RHS_Mi24V_FAB_vvs
 	{
+		faction="rhs_faction_vvs_c";
+		scope=1;
+		scopeCurator=2;
+		author="$STR_RHS_AUTHOR_FULL";
 		hiddenselectionstextures[]=
 		{
 			"\rhsafrf\addons\rhs_a2port_air\Mi35\Data\camo\mi24p_001_camo1_co.paa",
@@ -2227,6 +3680,20 @@ class CfgVehicles
 	};
 	class RHS_Mi24V_FAB_vdv: RHS_Mi24V_FAB_VVS_Base
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_Mi24V_FAB_vdv.paa";
+		scope=1;
+		scopeCurator=2;
+		author="$STR_RHS_AUTHOR_FULL";
+		faction="rhs_faction_vdv";
+		class AnimationSources: AnimationSources
+		{
+			class exhaust_hide
+			{
+				source="user";
+				initPhase=1;
+				animPeriod=9.9999997e-006;
+			};
+		};
 		hiddenselectionstextures[]=
 		{
 			"\rhsafrf\addons\rhs_a2port_air\Mi35\Data\camo\mi24p_001_camo2_co.paa",
@@ -2253,6 +3720,8 @@ class CfgVehicles
 	};
 	class RHS_Mi24V_UPK23_VVS_Base: RHS_Mi24V_VVS_Base
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_Mi24V_UPK23_VVS_Base.paa";
+		faction="rhs_faction_vvs";
 		displayName="$STR_RHS_MI24V_UPK_Name";
 		class Components: Components
 		{
@@ -2295,9 +3764,19 @@ class CfgVehicles
 			};
 		};
 	};
-	class RHS_Mi24V_UPK23_vvs: RHS_Mi24V_UPK23_VVS_Base;  //found empty after stripping
+	class RHS_Mi24V_UPK23_vvs: RHS_Mi24V_UPK23_VVS_Base
+	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_Mi24V_UPK23_vvs.paa";
+		scope=1;
+		scopeCurator=2;
+		author="$STR_RHS_AUTHOR_FULL";
+	};
 	class RHS_Mi24V_UPK23_vvsc: RHS_Mi24V_UPK23_vvs
 	{
+		faction="rhs_faction_vvs_c";
+		scope=1;
+		scopeCurator=2;
+		author="$STR_RHS_AUTHOR_FULL";
 		hiddenselectionstextures[]=
 		{
 			"\rhsafrf\addons\rhs_a2port_air\Mi35\Data\camo\mi24p_001_camo1_co.paa",
@@ -2315,6 +3794,20 @@ class CfgVehicles
 	};
 	class RHS_Mi24V_UPK23_vdv: RHS_Mi24V_UPK23_VVS_Base
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_Mi24V_UPK23_vdv.paa";
+		scope=1;
+		scopeCurator=2;
+		author="$STR_RHS_AUTHOR_FULL";
+		faction="rhs_faction_vdv";
+		class AnimationSources: AnimationSources
+		{
+			class exhaust_hide
+			{
+				source="user";
+				initPhase=1;
+				animPeriod=9.9999997e-006;
+			};
+		};
 		hiddenselectionstextures[]=
 		{
 			"\rhsafrf\addons\rhs_a2port_air\Mi35\Data\camo\mi24p_001_camo2_co.paa",
@@ -2341,6 +3834,8 @@ class CfgVehicles
 	};
 	class RHS_Mi24V_AT_VVS_Base: RHS_Mi24V_VVS_Base
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_Mi24V_AT_VVS_Base.paa";
+		faction="rhs_faction_vvs";
 		displayName="$STR_RHS_MI24V_AT_Name";
 		class Components: Components
 		{
@@ -2383,9 +3878,19 @@ class CfgVehicles
 			};
 		};
 	};
-	class RHS_Mi24V_AT_vvs: RHS_Mi24V_AT_VVS_Base;  //found empty after stripping
+	class RHS_Mi24V_AT_vvs: RHS_Mi24V_AT_VVS_Base
+	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_Mi24V_AT_vvs.paa";
+		scope=1;
+		scopeCurator=2;
+		author="$STR_RHS_AUTHOR_FULL";
+	};
 	class RHS_Mi24V_AT_vvsc: RHS_Mi24V_AT_vvs
 	{
+		faction="rhs_faction_vvs_c";
+		scope=1;
+		scopeCurator=2;
+		author="$STR_RHS_AUTHOR_FULL";
 		hiddenselectionstextures[]=
 		{
 			"\rhsafrf\addons\rhs_a2port_air\Mi35\Data\camo\mi24p_001_camo1_co.paa",
@@ -2403,6 +3908,20 @@ class CfgVehicles
 	};
 	class RHS_Mi24V_AT_vdv: RHS_Mi24V_AT_VVS_Base
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_Mi24V_AT_vdv.paa";
+		scope=1;
+		scopeCurator=2;
+		author="$STR_RHS_AUTHOR_FULL";
+		faction="rhs_faction_vdv";
+		class AnimationSources: AnimationSources
+		{
+			class exhaust_hide
+			{
+				source="user";
+				initPhase=1;
+				animPeriod=9.9999997e-006;
+			};
+		};
 		hiddenselectionstextures[]=
 		{
 			"\rhsafrf\addons\rhs_a2port_air\Mi35\Data\camo\mi24p_001_camo2_co.paa",
@@ -2429,7 +3948,11 @@ class CfgVehicles
 	};
 	class RHS_Mi24Vt_vvs: RHS_Mi24V_vvs
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_Mi24Vt_vvs.paa";
+		scope=2;
 		displayName="$STR_RHS_MI24Vt_Name";
+		author="$STR_RHS_AUTHOR_FULL";
+		model="\rhsafrf\addons\rhs_a2port_air\mi35\mi24_vt";
 		slingLoadMaxCargoMass=2400;
 		slingLoadMemoryPoint="slingLoad0";
 		LESH_canBeTowed=1;
@@ -2491,6 +4014,7 @@ class CfgVehicles
 							"RHS_cm_ASO2_x2",
 							"RHS_cm_ASO2_x4"
 						};
+						priority=1;
 						attachment="rhs_ASO2_CMFlare_Chaff_Magazine_x4";
 						maxweight=800;
 						UIposition[]={0.33000001,0};
@@ -2501,6 +4025,10 @@ class CfgVehicles
 	};
 	class RHS_Mi24Vt_vvsc: RHS_Mi24Vt_vvs
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_Mi24Vt_vvsc.paa";
+		faction="rhs_faction_vvs_c";
+		scope=2;
+		author="$STR_RHS_AUTHOR_FULL";
 		hiddenselectionstextures[]=
 		{
 			"\rhsafrf\addons\rhs_a2port_air\Mi35\Data\camo\mi24p_001_camo1_co.paa",
@@ -2518,6 +4046,19 @@ class CfgVehicles
 	};
 	class RHS_Mi24V_vdv: RHS_Mi24V_vvsc
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_Mi24V_vdv.paa";
+		faction="rhs_faction_vdv";
+		author="$STR_RHS_AUTHOR_FULL";
+		scope=2;
+		class AnimationSources: AnimationSources
+		{
+			class exhaust_hide
+			{
+				source="user";
+				initPhase=1;
+				animPeriod=9.9999997e-006;
+			};
+		};
 		hiddenselectionstextures[]=
 		{
 			"\rhsafrf\addons\rhs_a2port_air\Mi35\Data\camo\mi24p_001_camo2_co.paa",
@@ -2544,20 +4085,24 @@ class CfgVehicles
 	};
 	class RHS_Mi8_base: Heli_Light_02_base_F
 	{
+		dlc="RHS_AFRF";
 		LESH_canBeTowed=1;
 		LESH_towFromFront=1;
 		LESH_AxisOffsetTarget[]={0,7.5,-2.4000001};
 		LESH_WheelOffset[]={0,0.60000002};
+		Icon="\rhsafrf\addons\rhs_a2port_air\data\map_ico\icomap_mi17_mg_ca.paa";
 		rhs_decalParameters[]=
 		{
 			"['Number',cRHSAIRMI8NumberPlaces,'AviaYellow']"
 		};
 		class PilotCamera;  //found empty after stripping
+		category="Air";
 		availableForSupportTypes[]=
 		{
 			"Drop",
 			"Transport"
 		};
+		picture="\rhsafrf\addons\rhs_a2port_air\data\ico\rhs_mi8_pic_ca.paa";
 		mapsize=25;
 		maxspeed=240;
 		fuelCapacity=1870;
@@ -2572,6 +4117,7 @@ class CfgVehicles
 		mainRotorSpeed=1;
 		backrotorspeed=1;
 		liftForceCoef=1;
+		bodyFrictionCoef=1.25;
 		numberPhysicalWheels=3;
 		class RotorLibHelicopterProperties: RotorLibHelicopterProperties
 		{
@@ -2589,7 +4135,9 @@ class CfgVehicles
 			maxMainRotorStress=320000;
 			maxTailRotorStress=60000;
 		};
+		model="\rhsafrf\addons\rhs_a2port_air\mi17\Mi_8MT";
 		displayname="$STR_RHS_MI8_Name";
+		crew="rhs_pilot_transport_heli";
 		typicalCargo[]=
 		{
 			"rhs_pilot_transport_heli"
@@ -2607,21 +4155,30 @@ class CfgVehicles
 		armor=25;
 		armorStructural=2;
 		audible=6;
+		camShakeCoef=0.80000001;
 		cargoiscodriver[]={1,0};
 		cost=900000;
 		damageresistance=0.0017199999;
 		irTarget=1;
 		irTargetSize=0.89999998;
+		visualTarget=1;
+		visualTargetSize=1;
 		radarTarget=1;
 		radarTargetSize=1;
 		LockDetectionSystem="0";
 		incomingMissileDetectionSystem="0";
+		vehicleClass="rhs_vehclass_helicopter";
+		editorSubcategory="rhs_EdSubcat_helicopter";
 		weapons[]={};
 		magazines[]={};
 		driveraction="RHS_Mi8_Pilot";
 		driverinaction="RHS_Mi8_Pilot";
+		unitInfoType="RHS_RscUnitInfoAir_Mi8";
+		unitInfoTypeRTD="RHS_RscUnitInfoAir_RTD_Mi8";
+		unitInfoTypeLite="RHS_RscUnitInfoAir_RTD_Basic_Mi8";
 		precisegetinout=0;
 		GetInAction="GetInHeli_Transport_01Cargo";
+		getOutAction="RHS_HIND_Cargo_Exit";
 		enablemanualfire=0;
 		maxOmega=2000;
 		engineMOI=10;
@@ -2632,6 +4189,11 @@ class CfgVehicles
 			{
 				steering=1;
 				side="left";
+				boneName="damper_front";
+				suspForceAppPointOffset="wheel_1_axis";
+				tireForceAppPointOffset="wheel_1_axis";
+				center="wheel_1_axis";
+				boundary="wheel_1_bound";
 				suspTravelDirection[]={0,-1,0};
 				width=0.48800001;
 				mass=15;
@@ -2660,6 +4222,11 @@ class CfgVehicles
 			{
 				steering=0;
 				side="left";
+				boneName="damper_left";
+				suspForceAppPointOffset="wheel_2_axis";
+				tireForceAppPointOffset="wheel_2_axis";
+				center="wheel_2_axis";
+				boundary="wheel_2_bound";
 				sprungMass=667;
 				MOI=1.323;
 				width=0.27000001;
@@ -2668,6 +4235,11 @@ class CfgVehicles
 			class Wheel_3: Wheel_2
 			{
 				side="right";
+				boneName="damper_right";
+				suspForceAppPointOffset="wheel_3_axis";
+				tireForceAppPointOffset="wheel_3_axis";
+				center="wheel_3_axis";
+				boundary="wheel_3_bound";
 			};
 		};
 		gearRetracting=0;
@@ -2676,6 +4248,7 @@ class CfgVehicles
 			"wheels"
 		};
 		drivercansee="2+4+16";
+		gunnercansee="2+4+8+16";
 		slingLoadMaxCargoMass=2700;
 		maximumLoad=3500;
 		supplyradius=2.5;
@@ -2689,6 +4262,8 @@ class CfgVehicles
 		selectionVRotorMove="mala vrtule blur";
 		selectionDamage="trup";
 		selectionShowDamage="poskozeni";
+		driverLeftHandAnimName="stick_pilot";
+		driverRightHandAnimName="stick_pilot";
 		memoryPointLRocket="l raketa";
 		memoryPointRRocket="p raketa";
 		memoryPointLMissile="l strela";
@@ -2700,7 +4275,67 @@ class CfgVehicles
 			"chase03",
 			"chase04"
 		};
+		class TransportBackpacks
+		{
+			class _xx_rhs_d6_Parachute_backpack
+			{
+				backpack="rhs_d6_Parachute_backpack";
+				count=8;
+			};
+		};
+		class TransportMagazines
+		{
+			class _xx_rhs_30Rnd_545x39_7N10_AK
+			{
+				magazine="rhs_30Rnd_545x39_7N10_AK";
+				count=30;
+			};
+			class _xx_rhs_mag_rgd5
+			{
+				magazine="rhs_mag_rgd5";
+				count=10;
+			};
+			class _xx_rhs_mag_nspn_red
+			{
+				magazine="rhs_mag_nspn_red";
+				count=10;
+			};
+			class _xx_rhs_mag_rdg2_white
+			{
+				magazine="rhs_mag_rdg2_white";
+				count=4;
+			};
+		};
+		class TransportItems
+		{
+			class _xx_FirstAidKit
+			{
+				name="FirstAidKit";
+				count=8;
+			};
+			class _xx_Medikit
+			{
+				name="Medikit";
+				count=1;
+			};
+			class _xx_Toolkit
+			{
+				name="Toolkit";
+				count=1;
+			};
+		};
+		class TransportWeapons;  //found empty after stripping
 		class MFD;  //found empty after stripping
+		hiddenSelections[]=
+		{
+			"Camo1",
+			"Camo2",
+			"Camo3",
+			"Camo4",
+			"n1",
+			"n2",
+			"tail_decals"
+		};
 		hiddenselectionstextures[]=
 		{
 			"rhsafrf\addons\rhs_a2port_air\mi17\data\mi8_body_g_vsr_co.paa",
@@ -2716,38 +4351,95 @@ class CfgVehicles
 			class standard
 			{
 				displayName="Grey";
+				author="$STR_RHS_AUTHOR_FULL";
+				textures[]=
+				{
+					"rhsafrf\addons\rhs_a2port_air\mi17\data\mi8_body_g_vsr_co.paa",
+					"rhsafrf\addons\rhs_a2port_air\mi17\data\mi8_det_g_co.paa"
+				};
+				factions[]={};
 			};
 			class Civilian: standard
 			{
 				displayName="Civilian";
+				author="$STR_RHS_AUTHOR_FULL";
+				textures[]=
+				{
+					"rhsafrf\addons\rhs_a2port_air\mi17\data\mi8civil_body_g_co.paa",
+					"rhsafrf\addons\rhs_a2port_air\mi17\data\mi8civil_det_g_co.paa"
+				};
 			};
 			class Camo: standard
 			{
 				displayName="CDF";
+				author="$STR_RHS_AUTHOR_FULL";
+				textures[]=
+				{
+					"rhsafrf\addons\rhs_a2port_air\mi17\data\mi8_body_g_cdf_co.paa",
+					"rhsafrf\addons\rhs_a2port_air\mi17\data\mi8_det_g_cdf_co.paa"
+				};
 			};
 			class Camo1: standard
 			{
 				displayName="Chedaki";
+				author="$STR_RHS_AUTHOR_FULL";
+				textures[]=
+				{
+					"rhsafrf\addons\rhs_a2port_air\mi17\data\mi8_body_g_chdkz_co.paa",
+					"rhsafrf\addons\rhs_a2port_air\mi17\data\mi8_det_g_cdf_co.paa"
+				};
 			};
 			class Camo2: standard
 			{
 				displayName="Camo #1";
+				author="$STR_RHS_AUTHOR_FULL";
+				textures[]=
+				{
+					"rhsafrf\addons\rhs_a2port_air\mi17\data\camo\mi8_body_g_camo1_co.paa",
+					"rhsafrf\addons\rhs_a2port_air\mi17\data\camo\mi8_det_g_camo1_co.paa"
+				};
 			};
 			class Camo3: standard
 			{
 				displayName="Camo #2";
+				author="$STR_RHS_AUTHOR_FULL";
+				textures[]=
+				{
+					"rhsafrf\addons\rhs_a2port_air\mi17\data\camo\mi8_body_g_camo2_co.paa",
+					"rhsafrf\addons\rhs_a2port_air\mi17\data\camo\mi8_det_g_camo2_co.paa"
+				};
 			};
 			class Camo4: standard
 			{
 				displayName="Camo #3";
+				author="$STR_RHS_AUTHOR_FULL";
+				textures[]=
+				{
+					"rhsafrf\addons\rhs_a2port_air\mi17\data\camo\mi8_body_g_camo3_co.paa",
+					"rhsafrf\addons\rhs_a2port_air\mi17\data\camo\mi8_det_g_camo_mvd_co.paa"
+				};
 			};
 			class Camo5: standard
 			{
 				displayName="Camo #4";
+				author="$STR_RHS_AUTHOR_FULL";
+				textures[]=
+				{
+					"rhsafrf\addons\rhs_a2port_air\mi17\data\camo\mi8_body_g_camo4_co.paa",
+					"rhsafrf\addons\rhs_a2port_air\mi17\data\camo\mi8_det_g_camo3_co.paa"
+				};
 			};
 		};
+		textureList[]={};
 		class Attributes
 		{
+			class ObjectTexture
+			{
+				control="ObjectTexture";
+				data="ObjectTexture";
+				displayName="Skin";
+				tooltip="Texture and material set applied on the object.";
+			};
 			class rhs_decalNumber_type
 			{
 				displayName="Define font type of side number";
@@ -2756,6 +4448,7 @@ class CfgVehicles
 				control="Combo";
 				expression="if(_value != 'NoChange')then{ _this setVariable ['%s', _value];[_this,[['Number', cRHSAIRMI8NumberPlaces, _value]]] call rhs_fnc_decalsInit}";
 				defaultValue=0;
+				typeName="STRING";
 				class values
 				{
 					class NoChange
@@ -2833,6 +4526,7 @@ class CfgVehicles
 				property="rhs_decalNumber";
 				control="Edit";
 				validate="Number";
+				typeName="Number";
 				defaultValue="-1";
 				expression="if( _value >= 0)then{if( _value == 0)then{{[_this setobjectTexture [_x,'a3\data_f\clear_empty.paa']]}foreach cRHSAIRMI8NumberPlaces}else{[_this, [['Number', cRHSAIRMI8NumberPlaces, _this getVariable ['rhs_decalNumber_type','AviaYellow'], _value] ] ] call rhs_fnc_decalsInit}};";
 			};
@@ -2844,6 +4538,7 @@ class CfgVehicles
 				control="Combo";
 				expression="[_this,[['Label', cRHSAIRMI8TailPlaces, 'Aviation',_value]]] call rhs_fnc_decalsInit";
 				defaultValue=-1;
+				typeName="Number";
 				class values
 				{
 					class Default
@@ -2881,6 +4576,7 @@ class CfgVehicles
 							"RHS_cm_ASO2_x4",
 							"RHS_cm_ASO2_x6"
 						};
+						priority=1;
 						attachment="rhs_ASO2_CMFlare_Chaff_Magazine_x6";
 						maxweight=800;
 						UIposition[]={0.33000001,0};
@@ -2934,9 +4630,84 @@ class CfgVehicles
 			class CopilotTurret: CopilotTurret
 			{
 				proxyindex=3;
+				gunnername="Co-pilot";
+				gunneraction="RHS_Mi8_Pilot";
+				gunnerinaction="RHS_Mi8_Pilot";
+				gunnerGetInAction="GetInHeli_Transport_01Cargo";
+				gunnerGetOutAction="RHS_HIND_Cargo_Exit";
+				gunnercompartments="Compartment1";
+				gunnerLeftHandAnimName="stick_copilot";
+				gunnerRightHandAnimName="stick_copilot";
+				memoryPointsGetInGunner="pos driver";
+				memoryPointsGetInGunnerDir="pos driver dir";
 				precisegetinout=0;
 				canEject=0;
 				commanding=-1;
+				class Reflectors
+				{
+					class cabin
+					{
+						color[]={830,100,100};
+						ambient[]={5,0,0};
+						intensity=9;
+						size=1;
+						innerAngle=90;
+						outerAngle=165;
+						coneFadeCoef=1;
+						position="cabin_light";
+						direction="cabin_light_dir";
+						hitpoint="cabin_light";
+						selection="cabin_light";
+						useFlare=1;
+						flareSize=1;
+						flareMaxDistance=5;
+						dayLight=1;
+						blinking=0;
+						class Attenuation
+						{
+							start=0;
+							constant=0;
+							linear=1;
+							quadratic=50;
+							hardLimitStart=1;
+							hardLimitEnd=1.5;
+						};
+					};
+					class cargo_light_1: cabin
+					{
+						color[]={830,100,100};
+						position="cargo_light_1";
+						direction="cargo_light_1_dir";
+						hitpoint="cargo_light_1";
+						selection="cargo_light_1";
+						intensity=10;
+						useFlare=0;
+						coneFadeCoef=0.1;
+						class Attenuation
+						{
+							start=0;
+							constant=0;
+							linear=1;
+							quadratic=70;
+							hardLimitStart=2;
+							hardLimitEnd=2.5;
+						};
+					};
+					class cargo_light_2: cargo_light_1
+					{
+						position="cargo_light_2";
+						direction="cargo_light_2_dir";
+						hitpoint="cargo_light_2";
+						selection="cargo_light_2";
+					};
+					class cargo_light_3: cargo_light_1
+					{
+						position="cargo_light_3";
+						direction="cargo_light_3_dir";
+						hitpoint="cargo_light_3";
+						selection="cargo_light_3";
+					};
+				};
 				class Hitpoints;  //found empty after stripping
 				class Components
 				{
@@ -2984,13 +4755,28 @@ class CfgVehicles
 			};
 			class MainTurret: MainTurret
 			{
+				body="mainTurret";
+				gun="mainGun";
+				gunbeg="muzzle_1";
+				gunend="chamber_1";
+				gunnercompartments="Compartment1";
+				gunneraction="RHS_Mi8_Gunner";
+				gunnerinaction="RHS_Mi8_Gunner";
+				gunnerGetInAction="GetInLow";
+				gunnerGetOutAction="GetOutLow";
 				memorypointgun="muzzle_1";
 				memorypointgunneroptics="gunnerview";
+				gunnerLeftHandAnimName="OtocHlaven";
+				gunnerRightHandAnimName="OtocHlaven";
+				gunnerLeftLegAnimName="gunner1_leg_left";
+				gunnerRightLegAnimName="gunner1_legs";
 				LODTurnedOut=1000;
 				LODTurnedIn=1000;
 				LODOpticsOut=1000;
 				LODOpticsIn=1000;
 				commanding=-2;
+				gunnername="Crew Chief";
+				gunneropticsmodel="\A3\weapons_f\reticle\optics_empty";
 				weapons[]=
 				{
 					"rhs_weap_pkt_v1"
@@ -3077,9 +4863,21 @@ class CfgVehicles
 				LODOpticsIn=1000;
 				animationsourcebody="Turret_2";
 				animationsourcegun="Gun_2";
+				body="Turret_2";
+				gun="Gun_2";
+				gunbeg="muzzle_2";
+				gunend="chamber_2";
 				memorypointgun="muzzle_2";
 				memorypointgunneroptics="gunnerview2";
 				selectionfireanim="zasleh2";
+				gunnerLeftHandAnimName="OtocHlaven2";
+				gunnerRightHandAnimName="OtocHlaven2";
+				gunnerLeftLegAnimName="gunner2_legs";
+				gunnerRightLegAnimName="gunner2_leg_right";
+				gunneraction="rhs_mi8_Gunner";
+				gunnerinaction="rhs_mi8_Gunner";
+				gunnercompartments="Compartment1";
+				gunnername="Rear Gunner";
 				initelev=-60;
 				initturn=-155;
 				maxelev=25;
@@ -3102,6 +4900,7 @@ class CfgVehicles
 			{
 				armor=999;
 				name="hull_hit";
+				visual="zbytek";
 				depends="Total";
 				radius=0.0099999998;
 			};
@@ -3119,6 +4918,7 @@ class CfgVehicles
 				explosionShielding=3;
 				minimalHit=0.1;
 				passThrough=1;
+				visual="motor";
 				name="engine_1_hit";
 				convexComponent="engine_1_hit";
 			};
@@ -3141,6 +4941,7 @@ class CfgVehicles
 				material=51;
 				passThrough=1;
 				name="avionics_hit";
+				visual="-";
 			};
 			class HitVRotor
 			{
@@ -3149,6 +4950,7 @@ class CfgVehicles
 				material=51;
 				passThrough=0.30000001;
 				name="tail_rotor_hit";
+				visual="mala vrtule staticka";
 			};
 			class HitHRotor
 			{
@@ -3157,6 +4959,7 @@ class CfgVehicles
 				material=51;
 				passThrough=0.1;
 				name="main_rotor_hit";
+				visual="velka vrtule staticka";
 			};
 			class HitHydraulics
 			{
@@ -3166,6 +4969,7 @@ class CfgVehicles
 				minimalHit=0.1;
 				radius=0.13;
 				name="hit_hydraulics";
+				visual="-";
 			};
 			class HitTransmission
 			{
@@ -3175,6 +4979,7 @@ class CfgVehicles
 				minimalHit=0.1;
 				radius=0.13;
 				name="hit_transmission";
+				visual="-";
 			};
 			class HitTail
 			{
@@ -3185,6 +4990,7 @@ class CfgVehicles
 				radius=0.13;
 				armorComponent="Hit_Tail";
 				name="Hit_Tail";
+				visual="vis_tail";
 			};
 			class HitGlass1
 			{
@@ -3195,6 +5001,7 @@ class CfgVehicles
 				radius=0.1;
 				armorComponent="glass1";
 				name="glass1";
+				visual="glass1";
 			};
 			class HitGlass2
 			{
@@ -3205,6 +5012,7 @@ class CfgVehicles
 				radius=0.1;
 				armorComponent="glass2";
 				name="glass2";
+				visual="glass2";
 			};
 			class HitGlass3
 			{
@@ -3215,6 +5023,7 @@ class CfgVehicles
 				radius=0.1;
 				armorComponent="glass3";
 				name="glass3";
+				visual="glass3";
 			};
 			class HitGlass4
 			{
@@ -3225,6 +5034,7 @@ class CfgVehicles
 				radius=0.1;
 				armorComponent="glass4";
 				name="glass4";
+				visual="glass4";
 			};
 			class HitGlass5
 			{
@@ -3235,6 +5045,7 @@ class CfgVehicles
 				radius=0.1;
 				armorComponent="glass5";
 				name="glass5";
+				visual="glass5";
 			};
 			class HitGlass6
 			{
@@ -3245,6 +5056,7 @@ class CfgVehicles
 				radius=0.1;
 				armorComponent="glass6";
 				name="glass6";
+				visual="glass6";
 			};
 			class HitGlass7
 			{
@@ -3255,6 +5067,7 @@ class CfgVehicles
 				radius=0.1;
 				armorComponent="glass7";
 				name="glass7";
+				visual="glass7";
 			};
 			class HitGlass8
 			{
@@ -3265,6 +5078,7 @@ class CfgVehicles
 				radius=0.1;
 				armorComponent="glass8";
 				name="glass8";
+				visual="glass8";
 			};
 			class HitPylon1
 			{
@@ -3275,6 +5089,47 @@ class CfgVehicles
 				minimalHit=0.80000001;
 				explosionShielding=0.1;
 				radius=0.75;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					class RHS_Pylon_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_pylon_1";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_Pylon_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_pylon_1";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_Pylon_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_pylon_1";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_Pylon_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_pylon_1";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class HitPylon2
 			{
@@ -3285,6 +5140,47 @@ class CfgVehicles
 				minimalHit=0.80000001;
 				explosionShielding=0.1;
 				radius=0.75;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					class RHS_Pylon_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_pylon_2";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_Pylon_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_pylon_2";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_Pylon_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_pylon_2";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_Pylon_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_pylon_2";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class HitPylon3
 			{
@@ -3295,6 +5191,47 @@ class CfgVehicles
 				minimalHit=0.80000001;
 				explosionShielding=0.1;
 				radius=0.75;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					class RHS_Pylon_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_pylon_3";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_Pylon_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_pylon_3";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_Pylon_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_pylon_3";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_Pylon_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_pylon_3";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class HitPylon4
 			{
@@ -3305,6 +5242,47 @@ class CfgVehicles
 				minimalHit=0.80000001;
 				explosionShielding=0.1;
 				radius=0.75;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					class RHS_Pylon_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_pylon_4";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_Pylon_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_pylon_4";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_Pylon_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_pylon_4";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_Pylon_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_pylon_4";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class HitPylon5
 			{
@@ -3315,6 +5293,47 @@ class CfgVehicles
 				minimalHit=0.80000001;
 				explosionShielding=0.1;
 				radius=0.75;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					class RHS_Pylon_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_pylon_5";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_Pylon_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_pylon_5";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_Pylon_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_pylon_5";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_Pylon_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_pylon_5";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class HitPylon6
 			{
@@ -3325,6 +5344,81 @@ class CfgVehicles
 				minimalHit=0.80000001;
 				explosionShielding=0.1;
 				radius=0.75;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					class RHS_Pylon_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_pylon_6";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_Pylon_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_pylon_6";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_Pylon_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_pylon_6";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_Pylon_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_pylon_6";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
+			};
+		};
+		class Reflectors
+		{
+			class LSvetla
+			{
+				color[]={1100,1000,900};
+				ambient[]={1100,1000,900};
+				position="L svetlo";
+				direction="konec L svetla";
+				hitpoint="L svetlo";
+				selection="L svetlo";
+				size=1;
+				innerAngle=30;
+				outerAngle=120;
+				coneFadeCoef=5;
+				intensity=100;
+				useFlare=1;
+				dayLight=0;
+				flareSize=0.75;
+				class Attenuation
+				{
+					start=1;
+					constant=1;
+					linear=0;
+					quadratic=15;
+				};
+			};
+			class RSvetla: LSvetla
+			{
+				position="P svetlo";
+				direction="konec P svetla";
+				hitpoint="P svetlo";
+				selection="P svetlo";
 			};
 		};
 		class MarkerLights
@@ -3370,7 +5464,225 @@ class CfgVehicles
 				name="cerveny pozicni blik";
 			};
 		};
-		class Damage;  //found empty after stripping
+		class AnimationSources: AnimationSources
+		{
+			class cargolights_hide
+			{
+				source="user";
+				animPeriod=1e-006;
+				initPhase=0;
+			};
+			class cabinlights_hide: cargolights_hide;  //found empty after stripping
+			class bench_hide: cargolights_hide
+			{
+				mass=1;
+				displayname="hide benches";
+				onPhaseChanged="{(_this select 0) lockCargo [_x,(_this select 1) isEqualTo 1]}foreach [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,17,18];";
+			};
+			class intake_hide: cargolights_hide
+			{
+				mass=1;
+				displayname="hide intake covers";
+			};
+			class LeftDoor
+			{
+				source="user";
+				animPeriod=0.80000001;
+				initPhase=1;
+			};
+			class RearDoors
+			{
+				source="door";
+				animPeriod=1.6;
+				initPhase=0;
+				sound="ServoDoorsSound";
+				soundPosition="pos cargo dir";
+				mass=1;
+				displayname="open rear doors";
+				onPhaseChanged="(_this select 0) animateDoor ['RearDoors',_this select 1]";
+			};
+			class hide_turrets
+			{
+				source="user";
+				animPeriod=1e-015;
+				initPhase=0;
+			};
+			class hide_door_hatch
+			{
+				source="user";
+				animPeriod=1e-015;
+				initPhase=1;
+			};
+			class ReloadAnim
+			{
+				source="reload";
+				weapon="rhs_weap_pkt_v1";
+			};
+			class ReloadMagazine
+			{
+				source="reloadmagazine";
+				weapon="rhs_weap_pkt_v1";
+			};
+			class Revolving
+			{
+				source="revolving";
+				weapon="rhs_weap_pkt_v1";
+			};
+			class ReloadAnim_2
+			{
+				source="reload";
+				weapon="rhs_weap_pkt_v2";
+			};
+			class ReloadMagazine_2
+			{
+				source="reloadmagazine";
+				weapon="rhs_weap_pkt_v2";
+			};
+			class Revolving_2
+			{
+				source="revolving";
+				weapon="rhs_weap_pkt_v2";
+			};
+			class muzzle_rot_hmg1: ReloadMagazine
+			{
+				source="ammorandom";
+			};
+			class muzzle_rot_hmg2: ReloadMagazine_2
+			{
+				source="ammorandom";
+			};
+			class Damper_1_source
+			{
+				source="damper";
+				wheel="Wheel_1";
+			};
+			class Damper_2_source
+			{
+				source="damper";
+				wheel="Wheel_2";
+			};
+			class Damper_3_source
+			{
+				source="damper";
+				wheel="Wheel_3";
+			};
+			class Wheel_1_source
+			{
+				source="wheel";
+				wheel="Wheel_1";
+			};
+			class Wheel_2_source
+			{
+				source="wheel";
+				wheel="Wheel_2";
+			};
+			class Wheel_3_source
+			{
+				source="wheel";
+				wheel="Wheel_3";
+			};
+			class Helicopter_Brakes
+			{
+				source="user";
+				animPeriod=0.0099999998;
+				initPhase=1;
+			};
+		};
+		class Damage
+		{
+			tex[]={};
+			mat[]=
+			{
+				"rhsafrf\addons\rhs_a2port_air\mi17\data\mi8_body_amt.rvmat",
+				"rhsafrf\addons\rhs_a2port_air\mi17\data\mi8_body_amt_damage.rvmat",
+				"rhsafrf\addons\rhs_a2port_air\mi17\data\mi8_body_amt_destruct.rvmat",
+				"rhsafrf\addons\rhs_a2port_air\mi17\data\mi8_det_g.rvmat",
+				"rhsafrf\addons\rhs_a2port_air\mi17\data\mi8_det_g_damage.rvmat",
+				"rhsafrf\addons\rhs_a2port_air\mi17\data\mi8_det_g_destruct.rvmat",
+				"rhsafrf\addons\rhs_a2port_air\mi17\data\mi8_glass.rvmat",
+				"rhsafrf\addons\rhs_a2port_air\mi17\data\mi8_glass_damage.rvmat",
+				"rhsafrf\addons\rhs_a2port_air\mi17\data\mi8_glass_damage.rvmat",
+				"rhsafrf\addons\rhs_a2port_air\mi17\data\mi8_glass_in.rvmat",
+				"rhsafrf\addons\rhs_a2port_air\mi17\data\mi8_glass_in_damage.rvmat",
+				"rhsafrf\addons\rhs_a2port_air\mi17\data\mi8_glass_in_damage.rvmat",
+				"rhsafrf\addons\rhs_a2port_air\mi17\data\mi8_inter.rvmat",
+				"rhsafrf\addons\rhs_a2port_air\mi17\data\mi8_inter_damage.rvmat",
+				"rhsafrf\addons\rhs_a2port_air\mi17\data\mi8_inter_destruct.rvmat",
+				"rhsafrf\addons\rhs_a2port_air\data\pkm.rvmat",
+				"rhsafrf\addons\rhs_a2port_air\data\pkm.rvmat",
+				"rhsafrf\addons\rhs_a2port_air\data\pkm_destruct.rvmat",
+				"rhsafrf\addons\rhs_a2port_air\mi17\data\mi8_body_mtv.rvmat",
+				"rhsafrf\addons\rhs_a2port_air\mi17\data\mi8_body_mtv_damage.rvmat",
+				"rhsafrf\addons\rhs_a2port_air\mi17\data\mi8_body_mtv_destruct.rvmat",
+				"rhsafrf\addons\rhs_a2port_air\Mi17\data\mi8t\mi8t_tv2.rvmat",
+				"rhsafrf\addons\rhs_a2port_air\Mi17\data\mi8t\mi8t_tv2_damage.rvmat",
+				"rhsafrf\addons\rhs_a2port_air\Mi17\data\mi8t\mi8t_tv2_destruct.rvmat",
+				"a3\data_f\default.rvmat",
+				"a3\data_f\default.rvmat",
+				"a3\data_f\default_destruct.rvmat"
+			};
+		};
+		class RenderTargets
+		{
+			class LeftMirror
+			{
+				renderTarget="rendertarget0";
+				class CameraView1
+				{
+					pointPosition="m1p";
+					pointDirection="m1d";
+					renderQuality=2;
+					renderVisionMode=4;
+					fov=0.69999999;
+				};
+				BBoxes[]=
+				{
+					"PIP_0_TL",
+					"PIP_0_TR",
+					"PIP_0_BL",
+					"PIP_0_BR"
+				};
+			};
+			class RightMirror
+			{
+				renderTarget="rendertarget1";
+				class CameraView1
+				{
+					pointPosition="m2p";
+					pointDirection="m2d";
+					renderQuality=2;
+					renderVisionMode=4;
+					fov=0.69999999;
+				};
+				BBoxes[]=
+				{
+					"PIP_1_TL",
+					"PIP_1_TR",
+					"PIP_1_BL",
+					"PIP_1_BR"
+				};
+			};
+		};
+		class UserActions
+		{
+			class ToggleLight
+			{
+				displayName="Toggle interior light";
+				position="pos driver";
+				radius=15;
+				showwindow=0;
+				condition="player in this;";
+				statement="[this,'cargolights_hide'] call rhs_fnc_toggleIntLight";
+				onlyforplayer=1;
+			};
+			class WheelBrakes: ToggleLight
+			{
+				displayName="Toggle Wheel Brakes";
+				shortcut="binocular";
+				condition="!difficultyEnabledRTD && (call rhs_fnc_findPlayer) isEqualTo (driver this)";
+				statement="[this] call rhs_fnc_heli_wheelBrakes";
+			};
+		};
 		class EventHandlers: Eventhandlers
 		{
 			class RHS_EventHandlers
@@ -3385,6 +5697,7 @@ class CfgVehicles
 	};
 	class rhs_mi8mtv3_base: RHS_Mi8_base
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_mi8mtv3_base.paa";
 		transportsoldier=13;
 		cost=2000000;
 		threat[]={0.80000001,0.80000001,0.60000002};
@@ -3397,6 +5710,7 @@ class CfgVehicles
 		tf_isolatedAmount_api=0.40000001;
 		LockDetectionSystem="8";
 		incomingMissileDetectionSystem="8";
+		model="\rhsafrf\addons\rhs_a2port_air\mi17\Mi_8MTV_3";
 		displayName="$STR_RHS_MI8MTV3_Name";
 		class Turrets: Turrets
 		{
@@ -3477,8 +5791,10 @@ class CfgVehicles
 			class SideTurret: MainTurret
 			{
 				commanding=-4;
+				gunnername="Door gunner";
 				primarygunner=0;
 				proxyindex=2;
+				gunnercompartments="Compartment1";
 				LODTurnedOut=1000;
 				LODTurnedIn=1000;
 				LODOpticsOut=1000;
@@ -3488,14 +5804,31 @@ class CfgVehicles
 			class BackTurret: BackTurret
 			{
 				commanding=-3;
+				gunnername="Rear gunner";
 				primarygunner=0;
 				proxyindex=3;
+				gunnerLeftHandAnimName="OtocHlaven2";
+				gunnerRightHandAnimName="OtocHlaven2";
+				gunnerLeftLegAnimName="gunner2_legs";
+				gunnerRightLegAnimName="gunner2_leg_right";
+				gunnercompartments="Compartment1";
 			};
 			class FrontTurret: MainTurret
 			{
 				animationsourcebody="Turret_3";
 				animationsourcegun="Gun_3";
+				body="Turret_3";
 				commanding=-2;
+				gun="Gun_3";
+				gunbeg="muzzle_3";
+				gunend="chamber_3";
+				gunnerLeftHandAnimName="OtocHlaven3";
+				gunnerRightHandAnimName="OtocHlaven3";
+				gunnerLeftLegAnimName="gunner3_legs";
+				gunnerRightLegAnimName="gunner3_legs";
+				gunneraction="RHS_Mi8_GunnerFront";
+				gunnerinaction="RHS_Mi8_GunnerFront";
+				gunnername="Crew chief";
 				initelev=-10;
 				initturn=0;
 				maxelev=25;
@@ -3517,6 +5850,137 @@ class CfgVehicles
 				LODOpticsOut=1000;
 				LODOpticsIn=1000;
 				class Hitpoints;  //found empty after stripping
+			};
+		};
+		class AnimationSources: AnimationSources
+		{
+			class RearDoors: RearDoors
+			{
+				displayName="";
+			};
+			class bench_hide: cargolights_hide
+			{
+				mass=1;
+				displayname="hide benches";
+				onPhaseChanged="{(_this select 0) lockCargo [_x,(_this select 1) isEqualTo 1]}foreach [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,17,18];";
+			};
+			class holder_small_hide
+			{
+				source="user";
+				animPeriod=1e-015;
+				initPhase=0;
+			};
+			class exhaust_hide
+			{
+				source="user";
+				animPeriod=1e-015;
+				initPhase=0;
+				mass=1;
+				displayName="hide exhaust";
+			};
+			class HIDE_winch: exhaust_hide
+			{
+				displayName="hide winch";
+			};
+			class HIDE_front_armor: exhaust_hide
+			{
+				displayName="hide front armor";
+			};
+			class HUDaction
+			{
+				animperiod=1;
+				initphase=0;
+				source="user";
+			};
+			class HUDaction_Hide: HUDaction;  //found empty after stripping
+			class ReloadAnim_3
+			{
+				source="reload";
+				weapon="rhs_weap_pkt_v3";
+			};
+			class ReloadMagazine_3
+			{
+				source="reloadmagazine";
+				weapon="rhs_weap_pkt_v3";
+			};
+			class Revolving_3
+			{
+				source="revolving";
+				weapon="rhs_weap_pkt_v3";
+			};
+			class muzzle_rot_hmg3: ReloadMagazine_3
+			{
+				source="ammorandom";
+			};
+			class hit_pylon_1_source
+			{
+				source="Hit";
+				hitpoint="HitPylon1";
+			};
+			class hit_pylon_2_source
+			{
+				source="Hit";
+				hitpoint="HitPylon2";
+			};
+			class hit_pylon_3_source
+			{
+				source="Hit";
+				hitpoint="HitPylon3";
+			};
+			class hit_pylon_4_source
+			{
+				source="Hit";
+				hitpoint="HitPylon4";
+			};
+			class hit_pylon_5_source
+			{
+				source="Hit";
+				hitpoint="HitPylon5";
+			};
+			class hit_pylon_6_source
+			{
+				source="Hit";
+				hitpoint="HitPylon6";
+			};
+		};
+		class UserActions
+		{
+			class HUDoff
+			{
+				condition="(player==driver this) and (this animationphase 'HUDAction' !=0)";
+				displayname="$STR_RHS_MI17HudOn_Name";
+				displaynamedefault="$STR_RHS_MI17HudOn_Name";
+				onlyforplayer=1;
+				position="zamerny";
+				radius=1;
+				statement="this animate ['HUDAction',0];this animate ['HUDaction_Hide',0]";
+			};
+			class HUDon
+			{
+				condition="(player==driver this) and (this animationphase 'HUDAction' !=1)";
+				displayname="$STR_RHS_MI17HudOff_Name";
+				displaynamedefault="$STR_RHS_MI17HudOff_Name";
+				onlyforplayer=1;
+				position="zamerny";
+				radius=1;
+				statement="this animate ['HUDAction',1];this animate ['HUDaction_Hide',1]";
+			};
+			class ToggleLight
+			{
+				displayName="Toggle interior light";
+				position="pos driver";
+				radius=15;
+				showwindow=0;
+				condition="player in this;";
+				statement="[this,'cargolights_hide'] call rhs_fnc_toggleIntLight";
+				onlyforplayer=1;
+			};
+			class WheelBrakes: ToggleLight
+			{
+				displayName="Toggle Wheel Brakes";
+				shortcut="binocular";
+				condition="!difficultyEnabledRTD && (call rhs_fnc_findPlayer) isEqualTo (driver this)";
+				statement="[this] call rhs_fnc_heli_wheelBrakes";
 			};
 		};
 		class Exhausts
@@ -3554,6 +6018,7 @@ class CfgVehicles
 							"RHS_HP_UB32",
 							"RHS_HP_UPK23"
 						};
+						priority=1;
 						attachment="rhs_mag_b8v20a_s8kom";
 						maxweight=1200;
 						UIposition[]={0.52499998,0.47999999};
@@ -3578,6 +6043,7 @@ class CfgVehicles
 						};
 						attachment="rhs_mag_b8v20a_s8df";
 						maxweight=1200;
+						priority=2;
 						UIposition[]={0.57499999,0.43000001};
 						hitpoint="HitPylon3";
 					};
@@ -3590,6 +6056,7 @@ class CfgVehicles
 					class pylon5
 					{
 						hardpoints[]={};
+						priority=4;
 						attachment="";
 						maxweight=400;
 						UIposition[]={0,0.60000002};
@@ -3608,6 +6075,7 @@ class CfgVehicles
 							"RHS_cm_ASO2_x4",
 							"RHS_cm_ASO2_x6"
 						};
+						priority=1;
 						attachment="rhs_ASO2_CMFlare_Chaff_Magazine_x6";
 						maxweight=800;
 						UIposition[]={0.33000001,0};
@@ -3682,6 +6150,13 @@ class CfgVehicles
 	class rhs_mi8mtv3_heavy_base: rhs_mi8mtv3_base
 	{
 		displayName="Mi-8MTV-3 (Heavy)";
+		class AnimationSources: AnimationSources
+		{
+			class holder_small_hide: holder_small_hide
+			{
+				initPhase=1;
+			};
+		};
 		class Components: Components
 		{
 			class TransportPylonsComponent
@@ -3702,6 +6177,7 @@ class CfgVehicles
 							"RHS_HP_UB32",
 							"RHS_HP_UPK23"
 						};
+						priority=1;
 						attachment="rhs_mag_b8v20a_s8kom";
 						maxweight=800;
 						UIposition[]={0.52499998,0.47999999};
@@ -3726,6 +6202,7 @@ class CfgVehicles
 						};
 						attachment="rhs_mag_b8v20a_s8kom";
 						maxweight=800;
+						priority=2;
 						UIposition[]={0.57499999,0.43000001};
 						hitpoint="HitPylon3";
 					};
@@ -3745,6 +6222,7 @@ class CfgVehicles
 							"RHS_HP_UB32",
 							"RHS_HP_UPK23"
 						};
+						priority=4;
 						attachment="rhs_mag_b8v20a_s8kom";
 						maxweight=400;
 						UIposition[]={0.625,0.38};
@@ -3765,6 +6243,7 @@ class CfgVehicles
 							"RHS_cm_ASO2_x4",
 							"RHS_cm_ASO2_x6"
 						};
+						priority=1;
 						attachment="rhs_ASO2_CMFlare_Chaff_Magazine_x6";
 						maxweight=800;
 						UIposition[]={0.33000001,0};
@@ -3775,6 +6254,8 @@ class CfgVehicles
 	};
 	class rhs_mi8amtsh_base: rhs_mi8mtv3_base
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_mi8amtsh_base.paa";
+		Icon="\rhsafrf\addons\rhs_a2port_air\data\map_ico\icomap_mi17_ca.paa";
 		driveraction="RHS_Mi8_PilotV2";
 		driverinaction="RHS_Mi8_PilotV2";
 		class Turrets: Turrets
@@ -3782,6 +6263,7 @@ class CfgVehicles
 			class CopilotTurret: CopilotTurret
 			{
 				proxyindex=4;
+				gunnerUsesPilotView=0;
 				LODTurnedOut=1200;
 				LODTurnedIn=1200;
 				LODOpticsOut=1200;
@@ -3796,14 +6278,25 @@ class CfgVehicles
 				minturn=130;
 				initElev=-41;
 				minElev=-51;
+				gunnerRightLegAnimName="gunner2_leg_right";
+				gunnerLeftLegAnimName="gunner2_leg_left";
+				gunneraction="RHS_Mi17v2_Gunner";
+				gunnerinaction="RHS_Mi17v2_Gunner";
 			};
 			class FrontTurret: FrontTurret
 			{
 				initturn=-70;
 				maxturn=-30;
 				minturn=-121;
+				gunnerRightLegAnimName="gunner3_leg_right";
+				gunnerLeftLegAnimName="gunner3_leg_left";
+				gunnercompartments="Compartment1";
+				gunneraction="RHS_Mi8_Gunner";
+				gunnerinaction="RHS_Mi8_Gunner";
 			};
 		};
+		model="\rhsafrf\addons\rhs_a2port_air\mi17\Mi_171";
+		picture="\rhsafrf\addons\rhs_a2port_air\data\ico\rhs_mi8amtsh_pic_ca.paa";
 		displayName="$STR_RHS_MI8AMTSh_Name";
 		drivercompartments="Compartment1";
 		cargocompartments[]=
@@ -3826,6 +6319,12 @@ class CfgVehicles
 			class standard
 			{
 				displayName="Grey";
+				author="$STR_RHS_AUTHOR_FULL";
+				textures[]=
+				{
+					"rhsafrf\addons\rhs_a2port_air\mi17\data\mi_171_co.paa",
+					"rhsafrf\addons\rhs_a2port_air\mi17\data\mi171_det_co.paa"
+				};
 				factions[]=
 				{
 					"rhs_faction_vvs_c",
@@ -3835,30 +6334,83 @@ class CfgVehicles
 			class Civilian: standard
 			{
 				displayName="Civilian";
+				author="$STR_RHS_AUTHOR_FULL";
+				textures[]=
+				{
+					"rhsafrf\addons\rhs_a2port_air\Mi17\data\camo\mi_171_civil_co.paa",
+					"rhsafrf\addons\rhs_a2port_air\mi17\data\mi8civil_det_g_co.paa"
+				};
 			};
 			class Camo: standard
 			{
 				displayName="CDF";
+				author="$STR_RHS_AUTHOR_FULL";
+				textures[]=
+				{
+					"rhsafrf\addons\rhs_a2port_air\Mi17\data\camo\mi_171_cdf_co.paa",
+					"rhsafrf\addons\rhs_a2port_air\mi17\data\mi8_det_g_cdf_co.paa"
+				};
 			};
 			class Camo1: standard
 			{
 				displayName="Chedaki";
+				author="$STR_RHS_AUTHOR_FULL";
+				textures[]=
+				{
+					"rhsafrf\addons\rhs_a2port_air\mi17\data\camo\mi_171_chdkz_co.paa",
+					"rhsafrf\addons\rhs_a2port_air\mi17\data\mi8_det_g_cdf_co.paa"
+				};
 			};
 			class Camo2: standard
 			{
 				displayName="Camo #1";
+				author="$STR_RHS_AUTHOR_FULL";
+				textures[]=
+				{
+					"rhsafrf\addons\rhs_a2port_air\mi17\data\camo\mi_171_camo1_co.paa",
+					"rhsafrf\addons\rhs_a2port_air\mi17\data\camo\mi8_det_g_camo1_co.paa"
+				};
 			};
 			class Camo3: standard
 			{
 				displayName="Camo #2";
+				author="$STR_RHS_AUTHOR_FULL";
+				textures[]=
+				{
+					"rhsafrf\addons\rhs_a2port_air\mi17\data\camo\mi_171_camo2_co.paa",
+					"rhsafrf\addons\rhs_a2port_air\mi17\data\camo\mi8_det_g_camo2_co.paa"
+				};
 			};
 			class Camo4: standard
 			{
 				displayName="Camo #3";
+				author="$STR_RHS_AUTHOR_FULL";
+				textures[]=
+				{
+					"rhsafrf\addons\rhs_a2port_air\mi17\data\camo\mi_171_camo_mvd_co.paa",
+					"rhsafrf\addons\rhs_a2port_air\mi17\data\camo\mi8_det_g_camo_mvd_co.paa"
+				};
 			};
 			class Camo5: standard
 			{
 				displayName="Camo #4";
+				author="$STR_RHS_AUTHOR_FULL";
+				textures[]=
+				{
+					"rhsafrf\addons\rhs_a2port_air\mi17\data\camo\mi_171_camo3_co.paa",
+					"rhsafrf\addons\rhs_a2port_air\mi17\data\camo\mi8_det_g_camo3_co.paa"
+				};
+			};
+		};
+		class AnimationSources: AnimationSources
+		{
+			class RearDoors: RearDoors
+			{
+				displayName="";
+			};
+			class HIDE_weapon_holders: exhaust_hide
+			{
+				displayName="hide weapon holders";
 			};
 		};
 		class Components: Components
@@ -3881,6 +6433,7 @@ class CfgVehicles
 							"RHS_HP_UB32",
 							"RHS_HP_UPK23"
 						};
+						priority=1;
 						attachment="rhs_mag_b8v20a_s8kom";
 						maxweight=1200;
 						UIposition[]={0.52499998,0.47999999};
@@ -3905,6 +6458,7 @@ class CfgVehicles
 						};
 						attachment="rhs_mag_b8v20a_s8df";
 						maxweight=1200;
+						priority=2;
 						UIposition[]={0.57499999,0.43000001};
 						hitpoint="HitPylon3";
 					};
@@ -3924,6 +6478,7 @@ class CfgVehicles
 							"RHS_HP_UB32",
 							"RHS_HP_UPK23"
 						};
+						priority=4;
 						attachment="rhs_mag_b8v20a_s8kom";
 						maxweight=400;
 						UIposition[]={0.625,0.38};
@@ -3943,6 +6498,7 @@ class CfgVehicles
 							"RHS_cm_ASO2_x2",
 							"RHS_cm_ASO2_x4"
 						};
+						priority=1;
 						attachment="rhs_ASO2_CMFlare_Chaff_Magazine_x4";
 						maxweight=800;
 						UIposition[]={0.33000001,0};
@@ -3953,11 +6509,21 @@ class CfgVehicles
 	};
 	class rhs_mi8t_base: RHS_Mi8_base
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_mi8t_base.paa";
 		displayName="$STR_RHS_MI8T_Name";
+		Icon="\rhsafrf\addons\rhs_a2port_air\data\map_ico\icomap_mi17_amb_CA.paa";
+		model="\rhsafrf\addons\rhs_a2port_air\mi17\Mi_8T";
 		accuracy=1.5;
 		tf_isolatedAmount_api=0.5;
 		hasGunner=0;
+		driverDoor="LeftDoor";
+		cargoDoors[]=
+		{
+			"LeftDoor"
+		};
 		transportsoldier=13;
+		cargoProxyIndexes[]={1,4,5,6,7,8,9,10,11,12,13,15,16};
+		getInProxyOrder[]={1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16};
 		class Components: Components
 		{
 			class TransportPylonsComponent
@@ -3973,6 +6539,7 @@ class CfgVehicles
 							"RHS_cm_ASO2_x2",
 							"RHS_cm_ASO2_x4"
 						};
+						priority=1;
 						attachment="";
 						maxweight=800;
 						UIposition[]={0.33000001,0};
@@ -3986,19 +6553,69 @@ class CfgVehicles
 			{
 				proxyindex=1;
 			};
+			class CargoTurret_01: CargoTurret
+			{
+				gunnerAction="passenger_inside_2";
+				gunnerGetInAction="GetInHeli_Transport_01Cargo";
+				gunnerGetOutAction="RHS_HIND_Cargo_Exit";
+				memoryPointsGetInGunner="pos cargo";
+				memoryPointsGetInGunnerDir="pos cargo dir";
+				gunnerName="Passenger (Right Rear Doors)";
+				gunnerCompartments="Compartment1";
+				proxyIndex=3;
+				maxElev=15;
+				minElev=-45;
+				maxTurn=-14;
+				minTurn=-85;
+				isPersonTurret=1;
+				gunnerUsesPilotView=1;
+				gunnerDoor="LeftDoor";
+				memorypointgunneroptics="";
+				selectionFireAnim="";
+				commanding=-2;
+				weapons[]=
+				{
+					"rhs_weap_DummyLauncher"
+				};
+				playerPosition=2;
+				soundAttenuationTurret="HeliAttenuationRamp";
+				disableSoundAttenuation=0;
+				LODTurnedOut=1200;
+				LODTurnedIn=1200;
+				LODOpticsOut=1200;
+				LODOpticsIn=1200;
+				enabledByAnimationSource="RearDoors";
+				class Hitpoints;  //found empty after stripping
+			};
 			class CargoTurret_02: CargoTurret_01
 			{
+				gunnerName="Passenger (Left Rear Doors)";
+				memoryPointsGetInGunner="pos driver";
+				memoryPointsGetInGunnerDir="pos driver dir";
 				proxyIndex=14;
 				maxTurn=85;
 				minTurn=15;
 			};
 			class CargoTurret_03: CargoTurret_01
 			{
+				gunnerName="Passenger (Left Door)";
+				memoryPointsGetInGunner="pos gunner";
+				memoryPointsGetInGunnerDir="pos gunner dir";
 				proxyIndex=2;
 				maxTurn=35;
 				minTurn=-8;
 				enabledByAnimationSource="LeftDoor";
 			};
+		};
+		hiddenSelections[]=
+		{
+			"Camo1",
+			"Camo2",
+			"Camo8",
+			"Camo4",
+			"n1",
+			"n2",
+			"tail_decals"
 		};
 		hiddenselectionstextures[]=
 		{
@@ -4015,6 +6632,13 @@ class CfgVehicles
 			class standard
 			{
 				displayName="Grey";
+				author="$STR_RHS_AUTHOR_FULL";
+				textures[]=
+				{
+					"rhsafrf\addons\rhs_a2port_air\mi17\data\mi8_body_g_vsr_co.paa",
+					"rhsafrf\addons\rhs_a2port_air\mi17\data\mi8_det_g_co.paa",
+					"rhsafrf\addons\rhs_a2port_air\mi17\data\mi8t\mi8t_tv2_g_vsr_co.paa"
+				};
 				factions[]=
 				{
 					"rhs_faction_vvs_c",
@@ -4024,34 +6648,139 @@ class CfgVehicles
 			class Civilian: standard
 			{
 				displayName="Civilian";
+				author="$STR_RHS_AUTHOR_FULL";
+				textures[]=
+				{
+					"rhsafrf\addons\rhs_a2port_air\mi17\data\mi8civil_body_g_co.paa",
+					"rhsafrf\addons\rhs_a2port_air\mi17\data\mi8civil_det_g_co.paa",
+					"rhsafrf\addons\rhs_a2port_air\mi17\data\mi8t\mi8tcivil_tv2_g_co.paa"
+				};
 			};
 			class Camo: standard
 			{
 				displayName="CDF";
+				author="$STR_RHS_AUTHOR_FULL";
+				textures[]=
+				{
+					"rhsafrf\addons\rhs_a2port_air\mi17\data\mi8_body_g_cdf_co.paa",
+					"rhsafrf\addons\rhs_a2port_air\mi17\data\mi8_det_g_cdf_co.paa",
+					"rhsafrf\addons\rhs_a2port_air\mi17\data\mi8t\camo\mi8t_tv2_g_cdf_co.paa"
+				};
 			};
 			class Camo1: standard
 			{
 				displayName="Chedaki";
+				author="$STR_RHS_AUTHOR_FULL";
+				textures[]=
+				{
+					"rhsafrf\addons\rhs_a2port_air\mi17\data\mi8_body_g_chdkz_co.paa",
+					"rhsafrf\addons\rhs_a2port_air\mi17\data\mi8_det_g_cdf_co.paa",
+					"rhsafrf\addons\rhs_a2port_air\mi17\data\mi8t\camo\mi8t_tv2_g_chdkz_co.paa"
+				};
 			};
 			class Camo2: standard
 			{
 				displayName="Camo #1";
+				author="$STR_RHS_AUTHOR_FULL";
+				textures[]=
+				{
+					"rhsafrf\addons\rhs_a2port_air\mi17\data\camo\mi8_body_g_camo1_co.paa",
+					"rhsafrf\addons\rhs_a2port_air\mi17\data\camo\mi8_det_g_camo1_co.paa",
+					"rhsafrf\addons\rhs_a2port_air\mi17\data\mi8t\camo\mi8t_tv2_g_camo1_co.paa"
+				};
 			};
 			class Camo3: standard
 			{
 				displayName="Camo #2";
+				author="$STR_RHS_AUTHOR_FULL";
+				textures[]=
+				{
+					"rhsafrf\addons\rhs_a2port_air\mi17\data\camo\mi8_body_g_camo2_co.paa",
+					"rhsafrf\addons\rhs_a2port_air\mi17\data\camo\mi8_det_g_camo2_co.paa",
+					"rhsafrf\addons\rhs_a2port_air\mi17\data\mi8t\camo\mi8t_tv2_g_camo2_co.paa"
+				};
 			};
 			class Camo4: standard
 			{
 				displayName="Camo #3";
+				author="$STR_RHS_AUTHOR_FULL";
+				textures[]=
+				{
+					"rhsafrf\addons\rhs_a2port_air\mi17\data\camo\mi8_body_g_camo3_co.paa",
+					"rhsafrf\addons\rhs_a2port_air\mi17\data\camo\mi8_det_g_camo_mvd_co.paa",
+					"rhsafrf\addons\rhs_a2port_air\mi17\data\mi8t\camo\mi8t_tv2_g_camo3_co.paa"
+				};
 			};
 			class Camo5: standard
 			{
 				displayName="Camo #4";
+				author="$STR_RHS_AUTHOR_FULL";
+				textures[]=
+				{
+					"rhsafrf\addons\rhs_a2port_air\mi17\data\camo\mi8_body_g_camo4_co.paa",
+					"rhsafrf\addons\rhs_a2port_air\mi17\data\camo\mi8_det_g_camo3_co.paa",
+					"rhsafrf\addons\rhs_a2port_air\mi17\data\mi8t\camo\mi8t_tv2_g_camo4_co.paa"
+				};
+			};
+		};
+		class AnimationSources: AnimationSources
+		{
+			class LeftDoor
+			{
+				source="door";
+				animPeriod=0.80000001;
+				initPhase=1;
+			};
+			class hide_turrets: hide_turrets
+			{
+				initPhase=1;
+			};
+			class hide_door_hatch: hide_door_hatch
+			{
+				initPhase=0;
+			};
+			class intake_hide: intake_hide
+			{
+				displayname="";
+			};
+			class antennas_switch
+			{
+				source="user";
+				useSource=1;
+				displayname="twin antennas";
+				initPhase=0;
+				animPeriod=9.9999997e-005;
+				onPhaseChanged="";
+			};
+			class hide_antennas: antennas_switch
+			{
+				useSource=0;
+				displayname="hide antennas";
+			};
+			class hide_antenna_aft: hide_antennas
+			{
+				initphase=1;
+				displayname="hide aft antenna";
+			};
+			class reardoors_hide
+			{
+				displayname="hide rear doors";
+				source="user";
+				animPeriod=1e-015;
+				initPhase=0;
+				onPhaseChanged="{(_this select 0) lockCargo [_x,(_this select 1) isEqualTo 1]}foreach [14,15];";
+				useSource=1;
+				forceAnimatePhase=1;
+				forceAnimate[]=
+				{
+					"RearDoors",
+					1
+				};
 			};
 		};
 		class Attributes: Attributes
 		{
+			class ObjectTexture: ObjectTexture;  //found empty after stripping
 			class rhs_decalNumber_type: rhs_decalNumber_type;  //found empty after stripping
 			class rhs_decalNumber: rhs_decalNumber;  //found empty after stripping
 			class rhs_decalTail: rhs_decalTail;  //found empty after stripping
@@ -4070,8 +6799,95 @@ class CfgVehicles
 				expression="_this animateDoor ['LeftDoor',_value,true]";
 			};
 		};
+		class UserActions
+		{
+			class openDoor
+			{
+				displayName="Open Rear Doors";
+				position="";
+				radius=3;
+				priority=1.5;
+				showWindow=0;
+				userActionID=55;
+				onlyForplayer=1;
+				condition="this doorPhase 'RearDoors' < 0.5 AND alive this";
+				statement="[this,14,15] call rhs_fnc_mi8_checkDoor";
+			};
+			class closeDoor: openDoor
+			{
+				userActionID=56;
+				displayName="Close Rear Doors";
+				condition="this animationSourcePhase 'RearDoors_Hide' < 0.5 AND this doorPhase 'RearDoors' > 0.5 AND alive this";
+			};
+			class openDoor_L: openDoor
+			{
+				userActionID=57;
+				displayName="Open Left Door";
+				position="";
+				condition="this doorPhase 'LeftDoor' < 0.5 AND alive this";
+				statement="this animateDoor ['LeftDoor',1]";
+			};
+			class closeDoor_L: openDoor
+			{
+				userActionID=58;
+				displayName="Close Left Door";
+				condition="this doorPhase 'LeftDoor' > 0.5 AND alive this";
+				statement="this animateDoor ['LeftDoor',0]";
+			};
+			class ToggleLight
+			{
+				displayName="Toggle interior light";
+				position="pos driver";
+				radius=15;
+				showwindow=0;
+				condition="player in this;";
+				statement="[this,'cargolights_hide'] call rhs_fnc_toggleIntLight";
+				onlyforplayer=1;
+			};
+			class WheelBrakes: ToggleLight
+			{
+				displayName="Toggle Wheel Brakes";
+				shortcut="binocular";
+				condition="!difficultyEnabledRTD && (call rhs_fnc_findPlayer) isEqualTo (driver this)";
+				statement="[this] call rhs_fnc_heli_wheelBrakes";
+			};
+		};
 		attendant=1;
 		threat[]={0,0,0};
+		class Reflectors
+		{
+			class Left
+			{
+				color[]={1100,1000,900};
+				ambient[]={1100,1000,900};
+				position="L svetlo";
+				direction="konec L svetla";
+				hitpoint="L svetlo";
+				selection="L svetlo";
+				size=1;
+				innerAngle=30;
+				outerAngle=120;
+				coneFadeCoef=5;
+				intensity=100;
+				useFlare=1;
+				dayLight=0;
+				flareSize=0.75;
+				class Attenuation
+				{
+					start=1;
+					constant=1;
+					linear=0;
+					quadratic=15;
+				};
+			};
+			class Right: Left
+			{
+				position="P svetlo";
+				direction="konec P svetla";
+				hitpoint="P svetlo";
+				selection="P svetlo";
+			};
+		};
 		class EventHandlers: EventHandlers
 		{
 			class RHS_EventHandlers: RHS_EventHandlers
@@ -4083,33 +6899,116 @@ class CfgVehicles
 	};
 	class rhs_mi8amt_base: RHS_Mi8_base
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_mi8amt_base.paa";
 		displayName="$STR_RHS_MI8AMT_Name";
+		Icon="\rhsafrf\addons\rhs_a2port_air\data\map_ico\icomap_mi17_amb_CA.paa";
+		model="\rhsafrf\addons\rhs_a2port_air\mi17\Mi_8AMT";
 		accuracy=1.5;
 		tf_isolatedAmount_api=0.5;
 		hasGunner=0;
+		driverDoor="LeftDoor";
+		cargoDoors[]=
+		{
+			"LeftDoor"
+		};
 		transportsoldier=13;
+		cargoProxyIndexes[]={1,4,5,6,7,8,9,10,11,12,13,15,16};
+		getInProxyOrder[]={1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16};
 		class Turrets: Turrets
 		{
 			class CopilotTurret: CopilotTurret
 			{
 				proxyindex=1;
 			};
+			class CargoTurret_01: CargoTurret
+			{
+				gunnerAction="passenger_inside_2";
+				gunnerGetInAction="GetInHeli_Transport_01Cargo";
+				gunnerGetOutAction="RHS_HIND_Cargo_Exit";
+				memoryPointsGetInGunner="pos cargo";
+				memoryPointsGetInGunnerDir="pos cargo dir";
+				gunnerName="Passenger (Right Rear Doors)";
+				gunnerCompartments="Compartment1";
+				proxyIndex=3;
+				maxElev=15;
+				minElev=-45;
+				maxTurn=-14;
+				minTurn=-85;
+				isPersonTurret=1;
+				gunnerUsesPilotView=1;
+				gunnerDoor="LeftDoor";
+				memorypointgunneroptics="";
+				selectionFireAnim="";
+				commanding=-2;
+				weapons[]=
+				{
+					"rhs_weap_DummyLauncher"
+				};
+				playerPosition=2;
+				soundAttenuationTurret="HeliAttenuationRamp";
+				disableSoundAttenuation=0;
+				LODTurnedOut=1200;
+				LODTurnedIn=1200;
+				LODOpticsOut=1200;
+				LODOpticsIn=1200;
+				enabledByAnimationSource="RearDoors";
+				class Hitpoints;  //found empty after stripping
+			};
 			class CargoTurret_02: CargoTurret_01
 			{
+				gunnerName="Passenger (Left Rear Doors)";
+				memoryPointsGetInGunner="pos driver";
+				memoryPointsGetInGunnerDir="pos driver dir";
 				proxyIndex=14;
 				maxTurn=85;
 				minTurn=15;
 			};
 			class CargoTurret_03: CargoTurret_01
 			{
+				gunnerName="Passenger (Left Door)";
+				memoryPointsGetInGunner="pos gunner";
+				memoryPointsGetInGunnerDir="pos gunner dir";
 				proxyIndex=2;
 				maxTurn=35;
 				minTurn=-8;
 				enabledByAnimationSource="LeftDoor";
 			};
 		};
+		class AnimationSources: AnimationSources
+		{
+			class LeftDoor
+			{
+				source="door";
+				animPeriod=0.80000001;
+				initPhase=1;
+			};
+			class hide_turrets: hide_turrets
+			{
+				initPhase=1;
+			};
+			class hide_door_hatch: hide_door_hatch
+			{
+				initPhase=0;
+			};
+			class reardoors_hide
+			{
+				displayname="hide rear doors";
+				source="user";
+				animPeriod=1e-015;
+				initPhase=0;
+				onPhaseChanged="{(_this select 0) lockCargo [_x,(_this select 1) isEqualTo 1]}foreach [14,15];";
+				useSource=1;
+				forceAnimatePhase=1;
+				forceAnimate[]=
+				{
+					"RearDoors",
+					1
+				};
+			};
+		};
 		class Attributes: Attributes
 		{
+			class ObjectTexture: ObjectTexture;  //found empty after stripping
 			class rhs_decalNumber_type: rhs_decalNumber_type;  //found empty after stripping
 			class rhs_decalNumber: rhs_decalNumber;  //found empty after stripping
 			class rhs_decalTail: rhs_decalTail;  //found empty after stripping
@@ -4128,8 +7027,95 @@ class CfgVehicles
 				expression="_this animateDoor ['LeftDoor',_value,true]";
 			};
 		};
+		class UserActions
+		{
+			class openDoor
+			{
+				displayName="Open Rear Doors";
+				position="";
+				radius=3;
+				priority=1.5;
+				showWindow=0;
+				userActionID=55;
+				onlyForplayer=1;
+				condition="this doorPhase 'RearDoors' < 0.5 AND alive this";
+				statement="[this,14,15] call rhs_fnc_mi8_checkDoor";
+			};
+			class closeDoor: openDoor
+			{
+				userActionID=56;
+				displayName="Close Rear Doors";
+				condition="this animationSourcePhase 'RearDoors_Hide' < 0.5 AND this doorPhase 'RearDoors' > 0.5 AND alive this";
+			};
+			class openDoor_L: openDoor
+			{
+				userActionID=57;
+				displayName="Open Left Door";
+				position="";
+				condition="this doorPhase 'LeftDoor' < 0.5 AND alive this";
+				statement="this animateDoor ['LeftDoor',1]";
+			};
+			class closeDoor_L: openDoor
+			{
+				userActionID=58;
+				displayName="Close Left Door";
+				condition="this doorPhase 'LeftDoor' > 0.5 AND alive this";
+				statement="this animateDoor ['LeftDoor',0]";
+			};
+			class ToggleLight
+			{
+				displayName="Toggle interior light";
+				position="pos driver";
+				radius=15;
+				showwindow=0;
+				condition="player in this;";
+				statement="[this,'cargolights_hide'] call rhs_fnc_toggleIntLight";
+				onlyforplayer=1;
+			};
+			class WheelBrakes: ToggleLight
+			{
+				displayName="Toggle Wheel Brakes";
+				shortcut="binocular";
+				condition="!difficultyEnabledRTD && (call rhs_fnc_findPlayer) isEqualTo (driver this)";
+				statement="[this] call rhs_fnc_heli_wheelBrakes";
+			};
+		};
 		attendant=1;
 		threat[]={0,0,0};
+		class Reflectors
+		{
+			class Left
+			{
+				color[]={1100,1000,900};
+				ambient[]={1100,1000,900};
+				position="L svetlo";
+				direction="konec L svetla";
+				hitpoint="L svetlo";
+				selection="L svetlo";
+				size=1;
+				innerAngle=30;
+				outerAngle=120;
+				coneFadeCoef=5;
+				intensity=100;
+				useFlare=1;
+				dayLight=0;
+				flareSize=0.75;
+				class Attenuation
+				{
+					start=1;
+					constant=1;
+					linear=0;
+					quadratic=15;
+				};
+			};
+			class Right: Left
+			{
+				position="P svetlo";
+				direction="konec P svetla";
+				hitpoint="P svetlo";
+				selection="P svetlo";
+			};
+		};
 		class EventHandlers: EventHandlers
 		{
 			class RHS_EventHandlers: RHS_EventHandlers
@@ -4141,39 +7127,57 @@ class CfgVehicles
 	};
 	class RHS_Mi8_VVS_Base: RHS_Mi8_base
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_Mi8_VVS_Base.paa";
 		side=0;
 		typicalCargo[]=
 		{
 			"rhs_pilot_transport_heli"
 		};
+		faction="rhs_faction_vvs";
 	};
 	class RHS_Mi8MTV3_VVS_Base: rhs_mi8mtv3_base
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_Mi8MTV3_VVS_Base.paa";
 		side=0;
+		faction="rhs_faction_vvs";
 	};
 	class RHS_Mi8MTV3_Heavy_VVS_Base: rhs_mi8mtv3_heavy_base
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_Mi8MTV3_VVS_Base.paa";
 		side=0;
+		faction="rhs_faction_vvs";
 	};
 	class RHS_Mi8AMTSh_VVS_Base: rhs_mi8amtsh_base
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_Mi8AMTSh_VVS_Base.paa";
 		side=0;
+		faction="rhs_faction_vvs";
 	};
 	class RHS_Mi8T_VVS_Base: rhs_mi8t_base
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_Mi8AMT_VVS_Base.paa";
 		side=0;
+		faction="rhs_faction_vvs";
 	};
 	class RHS_Mi8AMT_VVS_Base: rhs_mi8amt_base
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_Mi8AMT_VVS_Base.paa";
 		side=0;
+		faction="rhs_faction_vvs";
 	};
 	class RHS_Mi8mt_vvs: RHS_Mi8_VVS_Base
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_Mi8mt_vvs.paa";
+		scope=2;
 		displayName="$STR_RHS_MI8MT_Name";
+		author="$STR_RHS_AUTHOR_FULL";
 		transportsoldier=14;
 	};
 	class RHS_Mi8mt_vvsc: RHS_Mi8mt_vvs
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_Mi8mt_vvsc.paa";
+		faction="rhs_faction_vvs_c";
+		author="$STR_RHS_AUTHOR_FULL";
 		rhs_decalParameters[]=
 		{
 			"['Number',cRHSAIRMI8NumberPlaces,'AviaRed']"
@@ -4191,6 +7195,9 @@ class CfgVehicles
 	};
 	class RHS_Mi8mt_vdv: RHS_Mi8mt_vvsc
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_Mi8mt_vdv.paa";
+		faction="rhs_faction_vdv";
+		author="$STR_RHS_AUTHOR_FULL";
 		hiddenselectionstextures[]=
 		{
 			"\rhsafrf\addons\rhs_a2port_air\Mi17\data\camo\mi8_body_g_camo2_co.paa",
@@ -4204,6 +7211,9 @@ class CfgVehicles
 	};
 	class RHS_Mi8mt_vv: RHS_Mi8mt_vdv
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_Mi8mt_vv.paa";
+		faction="rhs_faction_vv";
+		author="$STR_RHS_AUTHOR_FULL";
 		hiddenselectionstextures[]=
 		{
 			"\rhsafrf\addons\rhs_a2port_air\Mi17\data\camo\mi8_body_g_camo3_co.paa",
@@ -4217,27 +7227,93 @@ class CfgVehicles
 	};
 	class RHS_Mi8mt_Cargo_vvs: RHS_Mi8mt_vvs
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_Mi8mt_Cargo_vvs.paa";
 		displayName="$STR_RHS_MI8MT_CARGO_Name";
+		author="$STR_RHS_AUTHOR_FULL";
+		driverDoor="LeftDoor";
+		cargoDoors[]=
+		{
+			"LeftDoor"
+		};
 		transportsoldier=13;
+		cargoProxyIndexes[]={1,3,4,5,6,7,8,9,10,11,12,14,15};
+		getInProxyOrder[]={1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16};
 		class Turrets: Turrets
 		{
 			class CopilotTurret: CopilotTurret;  //found empty after stripping
+			class CargoTurret_01: CargoTurret
+			{
+				gunnerAction="passenger_inside_2";
+				gunnerGetInAction="GetInHeli_Transport_01Cargo";
+				gunnerGetOutAction="RHS_HIND_Cargo_Exit";
+				memoryPointsGetInGunner="pos cargo";
+				memoryPointsGetInGunnerDir="pos cargo dir";
+				gunnerName="Passenger (Right Rear Doors)";
+				gunnerCompartments="Compartment1";
+				proxyIndex=2;
+				maxElev=15;
+				minElev=-45;
+				maxTurn=-14;
+				minTurn=-85;
+				isPersonTurret=1;
+				gunnerUsesPilotView=1;
+				gunnerDoor="LeftDoor";
+				memorypointgunneroptics="";
+				selectionFireAnim="";
+				LODTurnedOut=1200;
+				LODTurnedIn=1200;
+				LODOpticsOut=1200;
+				LODOpticsIn=1200;
+				playerPosition=2;
+				soundAttenuationTurret="HeliAttenuationRamp";
+				disableSoundAttenuation=0;
+				weapons[]=
+				{
+					"rhs_weap_DummyLauncher"
+				};
+				enabledByAnimationSource="RearDoors";
+				class Hitpoints;  //found empty after stripping
+			};
 			class CargoTurret_02: CargoTurret_01
 			{
+				gunnerName="Passenger (Left Rear Doors)";
+				memoryPointsGetInGunner="pos driver";
+				memoryPointsGetInGunnerDir="pos driver dir";
 				proxyIndex=13;
 				maxTurn=85;
 				minTurn=15;
 			};
 			class CargoTurret_03: CargoTurret_01
 			{
+				gunnerName="Passenger (Left Door)";
+				memoryPointsGetInGunner="pos gunner";
+				memoryPointsGetInGunnerDir="pos gunner dir";
 				proxyIndex=16;
 				maxTurn=35;
 				minTurn=-8;
 				enabledByAnimationSource="LeftDoor";
 			};
 		};
+		class AnimationSources: AnimationSources
+		{
+			class LeftDoor
+			{
+				source="door";
+				animPeriod=0.80000001;
+				initPhase=1;
+			};
+			class hide_turrets: hide_turrets
+			{
+				initPhase=1;
+			};
+			class hide_door_hatch: hide_door_hatch
+			{
+				initPhase=0;
+			};
+		};
 		class Attributes: Attributes
 		{
+			class ObjectTexture: ObjectTexture;  //found empty after stripping
 			class rhs_decalNumber_type: rhs_decalNumber_type;  //found empty after stripping
 			class rhs_decalNumber: rhs_decalNumber;  //found empty after stripping
 			class rhs_decalTail: rhs_decalTail;  //found empty after stripping
@@ -4256,6 +7332,60 @@ class CfgVehicles
 				expression="_this animateDoor ['LeftDoor',_value,true]";
 			};
 		};
+		class UserActions
+		{
+			class openDoor
+			{
+				displayName="Open Rear Doors";
+				position="";
+				radius=3;
+				priority=11;
+				userActionID=55;
+				onlyForplayer=1;
+				showWindow=0;
+				condition="this doorPhase 'RearDoors' < 0.5 AND alive this";
+				statement="[this,13,14] call rhs_fnc_mi8_checkDoor";
+				shortcut="user12";
+			};
+			class closeDoor: openDoor
+			{
+				userActionID=56;
+				displayName="Close Rear Doors";
+				condition="this doorPhase 'RearDoors' > 0.5 AND alive this";
+			};
+			class openDoor_L: openDoor
+			{
+				userActionID=57;
+				displayName="Open Left Door";
+				condition="this doorPhase 'LeftDoor' < 0.5 AND alive this";
+				statement="this animateDoor ['LeftDoor',1]";
+				shortcut="";
+			};
+			class closeDoor_L: openDoor_L
+			{
+				userActionID=58;
+				displayName="Close Left Door";
+				condition="this doorPhase 'LeftDoor' > 0.5 AND alive this";
+				statement="this animateDoor ['LeftDoor',0]";
+			};
+			class ToggleLight
+			{
+				displayName="Toggle interior light";
+				position="pos driver";
+				radius=15;
+				showwindow=0;
+				condition="player in this;";
+				statement="[this,'cargolights_hide'] call rhs_fnc_toggleIntLight";
+				onlyforplayer=1;
+			};
+			class WheelBrakes: ToggleLight
+			{
+				displayName="Toggle Wheel Brakes";
+				shortcut="binocular";
+				condition="!difficultyEnabledRTD && (call rhs_fnc_findPlayer) isEqualTo (driver this)";
+				statement="[this] call rhs_fnc_heli_wheelBrakes";
+			};
+		};
 		class EventHandlers: EventHandlers
 		{
 			class RHS_EventHandlers: RHS_EventHandlers
@@ -4267,6 +7397,9 @@ class CfgVehicles
 	};
 	class RHS_Mi8mt_Cargo_vvsc: RHS_Mi8mt_Cargo_vvs
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_Mi8mt_Cargo_vvsc.paa";
+		faction="rhs_faction_vvs_c";
+		author="$STR_RHS_AUTHOR_FULL";
 		rhs_decalParameters[]=
 		{
 			"['Number',cRHSAIRMI8NumberPlaces,'AviaRed']"
@@ -4284,6 +7417,9 @@ class CfgVehicles
 	};
 	class RHS_Mi8mt_Cargo_vdv: RHS_Mi8mt_Cargo_vvsc
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_Mi8mt_Cargo_vdv.paa";
+		faction="rhs_faction_vdv";
+		author="$STR_RHS_AUTHOR_FULL";
 		hiddenselectionstextures[]=
 		{
 			"\rhsafrf\addons\rhs_a2port_air\Mi17\data\camo\mi8_body_g_camo2_co.paa",
@@ -4297,6 +7433,9 @@ class CfgVehicles
 	};
 	class RHS_Mi8mt_Cargo_vv: RHS_Mi8mt_Cargo_vvsc
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_Mi8mt_Cargo_vv.paa";
+		faction="rhs_faction_vv";
+		author="$STR_RHS_AUTHOR_FULL";
 		hiddenselectionstextures[]=
 		{
 			"\rhsafrf\addons\rhs_a2port_air\Mi17\data\camo\mi8_body_g_camo3_co.paa",
@@ -4310,10 +7449,16 @@ class CfgVehicles
 	};
 	class RHS_Mi8MTV3_vvs: RHS_Mi8MTV3_VVS_Base
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_Mi8MTV3_vvs.paa";
+		scope=2;
 		displayName="$STR_RHS_MI8MTV3_Name";
+		author="$STR_RHS_AUTHOR_FULL";
 	};
 	class RHS_Mi8MTV3_vvsc: RHS_Mi8MTV3_vvs
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_Mi8MTV3_vvsc.paa";
+		faction="rhs_faction_vvs_c";
+		author="$STR_RHS_AUTHOR_FULL";
 		rhs_decalParameters[]=
 		{
 			"['Number',cRHSAIRMI8NumberPlaces,'AviaRed']"
@@ -4331,6 +7476,9 @@ class CfgVehicles
 	};
 	class RHS_Mi8MTV3_vdv: RHS_Mi8MTV3_vvsc
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_Mi8MTV3_vdv.paa";
+		faction="rhs_faction_vdv";
+		author="$STR_RHS_AUTHOR_FULL";
 		hiddenselectionstextures[]=
 		{
 			"\rhsafrf\addons\rhs_a2port_air\Mi17\data\camo\mi8_body_g_camo2_co.paa",
@@ -4344,6 +7492,10 @@ class CfgVehicles
 	};
 	class RHS_Mi8MTV3_UPK23_vvs: RHS_Mi8MTV3_vvs
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_Mi8MTV3_UPK23_vvs.paa";
+		author="$STR_RHS_AUTHOR_FULL";
+		scope=1;
+		scopeCurator=2;
 		displayName="$STR_RHS_MI8MTV3_UPK_Name";
 		class Components: Components
 		{
@@ -4397,6 +7549,9 @@ class CfgVehicles
 	};
 	class RHS_Mi8MTV3_UPK23_vvsc: RHS_Mi8MTV3_UPK23_vvs
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_Mi8MTV3_UPK23_vvsc.paa";
+		faction="rhs_faction_vvs_c";
+		author="$STR_RHS_AUTHOR_FULL";
 		rhs_decalParameters[]=
 		{
 			"['Number',cRHSAIRMI8NumberPlaces,'AviaRed']"
@@ -4414,6 +7569,9 @@ class CfgVehicles
 	};
 	class RHS_Mi8MTV3_UPK23_vdv: RHS_Mi8MTV3_UPK23_vvsc
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_Mi8MTV3_UPK23_vdv.paa";
+		faction="rhs_faction_vdv";
+		author="$STR_RHS_AUTHOR_FULL";
 		hiddenselectionstextures[]=
 		{
 			"\rhsafrf\addons\rhs_a2port_air\Mi17\data\camo\mi8_body_g_camo2_co.paa",
@@ -4427,6 +7585,10 @@ class CfgVehicles
 	};
 	class RHS_Mi8MTV3_FAB_vvs: RHS_Mi8MTV3_vvs
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_Mi8MTV3_FAB_vvs.paa";
+		author="$STR_RHS_AUTHOR_FULL";
+		scope=1;
+		scopeCurator=2;
 		displayName="$STR_RHS_MI8MTV3_FAB_Name";
 		class Components: Components
 		{
@@ -4459,6 +7621,9 @@ class CfgVehicles
 	};
 	class RHS_Mi8MTV3_FAB_vvsc: RHS_Mi8MTV3_FAB_vvs
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_Mi8MTV3_FAB_vvsc.paa";
+		faction="rhs_faction_vvs_c";
+		author="$STR_RHS_AUTHOR_FULL";
 		rhs_decalParameters[]=
 		{
 			"['Number',cRHSAIRMI8NumberPlaces,'AviaRed']"
@@ -4476,6 +7641,9 @@ class CfgVehicles
 	};
 	class RHS_Mi8MTV3_FAB_vdv: RHS_Mi8MTV3_FAB_vvsc
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_Mi8MTV3_FAB_vdv.paa";
+		faction="rhs_faction_vdv";
+		author="$STR_RHS_AUTHOR_FULL";
 		hiddenselectionstextures[]=
 		{
 			"\rhsafrf\addons\rhs_a2port_air\Mi17\data\camo\mi8_body_g_camo2_co.paa",
@@ -4489,28 +7657,94 @@ class CfgVehicles
 	};
 	class RHS_Mi8mtv3_Cargo_vvs: RHS_Mi8MTV3_vvs
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\RHS_Mi8mtv3_Cargo_vvs.paa";
 		displayName="$STR_RHS_Mi8mtv3_CARGO_Name";
+		author="$STR_RHS_AUTHOR_FULL";
+		driverDoor="LeftDoor";
+		cargoDoors[]=
+		{
+			"LeftDoor"
+		};
 		transportsoldier=12;
+		cargoProxyIndexes[]={1,2,4,5,6,7,8,9,10,11,13,15};
+		getInProxyOrder[]={1,2,3,4,5,6,7,8,9,10,11,12,13,14,16};
 		class Turrets: Turrets
 		{
 			class CopilotTurret: CopilotTurret;  //found empty after stripping
 			class FrontTurret: FrontTurret;  //found empty after stripping
+			class CargoTurret_01: CargoTurret
+			{
+				gunnerAction="passenger_inside_2";
+				gunnerGetInAction="GetInHeli_Transport_01Cargo";
+				gunnerGetOutAction="RHS_HIND_Cargo_Exit";
+				memoryPointsGetInGunner="pos cargo";
+				memoryPointsGetInGunnerDir="pos cargo dir";
+				gunnerName="Passenger (Right Rear Doors)";
+				gunnerCompartments="Compartment1";
+				proxyIndex=3;
+				maxElev=15;
+				minElev=-45;
+				maxTurn=-14;
+				minTurn=-85;
+				isPersonTurret=1;
+				gunnerUsesPilotView=1;
+				gunnerDoor="LeftDoor";
+				memorypointgunneroptics="";
+				selectionFireAnim="";
+				LODTurnedOut=1200;
+				LODTurnedIn=1200;
+				LODOpticsOut=1200;
+				LODOpticsIn=1200;
+				playerPosition=3;
+				soundAttenuationTurret="HeliAttenuationRamp";
+				disableSoundAttenuation=0;
+				weapons[]=
+				{
+					"rhs_weap_DummyLauncher"
+				};
+				enabledByAnimationSource="RearDoors";
+				class Hitpoints;  //found empty after stripping
+			};
 			class CargoTurret_02: CargoTurret_01
 			{
+				gunnerName="Passenger (Left Rear Doors)";
+				memoryPointsGetInGunner="pos driver";
+				memoryPointsGetInGunnerDir="pos driver dir";
 				proxyIndex=12;
 				maxTurn=85;
 				minTurn=15;
 			};
 			class CargoTurret_03: CargoTurret_01
 			{
+				gunnerName="Passenger (Left Door)";
+				memoryPointsGetInGunner="pos gunner";
+				memoryPointsGetInGunnerDir="pos gunner dir";
 				proxyIndex=16;
 				maxTurn=35;
 				minTurn=-8;
 				enabledByAnimationSource="LeftDoor";
 			};
 		};
+		class AnimationSources: AnimationSources
+		{
+			class LeftDoor
+			{
+				source="door";
+				animPeriod=0.80000001;
+				initPhase=1;
+			};
+			class hide_turrets: hide_turrets
+			{
+				initPhase=1;
+			};
+			class hide_door_hatch: hide_door_hatch
+			{
+				initPhase=0;
+			};
+		};
 		class Attributes: Attributes
 		{
+			class ObjectTexture: ObjectTexture;  //found empty after stripping
 			class rhs_decalNumber_type: rhs_decalNumber_type;  //found empty after stripping
 			class rhs_decalNumber: rhs_decalNumber;  //found empty after stripping
 			class rhs_decalTail: rhs_decalTail;  //found empty after stripping
@@ -4529,6 +7763,80 @@ class CfgVehicles
 				expression="_this animateDoor ['LeftDoor',_value,true]";
 			};
 		};
+		class UserActions
+		{
+			class HUDoff
+			{
+				condition="(player==driver this) and (this animationphase 'HUDAction' !=0)";
+				displayname="$STR_RHS_MI17HudOn_Name";
+				displaynamedefault="$STR_RHS_MI17HudOn_Name";
+				onlyforplayer=1;
+				position="zamerny";
+				radius=1;
+				statement="this animate ['HUDAction',0];this animate ['HUDaction_Hide',0]";
+			};
+			class HUDon
+			{
+				condition="(player==driver this) and (this animationphase 'HUDAction' !=1)";
+				displayname="$STR_RHS_MI17HudOff_Name";
+				displaynamedefault="$STR_RHS_MI17HudOff_Name";
+				onlyforplayer=1;
+				position="zamerny";
+				radius=1;
+				statement="this animate ['HUDAction',1];this animate ['HUDaction_Hide',1]";
+			};
+			class openDoor
+			{
+				displayName="Open Rear Doors";
+				position="";
+				radius=3;
+				priority=11;
+				userActionID=55;
+				onlyForplayer=1;
+				showWindow=0;
+				condition="this doorPhase 'RearDoors' < 0.5 AND alive this";
+				statement="[this,12,14] call rhs_fnc_mi8_checkDoor";
+				shortcut="user12";
+			};
+			class closeDoor: openDoor
+			{
+				userActionID=56;
+				displayName="Close Rear Doors";
+				condition="this doorPhase 'RearDoors' > 0.5 AND alive this";
+			};
+			class openDoor_L: openDoor
+			{
+				userActionID=57;
+				displayName="Open Left Door";
+				condition="this doorPhase 'LeftDoor' < 0.5 AND alive this";
+				statement="this animateDoor ['LeftDoor',1]";
+				shortcut="";
+			};
+			class closeDoor_L: openDoor_L
+			{
+				userActionID=58;
+				displayName="Close Left Door";
+				condition="this doorPhase 'LeftDoor' > 0.5 AND alive this";
+				statement="this animateDoor ['LeftDoor',0]";
+			};
+			class ToggleLight
+			{
+				displayName="Toggle interior light";
+				position="pos driver";
+				radius=15;
+				showwindow=0;
+				condition="player in this;";
+				statement="[this,'cargolights_hide'] call rhs_fnc_toggleIntLight";
+				onlyforplayer=1;
+			};
+			class WheelBrakes: ToggleLight
+			{
+				displayName="Toggle Wheel Brakes";
+				shortcut="binocular";
+				condition="!difficultyEnabledRTD && (call rhs_fnc_findPlayer) isEqualTo (driver this)";
+				statement="[this] call rhs_fnc_heli_wheelBrakes";
+			};
+		};
 		class EventHandlers: EventHandlers
 		{
 			class RHS_EventHandlers: RHS_EventHandlers
@@ -4540,6 +7848,9 @@ class CfgVehicles
 	};
 	class RHS_Mi8mtv3_Cargo_vvsc: RHS_Mi8mtv3_Cargo_vvs
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\RHS_Mi8mtv3_Cargo_vvsc.paa";
+		faction="rhs_faction_vvs_c";
+		author="$STR_RHS_AUTHOR_FULL";
 		rhs_decalParameters[]=
 		{
 			"['Number',cRHSAIRMI8NumberPlaces,'AviaRed']"
@@ -4557,6 +7868,9 @@ class CfgVehicles
 	};
 	class RHS_Mi8mtv3_Cargo_vdv: RHS_Mi8mtv3_Cargo_vvsc
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\RHS_Mi8mtv3_Cargo_vdv.paa";
+		faction="rhs_faction_vdv";
+		author="$STR_RHS_AUTHOR_FULL";
 		hiddenselectionstextures[]=
 		{
 			"\rhsafrf\addons\rhs_a2port_air\Mi17\data\camo\mi8_body_g_camo2_co.paa",
@@ -4568,9 +7882,17 @@ class CfgVehicles
 			"rhsafrf\addons\rhs_decals\data\labels\aviation\vvs_ca.paa"
 		};
 	};
-	class RHS_Mi8MTV3_heavy_vvs: RHS_Mi8MTV3_Heavy_VVS_Base;  //found empty after stripping
+	class RHS_Mi8MTV3_heavy_vvs: RHS_Mi8MTV3_Heavy_VVS_Base
+	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_Mi8MTV3_heavy_vvs.paa";
+		scope=2;
+		author="$STR_RHS_AUTHOR_FULL";
+	};
 	class RHS_Mi8MTV3_heavy_vvsc: RHS_Mi8MTV3_heavy_vvs
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_Mi8MTV3_heavy_vvsc.paa";
+		faction="rhs_faction_vvs_c";
+		author="$STR_RHS_AUTHOR_FULL";
 		rhs_decalParameters[]=
 		{
 			"['Number',cRHSAIRMI8NumberPlaces,'AviaRed']"
@@ -4588,6 +7910,9 @@ class CfgVehicles
 	};
 	class RHS_Mi8MTV3_heavy_vdv: RHS_Mi8MTV3_heavy_vvsc
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_Mi8MTV3_heavy_vdv.paa";
+		faction="rhs_faction_vdv";
+		author="$STR_RHS_AUTHOR_FULL";
 		hiddenselectionstextures[]=
 		{
 			"\rhsafrf\addons\rhs_a2port_air\Mi17\data\camo\mi8_body_g_camo2_co.paa",
@@ -4601,10 +7926,16 @@ class CfgVehicles
 	};
 	class RHS_Mi8T_vvs: RHS_Mi8T_VVS_Base
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_Mi8t_vvs.paa";
+		scope=2;
 		displayName="$STR_RHS_Mi8T_Name";
+		author="$STR_RHS_AUTHOR_FULL";
 	};
 	class RHS_Mi8T_vvsc: RHS_Mi8T_vvs
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_Mi8T_vvsc.paa";
+		faction="rhs_faction_vvs_c";
+		author="$STR_RHS_AUTHOR_FULL";
 		rhs_decalParameters[]=
 		{
 			"['Number',cRHSAIRMI8NumberPlaces,'AviaRed']"
@@ -4622,6 +7953,9 @@ class CfgVehicles
 	};
 	class RHS_Mi8T_vdv: RHS_Mi8T_vvsc
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_Mi8T_vdv.paa";
+		faction="rhs_faction_vdv";
+		author="$STR_RHS_AUTHOR_FULL";
 		hiddenselectionstextures[]=
 		{
 			"\rhsafrf\addons\rhs_a2port_air\Mi17\data\camo\mi8_body_g_camo2_co.paa",
@@ -4632,9 +7966,19 @@ class CfgVehicles
 			"a3\data_f\clear_empty.paa",
 			"rhsafrf\addons\rhs_decals\data\labels\aviation\vvs_ca.paa"
 		};
+		class AnimationSources: AnimationSources
+		{
+			class antennas_switch: antennas_switch
+			{
+				initPhase=1;
+			};
+		};
 	};
 	class RHS_Mi8t_vv: RHS_Mi8T_vvs
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_Mi8t_vv.paa";
+		faction="rhs_faction_vv";
+		author="$STR_RHS_AUTHOR_FULL";
 		hiddenselectionstextures[]=
 		{
 			"\rhsafrf\addons\rhs_a2port_air\Mi17\data\camo\mi8_body_g_camo3_co.paa",
@@ -4645,13 +7989,26 @@ class CfgVehicles
 			"a3\data_f\clear_empty.paa",
 			"rhsafrf\addons\rhs_decals\data\labels\aviation\vvs_ca.paa"
 		};
+		class AnimationSources: AnimationSources
+		{
+			class hide_antenna_aft: hide_antenna_aft
+			{
+				initphase=0;
+			};
+		};
 	};
 	class RHS_Mi8AMT_vvs: RHS_Mi8AMT_VVS_Base
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_Mi8AMT_vvs.paa";
+		scope=2;
 		displayName="$STR_RHS_Mi8AMT_Name";
+		author="$STR_RHS_AUTHOR_FULL";
 	};
 	class RHS_Mi8AMT_vvsc: RHS_Mi8AMT_vvs
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_Mi8AMT_vvsc.paa";
+		faction="rhs_faction_vvs_c";
+		author="$STR_RHS_AUTHOR_FULL";
 		rhs_decalParameters[]=
 		{
 			"['Number',cRHSAIRMI8NumberPlaces,'AviaRed']"
@@ -4669,6 +8026,9 @@ class CfgVehicles
 	};
 	class RHS_Mi8AMT_vdv: RHS_Mi8AMT_vvsc
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_Mi8AMT_vdv.paa";
+		faction="rhs_faction_vdv";
+		author="$STR_RHS_AUTHOR_FULL";
 		hiddenselectionstextures[]=
 		{
 			"\rhsafrf\addons\rhs_a2port_air\Mi17\data\camo\mi8_body_g_camo2_co.paa",
@@ -4682,11 +8042,18 @@ class CfgVehicles
 	};
 	class RHS_Mi8AMTSh_vvs: RHS_Mi8AMTSh_VVS_Base
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_Mi8AMTSh_vvs.paa";
+		scope=2;
 		displayName="$STR_RHS_MI8AMTSh_Name";
+		author="$STR_RHS_AUTHOR_FULL";
 	};
 	class RHS_Mi8AMTSh_vvsc: RHS_Mi8AMTSh_vvs
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_Mi8AMTSh_vvsc.paa";
+		faction="rhs_faction_vvs_c";
+		scope=2;
 		displayName="$STR_RHS_MI8AMTSh_Name";
+		author="$STR_RHS_AUTHOR_FULL";
 		rhs_decalParameters[]=
 		{
 			"['Number',cRHSAIRMI8NumberPlaces,'AviaRed']"
@@ -4704,7 +8071,11 @@ class CfgVehicles
 	};
 	class RHS_Mi8AMTSh_UPK23_vvs: RHS_Mi8AMTSh_vvs
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_Mi8AMTSh_UPK23_vvs.paa";
 		displayName="$STR_RHS_MI8AMTSh_UPK_Name";
+		author="$STR_RHS_AUTHOR_FULL";
+		scope=1;
+		scopeCurator=2;
 		class Components: Components
 		{
 			class TransportPylonsComponent: TransportPylonsComponent
@@ -4763,6 +8134,9 @@ class CfgVehicles
 	};
 	class RHS_Mi8AMTSh_UPK23_vvsc: RHS_Mi8AMTSh_UPK23_vvs
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_Mi8AMTSh_UPK23_vvsc.paa";
+		faction="rhs_faction_vvs_c";
+		author="$STR_RHS_AUTHOR_FULL";
 		rhs_decalParameters[]=
 		{
 			"['Number',cRHSAIRMI8NumberPlaces,'AviaRed']"
@@ -4780,7 +8154,11 @@ class CfgVehicles
 	};
 	class RHS_Mi8AMTSh_FAB_vvs: RHS_Mi8AMTSh_vvs
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_Mi8AMTSh_FAB_vvs.paa";
 		displayName="$STR_RHS_MI8AMTSh_FAB_Name";
+		author="$STR_RHS_AUTHOR_FULL";
+		scope=1;
+		scopeCurator=2;
 		class Components: Components
 		{
 			class TransportPylonsComponent: TransportPylonsComponent
@@ -4818,6 +8196,9 @@ class CfgVehicles
 	};
 	class RHS_Mi8AMTSh_FAB_vvsc: RHS_Mi8AMTSh_FAB_vvs
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_Mi8AMTSh_FAB_vvsc.paa";
+		faction="rhs_faction_vvs_c";
+		author="$STR_RHS_AUTHOR_FULL";
 		rhs_decalParameters[]=
 		{
 			"['Number',cRHSAIRMI8NumberPlaces,'AviaRed']"
@@ -4835,9 +8216,16 @@ class CfgVehicles
 	};
 	class RHS_Mi8amt_civilian: RHS_Mi8AMT_vvs
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_Mi8amt_civilian.paa";
+		scope=2;
 		displayName="$STR_RHS_MI8AMT_Name";
+		author="$STR_RHS_AUTHOR_FULL";
 		rhs_decalParameters[]={};
+		vehicleClass="Air";
+		editorSubcategory="rhs_EdSubcat_helicopter";
 		side=3;
+		faction="CIV_F";
+		crew="C_man_1_1_F";
 		hiddenselectionstextures[]=
 		{
 			"\rhsafrf\addons\rhs_a2port_air\Mi17\data\mi8civil_body_g_co.paa",
@@ -4849,6 +8237,13 @@ class CfgVehicles
 			"a3\data_f\clear_empty.paa"
 		};
 		class EventHandlers: EventHandlers;  //found empty after stripping
+		class AnimationSources: AnimationSources
+		{
+			class intake_hide: intake_hide
+			{
+				initPhase=1;
+			};
+		};
 		class Components: Components
 		{
 			class TransportPylonsComponent: TransportPylonsComponent
@@ -4865,9 +8260,16 @@ class CfgVehicles
 	};
 	class RHS_Mi8t_civilian: RHS_Mi8T_vvs
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_Mi8t_civilian.paa";
+		scope=2;
 		displayName="$STR_RHS_MI8T_Name";
+		author="$STR_RHS_AUTHOR_FULL";
 		rhs_decalParameters[]={};
+		vehicleClass="Air";
+		editorSubcategory="rhs_EdSubcat_helicopter";
 		side=3;
+		faction="CIV_F";
+		crew="C_man_1_1_F";
 		hiddenselectionstextures[]=
 		{
 			"\rhsafrf\addons\rhs_a2port_air\Mi17\data\mi8civil_body_g_co.paa",
@@ -4879,6 +8281,13 @@ class CfgVehicles
 			"a3\data_f\clear_empty.paa"
 		};
 		class EventHandlers: EventHandlers;  //found empty after stripping
+		class AnimationSources: AnimationSources
+		{
+			class antennas_switch: antennas_switch
+			{
+				initPhase=1;
+			};
+		};
 		class Components: Components
 		{
 			class TransportPylonsComponent: TransportPylonsComponent
@@ -4895,6 +8304,7 @@ class CfgVehicles
 	};
 	class RHS_su25_base: O_Plane_CAS_02_F
 	{
+		dlc="RHS_AFRF";
 		rhs_decalParameters[]=
 		{
 			"['Number',cRHSAIRSU25NumberPlaces,'AviaRed']",
@@ -4903,30 +8313,44 @@ class CfgVehicles
 		};
 		irTarget=1;
 		irTargetSize=1;
+		visualTarget=1;
+		visualTargetSize=0.89999998;
 		radarTarget=1;
 		radarTargetSize=1;
 		LESH_canBeTowed=1;
 		LESH_towFromFront=1;
 		LESH_AxisOffsetTarget[]={0,6.8000002,-2.04};
 		LESH_WheelOffset[]={0,-0.69999999};
+		category="Air";
+		crew="rhs_pilot";
 		typicalCargo[]=
 		{
 			"rhs_pilot"
 		};
+		scope=0;
 		availableForSupportTypes[]=
 		{
 			"CAS_Bombing"
 		};
+		model="\rhsafrf\addons\rhs_a2port_air\su25\su25";
+		picture="\rhsafrf\addons\rhs_a2port_air\data\ico\rhs_su25sm_pic_ca.paa";
 		icon="\rhsafrf\addons\rhs_a2port_air\data\map_ico\icomap_su25.paa";
+		mapSize=20;
+		textSingular="Su25";
 		displayname="$STR_RHS_SU25_Name";
+		driverAction="rhs_su25_pilot";
+		driverLeftHandAnimName="lever_pilot";
+		driverRightHandAnimName="stick_pilot";
 		driverLeftLegAnimName="pedal_L";
 		driverRightLegAnimName="pedal_R";
 		memoryPointsGetInDriver="pos driver";
 		memoryPointsGetInDriverDir="pos driver dir";
 		memoryPointsGetInDriverPrecise="pos driver";
+		unitInfoType="RHS_RscUnitInfoAir_Su25";
 		driverWeaponsInfoType="RHS_RscOptics_Su25_KlenPS";
 		HeadAimDown=6;
 		headGforceLeaningFactor[]={0.0049999999,0.001,0.015};
+		camShakeCoef=0.69999999;
 		driverCanSee="2+4+8+16";
 		allowTabLock=0;
 		driverCanEject=1;
@@ -4940,6 +8364,7 @@ class CfgVehicles
 			{
 				class Wide
 				{
+					opticsDisplayName="WFOV";
 					initAngleX=0;
 					minAngleX=0;
 					maxAngleX=0;
@@ -4954,6 +8379,7 @@ class CfgVehicles
 					{
 						"Normal"
 					};
+					gunneropticsmodel="";
 					opticsPPEffects[]=
 					{
 						"OpticsCHAbera2",
@@ -5040,6 +8466,7 @@ class CfgVehicles
 				radius=0.15000001;
 				material=-1;
 				name="hit_hull";
+				visual="-";
 				depends="Total";
 			};
 			class HitAvionics
@@ -5051,6 +8478,7 @@ class CfgVehicles
 				radius=0.079999998;
 				material=-1;
 				name="hit_avionics";
+				visual="vis_avionics";
 				depends="0";
 			};
 			class HitEngine
@@ -5062,6 +8490,7 @@ class CfgVehicles
 				radius=0.07;
 				material=-1;
 				name="hit_engine_l";
+				visual="vis_engine_l";
 				depends="0";
 			};
 			class HitEngine2
@@ -5073,6 +8502,7 @@ class CfgVehicles
 				radius=0.07;
 				material=-1;
 				name="hit_engine_r";
+				visual="vis_engine_r";
 				depends="0";
 			};
 			class HitFuel
@@ -5084,6 +8514,7 @@ class CfgVehicles
 				radius=0.1;
 				material=-1;
 				name="hit_fuel";
+				visual="vis_fuel";
 				depends="0";
 			};
 			class HitFuel_left
@@ -5095,6 +8526,7 @@ class CfgVehicles
 				radius=0.1;
 				material=-1;
 				name="hit_fuel_wing_l";
+				visual="vis_wing_l";
 				depends="0";
 			};
 			class HitFuel_right
@@ -5106,6 +8538,7 @@ class CfgVehicles
 				radius=0.1;
 				material=-1;
 				name="hit_fuel_wing_r";
+				visual="vis_wing_r";
 				depends="0";
 			};
 			class HitFuel2
@@ -5117,6 +8550,7 @@ class CfgVehicles
 				radius=0.0099999998;
 				material=-1;
 				name="hit_fuel";
+				visual="ind_fuel_r";
 				depends="(HitFuel_left+HitFuel_right)*0.5";
 			};
 			class HitLAileron_link
@@ -5128,6 +8562,7 @@ class CfgVehicles
 				radius=0.12;
 				material=-1;
 				name="hit_aileron_link_l";
+				visual="-";
 				depends="0";
 			};
 			class HitRAileron_link
@@ -5139,6 +8574,7 @@ class CfgVehicles
 				radius=0.12;
 				material=-1;
 				name="hit_aileron_link_r";
+				visual="-";
 				depends="0";
 			};
 			class HitLAileron
@@ -5150,6 +8586,7 @@ class CfgVehicles
 				radius=0.13;
 				material=-1;
 				name="hit_aileron_l";
+				visual="vis_wing_l";
 				depends="HitLAileron_link*0.7";
 			};
 			class HitRAileron
@@ -5161,6 +8598,7 @@ class CfgVehicles
 				radius=0.13;
 				material=-1;
 				name="hit_aileron_r";
+				visual="vis_wing_r";
 				depends="HitRAileron_link*0.7";
 			};
 			class HitControlRear
@@ -5172,6 +8610,7 @@ class CfgVehicles
 				radius=0.039999999;
 				material=-1;
 				name="hit_control_rear";
+				visual="-";
 				depends="0";
 			};
 			class HitLCElevator
@@ -5183,6 +8622,7 @@ class CfgVehicles
 				radius=0.12;
 				material=-1;
 				name="hit_elevator_l";
+				visual="vis_elevator_l";
 				depends="HitControlRear";
 			};
 			class HitRElevator
@@ -5194,6 +8634,7 @@ class CfgVehicles
 				radius=0.12;
 				material=-1;
 				name="hit_elevator_r";
+				visual="vis_elevator_r";
 				depends="HitControlRear";
 			};
 			class HitLCRudder
@@ -5205,6 +8646,7 @@ class CfgVehicles
 				radius=0.12;
 				material=-1;
 				name="hit_rudder";
+				visual="vis_rudder";
 				depends="HitControlRear";
 			};
 			class HitGlass1
@@ -5216,6 +8658,7 @@ class CfgVehicles
 				radius=0.30000001;
 				material=-1;
 				name="glass1";
+				visual="glass1";
 				depends="0";
 			};
 			class HitGlass2
@@ -5227,6 +8670,7 @@ class CfgVehicles
 				radius=0.30000001;
 				material=-1;
 				name="glass2";
+				visual="glass2";
 				depends="0";
 			};
 			class Ind_Fire1
@@ -5238,6 +8682,7 @@ class CfgVehicles
 				radius=0.0099999998;
 				material=-1;
 				name="hit_fuel";
+				visual="ind_fire";
 				depends="HitEngine*0.5";
 			};
 			class Ind_Fire2
@@ -5249,6 +8694,7 @@ class CfgVehicles
 				radius=0.0099999998;
 				material=-1;
 				name="hit_fuel";
+				visual="ind_fire";
 				depends="HitEngine2*0.5";
 			};
 			class Ind_Hydr_L
@@ -5260,6 +8706,7 @@ class CfgVehicles
 				radius=0.0099999998;
 				material=-1;
 				name="hit_fuel";
+				visual="ind_hydr_l";
 				depends="(HitLAileron+HitLCElevator+HitLCRudder)*0.5";
 			};
 			class Ind_Hydr_R
@@ -5271,6 +8718,7 @@ class CfgVehicles
 				radius=0.0099999998;
 				material=-1;
 				name="hit_fuel";
+				visual="ind_hydr_r";
 				depends="(HitRAileron+HitRElevator)*0.5";
 			};
 			class HitPylon1
@@ -5282,6 +8730,47 @@ class CfgVehicles
 				minimalHit=0.80000001;
 				explosionShielding=0.1;
 				radius=0.75;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					class RHS_Pylon_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_pylon_1";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_Pylon_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_pylon_1";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_Pylon_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_pylon_1";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_Pylon_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_pylon_1";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class HitPylon2
 			{
@@ -5292,6 +8781,47 @@ class CfgVehicles
 				minimalHit=0.80000001;
 				explosionShielding=0.1;
 				radius=0.75;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					class RHS_Pylon_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_pylon_2";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_Pylon_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_pylon_2";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_Pylon_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_pylon_2";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_Pylon_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_pylon_2";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class HitPylon3
 			{
@@ -5302,6 +8832,47 @@ class CfgVehicles
 				minimalHit=0.80000001;
 				explosionShielding=0.1;
 				radius=0.75;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					class RHS_Pylon_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_pylon_3";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_Pylon_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_pylon_3";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_Pylon_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_pylon_3";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_Pylon_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_pylon_3";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class HitPylon4
 			{
@@ -5312,6 +8883,47 @@ class CfgVehicles
 				minimalHit=0.80000001;
 				explosionShielding=0.1;
 				radius=0.75;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					class RHS_Pylon_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_pylon_4";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_Pylon_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_pylon_4";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_Pylon_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_pylon_4";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_Pylon_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_pylon_4";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class HitPylon5
 			{
@@ -5322,6 +8934,47 @@ class CfgVehicles
 				minimalHit=0.80000001;
 				explosionShielding=0.1;
 				radius=0.75;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					class RHS_Pylon_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_pylon_5";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_Pylon_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_pylon_5";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_Pylon_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_pylon_5";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_Pylon_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_pylon_5";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class HitPylon6
 			{
@@ -5332,6 +8985,47 @@ class CfgVehicles
 				minimalHit=0.80000001;
 				explosionShielding=0.1;
 				radius=0.75;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					class RHS_Pylon_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_pylon_6";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_Pylon_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_pylon_6";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_Pylon_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_pylon_6";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_Pylon_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_pylon_6";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class HitPylon7
 			{
@@ -5342,6 +9036,47 @@ class CfgVehicles
 				minimalHit=0.80000001;
 				explosionShielding=0.1;
 				radius=0.75;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					class RHS_Pylon_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_pylon_7";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_Pylon_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_pylon_7";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_Pylon_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_pylon_7";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_Pylon_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_pylon_7";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class HitPylon8
 			{
@@ -5352,6 +9087,47 @@ class CfgVehicles
 				minimalHit=0.80000001;
 				explosionShielding=0.1;
 				radius=0.75;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					class RHS_Pylon_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_pylon_8";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_Pylon_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_pylon_8";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_Pylon_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_pylon_8";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_Pylon_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_pylon_8";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class HitPylon9
 			{
@@ -5362,6 +9138,47 @@ class CfgVehicles
 				minimalHit=0.80000001;
 				explosionShielding=0.1;
 				radius=0.75;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					class RHS_Pylon_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_pylon_9";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_Pylon_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_pylon_9";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_Pylon_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_pylon_9";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_Pylon_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_pylon_9";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class HitPylon10
 			{
@@ -5372,8 +9189,50 @@ class CfgVehicles
 				minimalHit=0.80000001;
 				explosionShielding=0.1;
 				radius=0.75;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					class RHS_Pylon_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_pylon_10";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_Pylon_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_pylon_10";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_Pylon_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_pylon_10";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_Pylon_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_pylon_10";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 		};
+		vehicleClass="rhs_vehclass_aircraft";
 		incomingMissileDetectionSystem=8;
 		lockDetectionSystem=8;
 		hiddenselections[]=
@@ -5401,6 +9260,12 @@ class CfgVehicles
 			class standard
 			{
 				displayName="Blue";
+				author="$STR_RHS_AUTHOR_FULL";
+				textures[]=
+				{
+					"\rhsafrf\addons\rhs_a2port_air\su25\data\su25_body1_alt_co.paa",
+					"\rhsafrf\addons\rhs_a2port_air\su25\data\su25_body2_alt_co.paa"
+				};
 				factions[]=
 				{
 					"rhs_faction_vvs"
@@ -5409,10 +9274,22 @@ class CfgVehicles
 			class standard2: standard
 			{
 				displayName="Grey";
+				author="$STR_RHS_AUTHOR_FULL";
+				textures[]=
+				{
+					"\rhsafrf\addons\rhs_a2port_air\su25\data\su25_body1_co.paa",
+					"\rhsafrf\addons\rhs_a2port_air\su25\data\su25_body2_co.paa"
+				};
 			};
 			class Camo: standard
 			{
 				displayName="Camo #1";
+				author="$STR_RHS_AUTHOR_FULL";
+				textures[]=
+				{
+					"\rhsafrf\addons\rhs_a2port_air\su25\data\su25_body1_rus_co.paa",
+					"\rhsafrf\addons\rhs_a2port_air\su25\data\su25_body2_rus_co.paa"
+				};
 				factions[]=
 				{
 					"rhs_faction_vvs_c"
@@ -5421,12 +9298,25 @@ class CfgVehicles
 			class Camo1: Camo
 			{
 				displayName="Camo #2";
+				author="$STR_RHS_AUTHOR_FULL";
+				textures[]=
+				{
+					"\rhsafrf\addons\rhs_a2port_air\su25\data\camo\su25_body1_camo1_co.paa",
+					"\rhsafrf\addons\rhs_a2port_air\su25\data\camo\su25_body2_camo1_co.paa"
+				};
 			};
 			class Camo2: standard
 			{
 				displayName="CDF";
+				author="$STR_RHS_AUTHOR_FULL";
+				textures[]=
+				{
+					"\rhsafrf\addons\rhs_a2port_air\su25\data\su25_body1_cdf_co.paa",
+					"\rhsafrf\addons\rhs_a2port_air\su25\data\su25_body2_cdf_co.paa"
+				};
 			};
 		};
+		textureList[]={};
 		class Components
 		{
 			class TransportPylonsComponent
@@ -5453,6 +9343,7 @@ class CfgVehicles
 							"RHS_HP_UB32",
 							"RHS_HP_R73"
 						};
+						priority=9;
 						attachment="rhs_mag_fab250";
 						hitpoint="HitPylon1";
 						maxweight=1200;
@@ -5483,6 +9374,7 @@ class CfgVehicles
 							"RHS_HP_UB32",
 							"RHS_HP_R73"
 						};
+						priority=7;
 						hitpoint="HitPylon3";
 						UIposition[]={0.33000001,0.40000001};
 					};
@@ -5511,6 +9403,7 @@ class CfgVehicles
 							"RHS_HP_UB32",
 							"RHS_HP_R73"
 						};
+						priority=10;
 						attachment="rhs_mag_b8m1_s8kom";
 						hitpoint="HitPylon5";
 						maxweight=1200;
@@ -5540,6 +9433,7 @@ class CfgVehicles
 							"RHS_HP_UB32",
 							"RHS_HP_R73"
 						};
+						priority=11;
 						attachment="rhs_mag_b8m1_s8df";
 						hitpoint="HitPylon7";
 						maxweight=1200;
@@ -5557,6 +9451,7 @@ class CfgVehicles
 						{
 							"RHS_HP_R60"
 						};
+						priority=12;
 						attachment="rhs_mag_R60M";
 						hitpoint="HitPylon9";
 						maxweight=1200;
@@ -5576,6 +9471,7 @@ class CfgVehicles
 							"RHS_cm_ASO2_x2",
 							"RHS_cm_ASO2_x4"
 						};
+						priority=1;
 						attachment="rhs_ASO2_CMFlare_Chaff_Magazine_x4";
 						maxweight=800;
 						UIposition[]={0.625,0.27500001};
@@ -5776,6 +9672,13 @@ class CfgVehicles
 		};
 		class Attributes
 		{
+			class ObjectTexture
+			{
+				control="ObjectTexture";
+				data="ObjectTexture";
+				displayName="Skin";
+				tooltip="Texture and material set applied on the object.";
+			};
 			class rhs_decalNumber_type
 			{
 				displayName="Define font type of side number";
@@ -5784,6 +9687,7 @@ class CfgVehicles
 				control="Combo";
 				expression="if(_value != 'NoChange')then{ _this setVariable ['%s', _value];[_this,[['Number', cRHSAIRSU25NumberPlaces, _value]]] call rhs_fnc_decalsInit}";
 				defaultValue=0;
+				typeName="STRING";
 				class values
 				{
 					class NoChange
@@ -5862,6 +9766,7 @@ class CfgVehicles
 				control="Edit";
 				validate="Number";
 				defaultValue="-1";
+				typeName="Number";
 				expression="if(_value >= 0)then{if(_value == 0)then{{[_this setobjectTexture [_x,'a3\data_f\clear_empty.paa']]}foreach cRHSAIRSU25NumberPlaces}else{[_this, [['Number', cRHSAIRSU25NumberPlaces, _this getVariable ['rhs_decalNumber_type','AviaYellow'], _value] ] ] call rhs_fnc_decalsInit}};";
 			};
 			class rhs_decalNoseArt
@@ -5872,6 +9777,7 @@ class CfgVehicles
 				control="Combo";
 				expression="if(_value >= 0)then{ [_this, [ [ 'Label', cRHSAIRSU25NosePlaces, 'Su25NoseArt',_value] ] ] call rhs_fnc_decalsInit};";
 				defaultValue="-1";
+				typeName="Number";
 				class values
 				{
 					class Random
@@ -5946,6 +9852,7 @@ class CfgVehicles
 				control="Combo";
 				expression="[_this,[['Label', cRHSAIRSU25TailPlaces, 'Aviation',_value]]] call rhs_fnc_decalsInit";
 				defaultValue=-1;
+				typeName="Number";
 				class values
 				{
 					class Default
@@ -5984,6 +9891,21 @@ class CfgVehicles
 				engineIndex=1;
 			};
 		};
+		class RenderTargets
+		{
+			class Periscope
+			{
+				renderTarget="rendertarget0";
+				class CameraView1
+				{
+					pointPosition="PIP0_pos";
+					pointDirection="PIP0_dir";
+					renderVisionMode=0;
+					renderQuality=2;
+					fov=0.5;
+				};
+			};
+		};
 		class compartmentsLights
 		{
 			class Comp1
@@ -6011,6 +9933,67 @@ class CfgVehicles
 					point="light_general";
 				};
 			};
+		};
+		class Reflectors
+		{
+			class Left
+			{
+				ambient[]={100,100,100,0};
+				color[]={7000,7500,10000,1};
+				coneFadeCoef=10;
+				dayLight=0;
+				direction="konec l svetla";
+				flareSize=4;
+				hitpoint="l svetlo";
+				innerAngle=20;
+				intensity=50;
+				outerAngle=60;
+				position="l svetlo";
+				selection="l svetlo";
+				size=1;
+				useFlare=1;
+				class Attenuation
+				{
+					constant=0;
+					linear=0;
+					quadratic=4;
+					start=1;
+				};
+			};
+			class Left_Flare: Left
+			{
+				intensity=0.5;
+				useFlare=1;
+				innerAngle=5;
+				outerAngle=175;
+			};
+			class Right: Left
+			{
+				position="p svetlo";
+				direction="konec p svetla";
+				hitpoint="p svetlo";
+				selection="p svetlo";
+			};
+			class Right_Flare: Right
+			{
+				intensity=0.5;
+				useFlare=1;
+				innerAngle=5;
+				outerAngle=175;
+			};
+		};
+		aggregateReflectors[]=
+		{
+			
+			{
+				"Left",
+				"Left_Flare"
+			},
+			
+			{
+				"Right",
+				"Right_Flare"
+			}
 		};
 		class markerlights
 		{
@@ -6062,6 +10045,115 @@ class CfgVehicles
 				"rhsafrf\addons\rhs_a2port_air\su25\data\rhs_su25_warningLights_empty_ca.paa",
 				"rhsafrf\addons\rhs_a2port_air\su25\data\rhs_su25_warningLights_ca.paa"
 			};
+			mat[]=
+			{
+				"rhsafrf\addons\rhs_a2port_air\su25\data\su25_glass.rvmat",
+				"rhsafrf\addons\rhs_a2port_air\su25\data\su25_glass_damage.rvmat",
+				"rhsafrf\addons\rhs_a2port_air\su25\data\su25_glass_damage.rvmat",
+				"rhsafrf\addons\rhs_a2port_air\su25\data\su25_glass_in.rvmat",
+				"rhsafrf\addons\rhs_a2port_air\su25\data\su25_glass_in_damage.rvmat",
+				"rhsafrf\addons\rhs_a2port_air\su25\data\su25_glass_in_damage.rvmat",
+				"rhsafrf\addons\rhs_a2port_air\su25\data\su25_body1.rvmat",
+				"rhsafrf\addons\rhs_a2port_air\su25\data\su25_body1_damage.rvmat",
+				"rhsafrf\addons\rhs_a2port_air\su25\data\su25_body1_destruct.rvmat",
+				"rhsafrf\addons\rhs_a2port_air\su25\data\su25_body2.rvmat",
+				"rhsafrf\addons\rhs_a2port_air\su25\data\su25_body2_damage.rvmat",
+				"rhsafrf\addons\rhs_a2port_air\su25\data\su25_body2_destruct.rvmat",
+				"rhsafrf\addons\rhs_a2port_air\su25\data\su25_glass.rvmat",
+				"rhsafrf\addons\rhs_a2port_air\su25\data\su25_glass_damage.rvmat",
+				"rhsafrf\addons\rhs_a2port_air\su25\data\su25_glass_destruct.rvmat",
+				"a3\data_f\default.rvmat",
+				"a3\data_f\default.rvmat",
+				"a3\data_f\default_destruct.rvmat"
+			};
+		};
+		class AnimationSources: AnimationSources
+		{
+			class eject
+			{
+				source="door";
+				animPeriod=0.60000002;
+				initPhase=0;
+			};
+			class eject_hide
+			{
+				source="user";
+				animPeriod=0.60000002;
+				initPhase=0;
+			};
+			class throttle_source: eject_hide
+			{
+				animPeriod=10;
+			};
+			class rwr_lights_lock
+			{
+				source="user";
+				initPhase=0;
+				animPeriod=8;
+			};
+			class rwr_lock_dir_primary: rwr_lights_lock
+			{
+				animPeriod=0.1;
+			};
+			class rwr_lock_primary: rwr_lights_lock
+			{
+				animPeriod=1e-007;
+			};
+			class rwr_signal_strenght: rwr_lights_lock
+			{
+				animPeriod=1e-007;
+			};
+			class rwr_lights: rwr_lock_primary;  //found empty after stripping
+			class hit_pylon_1_source
+			{
+				source="Hit";
+				hitpoint="HitPylon1";
+			};
+			class hit_pylon_2_source
+			{
+				source="Hit";
+				hitpoint="HitPylon2";
+			};
+			class hit_pylon_3_source
+			{
+				source="Hit";
+				hitpoint="HitPylon3";
+			};
+			class hit_pylon_4_source
+			{
+				source="Hit";
+				hitpoint="HitPylon4";
+			};
+			class hit_pylon_5_source
+			{
+				source="Hit";
+				hitpoint="HitPylon5";
+			};
+			class hit_pylon_6_source
+			{
+				source="Hit";
+				hitpoint="HitPylon6";
+			};
+			class hit_pylon_7_source
+			{
+				source="Hit";
+				hitpoint="HitPylon7";
+			};
+			class hit_pylon_8_source
+			{
+				source="Hit";
+				hitpoint="HitPylon8";
+			};
+			class hit_pylon_9_source
+			{
+				source="Hit";
+				hitpoint="HitPylon9";
+			};
+			class hit_pylon_10_source
+			{
+				source="Hit";
+				hitpoint="HitPylon10";
+			};
 		};
 		class WingVortices
 		{
@@ -6110,6 +10202,7 @@ class CfgVehicles
 				{
 					pos0[]={0.51999998,0.029999999};
 					pos10[]={2.02,1.23};
+					type="vector";
 				};
 				color[]={0,1,0,0.1};
 				class Bones
@@ -6117,9 +10210,12 @@ class CfgVehicles
 					class PlaneW
 					{
 						pos[]={0.5,0.5};
+						type="fixed";
 					};
 					class HorizonBankMGun
 					{
+						center[]={0,0};
+						type="rotational";
 						source="HorizonBank";
 						min=-6.2831898;
 						max=6.2831898;
@@ -6131,6 +10227,8 @@ class CfgVehicles
 					{
 						pos0[]={-0,-0};
 						pos10[]={0,0};
+						center[]={0,0};
+						type="rotational";
 						source="HorizonBank";
 						min=-6.2831898;
 						max=6.2831898;
@@ -6140,12 +10238,14 @@ class CfgVehicles
 					};
 					class ImpactPoint
 					{
+						type="vector";
 						source="ImpactPoint";
 						pos0[]={0.5,0.23};
 						pos10[]={1.38,1.46};
 					};
 					class TargetingPodDir
 					{
+						type="vector";
 						source="pilotcamera";
 						pos0[]=
 						{
@@ -6157,8 +10257,10 @@ class CfgVehicles
 					class TargetingPodTarget: TargetingPodDir;  //found empty after stripping
 					class MissileFlightTimeRot1
 					{
+						type="rotational";
 						source="MissileFlightTime";
 						sourceScale=2.5;
+						center[]={0,0};
 						min=0;
 						max=0.5;
 						minAngle=0;
@@ -6262,9 +10364,11 @@ class CfgVehicles
 					};
 					class UserRot1
 					{
+						type="rotational";
 						source="user";
 						sourceIndex=4;
 						sourceScale=0.0040000002;
+						center[]={0,0};
 						min=0;
 						max=0.5;
 						minAngle=0;
@@ -6376,6 +10480,7 @@ class CfgVehicles
 						condition="1 - atmissile";
 						class Cros
 						{
+							type="line";
 							points[]=
 							{
 								
@@ -6442,6 +10547,7 @@ class CfgVehicles
 						};
 						class Dot
 						{
+							type="line";
 							points[]=
 							{
 								
@@ -6478,6 +10584,7 @@ class CfgVehicles
 						};
 						class Ring
 						{
+							type="line";
 							points[]=
 							{
 								
@@ -6779,6 +10886,7 @@ class CfgVehicles
 						};
 						class Triangle
 						{
+							type="line";
 							width=9;
 							points[]=
 							{
@@ -6834,6 +10942,7 @@ class CfgVehicles
 						};
 						class LaunchAutorization
 						{
+							type="line";
 							width=14;
 							points[]=
 							{
@@ -6895,6 +11004,7 @@ class CfgVehicles
 						};
 						class LaunchAutorizationBig
 						{
+							type="line";
 							width=24;
 							points[]=
 							{
@@ -6946,6 +11056,7 @@ class CfgVehicles
 						condition="atmissile-pilotcameralock";
 						class Cros
 						{
+							type="line";
 							points[]=
 							{
 								
@@ -7012,6 +11123,7 @@ class CfgVehicles
 						};
 						class Dot
 						{
+							type="line";
 							points[]=
 							{
 								
@@ -7048,6 +11160,7 @@ class CfgVehicles
 						};
 						class Ring
 						{
+							type="line";
 							points[]=
 							{
 								
@@ -7349,6 +11462,7 @@ class CfgVehicles
 						};
 						class Triangle
 						{
+							type="line";
 							width=9;
 							points[]=
 							{
@@ -7404,6 +11518,7 @@ class CfgVehicles
 						};
 						class LaunchAutorization
 						{
+							type="line";
 							width=14;
 							points[]=
 							{
@@ -7465,6 +11580,7 @@ class CfgVehicles
 						};
 						class LaunchAutorizationBig
 						{
+							type="line";
 							width=24;
 							points[]=
 							{
@@ -7516,6 +11632,7 @@ class CfgVehicles
 						condition="(atmissile)*(pilotcameralock>=0)*laseron";
 						class Cros
 						{
+							type="line";
 							points[]=
 							{
 								
@@ -7582,6 +11699,7 @@ class CfgVehicles
 						};
 						class Dot
 						{
+							type="line";
 							points[]=
 							{
 								
@@ -7618,6 +11736,7 @@ class CfgVehicles
 						};
 						class Ring
 						{
+							type="line";
 							points[]=
 							{
 								
@@ -7919,6 +12038,7 @@ class CfgVehicles
 						};
 						class Triangle
 						{
+							type="line";
 							width=9;
 							points[]=
 							{
@@ -7974,6 +12094,7 @@ class CfgVehicles
 						};
 						class LaunchAutorization
 						{
+							type="line";
 							width=14;
 							points[]=
 							{
@@ -8035,6 +12156,7 @@ class CfgVehicles
 						};
 						class LaunchAutorizationBig
 						{
+							type="line";
 							width=24;
 							points[]=
 							{
@@ -8086,6 +12208,8 @@ class CfgVehicles
 						condition="user5";
 						class Shape
 						{
+							type="polygon";
+							texture="rhsafrf\addons\rhs_c_a2port_air\Su25\rhs_su25_reticle_static_ca.paa";
 							points[]=
 							{
 								
@@ -8142,6 +12266,7 @@ class CfgVehicles
 							alpha=1;
 							class AmmoBox
 							{
+								type="polygon";
 								width=4;
 								points[]=
 								{
@@ -8176,7 +12301,9 @@ class CfgVehicles
 							condition="ammo2>=212";
 							class AmmoText
 							{
+								type="text";
 								source="static";
+								text="К";
 								scale=1;
 								sourceScale=1;
 								align="center";
@@ -8202,7 +12329,9 @@ class CfgVehicles
 							condition="(ammo2>=137)*(ammo2<=211)";
 							class AmmoText
 							{
+								type="text";
 								source="static";
+								text="3/4";
 								scale=1;
 								sourceScale=1;
 								align="center";
@@ -8228,7 +12357,9 @@ class CfgVehicles
 							condition="(ammo2>=63)*(ammo2<=136)";
 							class AmmoText
 							{
+								type="text";
 								source="static";
+								text="1/2";
 								scale=1;
 								sourceScale=1;
 								align="center";
@@ -8254,7 +12385,9 @@ class CfgVehicles
 							condition="(ammo2<=62)";
 							class AmmoText
 							{
+								type="text";
 								source="static";
+								text="1/4";
 								scale=1;
 								sourceScale=1;
 								align="center";
@@ -8285,6 +12418,7 @@ class CfgVehicles
 							alpha=1;
 							class AmmoBox
 							{
+								type="polygon";
 								width=4;
 								points[]=
 								{
@@ -8316,7 +12450,9 @@ class CfgVehicles
 						};
 						class AmmoText
 						{
+							type="text";
 							source="static";
+							text="НРС";
 							scale=1;
 							sourceScale=1;
 							align="center";
@@ -8346,7 +12482,9 @@ class CfgVehicles
 						};
 						class AmmoText
 						{
+							type="text";
 							source="static";
+							text="УР";
 							scale=1;
 							sourceScale=1;
 							align="center";
@@ -8376,7 +12514,9 @@ class CfgVehicles
 						};
 						class AmmoText
 						{
+							type="text";
 							source="static";
+							text="Б";
 							scale=1;
 							sourceScale=1;
 							align="center";
@@ -8406,7 +12546,9 @@ class CfgVehicles
 						};
 						class AmmoText
 						{
+							type="text";
 							source="static";
+							text="ВПУ";
 							scale=1;
 							sourceScale=1;
 							align="center";
@@ -8429,6 +12571,7 @@ class CfgVehicles
 					};
 					class Pylon1
 					{
+						type="pylonicon";
 						pos[]=
 						{
 							{0.345,0.34},
@@ -8543,6 +12686,8 @@ class CfgVehicles
 						alpha=0.2;
 						class Bulb
 						{
+							type="polygon";
+							texture="a3\Data_f\light_flare_ca.paa";
 							points[]=
 							{
 								
@@ -8578,6 +12723,8 @@ class CfgVehicles
 						condition="laseron";
 						class Bulb
 						{
+							type="polygon";
+							texture="a3\Data_f\light_flare_ca.paa";
 							points[]=
 							{
 								
@@ -8620,6 +12767,8 @@ class CfgVehicles
 						alpha=0.07;
 						class Bulb
 						{
+							type="polygon";
+							texture="a3\Data_f\light_flare_ca.paa";
 							points[]=
 							{
 								
@@ -8659,6 +12808,11 @@ class CfgVehicles
 			class Wheel_1
 			{
 				side="left";
+				boneName="Wheel_1";
+				center="Wheel_1_center";
+				boundary="Wheel_1_rim";
+				suspForceAppPointOffset="Wheel_1_center";
+				tireForceAppPointOffset="Wheel_1_center";
 				suspTravelDirection[]={0,-1,0};
 				steering=1;
 				width=0.16;
@@ -8687,15 +12841,25 @@ class CfgVehicles
 			class Wheel_1_fake: Wheel_1;  //found empty after stripping
 			class Wheel_2: Wheel_1
 			{
+				boneName="Wheel_2";
 				steering=0;
+				center="Wheel_2_center";
+				boundary="Wheel_2_rim";
 				width=0.28;
 				springDamperRate=220569.59;
 				sprungMass=6652;
 				springStrength=151000;
+				suspForceAppPointOffset="Wheel_2_center";
+				tireForceAppPointOffset="Wheel_2_center";
 			};
 			class Wheel_3: Wheel_2
 			{
+				boneName="Wheel_3";
 				side="right";
+				center="Wheel_3_center";
+				boundary="Wheel_3_rim";
+				suspForceAppPointOffset="Wheel_3_center";
+				tireForceAppPointOffset="Wheel_3_center";
 			};
 		};
 		maxSpeed=900;
@@ -8737,6 +12901,41 @@ class CfgVehicles
 			1.098107,
 			1
 		};
+		soundLocked[]=
+		{
+			"",
+			1.5848932,
+			1
+		};
+		class UserActions
+		{
+			class SAFEMODE
+			{
+				displayName="<t color='#00FF7F'>MASTERSAFE</t>";
+				condition="(call rhs_fnc_findPlayer) in this";
+				statement="(call rhs_fnc_findPlayer) action ['SwitchWeapon', this, (call rhs_fnc_findPlayer), (weapons this) find 'rhs_weap_MASTERSAFE'];";
+				position="";
+				radius=10;
+				priority=10.5;
+				onlyforplayer=1;
+				showWindow=0;
+				shortcut="user13";
+				hideOnUse=1;
+			};
+			class RETICLE
+			{
+				displayName="<t color='#FBB829'>Toggle reticle</t>";
+				position="";
+				radius=10;
+				priority=10.5;
+				onlyforplayer=1;
+				showWindow=0;
+				hideOnUse=1;
+				condition="(call rhs_fnc_findPlayer) in this";
+				shortcut="user10";
+				statement="if(((getUserMFDvalue this) select 5) isEqualTo 0)then{this setUserMFDvalue [5,1];}else{this setUserMFDvalue [5,0];};";
+			};
+		};
 		class EventHandlers: EventHandlers
 		{
 			hit="";
@@ -8751,12 +12950,19 @@ class CfgVehicles
 	};
 	class RHS_Su25_VVS_Base: RHS_su25_base
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_Su25_VVS_Base.paa";
 		accuracy=0.5;
 		side=0;
+		faction="rhs_faction_vvs_c";
+		vehicleClass="rhs_vehclass_aircraft";
 	};
 	class RHS_Su25SM_vvs: RHS_Su25_VVS_Base
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_Su25SM_vvs.paa";
+		faction="rhs_faction_vvs";
+		scope=2;
 		displayName="$STR_RHS_SU25_Name";
+		author="$STR_RHS_AUTHOR_FULL";
 		hiddenselectionstextures[]=
 		{
 			"\rhsafrf\addons\rhs_a2port_air\su25\data\su25_body1_co.paa",
@@ -8770,7 +12976,11 @@ class CfgVehicles
 	};
 	class RHS_Su25SM_KH29_vvs: RHS_Su25SM_vvs
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_Su25SM_KH29_vvs.paa";
 		displayName="$STR_RHS_SU25_KH29_Name";
+		author="$STR_RHS_AUTHOR_FULL";
+		scope=1;
+		scopeCurator=2;
 		class Components: Components
 		{
 			class TransportPylonsComponent: TransportPylonsComponent
@@ -8812,7 +13022,11 @@ class CfgVehicles
 	};
 	class RHS_Su25SM_CAS_vvs: RHS_Su25SM_vvs
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_Su25SM_CAS_vvs.paa";
 		displayName="$STR_RHS_SU25_CAS_Name";
+		author="$STR_RHS_AUTHOR_FULL";
+		scope=1;
+		scopeCurator=2;
 		class Components: Components
 		{
 			class TransportPylonsComponent: TransportPylonsComponent
@@ -8861,6 +13075,9 @@ class CfgVehicles
 	class RHS_Su25SM_Cluster_vvs: RHS_Su25SM_vvs
 	{
 		displayName="$STR_RHS_SU25_Cluster_Name";
+		author="$STR_RHS_AUTHOR_FULL";
+		scope=1;
+		scopeCurator=2;
 		class Components: Components
 		{
 			class TransportPylonsComponent: TransportPylonsComponent
@@ -8908,6 +13125,10 @@ class CfgVehicles
 	};
 	class RHS_Su25SM_vvsc: RHS_Su25SM_vvs
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_Su25SM_vvsc.paa";
+		faction="rhs_faction_vvs_c";
+		scope=2;
+		author="$STR_RHS_AUTHOR_FULL";
 		rhs_decalParameters[]=
 		{
 			"['Number',cRHSAIRSU25NumberPlaces,'AviaBlue']",
@@ -8927,7 +13148,11 @@ class CfgVehicles
 	};
 	class RHS_Su25SM_KH29_vvsc: RHS_Su25SM_vvsc
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_Su25SM_KH29_vvsc.paa";
 		displayName="$STR_RHS_SU25_KH29_Name";
+		author="$STR_RHS_AUTHOR_FULL";
+		scope=1;
+		scopeCurator=2;
 		class Components: Components
 		{
 			class TransportPylonsComponent: TransportPylonsComponent
@@ -8969,7 +13194,11 @@ class CfgVehicles
 	};
 	class RHS_Su25SM_CAS_vvsc: RHS_Su25SM_vvsc
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_Su25SM_CAS_vvsc.paa";
 		displayName="$STR_RHS_SU25_CAS_Name";
+		author="$STR_RHS_AUTHOR_FULL";
+		scope=1;
+		scopeCurator=2;
 		class Components: Components
 		{
 			class TransportPylonsComponent: TransportPylonsComponent
@@ -9018,6 +13247,9 @@ class CfgVehicles
 	class RHS_Su25SM_Cluster_vvsc: RHS_Su25SM_vvsc
 	{
 		displayName="$STR_RHS_SU25_Cluster_Name";
+		author="$STR_RHS_AUTHOR_FULL";
+		scope=1;
+		scopeCurator=2;
 		class Components: Components
 		{
 			class TransportPylonsComponent: TransportPylonsComponent
@@ -9065,10 +13297,12 @@ class CfgVehicles
 	};
 	class RHS_Ka52_base: Heli_Attack_02_base_F
 	{
+		dlc="RHS_AFRF";
 		rhs_decalParameters[]=
 		{
 			"['Number',cRHSAIRKA52NumberPlaces,'AviaYellow']"
 		};
+		category="Air";
 		class RotorLibHelicopterProperties
 		{
 			RTDconfig="rhsafrf\addons\rhs_c_a2port_air\ka52\RTD_Heli_Attack_02.xml";
@@ -9087,6 +13321,7 @@ class CfgVehicles
 		};
 		numberPhysicalWheels=3;
 		maxSpeed=395;
+		bodyFrictionCoef=0.426;
 		liftForceCoef=6;
 		cyclicForwardForceCoef=1;
 		backRotorForceCoef=1.35;
@@ -9104,7 +13339,10 @@ class CfgVehicles
 		LESH_towFromFront=1;
 		LESH_AxisOffsetTarget[]={0,6.5,-1.05};
 		LESH_WheelOffset[]={0,-1};
+		scope=0;
 		side=0;
+		faction="rhs_faction_vvs";
+		crew="rhs_pilot_combat_heli";
 		typicalCargo[]=
 		{
 			"rhs_pilot_combat_heli"
@@ -9114,13 +13352,23 @@ class CfgVehicles
 		driverCanEject=1;
 		driverCompartments=1;
 		ejectSpeed[]={1,0,11};
+		destrType="DestructWreck";
 		armor=55;
 		accuracy=0.55000001;
 		displayName="Ka-52";
+		vehicleClass="rhs_vehclass_helicopter";
+		editorSubcategory="rhs_EdSubcat_helicopter";
+		model="\rhsafrf\addons\rhs_a2port_air\ka52\KA52.p3d";
 		icon="\rhsafrf\addons\rhs_a2port_air\data\map_ico\Icon_ka52_CA.paa";
+		picture="\rhsafrf\addons\rhs_a2port_air\data\ico\rhs_ka52_pic_ca.paa";
+		mapSize=15;
 		castDriverShadow=1;
 		viewCargoShadow=1;
+		camShakeCoef=0.80000001;
 		transportsoldier=0;
+		driverDoor="DoorL";
+		driverLeftHandAnimName="lever_pilot";
+		driverRightHandAnimName="stick_pilot";
 		driveOnComponent[]=
 		{
 			"F_gear_d3",
@@ -9130,6 +13378,8 @@ class CfgVehicles
 		getInRadius=1.5;
 		precisegetinout=1;
 		memoryPointsGetInDriverPrecise="pos driver";
+		getInAction="Heli_Attack_01_Pilot_Enter";
+		getOutAction="Heli_Attack_01_Pilot_Exit";
 		selectionHRotorStill="velka vrtule staticka";
 		selectionHRotorMove="velka vrtule blur";
 		selectionVRotorStill="mala vrtule staticka";
@@ -9160,11 +13410,14 @@ class CfgVehicles
 			"chase04"
 		};
 		class PilotCamera;  //found empty after stripping
+		unitInfoType="RHS_RscUnitInfoAir_Ka52";
 		receiveRemoteTargets=1;
 		reportRemoteTargets=1;
 		reportOwnPosition=1;
 		irTarget=1;
 		irTargetSize=0.89999998;
+		visualTarget=1;
+		visualTargetSize=0.89999998;
 		radarTarget=1;
 		radarTargetSize=1;
 		threat[]={0.60000002,1,0.80000001};
@@ -9188,6 +13441,8 @@ class CfgVehicles
 		};
 		weaponsGroup1=128;
 		weaponsGroup4=64;
+		driverAction="RHS_KA52_Pilot";
+		driverInAction="RHS_KA52_Pilot";
 		class HitPoints: HitPoints
 		{
 			class HitHRotor: HitHRotor
@@ -9205,20 +13460,450 @@ class CfgVehicles
 			class HitGlass3: HitGlass3
 			{
 				armor=1;
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					class BrokenGlass1
+					{
+						simulation="particles";
+						type="BrokenGlass1N_0850_2250";
+						position="glass3_effect";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass2
+					{
+						simulation="particles";
+						type="BrokenGlass2N_0850_2250";
+						position="glass3_effect";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass3
+					{
+						simulation="particles";
+						type="BrokenGlass3N_0850_2250";
+						position="glass3_effect";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass4
+					{
+						simulation="particles";
+						type="BrokenGlass4N_0850_2250";
+						position="glass3_effect";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass5
+					{
+						simulation="particles";
+						type="BrokenGlass5N_0850_2250";
+						position="glass3_effect";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass6
+					{
+						simulation="particles";
+						type="BrokenGlass6N_0850_2250";
+						position="glass3_effect";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass7
+					{
+						simulation="particles";
+						type="BrokenGlass7N_0850_2250";
+						position="glass3_effect";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass1S
+					{
+						simulation="particles";
+						type="BrokenGlass1S_0850_2250";
+						position="glass3_effect";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass2S
+					{
+						simulation="particles";
+						type="BrokenGlass2S_0850_2250";
+						position="glass3_effect";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass3S
+					{
+						simulation="particles";
+						type="BrokenGlass3S_0850_2250";
+						position="glass3_effect";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass4S
+					{
+						simulation="particles";
+						type="BrokenGlass4S_0850_2250";
+						position="glass3_effect";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass5S
+					{
+						simulation="particles";
+						type="BrokenGlass5S_0850_2250";
+						position="glass3_effect";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass6S
+					{
+						simulation="particles";
+						type="BrokenGlass6S_0850_2250";
+						position="glass3_effect";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass7S
+					{
+						simulation="particles";
+						type="BrokenGlass7S_0850_2250";
+						position="glass3_effect";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class RHS_ERA_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="glass3_effect";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_ERA_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="glass3_effect";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_ERA_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="glass3_effect";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+				};
 			};
 			class HitGlass4: HitGlass4
 			{
 				armor=1;
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					class BrokenGlass1
+					{
+						simulation="particles";
+						type="BrokenGlass1N_0850_2250";
+						position="glass4_effect";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass2
+					{
+						simulation="particles";
+						type="BrokenGlass2N_0850_2250";
+						position="glass4_effect";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass3
+					{
+						simulation="particles";
+						type="BrokenGlass3N_0850_2250";
+						position="glass4_effect";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass4
+					{
+						simulation="particles";
+						type="BrokenGlass4N_0850_2250";
+						position="glass4_effect";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass5
+					{
+						simulation="particles";
+						type="BrokenGlass5N_0850_2250";
+						position="glass4_effect";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass6
+					{
+						simulation="particles";
+						type="BrokenGlass6N_0850_2250";
+						position="glass4_effect";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass7
+					{
+						simulation="particles";
+						type="BrokenGlass7N_0850_2250";
+						position="glass4_effect";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass1S
+					{
+						simulation="particles";
+						type="BrokenGlass1S_0850_2250";
+						position="glass4_effect";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass2S
+					{
+						simulation="particles";
+						type="BrokenGlass2S_0850_2250";
+						position="glass4_effect";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass3S
+					{
+						simulation="particles";
+						type="BrokenGlass3S_0850_2250";
+						position="glass4_effect";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass4S
+					{
+						simulation="particles";
+						type="BrokenGlass4S_0850_2250";
+						position="glass4_effect";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass5S
+					{
+						simulation="particles";
+						type="BrokenGlass5S_0850_2250";
+						position="glass4_effect";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass6S
+					{
+						simulation="particles";
+						type="BrokenGlass6S_0850_2250";
+						position="glass4_effect";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass7S
+					{
+						simulation="particles";
+						type="BrokenGlass7S_0850_2250";
+						position="glass4_effect";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class RHS_ERA_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="glass4_effect";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_ERA_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="glass4_effect";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_ERA_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="glass4_effect";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+				};
 			};
 			class HitRotor1: HitGlass3
 			{
 				armor=1;
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					class RHS_ERA_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="rotor1_pos";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_ERA_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="rotor1_pos";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_ERA_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="rotor1_pos";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+				};
 			};
-			class HitRotor2: HitRotor1;  //found empty after stripping
-			class HitRotor3: HitRotor1;  //found empty after stripping
-			class HitRotor4: HitRotor1;  //found empty after stripping
-			class HitRotor5: HitRotor1;  //found empty after stripping
-			class HitRotor6: HitRotor1;  //found empty after stripping
+			class HitRotor2: HitRotor1
+			{
+				class DestructionEffects: DestructionEffects
+				{
+					class RHS_ERA_Flash: RHS_ERA_Flash
+					{
+						position="rotor2_pos";
+					};
+					class RHS_ERA_Sound: RHS_ERA_Sound
+					{
+						position="rotor2_pos";
+					};
+					class RHS_ERA_Smoke: RHS_ERA_Smoke
+					{
+						position="rotor2_pos";
+					};
+				};
+			};
+			class HitRotor3: HitRotor1
+			{
+				class DestructionEffects: DestructionEffects
+				{
+					class RHS_ERA_Flash: RHS_ERA_Flash
+					{
+						position="rotor3_pos";
+					};
+					class RHS_ERA_Sound: RHS_ERA_Sound
+					{
+						position="rotor3_pos";
+					};
+					class RHS_ERA_Smoke: RHS_ERA_Smoke
+					{
+						position="rotor3_pos";
+					};
+				};
+			};
+			class HitRotor4: HitRotor1
+			{
+				class DestructionEffects: DestructionEffects
+				{
+					class RHS_ERA_Flash: RHS_ERA_Flash
+					{
+						position="rotor4_pos";
+					};
+					class RHS_ERA_Sound: RHS_ERA_Sound
+					{
+						position="rotor4_pos";
+					};
+					class RHS_ERA_Smoke: RHS_ERA_Smoke
+					{
+						position="rotor4_pos";
+					};
+				};
+			};
+			class HitRotor5: HitRotor1
+			{
+				class DestructionEffects: DestructionEffects
+				{
+					class RHS_ERA_Flash: RHS_ERA_Flash
+					{
+						position="rotor5_pos";
+					};
+					class RHS_ERA_Sound: RHS_ERA_Sound
+					{
+						position="rotor5_pos";
+					};
+					class RHS_ERA_Smoke: RHS_ERA_Smoke
+					{
+						position="rotor5_pos";
+					};
+				};
+			};
+			class HitRotor6: HitRotor1
+			{
+				class DestructionEffects: DestructionEffects
+				{
+					class RHS_ERA_Flash: RHS_ERA_Flash
+					{
+						position="rotor6_pos";
+					};
+					class RHS_ERA_Sound: RHS_ERA_Sound
+					{
+						position="rotor6_pos";
+					};
+					class RHS_ERA_Smoke: RHS_ERA_Smoke
+					{
+						position="rotor6_pos";
+					};
+				};
+			};
 			class HitPylon1
 			{
 				armor=-30;
@@ -9228,6 +13913,47 @@ class CfgVehicles
 				minimalHit=0.80000001;
 				explosionShielding=0.1;
 				radius=0.75;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					class RHS_Pylon_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_pylon_1";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_Pylon_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_pylon_1";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_Pylon_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_pylon_1";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_Pylon_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_pylon_1";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class HitPylon2
 			{
@@ -9238,6 +13964,47 @@ class CfgVehicles
 				minimalHit=0.80000001;
 				explosionShielding=0.1;
 				radius=0.75;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					class RHS_Pylon_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_pylon_2";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_Pylon_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_pylon_2";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_Pylon_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_pylon_2";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_Pylon_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_pylon_2";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class HitPylon3
 			{
@@ -9248,6 +14015,47 @@ class CfgVehicles
 				minimalHit=0.80000001;
 				explosionShielding=0.1;
 				radius=0.75;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					class RHS_Pylon_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_pylon_3";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_Pylon_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_pylon_3";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_Pylon_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_pylon_3";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_Pylon_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_pylon_3";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class HitPylon4
 			{
@@ -9258,8 +14066,83 @@ class CfgVehicles
 				minimalHit=0.80000001;
 				explosionShielding=0.1;
 				radius=0.75;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					class RHS_Pylon_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_pylon_4";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_Pylon_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_pylon_4";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_Pylon_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_pylon_4";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_Pylon_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_pylon_4";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 		};
+		class TransportMagazines
+		{
+			class _xx_rhs_30Rnd_545x39_7N10_AK
+			{
+				magazine="rhs_30Rnd_545x39_7N10_AK";
+				count=6;
+			};
+			class _xx_rhs_mag_rgd5
+			{
+				magazine="rhs_mag_rgd5";
+				count=2;
+			};
+			class _xx_rhs_mag_nspn_red
+			{
+				magazine="rhs_mag_nspn_red";
+				count=4;
+			};
+			class _xx_rhs_mag_rdg2_white
+			{
+				magazine="rhs_mag_rdg2_white";
+				count=4;
+			};
+		};
+		class TransportItems
+		{
+			class _xx_FirstAidKit
+			{
+				name="FirstAidKit";
+				count=2;
+			};
+		};
+		class TransportWeapons;  //found empty after stripping
+		class TransportBackpacks;  //found empty after stripping
+		gunnerCanSee=55;
 		driverCanSee=55;
 		laserScanner=1;
 		LockDetectionSystem="8 + 4";
@@ -9274,16 +14157,21 @@ class CfgVehicles
 					{
 						class AirTarget
 						{
+							minRange=9000;
+							maxRange=9000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
 						class GroundTarget
 						{
+							minRange=9000;
+							maxRange=9000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
 						angleRangeHorizontal=75;
 						angleRangeVertical=75;
+						typeRecognitionDistance=-1;
 						maxGroundNoiseDistance=0;
 						maxFogSeeThrough=0.30000001;
 						animDirection="mainGun";
@@ -9293,16 +14181,21 @@ class CfgVehicles
 					{
 						class AirTarget
 						{
+							minRange=11000;
+							maxRange=11000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
 						class GroundTarget
 						{
+							minRange=11000;
+							maxRange=11000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
 						angleRangeHorizontal=120;
 						angleRangeVertical=100;
+						typeRecognitionDistance=4000;
 						maxFogSeeThrough=1;
 						groundNoiseDistanceCoef=-1;
 						maxGroundNoiseDistance=-1;
@@ -9392,6 +14285,7 @@ class CfgVehicles
 							"RHS_HP_UB32_KA52",
 							"RHS_HP_UPK23_KA52"
 						};
+						priority=1;
 						attachment="rhs_mag_b8v20a_ka52_s8kom";
 						maxweight=650;
 						UIposition[]={0.50400001,0.40000001};
@@ -9418,6 +14312,7 @@ class CfgVehicles
 						};
 						attachment="rhs_mag_apu6_9m127m_ka52";
 						maxweight=450;
+						priority=2;
 						UIposition[]={0.58399999,0.34999999};
 						turret[]={0};
 						hitpoint="HitPylon3";
@@ -9436,6 +14331,7 @@ class CfgVehicles
 							"RHS_cm_UV26_x2",
 							"RHS_cm_UV26_x4"
 						};
+						priority=1;
 						attachment="rhs_UV26_CMFlare_Chaff_Magazine_x4";
 						maxweight=800;
 						UIposition[]={0.33000001,0};
@@ -9548,11 +14444,35 @@ class CfgVehicles
 			minFov=0.1;
 			maxFov=1.2;
 		};
+		hiddenSelections[]=
+		{
+			"camo1",
+			"camo2",
+			"n1",
+			"n2",
+			"tail_decals",
+			"mfd_gun_tex"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"\rhsafrf\addons\rhs_a2port_air\ka52\data\ka52_01_RU_co.paa",
+			"\rhsafrf\addons\rhs_a2port_air\ka52\data\ka52_02_RU_co.paa",
+			"a3\data_f\clear_empty.paa",
+			"a3\data_f\clear_empty.paa",
+			"rhsafrf\addons\rhs_decals\data\labels\aviation\vvs_ca.paa",
+			"\rhsafrf\addons\rhs_a2port_air\Ka52\Data\rhs_ka52_samshin_wfov.paa"
+		};
 		class textureSources
 		{
 			class standard
 			{
 				displayName="Grey";
+				author="$STR_RHS_AUTHOR_FULL";
+				textures[]=
+				{
+					"\rhsafrf\addons\rhs_a2port_air\ka52\data\ka52_01_co.paa",
+					"\rhsafrf\addons\rhs_a2port_air\ka52\data\ka52_02_co.paa"
+				};
 				factions[]=
 				{
 					"rhs_faction_vvs_c",
@@ -9562,10 +14482,24 @@ class CfgVehicles
 			class Camo: standard
 			{
 				displayName="Camo";
+				author="$STR_RHS_AUTHOR_FULL";
+				textures[]=
+				{
+					"\rhsafrf\addons\rhs_a2port_air\ka52\data\ka52_01_RU_co.paa",
+					"\rhsafrf\addons\rhs_a2port_air\ka52\data\ka52_02_RU_co.paa"
+				};
 			};
 		};
+		textureList[]={};
 		class Attributes
 		{
+			class ObjectTexture
+			{
+				control="ObjectTexture";
+				data="ObjectTexture";
+				displayName="Skin";
+				tooltip="Texture and material set applied on the object.";
+			};
 			class rhs_decalNumber_type
 			{
 				displayName="Define font type of side number";
@@ -9574,6 +14508,7 @@ class CfgVehicles
 				control="Combo";
 				expression="if(_value != 'NoChange')then{ _this setVariable ['%s', _value];[_this,[['Number', cRHSAIRKA52NumberPlaces, _value]]] call rhs_fnc_decalsInit}";
 				defaultValue=0;
+				typeName="STRING";
 				class values
 				{
 					class NoChange
@@ -9651,6 +14586,7 @@ class CfgVehicles
 				property="rhs_decalNumber";
 				control="Edit";
 				validate="Number";
+				typeName="Number";
 				defaultValue="-1";
 				expression="if( _value >= 0)then{if( _value == 0)then{{[_this setobjectTexture [_x,'a3\data_f\clear_empty.paa']]}foreach cRHSAIRKA52NumberPlaces}else{[_this, [['Number', cRHSAIRKA52NumberPlaces, _this getVariable ['rhs_decalNumber_type','AviaYellow'], _value] ] ] call rhs_fnc_decalsInit}};";
 			};
@@ -9662,6 +14598,7 @@ class CfgVehicles
 				control="Combo";
 				expression="[_this,[['Label', cRHSAIRKA52TailPlaces, 'Aviation',_value]]] call rhs_fnc_decalsInit";
 				defaultValue=-1;
+				typeName="Number";
 				class values
 				{
 					class Default
@@ -9683,18 +14620,154 @@ class CfgVehicles
 				};
 			};
 		};
+		class AnimationSources: AnimationSources
+		{
+			class DoorL
+			{
+				source="door";
+				animPeriod=1.4;
+			};
+			class DoorR: DoorL;  //found empty after stripping
+			class landingLights: DoorL;  //found empty after stripping
+			class eject
+			{
+				source="user";
+				animPeriod=1e-007;
+				initPhase=0;
+			};
+			class k37_pilot_rocket_hide: eject;  //found empty after stripping
+			class k37_gunner_rocket_hide: eject;  //found empty after stripping
+			class elev
+			{
+				source="user";
+				animperiod=0.0016;
+			};
+			class elev_bank
+			{
+				source="user";
+				animperiod=0.0016;
+			};
+			class offset
+			{
+				source="user";
+				animperiod=0.00019999999;
+			};
+			class mfd_right_gun_tg
+			{
+				source="user";
+				animPeriod=1e-007;
+				initPhase=1;
+			};
+			class mfd_right_gun_ta: mfd_right_gun_tg;  //found empty after stripping
+			class mfd_left_toggle: mfd_right_gun_tg
+			{
+				initPhase=0;
+			};
+			class muzzle_rot_cannon
+			{
+				weapon="rhs_weap_2a42";
+				source="ammorandom";
+			};
+			class muzzle_hide_upk23
+			{
+				weapon="RHS_Weap_GSh23Lx2";
+				source="reload";
+			};
+			class muzzle_rot_upk23: muzzle_rot_cannon
+			{
+				weapon="RHS_Weap_GSh23Lx2";
+			};
+			class hit_pylon_1_source
+			{
+				source="Hit";
+				hitpoint="HitPylon1";
+			};
+			class hit_pylon_2_source
+			{
+				source="Hit";
+				hitpoint="HitPylon2";
+			};
+			class hit_pylon_3_source
+			{
+				source="Hit";
+				hitpoint="HitPylon3";
+			};
+			class hit_pylon_4_source
+			{
+				source="Hit";
+				hitpoint="HitPylon4";
+			};
+		};
+		class UserActions
+		{
+			class SAFEMODE
+			{
+				displayName="<t color='#00FF7F'>MASTERSAFE</t>";
+				condition="(call rhs_fnc_findPlayer) in this";
+				statement="(call rhs_fnc_findPlayer) action ['SwitchWeapon', this, (call rhs_fnc_findPlayer), (weapons this) find 'rhs_weap_MASTERSAFE'];";
+				position="";
+				radius=10;
+				priority=10.5;
+				onlyforplayer=1;
+				showWindow=0;
+				shortcut="user13";
+				hideOnUse=1;
+			};
+			class MFD_Left_Toggle
+			{
+				displayName="Toggle MFD";
+				position="";
+				priority=0.0099999998;
+				radius=3;
+				onlyForplayer=1;
+				showWindow=0;
+				condition="(call rhs_fnc_findPlayer) isEqualTo (driver this)";
+				statement="this animateSource ['mfd_left_toggle',1-(this animationSourcePhase 'mfd_left_toggle')]";
+			};
+			class openDoor
+			{
+				displayName="Lights up";
+				position="";
+				priority=0.0099999998;
+				radius=3;
+				onlyForplayer=1;
+				showWindow=0;
+				condition="this doorPhase 'landingLights' < 0.5 AND alive this";
+				statement="this animateDoor ['landingLights',1]";
+			};
+			class closeDoor: openDoor
+			{
+				displayName="Lights down";
+				condition="this doorPhase 'landingLights' > 0.5 AND alive this";
+				statement="this animateDoor ['landingLights',0]";
+			};
+		};
 		enableManualFire=1;
 		class Turrets: Turrets
 		{
 			class MainTurret: MainTurret
 			{
+				gunnerDoor="doorR";
+				gunnerLeftHandAnimName="lever_gunner";
+				gunnerRightHandAnimName="stick_gunner";
+				gunnerLeftLegAnimName="pedalL";
+				gunnerRightLegAnimName="pedalR";
+				gunnerAction="RHS_KA52_Gunner";
+				gunnerInAction="RHS_KA52_Gunner";
+				gunnerGetInAction="pilot_Heli_Light_02_Enter";
+				gunnerGetOutAction="pilot_Heli_Light_02_exit";
 				isCopilot=1;
 				startEngine=0;
+				outGunnerMayFire=1;
 				commanding=-1;
 				primaryGunner=1;
 				usePIP=1;
+				castGunnerShadow=1;
 				viewGunnerShadow=1;
 				CanEject=1;
+				memoryPointsGetInGunner="Pos_Gunner";
+				memoryPointsGetInGunnerDir="Pos_Gunner_dir";
+				memoryPointsGetInGunnerPrecise="pos gunner";
 				precisegetinout=1;
 				minElev=-80;
 				maxElev=15;
@@ -9702,8 +14775,14 @@ class CfgVehicles
 				minTurn=-120;
 				maxTurn=120;
 				initTurn=0;
+				gunBeg="gunstart";
+				gunEnd="gunend";
+				body="MainTurret";
+				gun="MainGun";
 				memoryPointGun="machinegun";
+				memoryPointGunnerOptics="pilotview";
 				selectionFireAnim="zasleh";
+				turretInfoType="RHS_RscWeaponKa52_FCS";
 				canUseScanners=0;
 				allowTabLock=0;
 				class Viewoptics
@@ -9726,6 +14805,8 @@ class CfgVehicles
 				{
 					class Samshin_WFOV
 					{
+						opticsDisplayName="3";
+						gunneropticsmodel="rhsafrf\addons\rhs_optics\vehicles\rhs_samshin_WFOV";
 						initanglex=0;
 						initangley=0;
 						maxanglex=30;
@@ -9744,12 +14825,15 @@ class CfgVehicles
 					};
 					class Samshin_NFOV: Samshin_WFOV
 					{
+						opticsDisplayName="15";
+						gunneropticsmodel="rhsafrf\addons\rhs_optics\vehicles\rhs_samshin";
 						initfov=0.0466667;
 						maxfov=0.0466667;
 						minfov=0.0466667;
 					};
 					class Samshin_NFOV_Stabilised: Samshin_NFOV
 					{
+						opticsDisplayName="22";
 						initfov=0.0318182;
 						maxfov=0.0318182;
 						minfov=0.0318182;
@@ -9820,6 +14904,7 @@ class CfgVehicles
 						};
 					};
 				};
+				gunnerForceOptics=0;
 				weapons[]=
 				{
 					"rhs_weap_MASTERSAFE_Holdster15",
@@ -9837,6 +14922,7 @@ class CfgVehicles
 					armor=0.80000001;
 					material=-1;
 					name="gun1";
+					visual="gun1";
 					passThrough=0.5;
 				};
 				class HitGun
@@ -9844,6 +14930,7 @@ class CfgVehicles
 					armor=0.40000001;
 					material=-1;
 					name="gun2";
+					visual="gun2";
 					passThrough=0.2;
 				};
 			};
@@ -9883,6 +14970,56 @@ class CfgVehicles
 			{
 				class Light_Pilot: Light_Pilot;  //found empty after stripping
 				class Light_Gunner: Light_Gunner;  //found empty after stripping
+			};
+		};
+		class Reflectors
+		{
+			class LSvetla
+			{
+				color[]={7000,7500,10000};
+				ambient[]={70,75,100};
+				intensity=50;
+				size=1;
+				innerAngle=5;
+				outerAngle=75;
+				coneFadeCoef=10;
+				position="L svetlo";
+				direction="konec L svetla";
+				hitpoint="L svetlo";
+				selection="L svetlo";
+				useFlare=0;
+				dayLight=0;
+				flareSize=0.75;
+				class Attenuation
+				{
+					start=0;
+					constant=0;
+					linear=1;
+					quadratic=0;
+					hardLimitStart=200;
+					hardLimitEnd=250;
+				};
+			};
+			class LSvetlaFlare: LSvetla
+			{
+				position="L_Flare";
+				useFlare=1;
+				color[]={10,10,9};
+				ambient[]={10,10,9};
+			};
+			class RSvetla: LSvetla
+			{
+				position="P svetlo";
+				direction="konec P svetla";
+				hitpoint="P svetlo";
+				selection="P svetlo";
+			};
+			class RSvetlaFlare: RSvetla
+			{
+				position="R_Flare";
+				useFlare=1;
+				color[]={10,10,9};
+				ambient[]={10,10,9};
 			};
 		};
 		class markerlights
@@ -9938,7 +15075,31 @@ class CfgVehicles
 			"\rhsafrf\addons\rhs_a2port_air\ka52\data\Ka52_cauges_CO.paa",
 			"\rhsafrf\addons\rhs_a2port_air\ka52\data\Ka52_caugesmf_CO.paa"
 		};
-		class Damage;  //found empty after stripping
+		class Damage
+		{
+			tex[]={};
+			mat[]=
+			{
+				"rhsafrf\addons\rhs_a2port_air\ka52\data\ka52_01.rvmat",
+				"rhsafrf\addons\rhs_a2port_air\ka52\data\ka52_01_damage.rvmat",
+				"rhsafrf\addons\rhs_a2port_air\ka52\data\ka52_01_destruct.rvmat",
+				"rhsafrf\addons\rhs_a2port_air\ka52\data\ka52_02.rvmat",
+				"rhsafrf\addons\rhs_a2port_air\ka52\data\ka52_02_damage.rvmat",
+				"rhsafrf\addons\rhs_a2port_air\ka52\data\ka52_02_destruct.rvmat",
+				"rhsafrf\addons\rhs_a2port_air\ka52\data\ka52_glass.rvmat",
+				"rhsafrf\addons\rhs_a2port_air\ka52\data\ka52_glass_damage.rvmat",
+				"rhsafrf\addons\rhs_a2port_air\ka52\data\ka52_glass_damage.rvmat",
+				"rhsafrf\addons\rhs_a2port_air\ka52\data\ka52_glass_in.rvmat",
+				"rhsafrf\addons\rhs_a2port_air\ka52\data\ka52_glass_in_damage.rvmat",
+				"rhsafrf\addons\rhs_a2port_air\ka52\data\ka52_glass_in_damage.rvmat",
+				"rhsafrf\addons\rhs_a2port_air\ka52\data\Ka52_cauges_light.rvmat",
+				"rhsafrf\addons\rhs_a2port_air\ka52\data\Ka52_cauges_bug.rvmat",
+				"rhsafrf\addons\rhs_a2port_air\ka52\data\Ka52_cauges_bug.rvmat",
+				"rhsafrf\addons\rhs_a2port_air\ka52\data\Ka52_weapons.rvmat",
+				"rhsafrf\addons\rhs_a2port_air\ka52\data\Ka52_weapons_damage.rvmat",
+				"rhsafrf\addons\rhs_a2port_air\ka52\data\Ka52_weapons_destruct.rvmat"
+			};
+		};
 		class MFD
 		{
 			class MFD_Left_Compass
@@ -9967,6 +15128,7 @@ class CfgVehicles
 					condition="on";
 					class Text
 					{
+						type="text";
 						align="center";
 						scale=1;
 						source="Heading";
@@ -10010,6 +15172,7 @@ class CfgVehicles
 					condition="on";
 					class Speed
 					{
+						type="text";
 						align="left";
 						scale=1;
 						source="speed";
@@ -10055,6 +15218,7 @@ class CfgVehicles
 					};
 					class TurretDirection
 					{
+						type="text";
 						align="center";
 						scale=1;
 						source="userText";
@@ -10079,6 +15243,7 @@ class CfgVehicles
 					};
 					class TurretElevation
 					{
+						type="text";
 						align="left";
 						scale=1;
 						source="userText";
@@ -10104,6 +15269,7 @@ class CfgVehicles
 					};
 					class DistanceToTarget
 					{
+						type="text";
 						align="center";
 						scale=1;
 						source="userText";
@@ -10167,6 +15333,7 @@ class CfgVehicles
 				{
 					class WeaponAim
 					{
+						type="vector";
 						source="turretworld";
 						pos0[]={0.5,0.41};
 						pos10[]={1.15,1.75};
@@ -10181,6 +15348,7 @@ class CfgVehicles
 					{
 						class Circle
 						{
+							type="line";
 							width=4;
 							points[]=
 							{
@@ -10245,6 +15413,7 @@ class CfgVehicles
 			{
 				class Pos10Vector
 				{
+					type="vector";
 					pos0[]={0.50199997,0.49000001};
 					pos10[]={1.112,1.03};
 				};
@@ -10263,22 +15432,27 @@ class CfgVehicles
 				{
 					class PlaneW
 					{
+						type="fixed";
 						pos[]={0.50199997,0.49000001};
 					};
 					class ImpactPoint
 					{
+						type="vector";
 						source="ImpactPoint";
 						pos0[]={0.5,0.38999999};
 						pos10[]={1.1339999,0.95999998};
 					};
 					class Limit0109
 					{
+						type="limit";
 						limits[]={0.1,0.1,0.89999998,0.89999998};
 					};
 					class MissileFlightTimeRot1
 					{
+						type="rotational";
 						source="MissileFlightTime";
 						sourceScale=1;
+						center[]={0,0};
 						min=0;
 						max=0.5;
 						minAngle=0;
@@ -10382,6 +15556,7 @@ class CfgVehicles
 					};
 					class ForwardVector
 					{
+						type="vector";
 						source="forward";
 						pos0[]={0,0};
 						pos10[]={0.347,0.345};
@@ -10389,17 +15564,20 @@ class CfgVehicles
 					class Target
 					{
 						source="target";
+						type="vector";
 						pos0[]={0.5,0.38999999};
 						pos10[]={1.1339999,0.95999998};
 					};
 					class Velocity: Pos10Vector
 					{
+						type="vector";
 						source="velocity";
 						pos0[]={0.50199997,0.49000001};
 						pos10[]={0.56300002,0.54400003};
 					};
 					class SliderSpeedSource
 					{
+						type="linear";
 						source="speed";
 						min=0;
 						max=138.88901;
@@ -10408,6 +15586,7 @@ class CfgVehicles
 					};
 					class AGLMove
 					{
+						type="linear";
 						source="altitudeAGL";
 						min=0;
 						max=50;
@@ -10424,6 +15603,7 @@ class CfgVehicles
 					};
 					class Heading
 					{
+						type="linear";
 						source="Heading";
 						min=-36;
 						max=36;
@@ -10432,7 +15612,9 @@ class CfgVehicles
 					};
 					class TargetDistanceMissile
 					{
+						type="rotational";
 						source="targetDist";
+						center[]={0,0};
 						min=100;
 						max=3000;
 						minAngle=-120;
@@ -10441,6 +15623,7 @@ class CfgVehicles
 					class vspeed
 					{
 						source="vspeed";
+						type="linear";
 						min=-30;
 						max=30;
 						minPos[]={0,0.059999999};
@@ -10448,7 +15631,9 @@ class CfgVehicles
 					};
 					class HorizonBankMGun
 					{
+						type="rotational";
 						source="HorizonBank";
+						center[]={0,0};
 						min=-6.2831898;
 						max=6.2831898;
 						minAngle=-360;
@@ -10458,6 +15643,7 @@ class CfgVehicles
 					class HorizonDive
 					{
 						source="horizonDive";
+						type="linear";
 						min=-1;
 						max=1;
 						minPos[]={0.50199997,2.49};
@@ -10465,6 +15651,8 @@ class CfgVehicles
 					};
 					class HorizonBankReverted
 					{
+						center[]={0.5,0.60159999};
+						type="rotational";
 						source="HorizonBank";
 						min="-3.14159265*2";
 						max="3.14159265*2";
@@ -10476,6 +15664,7 @@ class CfgVehicles
 					{
 						pos0[]={0.5,0.57999998};
 						pos10[]={1.3839999,1.3652};
+						type="horizon";
 						angle=0;
 					};
 					class LevelP5: Level0
@@ -10561,6 +15750,7 @@ class CfgVehicles
 						condition="mgun+rocket+bomb";
 						class Cross
 						{
+							type="line";
 							width=3;
 							points[]=
 							{
@@ -10620,6 +15810,7 @@ class CfgVehicles
 						};
 						class Circle
 						{
+							type="line";
 							width=3;
 							points[]=
 							{
@@ -10793,6 +15984,7 @@ class CfgVehicles
 						};
 						class Circle_Min_Range
 						{
+							type="line";
 							width=3;
 							points[]=
 							{
@@ -11022,6 +16214,7 @@ class CfgVehicles
 						};
 						class Distance
 						{
+							type="text";
 							source="ImpactDistance";
 							sourceScale=0.001;
 							sourcePrecision=1;
@@ -11307,6 +16500,7 @@ class CfgVehicles
 							},
 							{}
 						};
+						type="line";
 					};
 					class HorizonBank
 					{
@@ -11459,13 +16653,16 @@ class CfgVehicles
 								1
 							}
 						};
+						type="line";
 					};
 					class CollectiveGroup
 					{
 						condition="simulRTD";
 						class CollectiveText
 						{
+							type="text";
 							source="static";
+							text="%";
 							align="right";
 							scale=1;
 							pos[]=
@@ -11486,6 +16683,7 @@ class CfgVehicles
 						};
 						class CollectiveNumber
 						{
+							type="text";
 							source="rtdCollective";
 							sourceScale=100;
 							align="left";
@@ -11515,6 +16713,7 @@ class CfgVehicles
 						{
 							class Level0
 							{
+								type="line";
 								width=4;
 								points[]=
 								{
@@ -11573,6 +16772,7 @@ class CfgVehicles
 							};
 							class LevelM5: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -11604,7 +16804,9 @@ class CfgVehicles
 							};
 							class VALM_1_5
 							{
+								type="text";
 								source="static";
+								text=-5;
 								align="right";
 								scale=1;
 								sourceScale=1;
@@ -11651,6 +16853,7 @@ class CfgVehicles
 							};
 							class LevelP5: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -11682,7 +16885,9 @@ class CfgVehicles
 							};
 							class VALP_1_5
 							{
+								type="text";
 								source="static";
+								text="5";
 								align="right";
 								scale=1;
 								sourceScale=1;
@@ -11729,6 +16934,7 @@ class CfgVehicles
 							};
 							class LevelM10: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -11760,7 +16966,9 @@ class CfgVehicles
 							};
 							class VALM_1_10
 							{
+								type="text";
 								source="static";
+								text=-10;
 								align="right";
 								scale=1;
 								sourceScale=1;
@@ -11807,6 +17015,7 @@ class CfgVehicles
 							};
 							class LevelP10: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -11838,7 +17047,9 @@ class CfgVehicles
 							};
 							class VALP_1_10
 							{
+								type="text";
 								source="static";
+								text="10";
 								align="right";
 								scale=1;
 								sourceScale=1;
@@ -11885,6 +17096,7 @@ class CfgVehicles
 							};
 							class LevelM15: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -11916,7 +17128,9 @@ class CfgVehicles
 							};
 							class VALM_1_15
 							{
+								type="text";
 								source="static";
+								text=-15;
 								align="right";
 								scale=1;
 								sourceScale=1;
@@ -11963,6 +17177,7 @@ class CfgVehicles
 							};
 							class LevelP15: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -11994,7 +17209,9 @@ class CfgVehicles
 							};
 							class VALP_1_15
 							{
+								type="text";
 								source="static";
+								text="15";
 								align="right";
 								scale=1;
 								sourceScale=1;
@@ -12041,6 +17258,7 @@ class CfgVehicles
 							};
 							class LevelM20: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -12072,7 +17290,9 @@ class CfgVehicles
 							};
 							class VALM_1_20
 							{
+								type="text";
 								source="static";
+								text=-20;
 								align="right";
 								scale=1;
 								sourceScale=1;
@@ -12119,6 +17339,7 @@ class CfgVehicles
 							};
 							class LevelP20: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -12150,7 +17371,9 @@ class CfgVehicles
 							};
 							class VALP_1_20
 							{
+								type="text";
 								source="static";
+								text="20";
 								align="right";
 								scale=1;
 								sourceScale=1;
@@ -12197,6 +17420,7 @@ class CfgVehicles
 							};
 							class LevelM25: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -12228,7 +17452,9 @@ class CfgVehicles
 							};
 							class VALM_1_25
 							{
+								type="text";
 								source="static";
+								text=-25;
 								align="right";
 								scale=1;
 								sourceScale=1;
@@ -12275,6 +17501,7 @@ class CfgVehicles
 							};
 							class LevelP25: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -12306,7 +17533,9 @@ class CfgVehicles
 							};
 							class VALP_1_25
 							{
+								type="text";
 								source="static";
+								text="25";
 								align="right";
 								scale=1;
 								sourceScale=1;
@@ -12353,6 +17582,7 @@ class CfgVehicles
 							};
 							class LevelM30: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -12384,7 +17614,9 @@ class CfgVehicles
 							};
 							class VALM_1_30
 							{
+								type="text";
 								source="static";
+								text=-30;
 								align="right";
 								scale=1;
 								sourceScale=1;
@@ -12431,6 +17663,7 @@ class CfgVehicles
 							};
 							class LevelP30: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -12462,7 +17695,9 @@ class CfgVehicles
 							};
 							class VALP_1_30
 							{
+								type="text";
 								source="static";
+								text="30";
 								align="right";
 								scale=1;
 								sourceScale=1;
@@ -12509,6 +17744,7 @@ class CfgVehicles
 							};
 							class LevelM35: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -12540,7 +17776,9 @@ class CfgVehicles
 							};
 							class VALM_1_35
 							{
+								type="text";
 								source="static";
+								text=-35;
 								align="right";
 								scale=1;
 								sourceScale=1;
@@ -12587,6 +17825,7 @@ class CfgVehicles
 							};
 							class LevelP35: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -12618,7 +17857,9 @@ class CfgVehicles
 							};
 							class VALP_1_35
 							{
+								type="text";
 								source="static";
+								text="35";
 								align="right";
 								scale=1;
 								sourceScale=1;
@@ -12665,6 +17906,7 @@ class CfgVehicles
 							};
 							class LevelM40: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -12696,7 +17938,9 @@ class CfgVehicles
 							};
 							class VALM_1_40
 							{
+								type="text";
 								source="static";
+								text=-40;
 								align="right";
 								scale=1;
 								sourceScale=1;
@@ -12743,6 +17987,7 @@ class CfgVehicles
 							};
 							class LevelP40: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -12774,7 +18019,9 @@ class CfgVehicles
 							};
 							class VALP_1_40
 							{
+								type="text";
 								source="static";
+								text="40";
 								align="right";
 								scale=1;
 								sourceScale=1;
@@ -12821,6 +18068,7 @@ class CfgVehicles
 							};
 							class LevelM45: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -12852,7 +18100,9 @@ class CfgVehicles
 							};
 							class VALM_1_45
 							{
+								type="text";
 								source="static";
+								text=-45;
 								align="right";
 								scale=1;
 								sourceScale=1;
@@ -12899,6 +18149,7 @@ class CfgVehicles
 							};
 							class LevelP45: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -12930,7 +18181,9 @@ class CfgVehicles
 							};
 							class VALP_1_45
 							{
+								type="text";
 								source="static";
+								text="45";
 								align="right";
 								scale=1;
 								sourceScale=1;
@@ -12979,6 +18232,7 @@ class CfgVehicles
 					};
 					class Static
 					{
+						type="line";
 						width=4;
 						points[]=
 						{
@@ -13220,6 +18474,7 @@ class CfgVehicles
 						condition="speed-2.78";
 						class Static
 						{
+							type="line";
 							width=4;
 							points[]=
 							{
@@ -13401,7 +18656,9 @@ class CfgVehicles
 						};
 						class SpeedStatic500
 						{
+							type="text";
 							source="static";
+							text="500";
 							scale=1;
 							sourceScale=1;
 							align="left";
@@ -13431,7 +18688,9 @@ class CfgVehicles
 						};
 						class SpeedStatic0
 						{
+							type="text";
 							source="static";
+							text="0";
 							scale=1;
 							sourceScale=1;
 							align="left";
@@ -13466,6 +18725,7 @@ class CfgVehicles
 						class Panel
 						{
 							width=4;
+							type="line";
 							points[]=
 							{
 								
@@ -13574,10 +18834,12 @@ class CfgVehicles
 						};
 						class AltStatic50
 						{
+							type="text";
 							source="static";
 							scale=1;
 							sourceScale=1;
 							align="right";
+							text=50;
 							pos[]=
 							{
 								{0.79000002,0.17},
@@ -13597,6 +18859,7 @@ class CfgVehicles
 					};
 					class RadarBoxes
 					{
+						type="radar";
 						pos0[]={0.5,0.38999999};
 						pos10[]={1.1339999,0.95999998};
 						width=4;
@@ -13633,6 +18896,7 @@ class CfgVehicles
 					{
 						class shape
 						{
+							type="line";
 							width=4;
 							points[]=
 							{
@@ -13686,6 +18950,7 @@ class CfgVehicles
 					};
 					class SpeedNumber
 					{
+						type="text";
 						align="right";
 						source="speed";
 						sourceScale=3.5999999;
@@ -13732,8 +18997,10 @@ class CfgVehicles
 					};
 					class AltNumberStatic: AltNumber
 					{
+						type="text";
 						source="static";
 						align="right";
+						text="р";
 						scale=1;
 						sourceScale=1;
 						pos[]=
@@ -13776,7 +19043,9 @@ class CfgVehicles
 					};
 					class VspeedNumberStaticP30
 					{
+						type="text";
 						source="static";
+						text="+30";
 						scale=1;
 						sourceScale=1;
 						align="right";
@@ -13798,7 +19067,9 @@ class CfgVehicles
 					};
 					class VspeedNumberStaticZERO
 					{
+						type="text";
 						source="static";
+						text="0";
 						scale=1;
 						sourceScale=1;
 						align="right";
@@ -13820,7 +19091,9 @@ class CfgVehicles
 					};
 					class VspeedNumberStaticM30
 					{
+						type="text";
 						source="static";
+						text="-30";
 						scale=1;
 						sourceScale=1;
 						align="right";
@@ -13842,7 +19115,9 @@ class CfgVehicles
 					};
 					class NevimStatic3
 					{
+						type="text";
 						source="static";
+						text="3";
 						scale=1;
 						sourceScale=1;
 						align="right";
@@ -13864,7 +19139,9 @@ class CfgVehicles
 					};
 					class NevimStaticZERO
 					{
+						type="text";
 						source="static";
+						text="0";
 						scale=1;
 						sourceScale=1;
 						align="right";
@@ -13886,7 +19163,9 @@ class CfgVehicles
 					};
 					class NevimStatic1
 					{
+						type="text";
 						source="static";
+						text="1";
 						scale=1;
 						sourceScale=1;
 						align="right";
@@ -13908,11 +19187,13 @@ class CfgVehicles
 					};
 					class HeadingScale
 					{
+						type="scale";
 						source="heading";
 						horizontal=1;
 						sourceScale=0.1;
 						width=4;
 						top=0.30000001;
+						center=0.5;
 						bottom=0.69999999;
 						lineXleft=0.11;
 						lineYright=0.1;
@@ -13957,10 +19238,24 @@ class CfgVehicles
 	};
 	class RHS_Ka52Black_base: RHS_Ka52_base
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_Ka52Black_base.paa";
 		accuracy=0.5;
+		hiddenSelectionsTextures[]=
+		{
+			"\rhsafrf\addons\rhs_a2port_air\ka52\data\ka52_01_co.paa",
+			"\rhsafrf\addons\rhs_a2port_air\ka52\data\ka52_02_co.paa",
+			"a3\data_f\clear_empty.paa",
+			"a3\data_f\clear_empty.paa",
+			"rhsafrf\addons\rhs_decals\data\labels\aviation\vvs_ca.paa",
+			"\rhsafrf\addons\rhs_a2port_air\Ka52\Data\rhs_ka52_samshin_wfov.paa"
+		};
 	};
 	class RHS_Ka52_vvsc: RHS_Ka52_base
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_Ka52_vvsc.paa";
+		scope=2;
+		faction="rhs_faction_vvs_c";
+		author="$STR_RHS_AUTHOR_FULL";
 		availableForSupportTypes[]=
 		{
 			"CAS_Heli"
@@ -13968,6 +19263,10 @@ class CfgVehicles
 	};
 	class RHS_Ka52_vvs: RHS_Ka52Black_base
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_Ka52_vvs.paa";
+		scope=2;
+		faction="rhs_faction_vvs";
+		author="$STR_RHS_AUTHOR_FULL";
 		availableForSupportTypes[]=
 		{
 			"CAS_Heli"
@@ -13975,6 +19274,10 @@ class CfgVehicles
 	};
 	class RHS_Ka52_UPK23_vvs: RHS_Ka52_vvs
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_Ka52_UPK23_vvs.paa";
+		author="$STR_RHS_AUTHOR_FULL";
+		scope=1;
+		scopeCurator=2;
 		displayName="Ka-52 (UPK)";
 		class Components: Components
 		{
@@ -14009,6 +19312,10 @@ class CfgVehicles
 	};
 	class RHS_Ka52_UPK23_vvsc: RHS_Ka52_vvsc
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_Ka52_UPK23_vvsc.paa";
+		author="$STR_RHS_AUTHOR_FULL";
+		scope=1;
+		scopeCurator=2;
 		displayName="Ka-52 (UPK)";
 		class Components: Components
 		{
@@ -14043,13 +19350,22 @@ class CfgVehicles
 	};
 	class rhs_ka52_blade: Plane
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_ka52_blade.paa";
+		scope=1;
+		scopeArsenal=0;
+		scopeCurator=0;
 		hiddenSelections[]={};
+		author="$STR_RHS_AUTHOR_FULL";
 		displayName="Ka-52 Blade";
 		draconicForceXCoef=17.200001;
 		draconicForceYCoef=12.6;
 		draconicForceZCoef=10.15;
 		draconicTorqueXCoef=11.29;
 		draconicTorqueYCoef=13.1;
+		Icon="iconParachute";
+		picture="\A3\Air_F_Beta\Parachute_01\Data\UI\Portrait_Parachute_01_CA.paa";
+		model="\rhsafrf\addons\rhs_a2port_air\ka52\Ka52_rotor.p3d";
+		unitInfoType="RscUnitInfoSoldier";
 		hideUnitInfo=1;
 		hasdriver=0;
 		weapons[]={};
@@ -14058,8 +19374,12 @@ class CfgVehicles
 		secondaryExplosion=0;
 		fuelExplosionPower=0;
 		explosionEffect="";
+		destrType="DestructNo";
+		transportSoldier=0;
+		vehicleClass="Objects";
 		driveOnComponent[]={};
 		class Turrets;  //found empty after stripping
+		class UserActions;  //found empty after stripping
 		class Eventhandlers
 		{
 			HandleDamage="deleteVehicle (_this select 0)";
@@ -14069,13 +19389,26 @@ class CfgVehicles
 	class Car_f;
 	class rhs_ka52_ejection_vest: Car_f
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_ka52_ejection_vest.paa";
+		scope=1;
+		scopeArsenal=0;
+		scopeCurator=0;
 		hiddenSelections[]={};
+		author="$STR_RHS_AUTHOR_FULL";
 		displayName="K37-800 Ejection Vest";
 		simulation="carX";
+		Icon="iconParachute";
+		picture="\A3\Air_F_Beta\Parachute_01\Data\UI\Portrait_Parachute_01_CA.paa";
+		model="\rhsafrf\addons\rhs_a2port_air\ka52\rhs_ka52_ejection_vest.p3d";
 		memoryPointsGetInCargo="Cargo";
 		memoryPointsGetInCargoDir="Cargo dir";
 		ejectSpeed[]={1,0,1};
+		unitInfoType="RscUnitInfoSoldier";
 		hideUnitInfo=1;
+		cargoAction[]=
+		{
+			"RHS_ka52_Pilot_Eject"
+		};
 		hasdriver=0;
 		weapons[]={};
 		magazines[]={};
@@ -14083,11 +19416,17 @@ class CfgVehicles
 		secondaryExplosion=0;
 		fuelExplosionPower=0;
 		explosionEffect="";
+		destrType="DestructNo";
 		castCargoShadow=1;
+		transportSoldier=1;
+		vehicleClass="Objects";
 		occludeSoundsWhenIn=1;
 		obstructSoundsWhenIn=1;
+		driverRightHandAnimName="handle";
+		driverLeftHandAnimName="handle";
 		driveOnComponent[]={};
 		class Turrets;  //found empty after stripping
+		class UserActions;  //found empty after stripping
 		class Eventhandlers;  //found empty after stripping
 		SLX_XEH_DISABLED=1;
 	};
@@ -14095,6 +19434,18 @@ class CfgVehicles
 	{
 		displayName="Ka-52 ejection rocket";
 		editorCategory="EdCat_Things";
+		editorSubcategory="EdSubcat_Military";
+		vehicleClass="Small_items";
+		model="\rhsafrf\addons\rhs_a2port_air\ka52\Ka52_rps_rocket.p3d";
+		class AnimationSources
+		{
+			class hide_booster
+			{
+				source="user";
+				animPeriod=0.60000002;
+				initPhase=0;
+			};
+		};
 		armor=100000000000;
 		class Eventhandlers
 		{
@@ -14108,20 +19459,31 @@ class CfgVehicles
 	};
 	class rhs_pchela1t_base: UAV_02_base_F
 	{
+		dlc="RHS_AFRF";
 		rhs_decalParameters[]=
 		{
 			"['Number',cRHSAIRPchelaNumberPlaces,'AviaRed']"
 		};
 		rhs_hasNoRadar=1;
+		category="Autonomous";
 		wreck="";
+		scope=0;
+		faction="rhs_faction_vvs";
 		side=0;
+		crew="O_UAV_AI";
 		typicalCargo[]=
 		{
 			"O_UAV_AI"
 		};
 		accuracy=1;
+		class Library
+		{
+			libTextDesc="The Pchela-1T is an unmanned aerial vehicle (UAV) developed in Russia. Its primary uses are surveillance and observation or target designation.";
+		};
 		displayName="Pchela-1T";
+		model="\rhsafrf\addons\rhs_a2port_air\PCHELA1T\Pchela1T.p3d";
 		icon="\rhsafrf\addons\rhs_a2port_air\data\map_ico\icon_Pchela1T_CA.paa";
+		mapSize=5;
 		armor=75;
 		damageResistance=0.03176;
 		uavCameraDriverPos="gunnerview";
@@ -14149,18 +19511,33 @@ class CfgVehicles
 				minTurn=-360;
 				maxTurn=360;
 				initTurn=0;
+				outGunnerMayFire=1;
+				inGunnerMayFire=1;
 				commanding=-1;
+				body="Optics_turret";
+				gun="Optics_gun";
+				animationSourceBody="mainTurret";
+				animationSourceGun="mainGun";
 				memoryPointGun="gunnerview";
+				memoryPointGunnerOptics="gunnerview";
+				gunBeg="gunnerview_dir";
+				gunEnd="gunnerview";
+				gunnerOpticsModel="A3\drones_f\Weapons_F_Gamma\Reticle\UGV_01_Optics_Gunner_F.p3d";
+				gunnerForceOptics=1;
+				turretInfoType="RscOptics_UAV_gunner";
 				stabilizedInAxes=3;
 				enableManualFire=0;
 				weapons[]={};
 				magazines[]={};
 				GunnerCompartments="Compartment1";
+				gunnerInAction="Disabled";
+				gunnerAction="Disabled";
 				startEngine=0;
 				class OpticsIn
 				{
 					class Wide
 					{
+						opticsDisplayName="W";
 						initAngleX=0;
 						minAngleX=-30;
 						maxAngleX=30;
@@ -14177,6 +19554,7 @@ class CfgVehicles
 							"Ti"
 						};
 						thermalMode[]={0,1};
+						gunnerOpticsModel="A3\drones_f\Weapons_F_Gamma\Reticle\UAV_Optics_Gunner_wide_F.p3d";
 					};
 				};
 				class OpticsOut
@@ -14197,16 +19575,32 @@ class CfgVehicles
 							"Normal",
 							"NVG"
 						};
+						gunnerOpticsModel="";
+						gunnerOpticsEffect[]={};
 					};
 				};
 			};
 		};
-		class Damage;  //found empty after stripping
+		class Damage
+		{
+			tex[]={};
+			mat[]=
+			{
+				"rhsafrf\addons\rhs_a2port_air\PCHELA1T\data\pchela1t.rvmat",
+				"rhsafrf\addons\rhs_a2port_air\PCHELA1T\data\pchela1t_damage.rvmat",
+				"rhsafrf\addons\rhs_a2port_air\PCHELA1T\data\pchela1t_destruct.rvmat"
+			};
+		};
 		class textureSources
 		{
 			class standard
 			{
 				displayName="Grey";
+				author="$STR_RHS_AUTHOR_FULL";
+				textures[]=
+				{
+					"\rhsafrf\addons\rhs_a2port_air\PCHELA1T\data\pchela1tblu_co.paa"
+				};
 				factions[]=
 				{
 					"rhs_faction_vvs_c",
@@ -14216,10 +19610,23 @@ class CfgVehicles
 			class Camo: standard
 			{
 				displayName="Camo";
+				author="$STR_RHS_AUTHOR_FULL";
+				textures[]=
+				{
+					"\rhsafrf\addons\rhs_a2port_air\PCHELA1T\data\pchela1t_co.paa"
+				};
 			};
 		};
+		textureList[]={};
 		class Attributes
 		{
+			class ObjectTexture
+			{
+				control="ObjectTexture";
+				data="ObjectTexture";
+				displayName="Skin";
+				tooltip="Texture and material set applied on the object.";
+			};
 			class rhs_decalNumber_type
 			{
 				displayName="Define font type of side number";
@@ -14228,6 +19635,7 @@ class CfgVehicles
 				control="Combo";
 				expression="_this setVariable ['%s', _value];[_this,[['Number', cRHSAIRPchelaNumberPlaces, _value]]] call rhs_fnc_decalsInit";
 				defaultValue=0;
+				typeName="STRING";
 				class values
 				{
 					class AviaRed
@@ -14300,10 +19708,12 @@ class CfgVehicles
 				property="rhs_decalNumber";
 				control="Edit";
 				validate="Number";
+				typeName="Number";
 				defaultValue="-1";
 				expression="if( _value >= 0)then{if( _value == 0)then{{[_this setobjectTexture [_x,'a3\data_f\clear_empty.paa']]}foreach cRHSAIRPchelaNumberPlaces}else{[_this, [['Number', cRHSAIRPchelaNumberPlaces, _this getVariable ['rhs_decalNumber_type','AviaYellow'], _value] ] ] call rhs_fnc_decalsInit}};";
 			};
 		};
+		transportSoldier=0;
 		maxSpeed=180;
 		fuelCapacity=500;
 		landingSpeed=73;
@@ -14313,6 +19723,17 @@ class CfgVehicles
 		gearRetracting=0;
 		threat[]={0.30000001,0.30000001,0.1};
 		audible=8;
+		hiddenSelections[]=
+		{
+			"Camo",
+			"n1",
+			"n2",
+			"n3"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"\rhsafrf\addons\rhs_a2port_air\PCHELA1T\data\pchela1t_co.paa"
+		};
 		class EventHandlers: EventHandlers
 		{
 			class RHS_EventHandlers
@@ -14321,8 +19742,23 @@ class CfgVehicles
 			};
 		};
 	};
-	class rhs_pchela1t_vvs: rhs_pchela1t_base;  //found empty after stripping
-	class rhs_pchela1t_vvsc: rhs_pchela1t_base;  //found empty after stripping
+	class rhs_pchela1t_vvs: rhs_pchela1t_base
+	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_pchela1t_vvs.paa";
+		scope=2;
+		author="$STR_RHS_AUTHOR_FULL";
+		hiddenSelectionsTextures[]=
+		{
+			"\rhsafrf\addons\rhs_a2port_air\PCHELA1T\data\pchela1tblu_co.paa"
+		};
+	};
+	class rhs_pchela1t_vvsc: rhs_pchela1t_base
+	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_pchela1t_vvsc.paa";
+		scope=2;
+		author="$STR_RHS_AUTHOR_FULL";
+		faction="rhs_faction_vvs_c";
+	};
 	class Module_F;
 	class ModuleCAS_F: Module_F
 	{

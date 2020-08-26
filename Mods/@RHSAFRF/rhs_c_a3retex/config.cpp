@@ -10,7 +10,18 @@ class CfgPatches
 			"rhs_ka60_c"
 		};
 		weapons[]={};
+		requiredVersion=1.3200001;
+		requiredAddons[]=
+		{
+			"rhs_main",
+			"rhs_c_heavyweapons",
+			"rhs_decals",
+			"rhs_optics",
+			"rhs_c_troops"
+		};
 		name="A3 Retextures";
+		author="$STR_RHS_AUTHOR_FULL";
+		url="http://www.rhsmods.org/";
 	};
 };
 class DefaultVehicleSystemsDisplayManagerLeft
@@ -47,6 +58,9 @@ class CfgVehicles
 	};
 	class rhs_typhoon_base: O_Truck_03_repair_F
 	{
+		dlc="RHS_AFRF";
+		category="Car";
+		scope=0;
 		displayName="$STR_RHS_KAMAZ63968_NAME";
 		terrainCoef=1.8;
 		wheelCircumference=3.776;
@@ -130,8 +144,11 @@ class CfgVehicles
 		{
 			class L1
 			{
+				boneName="wheel_1_1_damper";
 				steering=1;
 				side="left";
+				center="wheel_1_1_axis";
+				boundary="wheel_1_1_bound";
 				width="0.2";
 				mass=80;
 				MOI=40;
@@ -141,6 +158,8 @@ class CfgVehicles
 				maxBrakeTorque=15000;
 				maxHandBrakeTorque=0;
 				suspTravelDirection[]={-0.125,-1,0};
+				suspForceAppPointOffset="wheel_1_1_axis";
+				tireForceAppPointOffset="wheel_1_1_axis";
 				maxCompression=0.15000001;
 				mMaxDroop=0.15000001;
 				sprungMass=2716;
@@ -158,11 +177,21 @@ class CfgVehicles
 			};
 			class L2: L1
 			{
+				boneName="wheel_1_2_damper";
 				steering=1;
+				center="wheel_1_2_axis";
+				boundary="wheel_1_2_bound";
+				suspForceAppPointOffset="wheel_1_2_axis";
+				tireForceAppPointOffset="wheel_1_2_axis";
 			};
 			class L3: L2
 			{
+				boneName="wheel_1_3_damper";
 				steering=0;
+				center="wheel_1_3_axis";
+				boundary="wheel_1_3_bound";
+				suspForceAppPointOffset="wheel_1_3_axis";
+				tireForceAppPointOffset="wheel_1_3_axis";
 				sprungMass=2500;
 				springStrength=150000;
 				springDamperRate=15000;
@@ -170,28 +199,91 @@ class CfgVehicles
 			};
 			class R1: L1
 			{
+				boneName="wheel_2_1_damper";
+				center="wheel_2_1_axis";
+				boundary="wheel_2_1_bound";
+				suspForceAppPointOffset="wheel_2_1_axis";
+				tireForceAppPointOffset="wheel_2_1_axis";
 				steering=1;
 				side="right";
 				suspTravelDirection[]={0.125,-1,0};
 			};
 			class R2: L2
 			{
+				boneName="wheel_2_2_damper";
 				steering=1;
+				center="wheel_2_2_axis";
+				boundary="wheel_2_2_bound";
+				suspForceAppPointOffset="wheel_2_2_axis";
+				tireForceAppPointOffset="wheel_2_2_axis";
 				side="right";
 				maxHandBrakeTorque=0;
 			};
 			class R3: L3
 			{
+				boneName="wheel_2_3_damper";
 				steering=0;
+				center="wheel_2_3_axis";
+				boundary="wheel_2_3_bound";
+				suspForceAppPointOffset="wheel_2_3_axis";
+				tireForceAppPointOffset="wheel_2_3_axis";
 				maxHandBrakeTorque=200000;
 			};
 		};
+		author="RHS";
+		vehicleClass="rhs_vehclass_truck";
+		editorSubcategory="rhs_EdSubcat_truck";
+		crew="rhs_msv_driver";
 		side=0;
+		class TransportMagazines
+		{
+			class _xx_30Rnd_545x39_AK
+			{
+				magazine="rhs_30Rnd_545x39_7N10_AK";
+				count="10";
+			};
+			class _xx_HandGrenade_East
+			{
+				magazine="rhs_mag_rgd5";
+				count="10";
+			};
+			class _xx_signal_rounds
+			{
+				magazine="rhs_mag_nspn_red";
+				count="10";
+			};
+			class _xx_SmokeShellRed
+			{
+				magazine="rhs_mag_rdg2_white";
+				count="4";
+			};
+		};
+		class TransportItems
+		{
+			class _xx_FirstAidKit
+			{
+				name="FirstAidKit";
+				count=8;
+			};
+			class _xx_Toolkit
+			{
+				name="Toolkit";
+				count=1;
+			};
+		};
+		class TransportWeapons;  //found empty after stripping
 		class textureSources: textureSources
 		{
 			class rhs_green
 			{
 				displayName="Green";
+				author="$STR_RHS_AUTHOR_FULL";
+				textures[]=
+				{
+					"\rhsafrf\addons\rhs_a3retex\Data\truck_03_ext01_co.paa",
+					"\rhsafrf\addons\rhs_a3retex\Data\truck_03_ext02_co.paa",
+					"\rhsafrf\addons\rhs_a3retex\Data\truck_03_ammo_co.paa"
+				};
 				factions[]=
 				{
 					"rhs_faction_vmf",
@@ -201,23 +293,46 @@ class CfgVehicles
 				};
 			};
 		};
+		textureList[]={};
 		class EventHandlers: EventHandlers
 		{
 			class RHS_EventHandlers;  //found empty after stripping
+		};
+		hiddenSelections[]=
+		{
+			"Camo1",
+			"Camo2",
+			"Camo3"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"\rhsafrf\addons\rhs_a3retex\Data\truck_03_ext01_co.paa",
+			"\rhsafrf\addons\rhs_a3retex\Data\truck_03_ext02_co.paa",
+			"\rhsafrf\addons\rhs_a3retex\Data\truck_03_ammo_co.paa"
 		};
 	};
 	class rhs_typhoon_vdv: rhs_typhoon_base
 	{
 		forceInGarage=1;
+		faction="rhs_faction_vdv";
+		scope=2;
 	};
 	class rhs_ka60_grey: O_Heli_Light_02_unarmed_F
 	{
+		dlc="RHS_AFRF";
+		scope=2;
 		LESH_canBeTowed=1;
 		LESH_towFromFront=0;
 		LESH_AxisOffsetTarget[]={0,-8,-0.74000001};
 		LESH_WheelOffset[]={0,3};
 		armorStructural=2;
+		category="Air";
 		displayName="Ka-60";
+		vehicleClass="rhs_vehclass_helicopter";
+		editorSubcategory="rhs_EdSubcat_helicopter";
+		faction="rhs_faction_vvs";
+		author="RHS";
+		crew="rhs_pilot_combat_heli";
 		typicalCargo[]=
 		{
 			"rhs_pilot_combat_heli"
@@ -234,16 +349,21 @@ class CfgVehicles
 					{
 						class AirTarget
 						{
+							minRange=9000;
+							maxRange=9000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
 						class GroundTarget
 						{
+							minRange=9000;
+							maxRange=9000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
 						angleRangeHorizontal=75;
 						angleRangeVertical=75;
+						typeRecognitionDistance=-1;
 						maxGroundNoiseDistance=0;
 						maxFogSeeThrough=0.30000001;
 						animDirection="mainGun";
@@ -253,16 +373,21 @@ class CfgVehicles
 					{
 						class AirTarget
 						{
+							minRange=11000;
+							maxRange=11000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
 						class GroundTarget
 						{
+							minRange=11000;
+							maxRange=11000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
 						angleRangeHorizontal=120;
 						angleRangeVertical=100;
+						typeRecognitionDistance=4000;
 						maxFogSeeThrough=1;
 						groundNoiseDistanceCoef=-1;
 						maxGroundNoiseDistance=-1;
@@ -335,6 +460,38 @@ class CfgVehicles
 				};
 			};
 		};
+		class TransportMagazines
+		{
+			class _xx_rhs_30Rnd_545x39_7N10_AK
+			{
+				magazine="rhs_30Rnd_545x39_7N10_AK";
+				count=6;
+			};
+			class _xx_rhs_mag_rgd5
+			{
+				magazine="rhs_mag_rgd5";
+				count=2;
+			};
+			class _xx_rhs_mag_nspn_red
+			{
+				magazine="rhs_mag_nspn_red";
+				count=4;
+			};
+			class _xx_rhs_mag_rdg2_white
+			{
+				magazine="rhs_mag_rdg2_white";
+				count=4;
+			};
+		};
+		class TransportItems
+		{
+			class _xx_FirstAidKit
+			{
+				name="FirstAidKit";
+				count=8;
+			};
+		};
+		class TransportWeapons;  //found empty after stripping
 		weapons[]=
 		{
 			"rhs_weap_CMFlareLauncher"
@@ -344,6 +501,11 @@ class CfgVehicles
 			class vvs_grey
 			{
 				displayName="VVS - Grey";
+				author="$STR_RHS_AUTHOR_FULL";
+				textures[]=
+				{
+					"\rhsafrf\addons\rhs_a3retex\Data\heli_light_02_ext_co.paa"
+				};
 				factions[]=
 				{
 					"rhs_faction_vvs",
@@ -353,7 +515,21 @@ class CfgVehicles
 			class vvs_camo: vvs_grey
 			{
 				displayName="VVS - Camo";
+				author="$STR_RHS_AUTHOR_FULL";
+				textures[]=
+				{
+					"\rhsafrf\addons\rhs_a3retex\Data\heli_light_02_ext_c_co.paa"
+				};
 			};
+		};
+		textureList[]={};
+		hiddenSelections[]=
+		{
+			"Camo1"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"\rhsafrf\addons\rhs_a3retex\Data\heli_light_02_ext_co.paa"
 		};
 		class EventHandlers: EventHandlers
 		{
@@ -363,5 +539,11 @@ class CfgVehicles
 	class rhs_ka60_c: rhs_ka60_grey
 	{
 		forceInGarage=0;
+		faction="rhs_faction_vvs_c";
+		author="RHS";
+		hiddenSelectionsTextures[]=
+		{
+			"\rhsafrf\addons\rhs_a3retex\Data\heli_light_02_ext_c_co.paa"
+		};
 	};
 };

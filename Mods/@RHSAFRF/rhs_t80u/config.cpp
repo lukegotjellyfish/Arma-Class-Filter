@@ -4,6 +4,11 @@ class CfgPatches
 	{
 		units[]={};
 		weapons[]={};
+		requiredVersion=1.8;
+		requiredAddons[]=
+		{
+			"rhs_c_tanks"
+		};
 		version=1;
 	};
 };

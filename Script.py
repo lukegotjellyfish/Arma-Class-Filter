@@ -500,6 +500,11 @@ classSkip = [
 	"class UserActions",
 ]
 
+#Disable editing of files, some missing classes where there shouldn't be
+attributeSkip = []
+multiAttributeSkip = []
+classSkip = []
+
 def newFile(root, file, logfile):
 	with open(root + "\\\\" + file, "r", encoding="UTF-8") as f:
 		lines = f.readlines()

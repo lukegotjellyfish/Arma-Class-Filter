@@ -153,14 +153,40 @@ opForMagazines = [
 ]
 
 #Classes for launcher page
-bluForLaunchers = []
-bluForLauncherAmmo = []
-opForLaunchers = []
-opForLauncherAmo = []
-
-#Classes for vehicles
-bluForVehicles = []
-opForVehicles = []
+launchers = [
+	"rhs_weap_rpg26",
+	"rhs_weap_rpg7",
+	"rhs_weap_rshg2",
+	"rhs_weap_rpg7",
+	"rhs_weap_rpg7",
+	"rhs_weap_rpg7",
+	"rhs_weap_m72a7",
+	"rhs_weap_M136",
+	"rhs_weap_maaws",
+	"rhs_weap_M136_hedp",
+	"rhs_weap_smaw",
+	"rhs_weap_maaws",
+	"rhs_weap_smaw",
+	"rhs_weap_m32_Base_F",
+	"rhs_weap_M320"
+]
+launcherAmmo = [
+	"rhs_rpg26_rocket",
+	"rhs_rpg7v2_pg7vl",
+	"rhs_rshg2_rocket",
+	"rhs_rpg7v2_pg7vr",
+	"rhs_rpg7v2_og7v",
+	"rhs_rpg7v2_tbg7v",
+	"rhs_m72a7_mag",
+	"rhs_m136_mag",
+	"rhs_mag_maaws_HEAT",
+	"rhs_m136_hedp_mag",
+	"rhs_mag_smaw_HEAA",
+	"rhs_mag_maaws_HE",
+	"rhs_mag_smaw_HEDP",
+	"rhsusf_mag_6Rnd_M441_HE",
+	"rhs_mag_M441_HE"
+]
 
 
 def findClass(className):
@@ -320,13 +346,60 @@ for walk in walkList:
 					cend + (cgreen + cbold + root + cend) + cviolet2 + \
 					"-------------------------------" + cend)
 
-weaponAttributes = ["dispersion", "mass", "maxZeroing", "recoil", "reloadTime"]
-ammoAttributes = ["hit", "count", "indirectHit","indirectHitRange","timeToLive","explosive", "deflecting", "caliber", "typicalSpeed", "airFriction", "initSpeed"]
-OrderedClasses(bluForWeapons, "BluForWeapons", weaponAttributes)
-OrderedClasses(opForWeapons, "OpForWeapons", weaponAttributes)
-OrderedClasses(bluForMagazines, "BluForMagazines", ammoAttributes)
-OrderedClasses(opForMagazines, "OpForMagazines", ammoAttributes)
-
+weaponAttributes = [
+	"dispersion",
+	"mass",
+	"maxZeroing",
+	"recoil",
+	"reloadTime"
+]
+ammoAttributes = [
+	"airFriction",
+	"caliber",
+	"count",
+	"deflecting",
+	"explosive",
+	"hit",
+	"indirectHit",
+	"indirectHitRange",
+	"initSpeed",
+	"timeToLive",
+	"typicalSpeed"
+]
+launcherAttributes = [
+	"canLock",
+	"cmImmunity",
+	"dispersion",
+	"lockAcquire",
+	"mass",
+	"maxZeroing",
+	"recoil",
+	"weaponLockDelay",
+	"weaponLockSystem"
+]
+launcherAmmoAttributes = [
+	"mass",
+	"initSpeed",
+	"count",
+	"",
+	"",
+	"",
+	"",
+	"",
+	"",
+	"",
+	"",
+	"",
+	"",
+	"",
+	""
+]
+#OrderedClasses(bluForWeapons, "BluForWeapons", weaponAttributes)
+#OrderedClasses(opForWeapons, "OpForWeapons", weaponAttributes)
+#OrderedClasses(bluForMagazines, "BluForMagazines", ammoAttributes)
+#OrderedClasses(opForMagazines, "OpForMagazines", ammoAttributes)
+OrderedClasses(launchers, "Launchers", launcherAttributes)
+OrderedClasses(launcherAmmo, "LauncherAmmo", launcherAmmoAttributes)
 #OrderedClasses()
 #OrderedClasses()
 #OrderedClasses()

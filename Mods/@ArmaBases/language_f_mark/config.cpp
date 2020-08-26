@@ -2,7 +2,14 @@ class CfgPatches
 {
 	class A3_Language_F_Mark
 	{
+		author="$STR_A3_Bohemia_Interactive";
 		name="Arma 3 Marksmen - Texts and Translations";
+		url="https://www.arma3.com";
+		requiredAddons[]=
+		{
+			"A3_Data_F_Mark"
+		};
+		requiredVersion=0.1;
 		units[]={};
 		weapons[]={};
 	};
@@ -155,6 +162,7 @@ class CfgHints
 						}
 					}
 				};
+				dlc=-1;
 			};
 			class BulletDropCompensator_sub
 			{
@@ -163,6 +171,7 @@ class CfgHints
 				tip="";
 				image="\A3\Ui_f\data\GUI\Cfg\Hints\Targets_ca.paa";
 				arguments[]={};
+				dlc=-1;
 			};
 			class MilDot_sub
 			{
@@ -171,6 +180,7 @@ class CfgHints
 				tip="$STR_A3_MilDot3";
 				image="\A3\Ui_f\data\GUI\Cfg\Hints\Targets_ca.paa";
 				arguments[]={};
+				dlc=-1;
 			};
 		};
 	};
@@ -205,6 +215,7 @@ class CfgHints
 				}
 			};
 			image="\a3\ui_f\data\gui\cfg\hints\Ranged_ca.paa";
+			dlc=332350;
 			weapon="srifle_DMR_02_F";
 			logicalOrder=8;
 		};
@@ -225,6 +236,7 @@ class CfgHints
 				}
 			};
 			image="\a3\ui_f\data\gui\cfg\hints\Ranged_ca.paa";
+			dlc=332350;
 			weapon="srifle_DMR_03_F";
 			logicalOrder=9;
 		};
@@ -245,6 +257,7 @@ class CfgHints
 				}
 			};
 			image="\a3\ui_f\data\gui\cfg\hints\Ranged_ca.paa";
+			dlc=332350;
 			weapon="srifle_DMR_04_F";
 			logicalOrder=3;
 		};
@@ -265,6 +278,7 @@ class CfgHints
 				}
 			};
 			image="\a3\ui_f\data\gui\cfg\hints\Ranged_ca.paa";
+			dlc=332350;
 			weapon="srifle_DMR_05_blk_F";
 			logicalOrder=4;
 		};
@@ -285,6 +299,7 @@ class CfgHints
 				}
 			};
 			image="\a3\ui_f\data\gui\cfg\hints\Ranged_ca.paa";
+			dlc=332350;
 			weapon="srifle_DMR_06_camo_F";
 			logicalOrder=10;
 		};
@@ -305,6 +320,7 @@ class CfgHints
 				}
 			};
 			image="\a3\ui_f\data\gui\cfg\hints\Automatic_ca.paa";
+			dlc=332350;
 			weapon="MMG_01_hex_F";
 			logicalOrder=18;
 		};
@@ -325,6 +341,7 @@ class CfgHints
 				}
 			};
 			image="\a3\ui_f\data\gui\cfg\hints\Automatic_ca.paa";
+			dlc=332350;
 			weapon="MMG_02_camo_F";
 			logicalOrder=27;
 		};
@@ -390,6 +407,7 @@ class CfgHints
 	class DlcMessage
 	{
 		displayName="";
+		dlc=-1;
 		class Dlc332350
 		{
 			displayName="$STR_A3_CFGMODS_MARK2";
@@ -406,6 +424,7 @@ class CfgHints
 				}
 			};
 			image="\a3\data_f_mark\logos\arma3_mark_icon_hint_ca.paa";
+			dlc=-1;
 		};
 		class Dlc332350FM
 		{
@@ -423,6 +442,7 @@ class CfgHints
 				}
 			};
 			image="\a3\data_f_mark\logos\arma3_mark_icon_hint_ca.paa";
+			dlc=-1;
 		};
 	};
 	class PremiumContent

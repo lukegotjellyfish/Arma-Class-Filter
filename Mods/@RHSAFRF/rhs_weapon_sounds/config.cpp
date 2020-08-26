@@ -4,8 +4,19 @@ class CfgPatches
 	{
 		units[]={};
 		weapons[]={};
+		requiredVersion=1.3200001;
+		requiredAddons[]=
+		{
+			"A3_sounds_f",
+			"RHS_c_weapons",
+			"RHS_c_heavyweapons",
+			"RHS_c_airweapons",
+			"RHS_sounds"
+		};
 		version="0.1";
 		name="AFRF Sounds";
+		author="$STR_RHS_AUTHOR_FULL";
+		url="http://www.rhsmods.org/";
 	};
 };
 class Mode_SemiAuto;
@@ -15,24 +26,28 @@ class CfgSound3DProcessors
 {
 	class RHS_Default_3DProcessingType
 	{
+		type="panner";
 		innerRange=10;
 		rangeCurve="LinearCurve";
 		range=1800;
 	};
 	class RHS_Shot_light_3DProcessingType
 	{
+		type="panner";
 		innerRange=0;
 		range=5;
 		rangeCurve="Smooth1Curve";
 	};
 	class RHS_Shot_medium_3DProcessingType
 	{
+		type="panner";
 		innerRange=0;
 		range=5;
 		rangeCurve="LinearCurve";
 	};
 	class RHS_Tail_3DProcessingType
 	{
+		type="panner";
 		innerRange=5;
 		range=190;
 		rangeCurve="InverseSquare2Curve";
@@ -80,6 +95,7 @@ class cfgDistanceFilters
 {
 	class RHS_defaultDistanceFilter
 	{
+		type="lowPassFilter";
 		minCutoffFrequency=150;
 		qFactor=1.3;
 		innerRange=400;
@@ -88,6 +104,7 @@ class cfgDistanceFilters
 	};
 	class RHS_rifleShotDistanceFilter
 	{
+		type="lowPassFilter";
 		minCutoffFrequency=250;
 		qFactor=1.3;
 		innerRange=150;
@@ -6871,12 +6888,74 @@ class CfgWeapons
 	};
 	class rhs_weap_pp2000: hgun_PDW2000_F
 	{
-		class Single: Single;  //found empty after stripping
+		class Single: Single
+		{
+			sounds[]=
+			{
+				"StandardSound"
+			};
+			class StandardSound
+			{
+				soundSetShot[]=
+				{
+					"RHS_pp2000_Shot_SoundSet",
+					"RHS_pistol1_Tail_SoundSet"
+				};
+			};
+		};
+		class FullAuto: FullAuto
+		{
+			class StandardSound
+			{
+				soundSetShot[]=
+				{
+					"RHS_pp2000_Shot_SoundSet",
+					"RHS_pistol1_Tail_SoundSet"
+				};
+			};
+		};
 	};
 	class rhs_weap_ak74m_Base_F: Rifle_Base_F
 	{
 		class Single: Mode_SemiAuto
 		{
+			sounds[]=
+			{
+				"StandardSound",
+				"SilencedSound"
+			};
+			class StandardSound
+			{
+				soundSetShot[]=
+				{
+					"RHS_AK74_Shot_SoundSet",
+					"RHS_Rifle1_Tail_SoundSet"
+				};
+			};
+			class SilencedSound
+			{
+				soundSetShot[]=
+				{
+					"RHS_sd_AK74_Shot_SoundSet",
+					"RHS_sd_Rifle1_Tail_SoundSet"
+				};
+			};
+		};
+		class FullAuto: Mode_FullAuto
+		{
+			sounds[]=
+			{
+				"StandardSound",
+				"SilencedSound"
+			};
+			class StandardSound
+			{
+				soundSetShot[]=
+				{
+					"RHS_AK74_Shot_SoundSet",
+					"RHS_Rifle1_Tail_SoundSet"
+				};
+			};
 			class SilencedSound
 			{
 				soundSetShot[]=
@@ -6892,6 +6971,43 @@ class CfgWeapons
 	{
 		class Single: Mode_SemiAuto
 		{
+			sounds[]=
+			{
+				"StandardSound",
+				"SilencedSound"
+			};
+			class StandardSound
+			{
+				soundSetShot[]=
+				{
+					"RHS_AKM_Shot_SoundSet",
+					"RHS_MMG1_Tail_SoundSet"
+				};
+			};
+			class SilencedSound
+			{
+				soundSetShot[]=
+				{
+					"RHS_sd_AKM_Shot_SoundSet",
+					"RHS_sd_MMG1_Tail_SoundSet"
+				};
+			};
+		};
+		class FullAuto: Mode_FullAuto
+		{
+			sounds[]=
+			{
+				"StandardSound",
+				"SilencedSound"
+			};
+			class StandardSound
+			{
+				soundSetShot[]=
+				{
+					"RHS_AKM_Shot_SoundSet",
+					"RHS_MMG1_Tail_SoundSet"
+				};
+			};
 			class SilencedSound
 			{
 				soundSetShot[]=
@@ -6904,18 +7020,75 @@ class CfgWeapons
 	};
 	class rhs_pkp_base: Rifle_Long_Base_F
 	{
-		class Single: Mode_SemiAuto;  //found empty after stripping
+		class Single: Mode_SemiAuto
+		{
+			sounds[]=
+			{
+				"StandardSound"
+			};
+			class StandardSound
+			{
+				soundSetShot[]=
+				{
+					"RHS_PK_Shot_SoundSet",
+					"RHS_MMG1_Tail_SoundSet"
+				};
+			};
+		};
+		class FullAuto: Mode_FullAuto
+		{
+			sounds[]=
+			{
+				"StandardSound"
+			};
+			class StandardSound
+			{
+				soundSetShot[]=
+				{
+					"RHS_PK_Shot_SoundSet",
+					"RHS_MMG1_Tail_SoundSet"
+				};
+			};
+		};
 	};
 	class rhs_weap_pkp: rhs_pkp_base;  //found empty after stripping
 	class PKT: MGun;  //found empty after stripping
 	class rhs_weap_pkt: PKT
 	{
-		class manual: MGun;  //found empty after stripping
+		class manual: MGun
+		{
+			sounds[]=
+			{
+				"StandardSound"
+			};
+			class StandardSound
+			{
+				soundSetShot[]=
+				{
+					"RHS_veh_PK_Shot_SoundSet",
+					"RHS_veh_PK_int_Shot_SoundSet",
+					"RHS_VEH_MMG1_Tail_SoundSet"
+				};
+			};
+		};
 	};
 	class rhs_weap_svd: rhs_weap_ak74m
 	{
 		class Single: Mode_SemiAuto
 		{
+			sounds[]=
+			{
+				"StandardSound",
+				"SilencedSound"
+			};
+			class StandardSound
+			{
+				soundSetShot[]=
+				{
+					"RHS_SVD_Shot_SoundSet",
+					"RHS_Rifle2_Tail_SoundSet"
+				};
+			};
 			class SilencedSound
 			{
 				soundSetShot[]=
@@ -6930,6 +7103,19 @@ class CfgWeapons
 	{
 		class Single: Mode_SemiAuto
 		{
+			sounds[]=
+			{
+				"StandardSound",
+				"SilencedSound"
+			};
+			class StandardSound
+			{
+				soundSetShot[]=
+				{
+					"RHS_SVD_Shot_SoundSet",
+					"RHS_Rifle2_Tail_SoundSet"
+				};
+			};
 			class SilencedSound
 			{
 				soundSetShot[]=
@@ -6944,6 +7130,19 @@ class CfgWeapons
 	{
 		class Single: Mode_SemiAuto
 		{
+			sounds[]=
+			{
+				"StandardSound",
+				"SilencedSound"
+			};
+			class StandardSound
+			{
+				soundSetShot[]=
+				{
+					"RHS_orsis_Shot_SoundSet",
+					"RHS_rifle2_Tail_SoundSet"
+				};
+			};
 			class SilencedSound
 			{
 				soundSetShot[]=

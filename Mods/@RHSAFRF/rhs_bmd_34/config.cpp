@@ -4,6 +4,11 @@ class CfgPatches
 	{
 		units[]={};
 		weapons[]={};
+		requiredVersion=1.6;
+		requiredAddons[]=
+		{
+			"rhs_c_sprut"
+		};
 		version=1;
 	};
 };

@@ -5,7 +5,16 @@ class CfgPatches
 		units[]={};
 		weapons[]={};
 		name="RHS: SAF explosives models";
+		requiredVersion=1.8;
+		requiredAddons[]=
+		{
+			"rhssaf_t_explosives",
+			"rhssaf_c_weapons"
+		};
+		author="$STR_RHSSAF_AUTHOR_FULL";
+		url="http://www.rhsmods.org/";
 		versionDesc="RHS";
 		version="VERSION";
+		text="QUOTE(RHS_TAG VERSION)";
 	};
 };

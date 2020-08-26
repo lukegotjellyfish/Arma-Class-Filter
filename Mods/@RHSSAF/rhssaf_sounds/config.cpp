@@ -5,8 +5,16 @@ class CfgPatches
 		units[]={};
 		weapons[]={};
 		name="RHS: SAF sounds";
+		requiredVersion=1.72;
+		requiredAddons[]=
+		{
+			"RHSSAF_c_weapons"
+		};
+		author="$STR_RHSSAF_AUTHOR_FULL";
+		url="http://www.rhsmods.org/";
 		versionDesc="RHS";
 		version="VERSION";
+		text="QUOTE(RHS_TAG VERSION)";
 	};
 };
 class Mode_SemiAuto;
@@ -16,24 +24,28 @@ class CfgSound3DProcessors
 {
 	class RHSSAF_Default_3DProcessingType
 	{
+		type="panner";
 		innerRange=10;
 		rangeCurve="LinearCurve";
 		range=1800;
 	};
 	class RHSSAF_Shot_light_3DProcessingType
 	{
+		type="panner";
 		innerRange=0;
 		range=5;
 		rangeCurve="Smooth1Curve";
 	};
 	class RHSSAF_Shot_medium_3DProcessingType
 	{
+		type="panner";
 		innerRange=0;
 		range=5;
 		rangeCurve="LinearCurve";
 	};
 	class RHSSAF_Tail_3DProcessingType
 	{
+		type="panner";
 		innerRange=5;
 		range=190;
 		rangeCurve="InverseSquare2Curve";
@@ -81,6 +93,7 @@ class cfgDistanceFilters
 {
 	class RHSSAF_defaultDistanceFilter
 	{
+		type="lowPassFilter";
 		minCutoffFrequency=150;
 		qFactor=1.3;
 		innerRange=400;
@@ -89,6 +102,7 @@ class cfgDistanceFilters
 	};
 	class RHSSAF_rifleShotDistanceFilter
 	{
+		type="lowPassFilter";
 		minCutoffFrequency=250;
 		qFactor=1.3;
 		innerRange=150;
@@ -6188,6 +6202,43 @@ class CfgWeapons
 	{
 		class Single: Mode_SemiAuto
 		{
+			sounds[]=
+			{
+				"StandardSound",
+				"SilencedSound"
+			};
+			class StandardSound
+			{
+				soundSetShot[]=
+				{
+					"RHSSAF_M70_Shot_SoundSet",
+					"RHSSAF_MMG1_Tail_SoundSet"
+				};
+			};
+			class SilencedSound
+			{
+				soundSetShot[]=
+				{
+					"RHSSAF_sd_M70_Shot_SoundSet",
+					"RHSSAF_sd_MMG1_Tail_SoundSet"
+				};
+			};
+		};
+		class FullAuto: Mode_FullAuto
+		{
+			sounds[]=
+			{
+				"StandardSound",
+				"SilencedSound"
+			};
+			class StandardSound
+			{
+				soundSetShot[]=
+				{
+					"RHSSAF_M70_Shot_SoundSet",
+					"RHSSAF_MMG1_Tail_SoundSet"
+				};
+			};
 			class SilencedSound
 			{
 				soundSetShot[]=
@@ -6202,6 +6253,19 @@ class CfgWeapons
 	{
 		class Single: Mode_SemiAuto
 		{
+			sounds[]=
+			{
+				"StandardSound",
+				"SilencedSound"
+			};
+			class StandardSound
+			{
+				soundSetShot[]=
+				{
+					"RHSSAF_M76_Shot_SoundSet",
+					"RHSSAF_Rifle2_Tail_SoundSet"
+				};
+			};
 			class SilencedSound
 			{
 				soundSetShot[]=
@@ -6216,6 +6280,33 @@ class CfgWeapons
 	{
 		class Single: Mode_SemiAuto
 		{
+			class StandardSound
+			{
+				soundSetShot[]=
+				{
+					"RHSSAF_M21_Shot_SoundSet",
+					"RHSSAF_rifle1_Tail_SoundSet"
+				};
+			};
+			class SilencedSound
+			{
+				soundSetShot[]=
+				{
+					"RHSSAF_sd_M21_Shot_SoundSet",
+					"RHSSAF_sd_rifle1_Tail_SoundSet"
+				};
+			};
+		};
+		class FullAuto: Mode_FullAuto
+		{
+			class StandardSound
+			{
+				soundSetShot[]=
+				{
+					"RHSSAF_M21_Shot_SoundSet",
+					"RHSSAF_rifle1_Tail_SoundSet"
+				};
+			};
 			class SilencedSound
 			{
 				soundSetShot[]=
@@ -6230,6 +6321,14 @@ class CfgWeapons
 	{
 		class Single: Mode_SemiAuto
 		{
+			class StandardSound
+			{
+				soundSetShot[]=
+				{
+					"RHSSAF_G36_Shot_SoundSet",
+					"RHSSAF_Rifle1_Tail_SoundSet"
+				};
+			};
 			class SilencedSound
 			{
 				soundSetShot[]=
@@ -6241,6 +6340,33 @@ class CfgWeapons
 		};
 		class Burst: Mode_Burst
 		{
+			class StandardSound
+			{
+				soundSetShot[]=
+				{
+					"RHSSAF_G36_Shot_SoundSet",
+					"RHSSAF_Rifle1_Tail_SoundSet"
+				};
+			};
+			class SilencedSound
+			{
+				soundSetShot[]=
+				{
+					"RHSSAF_sd_G36_Shot_SoundSet",
+					"RHSSAF_sd_Rifle1_Tail_SoundSet"
+				};
+			};
+		};
+		class FullAuto: Mode_FullAuto
+		{
+			class StandardSound
+			{
+				soundSetShot[]=
+				{
+					"RHSSAF_G36_Shot_SoundSet",
+					"RHSSAF_Rifle1_Tail_SoundSet"
+				};
+			};
 			class SilencedSound
 			{
 				soundSetShot[]=
@@ -6253,9 +6379,55 @@ class CfgWeapons
 	};
 	class rhs_weap_scorpion: SMG_01_F
 	{
-		class Single: Single;  //found empty after stripping
+		class Single: Single
+		{
+			sounds[]=
+			{
+				"StandardSound"
+			};
+			class StandardSound
+			{
+				soundSetShot[]=
+				{
+					"RHSSAF_scorp_Shot_SoundSet",
+					"RHSSAF_pistol1_Tail_SoundSet"
+				};
+			};
+		};
+		class FullAuto: FullAuto
+		{
+			sounds[]=
+			{
+				"StandardSound"
+			};
+			class StandardSound
+			{
+				soundSetShot[]=
+				{
+					"RHSSAF_scorp_Shot_SoundSet",
+					"RHSSAF_pistol1_Tail_SoundSet"
+				};
+			};
+		};
 	};
-	class rhs_weap_m84: Rifle_Long_Base_F;  //found empty after stripping
+	class rhs_weap_m84: Rifle_Long_Base_F
+	{
+		class FullAuto: Mode_FullAuto
+		{
+			sounds[]=
+			{
+				"StandardSound"
+			};
+			class StandardSound
+			{
+				soundSetShot[]=
+				{
+					"RHSSAF_M84_Shot_SoundSet",
+					"RHSSAF_MMG1_Tail_SoundSet"
+				};
+			};
+		};
+	};
 };
 class CfgSounds
 {

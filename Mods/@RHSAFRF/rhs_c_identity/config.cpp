@@ -4,6 +4,12 @@ class CfgPatches
 	{
 		units[]={};
 		weapons[]={};
+		requiredVersion=0.1;
+		requiredAddons[]=
+		{
+			"rhs_main",
+			"A3_Characters_F_Heads"
+		};
 	};
 };
 class CfgFaces
@@ -76,6 +82,8 @@ class CfgFaces
 		{
 			head="RHS_EmptyHead";
 			disabled=1;
+			textureHL="#(argb,8,8,3)color(0.7,0.7,0.7,1.0,CO)";
+			textureHL2="#(argb,8,8,3)color(0.7,0.7,0.7,1.0,CO)";
 			materialHL1="\rhsafrf\addons\rhs_identity\Data\rhs_emptyHead.rvmat";
 		};
 		class RHS_WhiteHead_01: WhiteHead_01
@@ -509,16 +517,19 @@ class CfgFaces
 		};
 		class Oakes_v2: RHS_WhiteHead_01
 		{
+			dlc="RHS_AFRF";
 			name="Oakesv2";
 			displayname="Oakes v2";
 		};
 		class Smith_v2: RHS_WhiteHead_04
 		{
+			dlc="RHS_AFRF";
 			name="Smithv2";
 			displayname="Smith v2";
 		};
 		class Mason_v2: RHS_WhiteHead_05
 		{
+			dlc="RHS_AFRF";
 			name="Masonv2";
 			displayname="Mason v2";
 		};
@@ -527,5 +538,8 @@ class CfgFaces
 class CfgHeads
 {
 	class Default_A3;
-	class RHS_EmptyHead: Default_A3;  //found empty after stripping
+	class RHS_EmptyHead: Default_A3
+	{
+		model="\A3\Weapons_F\empty.p3d";
+	};
 };

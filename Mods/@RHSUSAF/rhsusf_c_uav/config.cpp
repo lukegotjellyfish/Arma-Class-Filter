@@ -21,7 +21,15 @@ class CfgPatches
 			"rq11_wing_lr"
 		};
 		weapons[]={};
+		requiredVersion=0.1;
+		requiredAddons[]=
+		{
+			"rhsusf_main",
+			"rhsusf_c_troops"
+		};
 		name="RQ-11 Drone";
+		author="$STR_RHSUSF_AUTHOR_FULL";
+		url="http://www.rhsmods.org/";
 	};
 };
 class CfgVehicleClasses
@@ -39,86 +47,203 @@ class CfgVehicles
 	class RoadCone_F;
 	class rq11_base_object: RoadCone_F
 	{
+		dlc="RHS_USAF";
+		author="Feint";
+		scope=1;
 		accuracy=0.30000001;
+		vehicleClass="rq11";
 		simulation="thingX";
 		nameSound="";
+		class DestructionEffects;  //found empty after stripping
 		armor=450;
 		cost=0;
 		class EventHandlers;
 	};
 	class rhsusf_RQ11MONITOR: rq11_base_object
 	{
+		author="Feint";
+		scope=1;
+		Icon="\rhsusf\addons\rhsusf_uav\data\icon_MAVModule.paa";
+		model="\rhsusf\addons\rhsusf_uav\model\rq11_monitor.p3d";
 		displayName="[GCS] Ground Control Station";
-		class EventHandlers: EventHandlers;  //found empty after stripping
+		vehicleClass="rq11";
+		class EventHandlers: EventHandlers
+		{
+			class RHSUSF_EventHandlers
+			{
+				init="_this execVM ('\rhsusf\addons\rhsusf_c_uav\scripts\init\init_GCSActions.sqf')";
+			};
+		};
 	};
 	class rhsusf_RQ11RAVEN_STATIC: rq11_base_object
 	{
+		author="Feint";
+		scope=1;
+		Icon="\rhsusf\addons\rhsusf_uav\data\icon_MAVModule.paa";
+		model="\rhsusf\addons\rhsusf_uav\model\rq_11.p3d";
 		displayName="[RQ-11] Raven A (static)";
-		class EventHandlers: EventHandlers;  //found empty after stripping
+		vehicleClass="rq11";
+		class EventHandlers: EventHandlers
+		{
+			class RHSUSF_EventHandlers
+			{
+				init="_this execVM ('\rhsusf\addons\rhsusf_c_uav\scripts\init\init_staticRavenActions.sqf')";
+			};
+		};
 	};
 	class rhsusf_RQ11RAVEN_B_STATIC: rq11_base_object
 	{
+		author="Feint";
+		scope=1;
+		Icon="\rhsusf\addons\rhsusf_uav\data\icon_MAVModule.paa";
+		model="\rhsusf\addons\rhsusf_uav\model\rq11b.p3d";
 		displayName="[RQ-11] Raven B (static)";
-		class EventHandlers: EventHandlers;  //found empty after stripping
+		vehicleClass="rq11";
+		class EventHandlers: EventHandlers
+		{
+			class RHSUSF_EventHandlers
+			{
+				init="_this execVM ('\rhsusf\addons\rhsusf_c_uav\scripts\init\init_staticRavenActions.sqf')";
+			};
+		};
 	};
 	class rq11_zerlegt: rq11_base_object
 	{
+		author="Feint";
+		scope=2;
+		Icon="\rhsusf\addons\rhsusf_uav\data\icon_MAVModule.paa";
+		model="\rhsusf\addons\rhsusf_uav\model\raven_zerlegt.p3d";
 		displayName="Raven A blanket with parts";
+		vehicleClass="rq11";
 	};
 	class rq11b_zerlegt: rq11_base_object
 	{
+		author="Feint";
+		scope=2;
+		Icon="\rhsusf\addons\rhsusf_uav\data\icon_MAVModule.paa";
+		model="\rhsusf\addons\rhsusf_uav\model\rq11b_zerlegt.p3d";
 		displayName="Raven B Blanket with parts";
+		vehicleClass="rq11";
 	};
 	class carpet_empty: rq11_base_object
 	{
+		author="Feint";
+		scope=2;
+		Icon="\rhsusf\addons\rhsusf_uav\data\icon_MAVModule.paa";
+		model="\rhsusf\addons\rhsusf_uav\model\carpet_empty.p3d";
 		displayName="Blanket";
+		vehicleClass="rq11";
 	};
 	class rq11_body: rq11_base_object
 	{
+		author="Feint";
+		scope=2;
+		Icon="\rhsusf\addons\rhsusf_uav\data\icon_MAVModule.paa";
+		model="\rhsusf\addons\rhsusf_uav\model\rq11_body.p3d";
 		displayName="Raven Body";
+		vehicleClass="rq11";
 	};
 	class rq11_camera: rq11_base_object
 	{
+		author="Feint";
+		scope=2;
+		Icon="\rhsusf\addons\rhsusf_uav\data\icon_MAVModule.paa";
+		model="\rhsusf\addons\rhsusf_uav\model\rq11_camera.p3d";
 		displayName="Raven A Camera Package";
+		vehicleClass="rq11";
+		type=4096;
 	};
 	class rq11b_camera: rq11_base_object
 	{
+		author="Feint";
+		scope=2;
+		Icon="\rhsusf\addons\rhsusf_uav\data\icon_MAVModule.paa";
+		model="\rhsusf\addons\rhsusf_uav\model\rq11b_camera.p3d";
 		displayName="Raven B Camera Package";
+		vehicleClass="rq11";
 	};
 	class rq11_paddle: rq11_base_object
 	{
+		author="Feint";
+		scope=2;
+		Icon="\rhsusf\addons\rhsusf_uav\data\icon_MAVModule.paa";
+		model="\rhsusf\addons\rhsusf_uav\model\rq11_paddle.p3d";
 		displayName="Raven Elevator";
+		vehicleClass="rq11";
 	};
 	class rq11_rotor: rq11_base_object
 	{
+		author="Feint";
+		scope=2;
+		Icon="\rhsusf\addons\rhsusf_uav\data\icon_MAVModule.paa";
+		model="\rhsusf\addons\rhsusf_uav\model\rq11_rotor.p3d";
 		displayName="Raven Propeller";
+		vehicleClass="rq11";
 	};
 	class rq11_tail: rq11_base_object
 	{
+		scope=2;
+		Icon="\rhsusf\addons\rhsusf_uav\data\icon_MAVModule.paa";
+		model="\rhsusf\addons\rhsusf_uav\model\rq11_tail.p3d";
 		displayName="Raven Tail";
+		vehicleClass="rq11";
 	};
 	class rq11_wing_m: rq11_base_object
 	{
+		author="Feint";
+		scope=2;
+		Icon="\rhsusf\addons\rhsusf_uav\data\icon_MAVModule.paa";
+		model="\rhsusf\addons\rhsusf_uav\model\rq11_wing_m.p3d";
 		displayName="Raven Wing Center";
+		vehicleClass="rq11";
 	};
 	class rq11_wing_lr: rq11_base_object
 	{
+		author="Feint";
+		scope=2;
+		Icon="\rhsusf\addons\rhsusf_uav\data\icon_MAVModule.paa";
+		model="\rhsusf\addons\rhsusf_uav\model\rq11_wing_lr.p3d";
 		displayName="Raven Wing Ends";
+		vehicleClass="rq11";
 	};
 	class ContainerSupply;
 	class Bag_Base;
 	class B_Kitbag_Base;
 	class B_rhsusf_BACKPACK: B_Kitbag_Base
 	{
+		dlc="RHS_USAF";
+		author="Feint";
+		scope=1;
 		displayName="Raven A Backpack";
+		hiddenSelectionsTextures[]=
+		{
+			"\rhsusf\addons\rhsusf_uav\data\backpack_RQ-11A_blk_co.paa"
+		};
 		maximumLoad=0.1;
 		mass=40;
 	};
 	class B_rhsusf_B_BACKPACK: rhsusf_assault_eagleaiii_ocp
 	{
+		scope=2;
+		author="Feint";
 		displayName="Eagle A-III OCP (Raven)";
 		maximumLoad=0.1;
 		mass=100;
+		class UserActions
+		{
+			class UNPACKRAVENACTION
+			{
+				displayName="Assemble RQ-11 B Raven";
+				priority=0;
+				shortcut="";
+				condition="alive this";
+				statement="[this] execVM '\rhsusf\addons\rhsusf_c_uav\scripts\backpack_UnpackRaven.sqf'";
+				displayNameDefault="";
+				position="camo";
+				radius=5;
+				onlyforplayer=1;
+			};
+		};
 	};
 };
 class CfgNonAiVehicles
@@ -127,6 +252,8 @@ class CfgNonAiVehicles
 	class Kestrel_Random_F;
 	class rhsusf_RQ11RAVEN: Kestrel_Random_F
 	{
+		dlc="RHS_USAF";
+		model="\rhsusf\addons\rhsusf_uav\model\rq_11.p3d";
 		singSound[]=
 		{
 			"\rhsusf\addons\rhsusf_uav\sounds\zoom_in.ogg",
@@ -139,10 +266,17 @@ class CfgNonAiVehicles
 		avgHeight=30.1;
 		maxHeight=300;
 		moves="";
-		class EventHandlers;  //found empty after stripping
+		class EventHandlers
+		{
+			class RHSUSF_EventHandlers
+			{
+				init="_this execVM ('\rhsusf\addons\rhsusf_c_uav\scripts\init\init_staticRavenActions.sqf')";
+			};
+		};
 	};
 	class rhsusf_RQ11_B_RAVEN: Kestrel_Random_F
 	{
+		model="\rhsusf\addons\rhsusf_uav\model\rq11b_flying.p3d";
 		singSound[]=
 		{
 			"\rhsusf\addons\rhsusf_uav\sounds\zoom_in.ogg",
@@ -155,7 +289,13 @@ class CfgNonAiVehicles
 		avgHeight=30.1;
 		maxHeight=300;
 		moves="";
-		class EventHandlers;  //found empty after stripping
+		class EventHandlers
+		{
+			class RHSUSF_EventHandlers
+			{
+				init="_this execVM ('\rhsusf\addons\rhsusf_c_uav\scripts\init\init_staticRavenActions.sqf')";
+			};
+		};
 	};
 };
 class CfgSounds
@@ -463,6 +603,7 @@ class CfgSounds
 };
 class MAVRscText
 {
+	type=0;
 	idc=-1;
 	style=0;
 	colorBackground[]={0,0,0,0};
@@ -470,6 +611,7 @@ class MAVRscText
 	font="PuristaMedium";
 	sizeEx=0.02;
 	linespacing=1;
+	text="";
 	x="SafeZoneX";
 	y="SafeZoneY";
 	w="SafeZoneW";
@@ -478,6 +620,7 @@ class MAVRscText
 class MAVRscStructuredText
 {
 	access=0;
+	type=13;
 	idc=-1;
 	style="2 + 			16";
 	lineSpacing=1;
@@ -486,6 +629,7 @@ class MAVRscStructuredText
 	size="0.013 * SafeZoneH";
 	colorBackground[]={0,0,0,0};
 	colorText[]={0,0,0,0};
+	text="";
 	font="PuristaMedium";
 	class Attributes
 	{
@@ -499,6 +643,7 @@ class MAVRscStructuredText
 };
 class MAVRscPicture
 {
+	type=0;
 	idc=-1;
 	style=48;
 	x="safeZoneX";
@@ -509,6 +654,7 @@ class MAVRscPicture
 	colorBackground[]={0,0,0,0};
 	colorText[]={1,1,1,1};
 	font="PuristaMedium";
+	text="";
 	class Attributes
 	{
 		font="PuristaMedium";
@@ -528,6 +674,7 @@ class RscTitles
 		fadein=0;
 		fadeout=0;
 		name="rhsusf_RQ11_display";
+		onLoad="uiNamespace setVariable ['d_rhsusf_RQ11_display', _this select 0]";
 		class Attributes
 		{
 			font="PuristaMedium";
@@ -545,6 +692,7 @@ class RscTitles
 				y=0.42500001;
 				w=0.0049999999;
 				h=0.050000001;
+				text="";
 				colorBackground[]={0,0,0,0};
 			};
 			class VerticalTargetLine2: VerticalTargetLine
@@ -559,6 +707,7 @@ class RscTitles
 				y=0.5;
 				w=0.050000001;
 				h=0.0049999999;
+				text="";
 				colorBackground[]={0,0,0,0};
 			};
 			class HorizontalTargetLine2: HorizontalTargetLine
@@ -572,6 +721,7 @@ class RscTitles
 				y=0.2;
 				w=0.0049999999;
 				h=0.050000001;
+				text="";
 				colorBackground[]={1,1,1,1};
 			};
 			class VerticalBoxLeft2: VerticalBoxLeft1
@@ -584,6 +734,7 @@ class RscTitles
 				y=0.2;
 				w=0.0049999999;
 				h=0.050000001;
+				text="";
 				colorBackground[]={1,1,1,1};
 			};
 			class VerticalBoxRight2: VerticalBoxRight1
@@ -596,6 +747,7 @@ class RscTitles
 				y=0.2;
 				w=0.050000001;
 				h=0.0049999999;
+				text="";
 				colorBackground[]={1,1,1,1};
 			};
 			class HorizontalBoxTopRight: HorizontalBoxTopLeft
@@ -608,6 +760,7 @@ class RscTitles
 				y=0.79500002;
 				w=0.050000001;
 				h=0.0049999999;
+				text="";
 				colorBackground[]={1,1,1,1};
 			};
 			class HorizontalBoxBottomRight: HorizontalBoxBottomLeft
@@ -620,6 +773,7 @@ class RscTitles
 				y="safezoneY + 0 * safezoneW";
 				w=0.001;
 				h="safezoneH";
+				text="";
 				colorBackground[]={1,0,0,0.1};
 			};
 			class VerticalGridLines01: VerticalGridLines
@@ -668,6 +822,7 @@ class RscTitles
 				y="safezoneY + 0 * safezoneW";
 				w="safezoneW";
 				h=0.001;
+				text="";
 				colorBackground[]={1,0,0,0.1};
 			};
 			class HorizontalGridLines01: HorizontalGridLines
@@ -717,6 +872,7 @@ class RscTitles
 				y=0.44999999;
 				w="safezoneW * 0.02";
 				h="safezoneH * 0.02";
+				text="north";
 				colorBackground[]={0,0,0,0};
 			};
 			class MAVCompassSouth: MAVRscStructuredText
@@ -726,6 +882,7 @@ class RscTitles
 				y=0.44999999;
 				w="safezoneW * 0.02";
 				h="safezoneH * 0.02";
+				text="south";
 				colorBackground[]={0,0,0,0};
 			};
 			class MAVCompassWest: MAVRscStructuredText
@@ -735,6 +892,7 @@ class RscTitles
 				y=0.44999999;
 				w="safezoneW * 0.02";
 				h="safezoneH * 0.02";
+				text="west";
 				colorBackground[]={0,0,0,0};
 			};
 			class MAVCompassEast: MAVRscStructuredText
@@ -744,6 +902,7 @@ class RscTitles
 				y=0.44999999;
 				w="safezoneW * 0.02";
 				h="safezoneH * 0.02";
+				text="east";
 				colorBackground[]={0,0,0,0};
 			};
 			class MAVText: MAVRscStructuredText
@@ -753,6 +912,7 @@ class RscTitles
 				y="safezoneY + 0.25 * safezoneW";
 				w="safezoneW * 0.15";
 				h="safezoneH * 0.4";
+				text="Loading Raven Info...";
 				colorBackground[]={0,0,0,0};
 			};
 			class MAVKeyInfo: MAVRscStructuredText
@@ -762,6 +922,7 @@ class RscTitles
 				y="safezoneY + 0.25 * safezoneW";
 				w="safezoneW * 0.1";
 				h="safezoneH * 0.4";
+				text="";
 				colorBackground[]={0,0,0,0};
 			};
 			class MAVBattInfo: MAVRscStructuredText
@@ -771,6 +932,7 @@ class RscTitles
 				y="safezoneY + 0.12* safezoneW";
 				w="safezoneW * 0.15";
 				h="safezoneH * 0.04";
+				text="Loading Battery...";
 				colorBackground[]={0,0,0,0};
 			};
 			class MAVClockInfo: MAVRscStructuredText
@@ -780,6 +942,7 @@ class RscTitles
 				y="safezoneY + 0.12* safezoneW";
 				w="safezoneW * 0.15";
 				h="safezoneH * 0.04";
+				text="Loading Clock...";
 				colorBackground[]={0,0,0,0};
 			};
 			class MAVLaserInfo: MAVRscStructuredText
@@ -789,6 +952,7 @@ class RscTitles
 				y="safezoneY + 0.12* safezoneW";
 				w="safezoneW * 0.1";
 				h="safezoneH * 0.08";
+				text="Loading Display...";
 				colorBackground[]={0,0,0,0};
 			};
 			class MAVAltArrow: MAVRscStructuredText
@@ -799,6 +963,7 @@ class RscTitles
 				size="0.012 * SafeZoneH";
 				w="safezoneW * 0.050";
 				h="safezoneH * 0.8";
+				text="Loading Instructions...";
 				colorBackground[]={0,0,0,0};
 			};
 			class MAVAltRibbon: MAVRscStructuredText
@@ -809,6 +974,7 @@ class RscTitles
 				size="0.012 * SafeZoneH";
 				w="safezoneW * 0.050";
 				h="safezoneH * 0.8";
+				text="Loading Instructions...";
 				colorBackground[]={0,0,0,0};
 			};
 		};

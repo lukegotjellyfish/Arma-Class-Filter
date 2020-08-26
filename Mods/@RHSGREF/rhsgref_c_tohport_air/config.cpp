@@ -13,7 +13,15 @@ class CfgPatches
 			"rhsgref_b_mi24g_FAB"
 		};
 		weapons[]={};
+		requiredVersion=1.3200001;
+		requiredAddons[]=
+		{
+			"rhsgref_main",
+			"rhsgref_c_airweapons"
+		};
 		name="TKOH ports";
+		author="$STR_RHS_AUTHOR_FULL";
+		url="http://www.rhsmods.org/";
 	};
 };
 class CfgFunctions
@@ -65,6 +73,7 @@ class CfgVehicles
 		class Turrets: Turrets
 		{
 			class MainTurret: MainTurret;  //found empty after stripping
+			class CargoTurret_01: CargoTurret;  //found empty after stripping
 			class CargoTurret_02: CargoTurret_01;  //found empty after stripping
 			class CargoTurret_03: CargoTurret_01;  //found empty after stripping
 			class CargoTurret_04: CargoTurret_01;  //found empty after stripping
@@ -86,6 +95,17 @@ class CfgVehicles
 	};
 	class rhsgref_mi24g_base: rhsgref_cdf_Mi35
 	{
+		model="\rhsgref\addons\rhsgref_tohport_air\SuperHind\SuperHIND.p3d";
+		scope=0;
+		hiddenSelections[]=
+		{
+			"Camo1",
+			"Camo2",
+			"Camo3",
+			"tail_decals",
+			"n1",
+			"n2"
+		};
 		hiddenselectionstextures[]=
 		{
 			"\rhsgref\addons\rhsgref_tohport_air\superhind\data\mi24sh_001_co.paa",
@@ -97,6 +117,13 @@ class CfgVehicles
 			class standard
 			{
 				displayName="Grey";
+				author="$STR_RHS_AUTHOR_FULL";
+				textures[]=
+				{
+					"\rhsgref\addons\rhsgref_tohport_air\superhind\data\mi24sh_001_co.paa",
+					"\rhsgref\addons\rhsgref_tohport_air\superhind\data\mi24sh_002_co.paa",
+					"\rhsgref\addons\rhsgref_tohport_air\superHind\data\mi35_sh_co.paa"
+				};
 				factions[]=
 				{
 					"rhs_faction_vvs_c",
@@ -106,38 +133,101 @@ class CfgVehicles
 			class Camo: standard
 			{
 				displayName="Camo #1";
+				author="$STR_RHS_AUTHOR_FULL";
+				textures[]=
+				{
+					"\rhsafrf\addons\rhs_a2port_air\mi35\data\mi24v_001_co.paa",
+					"\rhsafrf\addons\rhs_a2port_air\mi35\data\mi24v_002_co.paa",
+					"\rhsgref\addons\rhsgref_tohport_air\superHind\data\mi35_sh_g_co.paa"
+				};
 			};
 			class Camo1: standard
 			{
 				displayName="Camo #2";
+				author="$STR_RHS_AUTHOR_FULL";
+				textures[]=
+				{
+					"\rhsafrf\addons\rhs_a2port_air\mi35\data\camo\mi24p_001_camo1_co.paa",
+					"\rhsafrf\addons\rhs_a2port_air\mi35\data\camo\mi24p_002_camo1_co.paa",
+					"\rhsgref\addons\rhsgref_tohport_air\superHind\data\mi35_sh_g_co.paa"
+				};
 			};
 			class Camo2: standard
 			{
 				displayName="Camo #3";
+				author="$STR_RHS_AUTHOR_FULL";
+				textures[]=
+				{
+					"\rhsafrf\addons\rhs_a2port_air\mi35\data\camo\mi24p_001_camo2_co.paa",
+					"\rhsafrf\addons\rhs_a2port_air\mi35\data\camo\mi24p_002_camo2_co.paa",
+					"\rhsgref\addons\rhsgref_tohport_air\superHind\data\mi35_sh_g3_co.paa"
+				};
 			};
 			class Camo3: standard
 			{
 				displayName="Camo #4";
+				author="$STR_RHS_AUTHOR_FULL";
+				textures[]=
+				{
+					"\rhsafrf\addons\rhs_a2port_air\mi35\data\camo\mi24p_001_camo3_co.paa",
+					"\rhsafrf\addons\rhs_a2port_air\mi35\data\camo\mi24p_002_camo3_co.paa",
+					"\rhsgref\addons\rhsgref_tohport_air\superHind\data\mi35_sh_co.paa"
+				};
 			};
 			class Camo4: standard
 			{
 				displayName="Soot Camo #1";
+				author="$STR_RHS_AUTHOR_FULL";
+				textures[]=
+				{
+					"\rhsafrf\addons\rhs_a2port_air\mi35\data\soot\mi24p_001_soot1_co.paa",
+					"\rhsafrf\addons\rhs_a2port_air\mi35\data\soot\mi24p_002_soot1_co.paa",
+					"\rhsgref\addons\rhsgref_tohport_air\superHind\data\mi35_sh_g2_co.paa"
+				};
 			};
 			class Camo5: standard
 			{
 				displayName="Soot Camo #2";
+				author="$STR_RHS_AUTHOR_FULL";
+				textures[]=
+				{
+					"\rhsafrf\addons\rhs_a2port_air\mi35\data\soot\mi24p_001_soot2_co.paa",
+					"\rhsafrf\addons\rhs_a2port_air\mi35\data\soot\mi24p_002_soot2_co.paa",
+					"\rhsgref\addons\rhsgref_tohport_air\superHind\data\mi35_sh_g2_co.paa"
+				};
 			};
 			class Camo6: standard
 			{
 				displayName="Soot Camo #3";
+				author="$STR_RHS_AUTHOR_FULL";
+				textures[]=
+				{
+					"\rhsafrf\addons\rhs_a2port_air\mi35\data\soot\mi24p_001_soot3_co.paa",
+					"\rhsafrf\addons\rhs_a2port_air\mi35\data\soot\mi24p_002_soot3_co.paa",
+					"\rhsgref\addons\rhsgref_tohport_air\superHind\data\mi35_sh_g2_co.paa"
+				};
 			};
 			class Camo7: standard
 			{
 				displayName="CDF";
+				author="$STR_RHS_AUTHOR_FULL";
+				textures[]=
+				{
+					"\rhsafrf\addons\rhs_a2port_air\mi35\data\mi35_001_co.paa",
+					"\rhsafrf\addons\rhs_a2port_air\mi35\data\mi35_002_co.paa",
+					"\rhsgref\addons\rhsgref_tohport_air\superHind\data\mi35_sh_cdf_co.paa"
+				};
 			};
 		};
 		class Attributes
 		{
+			class ObjectTexture
+			{
+				control="ObjectTexture";
+				data="ObjectTexture";
+				displayName="Skin";
+				tooltip="Texture and material set applied on the object.";
+			};
 			class rhs_hideExhaust
 			{
 				displayName="Hide exhaust cover";
@@ -172,6 +262,7 @@ class CfgVehicles
 				control="Combo";
 				expression="if(_value != 'NoChange')then{ _this setVariable ['%s', _value];[_this,[['Number', cRHSAIRMI24NumberPlaces, _value]]] call rhs_fnc_decalsInit}";
 				defaultValue=0;
+				typeName="STRING";
 				class values
 				{
 					class NoChange
@@ -260,6 +351,7 @@ class CfgVehicles
 				control="Combo";
 				expression="[_this,[['Label', cRHSAIRMI24TailPlaces, 'Aviation',_value]]] call rhs_fnc_decalsInit";
 				defaultValue=-1;
+				typeName="Number";
 				class values
 				{
 					class Default
@@ -309,6 +401,8 @@ class CfgVehicles
 			"rhs_mag_DIRCM_Lipa"
 		};
 		transportsoldier=4;
+		cargoProxyIndexes[]={1,2,3,4};
+		getInProxyOrder[]={1,2,3,4,5,6,7,8};
 		class Components: Components
 		{
 			class TransportPylonsComponent
@@ -328,6 +422,7 @@ class CfgVehicles
 							"RHS_HP_UB32",
 							"RHS_HP_UPK23"
 						};
+						priority=1;
 						attachment="rhs_mag_b8v20a_s8df";
 						maxweight=550;
 						UIposition[]={0.50300002,0.30000001};
@@ -352,6 +447,7 @@ class CfgVehicles
 						};
 						attachment="rhs_mag_b8v20a_s8kom";
 						maxweight=400;
+						priority=2;
 						UIposition[]={0.583,0.34999999};
 						turret[]={};
 						hitpoint="HitPylon3";
@@ -369,6 +465,7 @@ class CfgVehicles
 							"RHS_HP_MOKOPA",
 							"RHS_HP_INGWE"
 						};
+						priority=4;
 						attachment="rhs_mag_zt3_4";
 						maxweight=250;
 						UIposition[]={0.62800002,0.40000001};
@@ -389,6 +486,7 @@ class CfgVehicles
 							"RHS_cm_ASO2_x2",
 							"RHS_cm_ASO2_x4"
 						};
+						priority=1;
 						attachment="rhs_ASO2_CMFlare_Chaff_Magazine_x4";
 						maxweight=800;
 						UIposition[]={0.33000001,0};
@@ -403,17 +501,22 @@ class CfgVehicles
 					{
 						class AirTarget
 						{
+							minRange=2000;
+							maxRange=4000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=1;
 						};
 						class GroundTarget
 						{
+							minRange=4000;
+							maxRange=4000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=1;
 						};
 						animDirection="FLIR_VRot";
 						angleRangeHorizontal=46;
 						angleRangeVertical=36;
+						typeRecognitionDistance=-1;
 						groundNoiseDistanceCoef=0.07;
 						maxGroundNoiseDistance=0;
 						minSpeedThreshold=0;
@@ -426,11 +529,15 @@ class CfgVehicles
 					{
 						class AirTarget
 						{
+							minRange=500;
+							maxRange=2000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=1;
 						};
 						class GroundTarget
 						{
+							minRange=500;
+							maxRange=2000;
 							objectDistanceLimitCoef=1;
 							viewDistanceLimitCoef=1;
 						};
@@ -484,6 +591,8 @@ class CfgVehicles
 		{
 			class MainTurret: MainTurret
 			{
+				body="Gun_HRot";
+				gun="Gun_VRot";
 				weapons[]=
 				{
 					"rhs_weap_gi2",
@@ -495,6 +604,8 @@ class CfgVehicles
 					"rhs_mag_GI2_420_AP",
 					"Laserbatteries"
 				};
+				gunBeg="z_gun_muzzle";
+				gunEnd="z_gun_chamber";
 				memoryPointGun="z_gun_chamber";
 				particlesPos="z_gun_chamber";
 				particlesDir="z_gun_muzzle";
@@ -509,11 +620,15 @@ class CfgVehicles
 				minturn=-110;
 				primarygunner=1;
 				stabilizedInAxes=3;
+				memoryPointGunnerOptics="z_flir_pos";
 				gunnerOpticsEffect[]=
 				{
 					"TankCommanderOptics1",
 					"BWTV"
 				};
+				turretInfoType="RscOptics_Heli_Attack_01_gunner";
+				discreteDistance[]={100,200,300,400,500,600,700,800,1000,1200,1500,1800,2100};
+				discreteDistanceInitIndex=5;
 				class OpticsIn
 				{
 					class Wide
@@ -527,24 +642,30 @@ class CfgVehicles
 						initFov=0.46599999;
 						minFov=0.46599999;
 						maxFov=0.46599999;
+						opticsDisplayName="W";
 						visionMode[]=
 						{
 							"Normal",
 							"Ti"
 						};
 						thermalMode[]={0,1};
+						gunnerOpticsModel="\A3\Weapons_F_Beta\Reticle\Heli_Attack_01_Optics_Gunner_wide_F";
 					};
 					class Medium: Wide
 					{
 						initFov=0.093000002;
 						minFov=0.093000002;
 						maxFov=0.093000002;
+						opticsDisplayName="M";
+						gunnerOpticsModel="\A3\Weapons_F_Beta\Reticle\Heli_Attack_01_Optics_Gunner_medium_F";
 					};
 					class Narrow: Wide
 					{
 						initFov=0.028999999;
 						minFov=0.028999999;
 						maxFov=0.028999999;
+						opticsDisplayName="N";
+						gunnerOpticsModel="\A3\Weapons_F_Beta\Reticle\Heli_Attack_01_Optics_Gunner_narrow_F";
 					};
 				};
 				class OpticsOut
@@ -565,6 +686,8 @@ class CfgVehicles
 							"Normal",
 							"NVG"
 						};
+						gunnerOpticsModel="";
+						gunnerOpticsEffect[]={};
 					};
 				};
 				class Components
@@ -606,6 +729,7 @@ class CfgVehicles
 					};
 				};
 			};
+			class CargoTurret_01: CargoTurret_01;  //found empty after stripping
 			class CargoTurret_02: CargoTurret_02;  //found empty after stripping
 			class CargoTurret_03: CargoTurret_03;  //found empty after stripping
 			class CargoTurret_04: CargoTurret_04;  //found empty after stripping
@@ -614,16 +738,98 @@ class CfgVehicles
 		{
 			"wheels"
 		};
+		class AnimationSources: AnimationSources
+		{
+			class HideAirFilter
+			{
+				source="user";
+				initPhase=0;
+				animPeriod=9.9999997e-006;
+				mass=1;
+				displayName="hide air filter";
+			};
+			class recoil_source
+			{
+				source="reload";
+				weapon="rhs_weap_gi2";
+			};
+			class muzzle_source: recoil_source;  //found empty after stripping
+			class muzzle_rot_source: recoil_source
+			{
+				source="ammorandom";
+			};
+			class atgm_revolving_source
+			{
+				source="revolving";
+				weapon="rhs_weap_9M120_launcher";
+			};
+			class muzzle_hide_upk23
+			{
+				weapon="RHS_Weap_GSh23L";
+				source="reload";
+			};
+			class muzzle_rot_upk23
+			{
+				weapon="RHS_Weap_GSh23L";
+				source="ammorandom";
+			};
+			class rwr_lights_lock
+			{
+				source="user";
+				initPhase=0;
+				animPeriod=8;
+			};
+			class rwr_lock_dir_primary: rwr_lights_lock
+			{
+				animPeriod=0.1;
+			};
+			class rwr_lock_primary: rwr_lights_lock
+			{
+				animPeriod=1e-007;
+			};
+			class rwr_signal_strenght: rwr_lights_lock
+			{
+				animPeriod=1e-007;
+			};
+			class rwr_lights: rwr_lock_primary;  //found empty after stripping
+		};
+		class RenderTargets
+		{
+			class RenderGunnerView
+			{
+				renderTarget="rendertarget0";
+				class CameraViewGunner
+				{
+					pointPosition="z_flir_pos";
+					pointDirection="z_flir_dir";
+					renderVisionMode=2;
+					renderQuality=2;
+					fov=0.1;
+				};
+				turret[]={0};
+			};
+		};
 	};
 	class rhsgref_mi24g_CAS: rhsgref_mi24g_base
 	{
+		editorPreview="rhsgref\addons\rhsgref_editorPreviews\data\rhsgref_mi24g_CAS.paa";
 		displayName="$STR_RHSGREF_AIR_SUPERHIND_NAME";
+		scope=2;
+		crew="rhsgref_cdf_air_pilot";
+		author="RHS (TOH port)";
 		side=2;
+		faction="rhsgref_faction_cdf_air";
 	};
 	class rhsgref_mi24g_UPK23: rhsgref_mi24g_base
 	{
+		editorPreview="rhsgref\addons\rhsgref_editorPreviews\data\rhsgref_mi24g_UPK23.paa";
 		displayName="$STR_RHSGREF_AIR_SUPERHIND_UPK_NAME";
+		scope=1;
+		scopeCurator=2;
+		crew="rhsgref_cdf_air_pilot";
+		author="RHS (TOH port)";
 		side=2;
+		faction="rhsgref_faction_cdf_air";
 		memoryPointGun[]=
 		{
 			"chase01",
@@ -688,8 +894,14 @@ class CfgVehicles
 	};
 	class rhsgref_mi24g_FAB: rhsgref_mi24g_base
 	{
+		editorPreview="rhsgref\addons\rhsgref_editorPreviews\data\rhsgref_mi24g_FAB.paa";
 		displayName="$STR_RHSGREF_AIR_SUPERHIND_FAB_NAME";
+		scope=1;
+		scopeCurator=2;
+		crew="rhsgref_cdf_air_pilot";
+		author="RHS (TOH port)";
 		side=2;
+		faction="rhsgref_faction_cdf_air";
 		class Components: Components
 		{
 			class TransportPylonsComponent: TransportPylonsComponent
@@ -733,14 +945,32 @@ class CfgVehicles
 	};
 	class rhsgref_b_mi24g_CAS: rhsgref_mi24g_CAS
 	{
+		editorPreview="rhsgref\addons\rhsgref_editorPreviews\data\rhsgref_b_mi24g_CAS.paa";
+		author="$STR_RHS_AUTHOR_FULL";
+		faction="rhsgref_faction_cdf_air_b";
 		side=1;
+		scope=2;
+		scopeCurator=2;
+		crew="rhsgref_cdf_b_air_pilot";
 	};
 	class rhsgref_b_mi24g_UPK23: rhsgref_mi24g_UPK23
 	{
+		editorPreview="rhsgref\addons\rhsgref_editorPreviews\data\rhsgref_b_mi24g_UPK23.paa";
+		author="$STR_RHS_AUTHOR_FULL";
+		faction="rhsgref_faction_cdf_air_b";
 		side=1;
+		scope=1;
+		scopeCurator=2;
+		crew="rhsgref_cdf_b_air_pilot";
 	};
 	class rhsgref_b_mi24g_FAB: rhsgref_mi24g_FAB
 	{
+		editorPreview="rhsgref\addons\rhsgref_editorPreviews\data\rhsgref_b_mi24g_FAB.paa";
+		author="$STR_RHS_AUTHOR_FULL";
+		faction="rhsgref_faction_cdf_air_b";
 		side=1;
+		scope=1;
+		scopeCurator=2;
+		crew="rhsgref_cdf_b_air_pilot";
 	};
 };

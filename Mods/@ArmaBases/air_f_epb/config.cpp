@@ -3,6 +3,11 @@ class CfgPatches
 	class A3_Air_F_EPB_Heli_Light_03
 	{
 		addonRootClass="A3_Air_F_EPB";
+		requiredAddons[]=
+		{
+			"A3_Air_F_EPB"
+		};
+		requiredVersion=0.1;
 		units[]=
 		{
 			"I_Heli_light_03_dynamicLoadout_F",
@@ -70,14 +75,34 @@ class CfgVehicles
 	class Heli_light_03_base_F: Helicopter_Base_F
 	{
 		features="Randomization: No 						<br />Camo selections: 1 - the whole exterior 						<br />Script door sources: None 						<br />Script animations:  None 						<br />Executed scripts: None 						<br />Firing from vehicles: Positions 1, 2 (doors) 						<br />Slingload: Slingloads up to 2000 kg 						<br />Cargo proxy indexes: 1 to 6";
+		author="$STR_A3_Bohemia_Interactive";
+		mapSize=15.09;
 		_generalMacro="Heli_light_03_base_F";
+		scope=0;
 		displayname="$STR_A3_CfgVehicles_I_Heli_light_03_F0";
+		model="\A3\Air_F_EPB\Heli_Light_03\Heli_Light_03_F.p3d";
 		icon="\A3\Air_F_EPB\Heli_Light_03\data\UI\Map_Heli_Light_03_CA.paa";
+		picture="\A3\Air_F_EPB\Heli_Light_03\data\UI\Heli_Light_03_CA.paa";
+		editorSubcategory="EdSubcat_Helicopters";
+		driverAction="pilot_Heli_Light_03";
+		driverInAction="pilot_Heli_Light_03";
 		precisegetinout=1;
 		getInRadius=2;
 		hideWeaponsDriver=1;
 		hideWeaponsGunner=1;
 		hideWeaponsCargo=1;
+		getInAction="pilot_Heli_Light_03_Enter";
+		getOutAction="pilot_Heli_Light_03_Exit";
+		cargoAction[]=
+		{
+			"passenger_apc_narrow_generic03",
+			"passenger_apc_narrow_generic01",
+			"passenger_apc_generic03",
+			"passenger_apc_narrow_generic02",
+			"passenger_apc_narrow_generic02",
+			"passenger_generic01_foldhands",
+			"passenger_generic01_leanleft"
+		};
 		cargoCompartments[]=
 		{
 			"Compartment2"
@@ -107,12 +132,71 @@ class CfgVehicles
 		fuelCapacity=742;
 		fuelConsumptionRate=0.103;
 		slingLoadMaxCargoMass=2000;
+		class TransportBackpacks
+		{
+			class _xx_B_Parachute
+			{
+				backpack="B_Parachute";
+				count=6;
+			};
+		};
+		class TransportMagazines
+		{
+			class _xx_SmokeShell
+			{
+				magazine="SmokeShell";
+				count=2;
+			};
+			class _xx_SmokeShellGreen
+			{
+				magazine="SmokeShellGreen";
+				count=2;
+			};
+			class _xx_30Rnd_556x45_Stanag
+			{
+				magazine="30Rnd_556x45_Stanag";
+				count=4;
+			};
+		};
+		class TransportWeapons
+		{
+			class _xx_arifle_Mk20C_F
+			{
+				weapon="arifle_Mk20C_F";
+				count=2;
+			};
+		};
+		class TransportItems
+		{
+			class _xx_FirstAidKit
+			{
+				name="FirstAidKit";
+				count=6;
+			};
+			class _xx_Toolkit
+			{
+				name="Toolkit";
+				count=1;
+			};
+			class _xx_ItemGPS
+			{
+				name="ItemGPS";
+				count=1;
+			};
+		};
 		attenuationEffectType="OpenHeliAttenuation";
 		emptySound[]=
 		{
 			"",
 			0,
 			1
+		};
+		soundGeneralCollision1[]=
+		{
+			"A3\Sounds_F\vehicles\crashes\helis\Heli_coll_default_int_1",
+			1,
+			1,
+			100
 		};
 		soundGeneralCollision2[]=
 		{
@@ -141,6 +225,33 @@ class CfgVehicles
 		{
 			"emptySound",
 			0
+		};
+		soundBuildingCrash[]=
+		{
+			"soundGeneralCollision1",
+			1,
+			"soundGeneralCollision2",
+			1,
+			"soundGeneralCollision3",
+			1
+		};
+		soundArmorCrash[]=
+		{
+			"soundGeneralCollision1",
+			1,
+			"soundGeneralCollision2",
+			1,
+			"soundGeneralCollision3",
+			1
+		};
+		soundWoodCrash[]=
+		{
+			"soundGeneralCollision1",
+			1,
+			"soundGeneralCollision2",
+			1,
+			"soundGeneralCollision3",
+			1
 		};
 		soundBushCollision1[]=
 		{
@@ -192,6 +303,57 @@ class CfgVehicles
 			0.5,
 			"soundWaterCollision2",
 			0.5
+		};
+		soundDammage[]=
+		{
+			"A3\Sounds_F\vehicles\crashes\helis\Heli_crash_default_int_1",
+			10,
+			1
+		};
+		soundGetIn[]=
+		{
+			"A3\Sounds_F\vehicles\air\Heli_Light_03\open",
+			1,
+			1
+		};
+		soundGetOut[]=
+		{
+			"A3\Sounds_F\vehicles\air\Heli_Light_03\close",
+			1,
+			1,
+			50
+		};
+		soundEngineOnInt[]=
+		{
+			"A3\Sounds_F\vehicles\air\Heli_Light_03\heli_start_int",
+			0.39810717,
+			1
+		};
+		soundEngineOnExt[]=
+		{
+			"A3\Sounds_F\vehicles\air\Heli_Light_03\heli_start_ext",
+			2.5118864,
+			1,
+			600
+		};
+		soundEngineOffInt[]=
+		{
+			"A3\Sounds_F\vehicles\air\Heli_Light_03\heli_stop_int",
+			0.39810717,
+			1
+		};
+		soundEngineOffExt[]=
+		{
+			"A3\Sounds_F\vehicles\air\Heli_Light_03\heli_stop_ext",
+			2.5118864,
+			1,
+			600
+		};
+		soundLocked[]=
+		{
+			"\A3\Sounds_F\weapons\Rockets\locked_1",
+			1,
+			1
 		};
 		soundIncommingMissile[]=
 		{
@@ -387,6 +549,681 @@ class CfgVehicles
 			"gearDownInt",
 			"gearDownExt"
 		};
+		class Sounds
+		{
+			class EngineExt
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\air\Heli_Light_03\heli_engine_ext",
+					1.7782794,
+					1,
+					700
+				};
+				frequency="rotorSpeed";
+				volume="camPos*((rotorSpeed-0.72)*4)";
+			};
+			class RotorExt
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\air\Heli_Light_03\heli_rotor_ext",
+					1.4125376,
+					1,
+					1100
+				};
+				frequency="rotorSpeed * (1-rotorThrust/5)";
+				volume="camPos*(0 max (rotorSpeed-0.1))*(1 + rotorThrust)";
+			};
+			class RotorNoiseExt
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\air\Heli_Light_03\rotor_swist",
+					1,
+					1,
+					300
+				};
+				frequency=1;
+				volume="camPos * (rotorThrust factor [0.7, 0.9])";
+				cone[]={0.69999999,1.3,1,0};
+			};
+			class EngineInt
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\air\Heli_Light_03\heli_engine_int",
+					1,
+					1
+				};
+				frequency="rotorSpeed";
+				volume="(1-camPos)*((rotorSpeed-0.75)*4)";
+			};
+			class RotorInt
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\air\Heli_Light_03\heli_rotor_int",
+					1.7782794,
+					1
+				};
+				frequency="rotorSpeed * (1-rotorThrust/5)";
+				volume="(1-camPos)*(0 max (rotorSpeed*rotorSpeed-0.1))*(1 + rotorThrust)";
+			};
+			class TransmissionDamageExt_phase1
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\air\noises\heli_damage_transmission_ext_1",
+					1,
+					1,
+					150
+				};
+				frequency="0.66 + rotorSpeed / 3";
+				volume="camPos * (transmissionDamage factor [0.3, 0.35]) * (transmissionDamage factor [0.5, 0.45]) * (rotorSpeed factor [0.2, 0.5])";
+			};
+			class TransmissionDamageExt_phase2
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\air\noises\heli_damage_transmission_ext_2",
+					1,
+					1,
+					150
+				};
+				frequency="0.66 + rotorSpeed / 3";
+				volume="camPos * (transmissionDamage factor [0.45, 0.5]) * (rotorSpeed factor [0.2, 0.5])";
+			};
+			class TransmissionDamageInt_phase1
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\air\noises\heli_damage_transmission_int_1",
+					1,
+					1,
+					150
+				};
+				frequency="0.66 + rotorSpeed / 3";
+				volume="(1 - camPos) * (transmissionDamage factor [0.3, 0.35]) * (transmissionDamage factor [0.5, 0.45]) * (rotorSpeed factor [0.2, 0.5])";
+			};
+			class TransmissionDamageInt_phase2
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\air\noises\heli_damage_transmission_int_2",
+					1,
+					1,
+					150
+				};
+				frequency="0.66 + rotorSpeed / 3";
+				volume="(1 - camPos) * (transmissionDamage factor [0.45, 0.5]) * (rotorSpeed factor [0.2, 0.5])";
+			};
+			class damageAlarmInt
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\air\noises\heli_alarm_opfor",
+					0.31622776,
+					1
+				};
+				frequency=1;
+				volume="engineOn * (1 - camPos) * ( 1 - ((transmissionDamage factor [0.61, 0.60]) * (motorDamage factor [0.61, 0.60]) * (rotorDamage factor [0.51, 0.50]))) * (rotorSpeed factor [0.0, 0.001])";
+			};
+			class damageAlarmExt
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\air\noises\heli_alarm_opfor",
+					0.22387211,
+					1,
+					20
+				};
+				frequency=1;
+				volume="engineOn * camPos * ( 1 - ((transmissionDamage factor [0.61, 0.60]) * (motorDamage factor [0.61, 0.60]) * (rotorDamage factor [0.51, 0.50]))) * (rotorSpeed factor [0, 0.001])";
+			};
+			class rotorLowAlarmInt
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\air\noises\heli_alarm_rotor_low",
+					0.31622776,
+					1
+				};
+				frequency=1;
+				volume="engineOn * (1 - camPos) * (rotorSpeed factor [0.9, 0.8999]) * (rotorSpeed factor [-0.5, 1]) * (speed factor [3, 3.01])";
+			};
+			class rotorLowAlarmExt
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\air\noises\heli_alarm_rotor_low",
+					0.22387211,
+					1,
+					20
+				};
+				frequency=1;
+				volume="engineOn * camPos * (rotorSpeed factor [0.9, 0.8999]) * (rotorSpeed factor [-0.5, 1]) * (speed factor [3, 3.01])";
+			};
+			class scrubLandInt
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\air\noises\scrubLandInt_open",
+					1,
+					1,
+					100
+				};
+				frequency=1;
+				volume="2 * (1-camPos) * (scrubLand factor[0.02, 0.05])";
+			};
+			class scrubLandExt
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\air\noises\scrubLandExt",
+					1,
+					1,
+					100
+				};
+				frequency=1;
+				volume="camPos * (scrubLand factor[0.02, 0.05])";
+			};
+			class scrubBuildingInt
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\air\noises\scrubBuildingInt",
+					1,
+					1,
+					100
+				};
+				frequency=1;
+				volume="2 * (1 - camPos) * (scrubBuilding factor[0.02, 0.05])";
+			};
+			class scrubBuildingExt
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\air\noises\scrubBuildingExt",
+					1,
+					1,
+					100
+				};
+				frequency=1;
+				volume="camPos * (scrubBuilding factor[0.02, 0.05])";
+			};
+			class scrubTreeInt
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\air\noises\scrubTreeExt",
+					1,
+					1,
+					100
+				};
+				frequency=1;
+				volume="(1 - camPos) * ((scrubTree) factor [0, 0.01])";
+			};
+			class scrubTreeExt
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\air\noises\scrubTreeExt",
+					1,
+					1,
+					100
+				};
+				frequency=1;
+				volume="camPos * ((scrubTree) factor [0, 0.01])";
+			};
+			class RainExt
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\noises\rain1_ext",
+					1,
+					1,
+					100
+				};
+				frequency=1;
+				volume="camPos * (rain - rotorSpeed/2) * 2";
+			};
+			class RainInt
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\noises\rain1_int",
+					1,
+					1,
+					100
+				};
+				frequency=1;
+				volume="(1-camPos)*(rain - rotorSpeed/2)*2";
+			};
+			class SlingLoadDownExt
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\air\noises\SL_engineDownEXT",
+					1.2589254,
+					1,
+					500
+				};
+				frequency=1;
+				volume="camPos*(slingLoadActive factor [0,-1])";
+			};
+			class SlingLoadUpExt
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\air\noises\SL_engineUpEXT",
+					1.2589254,
+					1,
+					500
+				};
+				frequency=1;
+				volume="camPos*(slingLoadActive factor [0,1])";
+			};
+			class SlingLoadDownInt
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\air\noises\SL_engineDownINT",
+					1,
+					1,
+					500
+				};
+				frequency=1;
+				volume="(1-camPos)*(slingLoadActive factor [0,-1])";
+			};
+			class SlingLoadUpInt
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\air\noises\SL_engineUpINT",
+					1,
+					1,
+					500
+				};
+				frequency=1;
+				volume="(1-camPos)*(slingLoadActive factor [0,1])";
+			};
+			class WindInt
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\air\noises\wind_open_int",
+					0.56234133,
+					1,
+					50
+				};
+				frequency=1;
+				volume="(1-camPos)*(speed factor[5, 50])*(speed factor[5, 50])";
+			};
+			class GStress
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\noises\vehicle_stress2b",
+					0.3548134,
+					1,
+					50
+				};
+				frequency=1;
+				volume="engineOn * (1-camPos) * ((gmeterZ factor[1.5, 2.5]) + (gmeterZ factor[0.5, -0.5]))";
+			};
+		};
+		class SoundsExt
+		{
+			class SoundEvents;  //found empty after stripping
+			class Sounds
+			{
+				class EngineExt
+				{
+					sound[]=
+					{
+						"A3\Sounds_F\vehicles\air\Heli_Light_03\heli_engine_ext",
+						1.7782794,
+						1,
+						700
+					};
+					frequency="rotorSpeed";
+					volume="camPos*((rotorSpeed-0.72)*4)";
+				};
+				class RotorExt
+				{
+					sound[]=
+					{
+						"A3\Sounds_F\vehicles\air\Heli_Light_03\heli_rotor_ext",
+						1.4125376,
+						1,
+						1100
+					};
+					frequency="rotorSpeed * (1-rotorThrust/5)";
+					volume="camPos*(0 max (rotorSpeed-0.1))*(1 + rotorThrust)";
+				};
+				class RotorNoiseExt
+				{
+					sound[]=
+					{
+						"A3\Sounds_F\vehicles\air\Heli_Light_03\rotor_swist",
+						1,
+						1,
+						300
+					};
+					frequency=1;
+					volume="camPos * (rotorThrust factor [0.7, 0.9])";
+					cone[]={0.69999999,1.3,1,0};
+				};
+				class EngineInt
+				{
+					sound[]=
+					{
+						"A3\Sounds_F\vehicles\air\Heli_Light_03\heli_engine_int",
+						1,
+						1
+					};
+					frequency="rotorSpeed";
+					volume="(1-camPos)*((rotorSpeed-0.75)*4)";
+				};
+				class RotorInt
+				{
+					sound[]=
+					{
+						"A3\Sounds_F\vehicles\air\Heli_Light_03\heli_rotor_int",
+						1.7782794,
+						1
+					};
+					frequency="rotorSpeed * (1-rotorThrust/5)";
+					volume="(1-camPos)*(0 max (rotorSpeed*rotorSpeed-0.1))*(1 + rotorThrust)";
+				};
+				class TransmissionDamageExt_phase1
+				{
+					sound[]=
+					{
+						"A3\Sounds_F\vehicles\air\noises\heli_damage_transmission_ext_1",
+						1,
+						1,
+						150
+					};
+					frequency="0.66 + rotorSpeed / 3";
+					volume="camPos * (transmissionDamage factor [0.3, 0.35]) * (transmissionDamage factor [0.5, 0.45]) * (rotorSpeed factor [0.2, 0.5])";
+				};
+				class TransmissionDamageExt_phase2
+				{
+					sound[]=
+					{
+						"A3\Sounds_F\vehicles\air\noises\heli_damage_transmission_ext_2",
+						1,
+						1,
+						150
+					};
+					frequency="0.66 + rotorSpeed / 3";
+					volume="camPos * (transmissionDamage factor [0.45, 0.5]) * (rotorSpeed factor [0.2, 0.5])";
+				};
+				class TransmissionDamageInt_phase1
+				{
+					sound[]=
+					{
+						"A3\Sounds_F\vehicles\air\noises\heli_damage_transmission_int_1",
+						1,
+						1,
+						150
+					};
+					frequency="0.66 + rotorSpeed / 3";
+					volume="(1 - camPos) * (transmissionDamage factor [0.3, 0.35]) * (transmissionDamage factor [0.5, 0.45]) * (rotorSpeed factor [0.2, 0.5])";
+				};
+				class TransmissionDamageInt_phase2
+				{
+					sound[]=
+					{
+						"A3\Sounds_F\vehicles\air\noises\heli_damage_transmission_int_2",
+						1,
+						1,
+						150
+					};
+					frequency="0.66 + rotorSpeed / 3";
+					volume="(1 - camPos) * (transmissionDamage factor [0.45, 0.5]) * (rotorSpeed factor [0.2, 0.5])";
+				};
+				class damageAlarmInt
+				{
+					sound[]=
+					{
+						"A3\Sounds_F\vehicles\air\noises\heli_alarm_opfor",
+						0.31622776,
+						1
+					};
+					frequency=1;
+					volume="engineOn * (1 - camPos) * ( 1 - ((transmissionDamage factor [0.61, 0.60]) * (motorDamage factor [0.61, 0.60]) * (rotorDamage factor [0.51, 0.50]))) * (rotorSpeed factor [0.0, 0.001])";
+				};
+				class damageAlarmExt
+				{
+					sound[]=
+					{
+						"A3\Sounds_F\vehicles\air\noises\heli_alarm_opfor",
+						0.22387211,
+						1,
+						20
+					};
+					frequency=1;
+					volume="engineOn * camPos * ( 1 - ((transmissionDamage factor [0.61, 0.60]) * (motorDamage factor [0.61, 0.60]) * (rotorDamage factor [0.51, 0.50]))) * (rotorSpeed factor [0, 0.001])";
+				};
+				class rotorLowAlarmInt
+				{
+					sound[]=
+					{
+						"A3\Sounds_F\vehicles\air\noises\heli_alarm_rotor_low",
+						0.31622776,
+						1
+					};
+					frequency=1;
+					volume="engineOn * (1 - camPos) * (rotorSpeed factor [0.9, 0.8999]) * (rotorSpeed factor [-0.5, 1]) * (speed factor [3, 3.01])";
+				};
+				class rotorLowAlarmExt
+				{
+					sound[]=
+					{
+						"A3\Sounds_F\vehicles\air\noises\heli_alarm_rotor_low",
+						0.22387211,
+						1,
+						20
+					};
+					frequency=1;
+					volume="engineOn * camPos * (rotorSpeed factor [0.9, 0.8999]) * (rotorSpeed factor [-0.5, 1]) * (speed factor [3, 3.01])";
+				};
+				class scrubLandInt
+				{
+					sound[]=
+					{
+						"A3\Sounds_F\vehicles\air\noises\scrubLandInt_open",
+						1,
+						1,
+						100
+					};
+					frequency=1;
+					volume="2 * (1-camPos) * (scrubLand factor[0.02, 0.05])";
+				};
+				class scrubLandExt
+				{
+					sound[]=
+					{
+						"A3\Sounds_F\vehicles\air\noises\scrubLandExt",
+						1,
+						1,
+						100
+					};
+					frequency=1;
+					volume="camPos * (scrubLand factor[0.02, 0.05])";
+				};
+				class scrubBuildingInt
+				{
+					sound[]=
+					{
+						"A3\Sounds_F\vehicles\air\noises\scrubBuildingInt",
+						1,
+						1,
+						100
+					};
+					frequency=1;
+					volume="2 * (1 - camPos) * (scrubBuilding factor[0.02, 0.05])";
+				};
+				class scrubBuildingExt
+				{
+					sound[]=
+					{
+						"A3\Sounds_F\vehicles\air\noises\scrubBuildingExt",
+						1,
+						1,
+						100
+					};
+					frequency=1;
+					volume="camPos * (scrubBuilding factor[0.02, 0.05])";
+				};
+				class scrubTreeInt
+				{
+					sound[]=
+					{
+						"A3\Sounds_F\vehicles\air\noises\scrubTreeExt",
+						1,
+						1,
+						100
+					};
+					frequency=1;
+					volume="(1 - camPos) * ((scrubTree) factor [0, 0.01])";
+				};
+				class scrubTreeExt
+				{
+					sound[]=
+					{
+						"A3\Sounds_F\vehicles\air\noises\scrubTreeExt",
+						1,
+						1,
+						100
+					};
+					frequency=1;
+					volume="camPos * ((scrubTree) factor [0, 0.01])";
+				};
+				class RainExt
+				{
+					sound[]=
+					{
+						"A3\Sounds_F\vehicles\noises\rain1_ext",
+						1,
+						1,
+						100
+					};
+					frequency=1;
+					volume="camPos * (rain - rotorSpeed/2) * 2";
+				};
+				class RainInt
+				{
+					sound[]=
+					{
+						"A3\Sounds_F\vehicles\noises\rain1_int",
+						1,
+						1,
+						100
+					};
+					frequency=1;
+					volume="(1-camPos)*(rain - rotorSpeed/2)*2";
+				};
+				class SlingLoadDownExt
+				{
+					sound[]=
+					{
+						"A3\Sounds_F\vehicles\air\noises\SL_engineDownEXT",
+						1,
+						1,
+						500
+					};
+					frequency=1;
+					volume="camPos*(slingLoadActive factor [0,-1])";
+				};
+				class SlingLoadUpExt
+				{
+					sound[]=
+					{
+						"A3\Sounds_F\vehicles\air\noises\SL_engineUpEXT",
+						1,
+						1,
+						500
+					};
+					frequency=1;
+					volume="camPos*(slingLoadActive factor [0,1])";
+				};
+				class SlingLoadDownInt
+				{
+					sound[]=
+					{
+						"A3\Sounds_F\vehicles\air\noises\SL_engineDownINT",
+						1,
+						1,
+						500
+					};
+					frequency=1;
+					volume="(1-camPos)*(slingLoadActive factor [0,-1])";
+				};
+				class SlingLoadUpInt
+				{
+					sound[]=
+					{
+						"A3\Sounds_F\vehicles\air\noises\SL_engineUpINT",
+						1,
+						1,
+						500
+					};
+					frequency=1;
+					volume="(1-camPos)*(slingLoadActive factor [0,1])";
+				};
+				class WindInt
+				{
+					sound[]=
+					{
+						"A3\Sounds_F\vehicles\air\noises\wind_open_int",
+						0.56234133,
+						1,
+						50
+					};
+					frequency=1;
+					volume="(1-camPos)*(speed factor[5, 50])*(speed factor[5, 50])";
+				};
+				class GStress
+				{
+					sound[]=
+					{
+						"A3\Sounds_F\vehicles\noises\vehicle_stress2b",
+						0.3548134,
+						1,
+						50
+					};
+					frequency=1;
+					volume="engineOn * (1-camPos) * ((gmeterZ factor[1.5, 2.5]) + (gmeterZ factor[0.5, -0.5]))";
+				};
+			};
+		};
+		class RenderTargets
+		{
+			class Copilot_display
+			{
+				renderTarget="rendertarget0";
+				class CameraView1
+				{
+					pointPosition="laserstart";
+					pointDirection="commanderview";
+					renderVisionMode=2;
+					renderQuality=2;
+					fov=0.093000002;
+					turret[]={0};
+				};
+				BBoxes[]=
+				{
+					"PIP_0_TL",
+					"PIP_0_TR",
+					"PIP_0_BL",
+					"PIP_0_BR"
+				};
+			};
+		};
 		class Armory
 		{
 			description="$STR_A3_CfgVehicles_I_Heli_light_03_F_Armory0";
@@ -413,6 +1250,7 @@ class CfgVehicles
 				radius=0.25;
 				minimalHit=0.050000001;
 				explosionShielding=1.5;
+				visual="podsvit pristroju";
 			};
 			class HitEngine1
 			{
@@ -421,6 +1259,7 @@ class CfgVehicles
 				name="engine_1_hit";
 				explosionShielding=3;
 				minimalHit=0.1;
+				visual="motor";
 				passThrough=1;
 				convexComponent="engine_1_hit";
 				material=51;
@@ -454,92 +1293,1042 @@ class CfgVehicles
 			class HitGlass1
 			{
 				name="glass1";
+				visual="glass1";
 				radius=0.37;
 				armor=1;
 				explosionShielding=2;
 				minimalHit=0.025;
 				passThrough=0;
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					class BrokenGlass1
+					{
+						simulation="particles";
+						type="BrokenGlass1NS";
+						position="GlassEffects1";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass2
+					{
+						simulation="particles";
+						type="BrokenGlass2NS";
+						position="GlassEffects1";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass3
+					{
+						simulation="particles";
+						type="BrokenGlass3NS";
+						position="GlassEffects1";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass4
+					{
+						simulation="particles";
+						type="BrokenGlass4NS";
+						position="GlassEffects1";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass5
+					{
+						simulation="particles";
+						type="BrokenGlass5NS";
+						position="GlassEffects1";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass1S
+					{
+						simulation="particles";
+						type="BrokenGlass1SS";
+						position="GlassEffects1";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass2S
+					{
+						simulation="particles";
+						type="BrokenGlass2SS";
+						position="GlassEffects1";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass3S
+					{
+						simulation="particles";
+						type="BrokenGlass3SS";
+						position="GlassEffects1";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass4S
+					{
+						simulation="particles";
+						type="BrokenGlass4SS";
+						position="GlassEffects1";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass5S
+					{
+						simulation="particles";
+						type="BrokenGlass5SS";
+						position="GlassEffects1";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+				};
 			};
 			class HitGlass2
 			{
 				name="glass2";
+				visual="glass2";
 				radius=0.37;
 				armor=1;
 				explosionShielding=1.5;
 				minimalHit=0.025;
 				passThrough=0;
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					class BrokenGlass1
+					{
+						simulation="particles";
+						type="BrokenGlass1NS";
+						position="GlassEffects2";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass2
+					{
+						simulation="particles";
+						type="BrokenGlass2NS";
+						position="GlassEffects2";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass3
+					{
+						simulation="particles";
+						type="BrokenGlass3NS";
+						position="GlassEffects2";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass4
+					{
+						simulation="particles";
+						type="BrokenGlass4NS";
+						position="GlassEffects2";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass5
+					{
+						simulation="particles";
+						type="BrokenGlass5NS";
+						position="GlassEffects2";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass1S
+					{
+						simulation="particles";
+						type="BrokenGlass1SS";
+						position="GlassEffects2";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass2S
+					{
+						simulation="particles";
+						type="BrokenGlass2SS";
+						position="GlassEffects2";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass3S
+					{
+						simulation="particles";
+						type="BrokenGlass3SS";
+						position="GlassEffects2";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass4S
+					{
+						simulation="particles";
+						type="BrokenGlass4SS";
+						position="GlassEffects2";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass5S
+					{
+						simulation="particles";
+						type="BrokenGlass5SS";
+						position="GlassEffects2";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+				};
 			};
 			class HitGlass3
 			{
 				name="glass3";
+				visual="glass3";
 				radius=0.25;
 				armor=1;
 				explosionShielding=1.5;
 				minimalHit=0.025;
 				passThrough=0;
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					class BrokenGlass1
+					{
+						simulation="particles";
+						type="BrokenGlass1NS";
+						position="GlassEffects3";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass2
+					{
+						simulation="particles";
+						type="BrokenGlass2NS";
+						position="GlassEffects3";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass3
+					{
+						simulation="particles";
+						type="BrokenGlass3NS";
+						position="GlassEffects3";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass4
+					{
+						simulation="particles";
+						type="BrokenGlass4NS";
+						position="GlassEffects3";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass5
+					{
+						simulation="particles";
+						type="BrokenGlass5NS";
+						position="GlassEffects3";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass1S
+					{
+						simulation="particles";
+						type="BrokenGlass1SS";
+						position="GlassEffects3";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass2S
+					{
+						simulation="particles";
+						type="BrokenGlass2SS";
+						position="GlassEffects3";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass3S
+					{
+						simulation="particles";
+						type="BrokenGlass3SS";
+						position="GlassEffects3";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass4S
+					{
+						simulation="particles";
+						type="BrokenGlass4SS";
+						position="GlassEffects3";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass5S
+					{
+						simulation="particles";
+						type="BrokenGlass5SS";
+						position="GlassEffects3";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+				};
 			};
 			class HitGlass4
 			{
 				name="glass4";
+				visual="glass4";
 				radius=0.25;
 				armor=1;
 				explosionShielding=1.5;
 				minimalHit=0.025;
 				passThrough=0;
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					class BrokenGlass1
+					{
+						simulation="particles";
+						type="BrokenGlass1NS";
+						position="GlassEffects4";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass2
+					{
+						simulation="particles";
+						type="BrokenGlass2NS";
+						position="GlassEffects4";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass3
+					{
+						simulation="particles";
+						type="BrokenGlass3NS";
+						position="GlassEffects4";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass4
+					{
+						simulation="particles";
+						type="BrokenGlass4NS";
+						position="GlassEffects4";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass5
+					{
+						simulation="particles";
+						type="BrokenGlass5NS";
+						position="GlassEffects4";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass1S
+					{
+						simulation="particles";
+						type="BrokenGlass1SS";
+						position="GlassEffects4";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass2S
+					{
+						simulation="particles";
+						type="BrokenGlass2SS";
+						position="GlassEffects4";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass3S
+					{
+						simulation="particles";
+						type="BrokenGlass3SS";
+						position="GlassEffects4";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass4S
+					{
+						simulation="particles";
+						type="BrokenGlass4SS";
+						position="GlassEffects4";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass5S
+					{
+						simulation="particles";
+						type="BrokenGlass5SS";
+						position="GlassEffects4";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+				};
 			};
 			class HitGlass5
 			{
 				name="glass5";
+				visual="glass5";
 				radius=0.34;
 				armor=1;
 				explosionShielding=2;
 				minimalHit=0.025;
 				passThrough=0;
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					class BrokenGlass1
+					{
+						simulation="particles";
+						type="BrokenGlass1NS";
+						position="GlassEffects5";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass2
+					{
+						simulation="particles";
+						type="BrokenGlass2NS";
+						position="GlassEffects5";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass3
+					{
+						simulation="particles";
+						type="BrokenGlass3NS";
+						position="GlassEffects5";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass4
+					{
+						simulation="particles";
+						type="BrokenGlass4NS";
+						position="GlassEffects5";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass5
+					{
+						simulation="particles";
+						type="BrokenGlass5NS";
+						position="GlassEffects5";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass1S
+					{
+						simulation="particles";
+						type="BrokenGlass1SS";
+						position="GlassEffects5";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass2S
+					{
+						simulation="particles";
+						type="BrokenGlass2SS";
+						position="GlassEffects5";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass3S
+					{
+						simulation="particles";
+						type="BrokenGlass3SS";
+						position="GlassEffects5";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass4S
+					{
+						simulation="particles";
+						type="BrokenGlass4SS";
+						position="GlassEffects5";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass5S
+					{
+						simulation="particles";
+						type="BrokenGlass5SS";
+						position="GlassEffects5";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+				};
 			};
 			class HitGlass6
 			{
 				name="glass6";
+				visual="glass6";
 				radius=0.34;
 				armor=1;
 				explosionShielding=1.5;
 				minimalHit=0.025;
 				passThrough=0;
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					class BrokenGlass1
+					{
+						simulation="particles";
+						type="BrokenGlass1NS";
+						position="GlassEffects6";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass2
+					{
+						simulation="particles";
+						type="BrokenGlass2NS";
+						position="GlassEffects6";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass3
+					{
+						simulation="particles";
+						type="BrokenGlass3NS";
+						position="GlassEffects6";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass4
+					{
+						simulation="particles";
+						type="BrokenGlass4NS";
+						position="GlassEffects6";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass5
+					{
+						simulation="particles";
+						type="BrokenGlass5NS";
+						position="GlassEffects6";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass1S
+					{
+						simulation="particles";
+						type="BrokenGlass1SS";
+						position="GlassEffects6";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass2S
+					{
+						simulation="particles";
+						type="BrokenGlass2SS";
+						position="GlassEffects6";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass3S
+					{
+						simulation="particles";
+						type="BrokenGlass3SS";
+						position="GlassEffects6";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass4S
+					{
+						simulation="particles";
+						type="BrokenGlass4SS";
+						position="GlassEffects6";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass5S
+					{
+						simulation="particles";
+						type="BrokenGlass5SS";
+						position="GlassEffects6";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+				};
 			};
 			class HitGlass7
 			{
 				name="glass7";
+				visual="glass7";
 				radius=0.34;
 				armor=1;
 				explosionShielding=1.5;
 				minimalHit=0.025;
 				passThrough=0;
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					class BrokenGlass1
+					{
+						simulation="particles";
+						type="BrokenGlass1NS";
+						position="GlassEffects7";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass2
+					{
+						simulation="particles";
+						type="BrokenGlass2NS";
+						position="GlassEffects7";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass3
+					{
+						simulation="particles";
+						type="BrokenGlass3NS";
+						position="GlassEffects7";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass4
+					{
+						simulation="particles";
+						type="BrokenGlass4NS";
+						position="GlassEffects7";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass5
+					{
+						simulation="particles";
+						type="BrokenGlass5NS";
+						position="GlassEffects7";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass1S
+					{
+						simulation="particles";
+						type="BrokenGlass1SS";
+						position="GlassEffects7";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass2S
+					{
+						simulation="particles";
+						type="BrokenGlass2SS";
+						position="GlassEffects7";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass3S
+					{
+						simulation="particles";
+						type="BrokenGlass3SS";
+						position="GlassEffects7";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass4S
+					{
+						simulation="particles";
+						type="BrokenGlass4SS";
+						position="GlassEffects7";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass5S
+					{
+						simulation="particles";
+						type="BrokenGlass5SS";
+						position="GlassEffects7";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+				};
 			};
 			class HitGlass8
 			{
 				name="glass8";
+				visual="glass8";
 				radius=0.34;
 				armor=1;
 				explosionShielding=1.5;
 				minimalHit=0.025;
 				passThrough=0;
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					class BrokenGlass1
+					{
+						simulation="particles";
+						type="BrokenGlass1NS";
+						position="GlassEffects8";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass2
+					{
+						simulation="particles";
+						type="BrokenGlass2NS";
+						position="GlassEffects8";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass3
+					{
+						simulation="particles";
+						type="BrokenGlass3NS";
+						position="GlassEffects8";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass4
+					{
+						simulation="particles";
+						type="BrokenGlass4NS";
+						position="GlassEffects8";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass5
+					{
+						simulation="particles";
+						type="BrokenGlass5NS";
+						position="GlassEffects8";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass1S
+					{
+						simulation="particles";
+						type="BrokenGlass1SS";
+						position="GlassEffects8";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass2S
+					{
+						simulation="particles";
+						type="BrokenGlass2SS";
+						position="GlassEffects8";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass3S
+					{
+						simulation="particles";
+						type="BrokenGlass3SS";
+						position="GlassEffects8";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass4S
+					{
+						simulation="particles";
+						type="BrokenGlass4SS";
+						position="GlassEffects8";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass5S
+					{
+						simulation="particles";
+						type="BrokenGlass5SS";
+						position="GlassEffects8";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+				};
 			};
 			class HitGlass9
 			{
 				name="glass9";
+				visual="glass9";
 				radius=0.23999999;
 				armor=0.80000001;
 				explosionShielding=1;
 				minimalHit=0.025;
 				passThrough=0;
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					class BrokenGlass1
+					{
+						simulation="particles";
+						type="BrokenGlass1NS";
+						position="GlassEffects9";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass2
+					{
+						simulation="particles";
+						type="BrokenGlass2NS";
+						position="GlassEffects9";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass3
+					{
+						simulation="particles";
+						type="BrokenGlass3NS";
+						position="GlassEffects9";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass4
+					{
+						simulation="particles";
+						type="BrokenGlass4NS";
+						position="GlassEffects9";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass5
+					{
+						simulation="particles";
+						type="BrokenGlass5NS";
+						position="GlassEffects9";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass1S
+					{
+						simulation="particles";
+						type="BrokenGlass1SS";
+						position="GlassEffects9";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass2S
+					{
+						simulation="particles";
+						type="BrokenGlass2SS";
+						position="GlassEffects9";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass3S
+					{
+						simulation="particles";
+						type="BrokenGlass3SS";
+						position="GlassEffects9";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass4S
+					{
+						simulation="particles";
+						type="BrokenGlass4SS";
+						position="GlassEffects9";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass5S
+					{
+						simulation="particles";
+						type="BrokenGlass5SS";
+						position="GlassEffects9";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+				};
 			};
 			class HitGlass10
 			{
 				name="glass10";
+				visual="glass10";
 				radius=0.23999999;
 				armor=0.80000001;
 				explosionShielding=1;
 				minimalHit=0.025;
 				passThrough=0;
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					class BrokenGlass1
+					{
+						simulation="particles";
+						type="BrokenGlass1NS";
+						position="GlassEffects10";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass2
+					{
+						simulation="particles";
+						type="BrokenGlass2NS";
+						position="GlassEffects10";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass3
+					{
+						simulation="particles";
+						type="BrokenGlass3NS";
+						position="GlassEffects10";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass4
+					{
+						simulation="particles";
+						type="BrokenGlass4NS";
+						position="GlassEffects10";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass5
+					{
+						simulation="particles";
+						type="BrokenGlass5NS";
+						position="GlassEffects10";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass1S
+					{
+						simulation="particles";
+						type="BrokenGlass1SS";
+						position="GlassEffects10";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass2S
+					{
+						simulation="particles";
+						type="BrokenGlass2SS";
+						position="GlassEffects10";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass3S
+					{
+						simulation="particles";
+						type="BrokenGlass3SS";
+						position="GlassEffects10";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass4S
+					{
+						simulation="particles";
+						type="BrokenGlass4SS";
+						position="GlassEffects10";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+					class BrokenGlass5S
+					{
+						simulation="particles";
+						type="BrokenGlass5SS";
+						position="GlassEffects10";
+						intensity=0.15000001;
+						interval=1;
+						lifeTime=0.050000001;
+					};
+				};
 			};
 		};
 		class Exhausts
@@ -557,6 +2346,7 @@ class CfgVehicles
 				effect="ExhaustEffectHeli";
 			};
 		};
+		transportSoldier=6;
 		availableForSupportTypes[]=
 		{
 			"CAS_Heli",
@@ -597,34 +2387,40 @@ class CfgVehicles
 				{
 					class PlaneW
 					{
+						type="fixed";
 						pos[]={0.5,0.57200003};
 					};
 					class WeaponAim
 					{
+						type="vector";
 						source="weapon";
 						pos0[]={0.5,0.5};
 						pos10[]={0.847,0.84500003};
 					};
 					class ForwardVector
 					{
+						type="vector";
 						source="forward";
 						pos0[]={0,0};
 						pos10[]={0.347,0.345};
 					};
 					class VelocityVector
 					{
+						type="vector";
 						source="velocityToView";
 						pos0[]={0.5,0.5};
 						pos10[]={0.847,0.84500003};
 					};
 					class HorizonVector
 					{
+						type="horizon";
 						pos0[]={0.5,0.57200003};
 						pos10[]={0.99072701,1.0599};
 						angle=0;
 					};
 					class VerticalSpeedBone
 					{
+						type="linear";
 						source="vspeed";
 						sourceScale=1;
 						min=-15;
@@ -645,6 +2441,7 @@ class CfgVehicles
 					condition="on";
 					class Static
 					{
+						type="line";
 						width=4;
 						points[]=
 						{
@@ -673,6 +2470,7 @@ class CfgVehicles
 					};
 					class VelocityLine
 					{
+						type="line";
 						width=4;
 						points[]=
 						{
@@ -693,7 +2491,9 @@ class CfgVehicles
 						condition="simulRTD";
 						class CollectiveText
 						{
+							type="text";
 							source="static";
+							text="%";
 							align="right";
 							scale=1;
 							pos[]=
@@ -714,6 +2514,7 @@ class CfgVehicles
 						};
 						class CollectiveNumber
 						{
+							type="text";
 							source="rtdCollective";
 							sourceScale=100;
 							align="left";
@@ -737,6 +2538,7 @@ class CfgVehicles
 					};
 					class SpeedNumber
 					{
+						type="text";
 						source="speed";
 						sourceScale=3.5999999;
 						align="right";
@@ -759,6 +2561,7 @@ class CfgVehicles
 					};
 					class AltNumber
 					{
+						type="text";
 						source="altitudeAGL";
 						sourceScale=1;
 						align="left";
@@ -781,6 +2584,7 @@ class CfgVehicles
 					};
 					class Weapons
 					{
+						type="text";
 						source="weapon";
 						sourceScale=1;
 						align="right";
@@ -803,6 +2607,7 @@ class CfgVehicles
 					};
 					class Ammo
 					{
+						type="text";
 						source="ammo";
 						sourceScale=1;
 						align="center";
@@ -825,12 +2630,14 @@ class CfgVehicles
 					};
 					class AltScale
 					{
+						type="scale";
 						horizontal=0;
 						source="altitudeAGL";
 						sourceScale=1;
 						min=0;
 						width=4;
 						top=0.69999999;
+						center=0.5;
 						bottom=0.25;
 						lineXleft=0.83499998;
 						lineYright=0.84500003;
@@ -848,6 +2655,7 @@ class CfgVehicles
 					};
 					class VerticalSpeedScale
 					{
+						type="line";
 						width=4;
 						points[]=
 						{
@@ -950,7 +2758,9 @@ class CfgVehicles
 					};
 					class VspeedNumberStaticP15
 					{
+						type="text";
 						source="static";
+						text=15;
 						scale=1;
 						sourceScale=1;
 						align="right";
@@ -972,7 +2782,9 @@ class CfgVehicles
 					};
 					class VspeedNumberStaticM15
 					{
+						type="text";
 						source="static";
+						text=-15;
 						scale=1;
 						sourceScale=1;
 						align="right";
@@ -994,11 +2806,13 @@ class CfgVehicles
 					};
 					class HeadingScale
 					{
+						type="scale";
 						horizontal=1;
 						source="heading";
 						sourceScale=1;
 						width=4;
 						top=0.30000001;
+						center=0.5;
 						bottom=0.69999999;
 						lineXleft=0.11;
 						lineYright=0.1;
@@ -1020,6 +2834,7 @@ class CfgVehicles
 						clipBR[]={0.80000001,0.95999998};
 						class HorizontalLineDraw
 						{
+							type="line";
 							width=4;
 							points[]=
 							{
@@ -1108,6 +2923,7 @@ class CfgVehicles
 						condition="on";
 						class Circle
 						{
+							type="line";
 							width=4;
 							points[]=
 							{
@@ -1186,6 +3002,7 @@ class CfgVehicles
 						condition="missile";
 						class Circle
 						{
+							type="line";
 							width=4;
 							points[]=
 							{
@@ -1424,6 +3241,7 @@ class CfgVehicles
 						color[]={1,1,1};
 						class Reticle
 						{
+							type="line";
 							width=4;
 							points[]=
 							{
@@ -1564,7 +3382,9 @@ class CfgVehicles
 						};
 						class ModeText
 						{
+							type="text";
 							source="static";
+							text="Mode: TI WHOT";
 							scale=1;
 							sourceScale=1;
 							align="right";
@@ -1586,7 +3406,9 @@ class CfgVehicles
 						};
 						class RangeText
 						{
+							type="text";
 							source="static";
+							text="Range:";
 							scale=1;
 							sourceScale=1;
 							align="right";
@@ -1608,6 +3430,7 @@ class CfgVehicles
 						};
 						class Fuel
 						{
+							type="text";
 							source="laserDist";
 							sourceScale=1;
 							sourceLength=4;
@@ -1635,6 +3458,127 @@ class CfgVehicles
 		};
 		lockDetectionSystem="8 + 4";
 		incomingMissileDetectionSystem="8 + 16";
+		class AnimationSources: AnimationSources
+		{
+			class GunL_Revolving
+			{
+				source="revolving";
+				weapon="M134_minigun";
+			};
+			class GunR_Revolving: GunL_Revolving;  //found empty after stripping
+			class muzzle_hide
+			{
+				source="reload";
+				weapon="M134_minigun";
+			};
+			class Muzzle_Flash
+			{
+				source="ammorandom";
+				weapon="M134_minigun";
+				animPeriod=1e-006;
+			};
+			class Missiles_revolving
+			{
+				source="revolving";
+				weapon="missiles_DAR";
+			};
+			class RocketPods_Hide
+			{
+				source="user";
+				animPeriod=1e-006;
+				initPhase=0;
+			};
+			class HideWeapons
+			{
+				source="user";
+				animPeriod=1e-006;
+				initPhase=0;
+			};
+			class HitGlass1
+			{
+				raw=1;
+				source="hit";
+				hitpoint="HitGlass1";
+			};
+			class HitGlass2
+			{
+				raw=1;
+				source="hit";
+				hitpoint="HitGlass2";
+			};
+			class HitGlass3
+			{
+				raw=1;
+				source="hit";
+				hitpoint="HitGlass3";
+			};
+			class HitGlass4
+			{
+				raw=1;
+				source="hit";
+				hitpoint="HitGlass4";
+			};
+			class HitGlass5
+			{
+				raw=1;
+				source="hit";
+				hitpoint="HitGlass5";
+			};
+			class HitGlass6
+			{
+				raw=1;
+				source="hit";
+				hitpoint="HitGlass6";
+			};
+			class HitGlass7
+			{
+				raw=1;
+				source="hit";
+				hitpoint="HitGlass7";
+			};
+			class HitGlass8
+			{
+				raw=1;
+				source="hit";
+				hitpoint="HitGlass8";
+			};
+			class HitGlass9
+			{
+				raw=1;
+				source="hit";
+				hitpoint="HitGlass9";
+			};
+			class HitGlass10
+			{
+				raw=1;
+				source="hit";
+				hitpoint="HitGlass10";
+			};
+			class HitGlass11
+			{
+				raw=1;
+				source="hit";
+				hitpoint="HitGlass11";
+			};
+			class HitGlass12
+			{
+				raw=1;
+				source="hit";
+				hitpoint="HitGlass12";
+			};
+			class HitGlass13
+			{
+				raw=1;
+				source="hit";
+				hitpoint="HitGlass13";
+			};
+			class HitGlass14
+			{
+				raw=1;
+				source="hit";
+				hitpoint="HitGlass14";
+			};
+		};
 		weapons[]=
 		{
 			"M134_minigun",
@@ -1665,7 +3609,85 @@ class CfgVehicles
 		};
 		memoryPointLMissile="Rocket_1";
 		memoryPointRMissile="Rocket_2";
-		class Damage;  //found empty after stripping
+		class Damage
+		{
+			tex[]={};
+			mat[]=
+			{
+				"A3\Air_F_EPB\Heli_Light_03\data\Heli_Light_03_base.rvmat",
+				"A3\Air_F_EPB\Heli_Light_03\data\Heli_Light_03_base_damage.rvmat",
+				"A3\Air_F_EPB\Heli_Light_03\data\Heli_Light_03_base_destruct.rvmat",
+				"A3\Air_F_EPB\Heli_Light_03\data\Heli_Light_03_interior.rvmat",
+				"A3\Air_F_EPB\Heli_Light_03\data\Heli_Light_03_interior_damage.rvmat",
+				"A3\Air_F_EPB\Heli_Light_03\data\Heli_Light_03_interior_destruct.rvmat",
+				"A3\Data_f\Glass_veh.rvmat",
+				"A3\Data_f\Glass_veh_damage.rvmat",
+				"A3\Data_f\Glass_veh_damage.rvmat"
+			};
+		};
+		class Reflectors
+		{
+			class Light_1
+			{
+				color[]={70,75,100};
+				ambient[]={70,75,100};
+				intensity=7;
+				size=1;
+				innerAngle=5;
+				outerAngle=175;
+				coneFadeCoef=10;
+				position="Light_1_pos";
+				direction="Light_1_dir";
+				hitpoint="Light_1_hit";
+				selection="Light_1";
+				useFlare=1;
+				dayLight=0;
+				FlareSize=0.69999999;
+				class Attenuation
+				{
+					start=0;
+					constant=0;
+					linear=1;
+					quadratic=0;
+					hardLimitStart=10;
+					hardLimitEnd=50;
+				};
+			};
+			class Light_2: Light_1
+			{
+				position="Light_2_pos";
+				direction="Light_2_dir";
+				hitpoint="Light_2_hit";
+				selection="Light_2";
+			};
+			class Light_3: Light_1
+			{
+				position="Light_3_pos";
+				direction="Light_3_dir";
+				hitpoint="Light_3_hit";
+				selection="Light_3";
+			};
+			class Light_4: Light_1
+			{
+				position="Light_4_pos";
+				direction="Light_4_dir";
+				hitpoint="Light_4_hit";
+				selection="Light_4";
+			};
+		};
+		aggregateReflectors[]=
+		{
+			
+			{
+				"Light_1",
+				"Light_2"
+			},
+			
+			{
+				"Light_3",
+				"Light_4"
+			}
+		};
 		class Components: Components
 		{
 			class SensorsManagerComponent
@@ -1686,27 +3708,55 @@ class CfgVehicles
 		{
 			class MainTurret: MainTurret
 			{
+				body="obsTurret";
+				gun="obsGun";
+				animationSourceBody="obsTurret";
+				animationSourceGun="obsGun";
 				stabilizedInAxes=3;
 				primaryGunner=0;
+				memoryPointGunnerOptics="commanderview";
 				minElev=-40;
 				maxElev=20;
 				initElev=0;
 				minTurn=-120;
 				maxTurn=120;
 				initTurn=0;
+				gunBeg="commanderview";
+				gunEnd="laserstart";
 				memoryPointGun="laserstart";
+				gunnerName="$STR_A3_COPILOT";
 				isCopilot=1;
+				turretInfoType="RscOptics_Heli_Attack_01_gunner";
 				weapons[]=
 				{
 					"FakeHorn"
 				};
+				soundServo[]=
+				{
+					"",
+					0.0099999998,
+					1,
+					30
+				};
 				magazines[]={};
 				usePiP=1;
+				inGunnerMayFire=1;
+				gunnerAction="copilot_Heli_Light_03";
+				gunnerInAction="copilot_Heli_Light_03";
 				precisegetinout=1;
+				gunnerGetInAction="copilot_Heli_Light_03_Enter";
+				gunnerGetOutAction="copilot_Heli_Light_03_Exit";
+				gunnerOpticsEffect[]={};
+				gunnerOpticsModel="";
+				gunnerLeftHandAnimName="lever_copilot";
+				gunnerRightHandAnimName="stick_copilot";
+				gunnerLeftLegAnimName="pedalL";
+				gunnerRightLegAnimName="pedalR";
 				class OpticsIn
 				{
 					class Wide
 					{
+						opticsDisplayName="W";
 						initAngleX=0;
 						minAngleX=-30;
 						maxAngleX=30;
@@ -1722,15 +3772,20 @@ class CfgVehicles
 							"Ti"
 						};
 						thermalMode[]={0,1};
+						gunnerOpticsModel="\A3\Weapons_F_Beta\Reticle\Heli_Attack_01_Optics_Gunner_wide_F";
 					};
 					class Medium: Wide
 					{
+						opticsDisplayName="M";
 						initFov=0.093000002;
 						minFov=0.093000002;
 						maxFov=0.093000002;
+						gunnerOpticsModel="\A3\Weapons_F_Beta\Reticle\Heli_Attack_01_Optics_Gunner_medium_F";
 					};
 					class Narrow: Wide
 					{
+						opticsDisplayName="N";
+						gunnerOpticsModel="\A3\Weapons_F_Beta\Reticle\Heli_Attack_01_Optics_Gunner_narrow_F";
 						initFov=0.028999999;
 						minFov=0.028999999;
 						maxFov=0.028999999;
@@ -1754,6 +3809,8 @@ class CfgVehicles
 							"Normal",
 							"NVG"
 						};
+						gunnerOpticsModel="";
+						gunnerOpticsEffect[]={};
 					};
 				};
 				class ViewGunner: ViewPilot
@@ -1761,6 +3818,7 @@ class CfgVehicles
 					initAngleX=-15;
 				};
 				startEngine=0;
+				gunnerHasFlares=0;
 				class HitPoints
 				{
 					class HitTurret
@@ -1768,6 +3826,7 @@ class CfgVehicles
 						armor=1;
 						material=-1;
 						name="main_turret_hit";
+						visual="gun";
 						passThrough=0.2;
 						radius=0.25;
 					};
@@ -1776,8 +3835,38 @@ class CfgVehicles
 						armor=1;
 						material=-1;
 						name="main_gun_hit";
+						visual="gun";
 						passThrough=0.2;
 						radius=0.25;
+					};
+				};
+				class Reflectors
+				{
+					class Right
+					{
+						color[]={7000,7500,10000};
+						ambient[]={70,75,100};
+						intensity=50;
+						size=1;
+						innerAngle=5;
+						outerAngle=65;
+						coneFadeCoef=10;
+						position="laserstart";
+						direction="commanderview";
+						hitpoint="glass11";
+						selection="glass11";
+						useFlare=1;
+						dayLight=0;
+						FlareSize=4;
+						class Attenuation
+						{
+							start=0;
+							constant=0;
+							linear=0;
+							quadratic=0.050000001;
+							hardLimitStart=400;
+							hardLimitEnd=450;
+						};
 					};
 				};
 				class Components
@@ -1793,6 +3882,7 @@ class CfgVehicles
 			{
 				class Wide
 				{
+					opticsDisplayName="W";
 					initAngleX=0;
 					minAngleX=0;
 					maxAngleX=0;
@@ -1809,6 +3899,7 @@ class CfgVehicles
 						"NVG"
 					};
 					thermalMode[]={0,1};
+					gunnerOpticsModel="A3\drones_f\Weapons_F_Gamma\Reticle\UAV_Optics_Gunner_wide_F.p3d";
 				};
 				showMiniMapInOptics=0;
 				showUAVViewpInOptics=0;
@@ -1831,6 +3922,13 @@ class CfgVehicles
 			class Green
 			{
 				displayName="$STR_A3_TEXTURESOURCES_GREEN0";
+				author="$STR_A3_Bohemia_Interactive";
+				textures[]=
+				{
+					"\A3\Air_F_EPB\Heli_Light_03\data\Heli_Light_03_base_CO.paa",
+					"a3\weapons_f\ammoboxes\data\ammobox_co.paa",
+					"a3\weapons_f\ammoboxes\data\ammobox_signs_ca.paa"
+				};
 				factions[]=
 				{
 					"IND_F"
@@ -1839,6 +3937,13 @@ class CfgVehicles
 			class Indep
 			{
 				displayName="$STR_A3_TEXTURESOURCES_INDEP0";
+				author="$STR_A3_Bohemia_Interactive";
+				textures[]=
+				{
+					"\A3\Air_F_EPB\Heli_Light_03\data\Heli_Light_03_base_INDP_CO.paa",
+					"a3\weapons_f\ammoboxes\data\ammobox_co.paa",
+					"a3\weapons_f\ammoboxes\data\ammobox_signs_ca.paa"
+				};
 				factions[]=
 				{
 					"IND_F"
@@ -1848,6 +3953,7 @@ class CfgVehicles
 	};
 	class Heli_light_03_dynamicLoadout_base_F: Heli_light_03_base_F
 	{
+		author="$STR_A3_Bohemia_Interactive";
 		_generalMacro="Heli_light_03_dynamicLoadout_base_F";
 		weapons[]=
 		{
@@ -1860,13 +3966,53 @@ class CfgVehicles
 			"168Rnd_CMFlare_Chaff_Magazine"
 		};
 		cost=3000000;
+		transportSoldier=4;
 		hideWeaponsCargo=1;
+		cargoProxyIndexes[]={3,4,5,6};
+		getInProxyOrder[]={1,2,3,4,5,6};
 		class CargoTurret;
 		class Turrets: Turrets
 		{
 			class MainTurret: MainTurret;  //found empty after stripping
+			class CargoTurret_01: CargoTurret
+			{
+				gunnerAction="passenger_bench_1";
+				gunnerCompartments="Compartment2";
+				memoryPointsGetInGunner="pos cargo r";
+				memoryPointsGetInGunnerDir="pos cargo dir r";
+				gunnerName="$STR_A3_TURRETS_DOOR_R";
+				proxyIndex=1;
+				isPersonTurret=1;
+				ejectDeadGunner=1;
+				playerPosition=4;
+				soundAttenuationTurret="";
+				disableSoundAttenuation=1;
+				class TurnOut
+				{
+					limitsArrayTop[]=
+					{
+						{10.5776,-58.473202},
+						{16.443899,33.970001},
+						{11.9517,85.806198}
+					};
+					limitsArrayBottom[]=
+					{
+						{-11.7914,-67.324799},
+						{-33.808899,-27.733},
+						{-33.006199,0.77179998},
+						{-14.5823,22.671},
+						{-10.2873,43.9272},
+						{-20.625401,76.586502}
+					};
+				};
+				class TurnIn: TurnOut;  //found empty after stripping
+			};
 			class CargoTurret_02: CargoTurret_01
 			{
+				gunnerCompartments="Compartment2";
+				memoryPointsGetInGunner="pos cargo l";
+				memoryPointsGetInGunnerDir="pos cargo dir l";
+				gunnerName="$STR_A3_TURRETS_DOOR_L";
 				proxyIndex=2;
 				class TurnOut
 				{
@@ -1884,6 +4030,23 @@ class CfgVehicles
 						{-44.547699,63.132099}
 					};
 				};
+				class TurnIn: TurnOut;  //found empty after stripping
+			};
+		};
+		cargoAction[]=
+		{
+			"passenger_apc_narrow_generic01",
+			"passenger_flatground_generic04",
+			"passenger_flatground_generic05",
+			"passenger_apc_narrow_generic02"
+		};
+		class AnimationSources: AnimationSources
+		{
+			class HideWeapons
+			{
+				source="user";
+				animPeriod=1e-006;
+				initPhase=1;
 			};
 		};
 		class Components: Components
@@ -1896,6 +4059,7 @@ class CfgVehicles
 					class PylonLeft1
 					{
 						attachment="PylonRack_12Rnd_missiles";
+						priority=5;
 						hardpoints[]=
 						{
 							"DAR",
@@ -1954,8 +4118,10 @@ class CfgVehicles
 	};
 	class Heli_light_03_unarmed_base_F: Heli_light_03_base_F
 	{
+		author="$STR_A3_Bohemia_Interactive";
 		_generalMacro="Heli_light_03_unarmed_base_F";
 		displayname="$STR_A3_CfgVehicles_I_Heli_light_03_unarmed_F0";
+		model="\A3\Air_F_EPB\Heli_Light_03\Heli_Light_03_unarmed_F.p3d";
 		icon="\A3\Air_F_EPB\Heli_Light_03\data\UI\Map_Heli_Light_03_unarmed_CA.paa";
 		availableForSupportTypes[]=
 		{
@@ -1973,6 +4139,7 @@ class CfgVehicles
 	};
 	class I_Heli_light_03_F: Heli_light_03_base_F
 	{
+		author="$STR_A3_Bohemia_Interactive";
 		class SimpleObject
 		{
 			eden=0;
@@ -2523,23 +4690,74 @@ class CfgVehicles
 			init="[this, '', []] call bis_fnc_initVehicle";
 		};
 		_generalMacro="I_Heli_light_03_F";
+		scope=1;
 		side=2;
+		faction="IND_F";
+		crew="I_helipilot_F";
 		typicalCargo[]=
 		{
 			"I_Soldier_lite_F"
+		};
+		hiddenSelections[]=
+		{
+			"camo"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"\A3\Air_F_EPB\Heli_Light_03\data\Heli_Light_03_base_INDP_CO.paa"
 		};
 		textureList[]=
 		{
 			"Indep",
 			1
 		};
+		transportSoldier=4;
 		hideWeaponsCargo=1;
+		cargoProxyIndexes[]={3,4,5,6};
+		getInProxyOrder[]={1,2,3,4,5,6};
 		class CargoTurret;
 		class Turrets: Turrets
 		{
 			class MainTurret: MainTurret;  //found empty after stripping
+			class CargoTurret_01: CargoTurret
+			{
+				gunnerAction="passenger_bench_1";
+				gunnerCompartments="Compartment2";
+				memoryPointsGetInGunner="pos cargo r";
+				memoryPointsGetInGunnerDir="pos cargo dir r";
+				gunnerName="$STR_A3_TURRETS_DOOR_R";
+				proxyIndex=1;
+				isPersonTurret=1;
+				ejectDeadGunner=1;
+				playerPosition=4;
+				soundAttenuationTurret="";
+				disableSoundAttenuation=1;
+				class TurnOut
+				{
+					limitsArrayTop[]=
+					{
+						{10.5776,-58.473202},
+						{16.443899,33.970001},
+						{11.9517,85.806198}
+					};
+					limitsArrayBottom[]=
+					{
+						{-11.7914,-67.324799},
+						{-33.808899,-27.733},
+						{-33.006199,0.77179998},
+						{-14.5823,22.671},
+						{-10.2873,43.9272},
+						{-20.625401,76.586502}
+					};
+				};
+				class TurnIn: TurnOut;  //found empty after stripping
+			};
 			class CargoTurret_02: CargoTurret_01
 			{
+				gunnerCompartments="Compartment2";
+				memoryPointsGetInGunner="pos cargo l";
+				memoryPointsGetInGunnerDir="pos cargo dir l";
+				gunnerName="$STR_A3_TURRETS_DOOR_L";
 				proxyIndex=2;
 				class TurnOut
 				{
@@ -2557,11 +4775,20 @@ class CfgVehicles
 						{-44.547699,63.132099}
 					};
 				};
+				class TurnIn: TurnOut;  //found empty after stripping
 			};
+		};
+		cargoAction[]=
+		{
+			"passenger_apc_narrow_generic01",
+			"passenger_flatground_generic04",
+			"passenger_flatground_generic05",
+			"passenger_apc_narrow_generic02"
 		};
 	};
 	class I_Heli_light_03_dynamicLoadout_F: Heli_light_03_dynamicLoadout_base_F
 	{
+		author="$STR_A3_Bohemia_Interactive";
 		class SimpleObject
 		{
 			eden=1;
@@ -3111,11 +5338,27 @@ class CfgVehicles
 			verticalOffsetWorld=-0.0049999999;
 			init="[this, '', []] call bis_fnc_initVehicle";
 		};
+		editorPreview="\A3\EditorPreviews_F\Data\CfgVehicles\I_Heli_light_03_dynamicLoadout_F.jpg";
 		_generalMacro="I_Heli_light_03_dynamicLoadout_F";
+		scope=2;
 		side=2;
+		faction="IND_F";
+		crew="I_helipilot_F";
 		typicalCargo[]=
 		{
 			"I_Soldier_lite_F"
+		};
+		hiddenSelections[]=
+		{
+			"camo",
+			"ammobox",
+			"ammobox_sign"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"\A3\Air_F_EPB\Heli_Light_03\data\Heli_Light_03_base_INDP_CO.paa",
+			"a3\weapons_f\ammoboxes\data\ammobox_co.paa",
+			"a3\weapons_f\ammoboxes\data\ammobox_signs_ca.paa"
 		};
 		textureList[]=
 		{
@@ -3125,6 +5368,7 @@ class CfgVehicles
 	};
 	class I_Heli_light_03_unarmed_F: Heli_light_03_unarmed_base_F
 	{
+		author="$STR_A3_Bohemia_Interactive";
 		class SimpleObject
 		{
 			eden=1;
@@ -3664,11 +5908,23 @@ class CfgVehicles
 			verticalOffsetWorld=-0.14300001;
 			init="[this, '', []] call bis_fnc_initVehicle";
 		};
+		editorPreview="\A3\EditorPreviews_F\Data\CfgVehicles\I_Heli_light_03_unarmed_F.jpg";
 		_generalMacro="I_Heli_light_03_unarmed_F";
+		scope=2;
 		side=2;
+		faction="IND_F";
+		crew="I_helipilot_F";
 		typicalCargo[]=
 		{
 			"I_Soldier_lite_F"
+		};
+		hiddenSelections[]=
+		{
+			"camo"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"\A3\Air_F_EPB\Heli_Light_03\data\Heli_Light_03_base_CO.paa"
 		};
 		textureList[]=
 		{
@@ -3678,11 +5934,15 @@ class CfgVehicles
 	};
 	class I_Heli_light_03_base_F: Heli_light_03_base_F
 	{
+		author="$STR_A3_Bohemia_Interactive";
+		mapSize=1;
 		_generalMacro="I_Heli_light_03_base_F";
 		deprecated=1;
 	};
 	class I_Heli_light_03_unarmed_base_F: Heli_light_03_unarmed_base_F
 	{
+		author="$STR_A3_Bohemia_Interactive";
+		mapSize=1;
 		_generalMacro="I_Heli_light_03_unarmed_base_F";
 		deprecated=1;
 	};

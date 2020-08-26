@@ -4,6 +4,11 @@ class CfgPatches
 	{
 		units[]={};
 		weapons[]={};
+		requiredVersion=1.3200001;
+		requiredAddons[]=
+		{
+			"rhsusf_main"
+		};
 	};
 };
 class CfgVoice
@@ -17,6 +22,7 @@ class CfgVoice
 	{
 		variants[]={0.94999999,1,1.05};
 		voiceType="";
+		scope=0;
 		directories[]=
 		{
 			"",
@@ -34,6 +40,7 @@ class CfgVoice
 	};
 	class rhs_Female01ENG: RHS_ENGF
 	{
+		author="$STR_A3_Bohemia_Interactive";
 		icon="\a3\Ui_f\data\Map\Markers\Flags\usa_ca.paa";
 		displayname="Female Voice 01";
 		directories[]=
@@ -41,6 +48,7 @@ class CfgVoice
 			"\rhsusf\addons\rhsusf_s_radio\Female01EN\",
 			"\rhsusf\addons\rhsusf_s_radio\Female01EN\"
 		};
+		scope=2;
 	};
 };
 class CfgVoiceTypes
@@ -9342,6 +9350,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 			{
 				class 0
 				{
+					text="$STR_A3_Arguments_Direction_Relative1_0_0";
 					speech[]=
 					{
 						"InFrontOf"
@@ -9349,6 +9358,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 				};
 				class 90
 				{
+					text="$STR_A3_Arguments_Direction_Relative1_90_0";
 					speech[]=
 					{
 						"RightOf"
@@ -9356,6 +9366,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 				};
 				class 180
 				{
+					text="$STR_A3_Arguments_Direction_Relative1_270_0";
 					speech[]=
 					{
 						"Behind"
@@ -9363,6 +9374,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 				};
 				class 270
 				{
+					text="$STR_A3_Arguments_Direction_Relative1_180_0";
 					speech[]=
 					{
 						"LeftOf"
@@ -9373,6 +9385,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 			{
 				class 0
 				{
+					text="$STR_A3_Arguments_Direction_Relative1_0_0";
 					speech[]=
 					{
 						"Front"
@@ -9380,6 +9393,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 				};
 				class 90
 				{
+					text="$STR_A3_Arguments_Direction_Relative1_90_0";
 					speech[]=
 					{
 						"Right"
@@ -9387,6 +9401,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 				};
 				class 180
 				{
+					text="$STR_A3_Arguments_Direction_Relative1_270_0";
 					speech[]=
 					{
 						"Rear"
@@ -9394,6 +9409,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 				};
 				class 270
 				{
+					text="$STR_A3_Arguments_Direction_Relative1_180_0";
 					speech[]=
 					{
 						"Left"
@@ -9404,6 +9420,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 			{
 				class 0
 				{
+					text="$STR_A3_Arguments_Direction_Relative1_0_0";
 					speech[]=
 					{
 						"Front"
@@ -9411,6 +9428,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 				};
 				class 90
 				{
+					text="$STR_A3_Arguments_Direction_Relative1_90_0";
 					speech[]=
 					{
 						"RightFlank"
@@ -9418,6 +9436,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 				};
 				class 180
 				{
+					text="$STR_A3_Arguments_Direction_Relative1_270_0";
 					speech[]=
 					{
 						"Rear"
@@ -9425,6 +9444,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 				};
 				class 270
 				{
+					text="$STR_A3_Arguments_Direction_Relative1_180_0";
 					speech[]=
 					{
 						"LeftFlank"
@@ -9435,6 +9455,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 			{
 				class 0
 				{
+					text="$STR_Q_NORTH";
 					speech[]=
 					{
 						"North"
@@ -9442,6 +9463,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 				};
 				class 45
 				{
+					text="$STR_Q_NORTH_EAST";
 					speech[]=
 					{
 						"NorthEast"
@@ -9449,6 +9471,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 				};
 				class 90
 				{
+					text="$STR_Q_EAST";
 					speech[]=
 					{
 						"East"
@@ -9456,6 +9479,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 				};
 				class 135
 				{
+					text="$STR_Q_SOUTH_EAST";
 					speech[]=
 					{
 						"SouthEast"
@@ -9463,6 +9487,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 				};
 				class 180
 				{
+					text="$STR_Q_SOUTH";
 					speech[]=
 					{
 						"South"
@@ -9470,6 +9495,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 				};
 				class 225
 				{
+					text="$STR_Q_SOUTH_WEST";
 					speech[]=
 					{
 						"SouthWest"
@@ -9477,6 +9503,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 				};
 				class 270
 				{
+					text="$STR_Q_WEST";
 					speech[]=
 					{
 						"West"
@@ -9484,6 +9511,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 				};
 				class 315
 				{
+					text="$STR_Q_NORTH_WEST";
 					speech[]=
 					{
 						"NorthWest"
@@ -9494,6 +9522,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 			{
 				class 0
 				{
+					text="$STR_A3_Arguments_Direction_Compass2_0_0";
 					speech[]=
 					{
 						"bearing000"
@@ -9501,6 +9530,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 				};
 				class 15
 				{
+					text="$STR_A3_Arguments_Direction_Compass2_15_0";
 					speech[]=
 					{
 						"bearing015"
@@ -9508,6 +9538,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 				};
 				class 30
 				{
+					text="$STR_A3_Arguments_Direction_Compass2_30_0";
 					speech[]=
 					{
 						"bearing030"
@@ -9515,6 +9546,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 				};
 				class 45
 				{
+					text="$STR_A3_Arguments_Direction_Compass2_45_0";
 					speech[]=
 					{
 						"bearing045"
@@ -9522,6 +9554,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 				};
 				class 60
 				{
+					text="$STR_A3_Arguments_Direction_Compass2_60_0";
 					speech[]=
 					{
 						"bearing060"
@@ -9529,6 +9562,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 				};
 				class 75
 				{
+					text="$STR_A3_Arguments_Direction_Compass2_75_0";
 					speech[]=
 					{
 						"bearing075"
@@ -9536,6 +9570,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 				};
 				class 90
 				{
+					text="$STR_A3_Arguments_Direction_Compass2_90_0";
 					speech[]=
 					{
 						"bearing090"
@@ -9543,6 +9578,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 				};
 				class 105
 				{
+					text="$STR_A3_Arguments_Direction_Compass2_105_0";
 					speech[]=
 					{
 						"bearing105"
@@ -9550,6 +9586,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 				};
 				class 120
 				{
+					text="$STR_A3_Arguments_Direction_Compass2_120_0";
 					speech[]=
 					{
 						"bearing120"
@@ -9557,6 +9594,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 				};
 				class 135
 				{
+					text="$STR_A3_Arguments_Direction_Compass2_135_0";
 					speech[]=
 					{
 						"bearing135"
@@ -9564,6 +9602,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 				};
 				class 150
 				{
+					text="$STR_A3_Arguments_Direction_Compass2_150_0";
 					speech[]=
 					{
 						"bearing150"
@@ -9571,6 +9610,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 				};
 				class 165
 				{
+					text="$STR_A3_Arguments_Direction_Compass2_165_0";
 					speech[]=
 					{
 						"bearing165"
@@ -9578,6 +9618,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 				};
 				class 180
 				{
+					text="$STR_A3_Arguments_Direction_Compass2_180_0";
 					speech[]=
 					{
 						"bearing180"
@@ -9585,6 +9626,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 				};
 				class 195
 				{
+					text="$STR_A3_Arguments_Direction_Compass2_195_0";
 					speech[]=
 					{
 						"bearing195"
@@ -9592,6 +9634,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 				};
 				class 210
 				{
+					text="$STR_A3_Arguments_Direction_Compass2_210_0";
 					speech[]=
 					{
 						"bearing210"
@@ -9599,6 +9642,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 				};
 				class 225
 				{
+					text="$STR_A3_Arguments_Direction_Compass2_225_0";
 					speech[]=
 					{
 						"bearing225"
@@ -9606,6 +9650,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 				};
 				class 240
 				{
+					text="$STR_A3_Arguments_Direction_Compass2_240_0";
 					speech[]=
 					{
 						"bearing240"
@@ -9613,6 +9658,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 				};
 				class 255
 				{
+					text="$STR_A3_Arguments_Direction_Compass2_255_0";
 					speech[]=
 					{
 						"bearing255"
@@ -9620,6 +9666,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 				};
 				class 270
 				{
+					text="$STR_A3_Arguments_Direction_Compass2_270_0";
 					speech[]=
 					{
 						"bearing270"
@@ -9627,6 +9674,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 				};
 				class 285
 				{
+					text="$STR_A3_Arguments_Direction_Compass2_285_0";
 					speech[]=
 					{
 						"bearing285"
@@ -9634,6 +9682,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 				};
 				class 300
 				{
+					text="$STR_A3_Arguments_Direction_Compass2_300_0";
 					speech[]=
 					{
 						"bearing300"
@@ -9641,6 +9690,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 				};
 				class 315
 				{
+					text="$STR_A3_Arguments_Direction_Compass2_315_0";
 					speech[]=
 					{
 						"bearing315"
@@ -9648,6 +9698,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 				};
 				class 330
 				{
+					text="$STR_A3_Arguments_Direction_Compass2_330_0";
 					speech[]=
 					{
 						"bearing330"
@@ -9655,6 +9706,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 				};
 				class 345
 				{
+					text="$STR_A3_Arguments_Direction_Compass2_345_0";
 					speech[]=
 					{
 						"bearing345"
@@ -9662,6 +9714,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 				};
 				class 360
 				{
+					text="$STR_A3_Arguments_Direction_Compass2_360_0";
 					speech[]=
 					{
 						"bearing360"
@@ -9673,6 +9726,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		{
 			class Level0
 			{
+				text="$STR_A3_WORDDANGEROUSLYCLOSETO";
 				speech[]=
 				{
 					"DangerouslyCloseTo"
@@ -9680,6 +9734,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 			};
 			class Level1
 			{
+				text="$STR_A3_WORDNOTFARFROM";
 				speech[]=
 				{
 					"NotFarFrom"
@@ -9687,6 +9742,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 			};
 			class Level2
 			{
+				text="$STR_A3_WORDFARFROM";
 				speech[]=
 				{
 					"FarFrom"
@@ -9697,6 +9753,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		{
 			class Level0
 			{
+				text="$STR_A3_WORDJUST";
 				speech[]=
 				{
 					"Just"
@@ -9704,6 +9761,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 			};
 			class Level1
 			{
+				text="$STR_A3_WORDWAY";
 				speech[]=
 				{
 					"Way"
@@ -9711,6 +9769,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 			};
 			class Level2
 			{
+				text="$STR_A3_WORDDISTFAR";
 				speech[]=
 				{
 					"Far"
@@ -9721,6 +9780,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		{
 			class Level0
 			{
+				text="$STR_A3_WORDCLOSE";
 				speech[]=
 				{
 					"Close"
@@ -9728,6 +9788,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 			};
 			class Level1
 			{
+				text="$STR_A3_WORDMEDIUMRANGE";
 				speech[]=
 				{
 					"MediumRange"
@@ -9735,6 +9796,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 			};
 			class Level2
 			{
+				text="$STR_A3_WORDFAR";
 				speech[]=
 				{
 					"Far"
@@ -9801,6 +9863,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentEnemyDetectedSenderRelative_1
 		{
+			text="$STR_A3_SENTENEMYDETECTEDSENDERRELATIVE_1";
 			speech[]=
 			{
 				"ContactE",
@@ -9813,6 +9876,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentEnemyDetectedSenderRelative_2
 		{
+			text="$STR_A3_SENTENEMYDETECTEDSENDERRELATIVE_2";
 			speech[]=
 			{
 				"ContactE",
@@ -9837,6 +9901,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentEnemyDetectedSenderRelative_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTENEMYDETECTEDSENDERRELATIVE_1";
 			speech[]=
 			{
 				"ContactE",
@@ -9850,6 +9915,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentEnemyDetectedSenderRelative_2
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTENEMYDETECTEDSENDERRELATIVE_2";
 			speech[]=
 			{
 				"ContactE",
@@ -9885,6 +9951,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentEnemyDetectedUnitRelative_1
 		{
+			text="$STR_A3_SENTENEMYDETECTEDUNITRELATIVE_1";
 			speech[]=
 			{
 				"%13",
@@ -9898,6 +9965,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentEnemyDetectedUnitRelative_2
 		{
+			text="$STR_A3_SENTENEMYDETECTEDUNITRELATIVE_2";
 			speech[]=
 			{
 				"%13",
@@ -9911,6 +9979,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentEnemyDetectedUnitRelative_3
 		{
+			text="$STR_A3_SENTENEMYDETECTEDUNITRELATIVE_3";
 			speech[]=
 			{
 				"%13",
@@ -9937,6 +10006,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentEnemyDetectedUnitRelative_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTENEMYDETECTEDUNITRELATIVE_1";
 			speech[]=
 			{
 				"%13",
@@ -9951,6 +10021,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentEnemyDetectedUnitRelative_2
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTENEMYDETECTEDUNITRELATIVE_2";
 			speech[]=
 			{
 				"%13",
@@ -9965,6 +10036,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentEnemyDetectedUnitRelative_3
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTENEMYDETECTEDUNITRELATIVE_3";
 			speech[]=
 			{
 				"%13",
@@ -9996,6 +10068,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentEnemyDetectedLocationRelative_1
 		{
+			text="$STR_A3_SENTENEMYDETECTEDLOCATIONRELATIVE_1";
 			speech[]=
 			{
 				"%4",
@@ -10015,6 +10088,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentEnemyDetectedLocationRelative_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTENEMYDETECTEDLOCATIONRELATIVE_1";
 			speech[]=
 			{
 				"%4",
@@ -10051,6 +10125,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentEnemyDetectedGroupCoreRelative_1
 		{
+			text="$STR_A3_SENTENEMYDETECTEDGROUPCORERELATIVE_1";
 			speech[]=
 			{
 				"%6.3",
@@ -10061,6 +10136,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentEnemyDetectedGroupCoreRelative_2
 		{
+			text="$STR_A3_SENTENEMYDETECTEDGROUPCORERELATIVE_2";
 			speech[]=
 			{
 				"%4",
@@ -10072,6 +10148,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentEnemyDetectedGroupCoreRelative_3
 		{
+			text="$STR_A3_SENTENEMYDETECTEDGROUPCORERELATIVE_3";
 			speech[]=
 			{
 				"%4",
@@ -10083,6 +10160,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentEnemyDetectedGroupCoreRelative_4
 		{
+			text="$STR_A3_SENTENEMYDETECTEDGROUPCORERELATIVE_4";
 			speech[]=
 			{
 				"%4",
@@ -10094,6 +10172,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentEnemyDetectedGroupCoreRelative_5
 		{
+			text="$STR_A3_SENTENEMYDETECTEDGROUPCORERELATIVE_5";
 			speech[]=
 			{
 				"%4",
@@ -10122,6 +10201,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentEnemyDetectedGroupCoreRelative_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTENEMYDETECTEDGROUPCORERELATIVE_1";
 			speech[]=
 			{
 				"%6.3",
@@ -10133,6 +10213,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentEnemyDetectedGroupCoreRelative_2
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTENEMYDETECTEDGROUPCORERELATIVE_2";
 			speech[]=
 			{
 				"%4",
@@ -10145,6 +10226,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentEnemyDetectedGroupCoreRelative_3
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTENEMYDETECTEDGROUPCORERELATIVE_3";
 			speech[]=
 			{
 				"%4",
@@ -10157,6 +10239,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentEnemyDetectedGroupCoreRelative_4
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTENEMYDETECTEDGROUPCORERELATIVE_4";
 			speech[]=
 			{
 				"%4",
@@ -10169,6 +10252,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentEnemyDetectedGroupCoreRelative_5
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTENEMYDETECTEDGROUPCORERELATIVE_5";
 			speech[]=
 			{
 				"%4",
@@ -10181,6 +10265,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 	};
 	class SentEnemyDetectedOnGridReference
 	{
+		text="$STR_A3_Contact____eTARGETS____eGRPDIS_ABS____eGRPDIR_CMPS";
 		sentences[]=
 		{
 			"SentEnemyDetectedOnGridReferenceDefault",
@@ -10198,6 +10283,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentEnemyDetectedOnGridReference_1
 		{
+			text="$STR_A3_Contact____eTARGETS____eGRPDIS_ABS____eGRPDIR_CMPS";
 			speech[]=
 			{
 				"%3",
@@ -10216,6 +10302,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentEnemyDetectedOnGridReference_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_Contact____eTARGETS____eGRPDIS_ABS____eGRPDIR_CMPS";
 			speech[]=
 			{
 				"%3",
@@ -10243,6 +10330,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdMoveGroupRelative_1
 		{
+			text="$STR_A3_SENTCMDMOVEGROUPRELATIVE_1";
 			speech[]=
 			{
 				"%1.1",
@@ -10263,6 +10351,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentCmdMoveGroupRelative_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTCMDMOVEGROUPRELATIVE_1";
 			speech[]=
 			{
 				"%1.1",
@@ -10294,6 +10383,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdMoveToGrid_1
 		{
+			text="$STR_A3_SENTCMDMOVETOGRID_1";
 			speech[]=
 			{
 				"%1.1",
@@ -10303,6 +10393,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdMoveToGrid_2
 		{
+			text="$STR_A3_SENTCMDMOVETOGRID_2";
 			speech[]=
 			{
 				"%1.1",
@@ -10323,6 +10414,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentCmdMoveToGrid_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTCMDMOVETOGRID_1";
 			speech[]=
 			{
 				"%1.1",
@@ -10333,6 +10425,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentCmdMoveToGrid_2
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTCMDMOVETOGRID_2";
 			speech[]=
 			{
 				"%1.1",
@@ -10360,6 +10453,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdMoveRecipientsRelative_1
 		{
+			text="$STR_A3_SENTCMDMOVERECIPIENTSRELATIVE_1";
 			speech[]=
 			{
 				"%1.1",
@@ -10379,6 +10473,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentCmdMoveRecipientsRelative_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTCMDMOVERECIPIENTSRELATIVE_1";
 			speech[]=
 			{
 				"%1.1",
@@ -10409,6 +10504,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdMoveToObject_1
 		{
+			text="$STR_A3_SENTCMDMOVETOOBJECT_1";
 			speech[]=
 			{
 				"%1.1",
@@ -10419,6 +10515,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdMoveToObject_2
 		{
+			text="$STR_A3_SENTCMDMOVETOOBJECT_2";
 			speech[]=
 			{
 				"%1.1",
@@ -10442,6 +10539,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentCmdMoveToObject_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTCMDMOVETOOBJECT_1";
 			speech[]=
 			{
 				"%1.1",
@@ -10453,6 +10551,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentCmdMoveToObject_2
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTCMDMOVETOOBJECT_2";
 			speech[]=
 			{
 				"%1.1",
@@ -10485,6 +10584,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdMoveLocationRelative_1
 		{
+			text="$STR_A3_SENTCMDMOVELOCATIONRELATIVE_1";
 			speech[]=
 			{
 				"%1.1",
@@ -10497,6 +10597,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdMoveLocationRelative_2
 		{
+			text="$STR_A3_SENTCMDMOVELOCATIONRELATIVE_2";
 			speech[]=
 			{
 				"%1.1",
@@ -10517,6 +10618,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentCmdMoveLocationRelative_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTCMDMOVELOCATIONRELATIVE_1";
 			speech[]=
 			{
 				"%1.1",
@@ -10530,6 +10632,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentCmdMoveLocationRelative_2
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTCMDMOVELOCATIONRELATIVE_2";
 			speech[]=
 			{
 				"%1.1",
@@ -10557,6 +10660,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class VehicleMoveGroupRelative_1
 		{
+			text="$STR_A3_VEHICLEMOVEGROUPRELATIVE_1";
 			speech[]=
 			{
 				"XMIT",
@@ -10577,6 +10681,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class VehicleMoveGroupRelative_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_VEHICLEMOVEGROUPRELATIVE_1";
 			speech[]=
 			{
 				"XMIT",
@@ -10608,6 +10713,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class VehicleMoveToGrid_1
 		{
+			text="$STR_A3_VEHICLEMOVETOGRID_1";
 			speech[]=
 			{
 				"XMIT",
@@ -10617,6 +10723,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class VehicleMoveToGrid_2
 		{
+			text="$STR_A3_VEHICLEMOVETOGRID_2";
 			speech[]=
 			{
 				"XMIT",
@@ -10637,6 +10744,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class VehicleMoveToGrid_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_VEHICLEMOVETOGRID_1";
 			speech[]=
 			{
 				"XMIT",
@@ -10647,6 +10755,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class VehicleMoveToGrid_2
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_VEHICLEMOVETOGRID_2";
 			speech[]=
 			{
 				"XMIT",
@@ -10674,6 +10783,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class VehicleMoveRecipientsRelative_1
 		{
+			text="$STR_A3_VEHICLEMOVERECIPIENTSRELATIVE_1";
 			speech[]=
 			{
 				"XMIT",
@@ -10693,6 +10803,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class VehicleMoveRecipientsRelative_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_VEHICLEMOVERECIPIENTSRELATIVE_1";
 			speech[]=
 			{
 				"XMIT",
@@ -10723,6 +10834,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class VehicleMoveToObject_1
 		{
+			text="$STR_A3_VEHICLEMOVETOOBJECT_1";
 			speech[]=
 			{
 				"XMIT",
@@ -10733,6 +10845,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class VehicleMoveToObject_2
 		{
+			text="$STR_A3_VEHICLEMOVETOOBJECT_2";
 			speech[]=
 			{
 				"XMIT",
@@ -10756,6 +10869,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class VehicleMoveToObject_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_VEHICLEMOVETOOBJECT_1";
 			speech[]=
 			{
 				"XMIT",
@@ -10767,6 +10881,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class VehicleMoveToObject_2
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_VEHICLEMOVETOOBJECT_2";
 			speech[]=
 			{
 				"XMIT",
@@ -10799,6 +10914,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class VehicleMoveLocationRelative_1
 		{
+			text="$STR_A3_VEHICLEMOVELOCATIONRELATIVE_1";
 			speech[]=
 			{
 				"XMIT",
@@ -10811,6 +10927,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class VehicleMoveLocationRelative_2
 		{
+			text="$STR_A3_VEHICLEMOVELOCATIONRELATIVE_2";
 			speech[]=
 			{
 				"XMIT",
@@ -10831,6 +10948,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class VehicleMoveLocationRelative_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_VEHICLEMOVELOCATIONRELATIVE_1";
 			speech[]=
 			{
 				"XMIT",
@@ -10844,6 +10962,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class VehicleMoveLocationRelative_2
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_VEHICLEMOVELOCATIONRELATIVE_2";
 			speech[]=
 			{
 				"XMIT",
@@ -10879,6 +10998,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentEnemyToOur_1
 		{
+			text="$STR_A3_SENTENEMYTOOUR_1";
 			speech[]=
 			{
 				"%16.202",
@@ -10889,6 +11009,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentEnemyToOur_2
 		{
+			text="$STR_A3_SENTENEMYTOOUR_2";
 			speech[]=
 			{
 				"%16.202",
@@ -10899,6 +11020,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentEnemyToOur_3
 		{
+			text="$STR_A3_SENTENEMYTOOUR_3";
 			speech[]=
 			{
 				"%16.202",
@@ -10908,6 +11030,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentEnemyToOur_4
 		{
+			text="$STR_A3_SENTENEMYTOOUR_4";
 			speech[]=
 			{
 				"%4",
@@ -10918,6 +11041,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentEnemyToOur_5
 		{
+			text="$STR_A3_SENTENEMYTOOUR_5";
 			speech[]=
 			{
 				"%4",
@@ -10945,6 +11069,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentEnemyToOur_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTENEMYTOOUR_1";
 			speech[]=
 			{
 				"%16.202",
@@ -10956,6 +11081,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentEnemyToOur_2
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTENEMYTOOUR_2";
 			speech[]=
 			{
 				"%16.202",
@@ -10967,6 +11093,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentEnemyToOur_3
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTENEMYTOOUR_3";
 			speech[]=
 			{
 				"%16.202",
@@ -10977,6 +11104,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentEnemyToOur_4
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTENEMYTOOUR_4";
 			speech[]=
 			{
 				"%4",
@@ -10988,6 +11116,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentEnemyToOur_5
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTENEMYTOOUR_5";
 			speech[]=
 			{
 				"%4",
@@ -11020,6 +11149,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentEnemyOnGrid_1
 		{
+			text="$STR_A3_SENTENEMYONGRID_1";
 			speech[]=
 			{
 				"%4",
@@ -11030,6 +11160,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentEnemyOnGrid_2
 		{
+			text="$STR_A3_SENTENEMYONGRID_2";
 			speech[]=
 			{
 				"%4",
@@ -11040,6 +11171,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentEnemyOnGrid_3
 		{
+			text="$STR_A3_SENTENEMYONGRID_3";
 			speech[]=
 			{
 				"%3",
@@ -11062,6 +11194,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentEnemyOnGrid_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTENEMYONGRID_1";
 			speech[]=
 			{
 				"%4",
@@ -11073,6 +11206,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentEnemyOnGrid_2
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTENEMYONGRID_2";
 			speech[]=
 			{
 				"%4",
@@ -11084,6 +11218,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentEnemyOnGrid_3
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTENEMYONGRID_3";
 			speech[]=
 			{
 				"%3",
@@ -11113,6 +11248,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdMoveToOur_1
 		{
+			text="$STR_A3_SENTCMDMOVETOOUR_1";
 			speech[]=
 			{
 				"%1.1",
@@ -11123,6 +11259,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdMoveToOur_2
 		{
+			text="$STR_A3_SENTCMDMOVETOOUR_2";
 			speech[]=
 			{
 				"%1.1",
@@ -11144,6 +11281,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentCmdMoveToOur_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTCMDMOVETOOUR_1";
 			speech[]=
 			{
 				"%1.1",
@@ -11155,6 +11293,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentCmdMoveToOur_2
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTCMDMOVETOOUR_2";
 			speech[]=
 			{
 				"%1.1",
@@ -11185,6 +11324,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdMoveNearObject_1
 		{
+			text="$STR_A3_SENTCMDMOVENEAROBJECT_1";
 			speech[]=
 			{
 				"%1.1",
@@ -11195,6 +11335,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdMoveNearObject_2
 		{
+			text="$STR_A3_SENTCMDMOVENEAROBJECT_2";
 			speech[]=
 			{
 				"%1.1",
@@ -11216,6 +11357,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentCmdMoveNearObject_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTCMDMOVENEAROBJECT_1";
 			speech[]=
 			{
 				"%1.1",
@@ -11227,6 +11369,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentCmdMoveNearObject_2
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTCMDMOVENEAROBJECT_2";
 			speech[]=
 			{
 				"%1.1",
@@ -11255,6 +11398,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdMoveToGridPos_1
 		{
+			text="$STR_A3_SENTCMDMOVETOGRIDPOS_1";
 			speech[]=
 			{
 				"%1.1",
@@ -11273,6 +11417,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentCmdMoveToGridPos_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTCMDMOVETOGRIDPOS_1";
 			speech[]=
 			{
 				"%1.1",
@@ -11304,6 +11449,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentUnitKilled_1
 		{
+			text="$STR_A3_SENTUNITKILLED_1";
 			speech[]=
 			{
 				"%1.1",
@@ -11313,6 +11459,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentUnitKilled_2
 		{
 			gesture="gestureGo";
+			text="$STR_A3_SENTUNITKILLED_2";
 			speech[]=
 			{
 				"WeLost",
@@ -11321,6 +11468,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentUnitKilled_3
 		{
+			text="$STR_A3_SENTUNITKILLED_3";
 			speech[]=
 			{
 				"%1.1",
@@ -11342,6 +11490,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentUnitKilled_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTUNITKILLED_1";
 			speech[]=
 			{
 				"%1.1",
@@ -11352,6 +11501,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		{
 			wordsClass="StealthWords";
 			gesture="gestureGo";
+			text="$STR_A3_SENTUNITKILLED_2";
 			speech[]=
 			{
 				"WeLost",
@@ -11360,6 +11510,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentUnitKilled_3
 		{
+			text="$STR_A3_SENTUNITKILLED_3";
 			speech[]=
 			{
 				"%1.1",
@@ -11386,6 +11537,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentSupportAskHeal_1
 		{
+			text="$STR_A3_SENTSUPPORTASKHEAL_1";
 			speech[]=
 			{
 				"RequestingSupportTo",
@@ -11404,6 +11556,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentSupportAskHeal_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTSUPPORTASKHEAL_1";
 			speech[]=
 			{
 				"RequestingSupportTo",
@@ -11431,6 +11584,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentSupportAskRepair_1
 		{
+			text="$STR_A3_SENTSUPPORTASKREPAIR_1";
 			speech[]=
 			{
 				"RequestingSupportTo",
@@ -11449,6 +11603,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentSupportAskRepair_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTSUPPORTASKREPAIR_1";
 			speech[]=
 			{
 				"RequestingSupportTo",
@@ -11476,6 +11631,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentSupportAskRefuel_1
 		{
+			text="$STR_A3_SENTSUPPORTASKREFUEL_1";
 			speech[]=
 			{
 				"RequestingSupportTo",
@@ -11494,6 +11650,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentSupportAskRefuel_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTSUPPORTASKREFUEL_1";
 			speech[]=
 			{
 				"RequestingSupportTo",
@@ -11521,6 +11678,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentSupportAskRearm_1
 		{
+			text="$STR_A3_SENTSUPPORTASKREARM_1";
 			speech[]=
 			{
 				"RequestingSupportTo",
@@ -11539,6 +11697,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentSupportAskRearm_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTSUPPORTASKREARM_1";
 			speech[]=
 			{
 				"RequestingSupportTo",
@@ -11570,6 +11729,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentSupportConfirm_1
 		{
+			text="$STR_A3_SENTSUPPORTCONFIRM_1";
 			speech[]=
 			{
 				"Roger"
@@ -11577,6 +11737,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentSupportConfirm_2
 		{
+			text="$STR_A3_SENTSUPPORTCONFIRM_2";
 			speech[]=
 			{
 				"Copy"
@@ -11584,6 +11745,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentSupportConfirm_3
 		{
+			text="$STR_A3_SENTSUPPORTCONFIRM_3";
 			speech[]=
 			{
 				"OscarMike"
@@ -11604,6 +11766,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentSupportConfirm_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTSUPPORTCONFIRM_1";
 			speech[]=
 			{
 				"Roger"
@@ -11612,6 +11775,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentSupportConfirm_2
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTSUPPORTCONFIRM_2";
 			speech[]=
 			{
 				"Copy"
@@ -11620,6 +11784,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentSupportConfirm_3
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTSUPPORTCONFIRM_3";
 			speech[]=
 			{
 				"OscarMike"
@@ -11645,6 +11810,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentSupportReady_1
 		{
+			text="$STR_A3_SENTSUPPORTREADY_1";
 			speech[]=
 			{
 				"Ready"
@@ -11661,6 +11827,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentSupportReady_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTSUPPORTREADY_1";
 			speech[]=
 			{
 				"Ready"
@@ -11686,6 +11853,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentSupportDone_1
 		{
+			text="$STR_A3_SENTSUPPORTDONE_1";
 			speech[]=
 			{
 				"Ready"
@@ -11702,6 +11870,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentSupportDone_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTSUPPORTDONE_1";
 			speech[]=
 			{
 				"Ready"
@@ -11727,6 +11896,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentSupportNotAvailable_1
 		{
+			text="$STR_A3_SENTSUPPORTNOTAVAILABLE_1";
 			speech[]=
 			{
 				"Negative"
@@ -11743,6 +11913,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentSupportNotAvailable_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTSUPPORTNOTAVAILABLE_1";
 			speech[]=
 			{
 				"Negative"
@@ -11776,6 +11947,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentHealthCritical_1
 		{
+			text="$STR_A3_SENTHEALTHCRITICAL_1";
 			speech[]=
 			{
 				"Injured"
@@ -11783,6 +11955,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentHealthCritical_2
 		{
+			text="$STR_A3_SENTHEALTHCRITICAL_2";
 			speech[]=
 			{
 				"SomebodyHelpMeE"
@@ -11790,6 +11963,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentHealthCritical_3
 		{
+			text="$STR_A3_SENTHEALTHCRITICAL_3";
 			speech[]=
 			{
 				"NeedHelpE"
@@ -11797,6 +11971,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentHealthCritical_4
 		{
+			text="$STR_A3_SENTHEALTHCRITICAL_4";
 			speech[]=
 			{
 				"WoundedE"
@@ -11804,6 +11979,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentHealthCritical_5
 		{
+			text="$STR_A3_SENTHEALTHCRITICAL_5";
 			speech[]=
 			{
 				"MedicE"
@@ -11828,6 +12004,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentHealthCritical_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTHEALTHCRITICAL_1";
 			speech[]=
 			{
 				"Injured"
@@ -11835,6 +12012,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentHealthCritical_2
 		{
+			text="$STR_A3_SENTHEALTHCRITICAL_2";
 			speech[]=
 			{
 				"SomebodyHelpMeE"
@@ -11843,6 +12021,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentHealthCritical_3
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTHEALTHCRITICAL_3";
 			speech[]=
 			{
 				"NeedHelpE"
@@ -11851,6 +12030,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentHealthCritical_4
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTHEALTHCRITICAL_4";
 			speech[]=
 			{
 				"WoundedE"
@@ -11859,6 +12039,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentHealthCritical_5
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTHEALTHCRITICAL_5";
 			speech[]=
 			{
 				"MedicE"
@@ -11886,6 +12067,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentDammageCritical_1
 		{
+			text="$STR_A3_SENTDAMMAGECRITICAL_1";
 			speech[]=
 			{
 				"StatusRedE"
@@ -11893,6 +12075,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentDammageCritical_2
 		{
+			text="$STR_A3_SENTDAMMAGECRITICAL_2";
 			speech[]=
 			{
 				"CriticalDamageE"
@@ -11911,6 +12094,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentDammageCritical_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTDAMMAGECRITICAL_1";
 			speech[]=
 			{
 				"StatusRedE"
@@ -11918,6 +12102,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentDammageCritical_2
 		{
+			text="$STR_A3_SENTDAMMAGECRITICAL_2";
 			speech[]=
 			{
 				"CriticalDamageE"
@@ -11943,6 +12128,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentFuelCritical_1
 		{
+			text="$STR_A3_SENTFUELCRITICAL_1";
 			speech[]=
 			{
 				"BeAdvised",
@@ -11951,6 +12137,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentFuelCritical_2
 		{
+			text="$STR_A3_SENTFUELCRITICAL_2";
 			speech[]=
 			{
 				"RunningOutOfFuel"
@@ -11976,6 +12163,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentFuelLow_1
 		{
+			text="$STR_A3_SENTFUELLOW_1";
 			speech[]=
 			{
 				"OutOfFuelE"
@@ -11983,6 +12171,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentFuelLow_2
 		{
+			text="$STR_A3_SENTFUELLOW_2";
 			speech[]=
 			{
 				"BingoFuel"
@@ -12012,6 +12201,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentAmmoCritical_1
 		{
+			text="$STR_A3_SENTAMMOCRITICAL_1";
 			speech[]=
 			{
 				"OutOfAmmoE"
@@ -12019,6 +12209,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentAmmoCritical_2
 		{
+			text="$STR_A3_SENTAMMOCRITICAL_2";
 			speech[]=
 			{
 				"NoMoreAmmoE"
@@ -12026,6 +12217,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentAmmoCritical_3
 		{
+			text="$STR_A3_SENTAMMOCRITICAL_3";
 			speech[]=
 			{
 				"CantShoot",
@@ -12047,6 +12239,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentAmmoCritical_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTAMMOCRITICAL_1";
 			speech[]=
 			{
 				"OutOfAmmoE"
@@ -12054,6 +12247,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentAmmoCritical_2
 		{
+			text="$STR_A3_SENTAMMOCRITICAL_2";
 			speech[]=
 			{
 				"NoMoreAmmoE"
@@ -12061,6 +12255,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentAmmoCritical_3
 		{
+			text="$STR_A3_SENTAMMOCRITICAL_3";
 			speech[]=
 			{
 				"CantShoot",
@@ -12087,6 +12282,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentAmmoLow_1
 		{
+			text="$STR_A3_SENTAMMOLOW_1";
 			speech[]=
 			{
 				"RunningOutOfAmmo"
@@ -12103,6 +12299,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentAmmoLow_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTAMMOLOW_1";
 			speech[]=
 			{
 				"RunningOutOfAmmo"
@@ -12128,6 +12325,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentReportPosition_1
 		{
+			text="$STR_A3_SENTREPORTPOSITION_1";
 			speech[]=
 			{
 				"ImAtGrid",
@@ -12145,6 +12343,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentReportPosition_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTREPORTPOSITION_1";
 			speech[]=
 			{
 				"ImAtGrid",
@@ -12173,6 +12372,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentIsLeader_1
 		{
+			text="$STR_A3_SENTISLEADER_1";
 			speech[]=
 			{
 				"%1",
@@ -12181,6 +12381,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentIsLeader_2
 		{
+			text="$STR_A3_SENTISLEADER_2";
 			speech[]=
 			{
 				"%1",
@@ -12199,6 +12400,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentIsLeader_1
 		{
+			text="$STR_A3_SENTISLEADER_1";
 			speech[]=
 			{
 				"%1",
@@ -12208,6 +12410,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentIsLeader_2
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTISLEADER_2";
 			speech[]=
 			{
 				"%1",
@@ -12238,6 +12441,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCommandCompleted_1
 		{
+			text="$STR_A3_SENTCOMMANDCOMPLETED_1";
 			speech[]=
 			{
 				"Ready"
@@ -12245,6 +12449,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCommandCompleted_2
 		{
+			text="$STR_A3_SENTCOMMANDCOMPLETED_2";
 			speech[]=
 			{
 				"Waiting"
@@ -12252,6 +12457,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCommandCompleted_3
 		{
+			text="$STR_A3_SENTCOMMANDCOMPLETED_3";
 			speech[]=
 			{
 				"StandingBy"
@@ -12272,6 +12478,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentCommandCompleted_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTCOMMANDCOMPLETED_1";
 			speech[]=
 			{
 				"Ready"
@@ -12280,6 +12487,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentCommandCompleted_2
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTCOMMANDCOMPLETED_2";
 			speech[]=
 			{
 				"Waiting"
@@ -12288,6 +12496,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentCommandCompleted_3
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTCOMMANDCOMPLETED_3";
 			speech[]=
 			{
 				"StandingBy"
@@ -12313,6 +12522,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentJoinCompleted_1
 		{
+			text="$STR_A3_SENTJOINCOMPLETED_1";
 			speech[]=
 			{
 				"Ready"
@@ -12329,6 +12539,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentJoinCompleted_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTJOINCOMPLETED_1";
 			speech[]=
 			{
 				"Ready"
@@ -12360,6 +12571,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentFireReady_1
 		{
+			text="$STR_A3_SENTFIREREADY_1";
 			speech[]=
 			{
 				"ReadyToFire"
@@ -12367,6 +12579,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentFireReady_2
 		{
+			text="$STR_A3_SENTFIREREADY_2";
 			speech[]=
 			{
 				"TargetInSight"
@@ -12374,6 +12587,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentFireReady_3
 		{
+			text="$STR_A3_SENTFIREREADY_3";
 			speech[]=
 			{
 				"TargetAcquired"
@@ -12381,6 +12595,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentFireReady_4
 		{
+			text="$STR_A3_SENTFIREREADY_4";
 			speech[]=
 			{
 				"EyesOnTarget"
@@ -12403,6 +12618,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentFireReady_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTFIREREADY_1";
 			speech[]=
 			{
 				"ReadyToFire"
@@ -12411,6 +12627,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentFireReady_2
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTFIREREADY_2";
 			speech[]=
 			{
 				"TargetInSight"
@@ -12418,6 +12635,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentFireReady_3
 		{
+			text="$STR_A3_SENTFIREREADY_3";
 			speech[]=
 			{
 				"TargetAcquired"
@@ -12426,6 +12644,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentFireReady_4
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTFIREREADY_4";
 			speech[]=
 			{
 				"EyesOnTarget"
@@ -12451,6 +12670,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentFireNegative_1
 		{
+			text="$STR_A3_SENTFIRENEGATIVE_1";
 			speech[]=
 			{
 				"CannotFire"
@@ -12467,6 +12687,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentFireNegative_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTFIRENEGATIVE_1";
 			speech[]=
 			{
 				"CannotFire"
@@ -12494,6 +12715,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCommandFailed_1
 		{
+			text="$STR_A3_SENTCOMMANDFAILED_1";
 			speech[]=
 			{
 				"Negative"
@@ -12501,6 +12723,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCommandFailed_2
 		{
+			text="$STR_A3_SENTCOMMANDFAILED_2";
 			speech[]=
 			{
 				"NoCanDo"
@@ -12519,6 +12742,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentCommandFailed_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTCOMMANDFAILED_1";
 			speech[]=
 			{
 				"Negative"
@@ -12527,6 +12751,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentCommandFailed_2
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTCOMMANDFAILED_2";
 			speech[]=
 			{
 				"NoCanDo"
@@ -12554,6 +12779,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentDestinationUnreacheable_1
 		{
+			text="$STR_A3_SENTDESTINATIONUNREACHEABLE_1";
 			speech[]=
 			{
 				"CantGetThereE"
@@ -12561,6 +12787,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentDestinationUnreacheable_2
 		{
+			text="$STR_A3_SENTDESTINATIONUNREACHEABLE_2";
 			speech[]=
 			{
 				"Negative",
@@ -12580,6 +12807,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentDestinationUnreacheable_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTDESTINATIONUNREACHEABLE_1";
 			speech[]=
 			{
 				"CantGetThereE"
@@ -12587,6 +12815,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentDestinationUnreacheable_2
 		{
+			text="$STR_A3_SENTDESTINATIONUNREACHEABLE_2";
 			speech[]=
 			{
 				"Negative",
@@ -12623,6 +12852,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentObjectDestroyed_1
 		{
+			text="$STR_A3_SENTOBJECTDESTROYED_1";
 			speech[]=
 			{
 				"ScratchOneE"
@@ -12630,6 +12860,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentObjectDestroyed_2
 		{
+			text="$STR_A3_SENTOBJECTDESTROYED_2";
 			speech[]=
 			{
 				"%2",
@@ -12638,6 +12869,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentObjectDestroyed_3
 		{
+			text="$STR_A3_SENTOBJECTDESTROYED_3";
 			speech[]=
 			{
 				"TargetEliminated"
@@ -12645,6 +12877,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentObjectDestroyed_4
 		{
+			text="$STR_A3_SENTOBJECTDESTROYED_4";
 			speech[]=
 			{
 				"HesDownE"
@@ -12652,6 +12885,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentObjectDestroyed_5
 		{
+			text="$STR_A3_SENTOBJECTDESTROYED_5";
 			speech[]=
 			{
 				"IveGotHimE"
@@ -12659,6 +12893,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentObjectDestroyed_6
 		{
+			text="$STR_A3_SENTOBJECTDESTROYED_6";
 			speech[]=
 			{
 				"HostileDownE"
@@ -12684,6 +12919,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentObjectDestroyed_1
 		{
+			text="$STR_A3_SENTOBJECTDESTROYED_1";
 			speech[]=
 			{
 				"ScratchOneE"
@@ -12691,6 +12927,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentObjectDestroyed_2
 		{
+			text="$STR_A3_SENTOBJECTDESTROYED_2";
 			speech[]=
 			{
 				"%2",
@@ -12700,6 +12937,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentObjectDestroyed_3
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTOBJECTDESTROYED_3";
 			speech[]=
 			{
 				"TargetEliminated"
@@ -12708,6 +12946,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentObjectDestroyed_4
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTOBJECTDESTROYED_4";
 			speech[]=
 			{
 				"HesDownE"
@@ -12716,6 +12955,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentObjectDestroyed_5
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTOBJECTDESTROYED_5";
 			speech[]=
 			{
 				"IveGotHimE"
@@ -12723,6 +12963,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentObjectDestroyed_6
 		{
+			text="$STR_A3_SENTOBJECTDESTROYED_6";
 			speech[]=
 			{
 				"HostileDownE"
@@ -12756,6 +12997,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentObjectDestroyedUnknown_1
 		{
+			text="$STR_A3_Target_neutralized";
 			speech[]=
 			{
 				"ScratchOneE"
@@ -12763,6 +13005,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentObjectDestroyedUnknown_2
 		{
+			text="$STR_A3_Target_neutralized";
 			speech[]=
 			{
 				"TargetEliminated"
@@ -12770,6 +13013,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentObjectDestroyedUnknown_3
 		{
+			text="$STR_A3_Target_neutralized";
 			speech[]=
 			{
 				"HesDownE"
@@ -12777,6 +13021,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentObjectDestroyedUnknown_4
 		{
+			text="$STR_A3_Target_neutralized";
 			speech[]=
 			{
 				"IveGotHimE"
@@ -12784,6 +13029,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentObjectDestroyedUnknown_5
 		{
+			text="$STR_A3_Target_neutralized";
 			speech[]=
 			{
 				"HostileDownE"
@@ -12807,6 +13053,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentObjectDestroyedUnknown_1
 		{
+			text="$STR_A3_Target_neutralized";
 			speech[]=
 			{
 				"ScratchOneE"
@@ -12815,6 +13062,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentObjectDestroyedUnknown_2
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_Target_neutralized";
 			speech[]=
 			{
 				"TargetEliminated"
@@ -12823,6 +13071,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentObjectDestroyedUnknown_3
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_Target_neutralized";
 			speech[]=
 			{
 				"HesDownE"
@@ -12831,6 +13080,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentObjectDestroyedUnknown_4
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_Target_neutralized";
 			speech[]=
 			{
 				"IveGotHimE"
@@ -12838,6 +13088,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentObjectDestroyedUnknown_5
 		{
+			text="$STR_A3_Target_neutralized";
 			speech[]=
 			{
 				"HostileDownE"
@@ -12865,6 +13116,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentContact_1
 		{
+			text="$STR_A3_Contact";
 			speech[]=
 			{
 				"ContactE"
@@ -12872,6 +13124,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentContact_2
 		{
+			text="$STR_A3_Contact";
 			speech[]=
 			{
 				"HostilesE"
@@ -12890,6 +13143,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentContact_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_Contact";
 			speech[]=
 			{
 				"ContactE"
@@ -12898,6 +13152,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentContact_2
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_Contact";
 			speech[]=
 			{
 				"HostilesE"
@@ -12927,6 +13182,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentUnderFire_1
 		{
+			text="";
 			speech[]=
 			{
 				"UnderFireE"
@@ -12934,6 +13190,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentUnderFire_2
 		{
+			text="";
 			speech[]=
 			{
 				"EnemyFireE"
@@ -12941,6 +13198,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentUnderFire_3
 		{
+			text="";
 			speech[]=
 			{
 				"TakingFireE"
@@ -12961,6 +13219,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentUnderFire_1
 		{
 			wordsClass="StealthWords";
+			text="";
 			speech[]=
 			{
 				"UnderFireE"
@@ -12968,6 +13227,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentUnderFire_2
 		{
+			text="";
 			speech[]=
 			{
 				"EnemyFireE"
@@ -12976,6 +13236,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentUnderFire_3
 		{
 			wordsClass="StealthWords";
+			text="";
 			speech[]=
 			{
 				"TakingFireE"
@@ -13003,6 +13264,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentClear_1
 		{
+			text="$STR_A3_Area_clear";
 			speech[]=
 			{
 				"Clear"
@@ -13010,6 +13272,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentClear_2
 		{
+			text="$STR_A3_Area_clear";
 			speech[]=
 			{
 				"AreaClear"
@@ -13028,6 +13291,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentClear_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_Area_clear";
 			speech[]=
 			{
 				"Clear"
@@ -13035,6 +13299,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentClear_2
 		{
+			text="$STR_A3_Area_clear";
 			speech[]=
 			{
 				"AreaClear"
@@ -13062,6 +13327,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentRepeatCommand_1
 		{
+			text="$STR_A3_Repeat_command";
 			speech[]=
 			{
 				"SayAgain",
@@ -13070,6 +13336,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentRepeatCommand_2
 		{
+			text="$STR_A3_Repeat_command";
 			speech[]=
 			{
 				"RepeatLast",
@@ -13089,6 +13356,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentRepeatCommand_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_Repeat_command";
 			speech[]=
 			{
 				"SayAgain",
@@ -13098,6 +13366,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentRepeatCommand_2
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_Repeat_command";
 			speech[]=
 			{
 				"RepeatLast",
@@ -13126,6 +13395,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentWhereAreYou_1
 		{
+			text="$STR_A3_Report_position";
 			speech[]=
 			{
 				"ReportPositionE"
@@ -13133,6 +13403,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentWhereAreYou_2
 		{
+			text="$STR_A3_Report_position";
 			speech[]=
 			{
 				"WhereAreYouQ"
@@ -13150,6 +13421,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentWhereAreYou_1
 		{
+			text="$STR_A3_Report_position";
 			speech[]=
 			{
 				"ReportPositionE"
@@ -13158,6 +13430,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentWhereAreYou_2
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_Report_position";
 			speech[]=
 			{
 				"WhereAreYouQ"
@@ -13189,6 +13462,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentReturnToFormation_1
 		{
+			text="$STR_A3___1___Regroup";
 			speech[]=
 			{
 				"%1",
@@ -13197,6 +13471,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentReturnToFormation_2
 		{
+			text="$STR_A3___1___Regroup";
 			speech[]=
 			{
 				"%1",
@@ -13205,6 +13480,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentReturnToFormation_3
 		{
+			text="$STR_A3___1___Regroup";
 			speech[]=
 			{
 				"%1",
@@ -13213,6 +13489,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentReturnToFormation_4
 		{
+			text="$STR_A3___1___Regroup";
 			speech[]=
 			{
 				"%1",
@@ -13236,6 +13513,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentReturnToFormation_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3___1___Regroup";
 			speech[]=
 			{
 				"%1",
@@ -13244,6 +13522,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentReturnToFormation_2
 		{
+			text="$STR_A3___1___Regroup";
 			speech[]=
 			{
 				"%1",
@@ -13252,6 +13531,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentReturnToFormation_3
 		{
+			text="$STR_A3___1___Regroup";
 			speech[]=
 			{
 				"%1",
@@ -13260,6 +13540,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentReturnToFormation_4
 		{
+			text="$STR_A3___1___Regroup";
 			speech[]=
 			{
 				"%1",
@@ -13288,6 +13569,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentReportStatus_1
 		{
+			text="$STR_A3_Report_position";
 			speech[]=
 			{
 				"%1.1",
@@ -13296,6 +13578,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentReportStatus_2
 		{
+			text="$STR_A3_Report_position";
 			speech[]=
 			{
 				"%1.1",
@@ -13316,6 +13599,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentReportStatus_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_Report_position";
 			speech[]=
 			{
 				"%1.1",
@@ -13324,6 +13608,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentReportStatus_2
 		{
+			text="$STR_A3_Report_position";
 			speech[]=
 			{
 				"%1.1",
@@ -13351,6 +13636,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentFormColumn_1
 		{
+			text="$STR_A3_Formation___Column";
 			speech[]=
 			{
 				"FormColumn"
@@ -13367,6 +13653,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentFormColumn_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_Formation___Column";
 			speech[]=
 			{
 				"FormColumn"
@@ -13392,6 +13679,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentFormStaggeredColumn_1
 		{
+			text="$STR_A3_Formation___Staggered_col_";
 			speech[]=
 			{
 				"FormStaggeredColumn"
@@ -13408,6 +13696,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentFormStaggeredColumn_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_Formation___Staggered_col_";
 			speech[]=
 			{
 				"FormStaggeredColumn"
@@ -13433,6 +13722,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentFormWedge_1
 		{
+			text="$STR_A3_Formation___Wedge";
 			speech[]=
 			{
 				"FormWedge"
@@ -13449,6 +13739,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentFormWedge_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_Formation___Wedge";
 			speech[]=
 			{
 				"FormWedge"
@@ -13474,6 +13765,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentFormEcholonLeft_1
 		{
+			text="$STR_A3_Formation___Echelon_L_";
 			speech[]=
 			{
 				"FormEcholonLeft"
@@ -13490,6 +13782,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentFormEcholonLeft_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_Formation___Echelon_L_";
 			speech[]=
 			{
 				"FormEcholonLeft"
@@ -13515,6 +13808,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentFormEcholonRight_1
 		{
+			text="$STR_A3_Formation___Echelon_R_";
 			speech[]=
 			{
 				"FormEcholonRight"
@@ -13531,6 +13825,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentFormEcholonRight_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_Formation___Echelon_R_";
 			speech[]=
 			{
 				"FormEcholonRight"
@@ -13556,6 +13851,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentFormVee_1
 		{
+			text="$STR_A3_SENTFORMVEE_1";
 			speech[]=
 			{
 				"FormVee"
@@ -13572,6 +13868,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentFormVee_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_Formation___Vee";
 			speech[]=
 			{
 				"FormVee"
@@ -13597,6 +13894,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentFormLine_1
 		{
+			text="$STR_A3_Formation___Line";
 			speech[]=
 			{
 				"FormLine"
@@ -13613,6 +13911,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentFormLine_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_Formation___Line";
 			speech[]=
 			{
 				"FormLine"
@@ -13638,6 +13937,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentFormFile_1
 		{
+			text="$STR_A3_Formation___File";
 			speech[]=
 			{
 				"FormFile"
@@ -13654,6 +13954,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentFormFile_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_Formation___File";
 			speech[]=
 			{
 				"FormFile"
@@ -13679,6 +13980,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentFormDiamond_1
 		{
+			text="$STR_A3_Formation___Diamond";
 			speech[]=
 			{
 				"FormDiamond"
@@ -13695,6 +13997,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentFormDiamond_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_Formation___Diamond";
 			speech[]=
 			{
 				"FormDiamond"
@@ -13720,6 +14023,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentBehaviourSafe_1
 		{
+			text="$STR_A3___1___Relax";
 			speech[]=
 			{
 				"%1",
@@ -13737,6 +14041,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentBehaviourSafe_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTBEHAVIOURSAFE_1";
 			speech[]=
 			{
 				"%1",
@@ -13763,6 +14068,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentBehaviourAware_1
 		{
+			text="$STR_A3___1___Aware";
 			speech[]=
 			{
 				"%1",
@@ -13780,6 +14086,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentBehaviourAware_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3___1___Aware";
 			speech[]=
 			{
 				"%1",
@@ -13806,6 +14113,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentBehaviourCombat_1
 		{
+			text="$STR_A3___1___Combat";
 			speech[]=
 			{
 				"%1",
@@ -13823,6 +14131,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentBehaviourCombat_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3___1___Combat";
 			speech[]=
 			{
 				"%1",
@@ -13849,6 +14158,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentBehaviourStealth_1
 		{
+			text="$STR_A3___1___Stealth";
 			speech[]=
 			{
 				"%1",
@@ -13866,6 +14176,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentBehaviourStealth_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3___1___Stealth";
 			speech[]=
 			{
 				"%1",
@@ -13894,6 +14205,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentOpenFire_1
 		{
+			text="$STR_A3___1_1___Open_fire";
 			speech[]=
 			{
 				"%1.1",
@@ -13902,6 +14214,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentOpenFire_2
 		{
+			text="$STR_A3___1_1___Open_fire";
 			speech[]=
 			{
 				"%1.1",
@@ -13921,6 +14234,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentOpenFire_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3___1_1___Open_fire";
 			speech[]=
 			{
 				"%1.1",
@@ -13930,6 +14244,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentOpenFire_2
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3___1_1___Open_fire";
 			speech[]=
 			{
 				"%1.1",
@@ -13960,6 +14275,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentOpenFireInCombat_1
 		{
+			text="$STR_A3___1_1___Open_fire";
 			speech[]=
 			{
 				"%1.1",
@@ -13968,6 +14284,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentOpenFireInCombat_2
 		{
+			text="$STR_A3___1_1___Open_fire";
 			speech[]=
 			{
 				"%1.1",
@@ -13976,6 +14293,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentOpenFireInCombat_3
 		{
+			text="$STR_A3___1_1___Open_fire";
 			speech[]=
 			{
 				"%1.1",
@@ -13984,6 +14302,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentOpenFireInCombat_4
 		{
+			text="$STR_A3___1_1___Open_fire";
 			speech[]=
 			{
 				"%1.1",
@@ -14010,6 +14329,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentHoldFire_1
 		{
+			text="$STR_A3___1_1___Hold_fire";
 			speech[]=
 			{
 				"%1.1",
@@ -14027,6 +14347,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentHoldFire_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3___1_1___Hold_fire";
 			speech[]=
 			{
 				"%1.1",
@@ -14055,6 +14376,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentHoldFireInCombat_1
 		{
+			text="$STR_A3___1_1___Hold_fire";
 			speech[]=
 			{
 				"%1.1",
@@ -14063,6 +14385,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentHoldFireInCombat_2
 		{
+			text="$STR_A3___1_1___Hold_fire";
 			speech[]=
 			{
 				"%1.1",
@@ -14082,6 +14405,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentHoldFireInCombat_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3___1_1___Hold_fire";
 			speech[]=
 			{
 				"%1.1",
@@ -14090,6 +14414,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentHoldFireInCombat_2
 		{
+			text="$STR_A3___1_1___Hold_fire";
 			speech[]=
 			{
 				"%1.1",
@@ -14116,6 +14441,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCeaseFireInsideGroup_1
 		{
+			text="$STR_A3___2_1___Cease_fire";
 			speech[]=
 			{
 				"%1.1",
@@ -14133,6 +14459,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentCeaseFireInsideGroup_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3___2_1___Cease_fire";
 			speech[]=
 			{
 				"%1.1",
@@ -14163,6 +14490,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCeaseFire_1
 		{
+			text="$STR_A3___2_1___Cease_fire";
 			speech[]=
 			{
 				"%2.1",
@@ -14171,6 +14499,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCeaseFire_2
 		{
+			text="$STR_A3___2_1___Cease_fire";
 			speech[]=
 			{
 				"%2.1",
@@ -14179,6 +14508,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCeaseFire_3
 		{
+			text="$STR_A3___2_1___Cease_fire";
 			speech[]=
 			{
 				"%2.1",
@@ -14200,6 +14530,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentCeaseFire_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3___2_1___Cease_fire";
 			speech[]=
 			{
 				"%2.1",
@@ -14208,6 +14539,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCeaseFire_2
 		{
+			text="$STR_A3___2_1___Cease_fire";
 			speech[]=
 			{
 				"%2.1",
@@ -14216,6 +14548,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCeaseFire_3
 		{
+			text="$STR_A3___2_1___Cease_fire";
 			speech[]=
 			{
 				"%2.1",
@@ -14244,6 +14577,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentLooseFormation_1
 		{
+			text="$STR_A3___1_1___Free_to_engage";
 			speech[]=
 			{
 				"%1.1",
@@ -14252,6 +14586,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentLooseFormation_2
 		{
+			text="$STR_A3___1_1___Free_to_engage";
 			speech[]=
 			{
 				"%1.1",
@@ -14271,6 +14606,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentLooseFormation_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3___1_1___Free_to_engage";
 			speech[]=
 			{
 				"%1.1",
@@ -14279,6 +14615,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentLooseFormation_2
 		{
+			text="$STR_A3___1_1___Free_to_engage";
 			speech[]=
 			{
 				"%1.1",
@@ -14305,6 +14642,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentKeepFormation_1
 		{
+			text="$STR_A3___1_1___Disengage";
 			speech[]=
 			{
 				"%1.1",
@@ -14322,6 +14660,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentKeepFormation_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3___1_1___Disengage";
 			speech[]=
 			{
 				"%1.1",
@@ -14352,6 +14691,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentUnitPosDown_1
 		{
+			text="$STR_A3___1_1___Prone";
 			speech[]=
 			{
 				"%1.1",
@@ -14360,6 +14700,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentUnitPosDown_2
 		{
+			text="$STR_A3___1_1___Prone";
 			speech[]=
 			{
 				"%1.1",
@@ -14368,6 +14709,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentUnitPosDown_3
 		{
+			text="$STR_A3___1_1___Prone";
 			speech[]=
 			{
 				"%1.1",
@@ -14389,6 +14731,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentUnitPosDown_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3___1_1___Prone";
 			speech[]=
 			{
 				"%1.1",
@@ -14398,6 +14741,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentUnitPosDown_2
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3___1_1___Prone";
 			speech[]=
 			{
 				"%1.1",
@@ -14407,6 +14751,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentUnitPosDown_3
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3___1_1___Prone";
 			speech[]=
 			{
 				"%1.1",
@@ -14433,6 +14778,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentUnitPosMiddle_1
 		{
+			text="$STR_A3___1_1___Crouch";
 			speech[]=
 			{
 				"%1.1",
@@ -14450,6 +14796,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentUnitPosMiddle_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3___1_1___Crouch";
 			speech[]=
 			{
 				"%1.1",
@@ -14476,6 +14823,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentUnitPosUp_1
 		{
+			text="$STR_A3___1_1___Stand";
 			speech[]=
 			{
 				"%1.1",
@@ -14493,6 +14841,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentUnitPosUp_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3___1_1___Stand";
 			speech[]=
 			{
 				"%1.1",
@@ -14519,6 +14868,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentUnitPosAuto_1
 		{
+			text="$STR_A3___1_1___Copy_my_stance";
 			speech[]=
 			{
 				"%1.1",
@@ -14536,6 +14886,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentUnitPosAuto_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3___1_1___Copy_my_stance";
 			speech[]=
 			{
 				"%1.1",
@@ -14562,6 +14913,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentFormPosAdvance_1
 		{
+			text="$STR_A3___1_1___Advance";
 			speech[]=
 			{
 				"%1.1",
@@ -14579,6 +14931,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentFormPosAdvance_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3___1_1___Advance";
 			speech[]=
 			{
 				"%1.1",
@@ -14605,6 +14958,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentFormPosStayBack_1
 		{
+			text="$STR_A3___1_1___Stay_back";
 			speech[]=
 			{
 				"%1.1",
@@ -14622,6 +14976,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentFormPosStayBack_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3___1_1___Stay_back";
 			speech[]=
 			{
 				"%1.1",
@@ -14648,6 +15003,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentFormPosFlankLeft_1
 		{
+			text="$STR_A3___1_1___Flank_left";
 			speech[]=
 			{
 				"%1.1",
@@ -14665,6 +15021,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentFormPosFlankLeft_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3___1_1___Flank_left";
 			speech[]=
 			{
 				"%1.1",
@@ -14691,6 +15048,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentFormPosFlankRight_1
 		{
+			text="$STR_A3___1_1___Flank_right";
 			speech[]=
 			{
 				"%1.1",
@@ -14708,6 +15066,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentFormPosFlankRight_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3___1_1___Flank_right";
 			speech[]=
 			{
 				"%1.1",
@@ -14734,6 +15093,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentTeam_1
 		{
+			text="$STR_A3___1_1____2";
 			speech[]=
 			{
 				"%1.1",
@@ -14752,6 +15112,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentTeam_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3___1_1____2";
 			speech[]=
 			{
 				"%1.1",
@@ -14779,6 +15140,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentTeamPlural_1
 		{
+			text="$STR_A3___1_1____2";
 			speech[]=
 			{
 				"%1.1",
@@ -14797,6 +15159,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentTeamPlural_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3___1_1____2";
 			speech[]=
 			{
 				"%1.1",
@@ -14826,6 +15189,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentWatchTgt_1
 		{
+			text="$STR_A3___1_1___Watch____2";
 			speech[]=
 			{
 				"%1.1",
@@ -14835,6 +15199,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentWatchTgt_2
 		{
+			text="$STR_A3_SENTWATCHTGT_2";
 			speech[]=
 			{
 				"%1.1",
@@ -14855,6 +15220,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentWatchTgt_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3___1_1___Watch____2";
 			speech[]=
 			{
 				"%1.1",
@@ -14864,6 +15230,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentWatchTgt_2
 		{
+			text="$STR_A3___1_1___Watch____2";
 			speech[]=
 			{
 				"%1.1",
@@ -14891,6 +15258,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentWatchDir_1
 		{
+			text="$STR_A3___1_1___Watch____2_CMPS";
 			speech[]=
 			{
 				"%1.1",
@@ -14909,6 +15277,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentWatchDir_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3___1_1___Watch____2_CMPS";
 			speech[]=
 			{
 				"%1.1",
@@ -14936,6 +15305,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentWatchPos_1
 		{
+			text="$STR_A3___1_1___Observe_position";
 			speech[]=
 			{
 				"%1.1",
@@ -14953,6 +15323,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentWatchPos_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3___1_1___Observe_position";
 			speech[]=
 			{
 				"%1.1",
@@ -14979,6 +15350,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentWatchAround_1
 		{
+			text="$STR_A3___1_1___Scan_horizon";
 			speech[]=
 			{
 				"%1.1",
@@ -14996,6 +15368,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentWatchAround_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3___1_1___Scan_horizon";
 			speech[]=
 			{
 				"%1.1",
@@ -15024,6 +15397,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentNoTarget_1
 		{
+			text="$STR_A3___1_1___No_target";
 			speech[]=
 			{
 				"%1.1",
@@ -15032,6 +15406,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentNoTarget_2
 		{
+			text="$STR_A3___1_1___No_target";
 			speech[]=
 			{
 				"%1.1",
@@ -15051,6 +15426,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentNoTarget_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3___1_1___No_target";
 			speech[]=
 			{
 				"%1.1",
@@ -15059,6 +15435,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentNoTarget_2
 		{
+			text="$STR_A3___1_1___No_target";
 			speech[]=
 			{
 				"%1.1",
@@ -15085,6 +15462,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentTarget_1
 		{
+			text="$STR_A3___1___Engage_____2____6";
 			speech[]=
 			{
 				"%1",
@@ -15103,6 +15481,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentTarget_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3___1___Engage_____2____6";
 			speech[]=
 			{
 				"%1",
@@ -15130,6 +15509,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentEngage_1
 		{
+			text="$STR_A3___1___Engage_____2____6";
 			speech[]=
 			{
 				"%1",
@@ -15148,6 +15528,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentEngage_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3___1___Engage_____2____6";
 			speech[]=
 			{
 				"%1",
@@ -15175,6 +15556,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentFire_1
 		{
+			text="$STR_A3___1___Engage";
 			speech[]=
 			{
 				"%1",
@@ -15193,6 +15575,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentFire_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3___1___Engage";
 			speech[]=
 			{
 				"%1",
@@ -15220,6 +15603,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentEngageNoTarget_1
 		{
+			text="$STR_A3___1___Engage";
 			speech[]=
 			{
 				"%1",
@@ -15237,6 +15621,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentEngageNoTarget_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3___1___Engage";
 			speech[]=
 			{
 				"%1",
@@ -15263,6 +15648,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentFireNoTarget_1
 		{
+			text="$STR_A3___1___Engage";
 			speech[]=
 			{
 				"%1",
@@ -15280,6 +15666,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentFireNoTarget_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3___1___Engage";
 			speech[]=
 			{
 				"%1",
@@ -15306,6 +15693,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdHealSomeone_1
 		{
+			text="$STR_A3_SENTCMDHEALSOMEONE_1";
 			speech[]=
 			{
 				"%1.1",
@@ -15324,6 +15712,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentCmdHealSomeone_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTCMDHEALSOMEONE_1";
 			speech[]=
 			{
 				"%1.1",
@@ -15351,6 +15740,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdHealSelf_1
 		{
+			text="$STR_A3_SENTCMDHEALSELF_1";
 			speech[]=
 			{
 				"%1.1",
@@ -15368,6 +15758,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentCmdHealSelf_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTCMDHEALSELF_1";
 			speech[]=
 			{
 				"%1.1",
@@ -15394,6 +15785,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdHeal_1
 		{
+			text="$STR_A3_SENTCMDHEAL_1";
 			speech[]=
 			{
 				"%1.1",
@@ -15412,6 +15804,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentCmdHeal_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTCMDHEAL_1";
 			speech[]=
 			{
 				"%1.1",
@@ -15439,6 +15832,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdHealFar_1
 		{
+			text="$STR_A3_SENTCMDHEALFAR_1";
 			speech[]=
 			{
 				"%1.1",
@@ -15457,6 +15851,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentCmdHealFar_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTCMDHEALFAR_1";
 			speech[]=
 			{
 				"%1.1",
@@ -15484,6 +15879,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdHealAt_1
 		{
+			text="$STR_A3_SENTCMDHEALAT_1";
 			speech[]=
 			{
 				"%1.1",
@@ -15502,6 +15898,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentCmdHealAt_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTCMDHEALAT_1";
 			speech[]=
 			{
 				"%1.1",
@@ -15529,6 +15926,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdRepair_1
 		{
+			text="$STR_A3_SENTCMDREPAIR_1";
 			speech[]=
 			{
 				"%1.1",
@@ -15547,6 +15945,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentCmdRepair_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTCMDREPAIR_1";
 			speech[]=
 			{
 				"%1.1",
@@ -15574,6 +15973,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdRepairFar_1
 		{
+			text="$STR_A3_SENTCMDREPAIRFAR_1";
 			speech[]=
 			{
 				"%1.1",
@@ -15592,6 +15992,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentCmdRepairFar_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTCMDREPAIRFAR_1";
 			speech[]=
 			{
 				"%1.1",
@@ -15619,6 +16020,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdRepairAt_1
 		{
+			text="$STR_A3_SENTCMDREPAIRAT_1";
 			speech[]=
 			{
 				"%1.1",
@@ -15637,6 +16039,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentCmdRepairAt_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTCMDREPAIRAT_1";
 			speech[]=
 			{
 				"%1.1",
@@ -15664,6 +16067,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdRefuel_1
 		{
+			text="$STR_A3_SENTCMDREFUEL_1";
 			speech[]=
 			{
 				"%1.1",
@@ -15682,6 +16086,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentCmdRefuel_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTCMDREFUEL_1";
 			speech[]=
 			{
 				"%1.1",
@@ -15709,6 +16114,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdRefuelFar_1
 		{
+			text="$STR_A3_SENTCMDREFUELFAR_1";
 			speech[]=
 			{
 				"%1.1",
@@ -15727,6 +16133,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentCmdRefuelFar_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTCMDREFUELFAR_1";
 			speech[]=
 			{
 				"%1.1",
@@ -15754,6 +16161,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdRefuelAt_1
 		{
+			text="$STR_A3_SENTCMDREFUELAT_1";
 			speech[]=
 			{
 				"%1.1",
@@ -15772,6 +16180,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentCmdRefuelAt_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTCMDREFUELAT_1";
 			speech[]=
 			{
 				"%1.1",
@@ -15799,6 +16208,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdRearm_1
 		{
+			text="$STR_A3_SENTCMDREARM_1";
 			speech[]=
 			{
 				"%1.1",
@@ -15817,6 +16227,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentCmdRearm_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTCMDREARM_1";
 			speech[]=
 			{
 				"%1.1",
@@ -15844,6 +16255,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdRearmFar_1
 		{
+			text="$STR_A3_SENTCMDREARMFAR_1";
 			speech[]=
 			{
 				"%1.1",
@@ -15862,6 +16274,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentCmdRearmFar_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTCMDREARMFAR_1";
 			speech[]=
 			{
 				"%1.1",
@@ -15889,6 +16302,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdRearmAt_1
 		{
+			text="$STR_A3_SENTCMDREARMAT_1";
 			speech[]=
 			{
 				"%1.1",
@@ -15907,6 +16321,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentCmdRearmAt_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTCMDREARMAT_1";
 			speech[]=
 			{
 				"%1.1",
@@ -15934,6 +16349,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdSupport_1
 		{
+			text="$STR_A3_SENTCMDSUPPORT_1";
 			speech[]=
 			{
 				"%1.1",
@@ -15952,6 +16368,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentCmdSupport_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTCMDSUPPORT_1";
 			speech[]=
 			{
 				"%1.1",
@@ -15979,6 +16396,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdSupportFar_1
 		{
+			text="$STR_A3_SENTCMDSUPPORTFAR_1";
 			speech[]=
 			{
 				"%1.1",
@@ -15997,6 +16415,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentCmdSupportFar_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTCMDSUPPORTFAR_1";
 			speech[]=
 			{
 				"%1.1",
@@ -16024,6 +16443,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdSupportAt_1
 		{
+			text="$STR_A3_SENTCMDSUPPORTAT_1";
 			speech[]=
 			{
 				"%1.1",
@@ -16042,6 +16462,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentCmdSupportAt_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTCMDSUPPORTAT_1";
 			speech[]=
 			{
 				"%1.1",
@@ -16069,6 +16490,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdDropWeapon_1
 		{
+			text="$STR_A3_SENTCMDDROPWEAPON_1";
 			speech[]=
 			{
 				"%1.1",
@@ -16087,6 +16509,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentCmdDropWeapon_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTCMDDROPWEAPON_1";
 			speech[]=
 			{
 				"%1.1",
@@ -16114,6 +16537,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdDropMagazine_1
 		{
+			text="$STR_A3_SENTCMDDROPMAGAZINE_1";
 			speech[]=
 			{
 				"%1.1",
@@ -16132,6 +16556,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentCmdDropMagazine_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTCMDDROPMAGAZINE_1";
 			speech[]=
 			{
 				"%1.1",
@@ -16159,6 +16584,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdTakeWeapon_1
 		{
+			text="$STR_A3_SENTCMDTAKEWEAPON_1";
 			speech[]=
 			{
 				"%1.1",
@@ -16177,6 +16603,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentCmdTakeWeapon_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTCMDTAKEWEAPON_1";
 			speech[]=
 			{
 				"%1.1",
@@ -16204,6 +16631,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdTakeWeaponFar_1
 		{
+			text="$STR_A3_SENTCMDTAKEWEAPONFAR_1";
 			speech[]=
 			{
 				"%1.1",
@@ -16222,6 +16650,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentCmdTakeWeaponFar_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTCMDTAKEWEAPONFAR_1";
 			speech[]=
 			{
 				"%1.1",
@@ -16249,6 +16678,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdTakeWeaponAt_1
 		{
+			text="$STR_A3_SENTCMDTAKEWEAPONAT_1";
 			speech[]=
 			{
 				"%1.1",
@@ -16267,6 +16697,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentCmdTakeWeaponAt_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTCMDTAKEWEAPONAT_1";
 			speech[]=
 			{
 				"%1.1",
@@ -16294,6 +16725,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdTakeMagazine_1
 		{
+			text="$STR_A3_SENTCMDTAKEMAGAZINE_1";
 			speech[]=
 			{
 				"%1.1",
@@ -16312,6 +16744,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentCmdTakeMagazine_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTCMDTAKEMAGAZINE_1";
 			speech[]=
 			{
 				"%1.1",
@@ -16339,6 +16772,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdTakeMagazineFar_1
 		{
+			text="$STR_A3_SENTCMDTAKEMAGAZINEFAR_1";
 			speech[]=
 			{
 				"%1.1",
@@ -16357,6 +16791,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentCmdTakeMagazineFar_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTCMDTAKEMAGAZINEFAR_1";
 			speech[]=
 			{
 				"%1.1",
@@ -16384,6 +16819,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdTakeMagazineAt_1
 		{
+			text="$STR_A3_SENTCMDTAKEMAGAZINEAT_1";
 			speech[]=
 			{
 				"%1.1",
@@ -16402,6 +16838,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentCmdTakeMagazineAt_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTCMDTAKEMAGAZINEAT_1";
 			speech[]=
 			{
 				"%1.1",
@@ -16429,6 +16866,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdAction_1
 		{
+			text="";
 			speech[]=
 			{
 				"NO_SPEECH"
@@ -16445,6 +16883,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentCmdAction_1
 		{
 			wordsClass="StealthWords";
+			text="";
 			speech[]=
 			{
 				"NO_SPEECH"
@@ -16470,6 +16909,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdActionNear_1
 		{
+			text="";
 			speech[]=
 			{
 				"NO_SPEECH"
@@ -16486,6 +16926,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentCmdActionNear_1
 		{
 			wordsClass="StealthWords";
+			text="";
 			speech[]=
 			{
 				"NO_SPEECH"
@@ -16511,6 +16952,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdActionFar_1
 		{
+			text="";
 			speech[]=
 			{
 				"NO_SPEECH"
@@ -16527,6 +16969,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentCmdActionFar_1
 		{
 			wordsClass="StealthWords";
+			text="";
 			speech[]=
 			{
 				"NO_SPEECH"
@@ -16552,6 +16995,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdActionAt_1
 		{
+			text="";
 			speech[]=
 			{
 				"NO_SPEECH"
@@ -16568,6 +17012,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentCmdActionAt_1
 		{
 			wordsClass="StealthWords";
+			text="";
 			speech[]=
 			{
 				"NO_SPEECH"
@@ -16593,6 +17038,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdTakeFlag_1
 		{
+			text="$STR_A3_SENTCMDTAKEFLAG_1";
 			speech[]=
 			{
 				"%1.1",
@@ -16610,6 +17056,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentCmdTakeFlag_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTCMDTAKEFLAG_1";
 			speech[]=
 			{
 				"%1.1",
@@ -16636,6 +17083,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdTakeFlagFar_1
 		{
+			text="$STR_A3_SENTCMDTAKEFLAGFAR_1";
 			speech[]=
 			{
 				"%1.1",
@@ -16653,6 +17101,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentCmdTakeFlagFar_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTCMDTAKEFLAGFAR_1";
 			speech[]=
 			{
 				"%1.1",
@@ -16679,6 +17128,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdTakeFlagAt_1
 		{
+			text="$STR_A3_SENTCMDTAKEFLAGAT_1";
 			speech[]=
 			{
 				"%1.1",
@@ -16696,6 +17146,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentCmdTakeFlagAt_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTCMDTAKEFLAGAT_1";
 			speech[]=
 			{
 				"%1.1",
@@ -16720,6 +17171,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdReturnFlag_1
 		{
+			text="$STR_A3_SENTCMDRETURNFLAG_1";
 			speech[]=
 			{
 				"%1.1",
@@ -16744,6 +17196,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdReturnFlagFar_1
 		{
+			text="$STR_A3_SENTCMDRETURNFLAGFAR_1";
 			speech[]=
 			{
 				"%1.1",
@@ -16768,6 +17221,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdReturnFlagAt_1
 		{
+			text="$STR_A3_SENTCMDRETURNFLAGAT_1";
 			speech[]=
 			{
 				"%1.1",
@@ -16796,6 +17250,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdEject_1
 		{
+			text="$STR_A3_SENTCMDEJECT_1";
 			speech[]=
 			{
 				"%1.1",
@@ -16804,6 +17259,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdEject_2
 		{
+			text="$STR_A3_SENTCMDEJECT_2";
 			speech[]=
 			{
 				"%1.1",
@@ -16823,6 +17279,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentCmdEject_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTCMDEJECT_1";
 			speech[]=
 			{
 				"%1.1",
@@ -16831,6 +17288,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdEject_2
 		{
+			text="$STR_A3_SENTCMDEJECT_2";
 			speech[]=
 			{
 				"%1.1",
@@ -16857,6 +17315,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdPlaceCharge_1
 		{
+			text="$STR_A3_SENTCMDPLACECHARGE_1";
 			speech[]=
 			{
 				"%1.1",
@@ -16874,6 +17333,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentCmdPlaceCharge_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTCMDPLACECHARGE_1";
 			speech[]=
 			{
 				"%1.1",
@@ -16898,6 +17358,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdPlaceMine_1
 		{
+			text="$STR_A3_SENTCMDPLACEMINE_1";
 			speech[]=
 			{
 				"%1.1",
@@ -16924,6 +17385,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdDetonate_1
 		{
+			text="$STR_A3_SENTCMDDETONATE_1";
 			speech[]=
 			{
 				"%1.1",
@@ -16941,6 +17403,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentCmdDetonate_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTCMDDETONATE_1";
 			speech[]=
 			{
 				"%1.1",
@@ -16967,6 +17430,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdActivateTimer_1
 		{
+			text="$STR_A3_SENTCMDACTIVATETIMER_1";
 			speech[]=
 			{
 				"%1.1",
@@ -16984,6 +17448,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentCmdActivateTimer_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTCMDACTIVATETIMER_1";
 			speech[]=
 			{
 				"%1.1",
@@ -17010,6 +17475,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdDeactivateBomb_1
 		{
+			text="$STR_A3_SENTCMDDEACTIVATEBOMB_1";
 			speech[]=
 			{
 				"%1.1",
@@ -17027,6 +17493,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentCmdDeactivateBomb_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTCMDDEACTIVATEBOMB_1";
 			speech[]=
 			{
 				"%1.1",
@@ -17053,6 +17520,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdDeactivateMine_1
 		{
+			text="$STR_A3_SENTCMDDEACTIVATEMINE_1";
 			speech[]=
 			{
 				"%1.1",
@@ -17070,6 +17538,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentCmdDeactivateMine_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTCMDDEACTIVATEMINE_1";
 			speech[]=
 			{
 				"%1.1",
@@ -17096,6 +17565,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdTakeMine_1
 		{
+			text="$STR_A3_SENTCMDTAKEMINE_1";
 			speech[]=
 			{
 				"%1.1",
@@ -17113,6 +17583,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentCmdTakeMine_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTCMDTAKEMINE_1";
 			speech[]=
 			{
 				"%1.1",
@@ -17139,6 +17610,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdLightFire_1
 		{
+			text="$STR_A3_SENTCMDLIGHTFIRE_1";
 			speech[]=
 			{
 				"LightThatFire"
@@ -17155,6 +17627,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentCmdLightFire_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTCMDLIGHTFIRE_1";
 			speech[]=
 			{
 				"LightThatFire"
@@ -17180,6 +17653,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdLightFireFar_1
 		{
+			text="$STR_A3_SENTCMDLIGHTFIREFAR_1";
 			speech[]=
 			{
 				"%1.1",
@@ -17197,6 +17671,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentCmdLightFireFar_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTCMDLIGHTFIREFAR_1";
 			speech[]=
 			{
 				"%1.1",
@@ -17223,6 +17698,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdLightFireAt_1
 		{
+			text="$STR_A3_SENTCMDLIGHTFIREAT_1";
 			speech[]=
 			{
 				"%1.1",
@@ -17240,6 +17716,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentCmdLightFireAt_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTCMDLIGHTFIREAT_1";
 			speech[]=
 			{
 				"%1.1",
@@ -17266,6 +17743,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdPutOutFire_1
 		{
+			text="$STR_A3_SENTCMDPUTOUTFIRE_1";
 			speech[]=
 			{
 				"PutOutThatFire"
@@ -17282,6 +17760,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentCmdPutOutFire_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTCMDPUTOUTFIRE_1";
 			speech[]=
 			{
 				"PutOutThatFire"
@@ -17307,6 +17786,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdPutOutFireFar_1
 		{
+			text="$STR_A3_SENTCMDPUTOUTFIREFAR_1";
 			speech[]=
 			{
 				"%1.1",
@@ -17324,6 +17804,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentCmdPutOutFireFar_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTCMDPUTOUTFIREFAR_1";
 			speech[]=
 			{
 				"%1.1",
@@ -17350,6 +17831,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdPutOutFireAt_1
 		{
+			text="$STR_A3_SENTCMDPUTOUTFIREAT_1";
 			speech[]=
 			{
 				"%1.1",
@@ -17367,6 +17849,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentCmdPutOutFireAt_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTCMDPUTOUTFIREAT_1";
 			speech[]=
 			{
 				"%1.1",
@@ -17393,6 +17876,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdOpenDoor_1
 		{
+			text="$STR_A3_SENTCMDOPENDOOR_1";
 			speech[]=
 			{
 				"%1.1",
@@ -17410,6 +17894,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentCmdOpenDoor_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTCMDOPENDOOR_1";
 			speech[]=
 			{
 				"%1.1",
@@ -17436,6 +17921,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdOpenDoorFar_1
 		{
+			text="$STR_A3_SENTCMDOPENDOORFAR_1";
 			speech[]=
 			{
 				"%1.1",
@@ -17453,6 +17939,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentCmdOpenDoorFar_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTCMDOPENDOORFAR_1";
 			speech[]=
 			{
 				"%1.1",
@@ -17479,6 +17966,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdOpenDoorAt_1
 		{
+			text="$STR_A3_SENTCMDOPENDOORAT_1";
 			speech[]=
 			{
 				"%1.1",
@@ -17496,6 +17984,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentCmdOpenDoorAt_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTCMDOPENDOORAT_1";
 			speech[]=
 			{
 				"%1.1",
@@ -17522,6 +18011,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdCloseDoor_1
 		{
+			text="$STR_A3_SENTCMDCLOSEDOOR_1";
 			speech[]=
 			{
 				"%1.1",
@@ -17539,6 +18029,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentCmdCloseDoor_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTCMDCLOSEDOOR_1";
 			speech[]=
 			{
 				"%1.1",
@@ -17565,6 +18056,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdCloseDoorFar_1
 		{
+			text="$STR_A3_SENTCMDCLOSEDOORFAR_1";
 			speech[]=
 			{
 				"%1.1",
@@ -17582,6 +18074,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentCmdCloseDoorFar_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTCMDCLOSEDOORFAR_1";
 			speech[]=
 			{
 				"%1.1",
@@ -17608,6 +18101,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdCloseDoorAt_1
 		{
+			text="$STR_A3_SENTCMDCLOSEDOORAT_1";
 			speech[]=
 			{
 				"%1.1",
@@ -17625,6 +18119,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentCmdCloseDoorAt_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTCMDCLOSEDOORAT_1";
 			speech[]=
 			{
 				"%1.1",
@@ -17655,6 +18150,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdFollowMe_1
 		{
+			text="$STR_A3_SENTCMDFOLLOWME_1";
 			speech[]=
 			{
 				"%1",
@@ -17663,6 +18159,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdFollowMe_2
 		{
+			text="$STR_A3_SENTCMDFOLLOWME_2";
 			speech[]=
 			{
 				"%1",
@@ -17671,6 +18168,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdFollowMe_3
 		{
+			text="$STR_A3_SENTCMDFOLLOWME_3";
 			speech[]=
 			{
 				"%1",
@@ -17692,6 +18190,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentCmdFollowMe_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTCMDFOLLOWME_1";
 			speech[]=
 			{
 				"%1",
@@ -17700,6 +18199,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdFollowMe_2
 		{
+			text="$STR_A3_SENTCMDFOLLOWME_2";
 			speech[]=
 			{
 				"%1",
@@ -17709,6 +18209,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentCmdFollowMe_3
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTCMDFOLLOWME_3";
 			speech[]=
 			{
 				"%1",
@@ -17735,6 +18236,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdFollow_1
 		{
+			text="$STR_A3_SENTCMDFOLLOW_1";
 			speech[]=
 			{
 				"%1.1",
@@ -17753,6 +18255,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentCmdFollow_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTCMDFOLLOW_1";
 			speech[]=
 			{
 				"%1.1",
@@ -17780,6 +18283,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdAttack_1
 		{
+			text="$STR_A3_SENTCMDATTACK_1";
 			speech[]=
 			{
 				"%1.1",
@@ -17798,6 +18302,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentCmdAttack_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTCMDATTACK_1";
 			speech[]=
 			{
 				"%1.1",
@@ -17825,6 +18330,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentAttackNoTarget_1
 		{
+			text="$STR_A3_SENTATTACKNOTARGET_1";
 			speech[]=
 			{
 				"%1.1",
@@ -17842,6 +18348,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentAttackNoTarget_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTATTACKNOTARGET_1";
 			speech[]=
 			{
 				"%1.1",
@@ -17868,6 +18375,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdFire_1
 		{
+			text="$STR_A3_SENTCMDFIRE_1";
 			speech[]=
 			{
 				"%1.1",
@@ -17886,6 +18394,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentCmdFire_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTCMDFIRE_1";
 			speech[]=
 			{
 				"%1.1",
@@ -17913,6 +18422,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdGetIn_1
 		{
+			text="$STR_A3_SENTCMDGETIN_1";
 			speech[]=
 			{
 				"%1.1",
@@ -17931,6 +18441,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentCmdGetIn_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTCMDGETIN_1";
 			speech[]=
 			{
 				"%1.1",
@@ -17958,6 +18469,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdGetInCommander_1
 		{
+			text="$STR_A3_SENTCMDGETINCOMMANDER_1";
 			speech[]=
 			{
 				"%1.1",
@@ -17977,6 +18489,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentCmdGetInCommander_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTCMDGETINCOMMANDER_1";
 			speech[]=
 			{
 				"%1.1",
@@ -18005,6 +18518,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdGetInDriver_1
 		{
+			text="$STR_A3_SENTCMDGETINDRIVER_1";
 			speech[]=
 			{
 				"%1.1",
@@ -18024,6 +18538,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentCmdGetInDriver_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTCMDGETINDRIVER_1";
 			speech[]=
 			{
 				"%1.1",
@@ -18052,6 +18567,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdGetInPilot_1
 		{
+			text="$STR_A3_SENTCMDGETINPILOT_1";
 			speech[]=
 			{
 				"%1.1",
@@ -18071,6 +18587,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentCmdGetInPilot_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTCMDGETINPILOT_1";
 			speech[]=
 			{
 				"%1.1",
@@ -18099,6 +18616,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdGetInGunner_1
 		{
+			text="$STR_A3_SENTCMDGETINGUNNER_1";
 			speech[]=
 			{
 				"%1.1",
@@ -18118,6 +18636,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentCmdGetInGunner_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTCMDGETINGUNNER_1";
 			speech[]=
 			{
 				"%1.1",
@@ -18146,6 +18665,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdGetInCargo_1
 		{
+			text="$STR_A3_SENTCMDGETINCARGO_1";
 			speech[]=
 			{
 				"%1.1",
@@ -18164,6 +18684,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentCmdGetInCargo_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTCMDGETINCARGO_1";
 			speech[]=
 			{
 				"%1.1",
@@ -18191,6 +18712,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdSwitchToDriver_1
 		{
+			text="";
 			speech[]=
 			{
 				"empty"
@@ -18207,6 +18729,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentCmdSwitchToDriver_1
 		{
 			wordsClass="StealthWords";
+			text="";
 			speech[]=
 			{
 				"empty"
@@ -18232,6 +18755,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdSwitchToGunner_1
 		{
+			text="";
 			speech[]=
 			{
 				"empty"
@@ -18248,6 +18772,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentCmdSwitchToGunner_1
 		{
 			wordsClass="StealthWords";
+			text="";
 			speech[]=
 			{
 				"empty"
@@ -18273,6 +18798,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdSwitchToCommander_1
 		{
+			text="";
 			speech[]=
 			{
 				"empty"
@@ -18289,6 +18815,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentCmdSwitchToCommander_1
 		{
 			wordsClass="StealthWords";
+			text="";
 			speech[]=
 			{
 				"empty"
@@ -18314,6 +18841,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdSwitchToCargo_1
 		{
+			text="";
 			speech[]=
 			{
 				"empty"
@@ -18330,6 +18858,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentCmdSwitchToCargo_1
 		{
 			wordsClass="StealthWords";
+			text="";
 			speech[]=
 			{
 				"empty"
@@ -18357,6 +18886,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdGetOut_1
 		{
+			text="$STR_A3_SENTCMDGETOUT_1";
 			speech[]=
 			{
 				"%1.1",
@@ -18365,6 +18895,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdGetOut_2
 		{
+			text="$STR_A3_SENTCMDGETOUT_2";
 			speech[]=
 			{
 				"%1.1",
@@ -18384,6 +18915,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentCmdGetOut_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTCMDGETOUT_1";
 			speech[]=
 			{
 				"%1.1",
@@ -18392,6 +18924,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdGetOut_2
 		{
+			text="$STR_A3_SENTCMDGETOUT_2";
 			speech[]=
 			{
 				"%1.1",
@@ -18420,6 +18953,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdStop_1
 		{
+			text="$STR_A3_SENTCMDSTOP_1";
 			speech[]=
 			{
 				"%1.1",
@@ -18428,6 +18962,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdStop_2
 		{
+			text="$STR_A3_SENTCMDSTOP_2";
 			speech[]=
 			{
 				"%1.1",
@@ -18447,6 +18982,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentCmdStop_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTCMDSTOP_1";
 			speech[]=
 			{
 				"%1.1",
@@ -18456,6 +18992,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentCmdStop_2
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTCMDSTOP_2";
 			speech[]=
 			{
 				"%1.1",
@@ -18486,6 +19023,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdExpect_1
 		{
+			text="$STR_A3_SENTCMDEXPECT_1";
 			speech[]=
 			{
 				"%1.1",
@@ -18494,6 +19032,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdExpect_2
 		{
+			text="$STR_A3_SENTCMDEXPECT_2";
 			speech[]=
 			{
 				"%1.1",
@@ -18502,6 +19041,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdExpect_3
 		{
+			text="$STR_SENT_CMD_EXPECT_2";
 			speech[]=
 			{
 				"%1.1",
@@ -18521,6 +19061,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentCmdExpect_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTCMDEXPECT_1";
 			speech[]=
 			{
 				"%1.1",
@@ -18530,6 +19071,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentCmdExpect_2
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTCMDEXPECT_2";
 			speech[]=
 			{
 				"%1.1",
@@ -18556,6 +19098,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdHide_1
 		{
+			text="$STR_A3_SENTCMDHIDE_1";
 			speech[]=
 			{
 				"%1.1",
@@ -18573,6 +19116,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentCmdHide_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTCMDHIDE_1";
 			speech[]=
 			{
 				"%1.1",
@@ -18599,6 +19143,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdDismiss_1
 		{
+			text="";
 			speech[]={};
 		};
 	};
@@ -18612,6 +19157,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentCmdDismiss_1
 		{
 			wordsClass="StealthWords";
+			text="";
 			speech[]={};
 		};
 	};
@@ -18640,6 +19186,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentNotifyAttack_1
 		{
+			text="$STR_A3_SENTNOTIFYATTACK_1";
 			speech[]=
 			{
 				"Copy",
@@ -18648,6 +19195,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentNotifyAttack_2
 		{
+			text="$STR_A3_SENTNOTIFYATTACK_2";
 			speech[]=
 			{
 				"EngagingE"
@@ -18655,6 +19203,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentNotifyAttack_3
 		{
+			text="$STR_A3_SENTNOTIFYATTACK_3";
 			speech[]=
 			{
 				"EngagingTargetE"
@@ -18662,6 +19211,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentNotifyAttack_4
 		{
+			text="$STR_A3_SENTNOTIFYATTACK_4";
 			speech[]=
 			{
 				"AttackingE"
@@ -18683,6 +19233,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentNotifyAttack_1
 		{
+			text="$STR_A3_SENTNOTIFYATTACK_1";
 			speech[]=
 			{
 				"Copy",
@@ -18692,6 +19243,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentNotifyAttack_2
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTNOTIFYATTACK_2";
 			speech[]=
 			{
 				"EngagingE"
@@ -18699,6 +19251,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentNotifyAttack_3
 		{
+			text="$STR_A3_SENTNOTIFYATTACK_3";
 			speech[]=
 			{
 				"EngagingTargetE"
@@ -18706,6 +19259,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentNotifyAttack_4
 		{
+			text="$STR_A3_SENTNOTIFYATTACK_4";
 			speech[]=
 			{
 				"AttackingE"
@@ -18733,6 +19287,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentNotifyAttackSubgroup_1
 		{
+			text="$STR_A3_SENTNOTIFYATTACKSUBGROUP_1";
 			speech[]=
 			{
 				"%3.1",
@@ -18741,6 +19296,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentNotifyAttackSubgroup_2
 		{
+			text="$STR_A3_SENTNOTIFYATTACKSUBGROUP_2";
 			speech[]=
 			{
 				"%3.1",
@@ -18760,6 +19316,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentNotifyAttackSubgroup_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTNOTIFYATTACKSUBGROUP_1";
 			speech[]=
 			{
 				"%3.1",
@@ -18768,6 +19325,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentNotifyAttackSubgroup_2
 		{
+			text="$STR_A3_SENTNOTIFYATTACKSUBGROUP_2";
 			speech[]=
 			{
 				"%3.1",
@@ -18794,6 +19352,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentNotifySupport_1
 		{
+			text="$STR_A3_SENTNOTIFYSUPPORT_1";
 			speech[]=
 			{
 				"%1.1",
@@ -18811,6 +19370,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentNotifySupport_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTNOTIFYSUPPORT_1";
 			speech[]=
 			{
 				"%1.1",
@@ -18847,6 +19407,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentConfirmMove_1
 		{
+			text="$STR_A3_SENTCONFIRMMOVE_1";
 			speech[]=
 			{
 				"Roger"
@@ -18854,6 +19415,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentConfirmMove_2
 		{
+			text="$STR_A3_SENTCONFIRMMOVE_2";
 			speech[]=
 			{
 				"Copy"
@@ -18861,6 +19423,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentConfirmMove_3
 		{
+			text="$STR_A3_SENTCONFIRMMOVE_3";
 			speech[]=
 			{
 				"OscarMike"
@@ -18868,6 +19431,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentConfirmMove_4
 		{
+			text="$STR_A3_SENTCONFIRMMOVE_4";
 			speech[]=
 			{
 				"Understood"
@@ -18875,6 +19439,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentConfirmMove_5
 		{
+			text="$STR_A3_SENTCONFIRMMOVE_5";
 			speech[]=
 			{
 				"SolidCopy"
@@ -18882,6 +19447,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentConfirmMove_6
 		{
+			text="$STR_A3_SENTCONFIRMMOVE_6";
 			speech[]=
 			{
 				"OnTheWay"
@@ -18908,6 +19474,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentConfirmMove_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTCONFIRMMOVE_1";
 			speech[]=
 			{
 				"Roger"
@@ -18916,6 +19483,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentConfirmMove_2
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTCONFIRMMOVE_2";
 			speech[]=
 			{
 				"Copy"
@@ -18924,6 +19492,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentConfirmMove_3
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTCONFIRMMOVE_3";
 			speech[]=
 			{
 				"OscarMike"
@@ -18932,6 +19501,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentConfirmMove_4
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTCONFIRMMOVE_4";
 			speech[]=
 			{
 				"Understood"
@@ -18940,6 +19510,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentConfirmMove_5
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTCONFIRMMOVE_5";
 			speech[]=
 			{
 				"SolidCopy"
@@ -18948,6 +19519,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentConfirmMove_6
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTCONFIRMMOVE_6";
 			speech[]=
 			{
 				"OnTheWay"
@@ -18975,6 +19547,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentConfirmAttack_1
 		{
+			text="$STR_A3_SENTCONFIRMATTACK_1";
 			speech[]=
 			{
 				"Roger"
@@ -18982,6 +19555,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentConfirmAttack_2
 		{
+			text="$STR_A3_SENTCONFIRMATTACK_2";
 			speech[]=
 			{
 				"Copy"
@@ -19000,6 +19574,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentConfirmAttack_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTCONFIRMATTACK_1";
 			speech[]=
 			{
 				"Roger"
@@ -19008,6 +19583,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentConfirmAttack_2
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTCONFIRMATTACK_2";
 			speech[]=
 			{
 				"Copy"
@@ -19033,6 +19609,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentConfirmOther_1
 		{
+			text="$STR_A3_SENTCONFIRMOTHER_1";
 			speech[]=
 			{
 				"Roger"
@@ -19049,6 +19626,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentConfirmOther_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTCONFIRMOTHER_1";
 			speech[]=
 			{
 				"Roger"
@@ -19072,6 +19650,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class VehicleWatchTgt_1
 		{
+			text="$STR_A3_VEHICLEWATCHTGT_1";
 			speech[]=
 			{
 				"XMIT",
@@ -19101,6 +19680,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class VehicleWatchPos_1
 		{
+			text="$STR_A3_VEHICLEWATCHPOS_1";
 			speech[]=
 			{
 				"XMIT",
@@ -19120,6 +19700,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class VehicleWatchPos_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_VEHICLEWATCHPOS_1";
 			speech[]=
 			{
 				"XMIT",
@@ -19148,6 +19729,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class VehicleJoin_1
 		{
+			text="$STR_A3_VEHICLEJOIN_1";
 			speech[]=
 			{
 				"XMIT",
@@ -19156,6 +19738,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class VehicleJoin_2
 		{
+			text="$STR_A3_VEHICLEJOIN_2";
 			speech[]=
 			{
 				"XMIT",
@@ -19182,6 +19765,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class VehicleFire_1
 		{
+			text="$STR_A3_VEHICLEFIRE_1";
 			speech[]=
 			{
 				"XMIT",
@@ -19200,6 +19784,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class VehicleFire_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_VEHICLEFIRE_1";
 			speech[]=
 			{
 				"XMIT",
@@ -19225,6 +19810,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class VehicleTarget_1
 		{
+			text="$STR_A3_VEHICLETARGET_1";
 			speech[]=
 			{
 				"XMIT",
@@ -19254,6 +19840,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class VehicleNoTarget_1
 		{
+			text="$STR_A3_VEHICLENOTARGET_1";
 			speech[]=
 			{
 				"XMIT",
@@ -19271,6 +19858,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class VehicleNoTarget_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_VEHICLENOTARGET_1";
 			speech[]=
 			{
 				"XMIT",
@@ -19295,6 +19883,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class VehicleCeaseFire_1
 		{
+			text="$STR_A3_Cease_fire";
 			speech[]=
 			{
 				"XMIT",
@@ -19319,6 +19908,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class VehicleForward_1
 		{
+			text="$STR_A3_Forward";
 			speech[]=
 			{
 				"XMIT",
@@ -19345,6 +19935,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class VehicleStop_1
 		{
+			text="$STR_A3_Stop";
 			speech[]=
 			{
 				"XMIT",
@@ -19362,6 +19953,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class VehicleStop_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_Stop";
 			speech[]=
 			{
 				"XMIT",
@@ -19386,6 +19978,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class VehicleBackward_1
 		{
+			text="$STR_A3_Backward";
 			speech[]=
 			{
 				"XMIT",
@@ -19410,6 +20003,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class VehicleFaster_1
 		{
+			text="$STR_A3_Fast";
 			speech[]=
 			{
 				"XMIT",
@@ -19434,6 +20028,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class VehicleSlower_1
 		{
+			text="$STR_A3_Slow";
 			speech[]=
 			{
 				"XMIT",
@@ -19460,6 +20055,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class VehicleLeft_1
 		{
+			text="$STR_A3_Left";
 			speech[]=
 			{
 				"XMIT",
@@ -19477,6 +20073,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class VehicleLeft_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_Left";
 			speech[]=
 			{
 				"XMIT",
@@ -19501,6 +20098,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class VehicleRight_1
 		{
+			text="$STR_A3_Right";
 			speech[]=
 			{
 				"XMIT",
@@ -19525,6 +20123,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class VehicleManualFire_1
 		{
+			text="$STR_A3_Manual_fire";
 			speech[]=
 			{
 				"XMIT",
@@ -19549,6 +20148,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class VehicleCancelManualFire_1
 		{
+			text="$STR_A3_Cancel_manual_fire";
 			speech[]=
 			{
 				"XMIT",
@@ -19575,6 +20175,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class VehicleDirectFire_1
 		{
+			text="$STR_A3_Fire";
 			speech[]=
 			{
 				"XMIT",
@@ -19592,6 +20193,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class VehicleDirectFire_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_Fire";
 			speech[]=
 			{
 				"XMIT",
@@ -19618,6 +20220,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class VehicleLoad_1
 		{
+			text="$STR_A3_Load____1";
 			speech[]=
 			{
 				"%1"
@@ -19634,6 +20237,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class VehicleLoad_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_Load____1";
 			speech[]=
 			{
 				"%1"
@@ -19659,6 +20263,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class VehicleLoadMagazine_1
 		{
+			text="$STR_A3_Load____1";
 			speech[]=
 			{
 				"%1"
@@ -19675,6 +20280,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class VehicleLoadMagazine_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_Load____1";
 			speech[]=
 			{
 				"%1"
@@ -19700,6 +20306,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class VehicleAzimut_1
 		{
+			text="$STR_A3_Watch____1";
 			speech[]=
 			{
 				"%1"
@@ -19716,6 +20323,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class VehicleAzimut_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_Watch____1";
 			speech[]=
 			{
 				"%1"
@@ -19743,6 +20351,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class VehicleFireFailed_1
 		{
+			text="$STR_A3_Cannot_fire";
 			speech[]=
 			{
 				"Negative"
@@ -19750,6 +20359,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class VehicleFireFailed_2
 		{
+			text="$STR_A3_Cannot_fire";
 			speech[]=
 			{
 				"CannotFire"
@@ -19768,6 +20378,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class VehicleFireFailed_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_Cannot_fire";
 			speech[]=
 			{
 				"Negative"
@@ -19776,6 +20387,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class VehicleFireFailed_2
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_Cannot_fire";
 			speech[]=
 			{
 				"CannotFire"
@@ -19801,6 +20413,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentSuppress_1
 		{
+			text="$STR_A3_SENTSUPPRESS_1";
 			speech[]=
 			{
 				"%1",
@@ -19809,6 +20422,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentSuppress_2
 		{
+			text="$STR_A3_SENTSUPPRESS_2";
 			speech[]=
 			{
 				"%1",
@@ -19835,6 +20449,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class ClausePosition_1
 		{
+			text="$STR_A3_CLAUSEPOSITION_1";
 			speech[]=
 			{
 				"%1",
@@ -19852,6 +20467,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class ClausePosition_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_CLAUSEPOSITION_1";
 			speech[]=
 			{
 				"%1",
@@ -19876,6 +20492,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class ClausePositionNear_1
 		{
+			text="$STR_A3_CLAUSEPOSITIONNEAR_1";
 			speech[]=
 			{
 				"That",
@@ -19904,6 +20521,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentAssemble_1
 		{
+			text="$STR_A3_SENTASSEMBLE_1";
 			speech[]=
 			{
 				"%1",
@@ -19922,6 +20540,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentAssemble_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTASSEMBLE_1";
 			speech[]=
 			{
 				"%1",
@@ -19949,6 +20568,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentDisassemble_1
 		{
+			text="$STR_A3_SENTDISASSEMBLE_1";
 			speech[]=
 			{
 				"%1",
@@ -19967,6 +20587,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentDisassemble_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTDISASSEMBLE_1";
 			speech[]=
 			{
 				"%1",
@@ -19994,6 +20615,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdActionOpenBag_1
 		{
+			text="$STR_A3_SENTCMDACTIONOPENBAG_1";
 			speech[]=
 			{
 				"NO_SPEECH"
@@ -20010,6 +20632,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentCmdActionOpenBag_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTCMDACTIONOPENBAG_1";
 			speech[]=
 			{
 				"NO_SPEECH"
@@ -20035,6 +20658,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdActionDropBag_1
 		{
+			text="$STR_A3_SENTCMDACTIONDROPBAG_1";
 			speech[]=
 			{
 				"NO_SPEECH"
@@ -20051,6 +20675,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentCmdActionDropBag_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTCMDACTIONDROPBAG_1";
 			speech[]=
 			{
 				"NO_SPEECH"
@@ -20076,6 +20701,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCmdActionTakeBag_1
 		{
+			text="$STR_A3_SENTCMDACTIONTAKEBAG_1";
 			speech[]=
 			{
 				"NO_SPEECH"
@@ -20092,6 +20718,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentCmdActionTakeBag_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTCMDACTIONTAKEBAG_1";
 			speech[]=
 			{
 				"NO_SPEECH"
@@ -20117,6 +20744,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentLightsOn_1
 		{
+			text="$STR_A3_SENTLIGHTSON_1";
 			speech[]=
 			{
 				"%1",
@@ -20134,6 +20762,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentLightsOn_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTLIGHTSON_1";
 			speech[]=
 			{
 				"%1",
@@ -20166,6 +20795,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentLightsOff_1
 		{
+			text="$STR_A3_SENTLIGHTSOFF_1";
 			speech[]=
 			{
 				"%1",
@@ -20174,6 +20804,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class HC_Select_2
 		{
+			text="$STR_A3_HC_SELECT_2";
 			speech[]=
 			{
 				"HC_StandingByForOrders"
@@ -20181,6 +20812,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class HC_Select_3
 		{
+			text="$STR_A3_HC_SELECT_3";
 			speech[]=
 			{
 				"HC_CombatReady"
@@ -20188,6 +20820,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class HC_Select_4
 		{
+			text="$STR_A3_HC_SELECT_4";
 			speech[]=
 			{
 				"HC_WaitingForOrders"
@@ -20210,6 +20843,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentLightsOff_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTLIGHTSOFF_1";
 			speech[]=
 			{
 				"%1",
@@ -20219,6 +20853,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class HC_Select_2
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_HC_SELECT_2";
 			speech[]=
 			{
 				"HC_StandingByForOrders"
@@ -20227,6 +20862,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class HC_Select_3
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_HC_SELECT_3";
 			speech[]=
 			{
 				"HC_CombatReady"
@@ -20235,6 +20871,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class HC_Select_4
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_HC_SELECT_4";
 			speech[]=
 			{
 				"HC_WaitingForOrders"
@@ -20260,6 +20897,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentPointersOn_1
 		{
+			text="$STR_A3_SENTPOINTERSON_1";
 			speech[]=
 			{
 				"%1",
@@ -20277,6 +20915,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentPointersOn_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTPOINTERSON_1";
 			speech[]=
 			{
 				"%1",
@@ -20303,6 +20942,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentPointersOff_1
 		{
+			text="$STR_A3_SENTPOINTERSOFF_1";
 			speech[]=
 			{
 				"%1",
@@ -20320,6 +20960,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentPointersOff_1
 		{
 			wordsClass="StealthWords";
+			text="$STR_A3_SENTPOINTERSOFF_1";
 			speech[]=
 			{
 				"%1",
@@ -20352,6 +20993,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class HC_Select_1
 		{
+			text="";
 			speech[]=
 			{
 				"HC_ReportingIn"
@@ -20359,6 +21001,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class HC_Select_2
 		{
+			text="";
 			speech[]=
 			{
 				"HC_StandingByForOrders"
@@ -20366,6 +21009,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class HC_Select_3
 		{
+			text="";
 			speech[]=
 			{
 				"HC_CombatReady"
@@ -20373,6 +21017,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class HC_Select_4
 		{
+			text="";
 			speech[]=
 			{
 				"HC_WaitingForOrders"
@@ -20395,6 +21040,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class HC_Select_1
 		{
 			wordsClass="StealthWords";
+			text="";
 			speech[]=
 			{
 				"HC_ReportingIn"
@@ -20403,6 +21049,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class HC_Select_2
 		{
 			wordsClass="StealthWords";
+			text="";
 			speech[]=
 			{
 				"HC_StandingByForOrders"
@@ -20411,6 +21058,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class HC_Select_3
 		{
 			wordsClass="StealthWords";
+			text="";
 			speech[]=
 			{
 				"HC_CombatReady"
@@ -20419,6 +21067,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class HC_Select_4
 		{
 			wordsClass="StealthWords";
+			text="";
 			speech[]=
 			{
 				"HC_WaitingForOrders"
@@ -20450,6 +21099,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class HC_Move_1
 		{
+			text="";
 			speech[]=
 			{
 				"HC_Advancing"
@@ -20457,6 +21107,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class HC_Move_2
 		{
+			text="";
 			speech[]=
 			{
 				"HC_Affirmative"
@@ -20464,6 +21115,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class HC_Move_3
 		{
+			text="";
 			speech[]=
 			{
 				"HC_MovingToPosition"
@@ -20471,6 +21123,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class HC_Move_4
 		{
+			text="";
 			speech[]=
 			{
 				"HC_OrderReceived"
@@ -20493,6 +21146,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class HC_Move_1
 		{
 			wordsClass="StealthWords";
+			text="";
 			speech[]=
 			{
 				"HC_Advancing"
@@ -20501,6 +21155,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class HC_Move_2
 		{
 			wordsClass="StealthWords";
+			text="";
 			speech[]=
 			{
 				"HC_Affirmative"
@@ -20509,6 +21164,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class HC_Move_3
 		{
 			wordsClass="StealthWords";
+			text="";
 			speech[]=
 			{
 				"HC_MovingToPosition"
@@ -20517,6 +21173,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class HC_Move_4
 		{
 			wordsClass="StealthWords";
+			text="";
 			speech[]=
 			{
 				"HC_OrderReceived"
@@ -20550,6 +21207,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class HC_Attack_1
 		{
+			text="";
 			speech[]=
 			{
 				"HC_Advancing"
@@ -20557,6 +21215,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class HC_Attack_2
 		{
+			text="";
 			speech[]=
 			{
 				"HC_Affirmative"
@@ -20564,6 +21223,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class HC_Attack_3
 		{
+			text="";
 			speech[]=
 			{
 				"HC_OrderReceived"
@@ -20571,6 +21231,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class HC_Attack_4
 		{
+			text="";
 			speech[]=
 			{
 				"HC_EngagingE"
@@ -20578,6 +21239,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class HC_Attack_5
 		{
+			text="";
 			speech[]=
 			{
 				"HC_AttackingE"
@@ -20602,6 +21264,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class HC_Attack_1
 		{
 			wordsClass="StealthWords";
+			text="";
 			speech[]=
 			{
 				"HC_Advancing"
@@ -20610,6 +21273,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class HC_Attack_2
 		{
 			wordsClass="StealthWords";
+			text="";
 			speech[]=
 			{
 				"HC_Affirmative"
@@ -20618,6 +21282,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class HC_Attack_3
 		{
 			wordsClass="StealthWords";
+			text="";
 			speech[]=
 			{
 				"HC_OrderReceived"
@@ -20626,6 +21291,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class HC_Attack_4
 		{
 			wordsClass="StealthWords";
+			text="";
 			speech[]=
 			{
 				"HC_EngagingE"
@@ -20634,6 +21300,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class HC_Attack_5
 		{
 			wordsClass="StealthWords";
+			text="";
 			speech[]=
 			{
 				"HC_AttackingE"
@@ -20667,6 +21334,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentSuppressing_1
 		{
+			text="$STR_A3_SENTSUPPRESSING_1";
 			speech[]=
 			{
 				"CS_SuppressiveFireE"
@@ -20674,6 +21342,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentSuppressing_2
 		{
+			text="$STR_A3_SENTSUPPRESSING_2";
 			speech[]=
 			{
 				"CS_HangOnIllSuppressEmE"
@@ -20681,6 +21350,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentSuppressing_3
 		{
+			text="$STR_A3_SENTSUPPRESSING_3";
 			speech[]=
 			{
 				"CS_SuppressingE"
@@ -20688,6 +21358,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentSuppressing_4
 		{
+			text="$STR_A3_SENTSUPPRESSING_4";
 			speech[]=
 			{
 				"CS_CoveringFireE"
@@ -20696,6 +21367,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentSuppressing_5
 		{
 			gesture="GestureCover";
+			text="";
 			speech[]={};
 		};
 	};
@@ -20738,6 +21410,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCovering_1
 		{
+			text="$STR_A3_SENTCOVERING_1";
 			speech[]=
 			{
 				"CS_GoImCoveringE"
@@ -20745,6 +21418,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCovering_2
 		{
+			text="$STR_A3_SENTCOVERING_2";
 			speech[]=
 			{
 				"CS_GoIllCoverE"
@@ -20752,6 +21426,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCovering_3
 		{
+			text="$STR_A3_SENTCOVERING_3";
 			speech[]=
 			{
 				"CS_CoveringFireE"
@@ -20759,6 +21434,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCovering_4
 		{
+			text="$STR_A3_SENTCOVERING_4";
 			speech[]=
 			{
 				"CS_CoveringGoE"
@@ -20766,6 +21442,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCovering_5
 		{
+			text="$STR_A3_SENTCOVERING_5";
 			speech[]=
 			{
 				"CS_MoveOutE"
@@ -20773,6 +21450,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCovering_6
 		{
+			text="$STR_A3_SENTCOVERING_6";
 			speech[]=
 			{
 				"CS_GoE"
@@ -20780,6 +21458,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCovering_7
 		{
+			text="$STR_A3_SENTCOVERING_7";
 			speech[]=
 			{
 				"CS_MoveE"
@@ -20788,10 +21467,12 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentCovering_8
 		{
 			gesture="GestureCover";
+			text="";
 			speech[]={};
 		};
 		class SentCovering_9
 		{
+			text="";
 			speech[]={};
 		};
 	};
@@ -20808,11 +21489,13 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		{
 			wordsClass="StealthWords";
 			gesture="GestureCover";
+			text="";
 			speech[]={};
 		};
 		class SentCovering_9
 		{
 			wordsClass="StealthWords";
+			text="";
 			speech[]={};
 		};
 	};
@@ -20845,6 +21528,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class sentCoverMe_1
 		{
+			text="$STR_A3_SENTCOVERME_1";
 			speech[]=
 			{
 				"CS_CoverMeE"
@@ -20852,6 +21536,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class sentCoverMe_2
 		{
+			text="$STR_A3_SENTCOVERME_2";
 			speech[]=
 			{
 				"CS_OKLetsGo"
@@ -20859,6 +21544,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class sentCoverMe_3
 		{
+			text="$STR_A3_SENTCOVERME_3";
 			speech[]=
 			{
 				"CS_MovingE"
@@ -20866,6 +21552,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class sentCoverMe_4
 		{
+			text="$STR_A3_SENTCOVERME_4";
 			speech[]=
 			{
 				"CS_MovinOutE"
@@ -20874,10 +21561,12 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class sentCoverMe_5
 		{
 			gesture="GestureCover";
+			text="";
 			speech[]={};
 		};
 		class sentCoverMe_6
 		{
+			text="";
 			speech[]={};
 		};
 	};
@@ -20894,11 +21583,13 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		{
 			wordsClass="StealthWords";
 			gesture="GestureCover";
+			text="";
 			speech[]={};
 		};
 		class sentCoverMe_6
 		{
 			wordsClass="StealthWords";
+			text="";
 			speech[]={};
 		};
 	};
@@ -20925,6 +21616,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentReloading_1
 		{
+			text="$STR_A3_SENTRELOADING_1";
 			speech[]=
 			{
 				"CS_ReloadingE"
@@ -20932,6 +21624,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentReloading_2
 		{
+			text="$STR_A3_SENTRELOADING_2";
 			speech[]=
 			{
 				"CS_GottaReloadE"
@@ -20939,6 +21632,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentReloading_3
 		{
+			text="$STR_A3_SENTRELOADING_3";
 			speech[]=
 			{
 				"CS_CoverMeReloadingE"
@@ -20946,6 +21640,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentReloading_4
 		{
+			text="$STR_A3_SENTRELOADING_4";
 			speech[]=
 			{
 				"CS_ChangingMagsE"
@@ -20973,6 +21668,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentThrowingGrenade_1
 		{
+			text="$STR_A3_SENTTHROWINGGRENADE_1";
 			speech[]=
 			{
 				"CS_FireInTheHoleE"
@@ -20980,6 +21676,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentThrowingGrenade_2
 		{
+			text="$STR_A3_SENTTHROWINGGRENADE_2";
 			speech[]=
 			{
 				"CS_ThrowingFragE"
@@ -20987,6 +21684,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentThrowingGrenade_3
 		{
+			text="$STR_A3_SENTTHROWINGGRENADE_3";
 			speech[]=
 			{
 				"CS_FragOutE"
@@ -21012,6 +21710,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentThrowingSmoke_1
 		{
+			text="$STR_A3_SENTTHROWINGSMOKE_1";
 			speech[]=
 			{
 				"CS_ThrowingSmokeE"
@@ -21019,6 +21718,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentThrowingSmoke_2
 		{
+			text="$STR_A3_SENTTHROWINGSMOKE_2";
 			speech[]=
 			{
 				"CS_SmokeOutE"
@@ -21046,6 +21746,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentIncomingGrenade_1
 		{
+			text="$STR_A3_SENTINCOMINGGRENADE_1";
 			speech[]=
 			{
 				"CS_GrenadeE"
@@ -21053,6 +21754,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentIncomingGrenade_2
 		{
+			text="$STR_A3_SENTINCOMINGGRENADE_2";
 			speech[]=
 			{
 				"CS_WatchTheGrenadeE"
@@ -21060,6 +21762,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentIncomingGrenade_3
 		{
+			text="$STR_A3_SENTINCOMINGGRENADE_3";
 			speech[]=
 			{
 				"CS_IncomingFragE"
@@ -21087,6 +21790,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentEnemyContact_1
 		{
+			text="$STR_A3_SENTENEMYCONTACT_1";
 			speech[]=
 			{
 				"CS_ContactE"
@@ -21094,6 +21798,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentEnemyContact_2
 		{
+			text="$STR_A3_SENTENEMYCONTACT_2";
 			speech[]=
 			{
 				"CS_HostilesE"
@@ -21101,6 +21806,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentEnemyContact_3
 		{
+			text="$STR_A3_SENTENEMYCONTACT_3";
 			speech[]=
 			{
 				"CS_EnemyE"
@@ -21132,6 +21838,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCombatGeneric_1
 		{
+			text="$STR_A3_SENTCOMBATGENERIC_1";
 			speech[]=
 			{
 				"CS_DidYouSeeThatQ"
@@ -21139,6 +21846,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCombatGeneric_2
 		{
+			text="$STR_A3_SENTCOMBATGENERIC_2";
 			speech[]=
 			{
 				"CS_FocusE"
@@ -21146,6 +21854,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCombatGeneric_3
 		{
+			text="$STR_A3_SENTCOMBATGENERIC_3";
 			speech[]=
 			{
 				"CS_CheckThatOut"
@@ -21153,6 +21862,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCombatGeneric_4
 		{
+			text="$STR_A3_SENTCOMBATGENERIC_4";
 			speech[]=
 			{
 				"CS_MotherfuckerE"
@@ -21160,6 +21870,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCombatGeneric_5
 		{
+			text="$STR_A3_SENTCOMBATGENERIC_5";
 			speech[]=
 			{
 				"CS_SeeThatQE"
@@ -21189,6 +21900,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentScreaming_1
 		{
+			text="$STR_A3_SENTSCREAMING_1";
 			speech[]=
 			{
 				"CS_ARGHHE"
@@ -21196,6 +21908,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentScreaming_2
 		{
+			text="$STR_A3_SENTSCREAMING_2";
 			speech[]=
 			{
 				"CS_OOFE"
@@ -21203,6 +21916,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentScreaming_3
 		{
+			text="$STR_A3_SENTSCREAMING_3";
 			speech[]=
 			{
 				"CS_UGHE"
@@ -21210,6 +21924,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentScreaming_4
 		{
+			text="$STR_A3_SENTSCREAMING_4";
 			speech[]=
 			{
 				"CS_NoE"
@@ -21239,6 +21954,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCheering_1
 		{
+			text="$STR_A3_SENTCHEERING_1";
 			speech[]=
 			{
 				"CS_WoohooE"
@@ -21246,6 +21962,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCheering_2
 		{
+			text="$STR_A3_SENTCHEERING_2";
 			speech[]=
 			{
 				"CS_YahooE"
@@ -21253,6 +21970,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCheering_3
 		{
+			text="$STR_A3_SENTCHEERING_3";
 			speech[]=
 			{
 				"CS_HeeeyE"
@@ -21260,6 +21978,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentCheering_4
 		{
+			text="$STR_A3_SENTCHEERING_4";
 			speech[]=
 			{
 				"CS_YeehawEGreatE"
@@ -21288,6 +22007,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentCmdMoveToTarget_1
 		{
 			gesture="gestureGo";
+			text="$STR_A3_SENTCMDMOVETOTARGET_1";
 			speech[]=
 			{
 				"%1.1",
@@ -21299,6 +22019,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentCmdMoveToTarget_2
 		{
 			gesture="gestureGo";
+			text="$STR_A3_SENTCMDMOVETOTARGET_2";
 			speech[]=
 			{
 				"%1.1",
@@ -21323,6 +22044,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		{
 			wordsClass="StealthWords";
 			gesture="gestureGo";
+			text="$STR_A3_SENTCMDMOVETOTARGET_1";
 			speech[]=
 			{
 				"%1.1",
@@ -21335,6 +22057,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		{
 			wordsClass="StealthWords";
 			gesture="gestureGo";
+			text="$STR_A3_SENTCMDMOVETOTARGET_2";
 			speech[]=
 			{
 				"%1.1",
@@ -21365,6 +22088,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentBehaviourCareless_1
 		{
+			text="";
 			speech[]=
 			{
 				"NO_SPEECH"
@@ -21381,6 +22105,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class SentBehaviourCareless_1
 		{
 			wordsClass="StealthWords";
+			text="";
 			speech[]=
 			{
 				"NO_SPEECH"
@@ -21406,6 +22131,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentWitnessKilled_1
 		{
+			text="$STR_A3_SENTOBJECTDESTROYED_4";
 			speech[]=
 			{
 				"HesDownE"
@@ -21421,6 +22147,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentWitnessKilled_1
 		{
+			text="$STR_A3_SENTOBJECTDESTROYED_4";
 			speech[]=
 			{
 				"HesDownE"
@@ -21448,6 +22175,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentWitnessDeadBody_1
 		{
+			text="$STR_A3_grt_negative5_1";
 			speech[]=
 			{
 				"SonOfABitchE_EN"
@@ -21455,6 +22183,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentWitnessDeadBody_2
 		{
+			text="$STR_A3_sentcombatgeneric_4";
 			speech[]=
 			{
 				"CS_MotherfuckerE"
@@ -21472,6 +22201,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentWitnessDeadBody_1
 		{
+			text="$STR_A3_grt_negative5_1";
 			speech[]=
 			{
 				"SonOfABitchE_EN"
@@ -21479,6 +22209,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentWitnessDeadBody_2
 		{
+			text="$STR_A3_sentcombatgeneric_4";
 			speech[]=
 			{
 				"CS_MotherfuckerE"
@@ -21506,6 +22237,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentRouted_1
 		{
+			text="$STR_A3_grt_negative5_1";
 			speech[]=
 			{
 				"SonOfABitchE_EN"
@@ -21513,6 +22245,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentRouted_2
 		{
+			text="$STR_A3_sentcombatgeneric_4";
 			speech[]=
 			{
 				"CS_MotherfuckerE"
@@ -21530,6 +22263,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentRouted_1
 		{
+			text="$STR_A3_grt_negative5_1";
 			speech[]=
 			{
 				"SonOfABitchE_EN"
@@ -21537,6 +22271,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentRouted_2
 		{
+			text="$STR_A3_sentcombatgeneric_4";
 			speech[]=
 			{
 				"CS_MotherfuckerE"
@@ -21566,6 +22301,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentEndangered_1
 		{
+			text="$STR_A3_sentendangered_1";
 			speech[]=
 			{
 				"FuckE"
@@ -21573,6 +22309,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentEndangered_2
 		{
+			text="$STR_A3_sentcombatgeneric_4";
 			speech[]=
 			{
 				"CS_MotherfuckerE"
@@ -21580,6 +22317,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentEndangered_3
 		{
+			text="$STR_A3_grt_negative5_1";
 			speech[]=
 			{
 				"SonOfABitchE_EN"
@@ -21599,6 +22337,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentEndangered_1
 		{
+			text="$STR_A3_sentendangered_1";
 			speech[]=
 			{
 				"FuckE"
@@ -21606,6 +22345,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentEndangered_2
 		{
+			text="$STR_A3_sentcombatgeneric_4";
 			speech[]=
 			{
 				"CS_MotherfuckerE"
@@ -21613,6 +22353,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentEndangered_3
 		{
+			text="$STR_A3_grt_negative5_1";
 			speech[]=
 			{
 				"SonOfABitchE_EN"
@@ -21628,6 +22369,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentARTYRoundsComplete_1
 		{
+			text="$STR_A3_artillery_21";
 			speech[]=
 			{
 				"RoundsComplete"
@@ -21643,6 +22385,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentARTYFireAt_1
 		{
+			text="$STR_A3_artillery_fireAt";
 			speech[]=
 			{
 				"%1",
@@ -21660,6 +22403,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentARTYCannotExecuteThatsOutsideOurFiringEnvelope_1
 		{
+			text="$STR_A3_artillery_cannotexecute";
 			speech[]=
 			{
 				"CannotExecuteThatsOutsideOurFiringEnvelope"
@@ -21675,6 +22419,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentARTYCannotExecuteAdjustCoordinates_1
 		{
+			text="$STR_A3_artillery_cannotexecute2";
 			speech[]=
 			{
 				"CannotExecuteAdjustCoordinates"
@@ -21690,6 +22435,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class SentRepairThat_1
 		{
+			text="$STR_A3_sentRepairThat";
 			speech[]=
 			{
 				"%1",
@@ -21717,6 +22463,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordAdvance_1
 		{
+			text="Advance";
 			speech[]=
 			{
 				"Advance"
@@ -21733,6 +22480,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordAdvance_1
 		{
 			wordsClass="StealthWords";
+			text="Advance";
 			speech[]=
 			{
 				"Advance"
@@ -21758,6 +22506,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordAnd_1
 		{
+			text="and";
 			speech[]=
 			{
 				"And"
@@ -21774,6 +22523,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordAnd_1
 		{
 			wordsClass="StealthWords";
+			text="and";
 			speech[]=
 			{
 				"And"
@@ -21799,6 +22549,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordAre_1
 		{
+			text="Are";
 			speech[]=
 			{
 				"Are"
@@ -21815,6 +22566,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordAre_1
 		{
 			wordsClass="StealthWords";
+			text="Are";
 			speech[]=
 			{
 				"Are"
@@ -21838,6 +22590,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordAreaClear_1
 		{
+			text="Area clear";
 			speech[]=
 			{
 				"AreaClear"
@@ -21861,6 +22614,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordAt_1
 		{
+			text="at";
 			speech[]=
 			{
 				"At"
@@ -21886,6 +22640,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordAtEase_1
 		{
+			text="At ease";
 			speech[]=
 			{
 				"AtEase"
@@ -21902,6 +22657,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordAtEase_1
 		{
 			wordsClass="StealthWords";
+			text="At ease";
 			speech[]=
 			{
 				"AtEase"
@@ -21927,6 +22683,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordAttackE_1
 		{
+			text="Attack!";
 			speech[]=
 			{
 				"AttackE"
@@ -21943,6 +22700,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordAttackE_1
 		{
 			wordsClass="StealthWords";
+			text="Attack!";
 			speech[]=
 			{
 				"AttackE"
@@ -21966,6 +22724,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordAttackingE_1
 		{
+			text="Attacking!";
 			speech[]=
 			{
 				"AttackingE"
@@ -21991,6 +22750,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordAttackThat_1
 		{
+			text="Attack that";
 			speech[]=
 			{
 				"AttackThat"
@@ -22007,6 +22767,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordAttackThat_1
 		{
 			wordsClass="StealthWords";
+			text="Attack that";
 			speech[]=
 			{
 				"AttackThat"
@@ -22030,6 +22791,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordBailOutE_1
 		{
+			text="Bail out!";
 			speech[]=
 			{
 				"BailOutE"
@@ -22055,6 +22817,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordBeAdvised_1
 		{
+			text="Be advised,";
 			speech[]=
 			{
 				"BeAdvised"
@@ -22071,6 +22834,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordBeAdvised_1
 		{
 			wordsClass="StealthWords";
+			text="Be advised,";
 			speech[]=
 			{
 				"BeAdvised"
@@ -22094,6 +22858,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordBingoFuel_1
 		{
+			text="Bingo fuel";
 			speech[]=
 			{
 				"BingoFuel"
@@ -22117,6 +22882,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordBlueOnBlueE_1
 		{
+			text="Blue on blue!";
 			speech[]=
 			{
 				"BlueOnBlueE"
@@ -22142,6 +22908,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordBoardThat_1
 		{
+			text="Board that";
 			speech[]=
 			{
 				"BoardThat"
@@ -22158,6 +22925,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordBoardThat_1
 		{
 			wordsClass="StealthWords";
+			text="Board that";
 			speech[]=
 			{
 				"BoardThat"
@@ -22181,6 +22949,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordCancelManualFire_1
 		{
+			text="Cancel manual fire";
 			speech[]=
 			{
 				"CancelManualFire"
@@ -22204,6 +22973,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordCancelTarget_1
 		{
+			text="Cancel target";
 			speech[]=
 			{
 				"CancelTarget"
@@ -22229,6 +22999,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordCannotFire_1
 		{
+			text="Cannot fire";
 			speech[]=
 			{
 				"CannotFire"
@@ -22245,6 +23016,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordCannotFire_1
 		{
 			wordsClass="StealthWords";
+			text="Cannot fire";
 			speech[]=
 			{
 				"CannotFire"
@@ -22270,6 +23042,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordCantGetThereE_1
 		{
+			text="Can't get there!";
 			speech[]=
 			{
 				"CantGetThereE"
@@ -22286,6 +23059,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordCantGetThereE_1
 		{
 			wordsClass="StealthWords";
+			text="Can't get there!";
 			speech[]=
 			{
 				"CantGetThereE"
@@ -22309,6 +23083,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordCantMakeItThere_1
 		{
+			text="Can't make it there";
 			speech[]=
 			{
 				"CantMakeItThere"
@@ -22332,6 +23107,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordCantShoot_1
 		{
+			text="Can't shoot";
 			speech[]=
 			{
 				"CantShoot"
@@ -22355,6 +23131,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordCeaseFireE_1
 		{
+			text="Cease fire!";
 			speech[]=
 			{
 				"CeaseFireE"
@@ -22380,6 +23157,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordClear_1
 		{
+			text="Clear";
 			speech[]=
 			{
 				"Clear"
@@ -22396,6 +23174,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordClear_1
 		{
 			wordsClass="StealthWords";
+			text="Clear";
 			speech[]=
 			{
 				"Clear"
@@ -22421,6 +23200,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordCloseThatDoor_1
 		{
+			text="Close that door";
 			speech[]=
 			{
 				"CloseThatDoor"
@@ -22437,6 +23217,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordCloseThatDoor_1
 		{
 			wordsClass="StealthWords";
+			text="Close that door";
 			speech[]=
 			{
 				"CloseThatDoor"
@@ -22462,6 +23243,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordCommander_1
 		{
+			text="Commander";
 			speech[]=
 			{
 				"Commander"
@@ -22478,6 +23260,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordCommander_1
 		{
 			wordsClass="StealthWords";
+			text="Commander";
 			speech[]=
 			{
 				"Commander"
@@ -22503,6 +23286,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordContactE_1
 		{
+			text="Contact!";
 			speech[]=
 			{
 				"ContactE"
@@ -22519,6 +23303,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordContactE_1
 		{
 			wordsClass="StealthWords";
+			text="Contact!";
 			speech[]=
 			{
 				"ContactE"
@@ -22544,6 +23329,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordCopy_1
 		{
+			text="Copy";
 			speech[]=
 			{
 				"Copy"
@@ -22560,6 +23346,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordCopy_1
 		{
 			wordsClass="StealthWords";
+			text="Copy";
 			speech[]=
 			{
 				"Copy"
@@ -22585,6 +23372,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordCopyMyStance_1
 		{
+			text="Copy my stance";
 			speech[]=
 			{
 				"CopyMyStance"
@@ -22601,6 +23389,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordCopyMyStance_1
 		{
 			wordsClass="StealthWords";
+			text="Copy my stance";
 			speech[]=
 			{
 				"CopyMyStance"
@@ -22624,6 +23413,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordCriticalDamageE_1
 		{
+			text="Critical damage!";
 			speech[]=
 			{
 				"CriticalDamageE"
@@ -22649,6 +23439,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordDangerE_1
 		{
+			text="Danger!";
 			speech[]=
 			{
 				"DangerE"
@@ -22665,6 +23456,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordDangerE_1
 		{
 			wordsClass="StealthWords";
+			text="Danger!";
 			speech[]=
 			{
 				"DangerE"
@@ -22690,6 +23482,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordDeactivateCharge_1
 		{
+			text="Deactivate charge";
 			speech[]=
 			{
 				"DeactivateCharge"
@@ -22706,6 +23499,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordDeactivateCharge_1
 		{
 			wordsClass="StealthWords";
+			text="Deactivate charge";
 			speech[]=
 			{
 				"DeactivateCharge"
@@ -22731,6 +23525,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordDetonateCharge_1
 		{
+			text="Detonate charge";
 			speech[]=
 			{
 				"DetonateCharge"
@@ -22747,6 +23542,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordDetonateCharge_1
 		{
 			wordsClass="StealthWords";
+			text="Detonate charge";
 			speech[]=
 			{
 				"DetonateCharge"
@@ -22772,6 +23568,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordDisarmThatMine_1
 		{
+			text="Disarm that mine";
 			speech[]=
 			{
 				"DisarmThatMine"
@@ -22788,6 +23585,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordDisarmThatMine_1
 		{
 			wordsClass="StealthWords";
+			text="Disarm that mine";
 			speech[]=
 			{
 				"DisarmThatMine"
@@ -22811,6 +23609,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordDisembark_1
 		{
+			text="Disembark";
 			speech[]=
 			{
 				"Disembark"
@@ -22836,6 +23635,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordDisengage_1
 		{
+			text="Disengage";
 			speech[]=
 			{
 				"Disengage"
@@ -22852,6 +23652,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordDisengage_1
 		{
 			wordsClass="StealthWords";
+			text="Disengage";
 			speech[]=
 			{
 				"Disengage"
@@ -22877,6 +23678,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordDismount_1
 		{
+			text="Dismount";
 			speech[]=
 			{
 				"Dismount"
@@ -22893,6 +23695,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordDismount_1
 		{
 			wordsClass="StealthWords";
+			text="Dismount";
 			speech[]=
 			{
 				"Dismount"
@@ -22916,6 +23719,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordDoYouReadQ_1
 		{
+			text="Do you read?";
 			speech[]=
 			{
 				"DoYouReadQ"
@@ -22941,6 +23745,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordDriver_1
 		{
+			text="Driver";
 			speech[]=
 			{
 				"Driver"
@@ -22957,6 +23762,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordDriver_1
 		{
 			wordsClass="StealthWords";
+			text="Driver";
 			speech[]=
 			{
 				"Driver"
@@ -22982,6 +23788,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordDropThat_1
 		{
+			text="Drop that";
 			speech[]=
 			{
 				"DropThat"
@@ -22998,6 +23805,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordDropThat_1
 		{
 			wordsClass="StealthWords";
+			text="Drop that";
 			speech[]=
 			{
 				"DropThat"
@@ -23023,6 +23831,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordEjectE_1
 		{
+			text="Eject!";
 			speech[]=
 			{
 				"EjectE"
@@ -23039,6 +23848,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordEjectE_1
 		{
 			wordsClass="StealthWords";
+			text="Eject!";
 			speech[]=
 			{
 				"EjectE"
@@ -23062,6 +23872,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordEnemyFireE_1
 		{
+			text="Enemy fire!";
 			speech[]=
 			{
 				"EnemyFireE"
@@ -23087,6 +23898,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordEngageAtWill_1
 		{
+			text="Engage at will";
 			speech[]=
 			{
 				"EngageAtWill"
@@ -23103,6 +23915,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordEngageAtWill_1
 		{
 			wordsClass="StealthWords";
+			text="Engage at will";
 			speech[]=
 			{
 				"EngageAtWill"
@@ -23128,6 +23941,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordEngageE_1
 		{
+			text="Engage!";
 			speech[]=
 			{
 				"EngageE"
@@ -23144,6 +23958,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordEngageE_1
 		{
 			wordsClass="StealthWords";
+			text="Engage!";
 			speech[]=
 			{
 				"EngageE"
@@ -23169,6 +23984,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordEngageThat_1
 		{
+			text="Engage that";
 			speech[]=
 			{
 				"EngageThat"
@@ -23185,6 +24001,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordEngageThat_1
 		{
 			wordsClass="StealthWords";
+			text="Engage that";
 			speech[]=
 			{
 				"EngageThat"
@@ -23210,6 +24027,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordEngagingE_1
 		{
+			text="Engaging!";
 			speech[]=
 			{
 				"EngagingE"
@@ -23226,6 +24044,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordEngagingE_1
 		{
 			wordsClass="StealthWords";
+			text="Engaging!";
 			speech[]=
 			{
 				"EngagingE"
@@ -23249,6 +24068,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordEngagingTargetE_1
 		{
+			text="Engaging target!";
 			speech[]=
 			{
 				"EngagingTargetE"
@@ -23274,6 +24094,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordEyesOnTarget_1
 		{
+			text="Eyes on target";
 			speech[]=
 			{
 				"EyesOnTarget"
@@ -23290,6 +24111,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordEyesOnTarget_1
 		{
 			wordsClass="StealthWords";
+			text="Eyes on target";
 			speech[]=
 			{
 				"EyesOnTarget"
@@ -23315,6 +24137,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordFallBackE_1
 		{
+			text="Fall back!";
 			speech[]=
 			{
 				"FallBackE"
@@ -23331,6 +24154,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordFallBackE_1
 		{
 			wordsClass="StealthWords";
+			text="Fall back!";
 			speech[]=
 			{
 				"FallBackE"
@@ -23354,6 +24178,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordFast_1
 		{
+			text="Fast";
 			speech[]=
 			{
 				"Fast"
@@ -23379,6 +24204,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordFire_1
 		{
+			text="Fire";
 			speech[]=
 			{
 				"Fire"
@@ -23395,6 +24221,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordFire_1
 		{
 			wordsClass="StealthWords";
+			text="Fire";
 			speech[]=
 			{
 				"Fire"
@@ -23420,6 +24247,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordFireAtThat_1
 		{
+			text="Fire at that";
 			speech[]=
 			{
 				"FireAtThat"
@@ -23436,6 +24264,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordFireAtThat_1
 		{
 			wordsClass="StealthWords";
+			text="Fire at that";
 			speech[]=
 			{
 				"FireAtThat"
@@ -23461,6 +24290,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordFireAtWill_1
 		{
+			text="Fire at will";
 			speech[]=
 			{
 				"FireAtWill"
@@ -23477,6 +24307,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordFireAtWill_1
 		{
 			wordsClass="StealthWords";
+			text="Fire at will";
 			speech[]=
 			{
 				"FireAtWill"
@@ -23500,6 +24331,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordFireOnMyLead_1
 		{
+			text="Fire on my lead";
 			speech[]=
 			{
 				"FireOnMyLead"
@@ -23525,6 +24357,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordFlankLeft_1
 		{
+			text="flank left";
 			speech[]=
 			{
 				"FlankLeft"
@@ -23541,6 +24374,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordFlankLeft_1
 		{
 			wordsClass="StealthWords";
+			text="flank left";
 			speech[]=
 			{
 				"FlankLeft"
@@ -23566,6 +24400,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordFlankRight_1
 		{
+			text="flank right";
 			speech[]=
 			{
 				"FlankRight"
@@ -23582,6 +24417,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordFlankRight_1
 		{
 			wordsClass="StealthWords";
+			text="flank right";
 			speech[]=
 			{
 				"FlankRight"
@@ -23607,6 +24443,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordFollow_1
 		{
+			text="follow";
 			speech[]=
 			{
 				"Follow"
@@ -23623,6 +24460,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordFollow_1
 		{
 			wordsClass="StealthWords";
+			text="follow";
 			speech[]=
 			{
 				"Follow"
@@ -23648,6 +24486,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordFormColumn_1
 		{
+			text="Form column";
 			speech[]=
 			{
 				"FormColumn"
@@ -23664,6 +24503,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordFormColumn_1
 		{
 			wordsClass="StealthWords";
+			text="Form column";
 			speech[]=
 			{
 				"FormColumn"
@@ -23689,6 +24529,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordFormDiamond_1
 		{
+			text="Form diamond";
 			speech[]=
 			{
 				"FormDiamond"
@@ -23705,6 +24546,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordFormDiamond_1
 		{
 			wordsClass="StealthWords";
+			text="Form diamond";
 			speech[]=
 			{
 				"FormDiamond"
@@ -23730,6 +24572,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordFormEcholonLeft_1
 		{
+			text="Form echolon left";
 			speech[]=
 			{
 				"FormEcholonLeft"
@@ -23746,6 +24589,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordFormEcholonLeft_1
 		{
 			wordsClass="StealthWords";
+			text="Form echolon left";
 			speech[]=
 			{
 				"FormEcholonLeft"
@@ -23771,6 +24615,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordFormEcholonRight_1
 		{
+			text="Form echolon right";
 			speech[]=
 			{
 				"FormEcholonRight"
@@ -23787,6 +24632,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordFormEcholonRight_1
 		{
 			wordsClass="StealthWords";
+			text="Form echolon right";
 			speech[]=
 			{
 				"FormEcholonRight"
@@ -23812,6 +24658,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordFormFile_1
 		{
+			text="Form file";
 			speech[]=
 			{
 				"FormFile"
@@ -23828,6 +24675,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordFormFile_1
 		{
 			wordsClass="StealthWords";
+			text="Form file";
 			speech[]=
 			{
 				"FormFile"
@@ -23853,6 +24701,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordFormLine_1
 		{
+			text="Form line";
 			speech[]=
 			{
 				"FormLine"
@@ -23869,6 +24718,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordFormLine_1
 		{
 			wordsClass="StealthWords";
+			text="Form line";
 			speech[]=
 			{
 				"FormLine"
@@ -23894,6 +24744,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordFormStaggeredColumn_1
 		{
+			text="Form staggered column";
 			speech[]=
 			{
 				"FormStaggeredColumn"
@@ -23910,6 +24761,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordFormStaggeredColumn_1
 		{
 			wordsClass="StealthWords";
+			text="Form staggered column";
 			speech[]=
 			{
 				"FormStaggeredColumn"
@@ -23935,6 +24787,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordFormVee_1
 		{
+			text="Form vee";
 			speech[]=
 			{
 				"FormVee"
@@ -23951,6 +24804,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordFormVee_1
 		{
 			wordsClass="StealthWords";
+			text="Form vee";
 			speech[]=
 			{
 				"FormVee"
@@ -23976,6 +24830,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordFormWedge_1
 		{
+			text="Form wedge";
 			speech[]=
 			{
 				"FormWedge"
@@ -23992,6 +24847,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordFormWedge_1
 		{
 			wordsClass="StealthWords";
+			text="Form wedge";
 			speech[]=
 			{
 				"FormWedge"
@@ -24015,6 +24871,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordFormOnMeE_1
 		{
+			text="Form on me!";
 			speech[]=
 			{
 				"FormOnMeE"
@@ -24038,6 +24895,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordForward_1
 		{
+			text="forward";
 			speech[]=
 			{
 				"Forward"
@@ -24061,6 +24919,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordFreeToEngage_1
 		{
+			text="Free to engage";
 			speech[]=
 			{
 				"FreeToEngage"
@@ -24086,6 +24945,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordGetBackE_1
 		{
+			text="Get back!";
 			speech[]=
 			{
 				"GetBackE"
@@ -24102,6 +24962,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordGetBackE_1
 		{
 			wordsClass="StealthWords";
+			text="Get back!";
 			speech[]=
 			{
 				"GetBackE"
@@ -24127,6 +24988,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordGetDownE_1
 		{
+			text="Get down!";
 			speech[]=
 			{
 				"GetDownE"
@@ -24143,6 +25005,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordGetDownE_1
 		{
 			wordsClass="StealthWords";
+			text="Get down!";
 			speech[]=
 			{
 				"GetDownE"
@@ -24168,6 +25031,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordGetInThat_1
 		{
+			text="Get in that";
 			speech[]=
 			{
 				"GetInThat"
@@ -24184,6 +25048,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordGetInThat_1
 		{
 			wordsClass="StealthWords";
+			text="Get in that";
 			speech[]=
 			{
 				"GetInThat"
@@ -24209,6 +25074,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordGetSupportAt_1
 		{
+			text="Get support at";
 			speech[]=
 			{
 				"GetSupportAt"
@@ -24225,6 +25091,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordGetSupportAt_1
 		{
 			wordsClass="StealthWords";
+			text="Get support at";
 			speech[]=
 			{
 				"GetSupportAt"
@@ -24248,6 +25115,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordGiveEmHellE_1
 		{
+			text="Give 'em hell!";
 			speech[]=
 			{
 				"GiveEmHellE"
@@ -24271,6 +25139,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordGoGoGoE_1
 		{
+			text="Go, go, go!";
 			speech[]=
 			{
 				"GoGoGoE"
@@ -24296,6 +25165,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordGoProne_1
 		{
+			text="Go prone";
 			speech[]=
 			{
 				"GoProne"
@@ -24312,6 +25182,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordGoProne_1
 		{
 			wordsClass="StealthWords";
+			text="Go prone";
 			speech[]=
 			{
 				"GoProne"
@@ -24337,6 +25208,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordGunner_1
 		{
+			text="gunner";
 			speech[]=
 			{
 				"Gunner"
@@ -24353,6 +25225,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordGunner_1
 		{
 			wordsClass="StealthWords";
+			text="gunner";
 			speech[]=
 			{
 				"Gunner"
@@ -24378,6 +25251,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordHalt_1
 		{
+			text="Halt";
 			speech[]=
 			{
 				"Halt"
@@ -24394,6 +25268,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordHalt_1
 		{
 			wordsClass="StealthWords";
+			text="Halt";
 			speech[]=
 			{
 				"Halt"
@@ -24419,6 +25294,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordHealThat_1
 		{
+			text="Heal that";
 			speech[]=
 			{
 				"HealThat"
@@ -24435,6 +25311,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordHealThat_1
 		{
 			wordsClass="StealthWords";
+			text="Heal that";
 			speech[]=
 			{
 				"HealThat"
@@ -24460,6 +25337,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordHealYourself_1
 		{
+			text="Heal yourself";
 			speech[]=
 			{
 				"HealYourself"
@@ -24476,6 +25354,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordHealYourself_1
 		{
 			wordsClass="StealthWords";
+			text="Heal yourself";
 			speech[]=
 			{
 				"HealYourself"
@@ -24501,6 +25380,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordHesDownE_1
 		{
+			text="He's down!";
 			speech[]=
 			{
 				"HesDownE"
@@ -24517,6 +25397,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordHesDownE_1
 		{
 			wordsClass="StealthWords";
+			text="He's down!";
 			speech[]=
 			{
 				"HesDownE"
@@ -24542,6 +25423,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordHitTheDirt_1
 		{
+			text="Hit the dirt";
 			speech[]=
 			{
 				"HitTheDirt"
@@ -24558,6 +25440,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordHitTheDirt_1
 		{
 			wordsClass="StealthWords";
+			text="Hit the dirt";
 			speech[]=
 			{
 				"HitTheDirt"
@@ -24583,6 +25466,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordHoldFire_1
 		{
+			text="Hold fire";
 			speech[]=
 			{
 				"HoldFire"
@@ -24599,6 +25483,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordHoldFire_1
 		{
 			wordsClass="StealthWords";
+			text="Hold fire";
 			speech[]=
 			{
 				"HoldFire"
@@ -24622,6 +25507,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordHostileDownE_1
 		{
+			text="Hostile down!";
 			speech[]=
 			{
 				"HostileDownE"
@@ -24647,6 +25533,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordHostilesE_1
 		{
+			text="Hostiles!";
 			speech[]=
 			{
 				"HostilesE"
@@ -24663,6 +25550,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordHostilesE_1
 		{
 			wordsClass="StealthWords";
+			text="Hostiles!";
 			speech[]=
 			{
 				"HostilesE"
@@ -24688,6 +25576,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordCheckYourFireE_1
 		{
+			text="Check your fire!";
 			speech[]=
 			{
 				"CheckYourFireE"
@@ -24704,6 +25593,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordCheckYourFireE_1
 		{
 			wordsClass="StealthWords";
+			text="Check your fire!";
 			speech[]=
 			{
 				"CheckYourFireE"
@@ -24729,6 +25619,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordImAtGrid_1
 		{
+			text="I'm at grid";
 			speech[]=
 			{
 				"ImAtGrid"
@@ -24745,6 +25636,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordImAtGrid_1
 		{
 			wordsClass="StealthWords";
+			text="I'm at grid";
 			speech[]=
 			{
 				"ImAtGrid"
@@ -24770,6 +25662,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordGrid_1
 		{
+			text="grid";
 			speech[]=
 			{
 				"Grid"
@@ -24786,6 +25679,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordGrid_1
 		{
 			wordsClass="StealthWords";
+			text="grid";
 			speech[]=
 			{
 				"Grid"
@@ -24809,6 +25703,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordImOnHim_1
 		{
+			text="I'm on him";
 			speech[]=
 			{
 				"ImOnHim"
@@ -24832,6 +25727,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordImTheNewActual_1
 		{
+			text="I'm the new actual";
 			speech[]=
 			{
 				"ImTheNewActual"
@@ -24857,6 +25753,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordIs_1
 		{
+			text="is";
 			speech[]=
 			{
 				"Is"
@@ -24873,6 +25770,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordIs_1
 		{
 			wordsClass="StealthWords";
+			text="is";
 			speech[]=
 			{
 				"Is"
@@ -24898,6 +25796,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordIsDownE_1
 		{
+			text="is down!";
 			speech[]=
 			{
 				"IsDownE"
@@ -24914,6 +25813,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordIsDownE_1
 		{
 			wordsClass="StealthWords";
+			text="is down!";
 			speech[]=
 			{
 				"IsDownE"
@@ -24937,6 +25837,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordIsDead_1
 		{
+			text="is dead";
 			speech[]=
 			{
 				"IsDead"
@@ -24960,6 +25861,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordIsHistory_1
 		{
+			text="is history";
 			speech[]=
 			{
 				"IsHistory"
@@ -24985,6 +25887,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordInjured_1
 		{
+			text="Injured";
 			speech[]=
 			{
 				"Injured"
@@ -25001,6 +25904,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordInjured_1
 		{
 			wordsClass="StealthWords";
+			text="Injured";
 			speech[]=
 			{
 				"Injured"
@@ -25026,6 +25930,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordIveGotHimE_1
 		{
+			text="I've got him!";
 			speech[]=
 			{
 				"IveGotHimE"
@@ -25042,6 +25947,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordIveGotHimE_1
 		{
 			wordsClass="StealthWords";
+			text="I've got him!";
 			speech[]=
 			{
 				"IveGotHimE"
@@ -25065,6 +25971,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordLeft_1
 		{
+			text="left";
 			speech[]=
 			{
 				"Left"
@@ -25088,6 +25995,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordLightEmUpE_1
 		{
+			text="Light 'em up!";
 			speech[]=
 			{
 				"LightEmUpE"
@@ -25113,6 +26021,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordLightThatFire_1
 		{
+			text="Light that fire";
 			speech[]=
 			{
 				"LightThatFire"
@@ -25129,6 +26038,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordLightThatFire_1
 		{
 			wordsClass="StealthWords";
+			text="Light that fire";
 			speech[]=
 			{
 				"LightThatFire"
@@ -25152,6 +26062,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordMaintainFormation_1
 		{
+			text="Maintain formation";
 			speech[]=
 			{
 				"MaintainFormation"
@@ -25175,6 +26086,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordManualFire_1
 		{
+			text="Manual fire";
 			speech[]=
 			{
 				"ManualFire"
@@ -25200,6 +26112,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordMedicE_1
 		{
+			text="Medic!";
 			speech[]=
 			{
 				"MedicE"
@@ -25216,6 +26129,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordMedicE_1
 		{
 			wordsClass="StealthWords";
+			text="Medic!";
 			speech[]=
 			{
 				"MedicE"
@@ -25241,6 +26155,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordNeedHelpE_1
 		{
+			text="Need help!";
 			speech[]=
 			{
 				"NeedHelpE"
@@ -25257,6 +26172,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordNeedHelpE_1
 		{
 			wordsClass="StealthWords";
+			text="Need help!";
 			speech[]=
 			{
 				"NeedHelpE"
@@ -25282,6 +26198,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordNegative_1
 		{
+			text="Negative";
 			speech[]=
 			{
 				"Negative"
@@ -25298,6 +26215,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordNegative_1
 		{
 			wordsClass="StealthWords";
+			text="Negative";
 			speech[]=
 			{
 				"Negative"
@@ -25323,6 +26241,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordNoCanDo_1
 		{
+			text="No can do";
 			speech[]=
 			{
 				"NoCanDo"
@@ -25339,6 +26258,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordNoCanDo_1
 		{
 			wordsClass="StealthWords";
+			text="No can do";
 			speech[]=
 			{
 				"NoCanDo"
@@ -25362,6 +26282,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordNoMoreAmmoE_1
 		{
+			text="No more ammo!";
 			speech[]=
 			{
 				"NoMoreAmmoE"
@@ -25387,6 +26308,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordNoTarget_1
 		{
+			text="No target";
 			speech[]=
 			{
 				"NoTarget"
@@ -25403,6 +26325,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordNoTarget_1
 		{
 			wordsClass="StealthWords";
+			text="No target";
 			speech[]=
 			{
 				"NoTarget"
@@ -25426,6 +26349,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordObserveThat_1
 		{
+			text="Observe that";
 			speech[]=
 			{
 				"ObserveThat"
@@ -25451,6 +26375,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordObserveThatPosition_1
 		{
+			text="Observe that position";
 			speech[]=
 			{
 				"ObserveThatPosition"
@@ -25467,6 +26392,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordObserveThatPosition_1
 		{
 			wordsClass="StealthWords";
+			text="Observe that position";
 			speech[]=
 			{
 				"ObserveThatPosition"
@@ -25492,6 +26418,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordOnTheWay_1
 		{
+			text="On the way";
 			speech[]=
 			{
 				"OnTheWay"
@@ -25508,6 +26435,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordOnTheWay_1
 		{
 			wordsClass="StealthWords";
+			text="On the way";
 			speech[]=
 			{
 				"OnTheWay"
@@ -25533,6 +26461,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordOpenThatDoor_1
 		{
+			text="Open that door";
 			speech[]=
 			{
 				"OpenThatDoor"
@@ -25549,6 +26478,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordOpenThatDoor_1
 		{
 			wordsClass="StealthWords";
+			text="Open that door";
 			speech[]=
 			{
 				"OpenThatDoor"
@@ -25572,6 +26502,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordOpenUpE_1
 		{
+			text="Open Up!";
 			speech[]=
 			{
 				"OpenUpE"
@@ -25597,6 +26528,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordOscarMike_1
 		{
+			text="Oscar Mike";
 			speech[]=
 			{
 				"OscarMike"
@@ -25613,6 +26545,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordOscarMike_1
 		{
 			wordsClass="StealthWords";
+			text="Oscar Mike";
 			speech[]=
 			{
 				"OscarMike"
@@ -25638,6 +26571,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordOutOfAmmoE_1
 		{
+			text="Out of ammo!";
 			speech[]=
 			{
 				"OutOfAmmoE"
@@ -25654,6 +26588,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordOutOfAmmoE_1
 		{
 			wordsClass="StealthWords";
+			text="Out of ammo!";
 			speech[]=
 			{
 				"OutOfAmmoE"
@@ -25677,6 +26612,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordOutOfFuelE_1
 		{
+			text="Out of fuel!";
 			speech[]=
 			{
 				"OutOfFuelE"
@@ -25702,6 +26638,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordOver_1
 		{
+			text="Over";
 			speech[]=
 			{
 				"Over"
@@ -25718,6 +26655,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordOver_1
 		{
 			wordsClass="StealthWords";
+			text="Over";
 			speech[]=
 			{
 				"Over"
@@ -25743,6 +26681,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordPilot_1
 		{
+			text="Pilot";
 			speech[]=
 			{
 				"Pilot"
@@ -25759,6 +26698,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordPilot_1
 		{
 			wordsClass="StealthWords";
+			text="Pilot";
 			speech[]=
 			{
 				"Pilot"
@@ -25784,6 +26724,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordPutOutThatFire_1
 		{
+			text="Put out that fire";
 			speech[]=
 			{
 				"PutOutThatFire"
@@ -25800,6 +26741,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordPutOutThatFire_1
 		{
 			wordsClass="StealthWords";
+			text="Put out that fire";
 			speech[]=
 			{
 				"PutOutThatFire"
@@ -25823,6 +26765,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordPlaceAMine_1
 		{
+			text="Place a mine";
 			speech[]=
 			{
 				"PlaceAMine"
@@ -25848,6 +26791,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordReady_1
 		{
+			text="Ready";
 			speech[]=
 			{
 				"Ready"
@@ -25864,6 +26808,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordReady_1
 		{
 			wordsClass="StealthWords";
+			text="Ready";
 			speech[]=
 			{
 				"Ready"
@@ -25889,6 +26834,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordReadyToFire_1
 		{
+			text="Ready to fire";
 			speech[]=
 			{
 				"ReadyToFire"
@@ -25905,6 +26851,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordReadyToFire_1
 		{
 			wordsClass="StealthWords";
+			text="Ready to fire";
 			speech[]=
 			{
 				"ReadyToFire"
@@ -25928,6 +26875,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordRegroupE_1
 		{
+			text="Regroup!";
 			speech[]=
 			{
 				"RegroupE"
@@ -25953,6 +26901,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordRepeatLast_1
 		{
+			text="Repeat last";
 			speech[]=
 			{
 				"RepeatLast"
@@ -25969,6 +26918,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordRepeatLast_1
 		{
 			wordsClass="StealthWords";
+			text="Repeat last";
 			speech[]=
 			{
 				"RepeatLast"
@@ -25992,6 +26942,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordReportPositionE_1
 		{
+			text="Report position!";
 			speech[]=
 			{
 				"ReportPositionE"
@@ -26017,6 +26968,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordPosition_1
 		{
+			text="Position";
 			speech[]=
 			{
 				"Position"
@@ -26033,6 +26985,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordPosition_1
 		{
 			wordsClass="StealthWords";
+			text="Position";
 			speech[]=
 			{
 				"Position"
@@ -26058,6 +27011,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordReportStatus_1
 		{
+			text="Report status";
 			speech[]=
 			{
 				"ReportStatus"
@@ -26074,6 +27028,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordReportStatus_1
 		{
 			wordsClass="StealthWords";
+			text="Report status";
 			speech[]=
 			{
 				"ReportStatus"
@@ -26099,6 +27054,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordRequestingSupportTo_1
 		{
+			text="Requesting support to";
 			speech[]=
 			{
 				"RequestingSupportTo"
@@ -26115,6 +27071,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordRequestingSupportTo_1
 		{
 			wordsClass="StealthWords";
+			text="Requesting support to";
 			speech[]=
 			{
 				"RequestingSupportTo"
@@ -26138,6 +27095,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordReturnTheFlag_1
 		{
+			text="Return the flag";
 			speech[]=
 			{
 				"ReturnTheFlag"
@@ -26161,6 +27119,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordReturnToFormationE_1
 		{
+			text="Return to formation!";
 			speech[]=
 			{
 				"ReturnToFormationE"
@@ -26184,6 +27143,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordReverse_1
 		{
+			text="Reverse";
 			speech[]=
 			{
 				"Reverse"
@@ -26207,6 +27167,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordRight_1
 		{
+			text="Right";
 			speech[]=
 			{
 				"Right"
@@ -26232,6 +27193,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordRoger_1
 		{
+			text="Roger";
 			speech[]=
 			{
 				"Roger"
@@ -26248,6 +27210,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordRoger_1
 		{
 			wordsClass="StealthWords";
+			text="Roger";
 			speech[]=
 			{
 				"Roger"
@@ -26273,6 +27236,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordRunningOutOfAmmo_1
 		{
+			text="Running out of ammo";
 			speech[]=
 			{
 				"RunningOutOfAmmo"
@@ -26289,6 +27253,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordRunningOutOfAmmo_1
 		{
 			wordsClass="StealthWords";
+			text="Running out of ammo";
 			speech[]=
 			{
 				"RunningOutOfAmmo"
@@ -26312,6 +27277,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordRunningOutOfFuel_1
 		{
+			text="Running out of fuel";
 			speech[]=
 			{
 				"RunningOutOfFuel"
@@ -26337,6 +27303,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordSayAgain_1
 		{
+			text="Say again";
 			speech[]=
 			{
 				"SayAgain"
@@ -26353,6 +27320,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordSayAgain_1
 		{
 			wordsClass="StealthWords";
+			text="Say again";
 			speech[]=
 			{
 				"SayAgain"
@@ -26378,6 +27346,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordScanHorizon_1
 		{
+			text="Scan horizon";
 			speech[]=
 			{
 				"ScanHorizon"
@@ -26394,6 +27363,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordScanHorizon_1
 		{
 			wordsClass="StealthWords";
+			text="Scan horizon";
 			speech[]=
 			{
 				"ScanHorizon"
@@ -26417,6 +27387,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordScratchOneE_1
 		{
+			text="Scratch one!";
 			speech[]=
 			{
 				"ScratchOneE"
@@ -26442,6 +27413,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordSetACharge_1
 		{
+			text="Set a charge";
 			speech[]=
 			{
 				"SetACharge"
@@ -26458,6 +27430,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordSetACharge_1
 		{
 			wordsClass="StealthWords";
+			text="Set a charge";
 			speech[]=
 			{
 				"SetACharge"
@@ -26483,6 +27456,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordSetTheTimer_1
 		{
+			text="Set the timer";
 			speech[]=
 			{
 				"SetTheTimer"
@@ -26499,6 +27473,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordSetTheTimer_1
 		{
 			wordsClass="StealthWords";
+			text="Set the timer";
 			speech[]=
 			{
 				"SetTheTimer"
@@ -26522,6 +27497,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordSlow_1
 		{
+			text="Slow";
 			speech[]=
 			{
 				"Slow"
@@ -26547,6 +27523,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordSolidCopy_1
 		{
+			text="Solid copy";
 			speech[]=
 			{
 				"SolidCopy"
@@ -26563,6 +27540,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordSolidCopy_1
 		{
 			wordsClass="StealthWords";
+			text="Solid copy";
 			speech[]=
 			{
 				"SolidCopy"
@@ -26586,6 +27564,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordSomebodyHelpMeE_1
 		{
+			text="Somebody help me!";
 			speech[]=
 			{
 				"SomebodyHelpMeE"
@@ -26611,6 +27590,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordStandingBy_1
 		{
+			text="Standing by";
 			speech[]=
 			{
 				"StandingBy"
@@ -26627,6 +27607,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordStandingBy_1
 		{
 			wordsClass="StealthWords";
+			text="Standing by";
 			speech[]=
 			{
 				"StandingBy"
@@ -26652,6 +27633,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordStandUp_1
 		{
+			text="Stand up";
 			speech[]=
 			{
 				"StandUp"
@@ -26668,6 +27650,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordStandUp_1
 		{
 			wordsClass="StealthWords";
+			text="Stand up";
 			speech[]=
 			{
 				"StandUp"
@@ -26693,6 +27676,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordStatusRedE_1
 		{
+			text="Status red!";
 			speech[]=
 			{
 				"StatusRedE"
@@ -26709,6 +27693,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordStatusRedE_1
 		{
 			wordsClass="StealthWords";
+			text="Status red!";
 			speech[]=
 			{
 				"StatusRedE"
@@ -26734,6 +27719,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordStayAlert_1
 		{
+			text="Stay alert";
 			speech[]=
 			{
 				"StayAlert"
@@ -26750,6 +27736,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordStayAlert_1
 		{
 			wordsClass="StealthWords";
+			text="Stay alert";
 			speech[]=
 			{
 				"StayAlert"
@@ -26775,6 +27762,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordStayBack_1
 		{
+			text="Stay back";
 			speech[]=
 			{
 				"StayBack"
@@ -26791,6 +27779,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordStayBack_1
 		{
 			wordsClass="StealthWords";
+			text="Stay back";
 			speech[]=
 			{
 				"StayBack"
@@ -26816,6 +27805,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordStayCrouched_1
 		{
+			text="Stay crouched";
 			speech[]=
 			{
 				"StayCrouched"
@@ -26832,6 +27822,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordStayCrouched_1
 		{
 			wordsClass="StealthWords";
+			text="Stay crouched";
 			speech[]=
 			{
 				"StayCrouched"
@@ -26855,6 +27846,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordStayInFormationE_1
 		{
+			text="Stay in formation!";
 			speech[]=
 			{
 				"StayInFormationE"
@@ -26880,6 +27872,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordStealth_1
 		{
+			text="Stealth";
 			speech[]=
 			{
 				"Stealth"
@@ -26896,6 +27889,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordStealth_1
 		{
 			wordsClass="StealthWords";
+			text="Stealth";
 			speech[]=
 			{
 				"Stealth"
@@ -26921,6 +27915,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordStopE_1
 		{
+			text="Stop!";
 			speech[]=
 			{
 				"StopE"
@@ -26937,6 +27932,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordStopE_1
 		{
 			wordsClass="StealthWords";
+			text="Stop!";
 			speech[]=
 			{
 				"StopE"
@@ -26962,6 +27958,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordSupporting_1
 		{
+			text="Supporting";
 			speech[]=
 			{
 				"Supporting"
@@ -26978,6 +27975,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordSupporting_1
 		{
 			wordsClass="StealthWords";
+			text="Supporting";
 			speech[]=
 			{
 				"Supporting"
@@ -27001,6 +27999,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordSuppressiveFireE_1
 		{
+			text="Suppressive fire!";
 			speech[]=
 			{
 				"SuppressiveFireE"
@@ -27026,6 +28025,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordTakeCoverE_1
 		{
+			text="Take cover!";
 			speech[]=
 			{
 				"TakeCoverE"
@@ -27042,6 +28042,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordTakeCoverE_1
 		{
 			wordsClass="StealthWords";
+			text="Take cover!";
 			speech[]=
 			{
 				"TakeCoverE"
@@ -27067,6 +28068,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordTakeThat_1
 		{
+			text="Take that";
 			speech[]=
 			{
 				"TakeThat"
@@ -27083,6 +28085,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordTakeThat_1
 		{
 			wordsClass="StealthWords";
+			text="Take that";
 			speech[]=
 			{
 				"TakeThat"
@@ -27108,6 +28111,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordTakeThatMine_1
 		{
+			text="Take that mine";
 			speech[]=
 			{
 				"TakeThatMine"
@@ -27124,6 +28128,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordTakeThatMine_1
 		{
 			wordsClass="StealthWords";
+			text="Take that mine";
 			speech[]=
 			{
 				"TakeThatMine"
@@ -27149,6 +28154,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordTakeTheFlag_1
 		{
+			text="Take the flag";
 			speech[]=
 			{
 				"TakeTheFlag"
@@ -27165,6 +28171,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordTakeTheFlag_1
 		{
 			wordsClass="StealthWords";
+			text="Take the flag";
 			speech[]=
 			{
 				"TakeTheFlag"
@@ -27190,6 +28197,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordTakingCommand_1
 		{
+			text="Taking command";
 			speech[]=
 			{
 				"TakingCommand"
@@ -27206,6 +28214,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordTakingCommand_1
 		{
 			wordsClass="StealthWords";
+			text="Taking command";
 			speech[]=
 			{
 				"TakingCommand"
@@ -27231,6 +28240,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordTakingFireE_1
 		{
+			text="Taking fire!";
 			speech[]=
 			{
 				"TakingFireE"
@@ -27247,6 +28257,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordTakingFireE_1
 		{
 			wordsClass="StealthWords";
+			text="Taking fire!";
 			speech[]=
 			{
 				"TakingFireE"
@@ -27270,6 +28281,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordTargetAcquired_1
 		{
+			text="Target acquired";
 			speech[]=
 			{
 				"TargetAcquired"
@@ -27295,6 +28307,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordTargetEliminated_1
 		{
+			text="Target eliminated";
 			speech[]=
 			{
 				"TargetEliminated"
@@ -27311,6 +28324,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordTargetEliminated_1
 		{
 			wordsClass="StealthWords";
+			text="Target eliminated";
 			speech[]=
 			{
 				"TargetEliminated"
@@ -27336,6 +28350,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordTargetInSight_1
 		{
+			text="Target in sight";
 			speech[]=
 			{
 				"TargetInSight"
@@ -27352,6 +28367,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordTargetInSight_1
 		{
 			wordsClass="StealthWords";
+			text="Target in sight";
 			speech[]=
 			{
 				"TargetInSight"
@@ -27377,6 +28393,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordTargetThat_1
 		{
+			text="Target that";
 			speech[]=
 			{
 				"TargetThat"
@@ -27393,6 +28410,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordTargetThat_1
 		{
 			wordsClass="StealthWords";
+			text="Target that";
 			speech[]=
 			{
 				"TargetThat"
@@ -27418,6 +28436,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordUnderFireE_1
 		{
+			text="Under fire!";
 			speech[]=
 			{
 				"UnderFireE"
@@ -27434,6 +28453,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordUnderFireE_1
 		{
 			wordsClass="StealthWords";
+			text="Under fire!";
 			speech[]=
 			{
 				"UnderFireE"
@@ -27459,6 +28479,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordUnderstood_1
 		{
+			text="Understood";
 			speech[]=
 			{
 				"Understood"
@@ -27475,6 +28496,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordUnderstood_1
 		{
 			wordsClass="StealthWords";
+			text="Understood";
 			speech[]=
 			{
 				"Understood"
@@ -27500,6 +28522,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordWaiting_1
 		{
+			text="Waiting";
 			speech[]=
 			{
 				"Waiting"
@@ -27516,6 +28539,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordWaiting_1
 		{
 			wordsClass="StealthWords";
+			text="Waiting";
 			speech[]=
 			{
 				"Waiting"
@@ -27541,6 +28565,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordWaitForMe_1
 		{
+			text="Wait for me";
 			speech[]=
 			{
 				"WaitForMe"
@@ -27557,6 +28582,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordWaitForMe_1
 		{
 			wordsClass="StealthWords";
+			text="Wait for me";
 			speech[]=
 			{
 				"WaitForMe"
@@ -27582,6 +28608,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordWatch_1
 		{
+			text="Watch";
 			speech[]=
 			{
 				"Watch"
@@ -27598,6 +28625,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordWatch_1
 		{
 			wordsClass="StealthWords";
+			text="Watch";
 			speech[]=
 			{
 				"Watch"
@@ -27623,6 +28651,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordWatchThat_1
 		{
+			text="Watch that";
 			speech[]=
 			{
 				"WatchThat"
@@ -27639,6 +28668,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordWatchThat_1
 		{
 			wordsClass="StealthWords";
+			text="Watch that";
 			speech[]=
 			{
 				"WatchThat"
@@ -27664,6 +28694,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordWeaponsFree_1
 		{
+			text="Weapons free";
 			speech[]=
 			{
 				"WeaponsFree"
@@ -27680,6 +28711,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordWeaponsFree_1
 		{
 			wordsClass="StealthWords";
+			text="Weapons free";
 			speech[]=
 			{
 				"WeaponsFree"
@@ -27703,6 +28735,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordWeaponsHot_1
 		{
+			text="Weapons hot";
 			speech[]=
 			{
 				"WeaponsHot"
@@ -27728,6 +28761,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordWeLost_1
 		{
+			text="We lost";
 			speech[]=
 			{
 				"WeLost"
@@ -27744,6 +28778,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordWeLost_1
 		{
 			wordsClass="StealthWords";
+			text="We lost";
 			speech[]=
 			{
 				"WeLost"
@@ -27769,6 +28804,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordWhereAreYouQ_1
 		{
+			text="Where are you?";
 			speech[]=
 			{
 				"WhereAreYouQ"
@@ -27785,6 +28821,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordWhereAreYouQ_1
 		{
 			wordsClass="StealthWords";
+			text="Where are you?";
 			speech[]=
 			{
 				"WhereAreYouQ"
@@ -27810,6 +28847,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordWoundedE_1
 		{
+			text="Wounded!";
 			speech[]=
 			{
 				"WoundedE"
@@ -27826,6 +28864,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordWoundedE_1
 		{
 			wordsClass="StealthWords";
+			text="Wounded!";
 			speech[]=
 			{
 				"WoundedE"
@@ -27851,6 +28890,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordAssembleThat_1
 		{
+			text="Assemble that";
 			speech[]=
 			{
 				"AssembleThat"
@@ -27867,6 +28907,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordAssembleThat_1
 		{
 			wordsClass="StealthWords";
+			text="Assemble that";
 			speech[]=
 			{
 				"AssembleThat"
@@ -27892,6 +28933,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordDisassembleThat_1
 		{
+			text="Disassemble that";
 			speech[]=
 			{
 				"DisassembleThat"
@@ -27908,6 +28950,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordDisassembleThat_1
 		{
 			wordsClass="StealthWords";
+			text="Disassemble that";
 			speech[]=
 			{
 				"DisassembleThat"
@@ -27933,6 +28976,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordFlashlightsOn_1
 		{
+			text="Flashlights on";
 			speech[]=
 			{
 				"FlashlightsOn"
@@ -27949,6 +28993,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordFlashlightsOn_1
 		{
 			wordsClass="StealthWords";
+			text="Flashlights on";
 			speech[]=
 			{
 				"FlashlightsOn"
@@ -27974,6 +29019,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordFlashlightsOff_1
 		{
+			text="Flashlights off";
 			speech[]=
 			{
 				"FlashlightsOff"
@@ -27990,6 +29036,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordFlashlightsOff_1
 		{
 			wordsClass="StealthWords";
+			text="Flashlights off";
 			speech[]=
 			{
 				"FlashlightsOff"
@@ -28015,6 +29062,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordLasersOn_1
 		{
+			text="Lasers on";
 			speech[]=
 			{
 				"LasersOn"
@@ -28031,6 +29079,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordLasersOn_1
 		{
 			wordsClass="StealthWords";
+			text="Lasers on";
 			speech[]=
 			{
 				"LasersOn"
@@ -28056,6 +29105,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordLasersOff_1
 		{
+			text="Lasers off";
 			speech[]=
 			{
 				"LasersOff"
@@ -28072,6 +29122,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordLasersOff_1
 		{
 			wordsClass="StealthWords";
+			text="Lasers off";
 			speech[]=
 			{
 				"LasersOff"
@@ -28097,6 +29148,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordFuckE_1
 		{
+			text="Fuck!";
 			speech[]=
 			{
 				"FuckE"
@@ -28113,6 +29165,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordFuckE_1
 		{
 			wordsClass="StealthWords";
+			text="Fuck!";
 			speech[]=
 			{
 				"FuckE"
@@ -28138,6 +29191,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordEnemy_1
 		{
+			text="enemy";
 			speech[]=
 			{
 				"Enemy"
@@ -28154,6 +29208,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordEnemy_1
 		{
 			wordsClass="StealthWords";
+			text="enemy";
 			speech[]=
 			{
 				"Enemy"
@@ -28179,6 +29234,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordUnknown_1
 		{
+			text="unknown";
 			speech[]=
 			{
 				"Unknown"
@@ -28195,6 +29251,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordUnknown_1
 		{
 			wordsClass="StealthWords";
+			text="unknown";
 			speech[]=
 			{
 				"Unknown"
@@ -28220,6 +29277,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordFriendly_1
 		{
+			text="Friendly";
 			speech[]=
 			{
 				"Friendly"
@@ -28236,6 +29294,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordFriendly_1
 		{
 			wordsClass="StealthWords";
+			text="Friendly";
 			speech[]=
 			{
 				"Friendly"
@@ -28261,6 +29320,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordNeutral_1
 		{
+			text="neutral";
 			speech[]=
 			{
 				"Neutral"
@@ -28277,6 +29337,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordNeutral_1
 		{
 			wordsClass="StealthWords";
+			text="neutral";
 			speech[]=
 			{
 				"Neutral"
@@ -28302,6 +29363,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordOf_1
 		{
+			text="of";
 			speech[]=
 			{
 				"Of"
@@ -28318,6 +29380,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordOf_1
 		{
 			wordsClass="StealthWords";
+			text="of";
 			speech[]=
 			{
 				"Of"
@@ -28343,6 +29406,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordOfYou_1
 		{
+			text="of you";
 			speech[]=
 			{
 				"OfYou"
@@ -28359,6 +29423,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordOfYou_1
 		{
 			wordsClass="StealthWords";
+			text="of you";
 			speech[]=
 			{
 				"OfYou"
@@ -28384,6 +29449,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordOfMe_1
 		{
+			text="of me";
 			speech[]=
 			{
 				"OfMe"
@@ -28400,6 +29466,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordOfMe_1
 		{
 			wordsClass="StealthWords";
+			text="of me";
 			speech[]=
 			{
 				"OfMe"
@@ -28425,6 +29492,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordMove_1
 		{
+			text="move";
 			speech[]=
 			{
 				"Move"
@@ -28441,6 +29509,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordMove_1
 		{
 			wordsClass="StealthWords";
+			text="move";
 			speech[]=
 			{
 				"Move"
@@ -28466,6 +29535,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordMoveTo_1
 		{
+			text="move to";
 			speech[]=
 			{
 				"MoveTo"
@@ -28482,6 +29552,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordMoveTo_1
 		{
 			wordsClass="StealthWords";
+			text="move to";
 			speech[]=
 			{
 				"MoveTo"
@@ -28507,6 +29578,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordMoveToThat_1
 		{
+			text="move to that";
 			speech[]=
 			{
 				"MoveToThat"
@@ -28523,6 +29595,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordMoveToThat_1
 		{
 			wordsClass="StealthWords";
+			text="move to that";
 			speech[]=
 			{
 				"MoveToThat"
@@ -28548,6 +29621,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordGoTo_1
 		{
+			text="go to";
 			speech[]=
 			{
 				"GoTo"
@@ -28564,6 +29638,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordGoTo_1
 		{
 			wordsClass="StealthWords";
+			text="go to";
 			speech[]=
 			{
 				"GoTo"
@@ -28589,6 +29664,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordGoToThat_1
 		{
+			text="go to that";
 			speech[]=
 			{
 				"GoToThat"
@@ -28605,6 +29681,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordGoToThat_1
 		{
 			wordsClass="StealthWords";
+			text="go to that";
 			speech[]=
 			{
 				"GoToThat"
@@ -28630,6 +29707,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordThat_1
 		{
+			text="that";
 			speech[]=
 			{
 				"That"
@@ -28646,6 +29724,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordThat_1
 		{
 			wordsClass="StealthWords";
+			text="that";
 			speech[]=
 			{
 				"That"
@@ -28671,6 +29750,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordToOur_1
 		{
+			text="to our";
 			speech[]=
 			{
 				"ToOur"
@@ -28687,6 +29767,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordToOur_1
 		{
 			wordsClass="StealthWords";
+			text="to our";
 			speech[]=
 			{
 				"ToOur"
@@ -28712,6 +29793,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordToThe_1
 		{
+			text="to the";
 			speech[]=
 			{
 				"ToThe"
@@ -28728,6 +29810,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordToThe_1
 		{
 			wordsClass="StealthWords";
+			text="to the";
 			speech[]=
 			{
 				"ToThe"
@@ -28753,6 +29836,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordFromMe_1
 		{
+			text="from me";
 			speech[]=
 			{
 				"FromMe"
@@ -28769,6 +29853,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordFromMe_1
 		{
 			wordsClass="StealthWords";
+			text="from me";
 			speech[]=
 			{
 				"FromMe"
@@ -28794,6 +29879,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordOfYourPosition_1
 		{
+			text="of your position";
 			speech[]=
 			{
 				"OfYourPosition"
@@ -28810,6 +29896,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordOfYourPosition_1
 		{
 			wordsClass="StealthWords";
+			text="of your position";
 			speech[]=
 			{
 				"OfYourPosition"
@@ -28835,6 +29922,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordIn_1
 		{
+			text="in";
 			speech[]=
 			{
 				"In"
@@ -28851,6 +29939,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordIn_1
 		{
 			wordsClass="StealthWords";
+			text="in";
 			speech[]=
 			{
 				"In"
@@ -28876,6 +29965,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordUs_1
 		{
+			text="us";
 			speech[]=
 			{
 				"Us"
@@ -28892,6 +29982,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordUs_1
 		{
 			wordsClass="StealthWords";
+			text="us";
 			speech[]=
 			{
 				"Us"
@@ -28917,6 +30008,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordinFrontOf_1
 		{
+			text="in front of";
 			speech[]=
 			{
 				"inFrontOf"
@@ -28933,6 +30025,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordinFrontOf_1
 		{
 			wordsClass="StealthWords";
+			text="in front of";
 			speech[]=
 			{
 				"inFrontOf"
@@ -28958,6 +30051,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordrightOf_1
 		{
+			text="right of";
 			speech[]=
 			{
 				"rightOf"
@@ -28974,6 +30068,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordrightOf_1
 		{
 			wordsClass="StealthWords";
+			text="right of";
 			speech[]=
 			{
 				"rightOf"
@@ -28999,6 +30094,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Wordbehind_1
 		{
+			text="behind";
 			speech[]=
 			{
 				"behind"
@@ -29015,6 +30111,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class Wordbehind_1
 		{
 			wordsClass="StealthWords";
+			text="behind";
 			speech[]=
 			{
 				"behind"
@@ -29040,6 +30137,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordleftOf_1
 		{
+			text="left of";
 			speech[]=
 			{
 				"leftOf"
@@ -29056,6 +30154,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordleftOf_1
 		{
 			wordsClass="StealthWords";
+			text="left of";
 			speech[]=
 			{
 				"leftOf"
@@ -29081,6 +30180,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordrightFlank_1
 		{
+			text="right flank";
 			speech[]=
 			{
 				"rightFlank"
@@ -29097,6 +30197,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordrightFlank_1
 		{
 			wordsClass="StealthWords";
+			text="right flank";
 			speech[]=
 			{
 				"rightFlank"
@@ -29122,6 +30223,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordleftFlank_1
 		{
+			text="left flank";
 			speech[]=
 			{
 				"leftFlank"
@@ -29138,6 +30240,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordleftFlank_1
 		{
 			wordsClass="StealthWords";
+			text="left flank";
 			speech[]=
 			{
 				"leftFlank"
@@ -29163,6 +30266,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WorddangerCloseTo_1
 		{
+			text="dangerously close to";
 			speech[]=
 			{
 				"dangerCloseTo"
@@ -29179,6 +30283,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WorddangerCloseTo_1
 		{
 			wordsClass="StealthWords";
+			text="dangerously close to";
 			speech[]=
 			{
 				"dangerCloseTo"
@@ -29204,6 +30309,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordcloseTo_1
 		{
+			text="close to";
 			speech[]=
 			{
 				"closeTo"
@@ -29220,6 +30326,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordcloseTo_1
 		{
 			wordsClass="StealthWords";
+			text="close to";
 			speech[]=
 			{
 				"closeTo"
@@ -29245,6 +30352,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordnotFarFrom_1
 		{
+			text="not far from";
 			speech[]=
 			{
 				"notFarFrom"
@@ -29261,6 +30369,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordnotFarFrom_1
 		{
 			wordsClass="StealthWords";
+			text="not far from";
 			speech[]=
 			{
 				"notFarFrom"
@@ -29286,6 +30395,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordfarFrom_1
 		{
+			text="far from";
 			speech[]=
 			{
 				"farFrom"
@@ -29302,6 +30412,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordfarFrom_1
 		{
 			wordsClass="StealthWords";
+			text="far from";
 			speech[]=
 			{
 				"farFrom"
@@ -29327,6 +30438,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordJust_1
 		{
+			text="just";
 			speech[]=
 			{
 				"Just"
@@ -29343,6 +30455,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordJust_1
 		{
 			wordsClass="StealthWords";
+			text="just";
 			speech[]=
 			{
 				"Just"
@@ -29368,6 +30481,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordWay_1
 		{
+			text="way";
 			speech[]=
 			{
 				"Way"
@@ -29384,6 +30498,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordWay_1
 		{
 			wordsClass="StealthWords";
+			text="way";
 			speech[]=
 			{
 				"Way"
@@ -29409,6 +30524,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WorddamnClose_1
 		{
+			text="damn close";
 			speech[]=
 			{
 				"damnClose"
@@ -29425,6 +30541,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WorddamnClose_1
 		{
 			wordsClass="StealthWords";
+			text="damn close";
 			speech[]=
 			{
 				"damnClose"
@@ -29450,6 +30567,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordAll_1
 		{
+			text="all";
 			speech[]=
 			{
 				"All"
@@ -29466,6 +30584,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordAll_1
 		{
 			wordsClass="StealthWords";
+			text="all";
 			speech[]=
 			{
 				"All"
@@ -29491,6 +30610,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordZero_1
 		{
+			text="zero";
 			speech[]=
 			{
 				"Zero"
@@ -29507,6 +30627,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordZero_1
 		{
 			wordsClass="StealthWords";
+			text="zero";
 			speech[]=
 			{
 				"Zero"
@@ -29532,6 +30653,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordOne_1
 		{
+			text="one";
 			speech[]=
 			{
 				"One"
@@ -29548,6 +30670,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordOne_1
 		{
 			wordsClass="StealthWords";
+			text="one";
 			speech[]=
 			{
 				"One"
@@ -29573,6 +30696,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordTwo_1
 		{
+			text="two";
 			speech[]=
 			{
 				"Two"
@@ -29589,6 +30713,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordTwo_1
 		{
 			wordsClass="StealthWords";
+			text="two";
 			speech[]=
 			{
 				"Two"
@@ -29614,6 +30739,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordThree_1
 		{
+			text="three";
 			speech[]=
 			{
 				"Three"
@@ -29630,6 +30756,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordThree_1
 		{
 			wordsClass="StealthWords";
+			text="three";
 			speech[]=
 			{
 				"Three"
@@ -29655,6 +30782,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordFour_1
 		{
+			text="four";
 			speech[]=
 			{
 				"Four"
@@ -29671,6 +30799,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordFour_1
 		{
 			wordsClass="StealthWords";
+			text="four";
 			speech[]=
 			{
 				"Four"
@@ -29696,6 +30825,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordFive_1
 		{
+			text="five";
 			speech[]=
 			{
 				"Five"
@@ -29712,6 +30842,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordFive_1
 		{
 			wordsClass="StealthWords";
+			text="five";
 			speech[]=
 			{
 				"Five"
@@ -29737,6 +30868,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordSix_1
 		{
+			text="six";
 			speech[]=
 			{
 				"Six"
@@ -29753,6 +30885,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordSix_1
 		{
 			wordsClass="StealthWords";
+			text="six";
 			speech[]=
 			{
 				"Six"
@@ -29778,6 +30911,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordSeven_1
 		{
+			text="seven";
 			speech[]=
 			{
 				"Seven"
@@ -29794,6 +30928,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordSeven_1
 		{
 			wordsClass="StealthWords";
+			text="seven";
 			speech[]=
 			{
 				"Seven"
@@ -29819,6 +30954,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordEight_1
 		{
+			text="eight";
 			speech[]=
 			{
 				"Eight"
@@ -29835,6 +30971,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordEight_1
 		{
 			wordsClass="StealthWords";
+			text="eight";
 			speech[]=
 			{
 				"Eight"
@@ -29860,6 +30997,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Wordnine_1
 		{
+			text="niner";
 			speech[]=
 			{
 				"nine"
@@ -29876,6 +31014,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class Wordnine_1
 		{
 			wordsClass="StealthWords";
+			text="niner";
 			speech[]=
 			{
 				"nine"
@@ -29901,6 +31040,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordTen_1
 		{
+			text="ten";
 			speech[]=
 			{
 				"Ten"
@@ -29917,6 +31057,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordTen_1
 		{
 			wordsClass="StealthWords";
+			text="ten";
 			speech[]=
 			{
 				"Ten"
@@ -29942,6 +31083,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordEleven_1
 		{
+			text="eleven";
 			speech[]=
 			{
 				"Eleven"
@@ -29958,6 +31100,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordEleven_1
 		{
 			wordsClass="StealthWords";
+			text="eleven";
 			speech[]=
 			{
 				"Eleven"
@@ -29983,6 +31126,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordTwelve_1
 		{
+			text="twelve";
 			speech[]=
 			{
 				"Twelve"
@@ -29999,6 +31143,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordTwelve_1
 		{
 			wordsClass="StealthWords";
+			text="twelve";
 			speech[]=
 			{
 				"Twelve"
@@ -30024,6 +31169,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordThirteen_1
 		{
+			text="thirteen";
 			speech[]=
 			{
 				"Thirteen"
@@ -30040,6 +31186,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordThirteen_1
 		{
 			wordsClass="StealthWords";
+			text="thirteen";
 			speech[]=
 			{
 				"Thirteen"
@@ -30065,6 +31212,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordFourteen_1
 		{
+			text="fourteen";
 			speech[]=
 			{
 				"Fourteen"
@@ -30081,6 +31229,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordFourteen_1
 		{
 			wordsClass="StealthWords";
+			text="fourteen";
 			speech[]=
 			{
 				"Fourteen"
@@ -30106,6 +31255,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordFifteen_1
 		{
+			text="fifteen";
 			speech[]=
 			{
 				"Fifteen"
@@ -30122,6 +31272,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordFifteen_1
 		{
 			wordsClass="StealthWords";
+			text="fifteen";
 			speech[]=
 			{
 				"Fifteen"
@@ -30147,6 +31298,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordSixteen_1
 		{
+			text="sixteen";
 			speech[]=
 			{
 				"Sixteen"
@@ -30163,6 +31315,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordSixteen_1
 		{
 			wordsClass="StealthWords";
+			text="sixteen";
 			speech[]=
 			{
 				"Sixteen"
@@ -30188,6 +31341,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordSeventeen_1
 		{
+			text="seventeen";
 			speech[]=
 			{
 				"Seventeen"
@@ -30204,6 +31358,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordSeventeen_1
 		{
 			wordsClass="StealthWords";
+			text="seventeen";
 			speech[]=
 			{
 				"Seventeen"
@@ -30229,6 +31384,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordEighteen_1
 		{
+			text="eighteen";
 			speech[]=
 			{
 				"Eighteen"
@@ -30245,6 +31401,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordEighteen_1
 		{
 			wordsClass="StealthWords";
+			text="eighteen";
 			speech[]=
 			{
 				"Eighteen"
@@ -30270,6 +31427,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordNineteen_1
 		{
+			text="nineteen";
 			speech[]=
 			{
 				"Nineteen"
@@ -30286,6 +31444,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordNineteen_1
 		{
 			wordsClass="StealthWords";
+			text="nineteen";
 			speech[]=
 			{
 				"Nineteen"
@@ -30311,6 +31470,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordTwenty_1
 		{
+			text="twenty";
 			speech[]=
 			{
 				"Twenty"
@@ -30327,6 +31487,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordTwenty_1
 		{
 			wordsClass="StealthWords";
+			text="twenty";
 			speech[]=
 			{
 				"Twenty"
@@ -30352,6 +31513,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordThirty_1
 		{
+			text="thirty";
 			speech[]=
 			{
 				"Thirty"
@@ -30368,6 +31530,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordThirty_1
 		{
 			wordsClass="StealthWords";
+			text="thirty";
 			speech[]=
 			{
 				"Thirty"
@@ -30393,6 +31556,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordForty_1
 		{
+			text="forty";
 			speech[]=
 			{
 				"Forty"
@@ -30409,6 +31573,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordForty_1
 		{
 			wordsClass="StealthWords";
+			text="forty";
 			speech[]=
 			{
 				"Forty"
@@ -30434,6 +31599,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordFifty_1
 		{
+			text="fifty";
 			speech[]=
 			{
 				"Fifty"
@@ -30450,6 +31616,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordFifty_1
 		{
 			wordsClass="StealthWords";
+			text="fifty";
 			speech[]=
 			{
 				"Fifty"
@@ -30475,6 +31642,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordSixty_1
 		{
+			text="sixty";
 			speech[]=
 			{
 				"Sixty"
@@ -30491,6 +31659,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordSixty_1
 		{
 			wordsClass="StealthWords";
+			text="sixty";
 			speech[]=
 			{
 				"Sixty"
@@ -30516,6 +31685,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordSeventy_1
 		{
+			text="seventy";
 			speech[]=
 			{
 				"Seventy"
@@ -30532,6 +31702,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordSeventy_1
 		{
 			wordsClass="StealthWords";
+			text="seventy";
 			speech[]=
 			{
 				"Seventy"
@@ -30557,6 +31728,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordEighty_1
 		{
+			text="eighty";
 			speech[]=
 			{
 				"Eighty"
@@ -30573,6 +31745,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordEighty_1
 		{
 			wordsClass="StealthWords";
+			text="eighty";
 			speech[]=
 			{
 				"Eighty"
@@ -30598,6 +31771,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordNinety_1
 		{
+			text="ninety";
 			speech[]=
 			{
 				"Ninety"
@@ -30614,6 +31788,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordNinety_1
 		{
 			wordsClass="StealthWords";
+			text="ninety";
 			speech[]=
 			{
 				"Ninety"
@@ -30639,6 +31814,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordHundred_1
 		{
+			text="hundred";
 			speech[]=
 			{
 				"Hundred"
@@ -30655,6 +31831,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordHundred_1
 		{
 			wordsClass="StealthWords";
+			text="hundred";
 			speech[]=
 			{
 				"Hundred"
@@ -30680,6 +31857,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Wordzero2_1
 		{
+			text="zero";
 			speech[]=
 			{
 				"zero2"
@@ -30696,6 +31874,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class Wordzero2_1
 		{
 			wordsClass="StealthWords";
+			text="zero";
 			speech[]=
 			{
 				"zero2"
@@ -30721,6 +31900,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Wordone2_1
 		{
+			text="one";
 			speech[]=
 			{
 				"one2"
@@ -30737,6 +31917,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class Wordone2_1
 		{
 			wordsClass="StealthWords";
+			text="one";
 			speech[]=
 			{
 				"one2"
@@ -30762,6 +31943,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Wordtwo2_1
 		{
+			text="two";
 			speech[]=
 			{
 				"two2"
@@ -30778,6 +31960,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class Wordtwo2_1
 		{
 			wordsClass="StealthWords";
+			text="two";
 			speech[]=
 			{
 				"two2"
@@ -30803,6 +31986,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Wordthree2_1
 		{
+			text="three";
 			speech[]=
 			{
 				"three2"
@@ -30819,6 +32003,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class Wordthree2_1
 		{
 			wordsClass="StealthWords";
+			text="three";
 			speech[]=
 			{
 				"three2"
@@ -30844,6 +32029,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Wordfour2_1
 		{
+			text="four";
 			speech[]=
 			{
 				"four2"
@@ -30860,6 +32046,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class Wordfour2_1
 		{
 			wordsClass="StealthWords";
+			text="four";
 			speech[]=
 			{
 				"four2"
@@ -30885,6 +32072,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Wordfive2_1
 		{
+			text="five";
 			speech[]=
 			{
 				"five2"
@@ -30901,6 +32089,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class Wordfive2_1
 		{
 			wordsClass="StealthWords";
+			text="five";
 			speech[]=
 			{
 				"five2"
@@ -30926,6 +32115,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Wordsix2_1
 		{
+			text="six";
 			speech[]=
 			{
 				"six2"
@@ -30942,6 +32132,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class Wordsix2_1
 		{
 			wordsClass="StealthWords";
+			text="six";
 			speech[]=
 			{
 				"six2"
@@ -30967,6 +32158,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Wordseven2_1
 		{
+			text="seven";
 			speech[]=
 			{
 				"seven2"
@@ -30983,6 +32175,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class Wordseven2_1
 		{
 			wordsClass="StealthWords";
+			text="seven";
 			speech[]=
 			{
 				"seven2"
@@ -31008,6 +32201,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Wordeight2_1
 		{
+			text="eight";
 			speech[]=
 			{
 				"eight2"
@@ -31024,6 +32218,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class Wordeight2_1
 		{
 			wordsClass="StealthWords";
+			text="eight";
 			speech[]=
 			{
 				"eight2"
@@ -31049,6 +32244,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Wordnine2_1
 		{
+			text="niner";
 			speech[]=
 			{
 				"nine2"
@@ -31065,6 +32261,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class Wordnine2_1
 		{
 			wordsClass="StealthWords";
+			text="niner";
 			speech[]=
 			{
 				"nine2"
@@ -31090,6 +32287,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordAlpha_1
 		{
+			text="alpha";
 			speech[]=
 			{
 				"Alpha"
@@ -31106,6 +32304,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordAlpha_1
 		{
 			wordsClass="StealthWords";
+			text="alpha";
 			speech[]=
 			{
 				"Alpha"
@@ -31131,6 +32330,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordBravo_1
 		{
+			text="bravo";
 			speech[]=
 			{
 				"Bravo"
@@ -31147,6 +32347,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordBravo_1
 		{
 			wordsClass="StealthWords";
+			text="bravo";
 			speech[]=
 			{
 				"Bravo"
@@ -31172,6 +32373,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordCharlie_1
 		{
+			text="charlie";
 			speech[]=
 			{
 				"Charlie"
@@ -31188,6 +32390,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordCharlie_1
 		{
 			wordsClass="StealthWords";
+			text="charlie";
 			speech[]=
 			{
 				"Charlie"
@@ -31213,6 +32416,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordDelta_1
 		{
+			text="delta";
 			speech[]=
 			{
 				"Delta"
@@ -31229,6 +32433,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordDelta_1
 		{
 			wordsClass="StealthWords";
+			text="delta";
 			speech[]=
 			{
 				"Delta"
@@ -31254,6 +32459,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordEcho_1
 		{
+			text="echo";
 			speech[]=
 			{
 				"Echo"
@@ -31270,6 +32476,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordEcho_1
 		{
 			wordsClass="StealthWords";
+			text="echo";
 			speech[]=
 			{
 				"Echo"
@@ -31295,6 +32502,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordFotxtrot_1
 		{
+			text="fotxtrot";
 			speech[]=
 			{
 				"Fotxtrot"
@@ -31311,6 +32519,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordFotxtrot_1
 		{
 			wordsClass="StealthWords";
+			text="fotxtrot";
 			speech[]=
 			{
 				"Fotxtrot"
@@ -31336,6 +32545,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordGolf_1
 		{
+			text="golf";
 			speech[]=
 			{
 				"Golf"
@@ -31352,6 +32562,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordGolf_1
 		{
 			wordsClass="StealthWords";
+			text="golf";
 			speech[]=
 			{
 				"Golf"
@@ -31377,6 +32588,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordHotel_1
 		{
+			text="hotel";
 			speech[]=
 			{
 				"Hotel"
@@ -31393,6 +32605,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordHotel_1
 		{
 			wordsClass="StealthWords";
+			text="hotel";
 			speech[]=
 			{
 				"Hotel"
@@ -31418,6 +32631,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordIndia_1
 		{
+			text="india";
 			speech[]=
 			{
 				"India"
@@ -31434,6 +32648,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordIndia_1
 		{
 			wordsClass="StealthWords";
+			text="india";
 			speech[]=
 			{
 				"India"
@@ -31459,6 +32674,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordJuliet_1
 		{
+			text="juliet";
 			speech[]=
 			{
 				"Juliet"
@@ -31475,6 +32691,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordJuliet_1
 		{
 			wordsClass="StealthWords";
+			text="juliet";
 			speech[]=
 			{
 				"Juliet"
@@ -31500,6 +32717,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordKilo_1
 		{
+			text="kilo";
 			speech[]=
 			{
 				"Kilo"
@@ -31516,6 +32734,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordKilo_1
 		{
 			wordsClass="StealthWords";
+			text="kilo";
 			speech[]=
 			{
 				"Kilo"
@@ -31541,6 +32760,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordLima_1
 		{
+			text="lima";
 			speech[]=
 			{
 				"Lima"
@@ -31557,6 +32777,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordLima_1
 		{
 			wordsClass="StealthWords";
+			text="lima";
 			speech[]=
 			{
 				"Lima"
@@ -31582,6 +32803,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordMike_1
 		{
+			text="mike";
 			speech[]=
 			{
 				"Mike"
@@ -31598,6 +32820,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordMike_1
 		{
 			wordsClass="StealthWords";
+			text="mike";
 			speech[]=
 			{
 				"Mike"
@@ -31623,6 +32846,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordNovember_1
 		{
+			text="november";
 			speech[]=
 			{
 				"November"
@@ -31639,6 +32863,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordNovember_1
 		{
 			wordsClass="StealthWords";
+			text="november";
 			speech[]=
 			{
 				"November"
@@ -31664,6 +32889,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordOscar_1
 		{
+			text="oscar";
 			speech[]=
 			{
 				"Oscar"
@@ -31680,6 +32906,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordOscar_1
 		{
 			wordsClass="StealthWords";
+			text="oscar";
 			speech[]=
 			{
 				"Oscar"
@@ -31705,6 +32932,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordPapa_1
 		{
+			text="papa";
 			speech[]=
 			{
 				"Papa"
@@ -31721,6 +32949,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordPapa_1
 		{
 			wordsClass="StealthWords";
+			text="papa";
 			speech[]=
 			{
 				"Papa"
@@ -31746,6 +32975,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordQuebec_1
 		{
+			text="quebec";
 			speech[]=
 			{
 				"Quebec"
@@ -31762,6 +32992,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordQuebec_1
 		{
 			wordsClass="StealthWords";
+			text="quebec";
 			speech[]=
 			{
 				"Quebec"
@@ -31787,6 +33018,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordRomeo_1
 		{
+			text="romeo";
 			speech[]=
 			{
 				"Romeo"
@@ -31803,6 +33035,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordRomeo_1
 		{
 			wordsClass="StealthWords";
+			text="romeo";
 			speech[]=
 			{
 				"Romeo"
@@ -31828,6 +33061,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordSierra_1
 		{
+			text="sierra";
 			speech[]=
 			{
 				"Sierra"
@@ -31844,6 +33078,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordSierra_1
 		{
 			wordsClass="StealthWords";
+			text="sierra";
 			speech[]=
 			{
 				"Sierra"
@@ -31869,6 +33104,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordTango_1
 		{
+			text="tango";
 			speech[]=
 			{
 				"Tango"
@@ -31885,6 +33121,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordTango_1
 		{
 			wordsClass="StealthWords";
+			text="tango";
 			speech[]=
 			{
 				"Tango"
@@ -31910,6 +33147,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordUniform_1
 		{
+			text="uniform";
 			speech[]=
 			{
 				"Uniform"
@@ -31926,6 +33164,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordUniform_1
 		{
 			wordsClass="StealthWords";
+			text="uniform";
 			speech[]=
 			{
 				"Uniform"
@@ -31951,6 +33190,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordVictor_1
 		{
+			text="victor";
 			speech[]=
 			{
 				"Victor"
@@ -31967,6 +33207,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordVictor_1
 		{
 			wordsClass="StealthWords";
+			text="victor";
 			speech[]=
 			{
 				"Victor"
@@ -31992,6 +33233,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordWhiskey_1
 		{
+			text="whiskey";
 			speech[]=
 			{
 				"Whiskey"
@@ -32008,6 +33250,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordWhiskey_1
 		{
 			wordsClass="StealthWords";
+			text="whiskey";
 			speech[]=
 			{
 				"Whiskey"
@@ -32033,6 +33276,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordXray_1
 		{
+			text="xray";
 			speech[]=
 			{
 				"Xray"
@@ -32049,6 +33293,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordXray_1
 		{
 			wordsClass="StealthWords";
+			text="xray";
 			speech[]=
 			{
 				"Xray"
@@ -32074,6 +33319,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordYankee_1
 		{
+			text="yankee";
 			speech[]=
 			{
 				"Yankee"
@@ -32090,6 +33336,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordYankee_1
 		{
 			wordsClass="StealthWords";
+			text="yankee";
 			speech[]=
 			{
 				"Yankee"
@@ -32115,6 +33362,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordZulu_1
 		{
+			text="zulu";
 			speech[]=
 			{
 				"Zulu"
@@ -32131,6 +33379,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordZulu_1
 		{
 			wordsClass="StealthWords";
+			text="zulu";
 			speech[]=
 			{
 				"Zulu"
@@ -32154,6 +33403,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordAngel_1
 		{
+			text="Angel";
 			speech[]=
 			{
 				"Angel"
@@ -32177,6 +33427,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordBride_1
 		{
+			text="Bride";
 			speech[]=
 			{
 				"Bride"
@@ -32200,6 +33451,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordChocolate_1
 		{
+			text="Chocolate";
 			speech[]=
 			{
 				"Chocolate"
@@ -32223,6 +33475,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordDad_1
 		{
+			text="Dad";
 			speech[]=
 			{
 				"Dad"
@@ -32246,6 +33499,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordHQ_1
 		{
+			text="HQ";
 			speech[]=
 			{
 				"HQ"
@@ -32269,6 +33523,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordFrostbite_1
 		{
+			text="Frostbite";
 			speech[]=
 			{
 				"Frostbite"
@@ -32292,6 +33547,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordBase_1
 		{
+			text="Base";
 			speech[]=
 			{
 				"Base"
@@ -32315,6 +33571,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordCommand_1
 		{
+			text="Command";
 			speech[]=
 			{
 				"Command"
@@ -32338,6 +33595,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordBattlemage_1
 		{
+			text="Battlemage";
 			speech[]=
 			{
 				"Battlemage"
@@ -32361,6 +33619,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordManhattan_1
 		{
+			text="Manhattan";
 			speech[]=
 			{
 				"Manhattan"
@@ -32384,6 +33643,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordFirefly_1
 		{
+			text="Firefly";
 			speech[]=
 			{
 				"Firefly"
@@ -32407,6 +33667,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordRazor_1
 		{
+			text="Razor";
 			speech[]=
 			{
 				"Razor"
@@ -32430,6 +33691,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordSwordsman_1
 		{
+			text="Swordsman";
 			speech[]=
 			{
 				"Swordsman"
@@ -32453,6 +33715,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordSabre_1
 		{
+			text="Sabre";
 			speech[]=
 			{
 				"Sabre"
@@ -32476,6 +33739,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordStarForce_1
 		{
+			text="StarForce";
 			speech[]=
 			{
 				"StarForce"
@@ -32499,6 +33763,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordSuper_1
 		{
+			text="Super";
 			speech[]=
 			{
 				"Super"
@@ -32522,6 +33787,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordHammer_1
 		{
+			text="Hammer";
 			speech[]=
 			{
 				"Hammer"
@@ -32545,6 +33811,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordReaper_1
 		{
+			text="Reaper";
 			speech[]=
 			{
 				"Reaper"
@@ -32568,6 +33835,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordFatman_1
 		{
+			text="Fatman";
 			speech[]=
 			{
 				"Fatman"
@@ -32591,6 +33859,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordFortune_1
 		{
+			text="Fortune";
 			speech[]=
 			{
 				"Fortune"
@@ -32614,6 +33883,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordAnvil_1
 		{
+			text="Anvil";
 			speech[]=
 			{
 				"Anvil"
@@ -32637,6 +33907,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordRevolver_1
 		{
+			text="Revolver";
 			speech[]=
 			{
 				"Revolver"
@@ -32660,6 +33931,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordWinchester_1
 		{
+			text="Winchester";
 			speech[]=
 			{
 				"Winchester"
@@ -32683,6 +33955,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordArizona_1
 		{
+			text="Arizona";
 			speech[]=
 			{
 				"Arizona"
@@ -32706,6 +33979,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordWarmonger_1
 		{
+			text="Warmonger";
 			speech[]=
 			{
 				"Warmonger"
@@ -32729,6 +34003,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordCitizen_1
 		{
+			text="Citizen";
 			speech[]=
 			{
 				"Citizen"
@@ -32752,6 +34027,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordUtah_1
 		{
+			text="Utah";
 			speech[]=
 			{
 				"Utah"
@@ -32775,6 +34051,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordDemon_1
 		{
+			text="Demon";
 			speech[]=
 			{
 				"Demon"
@@ -32798,6 +34075,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordBandit_1
 		{
+			text="Bandit";
 			speech[]=
 			{
 				"Bandit"
@@ -32821,6 +34099,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordMohican_1
 		{
+			text="Mohican";
 			speech[]=
 			{
 				"Mohican"
@@ -32844,6 +34123,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordDustoff_1
 		{
+			text="Dustoff";
 			speech[]=
 			{
 				"Dustoff"
@@ -32869,6 +34149,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordwhiteTeam_1
 		{
+			text="team white";
 			speech[]=
 			{
 				"whiteTeam"
@@ -32885,6 +34166,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordwhiteTeam_1
 		{
 			wordsClass="StealthWords";
+			text="team white";
 			speech[]=
 			{
 				"whiteTeam"
@@ -32910,6 +34192,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordredTeam_1
 		{
+			text="team red";
 			speech[]=
 			{
 				"redTeam"
@@ -32926,6 +34209,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordredTeam_1
 		{
 			wordsClass="StealthWords";
+			text="team red";
 			speech[]=
 			{
 				"redTeam"
@@ -32951,6 +34235,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordgreenTeam_1
 		{
+			text="team green";
 			speech[]=
 			{
 				"greenTeam"
@@ -32967,6 +34252,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordgreenTeam_1
 		{
 			wordsClass="StealthWords";
+			text="team green";
 			speech[]=
 			{
 				"greenTeam"
@@ -32992,6 +34278,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordblueTeam_1
 		{
+			text="team blue";
 			speech[]=
 			{
 				"blueTeam"
@@ -33008,6 +34295,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordblueTeam_1
 		{
 			wordsClass="StealthWords";
+			text="team blue";
 			speech[]=
 			{
 				"blueTeam"
@@ -33033,6 +34321,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordyellowTeam_1
 		{
+			text="team yellow";
 			speech[]=
 			{
 				"yellowTeam"
@@ -33049,6 +34338,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordyellowTeam_1
 		{
 			wordsClass="StealthWords";
+			text="team yellow";
 			speech[]=
 			{
 				"yellowTeam"
@@ -33074,6 +34364,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordallGroup_1
 		{
+			text="team";
 			speech[]=
 			{
 				"allGroup"
@@ -33090,6 +34381,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordallGroup_1
 		{
 			wordsClass="StealthWords";
+			text="team";
 			speech[]=
 			{
 				"allGroup"
@@ -33115,6 +34407,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Wordat1_1
 		{
+			text="one o'clock";
 			speech[]=
 			{
 				"at1"
@@ -33131,6 +34424,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class Wordat1_1
 		{
 			wordsClass="StealthWords";
+			text="one o'clock";
 			speech[]=
 			{
 				"at1"
@@ -33156,6 +34450,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Wordat2_1
 		{
+			text="two o'clock";
 			speech[]=
 			{
 				"at2"
@@ -33172,6 +34467,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class Wordat2_1
 		{
 			wordsClass="StealthWords";
+			text="two o'clock";
 			speech[]=
 			{
 				"at2"
@@ -33197,6 +34493,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Wordat3_1
 		{
+			text="three o'clock";
 			speech[]=
 			{
 				"at3"
@@ -33213,6 +34510,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class Wordat3_1
 		{
 			wordsClass="StealthWords";
+			text="three o'clock";
 			speech[]=
 			{
 				"at3"
@@ -33238,6 +34536,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Wordat4_1
 		{
+			text="four o'clock";
 			speech[]=
 			{
 				"at4"
@@ -33254,6 +34553,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class Wordat4_1
 		{
 			wordsClass="StealthWords";
+			text="four o'clock";
 			speech[]=
 			{
 				"at4"
@@ -33279,6 +34579,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Wordat5_1
 		{
+			text="five o'clock";
 			speech[]=
 			{
 				"at5"
@@ -33295,6 +34596,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class Wordat5_1
 		{
 			wordsClass="StealthWords";
+			text="five o'clock";
 			speech[]=
 			{
 				"at5"
@@ -33320,6 +34622,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Wordat6_1
 		{
+			text="six o'clock";
 			speech[]=
 			{
 				"at6"
@@ -33336,6 +34639,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class Wordat6_1
 		{
 			wordsClass="StealthWords";
+			text="six o'clock";
 			speech[]=
 			{
 				"at6"
@@ -33361,6 +34665,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Wordat7_1
 		{
+			text="seven o'clock";
 			speech[]=
 			{
 				"at7"
@@ -33377,6 +34682,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class Wordat7_1
 		{
 			wordsClass="StealthWords";
+			text="seven o'clock";
 			speech[]=
 			{
 				"at7"
@@ -33402,6 +34708,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Wordat8_1
 		{
+			text="eight o'clock";
 			speech[]=
 			{
 				"at8"
@@ -33418,6 +34725,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class Wordat8_1
 		{
 			wordsClass="StealthWords";
+			text="eight o'clock";
 			speech[]=
 			{
 				"at8"
@@ -33443,6 +34751,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Wordat9_1
 		{
+			text="nine o'clock";
 			speech[]=
 			{
 				"at9"
@@ -33459,6 +34768,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class Wordat9_1
 		{
 			wordsClass="StealthWords";
+			text="nine o'clock";
 			speech[]=
 			{
 				"at9"
@@ -33484,6 +34794,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Wordat10_1
 		{
+			text="ten o'clock";
 			speech[]=
 			{
 				"at10"
@@ -33500,6 +34811,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class Wordat10_1
 		{
 			wordsClass="StealthWords";
+			text="ten o'clock";
 			speech[]=
 			{
 				"at10"
@@ -33525,6 +34837,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Wordat11_1
 		{
+			text="eleven o'clock";
 			speech[]=
 			{
 				"at11"
@@ -33541,6 +34854,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class Wordat11_1
 		{
 			wordsClass="StealthWords";
+			text="eleven o'clock";
 			speech[]=
 			{
 				"at11"
@@ -33566,6 +34880,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Wordat12_1
 		{
+			text="twelve o'clock";
 			speech[]=
 			{
 				"at12"
@@ -33582,6 +34897,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class Wordat12_1
 		{
 			wordsClass="StealthWords";
+			text="twelve o'clock";
 			speech[]=
 			{
 				"at12"
@@ -33607,6 +34923,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Worddist50_1
 		{
+			text="fifty meters";
 			speech[]=
 			{
 				"dist50"
@@ -33623,6 +34940,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class Worddist50_1
 		{
 			wordsClass="StealthWords";
+			text="fifty meters";
 			speech[]=
 			{
 				"dist50"
@@ -33648,6 +34966,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Worddist100_1
 		{
+			text="hundred meters";
 			speech[]=
 			{
 				"dist100"
@@ -33664,6 +34983,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class Worddist100_1
 		{
 			wordsClass="StealthWords";
+			text="hundred meters";
 			speech[]=
 			{
 				"dist100"
@@ -33689,6 +35009,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Worddist200_1
 		{
+			text="two hundred meters";
 			speech[]=
 			{
 				"dist200"
@@ -33705,6 +35026,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class Worddist200_1
 		{
 			wordsClass="StealthWords";
+			text="two hundred meters";
 			speech[]=
 			{
 				"dist200"
@@ -33730,6 +35052,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Worddist500_1
 		{
+			text="half a click";
 			speech[]=
 			{
 				"dist500"
@@ -33746,6 +35069,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class Worddist500_1
 		{
 			wordsClass="StealthWords";
+			text="half a click";
 			speech[]=
 			{
 				"dist500"
@@ -33771,6 +35095,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Worddist1000_1
 		{
+			text="one click";
 			speech[]=
 			{
 				"dist1000"
@@ -33787,6 +35112,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class Worddist1000_1
 		{
 			wordsClass="StealthWords";
+			text="one click";
 			speech[]=
 			{
 				"dist1000"
@@ -33812,6 +35138,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Worddist2000_1
 		{
+			text="two clicks";
 			speech[]=
 			{
 				"dist2000"
@@ -33828,6 +35155,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class Worddist2000_1
 		{
 			wordsClass="StealthWords";
+			text="two clicks";
 			speech[]=
 			{
 				"dist2000"
@@ -33853,6 +35181,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WorddistFar_1
 		{
+			text="far";
 			speech[]=
 			{
 				"distFar"
@@ -33869,6 +35198,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WorddistFar_1
 		{
 			wordsClass="StealthWords";
+			text="far";
 			speech[]=
 			{
 				"distFar"
@@ -33894,6 +35224,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordMeters_1
 		{
+			text="meters";
 			speech[]=
 			{
 				"Meters"
@@ -33910,6 +35241,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordMeters_1
 		{
 			wordsClass="StealthWords";
+			text="meters";
 			speech[]=
 			{
 				"Meters"
@@ -33935,6 +35267,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordNorth_1
 		{
+			text="North";
 			speech[]=
 			{
 				"North"
@@ -33951,6 +35284,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordNorth_1
 		{
 			wordsClass="StealthWords";
+			text="North";
 			speech[]=
 			{
 				"North"
@@ -33976,6 +35310,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordSouth_1
 		{
+			text="South";
 			speech[]=
 			{
 				"South"
@@ -33992,6 +35327,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordSouth_1
 		{
 			wordsClass="StealthWords";
+			text="South";
 			speech[]=
 			{
 				"South"
@@ -34017,6 +35353,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordWest_1
 		{
+			text="West";
 			speech[]=
 			{
 				"West"
@@ -34033,6 +35370,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordWest_1
 		{
 			wordsClass="StealthWords";
+			text="West";
 			speech[]=
 			{
 				"West"
@@ -34058,6 +35396,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordEast_1
 		{
+			text="East";
 			speech[]=
 			{
 				"East"
@@ -34074,6 +35413,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordEast_1
 		{
 			wordsClass="StealthWords";
+			text="East";
 			speech[]=
 			{
 				"East"
@@ -34099,6 +35439,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordNorthwest_1
 		{
+			text="Northwest";
 			speech[]=
 			{
 				"Northwest"
@@ -34115,6 +35456,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordNorthwest_1
 		{
 			wordsClass="StealthWords";
+			text="Northwest";
 			speech[]=
 			{
 				"Northwest"
@@ -34140,6 +35482,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordSouthwest_1
 		{
+			text="Southwest";
 			speech[]=
 			{
 				"Southwest"
@@ -34156,6 +35499,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordSouthwest_1
 		{
 			wordsClass="StealthWords";
+			text="Southwest";
 			speech[]=
 			{
 				"Southwest"
@@ -34181,6 +35525,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordNortheast_1
 		{
+			text="Northeast";
 			speech[]=
 			{
 				"Northeast"
@@ -34197,6 +35542,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordNortheast_1
 		{
 			wordsClass="StealthWords";
+			text="Northeast";
 			speech[]=
 			{
 				"Northeast"
@@ -34222,6 +35568,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordSoutheast_1
 		{
+			text="Southeast";
 			speech[]=
 			{
 				"Southeast"
@@ -34238,6 +35585,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordSoutheast_1
 		{
 			wordsClass="StealthWords";
+			text="Southeast";
 			speech[]=
 			{
 				"Southeast"
@@ -34263,6 +35611,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordNorthOf_1
 		{
+			text="North of";
 			speech[]=
 			{
 				"NorthOf"
@@ -34279,6 +35628,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordNorthOf_1
 		{
 			wordsClass="StealthWords";
+			text="North of";
 			speech[]=
 			{
 				"NorthOf"
@@ -34304,6 +35654,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordSouthOf_1
 		{
+			text="South of";
 			speech[]=
 			{
 				"SouthOf"
@@ -34320,6 +35671,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordSouthOf_1
 		{
 			wordsClass="StealthWords";
+			text="South of";
 			speech[]=
 			{
 				"SouthOf"
@@ -34345,6 +35697,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordWestOf_1
 		{
+			text="West of";
 			speech[]=
 			{
 				"WestOf"
@@ -34361,6 +35714,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordWestOf_1
 		{
 			wordsClass="StealthWords";
+			text="West of";
 			speech[]=
 			{
 				"WestOf"
@@ -34386,6 +35740,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordEastOf_1
 		{
+			text="East of";
 			speech[]=
 			{
 				"EastOf"
@@ -34402,6 +35757,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordEastOf_1
 		{
 			wordsClass="StealthWords";
+			text="East of";
 			speech[]=
 			{
 				"EastOf"
@@ -34427,6 +35783,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordNorthEastOf_1
 		{
+			text="North-east of";
 			speech[]=
 			{
 				"NorthEastOf"
@@ -34443,6 +35800,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordNorthEastOf_1
 		{
 			wordsClass="StealthWords";
+			text="North-east of";
 			speech[]=
 			{
 				"NorthEastOf"
@@ -34468,6 +35826,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordSouthEastOf_1
 		{
+			text="South-east of";
 			speech[]=
 			{
 				"SouthEastOf"
@@ -34484,6 +35843,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordSouthEastOf_1
 		{
 			wordsClass="StealthWords";
+			text="South-east of";
 			speech[]=
 			{
 				"SouthEastOf"
@@ -34509,6 +35869,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordNorthWestOf_1
 		{
+			text="North-west of";
 			speech[]=
 			{
 				"NorthWestOf"
@@ -34525,6 +35886,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordNorthWestOf_1
 		{
 			wordsClass="StealthWords";
+			text="North-west of";
 			speech[]=
 			{
 				"NorthWestOf"
@@ -34550,6 +35912,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordSouthWestOf_1
 		{
+			text="South-west of";
 			speech[]=
 			{
 				"SouthWestOf"
@@ -34566,6 +35929,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordSouthWestOf_1
 		{
 			wordsClass="StealthWords";
+			text="South-west of";
 			speech[]=
 			{
 				"SouthWestOf"
@@ -34591,6 +35955,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Wordfront_1
 		{
+			text="front";
 			speech[]=
 			{
 				"front"
@@ -34607,6 +35972,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class Wordfront_1
 		{
 			wordsClass="StealthWords";
+			text="front";
 			speech[]=
 			{
 				"front"
@@ -34632,6 +35998,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Wordrear_1
 		{
+			text="rear";
 			speech[]=
 			{
 				"rear"
@@ -34648,6 +36015,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class Wordrear_1
 		{
 			wordsClass="StealthWords";
+			text="rear";
 			speech[]=
 			{
 				"rear"
@@ -34673,6 +36041,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordClose_1
 		{
+			text="close";
 			speech[]=
 			{
 				"Close"
@@ -34689,6 +36058,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordClose_1
 		{
 			wordsClass="StealthWords";
+			text="close";
 			speech[]=
 			{
 				"Close"
@@ -34714,6 +36084,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordMediumRange_1
 		{
+			text="medium range";
 			speech[]=
 			{
 				"MediumRange"
@@ -34730,6 +36101,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordMediumRange_1
 		{
 			wordsClass="StealthWords";
+			text="medium range";
 			speech[]=
 			{
 				"MediumRange"
@@ -34755,6 +36127,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordFar_1
 		{
+			text="far";
 			speech[]=
 			{
 				"Far"
@@ -34771,6 +36144,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordFar_1
 		{
 			wordsClass="StealthWords";
+			text="far";
 			speech[]=
 			{
 				"Far"
@@ -34796,6 +36170,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordBombs_1
 		{
+			text="Bombs";
 			speech[]=
 			{
 				"Bombs"
@@ -34812,6 +36187,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordBombs_1
 		{
 			wordsClass="StealthWords";
+			text="Bombs";
 			speech[]=
 			{
 				"Bombs"
@@ -34837,6 +36213,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordcannonHigh_1
 		{
+			text="Cannon";
 			speech[]=
 			{
 				"cannonHigh"
@@ -34853,6 +36230,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordcannonHigh_1
 		{
 			wordsClass="StealthWords";
+			text="Cannon";
 			speech[]=
 			{
 				"cannonHigh"
@@ -34878,6 +36256,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordcannonLow_1
 		{
+			text="Cannon";
 			speech[]=
 			{
 				"cannonLow"
@@ -34894,6 +36273,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordcannonLow_1
 		{
 			wordsClass="StealthWords";
+			text="Cannon";
 			speech[]=
 			{
 				"cannonLow"
@@ -34919,6 +36299,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordFlares_1
 		{
+			text="Flares";
 			speech[]=
 			{
 				"Flares"
@@ -34935,6 +36316,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordFlares_1
 		{
 			wordsClass="StealthWords";
+			text="Flares";
 			speech[]=
 			{
 				"Flares"
@@ -34960,6 +36342,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordMissiles_1
 		{
+			text="Missiles";
 			speech[]=
 			{
 				"Missiles"
@@ -34976,6 +36359,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordMissiles_1
 		{
 			wordsClass="StealthWords";
+			text="Missiles";
 			speech[]=
 			{
 				"Missiles"
@@ -35001,6 +36385,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordRockets_1
 		{
+			text="Rockets";
 			speech[]=
 			{
 				"Rockets"
@@ -35017,6 +36402,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordRockets_1
 		{
 			wordsClass="StealthWords";
+			text="Rockets";
 			speech[]=
 			{
 				"Rockets"
@@ -35042,6 +36428,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordSmoke_1
 		{
+			text="Smoke";
 			speech[]=
 			{
 				"Smoke"
@@ -35058,6 +36445,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordSmoke_1
 		{
 			wordsClass="StealthWords";
+			text="Smoke";
 			speech[]=
 			{
 				"Smoke"
@@ -35083,6 +36471,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordAALauncher_1
 		{
+			text="A.A. Launcher";
 			speech[]=
 			{
 				"AALauncher"
@@ -35099,6 +36488,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordAALauncher_1
 		{
 			wordsClass="StealthWords";
+			text="A.A. Launcher";
 			speech[]=
 			{
 				"AALauncher"
@@ -35124,6 +36514,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordATLauncher_1
 		{
+			text="A.T. launcher";
 			speech[]=
 			{
 				"ATLauncher"
@@ -35140,6 +36531,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordATLauncher_1
 		{
 			wordsClass="StealthWords";
+			text="A.T. launcher";
 			speech[]=
 			{
 				"ATLauncher"
@@ -35165,6 +36557,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordBackpack_1
 		{
+			text="backpack";
 			speech[]=
 			{
 				"Backpack"
@@ -35181,6 +36574,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordBackpack_1
 		{
 			wordsClass="StealthWords";
+			text="backpack";
 			speech[]=
 			{
 				"Backpack"
@@ -35206,6 +36600,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordBinocular_1
 		{
+			text="binocular";
 			speech[]=
 			{
 				"Binocular"
@@ -35222,6 +36617,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordBinocular_1
 		{
 			wordsClass="StealthWords";
+			text="binocular";
 			speech[]=
 			{
 				"Binocular"
@@ -35247,6 +36643,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordFlare_1
 		{
+			text="flare";
 			speech[]=
 			{
 				"Flare"
@@ -35263,6 +36660,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordFlare_1
 		{
 			wordsClass="StealthWords";
+			text="flare";
 			speech[]=
 			{
 				"Flare"
@@ -35288,6 +36686,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordGrenade_1
 		{
+			text="grenade";
 			speech[]=
 			{
 				"Grenade"
@@ -35304,6 +36703,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordGrenade_1
 		{
 			wordsClass="StealthWords";
+			text="grenade";
 			speech[]=
 			{
 				"Grenade"
@@ -35329,6 +36729,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordGrenadeLauncher_1
 		{
+			text="grenade launcher";
 			speech[]=
 			{
 				"GrenadeLauncher"
@@ -35345,6 +36746,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordGrenadeLauncher_1
 		{
 			wordsClass="StealthWords";
+			text="grenade launcher";
 			speech[]=
 			{
 				"GrenadeLauncher"
@@ -35370,6 +36772,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordHandGrenade_1
 		{
+			text="hand grenade";
 			speech[]=
 			{
 				"HandGrenade"
@@ -35386,6 +36789,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordHandGrenade_1
 		{
 			wordsClass="StealthWords";
+			text="hand grenade";
 			speech[]=
 			{
 				"HandGrenade"
@@ -35411,6 +36815,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordLaserDesignator_1
 		{
+			text="laser designator";
 			speech[]=
 			{
 				"LaserDesignator"
@@ -35427,6 +36832,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordLaserDesignator_1
 		{
 			wordsClass="StealthWords";
+			text="laser designator";
 			speech[]=
 			{
 				"LaserDesignator"
@@ -35452,6 +36858,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordMagazine_1
 		{
+			text="magazine";
 			speech[]=
 			{
 				"Magazine"
@@ -35468,6 +36875,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordMagazine_1
 		{
 			wordsClass="StealthWords";
+			text="magazine";
 			speech[]=
 			{
 				"Magazine"
@@ -35493,6 +36901,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordMachineGun_1
 		{
+			text="Machine gun";
 			speech[]=
 			{
 				"MachineGun"
@@ -35509,6 +36918,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordMachineGun_1
 		{
 			wordsClass="StealthWords";
+			text="Machine gun";
 			speech[]=
 			{
 				"MachineGun"
@@ -35534,6 +36944,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordMine_1
 		{
+			text="mine";
 			speech[]=
 			{
 				"Mine"
@@ -35550,6 +36961,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordMine_1
 		{
 			wordsClass="StealthWords";
+			text="mine";
 			speech[]=
 			{
 				"Mine"
@@ -35575,6 +36987,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordNVG_1
 		{
+			text="N.V.G.";
 			speech[]=
 			{
 				"NVG"
@@ -35591,6 +37004,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordNVG_1
 		{
 			wordsClass="StealthWords";
+			text="N.V.G.";
 			speech[]=
 			{
 				"NVG"
@@ -35616,6 +37030,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordRifle_1
 		{
+			text="rifle";
 			speech[]=
 			{
 				"Rifle"
@@ -35632,6 +37047,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordRifle_1
 		{
 			wordsClass="StealthWords";
+			text="rifle";
 			speech[]=
 			{
 				"Rifle"
@@ -35657,6 +37073,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordCharge_1
 		{
+			text="charge";
 			speech[]=
 			{
 				"Charge"
@@ -35673,6 +37090,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordCharge_1
 		{
 			wordsClass="StealthWords";
+			text="charge";
 			speech[]=
 			{
 				"Charge"
@@ -35698,6 +37116,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordHandgun_1
 		{
+			text="handgun";
 			speech[]=
 			{
 				"Handgun"
@@ -35714,6 +37133,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordHandgun_1
 		{
 			wordsClass="StealthWords";
+			text="handgun";
 			speech[]=
 			{
 				"Handgun"
@@ -35739,6 +37159,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordSmokeShell_1
 		{
+			text="smoke shell";
 			speech[]=
 			{
 				"SmokeShell"
@@ -35755,6 +37176,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordSmokeShell_1
 		{
 			wordsClass="StealthWords";
+			text="smoke shell";
 			speech[]=
 			{
 				"SmokeShell"
@@ -35780,6 +37202,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordSniperRifle_1
 		{
+			text="sniper rifle";
 			speech[]=
 			{
 				"SniperRifle"
@@ -35796,6 +37219,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordSniperRifle_1
 		{
 			wordsClass="StealthWords";
+			text="sniper rifle";
 			speech[]=
 			{
 				"SniperRifle"
@@ -35821,6 +37245,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Wordman_1
 		{
+			text="man";
 			speech[]=
 			{
 				"man"
@@ -35837,6 +37262,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class Wordman_1
 		{
 			wordsClass="StealthWords";
+			text="man";
 			speech[]=
 			{
 				"man"
@@ -35862,6 +37288,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Wordwoman_1
 		{
+			text="woman";
 			speech[]=
 			{
 				"woman"
@@ -35878,6 +37305,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class Wordwoman_1
 		{
 			wordsClass="StealthWords";
+			text="woman";
 			speech[]=
 			{
 				"woman"
@@ -35903,6 +37331,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Wordsoldier_1
 		{
+			text="soldier";
 			speech[]=
 			{
 				"soldier"
@@ -35919,6 +37348,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class Wordsoldier_1
 		{
 			wordsClass="StealthWords";
+			text="soldier";
 			speech[]=
 			{
 				"soldier"
@@ -35944,6 +37374,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordlauncherSoldier_1
 		{
+			text="missile soldier";
 			speech[]=
 			{
 				"launcherSoldier"
@@ -35960,6 +37391,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordlauncherSoldier_1
 		{
 			wordsClass="StealthWords";
+			text="missile soldier";
 			speech[]=
 			{
 				"launcherSoldier"
@@ -35985,6 +37417,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordSniper_1
 		{
+			text="sniper";
 			speech[]=
 			{
 				"Sniper"
@@ -36001,6 +37434,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordSniper_1
 		{
 			wordsClass="StealthWords";
+			text="sniper";
 			speech[]=
 			{
 				"Sniper"
@@ -36026,6 +37460,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordMedic_1
 		{
+			text="medic";
 			speech[]=
 			{
 				"Medic"
@@ -36042,6 +37477,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordMedic_1
 		{
 			wordsClass="StealthWords";
+			text="medic";
 			speech[]=
 			{
 				"Medic"
@@ -36067,6 +37503,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordSpecialForce_1
 		{
+			text="spec op";
 			speech[]=
 			{
 				"SpecialForce"
@@ -36083,6 +37520,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordSpecialForce_1
 		{
 			wordsClass="StealthWords";
+			text="spec op";
 			speech[]=
 			{
 				"SpecialForce"
@@ -36108,6 +37546,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordMGunner_1
 		{
+			text="Machine gunner";
 			speech[]=
 			{
 				"MGunner"
@@ -36124,6 +37563,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordMGunner_1
 		{
 			wordsClass="StealthWords";
+			text="Machine gunner";
 			speech[]=
 			{
 				"MGunner"
@@ -36149,6 +37589,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Wordofficer_1
 		{
+			text="officer";
 			speech[]=
 			{
 				"officer"
@@ -36165,6 +37606,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class Wordofficer_1
 		{
 			wordsClass="StealthWords";
+			text="officer";
 			speech[]=
 			{
 				"officer"
@@ -36190,6 +37632,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Wordcrew_1
 		{
+			text="crewman";
 			speech[]=
 			{
 				"crew"
@@ -36206,6 +37649,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class Wordcrew_1
 		{
 			wordsClass="StealthWords";
+			text="crewman";
 			speech[]=
 			{
 				"crew"
@@ -36231,6 +37675,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Wordvehicle_1
 		{
+			text="vehicle";
 			speech[]=
 			{
 				"vehicle"
@@ -36247,6 +37692,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class Wordvehicle_1
 		{
 			wordsClass="StealthWords";
+			text="vehicle";
 			speech[]=
 			{
 				"vehicle"
@@ -36272,6 +37718,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Wordbike_1
 		{
+			text="bike";
 			speech[]=
 			{
 				"bike"
@@ -36288,6 +37735,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class Wordbike_1
 		{
 			wordsClass="StealthWords";
+			text="bike";
 			speech[]=
 			{
 				"bike"
@@ -36313,6 +37761,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Wordmotorcycle_1
 		{
+			text="motorcycle";
 			speech[]=
 			{
 				"motorcycle"
@@ -36329,6 +37778,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class Wordmotorcycle_1
 		{
 			wordsClass="StealthWords";
+			text="motorcycle";
 			speech[]=
 			{
 				"motorcycle"
@@ -36354,6 +37804,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Wordcar_1
 		{
+			text="car";
 			speech[]=
 			{
 				"car"
@@ -36370,6 +37821,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class Wordcar_1
 		{
 			wordsClass="StealthWords";
+			text="car";
 			speech[]=
 			{
 				"car"
@@ -36395,6 +37847,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Wordtechnical_1
 		{
+			text="technical";
 			speech[]=
 			{
 				"technical"
@@ -36411,6 +37864,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class Wordtechnical_1
 		{
 			wordsClass="StealthWords";
+			text="technical";
 			speech[]=
 			{
 				"technical"
@@ -36436,6 +37890,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordsupportTruck_1
 		{
+			text="support truck";
 			speech[]=
 			{
 				"supportTruck"
@@ -36452,6 +37907,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordsupportTruck_1
 		{
 			wordsClass="StealthWords";
+			text="support truck";
 			speech[]=
 			{
 				"supportTruck"
@@ -36477,6 +37933,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Wordtruck_1
 		{
+			text="truck";
 			speech[]=
 			{
 				"truck"
@@ -36493,6 +37950,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class Wordtruck_1
 		{
 			wordsClass="StealthWords";
+			text="truck";
 			speech[]=
 			{
 				"truck"
@@ -36518,6 +37976,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordAPC_1
 		{
+			text="A.P.C.";
 			speech[]=
 			{
 				"APC"
@@ -36534,6 +37993,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordAPC_1
 		{
 			wordsClass="StealthWords";
+			text="A.P.C.";
 			speech[]=
 			{
 				"APC"
@@ -36559,6 +38019,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Wordtractor_1
 		{
+			text="tractor";
 			speech[]=
 			{
 				"tractor"
@@ -36575,6 +38036,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class Wordtractor_1
 		{
 			wordsClass="StealthWords";
+			text="tractor";
 			speech[]=
 			{
 				"tractor"
@@ -36600,6 +38062,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Wordbus_1
 		{
+			text="bus";
 			speech[]=
 			{
 				"bus"
@@ -36616,6 +38079,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class Wordbus_1
 		{
 			wordsClass="StealthWords";
+			text="bus";
 			speech[]=
 			{
 				"bus"
@@ -36641,6 +38105,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Wordtank_1
 		{
+			text="tank";
 			speech[]=
 			{
 				"tank"
@@ -36657,6 +38122,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class Wordtank_1
 		{
 			wordsClass="StealthWords";
+			text="tank";
 			speech[]=
 			{
 				"tank"
@@ -36682,6 +38148,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordMobileHQ_1
 		{
+			text="command vehicle";
 			speech[]=
 			{
 				"MobileHQ"
@@ -36698,6 +38165,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordMobileHQ_1
 		{
 			wordsClass="StealthWords";
+			text="command vehicle";
 			speech[]=
 			{
 				"MobileHQ"
@@ -36723,6 +38191,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Wordship_1
 		{
+			text="ship";
 			speech[]=
 			{
 				"ship"
@@ -36739,6 +38208,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class Wordship_1
 		{
 			wordsClass="StealthWords";
+			text="ship";
 			speech[]=
 			{
 				"ship"
@@ -36764,6 +38234,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordmobileArtillery_1
 		{
+			text="mobile arty";
 			speech[]=
 			{
 				"mobileArtillery"
@@ -36780,6 +38251,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordmobileArtillery_1
 		{
 			wordsClass="StealthWords";
+			text="mobile arty";
 			speech[]=
 			{
 				"mobileArtillery"
@@ -36805,6 +38277,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordStaticMGWeapon_1
 		{
+			text="Machine gun";
 			speech[]=
 			{
 				"StaticMGWeapon"
@@ -36821,6 +38294,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordStaticMGWeapon_1
 		{
 			wordsClass="StealthWords";
+			text="Machine gun";
 			speech[]=
 			{
 				"StaticMGWeapon"
@@ -36846,6 +38320,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordStaticMortar_1
 		{
+			text="mortar";
 			speech[]=
 			{
 				"StaticMortar"
@@ -36862,6 +38337,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordStaticMortar_1
 		{
 			wordsClass="StealthWords";
+			text="mortar";
 			speech[]=
 			{
 				"StaticMortar"
@@ -36887,6 +38363,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordsearchLight_1
 		{
+			text="searchlight";
 			speech[]=
 			{
 				"searchLight"
@@ -36903,6 +38380,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordsearchLight_1
 		{
 			wordsClass="StealthWords";
+			text="searchlight";
 			speech[]=
 			{
 				"searchLight"
@@ -36928,6 +38406,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Wordstaticgrenadelauncher_1
 		{
+			text="grenade launcher";
 			speech[]=
 			{
 				"staticgrenadelauncher"
@@ -36944,6 +38423,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class Wordstaticgrenadelauncher_1
 		{
 			wordsClass="StealthWords";
+			text="grenade launcher";
 			speech[]=
 			{
 				"staticgrenadelauncher"
@@ -36969,6 +38449,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordstaticCannon_1
 		{
+			text="howitzer";
 			speech[]=
 			{
 				"staticCannon"
@@ -36985,6 +38466,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordstaticCannon_1
 		{
 			wordsClass="StealthWords";
+			text="howitzer";
 			speech[]=
 			{
 				"staticCannon"
@@ -37010,6 +38492,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordstaticATLauncher_1
 		{
+			text="A.T. launcher";
 			speech[]=
 			{
 				"staticATLauncher"
@@ -37026,6 +38509,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordstaticATLauncher_1
 		{
 			wordsClass="StealthWords";
+			text="A.T. launcher";
 			speech[]=
 			{
 				"staticATLauncher"
@@ -37051,6 +38535,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordstaticAALauncher_1
 		{
+			text="A.A. Launcher";
 			speech[]=
 			{
 				"staticAALauncher"
@@ -37067,6 +38552,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordstaticAALauncher_1
 		{
 			wordsClass="StealthWords";
+			text="A.A. Launcher";
 			speech[]=
 			{
 				"staticAALauncher"
@@ -37092,6 +38578,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Wordaircraft_1
 		{
+			text="aircraft";
 			speech[]=
 			{
 				"aircraft"
@@ -37108,6 +38595,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class Wordaircraft_1
 		{
 			wordsClass="StealthWords";
+			text="aircraft";
 			speech[]=
 			{
 				"aircraft"
@@ -37133,6 +38621,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Wordparachute_1
 		{
+			text="parachute";
 			speech[]=
 			{
 				"parachute"
@@ -37149,6 +38638,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class Wordparachute_1
 		{
 			wordsClass="StealthWords";
+			text="parachute";
 			speech[]=
 			{
 				"parachute"
@@ -37174,6 +38664,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Wordairplane_1
 		{
+			text="plane";
 			speech[]=
 			{
 				"airplane"
@@ -37190,6 +38681,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class Wordairplane_1
 		{
 			wordsClass="StealthWords";
+			text="plane";
 			speech[]=
 			{
 				"airplane"
@@ -37215,6 +38707,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordcargoAirplane_1
 		{
+			text="cargo bird";
 			speech[]=
 			{
 				"cargoAirplane"
@@ -37231,6 +38724,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordcargoAirplane_1
 		{
 			wordsClass="StealthWords";
+			text="cargo bird";
 			speech[]=
 			{
 				"cargoAirplane"
@@ -37256,6 +38750,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordattackAirplane_1
 		{
+			text="attack plane";
 			speech[]=
 			{
 				"attackAirplane"
@@ -37272,6 +38767,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordattackAirplane_1
 		{
 			wordsClass="StealthWords";
+			text="attack plane";
 			speech[]=
 			{
 				"attackAirplane"
@@ -37297,6 +38793,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordUAV_1
 		{
+			text="U.A.V.";
 			speech[]=
 			{
 				"UAV"
@@ -37313,6 +38810,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordUAV_1
 		{
 			wordsClass="StealthWords";
+			text="U.A.V.";
 			speech[]=
 			{
 				"UAV"
@@ -37338,6 +38836,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Wordhelicopter_1
 		{
+			text="chopper";
 			speech[]=
 			{
 				"helicopter"
@@ -37354,6 +38853,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class Wordhelicopter_1
 		{
 			wordsClass="StealthWords";
+			text="chopper";
 			speech[]=
 			{
 				"helicopter"
@@ -37379,6 +38879,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Wordgunship_1
 		{
+			text="gunship";
 			speech[]=
 			{
 				"gunship"
@@ -37395,6 +38896,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class Wordgunship_1
 		{
 			wordsClass="StealthWords";
+			text="gunship";
 			speech[]=
 			{
 				"gunship"
@@ -37420,6 +38922,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Wordanimal_1
 		{
+			text="animal";
 			speech[]=
 			{
 				"animal"
@@ -37436,6 +38939,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class Wordanimal_1
 		{
 			wordsClass="StealthWords";
+			text="animal";
 			speech[]=
 			{
 				"animal"
@@ -37461,6 +38965,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Wordboat_1
 		{
+			text="boat";
 			speech[]=
 			{
 				"boat"
@@ -37477,6 +38982,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class Wordboat_1
 		{
 			wordsClass="StealthWords";
+			text="boat";
 			speech[]=
 			{
 				"boat"
@@ -37502,6 +39008,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Wordmen_1
 		{
+			text="men";
 			speech[]=
 			{
 				"men"
@@ -37518,6 +39025,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class Wordmen_1
 		{
 			wordsClass="StealthWords";
+			text="men";
 			speech[]=
 			{
 				"men"
@@ -37543,6 +39051,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Wordwomen_1
 		{
+			text="women";
 			speech[]=
 			{
 				"women"
@@ -37559,6 +39068,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class Wordwomen_1
 		{
 			wordsClass="StealthWords";
+			text="women";
 			speech[]=
 			{
 				"women"
@@ -37584,6 +39094,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Wordsoldiers_1
 		{
+			text="soldiers";
 			speech[]=
 			{
 				"soldiers"
@@ -37600,6 +39111,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class Wordsoldiers_1
 		{
 			wordsClass="StealthWords";
+			text="soldiers";
 			speech[]=
 			{
 				"soldiers"
@@ -37625,6 +39137,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordlauncherSoldiers_1
 		{
+			text="missile soldiers";
 			speech[]=
 			{
 				"launcherSoldiers"
@@ -37641,6 +39154,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordlauncherSoldiers_1
 		{
 			wordsClass="StealthWords";
+			text="missile soldiers";
 			speech[]=
 			{
 				"launcherSoldiers"
@@ -37666,6 +39180,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordSnipers_1
 		{
+			text="snipers";
 			speech[]=
 			{
 				"Snipers"
@@ -37682,6 +39197,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordSnipers_1
 		{
 			wordsClass="StealthWords";
+			text="snipers";
 			speech[]=
 			{
 				"Snipers"
@@ -37707,6 +39223,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordMedics_1
 		{
+			text="medics";
 			speech[]=
 			{
 				"Medics"
@@ -37723,6 +39240,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordMedics_1
 		{
 			wordsClass="StealthWords";
+			text="medics";
 			speech[]=
 			{
 				"Medics"
@@ -37748,6 +39266,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordSpecialForces_1
 		{
+			text="spec ops";
 			speech[]=
 			{
 				"SpecialForces"
@@ -37764,6 +39283,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordSpecialForces_1
 		{
 			wordsClass="StealthWords";
+			text="spec ops";
 			speech[]=
 			{
 				"SpecialForces"
@@ -37789,6 +39309,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordMgunners_1
 		{
+			text="Machine gunners";
 			speech[]=
 			{
 				"Mgunners"
@@ -37805,6 +39326,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordMgunners_1
 		{
 			wordsClass="StealthWords";
+			text="Machine gunners";
 			speech[]=
 			{
 				"Mgunners"
@@ -37830,6 +39352,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Wordofficers_1
 		{
+			text="officers";
 			speech[]=
 			{
 				"officers"
@@ -37846,6 +39369,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class Wordofficers_1
 		{
 			wordsClass="StealthWords";
+			text="officers";
 			speech[]=
 			{
 				"officers"
@@ -37871,6 +39395,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Wordcrews_1
 		{
+			text="crewmen";
 			speech[]=
 			{
 				"crews"
@@ -37887,6 +39412,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class Wordcrews_1
 		{
 			wordsClass="StealthWords";
+			text="crewmen";
 			speech[]=
 			{
 				"crews"
@@ -37912,6 +39438,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Wordpilots_1
 		{
+			text="pilots";
 			speech[]=
 			{
 				"pilots"
@@ -37928,6 +39455,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class Wordpilots_1
 		{
 			wordsClass="StealthWords";
+			text="pilots";
 			speech[]=
 			{
 				"pilots"
@@ -37953,6 +39481,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Wordvehicles_1
 		{
+			text="vehicles";
 			speech[]=
 			{
 				"vehicles"
@@ -37969,6 +39498,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class Wordvehicles_1
 		{
 			wordsClass="StealthWords";
+			text="vehicles";
 			speech[]=
 			{
 				"vehicles"
@@ -37994,6 +39524,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Wordbikes_1
 		{
+			text="bikes";
 			speech[]=
 			{
 				"bikes"
@@ -38010,6 +39541,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class Wordbikes_1
 		{
 			wordsClass="StealthWords";
+			text="bikes";
 			speech[]=
 			{
 				"bikes"
@@ -38035,6 +39567,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Wordmotorcycles_1
 		{
+			text="motorcycles";
 			speech[]=
 			{
 				"motorcycles"
@@ -38051,6 +39584,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class Wordmotorcycles_1
 		{
 			wordsClass="StealthWords";
+			text="motorcycles";
 			speech[]=
 			{
 				"motorcycles"
@@ -38076,6 +39610,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Wordcars_1
 		{
+			text="cars";
 			speech[]=
 			{
 				"cars"
@@ -38092,6 +39627,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class Wordcars_1
 		{
 			wordsClass="StealthWords";
+			text="cars";
 			speech[]=
 			{
 				"cars"
@@ -38117,6 +39653,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Wordtechnicals_1
 		{
+			text="technicals";
 			speech[]=
 			{
 				"technicals"
@@ -38133,6 +39670,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class Wordtechnicals_1
 		{
 			wordsClass="StealthWords";
+			text="technicals";
 			speech[]=
 			{
 				"technicals"
@@ -38158,6 +39696,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordsupportTrucks_1
 		{
+			text="support trucks";
 			speech[]=
 			{
 				"supportTrucks"
@@ -38174,6 +39713,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordsupportTrucks_1
 		{
 			wordsClass="StealthWords";
+			text="support trucks";
 			speech[]=
 			{
 				"supportTrucks"
@@ -38199,6 +39739,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Wordtrucks_1
 		{
+			text="trucks";
 			speech[]=
 			{
 				"trucks"
@@ -38215,6 +39756,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class Wordtrucks_1
 		{
 			wordsClass="StealthWords";
+			text="trucks";
 			speech[]=
 			{
 				"trucks"
@@ -38240,6 +39782,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordAPCs_1
 		{
+			text="A.P.C.s";
 			speech[]=
 			{
 				"APCs"
@@ -38256,6 +39799,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordAPCs_1
 		{
 			wordsClass="StealthWords";
+			text="A.P.C.s";
 			speech[]=
 			{
 				"APCs"
@@ -38281,6 +39825,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Wordtractors_1
 		{
+			text="tractors";
 			speech[]=
 			{
 				"tractors"
@@ -38297,6 +39842,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class Wordtractors_1
 		{
 			wordsClass="StealthWords";
+			text="tractors";
 			speech[]=
 			{
 				"tractors"
@@ -38322,6 +39868,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Wordbuses_1
 		{
+			text="buses";
 			speech[]=
 			{
 				"buses"
@@ -38338,6 +39885,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class Wordbuses_1
 		{
 			wordsClass="StealthWords";
+			text="buses";
 			speech[]=
 			{
 				"buses"
@@ -38363,6 +39911,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Wordtanks_1
 		{
+			text="tanks";
 			speech[]=
 			{
 				"tanks"
@@ -38379,6 +39928,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class Wordtanks_1
 		{
 			wordsClass="StealthWords";
+			text="tanks";
 			speech[]=
 			{
 				"tanks"
@@ -38404,6 +39954,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordMobileHQs_1
 		{
+			text="command vehicles";
 			speech[]=
 			{
 				"MobileHQs"
@@ -38420,6 +39971,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordMobileHQs_1
 		{
 			wordsClass="StealthWords";
+			text="command vehicles";
 			speech[]=
 			{
 				"MobileHQs"
@@ -38445,6 +39997,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Wordships_1
 		{
+			text="ships";
 			speech[]=
 			{
 				"ships"
@@ -38461,6 +40014,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class Wordships_1
 		{
 			wordsClass="StealthWords";
+			text="ships";
 			speech[]=
 			{
 				"ships"
@@ -38486,6 +40040,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordmobileArtilleryUnits_1
 		{
+			text="mobile arty";
 			speech[]=
 			{
 				"mobileArtilleryUnits"
@@ -38502,6 +40057,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordmobileArtilleryUnits_1
 		{
 			wordsClass="StealthWords";
+			text="mobile arty";
 			speech[]=
 			{
 				"mobileArtilleryUnits"
@@ -38527,6 +40083,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordStaticMGWeapons_1
 		{
+			text="Machine guns";
 			speech[]=
 			{
 				"StaticMGWeapons"
@@ -38543,6 +40100,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordStaticMGWeapons_1
 		{
 			wordsClass="StealthWords";
+			text="Machine guns";
 			speech[]=
 			{
 				"StaticMGWeapons"
@@ -38568,6 +40126,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordStaticMortars_1
 		{
+			text="mortars";
 			speech[]=
 			{
 				"StaticMortars"
@@ -38584,6 +40143,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordStaticMortars_1
 		{
 			wordsClass="StealthWords";
+			text="mortars";
 			speech[]=
 			{
 				"StaticMortars"
@@ -38609,6 +40169,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordsearchLights_1
 		{
+			text="searchlights";
 			speech[]=
 			{
 				"searchLights"
@@ -38625,6 +40186,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordsearchLights_1
 		{
 			wordsClass="StealthWords";
+			text="searchlights";
 			speech[]=
 			{
 				"searchLights"
@@ -38650,6 +40212,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Wordstaticgrenadelaunchers_1
 		{
+			text="grenade launchers";
 			speech[]=
 			{
 				"staticgrenadelaunchers"
@@ -38666,6 +40229,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class Wordstaticgrenadelaunchers_1
 		{
 			wordsClass="StealthWords";
+			text="grenade launchers";
 			speech[]=
 			{
 				"staticgrenadelaunchers"
@@ -38691,6 +40255,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordstaticCannons_1
 		{
+			text="howitzers";
 			speech[]=
 			{
 				"staticCannons"
@@ -38707,6 +40272,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordstaticCannons_1
 		{
 			wordsClass="StealthWords";
+			text="howitzers";
 			speech[]=
 			{
 				"staticCannons"
@@ -38732,6 +40298,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordstaticATLaunchers_1
 		{
+			text="A.T. launchers";
 			speech[]=
 			{
 				"staticATLaunchers"
@@ -38748,6 +40315,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordstaticATLaunchers_1
 		{
 			wordsClass="StealthWords";
+			text="A.T. launchers";
 			speech[]=
 			{
 				"staticATLaunchers"
@@ -38773,6 +40341,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordstaticAALaunchers_1
 		{
+			text="A.A. launchers";
 			speech[]=
 			{
 				"staticAALaunchers"
@@ -38789,6 +40358,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordstaticAALaunchers_1
 		{
 			wordsClass="StealthWords";
+			text="A.A. launchers";
 			speech[]=
 			{
 				"staticAALaunchers"
@@ -38814,6 +40384,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Wordaircrafts_1
 		{
+			text="aircraft";
 			speech[]=
 			{
 				"aircrafts"
@@ -38830,6 +40401,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class Wordaircrafts_1
 		{
 			wordsClass="StealthWords";
+			text="aircraft";
 			speech[]=
 			{
 				"aircrafts"
@@ -38855,6 +40427,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Wordparachutes_1
 		{
+			text="parachutes";
 			speech[]=
 			{
 				"parachutes"
@@ -38871,6 +40444,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class Wordparachutes_1
 		{
 			wordsClass="StealthWords";
+			text="parachutes";
 			speech[]=
 			{
 				"parachutes"
@@ -38896,6 +40470,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Wordairplanes_1
 		{
+			text="planes";
 			speech[]=
 			{
 				"airplanes"
@@ -38912,6 +40487,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class Wordairplanes_1
 		{
 			wordsClass="StealthWords";
+			text="planes";
 			speech[]=
 			{
 				"airplanes"
@@ -38937,6 +40513,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordcargoAirplanes_1
 		{
+			text="cargo birds";
 			speech[]=
 			{
 				"cargoAirplanes"
@@ -38953,6 +40530,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordcargoAirplanes_1
 		{
 			wordsClass="StealthWords";
+			text="cargo birds";
 			speech[]=
 			{
 				"cargoAirplanes"
@@ -38978,6 +40556,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordattackAirplanes_1
 		{
+			text="attack planes";
 			speech[]=
 			{
 				"attackAirplanes"
@@ -38994,6 +40573,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordattackAirplanes_1
 		{
 			wordsClass="StealthWords";
+			text="attack planes";
 			speech[]=
 			{
 				"attackAirplanes"
@@ -39019,6 +40599,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordUAVs_1
 		{
+			text="U.A.V.s";
 			speech[]=
 			{
 				"UAVs"
@@ -39035,6 +40616,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordUAVs_1
 		{
 			wordsClass="StealthWords";
+			text="U.A.V.s";
 			speech[]=
 			{
 				"UAVs"
@@ -39060,6 +40642,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Wordhelicopters_1
 		{
+			text="choppers";
 			speech[]=
 			{
 				"helicopters"
@@ -39076,6 +40659,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class Wordhelicopters_1
 		{
 			wordsClass="StealthWords";
+			text="choppers";
 			speech[]=
 			{
 				"helicopters"
@@ -39101,6 +40685,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Wordgunships_1
 		{
+			text="gunships";
 			speech[]=
 			{
 				"gunships"
@@ -39117,6 +40702,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class Wordgunships_1
 		{
 			wordsClass="StealthWords";
+			text="gunships";
 			speech[]=
 			{
 				"gunships"
@@ -39142,6 +40728,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Wordanimals_1
 		{
+			text="animals";
 			speech[]=
 			{
 				"animals"
@@ -39158,6 +40745,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class Wordanimals_1
 		{
 			wordsClass="StealthWords";
+			text="animals";
 			speech[]=
 			{
 				"animals"
@@ -39183,6 +40771,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Wordboats_1
 		{
+			text="boats";
 			speech[]=
 			{
 				"boats"
@@ -39199,6 +40788,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class Wordboats_1
 		{
 			wordsClass="StealthWords";
+			text="boats";
 			speech[]=
 			{
 				"boats"
@@ -39224,6 +40814,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Wordammocrate_1
 		{
+			text="crate";
 			speech[]=
 			{
 				"ammocrate"
@@ -39240,6 +40831,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class Wordammocrate_1
 		{
 			wordsClass="StealthWords";
+			text="crate";
 			speech[]=
 			{
 				"ammocrate"
@@ -39265,6 +40857,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Wordbuilding_1
 		{
+			text="building";
 			speech[]=
 			{
 				"building"
@@ -39281,6 +40874,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class Wordbuilding_1
 		{
 			wordsClass="StealthWords";
+			text="building";
 			speech[]=
 			{
 				"building"
@@ -39306,6 +40900,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Wordbunker_1
 		{
+			text="bunker";
 			speech[]=
 			{
 				"bunker"
@@ -39322,6 +40917,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class Wordbunker_1
 		{
 			wordsClass="StealthWords";
+			text="bunker";
 			speech[]=
 			{
 				"bunker"
@@ -39347,6 +40943,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Wordbush_1
 		{
+			text="bush";
 			speech[]=
 			{
 				"bush"
@@ -39363,6 +40960,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class Wordbush_1
 		{
 			wordsClass="StealthWords";
+			text="bush";
 			speech[]=
 			{
 				"bush"
@@ -39388,6 +40986,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordcargoContainer_1
 		{
+			text="cargo";
 			speech[]=
 			{
 				"cargoContainer"
@@ -39404,6 +41003,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordcargoContainer_1
 		{
 			wordsClass="StealthWords";
+			text="cargo";
 			speech[]=
 			{
 				"cargoContainer"
@@ -39429,6 +41029,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Wordcross_1
 		{
+			text="cross";
 			speech[]=
 			{
 				"cross"
@@ -39445,6 +41046,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class Wordcross_1
 		{
 			wordsClass="StealthWords";
+			text="cross";
 			speech[]=
 			{
 				"cross"
@@ -39470,6 +41072,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Wordfence_1
 		{
+			text="fence";
 			speech[]=
 			{
 				"fence"
@@ -39486,6 +41089,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class Wordfence_1
 		{
 			wordsClass="StealthWords";
+			text="fence";
 			speech[]=
 			{
 				"fence"
@@ -39511,6 +41115,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Wordflag_1
 		{
+			text="flag";
 			speech[]=
 			{
 				"flag"
@@ -39527,6 +41132,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class Wordflag_1
 		{
 			wordsClass="StealthWords";
+			text="flag";
 			speech[]=
 			{
 				"flag"
@@ -39552,6 +41158,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Wordhouse_1
 		{
+			text="house";
 			speech[]=
 			{
 				"house"
@@ -39568,6 +41175,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class Wordhouse_1
 		{
 			wordsClass="StealthWords";
+			text="house";
 			speech[]=
 			{
 				"house"
@@ -39593,6 +41201,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Wordchurch_1
 		{
+			text="church";
 			speech[]=
 			{
 				"church"
@@ -39609,6 +41218,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class Wordchurch_1
 		{
 			wordsClass="StealthWords";
+			text="church";
 			speech[]=
 			{
 				"church"
@@ -39634,6 +41244,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordLaserTarget_1
 		{
+			text="target";
 			speech[]=
 			{
 				"LaserTarget"
@@ -39650,6 +41261,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordLaserTarget_1
 		{
 			wordsClass="StealthWords";
+			text="target";
 			speech[]=
 			{
 				"LaserTarget"
@@ -39675,6 +41287,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Wordobject_1
 		{
+			text="object";
 			speech[]=
 			{
 				"object"
@@ -39691,6 +41304,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class Wordobject_1
 		{
 			wordsClass="StealthWords";
+			text="object";
 			speech[]=
 			{
 				"object"
@@ -39716,6 +41330,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Wordrock_1
 		{
+			text="rock";
 			speech[]=
 			{
 				"rock"
@@ -39732,6 +41347,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class Wordrock_1
 		{
 			wordsClass="StealthWords";
+			text="rock";
 			speech[]=
 			{
 				"rock"
@@ -39757,6 +41373,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Wordruin_1
 		{
+			text="ruin";
 			speech[]=
 			{
 				"ruin"
@@ -39773,6 +41390,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class Wordruin_1
 		{
 			wordsClass="StealthWords";
+			text="ruin";
 			speech[]=
 			{
 				"ruin"
@@ -39798,6 +41416,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Wordstructure_1
 		{
+			text="structure";
 			speech[]=
 			{
 				"structure"
@@ -39814,6 +41433,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class Wordstructure_1
 		{
 			wordsClass="StealthWords";
+			text="structure";
 			speech[]=
 			{
 				"structure"
@@ -39839,6 +41459,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Wordtarget_1
 		{
+			text="target";
 			speech[]=
 			{
 				"target"
@@ -39855,6 +41476,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class Wordtarget_1
 		{
 			wordsClass="StealthWords";
+			text="target";
 			speech[]=
 			{
 				"target"
@@ -39880,6 +41502,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Wordtent_1
 		{
+			text="tent";
 			speech[]=
 			{
 				"tent"
@@ -39896,6 +41519,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class Wordtent_1
 		{
 			wordsClass="StealthWords";
+			text="tent";
 			speech[]=
 			{
 				"tent"
@@ -39921,6 +41545,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Wordtower_1
 		{
+			text="tower";
 			speech[]=
 			{
 				"tower"
@@ -39937,6 +41562,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class Wordtower_1
 		{
 			wordsClass="StealthWords";
+			text="tower";
 			speech[]=
 			{
 				"tower"
@@ -39962,6 +41588,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Wordtree_1
 		{
+			text="tree";
 			speech[]=
 			{
 				"tree"
@@ -39978,6 +41605,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class Wordtree_1
 		{
 			wordsClass="StealthWords";
+			text="tree";
 			speech[]=
 			{
 				"tree"
@@ -40003,6 +41631,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Wordwall_1
 		{
+			text="wall";
 			speech[]=
 			{
 				"wall"
@@ -40019,6 +41648,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class Wordwall_1
 		{
 			wordsClass="StealthWords";
+			text="wall";
 			speech[]=
 			{
 				"wall"
@@ -40044,6 +41674,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Wordwreck_1
 		{
+			text="wreck";
 			speech[]=
 			{
 				"wreck"
@@ -40060,6 +41691,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class Wordwreck_1
 		{
 			wordsClass="StealthWords";
+			text="wreck";
 			speech[]=
 			{
 				"wreck"
@@ -40085,6 +41717,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordKamenyy_1
 		{
+			text="Kamenyy";
 			speech[]=
 			{
 				"Kamenyy"
@@ -40101,6 +41734,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordKamenyy_1
 		{
 			wordsClass="StealthWords";
+			text="Kamenyy";
 			speech[]=
 			{
 				"Kamenyy"
@@ -40126,6 +41760,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordStrelka_1
 		{
+			text="Strelka";
 			speech[]=
 			{
 				"Strelka"
@@ -40142,6 +41777,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordStrelka_1
 		{
 			wordsClass="StealthWords";
+			text="Strelka";
 			speech[]=
 			{
 				"Strelka"
@@ -40167,6 +41803,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordElektrozavodsk_1
 		{
+			text="Elektrozavodsk";
 			speech[]=
 			{
 				"Elektrozavodsk"
@@ -40183,6 +41820,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordElektrozavodsk_1
 		{
 			wordsClass="StealthWords";
+			text="Elektrozavodsk";
 			speech[]=
 			{
 				"Elektrozavodsk"
@@ -40208,6 +41846,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordGorka_1
 		{
+			text="Gorka";
 			speech[]=
 			{
 				"Gorka"
@@ -40224,6 +41863,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordGorka_1
 		{
 			wordsClass="StealthWords";
+			text="Gorka";
 			speech[]=
 			{
 				"Gorka"
@@ -40249,6 +41889,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordChernogorsk_1
 		{
+			text="Chernogorsk";
 			speech[]=
 			{
 				"Chernogorsk"
@@ -40265,6 +41906,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordChernogorsk_1
 		{
 			wordsClass="StealthWords";
+			text="Chernogorsk";
 			speech[]=
 			{
 				"Chernogorsk"
@@ -40290,6 +41932,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordKrasnostav_1
 		{
+			text="Krasnostav";
 			speech[]=
 			{
 				"Krasnostav"
@@ -40306,6 +41949,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordKrasnostav_1
 		{
 			wordsClass="StealthWords";
+			text="Krasnostav";
 			speech[]=
 			{
 				"Krasnostav"
@@ -40331,6 +41975,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordSolnichniy_1
 		{
+			text="Solnichniy";
 			speech[]=
 			{
 				"Solnichniy"
@@ -40347,6 +41992,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordSolnichniy_1
 		{
 			wordsClass="StealthWords";
+			text="Solnichniy";
 			speech[]=
 			{
 				"Solnichniy"
@@ -40372,6 +42018,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordStarySobor_1
 		{
+			text="StarySobor";
 			speech[]=
 			{
 				"StarySobor"
@@ -40388,6 +42035,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordStarySobor_1
 		{
 			wordsClass="StealthWords";
+			text="StarySobor";
 			speech[]=
 			{
 				"StarySobor"
@@ -40413,6 +42061,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordVybor_1
 		{
+			text="Vybor";
 			speech[]=
 			{
 				"Vybor"
@@ -40429,6 +42078,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordVybor_1
 		{
 			wordsClass="StealthWords";
+			text="Vybor";
 			speech[]=
 			{
 				"Vybor"
@@ -40454,6 +42104,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordZelenogorsk_1
 		{
+			text="Zelenogorsk";
 			speech[]=
 			{
 				"Zelenogorsk"
@@ -40470,6 +42121,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordZelenogorsk_1
 		{
 			wordsClass="StealthWords";
+			text="Zelenogorsk";
 			speech[]=
 			{
 				"Zelenogorsk"
@@ -40495,6 +42147,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordPusta_1
 		{
+			text="Pusta";
 			speech[]=
 			{
 				"Pusta"
@@ -40511,6 +42164,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordPusta_1
 		{
 			wordsClass="StealthWords";
+			text="Pusta";
 			speech[]=
 			{
 				"Pusta"
@@ -40536,6 +42190,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordVyshnoe_1
 		{
+			text="Vyshnoe";
 			speech[]=
 			{
 				"Vyshnoe"
@@ -40552,6 +42207,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordVyshnoe_1
 		{
 			wordsClass="StealthWords";
+			text="Vyshnoe";
 			speech[]=
 			{
 				"Vyshnoe"
@@ -40577,6 +42233,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordBalota_1
 		{
+			text="Balota";
 			speech[]=
 			{
 				"Balota"
@@ -40593,6 +42250,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordBalota_1
 		{
 			wordsClass="StealthWords";
+			text="Balota";
 			speech[]=
 			{
 				"Balota"
@@ -40618,6 +42276,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordBor_1
 		{
+			text="Bor";
 			speech[]=
 			{
 				"Bor"
@@ -40634,6 +42293,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordBor_1
 		{
 			wordsClass="StealthWords";
+			text="Bor";
 			speech[]=
 			{
 				"Bor"
@@ -40659,6 +42319,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordDolina_1
 		{
+			text="Dolina";
 			speech[]=
 			{
 				"Dolina"
@@ -40675,6 +42336,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordDolina_1
 		{
 			wordsClass="StealthWords";
+			text="Dolina";
 			speech[]=
 			{
 				"Dolina"
@@ -40700,6 +42362,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordDrozhino_1
 		{
+			text="Drozhino";
 			speech[]=
 			{
 				"Drozhino"
@@ -40716,6 +42379,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordDrozhino_1
 		{
 			wordsClass="StealthWords";
+			text="Drozhino";
 			speech[]=
 			{
 				"Drozhino"
@@ -40741,6 +42405,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordDubrovka_1
 		{
+			text="Dubrovka";
 			speech[]=
 			{
 				"Dubrovka"
@@ -40757,6 +42422,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordDubrovka_1
 		{
 			wordsClass="StealthWords";
+			text="Dubrovka";
 			speech[]=
 			{
 				"Dubrovka"
@@ -40782,6 +42448,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordGrishino_1
 		{
+			text="Grishino";
 			speech[]=
 			{
 				"Grishino"
@@ -40798,6 +42465,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordGrishino_1
 		{
 			wordsClass="StealthWords";
+			text="Grishino";
 			speech[]=
 			{
 				"Grishino"
@@ -40823,6 +42491,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordGuglovo_1
 		{
+			text="Guglovo";
 			speech[]=
 			{
 				"Guglovo"
@@ -40839,6 +42508,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordGuglovo_1
 		{
 			wordsClass="StealthWords";
+			text="Guglovo";
 			speech[]=
 			{
 				"Guglovo"
@@ -40864,6 +42534,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordGvozdno_1
 		{
+			text="Gvozdno";
 			speech[]=
 			{
 				"Gvozdno"
@@ -40880,6 +42551,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordGvozdno_1
 		{
 			wordsClass="StealthWords";
+			text="Gvozdno";
 			speech[]=
 			{
 				"Gvozdno"
@@ -40905,6 +42577,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordKabanino_1
 		{
+			text="Kabanino";
 			speech[]=
 			{
 				"Kabanino"
@@ -40921,6 +42594,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordKabanino_1
 		{
 			wordsClass="StealthWords";
+			text="Kabanino";
 			speech[]=
 			{
 				"Kabanino"
@@ -40946,6 +42620,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordKamenka_1
 		{
+			text="Kamenka";
 			speech[]=
 			{
 				"Kamenka"
@@ -40962,6 +42637,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordKamenka_1
 		{
 			wordsClass="StealthWords";
+			text="Kamenka";
 			speech[]=
 			{
 				"Kamenka"
@@ -40987,6 +42663,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordKamyshovo_1
 		{
+			text="Kamyshovo";
 			speech[]=
 			{
 				"Kamyshovo"
@@ -41003,6 +42680,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordKamyshovo_1
 		{
 			wordsClass="StealthWords";
+			text="Kamyshovo";
 			speech[]=
 			{
 				"Kamyshovo"
@@ -41028,6 +42706,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordKhelm_1
 		{
+			text="Khelm";
 			speech[]=
 			{
 				"Khelm"
@@ -41044,6 +42723,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordKhelm_1
 		{
 			wordsClass="StealthWords";
+			text="Khelm";
 			speech[]=
 			{
 				"Khelm"
@@ -41069,6 +42749,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordKomarovo_1
 		{
+			text="Komarovo";
 			speech[]=
 			{
 				"Komarovo"
@@ -41085,6 +42766,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordKomarovo_1
 		{
 			wordsClass="StealthWords";
+			text="Komarovo";
 			speech[]=
 			{
 				"Komarovo"
@@ -41110,6 +42792,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordKozlovka_1
 		{
+			text="Kozlovka";
 			speech[]=
 			{
 				"Kozlovka"
@@ -41126,6 +42809,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordKozlovka_1
 		{
 			wordsClass="StealthWords";
+			text="Kozlovka";
 			speech[]=
 			{
 				"Kozlovka"
@@ -41151,6 +42835,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordLopatino_1
 		{
+			text="Lopatino";
 			speech[]=
 			{
 				"Lopatino"
@@ -41167,6 +42852,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordLopatino_1
 		{
 			wordsClass="StealthWords";
+			text="Lopatino";
 			speech[]=
 			{
 				"Lopatino"
@@ -41192,6 +42878,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordMogilevka_1
 		{
+			text="Mogilevka";
 			speech[]=
 			{
 				"Mogilevka"
@@ -41208,6 +42895,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordMogilevka_1
 		{
 			wordsClass="StealthWords";
+			text="Mogilevka";
 			speech[]=
 			{
 				"Mogilevka"
@@ -41233,6 +42921,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordMsta_1
 		{
+			text="Msta";
 			speech[]=
 			{
 				"Msta"
@@ -41249,6 +42938,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordMsta_1
 		{
 			wordsClass="StealthWords";
+			text="Msta";
 			speech[]=
 			{
 				"Msta"
@@ -41274,6 +42964,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordMyshkino_1
 		{
+			text="Myshkino";
 			speech[]=
 			{
 				"Myshkino"
@@ -41290,6 +42981,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordMyshkino_1
 		{
 			wordsClass="StealthWords";
+			text="Myshkino";
 			speech[]=
 			{
 				"Myshkino"
@@ -41315,6 +43007,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordNadezhdino_1
 		{
+			text="Nadezhdino";
 			speech[]=
 			{
 				"Nadezhdino"
@@ -41331,6 +43024,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordNadezhdino_1
 		{
 			wordsClass="StealthWords";
+			text="Nadezhdino";
 			speech[]=
 			{
 				"Nadezhdino"
@@ -41356,6 +43050,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordNizhnoye_1
 		{
+			text="Nizhnoye";
 			speech[]=
 			{
 				"Nizhnoye"
@@ -41372,6 +43067,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordNizhnoye_1
 		{
 			wordsClass="StealthWords";
+			text="Nizhnoye";
 			speech[]=
 			{
 				"Nizhnoye"
@@ -41397,6 +43093,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordNovySobor_1
 		{
+			text="NovySobor";
 			speech[]=
 			{
 				"NovySobor"
@@ -41413,6 +43110,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordNovySobor_1
 		{
 			wordsClass="StealthWords";
+			text="NovySobor";
 			speech[]=
 			{
 				"NovySobor"
@@ -41438,6 +43136,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordOlsha_1
 		{
+			text="Olsha";
 			speech[]=
 			{
 				"Olsha"
@@ -41454,6 +43153,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordOlsha_1
 		{
 			wordsClass="StealthWords";
+			text="Olsha";
 			speech[]=
 			{
 				"Olsha"
@@ -41479,6 +43179,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordOrlovets_1
 		{
+			text="Orlovets";
 			speech[]=
 			{
 				"Orlovets"
@@ -41495,6 +43196,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordOrlovets_1
 		{
 			wordsClass="StealthWords";
+			text="Orlovets";
 			speech[]=
 			{
 				"Orlovets"
@@ -41520,6 +43222,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordPavlovo_1
 		{
+			text="Pavlovo";
 			speech[]=
 			{
 				"Pavlovo"
@@ -41536,6 +43239,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordPavlovo_1
 		{
 			wordsClass="StealthWords";
+			text="Pavlovo";
 			speech[]=
 			{
 				"Pavlovo"
@@ -41561,6 +43265,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordPetrovka_1
 		{
+			text="Petrovka";
 			speech[]=
 			{
 				"Petrovka"
@@ -41577,6 +43282,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordPetrovka_1
 		{
 			wordsClass="StealthWords";
+			text="Petrovka";
 			speech[]=
 			{
 				"Petrovka"
@@ -41602,6 +43308,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordPogorevka_1
 		{
+			text="Pogorevka";
 			speech[]=
 			{
 				"Pogorevka"
@@ -41618,6 +43325,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordPogorevka_1
 		{
 			wordsClass="StealthWords";
+			text="Pogorevka";
 			speech[]=
 			{
 				"Pogorevka"
@@ -41643,6 +43351,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordPolana_1
 		{
+			text="Polana";
 			speech[]=
 			{
 				"Polana"
@@ -41659,6 +43368,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordPolana_1
 		{
 			wordsClass="StealthWords";
+			text="Polana";
 			speech[]=
 			{
 				"Polana"
@@ -41684,6 +43394,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordPrigorodki_1
 		{
+			text="Prigorodki";
 			speech[]=
 			{
 				"Prigorodki"
@@ -41700,6 +43411,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordPrigorodki_1
 		{
 			wordsClass="StealthWords";
+			text="Prigorodki";
 			speech[]=
 			{
 				"Prigorodki"
@@ -41725,6 +43437,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordPulkovo_1
 		{
+			text="Pulkovo";
 			speech[]=
 			{
 				"Pulkovo"
@@ -41741,6 +43454,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordPulkovo_1
 		{
 			wordsClass="StealthWords";
+			text="Pulkovo";
 			speech[]=
 			{
 				"Pulkovo"
@@ -41766,6 +43480,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordPustoshka_1
 		{
+			text="Pustoshka";
 			speech[]=
 			{
 				"Pustoshka"
@@ -41782,6 +43497,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordPustoshka_1
 		{
 			wordsClass="StealthWords";
+			text="Pustoshka";
 			speech[]=
 			{
 				"Pustoshka"
@@ -41807,6 +43523,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordRogovo_1
 		{
+			text="Rogovo";
 			speech[]=
 			{
 				"Rogovo"
@@ -41823,6 +43540,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordRogovo_1
 		{
 			wordsClass="StealthWords";
+			text="Rogovo";
 			speech[]=
 			{
 				"Rogovo"
@@ -41848,6 +43566,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordShakhovka_1
 		{
+			text="Shakhovka";
 			speech[]=
 			{
 				"Shakhovka"
@@ -41864,6 +43583,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordShakhovka_1
 		{
 			wordsClass="StealthWords";
+			text="Shakhovka";
 			speech[]=
 			{
 				"Shakhovka"
@@ -41889,6 +43609,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordSosnovka_1
 		{
+			text="Sosnovka";
 			speech[]=
 			{
 				"Sosnovka"
@@ -41905,6 +43626,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordSosnovka_1
 		{
 			wordsClass="StealthWords";
+			text="Sosnovka";
 			speech[]=
 			{
 				"Sosnovka"
@@ -41930,6 +43652,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordStaroye_1
 		{
+			text="Staroye";
 			speech[]=
 			{
 				"Staroye"
@@ -41946,6 +43669,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordStaroye_1
 		{
 			wordsClass="StealthWords";
+			text="Staroye";
 			speech[]=
 			{
 				"Staroye"
@@ -41971,6 +43695,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordTulga_1
 		{
+			text="Tulga";
 			speech[]=
 			{
 				"Tulga"
@@ -41987,6 +43712,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordTulga_1
 		{
 			wordsClass="StealthWords";
+			text="Tulga";
 			speech[]=
 			{
 				"Tulga"
@@ -42012,6 +43738,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordTown_1
 		{
+			text="town";
 			speech[]=
 			{
 				"Town"
@@ -42028,6 +43755,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordTown_1
 		{
 			wordsClass="StealthWords";
+			text="town";
 			speech[]=
 			{
 				"Town"
@@ -42053,6 +43781,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordVillage_1
 		{
+			text="village";
 			speech[]=
 			{
 				"Village"
@@ -42069,6 +43798,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordVillage_1
 		{
 			wordsClass="StealthWords";
+			text="village";
 			speech[]=
 			{
 				"Village"
@@ -42094,6 +43824,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordAirfield_1
 		{
+			text="airfield";
 			speech[]=
 			{
 				"Airfield"
@@ -42110,6 +43841,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordAirfield_1
 		{
 			wordsClass="StealthWords";
+			text="airfield";
 			speech[]=
 			{
 				"Airfield"
@@ -42135,6 +43867,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordFactory_1
 		{
+			text="factory";
 			speech[]=
 			{
 				"Factory"
@@ -42151,6 +43884,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordFactory_1
 		{
 			wordsClass="StealthWords";
+			text="factory";
 			speech[]=
 			{
 				"Factory"
@@ -42176,6 +43910,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordCrossroad_1
 		{
+			text="crossroad";
 			speech[]=
 			{
 				"Crossroad"
@@ -42192,6 +43927,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordCrossroad_1
 		{
 			wordsClass="StealthWords";
+			text="crossroad";
 			speech[]=
 			{
 				"Crossroad"
@@ -42217,6 +43953,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordOilfield_1
 		{
+			text="oilfield";
 			speech[]=
 			{
 				"Oilfield"
@@ -42233,6 +43970,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordOilfield_1
 		{
 			wordsClass="StealthWords";
+			text="oilfield";
 			speech[]=
 			{
 				"Oilfield"
@@ -42258,6 +43996,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Wordmineplace_1
 		{
+			text="mine";
 			speech[]=
 			{
 				"mineplace"
@@ -42274,6 +44013,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class Wordmineplace_1
 		{
 			wordsClass="StealthWords";
+			text="mine";
 			speech[]=
 			{
 				"mineplace"
@@ -42299,6 +44039,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordHarbor_1
 		{
+			text="harbor";
 			speech[]=
 			{
 				"Harbor"
@@ -42315,6 +44056,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordHarbor_1
 		{
 			wordsClass="StealthWords";
+			text="harbor";
 			speech[]=
 			{
 				"Harbor"
@@ -42340,6 +44082,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordZargabad_1
 		{
+			text="Zargabad";
 			speech[]=
 			{
 				"Zargabad"
@@ -42356,6 +44099,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordZargabad_1
 		{
 			wordsClass="StealthWords";
+			text="Zargabad";
 			speech[]=
 			{
 				"Zargabad"
@@ -42381,6 +44125,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordAzizajt_1
 		{
+			text="Azizajt";
 			speech[]=
 			{
 				"Azizajt"
@@ -42397,6 +44142,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordAzizajt_1
 		{
 			wordsClass="StealthWords";
+			text="Azizajt";
 			speech[]=
 			{
 				"Azizajt"
@@ -42422,6 +44168,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordNango_1
 		{
+			text="Nango";
 			speech[]=
 			{
 				"Nango"
@@ -42438,6 +44185,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordNango_1
 		{
 			wordsClass="StealthWords";
+			text="Nango";
 			speech[]=
 			{
 				"Nango"
@@ -42463,6 +44211,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordYarum_1
 		{
+			text="Yarum";
 			speech[]=
 			{
 				"Yarum"
@@ -42479,6 +44228,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordYarum_1
 		{
 			wordsClass="StealthWords";
+			text="Yarum";
 			speech[]=
 			{
 				"Yarum"
@@ -42504,6 +44254,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordHazarBagh_1
 		{
+			text="Hazar Bagh";
 			speech[]=
 			{
 				"HazarBagh"
@@ -42520,6 +44271,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordHazarBagh_1
 		{
 			wordsClass="StealthWords";
+			text="Hazar Bagh";
 			speech[]=
 			{
 				"HazarBagh"
@@ -42545,6 +44297,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordAnar_1
 		{
+			text="Anar";
 			speech[]=
 			{
 				"Anar"
@@ -42561,6 +44314,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordAnar_1
 		{
 			wordsClass="StealthWords";
+			text="Anar";
 			speech[]=
 			{
 				"Anar"
@@ -42586,6 +44340,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordKakaru_1
 		{
+			text="Kakaru";
 			speech[]=
 			{
 				"Kakaru"
@@ -42602,6 +44357,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordKakaru_1
 		{
 			wordsClass="StealthWords";
+			text="Kakaru";
 			speech[]=
 			{
 				"Kakaru"
@@ -42627,6 +44383,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordBastam_1
 		{
+			text="Bastam";
 			speech[]=
 			{
 				"Bastam"
@@ -42643,6 +44400,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordBastam_1
 		{
 			wordsClass="StealthWords";
+			text="Bastam";
 			speech[]=
 			{
 				"Bastam"
@@ -42668,6 +44426,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordFalar_1
 		{
+			text="Falar";
 			speech[]=
 			{
 				"Falar"
@@ -42684,6 +44443,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordFalar_1
 		{
 			wordsClass="StealthWords";
+			text="Falar";
 			speech[]=
 			{
 				"Falar"
@@ -42709,6 +44469,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordFeeruzAbad_1
 		{
+			text="Feeruz Abad";
 			speech[]=
 			{
 				"FeeruzAbad"
@@ -42725,6 +44486,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordFeeruzAbad_1
 		{
 			wordsClass="StealthWords";
+			text="Feeruz Abad";
 			speech[]=
 			{
 				"FeeruzAbad"
@@ -42750,6 +44512,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordGarmarud_1
 		{
+			text="Garmarud";
 			speech[]=
 			{
 				"Garmarud"
@@ -42766,6 +44529,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordGarmarud_1
 		{
 			wordsClass="StealthWords";
+			text="Garmarud";
 			speech[]=
 			{
 				"Garmarud"
@@ -42791,6 +44555,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordGarmsar_1
 		{
+			text="Garmsar";
 			speech[]=
 			{
 				"Garmsar"
@@ -42807,6 +44572,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordGarmsar_1
 		{
 			wordsClass="StealthWords";
+			text="Garmsar";
 			speech[]=
 			{
 				"Garmsar"
@@ -42832,6 +44598,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordGospandi_1
 		{
+			text="Gospandi";
 			speech[]=
 			{
 				"Gospandi"
@@ -42848,6 +44615,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordGospandi_1
 		{
 			wordsClass="StealthWords";
+			text="Gospandi";
 			speech[]=
 			{
 				"Gospandi"
@@ -42873,6 +44641,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordChakChak_1
 		{
+			text="Chak Chak";
 			speech[]=
 			{
 				"ChakChak"
@@ -42889,6 +44658,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordChakChak_1
 		{
 			wordsClass="StealthWords";
+			text="Chak Chak";
 			speech[]=
 			{
 				"ChakChak"
@@ -42914,6 +44684,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordChaman_1
 		{
+			text="Chaman";
 			speech[]=
 			{
 				"Chaman"
@@ -42930,6 +44701,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordChaman_1
 		{
 			wordsClass="StealthWords";
+			text="Chaman";
 			speech[]=
 			{
 				"Chaman"
@@ -42955,6 +44727,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordLoyManara_1
 		{
+			text="Loy Manara";
 			speech[]=
 			{
 				"LoyManara"
@@ -42971,6 +44744,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordLoyManara_1
 		{
 			wordsClass="StealthWords";
+			text="Loy Manara";
 			speech[]=
 			{
 				"LoyManara"
@@ -42996,6 +44770,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordNagara_1
 		{
+			text="Nagara";
 			speech[]=
 			{
 				"Nagara"
@@ -43012,6 +44787,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordNagara_1
 		{
 			wordsClass="StealthWords";
+			text="Nagara";
 			speech[]=
 			{
 				"Nagara"
@@ -43037,6 +44813,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordNur_1
 		{
+			text="Nur";
 			speech[]=
 			{
 				"Nur"
@@ -43053,6 +44830,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordNur_1
 		{
 			wordsClass="StealthWords";
+			text="Nur";
 			speech[]=
 			{
 				"Nur"
@@ -43078,6 +44856,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordRasman_1
 		{
+			text="Rasman";
 			speech[]=
 			{
 				"Rasman"
@@ -43094,6 +44873,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordRasman_1
 		{
 			wordsClass="StealthWords";
+			text="Rasman";
 			speech[]=
 			{
 				"Rasman"
@@ -43119,6 +44899,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordSakhee_1
 		{
+			text="Sakhee";
 			speech[]=
 			{
 				"Sakhee"
@@ -43135,6 +44916,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordSakhee_1
 		{
 			wordsClass="StealthWords";
+			text="Sakhee";
 			speech[]=
 			{
 				"Sakhee"
@@ -43160,6 +44942,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordZavarak_1
 		{
+			text="Zavarak";
 			speech[]=
 			{
 				"Zavarak"
@@ -43176,6 +44959,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordZavarak_1
 		{
 			wordsClass="StealthWords";
+			text="Zavarak";
 			speech[]=
 			{
 				"Zavarak"
@@ -43201,6 +44985,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordKarachinar_1
 		{
+			text="Karachinar";
 			speech[]=
 			{
 				"Karachinar"
@@ -43217,6 +45002,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordKarachinar_1
 		{
 			wordsClass="StealthWords";
+			text="Karachinar";
 			speech[]=
 			{
 				"Karachinar"
@@ -43242,6 +45028,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordShamali_1
 		{
+			text="Shamali";
 			speech[]=
 			{
 				"Shamali"
@@ -43258,6 +45045,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordShamali_1
 		{
 			wordsClass="StealthWords";
+			text="Shamali";
 			speech[]=
 			{
 				"Shamali"
@@ -43283,6 +45071,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordMulladoost_1
 		{
+			text="Mulladoost";
 			speech[]=
 			{
 				"Mulladoost"
@@ -43299,6 +45088,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordMulladoost_1
 		{
 			wordsClass="StealthWords";
+			text="Mulladoost";
 			speech[]=
 			{
 				"Mulladoost"
@@ -43324,6 +45114,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordKhushab_1
 		{
+			text="Khushab";
 			speech[]=
 			{
 				"Khushab"
@@ -43340,6 +45131,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordKhushab_1
 		{
 			wordsClass="StealthWords";
+			text="Khushab";
 			speech[]=
 			{
 				"Khushab"
@@ -43365,6 +45157,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordShukurkalay_1
 		{
+			text="Shukurkalay";
 			speech[]=
 			{
 				"Shukurkalay"
@@ -43381,6 +45174,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordShukurkalay_1
 		{
 			wordsClass="StealthWords";
+			text="Shukurkalay";
 			speech[]=
 			{
 				"Shukurkalay"
@@ -43406,6 +45200,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordJilavur_1
 		{
+			text="Jilavur";
 			speech[]=
 			{
 				"Jilavur"
@@ -43422,6 +45217,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordJilavur_1
 		{
 			wordsClass="StealthWords";
+			text="Jilavur";
 			speech[]=
 			{
 				"Jilavur"
@@ -43447,6 +45243,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordLanday_1
 		{
+			text="Landay";
 			speech[]=
 			{
 				"Landay"
@@ -43463,6 +45260,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordLanday_1
 		{
 			wordsClass="StealthWords";
+			text="Landay";
 			speech[]=
 			{
 				"Landay"
@@ -43488,6 +45286,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordSultansafee_1
 		{
+			text="Sultansafee";
 			speech[]=
 			{
 				"Sultansafee"
@@ -43504,6 +45303,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordSultansafee_1
 		{
 			wordsClass="StealthWords";
+			text="Sultansafee";
 			speech[]=
 			{
 				"Sultansafee"
@@ -43529,6 +45329,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordJaza_1
 		{
+			text="Jaza";
 			speech[]=
 			{
 				"Jaza"
@@ -43545,6 +45346,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordJaza_1
 		{
 			wordsClass="StealthWords";
+			text="Jaza";
 			speech[]=
 			{
 				"Jaza"
@@ -43570,6 +45372,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordHuzrutimam_1
 		{
+			text="Huzrutimam";
 			speech[]=
 			{
 				"Huzrutimam"
@@ -43586,6 +45389,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordHuzrutimam_1
 		{
 			wordsClass="StealthWords";
+			text="Huzrutimam";
 			speech[]=
 			{
 				"Huzrutimam"
@@ -43611,6 +45415,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordChardarakht_1
 		{
+			text="Chardarakht";
 			speech[]=
 			{
 				"Chardarakht"
@@ -43627,6 +45432,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordChardarakht_1
 		{
 			wordsClass="StealthWords";
+			text="Chardarakht";
 			speech[]=
 			{
 				"Chardarakht"
@@ -43652,6 +45458,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordTimurkalay_1
 		{
+			text="Timurkalay";
 			speech[]=
 			{
 				"Timurkalay"
@@ -43668,6 +45475,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordTimurkalay_1
 		{
 			wordsClass="StealthWords";
+			text="Timurkalay";
 			speech[]=
 			{
 				"Timurkalay"
@@ -43693,6 +45501,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordImarat_1
 		{
+			text="Imarat";
 			speech[]=
 			{
 				"Imarat"
@@ -43709,6 +45518,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordImarat_1
 		{
 			wordsClass="StealthWords";
+			text="Imarat";
 			speech[]=
 			{
 				"Imarat"
@@ -43734,6 +45544,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordRavanay_1
 		{
+			text="Ravanay";
 			speech[]=
 			{
 				"Ravanay"
@@ -43750,6 +45561,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordRavanay_1
 		{
 			wordsClass="StealthWords";
+			text="Ravanay";
 			speech[]=
 			{
 				"Ravanay"
@@ -43773,6 +45585,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordCS_SuppressiveFireE_1
 		{
+			text="Suppressive fire!";
 			speech[]=
 			{
 				"CS_SuppressiveFireE"
@@ -43796,6 +45609,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordCS_HangOnIllSuppressEmE_1
 		{
+			text="Hang on, I'll suppress 'em!";
 			speech[]=
 			{
 				"CS_HangOnIllSuppressEmE"
@@ -43819,6 +45633,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordCS_SuppressingE_1
 		{
+			text="Suppressing!";
 			speech[]=
 			{
 				"CS_SuppressingE"
@@ -43842,6 +45657,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordCS_CoveringFireE_1
 		{
+			text="Covering fire!";
 			speech[]=
 			{
 				"CS_CoveringFireE"
@@ -43865,6 +45681,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordCS_GoImCoveringE_1
 		{
+			text="Go, I'm covering!";
 			speech[]=
 			{
 				"CS_GoImCoveringE"
@@ -43888,6 +45705,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordCS_GoIllCoverE_1
 		{
+			text="Go, I'll cover!";
 			speech[]=
 			{
 				"CS_GoIllCoverE"
@@ -43911,6 +45729,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordCS_CoveringFire2E_1
 		{
+			text="Covering fire!";
 			speech[]=
 			{
 				"CS_CoveringFire2E"
@@ -43934,6 +45753,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordCS_CoveringGoE_1
 		{
+			text="Covering, go!";
 			speech[]=
 			{
 				"CS_CoveringGoE"
@@ -43957,6 +45777,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordCS_MoveOutE_1
 		{
+			text="Move out!";
 			speech[]=
 			{
 				"CS_MoveOutE"
@@ -43980,6 +45801,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordCS_GoE_1
 		{
+			text="Go!";
 			speech[]=
 			{
 				"CS_GoE"
@@ -44003,6 +45825,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordCS_MoveE_1
 		{
+			text="Move!";
 			speech[]=
 			{
 				"CS_MoveE"
@@ -44026,6 +45849,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordCS_EngagingE_1
 		{
+			text="Engaging!";
 			speech[]=
 			{
 				"CS_EngagingE"
@@ -44049,6 +45873,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordCS_CoverMeE_1
 		{
+			text="Cover me!";
 			speech[]=
 			{
 				"CS_CoverMeE"
@@ -44072,6 +45897,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordCS_OKLetsGo_1
 		{
+			text="OK, let's go";
 			speech[]=
 			{
 				"CS_OKLetsGo"
@@ -44095,6 +45921,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordCS_MovingE_1
 		{
+			text="Moving!";
 			speech[]=
 			{
 				"CS_MovingE"
@@ -44118,6 +45945,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordCS_MovinOutE_1
 		{
+			text="Movin' out!";
 			speech[]=
 			{
 				"CS_MovinOutE"
@@ -44141,6 +45969,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordCS_ReloadingE_1
 		{
+			text="Reloading!";
 			speech[]=
 			{
 				"CS_ReloadingE"
@@ -44164,6 +45993,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordCS_GottaReloadE_1
 		{
+			text="Gotta reload!";
 			speech[]=
 			{
 				"CS_GottaReloadE"
@@ -44187,6 +46017,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordCS_CoverMeReloadingE_1
 		{
+			text="Cover me, reloading!";
 			speech[]=
 			{
 				"CS_CoverMeReloadingE"
@@ -44210,6 +46041,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordCS_ChangingMagsE_1
 		{
+			text="Changing mags!";
 			speech[]=
 			{
 				"CS_ChangingMagsE"
@@ -44233,6 +46065,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordCS_FireInTheHoleE_1
 		{
+			text="Fire in the hole!";
 			speech[]=
 			{
 				"CS_FireInTheHoleE"
@@ -44256,6 +46089,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordCS_ThrowingFragE_1
 		{
+			text="Throwing frag!";
 			speech[]=
 			{
 				"CS_ThrowingFragE"
@@ -44279,6 +46113,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordCS_ThrowingSmokeE_1
 		{
+			text="Throwing smoke!";
 			speech[]=
 			{
 				"CS_ThrowingSmokeE"
@@ -44302,6 +46137,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordCS_SmokeOutE_1
 		{
+			text="Smoke out!";
 			speech[]=
 			{
 				"CS_SmokeOutE"
@@ -44325,6 +46161,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordCS_FragOutE_1
 		{
+			text="Frag out!";
 			speech[]=
 			{
 				"CS_FragOutE"
@@ -44348,6 +46185,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordCS_GrenadeE_1
 		{
+			text="Grenade!";
 			speech[]=
 			{
 				"CS_GrenadeE"
@@ -44371,6 +46209,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordCS_WatchTheGrenadeE_1
 		{
+			text="Watch the grenade!";
 			speech[]=
 			{
 				"CS_WatchTheGrenadeE"
@@ -44394,6 +46233,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordCS_IncomingFragE_1
 		{
+			text="Incoming frag!";
 			speech[]=
 			{
 				"CS_IncomingFragE"
@@ -44417,6 +46257,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordCS_ContactE_1
 		{
+			text="Contact!";
 			speech[]=
 			{
 				"CS_ContactE"
@@ -44440,6 +46281,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordCS_HostilesE_1
 		{
+			text="Hostiles!";
 			speech[]=
 			{
 				"CS_HostilesE"
@@ -44463,6 +46305,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordCS_EnemyE_1
 		{
+			text="Enemy!";
 			speech[]=
 			{
 				"CS_EnemyE"
@@ -44486,6 +46329,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordCS_DidYouSeeThatQ_1
 		{
+			text="Did you see that?";
 			speech[]=
 			{
 				"CS_DidYouSeeThatQ"
@@ -44509,6 +46353,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordCS_FocusE_1
 		{
+			text="Focus!";
 			speech[]=
 			{
 				"CS_FocusE"
@@ -44532,6 +46377,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordCS_CheckThatOut_1
 		{
+			text="Check that out";
 			speech[]=
 			{
 				"CS_CheckThatOut"
@@ -44555,6 +46401,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordCS_MotherfuckerE_1
 		{
+			text="Motherfucker!";
 			speech[]=
 			{
 				"CS_MotherfuckerE"
@@ -44578,6 +46425,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordCS_SeeThatQE_1
 		{
+			text="See that?!";
 			speech[]=
 			{
 				"CS_SeeThatQE"
@@ -44601,6 +46449,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordCS_ARGHHE_1
 		{
+			text="ARGHH!";
 			speech[]=
 			{
 				"CS_ARGHHE"
@@ -44624,6 +46473,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordCS_OOFE_1
 		{
+			text="OOF!";
 			speech[]=
 			{
 				"CS_OOFE"
@@ -44647,6 +46497,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordCS_UGHE_1
 		{
+			text="UGH!";
 			speech[]=
 			{
 				"CS_UGHE"
@@ -44670,6 +46521,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordCS_NoE_1
 		{
+			text="No!";
 			speech[]=
 			{
 				"CS_NoE"
@@ -44693,6 +46545,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordCS_WoohooE_1
 		{
+			text="Woohoo!";
 			speech[]=
 			{
 				"CS_WoohooE"
@@ -44716,6 +46569,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordCS_YahooE_1
 		{
+			text="Yahoo!";
 			speech[]=
 			{
 				"CS_YahooE"
@@ -44739,6 +46593,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordCS_HeeeyE_1
 		{
+			text="Heeey!";
 			speech[]=
 			{
 				"CS_HeeeyE"
@@ -44762,6 +46617,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordCS_YeehawEGreatE_1
 		{
+			text="Yeehaw! Great!";
 			speech[]=
 			{
 				"CS_YeehawEGreatE"
@@ -44785,6 +46641,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordBaseUnderAttackE_1
 		{
+			text="Base under attack!";
 			speech[]=
 			{
 				"BaseUnderAttackE"
@@ -44808,6 +46665,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordUnderAttackE_1
 		{
+			text="under attack!";
 			speech[]=
 			{
 				"UnderAttackE"
@@ -44831,6 +46689,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordInsufficientFunds_1
 		{
+			text="Insufficient funds";
 			speech[]=
 			{
 				"InsufficientFunds"
@@ -44854,6 +46713,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordInsufficientSupplies_1
 		{
+			text="Insufficient supplies";
 			speech[]=
 			{
 				"InsufficientSupplies"
@@ -44877,6 +46737,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordInsufficientResources_1
 		{
+			text="Insufficient resources";
 			speech[]=
 			{
 				"InsufficientResources"
@@ -44900,6 +46761,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordVotingForANewCommander_1
 		{
+			text="Voting for a new commander";
 			speech[]=
 			{
 				"VotingForANewCommander"
@@ -44923,6 +46785,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordEnemyBaseLocated_1
 		{
+			text="Enemy base located";
 			speech[]=
 			{
 				"EnemyBaseLocated"
@@ -44946,6 +46809,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordEnemyForcesDetected_1
 		{
+			text="Enemy forces detected";
 			speech[]=
 			{
 				"EnemyForcesDetected"
@@ -44969,6 +46833,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordHostilesDetectedNear_1
 		{
+			text="Hostiles detected near";
 			speech[]=
 			{
 				"HostilesDetectedNear"
@@ -44992,6 +46857,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordNewIntelAvailable_1
 		{
+			text="New Intel available";
 			speech[]=
 			{
 				"NewIntelAvailable"
@@ -45015,6 +46881,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordNewSupportAvailable_1
 		{
+			text="New support available";
 			speech[]=
 			{
 				"NewSupportAvailable"
@@ -45038,6 +46905,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordStrongpointCapturedNear_1
 		{
+			text="Strongpoint captured near";
 			speech[]=
 			{
 				"StrongpointCapturedNear"
@@ -45061,6 +46929,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordStrongpointLostAt_1
 		{
+			text="Strongpoint lost at";
 			speech[]=
 			{
 				"StrongpointLostAt"
@@ -45084,6 +46953,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordCaptured_1
 		{
+			text="captured";
 			speech[]=
 			{
 				"Captured"
@@ -45107,6 +46977,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordCapturedNear_1
 		{
+			text="captured near";
 			speech[]=
 			{
 				"CapturedNear"
@@ -45130,6 +47001,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordLost_1
 		{
+			text="lost";
 			speech[]=
 			{
 				"Lost"
@@ -45153,6 +47025,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordLostAt_1
 		{
+			text="lost at";
 			speech[]=
 			{
 				"LostAt"
@@ -45176,6 +47049,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordIsUnderAttack_1
 		{
+			text="Is under attack";
 			speech[]=
 			{
 				"IsUnderAttack"
@@ -45199,6 +47073,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordFunds_1
 		{
+			text="Funds";
 			speech[]=
 			{
 				"Funds"
@@ -45222,6 +47097,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordResources_1
 		{
+			text="Resources";
 			speech[]=
 			{
 				"Resources"
@@ -45245,6 +47121,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordSupplys_1
 		{
+			text="Supply's";
 			speech[]=
 			{
 				"Supplys"
@@ -45268,6 +47145,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordStrongPoint_1
 		{
+			text="Strong point";
 			speech[]=
 			{
 				"StrongPoint"
@@ -45291,6 +47169,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordOperationTerminatesIn20Minutes_1
 		{
+			text="Operation terminates in 20 minutes";
 			speech[]=
 			{
 				"OperationTerminatesIn20Minutes"
@@ -45314,6 +47193,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordOperationTerminatesIn10Minutes_1
 		{
+			text="Operation terminates in 10 minutes";
 			speech[]=
 			{
 				"OperationTerminatesIn10Minutes"
@@ -45337,6 +47217,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordOperationTerminatesIn5Minutes_1
 		{
+			text="Operation terminates in 5 minutes";
 			speech[]=
 			{
 				"OperationTerminatesIn5Minutes"
@@ -45360,6 +47241,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordMissionAccomplished_1
 		{
+			text="Mission accomplished";
 			speech[]=
 			{
 				"MissionAccomplished"
@@ -45383,6 +47265,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordMissionFailed_1
 		{
+			text="Mission failed";
 			speech[]=
 			{
 				"MissionFailed"
@@ -45406,6 +47289,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordMissionCanceled_1
 		{
+			text="Mission canceled";
 			speech[]=
 			{
 				"MissionCanceled"
@@ -45429,6 +47313,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordNewMissionAvailable_1
 		{
+			text="New mission available";
 			speech[]=
 			{
 				"NewMissionAvailable"
@@ -45452,6 +47337,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordMission_1
 		{
+			text="Mission";
 			speech[]=
 			{
 				"Mission"
@@ -45475,6 +47361,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordMobilized_1
 		{
+			text="Mobilized";
 			speech[]=
 			{
 				"Mobilized"
@@ -45498,6 +47385,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordDeployed_1
 		{
+			text="Deployed";
 			speech[]=
 			{
 				"Deployed"
@@ -45521,6 +47409,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordConstructed_1
 		{
+			text="Constructed";
 			speech[]=
 			{
 				"Constructed"
@@ -45544,6 +47433,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordDestroyed_1
 		{
+			text="Destroyed";
 			speech[]=
 			{
 				"Destroyed"
@@ -45567,6 +47457,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordCommandPost_1
 		{
+			text="Command post";
 			speech[]=
 			{
 				"CommandPost"
@@ -45590,6 +47481,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordHeadquarters_1
 		{
+			text="headquarters";
 			speech[]=
 			{
 				"Headquarters"
@@ -45613,6 +47505,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordBarracks_1
 		{
+			text="Barracks";
 			speech[]=
 			{
 				"Barracks"
@@ -45636,6 +47529,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordLightVehicleSupplyPoint_1
 		{
+			text="Light vehicle supply point";
 			speech[]=
 			{
 				"LightVehicleSupplyPoint"
@@ -45659,6 +47553,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordHeavyVehicleSupplyPoint_1
 		{
+			text="Heavy vehicle supply point";
 			speech[]=
 			{
 				"HeavyVehicleSupplyPoint"
@@ -45682,6 +47577,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordHelipad_1
 		{
+			text="Helipad";
 			speech[]=
 			{
 				"Helipad"
@@ -45705,6 +47601,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordArtilleryBattery_1
 		{
+			text="Artillery battery";
 			speech[]=
 			{
 				"ArtilleryBattery"
@@ -45728,6 +47625,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordAntiAirRadar_1
 		{
+			text="Anti air radar";
 			speech[]=
 			{
 				"AntiAirRadar"
@@ -45751,6 +47649,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordArtilleryRadar_1
 		{
+			text="Artillery radar";
 			speech[]=
 			{
 				"ArtilleryRadar"
@@ -45774,6 +47673,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordUAVTerminal_1
 		{
+			text="UAV Terminal";
 			speech[]=
 			{
 				"UAVTerminal"
@@ -45797,6 +47697,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordServicePoint_1
 		{
+			text="Service point";
 			speech[]=
 			{
 				"ServicePoint"
@@ -45820,6 +47721,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordCiviliansUnderEnemyFireIn_1
 		{
+			text="Civilians under enemy fire in";
 			speech[]=
 			{
 				"CiviliansUnderEnemyFireIn"
@@ -45843,6 +47745,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordRequestingAssistance_1
 		{
+			text="requesting assistance";
 			speech[]=
 			{
 				"RequestingAssistance"
@@ -45866,6 +47769,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordNegativeWeCannotDivertAtThisTime_1
 		{
+			text="Negative, we cannot divert at this time";
 			speech[]=
 			{
 				"NegativeWeCannotDivertAtThisTime"
@@ -45889,6 +47793,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordCanDoWereOnIt_1
 		{
+			text="Can do, we're on it";
 			speech[]=
 			{
 				"CanDoWereOnIt"
@@ -45912,6 +47817,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordRequestingPermissionToJoinYourTeam_1
 		{
+			text="Requesting permission to join your team";
 			speech[]=
 			{
 				"RequestingPermissionToJoinYourTeam"
@@ -45935,6 +47841,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordPermissionGranted_1
 		{
+			text="Permission granted";
 			speech[]=
 			{
 				"PermissionGranted"
@@ -45958,6 +47865,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordRequestRejected_1
 		{
+			text="Request rejected";
 			speech[]=
 			{
 				"RequestRejected"
@@ -45981,6 +47889,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordRequestingPermissionToLeaveYourTeam_1
 		{
+			text="Requesting permission to leave your team";
 			speech[]=
 			{
 				"RequestingPermissionToLeaveYourTeam"
@@ -46004,6 +47913,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordBLUFORCommanderRequestsAnAlliance_1
 		{
+			text="BLUFOR commander requests an alliance";
 			speech[]=
 			{
 				"BLUFORCommanderRequestsAnAlliance"
@@ -46027,6 +47937,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordOPFORCommanderRequestsAnAlliance_1
 		{
+			text="OPFOR commander requests an alliance";
 			speech[]=
 			{
 				"OPFORCommanderRequestsAnAlliance"
@@ -46050,6 +47961,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordNeutralCommanderRequestsAnAlliance_1
 		{
+			text="Neutral commander requests an alliance";
 			speech[]=
 			{
 				"NeutralCommanderRequestsAnAlliance"
@@ -46073,6 +47985,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordBLUFORCommanderRequestsACeaseFire_1
 		{
+			text="BLUFOR commander requests a cease-fire";
 			speech[]=
 			{
 				"BLUFORCommanderRequestsACeaseFire"
@@ -46096,6 +48009,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordOPFORCommanderRequestsACeaseFire_1
 		{
+			text="OPFOR commander requests a cease-fire";
 			speech[]=
 			{
 				"OPFORCommanderRequestsACeaseFire"
@@ -46119,6 +48033,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordNeutralCommanderRequestsACeaseFire_1
 		{
+			text="Neutral commander requests a cease-fire";
 			speech[]=
 			{
 				"NeutralCommanderRequestsACeaseFire"
@@ -46142,6 +48057,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordAllianceFormed_1
 		{
+			text="Alliance formed";
 			speech[]=
 			{
 				"AllianceFormed"
@@ -46165,6 +48081,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordAllianceHasEnded_1
 		{
+			text="Alliance has ended";
 			speech[]=
 			{
 				"AllianceHasEnded"
@@ -46188,6 +48105,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordCeaseFireInEffect_1
 		{
+			text="Cease fire in effect";
 			speech[]=
 			{
 				"CeaseFireInEffect"
@@ -46211,6 +48129,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordCeaseFireHasEnded_1
 		{
+			text="Cease fire has ended";
 			speech[]=
 			{
 				"CeaseFireHasEnded"
@@ -46234,6 +48153,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordAnotherTeamHasTransferredFundsToYou_1
 		{
+			text="Another team has transferred funds to you";
 			speech[]=
 			{
 				"AnotherTeamHasTransferredFundsToYou"
@@ -46259,6 +48179,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordHC_ReportingIn_1
 		{
+			text="Reporting in";
 			speech[]=
 			{
 				"HC_ReportingIn"
@@ -46275,6 +48196,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordHC_ReportingIn_1
 		{
 			wordsClass="StealthWords";
+			text="Reporting in";
 			speech[]=
 			{
 				"HC_ReportingIn"
@@ -46300,6 +48222,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordHC_StandingByForOrders_1
 		{
+			text="Standing by for orders";
 			speech[]=
 			{
 				"HC_StandingByForOrders"
@@ -46316,6 +48239,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordHC_StandingByForOrders_1
 		{
 			wordsClass="StealthWords";
+			text="Standing by for orders";
 			speech[]=
 			{
 				"HC_StandingByForOrders"
@@ -46341,6 +48265,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordHC_CombatReady_1
 		{
+			text="Combat ready";
 			speech[]=
 			{
 				"HC_CombatReady"
@@ -46357,6 +48282,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordHC_CombatReady_1
 		{
 			wordsClass="StealthWords";
+			text="Combat ready";
 			speech[]=
 			{
 				"HC_CombatReady"
@@ -46382,6 +48308,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordHC_WaitingForOrders_1
 		{
+			text="Waiting for orders";
 			speech[]=
 			{
 				"HC_WaitingForOrders"
@@ -46398,6 +48325,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordHC_WaitingForOrders_1
 		{
 			wordsClass="StealthWords";
+			text="Waiting for orders";
 			speech[]=
 			{
 				"HC_WaitingForOrders"
@@ -46423,6 +48351,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordHC_Advancing_1
 		{
+			text="Advancing";
 			speech[]=
 			{
 				"HC_Advancing"
@@ -46439,6 +48368,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordHC_Advancing_1
 		{
 			wordsClass="StealthWords";
+			text="Advancing";
 			speech[]=
 			{
 				"HC_Advancing"
@@ -46464,6 +48394,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordHC_Affirmative_1
 		{
+			text="Affirmative";
 			speech[]=
 			{
 				"HC_Affirmative"
@@ -46480,6 +48411,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordHC_Affirmative_1
 		{
 			wordsClass="StealthWords";
+			text="Affirmative";
 			speech[]=
 			{
 				"HC_Affirmative"
@@ -46505,6 +48437,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordHC_MovingToPosition_1
 		{
+			text="Moving to position";
 			speech[]=
 			{
 				"HC_MovingToPosition"
@@ -46521,6 +48454,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordHC_MovingToPosition_1
 		{
 			wordsClass="StealthWords";
+			text="Moving to position";
 			speech[]=
 			{
 				"HC_MovingToPosition"
@@ -46546,6 +48480,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordHC_OrderReceived_1
 		{
+			text="Order received";
 			speech[]=
 			{
 				"HC_OrderReceived"
@@ -46562,6 +48497,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordHC_OrderReceived_1
 		{
 			wordsClass="StealthWords";
+			text="Order received";
 			speech[]=
 			{
 				"HC_OrderReceived"
@@ -46587,6 +48523,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordHC_EngagingE_1
 		{
+			text="Engaging!";
 			speech[]=
 			{
 				"HC_EngagingE"
@@ -46603,6 +48540,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordHC_EngagingE_1
 		{
 			wordsClass="StealthWords";
+			text="Engaging!";
 			speech[]=
 			{
 				"HC_EngagingE"
@@ -46628,6 +48566,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordHC_AttackingE_1
 		{
+			text="Attacking!";
 			speech[]=
 			{
 				"HC_AttackingE"
@@ -46644,6 +48583,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		class WordHC_AttackingE_1
 		{
 			wordsClass="StealthWords";
+			text="Attacking!";
 			speech[]=
 			{
 				"HC_AttackingE"
@@ -46667,6 +48607,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordSeveral_1
 		{
+			text="Several";
 			speech[]=
 			{
 				"Several"
@@ -46690,6 +48631,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordSingle_1
 		{
+			text="Single";
 			speech[]=
 			{
 				"Single"
@@ -46713,6 +48655,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordNone_1
 		{
+			text="None";
 			speech[]=
 			{
 				"None"
@@ -46736,6 +48679,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordSome_1
 		{
+			text="Some";
 			speech[]=
 			{
 				"Some"
@@ -46759,6 +48703,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordALotOf_1
 		{
+			text="A Lot Of";
 			speech[]=
 			{
 				"ALotOf"
@@ -46782,6 +48727,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordIndependent_1
 		{
+			text="Independent";
 			speech[]=
 			{
 				"Independent"
@@ -46805,6 +48751,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordCivilian_1
 		{
+			text="Civilian";
 			speech[]=
 			{
 				"Civilian"
@@ -46828,6 +48775,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordOfThem_1
 		{
+			text="of them";
 			speech[]=
 			{
 				"OfThem"
@@ -46851,6 +48799,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordNear_1
 		{
+			text="near";
 			speech[]=
 			{
 				"Near"
@@ -46874,6 +48823,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordNotFar_1
 		{
+			text="not far";
 			speech[]=
 			{
 				"NotFar"
@@ -46897,6 +48847,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordFrom_1
 		{
+			text="from";
 			speech[]=
 			{
 				"From"
@@ -46920,6 +48871,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordAround_1
 		{
+			text="around";
 			speech[]=
 			{
 				"Around"
@@ -46943,6 +48895,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordHere_1
 		{
+			text="here";
 			speech[]=
 			{
 				"Here"
@@ -46966,6 +48919,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordThere_1
 		{
+			text="there";
 			speech[]=
 			{
 				"There"
@@ -46989,6 +48943,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordProbably_1
 		{
+			text="probably";
 			speech[]=
 			{
 				"Probably"
@@ -47012,6 +48967,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordIsProbablyToThe_1
 		{
+			text="is probably to the";
 			speech[]=
 			{
 				"IsProbablyToThe"
@@ -47035,6 +48991,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordJustNow_1
 		{
+			text="Just Now";
 			speech[]=
 			{
 				"JustNow"
@@ -47058,6 +49015,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordAFewMinutesAgo_1
 		{
+			text="A few Minutes Ago";
 			speech[]=
 			{
 				"AFewMinutesAgo"
@@ -47081,6 +49039,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordAFewHoursAgo_1
 		{
+			text="A Few Hours Ago";
 			speech[]=
 			{
 				"AFewHoursAgo"
@@ -47104,6 +49063,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordToday_1
 		{
+			text="Today";
 			speech[]=
 			{
 				"Today"
@@ -47127,6 +49087,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordYesterday_1
 		{
+			text="Yesterday";
 			speech[]=
 			{
 				"Yesterday"
@@ -47150,6 +49111,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordSeveralDaysAgo_1
 		{
+			text="Several Days Ago";
 			speech[]=
 			{
 				"SeveralDaysAgo"
@@ -47173,6 +49135,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordEnglishQ_1
 		{
+			text="English?";
 			speech[]=
 			{
 				"EnglishQ"
@@ -47196,6 +49159,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordRussianQ_1
 		{
+			text="Russian?";
 			speech[]=
 			{
 				"RussianQ"
@@ -47219,6 +49183,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordCzechQ_1
 		{
+			text="Chernarussian?";
 			speech[]=
 			{
 				"CzechQ"
@@ -47242,6 +49207,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordTakistaniQ_1
 		{
+			text="Takistani?";
 			speech[]=
 			{
 				"TakistaniQ"
@@ -47265,6 +49231,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordDidYouSeeAnythingRecentlyQ_1
 		{
+			text="Did you see anything recently?";
 			speech[]=
 			{
 				"DidYouSeeAnythingRecentlyQ"
@@ -47288,6 +49255,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordYesISawSomething_1
 		{
+			text="Yes, I saw something";
 			speech[]=
 			{
 				"YesISawSomething"
@@ -47311,6 +49279,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordNoIDidntSeeAnything_1
 		{
+			text="No, I didn't see anything";
 			speech[]=
 			{
 				"NoIDidntSeeAnything"
@@ -47334,6 +49303,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordWhatsTheWeatherForecastQ_1
 		{
+			text="What's the weather forecast?";
 			speech[]=
 			{
 				"WhatsTheWeatherForecastQ"
@@ -47357,6 +49327,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordNiceWeatherHuhQ_1
 		{
+			text="Nice weather, huh?";
 			speech[]=
 			{
 				"NiceWeatherHuhQ"
@@ -47380,6 +49351,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordNastyWeatherHuhQ_1
 		{
+			text="Nasty weather, huh?";
 			speech[]=
 			{
 				"NastyWeatherHuhQ"
@@ -47403,6 +49375,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordShouldBeClearingUpSoon_1
 		{
+			text="Should be clearing up soon";
 			speech[]=
 			{
 				"ShouldBeClearingUpSoon"
@@ -47426,6 +49399,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordIReckonWellGetSomeRainSoon_1
 		{
+			text="I reckon we'll get some rain soon";
 			speech[]=
 			{
 				"IReckonWellGetSomeRainSoon"
@@ -47449,6 +49423,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordTheySayItllStayLikeThisForAWhile_1
 		{
+			text="They say it'll stay like this for a while";
 			speech[]=
 			{
 				"TheySayItllStayLikeThisForAWhile"
@@ -47472,6 +49447,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordWhatsTheClosestSettlementQ_1
 		{
+			text="What's the closest settlement?";
 			speech[]=
 			{
 				"WhatsTheClosestSettlementQ"
@@ -47495,6 +49471,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordTheClosestOneIs_1
 		{
+			text="The closest one is";
 			speech[]=
 			{
 				"TheClosestOneIs"
@@ -47518,6 +49495,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordImNotFromAroundHere_1
 		{
+			text="I'm not from around here";
 			speech[]=
 			{
 				"ImNotFromAroundHere"
@@ -47541,6 +49519,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordNoIdeaIDontLiveHere_1
 		{
+			text="No idea, I don't live here";
 			speech[]=
 			{
 				"NoIdeaIDontLiveHere"
@@ -47564,6 +49543,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordYouAlreadyAskedMeThat_1
 		{
+			text="You already asked me that";
 			speech[]=
 			{
 				"YouAlreadyAskedMeThat"
@@ -47587,6 +49567,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordAreYouKiddingQ_1
 		{
+			text="Are you kidding?";
 			speech[]=
 			{
 				"AreYouKiddingQ"
@@ -47610,6 +49591,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordStopAskingMeThat_1
 		{
+			text="Stop asking me that";
 			speech[]=
 			{
 				"StopAskingMeThat"
@@ -47633,6 +49615,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordSorryIDontUnderstand_1
 		{
+			text="Sorry, I don't understand";
 			speech[]=
 			{
 				"SorryIDontUnderstand"
@@ -47656,6 +49639,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordUhWhatQ_1
 		{
+			text="Uh, what?";
 			speech[]=
 			{
 				"UhWhatQ"
@@ -47679,6 +49663,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordIWillOnlyTellYouMyNameRankAndSerialNumber_1
 		{
+			text="I will only tell you my name, rank, and serial number";
 			speech[]=
 			{
 				"IWillOnlyTellYouMyNameRankAndSerialNumber"
@@ -47702,6 +49687,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordSirQ_1
 		{
+			text="Sir?";
 			speech[]=
 			{
 				"SirQ"
@@ -47725,6 +49711,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordPrivateQ_1
 		{
+			text="Private?";
 			speech[]=
 			{
 				"PrivateQ"
@@ -47748,6 +49735,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordCorporalQ_1
 		{
+			text="Corporal?";
 			speech[]=
 			{
 				"CorporalQ"
@@ -47771,6 +49759,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordSergeantQ_1
 		{
+			text="Sergeant?";
 			speech[]=
 			{
 				"SergeantQ"
@@ -47794,6 +49783,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordLieutenantQ_1
 		{
+			text="Lieutenant?";
 			speech[]=
 			{
 				"LieutenantQ"
@@ -47817,6 +49807,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordCaptainQ_1
 		{
+			text="Captain?";
 			speech[]=
 			{
 				"CaptainQ"
@@ -47840,6 +49831,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordMajorQ_1
 		{
+			text="Major?";
 			speech[]=
 			{
 				"MajorQ"
@@ -47863,6 +49855,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordColonelQ_1
 		{
+			text="Colonel?";
 			speech[]=
 			{
 				"ColonelQ"
@@ -47886,6 +49879,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordYesPrivate_1
 		{
+			text="Yes, private";
 			speech[]=
 			{
 				"YesPrivate"
@@ -47909,6 +49903,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordYesCorporal_1
 		{
+			text="Yes, corporal";
 			speech[]=
 			{
 				"YesCorporal"
@@ -47932,6 +49927,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordYesSergeant_1
 		{
+			text="Yes, sergeant";
 			speech[]=
 			{
 				"YesSergeant"
@@ -47955,6 +49951,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordYesLieutenant_1
 		{
+			text="Yes, lieutenant";
 			speech[]=
 			{
 				"YesLieutenant"
@@ -47978,6 +49975,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordYesCaptain_1
 		{
+			text="Yes, captain";
 			speech[]=
 			{
 				"YesCaptain"
@@ -48001,6 +49999,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordYesMajor_1
 		{
+			text="Yes, major";
 			speech[]=
 			{
 				"YesMajor"
@@ -48024,6 +50023,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordYesColonel_1
 		{
+			text="Yes, colonel";
 			speech[]=
 			{
 				"YesColonel"
@@ -48047,6 +50047,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordSoldierQ_1
 		{
+			text="Soldier?";
 			speech[]=
 			{
 				"SoldierQ"
@@ -48070,6 +50071,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordMorninSoldier_1
 		{
+			text="Mornin', soldier";
 			speech[]=
 			{
 				"MorninSoldier"
@@ -48093,6 +50095,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordEveninSoldier_1
 		{
+			text="Evenin', soldier";
 			speech[]=
 			{
 				"EveninSoldier"
@@ -48116,6 +50119,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordGoodDaySir_1
 		{
+			text="Good day, sir";
 			speech[]=
 			{
 				"GoodDaySir"
@@ -48139,6 +50143,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordGoodEveningSir_1
 		{
+			text="Good evening, sir";
 			speech[]=
 			{
 				"GoodEveningSir"
@@ -48162,6 +50167,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordGoodMorningSir_1
 		{
+			text="Good morning, sir";
 			speech[]=
 			{
 				"GoodMorningSir"
@@ -48185,6 +50191,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordGoodDay_1
 		{
+			text="Good day";
 			speech[]=
 			{
 				"GoodDay"
@@ -48208,6 +50215,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordGoodMorning_1
 		{
+			text="Good morning";
 			speech[]=
 			{
 				"GoodMorning"
@@ -48231,6 +50239,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordGoodEvening_1
 		{
+			text="Good evening";
 			speech[]=
 			{
 				"GoodEvening"
@@ -48254,6 +50263,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordWhatQ_1
 		{
+			text="What?";
 			speech[]=
 			{
 				"WhatQ"
@@ -48277,6 +50287,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordYesSir_1
 		{
+			text="Yes, sir";
 			speech[]=
 			{
 				"YesSir"
@@ -48300,6 +50311,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordHelloSir_1
 		{
+			text="Hello, sir";
 			speech[]=
 			{
 				"HelloSir"
@@ -48323,6 +50335,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordYep_1
 		{
+			text="Yep";
 			speech[]=
 			{
 				"Yep"
@@ -48346,6 +50359,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordYeahQ_1
 		{
+			text="Yeah?";
 			speech[]=
 			{
 				"YeahQ"
@@ -48369,6 +50383,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordHi_1
 		{
+			text="Hi";
 			speech[]=
 			{
 				"Hi"
@@ -48392,6 +50407,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordHiThereE_1
 		{
+			text="Hi there!";
 			speech[]=
 			{
 				"HiThereE"
@@ -48415,6 +50431,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordHeyMan_1
 		{
+			text="Hey, man";
 			speech[]=
 			{
 				"HeyMan"
@@ -48438,6 +50455,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordHiDude_1
 		{
+			text="Hi, dude";
 			speech[]=
 			{
 				"HiDude"
@@ -48461,6 +50479,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordHello_1
 		{
+			text="Hello";
 			speech[]=
 			{
 				"Hello"
@@ -48484,6 +50503,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordHowsThingsQ_1
 		{
+			text="How's things?";
 			speech[]=
 			{
 				"HowsThingsQ"
@@ -48507,6 +50527,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordHowAreYouQ_1
 		{
+			text="How are you?";
 			speech[]=
 			{
 				"HowAreYouQ"
@@ -48530,6 +50551,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordHeyE_1
 		{
+			text="Hey!";
 			speech[]=
 			{
 				"HeyE"
@@ -48553,6 +50575,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordWhatDoYouWantQ_1
 		{
+			text="What do you want?";
 			speech[]=
 			{
 				"WhatDoYouWantQ"
@@ -48576,6 +50599,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordWhatDoYouNeedQ_1
 		{
+			text="What do you need?";
 			speech[]=
 			{
 				"WhatDoYouNeedQ"
@@ -48599,6 +50623,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordWhatsUpQ_1
 		{
+			text="What's up?";
 			speech[]=
 			{
 				"WhatsUpQ"
@@ -48622,6 +50647,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordYesQ_1
 		{
+			text="Yes?";
 			speech[]=
 			{
 				"YesQ"
@@ -48645,6 +50671,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordMaamQ_1
 		{
+			text="Ma'am?";
 			speech[]=
 			{
 				"MaamQ"
@@ -48668,6 +50695,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordHaveANiceDay_1
 		{
+			text="Have a nice day";
 			speech[]=
 			{
 				"HaveANiceDay"
@@ -48691,6 +50719,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordMorningMaam_1
 		{
+			text="Morning, ma'am";
 			speech[]=
 			{
 				"MorningMaam"
@@ -48714,6 +50743,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordHelloThere_1
 		{
+			text="Hello there";
 			speech[]=
 			{
 				"HelloThere"
@@ -48737,6 +50767,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordHowYouDoinQ_1
 		{
+			text="How you doin'?";
 			speech[]=
 			{
 				"HowYouDoinQ"
@@ -48760,6 +50791,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordDontTouchMeE_1
 		{
+			text="Don't touch me!";
 			speech[]=
 			{
 				"DontTouchMeE"
@@ -48783,6 +50815,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordNotNowE_1
 		{
+			text="Not now!";
 			speech[]=
 			{
 				"NotNowE"
@@ -48806,6 +50839,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordLater_1
 		{
+			text="Later";
 			speech[]=
 			{
 				"Later"
@@ -48829,6 +50863,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordNoTimeE_1
 		{
+			text="No time!";
 			speech[]=
 			{
 				"NoTimeE"
@@ -48852,6 +50887,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordHushE_1
 		{
+			text="Hush!";
 			speech[]=
 			{
 				"HushE"
@@ -48875,6 +50911,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordSsshhE_1
 		{
+			text="Ssshh!";
 			speech[]=
 			{
 				"SsshhE"
@@ -48898,6 +50935,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordCantYouSeeImBusyQ_1
 		{
+			text="Can't you see I'm busy?";
 			speech[]=
 			{
 				"CantYouSeeImBusyQ"
@@ -48921,6 +50959,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordBitOccupiedAtTheMomentDude_1
 		{
+			text="Bit occupied at the moment, dude";
 			speech[]=
 			{
 				"BitOccupiedAtTheMomentDude"
@@ -48944,6 +50983,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordImBusyE_1
 		{
+			text="I'm busy!";
 			speech[]=
 			{
 				"ImBusyE"
@@ -48967,6 +51007,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordPissOffE_1
 		{
+			text="Piss off!";
 			speech[]=
 			{
 				"PissOffE"
@@ -48990,6 +51031,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordNiceToSeeYou_1
 		{
+			text="Nice to see you";
 			speech[]=
 			{
 				"NiceToSeeYou"
@@ -49013,6 +51055,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordGoodToSeeYou_1
 		{
+			text="Good to see you";
 			speech[]=
 			{
 				"GoodToSeeYou"
@@ -49036,6 +51079,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordHeyGladYoureHere_1
 		{
+			text="Hey, glad you're here";
 			speech[]=
 			{
 				"HeyGladYoureHere"
@@ -49059,6 +51103,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordCanIHelpYouQ_1
 		{
+			text="Can I help you?";
 			speech[]=
 			{
 				"CanIHelpYouQ"
@@ -49082,6 +51127,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordGetLostE_1
 		{
+			text="Get lost!";
 			speech[]=
 			{
 				"GetLostE"
@@ -49105,6 +51151,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordLeaveMeAloneE_1
 		{
+			text="Leave me alone!";
 			speech[]=
 			{
 				"LeaveMeAloneE"
@@ -49128,6 +51175,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordLeaveUsAloneE_1
 		{
+			text="Leave us alone!";
 			speech[]=
 			{
 				"LeaveUsAloneE"
@@ -49151,6 +51199,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordFuckingPig_1
 		{
+			text="Fucking pig";
 			speech[]=
 			{
 				"FuckingPig"
@@ -49174,6 +51223,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordSonOfABitchE_1
 		{
+			text="Son of a bitch!";
 			speech[]=
 			{
 				"SonOfABitchE"
@@ -49197,6 +51247,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordDamnYouE_1
 		{
+			text="Damn you!";
 			speech[]=
 			{
 				"DamnYouE"
@@ -49220,6 +51271,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordCanIAskYouSomethingQ_1
 		{
+			text="Can I ask you something?";
 			speech[]=
 			{
 				"CanIAskYouSomethingQ"
@@ -49243,6 +51295,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordPleaseCanYouHelpQ_1
 		{
+			text="Please, can you help?";
 			speech[]=
 			{
 				"PleaseCanYouHelpQ"
@@ -49266,6 +51319,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordSpeak_1
 		{
+			text="Speak";
 			speech[]=
 			{
 				"Speak"
@@ -49289,6 +51343,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordHelpUs_1
 		{
+			text="Help us";
 			speech[]=
 			{
 				"HelpUs"
@@ -49312,6 +51367,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordIWontSayAnotherWord_1
 		{
+			text="I won't say another word";
 			speech[]=
 			{
 				"IWontSayAnotherWord"
@@ -49335,6 +51391,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordMindYourOwnBusiness_1
 		{
+			text="Mind your own business";
 			speech[]=
 			{
 				"MindYourOwnBusiness"
@@ -49358,6 +51415,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordGoBotherSomeoneElse_1
 		{
+			text="Go bother someone else";
 			speech[]=
 			{
 				"GoBotherSomeoneElse"
@@ -49381,6 +51439,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordCopyThat_1
 		{
+			text="Copy that";
 			speech[]=
 			{
 				"CopyThat"
@@ -49404,6 +51463,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordObjectiveFailed_1
 		{
+			text="Objective failed";
 			speech[]=
 			{
 				"ObjectiveFailed"
@@ -49427,6 +51487,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordDoYouCopyQ_1
 		{
+			text="Do you copy?";
 			speech[]=
 			{
 				"DoYouCopyQ"
@@ -49450,6 +51511,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordRequestingFireSupportAtGrid_1
 		{
+			text="requesting fire support at grid";
 			speech[]=
 			{
 				"RequestingFireSupportAtGrid"
@@ -49473,6 +51535,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordFiringAtTargetLocation_1
 		{
+			text="Firing at target location";
 			speech[]=
 			{
 				"FiringAtTargetLocation"
@@ -49496,6 +51559,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordArtilleryNotAvailableRightNow_1
 		{
+			text="Artillery not available right now";
 			speech[]=
 			{
 				"ArtilleryNotAvailableRightNow"
@@ -49519,6 +51583,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordRequestingContinuousIlluminationAtGrid_1
 		{
+			text="requesting continuous illumination at grid";
 			speech[]=
 			{
 				"RequestingContinuousIlluminationAtGrid"
@@ -49542,6 +51607,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordIlluminatingTargetLocation_1
 		{
+			text="Illuminating target location";
 			speech[]=
 			{
 				"IlluminatingTargetLocation"
@@ -49565,6 +51631,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordNoFireMissionAvailableAtThisTime_1
 		{
+			text="No fire mission available at this time";
 			speech[]=
 			{
 				"NoFireMissionAvailableAtThisTime"
@@ -49588,6 +51655,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordThisIs_1
 		{
+			text="This is";
 			speech[]=
 			{
 				"ThisIs"
@@ -49611,6 +51679,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordRequestingReinforcementsToOurPositionGrid_1
 		{
+			text="requesting reinforcements to our position, grid";
 			speech[]=
 			{
 				"RequestingReinforcementsToOurPositionGrid"
@@ -49634,6 +51703,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordWeCanFlyInReinforcmentsAsNeeded_1
 		{
+			text="We can fly in reinforcments as needed";
 			speech[]=
 			{
 				"WeCanFlyInReinforcmentsAsNeeded"
@@ -49657,6 +51727,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordYouWillHaveToManageYourself_1
 		{
+			text="You will have to manage yourself";
 			speech[]=
 			{
 				"YouWillHaveToManageYourself"
@@ -49680,6 +51751,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordRequestingSupplyDropAtGrid_1
 		{
+			text="requesting supply drop at grid";
 			speech[]=
 			{
 				"RequestingSupplyDropAtGrid"
@@ -49703,6 +51775,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordSupportOnWayStandBy_1
 		{
+			text="Support on way, stand by";
 			speech[]=
 			{
 				"SupportOnWayStandBy"
@@ -49726,6 +51799,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordRequestingCloseAirSupportAtGrid_1
 		{
+			text="requesting close air support at grid";
 			speech[]=
 			{
 				"RequestingCloseAirSupportAtGrid"
@@ -49749,6 +51823,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordRogerAircraftOnTheWay_1
 		{
+			text="Roger, aircraft on the way";
 			speech[]=
 			{
 				"RogerAircraftOnTheWay"
@@ -49772,6 +51847,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordNegativeOnTheCloseAirSupport_1
 		{
+			text="Negative on the close air support";
 			speech[]=
 			{
 				"NegativeOnTheCloseAirSupport"
@@ -49795,6 +51871,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordIntelShowsAConvoyEnrouteNearYourPositionAreYouFreeToInterceptAndDestroyItQ_1
 		{
+			text="intel shows a convoy enroute near your position. Are you free to intercept and destroy it?";
 			speech[]=
 			{
 				"IntelShowsAConvoyEnrouteNearYourPositionAreYouFreeToInterceptAndDestroyItQ"
@@ -49818,6 +51895,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordBeAdvisedOtherUnitsWillHandleTheConvoy_1
 		{
+			text="be advised, other units will handle the convoy";
 			speech[]=
 			{
 				"BeAdvisedOtherUnitsWillHandleTheConvoy"
@@ -49841,6 +51919,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordUAVConfirmsAllVehiclesDestroyed_1
 		{
+			text="UAV confirms all vehicles destroyed";
 			speech[]=
 			{
 				"UAVConfirmsAllVehiclesDestroyed"
@@ -49864,6 +51943,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordBeAdvisedTargetVehicleHasReachedItsDestination_1
 		{
+			text="be advised, target vehicle has reached its destination";
 			speech[]=
 			{
 				"BeAdvisedTargetVehicleHasReachedItsDestination"
@@ -49887,6 +51967,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordBeAdvisedTargetVehicleIsDisabled_1
 		{
+			text="be advised, target vehicle is disabled";
 			speech[]=
 			{
 				"BeAdvisedTargetVehicleIsDisabled"
@@ -49910,6 +51991,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordEnemyPositionInCloseProximityCanYouAssaultTheLocationQ_1
 		{
+			text="enemy position in close proximity. Can you assault the location?";
 			speech[]=
 			{
 				"EnemyPositionInCloseProximityCanYouAssaultTheLocationQ"
@@ -49933,6 +52015,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordBeAdvisedEnemyHasChangedPositionAttackCancelled_1
 		{
+			text="be advised, enemy has changed position. Attack cancelled";
 			speech[]=
 			{
 				"BeAdvisedEnemyHasChangedPositionAttackCancelled"
@@ -49956,6 +52039,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordEnemyPositionNeutralized_1
 		{
+			text="enemy position neutralized";
 			speech[]=
 			{
 				"EnemyPositionNeutralized"
@@ -49979,6 +52063,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordBeAdvisedFriendlyUnitsUnderAttackCanYouAssistQ_1
 		{
+			text="be advised. Friendly units under attack. Can you assist?";
 			speech[]=
 			{
 				"BeAdvisedFriendlyUnitsUnderAttackCanYouAssistQ"
@@ -50002,6 +52087,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordEnemyAttackRepelled_1
 		{
+			text="enemy attack repelled";
 			speech[]=
 			{
 				"EnemyAttackRepelled"
@@ -50025,6 +52111,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordGoodWorkWeSeeNoMoreHostilesInTheArea_1
 		{
+			text="good work, we see no more hostiles in the area";
 			speech[]=
 			{
 				"GoodWorkWeSeeNoMoreHostilesInTheArea"
@@ -50048,6 +52135,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordZeroHostilesAttackHalted_1
 		{
+			text="zero hostiles. Attack halted";
 			speech[]=
 			{
 				"ZeroHostilesAttackHalted"
@@ -50071,6 +52159,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordWereUnableToHoldPositionFallingBack_1
 		{
+			text="we're unable to hold position. Falling back";
 			speech[]=
 			{
 				"WereUnableToHoldPositionFallingBack"
@@ -50094,6 +52183,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordBeAdvisedAHighValueTargetHasBeenMarkedOnYourMapCanYouInterceptAndDestroyQ_1
 		{
+			text="be advised, a high-value target has been marked on your map. Can you intercept and destroy?";
 			speech[]=
 			{
 				"BeAdvisedAHighValueTargetHasBeenMarkedOnYourMapCanYouInterceptAndDestroyQ"
@@ -50117,6 +52207,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordCancellingTheDestroyOrderBadIntelHowCopyQ_1
 		{
+			text="cancelling the destroy order, bad intel. How copy?";
 			speech[]=
 			{
 				"CancellingTheDestroyOrderBadIntelHowCopyQ"
@@ -50140,6 +52231,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordHighValueTargetDestroyedOver_1
 		{
+			text="high value target destroyed. Over";
 			speech[]=
 			{
 				"HighValueTargetDestroyedOver"
@@ -50163,6 +52255,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordFriendlyTroopsRequestingEscortThroughHostileZoneCanYouOfferSupportAlongTheDesignatedRouteQ_1
 		{
+			text="Friendly troops requesting escort through hostile zone. Can you offer support along the designated route?";
 			speech[]=
 			{
 				"FriendlyTroopsRequestingEscortThroughHostileZoneCanYouOfferSupportAlongTheDesignatedRouteQ"
@@ -50186,6 +52279,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordWeHaveAssignedAnotherUnitToThisEscortOp_1
 		{
+			text="we have assigned another unit to this escort op";
 			speech[]=
 			{
 				"WeHaveAssignedAnotherUnitToThisEscortOp"
@@ -50209,6 +52303,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordTargetInSightCommencingEscort_1
 		{
+			text="Target in sight, commencing escort";
 			speech[]=
 			{
 				"TargetInSightCommencingEscort"
@@ -50232,6 +52327,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordBeAdvisedEnemyPatrolsInCloseProximityHowCopyQ_1
 		{
+			text="be advised, enemy patrols in close proximity. How copy?";
 			speech[]=
 			{
 				"BeAdvisedEnemyPatrolsInCloseProximityHowCopyQ"
@@ -50255,6 +52351,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordSolidCopyThanksForTheIntel_1
 		{
+			text="Solid copy, thanks for the intel";
 			speech[]=
 			{
 				"SolidCopyThanksForTheIntel"
@@ -50278,6 +52375,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordDestinationReachedEveryoneAccountedForOver_1
 		{
+			text="Destination reached, everyone accounted for. Over";
 			speech[]=
 			{
 				"DestinationReachedEveryoneAccountedForOver"
@@ -50301,6 +52399,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordWereAtTheDestinationReportingLowCasualtiesOver_1
 		{
+			text="we're at the destination, reporting low casualties. Over";
 			speech[]=
 			{
 				"WereAtTheDestinationReportingLowCasualtiesOver"
@@ -50324,6 +52423,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordBeAdvisedEscortFailedWeLostThemOver_1
 		{
+			text="be advised, escort failed, we lost them. Over";
 			speech[]=
 			{
 				"BeAdvisedEscortFailedWeLostThemOver"
@@ -50347,6 +52447,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordBeAdvisedHostilesReportedNearYourLocationCanYouMakeASweepOfTheCheckpointsQ_1
 		{
+			text="be advised, hostiles reported near your location. Can you make a sweep of the checkpoints?";
 			speech[]=
 			{
 				"BeAdvisedHostilesReportedNearYourLocationCanYouMakeASweepOfTheCheckpointsQ"
@@ -50370,6 +52471,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordCancelThePatrolBadIntelOver_1
 		{
+			text="cancel the patrol, bad intel. Over";
 			speech[]=
 			{
 				"CancelThePatrolBadIntelOver"
@@ -50393,6 +52495,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordBeAdvisedImPassingCheckpointOne_1
 		{
+			text="be advised, I'm passing checkpoint one";
 			speech[]=
 			{
 				"BeAdvisedImPassingCheckpointOne"
@@ -50416,6 +52519,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordSitrepPassingCheckpointTwo_1
 		{
+			text="Sitrep, passing checkpoint two";
 			speech[]=
 			{
 				"SitrepPassingCheckpointTwo"
@@ -50439,6 +52543,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordReportingPatrolComplete_1
 		{
+			text="reporting patrol complete";
 			speech[]=
 			{
 				"ReportingPatrolComplete"
@@ -50462,6 +52567,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordThereAreFriendlyPOWsHeldInCloseProximityCanYouExtractThemQ_1
 		{
+			text="there are friendly POWs held in close proximity. Can you extract them?";
 			speech[]=
 			{
 				"ThereAreFriendlyPOWsHeldInCloseProximityCanYouExtractThemQ"
@@ -50485,6 +52591,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordBeAdvisedPOWsWereTransportedToUnknownLocationMissionCanceled_1
 		{
+			text="be advised, POWs were transported to unknown location. Mission canceled";
 			speech[]=
 			{
 				"BeAdvisedPOWsWereTransportedToUnknownLocationMissionCanceled"
@@ -50508,6 +52615,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordExtractionConfirmedPOWsRecovered_1
 		{
+			text="extraction confirmed, POWs recovered";
 			speech[]=
 			{
 				"ExtractionConfirmedPOWsRecovered"
@@ -50531,6 +52639,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordRequestingTransportForTheRecoveredPOWsOver_1
 		{
+			text="requesting transport for the recovered POWs. Over";
 			speech[]=
 			{
 				"RequestingTransportForTheRecoveredPOWsOver"
@@ -50554,6 +52663,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordPOWsAreKIAISayAgainAllFriendliesKIAOver_1
 		{
+			text="POWs are KIA, I say again, all friendlies KIA. Over";
 			speech[]=
 			{
 				"POWsAreKIAISayAgainAllFriendliesKIAOver"
@@ -50577,6 +52687,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordLocalsReportEnemyCachesInYourAOCanYouSearchForTheseCachesQ_1
 		{
+			text="locals report enemy caches in your AO. Can you search for these caches?";
 			speech[]=
 			{
 				"LocalsReportEnemyCachesInYourAOCanYouSearchForTheseCachesQ"
@@ -50600,6 +52711,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordBeAdvisedFindingTheCachesIsNoLongerAPriority_1
 		{
+			text="be advised, finding the caches is no longer a priority";
 			speech[]=
 			{
 				"BeAdvisedFindingTheCachesIsNoLongerAPriority"
@@ -50623,6 +52735,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordSearchCompleteSeveralStorageCachesUncoveredAndMarkedForCollectionHowCopyQ_1
 		{
+			text="Search complete. Several storage caches uncovered and marked for collection. How copy?";
 			speech[]=
 			{
 				"SearchCompleteSeveralStorageCachesUncoveredAndMarkedForCollectionHowCopyQ"
@@ -50646,6 +52759,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordSearchCompleteALargeNumberOfCachesWereLocatedAndMarkedForCollectionOver_1
 		{
+			text="Search complete. A large number of caches were located and marked for collection. Over";
 			speech[]=
 			{
 				"SearchCompleteALargeNumberOfCachesWereLocatedAndMarkedForCollectionOver"
@@ -50669,6 +52783,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordSearchCompleteNothingToReportZeroCachesFoundOver_1
 		{
+			text="Search complete, nothing to report, zero caches found. Over";
 			speech[]=
 			{
 				"SearchCompleteNothingToReportZeroCachesFoundOver"
@@ -50692,6 +52807,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordWeHaveAnAircraftDownInYourVicinityCanYouLocateAndSecureTheCrashSiteQ_1
 		{
+			text="we have an aircraft down in your vicinity. Can you locate and secure the crash site?";
 			speech[]=
 			{
 				"WeHaveAnAircraftDownInYourVicinityCanYouLocateAndSecureTheCrashSiteQ"
@@ -50715,6 +52831,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordReturnToYourPrimarySARTeamsOnRouteToTheCrashSite_1
 		{
+			text="return to your primary. SAR team's on route to the crash site";
 			speech[]=
 			{
 				"ReturnToYourPrimarySARTeamsOnRouteToTheCrashSite"
@@ -50738,6 +52855,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordSurvivorsOnBoardTransportResumingPrimary_1
 		{
+			text="survivors on board transport. Resuming primary";
 			speech[]=
 			{
 				"SurvivorsOnBoardTransportResumingPrimary"
@@ -50761,6 +52879,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordCrashSiteSecuredNoSurvivors_1
 		{
+			text="crash site secured, no survivors";
 			speech[]=
 			{
 				"CrashSiteSecuredNoSurvivors"
@@ -50784,6 +52903,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordBeAdvisedCrashSiteCompromisedOver_1
 		{
+			text="be advised, crash site compromised. Over";
 			speech[]=
 			{
 				"BeAdvisedCrashSiteCompromisedOver"
@@ -50807,6 +52927,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordCrashSiteSecuredWeveGotSurvivorsRequestingCASEVACOver_1
 		{
+			text="crash site secured. We've got survivors, requesting CASEVAC. Over";
 			speech[]=
 			{
 				"CrashSiteSecuredWeveGotSurvivorsRequestingCASEVACOver"
@@ -50830,6 +52951,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordIGotARequestForTransportHereThePickUpIsCloseByCanYouHandleItQ_1
 		{
+			text="I got a request for transport here. The pick-up is close by, can you handle it?";
 			speech[]=
 			{
 				"IGotARequestForTransportHereThePickUpIsCloseByCanYouHandleItQ"
@@ -50853,6 +52975,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordCancelThatRequestAlternateTransportFoundOver_1
 		{
+			text="cancel that request, alternate transport found. Over";
 			speech[]=
 			{
 				"CancelThatRequestAlternateTransportFoundOver"
@@ -50876,6 +52999,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordWeHavePickUpPointInSightOver_1
 		{
+			text="we have pick-up point in sight. Over";
 			speech[]=
 			{
 				"WeHavePickUpPointInSightOver"
@@ -50899,6 +53023,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordRogerThatThoseTroopsAreNeededElsewhereDoubleTimeGentlemen_1
 		{
+			text="Roger that. Those troops are needed elsewhere, double time gentlemen";
 			speech[]=
 			{
 				"RogerThatThoseTroopsAreNeededElsewhereDoubleTimeGentlemen"
@@ -50922,6 +53047,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordWeLostOurTransportISayAgainTransportDisabled_1
 		{
+			text="we lost our transport, I say again, transport disabled";
 			speech[]=
 			{
 				"WeLostOurTransportISayAgainTransportDisabled"
@@ -50945,6 +53071,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordBeAdvisedAllPassengersAreKIAOver_1
 		{
+			text="be advised, all passengers are KIA. Over";
 			speech[]=
 			{
 				"BeAdvisedAllPassengersAreKIAOver"
@@ -50968,6 +53095,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordWereAtOurDestinationEveryoneAccountedForOver_1
 		{
+			text="we're at our destination, everyone accounted for. Over";
 			speech[]=
 			{
 				"WereAtOurDestinationEveryoneAccountedForOver"
@@ -50991,6 +53119,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordWereAtOurDestinationTookSomeCasualtiesButTheMajorityIsSafeOver_1
 		{
+			text="we're at our destination. Took some casualties, but the majority is safe. Over";
 			speech[]=
 			{
 				"WereAtOurDestinationTookSomeCasualtiesButTheMajorityIsSafeOver"
@@ -51014,6 +53143,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordRequestingSupplyDrop_1
 		{
+			text="requesting supply drop";
 			speech[]=
 			{
 				"RequestingSupplyDrop"
@@ -51037,6 +53167,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordSupplyDropReadyRequestingDropZoneLocationOver_1
 		{
+			text="supply drop ready. Requesting drop zone location, over";
 			speech[]=
 			{
 				"SupplyDropReadyRequestingDropZoneLocationOver"
@@ -51060,6 +53191,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordPositionConfirmedSuppliesInbound_1
 		{
+			text="Position confirmed, supplies inbound";
 			speech[]=
 			{
 				"PositionConfirmedSuppliesInbound"
@@ -51083,6 +53215,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordBeAdvisedWeLostContactWithTheTransportVehicleOut_1
 		{
+			text="be advised, we lost contact with the transport vehicle. Out";
 			speech[]=
 			{
 				"BeAdvisedWeLostContactWithTheTransportVehicleOut"
@@ -51106,6 +53239,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordSuppliesDeliveredOut_1
 		{
+			text="supplies delivered. Out";
 			speech[]=
 			{
 				"SuppliesDeliveredOut"
@@ -51129,6 +53263,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordTheSuppliesHaveBeenDroppedOut_1
 		{
+			text="The supplies have been dropped. Out";
 			speech[]=
 			{
 				"TheSuppliesHaveBeenDroppedOut"
@@ -51152,6 +53287,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordRequestingFastTransportOver_1
 		{
+			text="requesting fast transport, over";
 			speech[]=
 			{
 				"RequestingFastTransportOver"
@@ -51175,6 +53311,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordRogerTransportIsAvailableSendDestinationOver_1
 		{
+			text="Roger, transport is available. Send destination, over";
 			speech[]=
 			{
 				"RogerTransportIsAvailableSendDestinationOver"
@@ -51198,6 +53335,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordNegativeTransportUnavailableEnemyActivityInYourSectorOut_1
 		{
+			text="Negative, transport unavailable. Enemy activity in your sector, out";
 			speech[]=
 			{
 				"NegativeTransportUnavailableEnemyActivityInYourSectorOut"
@@ -51221,6 +53359,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordNegativeTransportUnavailableOut_1
 		{
+			text="Negative, transport unavailable. Out";
 			speech[]=
 			{
 				"NegativeTransportUnavailableOut"
@@ -51244,6 +53383,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordNegativeTransportIsUnavailableAtYourLocationOut_1
 		{
+			text="negative, transport is unavailable at your location. Out";
 			speech[]=
 			{
 				"NegativeTransportIsUnavailableAtYourLocationOut"
@@ -51267,6 +53407,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordDestinationReachedThanksForTheAssistanceOut_1
 		{
+			text="destination reached. Thanks for the assistance. Out";
 			speech[]=
 			{
 				"DestinationReachedThanksForTheAssistanceOut"
@@ -51290,6 +53431,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordRequestingAerialReconOver_1
 		{
+			text="requesting aerial recon. Over";
 			speech[]=
 			{
 				"RequestingAerialReconOver"
@@ -51313,6 +53455,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordUAVReadyRequestingTargetLocationOver_1
 		{
+			text="UAV ready, requesting target location. Over";
 			speech[]=
 			{
 				"UAVReadyRequestingTargetLocationOver"
@@ -51336,6 +53479,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordCoordinatesReceivedDroneIsEnrouteOver_1
 		{
+			text="Coordinates received, drone is enroute. Over";
 			speech[]=
 			{
 				"CoordinatesReceivedDroneIsEnrouteOver"
@@ -51359,6 +53503,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordDroneIsBingoFuelAndRTBOver_1
 		{
+			text="drone is bingo fuel and RTB. Over";
 			speech[]=
 			{
 				"DroneIsBingoFuelAndRTBOver"
@@ -51382,6 +53527,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordThanksForTheUpdateOut_1
 		{
+			text="thanks for the update. Out";
 			speech[]=
 			{
 				"ThanksForTheUpdateOut"
@@ -51405,6 +53551,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordWeRequireLongRangeTransportHowCopyQ_1
 		{
+			text="we require long-range transport. How copy?";
 			speech[]=
 			{
 				"WeRequireLongRangeTransportHowCopyQ"
@@ -51428,6 +53575,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordRogerThatTransportAvailableRequestingLZOver_1
 		{
+			text="Roger that. Transport available, requesting LZ. Over";
 			speech[]=
 			{
 				"RogerThatTransportAvailableRequestingLZOver"
@@ -51451,6 +53599,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordCopyTransportIsInboundOut_1
 		{
+			text="Copy, transport is inbound. Out";
 			speech[]=
 			{
 				"CopyTransportIsInboundOut"
@@ -51474,6 +53623,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordAllAboardSendingCoordinatesOver_1
 		{
+			text="all aboard, sending coordinates. Over";
 			speech[]=
 			{
 				"AllAboardSendingCoordinatesOver"
@@ -51497,6 +53647,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordReportingSuccessfulInsertionThanksForTheRideOut_1
 		{
+			text="reporting successful insertion. Thanks for the ride, out";
 			speech[]=
 			{
 				"ReportingSuccessfulInsertionThanksForTheRideOut"
@@ -51520,6 +53671,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordBeAdvisedTransportWasImmobilizedOut_1
 		{
+			text="be advised, transport was immobilized. Out";
 			speech[]=
 			{
 				"BeAdvisedTransportWasImmobilizedOut"
@@ -51543,6 +53695,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordRequestingImmediateCloseAirSupportHowCopyQ_1
 		{
+			text="requesting immediate close air support. How copy?";
 			speech[]=
 			{
 				"RequestingImmediateCloseAirSupportHowCopyQ"
@@ -51566,6 +53719,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordCopyThatAirstrikeIsReadyTransmitTargetLocationOver_1
 		{
+			text="Copy that. Airstrike is ready, transmit target location. Over";
 			speech[]=
 			{
 				"CopyThatAirstrikeIsReadyTransmitTargetLocationOver"
@@ -51589,6 +53743,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordTargetLocationMarkedOver_1
 		{
+			text="target location marked. Over";
 			speech[]=
 			{
 				"TargetLocationMarkedOver"
@@ -51612,6 +53767,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordCoordinatesReceivedAircraftAreInboundContactOnLaserDesignatorOut_1
 		{
+			text="coordinates received, aircraft are inbound. Contact on laser designator. Out";
 			speech[]=
 			{
 				"CoordinatesReceivedAircraftAreInboundContactOnLaserDesignatorOut"
@@ -51635,6 +53791,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordBeAdvisedWeHaveABirdStandingByWeCanFlyInReinforcementsIfNeededCheckYourMapForTheRendezvousPointAndConfirmOver_1
 		{
+			text="be advised, we have a bird standing by, we can fly in reinforcements if needed. Check your map for the rendezvous point and confirm. Over";
 			speech[]=
 			{
 				"BeAdvisedWeHaveABirdStandingByWeCanFlyInReinforcementsIfNeededCheckYourMapForTheRendezvousPointAndConfirmOver"
@@ -51658,6 +53815,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordTheBirdHadToRTBForFuelOver_1
 		{
+			text="the bird had to RTB for fuel. Over";
 			speech[]=
 			{
 				"TheBirdHadToRTBForFuelOver"
@@ -51681,6 +53839,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordWeLinkedUpWithTheReinforcementsThanksForTheSupport_1
 		{
+			text="we linked up with the reinforcements. Thanks for the support";
 			speech[]=
 			{
 				"WeLinkedUpWithTheReinforcementsThanksForTheSupport"
@@ -51704,6 +53863,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordWeLostCommunicationWithThePilotBirdCouldBeDownOver_1
 		{
+			text="we lost communication with the pilot. Bird could be down. Over";
 			speech[]=
 			{
 				"WeLostCommunicationWithThePilotBirdCouldBeDownOver"
@@ -51727,6 +53887,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordYourReinforcementsDidntMakeItToTheRendezvousYoullHaveToManageOver_1
 		{
+			text="your reinforcements didn't make it to the rendezvous. You'll have to manage. Over";
 			speech[]=
 			{
 				"YourReinforcementsDidntMakeItToTheRendezvousYoullHaveToManageOver"
@@ -51750,6 +53911,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordRequestingReleaseOfAnAttackHelicopterNearOurPositionOver_1
 		{
+			text="requesting release of an attack helicopter near our position. Over";
 			speech[]=
 			{
 				"RequestingReleaseOfAnAttackHelicopterNearOurPositionOver"
@@ -51773,6 +53935,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordReleaseAuthorizedSendStrikeTargetOver_1
 		{
+			text="release authorized. Send strike target, over";
 			speech[]=
 			{
 				"ReleaseAuthorizedSendStrikeTargetOver"
@@ -51796,6 +53959,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordStrikeTargetSentOver_1
 		{
+			text="Strike target sent. Over";
 			speech[]=
 			{
 				"StrikeTargetSentOver"
@@ -51819,6 +53983,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordCoordinatesReceivedHeloIsAttackingTheTargetOut_1
 		{
+			text="Coordinates received, helo is attacking the target. Out";
 			speech[]=
 			{
 				"CoordinatesReceivedHeloIsAttackingTheTargetOut"
@@ -51842,6 +54007,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordRequestingImmediateArtillerySuppressionHighExplosiveHowCopyQ_1
 		{
+			text="requesting immediate artillery suppression, high explosive. How copy?";
 			speech[]=
 			{
 				"RequestingImmediateArtillerySuppressionHighExplosiveHowCopyQ"
@@ -51865,6 +54031,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordWithAnImmediateArtillerySuppressionRequestSmokeOver_1
 		{
+			text="with an immediate artillery suppression request, smoke. Over";
 			speech[]=
 			{
 				"WithAnImmediateArtillerySuppressionRequestSmokeOver"
@@ -51888,6 +54055,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordRequestingImmediateCoverWithWilliePeteOver_1
 		{
+			text="requesting immediate cover with Willie Pete. Over";
 			speech[]=
 			{
 				"RequestingImmediateCoverWithWilliePeteOver"
@@ -51911,6 +54079,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordRequestingContinuousIlluminationAtTheTargetLocationHowCopyQ_1
 		{
+			text="requesting continuous illumination at the target location. How copy?";
 			speech[]=
 			{
 				"RequestingContinuousIlluminationAtTheTargetLocationHowCopyQ"
@@ -51934,6 +54103,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordWeNeedLaserGuidedOrdnanceOver_1
 		{
+			text="we need laser guided ordnance. Over";
 			speech[]=
 			{
 				"WeNeedLaserGuidedOrdnanceOver"
@@ -51957,6 +54127,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordWeNeedAGuidedAntiArmorStrikeOver_1
 		{
+			text="we need a guided anti-armor strike. Over";
 			speech[]=
 			{
 				"WeNeedAGuidedAntiArmorStrikeOver"
@@ -51980,6 +54151,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordRequestingFireSupportFireForEffectOver_1
 		{
+			text="requesting fire support. Fire for effect, over";
 			speech[]=
 			{
 				"RequestingFireSupportFireForEffectOver"
@@ -52003,6 +54175,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordRequestingFireSupportAtTheTargetLocationWilliePeteInEffectHowCopyQ_1
 		{
+			text="requesting fire support at the target location. Willie Pete in effect, how copy?";
 			speech[]=
 			{
 				"RequestingFireSupportAtTheTargetLocationWilliePeteInEffectHowCopyQ"
@@ -52026,6 +54199,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordAdjustFireAtTheTargetLocationOver_1
 		{
+			text="adjust fire at the target location. Over";
 			speech[]=
 			{
 				"AdjustFireAtTheTargetLocationOver"
@@ -52049,6 +54223,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordArtilleryAvailableTransmitTargetLocationOver_1
 		{
+			text="Artillery available, transmit target location. Over";
 			speech[]=
 			{
 				"ArtilleryAvailableTransmitTargetLocationOver"
@@ -52072,6 +54247,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordRogerThatTargetLocationReceivedOrdnanceIsInboundOver_1
 		{
+			text="roger that, target location received, ordnance is inbound. Over";
 			speech[]=
 			{
 				"RogerThatTargetLocationReceivedOrdnanceIsInboundOver"
@@ -52095,6 +54271,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordBeAdvisedArtilleryIsUnavailableAtThisTimeOut_1
 		{
+			text="Be advised, artillery is unavailable at this time. Out";
 			speech[]=
 			{
 				"BeAdvisedArtilleryIsUnavailableAtThisTimeOut"
@@ -52118,6 +54295,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordNegativeWeLostContactWithTheBatteryOut_1
 		{
+			text="Negative, we lost contact with the battery. Out";
 			speech[]=
 			{
 				"NegativeWeLostContactWithTheBatteryOut"
@@ -52141,6 +54319,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordBeAdvisedTheBatteryCannotTargetThatGridOut_1
 		{
+			text="be advised, the battery cannot target that grid. Out";
 			speech[]=
 			{
 				"BeAdvisedTheBatteryCannotTargetThatGridOut"
@@ -52164,6 +54343,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordCannotExecuteAdjustCoordinatesOut_1
 		{
+			text="cannot execute, adjust coordinates. Out";
 			speech[]=
 			{
 				"CannotExecuteAdjustCoordinatesOut"
@@ -52187,6 +54367,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordThatsOutsideOurFiringEnvelopeOut_1
 		{
+			text="that's outside our firing envelope. Out";
 			speech[]=
 			{
 				"ThatsOutsideOurFiringEnvelopeOut"
@@ -52210,6 +54391,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordShotOver_1
 		{
+			text="Shot, over";
 			speech[]=
 			{
 				"ShotOver"
@@ -52233,6 +54415,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordShotOut_1
 		{
+			text="Shot, out";
 			speech[]=
 			{
 				"ShotOut"
@@ -52256,6 +54439,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordSplashOver_1
 		{
+			text="Splash, over";
 			speech[]=
 			{
 				"SplashOver"
@@ -52279,6 +54463,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordSplashOut_1
 		{
+			text="Splash, out";
 			speech[]=
 			{
 				"SplashOut"
@@ -52302,6 +54487,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordRoundsComplete_1
 		{
+			text="Rounds complete";
 			speech[]=
 			{
 				"RoundsComplete"
@@ -52325,6 +54511,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordCheckFireE_1
 		{
+			text="check fire!";
 			speech[]=
 			{
 				"CheckFireE"
@@ -52348,6 +54535,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordCeasingFire_1
 		{
+			text="ceasing fire";
 			speech[]=
 			{
 				"CeasingFire"
@@ -52371,6 +54559,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordBeAdvisedTheBatteryJustDroppedOffTheCommGridYoureOnYourOwnOver_1
 		{
+			text="be advised, the battery just dropped off the comm grid, you're on your own. Over";
 			speech[]=
 			{
 				"BeAdvisedTheBatteryJustDroppedOffTheCommGridYoureOnYourOwnOver"
@@ -52394,6 +54583,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordRogerWellHandleItOurselvesOut_1
 		{
+			text="Roger, we'll handle it ourselves. Out";
 			speech[]=
 			{
 				"RogerWellHandleItOurselvesOut"
@@ -52417,6 +54607,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordStandByForMissionUpdate_1
 		{
+			text="stand by for mission update";
 			speech[]=
 			{
 				"StandByForMissionUpdate"
@@ -52440,6 +54631,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordOut_1
 		{
+			text="Out";
 			speech[]=
 			{
 				"Out"
@@ -52463,6 +54655,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordRogerThat_1
 		{
+			text="Roger that";
 			speech[]=
 			{
 				"RogerThat"
@@ -52486,6 +54679,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordJobWellDone_1
 		{
+			text="Job well done";
 			speech[]=
 			{
 				"JobWellDone"
@@ -52509,6 +54703,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordGoodJobOut_1
 		{
+			text="good job. Out";
 			speech[]=
 			{
 				"GoodJobOut"
@@ -52532,6 +54727,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordWellDoneOut_1
 		{
+			text="well done. Out";
 			speech[]=
 			{
 				"WellDoneOut"
@@ -52555,6 +54751,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordMissionFailure_1
 		{
+			text="Mission failure";
 			speech[]=
 			{
 				"MissionFailure"
@@ -52578,6 +54775,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordMessageOver_1
 		{
+			text="message, over";
 			speech[]=
 			{
 				"MessageOver"
@@ -52601,6 +54799,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordComeIn_1
 		{
+			text="Come in";
 			speech[]=
 			{
 				"ComeIn"
@@ -52624,6 +54823,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordGoAheadOver_1
 		{
+			text="go ahead, over";
 			speech[]=
 			{
 				"GoAheadOver"
@@ -52647,6 +54847,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordCopyGoAhead_1
 		{
+			text="Copy, go ahead";
 			speech[]=
 			{
 				"CopyGoAhead"
@@ -52670,6 +54871,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordWeCopyYouLoudAndClear_1
 		{
+			text="we copy you loud and clear";
 			speech[]=
 			{
 				"WeCopyYouLoudAndClear"
@@ -52693,6 +54895,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordWeCannotDivertAtThisTimeOut_1
 		{
+			text="we cannot divert at this time. Out";
 			speech[]=
 			{
 				"WeCannotDivertAtThisTimeOut"
@@ -52716,6 +54919,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordSorry_1
 		{
+			text="Sorry";
 			speech[]=
 			{
 				"Sorry"
@@ -52739,6 +54943,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordNoWayWeCanHelpWithThatRightNowOut_1
 		{
+			text="no way we can help with that right now. Out";
 			speech[]=
 			{
 				"NoWayWeCanHelpWithThatRightNowOut"
@@ -52762,6 +54967,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordWereOnTheWayOut_1
 		{
+			text="we're on the way. Out";
 			speech[]=
 			{
 				"WereOnTheWayOut"
@@ -52785,6 +54991,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordWereOscarMikeOut_1
 		{
+			text="we're Oscar Mike. Out";
 			speech[]=
 			{
 				"WereOscarMikeOut"
@@ -52808,6 +55015,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordUnableToCompleteTheObjectiveAbortingOver_1
 		{
+			text="unable to complete the objective, aborting. Over";
 			speech[]=
 			{
 				"UnableToCompleteTheObjectiveAbortingOver"
@@ -52831,6 +55039,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordWeHaveToAbortOver_1
 		{
+			text="we have to abort. Over";
 			speech[]=
 			{
 				"WeHaveToAbortOver"
@@ -52854,6 +55063,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordContinueYourPreviousMissionOver_1
 		{
+			text="Continue your previous mission. Over";
 			speech[]=
 			{
 				"ContinueYourPreviousMissionOver"
@@ -52877,6 +55087,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordAbortTheOpOver_1
 		{
+			text="Abort the op. Over";
 			speech[]=
 			{
 				"AbortTheOpOver"
@@ -52900,6 +55111,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordReturnToYourPrimaryOver_1
 		{
+			text="Return to your primary. Over";
 			speech[]=
 			{
 				"ReturnToYourPrimaryOver"
@@ -52923,6 +55135,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordCarryOnWithYourPriorTasksOver_1
 		{
+			text="Carry on with your prior tasks. Over";
 			speech[]=
 			{
 				"CarryOnWithYourPriorTasksOver"
@@ -52946,6 +55159,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordStandByOver_1
 		{
+			text="Stand by, over";
 			speech[]=
 			{
 				"StandByOver"
@@ -52969,6 +55183,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordAffirmative_1
 		{
+			text="Affirmative";
 			speech[]=
 			{
 				"Affirmative"
@@ -52992,6 +55207,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordSupportIsNotAvailableOut_1
 		{
+			text="support is not available. Out";
 			speech[]=
 			{
 				"SupportIsNotAvailableOut"
@@ -53015,6 +55231,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordYourRequestHasBeenRejectedOut_1
 		{
+			text="your request has been rejected. Out";
 			speech[]=
 			{
 				"YourRequestHasBeenRejectedOut"
@@ -53038,6 +55255,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordDoItNow_1
 		{
+			text="Do it now";
 			speech[]=
 			{
 				"DoItNow"
@@ -53061,6 +55279,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordAtThatPosition_1
 		{
+			text="At that position.";
 			speech[]=
 			{
 				"AtThatPosition"
@@ -53084,6 +55303,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordChangeFormation_1
 		{
+			text="Change Formation";
 			speech[]=
 			{
 				"ChangeFormation"
@@ -53107,6 +55327,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordDefense_1
 		{
+			text="Defense";
 			speech[]=
 			{
 				"Defense"
@@ -53130,6 +55351,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordDefenses_1
 		{
+			text="Defenses";
 			speech[]=
 			{
 				"Defenses"
@@ -53153,6 +55375,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordVeryClose_1
 		{
+			text="Very close.";
 			speech[]=
 			{
 				"VeryClose"
@@ -53176,6 +55399,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordDontBotherMeNow_1
 		{
+			text="Don't bother me now.";
 			speech[]=
 			{
 				"DontBotherMeNow"
@@ -53199,6 +55423,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordFourty_1
 		{
+			text="fourty";
 			speech[]=
 			{
 				"Fourty"
@@ -53222,6 +55447,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordHeal_1
 		{
+			text="heal";
 			speech[]=
 			{
 				"Heal"
@@ -53245,6 +55471,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordMoveToThatPosition_1
 		{
+			text="Move to that position";
 			speech[]=
 			{
 				"MoveToThatPosition"
@@ -53268,6 +55495,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordObjects_1
 		{
+			text="objects";
 			speech[]=
 			{
 				"Objects"
@@ -53291,6 +55519,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordSevent_1
 		{
+			text="sevent";
 			speech[]=
 			{
 				"Sevent"
@@ -53314,6 +55543,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordTheyGotHim_1
 		{
+			text="They got him";
 			speech[]=
 			{
 				"TheyGotHim"
@@ -53337,6 +55567,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordYou_1
 		{
+			text="You";
 			speech[]=
 			{
 				"You"
@@ -53360,6 +55591,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordUV1_1
 		{
+			text="u v1";
 			speech[]=
 			{
 				"UV1"
@@ -53383,6 +55615,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordUV2_1
 		{
+			text="u v2";
 			speech[]=
 			{
 				"UV2"
@@ -53406,6 +55639,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordUV3_1
 		{
+			text="u v3";
 			speech[]=
 			{
 				"UV3"
@@ -53429,6 +55663,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordUV4_1
 		{
+			text="u v4";
 			speech[]=
 			{
 				"UV4"
@@ -53452,6 +55687,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordWeapon_1
 		{
+			text="Weapon";
 			speech[]=
 			{
 				"Weapon"
@@ -53475,6 +55711,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordWeapons_1
 		{
+			text="Weapons";
 			speech[]=
 			{
 				"Weapons"
@@ -53498,6 +55735,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordYouThere_1
 		{
+			text="You there";
 			speech[]=
 			{
 				"YouThere"
@@ -53521,6 +55759,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordDontBotherMe_1
 		{
+			text="Don't bother me.";
 			speech[]=
 			{
 				"DontBotherMe"
@@ -53544,6 +55783,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordReadyForOrders_1
 		{
+			text="Ready for orders";
 			speech[]=
 			{
 				"ReadyForOrders"
@@ -53567,6 +55807,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordScream1_1
 		{
+			text="Scream1";
 			speech[]=
 			{
 				"Scream1"
@@ -53590,6 +55831,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordImAtThisPosition_1
 		{
+			text="I'm at this position";
 			speech[]=
 			{
 				"ImAtThisPosition"
@@ -53613,6 +55855,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordImHit_1
 		{
+			text="I'm hit";
 			speech[]=
 			{
 				"ImHit"
@@ -53636,6 +55879,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordTakeIt_1
 		{
+			text="take it";
 			speech[]=
 			{
 				"TakeIt"
@@ -53659,6 +55903,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordWatchThatPosition_1
 		{
+			text="watch that position";
 			speech[]=
 			{
 				"WatchThatPosition"
@@ -53682,6 +55927,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordU_1
 		{
+			text="u";
 			speech[]=
 			{
 				"U"
@@ -53705,6 +55951,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordGuerilla_1
 		{
+			text="Guerilla";
 			speech[]=
 			{
 				"Guerilla"
@@ -53728,6 +55975,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class WordDist10_1
 		{
+			text="dist10";
 			speech[]=
 			{
 				"Dist10"
@@ -53743,6 +55991,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Default
 		{
+			text="";
 			speech[]={};
 			gesture="gestureAttack";
 		};
@@ -53756,6 +56005,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Default
 		{
+			text="";
 			speech[]={};
 			gesture="gestureGo";
 		};
@@ -53769,6 +56019,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Default
 		{
+			text="";
 			speech[]={};
 			gesture="gestureGoB";
 		};
@@ -53782,6 +56033,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Default
 		{
+			text="";
 			speech[]={};
 			gesture="gestureFreeze";
 		};
@@ -53795,6 +56047,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Default
 		{
+			text="";
 			speech[]={};
 			gesture="gesturePoint";
 		};
@@ -53808,6 +56061,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Default
 		{
+			text="";
 			speech[]={};
 			gesture="gestureCeaseFire";
 		};
@@ -53821,6 +56075,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Default
 		{
+			text="";
 			speech[]={};
 			gesture="gestureCover";
 		};
@@ -53834,6 +56089,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Default
 		{
+			text="";
 			speech[]={};
 			gesture="gestureUp";
 		};
@@ -53847,6 +56103,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Default
 		{
+			text="";
 			speech[]={};
 			gesture="gestureNo";
 		};
@@ -53860,6 +56117,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Default
 		{
+			text="";
 			speech[]={};
 			gesture="gestureYes";
 		};
@@ -53873,6 +56131,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Default
 		{
+			text="";
 			speech[]={};
 			gesture="gestureFollow";
 		};
@@ -53886,6 +56145,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Default
 		{
+			text="";
 			speech[]={};
 			gesture="gestureAdvance";
 		};
@@ -53899,6 +56159,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Default
 		{
+			text="";
 			speech[]={};
 			gesture="gestureHi";
 		};
@@ -53912,6 +56173,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Default
 		{
+			text="";
 			speech[]={};
 			gesture="gestureHiB";
 		};
@@ -53925,6 +56187,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Default
 		{
+			text="";
 			speech[]={};
 			gesture="gestureHiC";
 		};
@@ -53938,6 +56201,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Default
 		{
+			text="";
 			speech[]={};
 			gesture="gestureNod";
 		};
@@ -53951,6 +56215,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Default
 		{
+			text="";
 			speech[]={};
 			gesture="GestureSpasm0";
 		};
@@ -53964,6 +56229,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Default
 		{
+			text="";
 			speech[]={};
 			gesture="GestureSpasm1";
 		};
@@ -53977,6 +56243,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Default
 		{
+			text="";
 			speech[]={};
 			gesture="GestureSpasm2";
 		};
@@ -53990,6 +56257,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Default
 		{
+			text="";
 			speech[]={};
 			gesture="GestureSpasm3";
 		};
@@ -54003,6 +56271,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Default
 		{
+			text="";
 			speech[]={};
 			gesture="GestureSpasm4";
 		};
@@ -54016,6 +56285,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Default
 		{
+			text="";
 			speech[]={};
 			gesture="GestureSpasm5";
 		};
@@ -54029,6 +56299,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Default
 		{
+			text="";
 			speech[]={};
 			gesture="GestureSpasm6";
 		};
@@ -54042,6 +56313,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Default
 		{
+			text="";
 			speech[]={};
 			gesture="GestureSpasm0weak";
 		};
@@ -54055,6 +56327,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Default
 		{
+			text="";
 			speech[]={};
 			gesture="GestureSpasm1weak";
 		};
@@ -54068,6 +56341,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Default
 		{
+			text="";
 			speech[]={};
 			gesture="GestureSpasm2weak";
 		};
@@ -54081,6 +56355,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Default
 		{
+			text="";
 			speech[]={};
 			gesture="GestureSpasm3weak";
 		};
@@ -54094,6 +56369,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Default
 		{
+			text="";
 			speech[]={};
 			gesture="GestureSpasm4weak";
 		};
@@ -54107,6 +56383,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Default
 		{
+			text="";
 			speech[]={};
 			gesture="GestureSpasm5weak";
 		};
@@ -54120,6 +56397,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 		};
 		class Default
 		{
+			text="";
 			speech[]={};
 			gesture="GestureSpasm6weak";
 		};
@@ -54149,6 +56427,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 				"XMIT",
 				"OnTheWay"
 			};
+			text="";
 			wordsClass="Normal";
 		};
 		class Stealth_OnTheWay
@@ -54159,6 +56438,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 				"XMIT",
 				"OnTheWay"
 			};
+			text="";
 			wordsClass="Stealth";
 		};
 		class Normal_Confirmation1
@@ -54169,6 +56449,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 				"XMIT",
 				"HC_MovingToPosition"
 			};
+			text="";
 			wordsClass="Normal";
 		};
 		class Stealth_Confirmation1
@@ -54179,6 +56460,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 				"XMIT",
 				"HC_MovingToPosition"
 			};
+			text="";
 			wordsClass="Stealth";
 		};
 		class Normal_Confirmation2
@@ -54189,6 +56471,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 				"XMIT",
 				"HC_Affirmative"
 			};
+			text="";
 			wordsClass="Normal";
 		};
 		class Stealth_Confirmation2
@@ -54199,6 +56482,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 				"XMIT",
 				"HC_Affirmative"
 			};
+			text="";
 			wordsClass="Stealth";
 		};
 	};
@@ -54231,6 +56515,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 				"XMIT",
 				"ImOnIt"
 			};
+			text="";
 			wordsClass="Normal";
 		};
 		class Stealth_CopyIAmOnHim
@@ -54241,6 +56526,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 				"XMIT",
 				"ImOnIt"
 			};
+			text="";
 			wordsClass="Stealth";
 		};
 		class Normal_LockAndLoad
@@ -54251,6 +56537,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 				"XMIT",
 				"HC_EngagingE"
 			};
+			text="";
 			wordsClass="Normal";
 		};
 		class Stealth_LockAndLoad
@@ -54261,6 +56548,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 				"XMIT",
 				"HC_EngagingE"
 			};
+			text="";
 			wordsClass="Stealth";
 		};
 		class Normal_TargetAcquired
@@ -54271,6 +56559,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 				"XMIT",
 				"TargetAcquired"
 			};
+			text="";
 			wordsClass="Normal";
 		};
 		class Stealth_TargetAcquired
@@ -54281,6 +56570,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 				"XMIT",
 				"TargetAcquired"
 			};
+			text="";
 			wordsClass="Stealth";
 		};
 		class Normal_TargetInSight
@@ -54291,6 +56581,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 				"XMIT",
 				"TargetInSight"
 			};
+			text="";
 			wordsClass="Normal";
 		};
 		class Stealth_TargetInSight
@@ -54301,6 +56592,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 				"XMIT",
 				"TargetInSight"
 			};
+			text="";
 			wordsClass="Stealth";
 		};
 	};
@@ -54337,6 +56629,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 				"XMIT",
 				"AwaitingOrders"
 			};
+			text="";
 			wordsClass="Normal";
 		};
 		class Stealth_AwaitingOrders
@@ -54347,6 +56640,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 				"XMIT",
 				"AwaitingOrders"
 			};
+			text="";
 			wordsClass="Stealth";
 		};
 		class Normal_IAmReady
@@ -54357,6 +56651,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 				"XMIT",
 				"ReadyForOrders"
 			};
+			text="";
 			wordsClass="Normal";
 		};
 		class Stealth_IAmReady
@@ -54367,6 +56662,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 				"XMIT",
 				"ReadyForOrders"
 			};
+			text="";
 			wordsClass="Stealth";
 		};
 		class Normal_ReadyForOrders
@@ -54377,6 +56673,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 				"XMIT",
 				"Ready"
 			};
+			text="";
 			wordsClass="Normal";
 		};
 		class Stealth_ReadyForOrders
@@ -54387,6 +56684,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 				"XMIT",
 				"Ready"
 			};
+			text="";
 			wordsClass="Stealth";
 		};
 		class Normal_StandingBy
@@ -54397,6 +56695,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 				"XMIT",
 				"StandingBy"
 			};
+			text="";
 			wordsClass="Normal";
 		};
 		class Stealth_StandingBy
@@ -54407,6 +56706,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 				"XMIT",
 				"StandingBy"
 			};
+			text="";
 			wordsClass="Stealth";
 		};
 		class Normal_Waiting
@@ -54417,6 +56717,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 				"XMIT",
 				"Waiting"
 			};
+			text="";
 			wordsClass="Normal";
 		};
 		class Stealth_Waiting
@@ -54427,6 +56728,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 				"XMIT",
 				"Waiting"
 			};
+			text="";
 			wordsClass="Stealth";
 		};
 	};
@@ -54447,6 +56749,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 				"XMIT",
 				"ScreamingE"
 			};
+			text="";
 			wordsClass="Normal";
 		};
 		class Stealth_ScreamingE
@@ -54457,6 +56760,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 				"XMIT",
 				"ScreamingE"
 			};
+			text="";
 			wordsClass="Stealth";
 		};
 	};
@@ -54481,6 +56785,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 				"XMIT",
 				"RequestAcknowledgedSGCASBombing"
 			};
+			text="";
 			wordsClass="Normal";
 		};
 		class Stealth_RequestAcknowledgedSGCASBombing
@@ -54491,6 +56796,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 				"XMIT",
 				"RequestAcknowledgedSGCASBombing"
 			};
+			text="";
 			wordsClass="Stealth";
 		};
 		class Normal_RequestAcknowledgedSGCASHelicopter
@@ -54501,6 +56807,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 				"XMIT",
 				"RequestAcknowledgedSGCASHelicopter"
 			};
+			text="";
 			wordsClass="Normal";
 		};
 		class Stealth_RequestAcknowledgedSGCASHelicopter
@@ -54511,6 +56818,7 @@ class RadioProtocolFemaleENG: RadioProtocolBaseFemale
 				"XMIT",
 				"RequestAcknowledgedSGCASHelicopter"
 			};
+			text="";
 			wordsClass="Stealth";
 		};
 	};

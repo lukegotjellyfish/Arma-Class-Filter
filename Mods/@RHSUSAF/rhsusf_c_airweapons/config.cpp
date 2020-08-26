@@ -31,7 +31,15 @@ class CfgPatches
 			"rhs_weap_mk82",
 			"rhsusf_M61A2"
 		};
+		requiredVersion=1.3200001;
+		requiredAddons[]=
+		{
+			"rhsusf_main",
+			"rhsusf_c_heavyweapons"
+		};
 		name="RHSUSF Air Weapons";
+		author="$STR_RHSUSF_AUTHOR_FULL";
+		url="http://www.rhsmods.org/";
 	};
 };
 class SensorTemplatePassiveRadar;
@@ -47,194 +55,242 @@ class CfgNonAIVehicles
 	class ProxyWeapon;
 	class Proxyrhsusf_b_GBU12: ProxyWeapon
 	{
+		model="rhsusf\addons\rhsusf_airweapons\proxyammo\rhsusf_b_GBU12";
 		simulation="maverickweapon";
 	};
 	class Proxyrhsusf_b_CBU87: ProxyWeapon
 	{
+		model="rhsusf\addons\rhsusf_airweapons\proxyammo\rhsusf_b_CBU87";
 		simulation="maverickweapon";
 	};
 	class Proxyrhsusf_b_CBU89: ProxyWeapon
 	{
+		model="rhsusf\addons\rhsusf_airweapons\proxyammo\rhsusf_b_CBU89";
 		simulation="maverickweapon";
 	};
 	class Proxyrhsusf_m_AGM65B: ProxyWeapon
 	{
+		model="rhsusf\addons\rhsusf_airweapons\proxyammo\rhsusf_m_AGM65B";
 		simulation="maverickweapon";
 	};
 	class Proxyrhsusf_m_AGM65D: ProxyWeapon
 	{
+		model="rhsusf\addons\rhsusf_airweapons\proxyammo\rhsusf_m_AGM65D";
 		simulation="maverickweapon";
 	};
 	class Proxyrhsusf_m_AGM65E: ProxyWeapon
 	{
+		model="rhsusf\addons\rhsusf_airweapons\proxyammo\rhsusf_m_AGM65E";
 		simulation="maverickweapon";
 	};
 	class Proxyrhsusf_m_AGM65F: ProxyWeapon
 	{
+		model="rhsusf\addons\rhsusf_airweapons\proxyammo\rhsusf_m_AGM65F";
 		simulation="maverickweapon";
 	};
 	class Proxyrhsusf_m_AGM65H: ProxyWeapon
 	{
+		model="rhsusf\addons\rhsusf_airweapons\proxyammo\rhsusf_m_AGM65H";
 		simulation="maverickweapon";
 	};
 	class Proxyrhsusf_m_AGM114K: ProxyWeapon
 	{
+		model="rhsusf\addons\rhsusf_airweapons\proxyammo\rhsusf_m_AGM114K";
 		simulation="maverickweapon";
 	};
 	class Proxyrhsusf_m_AIM120D: ProxyWeapon
 	{
+		model="rhsusf\addons\rhsusf_airweapons\proxyammo\rhsusf_m_AIM120D";
 		simulation="maverickweapon";
 	};
 	class Proxyrhsusf_r_DAGR: ProxyWeapon
 	{
+		model="rhsusf\addons\rhsusf_airweapons\proxyammo\rhsusf_r_DAGR";
 		simulation="maverickweapon";
 	};
 	class Proxyrhsusf_r_M151: ProxyWeapon
 	{
+		model="rhsusf\addons\rhsusf_airweapons\proxyammo\rhsusf_r_M151";
 		simulation="maverickweapon";
 	};
 	class Proxyrhsusf_r_M229: ProxyWeapon
 	{
+		model="rhsusf\addons\rhsusf_airweapons\proxyammo\rhsusf_r_M229";
 		simulation="maverickweapon";
 	};
 	class Proxyrhsusf_r_M255A1: ProxyWeapon
 	{
+		model="rhsusf\addons\rhsusf_airweapons\proxyammo\rhsusf_r_M255A1";
 		simulation="maverickweapon";
 	};
 	class Proxyrhsusf_m_aim9x: ProxyWeapon
 	{
+		model="rhsusf\addons\rhsusf_a2port_air\data\proxy\rhsusf_m_aim9x";
 		simulation="maverickweapon";
 	};
 	class Proxyrhsusf_m_agm65: ProxyWeapon
 	{
+		model="rhsusf\addons\rhsusf_a2port_air\data\proxy\rhsusf_m_agm65";
 		simulation="maverickweapon";
 	};
 	class Proxyrhsusf_pylon_dummy: ProxyWeapon
 	{
+		model="rhsusf\addons\rhsusf_airweapons\proxypylon\rhsusf_pylon_dummy";
 		simulation="pylonpod";
 	};
 	class Proxyrhsusf_pylon_m_atas_2x: ProxyWeapon
 	{
+		model="rhsusf\addons\rhsusf_airweapons\proxypylon\rhsusf_pylon_m_atas_2x";
 		simulation="pylonpod";
 	};
 	class Proxyrhsusf_pylon_m_agm114_1x: ProxyWeapon
 	{
+		model="rhsusf\addons\rhsusf_airweapons\proxypylon\rhsusf_pylon_m_agm114_1x";
 		simulation="pylonpod";
 	};
 	class Proxyrhsusf_pylon_m_agm114_2x: ProxyWeapon
 	{
+		model="rhsusf\addons\rhsusf_airweapons\proxypylon\rhsusf_pylon_m_agm114_2x";
 		simulation="pylonpod";
 	};
 	class Proxyrhsusf_pylon_m_agm114_4x: ProxyWeapon
 	{
+		model="rhsusf\addons\rhsusf_airweapons\proxypylon\rhsusf_pylon_m_agm114_4x";
 		simulation="pylonpod";
 	};
 	class Proxyrhsusf_pylon_m_agm114_1x_airplane: ProxyWeapon
 	{
+		model="rhsusf\addons\rhsusf_airweapons\proxypylon\rhsusf_pylon_m_agm114_1x_airplane";
 		simulation="pylonpod";
 	};
 	class Proxyrhsusf_pylon_m_agm114_2x_airplane: ProxyWeapon
 	{
+		model="rhsusf\addons\rhsusf_airweapons\proxypylon\rhsusf_pylon_m_agm114_2x_airplane";
 		simulation="pylonpod";
 	};
 	class Proxyrhsusf_pylon_m_LAU117_1x: ProxyWeapon
 	{
+		model="rhsusf\addons\rhsusf_airweapons\proxypylon\rhsusf_pylon_m_LAU117_1x";
 		simulation="pylonpod";
 	};
 	class Proxyrhsusf_pylon_m_LAU142_1x: ProxyWeapon
 	{
+		model="rhsusf\addons\rhsusf_airweapons\proxypylon\rhsusf_pylon_m_LAU142_1x";
 		simulation="pylonpod";
 	};
 	class Proxyrhsusf_pylon_m_LAU142_2x_F22_lBay: ProxyWeapon
 	{
+		model="rhsusf\addons\rhsusf_airweapons\proxypylon\rhsusf_pylon_m_LAU142_2x_F22_lBay";
 		simulation="pylonpod";
 	};
 	class Proxyrhsusf_pylon_m_LAU142_2x_F22_rBay: ProxyWeapon
 	{
+		model="rhsusf\addons\rhsusf_airweapons\proxypylon\rhsusf_pylon_m_LAU142_2x_F22_rBay";
 		simulation="pylonpod";
 	};
 	class Proxyrhsusf_pylon_m_aim9_1x: ProxyWeapon
 	{
+		model="rhsusf\addons\rhsusf_airweapons\proxypylon\rhsusf_pylon_m_aim9_1x";
 		simulation="pylonpod";
 	};
 	class Proxyrhsusf_pylon_r_DAGR_4x: ProxyWeapon
 	{
+		model="rhsusf\addons\rhsusf_airweapons\proxypylon\rhsusf_pylon_r_DAGR_4x";
 		simulation="pylonpod";
 	};
 	class Proxyrhsusf_pylon_r_DAGR_8x: ProxyWeapon
 	{
+		model="rhsusf\addons\rhsusf_airweapons\proxypylon\rhsusf_pylon_r_DAGR_8x";
 		simulation="pylonpod";
 	};
 	class Proxyrhsusf_pylon_r_DAGR_16x: ProxyWeapon
 	{
+		model="rhsusf\addons\rhsusf_airweapons\proxypylon\rhsusf_pylon_r_DAGR_16x";
 		simulation="pylonpod";
 	};
 	class Proxyrhsusf_pylon_r_DAGR_4x_airplane: ProxyWeapon
 	{
+		model="rhsusf\addons\rhsusf_airweapons\proxypylon\rhsusf_pylon_r_DAGR_4x_airplane";
 		simulation="pylonpod";
 	};
 	class Proxyrhsusf_pylon_r_DAGR_8x_airplane: ProxyWeapon
 	{
+		model="rhsusf\addons\rhsusf_airweapons\proxypylon\rhsusf_pylon_r_DAGR_8x_airplane";
 		simulation="pylonpod";
 	};
 	class Proxyrhsusf_pylon_r_FFAR_7x: ProxyWeapon
 	{
+		model="rhsusf\addons\rhsusf_airweapons\proxypylon\rhsusf_pylon_r_FFAR_7x";
 		simulation="pylonpod";
 	};
 	class Proxyrhsusf_pylon_r_FFAR_7x_green: ProxyWeapon
 	{
+		model="rhsusf\addons\rhsusf_airweapons\proxypylon\rhsusf_pylon_r_FFAR_7x_green";
 		simulation="pylonpod";
 	};
 	class Proxyrhsusf_pylon_r_FFAR_7x_LAU68: ProxyWeapon
 	{
+		model="rhsusf\addons\rhsusf_airweapons\proxypylon\rhsusf_pylon_r_FFAR_7x_LAU68";
 		simulation="pylonpod";
 	};
 	class Proxyrhsusf_pylon_r_FFAR_7x_LAU131: ProxyWeapon
 	{
+		model="rhsusf\addons\rhsusf_airweapons\proxypylon\rhsusf_pylon_r_FFAR_7x_LAU131";
 		simulation="pylonpod";
 	};
 	class Proxyrhsusf_pylon_r_FFAR_7x_LAU131AA: ProxyWeapon
 	{
+		model="rhsusf\addons\rhsusf_airweapons\proxypylon\rhsusf_pylon_r_FFAR_7x_LAU131AA";
 		simulation="pylonpod";
 	};
 	class Proxyrhsusf_pylon_r_FFAR_19x: ProxyWeapon
 	{
+		model="rhsusf\addons\rhsusf_airweapons\proxypylon\rhsusf_pylon_r_FFAR_19x";
 		simulation="pylonpod";
 	};
 	class Proxyrhsusf_pylon_r_FFAR_19x_green: ProxyWeapon
 	{
+		model="rhsusf\addons\rhsusf_airweapons\proxypylon\rhsusf_pylon_r_FFAR_19x_green";
 		simulation="pylonpod";
 	};
 	class Proxyrhsusf_pylon_m_aim9_heli_grey: ProxyWeapon
 	{
+		model="rhsusf\addons\rhsusf_a2port_air\data\proxy\rhsusf_pylon_m_aim9_heli_grey";
 		simulation="pylonpod";
 	};
 	class Proxyrhsusf_pylon_m_aim9_heli_od: ProxyWeapon
 	{
+		model="rhsusf\addons\rhsusf_a2port_air\data\proxy\rhsusf_pylon_m_aim9_heli_od";
 		simulation="pylonpod";
 	};
 	class Proxyrhsusf_pylon_m_agm65_1x: ProxyWeapon
 	{
+		model="rhsusf\addons\rhsusf_a2port_air\data\proxy\rhsusf_pylon_m_agm65_1x";
 		simulation="pylonpod";
 	};
 	class Proxyrhsusf_pylon_m_aim9_2x: ProxyWeapon
 	{
+		model="rhsusf\addons\rhsusf_a2port_air\data\proxy\rhsusf_pylon_m_aim9_2x";
 		simulation="pylonpod";
 	};
 	class Proxyrhsusf_pylon_m_mk82_3x: ProxyWeapon
 	{
+		model="rhsusf\addons\rhsusf_a2port_air\data\proxy\rhsusf_pylon_m_mk82_3x";
 		simulation="pylonpod";
 	};
 	class Proxyrhsusf_pylon_alq_131: ProxyWeapon
 	{
+		model="rhsusf\addons\rhsusf_a2port_air\data\proxy\rhsusf_pylon_alq_131";
 		simulation="pylonpod";
 	};
 	class Proxyrhsusf_pylon_Fuel_UH60: ProxyWeapon
 	{
+		model="rhsusf\addons\rhsusf_a2port_air\data\proxy\rhsusf_pylon_Fuel_UH60";
 		simulation="pylonpod";
 	};
 	class Proxyrhsusf_pylon_Fuel_UH60MEV: ProxyWeapon
 	{
+		model="rhsusf\addons\rhsusf_a2port_air\data\proxy\rhsusf_pylon_Fuel_UH60MEV";
 		simulation="pylonpod";
 	};
 };
@@ -270,6 +326,7 @@ class CfgAmmo
 	};
 	class rhs_ammo_Sidewinder_AA: Missile_AA_04_F
 	{
+		model="\A3\Weapons_F_Jets\Ammo\Missile_AA_08_fly_F";
 		proxyShape="\A3\Weapons_F_Jets\Ammo\Missile_AA_08_F";
 		hit=150;
 		indirectHit=90;
@@ -290,6 +347,10 @@ class CfgAmmo
 		thrust=390;
 		fuseDistance=300;
 		explosionAngle=60;
+		CraterEffects="AAMissileCrater";
+		explosionEffects="AAMissileExplosion";
+		effectsMissile="missile3";
+		whistleDist=20;
 		cmImmunity=0.95999998;
 		missileLockMaxDistance=8000;
 		missileLockMinDistance=300;
@@ -307,14 +368,19 @@ class CfgAmmo
 					{
 						class AirTarget
 						{
+							minRange=500;
+							maxRange=8000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=1;
 						};
 						class GroundTarget
 						{
+							minRange=500;
+							maxRange=8000;
 							objectDistanceLimitCoef=1;
 							viewDistanceLimitCoef=1;
 						};
+						typeRecognitionDistance=-1;
 						angleRangeHorizontal=120;
 						angleRangeVertical=120;
 						groundNoiseDistanceCoef=0.029999999;
@@ -334,6 +400,7 @@ class CfgAmmo
 	class rhs_ammo_aim9: rhs_ammo_Sidewinder_AA;  //found empty after stripping
 	class rhs_ammo_aim9m: rhs_ammo_Sidewinder_AA
 	{
+		model="\a3\Weapons_F_EPC\Ammo\Missile_AA_04_fly_F.p3d";
 		proxyShape="\a3\Weapons_F_EPC\Ammo\Missile_AA_04_F.p3d";
 		maneuvrability=30;
 		cmImmunity=0.89999998;
@@ -352,6 +419,7 @@ class CfgAmmo
 	class rhs_ammo_aim120: rhs_ammo_Sidewinder_AA
 	{
 		proxyShape="\A3\Weapons_F\Ammo\Missile_AA_02_F.p3d";
+		model="\A3\Weapons_F\Ammo\Missile_AA_02_fly_F.p3d";
 		cmimmunity=0.92000002;
 		timeToLive=120;
 		inittime=0.5;
@@ -386,14 +454,19 @@ class CfgAmmo
 					{
 						class AirTarget
 						{
+							minRange=30000;
+							maxRange=30000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
 						class GroundTarget
 						{
+							minRange=30000;
+							maxRange=30000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
+						typeRecognitionDistance=-1;
 						angleRangeHorizontal=60;
 						angleRangeVertical=60;
 						groundNoiseDistanceCoef=0.1;
@@ -413,6 +486,7 @@ class CfgAmmo
 	class rhs_ammo_aim120d: rhs_ammo_aim120
 	{
 		proxyShape="\rhsusf\addons\rhsusf_airweapons\proxyammo\rhsusf_m_AIM120D";
+		model="\rhsusf\addons\rhsusf_airweapons\proxyammo\rhsusf_m_AIM120D_fly.p3d";
 		missileLockMaxDistance=28000;
 		missileLockMinDistance=2000;
 		missileLockMaxSpeed=3000;
@@ -430,14 +504,19 @@ class CfgAmmo
 					{
 						class AirTarget
 						{
+							minRange=30000;
+							maxRange=30000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
 						class GroundTarget
 						{
+							minRange=30000;
+							maxRange=30000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
+						typeRecognitionDistance=-1;
 						angleRangeHorizontal=60;
 						angleRangeVertical=60;
 						groundNoiseDistanceCoef=0.1;
@@ -468,6 +547,7 @@ class CfgAmmo
 		submunitionInitSpeed=1000;
 		triggerOnImpact=1;
 		deleteParentWhenTriggered=0;
+		model="\rhsusf\addons\rhsusf_airweapons\proxyammo\rhsusf_m_AGM114K_fly";
 		proxyShape="\rhsusf\addons\rhsusf_airweapons\proxyammo\rhsusf_m_AGM114K";
 		cost=300;
 		hit=400;
@@ -490,6 +570,9 @@ class CfgAmmo
 		trackLead=0.2;
 		maneuvrability=21;
 		timeToLive=70;
+		whistleDist=4;
+		effectsMissileInit="MissileDAR1";
+		effectsMissile="missile2";
 		missileLockMaxDistance=8000;
 		missileLockMinDistance=200;
 		missileLockMaxSpeed=56;
@@ -532,14 +615,19 @@ class CfgAmmo
 					{
 						class AirTarget
 						{
+							minRange=8000;
+							maxRange=8000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
 						class GroundTarget
 						{
+							minRange=8000;
+							maxRange=8000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
+						typeRecognitionDistance=-1;
 						angleRangeHorizontal=90;
 						angleRangeVertical=90;
 						groundNoiseDistanceCoef=-1;
@@ -591,6 +679,7 @@ class CfgAmmo
 	};
 	class RHS_ammo_AGM_114K: rhs_ammo_Hellfire_AT
 	{
+		model="\rhsusf\addons\rhsusf_airweapons\proxyammo\rhsusf_m_AGM114K_fly";
 		proxyShape="\rhsusf\addons\rhsusf_airweapons\proxyammo\rhsusf_m_AGM114K";
 		indirectHit=35;
 		indirectHitRange=8;
@@ -599,6 +688,9 @@ class CfgAmmo
 		irLock=1;
 		laserLock=1;
 		muzzleEffect="";
+		effectsMissileInit="MissileDAR1";
+		effectsMissile="missile1";
+		whistleDist=4;
 		aiAmmoUsageFlags="64+128 + 512";
 		missileLockMaxDistance=8000;
 		missileLockMinDistance=400;
@@ -619,16 +711,21 @@ class CfgAmmo
 					{
 						class AirTarget
 						{
+							minRange=7000;
+							maxRange=7000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
 						class GroundTarget
 						{
+							minRange=7000;
+							maxRange=7000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
 						angleRangeHorizontal=30;
 						angleRangeVertical=50;
+						typeRecognitionDistance=-1;
 						maxGroundNoiseDistance=0;
 						maxFogSeeThrough=0.30000001;
 						allowsMarking=1;
@@ -644,19 +741,63 @@ class CfgAmmo
 		indirectHitRange=11;
 		dangerRadiusHit=1250;
 		suppressionRadiusHit=120;
+		class CamShakeExplode
+		{
+			power="(122*0.2)";
+			duration="((round (122^0.5))*0.2 max 0.2)";
+			frequency=20;
+			distance="((10 + 122^0.5)*8)";
+		};
+		class CamShakeHit
+		{
+			power=122;
+			duration="((round (122^0.25))*0.2 max 0.2)";
+			frequency=20;
+			distance=1;
+		};
+		class CamShakeFire
+		{
+			power="(122^0.25)";
+			duration="((round (122^0.5))*0.2 max 0.2)";
+			frequency=20;
+			distance="((122^0.5)*8)";
+		};
+		class CamShakePlayerFire
+		{
+			power=2;
+			duration=0.1;
+			frequency=20;
+			distance=1;
+		};
+		SoundSetExplosion[]=
+		{
+			"RocketsHeavy_Exp_SoundSet",
+			"RocketsHeavy_Tail_SoundSet",
+			"Explosion_Debris_SoundSet"
+		};
 	};
 	class RHS_ammo_AGM_114N: RHS_ammo_AGM_114M
 	{
+		AIAmmoUsageFlags="64+128";
 		cost=100;
 		hit=210;
 		indirectHit=85;
 		indirectHitRange=20;
 		explosive=1;
 		allowAgainstInfantry=1;
+		class CamShakeExplode
+		{
+			power="(110*0.2)";
+			duration="((round (110^0.5))*0.2 max 0.2)";
+			frequency=20;
+			distance="((5 + 110^0.5)*8)";
+		};
+		explosionEffects="RHS_FAE_Explosion";
 	};
 	class RHS_Ammo_DAGR: MissileBase
 	{
 		maverickWeaponIndexOffset=80;
+		model="\rhsusf\addons\rhsusf_airweapons\proxyammo\rhsusf_r_DAGR_fly";
 		proxyShape="\rhsusf\addons\rhsusf_airweapons\proxyammo\rhsusf_r_DAGR";
 		hit=300;
 		indirectHit=50;
@@ -678,7 +819,11 @@ class CfgAmmo
 		thrustTime=1.5700001;
 		thrust=825;
 		fuseDistance=50;
+		whistleDist=4;
 		muzzleEffect="";
+		effectsMissileInit="MissileDAR1";
+		effectsMissile="missile1";
+		explosionEffects="ATMissileExplosion";
 		weaponLockSystem=4;
 		manualControl=1;
 		aiAmmoUsageFlags="64 + 128+512";
@@ -709,11 +854,15 @@ class CfgAmmo
 					{
 						class AirTarget
 						{
+							minRange=5000;
+							maxRange=5000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
 						class GroundTarget
 						{
+							minRange=5000;
+							maxRange=5000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
@@ -726,6 +875,64 @@ class CfgAmmo
 				};
 			};
 		};
+		class CamShakeExplode
+		{
+			power=24.4;
+			duration=2.2;
+			frequency=20;
+			distance=208.36301;
+		};
+		class CamShakeHit
+		{
+			power=122;
+			duration=0.60000002;
+			frequency=20;
+			distance=1;
+		};
+		class CamShakeFire
+		{
+			power=3.3234601;
+			duration=2.2;
+			frequency=20;
+			distance=88.3629;
+		};
+		class CamShakePlayerFire
+		{
+			power=2;
+			duration=0.1;
+			frequency=20;
+			distance=1;
+		};
+	};
+	class rhs_ammo_agm65: rhs_ammo_Hellfire_AT
+	{
+		submunitionAmmo="rhs_ammo_agm65_penetrator";
+		submunitionDirectionType="SubmunitionModelDirection";
+		submunitionInitialOffset[]={0,0,-0.2};
+		submunitionParentSpeedCoef=0;
+		submunitionInitSpeed=1000;
+		triggerOnImpact=1;
+		deleteParentWhenTriggered=0;
+		model="\rhsusf\addons\rhsusf_a2port_air\data\proxy\rhsusf_m_agm65_fly.p3d";
+		proxyShape="\rhsusf\addons\rhsusf_a2port_air\data\proxy\rhsusf_m_agm65.p3d";
+		cost=1000;
+		hit=400;
+		indirectHit=250;
+		indirectHitRange=10.5;
+		whistleDist=8;
+		simulationStep=0.0020000001;
+		airLock=0;
+		irLock=0;
+		laserLock=0;
+		cmimmunity=0.80000001;
+		manualControl=1;
+		maxControlRange=11000;
+		maneuvrability=14;
+		trackOversteer=1;
+		flightProfiles[]=
+		{
+			"Direct"
+		};
 		maxSpeed=320;
 		timeToLive=45;
 		airFriction=0.07;
@@ -735,6 +942,9 @@ class CfgAmmo
 		thrustTime=2;
 		thrust=246;
 		fuseDistance=500;
+		CraterEffects="ATRocketCrater";
+		explosionEffects="ATRocketExplosion";
+		effectsMissileInit="PylonBackEffects";
 		muzzleEffect="";
 		class Hiteffects
 		{
@@ -757,6 +967,7 @@ class CfgAmmo
 		laserLock=1;
 		weaponLockSystem="4 + 16";
 		missileLockMaxDistance=20000;
+		model="\rhsusf\addons\rhsusf_airweapons\proxyammo\rhsusf_m_agm65e_fly.p3d";
 		proxyShape="\rhsusf\addons\rhsusf_airweapons\proxyammo\rhsusf_m_agm65e.p3d";
 		class Components: Components
 		{
@@ -768,16 +979,21 @@ class CfgAmmo
 					{
 						class AirTarget
 						{
+							minRange=10000;
+							maxRange=10000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
 						class GroundTarget
 						{
+							minRange=10000;
+							maxRange=10000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
 						angleRangeHorizontal=120;
 						angleRangeVertical=120;
+						typeRecognitionDistance=-1;
 						maxFogSeeThrough=0.30000001;
 					};
 				};
@@ -788,6 +1004,7 @@ class CfgAmmo
 	{
 		weaponLockSystem="1 + 16";
 		missileLockMaxDistance=4000;
+		model="\rhsusf\addons\rhsusf_airweapons\proxyammo\rhsusf_m_agm65b_fly.p3d";
 		proxyShape="\rhsusf\addons\rhsusf_airweapons\proxyammo\rhsusf_m_agm65b.p3d";
 		class Components: Components
 		{
@@ -799,11 +1016,15 @@ class CfgAmmo
 					{
 						class AirTarget
 						{
+							minRange=1000;
+							maxRange=4000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=1;
 						};
 						class GroundTarget
 						{
+							minRange=1000;
+							maxRange=4000;
 							objectDistanceLimitCoef=1;
 							viewDistanceLimitCoef=1;
 						};
@@ -823,6 +1044,7 @@ class CfgAmmo
 	{
 		weaponLockSystem="1 + 16";
 		missileLockMaxDistance=10000;
+		model="\rhsusf\addons\rhsusf_airweapons\proxyammo\rhsusf_m_agm65h_fly.p3d";
 		proxyShape="\rhsusf\addons\rhsusf_airweapons\proxyammo\rhsusf_m_agm65h.p3d";
 		class Components: Components
 		{
@@ -834,11 +1056,15 @@ class CfgAmmo
 					{
 						class AirTarget
 						{
+							minRange=2000;
+							maxRange=20000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=1;
 						};
 						class GroundTarget
 						{
+							minRange=2000;
+							maxRange=20000;
 							objectDistanceLimitCoef=1;
 							viewDistanceLimitCoef=1;
 						};
@@ -860,6 +1086,7 @@ class CfgAmmo
 		missileLockMaxDistance=11000;
 		irLock=1;
 		weaponLockSystem="2 + 16";
+		model="\rhsusf\addons\rhsusf_airweapons\proxyammo\rhsusf_m_agm65d_fly.p3d";
 		proxyShape="\rhsusf\addons\rhsusf_airweapons\proxyammo\rhsusf_m_agm65d.p3d";
 		class Components: Components
 		{
@@ -871,11 +1098,15 @@ class CfgAmmo
 					{
 						class AirTarget
 						{
+							minRange=5000;
+							maxRange=20000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=1;
 						};
 						class GroundTarget
 						{
+							minRange=5000;
+							maxRange=20000;
 							objectDistanceLimitCoef=1;
 							viewDistanceLimitCoef=1;
 						};
@@ -892,6 +1123,7 @@ class CfgAmmo
 	};
 	class rhs_ammo_agm65f: rhs_ammo_agm65d
 	{
+		model="\rhsusf\addons\rhsusf_airweapons\proxyammo\rhsusf_m_agm65f_fly.p3d";
 		proxyShape="\rhsusf\addons\rhsusf_airweapons\proxyammo\rhsusf_m_agm65f.p3d";
 		missileLockMaxDistance=16000;
 		class Components: Components
@@ -904,6 +1136,8 @@ class CfgAmmo
 					{
 						class AirTarget: AirTarget
 						{
+							minRange=16000;
+							maxRange=24000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=1;
 						};
@@ -928,26 +1162,31 @@ class CfgAmmo
 		sideAirFriction=0.0040000002;
 		timeToLive=60;
 		fuseDistance=40;
+		whistleDist=24;
 	};
 	class rhs_ammo_FFAR_M151: rhs_ammo_Hydra_HE_Heli
 	{
 		maverickweapon=1;
 		maverickWeaponIndexOffset=0;
+		model="\rhsusf\addons\rhsusf_airweapons\proxyammo\rhsusf_r_M151_FFAR_fly";
 		proxyShape="\rhsusf\addons\rhsusf_airweapons\proxyammo\rhsusf_r_M151";
 	};
 	class rhs_ammo_Hydra_M151: rhs_ammo_Hydra_HE_Heli
 	{
 		maverickweapon=1;
 		maverickWeaponIndexOffset=0;
+		model="\rhsusf\addons\rhsusf_airweapons\proxyammo\rhsusf_r_M151_fly";
 		proxyShape="\rhsusf\addons\rhsusf_airweapons\proxyammo\rhsusf_r_M151";
 	};
 	class rhs_ammo_Hydra_M229: rhs_ammo_Hydra_M151
 	{
+		model="\rhsusf\addons\rhsusf_airweapons\proxyammo\rhsusf_r_M229_fly";
 		proxyShape="\rhsusf\addons\rhsusf_airweapons\proxyammo\rhsusf_r_M229";
 		indirecthitrange=15;
 	};
 	class rhs_ammo_Hydra_M257: rhs_ammo_Hydra_M151
 	{
+		model="\rhsusf\addons\rhsusf_airweapons\proxyammo\rhsusf_r_M257_fly";
 		proxyShape="\rhsusf\addons\rhsusf_airweapons\proxyammo\rhsusf_r_M257";
 		explosive=0;
 		hit=10;
@@ -972,6 +1211,7 @@ class CfgAmmo
 	class rhs_ammo_flare_M257: F_40mm_White
 	{
 		triggerTime=2;
+		model="rhsusf\addons\rhsusf_airweapons\submunitions\rhsusf_r_m257_drogue";
 		brightness=10000;
 		lightColor[]={100,100,100,100};
 		timeToLive=120;
@@ -981,11 +1221,13 @@ class CfgAmmo
 	class Bo_Mk82;
 	class rhs_ammo_gbu12: Bomb_04_F
 	{
+		model="\rhsusf\addons\rhsusf_airweapons\proxyammo\rhsusf_b_gbu12_fly";
 		proxyShape="\rhsusf\addons\rhsusf_airweapons\proxyammo\rhsusf_b_gbu12";
 		initTime=0.2;
 	};
 	class rhs_ammo_gbu32: Bomb_04_F
 	{
+		model="\rhsusf\addons\rhsusf_airweapons\proxyammo\rhsusf_b_gbu32";
 		proxyShape="\rhsusf\addons\rhsusf_airweapons\proxyammo\rhsusf_b_gbu32";
 	};
 	class rhs_ammo_mk82: Bo_Mk82
@@ -1004,6 +1246,7 @@ class CfgAmmo
 		laserLock=0;
 		autoSeekTarget=0;
 		weaponLockSystem=1;
+		model="\a3\Weapons_F_Orange\Ammo\BombCluster_01_fly_F";
 		proxyShape="\a3\Weapons_F_Orange\Ammo\BombCluster_01_F";
 		simulation="shotMissile";
 		triggerSpeedCoef[]={0.80000001,1};
@@ -1034,6 +1277,7 @@ class CfgAmmo
 	};
 	class rhs_ammo_sub_mk118: Mo_cluster_AP
 	{
+		model="\a3\Weapons_F_Orange\Ammo\BombCluster_01_sub_F";
 		submunitionAmmo="rhs_ammo_sub_mk118_penetrator";
 		submunitionDirectionType="SubmunitionModelDirection";
 		submunitionInitialOffset[]={0,0,-0.2};
@@ -1043,6 +1287,7 @@ class CfgAmmo
 		deleteParentWhenTriggered=0;
 		hit=50;
 		indirectHitRange=4;
+		effectFly="";
 	};
 	class rhs_ammo_sub_mk118_penetrator: rhs_ammo_cluster_penetrator
 	{
@@ -1051,6 +1296,7 @@ class CfgAmmo
 	};
 	class rhs_ammo_cbu87: rhs_ammo_cbu_base
 	{
+		model="\rhsusf\addons\rhsusf_airweapons\proxyammo\rhsusf_b_cbu87_fly";
 		proxyShape="\rhsusf\addons\rhsusf_airweapons\proxyammo\rhsusf_b_cbu87";
 		initTime=0.2;
 		allowAgainstInfantry=1;
@@ -1071,6 +1317,7 @@ class CfgAmmo
 	};
 	class rhs_ammo_cbu89: rhs_ammo_cbu87
 	{
+		model="\rhsusf\addons\rhsusf_airweapons\proxyammo\rhsusf_b_cbu89_fly";
 		proxyShape="\rhsusf\addons\rhsusf_airweapons\proxyammo\rhsusf_b_cbu89";
 		submunitionAmmo[]=
 		{
@@ -1088,10 +1335,12 @@ class CfgAmmo
 	class ShotDeployBase;
 	class rhs_ammo_blu91_deploy: ShotDeployBase
 	{
+		model="\rhsusf\addons\rhsusf_airweapons\submunitions\rhsusf_BLU91_fly";
 		submunitionAmmo="rhs_ammo_blu91";
 	};
 	class rhs_ammo_blu92_deploy: ShotDeployBase
 	{
+		model="\rhsusf\addons\rhsusf_airweapons\submunitions\rhsusf_BLU92_fly";
 		submunitionAmmo="rhs_ammo_blu92";
 	};
 	class APERSMine_Range_Ammo;
@@ -1101,6 +1350,7 @@ class CfgAmmo
 		hit=2000;
 		indirectHit=1250;
 		indirectHitRange=1;
+		model="\rhsusf\addons\rhsusf_airweapons\submunitions\rhsusf_BLU91_d";
 		mineModelDisabled="\rhsusf\addons\rhsusf_airweapons\submunitions\rhsusf_BLU91_d";
 		defaultMagazine="";
 		mineTrigger="TankTriggerMagnetic";
@@ -1112,6 +1362,7 @@ class CfgAmmo
 		hit=9;
 		indirectHit=8;
 		indirectHitRange=2;
+		model="\rhsusf\addons\rhsusf_airweapons\submunitions\rhsusf_BLU92_d";
 		mineModelDisabled="\rhsusf\addons\rhsusf_airweapons\submunitions\rhsusf_BLU92_d";
 		defaultMagazine="";
 		mineTrigger="RangeTriggerShort";
@@ -1120,6 +1371,7 @@ class CfgAmmo
 	};
 	class rhs_ammo_sub_blu97: Mo_cluster_AP
 	{
+		model="\rhsusf\addons\rhsusf_airweapons\submunitions\rhsusf_BLU97_fly";
 		submunitionAmmo="rhs_ammo_sub_blu97_penetrator";
 		submunitionDirectionType="SubmunitionModelDirection";
 		submunitionInitialOffset[]={0,0,-0.2};
@@ -1129,6 +1381,7 @@ class CfgAmmo
 		deleteParentWhenTriggered=0;
 		hit=8;
 		indirectHitRange=10;
+		effectFly="";
 	};
 	class rhs_ammo_sub_blu97_penetrator: rhs_ammo_cluster_penetrator
 	{
@@ -1137,6 +1390,7 @@ class CfgAmmo
 	};
 	class rhs_ammo_blu97_deploy: ShotDeployBase
 	{
+		model="\rhsusf\addons\rhsusf_airweapons\submunitions\rhsusf_BLU97_fly";
 		submunitionAmmo="rhs_ammo_uxo_blu97";
 	};
 	class rhs_ammo_uxo_blu97: APERSMine_Range_Ammo
@@ -1145,6 +1399,7 @@ class CfgAmmo
 		indirectHit=8;
 		indirectHitRange=2;
 		icon="iconExplosiveUXO";
+		model="\rhsusf\addons\rhsusf_airweapons\submunitions\rhsusf_BLU97_d";
 		mineModelDisabled="\rhsusf\addons\rhsusf_airweapons\submunitions\rhsusf_BLU97_d";
 		defaultMagazine="";
 		mineTrigger="RangeTriggerShort";
@@ -1154,6 +1409,7 @@ class CfgAmmo
 	class rhs_ammo_ANALQ131: MissileBase
 	{
 		simulation="shotMissile";
+		model="\A3\Weapons_F\empty.p3d";
 		proxyShape="\A3\Weapons_F\empty.p3d";
 		maverickWeaponIndexOffset=10;
 		hit=0;
@@ -1168,6 +1424,12 @@ class CfgAmmo
 		laserLock=0;
 		irLock=0;
 		initTime=0;
+		minRange=0;
+		minRangeProbab=0;
+		midRange=0;
+		midRangeProbab=0;
+		maxRange=0;
+		maxRangeProbab=0;
 		sideAirFriction=0;
 	};
 	class B_20mm_Tracer_Red;
@@ -1176,6 +1438,9 @@ class CfgAmmo
 		hit=50;
 		indirectHit=3;
 		indirectHitRange=0.5;
+		visibleFire=25;
+		audibleFire=28;
+		visibleFireTime=4;
 		cost=80;
 		explosive=0;
 		airlock=2;
@@ -1190,13 +1455,17 @@ class CfgMagazines
 	class 24Rnd_PG_missiles;
 	class rhs_mag_Sidewinder: VehicleMagazine
 	{
+		scope=2;
 		displayName="AIM-9X";
 		displaynameshort="IR";
 		displayNameMFDFormat="%1 AIM-9X";
+		descriptionShort="Sidewinder, IR-homing";
 		ammo="rhs_ammo_Sidewinder_AA";
 		count=1;
 		initSpeed=0;
+		maxLeadSpeed=450;
 		nameSound="missiles";
+		model="\A3\Weapons_F\DynamicLoadout\PylonPod_1x_Missile_AA_04_F.p3d";
 		pylonWeapon="rhs_weap_SidewinderLauncher";
 		hardpoints[]=
 		{
@@ -1214,7 +1483,9 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="MFD_PYLON_NAME";
 						scale=1;
 						sourceScale=1;
 						align="center";
@@ -1250,6 +1521,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -1286,6 +1558,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -1322,6 +1595,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -1365,6 +1639,7 @@ class CfgMagazines
 				{
 					class Center
 					{
+						type="fixed";
 						pos[]={0,0};
 					};
 				};
@@ -1377,6 +1652,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="line";
 							width=4;
 							points[]=
 							{
@@ -1463,7 +1739,9 @@ class CfgMagazines
 						};
 						class PylonText1
 						{
+							type="text";
 							source="static";
+							text="M";
 							scale=1;
 							sourceScale=1;
 							align="center";
@@ -1498,6 +1776,7 @@ class CfgMagazines
 						class PylonText1: PylonText1;  //found empty after stripping
 						class Background
 						{
+							type="polygon";
 							points[]=
 							{
 								
@@ -1636,6 +1915,7 @@ class CfgMagazines
 	};
 	class rhs_mag_Sidewinder_int: rhs_mag_Sidewinder
 	{
+		model="\rhsusf\addons\rhsusf_airweapons\proxypylon\rhsusf_pylon_m_aim9_1x";
 		hardpoints[]=
 		{
 			"RHS_HP_AIM9_int"
@@ -1652,6 +1932,8 @@ class CfgMagazines
 	{
 		count=2;
 		displayName="AIM-9X (LAU-114/A)";
+		descriptionShort="×2 Sidewinder, IR-homing";
+		model="\rhsusf\addons\rhsusf_a2port_air\data\proxy\rhsusf_pylon_m_aim9_2x";
 		hardpoints[]=
 		{
 			"RHS_HP_AIM9_2x"
@@ -1667,7 +1949,9 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="AIM";
 						scale=1;
 						sourceScale=1;
 						align="center";
@@ -1703,6 +1987,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -1762,6 +2047,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -1798,6 +2084,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -1842,6 +2129,7 @@ class CfgMagazines
 	class rhs_mag_Sidewinder_heli: rhs_mag_Sidewinder
 	{
 		ammo="rhs_ammo_aim9m_ah64";
+		model="\rhsusf\addons\rhsusf_a2port_air\data\proxy\rhsusf_pylon_m_aim9_heli_od";
 		hardpoints[]=
 		{
 			"RHS_HP_AIM9_HELI_ARMY"
@@ -1856,6 +2144,7 @@ class CfgMagazines
 		displayNameMFDFormat="%1 AIM-9M";
 		ammo="rhs_ammo_aim9m";
 		pylonWeapon="rhs_weap_aim9m";
+		model="\rhsusf\addons\rhsusf_a2port_air\data\proxy\rhsusf_pylon_m_aim9_heli_grey";
 		hardpoints[]=
 		{
 			"RHS_HP_AIM9_HELI_USMC"
@@ -1863,12 +2152,16 @@ class CfgMagazines
 	};
 	class rhs_mag_ATAS_2: VehicleMagazine
 	{
+		scope=2;
 		displayName="ATAS";
 		displayNameMFDFormat="%1 AIM-92";
+		descriptionShort="×2 Stinger, IR-homing";
 		ammo="rhs_ammo_fim92_missile";
 		count=2;
 		initSpeed=40;
+		maxLeadSpeed=450;
 		nameSound="missiles";
+		model="\rhsusf\addons\rhsusf_airweapons\proxypylon\rhsusf_pylon_m_atas_2x.p3d";
 		pylonWeapon="rhs_weap_ATAS_launcher";
 		hardpoints[]=
 		{
@@ -1887,7 +2180,9 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="AIM";
 						scale=1;
 						sourceScale=1;
 						align="center";
@@ -1923,6 +2218,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -1959,6 +2255,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -1995,6 +2292,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -2038,6 +2336,7 @@ class CfgMagazines
 				{
 					class Center
 					{
+						type="fixed";
 						pos[]={0,0};
 					};
 				};
@@ -2050,6 +2349,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="line";
 							width=4;
 							points[]=
 							{
@@ -2136,7 +2436,9 @@ class CfgMagazines
 						};
 						class PylonText1
 						{
+							type="text";
 							source="static";
+							text="M";
 							scale=1;
 							sourceScale=1;
 							align="center";
@@ -2171,6 +2473,7 @@ class CfgMagazines
 						class PylonText1: PylonText1;  //found empty after stripping
 						class Background
 						{
+							type="polygon";
 							points[]=
 							{
 								
@@ -2303,6 +2606,7 @@ class CfgMagazines
 	class rhs_mag_ATAS_AH64_2: rhs_mag_ATAS_2
 	{
 		ammo="rhs_ammo_fim92_ah64";
+		model="\rhsusf\addons\rhsusf_airweapons\proxypylon\rhsusf_pylon_m_atas_ah64_2x.p3d";
 		hardpoints[]=
 		{
 			"RHS_HP_ATAS_AH64"
@@ -2310,6 +2614,7 @@ class CfgMagazines
 	};
 	class rhs_mag_aim120: rhs_mag_Sidewinder
 	{
+		model="\A3\Weapons_F\DynamicLoadout\PylonPod_1x_Missile_AA_04_F.p3d";
 		hardpoints[]=
 		{
 			"RHS_HP_AIM120"
@@ -2317,9 +2622,11 @@ class CfgMagazines
 		displayName="AIM-120";
 		displaynameshort="Radar";
 		displayNameMFDFormat="%1 AIM-120";
+		descriptionShort="Radar-homing, BVRAAM";
 		ammo="rhs_ammo_aim120";
 		count=1;
 		initSpeed=0;
+		maxLeadSpeed=450;
 		nameSound="missiles";
 		pylonWeapon="rhs_weap_AIM120";
 		class mfdElements
@@ -2336,6 +2643,7 @@ class CfgMagazines
 				{
 					class Center
 					{
+						type="fixed";
 						pos[]={0,0};
 					};
 				};
@@ -2348,6 +2656,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="line";
 							width=4;
 							points[]=
 							{
@@ -2434,7 +2743,9 @@ class CfgMagazines
 						};
 						class PylonText1
 						{
+							type="text";
 							source="static";
+							text="C";
 							scale=1;
 							sourceScale=1;
 							align="center";
@@ -2469,6 +2780,7 @@ class CfgMagazines
 						class PylonText1: PylonText1;  //found empty after stripping
 						class Background
 						{
+							type="polygon";
 							points[]=
 							{
 								
@@ -2608,6 +2920,7 @@ class CfgMagazines
 	class rhs_mag_aim120d_int: rhs_mag_aim120d
 	{
 		ammo="rhs_ammo_aim120d";
+		model="\rhsusf\addons\rhsusf_airweapons\proxypylon\rhsusf_pylon_m_LAU142_1x";
 		hardpoints[]=
 		{
 			"RHS_HP_aim120_int"
@@ -2627,6 +2940,7 @@ class CfgMagazines
 				{
 					class Center
 					{
+						type="fixed";
 						pos[]={0,0};
 					};
 				};
@@ -2639,6 +2953,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="line";
 							width=4;
 							points[]=
 							{
@@ -2725,7 +3040,9 @@ class CfgMagazines
 						};
 						class PylonText1
 						{
+							type="text";
 							source="static";
+							text="C";
 							scale=1;
 							sourceScale=1;
 							align="center";
@@ -2760,6 +3077,7 @@ class CfgMagazines
 						class PylonText1: PylonText1;  //found empty after stripping
 						class Background
 						{
+							type="polygon";
 							points[]=
 							{
 								
@@ -2893,6 +3211,7 @@ class CfgMagazines
 	{
 		displayName="AIM-120D (×2)";
 		count=2;
+		model="\rhsusf\addons\rhsusf_airweapons\proxypylon\rhsusf_pylon_m_LAU142_2x_F22_lBay";
 		hardpoints[]=
 		{
 			"RHS_HP_F22_lBay"
@@ -2905,10 +3224,12 @@ class CfgMagazines
 				{
 					class Center
 					{
+						type="fixed";
 						pos[]={-0.025,0};
 					};
 					class Center2
 					{
+						type="fixed";
 						pos[]={0.02,-0};
 					};
 				};
@@ -2930,6 +3251,7 @@ class CfgMagazines
 							condition="PylonAmmo>=2";
 							class Shape
 							{
+								type="line";
 								width=4;
 								points[]=
 								{
@@ -3020,6 +3342,7 @@ class CfgMagazines
 							condition="PylonAmmo>=1";
 							class Shape
 							{
+								type="line";
 								width=4;
 								points[]=
 								{
@@ -3107,7 +3430,9 @@ class CfgMagazines
 						};
 						class PylonText1
 						{
+							type="text";
 							source="static";
+							text="C";
 							scale=1;
 							sourceScale=1;
 							align="center";
@@ -3135,7 +3460,9 @@ class CfgMagazines
 						};
 						class PylonText2
 						{
+							type="text";
 							source="static";
+							text="C";
 							scale=1;
 							sourceScale=1;
 							align="center";
@@ -3171,6 +3498,7 @@ class CfgMagazines
 							class Shape: Shape;  //found empty after stripping
 							class Background
 							{
+								type="polygon";
 								points[]=
 								{
 									
@@ -3293,6 +3621,7 @@ class CfgMagazines
 							class Shape: Shape;  //found empty after stripping
 							class Background
 							{
+								type="polygon";
 								points[]=
 								{
 									
@@ -3443,6 +3772,7 @@ class CfgMagazines
 	};
 	class rhs_mag_aim120d_2_F22_r: rhs_mag_aim120d_2_F22_l
 	{
+		model="\rhsusf\addons\rhsusf_airweapons\proxypylon\rhsusf_pylon_m_LAU142_2x_F22_rBay";
 		hardpoints[]=
 		{
 			"RHS_HP_F22_rBay"
@@ -3450,10 +3780,12 @@ class CfgMagazines
 	};
 	class rhs_mag_4Rnd_stinger: VehicleMagazine
 	{
+		scope=2;
 		ammo="rhs_ammo_fim92_missile";
 		displayname="FIM-92F Stinger";
 		displaynameshort="FIM-92F";
 		initspeed=40;
+		maxLeadSpeed=850;
 		nameSound="missiles";
 		count=4;
 	};
@@ -3467,6 +3799,7 @@ class CfgMagazines
 		ammo="RHS_Ammo_DAGR";
 		displayName="DAGR";
 		displayNameShort="SALH";
+		descriptionShort="×4 Laser-homing 70mm rockets";
 		weight=32;
 		hardpoints[]=
 		{
@@ -3474,6 +3807,7 @@ class CfgMagazines
 			"RHS_HP_LONGBOW_SINGLE"
 		};
 		pylonWeapon="RHS_weap_DAGR_Launcher";
+		model="\rhsusf\addons\rhsusf_airweapons\proxypylon\rhsusf_pylon_r_DAGR_4x";
 		mirrorMissilesIndexes[]={2,1,4,3};
 		class mfdElements
 		{
@@ -3486,7 +3820,9 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="LG";
 						scale=1;
 						sourceScale=1;
 						align="center";
@@ -3522,6 +3858,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -3558,6 +3895,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -3594,6 +3932,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -3633,7 +3972,9 @@ class CfgMagazines
 					condition="pylonSelected";
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="LG";
 						scale=1;
 						sourceScale=1;
 						align="center";
@@ -3655,6 +3996,7 @@ class CfgMagazines
 					};
 					class PylonAmmo
 					{
+						type="text";
 						source="ammo";
 						scale=1;
 						sourceScale=1;
@@ -3691,6 +4033,7 @@ class CfgMagazines
 							color[]={0,0,0};
 							class Background
 							{
+								type="polygon";
 								points[]=
 								{
 									
@@ -3721,6 +4064,7 @@ class CfgMagazines
 						};
 						class Shape
 						{
+							type="line";
 							width=4;
 							points[]=
 							{
@@ -3884,7 +4228,9 @@ class CfgMagazines
 						};
 						class PylonText1
 						{
+							type="text";
 							source="static";
+							text="LG";
 							scale=1;
 							sourceScale=1;
 							align="center";
@@ -3962,7 +4308,9 @@ class CfgMagazines
 				{
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="DAGR";
 						scale=1;
 						sourceScale=1;
 						align="right";
@@ -3984,7 +4332,9 @@ class CfgMagazines
 					};
 					class PylonText2
 					{
+						type="text";
 						source="static";
+						text="LG";
 						scale=1;
 						sourceScale=1;
 						align="right";
@@ -4006,6 +4356,7 @@ class CfgMagazines
 					};
 					class PylonAmo
 					{
+						type="text";
 						source="pylonammo";
 						scale=1;
 						sourceScale=1;
@@ -4034,6 +4385,7 @@ class CfgMagazines
 	{
 		count=8;
 		displayName="DAGR (M310)";
+		descriptionShort="×8 Laser-homing 70mm rockets";
 		weight=64;
 		hardpoints[]=
 		{
@@ -4041,27 +4393,33 @@ class CfgMagazines
 			"RHS_HP_LONGBOW_RACK",
 			"RHS_HP_MELB"
 		};
+		model="\rhsusf\addons\rhsusf_airweapons\proxypylon\rhsusf_pylon_r_DAGR_8x";
 		mirrorMissilesIndexes[]={2,1,4,3,6,5,8,7};
 	};
 	class rhs_mag_DAGR_16: rhs_mag_DAGR_8
 	{
 		count=16;
 		displayName="DAGR (M299)";
+		descriptionShort="×16 Laser-homing 70mm rockets";
 		weight=128;
 		hardpoints[]=
 		{
 			"RHS_HP_HELLFIRE_RACK",
 			"RHS_HP_LONGBOW_RACK"
 		};
+		model="\rhsusf\addons\rhsusf_airweapons\proxypylon\rhsusf_pylon_r_DAGR_16x";
 		mirrorMissilesIndexes[]={2,1,4,3,8,7,6,5,12,11,10,9,14,13,16,15};
 	};
 	class rhs_mag_Hellfire_base: VehicleMagazine
 	{
+		scope=2;
+		model="\rhsusf\addons\rhsusf_airweapons\proxypylon\rhsusf_pylon_m_agm114_1x";
 		displayName="AGM-114L Hellfire II";
 		ammo="rhs_ammo_Hellfire_AT";
 		count=8;
 		nameSound="missiles";
 		initSpeed=0;
+		maxLeadSpeed=50;
 		weight=360;
 		class mfdElements
 		{
@@ -4075,6 +4433,7 @@ class CfgMagazines
 						color[]={0,0,0};
 						class Background
 						{
+							type="polygon";
 							points[]=
 							{
 								
@@ -4109,6 +4468,7 @@ class CfgMagazines
 						color[]={0,0.12,0};
 						class Shape
 						{
+							type="line";
 							width=4;
 							points[]=
 							{
@@ -4228,7 +4588,9 @@ class CfgMagazines
 						};
 						class PylonText1
 						{
+							type="text";
 							source="static";
+							text="L";
 							scale=1;
 							sourceScale=1;
 							align="center";
@@ -4280,6 +4642,7 @@ class CfgMagazines
 						color[]={0,0,0};
 						class Background
 						{
+							type="polygon";
 							points[]=
 							{
 								
@@ -4314,6 +4677,7 @@ class CfgMagazines
 						color[]={0,0.12,0};
 						class Shape
 						{
+							type="line";
 							width=4;
 							points[]=
 							{
@@ -4453,7 +4817,9 @@ class CfgMagazines
 				{
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="AGM-114K";
 						scale=1;
 						sourceScale=1;
 						align="right";
@@ -4475,7 +4841,9 @@ class CfgMagazines
 					};
 					class PylonText2
 					{
+						type="text";
 						source="static";
+						text="LASER";
 						scale=1;
 						sourceScale=1;
 						align="right";
@@ -4504,6 +4872,7 @@ class CfgMagazines
 		ammo="rhs_ammo_AGM_114L";
 		displayName="AGM-114L";
 		displaynameshort="Radar";
+		descriptionShort="Longbow Hellfire, Radar-homing";
 		hardpoints[]=
 		{
 			"RHS_HP_LONGBOW_SINGLE"
@@ -4521,6 +4890,7 @@ class CfgMagazines
 						color[]={0,0,0};
 						class Background
 						{
+							type="polygon";
 							points[]=
 							{
 								
@@ -4555,6 +4925,7 @@ class CfgMagazines
 						color[]={0,0.12,0};
 						class Shape
 						{
+							type="line";
 							width=4;
 							points[]=
 							{
@@ -4674,7 +5045,9 @@ class CfgMagazines
 						};
 						class PylonText1
 						{
+							type="text";
 							source="static";
+							text="R";
 							scale=1;
 							sourceScale=1;
 							align="center";
@@ -4720,8 +5093,10 @@ class CfgMagazines
 	};
 	class rhs_mag_AGM114L_2: rhs_mag_AGM114L
 	{
+		model="\rhsusf\addons\rhsusf_airweapons\proxypylon\rhsusf_pylon_m_agm114_2x";
 		count=2;
 		displayName="AGM-114L (M310)";
+		descriptionShort="×2 Longbow Hellfire, Radar-homing";
 		weight=90;
 		hardpoints[]=
 		{
@@ -4731,8 +5106,10 @@ class CfgMagazines
 	};
 	class rhs_mag_AGM114L_4: rhs_mag_AGM114L_2
 	{
+		model="\rhsusf\addons\rhsusf_airweapons\proxypylon\rhsusf_pylon_m_agm114_4x";
 		count=4;
 		displayName="AGM-114L (M299)";
+		descriptionShort="×4 Longbow Hellfire, Radar-homing";
 		weight=180;
 		hardpoints[]=
 		{
@@ -4752,6 +5129,7 @@ class CfgMagazines
 						alpha=1;
 						class Background
 						{
+							type="polygon";
 							points[]=
 							{
 								
@@ -4786,6 +5164,7 @@ class CfgMagazines
 						color[]={0,0.12,0};
 						class Shape
 						{
+							type="line";
 							width=4;
 							points[]=
 							{
@@ -5241,7 +5620,9 @@ class CfgMagazines
 						};
 						class PylonText1
 						{
+							type="text";
 							source="static";
+							text="R";
 							scale=1;
 							sourceScale=1;
 							align="center";
@@ -5263,7 +5644,9 @@ class CfgMagazines
 						};
 						class PylonText2
 						{
+							type="text";
 							source="static";
+							text="R";
 							scale=1;
 							sourceScale=1;
 							align="center";
@@ -5285,7 +5668,9 @@ class CfgMagazines
 						};
 						class PylonText3
 						{
+							type="text";
 							source="static";
+							text="R";
 							scale=1;
 							sourceScale=1;
 							align="center";
@@ -5307,7 +5692,9 @@ class CfgMagazines
 						};
 						class PylonText4
 						{
+							type="text";
 							source="static";
+							text="R";
 							scale=1;
 							sourceScale=1;
 							align="center";
@@ -5361,7 +5748,9 @@ class CfgMagazines
 	{
 		displayName="AGM-114K";
 		displaynameshort="LG";
+		descriptionShort="Hellfire, Laser-homing ";
 		ammo="RHS_ammo_AGM_114K";
+		maxLeadSpeed=100;
 		count=1;
 		weight=45;
 		pylonWeapon="RHS_weap_AGM114K_Launcher";
@@ -5373,8 +5762,10 @@ class CfgMagazines
 	};
 	class rhs_mag_AGM114K_2: rhs_mag_AGM114K
 	{
+		model="\rhsusf\addons\rhsusf_airweapons\proxypylon\rhsusf_pylon_m_agm114_2x";
 		count=2;
 		displayName="AGM-114K (M310)";
+		descriptionShort="×2 Hellfire, Laser-homing ";
 		weight=90;
 		hardpoints[]=
 		{
@@ -5395,6 +5786,7 @@ class CfgMagazines
 						color[]={0,0,0};
 						class Background
 						{
+							type="polygon";
 							points[]=
 							{
 								
@@ -5429,6 +5821,7 @@ class CfgMagazines
 						color[]={0,0.12,0};
 						class Shape
 						{
+							type="line";
 							width=4;
 							points[]=
 							{
@@ -5565,6 +5958,7 @@ class CfgMagazines
 						color[]={0,0.12,0};
 						class Shape
 						{
+							type="line";
 							width=4;
 							points[]=
 							{
@@ -5704,7 +6098,9 @@ class CfgMagazines
 				{
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="AGM-114K";
 						scale=1;
 						sourceScale=1;
 						align="right";
@@ -5726,7 +6122,9 @@ class CfgMagazines
 					};
 					class PylonText2
 					{
+						type="text";
 						source="static";
+						text="LASER";
 						scale=1;
 						sourceScale=1;
 						align="right";
@@ -5748,6 +6146,7 @@ class CfgMagazines
 					};
 					class PylonAmo
 					{
+						type="text";
 						source="pylonammo";
 						scale=1;
 						sourceScale=1;
@@ -5774,8 +6173,10 @@ class CfgMagazines
 	};
 	class rhs_mag_AGM114K_4: rhs_mag_AGM114K_2
 	{
+		model="\rhsusf\addons\rhsusf_airweapons\proxypylon\rhsusf_pylon_m_agm114_4x";
 		count=4;
 		displayName="AGM-114K (M299)";
+		descriptionShort="×4 Hellfire, Laser-homing ";
 		weight=180;
 		hardpoints[]=
 		{
@@ -5796,6 +6197,7 @@ class CfgMagazines
 						alpha=1;
 						class Background
 						{
+							type="polygon";
 							points[]=
 							{
 								
@@ -5830,6 +6232,7 @@ class CfgMagazines
 						color[]={0,0.12,0};
 						class Shape
 						{
+							type="line";
 							width=4;
 							points[]=
 							{
@@ -6285,7 +6688,9 @@ class CfgMagazines
 						};
 						class PylonText1
 						{
+							type="text";
 							source="static";
+							text="L";
 							scale=1;
 							sourceScale=1;
 							align="center";
@@ -6307,7 +6712,9 @@ class CfgMagazines
 						};
 						class PylonText2
 						{
+							type="text";
 							source="static";
+							text="L";
 							scale=1;
 							sourceScale=1;
 							align="center";
@@ -6329,7 +6736,9 @@ class CfgMagazines
 						};
 						class PylonText3
 						{
+							type="text";
 							source="static";
+							text="L";
 							scale=1;
 							sourceScale=1;
 							align="center";
@@ -6351,7 +6760,9 @@ class CfgMagazines
 						};
 						class PylonText4
 						{
+							type="text";
 							source="static";
+							text="L";
 							scale=1;
 							sourceScale=1;
 							align="center";
@@ -6405,7 +6816,9 @@ class CfgMagazines
 	{
 		displayName="AGM-114M";
 		displaynameshort="LG HE";
+		descriptionShort="HE/FRAG Hellfire, Laser-homing";
 		ammo="RHS_ammo_AGM_114M";
+		maxLeadSpeed=100;
 		count=1;
 		weight=45;
 		pylonWeapon="RHS_weap_AGM114M_Launcher";
@@ -6421,6 +6834,7 @@ class CfgMagazines
 						color[]={0,0,0};
 						class Background
 						{
+							type="polygon";
 							points[]=
 							{
 								
@@ -6455,6 +6869,7 @@ class CfgMagazines
 						color[]={0,0.12,0};
 						class Shape
 						{
+							type="line";
 							width=4;
 							points[]=
 							{
@@ -6594,7 +7009,9 @@ class CfgMagazines
 				{
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="AGM-114M";
 						scale=1;
 						sourceScale=1;
 						align="right";
@@ -6616,7 +7033,9 @@ class CfgMagazines
 					};
 					class PylonText2
 					{
+						type="text";
 						source="static";
+						text="LASER";
 						scale=1;
 						sourceScale=1;
 						align="right";
@@ -6642,8 +7061,10 @@ class CfgMagazines
 	};
 	class rhs_mag_AGM114M_2: rhs_mag_AGM114M
 	{
+		model="\rhsusf\addons\rhsusf_airweapons\proxypylon\rhsusf_pylon_m_agm114_2x";
 		count=2;
 		displayName="AGM-114M (M310)";
+		descriptionShort="×2 HE/FRAG Hellfire, Laser-homing";
 		weight=90;
 		hardpoints[]=
 		{
@@ -6655,8 +7076,10 @@ class CfgMagazines
 	};
 	class rhs_mag_AGM114M_4: rhs_mag_AGM114M_2
 	{
+		model="\rhsusf\addons\rhsusf_airweapons\proxypylon\rhsusf_pylon_m_agm114_4x";
 		count=4;
 		displayName="AGM-114M (M299)";
+		descriptionShort="×4 HE/FRAG Hellfire, Laser-homing";
 		weight=180;
 		hardpoints[]=
 		{
@@ -6669,7 +7092,9 @@ class CfgMagazines
 	{
 		displayName="AGM-114N";
 		displaynameshort="LG TB";
+		descriptionShort="Thermobaric Hellfire, Laser-homing";
 		ammo="RHS_ammo_AGM_114N";
+		maxLeadSpeed=100;
 		count=1;
 		weight=45;
 		pylonWeapon="RHS_weap_AGM114N_Launcher";
@@ -6685,6 +7110,7 @@ class CfgMagazines
 						color[]={0,0,0};
 						class Background
 						{
+							type="polygon";
 							points[]=
 							{
 								
@@ -6719,6 +7145,7 @@ class CfgMagazines
 						color[]={0,0.12,0};
 						class Shape
 						{
+							type="line";
 							width=4;
 							points[]=
 							{
@@ -6858,7 +7285,9 @@ class CfgMagazines
 				{
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="AGM-114N";
 						scale=1;
 						sourceScale=1;
 						align="right";
@@ -6880,7 +7309,9 @@ class CfgMagazines
 					};
 					class PylonText2
 					{
+						type="text";
 						source="static";
+						text="LASER";
 						scale=1;
 						sourceScale=1;
 						align="right";
@@ -6906,8 +7337,10 @@ class CfgMagazines
 	};
 	class rhs_mag_AGM114N_2: rhs_mag_AGM114N
 	{
+		model="\rhsusf\addons\rhsusf_airweapons\proxypylon\rhsusf_pylon_m_agm114_2x";
 		count=2;
 		displayName="AGM-114N (M310)";
+		descriptionShort="×2 Thermobaric Hellfire, Laser-homing";
 		weight=90;
 		hardpoints[]=
 		{
@@ -6919,8 +7352,10 @@ class CfgMagazines
 	};
 	class rhs_mag_AGM114N_4: rhs_mag_AGM114N_2
 	{
+		model="\rhsusf\addons\rhsusf_airweapons\proxypylon\rhsusf_pylon_m_agm114_4x";
 		count=4;
 		displayName="AGM-114N (M299)";
+		descriptionShort="×4 Thermobaric Hellfire, Laser-homing";
 		weight=180;
 		hardpoints[]=
 		{
@@ -6931,6 +7366,7 @@ class CfgMagazines
 	};
 	class rhs_mag_DAGR_4_plane: rhs_mag_DAGR_4
 	{
+		model="\rhsusf\addons\rhsusf_airweapons\proxypylon\rhsusf_pylon_r_DAGR_4x_airplane";
 		hardpoints[]=
 		{
 			"RHS_HP_HELLFIRE_PLANE",
@@ -6939,6 +7375,7 @@ class CfgMagazines
 	};
 	class rhs_mag_DAGR_8_plane: rhs_mag_DAGR_8
 	{
+		model="\rhsusf\addons\rhsusf_airweapons\proxypylon\rhsusf_pylon_r_DAGR_8x_airplane";
 		hardpoints[]=
 		{
 			"RHS_HP_HELLFIRE_PLANE_RACK",
@@ -6947,6 +7384,7 @@ class CfgMagazines
 	};
 	class rhs_mag_AGM114L_plane: rhs_mag_AGM114L
 	{
+		model="\rhsusf\addons\rhsusf_airweapons\proxypylon\rhsusf_pylon_m_agm114_1x_airplane";
 		hardpoints[]=
 		{
 			"RHS_HP_LONGBOW_PLANE"
@@ -6954,6 +7392,7 @@ class CfgMagazines
 	};
 	class rhs_mag_AGM114L_2_plane: rhs_mag_AGM114L_2
 	{
+		model="\rhsusf\addons\rhsusf_airweapons\proxypylon\rhsusf_pylon_m_agm114_2x_airplane";
 		hardpoints[]=
 		{
 			"RHS_HP_LONGBOW_PLANE_RACK"
@@ -6961,6 +7400,7 @@ class CfgMagazines
 	};
 	class rhs_mag_AGM114K_plane: rhs_mag_AGM114K
 	{
+		model="\rhsusf\addons\rhsusf_airweapons\proxypylon\rhsusf_pylon_m_agm114_1x_airplane";
 		hardpoints[]=
 		{
 			"RHS_HP_HELLFIRE_PLANE",
@@ -6969,6 +7409,7 @@ class CfgMagazines
 	};
 	class rhs_mag_AGM114K_2_plane: rhs_mag_AGM114K_2
 	{
+		model="\rhsusf\addons\rhsusf_airweapons\proxypylon\rhsusf_pylon_m_agm114_2x_airplane";
 		hardpoints[]=
 		{
 			"RHS_HP_HELLFIRE_PLANE_RACK",
@@ -6977,6 +7418,7 @@ class CfgMagazines
 	};
 	class rhs_mag_AGM114M_plane: rhs_mag_AGM114M
 	{
+		model="\rhsusf\addons\rhsusf_airweapons\proxypylon\rhsusf_pylon_m_agm114_1x_airplane";
 		hardpoints[]=
 		{
 			"RHS_HP_HELLFIRE_PLANE",
@@ -6985,6 +7427,7 @@ class CfgMagazines
 	};
 	class rhs_mag_AGM114M_2_plane: rhs_mag_AGM114M_2
 	{
+		model="\rhsusf\addons\rhsusf_airweapons\proxypylon\rhsusf_pylon_m_agm114_2x_airplane";
 		hardpoints[]=
 		{
 			"RHS_HP_HELLFIRE_PLANE_RACK",
@@ -6993,6 +7436,7 @@ class CfgMagazines
 	};
 	class rhs_mag_AGM114N_plane: rhs_mag_AGM114N
 	{
+		model="\rhsusf\addons\rhsusf_airweapons\proxypylon\rhsusf_pylon_m_agm114_1x_airplane";
 		hardpoints[]=
 		{
 			"RHS_HP_HELLFIRE_PLANE",
@@ -7001,6 +7445,7 @@ class CfgMagazines
 	};
 	class rhs_mag_AGM114N_2_plane: rhs_mag_AGM114N_2
 	{
+		model="\rhsusf\addons\rhsusf_airweapons\proxypylon\rhsusf_pylon_m_agm114_2x_airplane";
 		hardpoints[]=
 		{
 			"RHS_HP_HELLFIRE_PLANE_RACK",
@@ -7009,12 +7454,15 @@ class CfgMagazines
 	};
 	class rhs_mag_agm65: rhs_mag_Hellfire_base
 	{
+		scope=0;
 		displayName="AGM-65";
 		displayNameShort="AGM-65";
 		ammo="rhs_ammo_agm65";
 		initSpeed=0;
+		maxLeadSpeed=220;
 		count=1;
 		pylonWeapon="rhs_weap_agm65";
+		model="\rhsusf\addons\rhsusf_airweapons\proxypylon\rhsusf_pylon_m_LAU117_1x";
 		class mfdElements
 		{
 			class rhs_a10a_ammoname
@@ -7026,7 +7474,9 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="AGM";
 						scale=1;
 						sourceScale=1;
 						align="center";
@@ -7062,6 +7512,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -7098,6 +7549,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -7134,6 +7586,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -7172,6 +7625,7 @@ class CfgMagazines
 	{
 		count=3;
 		displayName="AGM-65 x3";
+		model="\A3\Weapons_F\DynamicLoadout\PylonPod_3x_Missile_AGM_02_F";
 		mirrorMissilesIndexes[]={2,1,3};
 		class mfdElements: mfdElements
 		{
@@ -7184,7 +7638,9 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="AGM";
 						scale=1;
 						sourceScale=1;
 						align="center";
@@ -7220,6 +7676,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -7279,6 +7736,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -7315,6 +7773,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -7350,8 +7809,10 @@ class CfgMagazines
 	};
 	class rhs_mag_agm65b: rhs_mag_agm65
 	{
+		scope=2;
 		displayName="AGM-65B";
 		displayNameShort="TV";
+		descriptionShort="TV-guided Maverick";
 		ammo="rhs_ammo_agm65b";
 		hardpoints[]=
 		{
@@ -7362,7 +7823,9 @@ class CfgMagazines
 	};
 	class rhs_mag_agm65b_3: rhs_mag_agm65_x3
 	{
+		scope=2;
 		displayName="AGM-65B (LAU-88/A)";
+		descriptionShort="×3 TV-guided Maverick";
 		displayNameShort="TV";
 		ammo="rhs_ammo_agm65b";
 		hardpoints[]=
@@ -7373,9 +7836,11 @@ class CfgMagazines
 	};
 	class rhs_mag_agm65d: rhs_mag_agm65
 	{
+		scope=2;
 		displayName="AGM-65D";
 		displayNameShort="IR";
 		ammo="rhs_ammo_agm65d";
+		descriptionShort="IR-guided Maverick";
 		hardpoints[]=
 		{
 			"RHS_HP_AGM65",
@@ -7385,8 +7850,10 @@ class CfgMagazines
 	};
 	class rhs_mag_agm65d_3: rhs_mag_agm65_x3
 	{
+		scope=2;
 		displayName="AGM-65D (LAU-88/A)";
 		displayNameShort="IR";
+		descriptionShort="×3 IR-guided Maverick";
 		ammo="rhs_ammo_agm65d";
 		hardpoints[]=
 		{
@@ -7396,8 +7863,10 @@ class CfgMagazines
 	};
 	class rhs_mag_agm65e: rhs_mag_agm65
 	{
+		scope=2;
 		displayName="AGM-65E";
 		displayNameShort="LASER";
+		descriptionShort="Laser-guided Maverick";
 		ammo="rhs_ammo_agm65e";
 		hardpoints[]=
 		{
@@ -7408,8 +7877,10 @@ class CfgMagazines
 	};
 	class rhs_mag_agm65e_3: rhs_mag_agm65_x3
 	{
+		scope=2;
 		displayName="AGM-65E (LAU-88/A)";
 		displayNameShort="LASER";
+		descriptionShort="×3 Laser-guided Maverick";
 		ammo="rhs_ammo_agm65e";
 		hardpoints[]=
 		{
@@ -7419,8 +7890,10 @@ class CfgMagazines
 	};
 	class rhs_mag_agm65f: rhs_mag_agm65
 	{
+		scope=2;
 		displayName="AGM-65F";
 		displayNameShort="IR";
+		descriptionShort="IR-guided Anti-Ship Maverick";
 		ammo="rhs_ammo_agm65f";
 		hardpoints[]=
 		{
@@ -7431,8 +7904,10 @@ class CfgMagazines
 	};
 	class rhs_mag_agm65f_3: rhs_mag_agm65_x3
 	{
+		scope=2;
 		displayName="AGM-65F (LAU-88/A)";
 		displayNameShort="IR";
+		descriptionShort="×3 IR-guided Anti-Ship Maverick";
 		ammo="rhs_ammo_agm65f";
 		hardpoints[]=
 		{
@@ -7442,8 +7917,10 @@ class CfgMagazines
 	};
 	class rhs_mag_agm65h: rhs_mag_agm65
 	{
+		scope=2;
 		displayName="AGM-65H";
 		displayNameShort="CCD";
+		descriptionShort="Improved TV-guided Maverick";
 		ammo="rhs_ammo_agm65h";
 		hardpoints[]=
 		{
@@ -7454,8 +7931,10 @@ class CfgMagazines
 	};
 	class rhs_mag_agm65h_3: rhs_mag_agm65_x3
 	{
+		scope=2;
 		displayName="AGM-65H (LAU-88/A)";
 		displayNameShort="CCD";
+		descriptionShort="×3 Improved TV-guided Maverick";
 		ammo="rhs_ammo_agm65h";
 		hardpoints[]=
 		{
@@ -7465,13 +7944,17 @@ class CfgMagazines
 	};
 	class rhs_mag_M151_7: VehicleMagazine
 	{
+		scope=2;
 		count=7;
 		initSpeed=44;
+		maxLeadSpeed=200;
 		nameSound="rockets";
 		weight=48;
 		ammo="rhs_ammo_Hydra_M151";
 		displayname="M151 Hydra (M260)";
 		displayNameShort="HE";
+		descriptionShort="×7 10lb HE Hydra";
+		model="\rhsusf\addons\rhsusf_airweapons\proxypylon\rhsusf_pylon_r_FFAR_7x";
 		hardpoints[]=
 		{
 			"RHS_HP_FFAR_ARMY",
@@ -7490,7 +7973,9 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="RKT";
 						scale=1;
 						sourceScale=1;
 						align="center";
@@ -7526,6 +8011,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -7562,6 +8048,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -7598,6 +8085,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -7637,7 +8125,9 @@ class CfgMagazines
 					condition="pylonSelected";
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="6PD";
 						scale=1;
 						sourceScale=1;
 						align="center";
@@ -7659,6 +8149,7 @@ class CfgMagazines
 					};
 					class PylonAmmo
 					{
+						type="text";
 						source="ammo";
 						scale=1;
 						sourceScale=1;
@@ -7685,6 +8176,7 @@ class CfgMagazines
 	};
 	class rhs_mag_M151_7_green: rhs_mag_M151_7
 	{
+		model="\rhsusf\addons\rhsusf_airweapons\proxypylon\rhsusf_pylon_r_FFAR_7x_green";
 		displayname="M151 Hydra (LAU-68)";
 		hardpoints[]=
 		{
@@ -7696,6 +8188,8 @@ class CfgMagazines
 		count=19;
 		weight=131;
 		displayname="M151 Hydra (M261)";
+		descriptionShort="×19 10lb HE Hydra";
+		model="\rhsusf\addons\rhsusf_airweapons\proxypylon\rhsusf_pylon_r_FFAR_19x";
 		class mfdElements: mfdElements
 		{
 			class RHS_AH64_Weap_MFD
@@ -7712,6 +8206,7 @@ class CfgMagazines
 							color[]={0,0,0};
 							class Background
 							{
+								type="polygon";
 								points[]=
 								{
 									
@@ -7742,6 +8237,7 @@ class CfgMagazines
 						};
 						class Shape
 						{
+							type="line";
 							width=4;
 							points[]=
 							{
@@ -7905,7 +8401,9 @@ class CfgMagazines
 						};
 						class PylonText1
 						{
+							type="text";
 							source="static";
+							text="6PD";
 							scale=1;
 							sourceScale=1;
 							align="center";
@@ -7982,7 +8480,9 @@ class CfgMagazines
 				{
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="6PD";
 						scale=1;
 						sourceScale=1;
 						align="right";
@@ -8004,6 +8504,7 @@ class CfgMagazines
 					};
 					class PylonAmo
 					{
+						type="text";
 						source="pylonammo";
 						scale=1;
 						sourceScale=1;
@@ -8029,6 +8530,7 @@ class CfgMagazines
 						condition="PylonSelected";
 						class Static
 						{
+							type="line";
 							width=4;
 							points[]=
 							{
@@ -8076,6 +8578,7 @@ class CfgMagazines
 							color[]={0,0,0};
 							class Background
 							{
+								type="polygon";
 								points[]=
 								{
 									
@@ -8106,6 +8609,7 @@ class CfgMagazines
 						};
 						class Shape
 						{
+							type="line";
 							width=4;
 							points[]=
 							{
@@ -8269,7 +8773,9 @@ class CfgMagazines
 						};
 						class PylonText1
 						{
+							type="text";
 							source="static";
+							text="6PD";
 							scale=1;
 							sourceScale=1;
 							align="center";
@@ -8347,7 +8853,9 @@ class CfgMagazines
 				{
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="M151";
 						scale=1;
 						sourceScale=1;
 						align="right";
@@ -8369,7 +8877,9 @@ class CfgMagazines
 					};
 					class PylonText2
 					{
+						type="text";
 						source="static";
+						text="6PD";
 						scale=1;
 						sourceScale=1;
 						align="right";
@@ -8391,6 +8901,7 @@ class CfgMagazines
 					};
 					class PylonAmo
 					{
+						type="text";
 						source="pylonammo";
 						scale=1;
 						sourceScale=1;
@@ -8417,6 +8928,7 @@ class CfgMagazines
 	};
 	class rhs_mag_M151_19_green: rhs_mag_M151_19
 	{
+		model="\rhsusf\addons\rhsusf_airweapons\proxypylon\rhsusf_pylon_r_FFAR_19x_green";
 		displayname="M151 Hydra (LAU-61)";
 		hardpoints[]=
 		{
@@ -8427,6 +8939,7 @@ class CfgMagazines
 	{
 		ammo="rhs_ammo_Hydra_M229";
 		displayname="M229 Hydra (M260)";
+		descriptionShort="×7 17lb HE Hydra";
 		pylonWeapon="rhs_weap_FFARLauncher_M229";
 		class mfdElements
 		{
@@ -8439,7 +8952,9 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="RKT";
 						scale=1;
 						sourceScale=1;
 						align="center";
@@ -8475,6 +8990,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -8511,6 +9027,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -8547,6 +9064,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -8586,7 +9104,9 @@ class CfgMagazines
 					condition="pylonSelected";
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="6RC";
 						scale=1;
 						sourceScale=1;
 						align="center";
@@ -8608,6 +9128,7 @@ class CfgMagazines
 					};
 					class PylonAmmo
 					{
+						type="text";
 						source="ammo";
 						scale=1;
 						sourceScale=1;
@@ -8644,6 +9165,7 @@ class CfgMagazines
 							color[]={0,0,0};
 							class Background
 							{
+								type="polygon";
 								points[]=
 								{
 									
@@ -8674,6 +9196,7 @@ class CfgMagazines
 						};
 						class Shape
 						{
+							type="line";
 							width=4;
 							points[]=
 							{
@@ -8837,7 +9360,9 @@ class CfgMagazines
 						};
 						class PylonText1
 						{
+							type="text";
 							source="static";
+							text="6RC";
 							scale=1;
 							sourceScale=1;
 							align="center";
@@ -8915,7 +9440,9 @@ class CfgMagazines
 				{
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="M229";
 						scale=1;
 						sourceScale=1;
 						align="right";
@@ -8937,7 +9464,9 @@ class CfgMagazines
 					};
 					class PylonText2
 					{
+						type="text";
 						source="static";
+						text="6RC";
 						scale=1;
 						sourceScale=1;
 						align="right";
@@ -8959,6 +9488,7 @@ class CfgMagazines
 					};
 					class PylonAmo
 					{
+						type="text";
 						source="pylonammo";
 						scale=1;
 						sourceScale=1;
@@ -8993,6 +9523,7 @@ class CfgMagazines
 	{
 		ammo="rhs_ammo_Hydra_M229";
 		displayname="M229 Hydra (M261)";
+		descriptionShort="×19 17lb HE Hydra";
 		pylonWeapon="rhs_weap_FFARLauncher_M229";
 		class mfdElements: mfdElements
 		{
@@ -9010,6 +9541,7 @@ class CfgMagazines
 							color[]={0,0,0};
 							class Background
 							{
+								type="polygon";
 								points[]=
 								{
 									
@@ -9040,6 +9572,7 @@ class CfgMagazines
 						};
 						class Shape
 						{
+							type="line";
 							width=4;
 							points[]=
 							{
@@ -9203,7 +9736,9 @@ class CfgMagazines
 						};
 						class PylonText1
 						{
+							type="text";
 							source="static";
+							text="6RC";
 							scale=1;
 							sourceScale=1;
 							align="center";
@@ -9280,7 +9815,9 @@ class CfgMagazines
 				{
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="6RC";
 						scale=1;
 						sourceScale=1;
 						align="right";
@@ -9302,6 +9839,7 @@ class CfgMagazines
 					};
 					class PylonAmo
 					{
+						type="text";
 						source="pylonammo";
 						scale=1;
 						sourceScale=1;
@@ -9327,6 +9865,7 @@ class CfgMagazines
 						condition="PylonSelected";
 						class Static
 						{
+							type="line";
 							width=4;
 							points[]=
 							{
@@ -9373,6 +9912,7 @@ class CfgMagazines
 		ammo="rhs_ammo_Hydra_M257";
 		displayname="M257 Hydra (M260)";
 		displayNameShort="ILLUM";
+		descriptionShort="×7 ILLUM Hydra";
 		pylonWeapon="rhs_weap_FFARLauncher_M257";
 		class mfdElements
 		{
@@ -9385,7 +9925,9 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="ILU";
 						scale=1;
 						sourceScale=1;
 						align="center";
@@ -9421,6 +9963,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -9457,6 +10000,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -9493,6 +10037,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -9532,7 +10077,9 @@ class CfgMagazines
 					condition="pylonSelected";
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="ILU";
 						scale=1;
 						sourceScale=1;
 						align="center";
@@ -9554,6 +10101,7 @@ class CfgMagazines
 					};
 					class PylonAmmo
 					{
+						type="text";
 						source="ammo";
 						scale=1;
 						sourceScale=1;
@@ -9590,6 +10138,7 @@ class CfgMagazines
 							color[]={0,0,0};
 							class Background
 							{
+								type="polygon";
 								points[]=
 								{
 									
@@ -9620,6 +10169,7 @@ class CfgMagazines
 						};
 						class Shape
 						{
+							type="line";
 							width=4;
 							points[]=
 							{
@@ -9783,7 +10333,9 @@ class CfgMagazines
 						};
 						class PylonText1
 						{
+							type="text";
 							source="static";
+							text="ILU";
 							scale=1;
 							sourceScale=1;
 							align="center";
@@ -9861,7 +10413,9 @@ class CfgMagazines
 				{
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="M257";
 						scale=1;
 						sourceScale=1;
 						align="right";
@@ -9883,7 +10437,9 @@ class CfgMagazines
 					};
 					class PylonText2
 					{
+						type="text";
 						source="static";
+						text="ILU";
 						scale=1;
 						sourceScale=1;
 						align="right";
@@ -9905,6 +10461,7 @@ class CfgMagazines
 					};
 					class PylonAmo
 					{
+						type="text";
 						source="pylonammo";
 						scale=1;
 						sourceScale=1;
@@ -9934,15 +10491,19 @@ class CfgMagazines
 		ammo="rhs_ammo_Hydra_M257";
 		displayname="M257 Hydra (LAU-68)";
 		displayNameShort="ILLUM";
+		descriptionShort="×7 ILLUM Hydra";
 		pylonWeapon="rhs_weap_FFARLauncher_M257";
 	};
 	class rhs_mag_FFAR_7_USAF: VehicleMagazine
 	{
+		scope=2;
 		displayname="M151 FFAR (LAU-68)";
 		displayNameShort="HE";
+		descriptionShort="×7 10lb HE FFAR";
 		ammo="rhs_ammo_FFAR_M151";
 		count=7;
 		initSpeed=44;
+		maxLeadSpeed=200;
 		nameSound="rockets";
 		hardpoints[]=
 		{
@@ -9950,6 +10511,7 @@ class CfgMagazines
 			"RHS_HP_FFAR_USAF_green"
 		};
 		pylonWeapon="rhs_weap_FFARLauncher";
+		model="\rhsusf\addons\rhsusf_airweapons\proxypylon\rhsusf_pylon_r_FFAR_7x_LAU68";
 		displayNameMFDFormat="RKT\%2\%1";
 		class mfdElements
 		{
@@ -9962,7 +10524,9 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="RKT";
 						scale=1;
 						sourceScale=1;
 						align="center";
@@ -9998,6 +10562,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -10057,6 +10622,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -10093,6 +10659,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -10138,6 +10705,7 @@ class CfgMagazines
 							color[]={0,0,0};
 							class Background
 							{
+								type="polygon";
 								points[]=
 								{
 									
@@ -10168,6 +10736,7 @@ class CfgMagazines
 						};
 						class Shape
 						{
+							type="line";
 							width=4;
 							points[]=
 							{
@@ -10331,7 +10900,9 @@ class CfgMagazines
 						};
 						class PylonText1
 						{
+							type="text";
 							source="static";
+							text="6RC";
 							scale=1;
 							sourceScale=1;
 							align="center";
@@ -10409,7 +10980,9 @@ class CfgMagazines
 				{
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="M151";
 						scale=1;
 						sourceScale=1;
 						align="right";
@@ -10431,7 +11004,9 @@ class CfgMagazines
 					};
 					class PylonText2
 					{
+						type="text";
 						source="static";
+						text="6RC";
 						scale=1;
 						sourceScale=1;
 						align="right";
@@ -10453,6 +11028,7 @@ class CfgMagazines
 					};
 					class PylonAmo
 					{
+						type="text";
 						source="pylonammo";
 						scale=1;
 						sourceScale=1;
@@ -10482,6 +11058,8 @@ class CfgMagazines
 		count=21;
 		weight=200;
 		displayName="M151 FFAR (BRU-42 + LAU-68)";
+		descriptionShort="×21 10lb HEDP FFAR";
+		model="\rhsusf\addons\rhsusf_a2port_air\data\proxy\rhsusf_pylon_r_lau68_3x";
 		hardpoints[]=
 		{
 			"RHS_HP_FFAR_USAF_3x"
@@ -10492,6 +11070,8 @@ class CfgMagazines
 		count=19;
 		weight=131;
 		displayName="M151 FFAR (LAU-61)";
+		descriptionShort="×19 10lb HE FFAR";
+		model="\rhsusf\addons\rhsusf_airweapons\proxypylon\rhsusf_pylon_r_FFAR_19x_LAU61";
 		hardpoints[]=
 		{
 			"RHS_HP_FFAR_HEAVY_USAF"
@@ -10502,6 +11082,8 @@ class CfgMagazines
 		count=57;
 		weight=450;
 		displayName="M151 FFAR (BRU-42 + LAU-61)";
+		descriptionShort="×57 10lb HE FFAR";
+		model="\rhsusf\addons\rhsusf_a2port_air\data\proxy\rhsusf_pylon_r_lau61_3x";
 		hardpoints[]=
 		{
 			"RHS_HP_FFAR_HEAVY_USAF_3x"
@@ -10510,17 +11092,21 @@ class CfgMagazines
 	class rhs_mag_M151_7_USAF_LAU131: rhs_mag_FFAR_7_USAF
 	{
 		displayname="M151 Hydra (LAU-131)";
+		descriptionShort="×7 10lb HE Hydra";
 		ammo="rhs_ammo_Hydra_M151";
 		hardpoints[]=
 		{
 			"RHS_HP_Hydra_USAF"
 		};
+		model="\rhsusf\addons\rhsusf_airweapons\proxypylon\rhsusf_pylon_r_FFAR_7x_LAU131";
 	};
 	class rhs_mag_M151_21_USAF_LAU131_3: rhs_mag_M151_7_USAF_LAU131
 	{
 		count=21;
 		weight=200;
 		displayName="M151 Hydra (BRU-42 + LAU-131)";
+		descriptionShort="×21 10lb HE Hydra";
+		model="\rhsusf\addons\rhsusf_a2port_air\data\proxy\rhsusf_pylon_r_lau131_3x";
 		hardpoints[]=
 		{
 			"RHS_HP_Hydra_USAF_3x"
@@ -10530,6 +11116,7 @@ class CfgMagazines
 	{
 		displayname="M257 Hydra (LAU-131)";
 		displayNameShort="ILLUM";
+		descriptionShort="×7 ILLUM Hydra";
 		pylonWeapon="rhs_weap_FFARLauncher_M257";
 		ammo="rhs_ammo_Hydra_M257";
 	};
@@ -10539,7 +11126,9 @@ class CfgMagazines
 	{
 		count=1;
 		displayName="Mk82";
+		descriptionShort="500lb bomb";
 		ammo="rhs_ammo_mk82";
+		model="\A3\Weapons_F\DynamicLoadout\PylonMissile_1x_Bomb_02_F.p3d";
 		hardpoints[]=
 		{
 			"RHS_HP_BOMB_500",
@@ -10559,7 +11148,9 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="BOMB";
 						scale=1;
 						sourceScale=1;
 						align="center";
@@ -10595,6 +11186,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -10631,6 +11223,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -10667,6 +11260,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -10708,6 +11302,7 @@ class CfgMagazines
 						color[]={0,0,0};
 						class Background
 						{
+							type="polygon";
 							points[]=
 							{
 								
@@ -10742,6 +11337,7 @@ class CfgMagazines
 						color[]={0,0.12,0};
 						class Shape
 						{
+							type="line";
 							width=4;
 							points[]=
 							{
@@ -10980,7 +11576,9 @@ class CfgMagazines
 				{
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="MK-82";
 						scale=1;
 						sourceScale=1;
 						align="right";
@@ -11002,7 +11600,9 @@ class CfgMagazines
 					};
 					class PylonText2
 					{
+						type="text";
 						source="static";
+						text="FIXED";
 						scale=1;
 						sourceScale=1;
 						align="right";
@@ -11030,6 +11630,8 @@ class CfgMagazines
 	{
 		count=3;
 		displayName="Mk82 (BRU-42)";
+		descriptionShort="×3 500lb bomb";
+		model="\rhsusf\addons\rhsusf_a2port_air\data\proxy\rhsusf_pylon_m_mk82_3x";
 		hardpoints[]=
 		{
 			"RHS_HP_BOMB_500_3x",
@@ -11048,7 +11650,9 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="MK-82";
 						scale=1;
 						sourceScale=1;
 						align="center";
@@ -11084,6 +11688,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -11143,6 +11748,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -11179,6 +11785,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -11220,6 +11827,7 @@ class CfgMagazines
 						color[]={0,0,0};
 						class Background
 						{
+							type="polygon";
 							points[]=
 							{
 								
@@ -11254,6 +11862,7 @@ class CfgMagazines
 						color[]={0,0.12,0};
 						class Shape
 						{
+							type="line";
 							width=4;
 							points[]=
 							{
@@ -11492,7 +12101,9 @@ class CfgMagazines
 				{
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="MK82";
 						scale=1;
 						sourceScale=1;
 						align="right";
@@ -11514,7 +12125,9 @@ class CfgMagazines
 					};
 					class PylonText2
 					{
+						type="text";
 						source="static";
+						text="FIXED";
 						scale=1;
 						sourceScale=1;
 						align="right";
@@ -11542,7 +12155,9 @@ class CfgMagazines
 	{
 		count=1;
 		displayName="GBU-12";
+		descriptionShort="500lb Paveway II";
 		ammo="rhs_ammo_gbu12";
+		model="\A3\Weapons_F\DynamicLoadout\PylonMissile_1x_Bomb_02_F.p3d";
 		hardpoints[]=
 		{
 			"RHS_HP_LGB_500"
@@ -11560,7 +12175,9 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="GBU";
 						scale=1;
 						sourceScale=1;
 						align="center";
@@ -11596,6 +12213,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -11632,6 +12250,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -11668,6 +12287,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -11709,6 +12329,7 @@ class CfgMagazines
 						color[]={0,0,0};
 						class Background
 						{
+							type="polygon";
 							points[]=
 							{
 								
@@ -11743,6 +12364,7 @@ class CfgMagazines
 						color[]={0,0.12,0};
 						class Shape
 						{
+							type="line";
 							width=4;
 							points[]=
 							{
@@ -11980,7 +12602,9 @@ class CfgMagazines
 				{
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="GBU-12";
 						scale=1;
 						sourceScale=1;
 						align="right";
@@ -12002,7 +12626,9 @@ class CfgMagazines
 					};
 					class PylonText2
 					{
+						type="text";
 						source="static";
+						text="LOAL";
 						scale=1;
 						sourceScale=1;
 						align="right";
@@ -12030,7 +12656,9 @@ class CfgMagazines
 	{
 		count=1;
 		displayName="GBU-32";
+		descriptionShort="1000lb JDAM";
 		ammo="rhs_ammo_gbu32";
+		model="\A3\Weapons_F\DynamicLoadout\PylonMissile_1x_Bomb_02_F.p3d";
 		hardpoints[]=
 		{
 			"RHS_HP_JDAM_1000"
@@ -12049,7 +12677,9 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="GBU";
 						scale=1;
 						sourceScale=1;
 						align="center";
@@ -12085,6 +12715,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -12121,6 +12752,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -12157,6 +12789,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -12200,6 +12833,7 @@ class CfgMagazines
 				{
 					class Center
 					{
+						type="fixed";
 						pos[]={0,0};
 					};
 				};
@@ -12212,6 +12846,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="line";
 							width=4;
 							points[]=
 							{
@@ -12298,7 +12933,9 @@ class CfgMagazines
 						};
 						class PylonText1
 						{
+							type="text";
 							source="static";
+							text="G";
 							scale=1;
 							sourceScale=1;
 							align="center";
@@ -12333,6 +12970,7 @@ class CfgMagazines
 						class PylonText1: PylonText1;  //found empty after stripping
 						class Background
 						{
+							type="polygon";
 							points[]=
 							{
 								
@@ -12470,6 +13108,7 @@ class CfgMagazines
 						color[]={0,0,0};
 						class Background
 						{
+							type="polygon";
 							points[]=
 							{
 								
@@ -12504,6 +13143,7 @@ class CfgMagazines
 						color[]={0,0.12,0};
 						class Shape
 						{
+							type="line";
 							width=4;
 							points[]=
 							{
@@ -12741,7 +13381,9 @@ class CfgMagazines
 				{
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="GBU-32";
 						scale=1;
 						sourceScale=1;
 						align="right";
@@ -12763,7 +13405,9 @@ class CfgMagazines
 					};
 					class PylonText2
 					{
+						type="text";
 						source="static";
+						text="GPS-INS";
 						scale=1;
 						sourceScale=1;
 						align="right";
@@ -12792,6 +13436,7 @@ class CfgMagazines
 		ammo="rhs_ammo_cbu87";
 		displayname="CBU-87";
 		displayNameShort="Cluster CEM";
+		descriptionShort="SUU-65/B Dispenser (×101 BLU-97B/B CEM)";
 		hardpoints[]=
 		{
 			"RHS_HP_BOMB_1000",
@@ -12810,7 +13455,9 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="GBU-32";
 						scale=1;
 						sourceScale=1;
 						align="center";
@@ -12846,6 +13493,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -12882,6 +13530,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -12918,6 +13567,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -12959,6 +13609,7 @@ class CfgMagazines
 						color[]={0,0,0};
 						class Background
 						{
+							type="polygon";
 							points[]=
 							{
 								
@@ -12993,6 +13644,7 @@ class CfgMagazines
 						color[]={0,0.12,0};
 						class Shape
 						{
+							type="line";
 							width=4;
 							points[]=
 							{
@@ -13231,7 +13883,9 @@ class CfgMagazines
 				{
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="CBU-87";
 						scale=1;
 						sourceScale=1;
 						align="right";
@@ -13253,7 +13907,9 @@ class CfgMagazines
 					};
 					class PylonText2
 					{
+						type="text";
 						source="static";
+						text="LOAL";
 						scale=1;
 						sourceScale=1;
 						align="right";
@@ -13282,6 +13938,7 @@ class CfgMagazines
 		ammo="rhs_ammo_cbu87";
 		displayname="CBU-87 (BRU-42)";
 		displayNameShort="Cluster CEM";
+		descriptionShort="×3 SUU-65/B Dispenser (×101 BLU-97B/B CEM)";
 		hardpoints[]=
 		{
 			"RHS_HP_BOMB_1000_3x",
@@ -13300,7 +13957,9 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="CBU-87";
 						scale=1;
 						sourceScale=1;
 						align="center";
@@ -13336,6 +13995,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -13372,6 +14032,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -13408,6 +14069,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -13449,6 +14111,7 @@ class CfgMagazines
 						color[]={0,0,0};
 						class Background
 						{
+							type="polygon";
 							points[]=
 							{
 								
@@ -13483,6 +14146,7 @@ class CfgMagazines
 						color[]={0,0.12,0};
 						class Shape
 						{
+							type="line";
 							width=4;
 							points[]=
 							{
@@ -13721,7 +14385,9 @@ class CfgMagazines
 				{
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="CBU-87";
 						scale=1;
 						sourceScale=1;
 						align="right";
@@ -13743,7 +14409,9 @@ class CfgMagazines
 					};
 					class PylonText2
 					{
+						type="text";
 						source="static";
+						text="LOAL";
 						scale=1;
 						sourceScale=1;
 						align="right";
@@ -13772,6 +14440,7 @@ class CfgMagazines
 		ammo="rhs_ammo_cbu89";
 		displayname="CBU-89";
 		displayNameShort="Cluster Mine";
+		descriptionShort="SUU-64/B Dispenser (×71 BLU-91/B AT & ×22 BLU-92/B APERS mines)";
 		pylonWeapon="rhs_weap_cbu89";
 		displayNameMFDFormat="CBU89\%1";
 	};
@@ -13780,6 +14449,7 @@ class CfgMagazines
 		ammo="rhs_ammo_cbu89";
 		displayname="CBU-89 (BRU-42)";
 		displayNameShort="Cluster Mine";
+		descriptionShort="×3 SUU-64/B Dispenser (×71 BLU-91/B AT & ×22 BLU-92/B APERS mines)";
 		pylonWeapon="rhs_weap_cbu89";
 		displayNameMFDFormat="CBU89\%1";
 	};
@@ -13788,6 +14458,7 @@ class CfgMagazines
 		ammo="rhs_ammo_cbu100";
 		displayname="CBU-100";
 		displayNameShort="Cluster HEAT";
+		descriptionShort="SUU-76/B Dispenser (×123 Mk 118 HEAT)";
 		pylonWeapon="rhs_weap_cbu100";
 		displayNameMFDFormat="CBU100\%1";
 		hardpoints[]=
@@ -13806,7 +14477,9 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="CBU";
 						scale=1;
 						sourceScale=1;
 						align="center";
@@ -13842,6 +14515,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -13878,6 +14552,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -13914,6 +14589,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -13955,6 +14631,7 @@ class CfgMagazines
 						color[]={0,0,0};
 						class Background
 						{
+							type="polygon";
 							points[]=
 							{
 								
@@ -13989,6 +14666,7 @@ class CfgMagazines
 						color[]={0,0.12,0};
 						class Shape
 						{
+							type="line";
 							width=4;
 							points[]=
 							{
@@ -14227,7 +14905,9 @@ class CfgMagazines
 				{
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="CBU-100";
 						scale=1;
 						sourceScale=1;
 						align="right";
@@ -14249,7 +14929,9 @@ class CfgMagazines
 					};
 					class PylonText2
 					{
+						type="text";
 						source="static";
+						text="LOAL";
 						scale=1;
 						sourceScale=1;
 						align="right";
@@ -14278,6 +14960,7 @@ class CfgMagazines
 		ammo="rhs_ammo_cbu100";
 		displayname="CBU-100 (BRU-42)";
 		displayNameShort="Cluster HEAT";
+		descriptionShort="×3 SUU-76/B Dispenser (×123 Mk 118 HEAT)";
 		pylonWeapon="rhs_weap_cbu100";
 		displayNameMFDFormat="CBU100\%1";
 		hardpoints[]=
@@ -14296,7 +14979,9 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="CBU-100";
 						scale=1;
 						sourceScale=1;
 						align="center";
@@ -14332,6 +15017,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -14368,6 +15054,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -14404,6 +15091,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -14445,6 +15133,7 @@ class CfgMagazines
 						color[]={0,0,0};
 						class Background
 						{
+							type="polygon";
 							points[]=
 							{
 								
@@ -14479,6 +15168,7 @@ class CfgMagazines
 						color[]={0,0.12,0};
 						class Shape
 						{
+							type="line";
 							width=4;
 							points[]=
 							{
@@ -14717,7 +15407,9 @@ class CfgMagazines
 				{
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="CBU-100";
 						scale=1;
 						sourceScale=1;
 						align="right";
@@ -14739,7 +15431,9 @@ class CfgMagazines
 					};
 					class PylonText2
 					{
+						type="text";
 						source="static";
+						text="LOAL";
 						scale=1;
 						sourceScale=1;
 						align="right";
@@ -14765,13 +15459,16 @@ class CfgMagazines
 	};
 	class rhs_mag_ANALQ131: VehicleMagazine
 	{
+		scope=2;
 		ammo="rhs_ammo_ANALQ131";
 		displayName="AN/ALQ-131(V)";
+		descriptionShort="Electronic Countermeasures (ECM) Pod";
 		count=1;
 		initSpeed=0;
 		sound[]={};
 		reloadSound[]={};
 		nameSound="";
+		model="\rhsusf\addons\rhsusf_a2port_air\data\proxy\rhsusf_pylon_ALQ_131";
 		pylonweapon="rhsusf_weap_DummyLauncher";
 		hardpoints[]=
 		{
@@ -14788,7 +15485,9 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="ECM";
 						scale=1;
 						sourceScale=1;
 						align="center";
@@ -14824,6 +15523,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -14860,6 +15560,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -14896,6 +15597,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -14931,6 +15633,7 @@ class CfgMagazines
 	};
 	class rhs_mag_fueltank_UH60: VehicleMagazine
 	{
+		scope=2;
 		ammo="rhs_ammo_ANALQ131";
 		displayName="Fuel Tank (empty)";
 		count=1;
@@ -14938,6 +15641,7 @@ class CfgMagazines
 		sound[]={};
 		reloadSound[]={};
 		nameSound="";
+		model="\rhsusf\addons\rhsusf_a2port_air\data\proxy\rhs_pylon_Fuel_UH60";
 		pylonweapon="rhsusf_weap_DummyLauncher";
 		hardpoints[]=
 		{
@@ -14946,6 +15650,7 @@ class CfgMagazines
 	};
 	class rhs_mag_fueltank_UH60MEV: rhs_mag_fueltank_UH60
 	{
+		model="\rhsusf\addons\rhsusf_a2port_air\data\proxy\rhs_pylon_Fuel_UH60MEV";
 		hardpoints[]=
 		{
 			"RHS_HP_Fuel_ARMY_MEV"
@@ -14954,6 +15659,7 @@ class CfgMagazines
 	};
 	class rhsusf_20mm_M61A2: VehicleMagazine
 	{
+		scope=2;
 		displayName="M61A2";
 		displayNameMFDFormat="M61A2: %1";
 		ammo="rhsusf_ammo_M61A2";
@@ -14962,10 +15668,12 @@ class CfgMagazines
 	};
 	class rhs_mag_gau19_air_base: VehicleMagazine
 	{
+		scope=0;
 		ammo="rhs_ammo_127x99_SLAP_Tracer_Red";
 		count=1300;
 		displayname="GAU-19/A";
 		displayNameShort="12.7x99mm";
+		descriptionShort="×1300 12.7×99mm M962 (SLAP-T)";
 		initspeed=1210;
 		maxleadspeed=200;
 		pylonWeapon="RHS_weap_gau19";
@@ -14977,20 +15685,25 @@ class CfgMagazines
 	};
 	class rhsusf_mag_gau19_melb_right: rhs_mag_gau19_air_base
 	{
+		scope=2;
 		hardpoints[]=
 		{
 			"RHS_HP_MELB_R"
 		};
+		model="\rhsusf\addons\rhsusf_airweapons\MELB\rhsusf_g_GAU19_R";
 	};
 	class rhsusf_mag_gau19_melb_left: rhs_mag_gau19_air_base
 	{
+		scope=2;
 		hardpoints[]=
 		{
 			"RHS_HP_MELB_L"
 		};
+		model="\rhsusf\addons\rhsusf_airweapons\MELB\rhsusf_g_GAU19_L";
 	};
 	class rhs_mag_m134_pylon_base: VehicleMagazine
 	{
+		scope=0;
 		ammo="rhs_ammo_762x51_M61_AP";
 		displayname="M134";
 		displayNameShort="7.62x51 mm";
@@ -15002,9 +15715,12 @@ class CfgMagazines
 		mass=180;
 		tracersEvery=3;
 		lastRoundsTracer=4;
+		model="\rhsusf\addons\rhsusf_airweapons\MELB\rhsusf_g_m134";
 	};
 	class rhs_mag_m134_pylon_3000: rhs_mag_m134_pylon_base
 	{
+		descriptionShort="×3000 7.62×51mm M61/M62 (AP/T)";
+		scope=2;
 		hardpoints[]=
 		{
 			"RHS_HP_MELB_M134"
@@ -15022,6 +15738,7 @@ class CfgWeapons
 	class missiles_DAR;
 	class rhsusf_weap_DummyLauncher: MissileLauncher
 	{
+		showToPlayer=0;
 		magazines[]=
 		{
 			"rhs_mag_ANALQ131",
@@ -15031,10 +15748,37 @@ class CfgWeapons
 	};
 	class rhs_weap_SidewinderLauncher: MissileLauncher
 	{
+		scope=2;
 		displayName="AIM-9X";
 		displayNameMagazine="AIM-9X";
 		shortNameMagazine="AIM-9X";
+		minRange=300;
+		minRangeProbab=0.25;
+		midRange=2500;
+		midRangeProbab=0.89999998;
+		maxRange=9000;
+		maxRangeProbab=0.30000001;
+		sounds[]=
+		{
+			"StandardSound"
+		};
 		holdsterAnimValue=1;
+		class StandardSound
+		{
+			weaponSoundEffect="DefaultRifle";
+			begin1[]=
+			{
+				"A3\Sounds_F\weapons\Rockets\missile_2",
+				1.1220185,
+				1.3,
+				1000
+			};
+			soundBegin[]=
+			{
+				"begin1",
+				1
+			};
+		};
 		lockingTargetSound[]=
 		{
 			"\A3\Sounds_F\weapons\Rockets\locked_1",
@@ -15061,6 +15805,8 @@ class CfgWeapons
 		cursorSize=0;
 		cursor="missile";
 		cursorAim="EmptyCursor";
+		aiRateOfFire=5;
+		aiRateOfFireDistance=2000;
 		canLock=2;
 		weaponLockDelay=3;
 		weaponLockSystem=2;
@@ -15086,6 +15832,12 @@ class CfgWeapons
 		shortNameMagazine="AIM-120";
 		magazineReloadTime=0.1;
 		weaponLockSystem=8;
+		minRange=2000;
+		minRangeProbab=0.25;
+		midRange=6500;
+		midRangeProbab=0.89999998;
+		maxRange=22000;
+		maxRangeProbab=0.30000001;
 		magazines[]=
 		{
 			"rhs_mag_aim120"
@@ -15097,6 +15849,7 @@ class CfgWeapons
 		displayNameMagazine="AIM-120D";
 		shortNameMagazine="AIM-120D";
 		magazineReloadTime=0.1;
+		maxRange=28000;
 		magazines[]=
 		{
 			"rhs_mag_aim120d",
@@ -15121,6 +15874,17 @@ class CfgWeapons
 			"rhs_mag_FFAR_57_USAF_LAU61_3"
 		};
 		displayName="Hydra (M151 HE)";
+		modes[]=
+		{
+			"Far_AI",
+			"Single",
+			"Two",
+			"Four",
+			"Eight",
+			"Twelve",
+			"TwentyFour",
+			"Burst"
+		};
 		cursor="rocket";
 		cursorAim="EmptyCursor";
 		cursorSize=0;
@@ -15130,7 +15894,35 @@ class CfgWeapons
 			burst=1;
 			reloadTime=0.079999998;
 			autoFire=0;
+			showToPlayer=0;
+			soundBurst=0;
 			dispersion=0.011;
+			minRange=150;
+			minRangeProbab=0.60000002;
+			midRange=600;
+			midRangeProbab=0.89999998;
+			maxRange=2500;
+			maxRangeProbab=0.12;
+			sounds[]=
+			{
+				"StandardSound"
+			};
+			class StandardSound
+			{
+				weaponSoundEffect="DefaultRifle";
+				begin1[]=
+				{
+					"\rhsusf\addons\rhsusf_a2port_air\data\Sounds\RocketLauncher_Shot21",
+					3.2,
+					1,
+					1100
+				};
+				soundBegin[]=
+				{
+					"begin1",
+					1
+				};
+			};
 		};
 		class Burst: RocketPods
 		{
@@ -15138,14 +15930,46 @@ class CfgWeapons
 			burst=1;
 			salvo=2;
 			reloadTime=0.079999998;
+			soundContinuous=0;
 			autoFire=1;
+			aiDispersionCoefX=1.5;
+			aiDispersionCoefY=1;
 			dispersion=0.012;
+			textureType="fullAuto";
+			minRange=1;
+			minRangeProbab=0.001;
+			midRange=2;
+			midRangeProbab=0.001;
+			maxRange=3;
+			maxRangeProbab=0.001;
+			sounds[]=
+			{
+				"StandardSound"
+			};
+			class StandardSound
+			{
+				weaponSoundEffect="DefaultRifle";
+				begin1[]=
+				{
+					"\rhsusf\addons\rhsusf_a2port_air\data\Sounds\RocketLauncher_Shot21",
+					3.2,
+					1,
+					1100
+				};
+				soundBegin[]=
+				{
+					"begin1",
+					1
+				};
+			};
+			soundBurst=0;
 		};
 		class Single: Burst
 		{
 			displayName="1";
 			autoFire=0;
 			salvo=1;
+			textureType="semi";
 		};
 		class Two: Single
 		{
@@ -15195,16 +16019,32 @@ class CfgWeapons
 			"rhs_mag_M257_7_green",
 			"rhs_mag_M257_7_USAF_LAU131"
 		};
-		class Far_AI: Far_AI;  //found empty after stripping
+		modes[]=
+		{
+			"Far_AI",
+			"Single"
+		};
+		class Far_AI: Far_AI
+		{
+			minRange=3000;
+			minRangeProbab=0.60000002;
+			midRange=4000;
+			midRangeProbab=0.89999998;
+			maxRange=6000;
+			maxRangeProbab=0.60000002;
+		};
 	};
 	class Missile_AGM_02_Plane_CAS_01_F;
 	class rhs_weap_HellfireLauncher: Missile_AGM_02_Plane_CAS_01_F
 	{
+		scope=2;
 		autoFire=0;
 		displayName="AGM-114L Hellfire II";
 		cursorSize=0;
 		cursor="missile";
 		cursorAim="EmptyCursor";
+		aiRateOfFire=5;
+		aiRateOfFireDistance=1000;
 		maxrange=8000;
 		maxrangeprobab=0.60000002;
 		midrange=2000;
@@ -15221,9 +16061,17 @@ class CfgWeapons
 		};
 		canLock=2;
 		weaponLockDelay=3;
+		modes[]=
+		{
+			"TopDown",
+			"LoalDistance"
+		};
 		class TopDown: Mode_SemiAuto
 		{
+			textureType="topDown";
 			displayName="LOBL";
+			aiRateOfFire=5;
+			aiRateOfFireDistance=1000;
 			maxrange=8000;
 			maxrangeprobab=0.60000002;
 			midrange=2000;
@@ -15268,12 +16116,28 @@ class CfgWeapons
 			fired="_this call rhs_fnc_LOALGuide";
 		};
 		canLock=1;
-		class TopDown: TopDown;  //found empty after stripping
+		aiRateOfFire=8;
+		aiRateOfFireDistance=500;
+		class TopDown: TopDown
+		{
+			aiRateOfFire=8;
+			aiRateOfFireDistance=500;
+		};
 	};
 	class rhs_weap_AGM114K_Launcher: rhs_weap_AGM114K_base_Launcher
 	{
+		muzzles[]=
+		{
+			"this",
+			"LOAL_LO",
+			"LOAL_HI"
+		};
 		class LOAL_LO: rhs_weap_AGM114K_base_Launcher
 		{
+			modes[]=
+			{
+				"LoalDistance"
+			};
 			class LoalDistance: TopDown
 			{
 				displayName="LOAL-LO";
@@ -15285,6 +16149,10 @@ class CfgWeapons
 		};
 		class LOAL_HI: rhs_weap_AGM114K_base_Launcher
 		{
+			modes[]=
+			{
+				"LoalDistance"
+			};
 			class LoalDistance: TopDown
 			{
 				displayName="LOAL-HI";
@@ -15309,8 +16177,18 @@ class CfgWeapons
 	};
 	class rhs_weap_AGM114M_Launcher: rhs_weap_AGM114M_base_Launcher
 	{
+		muzzles[]=
+		{
+			"this",
+			"LOAL_LO",
+			"LOAL_HI"
+		};
 		class LOAL_LO: rhs_weap_AGM114K_base_Launcher
 		{
+			modes[]=
+			{
+				"LoalDistance"
+			};
 			class LoalDistance: TopDown
 			{
 				displayName="LOAL-LO";
@@ -15322,6 +16200,10 @@ class CfgWeapons
 		};
 		class LOAL_HI: rhs_weap_AGM114K_base_Launcher
 		{
+			modes[]=
+			{
+				"LoalDistance"
+			};
 			class LoalDistance: TopDown
 			{
 				displayName="LOAL-HI";
@@ -15346,8 +16228,18 @@ class CfgWeapons
 	};
 	class RHS_weap_AGM114N_Launcher: RHS_weap_AGM114N_base_Launcher
 	{
+		muzzles[]=
+		{
+			"this",
+			"LOAL_LO",
+			"LOAL_HI"
+		};
 		class LOAL_LO: rhs_weap_AGM114K_base_Launcher
 		{
+			modes[]=
+			{
+				"LoalDistance"
+			};
 			class LoalDistance: TopDown
 			{
 				displayName="LOAL-LO";
@@ -15359,6 +16251,10 @@ class CfgWeapons
 		};
 		class LOAL_HI: rhs_weap_AGM114K_base_Launcher
 		{
+			modes[]=
+			{
+				"LoalDistance"
+			};
 			class LoalDistance: TopDown
 			{
 				displayName="LOAL-HI";
@@ -15371,6 +16267,7 @@ class CfgWeapons
 	};
 	class rhs_weap_DAGR_Launcher: rhs_weap_HellfireLauncher
 	{
+		scope=2;
 		autoFire=0;
 		CanLock=2;
 		displayName="DAGR";
@@ -15404,11 +16301,81 @@ class CfgWeapons
 		showAimCursorInternal=0;
 		class Direct: TopDown
 		{
+			textureType="semi";
 			displayName="LOBL";
+			aiRateOfFire=5;
+			aiRateOfFireDistance=4000;
+			minRange=600;
+			minRangeProbab=0.60000002;
+			midRange=2000;
+			midRangeProbab=0.89999998;
+			maxRange=4000;
+			maxRangeProbab=0.1;
+			sounds[]=
+			{
+				"StandardSound"
+			};
+			class StandardSound
+			{
+				begin1[]=
+				{
+					"rhsusf\addons\rhsusf_melb\Sound\M260\M260_1",
+					2.5999999,
+					1,
+					1800
+				};
+				begin2[]=
+				{
+					"rhsusf\addons\rhsusf_melb\Sound\M260\M260_2",
+					2.5999999,
+					1,
+					1800
+				};
+				soundBegin[]=
+				{
+					"begin1",
+					0.5,
+					"begin2",
+					0.5
+				};
+			};
 		};
 		class LoalDistance: TopDown
 		{
 			displayName="LOAL-DIR";
+			sounds[]=
+			{
+				"StandardSound"
+			};
+			class StandardSound
+			{
+				begin1[]=
+				{
+					"rhsusf\addons\rhsusf_melb\Sound\M260\M260_1",
+					2.5999999,
+					1,
+					1800
+				};
+				begin2[]=
+				{
+					"rhsusf\addons\rhsusf_melb\Sound\M260\M260_2",
+					2.5999999,
+					1,
+					1800
+				};
+				soundBegin[]=
+				{
+					"begin1",
+					0.5,
+					"begin2",
+					0.5
+				};
+			};
+		};
+		modes[]=
+		{
+			"Direct",
+			"LoalDistance"
 		};
 	};
 	class rhs_weap_agm65: rhs_weap_HellfireLauncher
@@ -15424,9 +16391,22 @@ class CfgWeapons
 		};
 		reloadTime=0.1;
 		magazineReloadTime=0.1;
+		aiRateOfFire=5;
+		aiRateOfFireDistance=500;
 		nameSound="MissileLauncher";
 		weaponSoundEffect="DefaultRifle";
+		modes[]=
+		{
+			"this"
+		};
 		weaponLockDelay=3;
+		textureType="semi";
+		minRange=300;
+		minRangeProbab=0.25;
+		midRange=2500;
+		midRangeProbab=0.89999998;
+		maxRange=9000;
+		maxRangeProbab=0.0099999998;
 	};
 	class rhs_weap_agm65b: rhs_weap_agm65
 	{
@@ -15475,6 +16455,14 @@ class CfgWeapons
 		reloadTime=4;
 		magazineReloadTime=5;
 		canLock=2;
+		aiRateOfFire=5;
+		aiRateOfFireDistance=1500;
+		minRange=50;
+		minRangeProbab=0.5;
+		midRange=1450;
+		midRangeProbab=1;
+		maxRange=4050;
+		maxRangeProbab=0.60000002;
 		weaponLockSystem=2;
 		magazines[]=
 		{
@@ -15494,6 +16482,14 @@ class CfgWeapons
 		magazineReloadTime=0;
 		canLock=2;
 		autoReload=1;
+		aiRateOfFire=5;
+		aiRateOfFireDistance=1500;
+		minRange=50;
+		minRangeProbab=0.5;
+		midRange=1450;
+		midRangeProbab=1;
+		maxRange=4050;
+		maxRangeProbab=0.60000002;
 		weaponLockSystem=2;
 		magazines[]=
 		{
@@ -15509,6 +16505,12 @@ class CfgWeapons
 		cursorSize=0;
 		cursor="bomb";
 		cursorAim="EmptyCursor";
+		minRange=150;
+		minRangeProbab=0.5;
+		midRange=550;
+		midRangeProbab=1;
+		maxRange=1550;
+		maxRangeProbab=0.60000002;
 		magazines[]=
 		{
 			"rhs_mag_gbu12"
@@ -15520,6 +16522,12 @@ class CfgWeapons
 		cursorSize=0;
 		cursor="bomb";
 		cursorAim="EmptyCursor";
+		minRange=150;
+		minRangeProbab=0.5;
+		midRange=550;
+		midRangeProbab=1;
+		maxRange=1550;
+		maxRangeProbab=0.60000002;
 		magazines[]=
 		{
 			"rhs_mag_gbu32"
@@ -15533,6 +16541,12 @@ class CfgWeapons
 		cursorAim="EmptyCursor";
 		airateoffire=1;
 		airateoffiredistance=500;
+		minRange=50;
+		minRangeProbab=0.5;
+		midRange=250;
+		midRangeProbab=1;
+		maxRange=550;
+		maxRangeProbab=0.60000002;
 		magazines[]=
 		{
 			"rhs_mag_mk82",
@@ -15573,6 +16587,7 @@ class CfgWeapons
 	};
 	class rhsusf_M61A2: weapon_Fighter_Gun20mm_AA
 	{
+		scope=2;
 		displayName="M61A2";
 		displayNameMagazine="M61A2";
 		shortNameMagazine="20mm";
@@ -15585,6 +16600,9 @@ class CfgWeapons
 		holdsterAnimValue=1.5;
 		initSpeed=900;
 		CanLock=2;
+		optics=1;
+		aiDispersionCoefX=1;
+		aiDispersionCoefY=1;
 		magazines[]=
 		{
 			"rhsusf_20mm_M61A2"
@@ -15596,35 +16614,68 @@ class cfgVehicles
 	class MineBase;
 	class rhsusf_mine_blu91: MineBase
 	{
+		scope=2;
 		ammo="rhs_ammo_blu91";
+		editorPreview="\rhsusf\addons\rhsusf_editorpreviews\data\rhsusf_mine_blu91";
+		author="$STR_RHSUSF_AUTHOR_FULL";
 		displayName="BLU-91/B";
 		icon="iconExplosiveAT";
+		picture="\A3\Weapons_F\Data\clear_empty.paa";
+		model="\rhsusf\addons\rhsusf_airweapons\submunitions\rhsusf_BLU91_d";
+		descriptionShort="$STR_A3_cfgMagazines_ClassicMineRangeMagazine1";
+		class Library
+		{
+			libTextDesc="";
+		};
 	};
 	class rhsusf_mine_blu92: MineBase
 	{
+		scope=2;
 		ammo="rhs_ammo_blu92";
+		editorPreview="\rhsusf\addons\rhsusf_editorpreviews\data\rhsusf_mine_blu92";
+		author="$STR_RHSUSF_AUTHOR_FULL";
 		displayName="BLU-92/B";
 		icon="iconExplosiveAP";
+		picture="\A3\Weapons_F\Data\clear_empty.paa";
+		model="\rhsusf\addons\rhsusf_airweapons\submunitions\rhsusf_BLU92_d";
+		descriptionShort="$STR_A3_cfgMagazines_ClassicMineRangeMagazine1";
+		class Library
+		{
+			libTextDesc="";
+		};
 	};
 	class rhsusf_uxo_blu97: MineBase
 	{
+		scope=2;
 		ammo="rhs_ammo_uxo_blu97";
+		editorPreview="\rhsusf\addons\rhsusf_editorpreviews\data\rhsusf_uxo_blu97";
+		author="$STR_RHSUSF_AUTHOR_FULL";
 		displayName="$STR_RHSUSF_UXO_BLU97";
 		icon="iconExplosiveUXO";
+		picture="\A3\Weapons_F\Data\clear_empty.paa";
+		model="\rhsusf\addons\rhsusf_airweapons\submunitions\rhsusf_BLU97_d";
+		descriptionShort="$STR_A3_cfgMagazines_ClassicMineRangeMagazine1";
+		class Library
+		{
+			libTextDesc="";
+		};
 	};
 	class ModuleMine_APERSMine_F;
 	class rhsusf_mine_blu91_module: ModuleMine_APERSMine_F
 	{
+		scopeCurator=2;
 		displayName="BLU-91/B";
 		explosive="rhs_ammo_blu91";
 	};
 	class rhsusf_mine_blu92_module: ModuleMine_APERSMine_F
 	{
+		scopeCurator=2;
 		displayName="BLU-92/B";
 		explosive="rhs_ammo_blu92";
 	};
 	class rhsusf_uxo_blu97_module: ModuleMine_APERSMine_F
 	{
+		scopeCurator=2;
 		displayName="$STR_RHSUSF_UXO_BLU97";
 		explosive="rhs_ammo_uxo_blu97";
 	};

@@ -4,6 +4,11 @@ class CfgPatches
 	{
 		units[]={};
 		weapons[]={};
+		requiredVersion=1.3200001;
+		requiredAddons[]=
+		{
+			"rhs_main"
+		};
 	};
 };
 class CfgVoice
@@ -21,6 +26,7 @@ class CfgVoice
 	{
 		variants[]={0.94999999,1,1.05};
 		voiceType="";
+		scope=0;
 		directories[]=
 		{
 			"",
@@ -39,48 +45,58 @@ class CfgVoice
 	};
 	class RHS_Male01RUS: RHS_RUS
 	{
+		author="$STR_A3_Bohemia_Interactive";
 		displayName="Russian Voice 01";
 		directories[]=
 		{
 			"\rhsafrf\addons\rhs_s_radio\radio\Male01\",
 			"\rhsafrf\addons\rhs_s_radio\radio\Male01\"
 		};
+		scope=2;
 	};
 	class RHS_Male02RUS: RHS_RUS
 	{
+		author="$STR_A3_Bohemia_Interactive";
 		displayName="Russian Voice 02";
 		directories[]=
 		{
 			"\rhsafrf\addons\rhs_s_radio\radio\Male02\",
 			"\rhsafrf\addons\rhs_s_radio\radio\Male02\"
 		};
+		scope=2;
 	};
 	class RHS_Male03RUS: RHS_RUS
 	{
+		author="$STR_A3_Bohemia_Interactive";
 		displayName="Russian Voice 03";
 		directories[]=
 		{
 			"\rhsafrf\addons\rhs_s_radio\radio\Male03\",
 			"\rhsafrf\addons\rhs_s_radio\radio\Male03\"
 		};
+		scope=2;
 	};
 	class RHS_Male04RUS: RHS_RUS
 	{
+		author="$STR_A3_Bohemia_Interactive";
 		displayName="Russian Voice 04";
 		directories[]=
 		{
 			"\rhsafrf\addons\rhs_s_radio\radio\Male04\",
 			"\rhsafrf\addons\rhs_s_radio\radio\Male04\"
 		};
+		scope=2;
 	};
 	class RHS_Male05RUS: RHS_RUS
 	{
+		author="$STR_A3_Bohemia_Interactive";
 		displayName="Russian Voice 05";
 		directories[]=
 		{
 			"\rhsafrf\addons\rhs_s_radio\radio\Male02\",
 			"\rhsafrf\addons\rhs_s_radio\radio\Male02\"
 		};
+		scope=2;
 	};
 };
 class CfgVoiceTypes
@@ -8573,6 +8589,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class version1
 		{
+			text="NormalCommand | 1:%1 | 2:%2 | 3:%3 | 4:%4 | 5:%5 | 6:%6 | 7:%7 | 8:%8 | 9:%9 | 10:%10 | 11:%11 | 12:%12 | 13:%13 | 14:%14 | 15:%15 | 16:%16";
 			speech[]=
 			{
 				"%1",
@@ -8609,6 +8626,8 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Mine_detected_1
 		{
+			textOrig="Mine detected";
+			text="$STR_A3_Mine_detected";
 			wordsClass="Normal";
 			speech[]=
 			{
@@ -8619,6 +8638,8 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Mine_detected
 		{
+			textOrig="Mine detected";
+			text="$STR_A3_Mine_detected";
 			wordsClass="Normal";
 			speech[]=
 			{
@@ -8630,6 +8651,8 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Mine_detected2
 		{
+			textOrig="Mine detected";
+			text="$STR_A3_Mine_detected";
 			wordsClass="Normal";
 			speech[]=
 			{
@@ -8640,6 +8663,8 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Mine_detected3
 		{
+			textOrig="Mine detected";
+			text="$STR_A3_Mine_detected";
 			wordsClass="Normal";
 			speech[]=
 			{
@@ -8665,6 +8690,8 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Copy_6
 		{
+			textOrig="Copy";
+			text="Copy";
 			wordsClass="Normal";
 			speech[]=
 			{
@@ -8675,6 +8702,8 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Copy_7
 		{
+			textOrig="Copy";
+			text="Copy";
 			wordsClass="Normal";
 			speech[]=
 			{
@@ -8685,6 +8714,8 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Suppressing
 		{
+			textOrig="Suppressing";
+			text="Suppressing";
 			wordsClass="Normal";
 			speech[]=
 			{
@@ -8695,6 +8726,8 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Suppressing2
 		{
+			textOrig="Suppressing";
+			text="Suppressing";
 			wordsClass="Normal";
 			speech[]=
 			{
@@ -8713,6 +8746,8 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Suppressive_fire_
 		{
+			textOrig="Suppressive fire!";
+			text="Suppressive fire";
 			wordsClass="Normal";
 			speech[]=
 			{
@@ -8737,6 +8772,8 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Requesting_close_air_support_at_the_designated_location__Over__1
 		{
+			textOrig="Requesting close air support at the designated location. Over.";
+			text="$STR_A3_Requesting_close_air_support_at_the_designated_location__Over_";
 			wordsClass="Stealth";
 			speech[]=
 			{
@@ -8747,6 +8784,8 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Requesting_close_air_support_at_the_designated_location__Over_
 		{
+			textOrig="Requesting close air support at the designated location. Over.";
+			text="$STR_A3_Requesting_close_air_support_at_the_designated_location__Over_";
 			wordsClass="Normal";
 			speech[]=
 			{
@@ -8767,6 +8806,8 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Requesting_supply_drop_at_the_transmitted_coordinates__Over__1
 		{
+			textOrig="Requesting supply drop at the transmitted coordinates. Over.";
+			text="$STR_A3_Requesting_supply_drop_at_the_transmitted_coordinates__Over_";
 			wordsClass="Stealth";
 			speech[]=
 			{
@@ -8777,6 +8818,8 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Requesting_supply_drop_at_the_transmitted_coordinates__Over_
 		{
+			textOrig="Requesting supply drop at the transmitted coordinates. Over.";
+			text="$STR_A3_Requesting_supply_drop_at_the_transmitted_coordinates__Over_";
 			wordsClass="Normal";
 			speech[]=
 			{
@@ -8797,6 +8840,8 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Requesting_aerial_recon_at_the_transmitted_location__Over__1
 		{
+			textOrig="Requesting aerial recon at the transmitted location. Over.";
+			text="$STR_A3_Requesting_aerial_recon_at_the_transmitted_location__Over_";
 			wordsClass="Stealth";
 			speech[]=
 			{
@@ -8807,6 +8852,8 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Requesting_aerial_recon_at_the_transmitted_location__Over_
 		{
+			textOrig="Requesting aerial recon at the transmitted location. Over.";
+			text="$STR_A3_Requesting_aerial_recon_at_the_transmitted_location__Over_";
 			wordsClass="Normal";
 			speech[]=
 			{
@@ -8827,6 +8874,8 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Requesting_immediate_fire_support_at_the_designated_coordinates__Over__1
 		{
+			textOrig="Requesting immediate fire support at the designated coordinates. Over.";
+			text="$STR_A3_Requesting_immediate_fire_support_at_the_designated_coordinates__Over_";
 			wordsClass="Stealth";
 			speech[]=
 			{
@@ -8837,6 +8886,8 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Requesting_immediate_fire_support_at_the_designated_coordinates__Over_
 		{
+			textOrig="Requesting immediate fire support at the designated coordinates. Over.";
+			text="$STR_A3_Requesting_immediate_fire_support_at_the_designated_coordinates__Over_";
 			wordsClass="Normal";
 			speech[]=
 			{
@@ -8857,6 +8908,8 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Requesting_airlift_at_the_designated_coordinates__Over__1
 		{
+			textOrig="Requesting airlift at the designated coordinates. Over.";
+			text="$STR_A3_Requesting_airlift_at_the_designated_coordinates__Over_";
 			wordsClass="Stealth";
 			speech[]=
 			{
@@ -8867,6 +8920,8 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Requesting_airlift_at_the_designated_coordinates__Over_
 		{
+			textOrig="Requesting airlift at the designated coordinates. Over.";
+			text="$STR_A3_Requesting_airlift_at_the_designated_coordinates__Over_";
 			wordsClass="Normal";
 			speech[]=
 			{
@@ -8885,6 +8940,8 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Copy_that__strike_aircraft_on_the_way__Out_
 		{
+			textOrig="Copy that, strike aircraft on the way. Out.";
+			text="$STR_A3_Copy_that__strike_aircraft_on_the_way__Out_";
 			wordsClass="Normal";
 			speech[]=
 			{
@@ -8903,6 +8960,8 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Roger__coordinates_received__CAS_is_inbound__Out_
 		{
+			textOrig="Roger, coordinates received, CAS is inbound. Out.";
+			text="$STR_A3_Roger__coordinates_received__CAS_is_inbound__Out_";
 			wordsClass="Normal";
 			speech[]=
 			{
@@ -8921,6 +8980,8 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Affirmative__supplies_en_route__Out_
 		{
+			textOrig="Affirmative, supplies en route. Out.";
+			text="$STR_A3_Affirmative__supplies_en_route__Out_";
 			wordsClass="Normal";
 			speech[]=
 			{
@@ -8939,6 +9000,8 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Acknowledged__dispatching_drone_to_the_designated_coordinates__Out_
 		{
+			textOrig="Acknowledged, dispatching drone to the designated coordinates. Out.";
+			text="$STR_A3_Acknowledged__dispatching_drone_to_the_designated_coordinates__Out_";
 			wordsClass="Normal";
 			speech[]=
 			{
@@ -8957,6 +9020,8 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Target_location_received__ordnance_is_inbound__Out_
 		{
+			textOrig="Target location received, ordnance is inbound. Out.";
+			text="$STR_A3_Target_location_received__ordnance_is_inbound__Out_";
 			wordsClass="Normal";
 			speech[]=
 			{
@@ -8975,6 +9040,8 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Roger__transport_dispatched_
 		{
+			textOrig="Roger, transport dispatched.";
+			text="$STR_A3_Roger__transport_dispatched_";
 			wordsClass="Normal";
 			speech[]=
 			{
@@ -8993,6 +9060,8 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Be_advised__we_ve_lost_contact_with_the_aircraft__Out_
 		{
+			textOrig="Be advised, we've lost contact with the aircraft. Out.";
+			text="$STR_A3_Be_advised__we_ve_lost_contact_with_the_aircraft__Out_";
 			wordsClass="Normal";
 			speech[]=
 			{
@@ -9011,6 +9080,8 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Be_advised__we_just_lost_contact_with_the_chopper__Out_
 		{
+			textOrig="Be advised, we just lost contact with the chopper. Out.";
+			text="$STR_A3_Be_advised__we_just_lost_contact_with_the_chopper__Out_";
 			wordsClass="Normal";
 			speech[]=
 			{
@@ -9029,6 +9100,8 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Be_advised__support_aircraft_is_unresponsive__Out_
 		{
+			textOrig="Be advised, support aircraft is unresponsive. Out.";
+			text="$STR_A3_Be_advised__support_aircraft_is_unresponsive__Out_";
 			wordsClass="Normal";
 			speech[]=
 			{
@@ -9047,6 +9120,8 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Be_advised__the_drone_has_dropped_off_the_grid__Out_
 		{
+			textOrig="Be advised, the drone has dropped off the grid. Out.";
+			text="$STR_A3_Be_advised__the_drone_has_dropped_off_the_grid__Out_";
 			wordsClass="Normal";
 			speech[]=
 			{
@@ -9065,6 +9140,8 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Be_advised__the_artillery_is_not_responding__Out_
 		{
+			textOrig="Be advised, the artillery is not responding. Out.";
+			text="$STR_A3_Be_advised__the_artillery_is_not_responding__Out_";
 			wordsClass="Normal";
 			speech[]=
 			{
@@ -9083,6 +9160,8 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Be_advised__we_ve_lost_contact_with_the_aircraft__Out__1
 		{
+			textOrig="Be advised, we've lost contact with the aircraft. Out.";
+			text="$STR_A3_Be_advised__we_ve_lost_contact_with_the_aircraft__Out_";
 			wordsClass="Normal";
 			speech[]=
 			{
@@ -9101,6 +9180,8 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Payload_delivered__We_re_RTB__Out_
 		{
+			textOrig="Payload delivered, We're RTB. Out.";
+			text="$STR_A3_Payload_delivered__We_re_RTB__Out_";
 			wordsClass="Normal";
 			speech[]=
 			{
@@ -9119,6 +9200,8 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class CAS_mission_complete__RTB__Out_
 		{
+			textOrig="CAS mission complete. RTB. Out.";
+			text="$STR_A3_CAS_mission_complete__RTB__Out_";
 			wordsClass="Normal";
 			speech[]=
 			{
@@ -9137,6 +9220,8 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class The_supplies_have_been_dropped__Out_
 		{
+			textOrig="The supplies have been dropped. Out.";
+			text="$STR_A3_The_supplies_have_been_dropped__Out_";
 			wordsClass="Normal";
 			speech[]=
 			{
@@ -9155,6 +9240,8 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Drone_is_bingo_fuel_and_RTB__Out_
 		{
+			textOrig="Drone is bingo fuel and RTB. Out.";
+			text="$STR_A3_Drone_is_bingo_fuel_and_RTB__Out_";
 			wordsClass="Normal";
 			speech[]=
 			{
@@ -9173,6 +9260,8 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Splash__Out_
 		{
+			textOrig="Splash. Out.";
+			text="$STR_A3_Splash__Out_";
 			wordsClass="Normal";
 			speech[]=
 			{
@@ -9191,6 +9280,8 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class We_re_here__good_luck_out_there_
 		{
+			textOrig="We're here, good luck out there.";
+			text="$STR_A3_We_re_here__good_luck_out_there_";
 			wordsClass="Normal";
 			speech[]=
 			{
@@ -9209,6 +9300,8 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Be_advised__support_units_are_now_on_standby__Out_
 		{
+			textOrig="Be advised, support units are now on standby. Out.";
+			text="$STR_A3_Be_advised__support_units_are_now_on_standby__Out_";
 			wordsClass="Normal";
 			speech[]=
 			{
@@ -9227,6 +9320,8 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Rounds_complete__Out_
 		{
+			textOrig="Rounds complete. Out.";
+			text="$STR_A3_Rounds_complete__Out_";
 			wordsClass="Normal";
 			speech[]=
 			{
@@ -9245,6 +9340,8 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Everyone_in__Let_s_get_out_of_here_
 		{
+			textOrig="Everyone in? Let's get out of here.";
+			text="$STR_A3_Everyone_in__Let_s_get_out_of_here_";
 			wordsClass="Normal";
 			speech[]=
 			{
@@ -9263,6 +9360,8 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Copy__We_re_moving_out_
 		{
+			textOrig="Copy. We're moving out.";
+			text="$STR_A3_Copy__We_re_moving_out_";
 			wordsClass="Normal";
 			speech[]=
 			{
@@ -9283,6 +9382,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_SENT_UNIT_SUPPRESS_1";
 			speech[]=
 			{
 				"%1.1",
@@ -9291,6 +9391,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version2
 		{
+			text="$STR_SENT_UNIT_SUPPRESS_2";
 			speech[]=
 			{
 				"%1.1",
@@ -9314,6 +9415,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class SentAssemble_1
 		{
+			text="$STR_EP1_SENTASSEMBLE_1";
 			speech[]=
 			{
 				"%1",
@@ -9338,6 +9440,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class SentDisassemble_1
 		{
+			text="$STR_EP1_SENTDISASSEMBLE_1";
 			speech[]=
 			{
 				"%1",
@@ -9362,6 +9465,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class SentCmdActionOpenBag_1
 		{
+			text="$STR_EP1_SENTCMDACTIONOPENBAG_1";
 			speech[]=
 			{
 				"NO_SPEECH"
@@ -9384,6 +9488,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class SentCmdActionDropBag_1
 		{
+			text="$STR_EP1_SENTCMDACTIONDROPBAG_1";
 			speech[]=
 			{
 				"NO_SPEECH"
@@ -9406,6 +9511,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class SentCmdActionTakeBag_1
 		{
+			text="$STR_EP1_SENTCMDACTIONTAKEBAG_1";
 			speech[]=
 			{
 				"NO_SPEECH"
@@ -9427,6 +9533,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___KIA";
 			speech[]=
 			{
 				"%1.1",
@@ -9435,6 +9542,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version2
 		{
+			text="$STR_A3___1_1___KIA";
 			speech[]=
 			{
 				"ShitE",
@@ -9444,6 +9552,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version3
 		{
+			text="$STR_A3___1_1___KIA";
 			speech[]=
 			{
 				"ManDownE",
@@ -9453,6 +9562,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version4
 		{
+			text="$STR_A3___1_1___KIA";
 			speech[]=
 			{
 				"GoddamnE",
@@ -9470,6 +9580,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="Requesting support ? Grid: %1";
 			speech[]=
 			{
 				"HQ",
@@ -9488,6 +9599,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="Requesting support ? Grid: %1";
 			speech[]=
 			{
 				"HQ",
@@ -9506,6 +9618,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="Requesting support ? Grid: %1";
 			speech[]=
 			{
 				"HQ",
@@ -9524,6 +9637,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="Requesting support ? Grid: %1";
 			speech[]=
 			{
 				"HQ",
@@ -9546,6 +9660,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3_Support_confirmed";
 			speech[]=
 			{
 				"SolidCopy",
@@ -9555,6 +9670,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version2
 		{
+			text="$STR_A3_Support_confirmed";
 			speech[]=
 			{
 				"HoldOnGuysSupportsOnTheWayE"
@@ -9562,6 +9678,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version3
 		{
+			text="$STR_A3_Support_confirmed";
 			speech[]=
 			{
 				"Roger",
@@ -9578,6 +9695,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="";
 			speech[]=
 			{
 				"ImAtGrid",
@@ -9599,6 +9717,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="";
 			speech[]=
 			{
 				"YoureGoodToGoE"
@@ -9606,6 +9725,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version2
 		{
+			text="";
 			speech[]=
 			{
 				"SupportComplete",
@@ -9623,6 +9743,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3_Negative";
 			speech[]=
 			{
 				"NoSupportAvailableAtThisTime",
@@ -9651,6 +9772,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3_Injured";
 			speech[]=
 			{
 				"ImHitE"
@@ -9658,6 +9780,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version2
 		{
+			text="$STR_A3_Injured";
 			speech[]=
 			{
 				"ImBleedingE"
@@ -9665,6 +9788,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version3
 		{
+			text="$STR_A3_Injured";
 			speech[]=
 			{
 				"SomebodyHelpMeE"
@@ -9672,6 +9796,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version4
 		{
+			text="$STR_A3_Injured";
 			speech[]=
 			{
 				"TheyGotMeE"
@@ -9679,6 +9804,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version5
 		{
+			text="$STR_A3_Injured";
 			speech[]=
 			{
 				"NeedHelpE"
@@ -9686,6 +9812,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version6
 		{
+			text="$STR_A3_Injured";
 			speech[]=
 			{
 				"WoundedE"
@@ -9693,6 +9820,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version7
 		{
+			text="$STR_A3_Injured";
 			speech[]=
 			{
 				"CorpsmanE"
@@ -9714,6 +9842,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3_Critical_damage";
 			speech[]=
 			{
 				"StatusRedE"
@@ -9721,6 +9850,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version2
 		{
+			text="$STR_A3_Critical_damage";
 			speech[]=
 			{
 				"VehicleIsFUBARE"
@@ -9728,6 +9858,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version3
 		{
+			text="$STR_A3_Critical_damage";
 			speech[]=
 			{
 				"VehicleIsFUBARE"
@@ -9735,6 +9866,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version4
 		{
+			text="$STR_A3_Critical_damage";
 			speech[]=
 			{
 				"CriticalDamageE"
@@ -9750,6 +9882,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3_No_fuel";
 			speech[]=
 			{
 				"ImOutOfFuelE"
@@ -9765,6 +9898,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3_Low_fuel";
 			speech[]=
 			{
 				"ImRunningOutOfFuel"
@@ -9784,6 +9918,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3_No_ammo";
 			speech[]=
 			{
 				"GoddamnE",
@@ -9792,6 +9927,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version2
 		{
+			text="$STR_A3_No_ammo";
 			speech[]=
 			{
 				"NoMoreAmmoE"
@@ -9799,6 +9935,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version3
 		{
+			text="$STR_A3_No_ammo";
 			speech[]=
 			{
 				"CantShootE",
@@ -9815,6 +9952,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3_Low_ammo";
 			speech[]=
 			{
 				"RunningOutOfAmmoE"
@@ -9830,6 +9968,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="%2";
 			speech[]=
 			{
 				"%1",
@@ -9848,6 +9987,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3___1___Taking_command";
 			speech[]=
 			{
 				"%1",
@@ -9870,6 +10010,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="";
 			speech[]=
 			{
 				"%1",
@@ -9878,6 +10019,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version2
 		{
+			text="";
 			speech[]=
 			{
 				"%1",
@@ -9886,6 +10028,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version3
 		{
+			text="";
 			speech[]=
 			{
 				"%1",
@@ -9894,6 +10037,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version4
 		{
+			text="";
 			speech[]=
 			{
 				"%1",
@@ -9910,6 +10054,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="";
 			speech[]=
 			{
 				"%1",
@@ -9930,6 +10075,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3_Ready_to_fire";
 			speech[]=
 			{
 				"ReadyToFire",
@@ -9938,6 +10084,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version2
 		{
+			text="$STR_A3_Ready_to_fire";
 			speech[]=
 			{
 				"TargetInSight",
@@ -9947,6 +10094,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version3
 		{
+			text="$STR_A3_Ready_to_fire";
 			speech[]=
 			{
 				"TargetInSight",
@@ -9963,6 +10111,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3_Negative";
 			speech[]=
 			{
 				"UnableToFireE"
@@ -9981,6 +10130,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3_Negative";
 			speech[]=
 			{
 				"Negative"
@@ -9988,6 +10138,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version2
 		{
+			text="$STR_A3_Negative";
 			speech[]=
 			{
 				"ICant"
@@ -10003,6 +10154,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3_Negative";
 			speech[]=
 			{
 				"DamnE",
@@ -10029,6 +10181,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3_Contact____eTARGETS____eGRPDIS_ABS____eGRPDIR_102";
 			speech[]=
 			{
 				"targetinsight",
@@ -10041,6 +10194,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version2
 		{
+			text="$STR_A3_Contact____eTARGETS____eGRPDIS_ABS____eGRPDIR_102";
 			speech[]=
 			{
 				"ObservingHostile",
@@ -10052,6 +10206,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version3
 		{
+			text="$STR_SENT_DETECTED_GROUP_8";
 			speech[]=
 			{
 				"%8",
@@ -10069,6 +10224,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3_Contact____eTARGETS____eGRPDIS_ABS____eGRPDIR_CMPS";
 			speech[]=
 			{
 				"Contact",
@@ -10087,6 +10243,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version2
 		{
+			text="";
 			speech[]=
 			{
 				"%4",
@@ -10109,6 +10266,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="";
 			speech[]=
 			{
 				"%13",
@@ -10122,6 +10280,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version2
 		{
+			text="";
 			speech[]=
 			{
 				"%13",
@@ -10145,6 +10304,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="";
 			speech[]=
 			{
 				"Contact",
@@ -10157,6 +10317,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version2
 		{
+			text="";
 			speech[]=
 			{
 				"Contact",
@@ -10186,6 +10347,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3___2___Neutralized";
 			speech[]=
 			{
 				"TargetDestroyedE"
@@ -10193,6 +10355,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version2
 		{
+			text="$STR_A3___2___Neutralized";
 			speech[]=
 			{
 				"ScratchOneE"
@@ -10200,6 +10363,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version3
 		{
+			text="$STR_A3___2___Neutralized";
 			speech[]=
 			{
 				"TargetEliminated"
@@ -10207,6 +10371,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version4
 		{
+			text="$STR_A3___2___Neutralized";
 			speech[]=
 			{
 				"HesDownE"
@@ -10214,6 +10379,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version5
 		{
+			text="$STR_A3___2___Neutralized";
 			speech[]=
 			{
 				"IveGotHimE"
@@ -10237,6 +10403,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3_Target_neutralized";
 			speech[]=
 			{
 				"TargetDestroyedE"
@@ -10244,6 +10411,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version2
 		{
+			text="$STR_A3_Target_neutralized";
 			speech[]=
 			{
 				"ScratchOneE"
@@ -10251,6 +10419,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version3
 		{
+			text="$STR_A3_Target_neutralized";
 			speech[]=
 			{
 				"TargetEliminated"
@@ -10258,6 +10427,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version4
 		{
+			text="$STR_A3_Target_neutralized";
 			speech[]=
 			{
 				"HesDownE"
@@ -10265,6 +10435,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version5
 		{
+			text="$STR_A3_Target_neutralized";
 			speech[]=
 			{
 				"IveGotHimE"
@@ -10284,6 +10455,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3_Contact";
 			speech[]=
 			{
 				"ContactE"
@@ -10291,6 +10463,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version2
 		{
+			text="$STR_A3_Contact";
 			speech[]=
 			{
 				"EnemiesE"
@@ -10298,6 +10471,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version3
 		{
+			text="$STR_A3_Contact";
 			speech[]=
 			{
 				"HostilesE"
@@ -10313,6 +10487,8 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class __1_1___Heal____2_1
 		{
+			textOrig="%1.1 — Heal — %2";
+			text="%1.1 - Heal - %2";
 			wordsClass="Stealth";
 			speech[]=
 			{
@@ -10324,6 +10500,8 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class __1_1___Heal____2
 		{
+			textOrig="%1.1 — Heal — %2";
+			text="%1.1 - Heal - %2";
 			wordsClass="Normal";
 			speech[]=
 			{
@@ -10343,6 +10521,8 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class __1_1___Patch_yourself_up_1
 		{
+			textOrig="%1.1 — Patch yourself up";
+			text="%1.1 - Patch yourself up";
 			wordsClass="Stealth";
 			speech[]=
 			{
@@ -10354,6 +10534,8 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class __1_1___Patch_yourself_up
 		{
+			textOrig="%1.1 — Patch yourself up";
+			text="%1.1 - Patch yourself up";
 			wordsClass="Normal";
 			speech[]=
 			{
@@ -10383,6 +10565,8 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			textOrig="";
+			text="";
 			speech[]=
 			{
 				"%1",
@@ -10391,6 +10575,8 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version2
 		{
+			textOrig="";
+			text="";
 			speech[]=
 			{
 				"%1",
@@ -10399,6 +10585,8 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version3
 		{
+			textOrig="";
+			text="";
 			speech[]=
 			{
 				"%1",
@@ -10407,6 +10595,8 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version4
 		{
+			textOrig="";
+			text="";
 			speech[]=
 			{
 				"%1",
@@ -10415,6 +10605,8 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version5
 		{
+			textOrig="";
+			text="";
 			speech[]=
 			{
 				"%1",
@@ -10423,6 +10615,8 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version6
 		{
+			textOrig="";
+			text="";
 			speech[]=
 			{
 				"%1",
@@ -10442,6 +10636,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3_Area_clear";
 			speech[]=
 			{
 				"Clear"
@@ -10449,6 +10644,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version2
 		{
+			text="$STR_A3_Area_clear";
 			speech[]=
 			{
 				"AreaClear"
@@ -10464,6 +10660,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3_Repeat_command";
 			speech[]=
 			{
 				"SayAgain",
@@ -10482,6 +10679,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3_Report_position";
 			speech[]=
 			{
 				"WhatIsYourPositionQ",
@@ -10490,6 +10688,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version2
 		{
+			text="$STR_A3_Report_position";
 			speech[]=
 			{
 				"WhatIsYourPositionQ",
@@ -10517,6 +10716,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3___1___Regroup";
 			speech[]=
 			{
 				"%1",
@@ -10525,6 +10725,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version2
 		{
+			text="$STR_A3___1___Regroup";
 			speech[]=
 			{
 				"%1",
@@ -10533,6 +10734,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version3
 		{
+			text="$STR_A3___1___Regroup";
 			speech[]=
 			{
 				"%1",
@@ -10541,6 +10743,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version4
 		{
+			text="$STR_A3___1___Regroup";
 			speech[]=
 			{
 				"%1",
@@ -10549,6 +10752,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version5
 		{
+			text="$STR_A3___1___Regroup";
 			speech[]=
 			{
 				"%1",
@@ -10557,6 +10761,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version6
 		{
+			text="$STR_A3___1___Regroup";
 			speech[]=
 			{
 				"%1",
@@ -10573,6 +10778,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3_Formation___Column";
 			speech[]=
 			{
 				"FormationColumn"
@@ -10588,6 +10794,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3_Formation___Staggered_col_";
 			speech[]=
 			{
 				"FormationStaggeredColumn"
@@ -10603,6 +10810,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3_Formation___Wedge";
 			speech[]=
 			{
 				"FormationWedge"
@@ -10618,6 +10826,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3_Formation___Echelon_L_";
 			speech[]=
 			{
 				"FormationEchelonLeft"
@@ -10633,6 +10842,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3_Formation___Echelon_R_";
 			speech[]=
 			{
 				"FormationEchelonRight"
@@ -10648,6 +10858,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3_Formation___Vee";
 			speech[]=
 			{
 				"FormationVee"
@@ -10663,6 +10874,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3_Formation___Line";
 			speech[]=
 			{
 				"FormationLine"
@@ -10678,6 +10890,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3_Formation___File";
 			speech[]=
 			{
 				"FormationFile"
@@ -10693,6 +10906,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3_Formation___Diamond";
 			speech[]=
 			{
 				"FormationDiamond"
@@ -10708,6 +10922,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="";
 			speech[]={};
 		};
 	};
@@ -10720,6 +10935,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3___1___Relax";
 			speech[]=
 			{
 				"%1",
@@ -10738,6 +10954,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3___1___Aware";
 			speech[]=
 			{
 				"%1",
@@ -10746,6 +10963,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version2
 		{
+			text="$STR_A3___1___Aware";
 			speech[]=
 			{
 				"%1",
@@ -10764,6 +10982,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3___1___Combat";
 			speech[]=
 			{
 				"%1",
@@ -10772,6 +10991,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version2
 		{
+			text="$STR_A3___1___Combat";
 			speech[]=
 			{
 				"%1",
@@ -10792,6 +11012,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3___1___Stealth";
 			speech[]=
 			{
 				"%1",
@@ -10800,6 +11021,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version2
 		{
+			text="$STR_A3___1___Stealth";
 			speech[]=
 			{
 				"%1",
@@ -10808,6 +11030,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version3
 		{
+			text="$STR_A3___1___Stealth";
 			speech[]=
 			{
 				"%1",
@@ -10824,6 +11047,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Open_fire";
 			speech[]=
 			{
 				"%1.1",
@@ -10843,6 +11067,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Open_fire";
 			speech[]=
 			{
 				"%1.1",
@@ -10851,6 +11076,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version2
 		{
+			text="$STR_A3___1_1___Open_fire";
 			speech[]=
 			{
 				"%1.1",
@@ -10867,6 +11093,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Hold_fire";
 			speech[]=
 			{
 				"%1.1",
@@ -10883,6 +11110,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Hold_fire";
 			speech[]=
 			{
 				"%1.1",
@@ -10899,6 +11127,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Hold_fire";
 			speech[]=
 			{
 				"%1.1",
@@ -10917,6 +11146,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3___2_1___Cease_fire";
 			speech[]=
 			{
 				"%2.1",
@@ -10925,6 +11155,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version2
 		{
+			text="$STR_A3___2_1___Cease_fire";
 			speech[]=
 			{
 				"%2.1",
@@ -10941,6 +11172,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Free_to_engage";
 			speech[]=
 			{
 				"%1.1",
@@ -10957,6 +11189,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Disengage";
 			speech[]=
 			{
 				"%1.1",
@@ -10973,6 +11206,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Prone";
 			speech[]=
 			{
 				"%1.1",
@@ -10990,6 +11224,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Crouch";
 			speech[]=
 			{
 				"%1.1",
@@ -11008,6 +11243,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Stand";
 			speech[]=
 			{
 				"%1.1",
@@ -11017,6 +11253,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version2
 		{
+			text="$STR_A3___1_1___Stand";
 			speech[]=
 			{
 				"%1.1",
@@ -11034,6 +11271,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Copy_my_stance";
 			speech[]=
 			{
 				"%1.1",
@@ -11052,6 +11290,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Advance";
 			speech[]=
 			{
 				"%1.1",
@@ -11060,6 +11299,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version2
 		{
+			text="$STR_A3___1_1___Advance";
 			speech[]=
 			{
 				"%1.1",
@@ -11078,6 +11318,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Stay_back";
 			speech[]=
 			{
 				"%1.1",
@@ -11086,6 +11327,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version2
 		{
+			text="$STR_A3___1_1___Stay_back";
 			speech[]=
 			{
 				"%1.1",
@@ -11102,6 +11344,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Flank_left";
 			speech[]=
 			{
 				"%1.1",
@@ -11118,6 +11361,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Flank_right";
 			speech[]=
 			{
 				"%1.1",
@@ -11136,6 +11380,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___SITREP";
 			speech[]=
 			{
 				"%1.1",
@@ -11145,6 +11390,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version2
 		{
+			text="$STR_A3___1_1___SITREP";
 			speech[]=
 			{
 				"%1.1",
@@ -11162,6 +11408,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1____2";
 			speech[]=
 			{
 				"%2"
@@ -11177,6 +11424,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version2
 		{
+			text="$STR_A3___1_1____2";
 			speech[]=
 			{
 				"%2"
@@ -11192,6 +11440,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Watch____2";
 			speech[]=
 			{
 				"%1.1",
@@ -11209,6 +11458,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Watch____2_CMPS";
 			speech[]=
 			{
 				"%1.1",
@@ -11226,6 +11476,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Observe_position";
 			speech[]=
 			{
 				"%1.1",
@@ -11243,6 +11494,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Scan_horizon";
 			speech[]=
 			{
 				"%1.1",
@@ -11259,6 +11511,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___No_target";
 			speech[]=
 			{
 				"%1.1",
@@ -11267,6 +11520,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version2
 		{
+			text="$STR_A3___1_1___No_target";
 			speech[]=
 			{
 				"%1.1",
@@ -11283,6 +11537,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3___1___Engage_____2____6";
 			speech[]=
 			{
 				"%1",
@@ -11302,6 +11557,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3___1___Engage_____2____6";
 			speech[]=
 			{
 				"%1",
@@ -11321,6 +11577,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3___1___Engage";
 			speech[]=
 			{
 				"%1",
@@ -11340,6 +11597,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3___1___Engage";
 			speech[]=
 			{
 				"%1",
@@ -11356,6 +11614,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3___1___Engage";
 			speech[]=
 			{
 				"%1",
@@ -11382,6 +11641,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3__mUNIT___Move____mGRPDIS_ABS____mGRPDIR_CMPS";
 			speech[]=
 			{
 				"%1.1",
@@ -11401,6 +11661,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3__mUNIT___Move____mGRPDIR_1";
 			speech[]=
 			{
 				"%1.1",
@@ -11420,6 +11681,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3__mUNIT___Move___Grid___mGRID";
 			speech[]=
 			{
 				"%1.1",
@@ -11438,6 +11700,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3__mUNIT___Move___Grid___mGRID";
 			speech[]=
 			{
 				"%1.1",
@@ -11459,6 +11722,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3__mUNIT___Move___Grid___mGRID";
 			speech[]=
 			{
 				"%1.1",
@@ -11468,6 +11732,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version2
 		{
+			text="$STR_A3__mUNIT___Move___Grid___mGRID";
 			speech[]=
 			{
 				"%1.1",
@@ -11488,6 +11753,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3__mUNIT___Move___Grid___mGRID";
 			speech[]=
 			{
 				"%1.1",
@@ -11499,6 +11765,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version2
 		{
+			text="$STR_A3__mUNIT___Move___Grid___mGRID";
 			speech[]=
 			{
 				"%1.1",
@@ -11510,6 +11777,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version3
 		{
+			text="$STR_A3__mUNIT___Move___Grid___mGRID";
 			speech[]=
 			{
 				"%1.1",
@@ -11529,6 +11797,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Go_to_medic____2____3";
 			speech[]=
 			{
 				"%1.1",
@@ -11547,6 +11816,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Go_to_medic____2____3";
 			speech[]=
 			{
 				"%1.1",
@@ -11565,6 +11835,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Go_to_medic___2_____3";
 			speech[]=
 			{
 				"%1.1",
@@ -11583,6 +11854,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Repair_vehicle____2____3";
 			speech[]=
 			{
 				"%1.1",
@@ -11600,6 +11872,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Repair_vehicle____2____3";
 			speech[]=
 			{
 				"%1.1",
@@ -11617,6 +11890,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Repair_vehicle___2_____3";
 			speech[]=
 			{
 				"%1.1",
@@ -11634,6 +11908,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Refuel_vehicle____2____3";
 			speech[]=
 			{
 				"%1.1",
@@ -11651,6 +11926,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Refuel_vehicle___Grid___2";
 			speech[]=
 			{
 				"%1.1",
@@ -11668,6 +11944,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Refuel_vehicle___2_____3";
 			speech[]=
 			{
 				"%1.1",
@@ -11685,6 +11962,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Rearm____2____3";
 			speech[]=
 			{
 				"%1.1",
@@ -11702,6 +11980,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Rearm___Grid___2";
 			speech[]=
 			{
 				"%1.1",
@@ -11719,6 +11998,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Rearm___2_____3";
 			speech[]=
 			{
 				"%1.1",
@@ -11736,6 +12016,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Get_support____2____3";
 			speech[]=
 			{
 				"%1.1",
@@ -11753,6 +12034,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Get_support___Grid___2";
 			speech[]=
 			{
 				"%1.1",
@@ -11770,6 +12052,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Get_support___2_____3_CMPS";
 			speech[]=
 			{
 				"%1.1",
@@ -11787,6 +12070,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Drop_weapon____2";
 			speech[]=
 			{
 				"%1.1",
@@ -11805,6 +12089,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Drop_magazine____2";
 			speech[]=
 			{
 				"%1.1",
@@ -11823,6 +12108,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Take_weapon____2____3____4";
 			speech[]=
 			{
 				"%1.1",
@@ -11841,6 +12127,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Take_weapon____2___Grid___3";
 			speech[]=
 			{
 				"%1.1",
@@ -11859,6 +12146,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Take_weapon____3___2_____4";
 			speech[]=
 			{
 				"%1.1",
@@ -11877,6 +12165,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Take_magazine____2____3";
 			speech[]=
 			{
 				"%1.1",
@@ -11895,6 +12184,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Take_magazine___Grid___2";
 			speech[]=
 			{
 				"%1.1",
@@ -11913,6 +12203,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Take_magazine____2____3";
 			speech[]=
 			{
 				"%1.1",
@@ -11931,6 +12222,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_SENT_CMD_ACTION_1";
 			speech[]={};
 		};
 	};
@@ -11943,6 +12235,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_SENT_CMD_ACTION_NEAR_1";
 			speech[]={};
 		};
 	};
@@ -11955,6 +12248,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_SENT_CMD_ACTION_FAR_1";
 			speech[]={};
 		};
 	};
@@ -11967,6 +12261,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_SENT_CMD_ACTION_AT_1";
 			speech[]={};
 		};
 	};
@@ -11979,6 +12274,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_SENT_CMD_TAKE_FLAG_1";
 			speech[]=
 			{
 				"%1.1",
@@ -11997,6 +12293,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_SENT_CMD_TAKE_FLAG_1";
 			speech[]=
 			{
 				"%1.1",
@@ -12015,6 +12312,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_SENT_CMD_TAKE_FLAG_1";
 			speech[]=
 			{
 				"%1.1",
@@ -12033,6 +12331,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_SENT_CMD_RETURN_FLAG_1";
 			speech[]=
 			{
 				"%1.1",
@@ -12051,6 +12350,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_SENT_CMD_RETURN_FLAG_1";
 			speech[]=
 			{
 				"%1.1",
@@ -12069,6 +12369,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_SENT_CMD_RETURN_FLAG_1";
 			speech[]=
 			{
 				"%1.1",
@@ -12089,6 +12390,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Eject";
 			speech[]=
 			{
 				"%1.1",
@@ -12097,6 +12399,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version2
 		{
+			text="$STR_A3___1_1___Eject";
 			speech[]=
 			{
 				"%1.1",
@@ -12113,6 +12416,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Set_charge";
 			speech[]=
 			{
 				"%1.1",
@@ -12129,6 +12433,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Detonate_charge";
 			speech[]=
 			{
 				"%1.1",
@@ -12145,6 +12450,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Set_timer";
 			speech[]=
 			{
 				"%1.1",
@@ -12161,6 +12467,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Deactivate_charge";
 			speech[]=
 			{
 				"%1.1",
@@ -12177,6 +12484,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Disarm_mine";
 			speech[]=
 			{
 				"%1.1",
@@ -12193,6 +12501,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Take_mine";
 			speech[]=
 			{
 				"%1.1",
@@ -12209,6 +12518,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Light_fire";
 			speech[]=
 			{
 				"GoAndLightThatFire"
@@ -12224,6 +12534,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Light_fire";
 			speech[]=
 			{
 				"%1.1",
@@ -12240,6 +12551,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Light_fire";
 			speech[]=
 			{
 				"%1.1",
@@ -12256,6 +12568,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_SENT_CMD_PUT_OUT_FIRE_1";
 			speech[]=
 			{
 				"%1.1",
@@ -12272,6 +12585,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Extinguish_fire";
 			speech[]=
 			{
 				"%1.1",
@@ -12288,6 +12602,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Extinguish_fire";
 			speech[]=
 			{
 				"%1.1",
@@ -12304,6 +12619,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Open_door";
 			speech[]=
 			{
 				"%1.1",
@@ -12320,6 +12636,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Open_door";
 			speech[]=
 			{
 				"%1.1",
@@ -12336,6 +12653,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Open_door";
 			speech[]=
 			{
 				"%1.1",
@@ -12352,6 +12670,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Close_door";
 			speech[]=
 			{
 				"%1.1",
@@ -12368,6 +12687,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Close_door";
 			speech[]=
 			{
 				"%1.1",
@@ -12384,6 +12704,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Close_door";
 			speech[]=
 			{
 				"%1.1",
@@ -12411,6 +12732,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3___1___Regroup";
 			speech[]=
 			{
 				"%1",
@@ -12419,6 +12741,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version2
 		{
+			text="$STR_A3___1___Regroup";
 			speech[]=
 			{
 				"%1",
@@ -12427,6 +12750,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version3
 		{
+			text="$STR_A3___1___Regroup";
 			speech[]=
 			{
 				"%1",
@@ -12435,6 +12759,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version4
 		{
+			text="$STR_A3___1___Regroup";
 			speech[]=
 			{
 				"%1",
@@ -12443,6 +12768,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version5
 		{
+			text="$STR_A3___1___Regroup";
 			speech[]=
 			{
 				"%1",
@@ -12451,6 +12777,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version6
 		{
+			text="$STR_A3___1___Regroup";
 			speech[]=
 			{
 				"%1",
@@ -12467,6 +12794,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Join_group____2_1";
 			speech[]=
 			{
 				"%1.1",
@@ -12485,6 +12813,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3___1___Engage";
 			speech[]=
 			{
 				"%1.1",
@@ -12503,6 +12832,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3___1___Engage";
 			speech[]=
 			{
 				"%1.1",
@@ -12520,6 +12850,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3___1___Engage";
 			speech[]=
 			{
 				"%1.1",
@@ -12538,6 +12869,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Get_in";
 			speech[]=
 			{
 				"%1.1",
@@ -12555,6 +12887,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Get_in___Commander";
 			speech[]=
 			{
 				"%1.1",
@@ -12572,6 +12905,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Get_in___Driver";
 			speech[]=
 			{
 				"%1.1",
@@ -12589,6 +12923,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Get_in___Pilot";
 			speech[]=
 			{
 				"%1.1",
@@ -12606,6 +12941,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Get_in___Gunner";
 			speech[]=
 			{
 				"%1.1",
@@ -12623,6 +12959,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Get_in___Passenger";
 			speech[]=
 			{
 				"%1.1",
@@ -12640,6 +12977,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Switch_to_driver";
 			speech[]={};
 		};
 	};
@@ -12652,6 +12990,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Switch_to_gunner";
 			speech[]={};
 		};
 	};
@@ -12664,6 +13003,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Switch_to_commander";
 			speech[]={};
 		};
 	};
@@ -12676,6 +13016,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Switch_to_cargo";
 			speech[]={};
 		};
 	};
@@ -12690,6 +13031,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Dismount";
 			speech[]=
 			{
 				"%1.1",
@@ -12698,6 +13040,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version2
 		{
+			text="$STR_A3___1_1___Dismount";
 			speech[]=
 			{
 				"%1.1",
@@ -12716,6 +13059,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Stop";
 			speech[]=
 			{
 				"%1.1",
@@ -12725,6 +13069,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version2
 		{
+			text="$STR_A3___1_1___Stop";
 			speech[]=
 			{
 				"%1.1",
@@ -12744,6 +13089,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Stop";
 			speech[]=
 			{
 				"%1.1",
@@ -12752,6 +13098,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version2
 		{
+			text="$STR_A3___1_1___Stop";
 			speech[]=
 			{
 				"%1.1",
@@ -12772,6 +13119,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3___1___Take_cover";
 			speech[]=
 			{
 				"%1.1",
@@ -12781,6 +13129,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version2
 		{
+			text="$STR_A3___1___Take_cover";
 			speech[]=
 			{
 				"%1.1",
@@ -12790,6 +13139,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version3
 		{
+			text="$STR_A3___1___Take_cover";
 			speech[]=
 			{
 				"%1.1",
@@ -12807,6 +13157,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="";
 			speech[]={};
 		};
 	};
@@ -12821,6 +13172,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3_Engaging____2";
 			speech[]=
 			{
 				"Copy"
@@ -12828,6 +13180,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version2
 		{
+			text="$STR_A3_Engaging____2";
 			speech[]=
 			{
 				"IamAttackingTarget"
@@ -12843,6 +13196,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3___3_1___Engaging____2";
 			speech[]=
 			{
 				"%3.1",
@@ -12859,6 +13213,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Supporting";
 			speech[]=
 			{
 				"%1.1",
@@ -12881,6 +13236,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3_Copy";
 			speech[]=
 			{
 				"HC_Affirmative"
@@ -12889,6 +13245,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version2
 		{
+			text="$STR_A3_Copy";
 			speech[]=
 			{
 				"Copy"
@@ -12896,6 +13253,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version3
 		{
+			text="$STR_A3_Copy";
 			speech[]=
 			{
 				"Understood"
@@ -12904,6 +13262,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version4
 		{
+			text="$STR_A3_Copy";
 			speech[]=
 			{
 				"ImOnIt"
@@ -12928,6 +13287,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3_Copy";
 			speech[]=
 			{
 				"Roger"
@@ -12936,6 +13296,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version2
 		{
+			text="$STR_A3_Copy";
 			speech[]=
 			{
 				"ImOnIt"
@@ -12944,6 +13305,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version3
 		{
+			text="$STR_A3_Copy";
 			speech[]=
 			{
 				"Copy"
@@ -12952,6 +13314,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version4
 		{
+			text="$STR_A3_Copy";
 			speech[]=
 			{
 				"IAttack"
@@ -12960,6 +13323,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version5
 		{
+			text="$STR_A3_Copy";
 			speech[]=
 			{
 				"IamAttackingTarget"
@@ -12976,6 +13340,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3_Copy";
 			speech[]=
 			{
 				"Roger"
@@ -13000,6 +13365,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3__mUNIT___Move____mGRPDIS_ABS____mGRPDIR_1";
 			speech[]=
 			{
 				"XMIT",
@@ -13019,6 +13385,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3__mUNIT___Move____mGRPDIS_ABS____mGRPDIR_1";
 			speech[]=
 			{
 				"XMIT",
@@ -13038,6 +13405,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3__mUNIT___Move___Grid___mGRID";
 			speech[]=
 			{
 				"XMIT",
@@ -13048,6 +13416,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version2
 		{
+			text="$STR_A3__mUNIT___Move___Grid___mGRID";
 			speech[]=
 			{
 				"XMIT",
@@ -13069,6 +13438,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3__mUNIT___Move___Grid___mGRID";
 			speech[]=
 			{
 				"XMIT",
@@ -13079,6 +13449,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version2
 		{
+			text="$STR_A3__mUNIT___Move___Grid___mGRID";
 			speech[]=
 			{
 				"XMIT",
@@ -13100,6 +13471,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3__mUNIT___Move___Grid___mGRID";
 			speech[]=
 			{
 				"XMIT",
@@ -13112,6 +13484,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version2
 		{
+			text="$STR_A3__mUNIT___Move___Grid___mGRID";
 			speech[]=
 			{
 				"XMIT",
@@ -13129,6 +13502,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3_Watch____1";
 			speech[]=
 			{
 				"XMIT",
@@ -13146,6 +13520,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3_Observe____1____2";
 			speech[]=
 			{
 				"XMIT",
@@ -13164,6 +13539,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3_Keep_formation";
 			speech[]=
 			{
 				"XMIT",
@@ -13180,6 +13556,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3_Engage____1____6_ABS____7_CLCK";
 			speech[]=
 			{
 				"XMIT",
@@ -13198,6 +13575,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3_Target____1____6_ABS____7_CLCK";
 			speech[]=
 			{
 				"XMIT",
@@ -13217,6 +13595,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3_Cancel_target";
 			speech[]=
 			{
 				"XMIT",
@@ -13233,6 +13612,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3_Cease_fire";
 			speech[]=
 			{
 				"XMIT",
@@ -13249,6 +13629,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3_Forward";
 			speech[]=
 			{
 				"XMIT",
@@ -13265,6 +13646,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3_Stop";
 			speech[]=
 			{
 				"XMIT",
@@ -13281,6 +13663,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3_Backward";
 			speech[]=
 			{
 				"XMIT",
@@ -13297,6 +13680,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3_Fast";
 			speech[]=
 			{
 				"XMIT",
@@ -13313,6 +13697,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3_Slow";
 			speech[]=
 			{
 				"XMIT",
@@ -13329,6 +13714,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3_Left";
 			speech[]=
 			{
 				"XMIT",
@@ -13345,6 +13731,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3_Right";
 			speech[]=
 			{
 				"XMIT",
@@ -13361,6 +13748,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3_Manual_fire";
 			speech[]=
 			{
 				"XMIT",
@@ -13377,6 +13765,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3_Cancel_manual_fire";
 			speech[]=
 			{
 				"XMIT",
@@ -13393,6 +13782,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3_Fire";
 			speech[]=
 			{
 				"XMIT",
@@ -13409,6 +13799,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3_Load____1";
 			speech[]=
 			{
 				"%1"
@@ -13424,6 +13815,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3_Load____1";
 			speech[]=
 			{
 				"%1"
@@ -13439,6 +13831,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3_Watch____1";
 			speech[]=
 			{
 				"%1"
@@ -13456,6 +13849,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="$STR_A3_Cannot_fire";
 			speech[]=
 			{
 				"Negative"
@@ -13463,6 +13857,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version2
 		{
+			text="$STR_A3_Cannot_fire";
 			speech[]=
 			{
 				"CannotFire"
@@ -13471,6 +13866,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 	};
 	class ClausePosition: ClausePosition
 	{
+		text="$STR_SENT_CLAUSE_POSITION";
 		speech[]=
 		{
 			"%1",
@@ -13479,6 +13875,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 	};
 	class ClausePositionNear: ClausePositionNear
 	{
+		text="$STR_SENT_CLAUSE_POSITION_NEAR";
 		speech[]=
 		{
 			"that",
@@ -13507,6 +13904,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="";
 			speech[]=
 			{
 				"C_GoImCoveringE"
@@ -13514,6 +13912,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version2
 		{
+			text="";
 			speech[]=
 			{
 				"C_GoILLCoverE"
@@ -13521,6 +13920,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version3
 		{
+			text="";
 			speech[]=
 			{
 				"C_CoveringFireE"
@@ -13528,6 +13928,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version4
 		{
+			text="";
 			speech[]=
 			{
 				"C_CoveringGoE"
@@ -13535,6 +13936,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version5
 		{
+			text="";
 			speech[]=
 			{
 				"C_MoveOutE"
@@ -13542,6 +13944,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version6
 		{
+			text="";
 			speech[]=
 			{
 				"C_GoE"
@@ -13549,6 +13952,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version7
 		{
+			text="";
 			speech[]=
 			{
 				"C_MoveE"
@@ -13570,6 +13974,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="";
 			speech[]=
 			{
 				"C_EngagingE"
@@ -13577,6 +13982,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version2
 		{
+			text="";
 			speech[]=
 			{
 				"C_CoverMeE"
@@ -13584,6 +13990,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version3
 		{
+			text="";
 			speech[]=
 			{
 				"C_OKLetsGo"
@@ -13591,6 +13998,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version4
 		{
+			text="";
 			speech[]=
 			{
 				"C_MovingE"
@@ -13598,6 +14006,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version5
 		{
+			text="";
 			speech[]=
 			{
 				"C_GoingE"
@@ -13619,6 +14028,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="";
 			speech[]=
 			{
 				"C_SuppresiveFireE"
@@ -13626,6 +14036,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version2
 		{
+			text="";
 			speech[]=
 			{
 				"C_HangOnILLSuppressE"
@@ -13633,6 +14044,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version3
 		{
+			text="";
 			speech[]=
 			{
 				"C_SuppressingE"
@@ -13640,6 +14052,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version4
 		{
+			text="";
 			speech[]=
 			{
 				"C_OpenUpE"
@@ -13661,6 +14074,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="";
 			speech[]=
 			{
 				"C_ReloadingE"
@@ -13668,6 +14082,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version2
 		{
+			text="";
 			speech[]=
 			{
 				"C_IgottaReloadE"
@@ -13675,6 +14090,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version3
 		{
+			text="";
 			speech[]=
 			{
 				"C_CoverMeWhileIReloadE"
@@ -13682,6 +14098,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version4
 		{
+			text="";
 			speech[]=
 			{
 				"C_ChangingMagsE"
@@ -13701,6 +14118,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="";
 			speech[]=
 			{
 				"C_FireInTheHoleE"
@@ -13708,6 +14126,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version2
 		{
+			text="";
 			speech[]=
 			{
 				"C_ThrowingFragE"
@@ -13715,6 +14134,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version3
 		{
+			text="";
 			speech[]=
 			{
 				"C_FragOutE"
@@ -13732,6 +14152,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="";
 			speech[]=
 			{
 				"C_ThrowingSmokeNowE"
@@ -13739,6 +14160,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version2
 		{
+			text="";
 			speech[]=
 			{
 				"C_SmokeOutE"
@@ -13756,6 +14178,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="";
 			speech[]=
 			{
 				"C_GrenadeE"
@@ -13763,6 +14186,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version2
 		{
+			text="";
 			speech[]=
 			{
 				"C_WatchForGrenadeE"
@@ -13792,6 +14216,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="";
 			speech[]=
 			{
 				"C_ContactE"
@@ -13799,6 +14224,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version2
 		{
+			text="";
 			speech[]=
 			{
 				"C_DidYouSeeThatQ"
@@ -13806,6 +14232,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version3
 		{
+			text="";
 			speech[]=
 			{
 				"C_FuckSawThatQ"
@@ -13813,6 +14240,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version4
 		{
+			text="";
 			speech[]=
 			{
 				"C_TargetE"
@@ -13820,6 +14248,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version5
 		{
+			text="";
 			speech[]=
 			{
 				"C_GotATargetE"
@@ -13827,6 +14256,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version6
 		{
+			text="";
 			speech[]=
 			{
 				"C_HostilesE"
@@ -13834,6 +14264,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version7
 		{
+			text="";
 			speech[]=
 			{
 				"C_RightThereE"
@@ -13841,6 +14272,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version8
 		{
+			text="";
 			speech[]=
 			{
 				"C_TakeHimOutE"
@@ -13870,6 +14302,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="";
 			speech[]=
 			{
 				"C_TakeCoverE"
@@ -13877,6 +14310,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version2
 		{
+			text="";
 			speech[]=
 			{
 				"C_ShitE"
@@ -13884,6 +14318,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version3
 		{
+			text="";
 			speech[]=
 			{
 				"C_GetDownE"
@@ -13891,6 +14326,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version4
 		{
+			text="";
 			speech[]=
 			{
 				"C_HitTheDeckE"
@@ -13898,6 +14334,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version5
 		{
+			text="";
 			speech[]=
 			{
 				"C_WhatTheFuckQ"
@@ -13905,6 +14342,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version6
 		{
+			text="";
 			speech[]=
 			{
 				"C_WhatTheHellQ"
@@ -13912,6 +14350,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version7
 		{
+			text="";
 			speech[]=
 			{
 				"C_WhatTheFuckWasThatQ"
@@ -13919,6 +14358,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version8
 		{
+			text="";
 			speech[]=
 			{
 				"C_CheckThatOut"
@@ -13936,6 +14376,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="";
 			speech[]=
 			{
 				"C_HolyShitE"
@@ -13943,6 +14384,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version2
 		{
+			text="";
 			speech[]=
 			{
 				"C_OhJesusE"
@@ -13970,6 +14412,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="";
 			speech[]=
 			{
 				"C_WhatAView"
@@ -13977,6 +14420,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version2
 		{
+			text="";
 			speech[]=
 			{
 				"C_WhatAMess"
@@ -13984,6 +14428,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version3
 		{
+			text="";
 			speech[]=
 			{
 				"C_WishIHadntSeeThat"
@@ -13991,6 +14436,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version4
 		{
+			text="";
 			speech[]=
 			{
 				"C_ThatSucks"
@@ -13998,6 +14444,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version5
 		{
+			text="";
 			speech[]=
 			{
 				"C_MotherfuckerE"
@@ -14005,6 +14452,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version6
 		{
+			text="";
 			speech[]=
 			{
 				"C_SweetJesusE"
@@ -14012,6 +14460,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version7
 		{
+			text="";
 			speech[]=
 			{
 				"C_SeeThatQE"
@@ -14043,6 +14492,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="";
 			speech[]=
 			{
 				"C_ManDownE"
@@ -14050,6 +14500,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version2
 		{
+			text="";
 			speech[]=
 			{
 				"C_FuckHesDownE"
@@ -14057,6 +14508,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version3
 		{
+			text="";
 			speech[]=
 			{
 				"C_HesDeadE"
@@ -14064,6 +14516,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version4
 		{
+			text="";
 			speech[]=
 			{
 				"C_HesGoneE"
@@ -14071,6 +14524,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version5
 		{
+			text="";
 			speech[]=
 			{
 				"C_WeLostHimE"
@@ -14078,6 +14532,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version6
 		{
+			text="";
 			speech[]=
 			{
 				"C_TheyGotHimE"
@@ -14085,6 +14540,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version7
 		{
+			text="";
 			speech[]=
 			{
 				"C_NoE"
@@ -14092,6 +14548,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version8
 		{
+			text="";
 			speech[]=
 			{
 				"C_FuckE"
@@ -14099,6 +14556,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version9
 		{
+			text="";
 			speech[]=
 			{
 				"C_ManHitE"
@@ -14120,6 +14578,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="";
 			speech[]=
 			{
 				"C_ScanYourSector"
@@ -14127,6 +14586,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version2
 		{
+			text="";
 			speech[]=
 			{
 				"C_CarefulJustBeCareful"
@@ -14134,6 +14594,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version3
 		{
+			text="";
 			speech[]=
 			{
 				"C_CheckSectors"
@@ -14141,6 +14602,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version4
 		{
+			text="";
 			speech[]=
 			{
 				"C_FocusE"
@@ -14162,6 +14624,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="";
 			speech[]=
 			{
 				"C_woohoo1"
@@ -14169,6 +14632,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version2
 		{
+			text="";
 			speech[]=
 			{
 				"C_woohoo2"
@@ -14176,6 +14640,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version3
 		{
+			text="";
 			speech[]=
 			{
 				"C_woohoo3"
@@ -14183,6 +14648,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version4
 		{
+			text="";
 			speech[]=
 			{
 				"C_woohoo4"
@@ -14204,6 +14670,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="";
 			speech[]=
 			{
 				"C_scream1"
@@ -14211,6 +14678,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version2
 		{
+			text="";
 			speech[]=
 			{
 				"C_scream2"
@@ -14218,6 +14686,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version3
 		{
+			text="";
 			speech[]=
 			{
 				"C_scream3"
@@ -14225,6 +14694,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version4
 		{
+			text="";
 			speech[]=
 			{
 				"C_scream4"
@@ -14244,6 +14714,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="";
 			speech[]=
 			{
 				"Receive1"
@@ -14251,6 +14722,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version2
 		{
+			text="";
 			speech[]=
 			{
 				"Receive2"
@@ -14258,6 +14730,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version3
 		{
+			text="";
 			speech[]=
 			{
 				"Receive3"
@@ -14279,6 +14752,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="";
 			speech[]=
 			{
 				"HC_Advancing"
@@ -14286,6 +14760,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version2
 		{
+			text="";
 			speech[]=
 			{
 				"HC_Affirmative"
@@ -14293,6 +14768,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version3
 		{
+			text="";
 			speech[]=
 			{
 				"HC_MovingToPosition"
@@ -14300,6 +14776,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version4
 		{
+			text="";
 			speech[]=
 			{
 				"HC_OrderReceived"
@@ -14325,6 +14802,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version1
 		{
+			text="";
 			speech[]=
 			{
 				"HC_Advancing"
@@ -14332,6 +14810,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version2
 		{
+			text="";
 			speech[]=
 			{
 				"HC_Affirmative"
@@ -14339,6 +14818,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version3
 		{
+			text="";
 			speech[]=
 			{
 				"HC_OrderReceived"
@@ -14346,6 +14826,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version4
 		{
+			text="";
 			speech[]=
 			{
 				"HC_EngagingE"
@@ -14353,6 +14834,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version5
 		{
+			text="";
 			speech[]=
 			{
 				"HC_AssaultingEnemyPosition"
@@ -14360,6 +14842,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class Version6
 		{
+			text="";
 			speech[]=
 			{
 				"HC_AttackingE"
@@ -14374,6 +14857,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 			{
 				class 0
 				{
+					text="$STR_Q_NORTH";
 					speech[]=
 					{
 						"North"
@@ -14381,6 +14865,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 				};
 				class 45
 				{
+					text="$STR_Q_NORTH_EAST";
 					speech[]=
 					{
 						"NorthEast"
@@ -14388,6 +14873,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 				};
 				class 90
 				{
+					text="$STR_Q_EAST";
 					speech[]=
 					{
 						"East"
@@ -14395,6 +14881,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 				};
 				class 135
 				{
+					text="$STR_Q_SOUTH_EAST";
 					speech[]=
 					{
 						"SouthEast"
@@ -14402,6 +14889,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 				};
 				class 180
 				{
+					text="$STR_Q_SOUTH";
 					speech[]=
 					{
 						"South"
@@ -14409,6 +14897,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 				};
 				class 225
 				{
+					text="$STR_Q_SOUTH_WEST";
 					speech[]=
 					{
 						"SouthWest"
@@ -14416,6 +14905,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 				};
 				class 270
 				{
+					text="$STR_Q_WEST";
 					speech[]=
 					{
 						"West"
@@ -14423,6 +14913,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 				};
 				class 315
 				{
+					text="$STR_Q_NORTH_WEST";
 					speech[]=
 					{
 						"NorthWest"
@@ -14433,6 +14924,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 			{
 				class 0
 				{
+					text="$STR_A3_Arguments_Direction_Compass2_0_0";
 					speech[]=
 					{
 						"bearing000"
@@ -14440,6 +14932,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 				};
 				class 15
 				{
+					text="$STR_A3_Arguments_Direction_Compass2_15_0";
 					speech[]=
 					{
 						"bearing015"
@@ -14447,6 +14940,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 				};
 				class 30
 				{
+					text="$STR_A3_Arguments_Direction_Compass2_30_0";
 					speech[]=
 					{
 						"bearing030"
@@ -14454,6 +14948,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 				};
 				class 45
 				{
+					text="$STR_A3_Arguments_Direction_Compass2_45_0";
 					speech[]=
 					{
 						"bearing045"
@@ -14461,6 +14956,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 				};
 				class 60
 				{
+					text="$STR_A3_Arguments_Direction_Compass2_60_0";
 					speech[]=
 					{
 						"bearing060"
@@ -14468,6 +14964,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 				};
 				class 75
 				{
+					text="$STR_A3_Arguments_Direction_Compass2_75_0";
 					speech[]=
 					{
 						"bearing075"
@@ -14475,6 +14972,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 				};
 				class 90
 				{
+					text="$STR_A3_Arguments_Direction_Compass2_90_0";
 					speech[]=
 					{
 						"bearing090"
@@ -14482,6 +14980,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 				};
 				class 105
 				{
+					text="$STR_A3_Arguments_Direction_Compass2_105_0";
 					speech[]=
 					{
 						"bearing105"
@@ -14489,6 +14988,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 				};
 				class 120
 				{
+					text="$STR_A3_Arguments_Direction_Compass2_120_0";
 					speech[]=
 					{
 						"bearing120"
@@ -14496,6 +14996,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 				};
 				class 135
 				{
+					text="$STR_A3_Arguments_Direction_Compass2_135_0";
 					speech[]=
 					{
 						"bearing135"
@@ -14503,6 +15004,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 				};
 				class 150
 				{
+					text="$STR_A3_Arguments_Direction_Compass2_150_0";
 					speech[]=
 					{
 						"bearing150"
@@ -14510,6 +15012,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 				};
 				class 165
 				{
+					text="$STR_A3_Arguments_Direction_Compass2_165_0";
 					speech[]=
 					{
 						"bearing165"
@@ -14517,6 +15020,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 				};
 				class 180
 				{
+					text="$STR_A3_Arguments_Direction_Compass2_180_0";
 					speech[]=
 					{
 						"bearing180"
@@ -14524,6 +15028,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 				};
 				class 195
 				{
+					text="$STR_A3_Arguments_Direction_Compass2_195_0";
 					speech[]=
 					{
 						"bearing195"
@@ -14531,6 +15036,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 				};
 				class 210
 				{
+					text="$STR_A3_Arguments_Direction_Compass2_210_0";
 					speech[]=
 					{
 						"bearing210"
@@ -14538,6 +15044,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 				};
 				class 225
 				{
+					text="$STR_A3_Arguments_Direction_Compass2_225_0";
 					speech[]=
 					{
 						"bearing225"
@@ -14545,6 +15052,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 				};
 				class 240
 				{
+					text="$STR_A3_Arguments_Direction_Compass2_240_0";
 					speech[]=
 					{
 						"bearing240"
@@ -14552,6 +15060,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 				};
 				class 255
 				{
+					text="$STR_A3_Arguments_Direction_Compass2_255_0";
 					speech[]=
 					{
 						"bearing255"
@@ -14559,6 +15068,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 				};
 				class 270
 				{
+					text="$STR_A3_Arguments_Direction_Compass2_270_0";
 					speech[]=
 					{
 						"bearing270"
@@ -14566,6 +15076,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 				};
 				class 285
 				{
+					text="$STR_A3_Arguments_Direction_Compass2_285_0";
 					speech[]=
 					{
 						"bearing285"
@@ -14573,6 +15084,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 				};
 				class 300
 				{
+					text="$STR_A3_Arguments_Direction_Compass2_300_0";
 					speech[]=
 					{
 						"bearing300"
@@ -14580,6 +15092,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 				};
 				class 315
 				{
+					text="$STR_A3_Arguments_Direction_Compass2_315_0";
 					speech[]=
 					{
 						"bearing315"
@@ -14587,6 +15100,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 				};
 				class 330
 				{
+					text="$STR_A3_Arguments_Direction_Compass2_330_0";
 					speech[]=
 					{
 						"bearing330"
@@ -14594,6 +15108,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 				};
 				class 345
 				{
+					text="$STR_A3_Arguments_Direction_Compass2_345_0";
 					speech[]=
 					{
 						"bearing345"
@@ -14601,6 +15116,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 				};
 				class 360
 				{
+					text="$STR_A3_Arguments_Direction_Compass2_360_0";
 					speech[]=
 					{
 						"bearing360"
@@ -14611,6 +15127,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 			{
 				class 0
 				{
+					text="$STR_A3_Arguments_Direction_Relative1_0_0";
 					speech[]=
 					{
 						"InFrontOf"
@@ -14618,6 +15135,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 				};
 				class 90
 				{
+					text="$STR_A3_Arguments_Direction_Relative1_90_0";
 					speech[]=
 					{
 						"RightOf"
@@ -14625,6 +15143,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 				};
 				class 180
 				{
+					text="$STR_A3_Arguments_Direction_Relative1_270_0";
 					speech[]=
 					{
 						"Behind"
@@ -14632,6 +15151,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 				};
 				class 270
 				{
+					text="$STR_A3_Arguments_Direction_Relative1_180_0";
 					speech[]=
 					{
 						"LeftOf"
@@ -14642,6 +15162,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 			{
 				class 0
 				{
+					text="$STR_A3_Arguments_Direction_Relative1_0_0";
 					speech[]=
 					{
 						"Front"
@@ -14649,6 +15170,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 				};
 				class 90
 				{
+					text="$STR_A3_Arguments_Direction_Relative1_90_0";
 					speech[]=
 					{
 						"Right"
@@ -14656,6 +15178,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 				};
 				class 180
 				{
+					text="$STR_A3_Arguments_Direction_Relative1_270_0";
 					speech[]=
 					{
 						"Rear"
@@ -14663,6 +15186,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 				};
 				class 270
 				{
+					text="$STR_A3_Arguments_Direction_Relative1_180_0";
 					speech[]=
 					{
 						"Left"
@@ -14673,6 +15197,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 			{
 				class 0
 				{
+					text="$STR_A3_Arguments_Direction_Relative1_0_0";
 					speech[]=
 					{
 						"Front"
@@ -14680,6 +15205,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 				};
 				class 90
 				{
+					text="$STR_A3_Arguments_Direction_Relative1_90_0";
 					speech[]=
 					{
 						"RightFlank"
@@ -14687,6 +15213,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 				};
 				class 180
 				{
+					text="$STR_A3_Arguments_Direction_Relative1_270_0";
 					speech[]=
 					{
 						"Rear"
@@ -14694,6 +15221,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 				};
 				class 270
 				{
+					text="$STR_A3_Arguments_Direction_Relative1_180_0";
 					speech[]=
 					{
 						"LeftFlank"
@@ -14727,6 +15255,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 				"XMIT",
 				"OnTheWay"
 			};
+			text="";
 			wordsClass="Normal";
 		};
 		class Stealth_OnTheWay
@@ -14737,6 +15266,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 				"XMIT",
 				"OnTheWay"
 			};
+			text="";
 			wordsClass="Stealth";
 		};
 		class Normal_Confirmation1
@@ -14747,6 +15277,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 				"XMIT",
 				"HC_MovingToPosition"
 			};
+			text="";
 			wordsClass="Normal";
 		};
 		class Stealth_Confirmation1
@@ -14757,6 +15288,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 				"XMIT",
 				"HC_MovingToPosition"
 			};
+			text="";
 			wordsClass="Stealth";
 		};
 		class Normal_Confirmation2
@@ -14767,6 +15299,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 				"XMIT",
 				"HC_Affirmative"
 			};
+			text="";
 			wordsClass="Normal";
 		};
 		class Stealth_Confirmation2
@@ -14777,6 +15310,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 				"XMIT",
 				"HC_Affirmative"
 			};
+			text="";
 			wordsClass="Stealth";
 		};
 	};
@@ -14809,6 +15343,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 				"XMIT",
 				"ImOnIt"
 			};
+			text="";
 			wordsClass="Normal";
 		};
 		class Stealth_CopyIAmOnHim
@@ -14819,6 +15354,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 				"XMIT",
 				"ImOnIt"
 			};
+			text="";
 			wordsClass="Stealth";
 		};
 		class Normal_LockAndLoad
@@ -14829,6 +15365,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 				"XMIT",
 				"HC_EngagingE"
 			};
+			text="";
 			wordsClass="Normal";
 		};
 		class Stealth_LockAndLoad
@@ -14839,6 +15376,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 				"XMIT",
 				"HC_EngagingE"
 			};
+			text="";
 			wordsClass="Stealth";
 		};
 		class Normal_TargetAcquired
@@ -14849,6 +15387,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 				"XMIT",
 				"TargetAcquired"
 			};
+			text="";
 			wordsClass="Normal";
 		};
 		class Stealth_TargetAcquired
@@ -14859,6 +15398,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 				"XMIT",
 				"TargetAcquired"
 			};
+			text="";
 			wordsClass="Stealth";
 		};
 		class Normal_TargetInSight
@@ -14869,6 +15409,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 				"XMIT",
 				"TargetInSight"
 			};
+			text="";
 			wordsClass="Normal";
 		};
 		class Stealth_TargetInSight
@@ -14879,6 +15420,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 				"XMIT",
 				"TargetInSight"
 			};
+			text="";
 			wordsClass="Stealth";
 		};
 	};
@@ -14915,6 +15457,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 				"XMIT",
 				"AwaitingOrders"
 			};
+			text="";
 			wordsClass="Normal";
 		};
 		class Stealth_AwaitingOrders
@@ -14925,6 +15468,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 				"XMIT",
 				"AwaitingOrders"
 			};
+			text="";
 			wordsClass="Stealth";
 		};
 		class Normal_IAmReady
@@ -14935,6 +15479,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 				"XMIT",
 				"ReadyForOrders"
 			};
+			text="";
 			wordsClass="Normal";
 		};
 		class Stealth_IAmReady
@@ -14945,6 +15490,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 				"XMIT",
 				"ReadyForOrders"
 			};
+			text="";
 			wordsClass="Stealth";
 		};
 		class Normal_ReadyForOrders
@@ -14955,6 +15501,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 				"XMIT",
 				"Ready"
 			};
+			text="";
 			wordsClass="Normal";
 		};
 		class Stealth_ReadyForOrders
@@ -14965,6 +15512,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 				"XMIT",
 				"Ready"
 			};
+			text="";
 			wordsClass="Stealth";
 		};
 		class Normal_StandingBy
@@ -14975,6 +15523,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 				"XMIT",
 				"StandingBy"
 			};
+			text="";
 			wordsClass="Normal";
 		};
 		class Stealth_StandingBy
@@ -14985,6 +15534,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 				"XMIT",
 				"StandingBy"
 			};
+			text="";
 			wordsClass="Stealth";
 		};
 		class Normal_Waiting
@@ -14995,6 +15545,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 				"XMIT",
 				"Waiting"
 			};
+			text="";
 			wordsClass="Normal";
 		};
 		class Stealth_Waiting
@@ -15005,6 +15556,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 				"XMIT",
 				"Waiting"
 			};
+			text="";
 			wordsClass="Stealth";
 		};
 	};
@@ -15025,6 +15577,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 				"XMIT",
 				"ScreamingE"
 			};
+			text="";
 			wordsClass="Normal";
 		};
 		class Stealth_ScreamingE
@@ -15035,6 +15588,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 				"XMIT",
 				"ScreamingE"
 			};
+			text="";
 			wordsClass="Stealth";
 		};
 	};
@@ -15059,6 +15613,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 				"XMIT",
 				"RequestAcknowledgedSGCASBombing"
 			};
+			text="";
 			wordsClass="Normal";
 		};
 		class Stealth_RequestAcknowledgedSGCASBombing
@@ -15069,6 +15624,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 				"XMIT",
 				"RequestAcknowledgedSGCASBombing"
 			};
+			text="";
 			wordsClass="Stealth";
 		};
 		class Normal_RequestAcknowledgedSGCASHelicopter
@@ -15079,6 +15635,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 				"XMIT",
 				"RequestAcknowledgedSGCASHelicopter"
 			};
+			text="";
 			wordsClass="Normal";
 		};
 		class Stealth_RequestAcknowledgedSGCASHelicopter
@@ -15089,6 +15646,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 				"XMIT",
 				"RequestAcknowledgedSGCASHelicopter"
 			};
+			text="";
 			wordsClass="Stealth";
 		};
 	};
@@ -15109,6 +15667,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordSeveral_1
 		{
+			text="Several";
 			speech[]=
 			{
 				"Several"
@@ -15132,6 +15691,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordSingle_1
 		{
+			text="Single";
 			speech[]=
 			{
 				"Single"
@@ -15155,6 +15715,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordNone_1
 		{
+			text="None";
 			speech[]=
 			{
 				"None"
@@ -15178,6 +15739,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordSome_1
 		{
+			text="Some";
 			speech[]=
 			{
 				"Some"
@@ -15201,6 +15763,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordALotOf_1
 		{
+			text="A Lot Of";
 			speech[]=
 			{
 				"ALotOf"
@@ -15224,6 +15787,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordIndependent_1
 		{
+			text="Independent";
 			speech[]=
 			{
 				"Independent"
@@ -15247,6 +15811,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordCivilian_1
 		{
+			text="Civilian";
 			speech[]=
 			{
 				"Civilian"
@@ -15270,6 +15835,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordOfThem_1
 		{
+			text="of them";
 			speech[]=
 			{
 				"OfThem"
@@ -15293,6 +15859,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordNear_1
 		{
+			text="near";
 			speech[]=
 			{
 				"Near"
@@ -15316,6 +15883,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordNotFar_1
 		{
+			text="not far";
 			speech[]=
 			{
 				"NotFar"
@@ -15339,6 +15907,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordFrom_1
 		{
+			text="from";
 			speech[]=
 			{
 				"From"
@@ -15362,6 +15931,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordAround_1
 		{
+			text="around";
 			speech[]=
 			{
 				"Around"
@@ -15385,6 +15955,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordHere_1
 		{
+			text="here";
 			speech[]=
 			{
 				"Here"
@@ -15408,6 +15979,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordThere_1
 		{
+			text="there";
 			speech[]=
 			{
 				"There"
@@ -15431,6 +16003,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordProbably_1
 		{
+			text="probably";
 			speech[]=
 			{
 				"Probably"
@@ -15454,6 +16027,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordIsProbablyToThe_1
 		{
+			text="is probably to the";
 			speech[]=
 			{
 				"IsProbablyToThe"
@@ -15477,6 +16051,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordJustNow_1
 		{
+			text="Just Now";
 			speech[]=
 			{
 				"JustNow"
@@ -15500,6 +16075,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordAFewMinutesAgo_1
 		{
+			text="A few Minutes Ago";
 			speech[]=
 			{
 				"AFewMinutesAgo"
@@ -15523,6 +16099,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordAFewHoursAgo_1
 		{
+			text="A Few Hours Ago";
 			speech[]=
 			{
 				"AFewHoursAgo"
@@ -15546,6 +16123,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordToday_1
 		{
+			text="Today";
 			speech[]=
 			{
 				"Today"
@@ -15569,6 +16147,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordYesterday_1
 		{
+			text="Yesterday";
 			speech[]=
 			{
 				"Yesterday"
@@ -15592,6 +16171,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordSeveralDaysAgo_1
 		{
+			text="Several Days Ago";
 			speech[]=
 			{
 				"SeveralDaysAgo"
@@ -15615,6 +16195,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordEnglishQ_1
 		{
+			text="English?";
 			speech[]=
 			{
 				"EnglishQ"
@@ -15638,6 +16219,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordRussianQ_1
 		{
+			text="Russian?";
 			speech[]=
 			{
 				"RussianQ"
@@ -15661,6 +16243,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordDidYouSeeAnythingRecentlyQ_1
 		{
+			text="Did you see anything recently?";
 			speech[]=
 			{
 				"DidYouSeeAnythingRecentlyQ"
@@ -15684,6 +16267,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordYesISawSomething_1
 		{
+			text="Yes, I saw something";
 			speech[]=
 			{
 				"YesISawSomething"
@@ -15707,6 +16291,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordNoIDidntSeeAnything_1
 		{
+			text="No, I didn't see anything";
 			speech[]=
 			{
 				"NoIDidntSeeAnything"
@@ -15730,6 +16315,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordWhatsTheWeatherForecastQ_1
 		{
+			text="What's the weather forecast?";
 			speech[]=
 			{
 				"WhatsTheWeatherForecastQ"
@@ -15753,6 +16339,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordNiceWeatherHuhQ_1
 		{
+			text="Nice weather, huh?";
 			speech[]=
 			{
 				"NiceWeatherHuhQ"
@@ -15776,6 +16363,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordNastyWeatherHuhQ_1
 		{
+			text="Nasty weather, huh?";
 			speech[]=
 			{
 				"NastyWeatherHuhQ"
@@ -15799,6 +16387,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordShouldBeClearingUpSoon_1
 		{
+			text="Should be clearing up soon";
 			speech[]=
 			{
 				"ShouldBeClearingUpSoon"
@@ -15822,6 +16411,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordIReckonWellGetSomeRainSoon_1
 		{
+			text="I reckon we'll get some rain soon";
 			speech[]=
 			{
 				"IReckonWellGetSomeRainSoon"
@@ -15845,6 +16435,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordTheySayItllStayLikeThisForAWhile_1
 		{
+			text="They say it'll stay like this for a while";
 			speech[]=
 			{
 				"TheySayItllStayLikeThisForAWhile"
@@ -15868,6 +16459,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordWhatsTheClosestSettlementQ_1
 		{
+			text="What's the closest settlement?";
 			speech[]=
 			{
 				"WhatsTheClosestSettlementQ"
@@ -15891,6 +16483,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordTheClosestOneIs_1
 		{
+			text="The closest one is";
 			speech[]=
 			{
 				"TheClosestOneIs"
@@ -15914,6 +16507,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordImNotFromAroundHere_1
 		{
+			text="I'm not from around here";
 			speech[]=
 			{
 				"ImNotFromAroundHere"
@@ -15937,6 +16531,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordNoIdeaIDontLiveHere_1
 		{
+			text="No idea, I don't live here";
 			speech[]=
 			{
 				"NoIdeaIDontLiveHere"
@@ -15960,6 +16555,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordYouAlreadyAskedMeThat_1
 		{
+			text="You already asked me that";
 			speech[]=
 			{
 				"YouAlreadyAskedMeThat"
@@ -15983,6 +16579,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordAreYouKiddingQ_1
 		{
+			text="Are you kidding?";
 			speech[]=
 			{
 				"AreYouKiddingQ"
@@ -16006,6 +16603,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordStopAskingMeThat_1
 		{
+			text="Stop asking me that";
 			speech[]=
 			{
 				"StopAskingMeThat"
@@ -16029,6 +16627,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordSorryIDontUnderstand_1
 		{
+			text="Sorry, I don't understand";
 			speech[]=
 			{
 				"SorryIDontUnderstand"
@@ -16052,6 +16651,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordUhWhatQ_1
 		{
+			text="Uh, what?";
 			speech[]=
 			{
 				"UhWhatQ"
@@ -16075,6 +16675,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordIWillOnlyTellYouMyNameRankAndSerialNumber_1
 		{
+			text="I will only tell you my name, rank, and serial number";
 			speech[]=
 			{
 				"IWillOnlyTellYouMyNameRankAndSerialNumber"
@@ -16098,6 +16699,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordSirQ_1
 		{
+			text="Sir?";
 			speech[]=
 			{
 				"SirQ"
@@ -16121,6 +16723,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordPrivateQ_1
 		{
+			text="Private?";
 			speech[]=
 			{
 				"PrivateQ"
@@ -16144,6 +16747,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordCorporalQ_1
 		{
+			text="Corporal?";
 			speech[]=
 			{
 				"CorporalQ"
@@ -16167,6 +16771,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordSergeantQ_1
 		{
+			text="Sergeant?";
 			speech[]=
 			{
 				"SergeantQ"
@@ -16190,6 +16795,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordLieutenantQ_1
 		{
+			text="Lieutenant?";
 			speech[]=
 			{
 				"LieutenantQ"
@@ -16213,6 +16819,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordCaptainQ_1
 		{
+			text="Captain?";
 			speech[]=
 			{
 				"CaptainQ"
@@ -16236,6 +16843,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordMajorQ_1
 		{
+			text="Major?";
 			speech[]=
 			{
 				"MajorQ"
@@ -16259,6 +16867,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordColonelQ_1
 		{
+			text="Colonel?";
 			speech[]=
 			{
 				"ColonelQ"
@@ -16282,6 +16891,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordYesPrivate_1
 		{
+			text="Yes, private";
 			speech[]=
 			{
 				"YesPrivate"
@@ -16305,6 +16915,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordYesCorporal_1
 		{
+			text="Yes, corporal";
 			speech[]=
 			{
 				"YesCorporal"
@@ -16328,6 +16939,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordYesSergeant_1
 		{
+			text="Yes, sergeant";
 			speech[]=
 			{
 				"YesSergeant"
@@ -16351,6 +16963,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordYesLieutenant_1
 		{
+			text="Yes, lieutenant";
 			speech[]=
 			{
 				"YesLieutenant"
@@ -16374,6 +16987,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordYesCaptain_1
 		{
+			text="Yes, captain";
 			speech[]=
 			{
 				"YesCaptain"
@@ -16397,6 +17011,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordYesMajor_1
 		{
+			text="Yes, major";
 			speech[]=
 			{
 				"YesMajor"
@@ -16420,6 +17035,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordYesColonel_1
 		{
+			text="Yes, colonel";
 			speech[]=
 			{
 				"YesColonel"
@@ -16443,6 +17059,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordSoldierQ_1
 		{
+			text="Soldier?";
 			speech[]=
 			{
 				"SoldierQ"
@@ -16466,6 +17083,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordMorninSoldier_1
 		{
+			text="Mornin', soldier";
 			speech[]=
 			{
 				"MorninSoldier"
@@ -16489,6 +17107,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordEveninSoldier_1
 		{
+			text="Evenin', soldier";
 			speech[]=
 			{
 				"EveninSoldier"
@@ -16512,6 +17131,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordGoodDaySir_1
 		{
+			text="Good day, sir";
 			speech[]=
 			{
 				"GoodDaySir"
@@ -16535,6 +17155,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordGoodEveningSir_1
 		{
+			text="Good evening, sir";
 			speech[]=
 			{
 				"GoodEveningSir"
@@ -16558,6 +17179,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordGoodMorningSir_1
 		{
+			text="Good morning, sir";
 			speech[]=
 			{
 				"GoodMorningSir"
@@ -16581,6 +17203,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordGoodDay_1
 		{
+			text="Good day";
 			speech[]=
 			{
 				"GoodDay"
@@ -16604,6 +17227,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordGoodMorning_1
 		{
+			text="Good morning";
 			speech[]=
 			{
 				"GoodMorning"
@@ -16627,6 +17251,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordGoodEvening_1
 		{
+			text="Good evening";
 			speech[]=
 			{
 				"GoodEvening"
@@ -16650,6 +17275,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordWhatQ_1
 		{
+			text="What?";
 			speech[]=
 			{
 				"WhatQ"
@@ -16673,6 +17299,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordYesSir_1
 		{
+			text="Yes, sir";
 			speech[]=
 			{
 				"YesSir"
@@ -16696,6 +17323,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordHelloSir_1
 		{
+			text="Hello, sir";
 			speech[]=
 			{
 				"HelloSir"
@@ -16719,6 +17347,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordYep_1
 		{
+			text="Yep";
 			speech[]=
 			{
 				"Yep"
@@ -16742,6 +17371,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordYeahQ_1
 		{
+			text="Yeah?";
 			speech[]=
 			{
 				"YeahQ"
@@ -16765,6 +17395,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordHi_1
 		{
+			text="Hi";
 			speech[]=
 			{
 				"Hi"
@@ -16788,6 +17419,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordHiThereE_1
 		{
+			text="Hi there!";
 			speech[]=
 			{
 				"HiThereE"
@@ -16811,6 +17443,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordHeyMan_1
 		{
+			text="Hey, man";
 			speech[]=
 			{
 				"HeyMan"
@@ -16834,6 +17467,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordHiDude_1
 		{
+			text="Hi, dude";
 			speech[]=
 			{
 				"HiDude"
@@ -16857,6 +17491,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordHello_1
 		{
+			text="Hello";
 			speech[]=
 			{
 				"Hello"
@@ -16880,6 +17515,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordHowsThingsQ_1
 		{
+			text="How's things?";
 			speech[]=
 			{
 				"HowsThingsQ"
@@ -16903,6 +17539,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordHowAreYouQ_1
 		{
+			text="How are you?";
 			speech[]=
 			{
 				"HowAreYouQ"
@@ -16926,6 +17563,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordHeyE_1
 		{
+			text="Hey!";
 			speech[]=
 			{
 				"HeyE"
@@ -16949,6 +17587,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordWhatDoYouWantQ_1
 		{
+			text="What do you want?";
 			speech[]=
 			{
 				"WhatDoYouWantQ"
@@ -16972,6 +17611,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordWhatDoYouNeedQ_1
 		{
+			text="What do you need?";
 			speech[]=
 			{
 				"WhatDoYouNeedQ"
@@ -16995,6 +17635,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordWhatsUpQ_1
 		{
+			text="What's up?";
 			speech[]=
 			{
 				"WhatsUpQ"
@@ -17018,6 +17659,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordYesQ_1
 		{
+			text="Yes?";
 			speech[]=
 			{
 				"YesQ"
@@ -17041,6 +17683,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordMaamQ_1
 		{
+			text="Ma'am?";
 			speech[]=
 			{
 				"MaamQ"
@@ -17064,6 +17707,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordHaveANiceDay_1
 		{
+			text="Have a nice day";
 			speech[]=
 			{
 				"HaveANiceDay"
@@ -17087,6 +17731,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordMorningMaam_1
 		{
+			text="Morning, ma'am";
 			speech[]=
 			{
 				"MorningMaam"
@@ -17110,6 +17755,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordHelloThere_1
 		{
+			text="Hello there";
 			speech[]=
 			{
 				"HelloThere"
@@ -17133,6 +17779,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordHowYouDoinQ_1
 		{
+			text="How you doin'?";
 			speech[]=
 			{
 				"HowYouDoinQ"
@@ -17156,6 +17803,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordDontTouchMeE_1
 		{
+			text="Don't touch me!";
 			speech[]=
 			{
 				"DontTouchMeE"
@@ -17179,6 +17827,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordNotNowE_1
 		{
+			text="Not now!";
 			speech[]=
 			{
 				"NotNowE"
@@ -17202,6 +17851,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordLater_1
 		{
+			text="Later";
 			speech[]=
 			{
 				"Later"
@@ -17225,6 +17875,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordNoTimeE_1
 		{
+			text="No time!";
 			speech[]=
 			{
 				"NoTimeE"
@@ -17248,6 +17899,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordHushE_1
 		{
+			text="Hush!";
 			speech[]=
 			{
 				"HushE"
@@ -17271,6 +17923,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordSsshhE_1
 		{
+			text="Ssshh!";
 			speech[]=
 			{
 				"SsshhE"
@@ -17294,6 +17947,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordCantYouSeeImBusyQ_1
 		{
+			text="Can't you see I'm busy?";
 			speech[]=
 			{
 				"CantYouSeeImBusyQ"
@@ -17317,6 +17971,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordBitOccupiedAtTheMomentDude_1
 		{
+			text="Bit occupied at the moment, dude";
 			speech[]=
 			{
 				"BitOccupiedAtTheMomentDude"
@@ -17340,6 +17995,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordImBusyE_1
 		{
+			text="I'm busy!";
 			speech[]=
 			{
 				"ImBusyE"
@@ -17363,6 +18019,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordPissOffE_1
 		{
+			text="Piss off!";
 			speech[]=
 			{
 				"PissOffE"
@@ -17386,6 +18043,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordNiceToSeeYou_1
 		{
+			text="Nice to see you";
 			speech[]=
 			{
 				"NiceToSeeYou"
@@ -17409,6 +18067,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordGoodToSeeYou_1
 		{
+			text="Good to see you";
 			speech[]=
 			{
 				"GoodToSeeYou"
@@ -17432,6 +18091,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordHeyGladYoureHere_1
 		{
+			text="Hey, glad you're here";
 			speech[]=
 			{
 				"HeyGladYoureHere"
@@ -17455,6 +18115,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordCanIHelpYouQ_1
 		{
+			text="Can I help you?";
 			speech[]=
 			{
 				"CanIHelpYouQ"
@@ -17478,6 +18139,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordGetLostE_1
 		{
+			text="Get lost!";
 			speech[]=
 			{
 				"GetLostE"
@@ -17501,6 +18163,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordLeaveMeAloneE_1
 		{
+			text="Leave me alone!";
 			speech[]=
 			{
 				"LeaveMeAloneE"
@@ -17524,6 +18187,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordLeaveUsAloneE_1
 		{
+			text="Leave us alone!";
 			speech[]=
 			{
 				"LeaveUsAloneE"
@@ -17547,6 +18211,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordFuckingPig_1
 		{
+			text="Fucking pig";
 			speech[]=
 			{
 				"FuckingPig"
@@ -17570,6 +18235,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordSonOfABitchE_1
 		{
+			text="Son of a bitch!";
 			speech[]=
 			{
 				"SonOfABitchE"
@@ -17593,6 +18259,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordDamnYouE_1
 		{
+			text="Damn you!";
 			speech[]=
 			{
 				"DamnYouE"
@@ -17616,6 +18283,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordCanIAskYouSomethingQ_1
 		{
+			text="Can I ask you something?";
 			speech[]=
 			{
 				"CanIAskYouSomethingQ"
@@ -17639,6 +18307,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordPleaseCanYouHelpQ_1
 		{
+			text="Please, can you help?";
 			speech[]=
 			{
 				"PleaseCanYouHelpQ"
@@ -17662,6 +18331,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordSpeak_1
 		{
+			text="Speak";
 			speech[]=
 			{
 				"Speak"
@@ -17685,6 +18355,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordHelpUs_1
 		{
+			text="Help us";
 			speech[]=
 			{
 				"HelpUs"
@@ -17708,6 +18379,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordIWontSayAnotherWord_1
 		{
+			text="I won't say another word";
 			speech[]=
 			{
 				"IWontSayAnotherWord"
@@ -17731,6 +18403,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordMindYourOwnBusiness_1
 		{
+			text="Mind your own business";
 			speech[]=
 			{
 				"MindYourOwnBusiness"
@@ -17754,6 +18427,7 @@ class RHS_RadioProtocolRUS: RHS_RadioProtocolBaseRUS
 		};
 		class WordGoBotherSomeoneElse_1
 		{
+			text="Go bother someone else";
 			speech[]=
 			{
 				"GoBotherSomeoneElse"

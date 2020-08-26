@@ -12,7 +12,15 @@ class CfgPatches
 			"rhsusf_m1a2sep1tuskiiwd_usarmy"
 		};
 		weapons[]={};
+		requiredVersion=1.83;
+		requiredAddons[]=
+		{
+			"rhsusf_main",
+			"rhsusf_c_m1a1"
+		};
 		name="M1A2 Tanks";
+		author="$STR_RHSUSF_AUTHOR_FULL";
+		url="http://www.rhsmods.org/";
 	};
 };
 class DefaultEventhandlers;
@@ -23,6 +31,126 @@ class Optics_Commander_01: Optics_Armored
 	class Wide;
 	class Medium;
 	class Narrow;
+};
+class CfgMovesBasic
+{
+	class Default;
+	class DefaultDie;
+	class ManActions
+	{
+		RHS_M1A1_Commander="RHS_M1A1_Commander";
+		RHS_M1A1_Gunner="RHS_M1A1_Gunner";
+		RHS_M1A1_Loader="RHS_M1A1_Loader";
+		RHS_M1A2_Commander="RHS_M1A2_Commander";
+		RHS_M1A2_CommanderOUT="RHS_M1A2_CommanderOUT";
+	};
+};
+class CfgMovesMaleSdr: CfgMovesBasic
+{
+	class States
+	{
+		class Crew;
+		class rhs_crew_in: Default
+		{
+			actions="CargoActions";
+			aiming="aimingNo";
+			aimingBody="aimingNo";
+			legs="legsNo";
+			head="headNo";
+			disableWeapons=1;
+			interpolationRestart=1;
+			soundEdge[]={0.44999999};
+			file="\rhsusf\addons\rhsusf_c_m1a2\anims\KIA_RHS_M1A2_Commander.rtm";
+			boundingSphere=2.5;
+			canPullTrigger=0;
+			leaning="crewShake";
+			rightHandIKCurve[]={1};
+			leftHandIKCurve[]={1};
+			rightLegIKCurve[]={1};
+			leftLegIKCurve[]={1};
+			ConnectTo[]={};
+			InterpolateTo[]=
+			{
+				"Unconscious",
+				0.1
+			};
+		};
+		class KIA_RHS_M1A2_Commander: DefaultDie
+		{
+			actions="DeadActions";
+			file="\rhsusf\addons\rhsusf_c_m1a2\anims\KIA_RHS_M1A2_Commander.rtm";
+			terminal=1;
+			soundEnabled=0;
+			connectTo[]=
+			{
+				"Unconscious",
+				0.1
+			};
+			speed=0.5;
+			looped=0;
+		};
+		class KIA_RHS_M1A2_CommanderOut: KIA_RHS_M1A2_Commander
+		{
+			file="\rhsusf\addons\rhsusf_c_m1a2\anims\KIA_RHS_M1A2_CommanderOut.rtm";
+		};
+		class KIA_RHS_M1A1_Gunner: KIA_RHS_M1A2_Commander
+		{
+			file="\rhsusf\addons\rhsusf_c_m1a2\anims\RHS_M1A1_Gunner.rtm";
+		};
+		class KIA_RHS_M1A1_Loader: KIA_RHS_M1A2_Commander
+		{
+			file="\rhsusf\addons\rhsusf_c_m1a2\anims\RHS_M1A1_Loader.rtm";
+		};
+		class KIA_RHS_M1A1_Commander: KIA_RHS_M1A2_Commander
+		{
+			file="\rhsusf\addons\rhsusf_c_m1a2\anims\RHS_M1A1_Commander.rtm";
+		};
+		class RHS_M1A2_Commander: rhs_crew_in
+		{
+			file="\rhsusf\addons\rhsusf_c_m1a2\anims\RHS_M1A2_Commander.rtm";
+			interpolateTo[]=
+			{
+				"KIA_RHS_M1A2_Commander",
+				1
+			};
+		};
+		class RHS_M1A2_CommanderOut: Crew
+		{
+			file="\rhsusf\addons\rhsusf_c_m1a2\anims\RHS_M1A2_CommanderOut.rtm";
+			interpolateTo[]=
+			{
+				"KIA_RHS_M1A2_CommanderOut",
+				1
+			};
+		};
+		class RHS_M1A1_Gunner: rhs_crew_in
+		{
+			file="\rhsusf\addons\rhsusf_c_m1a2\anims\RHS_M1A1_Gunner.rtm";
+			interpolateTo[]=
+			{
+				"KIA_RHS_M1A1_Gunner",
+				1
+			};
+		};
+		class RHS_M1A1_Loader: rhs_crew_in
+		{
+			file="\rhsusf\addons\rhsusf_c_m1a2\anims\RHS_M1A1_Loader.rtm";
+			interpolateTo[]=
+			{
+				"KIA_RHS_M1A1_Loader",
+				1
+			};
+		};
+		class RHS_M1A1_Commander: rhs_crew_in
+		{
+			file="\rhsusf\addons\rhsusf_c_m1a2\anims\RHS_M1A1_Commander.rtm";
+			interpolateTo[]=
+			{
+				"KIA_RHS_M1A1_Commander",
+				1
+			};
+		};
+	};
 };
 class CfgFunctions
 {
@@ -72,6 +200,11 @@ class CfgVehicles
 			class HitLTrack;
 			class HitRTrack;
 		};
+		class Sounds: Sounds
+		{
+			class Engine;
+			class Movement;
+		};
 	};
 	class MBT_01_base_F: Tank_F
 	{
@@ -79,6 +212,7 @@ class CfgVehicles
 	};
 	class rhsusf_m1a1tank_base: MBT_01_base_F
 	{
+		dlc="RHS_USAF";
 		class AnimationSources;
 		class HitPoints;
 		class EventHandlers: EventHandlers
@@ -111,6 +245,9 @@ class CfgVehicles
 		};
 		displayName="$STR_M1A2SEP_Name";
 		accuracy=0.30000001;
+		model="\rhsusf\addons\rhsusf_m1a2\m1a2v1";
+		Icon="\rhsusf\addons\rhsusf_m1a2\icons\M1A2SEPV1.paa";
+		picture="\rhsusf\addons\rhsusf_m1a2\icons\M1A2SIDE_ca.paa";
 		typicalCargo[]={};
 		side=1;
 		class Turrets: Turrets
@@ -121,9 +258,20 @@ class CfgVehicles
 				{
 					class CommanderOptics: CommanderOptics
 					{
+						body="CITVTurret";
+						gun="CITVGun";
+						animationSourceBody="CITVTurret";
+						animationSourceGun="CITVGun";
 						maxHorizontalRotSpeed=1.3;
 						maxVerticalRotSpeed=0.47999999;
 						stabilizedInAxes=3;
+						soundServo[]=
+						{
+							"A3\Sounds_F\vehicles\armor\noises\servo_armor_comm",
+							1,
+							1,
+							30
+						};
 						soundServoVertical[]=
 						{
 							"A3\Sounds_F\vehicles\armor\noises\servo_armor_comm",
@@ -138,6 +286,8 @@ class CfgVehicles
 						maxTurn=360;
 						initTurn=0;
 						memoryPointGun="usti hlavne3";
+						gunBeg="usti hlavne3";
+						gunEnd="konec hlavne3";
 						LodTurnedOut=1200;
 						weapons[]=
 						{
@@ -147,6 +297,14 @@ class CfgVehicles
 						{
 							"rhsusf_mag_L8A3_12"
 						};
+						turretInfoType="RscOptics_Offroad_01";
+						memoryPointGunnerOutOptics="";
+						memoryPointGunnerOptics="loaderview";
+						gunnerOpticsModel="\A3\weapons_f\reticle\Optics_Commander_02_F";
+						gunnerOutForceOptics=0;
+						gunnerOutOpticsModel="";
+						gunnerOpticsEffect[]={};
+						gunnerHasFlares=1;
 						class ViewOptics: ViewOptics
 						{
 							initAngleX=0;
@@ -172,6 +330,7 @@ class CfgVehicles
 								minFov=0.23333301;
 								maxFov=0.23333301;
 								hitpoint="Hit_Optic_CITV";
+								gunnerOpticsModel="\rhsusf\addons\rhsusf_optics\data\rhsusf_CITV_w";
 							};
 							class Medium: Medium
 							{
@@ -179,6 +338,7 @@ class CfgVehicles
 								minFov=0.116667;
 								maxFov=0.116667;
 								hitpoint="Hit_Optic_CITV";
+								gunnerOpticsModel="\rhsusf\addons\rhsusf_optics\data\rhsusf_CITV_m";
 							};
 							class Medium_TI: Medium
 							{
@@ -201,9 +361,17 @@ class CfgVehicles
 								initFov=0.014;
 								minFov=0.014;
 								maxFov=0.014;
+								gunnerOpticsModel="\rhsusf\addons\rhsusf_optics\data\rhsusf_CITV_n";
 							};
 						};
+						gunnerAction="mbt2_slot2b_out";
+						gunnerInAction="RHS_M1A2_Commander";
+						gunnerGetInAction="GetInHigh";
+						gunnerGetOutAction="GetOutHigh";
 						startEngine=0;
+						viewGunnerInExternal=1;
+						outGunnerMayFire=1;
+						inGunnerMayFire=1;
 						class HitPoints
 						{
 							class HitTurretCom
@@ -211,6 +379,7 @@ class CfgVehicles
 								armor=0.30000001;
 								material=-1;
 								name="vezVelitele";
+								visual="vezVelitele";
 								passThrough=0;
 								minimalHit=0.029999999;
 								explosionShielding=0.60000002;
@@ -222,6 +391,7 @@ class CfgVehicles
 								armor=0.30000001;
 								material=-1;
 								name="zbranVelitele";
+								visual="zbranVelitele";
 								passThrough=0;
 								minimalHit=0.029999999;
 								explosionShielding=0.60000002;
@@ -233,6 +403,7 @@ class CfgVehicles
 								armor=-40;
 								explosionShielding=0;
 								name="";
+								visual="vis_optic_CITV";
 								armorComponent="Hit_Optic_CITV";
 								passThrough=0;
 							};
@@ -252,16 +423,38 @@ class CfgVehicles
 							"rhs_mag_762x51_M240_200",
 							"rhs_mag_762x51_M240_200"
 						};
+						discreteDistance[]={100,200,300,400,500,600,700,800,900};
+						discreteDistanceInitIndex=2;
+						turretInfoType="RHS_RscWeaponZeroing";
+						body="LoaderTurret";
+						gun="LoaderGun";
 						minTurn=48;
 						maxTurn=140;
 						isPersonTurret=0;
+						animationSourceBody="LoaderTurret";
+						animationSourceGun="LoaderGun";
 						lockWhenDriverOut=0;
 						commanding=-3;
 						primaryObserver=0;
+						gunnerOutOpticsModel="\A3\weapons_f\reticle\optics_empty";
 						soundAttenuationTurret="HeliAttenuationGunner";
+						disableSoundAttenuation=0;
 						stabilizedInAxes=0;
+						memoryPointGunnerOutOptics="loader_out_view";
+						memoryPointGunnerOptics="loaderview";
+						memoryPointsGetInGunner="pos gunner";
+						memoryPointsGetInGunnerDir="pos gunner dir";
+						gunnername="Loader";
+						gunnerAction="RHS_M1A2_CommanderOUT";
+						gunnerInAction="RHS_M1A1_Loader";
+						gunnerDoor="hatchL";
+						gunnerLeftHandAnimName="Loader_Gun";
+						gunnerRightHandAnimName="Loader_Gun";
 						proxyindex=2;
+						inGunnerMayFire=0;
 						memoryPointGun="usti hlavne5";
+						gunBeg="usti hlavne5";
+						gunEnd="konec hlavne5";
 						selectionFireAnim="zasleh5";
 						class HitPoints
 						{
@@ -270,6 +463,7 @@ class CfgVehicles
 								armor=0.30000001;
 								material=-1;
 								name="LoaderTurret";
+								visual="-";
 								passThrough=0;
 								minimalHit=0.029999999;
 								explosionShielding=0.60000002;
@@ -281,6 +475,7 @@ class CfgVehicles
 								armor=0.30000001;
 								material=-1;
 								name="LoaderGun";
+								visual="-";
 								passThrough=0;
 								minimalHit=0.029999999;
 								explosionShielding=0.60000002;
@@ -292,6 +487,7 @@ class CfgVehicles
 								armor=-40;
 								explosionShielding=0;
 								name="";
+								visual="vis_optic_LoaderPeriscope";
 								armorComponent="Hit_Optic_LoaderPeriscope";
 								passThrough=0;
 							};
@@ -299,17 +495,33 @@ class CfgVehicles
 					};
 					class CommanderMG: CommanderOptics
 					{
+						gunnername="Commander MG";
 						proxyindex=3;
 						dontCreateAi=1;
 						cantCreateAI=1;
 						isPersonTurret=0;
+						body="ObsTurret";
+						gun="ObsGun";
+						animationSourceBody="ObsTurret";
+						animationSourceGun="ObsGun";
+						gunnerDoor="";
 						stabilizedInAxes=0;
+						gunnerAction="RHS_M1A2_CommanderOUT";
+						gunnerInAction="RHS_M1A2_CommanderOUT";
 						canHideGunner=0;
+						memoryPointGunnerOutOptics="commander_out_view";
+						gunnerOutOpticsModel="\A3\weapons_f\reticle\optics_empty";
 						soundAttenuationTurret="HeliAttenuationGunner";
+						disableSoundAttenuation=0;
+						gunnerLeftHandAnimName="handleL";
+						gunnerRightHandAnimName="handleR";
 						minElev=-8;
 						maxElev=30;
 						minTurn=-61;
 						maxTurn=61;
+						discreteDistance[]={100,200,300,400,500,600,700,800,900,1000,1100,1200,1300,1400,1500};
+						discreteDistanceInitIndex=2;
+						turretInfoType="RHS_RscWeaponZeroing";
 						weapons[]=
 						{
 							"RHS_M2_Abrams_Commander"
@@ -341,6 +553,7 @@ class CfgVehicles
 								maxFov=0.34999999;
 							};
 						};
+						gunnercompartments="Compartment5";
 						class HitPoints
 						{
 							class HitTurretComM2
@@ -348,6 +561,7 @@ class CfgVehicles
 								armor=0.30000001;
 								material=-1;
 								name="com_m2_turret";
+								visual="-";
 								passThrough=0;
 								minimalHit=0.029999999;
 								explosionShielding=0.60000002;
@@ -359,6 +573,7 @@ class CfgVehicles
 								armor=0.30000001;
 								material=-1;
 								name="com_m2_gun";
+								visual="-";
 								passThrough=0;
 								minimalHit=0.029999999;
 								explosionShielding=0.60000002;
@@ -370,6 +585,8 @@ class CfgVehicles
 				};
 				memoryPointGun="usti hlavne2";
 				selectionFireAnim="zaslehCoax";
+				gunBeg="usti hlavne";
+				gunEnd="konec hlavne";
 				weapons[]=
 				{
 					"rhs_weap_m256",
@@ -397,6 +614,13 @@ class CfgVehicles
 				initElev=5;
 				maxhorizontalrotspeed=0.69999999;
 				maxverticalrotspeed=0.44;
+				turretInfoType="RHS_RscWeaponM1_FCS";
+				discreteDistance[]={};
+				memoryPointGunnerOptics="gunnerview";
+				gunnerOutOpticsModel="";
+				gunnerOutOpticsEffect[]={};
+				gunnerOpticsEffect[]={};
+				gunnerForceOptics=1;
 				class OpticsIn
 				{
 					class Wide: ViewOptics
@@ -415,16 +639,20 @@ class CfgVehicles
 							"Normal"
 						};
 						thermalMode[]={2,3};
+						gunnerOpticsModel="\rhsusf\addons\rhsusf_m1a1\gunnerOptics_M1A2";
+						gunnerOpticsEffect[]={};
 						hitpoint="Hit_Optic_GPS";
 					};
 					class Medium: Wide
 					{
+						gunnerOpticsModel="\rhsusf\addons\rhsusf_m1a1\gunnerOptics_M1A1_2";
 						initFov=0.07;
 						minFov=0.07;
 						maxFov=0.07;
 					};
 					class Wide_TI: Wide
 					{
+						gunnerOpticsModel="\rhsusf\addons\rhsusf_m1a1\gunnerOptics_M1A2_ti";
 						visionMode[]=
 						{
 							"Ti"
@@ -442,24 +670,31 @@ class CfgVehicles
 					};
 					class Medium_TI: Wide_TI
 					{
+						gunnerOpticsModel="\rhsusf\addons\rhsusf_m1a1\gunnerOptics_M1A2_2";
 						initFov=0.053846199;
 						minFov=0.053846199;
 						maxFov=0.053846199;
 					};
 					class Medium2_TI: Wide_TI
 					{
+						gunnerOpticsModel="\rhsusf\addons\rhsusf_m1a1\gunnerOptics_M1A2_3";
 						initFov=0.028000001;
 						minFov=0.028000001;
 						maxFov=0.028000001;
 					};
 					class Narrow_TI: Wide_TI
 					{
+						gunnerOpticsModel="\rhsusf\addons\rhsusf_m1a1\gunnerOptics_M1A2_4";
 						initFov=0.014;
 						minFov=0.014;
 						maxFov=0.014;
 					};
 				};
+				gunnerAction="mbt2_slot2a_out";
+				gunnerInAction="RHS_M1A1_Gunner";
 				forceHideGunner=1;
+				inGunnerMayFire=1;
+				viewGunnerInExternal=1;
 				class HitPoints
 				{
 					class HitTurret
@@ -467,6 +702,7 @@ class CfgVehicles
 						armor=0.2;
 						material=-1;
 						name="vez";
+						visual="vez";
 						passThrough=0;
 						minimalHit=0.34;
 						explosionShielding=0.001;
@@ -478,6 +714,7 @@ class CfgVehicles
 						material=-1;
 						name="zbran";
 						armorComponent="Hit_Gun";
+						visual="-";
 						passThrough=0;
 						minimalHit=0.15000001;
 						explosionShielding=0;
@@ -488,42 +725,132 @@ class CfgVehicles
 						armor=-40;
 						explosionShielding=0;
 						name="";
+						visual="-";
 						armorComponent="Hit_HeadMirror";
 						passThrough=0;
 					};
 					class Hit_GPS_Optical: Hit_GPS_HeadMirror
 					{
+						visual="vis_optic_GPS";
 						armorComponent="Hit_Optic_GPS";
 					};
 					class Hit_GPS_TIS: Hit_GPS_HeadMirror
 					{
+						visual="vis_optic_GPS_TI";
 						armorComponent="Hit_Optic_GPS_TI";
 					};
 					class Hit_Optic_GPS: Hit_GPS_Optical
 					{
+						visual="-";
 						armorComponent="-";
 						depends="Hit_GPS_HeadMirror max Hit_GPS_Optical";
 					};
 					class Hit_Optic_GPS_TI: Hit_GPS_TIS
 					{
+						visual="-";
 						armorComponent="-";
 						depends="Hit_GPS_HeadMirror max Hit_GPS_TIS";
 					};
 				};
 			};
 		};
+		hiddenSelections[]=
+		{
+			"camo1",
+			"camo2",
+			"camo3",
+			"camo4",
+			"",
+			"",
+			"",
+			"n1",
+			"n2",
+			"n3",
+			"i1",
+			"i2",
+			"i3"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"rhsusf\addons\rhsusf_m1a2\data\rhsusf_m1a2_wd_01_co.paa",
+			"rhsusf\addons\rhsusf_m1a2\data\rhsusf_m1a2_wd_02_co.paa",
+			"rhsusf\addons\rhsusf_m1a1\data\rhsusf_m1a1aim_03_co.paa",
+			"rhsusf\addons\rhsusf_m1a1\loaderspintle\data\loaderspintle_wd_co.paa"
+		};
 		class textureSources
 		{
 			class woodland
 			{
 				displayName="Woodland";
+				author="$STR_RHSUSF_AUTHOR_FULL";
+				textures[]=
+				{
+					"rhsusf\addons\rhsusf_m1a2\data\rhsusf_m1a2_wd_01_co.paa",
+					"rhsusf\addons\rhsusf_m1a2\data\rhsusf_m1a2_wd_02_co.paa",
+					"rhsusf\addons\rhsusf_m1a1\data\rhsusf_m1a1aim_03_co.paa",
+					"rhsusf\addons\rhsusf_m1a1\loaderspintle\data\loaderspintle_wd_co.paa"
+				};
 			};
 			class desert: woodland
 			{
 				displayName="Desert";
+				author="$STR_RHSUSF_AUTHOR_FULL";
+				textures[]=
+				{
+					"rhsusf\addons\rhsusf_m1a2\data\rhsusf_m1a2_d_01_co.paa",
+					"rhsusf\addons\rhsusf_m1a2\data\rhsusf_m1a2_d_02_co.paa",
+					"rhsusf\addons\rhsusf_m1a1\data\rhsusf_m1a1aim_d_03_co.paa",
+					"rhsusf\addons\rhsusf_m1a1\loaderspintle\data\loaderspintle_d_co.paa"
+				};
 			};
 		};
-		class Damage;  //found empty after stripping
+		textureList[]={};
+		class Damage
+		{
+			tex[]={};
+			mat[]=
+			{
+				"rhsusf\addons\rhsusf_m1a1\data\rhsusf_m1a1aim_03.rvmat",
+				"rhsusf\addons\rhsusf_m1a1\data\rhsusf_dam_m1a1aim_03.rvmat",
+				"rhsusf\addons\rhsusf_m1a1\data\rhsusf_destr_m1a1aim_03.rvmat",
+				"rhsusf\addons\rhsusf_m1a1\data\rhsusf_m1a1aim_d_03.rvmat",
+				"rhsusf\addons\rhsusf_m1a1\data\rhsusf_dam_m1a1aim_d_03.rvmat",
+				"rhsusf\addons\rhsusf_m1a1\data\rhsusf_destr_m1a1aim_d_03.rvmat",
+				"rhsusf\addons\rhsusf_m1a1\data\rhsusf_m1a1aim_t.rvmat",
+				"rhsusf\addons\rhsusf_m1a1\data\rhsusf_dam_m1a1aim_t.rvmat",
+				"rhsusf\addons\rhsusf_m1a1\data\rhsusf_destr_m1a1aim_t.rvmat",
+				"rhsusf\addons\rhsusf_m1a2\data\rhsusf_m1a2_d_01.rvmat",
+				"rhsusf\addons\rhsusf_m1a2\data\rhsusf_dam_m1a2_d_01.rvmat",
+				"rhsusf\addons\rhsusf_m1a2\data\rhsusf_destr_m1a2_d_01.rvmat",
+				"rhsusf\addons\rhsusf_m1a2\data\rhsusf_m1a2_d_02.rvmat",
+				"rhsusf\addons\rhsusf_m1a2\data\rhsusf_dam_m1a2_d_02.rvmat",
+				"rhsusf\addons\rhsusf_m1a2\data\rhsusf_destr_m1a2_d_02.rvmat",
+				"rhsusf\addons\rhsusf_m1a2\data\rhsusf_m1a2_wd_01.rvmat",
+				"rhsusf\addons\rhsusf_m1a2\data\rhsusf_dam_m1a2_wd_01.rvmat",
+				"rhsusf\addons\rhsusf_m1a2\data\rhsusf_destr_m1a2_wd_01.rvmat",
+				"rhsusf\addons\rhsusf_m1a2\data\rhsusf_m1a2_wd_02.rvmat",
+				"rhsusf\addons\rhsusf_m1a2\data\rhsusf_dam_m1a2_wd_02.rvmat",
+				"rhsusf\addons\rhsusf_m1a2\data\rhsusf_destr_m1a2_wd_02.rvmat",
+				"rhsusf\addons\rhsusf_m1a2\data\rhsusf_tuskia2_d.rvmat",
+				"rhsusf\addons\rhsusf_m1a2\data\rhsusf_dam_tuskia2_d.rvmat",
+				"rhsusf\addons\rhsusf_m1a2\data\rhsusf_destr_tuskia2_d.rvmat",
+				"rhsusf\addons\rhsusf_m1a2\data\rhsusf_tuskia2_wd.rvmat",
+				"rhsusf\addons\rhsusf_m1a2\data\rhsusf_dam_tuskia2_wd.rvmat",
+				"rhsusf\addons\rhsusf_m1a2\data\rhsusf_destr_tuskia2_wd.rvmat",
+				"rhsusf\addons\rhsusf_m1a2\data\rhsusf_m1slat_d.rvmat",
+				"rhsusf\addons\rhsusf_m1a2\data\rhsusf_dam_m1slat_d.rvmat",
+				"rhsusf\addons\rhsusf_m1a2\data\rhsusf_destr_m1slat_d.rvmat",
+				"rhsusf\addons\rhsusf_m1a2\data\rhsusf_m1slat_wd.rvmat",
+				"rhsusf\addons\rhsusf_m1a2\data\rhsusf_dam_m1slat_wd.rvmat",
+				"rhsusf\addons\rhsusf_m1a2\data\rhsusf_destr_m1slat_wd.rvmat",
+				"a3\data_f\default.rvmat",
+				"a3\data_f\default.rvmat",
+				"a3\data_f\default_destruct.rvmat",
+				"rhsusf\addons\rhsusf_m1a1\data\opticsglass.rvmat",
+				"rhsusf\addons\rhsusf_m1a1\data\opticsglass_damage.rvmat",
+				"rhsusf\addons\rhsusf_m1a1\data\opticsglass_damage.rvmat"
+			};
+		};
 		class ViewOptics: ViewOptics
 		{
 			visionMode[]=
@@ -532,20 +859,101 @@ class CfgVehicles
 				"NVG"
 			};
 		};
-		class EventHandlers: EventHandlers;  //found empty after stripping
+		class AnimationSources: AnimationSources
+		{
+			class muzzle_rot_hmg2
+			{
+				source="ammorandom";
+				weapon="rhs_M2_Abrams_Gunner";
+			};
+			class reload2
+			{
+				source="reload";
+				weapon="RHS_M2_Abrams_Commander";
+			};
+			class ReloadMagazine2
+			{
+				source="reloadmagazine";
+				weapon="RHS_M2_Abrams_Commander";
+			};
+			class Revolving2
+			{
+				source="revolving";
+				weapon="RHS_M2_Abrams_Commander";
+			};
+			class ObsTurret
+			{
+				source="user";
+				animperiod=1.5;
+			};
+			class ObsGun
+			{
+				source="user";
+				animperiod=7;
+			};
+			class Unhide_vis_optic_d_CITV
+			{
+				source="hit";
+				hitpoint="Hit_Optic_CITV";
+			};
+		};
+		class UserActions
+		{
+			class trunk_open
+			{
+				displayName="Use M2";
+				position="trunk_action";
+				radius=4;
+				onlyForplayer=0;
+				condition="this animationPhase 'HatchCommander1'>0.5 and ((call rhsusf_fnc_findPlayer) == commander this)";
+				statement="(call rhsusf_fnc_findPlayer) action ['moveToTurret', this, [0,2]];[this,[[0,0],true]] remoteExecCall ['lockTurret']";
+			};
+			class trunk_close: trunk_open
+			{
+				displayName="Leave M2";
+				condition="vehicle (call rhsusf_fnc_findPlayer) turretUnit [0,2] == (call rhsusf_fnc_findPlayer)";
+				statement="(call rhsusf_fnc_findPlayer) action ['moveToTurret', this, [0,0]];[this,[[0,0],false]] remoteExecCall ['lockTurret']";
+			};
+		};
+		class EventHandlers: EventHandlers
+		{
+			class RHSUSF_EventHandlers: RHSUSF_EventHandlers
+			{
+				getOut="_this call rhs_fnc_M1_hatch";
+			};
+		};
 	};
 	class rhsusf_m1a2sep1d_usarmy: rhsusf_m1a2tank_base
 	{
+		editorPreview="rhsusf\addons\rhsusf_editorPreviews\data\rhsusf_m1a2sep1d_usarmy.paa";
+		scope=2;
 		displayName="$STR_M1A2SEP_Name";
+		author="$STR_RHSUSF_AUTHOR_FULL";
+		faction="rhs_faction_usarmy_d";
+		vehicleClass="rhs_vehclass_tank";
+		crew="rhsusf_army_ocp_combatcrewman";
 		rhs_decalParameters[]=
 		{
 			"['Label', cM1PlnSymPlaces, 'ArmyPlt_Abrams_D']",
 			"['Label', cM1BarrelSymPlaces, 'BarrelArt_Abrams_D']"
 		};
+		hiddenSelectionsTextures[]=
+		{
+			"rhsusf\addons\rhsusf_m1a2\data\rhsusf_m1a2_d_01_co.paa",
+			"rhsusf\addons\rhsusf_m1a2\data\rhsusf_m1a2_d_02_co.paa",
+			"rhsusf\addons\rhsusf_m1a1\data\rhsusf_m1a1aim_d_03_co.paa",
+			"rhsusf\addons\rhsusf_m1a1\loaderspintle\data\loaderspintle_d_co.paa"
+		};
 	};
 	class rhsusf_m1a2sep1wd_usarmy: rhsusf_m1a2tank_base
 	{
+		editorPreview="rhsusf\addons\rhsusf_editorPreviews\data\rhsusf_m1a2sep1wd_usarmy.paa";
+		scope=2;
 		displayName="$STR_M1A2SEPWD_Name";
+		author="$STR_RHSUSF_AUTHOR_FULL";
+		faction="rhs_faction_usarmy_wd";
+		vehicleClass="rhs_vehclass_tank";
+		crew="rhsusf_army_ucp_combatcrewman";
 		rhs_decalParameters[]=
 		{
 			"['Label', cM1PlnSymPlaces, 'ArmyPlt_Abrams_WD']",
@@ -554,7 +962,16 @@ class CfgVehicles
 	};
 	class rhsusf_m1a2sep1tuskid_usarmy: rhsusf_m1a2tank_base
 	{
+		editorPreview="rhsusf\addons\rhsusf_editorPreviews\data\rhsusf_m1a2sep1tuskid_usarmy.paa";
+		model="\rhsusf\addons\rhsusf_m1a2\m1a2v1_tuski";
+		Icon="\rhsusf\addons\rhsusf_m1a2\icons\M1A2SEPV1TUSKI.paa";
+		picture="\rhsusf\addons\rhsusf_m1a2\icons\M1A2TUSKISIDE_ca.paa";
+		scope=2;
 		displayName="$STR_M1A2SEPTUSKI_Name";
+		author="$STR_RHSUSF_AUTHOR_FULL";
+		faction="rhs_faction_usarmy_d";
+		vehicleClass="rhs_vehclass_tank";
+		crew="rhsusf_army_ocp_combatcrewman";
 		rhs_decalParameters[]=
 		{
 			"['Label', cM1PlnSymPlaces, 'ArmyPlt_Abrams_D']",
@@ -600,18 +1017,311 @@ class CfgVehicles
 					"rhs_laserfcsmag",
 					"rhs_laserfcsmag"
 				};
+				class Reflectors
+				{
+					class Gunner
+					{
+						color[]={7000,7400,9500};
+						ambient[]={6,8,8};
+						position="Light_G";
+						direction="Light_G_end";
+						hitpoint="Light_G";
+						selection="Light_G";
+						size=1;
+						innerAngle=11;
+						outerAngle=16;
+						coneFadeCoef=1;
+						intensity=7;
+						useFlare=0;
+						dayLight=0;
+						flareSize=1;
+						class Attenuation
+						{
+							start=0.5;
+							constant=0;
+							linear=0;
+							quadratic=0.050000001;
+							hardLimitStart=600;
+							hardLimitEnd=1200;
+						};
+					};
+					class Gunner2: Gunner
+					{
+						position="light_G_flare";
+						useFlare=1;
+						innerAngle=10;
+						outerAngle=160;
+						coneFadeCoef=10;
+						intensity=1;
+						flareSize=3.25;
+						class Attenuation
+						{
+							start=1;
+							constant=0;
+							linear=0;
+							quadratic=0.25;
+							hardLimitStart=0.5;
+							hardLimitEnd=0.15000001;
+						};
+					};
+				};
+				aggregateReflectors[]=
+				{
+					
+					{
+						"Gunner"
+					},
+					
+					{
+						"Gunner2"
+					}
+				};
 				armorLights=0.0099999998;
 			};
+		};
+		hiddenSelections[]=
+		{
+			"camo1",
+			"camo2",
+			"camo3",
+			"camo4",
+			"camo5",
+			"camo6",
+			"",
+			"n1",
+			"n2",
+			"n3",
+			"i1",
+			"i2",
+			"i3"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"rhsusf\addons\rhsusf_m1a2\data\rhsusf_m1a2sepv1tusk_d_01_co.paa",
+			"rhsusf\addons\rhsusf_m1a2\data\rhsusf_m1a2sepv1tusk_d_02_co.paa",
+			"rhsusf\addons\rhsusf_m1a1\data\rhsusf_m1a1aim_d_03_co.paa",
+			"rhsusf\addons\rhsusf_m1a1\loaderspintle\data\loaderspintle_tuski_d_co.paa",
+			"rhsusf\addons\rhsusf_m1a2\data\rhsusf_tuskia2_d_co.paa",
+			"rhsusf\addons\rhsusf_m1a2\data\rhsusf_m1slat_d_co.paa"
 		};
 		class textureSources
 		{
 			class woodland
 			{
 				displayName="Woodland";
+				author="$STR_RHSUSF_AUTHOR_FULL";
+				textures[]=
+				{
+					"rhsusf\addons\rhsusf_m1a2\data\rhsusf_m1a2sepv1tusk_wd_01_co.paa",
+					"rhsusf\addons\rhsusf_m1a2\data\rhsusf_m1a2sepv1tusk_wd_02_co.paa",
+					"rhsusf\addons\rhsusf_m1a1\data\rhsusf_m1a1aim_03_co.paa",
+					"rhsusf\addons\rhsusf_m1a1\loaderspintle\data\loaderspintle_tuski_wd_co.paa",
+					"rhsusf\addons\rhsusf_m1a2\data\rhsusf_tuskia2_wd_co.paa",
+					"rhsusf\addons\rhsusf_m1a2\data\rhsusf_m1slat_wd_co.paa"
+				};
 			};
 			class desert: woodland
 			{
 				displayName="Desert";
+				author="$STR_RHSUSF_AUTHOR_FULL";
+				textures[]=
+				{
+					"rhsusf\addons\rhsusf_m1a2\data\rhsusf_m1a2sepv1tusk_d_01_co.paa",
+					"rhsusf\addons\rhsusf_m1a2\data\rhsusf_m1a2sepv1tusk_d_02_co.paa",
+					"rhsusf\addons\rhsusf_m1a1\data\rhsusf_m1a1aim_d_03_co.paa",
+					"rhsusf\addons\rhsusf_m1a1\loaderspintle\data\loaderspintle_tuski_d_co.paa",
+					"rhsusf\addons\rhsusf_m1a2\data\rhsusf_tuskia2_d_co.paa",
+					"rhsusf\addons\rhsusf_m1a2\data\rhsusf_m1slat_d_co.paa"
+				};
+			};
+		};
+		textureList[]={};
+		class AnimationSources: AnimationSources
+		{
+			class muzzle_rot_hmg3
+			{
+				source="ammorandom";
+				weapon="RHS_M2_Abrams_Gunner";
+			};
+			class muzzle_hide_hmg3
+			{
+				source="reload";
+				weapon="RHS_M2_Abrams_Gunner";
+			};
+			class era_1_source
+			{
+				source="Hit";
+				hitpoint="era_1_hitpoint";
+			};
+			class era_2_source
+			{
+				source="Hit";
+				hitpoint="era_2_hitpoint";
+			};
+			class era_3_source
+			{
+				source="Hit";
+				hitpoint="era_3_hitpoint";
+			};
+			class era_4_source
+			{
+				source="Hit";
+				hitpoint="era_4_hitpoint";
+			};
+			class era_5_source
+			{
+				source="Hit";
+				hitpoint="era_5_hitpoint";
+			};
+			class era_6_source
+			{
+				source="Hit";
+				hitpoint="era_6_hitpoint";
+			};
+			class era_7_source
+			{
+				source="Hit";
+				hitpoint="era_7_hitpoint";
+			};
+			class era_8_source
+			{
+				source="Hit";
+				hitpoint="era_8_hitpoint";
+			};
+			class era_9_source
+			{
+				source="Hit";
+				hitpoint="era_9_hitpoint";
+			};
+			class era_10_source
+			{
+				source="Hit";
+				hitpoint="era_10_hitpoint";
+			};
+			class era_11_source
+			{
+				source="Hit";
+				hitpoint="era_11_hitpoint";
+			};
+			class era_12_source
+			{
+				source="Hit";
+				hitpoint="era_12_hitpoint";
+			};
+			class era_13_source
+			{
+				source="Hit";
+				hitpoint="era_13_hitpoint";
+			};
+			class era_14_source
+			{
+				source="Hit";
+				hitpoint="era_14_hitpoint";
+			};
+			class era_15_source
+			{
+				source="Hit";
+				hitpoint="era_15_hitpoint";
+			};
+			class era_16_source
+			{
+				source="Hit";
+				hitpoint="era_16_hitpoint";
+			};
+			class era_17_source
+			{
+				source="Hit";
+				hitpoint="era_17_hitpoint";
+			};
+			class era_18_source
+			{
+				source="Hit";
+				hitpoint="era_18_hitpoint";
+			};
+			class era_19_source
+			{
+				source="Hit";
+				hitpoint="era_19_hitpoint";
+			};
+			class era_20_source
+			{
+				source="Hit";
+				hitpoint="era_20_hitpoint";
+			};
+			class era_21_source
+			{
+				source="Hit";
+				hitpoint="era_21_hitpoint";
+			};
+			class era_22_source
+			{
+				source="Hit";
+				hitpoint="era_22_hitpoint";
+			};
+			class era_23_source
+			{
+				source="Hit";
+				hitpoint="era_23_hitpoint";
+			};
+			class era_24_source
+			{
+				source="Hit";
+				hitpoint="era_24_hitpoint";
+			};
+			class era_25_source
+			{
+				source="Hit";
+				hitpoint="era_25_hitpoint";
+			};
+			class era_26_source
+			{
+				source="Hit";
+				hitpoint="era_26_hitpoint";
+			};
+			class era_27_source
+			{
+				source="Hit";
+				hitpoint="era_27_hitpoint";
+			};
+			class era_28_source
+			{
+				source="Hit";
+				hitpoint="era_28_hitpoint";
+			};
+			class era_29_source
+			{
+				source="Hit";
+				hitpoint="era_29_hitpoint";
+			};
+			class era_30_source
+			{
+				source="Hit";
+				hitpoint="era_30_hitpoint";
+			};
+			class era_31_source
+			{
+				source="Hit";
+				hitpoint="era_31_hitpoint";
+			};
+			class era_32_source
+			{
+				source="Hit";
+				hitpoint="era_32_hitpoint";
+			};
+			class era_33_source
+			{
+				source="Hit";
+				hitpoint="era_33_hitpoint";
+			};
+			class era_34_source
+			{
+				source="Hit";
+				hitpoint="era_34_hitpoint";
+			};
+			class SLAT_1_source
+			{
+				source="Hit";
+				hitpoint="SLAT_1_hitpoint";
 			};
 		};
 		class HitPoints: HitPoints
@@ -627,6 +1337,49 @@ class CfgVehicles
 				minimalHit=-0.5;
 				explosionShielding=0.0070000002;
 				radius=0.16;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					effectRadius=1;
+					ignoreFuel=1;
+					class RHS_ERA_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_e1";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_ERA_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_e1";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_ERA_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_e1";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_ERA_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_e1";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class era_2_hitpoint
 			{
@@ -639,6 +1392,49 @@ class CfgVehicles
 				minimalHit=-0.5;
 				explosionShielding=0.0070000002;
 				radius=0.16;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					effectRadius=1;
+					ignoreFuel=1;
+					class RHS_ERA_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_e2";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_ERA_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_e2";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_ERA_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_e2";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_ERA_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_e2";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class era_3_hitpoint
 			{
@@ -651,6 +1447,49 @@ class CfgVehicles
 				minimalHit=-0.5;
 				explosionShielding=0.0070000002;
 				radius=0.16;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					effectRadius=1;
+					ignoreFuel=1;
+					class RHS_ERA_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_e3";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_ERA_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_e3";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_ERA_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_e3";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_ERA_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_e3";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class era_4_hitpoint
 			{
@@ -663,6 +1502,49 @@ class CfgVehicles
 				minimalHit=-0.5;
 				explosionShielding=0.0070000002;
 				radius=0.16;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					effectRadius=1;
+					ignoreFuel=1;
+					class RHS_ERA_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_e4";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_ERA_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_e4";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_ERA_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_e4";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_ERA_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_e4";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class era_5_hitpoint
 			{
@@ -675,6 +1557,49 @@ class CfgVehicles
 				minimalHit=-0.5;
 				explosionShielding=0.0070000002;
 				radius=0.16;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					effectRadius=1;
+					ignoreFuel=1;
+					class RHS_ERA_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_e5";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_ERA_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_e5";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_ERA_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_e5";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_ERA_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_e5";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class era_6_hitpoint
 			{
@@ -687,6 +1612,49 @@ class CfgVehicles
 				minimalHit=-0.5;
 				explosionShielding=0.0070000002;
 				radius=0.16;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					effectRadius=1;
+					ignoreFuel=1;
+					class RHS_ERA_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_e6";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_ERA_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_e6";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_ERA_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_e6";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_ERA_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_e6";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class era_7_hitpoint
 			{
@@ -699,6 +1667,49 @@ class CfgVehicles
 				minimalHit=-0.5;
 				explosionShielding=0.0070000002;
 				radius=0.16;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					effectRadius=1;
+					ignoreFuel=1;
+					class RHS_ERA_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_e7";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_ERA_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_e7";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_ERA_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_e7";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_ERA_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_e7";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class era_8_hitpoint
 			{
@@ -711,6 +1722,49 @@ class CfgVehicles
 				minimalHit=-0.5;
 				explosionShielding=0.0070000002;
 				radius=0.16;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					effectRadius=1;
+					ignoreFuel=1;
+					class RHS_ERA_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_e8";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_ERA_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_e8";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_ERA_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_e8";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_ERA_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_e8";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class era_9_hitpoint
 			{
@@ -723,6 +1777,49 @@ class CfgVehicles
 				minimalHit=-0.5;
 				explosionShielding=0.0070000002;
 				radius=0.16;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					effectRadius=1;
+					ignoreFuel=1;
+					class RHS_ERA_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_e9";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_ERA_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_e9";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_ERA_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_e9";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_ERA_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_e9";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class era_10_hitpoint
 			{
@@ -735,6 +1832,49 @@ class CfgVehicles
 				minimalHit=-0.5;
 				explosionShielding=0.0070000002;
 				radius=0.16;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					effectRadius=1;
+					ignoreFuel=1;
+					class RHS_ERA_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_e10";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_ERA_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_e10";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_ERA_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_e10";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_ERA_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_e10";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class era_11_hitpoint
 			{
@@ -747,6 +1887,49 @@ class CfgVehicles
 				minimalHit=-0.5;
 				explosionShielding=0.0070000002;
 				radius=0.16;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					effectRadius=1;
+					ignoreFuel=1;
+					class RHS_ERA_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_e11";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_ERA_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_e11";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_ERA_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_e11";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_ERA_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_e11";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class era_12_hitpoint
 			{
@@ -759,6 +1942,49 @@ class CfgVehicles
 				minimalHit=-0.5;
 				explosionShielding=0.0070000002;
 				radius=0.16;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					effectRadius=1;
+					ignoreFuel=1;
+					class RHS_ERA_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_e12";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_ERA_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_e12";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_ERA_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_e12";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_ERA_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_e12";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class era_13_hitpoint
 			{
@@ -771,6 +1997,49 @@ class CfgVehicles
 				minimalHit=-0.5;
 				explosionShielding=0.0070000002;
 				radius=0.16;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					effectRadius=1;
+					ignoreFuel=1;
+					class RHS_ERA_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_e13";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_ERA_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_e13";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_ERA_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_e13";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_ERA_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_e13";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class era_14_hitpoint
 			{
@@ -783,6 +2052,49 @@ class CfgVehicles
 				minimalHit=-0.5;
 				explosionShielding=0.0070000002;
 				radius=0.16;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					effectRadius=1;
+					ignoreFuel=1;
+					class RHS_ERA_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_e14";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_ERA_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_e14";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_ERA_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_e14";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_ERA_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_e14";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class era_15_hitpoint
 			{
@@ -795,6 +2107,49 @@ class CfgVehicles
 				minimalHit=-0.5;
 				explosionShielding=0.0070000002;
 				radius=0.16;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					effectRadius=1;
+					ignoreFuel=1;
+					class RHS_ERA_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_e15";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_ERA_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_e15";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_ERA_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_e15";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_ERA_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_e15";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class era_16_hitpoint
 			{
@@ -807,6 +2162,49 @@ class CfgVehicles
 				minimalHit=-0.5;
 				explosionShielding=0.0070000002;
 				radius=0.16;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					effectRadius=1;
+					ignoreFuel=1;
+					class RHS_ERA_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_e16";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_ERA_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_e16";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_ERA_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_e16";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_ERA_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_e16";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class era_17_hitpoint
 			{
@@ -819,6 +2217,49 @@ class CfgVehicles
 				minimalHit=-0.5;
 				explosionShielding=0.0070000002;
 				radius=0.16;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					effectRadius=1;
+					ignoreFuel=1;
+					class RHS_ERA_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_e17";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_ERA_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_e17";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_ERA_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_e17";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_ERA_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_e17";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class era_18_hitpoint
 			{
@@ -831,6 +2272,49 @@ class CfgVehicles
 				minimalHit=-0.5;
 				explosionShielding=0.0070000002;
 				radius=0.16;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					effectRadius=1;
+					ignoreFuel=1;
+					class RHS_ERA_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_e18";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_ERA_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_e18";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_ERA_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_e18";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_ERA_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_e18";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class era_19_hitpoint
 			{
@@ -843,6 +2327,49 @@ class CfgVehicles
 				minimalHit=-0.5;
 				explosionShielding=0.0070000002;
 				radius=0.16;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					effectRadius=1;
+					ignoreFuel=1;
+					class RHS_ERA_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_e19";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_ERA_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_e19";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_ERA_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_e19";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_ERA_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_e19";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class era_20_hitpoint
 			{
@@ -855,6 +2382,49 @@ class CfgVehicles
 				minimalHit=-0.5;
 				explosionShielding=0.0070000002;
 				radius=0.16;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					effectRadius=1;
+					ignoreFuel=1;
+					class RHS_ERA_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_e20";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_ERA_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_e20";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_ERA_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_e20";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_ERA_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_e20";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class era_21_hitpoint
 			{
@@ -867,6 +2437,49 @@ class CfgVehicles
 				minimalHit=-0.5;
 				explosionShielding=0.0070000002;
 				radius=0.16;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					effectRadius=1;
+					ignoreFuel=1;
+					class RHS_ERA_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_e21";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_ERA_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_e21";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_ERA_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_e21";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_ERA_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_e21";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class era_22_hitpoint
 			{
@@ -879,6 +2492,49 @@ class CfgVehicles
 				minimalHit=-0.5;
 				explosionShielding=0.0070000002;
 				radius=0.16;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					effectRadius=1;
+					ignoreFuel=1;
+					class RHS_ERA_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_e22";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_ERA_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_e22";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_ERA_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_e22";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_ERA_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_e22";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class era_23_hitpoint
 			{
@@ -891,6 +2547,49 @@ class CfgVehicles
 				minimalHit=-0.5;
 				explosionShielding=0.0070000002;
 				radius=0.16;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					effectRadius=1;
+					ignoreFuel=1;
+					class RHS_ERA_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_e23";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_ERA_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_e23";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_ERA_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_e23";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_ERA_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_e23";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class era_24_hitpoint
 			{
@@ -903,6 +2602,49 @@ class CfgVehicles
 				minimalHit=-0.5;
 				explosionShielding=0.0070000002;
 				radius=0.16;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					effectRadius=1;
+					ignoreFuel=1;
+					class RHS_ERA_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_e24";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_ERA_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_e24";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_ERA_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_e24";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_ERA_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_e24";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class era_25_hitpoint
 			{
@@ -915,6 +2657,49 @@ class CfgVehicles
 				minimalHit=-0.5;
 				explosionShielding=0.0070000002;
 				radius=0.16;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					effectRadius=1;
+					ignoreFuel=1;
+					class RHS_ERA_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_e25";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_ERA_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_e25";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_ERA_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_e25";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_ERA_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_e25";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class era_26_hitpoint
 			{
@@ -927,6 +2712,49 @@ class CfgVehicles
 				minimalHit=-0.5;
 				explosionShielding=0.0070000002;
 				radius=0.16;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					effectRadius=1;
+					ignoreFuel=1;
+					class RHS_ERA_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_e26";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_ERA_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_e26";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_ERA_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_e26";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_ERA_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_e26";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class era_27_hitpoint
 			{
@@ -939,6 +2767,49 @@ class CfgVehicles
 				minimalHit=-0.5;
 				explosionShielding=0.0070000002;
 				radius=0.16;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					effectRadius=1;
+					ignoreFuel=1;
+					class RHS_ERA_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_e27";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_ERA_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_e27";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_ERA_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_e27";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_ERA_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_e27";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class era_28_hitpoint
 			{
@@ -951,6 +2822,49 @@ class CfgVehicles
 				minimalHit=-0.5;
 				explosionShielding=0.0070000002;
 				radius=0.16;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					effectRadius=1;
+					ignoreFuel=1;
+					class RHS_ERA_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_e28";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_ERA_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_e28";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_ERA_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_e28";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_ERA_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_e28";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class era_29_hitpoint
 			{
@@ -963,6 +2877,49 @@ class CfgVehicles
 				minimalHit=-0.5;
 				explosionShielding=0.0070000002;
 				radius=0.16;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					effectRadius=1;
+					ignoreFuel=1;
+					class RHS_ERA_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_e29";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_ERA_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_e29";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_ERA_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_e29";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_ERA_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_e29";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class era_30_hitpoint
 			{
@@ -975,6 +2932,49 @@ class CfgVehicles
 				minimalHit=-0.5;
 				explosionShielding=0.0070000002;
 				radius=0.16;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					effectRadius=1;
+					ignoreFuel=1;
+					class RHS_ERA_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_e30";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_ERA_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_e30";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_ERA_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_e30";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_ERA_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_e30";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class era_31_hitpoint
 			{
@@ -987,6 +2987,49 @@ class CfgVehicles
 				minimalHit=-0.5;
 				explosionShielding=0.0070000002;
 				radius=0.16;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					effectRadius=1;
+					ignoreFuel=1;
+					class RHS_ERA_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_e31";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_ERA_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_e31";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_ERA_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_e31";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_ERA_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_e31";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class era_32_hitpoint
 			{
@@ -999,6 +3042,49 @@ class CfgVehicles
 				minimalHit=-0.5;
 				explosionShielding=0.0070000002;
 				radius=0.16;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					effectRadius=1;
+					ignoreFuel=1;
+					class RHS_ERA_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_e32";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_ERA_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_e32";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_ERA_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_e32";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_ERA_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_e32";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class era_33_hitpoint
 			{
@@ -1011,6 +3097,49 @@ class CfgVehicles
 				minimalHit=-0.5;
 				explosionShielding=0.0070000002;
 				radius=0.16;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					effectRadius=1;
+					ignoreFuel=1;
+					class RHS_ERA_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_e33";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_ERA_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_e33";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_ERA_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_e33";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_ERA_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_e33";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class era_34_hitpoint
 			{
@@ -1023,6 +3152,49 @@ class CfgVehicles
 				minimalHit=-0.5;
 				explosionShielding=0.0070000002;
 				radius=0.16;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					effectRadius=1;
+					ignoreFuel=1;
+					class RHS_ERA_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_e34";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_ERA_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_e34";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_ERA_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_e34";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_ERA_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_e34";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class SLAT_1_hitpoint
 			{
@@ -1035,26 +3207,301 @@ class CfgVehicles
 				minimalHit=-0.5;
 				explosionShielding=0.07;
 				radius=0.16;
+				visual="-";
 			};
 		};
 	};
 	class rhsusf_m1a2sep1tuskiwd_usarmy: rhsusf_m1a2sep1tuskid_usarmy
 	{
+		editorPreview="rhsusf\addons\rhsusf_editorPreviews\data\rhsusf_m1a2sep1tuskiwd_usarmy.paa";
+		author="$STR_RHSUSF_AUTHOR_FULL";
+		faction="rhs_faction_usarmy_wd";
+		vehicleClass="rhs_vehclass_tank";
+		crew="rhsusf_army_ucp_combatcrewman";
 		rhs_decalParameters[]=
 		{
 			"['Label', cM1PlnSymPlaces, 'ArmyPlt_Abrams_WD']",
 			"['Label', cM1BarrelSymPlaces, 'BarrelArt_Abrams_WD']"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"rhsusf\addons\rhsusf_m1a2\data\rhsusf_m1a2sepv1tusk_wd_01_co.paa",
+			"rhsusf\addons\rhsusf_m1a2\data\rhsusf_m1a2sepv1tusk_wd_02_co.paa",
+			"rhsusf\addons\rhsusf_m1a1\data\rhsusf_m1a1aim_03_co.paa",
+			"rhsusf\addons\rhsusf_m1a1\loaderspintle\data\loaderspintle_tuski_wd_co.paa",
+			"rhsusf\addons\rhsusf_m1a2\data\rhsusf_tuskia2_wd_co.paa",
+			"rhsusf\addons\rhsusf_m1a2\data\rhsusf_m1slat_wd_co.paa"
 		};
 	};
 	class rhsusf_m1a2sep1tuskiiwd_usarmy: rhsusf_m1a2sep1tuskid_usarmy
 	{
+		editorPreview="rhsusf\addons\rhsusf_editorPreviews\data\rhsusf_m1a2sep1tuskiiwd_usarmy.paa";
+		author="$STR_RHSUSF_AUTHOR_FULL";
+		faction="rhs_faction_usarmy_wd";
+		vehicleClass="rhs_vehclass_tank";
+		crew="rhsusf_army_ucp_combatcrewman";
 		rhs_decalParameters[]=
 		{
 			"['Label', cM1PlnSymPlaces, 'ArmyPlt_Abrams_WD']",
 			"['Label', cM1BarrelSymPlaces, 'BarrelArt_Abrams_WD']"
 		};
+		model="\rhsusf\addons\rhsusf_m1a2\m1a2v1_tuskii";
+		Icon="\rhsusf\addons\rhsusf_m1a2\icons\M1A2SEPV1TUSKII.paa";
+		picture="\rhsusf\addons\rhsusf_m1a2\icons\M1A2TUSKIISIDE_ca.paa";
 		displayName="$STR_M1A2SEPWDTUSKII_Name";
 		rhs_duke_type="rhsusf_duke_m1a2";
+		class AnimationSources: AnimationSources
+		{
+			class DUKE_Hide
+			{
+				source="user";
+				mass=-20;
+				displayName="hide DUKE antennas";
+				author="$STR_RHSUSF_AUTHOR_FULL";
+				animPeriod=9.9999997e-006;
+				initPhase=0;
+				onPhaseChanged="_this + ([[0,0]]) call rhs_fnc_duke_vg;";
+			};
+			class HitDuke1
+			{
+				source="Hit";
+				hitpoint="HitDuke1";
+			};
+			class HitDuke2: HitDuke1
+			{
+				hitpoint="HitDuke2";
+			};
+			class era_1_source
+			{
+				source="Hit";
+				hitpoint="era_1_hitpoint";
+			};
+			class era_2_source
+			{
+				source="Hit";
+				hitpoint="era_2_hitpoint";
+			};
+			class era_3_source
+			{
+				source="Hit";
+				hitpoint="era_3_hitpoint";
+			};
+			class era_4_source
+			{
+				source="Hit";
+				hitpoint="era_4_hitpoint";
+			};
+			class era_5_source
+			{
+				source="Hit";
+				hitpoint="era_5_hitpoint";
+			};
+			class era_6_source
+			{
+				source="Hit";
+				hitpoint="era_6_hitpoint";
+			};
+			class era_7_source
+			{
+				source="Hit";
+				hitpoint="era_7_hitpoint";
+			};
+			class era_8_source
+			{
+				source="Hit";
+				hitpoint="era_8_hitpoint";
+			};
+			class era_9_source
+			{
+				source="Hit";
+				hitpoint="era_9_hitpoint";
+			};
+			class era_10_source
+			{
+				source="Hit";
+				hitpoint="era_10_hitpoint";
+			};
+			class era_11_source
+			{
+				source="Hit";
+				hitpoint="era_11_hitpoint";
+			};
+			class era_12_source
+			{
+				source="Hit";
+				hitpoint="era_12_hitpoint";
+			};
+			class era_13_source
+			{
+				source="Hit";
+				hitpoint="era_13_hitpoint";
+			};
+			class era_14_source
+			{
+				source="Hit";
+				hitpoint="era_14_hitpoint";
+			};
+			class era_15_source
+			{
+				source="Hit";
+				hitpoint="era_15_hitpoint";
+			};
+			class era_16_source
+			{
+				source="Hit";
+				hitpoint="era_16_hitpoint";
+			};
+			class era_17_source
+			{
+				source="Hit";
+				hitpoint="era_17_hitpoint";
+			};
+			class era_18_source
+			{
+				source="Hit";
+				hitpoint="era_18_hitpoint";
+			};
+			class era_19_source
+			{
+				source="Hit";
+				hitpoint="era_19_hitpoint";
+			};
+			class era_20_source
+			{
+				source="Hit";
+				hitpoint="era_20_hitpoint";
+			};
+			class era_21_source
+			{
+				source="Hit";
+				hitpoint="era_21_hitpoint";
+			};
+			class era_22_source
+			{
+				source="Hit";
+				hitpoint="era_22_hitpoint";
+			};
+			class era_23_source
+			{
+				source="Hit";
+				hitpoint="era_23_hitpoint";
+			};
+			class era_24_source
+			{
+				source="Hit";
+				hitpoint="era_24_hitpoint";
+			};
+			class era_25_source
+			{
+				source="Hit";
+				hitpoint="era_25_hitpoint";
+			};
+			class era_26_source
+			{
+				source="Hit";
+				hitpoint="era_26_hitpoint";
+			};
+			class era_27_source
+			{
+				source="Hit";
+				hitpoint="era_27_hitpoint";
+			};
+			class era_28_source
+			{
+				source="Hit";
+				hitpoint="era_28_hitpoint";
+			};
+			class era_29_source
+			{
+				source="Hit";
+				hitpoint="era_29_hitpoint";
+			};
+			class era_30_source
+			{
+				source="Hit";
+				hitpoint="era_30_hitpoint";
+			};
+			class era_31_source
+			{
+				source="Hit";
+				hitpoint="era_31_hitpoint";
+			};
+			class era_32_source
+			{
+				source="Hit";
+				hitpoint="era_32_hitpoint";
+			};
+			class era_33_source
+			{
+				source="Hit";
+				hitpoint="era_33_hitpoint";
+			};
+			class era_34_source
+			{
+				source="Hit";
+				hitpoint="era_34_hitpoint";
+			};
+			class era_35_source
+			{
+				source="Hit";
+				hitpoint="era_35_hitpoint";
+			};
+			class era_36_source
+			{
+				source="Hit";
+				hitpoint="era_36_hitpoint";
+			};
+			class era_37_source
+			{
+				source="Hit";
+				hitpoint="era_37_hitpoint";
+			};
+			class era_38_source
+			{
+				source="Hit";
+				hitpoint="era_38_hitpoint";
+			};
+			class era_39_source
+			{
+				source="Hit";
+				hitpoint="era_39_hitpoint";
+			};
+			class era_40_source
+			{
+				source="Hit";
+				hitpoint="era_40_hitpoint";
+			};
+			class era_41_source
+			{
+				source="Hit";
+				hitpoint="era_41_hitpoint";
+			};
+			class era_42_source
+			{
+				source="Hit";
+				hitpoint="era_42_hitpoint";
+			};
+			class era_43_source
+			{
+				source="Hit";
+				hitpoint="era_43_hitpoint";
+			};
+			class era_44_source
+			{
+				source="Hit";
+				hitpoint="era_44_hitpoint";
+			};
+			class era_45_source
+			{
+				source="Hit";
+				hitpoint="era_45_hitpoint";
+			};
+			class era_46_source
+			{
+				source="Hit";
+				hitpoint="era_46_hitpoint";
+			};
+		};
 		class HitPoints: HitPoints
 		{
 			class HitDuke1
@@ -1062,6 +3509,7 @@ class CfgVehicles
 				armor=0.75;
 				material=-1;
 				name="duke1";
+				visual="-";
 				passThrough=0;
 				MinimalHit=0.050000001;
 				explosionShielding=0.0099999998;
@@ -1070,6 +3518,7 @@ class CfgVehicles
 			class HitDuke2: HitDuke1
 			{
 				name="duke2";
+				visual="-";
 			};
 			class era_1_hitpoint
 			{
@@ -1082,6 +3531,49 @@ class CfgVehicles
 				minimalHit=-0.40000001;
 				explosionShielding=0.0070000002;
 				radius=0.16;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					effectRadius=1;
+					ignoreFuel=1;
+					class RHS_ERA_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_e1";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_ERA_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_e1";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_ERA_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_e1";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_ERA_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_e1";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class era_2_hitpoint
 			{
@@ -1094,6 +3586,49 @@ class CfgVehicles
 				minimalHit=-0.40000001;
 				explosionShielding=0.0070000002;
 				radius=0.16;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					effectRadius=1;
+					ignoreFuel=1;
+					class RHS_ERA_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_e2";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_ERA_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_e2";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_ERA_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_e2";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_ERA_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_e2";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class era_3_hitpoint
 			{
@@ -1106,6 +3641,49 @@ class CfgVehicles
 				minimalHit=-0.40000001;
 				explosionShielding=0.0070000002;
 				radius=0.16;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					effectRadius=1;
+					ignoreFuel=1;
+					class RHS_ERA_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_e3";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_ERA_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_e3";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_ERA_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_e3";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_ERA_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_e3";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class era_4_hitpoint
 			{
@@ -1118,6 +3696,49 @@ class CfgVehicles
 				minimalHit=-0.40000001;
 				explosionShielding=0.0070000002;
 				radius=0.16;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					effectRadius=1;
+					ignoreFuel=1;
+					class RHS_ERA_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_e4";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_ERA_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_e4";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_ERA_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_e4";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_ERA_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_e4";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class era_5_hitpoint
 			{
@@ -1130,6 +3751,49 @@ class CfgVehicles
 				minimalHit=-0.40000001;
 				explosionShielding=0.0070000002;
 				radius=0.16;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					effectRadius=1;
+					ignoreFuel=1;
+					class RHS_ERA_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_e5";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_ERA_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_e5";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_ERA_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_e5";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_ERA_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_e5";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class era_6_hitpoint
 			{
@@ -1142,6 +3806,49 @@ class CfgVehicles
 				minimalHit=-0.40000001;
 				explosionShielding=0.0070000002;
 				radius=0.16;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					effectRadius=1;
+					ignoreFuel=1;
+					class RHS_ERA_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_e6";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_ERA_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_e6";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_ERA_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_e6";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_ERA_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_e6";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class era_7_hitpoint
 			{
@@ -1154,6 +3861,49 @@ class CfgVehicles
 				minimalHit=-0.40000001;
 				explosionShielding=0.0070000002;
 				radius=0.16;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					effectRadius=1;
+					ignoreFuel=1;
+					class RHS_ERA_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_e7";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_ERA_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_e7";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_ERA_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_e7";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_ERA_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_e7";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class era_8_hitpoint
 			{
@@ -1166,6 +3916,49 @@ class CfgVehicles
 				minimalHit=-0.40000001;
 				explosionShielding=0.0070000002;
 				radius=0.16;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					effectRadius=1;
+					ignoreFuel=1;
+					class RHS_ERA_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_e8";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_ERA_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_e8";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_ERA_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_e8";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_ERA_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_e8";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class era_9_hitpoint
 			{
@@ -1178,6 +3971,49 @@ class CfgVehicles
 				minimalHit=-0.40000001;
 				explosionShielding=0.0070000002;
 				radius=0.16;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					effectRadius=1;
+					ignoreFuel=1;
+					class RHS_ERA_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_e9";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_ERA_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_e9";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_ERA_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_e9";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_ERA_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_e9";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class era_10_hitpoint
 			{
@@ -1190,6 +4026,49 @@ class CfgVehicles
 				minimalHit=-0.40000001;
 				explosionShielding=0.0070000002;
 				radius=0.16;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					effectRadius=1;
+					ignoreFuel=1;
+					class RHS_ERA_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_e10";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_ERA_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_e10";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_ERA_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_e10";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_ERA_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_e10";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class era_11_hitpoint
 			{
@@ -1202,6 +4081,49 @@ class CfgVehicles
 				minimalHit=-0.40000001;
 				explosionShielding=0.0070000002;
 				radius=0.16;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					effectRadius=1;
+					ignoreFuel=1;
+					class RHS_ERA_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_e11";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_ERA_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_e11";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_ERA_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_e11";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_ERA_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_e11";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class era_12_hitpoint
 			{
@@ -1214,6 +4136,49 @@ class CfgVehicles
 				minimalHit=-0.40000001;
 				explosionShielding=0.0070000002;
 				radius=0.16;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					effectRadius=1;
+					ignoreFuel=1;
+					class RHS_ERA_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_e12";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_ERA_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_e12";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_ERA_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_e12";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_ERA_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_e12";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class era_13_hitpoint
 			{
@@ -1226,6 +4191,49 @@ class CfgVehicles
 				minimalHit=-0.40000001;
 				explosionShielding=0.0070000002;
 				radius=0.16;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					effectRadius=1;
+					ignoreFuel=1;
+					class RHS_ERA_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_e13";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_ERA_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_e13";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_ERA_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_e13";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_ERA_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_e13";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class era_14_hitpoint
 			{
@@ -1238,6 +4246,49 @@ class CfgVehicles
 				minimalHit=-0.40000001;
 				explosionShielding=0.0070000002;
 				radius=0.16;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					effectRadius=1;
+					ignoreFuel=1;
+					class RHS_ERA_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_e14";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_ERA_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_e14";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_ERA_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_e14";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_ERA_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_e14";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class era_15_hitpoint
 			{
@@ -1250,6 +4301,49 @@ class CfgVehicles
 				minimalHit=-0.40000001;
 				explosionShielding=0.0070000002;
 				radius=0.16;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					effectRadius=1;
+					ignoreFuel=1;
+					class RHS_ERA_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_e15";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_ERA_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_e15";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_ERA_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_e15";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_ERA_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_e15";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class era_16_hitpoint
 			{
@@ -1262,6 +4356,49 @@ class CfgVehicles
 				minimalHit=-0.40000001;
 				explosionShielding=0.0070000002;
 				radius=0.16;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					effectRadius=1;
+					ignoreFuel=1;
+					class RHS_ERA_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_e16";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_ERA_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_e16";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_ERA_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_e16";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_ERA_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_e16";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class era_17_hitpoint
 			{
@@ -1274,6 +4411,49 @@ class CfgVehicles
 				minimalHit=-0.40000001;
 				explosionShielding=0.0070000002;
 				radius=0.16;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					effectRadius=1;
+					ignoreFuel=1;
+					class RHS_ERA_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_e17";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_ERA_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_e17";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_ERA_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_e17";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_ERA_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_e17";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class era_18_hitpoint
 			{
@@ -1286,6 +4466,49 @@ class CfgVehicles
 				minimalHit=-0.40000001;
 				explosionShielding=0.0070000002;
 				radius=0.16;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					effectRadius=1;
+					ignoreFuel=1;
+					class RHS_ERA_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_e18";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_ERA_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_e18";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_ERA_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_e18";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_ERA_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_e18";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class era_19_hitpoint
 			{
@@ -1298,6 +4521,49 @@ class CfgVehicles
 				minimalHit=-0.40000001;
 				explosionShielding=0.0070000002;
 				radius=0.16;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					effectRadius=1;
+					ignoreFuel=1;
+					class RHS_ERA_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_e19";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_ERA_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_e19";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_ERA_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_e19";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_ERA_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_e19";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class era_20_hitpoint
 			{
@@ -1310,6 +4576,49 @@ class CfgVehicles
 				minimalHit=-0.40000001;
 				explosionShielding=0.0070000002;
 				radius=0.16;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					effectRadius=1;
+					ignoreFuel=1;
+					class RHS_ERA_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_e20";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_ERA_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_e20";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_ERA_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_e20";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_ERA_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_e20";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class era_21_hitpoint
 			{
@@ -1322,6 +4631,49 @@ class CfgVehicles
 				minimalHit=-0.40000001;
 				explosionShielding=0.0070000002;
 				radius=0.16;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					effectRadius=1;
+					ignoreFuel=1;
+					class RHS_ERA_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_e21";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_ERA_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_e21";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_ERA_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_e21";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_ERA_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_e21";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class era_22_hitpoint
 			{
@@ -1334,6 +4686,49 @@ class CfgVehicles
 				minimalHit=-0.40000001;
 				explosionShielding=0.0070000002;
 				radius=0.16;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					effectRadius=1;
+					ignoreFuel=1;
+					class RHS_ERA_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_e22";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_ERA_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_e22";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_ERA_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_e22";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_ERA_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_e22";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class era_23_hitpoint
 			{
@@ -1346,6 +4741,49 @@ class CfgVehicles
 				minimalHit=-0.40000001;
 				explosionShielding=0.0070000002;
 				radius=0.16;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					effectRadius=1;
+					ignoreFuel=1;
+					class RHS_ERA_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_e23";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_ERA_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_e23";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_ERA_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_e23";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_ERA_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_e23";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class era_24_hitpoint
 			{
@@ -1358,6 +4796,49 @@ class CfgVehicles
 				minimalHit=-0.40000001;
 				explosionShielding=0.0070000002;
 				radius=0.16;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					effectRadius=1;
+					ignoreFuel=1;
+					class RHS_ERA_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_e24";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_ERA_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_e24";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_ERA_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_e24";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_ERA_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_e24";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class era_25_hitpoint
 			{
@@ -1370,6 +4851,49 @@ class CfgVehicles
 				minimalHit=-0.40000001;
 				explosionShielding=0.0070000002;
 				radius=0.16;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					effectRadius=1;
+					ignoreFuel=1;
+					class RHS_ERA_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_e25";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_ERA_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_e25";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_ERA_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_e25";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_ERA_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_e25";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class era_26_hitpoint
 			{
@@ -1382,6 +4906,49 @@ class CfgVehicles
 				minimalHit=-0.40000001;
 				explosionShielding=0.0070000002;
 				radius=0.16;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					effectRadius=1;
+					ignoreFuel=1;
+					class RHS_ERA_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_e26";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_ERA_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_e26";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_ERA_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_e26";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_ERA_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_e26";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class era_27_hitpoint
 			{
@@ -1394,6 +4961,49 @@ class CfgVehicles
 				minimalHit=-0.40000001;
 				explosionShielding=0.0070000002;
 				radius=0.16;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					effectRadius=1;
+					ignoreFuel=1;
+					class RHS_ERA_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_e27";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_ERA_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_e27";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_ERA_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_e27";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_ERA_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_e27";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class era_28_hitpoint
 			{
@@ -1406,6 +5016,49 @@ class CfgVehicles
 				minimalHit=-0.40000001;
 				explosionShielding=0.0070000002;
 				radius=0.16;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					effectRadius=1;
+					ignoreFuel=1;
+					class RHS_ERA_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_e28";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_ERA_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_e28";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_ERA_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_e28";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_ERA_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_e28";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class era_29_hitpoint
 			{
@@ -1418,6 +5071,49 @@ class CfgVehicles
 				minimalHit=-0.40000001;
 				explosionShielding=0.0070000002;
 				radius=0.16;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					effectRadius=1;
+					ignoreFuel=1;
+					class RHS_ERA_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_e29";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_ERA_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_e29";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_ERA_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_e29";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_ERA_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_e29";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class era_30_hitpoint
 			{
@@ -1430,6 +5126,49 @@ class CfgVehicles
 				minimalHit=-0.40000001;
 				explosionShielding=0.0070000002;
 				radius=0.16;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					effectRadius=1;
+					ignoreFuel=1;
+					class RHS_ERA_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_e30";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_ERA_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_e30";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_ERA_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_e30";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_ERA_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_e30";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class era_31_hitpoint
 			{
@@ -1442,6 +5181,49 @@ class CfgVehicles
 				minimalHit=-0.40000001;
 				explosionShielding=0.0070000002;
 				radius=0.16;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					effectRadius=1;
+					ignoreFuel=1;
+					class RHS_ERA_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_e31";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_ERA_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_e31";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_ERA_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_e31";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_ERA_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_e31";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class era_32_hitpoint
 			{
@@ -1454,6 +5236,49 @@ class CfgVehicles
 				minimalHit=-0.40000001;
 				explosionShielding=0.0070000002;
 				radius=0.16;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					effectRadius=1;
+					ignoreFuel=1;
+					class RHS_ERA_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_e32";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_ERA_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_e32";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_ERA_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_e32";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_ERA_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_e32";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class era_33_hitpoint
 			{
@@ -1466,6 +5291,49 @@ class CfgVehicles
 				minimalHit=-0.40000001;
 				explosionShielding=0.0070000002;
 				radius=0.16;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					effectRadius=1;
+					ignoreFuel=1;
+					class RHS_ERA_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_e33";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_ERA_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_e33";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_ERA_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_e33";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_ERA_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_e33";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class era_34_hitpoint
 			{
@@ -1478,6 +5346,49 @@ class CfgVehicles
 				minimalHit=-0.40000001;
 				explosionShielding=0.0070000002;
 				radius=0.16;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					effectRadius=1;
+					ignoreFuel=1;
+					class RHS_ERA_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_e34";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_ERA_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_e34";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_ERA_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_e34";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_ERA_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_e34";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class era_35_hitpoint
 			{
@@ -1490,6 +5401,49 @@ class CfgVehicles
 				minimalHit=-0.40000001;
 				explosionShielding=0.0070000002;
 				radius=0.16;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					effectRadius=1;
+					ignoreFuel=1;
+					class RHS_ERA_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_e35";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_ERA_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_e35";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_ERA_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_e35";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_ERA_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_e35";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class era_36_hitpoint
 			{
@@ -1502,6 +5456,49 @@ class CfgVehicles
 				minimalHit=-0.40000001;
 				explosionShielding=0.0070000002;
 				radius=0.16;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					effectRadius=1;
+					ignoreFuel=1;
+					class RHS_ERA_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_e36";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_ERA_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_e36";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_ERA_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_e36";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_ERA_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_e36";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class era_37_hitpoint
 			{
@@ -1514,6 +5511,49 @@ class CfgVehicles
 				minimalHit=-0.40000001;
 				explosionShielding=0.0070000002;
 				radius=0.16;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					effectRadius=1;
+					ignoreFuel=1;
+					class RHS_ERA_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_e37";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_ERA_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_e37";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_ERA_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_e37";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_ERA_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_e37";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class era_38_hitpoint
 			{
@@ -1526,6 +5566,49 @@ class CfgVehicles
 				minimalHit=-0.40000001;
 				explosionShielding=0.0070000002;
 				radius=0.16;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					effectRadius=1;
+					ignoreFuel=1;
+					class RHS_ERA_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_e38";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_ERA_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_e38";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_ERA_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_e38";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_ERA_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_e38";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class era_39_hitpoint
 			{
@@ -1538,6 +5621,49 @@ class CfgVehicles
 				minimalHit=-0.40000001;
 				explosionShielding=0.0070000002;
 				radius=0.16;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					effectRadius=1;
+					ignoreFuel=1;
+					class RHS_ERA_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_e39";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_ERA_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_e39";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_ERA_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_e39";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_ERA_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_e39";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class era_40_hitpoint
 			{
@@ -1550,6 +5676,49 @@ class CfgVehicles
 				minimalHit=-0.40000001;
 				explosionShielding=0.0070000002;
 				radius=0.16;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					effectRadius=1;
+					ignoreFuel=1;
+					class RHS_ERA_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_e40";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_ERA_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_e40";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_ERA_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_e40";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_ERA_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_e40";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class era_41_hitpoint
 			{
@@ -1562,6 +5731,49 @@ class CfgVehicles
 				minimalHit=-0.40000001;
 				explosionShielding=0.0070000002;
 				radius=0.16;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					effectRadius=1;
+					ignoreFuel=1;
+					class RHS_ERA_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_e41";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_ERA_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_e41";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_ERA_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_e41";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_ERA_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_e41";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class era_42_hitpoint
 			{
@@ -1574,6 +5786,49 @@ class CfgVehicles
 				minimalHit=-0.40000001;
 				explosionShielding=0.0070000002;
 				radius=0.16;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					effectRadius=1;
+					ignoreFuel=1;
+					class RHS_ERA_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_e42";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_ERA_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_e42";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_ERA_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_e42";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_ERA_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_e42";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class era_43_hitpoint
 			{
@@ -1586,6 +5841,49 @@ class CfgVehicles
 				minimalHit=-0.40000001;
 				explosionShielding=0.0070000002;
 				radius=0.16;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					effectRadius=1;
+					ignoreFuel=1;
+					class RHS_ERA_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_e43";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_ERA_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_e43";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_ERA_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_e43";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_ERA_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_e43";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class era_44_hitpoint
 			{
@@ -1598,6 +5896,49 @@ class CfgVehicles
 				minimalHit=-0.40000001;
 				explosionShielding=0.0070000002;
 				radius=0.16;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					effectRadius=1;
+					ignoreFuel=1;
+					class RHS_ERA_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_e44";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_ERA_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_e44";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_ERA_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_e44";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_ERA_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_e44";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class era_45_hitpoint
 			{
@@ -1610,6 +5951,49 @@ class CfgVehicles
 				minimalHit=-0.40000001;
 				explosionShielding=0.0070000002;
 				radius=0.16;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					effectRadius=1;
+					ignoreFuel=1;
+					class RHS_ERA_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_e45";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_ERA_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_e45";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_ERA_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_e45";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_ERA_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_e45";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class era_46_hitpoint
 			{
@@ -1622,19 +6006,111 @@ class CfgVehicles
 				minimalHit=-0.40000001;
 				explosionShielding=0.0070000002;
 				radius=0.16;
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					effectRadius=1;
+					ignoreFuel=1;
+					class RHS_ERA_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_e46";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_ERA_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_e46";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_ERA_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_e46";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_ERA_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_e46";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
+		};
+		hiddenSelections[]=
+		{
+			"camo1",
+			"camo2",
+			"camo3",
+			"camo4",
+			"camo5",
+			"camo6",
+			"duke_tex",
+			"n1",
+			"n2",
+			"n3",
+			"i1",
+			"i2",
+			"i3"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"rhsusf\addons\rhsusf_m1a2\data\rhsusf_m1a2sepv1tuskii_wd_01_co.paa",
+			"rhsusf\addons\rhsusf_m1a2\data\rhsusf_m1a2sepv1tuskii_wd_02_co.paa",
+			"rhsusf\addons\rhsusf_m1a1\data\rhsusf_m1a1aim_03_co.paa",
+			"rhsusf\addons\rhsusf_m1a1\loaderspintle\data\loaderspintle_tuski_wd_co.paa",
+			"rhsusf\addons\rhsusf_m1a2\data\rhsusf_tuskiia2_wd_co.paa",
+			"rhsusf\addons\rhsusf_m1a2\data\rhsusf_m1slat_wd_co.paa",
+			"rhsusf\addons\rhsusf_m1a1\duke\data\duke_antennae_wd_co.paa"
 		};
 		class textureSources
 		{
 			class woodland
 			{
 				displayName="Woodland";
+				author="$STR_RHSUSF_AUTHOR_FULL";
+				textures[]=
+				{
+					"rhsusf\addons\rhsusf_m1a2\data\rhsusf_m1a2sepv1tusk_wd_01_co.paa",
+					"rhsusf\addons\rhsusf_m1a2\data\rhsusf_m1a2sepv1tusk_wd_02_co.paa",
+					"rhsusf\addons\rhsusf_m1a1\data\rhsusf_m1a1aim_03_co.paa",
+					"rhsusf\addons\rhsusf_m1a1\loaderspintle\data\loaderspintle_tuski_wd_co.paa",
+					"rhsusf\addons\rhsusf_m1a2\data\rhsusf_tuskiia2_wd_co.paa",
+					"rhsusf\addons\rhsusf_m1a2\data\rhsusf_m1slat_wd_co.paa",
+					"rhsusf\addons\rhsusf_m1a1\duke\data\duke_antennae_wd_co.paa"
+				};
 			};
 			class desert: woodland
 			{
 				displayName="Desert";
+				author="$STR_RHSUSF_AUTHOR_FULL";
+				textures[]=
+				{
+					"rhsusf\addons\rhsusf_m1a2\data\rhsusf_m1a2_d_01_co.paa",
+					"rhsusf\addons\rhsusf_m1a2\data\rhsusf_m1a2_d_02_co.paa",
+					"rhsusf\addons\rhsusf_m1a1\data\rhsusf_m1a1aim_d_03_co.paa",
+					"rhsusf\addons\rhsusf_m1a1\loaderspintle\data\loaderspintle_tuski_d_co.paa",
+					"rhsusf\addons\rhsusf_m1a2\data\rhsusf_tuskiia2_d_co.paa",
+					"rhsusf\addons\rhsusf_m1a2\data\rhsusf_m1slat_d_co.paa",
+					"rhsusf\addons\rhsusf_m1a1\duke\data\duke_antennae_d_co.paa"
+				};
 			};
 		};
+		textureList[]={};
 		class Turrets: Turrets
 		{
 			class MainTurret: MainTurret
@@ -1661,6 +6137,7 @@ class CfgVehicles
 		};
 		class Attributes: Attributes
 		{
+			class ObjectTexture: ObjectTexture;  //found empty after stripping
 			class rhs_hideIFFPanel: rhs_hideIFFPanel;  //found empty after stripping
 			class rhs_hideMiles: rhs_hideMiles;  //found empty after stripping
 			class rhs_hideDUKE: rhs_hideMiles
@@ -1690,6 +6167,21 @@ class CfgVehicles
 	};
 	class rhsusf_m1a2sep1tuskiid_usarmy: rhsusf_m1a2sep1tuskiiwd_usarmy
 	{
+		editorPreview="rhsusf\addons\rhsusf_editorPreviews\data\rhsusf_m1a2sep1tuskiid_usarmy.paa";
+		hiddenSelectionsTextures[]=
+		{
+			"rhsusf\addons\rhsusf_m1a2\data\rhsusf_m1a2sepv1tuskii_d_01_co.paa",
+			"rhsusf\addons\rhsusf_m1a2\data\rhsusf_m1a2sepv1tuskii_d_02_co.paa",
+			"rhsusf\addons\rhsusf_m1a1\data\rhsusf_m1a1aim_d_03_co.paa",
+			"rhsusf\addons\rhsusf_m1a1\loaderspintle\data\loaderspintle_tuski_d_co.paa",
+			"rhsusf\addons\rhsusf_m1a2\data\rhsusf_tuskiia2_d_co.paa",
+			"rhsusf\addons\rhsusf_m1a2\data\rhsusf_m1slat_d_co.paa",
+			"rhsusf\addons\rhsusf_m1a1\duke\data\duke_antennae_d_co.paa"
+		};
+		author="$STR_RHSUSF_AUTHOR_FULL";
+		faction="rhs_faction_usarmy_d";
+		vehicleClass="rhs_vehclass_tank";
+		crew="rhsusf_army_ocp_combatcrewman";
 		rhs_decalParameters[]=
 		{
 			"['Label', cM1PlnSymPlaces, 'ArmyPlt_Abrams_D']",

@@ -4,6 +4,11 @@ class CfgPatches
 	{
 		units[]={};
 		weapons[]={};
+		requiredVersion=1.3200001;
+		requiredAddons[]=
+		{
+			"rhs_main"
+		};
 		version="0.1.1.1";
 	};
 };
@@ -53,6 +58,8 @@ class RscControlsGroupNoScrollbars;
 class rhs_1v528_Button
 {
 	access=0;
+	type=1;
+	text="";
 	colorText[]={1,1,1,1};
 	colorDisabled[]={1,1,1,0};
 	colorBackground[]={0,0,0,0};
@@ -418,6 +425,7 @@ class RHS_1g42_1v528_computer
 		class rhs_1v528_background: RscPicture
 		{
 			idc=1200;
+			text="rhsafrf\addons\rhs_optics\scripts\1v528\1v528_computer_bg.paa";
 			x="0.328123 * safezoneW + safezoneX";
 			y="0.358941 * safezoneH + safezoneY";
 			w="0.317311 * safezoneW";
@@ -426,30 +434,37 @@ class RHS_1g42_1v528_computer
 		class switch_distance_100: rhs_1v528_background
 		{
 			idc=1201;
+			text="rhsafrf\addons\rhs_optics\scripts\1v528\dist100\1v528_distS_0.paa";
 		};
 		class switch_distance_1000: rhs_1v528_background
 		{
 			idc=1202;
+			text="rhsafrf\addons\rhs_optics\scripts\1v528\dist1000\1v528_dist_aw.paa";
 		};
 		class switch_slope: rhs_1v528_background
 		{
 			idc=1203;
+			text="rhsafrf\addons\rhs_optics\scripts\1v528\controls\switch.paa";
 		};
 		class light_slope: rhs_1v528_background
 		{
 			idc=1205;
+			text="rhsafrf\addons\rhs_optics\scripts\1v528\controls\slope_control.paa";
 		};
 		class light_w: rhs_1v528_background
 		{
 			idc=1206;
+			text="rhsafrf\addons\rhs_optics\scripts\1v528\controls\w_control.paa";
 		};
 		class light_st_beta: rhs_1v528_background
 		{
 			idc=1207;
+			text="rhsafrf\addons\rhs_optics\scripts\1v528\controls\st_beta.paa";
 		};
 		class light_st_alpha: rhs_1v528_background
 		{
 			idc=1208;
+			text="rhsafrf\addons\rhs_optics\scripts\1v528\controls\st_alpha.paa";
 		};
 		class distance_100: rhs_1v528_Button
 		{
@@ -736,17 +751,3635 @@ class CfgInGameUI
 		};
 	};
 };
+class RscInGameUI
+{
+	class RscUnitInfo;
+	class RscUnitInfoSoldier;
+	class RscUnitInfoTank;
+	class RscUnitInfoAirNoWeapon: RscUnitInfo
+	{
+		class CA_VehicleTogglesBackground;
+	};
+	class RscUnitInfoAir: RscUnitInfoAirNoWeapon;  //found empty after stripping
+	class RscUnitInfoAirPlaneNoWeapon: RscUnitInfoAirNoWeapon;  //found empty after stripping
+	class RscUnitInfoAirPlane: RscUnitInfoAirPlaneNoWeapon;  //found empty after stripping
+	class RscUnitInfoAirRTDBasic: RscUnitInfoAir;  //found empty after stripping
+	class RscUnitInfoAirRTDFullDigitalNoWeapon: RscUnitInfoAir;  //found empty after stripping
+	class RscUnitInfoAirRTDFullDigital: RscUnitInfoAirRTDFullDigitalNoWeapon;  //found empty after stripping
+	class RscWeaponZeroing: RscUnitInfo
+	{
+		class WeaponInfoControlsGroupLeft;
+	};
+	class RHS_RscWeaponZeroing: RscUnitInfo
+	{
+		idd=300;
+		controls[]=
+		{
+			"CA_Zeroing"
+		};
+	};
+	class RHS_RscUnitInfoBTR: RscUnitInfo
+	{
+		onLoad="[""onLoad"",_this,""RscUnitInfo"",'IGUI'] call 	(uinamespace getvariable 'BIS_fnc_initDisplay'); _this call RHS_fnc_cmLoad";
+		onUnload="[""onUnload"",_this,""RscUnitInfo"",'IGUI'] call 	(uinamespace getvariable 'BIS_fnc_initDisplay; ')";
+		controls[]=
+		{
+			"WeaponInfoControlsGroupRight",
+			"CA_BackgroundVehicle",
+			"CA_BackgroundVehicleTitle",
+			"CA_BackgroundVehicleTitleDark",
+			"CA_BackgroundFuel",
+			"CA_Vehicle",
+			"CA_VehicleRole",
+			"CA_HitZones",
+			"CA_VehicleTogglesBackground",
+			"CA_VehicleToggles",
+			"CA_SpeedBackground",
+			"CA_SpeedUnits",
+			"CA_Speed",
+			"CA_ValueFuel"
+		};
+	};
+	class RHS_RscUnitInfoEastTank: RscUnitInfoTank
+	{
+		onLoad="['onLoad',_this,'RscUnitInfo','IGUI'] call (uinamespace getvariable 'BIS_fnc_initDisplay');; ['onLoad',_this,'RscUnitInfo','IGUI'] call a3_ui_initDisplay; ";
+		controls[]=
+		{
+			"WeaponInfoControlsGroupRight",
+			"CA_Zeroing",
+			"CA_BackgroundVehicle",
+			"CA_BackgroundVehicleTitle",
+			"CA_BackgroundVehicleTitleDark",
+			"CA_BackgroundFuel",
+			"CA_Vehicle",
+			"CA_VehicleRole",
+			"CA_HitZones",
+			"CA_SpeedBackground",
+			"CA_SpeedUnits",
+			"CA_Speed",
+			"CA_ValueFuel",
+			"CA_Mode"
+		};
+		class CA_Mode: RscText
+		{
+			idc=149;
+			colorText[]=
+			{
+				"(profilenamespace getvariable ['IGUI_TEXT_RGB_R',0])",
+				"(profilenamespace getvariable ['IGUI_TEXT_RGB_G',1])",
+				"(profilenamespace getvariable ['IGUI_TEXT_RGB_B',1])",
+				"(profilenamespace getvariable ['IGUI_TEXT_RGB_A',0.8])"
+			};
+			y=-1;
+			x="-5 * 					(			((safezoneW / safezoneH) min 1.2) / 40)";
+			w="4.5 * 					(			((safezoneW / safezoneH) min 1.2) / 40)";
+			h="1 * 					(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
+			sizeEx="0.8 * 					(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
+		};
+	};
+	class RHS_RscUnitInfoAir_NoRadar: RscUnitInfoAir
+	{
+		controls[]=
+		{
+			"WeaponInfoControlsGroupRight",
+			"CA_BackgroundVehicle",
+			"CA_BackgroundVehicleTitle",
+			"CA_BackgroundVehicleTitleDark",
+			"CA_BackgroundFuel",
+			"CA_Vehicle",
+			"CA_VehicleRole",
+			"CA_HitZones",
+			"CA_VehicleTogglesBackground",
+			"CA_VehicleToggles",
+			"CA_SpeedBackground",
+			"CA_SpeedUnits",
+			"CA_Speed",
+			"CA_ValueFuel",
+			"CA_AltBackground",
+			"CA_AltUnits",
+			"CA_Alt"
+		};
+		onLoad="['onLoad',_this,'RscUnitInfo','IGUI'] call (uinamespace getvariable 'BIS_fnc_initDisplay'); _this spawn RHS_fnc_randomRadio";
+		class CA_VehicleTogglesBackground: CA_VehicleTogglesBackground
+		{
+			idc=1243;
+		};
+	};
+	class RHS_RscUnitInfoAir: RscUnitInfoAir
+	{
+		onLoad="['onLoad',_this,'RscUnitInfo','IGUI'] call (uinamespace getvariable 'BIS_fnc_initDisplay'); _this spawn RHS_fnc_randomRadio";
+		class CA_VehicleTogglesBackground: CA_VehicleTogglesBackground
+		{
+			idc=1243;
+		};
+	};
+	class RHS_RscUnitInfoAirPlane: RscUnitInfoAirPlane
+	{
+		onLoad="['onLoad',_this,'RscUnitInfo','IGUI'] call (uinamespace getvariable 'BIS_fnc_initDisplay'); _this spawn RHS_fnc_randomRadio";
+		class CA_VehicleTogglesBackground: CA_VehicleTogglesBackground
+		{
+			idc=1243;
+		};
+	};
+	class RHS_RscUnitInfoAir_Mi8: RscUnitInfoAir
+	{
+		onLoad="['onLoad',_this,'RscUnitInfo','IGUI'] call (uinamespace getvariable 'BIS_fnc_initDisplay'); ['jet',17] spawn RHSUSF_fnc_randomRadio;_this spawn rhs_fnc_dynamicObjectDrawing_loop;[] call RHS_fnc_UI_Options";
+		controls[]=
+		{
+			"CA_BackgroundVehicle",
+			"CA_BackgroundVehicleTitle",
+			"CA_BackgroundVehicleTitleDark",
+			"CA_BackgroundFuel",
+			"CA_Vehicle",
+			"CA_VehicleRole",
+			"CA_HitZones",
+			"CA_VehicleTogglesBackground",
+			"CA_VehicleToggles",
+			"CA_SpeedBackground",
+			"CA_SpeedUnits",
+			"CA_Speed",
+			"CA_ValueFuel",
+			"CA_AltBackground",
+			"CA_AltUnits",
+			"CA_Alt",
+			"WeaponInfoControlsGroupRight",
+			"RHS_WheelBrakes_SFM"
+		};
+		class RHS_WheelBrakes_SFM: RscPicture
+		{
+			idc=10101;
+			text="\A3\Ui_f\data\IGUI\Cfg\VehicleToggles\WheelBreakIconOn_ca.paa";
+			colorText[]=
+			{
+				"(profilenamespace getvariable ['IGUI_TEXT_RGB_R',0])",
+				"(profilenamespace getvariable ['IGUI_TEXT_RGB_G',1])",
+				"(profilenamespace getvariable ['IGUI_TEXT_RGB_B',1])",
+				"(profilenamespace getvariable ['IGUI_TEXT_RGB_A',0.8])"
+			};
+			x="4.7 * 					(			((safezoneW / safezoneH) min 1.2) / 40) + 		(profilenamespace getvariable ['GUI_GRID_VEHICLE_X',		(safezoneX + 0.5 * 			(			((safezoneW / safezoneH) min 1.2) / 40))])";
+			y="3.4 * 					(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) + 		(profilenamespace getvariable ['GUI_GRID_VEHICLE_Y',		(safezoneY + 0.5 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25))])";
+			w="0.8 * 					(			((safezoneW / safezoneH) min 1.2) / 40)";
+			h="0.8 * 					(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
+		};
+		class CA_VehicleTogglesBackground: CA_VehicleTogglesBackground
+		{
+			idc=1243;
+		};
+	};
+	class RHS_RscUnitInfoAir_RTD_Mi8: RscUnitInfoAirRTDFullDigital
+	{
+		onLoad="['onLoad',_this,'RscUnitInfo','IGUI'] call (uinamespace getvariable 'BIS_fnc_initDisplay'); _this spawn RHS_fnc_randomRadio;_this spawn rhs_fnc_dynamicObjectDrawing_loop;[] call RHS_fnc_UI_Options";
+		class CA_VehicleTogglesBackground: CA_VehicleTogglesBackground
+		{
+			idc=1243;
+		};
+	};
+	class RHS_RscUnitInfoAir_RTD_Basic_Mi8: RscUnitInfoAirRTDBasic
+	{
+		onLoad="uinamespace setvariable ['RscUnitInfoAir',_this select 0]; _this spawn RHS_fnc_randomRadio;_this spawn rhs_fnc_dynamicObjectDrawing_loop;[] call RHS_fnc_UI_Options";
+		class CA_VehicleTogglesBackground: CA_VehicleTogglesBackground
+		{
+			idc=1243;
+		};
+	};
+	class RHS_RscUnitInfoAir_Mi24: RHS_RscUnitInfoAir_NoRadar
+	{
+		onLoad="['onLoad',_this,'RscUnitInfo','IGUI'] call (uinamespace getvariable 'BIS_fnc_initDisplay'); _this spawn RHS_fnc_randomRadio;_this spawn rhs_fnc_rwr_spo15;_this spawn rhs_fnc_mi24_map;_this spawn rhs_fnc_dynamicObjectDrawing_loop;[] call RHS_fnc_UI_Options";
+		controls[]=
+		{
+			"RHS_SPO15_handler",
+			"CA_BackgroundVehicle",
+			"CA_BackgroundVehicleTitle",
+			"CA_BackgroundVehicleTitleDark",
+			"CA_BackgroundFuel",
+			"CA_Vehicle",
+			"CA_VehicleRole",
+			"CA_HitZones",
+			"CA_VehicleTogglesBackground",
+			"CA_VehicleToggles",
+			"CA_SpeedBackground",
+			"CA_SpeedUnits",
+			"CA_Speed",
+			"CA_ValueFuel",
+			"CA_AltBackground",
+			"CA_AltUnits",
+			"CA_Alt",
+			"WeaponInfoControlsGroupRight"
+		};
+		class RHS_SPO15_handler: RscPicture
+		{
+			idc=8655;
+		};
+		class CA_VehicleTogglesBackground: CA_VehicleTogglesBackground
+		{
+			idc=1243;
+		};
+	};
+	class RHS_RscUnitInfoAir_RTD_Mi24: RscUnitInfoAirRTDFullDigital
+	{
+		onLoad="['onLoad',_this,'RscUnitInfo','IGUI'] call (uinamespace getvariable 'BIS_fnc_initDisplay'); _this spawn RHS_fnc_randomRadio;_this spawn rhs_fnc_rwr_spo15;_this spawn rhs_fnc_dynamicObjectDrawing_loop;_this spawn rhs_fnc_mi24_map;[] call RHS_fnc_UI_Options";
+		controls[]=
+		{
+			"RHS_SPO15_handler",
+			"CA_BackgroundVehicle",
+			"CA_BackgroundVehicleTitle",
+			"CA_BackgroundVehicleTitleDark",
+			"CA_BackgroundFuel",
+			"CA_Vehicle",
+			"CA_VehicleRole",
+			"CA_HitZones",
+			"CA_VehicleTogglesBackground",
+			"CA_VehicleToggles",
+			"CA_SpeedBackground",
+			"CA_SpeedUnits",
+			"CA_Speed",
+			"CA_ValueFuel",
+			"CA_AltBackground",
+			"CA_AltUnits",
+			"CA_Alt",
+			"CA_Horizon_Lite",
+			"CA_Speed_Analogue",
+			"CA_Altitude_Analogue",
+			"CA_Horizon_Analogue",
+			"CA_Stability_Analogue",
+			"CA_Compass_Analogue",
+			"WeaponInfoControlsGroupRight"
+		};
+		class RHS_SPO15_handler: RscPicture
+		{
+			idc=8655;
+		};
+		class CA_VehicleTogglesBackground: CA_VehicleTogglesBackground
+		{
+			idc=1243;
+		};
+	};
+	class RHS_RscUnitInfoAir_RTD_Basic_Mi24: RscUnitInfoAirRTDBasic
+	{
+		onLoad="uinamespace setvariable ['RscUnitInfoAir',_this select 0]; _this spawn RHS_fnc_randomRadio;_this spawn rhs_fnc_rwr_spo15;_this spawn rhs_fnc_mi24_map;_this spawn rhs_fnc_dynamicObjectDrawing_loop;[] call RHS_fnc_UI_Options";
+		controls[]=
+		{
+			"RHS_SPO15_handler"
+		};
+		class RHS_SPO15_handler: RscPicture
+		{
+			idc=8655;
+		};
+		class CA_VehicleTogglesBackground: CA_VehicleTogglesBackground
+		{
+			idc=1243;
+		};
+	};
+	class RHS_RscUnitInfoAir_Su25: RscUnitInfoAirPlane
+	{
+		onLoad="['onLoad',_this,'RscUnitInfo','IGUI'] call (uinamespace getvariable 'BIS_fnc_initDisplay'); _this spawn RHS_fnc_randomRadio;_this spawn rhs_fnc_rwr_spo15;_this spawn rhs_fnc_dynamicObjectDrawing_loop;[] call RHS_fnc_UI_Options";
+		controls[]=
+		{
+			"RHS_SPO15_handler",
+			"CA_BackgroundVehicle",
+			"CA_BackgroundVehicleTitle",
+			"CA_BackgroundVehicleTitleDark",
+			"CA_BackgroundFuel",
+			"CA_Vehicle",
+			"CA_VehicleRole",
+			"CA_HitZones",
+			"CA_VehicleTogglesBackground",
+			"CA_VehicleToggles",
+			"CA_SpeedBackground",
+			"CA_SpeedUnits",
+			"CA_Speed",
+			"CA_ValueFuel",
+			"CA_AltBackground",
+			"CA_AltUnits",
+			"CA_Alt",
+			"WeaponInfoControlsGroupRight",
+			"CA_Throttle"
+		};
+		class RHS_SPO15_handler: RscPicture
+		{
+			idc=8655;
+		};
+		class CA_VehicleTogglesBackground: CA_VehicleTogglesBackground
+		{
+			idc=1243;
+		};
+	};
+	class RHS_RscUnitInfoAir_MiG29S: RscUnitInfoAirPlane
+	{
+		onLoad="['onLoad',_this,'RscUnitInfo','IGUI'] call (uinamespace getvariable 'BIS_fnc_initDisplay'); _this spawn RHS_fnc_randomRadio;_this spawn rhs_fnc_rwr_spo15;_this spawn rhs_fnc_dynamicObjectDrawing_loop;_this spawn rhs_fnc_mig29_map;_this call rhs_fnc_afterburner;[] call RHS_fnc_UI_Options";
+		controls[]=
+		{
+			"RHS_SPO15_handler",
+			"RHS_Afterburner_handler",
+			"CA_BackgroundVehicle",
+			"CA_BackgroundVehicleTitle",
+			"CA_BackgroundVehicleTitleDark",
+			"CA_BackgroundFuel",
+			"CA_Vehicle",
+			"CA_VehicleRole",
+			"CA_HitZones",
+			"CA_VehicleTogglesBackground",
+			"CA_VehicleToggles",
+			"CA_SpeedBackground",
+			"CA_SpeedUnits",
+			"CA_Speed",
+			"CA_ValueFuel",
+			"CA_AltBackground",
+			"CA_AltUnits",
+			"CA_Alt",
+			"WeaponInfoControlsGroupRight",
+			"CA_Throttle"
+		};
+		class RHS_SPO15_handler: RscPicture
+		{
+			idc=8655;
+		};
+		class RHS_Afterburner_handler: RscPicture
+		{
+			idc=8656;
+		};
+		class CA_VehicleTogglesBackground: CA_VehicleTogglesBackground
+		{
+			idc=1243;
+		};
+	};
+	class RHS_RscUnitInfoAir_MiG29SM: RscUnitInfoAirPlane
+	{
+		onLoad="['onLoad',_this,'RscUnitInfo','IGUI'] call (uinamespace getvariable 'BIS_fnc_initDisplay'); _this spawn RHS_fnc_randomRadio;_this spawn rhs_fnc_rwr_spo15;_this spawn rhs_fnc_dynamicObjectDrawing_loop;_this spawn rhs_fnc_mig29sm_cockpit;_this call rhs_fnc_afterburner;[] call RHS_fnc_UI_Options";
+		controls[]=
+		{
+			"RHS_SPO15_handler",
+			"RHS_Afterburner_handler",
+			"CA_BackgroundVehicle",
+			"CA_BackgroundVehicleTitle",
+			"CA_BackgroundVehicleTitleDark",
+			"CA_BackgroundFuel",
+			"CA_Vehicle",
+			"CA_VehicleRole",
+			"CA_HitZones",
+			"CA_VehicleTogglesBackground",
+			"CA_VehicleToggles",
+			"CA_SpeedBackground",
+			"CA_SpeedUnits",
+			"CA_Speed",
+			"CA_ValueFuel",
+			"CA_AltBackground",
+			"CA_AltUnits",
+			"CA_Alt",
+			"WeaponInfoControlsGroupRight",
+			"CA_Throttle"
+		};
+		class RHS_SPO15_handler: RscPicture
+		{
+			idc=8655;
+		};
+		class RHS_Afterburner_handler: RscPicture
+		{
+			idc=8656;
+		};
+		class CA_VehicleTogglesBackground: CA_VehicleTogglesBackground
+		{
+			idc=1243;
+		};
+	};
+	class RHS_RscUnitInfoAir_Ka52: RscUnitInfoAir
+	{
+		onLoad="['onLoad',_this,'RscUnitInfo','IGUI'] call (uinamespace getvariable 'BIS_fnc_initDisplay'); _this spawn RHS_fnc_randomRadio;_this call rhs_fnc_Ka52_handler;_this spawn rhs_fnc_dynamicObjectDrawing_loop;[] call RHS_fnc_UI_Options";
+		class CA_VehicleTogglesBackground: CA_VehicleTogglesBackground
+		{
+			idc=1243;
+		};
+	};
+	class RHS_RscUnitInfoAir_Mi28: RscUnitInfoAir
+	{
+		onLoad="['onLoad',_this,'RscUnitInfo','IGUI'] call (uinamespace getvariable 'BIS_fnc_initDisplay'); _this spawn RHS_fnc_randomRadio;_this call rhs_fnc_Mi28_handler;_this spawn rhs_fnc_dynamicObjectDrawing_loop;[] call RHS_fnc_UI_Options";
+		controls[]=
+		{
+			"CA_BackgroundVehicle",
+			"CA_BackgroundVehicleTitle",
+			"CA_BackgroundVehicleTitleDark",
+			"CA_BackgroundFuel",
+			"CA_Vehicle",
+			"CA_VehicleRole",
+			"CA_HitZones",
+			"CA_VehicleTogglesBackground",
+			"CA_VehicleToggles",
+			"CA_SpeedBackground",
+			"CA_SpeedUnits",
+			"CA_Speed",
+			"CA_ValueFuel",
+			"CA_AltBackground",
+			"CA_AltUnits",
+			"CA_Alt",
+			"WeaponInfoControlsGroupRight",
+			"RHS_WheelBrakes_SFM"
+		};
+		class RHS_WheelBrakes_SFM: RscPicture
+		{
+			idc=10101;
+			text="\A3\Ui_f\data\IGUI\Cfg\VehicleToggles\WheelBreakIconOn_ca.paa";
+			colorText[]=
+			{
+				"(profilenamespace getvariable ['IGUI_TEXT_RGB_R',0])",
+				"(profilenamespace getvariable ['IGUI_TEXT_RGB_G',1])",
+				"(profilenamespace getvariable ['IGUI_TEXT_RGB_B',1])",
+				"(profilenamespace getvariable ['IGUI_TEXT_RGB_A',0.8])"
+			};
+			x="4.7 * 					(			((safezoneW / safezoneH) min 1.2) / 40) + 		(profilenamespace getvariable ['GUI_GRID_VEHICLE_X',		(safezoneX + 0.5 * 			(			((safezoneW / safezoneH) min 1.2) / 40))])";
+			y="3.4 * 					(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) + 		(profilenamespace getvariable ['GUI_GRID_VEHICLE_Y',		(safezoneY + 0.5 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25))])";
+			w="0.8 * 					(			((safezoneW / safezoneH) min 1.2) / 40)";
+			h="0.8 * 					(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
+		};
+		class CA_VehicleTogglesBackground: CA_VehicleTogglesBackground
+		{
+			idc=1243;
+		};
+	};
+	class RHS_RscUnitInfoAir_PAKFA: RscUnitInfoAirPlane
+	{
+		onLoad="['onLoad',_this,'RscUnitInfo','IGUI'] call (uinamespace getvariable 'BIS_fnc_initDisplay'); _this spawn RHS_fnc_randomRadio;_this call rhs_fnc_pakfa_init;_this spawn rhs_fnc_dynamicObjectDrawing_loop;_this call rhs_fnc_afterburner;[] call RHS_fnc_UI_Options";
+		controls[]=
+		{
+			"RHS_Afterburner_handler",
+			"CA_BackgroundVehicle",
+			"CA_BackgroundVehicleTitle",
+			"CA_BackgroundVehicleTitleDark",
+			"CA_BackgroundFuel",
+			"CA_Vehicle",
+			"CA_VehicleRole",
+			"CA_HitZones",
+			"CA_VehicleTogglesBackground",
+			"CA_VehicleToggles",
+			"CA_SpeedBackground",
+			"CA_SpeedUnits",
+			"CA_Speed",
+			"CA_ValueFuel",
+			"CA_AltBackground",
+			"CA_AltUnits",
+			"CA_Alt",
+			"WeaponInfoControlsGroupRight",
+			"CA_Throttle"
+		};
+		class RHS_Afterburner_handler: RscPicture
+		{
+			idc=8656;
+		};
+		class CA_VehicleTogglesBackground: CA_VehicleTogglesBackground
+		{
+			idc=1243;
+		};
+	};
+	class RHS_RscUnitInfoEastTankCompass: RHS_RscUnitInfoEastTank
+	{
+		onLoad="['onLoad',_this,'RscUnitInfo','IGUI'] call (uinamespace getvariable 'BIS_fnc_initDisplay'); _this call RHS_fnc_sight_1G42; ";
+		class Objects
+		{
+			class Bgr
+			{
+				idc=411;
+				type=82;
+				model="rhsafrf\addons\rhs_optics\vehicles\kompas\bg.p3d";
+				scale=0.28999999;
+				direction[]={0,0,1};
+				up[]={0,1,0};
+				x="0.1716+safezoneX";
+				y="0.3751+safezoneY";
+				z=0.103;
+				xBack=0.5;
+				yBack=0.5;
+				zBack=0;
+				inBack=0;
+				enableZoom=0;
+				zoomDuration=4.0009999;
+			};
+			class Com: Bgr
+			{
+				idc=412;
+				model="rhsafrf\addons\rhs_optics\vehicles\kompas\com.p3d";
+				z=0.102;
+			};
+			class Gun: Bgr
+			{
+				idc=413;
+				model="rhsafrf\addons\rhs_optics\vehicles\kompas\gun.p3d";
+				z=0.101;
+			};
+			class Compass: Bgr
+			{
+				idc=211;
+				x="0.143757 + safezoneX";
+				y="0.706185+safezoneY";
+				z=0.1025;
+				direction[]={0.406737,0,-0.91354501};
+				up[]={0,1,0};
+				model="rhsafrf\addons\rhs_optics\vehicles\kompas\gpk59_compass.p3d";
+			};
+			class Compass_wheel: Compass
+			{
+				idc=212;
+				z=0.1021;
+				model="rhsafrf\addons\rhs_optics\vehicles\kompas\gpk59_wheel.p3d";
+			};
+		};
+	};
+	class RHS_RscInfoSprut: RHS_RscUnitInfoEastTank
+	{
+		onLoad="['onLoad',_this,'RscUnitInfo','IGUI'] call (uinamespace getvariable 'BIS_fnc_initDisplay'); _this call RHS_fnc_compass_sprutsd;";
+		class Objects
+		{
+			class Bgr
+			{
+				idc=411;
+				type=82;
+				model="rhsafrf\addons\rhs_optics\vehicles\kompas\sprut\bg.p3d";
+				scale=0.28999999;
+				direction[]={0,0,1};
+				up[]={0,1,0};
+				x="0.1716+safezoneX";
+				y="0.3751+safezoneY";
+				z=0.103;
+				xBack=0.5;
+				yBack=0.5;
+				zBack=0;
+				inBack=0;
+				enableZoom=0;
+				zoomDuration=4.0009999;
+			};
+			class Com: Bgr
+			{
+				idc=412;
+				model="rhsafrf\addons\rhs_optics\vehicles\kompas\sprut\com.p3d";
+				z=0.102;
+			};
+			class Gun: Bgr
+			{
+				idc=413;
+				model="rhsafrf\addons\rhs_optics\vehicles\kompas\sprut\gun.p3d";
+				z=0.101;
+			};
+			class Compass: Bgr
+			{
+				idc=211;
+				x="0.143757 + safezoneX";
+				y="0.706185+safezoneY";
+				z=0.1025;
+				direction[]={0.406737,0,-0.91354501};
+				up[]={0,1,0};
+				scale=0.30000001;
+				model="rhsafrf\addons\rhs_optics\vehicles\kompas\gpk59_compass.p3d";
+			};
+			class Compass_wheel: Compass
+			{
+				idc=212;
+				z=0.1021;
+				model="rhsafrf\addons\rhs_optics\vehicles\kompas\gpk59_wheel.p3d";
+			};
+		};
+	};
+	class RHS_RscInfoBMP3: RHS_RscInfoSprut
+	{
+		onLoad="['onLoad',_this,'RscUnitInfo','IGUI'] call (uinamespace getvariable 'BIS_fnc_initDisplay'); _this call RHS_fnc_compass_sprutsd;_this call RHS_fnc_pipHandler_BMP3;";
+	};
+	class RHS_RscInfoBMP3M: RHS_RscInfoSprut
+	{
+		onLoad="['onLoad',_this,'RscUnitInfo','IGUI'] call (uinamespace getvariable 'BIS_fnc_initDisplay'); _this call RHS_fnc_compass_sprutsd;_this call RHS_fnc_pipHandler_BMP3M;";
+	};
+	class RHS_RscInfoT72: RHS_RscUnitInfoEastTank
+	{
+		onLoad="['onLoad',_this,'RscUnitInfo','IGUI'] call (uinamespace getvariable 'BIS_fnc_initDisplay'); _this call RHS_fnc_compass_t72;";
+		class Objects
+		{
+			class Bgr
+			{
+				idc=411;
+				type=82;
+				model="rhsafrf\addons\rhs_optics\vehicles\kompas\bg.p3d";
+				scale=0.28999999;
+				direction[]={0,0,1};
+				up[]={0,1,0};
+				x="0.1716+safezoneX";
+				y="0.3751+safezoneY";
+				z=0.103;
+				xBack=0.5;
+				yBack=0.5;
+				zBack=0;
+				inBack=0;
+				enableZoom=0;
+				zoomDuration=4.0009999;
+			};
+			class Com: Bgr
+			{
+				idc=412;
+				model="rhsafrf\addons\rhs_optics\vehicles\kompas\com.p3d";
+				z=0.102;
+			};
+			class Gun: Bgr
+			{
+				idc=413;
+				model="rhsafrf\addons\rhs_optics\vehicles\kompas\gun.p3d";
+				z=0.101;
+			};
+			class Compass: Bgr
+			{
+				idc=211;
+				x="0.143757 + safezoneX";
+				y="0.706185+safezoneY";
+				z=0.1025;
+				direction[]={0.406737,0,-0.91354501};
+				up[]={0,1,0};
+				scale=0.30000001;
+				model="rhsafrf\addons\rhs_optics\vehicles\kompas\gpk59_compass.p3d";
+			};
+			class Compass_wheel: Compass
+			{
+				idc=212;
+				z=0.1021;
+				model="rhsafrf\addons\rhs_optics\vehicles\kompas\gpk59_wheel.p3d";
+			};
+		};
+	};
+	class RHS_RscInfoBMP2: RHS_RscInfoT72
+	{
+		onLoad="['onLoad',_this,'RscUnitInfo','IGUI'] call (uinamespace getvariable 'BIS_fnc_initDisplay'); _this call RHS_fnc_compass_sprutsd; _this call rhs_fnc_cmLoad";
+	};
+	class RHS_RscInfoT80: RHS_RscInfoT72
+	{
+		onLoad="['onLoad',_this,'RscUnitInfo','IGUI'] call (uinamespace getvariable 'BIS_fnc_initDisplay'); _this call RHS_fnc_compass_t80; _this call RHS_fnc_cmLoad";
+	};
+	class RHS_RscInfoT90: RHS_RscInfoT72
+	{
+		onLoad="['onLoad',_this,'RscUnitInfo','IGUI'] call (uinamespace getvariable 'BIS_fnc_initDisplay'); _this call RHS_fnc_compass_sprutsd; _this call rhs_fnc_cmLoad";
+	};
+	class RHS_RscWeaponSprutSD_FCS: RscUnitInfo
+	{
+		idd=300;
+		onLoad="['onLoad',_this,'RscUnitInfo','IGUI'] call (uinamespace getvariable 'BIS_fnc_initDisplay'); _this call RHS_fnc_sight_sprutsd";
+		controls[]=
+		{
+			"CA_OpticsZoom",
+			"CA_IGUI_elements_group"
+		};
+		class CA_OpticsZoom: RscText
+		{
+			idc=180;
+			style=1;
+			colorText[]={0.70599997,0.074500002,0.0196,1};
+			sizeEx="0.038*SafezoneH";
+			shadow=0;
+			font="EtelkaMonospacePro";
+			text="4.5";
+			x="43.85 * 		(0.01875 * SafezoneH)";
+			y="19.6 * 		(0.025 * SafezoneH)";
+			w="0* 		(0.01875 * SafezoneH)";
+			h="0 * 		(0.025 * SafezoneH)";
+		};
+		class CA_IGUI_elements_group: RscControlsGroup
+		{
+			x="0 * 		(0.01875 * SafezoneH) + 		(SafezoneX + ((SafezoneW - SafezoneH) / 2))";
+			y="0 * 		(0.025 * SafezoneH) + 		(SafezoneY)";
+			w="53.5 * 		(0.01875 * SafezoneH)";
+			h="40 * 		(0.025 * SafezoneH)";
+			idc=170;
+			class VScrollbar
+			{
+				autoScrollSpeed=-1;
+				autoScrollDelay=5;
+				autoScrollRewind=0;
+				color[]={1,1,1,0};
+				width=0.001;
+			};
+			class HScrollbar
+			{
+				color[]={1,1,1,0};
+				height=0.001;
+			};
+			class Controls
+			{
+				class CA_Laser: RscText
+				{
+					idc=158;
+					style="0x30 + 0x800";
+					sizeEx="0.038*SafezoneH";
+					colorText[]={0.70599997,0.074500002,0.0196,1};
+					shadow=0;
+					font="EtelkaMonospacePro";
+					text="\a3\weapons_f\acc\data\collimdot_red_ca.paa";
+					x="25.85 *   (0.01875 * Safezoneh)";
+					y="19.27 *   (0.025 * SafezoneH)";
+					w="1.5 * 		(0.01875 * SafezoneH)";
+					h="1.5 * 		(0.025 * SafezoneH)";
+				};
+				class CA_Distance: RscOpticsValue
+				{
+					idc=151;
+					style=1;
+					shadow=0;
+					colorText[]={1,0,0,1};
+					font="rhs_digital_font";
+					sizeEx="0.039*SafezoneH";
+					x="16.98 *   (0.01875 * Safezoneh)";
+					y="-3.75 *   (0.025 * SafezoneH)";
+					w="0";
+					h="0";
+				};
+				class CA_OpticsMode: CA_OpticsZoom
+				{
+					idc=154;
+				};
+				class RHS_Ammo: CA_Distance
+				{
+					idc=3;
+					text="$";
+					x="26.18 *   (0.01875 * Safezoneh)";
+					y="3.45 *   (0.025 * SafezoneH)";
+					w="1.9 *   (0.01875 * SafezoneH)";
+					h="1.9 *   (0.025 * SafezoneH)";
+				};
+				class RHS_Distance: CA_Distance
+				{
+					idc=4;
+					text="$$$$";
+					w="12.9 *   (0.01875 * SafezoneH)";
+					h="12.9 *   (0.025 * SafezoneH)";
+				};
+				class RHS_NightSight: RscPicture
+				{
+					idc=5;
+					style="0x30 + 0x800";
+					sizeEx="0.038*SafezoneH";
+					shadow=0;
+					font="rhs_digital_font";
+					colorText[]={0.5,1,1,0};
+					text="rhsafrf\addons\rhs_optics\vehicles\data\rhs_1g42n_b_static.paa";
+					x="12.08 *   (0.01875 * Safezoneh)";
+					y="5.55 *   (0.025 * SafezoneH)";
+					w="29 *   (0.01875 * SafezoneH)";
+					h="29 *   (0.025 * SafezoneH)";
+				};
+				class RHS_NightSight_Moving: RHS_NightSight
+				{
+					idc=6;
+					text="rhsafrf\addons\rhs_optics\vehicles\data\rhs_1g42n_moving.paa";
+				};
+			};
+		};
+		class Objects
+		{
+			class AmmoSelector_bgr
+			{
+				idc=311;
+				type=82;
+				x="0.535152-safezoneX";
+				y="0.140276+safezoneY";
+				z=0.1;
+				scale=0.15000001;
+				direction[]={0,0,-1};
+				up[]={0,1,0};
+				model="rhsafrf\addons\rhs_optics\vehicles\kompas\switch_bg.p3d";
+				xBack=0.5;
+				yBack=0.5;
+				zBack=0;
+				inBack=0;
+				enableZoom=0;
+				zoomDuration=4.0009999;
+			};
+			class AmmoSelector: AmmoSelector_bgr
+			{
+				idc=312;
+				model="rhsafrf\addons\rhs_optics\vehicles\kompas\switch.p3d";
+			};
+			class AutoloaderSelector: AmmoSelector_bgr
+			{
+				idc=313;
+				x="0.335152-safezoneX";
+				model="rhsafrf\addons\rhs_optics\vehicles\kompas\switch_autoloader_on.p3d";
+			};
+		};
+	};
+	class RHS_RscWeapon1k13_FCS: RscUnitInfo
+	{
+		idd=300;
+		onLoad="['onLoad',_this,'RscUnitInfo','IGUI'] call (uinamespace getvariable 'BIS_fnc_initDisplay'); _this call RHS_fnc_sight_1k13_3s_sprut";
+		controls[]=
+		{
+			"CA_OpticsZoom",
+			"CA_IGUI_elements_group"
+		};
+		class CA_OpticsZoom: RscText
+		{
+			idc=180;
+			style=1;
+			colorText[]={0.70599997,0.074500002,0.0196,1};
+			sizeEx="0.038*SafezoneH";
+			shadow=0;
+			font="EtelkaMonospacePro";
+			text="4.5";
+			x="43.85 * 		(0.01875 * SafezoneH)";
+			y="19.6 * 		(0.025 * SafezoneH)";
+			w="0* 		(0.01875 * SafezoneH)";
+			h="0 * 		(0.025 * SafezoneH)";
+		};
+		class CA_IGUI_elements_group: RscControlsGroup
+		{
+			x="0 * 		(0.01875 * SafezoneH) + 		(SafezoneX + ((SafezoneW - SafezoneH) / 2))";
+			y="0 * 		(0.025 * SafezoneH) + 		(SafezoneY)";
+			w="53.5 * 		(0.01875 * SafezoneH)";
+			h="40 * 		(0.025 * SafezoneH)";
+			idc=170;
+			class VScrollbar
+			{
+				autoScrollSpeed=-1;
+				autoScrollDelay=5;
+				autoScrollRewind=0;
+				color[]={1,1,1,0};
+				width=0.001;
+			};
+			class HScrollbar
+			{
+				color[]={1,1,1,0};
+				height=0.001;
+			};
+			class Controls
+			{
+				class CA_Distance: RscOpticsValue
+				{
+					idc=151;
+					style=1;
+					shadow=0;
+					colorText[]={1,0,0,1};
+					font="rhs_digital_font";
+					sizeEx="0.039*SafezoneH";
+					x="16.98 *   (0.01875 * Safezoneh)";
+					y="-3.75 *   (0.025 * SafezoneH)";
+					w="0";
+					h="0";
+				};
+				class RHS_Ammo: CA_Distance
+				{
+					idc=3;
+					text="$";
+					type=13;
+					size="0.039*SafezoneH";
+					shadow=1;
+					x="25.16 *   (0.01875 * Safezoneh)";
+					y="3.45 *   (0.025 * SafezoneH)";
+					w="2.9 *   (0.01875 * SafezoneH)";
+					h="1.9 *   (0.025 * SafezoneH)";
+					class Attributes
+					{
+						font="rhs_digital_font";
+						color="#ff0000";
+						align="center";
+						shadow="false";
+					};
+				};
+				class RHS_Distance: CA_Distance
+				{
+					idc=4;
+					text="$$$$";
+					w="12.9 *   (0.01875 * SafezoneH)";
+					h="12.9 *   (0.025 * SafezoneH)";
+				};
+				class CA_OpticsMode: CA_OpticsZoom
+				{
+					idc=154;
+				};
+			};
+		};
+	};
+	class RHS_RscWeapon1k13_bmp3_FCS: RHS_RscWeapon1k13_FCS
+	{
+		onLoad="['onLoad',_this,'RscUnitInfo','IGUI'] call (uinamespace getvariable 'BIS_fnc_initDisplay'); _this call RHS_fnc_sight_1k13_3s_bmp3";
+	};
+	class RHS_RscWeaponT72_FCS: RscUnitInfo
+	{
+		idd=300;
+		onLoad="['onLoad',_this,'RscUnitInfo','IGUI'] call (uinamespace getvariable 'BIS_fnc_initDisplay'); _this call RHS_fnc_rF_t72";
+		controls[]=
+		{
+			"CA_Distance",
+			"CA_IGUI_elements_group",
+			"CA_OpticsZoom"
+		};
+		class CA_OpticsZoom: RscText
+		{
+			idc=180;
+			style=1;
+			colorText[]={0.70599997,0.074500002,0.0196,1};
+			sizeEx="0.038*SafezoneH";
+			shadow=0;
+			font="EtelkaMonospacePro";
+			text="4.5";
+			x="43.85 * 		(0.01875 * SafezoneH)";
+			y="19.6 * 		(0.025 * SafezoneH)";
+			w="0* 		(0.01875 * SafezoneH)";
+			h="0 * 		(0.025 * SafezoneH)";
+		};
+		class CA_IGUI_elements_group: RscControlsGroup
+		{
+			x="0 * 		(0.01875 * SafezoneH) + 		(SafezoneX + ((SafezoneW - SafezoneH) / 2))";
+			y="0 * 		(0.025 * SafezoneH) + 		(SafezoneY)";
+			w="53.5 * 		(0.01875 * SafezoneH)";
+			h="40 * 		(0.025 * SafezoneH)";
+			idc=170;
+			class VScrollbar
+			{
+				autoScrollSpeed=-1;
+				autoScrollDelay=5;
+				autoScrollRewind=0;
+				color[]={1,1,1,0};
+				width=0.001;
+			};
+			class HScrollbar
+			{
+				color[]={1,1,1,0};
+				height=0.001;
+			};
+			class Controls
+			{
+				class CA_Laser: RscText
+				{
+					idc=258;
+					style="0x30 + 0x800";
+					sizeEx="0.038*SafezoneH";
+					colorText[]={0.70599997,0.074500002,0.0196,1};
+					shadow=0;
+					font="EtelkaMonospacePro";
+					text="\rhsafrf\addons\rhs_t72\data\RF\TPD_K1_lasermark_6x.paa";
+					x="26.4 *   (0.01875 * Safezoneh)";
+					y="19.85 *   (0.025 * SafezoneH)";
+					w="0.5 * 		(0.01875 * SafezoneH)";
+					h="0.5 * 		(0.025 * SafezoneH)";
+				};
+				class CA_OpticsMode: CA_OpticsZoom
+				{
+					idc=154;
+				};
+			};
+		};
+		class CA_Distance: RscOpticsValue
+		{
+			idc=151;
+			style=2;
+			colorText[]={1,0.15000001,0.15000001,0.64999998};
+			shadow=0;
+			font="EtelkaMonospacePro";
+			x=0;
+			y="(SafezoneY+SafezoneH) - 0.195";
+			w=0;
+			h=0;
+		};
+		class Objects
+		{
+			class AmmoSelector_bgr
+			{
+				idc=311;
+				type=82;
+				x="0.535152-safezoneX";
+				y="0.140276+safezoneY";
+				z=0.1;
+				scale=0.15000001;
+				direction[]={0,0,-1};
+				up[]={0,1,0};
+				model="rhsafrf\addons\rhs_optics\vehicles\kompas\switch_bg.p3d";
+				xBack=0.5;
+				yBack=0.5;
+				zBack=0;
+				inBack=0;
+				enableZoom=0;
+				zoomDuration=4.0009999;
+			};
+			class AmmoSelector: AmmoSelector_bgr
+			{
+				idc=312;
+				model="rhsafrf\addons\rhs_optics\vehicles\kompas\switch.p3d";
+			};
+		};
+	};
+	class RHS_RscWeaponT72_Comm: RscUnitInfo
+	{
+		idd=300;
+		onLoad="[] call RHS_fnc_comm_t72";
+		controls[]=
+		{
+			"CA_Zeroing"
+		};
+	};
+	class rhs_gui_optic_t80_rangefinder: RscUnitInfo
+	{
+		idd=300;
+		onLoad="['onLoad',_this,'RscUnitInfo','IGUI'] call (uinamespace getvariable 'BIS_fnc_initDisplay'); _this call RHS_fnc_sight_1G42";
+		controls[]=
+		{
+			"CA_IGUI_elements_group"
+		};
+		class CA_IGUI_elements_group: RscControlsGroup
+		{
+			x="0 * 		(0.01875 * SafezoneH) + 		(SafezoneX + ((SafezoneW - SafezoneH) / 2))";
+			y="0 * 		(0.025 * SafezoneH) + 		(SafezoneY)";
+			w="53.5 * 		(0.01875 * SafezoneH)";
+			h="40 * 		(0.025 * SafezoneH)";
+			idc=170;
+			class VScrollbar
+			{
+				autoScrollSpeed=-1;
+				autoScrollDelay=5;
+				autoScrollRewind=0;
+				color[]={1,1,1,0};
+				width=0.001;
+			};
+			class HScrollbar
+			{
+				color[]={1,1,1,0};
+				height=0.001;
+			};
+			class Controls
+			{
+				class CA_Distance: RscOpticsValue
+				{
+					idc=151;
+					style=1;
+					shadow=0;
+					colorText[]={1,0,0,1};
+					font="rhs_digital_font";
+					sizeEx="0.039*SafezoneH";
+					x="18.65 *   (0.01875 * Safezoneh)";
+					y="30.45 *   (0.025 * SafezoneH)";
+					w="0";
+					h="0";
+				};
+				class CA_OpticsZoom: RscText
+				{
+					idc=180;
+					style=1;
+					colorText[]={0.70599997,0.074500002,0.0196,1};
+					sizeEx="0.038*SafezoneH";
+					shadow=0;
+					font="EtelkaMonospacePro";
+					text="4.5";
+					x="43.85 * 		(0.01875 * SafezoneH)";
+					y="19.6 * 		(0.025 * SafezoneH)";
+					w="0";
+					h="0";
+				};
+				class CA_OpticsMode: CA_OpticsZoom
+				{
+					idc=154;
+				};
+				class RHS_Sight: RscPicture
+				{
+					idc=1;
+					style="0x30 + 0x800";
+					sizeEx="0.038*SafezoneH";
+					colorText[]={0.70599997,0.074500002,0.0196,1};
+					shadow=0;
+					font="rhs_digital_font";
+					text="rhsafrf\addons\rhs_optics\vehicles\data\rhs_1g42_moving_ca.paa";
+					x="10.32 *   (0.01875 * Safezoneh)";
+					y="-3.95 *   (0.025 * SafezoneH)";
+					w="29 *   (0.01875 * SafezoneH)";
+					h="29 *   (0.025 * SafezoneH)";
+				};
+				class RHS_ReadyLight: RscPicture
+				{
+					idc=2;
+					style="0x30 + 0x800";
+					sizeEx="0.038*SafezoneH";
+					colorText[]={1,1,1,1};
+					shadow=0;
+					font="EtelkaMonospacePro";
+					text="rhsafrf\addons\rhs_optics\vehicles\data\rhs_1g42_readylight_ca.paa";
+					x="18.75 *   (0.01875 * SafezoneH)";
+					y="34.00 *   (0.025 * SafezoneH)";
+					w="1.9 *   (0.01875 * SafezoneH)";
+					h="1.9 *   (0.025 * SafezoneH)";
+				};
+				class RHS_Ammo: CA_Distance
+				{
+					idc=3;
+					text="$";
+					x="21.85 *   (0.01875 * Safezoneh)";
+					y="36 *   (0.025 * SafezoneH)";
+					w="1.9 *   (0.01875 * SafezoneH)";
+					h="1.9 *   (0.025 * SafezoneH)";
+				};
+				class RHS_Distance: CA_Distance
+				{
+					idc=4;
+					text="$$$$";
+					w="12.9 *   (0.01875 * SafezoneH)";
+					h="12.9 *   (0.025 * SafezoneH)";
+				};
+				class RHS_NightSight: RHS_Sight
+				{
+					idc=5;
+					colorText[]={0.5,1,1,0};
+					text="rhsafrf\addons\rhs_optics\vehicles\data\rhs_1g42n_b_static.paa";
+					x="12.08 *   (0.01875 * Safezoneh)";
+					y="5.55 *   (0.025 * SafezoneH)";
+					w="29 *   (0.01875 * SafezoneH)";
+					h="29 *   (0.025 * SafezoneH)";
+				};
+				class RHS_NightSight_Moving: RHS_NightSight
+				{
+					idc=6;
+					text="rhsafrf\addons\rhs_optics\vehicles\data\rhs_1g42n_moving.paa";
+				};
+			};
+		};
+		class Objects
+		{
+			class AmmoSelector_bgr
+			{
+				idc=311;
+				type=82;
+				x="0.535152-safezoneX";
+				y="0.140276+safezoneY";
+				z=0.1;
+				scale=0.15000001;
+				direction[]={0,0,-1};
+				up[]={0,1,0};
+				model="rhsafrf\addons\rhs_optics\vehicles\kompas\switch_bg_1g42.p3d";
+				xBack=0.5;
+				yBack=0.5;
+				zBack=0;
+				inBack=0;
+				enableZoom=0;
+				zoomDuration=4.0009999;
+			};
+			class AmmoSelector: AmmoSelector_bgr
+			{
+				idc=312;
+				model="rhsafrf\addons\rhs_optics\vehicles\kompas\switch_1g42.p3d";
+			};
+			class AutoloaderSelector: AmmoSelector_bgr
+			{
+				idc=313;
+				x="0.335152-safezoneX";
+				model="rhsafrf\addons\rhs_optics\vehicles\kompas\switch_autoloader_on.p3d";
+			};
+		};
+	};
+	class rhs_gui_optic_t80u_rangefinder: rhs_gui_optic_t80_rangefinder
+	{
+		onLoad="['onLoad',_this,'RscUnitInfo','IGUI'] call (uinamespace getvariable 'BIS_fnc_initDisplay'); [_this select 0,'RHS_T80B_Recoil'] call RHS_fnc_sight_1G46";
+		controls[]=
+		{
+			"CA_IGUI_elements_group"
+		};
+		class CA_IGUI_elements_group: CA_IGUI_elements_group
+		{
+			class Controls: Controls
+			{
+				class CA_Distance: RscOpticsValue
+				{
+					idc=151;
+					style=1;
+					shadow=0;
+					colorText[]={1,0,0,1};
+					font="rhs_digital_font";
+					sizeEx="0.039*SafezoneH";
+					x="17.65 *   (0.01875 * Safezoneh)";
+					y="30.45 *   (0.025 * SafezoneH)";
+					w="0";
+					h="0";
+				};
+				class CA_OpticsZoom: RscText
+				{
+					idc=180;
+					style=1;
+					colorText[]={0.70599997,0.074500002,0.0196,1};
+					sizeEx="0.038*SafezoneH";
+					shadow=0;
+					font="EtelkaMonospacePro";
+					text="4.5";
+					x="43.85 * 		(0.01875 * SafezoneH)";
+					y="19.6 * 		(0.025 * SafezoneH)";
+					w="0";
+					h="0";
+				};
+				class CA_OpticsMode: CA_OpticsZoom
+				{
+					idc=154;
+				};
+				class RHS_Sight: RscPicture
+				{
+					idc=1;
+					style="0x30 + 0x800";
+					sizeEx="0.038*SafezoneH";
+					colorText[]={0.70599997,0.074500002,0.0196,1};
+					shadow=0;
+					font="rhs_digital_font";
+					text="rhsafrf\addons\rhs_optics\vehicles\data\rhs_1g46_moving_ca.paa";
+					x="10.32 *   (0.01875 * Safezoneh)";
+					y="-3.95 *   (0.025 * SafezoneH)";
+					w="29 *   (0.01875 * SafezoneH)";
+					h="29 *   (0.025 * SafezoneH)";
+				};
+				class RHS_ReadyLight: RscPicture
+				{
+					idc=2;
+					style="0x30 + 0x800";
+					sizeEx="0.038*SafezoneH";
+					colorText[]={1,1,1,1};
+					shadow=0;
+					font="EtelkaMonospacePro";
+					text="rhsafrf\addons\rhs_optics\vehicles\data\rhs_1g46_readylight_ca.paa";
+					x="17.65 *   (0.01875 * SafezoneH)";
+					y="36.00 *   (0.025 * SafezoneH)";
+					w="1.7 *   (0.01875 * SafezoneH)";
+					h="1.7 *   (0.025 * SafezoneH)";
+				};
+				class RHS_Ammo: CA_Distance
+				{
+					idc=3;
+					text="$";
+					x="21.65 *   (0.01875 * Safezoneh)";
+					y="36 *   (0.025 * SafezoneH)";
+					w="1.9 *   (0.01875 * SafezoneH)";
+					h="1.9 *   (0.025 * SafezoneH)";
+				};
+				class RHS_Distance: CA_Distance
+				{
+					idc=4;
+					text="$$$$";
+					w="12.9 *   (0.01875 * SafezoneH)";
+					h="12.9 *   (0.025 * SafezoneH)";
+				};
+				class RHS_NightSight: RHS_Sight
+				{
+					idc=5;
+					colorText[]={0.5,1,1,0};
+					text="rhsafrf\addons\rhs_optics\vehicles\data\rhs_1g42n_b_static.paa";
+					x="12.08 *   (0.01875 * Safezoneh)";
+					y="5.55 *   (0.025 * SafezoneH)";
+					w="29 *   (0.01875 * SafezoneH)";
+					h="29 *   (0.025 * SafezoneH)";
+				};
+				class RHS_NightSight_Moving: RHS_NightSight
+				{
+					idc=6;
+					text="rhsafrf\addons\rhs_optics\vehicles\data\rhs_1g42n_moving.paa";
+				};
+			};
+		};
+		class Objects
+		{
+			class AmmoSelector_bgr
+			{
+				idc=311;
+				type=82;
+				x="0.535152-safezoneX";
+				y="0.140276+safezoneY";
+				z=0.1;
+				scale=0.15000001;
+				direction[]={0,0,-1};
+				up[]={0,1,0};
+				model="rhsafrf\addons\rhs_optics\vehicles\kompas\switch_bg_1g42.p3d";
+				xBack=0.5;
+				yBack=0.5;
+				zBack=0;
+				inBack=0;
+				enableZoom=0;
+				zoomDuration=4.0009999;
+			};
+			class AmmoSelector: AmmoSelector_bgr
+			{
+				idc=312;
+				model="rhsafrf\addons\rhs_optics\vehicles\kompas\switch_1g42.p3d";
+			};
+			class AutoloaderSelector: AmmoSelector_bgr
+			{
+				idc=313;
+				x="0.335152-safezoneX";
+				model="rhsafrf\addons\rhs_optics\vehicles\kompas\switch_autoloader_on.p3d";
+			};
+		};
+	};
+	class rhs_gui_optic_t90_rangefinder: rhs_gui_optic_t80u_rangefinder
+	{
+		onLoad="['onLoad',_this,'RscUnitInfo','IGUI'] call (uinamespace getvariable 'BIS_fnc_initDisplay'); [_this select 0,'Recoil'] call RHS_fnc_sight_1G46";
+	};
+	class RHS_RscWeaponBMP2_TKN3_FCS: RscUnitInfo
+	{
+		idd=300;
+		onLoad="['onLoad',_this,'RscUnitInfo','IGUI'] call (uinamespace getvariable 'BIS_fnc_initDisplay');_this call RHS_fnc_sight_BMP2_TKN3";
+		controls[]=
+		{
+			"CA_IGUI_elements_group"
+		};
+		class CA_IGUI_elements_group: RscControlsGroup
+		{
+			idc=170;
+			class VScrollbar: VScrollbar
+			{
+				width=0;
+			};
+			class HScrollbar: HScrollbar
+			{
+				height=0;
+			};
+			x="0 * 		(0.01875 * SafezoneH) + 		(SafezoneX + ((SafezoneW - SafezoneH) / 2))";
+			y="0 * 		(0.025 * SafezoneH) + 		(SafezoneY)";
+			w="53.5 * 		(0.01875 * SafezoneH)";
+			h="40 * 		(0.025 * SafezoneH)";
+			class controls
+			{
+				class Sight: RscPicture
+				{
+					idc=1;
+					style="0x30 + 0x800";
+					sizeEx="0.038*SafezoneH";
+					colorText[]={0.69999999,0.07,0.0196,1};
+					shadow=0;
+					font="EtelkaMonospacePro";
+					text="rhsafrf\addons\rhs_optics\vehicles\data\rhs_1pz3_1x_ca.paa";
+					x="11.0 *   (0.01875 * Safezoneh)";
+					y="4.7 *   (0.025 * SafezoneH)";
+					w="31.5 *   (0.01875 * SafezoneH)";
+					h="31.5 *   (0.025 * SafezoneH)";
+				};
+				class SightBar: RscPicture
+				{
+					idc=2;
+					style="0x30 + 0x800";
+					sizeEx="0.038*SafezoneH";
+					colorText[]={0.70599997,0.074500002,0.0196,1};
+					shadow=0;
+					font="EtelkaMonospacePro";
+					text="rhsafrf\addons\rhs_optics\vehicles\data\rhs_1pz3_horizontal.paa";
+					x="8.3 *   (0.01875 * SafezoneH)";
+					y="2.1 *   (0.025 * SafezoneH)";
+					w="35.5 *   (0.01875 * SafezoneH)";
+					h="35.5 *   (0.025 * SafezoneH)";
+				};
+				class CA_OpticsZoom: RscText
+				{
+					idc=154;
+					style=1;
+					colorText[]={0.70599997,0.074500002,0.0196,1};
+					sizeEx="0.038*SafezoneH";
+					shadow=0;
+					font="EtelkaMonospacePro";
+					w="0";
+					h="0";
+				};
+				class RHS_ControlNumber: CA_OpticsZoom
+				{
+					idc=1000;
+					text="RHS_TKN3";
+				};
+			};
+		};
+	};
+	class RHS_RscWeaponTKN3_FCS: RscUnitInfo
+	{
+		idd=300;
+		onLoad="['onLoad',_this,'RscUnitInfo','IGUI'] call (uinamespace getvariable 'BIS_fnc_initDisplay');_this call RHS_fnc_sight_TKN3";
+		controls[]=
+		{
+			"CA_IGUI_elements_group"
+		};
+		class CA_IGUI_elements_group: RscControlsGroup
+		{
+			idc=170;
+			class VScrollbar: VScrollbar
+			{
+				width=0;
+			};
+			class HScrollbar: HScrollbar
+			{
+				height=0;
+			};
+			x="0 * 		(0.01875 * SafezoneH) + 		(SafezoneX + ((SafezoneW - SafezoneH) / 2))";
+			y="0 * 		(0.025 * SafezoneH) + 		(SafezoneY)";
+			w="53.5 * 		(0.01875 * SafezoneH)";
+			h="40 * 		(0.025 * SafezoneH)";
+			class controls
+			{
+				class CA_OpticsZoom: RscText
+				{
+					idc=154;
+					style=1;
+					colorText[]={0.70599997,0.074500002,0.0196,1};
+					sizeEx="0.038*SafezoneH";
+					shadow=0;
+					font="EtelkaMonospacePro";
+					text="4.5";
+					x="43.85 * 		(0.01875 * SafezoneH)";
+					y="19.6 * 		(0.025 * SafezoneH)";
+					w="0";
+					h="0";
+				};
+				class RHS_ControlNumber: CA_OpticsZoom
+				{
+					idc=1000;
+					text="RHS_TKN3";
+				};
+			};
+		};
+	};
+	class rhs_gui_optic_TKN4S_rangefinder: RscUnitInfo
+	{
+		idd=300;
+		onLoad="['onLoad',_this,'RscUnitInfo','IGUI'] call (uinamespace getvariable 'BIS_fnc_initDisplay'); _this call RHS_fnc_sight_TKN4s";
+		controls[]=
+		{
+			"CA_IGUI_elements_group",
+			"CA_Zeroing"
+		};
+		class CA_Zeroing: RscText
+		{
+			idc=168;
+			colorText[]=
+			{
+				"(profilenamespace getvariable ['IGUI_TEXT_RGB_R',0])",
+				"(profilenamespace getvariable ['IGUI_TEXT_RGB_G',1])",
+				"(profilenamespace getvariable ['IGUI_TEXT_RGB_B',1])",
+				"(profilenamespace getvariable ['IGUI_TEXT_RGB_A',0.8])"
+			};
+			x="3.8 * 					(			((safezoneW / safezoneH) min 1.2) / 40) + 		(profilenamespace getvariable [""IGUI_GRID_WEAPON_X"",		((safezoneX + safezoneW) - 		(10 * 			(			((safezoneW / safezoneH) min 1.2) / 40)) - 4.3 * 			(			((safezoneW / safezoneH) min 1.2) / 40))])";
+			y="2.5 * 					(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) + 		(profilenamespace getvariable [""IGUI_GRID_WEAPON_Y"",		(safezoneY + 0.5 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25))])";
+			w="3 * 					(			((safezoneW / safezoneH) min 1.2) / 40)";
+			h="1 * 					(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
+			sizeEx="0.8 * 					(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
+		};
+		class CA_IGUI_elements_group: RscControlsGroup
+		{
+			x="0 * 		(0.01875 * SafezoneH) + 		(SafezoneX + ((SafezoneW - SafezoneH) / 2))";
+			y="0 * 		(0.025 * SafezoneH) + 		(SafezoneY)";
+			w="53.5 * 		(0.01875 * SafezoneH)";
+			h="40 * 		(0.025 * SafezoneH)";
+			idc=170;
+			class VScrollbar
+			{
+				autoScrollSpeed=-1;
+				autoScrollDelay=5;
+				autoScrollRewind=0;
+				color[]={1,1,1,0};
+				width=0.001;
+			};
+			class HScrollbar
+			{
+				color[]={1,1,1,0};
+				height=0.001;
+			};
+			class Controls
+			{
+				class CA_Distance: RscOpticsValue
+				{
+					idc=151;
+					style=1;
+					shadow=0;
+					colorText[]={1,0,0,1};
+					font="rhs_digital_font";
+					sizeEx="0.039*SafezoneH";
+					x="18.05 *   (0.01875 * Safezoneh)";
+					y="29.6 *   (0.025 * SafezoneH)";
+					w="0";
+					h="0";
+				};
+				class CA_OpticsZoom: RscText
+				{
+					idc=180;
+					style=1;
+					colorText[]={0.70599997,0.074500002,0.0196,1};
+					sizeEx="0.038*SafezoneH";
+					shadow=0;
+					font="EtelkaMonospacePro";
+					text="4.5";
+					x="43.85 * 		(0.01875 * SafezoneH)";
+					y="19.6 * 		(0.025 * SafezoneH)";
+					w="0";
+					h="0";
+				};
+				class CA_OpticsMode: CA_OpticsZoom
+				{
+					idc=154;
+				};
+				class RHS_Sight: RscPicture
+				{
+					idc=1;
+					style="0x30 + 0x800";
+					sizeEx="0.038*SafezoneH";
+					colorText[]={0.70599997,0.074500002,0.0196,1};
+					shadow=0;
+					font="rhs_digital_font";
+					text="rhsafrf\addons\rhs_optics\vehicles\data\rhs_tkn4s_moving.paa";
+					x="11.16 *   (0.01875 * Safezoneh)";
+					y="2.95 *   (0.025 * SafezoneH)";
+					w="31 *   (0.01875 * SafezoneH)";
+					h="31 *   (0.025 * SafezoneH)";
+				};
+				class RHS_ReadyLight: RscPicture
+				{
+					idc=2;
+					style="0x30 + 0x800";
+					sizeEx="0.038*SafezoneH";
+					colorText[]={1,1,1,1};
+					shadow=0;
+					font="EtelkaMonospacePro";
+					text="rhsafrf\addons\rhs_optics\vehicles\data\rhs_1g46_readylight_ca.paa";
+					x="20.85 *   (0.01875 * SafezoneH)";
+					y="35.20 *   (0.025 * SafezoneH)";
+					w="1.55 *   (0.01875 * SafezoneH)";
+					h="1.55 *   (0.025 * SafezoneH)";
+				};
+				class RHS_Ammo: CA_Distance
+				{
+					idc=3;
+					text="$";
+					x="23.55 *   (0.01875 * Safezoneh)";
+					y="35.3 *   (0.025 * SafezoneH)";
+					w="1.5 *   (0.01875 * SafezoneH)";
+					h="1.5 *   (0.025 * SafezoneH)";
+				};
+				class RHS_Distance: CA_Distance
+				{
+					idc=4;
+					text="$$$$";
+					w="12.9 *   (0.01875 * SafezoneH)";
+					h="12.9 *   (0.025 * SafezoneH)";
+				};
+				class RHS_NightSight: RHS_Sight
+				{
+					idc=5;
+					colorText[]={0.5,1,1,0};
+					text="rhsafrf\addons\rhs_optics\vehicles\data\rhs_1g42n_b_static.paa";
+					x="12.08 *   (0.01875 * Safezoneh)";
+					y="5.55 *   (0.025 * SafezoneH)";
+					w="29 *   (0.01875 * SafezoneH)";
+					h="29 *   (0.025 * SafezoneH)";
+				};
+				class RHS_NightSight_Moving: RHS_NightSight
+				{
+					idc=6;
+					text="rhsafrf\addons\rhs_optics\vehicles\data\rhs_1g42n_moving.paa";
+				};
+			};
+		};
+	};
+	class rhs_gui_optic_1d13
+	{
+		idd=300;
+		controls[]=
+		{
+			"CA_IGUI_elements_group",
+			"CA_Zeroing"
+		};
+		class CA_IGUI_elements_group: RscControlsGroup
+		{
+			x="0 * 		(0.01875 * SafezoneH) + 		(SafezoneX + ((SafezoneW - SafezoneH) / 2))";
+			y="0 * 		(0.025 * SafezoneH) + 		(SafezoneY)";
+			w="53.5 * 		(0.01875 * SafezoneH)";
+			h="40 * 		(0.025 * SafezoneH)";
+			idc=170;
+			class VScrollbar
+			{
+				autoScrollSpeed=-1;
+				autoScrollDelay=5;
+				autoScrollRewind=0;
+				color[]={1,0,0,0};
+				width=0.001;
+			};
+			class HScrollbar
+			{
+				color[]={1,0,0,0};
+				height=0.001;
+			};
+			class Controls
+			{
+				class CA_Distance: RscOpticsValue
+				{
+					idc=151;
+					style=1;
+					shadow=0;
+					font="rhs_digital_font";
+					colorText[]={1,0,0,1};
+					sizeEx="0.038*SafezoneH";
+					x="-0.89*   (0.01875 * Safezoneh)";
+					y="16*   (0.025 * SafezoneH)";
+					w="14.9 *   (0.01875 * SafezoneH)";
+					h="5.9*   (0.025 * SafezoneH)";
+				};
+			};
+		};
+		class CA_Zeroing: RscText
+		{
+			colorText[]=
+			{
+				"(profilenamespace getvariable ['IGUI_TEXT_RGB_R',0])",
+				"(profilenamespace getvariable ['IGUI_TEXT_RGB_G',1])",
+				"(profilenamespace getvariable ['IGUI_TEXT_RGB_B',1])",
+				"(profilenamespace getvariable ['IGUI_TEXT_RGB_A',0.8])"
+			};
+			idc=168;
+			style=1;
+			x="(SafeZoneW + SafeZoneX) - (1 - 0.761)";
+			y="0.095 + SafeZoneY";
+			w=0.214;
+			h=0.039000001;
+		};
+	};
+	class rhs_gui_optic_2s3_computer: RscUnitInfo
+	{
+		idd=300;
+		onLoad="['onLoad',_this,'RscUnitInfo','IGUI'] call (uinamespace getvariable 'BIS_fnc_initDisplay'); _this call RHS_fnc_fcs_2s3";
+		controls[]=
+		{
+			"CA_IGUI_elements_group"
+		};
+		class CA_IGUI_elements_group: RscControlsGroup
+		{
+			idc=170;
+			class VScrollbar: VScrollbar
+			{
+				width=0;
+			};
+			class HScrollbar: HScrollbar
+			{
+				height=0;
+			};
+			x="((safezoneX + safezoneW) - (16.4 * (((safezoneW / safezoneH) min 1.2) / 40)) - 0.5 * (((safezoneW /safezoneH) min 1.2) / 40))";
+			y="0 *   (0.025 * SafezoneH) +   (SafezoneY)";
+			w="17 * (((safezoneW / safezoneH) min 1.2) / 40)";
+			h="17 * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
+			class controls
+			{
+				class RHS_ComputerBG: RscPicture
+				{
+					idc=1;
+					style="0x30 + 0x800";
+					sizeEx="0.038*SafezoneH";
+					colorText[]={1,1,1,1};
+					shadow=0;
+					font="EtelkaMonospacePro";
+					text="rhsafrf\addons\rhs_optics\vehicles\data\rhs_komputer2s3.paa";
+					x=0;
+					y=0;
+					w="13 *   (0.01875 * SafezoneH)";
+					h="13 *   (0.025 * SafezoneH)";
+				};
+				class CA_Distance: RscText
+				{
+					idc=173;
+					style=1;
+					sizeEx="0.068*SafezoneH";
+					colorText[]={0.70599997,0.074500002,0.0196,1};
+					shadow=0;
+					font="rhs_digital_font";
+					text="$$$$$";
+					x="-6 * 		(0.01875 * SafezoneH)";
+					y="0.25 * 		(0.025 * SafezoneH)";
+					w="0 * 		(0.01875 * SafezoneH)";
+					h="0 * 		(0.025 * SafezoneH)";
+				};
+				class RHS_Distance: CA_Distance
+				{
+					idc=2;
+					text="$$$$";
+					w="13 * 		(0.01875 * SafezoneH)";
+					h="13 * 		(0.025 * SafezoneH)";
+				};
+				class CA_Elev: RscText
+				{
+					idc=175;
+					style=1;
+					sizeEx="0.032*SafezoneH";
+					colorText[]={0.70599997,0.074500002,0.0196,1};
+					shadow=0;
+					font="rhs_digital_font";
+					text="-80.5";
+					x="-2 * 		(0.01875 * SafezoneH)";
+					y="-0.4 * 		(0.025 * SafezoneH)";
+					w="13 * 		(0.01875 * SafezoneH)";
+					h="13 * 		(0.025 * SafezoneH)";
+				};
+				class CA_Elev_Need: RscText
+				{
+					idc=176;
+					style=1;
+					sizeEx="0.032*SafezoneH";
+					colorText[]={0.70599997,0.074500002,0.0196,1};
+					shadow=0;
+					font="rhs_digital_font";
+					text="-35.4";
+					x="-2 * 		(0.01875 * SafezoneH)";
+					y="0.95 * 		(0.025 * SafezoneH)";
+					w="0 * 		(0.01875 * SafezoneH)";
+					h="0 * 		(0.025 * SafezoneH)";
+				};
+				class RHS_Elev_Need: CA_Elev_Need
+				{
+					idc=3;
+					text="$$$$$";
+					w="13 * 		(0.01875 * SafezoneH)";
+					h="13 * 		(0.025 * SafezoneH)";
+				};
+			};
+		};
+	};
+	class RHS_RscWeapon1PN22M_FCS: RscUnitInfo
+	{
+		idd=300;
+		onLoad="['onLoad',_this,'RscUnitInfo','IGUI'] call (uinamespace getvariable 'BIS_fnc_initDisplay'); ";
+		controls[]=
+		{
+			"CA_IGUI_elements_group"
+		};
+		class CA_IGUI_elements_group: RscControlsGroup
+		{
+			idc=170;
+			class VScrollbar: VScrollbar
+			{
+				width=0;
+			};
+			class HScrollbar: HScrollbar
+			{
+				height=0;
+			};
+			x="0 * 		(0.01875 * SafezoneH) + 		(SafezoneX + ((SafezoneW - SafezoneH) / 2))";
+			y="0 * 		(0.025 * SafezoneH) + 		(SafezoneY)";
+			w="53.5 * 		(0.01875 * SafezoneH)";
+			h="40 * 		(0.025 * SafezoneH)";
+			class controls
+			{
+				class CA_OpticsMode: RscText
+				{
+					idc=154;
+					style=1;
+					colorText[]={0.70599997,0.074500002,0.0196,1};
+					sizeEx="0.038*SafezoneH";
+					shadow=0;
+					font="EtelkaMonospacePro";
+					text="4.5";
+					x="43.85 * 		(0.01875 * SafezoneH)";
+					y="19.6 * 		(0.025 * SafezoneH)";
+					w="0";
+					h="0";
+				};
+				class RHS_ControlNumber: CA_OpticsMode
+				{
+					idc=1000;
+					text="RHS_1PN22M";
+				};
+			};
+		};
+	};
+	class RHS_RscWeaponBPK42_FCS: RscUnitInfo
+	{
+		idd=300;
+		onLoad="['onLoad',_this,'RscUnitInfo','IGUI'] call (uinamespace getvariable 'BIS_fnc_initDisplay'); _this call RHS_fnc_sight_BMP2";
+		controls[]=
+		{
+			"CA_IGUI_elements_group"
+		};
+		class CA_IGUI_elements_group: RscControlsGroup
+		{
+			idc=170;
+			class VScrollbar: VScrollbar
+			{
+				width=0;
+			};
+			class HScrollbar: HScrollbar
+			{
+				height=0;
+			};
+			x="0 * 		(0.01875 * SafezoneH) + 		(SafezoneX + ((SafezoneW - SafezoneH) / 2))";
+			y="0 * 		(0.025 * SafezoneH) + 		(SafezoneY)";
+			w="53.5 * 		(0.01875 * SafezoneH)";
+			h="40 * 		(0.025 * SafezoneH)";
+			class controls
+			{
+				class RDS_Sight: RscPicture
+				{
+					idc=1;
+					style="0x30 + 0x800";
+					sizeEx="0.038*SafezoneH";
+					colorText[]={0.70599997,0.074500002,0.0196,1};
+					shadow=0;
+					font="EtelkaMonospacePro";
+					text="rhsafrf\addons\rhs_optics\vehicles\data\rhs_bpk_1_42_sight.paa";
+					x="13.4 *   (0.01875 * Safezoneh)";
+					y="3.66 *   (0.025 * SafezoneH)";
+					w="25.5 *   (0.01875 * SafezoneH)";
+					h="25.5 *   (0.025 * SafezoneH)";
+				};
+				class RDS_SightBar: RscPicture
+				{
+					idc=2;
+					style="0x30 + 0x800";
+					sizeEx="0.038*SafezoneH";
+					colorText[]={0.70599997,0.074500002,0.0196,1};
+					shadow=0;
+					font="EtelkaMonospacePro";
+					text="rhsafrf\addons\rhs_optics\vehicles\data\rhs_bpk_1_42_bar.paa";
+					x="14.3 *   (0.01875 * SafezoneH)";
+					y="7.26 *   (0.025 * SafezoneH)";
+					w="25.5 *   (0.01875 * SafezoneH)";
+					h="25.5 *   (0.025 * SafezoneH)";
+				};
+				class CA_OpticsZoom: RscText
+				{
+					idc=180;
+					style=1;
+					colorText[]={0.70599997,0.074500002,0.0196,1};
+					sizeEx="0.038*SafezoneH";
+					shadow=0;
+					font="EtelkaMonospacePro";
+					text="4.5";
+					x="43.85 * 		(0.01875 * SafezoneH)";
+					y="19.6 * 		(0.025 * SafezoneH)";
+					w="0";
+					h="0";
+				};
+				class CA_OpticsMode: CA_OpticsZoom
+				{
+					idc=154;
+				};
+				class RHS_ControlNumber: CA_OpticsZoom
+				{
+					idc=1000;
+					text="RHS_BPK42";
+				};
+			};
+		};
+	};
+	class RHS_RscWeaponBPK42_BTR80A_FCS: RHS_RscWeaponBPK42_FCS
+	{
+		onLoad="['onLoad',_this,'RscUnitInfo','IGUI'] call (uinamespace getvariable 'BIS_fnc_initDisplay'); _this call RHS_fnc_sight_BTR80A";
+	};
+	class RHS_RscWeaponOb681_FCS: RHS_RscWeaponBPK42_FCS
+	{
+		class CA_IGUI_elements_group: RscControlsGroup
+		{
+			idc=170;
+			class VScrollbar: VScrollbar
+			{
+				width=0;
+			};
+			class HScrollbar: HScrollbar
+			{
+				height=0;
+			};
+			x="0 * 		(0.01875 * SafezoneH) + 		(SafezoneX + ((SafezoneW - SafezoneH) / 2))";
+			y="0 * 		(0.025 * SafezoneH) + 		(SafezoneY)";
+			w="53.5 * 		(0.01875 * SafezoneH)";
+			h="40 * 		(0.025 * SafezoneH)";
+			class controls
+			{
+				class CA_OpticsZoom: RscText
+				{
+					idc=180;
+					style=1;
+					colorText[]={0.70599997,0.074500002,0.0196,1};
+					sizeEx="0.038*SafezoneH";
+					shadow=0;
+					font="EtelkaMonospacePro";
+					text="4.5";
+					x="43.85 * 		(0.01875 * SafezoneH)";
+					y="19.6 * 		(0.025 * SafezoneH)";
+					w="0";
+					h="0";
+				};
+				class CA_OpticsMode: CA_OpticsZoom
+				{
+					idc=154;
+				};
+				class RHS_ControlNumber: CA_OpticsZoom
+				{
+					idc=1000;
+					text="RHS_BPK42";
+				};
+			};
+		};
+	};
+	class RHS_RscWeapon1PZ3_FCS: RscUnitInfo
+	{
+		idd=300;
+		onLoad="['onLoad',_this,'RscUnitInfo','IGUI'] call (uinamespace getvariable 'BIS_fnc_initDisplay');_this call RHS_fnc_sight_1PZ3";
+		controls[]=
+		{
+			"CA_IGUI_elements_group"
+		};
+		class CA_IGUI_elements_group: RscControlsGroup
+		{
+			idc=170;
+			class VScrollbar: VScrollbar
+			{
+				width=0;
+			};
+			class HScrollbar: HScrollbar
+			{
+				height=0;
+			};
+			x="0 * 		(0.01875 * SafezoneH) + 		(SafezoneX + ((SafezoneW - SafezoneH) / 2))";
+			y="0 * 		(0.025 * SafezoneH) + 		(SafezoneY)";
+			w="53.5 * 		(0.01875 * SafezoneH)";
+			h="40 * 		(0.025 * SafezoneH)";
+			class controls
+			{
+				class RDS_Horizontal: RscPicture
+				{
+					idc=1;
+					style="0x30 + 0x800";
+					sizeEx="0.038*SafezoneH";
+					colorText[]={0.70599997,0.074500002,0.0196,1};
+					shadow=0;
+					font="EtelkaMonospacePro";
+					text="rhsafrf\addons\rhs_optics\vehicles\data\rhs_1pz3_horizontal.paa";
+					x="3.65 *   (0.01875 * Safezoneh)";
+					y="-2.95 *   (0.025 * SafezoneH)";
+					w="45.9 *   (0.01875 * SafezoneH)";
+					h="45.9 *   (0.025 * SafezoneH)";
+				};
+				class RDS_Reticle: RDS_Horizontal
+				{
+					idc=2;
+					text="rhsafrf\addons\rhs_optics\vehicles\data\rhs_1pz3_1x_ca.paa";
+				};
+				class CA_OpticsZoom: RscText
+				{
+					idc=154;
+					style=1;
+					colorText[]={0.70599997,0.074500002,0.0196,1};
+					sizeEx="0.038*SafezoneH";
+					shadow=0;
+					font="EtelkaMonospacePro";
+					text="4.5";
+					x="43.85 * 		(0.01875 * SafezoneH)";
+					y="19.6 * 		(0.025 * SafezoneH)";
+					w="0";
+					h="0";
+				};
+				class RHS_ControlNumber: CA_OpticsZoom
+				{
+					idc=1000;
+					text="RHS_1PZ3";
+				};
+			};
+		};
+	};
+	class RHS_RscWeapon1PZ32_FCS: RscUnitInfo
+	{
+		idd=300;
+		onLoad="['onLoad',_this,'RscUnitInfo','IGUI'] call (uinamespace getvariable 'BIS_fnc_initDisplay');_this call RHS_fnc_sight_1PZ32 ";
+		controls[]=
+		{
+			"CA_IGUI_elements_group"
+		};
+		class CA_IGUI_elements_group: RscControlsGroup
+		{
+			idc=170;
+			class VScrollbar: VScrollbar
+			{
+				width=0;
+			};
+			class HScrollbar: HScrollbar
+			{
+				height=0;
+			};
+			x="0 * 		(0.01875 * SafezoneH) + 		(SafezoneX + ((SafezoneW - SafezoneH) / 2))";
+			y="0 * 		(0.025 * SafezoneH) + 		(SafezoneY)";
+			w="53.5 * 		(0.01875 * SafezoneH)";
+			h="40 * 		(0.025 * SafezoneH)";
+			class controls
+			{
+				class RDS_Horizontal: RscPicture
+				{
+					idc=1;
+					style="0x30 + 0x800";
+					sizeEx="0.038*SafezoneH";
+					colorText[]={0.70599997,0.074500002,0.0196,1};
+					shadow=0;
+					font="EtelkaMonospacePro";
+					text="rhsafrf\addons\rhs_optics\vehicles\data\rhs_1pz32_horizontal.paa";
+					x="3.65 *   (0.01875 * Safezoneh)";
+					y="-2.95 *   (0.025 * SafezoneH)";
+					w="45.9 *   (0.01875 * SafezoneH)";
+					h="45.9 *   (0.025 * SafezoneH)";
+				};
+				class CA_OpticsZoom: RscText
+				{
+					idc=180;
+					style=1;
+					colorText[]={0.70599997,0.074500002,0.0196,1};
+					sizeEx="0.038*SafezoneH";
+					shadow=0;
+					font="EtelkaMonospacePro";
+					text="4.5";
+					x="43.85 * 		(0.01875 * SafezoneH)";
+					y="19.6 * 		(0.025 * SafezoneH)";
+					w="0";
+					h="0";
+				};
+				class CA_OpticsMode: CA_OpticsZoom
+				{
+					idc=154;
+				};
+			};
+		};
+	};
+	class rhs_gui_optic_thermalscreen: RscUnitInfo
+	{
+		idd=300;
+		controls[]=
+		{
+			"CA_IGUI_elements_group"
+		};
+		class CA_IGUI_elements_group: RscControlsGroup
+		{
+			x="0 * 		(0.01875 * SafezoneH) + 		(SafezoneX + ((SafezoneW - SafezoneH) / 2))";
+			y="0 * 		(0.025 * SafezoneH) + 		(SafezoneY)";
+			w="53.5 * 		(0.01875 * SafezoneH)";
+			h="40 * 		(0.025 * SafezoneH)";
+			idc=170;
+			class VScrollbar
+			{
+				autoScrollSpeed=-1;
+				autoScrollDelay=5;
+				autoScrollRewind=0;
+				color[]={1,1,1,0};
+				width=0.001;
+			};
+			class HScrollbar
+			{
+				color[]={1,1,1,0};
+				height=0.001;
+			};
+			class Controls
+			{
+				class CA_DistanceBackground: RscEdit
+				{
+					idc=-1;
+					sizeEx=0.034000002;
+					colorBackground[]={0,0,0,1};
+					colorText[]={1,1,1,1};
+					colorSelection[]={0,0,0,1};
+					style=2;
+					shadow=0;
+					type=0;
+					x="23.99 *   (0.01875 *    Safezoneh)";
+					y="31.0*   (0.025 *    SafezoneH)";
+					w="5.9 *   (0.01875 * SafezoneH)";
+					h="1.9 *   (0.025 * SafezoneH)";
+				};
+				class CA_Distance: RscOpticsValue
+				{
+					idc=151;
+					style=1;
+					shadow=0;
+					colorText[]={1,1,1,1};
+					sizeEx="0.038*SafezoneH";
+					x="15.49 *   (0.01875 *    Safezoneh)";
+					y="29.0*   (0.025 *    SafezoneH)";
+					w="14.9 *   (0.01875 * SafezoneH)";
+					h="5.9 *   (0.025 * SafezoneH)";
+				};
+			};
+		};
+	};
+	class RHS_RscWeaponESSA_FCS: RscUnitInfo
+	{
+		idd=300;
+		onLoad="['onLoad',_this,'RscUnitInfo','IGUI'] call (uinamespace getvariable 'BIS_fnc_initDisplay'); _this call RHS_fnc_sight_ESSA";
+		controls[]=
+		{
+			"CA_OpticsZoom",
+			"CA_IGUI_elements_group"
+		};
+		class CA_OpticsZoom: RscText
+		{
+			idc=180;
+			style=1;
+			colorText[]={0.70599997,0.074500002,0.0196,1};
+			sizeEx="0.038*SafezoneH";
+			shadow=0;
+			font="EtelkaMonospacePro";
+			text="4.5";
+			x="43.85 * 		(0.01875 * SafezoneH)";
+			y="19.6 * 		(0.025 * SafezoneH)";
+			w="0* 		(0.01875 * SafezoneH)";
+			h="0 * 		(0.025 * SafezoneH)";
+		};
+		class CA_IGUI_elements_group: RscControlsGroup
+		{
+			x="0 * 		(0.01875 * SafezoneH) + 		(SafezoneX + ((SafezoneW - SafezoneH) / 2))";
+			y="0 * 		(0.025 * SafezoneH) + 		(SafezoneY)";
+			w="53.5 * 		(0.01875 * SafezoneH)";
+			h="40 * 		(0.025 * SafezoneH)";
+			idc=170;
+			class VScrollbar
+			{
+				autoScrollSpeed=-1;
+				autoScrollDelay=5;
+				autoScrollRewind=0;
+				color[]={1,1,1,0};
+				width=0.001;
+			};
+			class HScrollbar
+			{
+				color[]={1,1,1,0};
+				height=0.001;
+			};
+			class Controls
+			{
+				class CA_Distance: RscOpticsValue
+				{
+					idc=151;
+					style=1;
+					shadow=0;
+					colorBackground[]={0,0,0,1};
+					colorText[]={1,1,1,1};
+					font="PuristaLight";
+					sizeEx="0.018*SafezoneH";
+					x="28.14 *   (0.01875 * Safezoneh)";
+					y="30.14 *   (0.025 * SafezoneH)";
+					w="0";
+					h="0";
+				};
+				class CA_OpticsMode: CA_OpticsZoom
+				{
+					idc=154;
+				};
+				class RHS_Sight: RscPicture
+				{
+					idc=1;
+					style="0x30 + 0x800";
+					sizeEx="0.038*SafezoneH";
+					colorText[]={1,1,1,1};
+					shadow=0;
+					font="PuristaMedium";
+					text="rhsafrf\addons\rhs_optics\vehicles\data\rhs_essa_wide.paa";
+					x="9.15 *   (0.01875 * Safezoneh)";
+					y="4.5 *   (0.025 * SafezoneH)";
+					w="35 *   (0.01875 * SafezoneH)";
+					h="35 *   (0.025 * SafezoneH)";
+				};
+				class RHS_SSU_ReadyText: RscEdit
+				{
+					idc=6;
+					sizeEx="0.018*SafezoneH";
+					colorBackground[]={0,0,0,1};
+					colorText[]={1,1,1,1};
+					colorSelection[]={0,0,0,1};
+					font="PuristaMedium";
+					text="ССУ ВКЛ";
+					style=2;
+					shadow=0;
+					type=0;
+					x="12.14 *   (0.01875 * SafezoneH)";
+					y="30.14 *   (0.025 * SafezoneH)";
+					w="2.7 *   (0.01875 * SafezoneH)";
+					h="1.0 *   (0.025 * SafezoneH)";
+				};
+				class RHS_ModeText: RHS_SSU_ReadyText
+				{
+					idc=5;
+					x="35.14 *   (0.01875 * SafezoneH)";
+					w="1.6 *   (0.01875 * SafezoneH)";
+					text="ОСН";
+				};
+				class RHS_AutoTrackerText: RHS_SSU_ReadyText
+				{
+					idc=21;
+					x="35.14 *   (0.01875 * SafezoneH)";
+					y="11.84 *   (0.025 *    SafezoneH)";
+					w="1.6 *   (0.01875 * SafezoneH)";
+					text="АСЦ";
+				};
+				class RHS_AutoTrackerMode: RHS_AutoTrackerText
+				{
+					idc=22;
+					y="13.14 *   (0.025 * SafezoneH)";
+					text="ВЫКЛ";
+				};
+				class RHS_Gun_ReadyText: RHS_ModeText
+				{
+					idc=2;
+					x="16.14 *   (0.01875 * SafezoneH)";
+					text="ГОТ";
+				};
+				class RHS_Ammo: CA_Distance
+				{
+					idc=3;
+					text="Б";
+					font="PuristaMedium";
+					x="21.14 *   (0.01875 * Safezoneh)";
+					y="30.14 *   (0.025 * SafezoneH)";
+					w="1.2 *   (0.01875 * SafezoneH)";
+					h="1.0 *   (0.025 * SafezoneH)";
+				};
+				class RHS_Distance: CA_Distance
+				{
+					idc=4;
+					text="----";
+					font="PuristaMedium";
+					w="3.5 *   (0.01875 * SafezoneH)";
+					h="1 *   (0.025 * SafezoneH)";
+				};
+			};
+		};
+	};
+	class RHS_RscWeaponESSA_commander_FCS: RHS_RscWeaponESSA_FCS
+	{
+		idd=300;
+		onLoad="['onLoad',_this,'RscUnitInfo','IGUI'] call (uinamespace getvariable 'BIS_fnc_initDisplay'); _this call RHS_fnc_sight_ESSA_commander";
+	};
+	class RHS_RscWeaponTPD1K_SosnaU_FCS: RscUnitInfo
+	{
+		idd=300;
+		onLoad="['onLoad',_this,'RscUnitInfo','IGUI'] call (uinamespace getvariable 'BIS_fnc_initDisplay'); _this call RHS_fnc_sight_sosnaU";
+		controls[]=
+		{
+			"CA_OpticsZoom",
+			"CA_IGUI_elements_group"
+		};
+		class CA_OpticsZoom: RscText
+		{
+			idc=180;
+			style=1;
+			colorText[]={0.70599997,0.074500002,0.0196,1};
+			sizeEx="0.038*SafezoneH";
+			shadow=0;
+			font="EtelkaMonospacePro";
+			text="4.5";
+			x="43.85 * 		(0.01875 * SafezoneH)";
+			y="19.6 * 		(0.025 * SafezoneH)";
+			w="0* 		(0.01875 * SafezoneH)";
+			h="0 * 		(0.025 * SafezoneH)";
+		};
+		class CA_IGUI_elements_group: RscControlsGroup
+		{
+			x="0 * 		(0.01875 * SafezoneH) + 		(SafezoneX + ((SafezoneW - SafezoneH) / 2))";
+			y="0 * 		(0.025 * SafezoneH) + 		(SafezoneY)";
+			w="53.5 * 		(0.01875 * SafezoneH)";
+			h="40 * 		(0.025 * SafezoneH)";
+			idc=170;
+			class VScrollbar
+			{
+				autoScrollSpeed=-1;
+				autoScrollDelay=5;
+				autoScrollRewind=0;
+				color[]={1,1,1,0};
+				width=0.001;
+			};
+			class HScrollbar
+			{
+				color[]={1,1,1,0};
+				height=0.001;
+			};
+			class Controls
+			{
+				class CA_Distance: RscOpticsValue
+				{
+					idc=151;
+					style=1;
+					shadow=0;
+					colorBackground[]={0,0,0,1};
+					colorText[]={1,1,1,1};
+					font="PuristaLight";
+					sizeEx="0.018*SafezoneH";
+					x="28.14 *   (0.01875 * Safezoneh)";
+					y="30.14 *   (0.025 * SafezoneH)";
+					w="0";
+					h="0";
+				};
+				class CA_OpticsMode: CA_OpticsZoom
+				{
+					idc=154;
+				};
+				class RHS_Sight: RscPicture
+				{
+					idc=1;
+					style="0x30 + 0x800";
+					sizeEx="0.038*SafezoneH";
+					colorText[]={1,1,1,1};
+					shadow=0;
+					text="rhsafrf\addons\rhs_optics\vehicles\data\rhs_essa_wide.paa";
+					x="9.15 *   (0.01875 * Safezoneh)";
+					y="4.5 *   (0.025 * SafezoneH)";
+					w="35 *   (0.01875 * SafezoneH)";
+					h="35 *   (0.025 * SafezoneH)";
+				};
+				class RHS_SSU_ReadyText: RscEdit
+				{
+					idc=6;
+					sizeEx="0.018*SafezoneH";
+					colorBackground[]={0,0,0,1};
+					colorText[]={1,1,1,1};
+					colorSelection[]={0,0,0,1};
+					text="ССУ ВКЛ";
+					font="PuristaMedium";
+					style=2;
+					shadow=0;
+					type=0;
+					x="12.14 *   (0.01875 * SafezoneH)";
+					y="30.14 *   (0.025 * SafezoneH)";
+					w="2.7 *   (0.01875 * SafezoneH)";
+					h="1.0 *   (0.025 * SafezoneH)";
+				};
+				class RHS_AutoTrackerText: RHS_SSU_ReadyText
+				{
+					idc=21;
+					x="35.14 *   (0.01875 * SafezoneH)";
+					y="11.84 *   (0.025 *    SafezoneH)";
+					w="1.6 *   (0.01875 * SafezoneH)";
+					text="АСЦ";
+				};
+				class RHS_AutoTrackerMode: RHS_AutoTrackerText
+				{
+					idc=22;
+					y="13.14 *   (0.025 * SafezoneH)";
+					text="ВЫКЛ";
+				};
+				class RHS_ModeText: RHS_SSU_ReadyText
+				{
+					idc=5;
+					x="35.14 *   (0.01875 * SafezoneH)";
+					w="1.6 *   (0.01875 * SafezoneH)";
+					text="ОСН";
+				};
+				class RHS_Gun_ReadyText: RHS_ModeText
+				{
+					idc=2;
+					x="16.14 *   (0.01875 * SafezoneH)";
+					text="ГОТ";
+				};
+				class RHS_Ammo: CA_Distance
+				{
+					idc=3;
+					text="Б";
+					font="PuristaMedium";
+					x="21.14 *   (0.01875 * Safezoneh)";
+					y="30.14 *   (0.025 * SafezoneH)";
+					w="1.2 *   (0.01875 * SafezoneH)";
+					h="1.0 *   (0.025 * SafezoneH)";
+				};
+				class RHS_Distance: CA_Distance
+				{
+					idc=4;
+					text="----";
+					font="PuristaMedium";
+					w="3.5 *   (0.01875 * SafezoneH)";
+					h="1 *   (0.025 * SafezoneH)";
+				};
+			};
+		};
+		class Objects
+		{
+			class MainSight
+			{
+				idc=901;
+				type=82;
+				model="\rhsafrf\addons\rhs_optics\vehicles\rhs_tpdk1_animated.p3d";
+				direction[]={0,0,-1};
+				up[]={0,1,0};
+				x="20.0 * (((safezoneW / safezoneH) min 1.2) / 40) + 		(safezoneX + (safezoneW - 					((safezoneW / safezoneH) min 1.2))/2)";
+				y="14.1 * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) + 		(safezoneY + (safezoneH - 					(			((safezoneW / safezoneH) min 1.2) / 1.2))/2)";
+				z=0.0099999998;
+				scale="0.15 * (SafeZoneW Min SafeZoneH)";
+				xBack=0;
+				yBack=0;
+				zBack=0;
+				inBack=0;
+				enableZoom=0;
+				zoomDuration=0;
+				class AnimationSources
+				{
+					class sightRange
+					{
+						source="user";
+						animPeriod=0.00050000002;
+						initPhase=0;
+					};
+					class sightElevationAPFSDS: sightRange
+					{
+						animPeriod=0.40000001;
+						initPhase=7.46;
+					};
+					class sightElevationHEAT: sightRange
+					{
+						animPeriod=0.064999998;
+					};
+					class sightElevationHEF: sightRange
+					{
+						animPeriod=0.079999998;
+					};
+					class sightReadyLight: sightRange;  //found empty after stripping
+				};
+			};
+			class AmmoSelector_bgr
+			{
+				idc=311;
+				type=82;
+				x="0.535152-safezoneX";
+				y="0.140276+safezoneY";
+				z=0.1;
+				scale=0.15000001;
+				direction[]={0,0,-1};
+				up[]={0,1,0};
+				model="rhsafrf\addons\rhs_optics\vehicles\kompas\switch_bg.p3d";
+				xBack=0.5;
+				yBack=0.5;
+				zBack=0;
+				inBack=0;
+				enableZoom=0;
+				zoomDuration=4.0009999;
+			};
+			class AmmoSelector: AmmoSelector_bgr
+			{
+				idc=312;
+				model="rhsafrf\addons\rhs_optics\vehicles\kompas\switch.p3d";
+			};
+			class AutoloaderSelector: AmmoSelector_bgr
+			{
+				idc=313;
+				x="0.335152-safezoneX";
+				model="rhsafrf\addons\rhs_optics\vehicles\kompas\switch_autoloader_on.p3d";
+			};
+		};
+	};
+	class RHS_RscWeaponSosnaU_FCS: RscUnitInfo
+	{
+		idd=300;
+		onLoad="['onLoad',_this,'RscUnitInfo','IGUI'] call (uinamespace getvariable 'BIS_fnc_initDisplay'); _this call RHS_fnc_sight_sosnaU";
+		controls[]=
+		{
+			"CA_OpticsZoom",
+			"CA_IGUI_elements_group"
+		};
+		class CA_OpticsZoom: RscText
+		{
+			idc=180;
+			style=1;
+			colorText[]={0.70599997,0.074500002,0.0196,1};
+			sizeEx="0.038*SafezoneH";
+			shadow=0;
+			font="EtelkaMonospacePro";
+			text="4.5";
+			x="43.85 * 		(0.01875 * SafezoneH)";
+			y="19.6 * 		(0.025 * SafezoneH)";
+			w="0* 		(0.01875 * SafezoneH)";
+			h="0 * 		(0.025 * SafezoneH)";
+		};
+		class CA_IGUI_elements_group: RscControlsGroup
+		{
+			x="0 * 		(0.01875 * SafezoneH) + 		(SafezoneX + ((SafezoneW - SafezoneH) / 2))";
+			y="0 * 		(0.025 * SafezoneH) + 		(SafezoneY)";
+			w="53.5 * 		(0.01875 * SafezoneH)";
+			h="40 * 		(0.025 * SafezoneH)";
+			idc=170;
+			class VScrollbar
+			{
+				autoScrollSpeed=-1;
+				autoScrollDelay=5;
+				autoScrollRewind=0;
+				color[]={1,1,1,0};
+				width=0.001;
+			};
+			class HScrollbar
+			{
+				color[]={1,1,1,0};
+				height=0.001;
+			};
+			class Controls
+			{
+				class CA_Distance: RscOpticsValue
+				{
+					idc=151;
+					style=1;
+					shadow=0;
+					colorBackground[]={0,0,0,1};
+					colorText[]={1,1,1,1};
+					font="PuristaLight";
+					sizeEx="0.018*SafezoneH";
+					x="28.14 *   (0.01875 * Safezoneh)";
+					y="30.14 *   (0.025 * SafezoneH)";
+					w="0";
+					h="0";
+				};
+				class CA_OpticsMode: CA_OpticsZoom
+				{
+					idc=154;
+				};
+				class RHS_Sight: RscPicture
+				{
+					idc=1;
+					style="0x30 + 0x800";
+					sizeEx="0.038*SafezoneH";
+					colorText[]={1,1,1,1};
+					shadow=0;
+					text="rhsafrf\addons\rhs_optics\vehicles\data\rhs_essa_wide.paa";
+					x="9.15 *   (0.01875 * Safezoneh)";
+					y="4.5 *   (0.025 * SafezoneH)";
+					w="35 *   (0.01875 * SafezoneH)";
+					h="35 *   (0.025 * SafezoneH)";
+				};
+				class RHS_SSU_ReadyText: RscEdit
+				{
+					idc=6;
+					sizeEx="0.018*SafezoneH";
+					colorBackground[]={0,0,0,1};
+					colorText[]={1,1,1,1};
+					colorSelection[]={0,0,0,1};
+					text="ССУ ВКЛ";
+					font="PuristaMedium";
+					style=2;
+					shadow=0;
+					type=0;
+					x="12.14 *   (0.01875 * SafezoneH)";
+					y="30.14 *   (0.025 * SafezoneH)";
+					w="2.7 *   (0.01875 * SafezoneH)";
+					h="1.0 *   (0.025 * SafezoneH)";
+				};
+				class RHS_AutoTrackerText: RHS_SSU_ReadyText
+				{
+					idc=21;
+					x="35.14 *   (0.01875 * SafezoneH)";
+					y="11.84 *   (0.025 *    SafezoneH)";
+					w="1.6 *   (0.01875 * SafezoneH)";
+					text="АСЦ";
+				};
+				class RHS_AutoTrackerMode: RHS_AutoTrackerText
+				{
+					idc=22;
+					y="13.14 *   (0.025 * SafezoneH)";
+					text="ВЫКЛ";
+				};
+				class RHS_ModeText: RHS_SSU_ReadyText
+				{
+					idc=5;
+					x="35.14 *   (0.01875 * SafezoneH)";
+					w="1.6 *   (0.01875 * SafezoneH)";
+					text="ОСН";
+				};
+				class RHS_Gun_ReadyText: RHS_ModeText
+				{
+					idc=2;
+					x="16.14 *   (0.01875 * SafezoneH)";
+					text="ГОТ";
+				};
+				class RHS_Ammo: CA_Distance
+				{
+					idc=3;
+					text="Б";
+					font="PuristaMedium";
+					x="21.14 *   (0.01875 * Safezoneh)";
+					y="30.14 *   (0.025 * SafezoneH)";
+					w="1.2 *   (0.01875 * SafezoneH)";
+					h="1.0 *   (0.025 * SafezoneH)";
+				};
+				class RHS_Distance: CA_Distance
+				{
+					idc=4;
+					text="----";
+					font="PuristaMedium";
+					w="3.5 *   (0.01875 * SafezoneH)";
+					h="1 *   (0.025 * SafezoneH)";
+				};
+			};
+		};
+		class Objects
+		{
+			class AmmoSelector_bgr
+			{
+				idc=311;
+				type=82;
+				x="0.535152-safezoneX";
+				y="0.140276+safezoneY";
+				z=0.1;
+				scale=0.15000001;
+				direction[]={0,0,-1};
+				up[]={0,1,0};
+				model="rhsafrf\addons\rhs_optics\vehicles\kompas\switch_bg.p3d";
+				xBack=0.5;
+				yBack=0.5;
+				zBack=0;
+				inBack=0;
+				enableZoom=0;
+				zoomDuration=4.0009999;
+			};
+			class AmmoSelector: AmmoSelector_bgr
+			{
+				idc=312;
+				model="rhsafrf\addons\rhs_optics\vehicles\kompas\switch.p3d";
+			};
+			class AutoloaderSelector: AmmoSelector_bgr
+			{
+				idc=313;
+				x="0.335152-safezoneX";
+				model="rhsafrf\addons\rhs_optics\vehicles\kompas\switch_autoloader_on.p3d";
+			};
+		};
+	};
+	class RHS_RscWeaponAgava_FCS: RscUnitInfo
+	{
+		idd=300;
+		onLoad="['onLoad',_this,'RscUnitInfo','IGUI'] call (uinamespace getvariable 'BIS_fnc_initDisplay'); _this call RHS_fnc_sight_agava2";
+		controls[]=
+		{
+			"CA_OpticsZoom",
+			"CA_IGUI_elements_group"
+		};
+		class CA_OpticsZoom: RscText
+		{
+			idc=180;
+			style=1;
+			colorText[]={0.70599997,0.074500002,0.0196,1};
+			sizeEx="0.038*SafezoneH";
+			shadow=0;
+			font="EtelkaMonospacePro";
+			text="4.5";
+			x="43.85 * 		(0.01875 * SafezoneH)";
+			y="19.6 * 		(0.025 * SafezoneH)";
+			w="0* 		(0.01875 * SafezoneH)";
+			h="0 * 		(0.025 * SafezoneH)";
+		};
+		class CA_IGUI_elements_group: RscControlsGroup
+		{
+			x="0 * 		(0.01875 * SafezoneH) + 		(SafezoneX + ((SafezoneW - SafezoneH) / 2))";
+			y="0 * 		(0.025 * SafezoneH) + 		(SafezoneY)";
+			w="53.5 * 		(0.01875 * SafezoneH)";
+			h="40 * 		(0.025 * SafezoneH)";
+			idc=170;
+			class VScrollbar
+			{
+				autoScrollSpeed=-1;
+				autoScrollDelay=5;
+				autoScrollRewind=0;
+				color[]={1,1,1,0};
+				width=0.001;
+			};
+			class HScrollbar
+			{
+				color[]={1,1,1,0};
+				height=0.001;
+			};
+			class Controls
+			{
+				class CA_Distance: RscOpticsValue
+				{
+					idc=151;
+					style=1;
+					shadow=0;
+					colorText[]={1,0,0,1};
+					font="rhs_digital_font";
+					sizeEx="0.039*SafezoneH";
+					x="17.65 *   (0.01875 * Safezoneh)";
+					y="30.45 *   (0.025 * SafezoneH)";
+					w="0";
+					h="0";
+				};
+				class CA_OpticsMode: CA_OpticsZoom
+				{
+					idc=154;
+				};
+				class RHS_Sight: RscPicture
+				{
+					idc=1;
+					style="0x30 + 0x800";
+					sizeEx="0.038*SafezoneH";
+					colorText[]={0.70599997,0.074500002,0.0196,1};
+					shadow=0;
+					font="rhs_digital_font";
+					text="rhsafrf\addons\rhs_optics\vehicles\data\rhs_1g46_moving_ca.paa";
+					x="10.32 *   (0.01875 * Safezoneh)";
+					y="-3.95 *   (0.025 * SafezoneH)";
+					w="29 *   (0.01875 * SafezoneH)";
+					h="29 *   (0.025 * SafezoneH)";
+				};
+				class RHS_ReadyLight: RscPicture
+				{
+					idc=2;
+					style="0x30 + 0x800";
+					sizeEx="0.038*SafezoneH";
+					colorText[]={1,1,1,1};
+					shadow=0;
+					font="EtelkaMonospacePro";
+					text="rhsafrf\addons\rhs_optics\vehicles\data\rhs_1g46_readylight_ca.paa";
+					x="17.65 *   (0.01875 * SafezoneH)";
+					y="36.00 *   (0.025 * SafezoneH)";
+					w="1.7 *   (0.01875 * SafezoneH)";
+					h="1.7 *   (0.025 * SafezoneH)";
+				};
+				class RHS_Ammo: CA_Distance
+				{
+					idc=3;
+					text="$";
+					x="21.65 *   (0.01875 * Safezoneh)";
+					y="36 *   (0.025 * SafezoneH)";
+					w="1.9 *   (0.01875 * SafezoneH)";
+					h="1.9 *   (0.025 * SafezoneH)";
+				};
+				class RHS_Distance: CA_Distance
+				{
+					idc=4;
+					text="$$$$";
+					w="12.9 *   (0.01875 * SafezoneH)";
+					h="12.9 *   (0.025 * SafezoneH)";
+				};
+				class RHS_agava_static: RscPicture
+				{
+					idc=5;
+					style="0x30 + 0x800";
+					sizeEx="0.038*SafezoneH";
+					colorText[]={1,1,1,0.80000001};
+					shadow=0;
+					text="rhsafrf\addons\rhs_optics\vehicles\data\rhs_agava_static.paa";
+					x="16.14 *   (0.01875 * Safezoneh)";
+					y="3.5 *   (0.025 * SafezoneH)";
+					w="20 *   (0.01875 * SafezoneH)";
+					h="20 *   (0.025 * SafezoneH)";
+				};
+				class RHS_Ammo_agava: CA_Distance
+				{
+					idc=6;
+					text="Б";
+					font="rhs_digital_font_var";
+					sizeEx="0.022*SafezoneH";
+					colorText[]={1,1,1,0.80000001};
+					x="21.14 *   (0.01875 * Safezoneh)";
+					y="12.44 *   (0.025 * SafezoneH)";
+					w="1.2 *   (0.01875 * SafezoneH)";
+					h="1.0 *   (0.025 * SafezoneH)";
+				};
+				class RHS_Gun_ReadyText_agava: RHS_Ammo_agava
+				{
+					idc=7;
+					x="17.24 *   (0.01875 * SafezoneH)";
+					w="4 *   (0.01875 * SafezoneH)";
+					text="ГОТ";
+				};
+				class RHS_Distance_agava: CA_Distance
+				{
+					idc=8;
+					text="----";
+					x="18.14 *   (0.01875 * Safezoneh)";
+					y="13.54 *   (0.025 * SafezoneH)";
+					w="3.5 *   (0.01875 * SafezoneH)";
+					h="1 *   (0.025 * SafezoneH)";
+					sizeEx="0.028*SafezoneH";
+					font="rhs_digital_font_var";
+					colorText[]={1,1,1,0.80000001};
+				};
+			};
+		};
+		class Objects
+		{
+			class AmmoSelector_bgr
+			{
+				idc=311;
+				type=82;
+				x="0.535152-safezoneX";
+				y="0.140276+safezoneY";
+				z=0.1;
+				scale=0.15000001;
+				direction[]={0,0,-1};
+				up[]={0,1,0};
+				model="rhsafrf\addons\rhs_optics\vehicles\kompas\switch_bg_1g42.p3d";
+				xBack=0.5;
+				yBack=0.5;
+				zBack=0;
+				inBack=0;
+				enableZoom=0;
+				zoomDuration=4.0009999;
+			};
+			class AmmoSelector: AmmoSelector_bgr
+			{
+				idc=312;
+				model="rhsafrf\addons\rhs_optics\vehicles\kompas\switch_1g42.p3d";
+			};
+			class AutoloaderSelector: AmmoSelector_bgr
+			{
+				idc=313;
+				x="0.335152-safezoneX";
+				model="rhsafrf\addons\rhs_optics\vehicles\kompas\switch_autoloader_on.p3d";
+			};
+		};
+	};
+	class RHS_RscWeaponPlissa_FCS: RscUnitInfo
+	{
+		idd=300;
+		onLoad="['onLoad',_this,'RscUnitInfo','IGUI'] call (uinamespace getvariable 'BIS_fnc_initDisplay'); [_this select 0,'RHS_T80B_Recoil'] call RHS_fnc_sight_plissa";
+		controls[]=
+		{
+			"CA_OpticsZoom",
+			"CA_IGUI_elements_group"
+		};
+		class CA_OpticsZoom: RscText
+		{
+			idc=180;
+			style=1;
+			colorText[]={0.70599997,0.074500002,0.0196,1};
+			sizeEx="0.038*SafezoneH";
+			shadow=0;
+			font="EtelkaMonospacePro";
+			text="4.5";
+			x="43.85 * 		(0.01875 * SafezoneH)";
+			y="19.6 * 		(0.025 * SafezoneH)";
+			w="0* 		(0.01875 * SafezoneH)";
+			h="0 * 		(0.025 * SafezoneH)";
+		};
+		class CA_IGUI_elements_group: RscControlsGroup
+		{
+			x="0 * 		(0.01875 * SafezoneH) + 		(SafezoneX + ((SafezoneW - SafezoneH) / 2))";
+			y="0 * 		(0.025 * SafezoneH) + 		(SafezoneY)";
+			w="53.5 * 		(0.01875 * SafezoneH)";
+			h="40 * 		(0.025 * SafezoneH)";
+			idc=170;
+			class VScrollbar
+			{
+				autoScrollSpeed=-1;
+				autoScrollDelay=5;
+				autoScrollRewind=0;
+				color[]={1,1,1,0};
+				width=0.001;
+			};
+			class HScrollbar
+			{
+				color[]={1,1,1,0};
+				height=0.001;
+			};
+			class Controls
+			{
+				class CA_Distance: RscOpticsValue
+				{
+					idc=151;
+					style=1;
+					shadow=0;
+					colorText[]={1,0,0,1};
+					font="rhs_digital_font";
+					sizeEx="0.039*SafezoneH";
+					x="17.65 *   (0.01875 * Safezoneh)";
+					y="30.45 *   (0.025 * SafezoneH)";
+					w="0";
+					h="0";
+				};
+				class CA_OpticsMode: CA_OpticsZoom
+				{
+					idc=154;
+				};
+				class RHS_Sight: RscPicture
+				{
+					idc=1;
+					style="0x30 + 0x800";
+					sizeEx="0.038*SafezoneH";
+					colorText[]={0.70599997,0.074500002,0.0196,1};
+					shadow=0;
+					font="rhs_digital_font";
+					text="rhsafrf\addons\rhs_optics\vehicles\data\rhs_1g46_moving_ca.paa";
+					x="10.32 *   (0.01875 * Safezoneh)";
+					y="-3.95 *   (0.025 * SafezoneH)";
+					w="29 *   (0.01875 * SafezoneH)";
+					h="29 *   (0.025 * SafezoneH)";
+				};
+				class RHS_ReadyLight: RscPicture
+				{
+					idc=2;
+					style="0x30 + 0x800";
+					sizeEx="0.038*SafezoneH";
+					colorText[]={1,1,1,1};
+					shadow=0;
+					font="EtelkaMonospacePro";
+					text="rhsafrf\addons\rhs_optics\vehicles\data\rhs_1g46_readylight_ca.paa";
+					x="17.65 *   (0.01875 * SafezoneH)";
+					y="36.00 *   (0.025 * SafezoneH)";
+					w="1.7 *   (0.01875 * SafezoneH)";
+					h="1.7 *   (0.025 * SafezoneH)";
+				};
+				class RHS_Ammo: CA_Distance
+				{
+					idc=3;
+					text="$";
+					x="21.65 *   (0.01875 * Safezoneh)";
+					y="36 *   (0.025 * SafezoneH)";
+					w="1.9 *   (0.01875 * SafezoneH)";
+					h="1.9 *   (0.025 * SafezoneH)";
+				};
+				class RHS_Distance: CA_Distance
+				{
+					idc=4;
+					text="$$$$";
+					w="12.9 *   (0.01875 * SafezoneH)";
+					h="12.9 *   (0.025 * SafezoneH)";
+				};
+				class RHS_plissa_static: RscPicture
+				{
+					idc=5;
+					style="0x30 + 0x800";
+					sizeEx="0.038*SafezoneH";
+					colorText[]={1,1,1,1};
+					shadow=0;
+					text="rhsafrf\addons\rhs_optics\vehicles\data\rhs_essa_wide.paa";
+					x="9.15 *   (0.01875 * Safezoneh)";
+					y="4.75 *   (0.025 * SafezoneH)";
+					w="35 *   (0.01875 * SafezoneH)";
+					h="35 *   (0.025 * SafezoneH)";
+				};
+				class RHS_SSU_ReadyText: RscEdit
+				{
+					idc=6;
+					sizeEx="0.018*SafezoneH";
+					colorBackground[]={0,0,0,0};
+					colorText[]={1,1,1,1};
+					colorSelection[]={0,0,0,1};
+					font="rhs_digital_font_var";
+					text="ССУ ВКЛ";
+					style=2;
+					shadow=0;
+					type=0;
+					x="12.14 *   (0.01875 * SafezoneH)";
+					y="30.14 *   (0.025 * SafezoneH)";
+					w="2.7 *   (0.01875 * SafezoneH)";
+					h="1.0 *   (0.025 * SafezoneH)";
+				};
+				class RHS_ModeText: RHS_SSU_ReadyText
+				{
+					idc=7;
+					x="35.14 *   (0.01875 * SafezoneH)";
+					w="1.6 *   (0.01875 * SafezoneH)";
+					text="ОСН";
+				};
+				class RHS_Gun_ReadyText_plissa: RHS_ModeText
+				{
+					idc=8;
+					x="17.24 *   (0.01875 * SafezoneH)";
+					text="ГОТ";
+				};
+				class RHS_AutoTrackerText: RHS_SSU_ReadyText
+				{
+					idc=21;
+					x="35.14 *   (0.01875 * SafezoneH)";
+					y="11.84 *   (0.025 *    SafezoneH)";
+					w="1.6 *   (0.01875 * SafezoneH)";
+					text="АСЦ";
+				};
+				class RHS_AutoTrackerMode: RHS_AutoTrackerText
+				{
+					idc=22;
+					y="13.14 *   (0.025 * SafezoneH)";
+					text="ВЫКЛ";
+				};
+				class RHS_ammo_plissa: CA_Distance
+				{
+					idc=9;
+					text="Б";
+					font="rhs_digital_font_var";
+					colorText[]={1,1,1,0.80000001};
+					sizeEx="0.018*SafezoneH";
+					x="21.14 *   (0.01875 * Safezoneh)";
+					y="30.14 *   (0.025 * SafezoneH)";
+					w="1.0 *   (0.01875 * SafezoneH)";
+					h="1.0 *   (0.025 * SafezoneH)";
+				};
+				class RHS_Distance_plissa: CA_Distance
+				{
+					idc=10;
+					text="----";
+					x="28.14 *   (0.01875 * Safezoneh)";
+					y="30.14 *   (0.025 * SafezoneH)";
+					w="2.0 *   (0.01875 * SafezoneH)";
+					h="1 *   (0.025 * SafezoneH)";
+					font="rhs_digital_font_var";
+					sizeEx="0.018*SafezoneH";
+					colorText[]={1,1,1,0.80000001};
+				};
+			};
+		};
+		class Objects
+		{
+			class AmmoSelector_bgr
+			{
+				idc=311;
+				type=82;
+				x="0.535152-safezoneX";
+				y="0.140276+safezoneY";
+				z=0.1;
+				scale=0.15000001;
+				direction[]={0,0,-1};
+				up[]={0,1,0};
+				model="rhsafrf\addons\rhs_optics\vehicles\kompas\switch_bg_1g42.p3d";
+				xBack=0.5;
+				yBack=0.5;
+				zBack=0;
+				inBack=0;
+				enableZoom=0;
+				zoomDuration=4.0009999;
+			};
+			class AmmoSelector: AmmoSelector_bgr
+			{
+				idc=312;
+				model="rhsafrf\addons\rhs_optics\vehicles\kompas\switch_1g42.p3d";
+			};
+			class AutoloaderSelector: AmmoSelector_bgr
+			{
+				idc=313;
+				x="0.335152-safezoneX";
+				model="rhsafrf\addons\rhs_optics\vehicles\kompas\switch_autoloader_on.p3d";
+			};
+		};
+	};
+	class RHS_RscWeaponPlissa_t90_FCS: RHS_RscWeaponPlissa_FCS
+	{
+		onLoad="['onLoad',_this,'RscUnitInfo','IGUI'] call (uinamespace getvariable 'BIS_fnc_initDisplay'); [_this select 0,'Recoil'] call RHS_fnc_sight_plissa";
+	};
+	class rhs_gui_optic_2p130: RscUnitInfo
+	{
+		idd=300;
+		onLoad="['onLoad',_this,'RscUnitInfo','IGUI'] call (uinamespace getvariable 'BIS_fnc_initDisplay');_this call rhs_fnc_sight_prp3_mortar";
+		controls[]=
+		{
+			"CA_IGUI_elements_group"
+		};
+		class CA_IGUI_elements_group: RscControlsGroup
+		{
+			idc=170;
+			class VScrollbar: VScrollbar
+			{
+				width=0;
+			};
+			class HScrollbar: HScrollbar
+			{
+				height=0;
+			};
+			x="0 * 		(0.01875 * SafezoneH) + 		(SafezoneX + ((SafezoneW - SafezoneH) / 2))";
+			y="0 * 		(0.025 * SafezoneH) + 		(SafezoneY)";
+			w="53.5 * 		(0.01875 * SafezoneH)";
+			h="40 * 		(0.025 * SafezoneH)";
+			class controls
+			{
+				class CA_Heading: RscText
+				{
+					idc=1;
+					style=0;
+					colorText[]={0.70599997,0.074500002,0.0196,1};
+					sizeEx="0.032*SafezoneH";
+					shadow=0;
+					font="PuristaBold";
+					text="015";
+					x="48.35 * 		(0.01875 * SafezoneH)";
+					y="5 * 		(0.025 * SafezoneH)";
+					w="4 * 		(0.01875 * SafezoneH)";
+					h="4 * 		(0.025 * SafezoneH)";
+				};
+				class CA_Elev: RscText
+				{
+					idc=175;
+					style=1;
+					sizeEx="0.032*SafezoneH";
+					colorText[]={0.70599997,0.074500002,0.0196,1};
+					shadow=0;
+					font="PuristaBold";
+					text="-48.15";
+					x="48.15 * 		(0.01875 * SafezoneH)";
+					y="3.4 * 		(0.025 * SafezoneH)";
+					w="4 * 		(0.01875 * SafezoneH)";
+					h="4 * 		(0.025 * SafezoneH)";
+				};
+			};
+		};
+	};
+	class rhs_gui_optic_mortar: RscUnitInfo
+	{
+		idd=300;
+		onLoad="['onLoad',_this,'RscUnitInfo','IGUI'] call (uinamespace getvariable 'BIS_fnc_initDisplay');";
+		controls[]=
+		{
+			"CA_IGUI_elements_group"
+		};
+		class CA_IGUI_elements_group: RscControlsGroup
+		{
+			idc=170;
+			class VScrollbar: VScrollbar
+			{
+				width=0;
+			};
+			class HScrollbar: HScrollbar
+			{
+				height=0;
+			};
+			x="((safezoneX + safezoneW) - (16.4 * (((safezoneW / safezoneH) min 1.2) / 40)) - 0.5 * (((safezoneW /safezoneH) min 1.2) / 40))";
+			y="0 *   (0.025 * SafezoneH) +   (SafezoneY)";
+			w="17 * (((safezoneW / safezoneH) min 1.2) / 40)";
+			h="17 * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
+			class controls
+			{
+				class CA_Elev: RscText
+				{
+					idc=175;
+					style=1;
+					sizeEx="0.032*SafezoneH";
+					colorText[]={0.70599997,0.074500002,0.0196,1};
+					shadow=0;
+					font="PuristaBold";
+					text="-80.5";
+					x="-2 * 		(0.01875 * SafezoneH)";
+					y="-0.4 * 		(0.025 * SafezoneH)";
+					w="13 * 		(0.01875 * SafezoneH)";
+					h="13 * 		(0.025 * SafezoneH)";
+				};
+			};
+		};
+	};
+	class RHS_RscWeaponMi24_FCS: RscUnitInfo
+	{
+		idd=300;
+		onLoad="['onLoad',_this,'RscUnitInfo','IGUI'] call (uinamespace getvariable 'BIS_fnc_initDisplay'); _this call RHS_fnc_sight_9S475";
+		controls[]=
+		{
+			"CA_IGUI_elements_group",
+			"CA_OpticsZoom"
+		};
+		class CA_OpticsZoom: RscText
+		{
+			idc=154;
+			style=1;
+			colorText[]={0.70599997,0.074500002,0.0196,1};
+			sizeEx="0.038*SafezoneH";
+			shadow=0;
+			font="EtelkaMonospacePro";
+			text="4.5";
+			x="43.85 * 		(0.01875 * SafezoneH)";
+			y="19.6 * 		(0.025 * SafezoneH)";
+			w="0* 		(0.01875 * SafezoneH)";
+			h="0 * 		(0.025 * SafezoneH)";
+		};
+		class CA_IGUI_elements_group: RscControlsGroup
+		{
+			x="0 * 		(0.01875 * SafezoneH) + 		(SafezoneX + ((SafezoneW - SafezoneH) / 2))";
+			y="0 * 		(0.025 * SafezoneH) + 		(SafezoneY)";
+			w="53.5 * 		(0.01875 * SafezoneH)";
+			h="40 * 		(0.025 * SafezoneH)";
+			idc=170;
+			class VScrollbar
+			{
+				autoScrollSpeed=-1;
+				autoScrollDelay=5;
+				autoScrollRewind=0;
+				color[]={1,1,1,0};
+				width=0.001;
+			};
+			class HScrollbar
+			{
+				color[]={1,1,1,0};
+				height=0.001;
+			};
+			class Controls
+			{
+				class rhs_arr_vert: RscPicture
+				{
+					idc=1;
+					text="rhsafrf\addons\rhs_a2port_air\Mi35\Data\rhs_mi24_missile_line_ca.paa";
+					colorText[]={1,1,1,0};
+					x="8.89 *   (0.01875 * Safezoneh)";
+					y="2.39 * (0.025 * SafezoneH)";
+					w="35.18 *   (0.01875 * SafezoneH)";
+					h="35.18 *   (0.025 * SafezoneH)";
+				};
+			};
+		};
+	};
+	class RHS_RscWeaponMi28_FCS: RscUnitInfo
+	{
+		idd=300;
+		onLoad="['onLoad',_this,'RscUnitInfo','IGUI'] call (uinamespace getvariable 'BIS_fnc_initDisplay'); _this call RHS_fnc_sight_Mi28_fcs";
+		controls[]=
+		{
+			"CA_IGUI_elements_group",
+			"CA_Distance",
+			"CA_Mode",
+			"CA_OpticsZoom"
+		};
+		class CA_OpticsZoom: RscText
+		{
+			idc=180;
+			style=1;
+			colorText[]={0.70599997,0.074500002,0.0196,1};
+			sizeEx="0.038*SafezoneH";
+			shadow=0;
+			font="EtelkaMonospacePro";
+			text="4.5";
+			x="43.85 * 		(0.01875 * SafezoneH)";
+			y="19.6 * 		(0.025 * SafezoneH)";
+			w="0* 		(0.01875 * SafezoneH)";
+			h="0 * 		(0.025 * SafezoneH)";
+		};
+		class CA_Mode: CA_OpticsZoom
+		{
+			idc=154;
+		};
+		class CA_Distance: RscOpticsValue
+		{
+			idc=151;
+			style=2;
+			colorText[]={0,0.36000001,0.12,1};
+			shadow=0;
+			font="rhs_digital_font_var";
+			x="34.41 * 		(0.01875 * SafezoneH)";
+			y="35.6 * 		(0.025 * SafezoneH)";
+			w="0* 		(0.01875 * SafezoneH)";
+			h="0 * 		(0.025 * SafezoneH)";
+		};
+		class CA_IGUI_elements_group: RscControlsGroup
+		{
+			x="0 * 		(0.01875 * SafezoneH) + 		(SafezoneX + ((SafezoneW - SafezoneH) / 2))";
+			y="0 * 		(0.025 * SafezoneH) + 		(SafezoneY)";
+			w="53.5 * 		(0.01875 * SafezoneH)";
+			h="40 * 		(0.025 * SafezoneH)";
+			idc=170;
+			class VScrollbar
+			{
+				autoScrollSpeed=-1;
+				autoScrollDelay=5;
+				autoScrollRewind=0;
+				color[]={1,1,1,0};
+				width=0.001;
+			};
+			class HScrollbar
+			{
+				color[]={1,1,1,0};
+				height=0.001;
+			};
+			class Controls
+			{
+				class rhs_Distance: CA_Distance
+				{
+					idc=1;
+					text="";
+					sizeEx="0.054*SafezoneH";
+					x="17.2 * 		(0.01875 * SafezoneH)";
+					y="24.02 * 		(0.025 * SafezoneH)";
+					w="20 * 		(0.01875 * SafezoneH)";
+					h="20 * 		(0.025 * SafezoneH)";
+				};
+				class rhs_timeToTarget: CA_Distance
+				{
+					idc=601;
+					text="";
+					sizeEx="0.012*SafezoneH";
+					font="rhs_digital_font_var";
+					x="17.2 * 		(0.01875 * SafezoneH)";
+					y="22.52 * 		(0.025 * SafezoneH)";
+					w="20 * 		(0.01875 * SafezoneH)";
+					h="20 * 		(0.025 * SafezoneH)";
+				};
+				class rhs_height: CA_Distance
+				{
+					idc=189;
+					style=1;
+					text="----";
+					sizeEx="0.094*SafezoneH";
+					x="18.9 * 		(0.01875 * SafezoneH)";
+					y="0.422 * 		(0.025 * SafezoneH)";
+					w="20 * 		(0.01875 * SafezoneH)";
+					h="20 * 		(0.025 * SafezoneH)";
+				};
+				class rhs_speed: RscText
+				{
+					idc=188;
+					style=1;
+					text="228";
+					colorText[]={0,0.36000001,0.12,1};
+					colorBackground[]={0,0,0,0};
+					sizeEx="0.094*SafezoneH";
+					shadow=0;
+					font="rhs_digital_font_var";
+					x="-1.7 * 		(0.01875 * SafezoneH)";
+					y="0.422 * 		(0.025 * SafezoneH)";
+					w="20 * 		(0.01875 * SafezoneH)";
+					h="20 * 		(0.025 * SafezoneH)";
+				};
+				class rhs_arr_turret: RscPicture
+				{
+					idc=3;
+					text="rhsafrf\addons\rhs_optics\vehicles\data\rhs_mi28_turret.paa";
+					x="6.14 *   (0.01875 * Safezoneh)";
+					y="25.79 * (0.025 * SafezoneH)";
+					w="10 *   (0.01875 * SafezoneH)";
+					h="10 *   (0.025 * SafezoneH)";
+				};
+				class rhs_arr_horizont: RscPicture
+				{
+					idc=4;
+					text="rhsafrf\addons\rhs_optics\vehicles\data\rhs_mi28_arr_horiz.paa";
+					x="26.15 *   (0.01875 * Safezoneh)";
+					y="6.71 * (0.025 * SafezoneH)";
+					w="1.5 *   (0.01875 * SafezoneH)";
+					h="1.5 *   (0.025 * SafezoneH)";
+				};
+				class rhs_arr_elevation: rhs_arr_horizont
+				{
+					idc=5;
+					text="rhsafrf\addons\rhs_optics\vehicles\data\rhs_mi28_arr_vert.paa";
+					x="42.58 *   (0.01875 * Safezoneh)";
+					y="19.11 * (0.025 * SafezoneH)";
+					w="1.5 *   (0.01875 * SafezoneH)";
+					h="1.5 *   (0.025 * SafezoneH)";
+				};
+				class rhs_ind_as: rhs_arr_horizont
+				{
+					idc=6;
+					text="rhsafrf\addons\rhs_optics\vehicles\data\rhs_mi28_autotrack.paa";
+					x="34.88 *   (0.01875 * Safezoneh)";
+					y="37.21 * (0.025 * SafezoneH)";
+					w="5.3 *   (0.01875 * SafezoneH)";
+					h="2.6 *   (0.025 * SafezoneH)";
+				};
+				class rhs_ind_ps: rhs_ind_as
+				{
+					idc=7;
+					text="rhsafrf\addons\rhs_optics\vehicles\data\rhs_mi28_groundlock.paa";
+					x="40.188 *   (0.01875 * Safezoneh)";
+				};
+				class rhs_ind_tvk: rhs_ind_as
+				{
+					idc=8;
+					text="rhsafrf\addons\rhs_optics\vehicles\data\rhs_mi28_tvk.paa";
+					x="1.688 *   (0.01875 * Safezoneh)";
+					y="6.01 * (0.025 * SafezoneH)";
+					w="2.8 *   (0.01875 * SafezoneH)";
+					h="5.5 *   (0.025 * SafezoneH)";
+				};
+				class rhs_ind_tpk: rhs_ind_tvk
+				{
+					idc=9;
+					text="rhsafrf\addons\rhs_optics\vehicles\data\rhs_mi28_tpk.paa";
+					y="11.51 * (0.025 * SafezoneH)";
+				};
+				class rhs_ind_tsl: rhs_ind_tvk
+				{
+					idc=10;
+					text="rhsafrf\addons\rhs_optics\vehicles\data\rhs_mi28_tsl.paa";
+					y="17.01 * (0.025 * SafezoneH)";
+				};
+				class rhs_cross: rhs_arr_elevation
+				{
+					idc=11;
+					text="rhsafrf\addons\rhs_optics\vehicles\data\rhs_mi28_cross.paa";
+					x="23.09 *   (0.01875 * Safezoneh)";
+					y="16.39 * (0.025 * SafezoneH)";
+					w="7.18 *   (0.01875 * SafezoneH)";
+					h="7.18 *   (0.025 * SafezoneH)";
+				};
+			};
+		};
+	};
+	class RHS_RscWeaponMi28_Pilot_FCS: RHS_RscWeaponMi28_FCS
+	{
+		onLoad="['onLoad',_this,'RscUnitInfo','IGUI'] call (uinamespace getvariable 'BIS_fnc_initDisplay'); _this call RHS_fnc_sight_Mi28_fcs_pilot";
+	};
+	class RHS_RscWeaponKa52_FCS: RscUnitInfo
+	{
+		idd=300;
+		onLoad="['onLoad',_this,'RscUnitInfo','IGUI'] call (uinamespace getvariable 'BIS_fnc_initDisplay'); _this call RHS_fnc_sight_Samshin";
+		controls[]=
+		{
+			"CA_IGUI_elements_group",
+			"CA_Distance",
+			"CA_OpticsZoom"
+		};
+		class CA_OpticsZoom: RscText
+		{
+			idc=154;
+			style=1;
+			colorText[]={0.70599997,0.074500002,0.0196,1};
+			sizeEx="0.038*SafezoneH";
+			shadow=0;
+			font="EtelkaMonospacePro";
+			text="4.5";
+			x="43.85 * 		(0.01875 * SafezoneH)";
+			y="19.6 * 		(0.025 * SafezoneH)";
+			w="0* 		(0.01875 * SafezoneH)";
+			h="0 * 		(0.025 * SafezoneH)";
+		};
+		class CA_Distance: RscOpticsValue
+		{
+			idc=151;
+			style=2;
+			colorText[]={0.47999999,0.76999998,0.46000001,1};
+			shadow=0;
+			font="rhs_digital_font_var";
+			x="34.41 * 		(0.01875 * SafezoneH)";
+			y="35.6 * 		(0.025 * SafezoneH)";
+			w="0* 		(0.01875 * SafezoneH)";
+			h="0 * 		(0.025 * SafezoneH)";
+		};
+		class CA_IGUI_elements_group: RscControlsGroup
+		{
+			x="0 * 		(0.01875 * SafezoneH) + 		(SafezoneX + ((SafezoneW - SafezoneH) / 2))";
+			y="0 * 		(0.025 * SafezoneH) + 		(SafezoneY)";
+			w="53.5 * 		(0.01875 * SafezoneH)";
+			h="40 * 		(0.025 * SafezoneH)";
+			idc=170;
+			class VScrollbar
+			{
+				autoScrollSpeed=-1;
+				autoScrollDelay=5;
+				autoScrollRewind=0;
+				color[]={1,1,1,0};
+				width=0.001;
+			};
+			class HScrollbar
+			{
+				color[]={1,1,1,0};
+				height=0.001;
+			};
+			class Controls
+			{
+				class rhs_Distance: CA_Distance
+				{
+					idc=1;
+					text="";
+					sizeEx="0.054*SafezoneH";
+					x="17.2 * 		(0.01875 * SafezoneH)";
+					y="24.02 * 		(0.025 * SafezoneH)";
+					w="20 * 		(0.01875 * SafezoneH)";
+					h="20 * 		(0.025 * SafezoneH)";
+				};
+				class rhs_timeToTarget: CA_Distance
+				{
+					idc=601;
+					text="";
+					sizeEx="0.012*SafezoneH";
+					font="rhs_digital_font_var";
+					x="17.2 * 		(0.01875 * SafezoneH)";
+					y="22.52 * 		(0.025 * SafezoneH)";
+					w="20 * 		(0.01875 * SafezoneH)";
+					h="20 * 		(0.025 * SafezoneH)";
+				};
+				class rhs_height: CA_Distance
+				{
+					idc=189;
+					style=1;
+					text="----";
+					sizeEx="0.044*SafezoneH";
+					x="14.2 * 		(0.01875 * SafezoneH)";
+					y="-3.52 * 		(0.025 * SafezoneH)";
+					w="20 * 		(0.01875 * SafezoneH)";
+					h="20 * 		(0.025 * SafezoneH)";
+				};
+				class rhs_speed: RscText
+				{
+					idc=188;
+					style=1;
+					text="228";
+					colorText[]={0.47999999,0.76999998,0.46000001,1};
+					colorBackground[]={0,0,0,0};
+					sizeEx="0.044*SafezoneH";
+					font="rhs_digital_font_var";
+					x="11.8 * 		(0.01875 * SafezoneH)";
+					y="4.44 * 		(0.025 * SafezoneH)";
+					w="10 * 		(0.01875 * SafezoneH)";
+					h="4 * 		(0.025 * SafezoneH)";
+				};
+				class rhs_arr_turret: RscPicture
+				{
+					idc=2;
+					text="rhsafrf\addons\rhs_optics\vehicles\data\rhs_ka52_samshin_turret.paa";
+					x="2.74 *   (0.01875 * Safezoneh)";
+					y="26.79 * (0.025 * SafezoneH)";
+					w="10 *   (0.01875 * SafezoneH)";
+					h="10 *   (0.025 * SafezoneH)";
+				};
+				class rhs_arr_horizont: RscPicture
+				{
+					idc=3;
+					text="rhsafrf\addons\rhs_optics\vehicles\data\rhs_green.paa";
+					x="27.1 *   (0.01875 * Safezoneh)";
+					y="3.24 * (0.025 * SafezoneH)";
+					w="12.18 *   (0.01875 * SafezoneH)";
+					h="0.6 *   (0.025 * SafezoneH)";
+				};
+				class rhs_tex_horizont: RscText
+				{
+					idc=4;
+					text="110";
+					style="0x02";
+					font="rhs_digital_font_var";
+					colorText[]={0.47999999,0.76999998,0.46000001,1};
+					colorBackground[]={0,0,0,0};
+					sizeEx="0.044*SafezoneH";
+					x="21.94 *   (0.01875 * Safezoneh)";
+					y="1.19 * (0.025 * SafezoneH)";
+					w="10 *   (0.01875 * SafezoneH)";
+					h="10 *   (0.025 * SafezoneH)";
+				};
+				class rhs_arr_elevation: rhs_arr_horizont
+				{
+					idc=5;
+					x="50.7 *   (0.01875 * Safezoneh)";
+					y="16.04 * (0.025 * SafezoneH)";
+					w="0.6 *   (0.01875 * SafezoneH)";
+					h="2 *   (0.025 * SafezoneH)";
+				};
+				class rhs_tex_elevation: rhs_tex_horizont
+				{
+					idc=10;
+					text="-27";
+					style=0;
+					sizeEx="0.024*SafezoneH";
+					font="rhs_digital_font_var";
+					x="47.18 *   (0.01875 * Safezoneh)";
+					y="11.19 * (0.025 * SafezoneH)";
+					w="10 *   (0.01875 * SafezoneH)";
+					h="10 *   (0.025 * SafezoneH)";
+				};
+				class rhs_ind_tg: rhs_arr_horizont
+				{
+					idc=6;
+					text="rhsafrf\addons\rhs_optics\vehicles\data\rhs_ka52_samshin_text_tg.paa";
+					x="16.84 *   (0.01875 * Safezoneh)";
+					y="14.79 * (0.025 * SafezoneH)";
+					w="3 *   (0.01875 * SafezoneH)";
+					h="3 *   (0.025 * SafezoneH)";
+				};
+				class rhs_ind_ta: rhs_ind_tg
+				{
+					idc=7;
+					text="rhsafrf\addons\rhs_optics\vehicles\data\rhs_ka52_samshin_text_ta.paa";
+					x="33.34 *   (0.01875 * Safezoneh)";
+				};
+				class rhs_cross: rhs_arr_elevation
+				{
+					idc=8;
+					text="rhsafrf\addons\rhs_a2port_air\Ka52\Data\rhs_ka52_samshin_cross.paa";
+					x="23.09 *   (0.01875 * Safezoneh)";
+					y="16.39 * (0.025 * SafezoneH)";
+					w="7.18 *   (0.01875 * SafezoneH)";
+					h="7.18 *   (0.025 * SafezoneH)";
+				};
+			};
+		};
+	};
+	class RHS_RscInfoStaticWeapon: RscUnitInfo
+	{
+		idd=300;
+		controls[]=
+		{
+			"CA_Zeroing"
+		};
+		onLoad="['onLoad',_this,'RscUnitInfo','IGUI'] call (uinamespace getvariable 'BIS_fnc_initDisplay');_this call rhs_fnc_ui_staticWeapon";
+	};
+	class RHS_RscOptics_Su25_KlenPS: RscUnitInfo
+	{
+		idd=300;
+		onLoad="['onLoad',_this,'RscUnitInfo','IGUI'] call (uinamespace getvariable 'BIS_fnc_initDisplay'); _this spawn rhs_fnc_su25_klenps;";
+		controls[]=
+		{
+			"CA_IGUI_elements_group"
+		};
+		class CA_IGUI_elements_group: RscControlsGroup
+		{
+			idc=170;
+			class VScrollbar: VScrollbar
+			{
+				width=0;
+			};
+			class HScrollbar: HScrollbar
+			{
+				height=0;
+			};
+			x="0 * 		(0.01875 * SafezoneH) + 		(SafezoneX + ((SafezoneW - SafezoneH) / 2))";
+			y="0 * 		(0.025 * SafezoneH) + 		(SafezoneY)";
+			w="53.5 * 		(0.01875 * SafezoneH)";
+			h="40 * 		(0.025 * SafezoneH)";
+			class controls
+			{
+				class CA_OpticsMode: RscText
+				{
+					idc=158;
+					w="0";
+					h="0";
+				};
+				class TextTrackArea: CA_OpticsMode
+				{
+					idc=194;
+					style=2;
+					text="AREA";
+				};
+				class TextTrackPoint: TextTrackArea
+				{
+					idc=195;
+					text="POINT";
+				};
+			};
+		};
+	};
+};
 class RHS_P37_Radar
 {
 	idd=314;
 	scriptName="RscCustomInfoSensors";
 	scriptPath="IGUI";
+	onLoad="['onLoad',_this,'RscCustomInfoSensors','IGUI'] call 	(uinamespace getvariable 'BIS_fnc_initDisplay')";
 	onUnload="['onUnload',_this,'RscCustomInfoSensors','IGUI'] call 	(uinamespace getvariable 'BIS_fnc_initDisplay')";
 	class controlsBackground
 	{
 		class Background: RscPicture
 		{
 			IDC=15110;
+			text="A3\Ui_f\data\IGUI\RscCustomInfo\background_ca.paa";
 			x=0;
 			y="1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
 			w="(40 * 			(			((safezoneW / safezoneH) min 1.2) / 40)))";
@@ -779,6 +4412,7 @@ class RHS_P37_Radar
 				class Circles: RscPicture
 				{
 					IDC=102;
+					text="A3\Ui_f\data\IGUI\RscCustomInfo\Sensors\SENSCircles_ca.paa";
 					x="0 - 0.7875 * 			(			((safezoneW / safezoneH) min 1.2) / 40)";
 					y="0.5 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
 					w="(profilenamespace getvariable ['IGUI_GRID_CUSTOMINFORIGHT_W',		(10 * 			(			((safezoneW / safezoneH) min 1.2) / 40))]) + 1.325 * 			(			((safezoneW / safezoneH) min 1.2) / 40)";
@@ -794,6 +4428,7 @@ class RHS_P37_Radar
 				class OwnerVehicle: RscPicture
 				{
 					IDC=103;
+					text="";
 					x="0.5 * (		(profilenamespace getvariable ['IGUI_GRID_CUSTOMINFORIGHT_W',		(10 * 			(			((safezoneW / safezoneH) min 1.2) / 40))]) + 1.325 * 			(			((safezoneW / safezoneH) min 1.2) / 40)) - 1.2875 * 			(			((safezoneW / safezoneH) min 1.2) / 40)";
 					y="0.5 * (		(profilenamespace getvariable ['IGUI_GRID_CUSTOMINFORIGHT_H',		(10 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25))]) + 1.325 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25))";
 					w="1 * 			(			((safezoneW / safezoneH) min 1.2) / 40)";
@@ -813,6 +4448,7 @@ class RHS_P37_Radar
 	{
 		class RadarOff: RscIGUIText
 		{
+			text="RDR OFF";
 			style=2;
 			idc=106;
 			x="0.2 * 		(profilenamespace getvariable ['IGUI_GRID_CUSTOMINFORIGHT_W',		(10 * 			(			((safezoneW / safezoneH) min 1.2) / 40))])";
@@ -831,6 +4467,7 @@ class RHS_P37_Radar
 				"(profilenamespace getvariable ['IGUI_BCG_RGB_A',0.8])"
 			};
 			idc=15112;
+			text="SENS";
 			x=0;
 			y=0;
 			w="(profilenamespace getvariable ['IGUI_GRID_CUSTOMINFORIGHT_W',		(10 * 			(			((safezoneW / safezoneH) min 1.2) / 40))])";
@@ -839,12 +4476,14 @@ class RHS_P37_Radar
 		};
 		class RadarOn: RadarOff
 		{
+			text="RDR ON";
 			idc=105;
 			colorText[]={0,1,1,1};
 		};
 		class Heading: RscIGUIText
 		{
 			style=2;
+			text="HDG";
 			idc=111;
 			x="0.55 * 		(profilenamespace getvariable ['IGUI_GRID_CUSTOMINFORIGHT_W',		(10 * 			(			((safezoneW / safezoneH) min 1.2) / 40))])";
 			y=0;
@@ -855,6 +4494,7 @@ class RHS_P37_Radar
 		class Range: RscIGUIValue
 		{
 			IDC=104;
+			text="disprange";
 			style=1;
 			x="0.5 * 		(profilenamespace getvariable ['IGUI_GRID_CUSTOMINFORIGHT_W',		(10 * 			(			((safezoneW / safezoneH) min 1.2) / 40))])";
 			y=0;
@@ -864,6 +4504,7 @@ class RHS_P37_Radar
 		class Target: RscIGUIText
 		{
 			IDC=107;
+			text="tgttype";
 			x=0;
 			y="1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
 			w="(profilenamespace getvariable ['IGUI_GRID_CUSTOMINFORIGHT_W',		(10 * 			(			((safezoneW / safezoneH) min 1.2) / 40))])";
@@ -872,6 +4513,7 @@ class RHS_P37_Radar
 		class TargetRange: RscIGUIText
 		{
 			IDC=108;
+			text="tgtrange";
 			x=0;
 			y="1.75 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
 			w="0.5 * 		(profilenamespace getvariable ['IGUI_GRID_CUSTOMINFORIGHT_W',		(10 * 			(			((safezoneW / safezoneH) min 1.2) / 40))])";
@@ -880,6 +4522,7 @@ class RHS_P37_Radar
 		class TargetAlt: RscIGUIText
 		{
 			IDC=110;
+			text="tgtalt";
 			style=1;
 			x="0.5 * 		(profilenamespace getvariable ['IGUI_GRID_CUSTOMINFORIGHT_W',		(10 * 			(			((safezoneW / safezoneH) min 1.2) / 40))])";
 			y="1.75 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
@@ -889,6 +4532,7 @@ class RHS_P37_Radar
 		class TargetSpeed: RscIGUIText
 		{
 			IDC=109;
+			text="tgtspeed";
 			style=1;
 			x="0.5 * 		(profilenamespace getvariable ['IGUI_GRID_CUSTOMINFORIGHT_W',		(10 * 			(			((safezoneW / safezoneH) min 1.2) / 40))])";
 			y="1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";

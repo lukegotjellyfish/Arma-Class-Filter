@@ -34,7 +34,15 @@ class CfgPatches
 			"rhsgref_BRDM2_HQ_vmf"
 		};
 		weapons[]={};
+		requiredVersion=1.3200001;
+		requiredAddons[]=
+		{
+			"rhsgref_main",
+			"rhsgref_c_troops"
+		};
 		name="BRDM-2";
+		author="$STR_RHS_AUTHOR_FULL";
+		url="http://www.rhsmods.org/";
 	};
 };
 class DefaultEventhandlers;
@@ -55,6 +63,150 @@ class Optics_Gunner_MBT_01: Optics_Armored
 	class Wide;
 	class Medium;
 	class Narrow;
+};
+class CfgMovesBasic
+{
+	class DefaultDie;
+	class ManActions
+	{
+		rhsgref_BRDM2_Driver="rhsgref_BRDM2_Driver";
+		rhsgref_BRDM2_Gunner="rhsgref_BRDM2_Gunner";
+		rhsgref_BRDM2_Cargo01="rhsgref_BRDM2_Cargo01";
+		rhsgref_BRDM2_Cargo02="rhsgref_BRDM2_Cargo02";
+		rhsgref_GAZ_Gunner="rhsgref_GAZ_Gunner";
+		rhsgref_GAZ_GunnerIN="rhsgref_GAZ_GunnerIN";
+	};
+};
+class CfgMovesMaleSdr: CfgMovesBasic
+{
+	class States
+	{
+		class Crew;
+		class rhsgref_KIA_BRDM2_Driver: DefaultDie
+		{
+			actions="DeadActions";
+			speed=0.5;
+			looped=0;
+			terminal=1;
+			file="\rhsgref\addons\rhsgref_a2port_armor\brdm2\data\Anim\KIA_BRDM2_Driver.rtm";
+			soundEnabled=0;
+			connectTo[]=
+			{
+				"Unconscious",
+				0.1
+			};
+		};
+		class rhsgref_BRDM2_Driver: Crew
+		{
+			file="\rhsgref\addons\rhsgref_a2port_armor\brdm2\data\Anim\BRDM2_Driver.rtm";
+			interpolateTo[]=
+			{
+				"rhsgref_KIA_BRDM2_Driver",
+				1
+			};
+		};
+		class rhsgref_KIA_BRDM2_Gunner: DefaultDie
+		{
+			actions="DeadActions";
+			speed=0.5;
+			looped=0;
+			terminal=1;
+			file="\rhsgref\addons\rhsgref_a2port_armor\brdm2\data\Anim\KIA_BRDM2_Gunner.rtm";
+			soundEnabled=0;
+			connectTo[]=
+			{
+				"Unconscious",
+				0.1
+			};
+		};
+		class rhsgref_BRDM2_Gunner: Crew
+		{
+			file="\rhsgref\addons\rhsgref_a2port_armor\brdm2\data\Anim\BRDM2_Gunner.rtm";
+			interpolateTo[]=
+			{
+				"rhsgref_KIA_BRDM2_Gunner",
+				1
+			};
+		};
+		class rhsgref_KIA_BRDM2_Cargo01: DefaultDie
+		{
+			actions="DeadActions";
+			speed=0.5;
+			looped=0;
+			terminal=1;
+			file="\rhsgref\addons\rhsgref_a2port_armor\brdm2\data\Anim\KIA_BRDM2_Cargo01.rtm";
+			soundEnabled=0;
+			connectTo[]=
+			{
+				"Unconscious",
+				0.1
+			};
+		};
+		class rhsgref_BRDM2_Cargo01: Crew
+		{
+			file="\rhsgref\addons\rhsgref_a2port_armor\brdm2\data\Anim\BRDM2_Cargo01.rtm";
+			interpolateTo[]=
+			{
+				"rhsgref_KIA_BRDM2_Cargo01",
+				1
+			};
+		};
+		class rhsgref_KIA_BRDM2_Cargo02: DefaultDie
+		{
+			actions="DeadActions";
+			speed=0.5;
+			looped=0;
+			terminal=1;
+			file="\rhsgref\addons\rhsgref_a2port_armor\brdm2\data\Anim\KIA_BRDM2_Cargo02.rtm";
+			soundEnabled=0;
+			connectTo[]=
+			{
+				"Unconscious",
+				0.1
+			};
+		};
+		class rhsgref_BRDM2_Cargo02: Crew
+		{
+			file="\rhsgref\addons\rhsgref_a2port_armor\brdm2\data\Anim\BRDM2_Cargo02.rtm";
+			interpolateTo[]=
+			{
+				"rhsgref_KIA_BRDM2_Cargo02",
+				1
+			};
+		};
+		class rhsgref_KIA_GAZ_Gunner: DefaultDie
+		{
+			actions="DeadActions";
+			file="\rhsgref\addons\rhsgref_a2port_armor\brdm2\data\Anim\KIA_GAZ_Gunner.rtm";
+			speed=0.5;
+			looped=0;
+			terminal=1;
+			soundEnabled=0;
+			connectTo[]=
+			{
+				"Unconscious",
+				0.1
+			};
+		};
+		class rhsgref_GAZ_Gunner: Crew
+		{
+			file="\rhsgref\addons\rhsgref_a2port_armor\brdm2\data\Anim\Stryker_GunnerOut.rtm";
+			interpolateTo[]=
+			{
+				"rhsgref_KIA_GAZ_Gunner",
+				1
+			};
+		};
+		class rhsgref_GAZ_GunnerIN: Crew
+		{
+			file="\rhsgref\addons\rhsgref_a2port_armor\brdm2\data\Anim\BRDM2_HQ_GunnerIn.rtm";
+			interpolateTo[]=
+			{
+				"rhsgref_KIA_GAZ_Gunner",
+				1
+			};
+		};
+	};
 };
 class CfgFunctions
 {
@@ -107,6 +259,11 @@ class CfgVehicles
 	{
 		class ViewOptics;
 		class ViewCargo;
+		class Sounds: Sounds
+		{
+			class Engine;
+			class Movement;
+		};
 		class NewTurret;
 		class Turrets
 		{
@@ -126,26 +283,51 @@ class CfgVehicles
 	};
 	class rhsgref_BRDM2: Wheeled_APC_F
 	{
+		editorPreview="rhsgref\addons\rhsgref_editorPreviews\data\rhsgref_BRDM2.paa";
+		dlc="RHS_GREF";
 		displayName="BRDM-2";
+		author="RHS (A2 port)";
 		rhs_decalParameters[]=
 		{
 			"['Number', [3,4,5], 'CDF']"
 		};
+		scope=2;
+		scopeCurator=2;
+		vehicleClass="Armored";
+		editorSubcategory="rhs_EdSubcat_mrap";
+		model="\rhsgref\addons\rhsgref_a2port_armor\brdm2\BRDM2.p3d";
+		picture="\rhsgref\addons\rhsgref_a2port_armor\brdm2\data\brdm2_CA.paa";
+		Icon="\rhsgref\addons\rhsgref_a2port_armor\brdm2\data\icomap_brdm_CA.paa";
+		mapSize=6;
 		side=2;
+		faction="rhsgref_faction_cdf_ground";
+		crew="rhsgref_cdf_reg_crew";
 		typicalCargo[]=
 		{
 			"rhsgref_cdf_reg_crew"
 		};
+		crewVulnerable=0;
+		crewCrashProtection=0.15000001;
+		crewExplosionProtection=0.995;
+		transportSoldier=2;
+		cargoProxyIndexes[]={1,2};
+		getInProxyOrder[]={1,2,7,8,9,10,11,12};
 		transportAmmo=0;
+		driverLeftHandAnimName="drivewheel";
+		driverRightHandAnimName="drivewheel";
 		driverOpticsModel="\rhsafrf\addons\rhs_optics\vehicles\rhs_tnpo170a";
 		memoryPointDriverOptics="driverview";
+		driverDoor="hatchD";
 		transportMaxMagazines=100;
 		transportMaxWeapons=10;
 		selectionDashboard="podsvit pristroju";
+		viewDriverInExternal=1;
+		viewGunnerInExternal=1;
 		viewCargoInExternal=1;
 		radarType=0;
 		commanderCanSee="4+8+2+32";
 		driverCanSee="4+8+2+32";
+		gunnerCanSee="4+8+2+32";
 		enableGPS=0;
 		incomingMissileDetectionSystem=0;
 		cost=100000;
@@ -161,6 +343,14 @@ class CfgVehicles
 			"belly_w1",
 			"belly_w2"
 		};
+		driverAction="rhsgref_BRDM2_Driver";
+		driverInAction="rhsgref_BRDM2_Driver";
+		cargoAction[]=
+		{
+			"rhsgref_BRDM2_Cargo02"
+		};
+		getInAction="GetInHigh";
+		getOutAction="GetOutHigh";
 		cargoGetInAction[]=
 		{
 			"GetInHigh"
@@ -172,21 +362,114 @@ class CfgVehicles
 		hideWeaponsDriver=1;
 		hideWeaponsCargo=1;
 		hideProxyInCombat=0;
+		forceHideDriver=0;
+		class TransportMagazines
+		{
+			class _xx_rhs_30Rnd_545x39_7N6_AK
+			{
+				magazine="rhs_30Rnd_545x39_7N6_AK";
+				count=30;
+			};
+			class _xx_rhs_10Rnd_762x54mmR_7N1
+			{
+				magazine="rhs_10Rnd_762x54mmR_7N1";
+				count=10;
+			};
+			class _xx_rhs_100Rnd_762x54mmR
+			{
+				magazine="rhs_100Rnd_762x54mmR";
+				count=3;
+			};
+			class _xx_rhs_mag_rdg2_white
+			{
+				magazine="rhs_mag_rdg2_white";
+				count=2;
+			};
+			class _xx_rhs_mag_rgd5
+			{
+				magazine="rhs_mag_rgd5";
+				count=9;
+			};
+			class _xx_rhs_VOG25
+			{
+				magazine="rhs_VOG25";
+				count=20;
+			};
+			class _xx_rhs_vg40op_white
+			{
+				magazine="rhs_vg40op_white";
+				count=5;
+			};
+			class _xx_rhs_GRD40_white
+			{
+				magazine="rhs_GRD40_white";
+				count=5;
+			};
+			class _xx_rhs_mag_9k38_rocket
+			{
+				magazine="rhs_mag_9k38_rocket";
+				count=2;
+			};
+		};
+		class TransportWeapons
+		{
+			class _xx_rhs_weap_igla
+			{
+				weapon="rhs_weap_igla";
+				count=1;
+			};
+		};
+		class TransportItems
+		{
+			class _xx_FirstAidKit
+			{
+				name="FirstAidKit";
+				count=4;
+			};
+			class _xx_Medikit
+			{
+				name="Medikit";
+				count=1;
+			};
+		};
+		class TransportBackpacks
+		{
+			class _xx_rhs_sidor
+			{
+				backpack="rhs_sidor";
+				count=3;
+			};
+		};
 		class CargoTurret;
 		class Turrets: Turrets
 		{
 			class CommanderOptics: NewTurret
 			{
 				usePiP=1;
+				gunnerDoor="hatchCommander";
+				gunnerName="$STR_POSITION_COMMANDER";
+				body="com_optics";
+				gun="com_light";
+				viewGunnerInExternal=1;
 				weapons[]={};
 				magazines[]={};
 				animationSourceHatch="";
+				animationSourceBody="obsTurret";
+				animationSourceGun="obsGun";
+				memoryPointGunnerOptics="commanderview";
+				memoryPointGunnerOutOptics="commander_out_view";
 				nightVision=1;
 				proxyType="CPCommander";
 				proxyIndex=1;
 				lockWhenDriverOut=0;
 				primaryGunner=0;
 				primaryObserver=1;
+				gunBeg="Mgun_end";
+				gunEnd="Mgun_start";
+				gunnerAction="rhsgref_BRDM2_Cargo01";
+				gunnerInAction="rhsgref_BRDM2_Cargo01";
+				gunnerGetInAction="GetInHigh";
+				gunnerGetOutAction="GetOutHigh";
 				stabilizedInAxes="StabilizedInAxesBoth";
 				minElev=-4;
 				maxElev=12;
@@ -194,7 +477,13 @@ class CfgVehicles
 				minTurn=-75;
 				maxTurn=75;
 				initTurn=0;
+				gunnerOutForceOptics=0;
+				gunnerForceoptics=0;
+				gunnerOutOpticsModel="";
+				gunnerOpticsModel="\rhsafrf\addons\rhs_optics\vehicles\rhs_tpku2b.p3d";
 				soundServo[]={};
+				outGunnerMayFire=1;
+				inGunnerMayFire=1;
 				startEngine=0;
 				class ViewOptics
 				{
@@ -204,6 +493,8 @@ class CfgVehicles
 					initAngleY=0;
 					minAngleY=-100;
 					maxAngleY=100;
+					opticsZoomMin=0.14;
+					opticsZoomMax=0.14;
 					initFov=0.14;
 					minFov=0.14;
 					maxFov=0.14;
@@ -216,6 +507,7 @@ class CfgVehicles
 				{
 					class Wide: ViewOptics
 					{
+						gunnerOpticsModel="\rhsafrf\addons\rhs_optics\vehicles\rhs_tpku2b";
 						visionMode[]=
 						{
 							"Normal"
@@ -254,8 +546,18 @@ class CfgVehicles
 			};
 			class MainTurret: MainTurret
 			{
+				memoryPointsGetInGunner="pos gunner";
+				memoryPointsGetInGunnerDir="pos gunner dir";
+				body="mainTurret";
+				gun="mainGun";
 				memoryPointGun="machinegun";
 				selectionFireAnim="zasleh3";
+				gunnerLeftHandAnimName="handle_Elev2";
+				gunnerRightHandAnimName="handle_Horiz2";
+				gunnerGetInAction="GetInHigh";
+				gunnerGetOutAction="GetOutHigh";
+				gunBeg="usti hlavne";
+				gunEnd="konec hlavne";
 				weapons[]=
 				{
 					"rhs_weap_kpvt",
@@ -282,6 +584,13 @@ class CfgVehicles
 					"rhs_mag_762x54mm_250",
 					"rhs_mag_762x54mm_250"
 				};
+				soundServo[]=
+				{
+					"rhsafrf\addons\rhs_btr70\sounds\hand_turret_servo",
+					3.1412539,
+					1,
+					30
+				};
 				soundServoVertical[]=
 				{
 					"rhsafrf\addons\rhs_btr70\sounds\hand_turret_servo_elev",
@@ -289,14 +598,25 @@ class CfgVehicles
 					1,
 					30
 				};
+				gunnerAction="rhsgref_BRDM2_Gunner";
+				gunnerInAction="rhsgref_BRDM2_Gunner";
+				viewGunnerInExternal=1;
 				forceHideGunner=1;
+				gunnerForceOptics=0;
+				castGunnerShadow=0;
 				stabilizedInAxes=0;
+				memoryPointGunnerOptics="gunnerview";
+				gunnerOpticsModel="\rhsafrf\addons\rhs_optics\vehicles\rhs_pp61am";
+				discreteDistance[]={100};
+				discreteDistanceInitIndex=0;
 				minElev=-5;
 				maxElev=30;
 				maxHorizontalRotSpeed=0.64999998;
 				maxVerticalRotSpeed=0.34999999;
 				primaryGunner=1;
 				startEngine=0;
+				outGunnerMayFire=1;
+				inGunnerMayFire=1;
 				usePiP=2;
 				canUseScanners=0;
 				allowTabLock=0;
@@ -327,6 +647,7 @@ class CfgVehicles
 				{
 					class Wide: ViewOptics
 					{
+						gunnerOpticsModel="\rhsafrf\addons\rhs_optics\vehicles\rhs_pp61am";
 						initFov=0.26923099;
 						maxFov=0.26923099;
 						minFov=0.26923099;
@@ -336,11 +657,15 @@ class CfgVehicles
 						};
 						hitpoint="Hit_Optic_PP61AM";
 					};
-					class Night: Wide;  //found empty after stripping
+					class Night: Wide
+					{
+						gunnerOpticsModel="\rhsafrf\addons\rhs_optics\vehicles\rhs_pp61am_night";
+					};
 					class RearView: Wide
 					{
 						camPos="view_turret_rear";
 						camDir="view_turret_rear_dir";
+						gunnerOpticsModel="\rhsafrf\addons\rhs_optics\vehicles\rhs_tvn5";
 						initFov=0.69999999;
 						maxFov=0.69999999;
 						minFov=0.69999999;
@@ -359,6 +684,7 @@ class CfgVehicles
 						armor=-55;
 						material=-1;
 						name="vez";
+						visual="vez";
 						passThrough=1;
 						minimalHit=0.1;
 						explosionShielding=0.40000001;
@@ -370,6 +696,7 @@ class CfgVehicles
 						armor=-55;
 						material=-1;
 						name="zbran";
+						visual="zbran";
 						passThrough=0;
 						minimalHit=0.1;
 						explosionShielding=0.2;
@@ -405,24 +732,66 @@ class CfgVehicles
 					};
 				};
 			};
+			class CargoTurret_01: CargoTurret
+			{
+				gunnerName="Passenger (Right)";
+				gunnerCompartments="Compartment3";
+				gunnerGetInAction="GetInMedium";
+				gunnerGetOutAction="GetOutMedium";
+				memoryPointGunnerOptics="";
+				LODTurnedIn=0;
+				LODTurnedOut=0;
+				LODOpticsIn=0;
+				LODOpticsOut=0;
+				CanHideGunner=0;
+				gunnerAction="passenger_inside_1";
+				memoryPointsGetInGunner="cargo7";
+				memoryPointsGetInGunnerDir="cargo7_dir";
+				maxElev=45;
+				minElev=-35;
+				maxTurn=61;
+				minTurn=-65;
+				proxyIndex=7;
+				class Hitpoints;  //found empty after stripping
+			};
 			class CargoTurret_02: CargoTurret_01
 			{
+				gunnerAction="passenger_inside_1";
+				gunnerName="Passenger (Left)";
+				memoryPointsGetInGunner="cargo8";
+				memoryPointsGetInGunnerDir="cargo8_dir";
 				proxyIndex=8;
 			};
 			class CargoTurret_03: CargoTurret_01
 			{
+				gunnerAction="passenger_flatground_2";
+				gunnerName="Passenger (Left Rear)";
+				memoryPointsGetInGunner="cargo9";
+				memoryPointsGetInGunnerDir="cargo9_dir";
 				proxyIndex=9;
 			};
 			class CargoTurret_04: CargoTurret_01
 			{
+				gunnerAction="passenger_flatground_3";
+				gunnerName="Passenger (Rear)";
+				memoryPointsGetInGunner="cargo10";
+				memoryPointsGetInGunnerDir="cargo10_dir";
 				proxyIndex=10;
 			};
 			class CargoTurret_05: CargoTurret_01
 			{
+				gunnerAction="passenger_flatground_4";
+				gunnerName="Passenger (Right Rear)";
+				memoryPointsGetInGunner="cargo11";
+				memoryPointsGetInGunnerDir="cargo11_dir";
 				proxyIndex=11;
 			};
 			class CargoTurret_06: CargoTurret_01
 			{
+				gunnerAction="passenger_boat_3";
+				gunnerName="Passenger (Center)";
+				memoryPointsGetInGunner="cargo12";
+				memoryPointsGetInGunnerDir="cargo12_dir";
 				maxElev=45;
 				minElev=-15;
 				maxTurn=81;
@@ -430,7 +799,208 @@ class CfgVehicles
 				proxyIndex=12;
 			};
 		};
-		class Damage;  //found empty after stripping
+		class AnimationSources: AnimationSources
+		{
+			class Unhide_vis_optic_d_periscope1
+			{
+				source="hit";
+				hitpoint="Hit_optic_periscope1";
+			};
+			class Unhide_vis_optic_d_periscope2
+			{
+				source="hit";
+				hitpoint="Hit_optic_periscope2";
+			};
+			class Unhide_vis_optic_d_periscope3
+			{
+				source="hit";
+				hitpoint="Hit_optic_periscope3";
+			};
+			class Unhide_vis_optic_d_periscope4
+			{
+				source="hit";
+				hitpoint="Hit_optic_periscope4";
+			};
+			class Unhide_vis_optic_d_periscope5
+			{
+				source="hit";
+				hitpoint="Hit_optic_periscope5";
+			};
+			class Unhide_vis_optic_d_periscope6
+			{
+				source="hit";
+				hitpoint="Hit_optic_periscope6";
+			};
+			class Unhide_vis_optic_d_periscope7
+			{
+				source="hit";
+				hitpoint="Hit_optic_periscope7";
+			};
+			class Unhide_vis_optic_d_periscope8
+			{
+				source="hit";
+				hitpoint="Hit_optic_periscope8";
+			};
+			class Unhide_vis_optic_d_periscope9
+			{
+				source="hit";
+				hitpoint="Hit_optic_periscope9";
+			};
+			class Unhide_vis_optic_d_periscope10
+			{
+				source="hit";
+				hitpoint="Hit_optic_periscope10";
+			};
+			class Unhide_vis_optic_d_periscope11
+			{
+				source="hit";
+				hitpoint="Hit_optic_periscope11";
+			};
+			class Unhide_vis_optic_d_periscope12
+			{
+				source="hit";
+				hitpoint="Hit_optic_periscope12";
+			};
+			class Unhide_vis_optic_d_periscope13
+			{
+				source="hit";
+				hitpoint="Hit_optic_periscope13";
+			};
+			class Unhide_vis_optic_d_periscope14
+			{
+				source="hit";
+				hitpoint="Hit_optic_periscope14";
+			};
+			class Unhide_vis_optic_d_periscope15
+			{
+				source="hit";
+				hitpoint="Hit_optic_periscope15";
+			};
+			class Unhide_vis_optic_d_PP61AM
+			{
+				source="hit";
+				hitpoint="Hit_Optic_PP61AM";
+			};
+			class Unhide_vis_optic_d_TPKU2B
+			{
+				source="hit";
+				hitpoint="Hit_Optic_TPKU2B";
+			};
+			class Unhide_vis_optic_d_9Sh119
+			{
+				source="hit";
+				hitpoint="Hit_Optic_9Sh119";
+			};
+			class Unhide_vis_optic_d_turret_rear
+			{
+				source="hit";
+				hitpoint="Hit_Optic_turret_rear";
+			};
+			class Unhide_vis_optic_d_driver
+			{
+				source="hit";
+				hitpoint="Hit_Optic_driver";
+			};
+			class recoil_source
+			{
+				source="reload";
+				weapon="rhs_weap_kpvt";
+			};
+			class muzzle_rot_hmg: recoil_source
+			{
+				source="ammorandom";
+			};
+			class muzzle_rot_mg: muzzle_rot_hmg
+			{
+				weapon="rhs_weap_pkt_btr";
+			};
+			class big_numbers_hide
+			{
+				source="user";
+				animPeriod=0;
+				initPhase=0;
+			};
+			class small_numbers_hide: big_numbers_hide;  //found empty after stripping
+			class driverViewHatch
+			{
+				source="door";
+				animPeriod=2;
+				initPhase=1;
+			};
+			class commanderViewHatch: driverViewHatch;  //found empty after stripping
+			class hatchD: driverViewHatch
+			{
+				animPeriod=2.0999999;
+				initPhase=0;
+			};
+			class hatchCommander: hatchD;  //found empty after stripping
+			class HitGlass1
+			{
+				source="Hit";
+				hitpoint="Hit_Glass1";
+			};
+			class HitGlass2: HitGlass1
+			{
+				hitpoint="Hit_Glass2";
+			};
+		};
+		class UserActions
+		{
+			class openDriverViewHatch
+			{
+				displayName="$STR_RHS_BTR70_OpenShield";
+				position="";
+				radius=5;
+				hideWindow=0;
+				condition="((call rhs_fnc_findPlayer) == driver this) && (this animationPhase 'driverViewHatch' < 0.5)";
+				statement="this animateDoor ['driverViewHatch',1];";
+				onlyForPlayer=1;
+			};
+			class closeDriverViewHatch: openDriverViewHatch
+			{
+				displayName="$STR_RHS_BTR70_CloseShield";
+				condition="((call rhs_fnc_findPlayer) == driver this) && (this animationPhase 'driverViewHatch' > 0.5)";
+				statement="this animateDoor ['driverViewHatch',0];";
+			};
+			class openCommanderViewHatch: openDriverViewHatch
+			{
+				condition="((this turretUnit [0]) == (call rhs_fnc_findPlayer)) && (this animationPhase 'commanderViewHatch' < 0.5)";
+				statement="this animateDoor ['commanderViewHatch',1];";
+			};
+			class closeCommanderViewHatch: closeDriverViewHatch
+			{
+				condition="((this turretUnit [0]) == (call rhs_fnc_findPlayer)) && (this animationPhase 'commanderViewHatch' > 0.5)";
+				statement="this animateDoor ['commanderViewHatch',0];";
+			};
+		};
+		class Damage
+		{
+			tex[]={};
+			mat[]=
+			{
+				"rhsgref\addons\rhsgref_a2port_armor\brdm2\data\periscope.rvmat",
+				"rhsgref\addons\rhsgref_a2port_armor\brdm2\data\periscope_int_damage.rvmat",
+				"rhsgref\addons\rhsgref_a2port_armor\brdm2\data\periscope_int_damage.rvmat",
+				"rhsgref\addons\rhsgref_a2port_armor\brdm2\data\auta_skla_in.rvmat",
+				"rhsafrf\addons\rhs_btr70\data\Kamaz_glass_damage.rvmat",
+				"rhsafrf\addons\rhs_btr70\data\Kamaz_glass_damage.rvmat",
+				"rhsafrf\addons\rhs_btr70\data\Kamaz_glass.rvmat",
+				"rhsafrf\addons\rhs_btr70\data\Kamaz_glass_damage.rvmat",
+				"rhsafrf\addons\rhs_btr70\data\Kamaz_glass_damage.rvmat",
+				"rhsafrf\addons\rhs_btr70\data\Kamaz_glass_in.rvmat",
+				"rhsafrf\addons\rhs_btr70\data\Kamaz_glass_in_damage.rvmat",
+				"rhsafrf\addons\rhs_btr70\data\Kamaz_glass_in_damage.rvmat",
+				"rhsgref\addons\rhsgref_a2port_armor\brdm2\data\BRDM2_01.rvmat",
+				"rhsgref\addons\rhsgref_a2port_armor\brdm2\data\BRDM2_01_damage.rvmat",
+				"rhsgref\addons\rhsgref_a2port_armor\brdm2\data\brdm2_01_destruct.rvmat",
+				"rhsgref\addons\rhsgref_a2port_armor\brdm2\data\brdm2_02.rvmat",
+				"rhsgref\addons\rhsgref_a2port_armor\brdm2\data\brdm2_02_damage.rvmat",
+				"rhsgref\addons\rhsgref_a2port_armor\brdm2\data\brdm2_02_destruct.rvmat",
+				"a3\data_f\default.rvmat",
+				"a3\data_f\default.rvmat",
+				"a3\data_f\default_destruct.rvmat"
+			};
+		};
 		class Exhausts
 		{
 			class Exhaust
@@ -446,11 +1016,74 @@ class CfgVehicles
 				effect="ExhaustEffectMRAP_03";
 			};
 		};
+		dustFrontLeftPos="stopa PLL";
+		dustFrontRightPos="stopa PPP";
+		dustBackLeftPos="stopa ZLL";
+		dustBackRightPos="stopa ZPP";
 		slingLoadCargoMemoryPoints[]=
 		{
 			"SlingLoadCargo1",
 			"SlingLoadCargo2",
 			"SlingLoadCargo3"
+		};
+		class Reflectors
+		{
+			class Left
+			{
+				color[]={1900,1800,1700};
+				ambient[]={5,5,5};
+				position="L svetlo";
+				direction="Konec L svetla";
+				hitpoint="L svetlo";
+				selection="L svetlo";
+				size=1;
+				innerAngle=100;
+				outerAngle=179;
+				coneFadeCoef=10;
+				intensity=1;
+				useFlare=0;
+				dayLight=0;
+				flareSize=1;
+				class Attenuation
+				{
+					start=1;
+					constant=0;
+					linear=0;
+					quadratic=0.25;
+					hardLimitStart=30;
+					hardLimitEnd=60;
+				};
+			};
+			class Right: Left
+			{
+				position="P svetlo";
+				direction="Konec P svetla";
+				hitpoint="P svetlo";
+				selection="P svetlo";
+			};
+			class Right2: Right
+			{
+				position="P svetlo";
+				useFlare=1;
+			};
+			class Left2: Left
+			{
+				position="L svetlo";
+				useFlare=1;
+			};
+		};
+		aggregateReflectors[]=
+		{
+			
+			{
+				"Left",
+				"Left2"
+			},
+			
+			{
+				"Right",
+				"Right2"
+			}
 		};
 		normalSpeedForwardCoef=0.60000002;
 		slowSpeedForwardCoef=0.44999999;
@@ -560,6 +1193,11 @@ class CfgVehicles
 			class LF
 			{
 				side="left";
+				boneName="wheel_1_1_damper";
+				center="wheel_1_1_axis";
+				boundary="wheel_1_1_bound";
+				suspForceAppPointOffset="wheel_1_1_axis";
+				tireForceAppPointOffset="wheel_1_1_axis";
 				suspTravelDirection[]={0,-1,0};
 				steering=1;
 				width=0.31999999;
@@ -587,19 +1225,164 @@ class CfgVehicles
 			};
 			class LR: LF
 			{
+				boneName="wheel_1_2_damper";
 				steering=0;
+				center="wheel_1_2_axis";
+				boundary="wheel_1_2_bound";
+				suspForceAppPointOffset="wheel_1_2_axis";
+				tireForceAppPointOffset="wheel_1_2_axis";
 				maxHandBrakeTorque=300000;
 			};
 			class RF: LF
 			{
+				boneName="wheel_2_1_damper";
+				center="wheel_2_1_axis";
+				boundary="wheel_2_1_bound";
+				suspForceAppPointOffset="wheel_2_1_axis";
+				tireForceAppPointOffset="wheel_2_1_axis";
 				steering=1;
 				side="right";
 			};
 			class RR: RF
 			{
+				boneName="wheel_2_2_damper";
 				steering=0;
+				center="wheel_2_2_axis";
+				boundary="wheel_2_2_bound";
+				suspForceAppPointOffset="wheel_2_2_axis";
+				tireForceAppPointOffset="wheel_2_2_axis";
 				maxHandBrakeTorque=300000;
 			};
+		};
+		soundGetIn[]=
+		{
+			"A3\Sounds_F\vehicles\soft\MRAP_03\getin",
+			0.56234133,
+			1
+		};
+		soundGetOut[]=
+		{
+			"A3\Sounds_F\vehicles\soft\MRAP_03\getout",
+			0.56234133,
+			1,
+			40
+		};
+		soundDammage[]=
+		{
+			"",
+			1,
+			1
+		};
+		soundEngineOnInt[]=
+		{
+			"A3\Sounds_F\vehicles\soft\MRAP_03\MRAP_03_start_int",
+			0.31622776,
+			1
+		};
+		soundEngineOnExt[]=
+		{
+			"A3\Sounds_F\vehicles\soft\MRAP_03\MRAP_03_start_ext",
+			0.56234133,
+			1,
+			200
+		};
+		soundEngineOffInt[]=
+		{
+			"A3\Sounds_F\vehicles\soft\MRAP_03\MRAP_03_stop_int",
+			0.31622776,
+			1
+		};
+		soundEngineOffExt[]=
+		{
+			"A3\Sounds_F\vehicles\soft\MRAP_03\MRAP_03_stop_ext",
+			0.56234133,
+			1,
+			200
+		};
+		buildCrash0[]=
+		{
+			"A3\Sounds_F\vehicles\crashes\cars\cars_coll_big_default_ext_1",
+			1,
+			1,
+			200
+		};
+		buildCrash1[]=
+		{
+			"A3\Sounds_F\vehicles\crashes\cars\cars_coll_big_default_ext_2",
+			1,
+			1,
+			200
+		};
+		buildCrash2[]=
+		{
+			"A3\Sounds_F\vehicles\crashes\cars\cars_coll_big_default_ext_3",
+			1,
+			1,
+			200
+		};
+		buildCrash3[]=
+		{
+			"A3\Sounds_F\vehicles\crashes\cars\cars_coll_big_default_ext_4",
+			1,
+			1,
+			200
+		};
+		soundBuildingCrash[]=
+		{
+			"buildCrash0",
+			0.25,
+			"buildCrash1",
+			0.25,
+			"buildCrash2",
+			0.25,
+			"buildCrash3",
+			0.25
+		};
+		WoodCrash0[]=
+		{
+			"A3\Sounds_F\vehicles\crashes\cars\cars_coll_big_wood_ext_1",
+			1,
+			1,
+			200
+		};
+		WoodCrash1[]=
+		{
+			"A3\Sounds_F\vehicles\crashes\cars\cars_coll_big_wood_ext_1",
+			1,
+			1,
+			200
+		};
+		WoodCrash2[]=
+		{
+			"A3\Sounds_F\vehicles\crashes\cars\cars_coll_big_wood_ext_1",
+			1,
+			1,
+			200
+		};
+		WoodCrash3[]=
+		{
+			"A3\Sounds_F\vehicles\crashes\cars\cars_coll_big_wood_ext_1",
+			1,
+			1,
+			200
+		};
+		soundWoodCrash[]=
+		{
+			"woodCrash0",
+			0.25,
+			"woodCrash1",
+			0.25,
+			"woodCrash2",
+			0.25,
+			"woodCrash3",
+			0.25
+		};
+		armorCrash0[]=
+		{
+			"A3\Sounds_F\vehicles\crashes\cars\cars_coll_big_default_ext_1",
+			1,
+			1,
+			200
 		};
 		armorCrash1[]=
 		{
@@ -618,6 +1401,24 @@ class CfgVehicles
 		armorCrash3[]=
 		{
 			"A3\Sounds_F\vehicles\crashes\cars\cars_coll_big_default_ext_4",
+			1,
+			1,
+			200
+		};
+		soundArmorCrash[]=
+		{
+			"ArmorCrash0",
+			0.25,
+			"ArmorCrash1",
+			0.25,
+			"ArmorCrash2",
+			0.25,
+			"ArmorCrash3",
+			0.25
+		};
+		Crash0[]=
+		{
+			"A3\Sounds_F\vehicles\crashes\cars\cars_coll_big_default_ext_1",
 			1,
 			1,
 			200
@@ -653,6 +1454,544 @@ class CfgVehicles
 			0.25,
 			"Crash3",
 			0.25
+		};
+		class Sounds
+		{
+			class Idle_ext
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\soft\MRAP_03\MRAP_03_500rpm_ext",
+					0.31622776,
+					1,
+					100
+				};
+				frequency="0.95	+	((rpm/	3000) factor[(0/	3000),(900/	3000)])*0.15";
+				volume="engineOn*camPos*(((rpm/	3000) factor[(200/	3000),(300/	3000)])	*	((rpm/	3000) factor[(900/	3000),(600/	3000)]))";
+			};
+			class Engine
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\soft\MRAP_03\MRAP_03_1000rpm_ext",
+					0.39810717,
+					1,
+					200
+				};
+				frequency="0.9	+	((rpm/	3000) factor[(900/	3000),(1500/	3000)])*0.2";
+				volume="engineOn*camPos*(((rpm/	3000) factor[(800/	3000),(1000/	3000)])	*	((rpm/	3000) factor[(2000/	3000),(1400/	3000)]))";
+			};
+			class Engine1_ext
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\soft\MRAP_03\MRAP_03_1200rpm_ext",
+					0.50118721,
+					1,
+					250
+				};
+				frequency="0.9	+	((rpm/	3000) factor[(1500/	3000),(2100/	3000)])*0.2";
+				volume="engineOn*camPos*(((rpm/	3000) factor[(1600/	3000),(1950/	3000)])	*	((rpm/	3000) factor[(2800/	3000),(2300/	3000)]))";
+			};
+			class Engine2_ext
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\soft\MRAP_03\MRAP_03_1500rpm_ext",
+					0.63095737,
+					1,
+					250
+				};
+				frequency="0.95	+	((rpm/	3000) factor[(2100/	3000),(3100/	3000)])*0.1";
+				volume="engineOn*camPos*((rpm/	3000) factor[(2400/	3000),(3200/	3000)])";
+			};
+			class IdleThrust
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\soft\MRAP_03\MRAP_03_500rpm_ext_exhaust",
+					0.56234133,
+					1,
+					150
+				};
+				frequency="0.95	+	((rpm/	3000) factor[(0/	3000),(900/	3000)])*0.15";
+				volume="engineOn*camPos*(0.4+(0.6*(thrust factor[0.1,1])))*(((rpm/	3000) factor[(200/	3000),(300/	3000)])	*	((rpm/	3000) factor[(900/	3000),(600/	3000)]))";
+			};
+			class EngineThrust
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\soft\MRAP_03\MRAP_03_1000rpm_ext_exhaust",
+					0.63095737,
+					1,
+					200
+				};
+				frequency="0.9	+	((rpm/	3000) factor[(900/	3000),(1500/	3000)])*0.2";
+				volume="engineOn*camPos*(0.4+(0.6*(thrust factor[0.1,1])))*(((rpm/	3000) factor[(800/	3000),(1000/	3000)])	*	((rpm/	3000) factor[(2000/	3000),(1400/	3000)]))";
+			};
+			class Engine1_Thrust_ext
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\soft\MRAP_03\MRAP_03_1200rpm_ext_exhaust",
+					0.70794576,
+					1,
+					250
+				};
+				frequency="0.9	+	((rpm/	3000) factor[(1500/	3000),(2100/	3000)])*0.2";
+				volume="engineOn*camPos*(0.4+(0.6*(thrust factor[0.1,1])))*(((rpm/	3000) factor[(1600/	3000),(1950/	3000)])	*	((rpm/	3000) factor[(2800/	3000),(2300/	3000)]))";
+			};
+			class Engine2_Thrust_ext
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\soft\MRAP_03\MRAP_03_1500rpm_ext_exhaust",
+					1.1220185,
+					1,
+					300
+				};
+				frequency="0.95	+	((rpm/	3000) factor[(2100/	3000),(3100/	3000)])*0.1";
+				volume="engineOn*camPos*(0.4+(0.6*(thrust factor[0.1,1])))*((rpm/	3000) factor[(2400/	3000),(3200/	3000)])";
+			};
+			class Idle_int
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\soft\MRAP_03\MRAP_03_500rpm_int",
+					0.2238721,
+					1
+				};
+				frequency="0.95	+	((rpm/	3000) factor[(0/	3000),(900/	3000)])*0.15";
+				volume="engineOn*(1-camPos)*(((rpm/	3000) factor[(200/	3000),(300/	3000)])	*	((rpm/	3000) factor[(900/	3000),(600/	3000)]))";
+			};
+			class Engine_int
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\soft\MRAP_03\MRAP_03_1000rpm_int",
+					0.25118864,
+					1
+				};
+				frequency="0.9	+	((rpm/	3000) factor[(900/	3000),(1500/	3000)])*0.2";
+				volume="engineOn*(1-camPos)*(((rpm/	3000) factor[(800/	3000),(1000/	3000)])	*	((rpm/	3000) factor[(2000/	3000),(1400/	3000)]))";
+			};
+			class Engine1_int
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\soft\MRAP_03\MRAP_03_1200rpm_int",
+					0.31622776,
+					1
+				};
+				frequency="0.9	+	((rpm/	3000) factor[(1500/	3000),(2100/	3000)])*0.2";
+				volume="engineOn*(1-camPos)*(((rpm/	3000) factor[(1600/	3000),(1950/	3000)])	*	((rpm/	3000) factor[(2800/	3000),(2300/	3000)]))";
+			};
+			class Engine2_int
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\soft\MRAP_03\MRAP_03_1500rpm_int",
+					0.44668359,
+					1
+				};
+				frequency="0.95	+	((rpm/	3000) factor[(2100/	3000),(3100/	3000)])*0.1";
+				volume="engineOn*(1-camPos)*((rpm/	3000) factor[(2400/	3000),(3200/	3000)])";
+			};
+			class IdleThrust_int
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\soft\MRAP_03\MRAP_03_500rpm_int_exhaust",
+					0.39810717,
+					1
+				};
+				frequency="0.95	+	((rpm/	3000) factor[(0/	3000),(900/	3000)])*0.15";
+				volume="engineOn*(1-camPos)*(0.4+(0.6*(thrust factor[0.1,1])))*(((rpm/	3000) factor[(200/	3000),(300/	3000)])	*	((rpm/	3000) factor[(900/	3000),(600/	3000)]))";
+			};
+			class EngineThrust_int
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\soft\MRAP_03\MRAP_03_1000rpm_int_exhaust",
+					0.50118721,
+					1
+				};
+				frequency="0.9	+	((rpm/	3000) factor[(900/	3000),(1500/	3000)])*0.2";
+				volume="engineOn*(1-camPos)*(0.4+(0.6*(thrust factor[0.1,1])))*(((rpm/	3000) factor[(800/	3000),(1000/	3000)])	*	((rpm/	3000) factor[(2000/	3000),(1400/	3000)]))";
+			};
+			class Engine1_Thrust_int
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\soft\MRAP_03\MRAP_03_1200rpm_int_exhaust",
+					0.63095737,
+					1
+				};
+				frequency="0.9	+	((rpm/	3000) factor[(1500/	3000),(2100/	3000)])*0.2";
+				volume="engineOn*(1-camPos)*(0.4+(0.6*(thrust factor[0.1,1])))*(((rpm/	3000) factor[(1600/	3000),(1950/	3000)])	*	((rpm/	3000) factor[(2800/	3000),(2300/	3000)]))";
+			};
+			class Engine2_Thrust_int
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\soft\MRAP_03\MRAP_03_1500rpm_int_exhaust",
+					0.89125091,
+					1
+				};
+				frequency="0.95	+	((rpm/	3000) factor[(2100/	3000),(3100/	3000)])*0.1";
+				volume="engineOn*(1-camPos)*(0.4+(0.6*(thrust factor[0.1,1])))*((rpm/	3000) factor[(2400/	3000),(3200/	3000)])";
+			};
+			class Movement
+			{
+				sound="soundEnviron";
+				frequency="1";
+				volume="0";
+			};
+			class TiresRockOut
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\soft\tires\ext_tires_dirt_soft_1",
+					1.4125376,
+					1,
+					60
+				};
+				frequency="1";
+				volume="camPos*rock*(speed factor[2, 20])";
+			};
+			class TiresSandOut
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\soft\tires\ext-tires-sand1",
+					1,
+					1,
+					60
+				};
+				frequency="1";
+				volume="camPos*sand*(speed factor[2, 20])";
+			};
+			class TiresGrassOut
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\soft\tires\ext_tires_dirt_soft_2",
+					1,
+					1,
+					60
+				};
+				frequency="1";
+				volume="camPos*grass*(speed factor[2, 20])";
+			};
+			class TiresMudOut
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\soft\tires\ext-tires-mud2",
+					1,
+					1,
+					60
+				};
+				frequency="1";
+				volume="camPos*mud*(speed factor[2, 20])";
+			};
+			class TiresGravelOut
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\soft\tires\ext_tires_gravel_1",
+					1.5848932,
+					1,
+					60
+				};
+				frequency="1";
+				volume="camPos*gravel*(speed factor[2, 20])";
+			};
+			class TiresAsphaltOut
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\soft\tires\ext_tires_asfalt_2",
+					1,
+					1,
+					60
+				};
+				frequency="1";
+				volume="camPos*asphalt*(speed factor[2, 20])";
+			};
+			class NoiseOut
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\soft\noises\noise_ext_car_3",
+					1.2589254,
+					1,
+					90
+				};
+				frequency="1";
+				volume="camPos*(damper0 max 0.02)*(speed factor[0, 8])";
+			};
+			class TiresRockIn
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\soft\tires\int_tires_dirt_soft_1",
+					0.70794576,
+					1
+				};
+				frequency="1";
+				volume="(1-camPos)*rock*(speed factor[2, 20])";
+			};
+			class TiresSandIn
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\soft\tires\int-tires-sand2",
+					0.70794576,
+					1
+				};
+				frequency="1";
+				volume="(1-camPos)*sand*(speed factor[2, 20])";
+			};
+			class TiresGrassIn
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\soft\tires\int_tires_dirt_soft_2",
+					0.70794576,
+					1
+				};
+				frequency="1";
+				volume="(1-camPos)*grass*(speed factor[2, 20])";
+			};
+			class TiresMudIn
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\soft\tires\int-tires-mud2",
+					0.70794576,
+					1
+				};
+				frequency="1";
+				volume="(1-camPos)*mud*(speed factor[2, 20])";
+			};
+			class TiresGravelIn
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\soft\tires\int_tires_gravel_1",
+					0.70794576,
+					1
+				};
+				frequency="1";
+				volume="(1-camPos)*gravel*(speed factor[2, 20])";
+			};
+			class TiresAsphaltIn
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\soft\tires\int_tires_asfalt_2",
+					0.70794576,
+					1
+				};
+				frequency="1";
+				volume="(1-camPos)*asphalt*(speed factor[2, 20])";
+			};
+			class NoiseIn
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\soft\noises\noise_int_car_3",
+					0.50118721,
+					1
+				};
+				frequency="1";
+				volume="(damper0 max 0.1)*(speed factor[0, 8])*(1-camPos)";
+			};
+			class breaking_ext_road
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\soft\noises\slipping_tires_loop_04",
+					0.56234133,
+					1,
+					100
+				};
+				frequency=1;
+				volume="engineOn*camPos*(LongSlipDrive Factor[-0.15, -0.3])*(Speed Factor[2, 10])";
+			};
+			class acceleration_ext_road
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\soft\noises\slipping_tires_loop_02",
+					0.56234133,
+					1,
+					100
+				};
+				frequency=1;
+				volume="engineOn*camPos*(LongSlipDrive Factor[0.15, 0.3])*(Speed Factor[10, 1])";
+			};
+			class turn_left_ext_road
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\soft\noises\slipping_tires_loop_02",
+					0.56234133,
+					1,
+					100
+				};
+				frequency=1;
+				volume="engineOn*camPos*(latSlipDrive Factor[0.15, 0.3])*(Speed Factor[0, 10])";
+			};
+			class turn_right_ext_road
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\soft\noises\slipping_tires_loop_02",
+					0.56234133,
+					1,
+					100
+				};
+				frequency=1;
+				volume="engineOn*camPos*(latSlipDrive Factor[-0.15, -0.3])*(Speed Factor[0, 10])";
+			};
+			class breaking_ext_dirt
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\soft\noises\slipping_tires_loop_04",
+					0.56234133,
+					1,
+					100
+				};
+				frequency=1;
+				volume="engineOn*camPos*(LongSlipDrive Factor[-0.15, -0.3])*(Speed Factor[2, 10])";
+			};
+			class acceleration_ext_dirt
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\soft\noises\slipping_tires_loop_02",
+					0.56234133,
+					1,
+					100
+				};
+				frequency=1;
+				volume="engineOn*camPos*(LongSlipDrive Factor[0.15, 0.3])*(Speed Factor[10, 0])";
+			};
+			class turn_left_ext_dirt
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\soft\noises\slipping_tires_loop_02",
+					0.56234133,
+					1,
+					100
+				};
+				frequency=1;
+				volume="engineOn*camPos*(latSlipDrive Factor[0.15, 0.3])*(Speed Factor[0, 10])";
+			};
+			class turn_right_ext_dirt
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\soft\noises\slipping_tires_loop_02",
+					0.56234133,
+					1,
+					100
+				};
+				frequency=1;
+				volume="engineOn*camPos*(latSlipDrive Factor[-0.15, -0.3])*(Speed Factor[0, 10])";
+			};
+			class breaking_int_road
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\soft\noises\slipping_tires_loop_04_int",
+					0.56234133,
+					1
+				};
+				frequency=1;
+				volume="engineOn*(1-camPos)*(LongSlipDrive Factor[-0.15, -0.3])*(Speed Factor[2, 6])";
+			};
+			class acceleration_int_road
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\soft\noises\slipping_tires_loop_02_int",
+					0.56234133,
+					1
+				};
+				frequency=1;
+				volume="engineOn*(1-camPos)*(LongSlipDrive Factor[0.15, 0.3])*(Speed Factor[10, 0])";
+			};
+			class turn_left_int_road
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\soft\noises\slipping_tires_loop_02_int",
+					0.56234133,
+					1
+				};
+				frequency=1;
+				volume="engineOn*(1-camPos)*(latSlipDrive Factor[0.15, 0.3])*(Speed Factor[0, 10])";
+			};
+			class turn_right_int_road
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\soft\noises\slipping_tires_loop_02_int",
+					0.56234133,
+					1
+				};
+				frequency=1;
+				volume="engineOn*(1-camPos)*(latSlipDrive Factor[-0.15, -0.3])*(Speed Factor[0, 10])";
+			};
+			class breaking_int_dirt
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\soft\noises\slipping_tires_loop_04_int",
+					0.56234133,
+					1
+				};
+				frequency=1;
+				volume="engineOn*(1-camPos)*(LongSlipDrive Factor[-0.15, -0.3])*(Speed Factor[2, 6])";
+			};
+			class acceleration_int_dirt
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\soft\noises\slipping_tires_loop_02_int",
+					0.56234133,
+					1
+				};
+				frequency=1;
+				volume="engineOn*(1-camPos)*(LongSlipDrive Factor[0.15, 0.3])*(Speed Factor[10, 0])";
+			};
+			class turn_left_int_dirt
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\soft\noises\slipping_tires_loop_02_int",
+					0.56234133,
+					1
+				};
+				frequency=1;
+				volume="engineOn*(1-camPos)*(latSlipDrive Factor[0.15, 0.3])*(Speed Factor[0, 10])";
+			};
+			class turn_right_int_dirt
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\soft\noises\slipping_tires_loop_02_int",
+					0.56234133,
+					1
+				};
+				frequency=1;
+				volume="engineOn*(1-camPos)*(latSlipDrive Factor[-0.15, -0.3])*(Speed Factor[0, 10])";
+			};
 		};
 		class ViewPilot
 		{
@@ -725,6 +2064,7 @@ class CfgVehicles
 				armor=-40;
 				explosionShielding=0.1;
 				name="Hit_Glass1";
+				visual="Glass1";
 				armorComponent="Hit_Glass1";
 				passThrough=0;
 				radius=0.050000001;
@@ -734,6 +2074,7 @@ class CfgVehicles
 				armor=-40;
 				explosionShielding=0.1;
 				name="Hit_Glass2";
+				visual="Glass2";
 				armorComponent="Hit_Glass2";
 				passThrough=0;
 				radius=0.050000001;
@@ -743,6 +2084,7 @@ class CfgVehicles
 				armor=-20;
 				explosionShielding=0.2;
 				name="Hit_GunnerOptics";
+				visual="vis_optic_PP61AM";
 				armorComponent="Hit_GunnerOptics";
 				passThrough=0;
 				radius=0.050000001;
@@ -752,6 +2094,7 @@ class CfgVehicles
 				armor=-20;
 				explosionShielding=0.2;
 				name="Hit_GunnerOptics";
+				visual="vis_optic_turret_rear";
 				armorComponent="Hit_TurretRear";
 				passThrough=0;
 				radius=0.050000001;
@@ -761,6 +2104,7 @@ class CfgVehicles
 				armor=-20;
 				explosionShielding=0.2;
 				name="Hit_CommanderOptics";
+				visual="vis_optic_TPKU2B";
 				armorComponent="Hit_CommanderOptics";
 				passThrough=0;
 				radius=0.050000001;
@@ -770,6 +2114,7 @@ class CfgVehicles
 				armor=-20;
 				explosionShielding=0.2;
 				name="Hit_DriverOptics";
+				visual="vis_optic_driver";
 				armorComponent="Hit_DriverOptics";
 				passThrough=0;
 				radius=0.050000001;
@@ -779,6 +2124,7 @@ class CfgVehicles
 				armor=-15;
 				explosionShielding=0.60000002;
 				name="Hit_Periscope1";
+				visual="vis_optic_periscope1";
 				armorComponent="Hit_Periscope1";
 				passThrough=0;
 				radius=0.050000001;
@@ -788,6 +2134,7 @@ class CfgVehicles
 				armor=-15;
 				explosionShielding=0.60000002;
 				name="Hit_Periscope2";
+				visual="vis_optic_periscope2";
 				armorComponent="Hit_Periscope2";
 				passThrough=0;
 				radius=0.050000001;
@@ -797,6 +2144,7 @@ class CfgVehicles
 				armor=-15;
 				explosionShielding=0.60000002;
 				name="Hit_Periscope3";
+				visual="vis_optic_periscope3";
 				armorComponent="Hit_Periscope3";
 				passThrough=0;
 				radius=0.050000001;
@@ -806,6 +2154,7 @@ class CfgVehicles
 				armor=-15;
 				explosionShielding=0.60000002;
 				name="Hit_Periscope4";
+				visual="vis_optic_periscope4";
 				armorComponent="Hit_Periscope4";
 				passThrough=0;
 				radius=0.050000001;
@@ -815,6 +2164,7 @@ class CfgVehicles
 				armor=-15;
 				explosionShielding=0.60000002;
 				name="Hit_Periscope5";
+				visual="vis_optic_periscope5";
 				armorComponent="Hit_Periscope5";
 				passThrough=0;
 				radius=0.050000001;
@@ -824,6 +2174,7 @@ class CfgVehicles
 				armor=-15;
 				explosionShielding=0.60000002;
 				name="Hit_Periscope6";
+				visual="vis_optic_periscope6";
 				armorComponent="Hit_Periscope6";
 				passThrough=0;
 				radius=0.050000001;
@@ -833,6 +2184,7 @@ class CfgVehicles
 				armor=-15;
 				explosionShielding=0.60000002;
 				name="Hit_Periscope7";
+				visual="vis_optic_periscope7";
 				armorComponent="Hit_Periscope7";
 				passThrough=0;
 				radius=0.050000001;
@@ -842,6 +2194,7 @@ class CfgVehicles
 				armor=-15;
 				explosionShielding=0.60000002;
 				name="Hit_Periscope8";
+				visual="vis_optic_periscope8";
 				armorComponent="Hit_Periscope8";
 				passThrough=0;
 				radius=0.050000001;
@@ -851,6 +2204,7 @@ class CfgVehicles
 				armor=-15;
 				explosionShielding=0.60000002;
 				name="Hit_Periscope9";
+				visual="vis_optic_periscope9";
 				armorComponent="Hit_Periscope9";
 				passThrough=0;
 				radius=0.050000001;
@@ -860,6 +2214,7 @@ class CfgVehicles
 				armor=-15;
 				explosionShielding=0.60000002;
 				name="Hit_Periscope10";
+				visual="vis_optic_periscope10";
 				armorComponent="Hit_Periscope10";
 				passThrough=0;
 				radius=0.050000001;
@@ -869,6 +2224,7 @@ class CfgVehicles
 				armor=-15;
 				explosionShielding=0.60000002;
 				name="Hit_Periscope11";
+				visual="vis_optic_periscope11";
 				armorComponent="Hit_Periscope11";
 				passThrough=0;
 				radius=0.050000001;
@@ -878,6 +2234,7 @@ class CfgVehicles
 				armor=-15;
 				explosionShielding=0.60000002;
 				name="Hit_Periscope12";
+				visual="vis_optic_periscope12";
 				armorComponent="Hit_Periscope12";
 				passThrough=0;
 				radius=0.050000001;
@@ -887,6 +2244,7 @@ class CfgVehicles
 				armor=-15;
 				explosionShielding=0.60000002;
 				name="Hit_Periscope13";
+				visual="vis_optic_periscope13";
 				armorComponent="Hit_Periscope13";
 				passThrough=0;
 				radius=0.050000001;
@@ -896,6 +2254,7 @@ class CfgVehicles
 				armor=-15;
 				explosionShielding=0.60000002;
 				name="Hit_Periscope14";
+				visual="vis_optic_periscope14";
 				armorComponent="Hit_Periscope14";
 				passThrough=0;
 				radius=0.050000001;
@@ -905,6 +2264,7 @@ class CfgVehicles
 				armor=-15;
 				explosionShielding=0.60000002;
 				name="Hit_Periscope15";
+				visual="vis_optic_periscope15";
 				armorComponent="Hit_Periscope15";
 				passThrough=0;
 				radius=0.050000001;
@@ -915,6 +2275,7 @@ class CfgVehicles
 				armor=-30;
 				material=-1;
 				name="Hit_Fuel_Left";
+				visual="-";
 				passThrough=0.2;
 				minimalHit=0.25;
 				explosionShielding=0.60000002;
@@ -930,6 +2291,7 @@ class CfgVehicles
 				armor=999;
 				material=-1;
 				name="palivo";
+				visual="-";
 				passThrough=0;
 				minimalHit=1;
 				explosionShielding=0.60000002;
@@ -942,16 +2304,53 @@ class CfgVehicles
 				armor=-70;
 				material=-1;
 				name="motor";
+				visual="zbytek";
 				passThrough=0.2;
 				minimalHit=0.050000001;
 				explosionShielding=0.30000001;
 				radius=0.25;
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					class RHS_Engine_Smoke
+					{
+						simulation="particles";
+						type="SmallWreckSmoke";
+						position="engine_smoke";
+						intensity=0.5;
+						interval=1;
+						lifeTime=60;
+					};
+					class RHS_Engine_Fire: RHS_Engine_Smoke
+					{
+						type="SmallFireFPlace";
+					};
+					class RHS_Engine_Sparks: RHS_Engine_Smoke
+					{
+						type="FireSparks";
+					};
+					class RHS_Engine_Sounds: RHS_Engine_Smoke
+					{
+						simulation="sound";
+						type="Fire";
+					};
+					class RHS_Engine_Smoke_small1: RHS_Engine_Smoke
+					{
+						type="WeaponWreckSmoke";
+						position="engine_smoke1";
+					};
+					class RHS_Engine_Smoke_small2: RHS_Engine_Smoke_small1
+					{
+						position="engine_smoke2";
+					};
+				};
 			};
 			class HitBody
 			{
 				armor=1;
 				material=-1;
 				name="karoserie";
+				visual="-";
 				passThrough=0.40000001;
 				minimalHit=0.25;
 				explosionShielding=0.2;
@@ -962,6 +2361,16 @@ class CfgVehicles
 		wheelDestroyThreshold=0.99000001;
 		wheelDamageRadiusCoef=0.94999999;
 		wheelDestroyRadiusCoef=0.44999999;
+		hiddenSelections[]=
+		{
+			"camo1",
+			"camo2",
+			"camo3",
+			"n1",
+			"n2",
+			"n3",
+			"i1"
+		};
 		hiddenselectionstextures[]=
 		{
 			"\rhsgref\addons\rhsgref_a2port_armor\brdm2\data\cdf_brdm2_01_co.paa",
@@ -973,6 +2382,13 @@ class CfgVehicles
 			class standard
 			{
 				displayName="CDF";
+				author="$STR_RHS_AUTHOR_FULL";
+				textures[]=
+				{
+					"\rhsgref\addons\rhsgref_a2port_armor\brdm2\data\cdf_brdm2_01_co.paa",
+					"\rhsgref\addons\rhsgref_a2port_armor\brdm2\data\brdm2_02_camo_co.paa",
+					"\rhsgref\addons\rhsgref_a2port_armor\brdm2\data\zbik_04_co.paa"
+				};
 				factions[]=
 				{
 					"rhsgref_faction_cdf_ground"
@@ -981,30 +2397,82 @@ class CfgVehicles
 			class chdkz
 			{
 				displayName="CHDKZ 01";
+				author="$STR_RHS_AUTHOR_FULL";
+				textures[]=
+				{
+					"\rhsgref\addons\rhsgref_a2port_armor\brdm2\data\brdm2_01_co.paa",
+					"\rhsgref\addons\rhsgref_a2port_armor\brdm2\data\brdm2_02_camo_co.paa",
+					"\rhsgref\addons\rhsgref_a2port_armor\brdm2\data\zbik_04_co.paa"
+				};
+				factions[]={};
 			};
 			class khaki: chdkz
 			{
 				displayName="Khaki";
+				author="$STR_RHS_AUTHOR_FULL";
+				textures[]=
+				{
+					"\rhsgref\addons\rhsgref_a2port_armor\brdm2\data\BDRM2_KHK_01_CO.paa",
+					"\rhsgref\addons\rhsgref_a2port_armor\brdm2\data\brdm2_02_co.paa",
+					"\rhsgref\addons\rhsgref_a2port_armor\brdm2\data\zbik_04_co.paa"
+				};
 			};
 			class olive: chdkz
 			{
 				displayName="Green";
+				author="$STR_RHS_AUTHOR_FULL";
+				textures[]=
+				{
+					"\rhsgref\addons\rhsgref_a2port_armor\brdm2\data\brdm2_ru_01_co.paa",
+					"\rhsgref\addons\rhsgref_a2port_armor\brdm2\data\brdm2_02_co.paa",
+					"\rhsgref\addons\rhsgref_a2port_armor\brdm2\data\zbik_04_co.paa"
+				};
 			};
 			class takistan: chdkz
 			{
 				displayName="Takistan";
+				author="$STR_RHS_AUTHOR_FULL";
+				textures[]=
+				{
+					"\rhsgref\addons\rhsgref_a2port_armor\brdm2\data\BRDM2_01_TKA_CO.paa",
+					"\rhsgref\addons\rhsgref_a2port_armor\brdm2\data\brdm2_02_camo_co.paa",
+					"\rhsgref\addons\rhsgref_a2port_armor\brdm2\data\zbik_04_co.paa"
+				};
 			};
 			class 3tone: chdkz
 			{
 				displayName="Tri-color";
+				author="$STR_RHS_AUTHOR_FULL";
+				textures[]=
+				{
+					"\rhsgref\addons\rhsgref_a2port_armor\brdm2\data\BRDM2_3tone_01_co.paa",
+					"\rhsgref\addons\rhsgref_a2port_armor\brdm2\data\brdm2_3tone_02_co.paa",
+					"\rhsgref\addons\rhsgref_a2port_armor\brdm2\data\zbik_04_co.paa"
+				};
 			};
 			class chdkz02: chdkz
 			{
 				displayName="CHDKZ 02";
+				author="$STR_RHS_AUTHOR_FULL";
+				textures[]=
+				{
+					"\rhsgref\addons\rhsgref_a2port_armor\brdm2\data\BRDM2_chdkz_02_co.paa",
+					"\rhsgref\addons\rhsgref_a2port_armor\brdm2\data\brdm2_02_camo_co.paa",
+					"\rhsgref\addons\rhsgref_a2port_armor\brdm2\data\zbik_04_co.paa"
+				};
+				factions[]={};
 			};
 		};
+		textureList[]={};
 		class Attributes
 		{
+			class ObjectTexture
+			{
+				control="ObjectTexture";
+				data="ObjectTexture";
+				displayName="Skin";
+				tooltip="Texture and material set applied on the object.";
+			};
 			class rhs_decalNumber_type
 			{
 				displayName="Define font type of plate number";
@@ -1013,6 +2481,7 @@ class CfgVehicles
 				control="Combo";
 				expression="_this setVariable ['%s', _value];[_this,[['Number', [3,4,5], _value]]] call rhs_fnc_decalsInit";
 				defaultValue=0;
+				typeName="STRING";
 				class values
 				{
 					class CDF
@@ -1077,6 +2546,7 @@ class CfgVehicles
 				control="Combo";
 				expression="_this setVariable ['%s', _value];";
 				defaultValue="0";
+				typeName="STRING";
 				class values
 				{
 					class Platoon
@@ -1186,13 +2656,27 @@ class CfgVehicles
 	};
 	class rhsgref_BRDM2_ATGM: rhsgref_BRDM2
 	{
+		editorPreview="rhsgref\addons\rhsgref_editorPreviews\data\rhsgref_BRDM2_ATGM.paa";
 		displayName="BRDM-2 (9P148)";
+		author="RHS (A2 port)";
+		model="\rhsgref\addons\rhsgref_a2port_armor\brdm2\BRDM2_ATGM.p3d";
+		picture="\rhsgref\addons\rhsgref_a2port_armor\brdm2\data\brdm2_atgm_CA.paa";
+		Icon="\rhsgref\addons\rhsgref_a2port_armor\brdm2\data\icomap_brdm_atgm_CA.paa";
+		faction="rhsgref_faction_cdf_ground";
+		transportSoldier=0;
 		accuracy=0.30000001;
 		class textureSources
 		{
 			class standard
 			{
 				displayName="CDF";
+				author="$STR_RHS_AUTHOR_FULL";
+				textures[]=
+				{
+					"\rhsgref\addons\rhsgref_a2port_armor\brdm2\data\cdf_brdm2_atgm_01_co.paa",
+					"\rhsgref\addons\rhsgref_a2port_armor\brdm2\data\brdm2_02_camo_co.paa",
+					"\rhsgref\addons\rhsgref_a2port_armor\brdm2\data\zbik_04_co.paa"
+				};
 				factions[]=
 				{
 					"rhsgref_faction_cdf_ground"
@@ -1201,27 +2685,84 @@ class CfgVehicles
 			class chdkz
 			{
 				displayName="CHDKZ";
+				author="$STR_RHS_AUTHOR_FULL";
+				textures[]=
+				{
+					"\rhsgref\addons\rhsgref_a2port_armor\brdm2\data\brdm2_atgm_01_co.paa",
+					"\rhsgref\addons\rhsgref_a2port_armor\brdm2\data\brdm2_02_camo_co.paa",
+					"\rhsgref\addons\rhsgref_a2port_armor\brdm2\data\zbik_04_co.paa"
+				};
+				factions[]={};
 			};
 			class khaki: chdkz
 			{
 				displayName="Khaki";
+				author="$STR_RHS_AUTHOR_FULL";
+				textures[]=
+				{
+					"\rhsgref\addons\rhsgref_a2port_armor\brdm2\data\BRDM2_ATGM_01_KHK_CO.paa",
+					"\rhsgref\addons\rhsgref_a2port_armor\brdm2\data\brdm2_02_co.paa",
+					"\rhsgref\addons\rhsgref_a2port_armor\brdm2\data\zbik_04_co.paa"
+				};
 			};
 			class olive: chdkz
 			{
 				displayName="Green";
+				author="$STR_RHS_AUTHOR_FULL";
+				textures[]=
+				{
+					"\rhsgref\addons\rhsgref_a2port_armor\brdm2\data\brdm2_atgm_ru_01_co.paa",
+					"\rhsgref\addons\rhsgref_a2port_armor\brdm2\data\brdm2_02_co.paa",
+					"\rhsgref\addons\rhsgref_a2port_armor\brdm2\data\zbik_04_co.paa"
+				};
 			};
 			class takistan: chdkz
 			{
 				displayName="Takistan";
+				author="$STR_RHS_AUTHOR_FULL";
+				textures[]=
+				{
+					"\rhsgref\addons\rhsgref_a2port_armor\brdm2\data\BRDM2_ATGM_01_TKA_CO.paa",
+					"\rhsgref\addons\rhsgref_a2port_armor\brdm2\data\brdm2_02_camo_co.paa",
+					"\rhsgref\addons\rhsgref_a2port_armor\brdm2\data\zbik_04_co.paa"
+				};
 			};
 		};
+		textureList[]={};
 		hiddenselectionstextures[]=
 		{
 			"\rhsgref\addons\rhsgref_a2port_armor\brdm2\data\cdf_brdm2_atgm_01_co.paa",
 			"\rhsgref\addons\rhsgref_a2port_armor\brdm2\data\brdm2_02_camo_co.paa",
 			"\rhsgref\addons\rhsgref_a2port_armor\brdm2\data\zbik_04_co.paa"
 		};
-		class Damage;  //found empty after stripping
+		class Damage
+		{
+			tex[]={};
+			mat[]=
+			{
+				"rhsgref\addons\rhsgref_a2port_armor\brdm2\data\periscope.rvmat",
+				"rhsgref\addons\rhsgref_a2port_armor\brdm2\data\periscope_int_damage.rvmat",
+				"rhsgref\addons\rhsgref_a2port_armor\brdm2\data\periscope_int_damage.rvmat",
+				"rhsafrf\addons\rhs_btr70\data\Kamaz_glass.rvmat",
+				"rhsafrf\addons\rhs_btr70\data\Kamaz_glass_damage.rvmat",
+				"rhsafrf\addons\rhs_btr70\data\Kamaz_glass_damage.rvmat",
+				"rhsafrf\addons\rhs_btr70\data\Kamaz_glass_in.rvmat",
+				"rhsafrf\addons\rhs_btr70\data\Kamaz_glass_in_damage.rvmat",
+				"rhsafrf\addons\rhs_btr70\data\Kamaz_glass_in_damage.rvmat",
+				"rhsgref\addons\rhsgref_a2port_armor\brdm2\data\BRDM2_01.rvmat",
+				"rhsgref\addons\rhsgref_a2port_armor\brdm2\data\BRDM2_01_damage.rvmat",
+				"rhsgref\addons\rhsgref_a2port_armor\brdm2\data\brdm2_01_destruct.rvmat",
+				"rhsgref\addons\rhsgref_a2port_armor\brdm2\data\brdm2_02.rvmat",
+				"rhsgref\addons\rhsgref_a2port_armor\brdm2\data\brdm2_02_damage.rvmat",
+				"rhsgref\addons\rhsgref_a2port_armor\brdm2\data\brdm2_02_destruct.rvmat",
+				"rhsgref\addons\rhsgref_a2port_armor\brdm2\data\brdm2_ATGM_01.rvmat",
+				"rhsgref\addons\rhsgref_a2port_armor\brdm2\data\brdm2_ATGM_01_damage.rvmat",
+				"rhsgref\addons\rhsgref_a2port_armor\brdm2\data\brdm2_atgm_01_destruct.rvmat",
+				"a3\data_f\default.rvmat",
+				"a3\data_f\default.rvmat",
+				"a3\data_f\default_destruct.rvmat"
+			};
+		};
 		class Turrets: Turrets
 		{
 			class MainTurret: MainTurret
@@ -1236,11 +2777,15 @@ class CfgVehicles
 					"rhs_mag_9m113_5",
 					"rhs_mag_9m113_5"
 				};
+				gunBeg="spice rakety";
+				gunEnd="konec rakety";
+				gunnerOpticsModel="\rhsafrf\addons\rhs_optics\vehicles\rhs_9sh119m1";
 				gunnerOpticsEffect[]=
 				{
 					"OpticsCHAbera1",
 					"OpticsBlur2"
 				};
+				gunnerAction="rhsgref_BRDM2_Cargo01";
 				usePiP=1;
 				class ViewOptics
 				{
@@ -1272,10 +2817,12 @@ class CfgVehicles
 						{
 							"Normal"
 						};
+						gunnerOpticsModel="\rhsafrf\addons\rhs_optics\vehicles\rhs_9sh119m1";
 						hitpoint="Hit_Optic_9Sh119";
 					};
 				};
 			};
+			class CargoTurret_01: CargoTurret_01;  //found empty after stripping
 			class CargoTurret_02: CargoTurret_02;  //found empty after stripping
 			class CargoTurret_03: CargoTurret_03;  //found empty after stripping
 			class CargoTurret_04: CargoTurret_04;  //found empty after stripping
@@ -1288,9 +2835,36 @@ class CfgVehicles
 				armor=-40;
 				explosionShielding=0.2;
 				name="Hit_9Sh119";
+				visual="vis_optic_9Sh119";
 				armorComponent="Hit_9Sh119";
 				passThrough=0;
 				radius=0.050000001;
+			};
+		};
+		class AnimationSources: AnimationSources
+		{
+			class atgm_hide
+			{
+				initPhase=0;
+				animPeriod=9;
+				source="door";
+				sound="ServoRampSound_2";
+				soundPosition="OsaHlavne";
+			};
+			class revolving
+			{
+				source="revolving";
+				weapon="rhs_weap_9P148";
+			};
+			class MainTurret_fix
+			{
+				initPhase=0;
+				animPeriod=3;
+				source="user";
+			};
+			class MainGun_fix: MainTurret_fix
+			{
+				animPeriod=1;
 			};
 		};
 		class EventHandlers: EventHandlers
@@ -1304,27 +2878,70 @@ class CfgVehicles
 	};
 	class rhsgref_BRDM2UM: rhsgref_BRDM2
 	{
+		editorPreview="rhsgref\addons\rhsgref_editorPreviews\data\rhsgref_BRDM2UM.paa";
+		author="RHS (A2 port)";
 		displayName="BRDM-2UM";
+		model="\rhsgref\addons\rhsgref_a2port_armor\brdm2\BRDM2_HQ.p3d";
+		picture="\rhsgref\addons\rhsgref_a2port_armor\brdm2\data\brdm2_hq_CA.paa";
+		Icon="\rhsgref\addons\rhsgref_a2port_armor\brdm2\data\icomap_brdm_hq_CA.paa";
+		transportSoldier=2;
 		attenuationEffectType="OpenCarAttenuation";
 		soundAttenuationCargo[]={1,1,1};
 		threat[]={0.30000001,0,0.1};
 		tf_range=25000;
+		tf_hasLRradio_api=1;
 		class Turrets: Turrets
 		{
 			class CommanderOptics: CommanderOptics
 			{
 				LODTurnedIn="VIEW_CARGO";
 			};
+			class CargoTurret_01: CargoTurret_01;  //found empty after stripping
 			class CargoTurret_02: CargoTurret_02;  //found empty after stripping
 			class CargoTurret_03: CargoTurret_03;  //found empty after stripping
 			class CargoTurret_04: CargoTurret_04;  //found empty after stripping
 			class CargoTurret_05: CargoTurret_05;  //found empty after stripping
 			class CargoTurret_06: CargoTurret_06;  //found empty after stripping
 		};
+		class AnimationSources: AnimationSources
+		{
+			class Armed_unhide
+			{
+				initPhase=0;
+				animPeriod=0;
+				source="user";
+			};
+			class ReloadAnim
+			{
+				source="reload";
+				weapon="rhs_weap_pkt_zeroing";
+			};
+			class ReloadMagazine
+			{
+				source="reloadmagazine";
+				weapon="rhs_weap_pkt_zeroing";
+			};
+			class Revolving
+			{
+				source="revolving";
+				weapon="rhs_weap_pkt_zeroing";
+			};
+		};
 	};
 	class rhsgref_BRDM2_HQ: rhsgref_BRDM2UM
 	{
+		editorPreview="rhsgref\addons\rhsgref_editorPreviews\data\rhsgref_BRDM2_HQ.paa";
+		author="RHS (A2 port)";
 		displayName="BRDM-2UM (Armed)";
+		transportSoldier=2;
+		forceHideDriver=1;
+		class AnimationSources: AnimationSources
+		{
+			class Armed_unhide: Armed_unhide
+			{
+				initPhase=1;
+			};
+		};
 		class Turrets: Turrets
 		{
 			class MainTurret: NewTurret
@@ -1347,14 +2964,30 @@ class CfgVehicles
 				};
 				class Turrets;  //found empty after stripping
 				startEngine=0;
+				gunnerOpticsModel="\A3\weapons_f\reticle\optics_empty";
+				gunnerOutOpticsModel="\A3\weapons_f\reticle\optics_empty";
+				gunnerAction="rhsgref_GAZ_Gunner";
+				gunnerInAction="rhsgref_GAZ_GunnerIN";
 				memoryPointGun="usti hlavne3";
+				gunBeg="usti hlavne3";
+				gunEnd="konec hlavne3";
+				memoryPointGunnerOutOptics="eye";
+				memoryPointGunnerOptics="";
 				selectionFireAnim="zasleh";
+				turretInfoType="RscOptics_Offroad_01";
+				discreteDistance[]={420,100,200,300,400,500,600,700,800,900,1000,1100,1200,1300,1400,1500};
+				discreteDistanceInitIndex=0;
 				LODTurnedIn=1200;
 				LODTurnedOut=1000;
+				viewGunnerInExternal=1;
+				gunnerForceOptics=0;
+				inGunnerMayFire=0;
+				outGunnerMayFire=1;
 				canHideGunner=1;
 				canUseScanners=0;
 				allowTabLock=0;
 				stabilizedInAxes=0;
+				castGunnerShadow=0;
 				forceHideGunner=0;
 				class ViewOptics
 				{
@@ -1376,6 +3009,7 @@ class CfgVehicles
 				primaryGunner=0;
 				primaryObserver=1;
 			};
+			class CargoTurret_01: CargoTurret_01;  //found empty after stripping
 			class CargoTurret_02: CargoTurret_02;  //found empty after stripping
 			class CargoTurret_03: CargoTurret_03;  //found empty after stripping
 			class CargoTurret_04: CargoTurret_04;  //found empty after stripping
@@ -1385,23 +3019,52 @@ class CfgVehicles
 	};
 	class rhsgref_BRDM2_b: rhsgref_BRDM2
 	{
+		editorPreview="rhsgref\addons\rhsgref_editorPreviews\data\rhsgref_BRDM2_b.paa";
+		author="$STR_RHS_AUTHOR_FULL";
+		faction="rhsgref_faction_cdf_ground_b";
+		crew="rhsgref_cdf_b_reg_crew";
 		side=1;
 	};
 	class rhsgref_BRDM2_ATGM_b: rhsgref_BRDM2_ATGM
 	{
+		editorPreview="rhsgref\addons\rhsgref_editorPreviews\data\rhsgref_BRDM2_ATGM_b.paa";
+		author="$STR_RHS_AUTHOR_FULL";
+		faction="rhsgref_faction_cdf_ground_b";
+		crew="rhsgref_cdf_b_reg_crew";
 		side=1;
 	};
 	class rhsgref_BRDM2UM_b: rhsgref_BRDM2UM
 	{
+		editorPreview="rhsgref\addons\rhsgref_editorPreviews\data\rhsgref_BRDM2UM_b.paa";
+		author="$STR_RHS_AUTHOR_FULL";
+		faction="rhsgref_faction_cdf_ground_b";
+		crew="rhsgref_cdf_b_reg_crew";
 		side=1;
 	};
 	class rhsgref_BRDM2_HQ_b: rhsgref_BRDM2_HQ
 	{
+		editorPreview="rhsgref\addons\rhsgref_editorPreviews\data\rhsgref_BRDM2_HQ_b.paa";
+		author="$STR_RHS_AUTHOR_FULL";
+		faction="rhsgref_faction_cdf_ground_b";
+		crew="rhsgref_cdf_b_reg_crew";
 		side=1;
 	};
 	class rhsgref_BRDM2_ins: rhsgref_BRDM2
 	{
+		editorPreview="rhsgref\addons\rhsgref_editorPreviews\data\rhsgref_BRDM2_ins.paa";
+		faction="rhsgref_faction_chdkz";
+		class AnimationSources: AnimationSources
+		{
+			class small_numbers_hide: small_numbers_hide
+			{
+				initPhase=1;
+			};
+		};
 		side=0;
+		author="$STR_RHS_AUTHOR_FULL";
+		scope=2;
+		scopeCurator=2;
+		crew="rhsgref_ins_crew";
 		hiddenselectionstextures[]=
 		{
 			"\rhsgref\addons\rhsgref_a2port_armor\brdm2\data\brdm2_01_co.paa",
@@ -1412,7 +3075,20 @@ class CfgVehicles
 	};
 	class rhsgref_BRDM2_ATGM_ins: rhsgref_BRDM2_ATGM
 	{
+		editorPreview="rhsgref\addons\rhsgref_editorPreviews\data\rhsgref_BRDM2_ATGM_ins.paa";
+		faction="rhsgref_faction_chdkz";
+		class AnimationSources: AnimationSources
+		{
+			class small_numbers_hide: small_numbers_hide
+			{
+				initPhase=1;
+			};
+		};
 		side=0;
+		author="$STR_RHS_AUTHOR_FULL";
+		scope=2;
+		scopeCurator=2;
+		crew="rhsgref_ins_crew";
 		hiddenselectionstextures[]=
 		{
 			"\rhsgref\addons\rhsgref_a2port_armor\brdm2\data\brdm2_atgm_01_co.paa",
@@ -1423,7 +3099,20 @@ class CfgVehicles
 	};
 	class rhsgref_BRDM2UM_ins: rhsgref_BRDM2UM
 	{
+		editorPreview="rhsgref\addons\rhsgref_editorPreviews\data\rhsgref_BRDM2UM_ins.paa";
+		faction="rhsgref_faction_chdkz";
+		class AnimationSources: AnimationSources
+		{
+			class small_numbers_hide: small_numbers_hide
+			{
+				initPhase=1;
+			};
+		};
 		side=0;
+		author="$STR_RHS_AUTHOR_FULL";
+		scope=2;
+		scopeCurator=2;
+		crew="rhsgref_ins_crew";
 		hiddenselectionstextures[]=
 		{
 			"\rhsgref\addons\rhsgref_a2port_armor\brdm2\data\brdm2_01_co.paa",
@@ -1434,7 +3123,20 @@ class CfgVehicles
 	};
 	class rhsgref_BRDM2_HQ_ins: rhsgref_BRDM2_HQ
 	{
+		editorPreview="rhsgref\addons\rhsgref_editorPreviews\data\rhsgref_BRDM2_HQ_ins.paa";
+		faction="rhsgref_faction_chdkz";
+		class AnimationSources: AnimationSources
+		{
+			class small_numbers_hide: small_numbers_hide
+			{
+				initPhase=1;
+			};
+		};
 		side=0;
+		author="$STR_RHS_AUTHOR_FULL";
+		scope=2;
+		scopeCurator=2;
+		crew="rhsgref_ins_crew";
 		hiddenselectionstextures[]=
 		{
 			"\rhsgref\addons\rhsgref_a2port_armor\brdm2\data\brdm2_01_co.paa",
@@ -1445,7 +3147,20 @@ class CfgVehicles
 	};
 	class rhsgref_BRDM2_ins_g: rhsgref_BRDM2
 	{
+		editorPreview="rhsgref\addons\rhsgref_editorPreviews\data\rhsgref_BRDM2_ins_g.paa";
+		faction="rhsgref_faction_chdkz_g";
+		class AnimationSources: AnimationSources
+		{
+			class small_numbers_hide: small_numbers_hide
+			{
+				initPhase=1;
+			};
+		};
 		side=2;
+		author="$STR_RHS_AUTHOR_FULL";
+		scope=2;
+		scopeCurator=2;
+		crew="rhsgref_ins_g_crew";
 		hiddenselectionstextures[]=
 		{
 			"\rhsgref\addons\rhsgref_a2port_armor\brdm2\data\brdm2_01_co.paa",
@@ -1456,7 +3171,20 @@ class CfgVehicles
 	};
 	class rhsgref_BRDM2_ATGM_ins_g: rhsgref_BRDM2_ATGM
 	{
+		editorPreview="rhsgref\addons\rhsgref_editorPreviews\data\rhsgref_BRDM2_ATGM_ins_g.paa";
+		faction="rhsgref_faction_chdkz_g";
+		class AnimationSources: AnimationSources
+		{
+			class small_numbers_hide: small_numbers_hide
+			{
+				initPhase=1;
+			};
+		};
 		side=2;
+		author="$STR_RHS_AUTHOR_FULL";
+		scope=2;
+		scopeCurator=2;
+		crew="rhsgref_ins_g_crew";
 		hiddenselectionstextures[]=
 		{
 			"\rhsgref\addons\rhsgref_a2port_armor\brdm2\data\brdm2_atgm_01_co.paa",
@@ -1467,7 +3195,20 @@ class CfgVehicles
 	};
 	class rhsgref_BRDM2UM_ins_g: rhsgref_BRDM2UM
 	{
+		editorPreview="rhsgref\addons\rhsgref_editorPreviews\data\rhsgref_BRDM2UM_ins_g.paa";
+		faction="rhsgref_faction_chdkz_g";
+		class AnimationSources: AnimationSources
+		{
+			class small_numbers_hide: small_numbers_hide
+			{
+				initPhase=1;
+			};
+		};
 		side=2;
+		author="$STR_RHS_AUTHOR_FULL";
+		scope=2;
+		scopeCurator=2;
+		crew="rhsgref_ins_g_crew";
 		hiddenselectionstextures[]=
 		{
 			"\rhsgref\addons\rhsgref_a2port_armor\brdm2\data\brdm2_01_co.paa",
@@ -1478,7 +3219,20 @@ class CfgVehicles
 	};
 	class rhsgref_BRDM2_HQ_ins_g: rhsgref_BRDM2_HQ
 	{
+		editorPreview="rhsgref\addons\rhsgref_editorPreviews\data\rhsgref_BRDM2_HQ_ins_g.paa";
+		faction="rhsgref_faction_chdkz_g";
+		class AnimationSources: AnimationSources
+		{
+			class small_numbers_hide: small_numbers_hide
+			{
+				initPhase=1;
+			};
+		};
 		side=2;
+		author="$STR_RHS_AUTHOR_FULL";
+		scope=2;
+		scopeCurator=2;
+		crew="rhsgref_ins_g_crew";
 		hiddenselectionstextures[]=
 		{
 			"\rhsgref\addons\rhsgref_a2port_armor\brdm2\data\brdm2_01_co.paa",
@@ -1489,12 +3243,25 @@ class CfgVehicles
 	};
 	class rhsgref_BRDM2_msv: rhsgref_BRDM2
 	{
+		editorPreview="rhsgref\addons\rhsgref_editorPreviews\data\rhsgref_BRDM2_msv.paa";
+		faction="rhs_faction_msv";
+		crew="rhs_msv_crew";
 		rhs_decalParameters[]=
 		{
 			"['Number', [3,4,5], 'Default']",
 			"['Label', [6], 'Platoon',12]"
 		};
+		class AnimationSources: AnimationSources
+		{
+			class small_numbers_hide: small_numbers_hide
+			{
+				initPhase=1;
+			};
+		};
 		side=0;
+		author="$STR_RHS_AUTHOR_FULL";
+		scope=2;
+		scopeCurator=2;
 		hiddenselectionstextures[]=
 		{
 			"\rhsgref\addons\rhsgref_a2port_armor\brdm2\data\brdm2_ru_01_co.paa",
@@ -1504,12 +3271,25 @@ class CfgVehicles
 	};
 	class rhsgref_BRDM2_ATGM_msv: rhsgref_BRDM2_ATGM
 	{
+		editorPreview="rhsgref\addons\rhsgref_editorPreviews\data\rhsgref_BRDM2_ATGM_msv.paa";
+		faction="rhs_faction_msv";
+		crew="rhs_msv_crew";
 		rhs_decalParameters[]=
 		{
 			"['Number', [3,4,5], 'Default']",
 			"['Label', [6], 'Platoon',12]"
 		};
+		class AnimationSources: AnimationSources
+		{
+			class small_numbers_hide: small_numbers_hide
+			{
+				initPhase=1;
+			};
+		};
 		side=0;
+		author="$STR_RHS_AUTHOR_FULL";
+		scope=2;
+		scopeCurator=2;
 		hiddenselectionstextures[]=
 		{
 			"\rhsgref\addons\rhsgref_a2port_armor\brdm2\data\brdm2_atgm_ru_01_co.paa",
@@ -1519,12 +3299,25 @@ class CfgVehicles
 	};
 	class rhsgref_BRDM2UM_msv: rhsgref_BRDM2UM
 	{
+		editorPreview="rhsgref\addons\rhsgref_editorPreviews\data\rhsgref_BRDM2UM_msv.paa";
+		faction="rhs_faction_msv";
+		crew="rhs_msv_crew";
 		rhs_decalParameters[]=
 		{
 			"['Number', [3,4,5], 'Default']",
 			"['Label', [6], 'Platoon',12]"
 		};
+		class AnimationSources: AnimationSources
+		{
+			class small_numbers_hide: small_numbers_hide
+			{
+				initPhase=1;
+			};
+		};
 		side=0;
+		author="$STR_RHS_AUTHOR_FULL";
+		scope=2;
+		scopeCurator=2;
 		hiddenselectionstextures[]=
 		{
 			"\rhsgref\addons\rhsgref_a2port_armor\brdm2\data\brdm2_ru_01_co.paa",
@@ -1534,12 +3327,25 @@ class CfgVehicles
 	};
 	class rhsgref_BRDM2_HQ_msv: rhsgref_BRDM2_HQ
 	{
+		editorPreview="rhsgref\addons\rhsgref_editorPreviews\data\rhsgref_BRDM2_HQ_msv.paa";
+		faction="rhs_faction_msv";
+		crew="rhs_msv_crew";
 		rhs_decalParameters[]=
 		{
 			"['Number', [3,4,5], 'Default']",
 			"['Label', [6], 'Platoon',12]"
 		};
+		class AnimationSources: AnimationSources
+		{
+			class small_numbers_hide: small_numbers_hide
+			{
+				initPhase=1;
+			};
+		};
 		side=0;
+		author="$STR_RHS_AUTHOR_FULL";
+		scope=2;
+		scopeCurator=2;
 		hiddenselectionstextures[]=
 		{
 			"\rhsgref\addons\rhsgref_a2port_armor\brdm2\data\brdm2_ru_01_co.paa",
@@ -1549,12 +3355,25 @@ class CfgVehicles
 	};
 	class rhsgref_BRDM2_vdv: rhsgref_BRDM2
 	{
+		editorPreview="rhsgref\addons\rhsgref_editorPreviews\data\rhsgref_BRDM2_vdv.paa";
+		faction="rhs_faction_vdv";
+		crew="rhs_vdv_crew";
 		rhs_decalParameters[]=
 		{
 			"['Number', [3,4,5], 'Default']",
 			"['Label', [6], 'Platoon',11]"
 		};
+		class AnimationSources: AnimationSources
+		{
+			class small_numbers_hide: small_numbers_hide
+			{
+				initPhase=1;
+			};
+		};
 		side=0;
+		author="$STR_RHS_AUTHOR_FULL";
+		scope=2;
+		scopeCurator=2;
 		hiddenselectionstextures[]=
 		{
 			"\rhsgref\addons\rhsgref_a2port_armor\brdm2\data\brdm2_ru_01_co.paa",
@@ -1564,12 +3383,25 @@ class CfgVehicles
 	};
 	class rhsgref_BRDM2_ATGM_vdv: rhsgref_BRDM2_ATGM
 	{
+		editorPreview="rhsgref\addons\rhsgref_editorPreviews\data\rhsgref_BRDM2_ATGM_vdv.paa";
+		faction="rhs_faction_vdv";
+		crew="rhs_vdv_crew";
 		rhs_decalParameters[]=
 		{
 			"['Number', [3,4,5], 'Default']",
 			"['Label', [6], 'Platoon',11]"
 		};
+		class AnimationSources: AnimationSources
+		{
+			class small_numbers_hide: small_numbers_hide
+			{
+				initPhase=1;
+			};
+		};
 		side=0;
+		author="$STR_RHS_AUTHOR_FULL";
+		scope=2;
+		scopeCurator=2;
 		hiddenselectionstextures[]=
 		{
 			"\rhsgref\addons\rhsgref_a2port_armor\brdm2\data\brdm2_atgm_ru_01_co.paa",
@@ -1579,12 +3411,25 @@ class CfgVehicles
 	};
 	class rhsgref_BRDM2UM_vdv: rhsgref_BRDM2UM
 	{
+		editorPreview="rhsgref\addons\rhsgref_editorPreviews\data\rhsgref_BRDM2UM_vdv.paa";
+		faction="rhs_faction_vdv";
+		crew="rhs_vdv_crew";
 		rhs_decalParameters[]=
 		{
 			"['Number', [3,4,5], 'Default']",
 			"['Label', [6], 'Platoon',11]"
 		};
+		class AnimationSources: AnimationSources
+		{
+			class small_numbers_hide: small_numbers_hide
+			{
+				initPhase=1;
+			};
+		};
 		side=0;
+		author="$STR_RHS_AUTHOR_FULL";
+		scope=2;
+		scopeCurator=2;
 		hiddenselectionstextures[]=
 		{
 			"\rhsgref\addons\rhsgref_a2port_armor\brdm2\data\brdm2_ru_01_co.paa",
@@ -1594,12 +3439,25 @@ class CfgVehicles
 	};
 	class rhsgref_BRDM2_HQ_vdv: rhsgref_BRDM2_HQ
 	{
+		editorPreview="rhsgref\addons\rhsgref_editorPreviews\data\rhsgref_BRDM2_HQ_vdv.paa";
+		faction="rhs_faction_vdv";
+		crew="rhs_vdv_crew";
 		rhs_decalParameters[]=
 		{
 			"['Number', [3,4,5], 'Default']",
 			"['Label', [6], 'Platoon',11]"
 		};
+		class AnimationSources: AnimationSources
+		{
+			class small_numbers_hide: small_numbers_hide
+			{
+				initPhase=1;
+			};
+		};
 		side=0;
+		author="$STR_RHS_AUTHOR_FULL";
+		scope=2;
+		scopeCurator=2;
 		hiddenselectionstextures[]=
 		{
 			"\rhsgref\addons\rhsgref_a2port_armor\brdm2\data\brdm2_ru_01_co.paa",
@@ -1609,12 +3467,25 @@ class CfgVehicles
 	};
 	class rhsgref_BRDM2_vmf: rhsgref_BRDM2
 	{
+		editorPreview="rhsgref\addons\rhsgref_editorPreviews\data\rhsgref_BRDM2_vmf.paa";
+		faction="rhs_faction_vmf";
+		crew="rhs_vmf_flora_crew";
+		class AnimationSources: AnimationSources
+		{
+			class small_numbers_hide: small_numbers_hide
+			{
+				initPhase=1;
+			};
+		};
 		rhs_decalParameters[]=
 		{
 			"['Number', [3,4,5], 'Default']",
 			"['Label', [6], 'Army',[3,1]]"
 		};
 		side=0;
+		author="$STR_RHS_AUTHOR_FULL";
+		scope=2;
+		scopeCurator=2;
 		hiddenselectionstextures[]=
 		{
 			"\rhsgref\addons\rhsgref_a2port_armor\brdm2\data\brdm2_ru_01_co.paa",
@@ -1624,12 +3495,25 @@ class CfgVehicles
 	};
 	class rhsgref_BRDM2_ATGM_vmf: rhsgref_BRDM2_ATGM
 	{
+		editorPreview="rhsgref\addons\rhsgref_editorPreviews\data\rhsgref_BRDM2_ATGM_vmf.paa";
+		faction="rhs_faction_vmf";
+		crew="rhs_vmf_flora_crew";
+		class AnimationSources: AnimationSources
+		{
+			class small_numbers_hide: small_numbers_hide
+			{
+				initPhase=1;
+			};
+		};
 		rhs_decalParameters[]=
 		{
 			"['Number', [3,4,5], 'Default']",
 			"['Label', [6], 'Army',[3,1]]"
 		};
 		side=0;
+		author="$STR_RHS_AUTHOR_FULL";
+		scope=2;
+		scopeCurator=2;
 		hiddenselectionstextures[]=
 		{
 			"\rhsgref\addons\rhsgref_a2port_armor\brdm2\data\brdm2_atgm_ru_01_co.paa",
@@ -1639,12 +3523,25 @@ class CfgVehicles
 	};
 	class rhsgref_BRDM2UM_vmf: rhsgref_BRDM2UM
 	{
+		editorPreview="rhsgref\addons\rhsgref_editorPreviews\data\rhsgref_BRDM2UM_vmf.paa";
+		faction="rhs_faction_vmf";
+		crew="rhs_vmf_flora_crew";
+		class AnimationSources: AnimationSources
+		{
+			class small_numbers_hide: small_numbers_hide
+			{
+				initPhase=1;
+			};
+		};
 		rhs_decalParameters[]=
 		{
 			"['Number', [3,4,5], 'Default']",
 			"['Label', [6], 'Army',[3,1]]"
 		};
 		side=0;
+		author="$STR_RHS_AUTHOR_FULL";
+		scope=2;
+		scopeCurator=2;
 		hiddenselectionstextures[]=
 		{
 			"\rhsgref\addons\rhsgref_a2port_armor\brdm2\data\brdm2_ru_01_co.paa",
@@ -1654,12 +3551,25 @@ class CfgVehicles
 	};
 	class rhsgref_BRDM2_HQ_vmf: rhsgref_BRDM2_HQ
 	{
+		editorPreview="rhsgref\addons\rhsgref_editorPreviews\data\rhsgref_BRDM2_HQ_vmf.paa";
+		faction="rhs_faction_vmf";
+		crew="rhs_vmf_flora_crew";
+		class AnimationSources: AnimationSources
+		{
+			class small_numbers_hide: small_numbers_hide
+			{
+				initPhase=1;
+			};
+		};
 		rhs_decalParameters[]=
 		{
 			"['Number', [3,4,5], 'Default']",
 			"['Label', [6], 'Army',[3,1]]"
 		};
 		side=0;
+		author="$STR_RHS_AUTHOR_FULL";
+		scope=2;
+		scopeCurator=2;
 		hiddenselectionstextures[]=
 		{
 			"\rhsgref\addons\rhsgref_a2port_armor\brdm2\data\brdm2_ru_01_co.paa",
@@ -1671,5 +3581,15 @@ class CfgVehicles
 class CfgNonAIVehicles
 {
 	class ProxyRetex;
-	class ProxyPSZ_BRDM2_wheel: ProxyRetex;  //found empty after stripping
+	class ProxyPSZ_BRDM2_wheel: ProxyRetex
+	{
+		hiddenSelections[]=
+		{
+			"camo1",
+			"camo2",
+			"camo3",
+			"camo4"
+		};
+		model="\rhsgref\addons\rhsgref_a2port_armor\brdm2\PSZ_BRDM2_wheel";
+	};
 };

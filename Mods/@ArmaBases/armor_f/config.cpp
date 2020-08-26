@@ -2,7 +2,15 @@ class CfgPatches
 {
 	class A3_Armor_F
 	{
+		author="$STR_A3_Bohemia_Interactive";
 		name="Arma 3 Alpha - Armored Land Vehicles";
+		url="https://www.arma3.com";
+		requiredAddons[]=
+		{
+			"A3_Characters_F",
+			"A3_Data_F"
+		};
+		requiredVersion=0.1;
 		units[]={};
 		weapons[]={};
 	};

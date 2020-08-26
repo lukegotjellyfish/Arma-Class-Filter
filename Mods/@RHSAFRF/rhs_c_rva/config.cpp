@@ -9,7 +9,26 @@ class CfgPatches
 			"rhs_9k79_b"
 		};
 		weapons[]={};
+		requiredVersion=0.1;
+		requiredAddons[]=
+		{
+			"rhs_main",
+			"rhs_decals",
+			"rhs_c_troops"
+		};
 		name="Tochka-U Launcher";
+		author="$STR_RHS_AUTHOR_FULL";
+		url="http://www.rhsmods.org/";
+	};
+};
+class CfgMovesBasic
+{
+	class DefaultDie;
+	class ManActions
+	{
+		BAZ_Driver="BAZ_Driver";
+		BAZ_oper="BAZ_oper";
+		BAZ_cargo="BAZ_cargo";
 	};
 };
 class CfgFunctions
@@ -118,6 +137,79 @@ class cfgWaypoints
 		};
 	};
 };
+class CfgMovesMaleSdr: CfgMovesBasic
+{
+	class States
+	{
+		class Crew;
+		class KIA_BAZ_Driver: DefaultDie
+		{
+			actions="DeadActions";
+			speed=0.5;
+			looped=0;
+			terminal=1;
+			file="\rhsafrf\addons\rhs_ss21\anim\KIA_BAZ_Driver";
+			connectTo[]=
+			{
+				"Unconscious",
+				0.1
+			};
+		};
+		class BAZ_Driver: Crew
+		{
+			file="\rhsafrf\addons\rhs_ss21\anim\BAZ_Driver.rtm";
+			interpolateTo[]=
+			{
+				"KIA_BAZ_Driver",
+				1
+			};
+		};
+		class KIA_BAZ_cargo: DefaultDie
+		{
+			actions="DeadActions";
+			speed=0.5;
+			looped=0;
+			terminal=1;
+			file="\rhsafrf\addons\rhs_ss21\anim\KIA_BAZ_cargo.rtm";
+			connectTo[]=
+			{
+				"Unconscious",
+				0.1
+			};
+		};
+		class BAZ_cargo: Crew
+		{
+			file="\rhsafrf\addons\rhs_ss21\anim\BAZ_cargo.rtm";
+			interpolateTo[]=
+			{
+				"KIA_BAZ_cargo",
+				1
+			};
+		};
+		class KIA_BAZ_oper: DefaultDie
+		{
+			actions="DeadActions";
+			speed=0.5;
+			looped=0;
+			terminal=1;
+			file="\rhsafrf\addons\rhs_ss21\anim\KIA_BAZ_oper.rtm";
+			connectTo[]=
+			{
+				"Unconscious",
+				0.1
+			};
+		};
+		class BAZ_oper: Crew
+		{
+			file="\rhsafrf\addons\rhs_ss21\anim\BAZ_oper.rtm";
+			interpolateTo[]=
+			{
+				"KIA_BAZ_oper",
+				1
+			};
+		};
+	};
+};
 class DefaultEventhandlers;
 class CfgAmmo
 {
@@ -130,6 +222,7 @@ class CfgAmmo
 		indirectHitRange=50;
 		airFriction=0;
 		sideAirFriction=0.079999998;
+		model="\rhsafrf\addons\rhs_ss21\ss21.p3d";
 		initTime=0;
 		timeToLive=300;
 		cost=400;
@@ -137,11 +230,30 @@ class CfgAmmo
 		thrustTime=25;
 		thrust=80;
 		fuseDistance=5;
+		CraterEffects="RHS_HeavyBombCrater";
+		explosionEffects="RHS_HeavyBombExplosion";
+		effectsMissile="missile5";
+		whistleOnFire=2;
+		whistleDist=60;
+		soundFly[]=
+		{
+			"A3\Sounds_F\weapons\Rockets\rocket_fly_2",
+			2.5,
+			1.5,
+			10800
+		};
 		RHS_WarheadType="REPLACE";
 		RHS_FuseRange=25;
+		SoundSetExplosion[]=
+		{
+			"BombsHeavy_Exp_SoundSet",
+			"BombsHeavy_Tail_SoundSet",
+			"Explosion_Debris_SoundSet"
+		};
 	};
 	class RHS_9N123F: RHS_9M79_1_F
 	{
+		model="\rhsafrf\addons\rhs_ss21\ss21.p3d";
 		timeToLive=0.0099999998;
 		thrustTime=0;
 	};
@@ -166,6 +278,7 @@ class CfgAmmo
 		hit=280;
 		indirectHit=52;
 		indirectHitRange=22;
+		model="\rhsafrf\addons\rhs_ss21\ammo\9n24.p3d";
 		timeToLive=60;
 	};
 };
@@ -174,12 +287,35 @@ class cfgWeapons
 	class RocketPods;
 	class RHS_9M79_1Launcher: RocketPods
 	{
+		scope=2;
 		displayName="$STR_RHS_ss21_9M79_1Launcher";
+		type=65536;
+		modelOptics="";
 		magazines[]=
 		{
 			"1_Rnd_RHS_9M79_1_F",
 			"1_Rnd_RHS_9M79_1_K",
 			"1_Rnd_RHS_9M79B"
+		};
+		sounds[]=
+		{
+			"StandardSound"
+		};
+		class StandardSound
+		{
+			weaponSoundEffect="DefaultRifle";
+			begin1[]=
+			{
+				"\rhsafrf\addons\rhs_ss21\sound\launchA",
+				3.4125376,
+				1,
+				1200
+			};
+			soundBegin[]=
+			{
+				"begin1",
+				1
+			};
 		};
 		sound[]=
 		{
@@ -189,7 +325,14 @@ class cfgWeapons
 			1100
 		};
 		recoil="launcherBase";
+		soundContinuous=0;
+		soundBurst=0;
 		reloadTime=14;
+		aiRateOfFire=10;
+		aiRateOfFireDistance=450;
+		minRange=1950;
+		midRange=3000;
+		maxRange=15600;
 		cursor="Rocket";
 		cursorSize=1;
 		initSpeed=50;
@@ -204,10 +347,12 @@ class CfgMagazines
 	class rhs_mag_40Rnd_122mm_rockets;
 	class 1_Rnd_RHS_9M79_1_F: rhs_mag_40Rnd_122mm_rockets
 	{
+		scope=2;
 		displayName="$STR_RHS_ss21_1_Rnd_RHS_9M79_1_F";
 		ammo="RHS_9M79_1_F";
 		count=1;
 		initSpeed=44;
+		maxLeadSpeed=200;
 	};
 	class 1_Rnd_RHS_9M79_1_K: 1_Rnd_RHS_9M79_1_F
 	{
@@ -274,10 +419,12 @@ class CfgVehicles
 	};
 	class OTR21_Base: Truck_F
 	{
+		dlc="RHS_AFRF";
 		rhs_decalParameters[]=
 		{
 			"['Number', SS21NumberPlaces, 'Default']"
 		};
+		category="Car";
 		normalSpeedForwardCoef=0.60000002;
 		slowSpeedForwardCoef=0.44999999;
 		turnCoef=3.5;
@@ -380,6 +527,11 @@ class CfgVehicles
 			class LF
 			{
 				side="left";
+				boneName="wheel_1_1_damper";
+				center="wheel_1_1_axis";
+				boundary="wheel_1_1_bound";
+				suspForceAppPointOffset="wheel_1_1_axis";
+				tireForceAppPointOffset="wheel_1_1_axis";
 				suspTravelDirection[]={-0.125,-1,0};
 				steering=1;
 				width=0.40000001;
@@ -407,22 +559,49 @@ class CfgVehicles
 			};
 			class LR: LF
 			{
+				boneName="wheel_1_2_damper";
+				center="wheel_1_2_axis";
+				boundary="wheel_1_2_bound";
+				suspForceAppPointOffset="wheel_1_2_axis";
+				tireForceAppPointOffset="wheel_1_2_axis";
 				steering=0;
 				maxHandBrakeTorque=20000;
 			};
-			class LR2: LR;  //found empty after stripping
+			class LR2: LR
+			{
+				boneName="wheel_1_3_damper";
+				center="wheel_1_3_axis";
+				boundary="wheel_1_3_bound";
+				suspForceAppPointOffset="wheel_1_3_axis";
+				tireForceAppPointOffset="wheel_1_3_axis";
+			};
 			class RF: LF
 			{
+				boneName="wheel_2_1_damper";
+				center="wheel_2_1_axis";
+				boundary="wheel_2_1_bound";
+				suspForceAppPointOffset="wheel_2_1_axis";
+				tireForceAppPointOffset="wheel_2_1_axis";
 				side="right";
 				suspTravelDirection[]={-0.125,-1,0};
 				steering=1;
 			};
 			class RR: RF
 			{
+				boneName="wheel_2_2_damper";
+				center="wheel_2_2_axis";
+				boundary="wheel_2_2_bound";
+				suspForceAppPointOffset="wheel_2_2_axis";
+				tireForceAppPointOffset="wheel_2_2_axis";
 				maxHandBrakeTorque=20000;
 			};
 			class RR2: RR
 			{
+				boneName="wheel_2_3_damper";
+				center="wheel_2_3_axis";
+				boundary="wheel_2_3_bound";
+				suspForceAppPointOffset="wheel_2_3_axis";
+				tireForceAppPointOffset="wheel_2_3_axis";
 				steering=0;
 			};
 		};
@@ -433,6 +612,9 @@ class CfgVehicles
 		mFact=0;
 		tBody=0;
 		displayName="$STR_RHS_ss21";
+		vehicleClass="rhs_vehclass_artillery";
+		editorSubcategory="rhs_EdSubcat_artillery";
+		model="\rhsafrf\addons\rhs_ss21\SS21Veh.p3d";
 		hiddenselections[]=
 		{
 			"camo1",
@@ -442,11 +624,24 @@ class CfgVehicles
 			"num2",
 			"num3"
 		};
+		hiddenSelectionsTextures[]=
+		{
+			"rhsafrf\addons\rhs_ss21\data\veh\tochka_body_co.paa",
+			"rhsafrf\addons\rhs_ss21\data\veh\tochka_misc_co.paa",
+			"rhsafrf\addons\rhs_ss21\data\veh\tochka_bottom_co.paa"
+		};
 		class textureSources
 		{
 			class standard
 			{
 				displayName="Standard";
+				author="$STR_RHS_AUTHOR_FULL";
+				textures[]=
+				{
+					"rhsafrf\addons\rhs_ss21\data\veh\tochka_body_co.paa",
+					"rhsafrf\addons\rhs_ss21\data\veh\tochka_misc_co.paa",
+					"rhsafrf\addons\rhs_ss21\data\veh\tochka_bottom_co.paa"
+				};
 				factions[]=
 				{
 					"rhs_faction_rva"
@@ -455,10 +650,25 @@ class CfgVehicles
 			class camo: standard
 			{
 				displayName="Camo";
+				author="$STR_RHS_AUTHOR_FULL";
+				textures[]=
+				{
+					"rhsafrf\addons\rhs_ss21_camo\data\tochka_body_co.paa",
+					"rhsafrf\addons\rhs_ss21_camo\data\tochka_misc_co.paa",
+					"rhsafrf\addons\rhs_ss21_camo\data\tochka_bottom_co.paa"
+				};
 			};
 		};
+		textureList[]={};
 		class Attributes
 		{
+			class ObjectTexture
+			{
+				control="ObjectTexture";
+				data="ObjectTexture";
+				displayName="Skin";
+				tooltip="Texture and material set applied on the object.";
+			};
 			class rhs_decalNumber_type
 			{
 				displayName="Define font type of plate number";
@@ -467,6 +677,7 @@ class CfgVehicles
 				control="Combo";
 				expression="_this setVariable ['%s', _value];[_this,[['Number', SS21NumberPlaces, _value]]] call rhs_fnc_decalsInit";
 				defaultValue=0;
+				typeName="STRING";
 				class values
 				{
 					class Default
@@ -520,6 +731,7 @@ class CfgVehicles
 				property="rhs_decalNumber";
 				control="Edit";
 				validate="Number";
+				typeName="Number";
 				defaultValue="-1";
 				expression="if( _value >= 0)then{if( _value == 0)then{{[_this setobjectTexture [_x,'a3\data_f\clear_empty.paa']]}foreach SS21NumberPlaces}else{[_this, [['Number', SS21NumberPlaces, _this getVariable ['rhs_decalNumber_type','Default'], _value] ] ] call rhs_fnc_decalsInit}};";
 			};
@@ -533,11 +745,18 @@ class CfgVehicles
 				defaultValue=0;
 			};
 		};
+		picture="\rhsafrf\addons\rhs_ss21\ico\rhs_tochkau_pic_ca.paa";
+		Icon="\rhsafrf\addons\rhs_ss21\ico\tochka_mapicon_ca.paa";
+		driverLeftHandAnimName="rul";
 		attenuationEffectType="RHS_CarAttenuation";
 		enableManualFire=0;
+		mapSize=10;
 		side=0;
 		threat[]={0.5,0.5,0.1};
+		faction="rhs_faction_rva";
+		crew="rhs_rva_crew";
 		accuracy=0.30000001;
+		transportSoldier=1;
 		artilleryScanner=0;
 		hideProxyInCombat=0;
 		transportAmmo=0;
@@ -558,11 +777,26 @@ class CfgVehicles
 		typicalCargo[]={};
 		hasGunner=1;
 		hasCommander=0;
+		driverAction="BAZ_Driver";
+		cargoAction[]=
+		{
+			"BAZ_cargo"
+		};
 		cargoIsCoDriver[]={1,1,0};
 		memoryPointsGetInDriver="pos driver";
 		memoryPointsGetInDriverDir="pos driver dir";
 		memoryPointsGetInCargo="pos cargo";
 		memoryPointsGetInCargoDir="pos cargo dir";
+		memoryPointsGetInGunner="pos gunner";
+		memoryPointsGetInGunnerDir="pos gunner dir";
+		class TransportMagazines
+		{
+			class _xx_30Rnd_545x39_AK
+			{
+				magazine="rhs_30Rnd_545x39_7N10_AK";
+				count="30*1";
+			};
+		};
 		class Exhausts
 		{
 			class Exhaust
@@ -572,12 +806,42 @@ class CfgVehicles
 				effect="ExhaustsEffectBig";
 			};
 		};
-		class Damage;  //found empty after stripping
+		class Damage
+		{
+			tex[]={};
+			mat[]=
+			{
+				"rhsafrf\addons\rhs_ss21\data\veh\tochka_body.rvmat",
+				"rhsafrf\addons\rhs_ss21\data\veh\tochka_body_damage.rvmat",
+				"rhsafrf\addons\rhs_ss21\data\veh\tochka_body_destruct.rvmat",
+				"rhsafrf\addons\rhs_ss21\data\veh\tochka_glass.rvmat",
+				"rhsafrf\addons\rhs_ss21\data\veh\tochka_glass_damage.rvmat",
+				"rhsafrf\addons\rhs_ss21\data\veh\tochka_glass_damage.rvmat",
+				"rhsafrf\addons\rhs_ss21\data\veh\tochka_glass_in.rvmat",
+				"rhsafrf\addons\rhs_ss21\data\veh\tochka_glass_in_damage.rvmat",
+				"rhsafrf\addons\rhs_ss21\data\veh\tochka_glass_in_damage.rvmat",
+				"rhsafrf\addons\rhs_ss21\data\veh\tochka_misc.rvmat",
+				"rhsafrf\addons\rhs_ss21\data\veh\tochka_misc_damage.rvmat",
+				"rhsafrf\addons\rhs_ss21\data\veh\tochka_misc_destruct.rvmat",
+				"rhsafrf\addons\rhs_ss21\data\veh\tochka_bottom.rvmat",
+				"rhsafrf\addons\rhs_ss21\data\veh\tochka_bottom_damage.rvmat",
+				"rhsafrf\addons\rhs_ss21\data\veh\tochka_bottom_destruct.rvmat",
+				"rhsafrf\addons\rhs_ss21\data\veh\interior\seat.rvmat",
+				"rhsafrf\addons\rhs_ss21\data\veh\interior\seat.rvmat",
+				"rhsafrf\addons\rhs_ss21\data\veh\tochka_bottom_destruct.rvmat",
+				"rhsafrf\addons\rhs_ss21\data\veh\interior\in1.rvmat",
+				"rhsafrf\addons\rhs_ss21\data\veh\interior\in1.rvmat",
+				"rhsafrf\addons\rhs_ss21\data\veh\tochka_bottom_destruct.rvmat"
+			};
+		};
 		class Turrets: Turrets
 		{
 			class MainTurret: MainTurret
 			{
 				commanding=0;
+				gun="RHS_SS21_missile_rise";
+				gunBeg="usti hlavne";
+				gunEnd="konec hlavne";
 				usePiP=1;
 				minElev=74;
 				maxElev=78;
@@ -600,9 +864,21 @@ class CfgVehicles
 				{
 					"1_Rnd_RHS_9M79_1_F"
 				};
+				gunnerInAction="BAZ_oper";
+				gunnerAction="BAZ_oper";
+				soundServo[]=
+				{
+					"",
+					0,
+					1
+				};
+				gunnerOpticsModel="";
+				gunnergetInAction="GetInHigh";
 				stabilizedInAxes=0;
+				gunnerType="rhs_rva_crew_officer";
 				forceHideGunner=1;
 				forceHideCommander=1;
+				viewGunnerInExternal=1;
 				class ViewOptics
 				{
 					initAngleX=0;
@@ -646,6 +922,106 @@ class CfgVehicles
 			minAngleY=-150;
 			maxAngleY=150;
 		};
+		class AnimationSources: AnimationSources
+		{
+			class HitGlass1
+			{
+				source="Hit";
+				hitpoint="HitGlass1";
+				raw=1;
+			};
+			class HitGlass2: HitGlass1
+			{
+				hitpoint="HitGlass2";
+			};
+			class HitGlass3: HitGlass1
+			{
+				hitpoint="HitGlass3";
+			};
+			class HitGlass4: HitGlass1
+			{
+				hitpoint="HitGlass4";
+			};
+			class HitGlass5: HitGlass1
+			{
+				hitpoint="HitGlass5";
+			};
+			class HitLFWheel
+			{
+				source="Hit";
+				hitpoint="HitLFWheel";
+				raw=1;
+			};
+			class HitRFWheel: HitLFWheel
+			{
+				hitpoint="HitRFWheel";
+			};
+			class HitLBWheel: HitLFWheel
+			{
+				hitpoint="HitLBWheel";
+			};
+			class HitRBWheel: HitLFWheel
+			{
+				hitpoint="HitRBWheel";
+			};
+			class HitLMWheel: HitLFWheel
+			{
+				hitpoint="HitLMWheel";
+			};
+			class HitRMWheel: HitLFWheel
+			{
+				hitpoint="HitRMWheel";
+			};
+			class WipersSW
+			{
+				source="user";
+				animPeriod=0.1;
+				initPhase=0;
+			};
+			class WindshieldWipers
+			{
+				source="user";
+				animPeriod=0.5;
+				initPhase=0;
+			};
+			class MissileRise
+			{
+				source="door";
+				animPeriod=15;
+				initPhase=0;
+			};
+			class MissileHide
+			{
+				source="user";
+				animPeriod=1;
+				initPhase=0;
+			};
+			class StablePos: MissileRise
+			{
+				animPeriod=3;
+			};
+			class MissileBayL: MissileRise
+			{
+				animPeriod=9;
+			};
+			class MissileBayR: MissileRise
+			{
+				animPeriod=9;
+			};
+			class MissileEnviro: MissileRise
+			{
+				animPeriod=3;
+			};
+			class RHS_Rocket_Handler
+			{
+				source="user";
+				animPeriod=0.0099999998;
+				displayName="deploy launcher";
+				mass=1;
+				onPhaseChanged="_this spawn rhs_fnc_ss21_AI_prepare";
+				initPhase=0;
+			};
+		};
 		class HitPoints: HitPoints
 		{
 			class HitGlass1
@@ -653,6 +1029,7 @@ class CfgVehicles
 				armor=0.1;
 				material=-1;
 				name="glass5";
+				visual="glass5";
 				passThrough=0;
 			};
 			class HitGlass2
@@ -661,6 +1038,7 @@ class CfgVehicles
 				material=-1;
 				passThrough=0;
 				name="glass2";
+				visual="glass2";
 			};
 			class HitGlass3
 			{
@@ -668,6 +1046,7 @@ class CfgVehicles
 				material=-1;
 				passThrough=0;
 				name="glass3";
+				visual="glass3";
 			};
 			class HitGlass4
 			{
@@ -675,6 +1054,7 @@ class CfgVehicles
 				material=-1;
 				passThrough=0;
 				name="glass4";
+				visual="glass4";
 			};
 			class HitGlass5
 			{
@@ -682,6 +1062,7 @@ class CfgVehicles
 				material=-1;
 				passThrough=0;
 				name="glass5";
+				visual="glass5";
 			};
 			class HitLFWheel: HitLFWheel
 			{
@@ -724,6 +1105,7 @@ class CfgVehicles
 				armor=1;
 				material=-1;
 				name="ammo";
+				visual="karoserie";
 				passThrough=1;
 			};
 			class HitFuel
@@ -731,6 +1113,7 @@ class CfgVehicles
 				armor=0.5;
 				material=-1;
 				name="palivo";
+				visual="-";
 				passThrough=0.2;
 			};
 			class HitEngine
@@ -738,7 +1121,101 @@ class CfgVehicles
 				armor=0.5;
 				material=-1;
 				name="motor";
+				visual="-";
 				passThrough=0.2;
+			};
+		};
+		class UserActions
+		{
+			class WiperOn
+			{
+				displayName="$STR_RHS_ss21_Wiper_On";
+				position="zamerny";
+				radius=0.0099999998;
+				onlyForplayer=0;
+				condition="(alive this)&&((call rhs_fnc_findPlayer) == driver this)&&!(this getVariable 'wiper_on')";
+				statement="[3,1,this] spawn (RHS_ss21_logic getVariable 'anim_ss21');";
+			};
+			class WiperOff
+			{
+				displayName="$STR_RHS_ss21_Wiper_Off";
+				position="zamerny";
+				radius=0.0099999998;
+				onlyForplayer=0;
+				condition="(alive this)&&((call rhs_fnc_findPlayer) == driver this)&&(this getVariable 'wiper_on')";
+				statement="[3,0,this] call (RHS_ss21_logic getVariable 'anim_ss21');";
+			};
+			class ControlPanel
+			{
+				displayName="$STR_RHS_ss21_control_panel";
+				position="zamerny";
+				radius=0.0099999998;
+				onlyForplayer=0;
+				condition="(alive this)&&((call rhs_fnc_findPlayer)==(gunner this))";
+				statement="createDialog 'ss21_main_dialog'";
+			};
+		};
+		class Reflectors
+		{
+			class LeftLight
+			{
+				color[]={1900,1300,950};
+				ambient[]={5,5,5};
+				position="L svetlo";
+				direction="konec L svetla";
+				hitpoint="L svetlo";
+				selection="L svetlo";
+				size=1;
+				innerAngle=100;
+				outerAngle=179;
+				coneFadeCoef=10;
+				intensity=1;
+				useFlare=0;
+				dayLight=0;
+				flareSize=1;
+				class Attenuation
+				{
+					start=1;
+					constant=0;
+					linear=0;
+					quadratic=0.25;
+					hardLimitStart=30;
+					hardLimitEnd=60;
+				};
+			};
+			class RightLight: LeftLight
+			{
+				position="P svetlo";
+				direction="konec P svetla";
+				hitpoint="P svetlo";
+				selection="P svetlo";
+			};
+		};
+		class RenderTargets
+		{
+			class LeftMirror
+			{
+				renderTarget="rendertarget0";
+				class CameraView1
+				{
+					pointPosition="m1p";
+					pointDirection="m1d";
+					renderQuality=2;
+					renderVisionMode=4;
+					fov=0.69999999;
+				};
+			};
+			class RightMirror
+			{
+				renderTarget="rendertarget1";
+				class CameraView1
+				{
+					pointPosition="m2p";
+					pointDirection="m2d";
+					renderQuality=2;
+					renderVisionMode=4;
+					fov=0.69999999;
+				};
 			};
 		};
 		class EventHandlers: EventHandlers
@@ -748,10 +1225,22 @@ class CfgVehicles
 				init="[_this select 0] execVM 'rhsafrf\addons\rhs_c_rva\scripts\init.sqf';(_this select 0) addeventhandler ['HandleDamage',{[_this,0.5,0.025,0.8,0.2] spawn rhs_fnc_activeTirePressure; _this select 2;}];";
 			};
 		};
+		unitInfoType="UnitInfoShip";
+		class Library
+		{
+			libTextDesc="$STR_RHS_ss21_lib";
+		};
 	};
-	class rhs_9k79: OTR21_Base;  //found empty after stripping
+	class rhs_9k79: OTR21_Base
+	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_9k79.paa";
+		author="$STR_RHS_AUTHOR_FULL";
+		scope=2;
+	};
 	class rhs_9k79_K: rhs_9k79
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_9k79_K.paa";
+		author="$STR_RHS_AUTHOR_FULL";
 		displayName="$STR_RHS_ss21K";
 		class Turrets: Turrets
 		{
@@ -766,6 +1255,8 @@ class CfgVehicles
 	};
 	class rhs_9k79_B: rhs_9k79
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_9k79_B.paa";
+		author="$STR_RHS_AUTHOR_FULL";
 		displayName="$STR_RHS_ss21B";
 		class Turrets: Turrets
 		{
@@ -860,6 +1351,7 @@ class ss21_main_dialog
 	idd=61461;
 	name="ss21_main_dialog";
 	movingEnable=0;
+	onLoad="[0] spawn rhs_fnc_ss21_dialog_control";
 	onUnload="[1] call rhs_fnc_ss21_dialog_control";
 	controlsBackground[]=
 	{
@@ -867,9 +1359,18 @@ class ss21_main_dialog
 		"ss21_background"
 	};
 	objects[]={};
+	controls[]=
+	{
+		"ss21_map",
+		"ss21_label",
+		"ss21_status",
+		"ss21_coord_control_group",
+		"ss21_btn_control_group"
+	};
 	class RHS_ss21_control_group
 	{
 		idc=-1;
+		type=15;
 		style=0;
 		class VScrollbar
 		{
@@ -902,6 +1403,7 @@ class ss21_main_dialog
 	class RHS_ss21_text: RscText
 	{
 		idc=-1;
+		type=0;
 		style=0;
 		x=0;
 		w=0.30000001;
@@ -911,10 +1413,12 @@ class ss21_main_dialog
 		colorBackground[]={0.5,0.5,0.5,0};
 		colorText[]={0.85000002,0.85000002,0.85000002,1};
 		font="PuristaMedium";
+		text="";
 	};
 	class RHS_ss21_text_border: RscPicture
 	{
 		idc=-1;
+		type=0;
 		style=0;
 		x=0;
 		w=0.30000001;
@@ -924,9 +1428,11 @@ class ss21_main_dialog
 		colorBackground[]={0,0,0,0.2};
 		colorText[]={0.85000002,0.85000002,0.85000002,1};
 		font="PuristaMedium";
+		text="";
 	};
 	class RHS_ss21_edit: RscEdit
 	{
+		type=2;
 		style="0x00+16";
 		idc=-1;
 		font="PuristaMedium";
@@ -939,10 +1445,12 @@ class ss21_main_dialog
 		h=0.059999999;
 		colorText[]={0.85000002,0.85000002,0.85000002,1};
 		colorSelection[]={1,1,1,1};
+		text="";
 	};
 	class RHS_ss21_image: RscPicture
 	{
 		idc=-1;
+		type=0;
 		style="48+0x800";
 		x=0.25;
 		w=0.1;
@@ -950,13 +1458,16 @@ class ss21_main_dialog
 		h=0.1;
 		colorText[]={1,1,1,1};
 		colorBackground[]={0,0,0,0};
+		text="";
 		font="PuristaMedium";
 		sizeEx=0.032000002;
 	};
 	class RHS_ss21_btn: RscShortcutButton
 	{
 		idc=-1;
+		type=16;
 		style=0;
+		text="btn";
 		action="";
 		x=0;
 		y=0;
@@ -992,6 +1503,7 @@ class ss21_main_dialog
 			right=0.0049999999;
 			bottom=0.0049999999;
 		};
+		textureNoShortcut="";
 		animTextureNormal="#(argb,8,8,3)color(1,1,1,0)";
 		animTextureDisabled="#(argb,8,8,3)color(1,1,1,0)";
 		animTextureOver="#(argb,8,8,3)color(1,1,1,0.0)";
@@ -1041,8 +1553,10 @@ class ss21_main_dialog
 	};
 	class RHS_ss21_list: RscListBox
 	{
+		type=5;
 		style=16;
 		idc=-1;
+		text="";
 		w=0.27500001;
 		h=0.039999999;
 		colorSelect[]={1,1,1,1};
@@ -1095,6 +1609,7 @@ class ss21_main_dialog
 	class RHS_ss21_map: RscMapControl
 	{
 		idc=-1;
+		type=101;
 		style=48;
 		x=0;
 		y=0;
@@ -1167,6 +1682,7 @@ class ss21_main_dialog
 		sizeExInfo=0.034000002;
 		fontLevel="PuristaMedium";
 		sizeExLevel=0.034000002;
+		text="#(argb,8,8,3)color(1,1,1,1)";
 		maxSatelliteAlpha=0;
 		alphaFadeStartScale=1;
 		alphaFadeEndScale=1.1;
@@ -1491,10 +2007,12 @@ class ss21_main_dialog
 		x="SafeZoneX";
 		y="SafeZoneY";
 		colorBackground[]={0,0,0,1};
+		text="";
 	};
 	class ss21_background
 	{
 		idc=-1;
+		type=0;
 		style=48;
 		x="0.1-0.03";
 		w="0.3*3 + 0.03*4";
@@ -1502,6 +2020,7 @@ class ss21_main_dialog
 		h="1+0.01*2+0.043*4";
 		colorText[]={1,1,1,1};
 		colorBackground[]={0,0,0,0};
+		text="#(argb,8,8,3)color(0,0,0,1)";
 		font="PuristaMedium";
 		sizeEx=0.032000002;
 	};
@@ -1513,6 +2032,7 @@ class ss21_main_dialog
 		y=0.050000001;
 		h=0.050000001;
 		sizeEx=0.050000001;
+		text="$STR_RHS_ss21_label";
 	};
 	class ss21_map: RHS_ss21_map
 	{
@@ -1528,6 +2048,7 @@ class ss21_main_dialog
 		x=0.1;
 		w="0.9 - 0.01";
 		y="1-0.1- 0.02";
+		text="--";
 	};
 	class ss21_coord_control_group: RHS_ss21_control_group
 	{
@@ -1543,6 +2064,7 @@ class ss21_main_dialog
 				x=0;
 				w="0.17 - 0.01";
 				y=0;
+				text="$STR_RHS_ss21_coord_desc";
 			};
 			class ss21_latitude_desc: RHS_ss21_text
 			{
@@ -1550,6 +2072,7 @@ class ss21_main_dialog
 				x=0;
 				w="0.17 - 0.01";
 				y=0.039999999;
+				text="$STR_RHS_ss21_latitude_desc";
 			};
 			class ss21_longitude_desc: RHS_ss21_text
 			{
@@ -1557,6 +2080,7 @@ class ss21_main_dialog
 				x=0;
 				w="0.17 - 0.01";
 				y="0.04*2";
+				text="$STR_RHS_ss21_longitude_desc";
 			};
 			class ss21_elevation_desc: RHS_ss21_text
 			{
@@ -1565,12 +2089,14 @@ class ss21_main_dialog
 				w="0.17 - 0.01";
 				y="0.04*3";
 				h=0.039999999;
+				text="$STR_RHS_ss21_elevation_desc";
 			};
 			class ss21_target_desc: RHS_ss21_text
 			{
 				x=0.17;
 				w="0.17 - 0.01";
 				y=0;
+				text="$STR_RHS_ss21_target_desc";
 			};
 			class ss21_target_x: RHS_ss21_text_border
 			{
@@ -1578,6 +2104,7 @@ class ss21_main_dialog
 				x=0.17;
 				w="0.17 - 0.01";
 				y="0.04*1";
+				text="--";
 			};
 			class ss21_target_y: RHS_ss21_text_border
 			{
@@ -1585,6 +2112,7 @@ class ss21_main_dialog
 				x=0.17;
 				w="0.17 - 0.01";
 				y="0.04*2";
+				text="--";
 			};
 			class ss21_target_z: RHS_ss21_text_border
 			{
@@ -1592,12 +2120,14 @@ class ss21_main_dialog
 				x=0.17;
 				w="0.17 - 0.01";
 				y="0.04*3";
+				text="--";
 			};
 			class ss21_tochka_desc: RHS_ss21_text
 			{
 				x="0.17*2";
 				w="0.17 - 0.01";
 				y=0;
+				text="$STR_RHS_ss21_tochka_desc";
 			};
 			class ss21_tochka_x: RHS_ss21_text_border
 			{
@@ -1605,6 +2135,7 @@ class ss21_main_dialog
 				x="0.17*2";
 				w="0.17 - 0.01";
 				y="0.04*1";
+				text="--";
 			};
 			class ss21_tochka_y: RHS_ss21_text_border
 			{
@@ -1612,6 +2143,7 @@ class ss21_main_dialog
 				x="0.17*2";
 				w="0.17 - 0.01";
 				y="0.04*2";
+				text="--";
 			};
 			class ss21_tochka_z: RHS_ss21_text_border
 			{
@@ -1619,6 +2151,7 @@ class ss21_main_dialog
 				x="0.17*2";
 				w="0.17 - 0.01";
 				y="0.04*3";
+				text="--";
 			};
 			class ss21_rel_desc: RHS_ss21_text
 			{
@@ -1626,6 +2159,7 @@ class ss21_main_dialog
 				x="0.17*4.3 - 0.03";
 				w="0.17 - 0.01 + 0.03";
 				y=0;
+				text="$STR_RHS_ss21_rel_desc";
 			};
 			class ss21_dir_desc: RHS_ss21_text
 			{
@@ -1633,6 +2167,7 @@ class ss21_main_dialog
 				x="0.17*3.3";
 				w="0.17 - 0.01";
 				y=0.039999999;
+				text="$STR_RHS_ss21_dir_desc";
 			};
 			class ss21_dist_desc: RHS_ss21_text
 			{
@@ -1640,6 +2175,7 @@ class ss21_main_dialog
 				x="0.17*3.3";
 				w="0.17 - 0.01";
 				y="0.04*2";
+				text="$STR_RHS_ss21_dist_desc";
 			};
 			class ss21_elevation_rel_desc: RHS_ss21_text
 			{
@@ -1647,6 +2183,7 @@ class ss21_main_dialog
 				x="0.17*3.3";
 				w="0.17 - 0.01";
 				y="0.04*3";
+				text="$STR_RHS_ss21_elevation_desc";
 			};
 			class ss21_rel_dir: RHS_ss21_text_border
 			{
@@ -1654,6 +2191,7 @@ class ss21_main_dialog
 				x="0.17*4.3";
 				w="0.17 - 0.01";
 				y="0.04*1";
+				text="--";
 			};
 			class ss21_rel_dist: RHS_ss21_text_border
 			{
@@ -1661,6 +2199,7 @@ class ss21_main_dialog
 				x="0.17*4.3";
 				w="0.17 - 0.01";
 				y="0.04*2";
+				text="--";
 			};
 			class ss21_rel_elev: RHS_ss21_text_border
 			{
@@ -1668,6 +2207,7 @@ class ss21_main_dialog
 				x="0.17*4.3";
 				w="0.17 - 0.01";
 				y="0.04*3";
+				text="--";
 			};
 		};
 	};
@@ -1685,6 +2225,7 @@ class ss21_main_dialog
 				x=0;
 				w=0.30000001;
 				y="0.043*1 + 0.032";
+				text="$STR_RHS_ss21_stable_desc";
 			};
 			class ss21_stable_up_btn: RHS_ss21_btn
 			{
@@ -1692,6 +2233,7 @@ class ss21_main_dialog
 				x=0;
 				w="0.3/2";
 				y="0.043*2";
+				text="$STR_RHS_ss21_stable_up_btn";
 				action="[2] spawn rhs_fnc_ss21_dialog_control";
 			};
 			class ss21_stable_down_btn: RHS_ss21_btn
@@ -1700,6 +2242,7 @@ class ss21_main_dialog
 				x="0.3/2";
 				w="0.3/2";
 				y="0.043*2";
+				text="$STR_RHS_ss21_stable_down_btn";
 				action="[3] spawn rhs_fnc_ss21_dialog_control";
 			};
 			class ss21_bay_desc: RHS_ss21_text
@@ -1708,6 +2251,7 @@ class ss21_main_dialog
 				x=0;
 				w=0.30000001;
 				y="0.043*3 + 0.032";
+				text="$STR_RHS_ss21_bay_desc";
 			};
 			class ss21_bay_close_btn: RHS_ss21_btn
 			{
@@ -1715,6 +2259,7 @@ class ss21_main_dialog
 				x=0;
 				w="0.3/2";
 				y="0.043*4";
+				text="$STR_RHS_ss21_bay_close_btn";
 				action="[4] spawn rhs_fnc_ss21_dialog_control";
 			};
 			class ss21_bay_open_btn: RHS_ss21_btn
@@ -1723,6 +2268,7 @@ class ss21_main_dialog
 				x="0.3/2";
 				w="0.3/2";
 				y="0.043*4";
+				text="$STR_RHS_ss21_bay_open_btn";
 				action="[5] spawn rhs_fnc_ss21_dialog_control";
 			};
 			class ss21_pylon_desc: RHS_ss21_text
@@ -1731,6 +2277,7 @@ class ss21_main_dialog
 				x=0;
 				w=0.30000001;
 				y="0.043*5 + 0.032";
+				text="$STR_RHS_ss21_pylon_desc";
 			};
 			class ss21_pylon_down_btn: RHS_ss21_btn
 			{
@@ -1738,6 +2285,7 @@ class ss21_main_dialog
 				x=0;
 				w="0.3/2";
 				y="0.043*6";
+				text="$STR_RHS_ss21_pylon_down_btn";
 				action="[6] spawn rhs_fnc_ss21_dialog_control";
 			};
 			class ss21_pylon_up_btn: RHS_ss21_btn
@@ -1746,6 +2294,7 @@ class ss21_main_dialog
 				x="0.3/2";
 				w="0.3/2";
 				y="0.043*6";
+				text="$STR_RHS_ss21_pylon_up_btn";
 				action="[7] spawn rhs_fnc_ss21_dialog_control";
 			};
 			class ss21_designate_target_btn: RHS_ss21_btn
@@ -1753,6 +2302,7 @@ class ss21_main_dialog
 				x=0;
 				w=0.30000001;
 				y=0.34999999;
+				text="$STR_RHS_ss21_designate_target_btn";
 				action="[10] call rhs_fnc_ss21_dialog_control";
 			};
 			class ss21_firing_position_btn: RHS_ss21_btn
@@ -1761,6 +2311,7 @@ class ss21_main_dialog
 				x=0;
 				w=0.30000001;
 				y="0.35+0.043*1";
+				text="$STR_RHS_ss21_firing_position_btn";
 				action="[8] spawn rhs_fnc_ss21_dialog_control";
 			};
 			class ss21_launch_btn: RHS_ss21_btn
@@ -1769,6 +2320,7 @@ class ss21_main_dialog
 				x=0;
 				w=0.30000001;
 				y="0.35+0.043*2";
+				text="$STR_RHS_ss21_launch_btn";
 				action="[12] spawn rhs_fnc_ss21_dialog_control";
 			};
 			class ss21_running_position_btn: RHS_ss21_btn
@@ -1777,6 +2329,7 @@ class ss21_main_dialog
 				x=0;
 				w=0.30000001;
 				y="0.35+0.043*3";
+				text="$STR_RHS_ss21_running_position_btn";
 				action="[9] spawn rhs_fnc_ss21_dialog_control";
 			};
 			class ss21_close_btn: RHS_ss21_btn
@@ -1784,6 +2337,7 @@ class ss21_main_dialog
 				x=0;
 				w=0.30000001;
 				y="0.35+0.043*4";
+				text="$STR_RHS_ss21_close_btn";
 				action="closeDialog 0";
 			};
 		};

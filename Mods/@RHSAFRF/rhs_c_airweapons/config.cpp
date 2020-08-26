@@ -26,7 +26,17 @@ class CfgPatches
 			"rhs_uxo_ptab25ko_module"
 		};
 		weapons[]={};
+		requiredVersion=1.5;
+		requiredAddons[]=
+		{
+			"rhs_main",
+			"rhs_c_heavyweapons"
+		};
+		author="$STR_RHS_AUTHOR_FULL";
+		url="http://www.rhsmods.org/";
+		authorUrl="http://redhammer.su";
 		versionDesc="RHS";
+		text="QUOTE(RHS 0.1.1.1)";
 	};
 };
 class SensorTemplatePassiveRadar;
@@ -64,10 +74,21 @@ class CfgAmmo
 	};
 	class rhs_ammo_s8: R_80mm_HE
 	{
+		AIAmmoUsageFlags="64+128+512";
 		cost=100;
 		initTime=0.02;
 		sideAirFriction=0.003;
 		proxyShape="\A3\Weapons_F_EPC\Ammo\Rocket_03_HE_F.p3d";
+		model="\A3\Weapons_F_EPC\Ammo\Rocket_03_HE_fly_F.p3d";
+		effectsMissile="RHS_Rocket_Fired";
+		effectsMissileInit="RHS_Rocket_Init";
+		soundFly[]=
+		{
+			"A3\Sounds_F\weapons\Rockets\rocket_fly_2",
+			1,
+			1.5,
+			700
+		};
 		submunitionAmmo="rhs_ammo_s8_penetrator";
 		submunitionDirectionType="SubmunitionModelDirection";
 		submunitionInitialOffset[]={0,0,-0.2};
@@ -89,6 +110,7 @@ class CfgAmmo
 	};
 	class rhs_ammo_s8DF: rhs_ammo_s8
 	{
+		AIAmmoUsageFlags="64+128";
 		cost=100;
 		submunitionAmmo="";
 		hit=210;
@@ -96,9 +118,25 @@ class CfgAmmo
 		indirectHitRange=20;
 		explosive=1;
 		allowAgainstInfantry=1;
+		class CamShakeExplode
+		{
+			power=22;
+			duration=2;
+			frequency=20;
+			distance=123.905;
+		};
+		class CamShakeHit
+		{
+			power=110;
+			duration=0.60000002;
+			frequency=20;
+			distance=1;
+		};
+		explosionEffects="RHS_FAE_Explosion";
 	};
 	class rhs_ammo_s8t: rhs_ammo_s8
 	{
+		AIAmmoUsageFlags="64+128+512";
 		submunitionAmmo="rhs_ammo_s8t_penetrator";
 		submunitionDirectionType="SubmunitionModelDirection";
 		submunitionInitialOffset[]={0,0,-0.2};
@@ -109,6 +147,7 @@ class CfgAmmo
 		indirectHit=40;
 		indirectHitRange=7;
 		craterEffects="ATRocketCrater";
+		explosionEffects="ATRocketExplosion";
 	};
 	class rhs_ammo_s8t_penetrator: rhs_ammo_base_penetrator
 	{
@@ -123,6 +162,7 @@ class CfgAmmo
 	class rhs_ammo_s13b: rhs_ammo_s8
 	{
 		proxyShape="\rhsafrf\addons\rhs_airweapons\s13_rockets\rhs_r_s13_gasket";
+		model="\rhsafrf\addons\rhs_airweapons\s13_rockets\rhs_r_s13b_fly";
 		hit=470;
 		indirectHit=240;
 		indirectHitRange=10;
@@ -130,16 +170,53 @@ class CfgAmmo
 		suppressionRadiusHit=120;
 		sideAirFriction=0.001;
 		thrusttime=0.60000002;
+		class CamShakeExplode
+		{
+			power=24.4;
+			duration=2.2;
+			frequency=20;
+			distance=208.36301;
+		};
+		class CamShakeHit
+		{
+			power=122;
+			duration=0.60000002;
+			frequency=20;
+			distance=1;
+		};
+		class CamShakeFire
+		{
+			power=3.3234601;
+			duration=2.2;
+			frequency=20;
+			distance=88.3629;
+		};
+		class CamShakePlayerFire
+		{
+			power=2;
+			duration=0.1;
+			frequency=20;
+			distance=1;
+		};
+		SoundSetExplosion[]=
+		{
+			"RocketsHeavy_Exp_SoundSet",
+			"RocketsHeavy_Tail_SoundSet",
+			"Explosion_Debris_SoundSet"
+		};
 	};
 	class rhs_ammo_s13of: rhs_ammo_s13b
 	{
 		submunitionAmmo="";
+		model="\rhsafrf\addons\rhs_airweapons\s13_rockets\rhs_r_s13of_fly";
 		hit=270;
 		indirectHit=120;
 		indirectHitRange=25;
 	};
 	class rhs_ammo_s13D: rhs_ammo_s13b
 	{
+		model="\rhsafrf\addons\rhs_airweapons\s13_rockets\rhs_r_s13d_fly";
+		AIAmmoUsageFlags="64+128";
 		cost=100;
 		submunitionAmmo="";
 		hit=210;
@@ -147,15 +224,32 @@ class CfgAmmo
 		indirectHitRange=15;
 		explosive=1;
 		allowAgainstInfantry=1;
+		class CamShakeExplode
+		{
+			power=22;
+			duration=2;
+			frequency=20;
+			distance=123.905;
+		};
+		class CamShakeHit
+		{
+			power=110;
+			duration=0.60000002;
+			frequency=20;
+			distance=1;
+		};
+		explosionEffects="RHS_FAE_Explosion";
 	};
 	class rhs_ammo_s13DF: rhs_ammo_s13D
 	{
+		model="\rhsafrf\addons\rhs_airweapons\s13_rockets\rhs_r_s13df_fly";
 		hit=260;
 		indirectHit=205;
 		indirectHitRange=20;
 	};
 	class rhs_ammo_s13t: rhs_ammo_s13b
 	{
+		AIAmmoUsageFlags="64+128+512";
 		submunitionAmmo="rhs_ammo_s13t_penetrator";
 		submunitionDirectionType="SubmunitionModelDirection";
 		submunitionInitialOffset[]={0,0,-0.2};
@@ -163,9 +257,11 @@ class CfgAmmo
 		submunitionInitSpeed=1000;
 		triggerOnImpact=1;
 		deleteParentWhenTriggered=0;
+		model="\rhsafrf\addons\rhs_airweapons\s13_rockets\rhs_r_s13t_fly";
 		indirectHit=30;
 		indirectHitRange=7;
 		craterEffects="ATRocketCrater";
+		explosionEffects="ATRocketExplosion";
 	};
 	class rhs_ammo_s13t_penetrator: rhs_ammo_base_penetrator
 	{
@@ -181,6 +277,7 @@ class CfgAmmo
 	{
 		submunitionAmmo="";
 		proxyShape="\rhsafrf\addons\rhs_airweapons\s5_rockets\rhs_r_s5m1";
+		model="\rhsafrf\addons\rhs_airweapons\s5_rockets\rhs_r_s5m1_fly";
 		hit=220;
 		indirectHit=20;
 		indirectHitRange=9;
@@ -189,10 +286,68 @@ class CfgAmmo
 		timetolive=12.5;
 		sideAirFriction=0.0040000002;
 		missileLockMaxDistance=1800;
+		class CamShakeExplode
+		{
+			power=11.4;
+			duration=1.6;
+			frequency=20;
+			distance=140.399;
+		};
+		class CamShakeHit
+		{
+			power=57;
+			duration=0.60000002;
+			frequency=20;
+			distance=1;
+		};
+		class CamShakeFire
+		{
+			power=2.7477;
+			duration=1.6;
+			frequency=20;
+			distance=60.398701;
+		};
+		class CamShakePlayerFire
+		{
+			power=2;
+			duration=0.1;
+			frequency=20;
+			distance=1;
+		};
+	};
+	class rhs_ammo_s5m1: rhs_ammo_s5
+	{
+		hit=200;
+		indirectHit=40;
+		indirectHitRange=12;
+	};
+	class rhs_ammo_s5k1: rhs_ammo_s5
+	{
+		AIAmmoUsageFlags="64+128+512";
+		submunitionAmmo="rhs_ammo_s5k1_penetrator";
+		submunitionDirectionType="SubmunitionModelDirection";
+		submunitionInitialOffset[]={0,0,-0.2};
+		submunitionParentSpeedCoef=0;
+		submunitionInitSpeed=1000;
+		triggerOnImpact=1;
+		deleteParentWhenTriggered=0;
+		indirectHit=40;
+		indirectHitRange=7;
+		craterEffects="ATRocketCrater";
+		explosionEffects="ATRocketExplosion";
+	};
+	class rhs_ammo_s5k1_penetrator: rhs_ammo_base_penetrator
+	{
+		submunitionConeType[]=
+		{
+			"randomcenter",
+			5
+		};
 		caliber=8.6666698;
 	};
 	class rhs_ammo_s5ko: rhs_ammo_s5
 	{
+		AIAmmoUsageFlags="64+128+512";
 		submunitionAmmo="rhs_ammo_s5ko_penetrator";
 		submunitionDirectionType="SubmunitionModelDirection";
 		submunitionInitialOffset[]={0,0,-0.2};
@@ -214,6 +369,7 @@ class CfgAmmo
 	class rhs_ammo_s5_ub32: rhs_ammo_s5_ub16;  //found empty after stripping
 	class rhs_ammo_s24_base: rhs_ammo_s13b
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_m_s24_fly";
 		proxyShape="\rhsafrf\addons\rhs_airweapons\rhs_m_s24";
 		hit=700;
 		indirectHit=140;
@@ -222,17 +378,129 @@ class CfgAmmo
 		suppressionRadiusHit=150;
 		sideAirFriction=0.055;
 		maxspeed=430;
+		class CamShakeExplode
+		{
+			power=48;
+			duration=3;
+			frequency=20;
+			distance=523.935;
+		};
+		class CamShakeHit
+		{
+			power=240;
+			duration=0.80000001;
+			frequency=20;
+			distance=1;
+		};
+		class CamShakeFire
+		{
+			power=3.9359801;
+			duration=3;
+			frequency=20;
+			distance=123.935;
+		};
+		class CamShakePlayerFire
+		{
+			power=2;
+			duration=0.1;
+			frequency=20;
+			distance=1;
+		};
+		SoundSetExplosion[]=
+		{
+			"BombsHeavy_Exp_SoundSet",
+			"BombsHeavy_Tail_SoundSet",
+			"Explosion_Debris_SoundSet"
+		};
 	};
-	class rhs_ammo_s24: rhs_ammo_s24_base;  //found empty after stripping
+	class rhs_ammo_s24: rhs_ammo_s24_base
+	{
+		effectsMissile="RHS_Rocket_Fired";
+	};
 	class rhs_ammo_s24b: rhs_ammo_s24_base;  //found empty after stripping
 	class rhs_ammo_s25_base: rhs_ammo_s24_base
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_m_s25of_fly";
 		proxyShape="\rhsafrf\addons\rhs_airweapons\rhs_m_s25of";
 		hit=700;
 		indirectHit=160;
 		indirectHitRange=30;
 		sideAirFriction=0.045000002;
 		maxspeed=700;
+		class CamShakeExplode
+		{
+			power=68;
+			duration=3.5999999;
+			frequency=20;
+			distance=707.513;
+		};
+		class CamShakeHit
+		{
+			power=340;
+			duration=0.80000001;
+			frequency=20;
+			distance=1;
+		};
+		class CamShakeFire
+		{
+			power=4.2940798;
+			duration=3.5999999;
+			frequency=20;
+			distance=147.513;
+		};
+		class CamShakePlayerFire
+		{
+			power=2;
+			duration=0.1;
+			frequency=20;
+			distance=1;
+		};
+	};
+	class rhs_ammo_s25o: rhs_ammo_s25_base
+	{
+		proximityExplosionDistance=10;
+	};
+	class rhs_ammo_s25of: rhs_ammo_s25_base
+	{
+		hit=650;
+		indirectHit=150;
+		indirectHitRange=35;
+	};
+	class rhs_ammo_s25l: rhs_ammo_s25_base
+	{
+		maxControlRange=7000;
+		missileLockMaxDistance=7000;
+		missileLockMinDistance=1000;
+		weaponLockSystem="4 + 16";
+		class Components
+		{
+			class SensorsManagerComponent
+			{
+				class Components
+				{
+					class LaserSensorComponent: SensorTemplateLaser
+					{
+						class AirTarget
+						{
+							minRange=7000;
+							maxRange=7000;
+							objectDistanceLimitCoef=-1;
+							viewDistanceLimitCoef=-1;
+						};
+						class GroundTarget
+						{
+							minRange=7000;
+							maxRange=7000;
+							objectDistanceLimitCoef=-1;
+							viewDistanceLimitCoef=-1;
+						};
+						maxTrackableSpeed=30;
+						angleRangeHorizontal=180;
+						angleRangeVertical=180;
+					};
+				};
+			};
+		};
 	};
 	class rhs_ammo_s25ld: rhs_ammo_s25l
 	{
@@ -248,11 +516,15 @@ class CfgAmmo
 					{
 						class AirTarget
 						{
+							minRange=10000;
+							maxRange=10000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
 						class GroundTarget
 						{
+							minRange=10000;
+							maxRange=10000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
@@ -289,6 +561,7 @@ class CfgAmmo
 		tracklead=0.94999999;
 		trackoversteer=0.94999999;
 		whistledist=3;
+		model="\A3\Weapons_F\Ammo\Missile_AT_03_fly_F";
 		proxyShape="\rhsafrf\addons\rhs_a2port_air\data\rhs_m_9m114";
 		maverickWeaponIndexOffset=30;
 		rhs_saclos=2;
@@ -310,6 +583,7 @@ class CfgAmmo
 	class rhs_ammo_9m114m: rhs_ammo_9m114;  //found empty after stripping
 	class rhs_ammo_9m114f: rhs_ammo_9m114
 	{
+		AIAmmoUsageFlags="64+128";
 		allowAgainstInfantry=1;
 		cost=100;
 		submunitionAmmo="";
@@ -317,6 +591,21 @@ class CfgAmmo
 		indirectHit=175;
 		indirectHitRange=15;
 		explosive=1;
+		class CamShakeExplode
+		{
+			power=22;
+			duration=2;
+			frequency=20;
+			distance=403.905;
+		};
+		class CamShakeHit
+		{
+			power=110;
+			duration=0.60000002;
+			frequency=20;
+			distance=1;
+		};
+		explosionEffects="RHS_FAE_Explosion";
 	};
 	class rhs_ammo_9m114m1: rhs_ammo_9m114
 	{
@@ -350,6 +639,7 @@ class CfgAmmo
 		tracklead=0;
 		trackoversteer=1;
 		whistledist=3;
+		model="\A3\Weapons_F\Ammo\Missile_AT_03_fly_F";
 		proxyShape="\rhsafrf\addons\rhs_airweapons\rhs_m_9m120";
 		maverickWeaponIndexOffset=30;
 		rhs_saclos=2;
@@ -387,6 +677,7 @@ class CfgAmmo
 	};
 	class rhs_ammo_9m120f: rhs_ammo_9m120
 	{
+		AIAmmoUsageFlags="64+128";
 		allowAgainstInfantry=1;
 		cost=100;
 		submunitionAmmo="";
@@ -394,9 +685,25 @@ class CfgAmmo
 		indirectHit=175;
 		indirectHitRange=15;
 		explosive=1;
+		class CamShakeExplode
+		{
+			power=22;
+			duration=2;
+			frequency=20;
+			distance=403.905;
+		};
+		class CamShakeHit
+		{
+			power=110;
+			duration=0.60000002;
+			frequency=20;
+			distance=1;
+		};
+		explosionEffects="RHS_FAE_Explosion";
 	};
 	class rhs_ammo_9m120o: rhs_ammo_9m120
 	{
+		AIAmmoUsageFlags="64+128";
 		allowAgainstInfantry=1;
 		cost=100;
 		hit=210;
@@ -432,6 +739,7 @@ class CfgAmmo
 	};
 	class rhs_ammo_r27_base: Missile_AA_04_F
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_m_r27r_fly";
 		proxyShape="\rhsafrf\addons\rhs_airweapons\rhs_m_r27r";
 		hit=180;
 		indirecthit=170;
@@ -480,14 +788,19 @@ class CfgAmmo
 					{
 						class AirTarget
 						{
+							minRange=16000;
+							maxRange=16000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
 						class GroundTarget
 						{
+							minRange=14000;
+							maxRange=14000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
+						typeRecognitionDistance=-1;
 						angleRangeHorizontal=45;
 						angleRangeVertical=45;
 						groundNoiseDistanceCoef=0.1;
@@ -501,6 +814,7 @@ class CfgAmmo
 	};
 	class rhs_ammo_r27er: rhs_ammo_r27r
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_m_r27er_fly";
 		proxyShape="\rhsafrf\addons\rhs_airweapons\rhs_m_r27er";
 		missileLockMaxDistance=20000;
 		timetolive=80;
@@ -514,14 +828,19 @@ class CfgAmmo
 					{
 						class AirTarget
 						{
+							minRange=20000;
+							maxRange=20000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
 						class GroundTarget
 						{
+							minRange=14000;
+							maxRange=14000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
+						typeRecognitionDistance=-1;
 						angleRangeHorizontal=45;
 						angleRangeVertical=45;
 						groundNoiseDistanceCoef=0.1;
@@ -535,6 +854,7 @@ class CfgAmmo
 	};
 	class rhs_ammo_r27t: rhs_ammo_r27_base
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_m_r27t_fly";
 		proxyShape="\rhsafrf\addons\rhs_airweapons\rhs_m_r27t";
 		weaponLockSystem="2 + 16";
 		missileLockCone=15;
@@ -565,14 +885,19 @@ class CfgAmmo
 					{
 						class AirTarget
 						{
+							minRange=500;
+							maxRange=4000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=1;
 						};
 						class GroundTarget
 						{
+							minRange=500;
+							maxRange=3500;
 							objectDistanceLimitCoef=1;
 							viewDistanceLimitCoef=1;
 						};
+						typeRecognitionDistance=-1;
 						angleRangeHorizontal=15;
 						angleRangeVertical=15;
 						maxTrackableSpeed=1200;
@@ -584,12 +909,14 @@ class CfgAmmo
 	};
 	class rhs_ammo_r27et: rhs_ammo_r27t
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_m_r27et_fly";
 		proxyShape="\rhsafrf\addons\rhs_airweapons\rhs_m_r27et";
 		timetolive=70;
 		missileLockMaxDistance=26000;
 	};
 	class rhs_ammo_r60_base: Missile_AA_04_F
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_m_r60_fly";
 		proxyShape="\rhsafrf\addons\rhs_airweapons\rhs_m_r60";
 		hit=180;
 		indirecthit=50;
@@ -634,11 +961,15 @@ class CfgAmmo
 					{
 						class AirTarget
 						{
+							minRange=500;
+							maxRange=5000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=1;
 						};
 						class GroundTarget
 						{
+							minRange=500;
+							maxRange=4500;
 							objectDistanceLimitCoef=1;
 							viewDistanceLimitCoef=1;
 						};
@@ -670,11 +1001,15 @@ class CfgAmmo
 					{
 						class AirTarget
 						{
+							minRange=500;
+							maxRange=8000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=1;
 						};
 						class GroundTarget
 						{
+							minRange=500;
+							maxRange=8500;
 							objectDistanceLimitCoef=1;
 							viewDistanceLimitCoef=1;
 						};
@@ -689,11 +1024,19 @@ class CfgAmmo
 	};
 	class rhs_ammo_r73: Missile_AA_04_F
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_m_r73_fly";
 		proxyShape="\rhsafrf\addons\rhs_airweapons\rhs_m_r73";
 		cost=800;
 		effectsmissile="missile3";
 		cratereffects="AAMissileCrater";
 		explosioneffects="AAMissileExplosion";
+		soundFly[]=
+		{
+			"A3\Sounds_F\weapons\Rockets\rocket_fly_2",
+			1,
+			1.5,
+			700
+		};
 		hit=150;
 		indirecthit=90;
 		indirecthitrange=9;
@@ -736,11 +1079,15 @@ class CfgAmmo
 					{
 						class AirTarget
 						{
+							minRange=500;
+							maxRange=8000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=1;
 						};
 						class GroundTarget
 						{
+							minRange=500;
+							maxRange=4500;
 							objectDistanceLimitCoef=1;
 							viewDistanceLimitCoef=1;
 						};
@@ -755,6 +1102,7 @@ class CfgAmmo
 	};
 	class rhs_ammo_r73m: rhs_ammo_r73
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_m_r74_fly";
 		proxyShape="\rhsafrf\addons\rhs_airweapons\rhs_m_r74";
 		cmimmunity=0.92000002;
 		missileLockCone=60;
@@ -762,6 +1110,7 @@ class CfgAmmo
 	};
 	class rhs_ammo_r74: rhs_ammo_r73m
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_m_r74_fly";
 		proxyShape="\rhsafrf\addons\rhs_airweapons\rhs_m_r74";
 		cost=900;
 		hit=190;
@@ -771,6 +1120,7 @@ class CfgAmmo
 	};
 	class rhs_ammo_r74m2: rhs_ammo_r74
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_m_r74m2_fly";
 		proxyShape="\rhsafrf\addons\rhs_airweapons\rhs_m_r74m2";
 		maneuvrability=47;
 		inittime=0.5;
@@ -783,6 +1133,7 @@ class CfgAmmo
 	};
 	class rhs_ammo_r77: rhs_ammo_r73
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_m_r77_fly";
 		proxyShape="\rhsafrf\addons\rhs_airweapons\rhs_m_r77";
 		inittime=0.5;
 		cost=900;
@@ -813,14 +1164,19 @@ class CfgAmmo
 					{
 						class AirTarget
 						{
+							minRange=25000;
+							maxRange=25000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
 						class GroundTarget
 						{
+							minRange=25000;
+							maxRange=25000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
+						typeRecognitionDistance=-1;
 						angleRangeHorizontal=45;
 						angleRangeVertical=45;
 						groundNoiseDistanceCoef=0.1;
@@ -834,6 +1190,7 @@ class CfgAmmo
 	};
 	class rhs_ammo_r77m: rhs_ammo_r77
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_m_r77m_fly";
 		proxyShape="\rhsafrf\addons\rhs_airweapons\rhs_m_r77m";
 		cost=1000;
 		hit=330;
@@ -865,6 +1222,21 @@ class CfgAmmo
 		missileLockMinDistance=2000;
 		missileLockMaxSpeed=55;
 		cameraViewAvailable=0;
+		effectsMissile="RHS_Rocket_Fired";
+		class CamShakeExplode
+		{
+			power=102;
+			duration=4.5999999;
+			frequency=20;
+			distance=900.66498;
+		};
+		class CamShakeHit
+		{
+			power=510;
+			duration=1;
+			frequency=20;
+			distance=1;
+		};
 	};
 	class rhs_ammo_kh25: rhs_ammo_kh25_base
 	{
@@ -881,11 +1253,15 @@ class CfgAmmo
 					{
 						class AirTarget
 						{
+							minRange=7000;
+							maxRange=7000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
 						class GroundTarget
 						{
+							minRange=7000;
+							maxRange=7000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
@@ -910,11 +1286,15 @@ class CfgAmmo
 					{
 						class AirTarget
 						{
+							minRange=500;
+							maxRange=10000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=1;
 						};
 						class GroundTarget
 						{
+							minRange=500;
+							maxRange=10000;
 							objectDistanceLimitCoef=1;
 							viewDistanceLimitCoef=1;
 						};
@@ -926,11 +1306,15 @@ class CfgAmmo
 					{
 						class AirTarget
 						{
+							minRange=8000;
+							maxRange=8000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
 						class GroundTarget
 						{
+							minRange=8000;
+							maxRange=8000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
@@ -955,11 +1339,15 @@ class CfgAmmo
 					{
 						class AirTarget
 						{
+							minRange=10000;
+							maxRange=10000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
 						class GroundTarget
 						{
+							minRange=5000;
+							maxRange=5000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
@@ -999,11 +1387,15 @@ class CfgAmmo
 					{
 						class AirTarget
 						{
+							minRange=500;
+							maxRange=8000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=1;
 						};
 						class GroundTarget
 						{
+							minRange=500;
+							maxRange=8000;
 							objectDistanceLimitCoef=1;
 							viewDistanceLimitCoef=1;
 						};
@@ -1031,11 +1423,15 @@ class CfgAmmo
 					{
 						class AirTarget
 						{
+							minRange=500;
+							maxRange=9000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=1;
 						};
 						class GroundTarget
 						{
+							minRange=500;
+							maxRange=9000;
 							objectDistanceLimitCoef=1;
 							viewDistanceLimitCoef=1;
 						};
@@ -1061,11 +1457,15 @@ class CfgAmmo
 					{
 						class AirTarget
 						{
+							minRange=500;
+							maxRange=10000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=1;
 						};
 						class GroundTarget
 						{
+							minRange=500;
+							maxRange=10000;
 							objectDistanceLimitCoef=1;
 							viewDistanceLimitCoef=1;
 						};
@@ -1092,12 +1492,14 @@ class CfgAmmo
 		submunitionInitSpeed=1000;
 		triggerOnImpact=1;
 		deleteParentWhenTriggered=0;
+		model="\rhsafrf\addons\rhs_a2port_air\data\rhs_m_kh29_fly";
 		proxyShape="\rhsafrf\addons\rhs_a2port_air\data\rhs_m_kh29";
 		maverickWeaponIndexOffset=0;
 		hit=1330;
 		indirecthit=300;
 		indirecthitrange=17;
 		cratereffects="BombCrater";
+		effectsMissile="RHS_Rocket_Fired";
 		explosioneffects="BombExplosion";
 		maxspeed=720;
 		maneuvrability=10;
@@ -1122,6 +1524,26 @@ class CfgAmmo
 		missileLockMinDistance=1500;
 		missileLockMaxSpeed=55;
 		cameraViewAvailable=0;
+		class CamShakeExplode
+		{
+			power=180;
+			duration=6;
+			frequency=20;
+			distance=1240;
+		};
+		class CamShakeHit
+		{
+			power=900;
+			duration=1;
+			frequency=20;
+			distance=1;
+		};
+		SoundSetExplosion[]=
+		{
+			"BombsHeavy_Exp_SoundSet",
+			"BombsHeavy_Tail_SoundSet",
+			"Explosion_Debris_SoundSet"
+		};
 	};
 	class rhs_ammo_kh29l: rhs_ammo_kh29_base
 	{
@@ -1135,11 +1557,15 @@ class CfgAmmo
 					{
 						class AirTarget
 						{
+							minRange=10000;
+							maxRange=10000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
 						class GroundTarget
 						{
+							minRange=10000;
+							maxRange=10000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
@@ -1163,11 +1589,15 @@ class CfgAmmo
 					{
 						class AirTarget
 						{
+							minRange=500;
+							maxRange=8000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=1;
 						};
 						class GroundTarget
 						{
+							minRange=500;
+							maxRange=8000;
 							objectDistanceLimitCoef=1;
 							viewDistanceLimitCoef=1;
 						};
@@ -1179,11 +1609,15 @@ class CfgAmmo
 					{
 						class AirTarget
 						{
+							minRange=10000;
+							maxRange=10000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
 						class GroundTarget
 						{
+							minRange=10000;
+							maxRange=10000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
@@ -1214,11 +1648,15 @@ class CfgAmmo
 					{
 						class AirTarget
 						{
+							minRange=500;
+							maxRange=9000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=1;
 						};
 						class GroundTarget
 						{
+							minRange=500;
+							maxRange=9000;
 							objectDistanceLimitCoef=1;
 							viewDistanceLimitCoef=1;
 						};
@@ -1247,11 +1685,15 @@ class CfgAmmo
 					{
 						class AirTarget
 						{
+							minRange=10000;
+							maxRange=10000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
 						class GroundTarget
 						{
+							minRange=5000;
+							maxRange=5000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
@@ -1276,11 +1718,15 @@ class CfgAmmo
 					{
 						class AirTarget
 						{
+							minRange=500;
+							maxRange=9000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=1;
 						};
 						class GroundTarget
 						{
+							minRange=500;
+							maxRange=9000;
 							objectDistanceLimitCoef=1;
 							viewDistanceLimitCoef=1;
 						};
@@ -1307,11 +1753,26 @@ class CfgAmmo
 		submunitionInitSpeed=1000;
 		triggerOnImpact=1;
 		deleteParentWhenTriggered=0;
+		model="\rhsafrf\addons\rhs_airweapons\rhs_m_kh38m_fly";
 		proxyShape="\rhsafrf\addons\rhs_airweapons\rhs_m_kh38m";
 		hit=830;
 		indirectHit=105;
 		indirectHitRange=10;
 		maxspeed=748;
+		class CamShakeExplode
+		{
+			power=102;
+			duration=4.5999999;
+			frequency=20;
+			distance=1060.67;
+		};
+		class CamShakeHit
+		{
+			power=510;
+			duration=1;
+			frequency=20;
+			distance=1;
+		};
 	};
 	class rhs_ammo_kh38mle: rhs_ammo_kh38m_base
 	{
@@ -1326,11 +1787,15 @@ class CfgAmmo
 					{
 						class AirTarget
 						{
+							minRange=500;
+							maxRange=8000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=1;
 						};
 						class GroundTarget
 						{
+							minRange=500;
+							maxRange=8000;
 							objectDistanceLimitCoef=1;
 							viewDistanceLimitCoef=1;
 						};
@@ -1342,11 +1807,15 @@ class CfgAmmo
 					{
 						class AirTarget
 						{
+							minRange=8000;
+							maxRange=8000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
 						class GroundTarget
 						{
+							minRange=8000;
+							maxRange=8000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
@@ -1364,6 +1833,7 @@ class CfgAmmo
 	};
 	class rhs_ammo_kh38mae: rhs_ammo_kh38m_base
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_m_kh38mae_fly";
 		proxyShape="\rhsafrf\addons\rhs_airweapons\rhs_m_kh38mae";
 		weaponLockSystem="8 + 16";
 		class Components: Components
@@ -1376,11 +1846,15 @@ class CfgAmmo
 					{
 						class AirTarget
 						{
+							minRange=10000;
+							maxRange=10000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
 						class GroundTarget
 						{
+							minRange=5000;
+							maxRange=5000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
@@ -1406,6 +1880,7 @@ class CfgAmmo
 	};
 	class rhs_ammo_kh38mte: rhs_ammo_kh38m_base
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_m_kh38mte_fly";
 		proxyShape="\rhsafrf\addons\rhs_airweapons\rhs_m_kh38mte";
 		weaponLockSystem="2 + 16";
 		class Components: Components
@@ -1418,11 +1893,15 @@ class CfgAmmo
 					{
 						class AirTarget
 						{
+							minRange=500;
+							maxRange=6000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=1;
 						};
 						class GroundTarget
 						{
+							minRange=500;
+							maxRange=6000;
 							objectDistanceLimitCoef=1;
 							viewDistanceLimitCoef=1;
 						};
@@ -1447,7 +1926,11 @@ class CfgAmmo
 	class rhs_ammo_kh55sm: rhs_ammo_kh29l
 	{
 		submunitionAmmo="";
+		model="\rhsafrf\addons\rhs_airweapons\rhs_m_kh55sm_fly";
 		proxyShape="\rhsafrf\addons\rhs_airweapons\rhs_m_kh55sm";
+		CraterEffects="RHS_HeavyBombCrater";
+		explosionEffects="RHS_HeavyBombExplosion";
+		effectsMissile="missile5";
 		hit=9920;
 		indirecthit=1300;
 		indirecthitrange=56;
@@ -1467,12 +1950,40 @@ class CfgAmmo
 		lockType=0;
 		irlock=1;
 		laserlock=1;
+		soundFly[]=
+		{
+			"A3\Sounds_F\arsenal\weapons\Launchers\NLAW\Fly_NLAW",
+			2.5,
+			1.5,
+			10800
+		};
+		SoundSetExplosion[]=
+		{
+			"BombsHeavy_Exp_SoundSet",
+			"BombsHeavy_Tail_SoundSet",
+			"Explosion_Debris_SoundSet"
+		};
 		RHS_yield=50000;
 		RHS_FuseRange=100;
 		RHS_WarheadType="NUKE";
+		class CamShakeExplode
+		{
+			power=140;
+			duration=5.1999998;
+			frequency=20;
+			distance=2011.66;
+		};
+		class CamShakeHit
+		{
+			power=700;
+			duration=1;
+			frequency=20;
+			distance=1;
+		};
 	};
 	class rhs_ammo_kh55sm_nocamo: rhs_ammo_kh55sm
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_m_kh55sm2_fly";
 		proxyShape="\rhsafrf\addons\rhs_airweapons\rhs_m_kh55sm2";
 	};
 	class rhs_ammo_kh55sh: rhs_ammo_kh55sm
@@ -1510,6 +2021,7 @@ class CfgAmmo
 		autoSeekTarget=0;
 		aiAmmoUsageFlags="64 + 128 + 512";
 		weaponLockSystem=1;
+		model="\rhsafrf\addons\rhs_airweapons\rhs_m_fab100";
 		proxyShape="\rhsafrf\addons\rhs_airweapons\rhs_m_fab100";
 		soundFakeFall0[]=
 		{
@@ -1565,15 +2077,18 @@ class CfgAmmo
 		indirectHitRange=15;
 		dangerRadiusHit=1250;
 		suppressionRadiusHit=100;
+		model="\rhsafrf\addons\rhs_a2port_air\data\rhs_m_fab250";
 		proxyShape="\rhsafrf\addons\rhs_a2port_air\data\rhs_m_fab250";
 	};
 	class rhs_ammo_fab250_m62: rhs_ammo_fab250
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_m_fab250m62";
 		proxyShape="\rhsafrf\addons\rhs_airweapons\rhs_m_fab250m62";
 		sideAirFriction=0.1;
 	};
 	class rhs_ammo_ofab250: rhs_ammo_fab250
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_m_ofab250";
 		proxyShape="\rhsafrf\addons\rhs_airweapons\rhs_m_ofab250";
 	};
 	class rhs_ammo_kab250: bomb_04_f
@@ -1591,6 +2106,7 @@ class CfgAmmo
 		indirectHit=1140;
 		indirectHitRange=15;
 		explosionForceCoef=10;
+		model="\rhsafrf\addons\rhs_airweapons\rhs_m_kab250.p3d";
 		proxyShape="\rhsafrf\addons\rhs_airweapons\rhs_m_kab250.p3d";
 		maverickWeaponIndexOffset=0;
 	};
@@ -1628,6 +2144,7 @@ class CfgAmmo
 	};
 	class rhs_ammo_rbk250_ptab25: rhs_ammo_rbk250_ao1
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_m_rbk250275";
 		proxyShape="\rhsafrf\addons\rhs_airweapons\rhs_m_rbk250275";
 		submunitionConeAngle=8;
 		submunitionAmmo[]=
@@ -1645,6 +2162,7 @@ class CfgAmmo
 	};
 	class rhs_ammo_rbk250_zab25t: rhs_ammo_rbk250_ao1
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_m_rbk250275";
 		proxyShape="\rhsafrf\addons\rhs_airweapons\rhs_m_rbk250275";
 		submunitionAmmo[]=
 		{
@@ -1662,9 +2180,12 @@ class CfgAmmo
 		hit=15;
 		indirectHit=8;
 		indirectHitRange=5;
+		model="\rhsafrf\addons\rhs_airweapons\rhs_m_ao1sh";
+		effectFly="";
 	};
 	class rhs_ammo_ao1_uxo_deploy: UXO_deploy_BombCluster_base_F
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_m_ao1sh";
 		submunitionAmmo[]=
 		{
 			"rhs_ammo_uxo_ao1_1_deploy",
@@ -1677,6 +2198,7 @@ class CfgAmmo
 	};
 	class rhs_ammo_uxo_ao1_1_deploy: ShotDeployBase
 	{
+		model="\rhsafrf\addons\rhs_airweapons\uxo\rhs_uxo_ao1sh_1";
 		submunitionAmmo="rhs_ammo_uxo_ao1_1";
 	};
 	class rhs_ammo_uxo_ao1_1: APERSMine_Range_Ammo
@@ -1685,6 +2207,7 @@ class CfgAmmo
 		indirectHit=8;
 		indirectHitRange=5;
 		icon="iconExplosiveUXO";
+		model="\rhsafrf\addons\rhs_airweapons\uxo\rhs_uxo_ao1sh_1";
 		mineModelDisabled="\rhsafrf\addons\rhs_airweapons\uxo\rhs_uxo_ao1sh_3";
 		defaultMagazine="";
 		mineTrigger="UXOTrigger1";
@@ -1693,22 +2216,27 @@ class CfgAmmo
 	};
 	class rhs_ammo_uxo_ao1_2_deploy: ShotDeployBase
 	{
+		model="\rhsafrf\addons\rhs_airweapons\uxo\rhs_uxo_ao1sh_2";
 		submunitionAmmo="rhs_ammo_uxo_ao1_2";
 	};
 	class rhs_ammo_uxo_ao1_2: rhs_ammo_uxo_ao1_1
 	{
+		model="\rhsafrf\addons\rhs_airweapons\uxo\rhs_uxo_ao1sh_2";
 		mineTrigger="UXOTrigger2";
 	};
 	class rhs_ammo_uxo_ao1_3_deploy: ShotDeployBase
 	{
+		model="\rhsafrf\addons\rhs_airweapons\uxo\rhs_uxo_ao1sh_3";
 		submunitionAmmo="rhs_ammo_uxo_ao1_3";
 	};
 	class rhs_ammo_uxo_ao1_3: rhs_ammo_uxo_ao1_1
 	{
+		model="\rhsafrf\addons\rhs_airweapons\uxo\rhs_uxo_ao1sh_3";
 		mineTrigger="UXOTrigger3";
 	};
 	class rhs_ammo_sub_ptab25m: rhs_ammo_sub_ao1
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_m_ptab25m";
 		submunitionAmmo="rhs_ammo_sub_ptab25m_penetrator";
 		submunitionDirectionType="SubmunitionModelDirection";
 		submunitionInitialOffset[]={0,0,-0.2};
@@ -1731,6 +2259,7 @@ class CfgAmmo
 	};
 	class rhs_ammo_ptab25m_uxo_deploy: UXO_deploy_BombCluster_base_F
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_m_ptab25m";
 		submunitionAmmo[]=
 		{
 			"rhs_ammo_uxo_ptab25m_1_deploy",
@@ -1743,6 +2272,7 @@ class CfgAmmo
 	};
 	class rhs_ammo_uxo_ptab25m_1_deploy: ShotDeployBase
 	{
+		model="\rhsafrf\addons\rhs_airweapons\uxo\rhs_uxo_ptab25m_1";
 		submunitionAmmo="rhs_ammo_uxo_ptab25m_1";
 	};
 	class rhs_ammo_uxo_ptab25m_1: APERSMine_Range_Ammo
@@ -1751,6 +2281,7 @@ class CfgAmmo
 		indirectHit=8;
 		indirectHitRange=4;
 		icon="iconExplosiveUXO";
+		model="\rhsafrf\addons\rhs_airweapons\uxo\rhs_uxo_ptab25m_1";
 		mineModelDisabled="\rhsafrf\addons\rhs_airweapons\uxo\rhs_uxo_ptab25m_3";
 		defaultMagazine="";
 		mineTrigger="UXOTrigger1";
@@ -1759,22 +2290,27 @@ class CfgAmmo
 	};
 	class rhs_ammo_uxo_ptab25m_2_deploy: ShotDeployBase
 	{
+		model="\rhsafrf\addons\rhs_airweapons\uxo\rhs_uxo_ptab25m_2";
 		submunitionAmmo="rhs_ammo_uxo_ptab25m_2";
 	};
 	class rhs_ammo_uxo_ptab25m_2: rhs_ammo_uxo_ptab25m_1
 	{
+		model="\rhsafrf\addons\rhs_airweapons\uxo\rhs_uxo_ptab25m_2";
 		mineTrigger="UXOTrigger2";
 	};
 	class rhs_ammo_uxo_ptab25m_3_deploy: ShotDeployBase
 	{
+		model="\rhsafrf\addons\rhs_airweapons\uxo\rhs_uxo_ptab25m_3";
 		submunitionAmmo="rhs_ammo_uxo_ptab25m_3";
 	};
 	class rhs_ammo_uxo_ptab25m_3: rhs_ammo_uxo_ptab25m_1
 	{
+		model="\rhsafrf\addons\rhs_airweapons\uxo\rhs_uxo_ptab25m_3";
 		mineTrigger="UXOTrigger3";
 	};
 	class rhs_ammo_sub_ptab25ko: rhs_ammo_sub_ptab25m
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_m_ptab25ko";
 		submunitionAmmo="rhs_ammo_sub_ptab25ko_penetrator";
 		submunitionDirectionType="SubmunitionModelDirection";
 		submunitionInitialOffset[]={0,0,-0.2};
@@ -1797,6 +2333,7 @@ class CfgAmmo
 	};
 	class rhs_ammo_ptab25ko_uxo_deploy: UXO_deploy_BombCluster_base_F
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_m_ptab25ko";
 		submunitionAmmo[]=
 		{
 			"rhs_ammo_uxo_ptab25ko_1_deploy",
@@ -1809,6 +2346,7 @@ class CfgAmmo
 	};
 	class rhs_ammo_uxo_ptab25ko_1_deploy: ShotDeployBase
 	{
+		model="\rhsafrf\addons\rhs_airweapons\uxo\rhs_uxo_ptab25ko_1";
 		submunitionAmmo="rhs_ammo_uxo_ptab25ko_1";
 	};
 	class rhs_ammo_uxo_ptab25ko_1: APERSMine_Range_Ammo
@@ -1817,6 +2355,7 @@ class CfgAmmo
 		indirectHit=8;
 		indirectHitRange=8;
 		icon="iconExplosiveUXO";
+		model="\rhsafrf\addons\rhs_airweapons\uxo\rhs_uxo_ptab25ko_1";
 		mineModelDisabled="\rhsafrf\addons\rhs_airweapons\uxo\rhs_uxo_ptab25ko_3";
 		defaultMagazine="";
 		mineTrigger="UXOTrigger1";
@@ -1825,22 +2364,27 @@ class CfgAmmo
 	};
 	class rhs_ammo_uxo_ptab25ko_2_deploy: ShotDeployBase
 	{
+		model="\rhsafrf\addons\rhs_airweapons\uxo\rhs_uxo_ptab25ko_2";
 		submunitionAmmo="rhs_ammo_uxo_ptab25ko_2";
 	};
 	class rhs_ammo_uxo_ptab25ko_2: rhs_ammo_uxo_ptab25ko_1
 	{
+		model="\rhsafrf\addons\rhs_airweapons\uxo\rhs_uxo_ptab25ko_2";
 		mineTrigger="UXOTrigger2";
 	};
 	class rhs_ammo_uxo_ptab25ko_3_deploy: ShotDeployBase
 	{
+		model="\rhsafrf\addons\rhs_airweapons\uxo\rhs_uxo_ptab25ko_3";
 		submunitionAmmo="rhs_ammo_uxo_ptab25ko_3";
 	};
 	class rhs_ammo_uxo_ptab25ko_3: rhs_ammo_uxo_ptab25ko_1
 	{
+		model="\rhsafrf\addons\rhs_airweapons\uxo\rhs_uxo_ptab25ko_3";
 		mineTrigger="UXOTrigger3";
 	};
 	class rhs_ammo_sub_zab25t_deploy: rhs_ammo_rbk250_ao1
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_m_zab25t";
 		hit=1;
 		indirectHit=1;
 		indirectHitRange=1;
@@ -1857,6 +2401,8 @@ class CfgAmmo
 			"randomcenter",
 			1
 		};
+		effectFly="ArtilleryTrails";
+		explosionEffects="";
 	};
 	class F_40mm_White;
 	class rhs_ammo_sub_zab25t: F_40mm_White
@@ -1865,20 +2411,46 @@ class CfgAmmo
 		indirectHit=1;
 		indirectHitRange=1;
 		timetolive=180;
+		model="\rhsafrf\addons\rhs_airweapons\rhs_m_zab25t";
 		effectFlare="RHS_Incendiary_Bomb";
 		craterShape="\rhsafrf\addons\rhs_airweapons\rhs_m_zab25t";
+		explosionEffects="";
 	};
 	class rhs_ammo_fab500: rhs_ammo_fab250
 	{
 		hit=8000;
 		indirectHit=2400;
 		indirectHitRange=25;
+		CraterEffects="RHS_HeavyBombCrater";
+		explosionEffects="RHS_HeavyBombExplosion";
+		SoundSetExplosion[]=
+		{
+			"BombsHeavy_Exp_SoundSet",
+			"BombsHeavy_Tail_SoundSet",
+			"Explosion_Debris_SoundSet"
+		};
+		class CamShakeExplode
+		{
+			power=240;
+			duration=7;
+			frequency=20;
+			distance=2077.1299;
+		};
+		class CamShakeHit
+		{
+			power=1200;
+			duration=1.2;
+			frequency=20;
+			distance=1;
+		};
+		model="\rhsafrf\addons\rhs_airweapons\rhs_m_fab500";
 		proxyShape="\rhsafrf\addons\rhs_airweapons\rhs_m_fab500";
 	};
 	class rhs_ammo_fab500_m54: rhs_ammo_fab500
 	{
 		hit=8000;
 		indirectHit=2000;
+		model="\rhsafrf\addons\rhs_airweapons\rhs_m_fab500_m54";
 		proxyShape="\rhsafrf\addons\rhs_airweapons\rhs_m_fab500_m54";
 	};
 	class rhs_ammo_kab500: rhs_ammo_kab250
@@ -1886,6 +2458,28 @@ class CfgAmmo
 		hit=8000;
 		indirectHit=2400;
 		indirectHitRange=25;
+		CraterEffects="RHS_HeavyBombCrater";
+		explosionEffects="RHS_HeavyBombExplosion";
+		SoundSetExplosion[]=
+		{
+			"BombsHeavy_Exp_SoundSet",
+			"BombsHeavy_Tail_SoundSet",
+			"Explosion_Debris_SoundSet"
+		};
+		class CamShakeExplode
+		{
+			power=240;
+			duration=7;
+			frequency=20;
+			distance=2077.1299;
+		};
+		class CamShakeHit
+		{
+			power=1200;
+			duration=1.2;
+			frequency=20;
+			distance=1;
+		};
 	};
 	class rhs_ammo_kab500lk: rhs_ammo_kab500
 	{
@@ -1925,11 +2519,15 @@ class CfgAmmo
 					{
 						class AirTarget
 						{
+							minRange=500;
+							maxRange=11000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=1;
 						};
 						class GroundTarget
 						{
+							minRange=500;
+							maxRange=11000;
 							objectDistanceLimitCoef=1;
 							viewDistanceLimitCoef=1;
 						};
@@ -1957,6 +2555,7 @@ class CfgAmmo
 	};
 	class rhs_ammo_rbk500_ao25: rhs_ammo_rbk250_ao1
 	{
+		model="\a3\Weapons_F_Orange\Ammo\BombCluster_02_Fly_F";
 		proxyShape="\a3\Weapons_F_Orange\Ammo\BombCluster_02_F";
 		submunitionAmmo[]=
 		{
@@ -1984,6 +2583,7 @@ class CfgAmmo
 	};
 	class rhs_ammo_rbk500_spbed: rhs_ammo_rbk500_ao25
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_m_rbk500_spbed";
 		submunitionAmmo[]=
 		{
 			"rhs_ammo_sub_spbed",
@@ -1998,6 +2598,7 @@ class CfgAmmo
 	};
 	class rhs_ammo_rbk500_ptab1m: rhs_ammo_rbk250_ptab25
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_m_rbk500_ptab";
 		proxyShape="\a3\Weapons_F_Orange\Ammo\BombCluster_02_F";
 		submunitionAmmo[]=
 		{
@@ -2031,9 +2632,11 @@ class CfgAmmo
 		hit=20;
 		indirectHit=15;
 		indirectHitRange=7;
+		model="\a3\Weapons_F_Orange\Ammo\BombCluster_02_sub_F";
 	};
 	class rhs_ammo_sub_ofab50: rhs_ammo_sub_ao1
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_m_ofab50ud";
 		hit=400;
 		indirectHit=215;
 		indirectHitRange=12;
@@ -2069,11 +2672,15 @@ class CfgAmmo
 					{
 						class AirTarget
 						{
+							minRange=500;
+							maxRange=2000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=1;
 						};
 						class GroundTarget
 						{
+							minRange=500;
+							maxRange=2000;
 							objectDistanceLimitCoef=1;
 							viewDistanceLimitCoef=1;
 						};
@@ -2086,11 +2693,15 @@ class CfgAmmo
 					{
 						class AirTarget
 						{
+							minRange=500;
+							maxRange=500;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=1;
 						};
 						class GroundTarget
 						{
+							minRange=500;
+							maxRange=500;
 							objectDistanceLimitCoef=1;
 							viewDistanceLimitCoef=1;
 						};
@@ -2114,6 +2725,7 @@ class CfgAmmo
 	};
 	class rhs_ammo_sub_ptab1m: rhs_ammo_sub_ptab25m
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_m_ptab1m";
 		submunitionAmmo="rhs_ammo_sub_ptab1m_penetrator";
 		submunitionDirectionType="SubmunitionModelDirection";
 		submunitionInitialOffset[]={0,0,-0.2};
@@ -2136,6 +2748,7 @@ class CfgAmmo
 	};
 	class rhs_ammo_ptab1m_uxo_deploy: UXO_deploy_BombCluster_base_F
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_m_ptab1m";
 		submunitionAmmo[]=
 		{
 			"rhs_ammo_uxo_ptab1m_1_deploy",
@@ -2148,6 +2761,7 @@ class CfgAmmo
 	};
 	class rhs_ammo_uxo_ptab1m_1_deploy: ShotDeployBase
 	{
+		model="\rhsafrf\addons\rhs_airweapons\uxo\rhs_uxo_ptab1m_1";
 		submunitionAmmo="rhs_ammo_uxo_ptab1m_1";
 	};
 	class rhs_ammo_uxo_ptab1m_1: APERSMine_Range_Ammo
@@ -2156,6 +2770,7 @@ class CfgAmmo
 		indirectHit=8;
 		indirectHitRange=5;
 		icon="iconExplosiveUXO";
+		model="\rhsafrf\addons\rhs_airweapons\uxo\rhs_uxo_ptab1m_1";
 		mineModelDisabled="\rhsafrf\addons\rhs_airweapons\uxo\rhs_uxo_ptab1m_3";
 		defaultMagazine="";
 		mineTrigger="UXOTrigger1";
@@ -2164,22 +2779,27 @@ class CfgAmmo
 	};
 	class rhs_ammo_uxo_ptab1m_2_deploy: ShotDeployBase
 	{
+		model="\rhsafrf\addons\rhs_airweapons\uxo\rhs_uxo_ptab1m_2";
 		submunitionAmmo="rhs_ammo_uxo_ptab1m_2";
 	};
 	class rhs_ammo_uxo_ptab1m_2: rhs_ammo_uxo_ptab1m_1
 	{
+		model="\rhsafrf\addons\rhs_airweapons\uxo\rhs_uxo_ptab1m_2";
 		mineTrigger="UXOTrigger2";
 	};
 	class rhs_ammo_uxo_ptab1m_3_deploy: ShotDeployBase
 	{
+		model="\rhsafrf\addons\rhs_airweapons\uxo\rhs_uxo_ptab1m_3";
 		submunitionAmmo="rhs_ammo_uxo_ptab1m_3";
 	};
 	class rhs_ammo_uxo_ptab1m_3: rhs_ammo_uxo_ptab1m_1
 	{
+		model="\rhsafrf\addons\rhs_airweapons\uxo\rhs_uxo_ptab1m_3";
 		mineTrigger="UXOTrigger3";
 	};
 	class rhs_ammo_kmgu2_ao25: rhs_ammo_rbk250_ao1
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_m_ao25_x12_fly";
 		proxyShape="\rhsafrf\addons\rhs_airweapons\rhs_m_ao25_x12";
 		submunitionAmmo[]=
 		{
@@ -2239,14 +2859,17 @@ class CfgAmmo
 	};
 	class rhs_ammo_pfm1_deploy: ShotDeployBase
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_m_pfm1";
 		submunitionAmmo="rhs_ammo_pfm1";
 	};
 	class rhs_ammo_ptm1_deploy: ShotDeployBase
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_m_ptm1";
 		submunitionAmmo="rhs_ammo_ptm1";
 	};
 	class rhs_ammo_ptm3_deploy: ShotDeployBase
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_m_ptm1";
 		submunitionAmmo="rhs_ammo_ptm3";
 	};
 	class rhs_ammo_pfm1: APERSMine_Range_Ammo
@@ -2254,6 +2877,7 @@ class CfgAmmo
 		hit=9;
 		indirectHit=8;
 		indirectHitRange=2;
+		model="\rhsafrf\addons\rhs_airweapons\rhs_m_pfm1_d";
 		mineModelDisabled="\rhsafrf\addons\rhs_airweapons\rhs_m_pfm1_d";
 		defaultMagazine="rhs_mag_mine_pfm1";
 		cost=200;
@@ -2266,6 +2890,7 @@ class CfgAmmo
 		hit=2000;
 		indirectHit=1250;
 		indirectHitRange=1;
+		model="\rhsafrf\addons\rhs_airweapons\rhs_m_ptm1_d";
 		mineModelDisabled="\rhsafrf\addons\rhs_airweapons\rhs_m_ptm1_d";
 		defaultMagazine="rhs_mag_mine_ptm1";
 		mineTrigger="rhs_tm62Trigger";
@@ -2279,6 +2904,7 @@ class CfgAmmo
 	};
 	class rhs_ammo_ptb1150: rhs_ammo_fab250
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_m_ptb1150";
 		proxyShape="\rhsafrf\addons\rhs_airweapons\rhs_m_ptb1150";
 		sideAirFriction=-1;
 		hit=50;
@@ -2298,11 +2924,18 @@ class CfgAmmo
 		maxspeed=0;
 		timetolive=0;
 		maneuvrability=0;
+		model="\A3\Weapons_F\empty.p3d";
 		proxyShape="\A3\Weapons_F\empty.p3d";
 		airlock=0;
 		laserLock=0;
 		irLock=0;
 		initTime=0;
+		minRange=0;
+		minRangeProbab=0;
+		midRange=0;
+		midRangeProbab=0;
+		maxRange=0;
+		maxRangeProbab=0;
 		sideAirFriction=0;
 	};
 };
@@ -2312,8 +2945,10 @@ class CfgMagazines
 	class VehicleMagazine;
 	class rhs_mag_s5_32: VehicleMagazine
 	{
+		scope=2;
 		displayName="$STR_RHS_MAG_S5";
 		displayNameShort="$STR_RHS_MAG_SH_S5";
+		descriptionShort="General purpose";
 		ammo="rhs_ammo_s5";
 		count=64;
 		maxleadspeed=200;
@@ -2332,7 +2967,9 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="С5";
 						scale=1;
 						sourceScale=1;
 						align="center";
@@ -2364,7 +3001,9 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="С5";
 						scale=1;
 						sourceScale=1;
 						align="right";
@@ -2396,6 +3035,7 @@ class CfgMagazines
 					alpha=0.22;
 					class Shape
 					{
+						type="polygon";
 						width=4;
 						points[]=
 						{
@@ -2431,6 +3071,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -2468,6 +3109,7 @@ class CfgMagazines
 				{
 					class Center
 					{
+						type="fixed";
 						pos[]={0,0};
 					};
 				};
@@ -2481,6 +3123,7 @@ class CfgMagazines
 						color[]={1,1,1};
 						class PylonValue1
 						{
+							type="text";
 							source="pylonAmmo";
 							scale=1;
 							sourceScale=1;
@@ -2503,7 +3146,9 @@ class CfgMagazines
 						};
 						class PylonText1
 						{
+							type="text";
 							source="static";
+							text="С5";
 							scale=1;
 							sourceScale=1;
 							align="center";
@@ -2525,6 +3170,7 @@ class CfgMagazines
 						};
 						class Shape
 						{
+							type="line";
 							width=4;
 							points[]=
 							{
@@ -2811,6 +3457,7 @@ class CfgMagazines
 	{
 		displayName="$STR_RHS_MAG_s5m1";
 		displayNameShort="$STR_RHS_MAG_SH_s5m1";
+		descriptionShort="HE-FRAG";
 		ammo="rhs_ammo_s5m1";
 		count=64;
 		weight=247.03999;
@@ -2826,7 +3473,9 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="С5М1";
 						scale=1;
 						sourceScale=1;
 						align="center";
@@ -2858,7 +3507,9 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="С5М1";
 						scale=1;
 						sourceScale=1;
 						align="right";
@@ -2890,6 +3541,7 @@ class CfgMagazines
 					alpha=0.22;
 					class Shape
 					{
+						type="polygon";
 						width=4;
 						points[]=
 						{
@@ -2925,6 +3577,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -2962,6 +3615,7 @@ class CfgMagazines
 				{
 					class Center
 					{
+						type="fixed";
 						pos[]={0,0};
 					};
 				};
@@ -2975,6 +3629,7 @@ class CfgMagazines
 						color[]={1,1,1};
 						class PylonValue1
 						{
+							type="text";
 							source="pylonAmmo";
 							scale=1;
 							sourceScale=1;
@@ -2997,7 +3652,9 @@ class CfgMagazines
 						};
 						class PylonText1
 						{
+							type="text";
 							source="static";
+							text="С5М1";
 							scale=1;
 							sourceScale=1;
 							align="center";
@@ -3019,6 +3676,7 @@ class CfgMagazines
 						};
 						class Shape
 						{
+							type="line";
 							width=4;
 							points[]=
 							{
@@ -3305,6 +3963,7 @@ class CfgMagazines
 	{
 		displayName="$STR_RHS_MAG_s5k1";
 		displayNameShort="$STR_RHS_MAG_SH_s5k1";
+		descriptionShort="HEAT (Penetration: 130mm RHA)";
 		ammo="rhs_ammo_s5k1";
 		count=64;
 		weight=232.96001;
@@ -3320,7 +3979,9 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="С5К1";
 						scale=1;
 						sourceScale=1;
 						align="center";
@@ -3352,7 +4013,9 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="С5К1";
 						scale=1;
 						sourceScale=1;
 						align="right";
@@ -3384,6 +4047,7 @@ class CfgMagazines
 					alpha=0.22;
 					class Shape
 					{
+						type="polygon";
 						width=4;
 						points[]=
 						{
@@ -3419,6 +4083,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -3456,6 +4121,7 @@ class CfgMagazines
 				{
 					class Center
 					{
+						type="fixed";
 						pos[]={0,0};
 					};
 				};
@@ -3469,6 +4135,7 @@ class CfgMagazines
 						color[]={1,1,1};
 						class PylonValue1
 						{
+							type="text";
 							source="pylonAmmo";
 							scale=1;
 							sourceScale=1;
@@ -3491,7 +4158,9 @@ class CfgMagazines
 						};
 						class PylonText1
 						{
+							type="text";
 							source="static";
+							text="С5К1";
 							scale=1;
 							sourceScale=1;
 							align="center";
@@ -3513,6 +4182,7 @@ class CfgMagazines
 						};
 						class Shape
 						{
+							type="line";
 							width=4;
 							points[]=
 							{
@@ -3799,6 +4469,7 @@ class CfgMagazines
 	{
 		displayName="$STR_RHS_MAG_s5ko";
 		displayNameShort="$STR_RHS_MAG_SH_s5ko";
+		descriptionShort="HEAT-FRAG (Penetration: 130mm RHA)";
 		ammo="rhs_ammo_s5ko";
 		count=64;
 		weight=283.51999;
@@ -3814,7 +4485,9 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="С5КО";
 						scale=1;
 						sourceScale=1;
 						align="center";
@@ -3846,7 +4519,9 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="С5КО";
 						scale=1;
 						sourceScale=1;
 						align="right";
@@ -3878,6 +4553,7 @@ class CfgMagazines
 					alpha=0.22;
 					class Shape
 					{
+						type="polygon";
 						width=4;
 						points[]=
 						{
@@ -3913,6 +4589,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -3950,6 +4627,7 @@ class CfgMagazines
 				{
 					class Center
 					{
+						type="fixed";
 						pos[]={0,0};
 					};
 				};
@@ -3963,6 +4641,7 @@ class CfgMagazines
 						color[]={1,1,1};
 						class PylonValue1
 						{
+							type="text";
 							source="pylonAmmo";
 							scale=1;
 							sourceScale=1;
@@ -3985,7 +4664,9 @@ class CfgMagazines
 						};
 						class PylonText1
 						{
+							type="text";
 							source="static";
+							text="С5КО";
 							scale=1;
 							sourceScale=1;
 							align="center";
@@ -4007,6 +4688,7 @@ class CfgMagazines
 						};
 						class Shape
 						{
+							type="line";
 							width=4;
 							points[]=
 							{
@@ -4291,8 +4973,10 @@ class CfgMagazines
 	};
 	class rhs_mag_s8_12: VehicleMagazine
 	{
+		scope=2;
 		displayName="$STR_RHS_MAG_S8KOM";
 		displayNameShort="$STR_RHS_MAG_SH_S8KOM";
+		descriptionShort="HEAT (Penetration: 350mm RHA)";
 		ammo="rhs_ammo_s8";
 		count=12;
 		initSpeed=44;
@@ -4326,6 +5010,7 @@ class CfgMagazines
 		weight=268;
 		displayName="$STR_RHS_MAG_S8DF";
 		displayNameShort="$STR_RHS_MAG_SH_S8DF";
+		descriptionShort="Thermobaric";
 		ammo="rhs_ammo_s8df";
 		class mfdElements
 		{
@@ -4339,7 +5024,9 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="С8ДФ";
 						scale=1;
 						sourceScale=1;
 						align="center";
@@ -4371,7 +5058,9 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="С8ДФ";
 						scale=1;
 						sourceScale=1;
 						align="right";
@@ -4403,6 +5092,7 @@ class CfgMagazines
 					alpha=0.22;
 					class Shape
 					{
+						type="polygon";
 						width=4;
 						points[]=
 						{
@@ -4438,6 +5128,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -4475,6 +5166,7 @@ class CfgMagazines
 				{
 					class Center
 					{
+						type="fixed";
 						pos[]={0,0};
 					};
 				};
@@ -4488,6 +5180,7 @@ class CfgMagazines
 						color[]={1,1,1};
 						class PylonValue1
 						{
+							type="text";
 							source="pylonAmmo";
 							scale=1;
 							sourceScale=1;
@@ -4510,7 +5203,9 @@ class CfgMagazines
 						};
 						class PylonText1
 						{
+							type="text";
 							source="static";
+							text="С8ДФ";
 							scale=1;
 							sourceScale=1;
 							align="center";
@@ -4532,6 +5227,7 @@ class CfgMagazines
 						};
 						class Shape
 						{
+							type="line";
 							width=4;
 							points[]=
 							{
@@ -4810,6 +5506,7 @@ class CfgMagazines
 		weight=320;
 		displayName="$STR_RHS_MAG_S8T";
 		displayNameShort="$STR_RHS_MAG_SH_S8T";
+		descriptionShort="Tandem HEAT (Penetration: 440mm RHA)";
 		ammo="rhs_ammo_s8t";
 		class mfdElements
 		{
@@ -4823,7 +5520,9 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="С8Т";
 						scale=1;
 						sourceScale=1;
 						align="center";
@@ -4855,7 +5554,9 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="С8Т";
 						scale=1;
 						sourceScale=1;
 						align="right";
@@ -4887,6 +5588,7 @@ class CfgMagazines
 					alpha=0.22;
 					class Shape
 					{
+						type="polygon";
 						width=4;
 						points[]=
 						{
@@ -4922,6 +5624,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -4959,6 +5662,7 @@ class CfgMagazines
 				{
 					class Center
 					{
+						type="fixed";
 						pos[]={0,0};
 					};
 				};
@@ -4972,6 +5676,7 @@ class CfgMagazines
 						color[]={1,1,1};
 						class PylonValue1
 						{
+							type="text";
 							source="pylonAmmo";
 							scale=1;
 							sourceScale=1;
@@ -4994,7 +5699,9 @@ class CfgMagazines
 						};
 						class PylonText1
 						{
+							type="text";
 							source="static";
+							text="С8Т";
 							scale=1;
 							sourceScale=1;
 							align="center";
@@ -5016,6 +5723,7 @@ class CfgMagazines
 						};
 						class Shape
 						{
+							type="line";
 							width=4;
 							points[]=
 							{
@@ -5290,8 +5998,10 @@ class CfgMagazines
 	};
 	class rhs_mag_s13b_10: VehicleMagazine
 	{
+		scope=2;
 		displayName="$STR_RHS_MAG_S13B";
 		displayNameShort="$STR_RHS_MAG_SH_S13B";
+		descriptionShort="Obstacle penetration/HE";
 		ammo="rhs_ammo_s13b";
 		count=10;
 		maxleadspeed=200;
@@ -5303,6 +6013,7 @@ class CfgMagazines
 	{
 		displayName="$STR_RHS_MAG_S13D";
 		displayNameShort="$STR_RHS_MAG_SH_S13D";
+		descriptionShort="Thermobaric (35-40kg TNT equivalent). Introduced in 1995";
 		ammo="rhs_ammo_s13d";
 		weight=680;
 	};
@@ -5310,6 +6021,7 @@ class CfgMagazines
 	{
 		displayName="$STR_RHS_MAG_S13DF";
 		displayNameShort="$STR_RHS_MAG_SH_S13DF";
+		descriptionShort="Thermobaric (35-40kg TNT equivalent). Introduced in 2018";
 		ammo="rhs_ammo_s13df";
 		weight=680;
 	};
@@ -5317,6 +6029,7 @@ class CfgMagazines
 	{
 		displayName="$STR_RHS_MAG_S13T";
 		displayNameShort="$STR_RHS_MAG_SH_S13T";
+		descriptionShort="Tandem HEAT (Penetration: 600mm RHA)";
 		ammo="rhs_ammo_s13t";
 		weight=750;
 	};
@@ -5324,12 +6037,14 @@ class CfgMagazines
 	{
 		displayName="$STR_RHS_MAG_S13OF";
 		displayNameShort="$STR_RHS_MAG_SH_S13OF";
+		descriptionShort="HE-FRAG. Introduced in 1993";
 		ammo="rhs_ammo_s13of";
 		weight=690;
 	};
 	class rhs_mag_ub16_s5: rhs_mag_s5_32
 	{
 		ammo="rhs_ammo_s5";
+		model="rhsafrf\addons\rhs_a2port_air\data\rhs_pylon_r_ub16.p3d";
 		count=16;
 		mass=118;
 		weight=118;
@@ -5368,6 +6083,7 @@ class CfgMagazines
 	};
 	class rhs_mag_ub16_ka52_s5: rhs_mag_ub16_s5
 	{
+		model="rhsafrf\addons\rhs_a2port_air\data\rhs_pylon_r_ub16_ka52.p3d";
 		hardpoints[]=
 		{
 			"RHS_HP_UB16_KA52"
@@ -5402,6 +6118,7 @@ class CfgMagazines
 	};
 	class rhs_mag_ub16_bd3_umk2a_s5: rhs_mag_ub16_s5
 	{
+		model="rhsafrf\addons\rhs_airweapons\rhs_pylon_bd3_umk2a_ub16.p3d";
 		hardpoints[]=
 		{
 			"RHS_HP_UB16_BD3_UMK2A"
@@ -5437,6 +6154,7 @@ class CfgMagazines
 	class rhs_mag_ub32_s5: rhs_mag_s5_32
 	{
 		ammo="rhs_ammo_s5";
+		model="rhsafrf\addons\rhs_airweapons\rhs_pylon_r_ub32.p3d";
 		count=32;
 		mass=237;
 		weight=237;
@@ -5475,6 +6193,7 @@ class CfgMagazines
 	};
 	class rhs_mag_ub32_ka52_s5: rhs_mag_ub32_s5
 	{
+		model="rhsafrf\addons\rhs_airweapons\rhs_pylon_r_ub32_ka52.p3d";
 		hardpoints[]=
 		{
 			"RHS_HP_UB32_KA52"
@@ -5509,6 +6228,7 @@ class CfgMagazines
 	};
 	class rhs_mag_ub32_bd3_umk2a_s5: rhs_mag_ub32_s5
 	{
+		model="rhsafrf\addons\rhs_airweapons\rhs_pylon_bd3_umk2a_ub32.p3d";
 		hardpoints[]=
 		{
 			"RHS_HP_UB32_BD3_UMK2A"
@@ -5544,6 +6264,7 @@ class CfgMagazines
 	class rhs_mag_b8m1_s8kom: rhs_mag_s8_12
 	{
 		ammo="rhs_ammo_s8";
+		model="rhsafrf\addons\rhs_airweapons\rhs_pylon_r_b8m1.p3d";
 		count=20;
 		mass=376;
 		weight=376;
@@ -5564,7 +6285,9 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="С8КОМ";
 						scale=1;
 						sourceScale=1;
 						align="center";
@@ -5596,7 +6319,9 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="С8КОМ";
 						scale=1;
 						sourceScale=1;
 						align="right";
@@ -5628,6 +6353,7 @@ class CfgMagazines
 					alpha=0.22;
 					class Shape
 					{
+						type="polygon";
 						width=4;
 						points[]=
 						{
@@ -5663,6 +6389,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -5700,6 +6427,7 @@ class CfgMagazines
 				{
 					class Center
 					{
+						type="fixed";
 						pos[]={0,0};
 					};
 				};
@@ -5713,6 +6441,7 @@ class CfgMagazines
 						color[]={1,1,1};
 						class PylonValue1
 						{
+							type="text";
 							source="pylonAmmo";
 							scale=1;
 							sourceScale=1;
@@ -5735,7 +6464,9 @@ class CfgMagazines
 						};
 						class PylonText1
 						{
+							type="text";
 							source="static";
+							text="С8КОМ";
 							scale=1;
 							sourceScale=1;
 							align="center";
@@ -5757,6 +6488,7 @@ class CfgMagazines
 						};
 						class Shape
 						{
+							type="line";
 							width=4;
 							points[]=
 							{
@@ -6039,6 +6771,7 @@ class CfgMagazines
 	};
 	class rhs_mag_b8m1_bd3_umk2a_s8kom: rhs_mag_b8m1_s8kom
 	{
+		model="rhsafrf\addons\rhs_airweapons\rhs_pylon_bd3_umk2a_b8m1.p3d";
 		hardpoints[]=
 		{
 			"RHS_HP_B8M1_BD3_UMK2A"
@@ -6065,6 +6798,7 @@ class CfgMagazines
 	class rhs_mag_b8v20a_s8kom: rhs_mag_b8m1_s8kom
 	{
 		ammo="rhs_ammo_s8";
+		model="rhsafrf\addons\rhs_a2port_air\data\rhs_pylon_r_b8v20a.p3d";
 		count=20;
 		mass=349;
 		weight=349;
@@ -6094,6 +6828,7 @@ class CfgMagazines
 	};
 	class rhs_mag_b8v20a_ka52_s8kom: rhs_mag_b8v20a_s8kom
 	{
+		model="rhsafrf\addons\rhs_a2port_air\data\rhs_pylon_r_b8v20a_ka52.p3d";
 		hardpoints[]=
 		{
 			"RHS_HP_B8V20_KA52"
@@ -6120,6 +6855,7 @@ class CfgMagazines
 	class rhs_mag_b13l_s13b: rhs_mag_s13b_10
 	{
 		ammo="rhs_ammo_s13b";
+		model="rhsafrf\addons\rhs_airweapons\rhs_pylon_r_b13l.p3d";
 		count=5;
 		mass=501.5;
 		weight=501.5;
@@ -6140,7 +6876,9 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="С13";
 						scale=1;
 						sourceScale=1;
 						align="center";
@@ -6172,7 +6910,9 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="С13";
 						scale=1;
 						sourceScale=1;
 						align="right";
@@ -6204,6 +6944,7 @@ class CfgMagazines
 					alpha=0.22;
 					class Shape
 					{
+						type="polygon";
 						width=4;
 						points[]=
 						{
@@ -6239,6 +6980,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -6276,6 +7018,7 @@ class CfgMagazines
 				{
 					class Center
 					{
+						type="fixed";
 						pos[]={0,0};
 					};
 				};
@@ -6289,6 +7032,7 @@ class CfgMagazines
 						color[]={1,1,1};
 						class PylonValue1
 						{
+							type="text";
 							source="pylonAmmo";
 							scale=1;
 							sourceScale=1;
@@ -6311,7 +7055,9 @@ class CfgMagazines
 						};
 						class PylonText1
 						{
+							type="text";
 							source="static";
+							text="С13";
 							scale=1;
 							sourceScale=1;
 							align="center";
@@ -6333,6 +7079,7 @@ class CfgMagazines
 						};
 						class Shape
 						{
+							type="line";
 							width=4;
 							points[]=
 							{
@@ -6633,6 +7380,7 @@ class CfgMagazines
 	};
 	class rhs_mag_b13l_bd3_umk2a_s13b: rhs_mag_b13l_s13b
 	{
+		model="rhsafrf\addons\rhs_airweapons\rhs_pylon_bd3_umk2a_b13l.p3d";
 		hardpoints[]=
 		{
 			"RHS_HP_B13L_BD3_UMK2A"
@@ -6677,6 +7425,7 @@ class CfgMagazines
 	class rhs_mag_b13l1_s13b: rhs_mag_b13l_s13b
 	{
 		ammo="rhs_ammo_s13b";
+		model="rhsafrf\addons\rhs_airweapons\rhs_pylon_r_b13l1.p3d";
 		count=5;
 		mass=481.5;
 		weight=481.5;
@@ -6724,6 +7473,7 @@ class CfgMagazines
 	};
 	class rhs_mag_b13l1_ka52_s13b: rhs_mag_b13l1_s13b
 	{
+		model="rhsafrf\addons\rhs_airweapons\rhs_pylon_r_b13l1_ka52.p3d";
 		hardpoints[]=
 		{
 			"RHS_HP_B13L1_KA52"
@@ -6770,6 +7520,7 @@ class CfgMagazines
 		displayName="$STR_RHS_MAG_S24";
 		displayNameShort="$STR_RHS_MAG_SH_S24";
 		ammo="rhs_ammo_s24";
+		model="rhsafrf\addons\rhs_airweapons\rhs_pylon_apu68m3_s24.p3d";
 		count=1;
 		mass=280;
 		weight=280;
@@ -6790,7 +7541,9 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="С24";
 						scale=1;
 						sourceScale=1;
 						align="center";
@@ -6822,7 +7575,9 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="С24";
 						scale=1;
 						sourceScale=1;
 						align="right";
@@ -6854,6 +7609,7 @@ class CfgMagazines
 					alpha=0.22;
 					class Shape
 					{
+						type="polygon";
 						width=4;
 						points[]=
 						{
@@ -6889,6 +7645,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -6926,6 +7683,7 @@ class CfgMagazines
 				{
 					class Center
 					{
+						type="fixed";
 						pos[]={0,0};
 					};
 				};
@@ -6939,7 +7697,9 @@ class CfgMagazines
 						color[]={1,1,1};
 						class PylonText1
 						{
+							type="text";
 							source="static";
+							text="С24";
 							scale=1;
 							sourceScale=1;
 							align="center";
@@ -6961,6 +7721,7 @@ class CfgMagazines
 						};
 						class Shape
 						{
+							type="line";
 							width=4;
 							points[]=
 							{
@@ -7107,6 +7868,7 @@ class CfgMagazines
 						class Shape: Shape;  //found empty after stripping
 						class Polygon
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -7248,6 +8010,7 @@ class CfgMagazines
 	};
 	class rhs_mag_apu68_bd3_umk2a_s24: rhs_mag_apu68m3_s24
 	{
+		model="rhsafrf\addons\rhs_airweapons\rhs_pylon_bd3_umk2a_s24.p3d";
 		hardpoints[]=
 		{
 			"RHS_HP_APU68_BD3_UMK2A"
@@ -7267,6 +8030,7 @@ class CfgMagazines
 		displayName="$STR_RHS_MAG_S25O";
 		displayNameShort="$STR_RHS_MAG_SH_S25O";
 		ammo="rhs_ammo_s25o";
+		model="rhsafrf\addons\rhs_airweapons\rhs_pylon_o25l.p3d";
 		count=1;
 		mass=290;
 		weight=290;
@@ -7287,7 +8051,9 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="С25";
 						scale=1;
 						sourceScale=1;
 						align="center";
@@ -7319,7 +8085,9 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="С25";
 						scale=1;
 						sourceScale=1;
 						align="right";
@@ -7351,6 +8119,7 @@ class CfgMagazines
 					alpha=0.22;
 					class Shape
 					{
+						type="polygon";
 						width=4;
 						points[]=
 						{
@@ -7386,6 +8155,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -7423,6 +8193,7 @@ class CfgMagazines
 				{
 					class Center
 					{
+						type="fixed";
 						pos[]={0,0};
 					};
 				};
@@ -7436,7 +8207,9 @@ class CfgMagazines
 						color[]={1,1,1};
 						class PylonText1
 						{
+							type="text";
 							source="static";
+							text="С25";
 							scale=1;
 							sourceScale=1;
 							align="center";
@@ -7458,6 +8231,7 @@ class CfgMagazines
 						};
 						class Shape
 						{
+							type="line";
 							width=4;
 							points[]=
 							{
@@ -7604,6 +8378,7 @@ class CfgMagazines
 						class Shape: Shape;  //found empty after stripping
 						class Polygon
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -7763,6 +8538,7 @@ class CfgMagazines
 	};
 	class rhs_mag_bd3_usk_a_o25l_s25o: rhs_mag_o25l_s25o
 	{
+		model="rhsafrf\addons\rhs_airweapons\rhs_pylon_bd3_usk_a_o25l.p3d";
 		mass=310;
 		weight=310;
 		hardpoints[]=
@@ -7799,6 +8575,7 @@ class CfgMagazines
 	};
 	class rhs_mag_bd3_umk2a_o25l_s25o: rhs_mag_o25l_s25o
 	{
+		model="rhsafrf\addons\rhs_airweapons\rhs_pylon_bd3_umk2a_o25l.p3d";
 		mass=310;
 		weight=310;
 		hardpoints[]=
@@ -7835,12 +8612,14 @@ class CfgMagazines
 	};
 	class rhs_mag_R27R: VehicleMagazine
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_pylon_m_r27";
 		count=1;
 		initspeed=100;
 		maxleadspeed=900;
 		namesound="missiles";
 		ammo="rhs_ammo_r27r";
 		displayname="$STR_RHS_R27R_NAME";
+		descriptionShort="Active radar homing. Range: 2km-16km";
 		displaynameshort="ARH";
 		mass=44;
 		hardpoints[]=
@@ -7860,7 +8639,9 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="27Р";
 						scale=1;
 						sourceScale=1;
 						align="center";
@@ -7892,7 +8673,9 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="27Р";
 						scale=1;
 						sourceScale=1;
 						align="right";
@@ -7924,6 +8707,7 @@ class CfgMagazines
 					alpha=0.22;
 					class Shape
 					{
+						type="polygon";
 						width=4;
 						points[]=
 						{
@@ -7959,6 +8743,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -7996,6 +8781,7 @@ class CfgMagazines
 				{
 					class Center
 					{
+						type="fixed";
 						pos[]={0,0};
 					};
 				};
@@ -8009,7 +8795,9 @@ class CfgMagazines
 						color[]={1,1,1};
 						class PylonText1
 						{
+							type="text";
 							source="static";
+							text="27Р";
 							scale=1;
 							sourceScale=1;
 							align="center";
@@ -8031,6 +8819,7 @@ class CfgMagazines
 						};
 						class Shape
 						{
+							type="line";
 							width=4;
 							points[]=
 							{
@@ -8177,6 +8966,7 @@ class CfgMagazines
 						class Shape: Shape;  //found empty after stripping
 						class Polygon
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -8309,6 +9099,7 @@ class CfgMagazines
 	};
 	class rhs_mag_R27R_APU470: rhs_mag_R27R
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_pylon_apu470_r27";
 		hardpoints[]=
 		{
 			"RHS_HP_R27_APU470"
@@ -8317,6 +9108,7 @@ class CfgMagazines
 	class rhs_mag_R27ER: rhs_mag_R27R
 	{
 		displayname="$STR_RHS_R27ER_NAME";
+		descriptionShort="Active radar homing. Range: 2km-20km";
 		ammo="rhs_ammo_r27er";
 		class mfdElements
 		{
@@ -8330,7 +9122,9 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="27ЭР";
 						scale=1;
 						sourceScale=1;
 						align="center";
@@ -8362,7 +9156,9 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="27ЭР";
 						scale=1;
 						sourceScale=1;
 						align="right";
@@ -8394,6 +9190,7 @@ class CfgMagazines
 					alpha=0.22;
 					class Shape
 					{
+						type="polygon";
 						width=4;
 						points[]=
 						{
@@ -8429,6 +9226,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -8466,6 +9264,7 @@ class CfgMagazines
 				{
 					class Center
 					{
+						type="fixed";
 						pos[]={0,0};
 					};
 				};
@@ -8479,7 +9278,9 @@ class CfgMagazines
 						color[]={1,1,1};
 						class PylonText1
 						{
+							type="text";
 							source="static";
+							text="27ЭР";
 							scale=1;
 							sourceScale=1;
 							align="center";
@@ -8501,6 +9302,7 @@ class CfgMagazines
 						};
 						class Shape
 						{
+							type="line";
 							width=4;
 							points[]=
 							{
@@ -8647,6 +9449,7 @@ class CfgMagazines
 						class Shape: Shape;  //found empty after stripping
 						class Polygon
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -8779,6 +9582,7 @@ class CfgMagazines
 	};
 	class rhs_mag_R27ER_APU470: rhs_mag_R27ER
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_pylon_apu470_r27";
 		hardpoints[]=
 		{
 			"RHS_HP_R27_APU470"
@@ -8788,6 +9592,7 @@ class CfgMagazines
 	{
 		displayname="$STR_RHS_R27T_NAME";
 		displaynameshort="IR";
+		descriptionShort="Infrared homing. Locking radius: ±7.5° off-boresight. Range: 1.7km-22km";
 		ammo="rhs_ammo_r27t";
 		pylonWeapon="rhs_weap_r27t_Launcher";
 		class mfdElements
@@ -8802,7 +9607,9 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="27Т";
 						scale=1;
 						sourceScale=1;
 						align="center";
@@ -8834,7 +9641,9 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="27Т";
 						scale=1;
 						sourceScale=1;
 						align="right";
@@ -8866,6 +9675,7 @@ class CfgMagazines
 					alpha=0.22;
 					class Shape
 					{
+						type="polygon";
 						width=4;
 						points[]=
 						{
@@ -8901,6 +9711,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -8938,6 +9749,7 @@ class CfgMagazines
 				{
 					class Center
 					{
+						type="fixed";
 						pos[]={0,0};
 					};
 				};
@@ -8951,7 +9763,9 @@ class CfgMagazines
 						color[]={1,1,1};
 						class PylonText1
 						{
+							type="text";
 							source="static";
+							text="27Т";
 							scale=1;
 							sourceScale=1;
 							align="center";
@@ -8973,6 +9787,7 @@ class CfgMagazines
 						};
 						class Shape
 						{
+							type="line";
 							width=4;
 							points[]=
 							{
@@ -9119,6 +9934,7 @@ class CfgMagazines
 						class Shape: Shape;  //found empty after stripping
 						class Polygon
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -9251,6 +10067,7 @@ class CfgMagazines
 	};
 	class rhs_mag_R27T_APU470: rhs_mag_R27T
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_pylon_apu470_r27";
 		hardpoints[]=
 		{
 			"RHS_HP_R27_APU470"
@@ -9259,6 +10076,7 @@ class CfgMagazines
 	class rhs_mag_R27ET: rhs_mag_R27T
 	{
 		displayname="$STR_RHS_R27ET_NAME";
+		descriptionShort="Infrared homing. Locking radius: ±7.5° off-boresight. Range: 1.7km-26km";
 		ammo="rhs_ammo_r27et";
 		class mfdElements
 		{
@@ -9272,7 +10090,9 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="27ЭТ";
 						scale=1;
 						sourceScale=1;
 						align="center";
@@ -9304,7 +10124,9 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="27ЭТ";
 						scale=1;
 						sourceScale=1;
 						align="right";
@@ -9336,6 +10158,7 @@ class CfgMagazines
 					alpha=0.22;
 					class Shape
 					{
+						type="polygon";
 						width=4;
 						points[]=
 						{
@@ -9371,6 +10194,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -9408,6 +10232,7 @@ class CfgMagazines
 				{
 					class Center
 					{
+						type="fixed";
 						pos[]={0,0};
 					};
 				};
@@ -9421,7 +10246,9 @@ class CfgMagazines
 						color[]={1,1,1};
 						class PylonText1
 						{
+							type="text";
 							source="static";
+							text="27ЭТ";
 							scale=1;
 							sourceScale=1;
 							align="center";
@@ -9443,6 +10270,7 @@ class CfgMagazines
 						};
 						class Shape
 						{
+							type="line";
 							width=4;
 							points[]=
 							{
@@ -9589,6 +10417,7 @@ class CfgMagazines
 						class Shape: Shape;  //found empty after stripping
 						class Polygon
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -9721,6 +10550,7 @@ class CfgMagazines
 	};
 	class rhs_mag_R27ET_APU470: rhs_mag_R27ET
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_pylon_apu470_r27";
 		hardpoints[]=
 		{
 			"RHS_HP_R27_APU470"
@@ -9728,6 +10558,7 @@ class CfgMagazines
 	};
 	class rhs_mag_R60: VehicleMagazine
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_pylon_m_r60";
 		count=1;
 		initspeed=100;
 		maxleadspeed=900;
@@ -9735,6 +10566,7 @@ class CfgMagazines
 		ammo="rhs_ammo_r60";
 		displayname="$STR_RHS_R60_NAME";
 		displaynameshort="IR";
+		descriptionShort="Infrared homing. Locking radius: ±12° off-boresight. Range: 0.3km-5km";
 		mass=44;
 		hardpoints[]=
 		{
@@ -9753,7 +10585,9 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="60";
 						scale=1;
 						sourceScale=1;
 						align="center";
@@ -9785,7 +10619,9 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="60";
 						scale=1;
 						sourceScale=1;
 						align="right";
@@ -9817,6 +10653,7 @@ class CfgMagazines
 					alpha=0.22;
 					class Shape
 					{
+						type="polygon";
 						width=4;
 						points[]=
 						{
@@ -9852,6 +10689,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -9889,6 +10727,7 @@ class CfgMagazines
 				{
 					class Center
 					{
+						type="fixed";
 						pos[]={0,0};
 					};
 				};
@@ -9902,7 +10741,9 @@ class CfgMagazines
 						color[]={1,1,1};
 						class PylonText1
 						{
+							type="text";
 							source="static";
+							text="60";
 							scale=1;
 							sourceScale=1;
 							align="center";
@@ -9924,6 +10765,7 @@ class CfgMagazines
 						};
 						class Shape
 						{
+							type="line";
 							width=4;
 							points[]=
 							{
@@ -10070,6 +10912,7 @@ class CfgMagazines
 						class Shape: Shape;  //found empty after stripping
 						class Polygon
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -10202,6 +11045,7 @@ class CfgMagazines
 	};
 	class rhs_mag_R60_APU60: rhs_mag_R60
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_pylon_apu60_r60";
 		hardpoints[]=
 		{
 			"RHS_HP_R60_APU60"
@@ -10211,6 +11055,7 @@ class CfgMagazines
 	{
 		ammo="rhs_ammo_r60m";
 		displayname="$STR_RHS_R60M_NAME";
+		descriptionShort="Infrared homing. Locking radius: ±17° off-boresight. Range: 0.3km-8km";
 		class mfdElements
 		{
 			class rhs_rus_ammoname
@@ -10223,7 +11068,9 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="60М";
 						scale=1;
 						sourceScale=1;
 						align="center";
@@ -10255,7 +11102,9 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="60М";
 						scale=1;
 						sourceScale=1;
 						align="right";
@@ -10287,6 +11136,7 @@ class CfgMagazines
 					alpha=0.22;
 					class Shape
 					{
+						type="polygon";
 						width=4;
 						points[]=
 						{
@@ -10322,6 +11172,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -10359,6 +11210,7 @@ class CfgMagazines
 				{
 					class Center
 					{
+						type="fixed";
 						pos[]={0,0};
 					};
 				};
@@ -10372,7 +11224,9 @@ class CfgMagazines
 						color[]={1,1,1};
 						class PylonText1
 						{
+							type="text";
 							source="static";
+							text="60М";
 							scale=1;
 							sourceScale=1;
 							align="center";
@@ -10394,6 +11248,7 @@ class CfgMagazines
 						};
 						class Shape
 						{
+							type="line";
 							width=4;
 							points[]=
 							{
@@ -10540,6 +11395,7 @@ class CfgMagazines
 						class Shape: Shape;  //found empty after stripping
 						class Polygon
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -10672,6 +11528,7 @@ class CfgMagazines
 	};
 	class rhs_mag_R60M_APU60: rhs_mag_R60M
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_pylon_apu60_r60";
 		hardpoints[]=
 		{
 			"RHS_HP_R60_APU60"
@@ -10679,12 +11536,14 @@ class CfgMagazines
 	};
 	class rhs_mag_R73: VehicleMagazine
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_pylon_m_r73_ext";
 		count=1;
 		initspeed=0;
 		maxleadspeed=900;
 		namesound="missiles";
 		ammo="rhs_ammo_r73";
 		displayname="$STR_RHS_R73_NAME";
+		descriptionShort="Infrared homing. Locking radius: ±25° off-boresight. Range: 0.3km-8km";
 		displaynameshort="IR";
 		mass=105;
 		hardpoints[]=
@@ -10704,7 +11563,9 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="73";
 						scale=1;
 						sourceScale=1;
 						align="center";
@@ -10736,7 +11597,9 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="73";
 						scale=1;
 						sourceScale=1;
 						align="right";
@@ -10768,6 +11631,7 @@ class CfgMagazines
 					alpha=0.22;
 					class Shape
 					{
+						type="polygon";
 						width=4;
 						points[]=
 						{
@@ -10803,6 +11667,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -10840,6 +11705,7 @@ class CfgMagazines
 				{
 					class Center
 					{
+						type="fixed";
 						pos[]={0,0};
 					};
 				};
@@ -10853,7 +11719,9 @@ class CfgMagazines
 						color[]={1,1,1};
 						class PylonText1
 						{
+							type="text";
 							source="static";
+							text="73";
 							scale=1;
 							sourceScale=1;
 							align="center";
@@ -10875,6 +11743,7 @@ class CfgMagazines
 						};
 						class Shape
 						{
+							type="line";
 							width=4;
 							points[]=
 							{
@@ -11021,6 +11890,7 @@ class CfgMagazines
 						class Shape: Shape;  //found empty after stripping
 						class Polygon
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -11153,6 +12023,7 @@ class CfgMagazines
 	};
 	class rhs_mag_R73_APU73: rhs_mag_R73
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_pylon_apu73_r73";
 		hardpoints[]=
 		{
 			"RHS_HP_R73_APU73"
@@ -11162,6 +12033,7 @@ class CfgMagazines
 	{
 		ammo="rhs_ammo_r73m";
 		displayname="$STR_RHS_R73M_NAME";
+		descriptionShort="Infrared homing. Locking radius: ±60° off-boresight. Range: 0.15km-8km";
 		class mfdElements
 		{
 			class rhs_rus_ammoname
@@ -11174,7 +12046,9 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="73М";
 						scale=1;
 						sourceScale=1;
 						align="center";
@@ -11206,7 +12080,9 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="73М";
 						scale=1;
 						sourceScale=1;
 						align="right";
@@ -11238,6 +12114,7 @@ class CfgMagazines
 					alpha=0.22;
 					class Shape
 					{
+						type="polygon";
 						width=4;
 						points[]=
 						{
@@ -11273,6 +12150,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -11310,6 +12188,7 @@ class CfgMagazines
 				{
 					class Center
 					{
+						type="fixed";
 						pos[]={0,0};
 					};
 				};
@@ -11323,7 +12202,9 @@ class CfgMagazines
 						color[]={1,1,1};
 						class PylonText1
 						{
+							type="text";
 							source="static";
+							text="73М";
 							scale=1;
 							sourceScale=1;
 							align="center";
@@ -11345,6 +12226,7 @@ class CfgMagazines
 						};
 						class Shape
 						{
+							type="line";
 							width=4;
 							points[]=
 							{
@@ -11491,6 +12373,7 @@ class CfgMagazines
 						class Shape: Shape;  //found empty after stripping
 						class Polygon
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -11624,6 +12507,7 @@ class CfgMagazines
 	};
 	class rhs_mag_R73M_APU73: rhs_mag_R73M
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_pylon_apu73_r73";
 		hardpoints[]=
 		{
 			"RHS_HP_R73_APU73"
@@ -11633,6 +12517,7 @@ class CfgMagazines
 	{
 		ammo="rhs_ammo_r74";
 		displayname="$STR_RHS_R74_NAME";
+		descriptionShort="Infrared homing missile with improved CM resistance. Locking radius: ±60° off-boresight. Range: 0.15km-8km";
 		class mfdElements
 		{
 			class rhs_rus_ammoname
@@ -11645,7 +12530,9 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="74";
 						scale=1;
 						sourceScale=1;
 						align="center";
@@ -11677,7 +12564,9 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="74";
 						scale=1;
 						sourceScale=1;
 						align="right";
@@ -11709,6 +12598,7 @@ class CfgMagazines
 					alpha=0.22;
 					class Shape
 					{
+						type="polygon";
 						width=4;
 						points[]=
 						{
@@ -11744,6 +12634,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -11781,6 +12672,7 @@ class CfgMagazines
 				{
 					class Center
 					{
+						type="fixed";
 						pos[]={0,0};
 					};
 				};
@@ -11794,7 +12686,9 @@ class CfgMagazines
 						color[]={1,1,1};
 						class PylonText1
 						{
+							type="text";
 							source="static";
+							text="74";
 							scale=1;
 							sourceScale=1;
 							align="center";
@@ -11816,6 +12710,7 @@ class CfgMagazines
 						};
 						class Shape
 						{
+							type="line";
 							width=4;
 							points[]=
 							{
@@ -11962,6 +12857,7 @@ class CfgMagazines
 						class Shape: Shape;  //found empty after stripping
 						class Polygon
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -12099,6 +12995,7 @@ class CfgMagazines
 	};
 	class rhs_mag_R74_APU73: rhs_mag_R74
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_pylon_apu73_r73";
 		hardpoints[]=
 		{
 			"RHS_HP_R74_APU73"
@@ -12106,10 +13003,12 @@ class CfgMagazines
 	};
 	class rhs_mag_R74M2: rhs_mag_R73
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_pylon_m_r74m2";
 		count=1;
 		ammo="rhs_ammo_r74m2";
 		displayname="$STR_RHS_R74M2_NAME";
 		displaynameshort="IR";
+		descriptionShort="Infrared homing. Locking radius: ±75° off-boresight. Range: 0.15km-8km";
 		initspeed=0;
 		hardpoints[]=
 		{
@@ -12130,10 +13029,12 @@ class CfgMagazines
 	};
 	class rhs_mag_R77: rhs_mag_R73
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_pylon_m_r77";
 		count=1;
 		ammo="rhs_ammo_r77";
 		displayname="$STR_RHS_R77_NAME";
 		displaynameshort="ARH";
+		descriptionShort="Active radar homing. Range: 2km-25km";
 		hardpoints[]=
 		{
 			"RHS_HP_R77"
@@ -12156,7 +13057,9 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="77";
 						scale=1;
 						sourceScale=1;
 						align="center";
@@ -12188,7 +13091,9 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="77";
 						scale=1;
 						sourceScale=1;
 						align="right";
@@ -12220,6 +13125,7 @@ class CfgMagazines
 					alpha=0.22;
 					class Shape
 					{
+						type="polygon";
 						width=4;
 						points[]=
 						{
@@ -12255,6 +13161,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -12292,6 +13199,7 @@ class CfgMagazines
 				{
 					class Center
 					{
+						type="fixed";
 						pos[]={0,0};
 					};
 				};
@@ -12305,7 +13213,9 @@ class CfgMagazines
 						color[]={1,1,1};
 						class PylonText1
 						{
+							type="text";
 							source="static";
+							text="77";
 							scale=1;
 							sourceScale=1;
 							align="center";
@@ -12327,6 +13237,7 @@ class CfgMagazines
 						};
 						class Shape
 						{
+							type="line";
 							width=4;
 							points[]=
 							{
@@ -12473,6 +13384,7 @@ class CfgMagazines
 						class Shape: Shape;  //found empty after stripping
 						class Polygon
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -12605,6 +13517,7 @@ class CfgMagazines
 	};
 	class rhs_mag_R77_AKU170: rhs_mag_R77
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_pylon_m_r77_ext";
 		hardpoints[]=
 		{
 			"RHS_HP_R77_AKU170"
@@ -12612,6 +13525,7 @@ class CfgMagazines
 	};
 	class rhs_mag_R77_AKU170_MIG29: rhs_mag_R77
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_pylon_m_r77_MiG";
 		hardpoints[]=
 		{
 			"RHS_HP_R77_AKU170_MIG29"
@@ -12619,10 +13533,12 @@ class CfgMagazines
 	};
 	class rhs_mag_R77M: rhs_mag_R77
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_pylon_m_r77m";
 		count=1;
 		ammo="rhs_ammo_r77m";
 		displayname="$STR_RHS_R77M_NAME";
 		displaynameshort="ARH";
+		descriptionShort="Active radar homing missile with improved CM resistance. Range: 2km-25km";
 		hardpoints[]=
 		{
 			"RHS_HP_R77M"
@@ -12645,7 +13561,9 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="77М";
 						scale=1;
 						sourceScale=1;
 						align="center";
@@ -12677,7 +13595,9 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="77М";
 						scale=1;
 						sourceScale=1;
 						align="right";
@@ -12709,6 +13629,7 @@ class CfgMagazines
 					alpha=0.22;
 					class Shape
 					{
+						type="polygon";
 						width=4;
 						points[]=
 						{
@@ -12744,6 +13665,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -12781,6 +13703,7 @@ class CfgMagazines
 				{
 					class Center
 					{
+						type="fixed";
 						pos[]={0,0};
 					};
 				};
@@ -12794,7 +13717,9 @@ class CfgMagazines
 						color[]={1,1,1};
 						class PylonText1
 						{
+							type="text";
 							source="static";
+							text="77М";
 							scale=1;
 							sourceScale=1;
 							align="center";
@@ -12816,6 +13741,7 @@ class CfgMagazines
 						};
 						class Shape
 						{
+							type="line";
 							width=4;
 							points[]=
 							{
@@ -12962,6 +13888,7 @@ class CfgMagazines
 						class Shape: Shape;  //found empty after stripping
 						class Polygon
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -13094,6 +14021,7 @@ class CfgMagazines
 	};
 	class rhs_mag_R77M_AKU170: rhs_mag_R77M
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_pylon_m_r77_ext";
 		hardpoints[]=
 		{
 			"RHS_HP_R77M_AKU170"
@@ -13101,6 +14029,7 @@ class CfgMagazines
 	};
 	class rhs_mag_R77M_AKU170_MIG29: rhs_mag_R77M
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_pylon_m_r77_MiG";
 		hardpoints[]=
 		{
 			"RHS_HP_R77M_AKU170_MIG29"
@@ -13108,8 +14037,10 @@ class CfgMagazines
 	};
 	class rhs_mag_kh25: VehicleMagazine
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_pylon_apu68_kh25";
 		ammo="rhs_ammo_kh25";
 		displayname="$STR_RHS_KH25_NAME";
+		descriptionShort="Semi-active laser seeker. Range: 2km-10km";
 		displaynameshort="LG";
 		namesound="missiles";
 		count=1;
@@ -13132,7 +14063,9 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="Х25";
 						scale=1;
 						sourceScale=1;
 						align="center";
@@ -13164,7 +14097,9 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="Х25";
 						scale=1;
 						sourceScale=1;
 						align="right";
@@ -13196,6 +14131,7 @@ class CfgMagazines
 					alpha=0.22;
 					class Shape
 					{
+						type="polygon";
 						width=4;
 						points[]=
 						{
@@ -13231,6 +14167,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -13268,6 +14205,7 @@ class CfgMagazines
 				{
 					class Center
 					{
+						type="fixed";
 						pos[]={0,0};
 					};
 				};
@@ -13281,7 +14219,9 @@ class CfgMagazines
 						color[]={1,1,1};
 						class PylonText1
 						{
+							type="text";
 							source="static";
+							text="Х25";
 							scale=1;
 							sourceScale=1;
 							align="center";
@@ -13303,6 +14243,7 @@ class CfgMagazines
 						};
 						class Shape
 						{
+							type="line";
 							width=4;
 							points[]=
 							{
@@ -13449,6 +14390,7 @@ class CfgMagazines
 						class Shape: Shape;  //found empty after stripping
 						class Polygon
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -13583,6 +14525,7 @@ class CfgMagazines
 	{
 		ammo="rhs_ammo_kh25ML";
 		displayname="$STR_RHS_KH25ML_NAME";
+		descriptionShort="Semi-active laser seeker. Range: 2km-10km";
 		mass=308;
 		pylonWeapon="rhs_weap_kh25ml_Launcher";
 	};
@@ -13591,6 +14534,7 @@ class CfgMagazines
 		ammo="rhs_ammo_kh25MA";
 		displayname="$STR_RHS_KH25MA_NAME";
 		displaynameshort="AGM";
+		descriptionShort="Active radar homing. Requires radar. Range: 1.5km-10km";
 		mass=308;
 		pylonWeapon="rhs_weap_kh25ma_Launcher";
 	};
@@ -13599,6 +14543,7 @@ class CfgMagazines
 		ammo="rhs_ammo_kh25MT";
 		displayname="$STR_RHS_KH25MT_NAME";
 		displaynameshort="TV";
+		descriptionShort="TV-guided version which is fitted with automatic optical homing to a distinguishable object indicated by the pilot in the cockpit. Range: 1.5km-8km";
 		pylonWeapon="rhs_weap_kh25mt_Launcher";
 	};
 	class rhs_mag_kh25MTP: rhs_mag_kh25
@@ -13606,6 +14551,7 @@ class CfgMagazines
 		ammo="rhs_ammo_kh25MTP";
 		displayname="$STR_RHS_KH25MTP_NAME";
 		displaynameshort="IR";
+		descriptionShort="IR-guided version which is fitted with automatic optical homing to a distinguishable object indicated by the pilot in the cockpit. Range: 1.5km-9km";
 		pylonWeapon="rhs_weap_kh25mtp_Launcher";
 	};
 	class rhs_mag_kh25MP: rhs_mag_kh25
@@ -13613,11 +14559,13 @@ class CfgMagazines
 		ammo="rhs_ammo_kh25MP";
 		displayname="$STR_RHS_KH25MP_NAME";
 		displaynameshort="Anti-Radar";
+		descriptionShort="Anti radiation missile. Range: 1.5km-10km";
 		mass=323;
 		pylonWeapon="rhs_weap_kh25mp_Launcher";
 	};
 	class rhs_mag_kh25_apu68_mig29: rhs_mag_kh25
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_pylon_bd3_umk2a_kh25";
 		hardpoints[]=
 		{
 			"RHS_HP_KH25_APU68_MIG29"
@@ -13636,6 +14584,7 @@ class CfgMagazines
 		ammo="rhs_ammo_kh25MT";
 		displayname="$STR_RHS_KH25MT_NAME";
 		displaynameshort="TV";
+		descriptionShort="TV-guided version which is fitted with automatic optical homing to a distinguishable object indicated by the pilot in the cockpit. Range: 1.5km-8km";
 		pylonWeapon="rhs_weap_kh25mt_Launcher";
 	};
 	class rhs_mag_kh25MTP_apu68_mig29: rhs_mag_kh25_apu68_mig29
@@ -13643,6 +14592,7 @@ class CfgMagazines
 		ammo="rhs_ammo_kh25MTP";
 		displayname="$STR_RHS_KH25MTP_NAME";
 		displaynameshort="IR";
+		descriptionShort="IR-guided version which is fitted with automatic optical homing to a distinguishable object indicated by the pilot in the cockpit. Range: 1.5km-9km";
 		pylonWeapon="rhs_weap_kh25mtp_Launcher";
 	};
 	class rhs_mag_kh25MP_apu68_mig29: rhs_mag_kh25_apu68_mig29
@@ -13650,14 +14600,17 @@ class CfgMagazines
 		ammo="rhs_ammo_kh25MP";
 		displayname="$STR_RHS_KH25MP_NAME";
 		displaynameshort="Anti-Radar";
+		descriptionShort="Anti radiation missile. Range: 1.5km-10km";
 		mass=323;
 		pylonWeapon="rhs_weap_kh25mp_Launcher";
 	};
 	class rhs_mag_kh29l: VehicleMagazine
 	{
+		model="\rhsafrf\addons\rhs_a2port_air\data\rhs_pylon_m_kh29_aku58";
 		ammo="rhs_ammo_kh29l";
 		displayname="$STR_RHS_KH29L_NAME";
 		displaynameshort="LG";
+		descriptionShort="Semi-active laser seeker. Range: 1.5km-10km";
 		namesound="missiles";
 		count=1;
 		initspeed=0;
@@ -13679,7 +14632,9 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="Х29";
 						scale=1;
 						sourceScale=1;
 						align="center";
@@ -13711,7 +14666,9 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="Х29";
 						scale=1;
 						sourceScale=1;
 						align="right";
@@ -13743,6 +14700,7 @@ class CfgMagazines
 					alpha=0.22;
 					class Shape
 					{
+						type="polygon";
 						width=4;
 						points[]=
 						{
@@ -13778,6 +14736,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -13815,6 +14774,7 @@ class CfgMagazines
 				{
 					class Center
 					{
+						type="fixed";
 						pos[]={0,0};
 					};
 				};
@@ -13828,7 +14788,9 @@ class CfgMagazines
 						color[]={1,1,1};
 						class PylonText1
 						{
+							type="text";
 							source="static";
+							text="Х29";
 							scale=1;
 							sourceScale=1;
 							align="center";
@@ -13850,6 +14812,7 @@ class CfgMagazines
 						};
 						class Shape
 						{
+							type="line";
 							width=4;
 							points[]=
 							{
@@ -13996,6 +14959,7 @@ class CfgMagazines
 						class Shape: Shape;  //found empty after stripping
 						class Polygon
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -14131,6 +15095,7 @@ class CfgMagazines
 		ammo="rhs_ammo_kh29ML";
 		displayname="$STR_RHS_KH29ML_NAME";
 		displaynameshort="LG";
+		descriptionShort="Semi-active laser seeker. Range: 1.5km-10km";
 		pylonWeapon="rhs_weap_kh29ml_Launcher";
 	};
 	class rhs_mag_kh29T: rhs_mag_kh29l
@@ -14138,6 +15103,7 @@ class CfgMagazines
 		ammo="rhs_ammo_kh29T";
 		displayname="$STR_RHS_KH29T_NAME";
 		displaynameshort="TV";
+		descriptionShort="TV-guided version which is fitted with automatic optical homing to a distinguishable object indicated by the pilot in the cockpit. Range: 1.5km-9km";
 		mass=680;
 		pylonWeapon="rhs_weap_kh29t_Launcher";
 		class mfdElements
@@ -14152,7 +15118,9 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="Х29Т";
 						scale=1;
 						sourceScale=1;
 						align="center";
@@ -14184,7 +15152,9 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="Х29Т";
 						scale=1;
 						sourceScale=1;
 						align="right";
@@ -14216,6 +15186,7 @@ class CfgMagazines
 					alpha=0.22;
 					class Shape
 					{
+						type="polygon";
 						width=4;
 						points[]=
 						{
@@ -14251,6 +15222,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -14288,6 +15260,7 @@ class CfgMagazines
 				{
 					class Center
 					{
+						type="fixed";
 						pos[]={0,0};
 					};
 				};
@@ -14301,7 +15274,9 @@ class CfgMagazines
 						color[]={1,1,1};
 						class PylonText1
 						{
+							type="text";
 							source="static";
+							text="Х29Т";
 							scale=1;
 							sourceScale=1;
 							align="center";
@@ -14323,6 +15298,7 @@ class CfgMagazines
 						};
 						class Shape
 						{
+							type="line";
 							width=4;
 							points[]=
 							{
@@ -14469,6 +15445,7 @@ class CfgMagazines
 						class Shape: Shape;  //found empty after stripping
 						class Polygon
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -14604,6 +15581,7 @@ class CfgMagazines
 		ammo="rhs_ammo_kh29D";
 		displayname="$STR_RHS_KH29D_NAME";
 		displaynameshort="IR";
+		descriptionShort="IR-guided version which is fitted with automatic optical homing to a distinguishable object indicated by the pilot in the cockpit. Range: 1.5km-9km";
 		pylonWeapon="rhs_weap_kh29d_Launcher";
 		class mfdElements
 		{
@@ -14617,7 +15595,9 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="Х29Д";
 						scale=1;
 						sourceScale=1;
 						align="center";
@@ -14649,7 +15629,9 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="Х29Д";
 						scale=1;
 						sourceScale=1;
 						align="right";
@@ -14681,6 +15663,7 @@ class CfgMagazines
 					alpha=0.22;
 					class Shape
 					{
+						type="polygon";
 						width=4;
 						points[]=
 						{
@@ -14716,6 +15699,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -14753,6 +15737,7 @@ class CfgMagazines
 				{
 					class Center
 					{
+						type="fixed";
 						pos[]={0,0};
 					};
 				};
@@ -14766,7 +15751,9 @@ class CfgMagazines
 						color[]={1,1,1};
 						class PylonText1
 						{
+							type="text";
 							source="static";
+							text="Х29Д";
 							scale=1;
 							sourceScale=1;
 							align="center";
@@ -14788,6 +15775,7 @@ class CfgMagazines
 						};
 						class Shape
 						{
+							type="line";
 							width=4;
 							points[]=
 							{
@@ -14934,6 +15922,7 @@ class CfgMagazines
 						class Shape: Shape;  //found empty after stripping
 						class Polygon
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -15069,6 +16058,7 @@ class CfgMagazines
 		ammo="rhs_ammo_kh29MP";
 		displayname="$STR_RHS_KH29MP_NAME";
 		displaynameshort="AGM";
+		descriptionShort="Active radar homing. Requires radar. Range: 1.5km-9km";
 		pylonWeapon="rhs_weap_kh29mp_Launcher";
 		class mfdElements
 		{
@@ -15082,7 +16072,9 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="Х29МП";
 						scale=1;
 						sourceScale=1;
 						align="center";
@@ -15114,7 +16106,9 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="Х29МП";
 						scale=1;
 						sourceScale=1;
 						align="right";
@@ -15146,6 +16140,7 @@ class CfgMagazines
 					alpha=0.22;
 					class Shape
 					{
+						type="polygon";
 						width=4;
 						points[]=
 						{
@@ -15181,6 +16176,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -15218,6 +16214,7 @@ class CfgMagazines
 				{
 					class Center
 					{
+						type="fixed";
 						pos[]={0,0};
 					};
 				};
@@ -15231,7 +16228,9 @@ class CfgMagazines
 						color[]={1,1,1};
 						class PylonText1
 						{
+							type="text";
 							source="static";
+							text="Х29МП";
 							scale=1;
 							sourceScale=1;
 							align="center";
@@ -15253,6 +16252,7 @@ class CfgMagazines
 						};
 						class Shape
 						{
+							type="line";
 							width=4;
 							points[]=
 							{
@@ -15399,6 +16399,7 @@ class CfgMagazines
 						class Shape: Shape;  //found empty after stripping
 						class Polygon
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -15531,6 +16532,7 @@ class CfgMagazines
 	};
 	class rhs_mag_kh29l_aku58_mig29: rhs_mag_kh29l
 	{
+		model="\rhsafrf\addons\rhs_a2port_air\data\rhs_pylon_m_kh29_aku58_mig";
 		pylonWeapon="rhs_weap_kh29_mig29_Launcher";
 		hardpoints[]=
 		{
@@ -15542,6 +16544,7 @@ class CfgMagazines
 		ammo="rhs_ammo_kh29ML";
 		displayname="$STR_RHS_KH29ML_NAME";
 		displaynameshort="LG";
+		descriptionShort="Semi-active laser seeker. Range: 1.5km-10km";
 		pylonWeapon="rhs_weap_kh29ml_mig29_Launcher";
 	};
 	class rhs_mag_kh29T_aku58_mig29: rhs_mag_kh29l_aku58_mig29
@@ -15549,6 +16552,7 @@ class CfgMagazines
 		ammo="rhs_ammo_kh29T";
 		displayname="$STR_RHS_KH29T_NAME";
 		displaynameshort="TV";
+		descriptionShort="TV-guided version which is fitted with automatic optical homing to a distinguishable object indicated by the pilot in the cockpit. Range: 1.5km-9km";
 		mass=680;
 		pylonWeapon="rhs_weap_kh29t_Launcher";
 		class mfdElements
@@ -15563,7 +16567,9 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="Х29Т";
 						scale=1;
 						sourceScale=1;
 						align="center";
@@ -15595,7 +16601,9 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="Х29Т";
 						scale=1;
 						sourceScale=1;
 						align="right";
@@ -15627,6 +16635,7 @@ class CfgMagazines
 					alpha=0.22;
 					class Shape
 					{
+						type="polygon";
 						width=4;
 						points[]=
 						{
@@ -15662,6 +16671,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -15699,6 +16709,7 @@ class CfgMagazines
 				{
 					class Center
 					{
+						type="fixed";
 						pos[]={0,0};
 					};
 				};
@@ -15712,7 +16723,9 @@ class CfgMagazines
 						color[]={1,1,1};
 						class PylonText1
 						{
+							type="text";
 							source="static";
+							text="Х29Т";
 							scale=1;
 							sourceScale=1;
 							align="center";
@@ -15734,6 +16747,7 @@ class CfgMagazines
 						};
 						class Shape
 						{
+							type="line";
 							width=4;
 							points[]=
 							{
@@ -15880,6 +16894,7 @@ class CfgMagazines
 						class Shape: Shape;  //found empty after stripping
 						class Polygon
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -16028,7 +17043,9 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="Х29МП";
 						scale=1;
 						sourceScale=1;
 						align="center";
@@ -16060,7 +17077,9 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="Х29МП";
 						scale=1;
 						sourceScale=1;
 						align="right";
@@ -16092,6 +17111,7 @@ class CfgMagazines
 					alpha=0.22;
 					class Shape
 					{
+						type="polygon";
 						width=4;
 						points[]=
 						{
@@ -16127,6 +17147,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -16164,6 +17185,7 @@ class CfgMagazines
 				{
 					class Center
 					{
+						type="fixed";
 						pos[]={0,0};
 					};
 				};
@@ -16177,7 +17199,9 @@ class CfgMagazines
 						color[]={1,1,1};
 						class PylonText1
 						{
+							type="text";
 							source="static";
+							text="Х29МП";
 							scale=1;
 							sourceScale=1;
 							align="center";
@@ -16199,6 +17223,7 @@ class CfgMagazines
 						};
 						class Shape
 						{
+							type="line";
 							width=4;
 							points[]=
 							{
@@ -16345,6 +17370,7 @@ class CfgMagazines
 						class Shape: Shape;  //found empty after stripping
 						class Polygon
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -16477,9 +17503,11 @@ class CfgMagazines
 	};
 	class rhs_mag_Kh38mle: VehicleMagazine
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_pylon_m_kh38m_ext";
 		ammo="rhs_ammo_Kh38MLE_ext";
 		displayname="$STR_RHS_KH38MLE_NAME";
 		displaynameshort="LG";
+		descriptionShort="Laser guided. Range: 1km-8km.";
 		namesound="missiles";
 		count=1;
 		initspeed=0;
@@ -16501,7 +17529,9 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="Х38";
 						scale=1;
 						sourceScale=1;
 						align="center";
@@ -16533,7 +17563,9 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="Х38";
 						scale=1;
 						sourceScale=1;
 						align="right";
@@ -16565,6 +17597,7 @@ class CfgMagazines
 					alpha=0.22;
 					class Shape
 					{
+						type="polygon";
 						width=4;
 						points[]=
 						{
@@ -16600,6 +17633,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -16637,6 +17671,7 @@ class CfgMagazines
 				{
 					class Center
 					{
+						type="fixed";
 						pos[]={0,0};
 					};
 				};
@@ -16650,7 +17685,9 @@ class CfgMagazines
 						color[]={1,1,1};
 						class PylonText1
 						{
+							type="text";
 							source="static";
+							text="Х38";
 							scale=1;
 							sourceScale=1;
 							align="center";
@@ -16672,6 +17709,7 @@ class CfgMagazines
 						};
 						class Shape
 						{
+							type="line";
 							width=4;
 							points[]=
 							{
@@ -16818,6 +17856,7 @@ class CfgMagazines
 						class Shape: Shape;  //found empty after stripping
 						class Polygon
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -16950,6 +17989,7 @@ class CfgMagazines
 	};
 	class rhs_mag_Kh38mle_int: rhs_mag_Kh38mle
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_pylon_m_kh38m";
 		ammo="rhs_ammo_Kh38MLE";
 		hardpoints[]=
 		{
@@ -16965,10 +18005,12 @@ class CfgMagazines
 		ammo="rhs_ammo_Kh38mae_ext";
 		displayname="$STR_RHS_KH38MAE_NAME";
 		displaynameshort="ARH";
+		descriptionShort="Active radar homing. Range: 1km-10km.";
 		pylonWeapon="rhs_weap_kh38mae_Launcher";
 	};
 	class rhs_mag_Kh38mae_int: rhs_mag_Kh38mae
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_pylon_m_kh38m";
 		ammo="rhs_ammo_Kh38mae";
 		hardpoints[]=
 		{
@@ -16984,10 +18026,12 @@ class CfgMagazines
 		ammo="rhs_ammo_Kh38MTE_ext";
 		displayname="$STR_RHS_KH38MTE_NAME";
 		displaynameshort="IR";
+		descriptionShort="IR guided. Range: 1km-10km.";
 		pylonWeapon="rhs_weap_kh38mte_Launcher";
 	};
 	class rhs_mag_Kh38mte_int: rhs_mag_Kh38mte
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_pylon_m_kh38m";
 		ammo="rhs_ammo_Kh38MTE";
 		hardpoints[]=
 		{
@@ -17000,10 +18044,12 @@ class CfgMagazines
 	};
 	class rhs_mag_kh55sm: VehicleMagazine
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_pylon_m_kh55sm";
 		ammo="rhs_ammo_kh55sm";
 		count=1;
 		displayname="$STR_RHS_MAG_KH55SM_CAMO";
 		displaynameshort="Kh-55SM";
+		descriptionShort="Tactical nuke";
 		initspeed=0;
 		namesound="missiles";
 		mass=1700;
@@ -17033,6 +18079,7 @@ class CfgMagazines
 	{
 		displayname="Kh-55Sh HE (camo)";
 		displaynameshort="$STR_RHS_MAG_KH55SH_CAMO";
+		descriptionShort="High explosive";
 		ammo="rhs_ammo_kh55sh";
 	};
 	class rhs_mag_kh55sh_6: rhs_mag_kh55sh
@@ -17067,6 +18114,7 @@ class CfgMagazines
 	};
 	class rhs_mag_apu6_9m127m_ka52: rhs_mag_9m127m
 	{
+		model="rhsafrf\addons\rhs_a2port_air\data\rhs_pylon_m_9m127_6x";
 		pylonWeapon="rhs_weap_9k121_Launcher";
 		hardpoints[]=
 		{
@@ -17075,6 +18123,8 @@ class CfgMagazines
 	};
 	class rhs_mag_fab100: VehicleMagazine
 	{
+		model="\rhsafrf\addons\rhs_a2port_air\data\rhs_pylon_m_fab250";
+		scope=2;
 		count=1;
 		initspeed=0;
 		maxleadspeed=5;
@@ -17101,7 +18151,9 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="АБ100";
 						scale=1;
 						sourceScale=1;
 						align="center";
@@ -17133,7 +18185,9 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="АБ100";
 						scale=1;
 						sourceScale=1;
 						align="right";
@@ -17165,6 +18219,7 @@ class CfgMagazines
 					alpha=0.22;
 					class Shape
 					{
+						type="polygon";
 						width=4;
 						points[]=
 						{
@@ -17200,6 +18255,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -17237,6 +18293,7 @@ class CfgMagazines
 				{
 					class Center
 					{
+						type="fixed";
 						pos[]={0,0};
 					};
 				};
@@ -17250,7 +18307,9 @@ class CfgMagazines
 						color[]={1,1,1};
 						class PylonText1
 						{
+							type="text";
 							source="static";
+							text="АБ100";
 							scale=1;
 							sourceScale=1;
 							align="center";
@@ -17272,6 +18331,7 @@ class CfgMagazines
 						};
 						class Shape
 						{
+							type="line";
 							width=4;
 							points[]=
 							{
@@ -17418,6 +18478,7 @@ class CfgMagazines
 						class Shape: Shape;  //found empty after stripping
 						class Polygon
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -17550,6 +18611,7 @@ class CfgMagazines
 	};
 	class rhs_mag_fab100_ka52: rhs_mag_fab100
 	{
+		model="\rhsafrf\addons\rhs_a2port_air\data\rhs_pylon_m_fab250_ka52";
 		hardpoints[]=
 		{
 			"RHS_HP_FAB100_KA52"
@@ -17557,6 +18619,7 @@ class CfgMagazines
 	};
 	class rhs_mag_fab100_bd3_umk2a: rhs_mag_fab100
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_pylon_bd3_umk2a_fab250";
 		hardpoints[]=
 		{
 			"RHS_HP_FAB100_BD3_UMK2A"
@@ -17568,6 +18631,7 @@ class CfgMagazines
 		count=4;
 		weight=400;
 		mass=400;
+		model="\rhsafrf\addons\rhs_airweapons\rhs_pylon_mbd3_u4t_fab100";
 		pylonweapon="rhs_weap_fab100_mbd3_u4t";
 		hardpoints[]=
 		{
@@ -17581,6 +18645,7 @@ class CfgMagazines
 		count=6;
 		weight=600;
 		mass=600;
+		model="\rhsafrf\addons\rhs_airweapons\rhs_pylon_mbd3_u6_fab100";
 		pylonweapon="rhs_weap_fab100_mbd3_u6";
 		hardpoints[]=
 		{
@@ -17590,6 +18655,8 @@ class CfgMagazines
 	};
 	class rhs_mag_fab250: VehicleMagazine
 	{
+		model="\rhsafrf\addons\rhs_a2port_air\data\rhs_pylon_m_fab250";
+		scope=2;
 		ammo="rhs_ammo_fab250";
 		count=1;
 		displayname="$STR_RHS_FAB250_NAME";
@@ -17616,7 +18683,9 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="АБ250";
 						scale=1;
 						sourceScale=1;
 						align="center";
@@ -17648,7 +18717,9 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="АБ250";
 						scale=1;
 						sourceScale=1;
 						align="right";
@@ -17680,6 +18751,7 @@ class CfgMagazines
 					alpha=0.22;
 					class Shape
 					{
+						type="polygon";
 						width=4;
 						points[]=
 						{
@@ -17715,6 +18787,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -17752,6 +18825,7 @@ class CfgMagazines
 				{
 					class Center
 					{
+						type="fixed";
 						pos[]={0,0};
 					};
 				};
@@ -17765,7 +18839,9 @@ class CfgMagazines
 						color[]={1,1,1};
 						class PylonText1
 						{
+							type="text";
 							source="static";
+							text="АБ250";
 							scale=1;
 							sourceScale=1;
 							align="center";
@@ -17787,6 +18863,7 @@ class CfgMagazines
 						};
 						class Shape
 						{
+							type="line";
 							width=4;
 							points[]=
 							{
@@ -17933,6 +19010,7 @@ class CfgMagazines
 						class Shape: Shape;  //found empty after stripping
 						class Polygon
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -18085,6 +19163,7 @@ class CfgMagazines
 	};
 	class rhs_mag_fab250_ka52: rhs_mag_fab250
 	{
+		model="\rhsafrf\addons\rhs_a2port_air\data\rhs_pylon_m_fab250_ka52";
 		hardpoints[]=
 		{
 			"RHS_HP_FAB250_KA52"
@@ -18092,6 +19171,7 @@ class CfgMagazines
 	};
 	class rhs_mag_fab250_bd3_umk2a: rhs_mag_fab250
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_pylon_bd3_umk2a_fab250";
 		hardpoints[]=
 		{
 			"RHS_HP_FAB250_BD3_UMK2A"
@@ -18105,6 +19185,7 @@ class CfgMagazines
 	};
 	class rhs_mag_fab250_m62_ka52: rhs_mag_fab250_m62
 	{
+		model="\rhsafrf\addons\rhs_a2port_air\data\rhs_pylon_m_fab250_ka52";
 		hardpoints[]=
 		{
 			"RHS_HP_FAB250_KA52"
@@ -18112,6 +19193,7 @@ class CfgMagazines
 	};
 	class rhs_mag_fab250_m62_bd3_umk2a: rhs_mag_fab250_m62
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_pylon_bd3_umk2a_fab250";
 		hardpoints[]=
 		{
 			"RHS_HP_FAB250_BD3_UMK2A"
@@ -18126,6 +19208,7 @@ class CfgMagazines
 	};
 	class rhs_mag_ofab250_ka52: rhs_mag_ofab250
 	{
+		model="\rhsafrf\addons\rhs_a2port_air\data\rhs_pylon_m_fab250_ka52";
 		hardpoints[]=
 		{
 			"RHS_HP_FAB250_KA52"
@@ -18133,6 +19216,7 @@ class CfgMagazines
 	};
 	class rhs_mag_ofab250_bd3_umk2a: rhs_mag_ofab250
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_pylon_bd3_umk2a_fab250";
 		hardpoints[]=
 		{
 			"RHS_HP_FAB250_BD3_UMK2A"
@@ -18140,6 +19224,7 @@ class CfgMagazines
 	};
 	class rhs_mag_kab250: rhs_mag_fab250
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_pylon_m_kab250_ext";
 		ammo="rhs_ammo_kab250";
 		displayname="$STR_RHS_KAB250_NAME";
 		displayNameShort="LGB";
@@ -18160,7 +19245,9 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="КАБ250";
 						scale=1;
 						sourceScale=1;
 						align="center";
@@ -18192,7 +19279,9 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="КАБ250";
 						scale=1;
 						sourceScale=1;
 						align="right";
@@ -18224,6 +19313,7 @@ class CfgMagazines
 					alpha=0.22;
 					class Shape
 					{
+						type="polygon";
 						width=4;
 						points[]=
 						{
@@ -18259,6 +19349,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -18296,6 +19387,7 @@ class CfgMagazines
 				{
 					class Center
 					{
+						type="fixed";
 						pos[]={0,0};
 					};
 				};
@@ -18309,7 +19401,9 @@ class CfgMagazines
 						color[]={1,1,1};
 						class PylonText1
 						{
+							type="text";
 							source="static";
+							text="КАБ250";
 							scale=1;
 							sourceScale=1;
 							align="center";
@@ -18331,6 +19425,7 @@ class CfgMagazines
 						};
 						class Shape
 						{
+							type="line";
 							width=4;
 							points[]=
 							{
@@ -18477,6 +19572,7 @@ class CfgMagazines
 						class Shape: Shape;  //found empty after stripping
 						class Polygon
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -18609,6 +19705,7 @@ class CfgMagazines
 	};
 	class rhs_mag_kab250_int: rhs_mag_kab250
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_pylon_m_kab250";
 		hardpoints[]=
 		{
 			"RHS_HP_FAB250",
@@ -18633,7 +19730,9 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="РБК250";
 						scale=1;
 						sourceScale=1;
 						align="center";
@@ -18665,7 +19764,9 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="РБК250";
 						scale=1;
 						sourceScale=1;
 						align="right";
@@ -18697,6 +19798,7 @@ class CfgMagazines
 					alpha=0.22;
 					class Shape
 					{
+						type="polygon";
 						width=4;
 						points[]=
 						{
@@ -18732,6 +19834,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -18769,6 +19872,7 @@ class CfgMagazines
 				{
 					class Center
 					{
+						type="fixed";
 						pos[]={0,0};
 					};
 				};
@@ -18782,7 +19886,9 @@ class CfgMagazines
 						color[]={1,1,1};
 						class PylonText1
 						{
+							type="text";
 							source="static";
+							text="РБК250";
 							scale=1;
 							sourceScale=1;
 							align="center";
@@ -18804,6 +19910,7 @@ class CfgMagazines
 						};
 						class Shape
 						{
+							type="line";
 							width=4;
 							points[]=
 							{
@@ -18950,6 +20057,7 @@ class CfgMagazines
 						class Shape: Shape;  //found empty after stripping
 						class Polygon
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -19082,6 +20190,7 @@ class CfgMagazines
 	};
 	class rhs_mag_rbk250_ao1_ka52: rhs_mag_rbk250_ao1
 	{
+		model="\rhsafrf\addons\rhs_a2port_air\data\rhs_pylon_m_fab250_ka52";
 		hardpoints[]=
 		{
 			"RHS_HP_FAB250_KA52"
@@ -19089,6 +20198,7 @@ class CfgMagazines
 	};
 	class rhs_mag_rbk250_ao1_bd3_umk2a: rhs_mag_rbk250_ao1
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_pylon_bd3_umk2a_fab250";
 		hardpoints[]=
 		{
 			"RHS_HP_FAB250_BD3_UMK2A"
@@ -19103,6 +20213,7 @@ class CfgMagazines
 	};
 	class rhs_mag_rbk250_ptab25_ka52: rhs_mag_rbk250_ptab25
 	{
+		model="\rhsafrf\addons\rhs_a2port_air\data\rhs_pylon_m_fab250_ka52";
 		hardpoints[]=
 		{
 			"RHS_HP_FAB250_KA52"
@@ -19110,6 +20221,7 @@ class CfgMagazines
 	};
 	class rhs_mag_rbk250_ptab25_bd3_umk2a: rhs_mag_rbk250_ptab25
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_pylon_bd3_umk2a_fab250";
 		hardpoints[]=
 		{
 			"RHS_HP_FAB250_BD3_UMK2A"
@@ -19124,6 +20236,7 @@ class CfgMagazines
 	};
 	class rhs_mag_rbk250_zab25t_ka52: rhs_mag_rbk250_zab25t
 	{
+		model="\rhsafrf\addons\rhs_a2port_air\data\rhs_pylon_m_fab250_ka52";
 		hardpoints[]=
 		{
 			"RHS_HP_FAB250_KA52"
@@ -19131,6 +20244,7 @@ class CfgMagazines
 	};
 	class rhs_mag_rbk250_zab25t_bd3_umk2a: rhs_mag_rbk250_zab25t
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_pylon_bd3_umk2a_fab250";
 		hardpoints[]=
 		{
 			"RHS_HP_FAB250_BD3_UMK2A"
@@ -19138,6 +20252,7 @@ class CfgMagazines
 	};
 	class rhs_mag_fab500: rhs_mag_fab250
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_pylon_m_fab500";
 		ammo="rhs_ammo_fab500";
 		displayname="$STR_RHS_FAB500_M62_NAME";
 		weight=500;
@@ -19159,7 +20274,9 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="АБ500";
 						scale=1;
 						sourceScale=1;
 						align="center";
@@ -19191,7 +20308,9 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="АБ500";
 						scale=1;
 						sourceScale=1;
 						align="right";
@@ -19223,6 +20342,7 @@ class CfgMagazines
 					alpha=0.22;
 					class Shape
 					{
+						type="polygon";
 						width=4;
 						points[]=
 						{
@@ -19258,6 +20378,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -19295,6 +20416,7 @@ class CfgMagazines
 				{
 					class Center
 					{
+						type="fixed";
 						pos[]={0,0};
 					};
 				};
@@ -19308,7 +20430,9 @@ class CfgMagazines
 						color[]={1,1,1};
 						class PylonText1
 						{
+							type="text";
 							source="static";
+							text="АБ500";
 							scale=1;
 							sourceScale=1;
 							align="center";
@@ -19330,6 +20454,7 @@ class CfgMagazines
 						};
 						class Shape
 						{
+							type="line";
 							width=4;
 							points[]=
 							{
@@ -19476,6 +20601,7 @@ class CfgMagazines
 						class Shape: Shape;  //found empty after stripping
 						class Polygon
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -19608,6 +20734,7 @@ class CfgMagazines
 	};
 	class rhs_mag_fab500_bd3_usk_a: rhs_mag_fab500
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_pylon_m_fab500_ext";
 		hardpoints[]=
 		{
 			"RHS_HP_FAB500_BD3_USK_A"
@@ -19615,6 +20742,7 @@ class CfgMagazines
 	};
 	class rhs_mag_fab500_bd3_umk2a: rhs_mag_fab500
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_pylon_bd3_umk2a_fab250";
 		hardpoints[]=
 		{
 			"RHS_HP_FAB500_BD3_UMK2A"
@@ -19622,6 +20750,7 @@ class CfgMagazines
 	};
 	class rhs_mag_fab500_ka52: rhs_mag_fab500
 	{
+		model="\rhsafrf\addons\rhs_a2port_air\data\rhs_pylon_m_fab250_ka52";
 		hardpoints[]=
 		{
 			"RHS_HP_FAB500_KA52"
@@ -19634,6 +20763,7 @@ class CfgMagazines
 	};
 	class rhs_mag_fab500_m54_bd3_usk_a: rhs_mag_fab500_m54
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_pylon_m_fab500_ext";
 		hardpoints[]=
 		{
 			"RHS_HP_FAB500_BD3_USK_A"
@@ -19641,6 +20771,7 @@ class CfgMagazines
 	};
 	class rhs_mag_fab500_m54_bd3_umk2a: rhs_mag_fab500_m54
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_pylon_bd3_umk2a_fab250";
 		hardpoints[]=
 		{
 			"RHS_HP_FAB500_BD3_UMK2A"
@@ -19648,6 +20779,7 @@ class CfgMagazines
 	};
 	class rhs_mag_fab500_m54_ka52: rhs_mag_fab500_m54
 	{
+		model="\rhsafrf\addons\rhs_a2port_air\data\rhs_pylon_m_fab250_ka52";
 		hardpoints[]=
 		{
 			"RHS_HP_FAB500_KA52"
@@ -19671,7 +20803,9 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="КАБ500";
 						scale=1;
 						sourceScale=1;
 						align="center";
@@ -19703,7 +20837,9 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="КАБ500";
 						scale=1;
 						sourceScale=1;
 						align="right";
@@ -19735,6 +20871,7 @@ class CfgMagazines
 					alpha=0.22;
 					class Shape
 					{
+						type="polygon";
 						width=4;
 						points[]=
 						{
@@ -19770,6 +20907,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -19807,6 +20945,7 @@ class CfgMagazines
 				{
 					class Center
 					{
+						type="fixed";
 						pos[]={0,0};
 					};
 				};
@@ -19820,7 +20959,9 @@ class CfgMagazines
 						color[]={1,1,1};
 						class PylonText1
 						{
+							type="text";
 							source="static";
+							text="КАБ500";
 							scale=1;
 							sourceScale=1;
 							align="center";
@@ -19842,6 +20983,7 @@ class CfgMagazines
 						};
 						class Shape
 						{
+							type="line";
 							width=4;
 							points[]=
 							{
@@ -19988,6 +21130,7 @@ class CfgMagazines
 						class Shape: Shape;  //found empty after stripping
 						class Polygon
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -20120,6 +21263,7 @@ class CfgMagazines
 	};
 	class rhs_mag_kab500_bd3_umk2a: rhs_mag_kab500
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_pylon_bd3_umk2a_fab250";
 		hardpoints[]=
 		{
 			"RHS_HP_KAB500_BD3_UMK2A"
@@ -20134,6 +21278,7 @@ class CfgMagazines
 	};
 	class rhs_mag_kab500LK_bd3_umk2a: rhs_mag_kab500LK
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_pylon_bd3_umk2a_fab250";
 		hardpoints[]=
 		{
 			"RHS_HP_KAB500_BD3_UMK2A"
@@ -20148,6 +21293,7 @@ class CfgMagazines
 	};
 	class rhs_mag_kab500kr_bd3_umk2a: rhs_mag_kab500kr
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_pylon_bd3_umk2a_fab250";
 		hardpoints[]=
 		{
 			"RHS_HP_KAB500_BD3_UMK2A"
@@ -20162,6 +21308,7 @@ class CfgMagazines
 	};
 	class rhs_mag_kab500od_bd3_umk2a: rhs_mag_kab500od
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_pylon_bd3_umk2a_fab250";
 		hardpoints[]=
 		{
 			"RHS_HP_KAB500_BD3_UMK2A"
@@ -20169,6 +21316,7 @@ class CfgMagazines
 	};
 	class rhs_mag_rbk500_ao25: rhs_mag_fab500
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_pylon_m_rbk500";
 		ammo="rhs_ammo_rbk500_ao25";
 		displayname="$STR_RHS_MAG_RBK500_AO25";
 		displayNameShort="Cluster HE";
@@ -20185,7 +21333,9 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="РБК500";
 						scale=1;
 						sourceScale=1;
 						align="center";
@@ -20217,7 +21367,9 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="РБК500";
 						scale=1;
 						sourceScale=1;
 						align="right";
@@ -20249,6 +21401,7 @@ class CfgMagazines
 					alpha=0.22;
 					class Shape
 					{
+						type="polygon";
 						width=4;
 						points[]=
 						{
@@ -20284,6 +21437,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -20319,6 +21473,7 @@ class CfgMagazines
 	};
 	class rhs_mag_rbk500_ao25_bd3_usk_a: rhs_mag_rbk500_ao25
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_pylon_m_rbk500_ext";
 		hardpoints[]=
 		{
 			"RHS_HP_FAB500_BD3_USK_A"
@@ -20326,6 +21481,7 @@ class CfgMagazines
 	};
 	class rhs_mag_rbk500_ao25_bd3_umk2a: rhs_mag_rbk500_ao25
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_pylon_bd3_umk2a_rbk500";
 		hardpoints[]=
 		{
 			"RHS_HP_FAB500_BD3_UMK2A"
@@ -20333,6 +21489,7 @@ class CfgMagazines
 	};
 	class rhs_mag_rbk500_ao25_ka52: rhs_mag_rbk500_ao25
 	{
+		model="\rhsafrf\addons\rhs_a2port_air\data\rhs_pylon_m_rbk500_ka52";
 		hardpoints[]=
 		{
 			"RHS_HP_FAB500_KA52"
@@ -20340,6 +21497,7 @@ class CfgMagazines
 	};
 	class rhs_mag_rbk500_ofab50: rhs_mag_fab500
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_pylon_m_rbk500";
 		ammo="rhs_ammo_rbk500_ofab50";
 		displayname="$STR_RHS_MAG_RBK500_OFAB50";
 		displayNameShort="Cluster HE-FRAG";
@@ -20347,6 +21505,7 @@ class CfgMagazines
 	};
 	class rhs_mag_rbk500_ofab50_bd3_usk_a: rhs_mag_rbk500_ofab50
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_pylon_m_rbk500_ext";
 		hardpoints[]=
 		{
 			"RHS_HP_FAB500_BD3_USK_A"
@@ -20354,6 +21513,7 @@ class CfgMagazines
 	};
 	class rhs_mag_rbk500_ofab50_bd3_umk2a: rhs_mag_rbk500_ofab50
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_pylon_bd3_umk2a_rbk500";
 		hardpoints[]=
 		{
 			"RHS_HP_FAB500_BD3_UMK2A"
@@ -20361,6 +21521,7 @@ class CfgMagazines
 	};
 	class rhs_mag_rbk500_ofab50_ka52: rhs_mag_rbk500_ofab50
 	{
+		model="\rhsafrf\addons\rhs_a2port_air\data\rhs_pylon_m_rbk500_ka52";
 		hardpoints[]=
 		{
 			"RHS_HP_FAB500_KA52"
@@ -20368,6 +21529,7 @@ class CfgMagazines
 	};
 	class rhs_mag_rbk500_spbed: rhs_mag_fab500
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_pylon_m_rbk500_spbed";
 		ammo="rhs_ammo_rbk500_spbed";
 		displayname="$STR_RHS_MAG_RBK500_SPBED";
 		displayNameShort="Cluster Guided HEAT";
@@ -20375,6 +21537,7 @@ class CfgMagazines
 	};
 	class rhs_mag_rbk500_spbed_bd3_usk_a: rhs_mag_rbk500_spbed
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_pylon_m_rbk500_spbed_ext";
 		hardpoints[]=
 		{
 			"RHS_HP_FAB500_BD3_USK_A"
@@ -20382,6 +21545,7 @@ class CfgMagazines
 	};
 	class rhs_mag_rbk500_spbed_bd3_umk2a: rhs_mag_rbk500_spbed
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_pylon_bd3_umk2a_rbk500_spbed";
 		hardpoints[]=
 		{
 			"RHS_HP_FAB500_BD3_UMK2A"
@@ -20389,6 +21553,7 @@ class CfgMagazines
 	};
 	class rhs_mag_rbk500_spbed_ka52: rhs_mag_rbk500_spbed
 	{
+		model="\rhsafrf\addons\rhs_a2port_air\data\rhs_pylon_m_rbk500_spbed_ka52";
 		hardpoints[]=
 		{
 			"RHS_HP_FAB500_KA52"
@@ -20396,6 +21561,7 @@ class CfgMagazines
 	};
 	class rhs_mag_rbk500_ptab1m: rhs_mag_fab500
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_pylon_m_rbk500_ptab";
 		ammo="rhs_ammo_rbk500_ptab1m";
 		displayname="$STR_RHS_MAG_RBK500_PTAB1M";
 		displayNameShort="Cluster HEAT";
@@ -20403,6 +21569,7 @@ class CfgMagazines
 	};
 	class rhs_mag_rbk500_ptab1m_bd3_usk_a: rhs_mag_rbk500_ptab1m
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_pylon_m_rbk500_ptab_ext";
 		hardpoints[]=
 		{
 			"RHS_HP_FAB500_BD3_USK_A"
@@ -20410,6 +21577,7 @@ class CfgMagazines
 	};
 	class rhs_mag_rbk500_ptab1m_bd3_umk2a: rhs_mag_rbk500_ptab1m
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_pylon_bd3_umk2a_rbk500_ptab";
 		hardpoints[]=
 		{
 			"RHS_HP_FAB500_BD3_UMK2A"
@@ -20417,6 +21585,7 @@ class CfgMagazines
 	};
 	class rhs_mag_rbk500_ptab1m_ka52: rhs_mag_rbk500_ptab1m
 	{
+		model="\rhsafrf\addons\rhs_a2port_air\data\rhs_pylon_m_rbk500_ptab_ka52";
 		hardpoints[]=
 		{
 			"RHS_HP_FAB500_KA52"
@@ -20424,6 +21593,7 @@ class CfgMagazines
 	};
 	class rhs_mag_rbk500_zab25t: rhs_mag_fab500
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_pylon_m_rbk500";
 		ammo="rhs_ammo_rbk500_zab25t";
 		displayname="$STR_RHS_MAG_RBK500_ZAB25T";
 		displayNameShort="Cluster Incendiary";
@@ -20431,6 +21601,7 @@ class CfgMagazines
 	};
 	class rhs_mag_rbk500_zab25t_bd3_usk_a: rhs_mag_rbk500_zab25t
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_pylon_m_rbk500_ext";
 		hardpoints[]=
 		{
 			"RHS_HP_FAB500_BD3_USK_A"
@@ -20438,6 +21609,7 @@ class CfgMagazines
 	};
 	class rhs_mag_rbk500_zab25t_bd3_umk2a: rhs_mag_rbk500_zab25t
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_pylon_bd3_umk2a_rbk500";
 		hardpoints[]=
 		{
 			"RHS_HP_FAB500_BD3_UMK2A"
@@ -20445,6 +21617,7 @@ class CfgMagazines
 	};
 	class rhs_mag_rbk500_zab25t_ka52: rhs_mag_rbk500_zab25t
 	{
+		model="\rhsafrf\addons\rhs_a2port_air\data\rhs_pylon_m_rbk500_ka52";
 		hardpoints[]=
 		{
 			"RHS_HP_FAB500_KA52"
@@ -20452,6 +21625,7 @@ class CfgMagazines
 	};
 	class rhs_mag_kmgu2_ao25: rhs_mag_fab250
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_pylon_m_kmgu2";
 		ammo="rhs_ammo_kmgu2_ao25";
 		displayname="$STR_RHS_MAG_KMGU2_AO25";
 		displayNameShort="Cluster HE";
@@ -20479,7 +21653,9 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="КМГ";
 						scale=1;
 						sourceScale=1;
 						align="center";
@@ -20511,7 +21687,9 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="КМГ";
 						scale=1;
 						sourceScale=1;
 						align="right";
@@ -20543,6 +21721,7 @@ class CfgMagazines
 					alpha=0.22;
 					class Shape
 					{
+						type="polygon";
 						width=4;
 						points[]=
 						{
@@ -20578,6 +21757,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -20615,6 +21795,7 @@ class CfgMagazines
 				{
 					class Center
 					{
+						type="fixed";
 						pos[]={0,0};
 					};
 				};
@@ -20628,7 +21809,9 @@ class CfgMagazines
 						color[]={1,1,1};
 						class PylonText1
 						{
+							type="text";
 							source="static";
+							text="КМГ";
 							scale=1;
 							sourceScale=1;
 							align="center";
@@ -20650,6 +21833,7 @@ class CfgMagazines
 						};
 						class Shape
 						{
+							type="line";
 							width=4;
 							points[]=
 							{
@@ -20796,6 +21980,7 @@ class CfgMagazines
 						class Shape: Shape;  //found empty after stripping
 						class Polygon
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -20928,6 +22113,7 @@ class CfgMagazines
 	};
 	class rhs_mag_kmgu2_ao25_bd3_umk2a: rhs_mag_kmgu2_ao25
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_pylon_bd3_umk2a_kmgu2";
 		hardpoints[]=
 		{
 			"RHS_HP_KMGU2_BD3_UMK2A"
@@ -20935,6 +22121,7 @@ class CfgMagazines
 	};
 	class rhs_mag_kmgu2_ao25_ka52: rhs_mag_kmgu2_ao25
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_pylon_m_kmgu2_ka52";
 		hardpoints[]=
 		{
 			"RHS_HP_KMGU2_KA52"
@@ -20949,6 +22136,7 @@ class CfgMagazines
 	};
 	class rhs_mag_kmgu2_ptab1m_bd3_umk2a: rhs_mag_kmgu2_ptab1m
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_pylon_bd3_umk2a_kmgu2";
 		hardpoints[]=
 		{
 			"RHS_HP_KMGU2_BD3_UMK2A"
@@ -20956,6 +22144,7 @@ class CfgMagazines
 	};
 	class rhs_mag_kmgu2_ptab1m_ka52: rhs_mag_kmgu2_ptab1m
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_pylon_m_kmgu2_ka52";
 		hardpoints[]=
 		{
 			"RHS_HP_KMGU2_KA52"
@@ -20970,6 +22159,7 @@ class CfgMagazines
 	};
 	class rhs_mag_kmgu2_pfm1_bd3_umk2a: rhs_mag_kmgu2_pfm1
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_pylon_bd3_umk2a_kmgu2";
 		hardpoints[]=
 		{
 			"RHS_HP_KMGU2_BD3_UMK2A"
@@ -20977,6 +22167,7 @@ class CfgMagazines
 	};
 	class rhs_mag_kmgu2_pfm1_ka52: rhs_mag_kmgu2_pfm1
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_pylon_m_kmgu2_ka52";
 		hardpoints[]=
 		{
 			"RHS_HP_KMGU2_KA52"
@@ -20991,6 +22182,7 @@ class CfgMagazines
 	};
 	class rhs_mag_kmgu2_ptm1_bd3_umk2a: rhs_mag_kmgu2_ptm1
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_pylon_bd3_umk2a_kmgu2";
 		hardpoints[]=
 		{
 			"RHS_HP_KMGU2_BD3_UMK2A"
@@ -20998,6 +22190,7 @@ class CfgMagazines
 	};
 	class rhs_mag_kmgu2_ptm1_ka52: rhs_mag_kmgu2_ptm1
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_pylon_m_kmgu2_ka52";
 		hardpoints[]=
 		{
 			"RHS_HP_KMGU2_KA52"
@@ -21006,18 +22199,27 @@ class CfgMagazines
 	class ATMine_Range_Mag;
 	class rhs_mag_mine_pfm1: ATMine_Range_Mag
 	{
+		author="$STR_RHS_AUTHOR_FULL";
 		displayName="$STR_RHS_PFM1_NAME";
+		descriptionShort="$STR_RHS_CFGMAGAZINES_PMN21";
+		model="\rhsafrf\addons\rhs_airweapons\rhs_m_pfm1_d";
+		picture="\rhsafrf\addons\rhs_weapons\icons\rhs_mine_pfm1_ca";
 		mass=4.2399998;
 		ammo="rhs_ammo_pfm1";
 	};
 	class rhs_mag_mine_ptm1: ATMine_Range_Mag
 	{
+		author="$STR_RHS_AUTHOR_FULL";
 		displayName="$STR_RHS_PTM1_NAME";
+		descriptionShort="$STR_RHS_CFGMAGAZINES_TM62M1";
+		model="\rhsafrf\addons\rhs_airweapons\rhs_m_ptm1_d";
+		picture="\rhsafrf\addons\rhs_weapons\icons\rhs_mine_ptm1_ca";
 		mass=30;
 		ammo="rhs_ammo_ptm1";
 	};
 	class rhs_mag_ptb1150_ptb: rhs_mag_ofab250_bd3_umk2a
 	{
+		model="\rhsafrf\addons\rhs_airweapons\rhs_pylon_ptb_ptb1150";
 		ammo="rhs_ammo_ptb1150";
 		displayname="$STR_RHS_PTB1150_NAME";
 		displayNameShort="PTB";
@@ -21038,7 +22240,9 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="ПТАБ";
 						scale=1;
 						sourceScale=1;
 						align="center";
@@ -21070,7 +22274,9 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="ПТАБ";
 						scale=1;
 						sourceScale=1;
 						align="right";
@@ -21102,6 +22308,7 @@ class CfgMagazines
 					alpha=0.22;
 					class Shape
 					{
+						type="polygon";
 						width=4;
 						points[]=
 						{
@@ -21137,6 +22344,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -21174,6 +22382,7 @@ class CfgMagazines
 				{
 					class Center
 					{
+						type="fixed";
 						pos[]={0,0};
 					};
 				};
@@ -21187,7 +22396,9 @@ class CfgMagazines
 						color[]={1,1,1};
 						class PylonText1
 						{
+							type="text";
 							source="static";
+							text="ПТАБ";
 							scale=1;
 							sourceScale=1;
 							align="center";
@@ -21209,6 +22420,7 @@ class CfgMagazines
 						};
 						class Shape
 						{
+							type="line";
 							width=4;
 							points[]=
 							{
@@ -21355,6 +22567,7 @@ class CfgMagazines
 						class Shape: Shape;  //found empty after stripping
 						class Polygon
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -21487,6 +22700,7 @@ class CfgMagazines
 	};
 	class rhs_mag_ptb1500: VehicleMagazine
 	{
+		scope=2;
 		ammo="rhs_ammo_ptb1500";
 		displayName="$STR_RHS_PTB1500_NAME";
 		count=1;
@@ -21494,6 +22708,7 @@ class CfgMagazines
 		sound[]={};
 		reloadSound[]={};
 		nameSound="";
+		model="\rhsafrf\addons\rhs_airweapons\rhs_pylon_ptb_ptb1500";
 		pylonweapon="rhs_weap_DummyLauncher";
 		hardpoints[]=
 		{
@@ -21511,7 +22726,9 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="ПТАБ";
 						scale=1;
 						sourceScale=1;
 						align="center";
@@ -21543,7 +22760,9 @@ class CfgMagazines
 					alpha=1;
 					class PylonText1
 					{
+						type="text";
 						source="static";
+						text="ПТАБ";
 						scale=1;
 						sourceScale=1;
 						align="right";
@@ -21575,6 +22794,7 @@ class CfgMagazines
 					alpha=0.22;
 					class Shape
 					{
+						type="polygon";
 						width=4;
 						points[]=
 						{
@@ -21610,6 +22830,7 @@ class CfgMagazines
 						alpha=0.22;
 						class Shape
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -21647,6 +22868,7 @@ class CfgMagazines
 				{
 					class Center
 					{
+						type="fixed";
 						pos[]={0,0};
 					};
 				};
@@ -21660,7 +22882,9 @@ class CfgMagazines
 						color[]={1,1,1};
 						class PylonText1
 						{
+							type="text";
 							source="static";
+							text="ПТАБ";
 							scale=1;
 							sourceScale=1;
 							align="center";
@@ -21682,6 +22906,7 @@ class CfgMagazines
 						};
 						class Shape
 						{
+							type="line";
 							width=4;
 							points[]=
 							{
@@ -21828,6 +23053,7 @@ class CfgMagazines
 						class Shape: Shape;  //found empty after stripping
 						class Polygon
 						{
+							type="polygon";
 							width=4;
 							points[]=
 							{
@@ -21960,6 +23186,8 @@ class CfgMagazines
 	};
 	class rhs_mag_upk23_ofz: VehicleMagazine
 	{
+		model="\rhsafrf\addons\rhs_a2port_air\data\rhs_pylon_g_upk23";
+		scope=2;
 		ammo="rhs_ammo_ofz_23x115mm";
 		count=250;
 		displayname="UPK-23-250 OFZ";
@@ -21998,6 +23226,7 @@ class CfgMagazines
 	};
 	class rhs_mag_upk23_ka52_ofz: rhs_mag_upk23_ofz
 	{
+		model="\rhsafrf\addons\rhs_a2port_air\data\rhs_pylon_g_upk23_ka52";
 		hardpoints[]=
 		{
 			"RHS_HP_UPK23_KA52"
@@ -22005,6 +23234,7 @@ class CfgMagazines
 	};
 	class rhs_mag_upk23_ka52_ofzt: rhs_mag_upk23_ofzt
 	{
+		model="\rhsafrf\addons\rhs_a2port_air\data\rhs_pylon_g_upk23_ka52";
 		hardpoints[]=
 		{
 			"RHS_HP_UPK23_KA52"
@@ -22012,6 +23242,7 @@ class CfgMagazines
 	};
 	class rhs_mag_upk23_ka52_btz: rhs_mag_upk23_btz
 	{
+		model="\rhsafrf\addons\rhs_a2port_air\data\rhs_pylon_g_upk23_ka52";
 		hardpoints[]=
 		{
 			"RHS_HP_UPK23_KA52"
@@ -22019,6 +23250,7 @@ class CfgMagazines
 	};
 	class rhs_mag_upk23_ka52_mixed: rhs_mag_upk23_mixed
 	{
+		model="\rhsafrf\addons\rhs_a2port_air\data\rhs_pylon_g_upk23_ka52";
 		hardpoints[]=
 		{
 			"RHS_HP_UPK23_KA52"
@@ -22042,6 +23274,8 @@ class CfgWeapons
 	};
 	class rhs_weap_s5: rockets_Skyfire
 	{
+		aiDispersionCoefY=1;
+		aiDispersionCoefX=1.5;
 		cursor="missile";
 		cursoraim="EmptyCursor";
 		cursorsize=0;
@@ -22054,6 +23288,7 @@ class CfgWeapons
 		fireLightIntensity=0.2;
 		canLock=1;
 		weaponLockDelay=8;
+		showToPlayer=1;
 		magazines[]=
 		{
 			"rhs_mag_s5_192",
@@ -22068,29 +23303,52 @@ class CfgWeapons
 			"rhs_mag_ub16_bd3_umk2a_s5",
 			"rhs_mag_ub32_bd3_umk2a_s5"
 		};
+		modes[]=
+		{
+			"AI_Burst",
+			"Burst"
+		};
 		class Far_AI: Far_AI
 		{
 			displayName="$STR_RHS_WEAP_S5";
+			aiRateOfFire=5;
+			aiRateOfFireDistance=1000;
 		};
 		class Medium_AI: Medium_AI
 		{
 			displayName="$STR_RHS_WEAP_S5";
+			aiRateOfFire=3;
+			aiRateOfFireDistance=600;
 		};
 		class Close_AI: Close_AI
 		{
 			displayName="$STR_RHS_WEAP_S5";
+			aiRateOfFire=0.5;
+			aiRateOfFireDistance=50;
 		};
 		class AI_Burst: RocketPods
 		{
+			showToPlayer=0;
 			displayName="$STR_RHS_WEAP_S5";
+			maxRange=1500;
+			maxRangeProbab=0.050000001;
 			dispersion=0.037999999;
 		};
 		class Burst: Burst
 		{
 			dispersion=0.037999999;
+			showToPlayer=1;
+			aiRateOfFire=0.5;
+			aiRateOfFireDistance=300;
 			displayName="$STR_RHS_WEAP_S5";
 			burst=1;
 			salvo=2;
+			minRange=0;
+			minRangeProbab=0.1;
+			midRange=0;
+			midRangeProbab=0.25;
+			maxRange=0;
+			maxRangeProbab=0.050000001;
 		};
 	};
 	class rhs_weap_s5_ub32: rhs_weap_s5
@@ -22169,14 +23427,38 @@ class CfgWeapons
 		class Far_AI: Far_AI
 		{
 			displayName="$STR_RHS_WEAP_S8";
+			aiRateOfFire=5;
+			aiRateOfFireDistance=1000;
+			minRange=500;
+			minRangeProbab=0.050000001;
+			midRange=600;
+			midRangeProbab=0.40000001;
+			maxRange=800;
+			maxRangeProbab=0.0099999998;
 		};
 		class Medium_AI: Medium_AI
 		{
 			displayName="$STR_RHS_WEAP_S8";
+			aiRateOfFire=3;
+			aiRateOfFireDistance=600;
+			minRange=300;
+			minRangeProbab=0.050000001;
+			midRange=400;
+			midRangeProbab=0.69999999;
+			maxRange=600;
+			maxRangeProbab=0.1;
 		};
 		class Close_AI: Close_AI
 		{
 			displayName="$STR_RHS_WEAP_S8";
+			aiRateOfFire=0.5;
+			aiRateOfFireDistance=50;
+			minRange=0;
+			minRangeProbab=0.050000001;
+			midRange=300;
+			midRangeProbab=0.69999999;
+			maxRange=400;
+			maxRangeProbab=0.1;
 		};
 		class AI_Burst: AI_Burst
 		{
@@ -22291,6 +23573,12 @@ class CfgWeapons
 			"rhs_mag_apu68m3_s24",
 			"rhs_mag_apu68_bd3_umk2a_s24"
 		};
+		modes[]=
+		{
+			"AI_Burst",
+			"Burst",
+			"Single"
+		};
 		class AI_Burst: AI_Burst
 		{
 			dispersion=0.02;
@@ -22306,8 +23594,16 @@ class CfgWeapons
 			autofire=0;
 			displayName="$STR_RHS_WEAP_S24";
 			reloadTime=0.079999998;
+			showToPlayer=1;
 			burst=1;
 			salvo=1;
+			minRange=0;
+			minRangeProbab=0.1;
+			midRange=0;
+			midRangeProbab=0.25;
+			maxRange=0;
+			maxRangeProbab=0.050000001;
+			textureType="semi";
 		};
 	};
 	class rhs_weap_s24b: rhs_weap_s24
@@ -22327,6 +23623,12 @@ class CfgWeapons
 			"rhs_mag_bd3_usk_a_o25l_s25o",
 			"rhs_mag_bd3_umk2a_o25l_s25o"
 		};
+		modes[]=
+		{
+			"AI_Burst",
+			"Burst",
+			"Single"
+		};
 		class AI_Burst: AI_Burst
 		{
 			dispersion=0.0099999998;
@@ -22342,8 +23644,16 @@ class CfgWeapons
 			autofire=0;
 			displayName="$STR_RHS_WEAP_S25";
 			reloadTime=0.079999998;
+			showToPlayer=1;
 			burst=1;
 			salvo=1;
+			minRange=0;
+			minRangeProbab=0.1;
+			midRange=0;
+			midRangeProbab=0.25;
+			maxRange=0;
+			maxRangeProbab=0.050000001;
+			textureType="semi";
 		};
 	};
 	class rhs_weap_s25of: rhs_weap_s25
@@ -22601,6 +23911,10 @@ class CfgWeapons
 		weaponLockSystem=4;
 		weaponLockDelay=0.5;
 		cmImmunity=0.30000001;
+		modes[]=
+		{
+			"this"
+		};
 		class EventHandlers
 		{
 			class RHS_KlenPS
@@ -22808,6 +24122,10 @@ class CfgWeapons
 	};
 	class rhs_weap_kh55sm_Launcher: rhs_weap_kh29_Launcher
 	{
+		modes[]=
+		{
+			"this"
+		};
 		displayname="$STR_RHS_MKU56_NAME";
 		magazines[]=
 		{
@@ -22829,7 +24147,10 @@ class CfgWeapons
 			};
 		};
 	};
-	class rhs_weap_kh55sm_dummy_Launcher: rhs_weap_kh55sm_Launcher;  //found empty after stripping
+	class rhs_weap_kh55sm_dummy_Launcher: rhs_weap_kh55sm_Launcher
+	{
+		showToPlayer=0;
+	};
 	class rhs_weap_9k121_Launcher: rhs_weap_kh55sm_Launcher
 	{
 		airateoffire=5;
@@ -22843,6 +24164,11 @@ class CfgWeapons
 		canlock=1;
 		reloadtime=1.5;
 		weaponlockdelay=4;
+		modes[]=
+		{
+			"Single",
+			"Burst"
+		};
 		class Single: rhs_weap_kh29_Launcher
 		{
 			airateoffire=5;
@@ -22860,6 +24186,7 @@ class CfgWeapons
 			reloadtime=0.050000001;
 			multiplier=1;
 			burst=2;
+			textureType="burst";
 		};
 		holdsterAnimValue=1;
 		class Eventhandlers;  //found empty after stripping
@@ -22883,9 +24210,16 @@ class CfgWeapons
 		canlock=0;
 		airateoffire=1;
 		airateoffiredistance=500;
+		minRange=100;
+		minRangeProbab=0.5;
+		midRange=250;
+		midRangeProbab=1;
+		maxRange=550;
+		maxRangeProbab=0.60000002;
 		ballisticsComputer=8;
 		salvo=1;
 		reloadTime=0.1;
+		textureType="semi";
 		sounds[]={};
 		namesound="";
 	};
@@ -22963,13 +24297,22 @@ class CfgWeapons
 		{
 			"rhs_mag_fab100_mbd3_u4t"
 		};
-		class Single: rhs_weap_fab250;  //found empty after stripping
+		modes[]=
+		{
+			"Single",
+			"Burst"
+		};
+		class Single: rhs_weap_fab250
+		{
+			textureType="semi";
+		};
 		class Burst: rhs_weap_fab250
 		{
 			minrange=200;
 			burst=4;
 			salvo=2;
 			reloadTime=0.30000001;
+			textureType="burst";
 		};
 	};
 	class rhs_weap_fab100_mbd3_u6: rhs_weap_fab100_mbd3_u4t
@@ -22987,6 +24330,12 @@ class CfgWeapons
 	{
 		displayname="$STR_RHS_KAB250_NAME";
 		canlock=1;
+		minRange=300;
+		minRangeProbab=0.40000001;
+		midRange=1000;
+		midRangeProbab=0.94999999;
+		maxRange=7000;
+		maxRangeProbab=0.89999998;
 		weaponLockDelay=0.1;
 		weaponLockSystem=4;
 		cmImmunity=0.30000001;
@@ -22995,9 +24344,20 @@ class CfgWeapons
 			"rhs_mag_kab250",
 			"rhs_mag_kab250_int"
 		};
+		modes[]=
+		{
+			"LoalAltitude"
+		};
 		class LoalAltitude: RocketPods
 		{
+			textureType="LOAL";
 			displayName="LOAL";
+			minRange=300;
+			minRangeProbab=0.40000001;
+			midRange=1000;
+			midRangeProbab=0.94999999;
+			maxRange=8000;
+			maxRangeProbab=0.89999998;
 		};
 	};
 	class rhs_weap_fab500: rhs_weap_fab250
@@ -23055,6 +24415,10 @@ class CfgWeapons
 			"rhs_mag_kab500KR",
 			"rhs_mag_kab500KR_bd3_umk2a"
 		};
+		modes[]=
+		{
+			"Direct"
+		};
 		class Direct: rhs_weap_fab500;  //found empty after stripping
 	};
 	class rhs_weap_kab500OD: rhs_weap_kab250
@@ -23064,6 +24428,10 @@ class CfgWeapons
 		{
 			"rhs_mag_kab500OD",
 			"rhs_mag_kab500OD_bd3_umk2a"
+		};
+		modes[]=
+		{
+			"Direct"
 		};
 		class Direct: rhs_weap_fab500;  //found empty after stripping
 	};
@@ -23137,23 +24505,34 @@ class CfgWeapons
 		burst=8;
 		reloadTime=0.40000001;
 		salvo=2;
+		modes[]=
+		{
+			"Instant",
+			"Fast",
+			"Medium",
+			"Slow"
+		};
 		class Instant: rhs_weap_fab250
 		{
 			burst=8;
 			reloadTime=0.050000001;
 			salvo=2;
+			textureType="fastAuto";
 		};
 		class Fast: Instant
 		{
 			reloadTime=0.2;
+			textureType="fullAuto";
 		};
 		class Medium: Instant
 		{
 			reloadTime=1;
+			textureType="burst";
 		};
 		class Slow: Instant
 		{
 			reloadTime=1.5;
+			textureType="semi";
 		};
 	};
 	class rhs_weap_kmgu2_ptab1m: rhs_weap_kmgu2
@@ -23194,6 +24573,7 @@ class CfgWeapons
 	};
 	class rhs_weap_DummyLauncher: MissileLauncher
 	{
+		showToPlayer=0;
 		magazines[]=
 		{
 			"rhs_mag_ptb1500"
@@ -23201,6 +24581,10 @@ class CfgWeapons
 	};
 	class Put: Default
 	{
+		muzzles[]+=
+		{
+			"Rhs_SmallMine_Muzzle"
+		};
 		class PutMuzzle: Default;  //found empty after stripping
 		class Rhs_SmallMine_Muzzle: PutMuzzle
 		{
@@ -23217,418 +24601,522 @@ class CfgNonAIVehicles
 	class ProxyWeapon;
 	class Proxyrhs_r_s5m1: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_airweapons\s5_rockets\rhs_r_s5m1";
 		simulation="maverickweapon";
 	};
 	class Proxyrhs_r_s13b: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_airweapons\s13_rockets\rhs_r_s13b";
 		simulation="maverickweapon";
 	};
 	class Proxyrhs_r_s13_gasket: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_airweapons\s13_rockets\rhs_r_s13_gasket";
 		simulation="maverickweapon";
 	};
 	class Proxyrhs_m_kh55sm: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_airweapons\rhs_m_kh55sm";
 		simulation="maverickweapon";
 	};
 	class Proxyrhs_m_kh55sm2: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_airweapons\rhs_m_kh55sm2";
 		simulation="maverickweapon";
 	};
 	class Proxyrhs_m_kh38m: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_airweapons\rhs_m_kh38m";
 		simulation="maverickweapon";
 	};
 	class Proxyrhs_m_kh38m_ext: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_airweapons\rhs_m_kh38m_ext";
 		simulation="maverickweapon";
 	};
 	class Proxyrhs_m_kh38mae: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_airweapons\rhs_m_kh38mae";
 		simulation="maverickweapon";
 	};
 	class Proxyrhs_m_kh38mae_ext: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_airweapons\rhs_m_kh38mae_ext";
 		simulation="maverickweapon";
 	};
 	class Proxyrhs_m_kh38mte: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_airweapons\rhs_m_kh38mte";
 		simulation="maverickweapon";
 	};
 	class Proxyrhs_m_kh38mte_ext: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_airweapons\rhs_m_kh38mte_ext";
 		simulation="maverickweapon";
 	};
 	class Proxyrhs_m_r27r: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_airweapons\rhs_m_r27r";
 		simulation="maverickweapon";
 	};
 	class Proxyrhs_m_r27t: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_airweapons\rhs_m_r27t";
 		simulation="maverickweapon";
 	};
 	class Proxyrhs_m_r60: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_airweapons\rhs_m_r60";
 		simulation="maverickweapon";
 	};
 	class Proxyrhs_m_r73: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_airweapons\rhs_m_r73";
 		simulation="maverickweapon";
 	};
 	class Proxyrhs_m_r74: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_airweapons\rhs_m_r74";
 		simulation="maverickweapon";
 	};
 	class Proxyrhs_m_r74m2: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_airweapons\rhs_m_r74m2";
 		simulation="maverickweapon";
 	};
 	class Proxyrhs_m_r77: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_airweapons\rhs_m_r77";
 		simulation="maverickweapon";
 	};
 	class Proxyrhs_m_r77m: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_airweapons\rhs_m_r77m";
 		simulation="maverickweapon";
 	};
 	class Proxyrhs_m_ao25_x12: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_airweapons\rhs_m_ao25_x12";
 		simulation="maverickweapon";
 	};
 	class Proxyrhs_m_fab100: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_airweapons\rhs_m_fab100";
 		simulation="maverickweapon";
 	};
 	class Proxyrhs_m_fab250m62: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_airweapons\rhs_m_fab250m62";
 		simulation="maverickweapon";
 	};
 	class Proxyrhs_m_rbk250275: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_airweapons\rhs_m_rbk250275";
 		simulation="maverickweapon";
 	};
 	class Proxyrhs_m_kab250: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_airweapons\rhs_m_kab250";
 		simulation="maverickweapon";
 	};
 	class Proxyrhs_m_fab500: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_airweapons\rhs_m_fab500";
 		simulation="maverickweapon";
 	};
 	class Proxyrhs_m_ptb1150: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_airweapons\rhs_m_ptb1150";
 		simulation="maverickweapon";
 	};
 	class Proxyrhs_m_9m120: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_airweapons\rhs_m_9m120";
 		simulation="maverickweapon";
 	};
 	class Proxyrhs_m_s24: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_airweapons\rhs_m_s24";
 		simulation="maverickweapon";
 	};
 	class Proxyrhs_m_s25o: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_airweapons\rhs_m_s25o";
 		simulation="maverickweapon";
 	};
 	class Proxyrhs_m_s25of: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_airweapons\rhs_m_s25of";
 		simulation="maverickweapon";
 	};
 	class Proxyrhs_m_s25l: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_airweapons\rhs_m_s25l";
 		simulation="maverickweapon";
 	};
 	class Proxyrhs_m_fab250: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_a2port_air\data\rhs_m_fab250";
 		simulation="maverickweapon";
 	};
 	class Proxyrhs_m_kh29: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_a2port_air\data\rhs_m_kh29";
 		simulation="maverickweapon";
 	};
 	class Proxyrhs_m_9m17: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_a2port_air\data\rhs_m_9m17";
 		simulation="maverickweapon";
 	};
 	class Proxyrhs_m_9m114: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_a2port_air\data\rhs_m_9m114";
 		simulation="maverickweapon";
 	};
 	class Proxyrhs_m_9m127: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_a2port_air\data\rhs_m_9m127";
 		simulation="maverickweapon";
 	};
 	class Proxyrhs_pylon_dummy: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_airweapons\rhs_pylon_dummy";
 		simulation="pylonpod";
 	};
 	class Proxyrhs_pylon_m_kh55sm: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_airweapons\rhs_pylon_m_kh55sm";
 		simulation="pylonpod";
 	};
 	class Proxyrhs_pylon_m_kh38m: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_airweapons\rhs_pylon_m_kh38m";
 		simulation="pylonpod";
 	};
 	class Proxyrhs_pylon_m_kh38m_ext: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_airweapons\rhs_pylon_m_kh38m_ext";
 		simulation="pylonpod";
 	};
 	class Proxyrhs_pylon_m_mbd3_u4t: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_airweapons\rhs_pylon_m_mbd3_u4t";
 		simulation="pylonpod";
 	};
 	class Proxyrhs_pylon_m_mbd3_u6: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_airweapons\rhs_pylon_m_mbd3_u6";
 		simulation="pylonpod";
 	};
 	class Proxyrhs_pylon_m_kab250: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_airweapons\rhs_pylon_m_kab250";
 		simulation="pylonpod";
 	};
 	class Proxyrhs_pylon_m_kab250_ext: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_airweapons\rhs_pylon_m_kab250_ext";
 		simulation="pylonpod";
 	};
 	class Proxyrhs_pylon_m_fab500: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_airweapons\rhs_pylon_m_fab500";
 		simulation="pylonpod";
 	};
 	class Proxyrhs_pylon_m_fab500_ext: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_airweapons\rhs_pylon_m_fab500_ext";
 		simulation="pylonpod";
 	};
 	class Proxyrhs_pylon_m_kmgu2: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_airweapons\rhs_pylon_m_kmgu2";
 		simulation="pylonpod";
 	};
 	class Proxyrhs_pylon_m_kmgu2_ka52: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_airweapons\rhs_pylon_m_kmgu2_ka52";
 		simulation="pylonpod";
 	};
 	class Proxyrhs_pylon_m_r73_ext: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_airweapons\rhs_pylon_m_r73_ext";
 		simulation="pylonpod";
 	};
 	class Proxyrhs_pylon_m_r74m2: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_airweapons\rhs_pylon_m_r74m2";
 		simulation="pylonpod";
 	};
 	class Proxyrhs_pylon_m_r77: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_airweapons\rhs_pylon_m_r77";
 		simulation="pylonpod";
 	};
 	class Proxyrhs_pylon_m_r77_ext: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_airweapons\rhs_pylon_m_r77_ext";
 		simulation="pylonpod";
 	};
 	class Proxyrhs_pylon_m_r77_MiG: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_airweapons\rhs_pylon_m_r77_MiG";
 		simulation="pylonpod";
 	};
 	class Proxyrhs_pylon_m_r77m: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_airweapons\rhs_pylon_m_r77m";
 		simulation="pylonpod";
 	};
 	class Proxyrhs_pylon_m_9m120_8x: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_airweapons\rhs_pylon_m_9m120_8x";
 		simulation="pylonpod";
 	};
 	class Proxyrhs_pylon_r_b13l: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_airweapons\rhs_pylon_r_b13l";
 		simulation="pylonpod";
 	};
 	class Proxyrhs_pylon_r_b13l1: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_airweapons\rhs_pylon_r_b13l1";
 		simulation="pylonpod";
 	};
 	class Proxyrhs_pylon_apu68m3_s24: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_airweapons\rhs_pylon_apu68m3_s24";
 		simulation="pylonpod";
 	};
 	class Proxyrhs_pylon_apu68_kh25: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_airweapons\rhs_pylon_apu68_kh25";
 		simulation="pylonpod";
 	};
 	class Proxyrhs_pylon_o25l: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_airweapons\rhs_pylon_o25l";
 		simulation="pylonpod";
 	};
 	class Proxyrhs_pylon_m_rbk500: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_airweapons\rhs_pylon_m_rbk500";
 		simulation="pylonpod";
 	};
 	class Proxyrhs_pylon_m_rbk500_ext: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_airweapons\rhs_pylon_m_rbk500_ext";
 		simulation="pylonpod";
 	};
 	class Proxyrhs_pylon_m_rbk500_ptab: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_airweapons\rhs_pylon_m_rbk500_ptab";
 		simulation="pylonpod";
 	};
 	class Proxyrhs_pylon_m_rbk500_spbed: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_airweapons\rhs_pylon_m_rbk500_spbed";
 		simulation="pylonpod";
 	};
 	class Proxyrhs_pylon_m_rbk500_ptab_ext: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_airweapons\rhs_pylon_m_rbk500_ptab_ext";
 		simulation="pylonpod";
 	};
 	class Proxyrhs_pylon_m_rbk500_spbed_ext: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_airweapons\rhs_pylon_m_rbk500_spbed_ext";
 		simulation="pylonpod";
 	};
 	class Proxyrhs_pylon_apu470_r27: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_airweapons\rhs_pylon_apu470_r27";
 		simulation="pylonpod";
 	};
 	class Proxyrhs_pylon_apu60_r60: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_airweapons\rhs_pylon_apu60_r60";
 		simulation="pylonpod";
 	};
 	class Proxyrhs_pylon_apu73_r73: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_airweapons\rhs_pylon_apu73_r73";
 		simulation="pylonpod";
 	};
 	class Proxyrhs_pylon_bd3_umk2a_ub16: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_airweapons\rhs_pylon_bd3_umk2a_ub16";
 		simulation="pylonpod";
 	};
 	class Proxyrhs_pylon_bd3_umk2a_ub32: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_airweapons\rhs_pylon_bd3_umk2a_ub32";
 		simulation="pylonpod";
 	};
 	class Proxyrhs_pylon_bd3_umk2a_b8m1: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_airweapons\rhs_pylon_bd3_umk2a_b8m1";
 		simulation="pylonpod";
 	};
 	class Proxyrhs_pylon_bd3_umk2a_b13l: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_airweapons\rhs_pylon_bd3_umk2a_b13l";
 		simulation="pylonpod";
 	};
 	class Proxyrhs_pylon_bd3_umk2a_fab250: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_airweapons\rhs_pylon_bd3_umk2a_fab250";
 		simulation="pylonpod";
 	};
 	class Proxyrhs_pylon_bd3_umk2a_rbk500: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_airweapons\rhs_pylon_bd3_umk2a_rbk500";
 		simulation="pylonpod";
 	};
 	class Proxyrhs_pylon_bd3_umk2a_rbk500_ptab: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_airweapons\rhs_pylon_bd3_umk2a_rbk500_ptab";
 		simulation="pylonpod";
 	};
 	class Proxyrhs_pylon_bd3_umk2a_rbk500_spbed: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_airweapons\rhs_pylon_bd3_umk2a_rbk500_spbed";
 		simulation="pylonpod";
 	};
 	class Proxyrhs_pylon_bd3_umk2a_kh25: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_airweapons\rhs_pylon_bd3_umk2a_kh25";
 		simulation="pylonpod";
 	};
 	class Proxyrhs_pylon_bd3_umk2a_s24: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_airweapons\rhs_pylon_bd3_umk2a_s24";
 		simulation="pylonpod";
 	};
 	class Proxyrhs_pylon_bd3_usk_a_o25l: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_airweapons\rhs_pylon_bd3_usk_a_o25l";
 		simulation="pylonpod";
 	};
 	class Proxyrhs_pylon_ptb_ptb1150: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_airweapons\rhs_pylon_ptb_ptb1150";
 		simulation="pylonpod";
 	};
 	class Proxyrhs_pylon_ptb_ptb1500: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_airweapons\rhs_pylon_ptb_ptb1500";
 		simulation="pylonpod";
 	};
 	class Proxyrhs_pylon_bd3_umk2a_kmgu2: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_airweapons\rhs_pylon_bd3_umk2a_kmgu2";
 		simulation="pylonpod";
 	};
 	class Proxyrhs_pylon_g_upk23: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_a2port_air\data\rhs_pylon_g_upk23";
 		simulation="pylonpod";
 	};
 	class Proxyrhs_pylon_g_upk23_ka52: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_a2port_air\data\rhs_pylon_g_upk23_ka52";
 		simulation="pylonpod";
 	};
 	class Proxyrhs_pylon_m_9m17_2x: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_a2port_air\data\rhs_pylon_m_9m17_2x";
 		simulation="pylonpod";
 	};
 	class Proxyrhs_pylon_m_9m114_2x: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_a2port_air\data\rhs_pylon_m_9m114_2x";
 		simulation="pylonpod";
 	};
 	class Proxyrhs_pylon_m_9m120_2x: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_a2port_air\data\rhs_pylon_m_9m120_2x";
 		simulation="pylonpod";
 	};
 	class Proxyrhs_pylon_m_9m127_6x: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_a2port_air\data\rhs_pylon_m_9m127_6x";
 		simulation="pylonpod";
 	};
 	class Proxyrhs_pylon_m_fab250: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_a2port_air\data\rhs_pylon_m_fab250";
 		simulation="pylonpod";
 	};
 	class Proxyrhs_pylon_m_fab250_ka52: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_a2port_air\data\rhs_pylon_m_fab250_ka52";
 		simulation="pylonpod";
 	};
 	class Proxyrhs_pylon_m_rbk500_ka52: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_a2port_air\data\rhs_pylon_m_rbk500_ka52";
 		simulation="pylonpod";
 	};
 	class Proxyrhs_pylon_m_rbk500_ptab_ka52: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_a2port_air\data\rhs_pylon_m_rbk500_ptab_ka52";
 		simulation="pylonpod";
 	};
 	class Proxyrhs_pylon_m_rbk500_spbed_ka52: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_a2port_air\data\rhs_pylon_m_rbk500_spbed_ka52";
 		simulation="pylonpod";
 	};
 	class Proxyrhs_pylon_m_kh29_aku58: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_a2port_air\data\rhs_pylon_m_kh29_aku58";
 		simulation="pylonpod";
 	};
 	class Proxyrhs_pylon_m_kh29_aku58_MiG: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_a2port_air\data\rhs_pylon_m_kh29_aku58_MiG";
 		simulation="pylonpod";
 	};
 	class Proxyrhs_pylon_m_r73: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_a2port_air\data\rhs_pylon_m_r73";
 		simulation="pylonpod";
 	};
 	class Proxyrhs_pylon_r_b8m1: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_a2port_air\data\rhs_pylon_r_b8m1";
 		simulation="pylonpod";
 	};
 	class Proxyrhs_pylon_r_b8v20a: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_a2port_air\data\rhs_pylon_r_b8v20a";
 		simulation="pylonpod";
 	};
 	class Proxyrhs_pylon_r_ub16: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_a2port_air\data\rhs_pylon_r_ub16";
 		simulation="pylonpod";
 	};
 	class Proxyrhs_pylon_r_ub32: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_airweapons\rhs_pylon_r_ub32";
 		simulation="pylonpod";
 	};
 	class Proxyrhs_pylon_r_b8v20a_ka52: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_a2port_air\data\rhs_pylon_r_b8v20a_ka52";
 		simulation="pylonpod";
 	};
 	class Proxyrhs_pylon_r_ub16_ka52: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_a2port_air\data\rhs_pylon_r_ub16_ka52";
 		simulation="pylonpod";
 	};
 	class Proxyrhs_pylon_r_ub32_ka52: ProxyWeapon
 	{
+		model="rhsafrf\addons\rhs_airweapons\rhs_pylon_r_ub32_ka52";
 		simulation="pylonpod";
 	};
 };
@@ -23637,108 +25125,182 @@ class cfgVehicles
 	class MineBase;
 	class rhs_mine_pfm1: MineBase
 	{
+		scope=2;
 		ammo="rhs_ammo_pfm1";
+		editorPreview="\rhsafrf\addons\rhs_editorpreviews\data\rhs_mine_pfm1";
+		author="$STR_RHS_AUTHOR_FULL";
 		displayName="$STR_RHS_PFM1_NAME";
 		icon="iconExplosiveAP";
+		picture="\A3\Weapons_F\Data\clear_empty.paa";
+		model="\rhsafrf\addons\rhs_airweapons\rhs_m_pfm1_d";
+		descriptionShort="$STR_A3_cfgMagazines_ClassicMineRangeMagazine1";
+		class Library
+		{
+			libTextDesc="";
+		};
 	};
 	class rhs_mine_ptm1: MineBase
 	{
+		scope=2;
 		ammo="rhs_ammo_ptm1";
+		editorPreview="\rhsafrf\addons\rhs_editorpreviews\data\rhs_mine_ptm1";
+		author="$STR_RHS_AUTHOR_FULL";
 		displayName="$STR_RHS_PTM1_NAME";
 		icon="iconExplosiveAT";
+		picture="\A3\Weapons_F\Data\clear_empty.paa";
+		model="\rhsafrf\addons\rhs_airweapons\rhs_m_ptm1_d";
+		descriptionShort="$STR_A3_cfgMagazines_ClassicMineRangeMagazine1";
+		class Library
+		{
+			libTextDesc="";
+		};
 	};
 	class rhs_uxo_ao1_1: MineBase
 	{
+		scope=2;
 		ammo="rhs_ammo_uxo_ao1_1";
+		editorPreview="\rhsafrf\addons\rhs_editorpreviews\data\rhs_uxo_ao1";
+		author="$STR_RHS_AUTHOR_FULL";
 		displayName="$STR_RHS_UXO_AO1_1";
 		icon="iconExplosiveUXO";
+		picture="\A3\Weapons_F\Data\clear_empty.paa";
+		model="\rhsafrf\addons\rhs_airweapons\uxo\rhs_uxo_ao1sh_1";
+		descriptionShort="$STR_A3_cfgMagazines_ClassicMineRangeMagazine1";
+		class Library
+		{
+			libTextDesc="";
+		};
 	};
 	class rhs_uxo_ao1_2: rhs_uxo_ao1_1
 	{
 		ammo="rhs_ammo_uxo_ao1_2";
 		displayName="$STR_RHS_UXO_AO1_2";
+		model="\rhsafrf\addons\rhs_airweapons\uxo\rhs_uxo_ao1sh_2";
 	};
 	class rhs_uxo_ao1_3: rhs_uxo_ao1_1
 	{
 		ammo="rhs_ammo_uxo_ao1_3";
 		displayName="$STR_RHS_UXO_AO1_3";
+		model="\rhsafrf\addons\rhs_airweapons\uxo\rhs_uxo_ao1sh_3";
 	};
 	class rhs_uxo_ptab1m_1: MineBase
 	{
+		scope=2;
 		ammo="rhs_ammo_uxo_ptab1m_1";
+		editorPreview="\rhsafrf\addons\rhs_editorpreviews\data\rhs_uxo_ptab1m";
+		author="$STR_RHS_AUTHOR_FULL";
 		displayName="$STR_RHS_UXO_PTAB1M_1";
 		icon="iconExplosiveUXO";
+		picture="\A3\Weapons_F\Data\clear_empty.paa";
+		model="\rhsafrf\addons\rhs_airweapons\uxo\rhs_uxo_ptab1m_1";
+		descriptionShort="$STR_A3_cfgMagazines_ClassicMineRangeMagazine1";
+		class Library
+		{
+			libTextDesc="";
+		};
 	};
 	class rhs_uxo_ptab1m_2: rhs_uxo_ptab1m_1
 	{
 		ammo="rhs_ammo_uxo_ptab1m_2";
 		displayName="$STR_RHS_UXO_PTAB1M_2";
+		model="\rhsafrf\addons\rhs_airweapons\uxo\rhs_uxo_ptab1m_2";
 	};
 	class rhs_uxo_ptab1m_3: rhs_uxo_ptab1m_1
 	{
 		ammo="rhs_ammo_uxo_ptab1m_3";
 		displayName="$STR_RHS_UXO_PTAB1M_3";
+		model="\rhsafrf\addons\rhs_airweapons\uxo\rhs_uxo_ptab1m_3";
 	};
 	class rhs_uxo_ptab25m_1: MineBase
 	{
+		scope=2;
 		ammo="rhs_ammo_uxo_ptab25m_1";
+		editorPreview="\rhsafrf\addons\rhs_editorpreviews\data\rhs_uxo_ptab25m";
+		author="$STR_RHS_AUTHOR_FULL";
 		displayName="$STR_RHS_UXO_PTAB25M_1";
 		icon="iconExplosiveUXO";
+		picture="\A3\Weapons_F\Data\clear_empty.paa";
+		model="\rhsafrf\addons\rhs_airweapons\uxo\rhs_uxo_ptab25m_1";
+		descriptionShort="$STR_A3_cfgMagazines_ClassicMineRangeMagazine1";
+		class Library
+		{
+			libTextDesc="";
+		};
 	};
 	class rhs_uxo_ptab25m_2: rhs_uxo_ptab25m_1
 	{
 		ammo="rhs_ammo_uxo_ptab25m_2";
 		displayName="$STR_RHS_UXO_PTAB25M_2";
+		model="\rhsafrf\addons\rhs_airweapons\uxo\rhs_uxo_ptab25m_2";
 	};
 	class rhs_uxo_ptab25m_3: rhs_uxo_ptab25m_1
 	{
 		ammo="rhs_ammo_uxo_ptab25m_3";
 		displayName="$STR_RHS_UXO_PTAB25M_3";
+		model="\rhsafrf\addons\rhs_airweapons\uxo\rhs_uxo_ptab25m_3";
 	};
 	class rhs_uxo_ptab25ko_1: MineBase
 	{
+		scope=2;
 		ammo="rhs_ammo_uxo_ptab25ko_1";
+		editorPreview="\rhsafrf\addons\rhs_editorpreviews\data\rhs_uxo_ptab25ko";
+		author="$STR_RHS_AUTHOR_FULL";
 		displayName="$STR_RHS_UXO_PTAB25KO_1";
 		icon="iconExplosiveUXO";
+		picture="\A3\Weapons_F\Data\clear_empty.paa";
+		model="\rhsafrf\addons\rhs_airweapons\uxo\rhs_uxo_ptab25ko_1";
+		descriptionShort="$STR_A3_cfgMagazines_ClassicMineRangeMagazine1";
+		class Library
+		{
+			libTextDesc="";
+		};
 	};
 	class rhs_uxo_ptab25ko_2: rhs_uxo_ptab25ko_1
 	{
 		ammo="rhs_ammo_uxo_ptab25ko_2";
 		displayName="$STR_RHS_UXO_PTAB25KO_2";
+		model="\rhsafrf\addons\rhs_airweapons\uxo\rhs_uxo_ptab25ko_2";
 	};
 	class rhs_uxo_ptab25ko_3: rhs_uxo_ptab25ko_1
 	{
 		ammo="rhs_ammo_uxo_ptab25ko_3";
 		displayName="$STR_RHS_UXO_PTAB25KO_3";
+		model="\rhsafrf\addons\rhs_airweapons\uxo\rhs_uxo_ptab25ko_3";
 	};
 	class ModuleMine_APERSMine_F;
 	class rhs_mine_pfm1_module: ModuleMine_APERSMine_F
 	{
+		scopeCurator=2;
 		displayName="$STR_RHS_PFM1_NAME";
 		explosive="rhs_ammo_pfm1";
 	};
 	class rhs_mine_ptm1_module: ModuleMine_APERSMine_F
 	{
+		scopeCurator=2;
 		displayName="$STR_RHS_PTM1_NAME";
 		explosive="rhs_ammo_ptm1";
 	};
 	class rhs_uxo_ao1_module: ModuleMine_APERSMine_F
 	{
+		scopeCurator=2;
 		displayName="$STR_RHS_UXO_AO1_NAME";
 		explosive="rhs_ammo_uxo_ao1_1";
 	};
 	class rhs_uxo_ptab1m_module: ModuleMine_APERSMine_F
 	{
+		scopeCurator=2;
 		displayName="$STR_RHS_UXO_PTAB1M_NAME";
 		explosive="rhs_ammo_uxo_ptab1m_1";
 	};
 	class rhs_uxo_ptab25m_module: ModuleMine_APERSMine_F
 	{
+		scopeCurator=2;
 		displayName="$STR_RHS_UXO_PTAB25M_NAME";
 		explosive="rhs_ammo_uxo_ptab25m_1";
 	};
 	class rhs_uxo_ptab25ko_module: ModuleMine_APERSMine_F
 	{
+		scopeCurator=2;
 		displayName="$STR_RHS_UXO_PTAB25KO_NAME";
 		explosive="rhs_ammo_uxo_ptab25ko_1";
 	};

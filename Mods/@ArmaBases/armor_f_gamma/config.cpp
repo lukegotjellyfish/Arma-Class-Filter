@@ -3,6 +3,11 @@ class CfgPatches
 	class A3_Armor_F_Gamma_MBT_02
 	{
 		addonRootClass="A3_Armor_F_Gamma";
+		requiredAddons[]=
+		{
+			"A3_Armor_F_Gamma"
+		};
+		requiredVersion=0.1;
 		units[]=
 		{
 			"O_MBT_02_arty_F",
@@ -65,20 +70,41 @@ class CfgVehicles
 			class HitLTrack;
 			class HitRTrack;
 		};
+		class Sounds: Sounds
+		{
+			class Engine;
+			class Movement;
+		};
 	};
 	class MBT_02_base_F: Tank_F
 	{
 		features="Randomization: No						<br />Camo selections: 3 - hull, main turret, cannon and accessories						<br />Script door sources: None						<br />Script animations: None						<br />Executed scripts: None						<br />Firing from vehicles: No						<br />Slingload: No						<br />Cargo proxy indexes: None";
+		author="$STR_A3_Bohemia_Interactive";
+		mapSize=10.31;
 		_generalMacro="MBT_02_base_F";
 		displayName="$STR_A3_CfgVehicles_MBT_02_Base0";
+		class Library
+		{
+			libTextDesc="$STR_A3_CfgVehicles_MBT_02_Base_Library0";
+		};
+		vehicleClass="Armored";
+		model="\A3\armor_f_gamma\MBT_02\MBT_02_cannon_F";
+		editorSubcategory="EdSubcat_Tanks";
 		memoryPointTaskMarker="TaskMarker_1_pos";
+		picture="\A3\armor_f_gamma\MBT_02\Data\UI\MBT_02_Base_ca.paa";
+		Icon="\A3\armor_f_gamma\MBT_02\Data\UI\map_MBT_02_ca.paa";
 		driverForceOptics=0;
+		driverAction="Driver_MBT_03_cannon_F_out";
+		driverInAction="Driver_MBT_02_F_in";
 		LODDriverTurnedOut=0;
 		LODDriverOpticsIn=1202;
 		driverOpticsModel="\A3\weapons_f\reticle\optics_empty";
 		LODDriverTurnedin=1100;
+		driverLeftHandAnimName="drivingstick_left";
+		driverRightHandAnimName="drivingstick_right";
 		driverLeftLegAnimName="pedal_brake";
 		driverRightLegAnimName="pedal_thrust";
+		viewDriverInExternal=1;
 		driverInfoPanelCameraPos="driverview_panel";
 		viewDriverShadowAmb=0.5;
 		viewDriverShadowDiff=0.050000001;
@@ -168,6 +194,70 @@ class CfgVehicles
 				};
 			};
 		};
+		class Reflectors
+		{
+			class Left
+			{
+				color[]={1900,1300,950};
+				ambient[]={5,5,5};
+				position="Light_L";
+				direction="Light_L_end";
+				hitpoint="Light_L";
+				selection="Light_L";
+				size=1;
+				innerAngle=100;
+				outerAngle=179;
+				coneFadeCoef=10;
+				intensity=1;
+				useFlare=0;
+				dayLight=0;
+				flareSize=1;
+				class Attenuation
+				{
+					start=1;
+					constant=0;
+					linear=0;
+					quadratic=0.25;
+					hardLimitStart=30;
+					hardLimitEnd=60;
+				};
+			};
+			class Right: Left
+			{
+				position="Light_R";
+				direction="Light_R_end";
+				hitpoint="Light_R";
+				selection="Light_R";
+			};
+			class Right2: Right
+			{
+				position="Light_R_flare";
+				hitpoint="Light_R_flare";
+				useFlare=1;
+			};
+			class Left2: Left
+			{
+				position="Light_L_flare";
+				hitpoint="Light_L_flare";
+				useFlare=1;
+			};
+		};
+		aggregateReflectors[]=
+		{
+			
+			{
+				"Left",
+				"Right",
+				"Left2",
+				"Right2"
+			}
+		};
+		soundLocked[]=
+		{
+			"\A3\Sounds_F\weapons\Rockets\locked_1",
+			1,
+			1
+		};
 		soundIncommingMissile[]=
 		{
 			"\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_4",
@@ -182,6 +272,8 @@ class CfgVehicles
 		armorStructural=6;
 		damageResistance=0.0038900001;
 		cost=2500000;
+		crewVulnerable=0;
+		crewExplosionProtection=0.99989998;
 		epeImpulseDamageCoef=18;
 		simulation="tankX";
 		fuelCapacity=15;
@@ -251,6 +343,9 @@ class CfgVehicles
 			{
 				side="left";
 				suspTravelDirection[]={-0.125,-1,0};
+				boneName="wheel_podkoloL1";
+				center="wheel_1_2_axis";
+				boundary="wheel_1_2_bound";
 				steering=0;
 				width=0.5;
 				mass=200;
@@ -274,19 +369,55 @@ class CfgVehicles
 					{0.5,0.89999998}
 				};
 			};
-			class L3: L2;  //found empty after stripping
-			class L4: L2;  //found empty after stripping
-			class L5: L2;  //found empty after stripping
-			class L6: L2;  //found empty after stripping
-			class L7: L2;  //found empty after stripping
-			class L8: L2;  //found empty after stripping
+			class L3: L2
+			{
+				boneName="wheel_podkolol2";
+				center="wheel_1_3_axis";
+				boundary="wheel_1_3_bound";
+			};
+			class L4: L2
+			{
+				boneName="wheel_podkolol3";
+				center="wheel_1_4_axis";
+				boundary="wheel_1_4_bound";
+			};
+			class L5: L2
+			{
+				boneName="wheel_podkolol4";
+				center="wheel_1_5_axis";
+				boundary="wheel_1_5_bound";
+			};
+			class L6: L2
+			{
+				boneName="wheel_podkolol5";
+				center="wheel_1_6_axis";
+				boundary="wheel_1_6_bound";
+			};
+			class L7: L2
+			{
+				boneName="wheel_podkolol6";
+				center="wheel_1_7_axis";
+				boundary="wheel_1_7_bound";
+			};
+			class L8: L2
+			{
+				boneName="wheel_podkolol7";
+				center="wheel_1_8_axis";
+				boundary="wheel_1_8_bound";
+			};
 			class L9: L2
 			{
+				boneName="wheel_podkolol9";
+				center="wheel_1_9_axis";
+				boundary="wheel_1_9_bound";
 				maxDroop=0.0099999998;
 				maxCompression=0.0099999998;
 			};
 			class L1: L2
 			{
+				boneName="";
+				center="wheel_1_1_axis";
+				boundary="wheel_1_1_bound";
 				maxDroop=0.0099999998;
 				maxCompression=0.0099999998;
 			};
@@ -294,20 +425,59 @@ class CfgVehicles
 			{
 				side="right";
 				suspTravelDirection[]={0.125,-1,0};
+				boneName="wheel_podkolop1";
+				center="wheel_2_2_axis";
+				boundary="wheel_2_2_bound";
 			};
-			class R3: R2;  //found empty after stripping
-			class R4: R2;  //found empty after stripping
-			class R5: R2;  //found empty after stripping
-			class R6: R2;  //found empty after stripping
-			class R7: R2;  //found empty after stripping
-			class R8: R2;  //found empty after stripping
+			class R3: R2
+			{
+				boneName="wheel_podkolop2";
+				center="wheel_2_3_axis";
+				boundary="wheel_2_3_bound";
+			};
+			class R4: R2
+			{
+				boneName="wheel_podkolop3";
+				center="wheel_2_4_axis";
+				boundary="wheel_2_4_bound";
+			};
+			class R5: R2
+			{
+				boneName="wheel_podkolop4";
+				center="wheel_2_5_axis";
+				boundary="wheel_2_5_bound";
+			};
+			class R6: R2
+			{
+				boneName="wheel_podkolop5";
+				center="wheel_2_6_axis";
+				boundary="wheel_2_6_bound";
+			};
+			class R7: R2
+			{
+				boneName="wheel_podkolop6";
+				center="wheel_2_7_axis";
+				boundary="wheel_2_7_bound";
+			};
+			class R8: R2
+			{
+				boneName="wheel_podkolop7";
+				center="wheel_2_8_axis";
+				boundary="wheel_2_8_bound";
+			};
 			class R9: R2
 			{
+				boneName="wheel_podkolop9";
+				center="wheel_2_9_axis";
+				boundary="wheel_2_9_bound";
 				maxDroop=0.0099999998;
 				maxCompression=0.0099999998;
 			};
 			class R1: R2
 			{
+				boneName="";
+				center="wheel_2_1_axis";
+				boundary="wheel_2_1_bound";
 				maxDroop=0.0099999998;
 				maxCompression=0.0099999998;
 			};
@@ -341,6 +511,7 @@ class CfgVehicles
 					condition="on";
 					class Driver_Heading
 					{
+						type="text";
 						source="heading";
 						sourceScale=1;
 						sourceLength=3;
@@ -393,7 +564,9 @@ class CfgVehicles
 					blinkingStartsOn=1;
 					class Driver_Fire
 					{
+						type="text";
 						source="static";
+						text="ПОЖАР";
 						sourceScale=1;
 						sourceLength=3;
 						scale=1;
@@ -444,7 +617,9 @@ class CfgVehicles
 					condition="1";
 					class Driver_Heading
 					{
+						type="text";
 						source="static";
+						text="АЗИМУТ";
 						sourceScale=1;
 						sourceLength=3;
 						scale=1;
@@ -495,6 +670,7 @@ class CfgVehicles
 					condition="1";
 					class Driver_Heading
 					{
+						type="text";
 						source="heading";
 						sourceScale=1;
 						sourceLength=3;
@@ -547,6 +723,7 @@ class CfgVehicles
 					condition="1";
 					class Gunner_AmmoType
 					{
+						type="text";
 						source="ammoFormat";
 						sourceScale=1;
 						sourceLength=3;
@@ -599,6 +776,7 @@ class CfgVehicles
 					condition="1";
 					class Gunner_Text_1
 					{
+						type="text";
 						source="ammo";
 						sourceScale=1;
 						sourceLength=2;
@@ -624,6 +802,7 @@ class CfgVehicles
 					};
 					class Gunner_Text_2
 					{
+						type="text";
 						source="ammo";
 						sourceScale=1;
 						sourceLength=2;
@@ -649,6 +828,7 @@ class CfgVehicles
 					};
 					class Gunner_Text_3
 					{
+						type="text";
 						source="ammo";
 						sourceScale=1;
 						sourceLength=2;
@@ -701,7 +881,9 @@ class CfgVehicles
 					condition="1";
 					class Top_text
 					{
+						type="text";
 						source="static";
+						text="К СТРЕЛЬБЕ";
 						sourceScale=1;
 						sourceLength=3;
 						scale=1;
@@ -725,7 +907,9 @@ class CfgVehicles
 					};
 					class Bottom_text
 					{
+						type="text";
 						source="static";
+						text="ГОТОВ";
 						sourceScale=1;
 						sourceLength=3;
 						scale=1;
@@ -777,7 +961,9 @@ class CfgVehicles
 					condition="1";
 					class Main_armament
 					{
+						type="text";
 						source="static";
+						text="ГЛАВНОЕ ОРУДИЕ";
 						sourceScale=1;
 						sourceLength=3;
 						scale=1;
@@ -801,7 +987,9 @@ class CfgVehicles
 					};
 					class Machinegun
 					{
+						type="text";
 						source="static";
+						text="ПУЛЕМЕТ";
 						sourceScale=1;
 						sourceLength=3;
 						scale=1;
@@ -825,7 +1013,9 @@ class CfgVehicles
 					};
 					class Main_armament_ammo_type
 					{
+						type="text";
 						source="static";
+						text="ТИП АМУНИЦИИ";
 						sourceScale=1;
 						sourceLength=3;
 						scale=1;
@@ -849,7 +1039,9 @@ class CfgVehicles
 					};
 					class Lased_distance_elevation
 					{
+						type="text";
 						source="static";
+						text="ДАЛЬНОСТЬ";
 						sourceScale=1;
 						sourceLength=3;
 						scale=1;
@@ -873,7 +1065,9 @@ class CfgVehicles
 					};
 					class Azimut
 					{
+						type="text";
 						source="static";
+						text="АЗИМУТ";
 						sourceScale=1;
 						sourceLength=3;
 						scale=1;
@@ -897,7 +1091,9 @@ class CfgVehicles
 					};
 					class Damage
 					{
+						type="text";
 						source="static";
+						text="ПОВРЕЖДЕНИЯ";
 						sourceScale=1;
 						sourceLength=3;
 						scale=1;
@@ -921,6 +1117,7 @@ class CfgVehicles
 					};
 					class Heading
 					{
+						type="text";
 						source="[x]turretworld";
 						sourceScale=1;
 						sourceLength=3;
@@ -945,6 +1142,7 @@ class CfgVehicles
 					};
 					class Lased_Range
 					{
+						type="text";
 						source="laserDist";
 						sourceScale=1;
 						sourceLength=4;
@@ -997,6 +1195,7 @@ class CfgVehicles
 					condition="1";
 					class Gunner_AmmoType
 					{
+						type="text";
 						source="ammoFormat";
 						sourceScale=1;
 						sourceLength=3;
@@ -1049,6 +1248,7 @@ class CfgVehicles
 					condition="1";
 					class Gunner_Text_1
 					{
+						type="text";
 						source="ammo";
 						sourceScale=1;
 						sourceLength=3;
@@ -1102,7 +1302,9 @@ class CfgVehicles
 					condition="1";
 					class Main_Armament_Ammo_Type_1
 					{
+						type="text";
 						source="static";
+						text="БР";
 						sourceScale=1;
 						sourceLength=3;
 						scale=1;
@@ -1126,6 +1328,7 @@ class CfgVehicles
 					};
 					class Gunner_Text_1
 					{
+						type="text";
 						source="ammo";
 						sourceScale=1;
 						sourceLength=2;
@@ -1151,7 +1354,9 @@ class CfgVehicles
 					};
 					class Main_Armament_Ammo_Type_2
 					{
+						type="text";
 						source="static";
+						text="ОФ";
 						sourceScale=1;
 						sourceLength=3;
 						scale=1;
@@ -1175,6 +1380,7 @@ class CfgVehicles
 					};
 					class Gunner_Text_2
 					{
+						type="text";
 						source="ammo";
 						sourceScale=1;
 						sourceLength=2;
@@ -1200,7 +1406,9 @@ class CfgVehicles
 					};
 					class Main_Armament_Ammo_Type_3
 					{
+						type="text";
 						source="static";
+						text="К";
 						sourceScale=1;
 						sourceLength=3;
 						scale=1;
@@ -1224,6 +1432,7 @@ class CfgVehicles
 					};
 					class Gunner_Text_3
 					{
+						type="text";
 						source="ammo";
 						sourceScale=1;
 						sourceLength=2;
@@ -1277,7 +1486,9 @@ class CfgVehicles
 					condition="1";
 					class Main_armament
 					{
+						type="text";
 						source="static";
+						text="ГЛАВНОЕ ОРУДИЕ";
 						sourceScale=1;
 						sourceLength=3;
 						scale=1;
@@ -1301,7 +1512,9 @@ class CfgVehicles
 					};
 					class Machinegun
 					{
+						type="text";
 						source="static";
+						text="ПУЛЕМЕТ";
 						sourceScale=1;
 						sourceLength=3;
 						scale=1;
@@ -1325,7 +1538,9 @@ class CfgVehicles
 					};
 					class Commander_machinegun
 					{
+						type="text";
 						source="static";
+						text="ПУЛЕМЕТ";
 						sourceScale=1;
 						sourceLength=3;
 						scale=1;
@@ -1349,7 +1564,9 @@ class CfgVehicles
 					};
 					class Commander_armament
 					{
+						type="text";
 						source="static";
+						text="ОРУДИЕ КОМАНДИРА";
 						sourceScale=1;
 						sourceLength=3;
 						scale=1;
@@ -1373,7 +1590,9 @@ class CfgVehicles
 					};
 					class Commander_armament_magazines
 					{
+						type="text";
 						source="static";
+						text="МАГ.";
 						sourceScale=1;
 						sourceLength=3;
 						scale=1;
@@ -1397,7 +1616,9 @@ class CfgVehicles
 					};
 					class Main_armament_ammo_type
 					{
+						type="text";
 						source="static";
+						text="ТИП АМУНИЦИИ";
 						sourceScale=1;
 						sourceLength=3;
 						scale=1;
@@ -1421,7 +1642,9 @@ class CfgVehicles
 					};
 					class Lased_distance_elevation
 					{
+						type="text";
 						source="static";
+						text="ДАЛЬНОСТЬ";
 						sourceScale=1;
 						sourceLength=3;
 						scale=1;
@@ -1445,7 +1668,9 @@ class CfgVehicles
 					};
 					class Azimut
 					{
+						type="text";
 						source="static";
+						text="АЗИМУТ";
 						sourceScale=1;
 						sourceLength=3;
 						scale=1;
@@ -1469,7 +1694,9 @@ class CfgVehicles
 					};
 					class Damage
 					{
+						type="text";
 						source="static";
+						text="ПОВРЕЖДЕНИЯ";
 						sourceScale=1;
 						sourceLength=3;
 						scale=1;
@@ -1493,6 +1720,7 @@ class CfgVehicles
 					};
 					class Heading
 					{
+						type="text";
 						source="[x]turretworld";
 						sourceScale=1;
 						sourceLength=3;
@@ -1517,6 +1745,7 @@ class CfgVehicles
 					};
 					class Lased_Range
 					{
+						type="text";
 						source="laserDist";
 						sourceScale=1;
 						sourceLength=4;
@@ -1568,7 +1797,9 @@ class CfgVehicles
 					condition="on";
 					class Com_Intercom
 					{
+						type="text";
 						source="static";
+						text="ВН КАНАЛ";
 						sourceScale=1;
 						sourceLength=3;
 						scale=1;
@@ -1613,7 +1844,9 @@ class CfgVehicles
 					condition="1";
 					class Top_text
 					{
+						type="text";
 						source="static";
+						text="К СТРЕЛЬБЕ";
 						scale=1;
 						sourceScale=1;
 						align="center";
@@ -1635,7 +1868,9 @@ class CfgVehicles
 					};
 					class Bottom_text
 					{
+						type="text";
 						source="static";
+						text="ГОТОВ";
 						scale=1;
 						sourceScale=1;
 						align="center";
@@ -1678,7 +1913,9 @@ class CfgVehicles
 					condition="1";
 					class Top_text
 					{
+						type="text";
 						source="static";
+						text="ДЫМОВАЯ";
 						scale=1;
 						sourceScale=1;
 						align="center";
@@ -1700,7 +1937,9 @@ class CfgVehicles
 					};
 					class Bottom_text
 					{
+						type="text";
 						source="static";
+						text="ЗАВЕСА";
 						scale=1;
 						sourceScale=1;
 						align="center";
@@ -1750,6 +1989,7 @@ class CfgVehicles
 					condition="1";
 					class Crosshair
 					{
+						type="line";
 						width=3;
 						points[]=
 						{
@@ -1889,6 +2129,7 @@ class CfgVehicles
 					};
 					class Heading
 					{
+						type="text";
 						source="[x]turretworld";
 						sourceScale=1;
 						sourceLength=3;
@@ -1916,6 +2157,7 @@ class CfgVehicles
 						color[]={0,0,0};
 						class Background
 						{
+							type="polygon";
 							points[]=
 							{
 								
@@ -1946,6 +2188,7 @@ class CfgVehicles
 					};
 					class Lased_Range
 					{
+						type="text";
 						source="laserDist";
 						sourceScale=1;
 						sourceLength=4;
@@ -1998,6 +2241,7 @@ class CfgVehicles
 					condition="1";
 					class Gunner_AmmoType
 					{
+						type="text";
 						source="ammoFormat";
 						sourceScale=1;
 						sourceLength=3;
@@ -2050,7 +2294,9 @@ class CfgVehicles
 					condition="1";
 					class Main_Armament_Ammo_Type_1
 					{
+						type="text";
 						source="static";
+						text="БР";
 						sourceScale=1;
 						sourceLength=3;
 						scale=1;
@@ -2074,6 +2320,7 @@ class CfgVehicles
 					};
 					class Gunner_Text_1
 					{
+						type="text";
 						source="ammo";
 						sourceScale=1;
 						sourceLength=2;
@@ -2099,7 +2346,9 @@ class CfgVehicles
 					};
 					class Main_Armament_Ammo_Type_2
 					{
+						type="text";
 						source="static";
+						text="ОФ";
 						sourceScale=1;
 						sourceLength=3;
 						scale=1;
@@ -2123,6 +2372,7 @@ class CfgVehicles
 					};
 					class Gunner_Text_2
 					{
+						type="text";
 						source="ammo";
 						sourceScale=1;
 						sourceLength=2;
@@ -2148,7 +2398,9 @@ class CfgVehicles
 					};
 					class Main_Armament_Ammo_Type_3
 					{
+						type="text";
 						source="static";
+						text="К";
 						sourceScale=1;
 						sourceLength=3;
 						scale=1;
@@ -2172,6 +2424,7 @@ class CfgVehicles
 					};
 					class Gunner_Text_3
 					{
+						type="text";
 						source="ammo";
 						sourceScale=1;
 						sourceLength=2;
@@ -2225,6 +2478,7 @@ class CfgVehicles
 					condition="1";
 					class Gunner_Text_1
 					{
+						type="text";
 						source="ammo";
 						sourceScale=1;
 						sourceLength=3;
@@ -2278,6 +2532,7 @@ class CfgVehicles
 					condition="1";
 					class Gunner_Text_1
 					{
+						type="text";
 						source="ammo";
 						sourceScale=1;
 						sourceLength=3;
@@ -2331,6 +2586,7 @@ class CfgVehicles
 					condition="1";
 					class Gunner_Text_1
 					{
+						type="text";
 						source="ammo";
 						sourceScale=1;
 						sourceLength=3;
@@ -2357,6 +2613,49 @@ class CfgVehicles
 				};
 			};
 		};
+		class RenderTargets
+		{
+			class commander_display
+			{
+				renderTarget="rendertarget0";
+				class CameraView1
+				{
+					pointPosition="commanderview";
+					pointDirection="PIP1_dir";
+					renderVisionMode=0;
+					renderQuality=2;
+					fov=0.305731;
+					turret[]={0,0};
+				};
+				BBoxes[]=
+				{
+					"PIP_COM_TL",
+					"PIP_COM_TR",
+					"PIP_COM_BL",
+					"PIP_COM_BR"
+				};
+			};
+			class driver_display
+			{
+				renderTarget="rendertarget1";
+				class CameraView1
+				{
+					pointPosition="PIP0_pos";
+					pointDirection="PIP0_dir";
+					renderVisionMode=0;
+					renderQuality=2;
+					fov=0.80000001;
+					turret[]={-1};
+				};
+				BBoxes[]=
+				{
+					"PIP_DRV_TL",
+					"PIP_DRV_TR",
+					"PIP_DRV_BL",
+					"PIP_DRV_BR"
+				};
+			};
+		};
 		class HitPoints: HitPoints
 		{
 			class HitHull: HitHull
@@ -2365,6 +2664,7 @@ class CfgVehicles
 				material=-1;
 				armorComponent="hit_hull";
 				name="hit_hull_point";
+				visual="zbytek";
 				passThrough=1;
 				minimalHit=0.2;
 				explosionShielding=0.2;
@@ -2376,6 +2676,7 @@ class CfgVehicles
 				material=-1;
 				armorComponent="hit_engine";
 				name="hit_engine_point";
+				visual="-";
 				passThrough=0.30000001;
 				minimalHit=0.2;
 				explosionShielding=0.2;
@@ -2387,6 +2688,7 @@ class CfgVehicles
 				material=-1;
 				armorComponent="hit_fuel";
 				name="hit_fuel_point";
+				visual="-";
 				passThrough=0.30000001;
 				minimalHit=0.1;
 				explosionShielding=0.60000002;
@@ -2397,6 +2699,7 @@ class CfgVehicles
 				material=-1;
 				armorComponent="hit_trackL";
 				name="hit_trackL_point";
+				visual="-";
 				radius=0.2;
 				armor=-650;
 				minimalHit=0.073846199;
@@ -2408,6 +2711,7 @@ class CfgVehicles
 				material=-1;
 				armorComponent="hit_trackR";
 				name="hit_trackR_point";
+				visual="-";
 				radius=0.2;
 				armor=-650;
 				minimalHit=0.073846199;
@@ -2423,27 +2727,158 @@ class CfgVehicles
 				minimalHit=1;
 				radius=0.30000001;
 				passThrough=0;
+				visual="-";
 				explosionShielding=2;
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					effectRadius=1;
+					ignoreFuel=1;
+					class Explo
+					{
+						simulation="particles";
+						type="MineExplosionParticles";
+						position="era_F_pos";
+						lifeTime=0.0099999998;
+						interval=1;
+						intensity=0.0099999998;
+					};
+					class Smoke: Explo
+					{
+						type="ERASmoke";
+						lifeTime=0.050000001;
+					};
+					class Sound: Explo
+					{
+						simulation="sound";
+						type="ERA_Explosion";
+						lifeTime=1;
+					};
+				};
 			};
 			class HitERA_Left_1: HitERA_Front
 			{
 				name="ERA_L_1_point";
 				armorComponent="ERA_L_1";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					effectRadius=1;
+					ignoreFuel=1;
+					class Explo
+					{
+						simulation="particles";
+						type="MineExplosionParticles";
+						position="era_L_1_pos";
+						lifeTime=0.0099999998;
+						interval=1;
+						intensity=0.0099999998;
+					};
+					class Smoke: Explo
+					{
+						type="ERASmoke";
+						lifeTime=0.050000001;
+					};
+					class Sound: Explo
+					{
+						simulation="sound";
+						type="ERA_Explosion";
+						lifeTime=1;
+					};
+				};
 			};
 			class HitERA_Left_2: HitERA_Front
 			{
 				name="ERA_L_2_point";
 				armorComponent="ERA_L_2";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					effectRadius=1;
+					ignoreFuel=1;
+					class Explo
+					{
+						simulation="particles";
+						type="MineExplosionParticles";
+						position="era_L_2_pos";
+						lifeTime=0.0099999998;
+						interval=1;
+						intensity=0.0099999998;
+					};
+					class Smoke: Explo
+					{
+						type="ERASmoke";
+						lifeTime=0.050000001;
+					};
+					class Sound: Explo
+					{
+						simulation="sound";
+						type="ERA_Explosion";
+						lifeTime=1;
+					};
+				};
 			};
 			class HitERA_Right_1: HitERA_Front
 			{
 				name="ERA_R_1_point";
 				armorComponent="ERA_R_1";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					effectRadius=1;
+					ignoreFuel=1;
+					class Explo
+					{
+						simulation="particles";
+						type="MineExplosionParticles";
+						position="era_R_1_pos";
+						lifeTime=0.0099999998;
+						interval=1;
+						intensity=0.0099999998;
+					};
+					class Smoke: Explo
+					{
+						type="ERASmoke";
+						lifeTime=0.050000001;
+					};
+					class Sound: Explo
+					{
+						simulation="sound";
+						type="ERA_Explosion";
+						lifeTime=1;
+					};
+				};
 			};
 			class HitERA_Right_2: HitERA_Front
 			{
 				name="ERA_R_2_point";
 				armorComponent="ERA_R_2";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					effectRadius=1;
+					ignoreFuel=1;
+					class Explo
+					{
+						simulation="particles";
+						type="MineExplosionParticles";
+						position="era_R_2_pos";
+						lifeTime=0.0099999998;
+						interval=1;
+						intensity=0.0099999998;
+					};
+					class Smoke: Explo
+					{
+						type="ERASmoke";
+						lifeTime=0.050000001;
+					};
+					class Sound: Explo
+					{
+						simulation="sound";
+						type="ERA_Explosion";
+						lifeTime=1;
+					};
+				};
 			};
 		};
 		class Turrets: Turrets
@@ -2454,10 +2889,18 @@ class CfgVehicles
 				{
 					class CommanderOptics: CommanderOptics
 					{
+						body="obsTurret";
+						gun="obsGun";
+						animationSourceBody="obsTurret";
+						animationSourceGun="obsGun";
 						stabilizedInAxes=3;
 						maxHorizontalRotSpeed=1.8;
 						maxVerticalRotSpeed=1.8;
+						memoryPointGunnerOutOptics="commanderview";
+						memoryPointGunnerOptics="commanderview";
 						memoryPointGun="usti hlavne2";
+						gunBeg="Usti hlavne2";
+						gunEnd="Konec hlavne2";
 						minElev=-5;
 						maxElev=60;
 						initElev=0;
@@ -2475,6 +2918,13 @@ class CfgVehicles
 							"150Rnd_127x108_Ball",
 							"SmokeLauncherMag"
 						};
+						soundServo[]=
+						{
+							"A3\Sounds_F\vehicles\armor\noises\servo_armor_comm",
+							0.56234133,
+							1,
+							30
+						};
 						soundServoVertical[]=
 						{
 							"A3\Sounds_F\vehicles\armor\noises\servo_armor_comm",
@@ -2482,9 +2932,21 @@ class CfgVehicles
 							1,
 							30
 						};
+						outGunnerMayFire=0;
+						inGunnerMayFire=1;
+						gunnerAction="Commander_MBT_02_cannon_F_out";
+						gunnerInAction="Commander_MBT_02_cannon_F_in";
+						gunnerGetInAction="GetInHigh";
+						gunnerGetOutAction="GetOutHigh";
+						gunnerForceOptics=0;
 						turretFollowFreeLook=2;
 						usepip=2;
 						LODOpticsIn=0;
+						discreteDistance[]={100,200,300,400,500,600,700,800,900,1000,1100,1200,1300,1400,1500,1600,1700,1800,1900,2000};
+						discreteDistanceInitIndex=2;
+						gunnerOpticsModel="\A3\weapons_f\reticle\Optics_Commander_02_F";
+						gunnerOutOpticsModel="";
+						gunnerOpticsEffect[]={};
 						class ViewOptics: ViewOptics
 						{
 							initAngleX=0;
@@ -2529,8 +2991,11 @@ class CfgVehicles
 							minMoveZ=-0.075000003;
 							maxMoveZ=0.1;
 						};
+						turretInfoType="RscOptics_MBT_02_commander";
 						showCrewAim=1;
 						startEngine=0;
+						gunnerHasFlares=1;
+						viewGunnerInExternal=1;
 						class HitPoints
 						{
 							class HitComTurret
@@ -2539,6 +3004,7 @@ class CfgVehicles
 								material=-1;
 								armorComponent="hit_com_turret";
 								name="hit_com_turret_point";
+								visual="-";
 								passThrough=0;
 								minimalHit=0.1;
 								explosionShielding=0.2;
@@ -2551,6 +3017,7 @@ class CfgVehicles
 								material=-1;
 								armorComponent="hit_com_gun";
 								name="hit_com_gun_point";
+								visual="-";
 								passThrough=0;
 								minimalHit=0.1;
 								explosionShielding=0.40000001;
@@ -2585,6 +3052,7 @@ class CfgVehicles
 							condition="1";
 							class Gunner_Range
 							{
+								type="text";
 								source="laserDist";
 								sourceScale=1;
 								sourceLength=4;
@@ -2613,8 +3081,21 @@ class CfgVehicles
 				usepip=2;
 				animationSourceStickX="turret_control_x";
 				animationSourceStickY="turret_control_y";
+				gunnerLeftHandAnimName="turret_control_y";
+				gunnerRightHandAnimName="turret_control_y";
+				gunBeg="Usti hlavne";
+				gunEnd="Konec hlavne";
 				memoryPointGun="usti hlavne3";
 				selectionFireAnim="zasleh";
+				gunnerAction="Gunner_MBT_02_cannon_F_out";
+				gunnerInAction="Gunner_MBT_02_cannon_F_in";
+				soundServo[]=
+				{
+					"A3\Sounds_F\vehicles\armor\noises\servo_armor_gunner",
+					0.15848932,
+					1,
+					50
+				};
 				soundServoVertical[]=
 				{
 					"A3\Sounds_F\vehicles\armor\noises\servo_armor_gunner_vertical",
@@ -2644,11 +3125,20 @@ class CfgVehicles
 					"200Rnd_762x51_Belt_Green"
 				};
 				forceHideGunner=0;
+				discreteDistance[]={100,200,300,400,500,600,700,800,900,1000,1100,1200,1300,1400,1500,1600,1700,1800,1900,2000,2100,2200,2300,2400,2500,2600,2700,2800,2900,3000,3100,3200,3300,3400,3500,3600,3700,3800,3900,4000};
+				discreteDistanceInitIndex=5;
+				memoryPointGunnerOptics="gunnerview";
 				minElev=-5;
 				maxElev=14;
 				initElev=10;
+				gunnerOutOpticsModel="";
+				gunnerOutOpticsEffect[]={};
+				gunnerOpticsEffect[]={};
+				gunnerForceOptics=0;
 				startEngine=0;
+				inGunnerMayFire=1;
 				LODOpticsIn=0;
+				viewGunnerInExternal=1;
 				class OpticsIn: Optics_Gunner_MBT_02
 				{
 					class Wide: Wide;  //found empty after stripping
@@ -2673,6 +3163,7 @@ class CfgVehicles
 					minMoveZ=-0.075000003;
 					maxMoveZ=0.1;
 				};
+				turretInfoType="RscOptics_MBT_02_gunner";
 				showCrewAim=2;
 				class HitPoints
 				{
@@ -2682,6 +3173,7 @@ class CfgVehicles
 						material=-1;
 						armorComponent="hit_main_turret";
 						name="hit_main_turret_point";
+						visual="";
 						passThrough=0;
 						minimalHit=0.1;
 						explosionShielding=0.2;
@@ -2694,6 +3186,7 @@ class CfgVehicles
 						material=-1;
 						armorComponent="hit_main_gun";
 						name="hit_main_gun_point";
+						visual="";
 						passThrough=0;
 						minimalHit=0.1;
 						explosionShielding=0.40000001;
@@ -2703,6 +3196,192 @@ class CfgVehicles
 				};
 				viewGunnerShadowAmb=0.5;
 				viewGunnerShadowDiff=0.050000001;
+			};
+		};
+		class AnimationSources: AnimationSources
+		{
+			class muzzle_hide_cannon
+			{
+				source="reload";
+				weapon="cannon_125mm";
+			};
+			class muzzle_rot_cannon
+			{
+				source="ammorandom";
+				weapon="cannon_125mm";
+			};
+			class muzzle_rot_HMG
+			{
+				source="ammorandom";
+				weapon="HMG_NSVT";
+			};
+			class recoil_source
+			{
+				source="reload";
+				weapon="cannon_125mm";
+			};
+			class Smoke_source
+			{
+				source="revolving";
+				weapon="SmokeLauncher";
+			};
+			class HitEngine_src
+			{
+				source="Hit";
+				hitpoint="HitEngine";
+				raw=1;
+			};
+			class HitFuel_src
+			{
+				source="Hit";
+				hitpoint="HitFuel";
+				raw=1;
+			};
+			class HitHull_src
+			{
+				source="Hit";
+				hitpoint="HitHull";
+				raw=1;
+			};
+			class HitMainGun_src
+			{
+				source="Hit";
+				hitpoint="HitGun";
+				raw=1;
+			};
+			class HitTurret_src
+			{
+				source="Hit";
+				hitpoint="HitTurret";
+				raw=1;
+			};
+			class HitComTurret_src
+			{
+				source="Hit";
+				hitpoint="HitComTurret";
+				raw=1;
+			};
+			class HitLTrack_src
+			{
+				source="Hit";
+				hitpoint="HitLTrack";
+				raw=1;
+			};
+			class HitRTrack_src
+			{
+				source="Hit";
+				hitpoint="HitRTrack";
+				raw=1;
+			};
+			class HitERA_Front_src
+			{
+				source="Hit";
+				hitpoint="HitERA_Front";
+				raw=1;
+			};
+			class HitERA_Left_1_src
+			{
+				source="Hit";
+				hitpoint="HitERA_Left_1";
+				raw=1;
+			};
+			class HitERA_Left_2_src
+			{
+				source="Hit";
+				hitpoint="HitERA_Left_2";
+				raw=1;
+			};
+			class HitERA_Right_1_src
+			{
+				source="Hit";
+				hitpoint="HitERA_Right_1";
+				raw=1;
+			};
+			class HitERA_Right_2_src
+			{
+				source="Hit";
+				hitpoint="HitERA_Right_2";
+				raw=1;
+			};
+			class HitERA_Top_Left_1_src
+			{
+				source="Hit";
+				hitpoint="HitERA_Top_Left_1";
+				raw=1;
+			};
+			class HitERA_Top_Left_2_src
+			{
+				source="Hit";
+				hitpoint="HitERA_Top_Left_2";
+				raw=1;
+			};
+			class HitERA_Top_Right_1_src
+			{
+				source="Hit";
+				hitpoint="HitERA_Top_Right_1";
+				raw=1;
+			};
+			class HitERA_Top_Right_2_src
+			{
+				source="Hit";
+				hitpoint="HitERA_Top_Right_2";
+				raw=1;
+			};
+			class driver_fan_unhide
+			{
+				source="User";
+				animPeriod=0.0099999998;
+				initPhase=0;
+			};
+			class driver_fan_hide
+			{
+				source="User";
+				animPeriod=0.0099999998;
+				initPhase=0;
+			};
+			class showCamonetHull
+			{
+				displayName="$STR_A3_animationsources_showcamonethull0";
+				author="$STR_A3_Bohemia_Interactive";
+				source="user";
+				animPeriod=0.001;
+				initPhase=0;
+				mass=-50;
+			};
+			class showCamonetCannon
+			{
+				source="user";
+				animPeriod=0.001;
+				initPhase=0;
+			};
+			class showCamonetTurret
+			{
+				displayName="$STR_A3_animationsources_showcamonetturret0";
+				author="$STR_A3_Bohemia_Interactive";
+				source="user";
+				animPeriod=0.001;
+				initPhase=0;
+				forceAnimatePhase=1;
+				forceAnimate[]=
+				{
+					"showCamonetCannon",
+					1
+				};
+				forceAnimate2[]=
+				{
+					"showCamonetCannon",
+					0
+				};
+				mass=-50;
+			};
+			class showLog
+			{
+				displayName="$STR_A3_animationsources_showwoodloghull0";
+				author="$STR_A3_Bohemia_Interactive";
+				source="user";
+				animPeriod=0.001;
+				initPhase=0;
+				mass=-50;
 			};
 		};
 		animationList[]=
@@ -2716,7 +3395,62 @@ class CfgVehicles
 			"showLog",
 			0
 		};
-		class Damage;  //found empty after stripping
+		class Damage
+		{
+			tex[]={};
+			mat[]=
+			{
+				"A3\Armor_F_Gamma\MBT_02\Data\MBT_02.rvmat",
+				"A3\Armor_F_Gamma\MBT_02\Data\MBT_02_damage.rvmat",
+				"A3\Armor_F_Gamma\MBT_02\Data\MBT_02_destruct.rvmat",
+				"A3\Armor_F_Gamma\MBT_02\Data\MBT_02_body.rvmat",
+				"A3\Armor_F_Gamma\MBT_02\Data\MBT_02_body_damage.rvmat",
+				"A3\Armor_F_Gamma\MBT_02\Data\MBT_02_body_destruct.rvmat",
+				"A3\Armor_F_Gamma\MBT_02\Data\MBT_02_tracks.rvmat",
+				"A3\Armor_F_Gamma\MBT_02\Data\MBT_02_tracks_damage.rvmat",
+				"A3\Armor_F_Gamma\MBT_02\Data\MBT_02_tracks_destruct.rvmat",
+				"A3\Armor_F_Gamma\MBT_02\Data\MBT_02_turret.rvmat",
+				"A3\Armor_F_Gamma\MBT_02\Data\MBT_02_turret_damage.rvmat",
+				"A3\Armor_F_Gamma\MBT_02\Data\MBT_02_turret_destruct.rvmat",
+				"A3\Armor_F_Gamma\MBT_01\Data\MBT_01_scorcher.rvmat",
+				"A3\Armor_F_Gamma\MBT_01\Data\MBT_01_scorcher_damage.rvmat",
+				"A3\Armor_F_Gamma\MBT_01\Data\MBT_01_scorcher_destruct.rvmat"
+			};
+		};
+		class TransportMagazines
+		{
+			class _xx_SmokeShell
+			{
+				magazine="SmokeShell";
+				count=2;
+			};
+			class _xx_SmokeShellRed
+			{
+				magazine="SmokeShellRed";
+				count=2;
+			};
+			class _xx_30Rnd_65x39_caseless_green
+			{
+				magazine="30Rnd_65x39_caseless_green";
+				count=4;
+			};
+		};
+		class TransportWeapons
+		{
+			class _xx_arifle_Katiba_C_F
+			{
+				weapon="arifle_Katiba_C_F";
+				count=2;
+			};
+		};
+		class TransportItems
+		{
+			class _xx_FirstAidKit
+			{
+				name="FirstAidKit";
+				count=10;
+			};
+		};
 		numberPhysicalWheels=18;
 		class EventHandlers: EventHandlers
 		{
@@ -2725,6 +3459,8 @@ class CfgVehicles
 	};
 	class MBT_02_arty_base_F: MBT_02_base_F
 	{
+		author="$STR_A3_Bohemia_Interactive";
+		mapSize=11.62;
 		_generalMacro="MBT_02_arty_base_F";
 		weaponsGroup1=2;
 		weaponsGroup2="1 + 		4";
@@ -2732,6 +3468,14 @@ class CfgVehicles
 		weaponsGroup4="64 + 		128";
 		features="Randomization: No						<br />Camo selections: 4 - hull, main turret, accessories, RCWS turret						<br />Script door sources: None						<br />Script animations: None						<br />Executed scripts: None						<br />Firing from vehicles: No						<br />Slingload: No						<br />Cargo proxy indexes: None";
 		displayName="$STR_A3_CFGVEHICLES_MBT_02_ARTY_BASE0";
+		model="\A3\armor_f_gamma\MBT_02\MBT_02_arty_F";
+		editorSubcategory="EdSubcat_Artillery";
+		picture="\A3\armor_f_gamma\MBT_02\Data\ui\MBT_02_Arty_ca.paa";
+		Icon="\A3\armor_f_gamma\MBT_02\Data\ui\map_MBT_arty_ca.paa";
+		class Library
+		{
+			libTextDesc="$STR_A3_CfgVehicles_MBT_02_Arty_Library0";
+		};
 		class MFD
 		{
 			class MFD_Driver_Heading
@@ -2761,6 +3505,7 @@ class CfgVehicles
 					condition="on";
 					class Driver_Heading
 					{
+						type="text";
 						source="heading";
 						sourceScale=1;
 						sourceLength=3;
@@ -2813,7 +3558,9 @@ class CfgVehicles
 					blinkingStartsOn=1;
 					class Driver_Fire
 					{
+						type="text";
 						source="static";
+						text="ПОЖАР";
 						sourceScale=1;
 						sourceLength=3;
 						scale=1;
@@ -2864,7 +3611,9 @@ class CfgVehicles
 					condition="1";
 					class Driver_Heading
 					{
+						type="text";
 						source="static";
+						text="АЗИМУТ";
 						sourceScale=1;
 						sourceLength=3;
 						scale=1;
@@ -2915,6 +3664,7 @@ class CfgVehicles
 					condition="1";
 					class Driver_Heading
 					{
+						type="text";
 						source="heading";
 						sourceScale=1;
 						sourceLength=3;
@@ -2967,6 +3717,7 @@ class CfgVehicles
 					condition="1";
 					class Gunner_AmmoType
 					{
+						type="text";
 						source="ammoFormat";
 						sourceScale=1;
 						sourceLength=3;
@@ -3019,6 +3770,7 @@ class CfgVehicles
 					condition="1";
 					class Gunner_Text_1
 					{
+						type="text";
 						source="ammo";
 						sourceScale=1;
 						sourceLength=2;
@@ -3044,6 +3796,7 @@ class CfgVehicles
 					};
 					class Gunner_Text_2
 					{
+						type="text";
 						source="ammo";
 						sourceScale=1;
 						sourceLength=2;
@@ -3069,6 +3822,7 @@ class CfgVehicles
 					};
 					class Gunner_Text_3
 					{
+						type="text";
 						source="ammo";
 						sourceScale=1;
 						sourceLength=2;
@@ -3121,7 +3875,9 @@ class CfgVehicles
 					condition="1";
 					class Top_text
 					{
+						type="text";
 						source="static";
+						text="К СТРЕЛЬБЕ";
 						sourceScale=1;
 						sourceLength=3;
 						scale=1;
@@ -3145,7 +3901,9 @@ class CfgVehicles
 					};
 					class Bottom_text
 					{
+						type="text";
 						source="static";
+						text="ГОТОВ";
 						sourceScale=1;
 						sourceLength=3;
 						scale=1;
@@ -3197,7 +3955,9 @@ class CfgVehicles
 					condition="1";
 					class Main_armament
 					{
+						type="text";
 						source="static";
+						text="ГЛАВНОЕ ОРУДИЕ";
 						sourceScale=1;
 						sourceLength=3;
 						scale=1;
@@ -3221,7 +3981,9 @@ class CfgVehicles
 					};
 					class Machinegun
 					{
+						type="text";
 						source="static";
+						text="ПУЛЕМЕТ";
 						sourceScale=1;
 						sourceLength=3;
 						scale=1;
@@ -3245,7 +4007,9 @@ class CfgVehicles
 					};
 					class Main_armament_ammo_type
 					{
+						type="text";
 						source="static";
+						text="ТИП АМУНИЦИИ";
 						sourceScale=1;
 						sourceLength=3;
 						scale=1;
@@ -3269,7 +4033,9 @@ class CfgVehicles
 					};
 					class Lased_distance_elevation
 					{
+						type="text";
 						source="static";
+						text="ДАЛЬНОСТЬ";
 						sourceScale=1;
 						sourceLength=3;
 						scale=1;
@@ -3293,7 +4059,9 @@ class CfgVehicles
 					};
 					class Azimut
 					{
+						type="text";
 						source="static";
+						text="АЗИМУТ";
 						sourceScale=1;
 						sourceLength=3;
 						scale=1;
@@ -3317,7 +4085,9 @@ class CfgVehicles
 					};
 					class Damage
 					{
+						type="text";
 						source="static";
+						text="ПОВРЕЖДЕНИЯ";
 						sourceScale=1;
 						sourceLength=3;
 						scale=1;
@@ -3341,6 +4111,7 @@ class CfgVehicles
 					};
 					class Heading
 					{
+						type="text";
 						source="[x]turretworld";
 						sourceScale=1;
 						sourceLength=3;
@@ -3365,6 +4136,7 @@ class CfgVehicles
 					};
 					class Lased_Range
 					{
+						type="text";
 						source="laserDist";
 						sourceScale=1;
 						sourceLength=4;
@@ -3417,6 +4189,7 @@ class CfgVehicles
 					condition="1";
 					class Gunner_AmmoType
 					{
+						type="text";
 						source="ammoFormat";
 						sourceScale=1;
 						sourceLength=3;
@@ -3469,7 +4242,9 @@ class CfgVehicles
 					condition="1";
 					class Gunner_Text_1
 					{
+						type="text";
 						source="static";
+						text="----";
 						sourceScale=1;
 						sourceLength=3;
 						scale=1;
@@ -3522,7 +4297,9 @@ class CfgVehicles
 					condition="1";
 					class Main_Armament_Ammo_Type_1
 					{
+						type="text";
 						source="static";
+						text="ОФ";
 						sourceScale=1;
 						sourceLength=3;
 						scale=1;
@@ -3546,6 +4323,7 @@ class CfgVehicles
 					};
 					class Gunner_Text_1
 					{
+						type="text";
 						source="ammo";
 						sourceScale=1;
 						sourceLength=2;
@@ -3571,7 +4349,9 @@ class CfgVehicles
 					};
 					class Main_Armament_Ammo_Type_2
 					{
+						type="text";
 						source="static";
+						text="КОФ";
 						sourceScale=1;
 						sourceLength=3;
 						scale=1;
@@ -3595,6 +4375,7 @@ class CfgVehicles
 					};
 					class Gunner_Text_2
 					{
+						type="text";
 						source="ammo";
 						sourceScale=1;
 						sourceLength=2;
@@ -3620,7 +4401,9 @@ class CfgVehicles
 					};
 					class Main_Armament_Ammo_Type_3
 					{
+						type="text";
 						source="static";
+						text="МИНЫ";
 						sourceScale=1;
 						sourceLength=3;
 						scale=1;
@@ -3644,6 +4427,7 @@ class CfgVehicles
 					};
 					class Gunner_Text_3
 					{
+						type="text";
 						source="ammo";
 						sourceScale=1;
 						sourceLength=2;
@@ -3669,7 +4453,9 @@ class CfgVehicles
 					};
 					class Main_Armament_Ammo_Type_4
 					{
+						type="text";
 						source="static";
+						text="КАССЕТНЫЙ";
 						sourceScale=1;
 						sourceLength=3;
 						scale=1;
@@ -3693,6 +4479,7 @@ class CfgVehicles
 					};
 					class Gunner_Text_4
 					{
+						type="text";
 						source="ammo";
 						sourceScale=1;
 						sourceLength=2;
@@ -3718,7 +4505,9 @@ class CfgVehicles
 					};
 					class Main_Armament_Ammo_Type_5
 					{
+						type="text";
 						source="static";
+						text="ДЫМ";
 						sourceScale=1;
 						sourceLength=3;
 						scale=1;
@@ -3742,6 +4531,7 @@ class CfgVehicles
 					};
 					class Gunner_Text_5
 					{
+						type="text";
 						source="ammo";
 						sourceScale=1;
 						sourceLength=2;
@@ -3767,7 +4557,9 @@ class CfgVehicles
 					};
 					class Main_Armament_Ammo_Type_6
 					{
+						type="text";
 						source="static";
+						text="ЛАЗ.НАВЕД.";
 						sourceScale=1;
 						sourceLength=3;
 						scale=1;
@@ -3791,6 +4583,7 @@ class CfgVehicles
 					};
 					class Gunner_Text_6
 					{
+						type="text";
 						source="ammo";
 						sourceScale=1;
 						sourceLength=2;
@@ -3816,7 +4609,9 @@ class CfgVehicles
 					};
 					class Main_Armament_Ammo_Type_7
 					{
+						type="text";
 						source="static";
+						text="ПТ МИНЫ";
 						sourceScale=1;
 						sourceLength=3;
 						scale=1;
@@ -3840,6 +4635,7 @@ class CfgVehicles
 					};
 					class Gunner_Text_7
 					{
+						type="text";
 						source="ammo";
 						sourceScale=1;
 						sourceLength=2;
@@ -3893,7 +4689,9 @@ class CfgVehicles
 					condition="1";
 					class Main_armament
 					{
+						type="text";
 						source="static";
+						text="ГЛАВНОЕ ОРУДИЕ";
 						sourceScale=1;
 						sourceLength=3;
 						scale=1;
@@ -3917,7 +4715,9 @@ class CfgVehicles
 					};
 					class Machinegun
 					{
+						type="text";
 						source="static";
+						text="ПУЛЕМЕТ";
 						sourceScale=1;
 						sourceLength=3;
 						scale=1;
@@ -3941,7 +4741,9 @@ class CfgVehicles
 					};
 					class Commander_machinegun
 					{
+						type="text";
 						source="static";
+						text="ПУЛЕМЕТ";
 						sourceScale=1;
 						sourceLength=3;
 						scale=1;
@@ -3965,7 +4767,9 @@ class CfgVehicles
 					};
 					class Commander_grenadelauncher
 					{
+						type="text";
 						source="static";
+						text="ГРАНАТОМЕТ";
 						sourceScale=1;
 						sourceLength=3;
 						scale=1;
@@ -3989,7 +4793,9 @@ class CfgVehicles
 					};
 					class Commander_armament
 					{
+						type="text";
 						source="static";
+						text="ОРУДИЕ КОМАНДИРА";
 						sourceScale=1;
 						sourceLength=3;
 						scale=1;
@@ -4013,7 +4819,9 @@ class CfgVehicles
 					};
 					class Commander_armament_magazines
 					{
+						type="text";
 						source="static";
+						text="МАГ.";
 						sourceScale=1;
 						sourceLength=3;
 						scale=1;
@@ -4037,7 +4845,9 @@ class CfgVehicles
 					};
 					class Main_armament_ammo_type
 					{
+						type="text";
 						source="static";
+						text="ТИП АМУНИЦИИ";
 						sourceScale=1;
 						sourceLength=3;
 						scale=1;
@@ -4061,7 +4871,9 @@ class CfgVehicles
 					};
 					class Lased_distance_elevation
 					{
+						type="text";
 						source="static";
+						text="ДАЛЬНОСТЬ";
 						sourceScale=1;
 						sourceLength=3;
 						scale=1;
@@ -4085,7 +4897,9 @@ class CfgVehicles
 					};
 					class Azimut
 					{
+						type="text";
 						source="static";
+						text="АЗИМУТ";
 						sourceScale=1;
 						sourceLength=3;
 						scale=1;
@@ -4109,7 +4923,9 @@ class CfgVehicles
 					};
 					class Damage
 					{
+						type="text";
 						source="static";
+						text="ПОВРЕЖДЕНИЯ";
 						sourceScale=1;
 						sourceLength=3;
 						scale=1;
@@ -4133,6 +4949,7 @@ class CfgVehicles
 					};
 					class Heading
 					{
+						type="text";
 						source="[x]turretworld";
 						sourceScale=1;
 						sourceLength=3;
@@ -4157,6 +4974,7 @@ class CfgVehicles
 					};
 					class Lased_Range
 					{
+						type="text";
 						source="laserDist";
 						sourceScale=1;
 						sourceLength=4;
@@ -4208,7 +5026,9 @@ class CfgVehicles
 					condition="on";
 					class Com_Intercom
 					{
+						type="text";
 						source="static";
+						text="ВН КАНАЛ";
 						sourceScale=1;
 						sourceLength=3;
 						scale=1;
@@ -4253,7 +5073,9 @@ class CfgVehicles
 					condition="1";
 					class Top_text
 					{
+						type="text";
 						source="static";
+						text="К СТРЕЛЬБЕ";
 						scale=1;
 						sourceScale=1;
 						align="center";
@@ -4275,7 +5097,9 @@ class CfgVehicles
 					};
 					class Bottom_text
 					{
+						type="text";
 						source="static";
+						text="ГОТОВ";
 						scale=1;
 						sourceScale=1;
 						align="center";
@@ -4318,7 +5142,9 @@ class CfgVehicles
 					condition="1";
 					class Top_text
 					{
+						type="text";
 						source="static";
+						text="ДЫМОВАЯ";
 						scale=1;
 						sourceScale=1;
 						align="center";
@@ -4340,7 +5166,9 @@ class CfgVehicles
 					};
 					class Bottom_text
 					{
+						type="text";
 						source="static";
+						text="ЗАВЕСА";
 						scale=1;
 						sourceScale=1;
 						align="center";
@@ -4390,6 +5218,7 @@ class CfgVehicles
 					condition="1";
 					class Crosshair
 					{
+						type="line";
 						width=3;
 						points[]=
 						{
@@ -4529,6 +5358,7 @@ class CfgVehicles
 					};
 					class Heading
 					{
+						type="text";
 						source="[x]turretworld";
 						sourceScale=1;
 						sourceLength=3;
@@ -4556,6 +5386,7 @@ class CfgVehicles
 						color[]={0,0,0};
 						class Background
 						{
+							type="polygon";
 							points[]=
 							{
 								
@@ -4586,6 +5417,7 @@ class CfgVehicles
 					};
 					class Lased_Range
 					{
+						type="text";
 						source="laserDist";
 						sourceScale=1;
 						sourceLength=4;
@@ -4638,6 +5470,7 @@ class CfgVehicles
 					condition="1";
 					class Gunner_AmmoType
 					{
+						type="text";
 						source="ammoFormat";
 						sourceScale=1;
 						sourceLength=3;
@@ -4690,7 +5523,9 @@ class CfgVehicles
 					condition="1";
 					class Main_Armament_Ammo_Type_1
 					{
+						type="text";
 						source="static";
+						text="ОФ";
 						sourceScale=1;
 						sourceLength=3;
 						scale=1;
@@ -4714,6 +5549,7 @@ class CfgVehicles
 					};
 					class Gunner_Text_1
 					{
+						type="text";
 						source="ammo";
 						sourceScale=1;
 						sourceLength=2;
@@ -4739,7 +5575,9 @@ class CfgVehicles
 					};
 					class Main_Armament_Ammo_Type_2
 					{
+						type="text";
 						source="static";
+						text="КОФ";
 						sourceScale=1;
 						sourceLength=3;
 						scale=1;
@@ -4763,6 +5601,7 @@ class CfgVehicles
 					};
 					class Gunner_Text_2
 					{
+						type="text";
 						source="ammo";
 						sourceScale=1;
 						sourceLength=2;
@@ -4788,7 +5627,9 @@ class CfgVehicles
 					};
 					class Main_Armament_Ammo_Type_3
 					{
+						type="text";
 						source="static";
+						text="МИНЫ";
 						sourceScale=1;
 						sourceLength=3;
 						scale=1;
@@ -4812,6 +5653,7 @@ class CfgVehicles
 					};
 					class Gunner_Text_3
 					{
+						type="text";
 						source="ammo";
 						sourceScale=1;
 						sourceLength=2;
@@ -4837,7 +5679,9 @@ class CfgVehicles
 					};
 					class Main_Armament_Ammo_Type_4
 					{
+						type="text";
 						source="static";
+						text="КАССЕТНЫЙ";
 						sourceScale=1;
 						sourceLength=3;
 						scale=1;
@@ -4861,6 +5705,7 @@ class CfgVehicles
 					};
 					class Gunner_Text_4
 					{
+						type="text";
 						source="ammo";
 						sourceScale=1;
 						sourceLength=2;
@@ -4886,7 +5731,9 @@ class CfgVehicles
 					};
 					class Main_Armament_Ammo_Type_5
 					{
+						type="text";
 						source="static";
+						text="ДЫМ";
 						sourceScale=1;
 						sourceLength=3;
 						scale=1;
@@ -4910,6 +5757,7 @@ class CfgVehicles
 					};
 					class Gunner_Text_5
 					{
+						type="text";
 						source="ammo";
 						sourceScale=1;
 						sourceLength=2;
@@ -4935,7 +5783,9 @@ class CfgVehicles
 					};
 					class Main_Armament_Ammo_Type_6
 					{
+						type="text";
 						source="static";
+						text="ЛАЗ.НАВЕД.";
 						sourceScale=1;
 						sourceLength=3;
 						scale=1;
@@ -4959,6 +5809,7 @@ class CfgVehicles
 					};
 					class Gunner_Text_6
 					{
+						type="text";
 						source="ammo";
 						sourceScale=1;
 						sourceLength=2;
@@ -4984,7 +5835,9 @@ class CfgVehicles
 					};
 					class Main_Armament_Ammo_Type_7
 					{
+						type="text";
 						source="static";
+						text="ПТ МИНЫ";
 						sourceScale=1;
 						sourceLength=3;
 						scale=1;
@@ -5008,6 +5861,7 @@ class CfgVehicles
 					};
 					class Gunner_Text_7
 					{
+						type="text";
 						source="ammo";
 						sourceScale=1;
 						sourceLength=2;
@@ -5061,7 +5915,9 @@ class CfgVehicles
 					condition="1";
 					class Gunner_Text_1
 					{
+						type="text";
 						source="static";
+						text="---";
 						sourceScale=1;
 						sourceLength=3;
 						scale=1;
@@ -5114,7 +5970,9 @@ class CfgVehicles
 					condition="1";
 					class Gunner_Text_1
 					{
+						type="text";
 						source="static";
+						text="---";
 						sourceScale=1;
 						sourceLength=3;
 						scale=1;
@@ -5167,6 +6025,7 @@ class CfgVehicles
 					condition="1";
 					class Gunner_Text_1
 					{
+						type="text";
 						source="ammo";
 						sourceScale=1;
 						sourceLength=3;
@@ -5192,6 +6051,7 @@ class CfgVehicles
 					};
 					class Gunner_Text_2
 					{
+						type="text";
 						source="ammo";
 						sourceScale=1;
 						sourceLength=3;
@@ -5218,6 +6078,8 @@ class CfgVehicles
 				};
 			};
 		};
+		unitInfoType="RscUnitInfoArtillery";
+		transportSoldier=0;
 		armor=425;
 		armorStructural=4.5;
 		artilleryScanner=1;
@@ -5271,6 +6133,7 @@ class CfgVehicles
 				material=-1;
 				armorComponent="hit_hull";
 				name="hit_hull_point";
+				visual="zbytek";
 				passThrough=1;
 				minimalHit=0.2;
 				explosionShielding=0.2;
@@ -5282,6 +6145,7 @@ class CfgVehicles
 				material=-1;
 				armorComponent="hit_engine";
 				name="hit_engine_point";
+				visual="-";
 				passThrough=0.30000001;
 				minimalHit=0.2;
 				explosionShielding=0.2;
@@ -5293,6 +6157,7 @@ class CfgVehicles
 				material=-1;
 				armorComponent="hit_fuel";
 				name="hit_fuel_point";
+				visual="-";
 				passThrough=0.30000001;
 				minimalHit=0.1;
 				explosionShielding=0.60000002;
@@ -5307,6 +6172,8 @@ class CfgVehicles
 				{
 					class CommanderOptics: CommanderOptics
 					{
+						gunBeg="Usti hlavne";
+						gunEnd="Konec hlavne";
 						memoryPointGun="usti hlavne2";
 						weapons[]=
 						{
@@ -5321,13 +6188,22 @@ class CfgVehicles
 							"200Rnd_127x99_mag_Tracer_Green",
 							"SmokeLauncherMag"
 						};
+						gunnerAction="Commander_MBT_02_arty_F_in";
+						gunnerInAction="Commander_MBT_02_arty_F_in";
+						gunnerOpticsModel="\A3\weapons_f\reticle\Optics_Gunner_02_F";
+						discreteDistance[]={100,200,300,400,500,600,700,800,900,1000,1100,1200,1300,1400,1500};
+						discreteDistanceInitIndex=2;
+						turretInfoType="RscWeaponRangeZeroing";
 						selectionFireAnim="zasleh2";
 						minElev=-25;
 						initElev=0;
 						maxElev=37;
+						gunnerForceOptics=0;
 						forceHideGunner=1;
 						animationSourceStickX="com_turret_control_x";
 						animationSourceStickY="com_turret_control_y";
+						gunnerLeftHandAnimName="com_turret_control_y";
+						gunnerRightHandAnimName="com_turret_control_y";
 						isPersonTurret=0;
 						minOutElev=-10;
 						maxOutElev=25;
@@ -5338,7 +6214,10 @@ class CfgVehicles
 						class ViewOptics: RCWSOptics;  //found empty after stripping
 						class OpticsIn
 						{
-							class Wide: ViewOptics;  //found empty after stripping
+							class Wide: ViewOptics
+							{
+								gunnerOpticsModel="\A3\weapons_f\reticle\Optics_Gunner_02_F";
+							};
 						};
 						class HitPoints
 						{
@@ -5348,6 +6227,7 @@ class CfgVehicles
 								material=-1;
 								armorComponent="hit_com_turret";
 								name="hit_com_turret_point";
+								visual="Commander_Turret";
 								passThrough=0;
 								minimalHit=0.029999999;
 								explosionShielding=0.40000001;
@@ -5360,6 +6240,7 @@ class CfgVehicles
 								material=-1;
 								armorComponent="hit_com_gun";
 								name="hit_com_gun_point";
+								visual="Commander_Gun";
 								passThrough=0;
 								minimalHit=0.029999999;
 								explosionShielding=0.2;
@@ -5370,7 +6251,11 @@ class CfgVehicles
 					};
 				};
 				animationSourceHatch="hatchCommander";
+				gunnerAction="Gunner_MBT_02_arty_F_out";
+				gunnerInAction="Gunner_MBT_02_arty_F_in";
 				selectionFireAnim="";
+				gunBeg="Usti hlavne3";
+				gunEnd="Konec hlavne3";
 				weapons[]=
 				{
 					"mortar_155mm_AMOS"
@@ -5384,6 +6269,13 @@ class CfgVehicles
 					"6Rnd_155mm_Mo_smoke_O",
 					"4Rnd_155mm_Mo_LG_O",
 					"6Rnd_155mm_Mo_AT_mine_O"
+				};
+				soundServo[]=
+				{
+					"A3\Sounds_F\vehicles\armor\noises\servo_armor_gunner",
+					0.15848932,
+					1,
+					50
 				};
 				soundServoVertical[]=
 				{
@@ -5399,12 +6291,17 @@ class CfgVehicles
 				elevationMode=3;
 				maxHorizontalRotSpeed=0.77999997;
 				maxVerticalRotSpeed=0.25999999;
+				memoryPointGunnerOptics="gunnerview";
+				cameraDir="look";
+				turretInfoType="RscWeaponRangeArtilleryAuto";
+				gunnerForceOptics=0;
 				forceHideGunner=0;
 				commanding=1;
 				class OpticsIn: Optics_Gunner_MBT_02
 				{
 					class Wide: Wide
 					{
+						gunnerOpticsModel="\A3\Weapons_F\acc\reticle_mortar_01_f.p3d";
 						initFov=0.17399999;
 						minFov=0.0077777999;
 						maxFov=0.14;
@@ -5423,6 +6320,7 @@ class CfgVehicles
 						material=-1;
 						armorComponent="hit_main_turret";
 						name="hit_main_turret_point";
+						visual="-";
 						passThrough=0;
 						minimalHit=0.1;
 						explosionShielding=0.2;
@@ -5435,6 +6333,7 @@ class CfgVehicles
 						material=-1;
 						armorComponent="hit_main_gun";
 						name="hit_main_gun_point";
+						visual="-";
 						passThrough=0;
 						minimalHit=0.1;
 						explosionShielding=0.40000001;
@@ -5444,8 +6343,113 @@ class CfgVehicles
 				};
 			};
 		};
-		class Damage;  //found empty after stripping
+		class Damage
+		{
+			tex[]={};
+			mat[]=
+			{
+				"A3\Armor_F_Gamma\MBT_02\Data\MBT_02.rvmat",
+				"A3\Armor_F_Gamma\MBT_02\Data\MBT_02_damage.rvmat",
+				"A3\Armor_F_Gamma\MBT_02\Data\MBT_02_destruct.rvmat",
+				"A3\Armor_F_Gamma\MBT_02\Data\MBT_02_body.rvmat",
+				"A3\Armor_F_Gamma\MBT_02\Data\MBT_02_body_damage.rvmat",
+				"A3\Armor_F_Gamma\MBT_02\Data\MBT_02_body_destruct.rvmat",
+				"A3\Armor_F_Gamma\MBT_02\Data\MBT_02_tracks.rvmat",
+				"A3\Armor_F_Gamma\MBT_02\Data\MBT_02_tracks_damage.rvmat",
+				"A3\Armor_F_Gamma\MBT_02\Data\MBT_02_tracks_destruct.rvmat",
+				"A3\Armor_F_Gamma\MBT_02\Data\MBT_02_turret.rvmat",
+				"A3\Armor_F_Gamma\MBT_02\Data\MBT_02_turret_damage.rvmat",
+				"A3\Armor_F_Gamma\MBT_02\Data\MBT_02_turret_destruct.rvmat",
+				"A3\Armor_F_Gamma\MBT_01\Data\MBT_01_scorcher.rvmat",
+				"A3\Armor_F_Gamma\MBT_01\Data\MBT_01_scorcher_damage.rvmat",
+				"A3\Armor_F_Gamma\MBT_01\Data\MBT_01_scorcher_destruct.rvmat",
+				"A3\Data_F\Vehicles\Turret.rvmat",
+				"A3\Data_F\Vehicles\Turret_damage.rvmat",
+				"A3\Data_F\Vehicles\Turret_destruct.rvmat"
+			};
+		};
 		selectionFireAnim="";
+		class AnimationSources: AnimationSources
+		{
+			class recoil_source
+			{
+				source="reload";
+				weapon="mortar_155mm_AMOS";
+			};
+			class muzzle_hide_arty
+			{
+				source="reload";
+				weapon="mortar_155mm_AMOS";
+			};
+			class muzzle_rot_HMG
+			{
+				source="ammorandom";
+				weapon="HMG_127_APC";
+			};
+			class muzzle_hide_HMG
+			{
+				source="reload";
+				weapon="HMG_127_APC";
+			};
+			class muzzle_rot_GMG
+			{
+				source="ammorandom";
+				weapon="GMG_40mm";
+			};
+			class muzzle_hide_GMG
+			{
+				source="reload";
+				weapon="GMG_40mm";
+			};
+			class showAmmobox
+			{
+				displayName="$STR_A3_animationsources_showammoboxeshull0";
+				author="$STR_A3_Bohemia_Interactive";
+				source="user";
+				animPeriod=0.001;
+				initPhase=0;
+				mass=-50;
+			};
+			class showCanisters
+			{
+				displayName="$STR_A3_animationsources_showcanistershull0";
+				author="$STR_A3_Bohemia_Interactive";
+				source="user";
+				animPeriod=0.001;
+				initPhase=0;
+				mass=-50;
+			};
+			class showCamonetCannon
+			{
+				source="user";
+				animPeriod=0.001;
+				initPhase=0;
+			};
+			class showCamonetTurret
+			{
+				displayName="$STR_A3_animationsources_showcamonetturret0";
+				author="$STR_A3_Bohemia_Interactive";
+				source="user";
+				animPeriod=0.001;
+				initPhase=0;
+				forceAnimatePhase=1;
+				forceAnimate[]=
+				{
+					"showCamonetCannon",
+					1,
+					"showCanisters",
+					1
+				};
+				forceAnimate2[]=
+				{
+					"showCamonetCannon",
+					0,
+					"showCanisters",
+					0
+				};
+				mass=-50;
+			};
+		};
 		availableForSupportTypes[]=
 		{
 			"Artillery"
@@ -5453,19 +6457,37 @@ class CfgVehicles
 	};
 	class O_MBT_02_base_F: MBT_02_base_F
 	{
+		author="$STR_A3_Bohemia_Interactive";
 		_generalMacro="O_MBT_02_base_F";
 		side=0;
+		faction="OPF_F";
+		crew="O_crew_F";
 		typicalCargo[]=
 		{
 			"O_Soldier_F",
 			"O_Soldier_F",
 			"O_Soldier_F"
 		};
+		hiddenSelections[]=
+		{
+			"camo1",
+			"camo2",
+			"camo3",
+			"CamoNet"
+		};
 		class TextureSources
 		{
 			class Hex
 			{
 				displayName="$STR_A3_TEXTURESOURCES_OPFOR0";
+				author="$STR_A3_Bohemia_Interactive";
+				textures[]=
+				{
+					"a3\armor_f_gamma\mbt_02\data\mbt_02_body_co.paa",
+					"a3\armor_f_gamma\mbt_02\data\mbt_02_turret_co.paa",
+					"a3\armor_f_gamma\mbt_02\data\mbt_02_co.paa",
+					"A3\Armor_F\Data\camonet_CSAT_HEX_Desert_CO.paa"
+				};
 				factions[]=
 				{
 					"OPF_F"
@@ -5477,32 +6499,88 @@ class CfgVehicles
 			"Hex",
 			1
 		};
+		hiddenSelectionsTextures[]=
+		{
+			"a3\armor_f_gamma\mbt_02\data\mbt_02_body_co.paa",
+			"a3\armor_f_gamma\mbt_02\data\mbt_02_turret_co.paa",
+			"a3\armor_f_gamma\mbt_02\data\mbt_02_co.paa",
+			"A3\Armor_F\Data\camonet_CSAT_HEX_Desert_CO.paa"
+		};
 		class HitPoints: HitPoints
 		{
 			class HitERA_Top_Left_1: HitERA_Front
 			{
 				name="era_L_T_1_point";
 				armorComponent="era_L_T_1";
+				class DestructionEffects: DestructionEffects
+				{
+					class Explo: Explo
+					{
+						position="era_L_T_1_pos";
+					};
+					class Smoke: Explo
+					{
+						type="ERASmoke";
+						lifeTime=0.1;
+					};
+				};
 			};
 			class HitERA_Top_Left_2: HitERA_Front
 			{
 				name="era_L_T_2_point";
 				armorComponent="era_L_T_2";
+				class DestructionEffects: DestructionEffects
+				{
+					class Explo: Explo
+					{
+						position="era_L_T_2_pos";
+					};
+					class Smoke: Explo
+					{
+						type="ERASmoke";
+						lifeTime=0.1;
+					};
+				};
 			};
 			class HitERA_Top_Right_1: HitERA_Front
 			{
 				name="era_R_T_1_point";
 				armorComponent="era_R_T_1";
+				class DestructionEffects: DestructionEffects
+				{
+					class Explo: Explo
+					{
+						position="era_R_T_1_pos";
+					};
+					class Smoke: Explo
+					{
+						type="ERASmoke";
+						lifeTime=0.1;
+					};
+				};
 			};
 			class HitERA_Top_Right_2: HitERA_Front
 			{
 				name="era_R_T_2_point";
 				armorComponent="era_R_T_2";
+				class DestructionEffects: DestructionEffects
+				{
+					class Explo: Explo
+					{
+						position="era_R_T_2_pos";
+					};
+					class Smoke: Explo
+					{
+						type="ERASmoke";
+						lifeTime=0.1;
+					};
+				};
 			};
 		};
 	};
 	class O_MBT_02_cannon_F: O_MBT_02_base_F
 	{
+		author="$STR_A3_Bohemia_Interactive";
 		class SimpleObject
 		{
 			eden=1;
@@ -6265,7 +7343,9 @@ class CfgVehicles
 			verticalOffsetWorld=-0.17200001;
 			init="[this, '', []] call bis_fnc_initVehicle";
 		};
+		editorPreview="\A3\EditorPreviews_F\Data\CfgVehicles\O_MBT_02_cannon_F.jpg";
 		_generalMacro="O_MBT_02_cannon_F";
+		scope=2;
 		textureList[]=
 		{
 			"Hex",
@@ -6274,8 +7354,11 @@ class CfgVehicles
 	};
 	class O_MBT_02_arty_base_F: MBT_02_arty_base_F
 	{
+		author="$STR_A3_Bohemia_Interactive";
 		_generalMacro="O_MBT_02_arty_base_F";
 		side=0;
+		faction="OPF_F";
+		crew="O_crew_F";
 		typicalCargo[]=
 		{
 			"O_Soldier_F",
@@ -6283,11 +7366,28 @@ class CfgVehicles
 			"O_Soldier_F"
 		};
 		maxFordingDepth=-1.25;
+		hiddenSelections[]=
+		{
+			"camo1",
+			"camo2",
+			"camo3",
+			"camo4",
+			"CamoNet"
+		};
 		class TextureSources
 		{
 			class Hex
 			{
 				displayName="$STR_A3_TEXTURESOURCES_OPFOR0";
+				author="$STR_A3_Bohemia_Interactive";
+				textures[]=
+				{
+					"a3\armor_f_gamma\mbt_02\data\mbt_02_body_co.paa",
+					"a3\armor_f_gamma\mbt_01\data\mbt_01_scorcher_hexarid_co.paa",
+					"a3\armor_f_gamma\mbt_02\data\mbt_02_co.paa",
+					"a3\data_f\vehicles\turret_opfor_co.paa",
+					"A3\Armor_F\Data\camonet_CSAT_HEX_Desert_CO.paa"
+				};
 				factions[]=
 				{
 					"OPF_F"
@@ -6299,9 +7399,18 @@ class CfgVehicles
 			"Hex",
 			1
 		};
+		hiddenSelectionsTextures[]=
+		{
+			"a3\armor_f_gamma\mbt_02\data\mbt_02_body_co.paa",
+			"a3\armor_f_gamma\mbt_01\data\mbt_01_scorcher_hexarid_co.paa",
+			"a3\armor_f_gamma\mbt_02\data\mbt_02_co.paa",
+			"a3\data_f\vehicles\turret_opfor_co.paa",
+			"A3\Armor_F\Data\camonet_CSAT_HEX_Desert_CO.paa"
+		};
 	};
 	class O_MBT_02_arty_F: O_MBT_02_arty_base_F
 	{
+		author="$STR_A3_Bohemia_Interactive";
 		class SimpleObject
 		{
 			eden=1;
@@ -6998,7 +8107,9 @@ class CfgVehicles
 			verticalOffsetWorld=-0.18000001;
 			init="[this, '', []] call bis_fnc_initVehicle";
 		};
+		editorPreview="\A3\EditorPreviews_F\Data\CfgVehicles\O_MBT_02_arty_F.jpg";
 		_generalMacro="O_MBT_02_arty_F";
+		scope=2;
 		textureList[]=
 		{
 			"Hex",
@@ -7009,5 +8120,12 @@ class CfgVehicles
 class CfgNonAIVehicles
 {
 	class ProxyRetex;
-	class proxyMBT_02_wreck_F: ProxyRetex;  //found empty after stripping
+	class proxyMBT_02_wreck_F: ProxyRetex
+	{
+		hiddenSelections[]=
+		{
+			"camo1"
+		};
+		model="\A3\Armor_F_Gamma\MBT_02\MBT_02_wreck_F.p3d";
+	};
 };

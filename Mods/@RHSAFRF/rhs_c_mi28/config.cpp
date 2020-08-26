@@ -11,7 +11,17 @@ class CfgPatches
 			"rhs_mi28n_b13_vvsc"
 		};
 		weapons[]={};
+		requiredVersion=1.62;
+		requiredAddons[]=
+		{
+			"rhs_c_airweapons",
+			"rhs_c_heavyweapons",
+			"rhs_c_a2port_air",
+			"rhs_main"
+		};
 		name="Mi-28";
+		author="$STR_RHS_AUTHOR_FULL";
+		url="http://www.rhsmods.org/";
 	};
 };
 class CfgFunctions
@@ -30,6 +40,57 @@ class CfgFunctions
 			{
 				file="\rhsafrf\addons\rhs_c_mi28\scripts\rhs_mi28_ejection.sqf";
 				description="Mi-28 settings init";
+			};
+		};
+	};
+};
+class CfgMovesBasic
+{
+	class DefaultDie;
+	class ManActions
+	{
+		rhs_mi28_pilot="rhs_mi28_pilot";
+		rhs_mi28_gunner="rhs_mi28_gunner";
+	};
+};
+class CfgMovesMaleSdr: CfgMovesBasic
+{
+	class States
+	{
+		class Crew;
+		class rhs_kia_mi28_pilot: DefaultDie
+		{
+			file="\rhsafrf\addons\rhs_a2port_air\anim\KIA_Ka52_Pilot.rtm";
+			speed=0.5;
+			looped=0;
+			terminal=1;
+			soundEnabled=0;
+			connectTo[]=
+			{
+				"Unconscious",
+				0.1
+			};
+		};
+		class rhs_mi28_pilot: Crew
+		{
+			file="\rhsafrf\addons\rhs_c_mi28\anims\mi28_pilot2.rtm";
+			interpolateTo[]=
+			{
+				"rhs_kia_mi28_pilot",
+				1
+			};
+			leftHandIKCurve[]={1};
+			rightHandIKCurve[]={1};
+			leftHandIKBeg=1;
+			leftHandIKEnd=1;
+		};
+		class rhs_mi28_gunner: Crew
+		{
+			file="\rhsafrf\addons\rhs_c_mi28\anims\rhs_mi28_gunner.rtm";
+			interpolateTo[]=
+			{
+				"rhs_kia_mi28_pilot",
+				1
 			};
 		};
 	};
@@ -103,6 +164,7 @@ class CfgVehicles
 	{
 		side=0;
 		tf_isolatedAmount_api=0.60000002;
+		destrType="DestructWreck";
 		maxOmega=2000;
 		engineMOI=10;
 		class Wheels
@@ -111,6 +173,11 @@ class CfgVehicles
 			{
 				steering=0;
 				side="left";
+				boneName="Wheel_1_1_axis_damper";
+				suspForceAppPointOffset="Wheel_1_1_axis";
+				tireForceAppPointOffset="Wheel_1_1_axis";
+				center="Wheel_1_1_axis";
+				boundary="Wheel_1_1_bound";
 				suspTravelDirection[]={0,-1,0};
 				width=0.234;
 				mass=15;
@@ -137,11 +204,21 @@ class CfgVehicles
 			};
 			class Wheel_1_2: Wheel_1_1
 			{
+				boneName="Wheel_1_2_axis_damper";
 				side="right";
+				suspForceAppPointOffset="Wheel_1_2_axis";
+				tireForceAppPointOffset="Wheel_1_2_axis";
+				center="Wheel_1_2_axis";
+				boundary="Wheel_1_2_bound";
 			};
 			class Wheel_2_1: Wheel_1_1
 			{
 				steering=1;
+				boneName="Wheel_2_1_axis_damper";
+				suspForceAppPointOffset="Wheel_2_1_axis";
+				tireForceAppPointOffset="Wheel_2_1_axis";
+				center="Wheel_2_1_axis";
+				boundary="Wheel_2_1_bound";
 				width=0.186;
 				suspTravelDirection[]={0,-1,0};
 				maxCompression=0.18000001;
@@ -164,6 +241,9 @@ class CfgVehicles
 		{
 			"['Number',cRHSAIRMI28NumberPlaces,'AviaYellow']"
 		};
+		dlc="RHS_AFRF";
+		category="Air";
+		crew="rhs_pilot_combat_heli";
 		typicalCargo[]=
 		{
 			"rhs_pilot_combat_heli"
@@ -177,6 +257,7 @@ class CfgVehicles
 		tailBladeVertical=1;
 		tailBladeCenter="mala osa";
 		mainBladeCenter="rotor_center";
+		bodyFrictionCoef=0.51999998;
 		backRotorForceCoef=1;
 		liftForceCoef=2;
 		altFullForce=4000;
@@ -194,9 +275,17 @@ class CfgVehicles
 			"CAS_Heli"
 		};
 		audible=7;
+		camShakeCoef=0.60000002;
+		scope=1;
+		mapSize=16;
+		vehicleClass="rhs_vehclass_helicopter";
+		editorSubcategory="rhs_EdSubcat_helicopter";
 		displayName="$STR_MI28N_name";
+		model="\rhsafrf\addons\rhs_mi28\rhs_mi28";
 		icon="rhsafrf\addons\rhs_a2port_air\data\map_ico\icon_mi24_ca.paa";
+		picture="\rhsafrf\addons\rhs_a2port_air\data\ico\rhs_mi24p_pic_ca.paa";
 		getInRadius=2;
+		gunnerUsesPilotView=1;
 		allowTabLock=0;
 		class MFD
 		{
@@ -216,6 +305,7 @@ class CfgVehicles
 				{
 					class Compass_text
 					{
+						type="fixed";
 						pos[]={0.5,0.52999997};
 					};
 					class Speed_text: Compass_text
@@ -242,6 +332,7 @@ class CfgVehicles
 					condition="on";
 					class Compass
 					{
+						type="text";
 						align="center";
 						scale=1;
 						source="Heading";
@@ -367,6 +458,7 @@ class CfgVehicles
 				{
 					class Compass_text
 					{
+						type="fixed";
 						pos[]={0.5,0.52999997};
 					};
 					class Speed_text: Compass_text
@@ -393,6 +485,7 @@ class CfgVehicles
 					condition="on";
 					class Compass
 					{
+						type="text";
 						align="center";
 						scale=1;
 						source="Heading";
@@ -519,6 +612,7 @@ class CfgVehicles
 				{
 					class PlaneW
 					{
+						type="fixed";
 						pos[]={0.5,0.64999998};
 					};
 				};
@@ -529,6 +623,7 @@ class CfgVehicles
 					condition="on";
 					class Speed
 					{
+						type="text";
 						align="left";
 						scale=1;
 						source="speed";
@@ -611,6 +706,7 @@ class CfgVehicles
 				{
 					class PlaneW
 					{
+						type="fixed";
 						pos[]={0.5,0.64999998};
 					};
 				};
@@ -621,6 +717,7 @@ class CfgVehicles
 					condition="on";
 					class Speed
 					{
+						type="text";
 						align="left";
 						scale=1;
 						source="speed";
@@ -710,6 +807,7 @@ class CfgVehicles
 				{
 					class WeaponAim
 					{
+						type="vector";
 						source="weapon";
 						pos0[]=
 						{
@@ -728,6 +826,7 @@ class CfgVehicles
 					{
 						class Circle
 						{
+							type="line";
 							width=4;
 							points[]=
 							{
@@ -792,6 +891,7 @@ class CfgVehicles
 			{
 				class Pos10Vector
 				{
+					type="vector";
 					pos0[]={0.50199997,0.49000001};
 					pos10[]={1.112,1.03};
 				};
@@ -810,22 +910,27 @@ class CfgVehicles
 				{
 					class PlaneW
 					{
+						type="fixed";
 						pos[]={0.50199997,0.49000001};
 					};
 					class ImpactPoint
 					{
+						type="vector";
 						source="ImpactPoint";
 						pos0[]={0.5,0.31};
 						pos10[]={1.146,0.88380003};
 					};
 					class Limit0109
 					{
+						type="limit";
 						limits[]={0.1,0.1,0.89999998,0.89999998};
 					};
 					class MissileFlightTimeRot1
 					{
+						type="rotational";
 						source="MissileFlightTime";
 						sourceScale=1;
+						center[]={0,0};
 						min=0;
 						max=0.5;
 						minAngle=0;
@@ -929,6 +1034,7 @@ class CfgVehicles
 					};
 					class ForwardVector
 					{
+						type="vector";
 						source="forward";
 						pos0[]={0,0};
 						pos10[]={0.347,0.345};
@@ -936,17 +1042,20 @@ class CfgVehicles
 					class Target
 					{
 						source="target";
+						type="vector";
 						pos0[]={0.5,0.31};
 						pos10[]={1.146,0.88380003};
 					};
 					class Velocity: Pos10Vector
 					{
+						type="vector";
 						source="velocity";
 						pos0[]={0.50199997,0.49000001};
 						pos10[]={0.56300002,0.54400003};
 					};
 					class SliderSpeedSource
 					{
+						type="linear";
 						source="speed";
 						min=0;
 						max=138.88901;
@@ -955,6 +1064,7 @@ class CfgVehicles
 					};
 					class AGLMove
 					{
+						type="linear";
 						source="altitudeAGL";
 						min=0;
 						max=1000;
@@ -971,10 +1081,12 @@ class CfgVehicles
 					};
 					class Heading_number_anchor
 					{
+						type="fixed";
 						pos[]={0.498,0.035};
 					};
 					class Heading
 					{
+						type="linear";
 						source="Heading";
 						min=-36;
 						max=36;
@@ -983,7 +1095,9 @@ class CfgVehicles
 					};
 					class TargetDistanceMissile
 					{
+						type="rotational";
 						source="targetDist";
+						center[]={0,0};
 						min=100;
 						max=3000;
 						minAngle=-120;
@@ -992,6 +1106,7 @@ class CfgVehicles
 					class vspeed
 					{
 						source="vspeed";
+						type="linear";
 						min=-30;
 						max=30;
 						minPos[]={0,0.059999999};
@@ -999,7 +1114,9 @@ class CfgVehicles
 					};
 					class HorizonBankMGun
 					{
+						type="rotational";
 						source="HorizonBank";
+						center[]={0,0};
 						min=-6.2831898;
 						max=6.2831898;
 						minAngle=-360;
@@ -1009,6 +1126,7 @@ class CfgVehicles
 					class HorizonDive
 					{
 						source="horizonDive";
+						type="linear";
 						min=-1;
 						max=1;
 						minPos[]={0.50199997,2.49};
@@ -1016,6 +1134,8 @@ class CfgVehicles
 					};
 					class HorizonBankReverted
 					{
+						center[]={0.5,0.60159999};
+						type="rotational";
 						source="HorizonBank";
 						min="-3.14159265*2";
 						max="3.14159265*2";
@@ -1027,6 +1147,7 @@ class CfgVehicles
 					{
 						pos0[]={0.5,0.46000001};
 						pos10[]={1.3839999,1.2452};
+						type="horizon";
 						angle=0;
 					};
 					class LevelP5: Level0
@@ -1112,6 +1233,7 @@ class CfgVehicles
 						condition="mgun+rocket+bomb";
 						class Cross
 						{
+							type="line";
 							width=3;
 							points[]=
 							{
@@ -1171,6 +1293,7 @@ class CfgVehicles
 						};
 						class Circle
 						{
+							type="line";
 							width=3;
 							points[]=
 							{
@@ -1344,6 +1467,7 @@ class CfgVehicles
 						};
 						class Circle_Min_Range
 						{
+							type="line";
 							width=3;
 							points[]=
 							{
@@ -1573,6 +1697,7 @@ class CfgVehicles
 						};
 						class Distance
 						{
+							type="text";
 							source="ImpactDistance";
 							sourceScale=0.001;
 							sourcePrecision=1;
@@ -1858,6 +1983,7 @@ class CfgVehicles
 							},
 							{}
 						};
+						type="line";
 					};
 					class HorizonBank
 					{
@@ -2010,13 +2136,16 @@ class CfgVehicles
 								1
 							}
 						};
+						type="line";
 					};
 					class CollectiveGroup
 					{
 						condition="simulRTD";
 						class CollectiveText
 						{
+							type="text";
 							source="static";
+							text="%";
 							align="right";
 							scale=1;
 							pos[]=
@@ -2037,6 +2166,7 @@ class CfgVehicles
 						};
 						class CollectiveNumber
 						{
+							type="text";
 							source="rtdCollective";
 							sourceScale=100;
 							align="left";
@@ -2066,6 +2196,7 @@ class CfgVehicles
 						{
 							class Level0
 							{
+								type="line";
 								width=4;
 								points[]=
 								{
@@ -2124,6 +2255,7 @@ class CfgVehicles
 							};
 							class LevelM5: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -2155,7 +2287,9 @@ class CfgVehicles
 							};
 							class VALM_1_5
 							{
+								type="text";
 								source="static";
+								text=-5;
 								align="right";
 								scale=1;
 								sourceScale=1;
@@ -2202,6 +2336,7 @@ class CfgVehicles
 							};
 							class LevelP5: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -2233,7 +2368,9 @@ class CfgVehicles
 							};
 							class VALP_1_5
 							{
+								type="text";
 								source="static";
+								text="5";
 								align="right";
 								scale=1;
 								sourceScale=1;
@@ -2280,6 +2417,7 @@ class CfgVehicles
 							};
 							class LevelM10: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -2311,7 +2449,9 @@ class CfgVehicles
 							};
 							class VALM_1_10
 							{
+								type="text";
 								source="static";
+								text=-10;
 								align="right";
 								scale=1;
 								sourceScale=1;
@@ -2358,6 +2498,7 @@ class CfgVehicles
 							};
 							class LevelP10: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -2389,7 +2530,9 @@ class CfgVehicles
 							};
 							class VALP_1_10
 							{
+								type="text";
 								source="static";
+								text="10";
 								align="right";
 								scale=1;
 								sourceScale=1;
@@ -2436,6 +2579,7 @@ class CfgVehicles
 							};
 							class LevelM15: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -2467,7 +2611,9 @@ class CfgVehicles
 							};
 							class VALM_1_15
 							{
+								type="text";
 								source="static";
+								text=-15;
 								align="right";
 								scale=1;
 								sourceScale=1;
@@ -2514,6 +2660,7 @@ class CfgVehicles
 							};
 							class LevelP15: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -2545,7 +2692,9 @@ class CfgVehicles
 							};
 							class VALP_1_15
 							{
+								type="text";
 								source="static";
+								text="15";
 								align="right";
 								scale=1;
 								sourceScale=1;
@@ -2592,6 +2741,7 @@ class CfgVehicles
 							};
 							class LevelM20: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -2623,7 +2773,9 @@ class CfgVehicles
 							};
 							class VALM_1_20
 							{
+								type="text";
 								source="static";
+								text=-20;
 								align="right";
 								scale=1;
 								sourceScale=1;
@@ -2670,6 +2822,7 @@ class CfgVehicles
 							};
 							class LevelP20: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -2701,7 +2854,9 @@ class CfgVehicles
 							};
 							class VALP_1_20
 							{
+								type="text";
 								source="static";
+								text="20";
 								align="right";
 								scale=1;
 								sourceScale=1;
@@ -2748,6 +2903,7 @@ class CfgVehicles
 							};
 							class LevelM25: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -2779,7 +2935,9 @@ class CfgVehicles
 							};
 							class VALM_1_25
 							{
+								type="text";
 								source="static";
+								text=-25;
 								align="right";
 								scale=1;
 								sourceScale=1;
@@ -2826,6 +2984,7 @@ class CfgVehicles
 							};
 							class LevelP25: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -2857,7 +3016,9 @@ class CfgVehicles
 							};
 							class VALP_1_25
 							{
+								type="text";
 								source="static";
+								text="25";
 								align="right";
 								scale=1;
 								sourceScale=1;
@@ -2904,6 +3065,7 @@ class CfgVehicles
 							};
 							class LevelM30: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -2935,7 +3097,9 @@ class CfgVehicles
 							};
 							class VALM_1_30
 							{
+								type="text";
 								source="static";
+								text=-30;
 								align="right";
 								scale=1;
 								sourceScale=1;
@@ -2982,6 +3146,7 @@ class CfgVehicles
 							};
 							class LevelP30: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -3013,7 +3178,9 @@ class CfgVehicles
 							};
 							class VALP_1_30
 							{
+								type="text";
 								source="static";
+								text="30";
 								align="right";
 								scale=1;
 								sourceScale=1;
@@ -3060,6 +3227,7 @@ class CfgVehicles
 							};
 							class LevelM35: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -3091,7 +3259,9 @@ class CfgVehicles
 							};
 							class VALM_1_35
 							{
+								type="text";
 								source="static";
+								text=-35;
 								align="right";
 								scale=1;
 								sourceScale=1;
@@ -3138,6 +3308,7 @@ class CfgVehicles
 							};
 							class LevelP35: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -3169,7 +3340,9 @@ class CfgVehicles
 							};
 							class VALP_1_35
 							{
+								type="text";
 								source="static";
+								text="35";
 								align="right";
 								scale=1;
 								sourceScale=1;
@@ -3216,6 +3389,7 @@ class CfgVehicles
 							};
 							class LevelM40: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -3247,7 +3421,9 @@ class CfgVehicles
 							};
 							class VALM_1_40
 							{
+								type="text";
 								source="static";
+								text=-40;
 								align="right";
 								scale=1;
 								sourceScale=1;
@@ -3294,6 +3470,7 @@ class CfgVehicles
 							};
 							class LevelP40: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -3325,7 +3502,9 @@ class CfgVehicles
 							};
 							class VALP_1_40
 							{
+								type="text";
 								source="static";
+								text="40";
 								align="right";
 								scale=1;
 								sourceScale=1;
@@ -3372,6 +3551,7 @@ class CfgVehicles
 							};
 							class LevelM45: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -3403,7 +3583,9 @@ class CfgVehicles
 							};
 							class VALM_1_45
 							{
+								type="text";
 								source="static";
+								text=-45;
 								align="right";
 								scale=1;
 								sourceScale=1;
@@ -3450,6 +3632,7 @@ class CfgVehicles
 							};
 							class LevelP45: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -3481,7 +3664,9 @@ class CfgVehicles
 							};
 							class VALP_1_45
 							{
+								type="text";
 								source="static";
+								text="45";
 								align="right";
 								scale=1;
 								sourceScale=1;
@@ -3530,6 +3715,7 @@ class CfgVehicles
 					};
 					class Static
 					{
+						type="line";
 						width=4;
 						points[]=
 						{
@@ -3744,6 +3930,7 @@ class CfgVehicles
 						condition="speed-2.78";
 						class Static
 						{
+							type="line";
 							width=4;
 							points[]=
 							{
@@ -3925,7 +4112,9 @@ class CfgVehicles
 						};
 						class SpeedStatic500
 						{
+							type="text";
 							source="static";
+							text="500";
 							scale=1;
 							sourceScale=1;
 							align="left";
@@ -3955,7 +4144,9 @@ class CfgVehicles
 						};
 						class SpeedStatic0
 						{
+							type="text";
 							source="static";
+							text="0";
 							scale=1;
 							sourceScale=1;
 							align="left";
@@ -3990,6 +4181,7 @@ class CfgVehicles
 						class Panel
 						{
 							width=4;
+							type="line";
 							points[]=
 							{
 								
@@ -4098,10 +4290,12 @@ class CfgVehicles
 						};
 						class AltStatic50
 						{
+							type="text";
 							source="static";
 							scale=1;
 							sourceScale=1;
 							align="right";
+							text=1000;
 							pos[]=
 							{
 								{0.79000002,0.17},
@@ -4121,6 +4315,7 @@ class CfgVehicles
 					};
 					class RadarBoxes
 					{
+						type="radar";
 						pos0[]={0.5,0.31};
 						pos10[]={1.146,0.88380003};
 						width=4;
@@ -4157,6 +4352,7 @@ class CfgVehicles
 					{
 						class shape
 						{
+							type="line";
 							width=4;
 							points[]=
 							{
@@ -4210,6 +4406,7 @@ class CfgVehicles
 					};
 					class SpeedNumber
 					{
+						type="text";
 						align="right";
 						source="speed";
 						sourceScale=3.5999999;
@@ -4256,8 +4453,10 @@ class CfgVehicles
 					};
 					class AltNumberStatic: AltNumber
 					{
+						type="text";
 						source="static";
 						align="right";
+						text="р";
 						scale=1;
 						sourceScale=1;
 						pos[]=
@@ -4300,7 +4499,9 @@ class CfgVehicles
 					};
 					class VspeedNumberStaticP30
 					{
+						type="text";
 						source="static";
+						text="+30";
 						scale=1;
 						sourceScale=1;
 						align="right";
@@ -4322,7 +4523,9 @@ class CfgVehicles
 					};
 					class VspeedNumberStaticZERO
 					{
+						type="text";
 						source="static";
+						text="0";
 						scale=1;
 						sourceScale=1;
 						align="right";
@@ -4344,7 +4547,9 @@ class CfgVehicles
 					};
 					class VspeedNumberStaticM30
 					{
+						type="text";
 						source="static";
+						text="-30";
 						scale=1;
 						sourceScale=1;
 						align="right";
@@ -4366,7 +4571,9 @@ class CfgVehicles
 					};
 					class NevimStatic3
 					{
+						type="text";
 						source="static";
+						text="3";
 						scale=1;
 						sourceScale=1;
 						align="right";
@@ -4388,7 +4595,9 @@ class CfgVehicles
 					};
 					class NevimStaticZERO
 					{
+						type="text";
 						source="static";
+						text="0";
 						scale=1;
 						sourceScale=1;
 						align="right";
@@ -4410,7 +4619,9 @@ class CfgVehicles
 					};
 					class NevimStatic1
 					{
+						type="text";
 						source="static";
+						text="1";
 						scale=1;
 						sourceScale=1;
 						align="right";
@@ -4432,6 +4643,7 @@ class CfgVehicles
 					};
 					class HeadingArrows
 					{
+						type="line";
 						width=4;
 						points[]=
 						{
@@ -4528,6 +4740,7 @@ class CfgVehicles
 					};
 					class HeadingText
 					{
+						type="text";
 						source="heading";
 						align="center";
 						sourceScale=1;
@@ -4561,11 +4774,13 @@ class CfgVehicles
 					};
 					class HeadingScale
 					{
+						type="scale";
 						source="heading";
 						horizontal=1;
 						sourceScale=0.1;
 						width=3;
 						top=0.25;
+						center=0.5;
 						bottom=0.75;
 						lineXleft=0.1;
 						lineYright=0.090000004;
@@ -4596,22 +4811,59 @@ class CfgVehicles
 				};
 			};
 		};
+		unitInfoType="RHS_RscUnitInfoAir_Mi28";
 		hideWeaponsCargo=1;
 		receiveRemoteTargets=1;
 		reportRemoteTargets=1;
 		reportOwnPosition=1;
 		irTarget=1;
 		irTargetSize=1;
+		visualTarget=1;
+		visualTargetSize=0.89999998;
 		radarTarget=1;
 		radarTargetSize=1;
 		LockDetectionSystem="8";
 		incomingMissileDetectionSystem="8+16";
+		gunnerCanSee=55;
 		driverCanSee=55;
+		class TransportMagazines
+		{
+			class _xx_rhs_mag_nspn_red
+			{
+				magazine="rhs_mag_nspn_red";
+				count=10;
+			};
+			class _xx_rhs_mag_rdg2_white
+			{
+				magazine="rhs_mag_rdg2_white";
+				count=4;
+			};
+		};
+		class TransportItems
+		{
+			class _xx_FirstAidKit
+			{
+				name="FirstAidKit";
+				count=8;
+			};
+			class _xx_Toolkit
+			{
+				name="Toolkit";
+				count=1;
+			};
+		};
+		class TransportWeapons;  //found empty after stripping
+		class TransportBackpacks;  //found empty after stripping
+		driverDoor="Door_Pilot";
 		memoryPointsGetInCargo="pos_cargo";
 		memoryPointsGetInCargoDir="pos_cargo_dir";
 		cargoaction[]=
 		{
 			"passenger_flatground_generic04"
+		};
+		cargoDoors[]=
+		{
+			"Hatch_Cargo"
 		};
 		cargoCompartments[]=
 		{
@@ -4629,11 +4881,35 @@ class CfgVehicles
 		{
 			"RHS_HIND_Cargo_Exit"
 		};
+		hiddenSelections[]=
+		{
+			"camo1",
+			"camo2",
+			"camo3",
+			"tail_decals",
+			"n1",
+			"n2"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"\rhsafrf\addons\rhs_mi28\data\rhs_mi28_01_grey_co.paa",
+			"\rhsafrf\addons\rhs_mi28\data\rhs_mi28_02_grey_co.paa",
+			"\rhsafrf\addons\rhs_mi28\data\rhs_mi28_03_exterior_grey_co.paa",
+			"rhsafrf\addons\rhs_decals\data\labels\aviation\vvs_ca.paa"
+		};
 		class textureSources
 		{
 			class standard
 			{
 				displayName="Grey";
+				author="$STR_RHS_AUTHOR_FULL";
+				textures[]=
+				{
+					"\rhsafrf\addons\rhs_mi28\data\rhs_mi28_01_grey_co.paa",
+					"\rhsafrf\addons\rhs_mi28\data\rhs_mi28_02_grey_co.paa",
+					"\rhsafrf\addons\rhs_mi28\data\rhs_mi28_03_exterior_grey_co.paa",
+					"rhsafrf\addons\rhs_decals\data\labels\aviation\vvs_ca.paa"
+				};
 				factions[]=
 				{
 					"rhs_faction_vvs_c",
@@ -4643,10 +4919,26 @@ class CfgVehicles
 			class Camo: standard
 			{
 				displayName="Camo";
+				author="$STR_RHS_AUTHOR_FULL";
+				textures[]=
+				{
+					"\rhsafrf\addons\rhs_mi28\data\rhs_mi28_01_camo_co.paa",
+					"\rhsafrf\addons\rhs_mi28\data\rhs_mi28_02_camo_co.paa",
+					"\rhsafrf\addons\rhs_mi28\data\rhs_mi28_03_exterior_camo_co.paa",
+					"rhsafrf\addons\rhs_decals\data\labels\aviation\vvs_ca.paa"
+				};
 			};
 		};
+		textureList[]={};
 		class Attributes
 		{
+			class ObjectTexture
+			{
+				control="ObjectTexture";
+				data="ObjectTexture";
+				displayName="Skin";
+				tooltip="Texture and material set applied on the object.";
+			};
 			class rhs_hideRadome
 			{
 				displayName="Hide radome";
@@ -4664,6 +4956,7 @@ class CfgVehicles
 				control="Combo";
 				expression="if(_value != 'NoChange')then{ _this setVariable ['%s', _value];[_this,[['Number', cRHSAIRMI28NumberPlaces, _value]]] call rhs_fnc_decalsInit}";
 				defaultValue=0;
+				typeName="STRING";
 				class values
 				{
 					class NoChange
@@ -4741,6 +5034,7 @@ class CfgVehicles
 				property="rhs_decalNumber";
 				control="Edit";
 				validate="Number";
+				typeName="Number";
 				defaultValue="-1";
 				expression="if( _value >= 0)then{if( _value == 0)then{{[_this setobjectTexture [_x,'a3\data_f\clear_empty.paa']]}foreach cRHSAIRMI28NumberPlaces}else{[_this, [['Number', cRHSAIRMI28NumberPlaces, _this getVariable ['rhs_decalNumber_type','AviaYellow'], _value] ] ] call rhs_fnc_decalsInit}};";
 			};
@@ -4752,6 +5046,7 @@ class CfgVehicles
 				control="Combo";
 				expression="[_this,[['Label', cRHSAIRMI28TailPlaces, 'Aviation',_value]]] call rhs_fnc_decalsInit";
 				defaultValue=-1;
+				typeName="Number";
 				class values
 				{
 					class Default
@@ -4781,9 +5076,15 @@ class CfgVehicles
 		selectionShowDamage="poskozeni";
 		slingLoadMaxCargoMass=0;
 		precisegetinout=1;
+		driverAction="rhs_mi28_pilot";
+		driverInAction="rhs_mi28_pilot";
+		getInAction="pilot_Heli_Light_02_Enter";
+		getOutAction="pilot_Heli_Light_02_Exit";
 		memoryPointsGetInDriverPrecise="pos driver";
 		memoryPointsGetInDriver="pos driver";
 		memoryPointsGetInDriverDir="pos driver dir";
+		driverLeftHandAnimName="lever_pilot";
+		driverRightHandAnimName="stick_pilot";
 		driverLeftLegAnimName="pedalR";
 		driverRightLegAnimName="pedalL";
 		memoryPointLRocket="rocket_1";
@@ -4821,6 +5122,8 @@ class CfgVehicles
 		{
 			class MainTurret: MainTurret
 			{
+				body="mainTurret";
+				gun="mainGun";
 				weapons[]=
 				{
 					"rhs_weap_MASTERSAFE",
@@ -4831,6 +5134,8 @@ class CfgVehicles
 					"rhs_mag_3ubr11_125",
 					"rhs_mag_3uof8_125"
 				};
+				gunBeg="muzzle_1";
+				gunEnd="chamber_1";
 				memoryPointGun="muzzle_1";
 				particlesPos="chamber_1";
 				particlesDir="muzzle_1";
@@ -4843,16 +5148,33 @@ class CfgVehicles
 				minelev=-40;
 				maxturn=110;
 				minturn=-110;
+				gunnerAction="rhs_mi28_gunner";
+				gunnerInAction="rhs_mi28_gunner";
+				gunnerGetInAction="Heli_Attack_01_Pilot_enter";
+				gunnerGetOutAction="Heli_Attack_01_Pilot_exit";
+				memoryPointsGetInGunnerPrecise="pos gunner";
+				memoryPointsGetInGunner="pos gunner";
+				memoryPointsGetInGunnerDir="pos gunner dir";
+				gunnerLeftHandAnimName="stick_gunner";
+				gunnerRightHandAnimName="stick_gunner";
+				castGunnerShadow=1;
 				viewGunnerShadow=1;
 				precisegetinout=1;
+				outGunnerMayFire=1;
 				commanding=-1;
 				primaryGunner=1;
 				isCopilot=0;
 				CanEject=1;
+				gunnerCompartments="Compartment2";
 				canHideGunner=0;
 				usePiP=1;
+				lodTurnedIn=1100;
+				lodTurnedOut=1100;
 				stabilizedInAxes=3;
+				memoryPointGunnerOptics="gunnerview";
+				memoryPointGunnerOutOptics="gunnerview";
 				turretinfotype="RHS_RscWeaponMi28_FCS";
+				gunnerDoor="door_gunner";
 				canUseScanners=0;
 				allowTabLock=0;
 				class ViewOptics
@@ -4867,6 +5189,7 @@ class CfgVehicles
 					minangley=-100;
 					minfov=0.057;
 				};
+				gunnerOutOpticsModel="\A3\weapons_f\reticle\optics_empty";
 				gunnerOpticsEffect[]=
 				{
 					"TankCommanderOptics1"
@@ -4875,6 +5198,8 @@ class CfgVehicles
 				{
 					class Samshin_WFOV
 					{
+						opticsDisplayName="1";
+						gunneropticsmodel="rhsafrf\addons\rhs_optics\vehicles\rhs_mi28_3x";
 						initanglex=0;
 						initangley=0;
 						maxanglex=30;
@@ -4894,12 +5219,16 @@ class CfgVehicles
 					};
 					class Samshin_NFOV: Samshin_WFOV
 					{
+						opticsDisplayName="2";
+						gunneropticsmodel="rhsafrf\addons\rhs_optics\vehicles\rhs_mi28_15x";
 						initfov=0.102941;
 						maxfov=0.102941;
 						minfov=0.102941;
 					};
 					class Samshin_NFOV_Stabilised: Samshin_NFOV
 					{
+						gunneropticsmodel="rhsafrf\addons\rhs_optics\vehicles\rhs_mi28_30x";
+						opticsDisplayName="3";
 						initfov=0.0318182;
 						maxfov=0.0318182;
 						minfov=0.0318182;
@@ -4978,6 +5307,8 @@ class CfgVehicles
 			{
 				class Samshin_Pilot
 				{
+					opticsDisplayName="1";
+					gunneropticsmodel="rhsafrf\addons\rhs_optics\vehicles\rhs_mi28_3x";
 					initanglex=0;
 					initangley=0;
 					maxanglex=30;
@@ -4997,12 +5328,16 @@ class CfgVehicles
 				};
 				class Samshin_NFOV: Samshin_Pilot
 				{
+					opticsDisplayName="2";
+					gunneropticsmodel="rhsafrf\addons\rhs_optics\vehicles\rhs_mi28_15x";
 					initfov=0.102941;
 					maxfov=0.102941;
 					minfov=0.102941;
 				};
 				class Samshin_NFOV_Stabilised: Samshin_NFOV
 				{
+					opticsDisplayName="3";
+					gunneropticsmodel="rhsafrf\addons\rhs_optics\vehicles\rhs_mi28_30x";
 					initfov=0.0233333;
 					maxfov=0.0233333;
 					minfov=0.0233333;
@@ -5025,6 +5360,46 @@ class CfgVehicles
 		};
 		memoryPointDriverOptics="toes521_view";
 		driverWeaponsInfoType="RHS_RscWeaponMi28_Pilot_FCS";
+		class UserActions
+		{
+			class SAFEMODE
+			{
+				displayName="<t color='#00FF7F'>MASTERSAFE</t>";
+				condition="(call rhs_fnc_findPlayer) in this";
+				statement="(call rhs_fnc_findPlayer) action ['SwitchWeapon', this, (call rhs_fnc_findPlayer), (weapons this) find 'rhs_weap_MASTERSAFE'];";
+				position="";
+				radius=10;
+				priority=10.5;
+				onlyforplayer=1;
+				showWindow=0;
+				shortcut="user13";
+				hideOnUse=1;
+			};
+			class openDoor
+			{
+				displayName="Lights front";
+				position="";
+				priority=0.0099999998;
+				radius=3;
+				onlyForplayer=1;
+				showWindow=0;
+				condition="this doorPhase 'landingLights' < 0.5 AND alive this";
+				statement="this animateDoor ['landingLights',1]";
+			};
+			class closeDoor: openDoor
+			{
+				displayName="Lights side";
+				condition="this doorPhase 'landingLights' > 0.5 AND alive this";
+				statement="this animateDoor ['landingLights',0]";
+			};
+			class WheelBrakes: SAFEMODE
+			{
+				displayName="Toggle Wheel Brakes";
+				shortcut="binocular";
+				condition="!difficultyEnabledRTD && (call rhs_fnc_findPlayer) isEqualTo (driver this)";
+				statement="[this] call rhs_fnc_heli_wheelBrakes";
+			};
+		};
 		class Exhausts
 		{
 			class Exhaust01
@@ -5053,6 +5428,7 @@ class CfgVehicles
 				minimalHit=-0.1;
 				radius=0.1;
 				name="hull_hit";
+				visual="zbytek";
 				passThrough=1;
 			};
 			class HitFuel: HitFuel
@@ -5068,6 +5444,7 @@ class CfgVehicles
 				radius=0.40000001;
 				minimalHit=0.15000001;
 				explosionShielding=1.5;
+				visual="podsvit pristroju";
 			};
 			class HitEngine1: HitEngine1
 			{
@@ -5086,6 +5463,7 @@ class CfgVehicles
 			class HitEngine: HitEngine2
 			{
 				armor=999;
+				visual="camo2";
 				name="engine_hit";
 				depends="0.5 * (HitEngine1 + HitEngine2)";
 			};
@@ -5097,6 +5475,46 @@ class CfgVehicles
 				radius=0.15000001;
 				passThrough=0.1;
 				name="hitwings";
+				visual="-";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					class RHS_ERA_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="wing_explo1";
+						interval=1;
+						intensity=0.5;
+						lifeTime=0.0060000001;
+					};
+					class RHS_ERA_Sound: RHS_ERA_Flash
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_ERA_Smoke: RHS_ERA_Flash
+					{
+						type="RHS_ERA_Smoke";
+						intensity=0.1;
+						lifeTime=0.039999999;
+					};
+					class RHS_ERA_Flash2: RHS_ERA_Flash
+					{
+						position="wing_explo2";
+					};
+					class RHS_ERA_Sound2: RHS_ERA_Sound
+					{
+						position="wing_explo2";
+					};
+					class RHS_ERA_Smoke2: RHS_ERA_Smoke
+					{
+						position="wing_explo2";
+					};
+				};
 			};
 			class HitVRotor
 			{
@@ -5106,6 +5524,7 @@ class CfgVehicles
 				radius=0.44999999;
 				passThrough=0.30000001;
 				name="tail_rotor_hit";
+				visual="mala vrtule staticka";
 			};
 			class HitHRotor
 			{
@@ -5115,10 +5534,12 @@ class CfgVehicles
 				radius=0.44999999;
 				passThrough=0.1;
 				name="main_rotor_hit";
+				visual="velka vrtule staticka";
 			};
 			class HitRotor: HitVRotor
 			{
 				armor=999;
+				visual="-";
 				name="engine_hit";
 				depends="(HitVRotor + HitHRotor)";
 			};
@@ -5127,6 +5548,7 @@ class CfgVehicles
 				armor=-30;
 				explosionShielding=0;
 				name="";
+				visual="-";
 				armorComponent="Hit_Radar";
 				passThrough=0;
 			};
@@ -5135,6 +5557,7 @@ class CfgVehicles
 				armor=-40;
 				explosionShielding=0;
 				name="";
+				visual="-";
 				armorComponent="Hit_Optic_TOES521";
 				passThrough=0;
 			};
@@ -5143,6 +5566,7 @@ class CfgVehicles
 				armor=-40;
 				explosionShielding=0;
 				name="";
+				visual="-";
 				armorComponent="Hit_Optic_OPS28";
 				passThrough=0;
 			};
@@ -5155,6 +5579,7 @@ class CfgVehicles
 				radius=0.1;
 				armorComponent="glass1";
 				name="glass1";
+				visual="glass1";
 			};
 			class HitGlass2
 			{
@@ -5165,6 +5590,7 @@ class CfgVehicles
 				radius=0.1;
 				armorComponent="glass2";
 				name="glass2";
+				visual="glass2";
 			};
 			class HitGlass3
 			{
@@ -5175,6 +5601,7 @@ class CfgVehicles
 				radius=0.1;
 				armorComponent="glass3";
 				name="glass3";
+				visual="glass3";
 			};
 			class HitGlass4
 			{
@@ -5185,6 +5612,7 @@ class CfgVehicles
 				radius=0.1;
 				armorComponent="glass4";
 				name="glass4";
+				visual="glass4";
 			};
 			class HitGlass5
 			{
@@ -5195,6 +5623,7 @@ class CfgVehicles
 				radius=0.1;
 				armorComponent="glass5";
 				name="glass5";
+				visual="glass5";
 			};
 			class HitGlass6
 			{
@@ -5205,6 +5634,7 @@ class CfgVehicles
 				radius=0.1;
 				armorComponent="glass6";
 				name="glass6";
+				visual="glass6";
 			};
 			class HitGlass7
 			{
@@ -5215,6 +5645,7 @@ class CfgVehicles
 				radius=0.1;
 				armorComponent="glass7";
 				name="glass7";
+				visual="glass7";
 			};
 			class HitGlass8
 			{
@@ -5225,6 +5656,7 @@ class CfgVehicles
 				radius=0.1;
 				armorComponent="glass8";
 				name="glass8";
+				visual="glass8";
 			};
 			class HitGear
 			{
@@ -5235,6 +5667,7 @@ class CfgVehicles
 				radius=0.13;
 				armorComponent="Hit_Gear";
 				name="Hit_Gear";
+				visual="-";
 			};
 			class HitHydraulics
 			{
@@ -5245,6 +5678,7 @@ class CfgVehicles
 				radius=0.13;
 				armorComponent="hit_hydraulics";
 				name="hit_hydraulics";
+				visual="-";
 			};
 			class HitTransmission
 			{
@@ -5255,6 +5689,7 @@ class CfgVehicles
 				radius=0.13;
 				armorComponent="hit_transmission";
 				name="hit_transmission";
+				visual="-";
 			};
 			class HitTail
 			{
@@ -5265,6 +5700,7 @@ class CfgVehicles
 				radius=0.13;
 				armorComponent="Hit_Tail";
 				name="Hit_Tail";
+				visual="vis_tail";
 			};
 			class HitPylon1
 			{
@@ -5275,7 +5711,48 @@ class CfgVehicles
 				minimalHit=0.80000001;
 				explosionShielding=0.1;
 				radius=0.75;
+				visual="-";
 				depends="HitWings";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					class RHS_Pylon_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_pylon_1";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_Pylon_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_pylon_1";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_Pylon_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_pylon_1";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_Pylon_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_pylon_1";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class HitPylon2
 			{
@@ -5286,7 +5763,48 @@ class CfgVehicles
 				minimalHit=0.80000001;
 				explosionShielding=0.1;
 				radius=0.75;
+				visual="-";
 				depends="HitWings";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					class RHS_Pylon_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_pylon_2";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_Pylon_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_pylon_2";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_Pylon_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_pylon_2";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_Pylon_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_pylon_2";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class HitPylon3
 			{
@@ -5297,7 +5815,48 @@ class CfgVehicles
 				minimalHit=0.80000001;
 				explosionShielding=0.1;
 				radius=0.75;
+				visual="-";
 				depends="HitWings";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					class RHS_Pylon_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_pylon_3";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_Pylon_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_pylon_3";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_Pylon_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_pylon_3";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_Pylon_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_pylon_3";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 			class HitPylon4
 			{
@@ -5308,10 +5867,72 @@ class CfgVehicles
 				minimalHit=0.80000001;
 				explosionShielding=0.1;
 				radius=0.75;
+				visual="-";
 				depends="HitWings";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					class RHS_Pylon_Flash
+					{
+						simulation="particles";
+						type="RHS_ERA_Flash";
+						position="fx_pylon_4";
+						intensity=0.5;
+						interval=1;
+						lifeTime=0.0060000001;
+					};
+					class RHS_Pylon_Sound
+					{
+						simulation="sound";
+						type="RHS_ERA_Explosion_Sound";
+						position="fx_pylon_4";
+						intensity=1;
+						interval=1;
+						lifeTime=1;
+					};
+					class RHS_Pylon_Smoke
+					{
+						simulation="particles";
+						type="RHS_ERA_Smoke";
+						position="fx_pylon_4";
+						intensity=0.1;
+						interval=1;
+						lifeTime=0.039999999;
+					};
+					class RHS_Pylon_Shard
+					{
+						simulation="particles";
+						type="RHS_ERA_Shard";
+						position="fx_pylon_4";
+						intensity=1;
+						interval=1;
+						lifeTime=0.029999999;
+					};
+				};
 			};
 		};
-		class Damage;  //found empty after stripping
+		class Damage
+		{
+			tex[]={};
+			mat[]=
+			{
+				"rhsafrf\addons\rhs_mi28\data\rhs_mi28_01.rvmat",
+				"rhsafrf\addons\rhs_mi28\data\rhs_mi28_01_dam.rvmat",
+				"rhsafrf\addons\rhs_mi28\data\rhs_mi28_01_des.rvmat",
+				"rhsafrf\addons\rhs_mi28\data\rhs_mi28_02.rvmat",
+				"rhsafrf\addons\rhs_mi28\data\rhs_mi28_02_dam.rvmat",
+				"rhsafrf\addons\rhs_mi28\data\rhs_mi28_02_des.rvmat",
+				"rhsafrf\addons\rhs_mi28\data\rhs_mi28_03.rvmat",
+				"rhsafrf\addons\rhs_mi28\data\rhs_mi28_03_dam.rvmat",
+				"rhsafrf\addons\rhs_mi28\data\rhs_mi28_03_des.rvmat",
+				"rhsafrf\addons\rhs_mi28\data\rhs_mi28_glass.rvmat",
+				"rhsafrf\addons\rhs_mi28\data\rhs_mi28_glass_dam.rvmat",
+				"rhsafrf\addons\rhs_mi28\data\rhs_mi28_glass_dam.rvmat",
+				"rhsafrf\addons\rhs_mi28\data\rhs_mi28_glass_int.rvmat",
+				"rhsafrf\addons\rhs_mi28\data\rhs_mi28_glass_dam.rvmat",
+				"rhsafrf\addons\rhs_mi28\data\rhs_mi28_glass_dam.rvmat"
+			};
+		};
 		class Components: Components
 		{
 			class SensorsManagerComponent
@@ -5322,16 +5943,21 @@ class CfgVehicles
 					{
 						class AirTarget
 						{
+							minRange=9000;
+							maxRange=9000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
 						class GroundTarget
 						{
+							minRange=9000;
+							maxRange=9000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
 						angleRangeHorizontal=75;
 						angleRangeVertical=75;
+						typeRecognitionDistance=-1;
 						maxGroundNoiseDistance=0;
 						maxFogSeeThrough=0.30000001;
 						animDirection="mainGun";
@@ -5418,6 +6044,7 @@ class CfgVehicles
 							"RHS_HP_UB32",
 							"RHS_HP_UPK23"
 						};
+						priority=1;
 						attachment="rhs_mag_b8v20a_s8kom";
 						maxweight=550;
 						UIposition[]={0.54000002,0.40000001};
@@ -5444,6 +6071,7 @@ class CfgVehicles
 						};
 						attachment="rhs_mag_9M120M_Mi28_8x";
 						maxweight=400;
+						priority=2;
 						UIposition[]={0.60000002,0.44999999};
 						turret[]={0};
 						hitpoint="HitPylon3";
@@ -5462,6 +6090,7 @@ class CfgVehicles
 							"RHS_cm_UV26_x2",
 							"RHS_cm_UV26_x4"
 						};
+						priority=1;
 						attachment="rhs_UV26_CMFlare_Chaff_Magazine_x4";
 						maxweight=800;
 						UIposition[]={0.33000001,0};
@@ -5568,6 +6197,154 @@ class CfgVehicles
 				};
 			};
 		};
+		class AnimationSources: AnimationSources
+		{
+			class Door_Gunner
+			{
+				source="door";
+				animPeriod=0.80000001;
+			};
+			class Door_Pilot: Door_Gunner;  //found empty after stripping
+			class Hatch_Cargo: Door_Gunner;  //found empty after stripping
+			class landingLights: Door_Pilot
+			{
+				animPeriod=1.4;
+			};
+			class muzzle_rot_hmg
+			{
+				weapon="rhs_weap_2a42";
+				source="ammorandom";
+			};
+			class elev
+			{
+				source="user";
+				animperiod=0.0016;
+			};
+			class elev_bank
+			{
+				source="user";
+				animperiod=0.0016;
+			};
+			class offset
+			{
+				source="user";
+				animperiod=0.00019999999;
+			};
+			class radome_hide
+			{
+				source="user";
+				initPhase=0;
+				animPeriod=9.9999997e-006;
+				mass=1;
+				displayName="hide radar";
+				onPhaseChanged="(_this select 0) enableVehicleSensor ['ActiveRadarSensorComponent',(_this select 1) isEqualTo 0];";
+			};
+			class wings_hide
+			{
+				source="user";
+				initPhase=0;
+				animPeriod=9.9999997e-006;
+			};
+			class eject: wings_hide
+			{
+				animPeriod=0.30000001;
+			};
+			class w_launch: wings_hide;  //found empty after stripping
+			class w_radar: wings_hide;  //found empty after stripping
+			class w_laser: wings_hide;  //found empty after stripping
+			class HitEngine1
+			{
+				source="Hit";
+				hitpoint="HitEngine1";
+				raw=1;
+			};
+			class HitEngine2: HitEngine1
+			{
+				hitpoint="HitEngine2";
+			};
+			class HitGear: HitEngine1
+			{
+				hitpoint="hitgear";
+			};
+			class HitRotor: HitEngine1
+			{
+				hitpoint="HitRotor";
+			};
+			class HitAvionics: HitEngine1
+			{
+				hitpoint="HitAvionics";
+			};
+			class HitGlass1
+			{
+				source="Hit";
+				hitpoint="HitGlass1";
+				raw=1;
+			};
+			class HitGlass7: HitGlass1
+			{
+				hitpoint="HitGlass7";
+			};
+			class HitGlass8: HitGlass1
+			{
+				hitpoint="HitGlass8";
+			};
+			class Damper_1_1_source
+			{
+				source="damper";
+				wheel="Wheel_1_1";
+			};
+			class Damper_1_2_source
+			{
+				source="damper";
+				wheel="Wheel_1_2";
+			};
+			class Damper_2_1_source
+			{
+				source="damper";
+				wheel="Wheel_2_1";
+			};
+			class Wheel_1_1_source
+			{
+				source="wheel";
+				wheel="Wheel_1_1";
+			};
+			class Wheel_1_2_source
+			{
+				source="wheel";
+				wheel="Wheel_1_2";
+			};
+			class Wheel_2_1_source
+			{
+				source="wheel";
+				wheel="Wheel_2_1";
+			};
+			class Helicopter_Brakes
+			{
+				source="user";
+				animPeriod=0.0099999998;
+				initPhase=1;
+			};
+			class hit_pylon_1_source
+			{
+				source="Hit";
+				hitpoint="HitPylon1";
+			};
+			class hit_pylon_2_source
+			{
+				source="Hit";
+				hitpoint="HitPylon2";
+			};
+			class hit_pylon_3_source
+			{
+				source="Hit";
+				hitpoint="HitPylon3";
+			};
+			class hit_pylon_4_source
+			{
+				source="Hit";
+				hitpoint="HitPylon4";
+			};
+		};
 		class compartmentsLights
 		{
 			class Comp1
@@ -5646,6 +6423,71 @@ class CfgVehicles
 				};
 			};
 		};
+		class Reflectors
+		{
+			class LightL
+			{
+				color[]={7000,7500,10000};
+				ambient[]={70,75,100};
+				intensity=250;
+				size=1;
+				innerAngle=5;
+				outerAngle=75;
+				coneFadeCoef=10;
+				position="l svetlo";
+				direction="l svetlo konec";
+				hitpoint="l svetlo";
+				selection="l svetlo";
+				useFlare=0;
+				dayLight=0;
+				flareSize=1.5;
+				class Attenuation
+				{
+					start=0;
+					constant=0;
+					linear=1;
+					quadratic=0;
+					hardLimitStart=400;
+					hardLimitEnd=450;
+				};
+			};
+			class LightR: LightL
+			{
+				position="p svetlo";
+				direction="p svetlo konec";
+				hitpoint="p svetlo";
+				selection="p svetlo";
+			};
+			class LightLFlare: LightL
+			{
+				position="L_Flare";
+				useFlare=1;
+				outerAngle=175;
+				color[]={10,10,9};
+				ambient[]={10,10,9};
+			};
+			class LightRFlare: LightR
+			{
+				position="R_Flare";
+				useFlare=1;
+				outerAngle=175;
+				color[]={10,10,9};
+				ambient[]={10,10,9};
+			};
+		};
+		aggregateReflectors[]=
+		{
+			
+			{
+				"LightL",
+				"LightLFlare"
+			},
+			
+			{
+				"LightR",
+				"LightRFlare"
+			}
+		};
 		class markerlights
 		{
 			class GreenStill
@@ -5689,6 +6531,7 @@ class CfgVehicles
 				name="cerveny pozicni blik";
 			};
 		};
+		class RenderTargets;  //found empty after stripping
 		class EventHandlers: Eventhandlers
 		{
 			hit="";
@@ -5704,6 +6547,7 @@ class CfgVehicles
 	};
 	class rhs_mi28n_base: rhs_mi28_base
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_mi28n_Base.paa";
 		displayName="$STR_MI28N_name";
 		selectionFireAnim="";
 		class Components: Components
@@ -5716,16 +6560,21 @@ class CfgVehicles
 					{
 						class AirTarget
 						{
+							minRange=9000;
+							maxRange=9000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
 						class GroundTarget
 						{
+							minRange=9000;
+							maxRange=9000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
 						angleRangeHorizontal=75;
 						angleRangeVertical=75;
+						typeRecognitionDistance=-1;
 						maxGroundNoiseDistance=0;
 						maxFogSeeThrough=0.30000001;
 						animDirection="mainGun";
@@ -5735,11 +6584,15 @@ class CfgVehicles
 					{
 						class AirTarget
 						{
+							minRange=11000;
+							maxRange=11000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
 						class GroundTarget
 						{
+							minRange=11000;
+							maxRange=11000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
@@ -5747,6 +6600,7 @@ class CfgVehicles
 						maxGroundNoiseDistance=-1;
 						angleRangeHorizontal=120;
 						angleRangeVertical=100;
+						typeRecognitionDistance=4000;
 						maxFogSeeThrough=1;
 						maxTrackableSpeed=555;
 					};
@@ -5782,6 +6636,7 @@ class CfgVehicles
 	};
 	class rhs_mi28n_S13_base: rhs_mi28n_base
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_mi28n_Base.paa";
 		displayName="Mi-28N (S-13)";
 		class Components: Components
 		{
@@ -5814,32 +6669,102 @@ class CfgVehicles
 			};
 		};
 	};
-	class rhs_mi28n_vvs: rhs_mi28n_base;  //found empty after stripping
-	class rhs_mi28n_vvsc: rhs_mi28n_base;  //found empty after stripping
-	class rhs_mi28n_s13_vvs: rhs_mi28n_S13_base;  //found empty after stripping
-	class rhs_mi28n_s13_vvsc: rhs_mi28n_S13_base;  //found empty after stripping
+	class rhs_mi28n_vvs: rhs_mi28n_base
+	{
+		author="$STR_RHS_AUTHOR_FULL";
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_mi28n_vvs.paa";
+		scope=2;
+		faction="rhs_faction_vvs";
+	};
+	class rhs_mi28n_vvsc: rhs_mi28n_base
+	{
+		author="$STR_RHS_AUTHOR_FULL";
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_mi28n_vvsc.paa";
+		scope=2;
+		faction="rhs_faction_vvs_c";
+		hiddenSelectionsTextures[]=
+		{
+			"\rhsafrf\addons\rhs_mi28\data\rhs_mi28_01_camo_co.paa",
+			"\rhsafrf\addons\rhs_mi28\data\rhs_mi28_02_camo_co.paa",
+			"\rhsafrf\addons\rhs_mi28\data\rhs_mi28_03_exterior_camo_co.paa",
+			"rhsafrf\addons\rhs_decals\data\labels\aviation\vvs_ca.paa"
+		};
+	};
+	class rhs_mi28n_s13_vvs: rhs_mi28n_S13_base
+	{
+		author="$STR_RHS_AUTHOR_FULL";
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_mi28n_vvs.paa";
+		scope=1;
+		scopeCurator=2;
+		faction="rhs_faction_vvs";
+	};
+	class rhs_mi28n_s13_vvsc: rhs_mi28n_S13_base
+	{
+		author="$STR_RHS_AUTHOR_FULL";
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_mi28n_vvsc.paa";
+		scope=1;
+		scopeCurator=2;
+		faction="rhs_faction_vvs_c";
+		hiddenSelectionsTextures[]=
+		{
+			"\rhsafrf\addons\rhs_mi28\data\rhs_mi28_01_camo_co.paa",
+			"\rhsafrf\addons\rhs_mi28\data\rhs_mi28_02_camo_co.paa",
+			"\rhsafrf\addons\rhs_mi28\data\rhs_mi28_03_exterior_camo_co.paa",
+			"rhsafrf\addons\rhs_decals\data\labels\aviation\vvs_ca.paa"
+		};
+	};
 	class Wreck_base_F;
 	class Land_rhs_mi28_wreck: Wreck_base_F
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\Land_rhs_mi28_wreck.paa";
+		author="$STR_RHS_AUTHOR_FULL";
+		scope=2;
+		scopeCurator=2;
 		displayName="Mi-28N Wreck";
 		class Armory
 		{
 			disabled=1;
 		};
+		model="\rhsafrf\addons\rhs_mi28\rhs_mi28_wreck";
 		icon="iconObject_1x2";
+		mapSize=14;
+		editorSubcategory="EdSubcat_Helicopters";
 	};
 	class Land_rhs_mi28_wreck2: Land_rhs_mi28_wreck
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\Land_rhs_mi28_wreck2.paa";
+		author="$STR_RHS_AUTHOR_FULL";
 		displayName="Mi-28N Wreck 2";
+		model="\rhsafrf\addons\rhs_mi28\rhs_mi28_wreck2";
 	};
 	class rhs_mi28_wing_left: Plane
 	{
+		scope=1;
+		scopeArsenal=0;
+		scopeCurator=0;
+		hiddenSelections[]=
+		{
+			"camo1",
+			"camo2",
+			"camo3"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"\rhsafrf\addons\rhs_mi28\data\rhs_mi28_01_grey_co.paa",
+			"\rhsafrf\addons\rhs_mi28\data\rhs_mi28_02_grey_co.paa",
+			"\rhsafrf\addons\rhs_mi28\data\rhs_mi28_03_exterior_grey_co.paa"
+		};
+		author="$STR_RHS_AUTHOR_FULL";
 		displayName="Mi-28 Wing";
 		draconicForceXCoef=17.200001;
 		draconicForceYCoef=12.6;
 		draconicForceZCoef=10.15;
 		draconicTorqueXCoef=11.29;
 		draconicTorqueYCoef=13.1;
+		Icon="iconParachute";
+		picture="\A3\Air_F_Beta\Parachute_01\Data\UI\Portrait_Parachute_01_CA.paa";
+		model="\rhsafrf\addons\rhs_mi28\rhs_mi28_wing_left.p3d";
+		unitInfoType="RscUnitInfoSoldier";
 		hideUnitInfo=1;
 		hasdriver=0;
 		weapons[]={};
@@ -5848,19 +6773,41 @@ class CfgVehicles
 		secondaryExplosion=0;
 		fuelExplosionPower=0;
 		explosionEffect="";
+		destrType="DestructNo";
+		transportSoldier=0;
+		vehicleClass="Objects";
 		driveOnComponent[]={};
 		class Turrets;  //found empty after stripping
+		class UserActions;  //found empty after stripping
 		class Eventhandlers
 		{
 			HandleDamage="deleteVehicle (_this select 0)";
 		};
 		SLX_XEH_DISABLED=1;
 	};
-	class rhs_mi28_wing_right: rhs_mi28_wing_left;  //found empty after stripping
+	class rhs_mi28_wing_right: rhs_mi28_wing_left
+	{
+		model="\rhsafrf\addons\rhs_mi28\rhs_mi28_wing_right.p3d";
+	};
 	class rhs_mi28_door_gunner: rhs_mi28_wing_left
 	{
 		displayName="Mi-28 Door";
+		model="\rhsafrf\addons\rhs_mi28\rhs_mi28_door_gunner.p3d";
 	};
-	class rhs_mi28_door_pilot: rhs_mi28_door_gunner;  //found empty after stripping
-	class rhs_mi28_balonetes: rhs_mi28_door_gunner;  //found empty after stripping
+	class rhs_mi28_door_pilot: rhs_mi28_door_gunner
+	{
+		model="\rhsafrf\addons\rhs_mi28\rhs_mi28_door_pilot.p3d";
+	};
+	class rhs_mi28_balonetes: rhs_mi28_door_gunner
+	{
+		model="\rhsafrf\addons\rhs_mi28\rhs_balonetes.p3d";
+		class AnimationSources
+		{
+			class fold
+			{
+				source="user";
+				animperiod=0.5;
+			};
+		};
+	};
 };

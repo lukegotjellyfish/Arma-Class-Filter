@@ -3,6 +3,11 @@ class CfgPatches
 	class A3_Structures_F_Mark_VR_Targets
 	{
 		addonRootClass="A3_Structures_F_Mark";
+		requiredAddons[]=
+		{
+			"A3_Structures_F_Mark"
+		};
+		requiredVersion=0.1;
 		units[]=
 		{
 			"Land_VR_Target_APC_Wheeled_01_F",
@@ -19,11 +24,20 @@ class CfgVehicles
 	class ThingX;
 	class TargetBaseX: ThingX
 	{
+		author="$STR_A3_Bohemia_Interactive";
+		mapSize=1;
 		_generalMacro="TargetBaseX";
+		scope=0;
+		scopeCurator=0;
 		displayName="$STR_DN_TARGET";
+		model="\A3\Weapons_F\empty.p3d";
 		DLC="Mark";
 		icon="iconObject";
+		picture="pictureStaticObject";
 		editorCategory="EdCat_Things";
+		editorSubcategory="EdSubcat_Targets";
+		vehicleClass="Training";
+		destrType="DestructNo";
 		simulation="thingX";
 		animated=0;
 		armor=100;
@@ -32,10 +46,14 @@ class CfgVehicles
 		coefSpeedInside=2;
 		cost=1;
 		side=8;
+		type=0;
 		ladders[]={};
+		class DestructionEffects;  //found empty after stripping
 	};
 	class Land_VR_Target_Dart_01_F: TargetBase
 	{
+		author="$STR_A3_Bohemia_Interactive";
+		mapSize=2.05;
 		class SimpleObject
 		{
 			eden=0;
@@ -45,12 +63,60 @@ class CfgVehicles
 			verticalOffsetWorld=0;
 			init="''";
 		};
+		editorPreview="\A3\EditorPreviews_F\Data\CfgVehicles\Land_VR_Target_Dart_01_F.jpg";
 		_generalMacro="Land_VR_Target_Dart_01_F";
+		scope=2;
+		scopeCurator=2;
 		displayName="$STR_A3_CfgVehicles_Land_VR_Target_Dart_01_F0";
+		model="\A3\Structures_F_Mark\VR\Targets\VR_Target_Dart_01_F.p3d";
 		DLC="Mark";
 		icon="iconObject_10x1";
+		vehicleClass="Objects_VR";
+		destrType="DestructNo";
 		accuracy=0;
 		side=8;
+		hiddenSelections[]=
+		{
+			"Segment_00",
+			"Segment_01",
+			"Segment_02",
+			"Segment_03",
+			"Segment_04",
+			"Segment_05",
+			"Segment_06",
+			"Segment_07",
+			"Segment_08",
+			"Segment_09",
+			"Segment_10",
+			"Segment_11",
+			"Segment_12",
+			"Segment_13",
+			"Segment_14",
+			"Segment_15",
+			"Segment_16",
+			"Segment_17"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"#(argb,8,8,3)color(1,1,1,1,co)",
+			"#(argb,8,8,3)color(1,1,1,1,co)",
+			"#(argb,8,8,3)color(1,1,1,1,co)",
+			"#(argb,8,8,3)color(1,1,1,1,co)",
+			"#(argb,8,8,3)color(1,1,1,1,co)",
+			"#(argb,8,8,3)color(1,1,1,1,co)",
+			"#(argb,8,8,3)color(1,1,1,1,co)",
+			"#(argb,8,8,3)color(1,1,1,1,co)",
+			"#(argb,8,8,3)color(1,1,1,1,co)",
+			"#(argb,8,8,3)color(1,1,1,1,co)",
+			"#(argb,8,8,3)color(1,1,1,1,co)",
+			"#(argb,8,8,3)color(1,1,1,1,co)",
+			"#(argb,8,8,3)color(1,1,1,1,co)",
+			"#(argb,8,8,3)color(1,1,1,1,co)",
+			"#(argb,8,8,3)color(1,1,1,1,co)",
+			"#(argb,8,8,3)color(1,1,1,1,co)",
+			"#(argb,8,8,3)color(1,1,1,1,co)",
+			"#(argb,8,8,3)color(1,1,1,1,co)"
+		};
 		hiddenSelectionsMaterials[]=
 		{
 			"\A3\Structures_F_Mark\VR\Targets\Data\VR_Target_Dart_01_blue_emissive.rvmat",
@@ -72,9 +138,12 @@ class CfgVehicles
 			"\A3\Structures_F_Mark\VR\Targets\Data\VR_Target_Dart_01_blue_basic.rvmat",
 			"\A3\Structures_F_Mark\VR\Targets\Data\VR_Target_Dart_01_blue_basic.rvmat"
 		};
+		class DestructionEffects;  //found empty after stripping
 	};
 	class Land_VR_Target_MBT_01_cannon_F: TargetBase
 	{
+		author="$STR_A3_Bohemia_Interactive";
+		mapSize=10.85;
 		class SimpleObject
 		{
 			eden=0;
@@ -96,10 +165,16 @@ class CfgVehicles
 			verticalOffsetWorld=0;
 			init="''";
 		};
+		editorPreview="\A3\EditorPreviews_F\Data\CfgVehicles\Land_VR_Target_MBT_01_cannon_F.jpg";
 		_generalMacro="Land_VR_Target_MBT_01_cannon_F";
+		scope=2;
+		scopeCurator=2;
 		displayName="$STR_A3_CfgVehicles_Land_VR_Target_MBT_01_cannon_F0";
+		model="\A3\Structures_F_Mark\VR\Targets\VR_Target_MBT_01_cannon_F.p3d";
 		DLC="Mark";
 		icon="iconObject_2x5";
+		vehicleClass="Objects_VR";
+		destrType="DestructNo";
 		armor=800;
 		armorStructural=6;
 		animated=0;
@@ -108,8 +183,27 @@ class CfgVehicles
 		laserTarget=1;
 		nvTarget=1;
 		side=8;
+		type=1;
 		threat[]={0.80000001,1,0.30000001};
 		cost=2000000;
+		hiddenSelections[]=
+		{
+			"Camo_hull",
+			"Camo_turret",
+			"Camo_gun",
+			"Camo_engine",
+			"Camo_track_left",
+			"Camo_track_right"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"\A3\Structures_F_Mark\VR\Targets\Data\VR_Target_pattern_CA.paa",
+			"\A3\Structures_F_Mark\VR\Targets\Data\VR_Target_pattern_CA.paa",
+			"\A3\Structures_F_Mark\VR\Targets\Data\VR_Target_pattern_CA.paa",
+			"\A3\Structures_F_Mark\VR\Targets\Data\VR_Target_pattern_CA.paa",
+			"\A3\Structures_F_Mark\VR\Targets\Data\VR_Target_pattern_CA.paa",
+			"\A3\Structures_F_Mark\VR\Targets\Data\VR_Target_pattern_CA.paa"
+		};
 		hiddenSelectionsMaterials[]=
 		{
 			"\A3\Structures_F_Mark\VR\Targets\Data\VR_Target_MBT_01_cannon_BLUFOR.rvmat",
@@ -119,11 +213,27 @@ class CfgVehicles
 			"\A3\Structures_F_Mark\VR\Targets\Data\VR_Target_MBT_01_cannon_BLUFOR.rvmat",
 			"\A3\Structures_F_Mark\VR\Targets\Data\VR_Target_MBT_01_cannon_BLUFOR.rvmat"
 		};
+		class AnimationSources
+		{
+			class Turret_source
+			{
+				source="user";
+				initPhase=0;
+				animPeriod=0.015;
+			};
+			class Gun_source
+			{
+				source="user";
+				initPhase=0;
+				animPeriod=0.025;
+			};
+		};
 		class Hitpoints
 		{
 			class HitHull
 			{
 				name="Hull";
+				visual="Camo_hull";
 				armor=0.60000002;
 				explosionShielding=0.2;
 				material=-1;
@@ -134,6 +244,7 @@ class CfgVehicles
 			class HitTurret
 			{
 				name="Turret";
+				visual="Camo_turret";
 				armor=0.60000002;
 				explosionShielding=0.2;
 				material=-1;
@@ -144,6 +255,7 @@ class CfgVehicles
 			class HitGun
 			{
 				name="Gun";
+				visual="Camo_gun";
 				armor=0.30000001;
 				explosionShielding=0.40000001;
 				material=-1;
@@ -154,6 +266,7 @@ class CfgVehicles
 			class HitEngine
 			{
 				name="Engine";
+				visual="Camo_engine";
 				armor=0.60000002;
 				explosionShielding=0.2;
 				material=-1;
@@ -164,6 +277,7 @@ class CfgVehicles
 			class HitTrack_left
 			{
 				name="Track_left";
+				visual="Camo_track_left";
 				armor=0.30000001;
 				explosionShielding=0.40000001;
 				material=-1;
@@ -174,6 +288,7 @@ class CfgVehicles
 			class HitTrack_right
 			{
 				name="Track_right";
+				visual="Camo_track_right";
 				armor=0.30000001;
 				explosionShielding=0.40000001;
 				material=-1;
@@ -185,6 +300,8 @@ class CfgVehicles
 	};
 	class Land_VR_Target_MRAP_01_F: TargetBase
 	{
+		author="$STR_A3_Bohemia_Interactive";
+		mapSize=5.8800001;
 		class SimpleObject
 		{
 			eden=0;
@@ -194,10 +311,16 @@ class CfgVehicles
 			verticalOffsetWorld=0;
 			init="''";
 		};
+		editorPreview="\A3\EditorPreviews_F\Data\CfgVehicles\Land_VR_Target_MRAP_01_F.jpg";
 		_generalMacro="Land_VR_Target_MRAP_01_F";
+		scope=2;
+		scopeCurator=2;
 		displayName="$STR_A3_CfgVehicles_Land_VR_Target_MRAP_01_F0";
+		model="\A3\Structures_F_Mark\VR\Targets\VR_Target_MRAP_01_F.p3d";
 		DLC="Mark";
 		icon="iconObject_1x2";
+		vehicleClass="Objects_VR";
+		destrType="DestructNo";
 		armor=300;
 		armorStructural=2;
 		animated=0;
@@ -206,8 +329,29 @@ class CfgVehicles
 		laserTarget=1;
 		nvTarget=1;
 		side=8;
+		type=0;
 		threat[]={0.80000001,0.60000002,0.30000001};
 		cost=500000;
+		hiddenSelections[]=
+		{
+			"Camo_hull",
+			"Camo_fuel",
+			"Camo_engine",
+			"Camo_wheel_1_1",
+			"Camo_wheel_1_2",
+			"Camo_wheel_2_1",
+			"Camo_wheel_2_2"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"\A3\Structures_F_Mark\VR\Targets\Data\VR_Target_pattern_CA.paa",
+			"\A3\Structures_F_Mark\VR\Targets\Data\VR_Target_pattern_CA.paa",
+			"\A3\Structures_F_Mark\VR\Targets\Data\VR_Target_pattern_CA.paa",
+			"\A3\Structures_F_Mark\VR\Targets\Data\VR_Target_pattern_CA.paa",
+			"\A3\Structures_F_Mark\VR\Targets\Data\VR_Target_pattern_CA.paa",
+			"\A3\Structures_F_Mark\VR\Targets\Data\VR_Target_pattern_CA.paa",
+			"\A3\Structures_F_Mark\VR\Targets\Data\VR_Target_pattern_CA.paa"
+		};
 		hiddenSelectionsMaterials[]=
 		{
 			"\A3\Structures_F_Mark\VR\Targets\Data\VR_Target_MRAP_01_BLUFOR.rvmat",
@@ -223,6 +367,7 @@ class CfgVehicles
 			class HitHull
 			{
 				name="Hull";
+				visual="Camo_hull";
 				armor=4;
 				explosionShielding=2;
 				material=-1;
@@ -233,6 +378,7 @@ class CfgVehicles
 			class HitFuel
 			{
 				name="Fuel";
+				visual="Camo_fuel";
 				armor=0.5;
 				explosionShielding=0.2;
 				material=-1;
@@ -243,6 +389,7 @@ class CfgVehicles
 			class HitEngine
 			{
 				name="Engine";
+				visual="Camo_engine";
 				armor=0.5;
 				explosionShielding=0.2;
 				material=-1;
@@ -253,6 +400,7 @@ class CfgVehicles
 			class HitWheel_1_1
 			{
 				name="Wheel_1_1";
+				visual="Camo_wheel_1_1";
 				armor=0.33000001;
 				explosionShielding=4;
 				material=-1;
@@ -263,6 +411,7 @@ class CfgVehicles
 			class HitWheel_1_2
 			{
 				name="Wheel_1_2";
+				visual="Camo_wheel_1_2";
 				armor=0.33000001;
 				explosionShielding=4;
 				material=-1;
@@ -273,6 +422,7 @@ class CfgVehicles
 			class HitWheel_2_1
 			{
 				name="Wheel_2_1";
+				visual="Camo_wheel_2_1";
 				armor=0.33000001;
 				explosionShielding=4;
 				material=-1;
@@ -283,6 +433,7 @@ class CfgVehicles
 			class HitWheel_2_2
 			{
 				name="Wheel_2_2";
+				visual="Camo_wheel_2_2";
 				armor=0.33000001;
 				explosionShielding=4;
 				material=-1;
@@ -294,6 +445,8 @@ class CfgVehicles
 	};
 	class Land_VR_Target_APC_Wheeled_01_F: TargetBase
 	{
+		author="$STR_A3_Bohemia_Interactive";
+		mapSize=8.0500002;
 		class SimpleObject
 		{
 			eden=0;
@@ -315,10 +468,16 @@ class CfgVehicles
 			verticalOffsetWorld=0;
 			init="''";
 		};
+		editorPreview="\A3\EditorPreviews_F\Data\CfgVehicles\Land_VR_Target_APC_Wheeled_01_F.jpg";
 		_generalMacro="Land_VR_Target_APC_Wheeled_01_F";
+		scope=2;
+		scopeCurator=2;
 		displayName="$STR_A3_CfgVehicles_Land_VR_Target_APC_Wheeled_01_F0";
+		model="\A3\Structures_F_Mark\VR\Targets\VR_Target_APC_Wheeled_01_F.p3d";
 		DLC="Mark";
 		icon="iconObject_2x5";
+		vehicleClass="Objects_VR";
+		destrType="DestructNo";
 		armor=250;
 		armorStructural=6;
 		animated=0;
@@ -327,8 +486,37 @@ class CfgVehicles
 		laserTarget=1;
 		nvTarget=1;
 		side=8;
+		type=0;
 		threat[]={0.80000001,0.60000002,0.60000002};
 		cost=1000000;
+		hiddenSelections[]=
+		{
+			"Camo_hull",
+			"Camo_fuel",
+			"Camo_engine",
+			"Camo_wheel_1_1",
+			"Camo_wheel_1_2",
+			"Camo_wheel_1_3",
+			"Camo_wheel_1_4",
+			"Camo_wheel_2_1",
+			"Camo_wheel_2_2",
+			"Camo_wheel_2_3",
+			"Camo_wheel_2_4"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"\A3\Structures_F_Mark\VR\Targets\Data\VR_Target_pattern_CA.paa",
+			"\A3\Structures_F_Mark\VR\Targets\Data\VR_Target_pattern_CA.paa",
+			"\A3\Structures_F_Mark\VR\Targets\Data\VR_Target_pattern_CA.paa",
+			"\A3\Structures_F_Mark\VR\Targets\Data\VR_Target_pattern_CA.paa",
+			"\A3\Structures_F_Mark\VR\Targets\Data\VR_Target_pattern_CA.paa",
+			"\A3\Structures_F_Mark\VR\Targets\Data\VR_Target_pattern_CA.paa",
+			"\A3\Structures_F_Mark\VR\Targets\Data\VR_Target_pattern_CA.paa",
+			"\A3\Structures_F_Mark\VR\Targets\Data\VR_Target_pattern_CA.paa",
+			"\A3\Structures_F_Mark\VR\Targets\Data\VR_Target_pattern_CA.paa",
+			"\A3\Structures_F_Mark\VR\Targets\Data\VR_Target_pattern_CA.paa",
+			"\A3\Structures_F_Mark\VR\Targets\Data\VR_Target_pattern_CA.paa"
+		};
 		hiddenSelectionsMaterials[]=
 		{
 			"\A3\Structures_F_Mark\VR\Targets\Data\VR_Target_APC_Wheeled_01_BLUFOR.rvmat",
@@ -343,11 +531,27 @@ class CfgVehicles
 			"\A3\Structures_F_Mark\VR\Targets\Data\VR_Target_APC_Wheeled_01_BLUFOR.rvmat",
 			"\A3\Structures_F_Mark\VR\Targets\Data\VR_Target_APC_Wheeled_01_BLUFOR.rvmat"
 		};
+		class AnimationSources
+		{
+			class Turret_source
+			{
+				source="user";
+				initPhase=0;
+				animPeriod=0.015;
+			};
+			class Gun_source
+			{
+				source="user";
+				initPhase=0;
+				animPeriod=0.025;
+			};
+		};
 		class Hitpoints
 		{
 			class HitHull
 			{
 				name="Hull";
+				visual="Camo_hull";
 				armor=1;
 				explosionShielding=0.2;
 				material=-1;
@@ -358,6 +562,7 @@ class CfgVehicles
 			class HitFuel
 			{
 				name="Fuel";
+				visual="Camo_fuel";
 				armor=1.5;
 				explosionShielding=0.40000001;
 				material=-1;
@@ -368,6 +573,7 @@ class CfgVehicles
 			class HitEngine
 			{
 				name="Engine";
+				visual="Camo_engine";
 				armor=0.5;
 				explosionShielding=0.2;
 				material=-1;
@@ -378,6 +584,7 @@ class CfgVehicles
 			class HitWheel_1_1
 			{
 				name="Wheel_1_1";
+				visual="Camo_wheel_1_1";
 				armor=0.40000001;
 				explosionShielding=4;
 				material=-1;
@@ -388,6 +595,7 @@ class CfgVehicles
 			class HitWheel_1_2
 			{
 				name="Wheel_1_2";
+				visual="Camo_wheel_1_2";
 				armor=0.40000001;
 				explosionShielding=4;
 				material=-1;
@@ -398,6 +606,7 @@ class CfgVehicles
 			class HitWheel_1_3
 			{
 				name="Wheel_1_3";
+				visual="Camo_wheel_1_3";
 				armor=0.40000001;
 				explosionShielding=4;
 				material=-1;
@@ -408,6 +617,7 @@ class CfgVehicles
 			class HitWheel_1_4
 			{
 				name="Wheel_1_4";
+				visual="Camo_wheel_1_4";
 				armor=0.40000001;
 				explosionShielding=4;
 				material=-1;
@@ -418,6 +628,7 @@ class CfgVehicles
 			class HitWheel_2_1
 			{
 				name="Wheel_2_1";
+				visual="Camo_wheel_2_1";
 				armor=0.40000001;
 				explosionShielding=4;
 				material=-1;
@@ -428,6 +639,7 @@ class CfgVehicles
 			class HitWheel_2_2
 			{
 				name="Wheel_2_2";
+				visual="Camo_wheel_2_2";
 				armor=0.40000001;
 				explosionShielding=4;
 				material=-1;
@@ -438,6 +650,7 @@ class CfgVehicles
 			class HitWheel_2_3
 			{
 				name="Wheel_2_3";
+				visual="Camo_wheel_2_3";
 				armor=0.40000001;
 				explosionShielding=4;
 				material=-1;
@@ -448,6 +661,7 @@ class CfgVehicles
 			class HitWheel_2_4
 			{
 				name="Wheel_2_4";
+				visual="Camo_wheel_2_4";
 				armor=0.40000001;
 				explosionShielding=4;
 				material=-1;

@@ -4,11 +4,18 @@ class CfgPatches
 	{
 		units[]={};
 		weapons[]={};
+		requiredVersion=1.5;
+		requiredAddons[]=
+		{
+			"rhsgref_main"
+		};
 		author[]=
 		{
 			"RHS Team"
 		};
+		authorUrl="http://redhammer.su";
 		versionDesc="RHS";
+		text="QUOTE(RHS 0.1.1.1)";
 	};
 };
 class SensorTemplatePassiveRadar;
@@ -58,7 +65,9 @@ class CfgAmmo
 		thrusttime=10;
 		timetolive=30;
 		whistledist=3;
+		model="\rhsgref\addons\rhsgref_airweapons\zt3\rhs_m_zt3_fly";
 		proxyShape="\rhsgref\addons\rhsgref_airweapons\zt3\rhs_m_zt3";
+		AIAmmoUsageFlags="64+128+512";
 		missileManualControlCone=45;
 		rhs_saclos=1;
 		rhs_ballisticMode=0;
@@ -87,6 +96,7 @@ class CfgAmmo
 		triggerOnImpact=1;
 		deleteParentWhenTriggered=0;
 		maverickWeaponIndexOffset=0;
+		model="\rhsgref\addons\rhsgref_airweapons\zt6\rhs_m_zt6_fly";
 		proxyShape="\rhsgref\addons\rhsgref_airweapons\zt6\rhs_m_zt6";
 		hit=400;
 		indirectHit=35;
@@ -114,7 +124,10 @@ class CfgAmmo
 			"Direct"
 		};
 		fuseDistance=50;
+		whistleDist=4;
 		muzzleEffect="";
+		effectsMissileInit="MissileDAR1";
+		effectsMissile="missile1";
 		aiAmmoUsageFlags="64+128 + 512";
 		lockSeekRadius=120;
 		missileLockMaxDistance=10000;
@@ -134,16 +147,21 @@ class CfgAmmo
 					{
 						class AirTarget
 						{
+							minRange=2000;
+							maxRange=10000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
 						class GroundTarget
 						{
+							minRange=10000;
+							maxRange=10000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
 						angleRangeHorizontal=50;
 						angleRangeVertical=50;
+						typeRecognitionDistance=-1;
 						maxGroundNoiseDistance=0;
 						maxFogSeeThrough=0.30000001;
 					};
@@ -168,13 +186,65 @@ class CfgAmmo
 		caliber=2.92063;
 		dangerRadiusBulletClose=16;
 		dangerRadiusHit=40;
+		suppressionRadiusBulletClose=10;
 		suppressionRadiusHit=14;
+		model="\A3\Weapons_f\Data\bullettracer\tracer_white";
 		tracerEndTime=1.5;
+		class CamShakeHit
+		{
+			power=20;
+			duration="((round (20^0.25))*0.2 max 0.2)";
+			frequency=20;
+			distance=1;
+		};
+		class CamShakeFire
+		{
+			power="(19^0.25)";
+			duration="((round (19^0.5))*0.2 max 0.2)";
+			frequency=20;
+			distance="((19^0.5)*8)";
+		};
+		class CamShakePlayerFire
+		{
+			power=0.0099999998;
+			duration=0.1;
+			frequency=20;
+			distance=1;
+		};
+	};
+	class rhs_ammo_20x139mm_HE: rhs_ammo_20x139mm_AP
+	{
+		hit=20;
+		explosive=0.80000001;
+		indirectHit=4;
+		indirectHitRange=6.9000001;
+		typicalSpeed=1100;
+		caliber=1.4;
+		dangerRadiusBulletClose=20;
+		dangerRadiusHit=60;
+		suppressionRadiusBulletClose=12;
+		suppressionRadiusHit=24;
+		tracerEndTime=2;
+		class CamShakeExplode
+		{
+			power="(19*0.2)";
+			duration="((round (19^0.5))*0.2 max 0.2)";
+			frequency=20;
+			distance="((2 + 19^0.5)*8)";
+		};
+		class CamShakeHit
+		{
+			power=19;
+			duration="((round (19^0.25))*0.2 max 0.2)";
+			frequency=20;
+			distance=1;
+		};
 	};
 	class SubmunitionBase;
 	class rhs_ammo_20x139mm_mixed: SubmunitionBase
 	{
 		cost=10;
+		model="\A3\Weapons_f\empty";
 		submunitionAmmo[]=
 		{
 			"rhs_ammo_20x139mm_AP",
@@ -200,9 +270,12 @@ class CfgMagazines
 		count=1;
 		initspeed=80;
 		weight=37.5;
+		maxLeadSpeed=33;
 	};
 	class rhs_mag_zt3_4: rhs_mag_zt3
 	{
+		scope=2;
+		model="rhsgref\addons\rhsgref_airweapons\zt3\rhs_pylon_m_zt3_launcher.p3d";
 		count=4;
 		pylonWeapon="rhs_weap_zt3_Launcher";
 		hardpoints[]=
@@ -221,10 +294,13 @@ class CfgMagazines
 		nameSound="missiles";
 		count=1;
 		initSpeed=0;
+		maxLeadSpeed=35;
 		weight=50;
 	};
 	class rhs_mag_zt6_4: rhs_mag_zt6
 	{
+		scope=2;
+		model="rhsgref\addons\rhsgref_airweapons\zt6\rhs_pylon_m_zt6_launcher.p3d";
 		count=4;
 		pylonWeapon="rhs_weap_zt6_Launcher";
 		hardpoints[]=
@@ -237,6 +313,7 @@ class CfgMagazines
 	};
 	class rhs_mag_l159_fuelpod: VehicleMagazine
 	{
+		model="rhsgref\addons\rhsgref_airweapons\rhs_pylon_fuelpod";
 		ammo="rhs_ammo_l159_fuelpod_proxy";
 		displayName="Fuel Pod";
 		displayNameShort="Fuel Pod";
@@ -252,35 +329,43 @@ class CfgMagazines
 	{
 		displayName="Fuel Pod (Grey)";
 		displayNameShort="Fuel Pod (Grey)";
+		model="rhsgref\addons\rhsgref_airweapons\rhs_pylon_L159_fuelpod_grey";
 	};
 	class rhs_mag_GI2_420_HE: VehicleMagazine
 	{
+		scope=2;
 		displayname="20x139mm High-Explosive Indenciary";
 		displaynameshort="HEI";
 		ammo="rhs_ammo_20x139mm_HE";
 		count=420;
 		initSpeed=1050;
+		maxLeadSpeed=200;
 		tracersEvery=4;
 		nameSound="cannon";
 	};
 	class rhs_mag_GI2_420_AP: VehicleMagazine
 	{
+		scope=2;
 		displayname="20x139mm Armor-Piercing Capped";
 		displaynameshort="APC";
 		ammo="rhs_ammo_20x139mm_AP";
 		count=420;
 		initSpeed=1100;
+		maxLeadSpeed=200;
 		tracersEvery=4;
 		nameSound="cannon";
 	};
 	class rhs_mag_zpl20_hei: VehicleMagazine
 	{
+		scope=2;
+		model="\A3\Weapons_F\DynamicLoadout\PylonPod_Twin_Cannon_20mm.p3d";
 		displayname="20x139mm High-Explosive Indenciary";
 		displaynameshort="HEI";
 		nameSound="cannon";
 		ammo="rhs_ammo_20x139mm_HE";
 		count=210;
 		initSpeed=1020;
+		maxLeadSpeed=200;
 		tracersEvery=4;
 		muzzlePos="muzzlePos";
 		muzzleEnd="muzzleEnd";
@@ -328,17 +413,88 @@ class CfgWeapons
 			reloadTime=0.083329998;
 			dispersion=0.00125;
 			burst=1;
+			aiRateOfFire=0.5;
+			aiRateOfFireDistance=50;
+			minRange=1;
+			minRangeProbab=0.0099999998;
+			midRange=2;
+			midRangeProbab=0.0099999998;
+			maxRange=3;
+			maxRangeProbab=0.0099999998;
+		};
+		class close: manual
+		{
+			showToPlayer=0;
+			soundBurst=0;
+			burst=6;
+			burstRangeMax=12;
+			aiRateOfFire=0.5;
+			aiRateOfFireDistance=50;
+			minRange=0;
+			minRangeProbab=0.69999999;
+			midRange=200;
+			midRangeProbab=0.94999999;
+			maxRange=500;
+			maxRangeProbab=0.60000002;
+		};
+		class short: close
+		{
+			burst=6;
+			burstRangeMax=10;
+			aiRateOfFire=2;
+			aiRateOfFireDistance=300;
+			minRange=300;
+			minRangeProbab=0.69999999;
+			midRange=600;
+			midRangeProbab=0.89999998;
+			maxRange=800;
+			maxRangeProbab=0.60000002;
+		};
+		class medium: close
+		{
+			burst=3;
+			burstRangeMax=8;
+			aiRateOfFire=3;
+			aiRateOfFireDistance=600;
+			minRange=700;
+			minRangeProbab=0.69999999;
+			midRange=900;
+			midRangeProbab=0.85000002;
+			maxRange=1000;
+			maxRangeProbab=0.60000002;
 		};
 		class far: close
 		{
 			burst=3;
 			burstRangeMax=6;
+			aiRateOfFire=5;
+			aiRateOfFireDistance=1000;
+			minRange=1000;
+			minRangeProbab=0.30000001;
+			midRange=1200;
+			midRangeProbab=0.85000002;
+			maxRange=1400;
+			maxRangeProbab=0.60000002;
 		};
 	};
 	class rhs_weap_gi2: rhs_weap_M197
 	{
 		displayName="GI-2";
+		class GunParticles
+		{
+			class Effect
+			{
+				effectName="MachineGun2";
+				positionName="z_gun_muzzle";
+				directionName="z_gun_chamber";
+			};
+		};
 		magazines[]={};
+		muzzles[]=
+		{
+			"HE",
+			"AP"
+		};
 		class HE: rhs_weap_gi2_base
 		{
 			displayName="GI-2 HE";
@@ -358,6 +514,7 @@ class CfgWeapons
 	};
 	class RHS_weap_zpl20: gatling_30mm
 	{
+		scope=2;
 		aidispersioncoefx=4;
 		aidispersioncoefy=4;
 		canlock=2;
@@ -385,11 +542,44 @@ class CfgWeapons
 		soundcontinuous=1;
 		flash="gunfire";
 		flashSize=0.5;
+		muzzles[]=
+		{
+			"this"
+		};
+		modes[]=
+		{
+			"manual",
+			"manual_low",
+			"close",
+			"short",
+			"medium",
+			"far"
+		};
 		class manual: Mode_FullAuto
 		{
 			airateoffire=0.5;
 			airateoffiredistance=50;
 			autofire=1;
+			sounds[]=
+			{
+				"StandardSound"
+			};
+			class StandardSound
+			{
+				weaponSoundEffect="DefaultRifle";
+				begin1[]=
+				{
+					"A3\Sounds_F\weapons\30mm\30mm_st_02",
+					0.69999999,
+					1,
+					1500
+				};
+				soundBegin[]=
+				{
+					"begin1",
+					1
+				};
+			};
 			burst=2;
 			dispersion=0.0060000001;
 			displayname="ZPL-20 (High)";
@@ -417,12 +607,52 @@ class CfgWeapons
 		{
 			displayname="ZPL-20 (Low RPM)";
 			reloadtime=0.077;
+			textureType="semi";
 			burst=0;
+		};
+		class close: manual
+		{
+			airateoffire=0.001;
+			airateoffiredistance=50;
+			aiRateOfFireDispersion=3;
+			burst=1;
+			maxrange=300;
+			maxrangeprobab=0.039999999;
+			midrange=100;
+			midrangeprobab=0.88;
+			minrange=0;
+			minrangeprobab=0.5;
+			showtoplayer=0;
+			soundburst=0;
+		};
+		class short: close
+		{
+			aiRateOfFire=0.25;
+			airateoffiredistance=300;
+			aiRateOfFireDispersion=3;
+			burst="10 + random 5";
+			maxrange=800;
+			midrange=500;
+			minrange=200;
+		};
+		class medium: manual_low
+		{
+			airateoffire=3;
+			airateoffiredistance=600;
+			burst="7 + random 5";
+			maxrangeprobab=0.039999999;
+			midrangeprobab=0.88;
+			minrangeprobab=0.5;
+			maxrange=1000;
+			midrange=800;
+			minrange=600;
+			showtoplayer=0;
 		};
 		class far: medium
 		{
 			airateoffire=4;
 			airateoffiredistance=1000;
+			aiRateOfFireDispersion=3;
 			burst="4 + random 5";
 			maxrange=1250;
 			maxrangeprobab=0.11;
@@ -457,23 +687,31 @@ class CfgWeapons
 		autoreload=0;
 		magazineReloadTime=30;
 		holdsterAnimValue=1;
+		textureType="semi";
 		canlock=1;
 		weaponLockType=1;
 	};
 	class rhs_weap_zt6_Launcher: Missile_AGM_02_Plane_CAS_01_F
 	{
+		scope=2;
 		autoFire=0;
 		displayName="ZT-6 Mokopa";
 		missileLockCone=65;
 		cursorSize=0;
 		cursor="missile";
 		cursorAim="EmptyCursor";
+		aiRateOfFire=5;
+		aiRateOfFireDistance=4000;
 		maxrange=10000;
 		maxrangeprobab=0.5;
 		midrange=5000;
 		midrangeprobab=0.89999998;
 		minrange=250;
 		minrangeprobab=0.80000001;
+		modes[]=
+		{
+			"this"
+		};
 		nameSound="MissileLauncher";
 		reloadTime=1;
 		magazines[]=
@@ -490,26 +728,32 @@ class CfgNonAIVehicles
 	class ProxyWeapon;
 	class Proxyrhs_pylon_L159_fuelpod: ProxyWeapon
 	{
+		model="rhsgref\addons\rhsgref_airweapons\rhs_pylon_L159_fuelpod";
 		simulation="pylonpod";
 	};
 	class Proxyrhs_pylon_L159_fuelpod_grey: ProxyWeapon
 	{
+		model="rhsgref\addons\rhsgref_airweapons\rhs_pylon_L159_fuelpod_grey";
 		simulation="pylonpod";
 	};
 	class Proxyrhs_pylon_m_zt3_launcher: ProxyWeapon
 	{
+		model="rhsgref\addons\rhsgref_airweapons\zt3\rhs_pylon_m_zt3_launcher";
 		simulation="pylonpod";
 	};
 	class Proxyrhs_m_zt3: ProxyWeapon
 	{
+		model="rhsgref\addons\rhsgref_airweapons\zt3\rhs_m_zt3";
 		simulation="maverickweapon";
 	};
 	class Proxyrhs_pylon_m_zt6_launcher: ProxyWeapon
 	{
+		model="rhsgref\addons\rhsgref_airweapons\zt6\rhs_pylon_m_zt6_launcher";
 		simulation="pylonpod";
 	};
 	class Proxyrhs_m_zt6: ProxyWeapon
 	{
+		model="rhsgref\addons\rhsgref_airweapons\zt6\rhs_m_zt6";
 		simulation="maverickweapon";
 	};
 };

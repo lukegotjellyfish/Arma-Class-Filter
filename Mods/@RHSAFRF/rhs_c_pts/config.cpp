@@ -7,7 +7,18 @@ class CfgPatches
 			"rhs_pts_vmf"
 		};
 		weapons[]={};
+		requiredVersion=1.42;
+		requiredAddons[]=
+		{
+			"rhs_main",
+			"rhs_c_heavyweapons",
+			"rhs_decals",
+			"rhs_optics",
+			"rhs_c_troops"
+		};
 		name="PTS";
+		author="$STR_RHS_AUTHOR_FULL";
+		url="http://www.rhsmods.org/";
 	};
 };
 class CfgFunctions
@@ -70,6 +81,11 @@ class CfgVehicles
 			class HitLTrack;
 			class HitRTrack;
 		};
+		class Sounds: Sounds
+		{
+			class Engine;
+			class Movement;
+		};
 	};
 	class APC_Tracked_02_base_F: Tank_F
 	{
@@ -78,20 +94,54 @@ class CfgVehicles
 	};
 	class rhs_pts_base: APC_Tracked_02_base_F
 	{
+		dlc="RHS_AFRF";
 		rhs_decalParameters[]=
 		{
 			"['Number',cRHSPTSNumberPlaces,'Default']",
 			"['Label',cRHSPTSPlnSymPlaces, 'Platoon',12]"
 		};
+		category="Armored";
+		destrType="DestructDefault";
+		author="$STR_RHS_AUTHOR_FULL";
 		enableGPS=0;
 		incomingMissileDetectionSystem=0;
 		weapons[]={};
 		magazines[]={};
+		class UserActions
+		{
+			class OpenRamp
+			{
+				displayName="Open Cargo Ramp";
+				position="ramp";
+				onlyforplayer=1;
+				radius=6;
+				showWindow=0;
+				condition="(this doorPhase 'ramp' == 0) AND {Alive(this)} AND {(call RHS_fnc_findPlayer) in this} AND {((getPosASLW this) select 2) > -1}";
+				statement="this animateDoor ['ramp',1];this engineOn false;[this] call rhs_fnc_pts_cargoDetach";
+				shortcut="user12";
+			};
+			class CloseRamp: OpenRamp
+			{
+				displayName="Close Cargo Ramp";
+				condition="(this doorPhase 'ramp' == 1) AND {Alive(this)} AND {(call RHS_fnc_findPlayer) in this}";
+				statement="this animateDoor ['ramp',0];[this] call rhs_fnc_pts_cargoAttach";
+			};
+		};
 		rhs_maxCargoMassCoeff=5.0000001e-008;
+		vehicleClass="rhs_vehclass_apc";
+		editorSubcategory="rhs_EdSubcat_apc";
 		displayName="$STR_RHSAFRF_PTSM";
+		faction="rhs_faction_vmf";
+		crew="rhs_vmf_flora_crew";
 		accuracy=0.30000001;
 		side=0;
+		class RenderTargets;  //found empty after stripping
+		model="\rhsafrf\addons\rhs_pts\rhs_pts";
+		picture="\rhsafrf\addons\rhs_pts\ui\pts_ca.paa";
+		Icon="\rhsafrf\addons\rhs_c_pts\ptsm_map_ca.paa";
 		driverOpticsModel="";
+		mapSize=11;
+		forceHideDriver=0;
 		hideProxyInCombat=0;
 		cargoIsCoDriver[]={1};
 		driverIsCommander=1;
@@ -103,6 +153,8 @@ class CfgVehicles
 			"rhs_vmf_flora_crew",
 			""
 		};
+		getInAction="GetInLow";
+		getOutAction="GetOutLow";
 		cargoGetInAction[]=
 		{
 			"GetInLow"
@@ -114,12 +166,21 @@ class CfgVehicles
 		transportsoldier=1;
 		unloadInCombat=1;
 		tf_range_api=35000;
+		cargoAction[]=
+		{
+			"RHS_BMP3_Cargo"
+		};
 		driveOnComponent[]=
 		{
 			"Track_L",
 			"Track_R",
 			"Slide"
 		};
+		driverDoor="hatchD";
+		driverAction="RHS_BMP3_driverout";
+		driverInAction="RHS_BMP3_driver";
+		driverLeftHandAnimName="steering";
+		driverRightHandAnimName="steering";
 		driverForceOptics=0;
 		simulation="tankX";
 		normalSpeedForwardCoef=0.85000002;
@@ -220,6 +281,9 @@ class CfgVehicles
 			class L2
 			{
 				suspTravelDirection[]={-0.125,-1,0};
+				boneName="wheel_podkoloL1";
+				center="wheel_1_2_axis";
+				boundary="wheel_1_2_bound";
 				side="left";
 				width=0.2;
 				steering=0;
@@ -245,53 +309,903 @@ class CfgVehicles
 					{0.64999998,0.69999999}
 				};
 			};
-			class L3: L2;  //found empty after stripping
-			class L4: L2;  //found empty after stripping
-			class L5: L2;  //found empty after stripping
-			class L6: L2;  //found empty after stripping
-			class L7: L2;  //found empty after stripping
+			class L3: L2
+			{
+				boneName="wheel_podkolol2";
+				center="wheel_1_3_axis";
+				boundary="wheel_1_3_bound";
+			};
+			class L4: L2
+			{
+				boneName="wheel_podkolol3";
+				center="wheel_1_4_axis";
+				boundary="wheel_1_4_bound";
+			};
+			class L5: L2
+			{
+				boneName="wheel_podkolol4";
+				center="wheel_1_5_axis";
+				boundary="wheel_1_5_bound";
+			};
+			class L6: L2
+			{
+				boneName="wheel_podkolol5";
+				center="wheel_1_6_axis";
+				boundary="wheel_1_6_bound";
+			};
+			class L7: L2
+			{
+				boneName="wheel_podkolol6";
+				center="wheel_1_7_axis";
+				boundary="wheel_1_7_bound";
+			};
 			class L9: L2
 			{
+				boneName="wheel_podkolol9";
+				center="wheel_1_9_axis";
+				boundary="wheel_1_9_bound";
 				maxDroop=0;
 				maxCompression=0;
 			};
 			class L1: L2
 			{
+				boneName="";
+				center="wheel_1_1_axis";
+				boundary="wheel_1_1_bound";
 				maxDroop=0;
 				maxCompression=0;
 			};
 			class R2: L2
 			{
 				suspTravelDirection[]={0.125,-1,0};
+				boneName="wheel_podkolop1";
+				center="wheel_2_2_axis";
+				boundary="wheel_2_2_bound";
 				side="right";
 			};
-			class R3: R2;  //found empty after stripping
-			class R4: R2;  //found empty after stripping
-			class R5: R2;  //found empty after stripping
-			class R6: R2;  //found empty after stripping
-			class R7: R2;  //found empty after stripping
+			class R3: R2
+			{
+				boneName="wheel_podkolop2";
+				center="wheel_2_3_axis";
+				boundary="wheel_2_3_bound";
+			};
+			class R4: R2
+			{
+				boneName="wheel_podkolop3";
+				center="wheel_2_4_axis";
+				boundary="wheel_2_4_bound";
+			};
+			class R5: R2
+			{
+				boneName="wheel_podkolop4";
+				center="wheel_2_5_axis";
+				boundary="wheel_2_5_bound";
+			};
+			class R6: R2
+			{
+				boneName="wheel_podkolop5";
+				center="wheel_2_6_axis";
+				boundary="wheel_2_6_bound";
+			};
+			class R7: R2
+			{
+				boneName="wheel_podkolop6";
+				center="wheel_2_7_axis";
+				boundary="wheel_2_7_bound";
+			};
 			class R9: R2
 			{
+				boneName="wheel_podkolop9";
+				center="wheel_2_9_axis";
+				boundary="wheel_2_9_bound";
 				maxDroop=0;
 				maxCompression=0;
 			};
 			class R1: R2
 			{
+				boneName="";
+				center="wheel_2_1_axis";
+				boundary="wheel_2_1_bound";
 				maxDroop=0;
 				maxCompression=0;
 			};
 		};
+		soundGetIn[]=
+		{
+			"A3\sounds_f\vehicles\armor\noises\get_in_out",
+			0.56234133,
+			1
+		};
+		soundGetOut[]=
+		{
+			"A3\sounds_f\vehicles\armor\noises\get_in_out",
+			0.56234133,
+			1,
+			20
+		};
+		soundDammage[]=
+		{
+			"",
+			0.56234133,
+			1
+		};
+		soundEngineOnInt[]=
+		{
+			"A3\Sounds_F\vehicles\armor\MBT_03\MBT_engine_int_start",
+			0.70794576,
+			1
+		};
+		soundEngineOnExt[]=
+		{
+			"\rhsafrf\addons\rhs_bmp\sounds\utd20_start.wss",
+			0.63095737,
+			1,
+			200
+		};
+		soundEngineOffInt[]=
+		{
+			"A3\Sounds_F\vehicles\armor\MBT_03\MBT_engine_int_stop",
+			0.70794576,
+			1
+		};
+		soundEngineOffExt[]=
+		{
+			"A3\Sounds_F\vehicles\armor\MBT_03\MBT_engine_ext_stop",
+			0.63095737,
+			1,
+			200
+		};
+		buildCrash0[]=
+		{
+			"A3\sounds_f\Vehicles\crashes\crash_08",
+			1,
+			1,
+			200
+		};
+		buildCrash1[]=
+		{
+			"A3\sounds_f\Vehicles\crashes\crash_09",
+			1,
+			1,
+			200
+		};
+		buildCrash2[]=
+		{
+			"A3\sounds_f\Vehicles\crashes\crash_10",
+			1,
+			1,
+			200
+		};
+		buildCrash3[]=
+		{
+			"A3\sounds_f\Vehicles\crashes\crash_11",
+			1,
+			1,
+			200
+		};
+		soundBuildingCrash[]=
+		{
+			"buildCrash0",
+			0.25,
+			"buildCrash1",
+			0.25,
+			"buildCrash2",
+			0.25,
+			"buildCrash3",
+			0.25
+		};
+		WoodCrash0[]=
+		{
+			"A3\sounds_f\Vehicles\crashes\crash_08",
+			1,
+			1,
+			200
+		};
+		WoodCrash1[]=
+		{
+			"A3\sounds_f\Vehicles\crashes\crash_09",
+			1,
+			1,
+			200
+		};
+		WoodCrash2[]=
+		{
+			"A3\sounds_f\Vehicles\crashes\crash_10",
+			1,
+			1,
+			200
+		};
+		WoodCrash3[]=
+		{
+			"A3\sounds_f\Vehicles\crashes\crash_11",
+			1,
+			1,
+			200
+		};
+		WoodCrash4[]=
+		{
+			"A3\sounds_f\Vehicles\crashes\crash_01",
+			1,
+			1,
+			200
+		};
+		WoodCrash5[]=
+		{
+			"A3\sounds_f\Vehicles\crashes\crash_08",
+			1,
+			1,
+			200
+		};
+		soundWoodCrash[]=
+		{
+			"woodCrash0",
+			0.16599999,
+			"woodCrash1",
+			0.16599999,
+			"woodCrash2",
+			0.16599999,
+			"woodCrash3",
+			0.16599999,
+			"woodCrash4",
+			0.16599999,
+			"woodCrash5",
+			0.16599999
+		};
+		ArmorCrash0[]=
+		{
+			"A3\sounds_f\Vehicles\crashes\crash_08",
+			1,
+			1,
+			200
+		};
+		ArmorCrash1[]=
+		{
+			"A3\sounds_f\Vehicles\crashes\crash_09",
+			1,
+			1,
+			200
+		};
+		ArmorCrash2[]=
+		{
+			"A3\sounds_f\Vehicles\crashes\crash_10",
+			1,
+			1,
+			200
+		};
+		ArmorCrash3[]=
+		{
+			"A3\sounds_f\Vehicles\crashes\crash_11",
+			1,
+			1,
+			200
+		};
+		soundArmorCrash[]=
+		{
+			"ArmorCrash0",
+			0.25,
+			"ArmorCrash1",
+			0.25,
+			"ArmorCrash2",
+			0.25,
+			"ArmorCrash3",
+			0.25
+		};
+		class Sounds
+		{
+			class Idle_ext
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\armor\MBT_03\MBT_engine_ext_idle",
+					0.70794576,
+					1,
+					200
+				};
+				frequency="0.95	+	((rpm/	5200) factor[(400/	5200),(900/	5200)])*0.15";
+				volume="engineOn*camPos*(((rpm/	5200) factor[(100/	5200),(200/	5200)])	*	((rpm/	5200) factor[(900/	5200),(700/	5200)]))";
+			};
+			class Engine
+			{
+				sound[]=
+				{
+					"\rhsafrf\addons\rhs_bmp\sounds\UTD20.ogg",
+					0.79432821,
+					1,
+					200
+				};
+				frequency="0.8	+	((rpm/	5200) factor[(700/	5200),(1100/	5200)])*0.2";
+				volume="engineOn*camPos*(((rpm/	5200) factor[(705/	5200),(850/	5200)])	*	((rpm/	5200) factor[(1100 /	5200),(950/	5200)]))";
+			};
+			class Engine1_ext
+			{
+				sound[]=
+				{
+					"\rhsafrf\addons\rhs_bmp\sounds\UTD20.ogg",
+					0.79432821,
+					1,
+					200
+				};
+				frequency="0.8	+	((rpm/	5200) factor[(950/	5200),(1400/	5200)])*0.2";
+				volume="engineOn*camPos*(((rpm/	5200) factor[(900/	5200),(1050/	5200)])	*	((rpm/	5200) factor[(1400/	5200),(1200/	5200)]))";
+			};
+			class Engine2_ext
+			{
+				sound[]=
+				{
+					"\rhsafrf\addons\rhs_bmp\sounds\UTD20.ogg",
+					0.89125091,
+					1,
+					250
+				};
+				frequency="0.8	+	((rpm/	5200) factor[(1200/	5200),(1700/	5200)])*0.2";
+				volume="engineOn*camPos*(((rpm/	5200) factor[(1170/	5200),(1380/	5200)])	*	((rpm/	5200) factor[(1700/	5200),(1500/	5200)]))";
+			};
+			class Engine3_ext
+			{
+				sound[]=
+				{
+					"\rhsafrf\addons\rhs_bmp\sounds\UTD20.ogg",
+					1,
+					1,
+					300
+				};
+				frequency="0.8	+	((rpm/	5200) factor[(1500/	5200),(2100/	5200)])*0.1";
+				volume="engineOn*camPos*(((rpm/	5200) factor[(1500/	5200),(1670/	5200)])	*	((rpm/	5200) factor[(2100/	5200),(1800/	5200)]))";
+			};
+			class Engine4_ext
+			{
+				sound[]=
+				{
+					"\rhsafrf\addons\rhs_bmp\sounds\UTD20.ogg",
+					1.1220185,
+					1,
+					340
+				};
+				frequency="0.8	+	((rpm/	5200) factor[(1800/	5200),(2300/	5200)])*0.1";
+				volume="engineOn*camPos*(((rpm/	5200) factor[(1780/	5200),(2060/	5200)])	*	((rpm/	5200) factor[(2450/	5200),(2200/	5200)]))";
+			};
+			class Engine5_ext
+			{
+				sound[]=
+				{
+					"\rhsafrf\addons\rhs_bmp\sounds\UTD20.ogg",
+					1.4125376,
+					1,
+					400
+				};
+				frequency="0.8	+	((rpm/	5200) factor[(2100/	5200),(2640/	5200)])*0.1";
+				volume="engineOn*camPos*((rpm/	5200) factor[(2150/	5200),(2500/	5200)])";
+			};
+			class IdleThrust
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\armor\MBT_03\MBT_exhaust_ext_idle",
+					0.89125091,
+					1,
+					200
+				};
+				frequency="0.8	+	((rpm/	5200) factor[(400/	5200),(900/	5200)])*0.15";
+				volume="engineOn*camPos*(0.4+(0.6*(thrust factor[0.1,1])))*(((rpm/	5200) factor[(100/	5200),(200/	5200)])	*	((rpm/	5200) factor[(900/	5200),(700/	5200)]))";
+			};
+			class EngineThrust
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\armor\MBT_03\MBT_exhaust_ext_rpm1",
+					1.1220185,
+					1,
+					200
+				};
+				frequency="0.8	+	((rpm/	5200) factor[(700/	5200),(1100/	5200)])*0.2";
+				volume="engineOn*camPos*(0.4+(0.6*(thrust factor[0.1,1])))*(((rpm/	5200) factor[(705/	5200),(850/	5200)])	*	((rpm/	5200) factor[(1100 /	5200),(950/	5200)]))";
+			};
+			class Engine1_Thrust_ext
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\armor\MBT_03\MBT_exhaust_ext_rpm2",
+					1.2589254,
+					1,
+					200
+				};
+				frequency="0.8	+	((rpm/	5200) factor[(950/	5200),(1400/	5200)])*0.2";
+				volume="engineOn*camPos*(0.4+(0.6*(thrust factor[0.1,1])))*(((rpm/	5200) factor[(900/	5200),(1050/	5200)])	*	((rpm/	5200) factor[(1400/	5200),(1200/	5200)]))";
+			};
+			class Engine2_Thrust_ext
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\armor\MBT_03\MBT_exhaust_ext_rpm3",
+					1.4125376,
+					1,
+					250
+				};
+				frequency="0.8	+	((rpm/	5200) factor[(1200/	5200),(1700/	5200)])*0.2";
+				volume="engineOn*camPos*(0.4+(0.6*(thrust factor[0.1,1])))*(((rpm/	5200) factor[(1170/	5200),(1380/	5200)])	*	((rpm/	5200) factor[(1700/	5200),(1500/	5200)]))";
+			};
+			class Engine3_Thrust_ext
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\armor\MBT_03\MBT_exhaust_ext_rpm4",
+					1.5848932,
+					1,
+					350
+				};
+				frequency="0.8	+	((rpm/	5200) factor[(1500/	5200),(2100/	5200)])*0.1";
+				volume="engineOn*camPos*(0.4+(0.6*(thrust factor[0.1,1])))*(((rpm/	5200) factor[(1500/	5200),(1670/	5200)])	*	((rpm/	5200) factor[(2100/	5200),(1800/	5200)]))";
+			};
+			class Engine4_Thrust_ext
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\armor\MBT_03\MBT_exhaust_ext_rpm5",
+					1.7782794,
+					1,
+					400
+				};
+				frequency="0.8	+	((rpm/	5200) factor[(1800/	5200),(2300/	5200)])*0.1";
+				volume="engineOn*camPos*(0.4+(0.6*(thrust factor[0.1,1])))*(((rpm/	5200) factor[(1780/	5200),(2060/	5200)])	*	((rpm/	5200) factor[(2450/	5200),(2200/	5200)]))";
+			};
+			class Engine5_Thrust_ext
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\armor\MBT_03\MBT_exhaust_ext_rpm6",
+					1.9952624,
+					1,
+					450
+				};
+				frequency="0.8	+	((rpm/	5200) factor[(2100/	5200),(2640/	5200)])*0.1";
+				volume="engineOn*camPos*(0.4+(0.6*(thrust factor[0.1,1])))*((rpm/	5200) factor[(2150/	5200),(2500/	5200)])";
+			};
+			class Idle_int
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\armor\MBT_03\MBT_engine_int_idle",
+					0.31622776,
+					1
+				};
+				frequency="0.8	+	((rpm/	5200) factor[(400/	5200),(900/	5200)])*0.15";
+				volume="engineOn*(1-camPos)*(((rpm/	5200) factor[(100/	5200),(200/	5200)])	*	((rpm/	5200) factor[(900/	5200),(700/	5200)]))";
+			};
+			class Engine_int
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\armor\MBT_03\MBT_engine_int_rpm1",
+					0.35481337,
+					1
+				};
+				frequency="0.8	+	((rpm/	5200) factor[(700/	5200),(1100/	5200)])*0.2";
+				volume="engineOn*(1-camPos)*(((rpm/	5200) factor[(705/	5200),(850/	5200)])	*	((rpm/	5200) factor[(1100 /	5200),(950/	5200)]))";
+			};
+			class Engine1_int
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\armor\MBT_03\MBT_engine_int_rpm2",
+					0.39810717,
+					1
+				};
+				frequency="0.8	+	((rpm/	5200) factor[(950/	5200),(1400/	5200)])*0.2";
+				volume="engineOn*(1-camPos)*(((rpm/	5200) factor[(900/	5200),(1050/	5200)])	*	((rpm/	5200) factor[(1400/	5200),(1200/	5200)]))";
+			};
+			class Engine2_int
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\armor\MBT_03\MBT_engine_int_rpm3",
+					0.44668359,
+					1
+				};
+				frequency="0.8	+	((rpm/	5200) factor[(1200/	5200),(1700/	5200)])*0.2";
+				volume="engineOn*(1-camPos)*(((rpm/	5200) factor[(1170/	5200),(1380/	5200)])	*	((rpm/	5200) factor[(1700/	5200),(1500/	5200)]))";
+			};
+			class Engine3_int
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\armor\MBT_03\MBT_engine_int_rpm4",
+					0.50118721,
+					1
+				};
+				frequency="0.8	+	((rpm/	5200) factor[(1500/	5200),(2100/	5200)])*0.1";
+				volume="engineOn*(1-camPos)*(((rpm/	5200) factor[(1500/	5200),(1670/	5200)])	*	((rpm/	5200) factor[(2100/	5200),(1800/	5200)]))";
+			};
+			class Engine4_int
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\armor\MBT_03\MBT_engine_int_rpm5",
+					0.56234133,
+					1
+				};
+				frequency="0.8	+	((rpm/	5200) factor[(1800/	5200),(2300/	5200)])*0.1";
+				volume="engineOn*(1-camPos)*(((rpm/	5200) factor[(1780/	5200),(2060/	5200)])	*	((rpm/	5200) factor[(2450/	5200),(2200/	5200)]))";
+			};
+			class Engine5_int
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\armor\MBT_03\MBT_engine_int_rpm6",
+					0.63095737,
+					1
+				};
+				frequency="0.8	+	((rpm/	5200) factor[(2100/	5200),(2640/	5200)])*0.1";
+				volume="engineOn*(1-camPos)*((rpm/	5200) factor[(2150/	5200),(2500/	5200)])";
+			};
+			class IdleThrust_int
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\armor\MBT_03\MBT_exhaust_int_idle",
+					0.35481337,
+					1
+				};
+				frequency="0.8	+	((rpm/	5200) factor[(400/	5200),(900/	5200)])*0.15";
+				volume="engineOn*(1-camPos)*(0.4+(0.6*(thrust factor[0.1,1])))*(((rpm/	5200) factor[(100/	5200),(200/	5200)])	*	((rpm/	5200) factor[(900/	5200),(700/	5200)]))";
+			};
+			class EngineThrust_int
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\armor\MBT_03\MBT_exhaust_int_rpm1",
+					0.39810717,
+					1
+				};
+				frequency="0.8	+	((rpm/	5200) factor[(700/	5200),(1100/	5200)])*0.2";
+				volume="engineOn*(1-camPos)*(0.4+(0.6*(thrust factor[0.1,1])))*(((rpm/	5200) factor[(705/	5200),(850/	5200)])	*	((rpm/	5200) factor[(1100 /	5200),(950/	5200)]))";
+			};
+			class Engine1_Thrust_int
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\armor\MBT_03\MBT_exhaust_int_rpm2",
+					0.44668359,
+					1
+				};
+				frequency="0.8	+	((rpm/	5200) factor[(950/	5200),(1400/	5200)])*0.2";
+				volume="engineOn*(1-camPos)*(0.4+(0.6*(thrust factor[0.1,1])))*(((rpm/	5200) factor[(900/	5200),(1050/	5200)])	*	((rpm/	5200) factor[(1400/	5200),(1200/	5200)]))";
+			};
+			class Engine2_Thrust_int
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\armor\MBT_03\MBT_exhaust_int_rpm3",
+					0.44668359,
+					1
+				};
+				frequency="0.8	+	((rpm/	5200) factor[(1200/	5200),(1700/	5200)])*0.2";
+				volume="engineOn*(1-camPos)*(0.4+(0.6*(thrust factor[0.1,1])))*(((rpm/	5200) factor[(1170/	5200),(1380/	5200)])	*	((rpm/	5200) factor[(1700/	5200),(1500/	5200)]))";
+			};
+			class Engine3_Thrust_int
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\armor\MBT_03\MBT_exhaust_int_rpm4",
+					0.50118721,
+					1
+				};
+				frequency="0.8	+	((rpm/	5200) factor[(1500/	5200),(2100/	5200)])*0.1";
+				volume="engineOn*(1-camPos)*(0.4+(0.6*(thrust factor[0.1,1])))*(((rpm/	5200) factor[(1500/	5200),(1670/	5200)])	*	((rpm/	5200) factor[(2100/	5200),(1800/	5200)]))";
+			};
+			class Engine4_Thrust_int
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\armor\MBT_03\MBT_exhaust_int_rpm5",
+					0.56234133,
+					1
+				};
+				frequency="0.8	+	((rpm/	5200) factor[(1800/	5200),(2300/	5200)])*0.1";
+				volume="engineOn*(1-camPos)*(0.4+(0.6*(thrust factor[0.1,1])))*(((rpm/	5200) factor[(1780/	5200),(2060/	5200)])	*	((rpm/	5200) factor[(2450/	5200),(2200/	5200)]))";
+			};
+			class Engine5_Thrust_int
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\armor\MBT_03\MBT_exhaust_int_rpm6",
+					0.63095737,
+					1
+				};
+				frequency="0.8	+	((rpm/	5200) factor[(2100/	5200),(2640/	5200)])*0.1";
+				volume="engineOn*(1-camPos)*(0.4+(0.6*(thrust factor[0.1,1])))*((rpm/	5200) factor[(2150/	5200),(2500/	5200)])";
+			};
+			class NoiseInt
+			{
+				sound[]=
+				{
+					"A3\sounds_f\vehicles\armor\noises\noise_tank_int_1",
+					0.56234133,
+					1
+				};
+				frequency="1";
+				volume="(1-camPos)*(angVelocity max 0.04)*(speed factor[4, 25])";
+			};
+			class NoiseExt
+			{
+				sound[]=
+				{
+					"A3\sounds_f\vehicles\armor\noises\noise_tank_ext_1",
+					0.79432821,
+					1,
+					150
+				};
+				frequency="1";
+				volume="camPos*(angVelocity max 0.04)*(speed factor[4, 25])";
+			};
+			class ThreadsOutH0
+			{
+				sound[]=
+				{
+					"\rhsafrf\addons\rhs_bmp\sounds\lanc_2.ogg",
+					0.39810717,
+					1,
+					140
+				};
+				frequency="1";
+				volume="engineOn*camPos*(1-grass)*(((((-speed*3.6) max speed*3.6)/	60) factor[(((-0) max 0)/	60),(((-5) max 5)/	60)])	*	((((-speed*3.6) max speed*3.6)/	60) factor[(((-15) max 15)/	60),(((-10) max 10)/	60)]))";
+			};
+			class ThreadsOutH1
+			{
+				sound[]=
+				{
+					"\rhsafrf\addons\rhs_bmp\sounds\lanc_2.ogg",
+					0.44668359,
+					1,
+					160
+				};
+				frequency="1";
+				volume="engineOn*camPos*(1-grass)*(((((-speed*3.6) max speed*3.6)/	60) factor[(((-10) max 10)/	60),(((-15) max 15)/	60)])	*	((((-speed*3.6) max speed*3.6)/	60) factor[(((-30) max 30)/	60),(((-25) max 25)/	60)]))";
+			};
+			class ThreadsOutH2
+			{
+				sound[]=
+				{
+					"\rhsafrf\addons\rhs_bmp\sounds\lanc_3.ogg",
+					0.50118721,
+					1,
+					180
+				};
+				frequency="1";
+				volume="engineOn*camPos*(1-grass)*(((((-speed*3.6) max speed*3.6)/	60) factor[(((-25) max 25)/	60),(((-30) max 30)/	60)])	*	((((-speed*3.6) max speed*3.6)/	60) factor[(((-45) max 45)/	60),(((-40) max 40)/	60)]))";
+			};
+			class ThreadsOutH3
+			{
+				sound[]=
+				{
+					"\rhsafrf\addons\rhs_bmp\sounds\lanc_4.ogg",
+					0.56234133,
+					1,
+					200
+				};
+				frequency="1";
+				volume="engineOn*camPos*(1-grass)*(((((-speed*3.6) max speed*3.6)/	60) factor[(((-40) max 40)/	60),(((-45) max 45)/	60)])	*	((((-speed*3.6) max speed*3.6)/	60) factor[(((-55) max 55)/	60),(((-50) max 50)/	60)]))";
+			};
+			class ThreadsOutH4
+			{
+				sound[]=
+				{
+					"\rhsafrf\addons\rhs_bmp\sounds\lanc_5.ogg",
+					0.56234133,
+					1,
+					220
+				};
+				frequency="1";
+				volume="engineOn*camPos*(1-grass)*((((-speed*3.6) max speed*3.6)/	60) factor[(((-49) max 49)/	60),(((-53) max 53)/	60)])";
+			};
+			class ThreadsOutS0
+			{
+				sound[]=
+				{
+					"\rhsafrf\addons\rhs_bmp\sounds\lanc_2.ogg",
+					0.31622776,
+					1,
+					120
+				};
+				frequency="1";
+				volume="engineOn*(camPos)*(grass)*(((((-speed*3.6) max speed*3.6)/	60) factor[(((-0) max 0)/	60),(((-5) max 5)/	60)])	*	((((-speed*3.6) max speed*3.6)/	60) factor[(((-15) max 15)/	60),(((-10) max 10)/	60)]))";
+			};
+			class ThreadsOutS1
+			{
+				sound[]=
+				{
+					"\rhsafrf\addons\rhs_bmp\sounds\lanc_2.ogg",
+					0.35481337,
+					1,
+					140
+				};
+				frequency="1";
+				volume="engineOn*(camPos)*(grass)*(((((-speed*3.6) max speed*3.6)/	60) factor[(((-10) max 10)/	60),(((-15) max 15)/	60)])	*	((((-speed*3.6) max speed*3.6)/	60) factor[(((-30) max 30)/	60),(((-25) max 25)/	60)]))";
+			};
+			class ThreadsOutS2
+			{
+				sound[]=
+				{
+					"\rhsafrf\addons\rhs_bmp\sounds\lanc_3.ogg",
+					0.39810717,
+					1,
+					160
+				};
+				frequency="1";
+				volume="engineOn*(camPos)*(grass)*(((((-speed*3.6) max speed*3.6)/	60) factor[(((-25) max 25)/	60),(((-30) max 30)/	60)])	*	((((-speed*3.6) max speed*3.6)/	60) factor[(((-45) max 45)/	60),(((-40) max 40)/	60)]))";
+			};
+			class ThreadsOutS3
+			{
+				sound[]=
+				{
+					"\rhsafrf\addons\rhs_bmp\sounds\lanc_4.ogg",
+					0.44668359,
+					1,
+					180
+				};
+				frequency="1";
+				volume="engineOn*(camPos)*(grass)*(((((-speed*3.6) max speed*3.6)/	60) factor[(((-40) max 40)/	60),(((-45) max 45)/	60)])	*	((((-speed*3.6) max speed*3.6)/	60) factor[(((-55) max 55)/	60),(((-50) max 50)/	60)]))";
+			};
+			class ThreadsOutS4
+			{
+				sound[]=
+				{
+					"\rhsafrf\addons\rhs_bmp\sounds\lanc_5.ogg",
+					0.50118721,
+					1,
+					200
+				};
+				frequency="1";
+				volume="engineOn*(camPos)*(grass)*((((-speed*3.6) max speed*3.6)/	60) factor[(((-49) max 49)/	60),(((-53) max 53)/	60)])";
+			};
+			class ThreadsInH0
+			{
+				sound[]=
+				{
+					"A3\sounds_f\vehicles\armor\treads\int_treads_hard_01",
+					0.44668359,
+					1
+				};
+				frequency="1";
+				volume="engineOn*(1-camPos)*(1-grass)*(((((-speed*3.6) max speed*3.6)/	60) factor[(((-0) max 0)/	60),(((-5) max 5)/	60)])	*	((((-speed*3.6) max speed*3.6)/	60) factor[(((-15) max 15)/	60),(((-10) max 10)/	60)]))";
+			};
+			class ThreadsInH1
+			{
+				sound[]=
+				{
+					"A3\sounds_f\vehicles\armor\treads\int_treads_hard_02",
+					0.44668359,
+					1
+				};
+				frequency="1";
+				volume="engineOn*(1-camPos)*(1-grass)*(((((-speed*3.6) max speed*3.6)/	60) factor[(((-10) max 10)/	60),(((-15) max 15)/	60)])	*	((((-speed*3.6) max speed*3.6)/	60) factor[(((-30) max 30)/	60),(((-25) max 25)/	60)]))";
+			};
+			class ThreadsInH2
+			{
+				sound[]=
+				{
+					"A3\sounds_f\vehicles\armor\treads\int_treads_hard_03",
+					0.44668359,
+					1
+				};
+				frequency="1";
+				volume="engineOn*(1-camPos)*(1-grass)*(((((-speed*3.6) max speed*3.6)/	60) factor[(((-25) max 25)/	60),(((-30) max 30)/	60)])	*	((((-speed*3.6) max speed*3.6)/	60) factor[(((-45) max 45)/	60),(((-40) max 40)/	60)]))";
+			};
+			class ThreadsInH3
+			{
+				sound[]=
+				{
+					"A3\sounds_f\vehicles\armor\treads\int_treads_hard_04",
+					0.50118721,
+					1
+				};
+				frequency="1";
+				volume="engineOn*(1-camPos)*(1-grass)*(((((-speed*3.6) max speed*3.6)/	60) factor[(((-40) max 40)/	60),(((-45) max 45)/	60)])	*	((((-speed*3.6) max speed*3.6)/	60) factor[(((-55) max 55)/	60),(((-50) max 50)/	60)]))";
+			};
+			class ThreadsInH4
+			{
+				sound[]=
+				{
+					"A3\sounds_f\vehicles\armor\treads\int_treads_hard_05",
+					0.56234133,
+					1
+				};
+				frequency="1";
+				volume="engineOn*(1-camPos)*(1-grass)*((((-speed*3.6) max speed*3.6)/	60) factor[(((-49) max 49)/	60),(((-53) max 53)/	60)])";
+			};
+			class ThreadsInS0
+			{
+				sound[]=
+				{
+					"A3\sounds_f\vehicles\armor\treads\int_treads_soft_01",
+					0.35481337,
+					1
+				};
+				frequency="1";
+				volume="engineOn*(1-camPos)*grass*(((((-speed*3.6) max speed*3.6)/	60) factor[(((-0) max 0)/	60),(((-5) max 5)/	60)])	*	((((-speed*3.6) max speed*3.6)/	60) factor[(((-15) max 15)/	60),(((-10) max 10)/	60)]))";
+			};
+			class ThreadsInS1
+			{
+				sound[]=
+				{
+					"A3\sounds_f\vehicles\armor\treads\int_treads_soft_02",
+					0.35481337,
+					1
+				};
+				frequency="1";
+				volume="engineOn*(1-camPos)*grass*(((((-speed*3.6) max speed*3.6)/	60) factor[(((-10) max 10)/	60),(((-15) max 15)/	60)])	*	((((-speed*3.6) max speed*3.6)/	60) factor[(((-30) max 30)/	60),(((-25) max 25)/	60)]))";
+			};
+			class ThreadsInS2
+			{
+				sound[]=
+				{
+					"A3\sounds_f\vehicles\armor\treads\int_treads_soft_03",
+					0.39810717,
+					1
+				};
+				frequency="1";
+				volume="engineOn*(1-camPos)*grass*(((((-speed*3.6) max speed*3.6)/	60) factor[(((-25) max 25)/	60),(((-30) max 30)/	60)])	*	((((-speed*3.6) max speed*3.6)/	60) factor[(((-45) max 45)/	60),(((-40) max 40)/	60)]))";
+			};
+			class ThreadsInS3
+			{
+				sound[]=
+				{
+					"A3\sounds_f\vehicles\armor\treads\int_treads_soft_04",
+					0.39810717,
+					1
+				};
+				frequency="1";
+				volume="engineOn*(1-camPos)*grass*(((((-speed*3.6) max speed*3.6)/	60) factor[(((-40) max 40)/	60),(((-45) max 45)/	60)])	*	((((-speed*3.6) max speed*3.6)/	60) factor[(((-55) max 55)/	60),(((-50) max 50)/	60)]))";
+			};
+			class ThreadsInS4
+			{
+				sound[]=
+				{
+					"A3\sounds_f\vehicles\armor\treads\int_treads_soft_05",
+					0.44668359,
+					1
+				};
+				frequency="1";
+				volume="engineOn*(1-camPos)*grass*((((-speed*3.6) max speed*3.6)/	60) factor[(((-49) max 49)/	60),(((-53) max 53)/	60)])";
+			};
+		};
 		driverCanSee="2+4+8";
+		gunnerCanSee="2+4+8";
 		commanderCanSee="2+4+8";
 		tracksSpeed=1.35;
 		wheelCircumference=1.9220001;
 		attenuationEffectType="TankAttenuation";
+		textSingular="PTS";
+		textPlural="PTS";
 		nameSound="veh_vehicle_APC_s";
 		extCameraPosition[]={0,2,-15};
 		cost=1500000;
 		damageResistance=0.0084499996;
+		crewVulnerable=1;
 		armor=50;
 		armorStructural=500;
+		class TransportMagazines;  //found empty after stripping
+		class TransportWeapons;  //found empty after stripping
+		class TransportItems
+		{
+			class _xx_FirstAidKit
+			{
+				name="FirstAidKit";
+				count=4;
+			};
+			class _xx_Medikit
+			{
+				name="Medikit";
+				count=1;
+			};
+		};
+		class TransportBackpacks
+		{
+			class _xx_rhs_sidor
+			{
+				backpack="rhs_sidor";
+				count=7;
+			};
+		};
 		class HitPoints: HitPoints
 		{
 			class HitHull: HitHull
@@ -299,6 +1213,7 @@ class CfgVehicles
 				armor=0.40000001;
 				material=-1;
 				name="telo";
+				visual="zbytek";
 				passThrough=0;
 				minimalHit=0.44;
 				explosionShielding=0.5;
@@ -336,8 +1251,27 @@ class CfgVehicles
 			};
 		};
 		class Turrets: Turrets;  //found empty after stripping
+		hiddenSelections[]=
+		{
+			"n1",
+			"n2",
+			"n3"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa",
+			"rhsafrf\addons\rhs_decals\Data\Labels\Misc\no_ca.paa"
+		};
 		class Attributes
 		{
+			class ObjectTexture
+			{
+				control="ObjectTexture";
+				data="ObjectTexture";
+				displayName="Skin";
+				tooltip="Texture and material set applied on the object.";
+			};
 			class rhs_decalNumber_type
 			{
 				displayName="Define font type of plate number";
@@ -346,6 +1280,7 @@ class CfgVehicles
 				control="Combo";
 				expression="_this setVariable ['%s', _value];[_this,[['Number', cRHSPTSNumberPlaces, _value]]] call rhs_fnc_decalsInit";
 				defaultValue=0;
+				typeName="STRING";
 				class values
 				{
 					class Default
@@ -399,6 +1334,7 @@ class CfgVehicles
 				property="rhs_decalNumber";
 				control="Edit";
 				validate="Number";
+				typeName="Number";
 				defaultValue="-1";
 				expression="if( _value >= 0)then{if( _value == 0)then{{[_this setobjectTexture [_x,'a3\data_f\clear_empty.paa']]}foreach cRHSPTSNumberPlaces}else{[_this, [['Number', cRHSPTSNumberPlaces, _this getVariable ['rhs_decalNumber_type','Default'], _value] ] ] call rhs_fnc_decalsInit}};";
 			};
@@ -418,7 +1354,16 @@ class CfgVehicles
 				expression="if(_value == 1)then{[_this] spawn rhs_fnc_pts_cargoAttach}else{[_this] call rhs_fnc_pts_cargoDetach};";
 			};
 		};
-		class Damage;  //found empty after stripping
+		class Damage
+		{
+			tex[]={};
+			mat[]=
+			{
+				"rhsafrf\addons\rhs_pts\data\rhs_pts.rvmat",
+				"rhsafrf\addons\rhs_pts\data\rhs_dam_pts.rvmat",
+				"rhsafrf\addons\rhs_pts\data\rhs_destr_pts.rvmat"
+			};
+		};
 		class Exhausts
 		{
 			class Exhaust1
@@ -432,6 +1377,17 @@ class CfgVehicles
 				position="exhaustr";
 				direction="exhaustr_dir";
 				effect="ExhaustEffectTankSide";
+			};
+		};
+		class AnimationSources
+		{
+			class ramp
+			{
+				source="door";
+				initPhase=0;
+				animPeriod=5;
+				sound="ServoRampSound_2";
+				soundPosition="Ramp_01_axis";
 			};
 		};
 		class VehicleTransport
@@ -472,6 +1428,48 @@ class CfgVehicles
 				parachuteClassDefault="O_Parachute_02_F";
 				parachuteHeightLimitDefault=5;
 			};
+		};
+		class Reflectors
+		{
+			class Left
+			{
+				color[]={1900,1300,950};
+				ambient[]={5,5,5};
+				position="l svetlo";
+				direction="konec l svetla";
+				hitpoint="l svetlo";
+				selection="L svetlo";
+				size=1;
+				innerAngle=100;
+				outerAngle=179;
+				coneFadeCoef=10;
+				intensity=1;
+				useFlare=0;
+				dayLight=0;
+				flareSize=1;
+				class Attenuation
+				{
+					start=1;
+					constant=0;
+					linear=0;
+					quadratic=0.25;
+					hardLimitStart=30;
+					hardLimitEnd=60;
+				};
+			};
+			class Left2: Left
+			{
+				direction="konec l svetla";
+				useFlare=1;
+			};
+		};
+		aggregateReflectors[]=
+		{
+			
+			{
+				"Left",
+				"Left2"
+			}
 		};
 		armorLights=0.1;
 		class ViewPilot: ViewPilot
@@ -522,5 +1520,10 @@ class CfgVehicles
 			};
 		};
 	};
-	class rhs_pts_vmf: rhs_pts_base;  //found empty after stripping
+	class rhs_pts_vmf: rhs_pts_base
+	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_pts_vmf.paa";
+		author="$STR_RHS_AUTHOR_FULL";
+		scope=2;
+	};
 };

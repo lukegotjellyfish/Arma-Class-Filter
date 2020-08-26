@@ -23,7 +23,72 @@ class CfgPatches
 			"rhs_kamaz5350_flatbed_cover_vv"
 		};
 		weapons[]={};
+		requiredVersion=1.6;
+		requiredAddons[]=
+		{
+			"rhs_main",
+			"rhs_c_troops"
+		};
 		name="KamAZ 5350";
+		author="$STR_RHS_AUTHOR_FULL";
+		url="http://www.rhsmods.org/";
+	};
+};
+class CfgMovesBasic
+{
+	class DefaultDie;
+	class ManActions
+	{
+		RHS_Kamaz_Cargo01="RHS_Kamaz_Cargo01";
+		RHS_Kamaz_Turnout01="RHS_Kamaz_Turnout01";
+	};
+};
+class CfgMovesMaleSdr: CfgMovesBasic
+{
+	class States
+	{
+		class Crew;
+		class KIA_RHS_Kamaz_Cargo01: DefaultDie
+		{
+			actions="DeadActions";
+			file="\rhsafrf\addons\rhs_c_kamaz\anims\rhs_kamaz_cargo01_KIA.rtm";
+			speed=1;
+			looped=0;
+			terminal=1;
+			soundEnabled=0;
+			connectTo[]=
+			{
+				"Unconscious",
+				0.1
+			};
+		};
+		class RHS_Kamaz_Cargo01: Crew
+		{
+			file="\rhsafrf\addons\rhs_c_kamaz\anims\rhs_kamaz_cargo01.rtm";
+			speed=0.049917001;
+			interpolateTo[]=
+			{
+				"KIA_RHS_Kamaz_Cargo01",
+				1
+			};
+		};
+		class passenger_inside_7_Aim;
+		class RHS_Kamaz_Turnout01: passenger_inside_7_Aim
+		{
+			actions="passenger_inside_7Actions";
+			file="\A3\cargoposes_F_heli\anim\vehicle_passenger_stand_1aim_passenger_flatground_4aim.rtm";
+			speed=-1.1;
+			looped=0;
+			minplaytime=0.94999999;
+			InterpolateTo[]=
+			{
+				"passenger_inside_7_aim",
+				0.1
+			};
+			ConnectTo[]={};
+			variantsAI[]={};
+			variantsPlayer[]={};
+		};
 	};
 };
 class CfgFunctions
@@ -62,6 +127,28 @@ class CfgFunctions
 	};
 };
 class RscPicture;
+class RscInGameUI
+{
+	class RscUnitInfo;
+	class RscWeaponZeroing: RscUnitInfo
+	{
+		class WeaponInfoControlsGroupLeft;
+	};
+	class rhs_kamaz_hatch: RscWeaponZeroing
+	{
+		idd=300;
+		controls[]=
+		{
+			"CA_Zeroing",
+			"RHS_tigr_handler"
+		};
+		class RHS_tigr_handler: RscPicture
+		{
+			idc=59999;
+		};
+		onLoad="['onLoad',_this,'RscUnitInfo','IGUI'] call (uinamespace getvariable 'BIS_fnc_initDisplay'); [_this select 0] call RHS_fnc_hatch_control";
+	};
+};
 class CfgVehicles
 {
 	class LandVehicle;
@@ -119,19 +206,24 @@ class CfgVehicles
 			class HitFuel;
 			class HitEngine;
 		};
+		class AnimationSources: AnimationSources;  //found empty after stripping
 	};
 	class O_Truck_02_covered_F: Truck_02_base_F
 	{
 		class CargoTurret;
 		class Turrets: Turrets
 		{
+			class CargoTurret_01: CargoTurret;  //found empty after stripping
 			class CargoTurret_02: CargoTurret_01;  //found empty after stripping
 		};
 		class EventHandlers;
 	};
 	class rhs_kamaz5350: O_Truck_02_covered_F
 	{
+		dlc="RHS_AFRF";
+		scope=1;
 		displayName="KamAZ-5350";
+		model="rhsafrf\addons\rhs_kamaz\rhs_kamaz5350";
 		normalSpeedForwardCoef=0.75;
 		slowSpeedForwardCoef=0.44999999;
 		terrainCoef=1.2;
@@ -238,6 +330,11 @@ class CfgVehicles
 			class L1
 			{
 				side="left";
+				boneName="wheel_1_1_damper";
+				center="wheel_1_1_axis";
+				boundary="wheel_1_1_bound";
+				suspForceAppPointOffset="wheel_1_1_axis";
+				tireForceAppPointOffset="wheel_1_1_axis";
 				suspTravelDirection[]={-0.125,-1,0};
 				width=0.34999999;
 				steering=1;
@@ -265,32 +362,57 @@ class CfgVehicles
 			};
 			class L2: L1
 			{
+				boneName="wheel_1_2_damper";
 				steering=0;
+				center="wheel_1_2_axis";
+				boundary="wheel_1_3_bound";
+				suspForceAppPointOffset="wheel_1_2_axis";
+				tireForceAppPointOffset="wheel_1_2_axis";
 				sprungMass=1500;
 				springStrength=64000;
 				springDamperRate=9000;
 			};
 			class L3: L2
 			{
+				boneName="wheel_1_3_damper";
 				steering=0;
+				center="wheel_1_3_axis";
+				boundary="wheel_1_2_bound";
+				suspForceAppPointOffset="wheel_1_3_axis";
+				tireForceAppPointOffset="wheel_1_3_axis";
 				maxHandBrakeTorque=300000;
 			};
 			class R1: L1
 			{
+				boneName="wheel_2_1_damper";
+				center="wheel_2_1_axis";
+				boundary="wheel_2_1_bound";
+				suspForceAppPointOffset="wheel_2_1_axis";
+				tireForceAppPointOffset="wheel_2_1_axis";
 				steering=1;
 				side="right";
 				suspTravelDirection[]={0.125,-1,0};
 			};
 			class R2: L2
 			{
+				boneName="wheel_2_2_damper";
 				steering=0;
+				center="wheel_2_2_axis";
+				boundary="wheel_2_3_bound";
+				suspForceAppPointOffset="wheel_2_2_axis";
+				tireForceAppPointOffset="wheel_2_2_axis";
 				side="right";
 				suspTravelDirection[]={0.125,-1,0};
 				maxHandBrakeTorque=0;
 			};
 			class R3: R2
 			{
+				boneName="wheel_2_3_damper";
 				steering=0;
+				center="wheel_2_3_axis";
+				boundary="wheel_2_2_bound";
+				suspForceAppPointOffset="wheel_2_3_axis";
+				tireForceAppPointOffset="wheel_2_3_axis";
 				maxHandBrakeTorque=300000;
 			};
 		};
@@ -298,12 +420,365 @@ class CfgVehicles
 		{
 			"['Number', [5,6,7,8], 'Default']"
 		};
+		category="Car";
+		vehicleClass="rhs_vehclass_truck";
+		editorSubcategory="rhs_EdSubcat_truck";
+		hiddenSelections[]=
+		{
+			"camo1",
+			"camo2",
+			"camo3",
+			"camo4",
+			"",
+			"n1",
+			"n2",
+			"n3",
+			"n4",
+			"i2",
+			"i4"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"\rhsafrf\addons\rhs_kamaz\data\Kamaz5350_cabin_co.paa",
+			"\rhsafrf\addons\rhs_kamaz\data\Kamaz5350_cargo_co.paa",
+			"\rhsafrf\addons\rhs_kamaz\data\kamaz5350_base_co.paa",
+			"\rhsafrf\addons\rhs_kamaz\data\bed\rhs_kamaz_bed_co.paa",
+			"\rhsafrf\addons\rhs_kamaz\data\bed\rhs_kamaz_cover_co.paa"
+		};
 		hideProxyInCombat=1;
 		canHideDriver=0;
+		viewDriverInExternal=1;
+		driverAction="driver_Truck_02";
+		driverInAction="driver_Truck_02";
 		driverLeftLegAnimName="pedalL";
 		driverRightLegAnimName="pedalR";
-		class Damage;  //found empty after stripping
+		driverRightHandAnimName="shift";
+		tf_hasLRradio_api=0;
+		class Damage
+		{
+			tex[]={};
+			mat[]=
+			{
+				"rhsafrf\addons\rhs_a2port_car\Ural\Data\rhs_kama.rvmat",
+				"rhsafrf\addons\rhs_a2port_car\Ural\Data\rhs_kama_damage.rvmat",
+				"rhsafrf\addons\rhs_a2port_car\Ural\Data\rhs_kama_damage.rvmat",
+				"rhsafrf\addons\rhs_kamaz\data\kamaz5350_base.rvmat",
+				"rhsafrf\addons\rhs_kamaz\data\kamaz5350_base_damage.rvmat",
+				"rhsafrf\addons\rhs_kamaz\data\kamaz5350_base_destruct.rvmat",
+				"rhsafrf\addons\rhs_kamaz\data\kamaz5350_cabin.rvmat",
+				"rhsafrf\addons\rhs_kamaz\data\kamaz5350_cabin_damage.rvmat",
+				"rhsafrf\addons\rhs_kamaz\data\kamaz5350_cabin_destruct.rvmat",
+				"rhsafrf\addons\rhs_kamaz\data\kamaz5350_cargo.rvmat",
+				"rhsafrf\addons\rhs_kamaz\data\kamaz5350_cargo_damage.rvmat",
+				"rhsafrf\addons\rhs_kamaz\data\kamaz5350_cargo_destruct.rvmat",
+				"rhsafrf\addons\rhs_kamaz\data\kamaz5350_glass.rvmat",
+				"rhsafrf\addons\rhs_kamaz\data\kamaz5350_glass_damage.rvmat",
+				"rhsafrf\addons\rhs_kamaz\data\kamaz5350_glass_damage.rvmat",
+				"rhsafrf\addons\rhs_kamaz\data\kamaz5350_glass_in.rvmat",
+				"rhsafrf\addons\rhs_kamaz\data\kamaz5350_glass_in_damage.rvmat",
+				"rhsafrf\addons\rhs_kamaz\data\kamaz5350_glass_in_damage.rvmat",
+				"rhsafrf\addons\rhs_kamaz\data\bed\rhs_kamaz_bed.rvmat",
+				"rhsafrf\addons\rhs_kamaz\data\bed\rhs_kamaz_bed_damage.rvmat",
+				"rhsafrf\addons\rhs_kamaz\data\kamaz5350_base_destruct.rvmat",
+				"rhsafrf\addons\rhs_kamaz\data\bed\rhs_kamaz_cover.rvmat",
+				"rhsafrf\addons\rhs_kamaz\data\bed\rhs_kamaz_cover_damage.rvmat",
+				"rhsafrf\addons\rhs_kamaz\data\kamaz5350_base_destruct.rvmat",
+				"A3\soft_f_beta\Truck_02\Data\Truck_02_int.rvmat",
+				"A3\soft_f_beta\Truck_02\Data\Truck_02_int_damage.rvmat",
+				"A3\soft_f_beta\Truck_02\Data\Truck_02_int_destruct.rvmat",
+				"A3\soft_f_beta\Truck_02\Data\Truck_02_int_VP.rvmat",
+				"A3\soft_f_beta\Truck_02\Data\Truck_02_int_damage.rvmat",
+				"A3\soft_f_beta\Truck_02\Data\Truck_02_int_destruct.rvmat",
+				"A3\soft_f_beta\Truck_02\Data\Truck_02_panel.rvmat",
+				"A3\soft_f_beta\Truck_02\Data\Truck_02_panel_damage.rvmat",
+				"A3\soft_f_beta\Truck_02\Data\Truck_02_panel_destruct.rvmat",
+				"A3\soft_f_beta\Truck_02\Data\Truck_02_panel_VP.rvmat",
+				"A3\soft_f_beta\Truck_02\Data\Truck_02_panel_damage.rvmat",
+				"A3\soft_f_beta\Truck_02\Data\Truck_02_panel_destruct.rvmat"
+			};
+		};
+		class Reflectors
+		{
+			class Left
+			{
+				color[]={1900,1300,950};
+				ambient[]={5,5,5};
+				position="Light_L";
+				direction="Light_L_end";
+				hitpoint="Light_L";
+				selection="Light_L";
+				size=1;
+				innerAngle=100;
+				outerAngle=179;
+				coneFadeCoef=10;
+				intensity=0.80000001;
+				useFlare=0;
+				dayLight=0;
+				flareSize=1;
+				class Attenuation
+				{
+					start=1;
+					constant=0;
+					linear=0;
+					quadratic=0.25;
+					hardLimitStart=30;
+					hardLimitEnd=60;
+				};
+			};
+			class Right: Left
+			{
+				position="Light_R";
+				direction="Light_R_end";
+				hitpoint="Light_R";
+				selection="Light_R";
+			};
+			class Right2: Right
+			{
+				useFlare=1;
+				position="light_R_flare";
+			};
+			class Left2: Left
+			{
+				useFlare=1;
+				position="light_L_flare";
+			};
+			class Searchlight: Left
+			{
+				position="Searchlight_pos";
+				direction="Searchlight_dir";
+				hitpoint="Searchlight";
+				selection="Searchlight";
+				useFlare=1;
+				intensity=0.5;
+				innerAngle=35;
+				outerAngle=179;
+			};
+			class Long_Left
+			{
+				color[]={1900,1300,950};
+				ambient[]={5,5,5};
+				position="Light_L_Long";
+				direction="Light_L_Long_end";
+				hitpoint="Light_L";
+				selection="Light_L";
+				size=1;
+				innerAngle=22;
+				outerAngle=29;
+				coneFadeCoef=1;
+				intensity=100;
+				useFlare=0;
+				dayLight=0;
+				flareSize=1.5;
+				flareMaxDistance=750;
+				class Attenuation
+				{
+					start=1;
+					constant=0;
+					linear=0.1;
+					quadratic=0;
+					hardLimitStart=500;
+					hardLimitEnd=750;
+				};
+			};
+			class Long_Right: Long_Left
+			{
+				position="Light_R_Long";
+				direction="Light_R_Long_end";
+				hitpoint="Light_R";
+				selection="Light_R";
+			};
+			class Long_Right2: Long_Right
+			{
+				useFlare=1;
+				position="light_R_Long_flare";
+				innerAngle=50;
+				outerAngle=179;
+				coneFadeCoef=51;
+				intensity=5;
+				class Attenuation
+				{
+					start=0;
+					constant=0;
+					linear=1;
+					quadratic=50;
+					hardLimitStart=0;
+					hardLimitEnd=3;
+				};
+			};
+			class Long_Left2: Long_Left
+			{
+				useFlare=1;
+				position="light_L_Long_flare";
+				innerAngle=100;
+				outerAngle=179;
+				coneFadeCoef=11;
+				intensity=5;
+				class Attenuation
+				{
+					start=0;
+					constant=0;
+					linear=1;
+					quadratic=50;
+					hardLimitStart=0;
+					hardLimitEnd=3;
+				};
+			};
+			class cabin
+			{
+				color[]={800,900,650};
+				ambient[]={5,0,0};
+				intensity=4;
+				size=1;
+				innerAngle=90;
+				outerAngle=165;
+				coneFadeCoef=1;
+				position="cabin_light";
+				direction="cabin_light_dir";
+				hitpoint="cabin_light";
+				selection="cabin_light";
+				useFlare=1;
+				flareSize=1;
+				flareMaxDistance=5;
+				dayLight=0;
+				blinking=0;
+				class Attenuation
+				{
+					start=0;
+					constant=0;
+					linear=1;
+					quadratic=50;
+					hardLimitStart=1.5;
+					hardLimitEnd=2;
+				};
+			};
+			class reverse_light: Left
+			{
+				color[]={1900,1300,950};
+				ambient[]={5,0,0};
+				intensity=0.80000001;
+				useFlare=1;
+				innerAngle=50;
+				outerAngle=179;
+				position="reverse_light_pos";
+				direction="reverse_light_dir";
+				hitpoint="reverse_light_hit";
+				selection="reverse_light";
+			};
+		};
+		aggregateReflectors[]=
+		{
+			
+			{
+				"Left",
+				"Right",
+				"Left2",
+				"Right2"
+			},
+			
+			{
+				"Long_Left2",
+				"Long_Right2"
+			}
+		};
 		armorLights=0.0099999998;
+		class AnimationSources: AnimationSources
+		{
+			class Door_LF
+			{
+				source="door";
+				animPeriod=0.80000001;
+				sound="RHS_Ural_Door";
+				soundPosition="DoorL_axis";
+				mass=1;
+				displayName="open left door";
+			};
+			class Door_RF: Door_LF
+			{
+				displayName="open right door";
+				soundPosition="DoorR_axis";
+			};
+			class Hatch: Door_LF
+			{
+				sound="";
+				soundPosition="";
+				displayName="open top hatch";
+			};
+			class gearbox: Door_LF
+			{
+				sound="RHS_gearbox";
+				soundPosition="gear_axis";
+				displayName="";
+			};
+			class HitSpare
+			{
+				source="Hit";
+				hitpoint="HitSpare";
+				raw=1;
+			};
+			class UseSpare: HitSpare
+			{
+				hitpoint="UseSpare";
+			};
+			class longlights_hide
+			{
+				source="user";
+				animPeriod=1e-006;
+				initPhase=1;
+			};
+			class shortlights_hide: longlights_hide
+			{
+				initPhase=0;
+			};
+			class lights_hide: longlights_hide
+			{
+				initPhase=0;
+			};
+			class searchlight_hide: longlights_hide;  //found empty after stripping
+			class cabinlights_hide: longlights_hide;  //found empty after stripping
+			class searchlight_rot
+			{
+				source="user";
+				animPeriod=1;
+				initPhase=0;
+			};
+			class turnout1
+			{
+				source="user";
+				animPeriod=1;
+				initPhase=0;
+			};
+			class turnout2: turnout1;  //found empty after stripping
+			class spare_hide
+			{
+				mass=1;
+				source="user";
+				displayName="hide spare wheel";
+				animPeriod=0.1;
+				initPhase=0;
+			};
+			class bench_hide: spare_hide
+			{
+				displayName="hide cargo bench";
+				onPhaseChanged="(_this select 0) animateSource ['bench_hide',(_this select 1),true];";
+			};
+			class cover_hide: spare_hide
+			{
+				displayName="hide cover";
+				onPhaseChanged="(_this select 0) animateSource ['cover_hide',(_this select 1),true];";
+			};
+			class back_door: spare_hide
+			{
+				displayName="open back door";
+				onPhaseChanged="(_this select 0) animateSource ['back_door',(_this select 1),true];";
+			};
+			class cover_end_hide: spare_hide
+			{
+				displayName="open cover end";
+				source="door";
+				initPhase=1;
+				onPhaseChanged="(_this select 0) animateDoor ['cover_end_hide',(_this select 1),true];";
+			};
+		};
 		class HitPoints: HitPoints
 		{
 			class HitFuel: HitFuel
@@ -321,10 +796,51 @@ class CfgVehicles
 				minimalHit=0.0099999998;
 				explosionShielding=0.5;
 				radius=0.12;
+				visual="zbytek";
+				class DestructionEffects
+				{
+					ammoExplosionEffect="";
+					class RHS_Engine_Smoke
+					{
+						simulation="particles";
+						type="SmallWreckSmoke";
+						position="engine_smoke1";
+						intensity=0.5;
+						interval=1;
+						lifeTime=60;
+					};
+					class RHS_Engine_Fire: RHS_Engine_Smoke
+					{
+						type="SmallFireFPlace";
+					};
+					class RHS_Engine_Sparks: RHS_Engine_Smoke
+					{
+						type="RHS_FireSparks";
+					};
+					class RHS_Engine_Sounds: RHS_Engine_Smoke
+					{
+						simulation="sound";
+						type="Fire";
+					};
+					class RHS_Engine_Smoke_small1: RHS_Engine_Smoke
+					{
+						type="WeaponWreckSmoke";
+						position="engine_smoke2";
+					};
+					class RHS_Engine_Smoke_small2: RHS_Engine_Smoke_small1
+					{
+						position="engine_smoke3";
+					};
+					class RHS_Engine_Smoke_small3: RHS_Engine_Smoke
+					{
+						position="engine_smoke4";
+					};
+				};
 			};
 			class HitLFWheel: HitLFWheel
 			{
 				radius=0.25;
+				visual="wheel_1_1_damage";
 				armorComponent="wheel_1_1_hide";
 				armor=-200;
 				minimalHit=-0.0099999998;
@@ -334,6 +850,7 @@ class CfgVehicles
 			class HitLF2Wheel: HitLF2Wheel
 			{
 				radius=0.25;
+				visual="wheel_1_2_damage";
 				armorComponent="wheel_1_2_hide";
 				armor=-200;
 				minimalHit=-0.0099999998;
@@ -343,6 +860,7 @@ class CfgVehicles
 			class HitLMWheel: HitLMWheel
 			{
 				radius=0.25;
+				visual="wheel_1_3_damage";
 				armorComponent="wheel_1_3_hide";
 				armor=-200;
 				minimalHit=-0.0099999998;
@@ -352,6 +870,7 @@ class CfgVehicles
 			class HitLBWheel: HitLBWheel
 			{
 				radius=0.25;
+				visual="wheel_1_4_damage";
 				armorComponent="wheel_1_4_hide";
 				armor=-200;
 				minimalHit=-0.0099999998;
@@ -361,6 +880,7 @@ class CfgVehicles
 			class HitRFWheel: HitRFWheel
 			{
 				radius=0.25;
+				visual="wheel_2_1_damage";
 				armorComponent="wheel_2_1_hide";
 				armor=-200;
 				minimalHit=-0.0099999998;
@@ -370,6 +890,7 @@ class CfgVehicles
 			class HitRF2Wheel: HitRF2Wheel
 			{
 				radius=0.25;
+				visual="wheel_2_2_damage";
 				armorComponent="wheel_2_2_hide";
 				armor=-200;
 				minimalHit=-0.0099999998;
@@ -379,6 +900,7 @@ class CfgVehicles
 			class HitRMWheel: HitRMWheel
 			{
 				radius=0.25;
+				visual="wheel_2_3_damage";
 				armorComponent="wheel_2_3_hide";
 				armor=-200;
 				minimalHit=-0.0099999998;
@@ -388,6 +910,7 @@ class CfgVehicles
 			class HitRBWheel: HitRBWheel
 			{
 				radius=0.25;
+				visual="wheel_2_4_damage";
 				armorComponent="wheel_2_4_hide";
 				armor=-200;
 				minimalHit=-0.0099999998;
@@ -443,6 +966,7 @@ class CfgVehicles
 			class UseSpare: HitSpare
 			{
 				name="";
+				visual="-";
 				armor=1;
 			};
 		};
@@ -451,6 +975,14 @@ class CfgVehicles
 			class standard
 			{
 				displayName="Standard";
+				textures[]=
+				{
+					"\rhsafrf\addons\rhs_kamaz\data\Kamaz5350_cabin_co.paa",
+					"\rhsafrf\addons\rhs_kamaz\data\Kamaz5350_cargo_co.paa",
+					"\rhsafrf\addons\rhs_kamaz\data\kamaz5350_base_co.paa",
+					"\rhsafrf\addons\rhs_kamaz\data\bed\rhs_kamaz_bed_co.paa",
+					"\rhsafrf\addons\rhs_kamaz\data\bed\rhs_kamaz_cover_co.paa"
+				};
 				factions[]=
 				{
 					"rhs_faction_vmf",
@@ -460,8 +992,16 @@ class CfgVehicles
 				};
 			};
 		};
+		textureList[]={};
 		class Attributes
 		{
+			class ObjectTexture
+			{
+				control="ObjectTexture";
+				data="ObjectTexture";
+				displayName="Skin";
+				tooltip="Texture and material set applied on the object.";
+			};
 			class rhs_decalNumber_type
 			{
 				displayName="Define font type of plate number";
@@ -470,6 +1010,7 @@ class CfgVehicles
 				control="Combo";
 				expression="_this setVariable ['%s', _value];[_this,[['Number', [5,6,7,8], _value]]] call rhs_fnc_decalsInit";
 				defaultValue=0;
+				typeName="STRING";
 				class values
 				{
 					class Default
@@ -523,6 +1064,7 @@ class CfgVehicles
 				property="rhs_decalNumber";
 				control="Edit";
 				validate="Number";
+				typeName="Number";
 				defaultValue="-1";
 				expression="if(_value >= 0)then{[_this,[['Number', [5,6,7,8], _this getVariable ['rhs_decalNumber_type','Default'], _value]]] call rhs_fnc_decalsInit};";
 			};
@@ -534,6 +1076,7 @@ class CfgVehicles
 				control="Combo";
 				expression="_this setVariable ['%s', _value];";
 				defaultValue="0";
+				typeName="STRING";
 				class values
 				{
 					class Army
@@ -624,6 +1167,53 @@ class CfgVehicles
 				property="back_door";
 			};
 		};
+		class UserActions
+		{
+			class lights_toggle
+			{
+				displayName="Toggle short/long lights";
+				position="";
+				shortcut="vehLockTargets";
+				radius=12;
+				priority=1.5;
+				showWindow=0;
+				onlyForplayer=1;
+				condition="(player == driver this) AND (isLightOn this)";
+				statement="[this,0] call rhs_fnc_carLightToggle";
+			};
+			class cabinlights_toggle: lights_toggle
+			{
+				shortcut="lockTarget";
+				displayName="Toggle cabin lights";
+				statement="[this,1] call rhs_fnc_carLightToggle";
+			};
+			class searchlight_toggle: lights_toggle
+			{
+				shortcut="";
+				displayName="Toggle searchlight";
+				statement="[this,3] call rhs_fnc_carLightToggle";
+			};
+			class searchlight_adjust: lights_toggle
+			{
+				shortcut="";
+				displayName="Adjust searchlight";
+				condition="((call rhs_fnc_findPlayer) == driver this) AND (isLightOn this) AND (this animationPhase 'searchlight_hide' == 0)";
+				statement="[this] spawn rhs_fnc_adjustSearchlight";
+			};
+			class open_rear: lights_toggle
+			{
+				shortcut="";
+				displayName="Lower rear cover";
+				condition="(((call rhs_fnc_findPlayer)) in (crew this)) && (this doorPhase 'cover_end_hide' > 0)";
+				statement="this animateDoor ['cover_end_hide',0,true]";
+			};
+			class close_rear: open_rear
+			{
+				displayName="Raise rear cover";
+				condition="(((call rhs_fnc_findPlayer)) in (crew this)) && (this doorPhase 'cover_end_hide' < 1)";
+				statement="this animateDoor ['cover_end_hide',1,true]";
+			};
+		};
 		class EventHandlers: EventHandlers
 		{
 			class RHS_EventHandlers
@@ -636,6 +1226,35 @@ class CfgVehicles
 				getout="if( (_this select 3) isEqualTo [2] )then{(_this select 0) animateDoor ['hatch',0]}";
 			};
 		};
+		driverDoor="Door_LF";
+		cargoDoors[]=
+		{
+			"Door_RF",
+			""
+		};
+		transportSoldier=13;
+		cargoProxyIndexes[]={2,3,4,5,6,7,8,9,10,11,12,13,14};
+		getInProxyOrder[]={1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16};
+		cargoAction[]=
+		{
+			"passenger_apc_narrow_generic03still_ns",
+			"passenger_apc_narrow_generic03",
+			"passenger_generic01_leanright",
+			"passenger_apc_generic01",
+			"passenger_apc_generic01",
+			"passenger_apc_generic03",
+			"passenger_apc_narrow_generic01",
+			"passenger_generic01_leanleft",
+			"passenger_apc_generic03",
+			"passenger_apc_narrow_generic02",
+			"passenger_apc_generic02",
+			"passenger_apc_generic01",
+			"passenger_generic01_foldhands",
+			"passenger_apc_generic04",
+			"passenger_generic01_leanleft"
+		};
+		getInAction="GetInMRAP_01";
+		getOutAction="GetOutLow";
 		cargoIsCoDriver[]={1,0};
 		cargoGetInAction[]=
 		{
@@ -654,10 +1273,61 @@ class CfgVehicles
 		};
 		class Turrets: Turrets
 		{
+			class CargoTurret_01: CargoTurret_01
+			{
+				gunnerForceOptics=0;
+				gunnerInAction="passenger_inside_2";
+				gunnerCompartments="Compartment2";
+				gunnerGetInAction="GetInHemttBack";
+				gunnerGetOutAction="GetOutHighZamak";
+				enabledByAnimationSource="cover_end_hide";
+				class TurnIn
+				{
+					limitsArrayTop[]=
+					{
+						{-5.9650998,-65.868103},
+						{17.3442,-42.642502},
+						{19.092899,-7.8701},
+						{-2.3450999,2.5708001}
+					};
+					limitsArrayBottom[]=
+					{
+						{-44.4687,-70.9972},
+						{-23.562599,5.0429001}
+					};
+				};
+				commanding=-2;
+				forceHideGunner=1;
+				viewGunnerInExternal=1;
+				class Hitpoints;  //found empty after stripping
+			};
 			class CargoTurret_02: CargoTurret_02
 			{
+				gunnerInAction="passenger_inside_2";
+				gunnerCompartments="Compartment2";
+				class TurnIn
+				{
+					limitsArrayTop[]=
+					{
+						{-9.8149996,-4.5300999},
+						{-1.5719,-1.2185},
+						{17.504999,16.3857},
+						{19.004,46.8344},
+						{-14.3588,76.119301},
+						{-21.8244,80}
+					};
+					limitsArrayBottom[]=
+					{
+						{-22.8074,-7.2107},
+						{-44.752102,10.6169},
+						{-44.846699,80}
+					};
+				};
+				gunnerGetInAction="GetInHemttBack";
+				gunnerGetOutAction="GetOutHighZamak";
 				enabledByAnimationSource="cover_end_hide";
 				forceHideGunner=1;
+				viewGunnerInExternal=1;
 				commanding=-2;
 				class Hitpoints;  //found empty after stripping
 			};
@@ -667,57 +1337,171 @@ class CfgVehicles
 				isPersonTurret=1;
 				canHideGunner=1;
 				forceHideGunner=0;
+				gunnerInAction="RHS_Kamaz_Cargo01";
+				gunnerAction="vehicle_turnout_2";
 				personTurretAction="vehicle_turnout_2";
+				gunnerGetInAction="GetInMRAP_01";
+				gunnerGetOutAction="GetOutLow";
+				memoryPointsGetInGunner="pos codriver";
+				memoryPointsGetInGunnerDir="pos codriver dir";
 				enabledByAnimationSource="hatch";
 				rhs_hatch_control=1;
+				gunnerCompartments="Compartment1";
+				gunnerName="Passenger (Cabin Seat)";
 				proxyIndex=1;
+				gunnerDoor="Door_RF";
+				class TurnIn
+				{
+					limitsArrayTop[]=
+					{
+						{-5.9650998,-65.868103},
+						{17.3442,-42.642502},
+						{19.092899,-7.8701},
+						{-2.3450999,2.5708001}
+					};
+					limitsArrayBottom[]=
+					{
+						{-44.4687,-70.9972},
+						{-23.562599,5.0429001}
+					};
+				};
+			};
+		};
+		class RenderTargets
+		{
+			class mirrorL
+			{
+				renderTarget="rendertarget0";
+				class mirror
+				{
+					pointPosition="PIP0_pos";
+					pointDirection="PIP0_dir";
+					renderVisionMode=4;
+					renderQuality=2;
+					fov=0.5;
+				};
+				BBoxes[]=
+				{
+					"PIP_0_TL",
+					"PIP_0_TR",
+					"PIP_0_BL",
+					"PIP_0_BR"
+				};
+			};
+			class mirrorR
+			{
+				renderTarget="rendertarget1";
+				class mirror
+				{
+					pointPosition="PIP1_pos";
+					pointDirection="PIP1_dir";
+					renderVisionMode=4;
+					renderQuality=2;
+					fov=0.5;
+				};
+				BBoxes[]=
+				{
+					"PIP_1_TL",
+					"PIP_1_TR",
+					"PIP_1_BL",
+					"PIP_1_BR"
+				};
+			};
+			class mirror_low
+			{
+				renderTarget="rendertarget2";
+				class mirror
+				{
+					pointPosition="PIP2_pos";
+					pointDirection="PIP2_dir";
+					renderVisionMode=4;
+					renderQuality=2;
+					fov=0.5;
+				};
+				BBoxes[]=
+				{
+					"PIP_2_TL",
+					"PIP_2_TR",
+					"PIP_2_BL",
+					"PIP_2_BR"
+				};
 			};
 		};
 	};
 	class rhs_kamaz5350_msv: rhs_kamaz5350
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_kamaz5350_msv.paa";
+		faction="rhs_faction_msv";
+		crew="rhs_msv_driver";
 		rhs_decalParameters[]=
 		{
 			"['Number', [5,6,7,8], 'Default']",
 			"['Label', [9], 'Platoon', 12]"
 		};
+		scope=2;
+		author="$STR_RHS_AUTHOR_FULL";
 	};
 	class rhs_kamaz5350_vdv: rhs_kamaz5350
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_kamaz5350_vdv.paa";
+		faction="rhs_faction_vdv";
+		crew="rhs_vdv_driver";
 		rhs_decalParameters[]=
 		{
 			"['Number', [5,6,7,8], 'Default']",
 			"['Label', [9], 'Army', 2]",
 			"['Label', [10], 'Platoon',11]"
 		};
+		scope=2;
+		author="$STR_RHS_AUTHOR_FULL";
 	};
 	class rhs_kamaz5350_vmf: rhs_kamaz5350
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_kamaz5350_vmf.paa";
+		faction="rhs_faction_vmf";
+		crew="rhs_vmf_flora_driver";
 		rhs_decalParameters[]=
 		{
 			"['Number', [5,6,7,8], 'Default']",
 			"['Label', [9], 'Army', [3,1]]"
 		};
+		scope=2;
+		author="$STR_RHS_AUTHOR_FULL";
 	};
 	class rhs_kamaz5350_vv: rhs_kamaz5350
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_kamaz5350_vv.paa";
+		faction="rhs_faction_vv";
+		crew="rhs_msv_driver";
 		rhs_decalParameters[]=
 		{
 			"['Number', [5,6,7,8], 'Default']",
 			"['Label', [9], 'Army', [6,1]]"
 		};
+		scope=2;
+		author="$STR_RHS_AUTHOR_FULL";
 	};
 	class rhs_kamaz5350_open: rhs_kamaz5350
 	{
+		scope=1;
 		displayName="KamAZ-5350 (Open)";
 		hideProxyInCombat=1;
 		class Turrets: Turrets
 		{
+			class CargoTurret_01: CargoTurret_01;  //found empty after stripping
 			class CargoTurret_02: CargoTurret_02;  //found empty after stripping
 			class CargoTurret_03: CargoTurret_03;  //found empty after stripping
 			class CargoTurret_04: CargoTurret_02
 			{
+				gunnerInAction="RHS_Kamaz_Turnout01";
+				gunnerAction="passenger_flatground_4_vehicle_passenger_stand_1";
 				animationSourceHatch="turnout1";
+				gunnerGetInAction="GetInHemttBack";
+				gunnerGetOutAction="GetOutHighZamak";
+				gunnerName="Passenger (Right Front Seat)";
+				memoryPointsGetInGunner="pos cargo";
+				memoryPointsGetInGunnerDir="pos cargo dir";
+				gunnerCompartments="Compartment2";
 				proxyIndex=23;
 				maxElev=45;
 				minElev=-45;
@@ -727,6 +1511,24 @@ class CfgVehicles
 				canHideGunner=1;
 				allowLauncherOut=1;
 				forceHideGunner=0;
+				viewGunnerInExternal=1;
+				class TurnIn
+				{
+					limitsArrayTop[]=
+					{
+						{45,-85},
+						"",
+						{35,-17},
+						{15,-15}
+					};
+					limitsArrayBottom[]=
+					{
+						{10.85,-85},
+						{6,-31},
+						{-22,-25},
+						{-13.5,-15}
+					};
+				};
 				class TurnOut
 				{
 					limitsArrayTop[]=
@@ -753,10 +1555,30 @@ class CfgVehicles
 			};
 			class CargoTurret_05: CargoTurret_04
 			{
+				gunnerName="Passenger (Left Front Seat)";
+				memoryPointsGetInGunner="pos cargo LR";
+				memoryPointsGetInGunnerDir="pos cargo LR dir";
 				animationSourceHatch="turnout2";
 				proxyIndex=24;
 				maxTurn=25;
 				minTurn=-60;
+				class TurnIn
+				{
+					limitsArrayTop[]=
+					{
+						{25,20},
+						{55,94}
+					};
+					limitsArrayBottom[]=
+					{
+						{-14,20},
+						{-10,23},
+						{-14,28},
+						{4.21,30},
+						{9.2700005,81},
+						{7,94}
+					};
+				};
 				class TurnOut
 				{
 					limitsArrayTop[]=
@@ -782,46 +1604,120 @@ class CfgVehicles
 				};
 			};
 		};
+		class AnimationSources: AnimationSources
+		{
+			class cover_hide: cover_hide
+			{
+				initPhase=1;
+			};
+		};
+		transportSoldier=12;
+		cargoProxyIndexes[]={2,5,6,7,8,9,10,11,12,13,14};
+		getInProxyOrder[]={1,2,5,6,7,8,9,10,11,12,13,14,15,16,23,24};
+		class UserActions
+		{
+			class lights_toggle
+			{
+				displayName="Toggle short/long lights";
+				position="";
+				shortcut="vehLockTargets";
+				radius=12;
+				priority=1.5;
+				showWindow=0;
+				onlyForplayer=1;
+				condition="(player == driver this) AND (isLightOn this)";
+				statement="[this,0] call rhs_fnc_carLightToggle";
+			};
+			class cabinlights_toggle: lights_toggle
+			{
+				shortcut="lockTarget";
+				displayName="Toggle cabin lights";
+				statement="[this,1] call rhs_fnc_carLightToggle";
+			};
+			class searchlight_toggle: lights_toggle
+			{
+				shortcut="";
+				displayName="Toggle searchlight";
+				statement="[this,3] call rhs_fnc_carLightToggle";
+			};
+			class searchlight_adjust: lights_toggle
+			{
+				shortcut="";
+				displayName="Adjust searchlight";
+				condition="((call rhs_fnc_findPlayer) == driver this) AND (isLightOn this) AND (this animationPhase 'searchlight_hide' == 0)";
+				statement="[this] spawn rhs_fnc_adjustSearchlight";
+			};
+		};
 	};
 	class rhs_kamaz5350_open_msv: rhs_kamaz5350_open
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_kamaz5350_open_msv.paa";
+		faction="rhs_faction_msv";
+		crew="rhs_msv_driver";
 		rhs_decalParameters[]=
 		{
 			"['Number', [5,6,7,8], 'Default']",
 			"['Label', [9], 'Platoon', 12]"
 		};
+		scope=2;
+		author="$STR_RHS_AUTHOR_FULL";
 	};
 	class rhs_kamaz5350_open_vdv: rhs_kamaz5350_open
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_kamaz5350_open_vdv.paa";
+		faction="rhs_faction_vdv";
+		crew="rhs_vdv_driver";
 		rhs_decalParameters[]=
 		{
 			"['Number', [5,6,7,8], 'Default']",
 			"['Label', [9], 'Army', 2]",
 			"['Label', [10], 'Platoon',11]"
 		};
+		scope=2;
+		author="$STR_RHS_AUTHOR_FULL";
 	};
 	class rhs_kamaz5350_open_vmf: rhs_kamaz5350_open
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_kamaz5350_open_vmf.paa";
+		faction="rhs_faction_vmf";
+		crew="rhs_vmf_flora_driver";
 		rhs_decalParameters[]=
 		{
 			"['Number', [5,6,7,8], 'Default']",
 			"['Label', [9], 'Army', [3,1]]"
 		};
+		scope=2;
+		author="$STR_RHS_AUTHOR_FULL";
 	};
 	class rhs_kamaz5350_open_vv: rhs_kamaz5350_open
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_kamaz5350_open_vv.paa";
+		faction="rhs_faction_vv";
+		crew="rhs_msv_driver";
 		rhs_decalParameters[]=
 		{
 			"['Number', [5,6,7,8], 'Default']",
 			"['Label', [9], 'Army', [6,1]]"
 		};
+		scope=2;
+		author="$STR_RHS_AUTHOR_FULL";
 	};
 	class rhs_kamaz5350_flatbed: rhs_kamaz5350_open
 	{
 		displayName="KamAZ-5350 (Open/Flatbed)";
+		transportSoldier=1;
+		cargoProxyIndexes[]={2};
+		getInProxyOrder[]={1,2};
 		class Turrets: Turrets
 		{
 			class CargoTurret_03: CargoTurret_03;  //found empty after stripping
+		};
+		class AnimationSources: AnimationSources
+		{
+			class bench_hide: bench_hide
+			{
+				initPhase=1;
+			};
 		};
 		class VehicleTransport
 		{
@@ -865,40 +1761,67 @@ class CfgVehicles
 	};
 	class rhs_kamaz5350_flatbed_msv: rhs_kamaz5350_flatbed
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_kamaz5350_flatbed_msv.paa";
+		faction="rhs_faction_msv";
+		crew="rhs_msv_driver";
 		rhs_decalParameters[]=
 		{
 			"['Number', [5,6,7,8], 'Default']",
 			"['Label', [9], 'Platoon', 12]"
 		};
+		scope=2;
+		author="$STR_RHS_AUTHOR_FULL";
 	};
 	class rhs_kamaz5350_flatbed_vdv: rhs_kamaz5350_flatbed
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_kamaz5350_flatbed_vdv.paa";
+		faction="rhs_faction_vdv";
+		crew="rhs_vdv_driver";
 		rhs_decalParameters[]=
 		{
 			"['Number', [5,6,7,8], 'Default']",
 			"['Label', [9], 'Army', 2]",
 			"['Label', [10], 'Platoon',11]"
 		};
+		scope=2;
+		author="$STR_RHS_AUTHOR_FULL";
 	};
 	class rhs_kamaz5350_flatbed_vmf: rhs_kamaz5350_flatbed
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_kamaz5350_flatbed_vmf.paa";
+		faction="rhs_faction_vmf";
+		crew="rhs_vmf_flora_driver";
 		rhs_decalParameters[]=
 		{
 			"['Number', [5,6,7,8], 'Default']",
 			"['Label', [9], 'Army', [3,1]]"
 		};
+		scope=2;
+		author="$STR_RHS_AUTHOR_FULL";
 	};
 	class rhs_kamaz5350_flatbed_vv: rhs_kamaz5350_flatbed
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_kamaz5350_flatbed_vv.paa";
+		faction="rhs_faction_vv";
+		crew="rhs_msv_driver";
 		rhs_decalParameters[]=
 		{
 			"['Number', [5,6,7,8], 'Default']",
 			"['Label', [9], 'Army', [6,1]]"
 		};
+		scope=2;
+		author="$STR_RHS_AUTHOR_FULL";
 	};
 	class rhs_kamaz5350_flatbed_cover: rhs_kamaz5350_flatbed
 	{
 		displayName="KamAZ-5350 (Flatbed)";
+		class AnimationSources: AnimationSources
+		{
+			class cover_hide: cover_hide
+			{
+				initPhase=0;
+			};
+		};
 		class VehicleTransport: VehicleTransport
 		{
 			class Cargo: Cargo;  //found empty after stripping
@@ -910,35 +1833,55 @@ class CfgVehicles
 	};
 	class rhs_kamaz5350_flatbed_cover_msv: rhs_kamaz5350_flatbed_cover
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_kamaz5350_flatbed_cover_msv.paa";
+		faction="rhs_faction_msv";
+		crew="rhs_msv_driver";
 		rhs_decalParameters[]=
 		{
 			"['Number', [5,6,7,8], 'Default']",
 			"['Label', [9], 'Platoon', 12]"
 		};
+		scope=2;
+		author="$STR_RHS_AUTHOR_FULL";
 	};
 	class rhs_kamaz5350_flatbed_cover_vdv: rhs_kamaz5350_flatbed_cover
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_kamaz5350_flatbed_cover_vdv.paa";
+		faction="rhs_faction_vdv";
+		crew="rhs_vdv_driver";
 		rhs_decalParameters[]=
 		{
 			"['Number', [5,6,7,8], 'Default']",
 			"['Label', [9], 'Army', 2]",
 			"['Label', [10], 'Platoon',11]"
 		};
+		scope=2;
+		author="$STR_RHS_AUTHOR_FULL";
 	};
 	class rhs_kamaz5350_flatbed_cover_vmf: rhs_kamaz5350_flatbed_cover
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_kamaz5350_flatbed_cover_vmf.paa";
+		faction="rhs_faction_vmf";
+		crew="rhs_vmf_flora_driver";
 		rhs_decalParameters[]=
 		{
 			"['Number', [5,6,7,8], 'Default']",
 			"['Label', [9], 'Army', [3,1]]"
 		};
+		scope=2;
+		author="$STR_RHS_AUTHOR_FULL";
 	};
 	class rhs_kamaz5350_flatbed_cover_vv: rhs_kamaz5350_flatbed_cover
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_kamaz5350_flatbed_cover_vv.paa";
+		faction="rhs_faction_vv";
+		crew="rhs_msv_driver";
 		rhs_decalParameters[]=
 		{
 			"['Number', [5,6,7,8], 'Default']",
 			"['Label', [9], 'Army', [6,1]]"
 		};
+		scope=2;
+		author="$STR_RHS_AUTHOR_FULL";
 	};
 };

@@ -3,6 +3,11 @@ class CfgPatches
 	class A3_Weapons_F_SMGs_SMG_02
 	{
 		addonRootClass="A3_Weapons_F";
+		requiredAddons[]=
+		{
+			"A3_Weapons_F"
+		};
+		requiredVersion=0.1;
 		units[]={};
 		weapons[]=
 		{
@@ -29,7 +34,9 @@ class CfgWeapons
 	class UGL_F;
 	class SMG_02_base_F: Rifle_Short_Base_F
 	{
+		author="$STR_A3_Bohemia_Interactive";
 		_generalMacro="SMG_02_base_F";
+		scope=0;
 		magazines[]=
 		{
 			"30Rnd_9x21_Mag",
@@ -37,12 +44,200 @@ class CfgWeapons
 			"30Rnd_9x21_Yellow_Mag",
 			"30Rnd_9x21_Green_Mag"
 		};
+		reloadAction="GestureReloadSMG_02";
 		recoil="recoil_smg_02";
 		maxZeroing=600;
 		cursor="smg";
-		class WeaponSlotsInfo: WeaponSlotsInfo;  //found empty after stripping
+		discreteDistance[]={100,200};
+		discreteDistanceInitIndex=0;
+		aiDispersionCoefY=8;
+		aiDispersionCoefX=9;
+		descriptionShort="$STR_A3_CfgWeapons_SMG_02_base_F0";
+		handAnim[]=
+		{
+			"OFP2_ManSkeleton",
+			"\A3\Weapons_F_beta\Smgs\SMG_02\data\Anim\SMG_02.rtm"
+		};
+		hiddenSelections[]=
+		{
+			"camo",
+			"camo1"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"\A3\Weapons_F_Beta\SMGs\SMG_02\Data\smg_02_CO",
+			"\A3\Weapons_F_Beta\SMGs\SMG_02\Data\smg_02_ammo_CA"
+		};
+		class WeaponSlotsInfo: WeaponSlotsInfo
+		{
+			class MuzzleSlot: MuzzleSlot
+			{
+				linkProxy="\A3\data_f\proxies\weapon_slots\MUZZLE";
+				compatibleItems[]=
+				{
+					"muzzle_snds_l"
+				};
+				iconPosition[]={0.079999998,0.40000001};
+				iconScale=0.2;
+			};
+			class CowsSlot: CowsSlot
+			{
+				iconPosition[]={0.44999999,0.27000001};
+				iconScale=0.2;
+			};
+			class PointerSlot: PointerSlot
+			{
+				iconPosition[]={0.28,0.40000001};
+				iconScale=0.25;
+			};
+		};
+		bullet1[]=
+		{
+			"A3\sounds_f\weapons\shells\9mm\metal_9mm_01",
+			0.50118721,
+			1,
+			15
+		};
+		bullet2[]=
+		{
+			"A3\sounds_f\weapons\shells\9mm\metal_9mm_02",
+			0.50118721,
+			1,
+			15
+		};
+		bullet3[]=
+		{
+			"A3\sounds_f\weapons\shells\9mm\metal_9mm_03",
+			0.50118721,
+			1,
+			15
+		};
+		bullet4[]=
+		{
+			"A3\sounds_f\weapons\shells\9mm\metal_9mm_04",
+			0.50118721,
+			1,
+			15
+		};
+		bullet5[]=
+		{
+			"A3\sounds_f\weapons\shells\9mm\dirt_9mm_01",
+			0.50118721,
+			1,
+			15
+		};
+		bullet6[]=
+		{
+			"A3\sounds_f\weapons\shells\9mm\dirt_9mm_02",
+			0.50118721,
+			1,
+			15
+		};
+		bullet7[]=
+		{
+			"A3\sounds_f\weapons\shells\9mm\dirt_9mm_03",
+			0.50118721,
+			1,
+			15
+		};
+		bullet8[]=
+		{
+			"A3\sounds_f\weapons\shells\9mm\dirt_9mm_04",
+			0.50118721,
+			1,
+			15
+		};
+		bullet9[]=
+		{
+			"A3\sounds_f\weapons\shells\9mm\grass_9mm_01",
+			0.39810717,
+			1,
+			15
+		};
+		bullet10[]=
+		{
+			"A3\sounds_f\weapons\shells\9mm\grass_9mm_02",
+			0.39810717,
+			1,
+			15
+		};
+		bullet11[]=
+		{
+			"A3\sounds_f\weapons\shells\9mm\grass_9mm_03",
+			0.39810717,
+			1,
+			15
+		};
+		bullet12[]=
+		{
+			"A3\sounds_f\weapons\shells\9mm\grass_9mm_04",
+			0.39810717,
+			1,
+			15
+		};
+		soundBullet[]=
+		{
+			"bullet1",
+			0.082999997,
+			"bullet2",
+			0.082999997,
+			"bullet3",
+			0.082999997,
+			"bullet4",
+			0.082999997,
+			"bullet5",
+			0.082999997,
+			"bullet6",
+			0.082999997,
+			"bullet7",
+			0.082999997,
+			"bullet8",
+			0.082999997,
+			"bullet9",
+			0.082999997,
+			"bullet10",
+			0.082999997,
+			"bullet11",
+			0.082999997,
+			"bullet12",
+			0.082999997
+		};
+		distanceZoomMin=100;
+		distanceZoomMax=100;
+		modes[]=
+		{
+			"Single",
+			"Burst",
+			"FullAuto"
+		};
+		drySound[]=
+		{
+			"A3\Sounds_F\arsenal\weapons\SMG\Sting\Dry_Sting",
+			0.25118864,
+			1,
+			10
+		};
+		reloadMagazineSound[]=
+		{
+			"A3\Sounds_F\arsenal\weapons\SMG\Sting\reload_sting",
+			1,
+			1,
+			10
+		};
+		changeFiremodeSound[]=
+		{
+			"A3\Sounds_F\arsenal\weapons\SMG\Sting\firemode_Sting",
+			0.25118864,
+			1,
+			5
+		};
 		class Single: Mode_SemiAuto
 		{
+			sounds[]=
+			{
+				"StandardSound",
+				"SilencedSound"
+			};
 			class BaseSoundModeType
 			{
 				closure1[]=
@@ -65,6 +260,102 @@ class CfgWeapons
 					0.5,
 					"closure2",
 					0.5
+				};
+			};
+			class StandardSound: BaseSoundModeType
+			{
+				begin1[]=
+				{
+					"A3\Sounds_F\arsenal\weapons\SMG\Sting\Sting_short_01",
+					2.818383,
+					1,
+					1200
+				};
+				begin2[]=
+				{
+					"A3\Sounds_F\arsenal\weapons\SMG\Sting\Sting_short_02",
+					2.818383,
+					1,
+					1200
+				};
+				begin3[]=
+				{
+					"A3\Sounds_F\arsenal\weapons\SMG\Sting\Sting_short_03",
+					2.818383,
+					1,
+					1200
+				};
+				soundBegin[]=
+				{
+					"begin1",
+					0.33000001,
+					"begin2",
+					0.33000001,
+					"begin3",
+					0.34
+				};
+				class SoundTails
+				{
+					class TailInterior
+					{
+						sound[]=
+						{
+							"A3\Sounds_F\arsenal\weapons\SMG\Sting\Sting_tail_interior",
+							1.5848932,
+							1,
+							1200
+						};
+						frequency=1;
+						volume="interior";
+					};
+					class TailTrees
+					{
+						sound[]=
+						{
+							"A3\Sounds_F\arsenal\weapons\SMG\Sting\Sting_tail_trees",
+							1,
+							1,
+							1200
+						};
+						frequency=1;
+						volume="(1-interior/1.4)*trees";
+					};
+					class TailForest
+					{
+						sound[]=
+						{
+							"A3\Sounds_F\arsenal\weapons\SMG\Sting\Sting_tail_forest",
+							1,
+							1,
+							1200
+						};
+						frequency=1;
+						volume="(1-interior/1.4)*forest";
+					};
+					class TailMeadows
+					{
+						sound[]=
+						{
+							"A3\Sounds_F\arsenal\weapons\SMG\Sting\Sting_tail_meadows",
+							1,
+							1,
+							1200
+						};
+						frequency=1;
+						volume="(1-interior/1.4)*(meadows/2 max sea/2)";
+					};
+					class TailHouses
+					{
+						sound[]=
+						{
+							"A3\Sounds_F\arsenal\weapons\SMG\Sting\Sting_tail_houses",
+							1,
+							1,
+							1200
+						};
+						frequency=1;
+						volume="(1-interior/1.4)*houses";
+					};
 				};
 			};
 			class SilencedSound: BaseSoundModeType
@@ -167,9 +458,22 @@ class CfgWeapons
 			dispersion=0.00116;
 			recoil="recoil_single_smg_02";
 			recoilProne="recoil_single_prone_smg_02";
+			minRange=2;
+			minRangeProbab=0.30000001;
+			midRange=100;
+			midRangeProbab=0.69999999;
+			maxRange=150;
+			maxRangeProbab=0.050000001;
+			aiRateOfFire=2;
+			aiRateOfFireDistance=300;
 		};
 		class Burst: Mode_Burst
 		{
+			sounds[]=
+			{
+				"StandardSound",
+				"SilencedSound"
+			};
 			class BaseSoundModeType
 			{
 				closure1[]=
@@ -192,6 +496,102 @@ class CfgWeapons
 					0.5,
 					"closure2",
 					0.5
+				};
+			};
+			class StandardSound: BaseSoundModeType
+			{
+				begin1[]=
+				{
+					"A3\Sounds_F\arsenal\weapons\SMG\Sting\Sting_short_01",
+					2.818383,
+					1,
+					1200
+				};
+				begin2[]=
+				{
+					"A3\Sounds_F\arsenal\weapons\SMG\Sting\Sting_short_02",
+					2.818383,
+					1,
+					1200
+				};
+				begin3[]=
+				{
+					"A3\Sounds_F\arsenal\weapons\SMG\Sting\Sting_short_03",
+					2.818383,
+					1,
+					1200
+				};
+				soundBegin[]=
+				{
+					"begin1",
+					0.33000001,
+					"begin2",
+					0.33000001,
+					"begin3",
+					0.34
+				};
+				class SoundTails
+				{
+					class TailInterior
+					{
+						sound[]=
+						{
+							"A3\Sounds_F\arsenal\weapons\SMG\Sting\Sting_tail_interior",
+							1.5848932,
+							1,
+							1200
+						};
+						frequency=1;
+						volume="interior";
+					};
+					class TailTrees
+					{
+						sound[]=
+						{
+							"A3\Sounds_F\arsenal\weapons\SMG\Sting\Sting_tail_trees",
+							1,
+							1,
+							1200
+						};
+						frequency=1;
+						volume="(1-interior/1.4)*trees";
+					};
+					class TailForest
+					{
+						sound[]=
+						{
+							"A3\Sounds_F\arsenal\weapons\SMG\Sting\Sting_tail_forest",
+							1,
+							1,
+							1200
+						};
+						frequency=1;
+						volume="(1-interior/1.4)*forest";
+					};
+					class TailMeadows
+					{
+						sound[]=
+						{
+							"A3\Sounds_F\arsenal\weapons\SMG\Sting\Sting_tail_meadows",
+							1,
+							1,
+							1200
+						};
+						frequency=1;
+						volume="(1-interior/1.4)*(meadows/2 max sea/2)";
+					};
+					class TailHouses
+					{
+						sound[]=
+						{
+							"A3\Sounds_F\arsenal\weapons\SMG\Sting\Sting_tail_houses",
+							1,
+							1,
+							1200
+						};
+						frequency=1;
+						volume="(1-interior/1.4)*houses";
+					};
 				};
 			};
 			class SilencedSound: BaseSoundModeType
@@ -290,30 +690,312 @@ class CfgWeapons
 					};
 				};
 			};
+			soundBurst=0;
 			burst=3;
 			reloadTime=0.054499999;
 			dispersion=0.00116;
 			recoil="recoil_burst_smg_02";
 			recoilProne="recoil_burst_prone_smg_02";
+			minRange=2;
+			minRangeProbab=0.30000001;
+			midRange=50;
+			midRangeProbab=0.69999999;
+			maxRange=100;
+			maxRangeProbab=0.050000001;
+			aiRateOfFire=1;
+			aiRateOfFireDistance=250;
+		};
+		class FullAuto: Mode_FullAuto
+		{
+			sounds[]=
+			{
+				"StandardSound",
+				"SilencedSound"
+			};
+			class BaseSoundModeType
+			{
+				closure1[]=
+				{
+					"A3\Sounds_F\arsenal\weapons\SMG\Sting\closure_Sting_01",
+					1,
+					1,
+					10
+				};
+				closure2[]=
+				{
+					"A3\Sounds_F\arsenal\weapons\SMG\Sting\closure_Sting_02",
+					1,
+					1.1,
+					10
+				};
+				soundClosure[]=
+				{
+					"closure1",
+					0.5,
+					"closure2",
+					0.5
+				};
+			};
+			class StandardSound: BaseSoundModeType
+			{
+				begin1[]=
+				{
+					"A3\Sounds_F\arsenal\weapons\SMG\Sting\Sting_short_01",
+					2.818383,
+					1,
+					1200
+				};
+				begin2[]=
+				{
+					"A3\Sounds_F\arsenal\weapons\SMG\Sting\Sting_short_02",
+					2.818383,
+					1,
+					1200
+				};
+				begin3[]=
+				{
+					"A3\Sounds_F\arsenal\weapons\SMG\Sting\Sting_short_03",
+					2.818383,
+					1,
+					1200
+				};
+				soundBegin[]=
+				{
+					"begin1",
+					0.33000001,
+					"begin2",
+					0.33000001,
+					"begin3",
+					0.34
+				};
+				class SoundTails
+				{
+					class TailInterior
+					{
+						sound[]=
+						{
+							"A3\Sounds_F\arsenal\weapons\SMG\Sting\Sting_tail_interior",
+							1.5848932,
+							1,
+							1200
+						};
+						frequency=1;
+						volume="interior";
+					};
+					class TailTrees
+					{
+						sound[]=
+						{
+							"A3\Sounds_F\arsenal\weapons\SMG\Sting\Sting_tail_trees",
+							1,
+							1,
+							1200
+						};
+						frequency=1;
+						volume="(1-interior/1.4)*trees";
+					};
+					class TailForest
+					{
+						sound[]=
+						{
+							"A3\Sounds_F\arsenal\weapons\SMG\Sting\Sting_tail_forest",
+							1,
+							1,
+							1200
+						};
+						frequency=1;
+						volume="(1-interior/1.4)*forest";
+					};
+					class TailMeadows
+					{
+						sound[]=
+						{
+							"A3\Sounds_F\arsenal\weapons\SMG\Sting\Sting_tail_meadows",
+							1,
+							1,
+							1200
+						};
+						frequency=1;
+						volume="(1-interior/1.4)*(meadows/2 max sea/2)";
+					};
+					class TailHouses
+					{
+						sound[]=
+						{
+							"A3\Sounds_F\arsenal\weapons\SMG\Sting\Sting_tail_houses",
+							1,
+							1,
+							1200
+						};
+						frequency=1;
+						volume="(1-interior/1.4)*houses";
+					};
+				};
+			};
+			class SilencedSound: BaseSoundModeType
+			{
+				begin1[]=
+				{
+					"A3\Sounds_F\arsenal\weapons\SMG\Sting\Silencer_Sting_short_01",
+					0.89125091,
+					1,
+					400
+				};
+				begin2[]=
+				{
+					"A3\Sounds_F\arsenal\weapons\SMG\Sting\Silencer_Sting_short_02",
+					0.89125091,
+					1,
+					400
+				};
+				begin3[]=
+				{
+					"A3\Sounds_F\arsenal\weapons\SMG\Sting\Silencer_Sting_short_03",
+					0.89125091,
+					1,
+					400
+				};
+				soundBegin[]=
+				{
+					"begin1",
+					0.33000001,
+					"begin2",
+					0.33000001,
+					"begin3",
+					0.34
+				};
+				class SoundTails
+				{
+					class TailInterior
+					{
+						sound[]=
+						{
+							"A3\Sounds_F\arsenal\weapons\SMG\Sting\Silencer_Sting_Tail_interior",
+							1,
+							1,
+							400
+						};
+						frequency=1;
+						volume="interior";
+					};
+					class TailTrees
+					{
+						sound[]=
+						{
+							"A3\Sounds_F\arsenal\weapons\SMG\Sting\Silencer_Sting_Tail_trees",
+							1,
+							1,
+							400
+						};
+						frequency=1;
+						volume="(1-interior/1.4)*trees";
+					};
+					class TailForest
+					{
+						sound[]=
+						{
+							"A3\Sounds_F\arsenal\weapons\SMG\Sting\silencer_Sting_tail_forest",
+							1,
+							1,
+							400
+						};
+						frequency=1;
+						volume="(1-interior/1.4)*forest";
+					};
+					class TailMeadows
+					{
+						sound[]=
+						{
+							"A3\Sounds_F\arsenal\weapons\SMG\Sting\Silencer_Sting_Tail_meadows",
+							1,
+							1,
+							400
+						};
+						frequency=1;
+						volume="(1-interior/1.4)*(meadows/2 max sea/2)";
+					};
+					class TailHouses
+					{
+						sound[]=
+						{
+							"A3\Sounds_F\arsenal\weapons\SMG\Sting\Silencer_Sting_Tail_houses",
+							1,
+							1,
+							400
+						};
+						frequency=1;
+						volume="(1-interior/1.4)*houses";
+					};
+				};
+			};
+			reloadTime=0.054499999;
+			dispersion=0.00116;
+			recoil="recoil_auto_smg_02";
+			recoilProne="recoil_auto_prone_smg_02";
+			minRange=0;
+			minRangeProbab=0.89999998;
+			midRange=15;
+			midRangeProbab=0.69999999;
+			maxRange=30;
+			maxRangeProbab=0.1;
+			aiRateOfFire=1e-006;
+			aiRateOfFireDistance=50;
 		};
 		class UGL_F: UGL_F;  //found empty after stripping
 	};
 	class SMG_02_F: SMG_02_base_F
 	{
+		author="$STR_A3_Bohemia_Interactive";
 		_generalMacro="SMG_02_F";
+		baseWeapon="SMG_02_F";
+		scope=2;
+		model="\A3\Weapons_F_beta\Smgs\SMG_02\SMG_02_F.p3d";
 		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
 			mass=50;
 		};
+		inertia=0.40000001;
+		aimTransitionSpeed=1.3;
+		dexterity=1.6;
 		initSpeed=370;
 		displayName="$STR_A3_CfgWeapons_SMG_020";
+		picture="\A3\Weapons_F_beta\Smgs\SMG_02\Data\UI\gear_smg_02_X_CA.paa";
+		UiPicture="\A3\Weapons_F\data\UI\icon_regular_CA.paa";
+		descriptionShort="$STR_A3_CfgWeapons_SMG_021";
+		class Library
+		{
+			libTextDesc="$STR_A3_CfgWeapons_SMG_02_Library0";
+		};
 	};
 	class SMG_02_ACO_F: SMG_02_F
 	{
+		author="$STR_A3_Bohemia_Interactive";
 		_generalMacro="SMG_02_ACO_F";
+		class LinkedItems
+		{
+			class LinkedItemsOptic
+			{
+				slot="CowsSlot";
+				item="optic_ACO_grn_smg";
+			};
+		};
 	};
 	class SMG_02_ARCO_pointg_F: SMG_02_F
 	{
+		author="$STR_A3_Bohemia_Interactive";
 		_generalMacro="SMG_02_ARCO_pointg_F";
+		class LinkedItems
+		{
+			class LinkedItemsOptic
+			{
+				slot="CowsSlot";
+				item="optic_ARCO";
+			};
+			class LinkedItemsAcc
+			{
+				slot="PointerSlot";
+				item="acc_pointer_IR";
+			};
+		};
 	};
 };

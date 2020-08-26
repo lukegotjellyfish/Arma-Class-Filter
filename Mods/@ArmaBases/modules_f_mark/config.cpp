@@ -3,6 +3,11 @@ class CfgPatches
 	class A3_Modules_F_Mark_FiringDrills
 	{
 		addonRootClass="A3_Modules_F_Mark";
+		requiredAddons[]=
+		{
+			"A3_Modules_F_Mark"
+		};
+		requiredVersion=0.1;
 		units[]={};
 		weapons[]={};
 	};

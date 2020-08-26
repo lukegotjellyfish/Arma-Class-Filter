@@ -4,100 +4,125 @@ class CfgPatches
 	{
 		units[]={};
 		weapons[]={};
+		requiredVersion=0.1;
+		requiredAddons[]=
+		{
+			"A3_Weapons_F",
+			"A3_Sounds_f",
+			"rhsusf_sounds",
+			"rhsusf_weapon_sounds"
+		};
 		authors[]=
 		{
 			"LAxemann"
 		};
+		author="$STR_RHSUSF_AUTHOR_FULL";
+		url="http://www.rhsmods.org/";
 	};
 };
 class CfgSound3DProcessors
 {
 	class RHSUSF_Default_3DProcessingType
 	{
+		type="panner";
 		innerRange=10;
 		rangeCurve="LinearCurve";
 		range=1800;
 	};
 	class RHSUSF_Shot_light_3DProcessingType
 	{
+		type="panner";
 		innerRange=1;
 		range=25;
 		rangeCurve="InverseSquare2Curve";
 	};
 	class RHSUSF_Shot_medium_3DProcessingType
 	{
+		type="panner";
 		innerRange=1;
 		range=32;
 		rangeCurve="InverseSquare2Curve";
 	};
 	class RHSUSF_rifleBulletCrack_3DProcessingType
 	{
+		type="panner";
 		innerRange=1;
 		range=7;
 		rangeCurve="LinearCurve";
 	};
 	class RHSUSF_Shot_internalMG_3DProcessingType
 	{
+		type="panner";
 		innerRange=2;
 		range=26;
 		rangeCurve="InverseSquare2Curve";
 	};
 	class RHSUSF_Shot_internalCannon_3DProcessingType
 	{
+		type="panner";
 		innerRange=4;
 		range=50;
 		rangeCurve="InverseSquare2Curve";
 	};
 	class RHSUSF_Tail_3DProcessingType
 	{
+		type="panner";
 		innerRange=10;
 		range=990;
 		rangeCurve="InverseSquare3Curve";
 	};
 	class RHSUSF_cannonTail_3DProcessingType
 	{
+		type="panner";
 		innerRange=20;
 		range=1290;
 		rangeCurve="InverseSquare3Curve";
 	};
 	class RHSUSF_katyusha_3DProcessingType
 	{
+		type="panner";
 		innerRange=20;
 		range=400;
 		rangeCurve="InverseSquare3Curve";
 	};
 	class RHSUSF_stereoLayer_3DProcessingType
 	{
+		type="panner";
 		innerRange=240;
 		range=4200;
 		rangeCurve="linearCurve";
 	};
 	class RHSUSF_explo_small_3DProcessingType
 	{
+		type="panner";
 		innerRange=0;
 		range=190;
 		rangeCurve="InverseSquare2Curve";
 	};
 	class RHSUSF_explo_medium_3DProcessingType
 	{
+		type="panner";
 		innerRange=0;
 		range=900;
 		rangeCurve="InverseSquare2Curve";
 	};
 	class RHSUSF_explo_large_3DProcessingType
 	{
+		type="panner";
 		innerRange=0;
 		range=1200;
 		rangeCurve="InverseSquare2Curve";
 	};
 	class RHSUSF_exploTail_medium_3DProcessingType
 	{
+		type="panner";
 		innerRange=10;
 		range=1500;
 		rangeCurve="InverseSquare2Curve";
 	};
 	class RHSUSF_exploTail_large_3DProcessingType
 	{
+		type="panner";
 		innerRange=70;
 		range=3000;
 		rangeCurve="InverseSquare2Curve";
@@ -248,6 +273,7 @@ class cfgDistanceFilters
 {
 	class RHSUSF_defaultDistanceFilter
 	{
+		type="lowPassFilter";
 		minCutoffFrequency=250;
 		qFactor=1.25;
 		innerRange=10;
@@ -256,6 +282,7 @@ class cfgDistanceFilters
 	};
 	class RHSUSF_rifleShotDistanceFilter
 	{
+		type="lowPassFilter";
 		minCutoffFrequency=250;
 		qFactor=1.25;
 		innerRange=10;
@@ -264,6 +291,7 @@ class cfgDistanceFilters
 	};
 	class RHSUSF_exploLargeDistanceFilter
 	{
+		type="lowPassFilter";
 		minCutoffFrequency=250;
 		qFactor=1.25;
 		innerRange=100;
@@ -272,6 +300,7 @@ class cfgDistanceFilters
 	};
 	class RHSUSF_exploSmallDistanceFilter
 	{
+		type="lowPassFilter";
 		minCutoffFrequency=250;
 		qFactor=1.25;
 		innerRange=50;
@@ -4799,6 +4828,36 @@ class CfgWeapons
 	{
 		class Single: Single
 		{
+			class StandardSound
+			{
+				soundSetShot[]=
+				{
+					"RHSUSF_mp7_Shot_SoundSet",
+					"RHSUSF_rifle_small_Tail_SoundSet",
+					"RHSUSF_mp7_stereoLayer_SoundSet"
+				};
+			};
+			class SilencedSound
+			{
+				soundSetShot[]=
+				{
+					"RHSUSF_MP7_Closure_SoundSet",
+					"RHSUSF_MP7_ShotSD_SoundSet",
+					"RHSUSF_rifle1_SD_Tail_SoundSet"
+				};
+			};
+		};
+		class FullAuto: FullAuto
+		{
+			class StandardSound
+			{
+				soundSetShot[]=
+				{
+					"RHSUSF_mp7_Shot_SoundSet",
+					"RHSUSF_rifle_small_Tail_SoundSet",
+					"RHSUSF_mp7_stereoLayer_SoundSet"
+				};
+			};
 			class SilencedSound
 			{
 				soundSetShot[]=
@@ -4818,6 +4877,20 @@ class CfgWeapons
 	{
 		class Single: Single
 		{
+			sounds[]=
+			{
+				"Standardsound",
+				"SilencedSound"
+			};
+			class StandardSound
+			{
+				soundSetShot[]=
+				{
+					"RHSUSF_m24_Shot_SoundSet",
+					"RHSUSF_rifle2_Tail_SoundSet",
+					"RHSUSF_m24_stereoLayer_SoundSet"
+				};
+			};
 			class SilencedSound
 			{
 				soundSetShot[]=
@@ -4833,6 +4906,46 @@ class CfgWeapons
 	{
 		class Single: Mode_SemiAuto
 		{
+			sounds[]=
+			{
+				"Standardsound",
+				"SilencedSound"
+			};
+			class StandardSound
+			{
+				soundSetShot[]=
+				{
+					"RHSUSF_m14_Shot_SoundSet",
+					"RHSUSF_rifle2_Tail_SoundSet",
+					"RHSUSF_m14_stereoLayer_SoundSet"
+				};
+			};
+			class SilencedSound
+			{
+				soundSetShot[]=
+				{
+					"RHSUSF_sd_M4_Shot_SoundSet",
+					"RHSUSF_sd_Rifle1_Tail_SoundSet",
+					"RHSUSF_sd_M4_stereoLayer_SoundSet"
+				};
+			};
+		};
+		class FullAuto: Mode_FullAuto
+		{
+			sounds[]=
+			{
+				"Standardsound",
+				"SilencedSound"
+			};
+			class StandardSound
+			{
+				soundSetShot[]=
+				{
+					"RHSUSF_m14_Shot_SoundSet",
+					"RHSUSF_rifle2_Tail_SoundSet",
+					"RHSUSF_m14_stereoLayer_SoundSet"
+				};
+			};
 			class SilencedSound
 			{
 				soundSetShot[]=
@@ -4848,6 +4961,20 @@ class CfgWeapons
 	{
 		class Single: Mode_SemiAuto
 		{
+			sounds[]=
+			{
+				"Standardsound",
+				"SilencedSound"
+			};
+			class StandardSound
+			{
+				soundSetShot[]=
+				{
+					"RHSUSF_m4_Shot_SoundSet",
+					"RHSUSF_rifle_small_Tail_SoundSet",
+					"RHSUSF_m4_stereoLayer_SoundSet"
+				};
+			};
 			class SilencedSound
 			{
 				soundSetShot[]=
@@ -4860,6 +4987,46 @@ class CfgWeapons
 		};
 		class Burst: Mode_Burst
 		{
+			sounds[]=
+			{
+				"Standardsound",
+				"SilencedSound"
+			};
+			class StandardSound
+			{
+				soundSetShot[]=
+				{
+					"RHSUSF_m4_Shot_SoundSet",
+					"RHSUSF_rifle_small_Tail_SoundSet",
+					"RHSUSF_m4_stereoLayer_SoundSet"
+				};
+			};
+			class SilencedSound
+			{
+				soundSetShot[]=
+				{
+					"RHSUSF_sd_M4_Shot_SoundSet",
+					"RHSUSF_sd_Rifle1_Tail_SoundSet",
+					"RHSUSF_sd_M4_stereoLayer_SoundSet"
+				};
+			};
+		};
+		class FullAuto: Mode_FullAuto
+		{
+			sounds[]=
+			{
+				"Standardsound",
+				"SilencedSound"
+			};
+			class StandardSound
+			{
+				soundSetShot[]=
+				{
+					"RHSUSF_m4_Shot_SoundSet",
+					"RHSUSF_rifle_small_Tail_SoundSet",
+					"RHSUSF_m4_stereoLayer_SoundSet"
+				};
+			};
 			class SilencedSound
 			{
 				soundSetShot[]=
@@ -4875,6 +5042,20 @@ class CfgWeapons
 	{
 		class Single: Single
 		{
+			sounds[]=
+			{
+				"Standardsound",
+				"SilencedSound"
+			};
+			class StandardSound
+			{
+				soundSetShot[]=
+				{
+					"RHSUSF_m16_Shot_SoundSet",
+					"RHSUSF_rifle_small_Tail_SoundSet",
+					"RHSUSF_m16_stereoLayer_SoundSet"
+				};
+			};
 			class SilencedSound
 			{
 				soundSetShot[]=
@@ -4887,6 +5068,20 @@ class CfgWeapons
 		};
 		class Burst: Burst
 		{
+			sounds[]=
+			{
+				"Standardsound",
+				"SilencedSound"
+			};
+			class StandardSound
+			{
+				soundSetShot[]=
+				{
+					"RHSUSF_m16_Shot_SoundSet",
+					"RHSUSF_rifle_small_Tail_SoundSet",
+					"RHSUSF_m16_stereoLayer_SoundSet"
+				};
+			};
 			class SilencedSound
 			{
 				soundSetShot[]=
@@ -4902,6 +5097,32 @@ class CfgWeapons
 	{
 		WW2_boltSnapSound="RHSUSF_boltSnap_m249";
 		WW2_boltSnapDelay=0.079999998;
+		class FullAuto: Mode_FullAuto
+		{
+			sounds[]=
+			{
+				"StandardSound",
+				"SilencedSound"
+			};
+			class StandardSound
+			{
+				soundSetShot[]=
+				{
+					"RHSUSF_m249_Shot_SoundSet",
+					"RHSUSF_rifle_small_Tail_SoundSet",
+					"RHSUSF_m249_stereoLayer_SoundSet"
+				};
+			};
+			class SilencedSound
+			{
+				soundSetShot[]=
+				{
+					"RHSUSF_sd_m4_Shot_SoundSet",
+					"RHSUSF_sd_Rifle1_Tail_SoundSet",
+					"RHSUSF_sd_m4_stereoLayer_SoundSet"
+				};
+			};
+		};
 		class Eventhandlers: Eventhandlers
 		{
 			class RHSUSF_weapon_firedSoundHandler
@@ -4914,6 +5135,32 @@ class CfgWeapons
 	{
 		WW2_boltSnapSound="RHSUSF_boltSnap_m249";
 		WW2_boltSnapDelay=0.075000003;
+		class FullAuto: Mode_FullAuto
+		{
+			sounds[]=
+			{
+				"StandardSound",
+				"SilencedSound"
+			};
+			class StandardSound
+			{
+				soundSetShot[]=
+				{
+					"RHSUSF_m249_Shot_SoundSet",
+					"RHSUSF_rifle_small_Tail_SoundSet",
+					"RHSUSF_m249_stereoLayer_SoundSet"
+				};
+			};
+			class SilencedSound
+			{
+				soundSetShot[]=
+				{
+					"RHSUSF_sd_m4_Shot_SoundSet",
+					"RHSUSF_sd_Rifle1_Tail_SoundSet",
+					"RHSUSF_sd_m4_stereoLayer_SoundSet"
+				};
+			};
+		};
 		class Eventhandlers: Eventhandlers
 		{
 			class RHSUSF_weapon_firedSoundHandler
@@ -4926,7 +5173,22 @@ class CfgWeapons
 	{
 		WW2_boltSnapSound="RHSUSF_boltSnap_m240";
 		WW2_boltSnapDelay=0.090000004;
-		class manual: Mode_FullAuto;  //found empty after stripping
+		class manual: Mode_FullAuto
+		{
+			sounds[]=
+			{
+				"StandardSound"
+			};
+			class StandardSound
+			{
+				soundSetShot[]=
+				{
+					"RHSUSF_m240_Shot_SoundSet",
+					"RHSUSF_rifle_med_Tail_SoundSet",
+					"RHSUSF_m240_stereoLayer_SoundSet"
+				};
+			};
+		};
 		class Eventhandlers: Eventhandlers
 		{
 			class RHSUSF_weapon_firedSoundHandler

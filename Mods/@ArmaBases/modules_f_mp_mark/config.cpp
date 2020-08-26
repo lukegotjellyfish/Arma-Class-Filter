@@ -3,6 +3,11 @@ class CfgPatches
 	class A3_Modules_F_MP_Mark_Objectives
 	{
 		addonRootClass="A3_Modules_F_MP_Mark";
+		requiredAddons[]=
+		{
+			"A3_Modules_F_MP_Mark"
+		};
+		requiredVersion=0.1;
 		units[]={};
 		weapons[]={};
 	};

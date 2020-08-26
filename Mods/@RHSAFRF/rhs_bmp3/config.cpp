@@ -4,6 +4,11 @@ class CfgPatches
 	{
 		units[]={};
 		weapons[]={};
+		requiredVersion=1.7;
+		requiredAddons[]=
+		{
+			"rhs_c_bmp3"
+		};
 		version=1;
 	};
 };

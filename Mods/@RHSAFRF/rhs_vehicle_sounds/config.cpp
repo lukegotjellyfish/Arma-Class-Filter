@@ -4,6 +4,13 @@ class CfgPatches
 	{
 		units[]={};
 		weapons[]={};
+		requiredVersion=1.3200001;
+		requiredAddons[]=
+		{
+			"rhs_main",
+			"rhs_c_a2port_air",
+			"rhs_vehiclesounds"
+		};
 		version="0.1";
 	};
 };
@@ -11,36 +18,42 @@ class CfgSound3DProcessors
 {
 	class RHS_vehicleRain_3DProcessingType
 	{
+		type="panner";
 		innerRange=3;
 		range=10;
 		rangeCurve="InverseSquare2Curve";
 	};
 	class RHS_PlaneExt_3DProcessingType
 	{
+		type="emitter";
 		innerRange=13;
 		range=25;
 		radius=7;
 	};
 	class RHS_HeliExt_3DProcessingType
 	{
+		type="panner";
 		innerRange=10;
 		range=25;
 		rangeCurve="InverseSquare3Curve";
 	};
 	class RHS_HeliReverb_3DProcessingType
 	{
+		type="panner";
 		innerRange=400;
 		range=700;
 		rangeCurve="InverseSquare2Curve";
 	};
 	class RHS_PlaneExt_Middle_3DProcessingType
 	{
+		type="panner";
 		innerRange=0;
 		range=350;
 		rangeCurve="InverseSquare2Curve";
 	};
 	class RHS_PlaneExt_Distant_3DProcessingType
 	{
+		type="panner";
 		innerRange=0;
 		range=1400;
 		rangeCurve="InverseSquare3Curve";
@@ -50,6 +63,7 @@ class CfgSoundShapes
 {
 	class RHS_turbine_rearSemispace_Hind
 	{
+		type="cone";
 		innerVolume=1;
 		outerVolume=0.60000002;
 		innerAngle=140;
@@ -59,6 +73,7 @@ class CfgSoundShapes
 	};
 	class RHS_flyAwaySemispace
 	{
+		type="cone";
 		innerVolume=1;
 		outerVolume=0.15000001;
 		innerAngle=140;
@@ -68,6 +83,7 @@ class CfgSoundShapes
 	};
 	class RHS_flyTowardsSemispace
 	{
+		type="cone";
 		innerVolume=0.2;
 		outerVolume=1;
 		innerAngle=60;
@@ -77,6 +93,7 @@ class CfgSoundShapes
 	};
 	class RHS_Heli_bassRearSemispace_Hind
 	{
+		type="cone";
 		innerVolume=0.55000001;
 		outerVolume=1;
 		innerAngle=135;
@@ -86,6 +103,7 @@ class CfgSoundShapes
 	};
 	class RHS_Heli_rotorBassTopSemiSpace
 	{
+		type="cone";
 		innerVolume=0.34999999;
 		outerVolume=1;
 		innerAngle=80;
@@ -95,6 +113,7 @@ class CfgSoundShapes
 	};
 	class RHS_Heli_rotorScrewTopSemiSpace
 	{
+		type="cone";
 		innerVolume=1;
 		outerVolume=0.050000001;
 		innerAngle=165;
@@ -104,6 +123,7 @@ class CfgSoundShapes
 	};
 	class RHS_Heli_reverbSemiSpace
 	{
+		type="cone";
 		innerVolume=0;
 		outerVolume=1;
 		innerAngle=90;
@@ -113,6 +133,7 @@ class CfgSoundShapes
 	};
 	class RHS_Heli_rotorTopSemiSpace
 	{
+		type="cone";
 		innerVolume=0.050000001;
 		outerVolume=1;
 		innerAngle=80;
@@ -122,6 +143,7 @@ class CfgSoundShapes
 	};
 	class RHS_Heli_baseTopSemiSpace
 	{
+		type="cone";
 		innerVolume=0.80000001;
 		outerVolume=1;
 		innerAngle=75;
@@ -131,6 +153,7 @@ class CfgSoundShapes
 	};
 	class RHS_Heli_rotorSwiftTopSemiSpace
 	{
+		type="cone";
 		innerVolume=0;
 		outerVolume=1;
 		innerAngle=95;
@@ -1457,5 +1480,42 @@ class cfgVehicles
 	class Helicopter_Base_F: Helicopter;  //found empty after stripping
 	class Heli_Attack_02_base_F: Helicopter_Base_F;  //found empty after stripping
 	class Heli_Light_03_base_F: Helicopter_Base_F;  //found empty after stripping
-	class RHS_Mi24_base: Heli_Attack_02_base_F;  //found empty after stripping
+	class RHS_Mi24_base: Heli_Attack_02_base_F
+	{
+		class Sounds
+		{
+			soundSetsExt[]=
+			{
+				"RHS_Heli_hind_ext_close_base_SoundSet",
+				"RHS_Heli_hind_ext_close_bass_SoundSet",
+				"RHS_Heli_hind_ext_mid_SoundSet",
+				"RHS_Heli_hind_ext_far_SoundSet",
+				"RHS_Heli_hind_ext_flyAwayLayer_SoundSet",
+				"RHS_Heli_hind_ext_flyTowardsLayer_SoundSet",
+				"RHS_Heli_hind_ext_rotorScrew_close_SoundSet",
+				"RHS_Heli_hind_ext_rotor_close_base_SoundSet",
+				"RHS_Heli_hind_ext_rotor_close_bass_SoundSet",
+				"RHS_Heli_hind_ext_rotor_mid_base_SoundSet",
+				"RHS_Heli_hind_ext_turbine_SoundSet",
+				"RHS_Heli_hind_ext_rotor_swift_SoundSet",
+				"RHS_Heli_hind_ext_reverb_SoundSet",
+				"RHS_Heli_Hind_ext_turbine_SoundSet"
+			};
+			soundSetsInt[]=
+			{
+				"RHS_Heli_hind_int_engine_SoundSet",
+				"RHS_Heli_hind_int_rotor_SoundSet",
+				"RHS_Heli_hind_int_slow_SoundSet",
+				"RHS_Heli_hind_int_mid_SoundSet",
+				"RHS_Heli_hind_int_fast_SoundSet",
+				"RHS_Plane_Int_wind_light_soundSet",
+				"RHS_Plane_Int_wind_hard_soundSet",
+				"RHS_Plane_Int_gForce_hard_soundSet",
+				"RHS_Plane_Int_rain_light_soundSet",
+				"RHS_Plane_Int_rain_hard_soundSet",
+				"RHS_Plane_ext_rain_light_soundSet",
+				"RHS_Plane_ext_rain_hard_soundSet"
+			};
+		};
+	};
 };

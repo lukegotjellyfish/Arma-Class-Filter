@@ -4,6 +4,11 @@ class CfgPatches
 	{
 		units[]={};
 		weapons[]={};
+		requiredVersion=1.3200001;
+		requiredAddons[]=
+		{
+			"rhsgref_main"
+		};
 	};
 };
 class CfgVoice
@@ -21,6 +26,7 @@ class CfgVoice
 	{
 		variants[]={0.94999999,1,1.05};
 		voiceType="";
+		scope=0;
 		directories[]=
 		{
 			"",
@@ -45,6 +51,8 @@ class CfgVoice
 			"\rhsgref\addons\rhsgref_s_radio\radio\Male01\"
 		};
 		displayName="Czech Voice 01";
+		scope=2;
+		author="$STR_A3_Bohemia_Interactive";
 	};
 	class RHS_Male02CZ: CZ
 	{
@@ -54,6 +62,8 @@ class CfgVoice
 			"\rhsgref\addons\rhsgref_s_radio\radio\Male02\"
 		};
 		displayName="Czech Voice 02";
+		scope=2;
+		author="$STR_A3_Bohemia_Interactive";
 	};
 	class RHS_Male03CZ: CZ
 	{
@@ -64,6 +74,8 @@ class CfgVoice
 		};
 		displayName="Czech Voice 03";
 		voiceType="Voice 03";
+		scope=2;
+		author="$STR_A3_Bohemia_Interactive";
 	};
 	class RHS_Male04CZ: CZ
 	{
@@ -73,6 +85,8 @@ class CfgVoice
 			"\rhsgref\addons\rhsgref_s_radio\radio\Male01\"
 		};
 		displayName="Czech Voice 04";
+		scope=2;
+		author="$STR_A3_Bohemia_Interactive";
 	};
 	class RHS_Male05CZ: CZ
 	{
@@ -82,6 +96,8 @@ class CfgVoice
 			"\rhsgref\addons\rhsgref_s_radio\radio\Male02\"
 		};
 		displayName="Czech Voice 05";
+		scope=2;
+		author="$STR_A3_Bohemia_Interactive";
 	};
 };
 class cfgVoiceTypes
@@ -6616,6 +6632,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class version1
 		{
+			text="NormalCommand | 1:%1 | 2:%2 | 3:%3 | 4:%4 | 5:%5 | 6:%6 | 7:%7 | 8:%8 | 9:%9 | 10:%10 | 11:%11 | 12:%12 | 13:%13 | 14:%14 | 15:%15 | 16:%16";
 			speech[]=
 			{
 				"%1",
@@ -6652,6 +6669,8 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Mine_detected_1
 		{
+			textOrig="Mine detected";
+			text="$STR_A3_Mine_detected";
 			wordsClass="Stealth";
 			speech[]=
 			{
@@ -6662,6 +6681,8 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Mine_detected
 		{
+			textOrig="Mine detected";
+			text="$STR_A3_Mine_detected";
 			wordsClass="Normal";
 			speech[]=
 			{
@@ -6673,6 +6694,8 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Mine_detected2
 		{
+			textOrig="Mine detected";
+			text="$STR_A3_Mine_detected";
 			wordsClass="Normal";
 			speech[]=
 			{
@@ -6683,6 +6706,8 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Mine_detected3
 		{
+			textOrig="Mine detected";
+			text="$STR_A3_Mine_detected";
 			wordsClass="Normal";
 			speech[]=
 			{
@@ -6704,6 +6729,8 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Requesting_close_air_support_at_the_designated_location__Over__1
 		{
+			textOrig="Requesting close air support at the designated location. Over.";
+			text="$STR_A3_Requesting_close_air_support_at_the_designated_location__Over_";
 			wordsClass="Stealth";
 			speech[]=
 			{
@@ -6714,6 +6741,8 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Requesting_close_air_support_at_the_designated_location__Over_
 		{
+			textOrig="Requesting close air support at the designated location. Over.";
+			text="$STR_A3_Requesting_close_air_support_at_the_designated_location__Over_";
 			wordsClass="Normal";
 			speech[]=
 			{
@@ -6734,6 +6763,8 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Requesting_supply_drop_at_the_transmitted_coordinates__Over__1
 		{
+			textOrig="Requesting supply drop at the transmitted coordinates. Over.";
+			text="$STR_A3_Requesting_supply_drop_at_the_transmitted_coordinates__Over_";
 			wordsClass="Stealth";
 			speech[]=
 			{
@@ -6744,6 +6775,8 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Requesting_supply_drop_at_the_transmitted_coordinates__Over_
 		{
+			textOrig="Requesting supply drop at the transmitted coordinates. Over.";
+			text="$STR_A3_Requesting_supply_drop_at_the_transmitted_coordinates__Over_";
 			wordsClass="Normal";
 			speech[]=
 			{
@@ -6764,6 +6797,8 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Requesting_aerial_recon_at_the_transmitted_location__Over__1
 		{
+			textOrig="Requesting aerial recon at the transmitted location. Over.";
+			text="$STR_A3_Requesting_aerial_recon_at_the_transmitted_location__Over_";
 			wordsClass="Stealth";
 			speech[]=
 			{
@@ -6774,6 +6809,8 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Requesting_aerial_recon_at_the_transmitted_location__Over_
 		{
+			textOrig="Requesting aerial recon at the transmitted location. Over.";
+			text="$STR_A3_Requesting_aerial_recon_at_the_transmitted_location__Over_";
 			wordsClass="Normal";
 			speech[]=
 			{
@@ -6794,6 +6831,8 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Requesting_immediate_fire_support_at_the_designated_coordinates__Over__1
 		{
+			textOrig="Requesting immediate fire support at the designated coordinates. Over.";
+			text="$STR_A3_Requesting_immediate_fire_support_at_the_designated_coordinates__Over_";
 			wordsClass="Stealth";
 			speech[]=
 			{
@@ -6804,6 +6843,8 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Requesting_immediate_fire_support_at_the_designated_coordinates__Over_
 		{
+			textOrig="Requesting immediate fire support at the designated coordinates. Over.";
+			text="$STR_A3_Requesting_immediate_fire_support_at_the_designated_coordinates__Over_";
 			wordsClass="Normal";
 			speech[]=
 			{
@@ -6824,6 +6865,8 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Requesting_airlift_at_the_designated_coordinates__Over__1
 		{
+			textOrig="Requesting airlift at the designated coordinates. Over.";
+			text="$STR_A3_Requesting_airlift_at_the_designated_coordinates__Over_";
 			wordsClass="Stealth";
 			speech[]=
 			{
@@ -6834,6 +6877,8 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Requesting_airlift_at_the_designated_coordinates__Over_
 		{
+			textOrig="Requesting airlift at the designated coordinates. Over.";
+			text="$STR_A3_Requesting_airlift_at_the_designated_coordinates__Over_";
 			wordsClass="Normal";
 			speech[]=
 			{
@@ -6852,6 +6897,8 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Copy_that__strike_aircraft_on_the_way__Out_
 		{
+			textOrig="Copy that, strike aircraft on the way. Out.";
+			text="$STR_A3_Copy_that__strike_aircraft_on_the_way__Out_";
 			wordsClass="Normal";
 			speech[]=
 			{
@@ -6870,6 +6917,8 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Roger__coordinates_received__CAS_is_inbound__Out_
 		{
+			textOrig="Roger, coordinates received, CAS is inbound. Out.";
+			text="$STR_A3_Roger__coordinates_received__CAS_is_inbound__Out_";
 			wordsClass="Normal";
 			speech[]=
 			{
@@ -6888,6 +6937,8 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Affirmative__supplies_en_route__Out_
 		{
+			textOrig="Affirmative, supplies en route. Out.";
+			text="$STR_A3_Affirmative__supplies_en_route__Out_";
 			wordsClass="Normal";
 			speech[]=
 			{
@@ -6906,6 +6957,8 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Acknowledged__dispatching_drone_to_the_designated_coordinates__Out_
 		{
+			textOrig="Acknowledged, dispatching drone to the designated coordinates. Out.";
+			text="$STR_A3_Acknowledged__dispatching_drone_to_the_designated_coordinates__Out_";
 			wordsClass="Normal";
 			speech[]=
 			{
@@ -6924,6 +6977,8 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Target_location_received__ordnance_is_inbound__Out_
 		{
+			textOrig="Target location received, ordnance is inbound. Out.";
+			text="$STR_A3_Target_location_received__ordnance_is_inbound__Out_";
 			wordsClass="Normal";
 			speech[]=
 			{
@@ -6942,6 +6997,8 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Roger__transport_dispatched_
 		{
+			textOrig="Roger, transport dispatched.";
+			text="$STR_A3_Roger__transport_dispatched_";
 			wordsClass="Normal";
 			speech[]=
 			{
@@ -6960,6 +7017,8 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Be_advised__we_ve_lost_contact_with_the_aircraft__Out_
 		{
+			textOrig="Be advised, we've lost contact with the aircraft. Out.";
+			text="$STR_A3_Be_advised__we_ve_lost_contact_with_the_aircraft__Out_";
 			wordsClass="Normal";
 			speech[]=
 			{
@@ -6978,6 +7037,8 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Be_advised__we_just_lost_contact_with_the_chopper__Out_
 		{
+			textOrig="Be advised, we just lost contact with the chopper. Out.";
+			text="$STR_A3_Be_advised__we_just_lost_contact_with_the_chopper__Out_";
 			wordsClass="Normal";
 			speech[]=
 			{
@@ -6996,6 +7057,8 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Be_advised__support_aircraft_is_unresponsive__Out_
 		{
+			textOrig="Be advised, support aircraft is unresponsive. Out.";
+			text="$STR_A3_Be_advised__support_aircraft_is_unresponsive__Out_";
 			wordsClass="Normal";
 			speech[]=
 			{
@@ -7014,6 +7077,8 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Be_advised__the_drone_has_dropped_off_the_grid__Out_
 		{
+			textOrig="Be advised, the drone has dropped off the grid. Out.";
+			text="$STR_A3_Be_advised__the_drone_has_dropped_off_the_grid__Out_";
 			wordsClass="Normal";
 			speech[]=
 			{
@@ -7032,6 +7097,8 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Be_advised__the_artillery_is_not_responding__Out_
 		{
+			textOrig="Be advised, the artillery is not responding. Out.";
+			text="$STR_A3_Be_advised__the_artillery_is_not_responding__Out_";
 			wordsClass="Normal";
 			speech[]=
 			{
@@ -7050,6 +7117,8 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Be_advised__we_ve_lost_contact_with_the_aircraft__Out__1
 		{
+			textOrig="Be advised, we've lost contact with the aircraft. Out.";
+			text="$STR_A3_Be_advised__we_ve_lost_contact_with_the_aircraft__Out_";
 			wordsClass="Normal";
 			speech[]=
 			{
@@ -7068,6 +7137,8 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Payload_delivered__We_re_RTB__Out_
 		{
+			textOrig="Payload delivered, We're RTB. Out.";
+			text="$STR_A3_Payload_delivered__We_re_RTB__Out_";
 			wordsClass="Normal";
 			speech[]=
 			{
@@ -7086,6 +7157,8 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class CAS_mission_complete__RTB__Out_
 		{
+			textOrig="CAS mission complete. RTB. Out.";
+			text="$STR_A3_CAS_mission_complete__RTB__Out_";
 			wordsClass="Normal";
 			speech[]=
 			{
@@ -7104,6 +7177,8 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class The_supplies_have_been_dropped__Out_
 		{
+			textOrig="The supplies have been dropped. Out.";
+			text="$STR_A3_The_supplies_have_been_dropped__Out_";
 			wordsClass="Normal";
 			speech[]=
 			{
@@ -7122,6 +7197,8 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Drone_is_bingo_fuel_and_RTB__Out_
 		{
+			textOrig="Drone is bingo fuel and RTB. Out.";
+			text="$STR_A3_Drone_is_bingo_fuel_and_RTB__Out_";
 			wordsClass="Normal";
 			speech[]=
 			{
@@ -7140,6 +7217,8 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Splash__Out_
 		{
+			textOrig="Splash. Out.";
+			text="$STR_A3_Splash__Out_";
 			wordsClass="Normal";
 			speech[]=
 			{
@@ -7158,6 +7237,8 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class We_re_here__good_luck_out_there_
 		{
+			textOrig="We're here, good luck out there.";
+			text="$STR_A3_We_re_here__good_luck_out_there_";
 			wordsClass="Normal";
 			speech[]=
 			{
@@ -7176,6 +7257,8 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Be_advised__support_units_are_now_on_standby__Out_
 		{
+			textOrig="Be advised, support units are now on standby. Out.";
+			text="$STR_A3_Be_advised__support_units_are_now_on_standby__Out_";
 			wordsClass="Normal";
 			speech[]=
 			{
@@ -7194,6 +7277,8 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Rounds_complete__Out_
 		{
+			textOrig="Rounds complete. Out.";
+			text="$STR_A3_Rounds_complete__Out_";
 			wordsClass="Normal";
 			speech[]=
 			{
@@ -7212,6 +7297,8 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Everyone_in__Let_s_get_out_of_here_
 		{
+			textOrig="Everyone in? Let's get out of here.";
+			text="$STR_A3_Everyone_in__Let_s_get_out_of_here_";
 			wordsClass="Normal";
 			speech[]=
 			{
@@ -7230,6 +7317,8 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Copy__We_re_moving_out_
 		{
+			textOrig="Copy. We're moving out.";
+			text="$STR_A3_Copy__We_re_moving_out_";
 			wordsClass="Normal";
 			speech[]=
 			{
@@ -7250,6 +7339,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_SENT_UNIT_SUPPRESS_1";
 			speech[]=
 			{
 				"%1.1",
@@ -7258,6 +7348,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version2
 		{
+			text="$STR_SENT_UNIT_SUPPRESS_2";
 			speech[]=
 			{
 				"%1.1",
@@ -7281,6 +7372,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class SentAssemble_1
 		{
+			text="$STR_EP1_SENTASSEMBLE_1";
 			speech[]=
 			{
 				"%1",
@@ -7305,6 +7397,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class SentDisassemble_1
 		{
+			text="$STR_EP1_SENTDISASSEMBLE_1";
 			speech[]=
 			{
 				"%1",
@@ -7329,6 +7422,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class SentCmdActionOpenBag_1
 		{
+			text="$STR_EP1_SENTCMDACTIONOPENBAG_1";
 			speech[]=
 			{
 				"NO_SPEECH"
@@ -7351,6 +7445,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class SentCmdActionDropBag_1
 		{
+			text="$STR_EP1_SENTCMDACTIONDROPBAG_1";
 			speech[]=
 			{
 				"NO_SPEECH"
@@ -7373,6 +7468,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class SentCmdActionTakeBag_1
 		{
+			text="$STR_EP1_SENTCMDACTIONTAKEBAG_1";
 			speech[]=
 			{
 				"NO_SPEECH"
@@ -7394,6 +7490,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___KIA";
 			speech[]=
 			{
 				"%1.1",
@@ -7402,6 +7499,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version2
 		{
+			text="$STR_A3___1_1___KIA";
 			speech[]=
 			{
 				"ShitE",
@@ -7411,6 +7509,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version3
 		{
+			text="$STR_A3___1_1___KIA";
 			speech[]=
 			{
 				"ManDownE",
@@ -7420,6 +7519,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version4
 		{
+			text="$STR_A3___1_1___KIA";
 			speech[]=
 			{
 				"GoddamnE",
@@ -7437,6 +7537,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="Requesting support ? Grid: %1";
 			speech[]=
 			{
 				"HQ",
@@ -7455,6 +7556,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="Requesting support ? Grid: %1";
 			speech[]=
 			{
 				"HQ",
@@ -7473,6 +7575,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="Requesting support ? Grid: %1";
 			speech[]=
 			{
 				"HQ",
@@ -7491,6 +7594,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="Requesting support ? Grid: %1";
 			speech[]=
 			{
 				"HQ",
@@ -7513,6 +7617,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3_Support_confirmed";
 			speech[]=
 			{
 				"SolidCopy",
@@ -7522,6 +7627,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version2
 		{
+			text="$STR_A3_Support_confirmed";
 			speech[]=
 			{
 				"HoldOnGuysSupportsOnTheWayE"
@@ -7529,6 +7635,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version3
 		{
+			text="$STR_A3_Support_confirmed";
 			speech[]=
 			{
 				"Roger",
@@ -7545,6 +7652,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="";
 			speech[]=
 			{
 				"ImAtGrid",
@@ -7566,6 +7674,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="";
 			speech[]=
 			{
 				"YoureGoodToGoE"
@@ -7573,6 +7682,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version2
 		{
+			text="";
 			speech[]=
 			{
 				"SupportComplete",
@@ -7590,6 +7700,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3_Negative";
 			speech[]=
 			{
 				"NoSupportAvailableAtThisTime",
@@ -7618,6 +7729,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3_Injured";
 			speech[]=
 			{
 				"ImHitE"
@@ -7625,6 +7737,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version2
 		{
+			text="$STR_A3_Injured";
 			speech[]=
 			{
 				"ImBleedingE"
@@ -7632,6 +7745,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version3
 		{
+			text="$STR_A3_Injured";
 			speech[]=
 			{
 				"SomebodyHelpMeE"
@@ -7639,6 +7753,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version4
 		{
+			text="$STR_A3_Injured";
 			speech[]=
 			{
 				"TheyGotMeE"
@@ -7646,6 +7761,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version5
 		{
+			text="$STR_A3_Injured";
 			speech[]=
 			{
 				"NeedHelpE"
@@ -7653,6 +7769,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version6
 		{
+			text="$STR_A3_Injured";
 			speech[]=
 			{
 				"WoundedE"
@@ -7660,6 +7777,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version7
 		{
+			text="$STR_A3_Injured";
 			speech[]=
 			{
 				"CorpsmanE"
@@ -7681,6 +7799,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3_Critical_damage";
 			speech[]=
 			{
 				"StatusRedE"
@@ -7688,6 +7807,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version2
 		{
+			text="$STR_A3_Critical_damage";
 			speech[]=
 			{
 				"VehicleIsFUBARE"
@@ -7695,6 +7815,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version3
 		{
+			text="$STR_A3_Critical_damage";
 			speech[]=
 			{
 				"WereHeavilyDamagedE"
@@ -7702,6 +7823,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version4
 		{
+			text="$STR_A3_Critical_damage";
 			speech[]=
 			{
 				"CriticalDamageE"
@@ -7717,6 +7839,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3_No_fuel";
 			speech[]=
 			{
 				"ImOutOfFuelE"
@@ -7732,6 +7855,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3_Low_fuel";
 			speech[]=
 			{
 				"ImRunningOutOfFuel"
@@ -7751,6 +7875,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3_No_ammo";
 			speech[]=
 			{
 				"GoddamnE",
@@ -7759,6 +7884,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version2
 		{
+			text="$STR_A3_No_ammo";
 			speech[]=
 			{
 				"NoMoreAmmoE"
@@ -7766,6 +7892,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version3
 		{
+			text="$STR_A3_No_ammo";
 			speech[]=
 			{
 				"CantShootE",
@@ -7782,6 +7909,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3_Low_ammo";
 			speech[]=
 			{
 				"RunningOutOfAmmoE"
@@ -7797,6 +7925,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="%2";
 			speech[]=
 			{
 				"%1",
@@ -7815,6 +7944,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3___1___Taking_command";
 			speech[]=
 			{
 				"%1",
@@ -7837,6 +7967,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="";
 			speech[]=
 			{
 				"%1",
@@ -7845,6 +7976,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version2
 		{
+			text="";
 			speech[]=
 			{
 				"%1",
@@ -7853,6 +7985,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version3
 		{
+			text="";
 			speech[]=
 			{
 				"%1",
@@ -7861,6 +7994,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version4
 		{
+			text="";
 			speech[]=
 			{
 				"%1",
@@ -7877,6 +8011,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="";
 			speech[]=
 			{
 				"%1",
@@ -7897,6 +8032,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3_Ready_to_fire";
 			speech[]=
 			{
 				"ReadyToFire",
@@ -7905,6 +8041,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version2
 		{
+			text="$STR_A3_Ready_to_fire";
 			speech[]=
 			{
 				"TargetInSight",
@@ -7914,6 +8051,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version3
 		{
+			text="$STR_A3_Ready_to_fire";
 			speech[]=
 			{
 				"TargetInSight",
@@ -7930,6 +8068,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3_Negative";
 			speech[]=
 			{
 				"UnableToFireE"
@@ -7948,6 +8087,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3_Negative";
 			speech[]=
 			{
 				"Negative"
@@ -7955,6 +8095,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version2
 		{
+			text="$STR_A3_Negative";
 			speech[]=
 			{
 				"ICant"
@@ -7970,6 +8111,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3_Negative";
 			speech[]=
 			{
 				"DamnE",
@@ -7996,6 +8138,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3_Contact____eTARGETS____eGRPDIS_ABS____eGRPDIR_102";
 			speech[]=
 			{
 				"targetinsight",
@@ -8008,6 +8151,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version2
 		{
+			text="$STR_A3_Contact____eTARGETS____eGRPDIS_ABS____eGRPDIR_102";
 			speech[]=
 			{
 				"ObservingHostile",
@@ -8019,6 +8163,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version3
 		{
+			text="$STR_SENT_DETECTED_GROUP_8";
 			speech[]=
 			{
 				"%8",
@@ -8036,6 +8181,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3_Contact____eTARGETS____eGRPDIS_ABS____eGRPDIR_CMPS";
 			speech[]=
 			{
 				"Contact",
@@ -8054,6 +8200,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version2
 		{
+			text="";
 			speech[]=
 			{
 				"%4",
@@ -8076,6 +8223,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="";
 			speech[]=
 			{
 				"%13",
@@ -8089,6 +8237,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version2
 		{
+			text="";
 			speech[]=
 			{
 				"%13",
@@ -8112,6 +8261,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="";
 			speech[]=
 			{
 				"Contact",
@@ -8124,6 +8274,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version2
 		{
+			text="";
 			speech[]=
 			{
 				"Contact",
@@ -8153,6 +8304,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3___2___Neutralized";
 			speech[]=
 			{
 				"TargetDestroyedE"
@@ -8160,6 +8312,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version2
 		{
+			text="$STR_A3___2___Neutralized";
 			speech[]=
 			{
 				"ScratchOneE"
@@ -8167,6 +8320,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version3
 		{
+			text="$STR_A3___2___Neutralized";
 			speech[]=
 			{
 				"TargetEliminated"
@@ -8174,6 +8328,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version4
 		{
+			text="$STR_A3___2___Neutralized";
 			speech[]=
 			{
 				"HesDownE"
@@ -8181,6 +8336,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version5
 		{
+			text="$STR_A3___2___Neutralized";
 			speech[]=
 			{
 				"IveGotHimE"
@@ -8204,6 +8360,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3_Target_neutralized";
 			speech[]=
 			{
 				"TargetDestroyedE"
@@ -8211,6 +8368,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version2
 		{
+			text="$STR_A3_Target_neutralized";
 			speech[]=
 			{
 				"ScratchOneE"
@@ -8218,6 +8376,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version3
 		{
+			text="$STR_A3_Target_neutralized";
 			speech[]=
 			{
 				"TargetEliminated"
@@ -8225,6 +8384,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version4
 		{
+			text="$STR_A3_Target_neutralized";
 			speech[]=
 			{
 				"HesDownE"
@@ -8232,6 +8392,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version5
 		{
+			text="$STR_A3_Target_neutralized";
 			speech[]=
 			{
 				"IveGotHimE"
@@ -8251,6 +8412,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3_Contact";
 			speech[]=
 			{
 				"ContactE"
@@ -8258,6 +8420,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version2
 		{
+			text="$STR_A3_Contact";
 			speech[]=
 			{
 				"EnemiesE"
@@ -8265,6 +8428,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version3
 		{
+			text="$STR_A3_Contact";
 			speech[]=
 			{
 				"HostilesE"
@@ -8290,6 +8454,8 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			textOrig="";
+			text="";
 			speech[]=
 			{
 				"%1",
@@ -8298,6 +8464,8 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version2
 		{
+			textOrig="";
+			text="";
 			speech[]=
 			{
 				"%1",
@@ -8306,6 +8474,8 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version3
 		{
+			textOrig="";
+			text="";
 			speech[]=
 			{
 				"%1",
@@ -8314,6 +8484,8 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version4
 		{
+			textOrig="";
+			text="";
 			speech[]=
 			{
 				"%1",
@@ -8322,6 +8494,8 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version5
 		{
+			textOrig="";
+			text="";
 			speech[]=
 			{
 				"%1",
@@ -8330,6 +8504,8 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version6
 		{
+			textOrig="";
+			text="";
 			speech[]=
 			{
 				"%1",
@@ -8349,6 +8525,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3_Area_clear";
 			speech[]=
 			{
 				"Clear"
@@ -8356,6 +8533,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version2
 		{
+			text="$STR_A3_Area_clear";
 			speech[]=
 			{
 				"AreaClear"
@@ -8371,6 +8549,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3_Repeat_command";
 			speech[]=
 			{
 				"SayAgain",
@@ -8393,6 +8572,8 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Copy_6
 		{
+			textOrig="Copy";
+			text="Copy";
 			wordsClass="Normal";
 			speech[]=
 			{
@@ -8403,6 +8584,8 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Copy_7
 		{
+			textOrig="Copy";
+			text="Copy";
 			wordsClass="Normal";
 			speech[]=
 			{
@@ -8413,6 +8596,8 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Suppressing
 		{
+			textOrig="Suppressing";
+			text="Suppressing";
 			wordsClass="Normal";
 			speech[]=
 			{
@@ -8423,6 +8608,8 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Suppressing2
 		{
+			textOrig="Suppressing";
+			text="Suppressing";
 			wordsClass="Normal";
 			speech[]=
 			{
@@ -8441,6 +8628,8 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Suppressive_fire_
 		{
+			textOrig="Suppressive fire!";
+			text="Suppressive fire";
 			wordsClass="Normal";
 			speech[]=
 			{
@@ -8465,6 +8654,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3_Report_position";
 			speech[]=
 			{
 				"WhatIsYourPositionQ",
@@ -8473,6 +8663,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version2
 		{
+			text="$STR_A3_Report_position";
 			speech[]=
 			{
 				"WhatIsYourPositionQ",
@@ -8500,6 +8691,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3___1___Regroup";
 			speech[]=
 			{
 				"%1",
@@ -8508,6 +8700,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version2
 		{
+			text="$STR_A3___1___Regroup";
 			speech[]=
 			{
 				"%1",
@@ -8516,6 +8709,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version3
 		{
+			text="$STR_A3___1___Regroup";
 			speech[]=
 			{
 				"%1",
@@ -8524,6 +8718,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version4
 		{
+			text="$STR_A3___1___Regroup";
 			speech[]=
 			{
 				"%1",
@@ -8532,6 +8727,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version5
 		{
+			text="$STR_A3___1___Regroup";
 			speech[]=
 			{
 				"%1",
@@ -8540,6 +8736,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version6
 		{
+			text="$STR_A3___1___Regroup";
 			speech[]=
 			{
 				"%1",
@@ -8556,6 +8753,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3_Formation___Column";
 			speech[]=
 			{
 				"FormationColumn"
@@ -8571,6 +8769,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3_Formation___Staggered_col_";
 			speech[]=
 			{
 				"FormationStaggeredColumn"
@@ -8586,6 +8785,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3_Formation___Wedge";
 			speech[]=
 			{
 				"FormationWedge"
@@ -8601,6 +8801,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3_Formation___Echelon_L_";
 			speech[]=
 			{
 				"FormationEchelonLeft"
@@ -8616,6 +8817,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3_Formation___Echelon_R_";
 			speech[]=
 			{
 				"FormationEchelonRight"
@@ -8631,6 +8833,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3_Formation___Vee";
 			speech[]=
 			{
 				"FormationVee"
@@ -8646,6 +8849,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3_Formation___Line";
 			speech[]=
 			{
 				"FormationLine"
@@ -8661,6 +8865,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3_Formation___File";
 			speech[]=
 			{
 				"FormationFile"
@@ -8676,6 +8881,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3_Formation___Diamond";
 			speech[]=
 			{
 				"FormationDiamond"
@@ -8691,6 +8897,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="";
 			speech[]={};
 		};
 	};
@@ -8703,6 +8910,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3___1___Relax";
 			speech[]=
 			{
 				"%1",
@@ -8721,6 +8929,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3___1___Aware";
 			speech[]=
 			{
 				"%1",
@@ -8729,6 +8938,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version2
 		{
+			text="$STR_A3___1___Aware";
 			speech[]=
 			{
 				"%1",
@@ -8747,6 +8957,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3___1___Combat";
 			speech[]=
 			{
 				"%1",
@@ -8755,6 +8966,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version2
 		{
+			text="$STR_A3___1___Combat";
 			speech[]=
 			{
 				"%1",
@@ -8775,6 +8987,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3___1___Stealth";
 			speech[]=
 			{
 				"%1",
@@ -8783,6 +8996,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version2
 		{
+			text="$STR_A3___1___Stealth";
 			speech[]=
 			{
 				"%1",
@@ -8791,6 +9005,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version3
 		{
+			text="$STR_A3___1___Stealth";
 			speech[]=
 			{
 				"%1",
@@ -8807,6 +9022,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Open_fire";
 			speech[]=
 			{
 				"%1.1",
@@ -8826,6 +9042,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Open_fire";
 			speech[]=
 			{
 				"%1.1",
@@ -8834,6 +9051,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version2
 		{
+			text="$STR_A3___1_1___Open_fire";
 			speech[]=
 			{
 				"%1.1",
@@ -8850,6 +9068,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Hold_fire";
 			speech[]=
 			{
 				"%1.1",
@@ -8866,6 +9085,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Hold_fire";
 			speech[]=
 			{
 				"%1.1",
@@ -8882,6 +9102,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Hold_fire";
 			speech[]=
 			{
 				"%1.1",
@@ -8900,6 +9121,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3___2_1___Cease_fire";
 			speech[]=
 			{
 				"%2.1",
@@ -8908,6 +9130,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version2
 		{
+			text="$STR_A3___2_1___Cease_fire";
 			speech[]=
 			{
 				"%2.1",
@@ -8924,6 +9147,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Free_to_engage";
 			speech[]=
 			{
 				"%1.1",
@@ -8940,6 +9164,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Disengage";
 			speech[]=
 			{
 				"%1.1",
@@ -8956,6 +9181,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Prone";
 			speech[]=
 			{
 				"%1.1",
@@ -8973,6 +9199,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Crouch";
 			speech[]=
 			{
 				"%1.1",
@@ -8991,6 +9218,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Stand";
 			speech[]=
 			{
 				"%1.1",
@@ -9000,6 +9228,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version2
 		{
+			text="$STR_A3___1_1___Stand";
 			speech[]=
 			{
 				"%1.1",
@@ -9017,6 +9246,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Copy_my_stance";
 			speech[]=
 			{
 				"%1.1",
@@ -9035,6 +9265,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Advance";
 			speech[]=
 			{
 				"%1.1",
@@ -9043,6 +9274,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version2
 		{
+			text="$STR_A3___1_1___Advance";
 			speech[]=
 			{
 				"%1.1",
@@ -9061,6 +9293,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Stay_back";
 			speech[]=
 			{
 				"%1.1",
@@ -9069,6 +9302,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version2
 		{
+			text="$STR_A3___1_1___Stay_back";
 			speech[]=
 			{
 				"%1.1",
@@ -9085,6 +9319,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Flank_left";
 			speech[]=
 			{
 				"%1.1",
@@ -9101,6 +9336,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Flank_right";
 			speech[]=
 			{
 				"%1.1",
@@ -9119,6 +9355,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___SITREP";
 			speech[]=
 			{
 				"%1.1",
@@ -9128,6 +9365,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version2
 		{
+			text="$STR_A3___1_1___SITREP";
 			speech[]=
 			{
 				"%1.1",
@@ -9145,6 +9383,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1____2";
 			speech[]=
 			{
 				"%2"
@@ -9160,6 +9399,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version2
 		{
+			text="$STR_A3___1_1____2";
 			speech[]=
 			{
 				"%2"
@@ -9175,6 +9415,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Watch____2";
 			speech[]=
 			{
 				"%1.1",
@@ -9192,6 +9433,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Watch____2_CMPS";
 			speech[]=
 			{
 				"%1.1",
@@ -9209,6 +9451,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Observe_position";
 			speech[]=
 			{
 				"%1.1",
@@ -9226,6 +9469,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Scan_horizon";
 			speech[]=
 			{
 				"%1.1",
@@ -9242,6 +9486,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___No_target";
 			speech[]=
 			{
 				"%1.1",
@@ -9250,6 +9495,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version2
 		{
+			text="$STR_A3___1_1___No_target";
 			speech[]=
 			{
 				"%1.1",
@@ -9266,6 +9512,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3___1___Engage_____2____6";
 			speech[]=
 			{
 				"%1",
@@ -9285,6 +9532,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3___1___Engage_____2____6";
 			speech[]=
 			{
 				"%1",
@@ -9304,6 +9552,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3___1___Engage";
 			speech[]=
 			{
 				"%1",
@@ -9323,6 +9572,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3___1___Engage";
 			speech[]=
 			{
 				"%1",
@@ -9339,6 +9589,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3___1___Engage";
 			speech[]=
 			{
 				"%1",
@@ -9365,6 +9616,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3__mUNIT___Move____mGRPDIS_ABS____mGRPDIR_CMPS";
 			speech[]=
 			{
 				"%1.1",
@@ -9384,6 +9636,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3__mUNIT___Move____mGRPDIR_1";
 			speech[]=
 			{
 				"%1.1",
@@ -9403,6 +9656,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3__mUNIT___Move___Grid___mGRID";
 			speech[]=
 			{
 				"%1.1",
@@ -9421,6 +9675,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3__mUNIT___Move___Grid___mGRID";
 			speech[]=
 			{
 				"%1.1",
@@ -9442,6 +9697,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3__mUNIT___Move___Grid___mGRID";
 			speech[]=
 			{
 				"%1.1",
@@ -9451,6 +9707,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version2
 		{
+			text="$STR_A3__mUNIT___Move___Grid___mGRID";
 			speech[]=
 			{
 				"%1.1",
@@ -9471,6 +9728,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3__mUNIT___Move___Grid___mGRID";
 			speech[]=
 			{
 				"%1.1",
@@ -9482,6 +9740,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version2
 		{
+			text="$STR_A3__mUNIT___Move___Grid___mGRID";
 			speech[]=
 			{
 				"%1.1",
@@ -9493,6 +9752,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version3
 		{
+			text="$STR_A3__mUNIT___Move___Grid___mGRID";
 			speech[]=
 			{
 				"%1.1",
@@ -9512,6 +9772,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Go_to_medic____2____3";
 			speech[]=
 			{
 				"%1.1",
@@ -9530,6 +9791,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Go_to_medic____2____3";
 			speech[]=
 			{
 				"%1.1",
@@ -9548,6 +9810,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Go_to_medic___2_____3";
 			speech[]=
 			{
 				"%1.1",
@@ -9566,6 +9829,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Repair_vehicle____2____3";
 			speech[]=
 			{
 				"%1.1",
@@ -9583,6 +9847,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Repair_vehicle____2____3";
 			speech[]=
 			{
 				"%1.1",
@@ -9600,6 +9865,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Repair_vehicle___2_____3";
 			speech[]=
 			{
 				"%1.1",
@@ -9617,6 +9883,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Refuel_vehicle____2____3";
 			speech[]=
 			{
 				"%1.1",
@@ -9634,6 +9901,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Refuel_vehicle___Grid___2";
 			speech[]=
 			{
 				"%1.1",
@@ -9651,6 +9919,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Refuel_vehicle___2_____3";
 			speech[]=
 			{
 				"%1.1",
@@ -9668,6 +9937,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Rearm____2____3";
 			speech[]=
 			{
 				"%1.1",
@@ -9685,6 +9955,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Rearm___Grid___2";
 			speech[]=
 			{
 				"%1.1",
@@ -9702,6 +9973,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Rearm___2_____3";
 			speech[]=
 			{
 				"%1.1",
@@ -9719,6 +9991,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Get_support____2____3";
 			speech[]=
 			{
 				"%1.1",
@@ -9736,6 +10009,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Get_support___Grid___2";
 			speech[]=
 			{
 				"%1.1",
@@ -9753,6 +10027,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Get_support___2_____3_CMPS";
 			speech[]=
 			{
 				"%1.1",
@@ -9770,6 +10045,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Drop_weapon____2";
 			speech[]=
 			{
 				"%1.1",
@@ -9788,6 +10064,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Drop_magazine____2";
 			speech[]=
 			{
 				"%1.1",
@@ -9806,6 +10083,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Take_weapon____2____3____4";
 			speech[]=
 			{
 				"%1.1",
@@ -9824,6 +10102,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Take_weapon____2___Grid___3";
 			speech[]=
 			{
 				"%1.1",
@@ -9842,6 +10121,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Take_weapon____3___2_____4";
 			speech[]=
 			{
 				"%1.1",
@@ -9860,6 +10140,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Take_magazine____2____3";
 			speech[]=
 			{
 				"%1.1",
@@ -9878,6 +10159,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Take_magazine___Grid___2";
 			speech[]=
 			{
 				"%1.1",
@@ -9896,6 +10178,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Take_magazine____2____3";
 			speech[]=
 			{
 				"%1.1",
@@ -9914,6 +10197,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_SENT_CMD_ACTION_1";
 			speech[]={};
 		};
 	};
@@ -9926,6 +10210,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_SENT_CMD_ACTION_NEAR_1";
 			speech[]={};
 		};
 	};
@@ -9938,6 +10223,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_SENT_CMD_ACTION_FAR_1";
 			speech[]={};
 		};
 	};
@@ -9950,6 +10236,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_SENT_CMD_ACTION_AT_1";
 			speech[]={};
 		};
 	};
@@ -9962,6 +10249,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_SENT_CMD_TAKE_FLAG_1";
 			speech[]=
 			{
 				"%1.1",
@@ -9980,6 +10268,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_SENT_CMD_TAKE_FLAG_1";
 			speech[]=
 			{
 				"%1.1",
@@ -9998,6 +10287,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_SENT_CMD_TAKE_FLAG_1";
 			speech[]=
 			{
 				"%1.1",
@@ -10016,6 +10306,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_SENT_CMD_RETURN_FLAG_1";
 			speech[]=
 			{
 				"%1.1",
@@ -10034,6 +10325,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_SENT_CMD_RETURN_FLAG_1";
 			speech[]=
 			{
 				"%1.1",
@@ -10052,6 +10344,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_SENT_CMD_RETURN_FLAG_1";
 			speech[]=
 			{
 				"%1.1",
@@ -10072,6 +10365,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Eject";
 			speech[]=
 			{
 				"%1.1",
@@ -10080,6 +10374,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version2
 		{
+			text="$STR_A3___1_1___Eject";
 			speech[]=
 			{
 				"%1.1",
@@ -10096,6 +10391,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Set_charge";
 			speech[]=
 			{
 				"%1.1",
@@ -10112,6 +10408,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Detonate_charge";
 			speech[]=
 			{
 				"%1.1",
@@ -10128,6 +10425,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Set_timer";
 			speech[]=
 			{
 				"%1.1",
@@ -10144,6 +10442,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Deactivate_charge";
 			speech[]=
 			{
 				"%1.1",
@@ -10160,6 +10459,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Disarm_mine";
 			speech[]=
 			{
 				"%1.1",
@@ -10176,6 +10476,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Take_mine";
 			speech[]=
 			{
 				"%1.1",
@@ -10192,6 +10493,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Light_fire";
 			speech[]=
 			{
 				"GoAndLightThatFire"
@@ -10207,6 +10509,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Light_fire";
 			speech[]=
 			{
 				"%1.1",
@@ -10223,6 +10526,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Light_fire";
 			speech[]=
 			{
 				"%1.1",
@@ -10239,6 +10543,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_SENT_CMD_PUT_OUT_FIRE_1";
 			speech[]=
 			{
 				"%1.1",
@@ -10255,6 +10560,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Extinguish_fire";
 			speech[]=
 			{
 				"%1.1",
@@ -10271,6 +10577,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Extinguish_fire";
 			speech[]=
 			{
 				"%1.1",
@@ -10287,6 +10594,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Open_door";
 			speech[]=
 			{
 				"%1.1",
@@ -10303,6 +10611,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Open_door";
 			speech[]=
 			{
 				"%1.1",
@@ -10319,6 +10628,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Open_door";
 			speech[]=
 			{
 				"%1.1",
@@ -10335,6 +10645,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Close_door";
 			speech[]=
 			{
 				"%1.1",
@@ -10351,6 +10662,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Close_door";
 			speech[]=
 			{
 				"%1.1",
@@ -10367,6 +10679,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Close_door";
 			speech[]=
 			{
 				"%1.1",
@@ -10394,6 +10707,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3___1___Regroup";
 			speech[]=
 			{
 				"%1",
@@ -10402,6 +10716,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version2
 		{
+			text="$STR_A3___1___Regroup";
 			speech[]=
 			{
 				"%1",
@@ -10410,6 +10725,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version3
 		{
+			text="$STR_A3___1___Regroup";
 			speech[]=
 			{
 				"%1",
@@ -10418,6 +10734,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version4
 		{
+			text="$STR_A3___1___Regroup";
 			speech[]=
 			{
 				"%1",
@@ -10426,6 +10743,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version5
 		{
+			text="$STR_A3___1___Regroup";
 			speech[]=
 			{
 				"%1",
@@ -10434,6 +10752,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version6
 		{
+			text="$STR_A3___1___Regroup";
 			speech[]=
 			{
 				"%1",
@@ -10450,6 +10769,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Join_group____2_1";
 			speech[]=
 			{
 				"%1.1",
@@ -10468,6 +10788,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3___1___Engage";
 			speech[]=
 			{
 				"%1.1",
@@ -10486,6 +10807,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3___1___Engage";
 			speech[]=
 			{
 				"%1.1",
@@ -10503,6 +10825,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3___1___Engage";
 			speech[]=
 			{
 				"%1.1",
@@ -10521,6 +10844,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Get_in";
 			speech[]=
 			{
 				"%1.1",
@@ -10538,6 +10862,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Get_in___Commander";
 			speech[]=
 			{
 				"%1.1",
@@ -10555,6 +10880,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Get_in___Driver";
 			speech[]=
 			{
 				"%1.1",
@@ -10572,6 +10898,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Get_in___Pilot";
 			speech[]=
 			{
 				"%1.1",
@@ -10589,6 +10916,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Get_in___Gunner";
 			speech[]=
 			{
 				"%1.1",
@@ -10606,6 +10934,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Get_in___Passenger";
 			speech[]=
 			{
 				"%1.1",
@@ -10623,6 +10952,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Switch_to_driver";
 			speech[]={};
 		};
 	};
@@ -10635,6 +10965,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Switch_to_gunner";
 			speech[]={};
 		};
 	};
@@ -10647,6 +10978,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Switch_to_commander";
 			speech[]={};
 		};
 	};
@@ -10659,6 +10991,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Switch_to_cargo";
 			speech[]={};
 		};
 	};
@@ -10673,6 +11006,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Dismount";
 			speech[]=
 			{
 				"%1.1",
@@ -10681,6 +11015,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version2
 		{
+			text="$STR_A3___1_1___Dismount";
 			speech[]=
 			{
 				"%1.1",
@@ -10699,6 +11034,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Stop";
 			speech[]=
 			{
 				"%1.1",
@@ -10708,6 +11044,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version2
 		{
+			text="$STR_A3___1_1___Stop";
 			speech[]=
 			{
 				"%1.1",
@@ -10727,6 +11064,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Stop";
 			speech[]=
 			{
 				"%1.1",
@@ -10735,6 +11073,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version2
 		{
+			text="$STR_A3___1_1___Stop";
 			speech[]=
 			{
 				"%1.1",
@@ -10755,6 +11094,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3___1___Take_cover";
 			speech[]=
 			{
 				"%1.1",
@@ -10764,6 +11104,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version2
 		{
+			text="$STR_A3___1___Take_cover";
 			speech[]=
 			{
 				"%1.1",
@@ -10773,6 +11114,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version3
 		{
+			text="$STR_A3___1___Take_cover";
 			speech[]=
 			{
 				"%1.1",
@@ -10790,6 +11132,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="";
 			speech[]={};
 		};
 	};
@@ -10804,6 +11147,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3_Engaging____2";
 			speech[]=
 			{
 				"Copy"
@@ -10811,6 +11155,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version2
 		{
+			text="$STR_A3_Engaging____2";
 			speech[]=
 			{
 				"IamAttackingTarget"
@@ -10826,6 +11171,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3___3_1___Engaging____2";
 			speech[]=
 			{
 				"%3.1",
@@ -10842,6 +11188,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3___1_1___Supporting";
 			speech[]=
 			{
 				"%1.1",
@@ -10864,6 +11211,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3_Copy";
 			speech[]=
 			{
 				"HC_Affirmative"
@@ -10872,6 +11220,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version2
 		{
+			text="$STR_A3_Copy";
 			speech[]=
 			{
 				"Copy"
@@ -10879,6 +11228,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version3
 		{
+			text="$STR_A3_Copy";
 			speech[]=
 			{
 				"Understood"
@@ -10887,6 +11237,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version4
 		{
+			text="$STR_A3_Copy";
 			speech[]=
 			{
 				"ImOnIt"
@@ -10911,6 +11262,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3_Copy";
 			speech[]=
 			{
 				"Roger"
@@ -10919,6 +11271,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version2
 		{
+			text="$STR_A3_Copy";
 			speech[]=
 			{
 				"ImOnIt"
@@ -10927,6 +11280,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version3
 		{
+			text="$STR_A3_Copy";
 			speech[]=
 			{
 				"Copy"
@@ -10935,6 +11289,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version4
 		{
+			text="$STR_A3_Copy";
 			speech[]=
 			{
 				"IAttack"
@@ -10943,6 +11298,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version5
 		{
+			text="$STR_A3_Copy";
 			speech[]=
 			{
 				"IamAttackingTarget"
@@ -10959,6 +11315,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3_Copy";
 			speech[]=
 			{
 				"Roger"
@@ -10983,6 +11340,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3__mUNIT___Move____mGRPDIS_ABS____mGRPDIR_1";
 			speech[]=
 			{
 				"XMIT",
@@ -11002,6 +11360,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3__mUNIT___Move____mGRPDIS_ABS____mGRPDIR_1";
 			speech[]=
 			{
 				"XMIT",
@@ -11021,6 +11380,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3__mUNIT___Move___Grid___mGRID";
 			speech[]=
 			{
 				"XMIT",
@@ -11031,6 +11391,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version2
 		{
+			text="$STR_A3__mUNIT___Move___Grid___mGRID";
 			speech[]=
 			{
 				"XMIT",
@@ -11052,6 +11413,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3__mUNIT___Move___Grid___mGRID";
 			speech[]=
 			{
 				"XMIT",
@@ -11062,6 +11424,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version2
 		{
+			text="$STR_A3__mUNIT___Move___Grid___mGRID";
 			speech[]=
 			{
 				"XMIT",
@@ -11083,6 +11446,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3__mUNIT___Move___Grid___mGRID";
 			speech[]=
 			{
 				"XMIT",
@@ -11095,6 +11459,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version2
 		{
+			text="$STR_A3__mUNIT___Move___Grid___mGRID";
 			speech[]=
 			{
 				"XMIT",
@@ -11112,6 +11477,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3_Watch____1";
 			speech[]=
 			{
 				"XMIT",
@@ -11129,6 +11495,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3_Observe____1____2";
 			speech[]=
 			{
 				"XMIT",
@@ -11147,6 +11514,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3_Keep_formation";
 			speech[]=
 			{
 				"XMIT",
@@ -11163,6 +11531,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3_Engage____1____6_ABS____7_CLCK";
 			speech[]=
 			{
 				"XMIT",
@@ -11181,6 +11550,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3_Target____1____6_ABS____7_CLCK";
 			speech[]=
 			{
 				"XMIT",
@@ -11200,6 +11570,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3_Cancel_target";
 			speech[]=
 			{
 				"XMIT",
@@ -11216,6 +11587,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3_Cease_fire";
 			speech[]=
 			{
 				"XMIT",
@@ -11232,6 +11604,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3_Forward";
 			speech[]=
 			{
 				"XMIT",
@@ -11248,6 +11621,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3_Stop";
 			speech[]=
 			{
 				"XMIT",
@@ -11264,6 +11638,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3_Backward";
 			speech[]=
 			{
 				"XMIT",
@@ -11280,6 +11655,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3_Fast";
 			speech[]=
 			{
 				"XMIT",
@@ -11296,6 +11672,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3_Slow";
 			speech[]=
 			{
 				"XMIT",
@@ -11312,6 +11689,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3_Left";
 			speech[]=
 			{
 				"XMIT",
@@ -11328,6 +11706,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3_Right";
 			speech[]=
 			{
 				"XMIT",
@@ -11344,6 +11723,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3_Manual_fire";
 			speech[]=
 			{
 				"XMIT",
@@ -11360,6 +11740,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3_Cancel_manual_fire";
 			speech[]=
 			{
 				"XMIT",
@@ -11376,6 +11757,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3_Fire";
 			speech[]=
 			{
 				"XMIT",
@@ -11392,6 +11774,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3_Load____1";
 			speech[]=
 			{
 				"%1"
@@ -11407,6 +11790,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3_Load____1";
 			speech[]=
 			{
 				"%1"
@@ -11422,6 +11806,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3_Watch____1";
 			speech[]=
 			{
 				"%1"
@@ -11439,6 +11824,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="$STR_A3_Cannot_fire";
 			speech[]=
 			{
 				"Negative"
@@ -11446,6 +11832,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version2
 		{
+			text="$STR_A3_Cannot_fire";
 			speech[]=
 			{
 				"CannotFire"
@@ -11454,6 +11841,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 	};
 	class ClausePosition: ClausePosition
 	{
+		text="$STR_SENT_CLAUSE_POSITION";
 		speech[]=
 		{
 			"%1",
@@ -11462,6 +11850,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 	};
 	class ClausePositionNear: ClausePositionNear
 	{
+		text="$STR_SENT_CLAUSE_POSITION_NEAR";
 		speech[]=
 		{
 			"that",
@@ -11490,6 +11879,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="";
 			speech[]=
 			{
 				"C_GoImCoveringE"
@@ -11497,6 +11887,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version2
 		{
+			text="";
 			speech[]=
 			{
 				"C_GoILLCoverE"
@@ -11504,6 +11895,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version3
 		{
+			text="";
 			speech[]=
 			{
 				"C_CoveringFireE"
@@ -11511,6 +11903,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version4
 		{
+			text="";
 			speech[]=
 			{
 				"C_CoveringGoE"
@@ -11518,6 +11911,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version5
 		{
+			text="";
 			speech[]=
 			{
 				"C_MoveOutE"
@@ -11525,6 +11919,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version6
 		{
+			text="";
 			speech[]=
 			{
 				"C_GoE"
@@ -11532,6 +11927,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version7
 		{
+			text="";
 			speech[]=
 			{
 				"C_MoveE"
@@ -11553,6 +11949,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="";
 			speech[]=
 			{
 				"C_EngagingE"
@@ -11560,6 +11957,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version2
 		{
+			text="";
 			speech[]=
 			{
 				"C_CoverMeE"
@@ -11567,6 +11965,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version3
 		{
+			text="";
 			speech[]=
 			{
 				"C_OKLetsGo"
@@ -11574,6 +11973,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version4
 		{
+			text="";
 			speech[]=
 			{
 				"C_MovingE"
@@ -11581,6 +11981,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version5
 		{
+			text="";
 			speech[]=
 			{
 				"C_GoingE"
@@ -11602,6 +12003,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="";
 			speech[]=
 			{
 				"C_SuppresiveFireE"
@@ -11609,6 +12011,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version2
 		{
+			text="";
 			speech[]=
 			{
 				"C_HangOnILLSuppressE"
@@ -11616,6 +12019,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version3
 		{
+			text="";
 			speech[]=
 			{
 				"C_SuppressingE"
@@ -11623,6 +12027,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version4
 		{
+			text="";
 			speech[]=
 			{
 				"C_OpenUpE"
@@ -11644,6 +12049,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="";
 			speech[]=
 			{
 				"C_ReloadingE"
@@ -11651,6 +12057,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version2
 		{
+			text="";
 			speech[]=
 			{
 				"C_IgottaReloadE"
@@ -11658,6 +12065,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version3
 		{
+			text="";
 			speech[]=
 			{
 				"C_CoverMeWhileIReloadE"
@@ -11665,6 +12073,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version4
 		{
+			text="";
 			speech[]=
 			{
 				"C_ChangingMagsE"
@@ -11684,6 +12093,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="";
 			speech[]=
 			{
 				"C_FireInTheHoleE"
@@ -11691,6 +12101,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version2
 		{
+			text="";
 			speech[]=
 			{
 				"C_ThrowingFragE"
@@ -11698,6 +12109,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version3
 		{
+			text="";
 			speech[]=
 			{
 				"C_FragOutE"
@@ -11715,6 +12127,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="";
 			speech[]=
 			{
 				"C_ThrowingSmokeNowE"
@@ -11722,6 +12135,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version2
 		{
+			text="";
 			speech[]=
 			{
 				"C_SmokeOutE"
@@ -11739,6 +12153,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="";
 			speech[]=
 			{
 				"C_GrenadeE"
@@ -11746,6 +12161,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version2
 		{
+			text="";
 			speech[]=
 			{
 				"C_WatchForGrenadeE"
@@ -11775,6 +12191,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="";
 			speech[]=
 			{
 				"C_ContactE"
@@ -11782,6 +12199,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version2
 		{
+			text="";
 			speech[]=
 			{
 				"C_DidYouSeeThatQ"
@@ -11789,6 +12207,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version3
 		{
+			text="";
 			speech[]=
 			{
 				"C_FuckSawThatQ"
@@ -11796,6 +12215,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version4
 		{
+			text="";
 			speech[]=
 			{
 				"C_TargetE"
@@ -11803,6 +12223,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version5
 		{
+			text="";
 			speech[]=
 			{
 				"C_GotATargetE"
@@ -11810,6 +12231,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version6
 		{
+			text="";
 			speech[]=
 			{
 				"C_HostilesE"
@@ -11817,6 +12239,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version7
 		{
+			text="";
 			speech[]=
 			{
 				"C_RightThereE"
@@ -11824,6 +12247,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version8
 		{
+			text="";
 			speech[]=
 			{
 				"C_TakeHimOutE"
@@ -11853,6 +12277,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="";
 			speech[]=
 			{
 				"C_TakeCoverE"
@@ -11860,6 +12285,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version2
 		{
+			text="";
 			speech[]=
 			{
 				"C_ShitE"
@@ -11867,6 +12293,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version3
 		{
+			text="";
 			speech[]=
 			{
 				"C_GetDownE"
@@ -11874,6 +12301,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version4
 		{
+			text="";
 			speech[]=
 			{
 				"C_HitTheDeckE"
@@ -11881,6 +12309,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version5
 		{
+			text="";
 			speech[]=
 			{
 				"C_WhatTheFuckQ"
@@ -11888,6 +12317,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version6
 		{
+			text="";
 			speech[]=
 			{
 				"C_WhatTheHellQ"
@@ -11895,6 +12325,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version7
 		{
+			text="";
 			speech[]=
 			{
 				"C_WhatTheFuckWasThatQ"
@@ -11902,6 +12333,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version8
 		{
+			text="";
 			speech[]=
 			{
 				"C_CheckThatOut"
@@ -11919,6 +12351,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="";
 			speech[]=
 			{
 				"C_HolyShitE"
@@ -11926,6 +12359,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version2
 		{
+			text="";
 			speech[]=
 			{
 				"C_OhJesusE"
@@ -11953,6 +12387,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="";
 			speech[]=
 			{
 				"C_WhatAView"
@@ -11960,6 +12395,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version2
 		{
+			text="";
 			speech[]=
 			{
 				"C_WhatAMess"
@@ -11967,6 +12403,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version3
 		{
+			text="";
 			speech[]=
 			{
 				"C_WishIHadntSeeThat"
@@ -11974,6 +12411,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version4
 		{
+			text="";
 			speech[]=
 			{
 				"C_ThatSucks"
@@ -11981,6 +12419,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version5
 		{
+			text="";
 			speech[]=
 			{
 				"C_MotherfuckerE"
@@ -11988,6 +12427,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version6
 		{
+			text="";
 			speech[]=
 			{
 				"C_SweetJesusE"
@@ -11995,6 +12435,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version7
 		{
+			text="";
 			speech[]=
 			{
 				"C_SeeThatQE"
@@ -12026,6 +12467,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="";
 			speech[]=
 			{
 				"C_ManDownE"
@@ -12033,6 +12475,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version2
 		{
+			text="";
 			speech[]=
 			{
 				"C_FuckHesDownE"
@@ -12040,6 +12483,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version3
 		{
+			text="";
 			speech[]=
 			{
 				"C_HesDeadE"
@@ -12047,6 +12491,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version4
 		{
+			text="";
 			speech[]=
 			{
 				"C_HesGoneE"
@@ -12054,6 +12499,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version5
 		{
+			text="";
 			speech[]=
 			{
 				"C_WeLostHimE"
@@ -12061,6 +12507,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version6
 		{
+			text="";
 			speech[]=
 			{
 				"C_TheyGotHimE"
@@ -12068,6 +12515,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version7
 		{
+			text="";
 			speech[]=
 			{
 				"C_NoE"
@@ -12075,6 +12523,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version8
 		{
+			text="";
 			speech[]=
 			{
 				"C_FuckE"
@@ -12082,6 +12531,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version9
 		{
+			text="";
 			speech[]=
 			{
 				"C_ManHitE"
@@ -12103,6 +12553,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="";
 			speech[]=
 			{
 				"C_ScanYourSector"
@@ -12110,6 +12561,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version2
 		{
+			text="";
 			speech[]=
 			{
 				"C_CarefulJustBeCareful"
@@ -12117,6 +12569,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version3
 		{
+			text="";
 			speech[]=
 			{
 				"C_CheckSectors"
@@ -12124,6 +12577,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version4
 		{
+			text="";
 			speech[]=
 			{
 				"C_FocusE"
@@ -12145,6 +12599,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="";
 			speech[]=
 			{
 				"C_woohoo1"
@@ -12152,6 +12607,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version2
 		{
+			text="";
 			speech[]=
 			{
 				"C_woohoo2"
@@ -12159,6 +12615,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version3
 		{
+			text="";
 			speech[]=
 			{
 				"C_woohoo3"
@@ -12166,6 +12623,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version4
 		{
+			text="";
 			speech[]=
 			{
 				"C_woohoo4"
@@ -12187,6 +12645,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="";
 			speech[]=
 			{
 				"C_scream1"
@@ -12194,6 +12653,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version2
 		{
+			text="";
 			speech[]=
 			{
 				"C_scream2"
@@ -12201,6 +12661,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version3
 		{
+			text="";
 			speech[]=
 			{
 				"C_scream3"
@@ -12208,6 +12669,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version4
 		{
+			text="";
 			speech[]=
 			{
 				"C_scream4"
@@ -12227,6 +12689,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="";
 			speech[]=
 			{
 				"Receive1"
@@ -12234,6 +12697,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version2
 		{
+			text="";
 			speech[]=
 			{
 				"Receive2"
@@ -12241,6 +12705,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version3
 		{
+			text="";
 			speech[]=
 			{
 				"Receive3"
@@ -12262,6 +12727,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="";
 			speech[]=
 			{
 				"HC_Advancing"
@@ -12269,6 +12735,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version2
 		{
+			text="";
 			speech[]=
 			{
 				"HC_Affirmative"
@@ -12276,6 +12743,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version3
 		{
+			text="";
 			speech[]=
 			{
 				"HC_MovingToPosition"
@@ -12283,6 +12751,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version4
 		{
+			text="";
 			speech[]=
 			{
 				"HC_OrderReceived"
@@ -12308,6 +12777,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version1
 		{
+			text="";
 			speech[]=
 			{
 				"HC_Advancing"
@@ -12315,6 +12785,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version2
 		{
+			text="";
 			speech[]=
 			{
 				"HC_Affirmative"
@@ -12322,6 +12793,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version3
 		{
+			text="";
 			speech[]=
 			{
 				"HC_OrderReceived"
@@ -12329,6 +12801,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version4
 		{
+			text="";
 			speech[]=
 			{
 				"HC_EngagingE"
@@ -12336,6 +12809,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version5
 		{
+			text="";
 			speech[]=
 			{
 				"HC_AssaultingEnemyPosition"
@@ -12343,6 +12817,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class Version6
 		{
+			text="";
 			speech[]=
 			{
 				"HC_AttackingE"
@@ -12357,6 +12832,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 			{
 				class 0
 				{
+					text="$STR_Q_NORTH";
 					speech[]=
 					{
 						"North"
@@ -12364,6 +12840,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 				};
 				class 45
 				{
+					text="$STR_Q_NORTH_EAST";
 					speech[]=
 					{
 						"NorthEast"
@@ -12371,6 +12848,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 				};
 				class 90
 				{
+					text="$STR_Q_EAST";
 					speech[]=
 					{
 						"East"
@@ -12378,6 +12856,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 				};
 				class 135
 				{
+					text="$STR_Q_SOUTH_EAST";
 					speech[]=
 					{
 						"SouthEast"
@@ -12385,6 +12864,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 				};
 				class 180
 				{
+					text="$STR_Q_SOUTH";
 					speech[]=
 					{
 						"South"
@@ -12392,6 +12872,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 				};
 				class 225
 				{
+					text="$STR_Q_SOUTH_WEST";
 					speech[]=
 					{
 						"SouthWest"
@@ -12399,6 +12880,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 				};
 				class 270
 				{
+					text="$STR_Q_WEST";
 					speech[]=
 					{
 						"West"
@@ -12406,6 +12888,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 				};
 				class 315
 				{
+					text="$STR_Q_NORTH_WEST";
 					speech[]=
 					{
 						"NorthWest"
@@ -12416,6 +12899,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 			{
 				class 0
 				{
+					text="$STR_A3_Arguments_Direction_Compass2_0_0";
 					speech[]=
 					{
 						"bearing000"
@@ -12423,6 +12907,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 				};
 				class 15
 				{
+					text="$STR_A3_Arguments_Direction_Compass2_15_0";
 					speech[]=
 					{
 						"bearing015"
@@ -12430,6 +12915,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 				};
 				class 30
 				{
+					text="$STR_A3_Arguments_Direction_Compass2_30_0";
 					speech[]=
 					{
 						"bearing030"
@@ -12437,6 +12923,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 				};
 				class 45
 				{
+					text="$STR_A3_Arguments_Direction_Compass2_45_0";
 					speech[]=
 					{
 						"bearing045"
@@ -12444,6 +12931,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 				};
 				class 60
 				{
+					text="$STR_A3_Arguments_Direction_Compass2_60_0";
 					speech[]=
 					{
 						"bearing060"
@@ -12451,6 +12939,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 				};
 				class 75
 				{
+					text="$STR_A3_Arguments_Direction_Compass2_75_0";
 					speech[]=
 					{
 						"bearing075"
@@ -12458,6 +12947,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 				};
 				class 90
 				{
+					text="$STR_A3_Arguments_Direction_Compass2_90_0";
 					speech[]=
 					{
 						"bearing090"
@@ -12465,6 +12955,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 				};
 				class 105
 				{
+					text="$STR_A3_Arguments_Direction_Compass2_105_0";
 					speech[]=
 					{
 						"bearing105"
@@ -12472,6 +12963,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 				};
 				class 120
 				{
+					text="$STR_A3_Arguments_Direction_Compass2_120_0";
 					speech[]=
 					{
 						"bearing120"
@@ -12479,6 +12971,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 				};
 				class 135
 				{
+					text="$STR_A3_Arguments_Direction_Compass2_135_0";
 					speech[]=
 					{
 						"bearing135"
@@ -12486,6 +12979,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 				};
 				class 150
 				{
+					text="$STR_A3_Arguments_Direction_Compass2_150_0";
 					speech[]=
 					{
 						"bearing150"
@@ -12493,6 +12987,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 				};
 				class 165
 				{
+					text="$STR_A3_Arguments_Direction_Compass2_165_0";
 					speech[]=
 					{
 						"bearing165"
@@ -12500,6 +12995,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 				};
 				class 180
 				{
+					text="$STR_A3_Arguments_Direction_Compass2_180_0";
 					speech[]=
 					{
 						"bearing180"
@@ -12507,6 +13003,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 				};
 				class 195
 				{
+					text="$STR_A3_Arguments_Direction_Compass2_195_0";
 					speech[]=
 					{
 						"bearing195"
@@ -12514,6 +13011,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 				};
 				class 210
 				{
+					text="$STR_A3_Arguments_Direction_Compass2_210_0";
 					speech[]=
 					{
 						"bearing210"
@@ -12521,6 +13019,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 				};
 				class 225
 				{
+					text="$STR_A3_Arguments_Direction_Compass2_225_0";
 					speech[]=
 					{
 						"bearing225"
@@ -12528,6 +13027,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 				};
 				class 240
 				{
+					text="$STR_A3_Arguments_Direction_Compass2_240_0";
 					speech[]=
 					{
 						"bearing240"
@@ -12535,6 +13035,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 				};
 				class 255
 				{
+					text="$STR_A3_Arguments_Direction_Compass2_255_0";
 					speech[]=
 					{
 						"bearing255"
@@ -12542,6 +13043,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 				};
 				class 270
 				{
+					text="$STR_A3_Arguments_Direction_Compass2_270_0";
 					speech[]=
 					{
 						"bearing270"
@@ -12549,6 +13051,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 				};
 				class 285
 				{
+					text="$STR_A3_Arguments_Direction_Compass2_285_0";
 					speech[]=
 					{
 						"bearing285"
@@ -12556,6 +13059,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 				};
 				class 300
 				{
+					text="$STR_A3_Arguments_Direction_Compass2_300_0";
 					speech[]=
 					{
 						"bearing300"
@@ -12563,6 +13067,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 				};
 				class 315
 				{
+					text="$STR_A3_Arguments_Direction_Compass2_315_0";
 					speech[]=
 					{
 						"bearing315"
@@ -12570,6 +13075,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 				};
 				class 330
 				{
+					text="$STR_A3_Arguments_Direction_Compass2_330_0";
 					speech[]=
 					{
 						"bearing330"
@@ -12577,6 +13083,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 				};
 				class 345
 				{
+					text="$STR_A3_Arguments_Direction_Compass2_345_0";
 					speech[]=
 					{
 						"bearing345"
@@ -12584,6 +13091,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 				};
 				class 360
 				{
+					text="$STR_A3_Arguments_Direction_Compass2_360_0";
 					speech[]=
 					{
 						"bearing360"
@@ -12594,6 +13102,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 			{
 				class 0
 				{
+					text="$STR_A3_Arguments_Direction_Relative1_0_0";
 					speech[]=
 					{
 						"InFrontOf"
@@ -12601,6 +13110,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 				};
 				class 90
 				{
+					text="$STR_A3_Arguments_Direction_Relative1_90_0";
 					speech[]=
 					{
 						"RightOf"
@@ -12608,6 +13118,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 				};
 				class 180
 				{
+					text="$STR_A3_Arguments_Direction_Relative1_270_0";
 					speech[]=
 					{
 						"Behind"
@@ -12615,6 +13126,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 				};
 				class 270
 				{
+					text="$STR_A3_Arguments_Direction_Relative1_180_0";
 					speech[]=
 					{
 						"LeftOf"
@@ -12625,6 +13137,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 			{
 				class 0
 				{
+					text="$STR_A3_Arguments_Direction_Relative1_0_0";
 					speech[]=
 					{
 						"Front"
@@ -12632,6 +13145,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 				};
 				class 90
 				{
+					text="$STR_A3_Arguments_Direction_Relative1_90_0";
 					speech[]=
 					{
 						"Right"
@@ -12639,6 +13153,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 				};
 				class 180
 				{
+					text="$STR_A3_Arguments_Direction_Relative1_270_0";
 					speech[]=
 					{
 						"Rear"
@@ -12646,6 +13161,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 				};
 				class 270
 				{
+					text="$STR_A3_Arguments_Direction_Relative1_180_0";
 					speech[]=
 					{
 						"Left"
@@ -12656,6 +13172,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 			{
 				class 0
 				{
+					text="$STR_A3_Arguments_Direction_Relative1_0_0";
 					speech[]=
 					{
 						"Front"
@@ -12663,6 +13180,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 				};
 				class 90
 				{
+					text="$STR_A3_Arguments_Direction_Relative1_90_0";
 					speech[]=
 					{
 						"RightFlank"
@@ -12670,6 +13188,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 				};
 				class 180
 				{
+					text="$STR_A3_Arguments_Direction_Relative1_270_0";
 					speech[]=
 					{
 						"Rear"
@@ -12677,6 +13196,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 				};
 				class 270
 				{
+					text="$STR_A3_Arguments_Direction_Relative1_180_0";
 					speech[]=
 					{
 						"LeftFlank"
@@ -12710,6 +13230,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 				"XMIT",
 				"OnTheWay"
 			};
+			text="";
 			wordsClass="Normal";
 		};
 		class Stealth_OnTheWay
@@ -12720,6 +13241,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 				"XMIT",
 				"OnTheWay"
 			};
+			text="";
 			wordsClass="Stealth";
 		};
 		class Normal_Confirmation1
@@ -12730,6 +13252,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 				"XMIT",
 				"HC_MovingToPosition"
 			};
+			text="";
 			wordsClass="Normal";
 		};
 		class Stealth_Confirmation1
@@ -12740,6 +13263,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 				"XMIT",
 				"HC_MovingToPosition"
 			};
+			text="";
 			wordsClass="Stealth";
 		};
 		class Normal_Confirmation2
@@ -12750,6 +13274,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 				"XMIT",
 				"HC_Affirmative"
 			};
+			text="";
 			wordsClass="Normal";
 		};
 		class Stealth_Confirmation2
@@ -12760,6 +13285,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 				"XMIT",
 				"HC_Affirmative"
 			};
+			text="";
 			wordsClass="Stealth";
 		};
 	};
@@ -12792,6 +13318,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 				"XMIT",
 				"ImOnIt"
 			};
+			text="";
 			wordsClass="Normal";
 		};
 		class Stealth_CopyIAmOnHim
@@ -12802,6 +13329,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 				"XMIT",
 				"ImOnIt"
 			};
+			text="";
 			wordsClass="Stealth";
 		};
 		class Normal_LockAndLoad
@@ -12812,6 +13340,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 				"XMIT",
 				"HC_EngagingE"
 			};
+			text="";
 			wordsClass="Normal";
 		};
 		class Stealth_LockAndLoad
@@ -12822,6 +13351,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 				"XMIT",
 				"HC_EngagingE"
 			};
+			text="";
 			wordsClass="Stealth";
 		};
 		class Normal_TargetAcquired
@@ -12832,6 +13362,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 				"XMIT",
 				"TargetAcquired"
 			};
+			text="";
 			wordsClass="Normal";
 		};
 		class Stealth_TargetAcquired
@@ -12842,6 +13373,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 				"XMIT",
 				"TargetAcquired"
 			};
+			text="";
 			wordsClass="Stealth";
 		};
 		class Normal_TargetInSight
@@ -12852,6 +13384,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 				"XMIT",
 				"TargetInSight"
 			};
+			text="";
 			wordsClass="Normal";
 		};
 		class Stealth_TargetInSight
@@ -12862,6 +13395,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 				"XMIT",
 				"TargetInSight"
 			};
+			text="";
 			wordsClass="Stealth";
 		};
 	};
@@ -12898,6 +13432,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 				"XMIT",
 				"AwaitingOrders"
 			};
+			text="";
 			wordsClass="Normal";
 		};
 		class Stealth_AwaitingOrders
@@ -12908,6 +13443,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 				"XMIT",
 				"AwaitingOrders"
 			};
+			text="";
 			wordsClass="Stealth";
 		};
 		class Normal_IAmReady
@@ -12918,6 +13454,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 				"XMIT",
 				"ReadyForOrders"
 			};
+			text="";
 			wordsClass="Normal";
 		};
 		class Stealth_IAmReady
@@ -12928,6 +13465,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 				"XMIT",
 				"ReadyForOrders"
 			};
+			text="";
 			wordsClass="Stealth";
 		};
 		class Normal_ReadyForOrders
@@ -12938,6 +13476,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 				"XMIT",
 				"Ready"
 			};
+			text="";
 			wordsClass="Normal";
 		};
 		class Stealth_ReadyForOrders
@@ -12948,6 +13487,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 				"XMIT",
 				"Ready"
 			};
+			text="";
 			wordsClass="Stealth";
 		};
 		class Normal_StandingBy
@@ -12958,6 +13498,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 				"XMIT",
 				"StandingBy"
 			};
+			text="";
 			wordsClass="Normal";
 		};
 		class Stealth_StandingBy
@@ -12968,6 +13509,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 				"XMIT",
 				"StandingBy"
 			};
+			text="";
 			wordsClass="Stealth";
 		};
 		class Normal_Waiting
@@ -12978,6 +13520,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 				"XMIT",
 				"Waiting"
 			};
+			text="";
 			wordsClass="Normal";
 		};
 		class Stealth_Waiting
@@ -12988,6 +13531,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 				"XMIT",
 				"Waiting"
 			};
+			text="";
 			wordsClass="Stealth";
 		};
 	};
@@ -13008,6 +13552,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 				"XMIT",
 				"ScreamingE"
 			};
+			text="";
 			wordsClass="Normal";
 		};
 		class Stealth_ScreamingE
@@ -13018,6 +13563,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 				"XMIT",
 				"ScreamingE"
 			};
+			text="";
 			wordsClass="Stealth";
 		};
 	};
@@ -13042,6 +13588,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 				"XMIT",
 				"RequestAcknowledgedSGCASBombing"
 			};
+			text="";
 			wordsClass="Normal";
 		};
 		class Stealth_RequestAcknowledgedSGCASBombing
@@ -13052,6 +13599,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 				"XMIT",
 				"RequestAcknowledgedSGCASBombing"
 			};
+			text="";
 			wordsClass="Stealth";
 		};
 		class Normal_RequestAcknowledgedSGCASHelicopter
@@ -13062,6 +13610,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 				"XMIT",
 				"RequestAcknowledgedSGCASHelicopter"
 			};
+			text="";
 			wordsClass="Normal";
 		};
 		class Stealth_RequestAcknowledgedSGCASHelicopter
@@ -13072,6 +13621,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 				"XMIT",
 				"RequestAcknowledgedSGCASHelicopter"
 			};
+			text="";
 			wordsClass="Stealth";
 		};
 	};
@@ -13092,6 +13642,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordSeveral_1
 		{
+			text="Several";
 			speech[]=
 			{
 				"Several"
@@ -13115,6 +13666,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordSingle_1
 		{
+			text="Single";
 			speech[]=
 			{
 				"Single"
@@ -13138,6 +13690,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordNone_1
 		{
+			text="None";
 			speech[]=
 			{
 				"None"
@@ -13161,6 +13714,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordSome_1
 		{
+			text="Some";
 			speech[]=
 			{
 				"Some"
@@ -13184,6 +13738,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordALotOf_1
 		{
+			text="A Lot Of";
 			speech[]=
 			{
 				"ALotOf"
@@ -13207,6 +13762,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordIndependent_1
 		{
+			text="Independent";
 			speech[]=
 			{
 				"Independent"
@@ -13230,6 +13786,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordCivilian_1
 		{
+			text="Civilian";
 			speech[]=
 			{
 				"Civilian"
@@ -13253,6 +13810,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordOfThem_1
 		{
+			text="of them";
 			speech[]=
 			{
 				"OfThem"
@@ -13276,6 +13834,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordNear_1
 		{
+			text="near";
 			speech[]=
 			{
 				"Near"
@@ -13299,6 +13858,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordNotFar_1
 		{
+			text="not far";
 			speech[]=
 			{
 				"NotFar"
@@ -13322,6 +13882,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordFrom_1
 		{
+			text="from";
 			speech[]=
 			{
 				"From"
@@ -13345,6 +13906,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordAround_1
 		{
+			text="around";
 			speech[]=
 			{
 				"Around"
@@ -13368,6 +13930,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordHere_1
 		{
+			text="here";
 			speech[]=
 			{
 				"Here"
@@ -13391,6 +13954,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordThere_1
 		{
+			text="there";
 			speech[]=
 			{
 				"There"
@@ -13414,6 +13978,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordProbably_1
 		{
+			text="probably";
 			speech[]=
 			{
 				"Probably"
@@ -13437,6 +14002,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordIsProbablyToThe_1
 		{
+			text="is probably to the";
 			speech[]=
 			{
 				"IsProbablyToThe"
@@ -13460,6 +14026,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordJustNow_1
 		{
+			text="Just Now";
 			speech[]=
 			{
 				"JustNow"
@@ -13483,6 +14050,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordAFewMinutesAgo_1
 		{
+			text="A few Minutes Ago";
 			speech[]=
 			{
 				"AFewMinutesAgo"
@@ -13506,6 +14074,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordAFewHoursAgo_1
 		{
+			text="A Few Hours Ago";
 			speech[]=
 			{
 				"AFewHoursAgo"
@@ -13529,6 +14098,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordToday_1
 		{
+			text="Today";
 			speech[]=
 			{
 				"Today"
@@ -13552,6 +14122,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordYesterday_1
 		{
+			text="Yesterday";
 			speech[]=
 			{
 				"Yesterday"
@@ -13575,6 +14146,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordSeveralDaysAgo_1
 		{
+			text="Several Days Ago";
 			speech[]=
 			{
 				"SeveralDaysAgo"
@@ -13598,6 +14170,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordEnglishQ_1
 		{
+			text="English?";
 			speech[]=
 			{
 				"EnglishQ"
@@ -13621,6 +14194,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordRussianQ_1
 		{
+			text="Russian?";
 			speech[]=
 			{
 				"RussianQ"
@@ -13644,6 +14218,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordDidYouSeeAnythingRecentlyQ_1
 		{
+			text="Did you see anything recently?";
 			speech[]=
 			{
 				"DidYouSeeAnythingRecentlyQ"
@@ -13667,6 +14242,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordYesISawSomething_1
 		{
+			text="Yes, I saw something";
 			speech[]=
 			{
 				"YesISawSomething"
@@ -13690,6 +14266,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordNoIDidntSeeAnything_1
 		{
+			text="No, I didn't see anything";
 			speech[]=
 			{
 				"NoIDidntSeeAnything"
@@ -13713,6 +14290,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordWhatsTheWeatherForecastQ_1
 		{
+			text="What's the weather forecast?";
 			speech[]=
 			{
 				"WhatsTheWeatherForecastQ"
@@ -13736,6 +14314,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordNiceWeatherHuhQ_1
 		{
+			text="Nice weather, huh?";
 			speech[]=
 			{
 				"NiceWeatherHuhQ"
@@ -13759,6 +14338,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordNastyWeatherHuhQ_1
 		{
+			text="Nasty weather, huh?";
 			speech[]=
 			{
 				"NastyWeatherHuhQ"
@@ -13782,6 +14362,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordShouldBeClearingUpSoon_1
 		{
+			text="Should be clearing up soon";
 			speech[]=
 			{
 				"ShouldBeClearingUpSoon"
@@ -13805,6 +14386,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordIReckonWellGetSomeRainSoon_1
 		{
+			text="I reckon we'll get some rain soon";
 			speech[]=
 			{
 				"IReckonWellGetSomeRainSoon"
@@ -13828,6 +14410,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordTheySayItllStayLikeThisForAWhile_1
 		{
+			text="They say it'll stay like this for a while";
 			speech[]=
 			{
 				"TheySayItllStayLikeThisForAWhile"
@@ -13851,6 +14434,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordWhatsTheClosestSettlementQ_1
 		{
+			text="What's the closest settlement?";
 			speech[]=
 			{
 				"WhatsTheClosestSettlementQ"
@@ -13874,6 +14458,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordTheClosestOneIs_1
 		{
+			text="The closest one is";
 			speech[]=
 			{
 				"TheClosestOneIs"
@@ -13897,6 +14482,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordImNotFromAroundHere_1
 		{
+			text="I'm not from around here";
 			speech[]=
 			{
 				"ImNotFromAroundHere"
@@ -13920,6 +14506,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordNoIdeaIDontLiveHere_1
 		{
+			text="No idea, I don't live here";
 			speech[]=
 			{
 				"NoIdeaIDontLiveHere"
@@ -13943,6 +14530,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordYouAlreadyAskedMeThat_1
 		{
+			text="You already asked me that";
 			speech[]=
 			{
 				"YouAlreadyAskedMeThat"
@@ -13966,6 +14554,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordAreYouKiddingQ_1
 		{
+			text="Are you kidding?";
 			speech[]=
 			{
 				"AreYouKiddingQ"
@@ -13989,6 +14578,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordStopAskingMeThat_1
 		{
+			text="Stop asking me that";
 			speech[]=
 			{
 				"StopAskingMeThat"
@@ -14012,6 +14602,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordSorryIDontUnderstand_1
 		{
+			text="Sorry, I don't understand";
 			speech[]=
 			{
 				"SorryIDontUnderstand"
@@ -14035,6 +14626,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordUhWhatQ_1
 		{
+			text="Uh, what?";
 			speech[]=
 			{
 				"UhWhatQ"
@@ -14058,6 +14650,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordIWillOnlyTellYouMyNameRankAndSerialNumber_1
 		{
+			text="I will only tell you my name, rank, and serial number";
 			speech[]=
 			{
 				"IWillOnlyTellYouMyNameRankAndSerialNumber"
@@ -14081,6 +14674,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordSirQ_1
 		{
+			text="Sir?";
 			speech[]=
 			{
 				"SirQ"
@@ -14104,6 +14698,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordPrivateQ_1
 		{
+			text="Private?";
 			speech[]=
 			{
 				"PrivateQ"
@@ -14127,6 +14722,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordCorporalQ_1
 		{
+			text="Corporal?";
 			speech[]=
 			{
 				"CorporalQ"
@@ -14150,6 +14746,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordSergeantQ_1
 		{
+			text="Sergeant?";
 			speech[]=
 			{
 				"SergeantQ"
@@ -14173,6 +14770,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordLieutenantQ_1
 		{
+			text="Lieutenant?";
 			speech[]=
 			{
 				"LieutenantQ"
@@ -14196,6 +14794,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordCaptainQ_1
 		{
+			text="Captain?";
 			speech[]=
 			{
 				"CaptainQ"
@@ -14219,6 +14818,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordMajorQ_1
 		{
+			text="Major?";
 			speech[]=
 			{
 				"MajorQ"
@@ -14242,6 +14842,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordColonelQ_1
 		{
+			text="Colonel?";
 			speech[]=
 			{
 				"ColonelQ"
@@ -14265,6 +14866,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordYesPrivate_1
 		{
+			text="Yes, private";
 			speech[]=
 			{
 				"YesPrivate"
@@ -14288,6 +14890,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordYesCorporal_1
 		{
+			text="Yes, corporal";
 			speech[]=
 			{
 				"YesCorporal"
@@ -14311,6 +14914,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordYesSergeant_1
 		{
+			text="Yes, sergeant";
 			speech[]=
 			{
 				"YesSergeant"
@@ -14334,6 +14938,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordYesLieutenant_1
 		{
+			text="Yes, lieutenant";
 			speech[]=
 			{
 				"YesLieutenant"
@@ -14357,6 +14962,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordYesCaptain_1
 		{
+			text="Yes, captain";
 			speech[]=
 			{
 				"YesCaptain"
@@ -14380,6 +14986,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordYesMajor_1
 		{
+			text="Yes, major";
 			speech[]=
 			{
 				"YesMajor"
@@ -14403,6 +15010,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordYesColonel_1
 		{
+			text="Yes, colonel";
 			speech[]=
 			{
 				"YesColonel"
@@ -14426,6 +15034,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordSoldierQ_1
 		{
+			text="Soldier?";
 			speech[]=
 			{
 				"SoldierQ"
@@ -14449,6 +15058,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordMorninSoldier_1
 		{
+			text="Mornin', soldier";
 			speech[]=
 			{
 				"MorninSoldier"
@@ -14472,6 +15082,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordEveninSoldier_1
 		{
+			text="Evenin', soldier";
 			speech[]=
 			{
 				"EveninSoldier"
@@ -14495,6 +15106,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordGoodDaySir_1
 		{
+			text="Good day, sir";
 			speech[]=
 			{
 				"GoodDaySir"
@@ -14518,6 +15130,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordGoodEveningSir_1
 		{
+			text="Good evening, sir";
 			speech[]=
 			{
 				"GoodEveningSir"
@@ -14541,6 +15154,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordGoodMorningSir_1
 		{
+			text="Good morning, sir";
 			speech[]=
 			{
 				"GoodMorningSir"
@@ -14564,6 +15178,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordGoodDay_1
 		{
+			text="Good day";
 			speech[]=
 			{
 				"GoodDay"
@@ -14587,6 +15202,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordGoodMorning_1
 		{
+			text="Good morning";
 			speech[]=
 			{
 				"GoodMorning"
@@ -14610,6 +15226,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordGoodEvening_1
 		{
+			text="Good evening";
 			speech[]=
 			{
 				"GoodEvening"
@@ -14633,6 +15250,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordWhatQ_1
 		{
+			text="What?";
 			speech[]=
 			{
 				"WhatQ"
@@ -14656,6 +15274,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordYesSir_1
 		{
+			text="Yes, sir";
 			speech[]=
 			{
 				"YesSir"
@@ -14679,6 +15298,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordHelloSir_1
 		{
+			text="Hello, sir";
 			speech[]=
 			{
 				"HelloSir"
@@ -14702,6 +15322,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordYep_1
 		{
+			text="Yep";
 			speech[]=
 			{
 				"Yep"
@@ -14725,6 +15346,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordYeahQ_1
 		{
+			text="Yeah?";
 			speech[]=
 			{
 				"YeahQ"
@@ -14748,6 +15370,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordHi_1
 		{
+			text="Hi";
 			speech[]=
 			{
 				"Hi"
@@ -14771,6 +15394,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordHiThereE_1
 		{
+			text="Hi there!";
 			speech[]=
 			{
 				"HiThereE"
@@ -14794,6 +15418,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordHeyMan_1
 		{
+			text="Hey, man";
 			speech[]=
 			{
 				"HeyMan"
@@ -14817,6 +15442,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordHiDude_1
 		{
+			text="Hi, dude";
 			speech[]=
 			{
 				"HiDude"
@@ -14840,6 +15466,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordHello_1
 		{
+			text="Hello";
 			speech[]=
 			{
 				"Hello"
@@ -14863,6 +15490,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordHowsThingsQ_1
 		{
+			text="How's things?";
 			speech[]=
 			{
 				"HowsThingsQ"
@@ -14886,6 +15514,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordHowAreYouQ_1
 		{
+			text="How are you?";
 			speech[]=
 			{
 				"HowAreYouQ"
@@ -14909,6 +15538,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordHeyE_1
 		{
+			text="Hey!";
 			speech[]=
 			{
 				"HeyE"
@@ -14932,6 +15562,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordWhatDoYouWantQ_1
 		{
+			text="What do you want?";
 			speech[]=
 			{
 				"WhatDoYouWantQ"
@@ -14955,6 +15586,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordWhatDoYouNeedQ_1
 		{
+			text="What do you need?";
 			speech[]=
 			{
 				"WhatDoYouNeedQ"
@@ -14978,6 +15610,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordWhatsUpQ_1
 		{
+			text="What's up?";
 			speech[]=
 			{
 				"WhatsUpQ"
@@ -15001,6 +15634,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordYesQ_1
 		{
+			text="Yes?";
 			speech[]=
 			{
 				"YesQ"
@@ -15024,6 +15658,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordMaamQ_1
 		{
+			text="Ma'am?";
 			speech[]=
 			{
 				"MaamQ"
@@ -15047,6 +15682,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordHaveANiceDay_1
 		{
+			text="Have a nice day";
 			speech[]=
 			{
 				"HaveANiceDay"
@@ -15070,6 +15706,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordMorningMaam_1
 		{
+			text="Morning, ma'am";
 			speech[]=
 			{
 				"MorningMaam"
@@ -15093,6 +15730,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordHelloThere_1
 		{
+			text="Hello there";
 			speech[]=
 			{
 				"HelloThere"
@@ -15116,6 +15754,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordHowYouDoinQ_1
 		{
+			text="How you doin'?";
 			speech[]=
 			{
 				"HowYouDoinQ"
@@ -15139,6 +15778,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordDontTouchMeE_1
 		{
+			text="Don't touch me!";
 			speech[]=
 			{
 				"DontTouchMeE"
@@ -15162,6 +15802,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordNotNowE_1
 		{
+			text="Not now!";
 			speech[]=
 			{
 				"NotNowE"
@@ -15185,6 +15826,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordLater_1
 		{
+			text="Later";
 			speech[]=
 			{
 				"Later"
@@ -15208,6 +15850,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordNoTimeE_1
 		{
+			text="No time!";
 			speech[]=
 			{
 				"NoTimeE"
@@ -15231,6 +15874,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordHushE_1
 		{
+			text="Hush!";
 			speech[]=
 			{
 				"HushE"
@@ -15254,6 +15898,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordSsshhE_1
 		{
+			text="Ssshh!";
 			speech[]=
 			{
 				"SsshhE"
@@ -15277,6 +15922,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordCantYouSeeImBusyQ_1
 		{
+			text="Can't you see I'm busy?";
 			speech[]=
 			{
 				"CantYouSeeImBusyQ"
@@ -15300,6 +15946,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordBitOccupiedAtTheMomentDude_1
 		{
+			text="Bit occupied at the moment, dude";
 			speech[]=
 			{
 				"BitOccupiedAtTheMomentDude"
@@ -15323,6 +15970,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordImBusyE_1
 		{
+			text="I'm busy!";
 			speech[]=
 			{
 				"ImBusyE"
@@ -15346,6 +15994,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordPissOffE_1
 		{
+			text="Piss off!";
 			speech[]=
 			{
 				"PissOffE"
@@ -15369,6 +16018,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordNiceToSeeYou_1
 		{
+			text="Nice to see you";
 			speech[]=
 			{
 				"NiceToSeeYou"
@@ -15392,6 +16042,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordGoodToSeeYou_1
 		{
+			text="Good to see you";
 			speech[]=
 			{
 				"GoodToSeeYou"
@@ -15415,6 +16066,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordHeyGladYoureHere_1
 		{
+			text="Hey, glad you're here";
 			speech[]=
 			{
 				"HeyGladYoureHere"
@@ -15438,6 +16090,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordCanIHelpYouQ_1
 		{
+			text="Can I help you?";
 			speech[]=
 			{
 				"CanIHelpYouQ"
@@ -15461,6 +16114,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordGetLostE_1
 		{
+			text="Get lost!";
 			speech[]=
 			{
 				"GetLostE"
@@ -15484,6 +16138,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordLeaveMeAloneE_1
 		{
+			text="Leave me alone!";
 			speech[]=
 			{
 				"LeaveMeAloneE"
@@ -15507,6 +16162,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordLeaveUsAloneE_1
 		{
+			text="Leave us alone!";
 			speech[]=
 			{
 				"LeaveUsAloneE"
@@ -15530,6 +16186,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordFuckingPig_1
 		{
+			text="Fucking pig";
 			speech[]=
 			{
 				"FuckingPig"
@@ -15553,6 +16210,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordSonOfABitchE_1
 		{
+			text="Son of a bitch!";
 			speech[]=
 			{
 				"SonOfABitchE"
@@ -15576,6 +16234,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordDamnYouE_1
 		{
+			text="Damn you!";
 			speech[]=
 			{
 				"DamnYouE"
@@ -15599,6 +16258,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordCanIAskYouSomethingQ_1
 		{
+			text="Can I ask you something?";
 			speech[]=
 			{
 				"CanIAskYouSomethingQ"
@@ -15622,6 +16282,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordPleaseCanYouHelpQ_1
 		{
+			text="Please, can you help?";
 			speech[]=
 			{
 				"PleaseCanYouHelpQ"
@@ -15645,6 +16306,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordSpeak_1
 		{
+			text="Speak";
 			speech[]=
 			{
 				"Speak"
@@ -15668,6 +16330,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordHelpUs_1
 		{
+			text="Help us";
 			speech[]=
 			{
 				"HelpUs"
@@ -15691,6 +16354,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordIWontSayAnotherWord_1
 		{
+			text="I won't say another word";
 			speech[]=
 			{
 				"IWontSayAnotherWord"
@@ -15714,6 +16378,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordMindYourOwnBusiness_1
 		{
+			text="Mind your own business";
 			speech[]=
 			{
 				"MindYourOwnBusiness"
@@ -15737,6 +16402,7 @@ class RadioProtocolCZ: RadioProtocolBaseCZ
 		};
 		class WordGoBotherSomeoneElse_1
 		{
+			text="Go bother someone else";
 			speech[]=
 			{
 				"GoBotherSomeoneElse"

@@ -2,7 +2,14 @@ class CfgPatches
 {
 	class A3_Sounds_F_Mark
 	{
+		author="$STR_A3_Bohemia_Interactive";
 		name="Arma 3 Marksmen - Sound Effects";
+		url="https://www.arma3.com";
+		requiredAddons[]=
+		{
+			"A3_Data_F_Mark"
+		};
+		requiredVersion=0.1;
 		units[]={};
 		weapons[]={};
 	};
@@ -2570,6 +2577,15 @@ class CfgWeapons
 		class Single: Mode_SemiAuto
 		{
 			class BaseSoundModeType;
+			class StandardSound: BaseSoundModeType
+			{
+				soundSetShot[]=
+				{
+					"DMR02_Shot_SoundSet",
+					"DMR02_tail_SoundSet",
+					"DMR02_InteriorTail_SoundSet"
+				};
+			};
 			class SilencedSound: BaseSoundModeType
 			{
 				SoundSetShot[]=
@@ -2586,6 +2602,37 @@ class CfgWeapons
 		class Single: Mode_SemiAuto
 		{
 			class BaseSoundModeType;
+			class StandardSound: BaseSoundModeType
+			{
+				soundSetShot[]=
+				{
+					"DMR03_Shot_SoundSet",
+					"DMR03_tail_SoundSet",
+					"DMR03_InteriorTail_SoundSet"
+				};
+			};
+			class SilencedSound: BaseSoundModeType
+			{
+				SoundSetShot[]=
+				{
+					"DMR03_silencerShot_SoundSet",
+					"DMR03_silencerTail_SoundSet",
+					"DMR03_silencerInteriorTail_SoundSet"
+				};
+			};
+		};
+		class FullAuto: Mode_FullAuto
+		{
+			class BaseSoundModeType;
+			class StandardSound: BaseSoundModeType
+			{
+				soundSetShot[]=
+				{
+					"DMR03_Shot_SoundSet",
+					"DMR03_tail_SoundSet",
+					"DMR03_InteriorTail_SoundSet"
+				};
+			};
 			class SilencedSound: BaseSoundModeType
 			{
 				SoundSetShot[]=
@@ -2602,6 +2649,15 @@ class CfgWeapons
 		class Single: Mode_SemiAuto
 		{
 			class BaseSoundModeType;
+			class StandardSound: BaseSoundModeType
+			{
+				soundSetShot[]=
+				{
+					"DMR04_Shot_SoundSet",
+					"DMR04_tail_SoundSet",
+					"DMR04_InteriorTail_SoundSet"
+				};
+			};
 		};
 	};
 	class DMR_05_base_F: Rifle_Long_Base_F
@@ -2609,6 +2665,37 @@ class CfgWeapons
 		class Single: Mode_SemiAuto
 		{
 			class BaseSoundModeType;
+			class StandardSound: BaseSoundModeType
+			{
+				soundSetShot[]=
+				{
+					"DMR05_Shot_SoundSet",
+					"DMR05_tail_SoundSet",
+					"DMR05_InteriorTail_SoundSet"
+				};
+			};
+			class SilencedSound: BaseSoundModeType
+			{
+				SoundSetShot[]=
+				{
+					"DMR05_silencerShot_SoundSet",
+					"DMR05_silencerTail_SoundSet",
+					"DMR05_silencerInteriorTail_SoundSet"
+				};
+			};
+		};
+		class FullAuto: Mode_FullAuto
+		{
+			class BaseSoundModeType;
+			class StandardSound: BaseSoundModeType
+			{
+				soundSetShot[]=
+				{
+					"DMR05_Shot_SoundSet",
+					"DMR05_tail_SoundSet",
+					"DMR05_InteriorTail_SoundSet"
+				};
+			};
 			class SilencedSound: BaseSoundModeType
 			{
 				SoundSetShot[]=
@@ -2625,6 +2712,37 @@ class CfgWeapons
 		class Single: Mode_SemiAuto
 		{
 			class BaseSoundModeType;
+			class StandardSound: BaseSoundModeType
+			{
+				soundSetShot[]=
+				{
+					"DMR06_Shot_SoundSet",
+					"DMR06_tail_SoundSet",
+					"DMR06_InteriorTail_SoundSet"
+				};
+			};
+			class SilencedSound: BaseSoundModeType
+			{
+				SoundSetShot[]=
+				{
+					"DMR06_silencerShot_SoundSet",
+					"DMR06_silencerTail_SoundSet",
+					"DMR06_silencerInteriorTail_SoundSet"
+				};
+			};
+		};
+		class FullAuto: Mode_FullAuto
+		{
+			class BaseSoundModeType;
+			class StandardSound: BaseSoundModeType
+			{
+				soundSetShot[]=
+				{
+					"DMR06_Shot_SoundSet",
+					"DMR06_tail_SoundSet",
+					"DMR06_InteriorTail_SoundSet"
+				};
+			};
 			class SilencedSound: BaseSoundModeType
 			{
 				SoundSetShot[]=
@@ -2641,6 +2759,15 @@ class CfgWeapons
 		class manual: Mode_FullAuto
 		{
 			class BaseSoundModeType;
+			class StandardSound: BaseSoundModeType
+			{
+				soundSetShot[]=
+				{
+					"MMG01_Shot_SoundSet",
+					"MMG01_Tail_SoundSet",
+					"MMG01_InteriorTail_SoundSet"
+				};
+			};
 			class SilencedSound: BaseSoundModeType
 			{
 				SoundSetShot[]=
@@ -2654,6 +2781,15 @@ class CfgWeapons
 		class Burst: Mode_Burst
 		{
 			class BaseSoundModeType;
+			class StandardSound: BaseSoundModeType
+			{
+				soundSetShot[]=
+				{
+					"MMG01_Shot_SoundSet",
+					"MMG01_Tail_SoundSet",
+					"MMG01_InteriorTail_SoundSet"
+				};
+			};
 			class SilencedSound: BaseSoundModeType
 			{
 				SoundSetShot[]=
@@ -2670,6 +2806,15 @@ class CfgWeapons
 		class manual: Mode_FullAuto
 		{
 			class BaseSoundModeType;
+			class StandardSound: BaseSoundModeType
+			{
+				soundSetShot[]=
+				{
+					"MMG02_Shot_SoundSet",
+					"MMG02_Tail_SoundSet",
+					"MMG02_InteriorTail_SoundSet"
+				};
+			};
 			class SilencedSound: BaseSoundModeType
 			{
 				SoundSetShot[]=

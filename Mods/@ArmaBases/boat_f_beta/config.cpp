@@ -3,6 +3,11 @@ class CfgPatches
 	class A3_Boat_F_Beta_SDV_01
 	{
 		addonRootClass="A3_Boat_F_Beta";
+		requiredAddons[]=
+		{
+			"A3_Boat_F_Beta"
+		};
+		requiredVersion=0.1;
 		units[]=
 		{
 			"B_SDV_01_F",
@@ -27,12 +32,46 @@ class CfgVehicles
 	class SDV_01_base_F: Boat_F
 	{
 		features="Randomization: No						<br />Camo selections: 1 - the whole body						<br />Script door sources: None						<br />Script animations: Doors, periscope						<br />Executed scripts: None						<br />Firing from vehicles: No						<br />Slingload: Slingloadable						<br />Cargo proxy indexes: 1 and 2";
+		author="$STR_A3_Bohemia_Interactive";
+		mapSize=8.4499998;
+		class SpeechVariants
+		{
+			class Default
+			{
+				speechSingular[]=
+				{
+					"veh_ship_submarine_s"
+				};
+				speechPlural[]=
+				{
+					"veh_ship_submarine_p"
+				};
+			};
+		};
+		textSingular="$STR_A3_nameSound_veh_ship_submarine_s";
+		textPlural="$STR_A3_nameSound_veh_ship_submarine_p";
 		nameSound="veh_ship_submarine_s";
 		_generalMacro="SDV_01_base_F";
 		displayName="$STR_A3_CfgVehicles_SDV_Base0";
+		vehicleClass="Submarine";
+		model="\A3\boat_f_beta\SDV_01\SDV_01_F.p3d";
+		editorSubcategory="EdSubcat_Submersibles";
+		picture="\A3\boat_f_beta\SDV_01\data\ui\portrait_SDV_ca.paa";
+		Icon="\A3\boat_f_beta\SDV_01\data\ui\map_SDV_ca.paa";
+		unitInfoType="RscOptics_SDV_driver";
 		fuelCapacity=120;
 		leftEngineEffect="LEngEffectsSmall";
 		rightEngineEffect="REngEffectsSmall";
+		class TransportWeapons;  //found empty after stripping
+		class TransportMagazines;  //found empty after stripping
+		class TransportItems
+		{
+			class _xx_FirstAidKit
+			{
+				name="FirstAidKit";
+				count=2;
+			};
+		};
 		memoryPointSupply="door_back_axis";
 		supplyRadius=10;
 		memoryPointTaskMarker="TaskMarker_1_pos";
@@ -44,15 +83,315 @@ class CfgVehicles
 			"SlingLoadCargo4"
 		};
 		attenuationEffectType="TankAttenuation";
+		insideSoundCoef=1;
+		soundEngineOnInt[]=
+		{
+			"A3\Sounds_F\vehicles\boat\SDV\sdv-start2-ext",
+			0.099999994,
+			1
+		};
+		soundEngineOnExt[]=
+		{
+			"A3\Sounds_F\vehicles\boat\SDV\sdv-start2-ext",
+			1,
+			1,
+			100
+		};
+		soundEngineOffInt[]=
+		{
+			"A3\Sounds_F\vehicles\boat\SDV\sdv-stop2-ext",
+			0.099999994,
+			1
+		};
+		soundEngineOffExt[]=
+		{
+			"A3\Sounds_F\vehicles\boat\SDV\sdv-stop2-ext",
+			1,
+			1,
+			100
+		};
+		buildCrash0[]=
+		{
+			"A3\sounds_f\Vehicles\soft\noises\crash_building_01",
+			1.7782794,
+			1,
+			200
+		};
+		buildCrash1[]=
+		{
+			"A3\sounds_f\Vehicles\soft\noises\crash_building_02",
+			1.7782794,
+			1,
+			200
+		};
+		buildCrash2[]=
+		{
+			"A3\sounds_f\Vehicles\soft\noises\crash_building_03",
+			1.7782794,
+			1,
+			200
+		};
+		buildCrash3[]=
+		{
+			"A3\sounds_f\Vehicles\soft\noises\crash_building_04",
+			1.7782794,
+			1,
+			200
+		};
+		soundBuildingCrash[]=
+		{
+			"buildCrash0",
+			0.25,
+			"buildCrash1",
+			0.25,
+			"buildCrash2",
+			0.25,
+			"buildCrash3",
+			0.25
+		};
+		WoodCrash0[]=
+		{
+			"A3\sounds_f\Vehicles\soft\noises\crash_mix_wood_01",
+			1.7782794,
+			1,
+			200
+		};
+		WoodCrash1[]=
+		{
+			"A3\sounds_f\Vehicles\soft\noises\crash_mix_wood_02",
+			1.7782794,
+			1,
+			200
+		};
+		WoodCrash2[]=
+		{
+			"A3\sounds_f\Vehicles\soft\noises\crash_mix_wood_03",
+			1.7782794,
+			1,
+			200
+		};
+		WoodCrash3[]=
+		{
+			"A3\sounds_f\Vehicles\soft\noises\crash_mix_wood_04",
+			1.7782794,
+			1,
+			200
+		};
+		WoodCrash4[]=
+		{
+			"A3\sounds_f\Vehicles\soft\noises\crash_mix_wood_05",
+			1.7782794,
+			1,
+			200
+		};
+		WoodCrash5[]=
+		{
+			"A3\sounds_f\Vehicles\soft\noises\crash_mix_wood_06",
+			1.7782794,
+			1,
+			200
+		};
+		soundWoodCrash[]=
+		{
+			"woodCrash0",
+			0.16599999,
+			"woodCrash1",
+			0.16599999,
+			"woodCrash2",
+			0.16599999,
+			"woodCrash3",
+			0.16599999,
+			"woodCrash4",
+			0.16599999,
+			"woodCrash5",
+			0.16599999
+		};
+		ArmorCrash0[]=
+		{
+			"A3\sounds_f\Vehicles\soft\noises\crash_vehicle_01",
+			1.7782794,
+			1,
+			200
+		};
+		ArmorCrash1[]=
+		{
+			"A3\sounds_f\Vehicles\soft\noises\crash_vehicle_02",
+			1.7782794,
+			1,
+			200
+		};
+		ArmorCrash2[]=
+		{
+			"A3\sounds_f\Vehicles\soft\noises\crash_vehicle_03",
+			1.7782794,
+			1,
+			200
+		};
+		ArmorCrash3[]=
+		{
+			"A3\sounds_f\Vehicles\soft\noises\crash_vehicle_04",
+			1.7782794,
+			1,
+			200
+		};
+		soundArmorCrash[]=
+		{
+			"ArmorCrash0",
+			0.25,
+			"ArmorCrash1",
+			0.25,
+			"ArmorCrash2",
+			0.25,
+			"ArmorCrash3",
+			0.25
+		};
+		class Sounds
+		{
+			class IdleOut
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\boat\SDV\SDV_engine_2",
+					1,
+					2.5,
+					100
+				};
+				frequency="1";
+				volume="engineOn* (thrust factor[1, 0])*0.1";
+			};
+			class Engine
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\boat\SDV\SDV_engine_2",
+					1,
+					3,
+					300
+				};
+				frequency="0.70	+	(thrust *0.30)";
+				volume="engineOn* thrust*0.1";
+			};
+			class LodnSroub
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\boat\SDV\lopatky1",
+					1,
+					2,
+					200
+				};
+				frequency="0.85	+	(thrust *0.15)";
+				volume="engineOn* thrust*0.3";
+			};
+			class WaternoiseOutW0
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\boat\SFX\voda-o-bok-lodi-0-speed1",
+					1,
+					1,
+					100
+				};
+				frequency="1";
+				volume="(speed factor[3, 0]) * water";
+			};
+			class WaternoiseOutW1
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\boat\SFX\voda-o-bok-lodi-10-speed",
+					1,
+					1,
+					200
+				};
+				frequency="1";
+				volume="(speed factor[1, 4])";
+			};
+			class RainExt
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\noises\rain1_ext",
+					1,
+					1,
+					100
+				};
+				frequency=1;
+				volume="camPos * (rain - rotorSpeed/2) * 2";
+			};
+			class RainInt
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\noises\rain1_ext",
+					1,
+					1,
+					100
+				};
+				frequency=1;
+				volume="(1-camPos)*(rain - rotorSpeed/2)*2";
+			};
+		};
+		class RenderTargets
+		{
+			class MDF1
+			{
+				renderTarget="rendertarget0";
+				class PilotCameraView1
+				{
+					pointPosition="PIP0_pos";
+					pointDirection="PIP0_dir";
+					renderQuality=0;
+					renderVisionMode=0;
+					fov=0.5;
+				};
+				BBoxes[]=
+				{
+					"PIP_0_TL",
+					"PIP_0_TR",
+					"PIP_0_BL",
+					"PIP_0_BR"
+				};
+			};
+			class periscope
+			{
+				renderTarget="rendertarget1";
+				class CameraView1
+				{
+					pointPosition="PIP1_pos";
+					pointDirection="PIP1_dir";
+					renderQuality=0;
+					renderVisionMode=0;
+					fov=0.69999999;
+				};
+				BBoxes[]=
+				{
+					"PIP_1_TL",
+					"PIP_1_TR",
+					"PIP_1_BL",
+					"PIP_1_BR"
+				};
+			};
+		};
 		driverCompartments="Compartment1";
 		cargoCompartments[]=
 		{
 			"Compartment2"
 		};
+		driverAction="driver_SDV";
+		cargoAction[]=
+		{
+			"passenger_SDV",
+			"passenger_SDV"
+		};
 		ejectDeadDriver=0;
 		ejectDeadCargo=0;
 		memoryPointsGetInCargo="pos cargo";
 		memoryPointsGetInCargoDir="pos cargo dir";
+		driverLeftHandAnimName="drivingwheel";
+		driverRightHandAnimName="drivingwheel";
+		getInAction="GetInLow";
+		getOutAction="GetOutLow";
 		cargoGetInAction[]=
 		{
 			"GetInLow"
@@ -65,6 +404,7 @@ class CfgVehicles
 		memoryPointDriverOptics="PIP0_dir";
 		driverForceOptics=0;
 		enableGPS=1;
+		transportSoldier=2;
 		typicalCargo[]=
 		{
 			"B_diver_F",
@@ -74,6 +414,7 @@ class CfgVehicles
 		armor=30;
 		showNVGCargo[]={0};
 		showNVGDriver=0;
+		showNVGGunner=0;
 		class ViewOptics: ViewOptics
 		{
 			visionMode[]=
@@ -117,13 +458,74 @@ class CfgVehicles
 		waterEffectSpeed=25;
 		engineEffectSpeed=5;
 		leftDustEffect="DustEffectBottom";
+		class AnimationSources: AnimationSources
+		{
+			class Doors
+			{
+				source="user";
+				animPeriod=0;
+				initPhase=1;
+			};
+			class periscope
+			{
+				source="user";
+				animPeriod=0;
+				initPhase=0;
+			};
+		};
+		class UserActions
+		{
+			class CloseDriverdoor
+			{
+				displayName="$STR_A3_Hatch_close";
+				displayNameDefault="$STR_A3_Hatch_close";
+				position="drivingwheel_axis";
+				radius=4;
+				onlyForplayer=0;
+				condition="this animationPhase ""door_1_1"" > 0.5 AND Alive(this) AND player in (crew this)";
+				statement="this animate [""door_1_1"",0];this animate [""door_1_2"",0];this animate [""door_2_1"",0];this animate [""door_2_2"",0];";
+			};
+			class OpenDriverdoor: CloseDriverdoor
+			{
+				displayName="$STR_A3_Hatch_open";
+				displayNameDefault="$STR_A3_Hatch_open";
+				condition="this animationPhase ""door_1_1"" < 0.5 AND Alive(this) AND player in (crew this)";
+				statement="this animate [""door_1_1"",1];this animate [""door_1_2"",1];this animate [""door_2_1"",1];this animate [""door_2_2"",1];";
+			};
+			class periscope_up
+			{
+				displayName="$STR_A3_periscope_up";
+				displayNameDefault="$STR_A3_periscope_up";
+				position="drivingwheel_axis";
+				radius=4;
+				onlyForplayer=0;
+				condition="this animationPhase ""periscope"" > 0.5 AND Alive(this) AND gunner this == player";
+				statement="this animate [""periscope"",0];this animate [""Antenna"",0];this animate [""HideScope"",0]; this animate [""display_on_R"",0];";
+			};
+			class periscope_down: periscope_up
+			{
+				displayName="$STR_A3_periscope_down";
+				displayNameDefault="$STR_A3_periscope_down";
+				condition="this animationPhase ""periscope"" < 0.5 AND Alive(this) AND gunner this == player";
+				statement="this animate [""periscope"",3];this animate [""Antenna"",3];this animate [""HideScope"",3]; this animate [""display_on_R"",1];";
+			};
+		};
 		class Turrets: Turrets
 		{
 			class CommanderTurret: NewTurret
 			{
+				gunnerCompartments="Compartment1";
+				gunnerName="$STR_POSITION_GUNNER";
 				proxyType="CPCommander";
 				commanding=-1;
 				ejectDeadGunner=0;
+				body="ObsTurret";
+				gun="ObsGun";
+				animationSourceBody="ObsTurret";
+				animationSourceGun="ObsGun";
+				gunBeg="PIP1_dir";
+				gunEnd="PIP1_pos";
+				memoryPointGunnerOptics="PIP1_dir";
 				weapons[]=
 				{
 					"Laserdesignator_mounted"
@@ -132,11 +534,27 @@ class CfgVehicles
 				{
 					"Laserbatteries"
 				};
+				soundServo[]=
+				{
+					"A3\sounds_f\dummysound",
+					0.0099999998,
+					1,
+					10
+				};
+				gunnerAction="commander_SDV";
+				gunnergetInAction="GetInLow";
+				gunnergetOutAction="GetOutLow";
+				memoryPointsGetInGunner="pos commander";
+				memoryPointsGetInGunnerDir="pos commander dir";
 				usePip=1;
 				Laser=1;
 				stabilizedInAxes=4;
+				gunnerOpticsModel="\A3\weapons_f_beta\reticle\reticle_SDV";
+				turretInfoType="RscOptics_SDV_periscope";
+				gunnerForceOptics=0;
 				LODTurnedIn=1100;
 				LODTurnedOut=1100;
+				outGunnerMayFire=1;
 				startEngine=0;
 				class ViewOptics: ViewOptics
 				{
@@ -159,6 +577,10 @@ class CfgVehicles
 				};
 			};
 		};
+		class Library
+		{
+			libTextDesc="$STR_A3_CfgVehicles_SDV_Base_Library0";
+		};
 		extCameraPosition[]={0,1.5,-9};
 		class HitPoints
 		{
@@ -167,6 +589,7 @@ class CfgVehicles
 				armor=0.5;
 				material=10;
 				name="engine";
+				visual="";
 				passThrough=0.2;
 			};
 			class HitBody
@@ -174,6 +597,7 @@ class CfgVehicles
 				armor=10;
 				material=-1;
 				name="karoserie";
+				visual="zbytek";
 				passThrough=1;
 			};
 		};
@@ -191,25 +615,31 @@ class CfgVehicles
 				{
 					class PlaneW
 					{
+						type="fixed";
 						pos[]={0.4975,0.48800001};
 					};
 					class Center
 					{
+						type="fixed";
 						pos[]={0.4975,0.68300003};
 					};
 					class Limit0109
 					{
+						type="limit";
 						limits[]={0.1,0.1,0.89999998,0.89999998};
 					};
 					class Velocity
 					{
+						type="vector";
 						source="velocity";
 						pos0[]={0.5,0.68300003};
 						pos10[]={1.45,1.753};
 					};
 					class HorizonBankRot
 					{
+						type="rotational";
 						source="horizonBank";
+						center[]={0.4975,0.48800001};
 						min=0.52359998;
 						max=-0.52359998;
 						minAngle=159.25;
@@ -218,7 +648,9 @@ class CfgVehicles
 					};
 					class HorizonBankRotFull
 					{
+						type="rotational";
 						source="horizonBank";
+						center[]={0,0};
 						min=-3.1415999;
 						max=3.1415999;
 						minAngle=-180;
@@ -229,6 +661,7 @@ class CfgVehicles
 					{
 						pos0[]={0.4975,0.5};
 						pos10[]={1.4475,1.0700001};
+						type="horizon";
 						angle=0;
 					};
 					class LevelP5: Level0
@@ -383,6 +816,7 @@ class CfgVehicles
 					condition="on";
 					class PlaneW
 					{
+						type="line";
 						points[]=
 						{
 							
@@ -445,6 +879,7 @@ class CfgVehicles
 					};
 					class Static
 					{
+						type="line";
 						points[]={};
 					};
 					class Horizont
@@ -455,6 +890,7 @@ class CfgVehicles
 						{
 							class Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -474,6 +910,7 @@ class CfgVehicles
 							};
 							class LevelM5: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -492,6 +929,7 @@ class CfgVehicles
 							};
 							class LevelP5: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -510,6 +948,7 @@ class CfgVehicles
 							};
 							class LevelM10: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -528,6 +967,7 @@ class CfgVehicles
 							};
 							class LevelP10: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -546,6 +986,7 @@ class CfgVehicles
 							};
 							class LevelM15: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -564,6 +1005,7 @@ class CfgVehicles
 							};
 							class LevelP15: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -582,6 +1024,7 @@ class CfgVehicles
 							};
 							class LevelM20: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -600,6 +1043,7 @@ class CfgVehicles
 							};
 							class LevelP20: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -618,6 +1062,7 @@ class CfgVehicles
 							};
 							class LevelM25: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -636,6 +1081,7 @@ class CfgVehicles
 							};
 							class LevelP25: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -654,6 +1100,7 @@ class CfgVehicles
 							};
 							class LevelM30: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -672,6 +1119,7 @@ class CfgVehicles
 							};
 							class LevelP30: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -690,6 +1138,7 @@ class CfgVehicles
 							};
 							class LevelM35: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -708,6 +1157,7 @@ class CfgVehicles
 							};
 							class LevelP35: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -726,6 +1176,7 @@ class CfgVehicles
 							};
 							class LevelM40: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -744,6 +1195,7 @@ class CfgVehicles
 							};
 							class LevelP40: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -762,6 +1214,7 @@ class CfgVehicles
 							};
 							class LevelM45: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -780,6 +1233,7 @@ class CfgVehicles
 							};
 							class LevelP45: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -798,6 +1252,7 @@ class CfgVehicles
 							};
 							class LevelM50: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -816,6 +1271,7 @@ class CfgVehicles
 							};
 							class LevelP50: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -834,6 +1290,7 @@ class CfgVehicles
 							};
 							class LevelM55: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -852,6 +1309,7 @@ class CfgVehicles
 							};
 							class LevelP55: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -870,6 +1328,7 @@ class CfgVehicles
 							};
 							class LevelM60: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -888,6 +1347,7 @@ class CfgVehicles
 							};
 							class LevelP60: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -906,6 +1366,7 @@ class CfgVehicles
 							};
 							class LevelM65: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -924,6 +1385,7 @@ class CfgVehicles
 							};
 							class LevelP65: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -942,6 +1404,7 @@ class CfgVehicles
 							};
 							class LevelM70: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -960,6 +1423,7 @@ class CfgVehicles
 							};
 							class LevelP70: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -978,6 +1442,7 @@ class CfgVehicles
 							};
 							class LevelM75: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -996,6 +1461,7 @@ class CfgVehicles
 							};
 							class LevelP75: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -1014,6 +1480,7 @@ class CfgVehicles
 							};
 							class LevelM80: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -1032,6 +1499,7 @@ class CfgVehicles
 							};
 							class LevelP80: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -1050,6 +1518,7 @@ class CfgVehicles
 							};
 							class LevelM85: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -1068,6 +1537,7 @@ class CfgVehicles
 							};
 							class LevelP85: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -1086,6 +1556,7 @@ class CfgVehicles
 							};
 							class LevelM90: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -1104,6 +1575,7 @@ class CfgVehicles
 							};
 							class LevelP90: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -1126,6 +1598,7 @@ class CfgVehicles
 					{
 						class Box
 						{
+							type="line";
 							points[]=
 							{
 								
@@ -1157,6 +1630,7 @@ class CfgVehicles
 						};
 						class AltNumber
 						{
+							type="text";
 							source="horizonDive";
 							sourceScale=10;
 							sourceLength=2;
@@ -1196,25 +1670,31 @@ class CfgVehicles
 				{
 					class PlaneW
 					{
+						type="fixed";
 						pos[]={0.4975,0.48800001};
 					};
 					class Center
 					{
+						type="fixed";
 						pos[]={0.4975,0.68300003};
 					};
 					class Limit0109
 					{
+						type="limit";
 						limits[]={0.1,0.1,0.89999998,0.89999998};
 					};
 					class Velocity
 					{
+						type="vector";
 						source="velocity";
 						pos0[]={0.5,0.68300003};
 						pos10[]={1.45,1.753};
 					};
 					class HorizonBankRot
 					{
+						type="rotational";
 						source="horizonBank";
+						center[]={0.4975,0.48800001};
 						min=0.52359998;
 						max=-0.52359998;
 						minAngle=159.25;
@@ -1223,7 +1703,9 @@ class CfgVehicles
 					};
 					class HorizonBankRotFull
 					{
+						type="rotational";
 						source="horizonBank";
+						center[]={0,0};
 						min=-3.1415999;
 						max=3.1415999;
 						minAngle=-180;
@@ -1234,6 +1716,7 @@ class CfgVehicles
 					{
 						pos0[]={0.4975,0.5};
 						pos10[]={1.4475,1.0700001};
+						type="horizon";
 						angle=0;
 					};
 					class LevelP5: Level0
@@ -1388,6 +1871,7 @@ class CfgVehicles
 					condition="on";
 					class PlaneW
 					{
+						type="line";
 						points[]=
 						{
 							
@@ -1450,6 +1934,7 @@ class CfgVehicles
 					};
 					class Static
 					{
+						type="line";
 						points[]={};
 					};
 					class Horizont
@@ -1460,6 +1945,7 @@ class CfgVehicles
 						{
 							class Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -1479,6 +1965,7 @@ class CfgVehicles
 							};
 							class LevelM5: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -1497,6 +1984,7 @@ class CfgVehicles
 							};
 							class LevelP5: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -1515,6 +2003,7 @@ class CfgVehicles
 							};
 							class LevelM10: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -1533,6 +2022,7 @@ class CfgVehicles
 							};
 							class LevelP10: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -1551,6 +2041,7 @@ class CfgVehicles
 							};
 							class LevelM15: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -1569,6 +2060,7 @@ class CfgVehicles
 							};
 							class LevelP15: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -1587,6 +2079,7 @@ class CfgVehicles
 							};
 							class LevelM20: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -1605,6 +2098,7 @@ class CfgVehicles
 							};
 							class LevelP20: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -1623,6 +2117,7 @@ class CfgVehicles
 							};
 							class LevelM25: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -1641,6 +2136,7 @@ class CfgVehicles
 							};
 							class LevelP25: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -1659,6 +2155,7 @@ class CfgVehicles
 							};
 							class LevelM30: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -1677,6 +2174,7 @@ class CfgVehicles
 							};
 							class LevelP30: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -1695,6 +2193,7 @@ class CfgVehicles
 							};
 							class LevelM35: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -1713,6 +2212,7 @@ class CfgVehicles
 							};
 							class LevelP35: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -1731,6 +2231,7 @@ class CfgVehicles
 							};
 							class LevelM40: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -1749,6 +2250,7 @@ class CfgVehicles
 							};
 							class LevelP40: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -1767,6 +2269,7 @@ class CfgVehicles
 							};
 							class LevelM45: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -1785,6 +2288,7 @@ class CfgVehicles
 							};
 							class LevelP45: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -1803,6 +2307,7 @@ class CfgVehicles
 							};
 							class LevelM50: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -1821,6 +2326,7 @@ class CfgVehicles
 							};
 							class LevelP50: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -1839,6 +2345,7 @@ class CfgVehicles
 							};
 							class LevelM55: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -1857,6 +2364,7 @@ class CfgVehicles
 							};
 							class LevelP55: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -1875,6 +2383,7 @@ class CfgVehicles
 							};
 							class LevelM60: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -1893,6 +2402,7 @@ class CfgVehicles
 							};
 							class LevelP60: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -1911,6 +2421,7 @@ class CfgVehicles
 							};
 							class LevelM65: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -1929,6 +2440,7 @@ class CfgVehicles
 							};
 							class LevelP65: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -1947,6 +2459,7 @@ class CfgVehicles
 							};
 							class LevelM70: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -1965,6 +2478,7 @@ class CfgVehicles
 							};
 							class LevelP70: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -1983,6 +2497,7 @@ class CfgVehicles
 							};
 							class LevelM75: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -2001,6 +2516,7 @@ class CfgVehicles
 							};
 							class LevelP75: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -2019,6 +2535,7 @@ class CfgVehicles
 							};
 							class LevelM80: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -2037,6 +2554,7 @@ class CfgVehicles
 							};
 							class LevelP80: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -2055,6 +2573,7 @@ class CfgVehicles
 							};
 							class LevelM85: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -2073,6 +2592,7 @@ class CfgVehicles
 							};
 							class LevelP85: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -2091,6 +2611,7 @@ class CfgVehicles
 							};
 							class LevelM90: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -2109,6 +2630,7 @@ class CfgVehicles
 							};
 							class LevelP90: Level0
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -2131,6 +2653,7 @@ class CfgVehicles
 					{
 						class Box
 						{
+							type="line";
 							points[]=
 							{
 								
@@ -2162,6 +2685,7 @@ class CfgVehicles
 						};
 						class AltNumber
 						{
+							type="text";
 							source="horizonDive";
 							sourceScale=10;
 							sourceLength=2;
@@ -2191,10 +2715,113 @@ class CfgVehicles
 				bottomLeft="HUD_2_bottom_left";
 			};
 		};
-		class Damage;  //found empty after stripping
+		class Damage
+		{
+			tex[]={};
+			mat[]=
+			{
+				"A3\boat_f_beta\SDV_01\data\SDV_ext.rvmat",
+				"A3\boat_f_beta\SDV_01\data\SDV_ext_damage.rvmat",
+				"A3\boat_f_beta\SDV_01\data\SDV_ext_destruct.rvmat",
+				"A3\boat_f_beta\SDV_01\data\SDV_int.rvmat",
+				"A3\boat_f_beta\SDV_01\data\SDV_int_damage.rvmat",
+				"A3\boat_f_beta\SDV_01\data\SDV_int_destruct.rvmat"
+			};
+		};
+		class Reflectors
+		{
+			class Left
+			{
+				color[]={0.80000001,0.89999998,1};
+				ambient[]={1,1,1};
+				position="L svetlo";
+				direction="konec L svetla";
+				hitpoint="L svetlo";
+				selection="L svetlo";
+				size=1;
+				innerAngle=30;
+				outerAngle=160;
+				coneFadeCoef=8;
+				intensity=500;
+				useFlare=0;
+				dayLight=0;
+				flareSize=0.89999998;
+				flareMaxDistance=85;
+				class Attenuation
+				{
+					start=1;
+					constant=0;
+					linear=1;
+					quadratic=0.5;
+					hardLimitStart=45;
+					hardLimitEnd=50;
+				};
+			};
+			class Right: Left
+			{
+				position="P svetlo";
+				direction="konec P svetla";
+				hitpoint="P svetlo";
+				selection="P svetlo";
+			};
+			class Right2: Right
+			{
+				position="P svetlo flare";
+				useFlare=1;
+			};
+			class Left2: Left
+			{
+				position="L svetlo flare";
+				useFlare=1;
+			};
+			class interior_light: Right
+			{
+				color[]={0.12,0.079999998,0.039999999};
+				ambient[]={0,0,0};
+				position="interior_light";
+				direction="interior_light";
+				hitpoint="P svetlo";
+				selection="P svetlo";
+				size=1;
+				innerAngle=180;
+				outerAngle=360;
+				coneFadeCoef=8;
+				intensity=0.30000001;
+				useFlare=0;
+				dayLight=1;
+				class Attenuation
+				{
+					start=0.69999999;
+					constant=0;
+					linear=0;
+					quadratic=200;
+					hardLimitStart=5;
+					hardLimitEnd=10;
+				};
+			};
+		};
+		aggregateReflectors[]=
+		{
+			
+			{
+				"Left",
+				"Right",
+				"Left2",
+				"Right2"
+			},
+			
+			{
+				"interior_light"
+			}
+		};
+		hiddenSelections[]=
+		{
+			"Camo1"
+		};
 	};
 	class B_SDV_01_F: SDV_01_base_F
 	{
+		author="$STR_A3_Bohemia_Interactive";
 		class SimpleObject
 		{
 			eden=1;
@@ -2451,16 +3078,25 @@ class CfgVehicles
 			verticalOffsetWorld=-0.80599999;
 			init="[this, '', []] call bis_fnc_initVehicle";
 		};
+		editorPreview="\A3\EditorPreviews_F\Data\CfgVehicles\B_SDV_01_F.jpg";
 		_generalMacro="B_SDV_01_F";
+		scope=2;
+		crew="B_diver_F";
+		faction="BLU_F";
 		side=1;
 		typicalCargo[]=
 		{
 			"B_Soldier_F",
 			"B_Soldier_F"
 		};
+		hiddenSelectionsTextures[]=
+		{
+			"\A3\boat_f_beta\SDV_01\data\SDV_ext_CO.paa"
+		};
 	};
 	class O_SDV_01_F: SDV_01_base_F
 	{
+		author="$STR_A3_Bohemia_Interactive";
 		class SimpleObject
 		{
 			eden=1;
@@ -2717,16 +3353,25 @@ class CfgVehicles
 			verticalOffsetWorld=-0.80699998;
 			init="[this, '', []] call bis_fnc_initVehicle";
 		};
+		editorPreview="\A3\EditorPreviews_F\Data\CfgVehicles\O_SDV_01_F.jpg";
 		_generalMacro="O_SDV_01_F";
+		scope=2;
+		crew="O_diver_F";
+		faction="OPF_F";
 		side=0;
 		typicalCargo[]=
 		{
 			"O_Soldier_F",
 			"O_Soldier_F"
 		};
+		hiddenSelectionsTextures[]=
+		{
+			"\A3\boat_f_beta\SDV_01\data\SDV_ext_opfor_CO.paa"
+		};
 	};
 	class I_SDV_01_F: SDV_01_base_F
 	{
+		author="$STR_A3_Bohemia_Interactive";
 		class SimpleObject
 		{
 			eden=1;
@@ -2983,12 +3628,20 @@ class CfgVehicles
 			verticalOffsetWorld=-0.80599999;
 			init="[this, '', []] call bis_fnc_initVehicle";
 		};
+		editorPreview="\A3\EditorPreviews_F\Data\CfgVehicles\I_SDV_01_F.jpg";
 		_generalMacro="I_SDV_01_F";
+		scope=2;
+		crew="I_diver_f";
+		faction="IND_F";
 		side=2;
 		typicalCargo[]=
 		{
 			"I_soldier_F",
 			"I_soldier_F"
+		};
+		hiddenSelectionsTextures[]=
+		{
+			"\A3\boat_f_beta\SDV_01\data\SDV_ext_INDP_CO.paa"
 		};
 	};
 };

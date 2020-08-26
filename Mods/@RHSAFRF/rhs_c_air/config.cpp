@@ -20,7 +20,16 @@ class CfgPatches
 			"rhs_k36d5_seat"
 		};
 		weapons[]={};
+		requiredVersion=1.5;
+		requiredAddons[]=
+		{
+			"rhs_main",
+			"rhs_c_a2port_air",
+			"rhs_c_airweapons"
+		};
 		name="AFRF Planes";
+		author="$STR_RHS_AUTHOR_FULL";
+		url="http://www.rhsmods.org/";
 	};
 };
 class CfgFunctions
@@ -126,6 +135,7 @@ class tu95_main_dialog
 	idd=61461;
 	name="tu95_main_dialog";
 	movingEnable=0;
+	onLoad="[0] spawn rhs_fnc_tu95_dialog_control";
 	onUnload="[1] call rhs_fnc_tu95_dialog_control";
 	controlsBackground[]=
 	{
@@ -133,9 +143,18 @@ class tu95_main_dialog
 		"tu95_background"
 	};
 	objects[]={};
+	controls[]=
+	{
+		"tu95_map",
+		"tu95_label",
+		"tu95_status",
+		"tu95_coord_control_group",
+		"tu95_btn_control_group"
+	};
 	class RHS_tu95_control_group
 	{
 		idc=-1;
+		type=15;
 		style=0;
 		class VScrollbar
 		{
@@ -168,6 +187,7 @@ class tu95_main_dialog
 	class RHS_tu95_text: RscText
 	{
 		idc=-1;
+		type=0;
 		style=0;
 		x=0;
 		w=0.30000001;
@@ -177,10 +197,12 @@ class tu95_main_dialog
 		colorBackground[]={0.5,0.5,0.5,0};
 		colorText[]={0.85000002,0.85000002,0.85000002,1};
 		font="PuristaMedium";
+		text="";
 	};
 	class RHS_tu95_text_border: RscPicture
 	{
 		idc=-1;
+		type=0;
 		style=0;
 		x=0;
 		w=0.30000001;
@@ -190,9 +212,11 @@ class tu95_main_dialog
 		colorBackground[]={0,0,0,0.2};
 		colorText[]={0.85000002,0.85000002,0.85000002,1};
 		font="PuristaMedium";
+		text="";
 	};
 	class RHS_tu95_edit: RscEdit
 	{
+		type=2;
 		style="0x00+16";
 		idc=-1;
 		font="PuristaMedium";
@@ -205,10 +229,12 @@ class tu95_main_dialog
 		h=0.059999999;
 		colorText[]={0.85000002,0.85000002,0.85000002,1};
 		colorSelection[]={1,1,1,1};
+		text="";
 	};
 	class RHS_tu95_image: RscPicture
 	{
 		idc=-1;
+		type=0;
 		style="48+0x800";
 		x=0.25;
 		w=0.1;
@@ -216,13 +242,16 @@ class tu95_main_dialog
 		h=0.1;
 		colorText[]={1,1,1,1};
 		colorBackground[]={0,0,0,0};
+		text="";
 		font="PuristaMedium";
 		sizeEx=0.032000002;
 	};
 	class RHS_tu95_btn: RscShortcutButton
 	{
 		idc=-1;
+		type=16;
 		style=0;
+		text="btn";
 		action="";
 		x=0;
 		y=0;
@@ -258,6 +287,7 @@ class tu95_main_dialog
 			right=0.0049999999;
 			bottom=0.0049999999;
 		};
+		textureNoShortcut="";
 		animTextureNormal="#(argb,8,8,3)color(1,1,1,0)";
 		animTextureDisabled="#(argb,8,8,3)color(1,1,1,0)";
 		animTextureOver="#(argb,8,8,3)color(1,1,1,0.0)";
@@ -307,8 +337,10 @@ class tu95_main_dialog
 	};
 	class RHS_tu95_list: RscListBox
 	{
+		type=5;
 		style=16;
 		idc=-1;
+		text="";
 		w=0.27500001;
 		h=0.039999999;
 		colorSelect[]={1,1,1,1};
@@ -361,6 +393,7 @@ class tu95_main_dialog
 	class RHS_tu95_map: RscMapControl
 	{
 		idc=-1;
+		type=101;
 		style=48;
 		x=0;
 		y=0;
@@ -433,6 +466,7 @@ class tu95_main_dialog
 		sizeExInfo=0.034000002;
 		fontLevel="PuristaMedium";
 		sizeExLevel=0.034000002;
+		text="#(argb,8,8,3)color(1,1,1,1)";
 		maxSatelliteAlpha=0;
 		alphaFadeStartScale=1;
 		alphaFadeEndScale=1.1;
@@ -757,10 +791,12 @@ class tu95_main_dialog
 		x="SafeZoneX";
 		y="SafeZoneY";
 		colorBackground[]={0,0,0,1};
+		text="";
 	};
 	class tu95_background
 	{
 		idc=-1;
+		type=0;
 		style=48;
 		x="0.1-0.03";
 		w="0.3*3 + 0.03*4";
@@ -768,6 +804,7 @@ class tu95_main_dialog
 		h="1+0.01*2+0.043*4";
 		colorText[]={1,1,1,1};
 		colorBackground[]={0,0,0,0};
+		text="#(argb,8,8,3)color(0,0,0,1)";
 		font="PuristaMedium";
 		sizeEx=0.032000002;
 	};
@@ -779,6 +816,7 @@ class tu95_main_dialog
 		y=0.050000001;
 		h=0.050000001;
 		sizeEx=0.050000001;
+		text="Tu-95MS-6 Launch Platform";
 	};
 	class tu95_map: RHS_tu95_map
 	{
@@ -794,6 +832,7 @@ class tu95_main_dialog
 		x=0.1;
 		w="0.9 - 0.01";
 		y="1-0.1- 0.02";
+		text="--";
 	};
 	class tu95_coord_control_group: RHS_tu95_control_group
 	{
@@ -809,6 +848,7 @@ class tu95_main_dialog
 				x=0;
 				w="0.17 - 0.01";
 				y=0;
+				text="$STR_RHS_ss21_coord_desc";
 			};
 			class tu95_latitude_desc: RHS_tu95_text
 			{
@@ -816,6 +856,7 @@ class tu95_main_dialog
 				x=0;
 				w="0.17 - 0.01";
 				y=0.039999999;
+				text="$STR_RHS_ss21_latitude_desc";
 			};
 			class tu95_longitude_desc: RHS_tu95_text
 			{
@@ -823,6 +864,7 @@ class tu95_main_dialog
 				x=0;
 				w="0.17 - 0.01";
 				y="0.04*2";
+				text="$STR_RHS_ss21_longitude_desc";
 			};
 			class tu95_elevation_desc: RHS_tu95_text
 			{
@@ -831,12 +873,14 @@ class tu95_main_dialog
 				w="0.17 - 0.01";
 				y="0.04*3";
 				h=0.039999999;
+				text="$STR_RHS_ss21_elevation_desc";
 			};
 			class tu95_target_desc: RHS_tu95_text
 			{
 				x=0.17;
 				w="0.17 - 0.01";
 				y=0;
+				text="$STR_RHS_ss21_target_desc";
 			};
 			class tu95_target_x: RHS_tu95_text_border
 			{
@@ -844,6 +888,7 @@ class tu95_main_dialog
 				x=0.17;
 				w="0.17 - 0.01";
 				y="0.04*1";
+				text="--";
 			};
 			class tu95_target_y: RHS_tu95_text_border
 			{
@@ -851,6 +896,7 @@ class tu95_main_dialog
 				x=0.17;
 				w="0.17 - 0.01";
 				y="0.04*2";
+				text="--";
 			};
 			class tu95_target_z: RHS_tu95_text_border
 			{
@@ -858,12 +904,14 @@ class tu95_main_dialog
 				x=0.17;
 				w="0.17 - 0.01";
 				y="0.04*3";
+				text="--";
 			};
 			class tu95_tochka_desc: RHS_tu95_text
 			{
 				x="0.17*2";
 				w="0.17 - 0.01";
 				y=0;
+				text="$STR_RHS_ss21_tochka_desc";
 			};
 			class tu95_tochka_x: RHS_tu95_text_border
 			{
@@ -871,6 +919,7 @@ class tu95_main_dialog
 				x="0.17*2";
 				w="0.17 - 0.01";
 				y="0.04*1";
+				text="--";
 			};
 			class tu95_tochka_y: RHS_tu95_text_border
 			{
@@ -878,6 +927,7 @@ class tu95_main_dialog
 				x="0.17*2";
 				w="0.17 - 0.01";
 				y="0.04*2";
+				text="--";
 			};
 			class tu95_tochka_z: RHS_tu95_text_border
 			{
@@ -885,6 +935,7 @@ class tu95_main_dialog
 				x="0.17*2";
 				w="0.17 - 0.01";
 				y="0.04*3";
+				text="--";
 			};
 			class tu95_rel_desc: RHS_tu95_text
 			{
@@ -892,6 +943,7 @@ class tu95_main_dialog
 				x="0.17*4.3 - 0.03";
 				w="0.17 - 0.01 + 0.03";
 				y=0;
+				text="$STR_RHS_ss21_rel_desc";
 			};
 			class tu95_dir_desc: RHS_tu95_text
 			{
@@ -899,6 +951,7 @@ class tu95_main_dialog
 				x="0.17*3.3";
 				w="0.17 - 0.01";
 				y=0.039999999;
+				text="$STR_RHS_ss21_dir_desc";
 			};
 			class tu95_dist_desc: RHS_tu95_text
 			{
@@ -906,6 +959,7 @@ class tu95_main_dialog
 				x="0.17*3.3";
 				w="0.17 - 0.01";
 				y="0.04*2";
+				text="$STR_RHS_ss21_dist_desc";
 			};
 			class tu95_elevation_rel_desc: RHS_tu95_text
 			{
@@ -913,6 +967,7 @@ class tu95_main_dialog
 				x="0.17*3.3";
 				w="0.17 - 0.01";
 				y="0.04*3";
+				text="$STR_RHS_ss21_elevation_desc";
 			};
 			class tu95_rel_dir: RHS_tu95_text_border
 			{
@@ -920,6 +975,7 @@ class tu95_main_dialog
 				x="0.17*4.3";
 				w="0.17 - 0.01";
 				y="0.04*1";
+				text="--";
 			};
 			class tu95_rel_dist: RHS_tu95_text_border
 			{
@@ -927,6 +983,7 @@ class tu95_main_dialog
 				x="0.17*4.3";
 				w="0.17 - 0.01";
 				y="0.04*2";
+				text="--";
 			};
 			class tu95_rel_elev: RHS_tu95_text_border
 			{
@@ -934,6 +991,7 @@ class tu95_main_dialog
 				x="0.17*4.3";
 				w="0.17 - 0.01";
 				y="0.04*3";
+				text="--";
 			};
 		};
 	};
@@ -951,6 +1009,7 @@ class tu95_main_dialog
 				x=0;
 				w=0.30000001;
 				y="0.043*1 + 0.032";
+				text="Missile type";
 			};
 			class tu95_ammo_text: RscCombo
 			{
@@ -959,6 +1018,7 @@ class tu95_main_dialog
 				x=0;
 				w=0.30000001;
 				y="0.043*2 + 0.032";
+				text="Kh-55Sh HE";
 				font="PuristaSemibold";
 				onLBSelChanged="[6,_this select 1] spawn rhs_fnc_tu95_dialog_control";
 			};
@@ -968,6 +1028,7 @@ class tu95_main_dialog
 				x=0;
 				w=0.30000001;
 				y="0.043*3 + 0.032";
+				text="Total ammo count";
 			};
 			class tu95_ammo_count_text: RHS_tu95_text
 			{
@@ -976,6 +1037,7 @@ class tu95_main_dialog
 				x=0;
 				w=0.30000001;
 				y="0.043*4 + 0.032";
+				text="6";
 				font="PuristaSemibold";
 			};
 			class tu95_bay_desc: RHS_tu95_text
@@ -984,6 +1046,7 @@ class tu95_main_dialog
 				x=0;
 				w=0.30000001;
 				y="0.043*7 + 0.032";
+				text="$STR_RHS_ss21_bay_desc";
 			};
 			class tu95_bay_close_btn: RHS_tu95_btn
 			{
@@ -991,6 +1054,7 @@ class tu95_main_dialog
 				x=0;
 				w="0.3/2";
 				y="0.043*8";
+				text="$STR_RHS_ss21_bay_close_btn";
 				action="[4] spawn rhs_fnc_tu95_dialog_control";
 			};
 			class tu95_bay_open_btn: RHS_tu95_btn
@@ -999,6 +1063,7 @@ class tu95_main_dialog
 				x="0.3/2";
 				w="0.3/2";
 				y="0.043*8";
+				text="$STR_RHS_ss21_bay_open_btn";
 				action="[5] spawn rhs_fnc_tu95_dialog_control";
 			};
 			class tu95_designate_target_btn: RHS_tu95_btn
@@ -1006,6 +1071,7 @@ class tu95_main_dialog
 				x=0;
 				w=0.30000001;
 				y="0.35+0.043*1";
+				text="$STR_RHS_ss21_designate_target_btn";
 				action="[10] call rhs_fnc_tu95_dialog_control";
 			};
 			class tu95_launch_btn: RHS_tu95_btn
@@ -1014,6 +1080,7 @@ class tu95_main_dialog
 				x=0;
 				w=0.30000001;
 				y="0.35+0.043*2";
+				text="$STR_RHS_ss21_launch_btn";
 				action="[12] spawn rhs_fnc_tu95_dialog_control";
 			};
 			class tu95_close_btn: RHS_tu95_btn
@@ -1021,6 +1088,7 @@ class tu95_main_dialog
 				x=0;
 				w=0.30000001;
 				y="0.35+0.043*4";
+				text="$STR_RHS_ss21_close_btn";
 				action="closeDialog 0";
 			};
 		};
@@ -1045,6 +1113,114 @@ class CfgSounds
 		titles[]={};
 	};
 };
+class CfgMovesBasic
+{
+	class DefaultDie;
+	class ManActions
+	{
+		RHS_PAKFA_Pilot="RHS_PAKFA_Pilot";
+		RHS_PAKFA_Pilot_GetIn="RHS_PAKFA_Pilot_GetIn";
+		RHS_K36D_PilotEject="rhs_k36d_PilotEject";
+		RHS_TU95_Pilot="rhs_tu95_pilot";
+		RHS_TU95_RearGunner="RHS_TU95_RearGunner";
+	};
+};
+class CfgMovesMaleSdr: CfgMovesBasic
+{
+	class States
+	{
+		class Crew;
+		class PreciseCrew;
+		class RHS_PAKFA_Pilot: Crew
+		{
+			file="\rhsafrf\addons\rhs_c_air\anims\rhs_pakfa_pilot.rtm";
+			interpolateTo[]=
+			{
+				"RHS_KIA_PAKFA_Pilot",
+				1
+			};
+			speed=0.066519;
+			leaning="crewShake_half";
+		};
+		class RHS_PAKFA_Pilot_GetIn: PreciseCrew
+		{
+			file="\rhsafrf\addons\rhs_c_air\anims\rhs_pakfa_pilot_getin.rtm";
+			speed=-8.1999998;
+			looped=0;
+			connectTo[]={};
+			interpolateTo[]=
+			{
+				"RHS_PAKFA_Pilot",
+				0.2,
+				"RHS_KIA_PAKFA_Pilot",
+				1
+			};
+			variantsAI[]={};
+			variantsPlayer[]={};
+			variantAfter[]={2.7,2.7,2.7};
+			useIdles=0;
+			leftHandIKCurve[]={0};
+			rightHandIKCurve[]={0};
+			headBobMode=1;
+			headBobStrength=0.80000001;
+			soundOverride="walk";
+			soundEnabled=1;
+			soundEdge[]={0.10869,0.243478,0.38260001,0.5,0.61299998,0.78600001,0.87300003,0.926,0.991};
+		};
+		class RHS_KIA_PAKFA_Pilot: DefaultDie
+		{
+			actions="DeadActions";
+			file="\rhsafrf\addons\rhs_c_air\anims\rhs_kia_pakfa_pilot.rtm";
+			speed=0.5;
+			looped=0;
+			terminal=1;
+			soundEnabled=0;
+			connectTo[]=
+			{
+				"Unconscious",
+				0.1
+			};
+		};
+		class RHS_K36D_PilotEject: Crew
+		{
+			file="\rhsafrf\addons\rhs_c_air\anims\rhs_pakfa_pilot_eject.rtm";
+			leftHandIKCurve[]={1};
+			rightHandIKCurve[]={1};
+			leftLegIKCurve[]={1};
+			rightLegIKCurve[]={1};
+			leaning="empty";
+			interpolateTo[]=
+			{
+				"RHS_KIA_PAKFA_Pilot",
+				1
+			};
+		};
+		class RHS_TU95_Pilot: Crew
+		{
+			file="\rhsafrf\addons\rhs_c_air\anims\rhs_tu95_pilot.rtm";
+			leftHandIKCurve[]={1};
+			rightHandIKCurve[]={1};
+			leftHandIKBeg=1;
+			leftHandIKEnd=1;
+			interpolateTo[]=
+			{
+				"RHS_KIA_PAKFA_Pilot",
+				1
+			};
+			speed=0.066519;
+		};
+		class RHS_TU95_RearGunner: Crew
+		{
+			file="\rhsafrf\addons\rhs_c_air\anims\rhs_tu95_RearGunner.rtm";
+			interpolateTo[]=
+			{
+				"RHS_KIA_PAKFA_Pilot",
+				1
+			};
+			speed=0.066519;
+		};
+	};
+};
 class cfgWaypoints
 {
 	class RHS
@@ -1064,6 +1240,7 @@ class cfgWaypoints
 					displayName="Delay between paradrop";
 					tooltip="Defines delay between ejection of units. By default ejection delay is calculated based on vehicle speed. Leave it at -1 for default setting.";
 					control="Edit";
+					typeName="NUMBER";
 					defaultValue="-1";
 					expression="_this setWaypointScript (waypointScript _this + format [' + [%1]',_value]);";
 				};
@@ -1074,6 +1251,7 @@ class cfgWaypoints
 					tooltip="Defines what kind of parachute will units use after ejection. By default Russian D-6 parachute is used.";
 					control="Edit";
 					defaultValue="rhs_d6_Parachute";
+					typeName="STRING";
 					expression="_this setWaypointScript (waypointScript _this + format [' [%1]',_value]);";
 				};
 			};
@@ -1095,10 +1273,16 @@ class CfgWeapons
 	class InventoryFinsItem_Base_F;
 	class rhs_item_flightrecorder: ItemCore
 	{
+		scope=2;
+		author="$STR_RHS_AUTHOR_FULL";
 		displayName="Flight recorder";
+		picture="\rhsafrf\addons\rhs_air\misc\data\rhs_flightrecorder_pic_ca.paa";
+		model="\rhsafrf\addons\rhs_air\misc\rhs_flightrecorder_item.p3d";
+		descriptionShort="Plane flight recorder";
 		class ItemInfo: InventoryFinsItem_Base_F
 		{
 			mass=110;
+			type=301;
 			class Pointer;  //found empty after stripping
 			class FlashLight;  //found empty after stripping
 		};
@@ -1156,6 +1340,8 @@ class CfgVehicles
 	class ThingX;
 	class RHS_T50_base: Plane_Base_F
 	{
+		scope=1;
+		dlc="RHS_AFRF";
 		rhs_decalParameters[]=
 		{
 			"['Number',cRHSAIRT50NumberPlaces,'AviaBlue']",
@@ -1163,22 +1349,31 @@ class CfgVehicles
 			"['Label', cRHSAIRT50StarPlaces, 'Aviation',1]"
 		};
 		displayName="$STR_T50_name";
+		model="\rhsafrf\addons\rhs_air\t50\t50";
+		picture="\rhsafrf\addons\rhs_air\t50\data\ui\pak_fa_icon.paa";
 		icon="\rhsafrf\addons\rhs_air\t50\data\ui\icomap_pakfa.paa";
 		LESH_canBeTowed=1;
 		LESH_towFromFront=1;
 		LESH_AxisOffsetTarget[]={0,6.8000002,-2.04};
 		LESH_WheelOffset[]={0,-0.69999999};
+		category="Air";
+		vehicleClass="rhs_vehclass_aircraft";
 		memoryPointsGetInDriver="pos driver";
 		memoryPointsGetInDriverDir="pos driver dir";
 		memoryPointsGetInDriverPrecise="pos driver";
+		camShakeCoef=0.69999999;
 		driverCanEject=1;
 		driverCompartments=1;
+		driverLeftHandAnimName="lever_pilot";
+		driverRightHandAnimName="stick_pilot";
 		driverLeftLegAnimName="pedal_L";
 		driverRightLegAnimName="pedal_R";
+		driverAction="rhs_PAKFA_Pilot";
 		getinAction="RHS_PAKFA_Pilot_getin";
 		getoutaction="pilot_plane_cas_02_Exit";
 		precisegetinout=1;
 		allowTabLock=1;
+		destrType="DestructDefault";
 		selectionDamage="zbytek";
 		incommingMisslieDetectionSystem="8+16";
 		ejectDamageLimit=1;
@@ -1199,6 +1394,7 @@ class CfgVehicles
 		memoryPointRRocket="rocket_2";
 		class EjectionSystem;  //found empty after stripping
 		class Turrets;  //found empty after stripping
+		class TransportItems;  //found empty after stripping
 		threat[]={1,1,1};
 		waterLeakiness=1.5;
 		showAllTargets=4;
@@ -1210,6 +1406,67 @@ class CfgVehicles
 			{
 				"rhsafrf\addons\rhs_air\t50\data\afterburner_ca.paa",
 				"#(argb,8,8,3)color(0,0,0,0,co)"
+			};
+			mat[]=
+			{
+				"rhsafrf\addons\rhs_air\t50\data\pakfa_glass.rvmat",
+				"rhsafrf\addons\rhs_air\t50\data\pakfa_glass_damage.rvmat",
+				"rhsafrf\addons\rhs_air\t50\data\pakfa_glass_destruct.rvmat",
+				"rhsafrf\addons\rhs_air\t50\data\PakFa.rvmat",
+				"rhsafrf\addons\rhs_air\t50\data\PakFa_damage.rvmat",
+				"rhsafrf\addons\rhs_air\t50\data\PakFa_destruct.rvmat",
+				"a3\data_f\default.rvmat",
+				"a3\data_f\default.rvmat",
+				"a3\data_f\default_destruct.rvmat"
+			};
+		};
+		class UserActions
+		{
+			class MFD_top
+			{
+				displayName="$STR_RHS_PAKFA_TOPOGRAPHIC_MAP";
+				condition="this animationPhase 'display2_switch' == 0 and player in this and isengineon this";
+				statement="this animate ['display2_switch',1,true]; [this,0] spawn RHS_fnc_PAKFA_MapData;";
+				position="pilotcontrol";
+				radius=10;
+				onlyforplayer=1;
+				showWindow=0;
+				hideOnUse=1;
+			};
+			class MFD_glonass
+			{
+				displayName="$STR_RHS_PAKFA_GLONASS_MAP";
+				condition="this animationPhase 'display2_switch' == 1 and player in this and isengineon this";
+				statement="this animate ['display2_switch',2,true]; [this,1] spawn RHS_fnc_PAKFA_MapData;";
+				position="pilotcontrol";
+				radius=10;
+				onlyforplayer=1;
+				showWindow=0;
+				hideOnUse=1;
+			};
+			class MFD_off
+			{
+				displayName="$STR_RHS_PAKFA_MAP_OFF";
+				condition="this animationPhase 'display2_switch' == 2 and player in this and isengineon this";
+				statement=" this animate ['display2_switch',0];[this,2] spawn RHS_fnc_PAKFA_MapData;";
+				position="pilotcontrol";
+				radius=10;
+				onlyforplayer=1;
+				showWindow=0;
+				hideOnUse=1;
+			};
+			class SAFEMODE
+			{
+				displayName="<t color='#00FF7F'>MASTERSAFE</t>";
+				condition="(call rhs_fnc_findPlayer) in this";
+				statement="(call rhs_fnc_findPlayer) action ['SwitchWeapon', this, (call rhs_fnc_findPlayer), (weapons this) find 'rhs_weap_MASTERSAFE'];";
+				position="";
+				radius=10;
+				priority=10.5;
+				onlyforplayer=1;
+				showWindow=0;
+				shortcut="user13";
+				hideOnUse=1;
 			};
 		};
 		weapons[]=
@@ -1258,6 +1515,21 @@ class CfgVehicles
 			class standard
 			{
 				displayName="$STR_T50_blue_name";
+				author="$STR_RHS_AUTHOR_FULL";
+				textures[]=
+				{
+					"\rhsafrf\addons\rhs_air\t50\data\pakfa_bluecamo_co.paa",
+					"\rhsafrf\addons\rhs_decals\Data\Labels\Aviation\no_ca.paa",
+					"\rhsafrf\addons\rhs_decals\Data\Numbers\AviaBlue\5_ca.paa",
+					"\rhsafrf\addons\rhs_decals\Data\Numbers\AviaBlue\1_ca.paa",
+					"\rhsafrf\addons\rhs_decals\Data\Labels\Aviation\no_ca.paa",
+					"\rhsafrf\addons\rhs_decals\Data\Labels\Aviation\no_ca.paa",
+					"\rhsafrf\addons\rhs_decals\Data\Labels\Aviation\no_ca.paa",
+					"\rhsafrf\addons\rhs_decals\Data\Labels\AviationCompanies\sukhoi_ca.paa",
+					"\rhsafrf\addons\rhs_decals\Data\Labels\Aviation\star_new2_ca.paa",
+					"rhsafrf\addons\rhs_c_air\scripts\data\altis_co.paa",
+					"rhsafrf\addons\rhs_c_air\scripts\data\WP_move_ca.paa"
+				};
 				factions[]=
 				{
 					"rhs_faction_vvs_c",
@@ -1267,18 +1539,71 @@ class CfgVehicles
 			class standard2: standard
 			{
 				displayName="$STR_T50_blueonblue_name";
+				author="$STR_RHS_AUTHOR_FULL";
+				textures[]=
+				{
+					"\rhsafrf\addons\rhs_air\t50\data\pakfa_blueonblue_co.paa",
+					"\rhsafrf\addons\rhs_decals\Data\Labels\Aviation\no_ca.paa",
+					"\rhsafrf\addons\rhs_decals\Data\Labels\Aviation\no_ca.paa",
+					"\rhsafrf\addons\rhs_decals\Data\Labels\Aviation\no_ca.paa",
+					"\rhsafrf\addons\rhs_decals\Data\Labels\Aviation\no_ca.paa",
+					"\rhsafrf\addons\rhs_decals\Data\Labels\Aviation\no_ca.paa",
+					"\rhsafrf\addons\rhs_decals\Data\Labels\Aviation\no_ca.paa",
+					"\rhsafrf\addons\rhs_decals\Data\Labels\Aviation\no_ca.paa",
+					"\rhsafrf\addons\rhs_decals\Data\Labels\Aviation\star_new2_ca.paa",
+					"rhsafrf\addons\rhs_c_air\scripts\data\altis_co.paa",
+					"rhsafrf\addons\rhs_c_air\scripts\data\WP_move_ca.paa"
+				};
 			};
 			class standard3: standard
 			{
 				displayName="$STR_T50_grey_name";
+				author="$STR_RHS_AUTHOR_FULL";
+				textures[]=
+				{
+					"\rhsafrf\addons\rhs_air\t50\data\pakfa_greycamo_co.paa",
+					"\rhsafrf\addons\rhs_decals\Data\Labels\Aviation\no_ca.paa",
+					"\rhsafrf\addons\rhs_decals\Data\Numbers\AviaBlue\5_ca.paa",
+					"\rhsafrf\addons\rhs_decals\Data\Numbers\AviaBlue\1_ca.paa",
+					"\rhsafrf\addons\rhs_decals\Data\Labels\Aviation\no_ca.paa",
+					"\rhsafrf\addons\rhs_decals\Data\Labels\Aviation\no_ca.paa",
+					"\rhsafrf\addons\rhs_decals\Data\Labels\Aviation\no_ca.paa",
+					"\rhsafrf\addons\rhs_decals\Data\Labels\AviationCompanies\sukhoi_ca.paa",
+					"\rhsafrf\addons\rhs_decals\Data\Labels\Aviation\star_new2_ca.paa",
+					"rhsafrf\addons\rhs_c_air\scripts\data\altis_co.paa",
+					"rhsafrf\addons\rhs_c_air\scripts\data\WP_move_ca.paa"
+				};
 			};
 			class standard4: standard
 			{
 				displayName="$STR_T50_bluegeneric_name";
+				author="$STR_RHS_AUTHOR_FULL";
+				textures[]=
+				{
+					"\rhsafrf\addons\rhs_air\t50\data\pakfa_generic_co.paa",
+					"\rhsafrf\addons\rhs_decals\Data\Labels\Aviation\no_ca.paa",
+					"\rhsafrf\addons\rhs_decals\Data\Labels\Aviation\no_ca.paa",
+					"\rhsafrf\addons\rhs_decals\Data\Labels\Aviation\no_ca.paa",
+					"\rhsafrf\addons\rhs_decals\Data\Labels\Aviation\no_ca.paa",
+					"\rhsafrf\addons\rhs_decals\Data\Labels\Aviation\no_ca.paa",
+					"\rhsafrf\addons\rhs_decals\Data\Labels\Aviation\no_ca.paa",
+					"\rhsafrf\addons\rhs_decals\Data\Labels\Aviation\no_ca.paa",
+					"\rhsafrf\addons\rhs_decals\Data\Labels\Aviation\star_new2_ca.paa",
+					"rhsafrf\addons\rhs_c_air\scripts\data\altis_co.paa",
+					"rhsafrf\addons\rhs_c_air\scripts\data\WP_move_ca.paa"
+				};
 			};
 		};
+		textureList[]={};
 		class Attributes
 		{
+			class ObjectTexture
+			{
+				control="ObjectTexture";
+				data="ObjectTexture";
+				displayName="Skin";
+				tooltip="Texture and material set applied on the object.";
+			};
 			class rhs_decalNumber_type
 			{
 				displayName="Define font type of side number";
@@ -1287,6 +1612,7 @@ class CfgVehicles
 				control="Combo";
 				expression="if(_value != 'NoChange')then{ _this setVariable ['%s', _value];[_this,[['Number', cRHSAIRT50NumberPlaces, _value]]] call rhs_fnc_decalsInit}";
 				defaultValue=0;
+				typeName="STRING";
 				class values
 				{
 					class NoChange
@@ -1389,6 +1715,7 @@ class CfgVehicles
 				control="Combo";
 				expression="if(_value >= 0)then{ [_this, [ [ 'Label', cRHSAIRT50SquadPlaces, 'AviationsSquadrons',_value] ] ] call rhs_fnc_decalsInit};";
 				defaultValue="-1";
+				typeName="Number";
 				class values
 				{
 					class Random
@@ -1545,6 +1872,7 @@ class CfgVehicles
 			"flare_launcher2_dir",
 			"flare_launcher3_dir"
 		};
+		unitInfoType="RHS_RscUnitInfoAir_PAKFA";
 		driverCanSee="1+2+4+8+16";
 		defaultUserMFDvalues[]={0.15000001,1,0.15000001,0.40000001};
 		class MFD
@@ -1565,10 +1893,12 @@ class CfgVehicles
 				{
 					class PlaneOrientation
 					{
+						type="fixed";
 						pos[]={0.5,0.52999997};
 					};
 					class ClimbFixed
 					{
+						type="fixed";
 						pos[]=
 						{
 							"0.898+0.09",
@@ -1577,6 +1907,7 @@ class CfgVehicles
 					};
 					class ClimbRotate
 					{
+						type="rotational";
 						source="vspeed";
 						sourceScale=1;
 						center[]=
@@ -1592,18 +1923,22 @@ class CfgVehicles
 					};
 					class WeaponAim
 					{
+						type="fixed";
 						source="weapon";
 						pos[]={0.5,0.52999997};
 					};
 					class Velocity
 					{
+						type="vector";
 						source="velocity";
 						pos0[]={0.5,0.52999997};
 						pos10[]={1.12,1.3099999};
 					};
 					class HorizonBankSource
 					{
+						type="rotational";
 						source="HorizonBank";
+						center[]={0.5,0.52999997};
 						min=-6.2831001;
 						max=6.2831001;
 						minAngle=-360;
@@ -1611,7 +1946,9 @@ class CfgVehicles
 					};
 					class HorizonBankInverted
 					{
+						type="rotational";
 						source="HorizonBank";
+						center[]={0.5,0.52999997};
 						min=-6.2831001;
 						max=6.2831001;
 						minAngle=360;
@@ -1619,7 +1956,9 @@ class CfgVehicles
 					};
 					class HorizonBankRotFull
 					{
+						type="rotational";
 						source="horizonBank";
+						center[]={0,0};
 						min=-3.1415999;
 						max=3.1415999;
 						minAngle=-180;
@@ -1629,6 +1968,7 @@ class CfgVehicles
 					class Level0
 					{
 						source="horizonDive";
+						type="linear";
 						angle=0;
 						min=-3.4000001;
 						max=3.4000001;
@@ -1637,6 +1977,7 @@ class CfgVehicles
 					};
 					class TerrainBone
 					{
+						type="linear";
 						source="altitudeAGL";
 						sourceScale=1;
 						min=0;
@@ -1646,36 +1987,43 @@ class CfgVehicles
 					};
 					class ImpactPoint
 					{
+						type="vector";
 						source="ImpactPoint";
 						pos0[]={0.5,0.52999997};
 						pos10[]={1.12,1.3099999};
 					};
 					class ImpactPointRelative
 					{
+						type="vector";
 						source="impactpointweaponRelative";
 						pos0[]={0.5,0.52999997};
 						pos10[]={1.12,1.3099999};
 					};
 					class Limit0109
 					{
+						type="limit";
 						limits[]={0.1,0.1,0.89999998,0.89999998};
 					};
 					class Target
 					{
 						source="target";
+						type="vector";
 						pos0[]={0.5,0.52999997};
 						pos10[]={1.12,1.3099999};
 					};
 					class WPPoint
 					{
+						type="vector";
 						source="WPPoint";
 						pos0[]={0.5,0.52999997};
 						pos10[]={1.12,1.3099999};
 					};
 					class MissileFlightTimeRot1
 					{
+						type="rotational";
 						source="MissileFlightTime";
 						sourceScale=1;
+						center[]={0,0};
 						min=0;
 						max=0.5;
 						minAngle=0;
@@ -1779,6 +2127,7 @@ class CfgVehicles
 					};
 					class Airport1
 					{
+						type="vector";
 						source="airportCorner1";
 						pos0[]={0.5,0.52999997};
 						pos10[]={1.12,1.3099999};
@@ -1797,6 +2146,7 @@ class CfgVehicles
 					};
 					class ILS_H
 					{
+						type="ils";
 						pos0[]={0.5,0.52999997};
 						pos3[]={0.68599999,0.52999997};
 					};
@@ -1806,6 +2156,7 @@ class CfgVehicles
 					};
 					class LarAmmoMax
 					{
+						type="linear";
 						source="LarAmmoMax";
 						sourceScale=1;
 						min=0;
@@ -1823,8 +2174,10 @@ class CfgVehicles
 					};
 					class LarAmmoMGunMax
 					{
+						type="rotational";
 						source="LarAmmoMax";
 						sourceScale=1;
+						center[]={0,0};
 						min=0;
 						max=1;
 						minAngle=-180;
@@ -1854,6 +2207,7 @@ class CfgVehicles
 						{
 							class Level00
 							{
+								type="line";
 								width=2;
 								points[]=
 								{
@@ -1874,6 +2228,7 @@ class CfgVehicles
 							};
 							class Level2MH5: Level00
 							{
+								type="line";
 								lineType=0;
 								points[]=
 								{
@@ -1906,6 +2261,7 @@ class CfgVehicles
 							};
 							class Level2MH0: Level00
 							{
+								type="line";
 								lineType=0;
 								points[]=
 								{
@@ -1938,6 +2294,7 @@ class CfgVehicles
 							};
 							class Level2PH5: Level00
 							{
+								type="line";
 								lineType=0;
 								points[]=
 								{
@@ -1957,6 +2314,7 @@ class CfgVehicles
 							};
 							class Level2PH0: Level00
 							{
+								type="line";
 								lineType=0;
 								points[]=
 								{
@@ -1976,6 +2334,7 @@ class CfgVehicles
 							};
 							class Level2M5: Level00
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -2020,7 +2379,9 @@ class CfgVehicles
 							};
 							class VALM2_1_5
 							{
+								type="text";
 								source="static";
+								text=5;
 								align="center";
 								scale=1;
 								sourceScale=1;
@@ -2045,6 +2406,7 @@ class CfgVehicles
 							};
 							class Level2P5: Level00
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -2063,7 +2425,9 @@ class CfgVehicles
 							};
 							class VALP2_1_5
 							{
+								type="text";
 								source="static";
+								text=-5;
 								align="center";
 								scale=1;
 								sourceScale=1;
@@ -2088,6 +2452,7 @@ class CfgVehicles
 							};
 							class Level2MH10: Level00
 							{
+								type="line";
 								lineType=0;
 								points[]=
 								{
@@ -2120,6 +2485,7 @@ class CfgVehicles
 							};
 							class Level2PH10: Level00
 							{
+								type="line";
 								lineType=0;
 								points[]=
 								{
@@ -2139,6 +2505,7 @@ class CfgVehicles
 							};
 							class Level2M10: Level00
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -2183,7 +2550,9 @@ class CfgVehicles
 							};
 							class VALM2_1_10
 							{
+								type="text";
 								source="static";
+								text=10;
 								align="center";
 								scale=1;
 								sourceScale=1;
@@ -2208,6 +2577,7 @@ class CfgVehicles
 							};
 							class Level2P10: Level00
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -2226,7 +2596,9 @@ class CfgVehicles
 							};
 							class VALP2_1_10
 							{
+								type="text";
 								source="static";
+								text=-10;
 								align="center";
 								scale=1;
 								sourceScale=1;
@@ -2251,6 +2623,7 @@ class CfgVehicles
 							};
 							class Level2MH15: Level00
 							{
+								type="line";
 								lineType=0;
 								points[]=
 								{
@@ -2283,6 +2656,7 @@ class CfgVehicles
 							};
 							class Level2PH15: Level00
 							{
+								type="line";
 								lineType=0;
 								points[]=
 								{
@@ -2302,6 +2676,7 @@ class CfgVehicles
 							};
 							class Level2M15: Level00
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -2346,7 +2721,9 @@ class CfgVehicles
 							};
 							class VALM2_1_15
 							{
+								type="text";
 								source="static";
+								text=15;
 								align="center";
 								scale=1;
 								sourceScale=1;
@@ -2371,6 +2748,7 @@ class CfgVehicles
 							};
 							class Level2P15: Level00
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -2389,7 +2767,9 @@ class CfgVehicles
 							};
 							class VALP2_1_15
 							{
+								type="text";
 								source="static";
+								text=-15;
 								align="center";
 								scale=1;
 								sourceScale=1;
@@ -2414,6 +2794,7 @@ class CfgVehicles
 							};
 							class Level2MH20: Level00
 							{
+								type="line";
 								lineType=0;
 								points[]=
 								{
@@ -2446,6 +2827,7 @@ class CfgVehicles
 							};
 							class Level2PH20: Level00
 							{
+								type="line";
 								lineType=0;
 								points[]=
 								{
@@ -2465,6 +2847,7 @@ class CfgVehicles
 							};
 							class Level2M20: Level00
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -2509,7 +2892,9 @@ class CfgVehicles
 							};
 							class VALM2_1_20
 							{
+								type="text";
 								source="static";
+								text=20;
 								align="center";
 								scale=1;
 								sourceScale=1;
@@ -2534,6 +2919,7 @@ class CfgVehicles
 							};
 							class Level2P20: Level00
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -2552,7 +2938,9 @@ class CfgVehicles
 							};
 							class VALP2_1_20
 							{
+								type="text";
 								source="static";
+								text=-20;
 								align="center";
 								scale=1;
 								sourceScale=1;
@@ -2577,6 +2965,7 @@ class CfgVehicles
 							};
 							class Level2MH25: Level00
 							{
+								type="line";
 								lineType=0;
 								points[]=
 								{
@@ -2609,6 +2998,7 @@ class CfgVehicles
 							};
 							class Level2PH25: Level00
 							{
+								type="line";
 								lineType=0;
 								points[]=
 								{
@@ -2628,6 +3018,7 @@ class CfgVehicles
 							};
 							class Level2M25: Level00
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -2672,7 +3063,9 @@ class CfgVehicles
 							};
 							class VALM2_1_25
 							{
+								type="text";
 								source="static";
+								text=25;
 								align="center";
 								scale=1;
 								sourceScale=1;
@@ -2697,6 +3090,7 @@ class CfgVehicles
 							};
 							class Level2P25: Level00
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -2715,7 +3109,9 @@ class CfgVehicles
 							};
 							class VALP2_1_25
 							{
+								type="text";
 								source="static";
+								text=-25;
 								align="center";
 								scale=1;
 								sourceScale=1;
@@ -2740,6 +3136,7 @@ class CfgVehicles
 							};
 							class Level2MH30: Level00
 							{
+								type="line";
 								lineType=0;
 								points[]=
 								{
@@ -2772,6 +3169,7 @@ class CfgVehicles
 							};
 							class Level2PH30: Level00
 							{
+								type="line";
 								lineType=0;
 								points[]=
 								{
@@ -2791,6 +3189,7 @@ class CfgVehicles
 							};
 							class Level2M30: Level00
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -2835,7 +3234,9 @@ class CfgVehicles
 							};
 							class VALM2_1_30
 							{
+								type="text";
 								source="static";
+								text=30;
 								align="center";
 								scale=1;
 								sourceScale=1;
@@ -2860,6 +3261,7 @@ class CfgVehicles
 							};
 							class Level2P30: Level00
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -2878,7 +3280,9 @@ class CfgVehicles
 							};
 							class VALP2_1_30
 							{
+								type="text";
 								source="static";
+								text=-30;
 								align="center";
 								scale=1;
 								sourceScale=1;
@@ -2903,6 +3307,7 @@ class CfgVehicles
 							};
 							class Level2MH35: Level00
 							{
+								type="line";
 								lineType=0;
 								points[]=
 								{
@@ -2935,6 +3340,7 @@ class CfgVehicles
 							};
 							class Level2PH35: Level00
 							{
+								type="line";
 								lineType=0;
 								points[]=
 								{
@@ -2954,6 +3360,7 @@ class CfgVehicles
 							};
 							class Level2M35: Level00
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -2998,7 +3405,9 @@ class CfgVehicles
 							};
 							class VALM2_1_35
 							{
+								type="text";
 								source="static";
+								text=35;
 								align="center";
 								scale=1;
 								sourceScale=1;
@@ -3023,6 +3432,7 @@ class CfgVehicles
 							};
 							class Level2P35: Level00
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -3041,7 +3451,9 @@ class CfgVehicles
 							};
 							class VALP2_1_35
 							{
+								type="text";
 								source="static";
+								text=-35;
 								align="center";
 								scale=1;
 								sourceScale=1;
@@ -3066,6 +3478,7 @@ class CfgVehicles
 							};
 							class Level2MH40: Level00
 							{
+								type="line";
 								lineType=0;
 								points[]=
 								{
@@ -3098,6 +3511,7 @@ class CfgVehicles
 							};
 							class Level2PH40: Level00
 							{
+								type="line";
 								lineType=0;
 								points[]=
 								{
@@ -3117,6 +3531,7 @@ class CfgVehicles
 							};
 							class Level2M40: Level00
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -3161,7 +3576,9 @@ class CfgVehicles
 							};
 							class VALM2_1_40
 							{
+								type="text";
 								source="static";
+								text=40;
 								align="center";
 								scale=1;
 								sourceScale=1;
@@ -3186,6 +3603,7 @@ class CfgVehicles
 							};
 							class Level2P40: Level00
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -3204,7 +3622,9 @@ class CfgVehicles
 							};
 							class VALP2_1_40
 							{
+								type="text";
 								source="static";
+								text=-40;
 								align="center";
 								scale=1;
 								sourceScale=1;
@@ -3229,6 +3649,7 @@ class CfgVehicles
 							};
 							class Level2MH45: Level00
 							{
+								type="line";
 								lineType=0;
 								points[]=
 								{
@@ -3261,6 +3682,7 @@ class CfgVehicles
 							};
 							class Level2PH45: Level00
 							{
+								type="line";
 								lineType=0;
 								points[]=
 								{
@@ -3280,6 +3702,7 @@ class CfgVehicles
 							};
 							class Level2M45: Level00
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -3324,7 +3747,9 @@ class CfgVehicles
 							};
 							class VALM2_1_45
 							{
+								type="text";
 								source="static";
+								text=45;
 								align="center";
 								scale=1;
 								sourceScale=1;
@@ -3349,6 +3774,7 @@ class CfgVehicles
 							};
 							class Level2P45: Level00
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -3367,7 +3793,9 @@ class CfgVehicles
 							};
 							class VALP2_1_45
 							{
+								type="text";
 								source="static";
+								text=-45;
 								align="center";
 								scale=1;
 								sourceScale=1;
@@ -3394,6 +3822,7 @@ class CfgVehicles
 					};
 					class PlaneOrientationCrosshair
 					{
+						type="line";
 						width=3;
 						points[]=
 						{
@@ -3536,6 +3965,7 @@ class CfgVehicles
 						condition="1-(bomb+mgun+atmissile+aamissile+rocket+missilelocked + missilelocking+activeSensorsOn)";
 						class Level00
 						{
+							type="line";
 							width=5;
 							points[]=
 							{
@@ -3609,6 +4039,7 @@ class CfgVehicles
 					};
 					class PlaneMovementCrosshair
 					{
+						type="line";
 						width=3;
 						points[]=
 						{
@@ -3736,8 +4167,10 @@ class CfgVehicles
 						condition="mgun";
 						class WeaponName
 						{
+							type="text";
 							source="static";
 							sourceScale=1;
+							text="ГШ";
 							align="right";
 							scale=1;
 							pos[]=
@@ -3762,6 +4195,7 @@ class CfgVehicles
 						condition="1-mgun";
 						class PylonName1
 						{
+							type="pylonicon";
 							pos[]=
 							{
 								{0.145,0.72000003},
@@ -3793,6 +4227,7 @@ class CfgVehicles
 					};
 					class AmmoCount
 					{
+						type="text";
 						source="ammo";
 						sourceScale=1;
 						align="right";
@@ -3827,7 +4262,9 @@ class CfgVehicles
 					};
 					class CMText
 					{
+						type="text";
 						source="static";
+						text="ЛТЦ";
 						scale=1;
 						sourceScale=1;
 						align="left";
@@ -3849,6 +4286,7 @@ class CfgVehicles
 					};
 					class CMCount
 					{
+						type="text";
 						source="cmammo";
 						sourceScale=1;
 						align="left";
@@ -3871,10 +4309,13 @@ class CfgVehicles
 					};
 					class GearGroup
 					{
+						type="group";
 						condition="ils";
 						class GearText
 						{
+							type="text";
 							source="static";
+							text="ШАССИ";
 							align="center";
 							scale=1;
 							pos[]=
@@ -3903,6 +4344,7 @@ class CfgVehicles
 							clipBR[]={1,1};
 							class ILS
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -4064,6 +4506,7 @@ class CfgVehicles
 							};
 							class airport
 							{
+								type="line";
 								points[]=
 								{
 									
@@ -4097,6 +4540,7 @@ class CfgVehicles
 					};
 					class SpeedNumber
 					{
+						type="text";
 						source="speed";
 						sourceScale=3.5999999;
 						sourceLength=3;
@@ -4120,7 +4564,9 @@ class CfgVehicles
 					};
 					class SpeedText
 					{
+						type="text";
 						source="static";
+						text="И";
 						scale=1;
 						sourceScale=1;
 						align="center";
@@ -4163,7 +4609,9 @@ class CfgVehicles
 					};
 					class MachText
 					{
+						type="text";
 						source="static";
+						text="М";
 						scale=1;
 						sourceScale=1;
 						align="center";
@@ -4185,6 +4633,7 @@ class CfgVehicles
 					};
 					class TerrainNumber
 					{
+						type="text";
 						source="altitudeAGL";
 						sourceScale=1;
 						sourceLength=3;
@@ -4209,7 +4658,9 @@ class CfgVehicles
 					};
 					class RadarText
 					{
+						type="text";
 						source="static";
+						text="Р";
 						scale=1;
 						sourceScale=1;
 						align="center";
@@ -4231,6 +4682,7 @@ class CfgVehicles
 					};
 					class AltitudeNumber
 					{
+						type="text";
 						source="altitudeASL";
 						sourceScale=1;
 						sourceLength=3;
@@ -4254,6 +4706,7 @@ class CfgVehicles
 					};
 					class ClimbNumber
 					{
+						type="text";
 						source="vspeed";
 						sourceScale=1;
 						align="left";
@@ -4276,6 +4729,7 @@ class CfgVehicles
 					};
 					class ClimbArrow
 					{
+						type="line";
 						width=4;
 						points[]=
 						{
@@ -4320,6 +4774,7 @@ class CfgVehicles
 					};
 					class ClimbLine
 					{
+						type="line";
 						width=4;
 						points[]=
 						{
@@ -4444,6 +4899,7 @@ class CfgVehicles
 					};
 					class HeadingArrow
 					{
+						type="line";
 						width=3;
 						points[]=
 						{
@@ -4491,6 +4947,7 @@ class CfgVehicles
 					};
 					class HeadingLine
 					{
+						type="line";
 						width=4;
 						points[]=
 						{
@@ -4508,6 +4965,7 @@ class CfgVehicles
 					};
 					class HeadingNumber
 					{
+						type="text";
 						source="heading";
 						sourceScale=1;
 						align="center";
@@ -4530,12 +4988,14 @@ class CfgVehicles
 					};
 					class HeadingScale
 					{
+						type="scale";
 						horizontal=1;
 						source="heading";
 						sourceScale=0.1;
 						width=4;
 						NeverEatSeaWeed=1;
 						top=0.30000001;
+						center=0.5;
 						bottom=0.69999999;
 						lineXleft=0.118;
 						lineYright=0.108;
@@ -4556,6 +5016,7 @@ class CfgVehicles
 						condition="-2+(mgun+rocket)*ImpactDistance";
 						class Cross
 						{
+							type="line";
 							width=3;
 							points[]=
 							{
@@ -4641,6 +5102,7 @@ class CfgVehicles
 						};
 						class Circle
 						{
+							type="line";
 							width=6;
 							points[]=
 							{
@@ -4828,6 +5290,7 @@ class CfgVehicles
 						};
 						class Circle_LAR
 						{
+							type="line";
 							width=5;
 							points[]=
 							{
@@ -4885,6 +5348,7 @@ class CfgVehicles
 						};
 						class Distance
 						{
+							type="text";
 							source="ImpactDistance";
 							sourceScale=0.001;
 							sourcePrecision=1;
@@ -4913,9 +5377,11 @@ class CfgVehicles
 					};
 					class AAMissileCrosshairGroup
 					{
+						type="group";
 						condition="AAmissile";
 						class AAMissileCrosshair
 						{
+							type="line";
 							width=4;
 							points[]=
 							{
@@ -5147,8 +5613,10 @@ class CfgVehicles
 					class ATMissileCrosshairGroup
 					{
 						condition="ATmissile";
+						type="group";
 						class ATMissileCrosshair
 						{
+							type="line";
 							width=4;
 							points[]=
 							{
@@ -5260,9 +5728,11 @@ class CfgVehicles
 					};
 					class BombCrosshairGroup
 					{
+						type="group";
 						condition="bomb";
 						class BombCrosshair
 						{
+							type="line";
 							width=4;
 							points[]=
 							{
@@ -5603,6 +6073,7 @@ class CfgVehicles
 						};
 						class Distance
 						{
+							type="text";
 							source="ImpactDistance";
 							sourceScale=0.001;
 							sourcePrecision=1;
@@ -5634,6 +6105,7 @@ class CfgVehicles
 						condition="wpvalid";
 						class WPdist
 						{
+							type="text";
 							source="WPDist";
 							sourceScale=0.001;
 							sourcePrecision=1;
@@ -5658,6 +6130,7 @@ class CfgVehicles
 						class WP
 						{
 							width=1;
+							type="line";
 							points[]=
 							{
 								
@@ -5707,6 +6180,7 @@ class CfgVehicles
 					};
 					class CoordXNumber
 					{
+						type="text";
 						source="coordinateX";
 						sourceScale=0.0099999998;
 						sourceLength=3;
@@ -5751,6 +6225,7 @@ class CfgVehicles
 					class Time: CoordXNumber
 					{
 						source="time";
+						text="%X";
 						align="left";
 						pos[]=
 						{
@@ -5773,7 +6248,9 @@ class CfgVehicles
 						condition="missilelocked";
 						class LaunchReady
 						{
+							type="text";
 							source="static";
+							text="ПР";
 							align="center";
 							scale=1;
 							pos[]=
@@ -5808,7 +6285,9 @@ class CfgVehicles
 						blinkingStartsOn=1;
 						class LaunchReady
 						{
+							type="text";
 							source="static";
+							text="ПР";
 							align="center";
 							scale=1;
 							pos[]=
@@ -5841,6 +6320,7 @@ class CfgVehicles
 						condition="TargetHeight>=1";
 						class shape
 						{
+							type="line";
 							width=4;
 							points[]=
 							{
@@ -5945,6 +6425,7 @@ class CfgVehicles
 						};
 						class TargetSquare
 						{
+							type="line";
 							width=4;
 							points[]=
 							{
@@ -6042,7 +6523,9 @@ class CfgVehicles
 						condition="activeSensorsOn";
 						class RadarText
 						{
+							type="text";
 							source="static";
+							text="РЛ";
 							align="left";
 							scale=1;
 							pos[]=
@@ -6064,9 +6547,11 @@ class CfgVehicles
 					};
 					class LAR
 					{
+						type="group";
 						condition="bomb+mgun+atmissile+aamissile+rocket";
 						class Lines
 						{
+							type="line";
 							width=3;
 							points[]=
 							{
@@ -6195,6 +6680,7 @@ class CfgVehicles
 						};
 						class Poly
 						{
+							type="polygon";
 							points[]=
 							{
 								
@@ -6294,6 +6780,7 @@ class CfgVehicles
 						};
 						class LARText1
 						{
+							type="text";
 							source="LarTop";
 							sourceScale=0.001;
 							scale=1;
@@ -6401,6 +6888,7 @@ class CfgVehicles
 						class LARText6: LARText1
 						{
 							source="static";
+							text=0;
 							sourcePrecision=-1;
 							sourceScale=0.00019999999;
 							pos[]=
@@ -6422,6 +6910,7 @@ class CfgVehicles
 					};
 					class RadarBoxes
 					{
+						type="radar";
 						pos0[]={0.5,0.52999997};
 						pos10[]={1.12,1.3099999};
 						width=4;
@@ -6636,12 +7125,14 @@ class CfgVehicles
 				{
 					class PlaneW
 					{
+						type="fixed";
 						pos[]={0.5,0.5};
 						pos10[]={0.77399999,0.76999998};
 					};
 					class Target
 					{
 						source="targettoview";
+						type="vector";
 						pos0[]={0.5,0.5};
 						pos10[]={0.77399999,0.76999998};
 					};
@@ -6659,6 +7150,7 @@ class CfgVehicles
 							condition="1-missileLocked - missileLocking";
 							class CircleLock
 							{
+								type="line";
 								width=12;
 								points[]=
 								{
@@ -6895,6 +7387,7 @@ class CfgVehicles
 							condition="missileLocking";
 							class CircleLock
 							{
+								type="line";
 								width=12;
 								points[]=
 								{
@@ -7129,6 +7622,7 @@ class CfgVehicles
 							condition="missileLocked";
 							class CircleLock
 							{
+								type="line";
 								width=12;
 								points[]=
 								{
@@ -7360,6 +7854,7 @@ class CfgVehicles
 						};
 						class SpeedNumber
 						{
+							type="text";
 							source="speed";
 							sourceScale=3.5999999;
 							sourceLength=3;
@@ -7383,7 +7878,9 @@ class CfgVehicles
 						};
 						class SpeedText
 						{
+							type="text";
 							source="static";
+							text="И";
 							scale=1;
 							sourceScale=1;
 							align="center";
@@ -7426,7 +7923,9 @@ class CfgVehicles
 						};
 						class MachText
 						{
+							type="text";
 							source="static";
+							text="М";
 							scale=1;
 							sourceScale=1;
 							align="center";
@@ -7448,6 +7947,7 @@ class CfgVehicles
 						};
 						class TerrainNumber
 						{
+							type="text";
 							source="altitudeAGL";
 							sourceScale=1;
 							sourceLength=3;
@@ -7472,7 +7972,9 @@ class CfgVehicles
 						};
 						class RadarText
 						{
+							type="text";
 							source="static";
+							text="Р";
 							scale=1;
 							sourceScale=1;
 							align="center";
@@ -7494,6 +7996,7 @@ class CfgVehicles
 						};
 						class AltitudeNumber
 						{
+							type="text";
 							source="altitudeASL";
 							sourceScale=1;
 							sourceLength=3;
@@ -7517,6 +8020,7 @@ class CfgVehicles
 						};
 						class RadarBoxes
 						{
+							type="radartoview";
 							pos0[]={0.5,0.5};
 							pos10[]={0.77399999,0.76999998};
 							width=3;
@@ -7715,8 +8219,10 @@ class CfgVehicles
 							condition="mgun";
 							class WeaponName
 							{
+								type="text";
 								source="static";
 								sourceScale=1;
+								text="ГШ";
 								align="right";
 								scale=1;
 								pos[]=
@@ -7741,6 +8247,7 @@ class CfgVehicles
 							condition="1-mgun";
 							class PylonName1
 							{
+								type="pylonicon";
 								pos[]=
 								{
 									{0.145,0.72000003},
@@ -7772,6 +8279,7 @@ class CfgVehicles
 						};
 						class AmmoCount
 						{
+							type="text";
 							source="ammo";
 							sourceScale=1;
 							align="right";
@@ -7809,6 +8317,7 @@ class CfgVehicles
 							condition="TargetHeight>=1";
 							class shape
 							{
+								type="line";
 								width=4;
 								points[]=
 								{
@@ -7909,6 +8418,7 @@ class CfgVehicles
 						};
 						class HeadingHeadNumber
 						{
+							type="text";
 							source="cameraDir";
 							sourceScale=1;
 							align="center";
@@ -7943,6 +8453,7 @@ class CfgVehicles
 						};
 						class HeadingArrow
 						{
+							type="line";
 							width=3;
 							points[]=
 							{
@@ -7990,6 +8501,7 @@ class CfgVehicles
 						condition="abs(cameraHeadingDiff) > 85 - missileLocked - missileLocking";
 						class CircleLock
 						{
+							type="line";
 							width=12;
 							points[]=
 							{
@@ -8033,8 +8545,11 @@ class CfgVehicles
 			disableWheelsWhenDestroyed=1;
 			class Wheel_1
 			{
+				boneName="gear_f1";
 				steering=1;
 				side="left";
+				center="Wheel_1_center";
+				boundary="Wheel_1_rim";
 				width=0.16;
 				mass=150;
 				MOI=40;
@@ -8044,6 +8559,8 @@ class CfgVehicles
 				maxBrakeTorque=21500;
 				maxHandBrakeTorque=0;
 				suspTravelDirection[]={0,-1,0};
+				suspForceAppPointOffset="Wheel_1_center";
+				tireForceAppPointOffset="Wheel_1_center";
 				maxCompression=0.050000001;
 				maxDroop=0.050000001;
 				sprungMass=4066;
@@ -8062,22 +8579,38 @@ class CfgVehicles
 			class Wheel_1_fake: Wheel_1;  //found empty after stripping
 			class Wheel_2: Wheel_1
 			{
+				boneName="gear_l2";
 				steering=0;
+				center="Wheel_2_center";
+				boundary="Wheel_2_rim";
 				width=0.28;
 				maxCompression=0.059999999;
 				maxDroop=0.059999999;
 				sprungMass=1952;
 				springStrength=51000;
 				springDamperRate=20569.6;
+				suspForceAppPointOffset="Wheel_2_center";
+				tireForceAppPointOffset="Wheel_2_center";
 			};
 			class Wheel_3: Wheel_2
 			{
+				boneName="gear_r2";
 				side="right";
+				center="Wheel_3_center";
+				boundary="Wheel_3_rim";
+				suspForceAppPointOffset="Wheel_3_center";
+				tireForceAppPointOffset="Wheel_3_center";
 			};
 		};
 		soundSetSonicBoom[]=
 		{
 			"Plane_Fighter_SonicBoom_SoundSet"
+		};
+		soundLocked[]=
+		{
+			"A3\Sounds_F_Jets\vehicles\air\Shared\FX_Plane_Jet_lockedOn1",
+			1,
+			1
 		};
 		soundIncommingMissile[]=
 		{
@@ -8113,6 +8646,13 @@ class CfgVehicles
 			1,
 			150
 		};
+		cabinOpenSound[]=
+		{
+			"A3\Sounds_F_Jets\vehicles\air\Plane_Fighter_02\FX_Plane_Fighter_02_cabine_open_ext",
+			3.1622801,
+			1,
+			40
+		};
 		cabinCloseSound[]=
 		{
 			"A3\Sounds_F_Jets\vehicles\air\Plane_Fighter_02\FX_Plane_Fighter_02_cabine_close_ext",
@@ -8131,6 +8671,46 @@ class CfgVehicles
 		{
 			"A3\Sounds_F_Jets\vehicles\air\Plane_Fighter_02\FX_Plane_Fighter_02_cabine_close_int",
 			10,
+			1,
+			40
+		};
+		soundEngineOnInt[]=
+		{
+			"A3\Sounds_F_Jets\vehicles\air\Plane_Fighter_02\O_Plane_Fighter_02_engine_start_int",
+			1,
+			1
+		};
+		soundEngineOnExt[]=
+		{
+			"A3\Sounds_F_Jets\vehicles\air\Plane_Fighter_02\O_Plane_Fighter_02_engine_start_ext",
+			1.75,
+			1,
+			300
+		};
+		soundEngineOffInt[]=
+		{
+			"A3\Sounds_F_Jets\vehicles\air\Plane_Fighter_02\O_Plane_Fighter_02_engine_shut_int",
+			1,
+			1
+		};
+		soundEngineOffExt[]=
+		{
+			"A3\Sounds_F_Jets\vehicles\air\Plane_Fighter_02\O_Plane_Fighter_02_engine_shut_ext",
+			1.75,
+			1,
+			300
+		};
+		soundGetIn[]=
+		{
+			"A3\Sounds_F\vehicles\air\CAS_01\getin_wipeout",
+			1,
+			1,
+			40
+		};
+		soundGetOut[]=
+		{
+			"A3\Sounds_F\air\Plane_Fighter_03\getout",
+			1,
 			1,
 			40
 		};
@@ -8155,6 +8735,91 @@ class CfgVehicles
 			"soundWaterCollision2",
 			0.5
 		};
+		buildCrash0[]=
+		{
+			"A3\Sounds_F\vehicles\crashes\cars\cars_coll_big_default_ext_1",
+			1,
+			1,
+			900
+		};
+		buildCrash1[]=
+		{
+			"A3\Sounds_F\vehicles\crashes\cars\cars_coll_big_default_ext_2",
+			1,
+			1,
+			900
+		};
+		buildCrash2[]=
+		{
+			"A3\Sounds_F\vehicles\crashes\cars\cars_coll_big_default_ext_3",
+			1,
+			1,
+			900
+		};
+		buildCrash3[]=
+		{
+			"A3\Sounds_F\vehicles\crashes\cars\cars_coll_big_default_ext_4",
+			1,
+			1,
+			900
+		};
+		soundBuildingCrash[]=
+		{
+			"buildCrash0",
+			0.25,
+			"buildCrash1",
+			0.25,
+			"buildCrash2",
+			0.25,
+			"buildCrash3",
+			0.25
+		};
+		WoodCrash0[]=
+		{
+			"A3\Sounds_F\vehicles\crashes\cars\cars_coll_big_wood_ext_1",
+			3.1622801,
+			1,
+			900
+		};
+		WoodCrash1[]=
+		{
+			"A3\Sounds_F\vehicles\crashes\cars\cars_coll_big_wood_ext_2",
+			3.1622801,
+			1,
+			900
+		};
+		WoodCrash2[]=
+		{
+			"A3\Sounds_F\vehicles\crashes\cars\cars_coll_big_wood_ext_6",
+			3.1622801,
+			1,
+			900
+		};
+		WoodCrash3[]=
+		{
+			"A3\Sounds_F\vehicles\crashes\cars\cars_coll_big_wood_ext_8",
+			3.1622801,
+			1,
+			900
+		};
+		soundWoodCrash[]=
+		{
+			"woodCrash0",
+			0.25,
+			"woodCrash1",
+			0.25,
+			"woodCrash2",
+			0.25,
+			"woodCrash3",
+			0.25
+		};
+		armorCrash0[]=
+		{
+			"A3\Sounds_F\vehicles\crashes\cars\cars_coll_big_default_ext_1",
+			1,
+			1,
+			900
+		};
 		armorCrash1[]=
 		{
 			"A3\Sounds_F\vehicles\crashes\cars\cars_coll_big_default_ext_2",
@@ -8172,6 +8837,24 @@ class CfgVehicles
 		armorCrash3[]=
 		{
 			"A3\Sounds_F\vehicles\crashes\cars\cars_coll_big_default_ext_4",
+			1,
+			1,
+			900
+		};
+		soundArmorCrash[]=
+		{
+			"ArmorCrash0",
+			0.25,
+			"ArmorCrash1",
+			0.25,
+			"ArmorCrash2",
+			0.25,
+			"ArmorCrash3",
+			0.25
+		};
+		Crash0[]=
+		{
+			"A3\Sounds_F\vehicles\crashes\cars\cars_coll_big_default_ext_1",
 			1,
 			1,
 			900
@@ -8208,6 +8891,12 @@ class CfgVehicles
 			"Crash3",
 			0.25
 		};
+		soundDammage[]=
+		{
+			"",
+			0.56234097,
+			1
+		};
 		class scrubLandInt
 		{
 			sound[]=
@@ -8219,6 +8908,24 @@ class CfgVehicles
 			};
 			frequency=1;
 			volume="(scrubLand factor[0.01, 0.20])";
+		};
+		class Sounds
+		{
+			soundSets[]=
+			{
+				"Plane_Fighter_02_EngineLowExt_SoundSet",
+				"Plane_Fighter_02_EngineHighExt_SoundSet",
+				"Plane_Fighter_02_ForsageExt_SoundSet",
+				"Plane_Fighter_02_WindNoiseExt_SoundSet",
+				"Plane_Fighter_02_EngineExt_Dist_Front_SoundSet",
+				"Plane_Fighter_02_EngineExt_Middle_SoundSet",
+				"Plane_Fighter_02_EngineExt_Dist_Rear_SoundSet",
+				"Plane_Fighter_02_EngineLowInt_SoundSet",
+				"Plane_Fighter_02_EngineHighInt_SoundSet",
+				"Plane_Fighter_02_ForsageInt_SoundSet",
+				"Plane_Fighter_02_WindNoiseInt_SoundSet",
+				"Plane_Fighter_02_VelocityInt_SoundSet"
+			};
 		};
 		driveOnComponent[]={};
 		class Exhausts
@@ -8279,6 +8986,7 @@ class CfgVehicles
 				radius=0.15000001;
 				material=-1;
 				name="hit_hull";
+				visual="-";
 				depends="Total";
 			};
 			class HitAvionics
@@ -8290,6 +8998,7 @@ class CfgVehicles
 				radius=0.079999998;
 				material=-1;
 				name="hit_avionics";
+				visual="vis_avionics";
 				depends="0";
 			};
 			class HitEngine_c
@@ -8301,6 +9010,7 @@ class CfgVehicles
 				radius=0.07;
 				material=-1;
 				name="hit_engine";
+				visual="vis_engine";
 				depends="0";
 			};
 			class HitEngine
@@ -8312,6 +9022,7 @@ class CfgVehicles
 				radius=0.07;
 				material=-1;
 				name="hit_engine_l";
+				visual="vis_engine_l";
 				depends="HitEngine_c*0.7";
 			};
 			class HitEngine2
@@ -8323,6 +9034,7 @@ class CfgVehicles
 				radius=0.07;
 				material=-1;
 				name="hit_engine_r";
+				visual="vis_engine_r";
 				depends="HitEngine_c*0.7";
 			};
 			class HitFuel
@@ -8334,6 +9046,7 @@ class CfgVehicles
 				radius=0.1;
 				material=-1;
 				name="hit_fuel";
+				visual="vis_fuel";
 				depends="0";
 			};
 			class HitFuel_left
@@ -8345,6 +9058,7 @@ class CfgVehicles
 				radius=0.1;
 				material=-1;
 				name="hit_fuel_wing_l";
+				visual="vis_wing_l";
 				depends="0";
 			};
 			class HitFuel_right
@@ -8356,6 +9070,7 @@ class CfgVehicles
 				radius=0.1;
 				material=-1;
 				name="hit_fuel_wing_r";
+				visual="vis_wing_r";
 				depends="0";
 			};
 			class HitFuel2
@@ -8367,6 +9082,7 @@ class CfgVehicles
 				radius=0.0099999998;
 				material=-1;
 				name="hit_fuel";
+				visual="-";
 				depends="(HitFuel_left+HitFuel_right)*0.5";
 			};
 			class HitLAileron_link
@@ -8378,6 +9094,7 @@ class CfgVehicles
 				radius=0.12;
 				material=-1;
 				name="hit_aileron_link_l";
+				visual="-";
 				depends="0";
 			};
 			class HitRAileron_link
@@ -8389,6 +9106,7 @@ class CfgVehicles
 				radius=0.12;
 				material=-1;
 				name="hit_aileron_link_r";
+				visual="-";
 				depends="0";
 			};
 			class HitLAileron
@@ -8400,6 +9118,7 @@ class CfgVehicles
 				radius=0.13;
 				material=-1;
 				name="hit_aileron_l";
+				visual="vis_wing_l";
 				depends="HitLAileron_link*0.7";
 			};
 			class HitRAileron
@@ -8411,6 +9130,7 @@ class CfgVehicles
 				radius=0.13;
 				material=-1;
 				name="hit_aileron_r";
+				visual="vis_wing_r";
 				depends="HitRAileron_link*0.7";
 			};
 			class HitControlRear
@@ -8422,6 +9142,7 @@ class CfgVehicles
 				radius=0.039999999;
 				material=-1;
 				name="hit_control_link";
+				visual="-";
 				depends="0";
 			};
 			class HitLCElevator
@@ -8433,6 +9154,7 @@ class CfgVehicles
 				radius=0.15000001;
 				material=-1;
 				name="hit_elevator_l";
+				visual="vis_elevator_l";
 				depends="HitControlRear";
 			};
 			class HitRElevator
@@ -8444,6 +9166,7 @@ class CfgVehicles
 				radius=0.15000001;
 				material=-1;
 				name="hit_elevator_r";
+				visual="vis_elevator_r";
 				depends="HitControlRear";
 			};
 			class HitLCRudder
@@ -8455,6 +9178,7 @@ class CfgVehicles
 				radius=0.15000001;
 				material=-1;
 				name="hit_rudder_l";
+				visual="vis_rudder_l";
 				depends="HitControlRear";
 			};
 			class HitRightRudder
@@ -8466,6 +9190,7 @@ class CfgVehicles
 				radius=0.15000001;
 				material=-1;
 				name="hit_rudder_r";
+				visual="vis_rudder_r";
 				depends="HitControlRear";
 			};
 			class HitGlass1
@@ -8477,6 +9202,7 @@ class CfgVehicles
 				radius=0.40000001;
 				material=-1;
 				name="glass1";
+				visual="glass1";
 				depends="0";
 			};
 			class HitGlass2
@@ -8488,7 +9214,136 @@ class CfgVehicles
 				radius=0.40000001;
 				material=-1;
 				name="glass2";
+				visual="glass2";
 				depends="0";
+			};
+		};
+		class AnimationSources
+		{
+			class Damper_1_source
+			{
+				source="damper";
+				wheel="Wheel_1";
+			};
+			class Damper_2_source
+			{
+				source="damper";
+				wheel="Wheel_2";
+			};
+			class Damper_3_source
+			{
+				source="damper";
+				wheel="Wheel_3";
+			};
+			class Wheel_1_source
+			{
+				source="wheel";
+				wheel="Wheel_1";
+			};
+			class Wheel_2_source
+			{
+				source="wheel";
+				wheel="Wheel_2";
+			};
+			class Wheel_3_source
+			{
+				source="wheel";
+				wheel="Wheel_3";
+			};
+			class CollisionLightRed_source
+			{
+				source="MarkerLight";
+				markerLight="CollisionRed";
+			};
+			class CollisionLightWhite_source: CollisionLightRed_source
+			{
+				markerLight="CollisionWhite";
+			};
+			class Muzzle_flash
+			{
+				source="ammorandom";
+				weapon="rhs_weap_GSh30";
+			};
+			class Cannon_30mm_ammorandom: Muzzle_flash
+			{
+				source="ammorandom";
+			};
+			class Cannon_30mm_revolving: Muzzle_flash
+			{
+				source="revolving";
+			};
+			class Hatch_open
+			{
+				source="user";
+				initPhase=0;
+				animPeriod=0.40000001;
+			};
+			class Numbers_hide
+			{
+				source="user";
+				initPhase=0;
+				animPeriod=0.001;
+			};
+			class afterburner_source
+			{
+				source="user";
+				initPhase=0;
+				animPeriod=1.5;
+			};
+			class lever_pilot_1
+			{
+				source="user";
+				initPhase=0;
+				animPeriod=0.30000001;
+			};
+			class pods_hide
+			{
+				source="user";
+				initPhase=1;
+				animPeriod=0.001;
+			};
+			class eject
+			{
+				source="door";
+				animPeriod=0.60000002;
+				initPhase=0;
+			};
+			class eject_hide
+			{
+				source="user";
+				animPeriod=0.60000002;
+				initPhase=0;
+			};
+			class Display2
+			{
+				source="user";
+				initPhase=0;
+				animPeriod=9.9999997e-005;
+			};
+			class form_lights_hide: Display2;  //found empty after stripping
+			class Display2_wp1_rot: Display2;  //found empty after stripping
+			class Display2_wp1_m: Display2;  //found empty after stripping
+			class Display2_select_wp: Display2;  //found empty after stripping
+			class Display2_sector_hide: Display2;  //found empty after stripping
+			class Display2_sector_rot: Display2;  //found empty after stripping
+			class Display_Glonass_Map_X: Display2;  //found empty after stripping
+			class Display_Glonass_Map_Y: Display2;  //found empty after stripping
+			class display2_wp2_rot: Display2;  //found empty after stripping
+			class display2_switch: Display2
+			{
+				animPeriod=1;
+			};
+			class antenna_hide
+			{
+				source="user";
+				initPhase=1;
+				animPeriod=0.001;
+				mass=1;
+				displayName="hide antenna";
+			};
+			class sensors_hide: antenna_hide
+			{
+				displayName="hide sensors";
 			};
 		};
 		class MarkerLights
@@ -8523,6 +9378,40 @@ class CfgVehicles
 				name="PositionLight_green_1_pos";
 			};
 		};
+		class RenderTargets
+		{
+			class right_mirror
+			{
+				renderTarget="rendertarget0";
+				class CameraView1
+				{
+					pointPosition="PIP_mirror_0";
+					pointDirection="PIP_mirror_0_dir";
+					renderQuality=0;
+					renderVisionMode=0;
+					fov=1;
+				};
+			};
+			class Glonass_Camera
+			{
+				renderTarget="rendertarget4";
+				class CameraView1
+				{
+					pointPosition="pip_GPS_1";
+					pointDirection="pip_GPS_1_dir";
+					renderQuality=2;
+					renderVisionMode=0;
+					fov=0.69999999;
+				};
+				BBoxes[]=
+				{
+					"PIP_4_TL",
+					"PIP_4_TR",
+					"PIP_4_BL",
+					"PIP_4_BR"
+				};
+			};
+		};
 		class compartmentsLights
 		{
 			class Comp1
@@ -8551,6 +9440,53 @@ class CfgVehicles
 				};
 			};
 		};
+		class Reflectors
+		{
+			class Left
+			{
+				color[]={7000,7500,10000,1};
+				ambient[]={100,100,100};
+				position="l svetlo";
+				selection="l svetlo";
+				direction="konec l svetla";
+				hitpoint="l svetlo";
+				innerAngle=20;
+				outerAngle=60;
+				coneFadeCoef=10;
+				intensity=50;
+				useFlare=1;
+				dayLight=0;
+				FlareSize=1;
+				size=1;
+				class Attenuation
+				{
+					constant=0;
+					linear=0;
+					quadratic=4;
+					start=1;
+					hardLimitStart=150;
+					hardLimitEnd=300;
+				};
+			};
+			class Right: Left
+			{
+				position="p svetlo";
+				direction="konec p svetla";
+				hitpoint="p svetlo";
+				selection="p svetlo";
+			};
+		};
+		aggregateReflectors[]=
+		{
+			
+			{
+				"Left"
+			},
+			
+			{
+				"Right"
+			}
+		};
 		class EventHandlers: EventHandlers
 		{
 			hit="";
@@ -8565,6 +9501,8 @@ class CfgVehicles
 		};
 		irTarget=1;
 		irTargetSize=0.5;
+		visualTarget=1;
+		visualTargetSize=1;
 		radarTarget=1;
 		radarTargetSize=0.40000001;
 		LockDetectionSystem=8;
@@ -8588,6 +9526,7 @@ class CfgVehicles
 							"RHS_HP_KAB250_INT",
 							"RHS_HP_Kh38_INT"
 						};
+						priority=9;
 						attachment="rhs_mag_R77M";
 						maxweight=1200;
 						UIposition[]={0.27000001,0.30000001};
@@ -8600,6 +9539,7 @@ class CfgVehicles
 					};
 					class pylonBayCenter3: pylonBayCenter1
 					{
+						priority=7;
 						UIposition[]={0.44999999,0.25};
 						bay=2;
 					};
@@ -8614,6 +9554,7 @@ class CfgVehicles
 						{
 							"RHS_HP_R74M2_int"
 						};
+						priority=10;
 						attachment="rhs_mag_R74M2_int";
 						maxweight=1200;
 						UIposition[]={0.18000001,0.37};
@@ -8652,11 +9593,15 @@ class CfgVehicles
 					{
 						class AirTarget
 						{
+							minRange=500;
+							maxRange=16000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=1;
 						};
 						class GroundTarget
 						{
+							minRange=500;
+							maxRange=12000;
 							objectDistanceLimitCoef=1;
 							viewDistanceLimitCoef=1;
 						};
@@ -8668,11 +9613,15 @@ class CfgVehicles
 					{
 						class AirTarget
 						{
+							minRange=500;
+							maxRange=4000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=1;
 						};
 						class GroundTarget
 						{
+							minRange=500;
+							maxRange=3000;
 							objectDistanceLimitCoef=1;
 							viewDistanceLimitCoef=1;
 						};
@@ -8686,14 +9635,19 @@ class CfgVehicles
 					{
 						class AirTarget
 						{
+							minRange=32000;
+							maxRange=32000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
 						class GroundTarget
 						{
+							minRange=10000;
+							maxRange=10000;
 							objectDistanceLimitCoef=-1;
 							viewDistanceLimitCoef=-1;
 						};
+						typeRecognitionDistance=6000;
 						angleRangeHorizontal=60;
 						angleRangeVertical=60;
 						groundNoiseDistanceCoef=0.00039999999;
@@ -8758,17 +9712,30 @@ class CfgVehicles
 	};
 	class RHS_T50_vvs_generic: RHS_T50_base
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_T50_vvs_generic.paa";
+		author="$STR_RHS_AUTHOR_FULL";
+		faction="rhs_faction_vvs";
+		crew="rhs_pilot";
 		typicalCargo[]=
 		{
 			"rhs_pilot"
 		};
+		scope=2;
 		side=0;
 		accuracy=0.5;
 	};
 	class RHS_T50_vvs_generic_ext: RHS_T50_vvs_generic
 	{
+		author="$STR_RHS_AUTHOR_FULL";
 		displayName="T-50 obr. 2011 (external pylons)";
 		radarTargetSize=0.80000001;
+		class AnimationSources: AnimationSources
+		{
+			class pods_hide: pods_hide
+			{
+				initPhase=0;
+			};
+		};
 		class Components: Components
 		{
 			class TransportPylonsComponent: TransportPylonsComponent
@@ -8793,6 +9760,7 @@ class CfgVehicles
 							"RHS_HP_Kh38"
 						};
 						attachment="rhs_mag_Kh38mae";
+						priority=13;
 						maxweight=500;
 						UIposition[]={0.36000001,0.5};
 					};
@@ -8804,6 +9772,7 @@ class CfgVehicles
 					class pylons3: pylons1
 					{
 						attachment="rhs_mag_Kh38mae";
+						priority=11;
 						maxweight=700;
 						UIposition[]={0.36000001,0.44999999};
 					};
@@ -8815,6 +9784,7 @@ class CfgVehicles
 					class pylons5: pylons1
 					{
 						attachment="rhs_mag_kab250";
+						priority=9;
 						maxweight=300;
 						UIposition[]={0.36000001,0.34999999};
 					};
@@ -8836,6 +9806,9 @@ class CfgVehicles
 	};
 	class RHS_T50_vvs_051: RHS_T50_vvs_generic
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_T50_vvs_051.paa";
+		author="$STR_RHS_AUTHOR_FULL";
+		dlc="RHS_AFRF";
 		displayName="$STR_T50_051_name";
 		rhs_decalParameters[]={};
 		hiddenselectionstextures[]=
@@ -8852,10 +9825,24 @@ class CfgVehicles
 			"rhsafrf\addons\rhs_c_air\scripts\data\altis_co.paa",
 			"rhsafrf\addons\rhs_c_air\scripts\data\WP_move_ca.paa"
 		};
+		class AnimationSources: AnimationSources
+		{
+			class antenna_hide: antenna_hide
+			{
+				initPhase=0;
+			};
+			class sensors_hide: sensors_hide
+			{
+				initPhase=0;
+			};
+		};
 	};
 	class RHS_T50_vvs_052: RHS_T50_vvs_051
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_T50_vvs_052.paa";
 		displayName="$STR_T50_052_name";
+		author="$STR_RHS_AUTHOR_FULL";
+		dlc="RHS_AFRF";
 		hiddenselectionstextures[]=
 		{
 			"\rhsafrf\addons\rhs_air\t50\data\pakfa_greycamo_co.paa",
@@ -8873,7 +9860,10 @@ class CfgVehicles
 	};
 	class RHS_T50_vvs_053: RHS_T50_vvs_051
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_T50_vvs_053.paa";
 		displayName="$STR_T50_053_name";
+		author="$STR_RHS_AUTHOR_FULL";
+		dlc="RHS_AFRF";
 		hiddenselectionstextures[]=
 		{
 			"\rhsafrf\addons\rhs_air\t50\data\pakfa_bluecamo_co.paa",
@@ -8888,10 +9878,20 @@ class CfgVehicles
 			"rhsafrf\addons\rhs_c_air\scripts\data\altis_co.paa",
 			"rhsafrf\addons\rhs_c_air\scripts\data\WP_move_ca.paa"
 		};
+		class AnimationSources: AnimationSources
+		{
+			class antenna_hide: antenna_hide
+			{
+				initPhase=1;
+			};
+		};
 	};
 	class RHS_T50_vvs_054: RHS_T50_vvs_051
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_T50_vvs_054.paa";
 		displayName="$STR_T50_054_name";
+		author="$STR_RHS_AUTHOR_FULL";
+		dlc="RHS_AFRF";
 		hiddenselectionstextures[]=
 		{
 			"\rhsafrf\addons\rhs_air\t50\data\pakfa_bluecamo_co.paa",
@@ -8906,10 +9906,24 @@ class CfgVehicles
 			"rhsafrf\addons\rhs_c_air\scripts\data\altis_co.paa",
 			"rhsafrf\addons\rhs_c_air\scripts\data\WP_move_ca.paa"
 		};
+		class AnimationSources: AnimationSources
+		{
+			class antenna_hide: antenna_hide
+			{
+				initPhase=1;
+			};
+			class sensors_hide: sensors_hide
+			{
+				initPhase=1;
+			};
+		};
 	};
 	class RHS_T50_vvs_blueonblue: RHS_T50_vvs_051
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_T50_vvs_blueonblue.paa";
 		displayName="$STR_T50_055_name";
+		author="$STR_RHS_AUTHOR_FULL";
+		dlc="RHS_AFRF";
 		hiddenselectionstextures[]=
 		{
 			"\rhsafrf\addons\rhs_air\t50\data\pakfa_blueonblue_co.paa",
@@ -8924,20 +9938,45 @@ class CfgVehicles
 			"rhsafrf\addons\rhs_c_air\scripts\data\altis_co.paa",
 			"rhsafrf\addons\rhs_c_air\scripts\data\WP_move_ca.paa"
 		};
+		class AnimationSources: AnimationSources
+		{
+			class antenna_hide: antenna_hide
+			{
+				initPhase=0;
+			};
+			class sensors_hide: sensors_hide
+			{
+				initPhase=1;
+			};
+		};
 	};
 	class Car_f;
 	class rhs_k36d5_seat: Car_f
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_k36d5_seat.paa";
+		scope=1;
+		scopeArsenal=0;
+		scopeCurator=0;
 		hiddenSelections[]={};
+		author="$STR_RHS_AUTHOR_FULL";
 		displayName="K36D-5 Ejection Seat";
+		Icon="iconParachute";
+		picture="\A3\Air_F_Beta\Parachute_01\Data\UI\Portrait_Parachute_01_CA.paa";
+		model="\rhsafrf\addons\rhs_air\t50\rhs_k36d.p3d";
 		simulation="motorcycle";
 		isBicycle=0;
+		textureTrackWheel="";
 		memoryPointTrack1L="";
 		memoryPointTrack2L="";
 		memoryPointsGetInCargo="Cargo";
 		memoryPointsGetInCargoDir="Cargo dir";
 		ejectSpeed[]={10,0,10};
+		unitInfoType="RscUnitInfoSoldier";
 		hideUnitInfo=1;
+		cargoAction[]=
+		{
+			"RHS_K36D_PilotEject"
+		};
 		hasdriver=0;
 		weapons[]={};
 		magazines[]={};
@@ -8945,20 +9984,43 @@ class CfgVehicles
 		secondaryExplosion=0;
 		fuelExplosionPower=0;
 		explosionEffect="";
+		destrType="DestructNo";
 		castCargoShadow=1;
+		transportSoldier=1;
+		vehicleClass="Objects";
 		occludeSoundsWhenIn=1;
 		obstructSoundsWhenIn=1;
+		driverRightHandAnimName="handle";
+		driverLeftHandAnimName="handle";
+		class AnimationSources
+		{
+			class hide_booster
+			{
+				source="user";
+				animPeriod=0.60000002;
+				initPhase=0;
+			};
+			class handle_move: hide_booster;  //found empty after stripping
+		};
 		class Turrets;  //found empty after stripping
 		class MFD;  //found empty after stripping
+		class RenderTargets;  //found empty after stripping
+		class UserActions;  //found empty after stripping
 		driveOnComponent[]={};
 		class Eventhandlers;  //found empty after stripping
 		SLX_XEH_DISABLED=1;
 	};
 	class rhs_t50_canopy: ThingX
 	{
+		scope=1;
+		scopeArsenal=0;
+		scopeCurator=0;
 		hiddenSelections[]={};
 		displayName="T-50 Canopy";
 		editorCategory="EdCat_Things";
+		editorSubcategory="EdSubcat_Military";
+		vehicleClass="Small_items";
+		model="\rhsafrf\addons\rhs_air\t50\t50_canopy.p3d";
 		armor=100;
 		gearsUpFrictionCoef=0.0099999998;
 		hasdriver=0;
@@ -8968,7 +10030,9 @@ class CfgVehicles
 		secondaryExplosion=0;
 		fuelExplosionPower=0;
 		explosionEffect="";
+		destrType="DestructNo";
 		castCargoShadow=1;
+		transportSoldier=0;
 		occludeSoundsWhenIn=1;
 		obstructSoundsWhenIn=1;
 		class Eventhandlers
@@ -8976,27 +10040,44 @@ class CfgVehicles
 			HandleDamage="deleteVehicle (_this select 0)";
 		};
 		class MFD;  //found empty after stripping
+		class RenderTargets;  //found empty after stripping
+		class UserActions;  //found empty after stripping
 		driveOnComponent[]={};
 		SLX_XEH_DISABLED=1;
 	};
 	class rhs_su25_canopy: rhs_t50_canopy
 	{
+		scope=1;
 		displayName="Su-25 Canopy";
+		model="\rhsafrf\addons\rhs_a2port_air\su25\su25_canopy";
 	};
 	class RHS_TU95MS_base: Plane_Base_F
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\RHS_TU95MS_vvs_old.paa";
+		faction="rhs_faction_vvs";
+		dlc="RHS_AFRF";
+		category="Air";
 		side=0;
 		rhs_decalParameters[]=
 		{
 			"['Number',cRHSAIRTU95NumberPlaces,'AviaRed2']"
 		};
+		scope=0;
 		displayName="$STR_TU95_name";
+		model="\rhsafrf\addons\rhs_air\tu95ms\rhs_tu95ms";
+		destrType="DestructWreck";
+		picture="\rhsafrf\addons\rhs_air\tu95ms\data\ui\tu95_icon.paa";
 		icon="\rhsafrf\addons\rhs_air\tu95ms\data\ui\icomap_tu95.paa";
 		memoryPointsGetInDriver="pos driver";
 		memoryPointsGetInDriverDir="pos driver dir";
 		memoryPointsGetInDriverPrecise="pos driver";
+		driverLeftHandAnimName="pilotyoke";
+		driverRightHandAnimName="pilotyoke";
 		driverLeftLegAnimName="pilotpedal_L";
 		driverRightLegAnimName="pilotpedal_R";
+		author="$STR_RHS_AUTHOR_FULL";
+		driverAction="RHS_TU95_Pilot";
+		crew="rhs_pilot";
 		typicalCargo[]=
 		{
 			"rhs_pilot",
@@ -9007,7 +10088,29 @@ class CfgVehicles
 			"rhs_pilot",
 			"rhs_pilot"
 		};
+		memoryPointsGetInCargo[]=
+		{
+			"pos driver"
+		};
+		memoryPointsGetInCargoDir[]=
+		{
+			"pos driver dir"
+		};
+		cargoAction[]=
+		{
+			"Truck_Cargo01",
+			"Truck_Cargo04",
+			"Truck_Cargo04",
+			"Truck_Cargo02",
+			"Truck_Cargo01",
+			"Truck_Cargo04",
+			"Truck_Cargo01"
+		};
+		transportSoldier=0;
+		gunnerUsesPilotView=1;
 		cargoIsCoDriver[]={0,0};
+		getInAction="RHS_HIND_Cargo_Enter";
+		getOutAction="GetOutHigh";
 		cargoGetInAction[]=
 		{
 			"RHS_HIND_Cargo_Enter"
@@ -9015,6 +10118,60 @@ class CfgVehicles
 		cargoGetOutAction[]=
 		{
 			"GetOutHigh"
+		};
+		soundGetIn[]=
+		{
+			"A3\Sounds_F_EPC\CAS_01\getin_wipeout",
+			1,
+			1,
+			40
+		};
+		soundGetOut[]=
+		{
+			"A3\Sounds_F\air\Plane_Fighter_03\getout",
+			1,
+			1,
+			40
+		};
+		soundDammage[]=
+		{
+			"",
+			0.56234133,
+			1
+		};
+		soundEngineOnInt[]=
+		{
+			"rhsafrf\addons\rhs_vehiclesounds\sounds\air\Tu95\tu95_int_start",
+			6,
+			1,
+			500
+		};
+		soundEngineOnExt[]=
+		{
+			"rhsafrf\addons\rhs_vehiclesounds\sounds\air\Tu95\tu95_ext_start",
+			6.4125376,
+			1,
+			500
+		};
+		soundEngineOffInt[]=
+		{
+			"rhsafrf\addons\rhs_vehiclesounds\sounds\air\Tu95\tu95_int_stop",
+			6,
+			1,
+			500
+		};
+		soundEngineOffExt[]=
+		{
+			"rhsafrf\addons\rhs_vehiclesounds\sounds\air\Tu95\tu95_ext_stop",
+			6.4125376,
+			1,
+			500
+		};
+		soundLocked[]=
+		{
+			"\A3\Sounds_F\weapons\Rockets\locked_1",
+			0.31622776,
+			1
 		};
 		soundIncommingMissile[]=
 		{
@@ -9050,6 +10207,126 @@ class CfgVehicles
 			1,
 			100
 		};
+		class Sounds
+		{
+			class EngineLowOut
+			{
+				sound[]=
+				{
+					"rhsafrf\addons\rhs_vehiclesounds\sounds\air\Tu95\tu95_ext_low",
+					10,
+					1,
+					4000
+				};
+				frequency="1.0 min (rpm + 0.5)";
+				volume="(camPos*4*(rpm factor[0.2, 1.1])*(rpm factor[1.1, 0.5]))*2";
+			};
+			class EngineHighOut
+			{
+				sound[]=
+				{
+					"rhsafrf\addons\rhs_vehiclesounds\sounds\air\Tu95\tu95_ext_low",
+					10,
+					1.2,
+					4300
+				};
+				frequency="1";
+				volume="(camPos*4*(rpm factor[0.2, 1.1])*(rpm factor[1.1, 0.5]))*1";
+			};
+			class ForsageOut
+			{
+				sound[]=
+				{
+					"rhsafrf\addons\rhs_vehiclesounds\sounds\air\Tu95\tu95_ext_high",
+					10,
+					1.2,
+					4500
+				};
+				frequency="1";
+				volume="(engineOn*camPos*(thrust factor[0.6, 1.0]))*1";
+				cone[]={3.1400001,3.9200001,2,0.5};
+			};
+			class WindNoiseOut
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\air\Plane_Fighter_03\noise",
+					1.0623413,
+					1,
+					150
+				};
+				frequency="(0.1+(1.2*(speed factor[1, 150])))";
+				volume="camPos*(speed factor[1, 150])";
+			};
+			class EngineLowIn
+			{
+				sound[]=
+				{
+					"rhsafrf\addons\rhs_vehiclesounds\sounds\air\Tu95\tu95_int_low",
+					3.1622777,
+					1
+				};
+				frequency="1.0 + (rpm + 0.5)";
+				volume="((1-camPos)*((rpm factor[0.2, 0.1])*(rpm factor[0.1, 0.7])))*3";
+			};
+			class EngineHighIn
+			{
+				sound[]=
+				{
+					"rhsafrf\addons\rhs_vehiclesounds\sounds\air\Tu95\tu95_int_low",
+					3.1622777,
+					1.2
+				};
+				frequency="1";
+				volume="((1-camPos)*(rpm factor[0.85, 1.0]))*3";
+			};
+			class ForsageIn
+			{
+				sound[]=
+				{
+					"rhsafrf\addons\rhs_vehiclesounds\sounds\air\Tu95\tu95_ext_high",
+					3.3496544,
+					1.2
+				};
+				frequency="1";
+				volume="((1-camPos)*(engineOn*(thrust factor[0.6, 1.0])))*0.5";
+			};
+			class WindNoiseIn
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\air\Plane_Fighter_03\noise_int",
+					0.81622773,
+					1
+				};
+				frequency="(0.1+(1.2*(speed factor[1, 150])))";
+				volume="(1-camPos)*(speed factor[1, 150])";
+			};
+			class RainExt
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\noises\rain1_ext",
+					1.7782794,
+					1,
+					100
+				};
+				frequency=1;
+				volume="camPos * rain * (speed factor[50, 0])";
+			};
+			class RainInt
+			{
+				sound[]=
+				{
+					"A3\Sounds_F\vehicles\noises\rain1_int",
+					1,
+					1,
+					100
+				};
+				frequency=1;
+				volume="(1-camPos) * rain * (speed factor[50, 0])";
+			};
+		};
 		class Components: Components
 		{
 			class TransportPylonsComponent
@@ -9063,6 +10340,7 @@ class CfgVehicles
 						{
 							"RHS_HP_TU95MS6_INT"
 						};
+						priority=6;
 						attachment="rhs_mag_kh55sh";
 						maxweight=2000;
 						UIposition[]={0.333,0.51999998};
@@ -9073,26 +10351,31 @@ class CfgVehicles
 					{
 						UIposition[]={0.486,0.46000001};
 						bay=2;
+						priority=5;
 					};
 					class pylon3: pylon1
 					{
 						UIposition[]={0.486,0.41};
 						bay=3;
+						priority=4;
 					};
 					class pylon4: pylon1
 					{
 						UIposition[]={0.333,0.34999999};
 						bay=4;
+						priority=3;
 					};
 					class pylon5: pylon1
 					{
 						UIposition[]={0.18000001,0.41};
 						bay=5;
+						priority=2;
 					};
 					class pylon6: pylon1
 					{
 						UIposition[]={0.18000001,0.46000001};
 						bay=6;
+						priority=1;
 					};
 				};
 				class Bays
@@ -9152,6 +10435,8 @@ class CfgVehicles
 		armor=50;
 		irTarget=1;
 		irTargetSize=1.2;
+		visualTarget=1;
+		visualTargetSize=1.6;
 		radarTarget=1;
 		radarTargetSize=1.6;
 		gearUpTime=26;
@@ -9196,10 +10481,23 @@ class CfgVehicles
 				isCopilot=1;
 				primaryGunner=0;
 				canEject=0;
+				body="";
+				gun="";
 				startEngine=0;
+				animationSourceBody="";
+				animationSourceGun="";
 				weapons[]={};
 				magazines[]={};
+				gunnerAction="RHS_TU95_Pilot";
+				gunnerInAction="RHS_TU95_Pilot";
+				gunnerName="$STR_A3_COPILOT";
+				gunnerGetInAction="RHS_HIND_Cargo_Enter";
+				gunnerNotSpawned=0;
+				gunnerUsesPilotView=1;
+				gunnerCompartments="Compartment1";
 				hasGunner=1;
+				memoryPointsGetInGunner="pos driver";
+				memoryPointsGetInGunnerDir="pos driver dir";
 				minElev=-50;
 				maxElev=30;
 				initElev=11;
@@ -9221,6 +10519,10 @@ class CfgVehicles
 					initFov=1;
 				};
 				commanding=-1;
+				gunnerLeftHandAnimName="copilotyoke";
+				gunnerRightHandAnimName="copilotyoke";
+				gunnerLeftLegAnimName="copilotpedal_L";
+				gunnerRightLegAnimName="copilotpedal_R";
 				turretCanSee=15;
 				class Components
 				{
@@ -9264,14 +10566,23 @@ class CfgVehicles
 				isCopilot=0;
 				showAsCargo=1;
 				primaryGunner=0;
+				gunnerName="$STR_RHS_FLIGHTENGINEER";
+				gunnerAction="Truck_Cargo01";
+				gunnerInAction="Truck_Cargo01";
+				gunnerLeftHandAnimName="";
+				gunnerRightHandAnimName="";
+				gunnerLeftLegAnimName="";
+				gunnerRightLegAnimName="";
 			};
 			class MainTurret3: MainTurret2
 			{
 				proxyindex=3;
+				gunnerName="$STR_RHS_RADIOOPERATOR";
 			};
 			class MainTurret4: MainTurret2
 			{
 				proxyindex=4;
+				gunnerName="$STR_RHS_WEAPONSENGINEER";
 				class Components
 				{
 					class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft
@@ -9322,6 +10633,7 @@ class CfgVehicles
 			class MainTurret5: MainTurret4
 			{
 				proxyindex=6;
+				gunnerName="$STR_RHS_NAVIGATIONPLOTTER";
 				primaryGunner=1;
 				showAsCargo=0;
 				weapons[]={};
@@ -9341,7 +10653,24 @@ class CfgVehicles
 			{
 				proxyindex=7;
 				canEject=1;
+				gunnerName="Rear Gunner";
+				memoryPointsGetInGunner="reargunner_pos";
+				memoryPointsGetInGunnerDir="reargunner_dir";
+				gunnerAction="RHS_TU95_RearGunner";
+				gunnerInAction="RHS_TU95_RearGunner";
+				gunnerLeftHandAnimName="collimator_turret";
+				gunnerRightHandAnimName="collimator_turret";
+				gunnerLeftLegAnimName="reargunner_leg_left";
+				gunnerRightLegAnimName="reargunner_leg_right";
+				gunnerCompartments="Compartment2";
+				lodTurnedIn=1200;
+				lodTurnedOut=1200;
 				lodOpticsIn=1200;
+				lodOpticsOut=1200;
+				body="gunnerballY";
+				gun="gunnerballX";
+				animationSourceBody="rear_turret";
+				animationSourceGun="rear_gun";
 				memoryPointGun[]=
 				{
 					"chase01",
@@ -9349,7 +10678,10 @@ class CfgVehicles
 					"chase03",
 					"chase04"
 				};
+				gunBeg="chase01dir";
+				gunEnd="chase01";
 				selectionFireAnim="rearFlash";
+				castGunnerShadow=1;
 				viewGunnerShadow=1;
 				weapons[]=
 				{
@@ -9367,11 +10699,16 @@ class CfgVehicles
 				initTurn=-180;
 				canUseScanners=0;
 				allowTabLock=0;
+				outGunnerMayFire=1;
 				stabilizedInAxes=3;
+				memoryPointGunnerOptics="reargunnerview";
+				gunnerForceOptics=0;
 				class OpticsIn
 				{
 					class KPS53AV
 					{
+						opticsDisplayName="KPS53AV";
+						gunneropticsmodel="\A3\weapons_f\reticle\optics_empty";
 						initanglex=0;
 						initangley=0;
 						maxanglex=30;
@@ -9388,6 +10725,7 @@ class CfgVehicles
 				{
 					class KPS53AV
 					{
+						gunneropticsmodel="\A3\weapons_f\reticle\optics_empty";
 						initanglex=0;
 						initangley=0;
 						maxanglex=30;
@@ -9408,10 +10746,49 @@ class CfgVehicles
 			class MainTurret6: MainTurret2
 			{
 				proxyindex=5;
+				gunnerName="$STR_RHS_INSTRUCTOR";
 				dontCreateAI=1;
 			};
 		};
-		class Damage;  //found empty after stripping
+		class Damage
+		{
+			tex[]={};
+			mat[]=
+			{
+				"rhsafrf\addons\rhs_air\tu95ms\data\rhs_tu95ms_body.rvmat",
+				"rhsafrf\addons\rhs_air\tu95ms\data\rhs_tu95ms_body_damage.rvmat",
+				"rhsafrf\addons\rhs_air\tu95ms\data\rhs_tu95ms_destr.rvmat",
+				"rhsafrf\addons\rhs_air\tu95ms\data\rhs_tu95ms_wing.rvmat",
+				"rhsafrf\addons\rhs_air\tu95ms\data\rhs_tu95ms_wing_damage.rvmat",
+				"rhsafrf\addons\rhs_air\tu95ms\data\rhs_tu95ms_destr.rvmat",
+				"a3\data_f\default.rvmat",
+				"a3\data_f\default.rvmat",
+				"rhsafrf\addons\rhs_air\tu95ms\data\rhs_tu95ms_destr.rvmat"
+			};
+		};
+		class UserActions
+		{
+			class ControlPanel
+			{
+				displayName="$STR_RHS_ss21_control_panel";
+				position="zamerny";
+				radius=10.01;
+				onlyForplayer=0;
+				condition="(alive this)&&((call rhs_fnc_findPlayer)==(gunner this))";
+				statement="createDialog 'tu95_main_dialog'";
+			};
+			class crewEject
+			{
+				displayName="Eject";
+				position="";
+				radius=52;
+				priority=1.5;
+				showWindow=0;
+				onlyForplayer=1;
+				condition="(findPlayer in this) AND (findPlayer != this turretUnit [5]) AND (this animationSourcePhase 'gear' < 0.4)";
+				statement="moveOut findPlayer";
+			};
+		};
 		weapons[]={};
 		magazines[]={};
 		hiddenselections[]=
@@ -9435,6 +10812,15 @@ class CfgVehicles
 			class Old
 			{
 				displayName="$STR_TU95_name";
+				author="$STR_RHS_AUTHOR_FULL";
+				textures[]=
+				{
+					"",
+					"",
+					"\rhsafrf\addons\rhs_decals\Data\Labels\Aviation\star_old_ca.paa",
+					"\rhsafrf\addons\rhs_decals\Data\Numbers\AviaRed4\2_ca.paa",
+					"\rhsafrf\addons\rhs_decals\Data\Numbers\AviaRed4\3_ca.paa"
+				};
 				factions[]=
 				{
 					"rhs_faction_vvs"
@@ -9443,20 +10829,57 @@ class CfgVehicles
 			class standard: Old
 			{
 				displayName="$STR_TU95_chelyabinsk_name";
+				author="$STR_RHS_AUTHOR_FULL";
+				textures[]=
+				{
+					"\rhsafrf\addons\rhs_decals\Data\Labels\Tu95\rhs_decal_chelyabinsk_coa_ca.paa",
+					"\rhsafrf\addons\rhs_decals\Data\Labels\Tu95\rhs_decal_chelyabinsk_name_ca.paa",
+					"\rhsafrf\addons\rhs_decals\Data\Labels\Aviation\star_new_ca.paa",
+					"\rhsafrf\addons\rhs_decals\Data\Numbers\AviaRed4\2_ca.paa",
+					"\rhsafrf\addons\rhs_decals\Data\Numbers\AviaRed4\2_ca.paa"
+				};
 			};
 			class standard2: standard
 			{
 				displayName="$STR_TU95_dubna_name";
+				author="$STR_RHS_AUTHOR_FULL";
+				textures[]=
+				{
+					"\rhsafrf\addons\rhs_decals\Data\Labels\Tu95\rhs_decal_dubna_coa_ca.paa",
+					"\rhsafrf\addons\rhs_decals\Data\Labels\Tu95\rhs_decal_dubna_name_ca.paa",
+					"\rhsafrf\addons\rhs_decals\Data\Labels\Aviation\star_new_ca.paa",
+					"\rhsafrf\addons\rhs_decals\Data\Numbers\AviaRed2\2_ca.paa",
+					"\rhsafrf\addons\rhs_decals\Data\Numbers\AviaRed2\0_ca.paa"
+				};
 			};
 			class standard3: standard
 			{
 				displayName="$STR_TU95_irkutsk_name";
+				author="$STR_RHS_AUTHOR_FULL";
+				textures[]=
+				{
+					"\rhsafrf\addons\rhs_decals\Data\Labels\Tu95\rhs_decal_irkutsk_coa_ca.paa",
+					"\rhsafrf\addons\rhs_decals\Data\Labels\Tu95\rhs_decal_irkutsk_name_ca.paa",
+					"\rhsafrf\addons\rhs_decals\Data\Labels\Aviation\star_new_ca.paa",
+					"\rhsafrf\addons\rhs_decals\Data\Numbers\AviaRed4\0_ca.paa",
+					"\rhsafrf\addons\rhs_decals\Data\Numbers\AviaRed4\1_ca.paa"
+				};
 			};
 			class standard4: standard
 			{
 				displayName="$STR_TU95_tambov_name";
+				author="$STR_RHS_AUTHOR_FULL";
+				textures[]=
+				{
+					"\rhsafrf\addons\rhs_decals\Data\Labels\Tu95\rhs_decal_tambov_coa_ca.paa",
+					"\rhsafrf\addons\rhs_decals\Data\Labels\Tu95\rhs_decal_tambov_name_ca.paa",
+					"\rhsafrf\addons\rhs_decals\Data\Labels\Aviation\star_new_ca.paa",
+					"\rhsafrf\addons\rhs_decals\Data\Numbers\AviaRed4\2_ca.paa",
+					"\rhsafrf\addons\rhs_decals\Data\Numbers\AviaRed4\3_ca.paa"
+				};
 			};
 		};
+		textureList[]={};
 		class Attributes
 		{
 			class rhs_decalNumber_type
@@ -9467,6 +10890,7 @@ class CfgVehicles
 				control="Combo";
 				expression="if(_value != 'NoChange')then{ _this setVariable ['%s', _value];[_this,[['Number', cRHSAIRTU95NumberPlaces, _value]]] call rhs_fnc_decalsInit}";
 				defaultValue=0;
+				typeName="STRING";
 				class values
 				{
 					class AviaRed
@@ -9509,6 +10933,7 @@ class CfgVehicles
 				control="Combo";
 				expression="if(_value >= 0)then{ [_this, [ [ 'Label', cRHSAIRTU95NamePlaces, 'AviationsSquadrons',_value] ] ] call rhs_fnc_decalsInit};";
 				defaultValue="-1";
+				typeName="Number";
 				class values
 				{
 					class Random
@@ -9532,6 +10957,7 @@ class CfgVehicles
 				control="Combo";
 				expression="if(_value >= 0)then{ [_this, [ [ 'Label', cRHSAIRTU95COAPlaces, 'AviationsSquadrons',_value] ] ] call rhs_fnc_decalsInit};";
 				defaultValue="-1";
+				typeName="Number";
 				class values
 				{
 					class Random
@@ -9610,6 +11036,7 @@ class CfgVehicles
 				explosionShielding=5;
 				name="HitHull";
 				passThrough=0.5;
+				visual="hull_hit";
 				radius=0.30000001;
 				minimalHit=0.02;
 				depends="Total";
@@ -9621,6 +11048,7 @@ class CfgVehicles
 				explosionShielding=2;
 				name="engine_1_hit";
 				passThrough=0.5;
+				visual="engine_1_vis";
 				radius=0.55000001;
 				minimalHit=0.1;
 			};
@@ -9630,6 +11058,7 @@ class CfgVehicles
 				explosionShielding=2;
 				name="engine_2_hit";
 				passThrough=0.5;
+				visual="engine_2_vis";
 				radius=0.55000001;
 				minimalHit=0.1;
 			};
@@ -9639,6 +11068,7 @@ class CfgVehicles
 				explosionShielding=2;
 				name="engine_1_hit";
 				passThrough=0.5;
+				visual="-";
 				radius=0.55000001;
 				minimalHit=0.1;
 				depends="(HitEngine_1 + HitEngine_2)*0.5";
@@ -9649,6 +11079,7 @@ class CfgVehicles
 				explosionShielding=2;
 				name="engine_3_hit";
 				passThrough=0.5;
+				visual="engine_3_vis";
 				radius=0.55000001;
 				minimalHit=0.1;
 			};
@@ -9658,6 +11089,7 @@ class CfgVehicles
 				explosionShielding=2;
 				name="engine_4_hit";
 				passThrough=0.5;
+				visual="engine_4_vis";
 				radius=0.55000001;
 				minimalHit=0.1;
 			};
@@ -9667,6 +11099,7 @@ class CfgVehicles
 				explosionShielding=2;
 				name="engine_2_hit";
 				passThrough=0.5;
+				visual="-";
 				radius=0.55000001;
 				minimalHit=0.1;
 				depends="(HitEngine_3 + HitEngine_4)*0.5";
@@ -9677,6 +11110,7 @@ class CfgVehicles
 				explosionShielding=1;
 				name="HitAvionics";
 				passThrough=0.2;
+				visual="-";
 				radius=0.2;
 			};
 			class HitAmmo: HitHull
@@ -9685,6 +11119,7 @@ class CfgVehicles
 				explosionShielding=1;
 				name="revolver_hit";
 				passThrough=0;
+				visual="-";
 				radius=0.30000001;
 			};
 			class HitFuel: HitHull
@@ -9693,16 +11128,19 @@ class CfgVehicles
 				explosionShielding=4;
 				name="fuel_central";
 				passThrough=0.5;
+				visual="-";
 				radius=0.30000001;
 				minimalHit=0.1;
 			};
 			class HitFuel_left_wing: HitFuel
 			{
 				name="fuel_left_wing";
+				visual="Aileron_1";
 			};
 			class HitFuel_right_wing: HitFuel
 			{
 				name="fuel_right_wing";
+				visual="Aileron_2";
 			};
 			class HitFuel2: HitFuel
 			{
@@ -9710,6 +11148,7 @@ class CfgVehicles
 				explosionShielding=4;
 				name="fuel_central";
 				passThrough=0.5;
+				visual="-";
 				radius=0.30000001;
 				minimalHit=0.1;
 				depends="(HitFuel_left_wing + HitFuel_right_wing)*0.5";
@@ -9720,6 +11159,7 @@ class CfgVehicles
 				explosionShielding=3;
 				name="HitLAileron";
 				passThrough=0.1;
+				visual="Aileron_1";
 				radius=0.2;
 				minimalHit=0.1;
 			};
@@ -9729,6 +11169,7 @@ class CfgVehicles
 				explosionShielding=3;
 				name="HitRAileron";
 				passThrough=0.1;
+				visual="Aileron_2";
 				radius=0.2;
 				minimalHit=0.1;
 			};
@@ -9738,6 +11179,7 @@ class CfgVehicles
 				explosionShielding=3;
 				name="HitRudder";
 				passThrough=0.1;
+				visual="Rudder_1_vis";
 				radius=0.2;
 				minimalHit=0.1;
 			};
@@ -9747,6 +11189,7 @@ class CfgVehicles
 				explosionShielding=3;
 				name="HitLCElevator";
 				passThrough=0.1;
+				visual="Elevator_1_vis";
 				radius=0.2;
 				minimalHit=0.1;
 			};
@@ -9756,11 +11199,13 @@ class CfgVehicles
 				explosionShielding=3;
 				name="HitRElevator";
 				passThrough=0.1;
+				visual="Elevator_2_vis";
 				radius=0.2;
 				minimalHit=0.1;
 			};
 		};
 		extCameraPosition[]={0,5,-65};
+		unitInfoType="RHS_RscUnitInfoAirPlane";
 		driverCompartments="Compartment1";
 		maxOmega=2000;
 		engineMOI=90;
@@ -9770,6 +11215,11 @@ class CfgVehicles
 			class Wheel_1
 			{
 				side="left";
+				boneName="Wheel_1_damper_land";
+				center="Wheel_1_center";
+				boundary="Wheel_1_rim";
+				suspForceAppPointOffset="Wheel_1_center";
+				tireForceAppPointOffset="Wheel_1_center";
 				suspTravelDirection[]={0,-1,0};
 				steering=1;
 				width=0.82999998;
@@ -9798,6 +11248,11 @@ class CfgVehicles
 			class Wheel_1_fake: Wheel_1;  //found empty after stripping
 			class Wheel_2: Wheel_1
 			{
+				boneName="Wheel_2_damper_land";
+				suspForceAppPointOffset="Wheel_2_center";
+				tireForceAppPointOffset="Wheel_2_center";
+				center="Wheel_2_center";
+				boundary="Wheel_2_rim";
 				MOI=25.056299;
 				steering=0;
 				width=1.2;
@@ -9807,12 +11262,31 @@ class CfgVehicles
 				springStrength=261000;
 				springDamperRate=9000;
 			};
-			class Wheel_3: Wheel_2;  //found empty after stripping
+			class Wheel_3: Wheel_2
+			{
+				boneName="Wheel_2_damper_land";
+				center="Wheel_3_center";
+				boundary="Wheel_3_rim";
+				suspForceAppPointOffset="Wheel_3_center";
+				tireForceAppPointOffset="Wheel_3_center";
+			};
 			class Wheel_4: Wheel_2
 			{
 				side="Wheel_4_damper_land";
+				boneName="Wheel_4";
+				center="Wheel_4_center";
+				boundary="Wheel_4_rim";
+				suspForceAppPointOffset="Wheel_4_center";
+				tireForceAppPointOffset="Wheel_4_center";
 			};
-			class Wheel_5: Wheel_4;  //found empty after stripping
+			class Wheel_5: Wheel_4
+			{
+				boneName="Wheel_5_damper_land";
+				center="Wheel_5_center";
+				boundary="Wheel_5_rim";
+				suspForceAppPointOffset="Wheel_5_center";
+				tireForceAppPointOffset="Wheel_5_center";
+			};
 		};
 		driveOnComponent[]={};
 		class Exhausts
@@ -9841,6 +11315,76 @@ class CfgVehicles
 				direction="exhaust4_dir";
 				effect="ExhaustsEffectPlaneBig";
 			};
+		};
+		class Reflectors
+		{
+			class Left
+			{
+				color[]={7000,7500,10000,1};
+				ambient[]={100,100,100};
+				position="gearlight_1_pos";
+				selection="gearlight_1_sel";
+				direction="gearlight_1_dir";
+				hitpoint="l svetlo";
+				innerAngle=20;
+				outerAngle=60;
+				coneFadeCoef=10;
+				intensity=50;
+				useFlare=1;
+				dayLight=0;
+				FlareSize=2;
+				size=1;
+				class Attenuation
+				{
+					constant=0;
+					linear=0;
+					quadratic=4;
+					start=1;
+					hardLimitStart=150;
+					hardLimitEnd=300;
+				};
+			};
+			class Left_Flare: Left
+			{
+				innerAngle=20;
+				outerAngle=178;
+			};
+			class Right: Left
+			{
+				position="gearlight_2_pos";
+				selection="gearlight_2_sel";
+				direction="gearlight_2_dir";
+				hitpoint="p svetlo";
+			};
+			class Right_Flare: Right
+			{
+				innerAngle=20;
+				outerAngle=178;
+			};
+			class Center: Left
+			{
+				position="gearlight_3_pos";
+				selection="gearlight_3_sel";
+				direction="gearlight_3_dir";
+				hitpoint="svetlo";
+			};
+			class Center_Flare: Center
+			{
+				innerAngle=20;
+				outerAngle=178;
+			};
+		};
+		aggregateReflectors[]=
+		{
+			
+			{
+				"Left",
+				"Left_Flare",
+				"Right",
+				"Right_Flare",
+				"Center",
+				"Center_Flare"
+			}
 		};
 		class MarkerLights
 		{
@@ -9907,6 +11451,100 @@ class CfgVehicles
 				name="CollisionLight_white_2_pos";
 			};
 		};
+		class AnimationSources
+		{
+			class Damper_1_source
+			{
+				source="damper";
+				wheel="Wheel_1";
+			};
+			class Damper_2_source
+			{
+				source="damper";
+				wheel="Wheel_2";
+			};
+			class Damper_3_source
+			{
+				source="damper";
+				wheel="Wheel_3";
+			};
+			class Damper_4_source
+			{
+				source="damper";
+				wheel="Wheel_4";
+			};
+			class Damper_5_source
+			{
+				source="damper";
+				wheel="Wheel_5";
+			};
+			class Damper_6_source
+			{
+				source="damper";
+				wheel="Wheel_6";
+			};
+			class muzzle_hide_hmg
+			{
+				weapon="RHS_Weap_GSh23Lx2";
+				source="reload";
+			};
+			class muzzle_rot_hmg
+			{
+				weapon="RHS_Weap_GSh23Lx2";
+				source="ammorandom";
+			};
+			class missilebay
+			{
+				source="door";
+				initPhase=1;
+				animPeriod=5;
+				sound="ServoRampSound_2";
+				soundPosition="missile_pos";
+			};
+			class missile_revolver
+			{
+				weapon="rhs_weap_kh55sm_Launcher";
+				source="revolving";
+			};
+			class reload_source: missile_revolver
+			{
+				source="reload";
+			};
+			class lader_source
+			{
+				source="user";
+				initPhase=0;
+				animPeriod=0.001;
+				mass=1;
+				displayName="hide lader";
+				onPhaseChanged="(_this select 0) animateSource ['lader_source',(_this select 1)];";
+			};
+			class bbcpoccnn_decals1_hide
+			{
+				source="user";
+				initPhase=1;
+				animPeriod=0.001;
+				mass=1;
+				displayName="hide vvs decal 1";
+			};
+			class bbcpoccnn_decals2_hide: bbcpoccnn_decals1_hide
+			{
+				displayName="hide vvs decal 2";
+			};
+			class rf_decals_hide: bbcpoccnn_decals1_hide
+			{
+				displayName="hide rf decal";
+			};
+		};
+		class TransportBackpacks
+		{
+			class _xx_B_Parachute
+			{
+				backpack="rhs_d6_Parachute_backpack";
+				count=8;
+			};
+		};
+		class RenderTargets;  //found empty after stripping
 		class EventHandlers: EventHandlers
 		{
 			class RHS_EventHandlers
@@ -9918,9 +11556,15 @@ class CfgVehicles
 	};
 	class RHS_TU95MS_vvs_old: RHS_TU95MS_base
 	{
+		scope=2;
+		author="$STR_RHS_AUTHOR_FULL";
 		side=0;
+		vehicleClass="rhs_vehclass_aircraft";
+		editorSubcategory="EdSubcat_Planes";
 		rhs_decalParameters[]={};
 		displayName="$STR_TU95_name";
+		faction="rhs_faction_vvs";
+		dlc="RHS_AFRF";
 		hiddenselectionstextures[]=
 		{
 			"",
@@ -9929,12 +11573,34 @@ class CfgVehicles
 			"\rhsafrf\addons\rhs_decals\Data\Numbers\AviaRed4\2_ca.paa",
 			"\rhsafrf\addons\rhs_decals\Data\Numbers\AviaRed4\3_ca.paa"
 		};
+		class AnimationSources: AnimationSources
+		{
+			class bbcpoccnn_decals1_hide: bbcpoccnn_decals1_hide
+			{
+				initPhase=1;
+			};
+			class bbcpoccnn_decals2_hide: bbcpoccnn_decals2_hide
+			{
+				initPhase=1;
+			};
+			class rf_decals_hide: rf_decals_hide
+			{
+				initPhase=1;
+			};
+		};
 	};
 	class RHS_TU95MS_vvs_dubna: RHS_TU95MS_base
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\RHS_TU95MS_vvs_dubna.paa";
+		scope=2;
+		author="$STR_RHS_AUTHOR_FULL";
 		side=0;
+		vehicleClass="rhs_vehclass_aircraft";
+		editorSubcategory="EdSubcat_Planes";
 		rhs_decalParameters[]={};
 		displayName="$STR_TU95_dubna_name";
+		faction="rhs_faction_vvs";
+		dlc="RHS_AFRF";
 		hiddenselectionstextures[]=
 		{
 			"\rhsafrf\addons\rhs_decals\Data\Labels\Tu95\rhs_decal_dubna_coa_ca.paa",
@@ -9943,11 +11609,33 @@ class CfgVehicles
 			"\rhsafrf\addons\rhs_decals\Data\Numbers\AviaRed2\2_ca.paa",
 			"\rhsafrf\addons\rhs_decals\Data\Numbers\AviaRed2\0_ca.paa"
 		};
+		class AnimationSources: AnimationSources
+		{
+			class bbcpoccnn_decals1_hide: bbcpoccnn_decals1_hide
+			{
+				initPhase=0;
+			};
+			class bbcpoccnn_decals2_hide: bbcpoccnn_decals2_hide
+			{
+				initPhase=0;
+			};
+			class rf_decals_hide: rf_decals_hide
+			{
+				initPhase=0;
+			};
+		};
 	};
 	class RHS_TU95MS_vvs_irkutsk: RHS_TU95MS_base
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\RHS_TU95MS_vvs_irkutsk.paa";
+		scope=2;
+		author="$STR_RHS_AUTHOR_FULL";
 		side=0;
+		vehicleClass="rhs_vehclass_aircraft";
+		editorSubcategory="EdSubcat_Planes";
 		displayName="$STR_TU95_irkutsk_name";
+		faction="rhs_faction_vvs";
+		dlc="RHS_AFRF";
 		hiddenselectionstextures[]=
 		{
 			"\rhsafrf\addons\rhs_decals\Data\Labels\Tu95\rhs_decal_irkutsk_coa_ca.paa",
@@ -9959,8 +11647,15 @@ class CfgVehicles
 	};
 	class RHS_TU95MS_vvs_tambov: RHS_TU95MS_base
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\RHS_TU95MS_vvs_tambov.paa";
+		scope=2;
+		author="$STR_RHS_AUTHOR_FULL";
 		side=0;
+		vehicleClass="rhs_vehclass_aircraft";
+		editorSubcategory="EdSubcat_Planes";
 		displayName="$STR_TU95_tambov_name";
+		faction="rhs_faction_vvs";
+		dlc="RHS_AFRF";
 		hiddenselectionstextures[]=
 		{
 			"\rhsafrf\addons\rhs_decals\Data\Labels\Tu95\rhs_decal_tambov_coa_ca.paa",
@@ -9972,8 +11667,15 @@ class CfgVehicles
 	};
 	class RHS_TU95MS_vvs_chelyabinsk: RHS_TU95MS_base
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\RHS_TU95MS_vvs_chelyabinsk.paa";
+		scope=2;
+		author="$STR_RHS_AUTHOR_FULL";
 		side=0;
+		vehicleClass="rhs_vehclass_aircraft";
+		editorSubcategory="EdSubcat_Planes";
 		displayName="$STR_TU95_chelyabinsk_name";
+		faction="rhs_faction_vvs";
+		dlc="RHS_AFRF";
 		hiddenselectionstextures[]=
 		{
 			"\rhsafrf\addons\rhs_decals\Data\Labels\Tu95\rhs_decal_chelyabinsk_coa_ca.paa",
@@ -9985,31 +11687,90 @@ class CfgVehicles
 	};
 	class Land_rhs_tu95_wreck: Wreck_base_F
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\Land_rhs_tu95_wreck.paa";
+		author="$STR_RHS_AUTHOR_FULL";
+		scope=2;
+		scopeCurator=2;
 		displayName="Tu-95MS6 Wreck";
 		class Armory
 		{
 			disabled=1;
 		};
+		model="\rhsafrf\addons\rhs_air\tu95ms\rhs_tu95_wreck";
 		icon="iconObject_1x2";
+		mapSize=30.040001;
+		editorSubcategory="EdSubcat_Planes";
 	};
 	class rhs_flightrecorder_assembled: ThingX
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_flightrecorder_assembled.paa";
+		author="$STR_RHS_AUTHOR_FULL";
+		scope=2;
+		scopeCurator=2;
 		displayName="Plane flight recorder (assembled)";
+		model="\rhsafrf\addons\rhs_air\misc\rhs_flightrecorder.p3d";
+		mapSize=1.4;
 		icon="iconObject_1x1";
 		editorCategory="EdCat_Things";
+		editorSubcategory="EdSubcat_Intel";
 		vehicleCategory="Interactive_F";
+		vehicleClass="Intel";
+		destrType="DestructNo";
 		cost=100;
+		class AnimationSources
+		{
+			class recorder_action
+			{
+				source="user";
+				initPhase=0;
+				animPeriod=1.2;
+			};
+		};
+		class UserActions
+		{
+			class takeItem
+			{
+				displayName="Take flight recorder";
+				position="";
+				radius=2;
+				showWindow=1;
+				condition="alive this && (this animationSourcePhase 'recorder_action' isEqualTo 0)";
+				statement="this spawn {_this animateSource ['recorder_action',1];sleep 1.2;private _n = 'rhs_flightrecorder' createVehicle [0,0,0];_n setpos ((getpos _this) vectorAdd [0,0.2,0.1]);_n setdir getdir _this;_n setVelocity [0.5,0.5,0]}";
+				onlyForPlayer=1;
+			};
+			class restoreItem: takeItem
+			{
+				displayName="Put flight recorder";
+				condition="alive this && (this animationSourcePhase 'recorder_action' isEqualTo 1) && ('rhs_item_flightrecorder' in (items player))";
+				statement="this animateSource ['recorder_action',0];player removeItem 'rhs_item_flightrecorder'";
+			};
+		};
 	};
 	class Item_Base_F;
 	class rhs_flightrecorder: ThingX
 	{
+		editorPreview="rhsafrf\addons\rhs_editorPreviews\data\rhs_flightrecorder.paa";
+		scope=2;
+		scopeCurator=2;
 		displayName="Plane flight recorder";
+		author="$STR_RHS_AUTHOR_FULL";
 		editorCategory="EdCat_Things";
+		editorSubcategory="EdSubcat_Intel";
 		vehicleCategory="Interactive_F";
+		vehicleClass="Intel";
+		model="\rhsafrf\addons\rhs_air\misc\rhs_flightrecorder_holder.p3d";
 		forceSupply=1;
 		showWeaponCargo=1;
 		transportMaxMagazines=1e+009;
 		transportMaxWeapons=1e+009;
 		isGround=1;
+		class TransportItems
+		{
+			class rhs_item_flightrecorder
+			{
+				name="rhs_item_flightrecorder";
+				count=1;
+			};
+		};
 	};
 };
