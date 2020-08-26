@@ -286,13 +286,13 @@ def OrderedClasses(itemList, fileName, includeList, findMagazines=False):
 		pass
 
 	for _class in itemList:
+		input("Starting")
 		result = findClass(_class)
 
 		orderedResult = OrderResult(result)
-		className = re.search("class ([^:\n;]*)", orderedResult[0][0]).group(1)
 
-		with open(fileName + "\\" + className + ".cpp", "w", encoding="utf-8") as file:
-			file.write(className + "\n")
+		with open(fileName + "\\" + _class + ".cpp", "w", encoding="utf-8") as file:
+			file.write(_class + "\n")
 			addedForClass = []
 			for classBody in orderedResult:
 				#print(classBody)
