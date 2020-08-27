@@ -26,13 +26,23 @@ Opfor:
 	BRDM-2 (9P148)          = rhsgref_BRDM2_ATGM_vdv
 		rhs_weap_9P148:
 			3*rhs_mag_9m113_5
-		
+
 	GAZ-66 (ZU-23-2)        = rhs_gaz66_zu23_msv
-		
+		rhs_weap_2A14:
+			9*RHS_mag_AZP23_100
+
 	BMD-1R                  = rhs_bmd1r
-		
+		rhs_weap_s8:
+			1*rhs_mag_s8_12
+
 	BTR-80                  = rhs_btr80_msv
-		
+		rhs_weap_kpvt:
+			10*rhs_mag_145x115mm_50
+		rhs_weap_pkt_btr:
+			6*rhs_mag_762x54mm_250
+		rhs_weap_902a:
+			1*rhs_mag_3d17_6
+
 	BMD-1PK                 = rhsgref_ins_bmp1k
 		
 	BMP-1P                  = rhsgref_ins_bmpm1p
