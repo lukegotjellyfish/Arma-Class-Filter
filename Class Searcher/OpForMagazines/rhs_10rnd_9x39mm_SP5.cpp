@@ -1,11 +1,12 @@
 rhs_10rnd_9x39mm_SP5
-count=10;
-initSpeed=280;
 airFriction=-0.00052;
 caliber=0.222222;
+count=10;
 deflecting=21;
+-----
 hit=9.5;
-typicalSpeed=295;
 indirectHit=0;
 indirectHitRange=0;
+initSpeed=280;
 timeToLive=6;
+typicalSpeed=295;

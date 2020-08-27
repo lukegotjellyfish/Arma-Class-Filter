@@ -1,11 +1,12 @@
 rhsusf_mag_17Rnd_9x19_JHP
-initSpeed=301.79999;
 airFriction=-0.001095;
 caliber=0.41499999;
+count=17;
 deflecting=25;
+-----
 hit=6.9426537;
 indirectHit=0;
 indirectHitRange=0;
-typicalSpeed=301.79999;
+initSpeed=301.79999;
 timeToLive=6;
-count=17;
+typicalSpeed=301.79999;

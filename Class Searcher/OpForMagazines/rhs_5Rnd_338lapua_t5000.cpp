@@ -1,11 +1,12 @@
 rhs_5Rnd_338lapua_t5000
-count=5;
-initSpeed=925;
 airFriction=-0.00060999999;
 caliber=2;
+count=5;
+deflecting=15;
+-----
 hit=16;
 indirectHit=0;
 indirectHitRange=0;
+initSpeed=925;
 timeToLive=10;
 typicalSpeed=890;
-deflecting=15;

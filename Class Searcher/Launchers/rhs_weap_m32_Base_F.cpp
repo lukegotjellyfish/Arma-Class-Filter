@@ -1,7 +1,12 @@
 rhs_weap_m32_Base_F
+canLock=0;
+-----
 dispersion=0.0002909;
+-----
 mass=116.6;
+maxZeroing=1000;
 recoil="recoil_gm6";
 reloadAction="GestureReloadKatibaUGL";
-canLock=0;
-maxZeroing=1000;
+-----
+-----
+-----

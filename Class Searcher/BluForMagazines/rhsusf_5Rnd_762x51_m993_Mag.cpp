@@ -1,11 +1,12 @@
 rhsusf_5Rnd_762x51_m993_Mag
-initSpeed=910;
-caliber=1.41176;
-typicalSpeed=910;
 airFriction=-0.00068140001;
+caliber=1.41176;
+count=5;
+deflecting=15;
+-----
 hit=11.55;
 indirectHit=0;
 indirectHitRange=0;
-deflecting=15;
+initSpeed=910;
 timeToLive=6;
-count=5;
+typicalSpeed=910;

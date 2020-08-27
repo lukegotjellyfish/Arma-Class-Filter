@@ -1,11 +1,12 @@
 rhs_mag_30Rnd_556x45_Mk262_Stanag
-initSpeed=838.20001;
 airFriction=-0.00066000002;
 caliber=0.67699999;
+count=30;
 deflecting=15;
+-----
 hit=10.3;
-typicalSpeed=838.20001;
 indirectHit=0;
 indirectHitRange=0;
+initSpeed=838.20001;
 timeToLive=6;
-count=30;
+typicalSpeed=838.20001;

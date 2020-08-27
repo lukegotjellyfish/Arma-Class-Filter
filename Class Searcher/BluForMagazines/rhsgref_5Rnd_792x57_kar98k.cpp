@@ -1,11 +1,12 @@
 rhsgref_5Rnd_792x57_kar98k
-count=5;
-initSpeed=869;
 airFriction=-0.00068140001;
 caliber=0.44999999;
+count=5;
+deflecting=15;
+-----
 hit=11.55;
 indirectHit=0;
 indirectHitRange=0;
-typicalSpeed=838;
-deflecting=15;
+initSpeed=869;
 timeToLive=6;
+typicalSpeed=838;

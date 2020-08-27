@@ -1,11 +1,12 @@
 rhs_30Rnd_545x39_7N22_AK
-initSpeed=890;
 airFriction=-0.00085000001;
 caliber=0.939794;
+count=30;
 deflecting=20;
+-----
 hit=9.8000002;
-typicalSpeed=890;
 indirectHit=0;
 indirectHitRange=0;
+initSpeed=890;
 timeToLive=6;
-count=30;
+typicalSpeed=890;

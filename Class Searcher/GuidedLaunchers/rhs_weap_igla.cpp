@@ -1,0 +1,12 @@
+rhs_weap_igla
+canLock=2;
+cmImmunity=0.60000002;
+-----
+lockAcquire=1;
+mass=156.2;
+maxZeroing=2000;
+recoil="recoil_single_titan";
+reloadAction="ReloadRPG";
+-----
+weaponLockDelay=3;
+weaponLockSystem=2;

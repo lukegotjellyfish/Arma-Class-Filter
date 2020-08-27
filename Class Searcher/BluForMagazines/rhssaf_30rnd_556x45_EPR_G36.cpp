@@ -1,11 +1,12 @@
 rhssaf_30rnd_556x45_EPR_G36
-count=30;
 airFriction=-0.000772;
 caliber=0.64999998;
+count=30;
 deflecting=21;
+-----
 hit=9;
-typicalSpeed=960;
 indirectHit=0;
 indirectHitRange=0;
-timeToLive=6;
 initSpeed=920;
+timeToLive=6;
+typicalSpeed=960;

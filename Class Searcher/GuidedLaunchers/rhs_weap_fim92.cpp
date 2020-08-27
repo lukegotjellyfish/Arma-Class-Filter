@@ -1,0 +1,12 @@
+rhs_weap_fim92
+canLock=2;
+cmImmunity=0.89999998;
+-----
+lockAcquire=1;
+mass=92.400002;
+maxZeroing=2000;
+recoil="recoil_single_law";
+reloadAction="RHS_ReloadRPG";
+-----
+weaponLockDelay=5;
+weaponLockSystem=2;

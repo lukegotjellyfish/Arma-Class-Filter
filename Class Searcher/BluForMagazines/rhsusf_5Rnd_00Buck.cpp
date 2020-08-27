@@ -1,10 +1,12 @@
 rhsusf_5Rnd_00Buck
-count=5;
-initSpeed=336;
-hit=20;
 airFriction=-0.0080000004;
 caliber=1;
+count=5;
 deflecting=30;
+-----
+hit=20;
 indirectHit=2;
 indirectHitRange=0.40000001;
+initSpeed=336;
+-----
 typicalSpeed=400;

@@ -1,11 +1,12 @@
 rhsgref_5Rnd_762x54_m38
-count=5;
-initSpeed=823;
 airFriction=-0.0010922001;
 caliber=0.341151;
+count=5;
 deflecting=15;
+-----
 hit=11.47;
-typicalSpeed=828;
 indirectHit=0;
 indirectHitRange=0;
+initSpeed=823;
 timeToLive=6;
+typicalSpeed=828;

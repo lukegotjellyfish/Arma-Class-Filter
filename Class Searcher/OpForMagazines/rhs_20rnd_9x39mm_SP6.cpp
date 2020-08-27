@@ -1,11 +1,12 @@
 rhs_20rnd_9x39mm_SP6
+airFriction=-0.00052;
 caliber=0.95238101;
+count=20;
 deflecting=5;
+-----
 hit=11.3;
 indirectHit=0;
 indirectHitRange=0;
-airFriction=-0.00052;
-typicalSpeed=295;
-timeToLive=6;
-count=20;
 initSpeed=280;
+timeToLive=6;
+typicalSpeed=295;

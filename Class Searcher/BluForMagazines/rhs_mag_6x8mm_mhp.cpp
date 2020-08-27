@@ -1,11 +1,12 @@
 rhs_mag_6x8mm_mhp
-count=6;
-initSpeed=280;
 airFriction=-0.0018;
 caliber=0.53333336;
+count=6;
 deflecting=30;
+-----
 hit=3.4313264;
 indirectHit=0;
 indirectHitRange=0;
-typicalSpeed=290;
+initSpeed=280;
 timeToLive=6;
+typicalSpeed=290;

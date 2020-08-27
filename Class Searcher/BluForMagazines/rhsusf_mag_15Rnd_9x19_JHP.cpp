@@ -1,11 +1,12 @@
 rhsusf_mag_15Rnd_9x19_JHP
-count=15;
-initSpeed=301.79999;
 airFriction=-0.001095;
 caliber=0.41499999;
+count=15;
 deflecting=25;
+-----
 hit=6.9426537;
 indirectHit=0;
 indirectHitRange=0;
-typicalSpeed=301.79999;
+initSpeed=301.79999;
 timeToLive=6;
+typicalSpeed=301.79999;

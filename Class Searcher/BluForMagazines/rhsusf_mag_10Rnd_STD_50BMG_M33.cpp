@@ -1,11 +1,12 @@
 rhsusf_mag_10Rnd_STD_50BMG_M33
-initSpeed=853;
-count=10;
 airFriction=-0.00061699998;
 caliber=1.0253299;
+count=10;
+deflecting=15;
+-----
 hit=25.307501;
 indirectHit=0;
 indirectHitRange=0;
-typicalSpeed=838.20001;
+initSpeed=853;
 timeToLive=10;
-deflecting=15;
+typicalSpeed=838.20001;

@@ -1,11 +1,12 @@
 rhsgref_50Rnd_792x57_SmE_drum
-count=50;
-initSpeed=770;
 airFriction=-0.00068140001;
 caliber=0.44999999;
+count=50;
+deflecting=15;
+-----
 hit=11.55;
 indirectHit=0;
 indirectHitRange=0;
-typicalSpeed=838;
-deflecting=15;
+initSpeed=770;
 timeToLive=6;
+typicalSpeed=838;

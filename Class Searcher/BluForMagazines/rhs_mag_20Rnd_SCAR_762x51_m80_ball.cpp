@@ -1,11 +1,12 @@
 rhs_mag_20Rnd_SCAR_762x51_m80_ball
-initSpeed=794;
 airFriction=-0.00068140001;
 caliber=0.44999999;
+count=20;
+deflecting=15;
+-----
 hit=11.55;
 indirectHit=0;
 indirectHitRange=0;
-typicalSpeed=838;
-count=20;
-deflecting=15;
+initSpeed=794;
 timeToLive=6;
+typicalSpeed=838;

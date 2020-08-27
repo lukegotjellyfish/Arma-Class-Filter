@@ -1,11 +1,12 @@
 rhs_mag_30Rnd_556x45_M855_Stanag
-initSpeed=960;
 airFriction=-0.00076000002;
 caliber=0.44;
+count=30;
 deflecting=21;
+-----
 hit=9;
-typicalSpeed=920;
 indirectHit=0;
 indirectHitRange=0;
+initSpeed=960;
 timeToLive=6;
-count=30;
+typicalSpeed=920;

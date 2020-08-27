@@ -1,12 +1,12 @@
 rhsusf_mag_10Rnd_STD_50BMG_mk211
+airFriction=-0.00061699998;
 caliber=2.05761;
+count=10;
+deflecting=15;
 explosive=0.40000001;
 hit=24.808451;
 indirectHit=4;
 indirectHitRange=2.76;
-airFriction=-0.00061699998;
-typicalSpeed=838.20001;
-timeToLive=10;
-deflecting=15;
 initSpeed=853;
-count=10;
+timeToLive=10;
+typicalSpeed=838.20001;
