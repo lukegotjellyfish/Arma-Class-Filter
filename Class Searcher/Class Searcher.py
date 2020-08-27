@@ -416,6 +416,26 @@ launcherAmmoAttributes = [
 	"warheadName"
 ]
 
+vehicleAttributes = [
+	"maxSpeed",
+	"turnCoef",
+	"terrainCoef",
+	"enginePower",
+	"peakTorque",
+	"armor",
+	"armorStructural",
+	"explosionShielding",
+	"LockDetectionSystem",
+	"incomingMissileDetectionSystem",
+	"minTotalDamageThreshold",
+	"fuelExplosionPower",
+	"minElev",
+	"maxElev",
+	"minturn",
+	"maxturn",
+	"discreteDistance"
+]
+
 OrderedClasses(bluForWeapons     , "BluForWeapons"     , weaponAttributes      )
 OrderedClasses(opForWeapons      , "OpForWeapons"      , weaponAttributes      )
 OrderedClasses(bluForMagazines   , "BluForMagazines"   , ammoAttributes        )
