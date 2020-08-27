@@ -941,52 +941,6 @@ class CfgVehicles
 			retreatBladeStallWarningSpeed=63;
 			rtd_center="rtd_center";
 		};
-		soundGetIn[]=
-		{
-			"rhsgref\addons\rhsgref_air\uh1h\Sounds\open_close",
-			0.56234133,
-			1
-		};
-		soundGetOut[]=
-		{
-			"rhsgref\addons\rhsgref_air\uh1h\Sounds\open_close",
-			0.79432821,
-			1,
-			20
-		};
-		soundEngineOnInt[]=
-		{
-			"rhsgref\addons\rhsgref_air\uh1h\sounds\uh1h_start_int",
-			0.40000001,
-			1
-		};
-		soundEngineOnExt[]=
-		{
-			"rhsgref\addons\rhsgref_air\uh1h\sounds\uh1h_start_ext",
-			0.79432821,
-			1,
-			600
-		};
-		soundEngineOffInt[]=
-		{
-			"rhsgref\addons\rhsgref_air\uh1h\sounds\uh1h_stop_int",
-			0.40000001,
-			1
-		};
-		soundEngineOffExt[]=
-		{
-			"rhsgref\addons\rhsgref_air\uh1h\sounds\uh1h_stop_ext",
-			0.79432821,
-			1,
-			600
-		};
-		soundGeneralCollision1[]=
-		{
-			"A3\Sounds_F\vehicles\crashes\helis\Heli_coll_default_int_1",
-			1,
-			1,
-			100
-		};
 		soundGeneralCollision2[]=
 		{
 			"A3\Sounds_F\vehicles\crashes\helis\Heli_coll_default_int_2",
@@ -1014,33 +968,6 @@ class CfgVehicles
 		{
 			"emptySound",
 			0
-		};
-		soundBuildingCrash[]=
-		{
-			"soundGeneralCollision1",
-			1,
-			"soundGeneralCollision2",
-			1,
-			"soundGeneralCollision3",
-			1
-		};
-		soundArmorCrash[]=
-		{
-			"soundGeneralCollision1",
-			1,
-			"soundGeneralCollision2",
-			1,
-			"soundGeneralCollision3",
-			1
-		};
-		soundWoodCrash[]=
-		{
-			"soundGeneralCollision1",
-			1,
-			"soundGeneralCollision2",
-			1,
-			"soundGeneralCollision3",
-			1
 		};
 		soundBushCollision1[]=
 		{
@@ -1092,18 +1019,6 @@ class CfgVehicles
 			0.5,
 			"soundWaterCollision2",
 			0.5
-		};
-		soundDammage[]=
-		{
-			"A3\Sounds_F\vehicles\crashes\helis\Heli_crash_default_ext_1",
-			3.1622777,
-			1
-		};
-		soundLocked[]=
-		{
-			"\A3\Sounds_F\weapons\Rockets\opfor_lock_1",
-			1,
-			1
 		};
 		soundIncommingMissile[]=
 		{
@@ -2114,12 +2029,6 @@ class CfgVehicles
 				maxturn=-25;
 				minelev=-55;
 				minturn=-135;
-				soundServo[]=
-				{
-					"",
-					0.0099999998,
-					1
-				};
 				stabilizedInAxes=0;
 				weapons[]=
 				{
@@ -4059,21 +3968,6 @@ class CfgVehicles
 				selection="svetlo";
 			};
 		};
-		aggregateReflectors[]=
-		{
-			
-			{
-				"Left"
-			},
-			
-			{
-				"Right"
-			},
-			
-			{
-				"Center"
-			}
-		};
 		class Exhausts
 		{
 			class Exhaust_1
@@ -5081,57 +4975,6 @@ class CfgVehicles
 		};
 		insideSoundCoef=0.2;
 		attenuationEffectType="HeliAttenuation";
-		soundGetIn[]=
-		{
-			"rhsgref\addons\rhsgref_air\AN2\data\sound\close",
-			0.31622776,
-			1
-		};
-		soundGetOut[]=
-		{
-			"rhsgref\addons\rhsgref_air\AN2\data\sound\open",
-			0.31622776,
-			1,
-			40
-		};
-		soundDammage[]=
-		{
-			"",
-			0.56234133,
-			1
-		};
-		soundEngineOnInt[]=
-		{
-			"rhsgref\addons\rhsgref_air\AN2\data\sound\AN2_engine_start_int",
-			0.17782794,
-			1
-		};
-		soundEngineOnExt[]=
-		{
-			"rhsgref\addons\rhsgref_air\AN2\data\sound\AN2_engine_start_ext",
-			0.39810717,
-			1,
-			700
-		};
-		soundEngineOffInt[]=
-		{
-			"rhsgref\addons\rhsgref_air\AN2\data\sound\AN2_engine_stop_int",
-			0.17782794,
-			1
-		};
-		soundEngineOffExt[]=
-		{
-			"rhsgref\addons\rhsgref_air\AN2\data\sound\AN2_engine_stop_ext",
-			0.39810717,
-			1,
-			700
-		};
-		soundLocked[]=
-		{
-			"\A3\Sounds_F\weapons\Rockets\locked_1",
-			0.099999994,
-			1
-		};
 		soundIncommingMissile[]=
 		{
 			"\A3\Sounds_F\weapons\Rockets\locked_3",

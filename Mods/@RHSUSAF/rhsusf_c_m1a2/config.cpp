@@ -265,13 +265,6 @@ class CfgVehicles
 						maxHorizontalRotSpeed=1.3;
 						maxVerticalRotSpeed=0.47999999;
 						stabilizedInAxes=3;
-						soundServo[]=
-						{
-							"A3\Sounds_F\vehicles\armor\noises\servo_armor_comm",
-							1,
-							1,
-							30
-						};
 						soundServoVertical[]=
 						{
 							"A3\Sounds_F\vehicles\armor\noises\servo_armor_comm",
@@ -1064,17 +1057,6 @@ class CfgVehicles
 							hardLimitEnd=0.15000001;
 						};
 					};
-				};
-				aggregateReflectors[]=
-				{
-					
-					{
-						"Gunner"
-					},
-					
-					{
-						"Gunner2"
-					}
 				};
 				armorLights=0.0099999998;
 			};

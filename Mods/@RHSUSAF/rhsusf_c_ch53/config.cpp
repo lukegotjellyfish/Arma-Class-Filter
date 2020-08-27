@@ -432,13 +432,6 @@ class CfgVehicles
 			0,
 			1
 		};
-		soundGeneralCollision1[]=
-		{
-			"A3\Sounds_F\vehicles\crashes\Helis\Heli_coll_default_int_1",
-			1,
-			1,
-			100
-		};
 		soundGeneralCollision2[]=
 		{
 			"A3\Sounds_F\vehicles\crashes\Helis\Heli_coll_default_int_2",
@@ -466,33 +459,6 @@ class CfgVehicles
 		{
 			"emptySound",
 			0
-		};
-		soundBuildingCrash[]=
-		{
-			"soundGeneralCollision1",
-			1,
-			"soundGeneralCollision2",
-			1,
-			"soundGeneralCollision3",
-			1
-		};
-		soundArmorCrash[]=
-		{
-			"soundGeneralCollision1",
-			1,
-			"soundGeneralCollision2",
-			1,
-			"soundGeneralCollision3",
-			1
-		};
-		soundWoodCrash[]=
-		{
-			"soundGeneralCollision1",
-			1,
-			"soundGeneralCollision2",
-			1,
-			"soundGeneralCollision3",
-			1
 		};
 		soundBushCollision1[]=
 		{
@@ -544,58 +510,6 @@ class CfgVehicles
 			0.5,
 			"soundWaterCollision2",
 			0.5
-		};
-		soundGetIn[]=
-		{
-			"A3\Sounds_F\vehicles\air\Heli_Transport_02\open",
-			1,
-			1
-		};
-		soundGetOut[]=
-		{
-			"A3\Sounds_F\vehicles\air\Heli_Transport_02\close",
-			1,
-			1,
-			50
-		};
-		soundDammage[]=
-		{
-			"\rhsusf\addons\rhsusf_ch53\data\betty\dws_warning_beeps",
-			10,
-			1,
-			20
-		};
-		soundEngineOnInt[]=
-		{
-			"rhsusf\addons\rhsusf_ch53\sounds\Heli_CH53_01_int_start",
-			2,
-			1
-		};
-		soundEngineOnExt[]=
-		{
-			"rhsusf\addons\rhsusf_ch53\sounds\Heli_CH53_01_ext_start",
-			2,
-			1,
-			800
-		};
-		soundEngineOffInt[]=
-		{
-			"rhsusf\addons\rhsusf_ch53\sounds\Heli_CH53_01_int_stop",
-			2,
-			1
-		};
-		soundEngineOffExt[]=
-		{
-			"rhsusf\addons\rhsusf_ch53\sounds\Heli_CH53_01_ext_stop",
-			2,
-			1,
-			800
-		};
-		soundLocked[]=
-		{
-			"\A3\Sounds_F\weapons\Rockets\locked_1",
-			1,
-			1
 		};
 		soundIncommingMissile[]=
 		{
@@ -6039,13 +5953,6 @@ class CfgVehicles
 				gunnerName="$STR_A3_COPILOT";
 				isCopilot=1;
 				turretInfoType="RHS_RscUH1Y_Observer";
-				soundServo[]=
-				{
-					"",
-					0.0099999998,
-					1,
-					30
-				};
 				weapons[]=
 				{
 					"rhs_weap_laserDesignator_AI"
@@ -6573,12 +6480,6 @@ class CfgVehicles
 				lodturnedin=1200;
 				lodopticsout=1200;
 				lodopticsin=1200;
-				soundServo[]=
-				{
-					"",
-					0.0099999998,
-					1
-				};
 				gunnerLeftHandAnimName="OtocHlaven_1";
 				gunnerRightHandAnimName="OtocHlaven_1";
 				gunnerLeftLegAnimName="gunner_1_leg_left";

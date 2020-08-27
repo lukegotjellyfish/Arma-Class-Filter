@@ -28,13 +28,6 @@ class CfgVehicles
 		gravityFactor=0;
 		model="\rhsafrf\addons\rhs_aps\data\rhs_shtora";
 		armor=5000;
-		aggregateReflectors[]=
-		{
-			
-			{
-				"light"
-			}
-		};
 		armorLights=0.050000001;
 		class Reflectors
 		{

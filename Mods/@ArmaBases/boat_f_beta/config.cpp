@@ -84,167 +84,6 @@ class CfgVehicles
 		};
 		attenuationEffectType="TankAttenuation";
 		insideSoundCoef=1;
-		soundEngineOnInt[]=
-		{
-			"A3\Sounds_F\vehicles\boat\SDV\sdv-start2-ext",
-			0.099999994,
-			1
-		};
-		soundEngineOnExt[]=
-		{
-			"A3\Sounds_F\vehicles\boat\SDV\sdv-start2-ext",
-			1,
-			1,
-			100
-		};
-		soundEngineOffInt[]=
-		{
-			"A3\Sounds_F\vehicles\boat\SDV\sdv-stop2-ext",
-			0.099999994,
-			1
-		};
-		soundEngineOffExt[]=
-		{
-			"A3\Sounds_F\vehicles\boat\SDV\sdv-stop2-ext",
-			1,
-			1,
-			100
-		};
-		buildCrash0[]=
-		{
-			"A3\sounds_f\Vehicles\soft\noises\crash_building_01",
-			1.7782794,
-			1,
-			200
-		};
-		buildCrash1[]=
-		{
-			"A3\sounds_f\Vehicles\soft\noises\crash_building_02",
-			1.7782794,
-			1,
-			200
-		};
-		buildCrash2[]=
-		{
-			"A3\sounds_f\Vehicles\soft\noises\crash_building_03",
-			1.7782794,
-			1,
-			200
-		};
-		buildCrash3[]=
-		{
-			"A3\sounds_f\Vehicles\soft\noises\crash_building_04",
-			1.7782794,
-			1,
-			200
-		};
-		soundBuildingCrash[]=
-		{
-			"buildCrash0",
-			0.25,
-			"buildCrash1",
-			0.25,
-			"buildCrash2",
-			0.25,
-			"buildCrash3",
-			0.25
-		};
-		WoodCrash0[]=
-		{
-			"A3\sounds_f\Vehicles\soft\noises\crash_mix_wood_01",
-			1.7782794,
-			1,
-			200
-		};
-		WoodCrash1[]=
-		{
-			"A3\sounds_f\Vehicles\soft\noises\crash_mix_wood_02",
-			1.7782794,
-			1,
-			200
-		};
-		WoodCrash2[]=
-		{
-			"A3\sounds_f\Vehicles\soft\noises\crash_mix_wood_03",
-			1.7782794,
-			1,
-			200
-		};
-		WoodCrash3[]=
-		{
-			"A3\sounds_f\Vehicles\soft\noises\crash_mix_wood_04",
-			1.7782794,
-			1,
-			200
-		};
-		WoodCrash4[]=
-		{
-			"A3\sounds_f\Vehicles\soft\noises\crash_mix_wood_05",
-			1.7782794,
-			1,
-			200
-		};
-		WoodCrash5[]=
-		{
-			"A3\sounds_f\Vehicles\soft\noises\crash_mix_wood_06",
-			1.7782794,
-			1,
-			200
-		};
-		soundWoodCrash[]=
-		{
-			"woodCrash0",
-			0.16599999,
-			"woodCrash1",
-			0.16599999,
-			"woodCrash2",
-			0.16599999,
-			"woodCrash3",
-			0.16599999,
-			"woodCrash4",
-			0.16599999,
-			"woodCrash5",
-			0.16599999
-		};
-		ArmorCrash0[]=
-		{
-			"A3\sounds_f\Vehicles\soft\noises\crash_vehicle_01",
-			1.7782794,
-			1,
-			200
-		};
-		ArmorCrash1[]=
-		{
-			"A3\sounds_f\Vehicles\soft\noises\crash_vehicle_02",
-			1.7782794,
-			1,
-			200
-		};
-		ArmorCrash2[]=
-		{
-			"A3\sounds_f\Vehicles\soft\noises\crash_vehicle_03",
-			1.7782794,
-			1,
-			200
-		};
-		ArmorCrash3[]=
-		{
-			"A3\sounds_f\Vehicles\soft\noises\crash_vehicle_04",
-			1.7782794,
-			1,
-			200
-		};
-		soundArmorCrash[]=
-		{
-			"ArmorCrash0",
-			0.25,
-			"ArmorCrash1",
-			0.25,
-			"ArmorCrash2",
-			0.25,
-			"ArmorCrash3",
-			0.25
-		};
 		class Sounds
 		{
 			class IdleOut
@@ -533,13 +372,6 @@ class CfgVehicles
 				magazines[]=
 				{
 					"Laserbatteries"
-				};
-				soundServo[]=
-				{
-					"A3\sounds_f\dummysound",
-					0.0099999998,
-					1,
-					10
 				};
 				gunnerAction="commander_SDV";
 				gunnergetInAction="GetInLow";
@@ -2799,20 +2631,6 @@ class CfgVehicles
 					hardLimitEnd=10;
 				};
 			};
-		};
-		aggregateReflectors[]=
-		{
-			
-			{
-				"Left",
-				"Right",
-				"Left2",
-				"Right2"
-			},
-			
-			{
-				"interior_light"
-			}
 		};
 		hiddenSelections[]=
 		{

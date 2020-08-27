@@ -40,13 +40,6 @@ class CfgWeapons
 			1,
 			10
 		};
-		changeFiremodeSound[]=
-		{
-			"rhsgref\addons\rhsgref_sounds\ak_shared\firemode",
-			0.60000002,
-			1,
-			5
-		};
 	};
 	class rhs_weap_m21_base: rhs_weap_m70_base
 	{
@@ -57,13 +50,6 @@ class CfgWeapons
 			1,
 			10
 		};
-		changeFiremodeSound[]=
-		{
-			"rhsgref\addons\rhsgref_sounds\ak_shared\firemode",
-			0.60000002,
-			1,
-			5
-		};
 	};
 	class rhs_weap_m76: rhs_weap_m70_base
 	{
@@ -73,13 +59,6 @@ class CfgWeapons
 			1.2,
 			1,
 			15
-		};
-		changeFiremodeSound[]=
-		{
-			"rhsafrf\addons\rhs_sounds\ak_shared\firemode",
-			0.60000002,
-			1,
-			5
 		};
 	};
 	class rhs_weap_m38_Base_F: Rifle_Base_F
@@ -93,11 +72,6 @@ class CfgWeapons
 		};
 		class Single: Mode_SemiAuto
 		{
-			sounds[]=
-			{
-				"StandardSound",
-				"SilencedSound"
-			};
 			class StandardSound
 			{
 				soundSetShot[]=
@@ -127,10 +101,6 @@ class CfgWeapons
 		};
 		class Single: Mode_SemiAuto
 		{
-			sounds[]=
-			{
-				"StandardSound"
-			};
 			class StandardSound
 			{
 				soundSetShot[]=
@@ -150,20 +120,8 @@ class CfgWeapons
 			1,
 			10
 		};
-		changeFiremodeSound[]=
-		{
-			"rhsgref\addons\rhsgref_sounds\ak_shared\firemode",
-			0.60000002,
-			1,
-			5
-		};
 		class Single: Mode_SemiAuto
 		{
-			sounds[]=
-			{
-				"StandardSound",
-				"SilencedSound"
-			};
 			class StandardSound
 			{
 				soundSetShot[]=
@@ -185,11 +143,6 @@ class CfgWeapons
 		};
 		class FullAuto: Mode_FullAuto
 		{
-			sounds[]=
-			{
-				"StandardSound",
-				"SilencedSound"
-			};
 			class StandardSound
 			{
 				soundSetShot[]=
@@ -219,20 +172,8 @@ class CfgWeapons
 			1,
 			10
 		};
-		changeFiremodeSound[]=
-		{
-			"rhsgref\addons\rhsgref_sounds\ak_shared\firemode",
-			0.60000002,
-			1,
-			5
-		};
 		class Single: Mode_SemiAuto
 		{
-			sounds[]=
-			{
-				"StandardSound",
-				"SilencedSound"
-			};
 			class StandardSound
 			{
 				soundSetShot[]=
@@ -254,11 +195,6 @@ class CfgWeapons
 		};
 		class FullAuto: Mode_FullAuto
 		{
-			sounds[]=
-			{
-				"StandardSound",
-				"SilencedSound"
-			};
 			class StandardSound
 			{
 				soundSetShot[]=
@@ -283,10 +219,6 @@ class CfgWeapons
 	class Missile_AGM_02_Plane_CAS_01_F;
 	class rhs_weap_zt3_launcher: MissileLauncher
 	{
-		sounds[]=
-		{
-			"StandardSound"
-		};
 		class StandardSound
 		{
 			soundsetshot[]=
@@ -297,10 +229,6 @@ class CfgWeapons
 	};
 	class rhs_weap_zt6_Launcher: Missile_AGM_02_Plane_CAS_01_F
 	{
-		sounds[]=
-		{
-			"StandardSound"
-		};
 		class StandardSound
 		{
 			begin1[]=

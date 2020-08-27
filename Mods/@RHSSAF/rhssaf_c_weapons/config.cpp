@@ -912,12 +912,6 @@ class CfgAmmo
 		mineModelDisabled="\rhssaf\addons\rhssaf_m_explosives\mines_at\tma4\rhssaf_tma4_d";
 		icon="iconExplosiveAT";
 		defaultMagazine="rhssaf_mine_tma4_mag";
-		SoundSetExplosion[]=
-		{
-			"ATmine_Exp_SoundSet",
-			"ATmine_Tail_SoundSet",
-			"Explosion_Debris_SoundSet"
-		};
 		explosionEffects="ATMineExplosion";
 		CraterEffects="ATMineCrater";
 		whistleDist=8;
@@ -1033,12 +1027,6 @@ class CfgAmmo
 			1,
 			20
 		};
-		SoundSetExplosion[]=
-		{
-			"ExplosiveCharge_Exp_SoundSet",
-			"ExplosiveCharge_Tail_SoundSet",
-			"Explosion_Debris_SoundSet"
-		};
 		defaultMagazine="rhssaf_tm100_mag";
 		ExplosionEffects="MineNondirectionalExplosionSmall";
 		CraterEffects="MineNondirectionalCraterSmall";
@@ -1067,12 +1055,6 @@ class CfgAmmo
 		ExplosionEffects="MineNondirectionalExplosion";
 		CraterEffects="MineNondirectionalCrater";
 		defaultMagazine="rhssaf_tm500_mag";
-		SoundSetExplosion[]=
-		{
-			"ClaymoreMine_Exp_SoundSet",
-			"ClaymoreMine_Tail_SoundSet",
-			"Explosion_Debris_SoundSet"
-		};
 	};
 	class rhssaf_tm500_ammo_scripted: rhssaf_tm500_ammo;  //found empty after stripping
 };
@@ -2634,10 +2616,6 @@ class CfgWeapons
 		};
 		class Single: Mode_SemiAuto
 		{
-			sounds[]=
-			{
-				"StandardSound"
-			};
 			class StandardSound
 			{
 				begin1[]=
@@ -2785,124 +2763,6 @@ class CfgWeapons
 			"this",
 			"SAFE"
 		};
-		bullet1[]=
-		{
-			"A3\sounds_f\weapons\shells\7_62\metal_762_01",
-			0.63095701,
-			1,
-			15
-		};
-		bullet2[]=
-		{
-			"A3\sounds_f\weapons\shells\7_62\metal_762_02",
-			0.63095701,
-			1,
-			15
-		};
-		bullet3[]=
-		{
-			"A3\sounds_f\weapons\shells\7_62\metal_762_03",
-			0.63095701,
-			1,
-			15
-		};
-		bullet4[]=
-		{
-			"A3\sounds_f\weapons\shells\7_62\metal_762_04",
-			0.63095701,
-			1,
-			15
-		};
-		bullet5[]=
-		{
-			"A3\sounds_f\weapons\shells\7_62\dirt_762_01",
-			0.63095701,
-			1,
-			15
-		};
-		bullet6[]=
-		{
-			"A3\sounds_f\weapons\shells\7_62\dirt_762_02",
-			0.63095701,
-			1,
-			15
-		};
-		bullet7[]=
-		{
-			"A3\sounds_f\weapons\shells\7_62\dirt_762_03",
-			0.63095701,
-			1,
-			15
-		};
-		bullet8[]=
-		{
-			"A3\sounds_f\weapons\shells\7_62\dirt_762_04",
-			0.63095701,
-			1,
-			15
-		};
-		bullet9[]=
-		{
-			"A3\sounds_f\weapons\shells\7_62\grass_762_01",
-			0.63095701,
-			1,
-			15
-		};
-		bullet10[]=
-		{
-			"A3\sounds_f\weapons\shells\7_62\grass_762_02",
-			0.63095701,
-			1,
-			15
-		};
-		bullet11[]=
-		{
-			"A3\sounds_f\weapons\shells\7_62\grass_762_03",
-			0.63095701,
-			1,
-			15
-		};
-		bullet12[]=
-		{
-			"A3\sounds_f\weapons\shells\7_62\grass_762_04",
-			0.63095701,
-			1,
-			15
-		};
-		soundBullet[]=
-		{
-			"bullet1",
-			0.082999997,
-			"bullet2",
-			0.082999997,
-			"bullet3",
-			0.082999997,
-			"bullet4",
-			0.082999997,
-			"bullet5",
-			0.082999997,
-			"bullet6",
-			0.082999997,
-			"bullet7",
-			0.082999997,
-			"bullet8",
-			0.082999997,
-			"bullet9",
-			0.082999997,
-			"bullet10",
-			0.082999997,
-			"bullet11",
-			0.082999997,
-			"bullet12",
-			0.082999997
-		};
-		changeFiremodeSound[]=
-		{
-			"A3\sounds_f\weapons\closure\firemode_changer_2",
-			0.56234133,
-			1,
-			20
-		};
 		modes[]=
 		{
 			"Single",
@@ -2978,13 +2838,6 @@ class CfgWeapons
 		};
 		aiDispersionCoefY=10;
 		aiDispersionCoefX=8;
-		drySound[]=
-		{
-			"A3\sounds_f\weapons\Other\dry_1",
-			0.56234097,
-			1,
-			10
-		};
 		reloadMagazineSound[]=
 		{
 			"A3\Sounds_F\weapons\Khaybar\reload_khaibar",
@@ -3821,23 +3674,12 @@ class CfgWeapons
 			10
 		};
 		magazineReloadSwitchPhase=0.55000001;
-		drySound[]=
-		{
-			"rhssaf\addons\rhssaf_sounds\G36\ag36_drystrike",
-			0.66000003,
-			1,
-			10
-		};
 		modes[]=
 		{
 			"Single"
 		};
 		class Single: Mode_SemiAuto
 		{
-			sounds[]=
-			{
-				"StandardSound"
-			};
 			class StandardSound
 			{
 				closure1[]=
@@ -3933,90 +3775,6 @@ class CfgWeapons
 		aidispersioncoefx=4;
 		aidispersioncoefy=6;
 		cameraDir="";
-		bullet1[]=
-		{
-			"A3\sounds_f\weapons\shells\7_62\metal_762_01",
-			0.39810699,
-			1,
-			15
-		};
-		bullet10[]=
-		{
-			"A3\sounds_f\weapons\shells\7_62\grass_762_02",
-			0.281838,
-			1,
-			15
-		};
-		bullet11[]=
-		{
-			"A3\sounds_f\weapons\shells\7_62\grass_762_03",
-			0.281838,
-			1,
-			15
-		};
-		bullet12[]=
-		{
-			"A3\sounds_f\weapons\shells\7_62\grass_762_04",
-			0.281838,
-			1,
-			15
-		};
-		bullet2[]=
-		{
-			"A3\sounds_f\weapons\shells\7_62\metal_762_02",
-			0.39810699,
-			1,
-			15
-		};
-		bullet3[]=
-		{
-			"A3\sounds_f\weapons\shells\7_62\metal_762_03",
-			0.39810699,
-			1,
-			15
-		};
-		bullet4[]=
-		{
-			"A3\sounds_f\weapons\shells\7_62\metal_762_04",
-			0.39810699,
-			1,
-			15
-		};
-		bullet5[]=
-		{
-			"A3\sounds_f\weapons\shells\7_62\dirt_762_01",
-			0.281838,
-			1,
-			15
-		};
-		bullet6[]=
-		{
-			"A3\sounds_f\weapons\shells\7_62\dirt_762_02",
-			0.281838,
-			1,
-			15
-		};
-		bullet7[]=
-		{
-			"A3\sounds_f\weapons\shells\7_62\dirt_762_03",
-			0.281838,
-			1,
-			15
-		};
-		bullet8[]=
-		{
-			"A3\sounds_f\weapons\shells\7_62\dirt_762_04",
-			0.281838,
-			1,
-			15
-		};
-		bullet9[]=
-		{
-			"A3\sounds_f\weapons\shells\7_62\grass_762_01",
-			0.281838,
-			1,
-			15
-		};
 		drysound[]=
 		{
 			"rhssaf\addons\rhssaf_sounds\G36\g36_dryfire",
@@ -4030,13 +3788,6 @@ class CfgWeapons
 			0.89999998,
 			1,
 			35
-		};
-		changeFiremodeSound[]=
-		{
-			"\rhssaf\addons\rhssaf_sounds\G36\g36_switch",
-			1,
-			1,
-			8
 		};
 		UiPicture="\A3\weapons_f\data\UI\icon_regular_CA.paa";
 		soundbullet[]=
@@ -4089,11 +3840,6 @@ class CfgWeapons
 		};
 		class Single: Mode_SemiAuto
 		{
-			sounds[]=
-			{
-				"StandardSound",
-				"SilencedSound"
-			};
 			dispersion=0.00055559602;
 			reloadtime=0.079999998;
 			aiRateOfFire=1;
@@ -4122,11 +3868,6 @@ class CfgWeapons
 		};
 		class FullAuto: Mode_FullAuto
 		{
-			sounds[]=
-			{
-				"StandardSound",
-				"SilencedSound"
-			};
 			dispersion=0.00055559602;
 			reloadtime=0.079999998;
 			aiRateOfFire=0.2;
@@ -5585,117 +5326,6 @@ class CfgWeapons
 			"far_optic1",
 			"far_optic2"
 		};
-		bullet1[]=
-		{
-			"A3\sounds_f\weapons\shells\7_62\metal_762_01",
-			0.79432797,
-			1,
-			15
-		};
-		bullet2[]=
-		{
-			"A3\sounds_f\weapons\shells\7_62\metal_762_02",
-			0.79432797,
-			1,
-			15
-		};
-		bullet3[]=
-		{
-			"A3\sounds_f\weapons\shells\7_62\metal_762_03",
-			0.79432797,
-			1,
-			15
-		};
-		bullet4[]=
-		{
-			"A3\sounds_f\weapons\shells\7_62\metal_762_04",
-			0.79432797,
-			1,
-			15
-		};
-		bullet5[]=
-		{
-			"A3\sounds_f\weapons\shells\7_62\dirt_762_01",
-			0.79432797,
-			1,
-			15
-		};
-		bullet6[]=
-		{
-			"A3\sounds_f\weapons\shells\7_62\dirt_762_02",
-			0.79432797,
-			1,
-			15
-		};
-		bullet7[]=
-		{
-			"A3\sounds_f\weapons\shells\7_62\dirt_762_03",
-			0.79432797,
-			1,
-			15
-		};
-		bullet8[]=
-		{
-			"A3\sounds_f\weapons\shells\7_62\dirt_762_04",
-			0.79432797,
-			1,
-			15
-		};
-		bullet9[]=
-		{
-			"A3\sounds_f\weapons\shells\7_62\grass_762_01",
-			0.79432797,
-			1,
-			15
-		};
-		bullet10[]=
-		{
-			"A3\sounds_f\weapons\shells\7_62\grass_762_02",
-			0.79432797,
-			1,
-			15
-		};
-		bullet11[]=
-		{
-			"A3\sounds_f\weapons\shells\7_62\grass_762_03",
-			0.79432797,
-			1,
-			15
-		};
-		bullet12[]=
-		{
-			"A3\sounds_f\weapons\shells\7_62\grass_762_04",
-			0.79432797,
-			1,
-			15
-		};
-		soundBullet[]=
-		{
-			"bullet1",
-			0.082999997,
-			"bullet2",
-			0.082999997,
-			"bullet3",
-			0.082999997,
-			"bullet4",
-			0.082999997,
-			"bullet5",
-			0.082999997,
-			"bullet6",
-			0.082999997,
-			"bullet7",
-			0.082999997,
-			"bullet8",
-			0.082999997,
-			"bullet9",
-			0.082999997,
-			"bullet10",
-			0.082999997,
-			"bullet11",
-			0.082999997,
-			"bullet12",
-			0.082999997
-		};
 		discreteDistance[]={100,200,300,400,500,600,700,800,900,1000,1100,1200,1300,1400,1500};
 		discreteDistanceInitIndex=2;
 		weaponInfoType="rhs_rscOptics_m84";
@@ -5705,13 +5335,6 @@ class CfgWeapons
 		opticsZoomInit=0.75;
 		distanceZoomMin=300;
 		distanceZoomMax=300;
-		drySound[]=
-		{
-			"A3\Sounds_F\arsenal\weapons\Machineguns\Mk200\dry_Mk200",
-			0.446684,
-			1,
-			10
-		};
 		reloadmagazinesound[]=
 		{
 			"rhssaf\addons\rhssaf_sounds\m84\reload_belt_1",
@@ -5754,11 +5377,6 @@ class CfgWeapons
 			dispersion=0.00086999999;
 			recoil="recoil_auto_mk200";
 			recoilProne="recoil_auto_prone_mk200";
-			sounds[]=
-			{
-				"StandardSound",
-				"SilencedSound"
-			};
 			class StandardSound;  //found empty after stripping
 			class SilencedSound;  //found empty after stripping
 			soundContinuous=0;
@@ -6000,10 +5618,6 @@ class CfgWeapons
 				effectName="RocketBackEffectsRPGNT";
 			};
 		};
-		sounds[]=
-		{
-			"StandardSound"
-		};
 		class StandardSound
 		{
 			weaponSoundEffect="DefaultRifle";
@@ -6020,26 +5634,12 @@ class CfgWeapons
 				1
 			};
 		};
-		drySound[]=
-		{
-			"A3\sounds_f\weapons\other\dry6",
-			0.031622801,
-			1,
-			10
-		};
 		reloadMagazineSound[]=
 		{
 			"rhsusf\addons\rhsusf_weapons2\m136\sound\at4prep.ogg",
 			0.56234097,
 			1,
 			50
-		};
-		soundFly[]=
-		{
-			"A3\sounds_f\weapons\rockets\rocket_fly_1",
-			0.316228,
-			1.5,
-			700
 		};
 		magazines[]=
 		{
@@ -6740,10 +6340,6 @@ class CfgWeapons
 		class Single0: Mode_SemiAuto
 		{
 			displayName="CHARGE 0";
-			sounds[]=
-			{
-				"StandardSound"
-			};
 			class StandardSound
 			{
 				begin1[]=
@@ -6774,12 +6370,6 @@ class CfgWeapons
 				1,
 				1,
 				20
-			};
-			soundServo[]=
-			{
-				"",
-				9.9999997e-005,
-				1
 			};
 			reloadTime=1.8;
 			minRange=0;
@@ -6805,10 +6395,6 @@ class CfgWeapons
 			displayName="$STR_A3_mortar_82mm_Burst10";
 			burst=4;
 			aiBurstTerminable=1;
-			sounds[]=
-			{
-				"StandardSound"
-			};
 			class StandardSound
 			{
 				begin1[]=
@@ -6839,12 +6425,6 @@ class CfgWeapons
 				1,
 				1,
 				20
-			};
-			soundServo[]=
-			{
-				"",
-				9.9999997e-005,
-				1
 			};
 			soundBurst=0;
 			reloadTime=1.8;

@@ -819,19 +819,6 @@ class CfgVehicles
 				selection="cabin_light2";
 			};
 		};
-		aggregateReflectors[]=
-		{
-			
-			{
-				"Left",
-				"Left2"
-			},
-			
-			{
-				"Right",
-				"Right2"
-			}
-		};
 		armorLights=0.0099999998;
 		class RenderTargets
 		{
@@ -2036,13 +2023,6 @@ class CfgVehicles
 				headAimDown=22;
 				discreteDistance[]={100,200,300,400,500,600,800,1000,1200,1500};
 				discreteDistanceInitIndex=2;
-				soundServo[]=
-				{
-					"A3\Sounds_F\vehicles\soft\noises\servo_turret_MRAP01",
-					0.17782794,
-					1,
-					10
-				};
 				soundServoVertical[]=
 				{
 					"A3\Sounds_F\vehicles\soft\noises\servo_turret_MRAP01",

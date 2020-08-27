@@ -665,21 +665,6 @@ class CfgVehicles
 				selection="reverse_light";
 			};
 		};
-		aggregateReflectors[]=
-		{
-			
-			{
-				"Left",
-				"Right",
-				"Left2",
-				"Right2"
-			},
-			
-			{
-				"Long_Left2",
-				"Long_Right2"
-			}
-		};
 		armorLights=0.0099999998;
 		class AnimationSources: AnimationSources
 		{

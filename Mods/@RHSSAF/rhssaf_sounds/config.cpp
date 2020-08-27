@@ -6202,11 +6202,6 @@ class CfgWeapons
 	{
 		class Single: Mode_SemiAuto
 		{
-			sounds[]=
-			{
-				"StandardSound",
-				"SilencedSound"
-			};
 			class StandardSound
 			{
 				soundSetShot[]=
@@ -6226,11 +6221,6 @@ class CfgWeapons
 		};
 		class FullAuto: Mode_FullAuto
 		{
-			sounds[]=
-			{
-				"StandardSound",
-				"SilencedSound"
-			};
 			class StandardSound
 			{
 				soundSetShot[]=
@@ -6253,11 +6243,6 @@ class CfgWeapons
 	{
 		class Single: Mode_SemiAuto
 		{
-			sounds[]=
-			{
-				"StandardSound",
-				"SilencedSound"
-			};
 			class StandardSound
 			{
 				soundSetShot[]=
@@ -6381,10 +6366,6 @@ class CfgWeapons
 	{
 		class Single: Single
 		{
-			sounds[]=
-			{
-				"StandardSound"
-			};
 			class StandardSound
 			{
 				soundSetShot[]=
@@ -6396,10 +6377,6 @@ class CfgWeapons
 		};
 		class FullAuto: FullAuto
 		{
-			sounds[]=
-			{
-				"StandardSound"
-			};
 			class StandardSound
 			{
 				soundSetShot[]=
@@ -6414,10 +6391,6 @@ class CfgWeapons
 	{
 		class FullAuto: Mode_FullAuto
 		{
-			sounds[]=
-			{
-				"StandardSound"
-			};
 			class StandardSound
 			{
 				soundSetShot[]=

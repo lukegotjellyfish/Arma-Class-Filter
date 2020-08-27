@@ -4877,11 +4877,6 @@ class CfgWeapons
 	{
 		class Single: Single
 		{
-			sounds[]=
-			{
-				"Standardsound",
-				"SilencedSound"
-			};
 			class StandardSound
 			{
 				soundSetShot[]=
@@ -4906,11 +4901,6 @@ class CfgWeapons
 	{
 		class Single: Mode_SemiAuto
 		{
-			sounds[]=
-			{
-				"Standardsound",
-				"SilencedSound"
-			};
 			class StandardSound
 			{
 				soundSetShot[]=
@@ -4932,11 +4922,6 @@ class CfgWeapons
 		};
 		class FullAuto: Mode_FullAuto
 		{
-			sounds[]=
-			{
-				"Standardsound",
-				"SilencedSound"
-			};
 			class StandardSound
 			{
 				soundSetShot[]=
@@ -4961,11 +4946,6 @@ class CfgWeapons
 	{
 		class Single: Mode_SemiAuto
 		{
-			sounds[]=
-			{
-				"Standardsound",
-				"SilencedSound"
-			};
 			class StandardSound
 			{
 				soundSetShot[]=
@@ -4987,11 +4967,6 @@ class CfgWeapons
 		};
 		class Burst: Mode_Burst
 		{
-			sounds[]=
-			{
-				"Standardsound",
-				"SilencedSound"
-			};
 			class StandardSound
 			{
 				soundSetShot[]=
@@ -5013,11 +4988,6 @@ class CfgWeapons
 		};
 		class FullAuto: Mode_FullAuto
 		{
-			sounds[]=
-			{
-				"Standardsound",
-				"SilencedSound"
-			};
 			class StandardSound
 			{
 				soundSetShot[]=
@@ -5042,11 +5012,6 @@ class CfgWeapons
 	{
 		class Single: Single
 		{
-			sounds[]=
-			{
-				"Standardsound",
-				"SilencedSound"
-			};
 			class StandardSound
 			{
 				soundSetShot[]=
@@ -5068,11 +5033,6 @@ class CfgWeapons
 		};
 		class Burst: Burst
 		{
-			sounds[]=
-			{
-				"Standardsound",
-				"SilencedSound"
-			};
 			class StandardSound
 			{
 				soundSetShot[]=
@@ -5099,11 +5059,6 @@ class CfgWeapons
 		WW2_boltSnapDelay=0.079999998;
 		class FullAuto: Mode_FullAuto
 		{
-			sounds[]=
-			{
-				"StandardSound",
-				"SilencedSound"
-			};
 			class StandardSound
 			{
 				soundSetShot[]=
@@ -5137,11 +5092,6 @@ class CfgWeapons
 		WW2_boltSnapDelay=0.075000003;
 		class FullAuto: Mode_FullAuto
 		{
-			sounds[]=
-			{
-				"StandardSound",
-				"SilencedSound"
-			};
 			class StandardSound
 			{
 				soundSetShot[]=
@@ -5175,10 +5125,6 @@ class CfgWeapons
 		WW2_boltSnapDelay=0.090000004;
 		class manual: Mode_FullAuto
 		{
-			sounds[]=
-			{
-				"StandardSound"
-			};
 			class StandardSound
 			{
 				soundSetShot[]=

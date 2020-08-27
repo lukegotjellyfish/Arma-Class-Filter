@@ -91,117 +91,6 @@ class CfgWeapons
 				iconScale=0.25;
 			};
 		};
-		bullet1[]=
-		{
-			"A3\sounds_f\weapons\shells\9mm\metal_9mm_01",
-			0.50118721,
-			1,
-			15
-		};
-		bullet2[]=
-		{
-			"A3\sounds_f\weapons\shells\9mm\metal_9mm_02",
-			0.50118721,
-			1,
-			15
-		};
-		bullet3[]=
-		{
-			"A3\sounds_f\weapons\shells\9mm\metal_9mm_03",
-			0.50118721,
-			1,
-			15
-		};
-		bullet4[]=
-		{
-			"A3\sounds_f\weapons\shells\9mm\metal_9mm_04",
-			0.50118721,
-			1,
-			15
-		};
-		bullet5[]=
-		{
-			"A3\sounds_f\weapons\shells\9mm\dirt_9mm_01",
-			0.50118721,
-			1,
-			15
-		};
-		bullet6[]=
-		{
-			"A3\sounds_f\weapons\shells\9mm\dirt_9mm_02",
-			0.50118721,
-			1,
-			15
-		};
-		bullet7[]=
-		{
-			"A3\sounds_f\weapons\shells\9mm\dirt_9mm_03",
-			0.50118721,
-			1,
-			15
-		};
-		bullet8[]=
-		{
-			"A3\sounds_f\weapons\shells\9mm\dirt_9mm_04",
-			0.50118721,
-			1,
-			15
-		};
-		bullet9[]=
-		{
-			"A3\sounds_f\weapons\shells\9mm\grass_9mm_01",
-			0.39810717,
-			1,
-			15
-		};
-		bullet10[]=
-		{
-			"A3\sounds_f\weapons\shells\9mm\grass_9mm_02",
-			0.39810717,
-			1,
-			15
-		};
-		bullet11[]=
-		{
-			"A3\sounds_f\weapons\shells\9mm\grass_9mm_03",
-			0.39810717,
-			1,
-			15
-		};
-		bullet12[]=
-		{
-			"A3\sounds_f\weapons\shells\9mm\grass_9mm_04",
-			0.39810717,
-			1,
-			15
-		};
-		soundBullet[]=
-		{
-			"bullet1",
-			0.082999997,
-			"bullet2",
-			0.082999997,
-			"bullet3",
-			0.082999997,
-			"bullet4",
-			0.082999997,
-			"bullet5",
-			0.082999997,
-			"bullet6",
-			0.082999997,
-			"bullet7",
-			0.082999997,
-			"bullet8",
-			0.082999997,
-			"bullet9",
-			0.082999997,
-			"bullet10",
-			0.082999997,
-			"bullet11",
-			0.082999997,
-			"bullet12",
-			0.082999997
-		};
 		distanceZoomMin=100;
 		distanceZoomMax=100;
 		modes[]=
@@ -210,13 +99,6 @@ class CfgWeapons
 			"Burst",
 			"FullAuto"
 		};
-		drySound[]=
-		{
-			"A3\Sounds_F\arsenal\weapons\SMG\Sting\Dry_Sting",
-			0.25118864,
-			1,
-			10
-		};
 		reloadMagazineSound[]=
 		{
 			"A3\Sounds_F\arsenal\weapons\SMG\Sting\reload_sting",
@@ -224,20 +106,8 @@ class CfgWeapons
 			1,
 			10
 		};
-		changeFiremodeSound[]=
-		{
-			"A3\Sounds_F\arsenal\weapons\SMG\Sting\firemode_Sting",
-			0.25118864,
-			1,
-			5
-		};
 		class Single: Mode_SemiAuto
 		{
-			sounds[]=
-			{
-				"StandardSound",
-				"SilencedSound"
-			};
 			class BaseSoundModeType
 			{
 				closure1[]=
@@ -469,11 +339,6 @@ class CfgWeapons
 		};
 		class Burst: Mode_Burst
 		{
-			sounds[]=
-			{
-				"StandardSound",
-				"SilencedSound"
-			};
 			class BaseSoundModeType
 			{
 				closure1[]=
@@ -707,11 +572,6 @@ class CfgWeapons
 		};
 		class FullAuto: Mode_FullAuto
 		{
-			sounds[]=
-			{
-				"StandardSound",
-				"SilencedSound"
-			};
 			class BaseSoundModeType
 			{
 				closure1[]=

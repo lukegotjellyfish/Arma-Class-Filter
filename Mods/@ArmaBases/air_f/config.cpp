@@ -225,14 +225,6 @@ class CfgVehicles
 		memoryPointGun="machinegun_end";
 		lockDetectionSystem="8 + 4";
 		incomingMissileDetectionSystem="8 + 16";
-		aggregateReflectors[]=
-		{
-			
-			{
-				"Left",
-				"Right"
-			}
-		};
 		numberPhysicalWheels=3;
 		memoryPointDriverOptics="slingCamera";
 		class TextureSources
@@ -1911,13 +1903,6 @@ class CfgVehicles
 			0,
 			1
 		};
-		soundGeneralCollision1[]=
-		{
-			"A3\Sounds_F\vehicles\crashes\helis\Heli_coll_default_int_1",
-			1,
-			1,
-			100
-		};
 		soundGeneralCollision2[]=
 		{
 			"A3\Sounds_F\vehicles\crashes\helis\Heli_coll_default_int_2",
@@ -1945,33 +1930,6 @@ class CfgVehicles
 		{
 			"emptySound",
 			0
-		};
-		soundBuildingCrash[]=
-		{
-			"soundGeneralCollision1",
-			1,
-			"soundGeneralCollision2",
-			1,
-			"soundGeneralCollision3",
-			1
-		};
-		soundArmorCrash[]=
-		{
-			"soundGeneralCollision1",
-			1,
-			"soundGeneralCollision2",
-			1,
-			"soundGeneralCollision3",
-			1
-		};
-		soundWoodCrash[]=
-		{
-			"soundGeneralCollision1",
-			1,
-			"soundGeneralCollision2",
-			1,
-			"soundGeneralCollision3",
-			1
 		};
 		soundBushCollision1[]=
 		{
@@ -2023,57 +1981,6 @@ class CfgVehicles
 			0.5,
 			"soundWaterCollision2",
 			0.5
-		};
-		soundDammage[]=
-		{
-			"A3\Sounds_F\vehicles\crashes\helis\Heli_crash_default_int_1",
-			10,
-			1
-		};
-		soundGetIn[]=
-		{
-			"A3\Sounds_F\vehicles\air\Heli_Light_02\open",
-			0.56234133,
-			1
-		};
-		soundGetOut[]=
-		{
-			"A3\Sounds_F\vehicles\air\Heli_Light_02\close",
-			1,
-			1,
-			50
-		};
-		soundEngineOnInt[]=
-		{
-			"A3\Sounds_F\vehicles\air\Heli_Light_02\Heli_Light_02_int_start_v2",
-			0.39810717,
-			1
-		};
-		soundEngineOnExt[]=
-		{
-			"A3\Sounds_F\vehicles\air\Heli_Light_02\Heli_Light_02_ext_start_v2",
-			0.79432821,
-			1,
-			600
-		};
-		soundEngineOffInt[]=
-		{
-			"A3\Sounds_F\vehicles\air\Heli_Light_02\Heli_Light_02_int_stop_v2",
-			0.39810717,
-			1
-		};
-		soundEngineOffExt[]=
-		{
-			"A3\Sounds_F\vehicles\air\Heli_Light_02\Heli_Light_02_ext_stop_v2",
-			0.79432821,
-			1,
-			600
-		};
-		soundLocked[]=
-		{
-			"\A3\Sounds_F\weapons\Rockets\opfor_lock_1",
-			1,
-			1
 		};
 		soundIncommingMissile[]=
 		{

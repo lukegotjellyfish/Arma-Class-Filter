@@ -82,13 +82,6 @@ class CfgAmmo
 		model="\A3\Weapons_F_EPC\Ammo\Rocket_03_HE_fly_F.p3d";
 		effectsMissile="RHS_Rocket_Fired";
 		effectsMissileInit="RHS_Rocket_Init";
-		soundFly[]=
-		{
-			"A3\Sounds_F\weapons\Rockets\rocket_fly_2",
-			1,
-			1.5,
-			700
-		};
 		submunitionAmmo="rhs_ammo_s8_penetrator";
 		submunitionDirectionType="SubmunitionModelDirection";
 		submunitionInitialOffset[]={0,0,-0.2};
@@ -118,20 +111,6 @@ class CfgAmmo
 		indirectHitRange=20;
 		explosive=1;
 		allowAgainstInfantry=1;
-		class CamShakeExplode
-		{
-			power=22;
-			duration=2;
-			frequency=20;
-			distance=123.905;
-		};
-		class CamShakeHit
-		{
-			power=110;
-			duration=0.60000002;
-			frequency=20;
-			distance=1;
-		};
 		explosionEffects="RHS_FAE_Explosion";
 	};
 	class rhs_ammo_s8t: rhs_ammo_s8
@@ -170,40 +149,6 @@ class CfgAmmo
 		suppressionRadiusHit=120;
 		sideAirFriction=0.001;
 		thrusttime=0.60000002;
-		class CamShakeExplode
-		{
-			power=24.4;
-			duration=2.2;
-			frequency=20;
-			distance=208.36301;
-		};
-		class CamShakeHit
-		{
-			power=122;
-			duration=0.60000002;
-			frequency=20;
-			distance=1;
-		};
-		class CamShakeFire
-		{
-			power=3.3234601;
-			duration=2.2;
-			frequency=20;
-			distance=88.3629;
-		};
-		class CamShakePlayerFire
-		{
-			power=2;
-			duration=0.1;
-			frequency=20;
-			distance=1;
-		};
-		SoundSetExplosion[]=
-		{
-			"RocketsHeavy_Exp_SoundSet",
-			"RocketsHeavy_Tail_SoundSet",
-			"Explosion_Debris_SoundSet"
-		};
 	};
 	class rhs_ammo_s13of: rhs_ammo_s13b
 	{
@@ -224,20 +169,6 @@ class CfgAmmo
 		indirectHitRange=15;
 		explosive=1;
 		allowAgainstInfantry=1;
-		class CamShakeExplode
-		{
-			power=22;
-			duration=2;
-			frequency=20;
-			distance=123.905;
-		};
-		class CamShakeHit
-		{
-			power=110;
-			duration=0.60000002;
-			frequency=20;
-			distance=1;
-		};
 		explosionEffects="RHS_FAE_Explosion";
 	};
 	class rhs_ammo_s13DF: rhs_ammo_s13D
@@ -286,34 +217,6 @@ class CfgAmmo
 		timetolive=12.5;
 		sideAirFriction=0.0040000002;
 		missileLockMaxDistance=1800;
-		class CamShakeExplode
-		{
-			power=11.4;
-			duration=1.6;
-			frequency=20;
-			distance=140.399;
-		};
-		class CamShakeHit
-		{
-			power=57;
-			duration=0.60000002;
-			frequency=20;
-			distance=1;
-		};
-		class CamShakeFire
-		{
-			power=2.7477;
-			duration=1.6;
-			frequency=20;
-			distance=60.398701;
-		};
-		class CamShakePlayerFire
-		{
-			power=2;
-			duration=0.1;
-			frequency=20;
-			distance=1;
-		};
 	};
 	class rhs_ammo_s5m1: rhs_ammo_s5
 	{
@@ -378,40 +281,6 @@ class CfgAmmo
 		suppressionRadiusHit=150;
 		sideAirFriction=0.055;
 		maxspeed=430;
-		class CamShakeExplode
-		{
-			power=48;
-			duration=3;
-			frequency=20;
-			distance=523.935;
-		};
-		class CamShakeHit
-		{
-			power=240;
-			duration=0.80000001;
-			frequency=20;
-			distance=1;
-		};
-		class CamShakeFire
-		{
-			power=3.9359801;
-			duration=3;
-			frequency=20;
-			distance=123.935;
-		};
-		class CamShakePlayerFire
-		{
-			power=2;
-			duration=0.1;
-			frequency=20;
-			distance=1;
-		};
-		SoundSetExplosion[]=
-		{
-			"BombsHeavy_Exp_SoundSet",
-			"BombsHeavy_Tail_SoundSet",
-			"Explosion_Debris_SoundSet"
-		};
 	};
 	class rhs_ammo_s24: rhs_ammo_s24_base
 	{
@@ -427,34 +296,6 @@ class CfgAmmo
 		indirectHitRange=30;
 		sideAirFriction=0.045000002;
 		maxspeed=700;
-		class CamShakeExplode
-		{
-			power=68;
-			duration=3.5999999;
-			frequency=20;
-			distance=707.513;
-		};
-		class CamShakeHit
-		{
-			power=340;
-			duration=0.80000001;
-			frequency=20;
-			distance=1;
-		};
-		class CamShakeFire
-		{
-			power=4.2940798;
-			duration=3.5999999;
-			frequency=20;
-			distance=147.513;
-		};
-		class CamShakePlayerFire
-		{
-			power=2;
-			duration=0.1;
-			frequency=20;
-			distance=1;
-		};
 	};
 	class rhs_ammo_s25o: rhs_ammo_s25_base
 	{
@@ -591,20 +432,6 @@ class CfgAmmo
 		indirectHit=175;
 		indirectHitRange=15;
 		explosive=1;
-		class CamShakeExplode
-		{
-			power=22;
-			duration=2;
-			frequency=20;
-			distance=403.905;
-		};
-		class CamShakeHit
-		{
-			power=110;
-			duration=0.60000002;
-			frequency=20;
-			distance=1;
-		};
 		explosionEffects="RHS_FAE_Explosion";
 	};
 	class rhs_ammo_9m114m1: rhs_ammo_9m114
@@ -685,20 +512,6 @@ class CfgAmmo
 		indirectHit=175;
 		indirectHitRange=15;
 		explosive=1;
-		class CamShakeExplode
-		{
-			power=22;
-			duration=2;
-			frequency=20;
-			distance=403.905;
-		};
-		class CamShakeHit
-		{
-			power=110;
-			duration=0.60000002;
-			frequency=20;
-			distance=1;
-		};
 		explosionEffects="RHS_FAE_Explosion";
 	};
 	class rhs_ammo_9m120o: rhs_ammo_9m120
@@ -1030,13 +843,6 @@ class CfgAmmo
 		effectsmissile="missile3";
 		cratereffects="AAMissileCrater";
 		explosioneffects="AAMissileExplosion";
-		soundFly[]=
-		{
-			"A3\Sounds_F\weapons\Rockets\rocket_fly_2",
-			1,
-			1.5,
-			700
-		};
 		hit=150;
 		indirecthit=90;
 		indirecthitrange=9;
@@ -1223,20 +1029,6 @@ class CfgAmmo
 		missileLockMaxSpeed=55;
 		cameraViewAvailable=0;
 		effectsMissile="RHS_Rocket_Fired";
-		class CamShakeExplode
-		{
-			power=102;
-			duration=4.5999999;
-			frequency=20;
-			distance=900.66498;
-		};
-		class CamShakeHit
-		{
-			power=510;
-			duration=1;
-			frequency=20;
-			distance=1;
-		};
 	};
 	class rhs_ammo_kh25: rhs_ammo_kh25_base
 	{
@@ -1524,26 +1316,6 @@ class CfgAmmo
 		missileLockMinDistance=1500;
 		missileLockMaxSpeed=55;
 		cameraViewAvailable=0;
-		class CamShakeExplode
-		{
-			power=180;
-			duration=6;
-			frequency=20;
-			distance=1240;
-		};
-		class CamShakeHit
-		{
-			power=900;
-			duration=1;
-			frequency=20;
-			distance=1;
-		};
-		SoundSetExplosion[]=
-		{
-			"BombsHeavy_Exp_SoundSet",
-			"BombsHeavy_Tail_SoundSet",
-			"Explosion_Debris_SoundSet"
-		};
 	};
 	class rhs_ammo_kh29l: rhs_ammo_kh29_base
 	{
@@ -1759,20 +1531,6 @@ class CfgAmmo
 		indirectHit=105;
 		indirectHitRange=10;
 		maxspeed=748;
-		class CamShakeExplode
-		{
-			power=102;
-			duration=4.5999999;
-			frequency=20;
-			distance=1060.67;
-		};
-		class CamShakeHit
-		{
-			power=510;
-			duration=1;
-			frequency=20;
-			distance=1;
-		};
 	};
 	class rhs_ammo_kh38mle: rhs_ammo_kh38m_base
 	{
@@ -1950,36 +1708,9 @@ class CfgAmmo
 		lockType=0;
 		irlock=1;
 		laserlock=1;
-		soundFly[]=
-		{
-			"A3\Sounds_F\arsenal\weapons\Launchers\NLAW\Fly_NLAW",
-			2.5,
-			1.5,
-			10800
-		};
-		SoundSetExplosion[]=
-		{
-			"BombsHeavy_Exp_SoundSet",
-			"BombsHeavy_Tail_SoundSet",
-			"Explosion_Debris_SoundSet"
-		};
 		RHS_yield=50000;
 		RHS_FuseRange=100;
 		RHS_WarheadType="NUKE";
-		class CamShakeExplode
-		{
-			power=140;
-			duration=5.1999998;
-			frequency=20;
-			distance=2011.66;
-		};
-		class CamShakeHit
-		{
-			power=700;
-			duration=1;
-			frequency=20;
-			distance=1;
-		};
 	};
 	class rhs_ammo_kh55sm_nocamo: rhs_ammo_kh55sm
 	{
@@ -2423,26 +2154,6 @@ class CfgAmmo
 		indirectHitRange=25;
 		CraterEffects="RHS_HeavyBombCrater";
 		explosionEffects="RHS_HeavyBombExplosion";
-		SoundSetExplosion[]=
-		{
-			"BombsHeavy_Exp_SoundSet",
-			"BombsHeavy_Tail_SoundSet",
-			"Explosion_Debris_SoundSet"
-		};
-		class CamShakeExplode
-		{
-			power=240;
-			duration=7;
-			frequency=20;
-			distance=2077.1299;
-		};
-		class CamShakeHit
-		{
-			power=1200;
-			duration=1.2;
-			frequency=20;
-			distance=1;
-		};
 		model="\rhsafrf\addons\rhs_airweapons\rhs_m_fab500";
 		proxyShape="\rhsafrf\addons\rhs_airweapons\rhs_m_fab500";
 	};
@@ -2460,26 +2171,6 @@ class CfgAmmo
 		indirectHitRange=25;
 		CraterEffects="RHS_HeavyBombCrater";
 		explosionEffects="RHS_HeavyBombExplosion";
-		SoundSetExplosion[]=
-		{
-			"BombsHeavy_Exp_SoundSet",
-			"BombsHeavy_Tail_SoundSet",
-			"Explosion_Debris_SoundSet"
-		};
-		class CamShakeExplode
-		{
-			power=240;
-			duration=7;
-			frequency=20;
-			distance=2077.1299;
-		};
-		class CamShakeHit
-		{
-			power=1200;
-			duration=1.2;
-			frequency=20;
-			distance=1;
-		};
 	};
 	class rhs_ammo_kab500lk: rhs_ammo_kab500
 	{

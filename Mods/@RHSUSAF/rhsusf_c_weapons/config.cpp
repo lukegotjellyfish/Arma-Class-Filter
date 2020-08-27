@@ -5432,29 +5432,6 @@ class CfgAmmo
 		indirectHit=0;
 		indirectHitRange=0.60000002;
 		cartridge="";
-		class HitEffects
-		{
-			Hit_Foliage_green="ImpactLeavesGreen";
-			Hit_Foliage_Dead="ImpactLeavesDead";
-			Hit_Foliage_Green_big="ImpactLeavesGreenBig";
-			Hit_Foliage_Palm="ImpactLeavesPalm";
-			Hit_Foliage_Pine="ImpactLeavesPine";
-			hitFoliage="ImpactLeaves";
-			hitGlass="ImpactGlass";
-			hitGlassArmored="ImpactGlassThin";
-			hitWood="ImpactWood";
-			hitMetal="ImpactMetal";
-			hitMetalPlate="ImpactMetal";
-			hitBuilding="ImpactPlaster";
-			hitPlastic="ImpactPlastic";
-			hitRubber="ImpactRubber";
-			hitConcrete="ImpactConcrete";
-			hitMan="ImpactEffectsBlood";
-			hitGroundSoft="ImpactEffectsSmall";
-			hitGroundHard="ImpactEffectsHardGround";
-			hitWater="ImpactEffectsWater";
-			hitVirtual="ImpactMetal";
-		};
 	};
 	class rhs_ammo_12g_00buckshot: B_12Gauge_Pellets
 	{
@@ -5482,29 +5459,6 @@ class CfgAmmo
 		caliber=0.23999999;
 		typicalSpeed=403.85999;
 		airFriction=-0.0063399998;
-		class HitEffects
-		{
-			Hit_Foliage_green="ImpactLeavesGreen";
-			Hit_Foliage_Dead="ImpactLeavesDead";
-			Hit_Foliage_Green_big="ImpactLeavesGreenBig";
-			Hit_Foliage_Palm="ImpactLeavesPalm";
-			Hit_Foliage_Pine="ImpactLeavesPine";
-			hitFoliage="ImpactLeaves";
-			hitGlass="ImpactGlass";
-			hitGlassArmored="ImpactGlassThin";
-			hitWood="ImpactWood";
-			hitMetal="ImpactMetal";
-			hitMetalPlate="ImpactMetal";
-			hitBuilding="ImpactPlaster";
-			hitPlastic="ImpactPlastic";
-			hitRubber="ImpactRubber";
-			hitConcrete="ImpactConcrete";
-			hitMan="ImpactEffectsBlood";
-			hitGroundSoft="ImpactEffectsSmall";
-			hitGroundHard="ImpactEffectsHardGround";
-			hitWater="ImpactEffectsWater";
-			hitVirtual="ImpactMetal";
-		};
 	};
 	class rhs_ammo_doomsday_buckshot: rhs_ammo_m576_buckshot
 	{
@@ -5583,20 +5537,6 @@ class CfgAmmo
 			0.25
 		};
 		explosionSoundEffect="DefaultExplosion";
-		class CamShakeExplode
-		{
-			power="(9*0.2)";
-			duration="((round (9^0.5))*0.2 max 0.2)";
-			frequency=20;
-			distance="((1 + 9^0.5)*8)";
-		};
-		class CamShakeHit
-		{
-			power=9;
-			duration="((round (9^0.25))*0.2 max 0.2)";
-			frequency=20;
-			distance=1;
-		};
 	};
 	class rhs_ammo_12g_HE: rhs_ammo_12g_FRAG
 	{
@@ -5625,29 +5565,6 @@ class CfgAmmo
 		caliber=0.86666697;
 		cartridge="";
 		model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";
-		class HitEffects
-		{
-			hitMetal="ImpactMetalSabotSmall";
-			hitMetalPlate="ImpactMetalSabotSmall";
-			hitBuilding="ImpactConcreteSabotSmall";
-			hitConcrete="ImpactConcreteSabotSmall";
-			hitGroundSoft="ImpactEffectsGroundSabot";
-			hitGroundHard="ImpactEffectsGroundSabot";
-			Hit_Foliage_green="ImpactLeavesGreen";
-			Hit_Foliage_Dead="ImpactLeavesDead";
-			Hit_Foliage_Green_big="ImpactLeavesGreenBig";
-			Hit_Foliage_Palm="ImpactLeavesPalm";
-			Hit_Foliage_Pine="ImpactLeavesPine";
-			hitFoliage="ImpactLeaves";
-			hitGlass="ImpactGlass";
-			hitGlassArmored="ImpactGlassThin";
-			hitWood="ImpactWood";
-			hitPlastic="ImpactPlastic";
-			hitRubber="ImpactRubber";
-			hitMan="ImpactEffectsBlood";
-			hitWater="ImpactEffectsWater";
-			default_mat="ImpactEffectsGroundSabot";
-		};
 	};
 	class rhs_ammo_45ACP_MHP: BulletBase
 	{
@@ -5763,19 +5680,6 @@ class CfgAmmo
 		explosionEffects="ATRocketExplosion";
 		effectsMissileInit="RocketBackEffectsRPG";
 		effectsMissile="missile3";
-		class CamShakeFire
-		{
-			power=10;
-			duration=0.5;
-			frequency=20;
-			distance=30;
-		};
-		class CamShakePlayerFire
-		{
-			power=5;
-			duration=0.1;
-			frequency=20;
-		};
 	};
 	class rhs_ammo_M136_penetrator: rhsusf_ammo_basic_penetrator
 	{
@@ -6103,13 +6007,6 @@ class CfgAmmo
 			1,
 			1200
 		};
-		soundFly[]=
-		{
-			"A3\Sounds_F\weapons\Rockets\new_rocket_6",
-			5.6234136,
-			1,
-			35
-		};
 		model="rhsusf\addons\rhsusf_weapons2\smaw\rocket_smaw.p3d";
 		hit=260;
 		indirectHit=11;
@@ -6133,34 +6030,6 @@ class CfgAmmo
 		timeToLive=25;
 		maneuvrability=0;
 		allowAgainstInfantry=0;
-		class CamShakeExplode
-		{
-			power="(55*0.2)";
-			duration="((round (55^0.5))*0.2 max 0.2)";
-			frequency=20;
-			distance="((5 + 55^0.5)*8)";
-		};
-		class CamShakeHit
-		{
-			power=110;
-			duration="((round (110^0.25))*0.2 max 0.2)";
-			frequency=20;
-			distance=1;
-		};
-		class CamShakeFire
-		{
-			power="(20^0.25)";
-			duration="((round (20^0.5))*0.2 max 0.2)";
-			frequency=20;
-			distance="((20^0.5)*8)";
-		};
-		class CamShakePlayerFire
-		{
-			power=0.1;
-			duration=0.2;
-			frequency=8;
-			distance=1;
-		};
 	};
 	class rhs_ammo_smaw_HEAA_penetrator: rhsusf_ammo_basic_penetrator
 	{
@@ -6182,13 +6051,6 @@ class CfgAmmo
 			10,
 			1,
 			1200
-		};
-		soundFly[]=
-		{
-			"A3\Sounds_F\weapons\Rockets\new_rocket_6",
-			5.6234136,
-			1,
-			35
 		};
 		model="rhsusf\addons\rhsusf_weapons2\smaw\rocket_smaw.p3d";
 		hit=150;
@@ -6213,34 +6075,6 @@ class CfgAmmo
 		timeToLive=25;
 		maneuvrability=0;
 		allowAgainstInfantry=1;
-		class CamShakeExplode
-		{
-			power="(55*0.2)";
-			duration="((round (55^0.5))*0.2 max 0.2)";
-			frequency=20;
-			distance="((5 + 55^0.5)*8)";
-		};
-		class CamShakeHit
-		{
-			power=110;
-			duration="((round (110^0.25))*0.2 max 0.2)";
-			frequency=20;
-			distance=1;
-		};
-		class CamShakeFire
-		{
-			power="(20^0.25)";
-			duration="((round (20^0.5))*0.2 max 0.2)";
-			frequency=20;
-			distance="((20^0.5)*8)";
-		};
-		class CamShakePlayerFire
-		{
-			power=0.1;
-			duration=0.2;
-			frequency=8;
-			distance=1;
-		};
 	};
 	class rhs_ammo_smaw_HEDP_penetrator: rhs_ammo_M136_penetrator
 	{
@@ -6281,34 +6115,6 @@ class CfgAmmo
 		timeToLive=25;
 		maneuvrability=0;
 		allowAgainstInfantry=1;
-		class CamShakeExplode
-		{
-			power="(55*0.2)";
-			duration="((round (55^0.5))*0.2 max 0.2)";
-			frequency=20;
-			distance="((5 + 55^0.5)*8)";
-		};
-		class CamShakeHit
-		{
-			power=110;
-			duration="((round (110^0.25))*0.2 max 0.2)";
-			frequency=20;
-			distance=1;
-		};
-		class CamShakeFire
-		{
-			power="(5^0.25)";
-			duration="((round (20^0.5))*0.2 max 0.2)";
-			frequency=20;
-			distance="((20^0.5)*8)";
-		};
-		class CamShakePlayerFire
-		{
-			power=0.1;
-			duration=0.2;
-			frequency=8;
-			distance=1;
-		};
 	};
 	class rhs_ammo_maaws_HEAT: RocketBase
 	{
@@ -6360,13 +6166,6 @@ class CfgAmmo
 			"soundHit4",
 			0.25
 		};
-		soundFly[]=
-		{
-			"A3\Sounds_F\arsenal\weapons_static\Missile_Launcher\rocket_fly",
-			1.1,
-			1.1,
-			900
-		};
 		model="rhsusf\addons\rhsusf_weapons2\m3maaws\ammo_m3maaws.p3d";
 		hit=270;
 		indirectHit=15;
@@ -6390,34 +6189,6 @@ class CfgAmmo
 		timeToLive=25;
 		maneuvrability=0;
 		allowAgainstInfantry=0;
-		class CamShakeExplode
-		{
-			power="(55*0.2)";
-			duration="((round (55^0.5))*0.2 max 0.2)";
-			frequency=20;
-			distance="((5 + 55^0.5)*8)";
-		};
-		class CamShakeHit
-		{
-			power=110;
-			duration="((round (110^0.25))*0.2 max 0.2)";
-			frequency=20;
-			distance=1;
-		};
-		class CamShakeFire
-		{
-			power=5;
-			duration="((round (20^0.5))*0.2 max 0.2)";
-			frequency=20;
-			distance="((20^0.5)*8)";
-		};
-		class CamShakePlayerFire
-		{
-			power=2;
-			duration=0.2;
-			frequency=8;
-			distance=1;
-		};
 		visibleFire=15;
 		audibleFire=20;
 	};
@@ -6475,13 +6246,6 @@ class CfgAmmo
 			"soundHit4",
 			0.25
 		};
-		soundFly[]=
-		{
-			"A3\Sounds_F\arsenal\weapons_static\Missile_Launcher\rocket_fly",
-			1.1,
-			1.1,
-			900
-		};
 		model="rhsusf\addons\rhsusf_weapons2\m3maaws\ammo_m3maaws.p3d";
 		hit=250;
 		indirectHit=45;
@@ -6504,34 +6268,6 @@ class CfgAmmo
 		timeToLive=25;
 		maneuvrability=0;
 		allowAgainstInfantry=1;
-		class CamShakeExplode
-		{
-			power="(55*0.2)";
-			duration="((round (55^0.5))*0.2 max 0.2)";
-			frequency=20;
-			distance="((5 + 55^0.5)*8)";
-		};
-		class CamShakeHit
-		{
-			power=110;
-			duration="((round (110^0.25))*0.2 max 0.2)";
-			frequency=20;
-			distance=1;
-		};
-		class CamShakeFire
-		{
-			power=5;
-			duration="((round (20^0.5))*0.2 max 0.2)";
-			frequency=20;
-			distance="((20^0.5)*8)";
-		};
-		class CamShakePlayerFire
-		{
-			power=2;
-			duration=0.2;
-			frequency=8;
-			distance=1;
-		};
 		visibleFire=15;
 		audibleFire=20;
 	};
@@ -6581,13 +6317,6 @@ class CfgAmmo
 			"soundHit4",
 			0.25
 		};
-		soundFly[]=
-		{
-			"A3\Sounds_F\arsenal\weapons_static\Missile_Launcher\rocket_fly",
-			1.1,
-			1.1,
-			900
-		};
 		model="rhsusf\addons\rhsusf_weapons2\m3maaws\ammo_m3maaws.p3d";
 		hit=75;
 		indirectHit=65;
@@ -6610,34 +6339,6 @@ class CfgAmmo
 		timeToLive=25;
 		maneuvrability=0;
 		allowAgainstInfantry=1;
-		class CamShakeExplode
-		{
-			power="(55*0.2)";
-			duration="((round (55^0.5))*0.2 max 0.2)";
-			frequency=20;
-			distance="((5 + 55^0.5)*8)";
-		};
-		class CamShakeHit
-		{
-			power=110;
-			duration="((round (110^0.25))*0.2 max 0.2)";
-			frequency=20;
-			distance=1;
-		};
-		class CamShakeFire
-		{
-			power=5;
-			duration="((round (20^0.5))*0.2 max 0.2)";
-			frequency=20;
-			distance="((20^0.5)*8)";
-		};
-		class CamShakePlayerFire
-		{
-			power=2;
-			duration=0.2;
-			frequency=8;
-			distance=1;
-		};
 		visibleFire=15;
 		audibleFire=20;
 	};
@@ -6683,13 +6384,6 @@ class CfgAmmo
 			"soundHit4",
 			0.25
 		};
-		soundFly[]=
-		{
-			"A3\Sounds_F\arsenal\weapons_static\Missile_Launcher\rocket_fly",
-			1.1,
-			1.1,
-			900
-		};
 		model="rhsusf\addons\rhsusf_weapons2\m3maaws\ammo_m3maaws.p3d";
 		hit=30;
 		indirectHit=0;
@@ -6713,34 +6407,6 @@ class CfgAmmo
 		timeToLive=25;
 		maneuvrability=0;
 		allowAgainstInfantry=0;
-		class CamShakeExplode
-		{
-			power="(55*0.2)";
-			duration="((round (55^0.5))*0.2 max 0.2)";
-			frequency=20;
-			distance="((5 + 55^0.5)*8)";
-		};
-		class CamShakeHit
-		{
-			power=110;
-			duration="((round (110^0.25))*0.2 max 0.2)";
-			frequency=20;
-			distance=1;
-		};
-		class CamShakeFire
-		{
-			power=5;
-			duration="((round (20^0.5))*0.2 max 0.2)";
-			frequency=20;
-			distance="((20^0.5)*8)";
-		};
-		class CamShakePlayerFire
-		{
-			power=2;
-			duration=0.2;
-			frequency=8;
-			distance=1;
-		};
 		visibleFire=15;
 		audibleFire=20;
 	};
@@ -6786,13 +6452,6 @@ class CfgAmmo
 			"soundHit4",
 			0.25
 		};
-		soundFly[]=
-		{
-			"A3\Sounds_F\arsenal\weapons_static\Missile_Launcher\rocket_fly",
-			1.1,
-			1.1,
-			900
-		};
 		model="rhsusf\addons\rhsusf_weapons2\m3maaws\ammo_m3maaws.p3d";
 		hit=30;
 		indirectHit=0;
@@ -6816,34 +6475,6 @@ class CfgAmmo
 		timeToLive=25;
 		maneuvrability=0;
 		allowAgainstInfantry=0;
-		class CamShakeExplode
-		{
-			power="(55*0.2)";
-			duration="((round (55^0.5))*0.2 max 0.2)";
-			frequency=20;
-			distance="((5 + 55^0.5)*8)";
-		};
-		class CamShakeHit
-		{
-			power=110;
-			duration="((round (110^0.25))*0.2 max 0.2)";
-			frequency=20;
-			distance=1;
-		};
-		class CamShakeFire
-		{
-			power=5;
-			duration="((round (20^0.5))*0.2 max 0.2)";
-			frequency=20;
-			distance="((20^0.5)*8)";
-		};
-		class CamShakePlayerFire
-		{
-			power=2;
-			duration=0.2;
-			frequency=8;
-			distance=1;
-		};
 		visibleFire=15;
 		audibleFire=20;
 	};
@@ -6910,12 +6541,6 @@ class CfgAmmo
 			1,
 			2000
 		};
-		SoundSetExplosion[]=
-		{
-			"ATmine_Exp_SoundSet",
-			"ATmine_Tail_SoundSet",
-			"Explosion_Debris_SoundSet"
-		};
 		explosionEffects="ATMineExplosion";
 		CraterEffects="ATMineCrater";
 		whistleDist=8;
@@ -6981,20 +6606,6 @@ class CfgAmmo
 		explosionEffects="";
 		rhs_flare_used="rhsusf_mine_m49a1_used";
 		rhs_flare_offset[]={0,0,0.30000001};
-		class CamShakeExplode
-		{
-			power=0;
-			duration=0.2;
-			frequency=20;
-			distance=0;
-		};
-		class CamShakeHit
-		{
-			power=0;
-			duration=0.2;
-			frequency=20;
-			distance=1;
-		};
 		model="\rhsusf\addons\rhsusf_weapons\mines\rhsusf_m49a1_a_e";
 		mineModelDisabled="\rhsusf\addons\rhsusf_weapons\mines\rhsusf_m49a1_d";
 		defaultMagazine="rhsusf_mine_m49a1_3m_mag";
@@ -7094,49 +6705,6 @@ class CfgAmmo
 		explosionSoundEffect="";
 		simulation="shotShell";
 		model="\A3\weapons_f\ammo\UGL_slug";
-		class HitEffects
-		{
-			hitMetal="RHSUSF_40mmPracticePuff";
-			hitMetalPlate="RHSUSF_40mmPracticePuff";
-			hitBuilding="RHSUSF_40mmPracticePuff";
-			hitConcrete="RHSUSF_40mmPracticePuff";
-			hitGroundSoft="RHSUSF_40mmPracticePuff";
-			hitGroundHard="RHSUSF_40mmPracticePuff";
-			Hit_Foliage_green="RHSUSF_40mmPracticePuff";
-			Hit_Foliage_Dead="RHSUSF_40mmPracticePuff";
-			Hit_Foliage_Green_big="RHSUSF_40mmPracticePuff";
-			Hit_Foliage_Palm="RHSUSF_40mmPracticePuff";
-			Hit_Foliage_Pine="RHSUSF_40mmPracticePuff";
-			hitFoliage="RHSUSF_40mmPracticePuff";
-			hitGlass="RHSUSF_40mmPracticePuff";
-			hitGlassArmored="RHSUSF_40mmPracticePuff";
-			hitWood="RHSUSF_40mmPracticePuff";
-			hitPlastic="RHSUSF_40mmPracticePuff";
-			hitRubber="RHSUSF_40mmPracticePuff";
-			hitMan="RHSUSF_40mmPracticePuff";
-			hitWater="ImpactEffectsWater";
-		};
-		class CamShakeHit
-		{
-			power=20;
-			duration="((round (20^0.25))*0.2 max 0.2)";
-			frequency=20;
-			distance=1;
-		};
-		class CamShakeFire
-		{
-			power="(0^0.25)";
-			duration="((round (0^0.5))*0.2 max 0.2)";
-			frequency=20;
-			distance="((0^0.5)*8)";
-		};
-		class CamShakePlayerFire
-		{
-			power=0;
-			duration=0.1;
-			frequency=20;
-			distance=1;
-		};
 	};
 	class rhsusf_40mm_white: F_40mm_White
 	{
@@ -7162,25 +6730,6 @@ class CfgAmmo
 	class rhs_ammo_m397: rhsusf_40mm_HE
 	{
 		deflecting=90;
-		class HitEffects
-		{
-			hitMetal="RHS_m397_hit";
-			hitMetalPlate="RHS_m397_hit";
-			hitBuilding="RHS_m397_hit";
-			hitConcrete="RHS_m397_hit";
-			hitGroundSoft="RHS_m397_hit";
-			hitGroundHard="RHS_m397_hit";
-			default_mat="RHS_m397_hit";
-			hitFoliage="RHS_m397_hit";
-			hitGlass="RHS_m397_hit";
-			hitGlassArmored="RHS_m397_hit";
-			hitWood="RHS_m397_hit";
-			hitPlastic="RHS_m397_hit";
-			hitRubber="RHS_m397_hit";
-			hitMan="RHS_m397_hit";
-			hitWater="RHS_m397_hit";
-			hitVirtual="RHS_m397_hit";
-		};
 		typicalspeed=75;
 		deleteParentWhenTriggered=1;
 		submunitionAmmo="rhs_ammo_m397_explosion";
@@ -7322,29 +6871,6 @@ class CfgAmmo
 		hitMetalplate[]={};
 		hitWater[]={};
 		bulletFly[]={};
-		class HitEffects
-		{
-			hitMetal="";
-			hitMetalPlate="";
-			hitBuilding="";
-			hitConcrete="";
-			hitGroundSoft="";
-			hitGroundHard="";
-			Hit_Foliage_green="";
-			Hit_Foliage_Dead="";
-			Hit_Foliage_Green_big="";
-			Hit_Foliage_Palm="";
-			Hit_Foliage_Pine="";
-			hitFoliage="";
-			hitGlass="";
-			hitGlassArmored="";
-			hitWood="";
-			hitPlastic="";
-			hitRubber="";
-			hitMan="";
-			hitWater="";
-			default_mat="";
-		};
 	};
 	class rhs_ammo_m7a3_cs: GrenadeHand
 	{
@@ -9967,20 +9493,6 @@ class CfgWeapons
 		};
 		discreteDistance[]={0};
 		discreteDistanceInitIndex=0;
-		drySound[]=
-		{
-			"A3\Sounds_F\arsenal\weapons\Rifles\MX\dry_Mx",
-			0.56234097,
-			1,
-			10
-		};
-		changeFiremodeSound[]=
-		{
-			"A3\sounds_f\weapons\closure\firemode_changer_2",
-			0.55118901,
-			1,
-			5
-		};
 		class Safe: Mode_SemiAuto
 		{
 			sounds[]={};
@@ -10010,20 +9522,6 @@ class CfgWeapons
 		};
 		discreteDistance[]={0};
 		discreteDistanceInitIndex=0;
-		drySound[]=
-		{
-			"A3\Sounds_F\arsenal\weapons\Rifles\MX\dry_Mx",
-			0.56234097,
-			1,
-			10
-		};
-		changeFiremodeSound[]=
-		{
-			"A3\sounds_f\weapons\closure\firemode_changer_2",
-			0.55118901,
-			1,
-			5
-		};
 		reloadTime=2.5;
 		magazineReloadTime=2.5;
 		class Safe: Mode_SemiAuto
@@ -10125,11 +9623,6 @@ class CfgWeapons
 			1,
 			1
 		};
-		soundBullet[]=
-		{
-			"caseless",
-			1
-		};
 		modes[]=
 		{
 			"Single",
@@ -10166,12 +9659,6 @@ class CfgWeapons
 		};
 		aiDispersionCoefY=10;
 		aiDispersionCoefX=8;
-		drySound[]=
-		{
-			"A3\sounds_f\weapons\Other\dry_1",
-			0.0099999998,
-			1
-		};
 		reloadMagazineSound[]=
 		{
 			"A3\Sounds_F\arsenal\weapons\Rifles\Katiba\Katiba_UGL_reload",
@@ -10303,11 +9790,6 @@ class CfgWeapons
 			1,
 			1
 		};
-		soundBullet[]=
-		{
-			"caseless",
-			1
-		};
 		modes[]=
 		{
 			"Single",
@@ -10366,12 +9848,6 @@ class CfgWeapons
 		};
 		aiDispersionCoefY=10;
 		aiDispersionCoefX=8;
-		drySound[]=
-		{
-			"A3\sounds_f\weapons\Other\dry_1",
-			0.0099999998,
-			1
-		};
 		reloadMagazineSound[]=
 		{
 			"A3\sounds_f\weapons\M320\M320_reload",
@@ -10823,117 +10299,6 @@ class CfgWeapons
 			class MuzzleSlot: rhs_western_rifle_muzzle_slot;  //found empty after stripping
 			class GripodSlot: rhs_western_rifle_gripod_slot;  //found empty after stripping
 		};
-		bullet1[]=
-		{
-			"A3\sounds_f\weapons\shells\5_56\metal_556_01.wss",
-			0.1,
-			1,
-			15
-		};
-		bullet2[]=
-		{
-			"A3\sounds_f\weapons\shells\5_56\metal_556_02.wss",
-			0.1,
-			1,
-			15
-		};
-		bullet3[]=
-		{
-			"A3\sounds_f\weapons\shells\5_56\metal_556_03.wss",
-			0.177828,
-			1,
-			15
-		};
-		bullet4[]=
-		{
-			"A3\sounds_f\weapons\shells\5_56\metal_556_04.wss",
-			0.177828,
-			1,
-			15
-		};
-		bullet5[]=
-		{
-			"A3\sounds_f\weapons\shells\5_56\asphlat_556_01.wss",
-			0.1,
-			1,
-			15
-		};
-		bullet6[]=
-		{
-			"A3\sounds_f\weapons\shells\5_56\asphlat_556_02.wss",
-			0.1,
-			1,
-			15
-		};
-		bullet7[]=
-		{
-			"A3\sounds_f\weapons\shells\5_56\asphlat_556_03.wss",
-			0.1,
-			1,
-			15
-		};
-		bullet8[]=
-		{
-			"A3\sounds_f\weapons\shells\5_56\asphlat_556_04.wss",
-			0.1,
-			1,
-			15
-		};
-		bullet9[]=
-		{
-			"A3\sounds_f\weapons\shells\5_56\grass_556_01.wss",
-			0.0099999998,
-			1,
-			15
-		};
-		bullet10[]=
-		{
-			"A3\sounds_f\weapons\shells\5_56\grass_556_02.wss",
-			0.0099999998,
-			1,
-			15
-		};
-		bullet11[]=
-		{
-			"A3\sounds_f\weapons\shells\5_56\grass_556_03.wss",
-			0.0099999998,
-			1,
-			15
-		};
-		bullet12[]=
-		{
-			"A3\sounds_f\weapons\shells\5_56\grass_556_04.wss",
-			0.0099999998,
-			1,
-			15
-		};
-		soundBullet[]=
-		{
-			"bullet1",
-			0.082999997,
-			"bullet2",
-			0.082999997,
-			"bullet3",
-			0.082999997,
-			"bullet4",
-			0.082999997,
-			"bullet5",
-			0.082999997,
-			"bullet6",
-			0.082999997,
-			"bullet7",
-			0.082999997,
-			"bullet8",
-			0.082999997,
-			"bullet9",
-			0.082999997,
-			"bullet10",
-			0.082999997,
-			"bullet11",
-			0.082999997,
-			"bullet12",
-			0.082999997
-		};
 		modes[]=
 		{
 			"Single",
@@ -10944,11 +10309,6 @@ class CfgWeapons
 		};
 		class Single: Mode_SemiAuto
 		{
-			sounds[]=
-			{
-				"StandardSound",
-				"SilencedSound"
-			};
 			reloadTime=0.075000003;
 			dispersion=0.00087270001;
 			minRange=2;
@@ -10973,11 +10333,6 @@ class CfgWeapons
 		};
 		class Burst: Mode_Burst
 		{
-			sounds[]=
-			{
-				"StandardSound",
-				"SilencedSound"
-			};
 			reloadTime=0.075000003;
 			dispersion=0.0022;
 			minRange=1;
@@ -10989,11 +10344,6 @@ class CfgWeapons
 		};
 		class FullAuto: Mode_FullAuto
 		{
-			sounds[]=
-			{
-				"StandardSound",
-				"SilencedSound"
-			};
 			reloadTime=0.075000003;
 			dispersion=0.0022;
 			minRange=0;
@@ -11197,10 +10547,6 @@ class CfgWeapons
 				maxRangeProbab=0.30000001;
 				aiRateOfFire=1;
 				aiRateOfFireDistance=30;
-				sounds[]=
-				{
-					"StandardSound"
-				};
 				class StandardSound
 				{
 					soundSetShot[]=
@@ -11220,13 +10566,6 @@ class CfgWeapons
 			cameraDir="eye_look";
 		};
 		magazineReloadSwitchPhase=0.46000001;
-		changeFiremodeSound[]=
-		{
-			"A3\sounds_f\weapons\closure\firemode_changer_2",
-			0.55118901,
-			1,
-			5
-		};
 	};
 	class rhs_weap_m4: rhs_weap_m4_Base
 	{
@@ -15397,123 +14736,6 @@ class CfgWeapons
 				effectName="RHSUSF_BarrelRefractHeavy";
 			};
 		};
-		bullet1[]=
-		{
-			"A3\sounds_f\weapons\shells\5_56\metal_556_01.wss",
-			0.1,
-			1,
-			15
-		};
-		bullet2[]=
-		{
-			"A3\sounds_f\weapons\shells\5_56\metal_556_02.wss",
-			0.1,
-			1,
-			15
-		};
-		bullet3[]=
-		{
-			"A3\sounds_f\weapons\shells\5_56\metal_556_03.wss",
-			0.177828,
-			1,
-			15
-		};
-		bullet4[]=
-		{
-			"A3\sounds_f\weapons\shells\5_56\metal_556_04.wss",
-			0.177828,
-			1,
-			15
-		};
-		bullet5[]=
-		{
-			"A3\sounds_f\weapons\shells\5_56\asphlat_556_01.wss",
-			0.1,
-			1,
-			15
-		};
-		bullet6[]=
-		{
-			"A3\sounds_f\weapons\shells\5_56\asphlat_556_02.wss",
-			0.1,
-			1,
-			15
-		};
-		bullet7[]=
-		{
-			"A3\sounds_f\weapons\shells\5_56\asphlat_556_03.wss",
-			0.1,
-			1,
-			15
-		};
-		bullet8[]=
-		{
-			"A3\sounds_f\weapons\shells\5_56\asphlat_556_04.wss",
-			0.1,
-			1,
-			15
-		};
-		bullet9[]=
-		{
-			"A3\sounds_f\weapons\shells\5_56\grass_556_01.wss",
-			0.0099999998,
-			1,
-			15
-		};
-		bullet10[]=
-		{
-			"A3\sounds_f\weapons\shells\5_56\grass_556_02.wss",
-			0.0099999998,
-			1,
-			15
-		};
-		bullet11[]=
-		{
-			"A3\sounds_f\weapons\shells\5_56\grass_556_03.wss",
-			0.0099999998,
-			1,
-			15
-		};
-		bullet12[]=
-		{
-			"A3\sounds_f\weapons\shells\5_56\grass_556_04.wss",
-			0.0099999998,
-			1,
-			15
-		};
-		soundBullet[]=
-		{
-			"bullet1",
-			0.082999997,
-			"bullet2",
-			0.082999997,
-			"bullet3",
-			0.082999997,
-			"bullet4",
-			0.082999997,
-			"bullet5",
-			0.082999997,
-			"bullet6",
-			0.082999997,
-			"bullet7",
-			0.082999997,
-			"bullet8",
-			0.082999997,
-			"bullet9",
-			0.082999997,
-			"bullet10",
-			0.082999997,
-			"bullet11",
-			0.082999997,
-			"bullet12",
-			0.082999997
-		};
-		drySound[]=
-		{
-			"A3\sounds_f\weapons\Other\dry_1",
-			0.0099999998,
-			1
-		};
 		reloadMagazineSound[]=
 		{
 			"A3\sounds_f\weapons\reloads\new_MX",
@@ -15692,117 +14914,6 @@ class CfgWeapons
 		class Library
 		{
 			libTextDesc="The M249 provides infantry squads with the heavy volume of fire of a machine gun combined with accuracy and portability approaching that of a rifle.";
-		};
-		bullet1[]=
-		{
-			"A3\sounds_f\weapons\shells\5_56\metal_556_01.wss",
-			0.1,
-			1,
-			15
-		};
-		bullet2[]=
-		{
-			"A3\sounds_f\weapons\shells\5_56\metal_556_02.wss",
-			0.1,
-			1,
-			15
-		};
-		bullet3[]=
-		{
-			"A3\sounds_f\weapons\shells\5_56\metal_556_03.wss",
-			0.177828,
-			1,
-			15
-		};
-		bullet4[]=
-		{
-			"A3\sounds_f\weapons\shells\5_56\metal_556_04.wss",
-			0.177828,
-			1,
-			15
-		};
-		bullet5[]=
-		{
-			"A3\sounds_f\weapons\shells\5_56\asphlat_556_01.wss",
-			0.1,
-			1,
-			15
-		};
-		bullet6[]=
-		{
-			"A3\sounds_f\weapons\shells\5_56\asphlat_556_02.wss",
-			0.1,
-			1,
-			15
-		};
-		bullet7[]=
-		{
-			"A3\sounds_f\weapons\shells\5_56\asphlat_556_03.wss",
-			0.1,
-			1,
-			15
-		};
-		bullet8[]=
-		{
-			"A3\sounds_f\weapons\shells\5_56\asphlat_556_04.wss",
-			0.1,
-			1,
-			15
-		};
-		bullet9[]=
-		{
-			"A3\sounds_f\weapons\shells\5_56\grass_556_01.wss",
-			0.0099999998,
-			1,
-			15
-		};
-		bullet10[]=
-		{
-			"A3\sounds_f\weapons\shells\5_56\grass_556_02.wss",
-			0.0099999998,
-			1,
-			15
-		};
-		bullet11[]=
-		{
-			"A3\sounds_f\weapons\shells\5_56\grass_556_03.wss",
-			0.0099999998,
-			1,
-			15
-		};
-		bullet12[]=
-		{
-			"A3\sounds_f\weapons\shells\5_56\grass_556_04.wss",
-			0.0099999998,
-			1,
-			15
-		};
-		soundBullet[]=
-		{
-			"bullet1",
-			0.082999997,
-			"bullet2",
-			0.082999997,
-			"bullet3",
-			0.082999997,
-			"bullet4",
-			0.082999997,
-			"bullet5",
-			0.082999997,
-			"bullet6",
-			0.082999997,
-			"bullet7",
-			0.082999997,
-			"bullet8",
-			0.082999997,
-			"bullet9",
-			0.082999997,
-			"bullet10",
-			0.082999997,
-			"bullet11",
-			0.082999997,
-			"bullet12",
-			0.082999997
 		};
 		modes[]=
 		{
@@ -16634,13 +15745,6 @@ class CfgWeapons
 		cursorAim="EmptyCursor";
 		nameSound="Mgun";
 		reloadAction="GestureReloadMMG02";
-		changeFiremodeSound[]=
-		{
-			"A3\sounds_f\weapons\closure\firemode_changer_2",
-			0.55118901,
-			1,
-			5
-		};
 		discreteDistance[]={200,300,400,500,600,700,800};
 		discreteDistanceCameraPoint[]=
 		{
@@ -17964,11 +17068,6 @@ class CfgWeapons
 			1,
 			1
 		};
-		soundBullet[]=
-		{
-			"caseless",
-			1
-		};
 		modes[]=
 		{
 			"Single",
@@ -17978,10 +17077,6 @@ class CfgWeapons
 		};
 		class Single: Mode_SemiAuto
 		{
-			sounds[]=
-			{
-				"StandardSound"
-			};
 			class StandardSound
 			{
 				weaponSoundEffect="DefaultRifle";
@@ -18057,12 +17152,6 @@ class CfgWeapons
 		};
 		aiDispersionCoefY=10;
 		aiDispersionCoefX=8;
-		drySound[]=
-		{
-			"A3\sounds_f\weapons\Other\dry_1",
-			0.0099999998,
-			1
-		};
 	};
 	class rhs_weap_m32: rhs_weap_m32_Base_F
 	{
@@ -18156,11 +17245,6 @@ class CfgWeapons
 			1,
 			1
 		};
-		soundBullet[]=
-		{
-			"caseless",
-			1
-		};
 		selectionfireanim="zasleh";
 		hiddenSelections[]=
 		{
@@ -18207,13 +17291,6 @@ class CfgWeapons
 		};
 		aiDispersionCoefY=6;
 		aiDispersionCoefX=4;
-		drySound[]=
-		{
-			"A3\sounds_f\weapons\Other\dry_1",
-			0.56234133,
-			1,
-			10
-		};
 		reloadMagazineSound[]=
 		{
 			"\rhsusf\addons\rhsusf_weapons2\MP7\Data\sound\iFlip-mp7_magout",
@@ -18487,11 +17564,6 @@ class CfgWeapons
 		};
 		class Single: Mode_SemiAuto
 		{
-			sounds[]=
-			{
-				"StandardSound",
-				"SilencedSound"
-			};
 			class StandardSound;  //found empty after stripping
 			class SilencedSound;  //found empty after stripping
 			reloadTime=0.075000003;
@@ -18518,11 +17590,6 @@ class CfgWeapons
 		};
 		class FullAuto: Mode_FullAuto
 		{
-			sounds[]=
-			{
-				"StandardSound",
-				"SilencedSound"
-			};
 			class StandardSound;  //found empty after stripping
 			class SilencedSound;  //found empty after stripping
 			reloadTime=0.075000003;
@@ -18597,13 +17664,6 @@ class CfgWeapons
 				effectName="RHSUSF_BarrelRefract";
 			};
 		};
-		changeFiremodeSound[]=
-		{
-			"rhsusf\addons\rhsusf_sounds\ar15_shared\firemode",
-			0.60000002,
-			1,
-			5
-		};
 		reloadMagazineSound[]=
 		{
 			"rhsusf\addons\rhsusf_sounds\ar15_shared\reload",
@@ -18635,117 +17695,6 @@ class CfgWeapons
 			"STANAG_556x45"
 		};
 		reloadAction="RHS_GestureReloadAR15";
-		bullet1[]=
-		{
-			"A3\sounds_f\weapons\shells\5_56\metal_556_01.wss",
-			0.1,
-			1,
-			15
-		};
-		bullet2[]=
-		{
-			"A3\sounds_f\weapons\shells\5_56\metal_556_02.wss",
-			0.1,
-			1,
-			15
-		};
-		bullet3[]=
-		{
-			"A3\sounds_f\weapons\shells\5_56\metal_556_03.wss",
-			0.177828,
-			1,
-			15
-		};
-		bullet4[]=
-		{
-			"A3\sounds_f\weapons\shells\5_56\metal_556_04.wss",
-			0.177828,
-			1,
-			15
-		};
-		bullet5[]=
-		{
-			"A3\sounds_f\weapons\shells\5_56\asphlat_556_01.wss",
-			0.1,
-			1,
-			15
-		};
-		bullet6[]=
-		{
-			"A3\sounds_f\weapons\shells\5_56\asphlat_556_02.wss",
-			0.1,
-			1,
-			15
-		};
-		bullet7[]=
-		{
-			"A3\sounds_f\weapons\shells\5_56\asphlat_556_03.wss",
-			0.1,
-			1,
-			15
-		};
-		bullet8[]=
-		{
-			"A3\sounds_f\weapons\shells\5_56\asphlat_556_04.wss",
-			0.1,
-			1,
-			15
-		};
-		bullet9[]=
-		{
-			"A3\sounds_f\weapons\shells\5_56\grass_556_01.wss",
-			0.0099999998,
-			1,
-			15
-		};
-		bullet10[]=
-		{
-			"A3\sounds_f\weapons\shells\5_56\grass_556_02.wss",
-			0.0099999998,
-			1,
-			15
-		};
-		bullet11[]=
-		{
-			"A3\sounds_f\weapons\shells\5_56\grass_556_03.wss",
-			0.0099999998,
-			1,
-			15
-		};
-		bullet12[]=
-		{
-			"A3\sounds_f\weapons\shells\5_56\grass_556_04.wss",
-			0.0099999998,
-			1,
-			15
-		};
-		soundBullet[]=
-		{
-			"bullet1",
-			0.082999997,
-			"bullet2",
-			0.082999997,
-			"bullet3",
-			0.082999997,
-			"bullet4",
-			0.082999997,
-			"bullet5",
-			0.082999997,
-			"bullet6",
-			0.082999997,
-			"bullet7",
-			0.082999997,
-			"bullet8",
-			0.082999997,
-			"bullet9",
-			0.082999997,
-			"bullet10",
-			0.082999997,
-			"bullet11",
-			0.082999997,
-			"bullet12",
-			0.082999997
-		};
 	};
 	class rhs_weap_SCAR_H_Base: rhs_weap_SCAR_Base
 	{
@@ -18784,117 +17733,6 @@ class CfgWeapons
 		class FullAuto: FullAuto
 		{
 			reloadTime=0.1;
-		};
-		bullet1[]=
-		{
-			"A3\sounds_f\weapons\shells\7_62\metal_762_01",
-			0.39810699,
-			1,
-			15
-		};
-		bullet2[]=
-		{
-			"A3\sounds_f\weapons\shells\7_62\metal_762_02",
-			0.39810699,
-			1,
-			15
-		};
-		bullet3[]=
-		{
-			"A3\sounds_f\weapons\shells\7_62\metal_762_03",
-			0.39810699,
-			1,
-			15
-		};
-		bullet4[]=
-		{
-			"A3\sounds_f\weapons\shells\7_62\metal_762_04",
-			0.39810699,
-			1,
-			15
-		};
-		bullet5[]=
-		{
-			"A3\sounds_f\weapons\shells\7_62\dirt_762_01",
-			0.281838,
-			1,
-			15
-		};
-		bullet6[]=
-		{
-			"A3\sounds_f\weapons\shells\7_62\dirt_762_02",
-			0.281838,
-			1,
-			15
-		};
-		bullet7[]=
-		{
-			"A3\sounds_f\weapons\shells\7_62\dirt_762_03",
-			0.281838,
-			1,
-			15
-		};
-		bullet8[]=
-		{
-			"A3\sounds_f\weapons\shells\7_62\dirt_762_04",
-			0.281838,
-			1,
-			15
-		};
-		bullet9[]=
-		{
-			"A3\sounds_f\weapons\shells\7_62\grass_762_01",
-			0.281838,
-			1,
-			15
-		};
-		bullet10[]=
-		{
-			"A3\sounds_f\weapons\shells\7_62\grass_762_02",
-			0.281838,
-			1,
-			15
-		};
-		bullet11[]=
-		{
-			"A3\sounds_f\weapons\shells\7_62\grass_762_03",
-			0.281838,
-			1,
-			15
-		};
-		bullet12[]=
-		{
-			"A3\sounds_f\weapons\shells\7_62\grass_762_04",
-			0.281838,
-			1,
-			15
-		};
-		soundBullet[]=
-		{
-			"bullet1",
-			0.082999997,
-			"bullet2",
-			0.082999997,
-			"bullet3",
-			0.082999997,
-			"bullet4",
-			0.082999997,
-			"bullet5",
-			0.082999997,
-			"bullet6",
-			0.082999997,
-			"bullet7",
-			0.082999997,
-			"bullet8",
-			0.082999997,
-			"bullet9",
-			0.082999997,
-			"bullet10",
-			0.082999997,
-			"bullet11",
-			0.082999997,
-			"bullet12",
-			0.082999997
 		};
 	};
 	class rhs_weap_SCAR_H_CQC_Base: rhs_weap_SCAR_H_Base
@@ -19867,10 +18705,6 @@ class CfgWeapons
 		class Single: Mode_SemiAuto
 		{
 			recoil="recoil_single_law";
-			sounds[]=
-			{
-				"StandardSound"
-			};
 			class StandardSound
 			{
 				weaponSoundEffect="DefaultRifle";
@@ -19901,13 +18735,6 @@ class CfgWeapons
 		{
 			"this",
 			"rhs_weap_smaw_SR"
-		};
-		drySound[]=
-		{
-			"\a3\sounds_f\weapons\GM6Lynx\GM6_lynx_dry.wss",
-			0.44668359,
-			1,
-			20
 		};
 		reloadMagazineSound[]=
 		{
@@ -20042,19 +18869,8 @@ class CfgWeapons
 				1,
 				10
 			};
-			drySound[]=
-			{
-				"\a3\sounds_f\weapons\GM6Lynx\GM6_lynx_dry.wss",
-				0.44668359,
-				1,
-				20
-			};
 			class Single2: Mode_SemiAuto
 			{
-				sounds[]=
-				{
-					"StandardSound"
-				};
 				class StandardSound
 				{
 					weaponSoundEffect="DefaultRifle";
@@ -20156,10 +18972,6 @@ class CfgWeapons
 		};
 		class Single: Mode_SemiAuto
 		{
-			sounds[]=
-			{
-				"StandardSound"
-			};
 			class StandardSound
 			{
 				weaponSoundEffect="DefaultRifle";
@@ -20206,13 +19018,6 @@ class CfgWeapons
 		{
 			"CBA_Carl_Gustaf"
 		};
-		drySound[]=
-		{
-			"A3\sounds_f\weapons\other\dry6",
-			0.44668359,
-			1,
-			20
-		};
 		reloadMagazineSound[]=
 		{
 			"rhsusf\addons\rhsusf_weapons2\m3maaws\sound\m3_reload.ogg",
@@ -20221,13 +19026,6 @@ class CfgWeapons
 			10
 		};
 		recoil="rhs_weap_smaw_SR_recoil";
-		soundFly[]=
-		{
-			"A3\sounds_f\weapons\rockets\rocket_fly_1",
-			0.31622776,
-			1.5,
-			900
-		};
 		canLock=0;
 		weaponLockDelay=3;
 		lockAcquire=0;
@@ -20288,24 +19086,12 @@ class CfgWeapons
 			"OFP2_ManSkeleton",
 			"\rhsusf\addons\rhsusf_c_weapons\anims\rhs_hand_at4.rtm"
 		};
-		drySound[]=
-		{
-			"A3\sounds_f\weapons\other\dry6",
-			0.031622801,
-			1,
-			10
-		};
 		reloadMagazineSound[]=
 		{
 			"rhsusf\addons\rhsusf_weapons2\m136\sound\at4prep.ogg",
 			0.56234097,
 			1,
 			50
-		};
-		soundFly[]=
-		{
-			"RHSUSF_120mm_Shot_SoundSet",
-			"RHSUSF_autocannon_Tail_SoundSet"
 		};
 		recoil="recoil_single_law";
 		minRange=10;
@@ -20576,10 +19362,6 @@ class CfgWeapons
 			"OFP2_ManSkeleton",
 			"\rhsusf\addons\rhsusf_c_weapons\anims\rhs_hand_fim92.rtm"
 		};
-		sounds[]=
-		{
-			"StandardSound"
-		};
 		class StandardSound
 		{
 			weaponSoundEffect="DefaultRifle";
@@ -20601,26 +19383,12 @@ class CfgWeapons
 			allowedslots[]={};
 			mass=92.400002;
 		};
-		drySound[]=
-		{
-			"A3\sounds_f\weapons\other\dry6",
-			0.031622801,
-			1,
-			10
-		};
 		reloadMagazineSound[]=
 		{
 			"A3\sounds_f\weapons\rockets\titan_reload_final",
 			0.56234097,
 			1,
 			50
-		};
-		soundFly[]=
-		{
-			"A3\sounds_f\weapons\rockets\rocket_fly_1",
-			0.316228,
-			1.5,
-			700
 		};
 		class OpticsModes
 		{

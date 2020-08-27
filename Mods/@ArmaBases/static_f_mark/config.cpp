@@ -91,13 +91,6 @@ class CfgVehicles
 					1,
 					10
 				};
-				soundServo[]=
-				{
-					"A3\Sounds_F_Mark\arsenal\sfx\Remote_Cameras\Remote_Camera_servo_CSAT",
-					0.39810717,
-					1,
-					10
-				};
 				soundServoVertical[]=
 				{
 					"A3\Sounds_F_Mark\arsenal\sfx\Remote_Cameras\Remote_Camera_servo_vertical_CSAT",

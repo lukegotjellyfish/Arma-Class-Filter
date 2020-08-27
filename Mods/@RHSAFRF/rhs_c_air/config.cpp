@@ -8606,12 +8606,6 @@ class CfgVehicles
 		{
 			"Plane_Fighter_SonicBoom_SoundSet"
 		};
-		soundLocked[]=
-		{
-			"A3\Sounds_F_Jets\vehicles\air\Shared\FX_Plane_Jet_lockedOn1",
-			1,
-			1
-		};
 		soundIncommingMissile[]=
 		{
 			"A3\Sounds_F_Jets\vehicles\air\Shared\FX_Plane_Jet_lockedon2",
@@ -8674,46 +8668,6 @@ class CfgVehicles
 			1,
 			40
 		};
-		soundEngineOnInt[]=
-		{
-			"A3\Sounds_F_Jets\vehicles\air\Plane_Fighter_02\O_Plane_Fighter_02_engine_start_int",
-			1,
-			1
-		};
-		soundEngineOnExt[]=
-		{
-			"A3\Sounds_F_Jets\vehicles\air\Plane_Fighter_02\O_Plane_Fighter_02_engine_start_ext",
-			1.75,
-			1,
-			300
-		};
-		soundEngineOffInt[]=
-		{
-			"A3\Sounds_F_Jets\vehicles\air\Plane_Fighter_02\O_Plane_Fighter_02_engine_shut_int",
-			1,
-			1
-		};
-		soundEngineOffExt[]=
-		{
-			"A3\Sounds_F_Jets\vehicles\air\Plane_Fighter_02\O_Plane_Fighter_02_engine_shut_ext",
-			1.75,
-			1,
-			300
-		};
-		soundGetIn[]=
-		{
-			"A3\Sounds_F\vehicles\air\CAS_01\getin_wipeout",
-			1,
-			1,
-			40
-		};
-		soundGetOut[]=
-		{
-			"A3\Sounds_F\air\Plane_Fighter_03\getout",
-			1,
-			1,
-			40
-		};
 		soundWaterCollision1[]=
 		{
 			"A3\Sounds_F\vehicles\crashes\planes\plane_crash_water_1",
@@ -8735,91 +8689,6 @@ class CfgVehicles
 			"soundWaterCollision2",
 			0.5
 		};
-		buildCrash0[]=
-		{
-			"A3\Sounds_F\vehicles\crashes\cars\cars_coll_big_default_ext_1",
-			1,
-			1,
-			900
-		};
-		buildCrash1[]=
-		{
-			"A3\Sounds_F\vehicles\crashes\cars\cars_coll_big_default_ext_2",
-			1,
-			1,
-			900
-		};
-		buildCrash2[]=
-		{
-			"A3\Sounds_F\vehicles\crashes\cars\cars_coll_big_default_ext_3",
-			1,
-			1,
-			900
-		};
-		buildCrash3[]=
-		{
-			"A3\Sounds_F\vehicles\crashes\cars\cars_coll_big_default_ext_4",
-			1,
-			1,
-			900
-		};
-		soundBuildingCrash[]=
-		{
-			"buildCrash0",
-			0.25,
-			"buildCrash1",
-			0.25,
-			"buildCrash2",
-			0.25,
-			"buildCrash3",
-			0.25
-		};
-		WoodCrash0[]=
-		{
-			"A3\Sounds_F\vehicles\crashes\cars\cars_coll_big_wood_ext_1",
-			3.1622801,
-			1,
-			900
-		};
-		WoodCrash1[]=
-		{
-			"A3\Sounds_F\vehicles\crashes\cars\cars_coll_big_wood_ext_2",
-			3.1622801,
-			1,
-			900
-		};
-		WoodCrash2[]=
-		{
-			"A3\Sounds_F\vehicles\crashes\cars\cars_coll_big_wood_ext_6",
-			3.1622801,
-			1,
-			900
-		};
-		WoodCrash3[]=
-		{
-			"A3\Sounds_F\vehicles\crashes\cars\cars_coll_big_wood_ext_8",
-			3.1622801,
-			1,
-			900
-		};
-		soundWoodCrash[]=
-		{
-			"woodCrash0",
-			0.25,
-			"woodCrash1",
-			0.25,
-			"woodCrash2",
-			0.25,
-			"woodCrash3",
-			0.25
-		};
-		armorCrash0[]=
-		{
-			"A3\Sounds_F\vehicles\crashes\cars\cars_coll_big_default_ext_1",
-			1,
-			1,
-			900
-		};
 		armorCrash1[]=
 		{
 			"A3\Sounds_F\vehicles\crashes\cars\cars_coll_big_default_ext_2",
@@ -8837,24 +8706,6 @@ class CfgVehicles
 		armorCrash3[]=
 		{
 			"A3\Sounds_F\vehicles\crashes\cars\cars_coll_big_default_ext_4",
-			1,
-			1,
-			900
-		};
-		soundArmorCrash[]=
-		{
-			"ArmorCrash0",
-			0.25,
-			"ArmorCrash1",
-			0.25,
-			"ArmorCrash2",
-			0.25,
-			"ArmorCrash3",
-			0.25
-		};
-		Crash0[]=
-		{
-			"A3\Sounds_F\vehicles\crashes\cars\cars_coll_big_default_ext_1",
 			1,
 			1,
 			900
@@ -8890,12 +8741,6 @@ class CfgVehicles
 			0.25,
 			"Crash3",
 			0.25
-		};
-		soundDammage[]=
-		{
-			"",
-			0.56234097,
-			1
 		};
 		class scrubLandInt
 		{
@@ -9475,17 +9320,6 @@ class CfgVehicles
 				hitpoint="p svetlo";
 				selection="p svetlo";
 			};
-		};
-		aggregateReflectors[]=
-		{
-			
-			{
-				"Left"
-			},
-			
-			{
-				"Right"
-			}
 		};
 		class EventHandlers: EventHandlers
 		{
@@ -10118,60 +9952,6 @@ class CfgVehicles
 		cargoGetOutAction[]=
 		{
 			"GetOutHigh"
-		};
-		soundGetIn[]=
-		{
-			"A3\Sounds_F_EPC\CAS_01\getin_wipeout",
-			1,
-			1,
-			40
-		};
-		soundGetOut[]=
-		{
-			"A3\Sounds_F\air\Plane_Fighter_03\getout",
-			1,
-			1,
-			40
-		};
-		soundDammage[]=
-		{
-			"",
-			0.56234133,
-			1
-		};
-		soundEngineOnInt[]=
-		{
-			"rhsafrf\addons\rhs_vehiclesounds\sounds\air\Tu95\tu95_int_start",
-			6,
-			1,
-			500
-		};
-		soundEngineOnExt[]=
-		{
-			"rhsafrf\addons\rhs_vehiclesounds\sounds\air\Tu95\tu95_ext_start",
-			6.4125376,
-			1,
-			500
-		};
-		soundEngineOffInt[]=
-		{
-			"rhsafrf\addons\rhs_vehiclesounds\sounds\air\Tu95\tu95_int_stop",
-			6,
-			1,
-			500
-		};
-		soundEngineOffExt[]=
-		{
-			"rhsafrf\addons\rhs_vehiclesounds\sounds\air\Tu95\tu95_ext_stop",
-			6.4125376,
-			1,
-			500
-		};
-		soundLocked[]=
-		{
-			"\A3\Sounds_F\weapons\Rockets\locked_1",
-			0.31622776,
-			1
 		};
 		soundIncommingMissile[]=
 		{
@@ -11373,18 +11153,6 @@ class CfgVehicles
 				innerAngle=20;
 				outerAngle=178;
 			};
-		};
-		aggregateReflectors[]=
-		{
-			
-			{
-				"Left",
-				"Left_Flare",
-				"Right",
-				"Right_Flare",
-				"Center",
-				"Center_Flare"
-			}
 		};
 		class MarkerLights
 		{

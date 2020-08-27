@@ -521,12 +521,6 @@ class CfgVehicles
 			"TruckHorn"
 		};
 		magazines[]={};
-		soundLocked[]=
-		{
-			"\A3\Sounds_F\weapons\Rockets\locked_1",
-			1,
-			1
-		};
 		soundIncommingMissile[]=
 		{
 			"\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_4",
@@ -556,13 +550,6 @@ class CfgVehicles
 					"200Rnd_127x99_mag_Tracer_Green",
 					"200Rnd_127x99_mag_Tracer_Green",
 					"200Rnd_127x99_mag_Tracer_Green"
-				};
-				soundServo[]=
-				{
-					"A3\Sounds_F\vehicles\armor\APC\noises\servo_APC_gunner",
-					0.56234133,
-					1,
-					30
 				};
 				soundServoVertical[]=
 				{
@@ -674,13 +661,6 @@ class CfgVehicles
 				magazines[]=
 				{
 					"SmokeLauncherMag"
-				};
-				soundServo[]=
-				{
-					"A3\Sounds_F\vehicles\armor\APC\noises\servo_APC_comm",
-					0.56234133,
-					1,
-					30
 				};
 				soundServoVertical[]=
 				{
@@ -997,18 +977,6 @@ class CfgVehicles
 				hitpoint="Light_L2_flare";
 				selection="Light_L2";
 			};
-		};
-		aggregateReflectors[]=
-		{
-			
-			{
-				"Left",
-				"Left2",
-				"Left3",
-				"Right",
-				"Right2",
-				"Right3"
-			}
 		};
 		selectionFireAnim="";
 		class RenderTargets
@@ -2338,13 +2306,6 @@ class CfgVehicles
 				};
 				animationSourceBody="mainTurret";
 				animationSourceGun="mainGun";
-				soundServo[]=
-				{
-					"A3\Sounds_F\vehicles\armor\APC\noises\servo_APC_gunner",
-					0.56234133,
-					1,
-					30
-				};
 				soundServoVertical[]=
 				{
 					"A3\Sounds_F\vehicles\armor\APC\noises\servo_APC_gunner_vertical",

@@ -741,40 +741,6 @@ class CfgAmmo
 		indirectHitRange=11;
 		dangerRadiusHit=1250;
 		suppressionRadiusHit=120;
-		class CamShakeExplode
-		{
-			power="(122*0.2)";
-			duration="((round (122^0.5))*0.2 max 0.2)";
-			frequency=20;
-			distance="((10 + 122^0.5)*8)";
-		};
-		class CamShakeHit
-		{
-			power=122;
-			duration="((round (122^0.25))*0.2 max 0.2)";
-			frequency=20;
-			distance=1;
-		};
-		class CamShakeFire
-		{
-			power="(122^0.25)";
-			duration="((round (122^0.5))*0.2 max 0.2)";
-			frequency=20;
-			distance="((122^0.5)*8)";
-		};
-		class CamShakePlayerFire
-		{
-			power=2;
-			duration=0.1;
-			frequency=20;
-			distance=1;
-		};
-		SoundSetExplosion[]=
-		{
-			"RocketsHeavy_Exp_SoundSet",
-			"RocketsHeavy_Tail_SoundSet",
-			"Explosion_Debris_SoundSet"
-		};
 	};
 	class RHS_ammo_AGM_114N: RHS_ammo_AGM_114M
 	{
@@ -785,13 +751,6 @@ class CfgAmmo
 		indirectHitRange=20;
 		explosive=1;
 		allowAgainstInfantry=1;
-		class CamShakeExplode
-		{
-			power="(110*0.2)";
-			duration="((round (110^0.5))*0.2 max 0.2)";
-			frequency=20;
-			distance="((5 + 110^0.5)*8)";
-		};
 		explosionEffects="RHS_FAE_Explosion";
 	};
 	class RHS_Ammo_DAGR: MissileBase
@@ -874,34 +833,6 @@ class CfgAmmo
 					};
 				};
 			};
-		};
-		class CamShakeExplode
-		{
-			power=24.4;
-			duration=2.2;
-			frequency=20;
-			distance=208.36301;
-		};
-		class CamShakeHit
-		{
-			power=122;
-			duration=0.60000002;
-			frequency=20;
-			distance=1;
-		};
-		class CamShakeFire
-		{
-			power=3.3234601;
-			duration=2.2;
-			frequency=20;
-			distance=88.3629;
-		};
-		class CamShakePlayerFire
-		{
-			power=2;
-			duration=0.1;
-			frequency=20;
-			distance=1;
 		};
 	};
 	class rhs_ammo_agm65: rhs_ammo_Hellfire_AT
@@ -15758,10 +15689,6 @@ class CfgWeapons
 		midRangeProbab=0.89999998;
 		maxRange=9000;
 		maxRangeProbab=0.30000001;
-		sounds[]=
-		{
-			"StandardSound"
-		};
 		holdsterAnimValue=1;
 		class StandardSound
 		{
@@ -15903,10 +15830,6 @@ class CfgWeapons
 			midRangeProbab=0.89999998;
 			maxRange=2500;
 			maxRangeProbab=0.12;
-			sounds[]=
-			{
-				"StandardSound"
-			};
 			class StandardSound
 			{
 				weaponSoundEffect="DefaultRifle";
@@ -15942,10 +15865,6 @@ class CfgWeapons
 			midRangeProbab=0.001;
 			maxRange=3;
 			maxRangeProbab=0.001;
-			sounds[]=
-			{
-				"StandardSound"
-			};
 			class StandardSound
 			{
 				weaponSoundEffect="DefaultRifle";
@@ -16311,10 +16230,6 @@ class CfgWeapons
 			midRangeProbab=0.89999998;
 			maxRange=4000;
 			maxRangeProbab=0.1;
-			sounds[]=
-			{
-				"StandardSound"
-			};
 			class StandardSound
 			{
 				begin1[]=
@@ -16343,10 +16258,6 @@ class CfgWeapons
 		class LoalDistance: TopDown
 		{
 			displayName="LOAL-DIR";
-			sounds[]=
-			{
-				"StandardSound"
-			};
 			class StandardSound
 			{
 				begin1[]=

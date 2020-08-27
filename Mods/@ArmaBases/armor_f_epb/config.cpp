@@ -2854,16 +2854,6 @@ class CfgVehicles
 				useFlare=1;
 			};
 		};
-		aggregateReflectors[]=
-		{
-			
-			{
-				"Left",
-				"Right",
-				"Left2",
-				"Right2"
-			}
-		};
 		class compartmentsLights
 		{
 			class Comp1
@@ -2927,12 +2917,6 @@ class CfgVehicles
 				};
 			};
 		};
-		soundLocked[]=
-		{
-			"\A3\Sounds_F\weapons\Rockets\locked_1",
-			1,
-			1
-		};
 		soundIncommingMissile[]=
 		{
 			"\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_2",
@@ -2973,13 +2957,6 @@ class CfgVehicles
 							"200Rnd_127x99_mag_Tracer_Yellow",
 							"200Rnd_127x99_mag_Tracer_Yellow",
 							"SmokeLauncherMag"
-						};
-						soundServo[]=
-						{
-							"A3\Sounds_F\vehicles\armor\noises\servo_armor_comm",
-							0.56234133,
-							1,
-							30
 						};
 						soundServoVertical[]=
 						{
@@ -3126,13 +3103,6 @@ class CfgVehicles
 					"200Rnd_762x51_Belt_Yellow",
 					"200Rnd_762x51_Belt_Yellow",
 					"200Rnd_762x51_Belt_Yellow"
-				};
-				soundServo[]=
-				{
-					"A3\Sounds_F\vehicles\armor\noises\servo_armor_gunner",
-					0.15848932,
-					1,
-					50
 				};
 				soundServoVertical[]=
 				{

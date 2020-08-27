@@ -4615,25 +4615,6 @@ class CfgAmmo
 	{
 		model="\rhsafrf\addons\rhs_weapons2\vogs\rhs_vog25p";
 		deflecting=90;
-		class HitEffects
-		{
-			hitMetal="RHS_vog25p_hit";
-			hitMetalPlate="RHS_vog25p_hit";
-			hitBuilding="RHS_vog25p_hit";
-			hitConcrete="RHS_vog25p_hit";
-			hitGroundSoft="RHS_vog25p_hit";
-			hitGroundHard="RHS_vog25p_hit";
-			default_mat="RHS_vog25p_hit";
-			hitFoliage="RHS_vog25p_hit";
-			hitGlass="RHS_vog25p_hit";
-			hitGlassArmored="RHS_vog25p_hit";
-			hitWood="RHS_vog25p_hit";
-			hitPlastic="RHS_vog25p_hit";
-			hitRubber="RHS_vog25p_hit";
-			hitMan="RHS_vog25p_hit";
-			hitWater="RHS_vog25p_hit";
-			hitVirtual="RHS_vog25p_hit";
-		};
 		typicalspeed=75;
 		deleteParentWhenTriggered=1;
 		submunitionAmmo="rhs_g_vog25p_explosion";
@@ -4875,12 +4856,6 @@ class CfgAmmo
 			1,
 			2000
 		};
-		SoundSetExplosion[]=
-		{
-			"ATmine_Exp_SoundSet",
-			"ATmine_Tail_SoundSet",
-			"Explosion_Debris_SoundSet"
-		};
 		explosionEffects="ATMineExplosion";
 		CraterEffects="ATMineCrater";
 		whistleDist=8;
@@ -4923,20 +4898,6 @@ class CfgAmmo
 		rhs_flare_type="rhs_mine_msk40p_white_flare";
 		rhs_flare_used="rhs_mine_msk40p_white_used";
 		rhs_flare_offset[]={0,0,0.34999999};
-		class CamShakeExplode
-		{
-			power=0;
-			duration=0.2;
-			frequency=20;
-			distance=0;
-		};
-		class CamShakeHit
-		{
-			power=0;
-			duration=0.2;
-			frequency=20;
-			distance=1;
-		};
 		model="\rhsafrf\addons\rhs_weapons\mines\rhs_msk40p_white_e";
 		mineModelDisabled="\rhsafrf\addons\rhs_weapons\mines\rhs_msk40p_white_d";
 		defaultMagazine="rhs_mine_msk40p_white_mag";
@@ -4946,11 +4907,6 @@ class CfgAmmo
 			3.1622777,
 			1,
 			1500
-		};
-		SoundSetExplosion[]=
-		{
-			"TrainingMine_Exp_SoundSet",
-			"TrainingMine_Report_SoundSet"
 		};
 		whistleDist=8;
 		cost=200;
@@ -5150,12 +5106,6 @@ class CfgAmmo
 			1,
 			20
 		};
-		SoundSetExplosion[]=
-		{
-			"ExplosiveCharge_Exp_SoundSet",
-			"ExplosiveCharge_Tail_SoundSet",
-			"Explosion_Debris_SoundSet"
-		};
 		defaultMagazine="rhs_ec75_mag";
 		ExplosionEffects="MineNondirectionalExplosionSmall";
 		CraterEffects="MineNondirectionalCraterSmall";
@@ -5235,26 +5185,6 @@ class CfgAmmo
 		explosionEffects="ATRocketExplosion";
 		effectsMissileInit="RocketBackEffectsNLAW";
 		effectsMissile="missile3";
-		class CamShakeFire
-		{
-			power=10;
-			duration=0.5;
-			frequency=20;
-			distance=30;
-		};
-		class CamShakePlayerFire
-		{
-			power=5;
-			duration=0.1;
-			frequency=20;
-		};
-		soundFly[]=
-		{
-			"A3\Sounds_F\arsenal\weapons_static\Missile_Launcher\rocket_fly",
-			1.1,
-			0.69999999,
-			250
-		};
 	};
 	class rhs_rpg26_penetrator: rhs_ammo_base_penetrator
 	{
@@ -5309,19 +5239,6 @@ class CfgAmmo
 		effectsMissileInit="RocketBackEffectsRPG";
 		effectsMissile="missile3";
 		airLock=1;
-		class CamShakeFire
-		{
-			power=10;
-			duration=0.5;
-			frequency=20;
-			distance=30;
-		};
-		class CamShakePlayerFire
-		{
-			power=5;
-			duration=0.1;
-			frequency=20;
-		};
 		class EventHandlers;
 	};
 	class rhs_rpg7v2_pg7vl_penetrator: rhs_ammo_base_penetrator
@@ -5425,34 +5342,6 @@ class CfgAmmo
 		timeToLive=60;
 		CraterEffects="ArtyShellCrater";
 		explosionEffects="RHS_FAE_Explosion";
-		class CamShakeExplode
-		{
-			power=22;
-			duration=2;
-			frequency=20;
-			distance=227.905;
-		};
-		class CamShakeHit
-		{
-			power=110;
-			duration=0.60000002;
-			frequency=20;
-			distance=1;
-		};
-		class CamShakeFire
-		{
-			power=3.2385299;
-			duration=2;
-			frequency=20;
-			distance=83.904701;
-		};
-		class CamShakePlayerFire
-		{
-			power=5;
-			duration=0.1;
-			frequency=20;
-			distance=1;
-		};
 		submunitionConeAngle[]={120,220};
 		submunitionConeAngleHorizontal=720;
 		submunitionAutoleveling=1;
@@ -5492,41 +5381,6 @@ class CfgAmmo
 		CraterWaterEffects="ImpactEffectsWaterHE";
 		ExplosionEffects="HEShellExplosion";
 		effectsMissileInit="RocketBackEffectsRPG";
-		class CamShakeExplode
-		{
-			power=24;
-			duration=2.2;
-			frequency=20;
-			distance=231.636;
-		};
-		class CamShakeHit
-		{
-			power=120;
-			duration=0.60000002;
-			frequency=20;
-			distance=1;
-		};
-		class CamShakeFire
-		{
-			power=3.3097501;
-			duration=2.2;
-			frequency=20;
-			distance=87.635597;
-		};
-		class CamShakePlayerFire
-		{
-			power=3;
-			duration=0.1;
-			frequency=20;
-			distance=1;
-		};
-		soundFly[]=
-		{
-			"A3\Sounds_F\arsenal\weapons_static\Missile_Launcher\rocket_fly",
-			1.1,
-			1.5,
-			25
-		};
 	};
 	class rhs_rpg7v2_type63_airburst: rhs_rpg7v2_og7v
 	{
@@ -5544,13 +5398,6 @@ class CfgAmmo
 		thrust=180;
 		timeToLive=8;
 		deflecting=0.99999899;
-		soundFly[]=
-		{
-			"A3\Sounds_F\arsenal\weapons_static\Missile_Launcher\rocket_fly",
-			1.1,
-			0.69999999,
-			250
-		};
 		class EventHandlers: EventHandlers
 		{
 			class RHS_Airburst
@@ -7421,20 +7268,6 @@ class CfgWeapons
 		};
 		discreteDistance[]={0};
 		discreteDistanceInitIndex=0;
-		drySound[]=
-		{
-			"A3\Sounds_F\arsenal\weapons\Rifles\MX\dry_Mx",
-			0.56234097,
-			1,
-			10
-		};
-		changeFiremodeSound[]=
-		{
-			"A3\sounds_f\weapons\closure\firemode_changer_2",
-			0.55118901,
-			1,
-			5
-		};
 		class Safe: Mode_SemiAuto
 		{
 			sounds[]={};
@@ -7464,20 +7297,6 @@ class CfgWeapons
 		};
 		discreteDistance[]={0};
 		discreteDistanceInitIndex=0;
-		drySound[]=
-		{
-			"A3\Sounds_F\arsenal\weapons\Rifles\MX\dry_Mx",
-			0.56234097,
-			1,
-			10
-		};
-		changeFiremodeSound[]=
-		{
-			"A3\sounds_f\weapons\closure\firemode_changer_2",
-			0.55118901,
-			1,
-			5
-		};
 		reloadTime=2.5;
 		magazineReloadTime=2.5;
 		class Safe: Mode_SemiAuto
@@ -7538,10 +7357,6 @@ class CfgWeapons
 		recoil="rhs_recoil_gp25";
 		class Single: Mode_SemiAuto
 		{
-			sounds[]=
-			{
-				"StandardSound"
-			};
 			minRange=30;
 			minRangeProbab=0.1;
 			midRange=200;
@@ -7651,124 +7466,6 @@ class CfgWeapons
 			"single_far_optics2",
 			"fullauto_medium"
 		};
-		bullet1[]=
-		{
-			"A3\sounds_f\weapons\shells\7_62\metal_762_01",
-			0.63095701,
-			1,
-			15
-		};
-		bullet2[]=
-		{
-			"A3\sounds_f\weapons\shells\7_62\metal_762_02",
-			0.63095701,
-			1,
-			15
-		};
-		bullet3[]=
-		{
-			"A3\sounds_f\weapons\shells\7_62\metal_762_03",
-			0.63095701,
-			1,
-			15
-		};
-		bullet4[]=
-		{
-			"A3\sounds_f\weapons\shells\7_62\metal_762_04",
-			0.63095701,
-			1,
-			15
-		};
-		bullet5[]=
-		{
-			"A3\sounds_f\weapons\shells\7_62\dirt_762_01",
-			0.63095701,
-			1,
-			15
-		};
-		bullet6[]=
-		{
-			"A3\sounds_f\weapons\shells\7_62\dirt_762_02",
-			0.63095701,
-			1,
-			15
-		};
-		bullet7[]=
-		{
-			"A3\sounds_f\weapons\shells\7_62\dirt_762_03",
-			0.63095701,
-			1,
-			15
-		};
-		bullet8[]=
-		{
-			"A3\sounds_f\weapons\shells\7_62\dirt_762_04",
-			0.63095701,
-			1,
-			15
-		};
-		bullet9[]=
-		{
-			"A3\sounds_f\weapons\shells\7_62\grass_762_01",
-			0.63095701,
-			1,
-			15
-		};
-		bullet10[]=
-		{
-			"A3\sounds_f\weapons\shells\7_62\grass_762_02",
-			0.63095701,
-			1,
-			15
-		};
-		bullet11[]=
-		{
-			"A3\sounds_f\weapons\shells\7_62\grass_762_03",
-			0.63095701,
-			1,
-			15
-		};
-		bullet12[]=
-		{
-			"A3\sounds_f\weapons\shells\7_62\grass_762_04",
-			0.63095701,
-			1,
-			15
-		};
-		soundBullet[]=
-		{
-			"bullet1",
-			0.082999997,
-			"bullet2",
-			0.082999997,
-			"bullet3",
-			0.082999997,
-			"bullet4",
-			0.082999997,
-			"bullet5",
-			0.082999997,
-			"bullet6",
-			0.082999997,
-			"bullet7",
-			0.082999997,
-			"bullet8",
-			0.082999997,
-			"bullet9",
-			0.082999997,
-			"bullet10",
-			0.082999997,
-			"bullet11",
-			0.082999997,
-			"bullet12",
-			0.082999997
-		};
-		changeFiremodeSound[]=
-		{
-			"A3\sounds_f\weapons\closure\firemode_changer_2",
-			0.56234133,
-			1,
-			20
-		};
 		class Single: Mode_SemiAuto
 		{
 			aiBurstTerminable=1;
@@ -7842,13 +7539,6 @@ class CfgWeapons
 		class GP25Muzzle: GP25_Base;  //found empty after stripping
 		aiDispersionCoefY=10;
 		aiDispersionCoefX=8;
-		drySound[]=
-		{
-			"A3\sounds_f\weapons\Other\dry_1",
-			0.56234097,
-			1,
-			10
-		};
 		reloadMagazineSound[]=
 		{
 			"A3\Sounds_F\weapons\Khaybar\reload_khaibar",
@@ -11952,11 +11642,6 @@ class CfgWeapons
 			1,
 			1
 		};
-		soundBullet[]=
-		{
-			"caseless",
-			1
-		};
 		modes[]=
 		{
 			"Single",
@@ -12015,12 +11700,6 @@ class CfgWeapons
 		};
 		aiDispersionCoefY=10;
 		aiDispersionCoefX=8;
-		drySound[]=
-		{
-			"A3\sounds_f\weapons\Other\dry_1",
-			0.0099999998,
-			1
-		};
 		reloadMagazineSound[]=
 		{
 			"A3\sounds_f\weapons\M320\M320_reload",
@@ -12351,10 +12030,6 @@ class CfgWeapons
 			"rhsafrf\addons\rhs_weapons\rsp30\rhs_rsp30_white.rvmat"
 		};
 		optics=0;
-		sounds[]=
-		{
-			"StandardSound"
-		};
 		class BaseSoundModeType
 		{
 			weaponSoundEffect="DefaultRifle";
@@ -12548,10 +12223,6 @@ class CfgWeapons
 		{
 			mass=19.360001;
 			holsterScale=0;
-		};
-		sounds[]=
-		{
-			"StandardSound"
 		};
 		class BaseSoundModeType
 		{
@@ -12761,13 +12432,6 @@ class CfgWeapons
 				directionName="usti hlavne up";
 				effectName="RHS_BarrelRefract";
 			};
-		};
-		changeFiremodeSound[]=
-		{
-			"A3\sounds_f\weapons\closure\firemode_changer_2",
-			0.56234133,
-			1,
-			20
 		};
 		class SAFE: RHS_SAFE_BASE;  //found empty after stripping
 		muzzles[]=
@@ -13315,10 +12979,6 @@ class CfgWeapons
 			"OFP2_ManSkeleton",
 			"\rhsafrf\addons\rhs_c_weapons\anims\RPG26.rtm"
 		};
-		sounds[]=
-		{
-			"StandardSound"
-		};
 		class StandardSound
 		{
 			weaponSoundEffect="DefaultRifle";
@@ -13335,26 +12995,12 @@ class CfgWeapons
 				1
 			};
 		};
-		drySound[]=
-		{
-			"A3\sounds_f\weapons\other\dry6",
-			0.031622801,
-			1,
-			10
-		};
 		reloadMagazineSound[]=
 		{
 			"A3\sounds_f\weapons\rockets\titan_reload_final",
 			0.56234097,
 			1,
 			50
-		};
-		soundFly[]=
-		{
-			"A3\sounds_f\weapons\rockets\rocket_fly_1",
-			0.316228,
-			1.5,
-			700
 		};
 		showToPlayer=1;
 		minRange=10;
@@ -13664,13 +13310,6 @@ class CfgWeapons
 			1,
 			800
 		};
-		drySound[]=
-		{
-			"A3\sounds_f\weapons\other\dry6",
-			0.031622801,
-			1,
-			10
-		};
 		reloadMagazineSound[]=
 		{
 			"A3\sounds_f\weapons\rockets\titan_reload_final",
@@ -13789,10 +13428,6 @@ class CfgWeapons
 		airateoffiredistance=2350;
 		modeloptics="-";
 		weaponInfoType="RscWeaponZeroing";
-		sounds[]=
-		{
-			"StandardSound"
-		};
 		class StandardSound
 		{
 			weaponSoundEffect="DefaultRifle";
@@ -13864,10 +13499,6 @@ class CfgWeapons
 			0.89125103,
 			1,
 			10
-		};
-		sounds[]=
-		{
-			"StandardSound"
 		};
 		class StandardSound
 		{

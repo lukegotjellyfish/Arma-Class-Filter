@@ -523,13 +523,6 @@ class CfgVehicles
 						maxHorizontalRotSpeed=1.8;
 						maxVerticalRotSpeed=1.8;
 						stabilizedInAxes=3;
-						soundServo[]=
-						{
-							"A3\Sounds_F\vehicles\armor\noises\servo_best",
-							0.0099999998,
-							1,
-							50
-						};
 						minElev=-5;
 						maxElev=60;
 						initElev=0;
@@ -628,13 +621,6 @@ class CfgVehicles
 				maxElev=80;
 				initElev=10;
 				maxHorizontalRotSpeed=0.36500001;
-				soundServo[]=
-				{
-					"A3\Sounds_F\vehicles\armor\noises\servo_best",
-					0.31622776,
-					1,
-					50
-				};
 				lockWhenVehicleSpeed=3;
 				memoryPointGunnerOptics="gunnerview";
 				gunnerOutOpticsModel="";
@@ -854,17 +840,6 @@ class CfgVehicles
 				direction="konec l svetlo";
 				useFlare=1;
 			};
-		};
-		aggregateReflectors[]=
-		{
-			
-			{
-				"Left"
-			},
-			
-			{
-				"Right"
-			}
 		};
 		armorLights=0.1;
 		class AnimationSources: AnimationSources

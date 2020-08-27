@@ -1144,186 +1144,6 @@ class CfgVehicles
 				maxCompression=0;
 			};
 		};
-		soundGetIn[]=
-		{
-			"A3\sounds_f\vehicles\armor\noises\get_in_out",
-			0.56234133,
-			1
-		};
-		soundGetOut[]=
-		{
-			"A3\sounds_f\vehicles\armor\noises\get_in_out",
-			0.56234133,
-			1,
-			20
-		};
-		soundDammage[]=
-		{
-			"",
-			0.56234133,
-			1
-		};
-		soundEngineOnInt[]=
-		{
-			"\rhsafrf\addons\rhs_bmp\sounds\utd20_start",
-			2.7879457,
-			1
-		};
-		soundEngineOnExt[]=
-		{
-			"\rhsafrf\addons\rhs_bmp\sounds\utd20_start",
-			2.7309573,
-			1,
-			300
-		};
-		soundEngineOffInt[]=
-		{
-			"A3\Sounds_F\vehicles\armor\MBT_03\MBT_engine_int_stop",
-			0.78794575,
-			1
-		};
-		soundEngineOffExt[]=
-		{
-			"A3\Sounds_F\vehicles\armor\MBT_03\MBT_engine_ext_stop",
-			0.73095739,
-			1,
-			200
-		};
-		buildCrash0[]=
-		{
-			"A3\sounds_f\Vehicles\crashes\crash_08",
-			1,
-			1,
-			200
-		};
-		buildCrash1[]=
-		{
-			"A3\sounds_f\Vehicles\crashes\crash_09",
-			1,
-			1,
-			200
-		};
-		buildCrash2[]=
-		{
-			"A3\sounds_f\Vehicles\crashes\crash_10",
-			1,
-			1,
-			200
-		};
-		buildCrash3[]=
-		{
-			"A3\sounds_f\Vehicles\crashes\crash_11",
-			1,
-			1,
-			200
-		};
-		soundBuildingCrash[]=
-		{
-			"buildCrash0",
-			0.25,
-			"buildCrash1",
-			0.25,
-			"buildCrash2",
-			0.25,
-			"buildCrash3",
-			0.25
-		};
-		WoodCrash0[]=
-		{
-			"A3\sounds_f\Vehicles\crashes\crash_08",
-			1,
-			1,
-			200
-		};
-		WoodCrash1[]=
-		{
-			"A3\sounds_f\Vehicles\crashes\crash_09",
-			1,
-			1,
-			200
-		};
-		WoodCrash2[]=
-		{
-			"A3\sounds_f\Vehicles\crashes\crash_10",
-			1,
-			1,
-			200
-		};
-		WoodCrash3[]=
-		{
-			"A3\sounds_f\Vehicles\crashes\crash_11",
-			1,
-			1,
-			200
-		};
-		WoodCrash4[]=
-		{
-			"A3\sounds_f\Vehicles\crashes\crash_01",
-			1,
-			1,
-			200
-		};
-		WoodCrash5[]=
-		{
-			"A3\sounds_f\Vehicles\crashes\crash_08",
-			1,
-			1,
-			200
-		};
-		soundWoodCrash[]=
-		{
-			"woodCrash0",
-			0.16599999,
-			"woodCrash1",
-			0.16599999,
-			"woodCrash2",
-			0.16599999,
-			"woodCrash3",
-			0.16599999,
-			"woodCrash4",
-			0.16599999,
-			"woodCrash5",
-			0.16599999
-		};
-		ArmorCrash0[]=
-		{
-			"A3\sounds_f\Vehicles\crashes\crash_08",
-			1,
-			1,
-			200
-		};
-		ArmorCrash1[]=
-		{
-			"A3\sounds_f\Vehicles\crashes\crash_09",
-			1,
-			1,
-			200
-		};
-		ArmorCrash2[]=
-		{
-			"A3\sounds_f\Vehicles\crashes\crash_10",
-			1,
-			1,
-			200
-		};
-		ArmorCrash3[]=
-		{
-			"A3\sounds_f\Vehicles\crashes\crash_11",
-			1,
-			1,
-			200
-		};
-		soundArmorCrash[]=
-		{
-			"ArmorCrash0",
-			0.25,
-			"ArmorCrash1",
-			0.25,
-			"ArmorCrash2",
-			0.25,
-			"ArmorCrash3",
-			0.25
-		};
 		class Sounds
 		{
 			class Idle_ext
@@ -2633,13 +2453,6 @@ class CfgVehicles
 				gunnerAction="RHS_passenger_inside_6";
 				gunnerInAction="rhs_bmp1_gunnerIn";
 				personTurretAction="RHS_passenger_inside_6";
-				soundServo[]=
-				{
-					"\rhsafrf\addons\rhs_bmp\sounds\turret1.wss",
-					4,
-					1,
-					10
-				};
 				gunnerGetInAction="GetInHigh";
 				gunnerGetOutAction="GetOutHigh";
 				gunnerOutForceOptics=0;
@@ -3639,14 +3452,6 @@ class CfgVehicles
 				useFlare=1;
 			};
 		};
-		aggregateReflectors[]=
-		{
-			
-			{
-				"Driver_FG125_Cover",
-				"Driver_FG125_Cover_Flare"
-			}
-		};
 		armorLights=0.1;
 		class EventHandlers: EventHandlers
 		{
@@ -4383,13 +4188,6 @@ class CfgVehicles
 				gunnerName="$STR_RHS_OPERATORRECON";
 				gunnerAction="rhs_bmp2_gunner";
 				gunnerInAction="rhs_bmp2_gunnerin";
-				soundServo[]=
-				{
-					"\rhsafrf\addons\rhs_bmp\sounds\turret1.wss",
-					4,
-					1,
-					10
-				};
 				gunnerOutForceOptics=0;
 				gunnerForceoptics=1;
 				memoryPointGunnerOptics="gunnerview";
@@ -4952,13 +4750,6 @@ class CfgVehicles
 				gunnerDoor="hatchG";
 				gunnerAction="rhs_bmp2_gunner";
 				gunnerInAction="rhs_bmp2_gunnerin";
-				soundServo[]=
-				{
-					"\rhsafrf\addons\rhs_bmp\sounds\turret1.wss",
-					4,
-					1,
-					10
-				};
 				gunnerOutForceOptics=0;
 				gunnerForceoptics=1;
 				LodOpticsIn=0;

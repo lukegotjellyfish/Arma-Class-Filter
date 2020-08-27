@@ -242,22 +242,6 @@ class CfgVehicles
 				useFlare=1;
 			};
 		};
-		aggregateReflectors[]=
-		{
-			
-			{
-				"Left",
-				"Right",
-				"Left2",
-				"Right2"
-			}
-		};
-		soundLocked[]=
-		{
-			"\A3\Sounds_F\weapons\Rockets\locked_1",
-			1,
-			1
-		};
 		soundIncommingMissile[]=
 		{
 			"\A3\Sounds_F\vehicles\air\noises\alarm_locked_by_missile_4",
@@ -2918,13 +2902,6 @@ class CfgVehicles
 							"150Rnd_127x108_Ball",
 							"SmokeLauncherMag"
 						};
-						soundServo[]=
-						{
-							"A3\Sounds_F\vehicles\armor\noises\servo_armor_comm",
-							0.56234133,
-							1,
-							30
-						};
 						soundServoVertical[]=
 						{
 							"A3\Sounds_F\vehicles\armor\noises\servo_armor_comm",
@@ -3089,13 +3066,6 @@ class CfgVehicles
 				selectionFireAnim="zasleh";
 				gunnerAction="Gunner_MBT_02_cannon_F_out";
 				gunnerInAction="Gunner_MBT_02_cannon_F_in";
-				soundServo[]=
-				{
-					"A3\Sounds_F\vehicles\armor\noises\servo_armor_gunner",
-					0.15848932,
-					1,
-					50
-				};
 				soundServoVertical[]=
 				{
 					"A3\Sounds_F\vehicles\armor\noises\servo_armor_gunner_vertical",
@@ -6269,13 +6239,6 @@ class CfgVehicles
 					"6Rnd_155mm_Mo_smoke_O",
 					"4Rnd_155mm_Mo_LG_O",
 					"6Rnd_155mm_Mo_AT_mine_O"
-				};
-				soundServo[]=
-				{
-					"A3\Sounds_F\vehicles\armor\noises\servo_armor_gunner",
-					0.15848932,
-					1,
-					50
 				};
 				soundServoVertical[]=
 				{
