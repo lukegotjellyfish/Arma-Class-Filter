@@ -122,13 +122,51 @@ Opfor:
 			1*rhs_mag_3d17_6
 
 	BMD-4                   = rhs_bmd4_vdv
-		
+		rhs_weap_2a70:
+			1*rhs_mag_3UOF17_22
+			1*rhs_mag_9m117m_8
+		rhs_weap_2a72:
+			1*rhs_mag_3uof8_237
+			1*rhs_mag_3ubr11_227
+		rhs_weap_pkt_bmd_coax:
+			1*rhs_mag_762x54mm_2000
+		rhs_weap_902a:
+			1*rhs_mag_3d17_6
+
 	T-72B (obr. 1985g.)     = rhs_t72bb_tv
-		
+		rhs_weap_2a46m:
+			1*rhs_mag_3bm42_7
+			1*rhs_mag_3bk18m_6
+			1*rhs_mag_3of26_5
+			1*rhs_mag_9m119_4
+		rhs_weap_pkt:
+			8*rhs_mag_762x54mm_250
+		rhs_weap_902a:
+			1*rhs_mag_3d17
+		(commander)rhs_weap_nsvt_t72:
+			3*rhs_mag_127x108mm_50
+
 	T-80BVK                 = rhs_t80bvk
-		
+		rhs_weap_2a46_2:
+			1*rhs_mag_3bm22_14
+			1*rhs_mag_3bk18m_8
+			1*rhs_mag_3of26_6
+		rhs_weap_pkt:
+			8*rhs_mag_762x54mm_250
+		rhs_weap_902a:
+			1*rhs_mag_3d17
+
 	T-80UK                  = rhs_t80uk
-		
+		rhs_weap_2a46m_4:
+			1*rhs_mag_3bm46_10
+			1*rhs_mag_3bk31_8
+			1*rhs_mag_3of26_6
+			1*rhs_mag_9m119_4
+		rhs_weap_pkt:
+			8*rhs_mag_762x54mm_250
+		rhs_weap_902b:
+			1*rhs_mag_3d17_12
+
 	T-72 (obr. 1989g.)      = rhs_t72bc_tv
 		
 	T-90 (obr. 1992g.)      = rhs_t90a_tv
