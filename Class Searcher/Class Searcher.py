@@ -70,7 +70,6 @@ bluForMagazines = [
 	"rhsusf_5Rnd_300winmag_xm2010",
 	"rhsgref_8Rnd_762x63_M2B_M1rifle",
 	"rhsusf_20Rnd_762x51_m118_special_Mag",
-	"rhsusf_20Rnd_762x51_m118_special_Mag",
 	"rhs_mag_20Rnd_762x51_m80_fnfal",
 	"rhs_mag_20Rnd_SCAR_762x51_m80_ball",
 	"rhsusf_10Rnd_762x51_m993_Mag",
@@ -80,16 +79,11 @@ bluForMagazines = [
 	"rhsgref_5Rnd_762x54_m38",
 	"rhsusf_100Rnd_762x51_m80a1epr",
 	"rhs_mag_30Rnd_556x45_Mk262_Stanag",
-	"rhs_mag_30Rnd_556x45_Mk262_Stanag",
 	"rhs_mag_30Rnd_556x45_Mk318_Stanag",
-	"rhs_mag_30Rnd_556x45_Mk318_Stanag",
-	"rhs_mag_30Rnd_556x45_M855_Stanag",
 	"rhs_mag_30Rnd_556x45_M855_Stanag",
 	"rhsgref_30rnd_556x45_m21",
 	"rhssaf_30rnd_556x45_EPR_G36",
 	"rhs_200rnd_556x45_B_SAW",
-	"rhs_200rnd_556x45_B_SAW",
-	"rhsgref_8Rnd_762x63_M2B_M1rifle",
 	"rhsusf_mag_40Rnd_46x30_JHP",
 	"rhsusf_mag_15Rnd_9x19_JHP",
 	"rhsusf_mag_17Rnd_9x19_JHP",
@@ -129,25 +123,18 @@ opForMagazines = [
 	"rhsgref_1Rnd_Slug",
 	"rhs_5Rnd_338lapua_t5000",
 	"rhs_10Rnd_762x54mmR_7N14",
-	"rhs_10Rnd_762x54mmR_7N14",
 	"rhsgref_10Rnd_792x57_m76",
 	"rhsgref_5Rnd_762x54_m38",
-	"rhsgref_5Rnd_762x54_m38",
-	"rhs_100Rnd_762x54mmR",
 	"rhs_100Rnd_762x54mmR",
 	"rhssaf_250Rnd_762x54R",
-	"rhs_20rnd_9x39mm_SP6",
 	"rhs_20rnd_9x39mm_SP6",
 	"rhsusf_5Rnd_762x51_m62_Mag",
 	"rhs_30Rnd_545x39_7N22_AK",
 	"rhs_30Rnd_545x39_7N10_AK",
 	"rhs_10rnd_9x39mm_SP5",
-	"rhs_10rnd_9x39mm_SP5",
 	"rhs_30Rnd_545x39_7N6_AK",
 	"rhs_30Rnd_545x39_7N6M_AK",
 	"rhsgref_30rnd_556x45_vhs2",
-	"rhs_30Rnd_762x39mm",
-	"rhs_30Rnd_762x39mm",
 	"rhs_30Rnd_762x39mm",
 	"rhs_30Rnd_762x39mm"
 ]
@@ -155,28 +142,32 @@ opForMagazines = [
 #Classes for launcher page
 launchers = [
 	"rhs_weap_rpg26",
-	"rhs_weap_rpg7",
 	"rhs_weap_rshg2",
-	"rhs_weap_rpg7",
-	"rhs_weap_rpg7",
-	"rhs_weap_rpg7",
 	"rhs_weap_m72a7",
 	"rhs_weap_M136",
 	"rhs_weap_maaws",
 	"rhs_weap_M136_hedp",
 	"rhs_weap_smaw",
-	"rhs_weap_maaws",
-	"rhs_weap_smaw",
 	"rhs_weap_m32_Base_F",
 	"rhs_weap_M320"
 ]
+guidedLaunchers = [
+	"rhs_weap_igla",
+	"rhs_weap_fim92",
+	"rhs_weap_fgm148"
+]
+guidedLauncherAmmo = [
+	"rhs_mag_9k38_rocket",
+	"rhs_fim92_mag",
+	"rhs_fgm148_magazine_AT"
+]
 launcherAmmo = [
-	"rhs_rpg26_rocket",
-	"rhs_rpg7v2_pg7vl",
-	"rhs_rshg2_rocket",
-	"rhs_rpg7v2_pg7vr",
-	"rhs_rpg7v2_og7v",
-	"rhs_rpg7v2_tbg7v",
+	"rhs_rpg26_mag",
+	"rhs_rpg7_PG7VL_mag",
+	"rhs_rshg2_mag",
+	"rhs_rpg7_PG7VR_mag",
+	"rhs_rpg7_OG7V_mag",
+	"rhs_rpg7_TBG7V_mag",
 	"rhs_m72a7_mag",
 	"rhs_m136_mag",
 	"rhs_mag_maaws_HEAT",
@@ -186,6 +177,18 @@ launcherAmmo = [
 	"rhs_mag_smaw_HEDP",
 	"rhsusf_mag_6Rnd_M441_HE",
 	"rhs_mag_M441_HE"
+]
+penetrators = [
+	"rhs_ammo_M_fgm148_AT_penetrator",
+	"rhs_ammo_M136_hedp_penetrator",
+	"rhs_ammo_M136_penetrator",
+	"rhs_ammo_maaws_HEAT_penetrator",
+	"rhs_ammo_smaw_HEAA_penetrator",
+	"rhs_ammo_smaw_HEDP_penetrator",
+	"rhs_ammo_thermobaric_wave",
+	"rhs_rpg26_penetrator",
+	"rhs_rpg7v2_pg7vl_penetrator",
+	"rhs_rpg7v2_pg7vr_penetrator"
 ]
 
 
@@ -257,7 +260,6 @@ def findClass(className):
 					return classBody
 	return classBody
 
-
 def OrderResult(result):
 	#Create list for sorting of each class in returned class details
 	orderedResult = []
@@ -265,7 +267,6 @@ def OrderResult(result):
 	construct = []
 	tabCount = ""
 	for a in result:
-		print(a)
 		if a.count("	class") > 0 or onClass > 0:
 			tabCount = a.count("	")
 			onClass += 1
@@ -279,14 +280,19 @@ def OrderResult(result):
 	fixedReversedList = [x for x in reversedList if x]
 	return fixedReversedList
 
-
 def OrderedClasses(itemList, fileName, includeList, findMagazines=False):
+
 	try:
 		os.mkdir(fileName)
 	except FileExistsError:
 		pass
 
 	for _class in itemList:
+
+		writeArray = []
+		for wantedAttribute in includeList:
+			writeArray.append("-----")
+
 		result = findClass(_class)
 		orderedResult = OrderResult(result)
 
@@ -312,14 +318,20 @@ def OrderedClasses(itemList, fileName, includeList, findMagazines=False):
 							file.write("magazines[] = {\n")
 							magazinesFlag = True
 
-
 						try:
 							_temp = re.search("(" + attribute + "=[^\n]*)", item).group(1)
 							if attribute not in addedForClass:
 								addedForClass.append(attribute)
-								file.write(_temp + "\n")
+								x = 0
+								for wantedAttribute in includeList:
+									if wantedAttribute == attribute:
+										writeArray[x] = _temp
+									x += 1
+
 						except AttributeError:
 							continue
+			for writeAttribute in writeArray:
+				file.write(writeAttribute + "\n")
 
 		print(cviolet2 + "-------------------------------" + cend + \
 		(cgreen + cbold + "Next class" + cend) + \
@@ -368,33 +380,48 @@ launcherAttributes = [
 	"maxZeroing",
 	"recoil",
 	"reloadAction",
+	"magazineReloadTime",
 	"weaponLockDelay",
 	"weaponLockSystem"
 ]
 launcherAmmoAttributes = [
-	"mass",
-	"initSpeed",
+	"airFriction",
+	"caliber",
+	"cmImmunity",
 	"count",
-	"",
-	"",
-	"",
-	"",
-	"",
-	"",
-	"",
-	"",
-	"",
-	"",
-	"",
-	""
+	"explosive",
+	"hit",
+	"indirectHit",
+	"indirectHitRange",
+	"initSpeed",
+	"maneuvrability",
+	"manualControl",
+	"mass",
+	"maxControlRange",
+	"maxSpeed",
+	"missileLockCone",
+	"missileKeepLockedCone",
+	"missileLockMaxDistance",
+	"missileLockMaxSpeed",
+	"missileLockMinDistance",
+	"sideAirFriction",
+	"submunitionAmmo",
+	"submunitionInitSpeed",
+	"submunitionConeAngle",
+	"thrust",
+	"thrustTime",
+	"timeToLive",
+	"trackLead",
+	"trackOversteer",
+	"warheadName"
 ]
-OrderedClasses(bluForWeapons, "BluForWeapons", weaponAttributes)
-OrderedClasses(opForWeapons, "OpForWeapons", weaponAttributes)
-OrderedClasses(bluForMagazines, "BluForMagazines", ammoAttributes)
-OrderedClasses(opForMagazines, "OpForMagazines", ammoAttributes)
-OrderedClasses(launchers, "Launchers", launcherAttributes)
-#OrderedClasses(launcherAmmo, "LauncherAmmo", launcherAmmoAttributes)
-#OrderedClasses()
-#OrderedClasses()
-#OrderedClasses()
-#OrderedClasses()
+
+OrderedClasses(bluForWeapons     , "BluForWeapons"     , weaponAttributes      )
+OrderedClasses(opForWeapons      , "OpForWeapons"      , weaponAttributes      )
+OrderedClasses(bluForMagazines   , "BluForMagazines"   , ammoAttributes        )
+OrderedClasses(opForMagazines    , "OpForMagazines"    , ammoAttributes        )
+OrderedClasses(launchers         , "Launchers"         , launcherAttributes    )
+OrderedClasses(guidedLaunchers   , "GuidedLaunchers"   , launcherAttributes    )
+OrderedClasses(launcherAmmo      , "LauncherAmmo"      , launcherAmmoAttributes)
+OrderedClasses(penetrators       , "Penetrators"       , launcherAmmoAttributes)
+OrderedClasses(guidedLauncherAmmo, "GuidedLauncherAmmo", launcherAmmoAttributes)
