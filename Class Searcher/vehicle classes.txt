@@ -17,13 +17,15 @@ Opfor:
 			7*rhs_mag_OG9V
 			6*rhs_mag_PG9V
 
-	BRDM-2 [KPVT,PKT]       = rhsgref_BRDM2_vdv
+	BRDM-2                 = rhsgref_BRDM2_vdv
 		rhs_weap_kpvt:
 			10*rhs_mag_145x115mm_50
 		rhs_weap_pkt_btr:
 		8*rhs_mag_762x54mm_250
 
-	BRDM-2 (9P148)         = rhsgref_BRDM2_ATGM_vdv
+	BRDM-2 (9P148)          = rhsgref_BRDM2_ATGM_vdv
+		rhs_weap_9P148:
+			3*rhs_mag_9m113_5
 		
 	GAZ-66 (ZU-23-2)        = rhs_gaz66_zu23_msv
 		
