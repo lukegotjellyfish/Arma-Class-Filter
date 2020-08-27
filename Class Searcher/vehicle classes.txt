@@ -92,11 +92,35 @@ Opfor:
 			1*rhs_mag_3d17_6
 
 	BMD-2M                  = rhs_bmd2m
-		
+		rhs_weap_2a42:
+			1*rhs_mag_3uof8_180
+			1*rhs_mag_3ubr8_120
+		rhs_weap_pkt:
+			8*rhs_mag_762x54mm_250
+		rhs_weap_9k133:
+			1*rhs_mag_9m133_2
+
 	BMP-3 (early)           = rhs_bmp3_msv
-		
+		rhs_weap_2a70:
+			1*rhs_mag_3UOF17_22
+			1*rhs_mag_9m117_8
+		rhs_weap_2a72:
+			1*rhs_mag_3uof8_305
+			1*rhs_mag_3ubr6_195
+		rhs_weap_pkt_bmd_coax:
+			1*rhs_mag_762x54mm_2000
+		rhs_weap_902a:
+			1*rhs_mag_3d17_6
+
 	BTR-80A                 = rhs_btr80a_msv
-		
+		rhs_weap_2a72_btr:
+			1*rhs_mag_3uof8_150
+			1*rhs_mag_3ubr11_150
+		rhs_weap_pkt_btr80a:
+			1*rhs_mag_762x54mm_2000
+		rhs_weap_902a:
+			1*rhs_mag_3d17_6
+
 	BMD-4                   = rhs_bmd4_vdv
 		
 	T-72B (obr. 1985g.)     = rhs_t72bb_tv
