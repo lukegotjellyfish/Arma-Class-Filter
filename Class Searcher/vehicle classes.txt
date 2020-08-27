@@ -44,7 +44,13 @@ Opfor:
 			1*rhs_mag_3d17_6
 
 	BMD-1PK                 = rhsgref_ins_bmp1k
-		
+		rhs_weap_2a28:
+			1*rhs_mag_pg15v_20
+			1*rhs_mag_og15v_20
+		rhs_weap_pkt:
+			8*rhs_mag_762x54mm_250
+		rhs_weap_9k11:
+			4*rhs_mag_9m14m
 	BMP-1P                  = rhsgref_ins_bmpm1p
 		
 	BMP-2D                  = rhsgref_ins_bmp2d
