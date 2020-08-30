@@ -178,7 +178,7 @@ launcherAmmo = [
 	"rhsusf_mag_6Rnd_M441_HE",
 	"rhs_mag_M441_HE"
 ]
-penetrators = [
+launcherPenetrators = [
 	"rhs_ammo_M_fgm148_AT_penetrator",
 	"rhs_ammo_M136_hedp_penetrator",
 	"rhs_ammo_M136_penetrator",
@@ -191,6 +191,13 @@ penetrators = [
 	"rhs_rpg7v2_pg7vr_penetrator"
 ]
 
+#Classes for vehicles
+bluForVehicles       = []
+bluForVehicleWeapons = []
+bluForVWeapMagazines = []
+opForVehicles        = []
+opForVehicleWeapons  = []
+opForVWeapMagazines  = []
 
 def findClass(className):
 	print("Searching files for class [" + className + "]")
@@ -435,13 +442,50 @@ vehicleAttributes = [
 	"maxturn",
 	"discreteDistance"
 ]
+vehicleWeaponAttributes = [
+	"submunitionAmmo",
+	"",
+	"",
+	"",
+	"",
+	"",
+	"",
+	"",
+	"",
+	"",
+	"",
+	"",
+	"",
+	"",
+	"",
+	"",
+	"",
+	"",
+	"",
+	"",
+	"",
+	"",
+	"",
+	""
+]
+vehicleWeaponMagazines = []
 
-OrderedClasses(bluForWeapons     , "BluForWeapons"     , weaponAttributes      )
-OrderedClasses(opForWeapons      , "OpForWeapons"      , weaponAttributes      )
-OrderedClasses(bluForMagazines   , "BluForMagazines"   , ammoAttributes        )
-OrderedClasses(opForMagazines    , "OpForMagazines"    , ammoAttributes        )
-OrderedClasses(launchers         , "Launchers"         , launcherAttributes    )
-OrderedClasses(guidedLaunchers   , "GuidedLaunchers"   , launcherAttributes    )
-OrderedClasses(launcherAmmo      , "LauncherAmmo"      , launcherAmmoAttributes)
-OrderedClasses(penetrators       , "Penetrators"       , launcherAmmoAttributes)
-OrderedClasses(guidedLauncherAmmo, "GuidedLauncherAmmo", launcherAmmoAttributes)
+OrderedClasses(bluForWeapons       , "BluForWeapons"       , weaponAttributes       )
+OrderedClasses(bluForMagazines     , "BluForMagazines"     , ammoAttributes         )
+
+OrderedClasses(opForWeapons        , "OpForWeapons"        , weaponAttributes       )
+OrderedClasses(opForMagazines      , "OpForMagazines"      , ammoAttributes         )
+
+OrderedClasses(launchers           , "Launchers"           , launcherAttributes     )
+OrderedClasses(guidedLaunchers     , "GuidedLaunchers"     , launcherAttributes     )
+OrderedClasses(launcherAmmo        , "LauncherAmmo"        , launcherAmmoAttributes )
+OrderedClasses(launcherPenetrators , "Penetrators"         , launcherAmmoAttributes )
+OrderedClasses(guidedLauncherAmmo  , "GuidedLauncherAmmo"  , launcherAmmoAttributes )
+
+OrderedClasses(bluForVehicles      , "BluForVehicles"      , vehicleAttributes      )
+OrderedClasses(bluForVehicleWeapons, "BluForVehicleWeapons", vehicleWeaponAttributes)
+OrderedClasses(bluForVWeapMagazines, "BluForVWeapMagazines", vehicleWeaponMagazines )
+
+OrderedClasses(opForVehicles       , "opForVehicles"       , vehicleAttributes      )
+OrderedClasses(opForVehicleWeapons , "opForVehicleWeapons" , vehicleWeaponAttributes)
+OrderedClasses(opForVWeapMagazines , "BluForVehicleWeapons", vehicleWeaponMagazines)
