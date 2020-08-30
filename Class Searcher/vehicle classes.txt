@@ -5,13 +5,16 @@ Shared:
 	Kart                    = A3_Soft_F_Kart_Kart_01
 
 Opfor:
-(seem to not have included )
 	UAZ-3151                = RHS_UAZ_MSV_01
 	UAZ-3151 (DShKM)        = rhsgref_ins_uaz_dshkm
 		rhs_weap_DSHKM:
 			5*rhs_mag_127x108mm_50
 
 	GAZ-233011 (Camo/Hatch) = rhs_tigr_3camo_msv
+	UAZ-3151 (AGS-30)       = 
+	GAZ-233014              = 
+
+
 	UAZ-3151 (SPG-9)        = rhsgref_ins_uaz_spg9
 		rhs_weap_SPG9:
 			7*rhs_mag_OG9V
@@ -167,7 +170,7 @@ Opfor:
 		rhs_weap_902b:
 			1*rhs_mag_3d17_12
 
-	T-72 (obr. 1989g.)      = rhs_t72bc_tv
+	T-72B (obr. 1989g.)     = rhs_t72bc_tv
 		rhs_weap_2a46m:
 			1*rhs_mag_3bm42_7
 			1*rhs_mag_3bk18m_6
@@ -249,11 +252,6 @@ Opfor:
 			8*rhs_mag_762x54mm_250
 		rhs_weap_902a:
 			1*rhs_mag_3d17
-
-
-
-
-
 
 
 Blufor:
@@ -360,7 +358,7 @@ Blufor:
 			1*rhs_mag_M829A1
 			1*rhs_mag_M830A1
 		RHS_M2_Abrams_Gunner:
-			rhs_mag_200rnd_127x99_SLAP_mag_Tracer_Red
+			1*rhs_mag_200rnd_127x99_SLAP_mag_Tracer_Red
 		rhs_weap_m240_abrams_coax
 			9*rhs_mag_762x51_M240_1200
 
@@ -377,7 +375,7 @@ Blufor:
 			1*rhs_mag_M829A1
 			1*rhs_mag_M830A1
 		RHS_M2_Abrams_Gunner:
-			rhs_mag_200rnd_127x99_SLAP_mag_Tracer_Red
+			1*rhs_mag_200rnd_127x99_SLAP_mag_Tracer_Red
 		rhs_weap_m240_abrams_coax
 			9*rhs_mag_762x51_M240_1200
 
