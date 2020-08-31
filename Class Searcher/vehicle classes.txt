@@ -9,11 +9,11 @@ Opfor:
 	UAZ-3151 (DShKM)        = rhsgref_ins_uaz_dshkm
 		rhs_weap_DSHKM:
 			5*rhs_mag_127x108mm_50
-
 	GAZ-233011 (Camo/Hatch) = rhs_tigr_3camo_msv
-	UAZ-3151 (AGS-30)       = 
-	GAZ-233014              = 
-
+	UAZ-3151 (AGS-30)       = rhsgref_cdf_b_reg_uaz_ags
+		RHS_weap_AGS30:
+			6*RHS_mag_VOG30_30
+	GAZ-233014              = rhs_tigr_sts_vdv
 
 	UAZ-3151 (SPG-9)        = rhsgref_ins_uaz_spg9
 		rhs_weap_SPG9:
@@ -24,7 +24,7 @@ Opfor:
 		rhs_weap_kpvt:
 			10*rhs_mag_145x115mm_50
 		rhs_weap_pkt_btr:
-		8*rhs_mag_762x54mm_250
+			8*rhs_mag_762x54mm_250
 
 	BRDM-2 (9P148)          = rhsgref_BRDM2_ATGM_vdv
 		rhs_weap_9P148:
@@ -85,8 +85,6 @@ Opfor:
 			1*rhs_mag_3bk29_8
 			1*rhs_mag_3of26_6
 			1*rhs_mag_9m119rx_6
-
-			1*rhs_mag_3d17_6
 		rhs_weap_pkt_bmd_coax:
 			8*rhs_mag_762x54mm_250
 		rhs_weap_PL1:
@@ -378,4 +376,3 @@ Blufor:
 			1*rhs_mag_200rnd_127x99_SLAP_mag_Tracer_Red
 		rhs_weap_m240_abrams_coax
 			9*rhs_mag_762x51_M240_1200
-
