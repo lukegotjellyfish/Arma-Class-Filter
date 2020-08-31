@@ -198,7 +198,6 @@ sharedVehicles = [
 	"A3_Soft_F_Gamma_Hatchback_01",
 	"A3_Soft_F_Kart_Kart_01"
 ]
-
 bluForVehicles       = [
 	"RHS_M2A2_BUSKI_WD",
 	"RHS_M2A2_wd",
@@ -395,6 +394,7 @@ def findClass(className):
 					or onClass == True:
 
 				onClass = True
+				print(cred + line.replace("\n","") + cend)
 
 				if line.startswith("	class"):
 					  #print("Class found " + line.replace("\n",""))
@@ -405,6 +405,8 @@ def findClass(className):
 						_className = re.search("class [^\n:]*: ([^\n;]*)", line).group(1).replace("\n","")
 					else:
 						_className = re.search("class ([^\n;]*)", line).group(1).replace("\n","")
+
+					print(cgreen + line.replace("\n","") + cend)
 
 					if _className != className:
 						#print(cred + "New findClass(_className[" + _className + "] | className[" + className + "])" + cend)
