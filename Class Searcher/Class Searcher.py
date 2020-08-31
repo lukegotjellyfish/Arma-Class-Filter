@@ -3,7 +3,7 @@
 import os
 import re
 import csv
-
+from pathlib import Path
 
 """
 TODO:
@@ -192,12 +192,195 @@ launcherPenetrators = [
 ]
 
 #Classes for vehicles
-bluForVehicles       = []
-bluForVehicleWeapons = []
-bluForVWeapMagazines = []
-opForVehicles        = []
-opForVehicleWeapons  = []
-opForVWeapMagazines  = []
+sharedVehicles = [
+	"A3_Soft_F_Quadbike_01",
+	"A3_Soft_F_Gamma_SUV_01",
+	"A3_Soft_F_Gamma_Hatchback_01",
+	"A3_Soft_F_Kart_Kart_01"
+]
+
+bluForVehicles       = [
+	"RHS_M2A2_BUSKI_WD",
+	"RHS_M2A2_wd",
+	"RHS_M2A3_BUSKIII_WD",
+	"RHS_M6_wd",
+	"rhsgref_cdf_b_ural_Zu23",
+	"rhsusf_m1025_w",
+	"rhsusf_m1025_w_m2",
+	"rhsusf_m1025_w_Mk19",
+	"rhsusf_m1045_w",
+	"rhsusf_m1117_w",
+	"rhsusf_m113_usarmy",
+	"rhsusf_m113_usarmy_medical",
+	"rhsusf_m113_usarmy_Mk19",
+	"rhsusf_m1220_m153_m2_usarmy_wd",
+	"rhsusf_M1220_MK19_usarmy_wd",
+	"rhsusf_m1220_usarmy_wd",
+	"rhsusf_m1232_MK19_usarmy_wd",
+	"rhsusf_m1232_usarmy_wd",
+	"rhsusf_m1a1aim_tuski_wd",
+	"rhsusf_m1a1fep_wd",
+	"rhsusf_m1a1hc_wd",
+	"rhsusf_m1a2sep1tuskiiwd_usarmy"
+]
+bluForVehicleWeapons = [
+	"RHS_M2",
+	"RHS_M2_Abrams_Gunner",
+	"RHS_M2_CROWS_M153",
+	"RHS_M2_M1117",
+	"RHS_MK19",
+	"rhs_weap_2A14",
+	"rhs_weap_m240_abrams_coax",
+	"rhs_weap_m240_bradley_coax",
+	"RHS_weap_M242BC",
+	"rhs_weap_m256",
+	"Rhs_weap_TOW_Launcher",
+	"rhs_weap_tow_launcher_static",
+	"rhsusf_weap_M257_8",
+	"rhsusf_weap_M259",
+	"Rhs_weap_stinger_Launcher"
+]
+bluForVWeapMagazines = [
+	"RHS_48Rnd_40mm_MK19_M1001",
+	"RHS_48Rnd_40mm_MK19_M430A1",
+	"RHS_96Rnd_40mm_MK19_M430A1",
+	"rhs_ammo_TOW2_BB",
+	"rhs_ammo_TOW2A_AT",
+	"rhs_ammo_TOW2B_AT",
+	"rhs_mag_100rnd_127x99_mag_Tracer_Red",
+	"rhs_mag_1100Rnd_762x51_M240",
+	"rhs_mag_200rnd_127x99_mag_Tracer_Red",
+	"rhs_mag_200rnd_127x99_SLAP_mag_Tracer_Red",
+	"rhs_mag_230Rnd_25mm_M242_HEI",
+	"rhs_mag_2Rnd_TOW2A",
+	"rhs_mag_2Rnd_TOW2B_AERO",
+	"rhs_mag_2Rnd_TOW2BB",
+	"rhs_mag_400rnd_127x99_mag_Tracer_Red",
+	"Rhs_mag_4Rnd_stinger",
+	"rhs_mag_70Rnd_25mm_M242_APFSDS",
+	"rhs_mag_762x51_M240_1200",
+	"RHS_mag_AZP23_100",
+	"rhs_mag_M829A1",
+	"rhs_mag_M830A1",
+	"rhsusf_mag_L8A3_8"
+]
+bluForVWeapPenetrators = []
+
+opForVehicles        = [
+	"RHS_UAZ_MSV_01",
+	"rhsgref_ins_uaz_dshkm",
+	"rhs_tigr_3camo_msv",
+	"rhsgref_cdf_b_reg_uaz_ags",
+	"rhs_tigr_sts_vdv",
+	"rhsgref_ins_uaz_spg9",
+	"rhsgref_BRDM2_vdv",
+	"rhsgref_BRDM2_ATGM_vdv",
+	"rhs_gaz66_zu23_msv",
+	"rhs_bmd1r",
+	"rhs_btr80_msv",
+	"rhsgref_ins_bmp1k",
+	"rhsgref_ins_bmp1p",
+	"rhsgref_ins_bmp2d",
+	"rhs_zsu234_aa",
+	"rhs_sprut_vdv",
+	"rhs_bmd2m",
+	"rhs_bmp3_msv",
+	"rhs_btr80a_msv",
+	"rhs_bmd4_vdv",
+	"rhs_t72bb_tv",
+	"rhs_t80bvk",
+	"rhs_t80uk",
+	"rhs_t72bc_tv",
+	"rhs_t90a_tv",
+	"rhs_bmd4ma_vdv",
+	"rhs_t90a_tv",
+	"rhs_t72bd_tv",
+	"rhs_bmp3mera_msv",
+	"rhs_t80ue1"
+]
+opForVehicleWeapons  = [
+	"rhs_weap_2A14",
+	"rhs_weap_2a28",
+	"rhs_weap_2a42",
+	"rhs_weap_2a46_2",
+	"rhs_weap_2a46m_4",
+	"rhs_weap_2a46m_5",
+	"rhs_weap_2a46m",
+	"rhs_weap_2a70",
+	"rhs_weap_2a72_btr",
+	"rhs_weap_2a72:",
+	"rhs_weap_2a72",
+	"rhs_weap_2a75",
+	"rhs_weap_902a",
+	"rhs_weap_902b",
+	"rhs_weap_9k11",
+	"rhs_weap_9k133",
+	"rhs_weap_9m113",
+	"rhs_weap_9P148",
+	"RHS_weap_AGS30",
+	"rhs_weap_DSHKM",
+	"rhs_weap_kpvt",
+	"rhs_weap_nsvt_t72",
+	"rhs_weap_pkt_bmd_coax",
+	"rhs_weap_pkt_btr",
+	"rhs_weap_pkt_btr80a",
+	"rhs_weap_pkt",
+	"rhs_weap_PL1",
+	"rhs_weap_s8",
+	"rhs_weap_SPG9"
+]
+opForVWeapMagazines  = [
+	"rhs_mag_127x108mm_50",
+	"rhs_mag_145x115mm_50",
+	"rhs_mag_3bk18m_6",
+	"rhs_mag_3bk18m_8",
+	"rhs_mag_3bk29_8",
+	"rhs_mag_3bk31_3",
+	"rhs_mag_3bk31_8",
+	"rhs_mag_3bm22_14",
+	"rhs_mag_3bm42_7",
+	"rhs_mag_3bm46_10",
+	"rhs_mag_3bm46_8",
+	"rhs_mag_3d17_12",
+	"rhs_mag_3d17_6",
+	"rhs_mag_3of26_5",
+	"rhs_mag_3of26_6",
+	"rhs_mag_3of26_7",
+	"rhs_mag_3ubr11_150",
+	"rhs_mag_3ubr11_195",
+	"rhs_mag_3ubr11_227",
+	"rhs_mag_3ubr6_195",
+	"rhs_mag_3ubr8_120",
+	"rhs_mag_3ubr8_160",
+	"rhs_mag_3UOF17_22",
+	"rhs_mag_3UOF191_22",
+	"rhs_mag_3uof8_150",
+	"rhs_mag_3uof8_180",
+	"rhs_mag_3uof8_237",
+	"rhs_mag_3uof8_305",
+	"rhs_mag_3uof8_340",
+	"rhs_mag_762x54mm_2000",
+	"rhs_mag_762x54mm_250",
+	"rhs_mag_9m113_5",
+	"rhs_mag_9m113M",
+	"rhs_mag_9m117_8",
+	"rhs_mag_9m117m_8",
+	"rhs_mag_9m117m1_8",
+	"rhs_mag_9m119_4",
+	"rhs_mag_9m119rx_6",
+	"rhs_mag_9m133_2",
+	"rhs_mag_9m14m",
+	"RHS_mag_AZP23_100",
+	"rhs_mag_AZP23_2000",
+	"rhs_mag_og15v_20",
+	"rhs_mag_OG9V",
+	"rhs_mag_pg15v_20",
+	"rhs_mag_PG9V",
+	"rhs_mag_s8_12",
+	"RHS_mag_VOG30_30"
+]
+opForVWeapPenetrators = [
+]
 
 def findClass(className):
 	print("Searching files for class [" + className + "]")
@@ -289,10 +472,7 @@ def OrderResult(result):
 
 def OrderedClasses(itemList, fileName, includeList, findMagazines=False):
 
-	try:
-		os.mkdir(fileName)
-	except FileExistsError:
-		pass
+	Path(fileName).mkdir(parents=True, exist_ok=True)
 
 	for _class in itemList:
 
@@ -396,6 +576,7 @@ launcherAmmoAttributes = [
 	"caliber",
 	"cmImmunity",
 	"count",
+	"deleteParentWhenTriggered",
 	"explosive",
 	"hit",
 	"indirectHit",
@@ -406,86 +587,75 @@ launcherAmmoAttributes = [
 	"mass",
 	"maxControlRange",
 	"maxSpeed",
-	"missileLockCone",
 	"missileKeepLockedCone",
+	"missileLockCone",
 	"missileLockMaxDistance",
 	"missileLockMaxSpeed",
 	"missileLockMinDistance",
 	"sideAirFriction",
 	"submunitionAmmo",
-	"submunitionInitSpeed",
 	"submunitionConeAngle",
+	"submunitionInitSpeed",
+	"submunitionParentSpeedCoef",
 	"thrust",
 	"thrustTime",
 	"timeToLive",
 	"trackLead",
 	"trackOversteer",
+	"triggerOnImpact",
+	"typicalSpeed",
 	"warheadName"
 ]
-
 vehicleAttributes = [
-	"maxSpeed",
-	"turnCoef",
-	"terrainCoef",
-	"enginePower",
-	"peakTorque",
-	"armor",
-	"armorStructural",
-	"explosionShielding",
-	"LockDetectionSystem",
-	"incomingMissileDetectionSystem",
-	"minTotalDamageThreshold",
-	"fuelExplosionPower",
-	"minElev",
-	"maxElev",
-	"minturn",
-	"maxturn",
-	"discreteDistance"
+	"maxSpeed", #Maximum speed able to be achieved under engine power alone
+	"turnCoef", #Maximum steering angle
+	"terrainCoef", #Higher = low friction on rough ground slows vehicle more
+	"enginePower", #Power of engine in kilowatts
+	"peakTorque", #Maximum torque from engine in newton metres
+	"LockDetectionSystem", #specifices what locks can be detected https://community.bistudio.com/wiki/Arma_3_Targeting_config_reference#lockDetectionSystem
+	"incomingMissileDetectionSystem", #Specifies what guided munitions can be detected https://community.bistudio.com/wiki/Arma_3_Targeting_config_reference#incomingMissileDetectionSystem
+	"minElev", #Max angle gun can be depressed
+	"maxElev", #Max angle gun can be elevated
+	"minturn", #Max negative angle wheel can be turned
+	"maxturn", #Max angle wheel can be turned
+	"discreteDistance" #Zeroing presets (pageup-pagedown)
 ]
 vehicleWeaponAttributes = [
+	"canLock",
+	"cmImmunity",
+	"dispersion",
+	"lockAcquire",
+	"magazineReloadTime",
+	"mass",
+	"maxZeroing",
+	"recoil",
+	"reloadAction",
+	"reloadTime",
 	"submunitionAmmo",
-	"",
-	"",
-	"",
-	"",
-	"",
-	"",
-	"",
-	"",
-	"",
-	"",
-	"",
-	"",
-	"",
-	"",
-	"",
-	"",
-	"",
-	"",
-	"",
-	"",
-	"",
-	"",
-	""
+	"weaponLockDelay",
+	"weaponLockSystem"
 ]
-vehicleWeaponMagazines = []
 
-OrderedClasses(bluForWeapons       , "BluForWeapons"       , weaponAttributes       )
-OrderedClasses(bluForMagazines     , "BluForMagazines"     , ammoAttributes         )
 
-OrderedClasses(opForWeapons        , "OpForWeapons"        , weaponAttributes       )
-OrderedClasses(opForMagazines      , "OpForMagazines"      , ammoAttributes         )
+#Ordered Classes
+# OrderedClasses(bluForWeapons         , "BluFor//BluForWeapons"         , weaponAttributes       )
+# OrderedClasses(bluForMagazines       , "BluFor//BluForMagazines"       , ammoAttributes         )
 
-OrderedClasses(launchers           , "Launchers"           , launcherAttributes     )
-OrderedClasses(guidedLaunchers     , "GuidedLaunchers"     , launcherAttributes     )
-OrderedClasses(launcherAmmo        , "LauncherAmmo"        , launcherAmmoAttributes )
-OrderedClasses(launcherPenetrators , "Penetrators"         , launcherAmmoAttributes )
-OrderedClasses(guidedLauncherAmmo  , "GuidedLauncherAmmo"  , launcherAmmoAttributes )
+# OrderedClasses(opForWeapons          , "OpFor//OpForWeapons"          , weaponAttributes       )
+# OrderedClasses(opForMagazines        , "OpFor//OpForMagazines"        , ammoAttributes         )
 
-OrderedClasses(bluForVehicles      , "BluForVehicles"      , vehicleAttributes      )
-OrderedClasses(bluForVehicleWeapons, "BluForVehicleWeapons", vehicleWeaponAttributes)
-OrderedClasses(bluForVWeapMagazines, "BluForVWeapMagazines", vehicleWeaponMagazines )
+# OrderedClasses(launchers             , "Launchers//Launchers"             , launcherAttributes     )
+# OrderedClasses(guidedLaunchers       , "Launchers//GuidedLaunchers"       , launcherAttributes     )
+# OrderedClasses(launcherAmmo          , "Launchers//LauncherAmmo"          , launcherAmmoAttributes )
+# OrderedClasses(launcherPenetrators   , "Launchers//Penetrators"           , launcherAmmoAttributes )
+# OrderedClasses(guidedLauncherAmmo    , "Launchers//GuidedLauncherAmmo"    , launcherAmmoAttributes )
 
-OrderedClasses(opForVehicles       , "opForVehicles"       , vehicleAttributes      )
-OrderedClasses(opForVehicleWeapons , "opForVehicleWeapons" , vehicleWeaponAttributes)
-OrderedClasses(opForVWeapMagazines , "BluForVehicleWeapons", vehicleWeaponMagazines)
+OrderedClasses(bluForVehicles        , "BluFor//BluForVehicles"        , vehicleAttributes      )
+OrderedClasses(bluForVehicleWeapons  , "BluFor//BluForVehicleWeapons"  , vehicleWeaponAttributes)
+OrderedClasses(bluForVWeapMagazines  , "BluFor//BluForVWeapMagazines"  , launcherAmmoAttributes )
+#OrderedClasses(bluForVWeapPenetrators, "BluFor//BluForVWeapPenetrators", launcherAmmoAttributes )
+
+OrderedClasses(opForVehicles         , "OpFor//OpForVehicles"         , vehicleAttributes      )
+OrderedClasses(opForVehicleWeapons   , "OpFor//OpForVehicleWeapons"   , vehicleWeaponAttributes)
+OrderedClasses(opForVWeapMagazines   , "OpFor//OpForVWeapMagazines"   , launcherAmmoAttributes )
+#OrderedClasses(opForVWeapPenetrators , "OpFor//OpForVWeapPenetrators" , launcherAmmoAttributes )
