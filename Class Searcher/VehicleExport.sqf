@@ -4,6 +4,7 @@ _sideMatrix = [
 		//BluFor
 		[
 			"BluFor\Weapons\",
+			"CfgWeapons",
 			"rhs_weap_M590_5RD",
 			"rhs_weap_M107",
 			"rhs_weap_XM2010",
@@ -40,6 +41,7 @@ _sideMatrix = [
 		//OpFor
 		[
 			"OpFor\Weapons\",
+			"CfgWeapons",
 			"rhs_weap_Izh18",
 			"rhs_weap_t5000",
 			"rhs_weap_svdp",
@@ -71,6 +73,7 @@ _sideMatrix = [
 		//BluFor
 		[
 			"BluFor\Magazines\",
+			"CfgMagazines",
 			"rhsusf_5Rnd_00Buck",
 			"rhsusf_5Rnd_Slug",
 			"rhsusf_mag_10Rnd_STD_50BMG_M33",
@@ -103,6 +106,7 @@ _sideMatrix = [
 		//OpFor
 		[
 			"OpFor\Magazines\",
+			"CfgMagazines",
 			"rhsgref_1Rnd_00Buck",
 			"rhsgref_1Rnd_Slug",
 			"rhs_5Rnd_338lapua_t5000",
@@ -128,6 +132,7 @@ _sideMatrix = [
 		//BluFor
 		[
 			"BluFor\Launchers\",
+			"CfgWeapons",
 			"rhs_weap_M136",
 			"rhs_weap_M136_hedp",
 			"rhs_weap_m32_Base_F",
@@ -141,6 +146,7 @@ _sideMatrix = [
 		//OpFor
 		[
 			"OpFor\Launchers\",
+			"CfgWeapons",
 			"rhs_weap_rpg26",
 			"rhs_weap_rpg7",
 			"rhs_weap_igla",
@@ -152,6 +158,7 @@ _sideMatrix = [
 		//BluFor
 		[
 			"BluFor\LauncherMagazines\",
+			"CfgMagazines",
 			"rhs_fgm148_magazine_AT",
 			"rhs_fim92_mag",
 			"rhs_m136_hedp_mag",
@@ -167,6 +174,7 @@ _sideMatrix = [
 		//OpFor
 		[
 			"OpFor\LauncherMagazines\",
+			"CfgMagazines",
 			"rhs_mag_9k38_rocket",
 			"rhs_rpg26_mag",
 			"rhs_rpg7_OG7V_mag",
@@ -181,6 +189,7 @@ _sideMatrix = [
 		//BluFor
 		[
 			"BluFor\LauncherPenetrator\",
+			"CfgAmmo",
 			"rhs_ammo_M_fgm148_AT_penetrator",
 			"rhs_ammo_M136_hedp_penetrator",
 			"rhs_ammo_M136_penetrator",
@@ -192,6 +201,7 @@ _sideMatrix = [
 		//OpFor
 		[
 			"OpFor\LauncherPenetrator\",
+			"CfgAmmo",
 			"rhs_ammo_thermobaric_wave",
 			"rhs_rpg26_penetrator",
 			"rhs_rpg7v2_pg7vl_penetrator",
@@ -203,6 +213,7 @@ _sideMatrix = [
 		//BluFor
 		[
 			"BluFor\Vehicles\",
+			"CfgVehicles",
 			"A3_Soft_F_Quadbike_01",
 			"RHS_M2A2_BUSKI_WD",
 			"RHS_M2A2_wd",
@@ -233,6 +244,7 @@ _sideMatrix = [
 		//OpFor
 		[
 			"OpFor\Vehicles",
+			"CfgVehicles",
 			"A3_Soft_F_Quadbike_01",
 			"RHS_UAZ_MSV_01",
 			"rhsgref_ins_uaz_dshkm",
@@ -274,6 +286,7 @@ _sideMatrix = [
 		//BluFor
 		[
 			"BluFor\VehicleWeapons\",
+			"CfgWeapons",
 			"RHS_M2",
 			"RHS_M2_Abrams_Gunner",
 			"RHS_M2_CROWS_M153",
@@ -293,6 +306,7 @@ _sideMatrix = [
 		//OpFor
 		[
 			"OpFor\VehicleWeapons\",
+			"CfgWeapons",
 			"rhs_weap_2A14",
 			"rhs_weap_2a28",
 			"rhs_weap_2a42",
@@ -328,6 +342,7 @@ _sideMatrix = [
 		//BluFor
 		[
 			"BluFor\VehicleMagazines\",
+			"CfgMagazines",
 			"RHS_48Rnd_40mm_MK19_M1001",
 			"RHS_48Rnd_40mm_MK19_M430A1",
 			"RHS_96Rnd_40mm_MK19_M430A1",
@@ -354,6 +369,7 @@ _sideMatrix = [
 		//OpFor
 		[
 			"OpFor\VehicleMagazines\",
+			"CfgMagazines",
 			"rhs_mag_127x108mm_50",
 			"rhs_mag_145x115mm_50",
 			"rhs_mag_3bk18m_6",
@@ -409,43 +425,53 @@ _sideMatrix = [
 	// 	//BluFor
 	// 	[
 	// 		"BluFor\VehiclePenetrator\",
-			
+	//		"CfgAmmo",
+
 	// 	],
 	// 	//OpFor
 	// 	[
 	// 		"OpFor\VehiclePenetrator\",
+	//		"CfgAmmo",
 
 	// 	]
 	// ]
 ];
 
-_cfgFiles = ["CfgVehicles", "CfgWeapons", "CfgMagazines", "CfgAmmo"];
 
 _basePath = "E:\USBBACKUP\GitHub\Arma-Class-Filter\Class Searcher\";
 {
 	{
+		i = 0;
+		_configCategory = "";
 		{
-			{
-				scopeName "CfgFileLoop";
-				if (count _configs != 0) then {
-					_configCategory = _x;
-					breakOut "CfgFileLoop";
-				};
-			} forEach _cfgFiles;
+			if (i == 1) then {
+				_configCategory = _x;
+			};
+			if (i == 0) then {
+				path = _basePath + _x;
+			};
+			if (i > 1) then {
+				_configs = configProperties [configFile >> _configCategory >> _x];
+				diag_log(format["%1 = [", _x]);
 
-			_configs = configProperties [configFile >> _configCategory >> _x];
-			diag_log(format["%1 = [", _x]);
-
-			{
-				if (isText   _x) then { diag_log(format["    [%1,%2],", _x, getText _x]);};
-				if (isNumber _x) then { diag_log(format["    [%1,%2],", _x, getNumber _x]);};
-				if (isArray  _x) then { diag_log(format["    [%1,%2],", _x, getArray _x]);};
-			} foreach _configs;  //For each vehicle in selected array
-			diag_log("]");
+				{
+					if (isText _x) then { diag_log(format["    [%1,%2],", _x, getText _x]);};
+					if (isNumber _x) then { diag_log(format["    [%1,%2],", _x, getNumber _x]);};
+					if (isArray _x) then { diag_log(format["    [%1,%2],", _x, getArray _x]);};
+				} foreach _configs;  //For each vehicle in selected array
+				diag_log("]");
+			};
+			i = i + 1;
 		} foreach _x; //for each class for the side in the category
 	} foreach _x; //For each side in category
 } foreach _sideMatrix;  //For each category in sidematmarix
 
 
-
-//"make_file" callExtension format ["%1|%2", "c:\\", "text"];
+//"make_file" callExtension format ["%1%2.cpp|%3", _path, _x, classData];
+//"make_file" callExtension format ["%1.cpp|%2", "E:\USBBACKUP\GitHub\Arma-Class-Filter\Class Searcher\hey", "uwu"];
+//
+//
+// _configs = configProperties [configFile >> "CfgMagazines" >> "RHS_48Rnd_40mm_MK19_M430A1"];
+// diag_log(_configs);
+//
+//
