@@ -1231,6 +1231,19 @@ class CfgVehicles
 				selection="cabin_light3";
 			};
 		};
+		aggregateReflectors[]=
+		{
+			
+			{
+				"Left",
+				"Left2"
+			},
+			
+			{
+				"Right",
+				"Right2"
+			}
+		};
 		armorLights=0.0099999998;
 		class RenderTargets
 		{
@@ -1740,6 +1753,12 @@ class CfgVehicles
 				};
 				minElev=-10;
 				maxElev=40;
+				soundServo[]=
+				{
+					"A3\sounds_f\dummysound",
+					1e-006,
+					1
+				};
 				gunnerAction="RHS_HMMWV_Gunner03";
 				gunnerInAction="RHS_HMMWV_Gunner03_in";
 				lodTurnedIn=0;
@@ -2199,6 +2218,12 @@ class CfgVehicles
 				};
 				minElev=-10;
 				maxElev=40;
+				soundServo[]=
+				{
+					"A3\sounds_f\dummysound",
+					1e-006,
+					1
+				};
 				gunnerAction="RHS_HMMWV_Gunner03";
 				gunnerInAction="RHS_HMMWV_Gunner03_in";
 				lodTurnedIn=0;

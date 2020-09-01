@@ -1,11 +1,11 @@
 rhs_weap_fgm148
 canLock=2;
-cmImmunity=0.40000001;
+-----
 -----
 lockAcquire=0;
 mass=152.78999;
-maxZeroing=2000;
-recoil="recoil_single_titan";
+maxZeroing=1000;
+recoil="LAWSingle";
 reloadAction="RHS_ReloadRPG";
 magazineReloadTime=12;
 weaponLockDelay=5;

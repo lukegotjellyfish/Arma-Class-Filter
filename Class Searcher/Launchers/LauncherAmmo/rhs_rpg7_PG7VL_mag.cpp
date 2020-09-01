@@ -9,7 +9,7 @@ hit=220;
 indirectHit=20;
 indirectHitRange=4;
 initSpeed=112;
-maneuvrability=0;
+-----
 -----
 mass=37.18;
 -----

@@ -1547,6 +1547,79 @@ class CfgVehicles
 		driverAction="rhs_mrzr_driver";
 		getInAction="ChopperLight_L_In_H";
 		getOutAction="GetOutLow";
+		soundGetIn[]=
+		{
+			"",
+			0.44668359,
+			1
+		};
+		soundGetOut[]=
+		{
+			"",
+			0.44668359,
+			1,
+			40
+		};
+		soundDammage[]=
+		{
+			"",
+			0.56234133,
+			1
+		};
+		soundEngineOnInt[]=
+		{
+			"A3\Sounds_F\vehicles2\soft\Quadbike_01\Quadbike_01_Engine_Ext_Start",
+			0.50118721,
+			1
+		};
+		soundEngineOffInt[]=
+		{
+			"A3\Sounds_F\vehicles2\soft\Quadbike_01\Quadbike_01_Engine_Ext_stop",
+			0.39810717,
+			1
+		};
+		soundEngineOnExt[]=
+		{
+			"A3\Sounds_F\vehicles2\soft\Quadbike_01\Quadbike_01_Engine_Ext_Start",
+			0.50118721,
+			1,
+			50
+		};
+		soundEngineOffExt[]=
+		{
+			"A3\Sounds_F\vehicles2\soft\Quadbike_01\Quadbike_01_Engine_Ext_stop",
+			0.39810717,
+			1,
+			50
+		};
+		buildCrash0[]=
+		{
+			"A3\Sounds_F\vehicles2\soft\shared\collisions\Vehicle_Soft_Collision_Medium_01",
+			1.9952624,
+			1,
+			75
+		};
+		buildCrash1[]=
+		{
+			"A3\Sounds_F\vehicles2\soft\shared\collisions\Vehicle_Soft_Collision_Medium_02",
+			1.9952624,
+			1,
+			75
+		};
+		buildCrash2[]=
+		{
+			"A3\Sounds_F\vehicles2\soft\shared\collisions\Vehicle_Soft_Collision_Medium_03",
+			1.9952624,
+			1,
+			75
+		};
+		buildCrash3[]=
+		{
+			"A3\Sounds_F\vehicles2\soft\shared\collisions\Vehicle_Soft_Collision_Medium_04",
+			1.9952624,
+			1,
+			75
+		};
 		buildCrash4[]=
 		{
 			"A3\Sounds_F\vehicles2\soft\shared\collisions\Vehicle_Soft_Collision_Medium_05",
@@ -1575,6 +1648,67 @@ class CfgVehicles
 			1,
 			75
 		};
+		soundBuildingCrash[]=
+		{
+			"buildCrash0",
+			0.125,
+			"buildCrash1",
+			0.125,
+			"buildCrash2",
+			0.125,
+			"buildCrash3",
+			0.125,
+			"buildCrash4",
+			0.125,
+			"buildCrash5",
+			0.125,
+			"buildCrash6",
+			0.125,
+			"buildCrash7",
+			0.125
+		};
+		WoodCrash0[]=
+		{
+			"A3\Sounds_F\vehicles2\soft\shared\collisions\Vehicle_Soft_Collision_Medium_Wood_01",
+			1.9952624,
+			1,
+			75
+		};
+		WoodCrash1[]=
+		{
+			"A3\Sounds_F\vehicles2\soft\shared\collisions\Vehicle_Soft_Collision_Medium_Wood_02",
+			1.9952624,
+			1,
+			75
+		};
+		WoodCrash2[]=
+		{
+			"A3\Sounds_F\vehicles2\soft\shared\collisions\Vehicle_Soft_Collision_Medium_Wood_03",
+			1.9952624,
+			1,
+			75
+		};
+		WoodCrash3[]=
+		{
+			"A3\Sounds_F\vehicles2\soft\shared\collisions\Vehicle_Soft_Collision_Medium_Wood_04",
+			1.9952624,
+			1,
+			75
+		};
+		WoodCrash4[]=
+		{
+			"A3\Sounds_F\vehicles2\soft\shared\collisions\Vehicle_Soft_Collision_Medium_Wood_05",
+			1.9952624,
+			1,
+			75
+		};
+		WoodCrash5[]=
+		{
+			"A3\Sounds_F\vehicles2\soft\shared\collisions\Vehicle_Soft_Collision_Medium_Wood_06",
+			1.9952624,
+			1,
+			75
+		};
 		WoodCrash6[]=
 		{
 			"A3\Sounds_F\vehicles2\soft\shared\collisions\Vehicle_Soft_Collision_Medium_Wood_07",
@@ -1585,6 +1719,32 @@ class CfgVehicles
 		WoodCrash7[]=
 		{
 			"A3\Sounds_F\vehicles2\soft\shared\collisions\Vehicle_Soft_Collision_Medium_Wood_08",
+			1.9952624,
+			1,
+			75
+		};
+		soundWoodCrash[]=
+		{
+			"woodCrash0",
+			0.125,
+			"woodCrash1",
+			0.125,
+			"woodCrash2",
+			0.125,
+			"woodCrash3",
+			0.125,
+			"woodCrash4",
+			0.125,
+			"woodCrash5",
+			0.125,
+			"woodCrash6",
+			0.125,
+			"woodCrash7",
+			0.125
+		};
+		armorCrash0[]=
+		{
+			"A3\Sounds_F\vehicles2\soft\shared\collisions\Vehicle_Soft_Collision_Medium_01",
 			1.9952624,
 			1,
 			75
@@ -1634,6 +1794,32 @@ class CfgVehicles
 		armorCrash7[]=
 		{
 			"A3\Sounds_F\vehicles2\soft\shared\collisions\Vehicle_Soft_Collision_Medium_08",
+			1.9952624,
+			1,
+			75
+		};
+		soundArmorCrash[]=
+		{
+			"ArmorCrash0",
+			0.125,
+			"ArmorCrash1",
+			0.125,
+			"ArmorCrash2",
+			0.125,
+			"ArmorCrash3",
+			0.125,
+			"ArmorCrash4",
+			0.125,
+			"ArmorCrash5",
+			0.125,
+			"ArmorCrash6",
+			0.125,
+			"ArmorCrash7",
+			0.125
+		};
+		Crash0[]=
+		{
+			"A3\Sounds_F\vehicles2\soft\shared\collisions\Vehicle_Soft_Collision_Medium_01",
 			1.9952624,
 			1,
 			75
@@ -2092,6 +2278,14 @@ class CfgVehicles
 				selection="P svetlo";
 			};
 		};
+		aggregateReflectors[]=
+		{
+			
+			{
+				"LSvetla",
+				"RSvetla"
+			}
+		};
 		class UserActions
 		{
 			class light_bo_off
@@ -2472,6 +2666,13 @@ class CfgWeapons
 		scope=1;
 		displayName="$STR_A3_cfgWeapons_CarHorn0";
 		reloadTime=0;
+		drySound[]=
+		{
+			"rhsusf\addons\rhsusf_mrzr\sounds\rhs_mrzr_horn.wss",
+			1,
+			1,
+			200
+		};
 		canLock=0;
 		optics=0;
 		enableAttack=0;

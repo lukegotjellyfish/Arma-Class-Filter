@@ -1,0 +1,14 @@
+rhs_weap_kpvt
+canLock=0;
+-----
+dispersion=0.00069999998;
+-----
+magazineReloadTime=12;
+-----
+-----
+-----
+-----
+reloadTime=0.1;
+-----
+-----
+-----

@@ -1,0 +1,14 @@
+rhs_weap_m256
+canLock=0;
+-----
+dispersion=0.00025000001;
+-----
+magazineReloadTime=12;
+-----
+-----
+-----
+-----
+reloadTime=11;
+-----
+-----
+-----

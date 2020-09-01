@@ -2,11 +2,11 @@ rhsusf_100Rnd_762x51_m80a1epr
 airFriction=-0.0007114;
 caliber=0.55000001;
 count=100;
-deflecting=15;
 -----
+explosive=0;
 hit=10.5;
 indirectHit=0;
 indirectHitRange=0;
 initSpeed=803;
-timeToLive=6;
+timeToLive=3;
 typicalSpeed=803;

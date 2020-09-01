@@ -603,6 +603,34 @@ class CfgVehicles
 				maxCompression=0;
 			};
 		};
+		soundEngineOnInt[]=
+		{
+			"rhsusf\addons\rhsusf_m1a1\sounds\m1start",
+			1.4125376,
+			1,
+			200
+		};
+		soundEngineOffInt[]=
+		{
+			"rhsusf\addons\rhsusf_m1a1\sounds\ABRAMS_engine_int_stop",
+			1.4125376,
+			1,
+			200
+		};
+		soundEngineOnExt[]=
+		{
+			"rhsusf\addons\rhsusf_m1a1\sounds\m1start",
+			3.1622777,
+			1,
+			200
+		};
+		soundEngineOffExt[]=
+		{
+			"rhsusf\addons\rhsusf_m1a1\sounds\ABRAMS_engine_ext_stop",
+			3.1622777,
+			1,
+			200
+		};
 		class Sounds
 		{
 			class Idle_ext
@@ -1336,6 +1364,13 @@ class CfgVehicles
 						maxHorizontalRotSpeed=1.8;
 						maxVerticalRotSpeed=0.18000001;
 						stabilizedInAxes=3;
+						soundServo[]=
+						{
+							"A3\Sounds_F\vehicles\armor\noises\servo_armor_comm",
+							1,
+							1,
+							30
+						};
 						soundServoVertical[]=
 						{
 							"A3\Sounds_F\vehicles\armor\noises\servo_armor_comm",
@@ -1612,6 +1647,13 @@ class CfgVehicles
 						{0.69999999,134.68671},
 						{1.4,180}
 					};
+				};
+				soundServo[]=
+				{
+					"rhsusf\addons\rhsusf_m1a1\sounds\traverse",
+					15,
+					1,
+					20
 				};
 				maxhorizontalrotspeed=0.69999999;
 				maxverticalrotspeed=0.44;
@@ -1982,6 +2024,19 @@ class CfgVehicles
 				position="light_L_flare";
 				useFlare=1;
 			};
+		};
+		aggregateReflectors[]=
+		{
+			
+			{
+				"Left",
+				"Left2"
+			},
+			
+			{
+				"Right",
+				"Right2"
+			}
 		};
 		armorLights=0.0099999998;
 		class AnimationSources
@@ -2689,6 +2744,17 @@ class CfgVehicles
 							hardLimitEnd=0.15000001;
 						};
 					};
+				};
+				aggregateReflectors[]=
+				{
+					
+					{
+						"Gunner"
+					},
+					
+					{
+						"Gunner2"
+					}
 				};
 				armorLights=0.0099999998;
 			};

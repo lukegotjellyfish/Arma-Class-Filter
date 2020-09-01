@@ -307,7 +307,6 @@ opForVehicleWeapons  = [
 	"rhs_weap_2a46m",
 	"rhs_weap_2a70",
 	"rhs_weap_2a72_btr",
-	"rhs_weap_2a72:",
 	"rhs_weap_2a72",
 	"rhs_weap_2a75",
 	"rhs_weap_902a",
@@ -394,31 +393,28 @@ def findClass(className):
 					or onClass == True:
 
 				onClass = True
-				print(cred + line.replace("\n","") + cend)
+				# print(cred + line.replace("\n","") + cend)
 
-				if line.startswith("	class"):
+				if line.startswith("	class " + className + ":"):
 					  #print("Class found " + line.replace("\n",""))
 					#This regex search is required for my generated config.cpp files as
 					# classes that end as empty are stripped to a single line with a comment
 					# marking them as stripped to a single line.
-					if line.count(":") == 1:
-						_className = re.search("class [^\n:]*: ([^\n;]*)", line).group(1).replace("\n","")
-					else:
-						_className = re.search("class ([^\n;]*)", line).group(1).replace("\n","")
+					_className = re.search("class [^\n:]*: ([^\n;]*)", line).group(1).replace("\n","")
 
-					print(cgreen + line.replace("\n","") + cend)
+					# print(cgreen + line.replace("\n","") + cend)
 
-					if _className != className:
-						#print(cred + "New findClass(_className[" + _className + "] | className[" + className + "])" + cend)
-						#print("Inherit added on end of array: " + str(findClass(_className)))
-						foundClass = findClass(_className)
-						if len(foundClass) == 1:
-							for returnedList in foundClass:
-								for returnedItem in returnedList:
-									classBody.append(returnedItem)
-						else:
-							for returnedItem in foundClass:
+					#print(cred + "New findClass(_className[" + _className + "] | className[" + className + "])" + cend)
+					#print("Inherit added on end of array: " + str(findClass(_className)))
+					foundClass = findClass(_className)
+
+					if len(foundClass) == 1:
+						for returnedList in foundClass:
+							for returnedItem in returnedList:
 								classBody.append(returnedItem)
+					else:
+						for returnedItem in foundClass:
+							classBody.append(returnedItem)
 
 				#Add ammo stats taken from magazine
 				elif line.replace("	","").startswith("ammo=") and line.replace("	", "") != 'ammo="";\n':
@@ -438,7 +434,7 @@ def findClass(className):
 				elif line.replace("	","") == "{\n":
 					skipEnd += 1
 				#The next ending brace was found, discount skip
-				elif line.replace("	","") == "};\n":
+				elif line.replace("	","") == "};\n" or line.replace("	","") == "},\n":
 					skipEnd -= 1
 					#If skips are 0, the end of the class has been reached
 					if skipEnd == 0:
@@ -446,9 +442,9 @@ def findClass(className):
 				classBody.append(line.replace("\n",""))
 
 				if onClass == False:
-					# print(cviolet2 + "----------------------" + cend + \
-					# 	cgreen + cbold + "Recursion ended" + cend + \
-					# 	cviolet2 + "----------------------" + cend)
+					print(cviolet2 + "----------------------" + cend + \
+						cgreen + cbold + "Recursion ended" + cend + \
+						cviolet2 + "----------------------" + cend)
 					return classBody
 	return classBody
 
@@ -529,7 +525,7 @@ def OrderedClasses(itemList, fileName, includeList, findMagazines=False):
 
 #List of file contents
 fileList = []
-walkList = ["S:\\Steam\\steamapps\\common\\Arma 3\\!Workshop\\@ArmaBases", "..\\Mods"]
+walkList = ["..\\Mods", "S:\\Steam\\steamapps\\common\\Arma 3\\!Workshop\\@ArmaBases"]
 for walk in walkList:
 	for root, dirs, files in os.walk(walk):
 		for file in files:
@@ -640,24 +636,24 @@ vehicleWeaponAttributes = [
 
 
 #Ordered Classes
-# OrderedClasses(bluForWeapons         , "BluFor//BluForWeapons"         , weaponAttributes       )
-# OrderedClasses(bluForMagazines       , "BluFor//BluForMagazines"       , ammoAttributes         )
+OrderedClasses(bluForWeapons         , "BluFor//BluForWeapons"         , weaponAttributes       )
+OrderedClasses(bluForMagazines       , "BluFor//BluForMagazines"       , ammoAttributes         )
 
-# OrderedClasses(opForWeapons          , "OpFor//OpForWeapons"          , weaponAttributes       )
-# OrderedClasses(opForMagazines        , "OpFor//OpForMagazines"        , ammoAttributes         )
+OrderedClasses(opForWeapons          , "OpFor//OpForWeapons"          , weaponAttributes       )
+OrderedClasses(opForMagazines        , "OpFor//OpForMagazines"        , ammoAttributes         )
 
-# OrderedClasses(launchers             , "Launchers//Launchers"             , launcherAttributes     )
-# OrderedClasses(guidedLaunchers       , "Launchers//GuidedLaunchers"       , launcherAttributes     )
-# OrderedClasses(launcherAmmo          , "Launchers//LauncherAmmo"          , launcherAmmoAttributes )
-# OrderedClasses(launcherPenetrators   , "Launchers//Penetrators"           , launcherAmmoAttributes )
-# OrderedClasses(guidedLauncherAmmo    , "Launchers//GuidedLauncherAmmo"    , launcherAmmoAttributes )
+OrderedClasses(launchers             , "Launchers//Launchers"             , launcherAttributes     )
+OrderedClasses(guidedLaunchers       , "Launchers//GuidedLaunchers"       , launcherAttributes     )
+OrderedClasses(launcherAmmo          , "Launchers//LauncherAmmo"          , launcherAmmoAttributes )
+OrderedClasses(launcherPenetrators   , "Launchers//Penetrators"           , launcherAmmoAttributes )
+OrderedClasses(guidedLauncherAmmo    , "Launchers//GuidedLauncherAmmo"    , launcherAmmoAttributes )
 
-OrderedClasses(bluForVehicles        , "BluFor//BluForVehicles"        , vehicleAttributes      )
+# OrderedClasses(bluForVehicles        , "BluFor//BluForVehicles"        , vehicleAttributes      )
 OrderedClasses(bluForVehicleWeapons  , "BluFor//BluForVehicleWeapons"  , vehicleWeaponAttributes)
 OrderedClasses(bluForVWeapMagazines  , "BluFor//BluForVWeapMagazines"  , launcherAmmoAttributes )
 #OrderedClasses(bluForVWeapPenetrators, "BluFor//BluForVWeapPenetrators", launcherAmmoAttributes )
 
-OrderedClasses(opForVehicles         , "OpFor//OpForVehicles"         , vehicleAttributes      )
+# OrderedClasses(opForVehicles         , "OpFor//OpForVehicles"         , vehicleAttributes      )
 OrderedClasses(opForVehicleWeapons   , "OpFor//OpForVehicleWeapons"   , vehicleWeaponAttributes)
 OrderedClasses(opForVWeapMagazines   , "OpFor//OpForVWeapMagazines"   , launcherAmmoAttributes )
 #OrderedClasses(opForVWeapPenetrators , "OpFor//OpForVWeapPenetrators" , launcherAmmoAttributes )

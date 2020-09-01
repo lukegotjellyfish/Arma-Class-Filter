@@ -255,6 +255,32 @@ class CfgVehicles
 			init="if (local (_this select 0)) then {[(_this select 0), '', [], false] call bis_fnc_initVehicle;};";
 			engine="_this execVM 'rhsgref\addons\rhsgref_canoe\scripts\rhs_paddleAnim.sqf'";
 		};
+		soundEngineOnInt[]=
+		{
+			"",
+			1,
+			1
+		};
+		soundEngineOnExt[]=
+		{
+			"",
+			1,
+			1,
+			150
+		};
+		soundEngineOffInt[]=
+		{
+			"",
+			1,
+			1
+		};
+		soundEngineOffExt[]=
+		{
+			"",
+			1,
+			1,
+			150
+		};
 		class Sounds
 		{
 			class WaternoiseOutW0

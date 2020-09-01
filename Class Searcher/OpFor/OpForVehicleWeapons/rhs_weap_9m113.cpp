@@ -1,0 +1,14 @@
+rhs_weap_9m113
+canLock=1;
+-----
+-----
+-----
+magazineReloadTime=30;
+-----
+-----
+-----
+-----
+reloadTime=30;
+-----
+-----
+-----

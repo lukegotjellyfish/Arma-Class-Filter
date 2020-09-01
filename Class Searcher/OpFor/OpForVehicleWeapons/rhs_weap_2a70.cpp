@@ -1,0 +1,14 @@
+rhs_weap_2a70
+canLock=0;
+-----
+dispersion=0.00275;
+-----
+magazineReloadTime=5.5;
+-----
+-----
+-----
+-----
+reloadTime=5.5;
+-----
+-----
+-----

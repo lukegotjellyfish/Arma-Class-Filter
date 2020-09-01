@@ -3,7 +3,7 @@ airFriction=-0.00060999999;
 caliber=2;
 count=5;
 deflecting=15;
------
+explosive=0;
 hit=16;
 indirectHit=0;
 indirectHitRange=0;

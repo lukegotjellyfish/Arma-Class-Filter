@@ -1,0 +1,14 @@
+rhs_weap_DSHKM
+canLock=0;
+-----
+dispersion=0.0020000001;
+-----
+magazineReloadTime=12;
+-----
+-----
+-----
+-----
+reloadTime=0.1;
+-----
+-----
+-----

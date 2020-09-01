@@ -641,6 +641,19 @@ class CfgVehicles
 				};
 			};
 		};
+		aggregateReflectors[]=
+		{
+			
+			{
+				"Left",
+				"Left2"
+			},
+			
+			{
+				"Right",
+				"Right2"
+			}
+		};
 		armorLights=0.0099999998;
 		class RenderTargets
 		{
@@ -1421,6 +1434,12 @@ class CfgVehicles
 				};
 				minElev=-10;
 				maxElev=40;
+				soundServo[]=
+				{
+					"A3\sounds_f\dummysound",
+					1e-006,
+					1
+				};
 				soundAttenuationTurret="HeliAttenuationGunner";
 				disableSoundAttenuation=0;
 				gunnerAction="RHS_HMMWV_Gunner03";
@@ -1952,6 +1971,12 @@ class CfgVehicles
 				};
 				minElev=-10;
 				maxElev=40;
+				soundServo[]=
+				{
+					"A3\sounds_f\dummysound",
+					1e-006,
+					1
+				};
 				soundAttenuationTurret="HeliAttenuationGunner";
 				disableSoundAttenuation=0;
 				gunnerAction="RHS_HMMWV_Gunner03";
@@ -4311,6 +4336,12 @@ class CfgVehicles
 				};
 				minElev=-10;
 				maxElev=40;
+				soundServo[]=
+				{
+					"A3\sounds_f\dummysound",
+					1e-006,
+					1
+				};
 				soundAttenuationTurret="HeliAttenuationGunner";
 				disableSoundAttenuation=1;
 				gunnerAction="RHS_HMMWV_Gunner03";
@@ -4567,6 +4598,12 @@ class CfgVehicles
 				};
 				minElev=-10;
 				maxElev=40;
+				soundServo[]=
+				{
+					"A3\sounds_f\dummysound",
+					1e-006,
+					1
+				};
 				soundAttenuationTurret="HeliAttenuationGunner";
 				disableSoundAttenuation=1;
 				gunnerAction="RHS_HMMWV_Gunner03";

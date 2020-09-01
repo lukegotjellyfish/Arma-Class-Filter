@@ -2,11 +2,11 @@ rhs_mag_20Rnd_762x51_m80_fnfal
 airFriction=-0.00068140001;
 caliber=0.44999999;
 count=20;
-deflecting=15;
 -----
+explosive=0;
 hit=11.55;
 indirectHit=0;
 indirectHitRange=0;
 initSpeed=844;
-timeToLive=6;
+timeToLive=3;
 typicalSpeed=838;

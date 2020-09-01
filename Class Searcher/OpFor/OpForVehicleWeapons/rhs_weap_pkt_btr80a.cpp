@@ -1,0 +1,14 @@
+rhs_weap_pkt_btr80a
+canLock=0;
+-----
+dispersion=0.00125;
+-----
+magazineReloadTime=7;
+-----
+-----
+-----
+-----
+reloadTime=0.075000003;
+-----
+-----
+-----

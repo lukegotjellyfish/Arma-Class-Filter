@@ -1172,6 +1172,16 @@ class CfgVehicles
 				useFlare=1;
 			};
 		};
+		aggregateReflectors[]=
+		{
+			
+			{
+				"Left",
+				"Right",
+				"Left_Flare",
+				"Right_Flare"
+			}
+		};
 		armorLights=0.1;
 		class compartmentsLights
 		{
@@ -1661,6 +1671,19 @@ class CfgVehicles
 			};
 		};
 		attenuationEffectType="TankAttenuation";
+		soundGetIn[]=
+		{
+			"A3\Sounds_F_EPB\Tracked\noises\get_in_out",
+			0.56234133,
+			1
+		};
+		soundGetOut[]=
+		{
+			"A3\Sounds_F_EPB\Tracked\noises\get_in_out",
+			0.56234133,
+			1,
+			20
+		};
 		soundTurnIn[]=
 		{
 			"A3\Sounds_F\vehicles\noises\Turn_in_out",
@@ -1688,6 +1711,38 @@ class CfgVehicles
 			1.7782794,
 			1,
 			20
+		};
+		soundDammage[]=
+		{
+			"",
+			0.56234133,
+			1
+		};
+		soundEngineOnInt[]=
+		{
+			"A3\Sounds_F\vehicles2\armor\APC_Wheeled_01\APC_Wheeled_01_Engine_Int_Start",
+			0.79432821,
+			1
+		};
+		soundEngineOffInt[]=
+		{
+			"A3\Sounds_F\vehicles2\armor\APC_Wheeled_01\APC_Wheeled_01_Engine_Int_Stop",
+			0.79432821,
+			1
+		};
+		soundEngineOnExt[]=
+		{
+			"A3\Sounds_F\vehicles2\armor\APC_Wheeled_01\APC_Wheeled_01_Engine_Ext_Start",
+			1,
+			1,
+			100
+		};
+		soundEngineOffExt[]=
+		{
+			"A3\Sounds_F\vehicles2\armor\APC_Wheeled_01\APC_Wheeled_01_Engine_Ext_Stop",
+			1,
+			1,
+			100
 		};
 		BushCrash1[]=
 		{
@@ -1719,6 +1774,34 @@ class CfgVehicles
 			"BushCrash3",
 			0.33000001
 		};
+		buildCrash0[]=
+		{
+			"A3\Sounds_F\vehicles2\armor\shared\collisions\Vehicle_Armor_General_Collision_01",
+			3.1622777,
+			1,
+			200
+		};
+		buildCrash1[]=
+		{
+			"A3\Sounds_F\vehicles2\armor\shared\collisions\Vehicle_Armor_General_Collision_02",
+			3.1622777,
+			1,
+			200
+		};
+		buildCrash2[]=
+		{
+			"A3\Sounds_F\vehicles2\armor\shared\collisions\Vehicle_Armor_General_Collision_03",
+			3.1622777,
+			1,
+			200
+		};
+		buildCrash3[]=
+		{
+			"A3\Sounds_F\vehicles2\armor\shared\collisions\Vehicle_Armor_General_Collision_04",
+			3.1622777,
+			1,
+			200
+		};
 		buildCrash4[]=
 		{
 			"A3\Sounds_F\vehicles2\armor\shared\collisions\Vehicle_Armor_General_Collision_05",
@@ -1732,6 +1815,21 @@ class CfgVehicles
 			3.1622777,
 			1,
 			200
+		};
+		soundBuildingCrash[]=
+		{
+			"buildCrash0",
+			0.16599999,
+			"buildCrash1",
+			0.16599999,
+			"buildCrash2",
+			0.16599999,
+			"buildCrash3",
+			0.16599999,
+			"buildCrash4",
+			0.16599999,
+			"buildCrash5",
+			0.16599999
 		};
 		woodCrash0[]=
 		{
@@ -1775,6 +1873,49 @@ class CfgVehicles
 			1,
 			200
 		};
+		soundWoodCrash[]=
+		{
+			"woodCrash0",
+			0.16599999,
+			"woodCrash1",
+			0.16599999,
+			"woodCrash2",
+			0.16599999,
+			"woodCrash3",
+			0.16599999,
+			"woodCrash4",
+			0.16599999,
+			"woodCrash5",
+			0.16599999
+		};
+		ArmorCrash0[]=
+		{
+			"A3\Sounds_F\vehicles2\armor\shared\collisions\Vehicle_Armor_General_Collision_01",
+			3.1622777,
+			1,
+			200
+		};
+		ArmorCrash1[]=
+		{
+			"A3\Sounds_F\vehicles2\armor\shared\collisions\Vehicle_Armor_General_Collision_02",
+			3.1622777,
+			1,
+			200
+		};
+		ArmorCrash2[]=
+		{
+			"A3\Sounds_F\vehicles2\armor\shared\collisions\Vehicle_Armor_General_Collision_03",
+			3.1622777,
+			1,
+			200
+		};
+		ArmorCrash3[]=
+		{
+			"A3\Sounds_F\vehicles2\armor\shared\collisions\Vehicle_Armor_General_Collision_04",
+			3.1622777,
+			1,
+			200
+		};
 		ArmorCrash4[]=
 		{
 			"A3\Sounds_F\vehicles2\armor\shared\collisions\Vehicle_Armor_General_Collision_05",
@@ -1788,6 +1929,21 @@ class CfgVehicles
 			3.1622777,
 			1,
 			200
+		};
+		soundArmorCrash[]=
+		{
+			"ArmorCrash0",
+			0.16599999,
+			"ArmorCrash1",
+			0.16599999,
+			"ArmorCrash2",
+			0.16599999,
+			"ArmorCrash3",
+			0.16599999,
+			"ArmorCrash4",
+			0.16599999,
+			"ArmorCrash5",
+			0.16599999
 		};
 		class Sounds
 		{
@@ -14172,6 +14328,13 @@ class CfgVehicles
 			class MainTurret: MainTurret
 			{
 				class Turrets;  //found empty after stripping
+				soundServo[]=
+				{
+					"A3\Sounds_F\vehicles\armor\APC\noises\servo_APC_gunner",
+					0.39810717,
+					1,
+					30
+				};
 				soundServoVertical[]=
 				{
 					"A3\Sounds_F\vehicles\armor\APC\noises\servo_APC_gunner_vertical",
@@ -27948,6 +28111,13 @@ class CfgVehicles
 			class Turret_Weapon: MainTurret
 			{
 				gunnercompartments="Compartment5";
+				soundServo[]=
+				{
+					"",
+					0.39810717,
+					1,
+					30
+				};
 				soundServoVertical[]=
 				{
 					"",
@@ -41748,6 +41918,13 @@ class CfgVehicles
 			class MainTurret: MainTurret
 			{
 				class Turrets;  //found empty after stripping
+				soundServo[]=
+				{
+					"A3\Sounds_F\vehicles\armor\APC\noises\servo_APC_gunner",
+					0.39810717,
+					1,
+					30
+				};
 				soundServoVertical[]=
 				{
 					"A3\Sounds_F\vehicles\armor\APC\noises\servo_APC_gunner_vertical",
@@ -42133,6 +42310,13 @@ class CfgVehicles
 			class Turret_Weapon: MainTurret
 			{
 				gunnercompartments="Compartment5";
+				soundServo[]=
+				{
+					"",
+					0.39810717,
+					1,
+					30
+				};
 				soundServoVertical[]=
 				{
 					"",

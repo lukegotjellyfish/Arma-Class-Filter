@@ -66,6 +66,10 @@ class CfgSFX
 	class rhs_radar_engines01
 	{
 		name="$STR_RHS_RADAR_SOUND1";
+		sounds[]=
+		{
+			"engine"
+		};
 		engine[]=
 		{
 			"\rhsafrf\addons\rhs_c_radars\Sounds\Engines01.wav",
@@ -92,6 +96,10 @@ class CfgSFX
 	class rhs_radar_engines02
 	{
 		name="$STR_RHS_RADAR_SOUND2";
+		sounds[]=
+		{
+			"engine"
+		};
 		engine[]=
 		{
 			"\rhsafrf\addons\rhs_c_radars\Sounds\Engines02.wav",
@@ -255,6 +263,13 @@ class CfgVehicles
 				gunnerForceOptics=1;
 				memoryPointsGetInGunner="pos_gunner_dir";
 				memoryPointsGetInGunnerDir="pos_gunner";
+				soundServo[]=
+				{
+					"\rhsafrf\addons\rhs_c_radars\Sounds\Engines01.wav",
+					9,
+					1,
+					70
+				};
 				class ViewOptics;
 				class OpticsIn
 				{

@@ -1654,6 +1654,12 @@ class CfgVehicles
 				gun="ObsGun";
 				animationSourceBody="obsTurret";
 				animationSourceGun="obsGun";
+				soundServo[]=
+				{
+					"",
+					0.00316228,
+					1
+				};
 				startEngine=0;
 				minElev=-5;
 				maxElev=10;
@@ -1932,6 +1938,17 @@ class CfgVehicles
 				hitpoint="P svetlo";
 				selection="P svetlo";
 			};
+		};
+		aggregateReflectors[]=
+		{
+			
+			{
+				"Left"
+			},
+			
+			{
+				"Right"
+			}
 		};
 		class EventHandlers: EventHandlers
 		{
@@ -2911,6 +2928,14 @@ class CfgVehicles
 				hitpoint="P svetlo";
 				selection="P svetlo";
 			};
+		};
+		aggregateReflectors[]=
+		{
+			
+			{
+				"Left",
+				"Right"
+			}
 		};
 		class Exhausts
 		{

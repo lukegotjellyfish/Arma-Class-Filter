@@ -2,8 +2,8 @@ rhsusf_mag_10Rnd_STD_50BMG_M33
 airFriction=-0.00061699998;
 caliber=1.0253299;
 count=10;
-deflecting=15;
 -----
+explosive=0;
 hit=25.307501;
 indirectHit=0;
 indirectHitRange=0;

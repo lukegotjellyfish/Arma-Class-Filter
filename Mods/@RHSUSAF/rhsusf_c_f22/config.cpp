@@ -572,6 +572,38 @@ class CfgVehicles
 				depends="0";
 			};
 		};
+		soundEngineOnInt[]=
+		{
+			"A3\Sounds_F_Jets\vehicles\air\Plane_Fighter_01\B_PLANE_FIGHTER_01_engine_start_int",
+			1,
+			1
+		};
+		soundEngineOnExt[]=
+		{
+			"A3\Sounds_F_Jets\vehicles\air\Plane_Fighter_01\B_PLANE_FIGHTER_01_engine_start_ext",
+			1.75,
+			1,
+			300
+		};
+		soundEngineOffInt[]=
+		{
+			"A3\Sounds_F_Jets\vehicles\air\Plane_Fighter_01\B_PLANE_FIGHTER_01_engine_shut_int",
+			1,
+			1
+		};
+		soundEngineOffExt[]=
+		{
+			"A3\Sounds_F_Jets\vehicles\air\Plane_Fighter_01\B_PLANE_FIGHTER_01_engine_shut_ext",
+			1.75,
+			1,
+			300
+		};
+		soundLocked[]=
+		{
+			"A3\Sounds_F_Jets\vehicles\air\Shared\FX_Plane_Jet_lockedOn1",
+			1,
+			1
+		};
 		soundIncommingMissile[]=
 		{
 			"A3\Sounds_F_Jets\vehicles\air\Shared\FX_Plane_Jet_lockedon2",
@@ -37113,6 +37145,16 @@ class CfgVehicles
 				useFlare=1;
 				outerAngle=160;
 			};
+		};
+		aggregateReflectors[]=
+		{
+			
+			{
+				"Left",
+				"Left_Flare",
+				"Right",
+				"Right_Flare"
+			}
 		};
 	};
 	class PlaneWreck;

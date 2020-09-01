@@ -7,6 +7,6 @@ mass="187,4";
 maxZeroing=900;
 recoil="rhs_weap_smaw_SR_recoil";
 reloadAction="RHS_ReloadRPG";
------
+magazineReloadTime=12;
 weaponLockDelay=3;
 -----

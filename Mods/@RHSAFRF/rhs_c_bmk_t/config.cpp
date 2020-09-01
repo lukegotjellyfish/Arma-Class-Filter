@@ -167,6 +167,14 @@ class CfgVehicles
 				};
 			};
 		};
+		aggregateReflectors[]=
+		{
+			
+			{
+				"Light_Center",
+				"Light_Center_Flare"
+			}
+		};
 		slingLoadCargoMemoryPoints[]=
 		{
 			"SlingLoadCargo1",
@@ -190,6 +198,129 @@ class CfgVehicles
 		};
 		attenuationEffectType="OpenCarAttenuation";
 		insideSoundCoef=0;
+		soundEngineOnInt[]=
+		{
+			"a3\Sounds_F\vehicles\boat\Boat_Armed_01\Boat_Armed_01-ext-start-02",
+			"db-5",
+			1
+		};
+		soundEngineOnExt[]=
+		{
+			"a3\Sounds_F\vehicles\boat\Boat_Armed_01\Boat_Armed_01-ext-start-02",
+			"db-5",
+			1,
+			200
+		};
+		soundEngineOffInt[]=
+		{
+			"a3\Sounds_F\vehicles\boat\Boat_Armed_01\Boat_Armed_01-ext-stop-02",
+			"db-5",
+			1
+		};
+		soundEngineOffExt[]=
+		{
+			"a3\Sounds_F\vehicles\boat\Boat_Armed_01\Boat_Armed_01-ext-stop-02",
+			"db-5",
+			1,
+			200
+		};
+		buildCrash0[]=
+		{
+			"A3\sounds_f\Vehicles\boat\noises\Metal_boat_crash_building_01",
+			"db5",
+			1,
+			200
+		};
+		buildCrash1[]=
+		{
+			"A3\sounds_f\Vehicles\boat\noises\Metal_boat_crash_building_02",
+			"db5",
+			1,
+			200
+		};
+		buildCrash2[]=
+		{
+			"A3\sounds_f\Vehicles\boat\noises\Metal_boat_crash_building_03",
+			"db5",
+			1,
+			200
+		};
+		soundBuildingCrash[]=
+		{
+			"buildCrash0",
+			0.33000001,
+			"buildCrash1",
+			0.33000001,
+			"buildCrash2",
+			0.34
+		};
+		WoodCrash0[]=
+		{
+			"A3\sounds_f\Vehicles\boat\noises\Metal_boat_crash_wood_01",
+			"db5",
+			1,
+			200
+		};
+		WoodCrash1[]=
+		{
+			"A3\sounds_f\Vehicles\boat\noises\Metal_boat_crash_wood_02",
+			"db5",
+			1,
+			200
+		};
+		WoodCrash2[]=
+		{
+			"A3\sounds_f\Vehicles\boat\noises\Metal_boat_crash_wood_03",
+			"db5",
+			1,
+			200
+		};
+		soundWoodCrash[]=
+		{
+			"woodCrash0",
+			0.33000001,
+			"woodCrash1",
+			0.33000001,
+			"woodCrash2",
+			0.34
+		};
+		ArmorCrash0[]=
+		{
+			"A3\sounds_f\Vehicles\boat\noises\Metal_boat_crash_armor_01",
+			"db10",
+			1,
+			200
+		};
+		ArmorCrash1[]=
+		{
+			"A3\sounds_f\Vehicles\boat\noises\Metal_boat_crash_armor_02",
+			"db10",
+			1,
+			200
+		};
+		ArmorCrash2[]=
+		{
+			"A3\sounds_f\Vehicles\boat\noises\Metal_boat_crash_armor_03",
+			"db10",
+			1,
+			200
+		};
+		soundArmorCrash[]=
+		{
+			"ArmorCrash0",
+			0.33000001,
+			"ArmorCrash1",
+			0.33000001,
+			"ArmorCrash2",
+			0.34
+		};
+		soundGeneralCollision1[]=
+		{
+			"A3\sounds_f\Vehicles\boat\noises\Metal_boat_crash_armor_01",
+			"db5",
+			1,
+			100
+		};
 		soundGeneralCollision2[]=
 		{
 			"A3\sounds_f\Vehicles\boat\noises\Metal_boat_crash_armor_02",

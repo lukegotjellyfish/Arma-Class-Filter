@@ -1596,6 +1596,33 @@ class CfgVehicles
 				direction="reverse_light_2_dir";
 			};
 		};
+		aggregateReflectors[]=
+		{
+			
+			{
+				"LSvetla",
+				"RSvetla"
+			},
+			
+			{
+				"Left2",
+				"Right2"
+			},
+			
+			{
+				"CSvetla"
+			},
+			
+			{
+				"Long_Left2",
+				"Long_Right2"
+			},
+			
+			{
+				"reverse_light_1",
+				"reverse_light_2"
+			}
+		};
 		armorLights=0.1;
 		class UserActions
 		{

@@ -4,9 +4,9 @@ cmImmunity=0.89999998;
 -----
 lockAcquire=1;
 mass=92.400002;
-maxZeroing=2000;
+maxZeroing=1000;
 recoil="recoil_single_law";
 reloadAction="RHS_ReloadRPG";
------
+magazineReloadTime=12;
 weaponLockDelay=5;
 weaponLockSystem=2;

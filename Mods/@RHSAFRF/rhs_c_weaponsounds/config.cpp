@@ -3551,6 +3551,10 @@ class CfgWeapons
 	{
 		class Single: Single
 		{
+			sounds[]=
+			{
+				"StandardSound"
+			};
 			class StandardSound
 			{
 				soundSetShot[]=
@@ -3576,6 +3580,11 @@ class CfgWeapons
 	{
 		class Single: Mode_SemiAuto
 		{
+			sounds[]=
+			{
+				"Standardsound",
+				"SilencedSound"
+			};
 			class StandardSound
 			{
 				soundSetShot[]=
@@ -3595,6 +3604,11 @@ class CfgWeapons
 		};
 		class FullAuto: Mode_FullAuto
 		{
+			sounds[]=
+			{
+				"Standardsound",
+				"SilencedSound"
+			};
 			class StandardSound
 			{
 				soundSetShot[]=
@@ -3618,6 +3632,11 @@ class CfgWeapons
 	{
 		class Single: Mode_SemiAuto
 		{
+			sounds[]=
+			{
+				"StandardSound",
+				"SilencedSound"
+			};
 			class StandardSound
 			{
 				soundSetShot[]=
@@ -3637,6 +3656,11 @@ class CfgWeapons
 		};
 		class FullAuto: Mode_FullAuto
 		{
+			sounds[]=
+			{
+				"StandardSound",
+				"SilencedSound"
+			};
 			class StandardSound
 			{
 				soundSetShot[]=
@@ -3659,6 +3683,11 @@ class CfgWeapons
 	{
 		class Burst: Mode_Burst
 		{
+			sounds[]=
+			{
+				"StandardSound",
+				"SilencedSound"
+			};
 			class StandardSound
 			{
 				soundSetShot[]=
@@ -3681,6 +3710,11 @@ class CfgWeapons
 	{
 		class Single: Mode_SemiAuto
 		{
+			sounds[]=
+			{
+				"StandardSound",
+				"SilencedSound"
+			};
 			class StandardSound
 			{
 				soundSetShot[]=
@@ -3703,6 +3737,11 @@ class CfgWeapons
 	{
 		class Single: Mode_SemiAuto
 		{
+			sounds[]=
+			{
+				"StandardSound",
+				"SilencedSound"
+			};
 			class StandardSound
 			{
 				soundSetShot[]=
@@ -3727,6 +3766,10 @@ class CfgWeapons
 		WW2_boltSnapDelay=0.1;
 		class FullAuto: Mode_FullAuto
 		{
+			sounds[]=
+			{
+				"StandardSound"
+			};
 			class StandardSound
 			{
 				soundSetShot[]=

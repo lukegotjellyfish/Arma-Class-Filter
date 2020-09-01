@@ -6475,6 +6475,19 @@ class CfgVehicles
 				ambient[]={10,10,9};
 			};
 		};
+		aggregateReflectors[]=
+		{
+			
+			{
+				"LightL",
+				"LightLFlare"
+			},
+			
+			{
+				"LightR",
+				"LightRFlare"
+			}
+		};
 		class markerlights
 		{
 			class GreenStill

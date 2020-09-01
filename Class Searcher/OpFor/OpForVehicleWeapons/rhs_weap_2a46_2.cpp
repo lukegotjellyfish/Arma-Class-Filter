@@ -1,0 +1,14 @@
+rhs_weap_2a46_2
+canLock=0;
+-----
+-----
+-----
+magazineReloadTime=6.5;
+-----
+-----
+-----
+-----
+reloadTime=6.5;
+-----
+-----
+-----

@@ -1,0 +1,14 @@
+rhs_weap_SPG9
+canLock=2;
+-----
+-----
+-----
+magazineReloadTime=10;
+-----
+-----
+recoil="launcherBase";
+-----
+reloadTime=3;
+-----
+weaponLockDelay=3;
+-----

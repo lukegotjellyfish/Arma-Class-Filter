@@ -731,6 +731,19 @@ class CfgVehicles
 				};
 			};
 		};
+		aggregateReflectors[]=
+		{
+			
+			{
+				"Left",
+				"Left2"
+			},
+			
+			{
+				"Right",
+				"Right2"
+			}
+		};
 		armorLights=0.0099999998;
 		class RenderTargets
 		{

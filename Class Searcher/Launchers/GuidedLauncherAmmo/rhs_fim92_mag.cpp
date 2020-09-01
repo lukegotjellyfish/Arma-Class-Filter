@@ -1,5 +1,5 @@
 rhs_fim92_mag
-airFriction=0.145;
+-----
 -----
 cmImmunity=0.94999999;
 count=1;
@@ -10,16 +10,16 @@ indirectHit=55;
 indirectHitRange=8;
 initSpeed=20;
 maneuvrability=34;
-manualControl=0;
+-----
 mass=120;
-maxControlRange=4000;
+-----
 maxSpeed=750;
 missileKeepLockedCone=70;
 missileLockCone=12;
 missileLockMaxDistance=6500;
 missileLockMaxSpeed=333;
 missileLockMinDistance=300;
-sideAirFriction=0.1;
+-----
 submunitionAmmo="rhs_ammo_he_fragments";
 submunitionConeAngle=65;
 submunitionInitSpeed=1500;
@@ -31,4 +31,4 @@ trackLead=0.60000002;
 trackOversteer=0.94999999;
 triggerOnImpact=1;
 -----
-warheadName="HE";
+-----

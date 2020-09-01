@@ -4,9 +4,9 @@ canLock=0;
 dispersion=0.34999999;
 lockAcquire=0;
 mass=165.44;
------
+maxZeroing=1000;
 recoil="recoil_single_law";
 reloadAction="rhs_weap_smaw_sr";
------
+magazineReloadTime=12;
 weaponLockDelay=3;
 -----

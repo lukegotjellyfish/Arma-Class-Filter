@@ -1,0 +1,14 @@
+RHS_M2_Abrams_Gunner
+canLock=0;
+-----
+dispersion=0.0020000001;
+-----
+magazineReloadTime=12;
+-----
+-----
+-----
+-----
+reloadTime=0.1;
+-----
+-----
+-----

@@ -1,0 +1,14 @@
+rhsusf_weap_M257_8
+canLock=0;
+-----
+-----
+-----
+magazineReloadTime=60;
+-----
+-----
+-----
+-----
+reloadTime=0.098999999;
+-----
+-----
+-----

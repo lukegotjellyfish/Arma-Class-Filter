@@ -818,6 +818,13 @@ class CfgVehicles
 		occludeSoundsWhenIn=0.76234102;
 		obstructSoundsWhenIn=0.61622798;
 		attenuationEffectType="OpenHeliAttenuation";
+		soundGeneralCollision1[]=
+		{
+			"A3\Sounds_F\vehicles\crashes\helis\Heli_coll_default_int_1",
+			1,
+			1,
+			100
+		};
 		soundGeneralCollision2[]=
 		{
 			"A3\Sounds_F\vehicles\crashes\helis\Heli_coll_default_int_2",
@@ -845,6 +852,33 @@ class CfgVehicles
 		{
 			"emptySound",
 			0
+		};
+		soundBuildingCrash[]=
+		{
+			"soundGeneralCollision1",
+			1,
+			"soundGeneralCollision2",
+			1,
+			"soundGeneralCollision3",
+			1
+		};
+		soundArmorCrash[]=
+		{
+			"soundGeneralCollision1",
+			1,
+			"soundGeneralCollision2",
+			1,
+			"soundGeneralCollision3",
+			1
+		};
+		soundWoodCrash[]=
+		{
+			"soundGeneralCollision1",
+			1,
+			"soundGeneralCollision2",
+			1,
+			"soundGeneralCollision3",
+			1
 		};
 		soundBushCollision1[]=
 		{
@@ -896,6 +930,57 @@ class CfgVehicles
 			0.5,
 			"soundWaterCollision2",
 			0.5
+		};
+		soundGetIn[]=
+		{
+			"A3\Sounds_F\vehicles\air\noises\heli_get_in2",
+			0.56234133,
+			1
+		};
+		soundGetOut[]=
+		{
+			"A3\Sounds_F\vehicles\air\noises\heli_get_out2",
+			0.79432821,
+			1,
+			20
+		};
+		soundDammage[]=
+		{
+			"A3\Sounds_F\vehicles\crashes\helis\Heli_crash_default_ext_1",
+			3.1622777,
+			1
+		};
+		soundEngineOnInt[]=
+		{
+			"rhsusf\addons\rhsusf_melb\Sound\Int_Start",
+			0.40000001,
+			1
+		};
+		soundEngineOnExt[]=
+		{
+			"rhsusf\addons\rhsusf_melb\Sound\Ext_Start",
+			0.79432821,
+			1,
+			600
+		};
+		soundEngineOffInt[]=
+		{
+			"rhsusf\addons\rhsusf_melb\Sound\Int_Off",
+			0.40000001,
+			1
+		};
+		soundEngineOffExt[]=
+		{
+			"rhsusf\addons\rhsusf_melb\Sound\Ext_Off",
+			0.79432821,
+			1,
+			600
+		};
+		soundLocked[]=
+		{
+			"\A3\Sounds_F\weapons\Rockets\opfor_lock_1",
+			1,
+			1
 		};
 		soundIncommingMissile[]=
 		{
@@ -2611,6 +2696,13 @@ class CfgVehicles
 					"rhsusf_mag_LWIRCM",
 					"rhs_laserfcsmag",
 					"rhs_LaserMag_ai"
+				};
+				soundServo[]=
+				{
+					"",
+					0.0099999998,
+					1,
+					30
 				};
 				inGunnerMayFire=1;
 				outGunnerMayFire=1;

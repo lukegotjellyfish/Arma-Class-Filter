@@ -1,0 +1,14 @@
+rhs_weap_9P148
+canLock=1;
+-----
+-----
+-----
+magazineReloadTime=30;
+-----
+-----
+-----
+-----
+reloadTime=1.5;
+-----
+-----
+-----

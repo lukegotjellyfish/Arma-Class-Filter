@@ -1,0 +1,14 @@
+RHS_M2_CROWS_M153
+canLock=0;
+-----
+dispersion=0.0020000001;
+-----
+magazineReloadTime=25;
+-----
+-----
+-----
+-----
+reloadTime=0.058499999;
+-----
+-----
+-----

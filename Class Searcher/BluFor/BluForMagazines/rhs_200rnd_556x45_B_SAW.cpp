@@ -3,10 +3,10 @@ airFriction=-0.000772;
 caliber=0.64999998;
 count=200;
 deflecting=21;
------
+explosive=0;
 hit=9;
 indirectHit=0;
 indirectHitRange=0;
 initSpeed=960;
-timeToLive=6;
+timeToLive=3;
 typicalSpeed=960;

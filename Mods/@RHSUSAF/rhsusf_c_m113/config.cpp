@@ -1112,6 +1112,13 @@ class CfgVehicles
 				};
 				canUseScanners=0;
 				allowTabLock=0;
+				soundServo[]=
+				{
+					"A3\sounds_f\dummysound",
+					0.0099999998,
+					1,
+					10
+				};
 				isPersonTurret=0;
 				usePip=0;
 				commanding=2;
@@ -1574,6 +1581,17 @@ class CfgVehicles
 				selection="P svetlo";
 			};
 		};
+		aggregateReflectors[]=
+		{
+			
+			{
+				"Left"
+			},
+			
+			{
+				"Right"
+			}
+		};
 		armorLights=0.1;
 		class TransportBackpacks
 		{
@@ -1967,6 +1985,13 @@ class CfgVehicles
 				gunnerGetInAction="GetInLow";
 				gunnerGetOutAction="GetOutLow";
 				personTurretAction="vehicle_turnout_1";
+				soundServo[]=
+				{
+					"A3\sounds_f\dummysound",
+					0.0099999998,
+					1,
+					10
+				};
 				soundServoVertical[]=
 				{
 					"A3\sounds_f\dummysound",

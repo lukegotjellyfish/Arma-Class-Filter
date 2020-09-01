@@ -100,6 +100,10 @@ class CfgAmmo
 		deleteParentWhenTriggered=0;
 		triggerTime=0.003;
 		model="\A3\Weapons_f\empty";
+		SoundSetExplosion[]=
+		{
+			"Silence_SoundSet"
+		};
 	};
 	class rhs_ammo_cluster_penetrator: Sh_125mm_APFSDS
 	{
@@ -128,6 +132,10 @@ class CfgAmmo
 		deleteParentWhenTriggered=0;
 		triggerTime=0.003;
 		model="\A3\Weapons_f\empty";
+		SoundSetExplosion[]=
+		{
+			"Silence_SoundSet"
+		};
 	};
 	class rhs_ammo_ap_penetrator: Sh_125mm_APFSDS
 	{
@@ -150,7 +158,24 @@ class CfgAmmo
 		submunitionInitSpeed=200;
 		deleteParentWhenTriggered=0;
 		triggerTime=0.0020000001;
+		soundVehiclePlateInt1[]=
+		{
+			"rhsusf\addons\rhsusf_c_heavyweapons\sounds\Inhit.wav",
+			4.2387199,
+			1,
+			100
+		};
+		hitArmorInt[]=
+		{
+			"soundVehiclePlateInt1",
+			1
+		};
 		hitDefaultInt[]=
+		{
+			"soundVehiclePlateInt1",
+			1
+		};
+		hitMetalInt[]=
 		{
 			"soundVehiclePlateInt1",
 			1
@@ -507,6 +532,27 @@ class CfgAmmo
 		indirectHit=75;
 		indirectHitRange=21;
 		timetolive=220;
+		class CamShakeExplode
+		{
+			power="(105*0.2)*10";
+			duration="((round (105^0.5))*0.2 max 0.2)";
+			frequency=20;
+			distance="((30 + 105^0.5))";
+		};
+		class CamShakeHit
+		{
+			power="105 * 10";
+			duration="((round (105^0.25))*0.2 max 0.2)";
+			frequency=20;
+			distance=1;
+		};
+		class CamShakeFire
+		{
+			power="(105^0.25)*10";
+			duration="((round (105^0.5))*0.2 max 0.2)";
+			frequency=20;
+			distance="((105^0.5))";
+		};
 	};
 	class rhs_ammo_m314_ilum: Flare_82mm_AMOS_White
 	{
@@ -580,6 +626,34 @@ class CfgAmmo
 			0.2
 		};
 		model="\A3\Weapons_f\empty";
+		class CamShakeExplode
+		{
+			power=6;
+			duration=1;
+			frequency=20;
+			distance=83.817802;
+		};
+		class CamShakeHit
+		{
+			power=30;
+			duration=0.40000001;
+			frequency=20;
+			distance=1;
+		};
+		class CamShakeFire
+		{
+			power=2.3403499;
+			duration=1;
+			frequency=20;
+			distance=43.817799;
+		};
+		class CamShakePlayerFire
+		{
+			power=30;
+			duration=0.1;
+			frequency=20;
+			distance=1;
+		};
 	};
 	class rhs_ammo_PGU13B_HE: Gatling_30mm_HE_Plane_CAS_01_F
 	{
@@ -657,6 +731,20 @@ class CfgAmmo
 	class rhs_ammo_127x99_Ball: B_127x99_Ball
 	{
 		caliber=2.34848;
+		class CamShakeFire
+		{
+			power=1;
+			duration=0.2;
+			frequency=20;
+			distance=8;
+		};
+		class CamShakePlayerFire
+		{
+			power=1;
+			duration=0.1;
+			frequency=20;
+			distance=1;
+		};
 	};
 	class rhs_ammo_127x99_Ball_Tracer_Red: rhs_ammo_127x99_Ball
 	{
@@ -677,6 +765,20 @@ class CfgAmmo
 	class rhs_ammo_127x99_SLAP: B_127x99_SLAP
 	{
 		caliber=2.8099201;
+		class CamShakeFire
+		{
+			power=1;
+			duration=0.2;
+			frequency=20;
+			distance=8;
+		};
+		class CamShakePlayerFire
+		{
+			power=1;
+			duration=0.1;
+			frequency=20;
+			distance=1;
+		};
 	};
 	class rhs_ammo_127x99_SLAP_Tracer_Red: rhs_ammo_127x99_SLAP
 	{
@@ -693,10 +795,74 @@ class CfgAmmo
 		model="\A3\Weapons_f\Data\bullettracer\tracer_yellow";
 		tracerEndTime=3;
 	};
-	class rhs_ammo_127x99_Ball_Plane: rhs_ammo_127x99_Ball;  //found empty after stripping
-	class rhs_ammo_127x99_Ball_Tracer_Red_Plane: rhs_ammo_127x99_Ball_Tracer_Red;  //found empty after stripping
-	class rhs_ammo_127x99_SLAP_Plane: rhs_ammo_127x99_SLAP;  //found empty after stripping
-	class rhs_ammo_127x99_SLAP_Tracer_Red_Plane: rhs_ammo_127x99_SLAP_Tracer_Red;  //found empty after stripping
+	class rhs_ammo_127x99_Ball_Plane: rhs_ammo_127x99_Ball
+	{
+		class CamShakeFire
+		{
+			power=1.56508;
+			duration=0.40000001;
+			frequency=20;
+			distance=19.5959;
+		};
+		class CamShakePlayerFire
+		{
+			power=6;
+			duration=0.1;
+			frequency=20;
+			distance=1;
+		};
+	};
+	class rhs_ammo_127x99_Ball_Tracer_Red_Plane: rhs_ammo_127x99_Ball_Tracer_Red
+	{
+		class CamShakeFire
+		{
+			power=1.56508;
+			duration=0.40000001;
+			frequency=20;
+			distance=19.5959;
+		};
+		class CamShakePlayerFire
+		{
+			power=6;
+			duration=0.1;
+			frequency=20;
+			distance=1;
+		};
+	};
+	class rhs_ammo_127x99_SLAP_Plane: rhs_ammo_127x99_SLAP
+	{
+		class CamShakeFire
+		{
+			power=1.56508;
+			duration=0.40000001;
+			frequency=20;
+			distance=19.5959;
+		};
+		class CamShakePlayerFire
+		{
+			power=6;
+			duration=0.1;
+			frequency=20;
+			distance=1;
+		};
+	};
+	class rhs_ammo_127x99_SLAP_Tracer_Red_Plane: rhs_ammo_127x99_SLAP_Tracer_Red
+	{
+		class CamShakeFire
+		{
+			power=1.56508;
+			duration=0.40000001;
+			frequency=20;
+			distance=19.5959;
+		};
+		class CamShakePlayerFire
+		{
+			power=6;
+			duration=0.1;
+			frequency=20;
+			distance=1;
+		};
+	};
 	class rhs_ammo_127x99_Ball_AI: rhs_ammo_127x99_Ball
 	{
 		irLock=1;
@@ -784,6 +950,13 @@ class CfgAmmo
 		};
 		class Direct;  //found empty after stripping
 		model="\rhsusf\addons\rhsusf_heavyweapons\atgm\TOW2BB";
+		soundFly[]=
+		{
+			"rhsusf\addons\rhsusf_heavyweapons\Sounds\TOW",
+			1.1,
+			0.69999999,
+			550
+		};
 		class EventHandlers: EventHandlers
 		{
 			class RHS_Guidance
@@ -952,6 +1125,34 @@ class CfgAmmo
 		CraterEffects="ArtyShellCrater";
 		explosionEffects="MortarExplosion";
 		effectsMissile="missile2";
+		class CamShakeExplode
+		{
+			power=22;
+			duration=2;
+			frequency=20;
+			distance=227.905;
+		};
+		class CamShakeHit
+		{
+			power=110;
+			duration=0.60000002;
+			frequency=20;
+			distance=1;
+		};
+		class CamShakeFire
+		{
+			power=3.2385299;
+			duration=2;
+			frequency=20;
+			distance=83.904701;
+		};
+		class CamShakePlayerFire
+		{
+			power=5;
+			duration=0.1;
+			frequency=20;
+			distance=1;
+		};
 		submunitionConeType[]=
 		{
 			"randomcenter",
@@ -1194,6 +1395,19 @@ class CfgAmmo
 		maxControlRange=-1;
 		initTime=0;
 		aiAmmoUsageFlags=8;
+		soundFly[]=
+		{
+			"A3\sounds_f\dummysound",
+			0.1,
+			1
+		};
+		supersonicCrackNear[]=
+		{
+			"A3\sounds_f\dummysound",
+			0,
+			1,
+			0
+		};
 		supersonicCrackFar[]=
 		{
 			"A3\sounds_f\dummysound",
@@ -3777,6 +3991,10 @@ class CfgWeapons
 		{
 			displayName="M197";
 			autoFire=1;
+			sounds[]=
+			{
+				"StandardSound"
+			};
 			class StandardSound
 			{
 				weaponSoundEffect="DefaultRifle";
@@ -3916,6 +4134,10 @@ class CfgWeapons
 		{
 			displayName="BURST: 10";
 			rhs_burstLimiter=10;
+			sounds[]=
+			{
+				"StandardSound"
+			};
 			autoFire=1;
 			reloadTime=0.096000001;
 			dispersion=0.0074999998;
@@ -4109,6 +4331,10 @@ class CfgWeapons
 		class LowROF: Mode_FullAuto
 		{
 			displayName="GAU/LO";
+			sounds[]=
+			{
+				"StandardSound"
+			};
 			class StandardSound
 			{
 				begin1[]=
@@ -4263,6 +4489,10 @@ class CfgWeapons
 		class manual: GMG_F
 		{
 			displayname="Mk. 19 Grenade Launcher";
+			sounds[]=
+			{
+				"StandardSound"
+			};
 			soundBurst=0;
 			aiBurstTerminable=1;
 			minRange=1;
@@ -4404,6 +4634,10 @@ class CfgWeapons
 		{
 			"this"
 		};
+		sounds[]=
+		{
+			"StandardSound"
+		};
 		weaponLockSystem=1;
 	};
 	class rhs_weap_TOW_Launcher_static: missiles_titan
@@ -4435,6 +4669,10 @@ class CfgWeapons
 		modes[]=
 		{
 			"this"
+		};
+		sounds[]=
+		{
+			"StandardSound"
 		};
 	};
 	class rockets_230mm_GAT;
@@ -5219,6 +5457,10 @@ class CfgWeapons
 			reloadTime=8;
 			minRange=0;
 			maxRange=1000;
+			sounds[]=
+			{
+				"StandardSound"
+			};
 			class StandardSound
 			{
 				begin1[]={};
@@ -5284,6 +5526,10 @@ class CfgWeapons
 			displayName="LWIRCM";
 			reloadTime=0.25;
 			burst=120;
+			sounds[]=
+			{
+				"StandardSound"
+			};
 			class StandardSound
 			{
 				begin1[]=
@@ -5344,6 +5590,10 @@ class CfgWeapons
 			displayName="AN/ALQ-144";
 			reloadTime=0.5;
 			burst=120;
+			sounds[]=
+			{
+				"StandardSound"
+			};
 			class StandardSound
 			{
 				begin1[]=
@@ -5461,6 +5711,10 @@ class CfgWeapons
 		class Single0: Mode_SemiAuto
 		{
 			displayName="CHARGE 0";
+			sounds[]=
+			{
+				"StandardSound"
+			};
 			class StandardSound
 			{
 				begin1[]=
@@ -5491,6 +5745,12 @@ class CfgWeapons
 				1,
 				1,
 				20
+			};
+			soundServo[]=
+			{
+				"",
+				9.9999997e-005,
+				1
 			};
 			reloadTime=1.8;
 			minRange=0;
@@ -5525,6 +5785,10 @@ class CfgWeapons
 			displayName="$STR_A3_mortar_82mm_Burst10";
 			burst=4;
 			aiBurstTerminable=1;
+			sounds[]=
+			{
+				"StandardSound"
+			};
 			class StandardSound
 			{
 				begin1[]=
@@ -5555,6 +5819,12 @@ class CfgWeapons
 				1,
 				1,
 				20
+			};
+			soundServo[]=
+			{
+				"",
+				9.9999997e-005,
+				1
 			};
 			soundBurst=0;
 			reloadTime=1.8;
@@ -5729,6 +5999,10 @@ class cfgSFX
 			10,
 			10,
 			10
+		};
+		sounds[]=
+		{
+			"sound0"
 		};
 		titles[]={};
 		empty[]=

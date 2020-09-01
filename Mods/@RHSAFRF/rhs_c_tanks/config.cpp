@@ -607,6 +607,20 @@ class CfgVehicles
 			};
 		};
 		attenuationEffectType="TankAttenuation";
+		soundEngineOnExt[]=
+		{
+			"rhsafrf\addons\rhs_t80\Sound\t80_engineStart.wav",
+			0.56234133,
+			1,
+			200
+		};
+		soundEngineOnInt[]=
+		{
+			"rhsafrf\addons\rhs_t80\Sound\t80_engineStart.wav",
+			0.56234133,
+			1,
+			200
+		};
 		class Sounds
 		{
 			class Idle_ext
@@ -1857,6 +1871,14 @@ class CfgVehicles
 				useFlare=1;
 			};
 		};
+		aggregateReflectors[]=
+		{
+			
+			{
+				"Driver_FG125_Cover",
+				"Driver_FG125_Cover_Flare"
+			}
+		};
 		armorLights=0.1;
 		class Exhausts
 		{
@@ -2024,6 +2046,13 @@ class CfgVehicles
 				gunnerDoor="hatchG";
 				ejectDeadGunner=0;
 				startEngine=0;
+				soundServo[]=
+				{
+					"rhsafrf\addons\rhs_t80\Sound\servo.ogg",
+					6,
+					1,
+					20
+				};
 				armorStructural=60;
 				class HitPoints
 				{

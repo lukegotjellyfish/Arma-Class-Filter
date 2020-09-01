@@ -1521,6 +1521,46 @@ class CfgVehicles
 			2,
 			1
 		};
+		soundGetIn[]=
+		{
+			"rhsafrf\addons\rhs_a2port_car\sounds\UAZ\ext-uaz-getin",
+			1.5848932,
+			1,
+			9
+		};
+		soundGetOut[]=
+		{
+			"rhsafrf\addons\rhs_a2port_car\sounds\UAZ\ext-uaz-getout",
+			1.5848932,
+			1,
+			25
+		};
+		soundEngineOnInt[]=
+		{
+			"rhsafrf\addons\rhs_a2port_car\sounds\UAZ\uaz_int_start1",
+			1.5848932,
+			1
+		};
+		soundEngineOnExt[]=
+		{
+			"rhsafrf\addons\rhs_a2port_car\sounds\UAZ\uaz_ext_start1",
+			1.4125376,
+			1,
+			200
+		};
+		soundEngineOffInt[]=
+		{
+			"rhsafrf\addons\rhs_a2port_car\sounds\UAZ\uaz_int_stop1",
+			1.5848932,
+			1
+		};
+		soundEngineOffExt[]=
+		{
+			"rhsafrf\addons\rhs_a2port_car\sounds\UAZ\uaz_ext_stop1",
+			1.4125376,
+			1,
+			200
+		};
 		class Sounds
 		{
 			class Idle_ext
@@ -2817,6 +2857,30 @@ class CfgVehicles
 				};
 			};
 		};
+		aggregateReflectors[]=
+		{
+			
+			{
+				"LSvetla"
+			},
+			
+			{
+				"Left2"
+			},
+			
+			{
+				"RSvetla"
+			},
+			
+			{
+				"Right2"
+			},
+			
+			{
+				"Long_Left2",
+				"Long_Right2"
+			}
+		};
 		armorLights=0.050000001;
 		class RenderTargets
 		{
@@ -4042,6 +4106,46 @@ class CfgVehicles
 			"rhsafrf\addons\rhs_a2port_car\sounds\Gear_Change",
 			2,
 			1
+		};
+		soundGetIn[]=
+		{
+			"rhsafrf\addons\rhs_a2port_car\sounds\URAL\ext-ural-getout",
+			1.7782794,
+			1,
+			9
+		};
+		soundGetOut[]=
+		{
+			"rhsafrf\addons\rhs_a2port_car\sounds\URAL\int-ural-getout",
+			2.5118864,
+			1,
+			25
+		};
+		soundEngineOnInt[]=
+		{
+			"rhsafrf\addons\rhs_a2port_car\sounds\URAL\int-ural-start",
+			1.4125376,
+			1
+		};
+		soundEngineOnExt[]=
+		{
+			"rhsafrf\addons\rhs_a2port_car\sounds\URAL\ext-ural-start",
+			1.4125376,
+			1,
+			200
+		};
+		soundEngineOffInt[]=
+		{
+			"rhsafrf\addons\rhs_a2port_car\sounds\URAL\int-ural-stop",
+			1.4125376,
+			1
+		};
+		soundEngineOffExt[]=
+		{
+			"rhsafrf\addons\rhs_a2port_car\sounds\URAL\ext-ural-stop",
+			1.4125376,
+			1,
+			200
 		};
 		class Sounds
 		{
@@ -5295,6 +5399,30 @@ class CfgVehicles
 					hardLimitEnd=2;
 				};
 			};
+		};
+		aggregateReflectors[]=
+		{
+			
+			{
+				"LSvetla"
+			},
+			
+			{
+				"Left2"
+			},
+			
+			{
+				"RSvetla"
+			},
+			
+			{
+				"Right2"
+			},
+			
+			{
+				"Long_Left2",
+				"Long_Right2"
+			}
 		};
 		armorLights=0.050000001;
 		class RenderTargets

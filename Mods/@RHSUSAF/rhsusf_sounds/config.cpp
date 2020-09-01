@@ -8366,10 +8366,21 @@ class CfgWeapons
 			1,
 			10
 		};
+		changeFiremodeSound[]=
+		{
+			"rhsusf\addons\rhsusf_sounds\ar15_shared\firemode",
+			0.60000002,
+			1,
+			5
+		};
 		class M203_GL: UGL_F
 		{
 			class Single: Mode_SemiAuto
 			{
+				sounds[]=
+				{
+					"StandardSound"
+				};
 				class StandardSound
 				{
 					soundSetShot[]=
@@ -8385,6 +8396,10 @@ class CfgWeapons
 		{
 			class Single: Mode_SemiAuto
 			{
+				sounds[]=
+				{
+					"StandardSound"
+				};
 				class StandardSound
 				{
 					soundSetShot[]=
@@ -8405,6 +8420,13 @@ class CfgWeapons
 			1,
 			1,
 			10
+		};
+		changeFiremodeSound[]=
+		{
+			"rhsusf\addons\rhsusf_sounds\ar15_shared\firemode",
+			0.60000002,
+			1,
+			5
 		};
 	};
 	class rhs_weap_m14ebrri;
@@ -8436,6 +8458,10 @@ class CfgWeapons
 	{
 		class Single: Mode_SemiAuto
 		{
+			sounds[]=
+			{
+				"StandardSound"
+			};
 			class StandardSound
 			{
 				soundSetShot[]=
@@ -8450,6 +8476,10 @@ class CfgWeapons
 	{
 		class Single: Single
 		{
+			sounds[]=
+			{
+				"StandardSound"
+			};
 			class StandardSound
 			{
 				soundSetShot[]=
@@ -8465,6 +8495,10 @@ class CfgWeapons
 	{
 		class Single: Mode_SemiAuto
 		{
+			sounds[]=
+			{
+				"StandardSound"
+			};
 			class StandardSound
 			{
 				soundSetShot[]=
@@ -8490,6 +8524,10 @@ class CfgWeapons
 	{
 		class Single: Mode_SemiAuto
 		{
+			sounds[]=
+			{
+				"StandardSound"
+			};
 			class StandardSound
 			{
 				closure1[]=
@@ -8629,6 +8667,11 @@ class CfgWeapons
 	{
 		class Single: Single
 		{
+			sounds[]=
+			{
+				"StandardSound",
+				"SilencedSound"
+			};
 			class StandardSound
 			{
 				begin1[]=
@@ -8665,6 +8708,10 @@ class CfgWeapons
 	class Missile_AGM_02_Plane_CAS_01_F;
 	class rhs_weap_M136: Launcher_Base_F
 	{
+		sounds[]=
+		{
+			"StandardSound"
+		};
 		class StandardSound
 		{
 			begin1[]=
@@ -8685,6 +8732,10 @@ class CfgWeapons
 	{
 		class Single: Mode_SemiAuto
 		{
+			sounds[]=
+			{
+				"StandardSound"
+			};
 			class StandardSound
 			{
 				begin1[]=
@@ -8722,6 +8773,10 @@ class CfgWeapons
 	{
 		class TopDown: Mode_SemiAuto
 		{
+			sounds[]=
+			{
+				"StandardSound"
+			};
 			class StandardSound
 			{
 				begin1[]=
@@ -8750,6 +8805,10 @@ class CfgWeapons
 	};
 	class rhs_weap_SidewinderLauncher: MissileLauncher
 	{
+		sounds[]=
+		{
+			"StandardSound"
+		};
 		class StandardSound
 		{
 			begin1[]=
@@ -8779,6 +8838,10 @@ class CfgWeapons
 	{
 		class Far_AI: RocketPods
 		{
+			sounds[]=
+			{
+				"StandardSound"
+			};
 			class StandardSound
 			{
 				begin1[]=
@@ -8806,6 +8869,10 @@ class CfgWeapons
 		};
 		class Burst: RocketPods
 		{
+			sounds[]=
+			{
+				"StandardSound"
+			};
 			class StandardSound
 			{
 				begin1[]=

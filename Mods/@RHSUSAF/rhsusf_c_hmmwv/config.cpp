@@ -2717,6 +2717,14 @@ class CfgVehicles
 				};
 			};
 		};
+		aggregateReflectors[]=
+		{
+			
+			{
+				"Left",
+				"Right"
+			}
+		};
 		class NVGMarkers
 		{
 			class NVGMarker01
@@ -4570,6 +4578,12 @@ class CfgVehicles
 				};
 				minElev=-10;
 				maxElev=40;
+				soundServo[]=
+				{
+					"A3\sounds_f\dummysound",
+					1e-006,
+					1
+				};
 				soundAttenuationTurret="HeliAttenuationGunner";
 				disableSoundAttenuation=1;
 				gunnerAction="RHS_HMMWV_Gunner03";
@@ -5041,6 +5055,12 @@ class CfgVehicles
 				castGunnerShadow=1;
 				stabilizedInAxes=0;
 				gunnerDoor="Door_RB";
+				soundServo[]=
+				{
+					"A3\sounds_f\dummysound",
+					1e-006,
+					1
+				};
 				soundAttenuationTurret="HeliAttenuationGunner";
 				class ViewGunner
 				{

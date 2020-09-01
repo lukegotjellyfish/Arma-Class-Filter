@@ -2,11 +2,11 @@ rhsgref_8Rnd_762x63_M2B_M1rifle
 airFriction=-0.00068140001;
 caliber=0.44999999;
 count=8;
-deflecting=15;
 -----
+explosive=0;
 hit=13.75;
 indirectHit=0;
 indirectHitRange=0;
 initSpeed=770;
-timeToLive=6;
+timeToLive=3;
 typicalSpeed=838;

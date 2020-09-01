@@ -1,0 +1,14 @@
+rhs_weap_9k133
+canLock=1;
+-----
+-----
+-----
+magazineReloadTime=30;
+-----
+-----
+-----
+-----
+reloadTime=0.1;
+-----
+-----
+-----

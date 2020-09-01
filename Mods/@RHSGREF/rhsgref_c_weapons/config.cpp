@@ -985,6 +985,26 @@ class CfgAmmo
 		explosionEffects="ATRocketExplosion";
 		effectsMissileInit="RocketBackEffectsNLAW";
 		effectsMissile="missile3";
+		class CamShakeFire
+		{
+			power=10;
+			duration=0.5;
+			frequency=20;
+			distance=30;
+		};
+		class CamShakePlayerFire
+		{
+			power=5;
+			duration=0.1;
+			frequency=20;
+		};
+		soundFly[]=
+		{
+			"A3\Sounds_F\arsenal\weapons_static\Missile_Launcher\rocket_fly",
+			1.1,
+			0.69999999,
+			250
+		};
 	};
 	class rhs_ammo_rpg75_penetrator: rhs_ammo_3bk12_penetrator
 	{
@@ -1023,6 +1043,26 @@ class CfgAmmo
 		explosionEffects="ATRocketExplosion";
 		effectsMissileInit="RocketBackEffectsNLAW";
 		effectsMissile="missile3";
+		class CamShakeFire
+		{
+			power=10;
+			duration=0.5;
+			frequency=20;
+			distance=30;
+		};
+		class CamShakePlayerFire
+		{
+			power=5;
+			duration=0.1;
+			frequency=20;
+		};
+		soundFly[]=
+		{
+			"A3\Sounds_F\arsenal\weapons_static\Missile_Launcher\rocket_fly",
+			1.1,
+			0.69999999,
+			250
+		};
 	};
 	class rhs_ammo_panzerfaust60_penetrator: rhs_ammo_3bk12_penetrator
 	{
@@ -1070,6 +1110,20 @@ class CfgAmmo
 		};
 		submunitionInitSpeed=5;
 		mineJumpEffects="MineJumpEffect";
+		class CamShakeExplode
+		{
+			power=0;
+			duration=0.2;
+			frequency=20;
+			distance=0;
+		};
+		class CamShakeHit
+		{
+			power=0;
+			duration=0.2;
+			frequency=20;
+			distance=1;
+		};
 		hit=0;
 		indirectHit=0;
 		indirectHitRange=0;
@@ -1102,6 +1156,12 @@ class CfgAmmo
 	};
 	class rhs_mine_smine35_trip_explo_ammo: ShellBase
 	{
+		SoundSetExplosion[]=
+		{
+			"M6slamMine_Exp_SoundSet",
+			"M6slamMine_Tail_SoundSet",
+			"Explosion_Debris_SoundSet"
+		};
 		model="\rhsgref\addons\rhsgref_weapons2\mines\Smine35\SMI35_SUBMUNITION_TRIP";
 		explosionTime=0.3125;
 		hit=20;
@@ -1193,6 +1253,12 @@ class CfgAmmo
 	};
 	class rhs_mine_m2a3b_explo_ammo: ShellBase
 	{
+		SoundSetExplosion[]=
+		{
+			"M6slamMine_Exp_SoundSet",
+			"M6slamMine_Tail_SoundSet",
+			"Explosion_Debris_SoundSet"
+		};
 		model="\rhsgref\addons\rhsgref_weapons2\mines\M2A3B\M2A3_SUBMUNITION";
 		explosionTime=0.40000001;
 		hit=15;
@@ -4653,6 +4719,123 @@ class CfgWeapons
 			"OFP2_ManSkeleton",
 			"\rhsgref\addons\rhsgref_c_weapons\anims\awmhands.rtm"
 		};
+		bullet1[]=
+		{
+			"A3\sounds_f\weapons\shells\7_62\metal_762_01",
+			0.63095701,
+			1,
+			15
+		};
+		bullet2[]=
+		{
+			"A3\sounds_f\weapons\shells\7_62\metal_762_02",
+			0.63095701,
+			1,
+			15
+		};
+		bullet3[]=
+		{
+			"A3\sounds_f\weapons\shells\7_62\metal_762_03",
+			0.63095701,
+			1,
+			15
+		};
+		bullet4[]=
+		{
+			"A3\sounds_f\weapons\shells\7_62\metal_762_04",
+			0.63095701,
+			1,
+			15
+		};
+		bullet5[]=
+		{
+			"A3\sounds_f\weapons\shells\7_62\dirt_762_01",
+			0.63095701,
+			1,
+			15
+		};
+		bullet6[]=
+		{
+			"A3\sounds_f\weapons\shells\7_62\dirt_762_02",
+			0.63095701,
+			1,
+			15
+		};
+		bullet7[]=
+		{
+			"A3\sounds_f\weapons\shells\7_62\dirt_762_03",
+			0.63095701,
+			1,
+			15
+		};
+		bullet8[]=
+		{
+			"A3\sounds_f\weapons\shells\7_62\dirt_762_04",
+			0.63095701,
+			1,
+			15
+		};
+		bullet9[]=
+		{
+			"A3\sounds_f\weapons\shells\7_62\grass_762_01",
+			0.63095701,
+			1,
+			15
+		};
+		bullet10[]=
+		{
+			"A3\sounds_f\weapons\shells\7_62\grass_762_02",
+			0.63095701,
+			1,
+			15
+		};
+		bullet11[]=
+		{
+			"A3\sounds_f\weapons\shells\7_62\grass_762_03",
+			0.63095701,
+			1,
+			15
+		};
+		bullet12[]=
+		{
+			"A3\sounds_f\weapons\shells\7_62\grass_762_04",
+			0.63095701,
+			1,
+			15
+		};
+		soundBullet[]=
+		{
+			"bullet1",
+			0.082999997,
+			"bullet2",
+			0.082999997,
+			"bullet3",
+			0.082999997,
+			"bullet4",
+			0.082999997,
+			"bullet5",
+			0.082999997,
+			"bullet6",
+			0.082999997,
+			"bullet7",
+			0.082999997,
+			"bullet8",
+			0.082999997,
+			"bullet9",
+			0.082999997,
+			"bullet10",
+			0.082999997,
+			"bullet11",
+			0.082999997,
+			"bullet12",
+			0.082999997
+		};
+		drySound[]=
+		{
+			"A3\sounds_f\weapons\Other\dry_1",
+			0.0099999998,
+			1
+		};
 		reloadMagazineSound[]=
 		{
 			"\rhsgref\addons\rhsgref_weapons\kar98k\data\sounds\1903A1_reload_noscope",
@@ -4846,12 +5029,129 @@ class CfgWeapons
 			"\rhsgref\addons\rhsgref_c_weapons\anims\rhs_hand_m38.rtm"
 		};
 		dexterity=1.8;
+		drySound[]=
+		{
+			"A3\sounds_f\weapons\Other\dry_1",
+			0.0099999998,
+			1
+		};
 		reloadMagazineSound[]=
 		{
 			"\rhsgref\addons\rhsgref_weapons\kar98k\data\sounds\1903A1_reload_noscope",
 			0.80000001,
 			1,
 			10
+		};
+		bullet1[]=
+		{
+			"A3\sounds_f\weapons\shells\7_62\metal_762_01",
+			0.63095701,
+			1,
+			15
+		};
+		bullet2[]=
+		{
+			"A3\sounds_f\weapons\shells\7_62\metal_762_02",
+			0.63095701,
+			1,
+			15
+		};
+		bullet3[]=
+		{
+			"A3\sounds_f\weapons\shells\7_62\metal_762_03",
+			0.63095701,
+			1,
+			15
+		};
+		bullet4[]=
+		{
+			"A3\sounds_f\weapons\shells\7_62\metal_762_04",
+			0.63095701,
+			1,
+			15
+		};
+		bullet5[]=
+		{
+			"A3\sounds_f\weapons\shells\7_62\dirt_762_01",
+			0.63095701,
+			1,
+			15
+		};
+		bullet6[]=
+		{
+			"A3\sounds_f\weapons\shells\7_62\dirt_762_02",
+			0.63095701,
+			1,
+			15
+		};
+		bullet7[]=
+		{
+			"A3\sounds_f\weapons\shells\7_62\dirt_762_03",
+			0.63095701,
+			1,
+			15
+		};
+		bullet8[]=
+		{
+			"A3\sounds_f\weapons\shells\7_62\dirt_762_04",
+			0.63095701,
+			1,
+			15
+		};
+		bullet9[]=
+		{
+			"A3\sounds_f\weapons\shells\7_62\grass_762_01",
+			0.63095701,
+			1,
+			15
+		};
+		bullet10[]=
+		{
+			"A3\sounds_f\weapons\shells\7_62\grass_762_02",
+			0.63095701,
+			1,
+			15
+		};
+		bullet11[]=
+		{
+			"A3\sounds_f\weapons\shells\7_62\grass_762_03",
+			0.63095701,
+			1,
+			15
+		};
+		bullet12[]=
+		{
+			"A3\sounds_f\weapons\shells\7_62\grass_762_04",
+			0.63095701,
+			1,
+			15
+		};
+		soundBullet[]=
+		{
+			"bullet1",
+			0.082999997,
+			"bullet2",
+			0.082999997,
+			"bullet3",
+			0.082999997,
+			"bullet4",
+			0.082999997,
+			"bullet5",
+			0.082999997,
+			"bullet6",
+			0.082999997,
+			"bullet7",
+			0.082999997,
+			"bullet8",
+			0.082999997,
+			"bullet9",
+			0.082999997,
+			"bullet10",
+			0.082999997,
+			"bullet11",
+			0.082999997,
+			"bullet12",
+			0.082999997
 		};
 		modes[]=
 		{
@@ -5206,12 +5506,137 @@ class CfgWeapons
 			"this",
 			"SAFE"
 		};
+		bullet1[]=
+		{
+			"A3\sounds_f\weapons\shells\7_62\metal_762_01",
+			0.63095701,
+			1,
+			15
+		};
+		bullet2[]=
+		{
+			"A3\sounds_f\weapons\shells\7_62\metal_762_02",
+			0.63095701,
+			1,
+			15
+		};
+		bullet3[]=
+		{
+			"A3\sounds_f\weapons\shells\7_62\metal_762_03",
+			0.63095701,
+			1,
+			15
+		};
+		bullet4[]=
+		{
+			"A3\sounds_f\weapons\shells\7_62\metal_762_04",
+			0.63095701,
+			1,
+			15
+		};
+		bullet5[]=
+		{
+			"A3\sounds_f\weapons\shells\7_62\dirt_762_01",
+			0.63095701,
+			1,
+			15
+		};
+		bullet6[]=
+		{
+			"A3\sounds_f\weapons\shells\7_62\dirt_762_02",
+			0.63095701,
+			1,
+			15
+		};
+		bullet7[]=
+		{
+			"A3\sounds_f\weapons\shells\7_62\dirt_762_03",
+			0.63095701,
+			1,
+			15
+		};
+		bullet8[]=
+		{
+			"A3\sounds_f\weapons\shells\7_62\dirt_762_04",
+			0.63095701,
+			1,
+			15
+		};
+		bullet9[]=
+		{
+			"A3\sounds_f\weapons\shells\7_62\grass_762_01",
+			0.63095701,
+			1,
+			15
+		};
+		bullet10[]=
+		{
+			"A3\sounds_f\weapons\shells\7_62\grass_762_02",
+			0.63095701,
+			1,
+			15
+		};
+		bullet11[]=
+		{
+			"A3\sounds_f\weapons\shells\7_62\grass_762_03",
+			0.63095701,
+			1,
+			15
+		};
+		bullet12[]=
+		{
+			"A3\sounds_f\weapons\shells\7_62\grass_762_04",
+			0.63095701,
+			1,
+			15
+		};
+		soundBullet[]=
+		{
+			"bullet1",
+			0.082999997,
+			"bullet2",
+			0.082999997,
+			"bullet3",
+			0.082999997,
+			"bullet4",
+			0.082999997,
+			"bullet5",
+			0.082999997,
+			"bullet6",
+			0.082999997,
+			"bullet7",
+			0.082999997,
+			"bullet8",
+			0.082999997,
+			"bullet9",
+			0.082999997,
+			"bullet10",
+			0.082999997,
+			"bullet11",
+			0.082999997,
+			"bullet12",
+			0.082999997
+		};
+		drySound[]=
+		{
+			"A3\sounds_f\weapons\Other\dry_1",
+			0.56234097,
+			1,
+			10
+		};
 		reloadMagazineSound[]=
 		{
 			"A3\Sounds_F\weapons\Khaybar\reload_khaibar",
 			1,
 			1,
 			10
+		};
+		changeFiremodeSound[]=
+		{
+			"A3\sounds_f\weapons\closure\firemode_changer_2",
+			0.56234133,
+			1,
+			20
 		};
 		modes[]=
 		{
@@ -5985,12 +6410,137 @@ class CfgWeapons
 			"this",
 			"SAFE"
 		};
+		bullet1[]=
+		{
+			"A3\sounds_f\weapons\shells\7_62\metal_762_01",
+			0.63095701,
+			1,
+			15
+		};
+		bullet2[]=
+		{
+			"A3\sounds_f\weapons\shells\7_62\metal_762_02",
+			0.63095701,
+			1,
+			15
+		};
+		bullet3[]=
+		{
+			"A3\sounds_f\weapons\shells\7_62\metal_762_03",
+			0.63095701,
+			1,
+			15
+		};
+		bullet4[]=
+		{
+			"A3\sounds_f\weapons\shells\7_62\metal_762_04",
+			0.63095701,
+			1,
+			15
+		};
+		bullet5[]=
+		{
+			"A3\sounds_f\weapons\shells\7_62\dirt_762_01",
+			0.63095701,
+			1,
+			15
+		};
+		bullet6[]=
+		{
+			"A3\sounds_f\weapons\shells\7_62\dirt_762_02",
+			0.63095701,
+			1,
+			15
+		};
+		bullet7[]=
+		{
+			"A3\sounds_f\weapons\shells\7_62\dirt_762_03",
+			0.63095701,
+			1,
+			15
+		};
+		bullet8[]=
+		{
+			"A3\sounds_f\weapons\shells\7_62\dirt_762_04",
+			0.63095701,
+			1,
+			15
+		};
+		bullet9[]=
+		{
+			"A3\sounds_f\weapons\shells\7_62\grass_762_01",
+			0.63095701,
+			1,
+			15
+		};
+		bullet10[]=
+		{
+			"A3\sounds_f\weapons\shells\7_62\grass_762_02",
+			0.63095701,
+			1,
+			15
+		};
+		bullet11[]=
+		{
+			"A3\sounds_f\weapons\shells\7_62\grass_762_03",
+			0.63095701,
+			1,
+			15
+		};
+		bullet12[]=
+		{
+			"A3\sounds_f\weapons\shells\7_62\grass_762_04",
+			0.63095701,
+			1,
+			15
+		};
+		soundBullet[]=
+		{
+			"bullet1",
+			0.082999997,
+			"bullet2",
+			0.082999997,
+			"bullet3",
+			0.082999997,
+			"bullet4",
+			0.082999997,
+			"bullet5",
+			0.082999997,
+			"bullet6",
+			0.082999997,
+			"bullet7",
+			0.082999997,
+			"bullet8",
+			0.082999997,
+			"bullet9",
+			0.082999997,
+			"bullet10",
+			0.082999997,
+			"bullet11",
+			0.082999997,
+			"bullet12",
+			0.082999997
+		};
+		drySound[]=
+		{
+			"A3\sounds_f\weapons\Other\dry_1",
+			0.56234097,
+			1,
+			10
+		};
 		reloadMagazineSound[]=
 		{
 			"A3\Sounds_F\weapons\Khaybar\reload_khaibar",
 			1,
 			1,
 			10
+		};
+		changeFiremodeSound[]=
+		{
+			"A3\sounds_f\weapons\closure\firemode_changer_2",
+			0.56234133,
+			1,
+			20
 		};
 		modes[]=
 		{
@@ -6503,6 +7053,10 @@ class CfgWeapons
 		};
 		class Single: Mode_SemiAuto
 		{
+			sounds[]=
+			{
+				"StandardSound"
+			};
 			class StandardSound
 			{
 				soundsetshot[]=
@@ -6595,12 +7149,137 @@ class CfgWeapons
 			"this",
 			"SAFE"
 		};
+		bullet1[]=
+		{
+			"A3\sounds_f\weapons\shells\5_56\metal_556_01.wss",
+			0.1,
+			1,
+			15
+		};
+		bullet2[]=
+		{
+			"A3\sounds_f\weapons\shells\5_56\metal_556_02.wss",
+			0.1,
+			1,
+			15
+		};
+		bullet3[]=
+		{
+			"A3\sounds_f\weapons\shells\5_56\metal_556_03.wss",
+			0.177828,
+			1,
+			15
+		};
+		bullet4[]=
+		{
+			"A3\sounds_f\weapons\shells\5_56\metal_556_04.wss",
+			0.177828,
+			1,
+			15
+		};
+		bullet5[]=
+		{
+			"A3\sounds_f\weapons\shells\5_56\asphlat_556_01.wss",
+			0.1,
+			1,
+			15
+		};
+		bullet6[]=
+		{
+			"A3\sounds_f\weapons\shells\5_56\asphlat_556_02.wss",
+			0.1,
+			1,
+			15
+		};
+		bullet7[]=
+		{
+			"A3\sounds_f\weapons\shells\5_56\asphlat_556_03.wss",
+			0.1,
+			1,
+			15
+		};
+		bullet8[]=
+		{
+			"A3\sounds_f\weapons\shells\5_56\asphlat_556_04.wss",
+			0.1,
+			1,
+			15
+		};
+		bullet9[]=
+		{
+			"A3\sounds_f\weapons\shells\5_56\grass_556_01.wss",
+			0.0099999998,
+			1,
+			15
+		};
+		bullet10[]=
+		{
+			"A3\sounds_f\weapons\shells\5_56\grass_556_02.wss",
+			0.0099999998,
+			1,
+			15
+		};
+		bullet11[]=
+		{
+			"A3\sounds_f\weapons\shells\5_56\grass_556_03.wss",
+			0.0099999998,
+			1,
+			15
+		};
+		bullet12[]=
+		{
+			"A3\sounds_f\weapons\shells\5_56\grass_556_04.wss",
+			0.0099999998,
+			1,
+			15
+		};
+		soundBullet[]=
+		{
+			"bullet1",
+			0.082999997,
+			"bullet2",
+			0.082999997,
+			"bullet3",
+			0.082999997,
+			"bullet4",
+			0.082999997,
+			"bullet5",
+			0.082999997,
+			"bullet6",
+			0.082999997,
+			"bullet7",
+			0.082999997,
+			"bullet8",
+			0.082999997,
+			"bullet9",
+			0.082999997,
+			"bullet10",
+			0.082999997,
+			"bullet11",
+			0.082999997,
+			"bullet12",
+			0.082999997
+		};
+		drySound[]=
+		{
+			"A3\sounds_f\weapons\Other\dry_1",
+			0.56234097,
+			1,
+			10
+		};
 		reloadMagazineSound[]=
 		{
 			"A3\Sounds_F\arsenal\weapons\Rifles\Katiba\reload_Katiba",
 			1,
 			1,
 			10
+		};
+		changeFiremodeSound[]=
+		{
+			"A3\sounds_f\weapons\closure\firemode_changer_2",
+			0.56234133,
+			1,
+			20
 		};
 		modes[]=
 		{
@@ -7093,6 +7772,124 @@ class CfgWeapons
 			"this",
 			"SAFE"
 		};
+		bullet1[]=
+		{
+			"A3\sounds_f\weapons\shells\7_62\metal_762_01",
+			0.63095701,
+			1,
+			15
+		};
+		bullet2[]=
+		{
+			"A3\sounds_f\weapons\shells\7_62\metal_762_02",
+			0.63095701,
+			1,
+			15
+		};
+		bullet3[]=
+		{
+			"A3\sounds_f\weapons\shells\7_62\metal_762_03",
+			0.63095701,
+			1,
+			15
+		};
+		bullet4[]=
+		{
+			"A3\sounds_f\weapons\shells\7_62\metal_762_04",
+			0.63095701,
+			1,
+			15
+		};
+		bullet5[]=
+		{
+			"A3\sounds_f\weapons\shells\7_62\dirt_762_01",
+			0.63095701,
+			1,
+			15
+		};
+		bullet6[]=
+		{
+			"A3\sounds_f\weapons\shells\7_62\dirt_762_02",
+			0.63095701,
+			1,
+			15
+		};
+		bullet7[]=
+		{
+			"A3\sounds_f\weapons\shells\7_62\dirt_762_03",
+			0.63095701,
+			1,
+			15
+		};
+		bullet8[]=
+		{
+			"A3\sounds_f\weapons\shells\7_62\dirt_762_04",
+			0.63095701,
+			1,
+			15
+		};
+		bullet9[]=
+		{
+			"A3\sounds_f\weapons\shells\7_62\grass_762_01",
+			0.63095701,
+			1,
+			15
+		};
+		bullet10[]=
+		{
+			"A3\sounds_f\weapons\shells\7_62\grass_762_02",
+			0.63095701,
+			1,
+			15
+		};
+		bullet11[]=
+		{
+			"A3\sounds_f\weapons\shells\7_62\grass_762_03",
+			0.63095701,
+			1,
+			15
+		};
+		bullet12[]=
+		{
+			"A3\sounds_f\weapons\shells\7_62\grass_762_04",
+			0.63095701,
+			1,
+			15
+		};
+		soundBullet[]=
+		{
+			"bullet1",
+			0.082999997,
+			"bullet2",
+			0.082999997,
+			"bullet3",
+			0.082999997,
+			"bullet4",
+			0.082999997,
+			"bullet5",
+			0.082999997,
+			"bullet6",
+			0.082999997,
+			"bullet7",
+			0.082999997,
+			"bullet8",
+			0.082999997,
+			"bullet9",
+			0.082999997,
+			"bullet10",
+			0.082999997,
+			"bullet11",
+			0.082999997,
+			"bullet12",
+			0.082999997
+		};
+		changeFiremodeSound[]=
+		{
+			"A3\sounds_f\weapons\closure\firemode_changer_2",
+			0.56234133,
+			1,
+			20
+		};
 		modes[]=
 		{
 			"Single",
@@ -7164,6 +7961,13 @@ class CfgWeapons
 		};
 		aiDispersionCoefY=10;
 		aiDispersionCoefX=8;
+		drySound[]=
+		{
+			"A3\sounds_f\weapons\Other\dry_1",
+			0.56234097,
+			1,
+			10
+		};
 		reloadMagazineSound[]=
 		{
 			"A3\Sounds_F\weapons\Khaybar\reload_khaibar",
@@ -7271,12 +8075,137 @@ class CfgWeapons
 		dexterity=1.8;
 		aiDispersionCoefY=10;
 		aiDispersionCoefX=8;
+		bullet1[]=
+		{
+			"A3\sounds_f\weapons\shells\9mm\metal_9mm_01",
+			0.50118721,
+			1,
+			15
+		};
+		bullet2[]=
+		{
+			"A3\sounds_f\weapons\shells\9mm\metal_9mm_02",
+			0.50118721,
+			1,
+			15
+		};
+		bullet3[]=
+		{
+			"A3\sounds_f\weapons\shells\9mm\metal_9mm_03",
+			0.50118721,
+			1,
+			15
+		};
+		bullet4[]=
+		{
+			"A3\sounds_f\weapons\shells\9mm\metal_9mm_04",
+			0.50118721,
+			1,
+			15
+		};
+		bullet5[]=
+		{
+			"A3\sounds_f\weapons\shells\9mm\dirt_9mm_01",
+			0.56234133,
+			1,
+			15
+		};
+		bullet6[]=
+		{
+			"A3\sounds_f\weapons\shells\9mm\dirt_9mm_02",
+			0.56234133,
+			1,
+			15
+		};
+		bullet7[]=
+		{
+			"A3\sounds_f\weapons\shells\9mm\dirt_9mm_03",
+			0.56234133,
+			1,
+			15
+		};
+		bullet8[]=
+		{
+			"A3\sounds_f\weapons\shells\9mm\dirt_9mm_04",
+			0.56234133,
+			1,
+			15
+		};
+		bullet9[]=
+		{
+			"A3\sounds_f\weapons\shells\9mm\grass_9mm_01",
+			0.39810717,
+			1,
+			15
+		};
+		bullet10[]=
+		{
+			"A3\sounds_f\weapons\shells\9mm\grass_9mm_02",
+			0.39810717,
+			1,
+			15
+		};
+		bullet11[]=
+		{
+			"A3\sounds_f\weapons\shells\9mm\grass_9mm_03",
+			0.39810717,
+			1,
+			15
+		};
+		bullet12[]=
+		{
+			"A3\sounds_f\weapons\shells\9mm\grass_9mm_04",
+			0.39810717,
+			1,
+			15
+		};
+		soundBullet[]=
+		{
+			"bullet1",
+			0.082999997,
+			"bullet2",
+			0.082999997,
+			"bullet3",
+			0.082999997,
+			"bullet4",
+			0.082999997,
+			"bullet5",
+			0.082999997,
+			"bullet6",
+			0.082999997,
+			"bullet7",
+			0.082999997,
+			"bullet8",
+			0.082999997,
+			"bullet9",
+			0.082999997,
+			"bullet10",
+			0.082999997,
+			"bullet11",
+			0.082999997,
+			"bullet12",
+			0.082999997
+		};
+		drySound[]=
+		{
+			"A3\Sounds_F\arsenal\weapons\SMG\Vermin\Dry_Vermin",
+			0.50118721,
+			1,
+			10
+		};
 		reloadMagazineSound[]=
 		{
 			"rhsgref\addons\rhsgref_weapon_sounds\reloads\m3a1_reload",
 			1,
 			1,
 			10
+		};
+		changeFiremodeSound[]=
+		{
+			"A3\sounds_f\weapons\closure\firemode_changer_2",
+			0.56234133,
+			1,
+			20
 		};
 		modes[]=
 		{
@@ -7431,12 +8360,137 @@ class CfgWeapons
 			"this",
 			"SAFE"
 		};
+		bullet1[]=
+		{
+			"A3\sounds_f\weapons\shells\7_62\metal_762_01",
+			0.63095701,
+			1,
+			15
+		};
+		bullet2[]=
+		{
+			"A3\sounds_f\weapons\shells\7_62\metal_762_02",
+			0.63095701,
+			1,
+			15
+		};
+		bullet3[]=
+		{
+			"A3\sounds_f\weapons\shells\7_62\metal_762_03",
+			0.63095701,
+			1,
+			15
+		};
+		bullet4[]=
+		{
+			"A3\sounds_f\weapons\shells\7_62\metal_762_04",
+			0.63095701,
+			1,
+			15
+		};
+		bullet5[]=
+		{
+			"A3\sounds_f\weapons\shells\7_62\dirt_762_01",
+			0.63095701,
+			1,
+			15
+		};
+		bullet6[]=
+		{
+			"A3\sounds_f\weapons\shells\7_62\dirt_762_02",
+			0.63095701,
+			1,
+			15
+		};
+		bullet7[]=
+		{
+			"A3\sounds_f\weapons\shells\7_62\dirt_762_03",
+			0.63095701,
+			1,
+			15
+		};
+		bullet8[]=
+		{
+			"A3\sounds_f\weapons\shells\7_62\dirt_762_04",
+			0.63095701,
+			1,
+			15
+		};
+		bullet9[]=
+		{
+			"A3\sounds_f\weapons\shells\7_62\grass_762_01",
+			0.63095701,
+			1,
+			15
+		};
+		bullet10[]=
+		{
+			"A3\sounds_f\weapons\shells\7_62\grass_762_02",
+			0.63095701,
+			1,
+			15
+		};
+		bullet11[]=
+		{
+			"A3\sounds_f\weapons\shells\7_62\grass_762_03",
+			0.63095701,
+			1,
+			15
+		};
+		bullet12[]=
+		{
+			"A3\sounds_f\weapons\shells\7_62\grass_762_04",
+			0.63095701,
+			1,
+			15
+		};
+		soundBullet[]=
+		{
+			"bullet1",
+			0.082999997,
+			"bullet2",
+			0.082999997,
+			"bullet3",
+			0.082999997,
+			"bullet4",
+			0.082999997,
+			"bullet5",
+			0.082999997,
+			"bullet6",
+			0.082999997,
+			"bullet7",
+			0.082999997,
+			"bullet8",
+			0.082999997,
+			"bullet9",
+			0.082999997,
+			"bullet10",
+			0.082999997,
+			"bullet11",
+			0.082999997,
+			"bullet12",
+			0.082999997
+		};
+		changeFiremodeSound[]=
+		{
+			"A3\sounds_f\weapons\closure\firemode_changer_2",
+			0.56234133,
+			1,
+			20
+		};
 		reloadMagazineSound[]=
 		{
 			"\rhsgref\addons\rhsgref_weapon_sounds\reloads\mp44_reload",
 			1.5,
 			1,
 			30
+		};
+		drySound[]=
+		{
+			"A3\sounds_f\weapons\Other\dry_1",
+			0.56234097,
+			1,
+			10
 		};
 		modes[]=
 		{
@@ -7602,6 +8656,117 @@ class CfgWeapons
 		};
 		dexterity=1.8;
 		inertia=0.94999999;
+		bullet1[]=
+		{
+			"A3\sounds_f\weapons\shells\7_62\metal_762_01",
+			0.63095701,
+			1,
+			15
+		};
+		bullet2[]=
+		{
+			"A3\sounds_f\weapons\shells\7_62\metal_762_02",
+			0.63095701,
+			1,
+			15
+		};
+		bullet3[]=
+		{
+			"A3\sounds_f\weapons\shells\7_62\metal_762_03",
+			0.63095701,
+			1,
+			15
+		};
+		bullet4[]=
+		{
+			"A3\sounds_f\weapons\shells\7_62\metal_762_04",
+			0.63095701,
+			1,
+			15
+		};
+		bullet5[]=
+		{
+			"A3\sounds_f\weapons\shells\7_62\dirt_762_01",
+			0.63095701,
+			1,
+			15
+		};
+		bullet6[]=
+		{
+			"A3\sounds_f\weapons\shells\7_62\dirt_762_02",
+			0.63095701,
+			1,
+			15
+		};
+		bullet7[]=
+		{
+			"A3\sounds_f\weapons\shells\7_62\dirt_762_03",
+			0.63095701,
+			1,
+			15
+		};
+		bullet8[]=
+		{
+			"A3\sounds_f\weapons\shells\7_62\dirt_762_04",
+			0.63095701,
+			1,
+			15
+		};
+		bullet9[]=
+		{
+			"A3\sounds_f\weapons\shells\7_62\grass_762_01",
+			0.63095701,
+			1,
+			15
+		};
+		bullet10[]=
+		{
+			"A3\sounds_f\weapons\shells\7_62\grass_762_02",
+			0.63095701,
+			1,
+			15
+		};
+		bullet11[]=
+		{
+			"A3\sounds_f\weapons\shells\7_62\grass_762_03",
+			0.63095701,
+			1,
+			15
+		};
+		bullet12[]=
+		{
+			"A3\sounds_f\weapons\shells\7_62\grass_762_04",
+			0.63095701,
+			1,
+			15
+		};
+		soundBullet[]=
+		{
+			"bullet1",
+			0.082999997,
+			"bullet2",
+			0.082999997,
+			"bullet3",
+			0.082999997,
+			"bullet4",
+			0.082999997,
+			"bullet5",
+			0.082999997,
+			"bullet6",
+			0.082999997,
+			"bullet7",
+			0.082999997,
+			"bullet8",
+			0.082999997,
+			"bullet9",
+			0.082999997,
+			"bullet10",
+			0.082999997,
+			"bullet11",
+			0.082999997,
+			"bullet12",
+			0.082999997
+		};
 		modes[]=
 		{
 			"Single",
@@ -7660,6 +8825,12 @@ class CfgWeapons
 		};
 		aiDispersionCoefY=10;
 		aiDispersionCoefX=8;
+		drySound[]=
+		{
+			"A3\sounds_f\weapons\Other\dry_1",
+			0.0099999998,
+			1
+		};
 		reloadMagazineSound[]=
 		{
 			"\rhsgref\addons\rhsgref_weapon_sounds\reloads\m1garand_reload",
@@ -7808,6 +8979,117 @@ class CfgWeapons
 		class Library
 		{
 			libTextDesc="The MG42 is a 7.92×57mm Mauser general purpose machine gun used extensively by the German armed forces during the second half of World War II.";
+		};
+		bullet1[]=
+		{
+			"A3\sounds_f\weapons\shells\5_56\metal_556_01.wss",
+			0.1,
+			1,
+			15
+		};
+		bullet2[]=
+		{
+			"A3\sounds_f\weapons\shells\5_56\metal_556_02.wss",
+			0.1,
+			1,
+			15
+		};
+		bullet3[]=
+		{
+			"A3\sounds_f\weapons\shells\5_56\metal_556_03.wss",
+			0.177828,
+			1,
+			15
+		};
+		bullet4[]=
+		{
+			"A3\sounds_f\weapons\shells\5_56\metal_556_04.wss",
+			0.177828,
+			1,
+			15
+		};
+		bullet5[]=
+		{
+			"A3\sounds_f\weapons\shells\5_56\asphlat_556_01.wss",
+			0.1,
+			1,
+			15
+		};
+		bullet6[]=
+		{
+			"A3\sounds_f\weapons\shells\5_56\asphlat_556_02.wss",
+			0.1,
+			1,
+			15
+		};
+		bullet7[]=
+		{
+			"A3\sounds_f\weapons\shells\5_56\asphlat_556_03.wss",
+			0.1,
+			1,
+			15
+		};
+		bullet8[]=
+		{
+			"A3\sounds_f\weapons\shells\5_56\asphlat_556_04.wss",
+			0.1,
+			1,
+			15
+		};
+		bullet9[]=
+		{
+			"A3\sounds_f\weapons\shells\5_56\grass_556_01.wss",
+			0.0099999998,
+			1,
+			15
+		};
+		bullet10[]=
+		{
+			"A3\sounds_f\weapons\shells\5_56\grass_556_02.wss",
+			0.0099999998,
+			1,
+			15
+		};
+		bullet11[]=
+		{
+			"A3\sounds_f\weapons\shells\5_56\grass_556_03.wss",
+			0.0099999998,
+			1,
+			15
+		};
+		bullet12[]=
+		{
+			"A3\sounds_f\weapons\shells\5_56\grass_556_04.wss",
+			0.0099999998,
+			1,
+			15
+		};
+		soundBullet[]=
+		{
+			"bullet1",
+			0.082999997,
+			"bullet2",
+			0.082999997,
+			"bullet3",
+			0.082999997,
+			"bullet4",
+			0.082999997,
+			"bullet5",
+			0.082999997,
+			"bullet6",
+			0.082999997,
+			"bullet7",
+			0.082999997,
+			"bullet8",
+			0.082999997,
+			"bullet9",
+			0.082999997,
+			"bullet10",
+			0.082999997,
+			"bullet11",
+			0.082999997,
+			"bullet12",
+			0.082999997
 		};
 		muzzles[]=
 		{
@@ -8027,6 +9309,11 @@ class CfgWeapons
 			"this",
 			"SAFE"
 		};
+		soundBullet[]=
+		{
+			"caseless",
+			1
+		};
 		modes[]=
 		{
 			"Single",
@@ -8036,6 +9323,10 @@ class CfgWeapons
 		};
 		class Single: Mode_SemiAuto
 		{
+			sounds[]=
+			{
+				"StandardSound"
+			};
 			class StandardSound
 			{
 				soundSetShot[]=
@@ -8094,6 +9385,12 @@ class CfgWeapons
 		};
 		aiDispersionCoefY=10;
 		aiDispersionCoefX=8;
+		drySound[]=
+		{
+			"A3\sounds_f\weapons\Other\dry_1",
+			0.0099999998,
+			1
+		};
 	};
 	class rhs_weap_fnfal_base: Rifle_Base_F
 	{
@@ -8172,10 +9469,135 @@ class CfgWeapons
 			"this",
 			"SAFE"
 		};
+		bullet1[]=
+		{
+			"A3\sounds_f\weapons\shells\7_62\metal_762_01",
+			0.63095701,
+			1,
+			15
+		};
+		bullet2[]=
+		{
+			"A3\sounds_f\weapons\shells\7_62\metal_762_02",
+			0.63095701,
+			1,
+			15
+		};
+		bullet3[]=
+		{
+			"A3\sounds_f\weapons\shells\7_62\metal_762_03",
+			0.63095701,
+			1,
+			15
+		};
+		bullet4[]=
+		{
+			"A3\sounds_f\weapons\shells\7_62\metal_762_04",
+			0.63095701,
+			1,
+			15
+		};
+		bullet5[]=
+		{
+			"A3\sounds_f\weapons\shells\7_62\dirt_762_01",
+			0.63095701,
+			1,
+			15
+		};
+		bullet6[]=
+		{
+			"A3\sounds_f\weapons\shells\7_62\dirt_762_02",
+			0.63095701,
+			1,
+			15
+		};
+		bullet7[]=
+		{
+			"A3\sounds_f\weapons\shells\7_62\dirt_762_03",
+			0.63095701,
+			1,
+			15
+		};
+		bullet8[]=
+		{
+			"A3\sounds_f\weapons\shells\7_62\dirt_762_04",
+			0.63095701,
+			1,
+			15
+		};
+		bullet9[]=
+		{
+			"A3\sounds_f\weapons\shells\7_62\grass_762_01",
+			0.63095701,
+			1,
+			15
+		};
+		bullet10[]=
+		{
+			"A3\sounds_f\weapons\shells\7_62\grass_762_02",
+			0.63095701,
+			1,
+			15
+		};
+		bullet11[]=
+		{
+			"A3\sounds_f\weapons\shells\7_62\grass_762_03",
+			0.63095701,
+			1,
+			15
+		};
+		bullet12[]=
+		{
+			"A3\sounds_f\weapons\shells\7_62\grass_762_04",
+			0.63095701,
+			1,
+			15
+		};
+		soundBullet[]=
+		{
+			"bullet1",
+			0.082999997,
+			"bullet2",
+			0.082999997,
+			"bullet3",
+			0.082999997,
+			"bullet4",
+			0.082999997,
+			"bullet5",
+			0.082999997,
+			"bullet6",
+			0.082999997,
+			"bullet7",
+			0.082999997,
+			"bullet8",
+			0.082999997,
+			"bullet9",
+			0.082999997,
+			"bullet10",
+			0.082999997,
+			"bullet11",
+			0.082999997,
+			"bullet12",
+			0.082999997
+		};
+		drySound[]=
+		{
+			"A3\sounds_f\weapons\Other\dry_1",
+			0.56234097,
+			1,
+			10
+		};
 		reloadMagazineSound[]=
 		{
 			"\rhsgref\addons\rhsgref_weapon_sounds\reloads\l1a1_reload",
 			1,
+			1,
+			20
+		};
+		changeFiremodeSound[]=
+		{
+			"A3\sounds_f\weapons\closure\firemode_changer_2",
+			0.56234133,
 			1,
 			20
 		};
@@ -8407,6 +9829,10 @@ class CfgWeapons
 			"OFP2_ManSkeleton",
 			"\rhsgref\addons\rhsgref_c_weapons\anims\rhs_hand_rpg75.rtm"
 		};
+		sounds[]=
+		{
+			"StandardSound"
+		};
 		class StandardSound
 		{
 			soundSetShot[]=
@@ -8414,6 +9840,13 @@ class CfgWeapons
 				"Launcher_RPG32_Shot_SoundSet",
 				"Launcher_RPG32_Tail_SoundSet"
 			};
+		};
+		drySound[]=
+		{
+			"A3\sounds_f\weapons\other\dry6",
+			0.031622801,
+			1,
+			10
 		};
 		showToPlayer=1;
 		minRange=10;
@@ -8515,6 +9948,10 @@ class CfgWeapons
 			"OFP2_ManSkeleton",
 			"\rhsgref\addons\rhsgref_c_weapons\anims\rhs_hand_pzf60.rtm"
 		};
+		sounds[]=
+		{
+			"StandardSound"
+		};
 		class StandardSound
 		{
 			soundSetShot[]=
@@ -8522,6 +9959,13 @@ class CfgWeapons
 				"Launcher_RPG32_Shot_SoundSet",
 				"Launcher_RPG32_Tail_SoundSet"
 			};
+		};
+		drySound[]=
+		{
+			"A3\sounds_f\weapons\other\dry6",
+			0.031622801,
+			1,
+			10
 		};
 		class GunParticles
 		{

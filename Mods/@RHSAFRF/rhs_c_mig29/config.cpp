@@ -326,6 +326,12 @@ class CfgVehicles
 		};
 		lockDetectionSystem=8;
 		incommingMisslieDetectionSystem=8;
+		soundLocked[]=
+		{
+			"\rhsafrf\addons\rhs_mig29\sound\locking",
+			0.00031622799,
+			1
+		};
 		soundIncommingMissile[]=
 		{
 			"\rhsafrf\addons\rhs_mig29\sound\incomingmissile",
@@ -978,6 +984,46 @@ class CfgVehicles
 		headGforceLeaningFactor[]={0.0049999999,0.001,0.015};
 		attenuationEffectType="PlaneAttenuation";
 		insideSoundCoef=1;
+		soundGetIn[]=
+		{
+			"A3\Sounds_F\vehicles\air\CAS_01\getin_wipeout",
+			1,
+			1,
+			40
+		};
+		soundGetOut[]=
+		{
+			"A3\Sounds_F\air\Plane_Fighter_03\getout",
+			1,
+			1,
+			40
+		};
+		soundEngineOnInt[]=
+		{
+			"A3\Sounds_F_Jets\vehicles\air\Plane_Fighter_02\O_Plane_Fighter_02_engine_start_int",
+			1,
+			1
+		};
+		soundEngineOnExt[]=
+		{
+			"A3\Sounds_F_Jets\vehicles\air\Plane_Fighter_02\O_Plane_Fighter_02_engine_start_ext",
+			1.75,
+			1,
+			300
+		};
+		soundEngineOffInt[]=
+		{
+			"A3\Sounds_F_Jets\vehicles\air\Plane_Fighter_02\O_Plane_Fighter_02_engine_shut_int",
+			1,
+			1
+		};
+		soundEngineOffExt[]=
+		{
+			"A3\Sounds_F_Jets\vehicles\air\Plane_Fighter_02\O_Plane_Fighter_02_engine_shut_ext",
+			1.75,
+			1,
+			300
+		};
 		cabinOpenSound[]=
 		{
 			"A3\Sounds_F_Jets\vehicles\air\Plane_Fighter_02\FX_Plane_Fighter_02_cabine_open_ext",
@@ -1012,11 +1058,23 @@ class CfgVehicles
 			1,
 			1.1
 		};
+		soundServo[]=
+		{
+			"\rhsafrf\addons\rhs_mig29\sound\gear",
+			10,
+			0.5
+		};
 		soundGear[]=
 		{
 			"\rhsafrf\addons\rhs_mig29\sound\gear",
 			10,
 			0.5
+		};
+		soundDammage[]=
+		{
+			"\rhsafrf\addons\rhs_mig29\sound\warn",
+			0.56234097,
+			1
 		};
 		soundGearUp[]=
 		{
@@ -1940,6 +1998,33 @@ class CfgVehicles
 				useFlare=1;
 				intensity=111;
 			};
+		};
+		aggregateReflectors[]=
+		{
+			
+			{
+				"Left"
+			},
+			
+			{
+				"Left_flare"
+			},
+			
+			{
+				"Right"
+			},
+			
+			{
+				"Right_flare"
+			},
+			
+			{
+				"Center"
+			},
+			
+			{
+				"Center_flare"
+			}
 		};
 		class Exhausts
 		{

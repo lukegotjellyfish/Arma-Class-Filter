@@ -2,11 +2,11 @@ rhsgref_10Rnd_792x57_m76
 airFriction=-0.00068140001;
 caliber=0.44999999;
 count=10;
-deflecting=15;
 -----
+explosive=0;
 hit=11.55;
 indirectHit=0;
 indirectHitRange=0;
 initSpeed=730;
-timeToLive=6;
+timeToLive=3;
 typicalSpeed=838;

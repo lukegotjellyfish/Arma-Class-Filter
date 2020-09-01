@@ -235,8 +235,21 @@ class CfgAmmo
 		effectsMissile="missile5";
 		whistleOnFire=2;
 		whistleDist=60;
+		soundFly[]=
+		{
+			"A3\Sounds_F\weapons\Rockets\rocket_fly_2",
+			2.5,
+			1.5,
+			10800
+		};
 		RHS_WarheadType="REPLACE";
 		RHS_FuseRange=25;
+		SoundSetExplosion[]=
+		{
+			"BombsHeavy_Exp_SoundSet",
+			"BombsHeavy_Tail_SoundSet",
+			"Explosion_Debris_SoundSet"
+		};
 	};
 	class RHS_9N123F: RHS_9M79_1_F
 	{
@@ -283,6 +296,10 @@ class cfgWeapons
 			"1_Rnd_RHS_9M79_1_F",
 			"1_Rnd_RHS_9M79_1_K",
 			"1_Rnd_RHS_9M79B"
+		};
+		sounds[]=
+		{
+			"StandardSound"
 		};
 		class StandardSound
 		{
@@ -849,6 +866,12 @@ class CfgVehicles
 				};
 				gunnerInAction="BAZ_oper";
 				gunnerAction="BAZ_oper";
+				soundServo[]=
+				{
+					"",
+					0,
+					1
+				};
 				gunnerOpticsModel="";
 				gunnergetInAction="GetInHigh";
 				stabilizedInAxes=0;

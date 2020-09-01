@@ -2,11 +2,11 @@ rhsusf_5Rnd_300winmag_xm2010
 airFriction=-0.0007034;
 caliber=0.79000002;
 count=5;
-deflecting=15;
 -----
+explosive=0;
 hit=18.5;
 indirectHit=0;
 indirectHitRange=0;
 initSpeed=869;
-timeToLive=6;
+timeToLive=3;
 typicalSpeed=869;

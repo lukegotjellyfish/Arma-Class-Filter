@@ -1310,6 +1310,12 @@ class CfgVehicles
 			1.098107,
 			1
 		};
+		soundLocked[]=
+		{
+			"",
+			1.5848932,
+			1
+		};
 		unitInfoType="RHS_RscUnitInfoAir_Mi24";
 		unitInfoTypeRTD="RHS_RscUnitInfoAir_RTD_Mi24";
 		unitInfoTypeLite="RHS_RscUnitInfoAir_RTD_Basic_Mi24";
@@ -2896,6 +2902,14 @@ class CfgVehicles
 				innerAngle=5;
 				outerAngle=175;
 			};
+		};
+		aggregateReflectors[]=
+		{
+			
+			{
+				"Light",
+				"Light_Flare"
+			}
 		};
 		class markerlights
 		{
@@ -9968,6 +9982,19 @@ class CfgVehicles
 				outerAngle=175;
 			};
 		};
+		aggregateReflectors[]=
+		{
+			
+			{
+				"Left",
+				"Left_Flare"
+			},
+			
+			{
+				"Right",
+				"Right_Flare"
+			}
+		};
 		class markerlights
 		{
 			class GreenStill
@@ -12872,6 +12899,12 @@ class CfgVehicles
 		{
 			"\rhsafrf\addons\rhs_c_a2port_air\sounds\alarm_beep",
 			1.098107,
+			1
+		};
+		soundLocked[]=
+		{
+			"",
+			1.5848932,
 			1
 		};
 		class UserActions

@@ -1,0 +1,14 @@
+rhs_weap_s8
+canLock=1;
+-----
+dispersion=0.032000002;
+-----
+magazineReloadTime=0.2;
+-----
+-----
+-----
+-----
+reloadTime=0.2;
+-----
+weaponLockDelay=8;
+-----

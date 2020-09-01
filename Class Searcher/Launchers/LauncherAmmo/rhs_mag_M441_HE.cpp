@@ -1,6 +1,6 @@
 rhs_mag_M441_HE
-airFriction=-0.001;
-caliber=2;
+-----
+-----
 -----
 count=1;
 -----
@@ -26,9 +26,9 @@ mass=5.0599999;
 -----
 -----
 -----
+timeToLive=20;
 -----
 -----
 -----
 -----
-typicalSpeed=185;
-warheadName="HE";
+-----

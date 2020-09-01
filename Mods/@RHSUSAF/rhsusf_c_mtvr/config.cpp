@@ -164,6 +164,17 @@ class CfgVehicles
 				selection="Light_R";
 			};
 		};
+		aggregateReflectors[]=
+		{
+			
+			{
+				"Left"
+			},
+			
+			{
+				"Right"
+			}
+		};
 		armorLights=0.0099999998;
 		normalSpeedForwardCoef=0.89999998;
 		turnCoef=3;

@@ -1,0 +1,14 @@
+RHS_MK19
+canLock=0;
+-----
+dispersion=0.0060000001;
+-----
+magazineReloadTime=10;
+-----
+maxZeroing=1500;
+-----
+-----
+reloadTime=0.17142899;
+-----
+-----
+-----
