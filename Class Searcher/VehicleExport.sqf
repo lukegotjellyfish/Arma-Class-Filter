@@ -426,28 +426,26 @@ _basePath = "E:\USBBACKUP\GitHub\Arma-Class-Filter\Class Searcher\";
 	{
 		{
 			{
-				{
-					scopeName "CfgFileLoop";
-					if (count _configs != 0) then {
-						_configCategory = _x;
-						breakOut "CfgFileLoop";
-					};
-				} forEach _cfgFiles;
+				scopeName "CfgFileLoop";
+				if (count _configs != 0) then {
+					_configCategory = _x;
+					breakOut "CfgFileLoop";
+				};
+			} forEach _cfgFiles;
 
-				_configs = configProperties [configFile >> _configCategory >> _x];
+			_configs = configProperties [configFile >> _configCategory >> _x];
+			diag_log(format["%1 = [", _x]);
 
-				diag_log(format["%1 = [", _x]);
-				{
-					if (isText   _x) then { diag_log(format["    [%1,%2],", _x, getText _x]);};
-					if (isNumber _x) then { diag_log(format["    [%1,%2],", _x, getNumber _x]);};
-					if (isArray  _x) then { diag_log(format["    [%1,%2],", _x, getArray _x]);};
-				} foreach _configs;  //For each vehicle in selected array
-				diag_log("]");
-			} foreach _x; //for each class for the side in the category
-		} foreach _x; //For each side in category
-	} foreach _x;  //For each category in the sidematrix
-} foreach _sideMatrix;  //For each array in sidematmrix
+			{
+				if (isText   _x) then { diag_log(format["    [%1,%2],", _x, getText _x]);};
+				if (isNumber _x) then { diag_log(format["    [%1,%2],", _x, getNumber _x]);};
+				if (isArray  _x) then { diag_log(format["    [%1,%2],", _x, getArray _x]);};
+			} foreach _configs;  //For each vehicle in selected array
+			diag_log("]");
+		} foreach _x; //for each class for the side in the category
+	} foreach _x; //For each side in category
+} foreach _sideMatrix;  //For each category in sidematmarix
 
 
 
-"make_file" callExtension format ["%1|%2", "c:\\", "text"];
+//"make_file" callExtension format ["%1|%2", "c:\\", "text"];
