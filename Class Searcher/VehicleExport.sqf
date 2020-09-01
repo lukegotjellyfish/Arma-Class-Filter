@@ -403,29 +403,39 @@ _sideMatrix = [
 			"rhs_mag_s8_12",
 			"RHS_mag_VOG30_30"
 		]
-	],
-	//vehicle submunition penetrator matrix
-	[
-		//BluFor
-		[
-			"BluFor\VehiclePenetrator\",
-			
-		],
-		//OpFor
-		[
-			"OpFor\VehiclePenetrator\",
-
-		]
 	]
+	//vehicle submunition penetrator matrix
+	// [
+	// 	//BluFor
+	// 	[
+	// 		"BluFor\VehiclePenetrator\",
+			
+	// 	],
+	// 	//OpFor
+	// 	[
+	// 		"OpFor\VehiclePenetrator\",
+
+	// 	]
+	// ]
 ];
 
+_cfgFiles = ["CfgVehicles", "CfgWeapons", "CfgMagazines", "CfgAmmo"];
 
 _basePath = "E:\USBBACKUP\GitHub\Arma-Class-Filter\Class Searcher\";
 {
 	{
 		{
 			{
-				_configs = configProperties [configFile >> "CfgVehicles" >> _x];
+				{
+					scopeName "CfgFileLoop";
+					if (count _configs != 0) then {
+						_configCategory = _x;
+						breakOut "CfgFileLoop";
+					};
+				} forEach _cfgFiles;
+
+				_configs = configProperties [configFile >> _configCategory >> _x];
+
 				diag_log(format["%1 = [", _x]);
 				{
 					if (isText   _x) then { diag_log(format["    [%1,%2],", _x, getText _x]);};
